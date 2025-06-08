@@ -10,7 +10,7 @@
 #namespace dog_utility;
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x20d
 // Size: 0x67
 function go_to_node( nodes, optional_arrived_at_node_func, var_5e38f20c9628ae25, var_686ec37f85316247 )
@@ -34,7 +34,7 @@ function go_to_node( nodes, optional_arrived_at_node_func, var_5e38f20c9628ae25,
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x27c
 // Size: 0x251
 function go_to_node_internal( node, optional_arrived_at_node_func, var_5e38f20c9628ae25 )
@@ -156,7 +156,7 @@ function go_to_node_internal( node, optional_arrived_at_node_func, var_5e38f20c9
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4d5
 // Size: 0xed
 function go_through_patharray( patharray, optional_arrived_at_node_func, var_5e38f20c9628ae25 )
@@ -187,7 +187,7 @@ function go_through_patharray( patharray, optional_arrived_at_node_func, var_5e3
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ca
 // Size: 0xc0
 function node_fields_after_goal( node, optional_arrived_at_node_func )
@@ -224,7 +224,7 @@ function node_fields_after_goal( node, optional_arrived_at_node_func )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x692
 // Size: 0xdd
 function ai_delete_when_out_of_sight( ai_array, fdist )
@@ -240,7 +240,8 @@ function ai_delete_when_out_of_sight( ai_array, fdist )
     {
         wait 1;
         
-        for (i = 0; i < ai_array.size; i++) {
+        for ( i = 0; i < ai_array.size ; i++ )
+        {
             if ( !isalive( ai_array[ i ] ) )
             {
                 ai_array = array_remove( ai_array, ai_array[ i ] );
@@ -269,7 +270,7 @@ function ai_delete_when_out_of_sight( ai_array, fdist )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x777
 // Size: 0xdd
 function player_looking_at( start, dot, dot_only, ignore_ent )
@@ -302,12 +303,13 @@ function player_looking_at( start, dot, dot_only, ignore_ent )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x85d
 // Size: 0x61, Type: bool
 function either_player_looking_at( org, dot, dot_only, ignore_ent )
 {
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         if ( level.players[ i ] player_looking_at( org, dot, dot_only, ignore_ent ) )
         {
             return true;
@@ -318,14 +320,15 @@ function either_player_looking_at( org, dot, dot_only, ignore_ent )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8c7
 // Size: 0x66, Type: bool
 function players_within_distance( fdist, org )
 {
     var_74a76bbc5f12d7ea = fdist * fdist;
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         if ( distancesquared( org, level.players[ i ].origin ) < var_74a76bbc5f12d7ea )
         {
             return true;
@@ -336,7 +339,7 @@ function players_within_distance( fdist, org )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x936
 // Size: 0x6a
 function go_to_node_set_goal( ent )
@@ -361,7 +364,7 @@ function go_to_node_set_goal( ent )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9a8
 // Size: 0x3f
 function go_to_node_set_goal_ent( ent )
@@ -377,7 +380,7 @@ function go_to_node_set_goal_ent( ent )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ef
 // Size: 0x1b
 function go_to_node_set_goal_pos( ent )
@@ -387,7 +390,7 @@ function go_to_node_set_goal_pos( ent )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa12
 // Size: 0x1b
 function go_to_node_set_goal_node( node )
@@ -397,7 +400,7 @@ function go_to_node_set_goal_node( node )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa35
 // Size: 0x31
 function set_goal_node( node )
@@ -409,7 +412,7 @@ function set_goal_node( node )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa6e
 // Size: 0x51
 function set_goal_ent( target )
@@ -424,7 +427,7 @@ function set_goal_ent( target )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac7
 // Size: 0x31
 function set_goal_pos( origin )
@@ -436,7 +439,7 @@ function set_goal_pos( origin )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb00
 // Size: 0x1f3, Type: bool
 function go_to_node_wait_for_player( node, get_target_func )
@@ -496,7 +499,7 @@ function go_to_node_wait_for_player( node, get_target_func )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcfc
 // Size: 0x16a
 function node_fields_after_goal_and_wait( node, var_5e38f20c9628ae25 )
@@ -570,7 +573,7 @@ function node_fields_after_goal_and_wait( node, var_5e38f20c9628ae25 )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe6e
 // Size: 0x16
 function die()
@@ -579,7 +582,7 @@ function die()
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe8c
 // Size: 0xb
 function gesture_simple( var_7ca8d1ce367054f8 )
@@ -588,7 +591,7 @@ function gesture_simple( var_7ca8d1ce367054f8 )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe9f
 // Size: 0x1e
 function waittill_subgoal()
@@ -599,7 +602,7 @@ function waittill_subgoal()
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec6
 // Size: 0x1e6
 function node_fields_pre_goal( node )
@@ -685,7 +688,7 @@ function node_fields_pre_goal( node )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10b4
 // Size: 0xb7
 function get_path_array( node, startnode )
@@ -737,7 +740,7 @@ function get_path_array( node, startnode )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1174
 // Size: 0x122, Type: bool
 function go_to_node_should_stop( arrivaltarget )
@@ -826,7 +829,7 @@ function go_to_node_should_stop( arrivaltarget )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x129f
 // Size: 0xd8
 function get_least_used_from_array( array )
@@ -862,7 +865,7 @@ function get_least_used_from_array( array )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1380
 // Size: 0xe1
 function get_target_goals( target )
@@ -891,7 +894,7 @@ function get_target_goals( target )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146a
 // Size: 0x5d, Type: bool
 function is_target_goal_valid( object )
@@ -914,7 +917,7 @@ function is_target_goal_valid( object )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d0
 // Size: 0x6a
 function go_to_node_end()
@@ -937,7 +940,7 @@ function go_to_node_end()
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1542
 // Size: 0xb0
 function set_moveplaybackrate( rate, time )
@@ -966,7 +969,7 @@ function set_moveplaybackrate( rate, time )
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15fa
 // Size: 0x26
 function get_cover_volume_forward()
@@ -980,7 +983,7 @@ function get_cover_volume_forward()
 }
 
 // Namespace dog_utility / scripts\common\dog_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1628
 // Size: 0x38
 function get_player_from_self()

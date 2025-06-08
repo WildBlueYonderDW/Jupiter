@@ -13,7 +13,7 @@
 #namespace traverse;
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x424
 // Size: 0x1cf
 function playtraverseanim_deprecated( asmname, statename, params )
@@ -65,7 +65,7 @@ function playtraverseanim_deprecated( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5fb
 // Size: 0x93
 function playtraverseanim( asmname, statename, params )
@@ -82,7 +82,7 @@ function playtraverseanim( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x696
 // Size: 0x2f4
 function playtraverseanim_doublejump( asmname, statename, params )
@@ -155,7 +155,7 @@ function playtraverseanim_doublejump( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x992
 // Size: 0x2c
 function traverse_doublejump_cleanup( asmname, statename, params )
@@ -165,7 +165,7 @@ function traverse_doublejump_cleanup( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9c6
 // Size: 0x3a
 function traverse_donotetracks( asmname, statename )
@@ -178,7 +178,7 @@ function traverse_donotetracks( asmname, statename )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa08
 // Size: 0x73
 function getexternaltraverseinfo( traversename )
@@ -195,7 +195,7 @@ function getexternaltraverseinfo( traversename )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa83
 // Size: 0x48
 function playtraverseanim_external( asmname, statename, params )
@@ -205,7 +205,7 @@ function playtraverseanim_external( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xad3
 // Size: 0xb7
 function choosetraverseanim_external( asmname, statename, params )
@@ -227,7 +227,7 @@ function choosetraverseanim_external( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb93
 // Size: 0x9f
 function playdoublejumpfinishanim( asmname, statename, params )
@@ -245,7 +245,7 @@ function playdoublejumpfinishanim( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xc3a
 // Size: 0xc3
 function getdoublejumpoffsetposition( asmname, var_223efa34c2b82dc8, endpos, endangles, notetrackname )
@@ -262,7 +262,7 @@ function getdoublejumpoffsetposition( asmname, var_223efa34c2b82dc8, endpos, end
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd06
 // Size: 0x1a3, Type: bool
 function doublejumpneedsfinishanim( asmname, nextstatename, startnode, endpos )
@@ -319,7 +319,7 @@ function doublejumpneedsfinishanim( asmname, nextstatename, startnode, endpos )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xeb2
 // Size: 0x84, Type: bool
 function checkdoublejumpfinish( asmname, statename, tostatename, params )
@@ -345,7 +345,7 @@ function checkdoublejumpfinish( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf3f
 // Size: 0x1f
 function gettraversalstartnode()
@@ -359,7 +359,7 @@ function gettraversalstartnode()
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf67
 // Size: 0x111
 function playdoublejumpmantleorvault( asmname, statename, zoffset )
@@ -385,7 +385,7 @@ function playdoublejumpmantleorvault( asmname, statename, zoffset )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1080
 // Size: 0x26
 function playdoublejumpmantle( asmname, statename, params )
@@ -394,7 +394,7 @@ function playdoublejumpmantle( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10ae
 // Size: 0x26
 function playdoublejumpvault( asmname, statename, params )
@@ -403,7 +403,7 @@ function playdoublejumpvault( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10dc
 // Size: 0x39
 function doublejumpterminate( asmname, statename, params )
@@ -414,7 +414,7 @@ function doublejumpterminate( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x111d
 // Size: 0x34
 function doublejumpearlyterminate( asmname, statename, params )
@@ -426,7 +426,7 @@ function doublejumpearlyterminate( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1159
 // Size: 0x49
 function isdoublejumpanimdone( asmname, statename, tostatename, params )
@@ -442,7 +442,7 @@ function isdoublejumpanimdone( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11ab
 // Size: 0x3bd
 function playdoublejumptraversal( asmname, statename, params )
@@ -563,7 +563,7 @@ function playdoublejumptraversal( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1570
 // Size: 0xe5
 function choosedoublejumpanim( asmname, statename, params )
@@ -597,7 +597,7 @@ function choosedoublejumpanim( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x165e
 // Size: 0x125
 function getwallnodeposition( startnode, index )
@@ -623,7 +623,7 @@ function getwallnodeposition( startnode, index )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x178c
 // Size: 0x15a, Type: bool
 function shouldwallrunshoot( asmname, statename, tostatename, params )
@@ -656,7 +656,7 @@ function shouldwallrunshoot( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18ef
 // Size: 0x4b
 function choosewallrunanim( asmname, statename, params )
@@ -667,7 +667,7 @@ function choosewallrunanim( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1943
 // Size: 0x42
 function getsmoothstep( delta )
@@ -683,7 +683,7 @@ function getsmoothstep( delta )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x198e
 // Size: 0x16e
 function teleportdeltaovernumframes( statename, waittime, delta, numframes, animname, playbackrate )
@@ -701,7 +701,8 @@ function teleportdeltaovernumframes( statename, waittime, delta, numframes, anim
     lastz = self.origin[ 2 ];
     self setanimrate( animname, playbackrate );
     
-    for (i = 0; i < numframes; i++) {
+    for ( i = 0; i < numframes ; i++ )
+    {
         var_3897e5e4048f4e94 = 1;
         
         /#
@@ -736,7 +737,7 @@ function teleportdeltaovernumframes( statename, waittime, delta, numframes, anim
 /#
 
     // Namespace traverse / scripts\asm\soldier\traverse
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1b04
     // Size: 0x54, Type: dev
     function debugdest( dest, statename )
@@ -755,7 +756,7 @@ function teleportdeltaovernumframes( statename, waittime, delta, numframes, anim
 #/
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b60
 // Size: 0x3f
 function wallrunnotehandler( note, params )
@@ -773,7 +774,7 @@ function wallrunnotehandler( note, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ba7
 // Size: 0x376
 function handlejumpteleports( params, animtime, playbackrate )
@@ -877,7 +878,7 @@ function handlejumpteleports( params, animtime, playbackrate )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f25
 // Size: 0x74
 function getwallrunyawfromstartnode( startnode )
@@ -890,7 +891,7 @@ function getwallrunyawfromstartnode( startnode )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fa2
 // Size: 0xf9
 function getwallrundirectionfromstartnode( startnode )
@@ -916,7 +917,7 @@ function getwallrundirectionfromstartnode( startnode )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20a4
 // Size: 0x64
 function setupwallrunifneeded()
@@ -937,7 +938,7 @@ function setupwallrunifneeded()
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2110
 // Size: 0x12
 function getwallrundirection()
@@ -947,7 +948,7 @@ function getwallrundirection()
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x212b
 // Size: 0x72
 function wallrunterminate( asmname, statename, params )
@@ -964,7 +965,7 @@ function wallrunterminate( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21a5
 // Size: 0x4f
 function traversalorientearlyterminate( asmname, statename, params )
@@ -977,7 +978,7 @@ function traversalorientearlyterminate( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21fc
 // Size: 0x140
 function playwallrunattach( asmname, statename, params )
@@ -1006,7 +1007,7 @@ function playwallrunattach( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2344
 // Size: 0xa8
 function getwallattachoffsetposition( asmname )
@@ -1022,7 +1023,7 @@ function getwallattachoffsetposition( asmname )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x23f5
 // Size: 0x1af
 function playwallrunenter( asmname, statename, params )
@@ -1063,7 +1064,7 @@ function playwallrunenter( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x25ac
 // Size: 0x110
 function playscaledjump( asmname, statename, animid, desiredposition, desiredangles, var_8c2c7ea3bd382df4, var_4c4c6c6d3c2b086b, var_87ef9fdeb401c595 )
@@ -1097,7 +1098,7 @@ function playscaledjump( asmname, statename, animid, desiredposition, desiredang
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26c4
 // Size: 0xb7
 function choosewallattachanim( asmname, statename, params )
@@ -1128,7 +1129,7 @@ function choosewallattachanim( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2784
 // Size: 0x1a2
 function choosewallrunenteranim( asmname, statename, params )
@@ -1188,7 +1189,7 @@ function choosewallrunenteranim( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x292f
 // Size: 0x47
 function senddelayedevent( asmname, statename, time, event, var_775aaa9fdd143162 )
@@ -1204,7 +1205,7 @@ function senddelayedevent( asmname, statename, time, event, var_775aaa9fdd143162
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x297e
 // Size: 0xbc, Type: bool
 function hasanotherwallrun( asmname, statename, tostatename, params )
@@ -1234,7 +1235,7 @@ function hasanotherwallrun( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a43
 // Size: 0x10a
 function playwallruncontinue( asmname, statename, params )
@@ -1262,7 +1263,7 @@ function playwallruncontinue( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b55
 // Size: 0xdd
 function getwallrunmantleposition( startnode )
@@ -1282,7 +1283,7 @@ function getwallrunmantleposition( startnode )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c3b
 // Size: 0xb7
 function getwallrunmantleangles( startnode )
@@ -1306,7 +1307,7 @@ function getwallrunmantleangles( startnode )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cfb
 // Size: 0x71
 function getwallruntomantletype()
@@ -1330,7 +1331,7 @@ function getwallruntomantletype()
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2d75
 // Size: 0x73
 function shouldwallruntovault( asmname, statename, tostatename, params )
@@ -1347,7 +1348,7 @@ function shouldwallruntovault( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2df1
 // Size: 0x2b1
 function playwallrunloop( asmname, statename, params )
@@ -1404,7 +1405,7 @@ function playwallrunloop( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30aa
 // Size: 0x33
 function playwallrunendsound( statename )
@@ -1419,7 +1420,7 @@ function playwallrunendsound( statename )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x30e5
 // Size: 0x1d6
 function choosewallrunexitanim( asmname, statename, params )
@@ -1483,7 +1484,7 @@ function choosewallrunexitanim( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x32c4
 // Size: 0x168
 function playwallrunexit( asmname, statename, params )
@@ -1533,7 +1534,7 @@ function playwallrunexit( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3434
 // Size: 0xc1, Type: bool
 function isnotdoingwallruntransition( asmname, statename, tostatename, params )
@@ -1561,7 +1562,7 @@ function isnotdoingwallruntransition( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34fe
 // Size: 0x55
 function terminatewallruntraverse( asmname, statename )
@@ -1576,7 +1577,7 @@ function terminatewallruntraverse( asmname, statename )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x355b
 // Size: 0x241
 function playwallruntomantle( asmname, statename, params )
@@ -1633,7 +1634,7 @@ function playwallruntomantle( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x37a4
 // Size: 0x2f8
 function playtraversaltransition( asmname, statename, params )
@@ -1708,7 +1709,7 @@ function playtraversaltransition( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3aa4
 // Size: 0x120
 function choosetraversaltransition( asmname, statename, params )
@@ -1741,7 +1742,7 @@ function choosetraversaltransition( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3bcd
 // Size: 0x59, Type: bool
 function shouldabortwallrunattach( asmname, statename, tostatename, params )
@@ -1757,7 +1758,7 @@ function shouldabortwallrunattach( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3c2f
 // Size: 0x3f, Type: bool
 function shouldtraversetransitionto( asmname, statename, tostatename, params )
@@ -1771,7 +1772,7 @@ function shouldtraversetransitionto( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c77
 // Size: 0x54, Type: bool
 function istraversaltransitionsupported( animscript )
@@ -1790,7 +1791,7 @@ function istraversaltransitionsupported( animscript )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3cd4
 // Size: 0x301, Type: bool
 function shoulddotraversaltransition( asmname, statename, tostatename, params )
@@ -1894,7 +1895,7 @@ function shoulddotraversaltransition( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fde
 // Size: 0x2e
 function handlewallrunattachnotetrack( note )
@@ -1909,7 +1910,7 @@ function handlewallrunattachnotetrack( note )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4014
 // Size: 0x2e
 function setupwallrunaimlimits()
@@ -1923,7 +1924,7 @@ function setupwallrunaimlimits()
 /#
 
     // Namespace traverse / scripts\asm\soldier\traverse
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x404a
     // Size: 0x71, Type: dev
     function drawdebugline( pos, normal, color )
@@ -1943,7 +1944,7 @@ function setupwallrunaimlimits()
     }
 
     // Namespace traverse / scripts\asm\soldier\traverse
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x40c3
     // Size: 0x3d, Type: dev
     function function_52e0db833127ec95( from, to, color, duration )
@@ -1957,7 +1958,7 @@ function setupwallrunaimlimits()
     }
 
     // Namespace traverse / scripts\asm\soldier\traverse
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4108
     // Size: 0x99, Type: dev
     function draworigin()
@@ -1980,7 +1981,7 @@ function setupwallrunaimlimits()
     }
 
     // Namespace traverse / scripts\asm\soldier\traverse
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x41a9
     // Size: 0x127, Type: dev
     function debugwallrun( statename, startnode, endpos )
@@ -1991,7 +1992,8 @@ function setupwallrunaimlimits()
         line( startnode.origin, getwallnodeposition( startnode, 0 ), color, 1, 1, 300 );
         currentpos = startnode.origin;
         
-        for (i = 0; i < startnode.wall_info.nodeoffsets.size - 1; i++) {
+        for ( i = 0; i < startnode.wall_info.nodeoffsets.size - 1 ; i++ )
+        {
             if ( i % 2 == 0 )
             {
                 color = color2;
@@ -2020,7 +2022,7 @@ function setupwallrunaimlimits()
 #/
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x42d8
 // Size: 0x429
 function playtraverseanim_ladder( asmname, statename, params )
@@ -2151,7 +2153,7 @@ function playtraverseanim_ladder( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4709
 // Size: 0x58
 function terminate_ladder( asmname, statename, params )
@@ -2168,7 +2170,7 @@ function terminate_ladder( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4769
 // Size: 0x92
 function traverse_basic( asmname, statename, params )

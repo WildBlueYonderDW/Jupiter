@@ -22,7 +22,7 @@
 #namespace br_gametype_juggernaut;
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x402
 // Size: 0x17
 function main()
@@ -32,7 +32,7 @@ function main()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x421
 // Size: 0x9f
 function init()
@@ -48,13 +48,13 @@ function init()
         setdevdvarifuninitialized( @"hash_305a549345046786", 10 );
         setdevdvarifuninitialized( @"hash_6033e70c81d4b924", 20 );
         setdevdvarifuninitialized( @"hash_53800bc3e7ab723d", 1 );
-        setdvar( @"hash_f79cd84983250eda", 0 );
-        setdvar( @"hash_f77b78837563fb9a", 1 );
+        setdvar( @"live_lobby_max_time", 0 );
+        setdvar( @"scr_live_lobby", 1 );
     #/
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c8
 // Size: 0x6b
 function brjugg_initfeatures()
@@ -73,7 +73,7 @@ function brjugg_initfeatures()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53b
 // Size: 0xcc
 function brjugg_initpostmain()
@@ -96,7 +96,7 @@ function brjugg_initpostmain()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x60f
 // Size: 0x18
 function brjugg_initdialog()
@@ -106,7 +106,7 @@ function brjugg_initdialog()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62f
 // Size: 0x3d
 function brjugg_cleanupents()
@@ -118,7 +118,7 @@ function brjugg_cleanupents()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x674
 // Size: 0x2
 function brjugg_initexternalfeatures()
@@ -127,7 +127,7 @@ function brjugg_initexternalfeatures()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67e
 // Size: 0x5b
 function brjugg_playerwelcomesplashes( data )
@@ -148,7 +148,7 @@ function brjugg_playerwelcomesplashes( data )
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e1
 // Size: 0x24
 function brjugg_ontimelimit()
@@ -162,7 +162,7 @@ function brjugg_ontimelimit()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x70d
 // Size: 0x172
 function brjugg_managedeliveries()
@@ -229,7 +229,7 @@ function brjugg_managedeliveries()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x887
 // Size: 0x20
 function brjugg_watchstartnotify()
@@ -240,7 +240,7 @@ function brjugg_watchstartnotify()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8af
 // Size: 0x4a
 function brjugg_watchplayercounttostart( playercounttostart )
@@ -261,7 +261,7 @@ function brjugg_watchplayercounttostart( playercounttostart )
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x901
 // Size: 0x33
 function brjugg_watchtimerstart()
@@ -273,7 +273,7 @@ function brjugg_watchtimerstart()
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x93c
 // Size: 0xb
 function brjugg_oncrateactivate( var_d9bc1b05d016a86f )
@@ -282,7 +282,7 @@ function brjugg_oncrateactivate( var_d9bc1b05d016a86f )
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x94f
 // Size: 0xb
 function brjugg_oncrateuse( player )
@@ -291,7 +291,7 @@ function brjugg_oncrateuse( player )
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x962
 // Size: 0x13
 function brjugg_oncratedestroy( immediate )
@@ -300,7 +300,7 @@ function brjugg_oncratedestroy( immediate )
 }
 
 // Namespace br_gametype_juggernaut / scripts\mp\gametypes\br_gametype_juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x97d
 // Size: 0x4a
 function brjugg_dropondeath( dropstruct )

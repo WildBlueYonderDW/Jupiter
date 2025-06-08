@@ -3,7 +3,7 @@
 #namespace namespace_c4551ea4eb37c1b1;
 
 // Namespace namespace_c4551ea4eb37c1b1 / namespace_2a5d09ba59ee11b2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
 function main()

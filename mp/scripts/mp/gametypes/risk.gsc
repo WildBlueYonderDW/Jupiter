@@ -70,7 +70,7 @@
 #namespace risk;
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d48
 // Size: 0xf04
 function main()
@@ -104,8 +104,8 @@ function main()
     }
     
     setdvar( @"hash_405e7e20d91344cc", 0 );
-    setdvar( @"hash_42eece3f15e35b3d", 1 );
-    setdvar( @"hash_a22f98e2c5b506ce", 30 );
+    setdvar( @"scr_allow_technicals", 1 );
+    setdvar( @"scr_runlean_max_technicals", 30 );
     setdvar( @"hash_cbc195ec2129279", 0 );
     updategametypedvars();
     level.scoreperplayer = undefined;
@@ -241,7 +241,7 @@ function main()
     level.c130alignedtolocale = getdvarfloat( @"hash_f4da32c36b5dcd26", 1 );
     level.parachutedeploydelay = getdvarfloat( @"hash_10a03cab3ebe8cfa", 3 );
     level.dropbrloot = getdvarint( @"hash_1d196605f8a290e3", 1 );
-    level.br_plunder_enabled = getdvarint( @"hash_a6a9b41b654afd1d", 1 );
+    level.br_plunder_enabled = getdvarint( @"scr_game_cash", 1 );
     level.var_1e17e3480b1d264d = getdvarint( @"hash_d18fa801b9479b9c", 1 );
     level.var_1f42dab41eff5cb2 = getdvarint( @"hash_a62824c80691fde2", 1 );
     
@@ -252,8 +252,8 @@ function main()
     
     level.spawnselectionshowenemy = getdvarint( @"hash_3f0db83ea7503667", 0 );
     level.spawnselectionshowfriendly = getdvarint( @"hash_4134532f274e5dfa", 0 );
-    level.forcetopickafob = getdvarint( @"hash_4a4c22866751f8e", 0 );
-    level.maxhqtanks = getdvarint( @"hash_9dd6b3477d4b53c6", 2 );
+    level.forcetopickafob = getdvarint( @"scr_arm_forcespawning", 0 );
+    level.maxhqtanks = getdvarint( @"scr_arm_maxhqtanks", 2 );
     level.tankrespawntime = getdvarint( @"hash_b624863894a18f21", 120 );
     level.apcrespawntime = getdvarint( @"hash_ba2474692378b203", 120 );
     level.longdialoguecooldown = getdvarint( @"hash_e01953fcf34a5d51", 1 );
@@ -284,14 +284,14 @@ function main()
     
     if ( level.useobjectives || level.userallypointvehicles || level.usesquadspawnselection )
     {
-        setdvar( @"hash_6e73595f4ce7501e", 1 );
-        setdvar( @"hash_5fc696f5bbb3ca62", 0 );
+        setdvar( @"scr_game_usespawnselection", 1 );
+        setdvar( @"scr_game_disablespawncamera", 0 );
         setdvar( @"hash_1a2c3b67392b6657", 1 );
     }
     else
     {
-        setdvar( @"hash_6e73595f4ce7501e", 0 );
-        setdvar( @"hash_5fc696f5bbb3ca62", 1 );
+        setdvar( @"scr_game_usespawnselection", 0 );
+        setdvar( @"scr_game_disablespawncamera", 1 );
         setdvar( @"hash_1a2c3b67392b6657", 1 );
     }
     
@@ -316,7 +316,7 @@ function main()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c54
 // Size: 0x16
 function initializematchrules()
@@ -326,7 +326,7 @@ function initializematchrules()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c72
 // Size: 0x22a
 function onstartgametype()
@@ -392,7 +392,7 @@ function onstartgametype()
     function_fb11675119ade7d4();
     function_5456c21de8f2bbbc();
     
-    if ( getdvarint( @"hash_880384e6dfe250ba", 0 ) == 1 )
+    if ( getdvarint( @"scr_br_armory_kiosk", 0 ) == 1 )
     {
         function_1629419647b0f862();
     }
@@ -418,7 +418,7 @@ function onstartgametype()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ea4
 // Size: 0x11d
 function updategametypedvars()
@@ -438,7 +438,7 @@ function updategametypedvars()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fc9
 // Size: 0x316
 function emergency_cleanupents()
@@ -509,7 +509,7 @@ function emergency_cleanupents()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32e7
 // Size: 0x19b
 function debug_setupmatchdata()
@@ -528,7 +528,8 @@ function debug_setupmatchdata()
         level.startingfobnames_neutral = [];
         var_1d7eae3df85707df = strtok( getdvar( @"hash_2b703a46d024bd77", "" ), "," );
         
-        for (i = 0; i < var_1d7eae3df85707df.size; i++) {
+        for ( i = 0; i < var_1d7eae3df85707df.size ; i++ )
+        {
             var_1d7eae3df85707df[ i ] = "risk_" + var_1d7eae3df85707df[ i ];
             level.startingfobnames_neutral[ level.startingfobnames_neutral.size ] = var_1d7eae3df85707df[ i ];
         }
@@ -536,7 +537,7 @@ function debug_setupmatchdata()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x348a
 // Size: 0x64
 function seticonnames()
@@ -551,7 +552,7 @@ function seticonnames()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34f6
 // Size: 0x427
 function setupwaypointicons()
@@ -594,7 +595,7 @@ function setupwaypointicons()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3925
 // Size: 0xad
 function setuphqs()
@@ -610,7 +611,7 @@ function setuphqs()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39da
 // Size: 0xe6
 function function_766a95324ab2aad3( team )
@@ -631,7 +632,7 @@ function function_766a95324ab2aad3( team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ac8
 // Size: 0x50b
 function setupobjectives()
@@ -699,7 +700,7 @@ function setupobjectives()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fdb
 // Size: 0x20d
 function function_5a1699b27399a21e()
@@ -728,11 +729,13 @@ function function_5a1699b27399a21e()
         
         if ( domflags.size )
         {
-            for (i = 1; i < domflags.size; i++) {
+            for ( i = 1; i < domflags.size ; i++ )
+            {
                 domflag = domflags[ i ];
                 flagscore = gettime() - domflag.capturetime;
                 
-                for (j = i - 1; j >= 0 && flagscore > gettime() - domflags[ j ].capturetime; j--) {
+                for ( j = i - 1; j >= 0 && flagscore > gettime() - domflags[ j ].capturetime ; j-- )
+                {
                     domflags[ j + 1 ] = domflags[ j ];
                 }
                 
@@ -757,7 +760,7 @@ function function_5a1699b27399a21e()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41f0
 // Size: 0xc3
 function updatecash()
@@ -775,7 +778,7 @@ function updatecash()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42bb
 // Size: 0x207
 function updatedomscores()
@@ -804,11 +807,13 @@ function updatedomscores()
         
         if ( domflags.size )
         {
-            for (i = 1; i < domflags.size; i++) {
+            for ( i = 1; i < domflags.size ; i++ )
+            {
                 domflag = domflags[ i ];
                 flagscore = gettime() - domflag.capturetime;
                 
-                for (j = i - 1; j >= 0 && flagscore > gettime() - domflags[ j ].capturetime; j--) {
+                for ( j = i - 1; j >= 0 && flagscore > gettime() - domflags[ j ].capturetime ; j-- )
+                {
                     domflags[ j + 1 ] = domflags[ j ];
                 }
                 
@@ -834,7 +839,7 @@ function updatedomscores()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44ca
 // Size: 0x80
 function getowneddomflags()
@@ -853,7 +858,7 @@ function getowneddomflags()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4553
 // Size: 0x15a
 function updatescores()
@@ -894,7 +899,7 @@ function updatescores()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46b5
 // Size: 0x11b
 function function_d178db205c1fb9d1( team )
@@ -925,7 +930,7 @@ function function_d178db205c1fb9d1( team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47d8
 // Size: 0x6b
 function function_3667b4285d355dd9( team )
@@ -940,7 +945,7 @@ function function_3667b4285d355dd9( team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x484b
 // Size: 0x67
 function function_e23f5e44b6c9e25c( team )
@@ -953,7 +958,7 @@ function function_e23f5e44b6c9e25c( team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48ba
 // Size: 0x17d
 function function_4ce0a109ec9345ab()
@@ -984,7 +989,7 @@ function function_4ce0a109ec9345ab()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a3f
 // Size: 0x6e
 function function_d70bdcd0d50615d3( ownerteam )
@@ -1005,7 +1010,7 @@ function function_d70bdcd0d50615d3( ownerteam )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ab5
 // Size: 0x6e5
 function runobjectives( numobjs )
@@ -1125,7 +1130,7 @@ function runobjectives( numobjs )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51a2
 // Size: 0x7b
 function allowobjectiveuseaftermatchstart()
@@ -1139,7 +1144,7 @@ function allowobjectiveuseaftermatchstart()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5225
 // Size: 0x2e8
 function objective_manageobjectivesintrovisibility()
@@ -1198,7 +1203,7 @@ function objective_manageobjectivesintrovisibility()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5515
 // Size: 0x17f
 function sethqmarkerobjective()
@@ -1223,7 +1228,7 @@ function sethqmarkerobjective()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x569c
 // Size: 0x169
 function function_111c5f085a86c2f0()
@@ -1257,7 +1262,7 @@ function function_111c5f085a86c2f0()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x580d
 // Size: 0x169
 function function_aba39caf969cd3f7()
@@ -1291,7 +1296,7 @@ function function_aba39caf969cd3f7()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x597e
 // Size: 0x237
 function updatefobspawnselection()
@@ -1334,7 +1339,7 @@ function updatefobspawnselection()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bbd
 // Size: 0x28
 function objective_oncontested()
@@ -1349,7 +1354,7 @@ function objective_oncontested()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5bed
 // Size: 0x31
 function objective_onuncontested( lastclaimteam )
@@ -1364,7 +1369,7 @@ function objective_onuncontested( lastclaimteam )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c26
 // Size: 0x1a
 function objective_onusebegin( player )
@@ -1374,7 +1379,7 @@ function objective_onusebegin( player )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5c48
 // Size: 0x2c
 function objective_onuseend( team, player, success )
@@ -1384,7 +1389,7 @@ function objective_onuseend( team, player, success )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5c7c
 // Size: 0x3b0
 function objective_onuse( claim_player, team )
@@ -1472,7 +1477,8 @@ function objective_onuse( claim_player, team )
         
         if ( numagents > 0 )
         {
-            for (i = 0; i < numagents; i++) {
+            for ( i = 0; i < numagents ; i++ )
+            {
                 aitype = function_d5bc07eabf352abb();
                 agent = ai_mp_requestspawnagent( aitype, self.trigger.origin, ( 0, 0, 0 ), "medium", "everybody", "captureAgents", groupname, team );
                 
@@ -1489,7 +1495,8 @@ function objective_onuse( claim_player, team )
         
         if ( var_40e875a042b82875 > 0 )
         {
-            for (i = 0; i < var_40e875a042b82875; i++) {
+            for ( i = 0; i < var_40e875a042b82875 ; i++ )
+            {
                 agent = ai_mp_requestspawnagent( "enemy_mp_jugg_base", self.trigger.origin, ( 0, 0, 0 ), "absolute", "everybody", "jugg", groupname, team );
                 
                 if ( isdefined( agent ) )
@@ -1504,7 +1511,7 @@ function objective_onuse( claim_player, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6034
 // Size: 0x23
 function objective_onuseupdate( team, progress, change, capplayer )
@@ -1513,7 +1520,7 @@ function objective_onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x605f
 // Size: 0x1a
 function objective_onpinnedstate( player )
@@ -1523,7 +1530,7 @@ function objective_onpinnedstate( player )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6081
 // Size: 0x1a
 function objective_onunpinnedstate( player )
@@ -1533,7 +1540,7 @@ function objective_onunpinnedstate( player )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x60a3
 // Size: 0x2
 function dommainloop()
@@ -1542,7 +1549,7 @@ function dommainloop()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x60ad
 // Size: 0xc9
 function runobjflag( objective, startingteam )
@@ -1571,7 +1578,7 @@ function runobjflag( objective, startingteam )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x617f
 // Size: 0x24
 function nuke_mercyending_init()
@@ -1585,7 +1592,7 @@ function nuke_mercyending_init()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61ab
 // Size: 0xa7
 function nuke_mercyending_think()
@@ -1611,7 +1618,7 @@ function nuke_mercyending_think()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x625a
 // Size: 0x39b
 function nuke_startmercycountdown( team )
@@ -1646,7 +1653,7 @@ function nuke_startmercycountdown( team )
         
         if ( gettime() > endtime )
         {
-            if ( getdvarint( @"hash_716a70ad116d6c62", 0 ) == 1 )
+            if ( getdvarint( @"scr_risk_combine_team_on_defcon", 0 ) == 1 )
             {
                 level.var_d37d95ac1717903c = &function_d37d95ac1717903c;
                 var_e6a7bb0501f0ebd4 = level thread function_1347e3ab3c68b20e( team );
@@ -1717,7 +1724,7 @@ function nuke_startmercycountdown( team )
         return;
     }
     
-    if ( getdvarint( @"hash_716a70ad116d6c62", 0 ) == 1 )
+    if ( getdvarint( @"scr_risk_combine_team_on_defcon", 0 ) == 1 )
     {
         if ( getdvarint( @"hash_48c89c3e6b934d79", 1 ) )
         {
@@ -1731,7 +1738,7 @@ function nuke_startmercycountdown( team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65fd
 // Size: 0x1be
 function nuke_triggermercywin( team )
@@ -1773,7 +1780,7 @@ function nuke_triggermercywin( team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67c3
 // Size: 0x88
 function nukeselectgimmewatcher( killer )
@@ -1792,7 +1799,7 @@ function nukeselectgimmewatcher( killer )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6853
 // Size: 0x318
 function initspawns( var_4c3936c2c179fab3 )
@@ -1886,7 +1893,7 @@ function initspawns( var_4c3936c2c179fab3 )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b73
 // Size: 0xae
 function getspawnpoint()
@@ -1912,7 +1919,7 @@ function getspawnpoint()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c2a
 // Size: 0x92
 function onspawnplayer( revivespawn )
@@ -1935,7 +1942,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6cc4
 // Size: 0x31
 function updatematchstatushintonspawn()
@@ -1952,7 +1959,7 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x6cfd
 // Size: 0x164
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1991,7 +1998,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e69
 // Size: 0x8c
 function onplayerconnect( player )
@@ -2020,7 +2027,7 @@ function onplayerconnect( player )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6efd
 // Size: 0x13
 function onjoinedteam( player )
@@ -2029,7 +2036,7 @@ function onjoinedteam( player )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f18
 // Size: 0xb
 function onplayerdisconnect( player )
@@ -2038,7 +2045,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f2b
 // Size: 0x9e
 function updategamemodespawncamera()
@@ -2057,7 +2064,7 @@ function updategamemodespawncamera()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6fd1
 // Size: 0x119
 function debugdrawtocameras()
@@ -2083,7 +2090,7 @@ function debugdrawtocameras()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x70f2
 // Size: 0x1b
 function onplayerspawned( player )
@@ -2095,7 +2102,7 @@ function onplayerspawned( player )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7115
 // Size: 0x79
 function getownerteamplayer( ownerteam )
@@ -2115,7 +2122,7 @@ function getownerteamplayer( ownerteam )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7197
 // Size: 0xd
 function getrespawndelay()
@@ -2125,7 +2132,7 @@ function getrespawndelay()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x71ad
 // Size: 0x85
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -2144,7 +2151,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x723a
 // Size: 0x8a
 function function_190616cdbc044966( attacker, var_917d7051fe3efec8, suicideplayer )
@@ -2187,7 +2194,7 @@ function function_190616cdbc044966( attacker, var_917d7051fe3efec8, suicideplaye
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x72cc
 // Size: 0x15c
 function ontimelimit()
@@ -2239,7 +2246,7 @@ function ontimelimit()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7430
 // Size: 0x13d
 function initspecatatorcameras()
@@ -2269,7 +2276,7 @@ function initspecatatorcameras()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7575
 // Size: 0x46
 function setteammapposition( var_ca2c833762e5466c, team, posinfo )
@@ -2283,7 +2290,7 @@ function setteammapposition( var_ca2c833762e5466c, team, posinfo )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x75c3
 // Size: 0x15
 function applythermal()
@@ -2293,7 +2300,7 @@ function applythermal()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x75e0
 // Size: 0x9
 function removethermal()
@@ -2302,7 +2309,7 @@ function removethermal()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x75f1
 // Size: 0x12f
 function startspectatorview()
@@ -2342,7 +2349,7 @@ function startspectatorview()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7728
 // Size: 0x17
 function dohalfwayflash()
@@ -2353,7 +2360,7 @@ function dohalfwayflash()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7747
 // Size: 0x1f
 function endspectatorview()
@@ -2368,7 +2375,7 @@ function endspectatorview()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x776e
 // Size: 0x102
 function movecameratomappos( player, var_9813182985677b23, finalangles )
@@ -2392,7 +2399,7 @@ function movecameratomappos( player, var_9813182985677b23, finalangles )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7878
 // Size: 0xed
 function runslamzoomonspawn()
@@ -2422,7 +2429,7 @@ function runslamzoomonspawn()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x796d
 // Size: 0xd8
 function playslamzoomflash()
@@ -2445,7 +2452,7 @@ function playslamzoomflash()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7a4d
 // Size: 0x104
 function arm_playstatusdialog( soundname, team )
@@ -2475,7 +2482,7 @@ function arm_playstatusdialog( soundname, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b59
 // Size: 0x2f
 function arm_playstatusdialogonplayer( soundname )
@@ -2486,7 +2493,7 @@ function arm_playstatusdialogonplayer( soundname )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7b90
 // Size: 0x99
 function arm_leaderdialogonplayer_internal( soundalias, dialog )
@@ -2511,7 +2518,7 @@ function arm_leaderdialogonplayer_internal( soundalias, dialog )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c31
 // Size: 0x51b
 function managec130spawns()
@@ -2607,7 +2614,7 @@ function managec130spawns()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8154
 // Size: 0x112
 function createc130( team, startpt )
@@ -2628,7 +2635,7 @@ function createc130( team, startpt )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x826f
 // Size: 0x1e4
 function handlec130motion( startpt, endpt, time, team )
@@ -2669,7 +2676,7 @@ function handlec130motion( startpt, endpt, time, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x845b
 // Size: 0x108
 function gatherc130playerstospawn()
@@ -2696,7 +2703,7 @@ function gatherc130playerstospawn()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x856b
 // Size: 0x14
 function removefromspawnselectionaftertime( time )
@@ -2706,7 +2713,7 @@ function removefromspawnselectionaftertime( time )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8587
 // Size: 0x2c
 function removefromspawnselection()
@@ -2716,7 +2723,7 @@ function removefromspawnselection()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x85bb
 // Size: 0x103
 function spawnplayertoc130()
@@ -2763,7 +2770,7 @@ function spawnplayertoc130()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x86c6
 // Size: 0x6a
 function jumplistener( c130, var_1b89121ef11344d5 )
@@ -2784,7 +2791,7 @@ function jumplistener( c130, var_1b89121ef11344d5 )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8738
 // Size: 0x93
 function listenkick( c130, forcechute )
@@ -2811,7 +2818,7 @@ function listenkick( c130, forcechute )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x87d3
 // Size: 0xfb
 function listenjump( c130, var_1b89121ef11344d5 )
@@ -2856,7 +2863,7 @@ function listenjump( c130, var_1b89121ef11344d5 )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x88d6
 // Size: 0x1bc
 function parachute( c130, var_1b89121ef11344d5 )
@@ -2904,7 +2911,7 @@ function parachute( c130, var_1b89121ef11344d5 )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a9a
 // Size: 0x165
 function debug_randomflightpathstest()
@@ -2925,7 +2932,7 @@ function debug_randomflightpathstest()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c07
 // Size: 0x490
 function c130_pickrandomflightpath()
@@ -2983,7 +2990,7 @@ function c130_pickrandomflightpath()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x909f
 // Size: 0x93
 function makec130pathparamsstruct( centerpt, angle )
@@ -3001,7 +3008,7 @@ function makec130pathparamsstruct( centerpt, angle )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x913b
 // Size: 0x669
 function c130_fightpathmove()
@@ -3110,7 +3117,7 @@ function c130_fightpathmove()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x97ac
 // Size: 0x83, Type: bool
 function arenextpathsinsafebounds( offset )
@@ -3119,7 +3126,7 @@ function arenextpathsinsafebounds( offset )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9838
 // Size: 0x61, Type: bool
 function ispointinsafebounds( pt )
@@ -3128,7 +3135,7 @@ function ispointinsafebounds( pt )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x98a2
 // Size: 0x15, Type: bool
 function function_f69e35a602975879( vehicle, player )
@@ -3137,7 +3144,7 @@ function function_f69e35a602975879( vehicle, player )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x98c0
 // Size: 0x95
 function registervehicletype( refname, spawnvehiclecallback )
@@ -3158,7 +3165,7 @@ function registervehicletype( refname, spawnvehiclecallback )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x995d
 // Size: 0x322
 function init_groundwarvehicles()
@@ -3201,13 +3208,15 @@ function init_groundwarvehicles()
     
     if ( false )
     {
-        for (i = 0; i < numtospawn; i++) {
+        for ( i = 0; i < numtospawn ; i++ )
+        {
             loc = level.vehiclespawnlocs[ i ];
             thread drawline( loc.origin + ( 0, 0, 1500 ), loc.origin + ( 0, 0, 2500 ), 1000, ( 0, 1, 0 ) );
         }
     }
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         loc = level.vehiclespawnlocs[ i ];
         
         if ( isdefined( loc ) )
@@ -3225,7 +3234,7 @@ function init_groundwarvehicles()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9c87
 // Size: 0x8d
 function vehiclespawn_hqtanks( var_9d4b9fcd75d1a736 )
@@ -3239,7 +3248,7 @@ function vehiclespawn_hqtanks( var_9d4b9fcd75d1a736 )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9d1c
 // Size: 0x59
 function vehiclespawn_littlebird( loc, faildata )
@@ -3254,7 +3263,7 @@ function vehiclespawn_littlebird( loc, faildata )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9d7e
 // Size: 0x59
 function vehiclespawn_atv( loc, faildata )
@@ -3269,7 +3278,7 @@ function vehiclespawn_atv( loc, faildata )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9de0
 // Size: 0x59
 function vehiclespawn_tacrover( loc, faildata )
@@ -3284,7 +3293,7 @@ function vehiclespawn_tacrover( loc, faildata )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e42
 // Size: 0x176
 function vehiclespawn_tank( loc, faildata )
@@ -3333,7 +3342,7 @@ function vehiclespawn_tank( loc, faildata )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9fc1
 // Size: 0x59
 function function_91397b675b427da6( loc, faildata )
@@ -3348,7 +3357,7 @@ function function_91397b675b427da6( loc, faildata )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa023
 // Size: 0x59
 function function_52e04331732241d7( loc, faildata )
@@ -3363,7 +3372,7 @@ function function_52e04331732241d7( loc, faildata )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa085
 // Size: 0x1ab
 function vehicle_createspawnselectiontankmarker( vehicle, team )
@@ -3394,7 +3403,7 @@ function vehicle_createspawnselectiontankmarker( vehicle, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa238
 // Size: 0x6f
 function vehicle_watchmarkedtankdeath( vehicle )
@@ -3407,7 +3416,7 @@ function vehicle_watchmarkedtankdeath( vehicle )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2af
 // Size: 0x162
 function vehicle_showteamtanks()
@@ -3437,7 +3446,7 @@ function vehicle_showteamtanks()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa419
 // Size: 0x6a
 function vehiclespawn_getspawndata( loc )
@@ -3451,7 +3460,7 @@ function vehiclespawn_getspawndata( loc )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa48c
 // Size: 0xae
 function droptank_playincomingdialog( spawndata )
@@ -3479,7 +3488,7 @@ function droptank_playincomingdialog( spawndata )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa542
 // Size: 0x369
 function init_rallyvehicles()
@@ -3587,7 +3596,7 @@ function init_rallyvehicles()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa8b3
 // Size: 0x13
 function watchvehicleforrallypointactivation( vehicle )
@@ -3596,7 +3605,7 @@ function watchvehicleforrallypointactivation( vehicle )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa8ce
 // Size: 0x7f
 function getrallyvehiclespawndata( loc, team )
@@ -3611,7 +3620,7 @@ function getrallyvehiclespawndata( loc, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa956
 // Size: 0xc7
 function arm_initoutofbounds()
@@ -3632,12 +3641,12 @@ function arm_initoutofbounds()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaa25
 // Size: 0x186
 function function_2c3c204d81feb239()
 {
-    level.var_6af5ceb6eec10fea = getdvarint( @"hash_ecd2dcc19fc4d16e", 0 );
+    level.var_6af5ceb6eec10fea = getdvarint( @"scr_risk_agent_debug_output", 0 );
     
     if ( getdvarint( @"hash_eb48bcb91d80ecee", 0 ) == 1 )
     {
@@ -3697,7 +3706,7 @@ function function_2c3c204d81feb239()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xabb3
 // Size: 0x170
 function function_e417e6ca41953906()
@@ -3733,13 +3742,14 @@ function function_e417e6ca41953906()
     var_6c95bb29db70af0c = possiblelocations.size * var_ccff9574f6a53859 / 100;
     objkeys = array_randomize( getarraykeys( possiblelocations ) );
     
-    for (i = 0; i < var_6c95bb29db70af0c; i++) {
+    for ( i = 0; i < var_6c95bb29db70af0c ; i++ )
+    {
         function_4c69bcdd9f13c968( var_b60a2ad1b8eb2369, objkeys[ i ], "team_six", 1 );
     }
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xad2b
 // Size: 0x2c1
 function function_4c69bcdd9f13c968( numagents, objectivename, team, var_fd9831032cddaa89 )
@@ -3756,7 +3766,8 @@ function function_4c69bcdd9f13c968( numagents, objectivename, team, var_fd983103
     
     agents = [];
     
-    for (i = 0; i < numagents; i++) {
+    for ( i = 0; i < numagents ; i++ )
+    {
         loc = random( var_fd5ea9cb37c309d3 );
         agent = undefined;
         
@@ -3808,7 +3819,7 @@ function function_4c69bcdd9f13c968( numagents, objectivename, team, var_fd983103
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaff4
 // Size: 0x71
 function function_e0ae27a2065777ac( objectivekey, numagents, team )
@@ -3824,7 +3835,7 @@ function function_e0ae27a2065777ac( objectivekey, numagents, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb06e
 // Size: 0x75
 function function_eb051cd1ea2a236e( objectivekey, numagents, team )
@@ -3840,7 +3851,7 @@ function function_eb051cd1ea2a236e( objectivekey, numagents, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb0ec
 // Size: 0x80
 function function_87b809f69028ff14( desired_origin, var_93390a6953905fef, team )
@@ -3861,7 +3872,7 @@ function function_87b809f69028ff14( desired_origin, var_93390a6953905fef, team )
 /#
 
     // Namespace risk / scripts\mp\gametypes\risk
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xb175
     // Size: 0x19, Type: dev
     function debugprint( text )
@@ -3875,7 +3886,7 @@ function function_87b809f69028ff14( desired_origin, var_93390a6953905fef, team )
 #/
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb196
 // Size: 0x9a
 function isobjectivecontested( gameobject )
@@ -3899,7 +3910,7 @@ function isobjectivecontested( gameobject )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb238
 // Size: 0x76
 function calculateobjectivesheld( team )
@@ -3918,7 +3929,7 @@ function calculateobjectivesheld( team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0xb2b7
 // Size: 0x1b7
 function createhintobject( org, type, icon, hintstring, priority, duration, onobstruction, hintdist, hintfov, usedist, usefov, useent )
@@ -4033,7 +4044,7 @@ function createhintobject( org, type, icon, hintstring, priority, duration, onob
 /#
 
     // Namespace risk / scripts\mp\gametypes\risk
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xb476
     // Size: 0x409, Type: dev
     function function_9c513c5e546a4f52()
@@ -4107,7 +4118,7 @@ function createhintobject( org, type, icon, hintstring, priority, duration, onob
     }
 
     // Namespace risk / scripts\mp\gametypes\risk
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xb887
     // Size: 0x4ca, Type: dev
     function function_e3a2a0c2e544728e( var_a4ab3e1ca5d220c4 )
@@ -4179,7 +4190,7 @@ function createhintobject( org, type, icon, hintstring, priority, duration, onob
 #/
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbd59
 // Size: 0x981
 function getmissedinfilcamerapositions( team )
@@ -4373,7 +4384,7 @@ function getmissedinfilcamerapositions( team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc6e3
 // Size: 0x20
 function calculatecameraoffset( team, objectiveorigin )
@@ -4382,7 +4393,7 @@ function calculatecameraoffset( team, objectiveorigin )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc70c
 // Size: 0x2a, Type: bool
 function spawnprotectionexception()
@@ -4396,7 +4407,7 @@ function spawnprotectionexception()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc73f
 // Size: 0x26e
 function function_b88ec41808ee3630()
@@ -4462,7 +4473,7 @@ function function_b88ec41808ee3630()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc9b5
 // Size: 0x1a1
 function createdefaultcameras()
@@ -4495,7 +4506,7 @@ function createdefaultcameras()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb5e
 // Size: 0x290
 function setupspawnlocations()
@@ -4548,7 +4559,7 @@ function setupspawnlocations()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xcdf6
 // Size: 0x1dd
 function setupspawnlocation( ref, team, testorigin, spawnobj )
@@ -4597,7 +4608,7 @@ function setupspawnlocation( ref, team, testorigin, spawnobj )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcfdb
 // Size: 0x1b4, Type: bool
 function function_dc3a172bf923d9b3()
@@ -4649,7 +4660,7 @@ function function_dc3a172bf923d9b3()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd198
 // Size: 0x166
 function function_b7262fc0da03a04f()
@@ -4681,7 +4692,7 @@ function function_b7262fc0da03a04f()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd306
 // Size: 0x25
 function function_aa0d1f90dcc5d366()
@@ -4691,17 +4702,17 @@ function function_aa0d1f90dcc5d366()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd333
 // Size: 0x278
 function function_fb11675119ade7d4()
 {
-    if ( getdvarint( @"hash_8a1945c94d5092c2" ) == 1 )
+    if ( getdvarint( @"scr_game_allow_loot" ) == 1 )
     {
         return;
     }
     
-    level.brloottablename = getdvar( @"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv" );
+    level.brloottablename = getdvar( @"loot_table_name", "mp/loot/br/default/loot_item_defs.csv" );
     
     if ( !isdefined( level.br_pickups ) )
     {
@@ -4740,12 +4751,12 @@ function function_fb11675119ade7d4()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd5b3
 // Size: 0x1e5
 function function_5456c21de8f2bbbc()
 {
-    if ( getdvarint( @"hash_8a1945c94d5092c2" ) == 1 )
+    if ( getdvarint( @"scr_game_allow_loot" ) == 1 )
     {
         return;
     }
@@ -4776,7 +4787,7 @@ function function_5456c21de8f2bbbc()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd7a0
 // Size: 0x9b
 function function_d23c7c1add9fb181()
@@ -4799,7 +4810,7 @@ function function_d23c7c1add9fb181()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd844
 // Size: 0x2aa
 function function_1629419647b0f862()
@@ -4845,7 +4856,7 @@ function function_1629419647b0f862()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdaf6
 // Size: 0x5a
 function function_6beff7b631ab7e18( instance, player )
@@ -4859,7 +4870,7 @@ function function_6beff7b631ab7e18( instance, player )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdb58
 // Size: 0xac
 function function_e29957adfbe3c040( objectivekey )
@@ -4895,7 +4906,7 @@ function function_e29957adfbe3c040( objectivekey )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc0c
 // Size: 0xbc
 function function_c800466f69dfc582()
@@ -4917,7 +4928,7 @@ function function_c800466f69dfc582()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdcd0
 // Size: 0x132
 function function_6ed651811c936a22()
@@ -4960,7 +4971,7 @@ function function_6ed651811c936a22()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xde0a
 // Size: 0xc4
 function function_e8a6e840ef663c81( key, team )
@@ -4993,7 +5004,7 @@ function function_e8a6e840ef663c81( key, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xded6
 // Size: 0x9f
 function function_8d03978a31faba3a( key, team )
@@ -5017,7 +5028,7 @@ function function_8d03978a31faba3a( key, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdf7d
 // Size: 0x68
 function function_4de8052758f986f3( player, ref )
@@ -5038,7 +5049,7 @@ function function_4de8052758f986f3( player, ref )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdfee
 // Size: 0x66, Type: bool
 function function_3ce1055115edcbbb( player, ref )
@@ -5060,7 +5071,7 @@ function function_3ce1055115edcbbb( player, ref )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe05d
 // Size: 0x185
 function applyupgrade( objectivekey, ref )
@@ -5100,7 +5111,7 @@ function applyupgrade( objectivekey, ref )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe1ea
 // Size: 0x12c
 function removeupgrade( objectivekey, ref )
@@ -5136,7 +5147,7 @@ function removeupgrade( objectivekey, ref )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe31e
 // Size: 0x70
 function function_666a2979def5d705( objectivekey )
@@ -5153,7 +5164,7 @@ function function_666a2979def5d705( objectivekey )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe396
 // Size: 0xb0
 function function_d05de3a316eda41f( key, team )
@@ -5178,7 +5189,7 @@ function function_d05de3a316eda41f( key, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe44e
 // Size: 0xb0
 function function_a1c82cb0172d09a6( key, team )
@@ -5203,7 +5214,7 @@ function function_a1c82cb0172d09a6( key, team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe506
 // Size: 0x91
 function function_c929fb023d29de5e( team )
@@ -5230,7 +5241,7 @@ function function_c929fb023d29de5e( team )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe59f
 // Size: 0x18
 function disableuavping()
@@ -5244,7 +5255,7 @@ function disableuavping()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe5bf
 // Size: 0x146
 function function_efbc646224fda4fa()
@@ -5290,7 +5301,7 @@ function function_efbc646224fda4fa()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe70d
 // Size: 0x79
 function function_1347e3ab3c68b20e( var_5932bbef2fa89f92 )
@@ -5306,7 +5317,7 @@ function function_1347e3ab3c68b20e( var_5932bbef2fa89f92 )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe78f
 // Size: 0xe3
 function function_1416c66b41edf9ee( var_5932bbef2fa89f92 )
@@ -5358,7 +5369,7 @@ function function_1416c66b41edf9ee( var_5932bbef2fa89f92 )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe87b
 // Size: 0x91
 function function_f525754162a91372( flagsetownerteam, var_e6a7bb0501f0ebd4 )
@@ -5378,7 +5389,7 @@ function function_f525754162a91372( flagsetownerteam, var_e6a7bb0501f0ebd4 )
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe914
 // Size: 0x130
 function function_2a8adcc9b74f4838()
@@ -5430,7 +5441,7 @@ function function_2a8adcc9b74f4838()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea4c
 // Size: 0x12d
 function function_d37d95ac1717903c()
@@ -5479,7 +5490,7 @@ function function_d37d95ac1717903c()
 }
 
 // Namespace risk / scripts\mp\gametypes\risk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xeb81
 // Size: 0x98
 function function_f6857ca2e18431e9( var_3168c8300ef54732, var_e6a7bb0501f0ebd4 )

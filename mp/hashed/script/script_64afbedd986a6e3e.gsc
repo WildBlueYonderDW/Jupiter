@@ -7,8 +7,8 @@
 #namespace zombie_music;
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x164
+// Params 0
+// Checksum 0x0, Offset: 0x165
 // Size: 0x2b
 function function_4b77a1615a8dd64a()
 {
@@ -19,8 +19,8 @@ function function_4b77a1615a8dd64a()
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x197
+// Params 1
+// Checksum 0x0, Offset: 0x198
 // Size: 0x12
 function on_playerconnect( sparams )
 {
@@ -28,8 +28,8 @@ function on_playerconnect( sparams )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b1
+// Params 0
+// Checksum 0x0, Offset: 0x1b2
 // Size: 0x98
 function function_5fd4ac422c2433ab()
 {
@@ -46,8 +46,8 @@ function function_5fd4ac422c2433ab()
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x251
+// Params 1
+// Checksum 0x0, Offset: 0x252
 // Size: 0x61
 function function_8888f70dbecaeda1( var_d7c75c93c4ca506 )
 {
@@ -58,8 +58,8 @@ function function_8888f70dbecaeda1( var_d7c75c93c4ca506 )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ba
+// Params 1
+// Checksum 0x0, Offset: 0x2bb
 // Size: 0x109
 function function_8ae818ed183a1753( var_d7c75c93c4ca506 )
 {
@@ -90,8 +90,8 @@ function function_8ae818ed183a1753( var_d7c75c93c4ca506 )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cb
+// Params 2
+// Checksum 0x0, Offset: 0x3cc
 // Size: 0x168, Type: bool
 function function_17f2893c6d199180( player, var_d7c75c93c4ca506 )
 {
@@ -146,8 +146,8 @@ function function_17f2893c6d199180( player, var_d7c75c93c4ca506 )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x53c
+// Params 1
+// Checksum 0x0, Offset: 0x53d
 // Size: 0x48
 function function_b88aec4b0b3b3614( var_e13d86eabf5ff75d )
 {
@@ -165,8 +165,8 @@ function function_b88aec4b0b3b3614( var_e13d86eabf5ff75d )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x58c
+// Params 1
+// Checksum 0x0, Offset: 0x58d
 // Size: 0x61
 function function_9e6da63353ea9512( var_d7c75c93c4ca506 )
 {
@@ -177,8 +177,8 @@ function function_9e6da63353ea9512( var_d7c75c93c4ca506 )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f5
+// Params 1
+// Checksum 0x0, Offset: 0x5f6
 // Size: 0x16b
 function function_9450c133a155c196( var_d7c75c93c4ca506 )
 {
@@ -222,8 +222,8 @@ function function_9450c133a155c196( var_d7c75c93c4ca506 )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x768
+// Params 1
+// Checksum 0x0, Offset: 0x769
 // Size: 0x4b
 function function_30429ea66e99f476( str_statename )
 {
@@ -239,8 +239,8 @@ function function_30429ea66e99f476( str_statename )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bc
+// Params 0
+// Checksum 0x0, Offset: 0x7bd
 // Size: 0x58
 function function_43956cb0410eec0f()
 {
@@ -251,8 +251,8 @@ function function_43956cb0410eec0f()
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x81c
+// Params 1
+// Checksum 0x0, Offset: 0x81d
 // Size: 0x39
 function function_f95cf184582d2009( player )
 {
@@ -270,8 +270,8 @@ function function_f95cf184582d2009( player )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x85d
+// Params 0
+// Checksum 0x0, Offset: 0x85e
 // Size: 0x5f
 function function_94636ebe77d7581a()
 {
@@ -284,8 +284,8 @@ function function_94636ebe77d7581a()
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c4
+// Params 1
+// Checksum 0x0, Offset: 0x8c5
 // Size: 0x38
 function function_665863ce16735aae( player )
 {
@@ -303,8 +303,8 @@ function function_665863ce16735aae( player )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x904
+// Params 1
+// Checksum 0x0, Offset: 0x905
 // Size: 0x38
 function function_cda1c2ac4fa2e2da( player )
 {
@@ -322,8 +322,8 @@ function function_cda1c2ac4fa2e2da( player )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x945
+// Params 1
+// Checksum 0x0, Offset: 0x946
 // Size: 0x2e
 function function_d7f0cecf71088d68( var_60e81aa6c9b5d1cf )
 {
@@ -332,8 +332,8 @@ function function_d7f0cecf71088d68( var_60e81aa6c9b5d1cf )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x97b
+// Params 0
+// Checksum 0x0, Offset: 0x97c
 // Size: 0x1f
 function function_fba03eb610498694()
 {
@@ -342,8 +342,8 @@ function function_fba03eb610498694()
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a2
+// Params 4
+// Checksum 0x0, Offset: 0x9a3
 // Size: 0x117
 function function_956cfd575691a5d9( var_6e450c4f40b511ee, var_7a511a9369ed49e5, n_priority, var_aaa744342068977a )
 {
@@ -387,8 +387,8 @@ function function_956cfd575691a5d9( var_6e450c4f40b511ee, var_7a511a9369ed49e5, 
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac1
+// Params 1
+// Checksum 0x0, Offset: 0xac2
 // Size: 0x60
 function function_9326597e1696db30( var_60e81aa6c9b5d1cf )
 {
@@ -399,8 +399,8 @@ function function_9326597e1696db30( var_60e81aa6c9b5d1cf )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb29
+// Params 1
+// Checksum 0x0, Offset: 0xb2a
 // Size: 0x20
 function function_bf7177d54915e7d4( var_60e81aa6c9b5d1cf )
 {
@@ -408,8 +408,8 @@ function function_bf7177d54915e7d4( var_60e81aa6c9b5d1cf )
 }
 
 // Namespace zombie_music / namespace_72b76910190cf144
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb51
+// Params 1
+// Checksum 0x0, Offset: 0xb52
 // Size: 0x4e
 function function_8b1835eeb80e8efc( player )
 {

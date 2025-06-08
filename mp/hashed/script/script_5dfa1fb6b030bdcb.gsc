@@ -4,7 +4,7 @@
 #namespace namespace_cf4ab64c2f83d096;
 
 // Namespace namespace_cf4ab64c2f83d096 / namespace_2e77b62bcb3c8d4b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17c
 // Size: 0x2c
 function function_8d0bcd24e525ca55()
@@ -24,7 +24,7 @@ function private function_bceadb844cbe69ca()
 }
 
 // Namespace namespace_cf4ab64c2f83d096 / namespace_2e77b62bcb3c8d4b
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1cb
 // Size: 0xa3
 function function_e5524fb8509827bf( objectiveposition, labeltext, icon, zoffset, owner, showwaypoint )
@@ -44,7 +44,7 @@ function function_e5524fb8509827bf( objectiveposition, labeltext, icon, zoffset,
 }
 
 // Namespace namespace_cf4ab64c2f83d096 / namespace_2e77b62bcb3c8d4b
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x277
 // Size: 0xc7
 function function_70e0de6281199e7( objectivetarget, labeltext, icon, zoffset, owner, showwaypoint )
@@ -123,7 +123,7 @@ function private function_f36e91aa37d197c3( objectiveid, waypointdata )
 }
 
 // Namespace namespace_cf4ab64c2f83d096 / namespace_2e77b62bcb3c8d4b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4cd
 // Size: 0x1d
 function function_b30874d13004d4c5( objectivetarget )
@@ -132,7 +132,7 @@ function function_b30874d13004d4c5( objectivetarget )
 }
 
 // Namespace namespace_cf4ab64c2f83d096 / namespace_2e77b62bcb3c8d4b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f2
 // Size: 0x25
 function function_4d03b9ef456d0972( objectiveid )

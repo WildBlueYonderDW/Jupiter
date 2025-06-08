@@ -41,7 +41,7 @@ function autoexec init()
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x688
 // Size: 0x8c
 function chopper_register()
@@ -58,7 +58,7 @@ function chopper_register()
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71c
 // Size: 0x364
 function chopper_init( bossdetails )
@@ -108,7 +108,7 @@ function chopper_init( bossdetails )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa88
 // Size: 0x4b
 function function_369a1dfb674d9262( locoverride )
@@ -131,7 +131,7 @@ function function_369a1dfb674d9262( locoverride )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xadb
 // Size: 0x1cf
 function function_289402be40270fb7( locoverride )
@@ -179,7 +179,7 @@ function function_289402be40270fb7( locoverride )
 /#
 
     // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xcb2
     // Size: 0xe0, Type: dev
     function function_b12b6f997c04f0d0()
@@ -213,7 +213,7 @@ function function_289402be40270fb7( locoverride )
 #/
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd9a
 // Size: 0x57
 function function_c2a173266d940d79( chopper )
@@ -234,7 +234,7 @@ function function_c2a173266d940d79( chopper )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdfa
 // Size: 0x9d
 function chopper_getcurrenttargetplayer( chopper )
@@ -248,7 +248,7 @@ function chopper_getcurrenttargetplayer( chopper )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xea0
 // Size: 0x48
 function function_6c1462b3f7b01684( chopper )
@@ -264,7 +264,7 @@ function function_6c1462b3f7b01684( chopper )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef1
 // Size: 0x1a7
 function chopper_spawn()
@@ -299,7 +299,7 @@ function chopper_spawn()
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10a0
 // Size: 0x21b
 function function_978010e5ff5d52bc( pos )
@@ -342,7 +342,7 @@ function function_978010e5ff5d52bc( pos )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c4
 // Size: 0x25
 function chopper_ondeath()
@@ -353,7 +353,7 @@ function chopper_ondeath()
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12f1
 // Size: 0x7c, Type: bool
 function function_80eb9ba6d517fefe( player )
@@ -367,7 +367,7 @@ function function_80eb9ba6d517fefe( player )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1376
 // Size: 0x1f2, Type: bool
 function chopper_postmodifydamage( data )
@@ -427,7 +427,7 @@ function chopper_postmodifydamage( data )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1571
 // Size: 0x95, Type: bool
 function chopper_handledeathdamage( data )
@@ -449,7 +449,7 @@ function chopper_handledeathdamage( data )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x160f
 // Size: 0xf8
 function function_aa4375c53e07b7ec( team )
@@ -483,7 +483,7 @@ function function_aa4375c53e07b7ec( team )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x170f
 // Size: 0x17e
 function function_7d5210c8e3520f4c()
@@ -536,7 +536,7 @@ function function_7d5210c8e3520f4c()
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1895
 // Size: 0x15
 function function_4b35485c0af17453()
@@ -546,7 +546,7 @@ function function_4b35485c0af17453()
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18b2
 // Size: 0x74
 function function_e20f2ba1dcb6f312()
@@ -576,7 +576,7 @@ function function_e20f2ba1dcb6f312()
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x192e
 // Size: 0x2b3
 function chopper_splash( bossorigin, poiname )
@@ -663,7 +663,7 @@ function chopper_splash( bossorigin, poiname )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1be9
 // Size: 0xc5
 function chopper_droploot()
@@ -684,7 +684,7 @@ function chopper_droploot()
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cb6
 // Size: 0x44
 function function_e018ddec11a442b( instance, player )
@@ -697,7 +697,7 @@ function function_e018ddec11a442b( instance, player )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d02
 // Size: 0x1ee
 function chopper_attack( target )
@@ -782,7 +782,7 @@ function chopper_attack( target )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ef8
 // Size: 0x148
 function function_c1feeb5592d1018( target )
@@ -791,7 +791,8 @@ function function_c1feeb5592d1018( target )
     missiletags = [ "tag_gun_right1", "tag_gun_left1", "tag_gun_right2", "tag_gun_left2" ];
     wait 1;
     
-    for (i = 0; i < level.var_920d2d352811f372; i++) {
+    for ( i = 0; i < level.var_920d2d352811f372 ; i++ )
+    {
         if ( self.damagestate > 1 && ( i % 4 == 1 || i % 4 == 3 ) )
         {
             wait 0.3;
@@ -811,7 +812,7 @@ function function_c1feeb5592d1018( target )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2048
 // Size: 0x1e6
 function function_d105b5766895909d( target )
@@ -879,7 +880,7 @@ function function_d105b5766895909d( target )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2236
 // Size: 0x2db
 function function_e278235100ed92f4( target )
@@ -901,7 +902,8 @@ function function_e278235100ed92f4( target )
     dir = anglestoforward( target.angles );
     dir2d = vectornormalize( ( dir[ 0 ], dir[ 1 ], 0 ) );
     
-    for (i = 0; i < 100; i++) {
+    for ( i = 0; i < 100 ; i++ )
+    {
         if ( self.health <= 0 )
         {
             return;
@@ -979,7 +981,7 @@ function function_e278235100ed92f4( target )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2519
 // Size: 0x70, Type: bool
 function function_dd5ca63b6ca176b8( target )
@@ -992,7 +994,7 @@ function function_dd5ca63b6ca176b8( target )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2592
 // Size: 0x99
 function function_6326efaea227c12a( turret )
@@ -1015,7 +1017,7 @@ function function_6326efaea227c12a( turret )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2633
 // Size: 0x1f1, Type: bool
 function function_463307a73b2cd8df( player, showicon, var_91e5939bcaba8460 )
@@ -1073,7 +1075,7 @@ function function_463307a73b2cd8df( player, showicon, var_91e5939bcaba8460 )
 }
 
 // Namespace dmz_bosses_chopper / scripts\mp\gametypes\dmz_bosses_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x282d
 // Size: 0xb5
 function function_103478f5d3688256( chopper, killer )

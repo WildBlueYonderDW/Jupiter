@@ -13,7 +13,7 @@
 #namespace spectating;
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x332
 // Size: 0x94
 function init()
@@ -33,7 +33,7 @@ function init()
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ce
 // Size: 0x63
 function createmlgcamobject( icon, followrotation )
@@ -46,7 +46,7 @@ function createmlgcamobject( icon, followrotation )
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x43a
 // Size: 0x10c
 function setlevelmlgcam( index, csvfile )
@@ -80,7 +80,7 @@ function setlevelmlgcam( index, csvfile )
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54e
 // Size: 0x9a
 function getlevelmlgcams()
@@ -96,17 +96,19 @@ function getlevelmlgcams()
     level.cameramapobjs = [];
     level.numbermapobjs = [];
     
-    for (index = 0; index < 4; index++) {
+    for ( index = 0; index < 4 ; index++ )
+    {
         setlevelmlgcam( index, csvfile );
     }
     
-    for (index = 4; index < 8; index++) {
+    for ( index = 4; index < 8 ; index++ )
+    {
         setlevelmlgcam( index, var_3b2139bfd025890b );
     }
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f0
 // Size: 0x70
 function getcameravecorang( elementstring )
@@ -123,7 +125,7 @@ function getcameravecorang( elementstring )
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x669
 // Size: 0x13
 function onjoinedteam( player )
@@ -132,7 +134,7 @@ function onjoinedteam( player )
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x684
 // Size: 0x91
 function onjoinedspectators( player )
@@ -157,7 +159,7 @@ function onjoinedspectators( player )
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x71d
 // Size: 0x170
 function onspectatingclient()
@@ -208,7 +210,7 @@ function onspectatingclient()
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x895
 // Size: 0x73
 function onspectatingmlgcamera()
@@ -232,7 +234,7 @@ function onspectatingmlgcamera()
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x910
 // Size: 0x24
 function freecamcallback( channel, view )
@@ -244,20 +246,21 @@ function freecamcallback( channel, view )
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x93c
 // Size: 0x3d
 function updatespectatesettings()
 {
     level endon( "game_ended" );
     
-    for (index = 0; index < level.players.size; index++) {
+    for ( index = 0; index < level.players.size ; index++ )
+    {
         level.players[ index ] setspectatepermissions();
     }
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x981
 // Size: 0x13e
 function autoattachtoplayer()
@@ -308,7 +311,7 @@ function autoattachtoplayer()
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xac7
 // Size: 0x7e
 function function_de89a33a1571dd0a()
@@ -338,7 +341,7 @@ function function_de89a33a1571dd0a()
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb4d
 // Size: 0x1b
 function saveendgamelocals()
@@ -348,7 +351,7 @@ function saveendgamelocals()
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb70
 // Size: 0x5b1
 function setspectatepermissions( gameended )
@@ -530,7 +533,7 @@ function setspectatepermissions( gameended )
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1129
 // Size: 0x20
 function waitforgamestartspectate()
@@ -542,7 +545,7 @@ function waitforgamestartspectate()
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1151
 // Size: 0x71
 function setdisabled()
@@ -557,7 +560,7 @@ function setdisabled()
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11ca
 // Size: 0xf6
 function setteamorplayeronly( team )
@@ -591,7 +594,7 @@ function setteamorplayeronly( team )
 }
 
 // Namespace spectating / scripts\mp\spectating
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12c8
 // Size: 0x12b
 function setfreelook( gameended )

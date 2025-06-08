@@ -7,7 +7,7 @@
 #namespace capture_hardpoint;
 
 // Namespace capture_hardpoint / namespace_ef3d9df38f736e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -16,7 +16,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace capture_hardpoint / namespace_ef3d9df38f736e0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11d
 // Size: 0x131
 function evaluatescore( bot )
@@ -40,7 +40,7 @@ function evaluatescore( bot )
 }
 
 // Namespace capture_hardpoint / namespace_ef3d9df38f736e0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x257
 // Size: 0xae
 function actionprocess( bot )
@@ -64,7 +64,7 @@ function actionprocess( bot )
 }
 
 // Namespace capture_hardpoint / namespace_ef3d9df38f736e0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30d
 // Size: 0x130
 function function_62f98fd3d37278dc( targethardpoint, allowempty )

@@ -6,7 +6,7 @@
 #namespace ai;
 
 // Namespace ai / namespace_49fda402f68ade28
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11d
 // Size: 0xb3c
 function spawner_fields( spawner )
@@ -467,7 +467,7 @@ function private function_2222444238558aaa()
 }
 
 // Namespace ai / namespace_49fda402f68ade28
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xebf
 // Size: 0x21
 function spawn_running()
@@ -479,7 +479,7 @@ function spawn_running()
 }
 
 // Namespace ai / namespace_49fda402f68ade28
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee8
 // Size: 0x11
 function function_691ff0cbc56cf8d3()

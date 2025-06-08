@@ -3,7 +3,7 @@
 #namespace unittest_error;
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x771
 // Size: 0x37
 function error_print( msg, var )
@@ -18,7 +18,7 @@ function error_print( msg, var )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7b0
 // Size: 0x1b
 function func( a, b, c )
@@ -27,7 +27,7 @@ function func( a, b, c )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d3
 // Size: 0x10, Type: bool
 function cond_func()
@@ -37,7 +37,7 @@ function cond_func()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ec
 // Size: 0xc5
 function params()
@@ -59,7 +59,7 @@ function params()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b9
 // Size: 0x3b8
 function types()
@@ -150,7 +150,7 @@ function types()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc79
 // Size: 0x55
 function wait_notify()
@@ -170,7 +170,7 @@ function wait_notify()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcd6
 // Size: 0x83
 function switch_func( msg, var )
@@ -194,7 +194,7 @@ function switch_func( msg, var )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd61
 // Size: 0x54
 function switch_test()
@@ -206,7 +206,7 @@ function switch_test()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdbd
 // Size: 0x2f7
 function cond()
@@ -394,7 +394,7 @@ function cond()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10bc
 // Size: 0x57
 function is_true_print( val, name )
@@ -411,7 +411,7 @@ function is_true_print( val, name )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x111b
 // Size: 0x38
 function is_true()
@@ -423,7 +423,7 @@ function is_true()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x115b
 // Size: 0xba
 function builtin()
@@ -448,7 +448,7 @@ function builtin()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x121d
 // Size: 0xa
 function n3()
@@ -457,7 +457,7 @@ function n3()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1230
 // Size: 0x9
 function n2()
@@ -466,7 +466,7 @@ function n2()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1241
 // Size: 0x26
 function n1( index )
@@ -481,7 +481,7 @@ function n1( index )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x126f
 // Size: 0x17
 function nested()
@@ -491,7 +491,7 @@ function nested()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x128e
 // Size: 0x60
 function function_b5410a15d3ff2e84( count )
@@ -511,7 +511,7 @@ function function_b5410a15d3ff2e84( count )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12f6
 // Size: 0x13
 function function_b5410d15d3ff351d( count )
@@ -520,7 +520,7 @@ function function_b5410d15d3ff351d( count )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1311
 // Size: 0x13
 function vm_execute_error_context( count )
@@ -529,7 +529,7 @@ function vm_execute_error_context( count )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x132c
 // Size: 0x59
 function function_c1262a8e708035d7( count )
@@ -548,7 +548,7 @@ function function_c1262a8e708035d7( count )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x138d
 // Size: 0x13
 function function_c1262b8e7080380a( count )
@@ -557,7 +557,7 @@ function function_c1262b8e7080380a( count )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13a8
 // Size: 0x13
 function function_84bd830f4916d5a( count )
@@ -566,7 +566,7 @@ function function_84bd830f4916d5a( count )
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13c3
 // Size: 0x14
 function function_6f617c533b22e78b()
@@ -576,7 +576,7 @@ function function_6f617c533b22e78b()
 }
 
 // Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13df
 // Size: 0x59
 function main()

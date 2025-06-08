@@ -14,7 +14,7 @@
 #namespace emp_drone_targeted;
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ea
 // Size: 0x4b
 function init()
@@ -31,7 +31,7 @@ function init()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73d
 // Size: 0x21, Type: bool
 function empdrone_beginsuper()
@@ -44,7 +44,7 @@ function empdrone_beginsuper()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x767
 // Size: 0xc6
 function empdrone_superusethink()
@@ -77,7 +77,7 @@ function empdrone_superusethink()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x835
 // Size: 0xb
 function empdrone_tryuse( streakinfo )
@@ -86,7 +86,7 @@ function empdrone_tryuse( streakinfo )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x848
 // Size: 0x9d
 function empdrone_equipment_wrapper( ref, slot, objweapon )
@@ -109,7 +109,7 @@ function empdrone_equipment_wrapper( ref, slot, objweapon )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ed
 // Size: 0x3e, Type: bool
 function empdrone_weapongiven( streakinfo )
@@ -127,7 +127,7 @@ function empdrone_weapongiven( streakinfo )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x934
 // Size: 0x268
 function empdrone_createdrone( streakinfo, targetpos )
@@ -187,7 +187,7 @@ function empdrone_createdrone( streakinfo, targetpos )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba5
 // Size: 0x217
 function empdrone_calculatepositions( targetpos )
@@ -255,7 +255,7 @@ function empdrone_calculatepositions( targetpos )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc5
 // Size: 0x54
 function empdrone_timeoutthink()
@@ -270,7 +270,7 @@ function empdrone_timeoutthink()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe21
 // Size: 0x32
 function empdrone_gameendedthink()
@@ -282,7 +282,7 @@ function empdrone_gameendedthink()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe5b
 // Size: 0x68
 function empdrone_collidethink()
@@ -303,7 +303,7 @@ function empdrone_collidethink()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xecb
 // Size: 0x139
 function empdrone_divebombthink( posstruct )
@@ -337,7 +337,7 @@ function empdrone_divebombthink( posstruct )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x100c
 // Size: 0xb
 function empdrone_killstreaktargetthink( posstruct )
@@ -346,7 +346,7 @@ function empdrone_killstreaktargetthink( posstruct )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x101f
 // Size: 0x2a
 function empdrone_handledeathdamage( attacker, weapon, damagetype )
@@ -356,7 +356,7 @@ function empdrone_handledeathdamage( attacker, weapon, damagetype )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1051
 // Size: 0x51
 function empdrone_explode()
@@ -369,7 +369,7 @@ function empdrone_explode()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10aa
 // Size: 0x4a
 function empdrone_destroy()
@@ -381,7 +381,7 @@ function empdrone_destroy()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10fc
 // Size: 0x96
 function empdrone_delete()
@@ -402,7 +402,7 @@ function empdrone_delete()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x119a
 // Size: 0x31
 function empdrone_empapplied( data )
@@ -413,7 +413,7 @@ function empdrone_empapplied( data )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11d3
 // Size: 0x54
 function empdrone_givepointsfordeath( attacker )
@@ -430,7 +430,7 @@ function empdrone_givepointsfordeath( attacker )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x122f
 // Size: 0x44e
 function empdrone_explodeemp()
@@ -530,7 +530,7 @@ function empdrone_explodeemp()
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1685
 // Size: 0x220
 function empdrone_applyemp( data )
@@ -587,7 +587,7 @@ function empdrone_applyemp( data )
 }
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18ad
 // Size: 0x5b
 function empdrone_empendearly( data, duration )

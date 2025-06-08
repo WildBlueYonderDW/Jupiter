@@ -25,7 +25,7 @@ function private _internal()
 }
 
 // Namespace namespace_106f587ebebd0cab / scripts\unittest\private
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf7
 // Size: 0x2b
 function main()

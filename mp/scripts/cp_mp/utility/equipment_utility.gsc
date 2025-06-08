@@ -5,7 +5,7 @@
 #namespace equipment_utility;
 
 // Namespace equipment_utility / scripts\cp_mp\utility\equipment_utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xa4
 // Size: 0x40
 function function_cb722e58dd976a9a( weapon_ref, var_fd773ed7f8ab59de, dvar_str, bundle_val, default_val )
@@ -14,7 +14,7 @@ function function_cb722e58dd976a9a( weapon_ref, var_fd773ed7f8ab59de, dvar_str, 
 }
 
 // Namespace equipment_utility / scripts\cp_mp\utility\equipment_utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xec
 // Size: 0x40
 function function_e3093afa85e28051( weapon_ref, var_fd773ed7f8ab59de, dvar_str, bundle_val, default_val )
@@ -23,7 +23,7 @@ function function_e3093afa85e28051( weapon_ref, var_fd773ed7f8ab59de, dvar_str, 
 }
 
 // Namespace equipment_utility / scripts\cp_mp\utility\equipment_utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x134
 // Size: 0x40
 function function_d4497d44e79a8764( weapon_ref, var_fd773ed7f8ab59de, dvar_str, bundle_val, default_val )
@@ -32,7 +32,7 @@ function function_d4497d44e79a8764( weapon_ref, var_fd773ed7f8ab59de, dvar_str, 
 }
 
 // Namespace equipment_utility / scripts\cp_mp\utility\equipment_utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x17c
 // Size: 0x7a
 function function_ece21ff26dac708c( weapon_ref, var_fd773ed7f8ab59de, dvar_str, bundle_val, default_val, value_type )
@@ -51,7 +51,7 @@ function function_ece21ff26dac708c( weapon_ref, var_fd773ed7f8ab59de, dvar_str, 
 }
 
 // Namespace equipment_utility / scripts\cp_mp\utility\equipment_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fe
 // Size: 0x73
 function function_97ed04e0f992484( dvar_str, bundle_val, default_val )
@@ -81,7 +81,7 @@ function function_97ed04e0f992484( dvar_str, bundle_val, default_val )
 }
 
 // Namespace equipment_utility / scripts\cp_mp\utility\equipment_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x27a
 // Size: 0x138
 function function_74a4a69afb4bc82b( weapon_ref, var_fd773ed7f8ab59de )
@@ -125,7 +125,7 @@ function function_74a4a69afb4bc82b( weapon_ref, var_fd773ed7f8ab59de )
 }
 
 // Namespace equipment_utility / scripts\cp_mp\utility\equipment_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bb
 // Size: 0x5e
 function function_faec1a1cb92464a4( weapon_ref )

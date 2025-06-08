@@ -10,7 +10,7 @@
 #namespace uav_mp;
 
 // Namespace uav_mp / scripts\mp\killstreaks\uav_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2df
 // Size: 0x3cd
 function init_uav_mp()
@@ -60,7 +60,7 @@ function init_uav_mp()
 }
 
 // Namespace uav_mp / scripts\mp\killstreaks\uav_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b4
 // Size: 0x27b
 function function_7dbeff3d392879b3()
@@ -93,7 +93,7 @@ function function_7dbeff3d392879b3()
 }
 
 // Namespace uav_mp / scripts\mp\killstreaks\uav_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x937
 // Size: 0x20
 function function_91be4c07add55c1a( uavmodel )

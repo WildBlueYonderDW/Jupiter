@@ -10,7 +10,7 @@
 #namespace vehicle_collision;
 
 // Namespace vehicle_collision / scripts\cp_mp\vehicles\vehicle_collision
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x225
 // Size: 0x9c
 function vehicle_collision_init()
@@ -29,7 +29,7 @@ function vehicle_collision_init()
 }
 
 // Namespace vehicle_collision / scripts\cp_mp\vehicles\vehicle_collision
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c9
 // Size: 0x1c
 function vehicle_collision_update()
@@ -44,7 +44,7 @@ function vehicle_collision_update()
 }
 
 // Namespace vehicle_collision / scripts\cp_mp\vehicles\vehicle_collision
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ed
 // Size: 0x3da
 function vehicle_collision_updateinstance( vehicle )
@@ -381,7 +381,8 @@ function private function_74ce9dc0a18ac393( vehicle, position, normal, timeinair
     
     damagetier = 0;
     
-    for (tier = var_89134acb0056de26.size; tier > 0; tier--) {
+    for ( tier = var_89134acb0056de26.size; tier > 0 ; tier-- )
+    {
         var_7c462121dd5c5ae0 = var_89134acb0056de26[ tier - 1 ];
         
         if ( timeinair > var_7c462121dd5c5ae0 )
@@ -540,7 +541,7 @@ function private function_593a829032a8c193( vehicle, ent )
 }
 
 // Namespace vehicle_collision / scripts\cp_mp\vehicles\vehicle_collision
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x140a
 // Size: 0x5c
 function function_3066f0dd7be2478c( vehicle )
@@ -559,7 +560,7 @@ function function_3066f0dd7be2478c( vehicle )
 }
 
 // Namespace vehicle_collision / scripts\cp_mp\vehicles\vehicle_collision
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146e
 // Size: 0x1d
 function function_6eb1fba746b72f46( vehicle )
@@ -731,7 +732,7 @@ function private function_53c04cefb8acf030( damageclass )
 }
 
 // Namespace vehicle_collision / scripts\cp_mp\vehicles\vehicle_collision
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x187b
 // Size: 0x107
 function vehicle_collision_getleveldataforvehicle( vehicleref, create, var_6ecb77fd1f27c667 )
@@ -766,7 +767,7 @@ function vehicle_collision_getleveldataforvehicle( vehicleref, create, var_6ecb7
 }
 
 // Namespace vehicle_collision / scripts\cp_mp\vehicles\vehicle_collision
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x198a
 // Size: 0xb5
 function vehicle_collision_ignorefutureevent( vehicle, othervehicle, duration )
@@ -794,7 +795,7 @@ function vehicle_collision_ignorefutureevent( vehicle, othervehicle, duration )
 }
 
 // Namespace vehicle_collision / scripts\cp_mp\vehicles\vehicle_collision
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a47
 // Size: 0x6c, Type: bool
 function function_d88aed99025a81e4( vehicle, vehicletarget )

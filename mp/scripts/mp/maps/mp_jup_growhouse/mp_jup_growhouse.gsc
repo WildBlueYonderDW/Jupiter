@@ -10,7 +10,7 @@
 #namespace mp_jup_growhouse;
 
 // Namespace mp_jup_growhouse / scripts\mp\maps\mp_jup_growhouse\mp_jup_growhouse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17d
 // Size: 0x9f
 function main()

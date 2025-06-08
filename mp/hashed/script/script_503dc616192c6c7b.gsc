@@ -10,7 +10,7 @@
 #namespace namespace_9349b4e74d680d99;
 
 // Namespace namespace_9349b4e74d680d99 / namespace_cac4de77882bf23
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a
 // Size: 0x3f
 function init()
@@ -51,7 +51,7 @@ function private function_4274f780d2a511f9( var_fb7680c7bee58bb9, var_8232fe13bf
 }
 
 // Namespace namespace_9349b4e74d680d99 / namespace_cac4de77882bf23
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x312
 // Size: 0x78
 function function_a214770b3d91c9c5( attacker )
@@ -64,7 +64,7 @@ function function_a214770b3d91c9c5( attacker )
 }
 
 // Namespace namespace_9349b4e74d680d99 / namespace_cac4de77882bf23
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x392
 // Size: 0x4, Type: bool
 function should_finish_execution_first()

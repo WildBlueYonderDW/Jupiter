@@ -2,6 +2,7 @@
 #using scripts\cp_mp\structspawnconfig;
 #using scripts\cp_mp\utility\debug_utility;
 #using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
 #using scripts\cp_mp\utility\weapon_utility;
 #using scripts\cp_mp\weapon;
 #using scripts\engine\scriptable;
@@ -21,8 +22,8 @@
 #namespace ammorestock;
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x620
+// Params 0
+// Checksum 0x0, Offset: 0x627
 // Size: 0x3a5
 function init()
 {
@@ -33,7 +34,7 @@ function init()
         level.ammorestocklocs = [];
     }
     
-    var_ae19c7aac20a601e = getdvarint( @"hash_82d2dcb77e9844b6", 0 ) && getdvarint( @"hash_89be1a979c1ec008", 0 );
+    var_ae19c7aac20a601e = getdvarint( @"scr_ssc_use_ammorestock", 0 ) && getdvarint( @"scr_ssc_enabled", 0 );
     
     if ( var_ae19c7aac20a601e )
     {
@@ -108,8 +109,8 @@ function init()
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9cd
+// Params 1
+// Checksum 0x0, Offset: 0x9d4
 // Size: 0x242
 function removelocation( loc )
 {
@@ -150,8 +151,8 @@ function removelocation( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc17
+// Params 1
+// Checksum 0x0, Offset: 0xc1e
 // Size: 0x1c
 function spawnlocation( struct )
 {
@@ -161,8 +162,8 @@ function spawnlocation( struct )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3c
+// Params 1
+// Checksum 0x0, Offset: 0xc43
 // Size: 0x14d
 function addlocation( loc )
 {
@@ -192,8 +193,8 @@ function addlocation( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd91
+// Params 1
+// Checksum 0x0, Offset: 0xd98
 // Size: 0xd4
 function function_9cabc01b47357528( loc )
 {
@@ -216,8 +217,8 @@ function function_9cabc01b47357528( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6d
+// Params 1
+// Checksum 0x0, Offset: 0xe74
 // Size: 0x144
 function function_bae375f2dcee0889( loc )
 {
@@ -258,8 +259,8 @@ function function_bae375f2dcee0889( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb9
+// Params 0
+// Checksum 0x0, Offset: 0xfc0
 // Size: 0x61
 function function_64716349b6b346ee()
 {
@@ -272,8 +273,8 @@ function function_64716349b6b346ee()
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1022
+// Params 1
+// Checksum 0x0, Offset: 0x1029
 // Size: 0x15f, Type: bool
 function function_6c420d3454dae534( loc )
 {
@@ -323,8 +324,8 @@ function function_6c420d3454dae534( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x118a
+// Params 1
+// Checksum 0x0, Offset: 0x1191
 // Size: 0xc5, Type: bool
 function function_7923460ce1ee31c5( loc )
 {
@@ -358,7 +359,7 @@ function function_7923460ce1ee31c5( loc )
 
 // Namespace ammorestock / scripts\mp\ammorestock
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1258
+// Checksum 0x0, Offset: 0x125f
 // Size: 0x1a
 function private function_894dae288a77a345( structname )
 {
@@ -367,7 +368,7 @@ function private function_894dae288a77a345( structname )
 
 // Namespace ammorestock / scripts\mp\ammorestock
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x127b
+// Checksum 0x0, Offset: 0x1282
 // Size: 0x1c
 function private function_36ce14880a825268( structname, loc )
 {
@@ -377,7 +378,7 @@ function private function_36ce14880a825268( structname, loc )
 
 // Namespace ammorestock / scripts\mp\ammorestock
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x12a0
+// Checksum 0x0, Offset: 0x12a7
 // Size: 0x1b
 function private function_e826dc20352b1553( structname, loc )
 {
@@ -386,7 +387,7 @@ function private function_e826dc20352b1553( structname, loc )
 
 // Namespace ammorestock / scripts\mp\ammorestock
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12c3
+// Checksum 0x0, Offset: 0x12ca
 // Size: 0x19
 function private function_63ad07bb8a0640b8( structname )
 {
@@ -396,7 +397,7 @@ function private function_63ad07bb8a0640b8( structname )
 
 // Namespace ammorestock / scripts\mp\ammorestock
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x12e4
+// Checksum 0x0, Offset: 0x12eb
 // Size: 0x13e
 function private function_a960b3792f77c29()
 {
@@ -433,7 +434,7 @@ function private function_a960b3792f77c29()
 
 // Namespace ammorestock / scripts\mp\ammorestock
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x142a
+// Checksum 0x0, Offset: 0x1431
 // Size: 0x160
 function private function_d5027fd97b7c561d()
 {
@@ -467,8 +468,8 @@ function private function_d5027fd97b7c561d()
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1592
+// Params 1
+// Checksum 0x0, Offset: 0x1599
 // Size: 0x36a
 function function_54f6e59d9cc6d3e2( loc )
 {
@@ -553,8 +554,8 @@ function function_54f6e59d9cc6d3e2( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1904
+// Params 1
+// Checksum 0x0, Offset: 0x190b
 // Size: 0x82
 function spawnmodel( loc )
 {
@@ -567,8 +568,8 @@ function spawnmodel( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x198f
+// Params 1
+// Checksum 0x0, Offset: 0x1996
 // Size: 0x94
 function spawncollision( loc )
 {
@@ -586,8 +587,8 @@ function spawncollision( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a2c
+// Params 1
+// Checksum 0x0, Offset: 0x1a33
 // Size: 0x7f, Type: bool
 function duplicatecheck( loc )
 {
@@ -603,8 +604,8 @@ function duplicatecheck( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab4
+// Params 1
+// Checksum 0x0, Offset: 0x1abb
 // Size: 0x99d, Type: bool
 function function_9b45d31903431d9b( loc )
 {
@@ -653,8 +654,8 @@ function function_9b45d31903431d9b( loc )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x245a
+// Params 6
+// Checksum 0x0, Offset: 0x2461
 // Size: 0x18e
 function ammorestock_used( instance, part, state, player, var_a5b2c541413aa895, usestring )
 {
@@ -710,8 +711,8 @@ function ammorestock_used( instance, part, state, player, var_a5b2c541413aa895, 
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25f0
+// Params 1
+// Checksum 0x0, Offset: 0x25f7
 // Size: 0x16
 function function_afab07cf819c5ed4( guid )
 {
@@ -719,8 +720,8 @@ function function_afab07cf819c5ed4( guid )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x260e
+// Params 2
+// Checksum 0x0, Offset: 0x2615
 // Size: 0x2a
 function function_9039bc1e302709d0( guid, instance )
 {
@@ -728,8 +729,8 @@ function function_9039bc1e302709d0( guid, instance )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2640
+// Params 3
+// Checksum 0x0, Offset: 0x2647
 // Size: 0x84
 function function_9f58210b67259ac8( player, instance, time )
 {
@@ -747,8 +748,8 @@ function function_9f58210b67259ac8( player, instance, time )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26cc
+// Params 3
+// Checksum 0x0, Offset: 0x26d3
 // Size: 0x34
 function ammorestock_disableusefortime( scriptable, player, time )
 {
@@ -759,8 +760,8 @@ function ammorestock_disableusefortime( scriptable, player, time )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2708
+// Params 1
+// Checksum 0x0, Offset: 0x270f
 // Size: 0x50, Type: bool
 function function_f4204f5a6ca70972( equipment_name )
 {
@@ -781,9 +782,9 @@ function function_f4204f5a6ca70972( equipment_name )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2761
-// Size: 0xa4b
+// Params 2
+// Checksum 0x0, Offset: 0x2768
+// Size: 0xa60
 function ammorestock_playeruse( player, instance )
 {
     player endon( "death_or_disconnect" );
@@ -973,6 +974,7 @@ function ammorestock_playeruse( player, instance )
             
             if ( isaxeweapon( weaponobj ) )
             {
+                wasempty = player getweaponammoclip( weaponobj ) == 0;
                 player setweaponammoclip( weaponobj, weaponclipsize( weaponobj ) );
             }
             else if ( istrue( level.var_93d3de5b393a5e89 ) )
@@ -1088,8 +1090,8 @@ function ammorestock_playeruse( player, instance )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x31b5
+// Params 2
+// Checksum 0x0, Offset: 0x31d1
 // Size: 0x6bf
 function function_42f888e2e819cc64( player, instance )
 {
@@ -1269,8 +1271,8 @@ function function_42f888e2e819cc64( player, instance )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x387c
+// Params 2
+// Checksum 0x0, Offset: 0x3898
 // Size: 0xd5
 function function_ce0d11003cb7ba99( player, var_a0115a87500b34b )
 {
@@ -1304,8 +1306,8 @@ function function_ce0d11003cb7ba99( player, var_a0115a87500b34b )
 }
 
 // Namespace ammorestock / scripts\mp\ammorestock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3959
+// Params 0
+// Checksum 0x0, Offset: 0x3975
 // Size: 0x224
 function ammorestock_customlocale6cleanup()
 {

@@ -18,7 +18,7 @@
 #namespace spawnlogic;
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca2
 // Size: 0x44b
 function init()
@@ -81,7 +81,8 @@ function init()
         level thread updatedebughud();
     #/
     
-    for (i = 0; i < level.teamnamelist.size; i++) {
+    for ( i = 0; i < level.teamnamelist.size ; i++ )
+    {
         level.teamspawnpoints[ level.teamnamelist[ i ] ] = [];
         level.teamfallbackspawnpoints[ level.teamnamelist[ i ] ] = [];
     }
@@ -110,7 +111,7 @@ function init()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x10f5
 // Size: 0x89
 function function_e2cbae3344485f14( type, setname, var_474c126f25186d39, var_94ec027babd4d45, type_func )
@@ -124,7 +125,7 @@ function function_e2cbae3344485f14( type, setname, var_474c126f25186d39, var_94e
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1187
 // Size: 0xae
 function initspawntypes()
@@ -136,7 +137,7 @@ function initspawntypes()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x123d
 // Size: 0xb
 function codecallbackhandler_spawnpointprecalc( team )
@@ -145,7 +146,7 @@ function codecallbackhandler_spawnpointprecalc( team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1250
 // Size: 0x159
 function codecallbackhandler_spawnpointscore( spawnpoint, team )
@@ -177,7 +178,7 @@ function codecallbackhandler_spawnpointscore( spawnpoint, team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13b2
 // Size: 0x43
 function codecallbackhandler_spawnpointcritscore( spawnpoint, team )
@@ -194,7 +195,7 @@ function codecallbackhandler_spawnpointcritscore( spawnpoint, team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x13fe
 // Size: 0x71a
 function getspawnpoint( spawningplayer, spawnteam, spawnpointset, fallbackspawnset, var_a22bad5fe6fbf86d, spawnparams )
@@ -412,7 +413,7 @@ function getspawnpoint( spawningplayer, spawnteam, spawnpointset, fallbackspawns
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b21
 // Size: 0x9a
 function createspawnquerycontext( spawningplayer, team, factorparams )
@@ -436,7 +437,7 @@ function createspawnquerycontext( spawningplayer, team, factorparams )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bc4
 // Size: 0x20
 function setactivespawnquerycontext( spawncontext )
@@ -445,7 +446,7 @@ function setactivespawnquerycontext( spawncontext )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bec
 // Size: 0x15
 function getactivespawnquerycontext()
@@ -454,7 +455,7 @@ function getactivespawnquerycontext()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c0a
 // Size: 0x15
 function clearactivespawnquerycontext()
@@ -463,7 +464,7 @@ function clearactivespawnquerycontext()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c27
 // Size: 0x19
 function trackhostmigrationend()
@@ -476,7 +477,7 @@ function trackhostmigrationend()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c48
 // Size: 0x64
 function clearcodefactors()
@@ -488,7 +489,7 @@ function clearcodefactors()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cb4
 // Size: 0xd3
 function registercodefactors( factorweights )
@@ -512,7 +513,7 @@ function registercodefactors( factorweights )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d8f
 // Size: 0x60
 function function_182c52d5da69684d()
@@ -524,7 +525,7 @@ function function_182c52d5da69684d()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1df7
 // Size: 0x60
 function function_3237e56ca7621667( enabledfactors )
@@ -536,7 +537,7 @@ function function_3237e56ca7621667( enabledfactors )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e5f
 // Size: 0x39, Type: bool
 function isactivespawnlogic( logictype )
@@ -550,7 +551,7 @@ function isactivespawnlogic( logictype )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ea1
 // Size: 0x5e2
 function setactivespawnlogic( logictype, criticalfactortype, var_7d25b12691ee7cc1 )
@@ -690,7 +691,7 @@ function setactivespawnlogic( logictype, criticalfactortype, var_7d25b12691ee7cc
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x248b
 // Size: 0x36, Type: bool
 function function_84e52176cce3bd6b( spawnkey, overridekey )
@@ -714,7 +715,7 @@ function function_84e52176cce3bd6b( spawnkey, overridekey )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24ca
 // Size: 0x79b
 function loadspawnlogicweights()
@@ -905,7 +906,7 @@ function loadspawnlogicweights()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c6d
 // Size: 0x160
 function scorespawnpoint( spawnpoint )
@@ -938,7 +939,7 @@ function scorespawnpoint( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dd5
 // Size: 0x7d, Type: bool
 function isfactorinuse( factorname )
@@ -952,7 +953,7 @@ function isfactorinuse( factorname )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e5b
 // Size: 0x9d, Type: bool
 function function_3e631ca44718151f( factorname )
@@ -969,7 +970,7 @@ function function_3e631ca44718151f( factorname )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f01
 // Size: 0xb
 function getstartspawnpoints()
@@ -978,7 +979,7 @@ function getstartspawnpoints()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f15
 // Size: 0x219
 function function_386623fc65375fa8( spawnpointents, spawnpointname, allowempty )
@@ -987,7 +988,8 @@ function function_386623fc65375fa8( spawnpointents, spawnpointname, allowempty )
     
     if ( isdefined( level.modifiedspawnpoints ) )
     {
-        for (index = 0; index < spawnpointents.size; index++) {
+        for ( index = 0; index < spawnpointents.size ; index++ )
+        {
             if ( checkmodifiedspawnpoint( spawnpointents[ index ] ) )
             {
                 continue;
@@ -1016,7 +1018,8 @@ function function_386623fc65375fa8( spawnpointents, spawnpointname, allowempty )
         level.startspawnpoints = [];
     }
     
-    for (index = 0; index < spawnpoints.size; index++) {
+    for ( index = 0; index < spawnpoints.size ; index++ )
+    {
         spawnpoints[ index ] spawnpointinit();
         spawnpoints[ index ].selected = 0;
         spawnpoints[ index ].infront = 0;
@@ -1053,7 +1056,7 @@ function function_386623fc65375fa8( spawnpointents, spawnpointname, allowempty )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3137
 // Size: 0x38
 function addstartspawnpoints( spawnpointname, allowempty, team )
@@ -1063,7 +1066,7 @@ function addstartspawnpoints( spawnpointname, allowempty, team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3177
 // Size: 0x93
 function function_f4882bf77adf2d71( spawnkey, spawnvalue, team, allowempty, isfallback )
@@ -1089,7 +1092,7 @@ function function_f4882bf77adf2d71( spawnkey, spawnvalue, team, allowempty, isfa
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3212
 // Size: 0x6f
 function addspawnpoints( team, spawnpointname, issetoptional, isfallback )
@@ -1116,7 +1119,7 @@ function addspawnpoints( team, spawnpointname, issetoptional, isfallback )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3289
 // Size: 0x89
 function function_9328a9c1fc8d2043( spawnkey, spawnvalue, team, issetoptional, isfallback )
@@ -1143,7 +1146,7 @@ function function_9328a9c1fc8d2043( spawnkey, spawnvalue, team, issetoptional, i
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x331a
 // Size: 0x132
 function registerspawnpoints( team, newspawnpoints, isfallback )
@@ -1188,7 +1191,7 @@ function registerspawnpoints( team, newspawnpoints, isfallback )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3454
 // Size: 0x318
 function spawnpointinit()
@@ -1248,7 +1251,7 @@ function spawnpointinit()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3774
 // Size: 0x47
 function getspawnpointarraykey( classname, key, value )
@@ -1264,7 +1267,7 @@ function getspawnpointarraykey( classname, key, value )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37c4
 // Size: 0x136
 function function_32d25b070a9516de( spawnpointlist )
@@ -1318,7 +1321,7 @@ function function_32d25b070a9516de( spawnpointlist )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3903
 // Size: 0x9f
 function getspawnpointarray( classname, key, value )
@@ -1350,7 +1353,7 @@ function getspawnpointarray( classname, key, value )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x39ab
 // Size: 0x20
 function function_5cb7f8468d3b9fe0( key, value )
@@ -1359,7 +1362,7 @@ function function_5cb7f8468d3b9fe0( key, value )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39d4
 // Size: 0x134
 function getspawnpointfromcode()
@@ -1385,7 +1388,7 @@ function getspawnpointfromcode()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b11
 // Size: 0x49d
 function logcodefrontlineupdate( spawnpoint )
@@ -1444,7 +1447,7 @@ function logcodefrontlineupdate( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fb6
 // Size: 0xa1
 function getspawnpoint_random( spawnpoints )
@@ -1472,7 +1475,7 @@ function getspawnpoint_random( spawnpoints )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4060
 // Size: 0xd5
 function getspawnpoint_startspawn( spawnpoints, onlyunselected )
@@ -1525,7 +1528,7 @@ function getspawnpoint_startspawn( spawnpoints, onlyunselected )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x413e
 // Size: 0x28
 function trackcarepackages()
@@ -1538,7 +1541,7 @@ function trackcarepackages()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x416e
 // Size: 0x16
 function getteamspawnpoints( team )
@@ -1547,7 +1550,7 @@ function getteamspawnpoints( team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x418d
 // Size: 0x16
 function getteamfallbackspawnpoints( team )
@@ -1556,7 +1559,7 @@ function getteamfallbackspawnpoints( team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41ac
 // Size: 0x29
 function ispathdataavailable()
@@ -1570,7 +1573,7 @@ function ispathdataavailable()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41de
 // Size: 0x1e1
 function spawnpointupdate()
@@ -1616,8 +1619,10 @@ function spawnpointupdate()
             error( "Spawn System Failure. No Spawnpoints found." );
         }
         
-        for (index = 0; index < level.spawnpoints.size; index++) {
-            for (innerindex = 0; innerindex < level.spawnpoints[ index ].radiuspathnodes.size; innerindex++) {
+        for ( index = 0; index < level.spawnpoints.size ; index++ )
+        {
+            for ( innerindex = 0; innerindex < level.spawnpoints[ index ].radiuspathnodes.size ; innerindex++ )
+            {
                 spawnpointnodes[ spawnpointnodes.size ] = level.spawnpoints[ index ].radiuspathnodes[ innerindex ];
             }
         }
@@ -1635,7 +1640,7 @@ function spawnpointupdate()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43c7
 // Size: 0x13f
 function getactiveplayerlist()
@@ -1686,7 +1691,7 @@ function getactiveplayerlist()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x450f
 // Size: 0x12
 function addspawnviewer( entity )
@@ -1695,7 +1700,7 @@ function addspawnviewer( entity )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4529
 // Size: 0x12
 function removespawnviewer( entity )
@@ -1704,7 +1709,7 @@ function removespawnviewer( entity )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x4543
 // Size: 0x67
 function addspawndangerzone( pos, radius, height, friendlyteam, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1, manualcleanup )
@@ -1713,7 +1718,7 @@ function addspawndangerzone( pos, radius, height, friendlyteam, lifetime, player
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45b3
 // Size: 0x13
 function removespawndangerzone( handle )
@@ -1722,16 +1727,16 @@ function removespawndangerzone( handle )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45ce
-// Size: 0x12, Type: bool
+// Size: 0x12
 function isspawndangerzonealive( handle )
 {
     return influencepoint_isscripthandlevalid( handle );
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45e9
 // Size: 0x4
 function getdefaultminedangerzoneradiussize()
@@ -1740,7 +1745,7 @@ function getdefaultminedangerzoneradiussize()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x45f6
 // Size: 0x10d
 function influencepoint_add( pos, radius, height, friendlyteam, lifetime, playerowner, var_f0022422dc721463, parentent, var_41171640c23ae1c1, manualcleanup )
@@ -1787,7 +1792,7 @@ function influencepoint_add( pos, radius, height, friendlyteam, lifetime, player
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x470c
 // Size: 0x42
 function influencepoint_remove( scripthandle )
@@ -1799,7 +1804,7 @@ function influencepoint_remove( scripthandle )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4756
 // Size: 0x7b
 function influencepoint_getnewscripthandle( codehandle )
@@ -1818,7 +1823,7 @@ function influencepoint_getnewscripthandle( codehandle )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47da
 // Size: 0x64
 function influencepoint_invalidatescripthandlesforcodehandle( codehandle )
@@ -1835,7 +1840,7 @@ function influencepoint_invalidatescripthandlesforcodehandle( codehandle )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4846
 // Size: 0x15
 function influencepoint_getcodehandlefromscripthandle( scripthandle )
@@ -1844,7 +1849,7 @@ function influencepoint_getcodehandlefromscripthandle( scripthandle )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4864
 // Size: 0xf
 function influencepoint_getalloccountfromscripthandle( scripthandle )
@@ -1853,7 +1858,7 @@ function influencepoint_getalloccountfromscripthandle( scripthandle )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x487c
 // Size: 0x62, Type: bool
 function influencepoint_isscripthandlevalid( scripthandle )
@@ -1866,7 +1871,7 @@ function influencepoint_isscripthandlevalid( scripthandle )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x48e7
 // Size: 0xa2
 function influencepoint_cleanupthink( handle, removalfunc, owner, lifetime, removeondeath )
@@ -1906,7 +1911,7 @@ function influencepoint_cleanupthink( handle, removalfunc, owner, lifetime, remo
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4991
 // Size: 0x18d
 function updatespawnviewers()
@@ -1949,7 +1954,7 @@ function updatespawnviewers()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b26
 // Size: 0x1f, Type: bool
 function arespawnviewersvalid()
@@ -1960,7 +1965,7 @@ function arespawnviewersvalid()
 /#
 
     // Namespace spawnlogic / scripts\mp\spawnlogic
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4b4e
     // Size: 0x10, Type: dev
     function function_9ab26c0d48173ab1()
@@ -1972,7 +1977,7 @@ function arespawnviewersvalid()
 #/
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b66
 // Size: 0x28b
 function logspawnpointsightupdate( spawnpoint, team )
@@ -2042,7 +2047,7 @@ function logspawnpointsightupdate( spawnpoint, team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4df9
 // Size: 0xdb
 function loginitialspawnposition( spawnpoint )
@@ -2068,7 +2073,7 @@ function loginitialspawnposition( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4edc
 // Size: 0x1ab
 function spawnpointdistanceupdate( spawnpoint )
@@ -2107,7 +2112,7 @@ function spawnpointdistanceupdate( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x508f
 // Size: 0x36
 function getspawnteam( ent )
@@ -2123,7 +2128,7 @@ function getspawnteam( ent )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50ce
 // Size: 0x23
 function initspawnpointvalues( spawnpoint )
@@ -2134,7 +2139,7 @@ function initspawnpointvalues( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50f9
 // Size: 0x7c
 function clearspawnpointsightdata( spawnpoint )
@@ -2153,7 +2158,7 @@ function clearspawnpointsightdata( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x517d
 // Size: 0xb
 function setupplayerspawnsightdata( player )
@@ -2162,7 +2167,7 @@ function setupplayerspawnsightdata( player )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5190
 // Size: 0x7c
 function clearspawnpointdistancedata( spawnpoint )
@@ -2181,7 +2186,7 @@ function clearspawnpointdistancedata( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5214
 // Size: 0x75
 function clearteamspawnpointsightdata( spawnpoint, team )
@@ -2195,7 +2200,7 @@ function clearteamspawnpointsightdata( spawnpoint, team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5291
 // Size: 0x60
 function clearteamspawnpointdistancedata( spawnpoint, team )
@@ -2208,7 +2213,7 @@ function clearteamspawnpointdistancedata( spawnpoint, team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x52f9
 // Size: 0x4e
 function getplayertraceheight( player, var_de6e84bcd0dd9094 )
@@ -2234,7 +2239,7 @@ function getplayertraceheight( player, var_de6e84bcd0dd9094 )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5350
 // Size: 0x10f
 function additionalsighttraceentities( spawnpoint, entarray )
@@ -2278,7 +2283,7 @@ function additionalsighttraceentities( spawnpoint, entarray )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5467
 // Size: 0x172
 function finalizespawnpointchoice( spawnpoint )
@@ -2329,21 +2334,22 @@ function finalizespawnpointchoice( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55e1
 // Size: 0x80
 function expandspawnpointbounds( classname )
 {
     spawnpoints = getspawnpointarray( classname );
     
-    for (index = 0; index < spawnpoints.size; index++) {
+    for ( index = 0; index < spawnpoints.size ; index++ )
+    {
         level.spawnmins = expandmins( level.spawnmins, spawnpoints[ index ].origin );
         level.spawnmaxs = expandmaxs( level.spawnmaxs, spawnpoints[ index ].origin );
     }
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5669
 // Size: 0x7e
 function expandmins( mins, point )
@@ -2374,7 +2380,7 @@ function expandmins( mins, point )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x56f0
 // Size: 0x60
 function expandmaxs( maxs, point )
@@ -2398,7 +2404,7 @@ function expandmaxs( maxs, point )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5759
 // Size: 0x7a
 function findboxcenter( mins, maxs )
@@ -2420,7 +2426,7 @@ function findboxcenter( mins, maxs )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57dc
 // Size: 0x79
 function setmapcenterfordev()
@@ -2434,7 +2440,7 @@ function setmapcenterfordev()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x585d
 // Size: 0x7d, Type: bool
 function shoulduseteamstartspawn()
@@ -2458,7 +2464,7 @@ function shoulduseteamstartspawn()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x58e3
 // Size: 0x53
 function getpathsighttestnodes( pos, bclose )
@@ -2478,7 +2484,7 @@ function getpathsighttestnodes( pos, bclose )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x593f
 // Size: 0x69
 function getradiuspathsighttestnodes( pos )
@@ -2505,7 +2511,7 @@ function getradiuspathsighttestnodes( pos )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x59b1
 // Size: 0x3e7
 function evaluateprecomputedlos( spawnpoint, team )
@@ -2621,7 +2627,7 @@ function evaluateprecomputedlos( spawnpoint, team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5da0
 // Size: 0x69
 function _precomputedlosdatatest( viewer, spawnpoint )
@@ -2642,7 +2648,7 @@ function _precomputedlosdatatest( viewer, spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5e12
 // Size: 0xf5, Type: bool
 function checkttlosdeverrors( viewer, spawnpoint )
@@ -2676,7 +2682,7 @@ function checkttlosdeverrors( viewer, spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5f10
 // Size: 0x132
 function checkttlosoverrides( viewer, spawnpoint )
@@ -2706,7 +2712,7 @@ function checkttlosoverrides( viewer, spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x604a
 // Size: 0x115
 function addttlosoverride( nodea, nodeb, var_48c0bd41cc10dfd8, var_84c277514873a859 )
@@ -2744,7 +2750,7 @@ function addttlosoverride( nodea, nodeb, var_48c0bd41cc10dfd8, var_84c277514873a
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6167
 // Size: 0x4
 function getclosenoderadiusdist()
@@ -2753,7 +2759,7 @@ function getclosenoderadiusdist()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6174
 // Size: 0x4
 function getfarnoderadiusdist()
@@ -2762,7 +2768,7 @@ function getfarnoderadiusdist()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6181
 // Size: 0xeb
 function directlineofsighttest( spawnpoint, viewer, tracepos )
@@ -2783,7 +2789,7 @@ function directlineofsighttest( spawnpoint, viewer, tracepos )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6275
 // Size: 0x5
 function getmaxdistancetolos()
@@ -2792,7 +2798,7 @@ function getmaxdistancetolos()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6283
 // Size: 0x78
 function checkttlosloaded()
@@ -2815,16 +2821,16 @@ function checkttlosloaded()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6303
 // Size: 0x2c, Type: bool
 function shoulduseprecomputedlos()
 {
-    return getdvarint( @"hash_d7358339b14a448f", 0 ) == 1 && !isdefined( level.disableprecomputedlos ) && !generatinglosdata();
+    return getdvarint( @"sv_useprecomputedlosdata", 0 ) == 1 && !isdefined( level.disableprecomputedlos ) && !generatinglosdata();
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6338
 // Size: 0x13, Type: bool
 function generatinglosdata()
@@ -2833,7 +2839,7 @@ function generatinglosdata()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6354
 // Size: 0x7
 function isttlosdataavailable()
@@ -2842,7 +2848,7 @@ function isttlosdataavailable()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6364
 // Size: 0x186
 function printstartupdebugmessages()
@@ -2891,7 +2897,7 @@ function printstartupdebugmessages()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64f2
 // Size: 0x17, Type: bool
 function isfallbackspawn( spawnpoint )
@@ -2900,7 +2906,7 @@ function isfallbackspawn( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6512
 // Size: 0x99
 function logextraspawninfothink()
@@ -2935,7 +2941,7 @@ function logextraspawninfothink()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x65b3
 // Size: 0xec
 function logextraspawn( team, logid )
@@ -2956,7 +2962,7 @@ function logextraspawn( team, logid )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66a7
 // Size: 0x17
 function clearlastteamspawns()
@@ -2965,7 +2971,7 @@ function clearlastteamspawns()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66c6
 // Size: 0x51
 function getoriginidentifierstring( spawnpoint )
@@ -2974,7 +2980,7 @@ function getoriginidentifierstring( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6720
 // Size: 0x37
 function getoriginidentifierstringnoz( spawnpoint )
@@ -2983,7 +2989,7 @@ function getoriginidentifierstringnoz( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6760
 // Size: 0x2a5, Type: bool
 function checkmodifiedspawnpoint( spawnpoint )
@@ -3084,7 +3090,7 @@ function checkmodifiedspawnpoint( spawnpoint )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a0e
 // Size: 0xd6
 function calculateteamclusters( team )
@@ -3108,7 +3114,7 @@ function calculateteamclusters( team )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6aed
 // Size: 0x46
 function createcluster( player )
@@ -3120,7 +3126,7 @@ function createcluster( player )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b3c
 // Size: 0x24d
 function mergeclusterlist( container )
@@ -3130,10 +3136,12 @@ function mergeclusterlist( container )
     var_14f82e0d331bcd8b = undefined;
     nearestdistsq = -1;
     
-    for (var_a7b44bd189368a72 = 0; var_a7b44bd189368a72 < container.clusterlist.size; var_a7b44bd189368a72++) {
+    for ( var_a7b44bd189368a72 = 0; var_a7b44bd189368a72 < container.clusterlist.size ; var_a7b44bd189368a72++ )
+    {
         clustera = container.clusterlist[ var_a7b44bd189368a72 ];
         
-        for (var_a7b44ad18936883f = var_a7b44bd189368a72 + 1; var_a7b44ad18936883f < container.clusterlist.size; var_a7b44ad18936883f++) {
+        for ( var_a7b44ad18936883f = var_a7b44bd189368a72 + 1; var_a7b44ad18936883f < container.clusterlist.size ; var_a7b44ad18936883f++ )
+        {
             clusterb = container.clusterlist[ var_a7b44ad18936883f ];
             distsq = distance2dsquared( clustera.center, clusterb.center );
             
@@ -3176,7 +3184,7 @@ function mergeclusterlist( container )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6d91
 // Size: 0x30
 function ignoretriggerenter( player, trigger )
@@ -3190,7 +3198,7 @@ function ignoretriggerenter( player, trigger )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6dc9
 // Size: 0x2a
 function ignoretriggerexit( player, trigger )
@@ -3204,7 +3212,7 @@ function ignoretriggerexit( player, trigger )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6dfb
 // Size: 0x7d
 function getspawnbucketfromstring( var_cbf572b044ed12e0 )
@@ -3230,7 +3238,7 @@ function getspawnbucketfromstring( var_cbf572b044ed12e0 )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e81
 // Size: 0x60
 function enablespawnpointlist( spawnpoints )
@@ -3242,7 +3250,7 @@ function enablespawnpointlist( spawnpoints )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ee9
 // Size: 0x60
 function disablespawnpointlist( spawnpoints )
@@ -3254,7 +3262,7 @@ function disablespawnpointlist( spawnpoints )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f51
 // Size: 0x20
 function function_fd739ec45329729e( id )
@@ -3263,7 +3271,7 @@ function function_fd739ec45329729e( id )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6f7a
 // Size: 0x95
 function registerspawnset( id, spawnpoints )
@@ -3288,7 +3296,7 @@ function registerspawnset( id, spawnpoints )
 /#
 
     // Namespace spawnlogic / scripts\mp\spawnlogic
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x7018
     // Size: 0x30, Type: dev
     function function_8390bf8c3b74466a( id )
@@ -3300,7 +3308,7 @@ function registerspawnset( id, spawnpoints )
 #/
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7050
 // Size: 0xe1
 function activatespawnset( id, exclusive )
@@ -3339,7 +3347,7 @@ function activatespawnset( id, exclusive )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7139
 // Size: 0xe6
 function deactivatespawnset( id )
@@ -3372,7 +3380,7 @@ function deactivatespawnset( id )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7227
 // Size: 0x1d
 function deactivateallspawnsets()
@@ -3382,7 +3390,7 @@ function deactivateallspawnsets()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x724c
 // Size: 0x21
 function getspawnsetsize( id )
@@ -3391,7 +3399,7 @@ function getspawnsetsize( id )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7276
 // Size: 0x41
 function getrandomspawnpointfromset( id )
@@ -3401,14 +3409,15 @@ function getrandomspawnpointfromset( id )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x72c0
 // Size: 0x95
 function getrandomspawnpointfromactivesets()
 {
     var_90be334c1c37268a = getarraykeys( level.spawnglobals.activespawnsets );
     
-    for (var_ffed3098c31f4403 = undefined; !isdefined( var_ffed3098c31f4403 ) && var_90be334c1c37268a.size > 0; var_ffed3098c31f4403 = undefined) {
+    for ( var_ffed3098c31f4403 = undefined; !isdefined( var_ffed3098c31f4403 ) && var_90be334c1c37268a.size > 0 ; var_ffed3098c31f4403 = undefined )
+    {
         var_ffed3098c31f4403 = random( var_90be334c1c37268a );
         
         if ( getspawnsetsize( var_ffed3098c31f4403 ) <= 0 )
@@ -3423,7 +3432,7 @@ function getrandomspawnpointfromactivesets()
 /#
 
     // Namespace spawnlogic / scripts\mp\spawnlogic
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x735e
     // Size: 0x181, Type: dev
     function updatedebughud()
@@ -3472,7 +3481,7 @@ function getrandomspawnpointfromactivesets()
     }
 
     // Namespace spawnlogic / scripts\mp\spawnlogic
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x74e7
     // Size: 0xd6, Type: dev
     function function_4c2c5ecea9fd1e73( spawnpoint )
@@ -3488,7 +3497,7 @@ function getrandomspawnpointfromactivesets()
     }
 
     // Namespace spawnlogic / scripts\mp\spawnlogic
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x75c5
     // Size: 0x60, Type: dev
     function function_50a59d95bac1964e()
@@ -3502,7 +3511,7 @@ function getrandomspawnpointfromactivesets()
     }
 
     // Namespace spawnlogic / scripts\mp\spawnlogic
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x762d
     // Size: 0x124, Type: dev
     function function_d344bbcacf5e4d96( factorref, factorstruct, spawncontext )
@@ -3532,7 +3541,7 @@ function getrandomspawnpointfromactivesets()
 #/
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7759
 // Size: 0x7e
 function createscriptedspawnpoint( classname, origin, angles, target, script_noteworthy )
@@ -3547,7 +3556,7 @@ function createscriptedspawnpoint( classname, origin, angles, target, script_not
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x77e0
 // Size: 0x1dc
 function addscriptedspawnpoints( var_223764ad899d9fee )
@@ -3616,7 +3625,7 @@ function addscriptedspawnpoints( var_223764ad899d9fee )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79c4
 // Size: 0x151
 function scriptedspawnpointsonmigration()
@@ -3658,7 +3667,7 @@ function scriptedspawnpointsonmigration()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b1d
 // Size: 0x45, Type: bool
 function function_bff229a11ecd1e34()
@@ -3672,7 +3681,7 @@ function function_bff229a11ecd1e34()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7b6b
 // Size: 0x1e4
 function function_5d5267daeda595( var_25ff9cceff399d80, var_e1fac4e807047e1c )
@@ -3724,7 +3733,7 @@ function function_5d5267daeda595( var_25ff9cceff399d80, var_e1fac4e807047e1c )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d57
 // Size: 0x151
 function function_9a3bef3ffef9c904( var_a65640524cb6c8dd )
@@ -3780,7 +3789,7 @@ function function_9a3bef3ffef9c904( var_a65640524cb6c8dd )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7eb0
 // Size: 0x127
 function initspawnlist( spawnkey, spawntype, attackervalue, defendervalue, isoptional )
@@ -3807,7 +3816,7 @@ function initspawnlist( spawnkey, spawntype, attackervalue, defendervalue, isopt
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x7fdf
 // Size: 0x63
 function initspawnlists( spawnkey, primary_attacker, primary_defender, start_attacker, start_defender, fallback_attacker, fallback_defender )
@@ -3818,7 +3827,7 @@ function initspawnlists( spawnkey, primary_attacker, primary_defender, start_att
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x804a
 // Size: 0x38
 function function_afe4709b818e7c9e( spawnkey )
@@ -3828,7 +3837,7 @@ function function_afe4709b818e7c9e( spawnkey )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x808a
 // Size: 0x4e
 function function_542d0780ea7c537d( spawningplayer, spawnteam, spawnparams )
@@ -3842,7 +3851,7 @@ function function_542d0780ea7c537d( spawningplayer, spawnteam, spawnparams )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x80e1
 // Size: 0xac
 function function_768bb924a0a3b2e9( pair, team, primaryset, fallbackset )
@@ -3861,7 +3870,7 @@ function function_768bb924a0a3b2e9( pair, team, primaryset, fallbackset )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8195
 // Size: 0x6e
 function function_48ed29b53fd72775()
@@ -3873,7 +3882,7 @@ function function_48ed29b53fd72775()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x820b
 // Size: 0x6e
 function function_437beaf209334ce2()
@@ -3885,7 +3894,7 @@ function function_437beaf209334ce2()
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8281
 // Size: 0xcc
 function function_8be1c339876506b9( ent, pair, team, params )
@@ -3897,7 +3906,7 @@ function function_8be1c339876506b9( ent, pair, team, params )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8356
 // Size: 0x87
 function getspawnpointforplayer( player, params )
@@ -3923,7 +3932,7 @@ function getspawnpointforplayer( player, params )
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x83e6
 // Size: 0x51, Type: bool
 function function_b17bf43316b9fb08( spawnkey, spawnvalue )

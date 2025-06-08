@@ -8,7 +8,7 @@
 #namespace bots_gametype_gun;
 
 // Namespace bots_gametype_gun / scripts\mp\bots\bots_gametype_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x159
 // Size: 0x10
 function main()
@@ -20,7 +20,7 @@ function main()
 /#
 
     // Namespace bots_gametype_gun / scripts\mp\bots\bots_gametype_gun
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x171
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -31,7 +31,7 @@ function main()
 #/
 
 // Namespace bots_gametype_gun / scripts\mp\bots\bots_gametype_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17e
 // Size: 0x17
 function setup_callbacks()
@@ -40,7 +40,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_gun / scripts\mp\bots\bots_gametype_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19d
 // Size: 0xd
 function setup_bot_gun()
@@ -49,7 +49,7 @@ function setup_bot_gun()
 }
 
 // Namespace bots_gametype_gun / scripts\mp\bots\bots_gametype_gun
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b2
 // Size: 0x7e
 function bot_gun_pick_personality_from_weapon( weaponname, preferred_personality )
@@ -80,7 +80,7 @@ function bot_gun_pick_personality_from_weapon( weaponname, preferred_personality
 }
 
 // Namespace bots_gametype_gun / scripts\mp\bots\bots_gametype_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x238
 // Size: 0x149
 function bot_gun_think()

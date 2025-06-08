@@ -9,7 +9,7 @@
 #namespace namespace_4661781de8850ae4;
 
 // Namespace namespace_4661781de8850ae4 / namespace_9e7b04da80a97ce9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd
 // Size: 0x13
 function init()

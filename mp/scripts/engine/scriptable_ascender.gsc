@@ -4,7 +4,7 @@
 #namespace scriptable_ascender;
 
 // Namespace scriptable_ascender / scripts\engine\scriptable_ascender
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xab
 // Size: 0x15
 function function_de7ceb99406215a9( var_aaf3b1aac118b944 )
@@ -13,7 +13,7 @@ function function_de7ceb99406215a9( var_aaf3b1aac118b944 )
 }
 
 // Namespace scriptable_ascender / scripts\engine\scriptable_ascender
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc8
 // Size: 0x15
 function function_605a755fde14133a( canusecallback )
@@ -22,7 +22,7 @@ function function_605a755fde14133a( canusecallback )
 }
 
 // Namespace scriptable_ascender / scripts\engine\scriptable_ascender
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe5
 // Size: 0x3b
 function function_547c48dc070b2109( usedcallback )
@@ -36,7 +36,7 @@ function function_547c48dc070b2109( usedcallback )
 }
 
 // Namespace scriptable_ascender / scripts\engine\scriptable_ascender
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x128
 // Size: 0x98
 function function_1f97e923f41ddf92( instance, player, edgeindex, isvertical, isinverted, isgoingup )
@@ -58,7 +58,7 @@ function function_1f97e923f41ddf92( instance, player, edgeindex, isvertical, isi
 }
 
 // Namespace scriptable_ascender / scripts\engine\scriptable_ascender
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1c9
 // Size: 0x53
 function function_f3f393d3efa1edd1( instance, player, edgeindex, isinverted )
@@ -77,7 +77,7 @@ function function_f3f393d3efa1edd1( instance, player, edgeindex, isinverted )
 }
 
 // Namespace scriptable_ascender / scripts\engine\scriptable_ascender
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x225
 // Size: 0x99
 function function_65a30198614e57d1( instance, player, edgeindex, isinverted, isvertical, var_7bd9fd9d3e7c7aa )

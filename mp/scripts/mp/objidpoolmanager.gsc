@@ -6,7 +6,7 @@
 #namespace objidpoolmanager;
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a
 // Size: 0x78
 function init()
@@ -23,7 +23,7 @@ function init()
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21a
 // Size: 0x106
 function requestreservedid( objid )
@@ -62,7 +62,7 @@ function requestreservedid( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x329
 // Size: 0x81
 function requestobjectiveid( priority )
@@ -83,7 +83,7 @@ function requestobjectiveid( priority )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b3
 // Size: 0x3f
 function function_92a696fa5918eca5( objid )
@@ -98,14 +98,15 @@ function function_92a696fa5918eca5( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fb
 // Size: 0x55
 function function_b29f91f1fb14e113( var_5c3b190b45db5f37 )
 {
     if ( objective_isunlimited() )
     {
-        for (i = level.var_9977f6e10514d7ce.size; i < var_5c3b190b45db5f37 + 1; i++) {
+        for ( i = level.var_9977f6e10514d7ce.size; i < var_5c3b190b45db5f37 + 1 ; i++ )
+        {
             entry = function_7e41a40db70e23b9();
             level.var_9977f6e10514d7ce[ i ] = entry;
         }
@@ -113,9 +114,9 @@ function function_b29f91f1fb14e113( var_5c3b190b45db5f37 )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x458
-// Size: 0xc2, Type: bool
+// Size: 0xc2
 function removebestobjectiveid( prioritymax )
 {
     query = [];
@@ -138,7 +139,7 @@ function removebestobjectiveid( prioritymax )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x523
 // Size: 0x60
 function comparepriorityandtime( a, b )
@@ -152,7 +153,7 @@ function comparepriorityandtime( a, b )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x58b
 // Size: 0x204
 function getnextobjectiveid( priority )
@@ -211,7 +212,7 @@ function getnextobjectiveid( priority )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x798
 // Size: 0xb2, Type: bool
 function returnobjectiveid( objid )
@@ -235,7 +236,7 @@ function returnobjectiveid( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x853
 // Size: 0x8e, Type: bool
 function returnreservedobjectiveid( objid, var_301ec764dd09b364 )
@@ -301,7 +302,7 @@ function private function_be6060bf8a6e12c2( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9e3
 // Size: 0x77
 function objective_add( objectivenumber, state, position, iconname, iconsize )
@@ -334,7 +335,7 @@ function objective_add( objectivenumber, state, position, iconname, iconsize )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xa62
 // Size: 0x3f
 function objective_add_objective( objid, state, position, iconshader, iconsize )
@@ -348,7 +349,7 @@ function objective_add_objective( objid, state, position, iconshader, iconsize )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaa9
 // Size: 0x23
 function update_objective_ownerteam( objid, ownerteam )
@@ -362,7 +363,7 @@ function update_objective_ownerteam( objid, ownerteam )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xad4
 // Size: 0x23
 function update_objective_ownerclient( objid, owner )
@@ -376,7 +377,7 @@ function update_objective_ownerclient( objid, owner )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaff
 // Size: 0x23
 function update_objective_sethot( objid, ownerteam )
@@ -390,7 +391,7 @@ function update_objective_sethot( objid, ownerteam )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb2a
 // Size: 0x23
 function update_objective_setfriendlylabel( objid, stringref )
@@ -404,7 +405,7 @@ function update_objective_setfriendlylabel( objid, stringref )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb55
 // Size: 0x23
 function update_objective_setenemylabel( objid, stringref )
@@ -418,7 +419,7 @@ function update_objective_setenemylabel( objid, stringref )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb80
 // Size: 0x23
 function update_objective_setneutrallabel( objid, stringref )
@@ -432,7 +433,7 @@ function update_objective_setneutrallabel( objid, stringref )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbab
 // Size: 0x23
 function update_objective_state( objid, state )
@@ -446,7 +447,7 @@ function update_objective_state( objid, state )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbd6
 // Size: 0x23
 function update_objective_position( objid, position )
@@ -460,7 +461,7 @@ function update_objective_position( objid, position )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc01
 // Size: 0x23
 function update_objective_icon( objid, iconshader )
@@ -474,7 +475,7 @@ function update_objective_icon( objid, iconshader )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc2c
 // Size: 0x23
 function function_2946e9eb07acb3f1( objid, description )
@@ -488,7 +489,7 @@ function function_2946e9eb07acb3f1( objid, description )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc57
 // Size: 0x28
 function function_c3c6bff089dfdd34( objid, iconsize )
@@ -505,7 +506,7 @@ function function_c3c6bff089dfdd34( objid, iconsize )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc87
 // Size: 0x23
 function function_79a1a16de6b22b2d( objid, iconshader )
@@ -519,7 +520,7 @@ function function_79a1a16de6b22b2d( objid, iconshader )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcb2
 // Size: 0x1a
 function function_56fc9b5845892619( objid )
@@ -533,7 +534,7 @@ function function_56fc9b5845892619( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcd4
 // Size: 0x23
 function update_objective_setbackground( objid, type )
@@ -547,7 +548,7 @@ function update_objective_setbackground( objid, type )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcff
 // Size: 0x23
 function update_objective_onentity( objid, ent )
@@ -561,7 +562,7 @@ function update_objective_onentity( objid, ent )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd2a
 // Size: 0x2c
 function update_objective_onentitywithrotation( objid, ent )
@@ -576,7 +577,7 @@ function update_objective_onentitywithrotation( objid, ent )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd5e
 // Size: 0x23
 function function_fa3c420e27b5d08b( objid, var_cff8e6dc09cfee61 )
@@ -590,7 +591,7 @@ function function_fa3c420e27b5d08b( objid, var_cff8e6dc09cfee61 )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd89
 // Size: 0x23
 function update_objective_setzoffset( objid, offset )
@@ -604,7 +605,7 @@ function update_objective_setzoffset( objid, offset )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdb4
 // Size: 0x1a
 function function_9cad42ac02eff950( objid )
@@ -618,7 +619,7 @@ function function_9cad42ac02eff950( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdd6
 // Size: 0x1a
 function function_a28e8535e00d34f3( objid )
@@ -632,7 +633,7 @@ function function_a28e8535e00d34f3( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdf8
 // Size: 0x1a
 function function_6ae37618bb04ea60( objid )
@@ -646,7 +647,7 @@ function function_6ae37618bb04ea60( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe1a
 // Size: 0x1a
 function function_17db39bd195cc5b1( objid )
@@ -660,7 +661,7 @@ function function_17db39bd195cc5b1( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe3c
 // Size: 0x31
 function objective_playermask_single( objid, ent )
@@ -676,7 +677,7 @@ function objective_playermask_single( objid, ent )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe75
 // Size: 0x31
 function objective_teammask_single( objid, team )
@@ -692,7 +693,7 @@ function objective_teammask_single( objid, team )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeae
 // Size: 0x21
 function function_f5862ad1ad967602( objid )
@@ -707,7 +708,7 @@ function function_f5862ad1ad967602( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed7
 // Size: 0x21
 function objective_playermask_hidefromall( objid )
@@ -722,7 +723,7 @@ function objective_playermask_hidefromall( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf00
 // Size: 0x2a
 function objective_playermask_hidefrom( objid, ent )
@@ -737,7 +738,7 @@ function objective_playermask_hidefrom( objid, ent )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf32
 // Size: 0x2a
 function objective_playermask_addshowplayer( objid, ent )
@@ -752,7 +753,7 @@ function objective_playermask_addshowplayer( objid, ent )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf64
 // Size: 0x21
 function function_df6a3e032fa07d22( objid )
@@ -767,7 +768,7 @@ function function_df6a3e032fa07d22( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf8d
 // Size: 0x21
 function objective_playermask_showtoall( objid )
@@ -782,7 +783,7 @@ function objective_playermask_showtoall( objid )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfb6
 // Size: 0x3b
 function objective_mask_showtoplayerteam( objid, ent )
@@ -798,7 +799,7 @@ function objective_mask_showtoplayerteam( objid, ent )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xff9
 // Size: 0x4b
 function function_39f2dc4e92db5fb9( objid, ent )
@@ -819,7 +820,7 @@ function function_39f2dc4e92db5fb9( objid, ent )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x104c
 // Size: 0x52
 function objective_mask_showtoenemyteam( objid, ent )
@@ -844,7 +845,7 @@ function objective_mask_showtoenemyteam( objid, ent )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10a6
 // Size: 0x2a
 function objective_teammask_addtomask( objid, team )
@@ -859,7 +860,7 @@ function objective_teammask_addtomask( objid, team )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10d8
 // Size: 0x2a
 function objective_teammask_removefrommask( objid, team )
@@ -874,7 +875,7 @@ function objective_teammask_removefrommask( objid, team )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x110a
 // Size: 0x23
 function objective_pin_global( objid, pin )
@@ -888,7 +889,7 @@ function objective_pin_global( objid, pin )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1135
 // Size: 0x23
 function objective_pin_team( objid, team )
@@ -902,7 +903,7 @@ function objective_pin_team( objid, team )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1160
 // Size: 0x23
 function objective_unpin_team( objid, team )
@@ -930,7 +931,7 @@ function private function_781844c0c05b5ac7()
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11bb
 // Size: 0x2e
 function objective_pin_player( objid, player )
@@ -944,7 +945,7 @@ function objective_pin_player( objid, player )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11f1
 // Size: 0x36
 function objective_unpin_player( objid, player, showoncompass )
@@ -958,7 +959,7 @@ function objective_unpin_player( objid, player, showoncompass )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x122f
 // Size: 0x3e
 function objective_show_progress( objid, show, unfill )
@@ -977,7 +978,7 @@ function objective_show_progress( objid, show, unfill )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1275
 // Size: 0x26
 function function_7299a742781a5030( state, player )
@@ -991,7 +992,7 @@ function function_7299a742781a5030( state, player )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12a3
 // Size: 0x26
 function function_8f7a55bda12ebb21( text, player )
@@ -1005,7 +1006,7 @@ function function_8f7a55bda12ebb21( text, player )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12d1
 // Size: 0x23
 function objective_show_team_progress( objid, team )
@@ -1019,7 +1020,7 @@ function objective_show_team_progress( objid, team )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12fc
 // Size: 0x23
 function objective_hide_team_progress( objid, team )
@@ -1033,7 +1034,7 @@ function objective_hide_team_progress( objid, team )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1327
 // Size: 0x2e
 function objective_show_player_progress( objid, player )
@@ -1047,7 +1048,7 @@ function objective_show_player_progress( objid, player )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x135d
 // Size: 0x2e
 function objective_hide_player_progress( objid, player )
@@ -1061,7 +1062,7 @@ function objective_hide_player_progress( objid, player )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1393
 // Size: 0x2a
 function objective_set_show_progress( objid, showprogress )
@@ -1075,7 +1076,7 @@ function objective_set_show_progress( objid, showprogress )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13c5
 // Size: 0x23
 function objective_set_progress( objid, progress )
@@ -1089,7 +1090,7 @@ function objective_set_progress( objid, progress )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13f0
 // Size: 0x23
 function objective_set_progress_team( objid, team )
@@ -1103,7 +1104,7 @@ function objective_set_progress_team( objid, team )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x141b
 // Size: 0x23
 function function_9b1a086f348520b0( objid, team )
@@ -1117,7 +1118,7 @@ function function_9b1a086f348520b0( objid, team )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1446
 // Size: 0x2e
 function objective_set_progress_client( objid, player )
@@ -1131,7 +1132,7 @@ function objective_set_progress_client( objid, player )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x147c
 // Size: 0x23
 function objective_set_play_intro( objid, show )
@@ -1145,7 +1146,7 @@ function objective_set_play_intro( objid, show )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14a7
 // Size: 0x23
 function objective_set_play_outro( objid, show )
@@ -1159,7 +1160,7 @@ function objective_set_play_outro( objid, show )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14d2
 // Size: 0x23
 function objective_set_pulsate( objid, pulse )
@@ -1173,7 +1174,7 @@ function objective_set_pulsate( objid, pulse )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14fd
 // Size: 0x23
 function objective_hide_for_mlg_spectator( objid, show )
@@ -1187,7 +1188,7 @@ function objective_hide_for_mlg_spectator( objid, show )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1528
 // Size: 0x23
 function objective_show_for_mlg_spectator( objid, show )
@@ -1201,7 +1202,7 @@ function objective_show_for_mlg_spectator( objid, show )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1553
 // Size: 0x23
 function function_d7e3c4a08682c1b9( objid, show )
@@ -1215,7 +1216,7 @@ function function_d7e3c4a08682c1b9( objid, show )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x157e
 // Size: 0x23
 function function_ee37484ca9bdc744( objid, show )
@@ -1229,7 +1230,7 @@ function function_ee37484ca9bdc744( objid, show )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15a9
 // Size: 0x23
 function function_994c8917a78b024( objid, show )
@@ -1243,7 +1244,7 @@ function function_994c8917a78b024( objid, show )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15d4
 // Size: 0x23
 function function_1513b8ac9570e6c7( objid, var_99d6809da5559c23 )
@@ -1257,7 +1258,7 @@ function function_1513b8ac9570e6c7( objid, var_99d6809da5559c23 )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15ff
 // Size: 0x23
 function function_559a49e0dab1f8fc( objid, var_99d6809da5559c23 )
@@ -1271,7 +1272,7 @@ function function_559a49e0dab1f8fc( objid, var_99d6809da5559c23 )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x162a
 // Size: 0x23
 function function_bf66c6833e867284( objid, type )
@@ -1285,7 +1286,7 @@ function function_bf66c6833e867284( objid, type )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1655
 // Size: 0x23
 function function_a73941bc42a6e8d3( objid, var_40c8c22e3af690c1 )
@@ -1299,7 +1300,7 @@ function function_a73941bc42a6e8d3( objid, var_40c8c22e3af690c1 )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1680
 // Size: 0x43
 function function_e6b9c68b99e455ba( objid, var_d3810e59fa78746e, var_a4ce6d25578e2f1f, var_9184ccd844da4630 )
@@ -1315,7 +1316,7 @@ function function_e6b9c68b99e455ba( objid, var_d3810e59fa78746e, var_a4ce6d25578
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x16cb
 // Size: 0xcc
 function createobjective( shadername, team, friendlyonly, var_2231e5a0f940caae, var_dbe22cd5d2a797af, iconsize )
@@ -1359,7 +1360,7 @@ function createobjective( shadername, team, friendlyonly, var_2231e5a0f940caae, 
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x17a0
 // Size: 0x42
 function function_c1a18d4076f420a5( shadername, var_2231e5a0f940caae, var_dbe22cd5d2a797af, iconsize )
@@ -1370,7 +1371,7 @@ function function_c1a18d4076f420a5( shadername, var_2231e5a0f940caae, var_dbe22c
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x17eb
 // Size: 0xa0
 function createobjective_engineer( shadername, var_2231e5a0f940caae, var_dbe22cd5d2a797af, iconsize )
@@ -1394,7 +1395,7 @@ function createobjective_engineer( shadername, var_2231e5a0f940caae, var_dbe22cd
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1893
 // Size: 0xd4
 function function_4625d98c8f5bdc94( shadername, var_2231e5a0f940caae, var_dbe22cd5d2a797af, iconsize )
@@ -1429,7 +1430,7 @@ function function_4625d98c8f5bdc94( shadername, var_2231e5a0f940caae, var_dbe22c
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1970
 // Size: 0x77
 function function_160f522b63c32d76( progressbarstate, text, omnvarvalue )
@@ -1463,7 +1464,7 @@ function function_160f522b63c32d76( progressbarstate, text, omnvarvalue )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x19ef
 // Size: 0x9a
 function function_ce702e5925e31fc9( objid, player, priority, state, text )
@@ -1491,7 +1492,7 @@ function function_ce702e5925e31fc9( objid, player, priority, state, text )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a91
 // Size: 0x4b
 function function_26259bd38697b5ad( objid, player )
@@ -1507,7 +1508,7 @@ function function_26259bd38697b5ad( objid, player )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ae4
 // Size: 0x18
 function function_482e36e6af02143c( player )
@@ -1516,7 +1517,7 @@ function function_482e36e6af02143c( player )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b04
 // Size: 0x23
 function function_98ba077848896a3( objid, shouldshow )
@@ -1530,7 +1531,7 @@ function function_98ba077848896a3( objid, shouldshow )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b2f
 // Size: 0x2c
 function function_f21e9b2e78de984b( objid, var_a7c6c5d6c3d369aa, var_467f4d9b8d9063b )
@@ -1544,7 +1545,7 @@ function function_f21e9b2e78de984b( objid, var_a7c6c5d6c3d369aa, var_467f4d9b8d9
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b63
 // Size: 0x23
 function function_41f90376ab869b9f( objid, shouldhide )
@@ -1558,7 +1559,7 @@ function function_41f90376ab869b9f( objid, shouldhide )
 }
 
 // Namespace objidpoolmanager / scripts\mp\objidpoolmanager
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1b8e
 // Size: 0x3e
 function function_846c2acd91309cd8( objid, r, g, b, active )

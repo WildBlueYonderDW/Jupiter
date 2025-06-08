@@ -24,7 +24,7 @@
 #namespace sentry_gun;
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a3
 // Size: 0xdc
 function init()
@@ -54,7 +54,7 @@ function init()
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x987
 // Size: 0x28
 function weaponcleanupsentryturret( streakinfo, switchresult, weaponobj )
@@ -66,9 +66,9 @@ function weaponcleanupsentryturret( streakinfo, switchresult, weaponobj )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9b7
-// Size: 0x26, Type: bool
+// Size: 0x26
 function tryusesentryturret( streakname )
 {
     streakinfo = createstreakinfo( streakname, self );
@@ -76,7 +76,7 @@ function tryusesentryturret( streakname )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9e6
 // Size: 0x288, Type: bool
 function tryusesentryturretfromstruct( streakinfo )
@@ -186,7 +186,7 @@ function tryusesentryturretfromstruct( streakinfo )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc77
 // Size: 0x24e
 function sentryturret_watchplacement( turret, streakinfo, ignorecancel, var_290b1442271ab369 )
@@ -260,7 +260,7 @@ function sentryturret_watchplacement( turret, streakinfo, ignorecancel, var_290b
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xece
 // Size: 0x33
 function function_5c005d2b1101bc78()
@@ -273,7 +273,7 @@ function function_5c005d2b1101bc78()
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf09
 // Size: 0x50
 function sentryturret_delayplacementinstructions( delaytime )
@@ -288,7 +288,7 @@ function sentryturret_delayplacementinstructions( delaytime )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf61
 // Size: 0x67a
 function sentryturret_create( turrettype, streakinfo )
@@ -435,7 +435,7 @@ function sentryturret_create( turrettype, streakinfo )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15e4
 // Size: 0x59
 function function_7571e09a363757ca( bundle, blueprintindex )
@@ -448,7 +448,7 @@ function function_7571e09a363757ca( bundle, blueprintindex )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1646
 // Size: 0x74
 function function_5be2524e8daf7546( turret )
@@ -467,7 +467,7 @@ function function_5be2524e8daf7546( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c2
 // Size: 0x3d
 function function_a06fbf5fc1e4a4ef( turret )
@@ -476,7 +476,7 @@ function function_a06fbf5fc1e4a4ef( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1707
 // Size: 0x4d9
 function sentryturret_setplaced( turret, marker )
@@ -591,7 +591,7 @@ function sentryturret_setplaced( turret, marker )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1be8
 // Size: 0x1b6
 function function_5c49802fcf1a63ed( turret, config )
@@ -641,7 +641,7 @@ function function_5c49802fcf1a63ed( turret, config )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1da6
 // Size: 0x293
 function sentryturret_setcarried( turret )
@@ -730,7 +730,7 @@ function sentryturret_setcarried( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2041
 // Size: 0x80
 function sentryturret_switchbacklastweapon( immediateswitch )
@@ -750,7 +750,7 @@ function sentryturret_switchbacklastweapon( immediateswitch )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20c9
 // Size: 0x5d
 function sentryturret_setinactive( turret )
@@ -762,7 +762,7 @@ function sentryturret_setinactive( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x212e
 // Size: 0x47
 function sentryturret_delaydeletemarker( turret, marker )
@@ -778,7 +778,7 @@ function sentryturret_delaydeletemarker( turret, marker )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x217d
 // Size: 0x58
 function sentryturret_disableplayeruseonconnect( turret, useobj )
@@ -800,7 +800,7 @@ function sentryturret_disableplayeruseonconnect( turret, useobj )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21dd
 // Size: 0x1ae
 function sentryturret_watchpickup( turret )
@@ -839,7 +839,8 @@ function sentryturret_watchpickup( turret )
         
         if ( isdefined( turret.moving_platform ) && isdefined( turret.moving_platform.linkedturrets ) && deploystatus )
         {
-            for (index = 0; index < turret.moving_platform.linkedturrets.size; index++) {
+            for ( index = 0; index < turret.moving_platform.linkedturrets.size ; index++ )
+            {
                 veh_turret = turret.moving_platform.linkedturrets[ index ];
                 
                 if ( isdefined( veh_turret ) && veh_turret == turret )
@@ -861,7 +862,7 @@ function sentryturret_watchpickup( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2393
 // Size: 0x5d
 function sentryturret_disableplayerpickuponconnect( turret )
@@ -880,7 +881,7 @@ function sentryturret_disableplayerpickuponconnect( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23f8
 // Size: 0xd9
 function sentryturret_watchdismantle( turret )
@@ -918,7 +919,7 @@ function sentryturret_watchdismantle( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24d9
 // Size: 0x4f
 function sentryturret_watchdamage( turret )
@@ -935,7 +936,7 @@ function sentryturret_watchdamage( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2530
 // Size: 0x72
 function sentryturret_disableplayerdismantleonconnect( turret )
@@ -961,7 +962,7 @@ function sentryturret_disableplayerdismantleonconnect( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25aa
 // Size: 0x8c
 function function_764a9f25a1a15a4a( data )
@@ -980,7 +981,7 @@ function function_764a9f25a1a15a4a( data )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x263e
 // Size: 0x6f
 function sentryturret_empstarted( data )
@@ -999,7 +1000,7 @@ function sentryturret_empstarted( data )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26b5
 // Size: 0x3f
 function sentryturret_empcleared( isdeath )
@@ -1064,7 +1065,7 @@ function private function_46b8598cc2ff1a03( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2852
 // Size: 0x23f
 function sentryturret_watchdeath( turret )
@@ -1175,7 +1176,7 @@ function private function_1e2355c2241b0a62( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b32
 // Size: 0x19
 function sentryturret_delayscriptabledelete()
@@ -1186,7 +1187,7 @@ function sentryturret_delayscriptabledelete()
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b53
 // Size: 0xa4
 function sentryturret_watchtimeout( turret )
@@ -1207,7 +1208,7 @@ function sentryturret_watchtimeout( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bff
 // Size: 0x39
 function sentryturret_watchdisown( turret )
@@ -1219,7 +1220,7 @@ function sentryturret_watchdisown( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c40
 // Size: 0x2b
 function sentryturret_watchgameend( turret )
@@ -1231,7 +1232,7 @@ function sentryturret_watchgameend( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c73
 // Size: 0x32
 function function_1bf664fbd06fe1b8( turret )
@@ -1244,7 +1245,7 @@ function function_1bf664fbd06fe1b8( turret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cad
 // Size: 0x6a
 function sentryturret_setturretmodel( type )
@@ -1264,7 +1265,7 @@ function sentryturret_setturretmodel( type )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d1f
 // Size: 0x138, Type: bool
 function function_6633c7714fc94777( streakinfo, existingturret )
@@ -1297,7 +1298,7 @@ function function_6633c7714fc94777( streakinfo, existingturret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e60
 // Size: 0xa4, Type: bool
 function function_8fbbc6a868621dd5( existingturret )
@@ -1332,7 +1333,7 @@ function function_8fbbc6a868621dd5( existingturret )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f0d
 // Size: 0xe3
 function sentry_attacktargets( var_630af5192659dd3b )
@@ -1380,7 +1381,7 @@ function sentry_attacktargets( var_630af5192659dd3b )
 /#
 
     // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2ff8
     // Size: 0x25f, Type: dev
     function function_c057f52574c94670( var_630af5192659dd3b )
@@ -1467,7 +1468,7 @@ function sentry_attacktargets( var_630af5192659dd3b )
     }
 
     // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x325f
     // Size: 0x1af, Type: dev
     function function_9004e9c694f0db7b( firepos )
@@ -1509,7 +1510,7 @@ function sentry_attacktargets( var_630af5192659dd3b )
     }
 
     // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3416
     // Size: 0x40, Type: dev
     function function_c44bb0461339a1f1()
@@ -1522,7 +1523,7 @@ function sentry_attacktargets( var_630af5192659dd3b )
     }
 
     // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x345e
     // Size: 0x61, Type: dev
     function function_e2a098b6c28a80cb( turret )
@@ -1544,7 +1545,7 @@ function sentry_attacktargets( var_630af5192659dd3b )
     }
 
     // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x34c7
     // Size: 0x39, Type: dev
     function function_2937914e0c4fb627( turret )
@@ -1560,7 +1561,7 @@ function sentry_attacktargets( var_630af5192659dd3b )
 #/
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3508
 // Size: 0x15
 function sentry_targetlocksound()
@@ -1570,7 +1571,7 @@ function sentry_targetlocksound()
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3525
 // Size: 0x4c
 function sentry_spinup( var_630af5192659dd3b )
@@ -1585,7 +1586,7 @@ function sentry_spinup( var_630af5192659dd3b )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3579
 // Size: 0xc
 function sentry_spindown()
@@ -1594,7 +1595,7 @@ function sentry_spindown()
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x358d
 // Size: 0x192
 function sentry_burstfirestart( var_630af5192659dd3b, var_ebed6e83eb956d18, var_7a4f7bd11952e7bc )
@@ -1639,7 +1640,8 @@ function sentry_burstfirestart( var_630af5192659dd3b, var_ebed6e83eb956d18, var_
             wait prefiretime;
         }
         
-        for (i = 0; i < numshots && !self.overheated; i++) {
+        for ( i = 0; i < numshots && !self.overheated ; i++ )
+        {
             self shootturret( "tag_flash", lockstrength );
             self.streakinfo.shots_fired++;
             wait firetime;
@@ -1655,7 +1657,7 @@ function sentry_burstfirestart( var_630af5192659dd3b, var_ebed6e83eb956d18, var_
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3727
 // Size: 0xa
 function sentry_burstfirestop()
@@ -1664,7 +1666,7 @@ function sentry_burstfirestop()
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3739
 // Size: 0xa0
 function turret_heatmonitor()
@@ -1698,7 +1700,7 @@ function turret_heatmonitor()
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37e1
 // Size: 0x5e
 function playheatfx()
@@ -1717,7 +1719,7 @@ function playheatfx()
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3847
 // Size: 0x92
 function turret_coolmonitor()
@@ -1749,7 +1751,7 @@ function turret_coolmonitor()
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x38e1
 // Size: 0x179
 function function_ffbb592bde7cbca8( newowner, oldowner )
@@ -1793,7 +1795,7 @@ function function_ffbb592bde7cbca8( newowner, oldowner )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a62
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
@@ -1802,7 +1804,7 @@ function function_49197cd063a740ea( callbackfunction )
 }
 
 // Namespace sentry_gun / scripts\cp_mp\killstreaks\sentry_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a7f
 // Size: 0xd
 function elevator_turretcallback()

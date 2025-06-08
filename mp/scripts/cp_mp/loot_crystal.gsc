@@ -10,7 +10,7 @@
 #namespace loot_crystal;
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cc
 // Size: 0xf2
 function function_f009d47735dc7adb()
@@ -39,7 +39,7 @@ function function_f009d47735dc7adb()
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c6
 // Size: 0xa0
 function function_11d90b6aad7cc54f()
@@ -65,7 +65,7 @@ function function_11d90b6aad7cc54f()
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46e
 // Size: 0x56c
 function function_fd67fc9069339eb0( destination )
@@ -191,7 +191,7 @@ function function_fd67fc9069339eb0( destination )
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9e2
 // Size: 0x228
 function function_a60bb9caaac38e4e( struct )
@@ -237,7 +237,8 @@ function function_a60bb9caaac38e4e( struct )
                 break;
         }
         
-        for (count = 0; count < totalspawnpoints; count++) {
+        for ( count = 0; count < totalspawnpoints ; count++ )
+        {
             point = spawn_points[ count ];
             point function_e87afa054556fca( point );
         }
@@ -252,7 +253,7 @@ function function_a60bb9caaac38e4e( struct )
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc12
 // Size: 0x99
 function function_e87afa054556fca( point )
@@ -264,7 +265,7 @@ function function_e87afa054556fca( point )
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb3
 // Size: 0x9c
 function function_a4c9c7827c00cf5()
@@ -273,7 +274,8 @@ function function_a4c9c7827c00cf5()
     {
         var_2c796eac8075783b = array_randomize( level.var_2161a5a5ecb28ea3 );
         
-        for (i = 0; i < var_2c796eac8075783b.size - 2; i++) {
+        for ( i = 0; i < var_2c796eac8075783b.size - 2 ; i++ )
+        {
             loot_crystal = var_2c796eac8075783b[ i ];
             
             if ( isdefined( loot_crystal ) )
@@ -293,7 +295,7 @@ function function_a4c9c7827c00cf5()
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd57
 // Size: 0x156
 function function_1be1c2a4c44b823c()
@@ -332,7 +334,7 @@ function function_1be1c2a4c44b823c()
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xeb5
 // Size: 0x7e
 function function_a120a3b57a6087c2( item, originpos )
@@ -347,7 +349,7 @@ function function_a120a3b57a6087c2( item, originpos )
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf3b
 // Size: 0x8d
 function loot_crystal_destroyed( instance, note, param, var_535d9c3fdddab5a9 )
@@ -366,7 +368,7 @@ function loot_crystal_destroyed( instance, note, param, var_535d9c3fdddab5a9 )
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfd0
 // Size: 0x170
 function function_11817d38f58bbb( params )
@@ -407,7 +409,8 @@ function function_11817d38f58bbb( params )
             
             var_e7cc345429d93ae3 = array_randomize( var_e7cc345429d93ae3 );
             
-            for (i = 0; i < var_e098da9ac92f01ff; i++) {
+            for ( i = 0; i < var_e098da9ac92f01ff ; i++ )
+            {
                 var_e7cc345429d93ae3[ i ] setscriptablepartstate( "loot_crystal", "healthy" );
             }
         }
@@ -415,7 +418,7 @@ function function_11817d38f58bbb( params )
 }
 
 // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1148
 // Size: 0x584
 function function_a62a277f18e23661( sparams )
@@ -556,7 +559,7 @@ function function_a62a277f18e23661( sparams )
 /#
 
     // Namespace loot_crystal / scripts\cp_mp\loot_crystal
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x16d4
     // Size: 0x2f, Type: dev
     function function_4a792a9a49c9da56()

@@ -11,7 +11,7 @@
 #namespace scene;
 
 // Namespace scene / scripts\common\scene
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x243
 // Size: 0x3c
 function play( existingentities, shotnames, scriptbundlename, var_f7ab585bff4b110 )
@@ -21,7 +21,7 @@ function play( existingentities, shotnames, scriptbundlename, var_f7ab585bff4b11
 }
 
 // Namespace scene / scripts\common\scene
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x287
 // Size: 0x5c
 function function_24e44cdb807b87ba( var_198fc279325346db, existingentities, shotnames, scriptbundlename, var_f7ab585bff4b110 )
@@ -38,7 +38,7 @@ function function_24e44cdb807b87ba( var_198fc279325346db, existingentities, shot
 }
 
 // Namespace scene / scripts\common\scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2eb
 // Size: 0x37
 function init( existingentities, shotnames, scriptbundlename )
@@ -48,7 +48,7 @@ function init( existingentities, shotnames, scriptbundlename )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x32b
 // Size: 0x160
 function skip( shotnames, var_870ed163bd3036dd, var_f77f80bf8f02d9f9 )
@@ -108,7 +108,7 @@ function skip( shotnames, var_870ed163bd3036dd, var_f77f80bf8f02d9f9 )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x493
 // Size: 0x9d
 function stop()
@@ -133,7 +133,7 @@ function stop()
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x538
 // Size: 0x215
 function cleanup( forcedeleteall )
@@ -179,7 +179,8 @@ function cleanup( forcedeleteall )
         sceneroot.var_cf24d127aa3920a0 = [];
     }
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < sceneroot.scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < sceneroot.scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = sceneroot.scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( isdefined( var_214d924f4e137244 ) && isdefined( var_214d924f4e137244.entity ) && !istrue( var_214d924f4e137244.existingentity ) )
@@ -206,7 +207,7 @@ function cleanup( forcedeleteall )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x755
 // Size: 0x66d
 function pre_stream( existingentities, shotnames, duration, scriptbundlename, predicttime )
@@ -406,7 +407,7 @@ function pre_stream( existingentities, shotnames, duration, scriptbundlename, pr
 }
 
 // Namespace scene / scripts\common\scene
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdca
 // Size: 0x71
 function function_8a37fe423de2b9db()
@@ -416,7 +417,8 @@ function function_8a37fe423de2b9db()
     shotnames = [];
     shotcount = scenescriptbundle function_d1338e27a26ecaeb();
     
-    for (shotindex = 0; shotindex < shotcount; shotindex++) {
+    for ( shotindex = 0; shotindex < shotcount ; shotindex++ )
+    {
         shot = scenescriptbundle function_2218afa82a590ea3( shotindex );
         shotnames[ shotindex ] = shot function_55042076624e1180();
     }
@@ -425,7 +427,7 @@ function function_8a37fe423de2b9db()
 }
 
 // Namespace scene / scripts\common\scene
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe44
 // Size: 0x108
 function get_entities( var_2a29e57c1c105d52, filter )
@@ -446,7 +448,8 @@ function get_entities( var_2a29e57c1c105d52, filter )
     
     shotindexes = sceneroot function_14d02a749939e837( var_2a29e57c1c105d52 );
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( isdefined( shotindexes ) && !var_214d924f4e137244 function_225d78e3c485a7ae( shotindexes ) )
@@ -472,7 +475,7 @@ function get_entities( var_2a29e57c1c105d52, filter )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf55
 // Size: 0x3c
 function get_entity( var_9f7e823a4cdab21d )
@@ -489,7 +492,7 @@ function get_entity( var_9f7e823a4cdab21d )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf9a
 // Size: 0xd6
 function get_object( var_8a2a5f9c6428c06c )
@@ -520,7 +523,8 @@ function get_object( var_8a2a5f9c6428c06c )
     }
     else
     {
-        for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+        for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+        {
             sceneobject = scenescriptbundle function_bfc4196d3da11705( var_56f4af8746a2d458 );
             
             if ( sceneobject function_aeb2b46911a5811d() == var_8a2a5f9c6428c06c )
@@ -535,7 +539,7 @@ function get_object( var_8a2a5f9c6428c06c )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1079
 // Size: 0x103
 function function_6cb938788c210309( var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, scriptbundlename )
@@ -584,7 +588,7 @@ function function_6cb938788c210309( var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, 
 }
 
 // Namespace scene / scripts\common\scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1185
 // Size: 0xe3
 function function_10a1cbb13da3a4fe( var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, scriptbundlename )
@@ -631,7 +635,7 @@ function function_10a1cbb13da3a4fe( var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, 
 }
 
 // Namespace scene / scripts\common\scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1271
 // Size: 0xef
 function function_77751080050d2cb1( objecttype, var_2a29e57c1c105d52, scriptbundlename )
@@ -649,7 +653,8 @@ function function_77751080050d2cb1( objecttype, var_2a29e57c1c105d52, scriptbund
     objects = [];
     shotindexes = sceneroot function_14d02a749939e837( var_2a29e57c1c105d52 );
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( var_214d924f4e137244.sceneobject function_c77857d663e8cfbe() != objecttype )
@@ -669,7 +674,7 @@ function function_77751080050d2cb1( objecttype, var_2a29e57c1c105d52, scriptbund
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1369
 // Size: 0x3e
 function function_bc521bee52fde214( rate )
@@ -681,7 +686,7 @@ function function_bc521bee52fde214( rate )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13af
 // Size: 0x88
 function function_b0b8f796886a9c81( ishighlod )
@@ -689,7 +694,8 @@ function function_b0b8f796886a9c81( ishighlod )
     sceneroot = self;
     scenedata = sceneroot.scenedata;
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( isdefined( var_214d924f4e137244.entity ) )
@@ -700,7 +706,7 @@ function function_b0b8f796886a9c81( ishighlod )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x143f
 // Size: 0xe9
 function function_ddebd5f650117455( var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, overridetype, overridevalue, scriptbundlename )
@@ -747,7 +753,7 @@ function function_ddebd5f650117455( var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, 
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1530
 // Size: 0x54
 function set_scriptbundle( scriptbundlename )
@@ -766,7 +772,7 @@ function set_scriptbundle( scriptbundlename )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x158c
 // Size: 0xa4
 function add_spawn_function( spawnfunc, var_6bff09752f736d14 )
@@ -794,7 +800,7 @@ function add_spawn_function( spawnfunc, var_6bff09752f736d14 )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1638
 // Size: 0xd9
 function get_state()
@@ -825,7 +831,7 @@ function get_state()
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1719
 // Size: 0x55
 function function_263e37fc44b91d4f( exclude_players )
@@ -843,7 +849,7 @@ function function_263e37fc44b91d4f( exclude_players )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1776
 // Size: 0x55
 function function_595670eb4c1bdf59( var_8d59d732cf917fb2 )
@@ -861,7 +867,7 @@ function function_595670eb4c1bdf59( var_8d59d732cf917fb2 )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17d3
 // Size: 0x55
 function function_2136d6e5467c6caf( var_da75af8d8c3a50e4 )
@@ -879,7 +885,7 @@ function function_2136d6e5467c6caf( var_da75af8d8c3a50e4 )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1830
 // Size: 0x10e
 function add_scene_func( scene_ref, func, var_8338711a0d65673b )
@@ -909,7 +915,7 @@ function add_scene_func( scene_ref, func, var_8338711a0d65673b )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1946
 // Size: 0xfe, Type: bool
 function remove_scene_func( scene_ref, func, var_8338711a0d65673b )
@@ -957,7 +963,7 @@ function remove_scene_func( scene_ref, func, var_8338711a0d65673b )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a4d
 // Size: 0xa7
 function function_a07af33558d3050f( notifytarget, eventmessage, statematch )
@@ -983,7 +989,7 @@ function function_a07af33558d3050f( notifytarget, eventmessage, statematch )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1afc
 // Size: 0x1c9
 function function_8207074e79f22926( notifytarget, note, var_6bff09752f736d14, repeat )
@@ -1021,7 +1027,8 @@ function function_8207074e79f22926( notifytarget, note, var_6bff09752f736d14, re
     
     if ( sceneroot get_state() == "Playing" )
     {
-        for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < sceneroot.scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+        for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < sceneroot.scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+        {
             var_214d924f4e137244 = sceneroot.scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
             
             if ( isdefined( var_214d924f4e137244 ) && isdefined( var_214d924f4e137244.var_36831a04af11576f ) && isdefined( var_214d924f4e137244.var_36831a04af11576f[ "DeltaAnimation" ] ) )
@@ -1056,7 +1063,7 @@ function private function_85b2629a7bbafad9( notifies, newnotify )
 }
 
 // Namespace scene / scripts\common\scene
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1da1
 // Size: 0x205
 function function_d9be975d8d1c9db3( var_7c76f3de91f4cf3d, var_c5b4f177c96bcce1 )
@@ -1089,7 +1096,8 @@ function function_d9be975d8d1c9db3( var_7c76f3de91f4cf3d, var_c5b4f177c96bcce1 )
     var_c5b4f177c96bcce1 = utility::default_to( var_c5b4f177c96bcce1, 1 );
     var_ba7c51f4385e6b48 = 0;
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( shotindex < var_214d924f4e137244.sceneobject.variant_object.shots.size )
@@ -1110,7 +1118,8 @@ function function_d9be975d8d1c9db3( var_7c76f3de91f4cf3d, var_c5b4f177c96bcce1 )
             animtype = var_214d924f4e137244.sceneobject function_92192185fc7c5500();
             shotanimations = var_214d924f4e137244.sceneobject function_79edcc9987330a2a( shotindex );
             
-            for (animationindex = 0; animationindex < shotanimations.size; animationindex++) {
+            for ( animationindex = 0; animationindex < shotanimations.size ; animationindex++ )
+            {
                 var_755a82d10fefd14 += var_214d924f4e137244 function_9c0d01ef917ee30( shotanimations[ animationindex ], animtype );
             }
             
@@ -1166,7 +1175,8 @@ function private function_a9fc7e7dfd78e15e( existingentities, shotnames, scriptb
     
     scenedata.var_a416d1b334ed6b37 = undefined;
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( var_214d924f4e137244 object_get_type() == "Types_Player" )
@@ -1187,7 +1197,8 @@ function private function_a9fc7e7dfd78e15e( existingentities, shotnames, scriptb
     sceneplay.var_7038c2a13f1f5db8 = [];
     var_a55c41e47aa5aeb5 = [];
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( !var_214d924f4e137244 function_225d78e3c485a7ae( sceneplay.var_df5db7bd235f2729, sceneplay, var_56f4af8746a2d458 ) )
@@ -1234,7 +1245,8 @@ function private function_a9fc7e7dfd78e15e( existingentities, shotnames, scriptb
         maxplayers = sceneroot.scenestatic.var_ce9c0a8610712c8d;
     }
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( !isdefined( sceneplay.var_7038c2a13f1f5db8[ var_56f4af8746a2d458 ] ) )
@@ -1521,7 +1533,8 @@ function private function_7e5354b44c829c9e( existingentities, shotnames, scriptb
                 predicttime = streamtime;
                 var_5b1df6bdb52e24c = [];
                 
-                for (var_7d3411523e9ab92c = sceneplay.var_1344e48bc80d0f52 + 1; var_7d3411523e9ab92c < sceneplay.var_df5db7bd235f2729.size; var_7d3411523e9ab92c++) {
+                for ( var_7d3411523e9ab92c = sceneplay.var_1344e48bc80d0f52 + 1; var_7d3411523e9ab92c < sceneplay.var_df5db7bd235f2729.size ; var_7d3411523e9ab92c++ )
+                {
                     var_be98a78ee33f18b8 = sceneplay.var_df5db7bd235f2729[ var_7d3411523e9ab92c ];
                     nextshot = scenedata.scenescriptbundle function_2218afa82a590ea3( var_be98a78ee33f18b8 );
                     var_5b1df6bdb52e24c[ var_5b1df6bdb52e24c.size ] = nextshot function_55042076624e1180();
@@ -1611,7 +1624,8 @@ function private function_9030d05e9f5301ff()
     maleindices = [];
     femaleindices = [];
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( var_214d924f4e137244 object_get_type() == "Types_Player" )
@@ -1628,7 +1642,8 @@ function private function_9030d05e9f5301ff()
     
     maxcount = min( maleindices.size, femaleindices.size );
     
-    for (i = 0; i < maxcount; i++) {
+    for ( i = 0; i < maxcount ; i++ )
+    {
         maleplayerindex = maleindices[ i ];
         femaleplayerindex = femaleindices[ i ];
         scenedata.var_214d924f4e137244[ maleplayerindex ].var_9668be326e00024b = femaleplayerindex;

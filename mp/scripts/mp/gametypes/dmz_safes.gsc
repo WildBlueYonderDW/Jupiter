@@ -37,7 +37,7 @@
 #namespace dmz_safes;
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ed
 // Size: 0x3dd
 function initsafes()
@@ -93,7 +93,8 @@ function initsafes()
         numtospawn = min( randomintrange( level.safeprops.var_a7208b64e85e109e, level.safeprops.var_a4186f089a36d2f0 + 1 ), arr.size );
         locs = array_randomize( arr );
         
-        for (nodeidx = 0; nodeidx < numtospawn; nodeidx++) {
+        for ( nodeidx = 0; nodeidx < numtospawn ; nodeidx++ )
+        {
             function_d2441b457fa14419( locs[ nodeidx ] );
         }
     }
@@ -106,7 +107,7 @@ function initsafes()
 /#
 
     // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9d2
     // Size: 0x16, Type: dev
     function function_a07f7c4c0c4ef8e3()
@@ -117,7 +118,7 @@ function initsafes()
 #/
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f0
 // Size: 0x340
 function function_d2441b457fa14419( node, forcedlootid )
@@ -193,7 +194,7 @@ function function_d2441b457fa14419( node, forcedlootid )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd39
 // Size: 0x44
 function function_9618cc73546d253d( container, player )
@@ -210,7 +211,7 @@ function function_9618cc73546d253d( container, player )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd85
 // Size: 0x2c
 function function_20d58c7fb1074fc6( teamname )
@@ -225,7 +226,7 @@ function function_20d58c7fb1074fc6( teamname )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xdb9
 // Size: 0x283
 function function_7c5eefd0cbce6520( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -292,7 +293,7 @@ function function_7c5eefd0cbce6520( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1044
 // Size: 0x5d, Type: bool
 function function_42d3f8081a96f0b0( safe, part, state, player )
@@ -305,7 +306,7 @@ function function_42d3f8081a96f0b0( safe, part, state, player )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10aa
 // Size: 0x210
 function function_a17b754d1372f83e( var_6e6ee0d9f73a2999 )
@@ -322,7 +323,8 @@ function function_a17b754d1372f83e( var_6e6ee0d9f73a2999 )
         thread scripts\mp\ai_behavior::function_b11c1964f528574b( agent, 0 );
     }
     
-    for (i = 0; i < var_6e6ee0d9f73a2999; i++) {
+    for ( i = 0; i < var_6e6ee0d9f73a2999 ; i++ )
+    {
         aitype = scripts\mp\ai_mp_controller::function_d5bc07eabf352abb( undefined, undefined, "short_range" );
         var_50fbac14da970ae7 = randomfloatrange( 144, 360 );
         forward = anglestoforward( self.angles ) * var_50fbac14da970ae7;
@@ -342,7 +344,7 @@ function function_a17b754d1372f83e( var_6e6ee0d9f73a2999 )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c2
 // Size: 0x31b
 function function_a765843f381ad171()
@@ -431,7 +433,7 @@ function function_a765843f381ad171()
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15e5
 // Size: 0x15d
 function function_75a1596e8181156( nearbyplayers, shownplayers, progress )
@@ -473,7 +475,7 @@ function function_75a1596e8181156( nearbyplayers, shownplayers, progress )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x174b
 // Size: 0x183
 function function_67abfc6a70af2ccc()
@@ -508,7 +510,7 @@ function function_67abfc6a70af2ccc()
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18d6
 // Size: 0xc9
 function function_474e2e9b4a997564( trigger, radius )
@@ -537,7 +539,7 @@ function function_474e2e9b4a997564( trigger, radius )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19a7
 // Size: 0x81
 function function_d5720ae15e13ff51( trigger, player, radius )
@@ -551,7 +553,7 @@ function function_d5720ae15e13ff51( trigger, player, radius )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a30
 // Size: 0xc6
 function script_model_anims()
@@ -566,7 +568,7 @@ function script_model_anims()
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1afe
 // Size: 0x138
 function function_680b501eb7141c84( isallowed, key )
@@ -605,7 +607,7 @@ function function_680b501eb7141c84( isallowed, key )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c3e
 // Size: 0x319
 function function_7f10e8e120314f4b( player, part )
@@ -688,7 +690,7 @@ function function_7f10e8e120314f4b( player, part )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f5f
 // Size: 0x7c
 function function_24765a7aabf0093e( player )
@@ -710,7 +712,7 @@ function function_24765a7aabf0093e( player )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fe3
 // Size: 0x161
 function function_9967799221f8dd5e( team, origin )
@@ -740,7 +742,7 @@ function function_9967799221f8dd5e( team, origin )
 }
 
 // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x214c
 // Size: 0x24, Type: bool
 function safe_canuse( player )
@@ -756,7 +758,7 @@ function safe_canuse( player )
 /#
 
     // Namespace dmz_safes / scripts\mp\gametypes\dmz_safes
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2179
     // Size: 0x62, Type: dev
     function function_747adf1e8fdb5ce6()

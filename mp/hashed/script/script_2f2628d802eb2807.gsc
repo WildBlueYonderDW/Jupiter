@@ -21,7 +21,7 @@
 #namespace namespace_673092b35aa65d1c;
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x491
 // Size: 0x47
 function function_e09936350b8d90fe()
@@ -34,7 +34,7 @@ function function_e09936350b8d90fe()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e1
 // Size: 0x9b
 function function_2d905b603e7888c9( guardvehicle )
@@ -129,7 +129,7 @@ function private function_7512e3d88c4083fa( heli, startingpos )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e4
 // Size: 0x1f
 function function_c6366a8fc111f210( heli )
@@ -143,7 +143,7 @@ function function_c6366a8fc111f210( heli )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x90b
 // Size: 0x135
 function function_1659089ce673c063()
@@ -172,7 +172,7 @@ function function_1659089ce673c063()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa49
 // Size: 0x79
 function function_61650f275ef0266f( tag )
@@ -189,7 +189,7 @@ function function_61650f275ef0266f( tag )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xacb
 // Size: 0x83, Type: bool
 function function_4e9fce9d930cb20b( origin )
@@ -200,7 +200,7 @@ function function_4e9fce9d930cb20b( origin )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb57
 // Size: 0x71, Type: bool
 function function_126e0a76e7532527( origin )
@@ -211,7 +211,7 @@ function function_126e0a76e7532527( origin )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd1
 // Size: 0x34, Type: bool
 function function_6034cfedc8242fd6()
@@ -221,7 +221,7 @@ function function_6034cfedc8242fd6()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc0e
 // Size: 0x96f
 function function_f21d965808c268bb()
@@ -451,7 +451,7 @@ function function_f21d965808c268bb()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1585
 // Size: 0xda
 function function_282ffb050875ade6( vehicle )
@@ -488,7 +488,7 @@ function function_282ffb050875ade6( vehicle )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1667
 // Size: 0x217
 function function_595d4ebd73e6b933()
@@ -513,7 +513,7 @@ function function_595d4ebd73e6b933()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1886
 // Size: 0x64, Type: bool
 function function_57314b27f4592824( data )
@@ -537,7 +537,7 @@ function function_57314b27f4592824( data )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18f3
 // Size: 0x29, Type: bool
 function function_499e02474dfc9171( data )
@@ -547,7 +547,7 @@ function function_499e02474dfc9171( data )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1925
 // Size: 0x16, Type: bool
 function function_e6cbc6847a8fb80b( data )
@@ -557,7 +557,7 @@ function function_e6cbc6847a8fb80b( data )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1944
 // Size: 0x27
 function function_9f77f0a198fce7a3( data )
@@ -567,7 +567,7 @@ function function_9f77f0a198fce7a3( data )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1973
 // Size: 0x44
 function function_d98d121db25032b6( health )
@@ -591,7 +591,7 @@ function function_d98d121db25032b6( health )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19bf
 // Size: 0x13
 function function_8d8081e3b0352b3c()
@@ -600,7 +600,7 @@ function function_8d8081e3b0352b3c()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19da
 // Size: 0x13
 function function_779eefb705b4f3d9()
@@ -609,7 +609,7 @@ function function_779eefb705b4f3d9()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19f5
 // Size: 0x13
 function function_53a0f26f479e5869()
@@ -618,7 +618,7 @@ function function_53a0f26f479e5869()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a10
 // Size: 0xbc
 function function_6b85c01273c49f4d( speed, weaponkilledby )
@@ -650,7 +650,7 @@ function function_6b85c01273c49f4d( speed, weaponkilledby )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad4
 // Size: 0x72
 function function_ce394773c84e2427()
@@ -669,7 +669,7 @@ function function_ce394773c84e2427()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1b4e
 // Size: 0xf1
 function function_8fe1775245b13b6f( player, missileteam, missiletarget, fxtagoverride )
@@ -709,7 +709,7 @@ function function_8fe1775245b13b6f( player, missileteam, missiletarget, fxtagove
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c47
 // Size: 0x49
 function function_c0afe8bb86f32d06( fxtagoverride )
@@ -726,7 +726,7 @@ function function_c0afe8bb86f32d06( fxtagoverride )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c98
 // Size: 0x62
 function function_5eb66c5c1382fed()
@@ -747,7 +747,7 @@ function function_5eb66c5c1382fed()
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d02
 // Size: 0xcd
 function function_ac6c07614c22b935()
@@ -875,7 +875,8 @@ function private function_30401425c3d8874f( goal_pos, vehicle )
     currpos = self.origin;
     steps = max( dist / 250, 1 );
     
-    for (i = 0; i < steps; i++) {
+    for ( i = 0; i < steps ; i++ )
+    {
         if ( i > 3 )
         {
             break;
@@ -885,7 +886,8 @@ function private function_30401425c3d8874f( goal_pos, vehicle )
         newpos = currpos + fwd * fwddist;
         ignore = [ self, self.turret, self.var_bdec9a74b3b2a503, self.var_2d5a32b6a40fda8c ];
         
-        for (heightstep = 0; heightstep < 5; heightstep++) {
+        for ( heightstep = 0; heightstep < 5 ; heightstep++ )
+        {
             trace = scripts\engine\trace::sphere_get_closest_point( newpos, 400, 0, ignore );
             
             if ( isdefined( trace[ "hittype" ] ) && trace[ "hittype" ] != "hittype_none" )
@@ -899,7 +901,8 @@ function private function_30401425c3d8874f( goal_pos, vehicle )
         
         heliorigin = currpos;
         
-        for (heightstep = 0; heightstep < 5; heightstep++) {
+        for ( heightstep = 0; heightstep < 5 ; heightstep++ )
+        {
             trace = scripts\engine\trace::sphere_get_closest_point( heliorigin, 400, 0, ignore );
             
             if ( isdefined( trace[ "hittype" ] ) && trace[ "hittype" ] != "hittype_none" )
@@ -931,7 +934,7 @@ function private function_30401425c3d8874f( goal_pos, vehicle )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x229f
 // Size: 0x97
 function function_521e6d5a9479e771( path )
@@ -957,7 +960,7 @@ function function_521e6d5a9479e771( path )
 }
 
 // Namespace namespace_673092b35aa65d1c / namespace_d38b9642992c29b5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x233f
 // Size: 0x64
 function function_57dd2a79f8ad4fee( pos )

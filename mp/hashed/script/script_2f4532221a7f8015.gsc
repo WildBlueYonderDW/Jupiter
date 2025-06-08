@@ -5,7 +5,7 @@
 #namespace ob_map;
 
 // Namespace ob_map / namespace_ff3e5909f6ed7be1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c3
 // Size: 0x12
 function main()
@@ -29,7 +29,7 @@ function private execute_main( function )
 }
 
 // Namespace ob_map / namespace_ff3e5909f6ed7be1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20c
 // Size: 0x2eb
 function map_main()

@@ -3,7 +3,7 @@
 #namespace br_ai_encounters_util;
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x260
 // Size: 0x1f3
 function get_ai_team()
@@ -51,7 +51,7 @@ function get_ai_team()
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45c
 // Size: 0x155
 function get_targets()
@@ -86,7 +86,7 @@ function get_targets()
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5ba
 // Size: 0x11d
 function getvartype( var )
@@ -156,7 +156,7 @@ function getvartype( var )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e0
 // Size: 0xce
 function vartostring( var )
@@ -182,7 +182,7 @@ function vartostring( var )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b6
 // Size: 0x92
 function _arraytostring( var )
@@ -209,7 +209,7 @@ function _arraytostring( var )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x851
 // Size: 0x1c
 function encounterremovenavobstacle( obstacleid )
@@ -219,7 +219,7 @@ function encounterremovenavobstacle( obstacleid )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x875
 // Size: 0x24
 function encounterremovenavobstacleonencounterend( obstacleid )
@@ -230,7 +230,7 @@ function encounterremovenavobstacleonencounterend( obstacleid )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8a1
 // Size: 0x2d
 function encounterremovenavobstacledelay( obstacleid, delaysec )
@@ -242,7 +242,7 @@ function encounterremovenavobstacledelay( obstacleid, delaysec )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d6
 // Size: 0x21
 function encounterdeleteentonend( ent )
@@ -253,7 +253,7 @@ function encounterdeleteentonend( ent )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ff
 // Size: 0x5f
 function disablescriptableplayeruseall( rewardobject )
@@ -265,7 +265,7 @@ function disablescriptableplayeruseall( rewardobject )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x966
 // Size: 0x5f
 function enablescriptableplayeruseall( rewardobject )
@@ -277,7 +277,7 @@ function enablescriptableplayeruseall( rewardobject )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9cd
 // Size: 0x177
 function waittill_dead( guys, num, timeoutlength )
@@ -338,7 +338,7 @@ function waittill_dead( guys, num, timeoutlength )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb4c
 // Size: 0x110
 function waittill_dead_or_dying( guys, num, timeoutlength )
@@ -378,7 +378,7 @@ function waittill_dead_or_dying( guys, num, timeoutlength )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc64
 // Size: 0x24
 function waittill_notetrack_or_damage( notetrack )
@@ -389,7 +389,7 @@ function waittill_notetrack_or_damage( notetrack )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc90
 // Size: 0x52
 function get_living_ai( name, type )
@@ -406,7 +406,7 @@ function get_living_ai( name, type )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xceb
 // Size: 0x133
 function get_living_ai_array( name, type )
@@ -451,7 +451,7 @@ function get_living_ai_array( name, type )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe27
 // Size: 0x27
 function waittill_dead_thread( ent )
@@ -462,7 +462,7 @@ function waittill_dead_thread( ent )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe56
 // Size: 0x30
 function waittill_dead_or_dying_thread( ent )
@@ -473,7 +473,7 @@ function waittill_dead_or_dying_thread( ent )
 }
 
 // Namespace br_ai_encounters_util / scripts\mp\gametypes\br_ai_encounters_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe8e
 // Size: 0x15
 function waittill_dead_timeout( timeoutlength )

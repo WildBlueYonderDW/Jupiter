@@ -9,7 +9,7 @@
 #namespace namespace_77804604a7f8a031;
 
 // Namespace namespace_77804604a7f8a031 / namespace_959f36f069fc65b1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39b
 // Size: 0x73
 function function_e365b9e0c732498c()
@@ -23,7 +23,7 @@ function function_e365b9e0c732498c()
 }
 
 // Namespace namespace_77804604a7f8a031 / namespace_959f36f069fc65b1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x416
 // Size: 0x37
 function use_upgrade( itembundle, item, auto_use )
@@ -33,7 +33,7 @@ function use_upgrade( itembundle, item, auto_use )
 }
 
 // Namespace namespace_77804604a7f8a031 / namespace_959f36f069fc65b1
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x456
 // Size: 0x4e2
 function function_450e4cf17da1bc5( weapon, itembundle, item, auto_use )
@@ -222,7 +222,7 @@ function function_450e4cf17da1bc5( weapon, itembundle, item, auto_use )
 }
 
 // Namespace namespace_77804604a7f8a031 / namespace_959f36f069fc65b1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x941
 // Size: 0x3a
 function function_d56493bc318d5c5a( itembundle, item )
@@ -236,7 +236,7 @@ function function_d56493bc318d5c5a( itembundle, item )
 }
 
 // Namespace namespace_77804604a7f8a031 / namespace_959f36f069fc65b1
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x984
 // Size: 0x320, Type: bool
 function function_24d050ba31898496( itembundle, item, autouse, allowswap )
@@ -403,7 +403,7 @@ function function_24d050ba31898496( itembundle, item, autouse, allowswap )
 }
 
 // Namespace namespace_77804604a7f8a031 / namespace_959f36f069fc65b1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcad
 // Size: 0x25
 function function_9f3d2876de4f5272()

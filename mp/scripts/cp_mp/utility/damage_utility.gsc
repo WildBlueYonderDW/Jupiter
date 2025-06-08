@@ -4,7 +4,7 @@
 #namespace damage_utility;
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x47f
 // Size: 0xcd
 function adddamagemodifier( id, modifier, additive, ignorefunc )
@@ -55,7 +55,7 @@ function adddamagemodifier( id, modifier, additive, ignorefunc )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x554
 // Size: 0x87
 function removedamagemodifier( id, additive )
@@ -99,7 +99,7 @@ function removedamagemodifier( id, additive )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x5e3
 // Size: 0x198
 function getdamagemodifiertotal( inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc )
@@ -148,7 +148,7 @@ function getdamagemodifiertotal( inflictor, attacker, victim, damage, meansofdea
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x784
 // Size: 0x2a
 function cleardamagemodifiers()
@@ -160,7 +160,7 @@ function cleardamagemodifiers()
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 16, eflags: 0x0
+// Params 16
 // Checksum 0x0, Offset: 0x7b6
 // Size: 0x1a3
 function packdamagedata( attacker, victim, damage, objweapon, meansofdeath, inflictor, point, direction_vec, modelname, attachtagname, partname, tagname, idflags, eventid, hitloc, var_1da1a66b5c6a06a7 )
@@ -193,7 +193,7 @@ function packdamagedata( attacker, victim, damage, objweapon, meansofdeath, infl
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x962
 // Size: 0x8f, Type: bool
 function isstuckdamage( data, var_9b97f4ba6bdc58be )
@@ -222,7 +222,7 @@ function isstuckdamage( data, var_9b97f4ba6bdc58be )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9fa
 // Size: 0x1c, Type: bool
 function iscrossbowdamage( objweapon )
@@ -231,7 +231,7 @@ function iscrossbowdamage( objweapon )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa1f
 // Size: 0x2b, Type: bool
 function function_6065fce6cdcad( objweapon )
@@ -240,7 +240,7 @@ function function_6065fce6cdcad( objweapon )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa53
 // Size: 0x2b, Type: bool
 function function_d49206e61ac4f6de( objweapon )
@@ -249,7 +249,7 @@ function function_d49206e61ac4f6de( objweapon )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa87
 // Size: 0x110, Type: bool
 function isstuckdamagekill( data )
@@ -293,7 +293,7 @@ function isstuckdamagekill( data )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba0
 // Size: 0xd
 function forcestuckdamage()
@@ -302,7 +302,7 @@ function forcestuckdamage()
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb5
 // Size: 0xc
 function forcestuckdamageclear()
@@ -311,7 +311,7 @@ function forcestuckdamageclear()
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbc9
 // Size: 0x46, Type: bool
 function isheadshot( shitloc, smeansofdeath, attacker )
@@ -330,7 +330,7 @@ function isheadshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc18
 // Size: 0x3a, Type: bool
 function function_b656251147d7d40b( partname )
@@ -344,7 +344,7 @@ function function_b656251147d7d40b( partname )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc5b
 // Size: 0xcd, Type: bool
 function validshotcheck( smeansofdeath, attacker )
@@ -380,7 +380,7 @@ function validshotcheck( smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd31
 // Size: 0x139
 function function_abfcdee8fda20a4()
@@ -426,7 +426,7 @@ function private function_8bba4c474cb4043a( str )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe97
 // Size: 0x41
 function function_edefa1e693dd3c7d( var_f46544d32b6b992e )
@@ -445,7 +445,7 @@ function function_edefa1e693dd3c7d( var_f46544d32b6b992e )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xee1
 // Size: 0x3e, Type: bool
 function istorsoshot( shitloc, smeansofdeath, attacker )
@@ -459,7 +459,7 @@ function istorsoshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf28
 // Size: 0x3a, Type: bool
 function istorsouppershot( shitloc, smeansofdeath, attacker )
@@ -473,7 +473,7 @@ function istorsouppershot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf6b
 // Size: 0xb2
 function function_dcdde2598f1bdfc0( partname )
@@ -504,7 +504,7 @@ function function_dcdde2598f1bdfc0( partname )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1026
 // Size: 0x2f, Type: bool
 function function_77ed09d75c0c7165( shitloc, smeansofdeath, attacker )
@@ -518,7 +518,7 @@ function function_77ed09d75c0c7165( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x105e
 // Size: 0x46
 function function_255c1a4a52956161( partname )
@@ -540,7 +540,7 @@ function function_255c1a4a52956161( partname )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10ad
 // Size: 0x3e, Type: bool
 function isarmshot( shitloc, smeansofdeath, attacker )
@@ -554,7 +554,7 @@ function isarmshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10f4
 // Size: 0x3e, Type: bool
 function isrightarmshot( shitloc, smeansofdeath, attacker )
@@ -568,7 +568,7 @@ function isrightarmshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x113b
 // Size: 0x3e, Type: bool
 function isleftarmshot( shitloc, smeansofdeath, attacker )
@@ -582,7 +582,7 @@ function isleftarmshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1182
 // Size: 0x2f, Type: bool
 function function_24278eb0ec1e2953( shitloc, smeansofdeath, attacker )
@@ -596,7 +596,7 @@ function function_24278eb0ec1e2953( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11ba
 // Size: 0x2f, Type: bool
 function function_82850161196df912( shitloc, smeansofdeath, attacker )
@@ -610,7 +610,7 @@ function function_82850161196df912( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11f2
 // Size: 0x3a, Type: bool
 function function_bf1efc7185168448( shitloc, smeansofdeath, attacker )
@@ -624,7 +624,7 @@ function function_bf1efc7185168448( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1235
 // Size: 0x3a, Type: bool
 function function_d7395809e0049a49( shitloc, smeansofdeath, attacker )
@@ -638,7 +638,7 @@ function function_d7395809e0049a49( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1278
 // Size: 0x3e, Type: bool
 function islegshot( shitloc, smeansofdeath, attacker )
@@ -652,7 +652,7 @@ function islegshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12bf
 // Size: 0x3e, Type: bool
 function isrightlegshot( shitloc, smeansofdeath, attacker )
@@ -666,7 +666,7 @@ function isrightlegshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1306
 // Size: 0x3e, Type: bool
 function isleftlegshot( shitloc, smeansofdeath, attacker )
@@ -680,7 +680,7 @@ function isleftlegshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x134d
 // Size: 0x2f, Type: bool
 function function_4536856e83718dbd( shitloc, smeansofdeath, attacker )
@@ -694,7 +694,7 @@ function function_4536856e83718dbd( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1385
 // Size: 0x2f, Type: bool
 function function_275e2a90a59b872c( shitloc, smeansofdeath, attacker )
@@ -708,7 +708,7 @@ function function_275e2a90a59b872c( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13bd
 // Size: 0x3a, Type: bool
 function function_2eef344e0f951a1a( shitloc, smeansofdeath, attacker )
@@ -722,7 +722,7 @@ function function_2eef344e0f951a1a( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1400
 // Size: 0x3a, Type: bool
 function function_da1a82d3ae010f8b( shitloc, smeansofdeath, attacker )
@@ -736,7 +736,7 @@ function function_da1a82d3ae010f8b( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1443
 // Size: 0x5b, Type: bool
 function islefthandshot( shitloc, smeansofdeath, attacker )
@@ -750,7 +750,7 @@ function islefthandshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14a7
 // Size: 0x5b, Type: bool
 function function_6720f01c6abbcad4( shitloc, smeansofdeath, attacker )
@@ -764,7 +764,7 @@ function function_6720f01c6abbcad4( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x150b
 // Size: 0x5b, Type: bool
 function ishandshot( shitloc, smeansofdeath, attacker )
@@ -778,7 +778,7 @@ function ishandshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x156f
 // Size: 0x2f, Type: bool
 function function_8aea541c52417dfd( shitloc, smeansofdeath, attacker )
@@ -792,7 +792,7 @@ function function_8aea541c52417dfd( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15a7
 // Size: 0x2f, Type: bool
 function function_79daddb5d9b1b30( shitloc, smeansofdeath, attacker )
@@ -806,7 +806,7 @@ function function_79daddb5d9b1b30( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15df
 // Size: 0x3a, Type: bool
 function isfootshot( shitloc, smeansofdeath, attacker )
@@ -820,7 +820,7 @@ function isfootshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1622
 // Size: 0x2f, Type: bool
 function isneckshot( shitloc, smeansofdeath, attacker )
@@ -834,7 +834,7 @@ function isneckshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x165a
 // Size: 0xb9, Type: bool
 function isupperbodyshot( shitloc, smeansofdeath, attacker )
@@ -864,7 +864,7 @@ function isupperbodyshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x171c
 // Size: 0x7d, Type: bool
 function islowerbodyshot( shitloc, smeansofdeath, attacker )
@@ -889,7 +889,7 @@ function islowerbodyshot( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17a2
 // Size: 0x32, Type: bool
 function function_cb9ba92488b23c5( objweapon )
@@ -898,7 +898,7 @@ function function_cb9ba92488b23c5( objweapon )
 }
 
 // Namespace damage_utility / scripts\cp_mp\utility\damage_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17dd
 // Size: 0x3b
 function register_vehicle_damage_callback( func )

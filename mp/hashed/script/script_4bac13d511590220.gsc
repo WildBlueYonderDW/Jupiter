@@ -7,7 +7,7 @@
 #namespace namespace_a1044864694a4aae;
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22e
 // Size: 0x30
 function function_7dcad89b9c0264a6()
@@ -24,7 +24,7 @@ function function_7dcad89b9c0264a6()
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x266
 // Size: 0xb3
 function function_28991b23dba743d8( final_dest )
@@ -54,7 +54,7 @@ function function_28991b23dba743d8( final_dest )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x321
 // Size: 0x127
 function function_c3889abf5cd6abbf( pathdata, speed, var_5b69959df7b5f457, navmeshlayer )
@@ -92,7 +92,7 @@ function function_c3889abf5cd6abbf( pathdata, speed, var_5b69959df7b5f457, navme
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x450
 // Size: 0x74
 function function_1d917ec593f5d37( node, speed )
@@ -121,7 +121,7 @@ function function_1d917ec593f5d37( node, speed )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4cc
 // Size: 0x6f
 function function_e8730cc0c5eac096( pathdata )
@@ -135,7 +135,7 @@ function function_e8730cc0c5eac096( pathdata )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x543
 // Size: 0x1a1
 function function_26e9e22860c819ce( start_point, end_point, speed, var_91b19cfb0a78c588 )
@@ -182,7 +182,7 @@ function function_26e9e22860c819ce( start_point, end_point, speed, var_91b19cfb0
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ec
 // Size: 0x147
 function function_69695f8c7ed9c3f6( newpath, speed )
@@ -233,7 +233,7 @@ function function_69695f8c7ed9c3f6( newpath, speed )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x83b
 // Size: 0x4f
 function fn_damagefeedback( hittype )
@@ -253,7 +253,7 @@ function fn_damagefeedback( hittype )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x892
 // Size: 0x18f
 function function_6a0b2a08499a9842()
@@ -294,10 +294,10 @@ function function_6a0b2a08499a9842()
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa29
 // Size: 0x114
-function function_6a9574988f246f34( vehicle, var_7f2253bd1b8cfa5e, var_90a4404fceed797f, endnotify )
+function function_6a9574988f246f34( vehicle, var_7f2253bd1b8cfa5e, flippedendcallback, endnotify )
 {
     vehicle endon( "death" );
     level endon( "game_ended" );
@@ -344,9 +344,9 @@ function function_6a9574988f246f34( vehicle, var_7f2253bd1b8cfa5e, var_90a4404fc
             
             endtime = undefined;
             
-            if ( isdefined( var_90a4404fceed797f ) )
+            if ( isdefined( flippedendcallback ) )
             {
-                thread [[ var_90a4404fceed797f ]]( vehicle, timedout );
+                thread [[ flippedendcallback ]]( vehicle, timedout );
             }
         }
         
@@ -355,7 +355,7 @@ function function_6a9574988f246f34( vehicle, var_7f2253bd1b8cfa5e, var_90a4404fc
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb45
 // Size: 0x21e
 function function_a3775811155639ea()
@@ -425,7 +425,7 @@ function function_a3775811155639ea()
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd6b
 // Size: 0x5e
 function function_be6d24ea93bcadf7( vehicle )
@@ -442,7 +442,7 @@ function function_be6d24ea93bcadf7( vehicle )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdd1
 // Size: 0x3b
 function function_cba4ff426a2f58ab( pos, delay )
@@ -463,7 +463,7 @@ function function_cba4ff426a2f58ab( pos, delay )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe14
 // Size: 0x4d
 function function_1da2c31423c2676a( veh_speed )
@@ -483,7 +483,7 @@ function function_1da2c31423c2676a( veh_speed )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xe69
 // Size: 0x1d7
 function function_8f40a2c8678f8304( start_point, end_point, speed, setmaxspeed, var_a967646668185a6d, navmeshlayer )
@@ -512,7 +512,8 @@ function function_8f40a2c8678f8304( start_point, end_point, speed, setmaxspeed, 
         
         if ( isdefined( self.skippathdistance ) && var_acb8205b4eae2fa0.size >= 3 )
         {
-            for (pathindex = 0; pathindex < var_acb8205b4eae2fa0.size - 1; pathindex++) {
+            for ( pathindex = 0; pathindex < var_acb8205b4eae2fa0.size - 1 ; pathindex++ )
+            {
                 if ( distance2dsquared( var_acb8205b4eae2fa0[ pathindex ], var_acb8205b4eae2fa0[ pathindex + 1 ] ) < self.skippathdistance * self.skippathdistance )
                 {
                     var_acb8205b4eae2fa0 = array_remove_index( var_acb8205b4eae2fa0, pathindex + 1, 0 );
@@ -545,7 +546,7 @@ function function_8f40a2c8678f8304( start_point, end_point, speed, setmaxspeed, 
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1048
 // Size: 0x217
 function function_aa85eb39828a4d80( var_acb8205b4eae2fa0, speed, setmaxspeed, var_a967646668185a6d )
@@ -631,7 +632,7 @@ function function_aa85eb39828a4d80( var_acb8205b4eae2fa0, speed, setmaxspeed, va
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1268
 // Size: 0x35
 function function_b3b7d0915dc445c7( speed )
@@ -641,7 +642,7 @@ function function_b3b7d0915dc445c7( speed )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12a5
 // Size: 0x147
 function function_9804c82501de981b( newpath, speed )
@@ -692,7 +693,7 @@ function function_9804c82501de981b( newpath, speed )
 }
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x13f4
 // Size: 0x63
 function get_duration_between_points( startpos, endpos, speed, convert )

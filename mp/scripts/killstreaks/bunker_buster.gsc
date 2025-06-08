@@ -3,6 +3,7 @@
 #using scripts\common\debug;
 #using scripts\common\devgui;
 #using scripts\common\utility;
+#using scripts\common\vehicle;
 #using scripts\cp_mp\challenges;
 #using scripts\cp_mp\killstreaks\airstrike;
 #using scripts\cp_mp\killstreaks\killstreakdeploy;
@@ -19,7 +20,7 @@
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x60d
+// Checksum 0x0, Offset: 0x696
 // Size: 0x18
 function autoexec main()
 {
@@ -28,7 +29,7 @@ function autoexec main()
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x62d
+// Checksum 0x0, Offset: 0x6b6
 // Size: 0x70
 function private init()
 {
@@ -48,11 +49,17 @@ function private init()
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x6a5
-// Size: 0x1cf
+// Checksum 0x0, Offset: 0x72e
+// Size: 0x2b4
 function private init_vars()
 {
-    level.bunker_buster = { #count:0, #active:[], #max_active:2 };
+    level.bunker_buster = { #count:0, #active:[] };
+    level.bunker_buster.max_active = getdvarint( @"hash_fefb922caac82d40", 3 );
+    level.bunker_buster.var_d402c1bdbe81e7fe = getdvarint( @"hash_22beca14dc5c5e9e", 1 );
+    level.bunker_buster.var_d1bf099ff9ac4ee6 = getdvarint( @"hash_7531df69c5e1c03c", 25000 );
+    level.bunker_buster.var_d1bf099ff9ac4ee6 *= level.bunker_buster.var_d1bf099ff9ac4ee6;
+    level.bunker_buster.var_fdc62d807ea3440b = getdvarint( @"hash_f6c741cacf5a1bd1", 1 );
+    level.bunker_buster.cooldown = getdvarint( @"hash_359501fa941316db", 10 );
     bundle = level.streakglobals.streakbundles[ "bunker_buster" ];
     assertex( isdefined( bundle ), "<dev string:x1c>" + "<dev string:x38>" + "<dev string:x52>" + "<dev string:x63>" );
     level.bunker_buster.gas_lifetime = getdvarint( @"hash_13661b583bd4e977", bundle.var_af691ff0e5ce5649 );
@@ -67,7 +74,7 @@ function private init_vars()
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x87c
+// Checksum 0x0, Offset: 0x9ea
 // Size: 0x109, Type: bool
 function private function_4927316e0d7c0fde( streakinfo )
 {
@@ -111,14 +118,88 @@ function private function_4927316e0d7c0fde( streakinfo )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
+// Params 0, eflags: 0x4
+// Checksum 0x0, Offset: 0xafc
+// Size: 0x3e
+function private function_51cd3b505e34ce9e()
+{
+    mindistsq = level.bunker_buster.var_d1bf099ff9ac4ee6;
+    
+    /#
+        if ( level.mapname == "<dev string:x75>" )
+        {
+            mindistsq = 1000000;
+        }
+    #/
+    
+    return mindistsq;
+}
+
+// Namespace bunker_buster / scripts\killstreaks\bunker_buster
+// Params 1
+// Checksum 0x0, Offset: 0xb43
+// Size: 0xaf
+function function_d060d792db569706( strikelocation )
+{
+    shortestleft = 2147483647;
+    
+    foreach ( activestrike in level.bunker_buster.active )
+    {
+        timeleft = int( max( 1, activestrike.endtimems - gettime() ) );
+        
+        if ( timeleft < shortestleft )
+        {
+            shortestleft = timeleft;
+        }
+    }
+    
+    return int( function_c89ed1840c8d0f0f( shortestleft ) ) + 1;
+}
+
+// Namespace bunker_buster / scripts\killstreaks\bunker_buster
+// Params 1
+// Checksum 0x0, Offset: 0xbfb
+// Size: 0xe3
+function function_6c7ff6391027eb0c( strikelocation )
+{
+    shortestleft = 2147483647;
+    mindistsq = function_51cd3b505e34ce9e();
+    numactive = 0;
+    
+    foreach ( activestrike in level.bunker_buster.active )
+    {
+        if ( distance2dsquared( activestrike.origin, strikelocation ) <= mindistsq )
+        {
+            timeleft = int( max( 1, activestrike.endtimems - gettime() ) );
+            
+            if ( timeleft < shortestleft )
+            {
+                shortestleft = timeleft;
+            }
+        }
+    }
+    
+    return int( function_c89ed1840c8d0f0f( shortestleft ) ) + 1;
+}
+
+// Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x98e
-// Size: 0x60, Type: bool
+// Checksum 0x0, Offset: 0xce7
+// Size: 0x82, Type: bool
 function private function_bc826a7fccd0726( streakinfo )
 {
-    if ( level.bunker_buster.active.size >= level.bunker_buster.max_active )
+    if ( !function_d0ae421563f27fe() )
     {
-        [[ getsharedfunc( "hud", "showErrorMessage" ) ]]( "KILLSTREAKS/AIR_SPACE_TOO_CROWDED" );
+        if ( level.bunker_buster.var_fdc62d807ea3440b )
+        {
+            timesec = function_d060d792db569706();
+            [[ getsharedfunc( "hud", "showErrorMessage" ) ]]( "KILLSTREAKS/AIR_SPACE_TOO_CROWDED_TIME", timesec );
+        }
+        else
+        {
+            [[ getsharedfunc( "hud", "showErrorMessage" ) ]]( "KILLSTREAKS/AIR_SPACE_TOO_CROWDED" );
+        }
+        
         return false;
     }
     
@@ -127,16 +208,83 @@ function private function_bc826a7fccd0726( streakinfo )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
+// Params 0, eflags: 0x4
+// Checksum 0x0, Offset: 0xd72
+// Size: 0x31, Type: bool
+function private function_d0ae421563f27fe()
+{
+    if ( level.bunker_buster.active.size >= level.bunker_buster.max_active )
+    {
+        return false;
+    }
+    
+    return true;
+}
+
+// Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x9f7
-// Size: 0xcb
+// Checksum 0x0, Offset: 0xdac
+// Size: 0x29a
 function private function_ae65fc01c45c017( streakinfo, var_a9dd4e8c5e5c7178, firedprojectile )
 {
     if ( !isdefined( streakinfo.targetoverride ) )
     {
         mappoint = airstrike::airstrike_getownerlookatpos( self, 1 );
         
-        if ( !isdefined( mappoint ) )
+        if ( isdefined( mappoint ) )
+        {
+            if ( !function_d0ae421563f27fe() )
+            {
+                if ( level.bunker_buster.var_fdc62d807ea3440b )
+                {
+                    timesec = function_d060d792db569706();
+                    
+                    if ( issharedfuncdefined( "hud", "showErrorMessage" ) )
+                    {
+                        [[ getsharedfunc( "hud", "showErrorMessage" ) ]]( "KILLSTREAKS/AIR_SPACE_TOO_CROWDED_TIME", timesec );
+                    }
+                }
+                else if ( issharedfuncdefined( "hud", "showErrorMessage" ) )
+                {
+                    [[ getsharedfunc( "hud", "showErrorMessage" ) ]]( "KILLSTREAKS/AIR_SPACE_TOO_CROWDED" );
+                }
+                
+                return "continue";
+            }
+            else if ( level.bunker_buster.var_d402c1bdbe81e7fe > 0 )
+            {
+                mindistsq = function_51cd3b505e34ce9e();
+                numactive = 0;
+                
+                foreach ( activestrike in level.bunker_buster.active )
+                {
+                    if ( distance2dsquared( activestrike.origin, mappoint ) <= mindistsq )
+                    {
+                        numactive++;
+                        
+                        if ( numactive >= level.bunker_buster.var_d402c1bdbe81e7fe )
+                        {
+                            if ( level.bunker_buster.var_fdc62d807ea3440b )
+                            {
+                                timesec = function_6c7ff6391027eb0c( mappoint );
+                                
+                                if ( issharedfuncdefined( "hud", "showErrorMessage" ) )
+                                {
+                                    [[ getsharedfunc( "hud", "showErrorMessage" ) ]]( "KILLSTREAKS/AIR_SPACE_TOO_CROWDED_AREA_TIME", timesec );
+                                }
+                            }
+                            else if ( issharedfuncdefined( "hud", "showErrorMessage" ) )
+                            {
+                                [[ getsharedfunc( "hud", "showErrorMessage" ) ]]( "KILLSTREAKS/AIR_SPACE_TOO_CROWDED_AREA" );
+                            }
+                            
+                            return "continue";
+                        }
+                    }
+                }
+            }
+        }
+        else
         {
             if ( issharedfuncdefined( "hud", "showErrorMessage" ) )
             {
@@ -166,27 +314,41 @@ function private function_ae65fc01c45c017( streakinfo, var_a9dd4e8c5e5c7178, fir
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
+// Params 2
+// Checksum 0x0, Offset: 0x104f
+// Size: 0xa0
+function function_9e6e776ebef42c6b( origin, streakinfo )
+{
+    newstrike = spawnstruct();
+    newstrike.origin = origin;
+    newstrike.id = streakinfo.uid;
+    newstrike.endtimems = gettime() + 1000 * ( level.bunker_buster.cooldown + 5 );
+    level.bunker_buster.active[ newstrike.id ] = newstrike;
+    return newstrike.id;
+}
+
+// Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xacb
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x10f8
+// Size: 0x46
 function private strike_create( streakinfo )
 {
     streakinfo.uid = function_a9a0e979105b948d();
     thread strike_fire( streakinfo );
-    level.bunker_buster.active = utility::array_add( level.bunker_buster.active, streakinfo.uid );
     streakinfo notify( "killstreak_finished_with_deploy_weapon" );
     level callback::callback( "killstreak_finish_use", { #streakinfo:streakinfo } );
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb51
-// Size: 0x180
+// Params 1
+// Checksum 0x0, Offset: 0x1146
+// Size: 0x19c
 function strike_fire( streakinfo )
 {
     streakinfo.shots_fired++;
     marker_pos = isdefined( streakinfo.targetoverride ) ? streakinfo.targetoverride : airstrike::airstrike_getownerlookatpos( self, 1 );
-    assertex( isdefined( marker_pos ), "<dev string:x75>" );
+    assertex( isdefined( marker_pos ), "<dev string:x88>" );
+    function_9e6e776ebef42c6b( marker_pos, streakinfo );
     marker = utility::spawn_model( "ks_toma_strike_marker_mp", marker_pos );
     marker.objidnum = 0;
     marker.icon = "icon_waypoint_bunker_buster";
@@ -205,26 +367,23 @@ function strike_fire( streakinfo )
     utility::function_f3bb4f4911a1beb2( "bunker_buster", "dialog_warning", notify_players[ 0 ], notify_players[ 1 ] );
     namespace_2b1145f62aa835b8::function_2284137aa92dbd16( level.bunker_buster.drop_time );
     strike_logic( marker_pos, streakinfo );
-    thread strike_end( streakinfo );
+    wait level.bunker_buster.cooldown;
+    strike_end( streakinfo );
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd9
-// Size: 0x84
+// Params 1
+// Checksum 0x0, Offset: 0x12ea
+// Size: 0x5f
 function strike_end( streakinfo )
 {
-    if ( utility::array_contains( level.bunker_buster.active, streakinfo.uid ) )
-    {
-        level.bunker_buster.active = utility::array_remove( level.bunker_buster.active, streakinfo.uid );
-    }
-    
+    level.bunker_buster.active = array_remove_index( level.bunker_buster.active, streakinfo.uid, 1 );
     level notify( "bunker_buster" + "_finished_" + streakinfo.uid );
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xd65
+// Checksum 0x0, Offset: 0x1351
 // Size: 0xc8
 function private function_153d5add7253b500( owner, team, range, location )
 {
@@ -252,8 +411,8 @@ function private function_153d5add7253b500( owner, team, range, location )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe36
+// Params 0
+// Checksum 0x0, Offset: 0x1422
 // Size: 0x36
 function function_a9a0e979105b948d()
 {
@@ -262,9 +421,9 @@ function function_a9a0e979105b948d()
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe75
-// Size: 0x32d
+// Params 2
+// Checksum 0x0, Offset: 0x1461
+// Size: 0x390
 function strike_logic( position, streakinfo )
 {
     level endon( "game_ended" );
@@ -286,6 +445,13 @@ function strike_logic( position, streakinfo )
     streakinfo.impact_location = missile.origin;
     streakinfo.water_impact = missile.water_impact;
     streakinfo.impact_time = scripts\cp_mp\utility\game_utility::gettimepassed();
+    activestrike = level.bunker_buster.active[ streakinfo.uid ];
+    
+    if ( isdefined( activestrike ) )
+    {
+        activestrike.endtimems = gettime() + 1000 * ( level.bunker_buster.cooldown + 1 );
+    }
+    
     missile function_9d0257c1da72ca5d();
     missile.angles = ( 0, 0, 0 );
     
@@ -323,20 +489,20 @@ function strike_logic( position, streakinfo )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11aa
-// Size: 0x2c
+// Params 2
+// Checksum 0x0, Offset: 0x17f9
+// Size: 0x2e
 function function_d86280932be7b254( delay, streak_info )
 {
     level endon( "game_ended" );
     wait delay;
-    function_184a66360bf3e401( streak_info );
-    function_ce7b42754785fc( streak_info );
+    thread function_184a66360bf3e401( streak_info );
+    thread function_ce7b42754785fc( streak_info );
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x11de
+// Checksum 0x0, Offset: 0x182f
 // Size: 0xdd
 function private function_5ddd621f797a85b5( location, owner )
 {
@@ -363,7 +529,7 @@ function private function_5ddd621f797a85b5( location, owner )
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x12c4
+// Checksum 0x0, Offset: 0x1915
 // Size: 0x36
 function private function_61ac63303c87acda( delay, streak_info )
 {
@@ -374,8 +540,8 @@ function private function_61ac63303c87acda( delay, streak_info )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1302
+// Params 5
+// Checksum 0x0, Offset: 0x1953
 // Size: 0x227
 function missile_spawn( origin, offset, velocity, exp_time, prev_missile )
 {
@@ -453,8 +619,8 @@ function missile_spawn( origin, offset, velocity, exp_time, prev_missile )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1532
+// Params 1
+// Checksum 0x0, Offset: 0x1b83
 // Size: 0x4a
 function function_2a1d38d2eba581d2( owner )
 {
@@ -470,8 +636,8 @@ function function_2a1d38d2eba581d2( owner )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1584
+// Params 0
+// Checksum 0x0, Offset: 0x1bd5
 // Size: 0x10c
 function function_5300adfce0ef3191()
 {
@@ -491,8 +657,8 @@ function function_5300adfce0ef3191()
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1698
+// Params 2
+// Checksum 0x0, Offset: 0x1ce9
 // Size: 0xd9
 function function_f71fc273e43f587b( player, travel_time )
 {
@@ -509,8 +675,8 @@ function function_f71fc273e43f587b( player, travel_time )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1779
+// Params 0
+// Checksum 0x0, Offset: 0x1dca
 // Size: 0x7d
 function function_93c5e685b2a30986()
 {
@@ -530,8 +696,8 @@ function function_93c5e685b2a30986()
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17fe
+// Params 0
+// Checksum 0x0, Offset: 0x1e4f
 // Size: 0x3e
 function function_fd8677bd03da3d3b()
 {
@@ -544,8 +710,8 @@ function function_fd8677bd03da3d3b()
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1844
+// Params 0
+// Checksum 0x0, Offset: 0x1e95
 // Size: 0x5f
 function function_aad1a178bf665f2a()
 {
@@ -565,8 +731,8 @@ function function_aad1a178bf665f2a()
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ab
+// Params 1
+// Checksum 0x0, Offset: 0x1efc
 // Size: 0x66
 function function_9d0257c1da72ca5d( obj_only )
 {
@@ -592,9 +758,9 @@ function function_9d0257c1da72ca5d( obj_only )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1919
-// Size: 0x26c
+// Params 1
+// Checksum 0x0, Offset: 0x1f6a
+// Size: 0x2be
 function function_f4b21fbcf97269e8( player )
 {
     missile = self;
@@ -602,19 +768,20 @@ function function_f4b21fbcf97269e8( player )
     
     while ( true )
     {
-        impact_info = missile killstreak_shared::function_51afe751c1e36723( "missile_stuck", "missile_water_impact" );
+        impact_info = missile killstreak_shared::function_675ba1ee79efdc70( "missile_stuck", "missile_water_impact" );
         stuck_to = undefined;
         
-        if ( isdefined( impact_info ) )
+        if ( impact_info.msg == "missile_stuck" )
         {
-            if ( impact_info.msg == "missile_stuck" )
-            {
-                stuck_to = impact_info.param1;
-            }
-            else if ( impact_info.msg == "missile_water_impact" )
-            {
-                missile.water_impact = 1;
-            }
+            stuck_to = impact_info.param1;
+        }
+        else if ( impact_info.msg == "missile_water_impact" )
+        {
+            missile.water_impact = 1;
+        }
+        else if ( impact_info.msg == "death" )
+        {
+            break;
         }
         
         if ( !isdefined( stuck_to ) && isdefined( impact_info.param5 ) )
@@ -651,17 +818,26 @@ function function_f4b21fbcf97269e8( player )
             data.attacker = player;
             stuck_to thread scripts\cp_mp\vehicles\vehicle::vehicle_explode( data, 1 );
             hit = 1;
-            missile = player missile_spawn( missile.origin, 0, ( 0, 0, -3000 ), undefined, missile );
+            var_feaa972f48639274 = 0;
+            
+            if ( stuck_to isairplane() || stuck_to ishelicopter() )
+            {
+                var_feaa972f48639274 = getdvarint( @"hash_152940226617a500", 150 );
+            }
+            
+            missile = player missile_spawn( missile.origin - ( 0, 0, var_feaa972f48639274 ), 0, ( 0, 0, -3000 ), undefined, missile );
             continue;
         }
         
-        return [ stuck_to, missile, hit ];
+        break;
     }
+    
+    return [ stuck_to, missile, hit ];
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b8d
+// Params 2
+// Checksum 0x0, Offset: 0x2231
 // Size: 0x150
 function function_4c86258acf5f82bf( impact_position, water_impact )
 {
@@ -674,7 +850,8 @@ function function_4c86258acf5f82bf( impact_position, water_impact )
         base_offset = level.bunker_buster.travel_distance / 2 * dir;
         height_offset = base_offset * 0.5;
         
-        for (i = 0; i < 2; i++) {
+        for ( i = 0; i < 2 ; i++ )
+        {
             s = spawnscriptable( "ks_bunker_buster_gas_sfx", impact_position + base_offset * i + height_offset );
             s setscriptablepartstate( "ks_bunker_buster_gas_sfx", "on" );
             scriptables[ scriptables.size ] = s;
@@ -696,8 +873,8 @@ function function_4c86258acf5f82bf( impact_position, water_impact )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ce5
+// Params 1
+// Checksum 0x0, Offset: 0x2389
 // Size: 0x34
 function function_240e63c6a103482b( data )
 {
@@ -708,8 +885,8 @@ function function_240e63c6a103482b( data )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d21
+// Params 1
+// Checksum 0x0, Offset: 0x23c5
 // Size: 0xbe
 function function_184a66360bf3e401( streak_info )
 {
@@ -718,8 +895,8 @@ function function_184a66360bf3e401( streak_info )
 }
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de7
+// Params 1
+// Checksum 0x0, Offset: 0x248b
 // Size: 0x52
 function function_ce7b42754785fc( streak_info )
 {
@@ -738,7 +915,7 @@ function function_ce7b42754785fc( streak_info )
 
 // Namespace bunker_buster / scripts\killstreaks\bunker_buster
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x1e41
+// Checksum 0x0, Offset: 0x24e5
 // Size: 0x92
 function private function_c6c97baa041205e( object, func, currentparam, deltaparam, seconds )
 {
@@ -765,8 +942,8 @@ function private function_c6c97baa041205e( object, func, currentparam, deltapara
 /#
 
     // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1edb
+    // Params 0
+    // Checksum 0x0, Offset: 0x257f
     // Size: 0x5, Type: dev
     function function_b1eab7c7fda1fb57()
     {
@@ -774,8 +951,8 @@ function private function_c6c97baa041205e( object, func, currentparam, deltapara
     }
 
     // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1ee8
+    // Params 0
+    // Checksum 0x0, Offset: 0x258c
     // Size: 0xe, Type: dev
     function debug_init()
     {
@@ -783,29 +960,29 @@ function private function_c6c97baa041205e( object, func, currentparam, deltapara
     }
 
     // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1efe
+    // Params 0
+    // Checksum 0x0, Offset: 0x25a2
     // Size: 0x44, Type: dev
     function function_db5c75f2a84ff03d()
     {
-        scripts\common\devgui::function_6e7290c8ee4f558b( "<dev string:xa5>" );
-        scripts\common\devgui::function_a9a864379a098ad6( "<dev string:xbd>", "<dev string:xcc>", &function_defff2269ca98e79 );
-        scripts\common\devgui::function_a9a864379a098ad6( "<dev string:xe9>", "<dev string:xfc>", &function_b45f9974855e1e8 );
+        scripts\common\devgui::function_6e7290c8ee4f558b( "<dev string:xb8>" );
+        scripts\common\devgui::function_a9a864379a098ad6( "<dev string:xd0>", "<dev string:xdf>", &function_defff2269ca98e79 );
+        scripts\common\devgui::function_a9a864379a098ad6( "<dev string:xfc>", "<dev string:x10f>", &function_b45f9974855e1e8 );
         scripts\common\devgui::function_fe953f000498048f();
     }
 
     // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f4a
+    // Params 0
+    // Checksum 0x0, Offset: 0x25ee
     // Size: 0xa9, Type: dev
     function function_defff2269ca98e79()
     {
         v_pos = ( 3673, 7719, 5000 );
-        heli = sortbydistance( level.vehicle.instances[ "<dev string:x11d>" ], v_pos )[ 0 ];
+        heli = sortbydistance( level.vehicle.instances[ "<dev string:x130>" ], v_pos )[ 0 ];
         
         if ( heli == level.research_vessel.heli )
         {
-            heli = sortbydistance( level.vehicle.instances[ "<dev string:x11d>" ], v_pos )[ 1 ];
+            heli = sortbydistance( level.vehicle.instances[ "<dev string:x130>" ], v_pos )[ 1 ];
         }
         
         while ( isalive( heli ) )
@@ -816,8 +993,8 @@ function private function_c6c97baa041205e( object, func, currentparam, deltapara
     }
 
     // Namespace bunker_buster / scripts\killstreaks\bunker_buster
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1ffb
+    // Params 0
+    // Checksum 0x0, Offset: 0x269f
     // Size: 0xd, Type: dev
     function function_b45f9974855e1e8()
     {

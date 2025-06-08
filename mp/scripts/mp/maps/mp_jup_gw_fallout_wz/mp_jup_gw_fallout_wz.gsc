@@ -18,7 +18,7 @@
 #namespace mp_jup_gw_fallout_wz;
 
 // Namespace mp_jup_gw_fallout_wz / scripts\mp\maps\mp_jup_gw_fallout_wz\mp_jup_gw_fallout_wz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x300
 // Size: 0x22d
 function main()
@@ -79,12 +79,12 @@ function main()
         scripts\mp\gametypes\wm_objectives::function_333f4c66e6305891( 1, "_c", "zone_3", "jup_dam_wb_capture_zone_c" );
     }
     
-    setdvar( @"hash_be80c9650d91b8ac", 4000 );
+    setdvar( @"fd_helicopter_altitude_limiter", 4000 );
     function_274cd16d0af35466();
 }
 
 // Namespace mp_jup_gw_fallout_wz / scripts\mp\maps\mp_jup_gw_fallout_wz\mp_jup_gw_fallout_wz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x535
 // Size: 0x66e
 function function_274cd16d0af35466()

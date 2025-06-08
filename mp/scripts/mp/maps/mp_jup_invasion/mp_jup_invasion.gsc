@@ -18,7 +18,7 @@
 #namespace mp_jup_invasion;
 
 // Namespace mp_jup_invasion / scripts\mp\maps\mp_jup_invasion\mp_jup_invasion
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a0
 // Size: 0x10e
 function main()
@@ -51,7 +51,7 @@ function main()
 }
 
 // Namespace mp_jup_invasion / scripts\mp\maps\mp_jup_invasion\mp_jup_invasion
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b6
 // Size: 0xeb
 function function_cfd48b8366991570()
@@ -78,7 +78,7 @@ function function_cfd48b8366991570()
 }
 
 // Namespace mp_jup_invasion / scripts\mp\maps\mp_jup_invasion\mp_jup_invasion
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a9
 // Size: 0x124
 function function_c0a71bc2608541e0()
@@ -109,7 +109,7 @@ function function_c0a71bc2608541e0()
 }
 
 // Namespace mp_jup_invasion / scripts\mp\maps\mp_jup_invasion\mp_jup_invasion
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d5
 // Size: 0x9a9
 function function_31dc060e85f4a689()

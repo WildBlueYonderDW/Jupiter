@@ -10,7 +10,7 @@
 #namespace mp_jup_derail;
 
 // Namespace mp_jup_derail / scripts\mp\maps\mp_jup_derail\mp_jup_derail
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17a
 // Size: 0x99
 function main()

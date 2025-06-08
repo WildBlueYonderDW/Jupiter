@@ -9,7 +9,7 @@
 #namespace jup_ob_spore_healthbar;
 
 // Namespace jup_ob_spore_healthbar / namespace_44b5339458907313
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x153
 // Size: 0x145
 function main()
@@ -38,7 +38,7 @@ function main()
 }
 
 // Namespace jup_ob_spore_healthbar / namespace_44b5339458907313
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a0
 // Size: 0x57
 function setup_model()
@@ -55,7 +55,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_spore_healthbar / namespace_44b5339458907313
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ff
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -64,7 +64,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_spore_healthbar / namespace_44b5339458907313
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x310
 // Size: 0xc7
 function precache()

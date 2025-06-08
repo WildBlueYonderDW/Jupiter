@@ -19,7 +19,7 @@
 #namespace manual_turret_mp;
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x455
 // Size: 0xbb
 function init()
@@ -37,7 +37,7 @@ function init()
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x518
 // Size: 0x475
 function init_manual_turret_settings()
@@ -82,7 +82,7 @@ function init_manual_turret_settings()
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x995
 // Size: 0x28
 function init_manual_turret_vo()
@@ -92,7 +92,7 @@ function init_manual_turret_vo()
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9c5
 // Size: 0xb4
 function manual_turret_equipment_wrapper( ref, slot, objweapon )
@@ -115,7 +115,7 @@ function manual_turret_equipment_wrapper( ref, slot, objweapon )
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa81
 // Size: 0x2f
 function manual_turret_gettargetmarker( streakinfo, ignorecancel )
@@ -125,7 +125,7 @@ function manual_turret_gettargetmarker( streakinfo, ignorecancel )
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0xab9
 // Size: 0x71
 function manual_turret_createhintobject( hintpos, hinttype, hinticon, hintstring, priority, duration, onobstruction, hintdist, hintfov, usedist, usefov )
@@ -134,7 +134,7 @@ function manual_turret_createhintobject( hintpos, hinttype, hinticon, hintstring
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xb33
 // Size: 0x4a
 function manual_turret_monitordamage( maxhealth, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak, rumble, resetdamagetaken )
@@ -143,7 +143,7 @@ function manual_turret_monitordamage( maxhealth, damagefeedback, ondeathfunc, va
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb85
 // Size: 0x12
 function manual_turret_getenemyplayers( team )
@@ -152,7 +152,7 @@ function manual_turret_getenemyplayers( team )
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba0
 // Size: 0x9c
 function manual_turret_handlemovingplatform( turret )
@@ -170,7 +170,7 @@ function manual_turret_handlemovingplatform( turret )
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc44
 // Size: 0x13
 function manualturret_moving_platform_death( data )
@@ -179,7 +179,7 @@ function manualturret_moving_platform_death( data )
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc5f
 // Size: 0x3c
 function manual_turret_laststandwatcher()
@@ -194,7 +194,7 @@ function manual_turret_laststandwatcher()
 }
 
 // Namespace manual_turret_mp / scripts\mp\killstreaks\manual_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca3
 // Size: 0x20, Type: bool
 function manual_turret_canpickup()

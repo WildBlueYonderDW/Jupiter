@@ -11,7 +11,7 @@
 #namespace wander;
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x178
 // Size: 0x15
 function function_eda57308516bfc5f()
@@ -20,7 +20,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x196
 // Size: 0xed
 function evaluatescore( bot )
@@ -49,7 +49,7 @@ function evaluatescore( bot )
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28c
 // Size: 0x12
 function createaction( bot )
@@ -58,7 +58,7 @@ function createaction( bot )
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a7
 // Size: 0x27
 function function_f51749cef5c1eec( squadmaster )
@@ -67,7 +67,7 @@ function function_f51749cef5c1eec( squadmaster )
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d7
 // Size: 0x160
 function actionprocess( bot )
@@ -113,7 +113,7 @@ function actionprocess( bot )
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x43f
 // Size: 0x7e
 function function_188de758cb607fa3( decision, squadmaster )
@@ -142,7 +142,7 @@ function function_188de758cb607fa3( decision, squadmaster )
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c5
 // Size: 0x7c
 function function_75328d9af88f8b4e( master, decision )
@@ -162,7 +162,7 @@ function function_75328d9af88f8b4e( master, decision )
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x54a
 // Size: 0xac
 function function_9e2f5dc882037389( decision, lastloot )
@@ -188,7 +188,7 @@ function function_9e2f5dc882037389( decision, lastloot )
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ff
 // Size: 0x23
 function function_d635a657fa4ebf17()
@@ -198,7 +198,7 @@ function function_d635a657fa4ebf17()
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62b
 // Size: 0x10c
 function function_2810b62e37a684f9()
@@ -218,7 +218,8 @@ function function_2810b62e37a684f9()
     
     var_a5f822b72ce13f72 = undefined;
     
-    for (i = 0; i < squad.players.size; i++) {
+    for ( i = 0; i < squad.players.size ; i++ )
+    {
         player = squad.players[ i ];
         
         if ( isdefined( squad.squadleader ) && squad.squadleader == player )
@@ -249,7 +250,7 @@ function function_2810b62e37a684f9()
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x740
 // Size: 0x5c
 function function_87102f4ad2cc5188( follower, target )
@@ -259,7 +260,7 @@ function function_87102f4ad2cc5188( follower, target )
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7a5
 // Size: 0x8b
 function function_94df2aa132008fcc( center, distance, seconds )
@@ -288,7 +289,7 @@ function function_94df2aa132008fcc( center, distance, seconds )
 }
 
 // Namespace wander / namespace_ea0055094e5fd26a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x839
 // Size: 0x18
 function function_e08ee6939ebfdb4d( func )

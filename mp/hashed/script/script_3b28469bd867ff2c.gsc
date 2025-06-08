@@ -4,7 +4,7 @@
 #namespace mp_jup_st_d_ob_activities_armored_convoy_cs;
 
 // Namespace mp_jup_st_d_ob_activities_armored_convoy_cs / namespace_5b86d295bea69584
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17c
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_d_ob_activities_armored_convoy_cs / namespace_5b86d295bea69584
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f1
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_d_ob_activities_armored_convoy_cs / namespace_5b86d295bea69584
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x260
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_d_ob_activities_armored_convoy_cs / namespace_5b86d295bea69584
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a8
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_d_ob_activities_armored_convoy_cs / namespace_5b86d295bea69584
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b2
 // Size: 0x58
 function function_fd69cf02ba4d90a2()
@@ -84,7 +84,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_d_ob_activities_armored_convoy_cs / namespace_5b86d295bea69584
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x313
 // Size: 0x6a
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -106,7 +106,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_d_ob_activities_armored_convoy_cs / namespace_5b86d295bea69584
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x385
 // Size: 0x2c
 function function_e32cb94e9dfa29a( fe, us, cf )
@@ -115,7 +115,7 @@ function function_e32cb94e9dfa29a( fe, us, cf )
 }
 
 // Namespace mp_jup_st_d_ob_activities_armored_convoy_cs / namespace_5b86d295bea69584
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3b9
 // Size: 0x2c
 function function_2ec8fd97b13d662e( fe, us, cf )
@@ -124,7 +124,7 @@ function function_2ec8fd97b13d662e( fe, us, cf )
 }
 
 // Namespace mp_jup_st_d_ob_activities_armored_convoy_cs / namespace_5b86d295bea69584
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ed
 // Size: 0x148
 function function_6da2952367672ac0()

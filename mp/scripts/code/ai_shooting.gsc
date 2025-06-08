@@ -1,7 +1,7 @@
 #namespace ai_shooting;
 
 // Namespace ai_shooting / scripts\code\ai_shooting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e
 // Size: 0xbb
 function decidenumshotsformg()
@@ -38,7 +38,7 @@ function decidenumshotsformg()
 }
 
 // Namespace ai_shooting / scripts\code\ai_shooting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x152
 // Size: 0x8d
 function decidenumshotsforfull()
@@ -68,7 +68,7 @@ function decidenumshotsforfull()
 }
 
 // Namespace ai_shooting / scripts\code\ai_shooting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e8
 // Size: 0xb0
 function decidenumshotsforburst( var_b22c497b24d57aca )
@@ -103,7 +103,7 @@ function decidenumshotsforburst( var_b22c497b24d57aca )
 }
 
 // Namespace ai_shooting / scripts\code\ai_shooting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a1
 // Size: 0xd0
 function reduceshotcountbydistance( var_ed80adb830bc0010, var_b22c497b24d57aca )

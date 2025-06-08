@@ -14,7 +14,7 @@
 #namespace namespace_6d558624bef88b8;
 
 // Namespace namespace_6d558624bef88b8 / namespace_2ffd685c7e2d86a3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48a
 // Size: 0x30
 function activewarzoneinit()
@@ -26,7 +26,7 @@ function activewarzoneinit()
 }
 
 // Namespace namespace_6d558624bef88b8 / namespace_2ffd685c7e2d86a3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c2
 // Size: 0x9c
 function function_c4b698ed8dd5c33d()
@@ -50,7 +50,7 @@ function function_c4b698ed8dd5c33d()
 }
 
 // Namespace namespace_6d558624bef88b8 / namespace_2ffd685c7e2d86a3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x566
 // Size: 0xa8
 function function_974a505e30d0049c()
@@ -76,7 +76,7 @@ function function_974a505e30d0049c()
 }
 
 // Namespace namespace_6d558624bef88b8 / namespace_2ffd685c7e2d86a3
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x616
 // Size: 0x144
 function function_5684b9a123f38950( circleorigin, circleradius, thresholdradius )
@@ -111,7 +111,7 @@ function function_5684b9a123f38950( circleorigin, circleradius, thresholdradius 
 }
 
 // Namespace namespace_6d558624bef88b8 / namespace_2ffd685c7e2d86a3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x762
 // Size: 0x2a2
 function function_a9eaf2243763094d()
@@ -127,7 +127,8 @@ function function_a9eaf2243763094d()
     var_9a1c1b5c5cb9c1e = 0;
     volumes = function_f159c10d5cf8f0b4( "building_bounds", "script_noteworthy" );
     
-    for (i = 0; i < volumes.size; i++) {
+    for ( i = 0; i < volumes.size ; i++ )
+    {
         aitype = scripts\mp\ai_mp_controller::function_7f1a2e2ebe0c1693( "pistol", 1 );
         agent = spawnai( aitype, volumes[ i ], volumes[ i ].origin, ( 0, 0, 0 ) );
         
@@ -167,7 +168,8 @@ function function_a9eaf2243763094d()
         aitype = scripts\mp\ai_mp_controller::function_7f1a2e2ebe0c1693( "pistol", 1 );
         var_8c7cd2b569611279 = function_59d68c7b901fc998( fortress.var_c8c070d7375ef1e );
         
-        for (i = 0; i < var_8c7cd2b569611279; i++) {
+        for ( i = 0; i < var_8c7cd2b569611279 ; i++ )
+        {
             spawnnode = fortress.spawnclosetnodes[ randomint( fortress.spawnclosetnodes.size ) ];
             agent = function_1dd6dd044fd43e09( aitype, spawnnode.origin, spawnnode.angles, fortress.origin, 120 );
             
@@ -198,7 +200,7 @@ function function_a9eaf2243763094d()
 }
 
 // Namespace namespace_6d558624bef88b8 / namespace_2ffd685c7e2d86a3
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa0c
 // Size: 0x61
 function function_7b7f58778d9d6990( agent )
@@ -229,7 +231,8 @@ function private spawnai( aitype, volume, spawnorigin, spawnangles )
         
         if ( nodes.size > 0 )
         {
-            for (i = 0; i < nodes.size; i++) {
+            for ( i = 0; i < nodes.size ; i++ )
+            {
                 if ( ispointinvolume( nodes[ i ].origin, volume ) )
                 {
                     patroldestination = nodes[ i ].origin;
@@ -272,7 +275,8 @@ function private function_1dd6dd044fd43e09( aitype, spawnorigin, spawnangles, bu
         
         if ( nodes.size > 0 )
         {
-            for (i = 0; i < nodes.size; i++) {
+            for ( i = 0; i < nodes.size ; i++ )
+            {
                 if ( distance2dsquared( spawnorigin, nodes[ i ].origin ) >= 9216 )
                 {
                     patroldestination = nodes[ i ].origin;
@@ -308,7 +312,7 @@ function private function_1dd6dd044fd43e09( aitype, spawnorigin, spawnangles, bu
 }
 
 // Namespace namespace_6d558624bef88b8 / namespace_2ffd685c7e2d86a3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xda3
 // Size: 0x49
 function function_276d8f79560a28f8()
@@ -322,7 +326,7 @@ function function_276d8f79560a28f8()
 }
 
 // Namespace namespace_6d558624bef88b8 / namespace_2ffd685c7e2d86a3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdf4
 // Size: 0x67
 function _watchforcircleclosure()
@@ -423,7 +427,7 @@ function private function_59d68c7b901fc998( var_c8c070d7375ef1e )
 /#
 
     // Namespace namespace_6d558624bef88b8 / namespace_2ffd685c7e2d86a3
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x107a
     // Size: 0x2a3, Type: dev
     function function_71111773fd81f5d2()

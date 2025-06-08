@@ -7,7 +7,7 @@
 #namespace interaction_common;
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e3
 // Size: 0x13
 function function_72d72588305107b4( interactionid )
@@ -16,7 +16,7 @@ function function_72d72588305107b4( interactionid )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fe
 // Size: 0x3b
 function function_8add99cb1b82b964( interactionid )
@@ -27,7 +27,7 @@ function function_8add99cb1b82b964( interactionid )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x341
 // Size: 0x132
 function function_efcea5d26798e5b6( funcid )
@@ -70,7 +70,7 @@ function function_efcea5d26798e5b6( funcid )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x47b
 // Size: 0x45
 function function_606c28b248baddfd( statename, params )
@@ -81,7 +81,7 @@ function function_606c28b248baddfd( statename, params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c8
 // Size: 0x20a
 function startcap( statename, params )
@@ -139,7 +139,7 @@ function startcap( statename, params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6da
 // Size: 0x20f
 function function_b76d8b8ad8e2c823( statename, params )
@@ -188,7 +188,7 @@ function function_b76d8b8ad8e2c823( statename, params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8f1
 // Size: 0x38, Type: bool
 function withindisttogoal( statename, params )
@@ -204,7 +204,7 @@ function withindisttogoal( statename, params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x932
 // Size: 0x187, Type: bool
 function processevent( receiver, info, origin )
@@ -249,7 +249,7 @@ function processevent( receiver, info, origin )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac2
 // Size: 0x4e, Type: bool
 function function_75bde4ab677d8c14( params )
@@ -266,7 +266,7 @@ function function_75bde4ab677d8c14( params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb19
 // Size: 0xb
 function empty( params )
@@ -275,7 +275,7 @@ function empty( params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb2c
 // Size: 0x4f, Type: bool
 function function_5b942e48767afec7( param )
@@ -293,7 +293,7 @@ function function_5b942e48767afec7( param )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb84
 // Size: 0x1c
 function isincombat( statename, params )
@@ -302,7 +302,7 @@ function isincombat( statename, params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba9
 // Size: 0x11
 function shouldreact( params )
@@ -311,7 +311,7 @@ function shouldreact( params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbc3
 // Size: 0x4e
 function inplace( statename, params )
@@ -323,7 +323,7 @@ function inplace( statename, params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc19
 // Size: 0x25
 function function_25c933655d73066a( interactionid )
@@ -384,7 +384,8 @@ function private function_c2a860252b030c52( interactionid )
         miny = var_97e5d2c62501499e[ 0 ].origin[ 1 ];
         maxy = var_97e5d2c62501499e[ 0 ].origin[ 1 ];
         
-        for (i = 1; i < var_97e5d2c62501499e.size; i++) {
+        for ( i = 1; i < var_97e5d2c62501499e.size ; i++ )
+        {
             var_5d8d3f6a643b89ed = var_97e5d2c62501499e[ i ].origin;
             
             if ( var_5d8d3f6a643b89ed[ 0 ] < minx )
@@ -434,7 +435,7 @@ function private function_c2a860252b030c52( interactionid )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf19
 // Size: 0x4f, Type: bool
 function function_8f98221d71dafe6e( param )
@@ -452,7 +453,7 @@ function function_8f98221d71dafe6e( param )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf71
 // Size: 0x8a
 function function_d8786f820807c4f( statename, params )
@@ -477,7 +478,7 @@ function function_d8786f820807c4f( statename, params )
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1003
 // Size: 0x6a, Type: bool
 function function_688018e12db6e359( param )

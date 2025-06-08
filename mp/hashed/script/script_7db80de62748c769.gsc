@@ -7,7 +7,7 @@
 #namespace namespace_753b428633ceb556;
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d5
 // Size: 0x19
 function init()
@@ -19,7 +19,7 @@ function init()
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f6
 // Size: 0x99
 function function_5921dc142b08795b( patrolname, formationtype )
@@ -42,7 +42,7 @@ function function_5921dc142b08795b( patrolname, formationtype )
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x298
 // Size: 0x61
 function delete_patrol( patrolname )
@@ -60,7 +60,7 @@ function delete_patrol( patrolname )
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x301
 // Size: 0xba
 function function_b41baf16d62d21d8( patrolname, var_129f5d1ec2e3fec5, formationtype )
@@ -510,7 +510,7 @@ function private function_585606ec5af81775( patrolname )
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1024
 // Size: 0x37, Type: bool
 function function_8b93290be06b5b7f( node )
@@ -534,7 +534,7 @@ function function_8b93290be06b5b7f( node )
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1064
 // Size: 0x74
 function function_7a82c6e82e83e7d2( patrolname )
@@ -619,7 +619,7 @@ function private function_801b4f42c4aec0ff( patrolname, var_129f5d1ec2e3fec5, fo
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x129c
 // Size: 0x2c
 function function_e780688c49cc9549( patrolname, var_93e0bc97a6d45499 )
@@ -633,7 +633,7 @@ function function_e780688c49cc9549( patrolname, var_93e0bc97a6d45499 )
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12d0
 // Size: 0x35
 function function_bc785df299663d60( patrolname, formationslot, customoffset )
@@ -647,7 +647,7 @@ function function_bc785df299663d60( patrolname, formationslot, customoffset )
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x130d
 // Size: 0x2c
 function set_goal( patrolname, goalposition )
@@ -661,7 +661,7 @@ function set_goal( patrolname, goalposition )
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1341
 // Size: 0x10a
 function leave_patrol( patrolname, var_cc408e19cc4792d2 )
@@ -694,7 +694,7 @@ function leave_patrol( patrolname, var_cc408e19cc4792d2 )
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1453
 // Size: 0xc7
 function function_cc7045b3f96482ce()
@@ -715,7 +715,7 @@ function function_cc7045b3f96482ce()
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1522
 // Size: 0x91
 function function_147af37cda62f235( patrolname, ent, followdistance, timestep, usegoalentity )
@@ -840,7 +840,7 @@ function private function_abf1531c14702dc8( patrolname, ent, followdistance, tim
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1917
 // Size: 0xab
 function function_fded050d740c3e04( patrolname )
@@ -860,7 +860,7 @@ function function_fded050d740c3e04( patrolname )
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x19ca
 // Size: 0x16b
 function function_e1f50b1f60aa1b25( patrolname, var_3f4d3640a452a225, var_b4060a330731f1bd, var_1b9a7d48f06da667, var_9af84e76946ada66 )

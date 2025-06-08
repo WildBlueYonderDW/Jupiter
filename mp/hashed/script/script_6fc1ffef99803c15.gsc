@@ -10,7 +10,7 @@
 #namespace mp_shoothouse2;
 
 // Namespace mp_shoothouse2 / namespace_b17a5999f54cbbb9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x189
 // Size: 0xa2
 function main()
@@ -34,7 +34,7 @@ function main()
 }
 
 // Namespace mp_shoothouse2 / namespace_b17a5999f54cbbb9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x233
 // Size: 0x57a
 function function_6e3dcc779590b309()
@@ -104,7 +104,7 @@ function function_6e3dcc779590b309()
 }
 
 // Namespace mp_shoothouse2 / namespace_b17a5999f54cbbb9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b5
 // Size: 0x9a
 function function_476e26432f5d3edd()

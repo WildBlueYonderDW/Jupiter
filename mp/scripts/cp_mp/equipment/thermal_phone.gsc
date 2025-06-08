@@ -4,7 +4,7 @@
 #namespace thermal_phone;
 
 // Namespace thermal_phone / scripts\cp_mp\equipment\thermal_phone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108
 // Size: 0x2
 function function_7c59b9d44aff939b()
@@ -13,7 +13,7 @@ function function_7c59b9d44aff939b()
 }
 
 // Namespace thermal_phone / scripts\cp_mp\equipment\thermal_phone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x112
 // Size: 0x23
 function function_d7b50d4592cd5421( equipmentref, equipmentslot, variantid )
@@ -22,7 +22,7 @@ function function_d7b50d4592cd5421( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace thermal_phone / scripts\cp_mp\equipment\thermal_phone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13d
 // Size: 0x70
 function function_d985ced7c32c7258()
@@ -45,7 +45,7 @@ function function_d985ced7c32c7258()
 }
 
 // Namespace thermal_phone / scripts\cp_mp\equipment\thermal_phone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x1b
 function function_e49fa2736f79e04b( equipmentref, equipmentslot )
@@ -54,7 +54,7 @@ function function_e49fa2736f79e04b( equipmentref, equipmentslot )
 }
 
 // Namespace thermal_phone / scripts\cp_mp\equipment\thermal_phone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d8
 // Size: 0x39
 function function_230403b8cf5ea1e8( grenade )

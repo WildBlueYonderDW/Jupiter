@@ -6,7 +6,7 @@
 #namespace manglercannon_torpedo;
 
 // Namespace manglercannon_torpedo / scripts\weapons\manglercannon_torpedo
-// Params 20, eflags: 0x0
+// Params 20
 // Checksum 0x0, Offset: 0x1ce
 // Size: 0x23d
 function function_abdaf24ee06fa15( var_bbfb261ebc534765, launch_direction, target, target_pos, detonation_dist, velocity, var_1c9240866ae6b48c, max_range, var_550cc6b3d7ba166e, blast_radius, var_a48a77da6458589f, var_354a01f56bc89544, var_684e3c5cb08fedc0, var_682b525cb069d66a, var_627480a059b7fa92, var_26a92f43ecb7b5c5, var_aebe69bbb1a115f3, var_e3fe928071464c51, weapon, var_6234e3685c2bd000 )
@@ -291,7 +291,8 @@ function private function_6e37d8347a416e3( var_9e26f7c0622c2303 )
 {
     players = function_883458a342af3041( var_9e26f7c0622c2303, 100 );
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         player = players[ i ];
         
         if ( !isalive( player ) )

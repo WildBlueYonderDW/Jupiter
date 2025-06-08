@@ -37,8 +37,8 @@
 #namespace loot;
 
 // Namespace loot / scripts\mp\loot
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf4
+// Params 0
+// Checksum 0x0, Offset: 0xe1d
 // Size: 0x64
 function init()
 {
@@ -51,8 +51,8 @@ function init()
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe60
+// Params 2
+// Checksum 0x0, Offset: 0xe89
 // Size: 0x39
 function getpassivesforweapon( weaponbasename, variantid )
 {
@@ -67,8 +67,8 @@ function getpassivesforweapon( weaponbasename, variantid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xea2
+// Params 2
+// Checksum 0x0, Offset: 0xecb
 // Size: 0x68
 function getlootinfoforweapon( weaponbasename, variantid )
 {
@@ -94,8 +94,8 @@ function getlootinfoforweapon( weaponbasename, variantid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf13
+// Params 2
+// Checksum 0x0, Offset: 0xf3c
 // Size: 0x66
 function getweaponassetfromrootweapon( rootweaponname, variantid )
 {
@@ -106,8 +106,8 @@ function getweaponassetfromrootweapon( rootweaponname, variantid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf82
+// Params 2
+// Checksum 0x0, Offset: 0xfab
 // Size: 0x66
 function lookupvariantref( rootweaponname, variantid )
 {
@@ -118,8 +118,8 @@ function lookupvariantref( rootweaponname, variantid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xff1
+// Params 1
+// Checksum 0x0, Offset: 0x101a
 // Size: 0x2b, Type: bool
 function isweaponitem( lootitemid )
 {
@@ -128,8 +128,8 @@ function isweaponitem( lootitemid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1025
+// Params 1
+// Checksum 0x0, Offset: 0x104e
 // Size: 0x2b, Type: bool
 function iskillstreakitem( lootitemid )
 {
@@ -138,8 +138,8 @@ function iskillstreakitem( lootitemid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1059
+// Params 2
+// Checksum 0x0, Offset: 0x1082
 // Size: 0x6b
 function cachelootweaponweaponinfo( weaponbasename, variantid )
 {
@@ -160,8 +160,8 @@ function cachelootweaponweaponinfo( weaponbasename, variantid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10cd
+// Params 3
+// Checksum 0x0, Offset: 0x10f6
 // Size: 0x8c
 function readweaponinfofromtable( tablepath, variantid, weaponbasename )
 {
@@ -175,8 +175,8 @@ function readweaponinfofromtable( tablepath, variantid, weaponbasename )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1162
+// Params 2
+// Checksum 0x0, Offset: 0x118b
 // Size: 0x4e
 function getweaponqualitybyid( weapon, variantid )
 {
@@ -191,8 +191,8 @@ function getweaponqualitybyid( weapon, variantid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b9
+// Params 4
+// Checksum 0x0, Offset: 0x11e2
 // Size: 0xe8, Type: bool
 function isvalidslot( opener, container, itemindex, overridecontents )
 {
@@ -218,8 +218,8 @@ function isvalidslot( opener, container, itemindex, overridecontents )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12aa
+// Params 3
+// Checksum 0x0, Offset: 0x12d3
 // Size: 0xd2, Type: bool
 function isvalidloadoutslot( opener, container, itemindex )
 {
@@ -243,8 +243,8 @@ function isvalidloadoutslot( opener, container, itemindex )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1385
+// Params 1
+// Checksum 0x0, Offset: 0x13ae
 // Size: 0x65
 function function_2581f2ab21309779( container )
 {
@@ -265,8 +265,8 @@ function function_2581f2ab21309779( container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f2
+// Params 3
+// Checksum 0x0, Offset: 0x141b
 // Size: 0x156
 function function_61c51bd9656a843d( opener, container, var_fab72763a744c649 )
 {
@@ -318,8 +318,8 @@ function function_61c51bd9656a843d( opener, container, var_fab72763a744c649 )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1551
+// Params 3
+// Checksum 0x0, Offset: 0x157a
 // Size: 0x3fd
 function getautopickupquantity( opener, lootid, quantity )
 {
@@ -349,7 +349,8 @@ function getautopickupquantity( opener, lootid, quantity )
     
     if ( maxcount > 0 && isdefined( lootid ) )
     {
-        for (i = 0; i < namespace_aead94004cf4c147::getplayerbackpacksize( opener ); i++) {
+        for ( i = 0; i < namespace_aead94004cf4c147::getplayerbackpacksize( opener ) ; i++ )
+        {
             currentlootid = opener namespace_aead94004cf4c147::getlootidatbackpackindex( i );
             
             if ( currentlootid == lootid )
@@ -423,8 +424,8 @@ function getautopickupquantity( opener, lootid, quantity )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1957
+// Params 4
+// Checksum 0x0, Offset: 0x1980
 // Size: 0x52b
 function function_57c0f59f64f553fa( opener, container, items, parentcontainer )
 {
@@ -535,7 +536,8 @@ function function_57c0f59f64f553fa( opener, container, items, parentcontainer )
         
         if ( function_7eda25c90cc3aaa1( item.index ) && isdefined( container.loadoutcontents ) )
         {
-            for (i = 0; i < container.loadoutcontents.size; i++) {
+            for ( i = 0; i < container.loadoutcontents.size ; i++ )
+            {
                 if ( !isdefined( container.loadoutcontents[ i ] ) )
                 {
                     continue;
@@ -587,8 +589,8 @@ function function_57c0f59f64f553fa( opener, container, items, parentcontainer )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e8a
+// Params 1
+// Checksum 0x0, Offset: 0x1eb3
 // Size: 0x16
 function getlootweaponref( lootitemid )
 {
@@ -596,8 +598,8 @@ function getlootweaponref( lootitemid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ea9
+// Params 1
+// Checksum 0x0, Offset: 0x1ed2
 // Size: 0x7c
 function function_3a712642b82f6f2( scriptablename )
 {
@@ -650,8 +652,8 @@ function function_3a712642b82f6f2( scriptablename )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f2e
+// Params 2
+// Checksum 0x0, Offset: 0x1f57
 // Size: 0x94, Type: bool
 function function_c01727794cd72a1c( itema, itemb )
 {
@@ -671,8 +673,8 @@ function function_c01727794cd72a1c( itema, itemb )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fcb
+// Params 2
+// Checksum 0x0, Offset: 0x1ff4
 // Size: 0x735
 function function_30f5ea60517f9e06( opener, container )
 {
@@ -695,7 +697,8 @@ function function_30f5ea60517f9e06( opener, container )
     
     weaponcount = 0;
     
-    for (itemindex = 0; itemindex < 11; itemindex++) {
+    for ( itemindex = 0; itemindex < 11 ; itemindex++ )
+    {
         if ( isvalidslot( opener, container, itemindex ) )
         {
             if ( isweaponitem( container.contents[ itemindex ][ "lootID" ] ) )
@@ -734,7 +737,8 @@ function function_30f5ea60517f9e06( opener, container )
     var_4472b62c1fa150e5 = 0;
     container.var_73fb94c9aedcc497 = [];
     
-    for (itemindex = 0; itemindex < 11; itemindex++) {
+    for ( itemindex = 0; itemindex < 11 ; itemindex++ )
+    {
         if ( isvalidslot( opener, container, itemindex ) )
         {
             newquantity = items[ itemindex ][ "quantity" ];
@@ -859,8 +863,8 @@ function function_30f5ea60517f9e06( opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2708
+// Params 2
+// Checksum 0x0, Offset: 0x2731
 // Size: 0x24b
 function function_41e759de50f883dc( items, container_type )
 {
@@ -920,8 +924,8 @@ function function_41e759de50f883dc( items, container_type )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x295b
+// Params 4
+// Checksum 0x0, Offset: 0x2984
 // Size: 0x492
 function function_576b46dbf8366fe3( container, opener, var_fab72763a744c649, parentcontainer )
 {
@@ -1070,8 +1074,8 @@ function function_576b46dbf8366fe3( container, opener, var_fab72763a744c649, par
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2df5
+// Params 2
+// Checksum 0x0, Offset: 0x2e1e
 // Size: 0xaa
 function function_e01065f2c8e19b09( container, opener )
 {
@@ -1089,8 +1093,8 @@ function function_e01065f2c8e19b09( container, opener )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ea7
+// Params 2
+// Checksum 0x0, Offset: 0x2ed0
 // Size: 0x20
 function function_63981aa3be7d52ae( player, origin )
 {
@@ -1098,8 +1102,8 @@ function function_63981aa3be7d52ae( player, origin )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ecf
+// Params 3
+// Checksum 0x0, Offset: 0x2ef8
 // Size: 0x13d
 function function_438749eb7a7b738( items, opener, container )
 {
@@ -1130,8 +1134,8 @@ function function_438749eb7a7b738( items, opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3015
+// Params 2
+// Checksum 0x0, Offset: 0x303e
 // Size: 0x40
 function function_c7294f5b9b5006d5( player, index )
 {
@@ -1141,8 +1145,8 @@ function function_c7294f5b9b5006d5( player, index )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x305d
+// Params 2
+// Checksum 0x0, Offset: 0x3086
 // Size: 0x4d
 function function_47b931d76ffd028f( container, opener )
 {
@@ -1154,8 +1158,8 @@ function function_47b931d76ffd028f( container, opener )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30b2
+// Params 2
+// Checksum 0x0, Offset: 0x30db
 // Size: 0x49, Type: bool
 function function_825b88a376d4be6f( startingforward, opener )
 {
@@ -1169,8 +1173,8 @@ function function_825b88a376d4be6f( startingforward, opener )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3104
+// Params 3
+// Checksum 0x0, Offset: 0x312d
 // Size: 0xe9, Type: bool
 function function_9fb5b05ed3f94474( container, opener, framesstill )
 {
@@ -1199,8 +1203,8 @@ function function_9fb5b05ed3f94474( container, opener, framesstill )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x31f6
+// Params 4
+// Checksum 0x0, Offset: 0x321f
 // Size: 0x9c, Type: bool
 function function_f5765dcf987b7720( container, opener, startingforward, framesstill )
 {
@@ -1243,8 +1247,8 @@ function function_f5765dcf987b7720( container, opener, startingforward, framesst
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x329b
+// Params 2
+// Checksum 0x0, Offset: 0x32c4
 // Size: 0x131
 function function_71a59f067d5fe986( container, opener )
 {
@@ -1289,9 +1293,9 @@ function function_71a59f067d5fe986( container, opener )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x33d4
-// Size: 0x494
+// Params 2
+// Checksum 0x0, Offset: 0x33fd
+// Size: 0x496
 function closelootablecontainer( container, opener )
 {
     if ( isdefined( opener ) )
@@ -1334,7 +1338,7 @@ function closelootablecontainer( container, opener )
                 break;
             }
             
-            if ( !( container.itemtype == 6 && istrue( self.var_ca27f3fd3dad0c1f ) ) )
+            if ( !( container.itemtype == 6 && istrue( opener.var_ca27f3fd3dad0c1f ) ) )
             {
                 if ( isdefined( lootid ) && isdefined( quantity ) && lootid != 0 && quantity > 0 )
                 {
@@ -1420,8 +1424,8 @@ function closelootablecontainer( container, opener )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3870
+// Params 0
+// Checksum 0x0, Offset: 0x389b
 // Size: 0x44
 function function_d3e618521013c7eb()
 {
@@ -1439,8 +1443,8 @@ function function_d3e618521013c7eb()
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38bc
+// Params 1
+// Checksum 0x0, Offset: 0x38e7
 // Size: 0x18, Type: bool
 function iscontaineropen( player )
 {
@@ -1448,8 +1452,8 @@ function iscontaineropen( player )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38dd
+// Params 1
+// Checksum 0x0, Offset: 0x3908
 // Size: 0x109, Type: bool
 function function_73d8c72e055e8640( player )
 {
@@ -1495,8 +1499,8 @@ function function_73d8c72e055e8640( player )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x39ef
+// Params 2
+// Checksum 0x0, Offset: 0x3a1a
 // Size: 0x8f
 function function_6cd112326d215e1f( opener, container )
 {
@@ -1516,8 +1520,8 @@ function function_6cd112326d215e1f( opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a86
+// Params 1
+// Checksum 0x0, Offset: 0x3ab1
 // Size: 0x98
 function function_7ef8fa0b69da782a( var_8db5472153ea4811 )
 {
@@ -1541,8 +1545,8 @@ function function_7ef8fa0b69da782a( var_8db5472153ea4811 )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b27
+// Params 2
+// Checksum 0x0, Offset: 0x3b52
 // Size: 0x90
 function function_c4858170624b6caf( lootid, extrapayload )
 {
@@ -1575,8 +1579,8 @@ function function_c4858170624b6caf( lootid, extrapayload )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bc0
+// Params 1
+// Checksum 0x0, Offset: 0x3beb
 // Size: 0x66
 function function_d6a3266145bab76d( var_8c24a642e5abba4e )
 {
@@ -1595,8 +1599,8 @@ function function_d6a3266145bab76d( var_8c24a642e5abba4e )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c2f
+// Params 5
+// Checksum 0x0, Offset: 0x3c5a
 // Size: 0x12e
 function function_62ad0c002d54cbcc( player, container, var_142ee196b1c70723, lootid, weapon )
 {
@@ -1641,8 +1645,8 @@ function function_62ad0c002d54cbcc( player, container, var_142ee196b1c70723, loo
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d65
+// Params 6
+// Checksum 0x0, Offset: 0x3d90
 // Size: 0x12a
 function function_446c7ad7bcc70992( player, container, index, lootid, quantity, var_c9c301a888170672 )
 {
@@ -1692,8 +1696,8 @@ function function_446c7ad7bcc70992( player, container, index, lootid, quantity, 
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e97
+// Params 1
+// Checksum 0x0, Offset: 0x3ec2
 // Size: 0x17, Type: bool
 function function_7eda25c90cc3aaa1( index )
 {
@@ -1701,8 +1705,8 @@ function function_7eda25c90cc3aaa1( index )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3eb7
+// Params 2
+// Checksum 0x0, Offset: 0x3ee2
 // Size: 0x25, Type: bool
 function function_c26e54ffd0c8be94( container, index )
 {
@@ -1710,8 +1714,8 @@ function function_c26e54ffd0c8be94( container, index )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ee5
+// Params 3
+// Checksum 0x0, Offset: 0x3f10
 // Size: 0xa2
 function getloadoutdoublebackpacklootid( container, index, var_cc768ff46f3f6339 )
 {
@@ -1729,8 +1733,8 @@ function getloadoutdoublebackpacklootid( container, index, var_cc768ff46f3f6339 
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f90
+// Params 3
+// Checksum 0x0, Offset: 0x3fbb
 // Size: 0xa2
 function function_dc8d7c1709adcd67( container, index, var_cc768ff46f3f6339 )
 {
@@ -1748,8 +1752,8 @@ function function_dc8d7c1709adcd67( container, index, var_cc768ff46f3f6339 )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x403b
+// Params 1
+// Checksum 0x0, Offset: 0x4066
 // Size: 0x32
 function function_7f855164a30a5f5f( player )
 {
@@ -1759,8 +1763,8 @@ function function_7f855164a30a5f5f( player )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4075
+// Params 3
+// Checksum 0x0, Offset: 0x40a0
 // Size: 0x94
 function function_9b4ad636bec4278d( player, lootid, quantity )
 {
@@ -1791,8 +1795,8 @@ function function_9b4ad636bec4278d( player, lootid, quantity )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4111
+// Params 4
+// Checksum 0x0, Offset: 0x413c
 // Size: 0x1ef
 function function_b1423adeced14528( player, index, lootid, quantity )
 {
@@ -1862,8 +1866,8 @@ function function_b1423adeced14528( player, index, lootid, quantity )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4308
+// Params 2
+// Checksum 0x0, Offset: 0x4333
 // Size: 0x1a2
 function function_46bf6f4d9dcc9b78( player, container )
 {
@@ -1910,8 +1914,8 @@ function function_46bf6f4d9dcc9b78( player, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x44b2
+// Params 4
+// Checksum 0x0, Offset: 0x44dd
 // Size: 0x8c
 function getlootidatcontainerindex( player, index, container, var_cc768ff46f3f6339 )
 {
@@ -1935,8 +1939,8 @@ function getlootidatcontainerindex( player, index, container, var_cc768ff46f3f63
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4547
+// Params 4
+// Checksum 0x0, Offset: 0x4572
 // Size: 0x6d
 function function_8e5978971b5dcd16( player, index, container, var_cc768ff46f3f6339 )
 {
@@ -1954,8 +1958,8 @@ function function_8e5978971b5dcd16( player, index, container, var_cc768ff46f3f63
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x45bd
+// Params 2
+// Checksum 0x0, Offset: 0x45e8
 // Size: 0x196, Type: bool
 function iscontainerempty( container, opener )
 {
@@ -2024,8 +2028,8 @@ function iscontainerempty( container, opener )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x475c
+// Params 4
+// Checksum 0x0, Offset: 0x4787
 // Size: 0x3a9
 function function_60d2295ccc45d8c0( player, lootid, quantity, container )
 {
@@ -2117,8 +2121,8 @@ function function_60d2295ccc45d8c0( player, lootid, quantity, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b0d
+// Params 2
+// Checksum 0x0, Offset: 0x4b38
 // Size: 0x1b5
 function function_ce5d71baed479274( looter, container )
 {
@@ -2176,8 +2180,8 @@ function function_ce5d71baed479274( looter, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cca
+// Params 1
+// Checksum 0x0, Offset: 0x4cf5
 // Size: 0x31, Type: bool
 function function_f3557caf4562bff7( container )
 {
@@ -2190,8 +2194,8 @@ function function_f3557caf4562bff7( container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d04
+// Params 1
+// Checksum 0x0, Offset: 0x4d2f
 // Size: 0x72, Type: bool
 function function_532eac3c428e5b9b( container )
 {
@@ -2204,8 +2208,8 @@ function function_532eac3c428e5b9b( container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d7f
+// Params 1
+// Checksum 0x0, Offset: 0x4daa
 // Size: 0x60, Type: bool
 function function_54066dbd8ef44fe1( container )
 {
@@ -2218,8 +2222,8 @@ function function_54066dbd8ef44fe1( container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4de8
+// Params 3
+// Checksum 0x0, Offset: 0x4e13
 // Size: 0x143
 function function_86d77b1dbd44b06e( opener, container, var_4472b62c1fa150e5 )
 {
@@ -2268,8 +2272,8 @@ function function_86d77b1dbd44b06e( opener, container, var_4472b62c1fa150e5 )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f33
+// Params 8
+// Checksum 0x0, Offset: 0x4f5e
 // Size: 0x239
 function function_1791c1e8974e9bd7( player, lootid, quantity, weaponref, var_cc768ff46f3f6339, overridedist, overrideorigin, var_4a08890fd43d6bc7 )
 {
@@ -2328,8 +2332,8 @@ function function_1791c1e8974e9bd7( player, lootid, quantity, weaponref, var_cc7
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5175
+// Params 2
+// Checksum 0x0, Offset: 0x51a0
 // Size: 0x1da
 function function_a335aa664caa37c9( player, container )
 {
@@ -2381,8 +2385,8 @@ function function_a335aa664caa37c9( player, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x5357
+// Params 5
+// Checksum 0x0, Offset: 0x5382
 // Size: 0x350
 function function_2f00ca0526f3edc6( player, index, quantity, container, var_cc768ff46f3f6339 )
 {
@@ -2479,8 +2483,8 @@ function function_2f00ca0526f3edc6( player, index, quantity, container, var_cc76
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x56b0
+// Params 4
+// Checksum 0x0, Offset: 0x56db
 // Size: 0x26e
 function function_a92926d5b02cf6ed( player, container, itemtype, overridedist )
 {
@@ -2552,8 +2556,8 @@ function function_a92926d5b02cf6ed( player, container, itemtype, overridedist )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5926
+// Params 4
+// Checksum 0x0, Offset: 0x5951
 // Size: 0x357
 function function_3ae3712fe76d0c6a( player, index, loadoutindex, container )
 {
@@ -2677,9 +2681,9 @@ function function_3ae3712fe76d0c6a( player, index, loadoutindex, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c85
-// Size: 0xa6d
+// Params 3
+// Checksum 0x0, Offset: 0x5cb0
+// Size: 0xa7d
 function function_f0617ad70b7e7792( containerslot, backpackslot, container )
 {
     if ( !isalive( self ) )
@@ -2843,7 +2847,7 @@ function function_f0617ad70b7e7792( containerslot, backpackslot, container )
     fakepickup.dropstruct = scripts\mp\gametypes\br_pickups::function_7b9f3966a7a42003();
     fakepickup.instance = container;
     
-    if ( istrue( self.var_ca27f3fd3dad0c1f ) && container.itemtype == 6 )
+    if ( istrue( self.var_ca27f3fd3dad0c1f ) && isdefined( container.itemtype ) && container.itemtype == 6 )
     {
         fakepickup.count = scripts\mp\gametypes\br_headgear::function_5109f3947b0c7dfb( "gas_mask", self );
     }
@@ -2994,8 +2998,8 @@ function function_f0617ad70b7e7792( containerslot, backpackslot, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x66fa
+// Params 4
+// Checksum 0x0, Offset: 0x6735
 // Size: 0x22c
 function function_e183b2e94298bb75( loadoutindex, player, container, itemtype )
 {
@@ -3063,8 +3067,8 @@ function function_e183b2e94298bb75( loadoutindex, player, container, itemtype )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x692e
+// Params 2
+// Checksum 0x0, Offset: 0x6969
 // Size: 0x21c
 function function_68ca06034b8aaccd( opener, container )
 {
@@ -3085,7 +3089,8 @@ function function_68ca06034b8aaccd( opener, container )
         }
     #/
     
-    for (itemindex = 0; itemindex < 11; itemindex++) {
+    for ( itemindex = 0; itemindex < 11 ; itemindex++ )
+    {
         if ( itemindex <= lastvalidindex )
         {
             function_446c7ad7bcc70992( opener, container, itemindex, items[ itemindex ][ "lootID" ], items[ itemindex ][ "quantity" ], items[ itemindex ][ "ref" ] );
@@ -3116,8 +3121,8 @@ function function_68ca06034b8aaccd( opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b52
+// Params 5
+// Checksum 0x0, Offset: 0x6b8d
 // Size: 0x8a
 function function_601d9afc257af3ff( player, slotindex, container, var_cc768ff46f3f6339, quantity )
 {
@@ -3143,8 +3148,8 @@ function function_601d9afc257af3ff( player, slotindex, container, var_cc768ff46f
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6be4
+// Params 2
+// Checksum 0x0, Offset: 0x6c1f
 // Size: 0x1c4
 function function_e146f016a8a7244f( notification, slotindex )
 {
@@ -3223,8 +3228,8 @@ function function_e146f016a8a7244f( notification, slotindex )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6db0
+// Params 3
+// Checksum 0x0, Offset: 0x6deb
 // Size: 0xc6
 function function_9d924aea120c2693( player, slotindex, container )
 {
@@ -3251,8 +3256,8 @@ function function_9d924aea120c2693( player, slotindex, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e7e
+// Params 0
+// Checksum 0x0, Offset: 0x6eb9
 // Size: 0x1c, Type: bool
 function function_55b384ecb923003e()
 {
@@ -3260,9 +3265,9 @@ function function_55b384ecb923003e()
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ea3
-// Size: 0x2bc
+// Params 1
+// Checksum 0x0, Offset: 0x6ede
+// Size: 0x2d1
 function function_c929a8ad95b46fda( container )
 {
     if ( isdefined( container.type ) && container.type == "br_loot_cache_april" )
@@ -3275,7 +3280,7 @@ function function_c929a8ad95b46fda( container )
         return 1;
     }
     
-    if ( isdefined( container.type ) && container.type != "br_loot_cache" && container.type != "br_reusable_loot_cache" && container.type != "br_loot_cache_yellow" && container.type != "br_loot_cache_yellow_quiet" && container.type != "br_loot_cache_lege" && container.type != "br_loot_cache_gulag" && container.type != "br_loot_cache_personal_supply" && container.type != "br_loot_cache_stronghold" && container.type != "br_loot_cache_blacksite" && container.type != "br_loot_cache_bunker" && container.type != "cache_medicine_cabinet" && container.type != "cache_cash_register" && container.type != "cache_cash_register_clean" && container.type != "cache_medical_box_wall" && container.type != "dmz_hidden_container_common" && container.type != "cache_duffel_bag_01" && container.type != "cache_duffel_bag_02" && container.type != "cache_weapon_locker" && container.type != "br_loot_cache_holiday_common" && container.type != "br_loot_cache_holiday_lege" && container.type != "br_loot_cache_holiday_dth" && container.type != "ob_loot_cache_large" && container.type != "br_loot_cache_roguesignal" && container.type != "br_loot_cache_personal_legacy" && container.type != "br_loot_cache_personal_legacy_golden" && container.type != "br_loot_cache_underwater" )
+    if ( isdefined( container.type ) && container.type != "br_loot_cache" && container.type != "br_reusable_loot_cache" && container.type != "br_loot_cache_yellow" && container.type != "br_loot_cache_yellow_quiet" && container.type != "br_loot_cache_lege" && container.type != "br_loot_cache_lege_novehiclecollision" && container.type != "br_loot_cache_gulag" && container.type != "br_loot_cache_personal_supply" && container.type != "br_loot_cache_stronghold" && container.type != "br_loot_cache_blacksite" && container.type != "br_loot_cache_bunker" && container.type != "cache_medicine_cabinet" && container.type != "cache_cash_register" && container.type != "cache_cash_register_clean" && container.type != "cache_medical_box_wall" && container.type != "dmz_hidden_container_common" && container.type != "cache_duffel_bag_01" && container.type != "cache_duffel_bag_02" && container.type != "cache_weapon_locker" && container.type != "br_loot_cache_holiday_common" && container.type != "br_loot_cache_holiday_lege" && container.type != "br_loot_cache_holiday_dth" && container.type != "ob_loot_cache_large" && container.type != "br_loot_cache_roguesignal" && container.type != "br_loot_cache_personal_legacy" && container.type != "br_loot_cache_personal_legacy_golden" && container.type != "br_loot_cache_underwater" )
     {
         if ( scripts\mp\gametypes\br_gametypes::isbrgametypefuncdefined( "shouldGametypeContainerUseStrip" ) )
         {
@@ -3294,8 +3299,8 @@ function function_c929a8ad95b46fda( container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7168
+// Params 0
+// Checksum 0x0, Offset: 0x71b8
 // Size: 0x1b, Type: bool
 function function_4749c1a092e650bd()
 {
@@ -3303,8 +3308,8 @@ function function_4749c1a092e650bd()
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x718c
+// Params 0
+// Checksum 0x0, Offset: 0x71dc
 // Size: 0x1c, Type: bool
 function function_8306d72ea2e8889c()
 {
@@ -3312,8 +3317,8 @@ function function_8306d72ea2e8889c()
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x71b1
+// Params 0
+// Checksum 0x0, Offset: 0x7201
 // Size: 0x1c, Type: bool
 function function_310ab06891cb4517()
 {
@@ -3321,8 +3326,8 @@ function function_310ab06891cb4517()
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x71d6
+// Params 3
+// Checksum 0x0, Offset: 0x7226
 // Size: 0x29e
 function getindexforlootidincontainer( container, lootid, player )
 {
@@ -3397,8 +3402,8 @@ function getindexforlootidincontainer( container, lootid, player )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x747d
+// Params 2
+// Checksum 0x0, Offset: 0x74cd
 // Size: 0x28
 function function_59b9c8081b873a10( opener, container )
 {
@@ -3411,8 +3416,8 @@ function function_59b9c8081b873a10( opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x74ae
+// Params 4
+// Checksum 0x0, Offset: 0x74fe
 // Size: 0x8f
 function function_edb397974ae6ee68( opener, container, index, var_cc768ff46f3f6339 )
 {
@@ -3434,8 +3439,8 @@ function function_edb397974ae6ee68( opener, container, index, var_cc768ff46f3f63
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x7546
+// Params 4
+// Checksum 0x0, Offset: 0x7596
 // Size: 0x9d
 function function_3f23dfe9eb1bee5f( opener, container, index, quantity )
 {
@@ -3460,8 +3465,8 @@ function function_3f23dfe9eb1bee5f( opener, container, index, quantity )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x75eb
+// Params 4
+// Checksum 0x0, Offset: 0x763b
 // Size: 0x9d
 function function_69532a81d0171769( opener, container, index, lootid )
 {
@@ -3486,8 +3491,8 @@ function function_69532a81d0171769( opener, container, index, lootid )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x7690
+// Params 5
+// Checksum 0x0, Offset: 0x76e0
 // Size: 0xad
 function function_153d3281e46e14da( opener, container, index, lootid, quantity )
 {
@@ -3512,8 +3517,8 @@ function function_153d3281e46e14da( opener, container, index, lootid, quantity )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7745
+// Params 2
+// Checksum 0x0, Offset: 0x7795
 // Size: 0x6c, Type: bool
 function function_c3d68fb7b175edd( opener, container )
 {
@@ -3532,8 +3537,8 @@ function function_c3d68fb7b175edd( opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x77ba
+// Params 3
+// Checksum 0x0, Offset: 0x780a
 // Size: 0x1f7
 function function_775a7fc396485a9a( opener, container, index )
 {
@@ -3585,8 +3590,8 @@ function function_775a7fc396485a9a( opener, container, index )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x79ba
+// Params 3
+// Checksum 0x0, Offset: 0x7a0a
 // Size: 0x201
 function function_505e8eb7e77704c5( opener, container, index )
 {
@@ -3633,8 +3638,8 @@ function function_505e8eb7e77704c5( opener, container, index )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bc3
+// Params 9
+// Checksum 0x0, Offset: 0x7c13
 // Size: 0xb5
 function function_67be8d119fa22135( container, lootid, weaponobj, pastteam, noextract, quantity, metadata, altclip, lefthandquantity )
 {
@@ -3649,8 +3654,8 @@ function function_67be8d119fa22135( container, lootid, weaponobj, pastteam, noex
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c80
+// Params 11
+// Checksum 0x0, Offset: 0x7cd0
 // Size: 0xda
 function function_a0952bc59c9afa3f( player, specificcontainer, weaponobj, lootid, itemtype, itemindex, quantity, metadata, noextract, altclip, lefthandquantity )
 {
@@ -3674,8 +3679,8 @@ function function_a0952bc59c9afa3f( player, specificcontainer, weaponobj, lootid
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d62
+// Params 3
+// Checksum 0x0, Offset: 0x7db2
 // Size: 0x6f, Type: bool
 function function_430df78a3a4143c1( opener, container, index )
 {
@@ -3689,8 +3694,8 @@ function function_430df78a3a4143c1( opener, container, index )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7dda
+// Params 3
+// Checksum 0x0, Offset: 0x7e2a
 // Size: 0x50
 function function_4b96aa12974840c0( opener, container, index )
 {
@@ -3704,8 +3709,8 @@ function function_4b96aa12974840c0( opener, container, index )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e33
+// Params 2
+// Checksum 0x0, Offset: 0x7e83
 // Size: 0x58
 function function_932e5252b650e475( opener, container )
 {
@@ -3724,8 +3729,8 @@ function function_932e5252b650e475( opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e93
+// Params 4
+// Checksum 0x0, Offset: 0x7ee3
 // Size: 0x160
 function function_f3c9e05d4767d037( lootid, player, container, index )
 {
@@ -3760,8 +3765,8 @@ function function_f3c9e05d4767d037( lootid, player, container, index )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ffb
+// Params 2
+// Checksum 0x0, Offset: 0x804b
 // Size: 0x29e
 function function_3883d0bb982156f3( container, backpack )
 {
@@ -3803,8 +3808,8 @@ function function_3883d0bb982156f3( container, backpack )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x82a1
+// Params 3
+// Checksum 0x0, Offset: 0x82f1
 // Size: 0x64
 function function_bf4465d9535802ba( container, player, items )
 {
@@ -3819,8 +3824,8 @@ function function_bf4465d9535802ba( container, player, items )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x830d
+// Params 3
+// Checksum 0x0, Offset: 0x835d
 // Size: 0x69
 function function_40b46e7298657a93( container, players, items )
 {
@@ -3831,8 +3836,8 @@ function function_40b46e7298657a93( container, players, items )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x837e
+// Params 4
+// Checksum 0x0, Offset: 0x83ce
 // Size: 0x188
 function function_cf0b3e7d1e5a3274( player, container, containertype, weaponslot )
 {
@@ -3862,8 +3867,8 @@ function function_cf0b3e7d1e5a3274( player, container, containertype, weaponslot
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x850e
+// Params 3
+// Checksum 0x0, Offset: 0x855e
 // Size: 0x141
 function function_618f897065a12122( player, container, items )
 {
@@ -3887,8 +3892,8 @@ function function_618f897065a12122( player, container, items )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x8657
+// Params 9
+// Checksum 0x0, Offset: 0x86a7
 // Size: 0x159
 function function_3be0b970932fa47e( player, container, lootid, quantity, weaponobj, metadata, pastteam, altquantity, lefthandquantity )
 {
@@ -3907,8 +3912,8 @@ function function_3be0b970932fa47e( player, container, lootid, quantity, weapono
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x87b8
+// Params 2
+// Checksum 0x0, Offset: 0x8808
 // Size: 0x47, Type: bool
 function function_e3081772bbf7a51c( opener, container )
 {
@@ -3916,8 +3921,8 @@ function function_e3081772bbf7a51c( opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8808
+// Params 2
+// Checksum 0x0, Offset: 0x8858
 // Size: 0x58
 function function_3aae4431f00c347f( opener, container )
 {
@@ -3930,8 +3935,8 @@ function function_3aae4431f00c347f( opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8869
+// Params 2
+// Checksum 0x0, Offset: 0x88b9
 // Size: 0x62
 function function_3c85cbbfd2d2a3da( opener, container )
 {
@@ -3944,8 +3949,8 @@ function function_3c85cbbfd2d2a3da( opener, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x88d4
+// Params 2
+// Checksum 0x0, Offset: 0x8924
 // Size: 0x1b
 function function_c24e299b175682e4( player, container )
 {
@@ -3953,8 +3958,8 @@ function function_c24e299b175682e4( player, container )
 }
 
 // Namespace loot / scripts\mp\loot
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x88f7
+// Params 2
+// Checksum 0x0, Offset: 0x8947
 // Size: 0xe2
 function function_9ad640ba63792064( opener, container )
 {

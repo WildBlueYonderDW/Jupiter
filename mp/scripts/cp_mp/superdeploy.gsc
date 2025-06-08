@@ -10,7 +10,7 @@
 #namespace superdeploy;
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x487
 // Size: 0x205, Type: bool
 function function_cfec51cac79ca4e6( superinfo, weapongivencallback, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b, var_f6a32dcc4b19aad9, var_67a06b4ea269058e, waittime, skipfirstraise, isimmediate )
@@ -82,7 +82,7 @@ function function_cfec51cac79ca4e6( superinfo, weapongivencallback, var_8fd4d93d
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x695
 // Size: 0x19a, Type: bool
 function function_f3a5a94b1d50ed38( superinfo, weaponobj, firednotify, weapongivencallback, var_8fd4d93dd619da88, weaponfiredcallback, var_91f739c2c51347d4, var_d55d8445518099b )
@@ -134,7 +134,7 @@ function function_f3a5a94b1d50ed38( superinfo, weaponobj, firednotify, weapongiv
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x838
 // Size: 0xd9
 function function_8300ec48c43363d6( superinfo, weaponobj, keepweapon, weapongivencallback, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b )
@@ -303,7 +303,7 @@ function private function_c46ce93718743bf6()
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0xc8a
 // Size: 0x14f
 function function_323489241ce4764a( deployweaponobj, superinfo, cleanupwaitfunc, weapongivencallback, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b, skipfirstraise, isimmediate )
@@ -463,7 +463,7 @@ function private function_12bd106b0dd9b11d( superinfo, deployweaponobj )
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfdd
 // Size: 0x35
 function function_b04cbd5db8951229( weaponname )
@@ -573,7 +573,7 @@ function private function_afb1be43e272a00a( ent, finishednotify )
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11fe
 // Size: 0x8e
 function function_fceaa660b4da1c2b( weapon )
@@ -614,7 +614,7 @@ function function_fceaa660b4da1c2b( weapon )
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1295
 // Size: 0x28, Type: bool
 function issuperweapon( weapon )
@@ -629,7 +629,7 @@ function issuperweapon( weapon )
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12c6
 // Size: 0xa0
 function getsuperrefforsuperweapon( weapon )
@@ -677,7 +677,7 @@ function getsuperrefforsuperweapon( weapon )
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x136f
 // Size: 0x82
 function getsuperrefforsuperuseweapon( weapon )
@@ -696,7 +696,7 @@ function getsuperrefforsuperuseweapon( weapon )
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13fa
 // Size: 0x5b
 function getsuperrefforsuperoffhand( weapon )
@@ -715,7 +715,7 @@ function getsuperrefforsuperoffhand( weapon )
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x145e
 // Size: 0x74
 function getsuperrefforsuperextraweapon( weapon )
@@ -734,7 +734,7 @@ function getsuperrefforsuperextraweapon( weapon )
 }
 
 // Namespace superdeploy / scripts\cp_mp\superdeploy
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x14db
 // Size: 0x13c, Type: bool
 function function_e92aaca7f2fd7e8( superinfo, firednotify, var_4ef1099365450bae, weaponfiredcallback )

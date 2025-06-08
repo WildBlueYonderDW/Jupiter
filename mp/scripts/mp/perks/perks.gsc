@@ -24,7 +24,7 @@
 #namespace perks;
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3252
 // Size: 0x2832
 function init()
@@ -507,7 +507,7 @@ function init()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5a8c
 // Size: 0x39
 function registerscriptperk( perkname, setfunc, unsetfunc, extraperkmap, initfunc )
@@ -516,7 +516,7 @@ function registerscriptperk( perkname, setfunc, unsetfunc, extraperkmap, initfun
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5acd
 // Size: 0x38
 function registercodeperkinfo( perkname, setfunc, unsetfunc, extraperkmap, initfunc )
@@ -525,7 +525,7 @@ function registercodeperkinfo( perkname, setfunc, unsetfunc, extraperkmap, initf
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x5b0d
 // Size: 0x132
 function registerperk( perkname, var_9aa715f8120f5692, setfunc, unsetfunc, extraperkmap, initfunc )
@@ -575,7 +575,7 @@ function registerperk( perkname, var_9aa715f8120f5692, setfunc, unsetfunc, extra
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5c47
 // Size: 0x44
 function function_791007a01c96516a( perkname, onkillcallback )
@@ -586,7 +586,7 @@ function function_791007a01c96516a( perkname, onkillcallback )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c93
 // Size: 0x27, Type: bool
 function function_f45c19871b412ea5( perkname )
@@ -595,7 +595,7 @@ function function_f45c19871b412ea5( perkname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cc3
 // Size: 0x17, Type: bool
 function function_e6d4bde94154c10e( perkname )
@@ -604,7 +604,7 @@ function function_e6d4bde94154c10e( perkname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ce3
 // Size: 0x2e7
 function function_301144e1b628a10c()
@@ -717,7 +717,7 @@ function function_301144e1b628a10c()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fd2
 // Size: 0x4a
 function initspecialistkillstreaks()
@@ -729,7 +729,7 @@ function initspecialistkillstreaks()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6024
 // Size: 0x40
 function onspecialistkillstreakavailable( streakitem )
@@ -740,7 +740,7 @@ function onspecialistkillstreakavailable( streakitem )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x606c
 // Size: 0x3c
 function getspecialistperkforstreak( streakname )
@@ -756,7 +756,7 @@ function getspecialistperkforstreak( streakname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60b1
 // Size: 0x45
 function getspecialistindexforstreak( streakname )
@@ -785,7 +785,7 @@ function getspecialistindexforstreak( streakname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60fe
 // Size: 0x55
 function isspecialiststreak( streakname )
@@ -803,7 +803,7 @@ function isspecialiststreak( streakname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x615b
 // Size: 0x12
 function onspecialistbonusavailable( streakitem )
@@ -812,7 +812,7 @@ function onspecialistbonusavailable( streakitem )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6175
 // Size: 0xab
 function addspecialistbonus()
@@ -839,7 +839,7 @@ function addspecialistbonus()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6228
 // Size: 0xab
 function removespecialistbonus()
@@ -866,7 +866,7 @@ function removespecialistbonus()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62db
 // Size: 0x94
 function getavailableperks()
@@ -894,7 +894,7 @@ function getavailableperks()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6378
 // Size: 0x3b
 function getperkslot( perkref )
@@ -915,7 +915,7 @@ function getperkslot( perkref )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x63bc
 // Size: 0x48
 function onplayerconnect()
@@ -931,7 +931,7 @@ function onplayerconnect()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x640c
 // Size: 0xbe
 function function_a9811e9d60c20505( newplayer )
@@ -957,12 +957,12 @@ function function_a9811e9d60c20505( newplayer )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64d2
 // Size: 0x2c5
 function initperkdvars()
 {
-    maxhealth = getdvarint( @"hash_b1d561f9a9241e09", 150 );
+    maxhealth = getdvarint( @"scr_player_maxhealth", 150 );
     level.graceperiodgrenademod = 0.08;
     level.armorpiercingmod = 1.5;
     level.var_3395494b137909bb = 1.5;
@@ -970,7 +970,7 @@ function initperkdvars()
     level.regenfasterhealthmod = getintproperty( @"hash_8e7c2be7678f7efc", 2 );
     level.explosivedamagemod = getintproperty( @"hash_ba7635c20c20da2b", 40 ) / 100;
     level.blastshieldmod = getfloatproperty( @"hash_fdc1e088cb180fc", 0.65 );
-    level.blastshieldclamp = getfloatproperty( @"hash_171bcebcaa849d95", 0.8 ) * maxhealth;
+    level.blastshieldclamp = getfloatproperty( @"perk_blastshieldclamphp", 0.8 ) * maxhealth;
     level.riotshieldmod = getintproperty( @"perk_riotshield", 100 ) / 100;
     level.armorvestbulletdelta = getintproperty( @"perk_armorvest", 1 );
     level.var_ddc10ba2983b0b0c = dvars::getfloatproperty( @"hash_811e77d419715fbc", 0.8 );
@@ -1009,7 +1009,7 @@ function initperkdvars()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x679f
 // Size: 0x6c
 function giveperks( loadoutperks )
@@ -1024,7 +1024,7 @@ function giveperks( loadoutperks )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6813
 // Size: 0x27
 function function_4613ec15f87b7cf2( tier2perk, tier3perk )
@@ -1034,7 +1034,7 @@ function function_4613ec15f87b7cf2( tier2perk, tier3perk )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6842
 // Size: 0x88
 function _setperk( perkname )
@@ -1066,7 +1066,7 @@ function _setperk( perkname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x68d2
 // Size: 0x42
 function _setperkinternal( perkname )
@@ -1082,7 +1082,7 @@ function _setperkinternal( perkname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x691c
 // Size: 0x83
 function _setextraperks( perkname )
@@ -1102,7 +1102,7 @@ function _setextraperks( perkname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69a7
 // Size: 0x78
 function _unsetextraperks( perkname )
@@ -1118,7 +1118,7 @@ function _unsetextraperks( perkname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a27
 // Size: 0x9f
 function _unsetperk( perkname )
@@ -1148,7 +1148,7 @@ function _unsetperk( perkname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ace
 // Size: 0x3f
 function _unsetperkinternal( perkname )
@@ -1162,7 +1162,7 @@ function _unsetperkinternal( perkname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b15
 // Size: 0xa4
 function _clearperks()
@@ -1190,7 +1190,7 @@ function _clearperks()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6bc1
 // Size: 0x163
 function function_29ef7a1951b051f7()
@@ -1234,7 +1234,7 @@ function function_29ef7a1951b051f7()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d2c
 // Size: 0x9a
 function giveperksafterspawn()
@@ -1256,7 +1256,7 @@ function giveperksafterspawn()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6dce
 // Size: 0x3d
 function function_dd88698a047c2064( activespawnprotection, perkname )
@@ -1267,7 +1267,7 @@ function function_dd88698a047c2064( activespawnprotection, perkname )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e13
 // Size: 0x74
 function function_39322ee01e03bcf6( activespawnprotection )
@@ -1282,7 +1282,7 @@ function function_39322ee01e03bcf6( activespawnprotection )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x6e8f
 // Size: 0x378
 function updateactiveperks( einflictor, attacker, victim, idamage, smeansofdeath, objweapon, shitloc, vdir )
@@ -1367,7 +1367,7 @@ function updateactiveperks( einflictor, attacker, victim, idamage, smeansofdeath
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x720f
 // Size: 0x2b
 function function_7c8cc44b58093ce4( perksarray )
@@ -1377,7 +1377,7 @@ function function_7c8cc44b58093ce4( perksarray )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7242
 // Size: 0x200
 function setomnvarsforperklist( var_5dc06b0667135c87, perklist, extraperkslist )
@@ -1434,7 +1434,8 @@ function setomnvarsforperklist( var_5dc06b0667135c87, perklist, extraperkslist )
     loopcount = max( 4, var_f46d514de2f55768 );
     sortedperks = [];
     
-    for (slot = 1; slot < loopcount; slot++) {
+    for ( slot = 1; slot < loopcount ; slot++ )
+    {
         if ( isdefined( var_3e723d9f699e3373[ slot ] ) )
         {
             foreach ( perk in var_3e723d9f699e3373[ slot ] )
@@ -1444,7 +1445,8 @@ function setomnvarsforperklist( var_5dc06b0667135c87, perklist, extraperkslist )
         }
     }
     
-    for (omnvarindex = 0; omnvarindex < 7; omnvarindex++) {
+    for ( omnvarindex = 0; omnvarindex < 7 ; omnvarindex++ )
+    {
         omnvarvalue = sortedperks[ omnvarindex ];
         
         if ( !isdefined( omnvarvalue ) )
@@ -1459,7 +1461,7 @@ function setomnvarsforperklist( var_5dc06b0667135c87, perklist, extraperkslist )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x744a
 // Size: 0x72, Type: bool
 function isperkinloadout( perk )
@@ -1478,7 +1480,7 @@ function isperkinloadout( perk )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x74c5
 // Size: 0x35
 function getperkid( perkref )
@@ -1499,7 +1501,7 @@ function getperkid( perkref )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7503
 // Size: 0x100
 function function_ccdbd1f6da822d2c()
@@ -1548,7 +1550,7 @@ function function_ccdbd1f6da822d2c()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x760b
 // Size: 0x26f
 function function_f2dbab6f947771f2()
@@ -1626,7 +1628,7 @@ function function_f2dbab6f947771f2()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7882
 // Size: 0xb3
 function function_2e9bd87bf55528f9()
@@ -1657,7 +1659,7 @@ function function_2e9bd87bf55528f9()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x793d
 // Size: 0x7d
 function function_2cb1405f41491297( amount )
@@ -1687,7 +1689,7 @@ function function_2cb1405f41491297( amount )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79c2
 // Size: 0x7d
 function function_ff3e705ec08c840()
@@ -1700,7 +1702,7 @@ function function_ff3e705ec08c840()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a47
 // Size: 0x64, Type: bool
 function function_b30e1c92800e9f5f()
@@ -1724,7 +1726,7 @@ function function_b30e1c92800e9f5f()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ab4
 // Size: 0x82
 function function_7ef2f6d740da9325()
@@ -1751,7 +1753,7 @@ function function_7ef2f6d740da9325()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b3e
 // Size: 0xba
 function function_7a60d901339410( amount )
@@ -1773,7 +1775,7 @@ function function_7a60d901339410( amount )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c00
 // Size: 0x143
 function function_667ec8f124fe1ab3()
@@ -1822,7 +1824,7 @@ function function_667ec8f124fe1ab3()
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d4b
 // Size: 0x29
 function activateperk( perkref )
@@ -1832,7 +1834,7 @@ function activateperk( perkref )
 }
 
 // Namespace perks / scripts\mp\perks\perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d7c
 // Size: 0x96
 function function_d1a7e9b22c284b92()

@@ -5,7 +5,7 @@
 #namespace popsmoke;
 
 // Namespace popsmoke / scripts\mp\killstreaks\popsmoke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd1
 // Size: 0xcf
 function function_933806fb8408353d( smoketags )

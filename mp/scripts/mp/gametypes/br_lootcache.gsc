@@ -1,3 +1,4 @@
+#using script_44b8991c2b01716a;
 #using script_744cad313ed0a87e;
 #using script_b7a9ce0a2282b79;
 #using scripts\common\callbacks;
@@ -30,8 +31,8 @@
 #namespace br_lootcache;
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdaa
+// Params 0
+// Checksum 0x0, Offset: 0xe02
 // Size: 0x46
 function brlootcache_init()
 {
@@ -47,8 +48,8 @@ function brlootcache_init()
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf8
+// Params 2
+// Checksum 0x0, Offset: 0xe50
 // Size: 0x141, Type: bool
 function canspawnitemname( itemname, iscustomweapon )
 {
@@ -111,8 +112,8 @@ function canspawnitemname( itemname, iscustomweapon )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0xf42
+// Params 9
+// Checksum 0x0, Offset: 0xf9a
 // Size: 0x383
 function lootspawnitem( itemname, dropstruct, origin, angles, var_4eddedc3311ede0d, islegendary, distoverride, yawoverride, yawhack )
 {
@@ -247,8 +248,8 @@ function lootspawnitem( itemname, dropstruct, origin, angles, var_4eddedc3311ede
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12ce
+// Params 3
+// Checksum 0x0, Offset: 0x1326
 // Size: 0x5e
 function function_d683a60016231237( lootid, quantity, ref )
 {
@@ -261,8 +262,8 @@ function function_d683a60016231237( lootid, quantity, ref )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1334
+// Params 5
+// Checksum 0x0, Offset: 0x138c
 // Size: 0x70
 function function_848e20cf1d6cab8f( contents, quantity, lootid, ref, packitemindex )
 {
@@ -284,8 +285,8 @@ function function_848e20cf1d6cab8f( contents, quantity, lootid, ref, packitemind
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ad
+// Params 2
+// Checksum 0x0, Offset: 0x1405
 // Size: 0x178
 function function_ec87b214cd429e96( items, existingcontents )
 {
@@ -300,7 +301,8 @@ function function_ec87b214cd429e96( items, existingcontents )
     {
         startingsize = contents.size;
         
-        for (index = 0; index < items.size - startingsize; index++) {
+        for ( index = 0; index < items.size - startingsize ; index++ )
+        {
             item = items[ index ];
             lootid = function_fae5e1d3de32d3f7( item );
             quantity = 1;
@@ -343,8 +345,8 @@ function function_ec87b214cd429e96( items, existingcontents )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x152e
+// Params 4
+// Checksum 0x0, Offset: 0x1586
 // Size: 0x11c
 function function_ec8712f07ed15e07( player, items, existingcontents, container )
 {
@@ -366,8 +368,8 @@ function function_ec8712f07ed15e07( player, items, existingcontents, container )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1652
+// Params 4
+// Checksum 0x0, Offset: 0x16aa
 // Size: 0x94
 function function_9065b3738ac07df0( items, cache, player, contents )
 {
@@ -392,8 +394,8 @@ function function_9065b3738ac07df0( items, cache, player, contents )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ef
+// Params 7
+// Checksum 0x0, Offset: 0x1747
 // Size: 0x71a
 function lootspawnitemlist( dropstruct, items, fromcache, player, distoverride, yawoverride, var_60ec3549226ce8d )
 {
@@ -595,8 +597,8 @@ function lootspawnitemlist( dropstruct, items, fromcache, player, distoverride, 
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e12
+// Params 4
+// Checksum 0x0, Offset: 0x1e6a
 // Size: 0x53
 function lootcachespawncontents( items, var_7a824904d97d59d7, player, contents )
 {
@@ -610,8 +612,8 @@ function lootcachespawncontents( items, var_7a824904d97d59d7, player, contents )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e6d
+// Params 2
+// Checksum 0x0, Offset: 0x1ec5
 // Size: 0x64
 function function_c56e597e3aa81261( instance, player )
 {
@@ -630,9 +632,9 @@ function function_c56e597e3aa81261( instance, player )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ed9
-// Size: 0xcb2
+// Params 7
+// Checksum 0x0, Offset: 0x1f31
+// Size: 0xd41
 function lootcacheused( instance, part, state, player, var_a5b2c541413aa895, usestring, var_9f39a1d0187cefb8 )
 {
     if ( istrue( player scripts\mp\gametypes\br_gametypes::runbrgametypefunc( "playerSkipLootPickup", instance ) ) )
@@ -831,7 +833,8 @@ function lootcacheused( instance, part, state, player, var_a5b2c541413aa895, use
         {
             lootitem = "brloot_equip_gasmask_durable";
             
-            for (i = 0; i < level.teamdata[ player.team ][ "players" ].size - 1; i++) {
+            for ( i = 0; i < level.teamdata[ player.team ][ "players" ].size - 1 ; i++ )
+            {
                 items[ items.size ] = lootitem;
             }
         }
@@ -856,6 +859,7 @@ function lootcacheused( instance, part, state, player, var_a5b2c541413aa895, use
             case #"hash_19ba8d41970911ad":
             case #"hash_1a4740585c33b169":
             case #"hash_ca40e4f432250696":
+            case #"hash_d1616a5975b7a941":
                 cachetype = "cache_legendary";
                 break;
             case #"hash_8944097b14faec32":
@@ -966,12 +970,25 @@ function lootcacheused( instance, part, state, player, var_a5b2c541413aa895, use
     var_e384a29fa99c895c.player = player;
     var_e384a29fa99c895c.instance = instance;
     var_e384a29fa99c895c.pickupents = isdefined( pickupents ) ? pickupents : undefined;
+    var_3523cc58899fd9ba = istrue( level.var_2a5270e448379c6f ) || getdvarint( @"hash_a6ad2c23e3f14cf2", 0 );
+    
+    if ( var_3523cc58899fd9ba )
+    {
+        var_844928811ae86dbf = getdvarfloat( @"hash_7ac9cbf284596e74", 0.1 );
+        
+        if ( randomfloat( 1 ) < var_844928811ae86dbf )
+        {
+            var_9ba0d32850eee4c8 = namespace_2db04a57a1b9bf62::function_b67f0b02f25b1af( player, 1, 0 );
+        }
+    }
+    
+    player thread utility::function_f3bb4f4911a1beb2( "featurebans", "featurebans_jumpScare", instance );
     scripts\common\callbacks::callback( "cache_opened", var_e384a29fa99c895c );
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b93
+// Params 1
+// Checksum 0x0, Offset: 0x2c7a
 // Size: 0x2c, Type: bool
 function function_ae639176fec476a6( instance )
 {
@@ -979,8 +996,8 @@ function function_ae639176fec476a6( instance )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bc8
+// Params 1
+// Checksum 0x0, Offset: 0x2caf
 // Size: 0x5e, Type: bool
 function function_e1a934067bb5bc35( container )
 {
@@ -1003,8 +1020,8 @@ function function_e1a934067bb5bc35( container )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c2f
+// Params 1
+// Checksum 0x0, Offset: 0x2d16
 // Size: 0xfd
 function closeagain( part )
 {
@@ -1049,8 +1066,8 @@ function closeagain( part )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d34
+// Params 1
+// Checksum 0x0, Offset: 0x2e1b
 // Size: 0x20, Type: bool
 function function_e91a96d043315490( instance )
 {
@@ -1058,8 +1075,8 @@ function function_e91a96d043315490( instance )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d5d
+// Params 1
+// Checksum 0x0, Offset: 0x2e44
 // Size: 0x32, Type: bool
 function function_6759ff16e552aa94( container )
 {
@@ -1067,8 +1084,8 @@ function function_6759ff16e552aa94( container )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d98
+// Params 1
+// Checksum 0x0, Offset: 0x2e7f
 // Size: 0x5c, Type: bool
 function isplayerbackpack( container )
 {
@@ -1076,8 +1093,8 @@ function isplayerbackpack( container )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dfd
+// Params 3
+// Checksum 0x0, Offset: 0x2ee4
 // Size: 0x1a7
 function function_163d360c111caa16( contents, var_8bd50c7e994c7434, var_42be80ba01341305 )
 {
@@ -1126,12 +1143,12 @@ function function_163d360c111caa16( contents, var_8bd50c7e994c7434, var_42be80ba
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fad
-// Size: 0xdd
+// Params 2
+// Checksum 0x0, Offset: 0x3094
+// Size: 0xf2
 function function_728bdc627d7df6c2( items, instance )
 {
-    if ( instance.type != "br_loot_cache_lege" )
+    if ( instance.type != "br_loot_cache_lege" && instance.type != "br_loot_cache_lege_novehiclecollision" )
     {
         return items;
     }
@@ -1152,8 +1169,8 @@ function function_728bdc627d7df6c2( items, instance )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3093
+// Params 2
+// Checksum 0x0, Offset: 0x318f
 // Size: 0xc4
 function lootcontentsadjusteconomy_bottomtier( instance, items )
 {
@@ -1183,8 +1200,8 @@ function lootcontentsadjusteconomy_bottomtier( instance, items )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3160
+// Params 2
+// Checksum 0x0, Offset: 0x325c
 // Size: 0xda
 function lootcontentsadjusteconomy_toptier( instance, items )
 {
@@ -1214,8 +1231,8 @@ function lootcontentsadjusteconomy_toptier( instance, items )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3243
+// Params 1
+// Checksum 0x0, Offset: 0x333f
 // Size: 0x94
 function lootcontentsadjust_accesscardsred( items )
 {
@@ -1240,8 +1257,8 @@ function lootcontentsadjust_accesscardsred( items )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x32e0
+// Params 7
+// Checksum 0x0, Offset: 0x33dc
 // Size: 0x15b
 function chooseandspawnitems( dropstruct, minrarity, var_2860fa0f2247ccf0, itemtypeoverride, var_d6379f1654c3dca3, angleoffset, originoffset )
 {
@@ -1265,7 +1282,8 @@ function chooseandspawnitems( dropstruct, minrarity, var_2860fa0f2247ccf0, itemt
         lootlist = var_d6379f1654c3dca3;
     }
     
-    for (currentitemindex = 0; currentitemindex < var_2860fa0f2247ccf0; currentitemindex++) {
+    for ( currentitemindex = 0; currentitemindex < var_2860fa0f2247ccf0 ; currentitemindex++ )
+    {
         itemname = pickscriptablelootitem( itemtypeoverride, minrarity, 0, lootlist );
         
         if ( canspawnitemname( itemname ) )
@@ -1301,8 +1319,8 @@ function chooseandspawnitems( dropstruct, minrarity, var_2860fa0f2247ccf0, itemt
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3444
+// Params 2
+// Checksum 0x0, Offset: 0x3540
 // Size: 0x133
 function lootcontentsadjustkillchain( items, player )
 {
@@ -1342,8 +1360,8 @@ function lootcontentsadjustkillchain( items, player )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3580
+// Params 1
+// Checksum 0x0, Offset: 0x367c
 // Size: 0x40
 function function_75e83820a58a07c9( var_990bf19e67ec2d89 )
 {
@@ -1355,8 +1373,8 @@ function function_75e83820a58a07c9( var_990bf19e67ec2d89 )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x35c9
+// Params 4
+// Checksum 0x0, Offset: 0x36c5
 // Size: 0x8e
 function function_a76b46f057488cc0( instance, team, var_57838bb4fae836f8, var_583832b5ec35dfbc )
 {
@@ -1365,7 +1383,8 @@ function function_a76b46f057488cc0( instance, team, var_57838bb4fae836f8, var_58
     items = getscriptablelootcachecontents( instance );
     additionalitems = array_randomize( getscriptablelootcachecontents( instance ) );
     
-    for (i = 0; i < additionalitemcount; i++) {
+    for ( i = 0; i < additionalitemcount ; i++ )
+    {
         items[ items.size ] = additionalitems[ i ];
     }
     
@@ -1373,8 +1392,8 @@ function function_a76b46f057488cc0( instance, team, var_57838bb4fae836f8, var_58
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3660
+// Params 1
+// Checksum 0x0, Offset: 0x375c
 // Size: 0x61, Type: bool
 function function_3acd6ff5bda75039( items )
 {
@@ -1392,8 +1411,8 @@ function function_3acd6ff5bda75039( items )
 /#
 
     // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x36ca
+    // Params 2
+    // Checksum 0x0, Offset: 0x37c6
     // Size: 0x69, Type: dev
     function function_6975415e57cd5a29( items, player )
     {
@@ -1409,8 +1428,8 @@ function function_3acd6ff5bda75039( items )
     }
 
     // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x373b
+    // Params 3
+    // Checksum 0x0, Offset: 0x3837
     // Size: 0xb6, Type: dev
     function spawnlootcache( origin, angles, type )
     {
@@ -1434,8 +1453,8 @@ function function_3acd6ff5bda75039( items )
     }
 
     // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x37f9
+    // Params 0
+    // Checksum 0x0, Offset: 0x38f5
     // Size: 0x11e, Type: dev
     function function_8ca2f83c962d40d9()
     {
@@ -1448,7 +1467,8 @@ function function_3acd6ff5bda75039( items )
                 caches = [];
                 lootcount = getlootspawnpointcount();
                 
-                for (i = 0; i < lootcount; i++) {
+                for ( i = 0; i < lootcount ; i++ )
+                {
                     loot = getlootspawnpoint( i );
                     
                     if ( loot.type == 1 )
@@ -1473,8 +1493,8 @@ function function_3acd6ff5bda75039( items )
 #/
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x391f
+// Params 1
+// Checksum 0x0, Offset: 0x3a1b
 // Size: 0x4e7
 function function_cb377a5e11eef62c( container )
 {
@@ -1552,9 +1572,9 @@ function function_cb377a5e11eef62c( container )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e0e
-// Size: 0x1df
+// Params 1
+// Checksum 0x0, Offset: 0x3f0a
+// Size: 0x1eb
 function opencrate( items )
 {
     switch ( self.type )
@@ -1564,6 +1584,7 @@ function opencrate( items )
             level.var_bd006676148e6c40 = array_add( level.var_bd006676148e6c40, self );
             break;
         case #"hash_19ba8d41970911ad":
+        case #"hash_d1616a5975b7a941":
             level.var_344f2168e7b1bc8e = array_add( level.var_344f2168e7b1bc8e, items );
             level.var_bd006676148e6c40 = array_add( level.var_bd006676148e6c40, self );
             break;
@@ -1599,8 +1620,8 @@ function opencrate( items )
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ff5
+// Params 0
+// Checksum 0x0, Offset: 0x40fd
 // Size: 0x2e
 function removecrate()
 {
@@ -1611,8 +1632,8 @@ function removecrate()
 }
 
 // Namespace br_lootcache / scripts\mp\gametypes\br_lootcache
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x402b
+// Params 0
+// Checksum 0x0, Offset: 0x4133
 // Size: 0x8c
 function function_27f0aed354031248()
 {

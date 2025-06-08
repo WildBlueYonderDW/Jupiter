@@ -7,7 +7,7 @@
 #namespace namespace_dbc1018dd2e067e;
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f4
 // Size: 0x6b
 function inittask()
@@ -20,7 +20,7 @@ function inittask()
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x267
 // Size: 0x14
 function function_1a86afc387820604( taskinstance )
@@ -29,7 +29,7 @@ function function_1a86afc387820604( taskinstance )
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x283
 // Size: 0xab
 function function_78d7a14c7dfb37c4( taskinstance )
@@ -55,7 +55,7 @@ function function_78d7a14c7dfb37c4( taskinstance )
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x336
 // Size: 0x6e
 function function_afaacbffddff4911( taskinstance )
@@ -67,7 +67,7 @@ function function_afaacbffddff4911( taskinstance )
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ac
 // Size: 0x3e
 function onplayerselecttask( taskinstance, selected )
@@ -79,7 +79,7 @@ function onplayerselecttask( taskinstance, selected )
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f2
 // Size: 0x20, Type: bool
 function function_8e36f666c0242fe6( taskinstance, kiosk )
@@ -88,7 +88,7 @@ function function_8e36f666c0242fe6( taskinstance, kiosk )
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41b
 // Size: 0x45, Type: bool
 function function_44b2e353a03c56a5( taskinstance, lootcache )
@@ -99,7 +99,7 @@ function function_44b2e353a03c56a5( taskinstance, lootcache )
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x469
 // Size: 0x79
 function trybindobjective( taskinstance )
@@ -116,7 +116,7 @@ function trybindobjective( taskinstance )
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ea
 // Size: 0x68
 function playerkioskused( kiosk )
@@ -128,7 +128,7 @@ function playerkioskused( kiosk )
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55a
 // Size: 0x8f
 function function_dc3e112cadb47514( lootcache )
@@ -148,7 +148,7 @@ function function_dc3e112cadb47514( lootcache )
 }
 
 // Namespace namespace_dbc1018dd2e067e / namespace_587d60d37119a29f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f1
 // Size: 0x3d
 function function_3525b317dc93f4e9()

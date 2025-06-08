@@ -25,7 +25,7 @@
 #namespace mp_grandprix_pm_2;
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x849
 // Size: 0x149
 function main()
@@ -66,20 +66,21 @@ function main()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99a
 // Size: 0x3e
 function function_4607c63644347235()
 {
     var_20ed61b3a7e08776 = getentarray( "prix_sign_bink", "targetname" );
     
-    for (i = 0; i < var_20ed61b3a7e08776.size; i++) {
+    for ( i = 0; i < var_20ed61b3a7e08776.size ; i++ )
+    {
         var_20ed61b3a7e08776[ i ] hide();
     }
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9e0
 // Size: 0x40
 function function_1682cf22619a5e55()
@@ -94,7 +95,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa28
 // Size: 0x57
 function play_movie( bink )
@@ -118,7 +119,7 @@ function play_movie( bink )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa87
 // Size: 0x380
 function function_22d068ce810e9e17()
@@ -158,7 +159,7 @@ function function_22d068ce810e9e17()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0f
 // Size: 0x3d3
 function function_1369fbf85a2de7bd()
@@ -182,7 +183,8 @@ function function_1369fbf85a2de7bd()
     
     var_cb8b2044f93c5c3c = 1;
     
-    for (i = 0; i < level.var_78eaad6c11cf5ac3.size; i++) {
+    for ( i = 0; i < level.var_78eaad6c11cf5ac3.size ; i++ )
+    {
         car = level.var_78eaad6c11cf5ac3[ i ];
         car.models = getentarray( car.script_label, "targetname" );
         
@@ -215,7 +217,7 @@ function function_1369fbf85a2de7bd()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11ea
 // Size: 0x16a
 function function_d7517c880a88d114()
@@ -231,7 +233,7 @@ function function_d7517c880a88d114()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x135c
 // Size: 0x92
 function function_a4862756ad873b3d( var_75ffed1210f37c40 )
@@ -256,7 +258,7 @@ function function_a4862756ad873b3d( var_75ffed1210f37c40 )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x13f6
 // Size: 0xad
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -282,7 +284,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14ac
 // Size: 0x60
 function function_222613941733a387()
@@ -299,7 +301,7 @@ function function_222613941733a387()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1514
 // Size: 0x48
 function function_e6e40836892a4992()
@@ -313,7 +315,7 @@ function function_e6e40836892a4992()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1564
 // Size: 0x1ac
 function function_d77ea4eac011b443()
@@ -354,7 +356,7 @@ function function_d77ea4eac011b443()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1718
 // Size: 0x1e3
 function function_29e181f3b6d3f79b( car )
@@ -405,7 +407,7 @@ function function_29e181f3b6d3f79b( car )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1903
 // Size: 0x19
 function function_ce9ff82618a76813( waittime )
@@ -416,7 +418,7 @@ function function_ce9ff82618a76813( waittime )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1924
 // Size: 0xad
 function function_ae7105a022f1e8b6( racecar )
@@ -432,7 +434,7 @@ function function_ae7105a022f1e8b6( racecar )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19d9
 // Size: 0xad
 function function_39f4a49d854dcb4( racecar )
@@ -448,7 +450,7 @@ function function_39f4a49d854dcb4( racecar )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a8e
 // Size: 0xaf
 function function_f9d9efc3970116b5( racecar )
@@ -464,7 +466,7 @@ function function_f9d9efc3970116b5( racecar )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b45
 // Size: 0x86
 function audio_panodes()
@@ -485,7 +487,7 @@ function audio_panodes()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bd3
 // Size: 0x342
 function function_79148c48a2ad61c1()
@@ -519,7 +521,8 @@ function function_79148c48a2ad61c1()
             }
         }
         
-        for (i = 0; i < var_c857eed1363ba9d.size; i++) {
+        for ( i = 0; i < var_c857eed1363ba9d.size ; i++ )
+        {
             var_424a9176df4df0f4 = var_c857eed1363ba9d[ i ];
             
             if ( istrue( var_424a9176df4df0f4.markedfordelete ) )
@@ -584,7 +587,7 @@ function function_79148c48a2ad61c1()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f1d
 // Size: 0x6f, Type: bool
 function function_cb14f1c7ad456a44( var_424a9176df4df0f4 )
@@ -614,7 +617,7 @@ function function_cb14f1c7ad456a44( var_424a9176df4df0f4 )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f95
 // Size: 0xae
 function item_collision_ignorefutureevent( itement, racecar, duration )
@@ -640,7 +643,7 @@ function item_collision_ignorefutureevent( itement, racecar, duration )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x204b
 // Size: 0x31
 function function_7c32ec07e4129be9( var_424a9176df4df0f4, racecar, var_863c619037f3ac74 )
@@ -650,7 +653,7 @@ function function_7c32ec07e4129be9( var_424a9176df4df0f4, racecar, var_863c61903
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2084
 // Size: 0x2a5
 function function_ff213d6711860e73()
@@ -755,7 +758,7 @@ function function_ff213d6711860e73()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2331
 // Size: 0x68
 function function_dc5946b409cbe7bc()
@@ -773,7 +776,7 @@ function function_dc5946b409cbe7bc()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23a1
 // Size: 0x38
 function function_39c509138c3a65db( var_4c9db30e60a87779, victim )
@@ -784,7 +787,7 @@ function function_39c509138c3a65db( var_4c9db30e60a87779, victim )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23e2
 // Size: 0x268
 function setupkillcament()
@@ -842,7 +845,7 @@ function setupkillcament()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2652
 // Size: 0xf2
 function function_158a4eddf949ce45( rightoffset, fwdoffset, zoffset )
@@ -862,7 +865,7 @@ function function_158a4eddf949ce45( rightoffset, fwdoffset, zoffset )
 /#
 
     // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x274c
     // Size: 0x22d, Type: dev
     function debugkillcament( visual )
@@ -897,7 +900,7 @@ function function_158a4eddf949ce45( rightoffset, fwdoffset, zoffset )
 #/
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2981
 // Size: 0x150
 function setup_vista_driving_boats()
@@ -923,7 +926,7 @@ function setup_vista_driving_boats()
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ad9
 // Size: 0xad
 function vista_boat_drive( boat, boatspeed )
@@ -941,7 +944,7 @@ function vista_boat_drive( boat, boatspeed )
 }
 
 // Namespace mp_grandprix_pm_2 / namespace_79a6f32ace956f59
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b8e
 // Size: 0x2e
 function function_3c37e8e4377aa2b3()

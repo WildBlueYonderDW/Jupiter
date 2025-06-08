@@ -3,7 +3,7 @@
 #namespace namespace_27e634277336b001;
 
 // Namespace namespace_27e634277336b001 / namespace_86a7acb508545234
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf1
 // Size: 0xb
 function function_e1b062a375b4a629()
@@ -12,16 +12,16 @@ function function_e1b062a375b4a629()
 }
 
 // Namespace namespace_27e634277336b001 / namespace_86a7acb508545234
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x105
 // Size: 0x11
 function function_91b0046262bd8519()
 {
-    return getdvarint( @"hash_611d72c9417ee39e", 0 );
+    return getdvarint( @"scr_br_plunder_start_amount", 0 );
 }
 
 // Namespace namespace_27e634277336b001 / namespace_86a7acb508545234
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11f
 // Size: 0x7f
 function function_e22745f1660c79de( var_e318e240dd21247, position, cashamount )
@@ -44,7 +44,7 @@ function function_e22745f1660c79de( var_e318e240dd21247, position, cashamount )
 }
 
 // Namespace namespace_27e634277336b001 / namespace_86a7acb508545234
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a7
 // Size: 0x55
 function function_72c1ec67d589d251( callback, cashitem )
@@ -64,7 +64,7 @@ function function_72c1ec67d589d251( callback, cashitem )
 }
 
 // Namespace namespace_27e634277336b001 / namespace_86a7acb508545234
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x204
 // Size: 0x41, Type: bool
 function function_ad5378568b077260( cashitem )
@@ -80,9 +80,9 @@ function function_ad5378568b077260( cashitem )
 }
 
 // Namespace namespace_27e634277336b001 / namespace_86a7acb508545234
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24e
-// Size: 0x3c, Type: bool
+// Size: 0x3c
 function function_a380cf8dd38a32ee( params )
 {
     assert( isdefined( params ) );
@@ -91,7 +91,7 @@ function function_a380cf8dd38a32ee( params )
 }
 
 // Namespace namespace_27e634277336b001 / namespace_86a7acb508545234
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x293
 // Size: 0x19, Type: bool
 function function_8635d35b49720a75( amount )

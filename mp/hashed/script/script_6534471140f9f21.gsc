@@ -9,8 +9,8 @@
 #namespace weaponmetadata;
 
 // Namespace weaponmetadata / namespace_a05299df599aac8f
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bf
+// Params 0
+// Checksum 0x0, Offset: 0x1bd
 // Size: 0x4d4
 function function_5108bb8dbe090131()
 {
@@ -84,8 +84,8 @@ function function_5108bb8dbe090131()
 }
 
 // Namespace weaponmetadata / namespace_a05299df599aac8f
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x69b
+// Params 1
+// Checksum 0x0, Offset: 0x699
 // Size: 0x12b
 function function_e52c71c96d93174b( n_level )
 {
@@ -106,8 +106,8 @@ function function_e52c71c96d93174b( n_level )
 }
 
 // Namespace weaponmetadata / namespace_a05299df599aac8f
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ce
+// Params 1
+// Checksum 0x0, Offset: 0x7cc
 // Size: 0x4e, Type: bool
 function function_4c8abc7b4eff6212( weapon )
 {

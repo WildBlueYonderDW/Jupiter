@@ -41,7 +41,7 @@ function private post_main()
 }
 
 // Namespace aether_blade / scripts\cp_mp\equipment\aether_blade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x511
 // Size: 0x8a
 function function_a8702248c4c1759f()
@@ -64,7 +64,7 @@ function function_a8702248c4c1759f()
 }
 
 // Namespace aether_blade / scripts\cp_mp\equipment\aether_blade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5a3
 // Size: 0x61
 function function_a68e5603c7546cba( equipmentref, equipmentslot, variantid )
@@ -79,7 +79,7 @@ function function_a68e5603c7546cba( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace aether_blade / scripts\cp_mp\equipment\aether_blade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x60c
 // Size: 0x37
 function function_e108b8d3ebf02f60( equipmentref, equipmentslot )

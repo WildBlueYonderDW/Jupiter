@@ -8,7 +8,7 @@
 #namespace namespace_947f137e8c5c3d4;
 
 // Namespace namespace_947f137e8c5c3d4 / namespace_f8aa7c160140e21
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16f
 // Size: 0x2e
 function inittask()
@@ -18,7 +18,7 @@ function inittask()
 }
 
 // Namespace namespace_947f137e8c5c3d4 / namespace_f8aa7c160140e21
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a5
 // Size: 0x192, Type: bool
 function checktaskvalid( selectedtask, team )
@@ -64,7 +64,7 @@ function checktaskvalid( selectedtask, team )
 }
 
 // Namespace namespace_947f137e8c5c3d4 / namespace_f8aa7c160140e21
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x340
 // Size: 0xbc
 function function_1a86afc387820604( taskinstance )
@@ -90,7 +90,7 @@ function function_1a86afc387820604( taskinstance )
 }
 
 // Namespace namespace_947f137e8c5c3d4 / namespace_f8aa7c160140e21
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x404
 // Size: 0xd4
 function function_ca3b60f5f124d2ad( flag, taskinstance )
@@ -120,7 +120,7 @@ function function_ca3b60f5f124d2ad( flag, taskinstance )
 }
 
 // Namespace namespace_947f137e8c5c3d4 / namespace_f8aa7c160140e21
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e0
 // Size: 0xc8
 function function_473b169b28634ac0( flag, taskinstance )
@@ -150,7 +150,7 @@ function function_473b169b28634ac0( flag, taskinstance )
 }
 
 // Namespace namespace_947f137e8c5c3d4 / namespace_f8aa7c160140e21
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0xc8
 function function_a1e5492242dcf7e5( flag, taskinstance )

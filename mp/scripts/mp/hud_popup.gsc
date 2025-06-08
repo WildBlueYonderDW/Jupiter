@@ -1,7 +1,7 @@
 #namespace hud_popup;
 
 // Namespace hud_popup / scripts\mp\hud_popup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb6
 // Size: 0xc
 function init()
@@ -10,7 +10,7 @@ function init()
 }
 
 // Namespace hud_popup / scripts\mp\hud_popup
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca
 // Size: 0x88
 function function_65336cc44771776e( ref )
@@ -34,7 +34,7 @@ function function_65336cc44771776e( ref )
 }
 
 // Namespace hud_popup / scripts\mp\hud_popup
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15a
 // Size: 0x72
 function function_233461f36bb50ef9( ref )
@@ -62,7 +62,7 @@ function function_233461f36bb50ef9( ref )
 }
 
 // Namespace hud_popup / scripts\mp\hud_popup
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d4
 // Size: 0x44
 function function_bec00f5eabdb65ea( popupref )
@@ -79,7 +79,7 @@ function function_bec00f5eabdb65ea( popupref )
 }
 
 // Namespace hud_popup / scripts\mp\hud_popup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x221
 // Size: 0x15
 function function_92b0a87f4e1a1d72()
@@ -90,7 +90,7 @@ function function_92b0a87f4e1a1d72()
 /#
 
     // Namespace hud_popup / scripts\mp\hud_popup
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x23f
     // Size: 0xe0, Type: dev
     function function_9b5e6384b2ba7ad8( popuptitle, popupdesc, popuptier, popupindex )
@@ -112,7 +112,7 @@ function function_92b0a87f4e1a1d72()
     }
 
     // Namespace hud_popup / scripts\mp\hud_popup
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x327
     // Size: 0x9c, Type: dev
     function debugpopup( id )

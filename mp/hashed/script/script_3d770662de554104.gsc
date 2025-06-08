@@ -6,7 +6,7 @@
 #namespace call_reinforcements;
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a4
 // Size: 0x5a
 function getfunction( funcid )
@@ -25,7 +25,7 @@ function getfunction( funcid )
 }
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x306
 // Size: 0xb
 function function_3dbd361f74b442f9( interactionid )
@@ -34,7 +34,7 @@ function function_3dbd361f74b442f9( interactionid )
 }
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x319
 // Size: 0x1c
 function function_a157fbbc31d9eb1a( interactionid )
@@ -44,7 +44,7 @@ function function_a157fbbc31d9eb1a( interactionid )
 }
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x33d
 // Size: 0xb0
 function callreinforcements( statename, params )
@@ -74,7 +74,7 @@ function callreinforcements( statename, params )
 }
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f5
 // Size: 0x6d
 function function_6cdcfd04e3704a8a( calllength )
@@ -97,7 +97,7 @@ function function_6cdcfd04e3704a8a( calllength )
 }
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x46a
 // Size: 0x12e
 function function_73c90b8dc4dbc607( asmname, statename, params )

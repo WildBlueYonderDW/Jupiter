@@ -13,7 +13,7 @@
 #namespace br_adventure_quest;
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x250
 // Size: 0x7a
 function init()
@@ -36,7 +36,7 @@ function init()
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d2
 // Size: 0x24
 function removestashlocation( location )
@@ -45,7 +45,7 @@ function removestashlocation( location )
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fe
 // Size: 0x3f
 function takequestitem( pickupent )
@@ -61,7 +61,7 @@ function takequestitem( pickupent )
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x345
 // Size: 0x37
 function determinestashlocation()
@@ -75,7 +75,7 @@ function determinestashlocation()
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x385
 // Size: 0x1be
 function spawnstash( position )
@@ -117,7 +117,7 @@ function spawnstash( position )
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x54b
 // Size: 0x9b
 function stashmakeusabletoteam( team )
@@ -142,7 +142,7 @@ function stashmakeusabletoteam( team )
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5ee
 // Size: 0x2c
 function stashmakeunusabletoplayer( player )
@@ -153,7 +153,7 @@ function stashmakeunusabletoplayer( player )
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x622
 // Size: 0x2e
 function stashthink()
@@ -168,7 +168,7 @@ function stashthink()
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x658
 // Size: 0x140
 function globalsonarthink()
@@ -210,7 +210,7 @@ function globalsonarthink()
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7a0
 // Size: 0xb5
 function addthinker( player, location )
@@ -232,7 +232,7 @@ function addthinker( player, location )
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x85d
 // Size: 0x67
 function removethinker( player )
@@ -253,7 +253,7 @@ function removethinker( player )
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8cc
 // Size: 0x5c
 function calculatesonartickrate( player )
@@ -265,7 +265,7 @@ function calculatesonartickrate( player )
 }
 
 // Namespace br_adventure_quest / scripts\mp\gametypes\br_adventure_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x931
 // Size: 0x68
 function usestash( player )

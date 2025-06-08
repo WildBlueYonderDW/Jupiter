@@ -50,8 +50,8 @@
 #namespace cyber;
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1999
+// Params 0
+// Checksum 0x0, Offset: 0x19a5
 // Size: 0x41b
 function main()
 {
@@ -158,7 +158,7 @@ function main()
     /#
         if ( getgametypenumlives() == 1 )
         {
-            setdvar( @"hash_e723cc761de7b161", 2 );
+            setdvar( @"scr_player_laststand", 2 );
         }
         
         setdevdvarifuninitialized( @"hash_3f3a15fb7e7c9b0", 0 );
@@ -171,8 +171,8 @@ function main()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dbc
+// Params 0
+// Checksum 0x0, Offset: 0x1dc8
 // Size: 0x26e
 function initializematchrules()
 {
@@ -195,8 +195,8 @@ function initializematchrules()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2032
+// Params 0
+// Checksum 0x0, Offset: 0x203e
 // Size: 0x19
 function waittooverridegraceperiod()
 {
@@ -205,8 +205,8 @@ function waittooverridegraceperiod()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2053
+// Params 0
+// Checksum 0x0, Offset: 0x205f
 // Size: 0x1c
 function onprecachegametype()
 {
@@ -215,8 +215,8 @@ function onprecachegametype()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2077
+// Params 0
+// Checksum 0x0, Offset: 0x2083
 // Size: 0x187
 function onstartgametype()
 {
@@ -263,8 +263,8 @@ function onstartgametype()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2206
+// Params 0
+// Checksum 0x0, Offset: 0x2212
 // Size: 0x123
 function updategametypedvars()
 {
@@ -284,8 +284,8 @@ function updategametypedvars()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2331
+// Params 0
+// Checksum 0x0, Offset: 0x233d
 // Size: 0x19d
 function initspawns()
 {
@@ -316,8 +316,8 @@ function initspawns()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24d6
+// Params 0
+// Checksum 0x0, Offset: 0x24e2
 // Size: 0x11e
 function getspawnpoint()
 {
@@ -367,8 +367,8 @@ function getspawnpoint()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25fd
+// Params 1
+// Checksum 0x0, Offset: 0x2609
 // Size: 0x78, Type: bool
 function isenemyteameliminated( teamname )
 {
@@ -386,8 +386,8 @@ function isenemyteameliminated( teamname )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x267e
+// Params 0
+// Checksum 0x0, Offset: 0x268a
 // Size: 0x427
 function assignteamspawns()
 {
@@ -475,8 +475,8 @@ function assignteamspawns()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2aad
+// Params 1
+// Checksum 0x0, Offset: 0x2ab9
 // Size: 0x100
 function getnearestbombsiteteam( spawnpoint )
 {
@@ -510,7 +510,7 @@ function getnearestbombsiteteam( spawnpoint )
 
 // Namespace cyber / scripts\mp\gametypes\cyber
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2bb6
+// Checksum 0x0, Offset: 0x2bc2
 // Size: 0xc4
 function private function_5151fb129e5aafdf( spawntriggers )
 {
@@ -536,8 +536,8 @@ function private function_5151fb129e5aafdf( spawntriggers )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c83
+// Params 0
+// Checksum 0x0, Offset: 0x2c8f
 // Size: 0x8b0
 function cyberattack()
 {
@@ -575,7 +575,8 @@ function cyberattack()
         {
             var_d2113414696571e3 = [];
             
-            for (i = 0; i < var_92fc6d4f242a0f8d.size; i++) {
+            for ( i = 0; i < var_92fc6d4f242a0f8d.size ; i++ )
+            {
                 var_d2113414696571e3[ var_d2113414696571e3.size ] = i;
             }
             
@@ -670,7 +671,7 @@ function cyberattack()
         
         if ( getdvarint( @"hash_484e617d6f7b7fa7" ) != 0 )
         {
-            level.cyberemp scripts\mp\gameobjects::function_316d9da870e12a03( [ level.cyberemp.visuals[ 0 ] ], level.cyberemp.trigger, 1, 80, 0, &onempdropped );
+            level.cyberemp scripts\mp\gameobjects::create_manual_drop_data_struct( [ level.cyberemp.visuals[ 0 ] ], level.cyberemp.trigger, 1, 80, 0, &onempdropped );
         }
     }
     else
@@ -757,8 +758,8 @@ function cyberattack()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x353b
+// Params 2
+// Checksum 0x0, Offset: 0x3547
 // Size: 0x2ef
 function createbombzone( team, trigger )
 {
@@ -806,7 +807,8 @@ function createbombzone( team, trigger )
     bombzone.label = bombzone.objectivekey;
     bombzone resetbombsite( 1, undefined, 1 );
     
-    for (i = 0; i < visuals.size; i++) {
+    for ( i = 0; i < visuals.size ; i++ )
+    {
         if ( isdefined( visuals[ i ].script_exploder ) )
         {
             bombzone.exploderindex = visuals[ i ].script_exploder;
@@ -820,8 +822,8 @@ function createbombzone( team, trigger )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3833
+// Params 0
+// Checksum 0x0, Offset: 0x383f
 // Size: 0x243
 function startmatchobjectiveicons()
 {
@@ -860,8 +862,8 @@ function startmatchobjectiveicons()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a7e
+// Params 0
+// Checksum 0x0, Offset: 0x3a8a
 // Size: 0x116
 function hidebombsitesaftermatchstart()
 {
@@ -881,8 +883,8 @@ function hidebombsitesaftermatchstart()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b9c
+// Params 1
+// Checksum 0x0, Offset: 0x3ba8
 // Size: 0xb
 function emptriggerholdonuse( player )
 {
@@ -890,8 +892,8 @@ function emptriggerholdonuse( player )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3baf
+// Params 1
+// Checksum 0x0, Offset: 0x3bbb
 // Size: 0x162
 function setupkillcament( bombzone )
 {
@@ -919,8 +921,8 @@ function setupkillcament( bombzone )
 /#
 
     // Namespace cyber / scripts\mp\gametypes\cyber
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3d19
+    // Params 1
+    // Checksum 0x0, Offset: 0x3d25
     // Size: 0x1d0, Type: dev
     function debugkillcament( visual )
     {
@@ -948,8 +950,8 @@ function setupkillcament( bombzone )
 #/
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ef1
+// Params 0
+// Checksum 0x0, Offset: 0x3efd
 // Size: 0x6f
 function empsitewatcher()
 {
@@ -973,8 +975,8 @@ function empsitewatcher()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f68
+// Params 0
+// Checksum 0x0, Offset: 0x3f74
 // Size: 0xba
 function data_center_sfx_loop()
 {
@@ -998,8 +1000,8 @@ function data_center_sfx_loop()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x402a
+// Params 1
+// Checksum 0x0, Offset: 0x4036
 // Size: 0x174
 function onbeginuse( player )
 {
@@ -1037,8 +1039,8 @@ function onbeginuse( player )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41a6
+// Params 1
+// Checksum 0x0, Offset: 0x41b2
 // Size: 0x93
 function allowedwhileplanting( isallowed )
 {
@@ -1062,8 +1064,8 @@ function allowedwhileplanting( isallowed )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4241
+// Params 3
+// Checksum 0x0, Offset: 0x424d
 // Size: 0x199
 function onenduse( team, player, result )
 {
@@ -1130,8 +1132,8 @@ function onenduse( team, player, result )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x43e2
+// Params 2
+// Checksum 0x0, Offset: 0x43ee
 // Size: 0xce
 function startnpcbombusesound( weaponname, soundname )
 {
@@ -1162,8 +1164,8 @@ function startnpcbombusesound( weaponname, soundname )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x44b8
+// Params 3
+// Checksum 0x0, Offset: 0x44c4
 // Size: 0x410
 function onpickup( player, playervo, defused )
 {
@@ -1271,8 +1273,8 @@ function onpickup( player, playervo, defused )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48d0
+// Params 1
+// Checksum 0x0, Offset: 0x48dc
 // Size: 0x170
 function ondrop( player )
 {
@@ -1319,8 +1321,8 @@ function ondrop( player )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a48
+// Params 0
+// Checksum 0x0, Offset: 0x4a54
 // Size: 0xab
 function returnaftertime()
 {
@@ -1346,8 +1348,8 @@ function returnaftertime()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4afb
+// Params 1
+// Checksum 0x0, Offset: 0x4b07
 // Size: 0x5cd
 function onuse( player )
 {
@@ -1470,8 +1472,8 @@ function onuse( player )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x50d0
+// Params 2
+// Checksum 0x0, Offset: 0x50dc
 // Size: 0xd7
 function empjamandrumbleclients( rumble, endgame )
 {
@@ -1497,8 +1499,8 @@ function empjamandrumbleclients( rumble, endgame )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x51af
+// Params 3
+// Checksum 0x0, Offset: 0x51bb
 // Size: 0xca
 function resetbombsite( defused, player, matchstart )
 {
@@ -1527,8 +1529,8 @@ function resetbombsite( defused, player, matchstart )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5281
+// Params 0
+// Checksum 0x0, Offset: 0x528d
 // Size: 0x96
 function setupforplanting()
 {
@@ -1544,8 +1546,8 @@ function setupforplanting()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x531f
+// Params 2
+// Checksum 0x0, Offset: 0x532b
 // Size: 0x1dc
 function setupfordefusing( defuseobject, player )
 {
@@ -1580,8 +1582,8 @@ function setupfordefusing( defuseobject, player )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5503
+// Params 1
+// Checksum 0x0, Offset: 0x550f
 // Size: 0x6a
 function bombdefused( object )
 {
@@ -1596,8 +1598,8 @@ function bombdefused( object )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5575
+// Params 1
+// Checksum 0x0, Offset: 0x5581
 // Size: 0xb
 function oncantuse( player )
 {
@@ -1605,8 +1607,8 @@ function oncantuse( player )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5588
+// Params 2
+// Checksum 0x0, Offset: 0x5594
 // Size: 0x4af
 function bombplanted( destroyedobj, team )
 {
@@ -1719,8 +1721,8 @@ function bombplanted( destroyedobj, team )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a3f
+// Params 0
+// Checksum 0x0, Offset: 0x5a4b
 // Size: 0x5a
 function bombtimerwait()
 {
@@ -1733,8 +1735,8 @@ function bombtimerwait()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5aa1
+// Params 0
+// Checksum 0x0, Offset: 0x5aad
 // Size: 0x12
 function bomb_pre_exp_music()
 {
@@ -1743,8 +1745,8 @@ function bomb_pre_exp_music()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5abb
+// Params 1
+// Checksum 0x0, Offset: 0x5ac7
 // Size: 0x52
 function bomb_pre_exp_sfx_wait( sfx_org )
 {
@@ -1756,8 +1758,8 @@ function bomb_pre_exp_sfx_wait( sfx_org )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b15
+// Params 0
+// Checksum 0x0, Offset: 0x5b21
 // Size: 0x164
 function function_52d311b859da823c()
 {
@@ -1801,8 +1803,8 @@ function function_52d311b859da823c()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c81
+// Params 1
+// Checksum 0x0, Offset: 0x5c8d
 // Size: 0x55
 function handlehostmigration( var_4dfaa92e2bce1194 )
 {
@@ -1820,8 +1822,8 @@ function handlehostmigration( var_4dfaa92e2bce1194 )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cde
+// Params 1
+// Checksum 0x0, Offset: 0x5cea
 // Size: 0x2e
 function overtimethread( time )
 {
@@ -1832,8 +1834,8 @@ function overtimethread( time )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d14
+// Params 0
+// Checksum 0x0, Offset: 0x5d20
 // Size: 0x86
 function givelastonteamwarning()
 {
@@ -1848,8 +1850,8 @@ function givelastonteamwarning()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5da2
+// Params 0
+// Checksum 0x0, Offset: 0x5dae
 // Size: 0x30
 function ontimelimit()
 {
@@ -1863,8 +1865,8 @@ function ontimelimit()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dda
+// Params 1
+// Checksum 0x0, Offset: 0x5de6
 // Size: 0xfa
 function onspawnplayer( revivespawn )
 {
@@ -1905,8 +1907,8 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5edc
+// Params 0
+// Checksum 0x0, Offset: 0x5ee8
 // Size: 0x85
 function updatebombsiteusability()
 {
@@ -1925,8 +1927,8 @@ function updatebombsiteusability()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f69
+// Params 0
+// Checksum 0x0, Offset: 0x5f75
 // Size: 0xf0
 function updatematchstatushintonspawn()
 {
@@ -1969,8 +1971,8 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6061
+// Params 0
+// Checksum 0x0, Offset: 0x606d
 // Size: 0x5b
 function function_f0f967947c6a7ec8()
 {
@@ -1984,8 +1986,8 @@ function function_f0f967947c6a7ec8()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x60c4
+// Params 1
+// Checksum 0x0, Offset: 0x60d0
 // Size: 0x41, Type: bool
 function interruptbombplanting( player )
 {
@@ -1999,8 +2001,8 @@ function interruptbombplanting( player )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x610e
+// Params 1
+// Checksum 0x0, Offset: 0x611a
 // Size: 0x179
 function ondeadevent( team )
 {
@@ -2053,8 +2055,8 @@ function ondeadevent( team )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x628f
+// Params 1
+// Checksum 0x0, Offset: 0x629b
 // Size: 0x49
 function ononeleftevent( team )
 {
@@ -2073,8 +2075,8 @@ function ononeleftevent( team )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x62e0
+// Params 10
+// Checksum 0x0, Offset: 0x62ec
 // Size: 0xc3
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
 {
@@ -2095,8 +2097,8 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x63ab
+// Params 0
+// Checksum 0x0, Offset: 0x63b7
 // Size: 0x89
 function checkallowspectating()
 {
@@ -2122,11 +2124,12 @@ function checkallowspectating()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x643c
-// Size: 0xe7
+// Params 6
+// Checksum 0x0, Offset: 0x6448
+// Size: 0xef
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
 {
+    victim notify( "faux_dead" );
     oncommonnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon );
     
     if ( victim.isplanting )
@@ -2150,8 +2153,8 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x652b
+// Params 0
+// Checksum 0x0, Offset: 0x653f
 // Size: 0x1a
 function printothint()
 {
@@ -2161,8 +2164,8 @@ function printothint()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x654d
+// Params 10
+// Checksum 0x0, Offset: 0x6561
 // Size: 0x47a
 function awardgenericmedals( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
 {
@@ -2261,8 +2264,8 @@ function awardgenericmedals( einflictor, attacker, idamage, smeansofdeath, objwe
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x69cf
+// Params 3
+// Checksum 0x0, Offset: 0x69e3
 // Size: 0xbd
 function distsquaredcheck( trigger, attackerpos, victimpos )
 {
@@ -2291,8 +2294,8 @@ function distsquaredcheck( trigger, attackerpos, victimpos )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a94
+// Params 0
+// Checksum 0x0, Offset: 0x6aa8
 // Size: 0x9
 function function_b47a96f58a61d923()
 {
@@ -2300,8 +2303,8 @@ function function_b47a96f58a61d923()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6aa5
+// Params 0
+// Checksum 0x0, Offset: 0x6ab9
 // Size: 0x102
 function empradarwatcher()
 {
@@ -2342,8 +2345,8 @@ function empradarwatcher()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6baf
+// Params 0
+// Checksum 0x0, Offset: 0x6bc3
 // Size: 0x86
 function weaponswapwatcher()
 {
@@ -2373,8 +2376,8 @@ function weaponswapwatcher()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c3d
+// Params 0
+// Checksum 0x0, Offset: 0x6c51
 // Size: 0xd1
 function applybombcarrierclass()
 {
@@ -2408,8 +2411,8 @@ function applybombcarrierclass()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d16
+// Params 0
+// Checksum 0x0, Offset: 0x6d2a
 // Size: 0xa2
 function removebombcarrierclass()
 {
@@ -2442,8 +2445,8 @@ function removebombcarrierclass()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6dc0
+// Params 0
+// Checksum 0x0, Offset: 0x6dd4
 // Size: 0x2ab
 function setcarriervisibility()
 {
@@ -2497,8 +2500,8 @@ function setcarriervisibility()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7073
+// Params 0
+// Checksum 0x0, Offset: 0x7087
 // Size: 0xdd
 function onexfilstarted()
 {
@@ -2520,8 +2523,8 @@ function onexfilstarted()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7158
+// Params 0
+// Checksum 0x0, Offset: 0x716c
 // Size: 0x20f
 function emplightsoff()
 {
@@ -2573,8 +2576,8 @@ function emplightsoff()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x736f
+// Params 0
+// Checksum 0x0, Offset: 0x7383
 // Size: 0xe2
 function destroytvs()
 {
@@ -2595,8 +2598,8 @@ function destroytvs()
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7459
+// Params 2
+// Checksum 0x0, Offset: 0x746d
 // Size: 0x16d
 function handleemponoff( struct, timeoverride )
 {
@@ -2644,8 +2647,8 @@ function handleemponoff( struct, timeoverride )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x75ce
+// Params 1
+// Checksum 0x0, Offset: 0x75e2
 // Size: 0x18
 function onempdropped( player )
 {
@@ -2653,8 +2656,8 @@ function onempdropped( player )
 }
 
 // Namespace cyber / scripts\mp\gametypes\cyber
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x75ee
+// Params 0
+// Checksum 0x0, Offset: 0x7602
 // Size: 0x156
 function setupwaypointicons()
 {
@@ -2674,8 +2677,8 @@ function setupwaypointicons()
 /#
 
     // Namespace cyber / scripts\mp\gametypes\cyber
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x774c
+    // Params 0
+    // Checksum 0x0, Offset: 0x7760
     // Size: 0xb7, Type: dev
     function function_8598880f9b913b55()
     {
@@ -2709,8 +2712,8 @@ function setupwaypointicons()
     }
 
     // Namespace cyber / scripts\mp\gametypes\cyber
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x780b
+    // Params 0
+    // Checksum 0x0, Offset: 0x781f
     // Size: 0x247, Type: dev
     function function_847f04c317e266d()
     {
@@ -2760,8 +2763,8 @@ function setupwaypointicons()
     }
 
     // Namespace cyber / scripts\mp\gametypes\cyber
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7a5a
+    // Params 0
+    // Checksum 0x0, Offset: 0x7a6e
     // Size: 0x1bb, Type: dev
     function function_a60e39eb7d5bd5f4()
     {
@@ -2807,8 +2810,8 @@ function setupwaypointicons()
     }
 
     // Namespace cyber / scripts\mp\gametypes\cyber
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7c1d
+    // Params 0
+    // Checksum 0x0, Offset: 0x7c31
     // Size: 0x163, Type: dev
     function function_4df61dc99c28632b()
     {
@@ -2850,8 +2853,8 @@ function setupwaypointicons()
     }
 
     // Namespace cyber / scripts\mp\gametypes\cyber
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7d88
+    // Params 0
+    // Checksum 0x0, Offset: 0x7d9c
     // Size: 0x163, Type: dev
     function function_68dd1d69fdeeff68()
     {

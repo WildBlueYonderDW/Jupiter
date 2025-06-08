@@ -11,7 +11,7 @@
 #namespace blindingturret;
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2eb
 // Size: 0xa
 function blindingturret_unset()
@@ -20,7 +20,7 @@ function blindingturret_unset()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fd
 // Size: 0x84
 function function_f6f76571fbd09f18( data )
@@ -39,7 +39,7 @@ function function_f6f76571fbd09f18( data )
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x389
 // Size: 0x6f
 function function_b02438cf4822a79e( grenade )
@@ -61,7 +61,7 @@ function function_b02438cf4822a79e( grenade )
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x400
 // Size: 0x10d
 function function_b310f71f299cbc78()
@@ -111,7 +111,7 @@ function function_b310f71f299cbc78()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x515
 // Size: 0x4a
 function function_83f4dd119acbf873()
@@ -143,7 +143,7 @@ function private function_6584a53d3d4d1fa8( time )
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59d
 // Size: 0x1aa
 function function_59b368c4c2bdc737( target )
@@ -185,7 +185,8 @@ function function_59b368c4c2bdc737( target )
         }
     }
     
-    for (i = 0; i < tracepoints.size; i++) {
+    for ( i = 0; i < tracepoints.size ; i++ )
+    {
         if ( !scripts\engine\trace::ray_trace_passed( defaultorigin, tracepoints[ i ], ignorelist, tracecontents ) )
         {
             continue;
@@ -199,7 +200,7 @@ function function_59b368c4c2bdc737( target )
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x750
 // Size: 0x2
 function function_c471c1f93412cb6c()
@@ -208,7 +209,7 @@ function function_c471c1f93412cb6c()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x75a
 // Size: 0x5c
 function function_987732d93502e3f()
@@ -226,7 +227,7 @@ function function_987732d93502e3f()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7be
 // Size: 0x150
 function function_3fe776cabee63724()
@@ -263,7 +264,7 @@ function function_3fe776cabee63724()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x916
 // Size: 0xd3, Type: bool
 function function_126dd09da824d606( player, betweenvec )
@@ -309,7 +310,7 @@ function function_126dd09da824d606( player, betweenvec )
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9f2
 // Size: 0x1d5
 function function_a100143a05b7b873()
@@ -349,7 +350,7 @@ function function_a100143a05b7b873()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbcf
 // Size: 0x1e3
 function function_a8320570b3ed2b35()
@@ -380,10 +381,12 @@ function function_a8320570b3ed2b35()
         return;
     }
     
-    for (i = 0; i < var_124a2a5957983db8.size - 1; i++) {
+    for ( i = 0; i < var_124a2a5957983db8.size - 1 ; i++ )
+    {
         swapped = 0;
         
-        for (j = 0; j < var_124a2a5957983db8.size - 1; j++) {
+        for ( j = 0; j < var_124a2a5957983db8.size - 1 ; j++ )
+        {
             if ( var_124a2a5957983db8[ j ] < var_124a2a5957983db8[ j + 1 ] )
             {
                 tempplayer = possibletargets[ j ];
@@ -406,7 +409,7 @@ function function_a8320570b3ed2b35()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdba
 // Size: 0x43
 function function_74b09da5a1249ff7()
@@ -422,7 +425,7 @@ function function_74b09da5a1249ff7()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe05
 // Size: 0x11
 function function_7d3a3fe4313463b4()
@@ -432,7 +435,7 @@ function function_7d3a3fe4313463b4()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe1e
 // Size: 0x18
 function function_cad43242ef6c86b5()
@@ -443,7 +446,7 @@ function function_cad43242ef6c86b5()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe3e
 // Size: 0x4e
 function function_b305f54dd4a77190()
@@ -457,7 +460,7 @@ function function_b305f54dd4a77190()
 }
 
 // Namespace blindingturret / scripts\mp\supers\blindingturret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe94
 // Size: 0x1a5
 function function_2beaf4844e5a4d16( grenade )

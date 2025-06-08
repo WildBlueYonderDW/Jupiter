@@ -15,7 +15,7 @@
 #namespace mi8_infil;
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa48
 // Size: 0xcb
 function mi8_init( subtype )
@@ -38,7 +38,7 @@ function mi8_init( subtype )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb1b
 // Size: 0xb9
 function mi8_spawn( team, target, subtype, originalsubtype )
@@ -56,7 +56,7 @@ function mi8_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbdd
 // Size: 0xb2
 function printdata( infil, subtype, originalsubtype )
@@ -76,7 +76,7 @@ function printdata( infil, subtype, originalsubtype )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc97
 // Size: 0x281
 function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubtype )
@@ -154,7 +154,7 @@ function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubty
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf20
 // Size: 0x32
 function mi8_get_length( subtype )
@@ -164,7 +164,7 @@ function mi8_get_length( subtype )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5b
 // Size: 0x20
 function function_901b254bea1ab19f( infil )
@@ -173,7 +173,7 @@ function function_901b254bea1ab19f( infil )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf84
 // Size: 0x20c
 function player_mi8_infil_think( infil, spot_index )
@@ -236,7 +236,7 @@ function player_mi8_infil_think( infil, spot_index )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1198
 // Size: 0x34
 function clear_infil_ambient_zone()
@@ -253,7 +253,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11d4
 // Size: 0x38
 function player_infil_end()
@@ -267,7 +267,7 @@ function player_infil_end()
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1214
 // Size: 0xd2
 function infil_radio_idle( infil )
@@ -302,7 +302,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12ee
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -318,7 +318,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1324
 // Size: 0x53
 function player_disconnect()
@@ -338,7 +338,7 @@ function player_disconnect()
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x137f
 // Size: 0x15c
 function spawnactors( team, scene_name, extra_crew )
@@ -362,7 +362,7 @@ function spawnactors( team, scene_name, extra_crew )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14e3
 // Size: 0x7a
 function blima_chief_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -374,7 +374,7 @@ function blima_chief_play_sound_func( alias, notification, var_9a0afe8ff3d2508f 
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1565
 // Size: 0x12d
 function infilthink( team, scene_name )
@@ -405,7 +405,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x169a
 // Size: 0x175
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -431,7 +431,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1817
 // Size: 0x6f
 function function_3a4301c7ea8a3b7f()
@@ -445,7 +445,7 @@ function function_3a4301c7ea8a3b7f()
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x188e
 // Size: 0x14d
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -467,7 +467,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x19e3
 // Size: 0x245
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -565,7 +565,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c31
 // Size: 0x789
 function initanims( subtype, team, originalsubtype )
@@ -647,7 +647,7 @@ function initanims( subtype, team, originalsubtype )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23c2
 // Size: 0x3cb
 function script_model_alpha_anims( subtype )
@@ -691,7 +691,7 @@ function script_model_alpha_anims( subtype )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2795
 // Size: 0x50e
 function vehicles_alpha_anims( subtype, team, originalsubtype )
@@ -833,7 +833,7 @@ function vehicles_alpha_anims( subtype, team, originalsubtype )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cab
 // Size: 0xb5
 function spawninfilvehicle( scene_node, team, scene_name )
@@ -857,7 +857,7 @@ function spawninfilvehicle( scene_node, team, scene_name )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d69
 // Size: 0x83
 function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -872,7 +872,7 @@ function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2df4
 // Size: 0x7a
 function driver_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -884,7 +884,7 @@ function driver_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e76
 // Size: 0x3f
 function getcommanderassets( team )
@@ -896,7 +896,7 @@ function getcommanderassets( team )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ebe
 // Size: 0x45
 function customground( guy )
@@ -918,7 +918,7 @@ function customground( guy )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f0b
 // Size: 0x109
 function modifyscenenode( infil, team, subtype )
@@ -957,7 +957,7 @@ function modifyscenenode( infil, team, subtype )
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x301c
 // Size: 0x19
 function function_247774c600595ace()
@@ -968,7 +968,7 @@ function function_247774c600595ace()
 }
 
 // Namespace mi8_infil / scripts\mp\infilexfil\mi8_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x303d
 // Size: 0x13
 function function_6158ef142e9bd640()

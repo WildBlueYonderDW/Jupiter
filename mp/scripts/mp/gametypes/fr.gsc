@@ -23,7 +23,7 @@
 #namespace fr;
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x359
 // Size: 0x1e9
 function main()
@@ -89,7 +89,7 @@ function main()
 }
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54a
 // Size: 0x9
 function function_d6a9e7094f78672e()
@@ -98,7 +98,7 @@ function function_d6a9e7094f78672e()
 }
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55b
 // Size: 0x37
 function initializematchrules()
@@ -110,7 +110,7 @@ function initializematchrules()
 }
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59a
 // Size: 0x136
 function onstartgametype()
@@ -164,7 +164,7 @@ function onstartgametype()
 }
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d8
 // Size: 0x9
 function updategametypedvars()
@@ -173,7 +173,7 @@ function updategametypedvars()
 }
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e9
 // Size: 0x1c0
 function initspawns()
@@ -217,7 +217,7 @@ function initspawns()
 /#
 
     // Namespace fr / scripts\mp\gametypes\fr
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x8b1
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -233,7 +233,7 @@ function initspawns()
 #/
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91c
 // Size: 0xaa
 function getspawnpoint()
@@ -268,7 +268,7 @@ function getspawnpoint()
 }
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9cf
 // Size: 0x27
 function onspawnplayer( revivespawn )
@@ -284,7 +284,7 @@ function onspawnplayer( revivespawn )
 /#
 
     // Namespace fr / scripts\mp\gametypes\fr
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x9fe
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -323,7 +323,7 @@ function onspawnplayer( revivespawn )
 #/
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xb80
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -332,7 +332,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc8
 // Size: 0x53
 function ontimelimit()
@@ -352,7 +352,7 @@ function ontimelimit()
 }
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xc23
 // Size: 0x53
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -361,7 +361,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace fr / scripts\mp\gametypes\fr
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc7e
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()

@@ -25,7 +25,7 @@
 #namespace namespace_d02da1a23a283ea1;
 
 // Namespace namespace_d02da1a23a283ea1 / namespace_197ebf97e16268de
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15e
 // Size: 0x4, Type: bool
 function function_b831ccf10a32a4b1()
@@ -34,7 +34,7 @@ function function_b831ccf10a32a4b1()
 }
 
 // Namespace namespace_d02da1a23a283ea1 / namespace_197ebf97e16268de
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16b
 // Size: 0x29
 function function_b24a36667938b8d4()
@@ -44,7 +44,7 @@ function function_b24a36667938b8d4()
 }
 
 // Namespace namespace_d02da1a23a283ea1 / namespace_197ebf97e16268de
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19c
 // Size: 0x2
 function newstepexample()

@@ -3,7 +3,7 @@
 #namespace team_gun;
 
 // Namespace team_gun / scripts\mp\gametypes\team_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab
 // Size: 0x1b, Type: bool
 function function_c1cddd7ae3bc2698()
@@ -12,7 +12,7 @@ function function_c1cddd7ae3bc2698()
 }
 
 // Namespace team_gun / scripts\mp\gametypes\team_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf
 // Size: 0x90
 function function_aa7d3b7589a7323e()
@@ -40,7 +40,7 @@ function function_aa7d3b7589a7323e()
 }
 
 // Namespace team_gun / scripts\mp\gametypes\team_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x167
 // Size: 0x36
 function function_1b6cc03649ea5017( team )

@@ -16,7 +16,7 @@
 #namespace stealth;
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x307
 // Size: 0x8e
 function initstealthfunctions()
@@ -34,7 +34,7 @@ function initstealthfunctions()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39d
 // Size: 0x32, Type: bool
 function isidlescriptedanim()
@@ -43,7 +43,7 @@ function isidlescriptedanim()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d8
 // Size: 0x1b, Type: bool
 function isidle()
@@ -52,7 +52,7 @@ function isidle()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fc
 // Size: 0x1c, Type: bool
 function isinvestigating()
@@ -61,7 +61,7 @@ function isinvestigating()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x421
 // Size: 0x1c, Type: bool
 function ishunting()
@@ -70,7 +70,7 @@ function ishunting()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x446
 // Size: 0x1c, Type: bool
 function iscombating()
@@ -79,7 +79,7 @@ function iscombating()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46b
 // Size: 0x1b
 function stealth_initfriendly( taskid )
@@ -89,7 +89,7 @@ function stealth_initfriendly( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48f
 // Size: 0x1f
 function stealth_terminatefriendly( taskid )
@@ -99,7 +99,7 @@ function stealth_terminatefriendly( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b6
 // Size: 0x1b
 function stealth_initneutral( taskid )
@@ -109,7 +109,7 @@ function stealth_initneutral( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4da
 // Size: 0x23, Type: bool
 function isinlight( lightvalue )
@@ -123,7 +123,7 @@ function isinlight( lightvalue )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x506
 // Size: 0x2
 function updatevisionforlighting()
@@ -132,7 +132,7 @@ function updatevisionforlighting()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x510
 // Size: 0x132
 function forceflashlightplayercanseeifnecessary()
@@ -155,7 +155,7 @@ function forceflashlightplayercanseeifnecessary()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64a
 // Size: 0xbd
 function function_e75ff8b7f46a7761( taskid )
@@ -187,7 +187,7 @@ function function_e75ff8b7f46a7761( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x710
 // Size: 0x37
 function function_fe4155eb92b02f4a()
@@ -205,7 +205,7 @@ function function_fe4155eb92b02f4a()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x74f
 // Size: 0x220
 function updatelightbasedflashlight( state, var_45af66a61bdb7b50 )
@@ -289,7 +289,7 @@ function updatelightbasedflashlight( state, var_45af66a61bdb7b50 )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x977
 // Size: 0xb
 function isidlecurious()
@@ -298,7 +298,7 @@ function isidlecurious()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x98b
 // Size: 0xa1
 function idle_init( taskid )
@@ -327,7 +327,7 @@ function idle_init( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa35
 // Size: 0x4f
 function idle_terminate( taskid )
@@ -342,7 +342,7 @@ function idle_terminate( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa8d
 // Size: 0x2d
 function stealth_shouldinvestigate( taskid )
@@ -356,7 +356,7 @@ function stealth_shouldinvestigate( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xac3
 // Size: 0xd, Type: bool
 function investigate_shouldfacedecentdirectionwhenidle()
@@ -365,7 +365,7 @@ function investigate_shouldfacedecentdirectionwhenidle()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad9
 // Size: 0xb5
 function investigate_setreaction( event )
@@ -388,7 +388,7 @@ function investigate_setreaction( event )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb96
 // Size: 0x2d
 function stealth_shouldhunt( taskid )
@@ -402,7 +402,7 @@ function stealth_shouldhunt( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbcc
 // Size: 0x9
 function hunt_clearroomdata()
@@ -411,7 +411,7 @@ function hunt_clearroomdata()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbdd
 // Size: 0xde
 function function_6057074fd95d3e65()
@@ -450,7 +450,7 @@ function function_6057074fd95d3e65()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcc4
 // Size: 0x14
 function hunt_updateeveryframe( taskid )
@@ -459,7 +459,7 @@ function hunt_updateeveryframe( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce1
 // Size: 0x5b
 function hunt_custom_init( taskid )
@@ -475,7 +475,7 @@ function hunt_custom_init( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd45
 // Size: 0x8f
 function hunt_custom_update( taskid )
@@ -506,7 +506,7 @@ function hunt_custom_update( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xddd
 // Size: 0x4f
 function hunt_custom_terminate( taskid )
@@ -520,7 +520,7 @@ function hunt_custom_terminate( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe35
 // Size: 0x32
 function hunt_initialdelay_init( taskid )
@@ -529,7 +529,7 @@ function hunt_initialdelay_init( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe6f
 // Size: 0x56
 function hunt_initialdelay( taskid )
@@ -543,7 +543,7 @@ function hunt_initialdelay( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xece
 // Size: 0x20
 function hunt_initialdelay_terminate( taskid )
@@ -552,7 +552,7 @@ function hunt_initialdelay_terminate( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xef6
 // Size: 0x144, Type: bool
 function hunt_cqbtargetupdate( instancedata )
@@ -583,7 +583,7 @@ function hunt_cqbtargetupdate( instancedata )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1043
 // Size: 0x14
 function hunt_shouldhunker( taskid )
@@ -592,7 +592,7 @@ function hunt_shouldhunker( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1060
 // Size: 0xf2
 function hunt_hunker_init( taskid )
@@ -619,7 +619,7 @@ function hunt_hunker_init( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x115a
 // Size: 0x18d
 function hunt_hunker( taskid )
@@ -664,7 +664,7 @@ function hunt_hunker( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12f0
 // Size: 0x20
 function hunt_hunker_terminate( taskid )
@@ -673,7 +673,7 @@ function hunt_hunker_terminate( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1318
 // Size: 0x7f
 function hunt_hunker_shouldexpose( taskid )
@@ -696,7 +696,7 @@ function hunt_hunker_shouldexpose( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13a0
 // Size: 0xd8
 function hunt_hunker_expose_init( taskid )
@@ -722,7 +722,7 @@ function hunt_hunker_expose_init( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1480
 // Size: 0x5e
 function hunt_hunker_expose( taskid )
@@ -739,7 +739,7 @@ function hunt_hunker_expose( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14e7
 // Size: 0x64
 function hunt_hunker_expose_terminate( taskid )
@@ -752,7 +752,7 @@ function hunt_hunker_expose_terminate( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1553
 // Size: 0xb7
 function hunt_isincover( taskid )
@@ -789,7 +789,7 @@ function hunt_isincover( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1613
 // Size: 0x21
 function hunt_active_terminate( taskid )
@@ -799,7 +799,7 @@ function hunt_active_terminate( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x163c
 // Size: 0x14
 function function_6771d1c0abc4da9c( taskid )
@@ -808,7 +808,7 @@ function function_6771d1c0abc4da9c( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1659
 // Size: 0x10e
 function function_b647c0d07e4a3078( taskid )
@@ -835,7 +835,7 @@ function function_b647c0d07e4a3078( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x176f
 // Size: 0xd2
 function function_5ba0240304e46139( taskid )
@@ -865,7 +865,7 @@ function function_5ba0240304e46139( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x184a
 // Size: 0x2a
 function function_8f3c5de8d0839565( taskid )
@@ -875,7 +875,7 @@ function function_8f3c5de8d0839565( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x187c
 // Size: 0x97
 function function_90ed2a34d9f66902( taskid )
@@ -908,7 +908,7 @@ function function_90ed2a34d9f66902( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x191b
 // Size: 0x139
 function function_7e3b6c64f2c2c6be( taskid )
@@ -945,7 +945,7 @@ function function_7e3b6c64f2c2c6be( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a5d
 // Size: 0xb
 function function_1baa3d287f64fa3( taskid )
@@ -954,7 +954,7 @@ function function_1baa3d287f64fa3( taskid )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a70
 // Size: 0x20
 function function_9b6fd81057ede5ce()
@@ -965,7 +965,7 @@ function function_9b6fd81057ede5ce()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a98
 // Size: 0x61
 function clearstealthvolume()
@@ -977,7 +977,7 @@ function clearstealthvolume()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b01
 // Size: 0xf8
 function function_6bdcfa57946930c7( event )
@@ -1007,7 +1007,7 @@ function function_6bdcfa57946930c7( event )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c01
 // Size: 0x14e
 function function_9c4a08f7dcd2796b()
@@ -1028,7 +1028,7 @@ function function_9c4a08f7dcd2796b()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d58
 // Size: 0x1f
 function function_de475c37aeeaf6c()
@@ -1038,7 +1038,7 @@ function function_de475c37aeeaf6c()
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d7f
 // Size: 0x22f
 function function_9499f9e2b35b85c8( event, podstate )
@@ -1095,7 +1095,7 @@ function function_9499f9e2b35b85c8( event, podstate )
 }
 
 // Namespace stealth / scripts\aitypes\stealth
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fb6
 // Size: 0x52
 function function_20bf793de5175709( statename, e )

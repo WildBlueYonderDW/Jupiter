@@ -14,7 +14,7 @@
 #namespace skerries_infil;
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d3
 // Size: 0x9d
 function function_57334412d2328b04( subtype )
@@ -35,7 +35,7 @@ function function_57334412d2328b04( subtype )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x678
 // Size: 0xa0
 function function_7f2872ee68c3495d( team, target, subtype, originalsubtype )
@@ -50,7 +50,7 @@ function function_7f2872ee68c3495d( team, target, subtype, originalsubtype )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x721
 // Size: 0x32
 function function_379f2f7e6af4a8ff( subtype )
@@ -60,7 +60,7 @@ function function_379f2f7e6af4a8ff( subtype )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x75c
 // Size: 0x268
 function function_72da1a47fa80f9c3( infil, spot_index )
@@ -118,7 +118,7 @@ function function_72da1a47fa80f9c3( infil, spot_index )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9cc
 // Size: 0x27
 function resetfov()
@@ -130,7 +130,7 @@ function resetfov()
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9fb
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -148,7 +148,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa3f
 // Size: 0x53
 function player_infil_end()
@@ -164,7 +164,7 @@ function player_infil_end()
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa9a
 // Size: 0x4c
 function player_disconnect()
@@ -183,7 +183,7 @@ function player_disconnect()
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaee
 // Size: 0xda
 function infilthink( team, scene_name )
@@ -210,7 +210,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xbd0
 // Size: 0xcc
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -239,7 +239,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca4
 // Size: 0x19
 function function_12a422489d86ce46()
@@ -250,7 +250,7 @@ function function_12a422489d86ce46()
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcc5
 // Size: 0xdb
 function function_cd31140f6d535f7a()
@@ -272,7 +272,7 @@ function function_cd31140f6d535f7a()
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda8
 // Size: 0x1b
 function initanims( subtype )
@@ -282,7 +282,7 @@ function initanims( subtype )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdcb
 // Size: 0x70f
 function script_model_anims( subtype )
@@ -362,7 +362,7 @@ function script_model_anims( subtype )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14e2
 // Size: 0x94
 function vehicles_anims( subtype )
@@ -381,7 +381,7 @@ function vehicles_anims( subtype )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x157e
 // Size: 0xde
 function function_7de6cd57148ac2ea( scene_node, team, scene_name, animname )
@@ -406,7 +406,7 @@ function function_7de6cd57148ac2ea( scene_node, team, scene_name, animname )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1665
 // Size: 0xd2
 function infil_radio_idle( infil )
@@ -441,7 +441,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x173f
 // Size: 0x2a
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -457,7 +457,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace skerries_infil / scripts\mp\infilexfil\skerries_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1771
 // Size: 0x13
 function function_6158ef142e9bd640()

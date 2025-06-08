@@ -7,7 +7,7 @@
 #namespace throwstar;
 
 // Namespace throwstar / scripts\cp_mp\equipment\throwstar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x401
 // Size: 0xbd
 function function_12d7ca3ff609caba()
@@ -23,7 +23,7 @@ function function_12d7ca3ff609caba()
 }
 
 // Namespace throwstar / scripts\cp_mp\equipment\throwstar
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4c6
 // Size: 0x2c
 function function_e7715ffb329c1b40( equipmentref, equipmentslot, variantid )
@@ -32,7 +32,7 @@ function function_e7715ffb329c1b40( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace throwstar / scripts\cp_mp\equipment\throwstar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4fa
 // Size: 0x24
 function function_92e126d1a5d3fb2( equipmentref, equipmentslot )
@@ -41,7 +41,7 @@ function function_92e126d1a5d3fb2( equipmentref, equipmentslot )
 }
 
 // Namespace throwstar / scripts\cp_mp\equipment\throwstar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x526
 // Size: 0xe3
 function function_709581d70ebb07cd( grenade )
@@ -66,7 +66,7 @@ function function_709581d70ebb07cd( grenade )
 }
 
 // Namespace throwstar / scripts\cp_mp\equipment\throwstar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x611
 // Size: 0xfb
 function function_1f6c16ac84ef5c16()
@@ -251,7 +251,7 @@ function private function_c759de2f9501126()
 }
 
 // Namespace throwstar / scripts\cp_mp\equipment\throwstar
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9f0
 // Size: 0xdf
 function function_db4bbcfe23f19148( einflictor, victim, idamage, partname )
@@ -291,7 +291,7 @@ function function_db4bbcfe23f19148( einflictor, victim, idamage, partname )
 }
 
 // Namespace throwstar / scripts\cp_mp\equipment\throwstar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xad8
 // Size: 0x4
 function function_fc924820627e1c55()
@@ -300,7 +300,7 @@ function function_fc924820627e1c55()
 }
 
 // Namespace throwstar / scripts\cp_mp\equipment\throwstar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae5
 // Size: 0x54
 function function_ce1d250379db9655( victim )
@@ -317,7 +317,7 @@ function function_ce1d250379db9655( victim )
 }
 
 // Namespace throwstar / scripts\cp_mp\equipment\throwstar
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xb42
 // Size: 0x8e
 function function_f206558a684b471a( stuckto, stuckpart, grenadeangles, surfacetype, hitvelocity, position, hitnormal )

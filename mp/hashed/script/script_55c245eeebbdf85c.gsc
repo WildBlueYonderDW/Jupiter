@@ -13,7 +13,7 @@
 #namespace namespace_8cc7824223500536;
 
 // Namespace namespace_8cc7824223500536 / namespace_f60f8b35aea76152
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36f
 // Size: 0xf1
 function init()
@@ -145,7 +145,7 @@ function private function_5eb3707c330f26a8()
 }
 
 // Namespace namespace_8cc7824223500536 / namespace_f60f8b35aea76152
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7d5
 // Size: 0x11e
 function function_967c8a57bedde2ee( volume, interactionstruct, var_179343b5981c3088 )
@@ -199,7 +199,7 @@ function private function_7f0f61d056244f1e( player )
 }
 
 // Namespace namespace_8cc7824223500536 / namespace_f60f8b35aea76152
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa00
 // Size: 0xc1
 function function_71b156e80b222071( interact, player )

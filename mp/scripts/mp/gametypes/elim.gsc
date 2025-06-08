@@ -36,7 +36,7 @@
 #namespace elim;
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb5d
 // Size: 0x2d9
 function main()
@@ -112,7 +112,7 @@ function main()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe3e
 // Size: 0x62
 function initializematchrules()
@@ -125,7 +125,7 @@ function initializematchrules()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea8
 // Size: 0x284
 function onstartgametype()
@@ -197,7 +197,7 @@ function onstartgametype()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1134
 // Size: 0x20
 function function_212d9bd663252af4()
@@ -211,7 +211,7 @@ function function_212d9bd663252af4()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x115c
 // Size: 0x184
 function initspawns()
@@ -247,7 +247,7 @@ function initspawns()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e8
 // Size: 0x53
 function updategametypedvars()
@@ -259,7 +259,7 @@ function updategametypedvars()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1343
 // Size: 0xad
 function getspawnpoint()
@@ -293,7 +293,7 @@ function getspawnpoint()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13f9
 // Size: 0x50
 function dogtagallyonusecb( player )
@@ -306,7 +306,7 @@ function dogtagallyonusecb( player )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1451
 // Size: 0x80
 function dogtagenemyonusecb( player )
@@ -330,7 +330,7 @@ function dogtagenemyonusecb( player )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14d9
 // Size: 0x62
 function function_9589bc4a06570c45( player, currentteam )
@@ -343,7 +343,7 @@ function function_9589bc4a06570c45( player, currentteam )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1543
 // Size: 0x282
 function function_56c428ee980a8464()
@@ -391,7 +391,7 @@ function function_56c428ee980a8464()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17cd
 // Size: 0xf3
 function function_1f5ab97903453ce1( team_name, var_41e4d73fabed18df )
@@ -421,7 +421,7 @@ function function_1f5ab97903453ce1( team_name, var_41e4d73fabed18df )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18c8
 // Size: 0xa
 function function_9b2677ca6406227a()
@@ -430,7 +430,7 @@ function function_9b2677ca6406227a()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18da
 // Size: 0x7d
 function function_b6d7a7ce224438f9( team, internal_count )
@@ -457,7 +457,7 @@ function function_b6d7a7ce224438f9( team, internal_count )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1960
 // Size: 0x5b
 function onplayerspawned( player )
@@ -479,7 +479,7 @@ function onplayerspawned( player )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x19c3
 // Size: 0x1dd
 function elim_onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -532,7 +532,7 @@ function elim_onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objw
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ba8
 // Size: 0x120
 function function_cf18a42c2718cd59( player, affectedteam )
@@ -561,7 +561,7 @@ function function_cf18a42c2718cd59( player, affectedteam )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1cd0
 // Size: 0x4a
 function elim_endround( winningteam, endreasontext, endreasontextloss, nukedetonated, var_8e4a26ed257a393b )
@@ -572,7 +572,7 @@ function elim_endround( winningteam, endreasontext, endreasontextloss, nukedeton
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d22
 // Size: 0x27
 function elim_ononeleftevent( team )
@@ -582,7 +582,7 @@ function elim_ononeleftevent( team )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d51
 // Size: 0x82
 function elim_givelastonteamwarning()
@@ -598,7 +598,7 @@ function elim_givelastonteamwarning()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ddb
 // Size: 0x15f
 function function_df4c58d276eea572( team )
@@ -633,7 +633,7 @@ function function_df4c58d276eea572( team )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1f42
 // Size: 0x59
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -644,7 +644,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fa3
 // Size: 0x65
 function elim_onspawnplayer( revivespawn )
@@ -661,7 +661,7 @@ function elim_onspawnplayer( revivespawn )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2010
 // Size: 0x3f
 function function_77c785d6e612c0c8( player, affectedteam )
@@ -672,7 +672,7 @@ function function_77c785d6e612c0c8( player, affectedteam )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2057
 // Size: 0x75
 function function_5ac1fc4ebbadd34b( team )
@@ -692,7 +692,7 @@ function function_5ac1fc4ebbadd34b( team )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20d4
 // Size: 0xa3
 function elim_ontimelimit()
@@ -718,7 +718,7 @@ function elim_ontimelimit()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x217f
 // Size: 0xb
 function function_7af30b834b2361b5()
@@ -727,7 +727,7 @@ function function_7af30b834b2361b5()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2192
 // Size: 0xbb
 function function_742b83d1bbea8146()
@@ -769,7 +769,7 @@ function function_742b83d1bbea8146()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2255
 // Size: 0x35
 function function_fe5183c2db26af8a()
@@ -782,7 +782,7 @@ function function_fe5183c2db26af8a()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2292
 // Size: 0x34
 function function_73d0c187f5ec8c7c()
@@ -795,7 +795,7 @@ function function_73d0c187f5ec8c7c()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22ce
 // Size: 0x87
 function function_5f65819c8a31674c( deathdata )
@@ -817,7 +817,7 @@ function function_5f65819c8a31674c( deathdata )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x235d
 // Size: 0x9
 function function_de042a9016c7ff57()
@@ -826,7 +826,7 @@ function function_de042a9016c7ff57()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x236e
 // Size: 0x74, Type: bool
 function modelaststandallowed( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration )
@@ -840,7 +840,7 @@ function modelaststandallowed( einflictor, attacker, idamage, smeansofdeath, obj
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23eb
 // Size: 0x1b2
 function function_15f1737384d03c2e()
@@ -865,7 +865,7 @@ function function_15f1737384d03c2e()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25a5
 // Size: 0x50
 function setupovertime()
@@ -880,7 +880,7 @@ function setupovertime()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25fd
 // Size: 0x33
 function function_aece75d270fa29e0()
@@ -891,7 +891,7 @@ function function_aece75d270fa29e0()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2638
 // Size: 0x2d2
 function function_b266970ca8418ea7()
@@ -941,7 +941,7 @@ function function_b266970ca8418ea7()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2913
 // Size: 0xf2
 function function_681cdc48fee81765()
@@ -966,7 +966,7 @@ function function_681cdc48fee81765()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a0d
 // Size: 0x51
 function function_5f9879a1d8da72ef( enable )
@@ -984,7 +984,7 @@ function function_5f9879a1d8da72ef( enable )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a66
 // Size: 0x8b
 function elim_flag_setvisible( enable )
@@ -1006,7 +1006,7 @@ function elim_flag_setvisible( enable )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2af9
 // Size: 0x42
 function function_9ad0b84181341b7e()
@@ -1020,7 +1020,7 @@ function function_9ad0b84181341b7e()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b43
 // Size: 0x64
 function function_3d8b794656fa0ff2( enable )
@@ -1038,7 +1038,7 @@ function function_3d8b794656fa0ff2( enable )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2baf
 // Size: 0x24
 function function_e0a623e1aeb469cc()
@@ -1049,7 +1049,7 @@ function function_e0a623e1aeb469cc()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bdb
 // Size: 0x57
 function function_7da9bb89110739db( captureteam )
@@ -1061,7 +1061,7 @@ function function_7da9bb89110739db( captureteam )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c3a
 // Size: 0xb5
 function function_f5b6d37e13aa566a( target, label )
@@ -1082,7 +1082,7 @@ function function_f5b6d37e13aa566a( target, label )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cf7
 // Size: 0xb2
 function function_726259d42f88361( state )
@@ -1099,14 +1099,15 @@ function function_726259d42f88361( state )
     
     foreach ( chevron in self.chevrons )
     {
-        for (i = 0; i < chevron.numchevrons; i++) {
+        for ( i = 0; i < chevron.numchevrons ; i++ )
+        {
             chevron setscriptablepartstate( var_a27485475186b39d + i, state );
         }
     }
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2db1
 // Size: 0xee
 function function_223fb185e0afb231()
@@ -1148,7 +1149,7 @@ function function_223fb185e0afb231()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ea7
 // Size: 0x6b
 function function_e523100354b2bc57( player )
@@ -1161,7 +1162,7 @@ function function_e523100354b2bc57( player )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f1a
 // Size: 0xe3
 function function_2ed74e8fe9f7a19f( creditplayer )
@@ -1182,7 +1183,7 @@ function function_2ed74e8fe9f7a19f( creditplayer )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3005
 // Size: 0x45
 function function_98b2ab6cb6f9d803( team, progress, change, capplayer )
@@ -1192,7 +1193,7 @@ function function_98b2ab6cb6f9d803( team, progress, change, capplayer )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3052
 // Size: 0x68
 function function_bf70bd889e8c9657( team, player, success )
@@ -1213,7 +1214,7 @@ function function_bf70bd889e8c9657( team, player, success )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30c2
 // Size: 0x48
 function function_9faeb1f447e32bb0()
@@ -1226,7 +1227,7 @@ function function_9faeb1f447e32bb0()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3112
 // Size: 0x67
 function function_1b7b31315c2ca80d( lastclaimteam )
@@ -1246,7 +1247,7 @@ function function_1b7b31315c2ca80d( lastclaimteam )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3181
 // Size: 0x1e
 function function_e0437f7871ef9238()
@@ -1256,7 +1257,7 @@ function function_e0437f7871ef9238()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31a7
 // Size: 0x65
 function forcegameendcontesttimeout()
@@ -1280,7 +1281,7 @@ function forcegameendcontesttimeout()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3214
 // Size: 0xaa
 function function_d728ac09bfb9f96( teamname )
@@ -1298,7 +1299,7 @@ function function_d728ac09bfb9f96( teamname )
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32c6
 // Size: 0x6e
 function function_b203ef9def1f8c74()
@@ -1310,7 +1311,7 @@ function function_b203ef9def1f8c74()
 }
 
 // Namespace elim / scripts\mp\gametypes\elim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x333c
 // Size: 0x2b
 function function_a7456cf75cba76b2( player )
@@ -1321,7 +1322,7 @@ function function_a7456cf75cba76b2( player )
 /#
 
     // Namespace elim / scripts\mp\gametypes\elim
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x336f
     // Size: 0x70, Type: dev
     function function_811292df738947aa()
@@ -1335,7 +1336,7 @@ function function_a7456cf75cba76b2( player )
     }
 
     // Namespace elim / scripts\mp\gametypes\elim
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x33e7
     // Size: 0x71, Type: dev
     function function_9e2eca1aedfb8e4()
@@ -1347,7 +1348,7 @@ function function_a7456cf75cba76b2( player )
     }
 
     // Namespace elim / scripts\mp\gametypes\elim
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3460
     // Size: 0x71, Type: dev
     function function_a2e6be25493acaed()
@@ -1359,7 +1360,7 @@ function function_a7456cf75cba76b2( player )
     }
 
     // Namespace elim / scripts\mp\gametypes\elim
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x34d9
     // Size: 0xc, Type: dev
     function function_53da610a95ce4073()
@@ -1368,7 +1369,7 @@ function function_a7456cf75cba76b2( player )
     }
 
     // Namespace elim / scripts\mp\gametypes\elim
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x34ed
     // Size: 0x59, Type: dev
     function function_bb509befa79c026()
@@ -1380,7 +1381,7 @@ function function_a7456cf75cba76b2( player )
     }
 
     // Namespace elim / scripts\mp\gametypes\elim
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x354e
     // Size: 0x118, Type: dev
     function function_ca18c921f35b6ef()
@@ -1433,7 +1434,7 @@ function function_a7456cf75cba76b2( player )
     }
 
     // Namespace elim / scripts\mp\gametypes\elim
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x366e
     // Size: 0xa4, Type: dev
     function function_c9cb37cdd0caa2f4()

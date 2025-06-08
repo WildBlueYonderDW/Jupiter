@@ -3,14 +3,15 @@
 /#
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x88
     // Size: 0xa5, Type: dev
     function drawent( ent, radius, forwardlen, drawtimeseconds, color )
     {
         drawframes = int( drawtimeseconds / level.framedurationseconds );
         
-        for (frame = 0; frame < drawframes; frame++) {
+        for ( frame = 0; frame < drawframes ; frame++ )
+        {
             sphere( ent.origin, radius, color );
             line( ent.origin, ent.origin + anglestoforward( ent.angles ) * forwardlen, color );
             waitframe();
@@ -18,49 +19,52 @@
     }
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x135
     // Size: 0x63, Type: dev
     function drawline( start, end, drawtimeseconds, color )
     {
         drawframes = int( drawtimeseconds / level.framedurationseconds );
         
-        for (frame = 0; frame < drawframes; frame++) {
+        for ( frame = 0; frame < drawframes ; frame++ )
+        {
             line( start, end, color );
             waitframe();
         }
     }
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x1a0
     // Size: 0x63, Type: dev
     function drawsphere( origin, radius, drawtimeseconds, color )
     {
         drawframes = int( drawtimeseconds / level.framedurationseconds );
         
-        for (frame = 0; frame < drawframes; frame++) {
+        for ( frame = 0; frame < drawframes ; frame++ )
+        {
             sphere( origin, radius, color );
             waitframe();
         }
     }
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x20b
     // Size: 0x73, Type: dev
     function drawcylinder( origin, radius, height, drawtimeseconds, color )
     {
         drawframes = int( drawtimeseconds / level.framedurationseconds );
         
-        for (frame = 0; frame < drawframes; frame++) {
+        for ( frame = 0; frame < drawframes ; frame++ )
+        {
             cylinder( origin, origin + ( 0, 0, height ), radius, color );
             waitframe();
         }
     }
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
-    // Params 10, eflags: 0x0
+    // Params 10
     // Checksum 0x0, Offset: 0x286
     // Size: 0xf2, Type: dev
     function drawboxfrompoints( topleftfront, toprightfront, topleftback, toprightback, bottomleftfront, bottomrightfront, var_2febbcb4c37b3b64, var_3a64b6f876a6b09f, drawtimeseconds, color )
@@ -80,7 +84,7 @@
     }
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x380
     // Size: 0xf1, Type: dev
     function drawangles( origin, angles, var_3e6845817408f87e, scalar )
@@ -92,7 +96,8 @@
         
         drawframes = int( var_3e6845817408f87e / level.framedurationseconds );
         
-        for (frame = 0; frame < drawframes; frame++) {
+        for ( frame = 0; frame < drawframes ; frame++ )
+        {
             fwd = anglestoforward( angles );
             right = anglestoright( angles );
             up = anglestoup( angles );
@@ -104,7 +109,7 @@
     }
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x479
     // Size: 0x69, Type: dev
     function function_bb5850f548a9d261()
@@ -132,7 +137,7 @@
     }
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x4ea
     // Size: 0xf8, Type: dev
     function function_7111207db5db2175( midpoint, halfsize, drawtimeseconds, color )
@@ -150,7 +155,7 @@
     }
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x5ea
     // Size: 0xff, Type: dev
     function waitfordvar( dvar, dvar_type, input_func )

@@ -70,7 +70,7 @@ function private init()
 }
 
 // Namespace namespace_97a798e7cca1750b / namespace_49687fb9a060bf03
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x4bf
 // Size: 0x7d
 function function_517ae1797c9e1995( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon )
@@ -91,7 +91,7 @@ function function_517ae1797c9e1995( einflictor, eattacker, victim, idamage, idfl
 }
 
 // Namespace namespace_97a798e7cca1750b / namespace_49687fb9a060bf03
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x545
 // Size: 0x210
 function function_3d68d8ff8bafc637( dmg_struct )

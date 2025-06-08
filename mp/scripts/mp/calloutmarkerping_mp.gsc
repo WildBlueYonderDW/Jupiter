@@ -11,7 +11,7 @@
 #namespace calloutmarkerping_mp;
 
 // Namespace calloutmarkerping_mp / scripts\mp\calloutmarkerping_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22c
 // Size: 0xaf
 function calloutmarkerping_init()
@@ -28,7 +28,7 @@ function calloutmarkerping_init()
 }
 
 // Namespace calloutmarkerping_mp / scripts\mp\calloutmarkerping_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e3
 // Size: 0xb
 function calloutmarkerping_squadleaderbeaconcreate( pingtraceorigin )
@@ -37,7 +37,7 @@ function calloutmarkerping_squadleaderbeaconcreate( pingtraceorigin )
 }
 
 // Namespace calloutmarkerping_mp / scripts\mp\calloutmarkerping_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f6
 // Size: 0x11b
 function calloutmarkerping_squadleaderbeaconplayerfirstlanded()
@@ -76,7 +76,7 @@ function calloutmarkerping_squadleaderbeaconplayerfirstlanded()
 }
 
 // Namespace calloutmarkerping_mp / scripts\mp\calloutmarkerping_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x419
 // Size: 0xb0
 function calloutmarkerping_squadleaderbeaconkillforplayer( player )
@@ -102,7 +102,7 @@ function calloutmarkerping_squadleaderbeaconkillforplayer( player )
 }
 
 // Namespace calloutmarkerping_mp / scripts\mp\calloutmarkerping_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4d1
 // Size: 0x1c1
 function calloutmarkerping_watchitemtakenfromcontainer( player, container, lootid )
@@ -185,7 +185,7 @@ function calloutmarkerping_watchitemtakenfromcontainer( player, container, looti
 }
 
 // Namespace calloutmarkerping_mp / scripts\mp\calloutmarkerping_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x69a
 // Size: 0x153, Type: bool
 function function_c28d94289c4a6ecd( scriptable, var_1d4bc315e3007530 )
@@ -243,7 +243,7 @@ function function_c28d94289c4a6ecd( scriptable, var_1d4bc315e3007530 )
 }
 
 // Namespace calloutmarkerping_mp / scripts\mp\calloutmarkerping_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f6
 // Size: 0x134, Type: bool
 function function_fc3ea40c99062d82( enemy )
@@ -272,12 +272,12 @@ function function_fc3ea40c99062d82( enemy )
         
         enemyentnum = enemy getentitynumber();
         
-        if ( !isdefined( player.var_aa9c8b816ec406f2 ) || !isdefined( player.var_aa9c8b816ec406f2[ enemyentnum ] ) )
+        if ( !isdefined( friendlyplayer.var_aa9c8b816ec406f2 ) || !isdefined( friendlyplayer.var_aa9c8b816ec406f2[ enemyentnum ] ) )
         {
             continue;
         }
         
-        var_fe6195ac94e8104d = player.var_aa9c8b816ec406f2[ enemyentnum ];
+        var_fe6195ac94e8104d = friendlyplayer.var_aa9c8b816ec406f2[ enemyentnum ];
         var_586fc981f878f2cc = getdvarint( @"hash_d85d63311ba6c0c0", 5 ) * 1000;
         var_9e2bdb90cba6134e = gettime() - var_fe6195ac94e8104d;
         var_1ce42df57cf1d36c = var_9e2bdb90cba6134e <= var_586fc981f878f2cc;
@@ -292,7 +292,7 @@ function function_fc3ea40c99062d82( enemy )
 }
 
 // Namespace calloutmarkerping_mp / scripts\mp\calloutmarkerping_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x933
 // Size: 0x2f2
 function function_4864c58ab9b1f07e( scriptable, var_f0456519eaae430 )

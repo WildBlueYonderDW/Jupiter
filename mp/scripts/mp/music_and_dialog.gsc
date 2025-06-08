@@ -16,7 +16,7 @@
 #namespace music_and_dialog;
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d96
 // Size: 0x1e
 function init()
@@ -28,7 +28,7 @@ function init()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dbc
 // Size: 0x90
 function init_voice()
@@ -62,7 +62,7 @@ function init_voice()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e54
 // Size: 0x14
 function init_music()
@@ -74,7 +74,7 @@ function init_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e70
 // Size: 0x159
 function function_1d15528daa831962()
@@ -101,7 +101,7 @@ function function_1d15528daa831962()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fd1
 // Size: 0x49d
 function function_a5e3fac0c5201a8()
@@ -157,7 +157,7 @@ function function_a5e3fac0c5201a8()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4476
 // Size: 0x838
 function function_79d09d8dff37ff80()
@@ -289,7 +289,7 @@ function function_79d09d8dff37ff80()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cb6
 // Size: 0x5d5
 function function_c85c8d480a1f8d97()
@@ -402,7 +402,7 @@ function function_c85c8d480a1f8d97()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5293
 // Size: 0x9
 function function_350d33613fa93e9()
@@ -411,7 +411,7 @@ function function_350d33613fa93e9()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52a4
 // Size: 0x56d
 function function_8b0c0a46f9743150()
@@ -495,7 +495,7 @@ function function_8b0c0a46f9743150()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5819
 // Size: 0x2e
 function function_a7859595cdf7077()
@@ -510,9 +510,9 @@ function function_a7859595cdf7077()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x584f
-// Size: 0x202
+// Size: 0x2db
 function function_42b070fb8d72b5f8()
 {
     if ( getgametype() == "high" )
@@ -534,7 +534,7 @@ function function_42b070fb8d72b5f8()
                 function_414b65c7174581d1( "mp_season05", "team_three" );
             }
         }
-        else if ( getdvarint( @"current_season" ) == 6 )
+        else if ( getdvarint( @"current_season" ) == 6 && getdvarfloat( @"hash_c804bf7eae3d0887" ) != 6.5 )
         {
             function_414b65c7174581d1( "mp_season06", "allies" );
             function_414b65c7174581d1( "mp_season06", "axis" );
@@ -542,6 +542,29 @@ function function_42b070fb8d72b5f8()
             if ( getgametype() == "xfire" || getgametype() == "warrior" )
             {
                 function_414b65c7174581d1( "mp_season06", "team_three" );
+            }
+        }
+        else
+        {
+            alliesfaction = scripts\mp\utility\teams::getteamvoiceinfix( "allies" );
+            axisfaction = scripts\mp\utility\teams::getteamvoiceinfix( "axis" );
+            
+            if ( getgametype() == "xfire" || getgametype() == "warrior" )
+            {
+                var_ec40686507c21b1d = scripts\mp\utility\teams::getteamvoiceinfix( "team_three" );
+                function_e910cd87d53c8a51( alliesfaction, "allies" );
+                function_e910cd87d53c8a51( axisfaction, "axis" );
+                function_e910cd87d53c8a51( var_ec40686507c21b1d, "team_three" );
+            }
+            else if ( getgametype() == "koth_horde" )
+            {
+                function_414b65c7174581d1( "mp_mode_hordepoint", "allies" );
+                function_414b65c7174581d1( "mp_mode_hordepoint", "axis" );
+            }
+            else
+            {
+                function_e910cd87d53c8a51( alliesfaction, "allies" );
+                function_e910cd87d53c8a51( axisfaction, "axis" );
             }
         }
         
@@ -572,8 +595,8 @@ function function_42b070fb8d72b5f8()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a59
+// Params 2
+// Checksum 0x0, Offset: 0x5b32
 // Size: 0x1b9
 function function_e910cd87d53c8a51( factionname, teamname )
 {
@@ -634,8 +657,8 @@ function function_e910cd87d53c8a51( factionname, teamname )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c1a
+// Params 3
+// Checksum 0x0, Offset: 0x5cf3
 // Size: 0xb6
 function function_414b65c7174581d1( var_8e6988e5e46aad6e, teamname, var_94297cc109e4d6a5 )
 {
@@ -660,11 +683,16 @@ function function_414b65c7174581d1( var_8e6988e5e46aad6e, teamname, var_94297cc1
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cd8
-// Size: 0x50
+// Params 1
+// Checksum 0x0, Offset: 0x5db1
+// Size: 0x64
 function function_cd6fa41e597b8df0( var_83adde1ef76f568a )
 {
+    if ( istrue( level.gametype == "br" ) )
+    {
+        return;
+    }
+    
     musicevent = function_291ab2db66d6ea2e( var_83adde1ef76f568a );
     
     if ( isdefined( musicevent ) )
@@ -675,8 +703,8 @@ function function_cd6fa41e597b8df0( var_83adde1ef76f568a )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d30
+// Params 1
+// Checksum 0x0, Offset: 0x5e1d
 // Size: 0x14a
 function function_291ab2db66d6ea2e( var_83adde1ef76f568a )
 {
@@ -717,8 +745,8 @@ function function_291ab2db66d6ea2e( var_83adde1ef76f568a )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e82
+// Params 0
+// Checksum 0x0, Offset: 0x5f6f
 // Size: 0xc4b
 function function_ed24376a19a1b0fe()
 {
@@ -867,8 +895,8 @@ function function_ed24376a19a1b0fe()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ad5
+// Params 0
+// Checksum 0x0, Offset: 0x6bc2
 // Size: 0x6d
 function function_6ca37af6683e78ec()
 {
@@ -887,8 +915,8 @@ function function_6ca37af6683e78ec()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b4a
+// Params 0
+// Checksum 0x0, Offset: 0x6c37
 // Size: 0x86
 function onplayerconnect()
 {
@@ -911,8 +939,8 @@ function onplayerconnect()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6bd8
+// Params 0
+// Checksum 0x0, Offset: 0x6cc5
 // Size: 0x10a
 function onplayerspawned()
 {
@@ -953,8 +981,8 @@ function onplayerspawned()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cea
+// Params 0
+// Checksum 0x0, Offset: 0x6dd7
 // Size: 0x128
 function function_8ffc5ac70256254b()
 {
@@ -1009,8 +1037,8 @@ function function_8ffc5ac70256254b()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e1a
+// Params 0
+// Checksum 0x0, Offset: 0x6f07
 // Size: 0x32
 function waitcountdown()
 {
@@ -1030,8 +1058,8 @@ function waitcountdown()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e54
+// Params 0
+// Checksum 0x0, Offset: 0x6f41
 // Size: 0x1d3
 function playflyoveraudioline()
 {
@@ -1111,8 +1139,8 @@ function playflyoveraudioline()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x702f
+// Params 0
+// Checksum 0x0, Offset: 0x711c
 // Size: 0x4d5
 function dointro()
 {
@@ -1299,8 +1327,8 @@ function dointro()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x750c
+// Params 1
+// Checksum 0x0, Offset: 0x75f9
 // Size: 0xd2
 function function_3aa69e0e6827ce5( var_167b74d4ec89f276 )
 {
@@ -1342,8 +1370,8 @@ function function_3aa69e0e6827ce5( var_167b74d4ec89f276 )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x75e6
+// Params 0
+// Checksum 0x0, Offset: 0x76d3
 // Size: 0x421
 function prematch_music()
 {
@@ -1515,8 +1543,8 @@ function prematch_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a0f
+// Params 0
+// Checksum 0x0, Offset: 0x7afc
 // Size: 0x135, Type: bool
 function shouldplayarenaintro()
 {
@@ -1564,8 +1592,8 @@ function shouldplayarenaintro()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b4d
+// Params 0
+// Checksum 0x0, Offset: 0x7c3a
 // Size: 0x49
 function watchhostmigration()
 {
@@ -1586,8 +1614,8 @@ function watchhostmigration()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b9e
+// Params 0
+// Checksum 0x0, Offset: 0x7c8b
 // Size: 0x9f
 function onlastalive()
 {
@@ -1619,8 +1647,8 @@ function onlastalive()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c45
+// Params 0
+// Checksum 0x0, Offset: 0x7d32
 // Size: 0x19a
 function onroundswitch()
 {
@@ -1673,8 +1701,8 @@ function onroundswitch()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7de7
+// Params 0
+// Checksum 0x0, Offset: 0x7ed4
 // Size: 0x1d2
 function plunder_endgame_music()
 {
@@ -1715,8 +1743,8 @@ function plunder_endgame_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fc1
+// Params 1
+// Checksum 0x0, Offset: 0x80ae
 // Size: 0x43
 function dmz_activity_start( players )
 {
@@ -1726,8 +1754,8 @@ function dmz_activity_start( players )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x800c
+// Params 1
+// Checksum 0x0, Offset: 0x80f9
 // Size: 0x43
 function dmz_activity_tension( players )
 {
@@ -1737,8 +1765,8 @@ function dmz_activity_tension( players )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8057
+// Params 1
+// Checksum 0x0, Offset: 0x8144
 // Size: 0x43
 function function_39a3ba69d3b190a5( players )
 {
@@ -1748,8 +1776,8 @@ function function_39a3ba69d3b190a5( players )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x80a2
+// Params 1
+// Checksum 0x0, Offset: 0x818f
 // Size: 0x43
 function dmz_activity_win( players )
 {
@@ -1759,8 +1787,8 @@ function dmz_activity_win( players )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x80ed
+// Params 1
+// Checksum 0x0, Offset: 0x81da
 // Size: 0x43
 function dmz_activity_lose( players )
 {
@@ -1770,8 +1798,8 @@ function dmz_activity_lose( players )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8138
+// Params 0
+// Checksum 0x0, Offset: 0x8225
 // Size: 0x34f
 function ongameended()
 {
@@ -1874,8 +1902,8 @@ function ongameended()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x848f
+// Params 1
+// Checksum 0x0, Offset: 0x857c
 // Size: 0xb2
 function function_9d7b08b1c2165e1( winner )
 {
@@ -1900,8 +1928,8 @@ function function_9d7b08b1c2165e1( winner )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8549
+// Params 1
+// Checksum 0x0, Offset: 0x8636
 // Size: 0x99
 function midpoint_music( winning_team )
 {
@@ -1923,8 +1951,8 @@ function midpoint_music( winning_team )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x85ea
+// Params 1
+// Checksum 0x0, Offset: 0x86d7
 // Size: 0xcc
 function dominating_music( var_8b9b442335d5c181 )
 {
@@ -1953,8 +1981,8 @@ function dominating_music( var_8b9b442335d5c181 )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x86be
+// Params 0
+// Checksum 0x0, Offset: 0x87ab
 // Size: 0x115
 function bombplanted_music()
 {
@@ -1989,8 +2017,8 @@ function bombplanted_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87db
+// Params 0
+// Checksum 0x0, Offset: 0x88c8
 // Size: 0x393
 function roundwinnerdialog()
 {
@@ -2103,8 +2131,8 @@ function roundwinnerdialog()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b76
+// Params 0
+// Checksum 0x0, Offset: 0x8c63
 // Size: 0x28f
 function gamewinnerdialog()
 {
@@ -2133,7 +2161,8 @@ function gamewinnerdialog()
     
     if ( isplayer( winner ) && !level.teambased )
     {
-        for (i = 0; i < level.placement[ "all" ].size; i++) {
+        for ( i = 0; i < level.placement[ "all" ].size ; i++ )
+        {
             player = level.placement[ "all" ][ i ];
             
             if ( player issplitscreenplayer() && !player issplitscreenplayerprimary() )
@@ -2209,8 +2238,8 @@ function gamewinnerdialog()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e0d
+// Params 0
+// Checksum 0x0, Offset: 0x8efa
 // Size: 0x44b
 function musiccontroller()
 {
@@ -2349,8 +2378,8 @@ function musiccontroller()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9260
+// Params 1
+// Checksum 0x0, Offset: 0x934d
 // Size: 0x5f
 function function_7fb5d63165248f4d( winningteam )
 {
@@ -2365,8 +2394,8 @@ function function_7fb5d63165248f4d( winningteam )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x92c7
+// Params 2
+// Checksum 0x0, Offset: 0x93b4
 // Size: 0x1b3, Type: bool
 function matchendingsoonleaderdialog( dialog, timeleftint )
 {
@@ -2428,8 +2457,8 @@ function matchendingsoonleaderdialog( dialog, timeleftint )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9483
+// Params 1
+// Checksum 0x0, Offset: 0x9570
 // Size: 0xa4
 function timelimitmusic( team )
 {
@@ -2452,8 +2481,8 @@ function timelimitmusic( team )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x952f
+// Params 0
+// Checksum 0x0, Offset: 0x961c
 // Size: 0x63
 function headquarters_newhq_music()
 {
@@ -2466,8 +2495,8 @@ function headquarters_newhq_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x959a
+// Params 0
+// Checksum 0x0, Offset: 0x9687
 // Size: 0x82
 function headquarters_captured_music()
 {
@@ -2484,8 +2513,8 @@ function headquarters_captured_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9624
+// Params 1
+// Checksum 0x0, Offset: 0x9711
 // Size: 0xac
 function headquarters_deactivate_music( claimteam )
 {
@@ -2510,8 +2539,8 @@ function headquarters_deactivate_music( claimteam )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x96d8
+// Params 1
+// Checksum 0x0, Offset: 0x97c5
 // Size: 0x8d
 function function_20981f58c35e2997( claimteam )
 {
@@ -2530,8 +2559,8 @@ function function_20981f58c35e2997( claimteam )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x976d
+// Params 0
+// Checksum 0x0, Offset: 0x985a
 // Size: 0x21
 function infected_music()
 {
@@ -2540,8 +2569,8 @@ function infected_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9796
+// Params 1
+// Checksum 0x0, Offset: 0x9883
 // Size: 0xf8
 function suspensemusic( var_8c71e0347db7824d )
 {
@@ -2593,8 +2622,8 @@ function suspensemusic( var_8c71e0347db7824d )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9896
+// Params 1
+// Checksum 0x0, Offset: 0x9983
 // Size: 0x17
 function suspensemusic_reset( waittime )
 {
@@ -2603,8 +2632,8 @@ function suspensemusic_reset( waittime )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98b5
+// Params 0
+// Checksum 0x0, Offset: 0x99a2
 // Size: 0x2e
 function stopsuspensemusic()
 {
@@ -2617,8 +2646,8 @@ function stopsuspensemusic()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98eb
+// Params 0
+// Checksum 0x0, Offset: 0x99d8
 // Size: 0x22
 function enablemusic()
 {
@@ -2631,8 +2660,8 @@ function enablemusic()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9915
+// Params 0
+// Checksum 0x0, Offset: 0x9a02
 // Size: 0x47
 function disablemusic()
 {
@@ -2654,8 +2683,8 @@ function disablemusic()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9964
+// Params 3
+// Checksum 0x0, Offset: 0x9a51
 // Size: 0x3f8
 function round_end_music( winner, endreasontext, endreasontextloss )
 {
@@ -2789,8 +2818,8 @@ function round_end_music( winner, endreasontext, endreasontextloss )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d64
+// Params 1
+// Checksum 0x0, Offset: 0x9e51
 // Size: 0xbe
 function function_4f651c1e1ec8dae6( winner )
 {
@@ -2815,8 +2844,8 @@ function function_4f651c1e1ec8dae6( winner )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e2a
+// Params 1
+// Checksum 0x0, Offset: 0x9f17
 // Size: 0xc5
 function function_6c71c8bc6495a0df( generic )
 {
@@ -2839,8 +2868,8 @@ function function_6c71c8bc6495a0df( generic )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ef7
+// Params 0
+// Checksum 0x0, Offset: 0x9fe4
 // Size: 0xdb
 function getarenaroundendmusictype()
 {
@@ -2879,8 +2908,8 @@ function getarenaroundendmusictype()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fdb
+// Params 1
+// Checksum 0x0, Offset: 0xa0c8
 // Size: 0xaf
 function function_aecafe54c65c0e35( players )
 {
@@ -2904,8 +2933,8 @@ function function_aecafe54c65c0e35( players )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa093
+// Params 3
+// Checksum 0x0, Offset: 0xa180
 // Size: 0x303
 function function_a486df26072a530a( circleindex, circletotal, var_2948ca54731de34f )
 {
@@ -2983,8 +3012,8 @@ function function_a486df26072a530a( circleindex, circletotal, var_2948ca54731de3
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa39e
+// Params 0
+// Checksum 0x0, Offset: 0xa48b
 // Size: 0xa
 function plunder_tenpercent_music()
 {
@@ -2992,8 +3021,8 @@ function plunder_tenpercent_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3b0
+// Params 0
+// Checksum 0x0, Offset: 0xa49d
 // Size: 0x83
 function plunder_thirtypercent_music()
 {
@@ -3017,8 +3046,8 @@ function plunder_thirtypercent_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa43b
+// Params 1
+// Checksum 0x0, Offset: 0xa528
 // Size: 0x8c
 function plunder_fiftypercent_music( team )
 {
@@ -3042,8 +3071,8 @@ function plunder_fiftypercent_music( team )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4cf
+// Params 1
+// Checksum 0x0, Offset: 0xa5bc
 // Size: 0x8c
 function plunder_seventyfivepercent_music( team )
 {
@@ -3067,8 +3096,8 @@ function plunder_seventyfivepercent_music( team )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa563
+// Params 1
+// Checksum 0x0, Offset: 0xa650
 // Size: 0x85
 function plunder_ninetypercent_music( team )
 {
@@ -3090,8 +3119,8 @@ function plunder_ninetypercent_music( team )
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5f0
+// Params 0
+// Checksum 0x0, Offset: 0xa6dd
 // Size: 0x74
 function plunder_overtime_music()
 {
@@ -3112,8 +3141,8 @@ function plunder_overtime_music()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa66c
+// Params 0
+// Checksum 0x0, Offset: 0xa759
 // Size: 0x30
 function function_283a36147406b42f()
 {
@@ -3127,8 +3156,8 @@ function function_283a36147406b42f()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6a4
+// Params 0
+// Checksum 0x0, Offset: 0xa791
 // Size: 0x26
 function function_c080ebbcdcc3176f()
 {
@@ -3140,8 +3169,8 @@ function function_c080ebbcdcc3176f()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6d2
+// Params 0
+// Checksum 0x0, Offset: 0xa7bf
 // Size: 0xd, Type: bool
 function ismusicenabled()
 {
@@ -3149,8 +3178,8 @@ function ismusicenabled()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6e8
+// Params 0
+// Checksum 0x0, Offset: 0xa7d5
 // Size: 0x35f
 function function_535120141f535b49()
 {
@@ -3288,8 +3317,8 @@ function function_535120141f535b49()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa4f
+// Params 0
+// Checksum 0x0, Offset: 0xab3c
 // Size: 0x70
 function function_32e2796e3dbf61ac()
 {
@@ -3310,8 +3339,8 @@ function function_32e2796e3dbf61ac()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaac7
+// Params 0
+// Checksum 0x0, Offset: 0xabb4
 // Size: 0x122
 function function_3f789f6e464550d8()
 {
@@ -3349,8 +3378,8 @@ function function_3f789f6e464550d8()
 }
 
 // Namespace music_and_dialog / scripts\mp\music_and_dialog
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xabf1
+// Params 0
+// Checksum 0x0, Offset: 0xacde
 // Size: 0x125
 function function_ee789bca4d90f206()
 {

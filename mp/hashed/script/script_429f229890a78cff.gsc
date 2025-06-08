@@ -5,7 +5,7 @@
 #namespace soldier_conversation;
 
 // Namespace soldier_conversation / namespace_a01fc1e44854f961
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5
 // Size: 0x3f
 function getfunction( funcid )
@@ -22,7 +22,7 @@ function getfunction( funcid )
 }
 
 // Namespace soldier_conversation / namespace_a01fc1e44854f961
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13d
 // Size: 0x10f
 function function_8190fffc19bdbc2a( interactionid )
@@ -54,7 +54,7 @@ function function_8190fffc19bdbc2a( interactionid )
 }
 
 // Namespace soldier_conversation / namespace_a01fc1e44854f961
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x254
 // Size: 0x1c
 function startcap( statename, params )

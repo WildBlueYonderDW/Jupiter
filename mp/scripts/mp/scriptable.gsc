@@ -6,7 +6,7 @@
 #namespace scriptable;
 
 // Namespace scriptable / scripts\mp\scriptable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd
 // Size: 0xe
 function scriptable_mpglobalcallback()
@@ -15,7 +15,7 @@ function scriptable_mpglobalcallback()
 }
 
 // Namespace scriptable / scripts\mp\scriptable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd3
 // Size: 0x34
 function scriptable_mpcallback()

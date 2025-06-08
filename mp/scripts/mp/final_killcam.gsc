@@ -16,7 +16,7 @@
 #namespace final_killcam;
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b2
 // Size: 0xb0
 function initfinalkillcam()
@@ -41,12 +41,13 @@ function initfinalkillcam()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36a
 // Size: 0x52
 function erasefinalkillcam()
 {
-    for (i = 0; i < level.teamnamelist.size; i++) {
+    for ( i = 0; i < level.teamnamelist.size ; i++ )
+    {
         level.finalkillcams[ level.teamnamelist[ i ] ] = undefined;
     }
     
@@ -55,7 +56,7 @@ function erasefinalkillcam()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c4
 // Size: 0x28e
 function preloadfinalkillcam()
@@ -177,7 +178,7 @@ function preloadfinalkillcam()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x65a
 // Size: 0x113
 function dopotgkillcam()
@@ -220,7 +221,7 @@ function dopotgkillcam()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x775
 // Size: 0xe2
 function dopotgkillcamforplayer()
@@ -252,7 +253,7 @@ function dopotgkillcamforplayer()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x85f
 // Size: 0x1a
 function potgkillcamover()
@@ -262,7 +263,7 @@ function potgkillcamover()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x881
 // Size: 0x2c1
 function dofinalkillcam()
@@ -346,7 +347,7 @@ function dofinalkillcam()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb4a
 // Size: 0x1e
 function waitanyplayersinkillcam()
@@ -362,7 +363,7 @@ function waitanyplayersinkillcam()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb70
 // Size: 0x39
 function finalkillcamplaybackbegin()
@@ -374,7 +375,7 @@ function finalkillcamplaybackbegin()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb1
 // Size: 0x52
 function watchplaybackend()
@@ -393,7 +394,7 @@ function watchplaybackend()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0xc0b
 // Size: 0x2c3
 function recordfinalkillcam( delay, victim, attacker, attackernum, einflictor, killcamentityindex, killcamentitystarttime, var_f2d4e6802c5d8473, objweapon, psoffsettime, smeansofdeath )
@@ -460,7 +461,7 @@ function recordfinalkillcam( delay, victim, attacker, attackernum, einflictor, k
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xed6
 // Size: 0x42
 function waitskipkillcambuttonduringdeathtimer()
@@ -474,7 +475,7 @@ function waitskipkillcambuttonduringdeathtimer()
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf20
 // Size: 0x23
 function waitskipkillcamduringdeathtimer( waittime )
@@ -486,7 +487,7 @@ function waitskipkillcamduringdeathtimer( waittime )
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf4b
 // Size: 0xa0, Type: bool
 function skipkillcamduringdeathtimer( waittime )
@@ -531,7 +532,7 @@ function skipkillcamduringdeathtimer( waittime )
 }
 
 // Namespace final_killcam / scripts\mp\final_killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xff4
 // Size: 0x61, Type: bool
 function anyplayersinkillcam()

@@ -7,7 +7,7 @@
 #namespace challenges_mp;
 
 // Namespace challenges_mp / scripts\mp\challenges_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb0
 // Size: 0x2
 function init()

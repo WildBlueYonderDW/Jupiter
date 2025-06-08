@@ -7,7 +7,7 @@
 #namespace ground_turret;
 
 // Namespace ground_turret / scripts\asm\soldier\ground_turret
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe1
 // Size: 0x56, Type: bool
 function aigroundturret_shouldcompletedismount( asmname, statename, tostatename, params )
@@ -33,7 +33,7 @@ function private function_9808f5689a4a7b1a()
 }
 
 // Namespace ground_turret / scripts\asm\soldier\ground_turret
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a0
 // Size: 0x56
 function playanim_mountturret( asmname, statename, params )
@@ -45,7 +45,7 @@ function playanim_mountturret( asmname, statename, params )
 }
 
 // Namespace ground_turret / scripts\asm\soldier\ground_turret
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fe
 // Size: 0xf6
 function playanim_aioperateturret( asmname, statename, params )
@@ -79,7 +79,7 @@ function playanim_aioperateturret( asmname, statename, params )
 }
 
 // Namespace ground_turret / scripts\asm\soldier\ground_turret
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2fc
 // Size: 0x2c
 function playanim_aibegindismountturret( asmname, statename, params )
@@ -89,7 +89,7 @@ function playanim_aibegindismountturret( asmname, statename, params )
 }
 
 // Namespace ground_turret / scripts\asm\soldier\ground_turret
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x330
 // Size: 0x3c
 function playanim_aidismountturret( asmname, statename, params )
@@ -104,7 +104,7 @@ function playanim_aidismountturret( asmname, statename, params )
 }
 
 // Namespace ground_turret / scripts\asm\soldier\ground_turret
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x374
 // Size: 0x6e
 function playdeathanim_groundturret( asmname, statename, params )
@@ -122,7 +122,7 @@ function playdeathanim_groundturret( asmname, statename, params )
 }
 
 // Namespace ground_turret / scripts\asm\soldier\ground_turret
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3ea
 // Size: 0x2c
 function function_e41fea1df987324a( asmname, statename, params )

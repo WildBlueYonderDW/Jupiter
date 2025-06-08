@@ -5,7 +5,7 @@
 #namespace killstreak_shared;
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x33d
 // Size: 0x52
 function function_df7ab5b0f898e8bc( var_da8e323244828792, initfunc )
@@ -20,7 +20,7 @@ function function_df7ab5b0f898e8bc( var_da8e323244828792, initfunc )
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x397
 // Size: 0x3b
 function initializekillstreak( var_1002ceb046a0d0f8 )
@@ -41,7 +41,7 @@ function initializekillstreak( var_1002ceb046a0d0f8 )
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3da
 // Size: 0x2b2, Type: bool
 function function_1f9e754f6b690e33( var_7b462cbed77404a0 )
@@ -143,7 +143,7 @@ function function_1f9e754f6b690e33( var_7b462cbed77404a0 )
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x695
 // Size: 0x59
 function function_2ff74098fad17213( var_cc673384f6943c85, var_acde90128b823518 )
@@ -163,7 +163,7 @@ function function_2ff74098fad17213( var_cc673384f6943c85, var_acde90128b823518 )
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f6
 // Size: 0x71
 function killstreak_savenvgstate()
@@ -186,7 +186,7 @@ function killstreak_savenvgstate()
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x76f
 // Size: 0x43
 function killstreak_restorenvgstate()
@@ -204,7 +204,7 @@ function killstreak_restorenvgstate()
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ba
 // Size: 0x10c
 function function_aa5200593ca327d2()
@@ -228,7 +228,7 @@ function function_aa5200593ca327d2()
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8ce
 // Size: 0xca
 function function_c0b0a582ff9e4d57( visionsetname, fadeintime, fadewait, fadeouttime )
@@ -270,7 +270,7 @@ function function_c0b0a582ff9e4d57( visionsetname, fadeintime, fadewait, fadeout
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9a0
 // Size: 0x46
 function function_a8f5c03158446d60( visionsetname )
@@ -290,7 +290,7 @@ function function_a8f5c03158446d60( visionsetname )
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ef
 // Size: 0x2d
 function function_58707ddfdd9744fa( visionsetname )
@@ -306,7 +306,7 @@ function function_58707ddfdd9744fa( visionsetname )
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa24
 // Size: 0x5f
 function function_c144de677d9b9175( visionsetname, visionsetstrength )
@@ -328,7 +328,7 @@ function function_c144de677d9b9175( visionsetname, visionsetstrength )
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa8b
 // Size: 0x4d
 function function_3de44eb7cdde2614( visionsetname )
@@ -343,7 +343,7 @@ function function_3de44eb7cdde2614( visionsetname )
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xae1
 // Size: 0x1b4
 function function_675ba1ee79efdc70( var_e127af0eab592c1a, var_e127ae0eab5929e7, var_e127ad0eab5927b4, var_e127ac0eab592581, var_e127ab0eab59234e, var_e127aa0eab59211b )
@@ -397,7 +397,7 @@ function function_675ba1ee79efdc70( var_e127af0eab592c1a, var_e127ae0eab5929e7, 
 }
 
 // Namespace killstreak_shared / scripts\killstreaks\killstreak_shared
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc9e
 // Size: 0x6f
 function function_e91e598bf5bb2ee5( msg, ent )

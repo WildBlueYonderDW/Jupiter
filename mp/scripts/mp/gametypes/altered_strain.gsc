@@ -10,7 +10,7 @@
 #namespace altered_strain;
 
 // Namespace altered_strain / scripts\mp\gametypes\altered_strain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28d
 // Size: 0xed
 function init()
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace altered_strain / scripts\mp\gametypes\altered_strain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x382
 // Size: 0x52
 function SetDvars()
@@ -42,7 +42,7 @@ function SetDvars()
 }
 
 // Namespace altered_strain / scripts\mp\gametypes\altered_strain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dc
 // Size: 0x7
 function function_d04b4a9729479cad()
@@ -51,7 +51,7 @@ function function_d04b4a9729479cad()
 }
 
 // Namespace altered_strain / scripts\mp\gametypes\altered_strain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ec
 // Size: 0x8d
 function get_reward()
@@ -63,7 +63,7 @@ function get_reward()
 }
 
 // Namespace altered_strain / scripts\mp\gametypes\altered_strain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x482
 // Size: 0x1c2
 function function_fba8eb934ad3b08b( reward )
@@ -128,7 +128,7 @@ function function_fba8eb934ad3b08b( reward )
 }
 
 // Namespace altered_strain / scripts\mp\gametypes\altered_strain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64c
 // Size: 0x30c
 function on_use( player )
@@ -214,7 +214,7 @@ function on_use( player )
 }
 
 // Namespace altered_strain / scripts\mp\gametypes\altered_strain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x960
 // Size: 0x85
 function function_c80fb54710c9e5aa( reward )

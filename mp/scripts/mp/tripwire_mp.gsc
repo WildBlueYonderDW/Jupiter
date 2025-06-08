@@ -6,7 +6,7 @@
 #namespace tripwire_mp;
 
 // Namespace tripwire_mp / scripts\mp\tripwire_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7
 // Size: 0x28
 function ontripwirecreate( tripwire )
@@ -15,7 +15,7 @@ function ontripwirecreate( tripwire )
 }
 
 // Namespace tripwire_mp / scripts\mp\tripwire_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd7
 // Size: 0x1c
 function ontripwiretriggered( player, tripwire )
@@ -24,7 +24,7 @@ function ontripwiretriggered( player, tripwire )
 }
 
 // Namespace tripwire_mp / scripts\mp\tripwire_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfb
 // Size: 0x25
 function ontripwiredefused( player, tripwire )

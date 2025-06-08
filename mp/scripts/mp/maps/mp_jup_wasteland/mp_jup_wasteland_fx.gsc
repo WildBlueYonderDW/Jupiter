@@ -3,7 +3,7 @@
 #namespace mp_jup_wasteland_fx;
 
 // Namespace mp_jup_wasteland_fx / scripts\mp\maps\mp_jup_wasteland\mp_jup_wasteland_fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe2
 // Size: 0x5b
 function main()
@@ -20,7 +20,7 @@ function main()
 }
 
 // Namespace mp_jup_wasteland_fx / scripts\mp\maps\mp_jup_wasteland\mp_jup_wasteland_fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x145
 // Size: 0x79
 function function_a520347b8e7b8543()

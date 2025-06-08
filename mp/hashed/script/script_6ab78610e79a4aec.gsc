@@ -18,7 +18,7 @@
 #namespace namespace_d10869fbc73f98d7;
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x470
 // Size: 0x21d
 function init()
@@ -61,7 +61,7 @@ function init()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x695
 // Size: 0x48, Type: bool
 function trtablet_init()
@@ -83,7 +83,7 @@ function trtablet_init()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e6
 // Size: 0x302
 function takequestitem( pickupent )
@@ -142,7 +142,7 @@ function takequestitem( pickupent )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f0
 // Size: 0x37
 function checkforcorrectinstance( player )
@@ -156,7 +156,7 @@ function checkforcorrectinstance( player )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa2f
 // Size: 0x81
 function tr_vehiclesearchparams( searchcircleorigin )
@@ -173,7 +173,7 @@ function tr_vehiclesearchparams( searchcircleorigin )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xab9
 // Size: 0x11e
 function tr_kiosksearchparams( tablet )
@@ -194,7 +194,7 @@ function tr_kiosksearchparams( tablet )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbe0
 // Size: 0x1a2
 function tr_findvehicle( search_params )
@@ -242,7 +242,7 @@ function tr_findvehicle( search_params )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd8a
 // Size: 0xca
 function watchforentervehicle()
@@ -263,7 +263,7 @@ function watchforentervehicle()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe5c
 // Size: 0x79
 function cleanupvehicleoutline()
@@ -288,7 +288,7 @@ function cleanupvehicleoutline()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xedd
 // Size: 0xe0
 function tr_createquestlocale( placement )
@@ -315,7 +315,7 @@ function tr_createquestlocale( placement )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfc6
 // Size: 0x1bd, Type: bool
 function setuplocalelocation( placedorigin )
@@ -364,7 +364,7 @@ function setuplocalelocation( placedorigin )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x118c
 // Size: 0xe5
 function timedrun_finishlinevfx( spawn_origin, team )
@@ -388,7 +388,7 @@ function timedrun_finishlinevfx( spawn_origin, team )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1279
 // Size: 0x1c
 function tr_removequestinstance()
@@ -401,7 +401,7 @@ function tr_removequestinstance()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x129d
 // Size: 0x36
 function tr_removelocaleinstance()
@@ -417,7 +417,7 @@ function tr_removelocaleinstance()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12db
 // Size: 0x9d
 function tr_detectwinners()
@@ -436,7 +436,7 @@ function tr_detectwinners()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1380
 // Size: 0x155
 function completetimedrunquest( kiosk )
@@ -468,7 +468,7 @@ function completetimedrunquest( kiosk )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14dd
 // Size: 0x51
 function failtimedrunquest()
@@ -484,7 +484,7 @@ function failtimedrunquest()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1536
 // Size: 0x32
 function tr_ontimerexpired()
@@ -494,7 +494,7 @@ function tr_ontimerexpired()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1570
 // Size: 0x10a
 function tr_circletick( dangercircleorigin, dangercircleradius )
@@ -532,7 +532,7 @@ function tr_circletick( dangercircleorigin, dangercircleradius )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1682
 // Size: 0x7f
 function tr_playerdisconnect( disconnectplayer )
@@ -550,7 +550,7 @@ function tr_playerdisconnect( disconnectplayer )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1709
 // Size: 0x30
 function tr_entergulag( player )
@@ -569,7 +569,7 @@ function tr_entergulag( player )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1741
 // Size: 0x45
 function tr_respawn( player )
@@ -588,7 +588,7 @@ function tr_respawn( player )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x178e
 // Size: 0x14b
 function updatetimedrunhud()
@@ -625,7 +625,7 @@ function updatetimedrunhud()
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18e1
 // Size: 0x25
 function hidetimedrunhudfromplayer( player )
@@ -639,7 +639,7 @@ function hidetimedrunhudfromplayer( player )
 }
 
 // Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x190e
 // Size: 0x67
 function deletetimedrunhud()

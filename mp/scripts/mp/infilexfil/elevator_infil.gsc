@@ -17,7 +17,7 @@
 #namespace elevator_infil;
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaa7
 // Size: 0xaf
 function elevator_init( subtype )
@@ -41,7 +41,7 @@ function elevator_init( subtype )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb5e
 // Size: 0xb2
 function elevator_spawn( team, target, subtype, originalsubtype )
@@ -61,7 +61,7 @@ function elevator_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc19
 // Size: 0x32
 function function_84f93b207a7228ed( subtype )
@@ -71,7 +71,7 @@ function function_84f93b207a7228ed( subtype )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc54
 // Size: 0x254
 function function_950c2d7fd506dfe9( infil, spot_index )
@@ -132,7 +132,7 @@ function function_950c2d7fd506dfe9( infil, spot_index )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb0
 // Size: 0x118
 function giveinteractiveinfilweapon()
@@ -170,7 +170,7 @@ function giveinteractiveinfilweapon()
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd0
 // Size: 0x4d
 function function_f7b243e6d0b2111d()
@@ -181,7 +181,7 @@ function function_f7b243e6d0b2111d()
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1025
 // Size: 0x27
 function resetfov()
@@ -193,7 +193,7 @@ function resetfov()
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1054
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -211,7 +211,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1098
 // Size: 0x53
 function player_infil_end()
@@ -227,7 +227,7 @@ function player_infil_end()
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f3
 // Size: 0x4c
 function player_disconnect()
@@ -246,7 +246,7 @@ function player_disconnect()
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1147
 // Size: 0xed
 function infilthink( team, scene_name )
@@ -274,7 +274,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x123c
 // Size: 0x11d
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -296,7 +296,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1361
 // Size: 0x85
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -308,7 +308,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13ee
 // Size: 0x2a3
 function initanims( subtype )
@@ -342,7 +342,7 @@ function initanims( subtype )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1699
 // Size: 0x5c1
 function script_model_anims( subtype )
@@ -412,7 +412,7 @@ function script_model_anims( subtype )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c62
 // Size: 0x91
 function vehicles_anims( subtype )
@@ -430,7 +430,7 @@ function vehicles_anims( subtype )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1cfb
 // Size: 0x100
 function function_8c5763245370329b( scene_node, team, scene_name, anim_name )
@@ -455,7 +455,7 @@ function function_8c5763245370329b( scene_node, team, scene_name, anim_name )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1e04
 // Size: 0x7b
 function spawnactor( var_850c2b49aa0be5c1, team, scene_node, model_body, model_head, animname )
@@ -468,7 +468,7 @@ function spawnactor( var_850c2b49aa0be5c1, team, scene_node, model_body, model_h
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1e87
 // Size: 0x145
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -500,7 +500,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1fd5
 // Size: 0xbc
 function function_bd10d10751076106( var_850c2b49aa0be5c1, team, scene_node, model, animname )
@@ -518,7 +518,7 @@ function function_bd10d10751076106( var_850c2b49aa0be5c1, team, scene_node, mode
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2099
 // Size: 0x94
 function infil_radio_idle( infil )
@@ -549,7 +549,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2135
 // Size: 0xe9
 function function_ecdf95fdeff5b706( elevator_a, elevator_b )
@@ -572,7 +572,7 @@ function function_ecdf95fdeff5b706( elevator_a, elevator_b )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2226
 // Size: 0x48
 function function_e629aaf4ab9ae901( timer )
@@ -592,7 +592,7 @@ function function_e629aaf4ab9ae901( timer )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2277
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -608,7 +608,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22ad
 // Size: 0x19
 function function_438c617a7d6892c8()
@@ -619,7 +619,7 @@ function function_438c617a7d6892c8()
 }
 
 // Namespace elevator_infil / scripts\mp\infilexfil\elevator_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22ce
 // Size: 0x13
 function function_6158ef142e9bd640()

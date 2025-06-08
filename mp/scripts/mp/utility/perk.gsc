@@ -5,7 +5,7 @@
 #namespace perk;
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7
 // Size: 0xb
 function perksenabled()
@@ -14,7 +14,7 @@ function perksenabled()
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbb
 // Size: 0x12
 function _hasperk( perkname )
@@ -23,7 +23,7 @@ function _hasperk( perkname )
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd6
 // Size: 0x55
 function giveperk( perkname )
@@ -36,7 +36,7 @@ function giveperk( perkname )
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x133
 // Size: 0x9
 function resetperkpackage()
@@ -45,7 +45,7 @@ function resetperkpackage()
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x144
 // Size: 0x69
 function removeperk( perkname )
@@ -69,7 +69,7 @@ function removeperk( perkname )
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x17d
 function blockperkfunction( perkname )
@@ -123,7 +123,7 @@ function blockperkfunction( perkname )
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33a
 // Size: 0x1c4
 function unblockperkfunction( perkname )
@@ -170,7 +170,7 @@ function unblockperkfunction( perkname )
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x506
 // Size: 0x28
 function getbaseperkname( perkname )
@@ -184,7 +184,7 @@ function getbaseperkname( perkname )
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x537
 // Size: 0x7
 function lightweightscalar()
@@ -193,7 +193,7 @@ function lightweightscalar()
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x547
 // Size: 0x2d, Type: bool
 function function_8641edd897d42547( perkname )
@@ -212,7 +212,7 @@ function function_8641edd897d42547( perkname )
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57d
 // Size: 0x48
 function function_97cbc67b162a70f4()
@@ -227,11 +227,11 @@ function function_97cbc67b162a70f4()
         return istrue( level.gamemodebundle.var_ac36c9085edf4e44 );
     }
     
-    return getdvarint( @"hash_b01050da9b96d273", 1 );
+    return getdvarint( @"perk_package_enabled", 1 );
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ce
 // Size: 0x33
 function function_ea4c5dc15c3bbdd9()
@@ -245,7 +245,7 @@ function function_ea4c5dc15c3bbdd9()
 }
 
 // Namespace perk / scripts\mp\utility\perk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x60a
 // Size: 0x25, Type: bool
 function function_d327b07e25d475e1()

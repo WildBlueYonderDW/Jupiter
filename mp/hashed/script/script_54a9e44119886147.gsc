@@ -6,7 +6,7 @@
 #namespace combat_action;
 
 // Namespace combat_action / namespace_41cf72abc6042f25
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x142
 // Size: 0x57
 function createaction( target )
@@ -17,7 +17,7 @@ function createaction( target )
 }
 
 // Namespace combat_action / namespace_41cf72abc6042f25
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a2
 // Size: 0x250
 function actionprocess( bot )
@@ -93,7 +93,7 @@ function actionprocess( bot )
 }
 
 // Namespace combat_action / namespace_41cf72abc6042f25
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fa
 // Size: 0x88
 function modifyinaccuracy( bot )
@@ -109,7 +109,7 @@ function modifyinaccuracy( bot )
 }
 
 // Namespace combat_action / namespace_41cf72abc6042f25
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48a
 // Size: 0x47
 function function_f4caae7e8af9d32c( action )

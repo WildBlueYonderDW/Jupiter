@@ -7,7 +7,7 @@
 #namespace inventory_utility;
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2f8
 // Size: 0x42
 function _giveweapon( weapon, variant, dualwieldoverride, usedbefore )
@@ -26,7 +26,7 @@ function _giveweapon( weapon, variant, dualwieldoverride, usedbefore )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x342
 // Size: 0x23
 function _switchtoweapon( weapon )
@@ -39,7 +39,7 @@ function _switchtoweapon( weapon )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36d
 // Size: 0x23
 function _switchtoweaponimmediate( weapon )
@@ -52,7 +52,7 @@ function _switchtoweaponimmediate( weapon )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x398
 // Size: 0xdf
 function _takeweapon( weapon )
@@ -102,7 +102,7 @@ function _takeweapon( weapon )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47f
 // Size: 0x7b
 function takeweaponwhensafe( weapon )
@@ -140,7 +140,7 @@ function takeweaponwhensafe( weapon )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x502
 // Size: 0x27
 function getcurrentmonitoredweaponswitchweapon()
@@ -157,7 +157,7 @@ function getcurrentmonitoredweaponswitchweapon()
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x532
 // Size: 0x9, Type: bool
 function isanymonitoredweaponswitchinprogress()
@@ -166,7 +166,7 @@ function isanymonitoredweaponswitchinprogress()
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x544
 // Size: 0x42, Type: bool
 function isswitchingtoweaponwithmonitoring( weapon )
@@ -181,7 +181,7 @@ function isswitchingtoweaponwithmonitoring( weapon )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x58f
 // Size: 0x109, Type: bool
 function candomonitoredswitchtoweapon( weapon, var_26ca36763fa5b82 )
@@ -237,7 +237,7 @@ function candomonitoredswitchtoweapon( weapon, var_26ca36763fa5b82 )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a1
 // Size: 0x4c
 function abortmonitoredweaponswitch( weapon )
@@ -257,7 +257,7 @@ function abortmonitoredweaponswitch( weapon )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6f6
 // Size: 0x14e
 function domonitoredweaponswitch( weapon, switchimmediate, var_26ca36763fa5b82, canceloffhand )
@@ -337,7 +337,7 @@ function domonitoredweaponswitch( weapon, switchimmediate, var_26ca36763fa5b82, 
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84c
 // Size: 0x7
 function function_ed0dd95e839cd2a9()
@@ -346,7 +346,7 @@ function function_ed0dd95e839cd2a9()
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x85c
 // Size: 0x7
 function function_3d5c51904fd25773()
@@ -355,7 +355,7 @@ function function_3d5c51904fd25773()
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x86c
 // Size: 0x18
 function function_fc6a5b145563be33( switchimmediate )
@@ -364,7 +364,7 @@ function function_fc6a5b145563be33( switchimmediate )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x88d
 // Size: 0x18
 function function_f1e9d0c09f38006b( switchimmediate )
@@ -373,7 +373,7 @@ function function_f1e9d0c09f38006b( switchimmediate )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8ae
 // Size: 0xee
 function function_6d53276bd8e3c46d( switchimmediate, weaponname )
@@ -420,7 +420,7 @@ function function_6d53276bd8e3c46d( switchimmediate, weaponname )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a5
 // Size: 0x128
 function function_9897d143c3feee05()
@@ -468,7 +468,7 @@ function function_9897d143c3feee05()
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xad5
 // Size: 0x26
 function validatehighpriorityflag()
@@ -482,7 +482,7 @@ function validatehighpriorityflag()
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb03
 // Size: 0xb6, Type: bool
 function getridofweapon( weapon, switchimmediate )
@@ -532,7 +532,7 @@ function getridofweapon( weapon, switchimmediate )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbc2
 // Size: 0x290
 function forcevalidweapon( bestweaponobj )
@@ -651,7 +651,7 @@ function forcevalidweapon( bestweaponobj )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe5a
 // Size: 0x2a
 function iscurrentweapon( weapon )
@@ -665,7 +665,7 @@ function iscurrentweapon( weapon )
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8d
 // Size: 0x76
 function getcurrentprimaryweaponsminusalt()
@@ -687,7 +687,7 @@ function getcurrentprimaryweaponsminusalt()
 /#
 
     // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xf0c
     // Size: 0x5d, Type: dev
     function debugweaponchangeprint( message, weapon )

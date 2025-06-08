@@ -4,7 +4,7 @@
 #namespace mp_jup_sira_ob_interactions_aether_tear_cs;
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17e
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f3
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x262
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aa
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b4
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ca
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x33c
 // Size: 0x83
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -119,7 +119,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3c7
 // Size: 0x2c
 function function_8e4b53ac550b4c26( fe, us, cf )
@@ -128,7 +128,7 @@ function function_8e4b53ac550b4c26( fe, us, cf )
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3fb
 // Size: 0x2c
 function function_e81cb5e284123692( fe, us, cf )
@@ -137,7 +137,7 @@ function function_e81cb5e284123692( fe, us, cf )
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x42f
 // Size: 0x2c
 function function_65dfff9be8c818f3( fe, us, cf )
@@ -146,7 +146,7 @@ function function_65dfff9be8c818f3( fe, us, cf )
 }
 
 // Namespace mp_jup_sira_ob_interactions_aether_tear_cs / namespace_42a5ee9cd7bde0c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x463
 // Size: 0x1e0
 function function_6da2952367672ac0()

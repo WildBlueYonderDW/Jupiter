@@ -15,7 +15,7 @@
 #namespace br_convoy;
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x410
 // Size: 0x15
 function unimogtest( c130pathstruct )
@@ -24,7 +24,7 @@ function unimogtest( c130pathstruct )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42d
 // Size: 0x15
 function unimogsnatch( c130pathstruct )
@@ -33,7 +33,7 @@ function unimogsnatch( c130pathstruct )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44a
 // Size: 0x2e1
 function spawntestconvoy( c130pathstruct )
@@ -42,7 +42,8 @@ function spawntestconvoy( c130pathstruct )
     paths = getvehiclenodearray( "br_convoy", "targetname" );
     var_4d4d20d31099d146 = [];
     
-    for (i = 0; i < paths.size; i++) {
+    for ( i = 0; i < paths.size ; i++ )
+    {
         var_4d4d20d31099d146[ i ] = paths[ i ];
     }
     
@@ -51,7 +52,8 @@ function spawntestconvoy( c130pathstruct )
     var_d2392c09df33a38f = vectortoangles( var_252e739bc4f9bf6a )[ 1 ];
     var_4a1a4bec206cbba2 = [];
     
-    for (i = 0; i < paths.size; i++) {
+    for ( i = 0; i < paths.size ; i++ )
+    {
         tostartnode = var_4d4d20d31099d146[ i ].origin - mapcenter;
         var_4a1a4bec206cbba2[ i ] = vectortoangles( tostartnode )[ 1 ];
     }
@@ -59,7 +61,8 @@ function spawntestconvoy( c130pathstruct )
     var_85ab47ef7f70892e = -1;
     var_76714bf77c396ac3 = -1;
     
-    for (i = 0; i < paths.size; i++) {
+    for ( i = 0; i < paths.size ; i++ )
+    {
         if ( var_d2392c09df33a38f < var_4a1a4bec206cbba2[ i ] )
         {
             var_76714bf77c396ac3 = i;
@@ -72,7 +75,8 @@ function spawntestconvoy( c130pathstruct )
         }
     }
     
-    for (i = 0; i < paths.size; i++) {
+    for ( i = 0; i < paths.size ; i++ )
+    {
         if ( var_d2392c09df33a38f > var_4a1a4bec206cbba2[ i ] )
         {
             var_85ab47ef7f70892e = i;
@@ -99,7 +103,8 @@ function spawntestconvoy( c130pathstruct )
         println( "<dev string:x1c>" + var_85ab47ef7f70892e + "<dev string:x54>" + var_76714bf77c396ac3 );
         println( "<dev string:x5e>" + var_4a1a4bec206cbba2[ var_85ab47ef7f70892e ] + "<dev string:x6d>" + var_4a1a4bec206cbba2[ var_76714bf77c396ac3 ] );
         
-        for (i = 0; i < var_4a1a4bec206cbba2.size; i++) {
+        for ( i = 0; i < var_4a1a4bec206cbba2.size ; i++ )
+        {
             println( "<dev string:x76>" + i + "<dev string:x81>" + var_4a1a4bec206cbba2[ i ] );
         }
     #/
@@ -107,7 +112,8 @@ function spawntestconvoy( c130pathstruct )
     var_3dd1974e56ef9f1c = 1;
     pathindices = [ var_85ab47ef7f70892e, var_76714bf77c396ac3 ];
     
-    for (i = 0; i < var_3dd1974e56ef9f1c; i++) {
+    for ( i = 0; i < var_3dd1974e56ef9f1c ; i++ )
+    {
         if ( var_85ab47ef7f70892e - 1 - i <= 0 )
         {
             pathindices[ pathindices.size ] = paths.size - 1 - i;
@@ -130,18 +136,20 @@ function spawntestconvoy( c130pathstruct )
     }
     
     /#
-        for (i = 0; i < pathindices.size; i++) {
+        for ( i = 0; i < pathindices.size ; i++ )
+        {
             println( "<dev string:xa9>" + i + "<dev string:x81>" + pathindices[ i ] );
         }
     #/
     
-    for (i = 0; i < pathindices.size; i++) {
+    for ( i = 0; i < pathindices.size ; i++ )
+    {
         thread spawnconvoyatpath( paths[ pathindices[ i ] ] );
     }
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x733
 // Size: 0x367
 function spawnspreadconvoy( c130pathstruct )
@@ -161,7 +169,8 @@ function spawnspreadconvoy( c130pathstruct )
     paths = array_remove_array( paths, removelist );
     var_4d4d20d31099d146 = [];
     
-    for (i = 0; i < paths.size; i++) {
+    for ( i = 0; i < paths.size ; i++ )
+    {
         var_4d4d20d31099d146[ i ] = paths[ i ];
     }
     
@@ -170,7 +179,8 @@ function spawnspreadconvoy( c130pathstruct )
     var_d2392c09df33a38f = vectortoangles( var_252e739bc4f9bf6a )[ 1 ];
     var_4a1a4bec206cbba2 = [];
     
-    for (i = 0; i < paths.size; i++) {
+    for ( i = 0; i < paths.size ; i++ )
+    {
         tostartnode = var_4d4d20d31099d146[ i ].origin - mapcenter;
         var_4a1a4bec206cbba2[ i ] = vectortoangles( tostartnode )[ 1 ];
     }
@@ -178,7 +188,8 @@ function spawnspreadconvoy( c130pathstruct )
     var_85ab47ef7f70892e = -1;
     var_76714bf77c396ac3 = -1;
     
-    for (i = 0; i < paths.size; i++) {
+    for ( i = 0; i < paths.size ; i++ )
+    {
         if ( var_d2392c09df33a38f < var_4a1a4bec206cbba2[ i ] )
         {
             var_76714bf77c396ac3 = i;
@@ -191,7 +202,8 @@ function spawnspreadconvoy( c130pathstruct )
         }
     }
     
-    for (i = 0; i < paths.size; i++) {
+    for ( i = 0; i < paths.size ; i++ )
+    {
         if ( var_d2392c09df33a38f > var_4a1a4bec206cbba2[ i ] )
         {
             var_85ab47ef7f70892e = i;
@@ -218,7 +230,8 @@ function spawnspreadconvoy( c130pathstruct )
         println( "<dev string:x1c>" + var_85ab47ef7f70892e + "<dev string:x54>" + var_76714bf77c396ac3 );
         println( "<dev string:x5e>" + var_4a1a4bec206cbba2[ var_85ab47ef7f70892e ] + "<dev string:x6d>" + var_4a1a4bec206cbba2[ var_76714bf77c396ac3 ] );
         
-        for (i = 0; i < var_4a1a4bec206cbba2.size; i++) {
+        for ( i = 0; i < var_4a1a4bec206cbba2.size ; i++ )
+        {
             println( "<dev string:x76>" + i + "<dev string:x81>" + var_4a1a4bec206cbba2[ i ] );
         }
     #/
@@ -226,7 +239,8 @@ function spawnspreadconvoy( c130pathstruct )
     var_3dd1974e56ef9f1c = 4;
     pathindices = [ var_85ab47ef7f70892e, var_76714bf77c396ac3 ];
     
-    for (i = 0; i < var_3dd1974e56ef9f1c; i++) {
+    for ( i = 0; i < var_3dd1974e56ef9f1c ; i++ )
+    {
         if ( var_85ab47ef7f70892e - 1 - i <= 0 )
         {
             pathindices[ pathindices.size ] = paths.size - 1 - i;
@@ -249,18 +263,20 @@ function spawnspreadconvoy( c130pathstruct )
     }
     
     /#
-        for (i = 0; i < pathindices.size; i++) {
+        for ( i = 0; i < pathindices.size ; i++ )
+        {
             println( "<dev string:xa9>" + i + "<dev string:x81>" + pathindices[ i ] );
         }
     #/
     
-    for (i = 0; i < pathindices.size; i++) {
+    for ( i = 0; i < pathindices.size ; i++ )
+    {
         thread spawnhalfconvoyatpath( paths[ pathindices[ i ] ] );
     }
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaa2
 // Size: 0x12b
 function spawnhalfconvoyatpath( path )
@@ -278,7 +294,8 @@ function spawnhalfconvoyatpath( path )
     
     trucks = [];
     
-    for (j = 0; j < 2; j++) {
+    for ( j = 0; j < 2 ; j++ )
+    {
         truck = spawntruck( path, path.angles, goleft );
         trucks[ trucks.size ] = truck;
         wait 1.333;
@@ -295,25 +312,28 @@ function spawnhalfconvoyatpath( path )
         truckspeed = 25;
     }
     
-    for (j = 0; j < trucks.size; j++) {
+    for ( j = 0; j < trucks.size ; j++ )
+    {
         trucks[ j ] vehicle_setspeedimmediate( var_565e98c561535a89, 30, 30 );
     }
     
     wait 10;
     
-    for (j = 0; j < trucks.size; j++) {
+    for ( j = 0; j < trucks.size ; j++ )
+    {
         trucks[ j ] vehicle_setspeedimmediate( var_565e98c561535a89 * 2, 30, 30 );
     }
     
     wait 4;
     
-    for (j = 0; j < trucks.size; j++) {
+    for ( j = 0; j < trucks.size ; j++ )
+    {
         trucks[ j ] vehicle_setspeedimmediate( truckspeed, 30, 30 );
     }
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbd5
 // Size: 0xc8
 function spawnconvoyatpath( path )
@@ -331,24 +351,27 @@ function spawnconvoyatpath( path )
     
     trucks = [];
     
-    for (j = 0; j < 4; j++) {
+    for ( j = 0; j < 4 ; j++ )
+    {
         trucks[ trucks.size ] = spawntruck( path, path.angles, goleft );
         wait 1.333;
     }
     
-    for (j = 0; j < trucks.size; j++) {
+    for ( j = 0; j < trucks.size ; j++ )
+    {
         trucks[ j ] vehicle_setspeedimmediate( 15, 30, 30 );
     }
     
     wait 12;
     
-    for (j = 0; j < trucks.size; j++) {
+    for ( j = 0; j < trucks.size ; j++ )
+    {
         trucks[ j ] vehicle_setspeedimmediate( 25, 30, 30 );
     }
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xca5
 // Size: 0xc2
 function spawntruck( path, spawnori, left )
@@ -366,7 +389,7 @@ function spawntruck( path, spawnori, left )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd70
 // Size: 0x13b
 function vehiclefollowpath( path_node )
@@ -376,7 +399,8 @@ function vehiclefollowpath( path_node )
     self startpath( path_node );
     self playloopsound( "iw8_mp_snatch_convoy_lp" );
     
-    for (next_node = getvehiclenode( path_node.target, "targetname" ); isdefined( next_node ); next_node = getvehiclenode( next_node.target, "targetname" )) {
+    for ( next_node = getvehiclenode( path_node.target, "targetname" ); isdefined( next_node ) ; next_node = getvehiclenode( next_node.target, "targetname" ) )
+    {
         next_node waittill( "trigger" );
         
         if ( !isdefined( next_node.target ) )
@@ -387,7 +411,8 @@ function vehiclefollowpath( path_node )
     
     self vehicle_setspeed( 0, 30, 30 );
     
-    for (vel = self vehicle_getspeed(); vel > 1; vel = self vehicle_getspeed()) {
+    for ( vel = self vehicle_getspeed(); vel > 1 ; vel = self vehicle_getspeed() )
+    {
         wait 0.1;
     }
     
@@ -404,7 +429,7 @@ function vehiclefollowpath( path_node )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb3
 // Size: 0x167
 function spawnplayertoconvoy()
@@ -455,7 +480,7 @@ function spawnplayertoconvoy()
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1022
 // Size: 0x50
 function jumplistener( truck )
@@ -471,7 +496,7 @@ function jumplistener( truck )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107a
 // Size: 0x98
 function kickanyremainingplayers()
@@ -489,7 +514,7 @@ function kickanyremainingplayers()
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x111a
 // Size: 0x3f
 function listenkick( truck )
@@ -504,7 +529,7 @@ function listenkick( truck )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1161
 // Size: 0xfb
 function listenjump( truck )
@@ -554,7 +579,7 @@ function listenjump( truck )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1264
 // Size: 0x272
 function jumpout( truck )
@@ -628,7 +653,7 @@ function jumpout( truck )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14de
 // Size: 0x58
 function orbitcam( truck )
@@ -642,7 +667,7 @@ function orbitcam( truck )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x153e
 // Size: 0x68, Type: bool
 function aretrucksvalid()
@@ -659,7 +684,7 @@ function aretrucksvalid()
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15af
 // Size: 0x15f
 function getnexttruckwithroom( team )
@@ -700,7 +725,7 @@ function getnexttruckwithroom( team )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1717
 // Size: 0x1a, Type: bool
 function istruckfull( truck )
@@ -709,7 +734,7 @@ function istruckfull( truck )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x173a
 // Size: 0x2c, Type: bool
 function sorttrucksize( a, b )
@@ -718,7 +743,7 @@ function sorttrucksize( a, b )
 }
 
 // Namespace br_convoy / scripts\mp\gametypes\br_convoy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x176f
 // Size: 0x84
 function showicon()

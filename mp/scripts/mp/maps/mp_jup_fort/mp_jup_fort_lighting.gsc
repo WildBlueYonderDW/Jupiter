@@ -7,7 +7,7 @@
 #namespace mp_jup_fort_lighting;
 
 // Namespace mp_jup_fort_lighting / scripts\mp\maps\mp_jup_fort\mp_jup_fort_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd3
 // Size: 0x11
 function main()
@@ -17,7 +17,7 @@ function main()
 }
 
 // Namespace mp_jup_fort_lighting / scripts\mp\maps\mp_jup_fort\mp_jup_fort_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xec
 // Size: 0x2
 function lighting_setup_dvars()
@@ -26,7 +26,7 @@ function lighting_setup_dvars()
 }
 
 // Namespace mp_jup_fort_lighting / scripts\mp\maps\mp_jup_fort\mp_jup_fort_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf6
 // Size: 0x6e
 function function_448f852a8710b8ea()
@@ -40,7 +40,7 @@ function function_448f852a8710b8ea()
 }
 
 // Namespace mp_jup_fort_lighting / scripts\mp\maps\mp_jup_fort\mp_jup_fort_lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c
 // Size: 0x87
 function function_bfd6485208f4b621( params )
@@ -74,7 +74,7 @@ function private function_e05a4e827e4d647a( time, endintensity )
 }
 
 // Namespace mp_jup_fort_lighting / scripts\mp\maps\mp_jup_fort\mp_jup_fort_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x225
 // Size: 0x53
 function function_88cd754a904f2c0a()

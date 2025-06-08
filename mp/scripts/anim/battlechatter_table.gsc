@@ -4,7 +4,7 @@
 #namespace battlechatter_table;
 
 // Namespace battlechatter_table / scripts\anim\battlechatter_table
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xa8
 // Size: 0xd5
 function bctable_setfiles( category, filename1, filename2, filename3, filename4, filename5, filename6 )
@@ -53,12 +53,13 @@ function bctable_setfiles( category, filename1, filename2, filename3, filename4,
 }
 
 // Namespace battlechatter_table / scripts\anim\battlechatter_table
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x185
 // Size: 0x142
 function bctable_addfile( category, filename )
 {
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         tbltype = tolower( tablelookupbyrow( filename, row, 0 ) );
         tblmodifier = tolower( tablelookupbyrow( filename, row, 1 ) );
         var_37bccd17fea9d291 = [];
@@ -103,7 +104,7 @@ function bctable_addfile( category, filename )
 }
 
 // Namespace battlechatter_table / scripts\anim\battlechatter_table
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cf
 // Size: 0x279
 function bctable_pickaliasset( category, type, modifier )
@@ -120,7 +121,8 @@ function bctable_pickaliasset( category, type, modifier )
     {
         anim.bctabledeck[ category ][ key ] = [];
         
-        for (index = 0; index < anim.bctable[ category ][ key ].size; index++) {
+        for ( index = 0; index < anim.bctable[ category ][ key ].size ; index++ )
+        {
             anim.bctabledeck[ category ][ key ][ index ] = index;
         }
         
@@ -163,7 +165,7 @@ function bctable_pickaliasset( category, type, modifier )
 }
 
 // Namespace battlechatter_table / scripts\anim\battlechatter_table
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x551
 // Size: 0x79, Type: bool
 function bctable_exists( category, type, modifier )
@@ -189,7 +191,7 @@ function bctable_exists( category, type, modifier )
 }
 
 // Namespace battlechatter_table / scripts\anim\battlechatter_table
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d3
 // Size: 0x3e
 function bctable_categorykey( type, modifier )

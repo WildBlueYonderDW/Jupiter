@@ -19,7 +19,7 @@
 #namespace br_respawn;
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fa
 // Size: 0x86
 function init()
@@ -44,14 +44,15 @@ function init()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x688
 // Size: 0x63
 function removeambulances()
 {
     var_aa43b883cba2c7fd = getstructarray( "br_respawn_station", "targetname" );
     
-    for (i = 0; i < var_aa43b883cba2c7fd.size; i++) {
+    for ( i = 0; i < var_aa43b883cba2c7fd.size ; i++ )
+    {
         collision = getent( var_aa43b883cba2c7fd[ i ].target, "targetname" );
         
         if ( isdefined( collision ) )
@@ -62,7 +63,7 @@ function removeambulances()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f3
 // Size: 0xbf
 function spawnambulance( struct )
@@ -92,7 +93,7 @@ function spawnambulance( struct )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7bb
 // Size: 0x169
 function ambulancesetup( struct )
@@ -137,7 +138,7 @@ function ambulancesetup( struct )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92c
 // Size: 0x6c
 function ambulancelights()
@@ -149,7 +150,7 @@ function ambulancelights()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a0
 // Size: 0x35
 function ambulancethink()
@@ -164,7 +165,7 @@ function ambulancethink()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9dd
 // Size: 0xc
 function setuphud()
@@ -173,7 +174,7 @@ function setuphud()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9f1
 // Size: 0x20
 function initplayer()
@@ -188,7 +189,7 @@ function initplayer()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa19
 // Size: 0x92
 function hideallambulancesforteam( team, var_7a6a0b6777c25197 )
@@ -213,12 +214,13 @@ function hideallambulancesforteam( team, var_7a6a0b6777c25197 )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xab3
 // Size: 0x60
 function hideallambulancesforplayer( player )
 {
-    for (i = 0; i < level.br_respawnambulances.size; i++) {
+    for ( i = 0; i < level.br_respawnambulances.size ; i++ )
+    {
         ambulance = level.br_respawnambulances[ i ];
         
         if ( isdefined( ambulance ) && !istrue( ambulance.disabled ) )
@@ -229,7 +231,7 @@ function hideallambulancesforplayer( player )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb1b
 // Size: 0x39
 function ambulancehidefromplayer( player )
@@ -243,12 +245,13 @@ function ambulancehidefromplayer( player )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb5c
 // Size: 0x60
 function disableallambulancesforplayer( player )
 {
-    for (i = 0; i < level.br_respawnambulances.size; i++) {
+    for ( i = 0; i < level.br_respawnambulances.size ; i++ )
+    {
         ambulance = level.br_respawnambulances[ i ];
         
         if ( isdefined( ambulance ) && !istrue( ambulance.disabled ) )
@@ -259,7 +262,7 @@ function disableallambulancesforplayer( player )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbc4
 // Size: 0x28
 function ambulancemakeunusabletoplayer( player )
@@ -271,7 +274,7 @@ function ambulancemakeunusabletoplayer( player )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbf4
 // Size: 0x6c
 function showallambulancesforteam( team )
@@ -286,12 +289,13 @@ function showallambulancesforteam( team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc68
 // Size: 0x60
 function showallambulancesforplayer( player )
 {
-    for (i = 0; i < level.br_respawnambulances.size; i++) {
+    for ( i = 0; i < level.br_respawnambulances.size ; i++ )
+    {
         ambulance = level.br_respawnambulances[ i ];
         
         if ( isdefined( ambulance ) && !istrue( ambulance.disabled ) )
@@ -302,7 +306,7 @@ function showallambulancesforplayer( player )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd0
 // Size: 0x31
 function ambulanceshowtoplayer( player )
@@ -312,7 +316,7 @@ function ambulanceshowtoplayer( player )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd09
 // Size: 0x6c
 function ambulanceenabletoteam( team )
@@ -327,7 +331,7 @@ function ambulanceenabletoteam( team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd7d
 // Size: 0x6c
 function ambulancedisabletoteam( team )
@@ -342,7 +346,7 @@ function ambulancedisabletoteam( team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdf1
 // Size: 0x1b
 function ambulancemakeusabletoplayer( player )
@@ -351,7 +355,7 @@ function ambulancemakeusabletoplayer( player )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe14
 // Size: 0x6f
 function ambulancedisable()
@@ -370,7 +374,7 @@ function ambulancedisable()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8b
 // Size: 0x2a
 function ambulancemakeunsabletoall()
@@ -380,7 +384,7 @@ function ambulancemakeunsabletoall()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xebd
 // Size: 0x9b
 function ambulancemakeusable()
@@ -396,12 +400,13 @@ function ambulancemakeusable()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf60
 // Size: 0x52, Type: bool
 function anyambulancesavailable()
 {
-    for (i = 0; i < level.br_respawnambulances.size; i++) {
+    for ( i = 0; i < level.br_respawnambulances.size ; i++ )
+    {
         ambulance = level.br_respawnambulances[ i ];
         
         if ( isdefined( ambulance ) && !istrue( ambulance.disabled ) )
@@ -414,7 +419,7 @@ function anyambulancesavailable()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfbb
 // Size: 0xab
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
@@ -426,7 +431,8 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
         return;
     }
     
-    for (i = 0; i < level.br_respawnambulances.size; i++) {
+    for ( i = 0; i < level.br_respawnambulances.size ; i++ )
+    {
         ambulance = level.br_respawnambulances[ i ];
         
         if ( isdefined( ambulance ) && !istrue( ambulance.disabled ) && distance2dsquared( dangercircleorigin, ambulance.origin ) > var_52d59c928eb97c81 * var_52d59c928eb97c81 )
@@ -438,7 +444,7 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x106e
 // Size: 0xdc
 function disablerespawnscenarios( ambulance )
@@ -472,7 +478,7 @@ function disablerespawnscenarios( ambulance )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1152
 // Size: 0x32, Type: bool
 function playershoulddofauxdeath()
@@ -481,7 +487,7 @@ function playershoulddofauxdeath()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x118d
 // Size: 0x16
 function playersetinlaststand()
@@ -491,7 +497,7 @@ function playersetinlaststand()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11ab
 // Size: 0x22d
 function playerdied( attacker, objweapon )
@@ -571,7 +577,7 @@ function playerdied( attacker, objweapon )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e0
 // Size: 0x122
 function updatecountdownhudlist( timerhud )
@@ -585,17 +591,20 @@ function updatecountdownhudlist( timerhud )
         level.br_deadcountdownhud[ level.br_deadcountdownhud.size ] = timerhud;
     }
     
-    for (i = 1; i < level.br_deadcountdownhud.size; i++) {
+    for ( i = 1; i < level.br_deadcountdownhud.size ; i++ )
+    {
         huditem = level.br_deadcountdownhud[ i ];
         
-        for (j = i - 1; j >= 0 && getsoonerhud( huditem, level.br_deadcountdownhud[ j ] ) == huditem; j--) {
+        for ( j = i - 1; j >= 0 && getsoonerhud( huditem, level.br_deadcountdownhud[ j ] ) == huditem ; j-- )
+        {
             level.br_deadcountdownhud[ j + 1 ] = level.br_deadcountdownhud[ j ];
         }
         
         level.br_deadcountdownhud[ j + 1 ] = huditem;
     }
     
-    for (i = 0; i < level.br_deadcountdownhud.size; i++) {
+    for ( i = 0; i < level.br_deadcountdownhud.size ; i++ )
+    {
         huditem = level.br_deadcountdownhud[ i ];
         
         if ( isdefined( huditem ) )
@@ -606,7 +615,7 @@ function updatecountdownhudlist( timerhud )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x150a
 // Size: 0x42
 function getsoonerhud( huda, hudb )
@@ -630,7 +639,7 @@ function getsoonerhud( huda, hudb )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1554
 // Size: 0xaa
 function playerfakespectate( enabled )
@@ -662,7 +671,7 @@ function playerfakespectate( enabled )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1606
 // Size: 0x107
 function playerfakespectatecontrols()
@@ -710,7 +719,7 @@ function playerfakespectatecontrols()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1715
 // Size: 0xd1
 function getplayertospectate( team, current, getnext )
@@ -719,7 +728,8 @@ function getplayertospectate( team, current, getnext )
     
     if ( isdefined( current ) )
     {
-        for (i = 0; i < level.teamdata[ team ][ "alivePlayers" ].size; i++) {
+        for ( i = 0; i < level.teamdata[ team ][ "alivePlayers" ].size ; i++ )
+        {
             player = level.teamdata[ team ][ "alivePlayers" ][ i ];
             
             if ( player == current )
@@ -748,7 +758,7 @@ function getplayertospectate( team, current, getnext )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17ef
 // Size: 0x74
 function playerkeeploadingstreamedassets()
@@ -775,7 +785,7 @@ function playerkeeploadingstreamedassets()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x186b
 // Size: 0xf6
 function playertrytakedefibrillator( objweapon )
@@ -809,7 +819,7 @@ function playertrytakedefibrillator( objweapon )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1969
 // Size: 0x11b
 function useentrespawntimeout( countdowntime, deadplayer, team )
@@ -837,7 +847,7 @@ function useentrespawntimeout( countdowntime, deadplayer, team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a8c
 // Size: 0xc2
 function useentrespawncomplete( deadplayer, team )
@@ -866,7 +876,7 @@ function useentrespawncomplete( deadplayer, team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b56
 // Size: 0x4e
 function playerrespawn( origin, angles )
@@ -880,7 +890,7 @@ function playerrespawn( origin, angles )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1bac
 // Size: 0x91
 function useentpickupbody( deadplayer, team )
@@ -910,7 +920,7 @@ function useentpickupbody( deadplayer, team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c45
 // Size: 0x22
 function useenthide( team )
@@ -920,7 +930,7 @@ function useenthide( team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c6f
 // Size: 0x33
 function useentshow( team )
@@ -931,7 +941,7 @@ function useentshow( team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1caa
 // Size: 0x1a9
 function playerpickupbody( useent, team )
@@ -978,7 +988,7 @@ function playerpickupbody( useent, team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e5b
 // Size: 0xd8
 function playersetcarryteammates( carrying )
@@ -1009,7 +1019,7 @@ function playersetcarryteammates( carrying )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f3b
 // Size: 0x44
 function useentdropbodyonplayerdone( playerholding, holdingbodyhud, team )
@@ -1020,7 +1030,7 @@ function useentdropbodyonplayerdone( playerholding, holdingbodyhud, team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f87
 // Size: 0x3e
 function useentdropbodywhencomplete( playerholding, holdingbodyhud, team )
@@ -1031,7 +1041,7 @@ function useentdropbodywhencomplete( playerholding, holdingbodyhud, team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1fcd
 // Size: 0x149
 function dropbody( useent, playerholding, holdingbodyhud, team )
@@ -1078,7 +1088,7 @@ function dropbody( useent, playerholding, holdingbodyhud, team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x211e
 // Size: 0x3e
 function useentsetupcloseambulance( team )
@@ -1093,7 +1103,7 @@ function useentsetupcloseambulance( team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2164
 // Size: 0x1bc
 function createpickupuseent( origin, team )
@@ -1151,7 +1161,7 @@ function createpickupuseent( origin, team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2329
 // Size: 0x64
 function createplayerdeadcountdownhud( team, countdowntime )
@@ -1165,7 +1175,7 @@ function createplayerdeadcountdownhud( team, countdowntime )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2396
 // Size: 0x6e
 function countdownhudpulse( timerhud )
@@ -1185,7 +1195,7 @@ function countdownhudpulse( timerhud )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x240c
 // Size: 0xb8
 function cleanupbodydrop( useent, team )
@@ -1215,7 +1225,7 @@ function cleanupbodydrop( useent, team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24cc
 // Size: 0x17c
 function useentmonitorambulances( team )
@@ -1227,7 +1237,8 @@ function useentmonitorambulances( team )
     {
         anyoneclose = 0;
         
-        for (i = 0; i < level.br_respawnambulances.size; i++) {
+        for ( i = 0; i < level.br_respawnambulances.size ; i++ )
+        {
             ambulance = level.br_respawnambulances[ i ];
             
             if ( !isdefined( ambulance ) || istrue( ambulance.disabled ) )
@@ -1274,7 +1285,7 @@ function useentmonitorambulances( team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2650
 // Size: 0x124
 function createdropplayerhud( team )
@@ -1301,7 +1312,7 @@ function createdropplayerhud( team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x277d
 // Size: 0xad
 function getrespawnableplayers( team )
@@ -1329,7 +1340,7 @@ function getrespawnableplayers( team )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2833
 // Size: 0x6f
 function getallrespawnableplayers()
@@ -1348,12 +1359,13 @@ function getallrespawnableplayers()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28ab
 // Size: 0x82
 function getcloseambulance( point )
 {
-    for (i = 0; i < level.br_respawnambulances.size; i++) {
+    for ( i = 0; i < level.br_respawnambulances.size ; i++ )
+    {
         ambulance = level.br_respawnambulances[ i ];
         
         if ( !isdefined( ambulance ) || istrue( ambulance.disabled ) )
@@ -1371,7 +1383,7 @@ function getcloseambulance( point )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2935
 // Size: 0xa5
 function ambulancedefibrillator( player )
@@ -1403,7 +1415,7 @@ function ambulancedefibrillator( player )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29e2
 // Size: 0x1a
 function ambulancedelayreuse()
@@ -1415,7 +1427,7 @@ function ambulancedelayreuse()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a04
 // Size: 0x27
 function ambulancedosiren()
@@ -1428,7 +1440,7 @@ function ambulancedosiren()
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a33
 // Size: 0xac
 function playergivedefibrillator( ambulance )
@@ -1456,7 +1468,7 @@ function playergivedefibrillator( ambulance )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ae8
 // Size: 0x183
 function playerdodefibrillator( var_7a30df5c798ab7ee )
@@ -1481,7 +1493,8 @@ function playerdodefibrillator( var_7a30df5c798ab7ee )
         deadteammates = getrespawnableplayers( self.team );
         var_de0a18979ff9a55e = 0;
         
-        for (i = 0; i < deadteammates.size; i++) {
+        for ( i = 0; i < deadteammates.size ; i++ )
+        {
             teammate = deadteammates[ i ];
             
             if ( !isdefined( teammate ) || !isdefined( teammate.respawnent ) )
@@ -1518,7 +1531,7 @@ function playerdodefibrillator( var_7a30df5c798ab7ee )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c73
 // Size: 0x56
 function playermonitorweaponchange( var_5b1c712938e3abf )
@@ -1541,7 +1554,7 @@ function playermonitorweaponchange( var_5b1c712938e3abf )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cd1
 // Size: 0x4e
 function playertakeawaydefibrillator( var_5b1c712938e3abf )
@@ -1556,7 +1569,7 @@ function playertakeawaydefibrillator( var_5b1c712938e3abf )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d27
 // Size: 0x6d
 function playermonitordistancefromambulance( ambulance )
@@ -1581,7 +1594,7 @@ function playermonitordistancefromambulance( ambulance )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d9c
 // Size: 0x99
 function giveweaponpickup( weaponname )
@@ -1616,7 +1629,7 @@ function giveweaponpickup( weaponname )
 }
 
 // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e3d
 // Size: 0xf
 function playerdoportabledefibrillator()
@@ -1628,7 +1641,7 @@ function playerdoportabledefibrillator()
 /#
 
     // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2e55
     // Size: 0x317, Type: dev
     function debugrespawn()
@@ -1646,7 +1659,8 @@ function playerdoportabledefibrillator()
                 
                 if ( cmd == "<dev string:x20>" )
                 {
-                    for (i = 0; i < level.br_respawnambulances.size; i++) {
+                    for ( i = 0; i < level.br_respawnambulances.size ; i++ )
+                    {
                         ambulance = level.br_respawnambulances[ i ];
                         
                         if ( isdefined( ambulance ) && !istrue( ambulance.disabled ) )
@@ -1658,7 +1672,8 @@ function playerdoportabledefibrillator()
                 }
                 else if ( cmd == "<dev string:x36>" )
                 {
-                    for (i = 0; i < level.br_respawnambulances.size; i++) {
+                    for ( i = 0; i < level.br_respawnambulances.size ; i++ )
+                    {
                         ambulance = level.br_respawnambulances[ i ];
                         
                         if ( isdefined( ambulance ) && istrue( ambulance.disabled ) )
@@ -1722,7 +1737,7 @@ function playerdoportabledefibrillator()
     }
 
     // Namespace br_respawn / scripts\mp\gametypes\br_respawn
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x3174
     // Size: 0xf0, Type: dev
     function getbot( host, oppositeteam, alive )

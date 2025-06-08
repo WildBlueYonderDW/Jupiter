@@ -11,7 +11,7 @@
 #namespace gulag;
 
 // Namespace gulag / namespace_2913f85acadc353f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x154
 // Size: 0xa4
 function function_88039a31ef9e74dd()
@@ -47,7 +47,7 @@ function function_88039a31ef9e74dd()
 }
 
 // Namespace gulag / namespace_2913f85acadc353f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x200
 // Size: 0x2c
 function function_c1a20b04ac6141bf()
@@ -61,7 +61,7 @@ function function_c1a20b04ac6141bf()
 }
 
 // Namespace gulag / namespace_2913f85acadc353f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x234
 // Size: 0x49
 function function_5643932de03d949d()
@@ -78,7 +78,7 @@ function function_5643932de03d949d()
 }
 
 // Namespace gulag / namespace_2913f85acadc353f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x285
 // Size: 0x10e
 function function_7b827ec625eac6f5()
@@ -116,7 +116,7 @@ function function_7b827ec625eac6f5()
 }
 
 // Namespace gulag / namespace_2913f85acadc353f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39b
 // Size: 0x10c
 function function_35c340e0c5d514f()
@@ -177,7 +177,7 @@ function function_35c340e0c5d514f()
 }
 
 // Namespace gulag / namespace_2913f85acadc353f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4af
 // Size: 0xa4
 function selecttarget()
@@ -199,7 +199,7 @@ function selecttarget()
 }
 
 // Namespace gulag / namespace_2913f85acadc353f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55c
 // Size: 0xe1
 function function_80d441566c90edc6()
@@ -222,7 +222,8 @@ function function_80d441566c90edc6()
     
     wander_distance = 392;
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         destination = namespace_41f4dfb71dd08362::selectdestination( wander_distance, playermark );
         
         if ( abs( destination[ 2 ] - self.origin[ 2 ] ) < 50 )

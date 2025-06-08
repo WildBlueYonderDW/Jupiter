@@ -28,7 +28,7 @@
 #namespace super_stoppingpower;
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x314
 // Size: 0x2e
 function stoppingpower_init()
@@ -38,7 +38,7 @@ function stoppingpower_init()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34a
 // Size: 0x33d, Type: bool
 function stoppingpower_beginuse()
@@ -152,7 +152,7 @@ function stoppingpower_beginuse()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x690
 // Size: 0x37
 function stoppingpower_isvalidprimaryoralt( objweapon )
@@ -167,7 +167,7 @@ function stoppingpower_isvalidprimaryoralt( objweapon )
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6d0
 // Size: 0xa0
 function stoppingpower_waitforreload( weaponobj, stockammo, var_c88113bfedd68cf0 )
@@ -206,7 +206,7 @@ function stoppingpower_waitforreload( weaponobj, stockammo, var_c88113bfedd68cf0
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x778
 // Size: 0x76
 function stoppingpower_givehcr( player, objweapon, numrounds )
@@ -221,7 +221,7 @@ function stoppingpower_givehcr( player, objweapon, numrounds )
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f6
 // Size: 0xbf
 function stoppingpower_givehcrdata( player, hcrdata )
@@ -250,7 +250,7 @@ function stoppingpower_givehcrdata( player, hcrdata )
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8bd
 // Size: 0x49
 function stoppingpower_onweaponcreated( weaponentity, droppingplayer, weaponobj )
@@ -265,7 +265,7 @@ function stoppingpower_onweaponcreated( weaponentity, droppingplayer, weaponobj 
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x90e
 // Size: 0x72
 function stoppingpower_onweaponpickedup( weaponentity, var_480f8576be141bb4, weaponobj )
@@ -283,7 +283,7 @@ function stoppingpower_onweaponpickedup( weaponentity, var_480f8576be141bb4, wea
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x988
 // Size: 0x3f
 function stoppingpower_getweaponhcrdata( objweapon )
@@ -303,7 +303,7 @@ function stoppingpower_getweaponhcrdata( objweapon )
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d0
 // Size: 0x18, Type: bool
 function stoppingpower_cancelreload()
@@ -315,7 +315,7 @@ function stoppingpower_cancelreload()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9f1
 // Size: 0xbe
 function stoppingpower_watchhcrweaponchange()
@@ -346,7 +346,7 @@ function stoppingpower_watchhcrweaponchange()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab7
 // Size: 0x98
 function stoppingpower_watchhcrweaponfire()
@@ -374,7 +374,7 @@ function stoppingpower_watchhcrweaponfire()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb57
 // Size: 0x5e
 function stoppingpower_tracklastcrossbowshot( objweapon )
@@ -399,7 +399,7 @@ function stoppingpower_tracklastcrossbowshot( objweapon )
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbbd
 // Size: 0x3f
 function stoppingpower_removehcr()
@@ -418,7 +418,7 @@ function stoppingpower_removehcr()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc04
 // Size: 0x1e
 function stoppingpower_loadoutchangeremovehcr()
@@ -432,7 +432,7 @@ function stoppingpower_loadoutchangeremovehcr()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc2a
 // Size: 0xab
 function stoppingpower_clearhcrdata()
@@ -452,7 +452,7 @@ function stoppingpower_clearhcrdata()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcdd
 // Size: 0x63
 function stoppingpower_onkill( weaponobj )
@@ -472,7 +472,7 @@ function stoppingpower_onkill( weaponobj )
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd48
 // Size: 0x6a, Type: bool
 function stoppingpower_ishcrweapon( objweapon )
@@ -484,7 +484,7 @@ function stoppingpower_ishcrweapon( objweapon )
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdbb
 // Size: 0x30
 function stoppingpower_clearhcrondeath()
@@ -496,7 +496,7 @@ function stoppingpower_clearhcrondeath()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdf3
 // Size: 0x28
 function stoppingpower_clearhcrongameended()
@@ -508,7 +508,7 @@ function stoppingpower_clearhcrongameended()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe23
 // Size: 0x30
 function stoppingpower_clearhcronperkscleared()
@@ -520,7 +520,7 @@ function stoppingpower_clearhcronperkscleared()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe5b
 // Size: 0x5a
 function stoppingpower_givefastreload()
@@ -532,7 +532,7 @@ function stoppingpower_givefastreload()
 }
 
 // Namespace super_stoppingpower / scripts\mp\supers\super_stoppingpower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xebd
 // Size: 0x2d
 function stoppingpower_breaksprint()

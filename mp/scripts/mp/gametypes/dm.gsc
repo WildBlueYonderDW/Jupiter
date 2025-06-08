@@ -29,7 +29,7 @@
 #namespace dm;
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9bc
 // Size: 0x2f0
 function main()
@@ -121,7 +121,7 @@ function main()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb4
 // Size: 0xde
 function initializematchrules()
@@ -140,7 +140,7 @@ function initializematchrules()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd9a
 // Size: 0x261
 function onstartgametype()
@@ -215,7 +215,7 @@ function onstartgametype()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1003
 // Size: 0x16a
 function updategametypedvars()
@@ -261,7 +261,7 @@ function updategametypedvars()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1175
 // Size: 0xb4
 function getspawnpoint()
@@ -303,7 +303,7 @@ function getspawnpoint()
 /#
 
     // Namespace dm / scripts\mp\gametypes\dm
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1232
     // Size: 0x17a, Type: dev
     function comparespawns( spawnpoint )
@@ -342,7 +342,7 @@ function getspawnpoint()
 #/
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13b4
 // Size: 0xab
 function onspawnplayer( revivespawn )
@@ -382,7 +382,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1467
 // Size: 0x16f
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -426,7 +426,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x15de
 // Size: 0x19e
 function onplayerscore( event, player, originalpoints, victim, eventinfo )
@@ -479,7 +479,7 @@ function onplayerscore( event, player, originalpoints, victim, eventinfo )
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1785
 // Size: 0xa3
 function dohalftimevo( attacker )
@@ -506,7 +506,7 @@ function dohalftimevo( attacker )
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1830
 // Size: 0x2a, Type: bool
 function compare_player_score( left, right )
@@ -515,7 +515,7 @@ function compare_player_score( left, right )
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1863
 // Size: 0x18
 function onspawnfinished()
@@ -526,7 +526,7 @@ function onspawnfinished()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1883
 // Size: 0x3dc
 function setspecialloadout()
@@ -607,7 +607,7 @@ function setspecialloadout()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c67
 // Size: 0x30
 function runaonrules()
@@ -619,7 +619,7 @@ function runaonrules()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c9f
 // Size: 0x86
 function giveextraaonperks()
@@ -633,7 +633,7 @@ function giveextraaonperks()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d2d
 // Size: 0x6a
 function onplayerconnect( player )
@@ -651,7 +651,7 @@ function onplayerconnect( player )
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d9f
 // Size: 0x267
 function gettarget()
@@ -743,7 +743,7 @@ function gettarget()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x200e
 // Size: 0x48
 function targetvictimdeathwatcher()
@@ -756,7 +756,7 @@ function targetvictimdeathwatcher()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x205e
 // Size: 0xa3
 function updatetargetlocation()
@@ -787,7 +787,7 @@ function updatetargetlocation()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2109
 // Size: 0x5f
 function updatetargetcurorigin()
@@ -808,7 +808,7 @@ function updatetargetcurorigin()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2170
 // Size: 0x60
 function newtargetmessage()
@@ -831,7 +831,7 @@ function newtargetmessage()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21d8
 // Size: 0x1b, Type: bool
 function function_59bc1a507006dcb1()
@@ -840,7 +840,7 @@ function function_59bc1a507006dcb1()
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21fc
 // Size: 0x1b, Type: bool
 function function_5be859df8ee33a38()
@@ -851,7 +851,7 @@ function function_5be859df8ee33a38()
 /#
 
     // Namespace dm / scripts\mp\gametypes\dm
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2220
     // Size: 0x150, Type: dev
     function function_aeefcd8920dc46e0()
@@ -878,12 +878,13 @@ function function_5be859df8ee33a38()
                 
                 if ( var_ff962a1182d547dc == -1 || var_f104804091b9dedf == -1 )
                 {
-                    points = getdvarint( @"hash_dba1d87860792cd4" ) - 1;
+                    points = getdvarint( @"scr_dm_scorelimit" ) - 1;
                 }
                 
                 foreach ( player in level.players )
                 {
-                    for (i = 0; i < points; i++) {
+                    for ( i = 0; i < points ; i++ )
+                    {
                         player scripts\mp\gamescore::giveplayerscore( #"kill", 1 );
                     }
                     

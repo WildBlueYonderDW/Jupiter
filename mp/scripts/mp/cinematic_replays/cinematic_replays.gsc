@@ -8,7 +8,7 @@
 #namespace cinematic_replays;
 
 // Namespace cinematic_replays / scripts\mp\cinematic_replays\cinematic_replays
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12a
 // Size: 0x56
 function listenforcinematicreplaydumpcmd()
@@ -28,7 +28,7 @@ function listenforcinematicreplaydumpcmd()
 }
 
 // Namespace cinematic_replays / scripts\mp\cinematic_replays\cinematic_replays
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x188
 // Size: 0x25
 function dumplogsloop()
@@ -44,14 +44,15 @@ function dumplogsloop()
 }
 
 // Namespace cinematic_replays / scripts\mp\cinematic_replays\cinematic_replays
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x2a
 function recordplayerlogs()
 {
     level endon( "game_ended" );
     
-    for (logcounter = 0; true; logcounter++) {
+    for ( logcounter = 0; true ; logcounter++ )
+    {
         waitframe();
         logplayers( logcounter );
     }
@@ -60,7 +61,7 @@ function recordplayerlogs()
 /#
 
     // Namespace cinematic_replays / scripts\mp\cinematic_replays\cinematic_replays
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1e7
     // Size: 0x96, Type: dev
     function cinematicreplay_scriptdata_openfilewrite()
@@ -80,7 +81,7 @@ function recordplayerlogs()
 #/
 
 // Namespace cinematic_replays / scripts\mp\cinematic_replays\cinematic_replays
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x285
 // Size: 0xb4
 function cinematicreplayrecording_scriptdata_dump()
@@ -111,7 +112,7 @@ function cinematicreplayrecording_scriptdata_dump()
 }
 
 // Namespace cinematic_replays / scripts\mp\cinematic_replays\cinematic_replays
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x341
 // Size: 0x43
 function onplayerspawned()
@@ -128,7 +129,7 @@ function onplayerspawned()
 }
 
 // Namespace cinematic_replays / scripts\mp\cinematic_replays\cinematic_replays
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38c
 // Size: 0x83
 function watchweaponusage( weaponhand )
@@ -148,7 +149,7 @@ function watchweaponusage( weaponhand )
 }
 
 // Namespace cinematic_replays / scripts\mp\cinematic_replays\cinematic_replays
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x417
 // Size: 0x54e
 function logplayers( logcounter )
@@ -167,7 +168,8 @@ function logplayers( logcounter )
     logsteps = int( ceil( players.size / var_2320c6b8b9ea77a3 ) );
     playerset = int( logcounter % logsteps );
     
-    for (i = 0; i < var_2320c6b8b9ea77a3; i++) {
+    for ( i = 0; i < var_2320c6b8b9ea77a3 ; i++ )
+    {
         index = playerset * var_2320c6b8b9ea77a3 + i;
         
         if ( index >= players.size )

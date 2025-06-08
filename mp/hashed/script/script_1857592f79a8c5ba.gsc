@@ -5,7 +5,7 @@
 #namespace cap_use_armor_plate_solo;
 
 // Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x105
 function function_6c3d4156dec73e1d( asmname, statename, params )
@@ -49,7 +49,7 @@ function function_6c3d4156dec73e1d( asmname, statename, params )
 }
 
 // Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c3
 // Size: 0x42
 function function_45dc5e082d9a020f( asmname, statename, params )
@@ -109,7 +109,7 @@ function private function_45dc0311bb854741( note, statename )
 }
 
 // Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e4
 // Size: 0x5a
 function function_e05a85a79478670c( note, params )

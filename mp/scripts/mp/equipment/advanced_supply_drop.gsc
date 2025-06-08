@@ -5,19 +5,31 @@
 #using scripts\mp\hud_util;
 #using scripts\mp\outofbounds;
 #using scripts\mp\supers;
+#using scripts\mp\utility\game;
 #using scripts\mp\utility\script;
 
 #namespace advanced_supply_drop;
 
 // Namespace advanced_supply_drop / scripts\mp\equipment\advanced_supply_drop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16a
-// Size: 0xd3
+// Params 1
+// Checksum 0x0, Offset: 0x1ab
+// Size: 0x108
 function advanced_supply_drop_marker_used( grenade )
 {
     player = self;
     player endon( "disconnect" );
     grenade endon( "explode_end" );
+    
+    if ( scripts\mp\utility\game::function_d75b73c443421047() )
+    {
+        if ( !istrue( function_f3bb4f4911a1beb2( "limbo", "checkCanTriggerSuper", self, "advanced_supply_drop" ) ) )
+        {
+            player scripts\mp\supers::superusefinished( 1 );
+            grenade delete();
+            return;
+        }
+    }
+    
     grenade thread notifyafterframeend( "death", "explode_end" );
     player thread advanced_supply_drop_refund_on_death( grenade );
     grenade waittill( "explode", position );
@@ -49,8 +61,8 @@ function advanced_supply_drop_marker_used( grenade )
 }
 
 // Namespace advanced_supply_drop / scripts\mp\equipment\advanced_supply_drop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x245
+// Params 1
+// Checksum 0x0, Offset: 0x2bb
 // Size: 0x163
 function function_f3e74468f0e5f521( grenade )
 {
@@ -103,8 +115,8 @@ function function_f3e74468f0e5f521( grenade )
 }
 
 // Namespace advanced_supply_drop / scripts\mp\equipment\advanced_supply_drop
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b0
+// Params 2
+// Checksum 0x0, Offset: 0x426
 // Size: 0x62
 function function_22740c19d22b8b6e( player, grenade )
 {
@@ -115,8 +127,8 @@ function function_22740c19d22b8b6e( player, grenade )
 }
 
 // Namespace advanced_supply_drop / scripts\mp\equipment\advanced_supply_drop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41a
+// Params 1
+// Checksum 0x0, Offset: 0x490
 // Size: 0x48
 function advanced_supply_drop_refund_on_death( grenade )
 {
@@ -133,8 +145,8 @@ function advanced_supply_drop_refund_on_death( grenade )
 }
 
 // Namespace advanced_supply_drop / scripts\mp\equipment\advanced_supply_drop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46a
+// Params 1
+// Checksum 0x0, Offset: 0x4e0
 // Size: 0x53
 function advanced_supply_drop_marker_sfx( position )
 {

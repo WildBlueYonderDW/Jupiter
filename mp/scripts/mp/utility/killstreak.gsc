@@ -24,7 +24,7 @@
 #namespace killstreak;
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1125
 // Size: 0x1d, Type: bool
 function hasplayerdiedwhileusingkillstreak( streakinfo )
@@ -33,7 +33,7 @@ function hasplayerdiedwhileusingkillstreak( streakinfo )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x114b
 // Size: 0x436
 function addtoactivekillstreaklist( streakname, threatbiasgroup, owner, outline, teamheadicon, var_81dbfc1d134bf264, endnotifyoverride )
@@ -209,7 +209,7 @@ function addtoactivekillstreaklist( streakname, threatbiasgroup, owner, outline,
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1589
 // Size: 0x52
 function getactivekillstreakid()
@@ -225,7 +225,7 @@ function getactivekillstreakid()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15e4
 // Size: 0x45
 function removeoutlineonnotify( outlineid, endnotifyoverride )
@@ -242,7 +242,7 @@ function removeoutlineonnotify( outlineid, endnotifyoverride )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1631
 // Size: 0x44
 function removeteamheadicononnotify( icon, endnotifyoverride )
@@ -259,7 +259,7 @@ function removeteamheadicononnotify( icon, endnotifyoverride )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x167d
 // Size: 0x16
 function removefromactivekillstreaklist( entnumber )
@@ -268,7 +268,7 @@ function removefromactivekillstreaklist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x169b
 // Size: 0x26, Type: bool
 function activekillstreaklistcontains( entnumber )
@@ -282,7 +282,7 @@ function activekillstreaklistcontains( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16ca
 // Size: 0x2f
 function addtoremotekillstreaklist( entnumber )
@@ -296,7 +296,7 @@ function addtoremotekillstreaklist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1701
 // Size: 0x1e
 function removefromremotekillstreaklistondeath( entnumber )
@@ -306,7 +306,7 @@ function removefromremotekillstreaklistondeath( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1727
 // Size: 0xb2
 function addtouavlist( entnumber )
@@ -331,7 +331,7 @@ function addtouavlist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17e1
 // Size: 0x9c
 function removefromuavlistondeath( entnumber )
@@ -362,7 +362,7 @@ function removefromuavlistondeath( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1885
 // Size: 0x2f
 function addtoairstrikelist( entnumber )
@@ -376,7 +376,7 @@ function addtoairstrikelist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18bc
 // Size: 0x26
 function removefromairstrikelistondeath( entnumber )
@@ -387,7 +387,7 @@ function removefromairstrikelistondeath( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18ea
 // Size: 0x2f
 function addtolittlebirdlist( entnumber )
@@ -401,7 +401,7 @@ function addtolittlebirdlist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1921
 // Size: 0x26
 function removefromlittlebirdlistondeath( entnumber )
@@ -412,7 +412,7 @@ function removefromlittlebirdlistondeath( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x194f
 // Size: 0x2f
 function addtohelilist( entnumber )
@@ -426,7 +426,7 @@ function addtohelilist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1986
 // Size: 0x1e
 function removefromhelilist( entnumber )
@@ -436,7 +436,7 @@ function removefromhelilist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19ac
 // Size: 0x26
 function removefromhelilistondeath( entnumber )
@@ -447,7 +447,7 @@ function removefromhelilistondeath( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19da
 // Size: 0x2f
 function addtoturretlist( entnumber )
@@ -461,7 +461,7 @@ function addtoturretlist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a11
 // Size: 0x2f
 function removefromturretlistondeathorcarry( entnumber )
@@ -472,7 +472,7 @@ function removefromturretlistondeathorcarry( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a48
 // Size: 0x2f
 function function_f0edb803c309d596( entnumber )
@@ -486,7 +486,7 @@ function function_f0edb803c309d596( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a7f
 // Size: 0x26
 function function_d3d9181348d12d5b( entnumber )
@@ -497,7 +497,7 @@ function function_d3d9181348d12d5b( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1aad
 // Size: 0x2f
 function addtosupportdronelist( entnumber )
@@ -511,7 +511,7 @@ function addtosupportdronelist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ae4
 // Size: 0x26
 function removefromsupportdronelistondeath( entnumber )
@@ -522,7 +522,7 @@ function removefromsupportdronelistondeath( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b12
 // Size: 0x2f
 function addtoassaultdronelist( entnumber )
@@ -536,7 +536,7 @@ function addtoassaultdronelist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b49
 // Size: 0x26
 function removefromassaultdronelistondeath( entnumber )
@@ -547,7 +547,7 @@ function removefromassaultdronelistondeath( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b77
 // Size: 0x3a
 function addtoprojectilelist( entnumber )
@@ -562,7 +562,7 @@ function addtoprojectilelist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bb9
 // Size: 0x26
 function removefromprojectilelistondeath( entnumber )
@@ -573,7 +573,7 @@ function removefromprojectilelistondeath( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1be7
 // Size: 0x2f
 function addtoplayerkillstreaklist( entnumber )
@@ -587,7 +587,7 @@ function addtoplayerkillstreaklist( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c1e
 // Size: 0x26
 function removefromplayerkillstreaklistondeath( entnumber )
@@ -598,7 +598,7 @@ function removefromplayerkillstreaklistondeath( entnumber )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x1c4c
 // Size: 0x146
 function setkillstreakcontrolpriority( owner, hintstring, hintdisplayfov, var_a68f5a8aed5a3de, hintrange, userange, usepriority, var_a4c898ca05df4d4c, hinticon )
@@ -644,7 +644,7 @@ function setkillstreakcontrolpriority( owner, hintstring, hintdisplayfov, var_a6
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d9a
 // Size: 0x3d
 function applyplayercontrolonconnect( killstreakuseent )
@@ -660,7 +660,7 @@ function applyplayercontrolonconnect( killstreakuseent )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ddf
 // Size: 0x15d
 function applykillstreakplayeroutline( player, streakendnotify )
@@ -711,7 +711,7 @@ function applykillstreakplayeroutline( player, streakendnotify )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f44
 // Size: 0x36
 function watchoutlineremoveonkillstreakend( id, player, streakendnotify )
@@ -723,7 +723,7 @@ function watchoutlineremoveonkillstreakend( id, player, streakendnotify )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f82
 // Size: 0x36
 function watchoutlineremoveonplayerend( id, player, streakendnotify )
@@ -735,7 +735,7 @@ function watchoutlineremoveonplayerend( id, player, streakendnotify )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fc0
 // Size: 0x8e
 function function_394de31762a977eb( weaponname, damagesize )
@@ -751,7 +751,7 @@ function function_394de31762a977eb( weaponname, damagesize )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x2056
 // Size: 0x8dd
 function getmodifiedantikillstreakdamage( attacker, objweapon, meansofdeath, amount, maxhealth, var_cb15fa5174e71840, var_be7c04516c5d9ccd, var_ca960a517459fe15, var_8aceb016baaf67af, var_64103c6b531d18f0, explodeoverride )
@@ -1007,7 +1007,7 @@ function getmodifiedantikillstreakdamage( attacker, objweapon, meansofdeath, amo
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x293c
 // Size: 0x1c, Type: bool
 function nulldamagecheck( attacker )
@@ -1016,7 +1016,7 @@ function nulldamagecheck( attacker )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x2961
 // Size: 0x171
 function dodamagetokillstreak( damage, attacker, inflictor, victimteam, sourceorigin, meansofdeath, weaponname )
@@ -1062,7 +1062,7 @@ function dodamagetokillstreak( damage, attacker, inflictor, victimteam, sourceor
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ada
 // Size: 0xe7
 function playdlightfx( posoffset, angleoffset )
@@ -1095,7 +1095,7 @@ function playdlightfx( posoffset, angleoffset )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bc9
 // Size: 0x26
 function deleteonparentdeath( parent )
@@ -1110,7 +1110,7 @@ function deleteonparentdeath( parent )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bf7
 // Size: 0x30, Type: bool
 function isaffectedbyblindeye( killstreakname )
@@ -1126,7 +1126,7 @@ function isaffectedbyblindeye( killstreakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c30
 // Size: 0x7e
 function watchsupertrophynotify( owner )
@@ -1149,7 +1149,7 @@ function watchsupertrophynotify( owner )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cb6
 // Size: 0xe7
 function watchhostmigrationlifetime( var_5303201f58dbbafe, lifetime, lifetimefunc )
@@ -1180,7 +1180,7 @@ function watchhostmigrationlifetime( var_5303201f58dbbafe, lifetime, lifetimefun
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2da5
 // Size: 0x74
 function getenemytargets( owner )
@@ -1199,7 +1199,7 @@ function getenemytargets( owner )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2e22
 // Size: 0x15d
 function _beginlocationselection( streakname, selectortype, var_8e536aa74b9c997d, size )
@@ -1235,7 +1235,7 @@ function _beginlocationselection( streakname, selectortype, var_8e536aa74b9c997d
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f87
 // Size: 0x66
 function stoplocationselection( disconnected, reason )
@@ -1261,7 +1261,7 @@ function stoplocationselection( disconnected, reason )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ff5
 // Size: 0x26
 function endselectiononaction( waitfor )
@@ -1272,7 +1272,7 @@ function endselectiononaction( waitfor )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3023
 // Size: 0x1f
 function endselectiononendgame()
@@ -1283,7 +1283,7 @@ function endselectiononendgame()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x304a
 // Size: 0x42, Type: bool
 function streakshouldchain( streakname )
@@ -1295,7 +1295,7 @@ function streakshouldchain( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3095
 // Size: 0x59
 function streakcheckistargetindoors( targetpos, ignorelist )
@@ -1312,7 +1312,7 @@ function streakcheckistargetindoors( targetpos, ignorelist )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30f7
 // Size: 0x41
 function function_26ab4629dc655c14( streakname )
@@ -1331,7 +1331,7 @@ function function_26ab4629dc655c14( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3141
 // Size: 0x65
 function isremotekillstreak( streakname )
@@ -1353,7 +1353,7 @@ function isremotekillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31af
 // Size: 0x59
 function isuavkillstreak( streakname )
@@ -1374,7 +1374,7 @@ function isuavkillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3211
 // Size: 0x89
 function isairstrikekillstreak( streakname )
@@ -1399,7 +1399,7 @@ function isairstrikekillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32a3
 // Size: 0x41
 function islittlebirdkillstreak( streakname )
@@ -1418,7 +1418,7 @@ function islittlebirdkillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32ed
 // Size: 0x4d
 function ishelikillstreak( streakname )
@@ -1438,7 +1438,7 @@ function ishelikillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3343
 // Size: 0x4d
 function isturretkillstreak( streakname )
@@ -1458,7 +1458,7 @@ function isturretkillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3399
 // Size: 0x59
 function isprojectilekillstreak( streakname )
@@ -1479,7 +1479,7 @@ function isprojectilekillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33fb
 // Size: 0x41
 function issupportdronekillstreak( streakname )
@@ -1498,7 +1498,7 @@ function issupportdronekillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3445
 // Size: 0x41
 function isassaultdronekillstreak( streakname )
@@ -1517,7 +1517,7 @@ function isassaultdronekillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x348f
 // Size: 0x32, Type: bool
 function iscarepackage( ent )
@@ -1526,7 +1526,7 @@ function iscarepackage( ent )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34ca
 // Size: 0x12, Type: bool
 function isjuggernaut()
@@ -1535,7 +1535,7 @@ function isjuggernaut()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34e5
 // Size: 0x89
 function isremotekillstreakweapon( weapon )
@@ -1560,7 +1560,7 @@ function isremotekillstreakweapon( weapon )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3577
 // Size: 0x49
 function iskillstreaklockonable( streakname )
@@ -1577,7 +1577,7 @@ function iskillstreaklockonable( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35c8
 // Size: 0x85
 function isflyingkillstreak( streakname )
@@ -1599,7 +1599,7 @@ function isflyingkillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3655
 // Size: 0xab
 function getkillstreakkills( streakname )
@@ -1627,7 +1627,7 @@ function getkillstreakkills( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3709
 // Size: 0x92
 function function_545766e9ea1f655d( streakname, cost )
@@ -1647,7 +1647,7 @@ function function_545766e9ea1f655d( streakname, cost )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37a4
 // Size: 0x59
 function getkillstreakoverheadicon( streakname )
@@ -1663,7 +1663,7 @@ function getkillstreakoverheadicon( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3806
 // Size: 0x3f, Type: bool
 function function_8728f7cf8c005a0( streakname )
@@ -1679,7 +1679,7 @@ function function_8728f7cf8c005a0( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x384e
 // Size: 0xdb
 function currentactivevehiclecount( extra )
@@ -1725,7 +1725,7 @@ function currentactivevehiclecount( extra )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3932
 // Size: 0x4
 function maxvehiclesallowed()
@@ -1734,7 +1734,7 @@ function maxvehiclesallowed()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x393f
 // Size: 0xb
 function fauxvehiclecount()
@@ -1743,7 +1743,7 @@ function fauxvehiclecount()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3953
 // Size: 0x31
 function incrementfauxvehiclecount( value )
@@ -1758,7 +1758,7 @@ function incrementfauxvehiclecount( value )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x398c
 // Size: 0x49
 function decrementfauxvehiclecount( value )
@@ -1779,7 +1779,7 @@ function decrementfauxvehiclecount( value )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39dd
 // Size: 0x49
 function isassaultkillstreak( refstring )
@@ -1796,7 +1796,7 @@ function isassaultkillstreak( refstring )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a2e
 // Size: 0x6d
 function isresourcekillstreak( refstring )
@@ -1816,7 +1816,7 @@ function isresourcekillstreak( refstring )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3aa3
 // Size: 0xc, Type: bool
 function issupportkillstreak( refstring )
@@ -1825,7 +1825,7 @@ function issupportkillstreak( refstring )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ab8
 // Size: 0xc, Type: bool
 function isspecialistkillstreak( refstring )
@@ -1834,7 +1834,7 @@ function isspecialistkillstreak( refstring )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3acd
 // Size: 0xf
 function gethelipilotmeshoffset()
@@ -1843,7 +1843,7 @@ function gethelipilotmeshoffset()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ae5
 // Size: 0xf
 function gethelipilottraceoffset()
@@ -1852,7 +1852,7 @@ function gethelipilottraceoffset()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3afd
 // Size: 0x19
 function isnavmeshkillstreak( streakname )
@@ -1862,7 +1862,7 @@ function isnavmeshkillstreak( streakname )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b1f
 // Size: 0x25, Type: bool
 function iscontrollingproxyagent()
@@ -1876,7 +1876,7 @@ function iscontrollingproxyagent()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b4d
 // Size: 0x38, Type: bool
 function killshouldaddtokillstreak( objweapon )
@@ -1890,7 +1890,7 @@ function killshouldaddtokillstreak( objweapon )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b8e
 // Size: 0x24
 function getairdropcrates()
@@ -1904,7 +1904,7 @@ function getairdropcrates()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bbb
 // Size: 0x25
 function getnumairdropcrates()
@@ -1918,7 +1918,7 @@ function getnumairdropcrates()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3be9
 // Size: 0x87, Type: bool
 function attackerinremotekillstreak()
@@ -1947,7 +1947,7 @@ function attackerinremotekillstreak()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3c79
 // Size: 0x98
 function killstreak_make_vehicle( streakname, scorepopup, vodestroyed, destroyedsplash )
@@ -1972,7 +1972,7 @@ function killstreak_make_vehicle( streakname, scorepopup, vodestroyed, destroyed
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d19
 // Size: 0x44
 function killstreak_vehicle_callback_init()
@@ -1987,7 +1987,7 @@ function killstreak_vehicle_callback_init()
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d65
 // Size: 0xd9
 function killstreak_pre_mod_damage_callback( data )
@@ -2022,7 +2022,7 @@ function killstreak_pre_mod_damage_callback( data )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e47
 // Size: 0x6d
 function killstreak_post_mod_damage_callback( data )
@@ -2040,7 +2040,7 @@ function killstreak_post_mod_damage_callback( data )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ebd
 // Size: 0x90
 function killstreak_death_callback( data )
@@ -2058,7 +2058,7 @@ function killstreak_death_callback( data )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f56
 // Size: 0x35
 function killstreak_set_pre_mod_damage_callback( streakname, premoddamagecallback )
@@ -2069,7 +2069,7 @@ function killstreak_set_pre_mod_damage_callback( streakname, premoddamagecallbac
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f93
 // Size: 0x35
 function killstreak_set_post_mod_damage_callback( streakname, postmoddamagecallback )
@@ -2080,7 +2080,7 @@ function killstreak_set_post_mod_damage_callback( streakname, postmoddamagecallb
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3fd0
 // Size: 0x35
 function killstreak_set_death_callback( streakname, deathcallback )
@@ -2091,7 +2091,7 @@ function killstreak_set_death_callback( streakname, deathcallback )
 }
 
 // Namespace killstreak / scripts\mp\utility\killstreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x400d
 // Size: 0x3e
 function getkillstreaknamefromweapon( objweapon )
@@ -2109,7 +2109,7 @@ function getkillstreaknamefromweapon( objweapon )
 /#
 
     // Namespace killstreak / scripts\mp\utility\killstreak
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x4054
     // Size: 0x18b, Type: dev
     function function_dab24dca3ba6294a( streakname )

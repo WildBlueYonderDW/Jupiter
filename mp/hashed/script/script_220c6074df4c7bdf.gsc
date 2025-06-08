@@ -10,7 +10,7 @@
 #namespace search_threat_plus;
 
 // Namespace search_threat_plus / namespace_1580a10821910b9d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x169
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -19,7 +19,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace search_threat_plus / namespace_1580a10821910b9d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17f
 // Size: 0x4a5
 function evaluatescore( bot )
@@ -130,7 +130,7 @@ function evaluatescore( bot )
 }
 
 // Namespace search_threat_plus / namespace_1580a10821910b9d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x62d
 // Size: 0xc8
 function actionprocess( bot )

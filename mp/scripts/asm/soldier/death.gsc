@@ -18,7 +18,7 @@
 #namespace death;
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaeb
 // Size: 0x68
 function deathlmgcleanup()
@@ -35,7 +35,7 @@ function deathlmgcleanup()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb5b
 // Size: 0x885
 function playdeathanim( asmname, statename, params )
@@ -433,7 +433,7 @@ function playdeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e8
 // Size: 0x51
 function deathnotetrackhandler( note )
@@ -455,7 +455,7 @@ function deathnotetrackhandler( note )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1441
 // Size: 0x17d
 function handleburningtodeath( deathxanim )
@@ -517,7 +517,7 @@ function handleburningtodeath( deathxanim )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15c6
 // Size: 0x5c
 function handleburndeathmodelswap()
@@ -538,7 +538,7 @@ function handleburndeathmodelswap()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x162a
 // Size: 0xe0
 function handleburndeathvfx()
@@ -576,7 +576,7 @@ function handleburndeathvfx()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1712
 // Size: 0xe2
 function getburnvfxtagpackets()
@@ -596,7 +596,7 @@ function getburnvfxtagpackets()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17fd
 // Size: 0x47
 function createburnvfxpacket( tag, burnvfx, smoldervfx )
@@ -608,7 +608,7 @@ function createburnvfxpacket( tag, burnvfx, smoldervfx )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x184d
 // Size: 0x9b
 function detachriotshield( inexecution )
@@ -638,7 +638,7 @@ function detachriotshield( inexecution )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18f0
 // Size: 0x13, Type: bool
 function shoulddropriotshield()
@@ -652,7 +652,7 @@ function shoulddropriotshield()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x190c
 // Size: 0x8c
 function dropriotshield()
@@ -667,7 +667,7 @@ function dropriotshield()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a0
 // Size: 0x69
 function dropriotshieldweapon()
@@ -680,7 +680,7 @@ function dropriotshieldweapon()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a11
 // Size: 0x1b
 function deleteriotshield( time )
@@ -691,7 +691,7 @@ function deleteriotshield( time )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a34
 // Size: 0x106
 function c8deathsound( c8, notetrack )
@@ -728,7 +728,7 @@ function c8deathsound( c8, notetrack )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b42
 // Size: 0x135
 function playexplosivedeathanim( asmname, statename, params )
@@ -759,7 +759,7 @@ function playexplosivedeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c7f
 // Size: 0x68
 function playbalconydeathanim( asmname, statename, params )
@@ -770,7 +770,7 @@ function playbalconydeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cef
 // Size: 0xb7
 function playdeathanim_melee_ragdolldelayed( asmname, statename, params )
@@ -819,7 +819,7 @@ function playdeathanim_melee_ragdolldelayed( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1dae
 // Size: 0x2f
 function chooseshockdeathanim( asmname, statename, tostatename, params )
@@ -828,7 +828,7 @@ function chooseshockdeathanim( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1de6
 // Size: 0x37, Type: bool
 function shouldplayshockdeath( asmname, statename, tostatename, params )
@@ -837,7 +837,7 @@ function shouldplayshockdeath( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1e26
 // Size: 0x5e, Type: bool
 function shouldplayexplosivedeath( asmname, statename, tostatename, params )
@@ -862,7 +862,7 @@ function shouldplayexplosivedeath( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1e8d
 // Size: 0x86, Type: bool
 function function_a9ab7e592a976b98( asmname, statename, tostatename, params )
@@ -885,7 +885,7 @@ function function_a9ab7e592a976b98( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f1c
 // Size: 0x77
 function function_bd0988db0fd373a1( asmname, statename, params )
@@ -906,7 +906,7 @@ function function_bd0988db0fd373a1( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f9c
 // Size: 0x54
 function function_d111a9b9015e2baa( asmname, statename, params )
@@ -919,7 +919,7 @@ function function_d111a9b9015e2baa( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1ff8
 // Size: 0x73, Type: bool
 function shouldplayplayermeleedeath( asmname, statename, tostatename, params )
@@ -943,7 +943,7 @@ function shouldplayplayermeleedeath( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2074
 // Size: 0x14d, Type: bool
 function shouldplaybalconydeath( asmname, statename, tostatename, params )
@@ -1002,7 +1002,7 @@ function shouldplaybalconydeath( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x21ca
 // Size: 0x43, Type: bool
 function shouldplaybalconyraildeath( asmname, statename, tostatename, params )
@@ -1011,7 +1011,7 @@ function shouldplaybalconyraildeath( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2216
 // Size: 0x33
 function choosebalconydeathanim( asmname, statename, tostatename, params )
@@ -1020,7 +1020,7 @@ function choosebalconydeathanim( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2252
 // Size: 0x169, Type: bool
 function shouldplaystrongdamagedeath( asmname, statename, tostatename, params )
@@ -1084,7 +1084,7 @@ function shouldplaystrongdamagedeath( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23c4
 // Size: 0x11c
 function c6_scriptablecleanup()
@@ -1130,7 +1130,7 @@ function c6_scriptablecleanup()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24e8
 // Size: 0xeb
 function c8_scriptablecleanup()
@@ -1162,7 +1162,7 @@ function c8_scriptablecleanup()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25db
 // Size: 0x69
 function choosemovingdeathanim( asmname, statename, params )
@@ -1175,7 +1175,7 @@ function choosemovingdeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x266b
 // Size: 0x76
 function choosecrouchingdeathanim( asmname, statename, params )
@@ -1194,7 +1194,7 @@ function choosecrouchingdeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26ea
 // Size: 0x1aa
 function choosecoverdeathanim( asmname, statename, params )
@@ -1250,7 +1250,7 @@ function choosecoverdeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x289c
 // Size: 0x231
 function choosestandingdeathanim( asmname, statename, params )
@@ -1323,7 +1323,7 @@ function choosestandingdeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ad6
 // Size: 0x21e
 function chooseexplosivedeathanim( asmname, statename, params )
@@ -1416,7 +1416,7 @@ function chooseexplosivedeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cfd
 // Size: 0x151
 function choosestandingpistoldeathanim( asmname, statename, params )
@@ -1453,7 +1453,7 @@ function choosestandingpistoldeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2e57
 // Size: 0x27
 function choosestandingmeleedeathanim( asmname, statename, params )
@@ -1462,7 +1462,7 @@ function choosestandingmeleedeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e87
 // Size: 0x3, Type: bool
 function firingdeathallowed()
@@ -1471,7 +1471,7 @@ function firingdeathallowed()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e93
 // Size: 0x46
 function playdeathfx()
@@ -1492,7 +1492,7 @@ function playdeathfx()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ee1
 // Size: 0x107
 function play_blood_pool( note, flagname )
@@ -1523,7 +1523,7 @@ function play_blood_pool( note, flagname )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ff0
 // Size: 0xf4, Type: bool
 function shouldhelmetpoponpain( bexplosivedamage )
@@ -1567,7 +1567,7 @@ function shouldhelmetpoponpain( bexplosivedamage )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30ed
 // Size: 0xae, Type: bool
 function shouldhelmetpopondeath( bexplosivedamage )
@@ -1601,7 +1601,7 @@ function shouldhelmetpopondeath( bexplosivedamage )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31a4
 // Size: 0x24e
 function helmetpop()
@@ -1676,7 +1676,7 @@ function helmetpop()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33fa
 // Size: 0xde
 function helmetlaunch( damagedir )
@@ -1709,7 +1709,7 @@ function helmetlaunch( damagedir )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34e0
 // Size: 0x1f
 function getsuffocationdeathanim()
@@ -1725,7 +1725,7 @@ function getsuffocationdeathanim()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3508
 // Size: 0x3, Type: bool
 function shouldplaysuffocatedeath()
@@ -1734,7 +1734,7 @@ function shouldplaysuffocatedeath()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3514
 // Size: 0xc2, Type: bool
 function shouldheadpop( bexplosivedamage )
@@ -1775,7 +1775,7 @@ function shouldheadpop( bexplosivedamage )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35df
 // Size: 0x65
 function headpop()
@@ -1792,7 +1792,7 @@ function headpop()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x364c
 // Size: 0x24
 function cross2d( a, b )
@@ -1801,7 +1801,7 @@ function cross2d( a, b )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3679
 // Size: 0x6e
 function meleegetattackercardinaldirection( var_e508c1784ebedbc6, var_d9c3b6b9654ffd8e )
@@ -1832,7 +1832,7 @@ function meleegetattackercardinaldirection( var_e508c1784ebedbc6, var_d9c3b6b965
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36ef
 // Size: 0x1be
 function orientmeleevictim( directional_orient )
@@ -1870,7 +1870,7 @@ function orientmeleevictim( directional_orient )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38b5
 // Size: 0x3f, Type: bool
 function function_b84fca76682933d4()
@@ -1884,7 +1884,7 @@ function function_b84fca76682933d4()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38fd
 // Size: 0xa9
 function function_2ae52d0a5e94265a()
@@ -1907,7 +1907,7 @@ function function_2ae52d0a5e94265a()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39ae
 // Size: 0x1d8
 function playdeathsound( bexplosivedamage )
@@ -1999,7 +1999,7 @@ function playdeathsound( bexplosivedamage )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b8e
 // Size: 0x83, Type: bool
 function shouldskipdeathsound()
@@ -2026,18 +2026,19 @@ function shouldskipdeathsound()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c1a
 // Size: 0x40
 function removeselffrom_squadlastseenenemypos( org )
 {
-    for (i = 0; i < anim.squadindex.size; i++) {
+    for ( i = 0; i < anim.squadindex.size ; i++ )
+    {
         anim.squadindex[ i ] clearsightposnear( org );
     }
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c62
 // Size: 0x46
 function clearsightposnear( org )
@@ -2055,7 +2056,7 @@ function clearsightposnear( org )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3cb0
 // Size: 0x3c, Type: bool
 function isattackerwithindist( attacker, maxdist )
@@ -2074,7 +2075,7 @@ function isattackerwithindist( attacker, maxdist )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3cf5
 // Size: 0x30, Type: bool
 function isspecialdeath( asmname, statename, tostatename, params )
@@ -2088,7 +2089,7 @@ function isspecialdeath( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3d2e
 // Size: 0x45
 function choosespecialdeath( asmname, statename, params )
@@ -2102,7 +2103,7 @@ function choosespecialdeath( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d7b
 // Size: 0x11d, Type: bool
 function shouldgib()
@@ -2144,7 +2145,7 @@ function shouldgib()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ea1
 // Size: 0xe8
 function dogibdefault( victim )
@@ -2174,7 +2175,7 @@ function dogibdefault( victim )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f91
 // Size: 0x2b
 function dogib()
@@ -2189,7 +2190,7 @@ function dogib()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3fc4
 // Size: 0xf3, Type: bool
 function shouldplayshieldbashdeath( asmname, statename, tostatename, params )
@@ -2220,7 +2221,7 @@ function shouldplayshieldbashdeath( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x40c0
 // Size: 0x1c0
 function doshieldbashdeath( asmname, statename, tostatename, params )
@@ -2263,7 +2264,7 @@ function doshieldbashdeath( asmname, statename, tostatename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4288
 // Size: 0xc9
 function getpainbodypartdeath()
@@ -2303,7 +2304,7 @@ function getpainbodypartdeath()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4359
 // Size: 0x39
 function getpainbodypartcrouchdeath()
@@ -2319,7 +2320,7 @@ function getpainbodypartcrouchdeath()
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x439a
 // Size: 0x198
 function choosedirectionaldeathanim( asmname, statename, params )
@@ -2373,7 +2374,7 @@ function choosedirectionaldeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x453b
 // Size: 0x11d
 function choosedirectionalcrouchdeathanim( asmname, statename, params )
@@ -2416,7 +2417,7 @@ function choosedirectionalcrouchdeathanim( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4661
 // Size: 0xd4, Type: bool
 function shouldfireintoairdeath( statename, part )
@@ -2462,7 +2463,7 @@ function shouldfireintoairdeath( statename, part )
 }
 
 // Namespace death / scripts\asm\soldier\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x473e
 // Size: 0x104
 function choosedirectionallargepaindeathanim( asmname, statename, params )

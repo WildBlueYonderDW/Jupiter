@@ -15,7 +15,7 @@
 #namespace mp_jup_favela_alt;
 
 // Namespace mp_jup_favela_alt / scripts\mp\maps\mp_jup_favela_alt\mp_jup_favela_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2be
 // Size: 0xa7
 function main()
@@ -36,7 +36,7 @@ function main()
 }
 
 // Namespace mp_jup_favela_alt / scripts\mp\maps\mp_jup_favela_alt\mp_jup_favela_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36d
 // Size: 0x215
 function function_2679bbd8edcd273a()

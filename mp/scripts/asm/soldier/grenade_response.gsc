@@ -4,7 +4,7 @@
 #namespace grenade_response;
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a0
 // Size: 0x1f1
 function playgrenadereturnthrowanim( asmname, statename, params )
@@ -68,7 +68,7 @@ function playgrenadereturnthrowanim( asmname, statename, params )
 }
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x399
 // Size: 0x6a
 function terminategrenadereturnthrowanim( asmname, statename, params )
@@ -84,7 +84,7 @@ function terminategrenadereturnthrowanim( asmname, statename, params )
 }
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40b
 // Size: 0x5b
 function islowthrowsafe()
@@ -95,7 +95,7 @@ function islowthrowsafe()
 }
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x46f
 // Size: 0xb3
 function choosegrenadereturnthrowanim( asmname, statename, params )
@@ -126,7 +126,7 @@ function choosegrenadereturnthrowanim( asmname, statename, params )
 }
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x52b
 // Size: 0x39
 function playgrenadeavoidanim( asmname, statename, params )
@@ -135,7 +135,7 @@ function playgrenadeavoidanim( asmname, statename, params )
 }
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x56c
 // Size: 0x119, Type: bool
 function shouldgrenadedive( asmname, statename, tostatename, params )
@@ -177,7 +177,7 @@ function shouldgrenadedive( asmname, statename, tostatename, params )
 }
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x68e
 // Size: 0x2e
 function grenadeavoid_terminate( asmname, statename, params )

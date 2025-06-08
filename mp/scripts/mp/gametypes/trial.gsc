@@ -22,7 +22,7 @@
 #namespace trial;
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b7
 // Size: 0x7a6
 function main()
@@ -51,7 +51,7 @@ function main()
     
     if ( issubstr( getdvar( @"g_mapname" ), "mp_t_" ) )
     {
-        setdvar( @"hash_2a4effcaf5954d38", 0 );
+        setdvar( @"scr_game_enableminimap", 0 );
     }
     
     if ( getdvar( @"hash_a1767cfd7ede043b" ) == "1" )
@@ -64,7 +64,7 @@ function main()
     }
     
     setdvar( @"hash_84bca47b0009d424", 0 );
-    setdvar( @"hash_704afe6f6c582ee0", 0 );
+    setdvar( @"scr_game_matchstarttime", 0 );
     setdvar( @"hash_da33635b62d4e5b3", 0 );
     setdvar( @"hash_9a6a321c990cec4e", 0 );
     
@@ -235,7 +235,7 @@ function main()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1165
 // Size: 0x9f
 function trialendgame( winner, endreasontext )
@@ -265,7 +265,7 @@ function trialendgame( winner, endreasontext )
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120c
 // Size: 0x3b5
 function trial_mission_data_init()
@@ -317,7 +317,7 @@ function trial_mission_data_init()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15c9
 // Size: 0x3a5
 function function_72965bdb36677ee9( missionid )
@@ -368,7 +368,7 @@ function function_72965bdb36677ee9( missionid )
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1976
 // Size: 0xc5
 function getspawnpoint()
@@ -397,7 +397,7 @@ function getspawnpoint()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a44
 // Size: 0x1d7
 function onplayerconnect( player )
@@ -461,7 +461,7 @@ function onplayerconnect( player )
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c23
 // Size: 0x3d1
 function setspecialloadout()
@@ -531,7 +531,7 @@ function setspecialloadout()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ffc
 // Size: 0x30
 function infinite_reserve_ammo()
@@ -547,7 +547,7 @@ function infinite_reserve_ammo()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2034
 // Size: 0x190
 function trial_weapon_spawn()
@@ -594,7 +594,7 @@ function trial_weapon_spawn()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21cc
 // Size: 0x37e
 function weapon_think()
@@ -697,7 +697,7 @@ function weapon_think()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2552
 // Size: 0x15c
 function weapon_akimbo_prop_think( weapon_name )
@@ -734,7 +734,7 @@ function weapon_akimbo_prop_think( weapon_name )
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26b6
 // Size: 0x146
 function trial_end_score_dialogue()
@@ -790,7 +790,7 @@ function trial_end_score_dialogue()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2804
 // Size: 0xdd
 function trial_retrieve_persistent_values()
@@ -821,7 +821,7 @@ function trial_retrieve_persistent_values()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28e9
 // Size: 0x52
 function trial_restart_watcher()
@@ -841,7 +841,7 @@ function trial_restart_watcher()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2943
 // Size: 0x47
 function processlobbydata()
@@ -861,7 +861,7 @@ function processlobbydata()
 }
 
 // Namespace trial / scripts\mp\gametypes\trial
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2992
 // Size: 0x1ff
 function processlobbydataforclient( player )
@@ -910,7 +910,7 @@ function processlobbydataforclient( player )
 /#
 
     // Namespace trial / scripts\mp\gametypes\trial
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2b99
     // Size: 0xd, Type: dev
     function function_2e9e80d411685c12()
@@ -919,7 +919,7 @@ function processlobbydataforclient( player )
     }
 
     // Namespace trial / scripts\mp\gametypes\trial
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2bae
     // Size: 0x4a, Type: dev
     function function_c27ed1f1252188f8()

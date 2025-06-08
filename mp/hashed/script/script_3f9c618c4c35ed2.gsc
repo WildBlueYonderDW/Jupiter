@@ -25,7 +25,7 @@
 #/
 
 // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f1
 // Size: 0x175
 function function_ecd079f7925cc275()
@@ -90,7 +90,7 @@ function function_ecd079f7925cc275()
 }
 
 // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36e
 // Size: 0x4e
 function function_46ddeeb7b7770fbc( v_origin )
@@ -102,7 +102,7 @@ function function_46ddeeb7b7770fbc( v_origin )
 }
 
 // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c4
 // Size: 0x36
 function function_5fb0cca95a3c07a0( var_1cee67764fdc54de )
@@ -112,7 +112,7 @@ function function_5fb0cca95a3c07a0( var_1cee67764fdc54de )
 }
 
 // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x402
 // Size: 0xcb
 function function_19cc82eefa6754b5()
@@ -142,7 +142,7 @@ function function_19cc82eefa6754b5()
 }
 
 // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d6
 // Size: 0x2f
 function function_b6c284a8a98ae76f()
@@ -154,7 +154,7 @@ function function_b6c284a8a98ae76f()
 }
 
 // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x50d
 // Size: 0x2e3
 function circledamagetick()
@@ -284,7 +284,7 @@ function circledamagetick()
 }
 
 // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f8
 // Size: 0x71
 function function_cc88915ea8c3bc44()
@@ -311,7 +311,7 @@ function function_cc88915ea8c3bc44()
     }
 
     // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x8a7
     // Size: 0x19, Type: dev
     function function_a16af0929c3d19a8()

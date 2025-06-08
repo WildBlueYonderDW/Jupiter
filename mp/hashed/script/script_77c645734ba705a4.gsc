@@ -11,7 +11,7 @@
 #namespace jup_spawner_zombie_deathworm_quest;
 
 // Namespace jup_spawner_zombie_deathworm_quest / namespace_bedf2142514324c8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x173
 function main()
@@ -43,7 +43,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_deathworm_quest / namespace_bedf2142514324c8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x330
 // Size: 0x57
 function setup_model()
@@ -60,7 +60,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_deathworm_quest / namespace_bedf2142514324c8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38f
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -69,7 +69,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_deathworm_quest / namespace_bedf2142514324c8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a0
 // Size: 0x100
 function precache()

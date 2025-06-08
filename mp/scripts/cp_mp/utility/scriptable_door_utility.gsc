@@ -3,7 +3,7 @@
 #namespace scriptable_door_utility;
 
 // Namespace scriptable_door_utility / scripts\cp_mp\utility\scriptable_door_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe0
 // Size: 0xca
 function scriptable_door_get_in_radius( position, radius, maxheightdiff )
@@ -37,7 +37,7 @@ function scriptable_door_get_in_radius( position, radius, maxheightdiff )
 }
 
 // Namespace scriptable_door_utility / scripts\cp_mp\utility\scriptable_door_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b3
 // Size: 0xd6
 function scriptable_door_freeze_open( isbashleft )
@@ -75,7 +75,7 @@ function scriptable_door_freeze_open( isbashleft )
 }
 
 // Namespace scriptable_door_utility / scripts\cp_mp\utility\scriptable_door_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x291
 // Size: 0x77, Type: bool
 function scriptable_door_is_double_door_pair( otherdoor )
@@ -98,7 +98,7 @@ function scriptable_door_is_double_door_pair( otherdoor )
 }
 
 // Namespace scriptable_door_utility / scripts\cp_mp\utility\scriptable_door_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x311
 // Size: 0xd8, Type: bool
 function function_8a84bf34f556872d( otherdoor )

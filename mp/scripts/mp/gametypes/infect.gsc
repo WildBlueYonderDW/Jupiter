@@ -51,8 +51,8 @@
 #namespace infect;
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a46
+// Params 0
+// Checksum 0x0, Offset: 0x1e20
 // Size: 0x3a2
 function main()
 {
@@ -62,7 +62,7 @@ function main()
     
     if ( matchmakingmatch )
     {
-        level.isgroundwarinfected = getdvarint( @"hash_119729a5fcbd2aab", 0 );
+        level.isgroundwarinfected = getdvarint( @"scr_infect_groundwarinfect", 0 );
     }
     else
     {
@@ -70,7 +70,7 @@ function main()
     }
     
     /#
-        level.isgroundwarinfected = getdvarint( @"hash_119729a5fcbd2aab", 0 );
+        level.isgroundwarinfected = getdvarint( @"scr_infect_groundwarinfect", 0 );
     #/
     
     allowed[ 0 ] = getgametype();
@@ -124,9 +124,9 @@ function main()
     level.var_8683bc01bfd2ecab = 1;
     level.disablecopycatloadout = 1;
     setomnvar( "ui_killcam_copycat", 0 );
-    level.infectednightmode = getdvarint( @"hash_298b7643d2bd0413", 0 );
+    level.infectednightmode = getdvarint( @"scr_infect_nvgmode", 0 );
     level.infecteddisablenvg = getdvarint( @"hash_b236732b505b9983", 0 );
-    level.onlineprimaryoverride = getdvarint( @"hash_2712996ccb16a4de", 0 );
+    level.onlineprimaryoverride = getdvarint( @"scr_infect_onlineprimaryoverride", 0 );
     
     if ( level.gametypebundle.namekey == "infect_holiday" )
     {
@@ -152,8 +152,8 @@ function main()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1df0
+// Params 0
+// Checksum 0x0, Offset: 0x21ca
 // Size: 0x3d
 function waitthensetstatgroupreadonly()
 {
@@ -169,9 +169,9 @@ function waitthensetstatgroupreadonly()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e35
-// Size: 0x9ce
+// Params 0
+// Checksum 0x0, Offset: 0x220f
+// Size: 0x12ea
 function initializematchrules()
 {
     setcommonrulesfrommatchrulesdata();
@@ -179,9 +179,15 @@ function initializematchrules()
     setdynamicdvar( @"hash_a44ac0c52a7bffdd", getmatchrulesdata( "infectData", "weaponSurvivorPrimary" ) );
     setdynamicdvar( @"hash_343635a44dbb0762", "none" );
     setdynamicdvar( @"hash_8e3f4856f25114f0", "none" );
+    setdynamicdvar( @"hash_8e3f4956f2511723", "none" );
+    setdynamicdvar( @"hash_8e3f4e56f2512222", "none" );
+    setdynamicdvar( @"hash_8e3f4f56f2512455", "none" );
     setdynamicdvar( @"hash_c4b02863872af0bd", getmatchrulesdata( "infectData", "weaponSurvivorSecondary" ) );
     setdynamicdvar( @"hash_ee2fe9638607a1ee", "none" );
     setdynamicdvar( @"hash_db0021dfc2c8f6d4", "none" );
+    setdynamicdvar( @"hash_db0022dfc2c8f907", "none" );
+    setdynamicdvar( @"hash_db001fdfc2c8f26e", "none" );
+    setdynamicdvar( @"hash_db0020dfc2c8f4a1", "none" );
     setdynamicdvar( @"hash_d1b3309408a1e897", getmatchrulesdata( "infectData", "lethalSurvivor" ) );
     setdynamicdvar( @"hash_a305fa9e69c31190", getmatchrulesdata( "infectData", "tacticalSurvivor" ) );
     setdynamicdvar( @"hash_a3c1a41ff13c5bac", getmatchrulesdata( "infectData", "superSurvivor" ) );
@@ -189,11 +195,29 @@ function initializematchrules()
     setdynamicdvar( @"hash_6c5a93985d33efc8", getmatchrulesdata( "infectData", "weaponInfectPrimary" ) );
     setdynamicdvar( @"hash_cb5a2ba18d38eaeb", "none" );
     setdynamicdvar( @"hash_7038cd49942c7b3b", "none" );
+    setdynamicdvar( @"hash_7038cc49942c7908", "none" );
+    setdynamicdvar( @"hash_7038d349942c886d", "none" );
+    setdynamicdvar( @"hash_7038d249942c863a", "none" );
     setdynamicdvar( @"hash_94cd061650f7ce18", getmatchrulesdata( "infectData", "weaponInfectSecondary" ) );
+    setdynamicdvar( @"hash_9818fc6ebd0c8c8f", "none" );
+    setdynamicdvar( @"hash_8b7fe489c29983a7", "none" );
+    setdynamicdvar( @"hash_8b7fe389c2998174", "none" );
+    setdynamicdvar( @"hash_8b7fe289c2997f41", "none" );
+    setdynamicdvar( @"hash_8b7fe189c2997d0e", "none" );
     setdynamicdvar( @"hash_a4d8476ca2b3de70", getmatchrulesdata( "infectData", "lethalInfect" ) );
     setdynamicdvar( @"hash_cf7a6e0ed93c9277", getmatchrulesdata( "infectData", "tacticalInfect" ) );
     setdynamicdvar( @"hash_8a3e30cc9f0d0c79", getmatchrulesdata( "infectData", "weaponInitialPrimary" ) );
+    setdynamicdvar( @"hash_35b4ac62f66753b0", "none" );
+    setdynamicdvar( @"hash_83aa9fa3e53ca6e6", "none" );
+    setdynamicdvar( @"hash_83aaa0a3e53ca919", "none" );
+    setdynamicdvar( @"hash_83aaa1a3e53cab4c", "none" );
+    setdynamicdvar( @"hash_83aaa2a3e53cad7f", "none" );
     setdynamicdvar( @"hash_b7be534f7d1f6c91", getmatchrulesdata( "infectData", "weaponInitialSecondary" ) );
+    setdynamicdvar( @"hash_fa6409cb2c349660", "none" );
+    setdynamicdvar( @"hash_de97dbd237a69656", "none" );
+    setdynamicdvar( @"hash_de97dcd237a69889", "none" );
+    setdynamicdvar( @"hash_de97ddd237a69abc", "none" );
+    setdynamicdvar( @"hash_de97ded237a69cef", "none" );
     setdynamicdvar( @"hash_c8c77b5a2a21af33", getmatchrulesdata( "infectData", "superInfect" ) );
     setdynamicdvar( @"hash_bfad61c7edf9ba5b", getmatchrulesdata( "infectData", "superInfectTwo" ) );
     setdynamicdvar( @"hash_d3681002af892cec", getmatchrulesdata( "infectData", "infectExtraTimePerKill" ) );
@@ -204,70 +228,155 @@ function initializematchrules()
     setdynamicdvar( @"hash_5e198c75ec20c248", getmatchrulesdata( "infectData", "enableInfectedTracker" ) );
     setdynamicdvar( @"hash_4c708658ae44448", getmatchrulesdata( "infectData", "enablePing" ) );
     setdynamicdvar( @"hash_6292876408549d8c", getmatchrulesdata( "infectData", "giveTKOnTISpawn" ) );
-    setdynamicdvar( @"hash_e5a33d679c26221f", 0 );
+    setdynamicdvar( @"scr_team_fftype", 0 );
     setdynamicdvar( @"hash_cbed990d7208a0a5", 0 );
     
     if ( getdvarint( @"jup", 0 ) )
     {
-        setdynamicdvar( @"hash_8a3e30cc9f0d0c79", "jup_jp16_sh_recho870" );
-        setdynamicdvar( @"hash_b7be534f7d1f6c91", "jup_jp12_pi_mike93" );
+        setdynamicdvar( @"hash_d1b3309408a1e897", "equip_claymore" );
+        setdynamicdvar( @"hash_a305fa9e69c31190", "equip_butterfly_mine" );
+        setdynamicdvar( @"hash_a3c1a41ff13c5bac", "super_tac_cover" );
+        setdynamicdvar( @"hash_b0950d9d807b3bc6", "super_ammo_drop" );
         setdynamicdvar( @"hash_6c5a93985d33efc8", "jup_jp23_me_knife" );
+        loadoutidx = getdvarint( @"hash_52f6a1896e9c4721", randomint( 5 ) );
         
-        switch ( randomint( 6 ) )
+        switch ( loadoutidx )
         {
             case 0:
-                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp09_sh_oromeo12" );
+                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp28_lm_rpapa20" );
+                setdynamicdvar( @"hash_343635a44dbb0762", "jup_jp28_lm_rpapa20_bar_short" );
+                setdynamicdvar( @"hash_8e3f4856f25114f0", "jup_grip_side_hip" );
+                setdynamicdvar( @"hash_8e3f4956f2511723", "jup_jp28_lm_rpapa20_belt_150_545" );
+                setdynamicdvar( @"hash_8e3f4e56f2512222", "jup_jp28_lm_rpapa20_pgrip_aim" );
+                setdynamicdvar( @"hash_8e3f4f56f2512455", "jup_jp28_lm_rpapa20_stockno" );
                 setdynamicdvar( @"hash_c4b02863872af0bd", "jup_cp24_pi_glima21" );
-                setdynamicdvar( @"hash_d1b3309408a1e897", "equip_thermobaric_grenade" );
-                setdynamicdvar( @"hash_a305fa9e69c31190", "equip_snapshot_grenade" );
-                setdynamicdvar( @"hash_a3c1a41ff13c5bac", "super_sonar_pulse" );
+                setdynamicdvar( @"hash_ee2fe9638607a1ee", "jup_cp24_sm_glima21_bar_convert" );
+                setdynamicdvar( @"hash_db0021dfc2c8f6d4", "jup_reflex04_tall" );
+                setdynamicdvar( @"hash_db0022dfc2c8f907", "jup_cp24_pi_glima21_mag_30_45acp" );
+                setdynamicdvar( @"hash_db001fdfc2c8f26e", "jup_ammo_45acp_rip" );
+                setdynamicdvar( @"hash_db0020dfc2c8f4a1", "jup_grip_vert_01" );
+                setdynamicdvar( @"hash_8a3e30cc9f0d0c79", "jup_jp28_lm_rpapa20" );
+                setdynamicdvar( @"hash_35b4ac62f66753b0", "jup_jp28_lm_rpapa20_bar_short" );
+                setdynamicdvar( @"hash_83aa9fa3e53ca6e6", "jup_grip_side_hip" );
+                setdynamicdvar( @"hash_83aaa0a3e53ca919", "jup_jp28_lm_rpapa20_belt_150_545" );
+                setdynamicdvar( @"hash_83aaa1a3e53cab4c", "jup_jp28_lm_rpapa20_pgrip_aim" );
+                setdynamicdvar( @"hash_83aaa2a3e53cad7f", "jup_jp28_lm_rpapa20_stockno" );
+                setdynamicdvar( @"hash_b7be534f7d1f6c91", "jup_cp24_pi_glima21" );
+                setdynamicdvar( @"hash_fa6409cb2c349660", "jup_cp24_sm_glima21_bar_convert" );
+                setdynamicdvar( @"hash_de97dbd237a69656", "jup_reflex04_tall" );
+                setdynamicdvar( @"hash_de97dcd237a69889", "jup_cp24_pi_glima21_mag_30_45acp" );
+                setdynamicdvar( @"hash_de97ddd237a69abc", "jup_ammo_45acp_rip" );
+                setdynamicdvar( @"hash_de97ded237a69cef", "jup_grip_vert_01" );
                 break;
             case 1:
-                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp16_sh_recho870" );
-                setdynamicdvar( @"hash_343635a44dbb0762", "jup_las_twofivex01" );
-                setdynamicdvar( @"hash_8e3f4856f25114f0", "jup_recho870_ammo_12g_sl" );
-                setdynamicdvar( @"hash_c4b02863872af0bd", "jup_cp24_pi_glima21" );
-                setdynamicdvar( @"hash_ee2fe9638607a1ee", "jup_glima21_akimbo" );
-                setdynamicdvar( @"hash_d1b3309408a1e897", "equip_bunkerbuster" );
-                setdynamicdvar( @"hash_a305fa9e69c31190", "equip_gas_grenade" );
-                setdynamicdvar( @"hash_a3c1a41ff13c5bac", "super_tac_cover" );
+                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp09_sh_oromeo12" );
+                setdynamicdvar( @"hash_343635a44dbb0762", "jup_jp09_sh_oromeo12_drum_amp_410g" );
+                setdynamicdvar( @"hash_8e3f4856f25114f0", "laserbox_hip03" );
+                setdynamicdvar( @"hash_8e3f4956f2511723", "jup_jp09_sh_oromeo12_bar_long" );
+                setdynamicdvar( @"hash_8e3f4e56f2512222", "jup_choke_sh05" );
+                setdynamicdvar( @"hash_8e3f4f56f2512455", "jup_grip_vert_09" );
+                setdynamicdvar( @"hash_c4b02863872af0bd", "jup_jp12_pi_mike93" );
+                setdynamicdvar( @"hash_ee2fe9638607a1ee", "jup_jp12_pi_mike93_bar_hvyconvert" );
+                setdynamicdvar( @"hash_db0021dfc2c8f6d4", "jup_reflex04_tall" );
+                setdynamicdvar( @"hash_db0022dfc2c8f907", "jup_jp12_pi_mike93_mag_30_9mm" );
+                setdynamicdvar( @"hash_db001fdfc2c8f26e", "jup_ammo_9p_rip" );
+                setdynamicdvar( @"hash_db0020dfc2c8f4a1", "laserpstl_hip01" );
+                setdynamicdvar( @"hash_8a3e30cc9f0d0c79", "jup_jp09_sh_oromeo12" );
+                setdynamicdvar( @"hash_35b4ac62f66753b0", "jup_jp09_sh_oromeo12_drum_amp_410g" );
+                setdynamicdvar( @"hash_83aa9fa3e53ca6e6", "laserbox_hip03" );
+                setdynamicdvar( @"hash_83aaa0a3e53ca919", "jup_jp09_sh_oromeo12_bar_long" );
+                setdynamicdvar( @"hash_83aaa1a3e53cab4c", "jup_choke_sh05" );
+                setdynamicdvar( @"hash_83aaa2a3e53cad7f", "jup_grip_vert_09" );
+                setdynamicdvar( @"hash_b7be534f7d1f6c91", "jup_jp12_pi_mike93" );
+                setdynamicdvar( @"hash_fa6409cb2c349660", "jup_jp12_pi_mike93_bar_hvyconvert" );
+                setdynamicdvar( @"hash_de97dbd237a69656", "jup_reflex04_tall" );
+                setdynamicdvar( @"hash_de97dcd237a69889", "jup_jp12_pi_mike93_mag_30_9mm" );
+                setdynamicdvar( @"hash_de97ddd237a69abc", "jup_ammo_9p_rip" );
+                setdynamicdvar( @"hash_de97ded237a69cef", "laserpstl_hip01" );
                 break;
             case 2:
-                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp07_sm_uzulup" );
-                setdynamicdvar( @"hash_c4b02863872af0bd", "jup_jp23_me_knife" );
-                setdynamicdvar( @"hash_d1b3309408a1e897", "equip_c4" );
-                setdynamicdvar( @"hash_a305fa9e69c31190", "equip_battlerage" );
-                setdynamicdvar( @"hash_a3c1a41ff13c5bac", "super_ammo_drop" );
+                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp01_ar_golf36" );
+                setdynamicdvar( @"hash_343635a44dbb0762", "jup_jp01_ar_golf36_bar_amp_dbar" );
+                setdynamicdvar( @"hash_8e3f4856f25114f0", "jup_jp01_ar_golf36_stock_skel" );
+                setdynamicdvar( @"hash_8e3f4956f2511723", "jup_jp01_ar_golf36_pgrip_ske" );
+                setdynamicdvar( @"hash_8e3f4e56f2512222", "laserbox_ads03" );
+                setdynamicdvar( @"hash_8e3f4f56f2512455", "jup_reflex_proj_tall" );
+                setdynamicdvar( @"hash_c4b02863872af0bd", "jup_cp24_pi_glima21" );
+                setdynamicdvar( @"hash_ee2fe9638607a1ee", "jup_glima21_akimbo" );
+                setdynamicdvar( @"hash_db0021dfc2c8f6d4", "jup_cp24_pi_glima21_drum_40_45acp" );
+                setdynamicdvar( @"hash_db0022dfc2c8f907", "laserpstl_hip01" );
+                setdynamicdvar( @"hash_db001fdfc2c8f26e", "jup_cp24_pi_glima21_trigger_hair" );
+                setdynamicdvar( @"hash_db0020dfc2c8f4a1", "jup_ammo_45acp_rip" );
+                setdynamicdvar( @"hash_8a3e30cc9f0d0c79", "jup_jp01_ar_golf36" );
+                setdynamicdvar( @"hash_35b4ac62f66753b0", "jup_jp01_ar_golf36_bar_amp_dbar" );
+                setdynamicdvar( @"hash_83aa9fa3e53ca6e6", "jup_jp01_ar_golf36_stock_skel" );
+                setdynamicdvar( @"hash_83aaa0a3e53ca919", "jup_jp01_ar_golf36_pgrip_ske" );
+                setdynamicdvar( @"hash_83aaa1a3e53cab4c", "laserbox_ads03" );
+                setdynamicdvar( @"hash_83aaa2a3e53cad7f", "jup_reflex_proj_tall" );
+                setdynamicdvar( @"hash_b7be534f7d1f6c91", "jup_cp24_pi_glima21" );
+                setdynamicdvar( @"hash_fa6409cb2c349660", "jup_glima21_akimbo" );
+                setdynamicdvar( @"hash_de97dbd237a69656", "jup_cp24_pi_glima21_drum_40_45acp" );
+                setdynamicdvar( @"hash_de97dcd237a69889", "laserpstl_hip01" );
+                setdynamicdvar( @"hash_de97ddd237a69abc", "jup_cp24_pi_glima21_trigger_hair" );
+                setdynamicdvar( @"hash_de97ded237a69cef", "jup_ammo_45acp_rip" );
                 break;
             case 3:
-                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_cp06_ar_falpha" );
-                setdynamicdvar( @"hash_343635a44dbb0762", "jup_minireddot01_tall" );
+                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp32_pi_mpapa9" );
+                setdynamicdvar( @"hash_343635a44dbb0762", "jup_jp32_pi_mpapa9_bar_amp" );
+                setdynamicdvar( @"hash_8e3f4856f25114f0", "jup_laslight_cyl_01" );
+                setdynamicdvar( @"hash_8e3f4956f2511723", "jup_grip_angled_gh" );
+                setdynamicdvar( @"hash_8e3f4e56f2512222", "jup_jp32_pi_mpapa9_stock_light" );
+                setdynamicdvar( @"hash_8e3f4f56f2512455", "jup_jp32_pi_mpapa9_pgrip_ass" );
                 setdynamicdvar( @"hash_c4b02863872af0bd", "jup_jp14_pi_rsierra12" );
-                setdynamicdvar( @"hash_d1b3309408a1e897", "equip_at_mine" );
-                setdynamicdvar( @"hash_a305fa9e69c31190", "equip_decoy" );
-                setdynamicdvar( @"hash_a3c1a41ff13c5bac", "super_ammo_drop" );
+                setdynamicdvar( @"hash_ee2fe9638607a1ee", "jup_jp14_pi_rsierra12_bar_amp" );
+                setdynamicdvar( @"hash_db0021dfc2c8f6d4", "jup_reflex04" );
+                setdynamicdvar( @"hash_db0022dfc2c8f907", "jup_jp14_pi_rsierra12_trigger_hair" );
+                setdynamicdvar( @"hash_db001fdfc2c8f26e", "laserpstl_ads02" );
+                setdynamicdvar( @"hash_db0020dfc2c8f4a1", "grip_angled09" );
+                setdynamicdvar( @"hash_8a3e30cc9f0d0c79", "jup_jp32_pi_mpapa9" );
+                setdynamicdvar( @"hash_35b4ac62f66753b0", "jup_jp32_pi_mpapa9_bar_amp" );
+                setdynamicdvar( @"hash_83aa9fa3e53ca6e6", "jup_laslight_cyl_01" );
+                setdynamicdvar( @"hash_83aaa0a3e53ca919", "jup_grip_angled_gh" );
+                setdynamicdvar( @"hash_83aaa1a3e53cab4c", "jup_jp32_pi_mpapa9_stock_light" );
+                setdynamicdvar( @"hash_83aaa2a3e53cad7f", "jup_jp32_pi_mpapa9_pgrip_ass" );
+                setdynamicdvar( @"hash_b7be534f7d1f6c91", "jup_jp14_pi_rsierra12" );
+                setdynamicdvar( @"hash_fa6409cb2c349660", "jup_jp14_pi_rsierra12_bar_amp" );
+                setdynamicdvar( @"hash_de97dbd237a69656", "jup_reflex04" );
+                setdynamicdvar( @"hash_de97dcd237a69889", "jup_jp14_pi_rsierra12_trigger_hair" );
+                setdynamicdvar( @"hash_de97ddd237a69abc", "laserpstl_ads02" );
+                setdynamicdvar( @"hash_de97ded237a69cef", "grip_angled09" );
                 break;
             case 4:
-                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp17_sn_hsierra" );
-                setdynamicdvar( @"hash_343635a44dbb0762", "jup_jp17_sn_hsierra_bolt_light" );
-                setdynamicdvar( @"hash_c4b02863872af0bd", "jup_jp12_pi_mike93" );
-                setdynamicdvar( @"hash_ee2fe9638607a1ee", "jup_mike93_akimbo" );
-                setdynamicdvar( @"hash_d1b3309408a1e897", "equip_claymore" );
-                setdynamicdvar( @"hash_a305fa9e69c31190", "equip_concussion" );
-                setdynamicdvar( @"hash_a3c1a41ff13c5bac", "super_ammo_drop" );
-                break;
-            case 5:
-                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "iw9_me_riotshield" );
-                setdynamicdvar( @"hash_c4b02863872af0bd", "jup_jp14_pi_rsierra12" );
-                setdynamicdvar( @"hash_ee2fe9638607a1ee", "jup_piscope01_rsierra" );
-                setdynamicdvar( @"hash_db0021dfc2c8f6d4", "jup_rsierra12_akimbo" );
-                setdynamicdvar( @"hash_d1b3309408a1e897", "equip_semtex" );
-                setdynamicdvar( @"hash_a305fa9e69c31190", "equip_butterfly_mine" );
-                setdynamicdvar( @"hash_a3c1a41ff13c5bac", "super_sound_veil" );
+                setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp36_sn_boscar" );
+                setdynamicdvar( @"hash_343635a44dbb0762", "jup_jp36_sn_boscar_mag_20_762s" );
+                setdynamicdvar( @"hash_8e3f4856f25114f0", "laserbox_ads04" );
+                setdynamicdvar( @"hash_8e3f4956f2511723", "jup_jp36_sn_boscar_pgrip_ass" );
+                setdynamicdvar( @"hash_8e3f4e56f2512222", "jup_grip_stop_03" );
+                setdynamicdvar( @"hash_8e3f4f56f2512455", "jup_reflex_proj_tall" );
+                setdynamicdvar( @"hash_c4b02863872af0bd", "jup_jp07_pi_uzulum" );
+                setdynamicdvar( @"hash_ee2fe9638607a1ee", "jup_uzulum_akimbo" );
+                setdynamicdvar( @"hash_db0021dfc2c8f6d4", "jup_jp07_pi_uzulum_stock_wire" );
+                setdynamicdvar( @"hash_db0022dfc2c8f907", "jup_jp07_pi_uzulum_mag_32_9mm" );
+                setdynamicdvar( @"hash_db001fdfc2c8f26e", "laserpstl_hip01" );
+                setdynamicdvar( @"hash_db0020dfc2c8f4a1", "jup_ammo_9p_rip" );
+                setdynamicdvar( @"hash_8a3e30cc9f0d0c79", "jup_jp36_sn_boscar" );
+                setdynamicdvar( @"hash_35b4ac62f66753b0", "jup_jp36_sn_boscar_mag_20_762s" );
+                setdynamicdvar( @"hash_83aa9fa3e53ca6e6", "laserbox_ads04" );
+                setdynamicdvar( @"hash_83aaa0a3e53ca919", "jup_jp36_sn_boscar_pgrip_ass" );
+                setdynamicdvar( @"hash_83aaa1a3e53cab4c", "jup_grip_stop_03" );
+                setdynamicdvar( @"hash_83aaa2a3e53cad7f", "jup_reflex_proj_tall" );
+                setdynamicdvar( @"hash_b7be534f7d1f6c91", "jup_jp07_pi_uzulum" );
+                setdynamicdvar( @"hash_fa6409cb2c349660", "jup_uzulum_akimbo" );
+                setdynamicdvar( @"hash_de97dbd237a69656", "jup_jp07_pi_uzulum_stock_wire" );
+                setdynamicdvar( @"hash_de97dcd237a69889", "jup_jp07_pi_uzulum_mag_32_9mm" );
+                setdynamicdvar( @"hash_de97ddd237a69abc", "laserpstl_hip01" );
+                setdynamicdvar( @"hash_de97ded237a69cef", "jup_ammo_9p_rip" );
                 break;
             default:
                 setdynamicdvar( @"hash_a44ac0c52a7bffdd", "jup_jp16_sh_recho870" );
                 setdynamicdvar( @"hash_c4b02863872af0bd", "jup_jp12_pi_mike93" );
+                setdynamicdvar( @"hash_8a3e30cc9f0d0c79", "jup_jp16_sh_recho870" );
+                setdynamicdvar( @"hash_b7be534f7d1f6c91", "jup_jp12_pi_mike93" );
                 break;
         }
         
@@ -287,8 +396,14 @@ function initializematchrules()
             setdynamicdvar( @"hash_c4b02863872af0bd", "jup_jp23_me_spear_mp" );
             setdynamicdvar( @"hash_343635a44dbb0762", "none" );
             setdynamicdvar( @"hash_8e3f4856f25114f0", "none" );
+            setdynamicdvar( @"hash_8e3f4956f2511723", "none" );
+            setdynamicdvar( @"hash_8e3f4e56f2512222", "none" );
+            setdynamicdvar( @"hash_8e3f4f56f2512455", "none" );
             setdynamicdvar( @"hash_ee2fe9638607a1ee", "jup_me_spear" );
             setdynamicdvar( @"hash_db0021dfc2c8f6d4", "jup_axefist" );
+            setdynamicdvar( @"hash_db0022dfc2c8f907", "none" );
+            setdynamicdvar( @"hash_db001fdfc2c8f26e", "none" );
+            setdynamicdvar( @"hash_db0020dfc2c8f4a1", "none" );
             setdynamicdvar( @"hash_8a3e30cc9f0d0c79", "jup_jp23_me_knife_mp" );
             setdynamicdvar( @"hash_b7be534f7d1f6c91", "none" );
             setdynamicdvar( @"hash_6c5a93985d33efc8", "jup_jp23_me_knife_mp" );
@@ -318,8 +433,8 @@ function initializematchrules()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x280b
+// Params 0
+// Checksum 0x0, Offset: 0x3501
 // Size: 0x22f
 function onstartgametype()
 {
@@ -383,9 +498,9 @@ function onstartgametype()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a42
-// Size: 0x575
+// Params 0
+// Checksum 0x0, Offset: 0x3738
+// Size: 0x815
 function updategametypedvars()
 {
     scripts\mp\gametypes\common::updatecommongametypedvars();
@@ -393,9 +508,15 @@ function updategametypedvars()
     level.survivorprimaryweapon = getdvar( @"hash_a44ac0c52a7bffdd", "iw9_sh_mbravo_mp" );
     level.attachmentsurvivorprimary = getdvar( @"hash_343635a44dbb0762", "none" );
     level.var_c98cf0863525b3c6 = getdvar( @"hash_8e3f4856f25114f0", "none" );
+    level.var_c98cf1863525b5f9 = getdvar( @"hash_8e3f4956f2511723", "none" );
+    level.var_c98cf2863525b82c = getdvar( @"hash_8e3f4e56f2512222", "none" );
+    level.var_c98cf3863525ba5f = getdvar( @"hash_8e3f4f56f2512455", "none" );
     level.survivorsecondaryweapon = getdvar( @"hash_c4b02863872af0bd", "iw9_pi_golf17_mp" );
     level.attachmentsurvivorsecondary = getdvar( @"hash_ee2fe9638607a1ee", "none" );
     level.var_12db5fcda223636 = getdvar( @"hash_db0021dfc2c8f6d4", "none" );
+    level.var_12db6fcda223869 = getdvar( @"hash_db0022dfc2c8f907", "none" );
+    level.var_12db7fcda223a9c = getdvar( @"hash_db001fdfc2c8f26e", "none" );
+    level.var_12db8fcda223ccf = getdvar( @"hash_db0020dfc2c8f4a1", "none" );
     level.survivorlethal = getdvar( @"hash_d1b3309408a1e897", "equip_claymore" );
     level.survivortactical = getdvar( @"hash_a305fa9e69c31190", "equip_concussion" );
     level.survivorsuper = getdvar( @"hash_a3c1a41ff13c5bac", "super_tac_cover" );
@@ -403,9 +524,27 @@ function updategametypedvars()
     level.infectedprimaryweapon = getdvar( @"hash_6c5a93985d33efc8", "iw9_me_knife_mp" );
     level.var_ae93d2e53f551ff5 = getdvar( @"hash_cb5a2ba18d38eaeb", "none" );
     level.var_4438952a4834e2a5 = getdvar( @"hash_7038cd49942c7b3b", "none" );
+    level.var_4438942a4834e072 = getdvar( @"hash_7038cc49942c7908", "none" );
+    level.var_44388f2a4834d573 = getdvar( @"hash_7038d349942c886d", "none" );
+    level.var_44388e2a4834d340 = getdvar( @"hash_7038d249942c863a", "none" );
     level.infectedsecondaryweapon = getdvar( @"hash_94cd061650f7ce18", "iw9_me_fists_mp" );
+    level.var_710ba8eff8bcd035 = getdvar( @"hash_9818fc6ebd0c8c8f", "none" );
+    level.var_59748ec0073d7f65 = getdvar( @"hash_8b7fe489c29983a7", "none" );
+    level.var_59748dc0073d7d32 = getdvar( @"hash_8b7fe389c2998174", "none" );
+    level.var_597488c0073d7233 = getdvar( @"hash_8b7fe289c2997f41", "none" );
+    level.var_597487c0073d7000 = getdvar( @"hash_8b7fe189c2997d0e", "none" );
     level.initialprimaryweapon = getdvar( @"hash_8a3e30cc9f0d0c79", "iw9_sh_mbravo_mp" );
+    level.attachmentinitialprimary = getdvar( @"hash_35b4ac62f66753b0", "none" );
+    level.var_f74887956f3c68ac = getdvar( @"hash_83aa9fa3e53ca6e6", "none" );
+    level.var_f74888956f3c6adf = getdvar( @"hash_83aaa0a3e53ca919", "none" );
+    level.var_f74885956f3c6446 = getdvar( @"hash_83aaa1a3e53cab4c", "none" );
+    level.var_f74886956f3c6679 = getdvar( @"hash_83aaa2a3e53cad7f", "none" );
     level.initialsecondaryweapon = getdvar( @"hash_b7be534f7d1f6c91", "iw9_pi_golf17_mp" );
+    level.attachmentinitialsecondary = getdvar( @"hash_fa6409cb2c349660", "none" );
+    level.var_ac0210ac449f00c8 = getdvar( @"hash_de97dbd237a69656", "none" );
+    level.var_ac0211ac449f02fb = getdvar( @"hash_de97dcd237a69889", "none" );
+    level.var_ac0216ac449f0dfa = getdvar( @"hash_de97ddd237a69abc", "none" );
+    level.var_ac0217ac449f102d = getdvar( @"hash_de97ded237a69cef", "none" );
     level.infectedlethal = getdvar( @"hash_a4d8476ca2b3de70", "equip_throwing_knife" );
     level.infectedtactical = getdvar( @"hash_cf7a6e0ed93c9277", "equip_tac_insert" );
     level.infectedsuper = getdvar( @"hash_c8c77b5a2a21af33", "super_deadsilence" );
@@ -427,7 +566,7 @@ function updategametypedvars()
     level.var_6f84c741ab4b49d1 = getdvarint( @"hash_2748c18c28569b64", 1 );
     level.var_86546c6bc5fb8005 = getdvarint( @"hash_3303697de708c858", 0 );
     level.survivorstreakoverride = [];
-    survivorstreakoverride = getdvar( @"hash_57bba4da542dfa17", "" );
+    survivorstreakoverride = getdvar( @"scr_infect_survivorstreakoverride", "" );
     
     if ( survivorstreakoverride != "" )
     {
@@ -468,12 +607,13 @@ function updategametypedvars()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fbf
+// Params 0
+// Checksum 0x0, Offset: 0x3f55
 // Size: 0x77
 function function_3aee9e3bc9b34c5f()
 {
-    for (i = 0; i < level.allweapons.size; i++) {
+    for ( i = 0; i < level.allweapons.size ; i++ )
+    {
         weaponname = level.allweapons[ i ];
         
         if ( weaponname == "none" )
@@ -489,8 +629,8 @@ function function_3aee9e3bc9b34c5f()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x303e
+// Params 0
+// Checksum 0x0, Offset: 0x3fd4
 // Size: 0x420
 function buildandloadweapons()
 {
@@ -557,7 +697,8 @@ function buildandloadweapons()
             {
                 if ( weapon == level.allweapons[ 0 ] || weapon == level.allweapons[ 4 ] )
                 {
-                    for (i = 1; i < 6; i++) {
+                    for ( i = 1; i < 6 ; i++ )
+                    {
                         concat = i;
                         
                         if ( i == 1 )
@@ -576,7 +717,8 @@ function buildandloadweapons()
                 
                 if ( weapon == level.allweapons[ 1 ] || weapon == level.allweapons[ 5 ] )
                 {
-                    for (i = 1; i < 6; i++) {
+                    for ( i = 1; i < 6 ; i++ )
+                    {
                         concat = i;
                         
                         if ( i == 1 )
@@ -610,8 +752,8 @@ function buildandloadweapons()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3466
+// Params 0
+// Checksum 0x0, Offset: 0x43fc
 // Size: 0x140
 function getthermalscopeperweaponclass()
 {
@@ -672,8 +814,8 @@ function getthermalscopeperweaponclass()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35af
+// Params 1
+// Checksum 0x0, Offset: 0x4545
 // Size: 0x58
 function stripweapsuffix( weaponname )
 {
@@ -694,8 +836,8 @@ function stripweapsuffix( weaponname )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3610
+// Params 2
+// Checksum 0x0, Offset: 0x45a6
 // Size: 0x141
 function fixupsupersandtacticalsforgunfightmaps( infected, fieldupgradepro )
 {
@@ -743,8 +885,8 @@ function fixupsupersandtacticalsforgunfightmaps( infected, fieldupgradepro )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x375a
+// Params 1
+// Checksum 0x0, Offset: 0x46f0
 // Size: 0x1a4
 function onplayerconnect( player )
 {
@@ -798,8 +940,8 @@ function onplayerconnect( player )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3906
+// Params 0
+// Checksum 0x0, Offset: 0x489c
 // Size: 0x97
 function givesurvivortimescore()
 {
@@ -820,8 +962,8 @@ function givesurvivortimescore()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39a5
+// Params 0
+// Checksum 0x0, Offset: 0x493b
 // Size: 0x36c
 function initspawns()
 {
@@ -902,8 +1044,8 @@ function initspawns()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d19
+// Params 0
+// Checksum 0x0, Offset: 0x4caf
 // Size: 0xb7
 function getspawnpoint()
 {
@@ -936,9 +1078,9 @@ function getspawnpoint()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dd9
-// Size: 0x20c
+// Params 1
+// Checksum 0x0, Offset: 0x4d6f
+// Size: 0x236
 function onspawnplayer( revivespawn )
 {
     self.teamchangedthisframe = undefined;
@@ -1010,14 +1152,20 @@ function onspawnplayer( revivespawn )
         initsurvivaltime( 1 );
     }
     
+    if ( istrue( self.var_c0819901e16a65ad ) )
+    {
+        val::set( "setFirstInfected", "fire", 1 );
+        self.var_c0819901e16a65ad = 0;
+    }
+    
     thread onspawnfinished();
     thread updatematchstatushintonspawn();
     level notify( "spawned_player" );
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fed
+// Params 0
+// Checksum 0x0, Offset: 0x4fad
 // Size: 0x86
 function spawnwithplayersecondary()
 {
@@ -1040,8 +1188,8 @@ function spawnwithplayersecondary()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x407b
+// Params 1
+// Checksum 0x0, Offset: 0x503b
 // Size: 0x47
 function setdefaultammoclip( team )
 {
@@ -1063,9 +1211,9 @@ function setdefaultammoclip( team )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x40cb
-// Size: 0x3d3
+// Params 0
+// Checksum 0x0, Offset: 0x508b
+// Size: 0x39b
 function onspawnfinished()
 {
     self endon( "death_or_disconnect" );
@@ -1142,10 +1290,7 @@ function onspawnfinished()
             }
         }
         
-        if ( function_dbead865fbbae378() )
-        {
-            scripts\mp\equipment::incrementequipmentammo( level.infectedlethal, 1 );
-        }
+        scripts\mp\equipment::incrementequipmentammo( level.infectedlethal, 1 );
         
         if ( level.infectedtactical != "equip_tac_insert" || level.infectedtactical == "none" )
         {
@@ -1185,14 +1330,6 @@ function onspawnfinished()
         }
     }
     
-    if ( istrue( self.faux_spawn_infected ) )
-    {
-        if ( isdefined( scripts\mp\supers::getcurrentsuper() ) && scripts\mp\supers::getcurrentsuperref() == "super_deadsilence" )
-        {
-            thread startdeadsilence();
-        }
-    }
-    
     self.faux_spawn_infected = undefined;
     
     if ( istrue( self.isparachutespawning ) )
@@ -1207,8 +1344,8 @@ function onspawnfinished()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44a6
+// Params 0
+// Checksum 0x0, Offset: 0x542e
 // Size: 0x5e
 function waitthensetgendersoundcontext()
 {
@@ -1225,8 +1362,8 @@ function waitthensetgendersoundcontext()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x450c
+// Params 0
+// Checksum 0x0, Offset: 0x5494
 // Size: 0x4d
 function givesuperpointsonprematchdone()
 {
@@ -1243,8 +1380,8 @@ function givesuperpointsonprematchdone()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4561
+// Params 2
+// Checksum 0x0, Offset: 0x54e9
 // Size: 0x4c
 function managefists( primary, secondary )
 {
@@ -1260,27 +1397,23 @@ function managefists( primary, secondary )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45b5
-// Size: 0x133
+// Params 0
+// Checksum 0x0, Offset: 0x553d
+// Size: 0x129
 function giveextrainfectedperks()
 {
     if ( self.pers[ "team" ] == "allies" )
     {
-        extraperks = [ "specialty_fast_reload" ];
+        extraperks = [ "specialty_infantry_vest", "specialty_scavenger_plus", "specialty_ultra_light_boots", "specialty_fast_reload", "specialty_intel_jacker" ];
         
         if ( function_dbead865fbbae378() )
         {
             extraperks = array_combine( extraperks, [ "specialty_stalker_boots", "specialty_silicon_gloves", "specialty_recharge_equipment" ] );
         }
     }
-    else if ( istrue( self.isinitialinfected ) )
-    {
-        extraperks = [ "specialty_infantry_vest", "specialty_blacklight_flashlight", "specialty_ultra_light_boots", "specialty_lr_detector", "specialty_dex_gloves" ];
-    }
     else
     {
-        extraperks = [ "specialty_infantry_vest", "specialty_blacklight_flashlight", "specialty_ultra_light_boots" ];
+        extraperks = [ "specialty_infantry_vest", "specialty_dex_gloves", "specialty_ultra_light_boots", "specialty_bone_conduction", "specialty_blacklight_flashlight" ];
     }
     
     foreach ( index, perk in extraperks )
@@ -1296,8 +1429,8 @@ function giveextrainfectedperks()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x46f0
+// Params 0
+// Checksum 0x0, Offset: 0x566e
 // Size: 0x2
 function setinfectedmodels()
 {
@@ -1305,8 +1438,8 @@ function setinfectedmodels()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x46fa
+// Params 0
+// Checksum 0x0, Offset: 0x5678
 // Size: 0x101
 function setinfectedmsg()
 {
@@ -1352,8 +1485,8 @@ function setinfectedmsg()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4803
+// Params 0
+// Checksum 0x0, Offset: 0x5781
 // Size: 0x3ab
 function choosefirstinfected()
 {
@@ -1418,7 +1551,8 @@ function choosefirstinfected()
     
     var_7cea7652605d7bd5 = [];
     
-    for (i = 0; i < level.numinitialinfected; i++) {
+    for ( i = 0; i < level.numinitialinfected ; i++ )
+    {
         infectedplayer = possibleinfected[ randomint( possibleinfected.size ) ];
         var_7cea7652605d7bd5[ var_7cea7652605d7bd5.size ] = infectedplayer;
         possibleinfected = array_remove( possibleinfected, infectedplayer );
@@ -1453,9 +1587,9 @@ function choosefirstinfected()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bb6
-// Size: 0x2b9
+// Params 1
+// Checksum 0x0, Offset: 0x5b34
+// Size: 0x300
 function setfirstinfected( var_e9ec3c871be9d510 )
 {
     self endon( "death_or_disconnect" );
@@ -1463,6 +1597,13 @@ function setfirstinfected( var_e9ec3c871be9d510 )
     if ( var_e9ec3c871be9d510 )
     {
         self.infect_isbeingchosen = 1;
+    }
+    
+    if ( getdvarint( @"hash_8a85284920f503e0", 1 ) == 1 )
+    {
+        val::set( "setFirstInfected", "fire", 0 );
+        self.var_c0819901e16a65ad = 1;
+        wait getdvarfloat( @"hash_a817d0101e578724", 0.15 );
     }
     
     while ( !isreallyalive( self ) || isusingremote() || isdefined( self.vehiclereserved ) )
@@ -1575,8 +1716,8 @@ function setfirstinfected( var_e9ec3c871be9d510 )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e77
+// Params 0
+// Checksum 0x0, Offset: 0x5e3c
 // Size: 0x36
 function waitthenshowinfecttext()
 {
@@ -1587,8 +1728,8 @@ function waitthenshowinfecttext()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb5
+// Params 0
+// Checksum 0x0, Offset: 0x5e7a
 // Size: 0x4a
 function startdeadsilence()
 {
@@ -1608,8 +1749,8 @@ function startdeadsilence()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f07
+// Params 2
+// Checksum 0x0, Offset: 0x5ecc
 // Size: 0x144
 function setinitialtonormalinfected( gotkill, smeansofdeath )
 {
@@ -1666,8 +1807,8 @@ function setinitialtonormalinfected( gotkill, smeansofdeath )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x5053
+// Params 10
+// Checksum 0x0, Offset: 0x6018
 // Size: 0x4ee
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, lifeid )
 {
@@ -1821,8 +1962,8 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5549
+// Params 2
+// Checksum 0x0, Offset: 0x650e
 // Size: 0x3c9
 function delayedprocesskill( attacker, wassuicide )
 {
@@ -1936,8 +2077,8 @@ function delayedprocesskill( attacker, wassuicide )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x591a
+// Params 6
+// Checksum 0x0, Offset: 0x68df
 // Size: 0x199
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
 {
@@ -1963,7 +2104,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
     
     if ( !var_e67514ba22eec9cb && isdefined( attacker.team ) && attacker.team != self.team )
     {
-        if ( ( istrue( level.var_998f1f31d478a7d5 ) || istrue( level.var_1feae7506bf96a9c || function_966592fd716d49c7() ) ) && gameflag( "prematch_done" ) )
+        if ( ( istrue( level.var_998f1f31d478a7d5 ) || istrue( level.var_1feae7506bf96a9c ) || function_966592fd716d49c7() ) && gameflag( "prematch_done" ) )
         {
             level thread scripts\mp\gametypes\countdown::function_7502f58e600e74a2( victim, attacker, "new_loot_item_spawned", meansofdeath );
         }
@@ -1971,9 +2112,9 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5abb
-// Size: 0x15d
+// Params 0
+// Checksum 0x0, Offset: 0x6a80
+// Size: 0x126
 function onfinalsurvivor()
 {
     foreach ( player in level.players )
@@ -1992,7 +2133,7 @@ function onfinalsurvivor()
             player incpersstat( "lastSurvivor", 1 );
             player thread function_9f1649ee39d3bd26( 6, 500 );
             
-            if ( matchmakinggame() && !player isjuggernaut() )
+            if ( !player isjuggernaut() )
             {
                 player.maxhealth = 200;
                 player notify( "force_regeneration" );
@@ -2000,15 +2141,6 @@ function onfinalsurvivor()
             
             var_6de8bf83ccfe83fc = function_dbead865fbbae378() ? "callout_final_survivor_phishing" : "callout_final_survivor";
             thread teamplayercardsplash( var_6de8bf83ccfe83fc, player );
-            
-            if ( level.infectednightmode )
-            {
-            }
-            else if ( matchmakinggame() && !player isjuggernaut() )
-            {
-                level thread function_3730ca06a1ee0c25( player );
-            }
-            
             break;
         }
         
@@ -2017,8 +2149,8 @@ function onfinalsurvivor()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c20
+// Params 1
+// Checksum 0x0, Offset: 0x6bae
 // Size: 0x7c
 function function_3730ca06a1ee0c25( finalplayer )
 {
@@ -2030,8 +2162,8 @@ function function_3730ca06a1ee0c25( finalplayer )
     {
         if ( level.infect_teamscores[ "allies" ] > 1 )
         {
-            finalplayer.health = ter_op( finalplayer.health > 100, 100, finalplayer.health );
-            finalplayer.maxhealth = 100;
+            finalplayer.health = ter_op( finalplayer.health > 150, 150, finalplayer.health );
+            finalplayer.maxhealth = 150;
             break;
         }
         
@@ -2041,7 +2173,7 @@ function function_3730ca06a1ee0c25( finalplayer )
 
 // Namespace infect / scripts\mp\gametypes\infect
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x5ca4
+// Checksum 0x0, Offset: 0x6c32
 // Size: 0x11d
 function private infectradarthread()
 {
@@ -2089,7 +2221,7 @@ function private infectradarthread()
 
 // Namespace infect / scripts\mp\gametypes\infect
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x5dc9
+// Checksum 0x0, Offset: 0x6d57
 // Size: 0x4c
 function private function_f14f087ebc3beac2()
 {
@@ -2107,8 +2239,8 @@ function private function_f14f087ebc3beac2()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e1d
+// Params 0
+// Checksum 0x0, Offset: 0x6dab
 // Size: 0x2ba
 function monitordisconnect()
 {
@@ -2182,8 +2314,8 @@ function monitordisconnect()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x60df
+// Params 1
+// Checksum 0x0, Offset: 0x706d
 // Size: 0xb
 function ondeadevent( team )
 {
@@ -2191,8 +2323,8 @@ function ondeadevent( team )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x60f3
+// Params 0
+// Checksum 0x0, Offset: 0x7081
 // Size: 0x1d
 function ontimelimit()
 {
@@ -2200,8 +2332,8 @@ function ontimelimit()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6118
+// Params 0
+// Checksum 0x0, Offset: 0x70a6
 // Size: 0x1d
 function onsurvivorseliminated()
 {
@@ -2209,8 +2341,8 @@ function onsurvivorseliminated()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x613d
+// Params 1
+// Checksum 0x0, Offset: 0x70cb
 // Size: 0xac
 function getteamsize( team )
 {
@@ -2233,8 +2365,8 @@ function getteamsize( team )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x61f2
+// Params 0
+// Checksum 0x0, Offset: 0x7180
 // Size: 0x124
 function updateteamscores()
 {
@@ -2259,9 +2391,9 @@ function updateteamscores()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x631e
-// Size: 0x142c
+// Params 0
+// Checksum 0x0, Offset: 0x72ac
+// Size: 0x16e0
 function setspecialloadouts()
 {
     waitframe();
@@ -2336,17 +2468,20 @@ function setspecialloadouts()
     else if ( level.onlineprimaryoverride )
     {
         level.infect_loadouts[ "allies" ][ "loadoutPrimary" ] = level.survivorprimaryweapon;
-        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment" ];
-        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment2" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment2" ];
-        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment3" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment3" ];
-        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment4" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment4" ];
-        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment5" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment5" ];
+        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment" ] = level.attachmentsurvivorprimary;
+        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment2" ] = level.var_c98cf0863525b3c6;
+        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment3" ] = level.var_c98cf1863525b5f9;
+        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment4" ] = level.var_c98cf2863525b82c;
+        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment5" ] = level.var_c98cf3863525ba5f;
         level.infect_loadouts[ "allies" ][ "loadoutPrimaryCamo" ] = "none";
         level.infect_loadouts[ "allies" ][ "loadoutPrimaryReticle" ] = "none";
         level.infect_loadouts[ "allies" ][ "loadoutPrimaryVariantID" ] = 0;
         level.infect_loadouts[ "allies" ][ "loadoutSecondary" ] = level.survivorsecondaryweapon;
         level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment" ] = level.attachmentsurvivorsecondary;
-        level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment2" ] = level.attachmentsurvivorsecondarytwo;
+        level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment2" ] = level.var_12db5fcda223636;
+        level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment3" ] = level.var_12db6fcda223869;
+        level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment4" ] = level.var_12db7fcda223a9c;
+        level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment5" ] = level.var_12db8fcda223ccf;
         level.infect_loadouts[ "allies" ][ "loadoutSecondaryCamo" ] = "none";
         level.infect_loadouts[ "allies" ][ "loadoutSecondaryReticle" ] = "none";
         level.infect_loadouts[ "allies" ][ "loadoutSecondaryVariantID" ] = 0;
@@ -2381,12 +2516,18 @@ function setspecialloadouts()
         level.infect_loadouts[ "allies" ][ "loadoutPrimary" ] = level.survivorprimaryweapon;
         level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment" ] = level.attachmentsurvivorprimary;
         level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment2" ] = level.var_c98cf0863525b3c6;
+        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment3" ] = level.var_c98cf1863525b5f9;
+        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment4" ] = level.var_c98cf2863525b82c;
+        level.infect_loadouts[ "allies" ][ "loadoutPrimaryAttachment5" ] = level.var_c98cf3863525ba5f;
         level.infect_loadouts[ "allies" ][ "loadoutPrimaryCamo" ] = "none";
         level.infect_loadouts[ "allies" ][ "loadoutPrimaryReticle" ] = "none";
         level.infect_loadouts[ "allies" ][ "loadoutPrimaryVariantID" ] = 0;
         level.infect_loadouts[ "allies" ][ "loadoutSecondary" ] = level.survivorsecondaryweapon;
         level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment" ] = level.attachmentsurvivorsecondary;
         level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment2" ] = level.var_12db5fcda223636;
+        level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment3" ] = level.var_12db6fcda223869;
+        level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment4" ] = level.var_12db7fcda223a9c;
+        level.infect_loadouts[ "allies" ][ "loadoutSecondaryAttachment5" ] = level.var_12db8fcda223ccf;
         level.infect_loadouts[ "allies" ][ "loadoutSecondaryCamo" ] = "none";
         level.infect_loadouts[ "allies" ][ "loadoutSecondaryReticle" ] = "none";
         level.infect_loadouts[ "allies" ][ "loadoutSecondaryVariantID" ] = 0;
@@ -2439,15 +2580,18 @@ function setspecialloadouts()
     else if ( level.onlineprimaryoverride )
     {
         level.infect_loadouts[ "axis_initial" ][ "loadoutPrimary" ] = level.initialprimaryweapon;
-        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment" ];
-        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment2" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment2" ];
-        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment3" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment3" ];
-        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment4" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment4" ];
-        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment5" ] = game[ "arenaRandomLoadout" ][ 0 ][ "loadoutPrimaryAttachment5" ];
+        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment" ] = level.attachmentinitialprimary;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment2" ] = level.var_f74887956f3c68ac;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment3" ] = level.var_f74888956f3c6adf;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment4" ] = level.var_f74885956f3c6446;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment5" ] = level.var_f74886956f3c6679;
         level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryVariantID" ] = 0;
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondary" ] = level.initialsecondaryweapon;
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment" ] = level.attachmentinitialsecondary;
-        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment2" ] = level.attachmentinitialsecondarytwo;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment2" ] = level.var_ac0210ac449f00c8;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment3" ] = level.var_ac0211ac449f02fb;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment4" ] = level.var_ac0216ac449f0dfa;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment5" ] = level.var_ac0217ac449f102d;
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryCamo" ] = "none";
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryReticle" ] = "none";
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryVariantID" ] = 0;
@@ -2467,13 +2611,19 @@ function setspecialloadouts()
     {
         level.infect_loadouts[ "axis_initial" ][ "loadoutPrimary" ] = level.initialprimaryweapon;
         level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment" ] = level.attachmentinitialprimary;
-        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment2" ] = level.var_941fbbdf885c0804;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment2" ] = level.var_f74887956f3c68ac;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment3" ] = level.var_f74888956f3c6adf;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment4" ] = level.var_f74885956f3c6446;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryAttachment5" ] = level.var_f74886956f3c6679;
         level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryCamo" ] = "none";
         level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryReticle" ] = "none";
         level.infect_loadouts[ "axis_initial" ][ "loadoutPrimaryVariantID" ] = 0;
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondary" ] = level.initialsecondaryweapon;
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment" ] = level.attachmentinitialsecondary;
-        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment2" ] = level.attachmentinitialsecondarytwo;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment2" ] = level.var_ac0210ac449f00c8;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment3" ] = level.var_ac0211ac449f02fb;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment4" ] = level.var_ac0216ac449f0dfa;
+        level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryAttachment5" ] = level.var_ac0217ac449f102d;
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryCamo" ] = "none";
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryReticle" ] = "none";
         level.infect_loadouts[ "axis_initial" ][ "loadoutSecondaryVariantID" ] = 0;
@@ -2518,12 +2668,18 @@ function setspecialloadouts()
         level.infect_loadouts[ "axis" ][ "loadoutPrimary" ] = level.infectedprimaryweapon;
         level.infect_loadouts[ "axis" ][ "loadoutPrimaryAttachment" ] = level.var_ae93d2e53f551ff5;
         level.infect_loadouts[ "axis" ][ "loadoutPrimaryAttachment2" ] = level.var_4438952a4834e2a5;
+        level.infect_loadouts[ "axis" ][ "loadoutPrimaryAttachment3" ] = level.var_4438942a4834e072;
+        level.infect_loadouts[ "axis" ][ "loadoutPrimaryAttachment4" ] = level.var_44388f2a4834d573;
+        level.infect_loadouts[ "axis" ][ "loadoutPrimaryAttachment5" ] = level.var_44388e2a4834d340;
         level.infect_loadouts[ "axis" ][ "loadoutPrimaryCamo" ] = "none";
         level.infect_loadouts[ "axis" ][ "loadoutPrimaryReticle" ] = "none";
         level.infect_loadouts[ "axis" ][ "loadoutPrimaryVariantID" ] = 0;
         level.infect_loadouts[ "axis" ][ "loadoutSecondary" ] = level.infectedsecondaryweapon;
-        level.infect_loadouts[ "axis" ][ "loadoutSecondaryAttachment" ] = "none";
-        level.infect_loadouts[ "axis" ][ "loadoutSecondaryAttachment2" ] = "none";
+        level.infect_loadouts[ "axis" ][ "loadoutSecondaryAttachment" ] = level.var_710ba8eff8bcd035;
+        level.infect_loadouts[ "axis" ][ "loadoutSecondaryAttachment2" ] = level.var_59748ec0073d7f65;
+        level.infect_loadouts[ "axis" ][ "loadoutSecondaryAttachment3" ] = level.var_59748dc0073d7d32;
+        level.infect_loadouts[ "axis" ][ "loadoutSecondaryAttachment4" ] = level.var_597488c0073d7233;
+        level.infect_loadouts[ "axis" ][ "loadoutSecondaryAttachment5" ] = level.var_597487c0073d7000;
         level.infect_loadouts[ "axis" ][ "loadoutSecondaryCamo" ] = "none";
         level.infect_loadouts[ "axis" ][ "loadoutSecondaryReticle" ] = "none";
         level.infect_loadouts[ "axis" ][ "loadoutSecondaryVariantID" ] = -1;
@@ -2555,7 +2711,7 @@ function setspecialloadouts()
 
 // Namespace infect / scripts\mp\gametypes\infect
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x7752
+// Checksum 0x0, Offset: 0x8994
 // Size: 0xfe
 function private finalizeloadout( loadout )
 {
@@ -2608,8 +2764,8 @@ function private finalizeloadout( loadout )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7859
+// Params 1
+// Checksum 0x0, Offset: 0x8a9b
 // Size: 0x96
 function addsurvivorattachmentsprimary( weapon )
 {
@@ -2629,8 +2785,8 @@ function addsurvivorattachmentsprimary( weapon )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x78f7
+// Params 1
+// Checksum 0x0, Offset: 0x8b39
 // Size: 0x96
 function addinitialattachmentsprimary( weapon )
 {
@@ -2650,13 +2806,13 @@ function addinitialattachmentsprimary( weapon )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7995
+// Params 1
+// Checksum 0x0, Offset: 0x8bd7
 // Size: 0x81
 function addsurvivorattachmentssecondary( weapon )
 {
     level.attachmentsurvivorsecondary = "none";
-    level.attachmentsurvivorsecondarytwo = "none";
+    level.var_12db5fcda223636 = "none";
     group = getweapongroup( weapon );
     
     if ( group == "weapon_pistol" )
@@ -2669,14 +2825,14 @@ function addsurvivorattachmentssecondary( weapon )
         if ( weapon == "iw7_g18c" )
         {
             level.attachmentsurvivorsecondary = "akimbo";
-            level.attachmentsurvivorsecondarytwo = "highcal";
+            level.var_12db5fcda223636 = "highcal";
         }
     }
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a1e
+// Params 1
+// Checksum 0x0, Offset: 0x8c60
 // Size: 0x81
 function addinitialattachmentssecondary( weapon )
 {
@@ -2700,8 +2856,8 @@ function addinitialattachmentssecondary( weapon )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7aa7
+// Params 0
+// Checksum 0x0, Offset: 0x8ce9
 // Size: 0x56
 function monitorsurvivaltime()
 {
@@ -2723,8 +2879,8 @@ function monitorsurvivaltime()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b05
+// Params 1
+// Checksum 0x0, Offset: 0x8d47
 // Size: 0x25
 function initsurvivaltime( infected )
 {
@@ -2737,8 +2893,8 @@ function initsurvivaltime( infected )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b32
+// Params 1
+// Checksum 0x0, Offset: 0x8d74
 // Size: 0x75
 function setsurvivaltime( infected )
 {
@@ -2763,8 +2919,8 @@ function setsurvivaltime( infected )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7baf
+// Params 0
+// Checksum 0x0, Offset: 0x8df1
 // Size: 0xce
 function shouldplayhalfwayvo()
 {
@@ -2784,8 +2940,8 @@ function shouldplayhalfwayvo()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c85
+// Params 0
+// Checksum 0x0, Offset: 0x8ec7
 // Size: 0x36
 function updatematchstatushintonspawn()
 {
@@ -2801,8 +2957,8 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cc3
+// Params 0
+// Checksum 0x0, Offset: 0x8f05
 // Size: 0xcc
 function nvgwatcher()
 {
@@ -2842,8 +2998,8 @@ function nvgwatcher()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d97
+// Params 0
+// Checksum 0x0, Offset: 0x8fd9
 // Size: 0x40
 function rechargenvg()
 {
@@ -2863,8 +3019,8 @@ function rechargenvg()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ddf
+// Params 0
+// Checksum 0x0, Offset: 0x9021
 // Size: 0x5d
 function perkpackage_checkifready_callback()
 {
@@ -2885,8 +3041,8 @@ function perkpackage_checkifready_callback()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e44
+// Params 0
+// Checksum 0x0, Offset: 0x9086
 // Size: 0xa
 function tacinsert_gamemode_callback()
 {
@@ -2895,7 +3051,7 @@ function tacinsert_gamemode_callback()
 
 // Namespace infect / scripts\mp\gametypes\infect
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x7e56
+// Checksum 0x0, Offset: 0x9098
 // Size: 0x72, Type: bool
 function private function_911cbbebf68af0d8( spawnposition )
 {
@@ -2915,7 +3071,7 @@ function private function_911cbbebf68af0d8( spawnposition )
 
 // Namespace infect / scripts\mp\gametypes\infect
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x7ed1
+// Checksum 0x0, Offset: 0x9113
 // Size: 0x7b
 function private function_79f898a92fdba4b2( spawnpointarray )
 {
@@ -2934,8 +3090,8 @@ function private function_79f898a92fdba4b2( spawnpointarray )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f55
+// Params 0
+// Checksum 0x0, Offset: 0x9197
 // Size: 0x17d
 function clearandrestoreinfectedtacinsert()
 {
@@ -2985,8 +3141,8 @@ function clearandrestoreinfectedtacinsert()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x80da
+// Params 0
+// Checksum 0x0, Offset: 0x931c
 // Size: 0x6d
 function suicideandskydive()
 {
@@ -3012,8 +3168,8 @@ function suicideandskydive()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x814f
+// Params 2
+// Checksum 0x0, Offset: 0x9391
 // Size: 0x95
 function registervehicletype( refname, spawnvehiclecallback )
 {
@@ -3033,8 +3189,8 @@ function registervehicletype( refname, spawnvehiclecallback )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81ec
+// Params 0
+// Checksum 0x0, Offset: 0x942e
 // Size: 0x71f
 function init_infectgroundwarvehicles()
 {
@@ -3056,7 +3212,8 @@ function init_infectgroundwarvehicles()
                 overrideorigin[ 2 ] = ( 47970, -22545, -320 );
                 var_60ec3549226ce8d[ 2 ] = ( 9, 105, 0 );
                 
-                for (i = 0; i < overrideorigin.size; i++) {
+                for ( i = 0; i < overrideorigin.size ; i++ )
+                {
                     tempspawn = spawnstruct();
                     tempspawn.origin = overrideorigin[ i ];
                     tempspawn.angles = var_60ec3549226ce8d[ i ];
@@ -3095,7 +3252,8 @@ function init_infectgroundwarvehicles()
                 overrideorigin[ 3 ] = ( 19180, 332, -447 );
                 var_60ec3549226ce8d[ 3 ] = ( 6, 298, 0 );
                 
-                for (i = 0; i < overrideorigin.size; i++) {
+                for ( i = 0; i < overrideorigin.size ; i++ )
+                {
                     tempspawn = spawnstruct();
                     tempspawn.origin = overrideorigin[ i ];
                     tempspawn.angles = var_60ec3549226ce8d[ i ];
@@ -3152,13 +3310,15 @@ function init_infectgroundwarvehicles()
     
     if ( false )
     {
-        for (i = 0; i < numtospawn; i++) {
+        for ( i = 0; i < numtospawn ; i++ )
+        {
             loc = level.vehiclespawnlocs[ i ];
             thread drawline( loc.origin + ( 0, 0, 1500 ), loc.origin + ( 0, 0, 2500 ), 1000, ( 0, 1, 0 ) );
         }
     }
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         loc = level.vehiclespawnlocs[ i ];
         
         if ( isdefined( loc ) )
@@ -3170,8 +3330,8 @@ function init_infectgroundwarvehicles()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8913
+// Params 2
+// Checksum 0x0, Offset: 0x9b55
 // Size: 0x59
 function vehiclespawn_atv( loc, faildata )
 {
@@ -3185,8 +3345,8 @@ function vehiclespawn_atv( loc, faildata )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8975
+// Params 1
+// Checksum 0x0, Offset: 0x9bb7
 // Size: 0x6a
 function vehiclespawn_getspawndata( loc )
 {
@@ -3199,8 +3359,8 @@ function vehiclespawn_getspawndata( loc )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x89e8
+// Params 0
+// Checksum 0x0, Offset: 0x9c2a
 // Size: 0x33
 function infectjugg_setconfig()
 {
@@ -3210,8 +3370,8 @@ function infectjugg_setconfig()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a23
+// Params 5
+// Checksum 0x0, Offset: 0x9c65
 // Size: 0x7c
 function gamemodespawnprotectedcallback( eattacker, victim, idamage, objweapon, smeansofdeath )
 {
@@ -3226,8 +3386,8 @@ function gamemodespawnprotectedcallback( eattacker, victim, idamage, objweapon, 
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8aa8
+// Params 0
+// Checksum 0x0, Offset: 0x9cea
 // Size: 0x94
 function setfaketispawnpoint()
 {
@@ -3242,8 +3402,8 @@ function setfaketispawnpoint()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b44
+// Params 2
+// Checksum 0x0, Offset: 0x9d86
 // Size: 0x15, Type: bool
 function vehicle_compass_infect_shouldbevisibletoplayer( vehicle, player )
 {
@@ -3251,8 +3411,8 @@ function vehicle_compass_infect_shouldbevisibletoplayer( vehicle, player )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b62
+// Params 0
+// Checksum 0x0, Offset: 0x9da4
 // Size: 0x9d
 function skydivehintnotify()
 {
@@ -3297,8 +3457,8 @@ function skydivehintnotify()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c07
+// Params 0
+// Checksum 0x0, Offset: 0x9e49
 // Size: 0x1e
 function function_48c5a587383a90e7()
 {
@@ -3307,8 +3467,8 @@ function function_48c5a587383a90e7()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c2e
+// Params 2
+// Checksum 0x0, Offset: 0x9e70
 // Size: 0x84
 function function_9f1649ee39d3bd26( timer, dist )
 {
@@ -3332,8 +3492,8 @@ function function_9f1649ee39d3bd26( timer, dist )
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8cba
+// Params 0
+// Checksum 0x0, Offset: 0x9efc
 // Size: 0x41, Type: bool
 function function_dbead865fbbae378()
 {
@@ -3341,8 +3501,8 @@ function function_dbead865fbbae378()
 }
 
 // Namespace infect / scripts\mp\gametypes\infect
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d04
+// Params 0
+// Checksum 0x0, Offset: 0x9f46
 // Size: 0x41, Type: bool
 function function_3922253bdcf97988()
 {

@@ -9,7 +9,7 @@
 #namespace shatterblast;
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x283
 // Size: 0x21a
 function init_shatterblast()
@@ -44,7 +44,7 @@ function init_shatterblast()
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a5
 // Size: 0x21
 function function_956b04989248cd43( func )
@@ -53,7 +53,7 @@ function function_956b04989248cd43( func )
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ce
 // Size: 0x21
 function function_52640c8abb792f05( func )
@@ -62,7 +62,7 @@ function function_52640c8abb792f05( func )
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x4f7
 // Size: 0xcf
 function function_74dd9dad02bab584( death, attacker, mod, sweapon, vpoint, shitloc, modelindex )
@@ -91,7 +91,7 @@ function function_74dd9dad02bab584( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5ce
 // Size: 0x33
 function function_3f5765f3394eadbb( damage, attacker, sweapon )
@@ -103,7 +103,7 @@ function function_3f5765f3394eadbb( damage, attacker, sweapon )
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x609
 // Size: 0x5d
 function function_aecd8c6088cdda0c( death, attacker, mod, sweapon, vpoint, shitloc, modelindex )
@@ -113,7 +113,7 @@ function function_aecd8c6088cdda0c( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x66e
 // Size: 0x110
 function function_2ac5028ab35e92e0( death, attacker, mod, sweapon, vpoint, shitloc, modelindex )
@@ -138,7 +138,7 @@ function function_2ac5028ab35e92e0( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x786
 // Size: 0x8b
 function function_1646cc331f11526d( death, attacker, mod, sweapon, vpoint, shitloc, modelindex, damageorigin, throttle )
@@ -152,7 +152,7 @@ function function_1646cc331f11526d( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x819
 // Size: 0x241
 function function_caccc3fb671291a0( death, attacker, mod, sweapon, vpoint, shitloc, modelindex, damageorigin )
@@ -210,7 +210,7 @@ function function_caccc3fb671291a0( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa62
 // Size: 0xa8
 function function_ee31e03f2ae0100( damage, attacker )
@@ -233,7 +233,7 @@ function function_ee31e03f2ae0100( damage, attacker )
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb12
 // Size: 0x40, Type: bool
 function function_49feef49bfff113d( attacker )
@@ -252,7 +252,7 @@ function function_49feef49bfff113d( attacker )
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb5b
 // Size: 0xab, Type: bool
 function function_d68ef8ba212c85a()
@@ -284,7 +284,7 @@ function function_d68ef8ba212c85a()
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc0f
 // Size: 0x50
 function function_1e0fc29da12fb06d( shitloc, vpoint )
@@ -308,7 +308,7 @@ function function_1e0fc29da12fb06d( shitloc, vpoint )
 }
 
 // Namespace shatterblast / namespace_f4dffd4c87f1e787
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc67
 // Size: 0x118
 function function_69f37932abc632da( eattacker )
@@ -361,7 +361,7 @@ function function_69f37932abc632da( eattacker )
 /#
 
     // Namespace shatterblast / namespace_f4dffd4c87f1e787
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xd87
     // Size: 0x7b, Type: dev
     function function_3b2ca0163dee88a4()
@@ -375,7 +375,7 @@ function function_69f37932abc632da( eattacker )
     }
 
     // Namespace shatterblast / namespace_f4dffd4c87f1e787
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe0a
     // Size: 0x2f, Type: dev
     function function_d2a179c33526b945()

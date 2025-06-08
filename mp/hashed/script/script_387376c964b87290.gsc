@@ -4,7 +4,7 @@
 #namespace namespace_955644017be51149;
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27e
 // Size: 0x12d
 function function_c1b99bc04c9cfe4a()
@@ -47,7 +47,7 @@ function function_c1b99bc04c9cfe4a()
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b3
 // Size: 0x188
 function gathergroups( objects )
@@ -84,7 +84,7 @@ function gathergroups( objects )
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x544
 // Size: 0x60
 function animsuite_getparentobject( group )
@@ -99,7 +99,7 @@ function animsuite_getparentobject( group )
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ac
 // Size: 0x73
 function animsuite_linkchildrentoparentobject( parent, group )
@@ -119,7 +119,7 @@ function animsuite_linkchildrentoparentobject( parent, group )
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x627
 // Size: 0x37
 function animsuite_translation( translation_type )
@@ -136,7 +136,7 @@ function animsuite_translation( translation_type )
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x666
 // Size: 0x179
 function animsuite_translation_pingpong()
@@ -201,7 +201,7 @@ function animsuite_translation_pingpong()
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e7
 // Size: 0x97
 function animsuite_translation_once()
@@ -235,7 +235,7 @@ function animsuite_translation_once()
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x886
 // Size: 0x37
 function animsuite_rotation( rotation_type )
@@ -252,7 +252,7 @@ function animsuite_rotation( rotation_type )
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c5
 // Size: 0x101
 function animsuite_rotation_pingpong()
@@ -298,7 +298,7 @@ function animsuite_rotation_pingpong()
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ce
 // Size: 0xb6
 function animsuite_rotation_continuous()
@@ -333,7 +333,7 @@ function animsuite_rotation_continuous()
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa8c
 // Size: 0x2c, Type: bool
 function isvalidanimsuiteentity( funcname, ent )
@@ -348,7 +348,7 @@ function isvalidanimsuiteentity( funcname, ent )
 }
 
 // Namespace namespace_955644017be51149 / namespace_2035ffc4aceb67f0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xac1
 // Size: 0x27b
 function function_d6355f012701ccd5()

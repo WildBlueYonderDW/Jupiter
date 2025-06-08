@@ -40,7 +40,7 @@ function private autoexec init()
 }
 
 // Namespace namespace_145b00466708292d / namespace_7a51c0ee935e060d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c4
 // Size: 0xc0
 function main()
@@ -64,7 +64,7 @@ function main()
 }
 
 // Namespace namespace_145b00466708292d / namespace_7a51c0ee935e060d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28c
 // Size: 0x2
 function precache()
@@ -73,7 +73,7 @@ function precache()
 }
 
 // Namespace namespace_145b00466708292d / namespace_7a51c0ee935e060d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x296
 // Size: 0x21
 function precache_sp()
@@ -84,7 +84,7 @@ function precache_sp()
 }
 
 // Namespace namespace_145b00466708292d / namespace_7a51c0ee935e060d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bf
 // Size: 0x9
 function precache_cpmp()
@@ -93,7 +93,7 @@ function precache_cpmp()
 }
 
 // Namespace namespace_145b00466708292d / namespace_7a51c0ee935e060d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d0
 // Size: 0x36
 function function_ecf17a96e49ab67( xmodelalias )

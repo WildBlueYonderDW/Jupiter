@@ -12,7 +12,7 @@
 #namespace mp_jup_home_01;
 
 // Namespace mp_jup_home_01 / scripts\mp\maps\mp_jup_home_01\mp_jup_home_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x217
 // Size: 0xd7
 function main()
@@ -38,7 +38,7 @@ function main()
 }
 
 // Namespace mp_jup_home_01 / scripts\mp\maps\mp_jup_home_01\mp_jup_home_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f6
 // Size: 0x2b
 function function_77b5930f3eb27a50()
@@ -48,7 +48,7 @@ function function_77b5930f3eb27a50()
 }
 
 // Namespace mp_jup_home_01 / scripts\mp\maps\mp_jup_home_01\mp_jup_home_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x329
 // Size: 0x1b4
 function function_261c472c0f5a1633()

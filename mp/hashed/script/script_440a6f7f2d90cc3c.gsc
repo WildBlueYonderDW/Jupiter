@@ -12,7 +12,7 @@
 #namespace namespace_be7e08635722cc83;
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e3
 // Size: 0x66
 function function_3e3a73f1039ca16d()
@@ -24,7 +24,7 @@ function function_3e3a73f1039ca16d()
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x451
 // Size: 0xce
 function function_885b229aee63b402()
@@ -39,7 +39,7 @@ function function_885b229aee63b402()
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x527
 // Size: 0x3c1
 function function_5a081e065a93bd08( var_b4ef83e4ca39c8ec, offset, var_367433161de52ca2 )
@@ -149,7 +149,7 @@ function private function_542344d67fb5ee7a( heli )
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa3c
 // Size: 0x8e
 function function_8a0f37ea918fa970( distinches, speedmph, accelmph )
@@ -165,7 +165,7 @@ function function_8a0f37ea918fa970( distinches, speedmph, accelmph )
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad3
 // Size: 0x4d
 function function_63e41ce3a6457cc1( var_625180ce8d2f8f77 )
@@ -177,7 +177,7 @@ function function_63e41ce3a6457cc1( var_625180ce8d2f8f77 )
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb29
 // Size: 0xac
 function function_b525fa38baf87839( var_3d5095c68e5c2b99 )
@@ -203,7 +203,7 @@ function function_b525fa38baf87839( var_3d5095c68e5c2b99 )
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbdd
 // Size: 0xf1
 function function_b89378e2e51cf825( var_e58119f7c6eb5b4d, var_d3970a3e6c77212e )
@@ -245,7 +245,7 @@ function function_b89378e2e51cf825( var_e58119f7c6eb5b4d, var_d3970a3e6c77212e )
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd7
 // Size: 0x56
 function function_4bba7bf68035a122()
@@ -267,7 +267,7 @@ function function_4bba7bf68035a122()
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd35
 // Size: 0x11
 function function_4b7dd160447d4825()
@@ -277,7 +277,7 @@ function function_4b7dd160447d4825()
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd4e
 // Size: 0xf2
 function function_acd83be80ff2e711()
@@ -305,7 +305,7 @@ function function_acd83be80ff2e711()
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe48
 // Size: 0xa0
 function function_e3a16387941bbbc8()
@@ -322,7 +322,7 @@ function function_e3a16387941bbbc8()
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef0
 // Size: 0x89
 function function_f0f206969743ba63()
@@ -345,7 +345,7 @@ function function_f0f206969743ba63()
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf81
 // Size: 0x72
 function function_92a59e0004116c97()
@@ -366,7 +366,7 @@ function function_92a59e0004116c97()
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xffb
 // Size: 0x72
 function function_106caebe9f0dd820()
@@ -387,7 +387,7 @@ function function_106caebe9f0dd820()
 }
 
 // Namespace namespace_be7e08635722cc83 / namespace_b1af0fcaf4ad16d6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1075
 // Size: 0x20
 function function_f5d7c70a275e3c17()

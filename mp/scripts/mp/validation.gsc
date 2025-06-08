@@ -16,7 +16,7 @@
 #namespace validation;
 
 // Namespace validation / scripts\mp\validation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x85e
 // Size: 0xa2
 function validationerror( errortype, slot, item )
@@ -52,12 +52,12 @@ function validationerror( errortype, slot, item )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x908
 // Size: 0x40
 function isvalidattachmentunlock( weaponrootname, attachmentbasename )
 {
-    var_338c04a2f19ba8b6 = getdvarint( @"hash_464624f0183de3d0", 0 ) == 1;
+    var_338c04a2f19ba8b6 = getdvarint( @"scr_checkvalidattachmentunlock", 0 ) == 1;
     
     if ( var_338c04a2f19ba8b6 )
     {
@@ -68,7 +68,7 @@ function isvalidattachmentunlock( weaponrootname, attachmentbasename )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x951
 // Size: 0x1ca
 function function_f6d25a34b1d286b1()
@@ -80,12 +80,14 @@ function function_f6d25a34b1d286b1()
         return;
     }
     
-    for (loadoutindex = 0; loadoutindex < 12; loadoutindex++) {
+    for ( loadoutindex = 0; loadoutindex < 12 ; loadoutindex++ )
+    {
         loadoutisinuse = self getplayerdata( level.loadoutdata, "squadMembers", "loadouts", loadoutindex, "inUse" );
         
         if ( loadoutisinuse == 1 )
         {
-            for (weaponindex = 0; weaponindex < 2; weaponindex++) {
+            for ( weaponindex = 0; weaponindex < 2 ; weaponindex++ )
+            {
                 weaponname = scripts\mp\class::cac_getweapon( loadoutindex, weaponindex );
                 weaponvariantid = scripts\mp\class::cac_getweaponvariantid( loadoutindex, weaponindex );
                 weaponlootitemid = scripts\mp\class::cac_getweaponlootitemid( loadoutindex, weaponindex );
@@ -94,7 +96,8 @@ function function_f6d25a34b1d286b1()
                 maxattachments = ter_op( weaponindex == 0, scripts\mp\class::getmaxprimaryattachments(), scripts\mp\class::getmaxsecondaryattachments() );
                 var_6c85232fcab7882d = ter_op( weaponindex == 0, scripts\mp\class::function_ed8babbe1912171f(), scripts\mp\class::function_fba1013e19eb56c3() );
                 
-                for (attachmentindex = 0; attachmentindex < maxattachments; attachmentindex++) {
+                for ( attachmentindex = 0; attachmentindex < maxattachments ; attachmentindex++ )
+                {
                     attachmentname = scripts\mp\class::cac_getweaponattachment( loadoutindex, weaponindex, attachmentindex );
                     attachments[ attachmentindex ] = attachmentname;
                     attachmentsids[ attachmentindex ] = scripts\mp\class::cac_getweaponattachmentid( loadoutindex, weaponindex, attachmentindex );
@@ -104,7 +107,8 @@ function function_f6d25a34b1d286b1()
                 var_bd1db6dd9710a427 = scripts\mp\class::cac_getweaponcosmeticattachment( loadoutindex, weaponindex );
                 stickers = [];
                 
-                for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < var_6c85232fcab7882d; var_36d2abbdcbcb186c++) {
+                for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < var_6c85232fcab7882d ; var_36d2abbdcbcb186c++ )
+                {
                     stickers[ var_36d2abbdcbcb186c ] = scripts\mp\class::cac_getweaponsticker( loadoutindex, weaponindex, var_36d2abbdcbcb186c );
                 }
                 
@@ -115,7 +119,7 @@ function function_f6d25a34b1d286b1()
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb23
 // Size: 0x181
 function function_18b8c4c4fa0f6d1c( weaponname, weaponcamo )
@@ -176,7 +180,7 @@ function function_18b8c4c4fa0f6d1c( weaponname, weaponcamo )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcac
 // Size: 0x1a0, Type: bool
 function function_2c4d04305e3c9601( weaponlootid )
@@ -214,7 +218,7 @@ function function_2c4d04305e3c9601( weaponlootid )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xe55
 // Size: 0x43b
 function function_503f87754be2d15c( weaponname, weaponvariantid, weaponlootitemid, attachments, attachmentsids, camoname, var_bd1db6dd9710a427, stickers )
@@ -337,7 +341,7 @@ function function_503f87754be2d15c( weaponname, weaponvariantid, weaponlootitemi
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1298
 // Size: 0x133
 function function_5a92673db4ece37f( classstruct )
@@ -359,7 +363,7 @@ function function_5a92673db4ece37f( classstruct )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13d3
 // Size: 0x187c
 function validateloadout( loadout )
@@ -371,7 +375,7 @@ function validateloadout( loadout )
         }
     #/
     
-    if ( scripts\cp_mp\utility\game_utility::isbrstylegametype() && ( getsubgametype() == "dmz" || getsubgametype() == "exgm" ) && getdvarint( @"hash_65f0ea4ff58c3fa0", 0 ) == 1 )
+    if ( scripts\cp_mp\utility\game_utility::isbrstylegametype() && ( getsubgametype() == "dmz" || getsubgametype() == "exgm" ) && getdvarint( @"ui_use_dmz_loadouts", 0 ) == 1 )
     {
         return loadout;
     }
@@ -403,7 +407,7 @@ function validateloadout( loadout )
         replaceweapon = 1;
     }
     
-    var_de6cf437be756ee1 = istrue( getdvarint( @"hash_576703ba86051da6", 0 ) );
+    var_de6cf437be756ee1 = istrue( getdvarint( @"scr_loadout_validate_banned_items", 0 ) );
     
     if ( var_de6cf437be756ee1 && scripts\cp_mp\utility\loot::function_8c610908c0e9c6e4( loadout.loadoutprimary ) )
     {
@@ -434,7 +438,7 @@ function validateloadout( loadout )
     }
     
     var_121e73d335b0a04c = getdvarint( @"hash_ba24827ea58aa4aa", 1 );
-    var_dc7742ef149dccd4 = strtok( getdvar( @"hash_6a827510faf38ef7", "" ), "," );
+    var_dc7742ef149dccd4 = strtok( getdvar( @"scr_validate_required_attachments_list", "" ), "," );
     
     if ( replaceweapon )
     {
@@ -449,7 +453,8 @@ function validateloadout( loadout )
         
         tempweapon = buildweapon( loadout.loadoutprimary, loadout.loadoutprimaryattachments );
         
-        for (i = 0; i < loadout.loadoutprimaryattachments.size; i++) {
+        for ( i = 0; i < loadout.loadoutprimaryattachments.size ; i++ )
+        {
             attachment = loadout.loadoutprimaryattachments[ i ];
             
             if ( attachment != "none" )
@@ -460,7 +465,8 @@ function validateloadout( loadout )
                 {
                     if ( isdefined( attachmentscriptbundle ) && attachmentscriptbundle.var_f0e7c0926c0962e5 )
                     {
-                        for (j = 0; j < loadout.loadoutprimaryattachments.size; j++) {
+                        for ( j = 0; j < loadout.loadoutprimaryattachments.size ; j++ )
+                        {
                             loadout.loadoutprimaryattachments[ j ] = "none";
                         }
                         
@@ -550,7 +556,8 @@ function validateloadout( loadout )
         
         tempweapon = buildweapon( loadout.loadoutsecondary, loadout.loadoutsecondaryattachments );
         
-        for (i = 0; i < loadout.loadoutsecondaryattachments.size; i++) {
+        for ( i = 0; i < loadout.loadoutsecondaryattachments.size ; i++ )
+        {
             attachment = loadout.loadoutsecondaryattachments[ i ];
             
             if ( attachment != "none" )
@@ -561,7 +568,8 @@ function validateloadout( loadout )
                     
                     if ( isdefined( attachmentscriptbundle ) && attachmentscriptbundle.var_f0e7c0926c0962e5 )
                     {
-                        for (j = 0; j < loadout.loadoutsecondaryattachments.size; j++) {
+                        for ( j = 0; j < loadout.loadoutsecondaryattachments.size ; j++ )
+                        {
                             loadout.loadoutsecondaryattachments[ j ] = "none";
                         }
                         
@@ -598,7 +606,7 @@ function validateloadout( loadout )
         }
     }
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
     }
     
@@ -900,7 +908,8 @@ function validateloadout( loadout )
     
     replacekillstreaks = 0;
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         if ( killstreakisrestricted( fallbackloadout.fallbackkillstreaks[ i ] ) )
         {
             var_35bd18d6d22e7106[ i ] = "none";
@@ -1052,7 +1061,7 @@ function validateloadout( loadout )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x2c58
 // Size: 0x2df
 function validateweapon( validationdata, weapon, attachments, camo, reticle, lootitemid, variantid, issecondary )
@@ -1147,7 +1156,7 @@ function validateweapon( validationdata, weapon, attachments, camo, reticle, loo
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2f3f
 // Size: 0x29b
 function validateattachments( validationdata, attachments, weapon, rootweaponname, weaponslot )
@@ -1226,7 +1235,7 @@ function validateattachments( validationdata, attachments, weapon, rootweaponnam
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x31e2
 // Size: 0x161
 function validatepower( validationdata, power, powerslot, hasextra )
@@ -1272,7 +1281,7 @@ function validatepower( validationdata, power, powerslot, hasextra )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x334b
 // Size: 0x263
 function validateperks( validationdata, perks, archetype )
@@ -1347,7 +1356,7 @@ function validateperks( validationdata, perks, archetype )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x35b6
 // Size: 0x193
 function validatestreaks( validationdata, streak1, streak2, streak3 )
@@ -1398,7 +1407,7 @@ function validatestreaks( validationdata, streak1, streak2, streak3 )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3751
 // Size: 0x6f
 function validatearchetype( validationdata, archetype )
@@ -1417,7 +1426,7 @@ function validatearchetype( validationdata, archetype )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x37c8
 // Size: 0x98
 function validatesuper( validationdata, super )
@@ -1443,7 +1452,7 @@ function validatesuper( validationdata, super )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3868
 // Size: 0xb
 function validatewildcards( validationdata )
@@ -1452,7 +1461,7 @@ function validatewildcards( validationdata )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x387b
 // Size: 0x40
 function fixloadout( loadout )
@@ -1464,7 +1473,7 @@ function fixloadout( loadout )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x38c4
 // Size: 0x1ad
 function fixweapon( loadout, weaponslot )
@@ -1479,7 +1488,8 @@ function fixweapon( loadout, weaponslot )
         loadout.loadoutprimarylootitemid = 0;
         loadout.loadoutprimaryvariantid = -1;
         
-        for (attachindex = 0; attachindex < scripts\mp\class::getmaxprimaryattachments(); attachindex++) {
+        for ( attachindex = 0; attachindex < scripts\mp\class::getmaxprimaryattachments() ; attachindex++ )
+        {
             loadout.loadoutprimaryattachments[ attachindex ] = "none";
         }
         
@@ -1494,7 +1504,8 @@ function fixweapon( loadout, weaponslot )
         loadout.loadoutsecondarylootitemid = 0;
         loadout.loadoutsecondaryvariantid = -1;
         
-        for (attachindex = 0; attachindex < scripts\mp\class::getmaxsecondaryattachments(); attachindex++) {
+        for ( attachindex = 0; attachindex < scripts\mp\class::getmaxsecondaryattachments() ; attachindex++ )
+        {
             loadout.loadoutsecondaryattachments[ attachindex ] = "none";
         }
         
@@ -1507,13 +1518,14 @@ function fixweapon( loadout, weaponslot )
     loadout.var_64e57707d385a2f5 = 0;
     loadout.loadouttertiaryvariantid = -1;
     
-    for (attachindex = 0; attachindex < scripts\mp\class::function_4073b3f145413cd(); attachindex++) {
+    for ( attachindex = 0; attachindex < scripts\mp\class::function_4073b3f145413cd() ; attachindex++ )
+    {
         loadout.var_494870a5978b5a09[ attachindex ] = "none";
     }
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3a79
 // Size: 0x85
 function fixattachment( loadout, weaponslot, attachmentindex )
@@ -1536,7 +1548,7 @@ function fixattachment( loadout, weaponslot, attachmentindex )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b06
 // Size: 0x5c
 function fixpower( loadout, powerslot )
@@ -1553,7 +1565,7 @@ function fixpower( loadout, powerslot )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b6a
 // Size: 0x31
 function fixperk( loadout, perk )
@@ -1562,7 +1574,7 @@ function fixperk( loadout, perk )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ba3
 // Size: 0x3e
 function fixkillstreaks( loadout )
@@ -1573,7 +1585,7 @@ function fixkillstreaks( loadout )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3be9
 // Size: 0x8d
 function fixarchetype( loadout )
@@ -1592,7 +1604,7 @@ function fixarchetype( loadout )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c7e
 // Size: 0x1c
 function fixsuper( loadout )
@@ -1601,7 +1613,7 @@ function fixsuper( loadout )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ca2
 // Size: 0x235
 function fixinvaliditems( loadout, invaliditems )
@@ -1618,7 +1630,8 @@ function fixinvaliditems( loadout, invaliditems )
     }
     else if ( isdefined( invaliditems[ 3 ] ) )
     {
-        for (attachindex = 0; attachindex < scripts\mp\class::getmaxprimaryattachments(); attachindex++) {
+        for ( attachindex = 0; attachindex < scripts\mp\class::getmaxprimaryattachments() ; attachindex++ )
+        {
             fixattachment( loadout, #"primary", attachindex );
         }
     }
@@ -1636,7 +1649,8 @@ function fixinvaliditems( loadout, invaliditems )
     }
     else if ( isdefined( invaliditems[ 6 ] ) )
     {
-        for (attachindex = 0; attachindex < scripts\mp\class::getmaxsecondaryattachments(); attachindex++) {
+        for ( attachindex = 0; attachindex < scripts\mp\class::getmaxsecondaryattachments() ; attachindex++ )
+        {
             fixattachment( loadout, #"secondary", attachindex );
         }
     }
@@ -1648,7 +1662,7 @@ function fixinvaliditems( loadout, invaliditems )
         }
     }
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
     }
     
@@ -1685,7 +1699,7 @@ function fixinvaliditems( loadout, invaliditems )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ee0
 // Size: 0x5b
 function lookuppowerslot( powerref )
@@ -1701,7 +1715,7 @@ function lookuppowerslot( powerref )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f44
 // Size: 0xc, Type: bool
 function weaponunlocksvialoot( weaponref )
@@ -1710,7 +1724,7 @@ function weaponunlocksvialoot( weaponref )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f59
 // Size: 0x31, Type: bool
 function isweaponuihidden( weaponrootname )
@@ -1719,7 +1733,7 @@ function isweaponuihidden( weaponrootname )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f93
 // Size: 0x69, Type: bool
 function isweaponvariantlocked( weaponrootname, variantid )
@@ -1739,7 +1753,7 @@ function isweaponvariantlocked( weaponrootname, variantid )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4005
 // Size: 0x1a8, Type: bool
 function isattachmentvariantinvalid( weaponrootname, weaponvariantid, attachment, attachmentvariantid )
@@ -1767,7 +1781,8 @@ function isattachmentvariantinvalid( weaponrootname, weaponvariantid, attachment
     var_e88b89f1334a1506 = weaponrootname + "|" + weaponvariantid;
     attachmentisvalid = 0;
     
-    for (variantindex = 1; true; variantindex++) {
+    for ( variantindex = 1; true ; variantindex++ )
+    {
         variantkey = weaponrootname + "|" + variantindex;
         
         if ( !isdefined( level.weaponlootmapdata[ variantkey ] ) )
@@ -1803,7 +1818,7 @@ function isattachmentvariantinvalid( weaponrootname, weaponvariantid, attachment
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41b6
 // Size: 0x207
 function function_8ad31470a4d15065( fallbackloadout )
@@ -1870,7 +1885,7 @@ function function_8ad31470a4d15065( fallbackloadout )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43c5
 // Size: 0x90c
 function function_9480a79a4852090f()
@@ -1981,7 +1996,7 @@ function function_9480a79a4852090f()
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4cda
 // Size: 0x14e
 function replaceprimaryweapon( loadout )
@@ -2003,7 +2018,7 @@ function replaceprimaryweapon( loadout )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e31
 // Size: 0x14e
 function replacesecondaryweapon( loadout )
@@ -2025,14 +2040,15 @@ function replacesecondaryweapon( loadout )
 }
 
 // Namespace validation / scripts\mp\validation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f88
 // Size: 0x7d
 function function_5e76ad052ba12845( loadout )
 {
     fallbackloadout = function_9480a79a4852090f();
     
-    for (i = 0; i < loadout.loadoutperks.size; i++) {
+    for ( i = 0; i < loadout.loadoutperks.size ; i++ )
+    {
         if ( i >= fallbackloadout.perks.size )
         {
             println( "<dev string:xc3>" );

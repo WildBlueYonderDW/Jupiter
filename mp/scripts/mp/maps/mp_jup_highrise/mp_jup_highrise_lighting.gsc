@@ -6,7 +6,7 @@
 #namespace mp_jup_highrise_lighting;
 
 // Namespace mp_jup_highrise_lighting / scripts\mp\maps\mp_jup_highrise\mp_jup_highrise_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28c
 // Size: 0x5f
 function main()
@@ -21,7 +21,7 @@ function main()
 }
 
 // Namespace mp_jup_highrise_lighting / scripts\mp\maps\mp_jup_highrise\mp_jup_highrise_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f3
 // Size: 0x170
 function function_6b1ff277b8322675()

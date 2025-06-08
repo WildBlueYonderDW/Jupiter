@@ -3,7 +3,7 @@
 #namespace namespace_eb31a7ea746bf7d0;
 
 // Namespace namespace_eb31a7ea746bf7d0 / namespace_5c22773341178193
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b5
 // Size: 0x3e07
 function player_pers()
@@ -282,7 +282,7 @@ function player_pers()
 }
 
 // Namespace namespace_eb31a7ea746bf7d0 / namespace_5c22773341178193
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43c4
 // Size: 0x9
 function main()

@@ -62,7 +62,7 @@ function private function_f49a30f92555b827()
 }
 
 // Namespace namespace_2ad7130c99350bc1 / namespace_b4f60eced64b93fb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7f3
 // Size: 0xe7
 function zombieinit( asmname, statename, params )

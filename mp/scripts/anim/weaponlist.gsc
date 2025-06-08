@@ -3,7 +3,7 @@
 #namespace weaponlist;
 
 // Namespace weaponlist / scripts\anim\weaponlist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc8
 // Size: 0x36, Type: bool
 function usingautomaticweapon()
@@ -12,7 +12,7 @@ function usingautomaticweapon()
 }
 
 // Namespace weaponlist / scripts\anim\weaponlist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107
 // Size: 0x25, Type: bool
 function usingsemiautoweapon()
@@ -21,7 +21,7 @@ function usingsemiautoweapon()
 }
 
 // Namespace weaponlist / scripts\anim\weaponlist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x135
 // Size: 0x29
 function autoshootanimrate()
@@ -35,7 +35,7 @@ function autoshootanimrate()
 }
 
 // Namespace weaponlist / scripts\anim\weaponlist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x166
 // Size: 0x38
 function burstshootanimrate()
@@ -54,7 +54,7 @@ function burstshootanimrate()
 }
 
 // Namespace weaponlist / scripts\anim\weaponlist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0x7
 function waitaftershot()
@@ -63,7 +63,7 @@ function waitaftershot()
 }
 
 // Namespace weaponlist / scripts\anim\weaponlist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b6
 // Size: 0x5f
 function shootanimtime( semiautofire )
@@ -78,7 +78,7 @@ function shootanimtime( semiautofire )
 }
 
 // Namespace weaponlist / scripts\anim\weaponlist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21d
 // Size: 0x97
 function refillclip()
@@ -104,7 +104,7 @@ function refillclip()
 }
 
 // Namespace weaponlist / scripts\anim\weaponlist
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2bc
 // Size: 0xb6
 function add_weapon( name, type, time, clipsize, anims )
@@ -135,7 +135,7 @@ function add_weapon( name, type, time, clipsize, anims )
 }
 
 // Namespace weaponlist / scripts\anim\weaponlist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37a
 // Size: 0x27
 function addturret( turret )

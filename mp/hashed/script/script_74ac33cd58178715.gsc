@@ -1,6 +1,5 @@
 #using script_137b22598c1ad811;
 #using script_2047cdbf5176ba0;
-#using script_22f1701e151b9d12;
 #using script_2816a042b9f7996;
 #using script_43ff2abb883f6e70;
 #using script_4b9ba3e93e27bf79;
@@ -11,6 +10,7 @@
 #using script_7ff1c5399d2d9500;
 #using script_92b815b18f0ba61;
 #using scripts\common\callbacks;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\engine\utility;
 
 #namespace namespace_9025d36a6a08d37d;
@@ -25,7 +25,7 @@ function autoexec init()
 }
 
 // Namespace namespace_9025d36a6a08d37d / namespace_b2033386a8301a0b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x268
 // Size: 0x108
 function main()
@@ -61,7 +61,7 @@ function main()
 }
 
 // Namespace namespace_9025d36a6a08d37d / namespace_b2033386a8301a0b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x378
 // Size: 0x129
 function function_119594974f1048e4()
@@ -88,17 +88,17 @@ function function_119594974f1048e4()
 }
 
 // Namespace namespace_9025d36a6a08d37d / namespace_b2033386a8301a0b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a9
 // Size: 0x10
 function function_418a018c60144943()
 {
     function_4486c88d950ef33f();
-    namespace_614554f86e52695c::process_create_script();
+    scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 
 // Namespace namespace_9025d36a6a08d37d / namespace_b2033386a8301a0b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c1
 // Size: 0xe
 function function_4486c88d950ef33f()

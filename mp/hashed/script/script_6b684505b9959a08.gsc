@@ -9,7 +9,7 @@
 #namespace reward_cache;
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x1830
 // Size: 0xec
 function function_3efd8c5e5178e70f( var_bae6a1d8f73bc001, playergroups, placementstruct, var_ce0e8fe5ee941ba9, var_5110040e4247ddb8, var_ed118e6dd8c246, var_15fc8e507acc4b19, var_a1bdf2e1fd12ffc, var_3c99a2a84c4b850f )
@@ -35,7 +35,7 @@ function function_3efd8c5e5178e70f( var_bae6a1d8f73bc001, playergroups, placemen
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1924
 // Size: 0x13
 function function_2260bfc08cd754ea( rewardcache )
@@ -44,7 +44,7 @@ function function_2260bfc08cd754ea( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x193f
 // Size: 0x88
 function function_fb4fb51dbc0ad916( rewardcache, player, lootcontents )
@@ -77,7 +77,7 @@ function function_fb4fb51dbc0ad916( rewardcache, player, lootcontents )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19d0
 // Size: 0x77
 function function_1f4c33cae718bc25( rewardcache, player )
@@ -106,7 +106,7 @@ function function_1f4c33cae718bc25( rewardcache, player )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a50
 // Size: 0x12f
 function function_77eb3b9f9e4993c6( rewardcache, player, var_f71227aeabe614eb, item )
@@ -162,7 +162,7 @@ function function_77eb3b9f9e4993c6( rewardcache, player, var_f71227aeabe614eb, i
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b87
 // Size: 0x21, Type: bool
 function function_b8039209fb3f728c( rewardcache )
@@ -171,7 +171,7 @@ function function_b8039209fb3f728c( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bb1
 // Size: 0xa9
 function function_2f75f3a22eb7b56f( var_c359824d10b7dbd3 )
@@ -198,7 +198,7 @@ function function_2f75f3a22eb7b56f( var_c359824d10b7dbd3 )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c62
 // Size: 0x61
 function function_49baf487775e6ddb( rewardcache )
@@ -210,7 +210,7 @@ function function_49baf487775e6ddb( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1ccb
 // Size: 0x7a
 function function_706b9cce1dad33e3( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -227,7 +227,7 @@ function function_706b9cce1dad33e3( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d4d
 // Size: 0x1c
 function function_e94f3e14a7107b53( rewardcache, connectedplayer )
@@ -236,7 +236,7 @@ function function_e94f3e14a7107b53( rewardcache, connectedplayer )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d71
 // Size: 0x157
 function function_511d55926d101fd1( rewardcache, disconnectedplayer )
@@ -276,7 +276,7 @@ function function_511d55926d101fd1( rewardcache, disconnectedplayer )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ed0
 // Size: 0xa4
 function function_e882ec9e31af5ae1( rewardcache )
@@ -300,7 +300,7 @@ function function_e882ec9e31af5ae1( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f7c
 // Size: 0x79
 function function_f0c9a03489275ce5( rewardcache, player )
@@ -317,7 +317,7 @@ function function_f0c9a03489275ce5( rewardcache, player )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ffe
 // Size: 0x67, Type: bool
 function isempty( rewardcache )
@@ -334,7 +334,7 @@ function isempty( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x206e
 // Size: 0x88, Type: bool
 function function_baba3a8fbc912f3d( var_c359824d10b7dbd3 )
@@ -351,7 +351,7 @@ function function_baba3a8fbc912f3d( var_c359824d10b7dbd3 )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20ff
 // Size: 0x20
 function function_4952f5234b065969( rewardcache )
@@ -360,7 +360,7 @@ function function_4952f5234b065969( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2128
 // Size: 0x20
 function function_607b0b2d4d1fadf7( rewardcache )
@@ -369,7 +369,7 @@ function function_607b0b2d4d1fadf7( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2151
 // Size: 0x21
 function function_de47cfc2f8f4d71d( rewardcache )
@@ -378,7 +378,7 @@ function function_de47cfc2f8f4d71d( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x217b
 // Size: 0x16
 function getplayerowners( rewardcache )
@@ -387,7 +387,7 @@ function getplayerowners( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x219a
 // Size: 0x1f
 function function_b804f364121242d3( rewardcache )
@@ -396,7 +396,7 @@ function function_b804f364121242d3( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21c2
 // Size: 0x16
 function function_f8a89d731386bd1e( rewardcache )
@@ -1278,7 +1278,7 @@ function private function_8839eccded74a214( rewardcache, player )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x39f4
 // Size: 0x26
 function function_6305217aebc3f926( rewardcache, player )
@@ -1287,7 +1287,7 @@ function function_6305217aebc3f926( rewardcache, player )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a22
 // Size: 0x26
 function function_6b2d5732baa26e46( rewardcache, player )
@@ -1395,7 +1395,7 @@ function private function_445350567fa2042c( rewardcache )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3cc8
 // Size: 0x31
 function function_dcb5b533ee36ee85( rewardcache, player )
@@ -1462,7 +1462,7 @@ function private function_baa579f9e5c2a023( rewardcache, player, rewardcachestat
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e00
 // Size: 0x4f
 function function_3ee75bc4270d9687( var_b7517d56ffa9e235, var_be17e9d6ceb06a5b )
@@ -1479,7 +1479,7 @@ function function_3ee75bc4270d9687( var_b7517d56ffa9e235, var_be17e9d6ceb06a5b )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3e58
 // Size: 0x7e
 function function_c138936a3dfcb83c( var_bdfcebdc9267241a, scriptablepartname, var_809b1db77e03ff7f, var_9f783320f97e2fa5, var_b36fb5e0718142bd )
@@ -1702,7 +1702,7 @@ function private function_fa331a2fee762f38( scriptable )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43b8
 // Size: 0x6b
 function function_b7311db02b6c82b1()
@@ -1716,7 +1716,7 @@ function function_b7311db02b6c82b1()
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x442c
 // Size: 0x34
 function function_e02e37e34dec2042( assertmessage, rewardcache, relevantplayers )
@@ -1726,7 +1726,7 @@ function function_e02e37e34dec2042( assertmessage, rewardcache, relevantplayers 
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4468
 // Size: 0x34
 function function_469b7ea0b94baae6( msg, rewardcache, relevantplayers )
@@ -1736,7 +1736,7 @@ function function_469b7ea0b94baae6( msg, rewardcache, relevantplayers )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x44a4
 // Size: 0x34
 function function_1c5f030d48fdff4c( msg, rewardcache, relevantplayers )
@@ -1746,7 +1746,7 @@ function function_1c5f030d48fdff4c( msg, rewardcache, relevantplayers )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x44e0
 // Size: 0x34
 function function_1c972fc13937297c( msg, rewardcache, relevantplayers )
@@ -1802,7 +1802,7 @@ function private function_3a91397317ef6ceb( var_b7517d56ffa9e235, missingstates,
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4654
 // Size: 0x1f2
 function function_1a020d38f2327a5c( rewardcache, var_f1126f87cbfb3910 )
@@ -1854,7 +1854,7 @@ function function_1a020d38f2327a5c( rewardcache, var_f1126f87cbfb3910 )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x484f
 // Size: 0xaa
 function function_f27f6ec22daf7fe9( playerarray )
@@ -1941,7 +1941,7 @@ function private function_2f9979bc854d735d( var_bae6a1d8f73bc001, playergroups, 
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4adb
 // Size: 0x8f, Type: bool
 function function_66808eff13dbe014( var_98af744a999ef18 )
@@ -1963,7 +1963,7 @@ function function_66808eff13dbe014( var_98af744a999ef18 )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b73
 // Size: 0x37, Type: bool
 function function_e14049204539f02a( var_b5f12a6fcfb787a8 )
@@ -1972,7 +1972,7 @@ function function_e14049204539f02a( var_b5f12a6fcfb787a8 )
 }
 
 // Namespace reward_cache / namespace_2cef71fb73ba4b06
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4bb3
 // Size: 0x6e, Type: bool
 function function_ae3199d790b1588a( rewardgroup )

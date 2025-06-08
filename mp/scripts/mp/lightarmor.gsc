@@ -6,7 +6,7 @@
 #namespace lightarmor;
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10a
 // Size: 0x14, Type: bool
 function haslightarmor( player )
@@ -15,7 +15,7 @@ function haslightarmor( player )
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x127
 // Size: 0x27
 function getlightarmorvalue( player )
@@ -29,7 +29,7 @@ function getlightarmorvalue( player )
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x157
 // Size: 0xdc
 function setlightarmorvalue( player, value, overridegreater, playvfx )
@@ -83,7 +83,7 @@ function setlightarmorvalue( player, value, overridegreater, playvfx )
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23b
 // Size: 0x2
 function init()
@@ -92,7 +92,7 @@ function init()
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x245
 // Size: 0x6b
 function lightarmor_set( player, value, playvfx )
@@ -110,7 +110,7 @@ function lightarmor_set( player, value, playvfx )
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b8
 // Size: 0x37
 function lightarmor_unset( player )
@@ -127,7 +127,7 @@ function lightarmor_unset( player )
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x2f7
 // Size: 0x189
 function lightarmor_modifydamage( victim, attacker, damage, damageadd, smeansofdeath, sweapon, impactpoint, impactdir, shitloc, inflictor, query )
@@ -207,7 +207,7 @@ function lightarmor_modifydamage( victim, attacker, damage, damageadd, smeansofd
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x489
 // Size: 0x19, Type: bool
 function lightarmor_lightarmor_disabled( player )
@@ -221,7 +221,7 @@ function lightarmor_lightarmor_disabled( player )
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ab
 // Size: 0x31
 function lightarmor_monitordeath( player )
@@ -234,7 +234,7 @@ function lightarmor_monitordeath( player )
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e4
 // Size: 0x15
 function lightarmor_updatehud( player )
@@ -246,7 +246,7 @@ function lightarmor_updatehud( player )
 }
 
 // Namespace lightarmor / scripts\mp\lightarmor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x501
 // Size: 0xb
 function lightarmor_setfx( player )

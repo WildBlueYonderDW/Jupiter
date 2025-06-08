@@ -37,7 +37,7 @@ function private autoexec init()
 }
 
 // Namespace c_jup_sp_enemy_pmc_soldier_05_alt3 / character\c_jup_sp_enemy_pmc_soldier_05_alt3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a8
 // Size: 0xba
 function main()
@@ -61,7 +61,7 @@ function main()
 }
 
 // Namespace c_jup_sp_enemy_pmc_soldier_05_alt3 / character\c_jup_sp_enemy_pmc_soldier_05_alt3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26a
 // Size: 0x2
 function precache()
@@ -70,7 +70,7 @@ function precache()
 }
 
 // Namespace c_jup_sp_enemy_pmc_soldier_05_alt3 / character\c_jup_sp_enemy_pmc_soldier_05_alt3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x274
 // Size: 0x1f
 function precache_sp()
@@ -81,7 +81,7 @@ function precache_sp()
 }
 
 // Namespace c_jup_sp_enemy_pmc_soldier_05_alt3 / character\c_jup_sp_enemy_pmc_soldier_05_alt3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29b
 // Size: 0x9
 function precache_cpmp()

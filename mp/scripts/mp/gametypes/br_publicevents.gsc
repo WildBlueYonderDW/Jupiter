@@ -11,7 +11,7 @@
 #namespace br_publicevents;
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c3
 // Size: 0x202
 function init()
@@ -61,7 +61,7 @@ function init()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5cd
 // Size: 0x29
 function function_72a208ea4ccd4f2b()
@@ -79,7 +79,7 @@ function function_72a208ea4ccd4f2b()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5fe
 // Size: 0xd1
 function function_6de5b883b26a0f41( var_37ee364b712c7afc )
@@ -109,7 +109,7 @@ function function_6de5b883b26a0f41( var_37ee364b712c7afc )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d7
 // Size: 0xcd
 function function_42d775349af86f8b()
@@ -136,7 +136,7 @@ function function_42d775349af86f8b()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7ac
 // Size: 0xb3
 function function_4634160166fb7f8b( eventname, var_7b3a7c3f67ceb677 )
@@ -158,7 +158,7 @@ function function_4634160166fb7f8b( eventname, var_7b3a7c3f67ceb677 )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x868
 // Size: 0x7b
 function function_8fc51a5af06412cf( string )
@@ -175,7 +175,7 @@ function function_8fc51a5af06412cf( string )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8ec
 // Size: 0xac
 function registerpublicevent( eventtype, eventinfo )
@@ -206,7 +206,7 @@ function registerpublicevent( eventtype, eventinfo )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a1
 // Size: 0x5d
 function function_44424d94254dfaf5()
@@ -220,7 +220,7 @@ function function_44424d94254dfaf5()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa06
 // Size: 0x14
 function cancelupcomingpublicevents()
@@ -230,7 +230,7 @@ function cancelupcomingpublicevents()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa22
 // Size: 0x84
 function publiceventsenabled()
@@ -270,7 +270,7 @@ function publiceventsenabled()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaae
 // Size: 0xaa, Type: bool
 function shoulddopublicevent( currentcircle, var_cbf29c8a5f4eab27 )
@@ -316,7 +316,7 @@ function shoulddopublicevent( currentcircle, var_cbf29c8a5f4eab27 )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb61
 // Size: 0xd, Type: bool
 function function_7ddadb6d5643bee4()
@@ -325,25 +325,25 @@ function function_7ddadb6d5643bee4()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb77
 // Size: 0x12
 function getpubliceventcount()
 {
-    return getdvarint( @"hash_cb12fa4bcd5c4fa3", 1 );
+    return getdvarint( @"scr_br_pe_count", 1 );
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb92
 // Size: 0x15
 function getpubliceventchance()
 {
-    return getdvarfloat( @"hash_c9060bff9e6d938", 0 );
+    return getdvarfloat( @"scr_br_pe_chance", 0 );
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb0
 // Size: 0x18, Type: bool
 function multiplepubliceventsenabled()
@@ -353,7 +353,7 @@ function multiplepubliceventsenabled()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd1
 // Size: 0xa8
 function publiceventsmanager()
@@ -366,7 +366,8 @@ function publiceventsmanager()
         var_6e6a77283e1803b1 = getdvarfloat( @"hash_a02772622b60d034", 240 );
         var_6e8d89283e3e72ff = getdvarfloat( @"hash_a04a60622b86f056", 360 );
         
-        for (numevents = getpubliceventcount(); numevents; numevents--) {
+        for ( numevents = getpubliceventcount(); numevents ; numevents-- )
+        {
             waittime = randomfloatrange( var_6e6a77283e1803b1, var_6e8d89283e3e72ff );
             wait waittime;
             
@@ -386,7 +387,7 @@ function publiceventsmanager()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc81
 // Size: 0x104
 function validateevents()
@@ -433,7 +434,7 @@ function validateevents()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xd8e
 // Size: 0x28a
 function function_92663f9d29e51479( eventtypes, currentcircle, var_fb5ad7615ebab353, var_4bd41ebbce2d3bb6, var_cbf29c8a5f4eab27 )
@@ -495,7 +496,7 @@ function function_92663f9d29e51479( eventtypes, currentcircle, var_fb5ad7615ebab
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1021
 // Size: 0xa7
 function getweightedsum( eventtypes, currentcircle, var_fb5ad7615ebab353, var_4bd41ebbce2d3bb6, var_cbf29c8a5f4eab27 )
@@ -512,7 +513,7 @@ function getweightedsum( eventtypes, currentcircle, var_fb5ad7615ebab353, var_4b
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x10d1
 // Size: 0xc8
 function findeventforchosenweight( eventtypes, chosenweight, currentcircle, var_fb5ad7615ebab353, var_4bd41ebbce2d3bb6, var_cbf29c8a5f4eab27 )
@@ -534,7 +535,7 @@ function findeventforchosenweight( eventtypes, chosenweight, currentcircle, var_
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x11a2
 // Size: 0x1dc
 function choosepubliceventtype( skipwait, currentcircle, var_fb5ad7615ebab353, var_4bd41ebbce2d3bb6, var_cbf29c8a5f4eab27 )
@@ -611,7 +612,7 @@ function choosepubliceventtype( skipwait, currentcircle, var_fb5ad7615ebab353, v
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1386
 // Size: 0x5c
 function activateevent( eventdata )
@@ -630,7 +631,7 @@ function activateevent( eventdata )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13ea
 // Size: 0x7c
 function function_7ef2b71b1d3c3a01( currenttimeinterval )
@@ -658,7 +659,7 @@ function function_7ef2b71b1d3c3a01( currenttimeinterval )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x146f
 // Size: 0x302
 function runpubliceventoftype( eventtype, skipwait, currentcircle, var_fb5ad7615ebab353, var_4bd41ebbce2d3bb6, var_cbf29c8a5f4eab27 )
@@ -789,7 +790,7 @@ function runpubliceventoftype( eventtype, skipwait, currentcircle, var_fb5ad7615
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1779
 // Size: 0x81
 function function_2907d01a7d692108( eventtype )
@@ -811,7 +812,7 @@ function function_2907d01a7d692108( eventtype )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1802
 // Size: 0x52, Type: bool
 function ispubliceventoftypeactive( eventtype )
@@ -832,7 +833,7 @@ function ispubliceventoftypeactive( eventtype )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x185d
 // Size: 0x6d
 function showsplashtoall( splashname, var_42b1e877ab187c6 )
@@ -844,7 +845,7 @@ function showsplashtoall( splashname, var_42b1e877ab187c6 )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18d2
 // Size: 0x25
 function function_6ef55ffe74b87a74( waittime )
@@ -862,7 +863,7 @@ function function_6ef55ffe74b87a74( waittime )
 /#
 
     // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x18ff
     // Size: 0xce, Type: dev
     function function_e37ee072d95a7c98( eventtype )
@@ -891,7 +892,7 @@ function function_6ef55ffe74b87a74( waittime )
 #/
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19d5
 // Size: 0x39
 function handledevcommand_publicevents( command, args )
@@ -907,7 +908,7 @@ function handledevcommand_publicevents( command, args )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a16
 // Size: 0xc, Type: bool
 function function_8aaa3648604bf278()
@@ -916,7 +917,7 @@ function function_8aaa3648604bf278()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a2b
 // Size: 0xc, Type: bool
 function function_b1266056816b8716()
@@ -925,7 +926,7 @@ function function_b1266056816b8716()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a40
 // Size: 0x20
 function function_826d1843088ff270()
@@ -936,7 +937,7 @@ function function_826d1843088ff270()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a68
 // Size: 0xc9
 function function_79a1303427bfac85()
@@ -973,7 +974,7 @@ function function_79a1303427bfac85()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b3a
 // Size: 0x215
 function function_a59044c0d9b0988b()
@@ -1071,7 +1072,7 @@ function function_a59044c0d9b0988b()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d57
 // Size: 0x278
 function function_aaee113bdf9d92b9( currentcircle, var_fb5ad7615ebab353 )
@@ -1180,7 +1181,7 @@ function function_aaee113bdf9d92b9( currentcircle, var_fb5ad7615ebab353 )
 /#
 
     // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1fd8
     // Size: 0x30, Type: dev
     function function_1cddcb2898d7667( message )
@@ -1194,7 +1195,7 @@ function function_aaee113bdf9d92b9( currentcircle, var_fb5ad7615ebab353 )
 #/
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2010
 // Size: 0x72, Type: bool
 function function_beb7ed17efad9bd7( eventdata )
@@ -1214,12 +1215,12 @@ function function_beb7ed17efad9bd7( eventdata )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x208b
 // Size: 0x6a
 function function_3c3429141b476356()
 {
-    var_8ab7165a9397f507 = getdvar( @"hash_8f7830432e7b3137", "jup_publiceventlist_none" );
+    var_8ab7165a9397f507 = getdvar( @"scr_br_publiceventlist", "jup_publiceventlist_none" );
     var_37ee364b712c7afc = getscriptbundle( "publiceventlist:" + var_8ab7165a9397f507 );
     
     if ( !isdefined( var_37ee364b712c7afc ) )
@@ -1236,7 +1237,7 @@ function function_3c3429141b476356()
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20fe
 // Size: 0x37
 function function_dbc8f6cb3760cd82( reference, callback )
@@ -1250,7 +1251,7 @@ function function_dbc8f6cb3760cd82( reference, callback )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x213d
 // Size: 0xaf
 function publiceventinit( reference, eventinfo )
@@ -1276,7 +1277,7 @@ function publiceventinit( reference, eventinfo )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21f4
 // Size: 0x110
 function function_542e227485e0fd62( bundlelist, var_41e131919f4114ca )
@@ -1311,7 +1312,7 @@ function function_542e227485e0fd62( bundlelist, var_41e131919f4114ca )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x230d
 // Size: 0x192
 function function_95342049a868f70b( var_7215713679c3b0a4 )
@@ -1373,7 +1374,7 @@ function function_95342049a868f70b( var_7215713679c3b0a4 )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24a8
 // Size: 0x125
 function function_5b7d8ca93f8705f1( eventinfo, eventname )
@@ -1401,7 +1402,7 @@ function function_5b7d8ca93f8705f1( eventinfo, eventname )
 }
 
 // Namespace br_publicevents / scripts\mp\gametypes\br_publicevents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25d5
 // Size: 0x43
 function function_b5db7c8669703c35( var_a7708841b4fa7e4d )

@@ -12,7 +12,7 @@
 #namespace br_attractions;
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x54
 function init()
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x256
 // Size: 0x20, Type: bool
 function iskingofthehillactive()
@@ -39,7 +39,7 @@ function iskingofthehillactive()
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27f
 // Size: 0x1c
 function onplayerdisconnect( player )
@@ -51,7 +51,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x2a3
 // Size: 0x15e
 function createattractionicontrigger( typeref, locindex, groundorigin, iconzoffset, iconshader, var_ba52080c594353fc, triggerenterfunc, triggerexitfunc, var_c9c301a888170672 )
@@ -83,7 +83,7 @@ function createattractionicontrigger( typeref, locindex, groundorigin, iconzoffs
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40a
 // Size: 0x6b
 function shutdownattractionicontrigger( trigger )
@@ -107,7 +107,7 @@ function shutdownattractionicontrigger( trigger )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47d
 // Size: 0x2c
 function triggeraddobjectivetext( localizedstring )
@@ -119,7 +119,7 @@ function triggeraddobjectivetext( localizedstring )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b1
 // Size: 0xc
 function triggerremoveobjectivetext()
@@ -128,7 +128,7 @@ function triggerremoveobjectivetext()
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c5
 // Size: 0xd
 function triggersafearea()
@@ -137,7 +137,7 @@ function triggersafearea()
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4da
 // Size: 0x98
 function playericontriggerenter( player, trigger )
@@ -163,7 +163,7 @@ function playericontriggerenter( player, trigger )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x57a
 // Size: 0x7f
 function playericontriggerexit( player, trigger )
@@ -192,7 +192,7 @@ function playericontriggerexit( player, trigger )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x601
 // Size: 0x5a
 function playerhudattractionobj( objectivetext )
@@ -209,7 +209,7 @@ function playerhudattractionobj( objectivetext )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x663
 // Size: 0x5f
 function playerfadeobjdelete()
@@ -233,7 +233,7 @@ function playerfadeobjdelete()
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ca
 // Size: 0x3c
 function playersetignoreattractions( player, ignore )
@@ -247,7 +247,7 @@ function playersetignoreattractions( player, ignore )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x70e
 // Size: 0x2f, Type: bool
 function playericonfilter( player, trigger )
@@ -256,7 +256,7 @@ function playericonfilter( player, trigger )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x746
 // Size: 0x46
 function createhudstring( index, text )
@@ -273,7 +273,7 @@ function createhudstring( index, text )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x795
 // Size: 0x31
 function createhudtimer( index )
@@ -284,7 +284,7 @@ function createhudtimer( index )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7cf
 // Size: 0xab
 function hudelementsetupandposition( index )
@@ -305,7 +305,7 @@ function hudelementsetupandposition( index )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x882
 // Size: 0xb
 function playersetattractionoff()
@@ -314,7 +314,7 @@ function playersetattractionoff()
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x895
 // Size: 0x51
 function playersetattractiontype( typeref )
@@ -326,7 +326,7 @@ function playersetattractiontype( typeref )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ee
 // Size: 0x15
 function playersetattractionlocationindex( locationindex )
@@ -335,7 +335,7 @@ function playersetattractionlocationindex( locationindex )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x90b
 // Size: 0x15
 function playersetattractionstateindex( stateindex )
@@ -344,7 +344,7 @@ function playersetattractionstateindex( stateindex )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x928
 // Size: 0x15
 function playersetattractionextradata( extradata )
@@ -353,7 +353,7 @@ function playersetattractionextradata( extradata )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x945
 // Size: 0x30
 function playersetattractionbestplayer( player )
@@ -369,7 +369,7 @@ function playersetattractionbestplayer( player )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x97d
 // Size: 0x35
 function playersetattractionbesttime( timems )
@@ -383,7 +383,7 @@ function playersetattractionbesttime( timems )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ba
 // Size: 0x35
 function playersetattractiontime( timems )
@@ -397,7 +397,7 @@ function playersetattractiontime( timems )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f7
 // Size: 0x7c
 function playersetomnvarattraction( dataref, value )
@@ -414,7 +414,7 @@ function playersetomnvarattraction( dataref, value )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa7b
 // Size: 0x184
 function getattractionomnvarbitpackinginfo( dataref, value )
@@ -456,7 +456,7 @@ function getattractionomnvarbitpackinginfo( dataref, value )
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc08
 // Size: 0x9c
 function playerpackdataintoomnvar( var_8e90fa6d5789ad63, value, bitoffset, bitwidth )

@@ -14,7 +14,7 @@
 #namespace ftue_br;
 
 // Namespace ftue_br / namespace_13e4e9def5bc390d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120
 // Size: 0x58
 function init()
@@ -55,7 +55,7 @@ function private function_6a00940e598a7d11()
 /#
 
     // Namespace ftue_br / namespace_13e4e9def5bc390d
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1a2
     // Size: 0xf4, Type: dev
     function function_f0581ccaa73a651d( command, args )

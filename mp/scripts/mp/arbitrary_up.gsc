@@ -3,7 +3,7 @@
 #namespace arbitrary_up;
 
 // Namespace arbitrary_up / scripts\mp\arbitrary_up
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbe
 // Size: 0x16b
 function initarbitraryuptriggers()
@@ -49,7 +49,7 @@ function initarbitraryuptriggers()
 }
 
 // Namespace arbitrary_up / scripts\mp\arbitrary_up
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x231
 // Size: 0x73
 function watcharbitraryuptriggerenter( triggerstruct )
@@ -75,7 +75,7 @@ function watcharbitraryuptriggerenter( triggerstruct )
 }
 
 // Namespace arbitrary_up / scripts\mp\arbitrary_up
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ac
 // Size: 0xc0
 function watcharbitraryuptriggerexit( triggerstruct )
@@ -108,7 +108,7 @@ function watcharbitraryuptriggerexit( triggerstruct )
 }
 
 // Namespace arbitrary_up / scripts\mp\arbitrary_up
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x374
 // Size: 0x45, Type: bool
 function shouldaddtoarbitraryuptrigger( triggerstruct, ent )
@@ -129,7 +129,7 @@ function shouldaddtoarbitraryuptrigger( triggerstruct, ent )
 }
 
 // Namespace arbitrary_up / scripts\mp\arbitrary_up
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3c2
 // Size: 0x2b, Type: bool
 function shouldremovefromarbitraryuptrigger( triggerstruct, ent )
@@ -143,7 +143,7 @@ function shouldremovefromarbitraryuptrigger( triggerstruct, ent )
 }
 
 // Namespace arbitrary_up / scripts\mp\arbitrary_up
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f6
 // Size: 0x24
 function getarbitraryuptrigger()
@@ -157,7 +157,7 @@ function getarbitraryuptrigger()
 }
 
 // Namespace arbitrary_up / scripts\mp\arbitrary_up
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x423
 // Size: 0x24
 function getarbitraryuptriggerbase()
@@ -171,7 +171,7 @@ function getarbitraryuptriggerbase()
 }
 
 // Namespace arbitrary_up / scripts\mp\arbitrary_up
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x450
 // Size: 0x24
 function getarbitraryuptriggerblinkloc()
@@ -185,7 +185,7 @@ function getarbitraryuptriggerblinkloc()
 }
 
 // Namespace arbitrary_up / scripts\mp\arbitrary_up
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47d
 // Size: 0x26, Type: bool
 function isinarbitraryup()

@@ -19,7 +19,7 @@
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x6dc
+// Checksum 0x0, Offset: 0x6dd
 // Size: 0x17
 function autoexec main()
 {
@@ -27,8 +27,8 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fb
+// Params 1
+// Checksum 0x0, Offset: 0x6fc
 // Size: 0x76
 function init( eventinfo )
 {
@@ -45,8 +45,8 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x779
+// Params 0
+// Checksum 0x0, Offset: 0x77a
 // Size: 0x1be
 function postinitfunc()
 {
@@ -70,8 +70,8 @@ function postinitfunc()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x93f
+// Params 0
+// Checksum 0x0, Offset: 0x940
 // Size: 0x9a
 function function_acc15a6dc2a2e7bd()
 {
@@ -86,8 +86,8 @@ function function_acc15a6dc2a2e7bd()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e1
+// Params 2
+// Checksum 0x0, Offset: 0x9e2
 // Size: 0x5c
 function onteamassigneddialogoverride( targetteam, hunterteam )
 {
@@ -99,8 +99,8 @@ function onteamassigneddialogoverride( targetteam, hunterteam )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa45
+// Params 0
+// Checksum 0x0, Offset: 0xa46
 // Size: 0x4, Type: bool
 function validatefunc()
 {
@@ -108,8 +108,8 @@ function validatefunc()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa52
+// Params 0
+// Checksum 0x0, Offset: 0xa53
 // Size: 0x24
 function waitfunc()
 {
@@ -120,8 +120,8 @@ function waitfunc()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7e
+// Params 0
+// Checksum 0x0, Offset: 0xa7f
 // Size: 0x6f
 function calculateeventstarttime()
 {
@@ -134,8 +134,8 @@ function calculateeventstarttime()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf5
+// Params 0
+// Checksum 0x0, Offset: 0xaf6
 // Size: 0x99
 function function_ca3259387c4ac5a1()
 {
@@ -154,8 +154,8 @@ function function_ca3259387c4ac5a1()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb97
+// Params 0
+// Checksum 0x0, Offset: 0xb98
 // Size: 0x203
 function activatefunc()
 {
@@ -202,8 +202,8 @@ function activatefunc()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xda2
+// Params 0
+// Checksum 0x0, Offset: 0xda3
 // Size: 0x153
 function function_1739cfa5c3d3c5c1()
 {
@@ -244,8 +244,8 @@ function function_1739cfa5c3d3c5c1()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xefd
+// Params 1
+// Checksum 0x0, Offset: 0xefe
 // Size: 0xda
 function onplayerrespawn( params )
 {
@@ -266,8 +266,8 @@ function onplayerrespawn( params )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfdf
+// Params 1
+// Checksum 0x0, Offset: 0xfe0
 // Size: 0xa2
 function function_8deef0a616aa7967( targetteams )
 {
@@ -284,8 +284,8 @@ function function_8deef0a616aa7967( targetteams )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1089
+// Params 0
+// Checksum 0x0, Offset: 0x108a
 // Size: 0x8e
 function function_f022a4cb7d793a8()
 {
@@ -303,8 +303,8 @@ function function_f022a4cb7d793a8()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x111f
+// Params 1
+// Checksum 0x0, Offset: 0x1120
 // Size: 0x17, Type: bool
 function function_a06bac612f0f146( contract )
 {
@@ -312,8 +312,8 @@ function function_a06bac612f0f146( contract )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x113f
+// Params 0
+// Checksum 0x0, Offset: 0x1140
 // Size: 0x89
 function function_e04a1636673dddf1()
 {
@@ -336,8 +336,8 @@ function function_e04a1636673dddf1()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d0
+// Params 1
+// Checksum 0x0, Offset: 0x11d1
 // Size: 0x10f
 function function_dcf09954e91ac0ed( var_25a9983ace778b7a )
 {
@@ -360,8 +360,8 @@ function function_dcf09954e91ac0ed( var_25a9983ace778b7a )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12e7
+// Params 2
+// Checksum 0x0, Offset: 0x12e8
 // Size: 0x1f1
 function function_8e36bd0d4f403330( team, target )
 {
@@ -388,8 +388,8 @@ function function_8e36bd0d4f403330( team, target )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e0
+// Params 0
+// Checksum 0x0, Offset: 0x14e1
 // Size: 0x7e
 function function_3de5d12dc8b41598()
 {
@@ -414,8 +414,8 @@ function function_3de5d12dc8b41598()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1567
+// Params 1
+// Checksum 0x0, Offset: 0x1568
 // Size: 0x93, Type: bool
 function function_1c7625817533665d( team )
 {
@@ -438,8 +438,8 @@ function function_1c7625817533665d( team )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1603
+// Params 0
+// Checksum 0x0, Offset: 0x1604
 // Size: 0x41
 function function_75521d805c8cbc9e()
 {
@@ -449,9 +449,9 @@ function function_75521d805c8cbc9e()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x164d
-// Size: 0xc2
+// Params 1
+// Checksum 0x0, Offset: 0x164e
+// Size: 0xc4
 function function_69c091a3d7584cf6( var_25a9983ace778b7a )
 {
     var_b6970f580273b509 = [];
@@ -467,17 +467,47 @@ function function_69c091a3d7584cf6( var_25a9983ace778b7a )
         }
         
         targetteam = var_90f93cf7dfc57d72[ targetindex ];
-        var_e7f4a3dc0faa357 = scripts\mp\utility\teams::getteamdata( targetteam, "alivePlayers" );
-        targetplayer = array_random( var_e7f4a3dc0faa357 );
-        var_b6970f580273b509[ hunterteam ] = targetplayer;
+        var_e7f4a3dc0faa357 = function_9f816528b352540a( targetteam );
+        
+        if ( var_e7f4a3dc0faa357.size > 0 )
+        {
+            targetplayer = array_random( var_e7f4a3dc0faa357 );
+            var_b6970f580273b509[ hunterteam ] = targetplayer;
+        }
     }
     
     return var_b6970f580273b509;
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1718
+// Params 1
+// Checksum 0x0, Offset: 0x171b
+// Size: 0x98
+function function_9f816528b352540a( team )
+{
+    players = [];
+    
+    if ( !isdefined( team ) )
+    {
+        return players;
+    }
+    
+    var_a0f249ef16efed90 = scripts\mp\utility\teams::getteamdata( team, "alivePlayers" );
+    
+    foreach ( player in var_a0f249ef16efed90 )
+    {
+        if ( !player scripts\mp\gametypes\br_public::isplayerinorgoingtogulag() && scripts\mp\utility\player::isreallyalive( player ) )
+        {
+            players = array_add( players, player );
+        }
+    }
+    
+    return players;
+}
+
+// Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
+// Params 2
+// Checksum 0x0, Offset: 0x17bc
 // Size: 0x2b5
 function oncontractend( success, endstate )
 {
@@ -558,8 +588,8 @@ function oncontractend( success, endstate )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19d5
+// Params 1
+// Checksum 0x0, Offset: 0x1a79
 // Size: 0xaa
 function function_3369f2854734b60( endstate )
 {
@@ -582,8 +612,8 @@ function function_3369f2854734b60( endstate )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a87
+// Params 0
+// Checksum 0x0, Offset: 0x1b2b
 // Size: 0xb, Type: bool
 function function_13c3114bfa3f7606()
 {
@@ -591,8 +621,8 @@ function function_13c3114bfa3f7606()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a9b
+// Params 0
+// Checksum 0x0, Offset: 0x1b3f
 // Size: 0x71
 function function_afb6cc0249446efc()
 {
@@ -610,8 +640,8 @@ function function_afb6cc0249446efc()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b14
+// Params 0
+// Checksum 0x0, Offset: 0x1bb8
 // Size: 0x69
 function function_efed774aa2ac46b9()
 {
@@ -627,8 +657,8 @@ function function_efed774aa2ac46b9()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b85
+// Params 2
+// Checksum 0x0, Offset: 0x1c29
 // Size: 0x6d
 function function_a3076b6364918058( hunterteam, var_7e70b89613643be8 )
 {
@@ -644,8 +674,8 @@ function function_a3076b6364918058( hunterteam, var_7e70b89613643be8 )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bfa
+// Params 2
+// Checksum 0x0, Offset: 0x1c9e
 // Size: 0x2f8
 function function_1a11bf1f128d1147( hunterteam, var_7e70b89613643be8 )
 {
@@ -707,8 +737,8 @@ function function_1a11bf1f128d1147( hunterteam, var_7e70b89613643be8 )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1efb
+// Params 2
+// Checksum 0x0, Offset: 0x1f9f
 // Size: 0x212
 function function_47875c900cc6ea2c( hunterteam, var_7e70b89613643be8 )
 {
@@ -764,8 +794,8 @@ function function_47875c900cc6ea2c( hunterteam, var_7e70b89613643be8 )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2116
+// Params 1
+// Checksum 0x0, Offset: 0x21ba
 // Size: 0x76
 function determinetargetplayer( targetteam )
 {
@@ -786,8 +816,8 @@ function determinetargetplayer( targetteam )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2195
+// Params 2
+// Checksum 0x0, Offset: 0x2239
 // Size: 0x67
 function starttimer( eventduration, eventendtime )
 {
@@ -802,8 +832,8 @@ function starttimer( eventduration, eventendtime )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2204
+// Params 1
+// Checksum 0x0, Offset: 0x22a8
 // Size: 0x94
 function function_5b6afddc1743e9de( eventduration )
 {
@@ -823,7 +853,8 @@ function function_5b6afddc1743e9de( eventduration )
     clockobject = spawn( "script_origin", ( 0, 0, 0 ) );
     clockobject hide();
     
-    for (i = 0; i < var_ca02c726ecd84e81; i++) {
+    for ( i = 0; i < var_ca02c726ecd84e81 ; i++ )
+    {
         clockobject playsound( "ui_mp_fire_sale_timer" );
         wait 1;
     }
@@ -832,8 +863,8 @@ function function_5b6afddc1743e9de( eventduration )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22a0
+// Params 0
+// Checksum 0x0, Offset: 0x2344
 // Size: 0xa
 function function_ce2238c881cf779f()
 {
@@ -841,8 +872,8 @@ function function_ce2238c881cf779f()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22b2
+// Params 0
+// Checksum 0x0, Offset: 0x2356
 // Size: 0x113
 function function_cd5d0ed82eacf32d()
 {
@@ -871,8 +902,8 @@ function function_cd5d0ed82eacf32d()
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23cd
+// Params 1
+// Checksum 0x0, Offset: 0x2471
 // Size: 0x92
 function function_a2ff10734881cdd8( var_25a9983ace778b7a )
 {
@@ -889,8 +920,8 @@ function function_a2ff10734881cdd8( var_25a9983ace778b7a )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2468
+// Params 1
+// Checksum 0x0, Offset: 0x250c
 // Size: 0x4f6
 function function_b717d5faa4195b44( var_25a9983ace778b7a )
 {
@@ -1000,8 +1031,8 @@ function function_b717d5faa4195b44( var_25a9983ace778b7a )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2967
+// Params 4
+// Checksum 0x0, Offset: 0x2a0b
 // Size: 0x1d8
 function function_91497d8b29654b3( clusters, var_643fc3561caf0e49, var_5fd6ab1863ef6405, maxdistance )
 {
@@ -1054,8 +1085,8 @@ function function_91497d8b29654b3( clusters, var_643fc3561caf0e49, var_5fd6ab186
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b48
+// Params 1
+// Checksum 0x0, Offset: 0x2bec
 // Size: 0x1a, Type: bool
 function function_7d52bd0855978b16( cluster )
 {
@@ -1063,8 +1094,8 @@ function function_7d52bd0855978b16( cluster )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b6b
+// Params 2
+// Checksum 0x0, Offset: 0x2c0f
 // Size: 0xb1
 function function_1191b2b6c3094237( cluster, clusters )
 {
@@ -1091,8 +1122,8 @@ function function_1191b2b6c3094237( cluster, clusters )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c25
+// Params 1
+// Checksum 0x0, Offset: 0x2cc9
 // Size: 0xb0
 function function_46eb8dc4be18be53( team )
 {
@@ -1118,7 +1149,7 @@ function function_46eb8dc4be18be53( team )
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2cde
+// Checksum 0x0, Offset: 0x2d82
 // Size: 0x86
 function private function_7a552558fb71d098( team, var_1a62267ee21ef3e1 )
 {
@@ -1137,7 +1168,7 @@ function private function_7a552558fb71d098( team, var_1a62267ee21ef3e1 )
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2d6c
+// Checksum 0x0, Offset: 0x2e10
 // Size: 0x87
 function private function_cabf176cb15dcc21( team, var_38db716a3041bec5 )
 {
@@ -1156,7 +1187,7 @@ function private function_cabf176cb15dcc21( team, var_38db716a3041bec5 )
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2dfb
+// Checksum 0x0, Offset: 0x2e9f
 // Size: 0xd1
 function private function_a4264edac412fc8b( team, var_fcb5cf3226c472cf )
 {
@@ -1190,8 +1221,8 @@ function private function_a4264edac412fc8b( team, var_fcb5cf3226c472cf )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ed4
+// Params 1
+// Checksum 0x0, Offset: 0x2f78
 // Size: 0x3b
 function function_bf5778d86600b130( var_b6970f580273b509 )
 {
@@ -1205,8 +1236,8 @@ function function_bf5778d86600b130( var_b6970f580273b509 )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f17
+// Params 1
+// Checksum 0x0, Offset: 0x2fbb
 // Size: 0x268
 function function_a73bac32e1c800c6( var_b6970f580273b509 )
 {
@@ -1261,7 +1292,7 @@ function function_a73bac32e1c800c6( var_b6970f580273b509 )
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x3188
+// Checksum 0x0, Offset: 0x322c
 // Size: 0x16, Type: bool
 function private function_75e57b4ca2e7c32f( a, b )
 {
@@ -1269,8 +1300,8 @@ function private function_75e57b4ca2e7c32f( a, b )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x31a7
+// Params 2
+// Checksum 0x0, Offset: 0x324b
 // Size: 0x176
 function function_9ea3314bc1ca2fd( stats, waveindex )
 {
@@ -1302,14 +1333,15 @@ function function_9ea3314bc1ca2fd( stats, waveindex )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3325
+// Params 2
+// Checksum 0x0, Offset: 0x33c9
 // Size: 0x90
 function function_433e2f02b6fe8619( var_3ff67a12ccb276b6, var_2ac43ce7db24a85a )
 {
     str = "";
     
-    for (i = 0; i < var_3ff67a12ccb276b6.size - 1; i++) {
+    for ( i = 0; i < var_3ff67a12ccb276b6.size - 1 ; i++ )
+    {
         if ( i == 0 )
         {
             team = var_3ff67a12ccb276b6[ i ];
@@ -1325,8 +1357,8 @@ function function_433e2f02b6fe8619( var_3ff67a12ccb276b6, var_2ac43ce7db24a85a )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33be
+// Params 1
+// Checksum 0x0, Offset: 0x3462
 // Size: 0x66
 function function_5b9a5dd25a426550( targetteams )
 {
@@ -1334,7 +1366,8 @@ function function_5b9a5dd25a426550( targetteams )
     var_df445b82bd25c0cd = firstteam;
     var_3ff67a12ccb276b6 = [ firstteam ];
     
-    for (var_784c96b93f6eba74 = 0; !var_784c96b93f6eba74; var_784c96b93f6eba74 = var_df445b82bd25c0cd == firstteam) {
+    for ( var_784c96b93f6eba74 = 0; !var_784c96b93f6eba74 ; var_784c96b93f6eba74 = var_df445b82bd25c0cd == firstteam )
+    {
         if ( !isdefined( targetteams[ var_df445b82bd25c0cd ] ) )
         {
             break;
@@ -1348,8 +1381,8 @@ function function_5b9a5dd25a426550( targetteams )
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x342d
+// Params 3
+// Checksum 0x0, Offset: 0x34d1
 // Size: 0x4d
 function function_fab4e7780ef914f6( clusters, var_eaa7164d06855f8e, var_2778b8bc11fe3036 )
 {
@@ -1363,8 +1396,8 @@ function function_fab4e7780ef914f6( clusters, var_eaa7164d06855f8e, var_2778b8bc
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3482
+// Params 3
+// Checksum 0x0, Offset: 0x3526
 // Size: 0x1b2
 function function_6ced8fdf830b1034( clusters, var_eaa7164d06855f8e, var_2778b8bc11fe3036 )
 {
@@ -1404,8 +1437,8 @@ function function_6ced8fdf830b1034( clusters, var_eaa7164d06855f8e, var_2778b8bc
 }
 
 // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x363d
+// Params 1
+// Checksum 0x0, Offset: 0x36e1
 // Size: 0x144
 function function_7318a0f9053bacd9( stats )
 {
@@ -1443,8 +1476,8 @@ function function_7318a0f9053bacd9( stats )
 /#
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3789
+    // Params 0
+    // Checksum 0x0, Offset: 0x382d
     // Size: 0x5, Type: dev
     function function_181b305cacc42fd4()
     {
@@ -1452,8 +1485,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3796
+    // Params 0
+    // Checksum 0x0, Offset: 0x383a
     // Size: 0x168, Type: dev
     function function_e90e55f9a402be98()
     {
@@ -1493,8 +1526,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3906
+    // Params 0
+    // Checksum 0x0, Offset: 0x39aa
     // Size: 0x112, Type: dev
     function function_9c47b0e02f2fb63b()
     {
@@ -1538,8 +1571,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3a20
+    // Params 1
+    // Checksum 0x0, Offset: 0x3ac4
     // Size: 0x70, Type: dev
     function function_a65ee7e93ee569ec( player )
     {
@@ -1557,8 +1590,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3a98
+    // Params 2
+    // Checksum 0x0, Offset: 0x3b3c
     // Size: 0x94, Type: dev
     function function_e1765107c6062def( team, position )
     {
@@ -1578,8 +1611,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3b34
+    // Params 1
+    // Checksum 0x0, Offset: 0x3bd8
     // Size: 0x2dd, Type: dev
     function function_2bddf385f85e7c5d( label )
     {
@@ -1625,8 +1658,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3e19
+    // Params 1
+    // Checksum 0x0, Offset: 0x3ebd
     // Size: 0xbd, Type: dev
     function function_8c25d42d610355de( position )
     {
@@ -1651,8 +1684,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3ede
+    // Params 3
+    // Checksum 0x0, Offset: 0x3f82
     // Size: 0x1e2, Type: dev
     function function_4d4fe2c60744d274( clusters, var_5fd6ab1863ef6405, var_fda53fb854604b76 )
     {
@@ -1704,8 +1737,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x40c8
+    // Params 0
+    // Checksum 0x0, Offset: 0x416c
     // Size: 0x42, Type: dev
     function debuginit()
     {
@@ -1717,8 +1750,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4112
+    // Params 0
+    // Checksum 0x0, Offset: 0x41b6
     // Size: 0xdd, Type: dev
     function function_1e10e8848dd2fbf8()
     {
@@ -1733,7 +1766,8 @@ function function_7318a0f9053bacd9( stats )
         
         while ( true )
         {
-            for (i = -4; i < 5; i++) {
+            for ( i = -4; i < 5 ; i++ )
+            {
                 factor = level.pe_bountyroyale.var_330b0c607f159f0f * 2 * i;
                 begin = ( factor, var_c99501b545887139, drawheight );
                 end = ( factor, var_c97113b545601e17, drawheight );
@@ -1748,8 +1782,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x41f7
+    // Params 0
+    // Checksum 0x0, Offset: 0x429b
     // Size: 0x27, Type: dev
     function function_322fa7dcd1148f78()
     {
@@ -1758,8 +1792,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4226
+    // Params 1
+    // Checksum 0x0, Offset: 0x42ca
     // Size: 0x58, Type: dev
     function function_9c7c4b2892d5b6db( bit )
     {
@@ -1773,8 +1807,8 @@ function function_7318a0f9053bacd9( stats )
     }
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4286
+    // Params 1
+    // Checksum 0x0, Offset: 0x432a
     // Size: 0x99, Type: dev
     function function_34c076b99e090d44( team )
     {
@@ -1792,7 +1826,7 @@ function function_7318a0f9053bacd9( stats )
 
     // Namespace br_publicevent_bountyroyale / scripts\mp\gametypes\br_publicevent_bountyroyale
     // Params 2, eflags: 0x4
-    // Checksum 0x0, Offset: 0x4327
+    // Checksum 0x0, Offset: 0x43cb
     // Size: 0x1e0, Type: dev
     function private function_5f7d3196cec2877d( command, args )
     {

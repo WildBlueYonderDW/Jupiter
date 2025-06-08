@@ -27,7 +27,7 @@
 #namespace dmz_task_utils;
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6dc
 // Size: 0x5e
 function task_create( activity )
@@ -42,7 +42,7 @@ function task_create( activity )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x743
 // Size: 0xb1
 function function_325390edb051cd5d( circleid, locations, size )
@@ -61,7 +61,7 @@ function function_325390edb051cd5d( circleid, locations, size )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7fc
 // Size: 0x6e
 function function_8cd2ac82037f025c( circleid, location, size )
@@ -77,7 +77,7 @@ function function_8cd2ac82037f025c( circleid, location, size )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x872
 // Size: 0x72
 function function_1851e9cfb7687f68( player )
@@ -95,7 +95,7 @@ function function_1851e9cfb7687f68( player )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ec
 // Size: 0x72
 function function_556fb3a465f0e978( player )
@@ -113,7 +113,7 @@ function function_556fb3a465f0e978( player )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x966
 // Size: 0x72
 function function_e54df8560bf7dc64( team )
@@ -131,7 +131,7 @@ function function_e54df8560bf7dc64( team )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e0
 // Size: 0x44
 function function_89951899f85b3465( team, circleindex )
@@ -150,7 +150,7 @@ function function_89951899f85b3465( team, circleindex )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2c
 // Size: 0x68
 function function_2476daefa3384c5e()
@@ -168,7 +168,7 @@ function function_2476daefa3384c5e()
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa9c
 // Size: 0x35
 function function_4e927bfe9b585059( index )
@@ -181,7 +181,7 @@ function function_4e927bfe9b585059( index )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xad9
 // Size: 0x1d
 function function_ab50f62a3a730400( origin, radius )
@@ -190,7 +190,7 @@ function function_ab50f62a3a730400( origin, radius )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaff
 // Size: 0x9b
 function function_e68b37e06549547e( neworigin, newradius, circleindex )
@@ -214,7 +214,7 @@ function function_e68b37e06549547e( neworigin, newradius, circleindex )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xba2
 // Size: 0x160
 function function_a764b87cdf6d8ac4( points, height )
@@ -264,7 +264,7 @@ function function_a764b87cdf6d8ac4( points, height )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd0b
 // Size: 0x19f
 function function_9e357e07833a0d1a( team )
@@ -316,7 +316,7 @@ function function_9e357e07833a0d1a( team )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xeb2
 // Size: 0x16e
 function function_995813ad75b83c53( team, circleindex )
@@ -364,7 +364,7 @@ function function_995813ad75b83c53( team, circleindex )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1028
 // Size: 0x92
 function function_a9f8002e49a69313( dialog, teamname )
@@ -379,7 +379,7 @@ function function_a9f8002e49a69313( dialog, teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x10c2
 // Size: 0x58
 function function_4ed64ae8fc231a27( icon, teamname, location, zoffset, waittime, objectivestate )
@@ -400,7 +400,7 @@ function function_4ed64ae8fc231a27( icon, teamname, location, zoffset, waittime,
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1122
 // Size: 0x68
 function function_5a2f918c5578514( icon, teamname, entity, zoffset, objectivestate )
@@ -415,7 +415,7 @@ function function_5a2f918c5578514( icon, teamname, entity, zoffset, objectivesta
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1192
 // Size: 0xc1
 function function_e88784387008bd2( icon, teamname, location, zoffset, objectivestate )
@@ -444,7 +444,7 @@ function function_e88784387008bd2( icon, teamname, location, zoffset, objectives
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x125b
 // Size: 0x26
 function function_188bf2b5951a0060( newentity )
@@ -454,7 +454,7 @@ function function_188bf2b5951a0060( newentity )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1289
 // Size: 0x2f
 function function_30c89ac91cfae119( teamname )
@@ -466,7 +466,7 @@ function function_30c89ac91cfae119( teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12c0
 // Size: 0x3d
 function function_e8d8df3da4392f0f( teamname )
@@ -479,7 +479,7 @@ function function_e8d8df3da4392f0f( teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1305
 // Size: 0x24
 function function_d062142f367ed7b2()
@@ -493,7 +493,7 @@ function function_d062142f367ed7b2()
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1331
 // Size: 0x5b
 function function_f76241db305fb78f( entity, zoffset )
@@ -513,7 +513,7 @@ function function_f76241db305fb78f( entity, zoffset )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1394
 // Size: 0x155
 function function_c847bfd52c064289( origin, type )
@@ -614,7 +614,7 @@ function private function_56f8d3e2552878be( type )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1692
 // Size: 0x29
 function function_fbf23ae15945ee5a( player )
@@ -626,7 +626,7 @@ function function_fbf23ae15945ee5a( player )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c3
 // Size: 0x70
 function function_a92867e16c21da22( team )
@@ -643,7 +643,7 @@ function function_a92867e16c21da22( team )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x173b
 // Size: 0x29
 function function_401535e3fa9e171c( player )
@@ -655,7 +655,7 @@ function function_401535e3fa9e171c( player )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x176c
 // Size: 0x62
 function function_743033b2e6c2d930( team )
@@ -667,7 +667,7 @@ function function_743033b2e6c2d930( team )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17d6
 // Size: 0x2a
 function function_629ed367d1393020()
@@ -680,7 +680,7 @@ function function_629ed367d1393020()
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1808
 // Size: 0x32
 function function_cef2ed613a8338be( location )
@@ -693,7 +693,7 @@ function function_cef2ed613a8338be( location )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1842
 // Size: 0x4e
 function function_b3c1ba9fbd1dd01e( entity, zoffset )
@@ -715,7 +715,7 @@ function function_b3c1ba9fbd1dd01e( entity, zoffset )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1898
 // Size: 0x25f
 function function_9be29ad72a155ee1( weaponnameoverride, var_9c40af0f61186602 )
@@ -848,7 +848,7 @@ function private function_2d0d55d0d1148c4d( weap_name )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bea
 // Size: 0x25
 function function_1ef3aef709c7007c()
@@ -860,7 +860,7 @@ function function_1ef3aef709c7007c()
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c17
 // Size: 0x3f
 function function_da38be107ae836ff( teammates, cash )
@@ -870,7 +870,7 @@ function function_da38be107ae836ff( teammates, cash )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c5f
 // Size: 0x46
 function function_8c5476a01afab741( player, cash )
@@ -881,7 +881,7 @@ function function_8c5476a01afab741( player, cash )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cae
 // Size: 0xea
 function function_cd4f277cf0d6a560( teamname, cash )
@@ -909,7 +909,7 @@ function function_cd4f277cf0d6a560( teamname, cash )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1da0
 // Size: 0xe4
 function function_9c6ab63c4b6bd08b( teamname, cash )
@@ -939,7 +939,7 @@ function function_9c6ab63c4b6bd08b( teamname, cash )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e8d
 // Size: 0x94
 function task_ended( var_5e671fc71e72d5e8, var_644a33d86d8514bf )
@@ -961,7 +961,7 @@ function task_ended( var_5e671fc71e72d5e8, var_644a33d86d8514bf )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f29
 // Size: 0x73
 function function_6f6f83ab76483811( instance, player )
@@ -980,7 +980,7 @@ function function_6f6f83ab76483811( instance, player )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fa4
 // Size: 0x5b, Type: bool
 function function_8158903a6e2f32fd( task, player )
@@ -989,7 +989,7 @@ function function_8158903a6e2f32fd( task, player )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2008
 // Size: 0x54
 function function_65a2513d3692ea1a( teamname )
@@ -999,7 +999,7 @@ function function_65a2513d3692ea1a( teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2064
 // Size: 0x76
 function function_a1738a95d7aa8094( splash, contractref, cashreward, teamname )
@@ -1010,7 +1010,7 @@ function function_a1738a95d7aa8094( splash, contractref, cashreward, teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20e2
 // Size: 0x3a
 function function_1759acfd39bb5edf( splash, teamname )
@@ -1019,7 +1019,7 @@ function function_1759acfd39bb5edf( splash, teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2124
 // Size: 0x1c
 function function_3a1b792c4eab210f( splash )
@@ -1028,7 +1028,7 @@ function function_3a1b792c4eab210f( splash )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2148
 // Size: 0x49
 function function_c9f97baa0d7f59bf( splash, teamname )
@@ -1037,7 +1037,7 @@ function function_c9f97baa0d7f59bf( splash, teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2199
 // Size: 0x5c
 function function_137d718c82ac0947( teamname )
@@ -1054,7 +1054,7 @@ function function_137d718c82ac0947( teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21fd
 // Size: 0x5f
 function function_1458f4e9320a8ae1( point )
@@ -1078,7 +1078,7 @@ function function_1458f4e9320a8ae1( point )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2265
 // Size: 0x2b
 function function_70313f3b61e1aeef()
@@ -1092,7 +1092,7 @@ function function_70313f3b61e1aeef()
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2299
 // Size: 0x62
 function function_739560269bc164cf( teamname )
@@ -1104,7 +1104,7 @@ function function_739560269bc164cf( teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2303
 // Size: 0x62
 function function_9688f0dc7dfd3d53( teamname )
@@ -1116,7 +1116,7 @@ function function_9688f0dc7dfd3d53( teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x236d
 // Size: 0x60
 function function_42718c89b38e260b( objidnum, teams )
@@ -1128,7 +1128,7 @@ function function_42718c89b38e260b( objidnum, teams )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23d5
 // Size: 0x74
 function function_6dad7e4d170de4ba( objidnum, team )
@@ -1141,7 +1141,7 @@ function function_6dad7e4d170de4ba( objidnum, team )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2451
 // Size: 0x68
 function function_83dd17f313ffdec0( inorigin, var_5b9c864b21207ff6, task )
@@ -1155,7 +1155,7 @@ function function_83dd17f313ffdec0( inorigin, var_5b9c864b21207ff6, task )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24c2
 // Size: 0xe4
 function function_c573d8a23f7faf06( cache, teams )
@@ -1180,7 +1180,7 @@ function function_c573d8a23f7faf06( cache, teams )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25ae
 // Size: 0x27
 function function_f8cd22fb229f4138( cash )
@@ -1194,7 +1194,7 @@ function function_f8cd22fb229f4138( cash )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25de
 // Size: 0x1c
 function function_b43e9536b7e60884( player, index )
@@ -1203,7 +1203,7 @@ function function_b43e9536b7e60884( player, index )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2602
 // Size: 0x85
 function function_b7bbe29ed551ee90( index, tier, teamname )
@@ -1222,7 +1222,7 @@ function function_b7bbe29ed551ee90( index, tier, teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x268f
 // Size: 0x14
 function function_6d93be335873296e( player )
@@ -1231,7 +1231,7 @@ function function_6d93be335873296e( player )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26ab
 // Size: 0x62
 function function_83d7eb52598be0b3( teamname )
@@ -1243,7 +1243,7 @@ function function_83d7eb52598be0b3( teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2715
 // Size: 0xca
 function function_5314298e777e5688( ref )
@@ -1265,7 +1265,7 @@ function function_5314298e777e5688( ref )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27e7
 // Size: 0x85
 function function_dffcbce998c9ee50( teamname )
@@ -1280,7 +1280,7 @@ function function_dffcbce998c9ee50( teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2874
 // Size: 0x75
 function function_45bd3184ff146b46( teamname )
@@ -1297,7 +1297,7 @@ function function_45bd3184ff146b46( teamname )
 }
 
 // Namespace dmz_task_utils / scripts\mp\gametypes\dmz_task_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28f1
 // Size: 0x72
 function function_d86771edadba8b4a( instance, task, player )

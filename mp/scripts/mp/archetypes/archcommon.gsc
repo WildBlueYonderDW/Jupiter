@@ -6,7 +6,7 @@
 #namespace archcommon;
 
 // Namespace archcommon / scripts\mp\archetypes\archcommon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x110
 // Size: 0xad
 function init()
@@ -14,7 +14,8 @@ function init()
     level.archetypes = [];
     level.archetypeids = [];
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         index = tablelookupbyrow( "mp/battleRigTable.csv", row, 0 );
         
         if ( !isdefined( index ) || index == "" )
@@ -31,7 +32,7 @@ function init()
 }
 
 // Namespace archcommon / scripts\mp\archetypes\archcommon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c5
 // Size: 0x54
 function removearchetype( loadoutarchetype )
@@ -59,7 +60,7 @@ function removearchetype( loadoutarchetype )
 }
 
 // Namespace archcommon / scripts\mp\archetypes\archcommon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x221
 // Size: 0x26
 function _allowbattleslide( allow )
@@ -74,7 +75,7 @@ function _allowbattleslide( allow )
 }
 
 // Namespace archcommon / scripts\mp\archetypes\archcommon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24f
 // Size: 0x53
 function getrigindexfromarchetyperef( archetyperefstring )
@@ -84,7 +85,8 @@ function getrigindexfromarchetyperef( archetyperefstring )
         return 0;
     }
     
-    for (rigindex = 0; rigindex < level.archetypes.size; rigindex++) {
+    for ( rigindex = 0; rigindex < level.archetypes.size ; rigindex++ )
+    {
         if ( level.archetypes[ rigindex ] == archetyperefstring )
         {
             return rigindex;

@@ -4,7 +4,7 @@
 #namespace sound_perception;
 
 // Namespace sound_perception / namespace_3df563b7c04eb8eb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x144
 // Size: 0x131
 function createevent( var_325752cb29127eeb )
@@ -36,7 +36,7 @@ function createevent( var_325752cb29127eeb )
 }
 
 // Namespace sound_perception / namespace_3df563b7c04eb8eb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27d
 // Size: 0x127
 function function_712abddb7195a3ee()
@@ -62,7 +62,7 @@ function function_712abddb7195a3ee()
 }
 
 // Namespace sound_perception / namespace_3df563b7c04eb8eb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ac
 // Size: 0x108
 function getevent()
@@ -74,7 +74,8 @@ function getevent()
         var_379a32677fb69595 = gettime() - event.var_325752cb29127eeb;
         index = undefined;
         
-        for (i = 0; i < event.list.size; i++) {
+        for ( i = 0; i < event.list.size ; i++ )
+        {
             if ( event.list[ i ].time > var_379a32677fb69595 )
             {
                 break;
@@ -87,7 +88,8 @@ function getevent()
         {
             var_502ca8f7bc239543 = [];
             
-            for (i = index + 1; i < event.list.size; i++) {
+            for ( i = index + 1; i < event.list.size ; i++ )
+            {
                 var_502ca8f7bc239543[ var_502ca8f7bc239543.size ] = event.list[ i ];
             }
             

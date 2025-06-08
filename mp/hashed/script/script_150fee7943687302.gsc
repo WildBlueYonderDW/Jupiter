@@ -9,7 +9,7 @@
 #namespace buy_items;
 
 // Namespace buy_items / namespace_30e7da3797ac6a02
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe5
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -18,7 +18,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace buy_items / namespace_30e7da3797ac6a02
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb
 // Size: 0x70
 function evaluatescore( bot )
@@ -42,7 +42,7 @@ function evaluatescore( bot )
 }
 
 // Namespace buy_items / namespace_30e7da3797ac6a02
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x174
 // Size: 0x36e
 function function_5b0291aeab99561b( bot )
@@ -112,7 +112,7 @@ function function_5b0291aeab99561b( bot )
 }
 
 // Namespace buy_items / namespace_30e7da3797ac6a02
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4eb
 // Size: 0x60
 function scoreitem( bot, var_bf09a57af008acd6 )
@@ -128,7 +128,7 @@ function scoreitem( bot, var_bf09a57af008acd6 )
 }
 
 // Namespace buy_items / namespace_30e7da3797ac6a02
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x553
 // Size: 0x82, Type: bool
 function function_f7df7edcfce4b1f2( buystation, bot )

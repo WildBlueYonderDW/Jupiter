@@ -33,7 +33,7 @@
 #namespace arm_vehicles;
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x755
 // Size: 0x12b
 function registervehicletype( refname, spawnvehiclecallback )
@@ -62,7 +62,7 @@ function registervehicletype( refname, spawnvehiclecallback )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x888
 // Size: 0x41d
 function function_417194d265d63273()
@@ -133,13 +133,15 @@ function function_417194d265d63273()
     
     if ( false )
     {
-        for (i = 0; i < numtospawn; i++) {
+        for ( i = 0; i < numtospawn ; i++ )
+        {
             loc = level.vehiclespawnlocs[ i ];
             thread drawline( loc.origin + ( 0, 0, 1500 ), loc.origin + ( 0, 0, 2500 ), 1000, ( 0, 1, 0 ) );
         }
     }
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         loc = level.vehiclespawnlocs[ i ];
         
         if ( isdefined( loc ) )
@@ -151,7 +153,7 @@ function function_417194d265d63273()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcad
 // Size: 0x66e
 function init_groundwarvehicles()
@@ -261,13 +263,15 @@ function init_groundwarvehicles()
     
     if ( false )
     {
-        for (i = 0; i < numtospawn; i++) {
+        for ( i = 0; i < numtospawn ; i++ )
+        {
             loc = level.vehiclespawnlocs[ i ];
             thread drawline( loc.origin + ( 0, 0, 1500 ), loc.origin + ( 0, 0, 2500 ), 1000, ( 0, 1, 0 ) );
         }
     }
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         loc = level.vehiclespawnlocs[ i ];
         
         if ( isdefined( loc ) )
@@ -294,7 +298,7 @@ function init_groundwarvehicles()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1323
 // Size: 0x15
 function function_87328480bccc7550( points )
@@ -356,7 +360,7 @@ function private function_54245b02f897a6d8( spawndata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1589
 // Size: 0x7d
 function function_818ecfdb2be6e33d( vehicleref, origin, newtargetname, newvehicletype, var_7d5e409c9c04d1e3 )
@@ -370,7 +374,7 @@ function function_818ecfdb2be6e33d( vehicleref, origin, newtargetname, newvehicl
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x160e
 // Size: 0x7e
 function function_8f3b4ac00da24665( vehicleref, origin )
@@ -406,7 +410,7 @@ function private function_e844513ae4facc56( vehicleref, origin )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1705
 // Size: 0xa8
 function function_4925ad96cef8def1( vehicleref, origin, neworigin, newangles )
@@ -455,7 +459,7 @@ function private function_4d91efcd80ff8810( vehicleref, vehiclespawn )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x187a
 // Size: 0x34
 function function_b5f74019852e37fb()
@@ -466,7 +470,7 @@ function function_b5f74019852e37fb()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18b6
 // Size: 0x186
 function function_67578d114d517147()
@@ -504,7 +508,7 @@ function function_67578d114d517147()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a44
 // Size: 0x188
 function vehiclespawn_hqtanks( var_9d4b9fcd75d1a736 )
@@ -539,7 +543,7 @@ function vehiclespawn_hqtanks( var_9d4b9fcd75d1a736 )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1bd4
 // Size: 0x59
 function vehiclespawn_littlebird( loc, faildata )
@@ -554,7 +558,7 @@ function vehiclespawn_littlebird( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c36
 // Size: 0x59
 function vehiclespawn_atv( loc, faildata )
@@ -569,7 +573,7 @@ function vehiclespawn_atv( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c98
 // Size: 0x16a
 function vehiclespawn_tank( loc, faildata )
@@ -613,7 +617,7 @@ function vehiclespawn_tank( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e0b
 // Size: 0x59
 function function_91397b675b427da6( loc, faildata )
@@ -628,7 +632,7 @@ function function_91397b675b427da6( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e6d
 // Size: 0x59
 function function_9945b400b938a173( loc, faildata )
@@ -643,7 +647,7 @@ function function_9945b400b938a173( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ecf
 // Size: 0x59
 function function_52e04331732241d7( loc, faildata )
@@ -658,7 +662,7 @@ function function_52e04331732241d7( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f31
 // Size: 0x59
 function function_4fbf67e0d91458f8( loc, faildata )
@@ -673,7 +677,7 @@ function function_4fbf67e0d91458f8( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f93
 // Size: 0x59
 function function_784aa0f6ee634ae5( loc, faildata )
@@ -688,7 +692,7 @@ function function_784aa0f6ee634ae5( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ff5
 // Size: 0x59
 function function_db3f4677d3b1ef4a( loc, faildata )
@@ -703,7 +707,7 @@ function function_db3f4677d3b1ef4a( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2057
 // Size: 0x59
 function function_93f25760d0131658( loc, faildata )
@@ -718,7 +722,7 @@ function function_93f25760d0131658( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20b9
 // Size: 0x59
 function function_c43c5200d882b134( loc, faildata )
@@ -733,7 +737,7 @@ function function_c43c5200d882b134( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x211b
 // Size: 0x59
 function function_c6436c7f3e995d85( loc, faildata )
@@ -748,7 +752,7 @@ function function_c6436c7f3e995d85( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x217d
 // Size: 0x59
 function function_9d7d93def34d9958( loc, faildata )
@@ -763,7 +767,7 @@ function function_9d7d93def34d9958( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21df
 // Size: 0x59
 function function_a23b100003fc2003( loc, faildata )
@@ -778,7 +782,7 @@ function function_a23b100003fc2003( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2241
 // Size: 0x59
 function function_a566257e1d27492c( loc, faildata )
@@ -793,7 +797,7 @@ function function_a566257e1d27492c( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22a3
 // Size: 0x59
 function function_3086eb7fdb843535( loc, faildata )
@@ -808,7 +812,7 @@ function function_3086eb7fdb843535( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2305
 // Size: 0x97
 function function_70199cf52bda53fa( loc, faildata )
@@ -825,7 +829,7 @@ function function_70199cf52bda53fa( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23a5
 // Size: 0x97
 function function_725c5ee265b286ce( loc, faildata )
@@ -842,7 +846,7 @@ function function_725c5ee265b286ce( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2445
 // Size: 0x59
 function function_64440e5a2bfd8900( loc, faildata )
@@ -857,7 +861,7 @@ function function_64440e5a2bfd8900( loc, faildata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24a7
 // Size: 0x15
 function function_505626ab02e6c2d6( vehicle )
@@ -876,7 +880,7 @@ function private function_53f5eb5db0ae2aa1( vehicle )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24eb
 // Size: 0x96
 function function_a53caaef0414a722( vehicle )
@@ -904,7 +908,7 @@ function function_a53caaef0414a722( vehicle )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2589
 // Size: 0x1be
 function vehicle_createspawnselectiontankmarker( vehicle, team, icon )
@@ -940,7 +944,7 @@ function vehicle_createspawnselectiontankmarker( vehicle, team, icon )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x274f
 // Size: 0x6f
 function vehicle_watchmarkedtankdeath( vehicle )
@@ -953,7 +957,7 @@ function vehicle_watchmarkedtankdeath( vehicle )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27c6
 // Size: 0x162
 function vehicle_showteamtanks()
@@ -983,7 +987,7 @@ function vehicle_showteamtanks()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2930
 // Size: 0xa6
 function vehiclespawn_getspawndata( loc )
@@ -1003,7 +1007,7 @@ function vehiclespawn_getspawndata( loc )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29df
 // Size: 0xae
 function droptank_playincomingdialog( spawndata )
@@ -1031,7 +1035,7 @@ function droptank_playincomingdialog( spawndata )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a95
 // Size: 0x8ac
 function init_rallyvehicles()
@@ -1271,7 +1275,7 @@ function init_rallyvehicles()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3349
 // Size: 0x94
 function getrallyvehiclespawndata( loc, team, var_da3668523170ea04 )
@@ -1287,7 +1291,7 @@ function getrallyvehiclespawndata( loc, team, var_da3668523170ea04 )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33e6
 // Size: 0x51b
 function managec130spawns()
@@ -1383,7 +1387,7 @@ function managec130spawns()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3909
 // Size: 0x112
 function createc130( team, startpt )
@@ -1404,7 +1408,7 @@ function createc130( team, startpt )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3a24
 // Size: 0x1e4
 function handlec130motion( startpt, endpt, time, team )
@@ -1445,7 +1449,7 @@ function handlec130motion( startpt, endpt, time, team )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c10
 // Size: 0x108
 function gatherc130playerstospawn()
@@ -1472,7 +1476,7 @@ function gatherc130playerstospawn()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d20
 // Size: 0x14
 function removefromspawnselectionaftertime( time )
@@ -1482,7 +1486,7 @@ function removefromspawnselectionaftertime( time )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d3c
 // Size: 0x2c
 function removefromspawnselection()
@@ -1492,7 +1496,7 @@ function removefromspawnselection()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d70
 // Size: 0x103
 function spawnplayertoc130()
@@ -1539,7 +1543,7 @@ function spawnplayertoc130()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e7b
 // Size: 0x6a
 function jumplistener( c130, var_1b89121ef11344d5 )
@@ -1560,7 +1564,7 @@ function jumplistener( c130, var_1b89121ef11344d5 )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3eed
 // Size: 0x93
 function listenkick( c130, forcechute )
@@ -1587,7 +1591,7 @@ function listenkick( c130, forcechute )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f88
 // Size: 0xfb
 function listenjump( c130, var_1b89121ef11344d5 )
@@ -1632,7 +1636,7 @@ function listenjump( c130, var_1b89121ef11344d5 )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x408b
 // Size: 0x1bc
 function parachute( c130, var_1b89121ef11344d5 )
@@ -1680,7 +1684,7 @@ function parachute( c130, var_1b89121ef11344d5 )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x424f
 // Size: 0x165
 function debug_randomflightpathstest()
@@ -1701,7 +1705,7 @@ function debug_randomflightpathstest()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43bc
 // Size: 0x4ff
 function c130_pickrandomflightpath()
@@ -1759,7 +1763,7 @@ function c130_pickrandomflightpath()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x48c3
 // Size: 0x93
 function makec130pathparamsstruct( centerpt, angle )
@@ -1777,7 +1781,7 @@ function makec130pathparamsstruct( centerpt, angle )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x495f
 // Size: 0x669
 function c130_fightpathmove()
@@ -1886,7 +1890,7 @@ function c130_fightpathmove()
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4fd0
 // Size: 0x83, Type: bool
 function arenextpathsinsafebounds( offset )
@@ -1895,7 +1899,7 @@ function arenextpathsinsafebounds( offset )
 }
 
 // Namespace arm_vehicles / scripts\mp\gametypes\arm_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x505c
 // Size: 0x61, Type: bool
 function ispointinsafebounds( pt )

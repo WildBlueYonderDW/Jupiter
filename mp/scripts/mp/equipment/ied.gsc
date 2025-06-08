@@ -21,7 +21,7 @@
 #namespace ied;
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d1
 // Size: 0x1b7
 function ied_used( grenade )
@@ -67,7 +67,7 @@ function ied_used( grenade )
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x490
 // Size: 0x9c
 function function_1a0e37df908265ce()
@@ -87,7 +87,7 @@ function function_1a0e37df908265ce()
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x534
 // Size: 0xa7
 function function_58606993710db8de()
@@ -121,7 +121,7 @@ function function_58606993710db8de()
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e3
 // Size: 0x19
 function function_43018577e4dd0c6e()
@@ -132,7 +132,7 @@ function function_43018577e4dd0c6e()
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x604
 // Size: 0x82
 function ied_detonate( attacker )
@@ -156,7 +156,7 @@ function ied_detonate( attacker )
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x68e
 // Size: 0x1db
 function ied_explode( attacker )
@@ -217,7 +217,7 @@ function ied_explode( attacker )
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x871
 // Size: 0xa
 function function_5481370bf1e83031()
@@ -226,7 +226,7 @@ function function_5481370bf1e83031()
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x883
 // Size: 0x39
 function ied_destroy( attacker )
@@ -237,7 +237,7 @@ function ied_destroy( attacker )
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c4
 // Size: 0x105
 function ied_delete( deletiondelay )
@@ -283,7 +283,7 @@ function ied_delete( deletiondelay )
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d1
 // Size: 0x40
 function function_921422f5877505e8()
@@ -300,7 +300,7 @@ function function_921422f5877505e8()
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa19
 // Size: 0xa3
 function function_4260b88126e41b5d( data )
@@ -331,7 +331,7 @@ function function_4260b88126e41b5d( data )
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac4
 // Size: 0x84
 function function_7f534465d312ec86( data )
@@ -360,7 +360,7 @@ function function_7f534465d312ec86( data )
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb50
 // Size: 0x63
 function ied_disable( attacker )
@@ -375,7 +375,7 @@ function ied_disable( attacker )
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbbb
 // Size: 0x23
 function function_ebd3dd21ad253364()
@@ -386,7 +386,7 @@ function function_ebd3dd21ad253364()
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbe6
 // Size: 0x6c, Type: bool
 function function_87eebc132ad2bbb0()
@@ -401,7 +401,7 @@ function function_87eebc132ad2bbb0()
 }
 
 // Namespace ied / scripts\mp\equipment\ied
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc5b
 // Size: 0x21
 function function_f85453705ce0972a( oldowner )

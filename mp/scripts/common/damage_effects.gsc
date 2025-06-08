@@ -12,7 +12,7 @@
 #namespace damage_effects;
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x559
 // Size: 0x38
 function init()
@@ -29,7 +29,7 @@ function init()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x599
 // Size: 0x12c
 function function_9bc46d4b8891a740()
@@ -66,7 +66,7 @@ function function_9bc46d4b8891a740()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6cd
 // Size: 0x25b
 function initdeathsdooroverlaypulse()
@@ -95,7 +95,7 @@ function initdeathsdooroverlaypulse()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x930
 // Size: 0x23c
 function function_12bd9b0199862940()
@@ -123,7 +123,7 @@ function function_12bd9b0199862940()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb74
 // Size: 0x80
 function function_fba4aaaecf8e34ac()
@@ -141,7 +141,7 @@ function function_fba4aaaecf8e34ac()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbfc
 // Size: 0x8a
 function function_c0124edee3a13496()
@@ -159,7 +159,7 @@ function function_c0124edee3a13496()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc8e
 // Size: 0x25
 function function_3d879029586de3( alphavalue )
@@ -173,7 +173,7 @@ function function_3d879029586de3( alphavalue )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcbc
 // Size: 0xf3
 function onenterdeathsdoor( smeansofdeath )
@@ -214,7 +214,7 @@ function onenterdeathsdoor( smeansofdeath )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdb7
 // Size: 0xee
 function playerbreathingpainsound( healthcap )
@@ -255,7 +255,7 @@ function playerbreathingpainsound( healthcap )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xead
 // Size: 0xdd
 function onexitdeathsdoor( healed )
@@ -296,7 +296,7 @@ function onexitdeathsdoor( healed )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf92
 // Size: 0x22
 function function_9030f56a68f604dc()
@@ -310,7 +310,7 @@ function function_9030f56a68f604dc()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfbc
 // Size: 0x7e
 function function_c2e66bc8cbf81b2d()
@@ -326,7 +326,7 @@ function function_c2e66bc8cbf81b2d()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1042
 // Size: 0x10
 function function_86765f42c27f4bee()
@@ -335,7 +335,7 @@ function function_86765f42c27f4bee()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x105a
 // Size: 0x57
 function function_7067dfb2023a23b7()
@@ -350,7 +350,7 @@ function function_7067dfb2023a23b7()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10b9
 // Size: 0x68
 function applyshrapnelfx()
@@ -372,7 +372,7 @@ function applyshrapnelfx()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1129
 // Size: 0x46, Type: bool
 function applyshrapnelfxinternal()
@@ -386,14 +386,14 @@ function applyshrapnelfxinternal()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1178
 // Size: 0x4c
 function function_6410111baf734017()
 {
     if ( !isdefined( level.var_194088d9669cb53d ) )
     {
-        level.var_194088d9669cb53d = getdvarint( @"hash_57bac575c6d501c4", 2000 );
+        level.var_194088d9669cb53d = getdvarint( @"scr_attacker_time_buffer_ms", 2000 );
         level.var_1736de83d797adc0 = getdvarint( @"hash_2fd03831cb8a51e6", 4000 );
     }
     
@@ -401,7 +401,7 @@ function function_6410111baf734017()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11cd
 // Size: 0x19, Type: bool
 function function_549fbfada3618987()
@@ -411,7 +411,7 @@ function function_549fbfada3618987()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11ef
 // Size: 0x66
 function updatefirsttimedamaged()
@@ -434,7 +434,7 @@ function updatefirsttimedamaged()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x125d
 // Size: 0xd4
 function removeoldattackersovertime()
@@ -470,7 +470,7 @@ function removeoldattackersovertime()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1339
 // Size: 0x16
 function function_446043a04ae1bfe()
@@ -480,7 +480,7 @@ function function_446043a04ae1bfe()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1357
 // Size: 0x115
 function damageeffects( idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c6a06a7, objweapon, shitloc )
@@ -512,7 +512,7 @@ function damageeffects( idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1474
 // Size: 0xc5
 function damagepainvision( vpoint, factor, smeansofdeath, idamage, objweapon )
@@ -554,7 +554,7 @@ function damagepainvision( vpoint, factor, smeansofdeath, idamage, objweapon )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1541
 // Size: 0x46, Type: bool
 function shoulddopainvision( objweapon )
@@ -573,7 +573,7 @@ function shoulddopainvision( objweapon )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1590
 // Size: 0x26
 function function_52f60ac82b866362( fadetime )
@@ -587,7 +587,7 @@ function function_52f60ac82b866362( fadetime )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x15be
 // Size: 0x1fb
 function damagebloodoverlaydirectional( vpoint, factor, smeansofdeath, idamage, objweapon, shitloc )
@@ -651,7 +651,7 @@ function damagebloodoverlaydirectional( vpoint, factor, smeansofdeath, idamage, 
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17c1
 // Size: 0x54, Type: bool
 function function_9ca01a02f4efc7f6( smeansofdeath )
@@ -667,7 +667,7 @@ function function_9ca01a02f4efc7f6( smeansofdeath )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x181e
 // Size: 0x24, Type: bool
 function function_3e54581e73dff375( smeansofdeath )
@@ -681,7 +681,7 @@ function function_3e54581e73dff375( smeansofdeath )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x184b
 // Size: 0x19, Type: bool
 function function_6a97b15cdcd5961b( smeansofdeath )
@@ -695,7 +695,7 @@ function function_6a97b15cdcd5961b( smeansofdeath )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x186d
 // Size: 0x19, Type: bool
 function function_c1af921b6351d49a( smeansofdeath )
@@ -709,7 +709,7 @@ function function_c1af921b6351d49a( smeansofdeath )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x188f
 // Size: 0xb1, Type: bool
 function function_9c9288020fccd597( factor, smeansofdeath, idamage, objweapon, shitloc )
@@ -758,7 +758,7 @@ function function_9c9288020fccd597( factor, smeansofdeath, idamage, objweapon, s
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1949
 // Size: 0xe0
 function getplayersidesfromposition( position )
@@ -787,7 +787,7 @@ function getplayersidesfromposition( position )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a32
 // Size: 0x44
 function createscreeneffectoffsets( x, y, scale )
@@ -800,7 +800,7 @@ function createscreeneffectoffsets( x, y, scale )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x1a7f
 // Size: 0x297
 function createscreeneffect( side, shader, intime, outtime, randomoffsets, fadein, lowres, containsblood )
@@ -858,7 +858,7 @@ function createscreeneffect( side, shader, intime, outtime, randomoffsets, fadei
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d1e
 // Size: 0x27
 function screeneffectcleanup( hud )
@@ -873,7 +873,7 @@ function screeneffectcleanup( hud )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d4d
 // Size: 0x1a
 function function_81a2b809749b4189( hud )
@@ -883,7 +883,7 @@ function function_81a2b809749b4189( hud )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1d6f
 // Size: 0x166
 function animatescreeneffect( hud, intime, outtime, x, y, scale, fadein )
@@ -931,7 +931,7 @@ function animatescreeneffect( hud, intime, outtime, x, y, scale, fadein )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1edd
 // Size: 0x16
 function damageratio( idamage )
@@ -940,7 +940,7 @@ function damageratio( idamage )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1efc
 // Size: 0x76, Type: bool
 function function_2a9705c393c0e2c4()
@@ -949,7 +949,7 @@ function function_2a9705c393c0e2c4()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f7b
 // Size: 0x193
 function function_41a40f1e0a6aa78e()
@@ -997,7 +997,7 @@ function function_41a40f1e0a6aa78e()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2116
 // Size: 0x105
 function function_252173bf5ac108a3( startalpha, time )
@@ -1042,7 +1042,7 @@ function function_252173bf5ac108a3( startalpha, time )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2223
 // Size: 0x147
 function function_47b9c7c77690bb03( targetalpha, time )
@@ -1080,17 +1080,17 @@ function function_47b9c7c77690bb03( targetalpha, time )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2372
 // Size: 0xea
 function falldamageeffects( falldamage )
 {
     factor = falldamage / self.maxhealth;
-    var_2ff497a47c266950 = getdvarfloat( @"hash_6b03d4dba904d25e", 0.5 );
+    var_2ff497a47c266950 = getdvarfloat( @"scr_falling_damage_min_shock_factor", 0.5 );
     
     if ( factor >= var_2ff497a47c266950 )
     {
-        var_4bc08db3876de031 = getdvarfloat( @"hash_2558d1926211903", 3 );
+        var_4bc08db3876de031 = getdvarfloat( @"scr_falling_damage_max_shock_duration", 3 );
         var_b1505e7ce3af8fea = 1 - var_2ff497a47c266950;
         shockfactor = ( factor - var_2ff497a47c266950 ) / var_b1505e7ce3af8fea;
         shockduration = shockfactor * var_4bc08db3876de031;
@@ -1103,7 +1103,7 @@ function falldamageeffects( falldamage )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2464
 // Size: 0x52
 function function_54117659a8e5c5b4()
@@ -1123,7 +1123,7 @@ function function_54117659a8e5c5b4()
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24be
 // Size: 0x63
 function function_501be800abf11f33( fadetime, scale )
@@ -1135,7 +1135,7 @@ function function_501be800abf11f33( fadetime, scale )
 }
 
 // Namespace damage_effects / scripts\common\damage_effects
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2529
 // Size: 0x56
 function function_a2b4e6088394bade( fadetime )

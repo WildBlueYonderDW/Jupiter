@@ -6,7 +6,7 @@
 #namespace active_env;
 
 // Namespace active_env / namespace_51d054e3b355f17b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a9
 // Size: 0x17c
 function function_ad6fde6a4dc38d62()
@@ -49,7 +49,7 @@ function function_ad6fde6a4dc38d62()
 }
 
 // Namespace active_env / namespace_51d054e3b355f17b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32d
 // Size: 0x14
 function diving_board()
@@ -94,7 +94,7 @@ function private diving_board_exit( e_player, trigger )
 }
 
 // Namespace active_env / namespace_51d054e3b355f17b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43a
 // Size: 0x83
 function function_9b6351833e5d2963()
@@ -135,7 +135,8 @@ function private function_c68de1abc965cc8( s_dest, var_24ad452813ef0b6f )
         n_move_time = float( s_dest.script_parameters );
     }
     
-    for (var_6621a39da07e6c42 = var_24ad452813ef0b6f getscriptablepartstate( "pelvis", 1 ); isdefined( var_6621a39da07e6c42 ) && var_6621a39da07e6c42 == "visible"; var_6621a39da07e6c42 = var_24ad452813ef0b6f getscriptablepartstate( "pelvis", 1 )) {
+    for ( var_6621a39da07e6c42 = var_24ad452813ef0b6f getscriptablepartstate( "pelvis", 1 ); isdefined( var_6621a39da07e6c42 ) && var_6621a39da07e6c42 == "visible" ; var_6621a39da07e6c42 = var_24ad452813ef0b6f getscriptablepartstate( "pelvis", 1 ) )
+    {
         self moveto( self.origin + var_bb66384ea5dfaee3 * var_7856bbc39a600358, n_move_time, 0, 0 );
         wait n_move_time;
         self moveto( self.origin + var_bb66384ea5dfaee3 * var_7856bbc39a600358 * -1, n_move_time, 0, 0 );

@@ -16,7 +16,7 @@
 #namespace poi;
 
 // Namespace poi / scripts\mp\poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x50a
 // Size: 0x2e1
 function poi_init()
@@ -28,7 +28,7 @@ function poi_init()
         return;
     }
     
-    level.var_b0eae20487331106 = getdvarint( @"hash_af96cbe00f226832", 0 );
+    level.var_b0eae20487331106 = getdvarint( @"scr_poi_disable_all", 0 );
     level.var_d35175ec20b444c = getdvarint( @"hash_ad89f1c2b195eda2", 120 ) * 1000;
     level.poi = [];
     level.var_ab20b3a256911579 = [];
@@ -300,7 +300,7 @@ function private function_1698577d68385123()
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb4
 // Size: 0x82
 function function_985798a13250c99a( poiname )
@@ -329,7 +329,7 @@ function function_985798a13250c99a( poiname )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x103f
 // Size: 0x15
 function function_f9340f4b7f231bc1( poiindexes )
@@ -338,7 +338,7 @@ function function_f9340f4b7f231bc1( poiindexes )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x105c
 // Size: 0x37
 function function_80cdaea4bd3ecf70( poiname )
@@ -396,7 +396,7 @@ function private function_f1894e1c6faff01()
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11f5
 // Size: 0x84
 function function_3d397c9451f80077( poiname )
@@ -445,7 +445,7 @@ function private function_183a2f183e4a605b( poi )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12f7
 // Size: 0x9d
 function function_44739fe1cf82e29a( featurename )
@@ -467,7 +467,7 @@ function function_44739fe1cf82e29a( featurename )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x139c
 // Size: 0x4b
 function function_1af8a41e4c1252c7( poiname, featurename )
@@ -491,7 +491,7 @@ function function_1af8a41e4c1252c7( poiname, featurename )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x13f0
 // Size: 0xde
 function function_d0e7647e5538eb9d( poiname, featurename, arrayelement, customkey )
@@ -537,7 +537,7 @@ function function_d0e7647e5538eb9d( poiname, featurename, arrayelement, customke
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14d6
 // Size: 0x2b
 function poi_getorigin( poiname )
@@ -551,7 +551,7 @@ function poi_getorigin( poiname )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x150a
 // Size: 0x6f
 function function_ab3b7f9663bc2e89( subarea )
@@ -577,7 +577,7 @@ function function_ab3b7f9663bc2e89( subarea )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1582
 // Size: 0x45, Type: bool
 function function_9c93e67f90980177( origin )
@@ -587,7 +587,7 @@ function function_9c93e67f90980177( origin )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x15d0
 // Size: 0x8b
 function function_6cc445c02b5effac( origin, var_b0068b35c79ea7fa, var_9d9d80abb79138bb, var_db259b7e9331b0a0 )
@@ -622,7 +622,7 @@ function function_6cc445c02b5effac( origin, var_b0068b35c79ea7fa, var_9d9d80abb7
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1664
 // Size: 0x125
 function function_d795b532bedd6431( poiname, origin )
@@ -654,7 +654,7 @@ function function_d795b532bedd6431( poiname, origin )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1792
 // Size: 0x65
 function function_150af7f3a2874667( poiname )
@@ -741,7 +741,7 @@ function private function_7e8fc13f3d0d5c87( origin, poiname )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x19a1
 // Size: 0x14c
 function function_55cf921efa4cbd09( origin, var_b0068b35c79ea7fa, var_9d9d80abb79138bb, var_db259b7e9331b0a0 )
@@ -804,7 +804,7 @@ function function_55cf921efa4cbd09( origin, var_b0068b35c79ea7fa, var_9d9d80abb7
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1af5
 // Size: 0x6d
 function function_80dd9d6a6bf6bbc1( agent, poiname, origin )
@@ -833,7 +833,7 @@ function function_80dd9d6a6bf6bbc1( agent, poiname, origin )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b6b
 // Size: 0x89
 function function_9656b61cc8a37cba( array, poiname )
@@ -852,7 +852,7 @@ function function_9656b61cc8a37cba( array, poiname )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bfd
 // Size: 0xc, Type: bool
 function function_47d356083884f913()
@@ -861,7 +861,7 @@ function function_47d356083884f913()
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c12
 // Size: 0x15
 function function_53c14fe145417e51( array )
@@ -870,7 +870,7 @@ function function_53c14fe145417e51( array )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c2f
 // Size: 0x3f, Type: bool
 function poi_ispoiactive( poiname )
@@ -879,7 +879,7 @@ function poi_ispoiactive( poiname )
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c77
 // Size: 0x21, Type: bool
 function function_7e9cbc0f32de6578()
@@ -888,7 +888,7 @@ function function_7e9cbc0f32de6578()
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ca1
 // Size: 0xd4
 function function_f7c64a373265eb43( poiname )
@@ -974,7 +974,8 @@ function private function_52cb931e1834f98b()
         playersupdated = 0;
         framesprocessed = 0;
         
-        for (playeridx = 0; playeridx < players.size; playeridx++) {
+        for ( playeridx = 0; playeridx < players.size ; playeridx++ )
+        {
             player = players[ playeridx ];
             
             if ( !isdefined( player ) )
@@ -1229,7 +1230,8 @@ function private function_6e049f322172e1d5()
     level.poi_sites = [];
     sitecount = function_c3d63e6778e39f83( 1 );
     
-    for (siteidx = 0; siteidx < sitecount; siteidx++) {
+    for ( siteidx = 0; siteidx < sitecount ; siteidx++ )
+    {
         site = function_d0ed84c86e823a7c( 1, siteidx );
         region = function_7fdd7f9d54666e5f( 1, site.region );
         poiname = region.name + " site_" + siteidx;
@@ -1319,7 +1321,8 @@ function private function_b5c7469e80b1e8bd()
     {
         sitecount = function_c3d63e6778e39f83( 2 );
         
-        for (siteidx = 0; siteidx < sitecount; siteidx++) {
+        for ( siteidx = 0; siteidx < sitecount ; siteidx++ )
+        {
             var_849898b69efd7593 = function_d0ed84c86e823a7c( 2, siteidx );
             var_3851e646d941dcbb = function_3db4b97c31efed0b( 1, var_849898b69efd7593.origin );
             
@@ -1342,7 +1345,7 @@ function private function_b5c7469e80b1e8bd()
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a67
 // Size: 0xf0
 function function_68f5d2342ad95772()
@@ -1356,7 +1359,8 @@ function function_68f5d2342ad95772()
     numrows = tablelookupgetnumrows( table );
     var_bfd57d442dee737f = undefined;
     
-    for (i = 0; i < numrows; i++) {
+    for ( i = 0; i < numrows ; i++ )
+    {
         poiname = tablelookupbyrow( table, i, 0 );
         
         if ( !array_contains( level.poi_names, poiname ) )
@@ -1380,7 +1384,7 @@ function function_68f5d2342ad95772()
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b5f
 // Size: 0x1a6
 function function_683e582efd2a8233()
@@ -1394,7 +1398,8 @@ function function_683e582efd2a8233()
     numrows = tablelookupgetnumrows( table );
     var_bfd57d442dee737f = undefined;
     
-    for (i = 0; i < numrows; i++) {
+    for ( i = 0; i < numrows ; i++ )
+    {
         poiname = tablelookupbyrow( table, i, 0 );
         
         if ( !array_contains( level.poi_names, poiname ) )
@@ -1421,7 +1426,8 @@ function function_683e582efd2a8233()
     
     var_bfd57d442dee737f = undefined;
     
-    for (i = 0; i < numrows; i++) {
+    for ( i = 0; i < numrows ; i++ )
+    {
         poiname = tablelookupbyrow( table, i, 0 );
         
         if ( !array_contains( level.poi_names, poiname ) )
@@ -1448,7 +1454,7 @@ function function_683e582efd2a8233()
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d0d
 // Size: 0x12c
 function function_fab5ad80fd5ad70e()
@@ -1465,7 +1471,8 @@ function function_fab5ad80fd5ad70e()
     {
         sitecount = function_c3d63e6778e39f83( 4 );
         
-        for (siteidx = 0; siteidx < sitecount; siteidx++) {
+        for ( siteidx = 0; siteidx < sitecount ; siteidx++ )
+        {
             var_7d2faedfb4e72797 = function_d0ed84c86e823a7c( 4, siteidx );
             var_195a4d0ab2c13079 = function_3db4b97c31efed0b( 4, var_7d2faedfb4e72797.origin );
             
@@ -1483,7 +1490,7 @@ function function_fab5ad80fd5ad70e()
 }
 
 // Namespace poi / scripts\mp\poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e41
 // Size: 0x9f
 function function_bfb73de4decfe852( origin )

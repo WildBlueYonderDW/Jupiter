@@ -5,7 +5,7 @@
 #namespace br_bank;
 
 // Namespace br_bank / scripts\mp\gametypes\br_bank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x148
 // Size: 0xfe
 function init()
@@ -35,7 +35,7 @@ function init()
 }
 
 // Namespace br_bank / scripts\mp\gametypes\br_bank
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24e
 // Size: 0x4e
 function bankplayerentering( player, banktrigger )
@@ -56,7 +56,7 @@ function bankplayerentering( player, banktrigger )
 }
 
 // Namespace br_bank / scripts\mp\gametypes\br_bank
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a4
 // Size: 0x6d
 function bankplayerexiting( player, banktrigger )
@@ -76,7 +76,7 @@ function bankplayerexiting( player, banktrigger )
 }
 
 // Namespace br_bank / scripts\mp\gametypes\br_bank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x319
 // Size: 0x97
 function bankplunderdeposited()
@@ -107,7 +107,7 @@ function bankplunderdeposited()
 }
 
 // Namespace br_bank / scripts\mp\gametypes\br_bank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b8
 // Size: 0x137
 function bankturnonalarm()
@@ -136,7 +136,7 @@ function bankturnonalarm()
 }
 
 // Namespace br_bank / scripts\mp\gametypes\br_bank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f7
 // Size: 0x9b
 function bankturnoffalarm()

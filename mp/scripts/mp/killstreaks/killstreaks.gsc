@@ -57,7 +57,7 @@
 #namespace killstreaks;
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11c1
 // Size: 0x210
 function initkillstreakdata()
@@ -106,7 +106,7 @@ function initkillstreakdata()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13d9
 // Size: 0xe3
 function onplayerconnect()
@@ -137,7 +137,7 @@ function onplayerconnect()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14c4
 // Size: 0x77
 function onplayerspawned()
@@ -164,7 +164,7 @@ function onplayerspawned()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1543
 // Size: 0x21
 function createplayerstreakdatastruct()
@@ -175,7 +175,7 @@ function createplayerstreakdatastruct()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x156d
 // Size: 0xb
 function getplayerstreakdata()
@@ -184,7 +184,7 @@ function getplayerstreakdata()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1581
 // Size: 0xba
 function resetforloadoutswitch()
@@ -218,7 +218,7 @@ function resetforloadoutswitch()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1643
 // Size: 0x9a
 function setupinputnotifications()
@@ -242,7 +242,7 @@ function setupinputnotifications()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e5
 // Size: 0x77
 function updatestreakcount()
@@ -262,7 +262,7 @@ function updatestreakcount()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1764
 // Size: 0x38
 function resetstreakcount()
@@ -275,7 +275,7 @@ function resetstreakcount()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17a4
 // Size: 0x18e
 function setstreakcounttonext()
@@ -337,7 +337,7 @@ function setstreakcounttonext()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x193a
 // Size: 0xa0
 function getnextstreakname()
@@ -351,7 +351,8 @@ function getnextstreakname()
         streakpoints = self.streakpoints;
     }
     
-    for (slotnumber = 1; slotnumber <= 4; slotnumber++) {
+    for ( slotnumber = 1; slotnumber <= 4 ; slotnumber++ )
+    {
         streakitem = getkillstreakinslot( slotnumber );
         
         if ( isdefined( streakitem ) && isdefined( streakitem.currentcost ) && streakitem.currentcost > streakpoints )
@@ -364,7 +365,7 @@ function getnextstreakname()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19e3
 // Size: 0x17
 function updatestreakmeterui()
@@ -373,7 +374,7 @@ function updatestreakmeterui()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a02
 // Size: 0x26
 function updatestreakcosts()
@@ -385,7 +386,7 @@ function updatestreakcosts()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a30
 // Size: 0x120
 function updatestreakcost( slotnumber )
@@ -425,7 +426,7 @@ function updatestreakcost( slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b58
 // Size: 0x4d
 function findmaxstreakcost()
@@ -434,7 +435,8 @@ function findmaxstreakcost()
         function_4e6ba9d5ec3ea26b();
     #/
     
-    for (slotnumber = 4; slotnumber >= 1; slotnumber--) {
+    for ( slotnumber = 4; slotnumber >= 1 ; slotnumber-- )
+    {
         streakitem = getkillstreakinslot( slotnumber );
         
         if ( !isdefined( streakitem ) )
@@ -449,7 +451,7 @@ function findmaxstreakcost()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bae
 // Size: 0x2f
 function updatekillstreakuislots()
@@ -459,13 +461,14 @@ function updatekillstreakuislots()
         return;
     }
     
-    for (killstreakslot = 0; killstreakslot <= 3; killstreakslot++) {
+    for ( killstreakslot = 0; killstreakslot <= 3 ; killstreakslot++ )
+    {
         updatekillstreakuislot( killstreakslot );
     }
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1be5
 // Size: 0x158
 function updatekillstreakuislot( slotnumber )
@@ -514,7 +517,7 @@ function updatekillstreakuislot( slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d45
 // Size: 0x37
 function updatekillstreakselectedui()
@@ -531,7 +534,7 @@ function updatekillstreakselectedui()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d84
 // Size: 0x4c
 function function_b7492842aad6fe82()
@@ -551,7 +554,8 @@ function function_b7492842aad6fe82()
         return;
     }
     
-    for (killstreakslot = 0; killstreakslot <= 3; killstreakslot++) {
+    for ( killstreakslot = 0; killstreakslot <= 3 ; killstreakslot++ )
+    {
         function_95cda89ac13f2d7c( killstreakslot );
     }
 }
@@ -583,7 +587,7 @@ function private function_95cda89ac13f2d7c( slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e88
 // Size: 0x24
 function updatespecialistui()
@@ -595,7 +599,7 @@ function updatespecialistui()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1eb4
 // Size: 0x22
 function killstreakonteamchange( player )
@@ -607,7 +611,7 @@ function killstreakonteamchange( player )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ede
 // Size: 0x51
 function listenkillstreakaction( notification, slotnumber )
@@ -625,7 +629,7 @@ function listenkillstreakaction( notification, slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f37
 // Size: 0x79
 function function_c2861bf9018ab964( notification, slotnumber )
@@ -651,7 +655,7 @@ function function_c2861bf9018ab964( notification, slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fb8
 // Size: 0x68
 function function_b023319aa980cb6d( slotnumber )
@@ -675,7 +679,7 @@ function function_b023319aa980cb6d( slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2028
 // Size: 0xdb
 function function_e0f94e54e4b74c3e( slotnumber, streakitem, streakinfo )
@@ -709,7 +713,7 @@ function function_e0f94e54e4b74c3e( slotnumber, streakitem, streakinfo )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x210b
 // Size: 0x24
 function function_ec3b2b5d065e9ba8()
@@ -721,7 +725,7 @@ function function_ec3b2b5d065e9ba8()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2137
 // Size: 0x75
 function function_aadc57dc5cff7b9a()
@@ -746,7 +750,7 @@ function function_aadc57dc5cff7b9a()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21b4
 // Size: 0x59
 function function_5dbb6f985d638e5( streakinfo )
@@ -766,7 +770,7 @@ function function_5dbb6f985d638e5( streakinfo )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2215
 // Size: 0xdb
 function dokillstreakaction( action, slotnumber )
@@ -811,9 +815,9 @@ function dokillstreakaction( action, slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22f8
-// Size: 0x33, Type: bool
+// Size: 0x33
 function trytriggerkillstreakfromsuper( streakname )
 {
     streakitem = createstreakitemstruct( streakname );
@@ -822,7 +826,7 @@ function trytriggerkillstreakfromsuper( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2334
 // Size: 0x122
 function gettriggeredslotfromnotify( notification )
@@ -880,7 +884,7 @@ function gettriggeredslotfromnotify( notification )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x245f
 // Size: 0x139, Type: bool
 function cantriggerkillstreak( streakitem, slotnumber )
@@ -929,7 +933,7 @@ function cantriggerkillstreak( streakitem, slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25a1
 // Size: 0x385, Type: bool
 function triggerkillstreak( streakitem, slotnumber )
@@ -1010,7 +1014,7 @@ function triggerkillstreak( streakitem, slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x292f
 // Size: 0xd, Type: bool
 function onkillstreaktriggered( streakinfo )
@@ -1019,7 +1023,7 @@ function onkillstreaktriggered( streakinfo )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2945
 // Size: 0x2b, Type: bool
 function onkillstreakbeginuse( streakinfo )
@@ -1035,7 +1039,7 @@ function onkillstreakbeginuse( streakinfo )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2979
 // Size: 0x2e
 function forceactivatekillstreak( streakname, owner )
@@ -1045,7 +1049,7 @@ function forceactivatekillstreak( streakname, owner )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29af
 // Size: 0x1d
 function forceactivategimmekillstreak()
@@ -1055,7 +1059,7 @@ function forceactivategimmekillstreak()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29d4
 // Size: 0x2c4
 function onsuccessfulstreakactivation( streakitem, slotnumber )
@@ -1104,7 +1108,8 @@ function onsuccessfulstreakactivation( streakitem, slotnumber )
     else
     {
         /#
-            for (var_ea2fb2bd569ef975 = 0; var_ea2fb2bd569ef975 < 37; var_ea2fb2bd569ef975++) {
+            for ( var_ea2fb2bd569ef975 = 0; var_ea2fb2bd569ef975 < 37 ; var_ea2fb2bd569ef975++ )
+            {
                 var_730ccc1b27c04ae8 = self.streakdata.streaks[ var_ea2fb2bd569ef975 ];
                 
                 if ( !isdefined( var_730ccc1b27c04ae8 ) )
@@ -1163,7 +1168,7 @@ function onsuccessfulstreakactivation( streakitem, slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ca0
 // Size: 0xbc
 function createstreakitemstruct( streakname, blueprintindex )
@@ -1182,7 +1187,7 @@ function createstreakitemstruct( streakname, blueprintindex )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x2d65
 // Size: 0x144
 function awardkillstreak( streakname, source, overridelifeid, var_722764086bd2150d, overrideowner, var_546f4a2e8b131d3f, blueprintindex )
@@ -1202,7 +1207,7 @@ function awardkillstreak( streakname, source, overridelifeid, var_722764086bd215
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2eb1
 // Size: 0x9e
 function awardkillstreakfromstruct( streakitem, source, overridelifeid, var_722764086bd2150d, overrideowner, var_546f4a2e8b131d3f )
@@ -1234,7 +1239,7 @@ function awardkillstreakfromstruct( streakitem, source, overridelifeid, var_7227
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f57
 // Size: 0x45
 function equipkillstreak( streakname, slotnumber, blueprintindex )
@@ -1249,7 +1254,7 @@ function equipkillstreak( streakname, slotnumber, blueprintindex )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fa4
 // Size: 0x15
 function equipslotonekillstreak( streakname )
@@ -1258,7 +1263,7 @@ function equipslotonekillstreak( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fc1
 // Size: 0x15
 function equipslottwokillstreak( streakname )
@@ -1267,7 +1272,7 @@ function equipslottwokillstreak( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fde
 // Size: 0x15
 function equipslotthreekillstreak( streakname )
@@ -1276,7 +1281,7 @@ function equipslotthreekillstreak( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ffb
 // Size: 0xac, Type: bool
 function pushgimmeslotstreakontostack()
@@ -1296,7 +1301,8 @@ function pushgimmeslotstreakontostack()
         return true;
     }
     
-    for (killstreakindex = 5; killstreakindex < 37; killstreakindex++) {
+    for ( killstreakindex = 5; killstreakindex < 37 ; killstreakindex++ )
+    {
         if ( !isdefined( playerstreakdata.streaks[ killstreakindex ] ) )
         {
             playerstreakdata.streaks[ killstreakindex ] = var_8ae4b342199bbb1a;
@@ -1309,7 +1315,7 @@ function pushgimmeslotstreakontostack()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30b0
 // Size: 0xc5
 function popstackedstreakintogimmeslot()
@@ -1320,7 +1326,8 @@ function popstackedstreakintogimmeslot()
     var_11738fcb38c5309b = undefined;
     var_dbf9e7f32e883840 = undefined;
     
-    for (killstreakindex = 5; killstreakindex < 37; killstreakindex++) {
+    for ( killstreakindex = 5; killstreakindex < 37 ; killstreakindex++ )
+    {
         var_730ccc1b27c04ae8 = playerstreakdata.streaks[ killstreakindex ];
         
         if ( isdefined( var_730ccc1b27c04ae8 ) )
@@ -1342,7 +1349,7 @@ function popstackedstreakintogimmeslot()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x317d
 // Size: 0x81
 function deletestackedstreak( slotnumber )
@@ -1355,7 +1362,8 @@ function deletestackedstreak( slotnumber )
         return;
     }
     
-    for (killstreakindex = slotnumber; killstreakindex < 37 - 1; killstreakindex++) {
+    for ( killstreakindex = slotnumber; killstreakindex < 37 - 1 ; killstreakindex++ )
+    {
         var_a9c7299b6086939d = playerstreakdata.streaks[ killstreakindex + 1 ];
         
         if ( !isdefined( var_a9c7299b6086939d ) )
@@ -1368,7 +1376,7 @@ function deletestackedstreak( slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3206
 // Size: 0x6b
 function removekillstreak( slotnumber )
@@ -1399,7 +1407,7 @@ function removekillstreak( slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3279
 // Size: 0x41
 function clearkillstreaks()
@@ -1414,7 +1422,7 @@ function clearkillstreaks()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32c2
 // Size: 0xbe
 function slotkillstreak( streakitem, slotnumber )
@@ -1448,7 +1456,7 @@ function slotkillstreak( streakitem, slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3388
 // Size: 0x139
 function earnkillstreak( slotnumber, streakcost )
@@ -1479,7 +1487,7 @@ function earnkillstreak( slotnumber, streakcost )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x34c9
 // Size: 0x378
 function makekillstreakavailable( slotnumber, source, overridelifeid, var_722764086bd2150d, overrideowner )
@@ -1584,7 +1592,7 @@ function makekillstreakavailable( slotnumber, source, overridelifeid, var_722764
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3849
 // Size: 0x26
 function function_e0859317b5e7a75b( slotnumber, index )
@@ -1598,7 +1606,7 @@ function function_e0859317b5e7a75b( slotnumber, index )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3877
 // Size: 0x2f
 function function_8d43ce79a3f2d876( slotnumber, isavailable )
@@ -1617,7 +1625,7 @@ function function_8d43ce79a3f2d876( slotnumber, isavailable )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x38ae
 // Size: 0x2c
 function function_b3fd3059338901d8( slotnumber, cost )
@@ -1631,7 +1639,7 @@ function function_b3fd3059338901d8( slotnumber, cost )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38e2
 // Size: 0x15
 function function_29050adf065ddf86( killstreakpoints )
@@ -1640,7 +1648,7 @@ function function_29050adf065ddf86( killstreakpoints )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x38ff
 // Size: 0x28
 function givekillstreak( streakname, var_e1fc7660351ad693, var_e1fc7760351ad8c6 )
@@ -1649,7 +1657,7 @@ function givekillstreak( streakname, var_e1fc7660351ad693, var_e1fc7760351ad8c6 
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x392f
 // Size: 0x5a
 function calcstreakcost( streakname )
@@ -1667,7 +1675,7 @@ function calcstreakcost( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3992
 // Size: 0x8b
 function getperkadjustedkillstreakcost( streakname, cost )
@@ -1696,7 +1704,7 @@ function getperkadjustedkillstreakcost( streakname, cost )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a26
 // Size: 0xc8
 function killstreakselectionwatcher()
@@ -1745,7 +1753,7 @@ function killstreakselectionwatcher()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3af6
 // Size: 0xa4
 function selectfirstavailablekillstreak()
@@ -1762,7 +1770,8 @@ function selectfirstavailablekillstreak()
     }
     else
     {
-        for (slotnumber = 3; slotnumber >= 0; slotnumber--) {
+        for ( slotnumber = 3; slotnumber >= 0 ; slotnumber-- )
+        {
             streakitem = playerstreakdata.streaks[ slotnumber ];
             
             if ( isdefined( streakitem ) && streakitem.available == 1 )
@@ -1777,7 +1786,7 @@ function selectfirstavailablekillstreak()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ba2
 // Size: 0xae
 function getnextselectablekillstreakslot( startingslot )
@@ -1787,7 +1796,8 @@ function getnextselectablekillstreakslot( startingslot )
     loopstartindex = ter_op( startingslot >= 3, 0, startingslot + 1 );
     var_ecf773e7bb221c28 = startingslot;
     
-    for (slotindex = loopstartindex; slotindex != var_ecf773e7bb221c28; slotindex = 0) {
+    for ( slotindex = loopstartindex; slotindex != var_ecf773e7bb221c28 ; slotindex = 0 )
+    {
         streakitem = self.streakdata.streaks[ slotindex ];
         
         if ( isdefined( streakitem ) && streakitem.available == 1 )
@@ -1807,7 +1817,7 @@ function getnextselectablekillstreakslot( startingslot )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c59
 // Size: 0xae
 function getpreviousselectablekillstreakslot( startingslot )
@@ -1817,7 +1827,8 @@ function getpreviousselectablekillstreakslot( startingslot )
     loopstartindex = ter_op( startingslot <= 0, 3, startingslot - 1 );
     var_ecf773e7bb221c28 = startingslot;
     
-    for (slotindex = loopstartindex; slotindex != var_ecf773e7bb221c28; slotindex = 3) {
+    for ( slotindex = loopstartindex; slotindex != var_ecf773e7bb221c28 ; slotindex = 3 )
+    {
         streakitem = self.streakdata.streaks[ slotindex ];
         
         if ( isdefined( streakitem ) && streakitem.available == 1 )
@@ -1837,7 +1848,7 @@ function getpreviousselectablekillstreakslot( startingslot )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d10
 // Size: 0x9e
 function selectmostexpensivekillstreak()
@@ -1845,7 +1856,8 @@ function selectmostexpensivekillstreak()
     var_f37426a5afccf614 = undefined;
     highestcost = -1;
     
-    for (ksindex = 3; ksindex >= 0; ksindex--) {
+    for ( ksindex = 3; ksindex >= 0 ; ksindex-- )
+    {
         streakitem = self.streakdata.streaks[ ksindex ];
         
         if ( isdefined( streakitem ) && streakitem.available == 1 )
@@ -1868,7 +1880,7 @@ function selectmostexpensivekillstreak()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3db6
 // Size: 0xb6
 function selectnextavailablekillstreak()
@@ -1876,7 +1888,8 @@ function selectnextavailablekillstreak()
     var_f37426a5afccf614 = undefined;
     highestcost = -1;
     
-    for (ksindex = 0; ksindex <= 3; ksindex++) {
+    for ( ksindex = 0; ksindex <= 3 ; ksindex++ )
+    {
         streakitem = self.streakdata.streaks[ ksindex ];
         
         if ( isdefined( streakitem ) && streakitem.available == 1 )
@@ -1905,7 +1918,7 @@ function selectnextavailablekillstreak()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e74
 // Size: 0xb4
 function setselectedkillstreak( slotnumber )
@@ -1929,7 +1942,7 @@ function setselectedkillstreak( slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f30
 // Size: 0x29
 function clearkillstreakselection()
@@ -1944,7 +1957,7 @@ function clearkillstreakselection()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f61
 // Size: 0x30
 function getselectedkillstreak()
@@ -1960,7 +1973,7 @@ function getselectedkillstreak()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f9a
 // Size: 0xb
 function getselectedkillstreakindex()
@@ -1969,7 +1982,7 @@ function getselectedkillstreakindex()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fae
 // Size: 0x20
 function getkillstreakinslot( slotnumber )
@@ -1978,12 +1991,13 @@ function getkillstreakinslot( slotnumber )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fd7
 // Size: 0x5e
 function getequippedkillstreakbyname( streakname )
 {
-    for (killstreakindex = 1; killstreakindex <= 3; killstreakindex++) {
+    for ( killstreakindex = 1; killstreakindex <= 3 ; killstreakindex++ )
+    {
         streakitem = self.streakdata.streaks[ killstreakindex ];
         
         if ( isdefined( streakitem ) && streakitem.streakname == streakname )
@@ -1996,12 +2010,13 @@ function getequippedkillstreakbyname( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x403e
 // Size: 0x5e
 function getequippedkillstreakslotbyname( streakname )
 {
-    for (killstreakindex = 1; killstreakindex <= 3; killstreakindex++) {
+    for ( killstreakindex = 1; killstreakindex <= 3 ; killstreakindex++ )
+    {
         streakitem = self.streakdata.streaks[ killstreakindex ];
         
         if ( isdefined( streakitem ) && streakitem.streakname == streakname )
@@ -2014,12 +2029,13 @@ function getequippedkillstreakslotbyname( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40a5
 // Size: 0x6f
 function getvisiblekillstreakavailable( streakname )
 {
-    for (killstreakindex = 0; killstreakindex <= 3; killstreakindex++) {
+    for ( killstreakindex = 0; killstreakindex <= 3 ; killstreakindex++ )
+    {
         streakitem = self.streakdata.streaks[ killstreakindex ];
         
         if ( isdefined( streakitem ) && streakitem.streakname == streakname && streakitem.available == 1 )
@@ -2032,12 +2048,13 @@ function getvisiblekillstreakavailable( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x411d
 // Size: 0x5d
 function getkillstreakvisibleslotbyname( streakname )
 {
-    for (killstreakindex = 0; killstreakindex <= 3; killstreakindex++) {
+    for ( killstreakindex = 0; killstreakindex <= 3 ; killstreakindex++ )
+    {
         streakitem = self.streakdata.streaks[ killstreakindex ];
         
         if ( isdefined( streakitem ) && streakitem.streakname == streakname )
@@ -2050,7 +2067,7 @@ function getkillstreakvisibleslotbyname( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4183
 // Size: 0x74
 function getgimmeslotkillstreakstructs()
@@ -2062,7 +2079,8 @@ function getgimmeslotkillstreakstructs()
     {
         structs[ 0 ] = var_5de8f4bc3629955f;
         
-        for (killstreakindex = 5; killstreakindex < 37; killstreakindex++) {
+        for ( killstreakindex = 5; killstreakindex < 37 ; killstreakindex++ )
+        {
             streakitem = self.streakdata.streaks[ killstreakindex ];
             
             if ( isdefined( streakitem ) )
@@ -2079,7 +2097,7 @@ function getgimmeslotkillstreakstructs()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4200
 // Size: 0x8e
 function getavailableequippedkillstreakstructs()
@@ -2088,7 +2106,8 @@ function getavailableequippedkillstreakstructs()
     
     if ( self.streakdata.streaks.size > 0 )
     {
-        for (ksindex = 1; ksindex < 4; ksindex++) {
+        for ( ksindex = 1; ksindex < 4 ; ksindex++ )
+        {
             streakitem = self.streakdata.streaks[ ksindex ];
             
             if ( isdefined( streakitem ) && isdefined( streakitem.streakname ) && streakitem.available == 1 )
@@ -2102,7 +2121,7 @@ function getavailableequippedkillstreakstructs()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4297
 // Size: 0x8d
 function getallavailablekillstreakstructs()
@@ -2111,7 +2130,8 @@ function getallavailablekillstreakstructs()
     
     if ( self.streakdata.streaks.size > 0 )
     {
-        for (ksindex = 0; ksindex < 3; ksindex++) {
+        for ( ksindex = 0; ksindex < 3 ; ksindex++ )
+        {
             streakitem = self.streakdata.streaks[ ksindex ];
             
             if ( isdefined( streakitem ) && isdefined( streakitem.streakname ) && streakitem.available == 1 )
@@ -2125,7 +2145,7 @@ function getallavailablekillstreakstructs()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x432d
 // Size: 0xa2
 function registerkillstreak( streakname, triggeredfunc, availablefunc, var_b1469bcdaec75a9 )
@@ -2144,7 +2164,7 @@ function registerkillstreak( streakname, triggeredfunc, availablefunc, var_b1469
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x43d7
 // Size: 0x2d
 function registerkillstreakdamagedealingweapon( streakname, var_d8a64ed9bcdf7185, damagesize )
@@ -2154,7 +2174,7 @@ function registerkillstreakdamagedealingweapon( streakname, var_d8a64ed9bcdf7185
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x440c
 // Size: 0x98
 function function_feb9eaea5bf71872()
@@ -2183,7 +2203,7 @@ function function_feb9eaea5bf71872()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44ac
 // Size: 0x3b
 function getkillstreaksetupinfo( streakname )
@@ -2194,18 +2214,19 @@ function getkillstreaksetupinfo( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44f0
 // Size: 0x2f
 function checkstreakreward( var_f47c9f3183ef23b0 )
 {
-    for (slotnumber = 1; slotnumber <= 4; slotnumber++) {
+    for ( slotnumber = 1; slotnumber <= 4 ; slotnumber++ )
+    {
         function_19da1db57971906a( slotnumber, var_f47c9f3183ef23b0 );
     }
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4527
 // Size: 0x181
 function function_19da1db57971906a( slotnumber, var_f47c9f3183ef23b0 )
@@ -2254,7 +2275,7 @@ function function_19da1db57971906a( slotnumber, var_f47c9f3183ef23b0 )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46b0
 // Size: 0x138, Type: bool
 function arekillstreaksequipped( var_dda4f8fc2767dcef )
@@ -2270,7 +2291,8 @@ function arekillstreaksequipped( var_dda4f8fc2767dcef )
     {
         var_2f89af3c33468ebe = 0;
         
-        for (ksindex = 1; ksindex <= 4; ksindex++) {
+        for ( ksindex = 1; ksindex <= 4 ; ksindex++ )
+        {
             streakitem = playerstreakdata.streaks[ ksindex ];
             
             if ( isdefined( streakitem ) )
@@ -2314,12 +2336,13 @@ function arekillstreaksequipped( var_dda4f8fc2767dcef )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47f1
 // Size: 0x5f
 function findkillstreakslotnumber( streakitem )
 {
-    for (ksindex = 0; ksindex <= 37; ksindex++) {
+    for ( ksindex = 0; ksindex <= 37 ; ksindex++ )
+    {
         var_730ccc1b27c04ae8 = self.streakdata.streaks[ ksindex ];
         
         if ( !isdefined( var_730ccc1b27c04ae8 ) )
@@ -2342,7 +2365,7 @@ function findkillstreakslotnumber( streakitem )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4859
 // Size: 0x49, Type: bool
 function streakglobals_onkillstreaktriggered( streakinfo )
@@ -2365,7 +2388,7 @@ function streakglobals_onkillstreaktriggered( streakinfo )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48ab
 // Size: 0x15d, Type: bool
 function streakglobals_onkillstreakbeginuse( streakinfo )
@@ -2409,7 +2432,7 @@ function streakglobals_onkillstreakbeginuse( streakinfo )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a11
 // Size: 0x2b6
 function streakglobals_onkillstreakfinishuse( params )
@@ -2456,7 +2479,7 @@ function streakglobals_onkillstreakfinishuse( params )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4ccf
 // Size: 0x3fa
 function givestreakpoints( type, killpoints, scorepoints )
@@ -2598,7 +2621,7 @@ function givestreakpoints( type, killpoints, scorepoints )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50d1
 // Size: 0x111
 function function_f1c3def91cf17909( event )
@@ -2625,7 +2648,7 @@ function function_f1c3def91cf17909( event )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x51eb
 // Size: 0xf3
 function function_10dc11b1abf42c50( event, points )
@@ -2653,7 +2676,7 @@ function function_10dc11b1abf42c50( event, points )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x52e7
 // Size: 0x16
 function function_878af288fcd9d381( event )
@@ -2662,7 +2685,7 @@ function function_878af288fcd9d381( event )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5306
 // Size: 0x297
 function function_e90a1856110e006a( attacker )
@@ -2744,7 +2767,7 @@ function function_e90a1856110e006a( attacker )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55a5
 // Size: 0x67
 function function_9c701e1a696dfbc5()
@@ -2768,7 +2791,7 @@ function function_9c701e1a696dfbc5()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5614
 // Size: 0x1dc
 function function_d932978680c33e26( value, attacker, dropinfoindex )
@@ -2825,7 +2848,7 @@ function function_d932978680c33e26( value, attacker, dropinfoindex )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x57f8
 // Size: 0x42
 function function_e40eec61ee9d0889( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -2834,7 +2857,7 @@ function function_e40eec61ee9d0889( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x5842
 // Size: 0x5c
 function lootused( instance, part, state, player, var_a5b2c541413aa895, usestring, fromcallback )
@@ -2848,7 +2871,7 @@ function lootused( instance, part, state, player, var_a5b2c541413aa895, usestrin
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x58a7
 // Size: 0xe5
 function function_999b4b0f688c2bb5( pickup, player )
@@ -2881,7 +2904,7 @@ function function_999b4b0f688c2bb5( pickup, player )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5994
 // Size: 0x483
 function function_8b641361a4134788( value, attacker )
@@ -2961,7 +2984,7 @@ function function_8b641361a4134788( value, attacker )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5e1f
 // Size: 0xa3
 function cashmoveto( movetostartpos, movetoendpos, time )
@@ -2975,7 +2998,7 @@ function cashmoveto( movetostartpos, movetoendpos, time )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5eca
 // Size: 0x119
 function function_53040db1f489bf6e( player )
@@ -3009,7 +3032,7 @@ function function_53040db1f489bf6e( player )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5feb
 // Size: 0x4c
 function showtoplayers( cashobj )
@@ -3025,7 +3048,7 @@ function showtoplayers( cashobj )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x603f
 // Size: 0x30
 function function_3ee50cea316e4e66( player )
@@ -3039,7 +3062,7 @@ function function_3ee50cea316e4e66( player )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6077
 // Size: 0x158
 function deletecash( dropid, notifyopponent, collector )
@@ -3072,7 +3095,7 @@ function deletecash( dropid, notifyopponent, collector )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x61d7
 // Size: 0xa7
 function function_ee6caf8414e3b231( medal, victim )
@@ -3102,7 +3125,7 @@ function function_ee6caf8414e3b231( medal, victim )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6286
 // Size: 0x10f
 function function_f13070ff9a16346f()
@@ -3142,7 +3165,7 @@ function function_f13070ff9a16346f()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x639e
 // Size: 0x5a
 function function_a480fedc979e887()
@@ -3167,7 +3190,7 @@ function function_a480fedc979e887()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6401
 // Size: 0x6c
 function function_21e35dd4600c80a7()
@@ -3182,7 +3205,8 @@ function function_21e35dd4600c80a7()
         self.var_fa137c36af641849 = 0;
     }
     
-    for (killstreakslot = 3; killstreakslot >= 0; killstreakslot--) {
+    for ( killstreakslot = 3; killstreakslot >= 0 ; killstreakslot-- )
+    {
         if ( killstreakslot < getdvarint( @"hash_493472114665c83d", 2 ) )
         {
             continue;
@@ -3193,7 +3217,7 @@ function function_21e35dd4600c80a7()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6475
 // Size: 0xef
 function function_770554a011a28178()
@@ -3235,7 +3259,7 @@ function function_770554a011a28178()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x656c
 // Size: 0x189
 function function_c0c3fe56b6aa051( slotnum, var_a4adda951a9f5c2 )
@@ -3281,7 +3305,7 @@ function function_c0c3fe56b6aa051( slotnum, var_a4adda951a9f5c2 )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66fe
 // Size: 0x25
 function resetstreakpoints()
@@ -3293,7 +3317,7 @@ function resetstreakpoints()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x672b
 // Size: 0xc4
 function resetstreakavailability( resetall )
@@ -3303,7 +3327,8 @@ function resetstreakavailability( resetall )
         return;
     }
     
-    for (killstreakslot = 0; killstreakslot <= 4; killstreakslot++) {
+    for ( killstreakslot = 0; killstreakslot <= 4 ; killstreakslot++ )
+    {
         streakitem = self.streakdata.streaks[ killstreakslot ];
         
         if ( isdefined( streakitem ) && isdefined( streakitem.streakname ) )
@@ -3327,12 +3352,13 @@ function resetstreakavailability( resetall )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67f7
 // Size: 0x85
 function triggeravailablekillstreaks()
 {
-    for (killstreakslot = 1; killstreakslot <= 4; killstreakslot++) {
+    for ( killstreakslot = 1; killstreakslot <= 4 ; killstreakslot++ )
+    {
         streakitem = self.streakdata.streaks[ killstreakslot ];
         
         if ( isdefined( streakitem ) && istrue( streakitem.available ) )
@@ -3348,7 +3374,7 @@ function triggeravailablekillstreaks()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6884
 // Size: 0xee
 function setstreakpoints( value, reliablepoints )
@@ -3403,7 +3429,7 @@ function setstreakpoints( value, reliablepoints )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x697a
 // Size: 0xc9
 function storescorestreakpointsongameend()
@@ -3439,7 +3465,7 @@ function storescorestreakpointsongameend()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6a4b
 // Size: 0xbc
 function findunobstructedfiringpointaroundz( player, targetposition, flightdistance, var_f27ecc7100506085 )
@@ -3465,7 +3491,7 @@ function findunobstructedfiringpointaroundz( player, targetposition, flightdista
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x6b10
 // Size: 0xc9
 function findunobstructedfiringpointaroundy( player, targetposition, flightdistance, minpitch, maxpitch, anglestep )
@@ -3491,7 +3517,7 @@ function findunobstructedfiringpointaroundy( player, targetposition, flightdista
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6be2
 // Size: 0x44, Type: bool
 function _findunobstructedfiringpointhelper( player, startposition, targetposition )
@@ -3507,7 +3533,7 @@ function _findunobstructedfiringpointhelper( player, startposition, targetpositi
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6c2f
 // Size: 0x49
 function findunobstructedfiringpoint( player, targetposition, flightdistance )
@@ -3523,7 +3549,7 @@ function findunobstructedfiringpoint( player, targetposition, flightdistance )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x6c81
 // Size: 0x208
 function killstreakhit( attacker, objweapon, vehicle, meansofdeath, damage )
@@ -3587,7 +3613,7 @@ function killstreakhit( attacker, objweapon, vehicle, meansofdeath, damage )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e91
 // Size: 0x15
 function updatescrapassistdataforcecredit( attacker )
@@ -3596,7 +3622,7 @@ function updatescrapassistdataforcecredit( attacker )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6eae
 // Size: 0xd3
 function updatescrapassistdata( attacker, damage )
@@ -3626,7 +3652,7 @@ function updatescrapassistdata( attacker, damage )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f89
 // Size: 0x102
 function getscrapassistplayers( killer )
@@ -3668,7 +3694,7 @@ function getscrapassistplayers( killer )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7094
 // Size: 0xbc
 function givescoreforequipment( ent, objweapon, var_ad8c6c5cc50af10b )
@@ -3700,7 +3726,7 @@ function givescoreforequipment( ent, objweapon, var_ad8c6c5cc50af10b )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7158
 // Size: 0x3b
 function givescorefordestroyedtacinsert( fromemp )
@@ -3716,7 +3742,7 @@ function givescorefordestroyedtacinsert( fromemp )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x719b
 // Size: 0x13
 function givescorefortrophyblocks()
@@ -3725,7 +3751,7 @@ function givescorefortrophyblocks()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x71b6
 // Size: 0x13
 function givescoreforblackhat()
@@ -3734,7 +3760,7 @@ function givescoreforblackhat()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x71d1
 // Size: 0x13
 function givescoreforhack()
@@ -3743,7 +3769,7 @@ function givescoreforhack()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x71ec
 // Size: 0x13
 function givescoreforempedvehicle()
@@ -3752,7 +3778,7 @@ function givescoreforempedvehicle()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7207
 // Size: 0x13
 function function_7d84b8c1b826b7ea()
@@ -3761,7 +3787,7 @@ function function_7d84b8c1b826b7ea()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7222
 // Size: 0x13
 function givescoreforempedkillstreak()
@@ -3770,7 +3796,7 @@ function givescoreforempedkillstreak()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x723d
 // Size: 0x13
 function givescoreforempedplayer()
@@ -3779,7 +3805,7 @@ function givescoreforempedplayer()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7258
 // Size: 0x36
 function givescoreformarktarget( firstmark )
@@ -3794,7 +3820,7 @@ function givescoreformarktarget( firstmark )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7296
 // Size: 0x13
 function givescorefordestorymarkedtarget()
@@ -3803,7 +3829,7 @@ function givescorefordestorymarkedtarget()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x72b1
 // Size: 0x13
 function givescoreforassistdestroymarkedtarget()
@@ -3812,7 +3838,7 @@ function givescoreforassistdestroymarkedtarget()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x72cc
 // Size: 0x13
 function givescorefortriggeredalarmeddoor()
@@ -3821,7 +3847,7 @@ function givescorefortriggeredalarmeddoor()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x72e7
 // Size: 0x58
 function streaktyperesetsondeath( streaktype )
@@ -3840,7 +3866,7 @@ function streaktyperesetsondeath( streaktype )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7347
 // Size: 0x42
 function initridekillstreak( streak )
@@ -3857,7 +3883,7 @@ function initridekillstreak( streak )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7392
 // Size: 0x214
 function initridekillstreak_internal( streak )
@@ -3967,7 +3993,7 @@ function initridekillstreak_internal( streak )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x75ae
 // Size: 0x78, Type: bool
 function islaptoptimeoutkillstreak( streak )
@@ -3989,7 +4015,7 @@ function islaptoptimeoutkillstreak( streak )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x762f
 // Size: 0x4b
 function clearrideintro( delay, fadeback )
@@ -4012,7 +4038,7 @@ function clearrideintro( delay, fadeback )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7682
 // Size: 0xf3
 function allowridekillstreakplayerexit( earlyendnotify, var_43b83976503b9e6d )
@@ -4072,7 +4098,7 @@ function allowridekillstreakplayerexit( earlyendnotify, var_43b83976503b9e6d )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x777d
 // Size: 0xa3
 function combatrecordkillstreakuse( streakname )
@@ -4101,7 +4127,7 @@ function combatrecordkillstreakuse( streakname )
 /#
 
     // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7828
     // Size: 0xbc, Type: dev
     function function_4e6ba9d5ec3ea26b()
@@ -4109,7 +4135,8 @@ function combatrecordkillstreakuse( streakname )
         var_fc5890f05240ffaa = -1;
         var_959f178e714b214d = "<dev string:x6b3>";
         
-        for (slotnumber = 0; slotnumber <= 3; slotnumber++) {
+        for ( slotnumber = 0; slotnumber <= 3 ; slotnumber++ )
+        {
             if ( slotnumber == 0 )
             {
                 continue;
@@ -4132,7 +4159,7 @@ function combatrecordkillstreakuse( streakname )
 #/
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x78ec
 // Size: 0x113, Type: bool
 function checkcasualstreaksreset()
@@ -4171,7 +4198,7 @@ function checkcasualstreaksreset()
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7a08
 // Size: 0x54
 function loadassociatedkillstreakweapons( streakname )
@@ -4185,7 +4212,7 @@ function loadassociatedkillstreakweapons( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7a64
 // Size: 0x73
 function combatrecordincrementkillstreakawardedstat( streakname )
@@ -4207,7 +4234,7 @@ function combatrecordincrementkillstreakawardedstat( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7adf
 // Size: 0x73
 function combatrecordincrementkillstreakextrastat( streakname )
@@ -4229,7 +4256,7 @@ function combatrecordincrementkillstreakextrastat( streakname )
 }
 
 // Namespace killstreaks / scripts\mp\killstreaks\killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b5a
 // Size: 0x25d
 function function_29e99a60706e08b1()
@@ -4242,11 +4269,11 @@ function function_29e99a60706e08b1()
     
     if ( isusingmatchrulesdata() )
     {
-        setdvarifuninitialized( @"hash_a90d27d1557c455b", getmatchrulesdata( "commonOption", "killstreakLottery" ) );
+        setdvarifuninitialized( @"scr_killstreak_lottery", getmatchrulesdata( "commonOption", "killstreakLottery" ) );
     }
     else
     {
-        setdvarifuninitialized( @"hash_a90d27d1557c455b", 0 );
+        setdvarifuninitialized( @"scr_killstreak_lottery", 0 );
     }
     
     setdvarifuninitialized( @"hash_6b62b5bf5e934e32", defaultmintime );
@@ -4262,7 +4289,7 @@ function function_29e99a60706e08b1()
     
     while ( true )
     {
-        var_79d58caa88b7674f = getdvarint( @"hash_a90d27d1557c455b", 0 );
+        var_79d58caa88b7674f = getdvarint( @"scr_killstreak_lottery", 0 );
         
         if ( !istrue( var_79d58caa88b7674f ) )
         {
@@ -4297,7 +4324,8 @@ function function_29e99a60706e08b1()
         
         var_16f6338c00a23cc7 = getdvarint( @"hash_6ab0e10e85af33b4", 1 );
         
-        for (i = 0; i < var_16f6338c00a23cc7; i++) {
+        for ( i = 0; i < var_16f6338c00a23cc7 ; i++ )
+        {
             randomwinner = var_5f4b5d4938755dcb[ randomint( var_5f4b5d4938755dcb.size ) ];
             randomwinner.var_e73d59c16d88212b = getdvarint( @"hash_2e6280037c0547e5", defaultcooldown );
             randomwinner function_7797c8d5da974b60();

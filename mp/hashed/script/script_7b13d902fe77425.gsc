@@ -17,7 +17,7 @@ function private autoexec __init__system__()
 }
 
 // Namespace namespace_c241d988869e3ed2 / namespace_362d05f5d79f98cd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3db
 // Size: 0x10d
 function __init__()
@@ -40,7 +40,7 @@ function __init__()
 }
 
 // Namespace namespace_c241d988869e3ed2 / namespace_362d05f5d79f98cd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f0
 // Size: 0x29
 function function_22431e2db2413411( player )
@@ -54,7 +54,7 @@ function function_22431e2db2413411( player )
 }
 
 // Namespace namespace_c241d988869e3ed2 / namespace_362d05f5d79f98cd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x522
 // Size: 0x3e, Type: bool
 function function_eaee8a3e6cdeefcf( player )

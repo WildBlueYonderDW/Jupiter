@@ -8,7 +8,7 @@
 #namespace bots_gametype_oic;
 
 // Namespace bots_gametype_oic / scripts\mp\bots\bots_gametype_oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x146
 // Size: 0x10
 function main()
@@ -20,7 +20,7 @@ function main()
 /#
 
     // Namespace bots_gametype_oic / scripts\mp\bots\bots_gametype_oic
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x15e
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -31,7 +31,7 @@ function main()
 #/
 
 // Namespace bots_gametype_oic / scripts\mp\bots\bots_gametype_oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16b
 // Size: 0x17
 function setup_callbacks()
@@ -40,7 +40,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_oic / scripts\mp\bots\bots_gametype_oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18a
 // Size: 0xd
 function function_48b5faf91fc74726()
@@ -49,7 +49,7 @@ function function_48b5faf91fc74726()
 }
 
 // Namespace bots_gametype_oic / scripts\mp\bots\bots_gametype_oic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19f
 // Size: 0x7e
 function function_81ff256686f12d6d( weaponname, preferredpersonality )
@@ -80,7 +80,7 @@ function function_81ff256686f12d6d( weaponname, preferredpersonality )
 }
 
 // Namespace bots_gametype_oic / scripts\mp\bots\bots_gametype_oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x225
 // Size: 0x115
 function bot_gun_think()

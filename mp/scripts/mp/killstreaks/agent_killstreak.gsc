@@ -7,7 +7,7 @@
 #namespace agent_killstreak;
 
 // Namespace agent_killstreak / scripts\mp\killstreaks\agent_killstreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf
 // Size: 0x2
 function init()

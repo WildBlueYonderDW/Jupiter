@@ -4,7 +4,7 @@
 #namespace create_script_utility;
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44c
 // Size: 0x9
 function initialize_create_script()
@@ -13,7 +13,7 @@ function initialize_create_script()
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45d
 // Size: 0x9c
 function init_create_script_for_level( var_d118031db9b990aa )
@@ -39,7 +39,7 @@ function init_create_script_for_level( var_d118031db9b990aa )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x501
 // Size: 0x90
 function initialize_registered_create_script_files()
@@ -50,7 +50,8 @@ function initialize_registered_create_script_files()
         
         if ( isarray( level.scripted_spawner_func ) )
         {
-            for (i = 0; i < level.scripted_spawner_func.size; i++) {
+            for ( i = 0; i < level.scripted_spawner_func.size ; i++ )
+            {
                 [[ level.scripted_spawner_func[ i ] ]]( 1, "cs" + i );
             }
             
@@ -68,7 +69,7 @@ function initialize_registered_create_script_files()
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x599
 // Size: 0x8c
 function register_create_script_arrays( script, map, index, func )
@@ -95,7 +96,7 @@ function register_create_script_arrays( script, map, index, func )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x62d
 // Size: 0x42
 function initialize_create_script_file( file_name )
@@ -113,7 +114,7 @@ function initialize_create_script_file( file_name )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x677
 // Size: 0x3b
 function register_valid_gametypes_for_create_script( allowed_gametype )
@@ -127,7 +128,7 @@ function register_valid_gametypes_for_create_script( allowed_gametype )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ba
 // Size: 0x3b
 function register_valid_objectives_for_create_script( allowed_objective )
@@ -141,7 +142,7 @@ function register_valid_objectives_for_create_script( allowed_objective )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6fd
 // Size: 0x1cc
 function strike_setup_arrays( index, cs_file )
@@ -224,7 +225,7 @@ function strike_setup_arrays( index, cs_file )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8d1
 // Size: 0x1cc
 function cs_setup_arrays( index, cs_file )
@@ -307,7 +308,7 @@ function cs_setup_arrays( index, cs_file )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 16, eflags: 0x0
+// Params 16
 // Checksum 0x0, Offset: 0xaa5
 // Size: 0x41f
 function strike_additem( struct, index, cs_file, origin, angles, targetname, target, script_noteworthy, script_linkto, script_linkname, var_a1306ee53c20150f, var_e3c2f7a7f3d4cce6, radius, speed, spawnflags, script_unload )
@@ -481,7 +482,7 @@ function strike_additem( struct, index, cs_file, origin, angles, targetname, tar
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xecc
 // Size: 0x149, Type: bool
 function object_is_valid()
@@ -493,7 +494,8 @@ function object_is_valid()
     {
         if ( isdefined( self.script_gameobjectname ) )
         {
-            for (i = 0; i < level.allowed_gametypes.size; i++) {
+            for ( i = 0; i < level.allowed_gametypes.size ; i++ )
+            {
                 if ( getsubstr( level.allowed_gametypes[ i ], 0, 1 ) == "!" )
                 {
                     invertlogic = 1;
@@ -524,7 +526,8 @@ function object_is_valid()
     {
         if ( isdefined( self.script_gameobjectname ) )
         {
-            for (i = 0; i < level.allowed_objectives.size; i++) {
+            for ( i = 0; i < level.allowed_objectives.size ; i++ )
+            {
                 if ( getsubstr( level.allowed_objectives[ i ], 0, 1 ) == "!" )
                 {
                     invertlogic = 1;
@@ -555,7 +558,7 @@ function object_is_valid()
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x101e
 // Size: 0x3e
 function is_object_allowed_in_gametype( stringlist, gametype )
@@ -569,7 +572,7 @@ function is_object_allowed_in_gametype( stringlist, gametype )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1065
 // Size: 0xf1
 function translate_position_with_offset_data( cs_file, struct, var_5f0a2cdf1e857bac, var_82b752b102f67a72 )
@@ -604,7 +607,7 @@ function translate_position_with_offset_data( cs_file, struct, var_5f0a2cdf1e857
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x115e
 // Size: 0x10f
 function translate_and_rotate_from_level_overrides( cs_file, struct )
@@ -634,7 +637,7 @@ function translate_and_rotate_from_level_overrides( cs_file, struct )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1275
 // Size: 0x115
 function strike_add_to_cs_arrays( var_3215b787c2be06c8, struct, index )
@@ -678,7 +681,7 @@ function strike_add_to_cs_arrays( var_3215b787c2be06c8, struct, index )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1392
 // Size: 0x1b
 function strike_interactioncreate( struct, index )
@@ -687,7 +690,7 @@ function strike_interactioncreate( struct, index )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13b5
 // Size: 0x185
 function strike_scriptorigincreate( struct, index )
@@ -742,7 +745,7 @@ function strike_scriptorigincreate( struct, index )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1542
 // Size: 0x1bd
 function strike_modelcreate( struct, index )
@@ -799,7 +802,7 @@ function strike_modelcreate( struct, index )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1707
 // Size: 0x20c
 function strike_triggercreate( struct, index, var_edb06d254fff788c, noent_volume )
@@ -858,7 +861,7 @@ function strike_triggercreate( struct, index, var_edb06d254fff788c, noent_volume
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x191b
 // Size: 0x254
 function strike_triggerassignvalues( struct )
@@ -947,7 +950,7 @@ function strike_triggerassignvalues( struct )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b77
 // Size: 0x186
 function strike_fixautokvps( struct, index )
@@ -988,7 +991,7 @@ function strike_fixautokvps( struct, index )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d05
 // Size: 0xb3c
 function typecast_kvps( struct )
@@ -1342,7 +1345,7 @@ function typecast_kvps( struct )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2849
 // Size: 0x34
 function cs_is_starttime()
@@ -1356,7 +1359,7 @@ function cs_is_starttime()
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2885
 // Size: 0x73
 function cs_init_flags( newitem )
@@ -1378,7 +1381,7 @@ function cs_init_flags( newitem )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2900
 // Size: 0x59
 function cs_flags_init( newitem )
@@ -1398,7 +1401,7 @@ function cs_flags_init( newitem )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2961
 // Size: 0x86
 function wait_for_flags( newitem, complete_flag )
@@ -1427,7 +1430,7 @@ function wait_for_flags( newitem, complete_flag )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29ef
 // Size: 0x6c
 function endcreatescript( newitem )
@@ -1450,7 +1453,7 @@ function endcreatescript( newitem )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a63
 // Size: 0x39
 function wait_for_cs_flag( waittill_flag )
@@ -1466,7 +1469,7 @@ function wait_for_cs_flag( waittill_flag )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2aa4
 // Size: 0x8d, Type: bool
 function should_wait_for_cs_flag( waittill_flag )
@@ -1479,7 +1482,8 @@ function should_wait_for_cs_flag( waittill_flag )
         return true;
     }
     
-    for (i = 0; i < toks.size; i++) {
+    for ( i = 0; i < toks.size ; i++ )
+    {
         tok = toks[ i ];
         
         if ( tok == "all" )
@@ -1497,7 +1501,7 @@ function should_wait_for_cs_flag( waittill_flag )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b3a
 // Size: 0x3f
 function register_cs_offsets( cs_file, origin_offset, angle_offset )
@@ -1514,7 +1518,7 @@ function register_cs_offsets( cs_file, origin_offset, angle_offset )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b81
 // Size: 0x21
 function set_cs_file_dvar( file_name )
@@ -1523,7 +1527,7 @@ function set_cs_file_dvar( file_name )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2baa
 // Size: 0xc8
 function cleanup_cs_file_objects( cs_file )
@@ -1535,7 +1539,8 @@ function cleanup_cs_file_objects( cs_file )
     {
         temp_array = level.cs_object_container[ cs_file ].objects;
         
-        for (i = 0; i < temp_array.size; i++) {
+        for ( i = 0; i < temp_array.size ; i++ )
+        {
             object = temp_array[ i ];
             level.cs_object_container[ cs_file ].objects[ i ] = undefined;
             
@@ -1579,7 +1584,8 @@ function private clean_cs_file_structs_array( type, cs_file )
     var_de8e12bdbe3a8729 = 50;
     var_5f8f62a5487a6e5d = 0;
     
-    for (targetnameindex = 0; targetnameindex < typekeys.size; targetnameindex++) {
+    for ( targetnameindex = 0; targetnameindex < typekeys.size ; targetnameindex++ )
+    {
         newarray = [];
         
         if ( targetnameindex % var_de8e12bdbe3a8729 == 0 )
@@ -1590,7 +1596,8 @@ function private clean_cs_file_structs_array( type, cs_file )
         typekey = typekeys[ targetnameindex ];
         typekeysize = level.struct_class_names[ type ][ typekey ].size;
         
-        for (index = 0; index < typekeysize; index++) {
+        for ( index = 0; index < typekeysize ; index++ )
+        {
             struct = level.struct_class_names[ type ][ typekey ][ index ];
             
             if ( isdefined( struct ) && ( !isdefined( struct.cs_flag ) || struct.cs_flag != cs_file ) )
@@ -1611,7 +1618,7 @@ function private clean_cs_file_structs_array( type, cs_file )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e05
 // Size: 0xa0
 function function_71a564b3bc009618( cs_file )
@@ -1629,7 +1636,7 @@ function function_71a564b3bc009618( cs_file )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2eae
 // Size: 0x7
 function s()
@@ -1638,7 +1645,7 @@ function s()
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ebe
 // Size: 0x2aa
 function spawn_cover_nodes( struct_targetname )
@@ -1717,7 +1724,7 @@ function spawn_cover_nodes( struct_targetname )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3171
 // Size: 0x90
 function delete_covernodes( struct_targetname )
@@ -1735,7 +1742,7 @@ function delete_covernodes( struct_targetname )
 }
 
 // Namespace create_script_utility / scripts\common\create_script_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3209
 // Size: 0x28
 function function_b055d49370405173()

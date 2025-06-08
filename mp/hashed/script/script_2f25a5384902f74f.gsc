@@ -12,7 +12,7 @@
 #namespace jup_spawner_zombie_base_abom_crawler_nest;
 
 // Namespace jup_spawner_zombie_base_abom_crawler_nest / namespace_360b5591c5288e95
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x253
 // Size: 0x1e6
 function main()
@@ -50,7 +50,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_base_abom_crawler_nest / namespace_360b5591c5288e95
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x441
 // Size: 0x57
 function setup_model()
@@ -67,7 +67,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_base_abom_crawler_nest / namespace_360b5591c5288e95
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a0
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -76,7 +76,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_base_abom_crawler_nest / namespace_360b5591c5288e95
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b1
 // Size: 0xd6
 function precache()
@@ -106,7 +106,7 @@ function precache()
 }
 
 // Namespace jup_spawner_zombie_base_abom_crawler_nest / namespace_360b5591c5288e95
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x58f
 // Size: 0xd6
 function setup_weapons()

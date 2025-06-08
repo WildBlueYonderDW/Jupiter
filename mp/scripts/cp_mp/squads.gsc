@@ -8,12 +8,12 @@
 #namespace squads;
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33f
 // Size: 0x8c
 function init()
 {
-    level.maxsquadsize = getdvarint( @"hash_15115ef896ca26f2", 1 );
+    level.maxsquadsize = getdvarint( @"party_maxsquadsize", 1 );
     
     if ( level.maxsquadsize && function_a9cb1bbce9eb3d1b() )
     {
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d3
 // Size: 0x71
 function initsquaddata()
@@ -48,7 +48,7 @@ function initsquaddata()
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x44c
 // Size: 0x3a1
 function setsquad( team, index )
@@ -63,7 +63,7 @@ function setsquad( team, index )
         return;
     }
     
-    if ( getdvarint( @"hash_cca323e71a05db50", 0 ) != 0 )
+    if ( getdvarint( @"scr_assign_squad_from_team", 0 ) != 0 )
     {
         teamindex = 0;
         
@@ -115,7 +115,7 @@ function setsquad( team, index )
         allowsquadfill = [[ level.var_1a9fc9c6bae428db ]]( self );
     }
     
-    if ( istrue( level.matchmakingmatch ) && getdvarint( @"hash_3f2e64cb0f312641", 0 ) != 1 )
+    if ( istrue( level.matchmakingmatch ) && getdvarint( @"scr_bypass_fireteam_squads", 0 ) != 1 )
     {
         var_ebfb1594ba861d16 = istrue( level.var_d50f1d3b1431cf6b );
         fireteammembers = self getfireteammembers();
@@ -182,7 +182,7 @@ function setsquad( team, index )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f5
 // Size: 0x104
 function createsquad( team, index )
@@ -224,7 +224,7 @@ function createsquad( team, index )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x902
 // Size: 0x20
 function freesquadindex( team, index )
@@ -233,7 +233,7 @@ function freesquadindex( team, index )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x92a
 // Size: 0x7d
 function requestnewsquad( team, isfireteam, var_1d135524e5154d9b )
@@ -256,7 +256,7 @@ function requestnewsquad( team, isfireteam, var_1d135524e5154d9b )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9af
 // Size: 0x19c
 function joinsquad( team, index )
@@ -294,7 +294,7 @@ function joinsquad( team, index )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb53
 // Size: 0x387
 function leavesquad( team, index )
@@ -372,7 +372,7 @@ function leavesquad( team, index )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee2
 // Size: 0x5e
 function function_9be60342a8babba5()
@@ -391,14 +391,15 @@ function function_9be60342a8babba5()
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf48
 // Size: 0x11c
 function function_eec90fb96d0aff02( team, index )
 {
     availableindices = [];
     
-    for (i = 0; i < function_9be60342a8babba5(); i++) {
+    for ( i = 0; i < function_9be60342a8babba5() ; i++ )
+    {
         availableindices[ i ] = 1;
     }
     
@@ -423,7 +424,7 @@ function function_eec90fb96d0aff02( team, index )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x106d
 // Size: 0x52
 function changesquad( team, oldteam, index )
@@ -438,7 +439,7 @@ function changesquad( team, oldteam, index )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10c7
 // Size: 0x2dc
 function updatesquadomnvars( team, squadindex )
@@ -496,7 +497,8 @@ function updatesquadomnvars( team, squadindex )
             player setclientomnvar( "ui_arm_squadmember_0", var_f31235f8d2bec0f0 );
             mates = array_remove( level.squaddata[ team ][ squadindex ].players, player );
             
-            for (i = 0; i < 3; i++) {
+            for ( i = 0; i < 3 ; i++ )
+            {
                 mate = mates[ i ];
                 
                 if ( isdefined( mate ) )
@@ -525,7 +527,7 @@ function updatesquadomnvars( team, squadindex )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13ab
 // Size: 0x12, Type: bool
 function function_3d93807e453d0770()
@@ -534,7 +536,7 @@ function function_3d93807e453d0770()
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13c6
 // Size: 0x207
 function choosesquadleader( team, index )
@@ -612,7 +614,7 @@ function choosesquadleader( team, index )
 /#
 
     // Namespace squads / scripts\cp_mp\squads
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x15d5
     // Size: 0x240, Type: dev
     function debugprintsquads()
@@ -671,7 +673,7 @@ function choosesquadleader( team, index )
 #/
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x181d
 // Size: 0xe0
 function getsquaddata( team, sessionsquadid, property )
@@ -688,7 +690,7 @@ function getsquaddata( team, sessionsquadid, property )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1905
 // Size: 0xa9
 function function_a20a10ce593f692b( team, sessionsquadid, property, value )
@@ -700,7 +702,7 @@ function function_a20a10ce593f692b( team, sessionsquadid, property, value )
 }
 
 // Namespace squads / scripts\cp_mp\squads
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19b6
 // Size: 0x7e, Type: bool
 function function_be6ce63a202791c5( team, sessionsquadid, property )

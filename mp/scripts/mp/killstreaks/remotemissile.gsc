@@ -10,7 +10,7 @@
 #namespace remotemissile;
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x58
 function init()
@@ -24,7 +24,7 @@ function init()
 }
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29f
 // Size: 0x75, Type: bool
 function tryusepredatormissile( lifeid, streakname )
@@ -49,7 +49,7 @@ function tryusepredatormissile( lifeid, streakname )
 }
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31d
 // Size: 0x31c
 function getbestspawnpoint( remotemissilespawnpoints )
@@ -131,7 +131,7 @@ function getbestspawnpoint( remotemissilespawnpoints )
 }
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x642
 // Size: 0x236
 function _fire( lifeid, player )
@@ -191,7 +191,7 @@ function _fire( lifeid, player )
 /#
 
     // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x880
     // Size: 0x128, Type: dev
     function function_7ffa02c6592145d( lifeid, player )
@@ -223,7 +223,7 @@ function _fire( lifeid, player )
 #/
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b0
 // Size: 0x32
 function handledamage()
@@ -242,7 +242,7 @@ function handledamage()
 }
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9ea
 // Size: 0x146
 function missileeyes( player, rocket )
@@ -298,7 +298,7 @@ function missileeyes( player, rocket )
 }
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb38
 // Size: 0x16
 function delayedfofoverlay()
@@ -309,7 +309,7 @@ function delayedfofoverlay()
 }
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb56
 // Size: 0x75
 function player_cleanuponteamchange( rocket )
@@ -334,7 +334,7 @@ function player_cleanuponteamchange( rocket )
 }
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd3
 // Size: 0x3e
 function rocket_cleanupondeath()
@@ -347,7 +347,7 @@ function rocket_cleanupondeath()
 }
 
 // Namespace remotemissile / scripts\mp\killstreaks\remotemissile
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc19
 // Size: 0x49
 function player_cleanupongameended( rocket )

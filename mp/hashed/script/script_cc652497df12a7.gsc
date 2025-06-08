@@ -9,7 +9,7 @@
 #namespace namespace_b42a3e1ccd896bd5;
 
 // Namespace namespace_b42a3e1ccd896bd5 / namespace_a342547bb5b1897d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x160
 // Size: 0x10
 function main()
@@ -21,7 +21,7 @@ function main()
 /#
 
     // Namespace namespace_b42a3e1ccd896bd5 / namespace_a342547bb5b1897d
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x178
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -32,7 +32,7 @@ function main()
 #/
 
 // Namespace namespace_b42a3e1ccd896bd5 / namespace_a342547bb5b1897d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x185
 // Size: 0x17
 function setup_callbacks()
@@ -41,7 +41,7 @@ function setup_callbacks()
 }
 
 // Namespace namespace_b42a3e1ccd896bd5 / namespace_a342547bb5b1897d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a4
 // Size: 0x2
 function function_a84ac36891eff2cb()
@@ -50,7 +50,7 @@ function function_a84ac36891eff2cb()
 }
 
 // Namespace namespace_b42a3e1ccd896bd5 / namespace_a342547bb5b1897d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ae
 // Size: 0x1e3
 function bot_ko_think()
@@ -119,7 +119,7 @@ function bot_ko_think()
 }
 
 // Namespace namespace_b42a3e1ccd896bd5 / namespace_a342547bb5b1897d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x399
 // Size: 0x12
 function clear_defend()

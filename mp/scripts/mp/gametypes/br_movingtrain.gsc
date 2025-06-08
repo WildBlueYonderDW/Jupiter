@@ -45,7 +45,7 @@
 #namespace br_movingtrain;
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x155e
 // Size: 0x108
 function init( forceidle )
@@ -86,7 +86,7 @@ function init( forceidle )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x166e
 // Size: 0x7e
 function wait_for_sequence_start( forceidle )
@@ -116,7 +116,7 @@ function wait_for_sequence_start( forceidle )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16f4
 // Size: 0x20f
 function train_wzcircle_override()
@@ -139,7 +139,8 @@ function train_wzcircle_override()
     var_7c21d374dadb257f = array_combine( level.br_level.br_circleclosetimes, level.br_level.br_circledelaytimes );
     totalroundtime = 0;
     
-    for (i = 0; i < var_7c21d374dadb257f.size; i++) {
+    for ( i = 0; i < var_7c21d374dadb257f.size ; i++ )
+    {
         totalroundtime += var_7c21d374dadb257f[ i ];
     }
     
@@ -170,7 +171,7 @@ function train_wzcircle_override()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x190b
 // Size: 0xb3
 function train_wzcircle_time_subtractfrom( totalroundtime )
@@ -205,7 +206,7 @@ function train_wzcircle_time_subtractfrom( totalroundtime )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19c7
 // Size: 0x93f, Type: bool
 function init_train_arrays( forceidle )
@@ -345,7 +346,7 @@ function init_train_arrays( forceidle )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x230f
 // Size: 0x262
 function train_associate_models_with_brushes()
@@ -357,7 +358,8 @@ function train_associate_models_with_brushes()
         var_59ef9ff0d44b7d97 = [[ level.wztrain_info.var_ecf7a389446fc63e ]]();
     }
     
-    for (i = 0; i < level.wztrain_info.train_array.size; i++) {
+    for ( i = 0; i < level.wztrain_info.train_array.size ; i++ )
+    {
         traincar_model = undefined;
         var_eae7ee50d1f67572 = level.wztrain_info.train_array[ i ];
         script_noteworthy = undefined;
@@ -421,7 +423,7 @@ function train_associate_models_with_brushes()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2579
 // Size: 0x46, Type: bool
 function function_eae41bc5dc33624b( modela, modelb )
@@ -430,12 +432,13 @@ function function_eae41bc5dc33624b( modela, modelb )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25c8
 // Size: 0x8e
 function train_attach_brushes_to_models()
 {
-    for (i = 0; i < level.wztrain_info.train_array.size; i++) {
+    for ( i = 0; i < level.wztrain_info.train_array.size ; i++ )
+    {
         var_eae7ee50d1f67572 = level.wztrain_info.train_array[ i ];
         train_init_as_vehicle( var_eae7ee50d1f67572 );
         var_eae7ee50d1f67572 forcenetfieldhighlod( 1 );
@@ -447,7 +450,7 @@ function train_attach_brushes_to_models()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x265e
 // Size: 0x1c2
 function train_attach_models_to_assembly()
@@ -456,7 +459,8 @@ function train_attach_models_to_assembly()
     {
         animent = level.wztrain_info.animent[ train ];
         
-        for (i = 0; i < array.size; i++) {
+        for ( i = 0; i < array.size ; i++ )
+        {
             traincar = array[ i ];
             thistag = level.wztrain_info.train_tag_array[ i ];
             tagorigin = animent gettagorigin( thistag );
@@ -479,7 +483,7 @@ function train_attach_models_to_assembly()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2828
 // Size: 0x69
 function function_76471a1d0597c6d( array )
@@ -496,7 +500,7 @@ function function_76471a1d0597c6d( array )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x289a
 // Size: 0x94
 function train_init_as_vehicle( vehicle )
@@ -516,7 +520,7 @@ function train_init_as_vehicle( vehicle )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2936
 // Size: 0xa
 function train_stop()
@@ -525,7 +529,7 @@ function train_stop()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2948
 // Size: 0x25
 function traincar_wait_until_shown( wait_for )
@@ -538,7 +542,7 @@ function traincar_wait_until_shown( wait_for )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2975
 // Size: 0x80
 function function_a4b4d45fdcc959d8( enable_hurt )
@@ -555,7 +559,7 @@ function function_a4b4d45fdcc959d8( enable_hurt )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29fd
 // Size: 0x6a
 function train_elements_enable()
@@ -567,7 +571,7 @@ function train_elements_enable()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a6f
 // Size: 0x110
 function function_9dd6a5882c62dd6( specific_train )
@@ -624,7 +628,7 @@ function private function_5a1ebf95de1ad6c9()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bf9
 // Size: 0x6a
 function train_elements_disable()
@@ -636,7 +640,7 @@ function train_elements_disable()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c6b
 // Size: 0x155
 function function_e7a82d389007737b( specific_train )
@@ -670,7 +674,7 @@ function function_e7a82d389007737b( specific_train )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dc8
 // Size: 0x1f2
 function function_3bbb7d783f45035e( train_name )
@@ -689,7 +693,8 @@ function function_3bbb7d783f45035e( train_name )
         var_4b15590cf2140316 = distance( var_43dd126faa05f6be[ 0 ].origin, train_center ) + var_26f757527d21f859;
         nearby = sortbydistancecullbyradius( level.players, train_center, var_4b15590cf2140316 );
         
-        for (i = nearby.size - 1; i >= 0; i--) {
+        for ( i = nearby.size - 1; i >= 0 ; i-- )
+        {
             player = nearby[ i ];
             is_near = 0;
             
@@ -714,7 +719,7 @@ function function_3bbb7d783f45035e( train_name )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2fc2
 // Size: 0x50
 function train_initcollision( vehicle_ref, forceidle )
@@ -730,7 +735,7 @@ function train_initcollision( vehicle_ref, forceidle )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x301a
 // Size: 0x80
 function handle_train_veh_collision( vehicle1, vehicle2, position, normal, normalspeed )
@@ -747,7 +752,7 @@ function handle_train_veh_collision( vehicle1, vehicle2, position, normal, norma
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30a2
 // Size: 0x2fb
 function train_handle_collide_mines()
@@ -854,7 +859,7 @@ function train_handle_collide_mines()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33a5
 // Size: 0x9f
 function play_train_sequence()
@@ -878,7 +883,7 @@ function play_train_sequence()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x344c
 // Size: 0xa9
 function function_e079d6a3354cecbe()
@@ -886,7 +891,8 @@ function function_e079d6a3354cecbe()
     flag_wait( "wztrain_anim_playing" );
     wait 2;
     
-    for (i = 0; i < level.wztrain_info.train_array.size; i++) {
+    for ( i = 0; i < level.wztrain_info.train_array.size ; i++ )
+    {
         trainmodel = level.wztrain_info.train_array[ i ].linked_model;
         
         if ( isdefined( trainmodel ) && trainmodel isscriptable() && trainmodel getscriptablehaspart( "icon" ) && trainmodel getscriptableparthasstate( "icon", "visible" ) )
@@ -906,7 +912,7 @@ function private function_a772944222db6641()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3528
 // Size: 0xf0
 function function_b5fa61da19d13e6f( type )
@@ -937,7 +943,7 @@ function function_b5fa61da19d13e6f( type )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3621
 // Size: 0xdf
 function function_18c8df150f3cdc88( type, traincar )
@@ -1122,7 +1128,7 @@ function private function_56f813dc63757bdd()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b2d
 // Size: 0x58e
 function function_a4fa12bce9b083c4()
@@ -1200,7 +1206,7 @@ function function_a4fa12bce9b083c4()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40c3
 // Size: 0x6e
 function function_3ca2a4be197dfa5b( callback )
@@ -1215,7 +1221,7 @@ function function_3ca2a4be197dfa5b( callback )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4139
 // Size: 0xa9
 function function_fa04a5bfe00504bc( traincar, spawn_type, var_91839babd32261f4, offset, angles )
@@ -1232,7 +1238,7 @@ function function_fa04a5bfe00504bc( traincar, spawn_type, var_91839babd32261f4, 
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41eb
 // Size: 0xf5
 function function_db060d9aac85790f()
@@ -1257,7 +1263,7 @@ function function_db060d9aac85790f()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42e8
 // Size: 0xd9
 function function_3b5a11ea11e271c3( spawntype )
@@ -1283,7 +1289,7 @@ function function_3b5a11ea11e271c3( spawntype )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43ca
 // Size: 0x43
 function function_3f3f25512adf8649()
@@ -1297,7 +1303,7 @@ function function_3f3f25512adf8649()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4416
 // Size: 0x206
 function function_6b27e38d8a44794d( train_array, spawn_type )
@@ -1332,7 +1338,8 @@ function function_6b27e38d8a44794d( train_array, spawn_type )
             traincar.spawn_info[ spawn_type ].count = var_48c792c1662791fe.size;
         }
         
-        for (i = 0; i < var_48c792c1662791fe.size; i++) {
+        for ( i = 0; i < var_48c792c1662791fe.size ; i++ )
+        {
             var_c35e1c74aefb4992 = var_48c792c1662791fe[ i ].origin - traincar.origin;
             offset = rotatevectorinverted( var_c35e1c74aefb4992, traincar.angles );
             traincar.spawn_info[ spawn_type ].offsets[ i ] = offset;
@@ -1345,7 +1352,7 @@ function function_6b27e38d8a44794d( train_array, spawn_type )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4624
 // Size: 0x385
 function function_c1c6070579e999cb( train_array, spawn_type )
@@ -1369,7 +1376,8 @@ function function_c1c6070579e999cb( train_array, spawn_type )
             continue;
         }
         
-        for (i = 0; i < spawn_info.count; i++) {
+        for ( i = 0; i < spawn_info.count ; i++ )
+        {
             type = spawn_info.type[ i ];
             offset = spawn_info.offsets[ i ];
             angles = spawn_info.angles[ i ];
@@ -1459,7 +1467,7 @@ function function_c1c6070579e999cb( train_array, spawn_type )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x49b1
 // Size: 0x6f
 function function_edcebaee73e9929( type, traincar, offset, angles, var_20792ee55e7cef4b )
@@ -1514,7 +1522,7 @@ function private function_dacf28437ad9a90( train, lootstruct )
 #/
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b31
 // Size: 0x1e5
 function train_attach_player_hurts()
@@ -1555,7 +1563,7 @@ function train_attach_player_hurts()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4d1e
 // Size: 0x1ff
 function train_hurt_damage_watcher( traincar, engine )
@@ -1606,7 +1614,7 @@ function train_hurt_damage_watcher( traincar, engine )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f25
 // Size: 0x50, Type: bool
 function function_28e551f1c8b6bf8d( hitent )
@@ -1616,7 +1624,7 @@ function function_28e551f1c8b6bf8d( hitent )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f7e
 // Size: 0xa2
 function function_fa60abd0913d1578( train_name, rate )
@@ -1636,7 +1644,7 @@ function function_fa60abd0913d1578( train_name, rate )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5028
 // Size: 0xf2
 function function_a2865fbe60ae30a8( train_name, accelerationrate, targetrate )
@@ -1671,7 +1679,7 @@ function function_a2865fbe60ae30a8( train_name, accelerationrate, targetrate )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5123
 // Size: 0x6e
 function function_e3c620206b7b1178( callback )
@@ -1766,7 +1774,7 @@ function private function_68b05555719c93ed( train_name )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5454
 // Size: 0xb8
 function train_vfx_init()
@@ -1785,7 +1793,7 @@ function train_vfx_init()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5514
 // Size: 0xab
 function train_sfx_init()
@@ -1804,7 +1812,7 @@ function train_sfx_init()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55c7
 // Size: 0x18
 function function_838743a143d39b3c( train_name )
@@ -1813,7 +1821,7 @@ function function_838743a143d39b3c( train_name )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55e7
 // Size: 0x18
 function function_52f0e88e892f960a( train_name )
@@ -1822,7 +1830,7 @@ function function_52f0e88e892f960a( train_name )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5607
 // Size: 0x14a
 function function_383124ed9c938589( train_name, loop_state )
@@ -1856,7 +1864,7 @@ function function_383124ed9c938589( train_name, loop_state )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5759
 // Size: 0x1b
 function function_85a3956c7630ea05()
@@ -1867,7 +1875,7 @@ function function_85a3956c7630ea05()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x577c
 // Size: 0xc0
 function function_6bc539be97b1fd75( train_ent1, train_ent2 )
@@ -1889,7 +1897,7 @@ function function_6bc539be97b1fd75( train_ent1, train_ent2 )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5844
 // Size: 0x1c
 function function_7af6d73425acffca( train )
@@ -1898,7 +1906,7 @@ function function_7af6d73425acffca( train )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5868
 // Size: 0x1c
 function function_692fc55669413d6e( train )
@@ -1907,7 +1915,7 @@ function function_692fc55669413d6e( train )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x588c
 // Size: 0xca, Type: bool
 function function_6ec6dbd953660756( train_name, sfx_name, var_3330cf34f575b3ea )
@@ -1942,7 +1950,7 @@ function function_6ec6dbd953660756( train_name, sfx_name, var_3330cf34f575b3ea )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x595f
 // Size: 0x10b
 function br_pass_train_stop( train )
@@ -1960,7 +1968,7 @@ function br_pass_train_stop( train )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a72
 // Size: 0x10b
 function br_pass_train_start( train )
@@ -1978,7 +1986,7 @@ function br_pass_train_start( train )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b85
 // Size: 0x50
 function br_pass_train_tnnl( train )
@@ -1991,7 +1999,7 @@ function br_pass_train_tnnl( train )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5bdd
 // Size: 0x978
 function train_play_anim( train, array )
@@ -2158,7 +2166,7 @@ function train_play_anim( train, array )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x655d
 // Size: 0x1f4
 function function_b97f8e8fd722397( train, lerpfraction )
@@ -2171,7 +2179,8 @@ function function_b97f8e8fd722397( train, lerpfraction )
     animent = level.wztrain_info.animent[ train ];
     trainarray = level.wztrain_info.trains[ train ];
     
-    for (i = 0; i < trainarray.size; i++) {
+    for ( i = 0; i < trainarray.size ; i++ )
+    {
         thistag = level.wztrain_info.train_tag_array[ i ];
         targetorigin = animent gettagorigin( thistag );
         targetangles = animent gettagangles( thistag );
@@ -2205,7 +2214,7 @@ function function_b97f8e8fd722397( train, lerpfraction )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6759
 // Size: 0x255
 function function_3ebe5a3de48d68b9( dist, targetrate, acceleration, train )
@@ -2251,7 +2260,7 @@ function function_3ebe5a3de48d68b9( dist, targetrate, acceleration, train )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69b7
 // Size: 0x17
 function function_82b691da7415de2a( targetangles )
@@ -2260,7 +2269,7 @@ function function_82b691da7415de2a( targetangles )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x69d7
 // Size: 0x116
 function function_10587aaf16f21c55( trainorigin, trainstops )
@@ -2311,7 +2320,7 @@ function private function_b91ff337122b31fe()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b5e
 // Size: 0x67a
 function train_play_anim_init()
@@ -2359,7 +2368,8 @@ function train_play_anim_init()
     
     level.wztrain_info.train_tagoffset_array = [];
     
-    for (i = 0; i < level.wztrain_info.train_tag_array.size; i++) {
+    for ( i = 0; i < level.wztrain_info.train_tag_array.size ; i++ )
+    {
         level.wztrain_info.train_tagoffset_array[ i ] = ( 0, 0, 0 );
     }
     
@@ -2405,7 +2415,7 @@ function train_play_anim_init()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71e0
 // Size: 0xa5
 function function_93af86ad9b1b6c90( train )
@@ -2430,7 +2440,7 @@ function function_93af86ad9b1b6c90( train )
 /#
 
     // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x728e
     // Size: 0x66, Type: dev
     function function_97e7d25127fb07b2( train )
@@ -2451,7 +2461,7 @@ function function_93af86ad9b1b6c90( train )
 #/
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x72fc
 // Size: 0x93
 function function_9198b91b6a2f839e( train, animtime )
@@ -2474,7 +2484,7 @@ function function_9198b91b6a2f839e( train, animtime )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7397
 // Size: 0xc9
 function train_teleport_to_animtime( train, animent )
@@ -2501,7 +2511,7 @@ function train_teleport_to_animtime( train, animent )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7468
 // Size: 0x93
 function function_51da224c93d325f3( einflictor )
@@ -2521,7 +2531,7 @@ function function_51da224c93d325f3( einflictor )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7503
 // Size: 0x253
 function predictcargotrainpositions( delays, animrates, accelerationrate, startrate )
@@ -2558,7 +2568,8 @@ function predictcargotrainpositions( delays, animrates, accelerationrate, startr
     var_683c6158805fbd44 = animoffset;
     trainpositions = [];
     
-    for (index = 0; index < delays.size; index++) {
+    for ( index = 0; index < delays.size ; index++ )
+    {
         animrate = animrates[ index ];
         
         if ( isdefined( animrate ) )
@@ -2594,7 +2605,7 @@ function predictcargotrainpositions( delays, animrates, accelerationrate, startr
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x775f
 // Size: 0x76
 function changecargotrainspeed( targetrate, accelerationrate )
@@ -2623,7 +2634,7 @@ function changecargotrainspeed( targetrate, accelerationrate )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77dd
 // Size: 0x40
 function crate_follow_text()
@@ -2641,7 +2652,7 @@ function crate_follow_text()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7825
 // Size: 0x79, Type: bool
 function any_player_nearby( origin, dist_sqr )
@@ -2658,7 +2669,7 @@ function any_player_nearby( origin, dist_sqr )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x78a7
 // Size: 0xc1
 function warp_player_debug()
@@ -2685,7 +2696,7 @@ function warp_player_debug()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7970
 // Size: 0xd6
 function debug_warpplayer_monitor()
@@ -2711,7 +2722,7 @@ function debug_warpplayer_monitor()
 /#
 
     // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x7a4e
     // Size: 0x58, Type: dev
     function debug_display_veh_hit( eventdata, damage )
@@ -2728,7 +2739,7 @@ function debug_warpplayer_monitor()
 #/
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7aae
 // Size: 0xdb
 function blink_train_test()
@@ -3124,7 +3135,8 @@ function private callheli()
     origin = ter_op( isdefined( level.var_f0872e42daf6d4d5 ), level.var_f0872e42daf6d4d5, spawndata.origin );
     riders = [];
     
-    for (i = 2; i < 8; i++) {
+    for ( i = 2; i < 8 ; i++ )
+    {
         aitype = scripts\mp\ai_mp_controller::function_d5bc07eabf352abb( undefined, poi, undefined, random( [ "sniper", "ar", "lmg" ] ), 3 );
         rider = scripts\mp\ai_mp_controller::ai_mp_requestspawnagent( aitype, origin, ( 0, 0, 0 ), "absolute", "reinforcements", "train_safe", undefined, undefined, undefined, "bossArea", 1, undefined, 0 );
         
@@ -3306,7 +3318,7 @@ function private opensafe()
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ec7
 // Size: 0x79
 function function_82563367aa26cd19( array )
@@ -3329,7 +3341,7 @@ function function_82563367aa26cd19( array )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f49
 // Size: 0x1b5
 function function_1533ffc339e9487f( radius )
@@ -3368,7 +3380,7 @@ function function_1533ffc339e9487f( radius )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9106
 // Size: 0x2bc
 function safe_setmusicstate( safe, statename, var_a663b5760127728d )
@@ -3438,7 +3450,7 @@ function safe_setmusicstate( safe, statename, var_a663b5760127728d )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x93ca
 // Size: 0x13c
 function function_a93a6d7f562fdfcc( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -3479,7 +3491,7 @@ function function_a93a6d7f562fdfcc( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x950e
 // Size: 0x136
 function function_a4e20b4dc4ebd306( player, attacker, smeansofdeath )
@@ -3512,7 +3524,7 @@ function function_a4e20b4dc4ebd306( player, attacker, smeansofdeath )
 }
 
 // Namespace br_movingtrain / scripts\mp\gametypes\br_movingtrain
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x964c
 // Size: 0x267
 function function_39b5cec1323e813e( direction_control_used, speed_control_used, horn_control_used, handbrake_control_used, loot_cache_used, uav_tower_used, buy_station_used, ammo_depot_used, death_by_player, death_other, palfa_fuel_used, reset_control_timer )

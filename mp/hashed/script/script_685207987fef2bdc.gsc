@@ -4,7 +4,7 @@
 #namespace mp_jup_fort_ob_activities_aether_nest_cs;
 
 // Namespace mp_jup_fort_ob_activities_aether_nest_cs / namespace_3cb017699ecfb3ae
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ad
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_fort_ob_activities_aether_nest_cs / namespace_3cb017699ecfb3ae
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x322
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_fort_ob_activities_aether_nest_cs / namespace_3cb017699ecfb3ae
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x391
 // Size: 0x1dc
 function createstructs( fe, us, cf )
@@ -83,7 +83,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_fort_ob_activities_aether_nest_cs / namespace_3cb017699ecfb3ae
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x575
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -92,7 +92,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_fort_ob_activities_aether_nest_cs / namespace_3cb017699ecfb3ae
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57f
 // Size: 0xe
 function cleanup()
@@ -101,7 +101,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_fort_ob_activities_aether_nest_cs / namespace_3cb017699ecfb3ae
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x595
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -116,7 +116,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_fort_ob_activities_aether_nest_cs / namespace_3cb017699ecfb3ae
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x607
 // Size: 0x51
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -135,7 +135,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_fort_ob_activities_aether_nest_cs / namespace_3cb017699ecfb3ae
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x660
 // Size: 0x87f
 function function_8778ecf34778152( fe, us, cf )
@@ -218,7 +218,7 @@ function function_8778ecf34778152( fe, us, cf )
 }
 
 // Namespace mp_jup_fort_ob_activities_aether_nest_cs / namespace_3cb017699ecfb3ae
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee7
 // Size: 0xea
 function function_6da2952367672ac0()

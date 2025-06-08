@@ -14,7 +14,7 @@
 #namespace thermite;
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24a
 // Size: 0xcd
 function thermite_used( grenade, isgl )
@@ -37,7 +37,7 @@ function thermite_used( grenade, isgl )
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31f
 // Size: 0x40
 function thermite_watchwater( grenade )
@@ -59,7 +59,7 @@ function thermite_watchwater( grenade )
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x367
 // Size: 0x38d
 function thermite_watchstuck( isgl )
@@ -171,7 +171,7 @@ function thermite_watchstuck( isgl )
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6fc
 // Size: 0x109, Type: bool
 function thermite_watchglstuck()
@@ -217,7 +217,7 @@ function thermite_watchglstuck()
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x80e
 // Size: 0x102
 function thermite_watchstucktoterrain()
@@ -240,7 +240,7 @@ function thermite_watchstucktoterrain()
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x918
 // Size: 0x15f
 function thermite_doradiusdamage( weaponobj )
@@ -281,7 +281,7 @@ function thermite_doradiusdamage( weaponobj )
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xa7f
 // Size: 0x91, Type: bool
 function thermite_damagemodifierignorefunc( inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc )
@@ -305,7 +305,7 @@ function thermite_damagemodifierignorefunc( inflictor, attacker, victim, damage,
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb19
 // Size: 0x30
 function thermite_watchdisowned()
@@ -316,7 +316,7 @@ function thermite_watchdisowned()
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb51
 // Size: 0x3c
 function thermite_destroy( isimmediate )
@@ -333,7 +333,7 @@ function thermite_destroy( isimmediate )
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb95
 // Size: 0x87
 function thermite_delete( deletiondelay )
@@ -367,7 +367,7 @@ function thermite_delete( deletiondelay )
 }
 
 // Namespace thermite / scripts\mp\equipment\thermite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc24
 // Size: 0x73, Type: bool
 function thermite_onplayerdamaged( data )

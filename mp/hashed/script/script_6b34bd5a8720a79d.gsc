@@ -11,7 +11,7 @@
 #namespace jup_ob_schematic_soldier_buddy_10;
 
 // Namespace jup_ob_schematic_soldier_buddy_10 / namespace_bacc822caf6045fb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x281
 // Size: 0x1c9
 function main()
@@ -47,7 +47,7 @@ function main()
 }
 
 // Namespace jup_ob_schematic_soldier_buddy_10 / namespace_bacc822caf6045fb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x452
 // Size: 0x57
 function setup_model()
@@ -64,7 +64,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_schematic_soldier_buddy_10 / namespace_bacc822caf6045fb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b1
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -73,7 +73,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_schematic_soldier_buddy_10 / namespace_bacc822caf6045fb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c2
 // Size: 0xcf
 function precache()
@@ -102,7 +102,7 @@ function precache()
 }
 
 // Namespace jup_ob_schematic_soldier_buddy_10 / namespace_bacc822caf6045fb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x599
 // Size: 0xbb
 function setup_weapons()

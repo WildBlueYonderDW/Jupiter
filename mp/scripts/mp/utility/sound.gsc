@@ -7,7 +7,7 @@
 #namespace sound;
 
 // Namespace sound / scripts\mp\utility\sound
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x192
 // Size: 0x33
 function exploder_sound()
@@ -21,7 +21,7 @@ function exploder_sound()
 }
 
 // Namespace sound / scripts\mp\utility\sound
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cd
 // Size: 0x22f
 function playsoundonplayers( sound, team, excludelist )
@@ -42,7 +42,8 @@ function playsoundonplayers( sound, team, excludelist )
     {
         if ( isdefined( excludelist ) )
         {
-            for (i = 0; i < level.players.size; i++) {
+            for ( i = 0; i < level.players.size ; i++ )
+            {
                 player = level.players[ i ];
                 
                 if ( player issplitscreenplayer() && !player issplitscreenplayerprimary() )
@@ -58,7 +59,8 @@ function playsoundonplayers( sound, team, excludelist )
         }
         else
         {
-            for (i = 0; i < level.players.size; i++) {
+            for ( i = 0; i < level.players.size ; i++ )
+            {
                 player = level.players[ i ];
                 
                 if ( player issplitscreenplayer() && !player issplitscreenplayerprimary() )
@@ -78,7 +80,8 @@ function playsoundonplayers( sound, team, excludelist )
     
     if ( isdefined( excludelist ) )
     {
-        for (i = 0; i < level.players.size; i++) {
+        for ( i = 0; i < level.players.size ; i++ )
+        {
             if ( level.players[ i ] issplitscreenplayer() && !level.players[ i ] issplitscreenplayerprimary() )
             {
                 continue;
@@ -93,7 +96,8 @@ function playsoundonplayers( sound, team, excludelist )
         return;
     }
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         if ( level.players[ i ] issplitscreenplayer() && !level.players[ i ] issplitscreenplayerprimary() )
         {
             continue;
@@ -104,7 +108,7 @@ function playsoundonplayers( sound, team, excludelist )
 }
 
 // Namespace sound / scripts\mp\utility\sound
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x404
 // Size: 0x1b
 function play_sound_on_entity( alias, var_b426f32755673ba6 )
@@ -113,7 +117,7 @@ function play_sound_on_entity( alias, var_b426f32755673ba6 )
 }
 
 // Namespace sound / scripts\mp\utility\sound
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x427
 // Size: 0x39
 function play_sound_on_tag( alias, tag )
@@ -128,7 +132,7 @@ function play_sound_on_tag( alias, tag )
 }
 
 // Namespace sound / scripts\mp\utility\sound
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x468
 // Size: 0x148
 function playdeathsound( meansofdeath )
@@ -184,7 +188,7 @@ function playdeathsound( meansofdeath )
 }
 
 // Namespace sound / scripts\mp\utility\sound
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b8
 // Size: 0x4e
 function function_7cf31218d8d83aaf()
@@ -201,7 +205,7 @@ function function_7cf31218d8d83aaf()
 }
 
 // Namespace sound / scripts\mp\utility\sound
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60e
 // Size: 0xaa
 function function_39467625717d8d27( name )
@@ -225,7 +229,7 @@ function function_39467625717d8d27( name )
 }
 
 // Namespace sound / scripts\mp\utility\sound
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c0
 // Size: 0x9e
 function function_a6357559500ee9fe( name )

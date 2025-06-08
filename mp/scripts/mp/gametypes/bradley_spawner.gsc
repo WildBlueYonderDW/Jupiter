@@ -10,7 +10,7 @@
 #namespace bradley_spawner;
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2cf
 // Size: 0x36
 function monitoradd( tank, timeout )
@@ -20,7 +20,7 @@ function monitoradd( tank, timeout )
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30d
 // Size: 0xff
 function spawntanks( tankstructs, team )
@@ -42,7 +42,7 @@ function spawntanks( tankstructs, team )
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x414
 // Size: 0x71
 function spawntankandmonitor( origin, angles, team, refill, timeout )
@@ -62,7 +62,7 @@ function spawntankandmonitor( origin, angles, team, refill, timeout )
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x48d
 // Size: 0x102
 function spawntank( origin, angles, team, timeout, infil )
@@ -92,7 +92,7 @@ function spawntank( origin, angles, team, timeout, infil )
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x598
 // Size: 0x30b
 function inittankspawns()
@@ -124,7 +124,8 @@ function inittankspawns()
         gameindex = gametypes.size;
     }
     
-    for (i = gameindex; i < gametypes.size; i++) {
+    for ( i = gameindex; i < gametypes.size ; i++ )
+    {
         testgametype = gametypes[ i ];
         
         if ( testgametype == "war" )
@@ -167,7 +168,7 @@ function inittankspawns()
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ab
 // Size: 0x151
 function spawnstartingbradleystdm()
@@ -204,7 +205,7 @@ function spawnstartingbradleystdm()
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa04
 // Size: 0x19e
 function spawnstartingbradleysdom()
@@ -245,7 +246,7 @@ function spawnstartingbradleysdom()
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbaa
 // Size: 0x151
 function spawnstartingbradleyscmd()
@@ -282,7 +283,7 @@ function spawnstartingbradleyscmd()
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd03
 // Size: 0x111
 function kickoffneutralbradleyspawnstdm()
@@ -321,7 +322,7 @@ function kickoffneutralbradleyspawnstdm()
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe1c
 // Size: 0x89
 function kickoffneutralbradleyspawnsdom()
@@ -352,7 +353,7 @@ function kickoffneutralbradleyspawnsdom()
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xead
 // Size: 0xc2
 function spawndombradley( dompt )
@@ -384,7 +385,7 @@ function spawndombradley( dompt )
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf77
 // Size: 0x176
 function tryspawnneutralbradleycmd( point )
@@ -446,7 +447,7 @@ function tryspawnneutralbradleycmd( point )
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f5
 // Size: 0x2d
 function delayspawnuntilpointcap()
@@ -466,7 +467,7 @@ function delayspawnuntilpointcap()
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112a
 // Size: 0x1e
 function selectneutralspawn()
@@ -476,7 +477,7 @@ function selectneutralspawn()
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1151
 // Size: 0x8b
 function selectdomspawn()
@@ -512,7 +513,7 @@ function selectdomspawn()
 }
 
 // Namespace bradley_spawner / scripts\mp\gametypes\bradley_spawner
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11e5
 // Size: 0xd4
 function spawnbradleynoduration( position, angles, team )

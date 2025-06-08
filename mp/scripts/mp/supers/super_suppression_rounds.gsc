@@ -31,8 +31,8 @@
 #namespace super_suppression_rounds;
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39a
+// Params 0
+// Checksum 0x0, Offset: 0x3b2
 // Size: 0x2e
 function function_d0930f871341093c()
 {
@@ -41,15 +41,15 @@ function function_d0930f871341093c()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d0
-// Size: 0x161, Type: bool
+// Params 0
+// Checksum 0x0, Offset: 0x3e8
+// Size: 0x176, Type: bool
 function suppressionrounds_beginuse()
 {
     playerweaponobj = self.lastnormalweaponobj;
     var_8de014639f689574 = nullweapon();
     
-    if ( scripts\mp\utility\weapon::ismeleeonly( playerweaponobj ) || scripts\mp\utility\weapon::issuperweapon( playerweaponobj ) || scripts\cp_mp\weapon::iskillstreakweapon( playerweaponobj ) || scripts\mp\utility\weapon::isgamemodeweapon( playerweaponobj ) || scripts\mp\utility\weapon::issinglehitweapon( playerweaponobj.basename ) || scripts\cp_mp\weapon::isminigunweapon( playerweaponobj ) || !function_a364b6e4dc3cc30a( playerweaponobj ) || playerweaponobj.basename == "iw8_lm_dblmg_mp" || playerweaponobj.basename == "iw9_me_fists_mp" )
+    if ( scripts\mp\utility\weapon::ismeleeonly( playerweaponobj ) || scripts\mp\utility\weapon::issuperweapon( playerweaponobj ) || scripts\cp_mp\weapon::iskillstreakweapon( playerweaponobj ) || scripts\mp\utility\weapon::isgamemodeweapon( playerweaponobj ) || scripts\mp\utility\weapon::issinglehitweapon( playerweaponobj.basename ) || scripts\cp_mp\weapon::isminigunweapon( playerweaponobj ) || !function_a364b6e4dc3cc30a( playerweaponobj ) || playerweaponobj.basename == "iw8_lm_dblmg_mp" || playerweaponobj.basename == "iw9_me_fists_mp" || playerweaponobj.basename == "jup_jp23_me_spear_mp" )
     {
         if ( scripts\engine\utility::issharedfuncdefined( "hud", "showErrorMessage" ) )
         {
@@ -80,8 +80,8 @@ function suppressionrounds_beginuse()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x53a
+// Params 0
+// Checksum 0x0, Offset: 0x567
 // Size: 0x2
 function function_b2d2056ee8b00689()
 {
@@ -89,8 +89,8 @@ function function_b2d2056ee8b00689()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x544
+// Params 1
+// Checksum 0x0, Offset: 0x571
 // Size: 0x37
 function function_a364b6e4dc3cc30a( objweapon )
 {
@@ -104,8 +104,8 @@ function function_a364b6e4dc3cc30a( objweapon )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x584
+// Params 1
+// Checksum 0x0, Offset: 0x5b1
 // Size: 0x279, Type: bool
 function function_ed3c1a651b014773( playerweaponobj )
 {
@@ -201,8 +201,8 @@ function function_ed3c1a651b014773( playerweaponobj )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x806
+// Params 3
+// Checksum 0x0, Offset: 0x833
 // Size: 0xa2
 function function_3c8a31ca9d26e8a3( weaponobj, stockammo, var_c88113bfedd68cf0 )
 {
@@ -240,8 +240,8 @@ function function_3c8a31ca9d26e8a3( weaponobj, stockammo, var_c88113bfedd68cf0 )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b0
+// Params 3
+// Checksum 0x0, Offset: 0x8dd
 // Size: 0x76
 function function_588eaa2556c4172c( player, objweapon, numrounds )
 {
@@ -255,8 +255,8 @@ function function_588eaa2556c4172c( player, objweapon, numrounds )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92e
+// Params 0
+// Checksum 0x0, Offset: 0x95b
 // Size: 0x61
 function function_2ab57ffd17e456dc()
 {
@@ -269,8 +269,8 @@ function function_2ab57ffd17e456dc()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x997
+// Params 0
+// Checksum 0x0, Offset: 0x9c4
 // Size: 0x6b
 function function_d086a58c4a276ab7()
 {
@@ -286,8 +286,8 @@ function function_d086a58c4a276ab7()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0a
+// Params 0
+// Checksum 0x0, Offset: 0xa37
 // Size: 0x7d
 function function_78a297c602bcf14b()
 {
@@ -313,8 +313,8 @@ function function_78a297c602bcf14b()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa90
+// Params 2
+// Checksum 0x0, Offset: 0xabd
 // Size: 0xf6
 function function_404622faff469ef4( player, var_2468893fc27de6f6 )
 {
@@ -346,8 +346,8 @@ function function_404622faff469ef4( player, var_2468893fc27de6f6 )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8e
+// Params 0
+// Checksum 0x0, Offset: 0xbbb
 // Size: 0x2c, Type: bool
 function function_1da49fb6441f8ab2()
 {
@@ -356,8 +356,8 @@ function function_1da49fb6441f8ab2()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc3
+// Params 3
+// Checksum 0x0, Offset: 0xbf0
 // Size: 0x49
 function function_7da2a2f573cf8d9( weaponentity, droppingplayer, weaponobj )
 {
@@ -371,8 +371,8 @@ function function_7da2a2f573cf8d9( weaponentity, droppingplayer, weaponobj )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc14
+// Params 3
+// Checksum 0x0, Offset: 0xc41
 // Size: 0x72
 function function_afc54fc21dfdc776( weaponentity, var_480f8576be141bb4, weaponobj )
 {
@@ -389,8 +389,8 @@ function function_afc54fc21dfdc776( weaponentity, var_480f8576be141bb4, weaponob
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8e
+// Params 1
+// Checksum 0x0, Offset: 0xcbb
 // Size: 0x3f
 function function_8343403d68c45f63( objweapon )
 {
@@ -409,8 +409,8 @@ function function_8343403d68c45f63( objweapon )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd6
+// Params 0
+// Checksum 0x0, Offset: 0xd03
 // Size: 0xb4
 function function_6831e37d3d71c426()
 {
@@ -440,8 +440,8 @@ function function_6831e37d3d71c426()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd92
+// Params 0
+// Checksum 0x0, Offset: 0xdbf
 // Size: 0x98
 function function_f12640f75796066()
 {
@@ -468,8 +468,8 @@ function function_f12640f75796066()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe32
+// Params 1
+// Checksum 0x0, Offset: 0xe5f
 // Size: 0x5e
 function function_15338821a605345d( objweapon )
 {
@@ -493,8 +493,8 @@ function function_15338821a605345d( objweapon )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe98
+// Params 0
+// Checksum 0x0, Offset: 0xec5
 // Size: 0x3a
 function suppressionrounds_removeapr()
 {
@@ -512,8 +512,8 @@ function suppressionrounds_removeapr()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeda
+// Params 0
+// Checksum 0x0, Offset: 0xf07
 // Size: 0x1e
 function function_860d63c693c454f5()
 {
@@ -526,8 +526,8 @@ function function_860d63c693c454f5()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf00
+// Params 0
+// Checksum 0x0, Offset: 0xf2d
 // Size: 0x151
 function function_14ff80858876e74()
 {
@@ -552,8 +552,8 @@ function function_14ff80858876e74()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1059
+// Params 1
+// Checksum 0x0, Offset: 0x1086
 // Size: 0x63
 function function_8f9a9c04e9e4b5af( weaponobj )
 {
@@ -572,8 +572,8 @@ function function_8f9a9c04e9e4b5af( weaponobj )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10c4
+// Params 1
+// Checksum 0x0, Offset: 0x10f1
 // Size: 0x6a, Type: bool
 function function_8e06333f166199e3( objweapon )
 {
@@ -584,8 +584,8 @@ function function_8e06333f166199e3( objweapon )
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1137
+// Params 0
+// Checksum 0x0, Offset: 0x1164
 // Size: 0x30
 function function_ff064ef6be86cafd()
 {
@@ -596,8 +596,8 @@ function function_ff064ef6be86cafd()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x116f
+// Params 0
+// Checksum 0x0, Offset: 0x119c
 // Size: 0x28
 function function_b62388feecc84e15()
 {
@@ -608,8 +608,8 @@ function function_b62388feecc84e15()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x119f
+// Params 0
+// Checksum 0x0, Offset: 0x11cc
 // Size: 0x30
 function function_3228d2697dab3222()
 {
@@ -620,8 +620,8 @@ function function_3228d2697dab3222()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d7
+// Params 0
+// Checksum 0x0, Offset: 0x1204
 // Size: 0x5a
 function function_8f57fb80f166c568()
 {
@@ -632,8 +632,8 @@ function function_8f57fb80f166c568()
 }
 
 // Namespace super_suppression_rounds / scripts\mp\supers\super_suppression_rounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1239
+// Params 0
+// Checksum 0x0, Offset: 0x1266
 // Size: 0x2d
 function function_1a941c69ee952e0d()
 {

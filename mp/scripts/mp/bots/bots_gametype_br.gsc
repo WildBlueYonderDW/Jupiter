@@ -16,7 +16,7 @@
 #namespace bots_gametype_br;
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x409
 // Size: 0x8f
 function main()
@@ -57,7 +57,7 @@ function main()
 /#
 
     // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4a0
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -68,7 +68,7 @@ function main()
 #/
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ad
 // Size: 0x2c
 function setup_callbacks()
@@ -78,7 +78,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e1
 // Size: 0x16
 function setup_bot_br()
@@ -87,7 +87,7 @@ function setup_bot_br()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ff
 // Size: 0x10
 function function_543a0a3113ff89f7()
@@ -96,7 +96,7 @@ function function_543a0a3113ff89f7()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x517
 // Size: 0x3d2
 function bot_br_think()
@@ -261,7 +261,7 @@ function bot_br_think()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8f1
 // Size: 0x1c7
 function function_a4091ef2be7e55b0()
@@ -293,7 +293,7 @@ function function_a4091ef2be7e55b0()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xac1
 // Size: 0x1cc
 function bot_parachute_into_map()
@@ -347,7 +347,7 @@ function bot_parachute_into_map()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc95
 // Size: 0xd2
 function bot_get_landing_spot( var_26ba07cc43e5f46 )
@@ -379,7 +379,7 @@ function bot_get_landing_spot( var_26ba07cc43e5f46 )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd70
 // Size: 0x38
 function function_7580ae3d6694d93( spotcandidates )
@@ -390,7 +390,7 @@ function function_7580ae3d6694d93( spotcandidates )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdb1
 // Size: 0x37
 function bot_get_angles_to_goal( bot, goal_origin )
@@ -400,7 +400,7 @@ function bot_get_angles_to_goal( bot, goal_origin )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdf1
 // Size: 0x24
 function bot_get_distance_to_goal( bot, goal_origin )
@@ -409,7 +409,7 @@ function bot_get_distance_to_goal( bot, goal_origin )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe1e
 // Size: 0x1bf
 function bot_give_weapon()
@@ -461,7 +461,7 @@ function bot_give_weapon()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfe5
 // Size: 0xca
 function bot_go_to_destination()
@@ -490,7 +490,7 @@ function bot_go_to_destination()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10b7
 // Size: 0x4e
 function get_destination_in_current_circle()
@@ -508,7 +508,7 @@ function get_destination_in_current_circle()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x110e
 // Size: 0x61
 function get_closest_unclaimed_destination( destinations )
@@ -525,7 +525,7 @@ function get_closest_unclaimed_destination( destinations )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1178
 // Size: 0x1b
 function get_closest_destination( destinations )
@@ -536,7 +536,7 @@ function get_closest_destination( destinations )
 /#
 
     // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x119c
     // Size: 0x3b, Type: dev
     function draw_debug_sphere()
@@ -553,7 +553,7 @@ function get_closest_destination( destinations )
 #/
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11df
 // Size: 0x1e0
 function bot_br_circle_think()
@@ -644,7 +644,7 @@ function bot_br_circle_think()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13c7
 // Size: 0x30
 function path_timeout()
@@ -659,7 +659,7 @@ function path_timeout()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13ff
 // Size: 0x1f3
 function bot_gulag_think()
@@ -717,7 +717,7 @@ function bot_gulag_think()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15fa
 // Size: 0xc6
 function ammo_manager( isdisabled )
@@ -747,7 +747,7 @@ function ammo_manager( isdisabled )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c8
 // Size: 0x3e
 function bot_get_player_enemy()
@@ -768,7 +768,7 @@ function bot_get_player_enemy()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x170f
 // Size: 0x73
 function bots_with_player_enemy()
@@ -792,7 +792,7 @@ function bots_with_player_enemy()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x178b
 // Size: 0x1d
 function function_e858f82b38107a7c( enemy )
@@ -802,7 +802,7 @@ function function_e858f82b38107a7c( enemy )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17b0
 // Size: 0x29
 function function_6465d473e19215e3( dontnotify )
@@ -817,7 +817,7 @@ function function_6465d473e19215e3( dontnotify )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17e1
 // Size: 0xc, Type: bool
 function bot_has_player_enemy()
@@ -826,7 +826,7 @@ function bot_has_player_enemy()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17f6
 // Size: 0xd9
 function get_player_enemy()
@@ -877,7 +877,7 @@ function get_player_enemy()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18d7
 // Size: 0x59
 function get_player()
@@ -892,7 +892,7 @@ function get_player()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1938
 // Size: 0x46
 function update_player_enemy_on_death()
@@ -910,7 +910,7 @@ function update_player_enemy_on_death()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1986
 // Size: 0x8d, Type: bool
 function bot_is_in_gas()
@@ -943,7 +943,7 @@ function bot_is_in_gas()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a1c
 // Size: 0x7b
 function getrandompointincirclewithindistance( maxdistance )
@@ -966,7 +966,7 @@ function getrandompointincirclewithindistance( maxdistance )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aa0
 // Size: 0x4b
 function getrandompointinsafecirclenearby()
@@ -978,7 +978,7 @@ function getrandompointinsafecirclenearby()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1af4
 // Size: 0x85
 function getrandompointincirclenearby()
@@ -1003,7 +1003,7 @@ function getrandompointincirclenearby()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b82
 // Size: 0x36
 function ispointincurrentcircle( point )
@@ -1014,7 +1014,7 @@ function ispointincurrentcircle( point )
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bc1
 // Size: 0x89
 function get_alive_bots()
@@ -1035,7 +1035,7 @@ function get_alive_bots()
 }
 
 // Namespace bots_gametype_br / scripts\mp\bots\bots_gametype_br
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c53
 // Size: 0x41, Type: bool
 function botisonplayerteam( player )

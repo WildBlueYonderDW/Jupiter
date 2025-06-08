@@ -6,7 +6,7 @@
 #namespace agent_common;
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x129
 // Size: 0x76
 function codecallback_agentadded()
@@ -26,7 +26,7 @@ function codecallback_agentadded()
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x1a7
 // Size: 0xd8
 function codecallback_agentdamaged( einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname )
@@ -48,7 +48,7 @@ function codecallback_agentdamaged( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x287
 // Size: 0x7c
 function codecallback_agentimpaled( eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34, var_d3564b2364cb59e6, var_a4d8eb0a63f60f6b )
@@ -60,7 +60,7 @@ function codecallback_agentimpaled( eattacker, objweapon, vpointclient, vpoint, 
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x30b
 // Size: 0x4b
 function function_237dd076563be41f( eattacker, objweapon, vdir, magnitude, shitloc )
@@ -72,7 +72,7 @@ function function_237dd076563be41f( eattacker, objweapon, vdir, magnitude, shitl
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x35e
 // Size: 0xb4
 function codecallback_agentkilled( einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration )
@@ -92,7 +92,7 @@ function codecallback_agentkilled( einflictor, eattacker, idamage, idflags, smea
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41a
 // Size: 0x13
 function codecallback_agentfinishweaponchange( objoldweapon, objnewweapon )
@@ -101,7 +101,7 @@ function codecallback_agentfinishweaponchange( objoldweapon, objnewweapon )
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x435
 // Size: 0x22
 function init()
@@ -113,7 +113,7 @@ function init()
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x45f
 // Size: 0xe0
 function connectnewagent( agent_type, team, class )
@@ -151,7 +151,7 @@ function connectnewagent( agent_type, team, class )
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x548
 // Size: 0x2d
 function initagentlevelvariables()
@@ -166,7 +166,7 @@ function initagentlevelvariables()
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57d
 // Size: 0xbb
 function add_agents_to_game()
@@ -197,7 +197,7 @@ function add_agents_to_game()
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x640
 // Size: 0x1f
 function set_agent_health( health )
@@ -207,7 +207,7 @@ function set_agent_health( health )
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x667
 // Size: 0x12
 function ondeactivate()

@@ -12,7 +12,7 @@
 #namespace jup_ob_enemy_specialist_captain;
 
 // Namespace jup_ob_enemy_specialist_captain / namespace_2bf620b70e54efb1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f5
 // Size: 0x212
 function main()
@@ -59,7 +59,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_specialist_captain / namespace_2bf620b70e54efb1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x50f
 // Size: 0x57
 function setup_model()
@@ -76,7 +76,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_specialist_captain / namespace_2bf620b70e54efb1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56e
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -85,7 +85,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_specialist_captain / namespace_2bf620b70e54efb1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57f
 // Size: 0xcf
 function precache()
@@ -114,7 +114,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_specialist_captain / namespace_2bf620b70e54efb1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x656
 // Size: 0x116
 function setup_weapons()

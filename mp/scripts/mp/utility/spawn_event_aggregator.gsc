@@ -1,7 +1,7 @@
 #namespace spawn_event_aggregator;
 
 // Namespace spawn_event_aggregator / scripts\mp\utility\spawn_event_aggregator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe3
 // Size: 0x22
 function init()
@@ -15,7 +15,7 @@ function init()
 }
 
 // Namespace spawn_event_aggregator / scripts\mp\utility\spawn_event_aggregator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10d
 // Size: 0x31
 function onplayerconnect()
@@ -31,7 +31,7 @@ function onplayerconnect()
 }
 
 // Namespace spawn_event_aggregator / scripts\mp\utility\spawn_event_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146
 // Size: 0x35
 function registeronplayerspawncallback( callback )
@@ -45,7 +45,7 @@ function registeronplayerspawncallback( callback )
 }
 
 // Namespace spawn_event_aggregator / scripts\mp\utility\spawn_event_aggregator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x183
 // Size: 0x65
 function onplayerspawned()

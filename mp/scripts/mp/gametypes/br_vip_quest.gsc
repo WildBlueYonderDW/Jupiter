@@ -27,9 +27,9 @@
 #namespace br_vip_quest;
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x930
-// Size: 0x3ea
+// Params 1
+// Checksum 0x0, Offset: 0x93d
+// Size: 0x406
 function getcontractdata( data )
 {
     level.vipprops = spawnstruct();
@@ -46,7 +46,12 @@ function getcontractdata( data )
     level.var_1ab43167aea344de = [];
     assert( isdefined( game[ "<dev string:x1c>" ] ) );
     game[ "dialog" ][ "hvt_accept" ] = "mstw_grav_tmrr";
-    game[ "dialog" ][ "mission_hvt_accept_first_person" ] = "mstw_grav_plmr";
+    
+    if ( getdvar( @"ui_gametype", "" ) != "limbo" )
+    {
+        game[ "dialog" ][ "mission_hvt_accept_first_person" ] = "mstw_grav_plmr";
+    }
+    
     game[ "dialog" ][ "mission_hvt_success_third_person" ] = "mstw_grav_tmml";
     game[ "dialog" ][ "mission_hvt_success_first_person" ] = "mstw_grav_plrs";
     game[ "dialog" ][ "mission_hvt_success_first_person_crate" ] = "mstw_grav_srwr";
@@ -82,8 +87,8 @@ function getcontractdata( data )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd22
+// Params 0
+// Checksum 0x0, Offset: 0xd4b
 // Size: 0x4, Type: bool
 function function_56efd5b49cf193c6()
 {
@@ -91,8 +96,8 @@ function function_56efd5b49cf193c6()
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2f
+// Params 0
+// Checksum 0x0, Offset: 0xd58
 // Size: 0x268
 function function_91dd8857cc89dc9d()
 {
@@ -132,8 +137,8 @@ function function_91dd8857cc89dc9d()
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9f
+// Params 1
+// Checksum 0x0, Offset: 0xfc8
 // Size: 0x1d
 function function_ca07a6ca5c3c8af5( player )
 {
@@ -144,8 +149,8 @@ function function_ca07a6ca5c3c8af5( player )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc4
+// Params 1
+// Checksum 0x0, Offset: 0xfed
 // Size: 0x36
 function function_f6755bd234f8e261( player )
 {
@@ -159,8 +164,8 @@ function function_f6755bd234f8e261( player )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1002
+// Params 3
+// Checksum 0x0, Offset: 0x102b
 // Size: 0xb1
 function function_83d3732a571f142a( player, oldteam, newteam )
 {
@@ -187,8 +192,8 @@ function function_83d3732a571f142a( player, oldteam, newteam )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10bb
+// Params 3
+// Checksum 0x0, Offset: 0x10e4
 // Size: 0x6b
 function function_75b53ad947495f9c( player, oldteam, newteam )
 {
@@ -202,8 +207,8 @@ function function_75b53ad947495f9c( player, oldteam, newteam )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x112e
+// Params 2
+// Checksum 0x0, Offset: 0x1157
 // Size: 0x22c
 function quest_onplayerkilled( attacker, victim )
 {
@@ -263,8 +268,8 @@ function quest_onplayerkilled( attacker, victim )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1362
+// Params 1
+// Checksum 0x0, Offset: 0x138b
 // Size: 0x7a
 function quest_onplayerdisconnect( player )
 {
@@ -281,8 +286,8 @@ function quest_onplayerdisconnect( player )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e4
+// Params 2
+// Checksum 0x0, Offset: 0x140d
 // Size: 0x58
 function function_18d88924744a578b( player, type )
 {
@@ -297,8 +302,8 @@ function function_18d88924744a578b( player, type )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1444
+// Params 2
+// Checksum 0x0, Offset: 0x146d
 // Size: 0x72
 function function_21a950b07d1782a1( player, agent )
 {
@@ -317,8 +322,8 @@ function function_21a950b07d1782a1( player, agent )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x14be
+// Params 3
+// Checksum 0x0, Offset: 0x14e7
 // Size: 0xb4
 function function_761664d012e7f359( success, results, endstate )
 {
@@ -338,8 +343,8 @@ function function_761664d012e7f359( success, results, endstate )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x157a
+// Params 0
+// Checksum 0x0, Offset: 0x15a3
 // Size: 0xf7
 function function_ca105fbcfd06afe0()
 {
@@ -369,8 +374,8 @@ function function_ca105fbcfd06afe0()
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1679
+// Params 1
+// Checksum 0x0, Offset: 0x16a2
 // Size: 0x3c
 function quest_oncancel( team )
 {
@@ -382,8 +387,8 @@ function quest_oncancel( team )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x16bd
+// Params 3
+// Checksum 0x0, Offset: 0x16e6
 // Size: 0x133
 function function_68046efe0486e9b( contract, instance, team )
 {
@@ -408,8 +413,8 @@ function function_68046efe0486e9b( contract, instance, team )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17f8
+// Params 0
+// Checksum 0x0, Offset: 0x1821
 // Size: 0x69
 function function_a4907641a754c6a8()
 {
@@ -425,8 +430,8 @@ function function_a4907641a754c6a8()
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1869
+// Params 0
+// Checksum 0x0, Offset: 0x1892
 // Size: 0xbf
 function viphud_setupvisibility()
 {
@@ -447,8 +452,8 @@ function viphud_setupvisibility()
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1930
+// Params 1
+// Checksum 0x0, Offset: 0x1959
 // Size: 0x36
 function viphud_showtoplayer( player )
 {
@@ -458,8 +463,8 @@ function viphud_showtoplayer( player )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x196e
+// Params 1
+// Checksum 0x0, Offset: 0x1997
 // Size: 0x1b
 function viphud_hidefromplayer( player )
 {
@@ -468,8 +473,8 @@ function viphud_hidefromplayer( player )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1991
+// Params 0
+// Checksum 0x0, Offset: 0x19ba
 // Size: 0x6a
 function viphud_deletehud()
 {
@@ -482,8 +487,8 @@ function viphud_deletehud()
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a03
+// Params 3
+// Checksum 0x0, Offset: 0x1a2c
 // Size: 0x9d
 function vip_respawnplayer( player, sponsor, var_df2fbb13c226be75 )
 {
@@ -512,8 +517,8 @@ function vip_respawnplayer( player, sponsor, var_df2fbb13c226be75 )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aa8
+// Params 0
+// Checksum 0x0, Offset: 0x1ad1
 // Size: 0x21
 function function_5f352fb76c54705c()
 {
@@ -526,8 +531,8 @@ function function_5f352fb76c54705c()
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad2
+// Params 2
+// Checksum 0x0, Offset: 0x1afb
 // Size: 0x33a
 function function_fb2c20ee6af70024( player, delay )
 {
@@ -558,7 +563,8 @@ function function_fb2c20ee6af70024( player, delay )
     
     if ( level.maxteamsize == 1 && getdvarint( @"hash_eeda2ab8e7d694fb", 1 ) )
     {
-        for (i = 0; i < crate.item_rewards.size; i++) {
+        for ( i = 0; i < crate.item_rewards.size ; i++ )
+        {
             if ( crate.item_rewards[ i ] == "brloot_gulag_token" )
             {
                 crate.item_rewards[ i ] = "brloot_redeploy_token";
@@ -600,8 +606,8 @@ function function_fb2c20ee6af70024( player, delay )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e14
+// Params 1
+// Checksum 0x0, Offset: 0x1e3d
 // Size: 0x1e8
 function function_89dd39b233d0a42d( player )
 {
@@ -663,7 +669,8 @@ function function_89dd39b233d0a42d( player )
         var_28aebe3dd6733ed3 = scripts\mp\gametypes\br_weapons::function_5a80dba504420037( ammoindex );
     }
     
-    for (i = 0; i < level.brgametype.var_18d6d995986ca7be; i++) {
+    for ( i = 0; i < level.brgametype.var_18d6d995986ca7be ; i++ )
+    {
         rewards[ rewards.size ] = var_28aebe3dd6733ed3;
     }
     
@@ -671,8 +678,8 @@ function function_89dd39b233d0a42d( player )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2005
+// Params 1
+// Checksum 0x0, Offset: 0x202e
 // Size: 0x3a
 function function_a7ae732b33f02a88( crate )
 {
@@ -688,8 +695,8 @@ function function_a7ae732b33f02a88( crate )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2047
+// Params 1
+// Checksum 0x0, Offset: 0x2070
 // Size: 0x61
 function function_ca2a33089f625649( origin )
 {
@@ -706,8 +713,8 @@ function function_ca2a33089f625649( origin )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20b0
+// Params 1
+// Checksum 0x0, Offset: 0x20d9
 // Size: 0xf8
 function function_2410e069c697ba3c( player )
 {
@@ -737,8 +744,8 @@ function function_2410e069c697ba3c( player )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21b0
+// Params 1
+// Checksum 0x0, Offset: 0x21d9
 // Size: 0x42
 function function_23bade24ba278b75( player )
 {
@@ -754,8 +761,8 @@ function function_23bade24ba278b75( player )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x21fa
+// Params 2
+// Checksum 0x0, Offset: 0x2223
 // Size: 0x5d
 function function_27a664f8e34cadd7( playerisinvehicle, player )
 {
@@ -778,8 +785,8 @@ function function_27a664f8e34cadd7( playerisinvehicle, player )
 }
 
 // Namespace br_vip_quest / scripts\mp\gametypes\br_vip_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x225f
+// Params 1
+// Checksum 0x0, Offset: 0x2288
 // Size: 0x29
 function function_2d8bc1d8c7610a55( player )
 {

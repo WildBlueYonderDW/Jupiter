@@ -10,7 +10,7 @@
 #namespace zombie_deathworm;
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x173
 // Size: 0x69
 function function_1fa609d0d2a30cf9( params )
@@ -31,7 +31,7 @@ function function_1fa609d0d2a30cf9( params )
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e4
 // Size: 0xa4
 function init_arena()
@@ -54,7 +54,7 @@ function init_arena()
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x290
 // Size: 0x35
 function function_7b4daaf9179c9cee()
@@ -64,7 +64,7 @@ function function_7b4daaf9179c9cee()
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ce
 // Size: 0x35
 function function_674396d03ad1a1fa()
@@ -74,7 +74,7 @@ function function_674396d03ad1a1fa()
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30c
 // Size: 0x35
 function function_ece5be42c1ccbb71()
@@ -84,7 +84,7 @@ function function_ece5be42c1ccbb71()
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34a
 // Size: 0x45
 function function_858422d3879f557f( arena_struct )
@@ -95,7 +95,7 @@ function function_858422d3879f557f( arena_struct )
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x397
 // Size: 0x65, Type: bool
 function function_95d12d803b1f13bb( pos )
@@ -112,7 +112,7 @@ function function_95d12d803b1f13bb( pos )
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x405
 // Size: 0x65, Type: bool
 function function_e82696e7b59178f3( pos )
@@ -129,7 +129,7 @@ function function_e82696e7b59178f3( pos )
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x473
 // Size: 0x8a
 function function_93d1ef5f66691f8b( pos )
@@ -148,7 +148,7 @@ function function_93d1ef5f66691f8b( pos )
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x506
 // Size: 0xd6
 function function_dd196c8614532a7e()
@@ -186,7 +186,7 @@ function function_dd196c8614532a7e()
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e4
 // Size: 0x97
 function function_567352b560bfa797()
@@ -209,7 +209,7 @@ function function_567352b560bfa797()
 }
 
 // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x683
 // Size: 0xcc
 function function_23655a044ca75962( arena_struct )
@@ -247,7 +247,7 @@ function function_23655a044ca75962( arena_struct )
 /#
 
     // Namespace zombie_deathworm / namespace_7762066fd5e7dbe9
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x758
     // Size: 0x2e, Type: dev
     function function_66d4d09bd388ee78()

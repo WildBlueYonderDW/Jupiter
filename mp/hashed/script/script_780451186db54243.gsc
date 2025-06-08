@@ -12,7 +12,7 @@
 #namespace jup_spawner_zombie_base_mutation_mode_mp;
 
 // Namespace jup_spawner_zombie_base_mutation_mode_mp / namespace_457ee4484554dc3f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x240
 // Size: 0x1e6
 function main()
@@ -50,7 +50,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_base_mutation_mode_mp / namespace_457ee4484554dc3f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42e
 // Size: 0x57
 function setup_model()
@@ -67,7 +67,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_base_mutation_mode_mp / namespace_457ee4484554dc3f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48d
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -76,7 +76,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_base_mutation_mode_mp / namespace_457ee4484554dc3f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49e
 // Size: 0x108
 function precache()
@@ -109,7 +109,7 @@ function precache()
 }
 
 // Namespace jup_spawner_zombie_base_mutation_mode_mp / namespace_457ee4484554dc3f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ae
 // Size: 0xd6
 function setup_weapons()

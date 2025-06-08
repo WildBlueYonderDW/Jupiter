@@ -16,6 +16,7 @@
 #using scripts\engine\trace;
 #using scripts\engine\utility;
 #using scripts\mp\carriable;
+#using scripts\mp\class;
 #using scripts\mp\equipment\molotov;
 #using scripts\mp\flags;
 #using scripts\mp\gamelogic;
@@ -57,8 +58,8 @@
 #namespace namespace_3db0584c4c3b350b;
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb54
+// Params 0
+// Checksum 0x0, Offset: 0xd74
 // Size: 0x4a
 function init()
 {
@@ -74,8 +75,8 @@ function init()
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xba6
+// Params 2
+// Checksum 0x0, Offset: 0xdc6
 // Size: 0x43
 function function_dd5235ea93f4af20( command, args )
 {
@@ -90,8 +91,8 @@ function function_dd5235ea93f4af20( command, args )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf1
+// Params 1
+// Checksum 0x0, Offset: 0xe11
 // Size: 0x96
 function devscriptedtests( args )
 {
@@ -115,9 +116,9 @@ function devscriptedtests( args )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8f
-// Size: 0x86
+// Params 0
+// Checksum 0x0, Offset: 0xeaf
+// Size: 0x103
 function getspawnlocations()
 {
     if ( scripts\cp_mp\utility\game_utility::isdonetskmap() )
@@ -125,11 +126,17 @@ function getspawnlocations()
         spawnlocations = [ scripts\mp\gametypes\br::createspawnlocation( ( -21500, 46200, -300 ), 0, 6000 ), scripts\mp\gametypes\br::createspawnlocation( ( 51000, -39000, 1401 ), 0, 4000 ), scripts\mp\gametypes\br::createspawnlocation( ( 32000, 40000, 767 ), 0, 5500 ), scripts\mp\gametypes\br::createspawnlocation( ( 23000, -15000, -158 ), 0, 6000 ) ];
         return spawnlocations;
     }
+    
+    if ( scripts\cp_mp\utility\game_utility::function_eb4bce9b222e36ac() )
+    {
+        spawnlocations = [ scripts\mp\gametypes\br::createspawnlocation( ( 26889.1, -30035.3, 3497.65 ), 0, 6000 ), scripts\mp\gametypes\br::createspawnlocation( ( 37200, 30506.6, 1760.46 ), 0, 4000 ), scripts\mp\gametypes\br::createspawnlocation( ( -29611.7, 35197, 1376.12 ), 0, 5500 ), scripts\mp\gametypes\br::createspawnlocation( ( -24496.6, -27294.2, 1700.23 ), 0, 6000 ) ];
+        return spawnlocations;
+    }
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd1d
+// Params 0
+// Checksum 0x0, Offset: 0xfba
 // Size: 0x1c1
 function function_d721ba3a92dffd4c()
 {
@@ -162,9 +169,9 @@ function function_d721ba3a92dffd4c()
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xee6
-// Size: 0xc9
+// Params 0
+// Checksum 0x0, Offset: 0x1183
+// Size: 0x109
 function function_8032016446156bad()
 {
     scripts\mp\flags::gameflagset( "prematch_done" );
@@ -178,18 +185,23 @@ function function_8032016446156bad()
     level.ignorescoring = 0;
     level.allowprematchdamage = 1;
     level.ingraceperiod = 0;
+    level.var_82a0e660e66306dc = undefined;
     setdvar( @"hash_c2de8ca6dc8512c1", 1 );
     setdvar( @"br_minplayers", 150 );
-    setdvar( @"hash_cb2d56d085e5a9b9", 150 );
+    setdvar( @"live_lobby_minplayers_start", 150 );
     setdvar( @"hash_2c879521333c4987", 0 );
+    setdvar( @"live_lobby_max_time", 0 );
+    setdvar( @"hash_4ce07ca6680c1333", 0 );
     level.var_c3a1ed2db43ce5a = 3;
+    level.br_debugsolotest = 0;
     scripts\mp\spawnlogic::function_182c52d5da69684d();
+    scripts\mp\flags::gameflagset( "prematch_fade_done" );
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb7
-// Size: 0x15f
+// Params 0
+// Checksum 0x0, Offset: 0x1294
+// Size: 0x18b
 function resetplayers()
 {
     foreach ( player in level.players )
@@ -214,21 +226,33 @@ function resetplayers()
         player.gulagholding = undefined;
         player.var_4af73ce40a5d8572 = undefined;
         player notify( "gulag_end" );
+        player notify( "gulag_auto_win" );
         player notify( "last_stand_start" );
         player scripts\mp\laststand::finishreviveplayer( "self_revive_success", player );
-        player setstance( "stand" );
+        
+        if ( player getstance() != "stand" )
+        {
+            player setstance( "stand" );
+        }
+        
         player setallstreamloaddist( 0 );
         player.setspawnpoint = undefined;
         optparams = spawnstruct();
         optparams.var_fb551788da0fc531 = 0;
         player scripts\mp\gametypes\br_gulag::playerrespawngulagcleanup( optparams );
-        player scripts\mp\gametypes\br_gulag::playergulagarenaready();
+        
+        if ( isdefined( level.gulag ) )
+        {
+            player scripts\mp\gametypes\br_gulag::playergulagarenaready();
+        }
+        
+        player scripts\mp\gametypes\br_spectate::playerclearspectatekillchainsystem();
     }
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x111e
+// Params 0
+// Checksum 0x0, Offset: 0x1427
 // Size: 0xa1
 function resetcircles()
 {
@@ -243,8 +267,8 @@ function resetcircles()
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c7
+// Params 1
+// Checksum 0x0, Offset: 0x14d0
 // Size: 0x248
 function spawnteams( args )
 {
@@ -260,7 +284,8 @@ function spawnteams( args )
     count = 0;
     level.var_e1e5bac199d37317 = [];
     
-    for (i = 0; i < level.teamnamelist.size; i++) {
+    for ( i = 0; i < level.teamnamelist.size ; i++ )
+    {
         team = level.teamnamelist[ i ];
         
         if ( team != host.team )
@@ -277,18 +302,21 @@ function spawnteams( args )
     
     reviveteam( host, host.team );
     
-    for (i = 0; i < var_e2d2256d6f8ba785; i++) {
+    for ( i = 0; i < var_e2d2256d6f8ba785 ; i++ )
+    {
         reviveteam( host, level.var_e1e5bac199d37317[ i ] );
     }
     
     level.var_84931945e7b207 = getteamspawnbots( host, host.team );
     level.var_cc15d00c0dfbf14e = [];
     
-    for (i = 0; i < var_e2d2256d6f8ba785; i++) {
+    for ( i = 0; i < var_e2d2256d6f8ba785 ; i++ )
+    {
         level.var_cc15d00c0dfbf14e[ i ] = getteamspawnbots( host, level.var_e1e5bac199d37317[ i ] );
     }
     
-    for (i = 0; i < level.var_84931945e7b207.size; i++) {
+    for ( i = 0; i < level.var_84931945e7b207.size ; i++ )
+    {
         player1 = level.var_84931945e7b207[ i ];
         spawnorigin = player1.origin;
         
@@ -299,7 +327,8 @@ function spawnteams( args )
         
         player1 playerteleporttoloc( spawnorigin, 0 );
         
-        for (slotindex = 0; slotindex < var_e2d2256d6f8ba785; slotindex++) {
+        for ( slotindex = 0; slotindex < var_e2d2256d6f8ba785 ; slotindex++ )
+        {
             nextplayer = level.var_cc15d00c0dfbf14e[ slotindex ][ i ];
             nextplayer playerteleporttoloc( spawnorigin, slotindex + 1 );
         }
@@ -312,8 +341,8 @@ function spawnteams( args )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1418
+// Params 2
+// Checksum 0x0, Offset: 0x1721
 // Size: 0xcf
 function playerteleporttoloc( spawnorigin, posindex )
 {
@@ -347,8 +376,8 @@ function playerteleporttoloc( spawnorigin, posindex )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ef
+// Params 2
+// Checksum 0x0, Offset: 0x17f8
 // Size: 0x15b
 function reviveteam( host, team )
 {
@@ -390,8 +419,8 @@ function reviveteam( host, team )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1652
+// Params 2
+// Checksum 0x0, Offset: 0x195b
 // Size: 0x10a
 function getteamspawnbots( host, team )
 {
@@ -422,15 +451,16 @@ function getteamspawnbots( host, team )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1765
+// Params 0
+// Checksum 0x0, Offset: 0x1a6e
 // Size: 0xe0
 function botcallback()
 {
     team = self.bot_team;
     players = level.teamdata[ team ][ "players" ];
     
-    for (i = 0; i < level.maxteamsize; i++) {
+    for ( i = 0; i < level.maxteamsize ; i++ )
+    {
         validindex = 1;
         
         foreach ( player in players )
@@ -456,8 +486,8 @@ function botcallback()
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x184d
+// Params 2
+// Checksum 0x0, Offset: 0x1b56
 // Size: 0x53
 function addbots( numbots, team )
 {
@@ -475,8 +505,8 @@ function addbots( numbots, team )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18a8
+// Params 1
+// Checksum 0x0, Offset: 0x1bb1
 // Size: 0xb5
 function spawnclientdevtest( revivespawn )
 {
@@ -503,8 +533,17 @@ function spawnclientdevtest( revivespawn )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1965
+// Params 0
+// Checksum 0x0, Offset: 0x1c6e
+// Size: 0xd
+function function_954dd6e60394e2f4()
+{
+    level.br_debugsolotest = 1;
+}
+
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
+// Params 1
+// Checksum 0x0, Offset: 0x1c83
 // Size: 0x15
 function function_df49f9975e17b225( value )
 {
@@ -512,8 +551,8 @@ function function_df49f9975e17b225( value )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1982
+// Params 1
+// Checksum 0x0, Offset: 0x1ca0
 // Size: 0x2b
 function disconnectbot( botplayer )
 {
@@ -522,8 +561,8 @@ function disconnectbot( botplayer )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b5
+// Params 2
+// Checksum 0x0, Offset: 0x1cd3
 // Size: 0x92
 function killplayer( victim, var_25012cdc0dfdc53f )
 {
@@ -547,8 +586,8 @@ function killplayer( victim, var_25012cdc0dfdc53f )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a50
+// Params 3
+// Checksum 0x0, Offset: 0x1d6e
 // Size: 0xac
 function killplayerinstant( victim, var_25012cdc0dfdc53f, keeplaststand )
 {
@@ -585,8 +624,8 @@ function killplayerinstant( victim, var_25012cdc0dfdc53f, keeplaststand )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b05
+// Params 2
+// Checksum 0x0, Offset: 0x1e23
 // Size: 0x9b
 function putinlaststand( player, var_25012cdc0dfdc53f )
 {
@@ -617,8 +656,8 @@ function putinlaststand( player, var_25012cdc0dfdc53f )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ba9
+// Params 2
+// Checksum 0x0, Offset: 0x1ec7
 // Size: 0x2aa
 function scriptcircleat( origin, radius )
 {
@@ -656,8 +695,8 @@ function scriptcircleat( origin, radius )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e5b
+// Params 2
+// Checksum 0x0, Offset: 0x2179
 // Size: 0x2b
 function setnumteams( args, numteams )
 {
@@ -671,8 +710,8 @@ function setnumteams( args, numteams )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e8f
+// Params 2
+// Checksum 0x0, Offset: 0x21ad
 // Size: 0x9c
 function getnearbyaliveplayer( org, players )
 {
@@ -691,7 +730,8 @@ function getnearbyaliveplayer( org, players )
     
     aliveplayer = undefined;
     
-    for (i = 1; i < players.size; i++) {
+    for ( i = 1; i < players.size ; i++ )
+    {
         player = players[ i ];
         
         if ( isalive( player ) )
@@ -705,8 +745,8 @@ function getnearbyaliveplayer( org, players )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f34
+// Params 2
+// Checksum 0x0, Offset: 0x2252
 // Size: 0x61, Type: bool
 function argshave( args, token )
 {
@@ -722,8 +762,8 @@ function argshave( args, token )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f9e
+// Params 1
+// Checksum 0x0, Offset: 0x22bc
 // Size: 0x14a
 function gethost( args )
 {
@@ -771,8 +811,8 @@ function gethost( args )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20f1
+// Params 0
+// Checksum 0x0, Offset: 0x240f
 // Size: 0x76
 function playerstartrecondronewait()
 {
@@ -791,8 +831,8 @@ function playerstartrecondronewait()
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x216f
+// Params 2
+// Checksum 0x0, Offset: 0x248d
 // Size: 0x1c
 function waitandsuicide( delaytime, player )
 {
@@ -801,8 +841,8 @@ function waitandsuicide( delaytime, player )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2193
+// Params 0
+// Checksum 0x0, Offset: 0x24b1
 // Size: 0x68
 function onprematchstarted2()
 {
@@ -824,8 +864,8 @@ function onprematchstarted2()
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2203
+// Params 0
+// Checksum 0x0, Offset: 0x2521
 // Size: 0x185
 function onprematchfadedone2()
 {
@@ -881,8 +921,8 @@ function onprematchfadedone2()
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2390
+// Params 3
+// Checksum 0x0, Offset: 0x26ae
 // Size: 0x216
 function function_53aa698b2205a4c3( player, scriptablename, spawnpos )
 {
@@ -932,9 +972,9 @@ function function_53aa698b2205a4c3( player, scriptablename, spawnpos )
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x25af
-// Size: 0x3959
+// Params 4
+// Checksum 0x0, Offset: 0x28cd
+// Size: 0x4d65
 function runtests( args, host, hostteammates, enemyteammates )
 {
     if ( argshave( args, "killcam1" ) || argshave( args, "killchain" ) || argshave( args, "disconnect1" ) || argshave( args, "disconnect2" ) || argshave( args, "disconnect3" ) )
@@ -983,7 +1023,8 @@ function runtests( args, host, hostteammates, enemyteammates )
     
     if ( argshave( args, "killchain" ) )
     {
-        for (playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ); playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer()) {
+        for ( playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ) ; playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer() )
+        {
             waitframe();
         }
         
@@ -994,7 +1035,8 @@ function runtests( args, host, hostteammates, enemyteammates )
     
     if ( argshave( args, "killchain" ) )
     {
-        for (playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ); playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer()) {
+        for ( playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ) ; playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer() )
+        {
             waitframe();
         }
         
@@ -1005,7 +1047,8 @@ function runtests( args, host, hostteammates, enemyteammates )
     
     if ( argshave( args, "killchain" ) )
     {
-        for (playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ); playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer()) {
+        for ( playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ) ; playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer() )
+        {
             waitframe();
         }
         
@@ -1016,7 +1059,8 @@ function runtests( args, host, hostteammates, enemyteammates )
     
     if ( argshave( args, "killchain" ) )
     {
-        for (playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ); playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer()) {
+        for ( playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ) ; playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer() )
+        {
             waitframe();
         }
         
@@ -1027,7 +1071,8 @@ function runtests( args, host, hostteammates, enemyteammates )
     
     if ( argshave( args, "killchain" ) )
     {
-        for (playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ); playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer()) {
+        for ( playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer(); !isdefined( playertospectate ) ; playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer() )
+        {
             waitframe();
         }
         
@@ -1086,7 +1131,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             waitframe();
         }
         
-        wait 5;
+        wait 10;
         
         if ( argshave( args, "gulag2" ) )
         {
@@ -1161,7 +1206,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             waitframe();
         }
         
-        wait 5;
+        wait 10;
         killplayer( host, enemy );
         setdvar( @"hash_e5f703a38f6e8043", 90 );
     }
@@ -1258,7 +1303,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             waitframe();
         }
         
-        wait 5;
+        wait 10;
         setdvar( @"hash_e43719f8cb449c07", 1 );
         killplayer( gulagenemy, gulagplayer );
         
@@ -1268,7 +1313,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             wait 1;
         }
         
-        wait 5;
+        wait 10;
         setdvar( @"hash_e43719f8cb449c07", 0 );
     }
     
@@ -1344,7 +1389,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             waitframe();
         }
         
-        wait 5;
+        wait 10;
         setdvar( @"hash_e43719f8cb449c07", 1 );
         setdvar( @"hash_2c879521333c4987", 3 );
         killplayer( host, enemy );
@@ -1400,7 +1445,7 @@ function runtests( args, host, hostteammates, enemyteammates )
         scripts\mp\gametypes\br_gulag::shutdowngulag( "circle_index", 0 );
         wait 1;
         host scripts\mp\laststand::finishreviveplayer( "self_revive_success", host );
-        wait 5;
+        wait 10;
         killplayer( host, enemyteammates[ 0 ] );
     }
     
@@ -1470,7 +1515,8 @@ function runtests( args, host, hostteammates, enemyteammates )
         dir = anglestoforward( player.angles );
         amount = getdvarint( @"testforward", 5 );
         
-        for (spectatingplayer = host getspectatingplayer(); !isdefined( spectatingplayer ); spectatingplayer = host getspectatingplayer()) {
+        for ( spectatingplayer = host getspectatingplayer(); !isdefined( spectatingplayer ) ; spectatingplayer = host getspectatingplayer() )
+        {
             nextorg = player.origin + dir * amount;
             player setorigin( nextorg );
             waitframe();
@@ -1725,7 +1771,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             waitframe();
         }
         
-        wait 5;
+        wait 10;
         killplayerinstant( playera, [] );
         
         while ( !isdefined( playera getspectatingplayer() ) )
@@ -1768,7 +1814,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             waitframe();
         }
         
-        wait 5;
+        wait 10;
         setdvar( @"hash_2c879521333c4987", 3 );
         killplayerinstant( playerb, [] );
         playerc scripts\mp\gametypes\br_pickups::addrespawntoken( 1 );
@@ -1807,7 +1853,7 @@ function runtests( args, host, hostteammates, enemyteammates )
         scripts\mp\gametypes\br_gulag::shutdowngulag( "circle_index", 0 );
         wait 1;
         host scripts\mp\laststand::finishreviveplayer( "self_revive_success", host );
-        wait 5;
+        wait 10;
         killplayer( host, enemyteammates[ 0 ] );
     }
     
@@ -1819,7 +1865,7 @@ function runtests( args, host, hostteammates, enemyteammates )
         wait 2;
         hostteammates[ 2 ] function_df49f9975e17b225( 0 );
         killplayerinstant( hostteammates[ 2 ], enemyteammates[ 0 ] );
-        wait 5;
+        wait 10;
         host function_df49f9975e17b225( 0 );
         killplayerinstant( host, enemyteammates[ 0 ] );
     }
@@ -1855,7 +1901,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             waitframe();
         }
         
-        wait 5;
+        wait 10;
         killplayerinstant( enemy1, host );
     }
     
@@ -1902,7 +1948,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             waitframe();
         }
         
-        wait 5;
+        wait 10;
         killplayerinstant( friendly1, enemy2 );
     }
     
@@ -1951,7 +1997,8 @@ function runtests( args, host, hostteammates, enemyteammates )
         curxoffset = 0;
         curyoffset = 0;
         
-        for (var_338deefd32d7ae30 = 0; true; var_338deefd32d7ae30 = 0) {
+        for ( var_338deefd32d7ae30 = 0; true ; var_338deefd32d7ae30 = 0 )
+        {
             dropinfo = getitemdropinfo( startorigin + ( curxoffset, curyoffset, 0 ), startangles );
             spawnpickup( "brloot_self_revive", dropinfo );
             var_338deefd32d7ae30++;
@@ -2240,7 +2287,7 @@ function runtests( args, host, hostteammates, enemyteammates )
             waitframe();
         }
         
-        wait 5;
+        wait 10;
         teammate = scripts\mp\gametypes\br_twotwo_gulag::function_1bd32287885bb933( host );
         host iprintlnbold( "END ARENA" );
         host.arena notify( "matchEnded" );
@@ -2835,9 +2882,340 @@ function runtests( args, host, hostteammates, enemyteammates )
             level.var_7494af60dff9dc61 += 30;
         }
         
-        for (i = 0; i < numtospawn; i++) {
+        for ( i = 0; i < numtospawn ; i++ )
+        {
             function_53aa698b2205a4c3( host, "brloot_self_revive", host.origin + i * ( 30, 0, 0 ) + ( 0, level.var_7494af60dff9dc61, 0 ) );
         }
+    }
+    
+    if ( argshave( args, "death_disconnect" ) )
+    {
+        killplayer( host, enemyteammates[ 0 ] );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        wait 3;
+        playertospectate = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        killplayer( playertospectate, enemyteammates[ 0 ] );
+        
+        while ( !isdefined( host.playertospectate ) )
+        {
+            waitframe();
+        }
+        
+        waitframe();
+        playertospectate = host.playertospectate;
+        disconnectbot( playertospectate );
+    }
+    
+    if ( argshave( args, "inflation" ) )
+    {
+        foreach ( player in level.players )
+        {
+            player.br_infilstarted = 1;
+            player scripts\mp\gametypes\br_plunder::playerplunderpickup( 500 );
+        }
+    }
+    
+    if ( argshave( args, "afk_disconnect" ) )
+    {
+        foreach ( player in level.players )
+        {
+            player.br_infilstarted = 1;
+        }
+        
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly1 );
+        disconnectbot( friendly2 );
+        disconnectbot( var_c5f4ef006985c601 );
+        disconnectbot( var_c5f4ec006985bf68 );
+        disconnectbot( var_c5f067006980a512 );
+        disconnectbot( var_c5f066006980a2df );
+        killplayer( host, var_c5f4ed006985c19b );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        
+        foreach ( player in level.players )
+        {
+            if ( isalive( player ) )
+            {
+                player scripts\mp\gametypes\br_plunder::playerplunderpickup( 500 );
+            }
+        }
+        
+        wait 10;
+        playerspectating = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        kick( playerspectating getentitynumber(), "EXE/PLAYERKICKED_INACTIVE", 1 );
+    }
+    
+    if ( argshave( args, "spectate_death_respawn" ) )
+    {
+        foreach ( player in level.players )
+        {
+            player.br_infilstarted = 1;
+        }
+        
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly1 );
+        disconnectbot( friendly2 );
+        disconnectbot( var_c5f4ef006985c601 );
+        disconnectbot( var_c5f4ec006985bf68 );
+        disconnectbot( var_c5f067006980a512 );
+        disconnectbot( var_c5f066006980a2df );
+        killplayer( host, var_c5f4ed006985c19b );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        
+        foreach ( player in level.players )
+        {
+            if ( isalive( player ) )
+            {
+                player scripts\mp\gametypes\br_plunder::playerplunderpickup( 500 );
+            }
+        }
+        
+        wait 10;
+        playerspectating = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        killer = var_c5f4ed006985c19b;
+        
+        if ( playerspectating == killer )
+        {
+            killer = var_c5f065006980a0ac;
+        }
+        
+        killplayer( playerspectating, killer );
+    }
+    
+    if ( argshave( args, "spectate_death_respawn2" ) )
+    {
+        function_954dd6e60394e2f4();
+        
+        foreach ( player in level.players )
+        {
+            player.br_infilstarted = 1;
+        }
+        
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly1 );
+        disconnectbot( friendly2 );
+        disconnectbot( var_c5f4ef006985c601 );
+        disconnectbot( var_c5f4ec006985bf68 );
+        disconnectbot( var_c5f067006980a512 );
+        disconnectbot( var_c5f066006980a2df );
+        killplayer( host, var_c5f4ed006985c19b );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        
+        foreach ( player in level.players )
+        {
+            if ( isalive( player ) )
+            {
+                player scripts\mp\gametypes\br_plunder::playerplunderpickup( 500 );
+            }
+        }
+        
+        wait 10;
+        playerspectating = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        killer = var_c5f4ed006985c19b;
+        
+        if ( playerspectating == killer )
+        {
+            killer = var_c5f065006980a0ac;
+        }
+        
+        killplayer( playerspectating, killer );
+        wait getdvarfloat( @"hash_588637cb5b2cb459", 5 );
+        disconnectbot( playerspectating );
+    }
+    
+    if ( argshave( args, "spectate_death_respawn3" ) )
+    {
+        function_954dd6e60394e2f4();
+        
+        foreach ( player in level.players )
+        {
+            player.br_infilstarted = 1;
+        }
+        
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly1 );
+        disconnectbot( friendly2 );
+        disconnectbot( var_c5f4ef006985c601 );
+        disconnectbot( var_c5f4ec006985bf68 );
+        disconnectbot( var_c5f067006980a512 );
+        disconnectbot( var_c5f066006980a2df );
+        host.br_infilstarted = 0;
+        host.respawndelay = 1000000;
+        killplayer( host, var_c5f4ed006985c19b );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        wait 10;
+        playerspectating = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        killer = var_c5f4ed006985c19b;
+        
+        if ( playerspectating == killer )
+        {
+            killer = var_c5f065006980a0ac;
+        }
+        
+        killplayer( playerspectating, killer );
+        wait getdvarfloat( @"hash_588637cb5b2cb459", 10 );
+        disconnectbot( playerspectating );
+    }
+    
+    if ( argshave( args, "spectate_death_matchend" ) )
+    {
+        foreach ( player in level.players )
+        {
+            player.br_infilstarted = 1;
+        }
+        
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly1 );
+        disconnectbot( friendly2 );
+        disconnectbot( var_c5f4ef006985c601 );
+        disconnectbot( var_c5f4ec006985bf68 );
+        disconnectbot( var_c5f067006980a512 );
+        disconnectbot( var_c5f066006980a2df );
+        killplayer( host, var_c5f4ed006985c19b );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        
+        foreach ( player in level.players )
+        {
+            if ( isalive( player ) )
+            {
+                player scripts\mp\gametypes\br_plunder::playerplunderpickup( 500 );
+            }
+        }
+        
+        wait getdvarfloat( @"hash_588637cb5b2cb459", 10 );
+        playerspectating = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        playerspectating.br_infilstarted = 0;
+        killer = var_c5f4ed006985c19b;
+        
+        if ( playerspectating == killer )
+        {
+            killer = var_c5f065006980a0ac;
+        }
+        
+        killplayer( playerspectating, killer );
+    }
+    
+    if ( argshave( args, "respawn_token" ) )
+    {
+        function_954dd6e60394e2f4();
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly1 );
+        disconnectbot( friendly2 );
+        killplayer( host, var_c5f4ed006985c19b );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        wait getdvarfloat( @"hash_588637cb5b2cb459", 10 );
+        playerspectating = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        killer = var_c5f4ed006985c19b;
+        
+        if ( playerspectating == killer )
+        {
+            killer = var_c5f065006980a0ac;
+        }
+        
+        playerspectating scripts\mp\gametypes\br_pickups::addrespawntoken();
+        playerspectating.br_infilstarted = 1;
+        killplayer( playerspectating, killer );
     }
     
     if ( argshave( args, "ui_squad_widget_test" ) )
@@ -2850,7 +3228,8 @@ function runtests( args, host, hostteammates, enemyteammates )
         friendly1 function_df49f9975e17b225( 1 );
         friendly2 function_df49f9975e17b225( 1 );
         
-        for (i = 0; i < 11; i++) {
+        for ( i = 0; i < 11 ; i++ )
+        {
             friendly1 scripts\mp\gametypes\br_pickups::br_forcegivecustompickupitem( friendly1, "brloot_armor_plate", 1 );
             friendly2 scripts\mp\gametypes\br_pickups::br_forcegivecustompickupitem( friendly2, "brloot_armor_plate", 1 );
             wait 0.25;
@@ -2882,11 +3261,361 @@ function runtests( args, host, hostteammates, enemyteammates )
             thread scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_enter( level.var_bce6d38bf86a8328, "driver", friendly2, undefined, 1 );
         }
     }
+    
+    if ( argshave( args, "respawn_token_solo" ) )
+    {
+        function_954dd6e60394e2f4();
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly1 );
+        disconnectbot( friendly2 );
+        disconnectbot( var_c5f4ef006985c601 );
+        disconnectbot( var_c5f4ec006985bf68 );
+        disconnectbot( var_c5f067006980a512 );
+        disconnectbot( var_c5f066006980a2df );
+        killplayer( host, var_c5f4ed006985c19b );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        wait getdvarfloat( @"hash_588637cb5b2cb459", 10 );
+        playerspectating = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        killer = var_c5f4ed006985c19b;
+        
+        if ( playerspectating == killer )
+        {
+            killer = var_c5f065006980a0ac;
+        }
+        
+        playerspectating scripts\mp\gametypes\br_pickups::addrespawntoken();
+        playerspectating.br_infilstarted = 1;
+        killplayer( playerspectating, killer );
+    }
+    
+    if ( argshave( args, "respawn_token_friendly" ) )
+    {
+        function_954dd6e60394e2f4();
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly1 );
+        killplayer( host, var_c5f4ed006985c19b );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        wait getdvarfloat( @"hash_588637cb5b2cb459", 10 );
+        playerspectating = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        killer = var_c5f4ed006985c19b;
+        
+        if ( playerspectating == killer )
+        {
+            killer = var_c5f065006980a0ac;
+        }
+        
+        playerspectating scripts\mp\gametypes\br_pickups::addrespawntoken();
+        playerspectating.br_infilstarted = 1;
+        killplayer( playerspectating, killer );
+    }
+    
+    if ( argshave( args, "go_again_gulag" ) )
+    {
+        function_954dd6e60394e2f4();
+        setdvar( @"hash_e5f703a38f6e8043", 9999 );
+        level.gulag.eventinfo.chance = 1;
+        
+        foreach ( event in level.gulag.eventinfo.events )
+        {
+            if ( event.settings.ref == "go_again" )
+            {
+                event.weight = 10000;
+                break;
+            }
+        }
+        
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly2 );
+        wait 2;
+        killplayer( host, var_c5f4ef006985c601 );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        friendly = host scripts\mp\gametypes\br_spectate::playergetspectatingplayer();
+        wait 2;
+        var_c5f4ef006985c601.br_infilstarted = 1;
+        friendly.br_infilstarted = 1;
+        killplayer( var_c5f4ef006985c601, friendly );
+        killplayer( friendly, var_c5f4ed006985c19b );
+        
+        while ( !istrue( friendly.gulagarena ) && !istrue( var_c5f4ef006985c601.gulagarena ) )
+        {
+            waitframe();
+        }
+        
+        var_c5f4ec006985bf68.br_infilstarted = 1;
+        killplayer( var_c5f4ec006985bf68, var_c5f067006980a512 );
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        wait 2;
+        killplayer( friendly, var_c5f4ef006985c601 );
+        
+        while ( !istrue( friendly.gulagarena ) && !istrue( var_c5f4ec006985bf68.gulagarena ) )
+        {
+            waitframe();
+        }
+        
+        scripts\mp\gametypes\br_spectate::waittillspectating( host );
+        wait 2;
+        
+        if ( getdvarint( @"hash_8e395c0720703044", 1 ) )
+        {
+            killplayer( friendly, var_c5f4ec006985bf68 );
+        }
+        else
+        {
+            killplayer( var_c5f4ec006985bf68, friendly );
+        }
+        
+        setdvar( @"hash_e5f703a38f6e8043", 90 );
+    }
+    
+    if ( argshave( args, "dropItems" ) )
+    {
+        function_954dd6e60394e2f4();
+        function_141f14f3a7ba86b2();
+        wait 5;
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        player = friendly1;
+        player.pers[ "gamemodeLoadout" ] = level.gulagloadouts[ 0 ];
+        struct = player scripts\mp\class::loadout_getclassstruct();
+        struct = player scripts\mp\class::loadout_updateclass( struct, "gamemode" );
+        player scripts\mp\class::preloadandqueueclassstruct( struct, 1, 1 );
+        player scripts\mp\class::giveloadout( player.team, "gamemode", 0, 0 );
+        player br_ammo_player_max_out();
+        player scripts\mp\gametypes\br_plunder::playersetplundercount( 0 );
+        br_forcegivecustompickupitem( player, "brloot_armor_plate", 1, 3 );
+        player br_plunder::playerplunderpickup( 5000 );
+        br_forcegivecustompickupitem( player, "brloot_equip_gasmask", 1 );
+        br_forcegivecustompickupitem( player, "brloot_self_revive", 1 );
+        br_forcegivecustompickupitem( player, "brloot_killstreak_uav_bigmap", 1 );
+        br_forcegivecustompickupitem( player, "brloot_offhand_atmine", 1 );
+        br_forcegivecustompickupitem( player, "brloot_offhand_flash", 1 );
+        br_forcegivecustompickupitem( player, "brloot_super_munitionsbox", 1 );
+        br_forcegivecustompickupitem( player, "brloot_perkpack_airman_jup", 1 );
+        br_forcegivecustompickupitem( player, "brloot_offhand_flash", 1 );
+        br_forcegivecustompickupitem( player, "brloot_offhand_flash", 1 );
+        br_forcegivecustompickupitem( player, "brloot_offhand_flash", 1 );
+        br_forcegivecustompickupitem( player, "brloot_offhand_flash", 1 );
+        br_forcegivecustompickupitem( player, "brloot_offhand_flash", 1 );
+        br_forcegivecustompickupitem( player, "brloot_offhand_flash", 1 );
+        wait 3;
+        killplayerinstant( friendly1, enemyteammates[ 0 ][ 0 ] );
+    }
+    
+    if ( argshave( args, "dropItemsEveryone" ) )
+    {
+        function_954dd6e60394e2f4();
+        function_141f14f3a7ba86b2();
+        wait 5;
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        foreach ( player in level.players )
+        {
+            player.pers[ "gamemodeLoadout" ] = level.gulagloadouts[ 0 ];
+            struct = player scripts\mp\class::loadout_getclassstruct();
+            struct = player scripts\mp\class::loadout_updateclass( struct, "gamemode" );
+            player scripts\mp\class::preloadandqueueclassstruct( struct, 1, 1 );
+            player scripts\mp\class::giveloadout( player.team, "gamemode", 0, 0 );
+            player br_ammo_player_max_out();
+            player scripts\mp\gametypes\br_plunder::playersetplundercount( 0 );
+            br_forcegivecustompickupitem( player, "brloot_armor_plate", 1, 3 );
+            player br_plunder::playerplunderpickup( 5000 );
+            br_forcegivecustompickupitem( player, "brloot_equip_gasmask", 1 );
+            br_forcegivecustompickupitem( player, "brloot_self_revive", 1 );
+            br_forcegivecustompickupitem( player, "brloot_killstreak_uav_bigmap", 1 );
+            br_forcegivecustompickupitem( player, "brloot_offhand_atmine", 1 );
+            br_forcegivecustompickupitem( player, "brloot_offhand_flash", 1 );
+            br_forcegivecustompickupitem( player, "brloot_super_munitionsbox", 1 );
+            br_forcegivecustompickupitem( player, "brloot_perkpack_airman_jup", 1 );
+        }
+        
+        wait 3;
+        
+        foreach ( player in level.players )
+        {
+            if ( player != host )
+            {
+                enemy = host;
+                
+                if ( player.team == host.team )
+                {
+                    enemy = enemyteammates[ 0 ][ 0 ];
+                }
+                
+                thread killplayerinstant( player, enemy );
+            }
+        }
+    }
+    
+    if ( argshave( args, "enemy_turret" ) )
+    {
+        function_954dd6e60394e2f4();
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        gunner = var_c5f4ef006985c601;
+        
+        /#
+            if ( !isdefined( level.testvehicle ) )
+            {
+                spawnposition = gunner.origin + ( 1000, 0, 100 );
+                spawnangles = gunner.angles * ( 0, 1, 0 );
+                vehicle = undefined;
+                seatid = undefined;
+                spawndata = spawnstruct();
+                spawndata.origin = spawnposition;
+                spawndata.angles = spawnangles;
+                spawndata.spawntype = "<dev string:x81>";
+                [ level.testvehicle, seatid ] = scripts\cp_mp\vehicles\vehicle::function_84033ce50b8afce2( "<dev string:x8b>", spawndata );
+            }
+            
+            thread scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_enter( level.testvehicle, "<dev string:x9b>", gunner, undefined, 1 );
+        #/
+    }
+    
+    if ( argshave( args, "switchblade" ) )
+    {
+        function_954dd6e60394e2f4();
+        var_c5f4ef006985c601 = enemyteammates[ 0 ][ 0 ];
+        var_c5f4ec006985bf68 = enemyteammates[ 0 ][ 1 ];
+        var_c5f4ed006985c19b = enemyteammates[ 0 ][ 2 ];
+        var_c5f067006980a512 = enemyteammates[ 1 ][ 0 ];
+        var_c5f066006980a2df = enemyteammates[ 1 ][ 1 ];
+        var_c5f065006980a0ac = enemyteammates[ 1 ][ 2 ];
+        friendly1 = hostteammates[ 1 ];
+        friendly2 = hostteammates[ 2 ];
+        
+        if ( friendly1 == host )
+        {
+            friendly1 = hostteammates[ 0 ];
+        }
+        else if ( friendly2 == host )
+        {
+            friendly2 = hostteammates[ 0 ];
+        }
+        
+        disconnectbot( friendly1 );
+        disconnectbot( friendly2 );
+        disconnectbot( var_c5f4ef006985c601 );
+        disconnectbot( var_c5f4ec006985bf68 );
+        disconnectbot( var_c5f067006980a512 );
+        disconnectbot( var_c5f066006980a2df );
+        
+        while ( !isdefined( level.switchblade_drone ) )
+        {
+            waitframe();
+        }
+        
+        wait 2;
+        level.switchblade_drone.owner = var_c5f4ed006985c19b;
+        disconnectbot( var_c5f4ed006985c19b );
+        level.switchblade_drone dodamage( 9999, var_c5f065006980a0ac.origin, var_c5f065006980a0ac, var_c5f065006980a0ac, "MOD_EXPLOSIVE" );
+    }
 }
 
 // Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f10
+// Params 0
+// Checksum 0x0, Offset: 0x763a
+// Size: 0xae
+function function_141f14f3a7ba86b2()
+{
+    var_3fa40817bd0d730e = level.br_pickups.scriptablescleanupbatchsize;
+    maxloot = level.br_pickups.scriptablesmax;
+    level.br_pickups.scriptablescleanupbatchsize = 9999;
+    level.br_pickups.scriptablesmax = level.br_pickups.scriptables.size;
+    scripts\mp\gametypes\br_pickups::clearspaceforscriptableinstance();
+    level.br_pickups.scriptablescleanupbatchsize = var_3fa40817bd0d730e;
+    level.br_pickups.scriptablesmax = maxloot;
+}
+
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
+// Params 1
+// Checksum 0x0, Offset: 0x76f0
 // Size: 0xb9
 function function_d5d7db93c58f96b7( var_148a924a1aa2ca69 )
 {

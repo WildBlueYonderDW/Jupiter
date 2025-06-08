@@ -51,7 +51,7 @@
 #namespace arena;
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c6a
 // Size: 0x752
 function main()
@@ -255,7 +255,7 @@ function main()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43c4
 // Size: 0x86
 function function_955eeef49ba8fef9()
@@ -273,7 +273,7 @@ function function_955eeef49ba8fef9()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4452
 // Size: 0x2d9
 function initializematchrules()
@@ -307,7 +307,7 @@ function initializematchrules()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4733
 // Size: 0xedd
 function onstartgametype()
@@ -532,7 +532,7 @@ function onstartgametype()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5618
 // Size: 0x24
 function waittooverridegraceperiod()
@@ -543,7 +543,7 @@ function waittooverridegraceperiod()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5644
 // Size: 0x13
 function adjustroundendtimer()
@@ -553,7 +553,7 @@ function adjustroundendtimer()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x565f
 // Size: 0x435
 function updategametypedvars()
@@ -630,7 +630,7 @@ function updategametypedvars()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a9c
 // Size: 0x22a
 function initspawns()
@@ -697,7 +697,7 @@ function initspawns()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cce
 // Size: 0x1b8
 function validatespawns( spawnpointname )
@@ -767,7 +767,7 @@ function validatespawns( spawnpointname )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e8e
 // Size: 0x86d
 function getspawnpoint()
@@ -790,7 +790,7 @@ function getspawnpoint()
         spawnpointname = level.alliesstartspawn;
     }
     
-    if ( getdvarint( @"hash_9684a3d8ce5dd398", 0 ) > 0 )
+    if ( getdvarint( @"scr_arena_force_spawn_noteworthy", 0 ) > 0 )
     {
         if ( function_bff229a11ecd1e34() )
         {
@@ -802,7 +802,7 @@ function getspawnpoint()
         }
         
         spawnpoints = scripts\mp\spawnlogic::getspawnpointarray( spawnpointname );
-        spawnpoint = function_e77a290b26c3e849( spawnpoints, string( getdvarint( @"hash_9684a3d8ce5dd398", 0 ) ) );
+        spawnpoint = function_e77a290b26c3e849( spawnpoints, string( getdvarint( @"scr_arena_force_spawn_noteworthy", 0 ) ) );
         
         /#
             thread function_403dca95ad44db03( spawnpoints );
@@ -997,7 +997,7 @@ function getspawnpoint()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6704
 // Size: 0x1f3
 function cleanupspawn_scriptnoteworthy()
@@ -1042,7 +1042,7 @@ function cleanupspawn_scriptnoteworthy()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x68ff
 // Size: 0xe3
 function getspawnpoint_startspawn( spawnpoints, onlyunselected )
@@ -1090,7 +1090,7 @@ function getspawnpoint_startspawn( spawnpoints, onlyunselected )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x69eb
 // Size: 0xb2
 function getswitchside_spawnpoint( spawnpoints, spawnnoteworthy )
@@ -1122,7 +1122,7 @@ function getswitchside_spawnpoint( spawnpoints, spawnnoteworthy )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6aa6
 // Size: 0x7b
 function function_e77a290b26c3e849( spawnpoints, spawnnoteworthy )
@@ -1144,7 +1144,7 @@ function function_e77a290b26c3e849( spawnpoints, spawnnoteworthy )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b29
 // Size: 0x10e
 function function_403dca95ad44db03( spawnpoints )
@@ -1178,7 +1178,7 @@ function function_403dca95ad44db03( spawnpoints )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c3f
 // Size: 0x17e
 function onplayerconnect( player )
@@ -1236,7 +1236,7 @@ function onplayerconnect( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6dc5
 // Size: 0x14
 function onplayerdisconnect( player )
@@ -1245,7 +1245,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6de1
 // Size: 0x24
 function onjoinedteam()
@@ -1260,7 +1260,7 @@ function onjoinedteam()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e0d
 // Size: 0x61
 function onspawnplayer( revivespawn )
@@ -1279,7 +1279,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e76
 // Size: 0x119
 function onspawnfinished()
@@ -1328,12 +1328,12 @@ function onspawnfinished()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f97
 // Size: 0x266
 function setteamhealthhud( isdisconnect )
 {
-    var_586dc9dc0cf668ad = getdvarint( @"hash_b1d561f9a9241e09", 100 );
+    var_586dc9dc0cf668ad = getdvarint( @"scr_player_maxhealth", 100 );
     alliesplayers = getteamdata( "allies", "teamCount" );
     
     if ( alliesplayers )
@@ -1401,7 +1401,7 @@ function setteamhealthhud( isdisconnect )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7205
 // Size: 0x44
 function modifyblastshieldperk()
@@ -1418,7 +1418,7 @@ function modifyblastshieldperk()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0x7251
 // Size: 0x14e
 function onplayerdamaged( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, var_fcdf19e3cdd29669, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_1da1a66b5c6a06a7 )
@@ -1442,7 +1442,7 @@ function onplayerdamaged( einflictor, eattacker, victim, idamage, idflags, smean
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73a7
 // Size: 0x2a5
 function damagewatcher()
@@ -1520,7 +1520,7 @@ function damagewatcher()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x7654
 // Size: 0x81
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -1542,7 +1542,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x76dd
 // Size: 0xd7
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1566,7 +1566,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77bc
 // Size: 0x89
 function checkallowspectating()
@@ -1593,7 +1593,7 @@ function checkallowspectating()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x784d
 // Size: 0xdc
 function ontimelimit()
@@ -1643,7 +1643,7 @@ function ontimelimit()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7931
 // Size: 0x60
 function ontimelimitot()
@@ -1661,7 +1661,7 @@ function ontimelimitot()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7999
 // Size: 0xf1
 function checkliveswinner()
@@ -1686,7 +1686,7 @@ function checkliveswinner()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a92
 // Size: 0x22e
 function checkhealthwinner()
@@ -1771,7 +1771,7 @@ function checkhealthwinner()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7cc8
 // Size: 0xb3
 function ondeadevent( team )
@@ -1800,7 +1800,7 @@ function ondeadevent( team )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d83
 // Size: 0xb
 function ontimelimitdeadevent( team )
@@ -1809,7 +1809,7 @@ function ontimelimitdeadevent( team )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d96
 // Size: 0x41e
 function checkshouldallowtradekilltie( winningteam )
@@ -1923,7 +1923,7 @@ function checkshouldallowtradekilltie( winningteam )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x81bd
 // Size: 0x242
 function arena_endgame( winningteam, endreasontext, endreasontextloss, nukedetonated, var_8e4a26ed257a393b )
@@ -2006,7 +2006,7 @@ function arena_endgame( winningteam, endreasontext, endreasontextloss, nukedeton
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8407
 // Size: 0x59
 function setroundwinstreakarray()
@@ -2018,7 +2018,7 @@ function setroundwinstreakarray()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8468
 // Size: 0x12b
 function runarenaloadoutrulesonplayer( player )
@@ -2059,7 +2059,7 @@ function runarenaloadoutrulesonplayer( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x859b
 // Size: 0x29c
 function buildloadoutsforweaponstreaming()
@@ -2173,7 +2173,8 @@ function private function_ceaf8a81ff311f20( weaponname, loadout )
     
     attachments = [];
     
-    for (i = 1; i <= 5; i++) {
+    for ( i = 1; i <= 5 ; i++ )
+    {
         concat = i;
         
         if ( i == 1 )
@@ -2196,7 +2197,7 @@ function private function_ceaf8a81ff311f20( weaponname, loadout )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x899d
 // Size: 0xc2
 function setupblueprintpickupweapons()
@@ -2212,7 +2213,7 @@ function setupblueprintpickupweapons()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8a67
 // Size: 0x11d
 function buildblueprintpickupweapon( var_d44eb44714e9fb44 )
@@ -2241,7 +2242,7 @@ function buildblueprintpickupweapon( var_d44eb44714e9fb44 )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b8d
 // Size: 0xda
 function setupstartweaponsattachments()
@@ -2258,7 +2259,7 @@ function setupstartweaponsattachments()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c6f
 // Size: 0xc8
 function setupweaponattachmentoverrides( var_d44eb44714e9fb44 )
@@ -2280,7 +2281,7 @@ function setupweaponattachmentoverrides( var_d44eb44714e9fb44 )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d40
 // Size: 0x38
 function getattachmentoverride( weapon )
@@ -2291,7 +2292,7 @@ function getattachmentoverride( weapon )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d81
 // Size: 0x646
 function defineplayerloadout()
@@ -2426,7 +2427,7 @@ function defineplayerloadout()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x93cf
 // Size: 0x94d
 function function_3dd5b16653c57b45( teamname )
@@ -2472,7 +2473,7 @@ function function_3dd5b16653c57b45( teamname )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d25
 // Size: 0x11a
 function updaterandomloadout()
@@ -2529,7 +2530,7 @@ function updaterandomloadout()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9e47
 // Size: 0x2da
 function function_3187496929140714( var_6caf1a8ca6008020, var_171342d97570f634, var_a049f07e0f11dc31 )
@@ -2614,7 +2615,7 @@ function function_3187496929140714( var_6caf1a8ca6008020, var_171342d97570f634, 
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa12a
 // Size: 0x176
 function function_443c6629449aa6ed()
@@ -2651,7 +2652,7 @@ function function_443c6629449aa6ed()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa2a9
 // Size: 0x59b
 function function_37f8be8199814f97( loadoutstruct )
@@ -2720,7 +2721,7 @@ function function_37f8be8199814f97( loadoutstruct )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa84d
 // Size: 0x10a
 function initweaponmap()
@@ -2737,7 +2738,7 @@ function initweaponmap()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa95f
 // Size: 0xc9
 function getblueprintforpickupweapon( weapon )
@@ -2775,7 +2776,7 @@ function getblueprintforpickupweapon( weapon )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaa30
 // Size: 0x237
 function setupweapons()
@@ -2857,7 +2858,7 @@ function setupweapons()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xac6f
 // Size: 0xf5
 function getrandomspawnweapon()
@@ -2869,7 +2870,8 @@ function getrandomspawnweapon()
         newweapon = "";
         data = undefined;
         
-        for (loopcount = 0; true; loopcount++) {
+        for ( loopcount = 0; true ; loopcount++ )
+        {
             weapon = random( weaponlist );
             
             if ( !issubstr( weapon, "equip" ) )
@@ -2886,7 +2888,8 @@ function getrandomspawnweapon()
                 level.selectedweapons[ rootname ] = 1;
                 newweapon = weapon;
                 
-                for (i = 0; i < level.allweapons.size; i++) {
+                for ( i = 0; i < level.allweapons.size ; i++ )
+                {
                     if ( level.allweapons[ weapon ] == newweapon )
                     {
                         break;
@@ -2905,7 +2908,7 @@ function getrandomspawnweapon()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad6c
 // Size: 0x62
 function getarenapickupattachmentoverrides( weapon )
@@ -2929,7 +2932,7 @@ function getarenapickupattachmentoverrides( weapon )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xadd7
 // Size: 0x620
 function spawnweapon( loc, weaponstruct, var_5f3b26e2789a42c0 )
@@ -3115,7 +3118,7 @@ function spawnweapon( loc, weaponstruct, var_5f3b26e2789a42c0 )
 /#
 
     // Namespace arena / scripts\mp\gametypes\arena
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xb3ff
     // Size: 0x65, Type: dev
     function function_a9b5870805221f3d( model )
@@ -3366,7 +3369,7 @@ function private function_355f5b20c3c22114( loc )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc0b8
 // Size: 0x31
 function getequipmenthinticon( weapon )
@@ -3377,7 +3380,7 @@ function getequipmenthinticon( weapon )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc0f2
 // Size: 0x9f
 function manageweaponstartingammo( weapon, weaponname )
@@ -3417,7 +3420,7 @@ function manageweaponstartingammo( weapon, weaponname )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc199
 // Size: 0x136
 function watchequipmentpickup()
@@ -3466,7 +3469,7 @@ function watchequipmentpickup()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc2d7
 // Size: 0x1b
 function checkpickupequiptypeammocount( player )
@@ -3475,7 +3478,7 @@ function checkpickupequiptypeammocount( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc2fb
 // Size: 0x3a
 function checkcurrentequiptypeammocount( player )
@@ -3491,7 +3494,7 @@ function checkcurrentequiptypeammocount( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc33d
 // Size: 0x3d
 function checkissameequip( player )
@@ -3507,7 +3510,7 @@ function checkissameequip( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc382
 // Size: 0x16
 function dropoldequipinplace( equipment )
@@ -3516,7 +3519,7 @@ function dropoldequipinplace( equipment )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc3a0
 // Size: 0x63
 function watchpickup()
@@ -3536,7 +3539,7 @@ function watchpickup()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc40b
 // Size: 0x1c2
 function itemproxtriggerthink()
@@ -3624,7 +3627,7 @@ function itemproxtriggerthink()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc5d5
 // Size: 0x28
 function updatearenagungameloadout( reversegg )
@@ -3637,7 +3640,7 @@ function updatearenagungameloadout( reversegg )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc605
 // Size: 0x103
 function cachearenagungameloadouts( reversegg )
@@ -3666,7 +3669,7 @@ function cachearenagungameloadouts( reversegg )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc710
 // Size: 0x1ef
 function setenemyloadoutomnvars()
@@ -3712,7 +3715,7 @@ function setenemyloadoutomnvars()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc907
 // Size: 0x75
 function getgungameloadoutindex( player )
@@ -3736,7 +3739,7 @@ function getgungameloadoutindex( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc985
 // Size: 0xb7
 function getgungameloadoutomnvarindex( player, winningteam )
@@ -3766,7 +3769,7 @@ function getgungameloadoutomnvarindex( player, winningteam )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca45
 // Size: 0x273
 function setenemyloadoutomnvarsatmatchend( winningteam )
@@ -3816,7 +3819,7 @@ function setenemyloadoutomnvarsatmatchend( winningteam )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xccc0
 // Size: 0x262
 function spawngameendflagzone()
@@ -3880,7 +3883,7 @@ function spawngameendflagzone()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf2a
 // Size: 0x80
 function function_bc9d94a7417733df()
@@ -3899,7 +3902,7 @@ function function_bc9d94a7417733df()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcfb3
 // Size: 0x72
 function showflagoutline()
@@ -3915,7 +3918,7 @@ function showflagoutline()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd02d
 // Size: 0x159
 function arenaflag_onusebegin( player )
@@ -3961,7 +3964,7 @@ function arenaflag_onusebegin( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd18e
 // Size: 0x143
 function arenaflag_onuseupdate( team, progress, change, capplayer )
@@ -3995,7 +3998,7 @@ function arenaflag_onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd2d9
 // Size: 0xd6
 function arenaflag_onuseend( team, player, success )
@@ -4034,7 +4037,7 @@ function arenaflag_onuseend( team, player, success )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd3b7
 // Size: 0x16d
 function arenaflag_onuse( credit_player )
@@ -4068,7 +4071,7 @@ function arenaflag_onuse( credit_player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd52c
 // Size: 0x6f
 function arenaflag_oncontested()
@@ -4081,7 +4084,7 @@ function arenaflag_oncontested()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd5a3
 // Size: 0x107
 function arenaflag_onuncontested( lastclaimteam )
@@ -4118,7 +4121,7 @@ function arenaflag_onuncontested( lastclaimteam )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd6b2
 // Size: 0x73
 function forcegameendcontesttimeout()
@@ -4142,7 +4145,7 @@ function forcegameendcontesttimeout()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd72d
 // Size: 0x40
 function disableotflag()
@@ -4159,7 +4162,7 @@ function disableotflag()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd775
 // Size: 0x70
 function removeflagoutlineongameend()
@@ -4173,7 +4176,7 @@ function removeflagoutlineongameend()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd7ed
 // Size: 0x15
 function deleteotpreview()
@@ -4183,7 +4186,7 @@ function deleteotpreview()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd80a
 // Size: 0xeb
 function setupendzones()
@@ -4206,7 +4209,7 @@ function setupendzones()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd8fd
 // Size: 0x49a
 function createendzone( team )
@@ -4304,7 +4307,7 @@ function createendzone( team )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdda0
 // Size: 0x129
 function endzone_onusebegin( player )
@@ -4342,7 +4345,7 @@ function endzone_onusebegin( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xded1
 // Size: 0x97
 function endzone_onuseend( team, player, success )
@@ -4370,7 +4373,7 @@ function endzone_onuseend( team, player, success )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdf70
 // Size: 0x106
 function endzone_onuse( credit_player )
@@ -4398,7 +4401,7 @@ function endzone_onuse( credit_player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe07e
 // Size: 0x23
 function endzone_oncontested()
@@ -4408,7 +4411,7 @@ function endzone_oncontested()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe0a9
 // Size: 0x41
 function endzone_onuncontested( lastclaimteam )
@@ -4419,7 +4422,7 @@ function endzone_onuncontested( lastclaimteam )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe0f2
 // Size: 0x12f
 function endzone_setcaptured( team, credit_player )
@@ -4446,7 +4449,7 @@ function endzone_setcaptured( team, credit_player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe229
 // Size: 0x2f
 function endzone_stompprogressreward( player )
@@ -4456,7 +4459,7 @@ function endzone_stompprogressreward( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe260
 // Size: 0x43
 function getcapturetype()
@@ -4476,7 +4479,7 @@ function getcapturetype()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe2ac
 // Size: 0x180
 function giveflagcapturexp( touchlist, credit_player )
@@ -4503,7 +4506,8 @@ function giveflagcapturexp( touchlist, credit_player )
     
     players_touching = getarraykeys( touchlist );
     
-    for (index = 0; index < players_touching.size; index++) {
+    for ( index = 0; index < players_touching.size ; index++ )
+    {
         player = touchlist[ players_touching[ index ] ].player;
         
         if ( isdefined( player.owner ) )
@@ -4525,7 +4529,7 @@ function giveflagcapturexp( touchlist, credit_player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe434
 // Size: 0x238
 function startotmechanics()
@@ -4591,7 +4595,7 @@ function startotmechanics()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe674
 // Size: 0x9c
 function shouldplayerovertimedialog()
@@ -4618,7 +4622,7 @@ function shouldplayerovertimedialog()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe718
 // Size: 0x74
 function deleteendzone()
@@ -4640,7 +4644,7 @@ function deleteendzone()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe794
 // Size: 0x95
 function function_5bba7f02dbb91b52()
@@ -4656,7 +4660,7 @@ function function_5bba7f02dbb91b52()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe831
 // Size: 0xad
 function createflagstart()
@@ -4671,7 +4675,7 @@ function createflagstart()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8e6
 // Size: 0x14e
 function flaglockedtimer()
@@ -4699,7 +4703,7 @@ function flaglockedtimer()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xea3c
 // Size: 0x44b
 function function_7077c9e2d480fab5( team )
@@ -4792,7 +4796,7 @@ function function_7077c9e2d480fab5( team )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xee90
 // Size: 0x13d
 function function_8be5d726c39eced3( team, teamflag )
@@ -4820,7 +4824,7 @@ function function_8be5d726c39eced3( team, teamflag )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xefd6
 // Size: 0x3f
 function setteaminhuddatafromteamname( teamname )
@@ -4841,7 +4845,7 @@ function setteaminhuddatafromteamname( teamname )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf01d
 // Size: 0x13, Type: bool
 function flagpickupchecks( player )
@@ -4850,7 +4854,7 @@ function flagpickupchecks( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf039
 // Size: 0x340
 function onpickup( player, playervo, defused )
@@ -4944,7 +4948,7 @@ function onpickup( player, playervo, defused )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf381
 // Size: 0x9
 function returnflag()
@@ -4953,7 +4957,7 @@ function returnflag()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf392
 // Size: 0x2b2
 function ondrop( player )
@@ -5055,7 +5059,7 @@ function ondrop( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf64c
 // Size: 0xa9
 function returnaftertime()
@@ -5082,7 +5086,7 @@ function returnaftertime()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf6fd
 // Size: 0x17b
 function onreset()
@@ -5128,7 +5132,7 @@ function onreset()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf880
 // Size: 0x59
 function attachflag()
@@ -5140,7 +5144,7 @@ function attachflag()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf8e1
 // Size: 0x21
 function detachflag()
@@ -5150,7 +5154,7 @@ function detachflag()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf90a
 // Size: 0xe
 function updatematchstatushintonnoflag()
@@ -5159,7 +5163,7 @@ function updatematchstatushintonnoflag()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf920
 // Size: 0xe
 function updatematchstatushintonhasflag()
@@ -5168,7 +5172,7 @@ function updatematchstatushintonhasflag()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf936
 // Size: 0x12e
 function awardobjtimeforcarrier( team )
@@ -5195,7 +5199,7 @@ function awardobjtimeforcarrier( team )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfa6c
 // Size: 0x81
 function function_9962a01f46dd3b58( team )
@@ -5210,7 +5214,7 @@ function function_9962a01f46dd3b58( team )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfaf5
 // Size: 0x5b
 function function_4d2db447ddf43e1( flagholdtimer )
@@ -5227,7 +5231,7 @@ function function_4d2db447ddf43e1( flagholdtimer )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfb58
 // Size: 0x52
 function function_8028646f3cc80ac4()
@@ -5239,7 +5243,7 @@ function function_8028646f3cc80ac4()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfbb2
 // Size: 0x2a
 function dogtagallyonusecb( player )
@@ -5249,7 +5253,7 @@ function dogtagallyonusecb( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfbe4
 // Size: 0x2a
 function dogtagenemyonusecb( player )
@@ -5259,7 +5263,7 @@ function dogtagenemyonusecb( player )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfc16
 // Size: 0x16d
 function outlineenemyplayers()
@@ -5306,7 +5310,7 @@ function outlineenemyplayers()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd8b
 // Size: 0xa9
 function removeenemyoutlines()
@@ -5328,7 +5332,7 @@ function removeenemyoutlines()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfe3c
 // Size: 0x6b
 function notifyremoveoutlines()
@@ -5350,7 +5354,7 @@ function notifyremoveoutlines()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfeaf
 // Size: 0x176
 function outlineequipmentwatchplayerprox( equipname )
@@ -5403,7 +5407,7 @@ function outlineequipmentwatchplayerprox( equipname )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1002d
 // Size: 0x193
 function outlinewatchplayerprox()
@@ -5458,7 +5462,7 @@ function outlinewatchplayerprox()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x101c8
 // Size: 0x138
 function getoutlineasset( basescore, equipname )
@@ -5511,7 +5515,7 @@ function getoutlineasset( basescore, equipname )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10309
 // Size: 0x64
 function clearweaponoutlines()
@@ -5525,7 +5529,7 @@ function clearweaponoutlines()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10375
 // Size: 0x15
 function updatematchstatushintonspawn()
@@ -5535,7 +5539,7 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10392
 // Size: 0x11a
 function seticonnames()
@@ -5563,7 +5567,7 @@ function seticonnames()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x104b4
 // Size: 0x335
 function setupwaypointicons()
@@ -5599,7 +5603,7 @@ function setupwaypointicons()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107f1
 // Size: 0xe, Type: bool
 function isnormalloadouts()
@@ -5608,7 +5612,7 @@ function isnormalloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10808
 // Size: 0x68, Type: bool
 function israndomloadouts()
@@ -5617,7 +5621,7 @@ function israndomloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10879
 // Size: 0x1e, Type: bool
 function ispickuploadouts()
@@ -5626,7 +5630,7 @@ function ispickuploadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108a0
 // Size: 0xe, Type: bool
 function isgungameloadouts()
@@ -5635,7 +5639,7 @@ function isgungameloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108b7
 // Size: 0xe, Type: bool
 function isrvsgungameloadouts()
@@ -5644,7 +5648,7 @@ function isrvsgungameloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108ce
 // Size: 0xe, Type: bool
 function israndomarloadouts()
@@ -5653,7 +5657,7 @@ function israndomarloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108e5
 // Size: 0xe, Type: bool
 function israndomsmgloadouts()
@@ -5662,7 +5666,7 @@ function israndomsmgloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108fc
 // Size: 0xe, Type: bool
 function israndompistolloadouts()
@@ -5671,7 +5675,7 @@ function israndompistolloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10913
 // Size: 0xe, Type: bool
 function israndomshotgunloadouts()
@@ -5680,7 +5684,7 @@ function israndomshotgunloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1092a
 // Size: 0xe, Type: bool
 function israndomsniperloadouts()
@@ -5689,7 +5693,7 @@ function israndomsniperloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10941
 // Size: 0xe, Type: bool
 function israndomlmgloadouts()
@@ -5698,7 +5702,7 @@ function israndomlmgloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10958
 // Size: 0xe, Type: bool
 function israndomblueprintsloadouts()
@@ -5707,7 +5711,7 @@ function israndomblueprintsloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1096f
 // Size: 0xe, Type: bool
 function ispickupblueprintloadouts()
@@ -5716,7 +5720,7 @@ function ispickupblueprintloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10986
 // Size: 0xe, Type: bool
 function israndomcustomblueprintsloadouts()
@@ -5725,7 +5729,7 @@ function israndomcustomblueprintsloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1099d
 // Size: 0xe, Type: bool
 function israndomnoattachmentloadouts()
@@ -5734,7 +5738,7 @@ function israndomnoattachmentloadouts()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x109b4
 // Size: 0x1c, Type: bool
 function function_c0c1519b5cfb9bd5()
@@ -5743,7 +5747,7 @@ function function_c0c1519b5cfb9bd5()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x109d9
 // Size: 0xd, Type: bool
 function function_46a9ae30a3b356a8()
@@ -5752,7 +5756,7 @@ function function_46a9ae30a3b356a8()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x109ef
 // Size: 0xe, Type: bool
 function function_444e57e02c02bee6()
@@ -5761,7 +5765,7 @@ function function_444e57e02c02bee6()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10a06
 // Size: 0xe, Type: bool
 function function_2eda32f1d16ded2c()
@@ -5770,7 +5774,7 @@ function function_2eda32f1d16ded2c()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10a1d
 // Size: 0x3b
 function snowballfight()
@@ -5786,7 +5790,7 @@ function snowballfight()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10a60
 // Size: 0x2c5
 function setupsnowballs()
@@ -5819,7 +5823,7 @@ function setupsnowballs()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10d2d
 // Size: 0x253
 function watchsnowballpickup( loc, snowtype )
@@ -5910,7 +5914,7 @@ function watchsnowballpickup( loc, snowtype )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f88
 // Size: 0x46
 function waitthenrespawnsnowballs( loc )
@@ -5922,7 +5926,7 @@ function waitthenrespawnsnowballs( loc )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10fd6
 // Size: 0x1a
 function snowballmeleewatcher()
@@ -5933,14 +5937,14 @@ function snowballmeleewatcher()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10ff8
 // Size: 0x12b
 function getknivesoutsetting()
 {
     if ( matchmakinggame() )
     {
-        return getdvarint( @"hash_c4677c34d20593a7", 0 );
+        return getdvarint( @"scr_arena_knivesout", 0 );
     }
     else if ( isthrowingknifeequipment( level.arenaweapont1.weapon ) && isthrowingknifeequipment( level.arenaweapont2.weapon ) && isthrowingknifeequipment( level.arenaweapont3.weapon ) && isthrowingknifeequipment( level.arenaweapont4.weapon ) && isthrowingknifeequipment( level.arenaweapont5.weapon ) && isthrowingknifeequipment( level.arenaweapont6.weapon ) && isthrowingknifeequipment( level.arenaweapont7.weapon ) && isthrowingknifeequipment( level.arenaweapont8.weapon ) )
     {
@@ -5958,7 +5962,7 @@ function getknivesoutsetting()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1112c
 // Size: 0x33
 function isthrowingknifeequipment( weapon )
@@ -5972,7 +5976,7 @@ function isthrowingknifeequipment( weapon )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11167
 // Size: 0x6e
 function fixupsupersandtacticalsforgunfightmaps()
@@ -5993,7 +5997,7 @@ function fixupsupersandtacticalsforgunfightmaps()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x111de
 // Size: 0x8f
 function function_57688e4a9f64765a( progress, team )
@@ -6014,7 +6018,7 @@ function function_57688e4a9f64765a( progress, team )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11275
 // Size: 0x2d
 function function_8cbda65b25d7573c()
@@ -6031,7 +6035,7 @@ function function_8cbda65b25d7573c()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x112aa
 // Size: 0x4b
 function function_da1f3979f22bb288( posorigin, alias, timer )
@@ -6049,7 +6053,7 @@ function function_da1f3979f22bb288( posorigin, alias, timer )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x112fd
 // Size: 0x4b
 function function_82b6a3e1bcda539b( posorigin, alias, timer )
@@ -6328,7 +6332,7 @@ function private getrandomweaponfromcategory( weaponcategory )
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11d29
 // Size: 0x74
 function function_11a6a3ec5c206652( weaponname )
@@ -6386,7 +6390,7 @@ function private function_10cea0880b71973a()
 }
 
 // Namespace arena / scripts\mp\gametypes\arena
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11f50
 // Size: 0x183
 function function_b7c18ded2347456c()
@@ -6747,7 +6751,8 @@ function private function_c20500181ea66dc8( classtableentry )
         level.perks_suppressasserts = 1;
         thread function_bac839c909252aeb( player, "<dev string:x5cf>", player.pers[ "<dev string:x777>" ] );
         
-        for (i = 0; i < game[ "<dev string:x29f>" ].size; i++) {
+        for ( i = 0; i < game[ "<dev string:x29f>" ].size ; i++ )
+        {
             player.pers[ "<dev string:x777>" ] = game[ "<dev string:x29f>" ][ i ];
             player scripts\mp\class::giveloadout( player.team, "<dev string:x78a>" );
             wait timeinterval;
@@ -6809,7 +6814,8 @@ function private function_c20500181ea66dc8( classtableentry )
         player scripts\cp_mp\utility\inventory_utility::_takeweapon( primaryweaponobject );
         thread function_a554b9ddc3d15ec5( player, "<dev string:x65a>", primaryweaponobject );
         
-        for (i = 0; i < weapon.blueprints.size; i++) {
+        for ( i = 0; i < weapon.blueprints.size ; i++ )
+        {
             weaponobject = scripts\cp_mp\weapon::buildweapon_blueprint( weaponname, undefined, undefined, weapon.blueprints[ i ].id );
             player scripts\cp_mp\utility\inventory_utility::_giveweapon( weaponobject );
             player scripts\cp_mp\utility\inventory_utility::_switchtoweaponimmediate( weaponobject );

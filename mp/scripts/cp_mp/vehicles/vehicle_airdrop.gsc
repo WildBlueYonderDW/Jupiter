@@ -7,7 +7,7 @@
 #namespace vehicle_airdrop;
 
 // Namespace vehicle_airdrop / scripts\cp_mp\vehicles\vehicle_airdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x340
 // Size: 0x30, Type: bool
 function function_ccdcf48542c8a5b7( vehicleref )
@@ -17,7 +17,7 @@ function function_ccdcf48542c8a5b7( vehicleref )
 }
 
 // Namespace vehicle_airdrop / scripts\cp_mp\vehicles\vehicle_airdrop
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x379
 // Size: 0x860
 function vehicle_airdrop( vehicleref, spawndata, faildata )

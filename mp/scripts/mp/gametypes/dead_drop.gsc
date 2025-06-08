@@ -18,7 +18,7 @@
 #namespace dead_drop;
 
 // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x344
 // Size: 0x3b9
 function init_dead_drop()
@@ -106,7 +106,7 @@ function init_dead_drop()
 }
 
 // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x705
 // Size: 0x76
 function function_be64875fae5bd1ce( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -123,7 +123,7 @@ function function_be64875fae5bd1ce( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x783
 // Size: 0xd5
 function function_2463f61a8c4d7772( container, player, lootid, quantity, itemtype, itemindex, containerindex )
@@ -157,7 +157,7 @@ function function_2463f61a8c4d7772( container, player, lootid, quantity, itemtyp
 }
 
 // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x861
 // Size: 0x9fe
 function function_a1cbb02f01a33768( container, opener )
@@ -410,7 +410,7 @@ function function_a1cbb02f01a33768( container, opener )
 }
 
 // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1267
 // Size: 0x5a
 function function_160a29300ce1e14( totalcash, player, reductionmodifier )
@@ -423,7 +423,7 @@ function function_160a29300ce1e14( totalcash, player, reductionmodifier )
 }
 
 // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12ca
 // Size: 0x45
 function function_30b30561882a2477( container )
@@ -439,7 +439,7 @@ function function_30b30561882a2477( container )
 /#
 
     // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1318
     // Size: 0x112, Type: dev
     function function_dd5b2fd6714dfcc5()
@@ -469,7 +469,7 @@ function function_30b30561882a2477( container )
     }
 
     // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1432
     // Size: 0x14a, Type: dev
     function function_81caaaceb9608436()
@@ -520,7 +520,7 @@ function function_30b30561882a2477( container )
     }
 
     // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1584
     // Size: 0x132, Type: dev
     function function_55fc171c5983769f( alldeaddrops )
@@ -550,7 +550,7 @@ function function_30b30561882a2477( container )
     }
 
     // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x16be
     // Size: 0x87, Type: dev
     function function_6ac81ebed556d7dd( alldeaddrops )
@@ -569,7 +569,7 @@ function function_30b30561882a2477( container )
     }
 
     // Namespace dead_drop / scripts\mp\gametypes\dead_drop
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x174d
     // Size: 0x17c, Type: dev
     function function_625351669d6c9017()

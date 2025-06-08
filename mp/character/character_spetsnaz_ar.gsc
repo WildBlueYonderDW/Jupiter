@@ -40,7 +40,7 @@ function private autoexec init()
 }
 
 // Namespace character_spetsnaz_ar / character\character_spetsnaz_ar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0xc1
 function main()
@@ -64,7 +64,7 @@ function main()
 }
 
 // Namespace character_spetsnaz_ar / character\character_spetsnaz_ar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26f
 // Size: 0x2
 function precache()
@@ -73,7 +73,7 @@ function precache()
 }
 
 // Namespace character_spetsnaz_ar / character\character_spetsnaz_ar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x279
 // Size: 0x21
 function precache_sp()
@@ -84,7 +84,7 @@ function precache_sp()
 }
 
 // Namespace character_spetsnaz_ar / character\character_spetsnaz_ar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a2
 // Size: 0x9
 function precache_cpmp()
@@ -93,7 +93,7 @@ function precache_cpmp()
 }
 
 // Namespace character_spetsnaz_ar / character\character_spetsnaz_ar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b3
 // Size: 0x36
 function function_ecf17a96e49ab67( xmodelalias )

@@ -20,7 +20,7 @@
 #namespace hud_message;
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf94
 // Size: 0xd2c
 function init()
@@ -193,7 +193,7 @@ function init()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cc8
 // Size: 0x2b
 function onplayerconnect()
@@ -207,7 +207,7 @@ function onplayerconnect()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1cfb
 // Size: 0x70
 function showkillstreaksplash( splashref, streakval, fromcarepackage, var_42b1e877ab187c6 )
@@ -234,7 +234,7 @@ function showkillstreaksplash( splashref, streakval, fromcarepackage, var_42b1e8
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d73
 // Size: 0x32
 function getspecialistsplashfromkillstreak( splashref )
@@ -251,7 +251,7 @@ function getspecialistsplashfromkillstreak( splashref )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1dae
 // Size: 0xb1
 function showsplashwithkillcheckhack( ref, optionalnumber, playerforplayercard, altdisplayindex, var_42b1e877ab187c6, forceshow )
@@ -271,7 +271,7 @@ function showsplashwithkillcheckhack( ref, optionalnumber, playerforplayercard, 
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e67
 // Size: 0x20
 function function_51614e8fce37b07f( ref, var_42b1e877ab187c6 )
@@ -280,7 +280,7 @@ function function_51614e8fce37b07f( ref, var_42b1e877ab187c6 )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1e8f
 // Size: 0x134
 function showsplash( ref, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6, forceshow )
@@ -328,7 +328,7 @@ function showsplash( ref, optionalnumber, playerforplayercard, altdisplayindex, 
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1fcb
 // Size: 0x2d8
 function showsplashinternal( ref, optionalnumber, playerforplayercard, playernumforplayercard, altdisplayindex, var_42b1e877ab187c6 )
@@ -454,7 +454,7 @@ function showsplashinternal( ref, optionalnumber, playerforplayercard, playernum
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x22ab
 // Size: 0xea
 function queuesplash( ref, optionalnumber, playerforplayercard, playernumforplayercard, altdisplayindex, var_42b1e877ab187c6 )
@@ -481,7 +481,7 @@ function queuesplash( ref, optionalnumber, playerforplayercard, playernumforplay
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x239d
 // Size: 0x149
 function handlesplashqueue()
@@ -501,7 +501,8 @@ function handlesplashqueue()
             waittill_any_2( "splash_list_cleared", "spawned_player" );
         }
         
-        for (queueindex = 0; queueindex < 6; queueindex++) {
+        for ( queueindex = 0; queueindex < 6 ; queueindex++ )
+        {
             struct = self.splashqueuehead;
             showsplashinternal( struct.ref, struct.optionalnumber, struct.playerforplayercard, struct.playernumforplayercard, struct.altdisplayindex, struct.var_42b1e877ab187c6 );
             self.splashqueuehead = struct.nextsplash;
@@ -517,7 +518,7 @@ function handlesplashqueue()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24ee
 // Size: 0x5e
 function clearsplashqueue()
@@ -537,7 +538,7 @@ function clearsplashqueue()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2554
 // Size: 0x44
 function getsplashid( splashref )
@@ -554,7 +555,7 @@ function getsplashid( splashref )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25a1
 // Size: 0x1e7
 function function_73baf095c3b9cce6( splashref, var_42b1e877ab187c6 )
@@ -642,7 +643,7 @@ function function_73baf095c3b9cce6( splashref, var_42b1e877ab187c6 )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2791
 // Size: 0x8e
 function function_cd236201b71f07e2( splashref, var_de02835724550257 )
@@ -679,7 +680,7 @@ function function_cd236201b71f07e2( splashref, var_de02835724550257 )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2827
 // Size: 0x1d4
 function lowermessagethink()
@@ -720,7 +721,7 @@ function lowermessagethink()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a03
 // Size: 0x3, Type: bool
 function isdoingsplash()
@@ -729,7 +730,7 @@ function isdoingsplash()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2a0f
 // Size: 0x847
 function teamoutcomenotify( winner, isround, endreasontext, endreasontextloss, roundendextramessage )
@@ -1010,7 +1011,7 @@ function teamoutcomenotify( winner, isround, endreasontext, endreasontextloss, r
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x325e
 // Size: 0x213
 function outcomenotify( winner, endreasontext, endreasontextloss )
@@ -1058,7 +1059,7 @@ function outcomenotify( winner, endreasontext, endreasontextloss )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3479
 // Size: 0x6b
 function getsplashtablename()
@@ -1072,7 +1073,7 @@ function getsplashtablename()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34ed
 // Size: 0x4
 function getsplashtablemaxaltdisplays()
@@ -1081,7 +1082,7 @@ function getsplashtablemaxaltdisplays()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34fa
 // Size: 0x64
 function cleanuplocalplayersplashlist()
@@ -1106,7 +1107,7 @@ function cleanuplocalplayersplashlist()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3566
 // Size: 0x1e
 function splashshowncallback( channel, splashindex )
@@ -1118,7 +1119,7 @@ function splashshowncallback( channel, splashindex )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x358c
 // Size: 0x1d
 function onkillstreaksplashshown( splashref )
@@ -1128,7 +1129,7 @@ function onkillstreaksplashshown( splashref )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35b1
 // Size: 0x40
 function checkforspecialistbonusvo( splashref )
@@ -1143,7 +1144,7 @@ function checkforspecialistbonusvo( splashref )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35f9
 // Size: 0xde
 function showerrormessage( var_1797174f9e968e96, optionalparam )
@@ -1176,7 +1177,7 @@ function showerrormessage( var_1797174f9e968e96, optionalparam )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36df
 // Size: 0x69
 function showerrormessagetoallplayers( var_1797174f9e968e96, optionalparam )
@@ -1188,7 +1189,7 @@ function showerrormessagetoallplayers( var_1797174f9e968e96, optionalparam )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3750
 // Size: 0x33, Type: bool
 function testmiscmessage( messageref )
@@ -1204,7 +1205,7 @@ function testmiscmessage( messageref )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x378c
 // Size: 0x8c
 function showmiscmessage( messageref )
@@ -1223,7 +1224,7 @@ function showmiscmessage( messageref )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3820
 // Size: 0x18b
 function eventsplashesthink()
@@ -1293,7 +1294,7 @@ function eventsplashesthink()
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x39b3
 // Size: 0x139
 function notifyteam( friendlystring, enemystring, friendlyteam, skipplayers, var_6acc43fa4db03a7f, var_6ad135fa4db6448c, playerforplayercard )
@@ -1352,7 +1353,7 @@ function notifyteam( friendlystring, enemystring, friendlyteam, skipplayers, var
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3af4
 // Size: 0x2b
 function function_2b88d4a7a0b44e30( ref )
@@ -1362,7 +1363,7 @@ function function_2b88d4a7a0b44e30( ref )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b28
 // Size: 0x1e
 function function_f004ef4606b9efdc( ref )
@@ -1371,7 +1372,7 @@ function function_f004ef4606b9efdc( ref )
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3b4e
 // Size: 0xd1
 function updatematchstatushintforallplayers( friendlyteam, friendlyhint, enemyhint, specplayer, var_dc3596691b18226a )
@@ -1403,7 +1404,7 @@ function updatematchstatushintforallplayers( friendlyteam, friendlyhint, enemyhi
 }
 
 // Namespace hud_message / scripts\mp\hud_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c27
 // Size: 0x21, Type: bool
 function function_4e3eb46838440959()

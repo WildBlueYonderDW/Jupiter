@@ -10,7 +10,7 @@
 #namespace namespace_e9fb4fdd12296fce;
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x639
 // Size: 0x1c4
 function init()
@@ -41,7 +41,7 @@ function init()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x805
 // Size: 0x1b1
 function function_3158c3418412e97f( movingc130 )
@@ -94,7 +94,8 @@ function private function_f9bdc12bcf76bd07()
     outshots = [];
     var_18e8b4bc3930f848 = "";
     
-    for (shotidx = 0; shotidx < const_shots.size; shotidx++) {
+    for ( shotidx = 0; shotidx < const_shots.size ; shotidx++ )
+    {
         if ( !var_6cb889c93ea2fbe2[ shotidx ] )
         {
             var_18e8b4bc3930f848 = "";
@@ -112,7 +113,7 @@ function private function_f9bdc12bcf76bd07()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb42
 // Size: 0xa6
 function prestream( animstruct )
@@ -128,7 +129,7 @@ function prestream( animstruct )
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbf0
 // Size: 0x2ba
 function playscene( animstruct )
@@ -251,7 +252,7 @@ function private function_4852be52b053bc50( animstruct, teamname )
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x102f
 // Size: 0x22
 function function_b8f99ced9e454117()
@@ -266,7 +267,7 @@ function function_b8f99ced9e454117()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1059
 // Size: 0xba
 function function_5b82c7adaa9b7489()
@@ -312,7 +313,8 @@ function private function_fd28a78c72cc942b()
     {
         playersinscene = function_ec174c77eac8400d( sceneroot );
         
-        for (playeridx = 0; playeridx < playersinscene.size; playeridx++) {
+        for ( playeridx = 0; playeridx < playersinscene.size ; playeridx++ )
+        {
             foreach ( player in playersinscene )
             {
                 if ( isdefined( parachutes[ playeridx ] ) )
@@ -337,7 +339,8 @@ function private function_ec174c77eac8400d( sceneroot )
 {
     playersents = [];
     
-    for (playeridx = 1; playeridx <= 4; playeridx++) {
+    for ( playeridx = 1; playeridx <= 4 ; playeridx++ )
+    {
         var_ef19d2c73edbaf70 = "Player" + playeridx;
         playersents[ playersents.size ] = sceneroot scene::get_entity( var_ef19d2c73edbaf70 );
     }
@@ -353,7 +356,8 @@ function private function_3f51a5b53a7af8c9( sceneroot )
 {
     parachutes = [];
     
-    for (i = 1; i <= 4; i++) {
+    for ( i = 1; i <= 4 ; i++ )
+    {
         parachutename = "Parachute0" + i;
         parachutes[ parachutes.size ] = sceneroot scene::get_entity( parachutename );
     }
@@ -369,7 +373,8 @@ function private function_2f9f9647bfbbb644( sceneroot )
 {
     var_9574d80eb717270a = [];
     
-    for (i = 1; i <= 4; i++) {
+    for ( i = 1; i <= 4 ; i++ )
+    {
         parachutename = "Flat_Parachute0" + i;
         var_9574d80eb717270a[ var_9574d80eb717270a.size ] = sceneroot scene::get_entity( parachutename );
     }
@@ -390,7 +395,8 @@ function private function_bdf100dc034deb1e( player )
     flatparachute = undefined;
     playersinscene = function_ec174c77eac8400d( sceneroot );
     
-    for (playeridx = 0; playeridx < playersinscene.size; playeridx++) {
+    for ( playeridx = 0; playeridx < playersinscene.size ; playeridx++ )
+    {
         if ( player == playersinscene[ playeridx ] )
         {
             parachute = sceneroot scene::get_entity( "Parachute0" + playeridx );
@@ -419,7 +425,7 @@ function private function_bdf100dc034deb1e( player )
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1503
 // Size: 0x68
 function function_b9fcd5a6ea2995a6()
@@ -434,7 +440,7 @@ function function_b9fcd5a6ea2995a6()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1573
 // Size: 0x12d
 function teleporttomovingplane()
@@ -467,7 +473,7 @@ function teleporttomovingplane()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16a8
 // Size: 0x35
 function function_467af8a71787a0b8()
@@ -482,7 +488,7 @@ function function_467af8a71787a0b8()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e5
 // Size: 0x1b
 function function_16f307c48e420065()
@@ -491,7 +497,7 @@ function function_16f307c48e420065()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1708
 // Size: 0x21b
 function function_ad4a7a73c7d7d9e0()
@@ -543,7 +549,7 @@ function function_ad4a7a73c7d7d9e0()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x192b
 // Size: 0x37
 function jumpfunc()
@@ -556,7 +562,7 @@ function jumpfunc()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x196a
 // Size: 0x85
 function function_dc0bc83a31193177()
@@ -614,7 +620,7 @@ function private function_8d050f78fe1d180f()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a7d
 // Size: 0x15
 function infilcleanup()
@@ -624,7 +630,7 @@ function infilcleanup()
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a9a
 // Size: 0x5a
 function function_52bedae2ced8e191()

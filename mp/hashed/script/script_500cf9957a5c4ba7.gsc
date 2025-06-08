@@ -14,7 +14,7 @@
 #namespace namespace_ec05a9f2b3a2553f;
 
 // Namespace namespace_ec05a9f2b3a2553f / namespace_f2ba945007050131
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38b
 // Size: 0xde
 function init()
@@ -108,7 +108,8 @@ function private function_ba0f9c7af596cb45()
     
     level.var_402a1e37a1a2c2f9 = [];
     
-    for (structindex = 1; structindex < 20; structindex++) {
+    for ( structindex = 1; structindex < 20 ; structindex++ )
+    {
         searchid = "s5_relic_drum_race_trigger_checkpoint_" + string( structindex );
         var_7aec4e1e3c52c64a = function_f159c10d5cf8f0b4( searchid, "script_noteworthy" );
         
@@ -141,7 +142,7 @@ function private function_36acf1839c114f35()
 }
 
 // Namespace namespace_ec05a9f2b3a2553f / namespace_f2ba945007050131
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x895
 // Size: 0x163
 function function_13676cfdd745bdce( volume )
@@ -192,7 +193,7 @@ function function_13676cfdd745bdce( volume )
 }
 
 // Namespace namespace_ec05a9f2b3a2553f / namespace_f2ba945007050131
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa00
 // Size: 0x14f
 function function_d8a49cfff8654f34( volume, var_3d2d7853dbabbdac )
@@ -232,7 +233,7 @@ function function_d8a49cfff8654f34( volume, var_3d2d7853dbabbdac )
 }
 
 // Namespace namespace_ec05a9f2b3a2553f / namespace_f2ba945007050131
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb57
 // Size: 0x152
 function function_96722b987884943b( volume, var_179343b5981c3088 )
@@ -348,7 +349,7 @@ function private function_d4d5da367a00e379( entity )
 /#
 
     // Namespace namespace_ec05a9f2b3a2553f / namespace_f2ba945007050131
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xea4
     // Size: 0x75, Type: dev
     function function_a995ebc5fd006840( msg )
@@ -366,7 +367,7 @@ function private function_d4d5da367a00e379( entity )
     }
 
     // Namespace namespace_ec05a9f2b3a2553f / namespace_f2ba945007050131
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xf21
     // Size: 0xf, Type: dev
     function function_3d1fbf66a57b0cb6()

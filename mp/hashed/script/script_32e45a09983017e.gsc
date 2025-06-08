@@ -8,7 +8,7 @@
 #namespace warrior_serpentine;
 
 // Namespace warrior_serpentine / namespace_a63df633a0ba2866
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x176
 // Size: 0x17
 function function_c9cfdf276fba4138()
@@ -18,7 +18,7 @@ function function_c9cfdf276fba4138()
 }
 
 // Namespace warrior_serpentine / namespace_a63df633a0ba2866
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x195
 // Size: 0xc0
 function onplayerspawned()
@@ -43,7 +43,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_serpentine / namespace_a63df633a0ba2866
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25d
 // Size: 0x78
 function function_cccdb1b3d660c940()

@@ -10,7 +10,7 @@
 #namespace throwgrenade;
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2dc
 // Size: 0x139
 function playanim_throwgrenade( asmname, statename, params )
@@ -37,7 +37,7 @@ function playanim_throwgrenade( asmname, statename, params )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x41d
 // Size: 0x3d
 function playcoveranim_throwgrenade( asmname, statename, params )
@@ -51,7 +51,7 @@ function playcoveranim_throwgrenade( asmname, statename, params )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x462
 // Size: 0x59
 function detachgrenade( model, tag )
@@ -76,7 +76,7 @@ function detachgrenade( model, tag )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4c3
 // Size: 0x2c
 function playcoveranim_throwgrenade_cleanup( asmname, statename, params )
@@ -86,7 +86,7 @@ function playcoveranim_throwgrenade_cleanup( asmname, statename, params )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4f7
 // Size: 0xb5
 function playanim_throwgrenade_cleanup( asmname, statename, params )
@@ -111,7 +111,7 @@ function playanim_throwgrenade_cleanup( asmname, statename, params )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b4
 // Size: 0x3f, Type: bool
 function shouldbounce( objgrenadeweapon )
@@ -121,7 +121,7 @@ function shouldbounce( objgrenadeweapon )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5fc
 // Size: 0x2c6, Type: bool
 function trygrenadethrow( asmname, statename, throwdata, var_973c51e9fd66d178 )
@@ -235,7 +235,7 @@ function trygrenadethrow( asmname, statename, throwdata, var_973c51e9fd66d178 )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8cb
 // Size: 0x7b
 function getdesiredgrenadetimervalue()
@@ -256,7 +256,7 @@ function getdesiredgrenadetimervalue()
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94f
 // Size: 0x2b, Type: bool
 function usingplayergrenadetimer()
@@ -266,7 +266,7 @@ function usingplayergrenadetimer()
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x983
 // Size: 0x30
 function reducegiptponkillanimscript( statename, throwingat )
@@ -281,7 +281,7 @@ function reducegiptponkillanimscript( statename, throwingat )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x9bb
 // Size: 0x509
 function dogrenadethrow( asmname, statename, throw_anim, throwvel, var_3251b898a0907271, var_e57aea3945878349 )
@@ -360,7 +360,8 @@ function dogrenadethrow( asmname, statename, throw_anim, throwvel, var_3251b898a
             numtags = self getattachsize();
             emptyslot = [];
             
-            for (i = 0; i < numtags; i++) {
+            for ( i = 0; i < numtags ; i++ )
+            {
                 name = self getattachmodelname( i );
                 
                 if ( issubstr( name, "<dev string:x61>" ) )
@@ -371,7 +372,8 @@ function dogrenadethrow( asmname, statename, throw_anim, throwvel, var_3251b898a
                 }
             }
             
-            for (i = 0; i < tags.size; i++) {
+            for ( i = 0; i < tags.size ; i++ )
+            {
                 emptyslot[ tags[ i ] ]++;
                 
                 if ( emptyslot[ tags[ i ] ] < 2 )
@@ -447,7 +449,7 @@ function dogrenadethrow( asmname, statename, throw_anim, throwvel, var_3251b898a
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xecc
 // Size: 0x7
 function fasteranimspeed()
@@ -456,7 +458,7 @@ function fasteranimspeed()
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xedc
 // Size: 0x25
 function attachgrenademodel( statename, model, tag )
@@ -466,7 +468,7 @@ function attachgrenademodel( statename, model, tag )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf0a
 // Size: 0x1c
 function waittillscriptchange( statename )
@@ -476,7 +478,7 @@ function waittillscriptchange( statename )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf2e
 // Size: 0x62
 function detachgrenadeonscriptchange( statename, model, tag )
@@ -499,7 +501,7 @@ function detachgrenadeonscriptchange( statename, model, tag )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf98
 // Size: 0xd1
 function function_8337cab97d859a28( statename )
@@ -518,7 +520,8 @@ function function_8337cab97d859a28( statename )
         grenade thread grenadedebug( statename, "<dev string:xe4>", 5 );
     #/
     
-    for (prevorigin = grenade.origin; true; prevorigin = grenade.origin) {
+    for ( prevorigin = grenade.origin; true ; prevorigin = grenade.origin )
+    {
         wait 0.1;
         
         if ( !isdefined( grenade ) )
@@ -539,7 +542,7 @@ function function_8337cab97d859a28( statename )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1071
 // Size: 0x37
 function watchgrenadetowardsplayer( statename, player, var_3251b898a0907271 )
@@ -554,7 +557,7 @@ function watchgrenadetowardsplayer( statename, player, var_3251b898a0907271 )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10b0
 // Size: 0x231
 function watchgrenadetowardsplayerinternal( statename, var_3251b898a0907271 )
@@ -613,7 +616,8 @@ function watchgrenadetowardsplayerinternal( statename, var_3251b898a0907271 )
             
             var_2ed5956d72563348 = [];
             
-            for (i = 0; i < var_fe16f116477f0084.size; i++) {
+            for ( i = 0; i < var_fe16f116477f0084.size ; i++ )
+            {
                 player = var_fe16f116477f0084[ i ];
                 
                 if ( !isdefined( player ) || !isalive( player ) )
@@ -652,7 +656,7 @@ function watchgrenadetowardsplayerinternal( statename, var_3251b898a0907271 )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12e9
 // Size: 0x8b
 function grenadelandednearplayer( var_cc183df556f63da0, var_3251b898a0907271 )
@@ -672,7 +676,7 @@ function grenadelandednearplayer( var_cc183df556f63da0, var_3251b898a0907271 )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x137c
 // Size: 0x94
 function setgrenadetimer( newvalue )
@@ -692,7 +696,7 @@ function setgrenadetimer( newvalue )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1418
 // Size: 0x30
 function getgrenadeithrew( statename )
@@ -704,7 +708,7 @@ function getgrenadeithrew( statename )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1451
 // Size: 0x15
 function watchgrenadetowardstargettimeout( timerlength )
@@ -714,7 +718,7 @@ function watchgrenadetowardstargettimeout( timerlength )
 }
 
 // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146e
 // Size: 0x71
 function offsettoorigin( start )
@@ -731,7 +735,7 @@ function offsettoorigin( start )
 /#
 
     // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x14e8
     // Size: 0x88, Type: dev
     function grenadeline( start, end )
@@ -750,7 +754,7 @@ function offsettoorigin( start )
     }
 
     // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1578
     // Size: 0x30, Type: dev
     function function_c3d487ba233976c7( reason )
@@ -764,7 +768,7 @@ function offsettoorigin( start )
     }
 
     // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x15b0
     // Size: 0x11a, Type: dev
     function grenadedebug( statename, state, duration, var_312ba7f72a3a2b1c )
@@ -799,14 +803,15 @@ function offsettoorigin( start )
     }
 
     // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x16d2
     // Size: 0x79, Type: dev
     function function_96d556dea441d1dc()
     {
         if ( usingplayergrenadetimer() )
         {
-            for (i = 0; i < level.players.size; i++) {
+            for ( i = 0; i < level.players.size ; i++ )
+            {
                 if ( level.players[ i ] == self.var_a3441d87a95e9040 )
                 {
                     break;
@@ -820,7 +825,7 @@ function offsettoorigin( start )
     }
 
     // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1753
     // Size: 0x4db, Type: dev
     function function_7ce8f6913eb4c152( asmname, archetypename )
@@ -894,7 +899,7 @@ function offsettoorigin( start )
     }
 
     // Namespace throwgrenade / scripts\asm\soldier\throwgrenade
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1c36
     // Size: 0x16, Type: dev
     function function_d4917a3a4a6f232a()

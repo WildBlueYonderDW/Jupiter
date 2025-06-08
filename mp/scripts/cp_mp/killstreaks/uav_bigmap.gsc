@@ -11,7 +11,7 @@
 #namespace uav_bigmap;
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x307
 // Size: 0x96
 function init()
@@ -20,7 +20,7 @@ function init()
         setdevdvarifuninitialized( @"hash_2c4aa32449462d6e", 25 );
         setdevdvarifuninitialized( @"hash_8caa0944a27274aa", 2 );
         setdevdvarifuninitialized( @"hash_baea8656875e8f33", 4 );
-        setdevdvarifuninitialized( @"hash_b0336da463c5b9a4", 12000 );
+        setdevdvarifuninitialized( @"scr_uav_bigmap_sweep_radius", 12000 );
         setdevdvarifuninitialized( @"hash_306f1f0806522199", 3 );
     #/
     
@@ -35,7 +35,7 @@ function init()
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a5
 // Size: 0x4d
 function function_f2b595d060c7b8d1()
@@ -46,7 +46,7 @@ function function_f2b595d060c7b8d1()
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fa
 // Size: 0x6e
 function function_8fcbc948e54837e1()
@@ -62,7 +62,7 @@ function function_8fcbc948e54837e1()
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x470
 // Size: 0x45
 function function_e7d591778e99c1e2()
@@ -74,7 +74,7 @@ function function_e7d591778e99c1e2()
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4bd
 // Size: 0x32a
 function function_123f8da350e72770()
@@ -91,7 +91,8 @@ function function_123f8da350e72770()
             {
                 var_8506ba4041fbe9bb = 0;
                 
-                for (i = level.var_1a92f34363247d37[ teamname ].size - 1; i >= 0; i--) {
+                for ( i = level.var_1a92f34363247d37[ teamname ].size - 1; i >= 0 ; i-- )
+                {
                     uavstruct = level.var_1a92f34363247d37[ teamname ][ i ];
                     
                     if ( !isdefined( uavstruct ) )
@@ -101,7 +102,8 @@ function function_123f8da350e72770()
                     
                     removeuav = 0;
                     
-                    for (index = uavstruct.starttimes.size - 1; index >= 0; index--) {
+                    for ( index = uavstruct.starttimes.size - 1; index >= 0 ; index-- )
+                    {
                         if ( uavstruct.starttimes[ index ] + uavstruct.duration * 1000 < currenttime )
                         {
                             uavstruct.starttimes[ index ] = undefined;
@@ -140,7 +142,8 @@ function function_123f8da350e72770()
                     level.var_1a92f34363247d37[ teamname ] = array_removeundefined( level.var_1a92f34363247d37[ teamname ] );
                 }
                 
-                for (j = 0; j < level.var_1a92f34363247d37[ teamname ].size; j++) {
+                for ( j = 0; j < level.var_1a92f34363247d37[ teamname ].size ; j++ )
+                {
                     uavstruct = level.var_1a92f34363247d37[ teamname ][ j ];
                     uavcount = uavstruct.starttimes.size;
                     
@@ -158,7 +161,7 @@ function function_123f8da350e72770()
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7ef
 // Size: 0xb9
 function function_e457560e955be5f5( ownerteam, pinglocation, pingradius, pingtime )
@@ -181,7 +184,7 @@ function function_e457560e955be5f5( ownerteam, pinglocation, pingradius, pingtim
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8b0
 // Size: 0xc3
 function function_88ddbfdd01726127( ownerteam )
@@ -274,7 +277,7 @@ function private function_c73f8180ddbbca7e()
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb7c
 // Size: 0xbb, Type: bool
 function function_e5931b9f76ed6cda( streakinfo )
@@ -315,7 +318,7 @@ function function_e5931b9f76ed6cda( streakinfo )
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc40
 // Size: 0x216
 function function_e24c416c5028bccc( owner, streakinfo )
@@ -381,7 +384,7 @@ function function_e24c416c5028bccc( owner, streakinfo )
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe5e
 // Size: 0x84
 function function_4b696648abf2a7cd( team )
@@ -400,21 +403,22 @@ function function_4b696648abf2a7cd( team )
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeeb
 // Size: 0x4e
 function function_b9a6e42f8062d9e( team )
 {
     if ( isdefined( level.var_1a92f34363247d37[ team ] ) )
     {
-        for (index = level.var_1a92f34363247d37[ team ].size - 1; index >= 0; index--) {
+        for ( index = level.var_1a92f34363247d37[ team ].size - 1; index >= 0 ; index-- )
+        {
             level.var_1a92f34363247d37[ team ][ index ] = undefined;
         }
     }
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf41
 // Size: 0x82
 function function_3713808120900a4( owner )
@@ -442,7 +446,7 @@ function function_3713808120900a4( owner )
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfcc
 // Size: 0x9e
 function function_d8f7d7425ee3435b( player )
@@ -465,7 +469,7 @@ function function_d8f7d7425ee3435b( player )
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1073
 // Size: 0x11c
 function function_b26df19671891830( owner, streakinfo )
@@ -473,7 +477,7 @@ function function_b26df19671891830( owner, streakinfo )
     duration = getdvarfloat( @"hash_2c4aa32449462d6e", 25 );
     sweeptime = getdvarfloat( @"hash_8caa0944a27274aa", 2 );
     sweepinterval = getdvarfloat( @"hash_baea8656875e8f33", 4 );
-    radius = getdvarint( @"hash_b0336da463c5b9a4", 12000 );
+    radius = getdvarint( @"scr_uav_bigmap_sweep_radius", 12000 );
     
     if ( owner scripts\cp_mp\utility\player_utility::player_hasperk( "specialty_overwatch" ) && !isbrstylegametype() )
     {
@@ -492,7 +496,7 @@ function function_b26df19671891830( owner, streakinfo )
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1197
 // Size: 0x69
 function function_48b2b4d259d7d51d( uavstruct )
@@ -506,7 +510,7 @@ function function_48b2b4d259d7d51d( uavstruct )
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1208
 // Size: 0xd8
 function function_c1f0080375451d78( owner, radius, duration, sweeptime, sweepinterval, streakinfo )
@@ -526,7 +530,7 @@ function function_c1f0080375451d78( owner, radius, duration, sweeptime, sweepint
 }
 
 // Namespace uav_bigmap / scripts\cp_mp\killstreaks\uav_bigmap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12e9
 // Size: 0xb5
 function function_d1444dd5b0f1ebac( uavstruct )

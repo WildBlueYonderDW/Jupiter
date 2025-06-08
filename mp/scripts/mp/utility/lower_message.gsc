@@ -1,7 +1,7 @@
 #namespace lower_message;
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x158
 // Size: 0xab
 function setlowermessageomnvar( ref, timer, var_c84f97acad5b2088 )
@@ -33,7 +33,7 @@ function setlowermessageomnvar( ref, timer, var_c84f97acad5b2088 )
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20b
 // Size: 0x6a
 function clearomnvarsaftertime( var_c84f97acad5b2088 )
@@ -51,7 +51,7 @@ function clearomnvarsaftertime( var_c84f97acad5b2088 )
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27d
 // Size: 0x9d
 function function_5a98c45a6252b4a()
@@ -59,7 +59,8 @@ function function_5a98c45a6252b4a()
     game[ "lowerMessageIndex" ] = [];
     numrows = tablelookupgetnumrows( "mp/hints.csv" );
     
-    for (index = 0; index < numrows; index++) {
+    for ( index = 0; index < numrows ; index++ )
+    {
         var_c71a87c9229a2e91 = int( tablelookupbyrow( "mp/hints.csv", index, 0 ) );
         indexstr = tablelookupbyrow( "mp/hints.csv", index, 1 );
         
@@ -74,7 +75,7 @@ function function_5a98c45a6252b4a()
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x322
 // Size: 0xbb
 function setlowermessage( name, text, time, priority, showtimer, shouldfade, fadetoalpha, fadetoalphatime, hidewhenindemo, hidewheninmenu )
@@ -124,7 +125,7 @@ function setlowermessage( name, text, time, priority, showtimer, shouldfade, fad
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e5
 // Size: 0x1a
 function clearlowermessage( name )
@@ -134,7 +135,7 @@ function clearlowermessage( name )
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x407
 // Size: 0x59
 function clearlowermessages()
@@ -144,7 +145,8 @@ function clearlowermessages()
         return;
     }
     
-    for (i = 0; i < self.lowermessages.size; i++) {
+    for ( i = 0; i < self.lowermessages.size ; i++ )
+    {
         self.lowermessages[ i ] = undefined;
     }
     
@@ -152,16 +154,18 @@ function clearlowermessages()
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x468
 // Size: 0xae
 function sortlowermessages()
 {
-    for (i = 1; i < self.lowermessages.size; i++) {
+    for ( i = 1; i < self.lowermessages.size ; i++ )
+    {
         message = self.lowermessages[ i ];
         priority = message.priority;
         
-        for (j = i - 1; j >= 0 && priority > self.lowermessages[ j ].priority; j--) {
+        for ( j = i - 1; j >= 0 && priority > self.lowermessages[ j ].priority ; j-- )
+        {
             self.lowermessages[ j + 1 ] = self.lowermessages[ j ];
         }
         
@@ -170,7 +174,7 @@ function sortlowermessages()
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x51e
 // Size: 0x1a9
 function addlowermessage( name, text, time, priority, showtimer, shouldfade, fadetoalpha, fadetoalphatime, hidewhenindemo, hidewheninmenu )
@@ -212,14 +216,15 @@ function addlowermessage( name, text, time, priority, showtimer, shouldfade, fad
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6cf
 // Size: 0xd9
 function removelowermessage( name )
 {
     if ( isdefined( self.lowermessages ) )
     {
-        for (i = self.lowermessages.size; i > 0; i--) {
+        for ( i = self.lowermessages.size; i > 0 ; i-- )
+        {
             if ( self.lowermessages[ i - 1 ].name != name )
             {
                 continue;
@@ -227,7 +232,8 @@ function removelowermessage( name )
             
             message = self.lowermessages[ i - 1 ];
             
-            for (j = i; j < self.lowermessages.size; j++) {
+            for ( j = i; j < self.lowermessages.size ; j++ )
+            {
                 if ( isdefined( self.lowermessages[ j ] ) )
                 {
                     self.lowermessages[ j - 1 ] = self.lowermessages[ j ];
@@ -242,7 +248,7 @@ function removelowermessage( name )
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b0
 // Size: 0x1c
 function getlowermessage()
@@ -256,7 +262,7 @@ function getlowermessage()
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d5
 // Size: 0x228
 function updatelowermessage()
@@ -311,7 +317,7 @@ function updatelowermessage()
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa05
 // Size: 0x42
 function clearondeath( message )
@@ -325,7 +331,7 @@ function clearondeath( message )
 }
 
 // Namespace lower_message / scripts\mp\utility\lower_message
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa4f
 // Size: 0x31
 function clearafterfade( message )

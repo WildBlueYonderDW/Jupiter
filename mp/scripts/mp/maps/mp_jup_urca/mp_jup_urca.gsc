@@ -10,7 +10,7 @@
 #namespace mp_jup_urca;
 
 // Namespace mp_jup_urca / scripts\mp\maps\mp_jup_urca\mp_jup_urca
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x178
 // Size: 0xb1
 function main()

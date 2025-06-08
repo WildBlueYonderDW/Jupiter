@@ -9,7 +9,7 @@
 #namespace warrior_turrettime;
 
 // Namespace warrior_turrettime / namespace_77e23975771add92
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x165
 // Size: 0x28
 function function_f1e15d6ce495e904()
@@ -20,7 +20,7 @@ function function_f1e15d6ce495e904()
 }
 
 // Namespace warrior_turrettime / namespace_77e23975771add92
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x195
 // Size: 0x66
 function function_6e36432069ac5ccc()
@@ -34,7 +34,7 @@ function function_6e36432069ac5ccc()
 }
 
 // Namespace warrior_turrettime / namespace_77e23975771add92
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x203
 // Size: 0x7b
 function onplayerspawned()
@@ -56,7 +56,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_turrettime / namespace_77e23975771add92
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x286
 // Size: 0x44
 function function_3464ff6a11549a11()

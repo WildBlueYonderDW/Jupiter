@@ -15,7 +15,7 @@
 #namespace proximity_alarm;
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x218
 // Size: 0x109
 function function_477d655fc0ede218( grenade )
@@ -42,7 +42,7 @@ function function_477d655fc0ede218( grenade )
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x329
 // Size: 0x2e2
 function function_f7d04947b81081a7()
@@ -123,7 +123,7 @@ function function_f7d04947b81081a7()
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x613
 // Size: 0x40
 function function_2f7f72bc936b05d1()
@@ -135,7 +135,7 @@ function function_2f7f72bc936b05d1()
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65b
 // Size: 0x69
 function function_1d903c2c067f77bf( data )
@@ -151,7 +151,7 @@ function function_1d903c2c067f77bf( data )
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6cc
 // Size: 0x63
 function function_4df209a3b80ffd1d()
@@ -169,7 +169,7 @@ function function_4df209a3b80ffd1d()
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x737
 // Size: 0x43
 function function_bdba171b0fab5fbe( data )
@@ -180,7 +180,7 @@ function function_bdba171b0fab5fbe( data )
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x782
 // Size: 0x7d
 function function_5207653d43bf2fbf( player, duration )
@@ -198,7 +198,7 @@ function function_5207653d43bf2fbf( player, duration )
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x807
 // Size: 0x3f
 function function_c1b308dde4295460( attacker, objweapon )
@@ -210,7 +210,7 @@ function function_c1b308dde4295460( attacker, objweapon )
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84e
 // Size: 0x42
 function function_c915e5763dc078cf()
@@ -225,7 +225,7 @@ function function_c915e5763dc078cf()
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x899
 // Size: 0x40
 function function_2c84a3de26d79c8e( stuckdata )
@@ -242,7 +242,7 @@ function function_2c84a3de26d79c8e( stuckdata )
 }
 
 // Namespace proximity_alarm / scripts\mp\equipment\proximity_alarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e1
 // Size: 0x149, Type: bool
 function function_478a334e547f1d81( target )
@@ -286,7 +286,8 @@ function function_478a334e547f1d81( target )
     
     ignorelist = [ self, target ];
     
-    for (i = 0; i < tracepoints.size; i++) {
+    for ( i = 0; i < tracepoints.size ; i++ )
+    {
         if ( !scripts\engine\trace::ray_trace_passed( self.origin, tracepoints[ i ], ignorelist, tracecontents ) )
         {
             return false;

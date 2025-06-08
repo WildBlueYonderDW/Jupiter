@@ -6,7 +6,7 @@
 /#
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x96
     // Size: 0xe1, Type: dev
     function init_graycard( handleplayerconnect )
@@ -40,7 +40,7 @@
     }
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x17f
     // Size: 0x2b, Type: dev
     function spplayerconnect()
@@ -56,7 +56,7 @@
 #/
 
 // Namespace debug_graycard / scripts\common\debug_graycard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b2
 // Size: 0x46
 function onplayerconnect()
@@ -78,7 +78,7 @@ function onplayerconnect()
 /#
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x200
     // Size: 0xe, Type: dev
     function debug_gray_card_mp()
@@ -87,7 +87,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x216
     // Size: 0x1be, Type: dev
     function debug_gray_card( ismp )
@@ -146,7 +146,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3dc
     // Size: 0xa0, Type: dev
     function set_debug_models( model )
@@ -166,7 +166,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x484
     // Size: 0xa8, Type: dev
     function remove_graycard_objects()
@@ -188,7 +188,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x534
     // Size: 0x75, Type: dev
     function create_graycard_object()
@@ -202,7 +202,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5b1
     // Size: 0x32, Type: dev
     function spawn_graycard()
@@ -213,7 +213,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5eb
     // Size: 0x27e, Type: dev
     function debug_graycard_buttons( ismp )
@@ -299,7 +299,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_graycard / scripts\common\debug_graycard
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x871
     // Size: 0x10e, Type: dev
     function create_copy( object )

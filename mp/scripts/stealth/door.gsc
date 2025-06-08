@@ -8,7 +8,7 @@
 #namespace door;
 
 // Namespace door / scripts\stealth\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x144
 // Size: 0x122
 function stealth_suspicious_doors_init()
@@ -36,7 +36,7 @@ function stealth_suspicious_doors_init()
 }
 
 // Namespace door / scripts\stealth\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26e
 // Size: 0x49
 function suspicious_door_thread()
@@ -60,7 +60,7 @@ function suspicious_door_thread()
 }
 
 // Namespace door / scripts\stealth\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bf
 // Size: 0x467
 function suspicious_door_sighting()
@@ -264,7 +264,7 @@ function private canseedoor( door, debounce )
 }
 
 // Namespace door / scripts\stealth\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x98b
 // Size: 0x1ef
 function suspicious_door_found( event )

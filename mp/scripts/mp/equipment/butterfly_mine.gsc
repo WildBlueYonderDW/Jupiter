@@ -36,7 +36,7 @@ function autoexec main()
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5af
 // Size: 0x45
 function function_843dde4bf96b6965()
@@ -47,7 +47,7 @@ function function_843dde4bf96b6965()
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5fc
 // Size: 0x1a9
 function function_539f38f444d5b41a( grenade )
@@ -83,7 +83,7 @@ function function_539f38f444d5b41a( grenade )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7ad
 // Size: 0x5c
 function function_a1a46255fbfac86c( grenade, launchangles, impactvelocity )
@@ -93,7 +93,7 @@ function function_a1a46255fbfac86c( grenade, launchangles, impactvelocity )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x811
 // Size: 0x274
 function function_33f76685d61ffb0( minename, nummines, impactvelocity, stepstartradius, var_ec8c077b88a3003e, var_450483a591a06439, fandegrees, var_4d1e3f4a23058445 )
@@ -103,7 +103,8 @@ function function_33f76685d61ffb0( minename, nummines, impactvelocity, stepstart
     up = anglestoup( self.angles );
     impactangles = function_5f9ffc69b9bd0ab3( up, forward );
     
-    for (mineindex = 0; mineindex < nummines; mineindex++) {
+    for ( mineindex = 0; mineindex < nummines ; mineindex++ )
+    {
         minenum = "0" + mineindex;
         launchlocation = self gettagorigin( "j_mine_" + minenum, 1 );
         
@@ -143,7 +144,7 @@ function function_33f76685d61ffb0( minename, nummines, impactvelocity, stepstart
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa8d
 // Size: 0x4e
 function function_ebc941d7484bb7a9()
@@ -154,7 +155,7 @@ function function_ebc941d7484bb7a9()
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xae3
 // Size: 0x1d4
 function function_70fd9ddef68b9ae3( launchdirection, launchlocation, raycastdistance )
@@ -206,7 +207,7 @@ function function_70fd9ddef68b9ae3( launchdirection, launchlocation, raycastdist
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xcbf
 // Size: 0x375
 function function_6300c632dc21b15a( butterflymine, owner, sourcegrenade, lifetimeoverride )
@@ -280,7 +281,7 @@ function function_6300c632dc21b15a( butterflymine, owner, sourcegrenade, lifetim
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x103c
 // Size: 0x1f5
 function function_ffa6fec05cb3637a( bundle )
@@ -346,11 +347,16 @@ function function_ffa6fec05cb3637a( bundle )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1239
-// Size: 0x26f
+// Size: 0x275
 function function_fb430131c2697d67( attacker )
 {
+    if ( !isdefined( attacker ) )
+    {
+        return;
+    }
+    
     thread function_56ae4ffb25eb1168( 5 );
     
     if ( isai( attacker ) )
@@ -438,8 +444,8 @@ function function_fb430131c2697d67( attacker )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b0
+// Params 2
+// Checksum 0x0, Offset: 0x14b6
 // Size: 0x1d
 function function_4751713f978b6416( vehicle, mine )
 {
@@ -447,8 +453,8 @@ function function_4751713f978b6416( vehicle, mine )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d5
+// Params 1
+// Checksum 0x0, Offset: 0x14db
 // Size: 0x39
 function function_435b53c90ec01143( attacker )
 {
@@ -458,8 +464,8 @@ function function_435b53c90ec01143( attacker )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1516
+// Params 0
+// Checksum 0x0, Offset: 0x151c
 // Size: 0x37
 function function_e7e5214ee3b16fb1()
 {
@@ -473,8 +479,8 @@ function function_e7e5214ee3b16fb1()
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1555
+// Params 2
+// Checksum 0x0, Offset: 0x155b
 // Size: 0x149
 function function_56ae4ffb25eb1168( deletiondelay, var_6c3c372dfdf70054 )
 {
@@ -545,8 +551,8 @@ function function_56ae4ffb25eb1168( deletiondelay, var_6c3c372dfdf70054 )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16a6
+// Params 0
+// Checksum 0x0, Offset: 0x16ac
 // Size: 0x72
 function function_f1ccd9eaaa39e87c()
 {
@@ -563,8 +569,8 @@ function function_f1ccd9eaaa39e87c()
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1720
+// Params 0
+// Checksum 0x0, Offset: 0x1726
 // Size: 0x72
 function function_81ddc6ea59046dcb()
 {
@@ -581,8 +587,8 @@ function function_81ddc6ea59046dcb()
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x179a
+// Params 1
+// Checksum 0x0, Offset: 0x17a0
 // Size: 0xde
 function function_31cc0ad55f88e7f3( data )
 {
@@ -621,8 +627,8 @@ function function_31cc0ad55f88e7f3( data )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1881
+// Params 1
+// Checksum 0x0, Offset: 0x1887
 // Size: 0x55
 function function_76df7cd7c6105e46( meansofdeath )
 {
@@ -639,8 +645,8 @@ function function_76df7cd7c6105e46( meansofdeath )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18de
+// Params 1
+// Checksum 0x0, Offset: 0x18e4
 // Size: 0xce
 function function_ca00c87cb0a3d308( data )
 {
@@ -669,8 +675,8 @@ function function_ca00c87cb0a3d308( data )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b4
+// Params 2
+// Checksum 0x0, Offset: 0x19ba
 // Size: 0x104
 function function_92c9dde336b60a46( sourcegrenade, previousexplosionpoint )
 {
@@ -712,9 +718,9 @@ function function_92c9dde336b60a46( sourcegrenade, previousexplosionpoint )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ac0
-// Size: 0xaa
+// Params 1
+// Checksum 0x0, Offset: 0x1ac6
+// Size: 0xc4
 function function_692167ff37e7ef8( data )
 {
     if ( !isdefined( self ) || !isdefined( self.owner ) )
@@ -724,18 +730,18 @@ function function_692167ff37e7ef8( data )
     
     attacker = data.attacker;
     
-    if ( istrue( scripts\cp_mp\utility\player_utility::playersareenemies( self.owner, attacker ) ) )
+    if ( isdefined( attacker ) && istrue( scripts\cp_mp\utility\player_utility::playersareenemies( self.owner, attacker ) ) )
     {
         attacker notify( "destroyed_equipment" );
         
-        if ( !istrue( self.sourcegrenade.givenscore ) )
+        if ( isdefined( self.sourcegrenade ) && !istrue( self.sourcegrenade.givenscore ) )
         {
             attacker scripts\mp\killstreaks\killstreaks::givescoreforequipment( self, undefined, 1 );
             self.sourcegrenade.givenscore = 1;
         }
     }
     
-    if ( isplayer( attacker ) )
+    if ( isdefined( attacker ) && isplayer( attacker ) )
     {
         attacker updatedamagefeedback( "" );
     }
@@ -744,8 +750,8 @@ function function_692167ff37e7ef8( data )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b72
+// Params 0
+// Checksum 0x0, Offset: 0x1b92
 // Size: 0x1d
 function function_b540d1d357522929()
 {
@@ -759,8 +765,8 @@ function function_b540d1d357522929()
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b97
+// Params 0
+// Checksum 0x0, Offset: 0x1bb7
 // Size: 0x3f
 function function_1ba54174ee9ab40f()
 {
@@ -776,8 +782,8 @@ function function_1ba54174ee9ab40f()
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bde
+// Params 0
+// Checksum 0x0, Offset: 0x1bfe
 // Size: 0x1e
 function function_1575acb1c3533196()
 {
@@ -791,8 +797,8 @@ function function_1575acb1c3533196()
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c04
+// Params 1
+// Checksum 0x0, Offset: 0x1c24
 // Size: 0x43
 function function_f92200134f4ce696( data )
 {
@@ -810,8 +816,8 @@ function function_f92200134f4ce696( data )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c4f
+// Params 1
+// Checksum 0x0, Offset: 0x1c6f
 // Size: 0x3b
 function function_b86eee224cc33fc( data )
 {
@@ -823,8 +829,8 @@ function function_b86eee224cc33fc( data )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c92
+// Params 1
+// Checksum 0x0, Offset: 0x1cb2
 // Size: 0x3a
 function function_d2c4655c7d6a3331( data )
 {
@@ -836,8 +842,8 @@ function function_d2c4655c7d6a3331( data )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cd4
+// Params 2
+// Checksum 0x0, Offset: 0x1cf4
 // Size: 0x3c
 function function_5f9ffc69b9bd0ab3( up, forward )
 {
@@ -847,8 +853,8 @@ function function_5f9ffc69b9bd0ab3( up, forward )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d19
+// Params 2
+// Checksum 0x0, Offset: 0x1d39
 // Size: 0xd9
 function function_6fed985972fc7a38( inflictor, attacker )
 {
@@ -880,7 +886,7 @@ function function_6fed985972fc7a38( inflictor, attacker )
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1dfa
+// Checksum 0x0, Offset: 0x1e1a
 // Size: 0x85
 function private function_62a7d32fe50d51c3( timer )
 {
@@ -906,7 +912,7 @@ function private function_62a7d32fe50d51c3( timer )
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1e87
+// Checksum 0x0, Offset: 0x1ea7
 // Size: 0x74
 function private function_cf129b3a4e4245d0( timer )
 {
@@ -936,8 +942,8 @@ function private function_cf129b3a4e4245d0( timer )
 }
 
 // Namespace butterfly_mine / scripts\mp\equipment\butterfly_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f03
+// Params 1
+// Checksum 0x0, Offset: 0x1f23
 // Size: 0x19c
 function function_e1d976fb5e329d97( oldowner )
 {

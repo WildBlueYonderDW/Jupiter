@@ -13,7 +13,7 @@
 #namespace br_mobile_armory;
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41c
 // Size: 0xde
 function init()
@@ -31,7 +31,7 @@ function init()
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x502
 // Size: 0x1df
 function spawnmobilearmory( struct )
@@ -92,7 +92,7 @@ function spawnmobilearmory( struct )
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ea
 // Size: 0x134
 function _mobilearmorymanageminimapicon()
@@ -130,7 +130,7 @@ function _mobilearmorymanageminimapicon()
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x826
 // Size: 0x5c
 function onprematchdone()
@@ -142,7 +142,7 @@ function onprematchdone()
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88a
 // Size: 0x17
 function _mobilearmoryendusethink()
@@ -152,7 +152,7 @@ function _mobilearmoryendusethink()
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a9
 // Size: 0x18a
 function _mobilearmoryusethink()
@@ -218,7 +218,7 @@ function _mobilearmoryusethink()
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa3b
 // Size: 0x1fb
 function _mobilearmorychooseclass( mobilearmory )
@@ -279,7 +279,7 @@ function _mobilearmorychooseclass( mobilearmory )
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc3e
 // Size: 0x81
 function _onenterdefaultstate( mobilearmory )
@@ -294,7 +294,7 @@ function _onenterdefaultstate( mobilearmory )
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcc7
 // Size: 0x59
 function _onexitdefaultstate( mobilearmory )
@@ -307,7 +307,7 @@ function _onexitdefaultstate( mobilearmory )
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd28
 // Size: 0x8b
 function _onenterchargingstate( mobilearmory )
@@ -321,7 +321,7 @@ function _onenterchargingstate( mobilearmory )
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdbb
 // Size: 0x36
 function _onexitchargingstate( mobilearmory )
@@ -332,7 +332,7 @@ function _onexitchargingstate( mobilearmory )
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdf9
 // Size: 0xd3
 function _onenteractivestate( mobilearmory )
@@ -349,7 +349,7 @@ function _onenteractivestate( mobilearmory )
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed4
 // Size: 0x59
 function _onexitactivestate( mobilearmory )
@@ -362,7 +362,7 @@ function _onexitactivestate( mobilearmory )
 }
 
 // Namespace br_mobile_armory / scripts\mp\gametypes\br_mobile_armory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf35
 // Size: 0x3a
 function _onentercooldownstate( mobilearmory )

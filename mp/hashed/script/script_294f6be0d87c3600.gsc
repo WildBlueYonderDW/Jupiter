@@ -12,7 +12,7 @@
 #namespace warrior_revive;
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x326
 // Size: 0x18e
 function function_12d48a74b22a6cce()
@@ -35,7 +35,7 @@ function function_12d48a74b22a6cce()
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4bc
 // Size: 0x96
 function function_7826f269377f2e62()
@@ -52,7 +52,7 @@ function function_7826f269377f2e62()
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55a
 // Size: 0x58
 function onplayerspawned()
@@ -71,7 +71,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ba
 // Size: 0xe8
 function function_8b680aaf88eed250()
@@ -96,7 +96,7 @@ function function_8b680aaf88eed250()
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6aa
 // Size: 0x2d
 function function_f7c51f5832b5273a()
@@ -112,7 +112,7 @@ function function_f7c51f5832b5273a()
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6df
 // Size: 0x2e
 function function_268bf779da4261bf()
@@ -123,7 +123,7 @@ function function_268bf779da4261bf()
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x715
 // Size: 0x43
 function function_d63a7e17a1e870f2( winner, endreasontext, nukedetonated )
@@ -140,7 +140,7 @@ function function_d63a7e17a1e870f2( winner, endreasontext, nukedetonated )
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x761
 // Size: 0x6a
 function getspawnteam()
@@ -155,7 +155,7 @@ function getspawnteam()
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d3
 // Size: 0x36
 function function_925e255e3693811a()
@@ -166,12 +166,13 @@ function function_925e255e3693811a()
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x812
 // Size: 0x6c
 function function_9c3e1d94e41dffb()
 {
-    for (i = 0; i < level.teamnamelist.size; i++) {
+    for ( i = 0; i < level.teamnamelist.size ; i++ )
+    {
         if ( level.teamnamelist[ i ] == self.team )
         {
             if ( i < level.teamnamelist.size - 1 )
@@ -185,7 +186,7 @@ function function_9c3e1d94e41dffb()
 }
 
 // Namespace warrior_revive / namespace_2cda60670556b724
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x886
 // Size: 0x2
 function addlaststandoverheadiconcallback()

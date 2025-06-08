@@ -15,7 +15,7 @@
 #namespace br_timedrun_quest;
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29d
 // Size: 0x15a
 function getcontractdata( data )
@@ -35,7 +35,7 @@ function getcontractdata( data )
 }
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ff
 // Size: 0x30, Type: bool
 function function_f95df4809dfa1d7f()
@@ -52,7 +52,7 @@ function function_f95df4809dfa1d7f()
 }
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x438
 // Size: 0x198
 function function_fbc4e1bc931264a8()
@@ -90,7 +90,7 @@ function function_fbc4e1bc931264a8()
 }
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d8
 // Size: 0x3b
 function function_701b9420ca853766( success )
@@ -102,7 +102,7 @@ function function_701b9420ca853766( success )
 }
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x61b
 // Size: 0x77
 function function_fe13e6dc6fe958b8( time )
@@ -118,7 +118,7 @@ function function_fe13e6dc6fe958b8( time )
 }
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x69a
 // Size: 0x250
 function function_3948b71d8c04b5b8()
@@ -198,7 +198,7 @@ function function_3948b71d8c04b5b8()
 }
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8f3
 // Size: 0xd3
 function timedrun_finishlinevfx( spawn_origin, team )
@@ -218,7 +218,7 @@ function timedrun_finishlinevfx( spawn_origin, team )
 }
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ce
 // Size: 0x1c0
 function tr_detectwinners()
@@ -262,7 +262,7 @@ function tr_detectwinners()
 }
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb96
 // Size: 0x1b
 function hidetimedrunhudfromplayer( player )
@@ -272,7 +272,7 @@ function hidetimedrunhudfromplayer( player )
 }
 
 // Namespace br_timedrun_quest / scripts\mp\gametypes\br_timedrun_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb9
 // Size: 0x5d
 function deletetimedrunhud()

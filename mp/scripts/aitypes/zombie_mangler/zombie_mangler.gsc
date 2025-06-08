@@ -21,7 +21,7 @@
 #namespace zombie_mangler;
 
 // Namespace zombie_mangler / scripts\aitypes\zombie_mangler\zombie_mangler
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36f
 // Size: 0x3a
 function precache( params )
@@ -58,7 +58,7 @@ function private function_f49a30f92555b827( params )
 }
 
 // Namespace zombie_mangler / scripts\aitypes\zombie_mangler\zombie_mangler
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x53f
 // Size: 0xb3
 function function_e3e1894798c371bf( taskid )
@@ -79,7 +79,7 @@ function function_e3e1894798c371bf( taskid )
 }
 
 // Namespace zombie_mangler / scripts\aitypes\zombie_mangler\zombie_mangler
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fb
 // Size: 0x30
 function initscriptable()
@@ -95,7 +95,7 @@ function initscriptable()
 }
 
 // Namespace zombie_mangler / scripts\aitypes\zombie_mangler\zombie_mangler
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x633
 // Size: 0x4b
 function function_c3fded253ea1fc75( params )
@@ -107,7 +107,7 @@ function function_c3fded253ea1fc75( params )
 }
 
 // Namespace zombie_mangler / scripts\aitypes\zombie_mangler\zombie_mangler
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x686
 // Size: 0x13, Type: bool
 function function_a8c9248308033e4e()

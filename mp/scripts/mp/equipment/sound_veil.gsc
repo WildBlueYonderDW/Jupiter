@@ -44,8 +44,8 @@
 /#
 
     // Namespace sound_veil / scripts\mp\equipment\sound_veil
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4e7
+    // Params 0
+    // Checksum 0x0, Offset: 0x4e6
     // Size: 0x25, Type: dev
     function function_735ed2b006dce0eb()
     {
@@ -56,8 +56,8 @@
 #/
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x514
+// Params 1
+// Checksum 0x0, Offset: 0x513
 // Size: 0x379
 function function_6d91f8514005d18( grenade )
 {
@@ -145,8 +145,8 @@ function function_6d91f8514005d18( grenade )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x895
+// Params 2
+// Checksum 0x0, Offset: 0x894
 // Size: 0x5e
 function function_7a9d11f284eb6bc3( timeout, var_cd96ae96391c79e6 )
 {
@@ -166,8 +166,8 @@ function function_7a9d11f284eb6bc3( timeout, var_cd96ae96391c79e6 )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fb
+// Params 1
+// Checksum 0x0, Offset: 0x8fa
 // Size: 0x134
 function function_95a96c443ac9ea46( player )
 {
@@ -203,8 +203,8 @@ function function_95a96c443ac9ea46( player )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa37
+// Params 1
+// Checksum 0x0, Offset: 0xa36
 // Size: 0xa0
 function function_50b1d2352a6a686a( data )
 {
@@ -225,8 +225,8 @@ function function_50b1d2352a6a686a( data )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xae0
+// Params 1
+// Checksum 0x0, Offset: 0xadf
 // Size: 0x74
 function function_f313405d166290be( data )
 {
@@ -243,8 +243,8 @@ function function_f313405d166290be( data )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5c
+// Params 1
+// Checksum 0x0, Offset: 0xb5b
 // Size: 0xbe
 function function_558d562eb33ea61d( data )
 {
@@ -279,8 +279,8 @@ function function_558d562eb33ea61d( data )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc22
+// Params 1
+// Checksum 0x0, Offset: 0xc21
 // Size: 0xec
 function function_53b79c2279dc402( wasdestroyed )
 {
@@ -317,8 +317,8 @@ function function_53b79c2279dc402( wasdestroyed )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd16
+// Params 1
+// Checksum 0x0, Offset: 0xd15
 // Size: 0x4d
 function function_7c9d9f1ca399b82c( attacker )
 {
@@ -331,8 +331,8 @@ function function_7c9d9f1ca399b82c( attacker )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd6b
+// Params 1
+// Checksum 0x0, Offset: 0xd6a
 // Size: 0xa6
 function function_b434ea15774ed770( data )
 {
@@ -351,8 +351,8 @@ function function_b434ea15774ed770( data )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe19
+// Params 1
+// Checksum 0x0, Offset: 0xe18
 // Size: 0x72
 function function_3b78125a41e822( data )
 {
@@ -368,8 +368,8 @@ function function_3b78125a41e822( data )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe93
+// Params 1
+// Checksum 0x0, Offset: 0xe92
 // Size: 0x39
 function function_844431456055a07b( data )
 {
@@ -378,8 +378,8 @@ function function_844431456055a07b( data )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xed4
+// Params 1
+// Checksum 0x0, Offset: 0xed3
 // Size: 0x13
 function function_391ebdde9e0eec71( data )
 {
@@ -387,8 +387,8 @@ function function_391ebdde9e0eec71( data )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeef
+// Params 0
+// Checksum 0x0, Offset: 0xeee
 // Size: 0xb7
 function function_74844a68121c9b36()
 {
@@ -424,9 +424,9 @@ function function_74844a68121c9b36()
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfae
-// Size: 0x28e
+// Params 0
+// Checksum 0x0, Offset: 0xfad
+// Size: 0x29c
 function function_caab3d73a9d2b003()
 {
     self endon( "death" );
@@ -445,7 +445,7 @@ function function_caab3d73a9d2b003()
             var_da8cec9bce12f9cb = triggeredent.agentteam;
         }
         
-        if ( isdefined( var_da8cec9bce12f9cb ) && var_da8cec9bce12f9cb == self.owner.team )
+        if ( istrue( level.teambased ) && isdefined( var_da8cec9bce12f9cb ) && var_da8cec9bce12f9cb == self.owner.team )
         {
             continue;
         }
@@ -507,8 +507,8 @@ function function_caab3d73a9d2b003()
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1244
+// Params 1
+// Checksum 0x0, Offset: 0x1251
 // Size: 0xd2, Type: bool
 function function_2567c5ffae3aa0cc( potentialtarget )
 {
@@ -553,8 +553,8 @@ function function_2567c5ffae3aa0cc( potentialtarget )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x131f
+// Params 3
+// Checksum 0x0, Offset: 0x132c
 // Size: 0x55, Type: bool
 function function_bd10b05c42bb5432( potentialtarget, ignoresight, var_e6c0b49674829ef4 )
 {
@@ -582,8 +582,8 @@ function function_bd10b05c42bb5432( potentialtarget, ignoresight, var_e6c0b49674
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x137d
+// Params 1
+// Checksum 0x0, Offset: 0x138a
 // Size: 0x17, Type: bool
 function function_8be3970b7e22cb24( potentialtarget )
 {
@@ -591,8 +591,8 @@ function function_8be3970b7e22cb24( potentialtarget )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x139d
+// Params 1
+// Checksum 0x0, Offset: 0x13aa
 // Size: 0x24, Type: bool
 function function_669bd251f952db32( potentialtarget )
 {
@@ -605,8 +605,8 @@ function function_669bd251f952db32( potentialtarget )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ca
+// Params 1
+// Checksum 0x0, Offset: 0x13d7
 // Size: 0x48, Type: bool
 function function_47bba92311467ca4( potentialtarget )
 {
@@ -624,8 +624,8 @@ function function_47bba92311467ca4( potentialtarget )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x141b
+// Params 3
+// Checksum 0x0, Offset: 0x1428
 // Size: 0x9e, Type: bool
 function function_b6727d48164ba951( potentialtarget, var_e6c0b49674829ef4, var_4a6a11a4f1e2c293 )
 {
@@ -667,8 +667,8 @@ function function_b6727d48164ba951( potentialtarget, var_e6c0b49674829ef4, var_4
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c2
+// Params 1
+// Checksum 0x0, Offset: 0x14cf
 // Size: 0xb6, Type: bool
 function function_a5a768ec20759f3d( potentialtarget )
 {
@@ -698,8 +698,8 @@ function function_a5a768ec20759f3d( potentialtarget )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1581
+// Params 2
+// Checksum 0x0, Offset: 0x158e
 // Size: 0x6b, Type: bool
 function function_fb91ac0d17ce422e( potentialtarget, var_e6c0b49674829ef4 )
 {
@@ -728,8 +728,8 @@ function function_fb91ac0d17ce422e( potentialtarget, var_e6c0b49674829ef4 )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f5
+// Params 1
+// Checksum 0x0, Offset: 0x1602
 // Size: 0x15d
 function function_ffb333a3a7d50710( enemytarget )
 {
@@ -782,8 +782,8 @@ function function_ffb333a3a7d50710( enemytarget )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x175a
+// Params 1
+// Checksum 0x0, Offset: 0x1767
 // Size: 0x59
 function function_55f4107c03475907( target )
 {
@@ -803,8 +803,8 @@ function function_55f4107c03475907( target )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17bc
+// Params 2
+// Checksum 0x0, Offset: 0x17c9
 // Size: 0x14d
 function function_20e0e81ccc2160e7( enemytarget, enemytargetid )
 {
@@ -853,8 +853,8 @@ function function_20e0e81ccc2160e7( enemytarget, enemytargetid )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1911
+// Params 2
+// Checksum 0x0, Offset: 0x191e
 // Size: 0x32
 function function_99f74e04a216a21c( enemytarget, enemytargetid )
 {
@@ -868,8 +868,8 @@ function function_99f74e04a216a21c( enemytarget, enemytargetid )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x194b
+// Params 2
+// Checksum 0x0, Offset: 0x1958
 // Size: 0x5c
 function function_a996433357117a3f( enemytarget, enemytargetid )
 {
@@ -888,8 +888,8 @@ function function_a996433357117a3f( enemytarget, enemytargetid )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19af
+// Params 2
+// Checksum 0x0, Offset: 0x19bc
 // Size: 0xe5
 function function_a8b8c5877fc13197( enemytarget, enemytargetid )
 {
@@ -928,8 +928,8 @@ function function_a8b8c5877fc13197( enemytarget, enemytargetid )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a9c
+// Params 2
+// Checksum 0x0, Offset: 0x1aa9
 // Size: 0x3b
 function function_dba08b318eb4224d( enemytarget, enemytargetid )
 {
@@ -940,8 +940,8 @@ function function_dba08b318eb4224d( enemytarget, enemytargetid )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1adf
+// Params 2
+// Checksum 0x0, Offset: 0x1aec
 // Size: 0x6e
 function function_f6ff6461277e08e7( enemytarget, enemytargetid )
 {
@@ -964,8 +964,8 @@ function function_f6ff6461277e08e7( enemytarget, enemytargetid )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b55
+// Params 2
+// Checksum 0x0, Offset: 0x1b62
 // Size: 0x7a
 function function_5fdece59c0ffc021( enemytarget, enemytargetid )
 {
@@ -997,8 +997,8 @@ function function_5fdece59c0ffc021( enemytarget, enemytargetid )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bd7
+// Params 2
+// Checksum 0x0, Offset: 0x1be4
 // Size: 0x50
 function function_9ad53f155f459571( enemytarget, enemytargetid )
 {
@@ -1012,8 +1012,8 @@ function function_9ad53f155f459571( enemytarget, enemytargetid )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c2f
+// Params 2
+// Checksum 0x0, Offset: 0x1c3c
 // Size: 0x49
 function function_de45ed589c44b1b6( enemytarget, enemytargetid )
 {
@@ -1025,8 +1025,8 @@ function function_de45ed589c44b1b6( enemytarget, enemytargetid )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c80
+// Params 0
+// Checksum 0x0, Offset: 0x1c8d
 // Size: 0x34
 function function_3e3ba6dfdea9465b()
 {
@@ -1036,8 +1036,8 @@ function function_3e3ba6dfdea9465b()
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cbc
+// Params 0
+// Checksum 0x0, Offset: 0x1cc9
 // Size: 0x38
 function function_a322c0dd80d5eff7()
 {
@@ -1047,8 +1047,8 @@ function function_a322c0dd80d5eff7()
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cfc
+// Params 1
+// Checksum 0x0, Offset: 0x1d09
 // Size: 0x39
 function function_58224ad5db7ba3ef( enemytarget )
 {
@@ -1058,8 +1058,8 @@ function function_58224ad5db7ba3ef( enemytarget )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d3d
+// Params 1
+// Checksum 0x0, Offset: 0x1d4a
 // Size: 0x82, Type: bool
 function function_3c43dcc55621952a( enemytarget )
 {
@@ -1078,8 +1078,8 @@ function function_3c43dcc55621952a( enemytarget )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc8
+// Params 1
+// Checksum 0x0, Offset: 0x1dd5
 // Size: 0x34
 function function_61d589d2064b53f2( enemytarget )
 {
@@ -1091,8 +1091,8 @@ function function_61d589d2064b53f2( enemytarget )
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e04
+// Params 0
+// Checksum 0x0, Offset: 0x1e11
 // Size: 0x63
 function function_77bbce9593e3b2cc()
 {
@@ -1106,8 +1106,8 @@ function function_77bbce9593e3b2cc()
 }
 
 // Namespace sound_veil / scripts\mp\equipment\sound_veil
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e6f
+// Params 1
+// Checksum 0x0, Offset: 0x1e7c
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
 {

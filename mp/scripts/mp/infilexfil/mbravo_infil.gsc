@@ -24,7 +24,7 @@
 #namespace mbravo_infil;
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbb3
 // Size: 0x9b
 function function_a8bca89f5f67bf2b( subtype )
@@ -44,7 +44,7 @@ function function_a8bca89f5f67bf2b( subtype )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc56
 // Size: 0x149
 function function_52416ea77b3b3e80( team, target, subtype, originalsubtype )
@@ -79,7 +79,7 @@ function function_52416ea77b3b3e80( team, target, subtype, originalsubtype )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xda8
 // Size: 0xb2
 function printdata( infil, subtype, originalsubtype )
@@ -99,7 +99,7 @@ function printdata( infil, subtype, originalsubtype )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe62
 // Size: 0x60
 function function_fbecfca322b890c( subtype )
@@ -110,7 +110,7 @@ function function_fbecfca322b890c( subtype )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xecb
 // Size: 0x25c
 function function_740ab38c4e4a258a( infil, spot_index )
@@ -187,7 +187,7 @@ function function_740ab38c4e4a258a( infil, spot_index )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112f
 // Size: 0x138
 function function_ffdf6c99de481354()
@@ -239,7 +239,7 @@ function function_ffdf6c99de481354()
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x126f
 // Size: 0x24e
 function playerthinkanim( infil, spot_index )
@@ -290,7 +290,7 @@ function playerthinkanim( infil, spot_index )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14c5
 // Size: 0xb
 function scriptswitchweaponhack()
@@ -300,7 +300,7 @@ function scriptswitchweaponhack()
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d8
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -318,7 +318,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x151c
 // Size: 0x34
 function scn_infil_mbravo_heli_npc1( guy )
@@ -332,7 +332,7 @@ function scn_infil_mbravo_heli_npc1( guy )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1558
 // Size: 0x34
 function scn_infil_mbravo_heli_npc2( guy )
@@ -346,7 +346,7 @@ function scn_infil_mbravo_heli_npc2( guy )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1594
 // Size: 0x34
 function scn_infil_mbravo_heli_npc3( guy )
@@ -360,7 +360,7 @@ function scn_infil_mbravo_heli_npc3( guy )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15d0
 // Size: 0x34
 function scn_infil_mbravo_heli_npc4( guy )
@@ -374,7 +374,7 @@ function scn_infil_mbravo_heli_npc4( guy )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x160c
 // Size: 0x34
 function scn_infil_mbravo_heli_npc5( guy )
@@ -388,7 +388,7 @@ function scn_infil_mbravo_heli_npc5( guy )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1648
 // Size: 0x34
 function scn_infil_mbravo_heli_npc6( guy )
@@ -402,7 +402,7 @@ function scn_infil_mbravo_heli_npc6( guy )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1684
 // Size: 0xc3
 function function_827c68636856cf78()
@@ -432,7 +432,7 @@ function function_827c68636856cf78()
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x174f
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -448,7 +448,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1785
 // Size: 0x4c
 function player_infil_end( infil )
@@ -462,7 +462,7 @@ function player_infil_end( infil )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17d9
 // Size: 0x4c
 function player_van_disconnect()
@@ -481,7 +481,7 @@ function player_van_disconnect()
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x182d
 // Size: 0x153
 function infilthink( team, scene_name )
@@ -514,7 +514,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1988
 // Size: 0x7c
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -534,7 +534,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a0c
 // Size: 0x28a
 function vehiclethinkanim( team, scene_node, scene_name, extra_crew )
@@ -589,7 +589,7 @@ function vehiclethinkanim( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c9e
 // Size: 0x16b
 function spawninfilvehicle( scene_node, team, scene_name )
@@ -645,7 +645,7 @@ function spawninfilvehicle( scene_node, team, scene_name )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1e12
 // Size: 0x9b
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -660,7 +660,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1eb5
 // Size: 0xd3
 function actorthinkanim( team, scene_node, scene_name, extra_crew )
@@ -681,7 +681,7 @@ function actorthinkanim( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f90
 // Size: 0x19f
 function spawnactors( team, scene_name, extra_crew )
@@ -713,7 +713,7 @@ function spawnactors( team, scene_name, extra_crew )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2138
 // Size: 0x178
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -752,7 +752,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x22b9
 // Size: 0x1dc
 function initanims( subtype, team, originalsubtype )
@@ -789,7 +789,7 @@ function initanims( subtype, team, originalsubtype )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x249d
 // Size: 0x503
 function function_adea51195e19842d( subtype )
@@ -838,7 +838,7 @@ function function_adea51195e19842d( subtype )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29a8
 // Size: 0x503
 function function_7477f93e18524711( subtype )
@@ -887,7 +887,7 @@ function function_7477f93e18524711( subtype )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2eb3
 // Size: 0x4e
 function function_1e9ed96027e5d5dd( subtype, team, originalsubtype )
@@ -897,7 +897,7 @@ function function_1e9ed96027e5d5dd( subtype, team, originalsubtype )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f09
 // Size: 0xf6
 function function_83d11c9ec4313021( subtype, team, originalsubtype )
@@ -922,7 +922,7 @@ function function_83d11c9ec4313021( subtype, team, originalsubtype )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3007
 // Size: 0x83
 function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -937,7 +937,7 @@ function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3092
 // Size: 0x96
 function heli_interior_sfx( scene_name )
@@ -962,7 +962,7 @@ function heli_interior_sfx( scene_name )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3130
 // Size: 0x4b
 function deleteoninfilcomplete()
@@ -987,7 +987,7 @@ function deleteoninfilcomplete()
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3183
 // Size: 0x19
 function function_5ae55d7eb7946799()
@@ -998,7 +998,7 @@ function function_5ae55d7eb7946799()
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31a4
 // Size: 0x92
 function cinematiccameratimeline( infil )
@@ -1021,7 +1021,7 @@ function cinematiccameratimeline( infil )
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x323e
 // Size: 0x16b
 function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubtype )
@@ -1060,7 +1060,7 @@ function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubty
 }
 
 // Namespace mbravo_infil / scripts\mp\infilexfil\mbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33b1
 // Size: 0x13
 function function_6158ef142e9bd640()

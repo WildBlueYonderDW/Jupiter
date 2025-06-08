@@ -8,7 +8,7 @@
 #namespace asm;
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x950
 // Size: 0x27
 function function_c051a94f99bd65f1( asmname )
@@ -19,7 +19,7 @@ function function_c051a94f99bd65f1( asmname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x97f
 // Size: 0x62
 function asm_getfunction( asmname, funcid )
@@ -30,7 +30,7 @@ function asm_getfunction( asmname, funcid )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ea
 // Size: 0x7
 function asm_getgenerichandler()
@@ -39,7 +39,7 @@ function asm_getgenerichandler()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9fa
 // Size: 0x41
 function asm_setupaim( asmname, statename, blendtime, use_5 )
@@ -51,7 +51,7 @@ function asm_setupaim( asmname, statename, blendtime, use_5 )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa43
 // Size: 0x152
 function asm_settransitionorientmode( orient_mode )
@@ -100,7 +100,7 @@ function asm_settransitionorientmode( orient_mode )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb9d
 // Size: 0x30
 function asm_settransitionanimmode( anim_mode )
@@ -115,7 +115,7 @@ function asm_settransitionanimmode( anim_mode )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xbd5
 // Size: 0xe1
 function asm_generichandler( handlername, asmname, param1, param2, param3 )
@@ -147,7 +147,7 @@ function asm_generichandler( handlername, asmname, param1, param2, param3 )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcbe
 // Size: 0x5a
 function asm_setoverrideparams( asmname, params )
@@ -160,7 +160,7 @@ function asm_setoverrideparams( asmname, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd21
 // Size: 0x1a
 function asm_globalinit()
@@ -174,7 +174,7 @@ function asm_globalinit()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd43
 // Size: 0x25
 function asm_fireephemeralevent( eventtarget, eventname, params )
@@ -183,7 +183,7 @@ function asm_fireephemeralevent( eventtarget, eventname, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd70
 // Size: 0x34
 function asm_init_blackboard()
@@ -198,7 +198,7 @@ function asm_init_blackboard()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdac
 // Size: 0x7f
 function asm_terminateandreplace( var_f48b8938602f359b, newarchetype )
@@ -221,7 +221,7 @@ function asm_terminateandreplace( var_f48b8938602f359b, newarchetype )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe33
 // Size: 0x4e
 function asm_getnotehandler( asmname, statename )
@@ -247,7 +247,7 @@ function asm_getnotehandler( asmname, statename )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe8a
 // Size: 0x2b
 function asm_currentstatehasflag( asmname, flagname )
@@ -261,7 +261,7 @@ function asm_currentstatehasflag( asmname, flagname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xebe
 // Size: 0x25
 function asm_fireevent_internal( asmname, eventname, params )
@@ -270,7 +270,7 @@ function asm_fireevent_internal( asmname, eventname, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xeeb
 // Size: 0x4a
 function asm_fireevent( asmname, eventname, params )
@@ -285,7 +285,7 @@ function asm_fireevent( asmname, eventname, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf3d
 // Size: 0x37, Type: bool
 function asm_ephemeraleventfired( eventtarget, eventname, var_bd6b21f67400a4 )
@@ -301,7 +301,7 @@ function asm_ephemeraleventfired( eventtarget, eventname, var_bd6b21f67400a4 )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf7d
 // Size: 0x1d
 function asm_eventfiredrecently( asmname, eventname )
@@ -310,7 +310,7 @@ function asm_eventfiredrecently( asmname, eventname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfa3
 // Size: 0x1b
 function asm_geteventtime( asmname, eventname )
@@ -319,7 +319,7 @@ function asm_geteventtime( asmname, eventname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfc7
 // Size: 0x1b
 function asm_geteventdata( asmname, eventname )
@@ -328,7 +328,7 @@ function asm_geteventdata( asmname, eventname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfeb
 // Size: 0x1b
 function asm_getephemeraleventdata( eventtarget, eventname )
@@ -337,7 +337,7 @@ function asm_getephemeraleventdata( eventtarget, eventname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x100f
 // Size: 0x9
 function asm_clearallephemeralevents()
@@ -346,7 +346,7 @@ function asm_clearallephemeralevents()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1020
 // Size: 0x9f, Type: bool
 function asm_shouldpowerdown( asmname, currentstate )
@@ -385,7 +385,7 @@ function asm_shouldpowerdown( asmname, currentstate )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10c8
 // Size: 0x1b
 function asm_eventfired( asmname, eventname )
@@ -394,7 +394,7 @@ function asm_eventfired( asmname, eventname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10ec
 // Size: 0x24
 function asm_checktransitions( asmname, currentstatename, var_7bb056e0e335a770 )
@@ -403,7 +403,7 @@ function asm_checktransitions( asmname, currentstatename, var_7bb056e0e335a770 )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1118
 // Size: 0x5e
 function asm_setstate( tostatename, params )
@@ -420,7 +420,7 @@ function asm_setstate( tostatename, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x117e
 // Size: 0x6b
 function function_ac90fa5cc0a80298( state_name, params )
@@ -441,7 +441,7 @@ function function_ac90fa5cc0a80298( state_name, params )
 /#
 
     // Namespace asm / scripts\asm\asm
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x11f1
     // Size: 0x10, Type: dev
     function asm_tick()
@@ -452,7 +452,7 @@ function function_ac90fa5cc0a80298( state_name, params )
 #/
 
 // Namespace asm / scripts\asm\asm
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1209
 // Size: 0x50, Type: bool
 function highestallowedstance( asmname, statename, tostatename, stance )
@@ -469,7 +469,7 @@ function highestallowedstance( asmname, statename, tostatename, stance )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1262
 // Size: 0x15
 function asm_getdemeanor()
@@ -478,7 +478,7 @@ function asm_getdemeanor()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1280
 // Size: 0x2
 function asm_updatefrantic()
@@ -487,7 +487,7 @@ function asm_updatefrantic()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x128a
 // Size: 0x3, Type: bool
 function asm_isfrantic()
@@ -496,7 +496,7 @@ function asm_isfrantic()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1296
 // Size: 0x16, Type: bool
 function asm_iscrawlmelee()
@@ -505,7 +505,7 @@ function asm_iscrawlmelee()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12b5
 // Size: 0x20
 function asm_setcrawlmelee( val )
@@ -514,7 +514,7 @@ function asm_setcrawlmelee( val )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12dd
 // Size: 0x34
 function asm_setdemeanoranimoverride( demeanor, override, anime )
@@ -523,7 +523,7 @@ function asm_setdemeanoranimoverride( demeanor, override, anime )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1319
 // Size: 0x35
 function asm_cleardemeanoranimoverride( demeanor, override )
@@ -535,7 +535,7 @@ function asm_cleardemeanoranimoverride( demeanor, override )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1356
 // Size: 0x45, Type: bool
 function asm_hasdemeanoranimoverride( demeanor, override )
@@ -544,7 +544,7 @@ function asm_hasdemeanoranimoverride( demeanor, override )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13a4
 // Size: 0x3b
 function asm_getdemeanoranimoverride( demeanor, override )
@@ -554,7 +554,7 @@ function asm_getdemeanoranimoverride( demeanor, override )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e8
 // Size: 0x12
 function asm_getcurrentstate( asmname )
@@ -563,7 +563,7 @@ function asm_getcurrentstate( asmname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1403
 // Size: 0x4f, Type: bool
 function asm_hasalias( statename, alias )
@@ -575,7 +575,7 @@ function asm_hasalias( statename, alias )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x145b
 // Size: 0x90
 function asm_getanim( asmname, statename, params )
@@ -606,7 +606,7 @@ function asm_getanim( asmname, statename, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14f3
 // Size: 0x2e
 function asm_getrandomanim( asmname, statename )
@@ -616,7 +616,7 @@ function asm_getrandomanim( asmname, statename )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x152a
 // Size: 0x63
 function asm_getrandomalias( statename )
@@ -627,7 +627,7 @@ function asm_getrandomalias( statename )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1596
 // Size: 0x51
 function function_c1bf21c5e8625ea( statename, alias )
@@ -639,7 +639,7 @@ function function_c1bf21c5e8625ea( statename, alias )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15f0
 // Size: 0x4e
 function asm_lookupanimfromaliasifexists( statename, alias )
@@ -651,7 +651,7 @@ function asm_lookupanimfromaliasifexists( statename, alias )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1647
 // Size: 0x91
 function function_62d0bb5a77d09499( statename, alias )
@@ -664,7 +664,7 @@ function function_62d0bb5a77d09499( statename, alias )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16e1
 // Size: 0x8e
 function asm_lookupanimfromalias( statename, alias )
@@ -677,7 +677,7 @@ function asm_lookupanimfromalias( statename, alias )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1778
 // Size: 0xe3
 function asm_getallanimsforstate( statename )
@@ -704,7 +704,7 @@ function asm_getallanimsforstate( statename )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1864
 // Size: 0x5f
 function asm_getallanimsforalias( archetype, statename, alias )
@@ -727,7 +727,7 @@ function asm_getallanimsforalias( archetype, statename, alias )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18cc
 // Size: 0x23
 function asm_getallanimindicesforalias( statename, alias )
@@ -736,7 +736,7 @@ function asm_getallanimindicesforalias( statename, alias )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18f8
 // Size: 0x88
 function asm_playanimstate( asmname, statename, params )
@@ -754,7 +754,7 @@ function asm_playanimstate( asmname, statename, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1988
 // Size: 0x50
 function function_74a66de812856ba( asmname, statename, params )
@@ -767,7 +767,7 @@ function function_74a66de812856ba( asmname, statename, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19e0
 // Size: 0x30, Type: bool
 function asm_hasknobs()
@@ -781,7 +781,7 @@ function asm_hasknobs()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a19
 // Size: 0x25b
 function function_fb56c9527636713f( asmname, statename, playbackrate, ismovestate )
@@ -892,7 +892,7 @@ function function_fb56c9527636713f( asmname, statename, playbackrate, ismovestat
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1c7c
 // Size: 0x100
 function asm_lookupdirectionalfootanim( keypaddirection, asmname, statename, var_5217df91f13c7c48, optionalprefix )
@@ -949,7 +949,7 @@ function asm_lookupdirectionalfootanim( keypaddirection, asmname, statename, var
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d85
 // Size: 0x15
 function asm_setmoveplaybackrate( rate )
@@ -958,7 +958,7 @@ function asm_setmoveplaybackrate( rate )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1da2
 // Size: 0xb
 function asm_getmoveplaybackrate()
@@ -967,7 +967,7 @@ function asm_getmoveplaybackrate()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1db6
 // Size: 0x12
 function asm_getcurrentstatename( asmname )
@@ -976,7 +976,7 @@ function asm_getcurrentstatename( asmname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1dd1
 // Size: 0x115
 function asm_dosinglenotetrack( asmname, statename, customfunction, customparams, customflagname )
@@ -1023,7 +1023,7 @@ function asm_dosinglenotetrack( asmname, statename, customfunction, customparams
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1eef
 // Size: 0x8e
 function asm_handlenewnotetracks( asmname, note, statename )
@@ -1052,7 +1052,7 @@ function asm_handlenewnotetracks( asmname, note, statename )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f85
 // Size: 0x136, Type: bool
 function asm_tryhandledeathstatechangenotetrack( notetrack )
@@ -1096,7 +1096,7 @@ function asm_tryhandledeathstatechangenotetrack( notetrack )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x20c4
 // Size: 0x5e
 function asm_donotetracksfortime( asmname, statename, time, customfunction, customparams )
@@ -1112,7 +1112,7 @@ function asm_donotetracksfortime( asmname, statename, time, customfunction, cust
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x212a
 // Size: 0x24
 function asm_donotetrackswithtimeout_helper( endonstring, notifystring, timeout )
@@ -1123,7 +1123,7 @@ function asm_donotetrackswithtimeout_helper( endonstring, notifystring, timeout 
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2156
 // Size: 0x7a
 function asm_donotetrackswithtimeout( asmname, statename, timeout, customfunction, customparams )
@@ -1138,7 +1138,7 @@ function asm_donotetrackswithtimeout( asmname, statename, timeout, customfunctio
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x21d9
 // Size: 0x81
 function asm_donotetracks( asmname, statename, customfunction, customparams, customflagname, var_5c0d1cbfc351f2e1 )
@@ -1165,7 +1165,7 @@ function asm_donotetracks( asmname, statename, customfunction, customparams, cus
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2262
 // Size: 0x14c
 function asm_donotetrackswithinterceptor( asmname, statename, interceptfunction, var_314a4fbce09143e7, customflagname )
@@ -1226,7 +1226,7 @@ function asm_donotetrackswithinterceptor( asmname, statename, interceptfunction,
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x23b6
 // Size: 0x89
 function asm_donotetrackssingleloop( asmname, statename, xanim, customfunction )
@@ -1241,7 +1241,7 @@ function asm_donotetrackssingleloop( asmname, statename, xanim, customfunction )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2447
 // Size: 0x35
 function asm_donotetrackssingleloop_waiter( notifyname, endonname, time )
@@ -1255,7 +1255,7 @@ function asm_donotetrackssingleloop_waiter( notifyname, endonname, time )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2484
 // Size: 0x19
 function asm_donotetracksfortime_helper( notifystring, time )
@@ -1265,7 +1265,7 @@ function asm_donotetracksfortime_helper( notifystring, time )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x24a5
 // Size: 0xb8
 function asm_waitforaimnotetrack( asmname, statename, blendtime )
@@ -1295,7 +1295,7 @@ function asm_waitforaimnotetrack( asmname, statename, blendtime )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2565
 // Size: 0x19c
 function asm_lookuprandomalias( statename, optionalprefix, allownone )
@@ -1363,7 +1363,7 @@ function asm_lookuprandomalias( statename, optionalprefix, allownone )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x270a
 // Size: 0xa5
 function asm_chooseanim( asmname, statename, params )
@@ -1402,7 +1402,7 @@ function asm_chooseanim( asmname, statename, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27b7
 // Size: 0x7c
 function asm_clearfacialanim()
@@ -1427,7 +1427,7 @@ function asm_clearfacialanim()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x283b
 // Size: 0x48
 function asm_restorefacialanim()
@@ -1444,7 +1444,7 @@ function asm_restorefacialanim()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x288b
 // Size: 0x37
 function asm_playfacialanim( asmname, statename, animname )
@@ -1456,7 +1456,7 @@ function asm_playfacialanim( asmname, statename, animname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28ca
 // Size: 0x5d
 function asm_getroot()
@@ -1474,7 +1474,7 @@ function asm_getroot()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2930
 // Size: 0x4e
 function asm_getbodyknob()
@@ -1491,7 +1491,7 @@ function asm_getbodyknob()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2987
 // Size: 0x5a
 function asm_getinnerrootknob()
@@ -1514,7 +1514,7 @@ function asm_getinnerrootknob()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29ea
 // Size: 0x54
 function asm_getfacialknob()
@@ -1535,7 +1535,7 @@ function asm_getfacialknob()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a46
 // Size: 0x54
 function asm_getheadlookknobifexists()
@@ -1556,7 +1556,7 @@ function asm_getheadlookknobifexists()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aa2
 // Size: 0xaa, Type: bool
 function asm_isweaponoverride()
@@ -1574,7 +1574,7 @@ function asm_isweaponoverride()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b55
 // Size: 0x5c
 function function_6aa159fc2f693af7( statename, animid )
@@ -1592,7 +1592,7 @@ function function_6aa159fc2f693af7( statename, animid )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2bb9
 // Size: 0x59
 function asm_getxanim( statename, animid )
@@ -1610,7 +1610,7 @@ function asm_getxanim( statename, animid )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2c1a
 // Size: 0x94
 function asm_playanimstatewithnotetrackinterceptor( asmname, statename, var_179213470e3d2f54, var_49bd3392cc4caeb2 )
@@ -1631,7 +1631,7 @@ function asm_playanimstatewithnotetrackinterceptor( asmname, statename, var_1792
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cb6
 // Size: 0x6c
 function asm_playanimstatenotransition( asmname, statename, params )
@@ -1644,7 +1644,7 @@ function asm_playanimstatenotransition( asmname, statename, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d2a
 // Size: 0x7e
 function function_30df7eff2a4557a5( statename, aliasname )
@@ -1661,7 +1661,7 @@ function function_30df7eff2a4557a5( statename, aliasname )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2db0
 // Size: 0x3d
 function asm_playadditiveanimloopstate( asmname, statename, params )
@@ -1671,7 +1671,7 @@ function asm_playadditiveanimloopstate( asmname, statename, params )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2df5
 // Size: 0x1c
 function function_6e9cb6cd0535fe65()
@@ -1681,7 +1681,7 @@ function function_6e9cb6cd0535fe65()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e19
 // Size: 0x15
 function function_8d1655ae223d862a( rate )
@@ -1690,7 +1690,7 @@ function function_8d1655ae223d862a( rate )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e36
 // Size: 0xb
 function function_4bb232c0fca955f6()
@@ -1699,7 +1699,7 @@ function function_4bb232c0fca955f6()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e4a
 // Size: 0x51
 function yawdiffto2468( diff )
@@ -1730,7 +1730,7 @@ function yawdiffto2468( diff )
 /#
 
     // Namespace asm / scripts\asm\asm
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2ea3
     // Size: 0x24, Type: dev
     function function_9de97eaaf31f9e35()
@@ -1744,7 +1744,7 @@ function yawdiffto2468( diff )
     }
 
     // Namespace asm / scripts\asm\asm
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2ecf
     // Size: 0x4d, Type: dev
     function function_3271c00e44d9636b()
@@ -1770,7 +1770,7 @@ function yawdiffto2468( diff )
     }
 
     // Namespace asm / scripts\asm\asm
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2f24
     // Size: 0x1f, Type: dev
     function debug_arrival( msg )
@@ -1786,7 +1786,7 @@ function yawdiffto2468( diff )
 #/
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f4b
 // Size: 0x70f
 function asm_setupgesture( asmname, statename )
@@ -1851,7 +1851,7 @@ function asm_setupgesture( asmname, statename )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3662
 // Size: 0xef
 function setup_level_ents()
@@ -1885,7 +1885,7 @@ function setup_level_ents()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3759
 // Size: 0x87
 function function_35dd4cad0ca3fafc()
@@ -1901,7 +1901,7 @@ function function_35dd4cad0ca3fafc()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37e8
 // Size: 0x57
 function processdoublejumpmantletraversal( target )
@@ -1920,7 +1920,7 @@ function processdoublejumpmantletraversal( target )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3847
 // Size: 0x502
 function traversethink()
@@ -2061,7 +2061,7 @@ function traversethink()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d51
 // Size: 0xcc
 function function_ece7865eb2447554()
@@ -2081,7 +2081,7 @@ function function_ece7865eb2447554()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e25
 // Size: 0x181
 function store_original_traverse_data()
@@ -2110,7 +2110,7 @@ function store_original_traverse_data()
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3fae
 // Size: 0x125
 function calculate_traverse_data( struct_pos, endnode_pos, var_83a69c989077feb7 )
@@ -2139,7 +2139,7 @@ function calculate_traverse_data( struct_pos, endnode_pos, var_83a69c989077feb7 
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x40db
 // Size: 0xd1
 function re_calculate_traverse_data( ref_node, struct_pos, endnode_pos, var_83a69c989077feb7 )
@@ -2164,7 +2164,7 @@ function re_calculate_traverse_data( ref_node, struct_pos, endnode_pos, var_83a6
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41b4
 // Size: 0x62c
 function processwallruntraversal( target )
@@ -2333,7 +2333,7 @@ function processwallruntraversal( target )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x47e8
 // Size: 0xd1
 function function_2121ee28acaa2765( target, end_node )
@@ -2342,7 +2342,8 @@ function function_2121ee28acaa2765( target, end_node )
     self.walk_nodes = [];
     self.walk_nodes = array_add( self.walk_nodes, self.origin );
     
-    for (currentgoal = target; isdefined( currentgoal ); currentgoal = undefined) {
+    for ( currentgoal = target; isdefined( currentgoal ) ; currentgoal = undefined )
+    {
         self.walk_nodes = array_add( self.walk_nodes, currentgoal.origin );
         
         if ( isdefined( currentgoal.target ) )
@@ -2356,7 +2357,7 @@ function function_2121ee28acaa2765( target, end_node )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48c1
 // Size: 0x18c
 function function_af7d10bc22de3494( target )
@@ -2399,7 +2400,7 @@ function function_af7d10bc22de3494( target )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a55
 // Size: 0x2ff
 function function_fda6a76c32365675( begin_pos, end_pos )
@@ -2430,7 +2431,8 @@ function function_fda6a76c32365675( begin_pos, end_pos )
         mid_point = undefined;
         var_a2d80e0c0cf75c95 = undefined;
         
-        for (i = 0; i < iteration_limit; i++) {
+        for ( i = 0; i < iteration_limit ; i++ )
+        {
             mid_point = averagepoint( [ begin_pos, end_pos ] );
             pit_height = 20;
             var_a8da4fd8b61d7002 = mid_point - ( 0, 0, pit_height );
@@ -2504,7 +2506,7 @@ function function_fda6a76c32365675( begin_pos, end_pos )
 }
 
 // Namespace asm / scripts\asm\asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4d5d
 // Size: 0x2f
 function function_e722e0c504ced0ee( asmname, statename, params )
@@ -2516,7 +2518,7 @@ function function_e722e0c504ced0ee( asmname, statename, params )
 /#
 
     // Namespace asm / scripts\asm\asm
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4d94
     // Size: 0x53, Type: dev
     function function_f1e58f7103a22462()
@@ -2535,7 +2537,7 @@ function function_e722e0c504ced0ee( asmname, statename, params )
     }
 
     // Namespace asm / scripts\asm\asm
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x4def
     // Size: 0x58, Type: dev
     function validatetraverse( traverse )
@@ -2544,7 +2546,7 @@ function function_e722e0c504ced0ee( asmname, statename, params )
     }
 
     // Namespace asm / scripts\asm\asm
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4e4f
     // Size: 0x201, Type: dev
     function function_12534104fbe54e32()
@@ -2608,7 +2610,7 @@ function function_e722e0c504ced0ee( asmname, statename, params )
     }
 
     // Namespace asm / scripts\asm\asm
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5058
     // Size: 0x110, Type: dev
     function drawtraversaldata()

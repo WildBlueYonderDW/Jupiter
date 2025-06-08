@@ -14,7 +14,7 @@
 #namespace script_funcs;
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9ee
 // Size: 0x21b
 function soldier_init( asmname, statename, params )
@@ -82,7 +82,7 @@ function soldier_init( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc11
 // Size: 0x27
 function initscriptable()
@@ -93,7 +93,7 @@ function initscriptable()
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc40
 // Size: 0x4bc
 function initaimlimits( asmname )
@@ -218,7 +218,7 @@ function initaimlimits( asmname )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1104
 // Size: 0xd3
 function initanimspeedthresholds_soldier( animsetname )
@@ -259,7 +259,7 @@ function initanimspeedthresholds_soldier( animsetname )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x11df
 // Size: 0x8f, Type: bool
 function needtoturn3d( asmname, statename, tostatename, params )
@@ -287,7 +287,7 @@ function needtoturn3d( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1277
 // Size: 0x16b
 function getturndesiredyaw()
@@ -332,7 +332,7 @@ function getturndesiredyaw()
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13eb
 // Size: 0xd2
 function getturndesiredyaw3d()
@@ -367,7 +367,7 @@ function getturndesiredyaw3d()
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14c6
 // Size: 0xd2
 function getturndesiredpitch3d()
@@ -402,7 +402,7 @@ function getturndesiredpitch3d()
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15a1
 // Size: 0x166
 function chooseturnanim3d( asmname, statename, params )
@@ -481,7 +481,7 @@ function chooseturnanim3d( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x170f
 // Size: 0x81
 function choosecrouchturnanim( asmname, statename, params )
@@ -510,7 +510,7 @@ function choosecrouchturnanim( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1799
 // Size: 0x1b7
 function reload_cleanup( asmname, statename, params )
@@ -582,7 +582,7 @@ function reload_cleanup( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1958
 // Size: 0x26
 function terminateexposedprone( asmname, statename, params )
@@ -591,7 +591,7 @@ function terminateexposedprone( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1986
 // Size: 0x25
 function terminateexposedidleaimdown( asmname, statename, params )
@@ -600,7 +600,7 @@ function terminateexposedidleaimdown( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19b3
 // Size: 0x25
 function terminateexposedcrouchaimdown( asmname, statename, params )
@@ -609,7 +609,7 @@ function terminateexposedcrouchaimdown( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19e0
 // Size: 0x40, Type: bool
 function shouldfaceenemyinexposed()
@@ -623,7 +623,7 @@ function shouldfaceenemyinexposed()
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a29
 // Size: 0x93
 function playanim_weaponswitch( asmname, statename, params )
@@ -640,7 +640,7 @@ function playanim_weaponswitch( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ac4
 // Size: 0x3d
 function terminate_weaponswitch( asmname, statename, params )
@@ -650,7 +650,7 @@ function terminate_weaponswitch( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b09
 // Size: 0x17a
 function playturnanim_turnanimanglefixup( turnxanim, statename )
@@ -690,7 +690,7 @@ function playturnanim_turnanimanglefixup( turnxanim, statename )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1c8b
 // Size: 0x8e
 function shouldsnaptocover_checktype( asmname, statename, tostatename, params )
@@ -720,7 +720,7 @@ function shouldsnaptocover_checktype( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d22
 // Size: 0x14
 function reloadnotehandler( note )
@@ -730,7 +730,7 @@ function reloadnotehandler( note )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d3f
 // Size: 0x30
 function assesscleanup( asmname, statename, params )
@@ -739,7 +739,7 @@ function assesscleanup( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d77
 // Size: 0x49, Type: bool
 function function_9d9a4c83d3a8b338( asmname, statename, tostatename, params )
@@ -758,7 +758,7 @@ function function_9d9a4c83d3a8b338( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1dc9
 // Size: 0x85
 function facegoalthread_newenemyreaction( statename, reactworldyaw )
@@ -778,7 +778,7 @@ function facegoalthread_newenemyreaction( statename, reactworldyaw )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e56
 // Size: 0x65, Type: bool
 function handlefacegoalnotetrack_newenemyreaction( statename, note, lastknown )
@@ -797,7 +797,7 @@ function handlefacegoalnotetrack_newenemyreaction( statename, note, lastknown )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ec4
 // Size: 0xc9
 function playanim_newenemyreaction( asmname, statename, params )
@@ -819,7 +819,7 @@ function playanim_newenemyreaction( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f95
 // Size: 0xae
 function chooseanim_playerpushed( asmname, statename, params )
@@ -835,7 +835,7 @@ function chooseanim_playerpushed( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x204c
 // Size: 0x73
 function terminate_casualkiller( asmname, statename, params )
@@ -851,7 +851,7 @@ function terminate_casualkiller( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20c7
 // Size: 0x2f
 function pushdisabledgunpose()
@@ -865,7 +865,7 @@ function pushdisabledgunpose()
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20fe
 // Size: 0x38
 function popdisabledgunpose()
@@ -881,7 +881,7 @@ function popdisabledgunpose()
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x213e
 // Size: 0x3e
 function function_e9cdfb92cc489acb( asmname, statename, params )
@@ -891,7 +891,7 @@ function function_e9cdfb92cc489acb( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2184
 // Size: 0x59
 function function_33294352d1956570( asmname, statename, tostatename, params )
@@ -906,7 +906,7 @@ function function_33294352d1956570( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x21e6
 // Size: 0x40
 function function_78fcdbc229ec648c( asmname, statename, tostatename, params )
@@ -917,7 +917,7 @@ function function_78fcdbc229ec648c( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x222e
 // Size: 0x4d
 function forwardpushevent( asmname, statename, tostatename, params )

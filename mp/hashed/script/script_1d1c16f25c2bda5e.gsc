@@ -8,7 +8,7 @@
 #namespace shared;
 
 // Namespace shared / namespace_80c14191b262bb30
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x162
 // Size: 0x6e
 function teleportthread( verticaloffset )
@@ -19,14 +19,15 @@ function teleportthread( verticaloffset )
     reps = 5;
     offset = ( 0, 0, verticaloffset / reps );
     
-    for (i = 0; i < reps; i++) {
+    for ( i = 0; i < reps ; i++ )
+    {
         self forceteleport( self.origin + offset );
         wait 0.05;
     }
 }
 
 // Namespace shared / namespace_80c14191b262bb30
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d8
 // Size: 0x100
 function teleportthreadex( verticaloffset, delay, frames, animrate )
@@ -52,7 +53,8 @@ function teleportthreadex( verticaloffset, delay, frames, animrate )
         self setflaggedanimknoball( "traverseAnim", self.traverseanim, self.traverseanimroot, 1, 0.2, animrate );
     }
     
-    for (i = 0; i < frames; i++) {
+    for ( i = 0; i < frames ; i++ )
+    {
         self forceteleport( self.origin + offset );
         wait 0.05;
     }
@@ -66,7 +68,7 @@ function teleportthreadex( verticaloffset, delay, frames, animrate )
 /#
 
     // Namespace shared / namespace_80c14191b262bb30
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2e0
     // Size: 0x19, Type: dev
     function dotraverse( traversedata )
@@ -77,7 +79,7 @@ function teleportthreadex( verticaloffset, delay, frames, animrate )
 #/
 
 // Namespace shared / namespace_80c14191b262bb30
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x301
 // Size: 0x44
 function handletraversenotetracks( note )
@@ -99,7 +101,7 @@ function handletraversenotetracks( note )
 }
 
 // Namespace shared / namespace_80c14191b262bb30
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34d
 // Size: 0x48
 function handletraversedeathnotetrack()
@@ -113,7 +115,7 @@ function handletraversedeathnotetrack()
 }
 
 // Namespace shared / namespace_80c14191b262bb30
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39d
 // Size: 0xa8
 function handletraversealignment()
@@ -138,7 +140,7 @@ function handletraversealignment()
 }
 
 // Namespace shared / namespace_80c14191b262bb30
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44d
 // Size: 0x19a
 function handletraversedrop()
@@ -178,7 +180,7 @@ function handletraversedrop()
 }
 
 // Namespace shared / namespace_80c14191b262bb30
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5ef
 // Size: 0x49
 function finishtraversedrop( finalz )
@@ -199,7 +201,7 @@ function finishtraversedrop( finalz )
 }
 
 // Namespace shared / namespace_80c14191b262bb30
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x640
 // Size: 0x16
 function donothingfunc()
@@ -211,7 +213,7 @@ function donothingfunc()
 /#
 
     // Namespace shared / namespace_80c14191b262bb30
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x65e
     // Size: 0x31, Type: dev
     function dog_jump_down( frames, rate, traversal_anim, var_5a11f5d9304a0c83 )
@@ -222,7 +224,7 @@ function donothingfunc()
 #/
 
 // Namespace shared / namespace_80c14191b262bb30
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x697
 // Size: 0xa
 function seeker_traversal()

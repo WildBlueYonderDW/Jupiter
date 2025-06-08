@@ -12,7 +12,7 @@
 #namespace weaponrank;
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x236
 // Size: 0x84
 function init()
@@ -33,7 +33,7 @@ function init()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c2
 // Size: 0x6b
 function onplayerconnect()
@@ -59,7 +59,7 @@ function onplayerconnect()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x335
 // Size: 0x2bc
 function loadweaponranktable()
@@ -69,7 +69,8 @@ function loadweaponranktable()
     var_c6e3b34739982959 = function_b1e11b17e1fbded3();
     level.weaponranktable.maxrank = var_c6e3b34739982959.maxrank;
     
-    for (rankid = 0; rankid <= level.weaponranktable.maxrank; rankid++) {
+    for ( rankid = 0; rankid <= level.weaponranktable.maxrank ; rankid++ )
+    {
         weaponranktableentry = function_91ce54da71d1008d( var_c6e3b34739982959.weaponranklist[ rankid ].rank );
         rankinfo = spawnstruct();
         level.weaponranktable.rankinfo[ rankid ] = rankinfo;
@@ -109,7 +110,7 @@ function loadweaponranktable()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f9
 // Size: 0x40
 function getplayerweaponrank( rootweapon )
@@ -121,7 +122,7 @@ function getplayerweaponrank( rootweapon )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x642
 // Size: 0xef
 function getplayerweaponrankxp( rootweapon, type )
@@ -149,7 +150,7 @@ function getplayerweaponrankxp( rootweapon, type )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x739
 // Size: 0x42, Type: bool
 function isplayerweaponatmaxxp( rootweapon )
@@ -161,7 +162,7 @@ function isplayerweaponatmaxxp( rootweapon )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x784
 // Size: 0x71
 function weaponshouldgetxp( weapon )
@@ -178,7 +179,7 @@ function weaponshouldgetxp( weapon )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7fe
 // Size: 0x76
 function weaponhasranks( rootname )
@@ -194,7 +195,7 @@ function weaponhasranks( rootname )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x87d
 // Size: 0x35
 function getweaponmaxrankxp( rootweapon )
@@ -205,7 +206,7 @@ function getweaponmaxrankxp( rootweapon )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8bb
 // Size: 0x43
 function getweaponrankforxp( xpval )
@@ -215,7 +216,8 @@ function getweaponrankforxp( xpval )
         return 0;
     }
     
-    for (rankid = getmaxweaponrank() - 1; rankid >= 0; rankid--) {
+    for ( rankid = getmaxweaponrank() - 1; rankid >= 0 ; rankid-- )
+    {
         if ( xpval >= getweaponrankinfominxp( rankid ) )
         {
             return rankid;
@@ -226,7 +228,7 @@ function getweaponrankforxp( xpval )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x907
 // Size: 0x30
 function getmaxweaponrankforrootweapon( rootweapon )
@@ -236,7 +238,7 @@ function getmaxweaponrankforrootweapon( rootweapon )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x940
 // Size: 0x15
 function getmaxweaponrank()
@@ -245,7 +247,7 @@ function getmaxweaponrank()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x95e
 // Size: 0x2a
 function getweaponrankinfominxp( rankid )
@@ -254,7 +256,7 @@ function getweaponrankinfominxp( rankid )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x991
 // Size: 0x2a
 function getweaponrankinfoxptonextrank( rankid )
@@ -263,7 +265,7 @@ function getweaponrankinfoxptonextrank( rankid )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9c4
 // Size: 0x2a
 function getweaponrankinfomaxxp( rankid )
@@ -272,7 +274,7 @@ function getweaponrankinfomaxxp( rankid )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9f7
 // Size: 0x27d
 function giveplayerweaponxp( objweapon, type, xp )
@@ -360,7 +362,7 @@ function giveplayerweaponxp( objweapon, type, xp )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc7d
 // Size: 0x41
 function remapscoreeventforweapon( event )
@@ -379,7 +381,7 @@ function remapscoreeventforweapon( event )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcc7
 // Size: 0x1d
 function addglobalweaponrankxpmultiplier( multiplier, ref )
@@ -388,7 +390,7 @@ function addglobalweaponrankxpmultiplier( multiplier, ref )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcec
 // Size: 0x9
 function getglobalweaponrankxpmultiplier()
@@ -397,7 +399,7 @@ function getglobalweaponrankxpmultiplier()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcfe
 // Size: 0x7, Type: bool
 function getplatformweaponrankxpmultiplier()
@@ -406,7 +408,7 @@ function getplatformweaponrankxpmultiplier()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd0e
 // Size: 0x80
 function function_9c989ce157528a7e( objweapon )
@@ -432,7 +434,7 @@ function function_9c989ce157528a7e( objweapon )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd97
 // Size: 0x66
 function addweaponrankxpmultiplier( multiplier, ref )
@@ -452,7 +454,7 @@ function addweaponrankxpmultiplier( multiplier, ref )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe05
 // Size: 0x3a
 function function_e45154ff0dfc8771( ref )
@@ -466,7 +468,7 @@ function function_e45154ff0dfc8771( ref )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe48
 // Size: 0x7e
 function getweaponrankxpmultiplier()
@@ -492,7 +494,7 @@ function getweaponrankxpmultiplier()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xecf
 // Size: 0x14
 function removeglobalweaponrankxpmultiplier( ref )
@@ -501,7 +503,7 @@ function removeglobalweaponrankxpmultiplier( ref )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeeb
 // Size: 0x60
 function removeweaponrankxpmultiplier( ref )
@@ -522,7 +524,7 @@ function removeweaponrankxpmultiplier( ref )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf53
 // Size: 0x31
 function function_4515ec6f4950ab23()
@@ -538,7 +540,7 @@ function function_4515ec6f4950ab23()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf8d
 // Size: 0x67
 function getweaponrankxpmultipliertotal( objweapon )
@@ -552,7 +554,7 @@ function getweaponrankxpmultipliertotal( objweapon )
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xffd
 // Size: 0x9c
 function getgametypeweaponxpmultiplier()
@@ -578,7 +580,7 @@ function getgametypeweaponxpmultiplier()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10a2
 // Size: 0x61
 function getgametypekillsperhouravg()
@@ -597,7 +599,7 @@ function getgametypekillsperhouravg()
 }
 
 // Namespace weaponrank / scripts\mp\weaponrank
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x110c
 // Size: 0x9d
 function getgametypekillspermatchmaximum()

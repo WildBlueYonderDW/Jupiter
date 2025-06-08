@@ -17,7 +17,7 @@
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x5d8
+// Checksum 0x0, Offset: 0x5d9
 // Size: 0x17
 function autoexec main()
 {
@@ -25,8 +25,8 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f7
+// Params 1
+// Checksum 0x0, Offset: 0x5f8
 // Size: 0x67
 function init( eventinfo )
 {
@@ -42,8 +42,8 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x666
+// Params 0
+// Checksum 0x0, Offset: 0x667
 // Size: 0x215
 function postinitfunc()
 {
@@ -70,8 +70,8 @@ function postinitfunc()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x883
+// Params 0
+// Checksum 0x0, Offset: 0x884
 // Size: 0x4, Type: bool
 function validatefunc()
 {
@@ -79,8 +79,8 @@ function validatefunc()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x890
+// Params 0
+// Checksum 0x0, Offset: 0x891
 // Size: 0x24
 function waitfunc()
 {
@@ -91,8 +91,8 @@ function waitfunc()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bc
+// Params 0
+// Checksum 0x0, Offset: 0x8bd
 // Size: 0x6f
 function calculateeventstarttime()
 {
@@ -105,8 +105,8 @@ function calculateeventstarttime()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x933
+// Params 0
+// Checksum 0x0, Offset: 0x934
 // Size: 0x72
 function activatefunc()
 {
@@ -127,8 +127,8 @@ function activatefunc()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ad
+// Params 0
+// Checksum 0x0, Offset: 0x9ae
 // Size: 0x5d
 function function_1cd423b8d20701ec()
 {
@@ -145,9 +145,9 @@ function function_1cd423b8d20701ec()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa12
-// Size: 0x179
+// Params 0
+// Checksum 0x0, Offset: 0xa13
+// Size: 0x196
 function function_a2e49b9ab2a49511()
 {
     level endon( "game_ended" );
@@ -164,6 +164,7 @@ function function_a2e49b9ab2a49511()
     var_28eedb1a951af158 = gettime() + level.pe_auavscan.var_a0018b713caf9ad7 * 1000;
     setomnvar( "ui_publicevent_timer_type", 8 );
     setomnvar( "ui_publicevent_timer", var_28eedb1a951af158 );
+    level.activeadvanceduavcount += level.teamnamelist.size;
     
     foreach ( player in level.players )
     {
@@ -188,8 +189,8 @@ function function_a2e49b9ab2a49511()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb93
+// Params 1
+// Checksum 0x0, Offset: 0xbb1
 // Size: 0x3f
 function function_d1aa45c7c7553c6e( var_28eedb1a951af158 )
 {
@@ -201,8 +202,8 @@ function function_d1aa45c7c7553c6e( var_28eedb1a951af158 )
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbda
+// Params 0
+// Checksum 0x0, Offset: 0xbf8
 // Size: 0x1d
 function radaractive()
 {
@@ -212,9 +213,9 @@ function radaractive()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbff
-// Size: 0x8e
+// Params 0
+// Checksum 0x0, Offset: 0xc1d
+// Size: 0xab
 function function_61ac9f37c634f0b7()
 {
     wait level.pe_auavscan.var_a0018b713caf9ad7;
@@ -230,12 +231,13 @@ function function_61ac9f37c634f0b7()
         level thread scripts\mp\gametypes\br_public::brleaderdialog( "pe_auavscan_clear", 1, level.pe_auavscan.spotted_players, 0, 0, undefined );
     }
     
+    level.activeadvanceduavcount -= level.teamnamelist.size;
     radarend();
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc95
+// Params 0
+// Checksum 0x0, Offset: 0xcd0
 // Size: 0xc3
 function scanend()
 {
@@ -264,8 +266,8 @@ function scanend()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd60
+// Params 0
+// Checksum 0x0, Offset: 0xd9b
 // Size: 0x152
 function function_d269abf0e45a98c2()
 {
@@ -304,8 +306,8 @@ function function_d269abf0e45a98c2()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeba
+// Params 0
+// Checksum 0x0, Offset: 0xef5
 // Size: 0x68
 function radarend()
 {
@@ -323,8 +325,8 @@ function radarend()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf2a
+// Params 0
+// Checksum 0x0, Offset: 0xf65
 // Size: 0x61
 function function_bb20d2d613dbb92d()
 {
@@ -341,8 +343,8 @@ function function_bb20d2d613dbb92d()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf93
+// Params 1
+// Checksum 0x0, Offset: 0xfce
 // Size: 0x53
 function function_a3f455b863175cc8( var_28eedb1a951af158 )
 {
@@ -365,8 +367,8 @@ function function_a3f455b863175cc8( var_28eedb1a951af158 )
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfee
+// Params 1
+// Checksum 0x0, Offset: 0x1029
 // Size: 0xbd
 function watchweaponfired( var_28eedb1a951af158 )
 {
@@ -400,8 +402,8 @@ function watchweaponfired( var_28eedb1a951af158 )
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b3
+// Params 0
+// Checksum 0x0, Offset: 0x10ee
 // Size: 0x4a
 function onplayerspawned()
 {
@@ -418,8 +420,8 @@ function onplayerspawned()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1105
+// Params 0
+// Checksum 0x0, Offset: 0x1140
 // Size: 0xfb
 function function_2222cf91caec46f1()
 {
@@ -444,8 +446,8 @@ function function_2222cf91caec46f1()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1208
+// Params 0
+// Checksum 0x0, Offset: 0x1243
 // Size: 0xd8
 function function_ef878c020746eb35()
 {
@@ -469,8 +471,8 @@ function function_ef878c020746eb35()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12e8
+// Params 0
+// Checksum 0x0, Offset: 0x1323
 // Size: 0x28
 function excludeplayer()
 {
@@ -480,8 +482,8 @@ function excludeplayer()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1318
+// Params 0
+// Checksum 0x0, Offset: 0x1353
 // Size: 0x26, Type: bool
 function function_51c43ea1c9a91a16()
 {
@@ -489,8 +491,8 @@ function function_51c43ea1c9a91a16()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1347
+// Params 0
+// Checksum 0x0, Offset: 0x1382
 // Size: 0x106
 function function_13e90ba0d8a6e1c3()
 {
@@ -515,8 +517,8 @@ function function_13e90ba0d8a6e1c3()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1455
+// Params 0
+// Checksum 0x0, Offset: 0x1490
 // Size: 0x40
 function function_d4fc77fecf5fc687()
 {
@@ -532,8 +534,8 @@ function function_d4fc77fecf5fc687()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x149d
+// Params 0
+// Checksum 0x0, Offset: 0x14d8
 // Size: 0x54
 function function_7a08cf3bbdf7aff6()
 {
@@ -546,8 +548,8 @@ function function_7a08cf3bbdf7aff6()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14f9
+// Params 0
+// Checksum 0x0, Offset: 0x1534
 // Size: 0x51
 function resetradar()
 {
@@ -560,9 +562,9 @@ function resetradar()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1552
-// Size: 0x96
+// Params 4
+// Checksum 0x0, Offset: 0x158d
+// Size: 0x83
 function activateforceradar( radartype, forceradarstrength, activeadvanceduavs, skipuavupdate )
 {
     level.radarmode[ self.guid ] = radartype;
@@ -570,13 +572,12 @@ function activateforceradar( radartype, forceradarstrength, activeadvanceduavs, 
     level.activeuavs[ self.guid + "_radarStrength" ] = forceradarstrength;
     level.activeadvanceduavs[ self.guid ] = activeadvanceduavs;
     self.skipuavupdate = skipuavupdate;
-    level.activeadvanceduavcount = level.teamnamelist.size;
     scripts\cp_mp\killstreaks\uav::function_f9caa46aa98b7c6b();
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f0
+// Params 0
+// Checksum 0x0, Offset: 0x1618
 // Size: 0xac
 function function_abf0b46d9fa2a191()
 {
@@ -599,8 +600,8 @@ function function_abf0b46d9fa2a191()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16a4
+// Params 0
+// Checksum 0x0, Offset: 0x16cc
 // Size: 0x34
 function function_7fa74f68012bf419()
 {
@@ -611,8 +612,8 @@ function function_7fa74f68012bf419()
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16e0
+// Params 2
+// Checksum 0x0, Offset: 0x1708
 // Size: 0x40
 function function_81dcd9181c92c508( availableplayerscount, spottedplayerscount )
 {
@@ -624,8 +625,8 @@ function function_81dcd9181c92c508( availableplayerscount, spottedplayerscount )
 }
 
 // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1728
+// Params 0
+// Checksum 0x0, Offset: 0x1750
 // Size: 0x18, Type: bool
 function isplayerhidden()
 {
@@ -635,8 +636,8 @@ function isplayerhidden()
 /#
 
     // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1749
+    // Params 0
+    // Checksum 0x0, Offset: 0x1771
     // Size: 0x5, Type: dev
     function __debug()
     {
@@ -644,8 +645,8 @@ function isplayerhidden()
     }
 
     // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1756
+    // Params 0
+    // Checksum 0x0, Offset: 0x177e
     // Size: 0x2e, Type: dev
     function debug_init()
     {
@@ -655,8 +656,8 @@ function isplayerhidden()
     }
 
     // Namespace br_publicevent_auavscan / scripts\mp\gametypes\br_publicevent_auavscan
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x178c
+    // Params 0
+    // Checksum 0x0, Offset: 0x17b4
     // Size: 0x17, Type: dev
     function function_db70bae7732f5204()
     {

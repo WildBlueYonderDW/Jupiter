@@ -3,7 +3,7 @@
 #namespace utility;
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e
 // Size: 0x1a
 function init_smartobjects()
@@ -17,7 +17,7 @@ function init_smartobjects()
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x150
 // Size: 0xa4
 function validate()
@@ -34,7 +34,7 @@ function validate()
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fc
 // Size: 0x70
 function add_smartobject_type( name, fngetinfo, fnusecondition )
@@ -48,7 +48,7 @@ function add_smartobject_type( name, fngetinfo, fnusecondition )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x274
 // Size: 0x21
 function createsmartobjectinfo()
@@ -59,7 +59,7 @@ function createsmartobjectinfo()
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29e
 // Size: 0x3c
 function addsmartobjectanim_internal( statename, alias )
@@ -73,7 +73,7 @@ function addsmartobjectanim_internal( statename, alias )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e2
 // Size: 0x23
 function addsmartobjectintroanim( alias )
@@ -83,7 +83,7 @@ function addsmartobjectintroanim( alias )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30d
 // Size: 0x18
 function addsmartobjectanim( alias )
@@ -92,7 +92,7 @@ function addsmartobjectanim( alias )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32d
 // Size: 0x28
 function addsmartobjectreactanim( alias )
@@ -106,7 +106,7 @@ function addsmartobjectreactanim( alias )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35d
 // Size: 0x23
 function addsmartobjectoutroanim( alias )
@@ -116,7 +116,7 @@ function addsmartobjectoutroanim( alias )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x388
 // Size: 0xd
 function addsmartobjectarrivalanims()
@@ -125,7 +125,7 @@ function addsmartobjectarrivalanims()
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39d
 // Size: 0xd
 function addsmartobjectexitanims()
@@ -134,7 +134,7 @@ function addsmartobjectexitanims()
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b2
 // Size: 0x28
 function addsmartobjectpainanim( alias )
@@ -148,7 +148,7 @@ function addsmartobjectpainanim( alias )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e2
 // Size: 0x28
 function addsmartobjectdeathanim( alias )
@@ -162,7 +162,7 @@ function addsmartobjectdeathanim( alias )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x412
 // Size: 0x16
 function getsmartobjecttype( name )
@@ -171,7 +171,7 @@ function getsmartobjecttype( name )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x431
 // Size: 0x10c
 function smartobject_setnextuse()
@@ -204,7 +204,7 @@ function smartobject_setnextuse()
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x545
 // Size: 0x44
 function claimsmartobject( obj )
@@ -214,7 +214,7 @@ function claimsmartobject( obj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x591
 // Size: 0x42
 function unclaimsmartobject( obj )
@@ -224,7 +224,7 @@ function unclaimsmartobject( obj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5db
 // Size: 0x18, Type: bool
 function canclaimsmartobject( obj )
@@ -233,7 +233,7 @@ function canclaimsmartobject( obj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5fc
 // Size: 0x89
 function canusesmartobject( obj )
@@ -259,7 +259,7 @@ function canusesmartobject( obj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x68e
 // Size: 0xf9
 function getbestsmartobject( desiredpos, volume, var_f34327e65116baaa )
@@ -273,7 +273,8 @@ function getbestsmartobject( desiredpos, volume, var_f34327e65116baaa )
     var_35a90566147afc1f = sortbydistance( anim.smartobjectpoints, desiredpos );
     var_ff20fabd45ab91fc = var_35a90566147afc1f.size;
     
-    for (iobj = 0; iobj < var_ff20fabd45ab91fc; iobj++) {
+    for ( iobj = 0; iobj < var_ff20fabd45ab91fc ; iobj++ )
+    {
         object = var_35a90566147afc1f[ iobj ];
         
         if ( distancesquared( object.origin, desiredpos ) > var_b28bb506e83973be )
@@ -308,7 +309,7 @@ function getbestsmartobject( desiredpos, volume, var_f34327e65116baaa )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x790
 // Size: 0x103, Type: bool
 function isplayernearsmartobject( obj )
@@ -333,7 +334,7 @@ function isplayernearsmartobject( obj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x89c
 // Size: 0x9cb
 function getbestsmartobjectalongline( startpos, endpos, region, volume, var_a0c8823e405a381f, var_7975c128a04cff8c, var_188936ff4f82c5c )
@@ -577,7 +578,7 @@ function getbestsmartobjectalongline( startpos, endpos, region, volume, var_a0c8
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1270
 // Size: 0xb1
 function getsmartobjectradiussq( obj )
@@ -600,7 +601,7 @@ function getsmartobjectradiussq( obj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x132a
 // Size: 0xe5, Type: bool
 function issmartobjectwithinrange( object, optorigin, volume )
@@ -643,7 +644,7 @@ function issmartobjectwithinrange( object, optorigin, volume )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1418
 // Size: 0x90
 function setcustomsmartobjectarrivaldata( obj )
@@ -663,7 +664,7 @@ function setcustomsmartobjectarrivaldata( obj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14b0
 // Size: 0x3a
 function setsmartobject( smartobj )
@@ -680,7 +681,7 @@ function setsmartobject( smartobj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14f2
 // Size: 0x1f
 function clearsmartobject( smartobj )
@@ -694,7 +695,7 @@ function clearsmartobject( smartobj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1519
 // Size: 0x4b, Type: bool
 function canusesmartobject_stealth( smartobj )
@@ -718,7 +719,7 @@ function canusesmartobject_stealth( smartobj )
 }
 
 // Namespace utility / scripts\smartobjects\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x156d
 // Size: 0xb8, Type: bool
 function canusesmartobject_nostrafenoturn( smartobj )

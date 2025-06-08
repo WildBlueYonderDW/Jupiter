@@ -5,7 +5,7 @@
 #namespace namespace_40cd4a4db2010f22;
 
 // Namespace namespace_40cd4a4db2010f22 / namespace_a850435086c88de3
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10a
 // Size: 0x140
 function doonactionscoreevent( eventtype, eventname, cooldown )
@@ -61,7 +61,7 @@ function doonactionscoreevent( eventtype, eventname, cooldown )
 }
 
 // Namespace namespace_40cd4a4db2010f22 / namespace_a850435086c88de3
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x252
 // Size: 0x2b
 function function_a56759f3dec70990( eventname )
@@ -71,7 +71,7 @@ function function_a56759f3dec70990( eventname )
 }
 
 // Namespace namespace_40cd4a4db2010f22 / namespace_a850435086c88de3
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x285
 // Size: 0x2b
 function function_e4278547ad0ee8c8( eventname )
@@ -81,7 +81,7 @@ function function_e4278547ad0ee8c8( eventname )
 }
 
 // Namespace namespace_40cd4a4db2010f22 / namespace_a850435086c88de3
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b8
 // Size: 0x2b
 function function_d25feb1da4499bae( eventname )
@@ -91,7 +91,7 @@ function function_d25feb1da4499bae( eventname )
 }
 
 // Namespace namespace_40cd4a4db2010f22 / namespace_a850435086c88de3
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2eb
 // Size: 0x38
 function function_558e5516ee7925aa( var_c7cba7d0db108110 )

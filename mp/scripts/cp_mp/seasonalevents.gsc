@@ -8,7 +8,7 @@
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x262
+// Checksum 0x0, Offset: 0x29f
 // Size: 0x28
 function private getdvarhash( dvarfieldname, dvarsuffix )
 {
@@ -17,7 +17,7 @@ function private getdvarhash( dvarfieldname, dvarsuffix )
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x293
+// Checksum 0x0, Offset: 0x2d0
 // Size: 0xf
 function private oneindexed( i )
 {
@@ -26,7 +26,7 @@ function private oneindexed( i )
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2ab
+// Checksum 0x0, Offset: 0x2e8
 // Size: 0x25, Type: bool
 function private function_b0de9e7b2bc4b4d5( currenttime, starttime, endtime )
 {
@@ -35,7 +35,7 @@ function private function_b0de9e7b2bc4b4d5( currenttime, starttime, endtime )
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2d9
+// Checksum 0x0, Offset: 0x316
 // Size: 0xb3
 function private getcurrenttime()
 {
@@ -67,7 +67,7 @@ function private getcurrenttime()
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x395
+// Checksum 0x0, Offset: 0x3d2
 // Size: 0x53, Type: bool
 function private isinwinbackdoublexpperiod()
 {
@@ -83,8 +83,8 @@ function private isinwinbackdoublexpperiod()
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3f1
-// Size: 0x4f3
+// Checksum 0x0, Offset: 0x42e
+// Size: 0x51e
 function private loadeventdata()
 {
     if ( isdefined( level.seasonalevents ) )
@@ -144,7 +144,8 @@ function private loadeventdata()
             
             var_56651c25de2e68b5 = [];
             
-            for (i = 0; i < bundledata.featuredloot.size; i++) {
+            for ( i = 0; i < bundledata.featuredloot.size ; i++ )
+            {
                 featuredlootid = bundledata.featuredloot[ i ].featureditemlootid;
                 featuredlootid = getdvar( getdvarhash( "featuredItemLootID_" + oneindexed( i ), bundledata.dvarsuffix ), featuredlootid );
                 featuredlootid = ter_op( !string::function_46b9c00bb0535aa3( featuredlootid ), int( featuredlootid ), 0 );
@@ -153,13 +154,15 @@ function private loadeventdata()
             
             pointscategories = [];
             
-            for (i = 0; i < bundledata.var_5e42ba3bc94d58ff.var_c1d8c1d953c02016.pointscategories.size; i++) {
+            for ( i = 0; i < bundledata.var_5e42ba3bc94d58ff.var_c1d8c1d953c02016.pointscategories.size ; i++ )
+            {
                 key = bundledata.var_5e42ba3bc94d58ff.var_c1d8c1d953c02016.pointscategories[ i ].key;
                 key = getdvar( getdvarhash( "pointsCategoryKey_" + oneindexed( i ), bundledata.dvarsuffix ), key );
                 pointscategories[ pointscategories.size ] = key;
             }
             
             var_9301e90474add74a = istrue( bundledata.template == "POINTS" );
+            var_e7ce9058ac932800 = istrue( bundledata.template == "HUNT" );
             var_a60ed65bd4c825b7 = istrue( bundledata.var_a60ed65bd4c825b7 );
             var_479fdb4d11a5e990 = [];
             var_a3d09160ba37a87b = 0;
@@ -187,6 +190,7 @@ function private loadeventdata()
             eventdata.var_56651c25de2e68b5 = var_56651c25de2e68b5;
             eventdata.pointscategories = pointscategories;
             eventdata.var_9301e90474add74a = var_9301e90474add74a;
+            eventdata.var_e7ce9058ac932800 = var_e7ce9058ac932800;
             eventdata.var_a60ed65bd4c825b7 = var_a60ed65bd4c825b7;
             eventdata.var_a3d09160ba37a87b = var_a3d09160ba37a87b;
             eventdata.var_479fdb4d11a5e990 = var_479fdb4d11a5e990;
@@ -200,8 +204,8 @@ function private loadeventdata()
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x8ec
-// Size: 0xf1
+// Checksum 0x0, Offset: 0x954
+// Size: 0x11f
 function private function_7d7f33f970281be5()
 {
     assert( isdefined( level.seasonalevents ) );
@@ -219,7 +223,9 @@ function private function_7d7f33f970281be5()
         if ( event.var_a3d09160ba37a87b && event.eventactive )
         {
             currentevent.eventactive = 1;
+            currentevent.dvarsuffix = event.dvarsuffix;
             currentevent.var_9301e90474add74a = event.var_9301e90474add74a;
+            currentevent.var_e7ce9058ac932800 = event.var_e7ce9058ac932800;
             currentevent.featuredlootbonus = event.featuredlootbonus;
             break;
         }
@@ -230,8 +236,8 @@ function private function_7d7f33f970281be5()
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x9e5
-// Size: 0x86
+// Checksum 0x0, Offset: 0xa7b
+// Size: 0xb2
 function autoexec function_b9ac0d0975647ba()
 {
     registersharedfunc( "seasonalevents", "init", &init );
@@ -240,11 +246,13 @@ function autoexec function_b9ac0d0975647ba()
     registersharedfunc( "seasonalevents", "getFeaturedLootEventBonus", &getfeaturedlooteventbonus );
     registersharedfunc( "seasonalevents", "featuredLootEventIsFieldRep", &featuredlooteventisfieldrep );
     registersharedfunc( "seasonalevents", "isInWinbackDoubleXpPeriod", &isinwinbackdoublexpperiod );
+    registersharedfunc( "seasonalevents", "featuredLootEventIsHunt", &featuredlooteventishunt );
+    registersharedfunc( "seasonalevents", "isEventDvarNameEqualTo", &iseventdvarnameequalto );
 }
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xa73
+// Checksum 0x0, Offset: 0xb35
 // Size: 0x10
 function private init()
 {
@@ -254,7 +262,7 @@ function private init()
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xa8b
+// Checksum 0x0, Offset: 0xb4d
 // Size: 0xd6
 function private getfeaturedlooteventactive()
 {
@@ -284,7 +292,7 @@ function private getfeaturedlooteventactive()
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xb6a
+// Checksum 0x0, Offset: 0xc2c
 // Size: 0xb8, Type: bool
 function private featuredlooteventisfieldrep()
 {
@@ -311,7 +319,7 @@ function private featuredlooteventisfieldrep()
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc2b
+// Checksum 0x0, Offset: 0xced
 // Size: 0xdf
 function private getfeaturedlooteventbonus()
 {
@@ -341,7 +349,7 @@ function private getfeaturedlooteventbonus()
 
 // Namespace seasonalevents / scripts\cp_mp\seasonalevents
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xd13
+// Checksum 0x0, Offset: 0xdd5
 // Size: 0x297, Type: bool
 function private hasfeaturedoperatorskinequipped()
 {
@@ -409,5 +417,33 @@ function private hasfeaturedoperatorskinequipped()
     }
     
     return false;
+}
+
+// Namespace seasonalevents / scripts\cp_mp\seasonalevents
+// Params 0, eflags: 0x4
+// Checksum 0x0, Offset: 0x1075
+// Size: 0x29, Type: bool
+function private featuredlooteventishunt()
+{
+    assert( isdefined( level.currentevent ) );
+    return istrue( level.currentevent.var_e7ce9058ac932800 );
+}
+
+// Namespace seasonalevents / scripts\cp_mp\seasonalevents
+// Params 1, eflags: 0x4
+// Checksum 0x0, Offset: 0x10a7
+// Size: 0x66
+function private iseventdvarnameequalto( var_bda084803eae525e )
+{
+    assert( isdefined( level.currentevent ) );
+    assert( isdefined( level.currentevent.dvarsuffix ) );
+    assert( isdefined( var_bda084803eae525e ) );
+    
+    if ( level.currentevent.dvarsuffix == var_bda084803eae525e )
+    {
+        return 1;
+    }
+    
+    return 0;
 }
 

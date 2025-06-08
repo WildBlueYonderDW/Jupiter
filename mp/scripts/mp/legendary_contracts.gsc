@@ -21,7 +21,7 @@
 // Size: 0x20
 function autoexec main()
 {
-    if ( getdvarint( @"hash_4aae7dd32e29d36", 1 ) == 0 )
+    if ( getdvarint( @"scr_legendary_contracts_enabled", 1 ) == 0 )
     {
         return;
     }
@@ -71,7 +71,7 @@ function private function_fef4bd40f684ecad()
     level.var_6a82bbe1d7f1fde8.var_39e41680223d4fe6 = getdvarint( @"hash_9de04bb50e7744fd", 20 );
     level.var_6a82bbe1d7f1fde8.var_5bc5480ed9f02604 = getdvarint( @"hash_ebb574cfa6eca490", 7 );
     level.var_6a82bbe1d7f1fde8.var_e717ede9597f2a74 = getdvarint( @"hash_a9fc7a15706e126e", 10 );
-    level.var_6a82bbe1d7f1fde8.var_10ccfc6b2e5d41cb = getdvarint( @"hash_3861d613ec2255d2", 1 );
+    level.var_6a82bbe1d7f1fde8.var_10ccfc6b2e5d41cb = getdvarint( @"scr_legendary_contracts_new_circle_vo_enabled", 1 );
     level.var_6a82bbe1d7f1fde8.skippedcircles = 0;
     level.var_6a82bbe1d7f1fde8.exclusionradius = getdvarint( @"hash_9dc0c0dd8d3954a", 5000 );
     level.var_6a82bbe1d7f1fde8.var_b007c0e8ff0781ff = getdvarint( @"hash_c19ce2cc426fe26b", 0 );
@@ -272,7 +272,7 @@ function private function_7ae03d4e75a6e6ea( contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xffd
 // Size: 0x68
 function function_b6b01c915e24dc93( player, contract )
@@ -288,7 +288,7 @@ function function_b6b01c915e24dc93( player, contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x106d
 // Size: 0x86
 function function_cf7b2f45657ac7e2( contract )
@@ -309,7 +309,7 @@ function function_cf7b2f45657ac7e2( contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10fc
 // Size: 0x91
 function function_cb3bbd9496078cc2( contract )
@@ -328,7 +328,7 @@ function function_cb3bbd9496078cc2( contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1195
 // Size: 0xa7
 function function_b2687585d0a01882( team, contract )
@@ -349,7 +349,7 @@ function function_b2687585d0a01882( team, contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1244
 // Size: 0x17f
 function function_9dde686b3c2dad5c()
@@ -394,7 +394,7 @@ function function_9dde686b3c2dad5c()
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13cb
 // Size: 0x3b
 function function_c6c43c079365df8d( contract )
@@ -408,7 +408,7 @@ function function_c6c43c079365df8d( contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x140e
 // Size: 0x5a
 function function_7873864250068e11( team, contract )
@@ -423,7 +423,7 @@ function function_7873864250068e11( team, contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1470
 // Size: 0x35
 function function_316611d82a794d9f( contract )
@@ -437,7 +437,7 @@ function function_316611d82a794d9f( contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14ae
 // Size: 0x38
 function function_7f174cc0cde438dd( contract )
@@ -451,7 +451,7 @@ function function_7f174cc0cde438dd( contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14ef
 // Size: 0xfc
 function function_301b8bb0f3666e59( team, contract, rewards )
@@ -479,7 +479,7 @@ function function_301b8bb0f3666e59( team, contract, rewards )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15f3
 // Size: 0x4a
 function function_b7a451b29899ba9( team, contract )
@@ -496,7 +496,7 @@ function function_b7a451b29899ba9( team, contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1645
 // Size: 0x96
 function function_b033457dc1ba1562( team, contract )
@@ -515,7 +515,7 @@ function function_b033457dc1ba1562( team, contract )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16e3
 // Size: 0x6f
 function function_f0b97d400eaa80d8( contract, time )
@@ -540,7 +540,7 @@ function function_f0b97d400eaa80d8( contract, time )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x175b
 // Size: 0x244
 function function_e5019bc27a9e875f( contract, team )
@@ -588,7 +588,7 @@ function function_e5019bc27a9e875f( contract, team )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19a7
 // Size: 0x15c
 function function_373f9e44ad714223( crate, players, var_8850d9f771525016 )
@@ -628,7 +628,7 @@ function function_373f9e44ad714223( crate, players, var_8850d9f771525016 )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b0b
 // Size: 0x120
 function function_d4d8942eae92d253( player )
@@ -654,7 +654,7 @@ function function_d4d8942eae92d253( player )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c33
 // Size: 0x27
 function function_a750847beab4180e( crate )
@@ -668,7 +668,7 @@ function function_a750847beab4180e( crate )
 }
 
 // Namespace legendary_contracts / scripts\mp\legendary_contracts
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c63
 // Size: 0x2c
 function function_31c343a0e4ad9300( contract, splashref )

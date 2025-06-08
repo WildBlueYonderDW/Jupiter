@@ -10,7 +10,7 @@
 #namespace namespace_9e85c6b7b4fb5ff9;
 
 // Namespace namespace_9e85c6b7b4fb5ff9 / namespace_421fb1e92658d94c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x179
 // Size: 0x2d5
 function function_c31b39e6bb1bcd42()
@@ -105,7 +105,7 @@ function private function_3a5fc0673be748ae()
 }
 
 // Namespace namespace_9e85c6b7b4fb5ff9 / namespace_421fb1e92658d94c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x472
 // Size: 0x121
 function function_153a6accf001dff6( player )
@@ -151,7 +151,7 @@ function function_153a6accf001dff6( player )
 }
 
 // Namespace namespace_9e85c6b7b4fb5ff9 / namespace_421fb1e92658d94c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59b
 // Size: 0xad
 function function_71adb8f84c3df6bb( player )
@@ -180,7 +180,7 @@ function function_71adb8f84c3df6bb( player )
 }
 
 // Namespace namespace_9e85c6b7b4fb5ff9 / namespace_421fb1e92658d94c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x650
 // Size: 0x29
 function function_3ffe455e5ea6d0f5( player )
@@ -190,7 +190,7 @@ function function_3ffe455e5ea6d0f5( player )
 }
 
 // Namespace namespace_9e85c6b7b4fb5ff9 / namespace_421fb1e92658d94c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x681
 // Size: 0x24
 function function_b2cc563ed7324a8d( player )
@@ -203,21 +203,21 @@ function function_b2cc563ed7324a8d( player )
 }
 
 // Namespace namespace_9e85c6b7b4fb5ff9 / namespace_421fb1e92658d94c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ad
-// Size: 0x52, Type: bool
+// Size: 0x52
 function function_3d25af3a88ad31c3( player )
 {
     if ( !isdefined( self ) || !isalive( self ) || !isdefined( self.origin ) || !isdefined( player ) || !isdefined( player.origin ) )
     {
-        return false;
+        return 0;
     }
     
     return function_773691f1a617f7d9( player.origin );
 }
 
 // Namespace namespace_9e85c6b7b4fb5ff9 / namespace_421fb1e92658d94c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x708
 // Size: 0xec, Type: bool
 function function_773691f1a617f7d9( origin )

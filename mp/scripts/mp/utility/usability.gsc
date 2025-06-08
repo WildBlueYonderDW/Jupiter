@@ -1,7 +1,7 @@
 #namespace usability;
 
 // Namespace usability / scripts\mp\utility\usability
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x138
 // Size: 0x77
 function setselfusable( caller )
@@ -21,7 +21,7 @@ function setselfusable( caller )
 }
 
 // Namespace usability / scripts\mp\utility\usability
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b7
 // Size: 0x56
 function setallunusable()
@@ -33,7 +33,7 @@ function setallunusable()
 }
 
 // Namespace usability / scripts\mp\utility\usability
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x215
 // Size: 0x1b
 function maketeamusable( team )
@@ -43,7 +43,7 @@ function maketeamusable( team )
 }
 
 // Namespace usability / scripts\mp\utility\usability
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x238
 // Size: 0x8c
 function _updateteamusable( team )
@@ -68,7 +68,7 @@ function _updateteamusable( team )
 }
 
 // Namespace usability / scripts\mp\utility\usability
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2cc
 // Size: 0x24
 function makeenemyusable( owner, var_418a5c9b9391dfc7 )
@@ -78,7 +78,7 @@ function makeenemyusable( owner, var_418a5c9b9391dfc7 )
 }
 
 // Namespace usability / scripts\mp\utility\usability
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f8
 // Size: 0x159
 function _updateenemyusable( owner, var_418a5c9b9391dfc7 )
@@ -140,7 +140,7 @@ function _updateenemyusable( owner, var_418a5c9b9391dfc7 )
 }
 
 // Namespace usability / scripts\mp\utility\usability
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x459
 // Size: 0x6c
 function notusableforjoiningplayers( owner )
@@ -164,7 +164,7 @@ function notusableforjoiningplayers( owner )
 }
 
 // Namespace usability / scripts\mp\utility\usability
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4cd
 // Size: 0x56
 function notusableafterownerchange( owner, equipment )

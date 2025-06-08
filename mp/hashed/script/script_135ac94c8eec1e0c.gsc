@@ -13,7 +13,7 @@
 #namespace jup_enemy_mp_smg_tier2_pmc;
 
 // Namespace jup_enemy_mp_smg_tier2_pmc / namespace_761dd031803ed834
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25f
 // Size: 0x1e0
 function main()
@@ -50,7 +50,7 @@ function main()
 }
 
 // Namespace jup_enemy_mp_smg_tier2_pmc / namespace_761dd031803ed834
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x447
 // Size: 0x57
 function setup_model()
@@ -67,7 +67,7 @@ function setup_model()
 }
 
 // Namespace jup_enemy_mp_smg_tier2_pmc / namespace_761dd031803ed834
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a6
 // Size: 0x83
 function function_9ac26a51c94ccf52()
@@ -88,7 +88,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_enemy_mp_smg_tier2_pmc / namespace_761dd031803ed834
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x531
 // Size: 0xe4
 function precache()
@@ -120,7 +120,7 @@ function precache()
 }
 
 // Namespace jup_enemy_mp_smg_tier2_pmc / namespace_761dd031803ed834
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61d
 // Size: 0x14c
 function setup_weapons()

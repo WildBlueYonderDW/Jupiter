@@ -7,7 +7,7 @@
 #namespace chill_common;
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x198
 // Size: 0xb3
 function chill_init()
@@ -26,7 +26,7 @@ function chill_init()
 }
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x253
 // Size: 0x125
 function chill( id, duration )
@@ -67,7 +67,7 @@ function chill( id, duration )
 }
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x380
 // Size: 0xb2
 function chillend( id )
@@ -90,7 +90,7 @@ function chillend( id )
 }
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43a
 // Size: 0x29, Type: bool
 function ischilled()
@@ -100,7 +100,7 @@ function ischilled()
 }
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46c
 // Size: 0x14
 function chill_resetdata()
@@ -110,7 +110,7 @@ function chill_resetdata()
 }
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x488
 // Size: 0x78
 function chill_resetscriptable()
@@ -124,7 +124,7 @@ function chill_resetscriptable()
 }
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x508
 // Size: 0x4a
 function chill_impair()
@@ -136,7 +136,7 @@ function chill_impair()
 }
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55a
 // Size: 0xe
 function chill_impairend()
@@ -145,7 +145,7 @@ function chill_impairend()
 }
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x570
 // Size: 0x146
 function chill_blind()
@@ -190,7 +190,7 @@ function chill_blind()
 }
 
 // Namespace chill_common / scripts\mp\killstreaks\chill_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6be
 // Size: 0x120
 function chill_update()

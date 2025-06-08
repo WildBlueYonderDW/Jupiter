@@ -19,7 +19,7 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x368
 // Size: 0xe1
 function function_9aa5ae7661a3a913( var_9cd269534ffd4dc9 )
@@ -41,7 +41,7 @@ function function_9aa5ae7661a3a913( var_9cd269534ffd4dc9 )
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x451
 // Size: 0x101
 function initcontractor( contractor )
@@ -65,7 +65,7 @@ function initcontractor( contractor )
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55a
 // Size: 0x116
 function function_1362a29d8775e5d6()
@@ -96,7 +96,7 @@ function function_1362a29d8775e5d6()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x678
 // Size: 0x80
 function function_ae81543a21ecadd3()
@@ -113,7 +113,7 @@ function function_ae81543a21ecadd3()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x700
 // Size: 0x6a
 function function_1cac290201dd47fc( var_a5b707e79d910ef6 )
@@ -130,7 +130,7 @@ function function_1cac290201dd47fc( var_a5b707e79d910ef6 )
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x772
 // Size: 0x1cd
 function function_ca6e399c0a8a91b6( eventstruct, eventname )
@@ -167,7 +167,8 @@ function function_ca6e399c0a8a91b6( eventstruct, eventname )
         var_49978e5850a50d57 = int( eventduration );
     }
     
-    for (i = 0; i < var_49978e5850a50d57; i++) {
+    for ( i = 0; i < var_49978e5850a50d57 ; i++ )
+    {
         clockobject playsound( "ui_mp_fire_sale_timer" );
         wait 1;
     }
@@ -190,7 +191,7 @@ function function_ca6e399c0a8a91b6( eventstruct, eventname )
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x947
 // Size: 0x22
 function function_23913a35c5ebd726( eventname )
@@ -200,7 +201,7 @@ function function_23913a35c5ebd726( eventname )
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x971
 // Size: 0x28
 function function_adc3e7f53e3456d0()
@@ -210,7 +211,7 @@ function function_adc3e7f53e3456d0()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a1
 // Size: 0xe, Type: bool
 function function_e7a80b9a5971257a()
@@ -219,7 +220,7 @@ function function_e7a80b9a5971257a()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b8
 // Size: 0x2
 function function_aec5c0a5b73ae7c5()
@@ -228,7 +229,7 @@ function function_aec5c0a5b73ae7c5()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9c2
 // Size: 0x28
 function function_41b1afbe1c7af99()
@@ -238,7 +239,7 @@ function function_41b1afbe1c7af99()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9f2
 // Size: 0x28
 function function_3c14f9df7efc9951()
@@ -248,7 +249,7 @@ function function_3c14f9df7efc9951()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa22
 // Size: 0x4, Type: bool
 function function_6150c8f67e691807()
@@ -257,7 +258,7 @@ function function_6150c8f67e691807()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2f
 // Size: 0x2
 function contractor_waitfunc()
@@ -266,7 +267,7 @@ function contractor_waitfunc()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa39
 // Size: 0x28
 function contractor_activatefunc()
@@ -276,7 +277,7 @@ function contractor_activatefunc()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa69
 // Size: 0x2
 function function_93ccb74a1d25e826()
@@ -285,7 +286,7 @@ function function_93ccb74a1d25e826()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa73
 // Size: 0x2
 function function_4109d1fefcb9970()
@@ -294,7 +295,7 @@ function function_4109d1fefcb9970()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7d
 // Size: 0x2
 function heat_waitfunc()
@@ -303,7 +304,7 @@ function heat_waitfunc()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa87
 // Size: 0x2
 function heat_activatefunc()
@@ -312,7 +313,7 @@ function heat_activatefunc()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa91
 // Size: 0x113
 function function_ef3989dd64896a91()
@@ -332,7 +333,7 @@ function function_ef3989dd64896a91()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbac
 // Size: 0xe, Type: bool
 function function_98e0aab5f4a07947()
@@ -341,7 +342,7 @@ function function_98e0aab5f4a07947()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc3
 // Size: 0x2
 function function_b44e7b12bcdc2c14()
@@ -350,7 +351,7 @@ function function_b44e7b12bcdc2c14()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbcd
 // Size: 0x28
 function function_8645e7ba0e3942c0()
@@ -360,7 +361,7 @@ function function_8645e7ba0e3942c0()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbfd
 // Size: 0x2
 function function_7ebdc9e059a1beaf()
@@ -369,7 +370,7 @@ function function_7ebdc9e059a1beaf()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc07
 // Size: 0xe, Type: bool
 function function_6dc1bbc26235ec1d()
@@ -378,7 +379,7 @@ function function_6dc1bbc26235ec1d()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc1e
 // Size: 0x2
 function function_c6fa8ae160635b3a()
@@ -387,7 +388,7 @@ function function_c6fa8ae160635b3a()
 }
 
 // Namespace br_publicevent_plundermultipliers / scripts\mp\gametypes\br_publicevent_plundermultipliers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc28
 // Size: 0x28
 function function_218e108e5da1b92a()

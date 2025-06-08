@@ -11,7 +11,7 @@
 #namespace jup_ob_enemy_basic_specialforce;
 
 // Namespace jup_ob_enemy_basic_specialforce / namespace_78dd73d96d00c2e6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x206
 // Size: 0x1c9
 function main()
@@ -47,7 +47,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_basic_specialforce / namespace_78dd73d96d00c2e6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d7
 // Size: 0x57
 function setup_model()
@@ -64,7 +64,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_basic_specialforce / namespace_78dd73d96d00c2e6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x436
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -73,7 +73,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_basic_specialforce / namespace_78dd73d96d00c2e6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x447
 // Size: 0xcf
 function precache()
@@ -102,7 +102,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_basic_specialforce / namespace_78dd73d96d00c2e6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51e
 // Size: 0xd6
 function setup_weapons()

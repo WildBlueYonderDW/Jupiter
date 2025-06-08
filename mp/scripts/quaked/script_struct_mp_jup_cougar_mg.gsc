@@ -16,7 +16,7 @@ function autoexec main()
 }
 
 // Namespace namespace_b7f38141c807bd27 / scripts\quaked\script_struct_mp_jup_cougar_mg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe3
 // Size: 0xb
 function function_dd3b85e9ac503b84()

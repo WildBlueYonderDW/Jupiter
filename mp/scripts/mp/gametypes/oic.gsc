@@ -35,7 +35,7 @@
 #namespace oic;
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa65
 // Size: 0x238
 function main()
@@ -90,7 +90,7 @@ function main()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca5
 // Size: 0x3d
 function waitthensetstatgroupreadonly()
@@ -107,7 +107,7 @@ function waitthensetstatgroupreadonly()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcea
 // Size: 0x15e
 function initializematchrules()
@@ -139,7 +139,7 @@ function initializematchrules()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe50
 // Size: 0x2b0
 function onstartgametype()
@@ -205,7 +205,7 @@ function onstartgametype()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1108
 // Size: 0x9
 function updategametypedvars()
@@ -214,7 +214,7 @@ function updategametypedvars()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1119
 // Size: 0x141
 function onplayerconnect()
@@ -252,7 +252,7 @@ function onplayerconnect()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1262
 // Size: 0xb9
 function getspawnpoint()
@@ -291,7 +291,7 @@ function getspawnpoint()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1324
 // Size: 0x4b
 function movelatejoinerstospectators()
@@ -309,7 +309,7 @@ function movelatejoinerstospectators()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1377
 // Size: 0x64
 function onspawnplayer( revivespawn )
@@ -335,7 +335,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13e3
 // Size: 0x1e6
 function waitloadoutdone()
@@ -390,7 +390,7 @@ function waitloadoutdone()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15d1
 // Size: 0x65
 function playernumlivesvo()
@@ -411,7 +411,7 @@ function playernumlivesvo()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x163e
 // Size: 0x106
 function modifyplayerdamage( einflictor, victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, idflags, var_be4285b26ed99ab1, var_1da1a66b5c6a06a7 )
@@ -442,7 +442,7 @@ function modifyplayerdamage( einflictor, victim, eattacker, idamage, smeansofdea
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x174d
 // Size: 0xab
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -458,7 +458,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x1800
 // Size: 0x27f
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, lifeid )
@@ -521,7 +521,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1a87
 // Size: 0x16c
 function onplayerscore( event, player, originalpoints, victim, eventinfo )
@@ -568,7 +568,7 @@ function onplayerscore( event, player, originalpoints, victim, eventinfo )
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bfc
 // Size: 0x38
 function onsuicidedeath( victim )
@@ -580,7 +580,7 @@ function onsuicidedeath( victim )
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c3c
 // Size: 0x73
 function ononeleftevent( team )
@@ -603,7 +603,7 @@ function private function_5eb4dacf5fbd3485( winner, endreasontext, endreasontext
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d00
 // Size: 0x16a
 function giveammo()
@@ -644,7 +644,7 @@ function giveammo()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e72
 // Size: 0x1a2
 function eliminateplayer( attacker )
@@ -688,7 +688,7 @@ function eliminateplayer( attacker )
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x201c
 // Size: 0x8f
 function playerwager( dowait )
@@ -718,7 +718,7 @@ function playerwager( dowait )
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20b3
 // Size: 0x14d
 function finalthreeuav()
@@ -765,7 +765,7 @@ function finalthreeuav()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2208
 // Size: 0x133
 function oneoffuavsweeps()
@@ -813,7 +813,7 @@ function oneoffuavsweeps()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2343
 // Size: 0xa4
 function setgun()
@@ -832,7 +832,7 @@ function setgun()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23ef
 // Size: 0x112
 function getrandomweapon()
@@ -851,14 +851,15 @@ function getrandomweapon()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x250a
 // Size: 0x10f
 function function_8f08d343c26d5683()
 {
     level.weaponcategories = [];
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         categoryname = tablelookupbyrow( level.var_a72c3b537e759691, row, 0 );
         
         if ( categoryname == "" )
@@ -888,7 +889,7 @@ function function_8f08d343c26d5683()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2621
 // Size: 0x137
 function function_dabbfbbd80941f29( categoryname )
@@ -901,7 +902,8 @@ function function_dabbfbbd80941f29( categoryname )
         newweapon = "";
         data = undefined;
         
-        for (loopcount = 0; true; loopcount++) {
+        for ( loopcount = 0; true ; loopcount++ )
+        {
             index = randomintrange( 0, weaponlist.size );
             data = weaponlist[ index ];
             rootname = getweaponrootname( data[ "weapon" ] );
@@ -910,7 +912,8 @@ function function_dabbfbbd80941f29( categoryname )
             {
                 selectedweapons[ rootname ] = 1;
                 
-                for (i = 0; i < level.weaponcategories[ categoryname ].size; i++) {
+                for ( i = 0; i < level.weaponcategories[ categoryname ].size ; i++ )
+                {
                     if ( level.weaponcategories[ categoryname ][ i ][ "weapon" ] == data[ "weapon" ] )
                     {
                         level.weaponcategories[ categoryname ] = array_remove_index( level.weaponcategories[ categoryname ], i );
@@ -930,7 +933,7 @@ function function_dabbfbbd80941f29( categoryname )
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2760
 // Size: 0x2c4
 function setspecialloadouts()
@@ -962,7 +965,7 @@ function setspecialloadouts()
 }
 
 // Namespace oic / scripts\mp\gametypes\oic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a2c
 // Size: 0xca
 function getrandomkeyfromweaponweightsarray( arr )
@@ -984,7 +987,8 @@ function getrandomkeyfromweaponweightsarray( arr )
     randint = randomint( maxval );
     key = undefined;
     
-    for (i = 0; i < arrkeys.size; i++) {
+    for ( i = 0; i < arrkeys.size ; i++ )
+    {
         maxval = var_6fb7daf6138d07d0[ i ];
         
         if ( randint < maxval )

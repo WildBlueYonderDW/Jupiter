@@ -1,7 +1,7 @@
 #namespace join_team_aggregator;
 
 // Namespace join_team_aggregator / scripts\mp\utility\join_team_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcb
 // Size: 0x73
 function onplayerjointeam( player )
@@ -18,7 +18,7 @@ function onplayerjointeam( player )
 }
 
 // Namespace join_team_aggregator / scripts\mp\utility\join_team_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146
 // Size: 0x38
 function registeronplayerjointeamcallback( callback )
@@ -32,7 +32,7 @@ function registeronplayerjointeamcallback( callback )
 }
 
 // Namespace join_team_aggregator / scripts\mp\utility\join_team_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x186
 // Size: 0xac
 function onplayerjointeamnospectator( player )
@@ -60,7 +60,7 @@ function onplayerjointeamnospectator( player )
 }
 
 // Namespace join_team_aggregator / scripts\mp\utility\join_team_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23a
 // Size: 0x38
 function registeronplayerjointeamnospectatorcallback( callback )

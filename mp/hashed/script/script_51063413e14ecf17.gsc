@@ -3,7 +3,7 @@
 #namespace namespace_c234fc735f913929;
 
 // Namespace namespace_c234fc735f913929 / namespace_e37c6978b4bea581
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x90
 // Size: 0x5a
 function function_64e819ba93c64ccc( taskid )

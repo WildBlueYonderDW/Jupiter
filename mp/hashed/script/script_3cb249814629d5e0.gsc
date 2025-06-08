@@ -6,7 +6,7 @@
 #namespace evade_cars;
 
 // Namespace evade_cars / namespace_f8811166da0885e6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd2
 // Size: 0x10
 function function_eda57308516bfc5f()
@@ -15,7 +15,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace evade_cars / namespace_f8811166da0885e6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeb
 // Size: 0xea
 function evaluatescore( bot )
@@ -45,7 +45,7 @@ function evaluatescore( bot )
 }
 
 // Namespace evade_cars / namespace_f8811166da0885e6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1de
 // Size: 0x2da
 function vehicletrace( bot, vehicle )
@@ -96,7 +96,7 @@ function vehicletrace( bot, vehicle )
 }
 
 // Namespace evade_cars / namespace_f8811166da0885e6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c1
 // Size: 0x192
 function actionprocess( bot )

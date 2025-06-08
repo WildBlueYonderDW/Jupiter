@@ -4,7 +4,7 @@
 #namespace mp_jup_st_g_ob_contracts_bigbounty_cs;
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x255
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ca
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x339
 // Size: 0x20c4
 function createstructs( fe, us, cf )
@@ -446,7 +446,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2405
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -455,7 +455,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x240f
 // Size: 0xe
 function cleanup()
@@ -464,7 +464,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2425
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -479,7 +479,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2497
 // Size: 0x9c
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -507,7 +507,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x253b
 // Size: 0x111
 function function_5212a30a5ff733ef( fe, us, cf )
@@ -523,7 +523,7 @@ function function_5212a30a5ff733ef( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2654
 // Size: 0x111
 function function_27d3b321f55f334( fe, us, cf )
@@ -539,7 +539,7 @@ function function_27d3b321f55f334( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x276d
 // Size: 0x111
 function function_ccb77434f0eae3f4( fe, us, cf )
@@ -555,7 +555,7 @@ function function_ccb77434f0eae3f4( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2886
 // Size: 0x111
 function function_b821623997468053( fe, us, cf )
@@ -571,7 +571,7 @@ function function_b821623997468053( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_contracts_bigbounty_cs / namespace_c3723b223da7ab9e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x299f
 // Size: 0x278
 function function_6da2952367672ac0()

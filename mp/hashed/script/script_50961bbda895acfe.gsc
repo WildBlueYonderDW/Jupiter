@@ -1,7 +1,7 @@
 #namespace namespace_e73e3352c60e867;
 
 // Namespace namespace_e73e3352c60e867 / namespace_ec7a628faa057d3c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1094
 // Size: 0x530
 function main()

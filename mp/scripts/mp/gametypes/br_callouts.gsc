@@ -3,7 +3,7 @@
 #namespace br_callouts;
 
 // Namespace br_callouts / scripts\mp\gametypes\br_callouts
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa3
 // Size: 0x4c6
 function init()
@@ -27,7 +27,8 @@ function init()
         level.calloutglobals.var_81bcc3f4c201eb = [];
         sitecount = function_c3d63e6778e39f83( 1 );
         
-        for (siteidx = 0; siteidx < sitecount; siteidx++) {
+        for ( siteidx = 0; siteidx < sitecount ; siteidx++ )
+        {
             site = function_d0ed84c86e823a7c( 1, siteidx );
             region = function_7fdd7f9d54666e5f( 1, site.region );
             ref = region.name + " site_" + siteidx;
@@ -68,7 +69,8 @@ function init()
         return;
     }
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         var_c13986eca25dd35e = tablelookupbyrow( level.calloutglobals.callouttable, row, 5 );
         
         if ( !isdefined( var_c13986eca25dd35e ) || var_c13986eca25dd35e == "" )
@@ -98,7 +100,7 @@ function init()
 }
 
 // Namespace br_callouts / scripts\mp\gametypes\br_callouts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x571
 // Size: 0xeb
 function getlocationnameforpoint( point )
@@ -172,7 +174,7 @@ function getlocationnameforpoint( point )
     }
 
     // Namespace br_callouts / scripts\mp\gametypes\br_callouts
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x8c9
     // Size: 0x4e, Type: dev
     function function_1d1637db14bbc7d1()

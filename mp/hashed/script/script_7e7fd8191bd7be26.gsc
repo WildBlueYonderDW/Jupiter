@@ -5,7 +5,7 @@
 #namespace namespace_51941b5526d40882;
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ea
 // Size: 0x8d
 function function_21bd6a8c4766ad5a( guy, useinplace, var_9b57bd8d7f3d4e6a )
@@ -41,7 +41,7 @@ function function_21bd6a8c4766ad5a( guy, useinplace, var_9b57bd8d7f3d4e6a )
 }
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x280
 // Size: 0x1f4
 function function_63c85ab9240382f7( dyingguy, helper )

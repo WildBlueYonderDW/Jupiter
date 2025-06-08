@@ -71,7 +71,7 @@
 #namespace supers;
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1554
 // Size: 0x3a0
 function init()
@@ -174,7 +174,7 @@ function init()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18fc
 // Size: 0x52
 function function_4bdddfbb49e54102( var_511f1c7eaf0d2df7, initfunc )
@@ -189,7 +189,7 @@ function function_4bdddfbb49e54102( var_511f1c7eaf0d2df7, initfunc )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1956
 // Size: 0xa2
 function function_f0327aead8f016e2( globals )
@@ -229,7 +229,7 @@ function private initializesuper( var_511f1c7eaf0d2df7 )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a43
 // Size: 0x34
 function function_22bff45fcf920417( var_a5f886642fea5345 )
@@ -240,7 +240,7 @@ function function_22bff45fcf920417( var_a5f886642fea5345 )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a7f
 // Size: 0x40
 function function_18a7c22094077fe9( var_db0176d05c1d9564 )
@@ -251,7 +251,7 @@ function function_18a7c22094077fe9( var_db0176d05c1d9564 )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ac7
 // Size: 0x64
 function function_4d75a970580a253c( eventref, points )
@@ -273,7 +273,7 @@ function function_4d75a970580a253c( eventref, points )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b33
 // Size: 0x562
 function registersupers()
@@ -343,7 +343,7 @@ function registersupers()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x209d
 // Size: 0x110
 function function_53110a12409d01da( ref, setfunc, unsetfunc, beginusefunc, endusefunc, var_e0af69536a727f03, var_70b09ed29c10732f, var_1bb8c2de6198881a )
@@ -371,7 +371,7 @@ function function_53110a12409d01da( ref, setfunc, unsetfunc, beginusefunc, endus
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21b5
 // Size: 0x5a
 function function_b11714522b76c040()
@@ -383,7 +383,7 @@ function function_b11714522b76c040()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2217
 // Size: 0x97
 function registersuperextraweapon( ref, weapon )
@@ -406,7 +406,7 @@ function registersuperextraweapon( ref, weapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22b6
 // Size: 0x52
 function super_onspawned()
@@ -423,7 +423,7 @@ function super_onspawned()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2310
 // Size: 0x3c
 function function_66cc363da0bf8520()
@@ -441,7 +441,7 @@ function function_66cc363da0bf8520()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2354
 // Size: 0x27
 function function_9d0de1f8996c57f8( superref )
@@ -453,7 +453,7 @@ function function_9d0de1f8996c57f8( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2383
 // Size: 0x463
 function givesuper( superref, var_6c70bf5ad211f464, immediate, blueprintindex )
@@ -584,7 +584,7 @@ function givesuper( superref, var_6c70bf5ad211f464, immediate, blueprintindex )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27ee
 // Size: 0x19d
 function handlesuperearnovertime()
@@ -628,7 +628,8 @@ function handlesuperearnovertime()
         
         while ( startplayer < playercount )
         {
-            for (updateindex = 0; updateindex < 15; updateindex++) {
+            for ( updateindex = 0; updateindex < 15 ; updateindex++ )
+            {
                 playerindex = startplayer + updateindex;
                 player = level.players[ playerindex ];
                 
@@ -669,7 +670,7 @@ function handlesuperearnovertime()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2993
 // Size: 0x101
 function function_50f445936b3ddd9e( var_d220971ffe40c601 )
@@ -739,7 +740,7 @@ function function_50f445936b3ddd9e( var_d220971ffe40c601 )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a9c
 // Size: 0x3f, Type: bool
 function function_4b10d71720fc4a4( superref )
@@ -755,7 +756,7 @@ function function_4b10d71720fc4a4( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ae4
 // Size: 0x38
 function function_7abbee267d3aad2f( superref )
@@ -769,7 +770,7 @@ function function_7abbee267d3aad2f( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b24
 // Size: 0x72
 function function_26f98b45fb791c0e()
@@ -797,7 +798,7 @@ function function_26f98b45fb791c0e()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b9e
 // Size: 0xb
 function function_d8f9e4158e12de6b()
@@ -806,7 +807,7 @@ function function_d8f9e4158e12de6b()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2bb2
 // Size: 0x178
 function clearsuper( var_6c70bf5ad211f464, var_d220971ffe40c601, playerkilled )
@@ -864,7 +865,7 @@ function clearsuper( var_6c70bf5ad211f464, var_d220971ffe40c601, playerkilled )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d32
 // Size: 0xd4
 function superonset( superref )
@@ -911,7 +912,7 @@ function superonset( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e0e
 // Size: 0x93
 function superonunset( superref )
@@ -950,7 +951,7 @@ function superonunset( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ea9
 // Size: 0x4c
 function function_6a13616c0032bf21()
@@ -964,7 +965,7 @@ function function_6a13616c0032bf21()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2efd
 // Size: 0x79
 function setsuperbasepoints( points, setonly, var_5e5d91e0ed56109e )
@@ -983,7 +984,7 @@ function setsuperbasepoints( points, setonly, var_5e5d91e0ed56109e )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f7e
 // Size: 0x70
 function setsuperextrapoints( points, setonly )
@@ -1002,7 +1003,7 @@ function setsuperextrapoints( points, setonly )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ff6
 // Size: 0x7e
 function function_8c7b1312cf5986b( points, setonly )
@@ -1023,7 +1024,7 @@ function function_8c7b1312cf5986b( points, setonly )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x307c
 // Size: 0x64
 function superpointschanged( var_5e5d91e0ed56109e )
@@ -1045,7 +1046,7 @@ function superpointschanged( var_5e5d91e0ed56109e )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x30e8
 // Size: 0x35b
 function givesuperpoints( points, scoreevent, var_b4b593facaa83af7, pointsmultiplier, var_2569ec7d8016f67f, var_7601733fb3a9ae73 )
@@ -1165,7 +1166,7 @@ function givesuperpoints( points, scoreevent, var_b4b593facaa83af7, pointsmultip
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x344b
 // Size: 0x116
 function function_e20ab7a8971ee3f2()
@@ -1220,7 +1221,7 @@ function function_e20ab7a8971ee3f2()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3569
 // Size: 0xb8
 function function_b3d636936ec98aa0( overclockprogress )
@@ -1260,7 +1261,7 @@ function function_b3d636936ec98aa0( overclockprogress )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3629
 // Size: 0xc7
 function updatesuperuiprogress()
@@ -1303,7 +1304,7 @@ function updatesuperuiprogress()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36f8
 // Size: 0x3d
 function handlesuperuistatechange( state )
@@ -1318,7 +1319,7 @@ function handlesuperuistatechange( state )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x373d
 // Size: 0x3d
 function function_93b5448ea8f6277b( progress )
@@ -1333,7 +1334,7 @@ function function_93b5448ea8f6277b( progress )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3782
 // Size: 0xd7
 function updatesuperuistate()
@@ -1387,7 +1388,7 @@ function updatesuperuistate()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3861
 // Size: 0x3a
 function watchforrespawn()
@@ -1404,7 +1405,7 @@ function watchforrespawn()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38a3
 // Size: 0x2f
 function storesupercooldownforroundchange()
@@ -1422,7 +1423,7 @@ function storesupercooldownforroundchange()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38da
 // Size: 0x2c
 function handlespectating()
@@ -1440,7 +1441,7 @@ function handlespectating()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x390e
 // Size: 0x59
 function handleteamchange()
@@ -1463,7 +1464,7 @@ function handleteamchange()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x396f
 // Size: 0x8b
 function handlepointdecay()
@@ -1489,7 +1490,7 @@ function handlepointdecay()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a02
 // Size: 0x2c8
 function superearned()
@@ -1545,7 +1546,7 @@ function superearned()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cd2
 // Size: 0xd4
 function watchforsuperusebegin()
@@ -1582,7 +1583,7 @@ function watchforsuperusebegin()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dae
 // Size: 0x13d
 function watchforsuperhold()
@@ -1628,7 +1629,7 @@ function watchforsuperhold()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ef3
 // Size: 0xc4
 function function_c1b1e5be45024c77( superinfo )
@@ -1661,7 +1662,7 @@ function function_c1b1e5be45024c77( superinfo )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fbf
 // Size: 0x23
 function function_45b568a3dc8beade()
@@ -1674,7 +1675,7 @@ function function_45b568a3dc8beade()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fea
 // Size: 0x18
 function function_be547df7936c91dd()
@@ -1685,7 +1686,7 @@ function function_be547df7936c91dd()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x400a
 // Size: 0x27
 function function_f605d1759fb37327()
@@ -1698,7 +1699,7 @@ function function_f605d1759fb37327()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4039
 // Size: 0x20
 function function_fabca6d2e89350c5()
@@ -1710,7 +1711,7 @@ function function_fabca6d2e89350c5()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4061
 // Size: 0x124
 function function_6e3d8c7959967643()
@@ -1779,7 +1780,7 @@ function function_6e3d8c7959967643()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x418d
 // Size: 0x76
 function function_bad0aa1c878da781()
@@ -1806,32 +1807,37 @@ function function_bad0aa1c878da781()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x420b
-// Size: 0x58, Type: bool
+// Size: 0x63
 function trysuperusebegin( objweapon )
 {
     if ( !isreallyalive( self ) )
     {
-        return false;
+        return 0;
+    }
+    
+    if ( self isinexecutionvictim() )
+    {
+        return 0;
     }
     
     if ( objweapon.basename != getcurrentsuper().weaponobj.basename )
     {
-        return false;
+        return 0;
     }
     
     if ( !val::get( "supers" ) )
     {
-        return false;
+        return 0;
     }
     
     return beginsuperuse();
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x426c
+// Params 0
+// Checksum 0x0, Offset: 0x4277
 // Size: 0x5dd, Type: bool
 function beginsuperuse()
 {
@@ -1992,8 +1998,8 @@ function beginsuperuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4852
+// Params 0
+// Checksum 0x0, Offset: 0x485d
 // Size: 0x8d
 function function_ea2a406d00e424f2()
 {
@@ -2017,8 +2023,8 @@ function function_ea2a406d00e424f2()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x48e7
+// Params 2
+// Checksum 0x0, Offset: 0x48f2
 // Size: 0xbc, Type: bool
 function activatesuper( altmode, var_1e71e1f458960b93 )
 {
@@ -2044,8 +2050,8 @@ function activatesuper( altmode, var_1e71e1f458960b93 )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x49ac
+// Params 0
+// Checksum 0x0, Offset: 0x49b7
 // Size: 0xc9
 function function_15fe9c03174d698d()
 {
@@ -2099,8 +2105,8 @@ function function_15fe9c03174d698d()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a7d
+// Params 0
+// Checksum 0x0, Offset: 0x4a88
 // Size: 0x8a, Type: bool
 function function_49983afe0a8eb2b1()
 {
@@ -2117,8 +2123,8 @@ function function_49983afe0a8eb2b1()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b10
+// Params 0
+// Checksum 0x0, Offset: 0x4b1b
 // Size: 0x2f
 function function_c4c39359ee1fdecb()
 {
@@ -2129,8 +2135,8 @@ function function_c4c39359ee1fdecb()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b47
+// Params 0
+// Checksum 0x0, Offset: 0x4b52
 // Size: 0x7d
 function function_e440752fbbed0dd5()
 {
@@ -2144,8 +2150,8 @@ function function_e440752fbbed0dd5()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bcc
+// Params 0
+// Checksum 0x0, Offset: 0x4bd7
 // Size: 0x7d
 function function_885e7d0266b391ee()
 {
@@ -2159,8 +2165,8 @@ function function_885e7d0266b391ee()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c51
+// Params 3
+// Checksum 0x0, Offset: 0x4c5c
 // Size: 0x186
 function function_8d6d95114b2c9b0d( var_cf95e74ffd3666c0, var_ad02f85b88a0b345, time )
 {
@@ -2211,8 +2217,8 @@ function function_8d6d95114b2c9b0d( var_cf95e74ffd3666c0, var_ad02f85b88a0b345, 
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ddf
+// Params 0
+// Checksum 0x0, Offset: 0x4dea
 // Size: 0xbc
 function function_ada5045140ee0fdf()
 {
@@ -2266,8 +2272,8 @@ function function_ada5045140ee0fdf()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ea4
+// Params 0
+// Checksum 0x0, Offset: 0x4eaf
 // Size: 0x17d
 function function_c4c44e009d4f4c6b()
 {
@@ -2311,8 +2317,8 @@ function function_c4c44e009d4f4c6b()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5029
+// Params 3
+// Checksum 0x0, Offset: 0x5034
 // Size: 0xe8
 function function_a4496878854ae85b( firedweapon, superweapon, percentreduced )
 {
@@ -2351,8 +2357,8 @@ function function_a4496878854ae85b( firedweapon, superweapon, percentreduced )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5119
+// Params 0
+// Checksum 0x0, Offset: 0x5124
 // Size: 0x61
 function function_45c01cf6ebb2ba62()
 {
@@ -2363,8 +2369,8 @@ function function_45c01cf6ebb2ba62()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5183
+// Params 0
+// Checksum 0x0, Offset: 0x518e
 // Size: 0x92
 function function_9aa5fdb675559e34()
 {
@@ -2380,8 +2386,8 @@ function function_9aa5fdb675559e34()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x521d
+// Params 2
+// Checksum 0x0, Offset: 0x5228
 // Size: 0x178
 function function_60e9ab8c0ad6a01c( ammo, type )
 {
@@ -2452,8 +2458,8 @@ function function_60e9ab8c0ad6a01c( ammo, type )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x539d
+// Params 0
+// Checksum 0x0, Offset: 0x53a8
 // Size: 0xad, Type: bool
 function isusingsuperweapon()
 {
@@ -2468,8 +2474,8 @@ function isusingsuperweapon()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5453
+// Params 0
+// Checksum 0x0, Offset: 0x545e
 // Size: 0x42
 function function_c2432256b64355ce()
 {
@@ -2491,8 +2497,8 @@ function function_c2432256b64355ce()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x549e
+// Params 0
+// Checksum 0x0, Offset: 0x54a9
 // Size: 0x42
 function function_1f4b9f3ad4696db6()
 {
@@ -2514,8 +2520,8 @@ function function_1f4b9f3ad4696db6()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x54e9
+// Params 0
+// Checksum 0x0, Offset: 0x54f4
 // Size: 0xa5
 function function_3889d69492a93008()
 {
@@ -2542,8 +2548,8 @@ function function_3889d69492a93008()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5597
+// Params 0
+// Checksum 0x0, Offset: 0x55a2
 // Size: 0x25
 function function_36246fa2b22036ab()
 {
@@ -2558,8 +2564,8 @@ function function_36246fa2b22036ab()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x55c4
+// Params 0
+// Checksum 0x0, Offset: 0x55cf
 // Size: 0x6a
 function function_22e13024dc2774e9()
 {
@@ -2577,8 +2583,8 @@ function function_22e13024dc2774e9()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5636
+// Params 0
+// Checksum 0x0, Offset: 0x5641
 // Size: 0x15e
 function updateusetimedecay()
 {
@@ -2630,8 +2636,8 @@ function updateusetimedecay()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x579c
+// Params 3
+// Checksum 0x0, Offset: 0x57a7
 // Size: 0x94
 function reducesuperusepercent( percentoff, var_1e71e1f458960b93, var_80bd4dd71b59356b )
 {
@@ -2651,8 +2657,8 @@ function reducesuperusepercent( percentoff, var_1e71e1f458960b93, var_80bd4dd71b
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5838
+// Params 1
+// Checksum 0x0, Offset: 0x5843
 // Size: 0x51
 function function_a2a1403d5924109( percentage )
 {
@@ -2663,8 +2669,8 @@ function function_a2a1403d5924109( percentage )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5892
+// Params 1
+// Checksum 0x0, Offset: 0x589d
 // Size: 0x76
 function function_7c67c8e12db38300( seconds )
 {
@@ -2697,8 +2703,8 @@ function function_7c67c8e12db38300( seconds )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5910
+// Params 0
+// Checksum 0x0, Offset: 0x591b
 // Size: 0x45
 function resetsuperusepercent()
 {
@@ -2709,8 +2715,8 @@ function resetsuperusepercent()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x595d
+// Params 0
+// Checksum 0x0, Offset: 0x5968
 // Size: 0x2f
 function superusedurationupdated()
 {
@@ -2723,8 +2729,8 @@ function superusedurationupdated()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x5994
+// Params 6
+// Checksum 0x0, Offset: 0x599f
 // Size: 0x4f3
 function superusefinished( var_3179afaa208defa2, fromdeath, var_e68637fb8c1c346b, var_e743a22765d93795, attacker, fromclear )
 {
@@ -2845,8 +2851,8 @@ function superusefinished( var_3179afaa208defa2, fromdeath, var_e68637fb8c1c346b
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e8f
+// Params 1
+// Checksum 0x0, Offset: 0x5e9a
 // Size: 0x176
 function br_superrestockwatch( superref )
 {
@@ -2877,7 +2883,8 @@ function br_superrestockwatch( superref )
     {
         result = player waittill_any_timeout_1( level.superglobals.var_9c670f8da841bf77, "tacticalCamera_camera_spawned" );
         
-        for (var_ab3410c734591ca9 = 0; !var_ab3410c734591ca9; var_ab3410c734591ca9 = 1) {
+        for ( var_ab3410c734591ca9 = 0; !var_ab3410c734591ca9 ; var_ab3410c734591ca9 = 1 )
+        {
             level waittill( "tacticalCamera_camera_removed", camera, cameraindex );
             
             if ( !isdefined( player ) )
@@ -2910,8 +2917,8 @@ function br_superrestockwatch( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x600d
+// Params 0
+// Checksum 0x0, Offset: 0x6018
 // Size: 0x22
 function function_e648b6fc93bbc0e0()
 {
@@ -2923,8 +2930,8 @@ function function_e648b6fc93bbc0e0()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6037
+// Params 0
+// Checksum 0x0, Offset: 0x6042
 // Size: 0xd5
 function refundsuper()
 {
@@ -2960,8 +2967,8 @@ function refundsuper()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6114
+// Params 1
+// Checksum 0x0, Offset: 0x611f
 // Size: 0x7e
 function handledeath( attacker )
 {
@@ -2983,8 +2990,8 @@ function handledeath( attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x619a
+// Params 1
+// Checksum 0x0, Offset: 0x61a5
 // Size: 0x48
 function monitoruseweaponfiring( var_354f8655b711b4b1 )
 {
@@ -3003,8 +3010,8 @@ function monitoruseweaponfiring( var_354f8655b711b4b1 )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x61ea
+// Params 3
+// Checksum 0x0, Offset: 0x61f5
 // Size: 0x99, Type: bool
 function trygiveuseweapon( useweapon, clipammo, stockammo )
 {
@@ -3042,8 +3049,8 @@ function trygiveuseweapon( useweapon, clipammo, stockammo )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x628c
+// Params 1
+// Checksum 0x0, Offset: 0x6297
 // Size: 0xc8
 function manageuseweapon( useweapon )
 {
@@ -3078,8 +3085,8 @@ function manageuseweapon( useweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x635c
+// Params 2
+// Checksum 0x0, Offset: 0x6367
 // Size: 0x7c
 function function_ff3b77706565dacf( useweapon, newweapon )
 {
@@ -3092,8 +3099,8 @@ function function_ff3b77706565dacf( useweapon, newweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63e0
+// Params 1
+// Checksum 0x0, Offset: 0x63eb
 // Size: 0x64
 function function_573f49bb5d5a86ea( useweapon )
 {
@@ -3115,8 +3122,8 @@ function function_573f49bb5d5a86ea( useweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x644c
+// Params 2
+// Checksum 0x0, Offset: 0x6457
 // Size: 0xa1
 function switchandtakesuperuseweapon( cacheammo, onend )
 {
@@ -3153,8 +3160,8 @@ function switchandtakesuperuseweapon( cacheammo, onend )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x64f5
+// Params 0
+// Checksum 0x0, Offset: 0x6500
 // Size: 0xdc
 function storesuperpoints()
 {
@@ -3185,8 +3192,8 @@ function storesuperpoints()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x65d9
+// Params 0
+// Checksum 0x0, Offset: 0x65e4
 // Size: 0x3b
 function getsuperuseuiprogress()
 {
@@ -3200,8 +3207,8 @@ function getsuperuseuiprogress()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x661d
+// Params 0
+// Checksum 0x0, Offset: 0x6628
 // Size: 0x12
 function getcurrentsuperbasepoints()
 {
@@ -3209,8 +3216,8 @@ function getcurrentsuperbasepoints()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6638
+// Params 0
+// Checksum 0x0, Offset: 0x6643
 // Size: 0x12
 function getcurrentsuperextrapoints()
 {
@@ -3218,8 +3225,8 @@ function getcurrentsuperextrapoints()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6653
+// Params 0
+// Checksum 0x0, Offset: 0x665e
 // Size: 0x2b
 function getcurrentsuperpoints()
 {
@@ -3228,8 +3235,8 @@ function getcurrentsuperpoints()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6687
+// Params 0
+// Checksum 0x0, Offset: 0x6692
 // Size: 0x68
 function getsuperpointsneeded()
 {
@@ -3250,8 +3257,8 @@ function getsuperpointsneeded()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x66f8
+// Params 0
+// Checksum 0x0, Offset: 0x6703
 // Size: 0x4f
 function issuperready()
 {
@@ -3271,8 +3278,8 @@ function issuperready()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x674f
+// Params 0
+// Checksum 0x0, Offset: 0x675a
 // Size: 0x5a, Type: bool
 function function_6c06220f8b5b7079()
 {
@@ -3292,8 +3299,8 @@ function function_6c06220f8b5b7079()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x67b2
+// Params 0
+// Checksum 0x0, Offset: 0x67bd
 // Size: 0x1d, Type: bool
 function function_c3479770ffec05e2()
 {
@@ -3301,8 +3308,8 @@ function function_c3479770ffec05e2()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x67d8
+// Params 0
+// Checksum 0x0, Offset: 0x67e3
 // Size: 0x1d, Type: bool
 function issuperinuse()
 {
@@ -3310,8 +3317,8 @@ function issuperinuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x67fe
+// Params 0
+// Checksum 0x0, Offset: 0x6809
 // Size: 0xc, Type: bool
 function function_565913010c84ffca()
 {
@@ -3319,8 +3326,8 @@ function function_565913010c84ffca()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6813
+// Params 1
+// Checksum 0x0, Offset: 0x681e
 // Size: 0x15
 function function_c0fe8dee01b2adac( var_623c13007339ec2f )
 {
@@ -3328,8 +3335,8 @@ function function_c0fe8dee01b2adac( var_623c13007339ec2f )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6830
+// Params 1
+// Checksum 0x0, Offset: 0x683b
 // Size: 0x2a
 function function_1029081898b028c( ispaused )
 {
@@ -3338,8 +3345,8 @@ function function_1029081898b028c( ispaused )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6862
+// Params 1
+// Checksum 0x0, Offset: 0x686d
 // Size: 0x31
 function setsuperisinuse( isinuse )
 {
@@ -3349,8 +3356,8 @@ function setsuperisinuse( isinuse )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x689b
+// Params 1
+// Checksum 0x0, Offset: 0x68a6
 // Size: 0x7e
 function setsuperisactive( isactive )
 {
@@ -3372,8 +3379,8 @@ function setsuperisactive( isactive )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6921
+// Params 0
+// Checksum 0x0, Offset: 0x692c
 // Size: 0x13, Type: bool
 function issupercharging()
 {
@@ -3381,8 +3388,8 @@ function issupercharging()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x693d
+// Params 0
+// Checksum 0x0, Offset: 0x6948
 // Size: 0xe, Type: bool
 function issuperexpended()
 {
@@ -3390,8 +3397,8 @@ function issuperexpended()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6954
+// Params 1
+// Checksum 0x0, Offset: 0x695f
 // Size: 0x3c
 function function_f95bcca44e8cba53( superref )
 {
@@ -3414,8 +3421,8 @@ function function_f95bcca44e8cba53( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6999
+// Params 1
+// Checksum 0x0, Offset: 0x69a4
 // Size: 0x23
 function setsuperexpended( var_a6b84f600dc33630 )
 {
@@ -3424,8 +3431,8 @@ function setsuperexpended( var_a6b84f600dc33630 )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x69c4
+// Params 0
+// Checksum 0x0, Offset: 0x69cf
 // Size: 0xb
 function getcurrentsuper()
 {
@@ -3433,8 +3440,8 @@ function getcurrentsuper()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x69d8
+// Params 0
+// Checksum 0x0, Offset: 0x69e3
 // Size: 0x30
 function getcurrentsuperref()
 {
@@ -3449,8 +3456,8 @@ function getcurrentsuperref()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a11
+// Params 0
+// Checksum 0x0, Offset: 0x6a1c
 // Size: 0x37
 function function_43ec2fc7986c3310()
 {
@@ -3470,8 +3477,8 @@ function function_43ec2fc7986c3310()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a51
+// Params 1
+// Checksum 0x0, Offset: 0x6a5c
 // Size: 0x78
 function function_415ab9351849fba8( superinfo )
 {
@@ -3487,8 +3494,8 @@ function function_415ab9351849fba8( superinfo )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ad2
+// Params 1
+// Checksum 0x0, Offset: 0x6add
 // Size: 0x52
 function function_b5e551ba033bbd3b( seconds )
 {
@@ -3503,8 +3510,8 @@ function function_b5e551ba033bbd3b( seconds )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b2c
+// Params 1
+// Checksum 0x0, Offset: 0x6b37
 // Size: 0x36
 function function_c018f54841eb7b( var_500338cbcd60c91e )
 {
@@ -3519,8 +3526,8 @@ function function_c018f54841eb7b( var_500338cbcd60c91e )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b6a
+// Params 0
+// Checksum 0x0, Offset: 0x6b75
 // Size: 0x93
 function shouldrefundsuper()
 {
@@ -3549,8 +3556,8 @@ function shouldrefundsuper()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c06
+// Params 1
+// Checksum 0x0, Offset: 0x6c11
 // Size: 0x82
 function getsuperrefforsuperuseweapon( weapon )
 {
@@ -3568,8 +3575,8 @@ function getsuperrefforsuperuseweapon( weapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c91
+// Params 1
+// Checksum 0x0, Offset: 0x6c9c
 // Size: 0x5b
 function getsuperrefforsuperoffhand( weapon )
 {
@@ -3587,8 +3594,8 @@ function getsuperrefforsuperoffhand( weapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cf5
+// Params 1
+// Checksum 0x0, Offset: 0x6d00
 // Size: 0x5b
 function getsuperrefforsuperextraweapon( weapon )
 {
@@ -3606,8 +3613,8 @@ function getsuperrefforsuperextraweapon( weapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d59
+// Params 1
+// Checksum 0x0, Offset: 0x6d64
 // Size: 0xb2
 function getsuperrefforsuperweapon( weapon )
 {
@@ -3656,8 +3663,8 @@ function getsuperrefforsuperweapon( weapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e14
+// Params 1
+// Checksum 0x0, Offset: 0x6e1f
 // Size: 0x4f
 function shouldtracksuperweaponstats( objweapon )
 {
@@ -3673,8 +3680,8 @@ function shouldtracksuperweaponstats( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e6c
+// Params 1
+// Checksum 0x0, Offset: 0x6e77
 // Size: 0x7d
 function getsuperid( superref )
 {
@@ -3687,8 +3694,8 @@ function getsuperid( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ef2
+// Params 1
+// Checksum 0x0, Offset: 0x6efd
 // Size: 0x44
 function getmovespeedforsuperweapon( objweapon )
 {
@@ -3703,8 +3710,8 @@ function getmovespeedforsuperweapon( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f3f
+// Params 1
+// Checksum 0x0, Offset: 0x6f4a
 // Size: 0x13
 function getrootsuperref( superref )
 {
@@ -3712,8 +3719,8 @@ function getrootsuperref( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f5b
+// Params 1
+// Checksum 0x0, Offset: 0x6f66
 // Size: 0x45
 function function_eb25267ee439cabe( superref )
 {
@@ -3726,8 +3733,8 @@ function function_eb25267ee439cabe( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fa9
+// Params 1
+// Checksum 0x0, Offset: 0x6fb4
 // Size: 0x3f, Type: bool
 function function_36c4aa603286c24f( weapon )
 {
@@ -3742,8 +3749,8 @@ function function_36c4aa603286c24f( weapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ff1
+// Params 1
+// Checksum 0x0, Offset: 0x6ffc
 // Size: 0x30
 function function_e7f40551b644fb00( superref )
 {
@@ -3756,8 +3763,8 @@ function function_e7f40551b644fb00( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7029
+// Params 1
+// Checksum 0x0, Offset: 0x7034
 // Size: 0x54
 function function_83a68723acc3296d( weaponname )
 {
@@ -3777,8 +3784,8 @@ function function_83a68723acc3296d( weaponname )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7086
+// Params 1
+// Checksum 0x0, Offset: 0x7091
 // Size: 0x3e
 function function_5cc7d8c432d5d6c1( superref )
 {
@@ -3793,8 +3800,8 @@ function function_5cc7d8c432d5d6c1( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x70cd
+// Params 1
+// Checksum 0x0, Offset: 0x70d8
 // Size: 0x3e
 function function_c519ae03535afe0f( superref )
 {
@@ -3809,8 +3816,8 @@ function function_c519ae03535afe0f( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7114
+// Params 0
+// Checksum 0x0, Offset: 0x711f
 // Size: 0x38
 function allowsuperweaponstow()
 {
@@ -3825,8 +3832,8 @@ function allowsuperweaponstow()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7154
+// Params 0
+// Checksum 0x0, Offset: 0x715f
 // Size: 0x8a
 function unstowsuperweapon()
 {
@@ -3848,8 +3855,8 @@ function unstowsuperweapon()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x71e6
+// Params 1
+// Checksum 0x0, Offset: 0x71f1
 // Size: 0x56
 function getsuperpointsforevent( eventref )
 {
@@ -3875,8 +3882,8 @@ function getsuperpointsforevent( eventref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7245
+// Params 0
+// Checksum 0x0, Offset: 0x7250
 // Size: 0x67
 function watchforgameend()
 {
@@ -3892,8 +3899,8 @@ function watchforgameend()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x72b4
+// Params 0
+// Checksum 0x0, Offset: 0x72bf
 // Size: 0xc2
 function getsppmdata()
 {
@@ -3925,8 +3932,8 @@ function getsppmdata()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x737f
+// Params 3
+// Checksum 0x0, Offset: 0x738a
 // Size: 0xcf
 function updatesppm( pointsearned, var_f3b601e04de761d9, eventref )
 {
@@ -3963,8 +3970,8 @@ function updatesppm( pointsearned, var_f3b601e04de761d9, eventref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7456
+// Params 0
+// Checksum 0x0, Offset: 0x7461
 // Size: 0x1a4
 function writesppmstats()
 {
@@ -4010,8 +4017,8 @@ function writesppmstats()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x7602
+// Params 5
+// Checksum 0x0, Offset: 0x760d
 // Size: 0x6e
 function modifysuperequipmentdamage( attacker, objweapon, type, damage, idflags )
 {
@@ -4026,8 +4033,8 @@ function modifysuperequipmentdamage( attacker, objweapon, type, damage, idflags 
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x7679
+// Params 8
+// Checksum 0x0, Offset: 0x7684
 // Size: 0x24f
 function updateactivesupers( einflictor, attacker, victim, idamage, smeansofdeath, objweapon, shitloc, vdir )
 {
@@ -4077,8 +4084,8 @@ function updateactivesupers( einflictor, attacker, victim, idamage, smeansofdeat
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x78d0
+// Params 0
+// Checksum 0x0, Offset: 0x78db
 // Size: 0xe4
 function watchsuperdelay()
 {
@@ -4092,7 +4099,7 @@ function watchsuperdelay()
     }
     else
     {
-        level.superdelay = getdvarfloat( @"hash_2748b78a2910ca11", 0 );
+        level.superdelay = getdvarfloat( @"scr_superdelay", 0 );
     }
     
     if ( !scripts\cp_mp\utility\game_utility::isbrstylegametype() )
@@ -4120,8 +4127,8 @@ function watchsuperdelay()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x79bc
+// Params 0
+// Checksum 0x0, Offset: 0x79c7
 // Size: 0x61
 function watchplayersuperdelayweapon()
 {
@@ -4142,8 +4149,8 @@ function watchplayersuperdelayweapon()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a25
+// Params 0
+// Checksum 0x0, Offset: 0x7a30
 // Size: 0x1f, Type: bool
 function superdelaypassed()
 {
@@ -4151,8 +4158,8 @@ function superdelaypassed()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a4d
+// Params 0
+// Checksum 0x0, Offset: 0x7a58
 // Size: 0x34
 function cancelsuperdelay()
 {
@@ -4163,8 +4170,8 @@ function cancelsuperdelay()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a89
+// Params 1
+// Checksum 0x0, Offset: 0x7a94
 // Size: 0x71
 function givesuperweapon( superinfo )
 {
@@ -4178,8 +4185,8 @@ function givesuperweapon( superinfo )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b02
+// Params 0
+// Checksum 0x0, Offset: 0x7b0d
 // Size: 0xe, Type: bool
 function issuperdisabled()
 {
@@ -4187,8 +4194,8 @@ function issuperdisabled()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b19
+// Params 2
+// Checksum 0x0, Offset: 0x7b24
 // Size: 0x9f
 function watchobjuse( drainrate, var_1507e598e016eb8 )
 {
@@ -4220,8 +4227,8 @@ function watchobjuse( drainrate, var_1507e598e016eb8 )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bc0
+// Params 1
+// Checksum 0x0, Offset: 0x7bcb
 // Size: 0x64
 function combatrecordsuperuse( super )
 {
@@ -4235,8 +4242,8 @@ function combatrecordsuperuse( super )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c2c
+// Params 1
+// Checksum 0x0, Offset: 0x7c37
 // Size: 0x64
 function combatrecordsuperkill( super )
 {
@@ -4250,8 +4257,8 @@ function combatrecordsuperkill( super )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c98
+// Params 2
+// Checksum 0x0, Offset: 0x7ca3
 // Size: 0x5c
 function combatrecordsupermisc( super, increment )
 {
@@ -4270,8 +4277,8 @@ function combatrecordsupermisc( super, increment )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cfc
+// Params 1
+// Checksum 0x0, Offset: 0x7d07
 // Size: 0x2a
 function getcombatrecordsupermisc( super )
 {
@@ -4279,8 +4286,8 @@ function getcombatrecordsupermisc( super )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d2f
+// Params 1
+// Checksum 0x0, Offset: 0x7d3a
 // Size: 0x24, Type: bool
 function superdisabledinarbitraryup( superref )
 {
@@ -4293,8 +4300,8 @@ function superdisabledinarbitraryup( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d5c
+// Params 0
+// Checksum 0x0, Offset: 0x7d67
 // Size: 0xe
 function superdisabledinarbitraryupmessage()
 {
@@ -4302,8 +4309,8 @@ function superdisabledinarbitraryupmessage()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d72
+// Params 0
+// Checksum 0x0, Offset: 0x7d7d
 // Size: 0xd
 function choppergunnerbeginuse()
 {
@@ -4311,8 +4318,8 @@ function choppergunnerbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d88
+// Params 0
+// Checksum 0x0, Offset: 0x7d93
 // Size: 0xd
 function cruisepredatorbeginuse()
 {
@@ -4320,8 +4327,8 @@ function cruisepredatorbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d9e
+// Params 0
+// Checksum 0x0, Offset: 0x7da9
 // Size: 0xc4, Type: bool
 function scramblebeginuse()
 {
@@ -4338,8 +4345,8 @@ function scramblebeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e6b
+// Params 1
+// Checksum 0x0, Offset: 0x7e76
 // Size: 0x30
 function scrambleusefinished( fromdeath )
 {
@@ -4349,8 +4356,8 @@ function scrambleusefinished( fromdeath )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ea3
+// Params 0
+// Checksum 0x0, Offset: 0x7eae
 // Size: 0x8
 function trophyonset()
 {
@@ -4358,8 +4365,8 @@ function trophyonset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7eb4
+// Params 0
+// Checksum 0x0, Offset: 0x7ebf
 // Size: 0x9
 function tacinsertonset()
 {
@@ -4367,8 +4374,8 @@ function tacinsertonset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ec5
+// Params 0
+// Checksum 0x0, Offset: 0x7ed0
 // Size: 0x9
 function tacinsertonunset()
 {
@@ -4376,8 +4383,8 @@ function tacinsertonunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ed6
+// Params 0
+// Checksum 0x0, Offset: 0x7ee1
 // Size: 0x2
 function remotedetonateonset()
 {
@@ -4385,8 +4392,8 @@ function remotedetonateonset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ee0
+// Params 0
+// Checksum 0x0, Offset: 0x7eeb
 // Size: 0x2
 function remotedetonatebeginuse()
 {
@@ -4394,8 +4401,8 @@ function remotedetonatebeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7eea
+// Params 0
+// Checksum 0x0, Offset: 0x7ef5
 // Size: 0xd
 function precisionairstrikebeginuse()
 {
@@ -4403,8 +4410,8 @@ function precisionairstrikebeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f00
+// Params 0
+// Checksum 0x0, Offset: 0x7f0b
 // Size: 0xd
 function tomastrikebeginuse()
 {
@@ -4412,8 +4419,8 @@ function tomastrikebeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f16
+// Params 0
+// Checksum 0x0, Offset: 0x7f21
 // Size: 0xd
 function pacsentrybeginuse()
 {
@@ -4421,8 +4428,8 @@ function pacsentrybeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f2c
+// Params 0
+// Checksum 0x0, Offset: 0x7f37
 // Size: 0x2
 function brcircleextract()
 {
@@ -4430,8 +4437,8 @@ function brcircleextract()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f36
+// Params 0
+// Checksum 0x0, Offset: 0x7f41
 // Size: 0xd
 function uavbeginuse()
 {
@@ -4439,8 +4446,8 @@ function uavbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f4c
+// Params 0
+// Checksum 0x0, Offset: 0x7f57
 // Size: 0x8
 function taccoverbeginuse()
 {
@@ -4448,8 +4455,8 @@ function taccoverbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f5d
+// Params 0
+// Checksum 0x0, Offset: 0x7f68
 // Size: 0x8
 function taccoverunset()
 {
@@ -4457,8 +4464,8 @@ function taccoverunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f6e
+// Params 0
+// Checksum 0x0, Offset: 0x7f79
 // Size: 0x8
 function function_9c38f7ea2223b47c()
 {
@@ -4466,8 +4473,8 @@ function function_9c38f7ea2223b47c()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f7f
+// Params 0
+// Checksum 0x0, Offset: 0x7f8a
 // Size: 0x4, Type: bool
 function function_3bc4f06f06e9c62()
 {
@@ -4475,8 +4482,8 @@ function function_3bc4f06f06e9c62()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f8c
+// Params 0
+// Checksum 0x0, Offset: 0x7f97
 // Size: 0x8
 function function_d1bd30be0c5ec282()
 {
@@ -4484,8 +4491,8 @@ function function_d1bd30be0c5ec282()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f9d
+// Params 0
+// Checksum 0x0, Offset: 0x7fa8
 // Size: 0x8
 function function_2ef8268013bdbe57()
 {
@@ -4493,8 +4500,8 @@ function function_2ef8268013bdbe57()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fae
+// Params 1
+// Checksum 0x0, Offset: 0x7fb9
 // Size: 0x12
 function function_2b9e988cdb17f507( objweapon )
 {
@@ -4502,8 +4509,8 @@ function function_2b9e988cdb17f507( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fc9
+// Params 0
+// Checksum 0x0, Offset: 0x7fd4
 // Size: 0x8
 function function_dfc3421815005e62()
 {
@@ -4511,8 +4518,8 @@ function function_dfc3421815005e62()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fda
+// Params 0
+// Checksum 0x0, Offset: 0x7fe5
 // Size: 0x8
 function deployeddecoyunset()
 {
@@ -4520,8 +4527,8 @@ function deployeddecoyunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7feb
+// Params 1
+// Checksum 0x0, Offset: 0x7ff6
 // Size: 0x12
 function function_25b1b1c8cae25c68( objweapon )
 {
@@ -4529,8 +4536,8 @@ function function_25b1b1c8cae25c68( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8006
+// Params 1
+// Checksum 0x0, Offset: 0x8011
 // Size: 0x35
 function function_96042b357c338ada( objweapon )
 {
@@ -4543,8 +4550,8 @@ function function_96042b357c338ada( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8043
+// Params 1
+// Checksum 0x0, Offset: 0x804e
 // Size: 0x35
 function function_6129eaac0c283bb7( objweapon )
 {
@@ -4557,8 +4564,8 @@ function function_6129eaac0c283bb7( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8080
+// Params 1
+// Checksum 0x0, Offset: 0x808b
 // Size: 0x35
 function function_971b383d95556418( objweapon )
 {
@@ -4571,8 +4578,8 @@ function function_971b383d95556418( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x80bd
+// Params 1
+// Checksum 0x0, Offset: 0x80c8
 // Size: 0x35
 function function_63cb15591c54cb1( objweapon )
 {
@@ -4585,8 +4592,8 @@ function function_63cb15591c54cb1( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x80fa
+// Params 0
+// Checksum 0x0, Offset: 0x8105
 // Size: 0x8
 function function_fad76ffce1bc5317()
 {
@@ -4594,8 +4601,8 @@ function function_fad76ffce1bc5317()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x810b
+// Params 0
+// Checksum 0x0, Offset: 0x8116
 // Size: 0x8
 function function_af1d2e4473f5057e()
 {
@@ -4603,8 +4610,8 @@ function function_af1d2e4473f5057e()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x811c
+// Params 0
+// Checksum 0x0, Offset: 0x8127
 // Size: 0x8
 function recondronebeginuse()
 {
@@ -4612,8 +4619,8 @@ function recondronebeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x812d
+// Params 0
+// Checksum 0x0, Offset: 0x8138
 // Size: 0x8
 function function_3529248aa2d81abc()
 {
@@ -4621,8 +4628,8 @@ function function_3529248aa2d81abc()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x813e
+// Params 2
+// Checksum 0x0, Offset: 0x8149
 // Size: 0x1a
 function recondroneenduse( fromdeath, attacker )
 {
@@ -4630,8 +4637,8 @@ function recondroneenduse( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8161
+// Params 0
+// Checksum 0x0, Offset: 0x816c
 // Size: 0x9
 function recondroneunset()
 {
@@ -4639,8 +4646,8 @@ function recondroneunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8172
+// Params 0
+// Checksum 0x0, Offset: 0x817d
 // Size: 0x8
 function empdronebeginuse()
 {
@@ -4648,8 +4655,8 @@ function empdronebeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8183
+// Params 0
+// Checksum 0x0, Offset: 0x818e
 // Size: 0x8
 function deadsilencebeginuse()
 {
@@ -4657,8 +4664,8 @@ function deadsilencebeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8194
+// Params 2
+// Checksum 0x0, Offset: 0x819f
 // Size: 0x1a
 function deadsilenceenduse( fromdeath, attacker )
 {
@@ -4666,8 +4673,8 @@ function deadsilenceenduse( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81b7
+// Params 0
+// Checksum 0x0, Offset: 0x81c2
 // Size: 0x9
 function supportboxunset()
 {
@@ -4675,8 +4682,8 @@ function supportboxunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81c8
+// Params 0
+// Checksum 0x0, Offset: 0x81d3
 // Size: 0x8
 function laststandhealonset()
 {
@@ -4684,8 +4691,8 @@ function laststandhealonset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81d9
+// Params 0
+// Checksum 0x0, Offset: 0x81e4
 // Size: 0x8
 function laststandhealunset()
 {
@@ -4693,8 +4700,8 @@ function laststandhealunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81ea
+// Params 0
+// Checksum 0x0, Offset: 0x81f5
 // Size: 0x8
 function laststandhealbeginuse()
 {
@@ -4702,8 +4709,8 @@ function laststandhealbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81fb
+// Params 0
+// Checksum 0x0, Offset: 0x8206
 // Size: 0x8
 function stoppingpowerbeginuse()
 {
@@ -4711,8 +4718,8 @@ function stoppingpowerbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x820c
+// Params 0
+// Checksum 0x0, Offset: 0x8217
 // Size: 0x8
 function superweapondropbeginuse()
 {
@@ -4720,8 +4727,8 @@ function superweapondropbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x821d
+// Params 0
+// Checksum 0x0, Offset: 0x8228
 // Size: 0x9
 function suppressunset()
 {
@@ -4729,8 +4736,8 @@ function suppressunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x822e
+// Params 0
+// Checksum 0x0, Offset: 0x8239
 // Size: 0x8
 function function_66c2b6fb2734cbae()
 {
@@ -4738,8 +4745,8 @@ function function_66c2b6fb2734cbae()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x823f
+// Params 0
+// Checksum 0x0, Offset: 0x824a
 // Size: 0x8
 function function_2de710d6b3c9388e()
 {
@@ -4747,8 +4754,8 @@ function function_2de710d6b3c9388e()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8250
+// Params 2
+// Checksum 0x0, Offset: 0x825b
 // Size: 0x19
 function function_ca449b017d946d26( fromdeath, attacker )
 {
@@ -4756,8 +4763,8 @@ function function_ca449b017d946d26( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8272
+// Params 0
+// Checksum 0x0, Offset: 0x827d
 // Size: 0x8
 function function_d93f331b74c647f2()
 {
@@ -4765,8 +4772,8 @@ function function_d93f331b74c647f2()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8283
+// Params 0
+// Checksum 0x0, Offset: 0x828e
 // Size: 0x8
 function emppulseunset()
 {
@@ -4774,8 +4781,8 @@ function emppulseunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8294
+// Params 0
+// Checksum 0x0, Offset: 0x829f
 // Size: 0x8
 function function_81a2df228546136e()
 {
@@ -4783,8 +4790,8 @@ function function_81a2df228546136e()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x82a5
+// Params 2
+// Checksum 0x0, Offset: 0x82b0
 // Size: 0x19
 function function_d1b35aa1689beb06( fromdeath, attacker )
 {
@@ -4792,8 +4799,8 @@ function function_d1b35aa1689beb06( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x82c7
+// Params 0
+// Checksum 0x0, Offset: 0x82d2
 // Size: 0x8
 function function_14761663823dbcb7()
 {
@@ -4801,8 +4808,8 @@ function function_14761663823dbcb7()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x82d8
+// Params 0
+// Checksum 0x0, Offset: 0x82e3
 // Size: 0x8
 function function_2e14b99891ecbbf4()
 {
@@ -4810,8 +4817,8 @@ function function_2e14b99891ecbbf4()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x82e9
+// Params 0
+// Checksum 0x0, Offset: 0x82f4
 // Size: 0x12
 function function_69e46ed9d65ec7e4()
 {
@@ -4819,8 +4826,8 @@ function function_69e46ed9d65ec7e4()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8304
+// Params 0
+// Checksum 0x0, Offset: 0x830f
 // Size: 0x8
 function blindingturretunset()
 {
@@ -4828,8 +4835,8 @@ function blindingturretunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8315
+// Params 0
+// Checksum 0x0, Offset: 0x8320
 // Size: 0x8
 function function_53025970eb68a86b()
 {
@@ -4837,8 +4844,8 @@ function function_53025970eb68a86b()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8326
+// Params 2
+// Checksum 0x0, Offset: 0x8331
 // Size: 0x1a
 function function_fdfae98bcfbf8c7f( fromdeath, attacker )
 {
@@ -4846,8 +4853,8 @@ function function_fdfae98bcfbf8c7f( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8349
+// Params 0
+// Checksum 0x0, Offset: 0x8354
 // Size: 0x8
 function function_dec15d25ce41a183()
 {
@@ -4855,8 +4862,8 @@ function function_dec15d25ce41a183()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x835a
+// Params 0
+// Checksum 0x0, Offset: 0x8365
 // Size: 0x28
 function launcherset()
 {
@@ -4867,8 +4874,8 @@ function launcherset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x838b
+// Params 0
+// Checksum 0x0, Offset: 0x8396
 // Size: 0x28
 function launcherunset()
 {
@@ -4879,8 +4886,8 @@ function launcherunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x83bc
+// Params 0
+// Checksum 0x0, Offset: 0x83c7
 // Size: 0x28
 function launcherbeginuse()
 {
@@ -4891,8 +4898,8 @@ function launcherbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x83ed
+// Params 2
+// Checksum 0x0, Offset: 0x83f8
 // Size: 0x3a
 function launcherenduse( fromdeath, attacker )
 {
@@ -4903,8 +4910,8 @@ function launcherenduse( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8430
+// Params 0
+// Checksum 0x0, Offset: 0x843b
 // Size: 0x28
 function function_b8ba0f8c9f136125()
 {
@@ -4915,8 +4922,8 @@ function function_b8ba0f8c9f136125()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8461
+// Params 0
+// Checksum 0x0, Offset: 0x846c
 // Size: 0x8
 function function_8d6d142bceb819f2()
 {
@@ -4924,8 +4931,8 @@ function function_8d6d142bceb819f2()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8472
+// Params 0
+// Checksum 0x0, Offset: 0x847d
 // Size: 0x24
 function function_e3c0d84aa4294ee9()
 {
@@ -4941,8 +4948,8 @@ function function_e3c0d84aa4294ee9()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x849f
+// Params 0
+// Checksum 0x0, Offset: 0x84aa
 // Size: 0x2
 function function_cf347a049095421b()
 {
@@ -4950,8 +4957,8 @@ function function_cf347a049095421b()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84a9
+// Params 0
+// Checksum 0x0, Offset: 0x84b4
 // Size: 0x2
 function function_19b0130d94d96b0b()
 {
@@ -4959,8 +4966,8 @@ function function_19b0130d94d96b0b()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x84b3
+// Params 2
+// Checksum 0x0, Offset: 0x84be
 // Size: 0x13
 function function_34956da8dd3afd1f( fromdeath, attacker )
 {
@@ -4968,8 +4975,8 @@ function function_34956da8dd3afd1f( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84ce
+// Params 0
+// Checksum 0x0, Offset: 0x84d9
 // Size: 0x2
 function function_fc34a7d0e83b6d77()
 {
@@ -4977,8 +4984,8 @@ function function_fc34a7d0e83b6d77()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x84d8
+// Params 2
+// Checksum 0x0, Offset: 0x84e3
 // Size: 0x13
 function function_a7043870418bf96b( fromdeath, attacker )
 {
@@ -4986,8 +4993,8 @@ function function_a7043870418bf96b( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84f3
+// Params 0
+// Checksum 0x0, Offset: 0x84fe
 // Size: 0x8
 function function_f98d4ec41407bc75()
 {
@@ -4995,8 +5002,8 @@ function function_f98d4ec41407bc75()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8504
+// Params 2
+// Checksum 0x0, Offset: 0x850f
 // Size: 0x19
 function function_975965422d6bcb49( fromdeath, attacker )
 {
@@ -5004,8 +5011,8 @@ function function_975965422d6bcb49( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8526
+// Params 0
+// Checksum 0x0, Offset: 0x8531
 // Size: 0x8
 function function_e9993ee767c0acf5()
 {
@@ -5013,8 +5020,8 @@ function function_e9993ee767c0acf5()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8537
+// Params 2
+// Checksum 0x0, Offset: 0x8542
 // Size: 0x15, Type: bool
 function function_ec715b4038ae47c9( fromdeath, attacker )
 {
@@ -5022,8 +5029,8 @@ function function_ec715b4038ae47c9( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8555
+// Params 0
+// Checksum 0x0, Offset: 0x8560
 // Size: 0x8
 function function_e67d9c8005d3f178()
 {
@@ -5031,8 +5038,8 @@ function function_e67d9c8005d3f178()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8566
+// Params 2
+// Checksum 0x0, Offset: 0x8571
 // Size: 0x13
 function function_13214dc30f36bf08( fromdeath, attacker )
 {
@@ -5040,8 +5047,8 @@ function function_13214dc30f36bf08( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8581
+// Params 0
+// Checksum 0x0, Offset: 0x858c
 // Size: 0x2
 function function_8d08654f0023d631()
 {
@@ -5049,8 +5056,8 @@ function function_8d08654f0023d631()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x858b
+// Params 0
+// Checksum 0x0, Offset: 0x8596
 // Size: 0x2
 function function_3a1b0ee4f020ab35()
 {
@@ -5058,8 +5065,8 @@ function function_3a1b0ee4f020ab35()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8595
+// Params 2
+// Checksum 0x0, Offset: 0x85a0
 // Size: 0x13
 function function_2b9dfa62d7e245f5( fromdeath, attacker )
 {
@@ -5067,8 +5074,8 @@ function function_2b9dfa62d7e245f5( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x85b0
+// Params 0
+// Checksum 0x0, Offset: 0x85bb
 // Size: 0x8
 function function_b8e4c757481c3bf2()
 {
@@ -5076,8 +5083,8 @@ function function_b8e4c757481c3bf2()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x85c1
+// Params 2
+// Checksum 0x0, Offset: 0x85cc
 // Size: 0x1a
 function function_20d973416d5e8d9a( fromdeath, attacker )
 {
@@ -5085,8 +5092,8 @@ function function_20d973416d5e8d9a( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x85e4
+// Params 0
+// Checksum 0x0, Offset: 0x85ef
 // Size: 0x4e
 function superselectonset()
 {
@@ -5097,8 +5104,8 @@ function superselectonset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x863a
+// Params 2
+// Checksum 0x0, Offset: 0x8645
 // Size: 0xc5
 function function_c9491df86b072612( firstupgrade, secondupgrade )
 {
@@ -5133,8 +5140,8 @@ function function_c9491df86b072612( firstupgrade, secondupgrade )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8707
+// Params 0
+// Checksum 0x0, Offset: 0x8712
 // Size: 0x15
 function function_e78f07efbcdb9e97()
 {
@@ -5142,8 +5149,8 @@ function function_e78f07efbcdb9e97()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8724
+// Params 0
+// Checksum 0x0, Offset: 0x872f
 // Size: 0x9
 function superselectonunset()
 {
@@ -5151,8 +5158,8 @@ function superselectonunset()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8735
+// Params 1
+// Checksum 0x0, Offset: 0x8740
 // Size: 0x6a
 function function_fad6d78d6b3b3359( objweapon )
 {
@@ -5171,8 +5178,8 @@ function function_fad6d78d6b3b3359( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87a7
+// Params 0
+// Checksum 0x0, Offset: 0x87b2
 // Size: 0x8
 function superselectbeginuse()
 {
@@ -5180,8 +5187,8 @@ function superselectbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87b8
+// Params 0
+// Checksum 0x0, Offset: 0x87c3
 // Size: 0x7a
 function function_baf9eeef4cf2bac5()
 {
@@ -5199,8 +5206,8 @@ function function_baf9eeef4cf2bac5()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x883a
+// Params 0
+// Checksum 0x0, Offset: 0x8845
 // Size: 0xc, Type: bool
 function testsuperbeginuse()
 {
@@ -5209,8 +5216,8 @@ function testsuperbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x884f
+// Params 0
+// Checksum 0x0, Offset: 0x885a
 // Size: 0x4, Type: bool
 function superfultonbeginuse()
 {
@@ -5218,8 +5225,8 @@ function superfultonbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x885c
+// Params 0
+// Checksum 0x0, Offset: 0x8867
 // Size: 0x4, Type: bool
 function supersupplydropbeginuse()
 {
@@ -5227,8 +5234,8 @@ function supersupplydropbeginuse()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8869
+// Params 0
+// Checksum 0x0, Offset: 0x8874
 // Size: 0x8
 function function_7eead274ef83e1b9()
 {
@@ -5236,8 +5243,8 @@ function function_7eead274ef83e1b9()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x887a
+// Params 0
+// Checksum 0x0, Offset: 0x8885
 // Size: 0x8
 function function_afd34c64e8c8d5d()
 {
@@ -5245,8 +5252,8 @@ function function_afd34c64e8c8d5d()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x888b
+// Params 0
+// Checksum 0x0, Offset: 0x8896
 // Size: 0x8
 function function_90a74a57a43c9808()
 {
@@ -5254,8 +5261,8 @@ function function_90a74a57a43c9808()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x889c
+// Params 0
+// Checksum 0x0, Offset: 0x88a7
 // Size: 0x3b
 function function_77a8296b67aa7a1c()
 {
@@ -5268,8 +5275,8 @@ function function_77a8296b67aa7a1c()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x88e0
+// Params 2
+// Checksum 0x0, Offset: 0x88eb
 // Size: 0x4d
 function function_25ea1075448678c( fromdeath, attacker )
 {
@@ -5282,8 +5289,8 @@ function function_25ea1075448678c( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8936
+// Params 2
+// Checksum 0x0, Offset: 0x8941
 // Size: 0x4d
 function function_e285dcf9693ca723( fromdeath, attacker )
 {
@@ -5296,8 +5303,8 @@ function function_e285dcf9693ca723( fromdeath, attacker )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x898c
+// Params 0
+// Checksum 0x0, Offset: 0x8997
 // Size: 0x45
 function testsuperrefundwatcher()
 {
@@ -5319,8 +5326,8 @@ function testsuperrefundwatcher()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x89d9
+// Params 0
+// Checksum 0x0, Offset: 0x89e4
 // Size: 0x68
 function showsuperremindersplash()
 {
@@ -5345,8 +5352,8 @@ function showsuperremindersplash()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a49
+// Params 0
+// Checksum 0x0, Offset: 0x8a54
 // Size: 0x21
 function clearsuperremindersplash()
 {
@@ -5356,8 +5363,8 @@ function clearsuperremindersplash()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a72
+// Params 1
+// Checksum 0x0, Offset: 0x8a7d
 // Size: 0x1e
 function clearsuperreminderondeath( player )
 {
@@ -5370,8 +5377,8 @@ function clearsuperreminderondeath( player )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a98
+// Params 1
+// Checksum 0x0, Offset: 0x8aa3
 // Size: 0x22
 function clearsuperreminderondeathinternal( player )
 {
@@ -5381,8 +5388,8 @@ function clearsuperreminderondeathinternal( player )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ac2
+// Params 0
+// Checksum 0x0, Offset: 0x8acd
 // Size: 0xb0
 function initsuperdvars()
 {
@@ -5405,8 +5412,8 @@ function initsuperdvars()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b7a
+// Params 0
+// Checksum 0x0, Offset: 0x8b85
 // Size: 0x2ba
 function watchsuperlottery()
 {
@@ -5518,8 +5525,8 @@ function watchsuperlottery()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e3c
+// Params 1
+// Checksum 0x0, Offset: 0x8e47
 // Size: 0x6f
 function awardsuperlottery( player )
 {
@@ -5550,8 +5557,8 @@ function awardsuperlottery( player )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8eb3
+// Params 0
+// Checksum 0x0, Offset: 0x8ebe
 // Size: 0x32
 function getscriptdataversion()
 {
@@ -5569,8 +5576,8 @@ function getscriptdataversion()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8eee
+// Params 1
+// Checksum 0x0, Offset: 0x8ef9
 // Size: 0xc2
 function recordsuperearnedanalytics( superinfo )
 {
@@ -5584,8 +5591,8 @@ function recordsuperearnedanalytics( superinfo )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fb8
+// Params 1
+// Checksum 0x0, Offset: 0x8fc3
 // Size: 0xdb
 function function_395a9cb3ebe25d55( superinfo )
 {
@@ -5609,7 +5616,7 @@ function function_395a9cb3ebe25d55( superinfo )
 
 // Namespace supers / scripts\mp\supers
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x909c
+// Checksum 0x0, Offset: 0x90a7
 // Size: 0x198
 function private function_af7e8fca939f7347( superinfo )
 {
@@ -5632,8 +5639,8 @@ function private function_af7e8fca939f7347( superinfo )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x923d
+// Params 1
+// Checksum 0x0, Offset: 0x9248
 // Size: 0x65
 function function_235470b268f029ca( destroyfunc )
 {
@@ -5654,8 +5661,8 @@ function function_235470b268f029ca( destroyfunc )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92aa
+// Params 0
+// Checksum 0x0, Offset: 0x92b5
 // Size: 0xe7
 function function_ddeb08081f6fabea()
 {
@@ -5696,8 +5703,8 @@ function function_ddeb08081f6fabea()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9399
+// Params 3
+// Checksum 0x0, Offset: 0x93a4
 // Size: 0x1a8
 function function_7203e7aa96ff0ba9( superid, var_86c4bb77bc9871cd, forceshow )
 {
@@ -5767,8 +5774,8 @@ function function_7203e7aa96ff0ba9( superid, var_86c4bb77bc9871cd, forceshow )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9549
+// Params 1
+// Checksum 0x0, Offset: 0x9554
 // Size: 0x5a, Type: bool
 function function_a465412785d4c550( objweapon )
 {
@@ -5791,8 +5798,8 @@ function function_a465412785d4c550( objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x95ac
+// Params 1
+// Checksum 0x0, Offset: 0x95b7
 // Size: 0xb6
 function function_ea7187bdba6dff15( superref )
 {
@@ -5831,8 +5838,8 @@ function function_ea7187bdba6dff15( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x966a
+// Params 2
+// Checksum 0x0, Offset: 0x9675
 // Size: 0x120
 function function_c1c41a5273f29351( objweapon, isimmediate )
 {
@@ -5897,7 +5904,7 @@ function function_c1c41a5273f29351( objweapon, isimmediate )
 
 // Namespace supers / scripts\mp\supers
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x9792
+// Checksum 0x0, Offset: 0x979d
 // Size: 0x40
 function private function_7fdcd12f0e769a07( player, objweapon, var_81ea6bd318c54254 )
 {
@@ -5909,7 +5916,7 @@ function private function_7fdcd12f0e769a07( player, objweapon, var_81ea6bd318c54
 
 // Namespace supers / scripts\mp\supers
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x97da
+// Checksum 0x0, Offset: 0x97e5
 // Size: 0x77
 function private function_abfceeedf55fde6( player, objweapon )
 {
@@ -5928,8 +5935,8 @@ function private function_abfceeedf55fde6( player, objweapon )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9859
+// Params 1
+// Checksum 0x0, Offset: 0x9864
 // Size: 0x6b, Type: bool
 function superhastimedusage( superinfo )
 {
@@ -5949,8 +5956,8 @@ function superhastimedusage( superinfo )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x98cd
+// Params 1
+// Checksum 0x0, Offset: 0x98d8
 // Size: 0x6b, Type: bool
 function superhasammousage( superinfo )
 {
@@ -5970,8 +5977,8 @@ function superhasammousage( superinfo )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9941
+// Params 0
+// Checksum 0x0, Offset: 0x994c
 // Size: 0xd9
 function function_97eecce0124a7b50()
 {
@@ -6001,8 +6008,8 @@ function function_97eecce0124a7b50()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a23
+// Params 0
+// Checksum 0x0, Offset: 0x9a2e
 // Size: 0x30
 function getsuperref()
 {
@@ -6017,8 +6024,8 @@ function getsuperref()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a5c
+// Params 1
+// Checksum 0x0, Offset: 0x9a67
 // Size: 0x56, Type: bool
 function function_907944a173ed27e1( superref )
 {
@@ -6037,8 +6044,8 @@ function function_907944a173ed27e1( superref )
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9abb
+// Params 0
+// Checksum 0x0, Offset: 0x9ac6
 // Size: 0x42, Type: bool
 function function_868a75fd7c215c07()
 {
@@ -6053,8 +6060,8 @@ function function_868a75fd7c215c07()
 }
 
 // Namespace supers / scripts\mp\supers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b06
+// Params 1
+// Checksum 0x0, Offset: 0x9b11
 // Size: 0x96
 function function_ca3ed045947e9de0( var_1501eb1bcd967969 )
 {

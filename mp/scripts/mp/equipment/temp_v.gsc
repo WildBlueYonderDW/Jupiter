@@ -15,7 +15,7 @@
 #namespace temp_v;
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x553
 // Size: 0xc5
 function init()
@@ -33,7 +33,7 @@ function init()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x620
 // Size: 0x1c
 function function_d3f8e1c800b2e8c0()
@@ -42,7 +42,7 @@ function function_d3f8e1c800b2e8c0()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x644
 // Size: 0x19, Type: bool
 function function_4364c764fcf6194d()
@@ -53,7 +53,7 @@ function function_4364c764fcf6194d()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x666
 // Size: 0xcf
 function function_a44c81f35835ab6f()
@@ -90,7 +90,7 @@ function function_a44c81f35835ab6f()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73d
 // Size: 0x4, Type: bool
 function tempv_end()
@@ -99,7 +99,7 @@ function tempv_end()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x74a
 // Size: 0x77
 function function_c0b7105aae16a9b3( mapname )
@@ -115,7 +115,7 @@ function function_c0b7105aae16a9b3( mapname )
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ca
 // Size: 0x149
 function function_a823070a9e81d9d8()
@@ -166,7 +166,7 @@ function function_a823070a9e81d9d8()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91b
 // Size: 0x11
 function function_95b57b12158252c3()
@@ -175,7 +175,7 @@ function function_95b57b12158252c3()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x934
 // Size: 0xe
 function function_7bddc961a86c19b2()
@@ -184,7 +184,7 @@ function function_7bddc961a86c19b2()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94a
 // Size: 0xe
 function function_6460412bc7e7df87()
@@ -193,7 +193,7 @@ function function_6460412bc7e7df87()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x960
 // Size: 0xe
 function function_7705327af583d75c()
@@ -202,7 +202,7 @@ function function_7705327af583d75c()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x976
 // Size: 0xe
 function function_11e36f0effe3e0a7()
@@ -211,7 +211,7 @@ function function_11e36f0effe3e0a7()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x98c
 // Size: 0x15a
 function function_269b97f3d86eb172( shouldfinish, dontclear, waitons, iskillstreak )
@@ -273,7 +273,7 @@ function function_269b97f3d86eb172( shouldfinish, dontclear, waitons, iskillstre
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaee
 // Size: 0x2d
 function function_8f385d41d37c6572()
@@ -288,7 +288,7 @@ function function_8f385d41d37c6572()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb23
 // Size: 0x5c
 function function_333146dd4b1c3317( equipmentref )
@@ -311,7 +311,7 @@ function function_333146dd4b1c3317( equipmentref )
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb87
 // Size: 0x13f
 function function_988143193cd6a03a( instance )
@@ -417,7 +417,7 @@ function private function_79cd1b77a631e77c( player )
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe63
 // Size: 0x6f
 function function_dd9f4b8ceed5962e( bountysettings, playerentering )
@@ -439,7 +439,7 @@ function function_dd9f4b8ceed5962e( bountysettings, playerentering )
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xeda
 // Size: 0xb0
 function function_df6ba84c45ef214e( bountysettings, playerexiting )
@@ -468,7 +468,7 @@ function function_df6ba84c45ef214e( bountysettings, playerexiting )
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf92
 // Size: 0xf9, Type: bool
 function function_60461f95db3442b4( var_1f6573e24689cf5f, bountysettings, var_506b84b2eafa32c5 )
@@ -514,7 +514,7 @@ function function_60461f95db3442b4( var_1f6573e24689cf5f, bountysettings, var_50
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1094
 // Size: 0x50
 function function_6f1e076a4ba6dbce( bountysettings )
@@ -526,7 +526,7 @@ function function_6f1e076a4ba6dbce( bountysettings )
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10ec
 // Size: 0x33
 function function_4c30d408ae45aa33()
@@ -539,7 +539,7 @@ function function_4c30d408ae45aa33()
 }
 
 // Namespace temp_v / scripts\mp\equipment\temp_v
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1127
 // Size: 0x23
 function function_cef1c8463d56bb49()

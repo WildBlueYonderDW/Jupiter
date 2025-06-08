@@ -14,7 +14,7 @@ function autoexec main()
 }
 
 // Namespace super_launchers / scripts\cp_mp\supers\super_launchers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x200
 // Size: 0x70
 function function_ac4e5642f4a76765()
@@ -27,7 +27,7 @@ function function_ac4e5642f4a76765()
 }
 
 // Namespace super_launchers / scripts\cp_mp\supers\super_launchers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x278
 // Size: 0x151
 function function_c31358a51d2e2031()
@@ -67,7 +67,7 @@ function function_c31358a51d2e2031()
 }
 
 // Namespace super_launchers / scripts\cp_mp\supers\super_launchers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d2
 // Size: 0x14, Type: bool
 function function_b175b0e761ee083d()
@@ -78,7 +78,7 @@ function function_b175b0e761ee083d()
 }
 
 // Namespace super_launchers / scripts\cp_mp\supers\super_launchers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ef
 // Size: 0x14
 function function_9152d073564d3361( fromdeath )
@@ -87,7 +87,7 @@ function function_9152d073564d3361( fromdeath )
 }
 
 // Namespace super_launchers / scripts\cp_mp\supers\super_launchers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40b
 // Size: 0x10
 function function_cd7adfeda90090ea()
@@ -96,7 +96,7 @@ function function_cd7adfeda90090ea()
 }
 
 // Namespace super_launchers / scripts\cp_mp\supers\super_launchers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x423
 // Size: 0x23
 function function_ab826319b54a872f()
@@ -107,7 +107,7 @@ function function_ab826319b54a872f()
 }
 
 // Namespace super_launchers / scripts\cp_mp\supers\super_launchers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44e
 // Size: 0x28
 function function_7b092f96be9a26d9( b_value )
@@ -127,7 +127,7 @@ function function_7b092f96be9a26d9( b_value )
 }
 
 // Namespace super_launchers / scripts\cp_mp\supers\super_launchers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47e
 // Size: 0x61
 function function_51cf80cea7c30793()

@@ -17,7 +17,7 @@
 #namespace chopper_support_mp;
 
 // Namespace chopper_support_mp / scripts\mp\killstreaks\chopper_support_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x132
 // Size: 0x29
 function init()
@@ -27,7 +27,7 @@ function init()
 }
 
 // Namespace chopper_support_mp / scripts\mp\killstreaks\chopper_support_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x163
 // Size: 0x1c
 function chopper_support_set_vehicle_hit_damage_data( ref, hitstokill )

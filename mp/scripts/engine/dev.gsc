@@ -5,7 +5,7 @@
 /#
 
     // Namespace dev / scripts\engine\dev
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x90
     // Size: 0xa3, Type: dev
     function function_4da869df964b68db( dvarname, var_d4bb121b87421c8 )

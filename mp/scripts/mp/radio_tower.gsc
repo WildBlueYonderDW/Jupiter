@@ -27,7 +27,7 @@ function private function_13dad5c9339829d7()
 }
 
 // Namespace radio_tower / scripts\mp\radio_tower
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe6
 // Size: 0x111
 function function_bfe75e4a1ee58ef( instance, player )
@@ -52,7 +52,7 @@ function function_bfe75e4a1ee58ef( instance, player )
 /#
 
     // Namespace radio_tower / scripts\mp\radio_tower
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1ff
     // Size: 0x4b, Type: dev
     function function_a2551378bc08f089()

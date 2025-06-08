@@ -10,7 +10,7 @@
 #namespace outline;
 
 // Namespace outline / scripts\mp\outline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x217
 // Size: 0x4d
 function init()
@@ -25,7 +25,7 @@ function init()
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x26c
 // Size: 0x249
 function outlineenableinternal( var_f20913fec7561c5f, playersvisibleto, hudoutlineassetname, prioritygroup, type, var_fa3b23d51c2dc7, squadindex )
@@ -85,7 +85,7 @@ function outlineenableinternal( var_f20913fec7561c5f, playersvisibleto, hudoutli
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4be
 // Size: 0x1b7
 function outlinedisableinternal( id, var_420a996e67989dc4 )
@@ -157,7 +157,7 @@ function outlinedisableinternal( id, var_420a996e67989dc4 )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67d
 // Size: 0x30
 function hudoutline_channels_init()
@@ -168,7 +168,7 @@ function hudoutline_channels_init()
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6b5
 // Size: 0x106
 function hudoutline_add_channel_internal( channelname, priority, outlineasset )
@@ -183,7 +183,8 @@ function hudoutline_add_channel_internal( channelname, priority, outlineasset )
         channelsize = self.hudoutlinechannels.size;
         index = ter_op( channelsize > 0, channelsize, 0 );
         
-        for (i = 0; i < channelsize; i++) {
+        for ( i = 0; i < channelsize ; i++ )
+        {
             if ( self.hudoutlinechannels[ i ].channelpriority >= priority )
             {
                 index = i;
@@ -201,7 +202,7 @@ function hudoutline_add_channel_internal( channelname, priority, outlineasset )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7c3
 // Size: 0x232
 function hudoutline_enable_internal( viewer, channelname, hudoutlineasset )
@@ -267,12 +268,13 @@ function hudoutline_enable_internal( viewer, channelname, hudoutlineasset )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9fd
 // Size: 0x43
 function function_bf76e3eaccf13673( var_a531b6ffdacf9ab5, channelname )
 {
-    for (i = 0; i < var_a531b6ffdacf9ab5.size; i++) {
+    for ( i = 0; i < var_a531b6ffdacf9ab5.size ; i++ )
+    {
         if ( var_a531b6ffdacf9ab5[ i ].channelname == channelname )
         {
             return i;
@@ -283,7 +285,7 @@ function function_bf76e3eaccf13673( var_a531b6ffdacf9ab5, channelname )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa49
 // Size: 0x55, Type: bool
 function function_370c25acb4da9fe9( channelname, ent )
@@ -299,7 +301,7 @@ function function_370c25acb4da9fe9( channelname, ent )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaa7
 // Size: 0xe8
 function function_f980012fc1b73aee( ent, channelname, viewer )
@@ -324,7 +326,7 @@ function function_f980012fc1b73aee( ent, channelname, viewer )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb97
 // Size: 0x7a, Type: bool
 function function_2bd2083ae492439a( ent, viewer )
@@ -341,7 +343,7 @@ function function_2bd2083ae492439a( ent, viewer )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc1a
 // Size: 0x9d
 function function_a2d9562a736f54e3( channelname, ent, hudoutlineasset )
@@ -358,7 +360,7 @@ function function_a2d9562a736f54e3( channelname, ent, hudoutlineasset )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcbf
 // Size: 0xa2
 function function_af1ed457ea26863c( ent, channelname, viewer )
@@ -378,7 +380,7 @@ function function_af1ed457ea26863c( ent, channelname, viewer )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd69
 // Size: 0xa0
 function hudoutline_activate_channel( channelname, viewer )
@@ -393,7 +395,7 @@ function hudoutline_activate_channel( channelname, viewer )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe11
 // Size: 0x146
 function function_32dfa50c47325abe( var_10afc5ce5a1feebe, channelname, var_d6ee45fafd47e3cc )
@@ -408,7 +410,8 @@ function function_32dfa50c47325abe( var_10afc5ce5a1feebe, channelname, var_d6ee4
     
     if ( isdefined( channel ) )
     {
-        for (i = 0; i < channel.var_41272a9c461e0853.size; i++) {
+        for ( i = 0; i < channel.var_41272a9c461e0853.size ; i++ )
+        {
             if ( channel.var_41272a9c461e0853[ i ] == var_10afc5ce5a1feebe )
             {
                 self hudoutlinedisableforclient( var_10afc5ce5a1feebe );
@@ -422,7 +425,8 @@ function function_32dfa50c47325abe( var_10afc5ce5a1feebe, channelname, var_d6ee4
             }
         }
         
-        for (i = self.hudoutlinechannels.size - 1; i >= 0; i--) {
+        for ( i = self.hudoutlinechannels.size - 1; i >= 0 ; i-- )
+        {
             if ( self.hudoutlinechannels[ i ].channelpriority > channel.channelpriority )
             {
                 continue;
@@ -438,7 +442,7 @@ function function_32dfa50c47325abe( var_10afc5ce5a1feebe, channelname, var_d6ee4
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5f
 // Size: 0x115
 function outlinerefreshinternal( var_420a996e67989dc4 )
@@ -473,7 +477,7 @@ function outlinerefreshinternal( var_420a996e67989dc4 )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x107c
 // Size: 0x1b
 function outlineonplayerdisconnect( player )
@@ -483,7 +487,7 @@ function outlineonplayerdisconnect( player )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x109f
 // Size: 0x4f
 function outlineonplayerjoinedteam( player )
@@ -497,7 +501,7 @@ function outlineonplayerjoinedteam( player )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f6
 // Size: 0x41
 function outlineonplayerjoinedteam_onfirstspawn( player )
@@ -512,7 +516,7 @@ function outlineonplayerjoinedteam_onfirstspawn( player )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x113f
 // Size: 0x43
 function outlineonplayerjoinedsquad( player )
@@ -522,7 +526,7 @@ function outlineonplayerjoinedsquad( player )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x118a
 // Size: 0x3b
 function outlineonplayerjoinedsquad_onfirstspawn( player )
@@ -536,7 +540,7 @@ function outlineonplayerjoinedsquad_onfirstspawn( player )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11cd
 // Size: 0x190
 function outlineremoveplayerfromvisibletoarrays( player, var_e1f59b5642da1702 )
@@ -584,7 +588,7 @@ function outlineremoveplayerfromvisibletoarrays( player, var_e1f59b5642da1702 )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1365
 // Size: 0x18d
 function outlineaddplayertoexistingallandteamoutlines( player )
@@ -626,7 +630,7 @@ function outlineaddplayertoexistingallandteamoutlines( player )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14fa
 // Size: 0x1c0
 function outlineaddplayertoexistingsquadoutlines( player )
@@ -673,7 +677,7 @@ function outlineaddplayertoexistingsquadoutlines( player )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c2
 // Size: 0x8b
 function outlinedisableinternalall( var_420a996e67989dc4 )
@@ -690,7 +694,7 @@ function outlinedisableinternalall( var_420a996e67989dc4 )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1755
 // Size: 0x34
 function outlineaddtogloballist( var_420a996e67989dc4 )
@@ -702,7 +706,7 @@ function outlineaddtogloballist( var_420a996e67989dc4 )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1791
 // Size: 0x24
 function outlineremovefromgloballist( var_420a996e67989dc4 )
@@ -711,7 +715,7 @@ function outlineremovefromgloballist( var_420a996e67989dc4 )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17bd
 // Size: 0xca
 function outlinegethighestpriorityid( var_420a996e67989dc4 )
@@ -743,7 +747,7 @@ function outlinegethighestpriorityid( var_420a996e67989dc4 )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1890
 // Size: 0xd9
 function outlinegethighestinfoforplayer( var_420a996e67989dc4, player )
@@ -772,7 +776,7 @@ function outlinegethighestinfoforplayer( var_420a996e67989dc4, player )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1972
 // Size: 0x2d
 function outlinegenerateuniqueid()
@@ -783,7 +787,7 @@ function outlinegenerateuniqueid()
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19a8
 // Size: 0xf6
 function outlineprioritygroupmap( prioritygroup )
@@ -830,7 +834,7 @@ function outlineprioritygroupmap( prioritygroup )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aa7
 // Size: 0xae
 function outlineiddowatch()
@@ -865,7 +869,7 @@ function outlineiddowatch()
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b5d
 // Size: 0x13
 function outlineidswatchpending()
@@ -879,7 +883,7 @@ function outlineidswatchpending()
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b78
 // Size: 0x14b, Type: bool
 function outlinerefreshpending( var_420a996e67989dc4, id )
@@ -931,7 +935,7 @@ function outlinerefreshpending( var_420a996e67989dc4, id )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ccc
 // Size: 0x1c, Type: bool
 function canoutlineforplayer( player )
@@ -940,7 +944,7 @@ function canoutlineforplayer( player )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cf1
 // Size: 0x60
 function function_3430d5003d0cc9f( var_cda6602a02c53ba3, prioritygroup )
@@ -952,7 +956,7 @@ function function_3430d5003d0cc9f( var_cda6602a02c53ba3, prioritygroup )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d59
 // Size: 0x31
 function _hudoutlineenableforclient( client, hudoutlineassetname )
@@ -967,7 +971,7 @@ function _hudoutlineenableforclient( client, hudoutlineassetname )
 }
 
 // Namespace outline / scripts\mp\outline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d92
 // Size: 0x31
 function _hudoutlineenableforclients( var_b66f9e35e36435bb, hudoutlineassetname )

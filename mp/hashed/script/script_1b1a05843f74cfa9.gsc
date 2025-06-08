@@ -5,7 +5,7 @@
 #namespace namespace_e3e994302f5316d8;
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x412
 // Size: 0x2d
 function setkillcamkilledbyitemomnvars( type, itemid )
@@ -15,7 +15,7 @@ function setkillcamkilledbyitemomnvars( type, itemid )
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x447
 // Size: 0x1e
 function clearlootweaponomnvars()
@@ -25,18 +25,19 @@ function clearlootweaponomnvars()
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46d
 // Size: 0x2f
 function clearkillcamattachmentomnvars()
 {
-    for (attachindex = 0; attachindex < 8; attachindex++) {
+    for ( attachindex = 0; attachindex < 8 ; attachindex++ )
+    {
         self setclientomnvar( "ui_killcam_killedby_attachment" + attachindex + 1, -1 );
     }
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a4
 // Size: 0x27
 function setkillcamuitimer( killcamlengthsec )
@@ -45,7 +46,7 @@ function setkillcamuitimer( killcamlengthsec )
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d3
 // Size: 0xb7
 function setkillcamkillstreaktypeomnvars( objweapon )
@@ -70,7 +71,7 @@ function setkillcamkillstreaktypeomnvars( objweapon )
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x592
 // Size: 0x6f
 function function_ee36210863ca9f2c( objweapon )
@@ -92,7 +93,7 @@ function function_ee36210863ca9f2c( objweapon )
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x60a
 // Size: 0x1cf
 function trimkillcamtime( inflictoragentinfo, attacker, camtime, postdelay, predelay, maxtime )
@@ -175,7 +176,7 @@ function trimkillcamtime( inflictoragentinfo, attacker, camtime, postdelay, pred
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e2
 // Size: 0x18
 function function_e35f3dda3b0ea636()
@@ -185,7 +186,7 @@ function function_e35f3dda3b0ea636()
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x802
 // Size: 0x42
 function setcinematiccamerastyle( camerastyle, var_226f86d3a2d6da77, var_b41e4c5eb0094058 )
@@ -196,7 +197,7 @@ function setcinematiccamerastyle( camerastyle, var_226f86d3a2d6da77, var_b41e4c5
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84c
 // Size: 0x1e
 function clearkillcamkilledbyitemomnvars()
@@ -206,7 +207,7 @@ function clearkillcamkilledbyitemomnvars()
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x872
 // Size: 0x82
 function clearkillcamomnvars()
@@ -219,13 +220,14 @@ function clearkillcamomnvars()
     self setclientomnvar( "ui_killcam_killedby_weapon_rarity", -1 );
     clearkillcamattachmentomnvars();
     
-    for (perkindex = 0; perkindex < 6; perkindex++) {
+    for ( perkindex = 0; perkindex < 6 ; perkindex++ )
+    {
         self setclientomnvar( "ui_killcam_killedby_perk" + perkindex, "none" );
     }
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8fc
 // Size: 0xe0
 function beginarchiveplayback( var_79fe9d21e7286c23, rewindtime, playbackduration, psoffsettime )
@@ -247,7 +249,7 @@ function beginarchiveplayback( var_79fe9d21e7286c23, rewindtime, playbackduratio
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x9e4
 // Size: 0x167, Type: bool
 function setkillcamerastyle( einflictor, inflictoragentinfo, attackernum, evictim, killcamentityindex, killcaminfo, objweapon )
@@ -291,7 +293,7 @@ function setkillcamerastyle( einflictor, inflictoragentinfo, attackernum, evicti
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb54
 // Size: 0xa3
 function setkillcamentity( killcamentityindex, killcamoffset, starttime, killcamlookatentityindex, killcamentstickstolookatent )
@@ -326,7 +328,7 @@ function setkillcamentity( killcamentityindex, killcamoffset, starttime, killcam
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbff
 // Size: 0xd9
 function checkkillcamtruncation( killcamoffset )
@@ -360,7 +362,7 @@ function checkkillcamtruncation( killcamoffset )
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce0
 // Size: 0xb6
 function dokillcamslowmo( camtime )
@@ -396,7 +398,7 @@ function dokillcamslowmo( camtime )
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd9e
 // Size: 0x3e
 function endkillcamifnothingtoshow()
@@ -419,7 +421,7 @@ function endkillcamifnothingtoshow()
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xde4
 // Size: 0x3b
 function waittillkillcamover()
@@ -431,7 +433,7 @@ function waittillkillcamover()
 }
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe27
 // Size: 0x64
 function function_7a8a04d15ad052d5()

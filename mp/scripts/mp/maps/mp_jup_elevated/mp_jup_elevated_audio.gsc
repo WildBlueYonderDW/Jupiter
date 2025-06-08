@@ -3,7 +3,7 @@
 #namespace mp_jup_elevated_audio;
 
 // Namespace mp_jup_elevated_audio / scripts\mp\maps\mp_jup_elevated\mp_jup_elevated_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e
 // Size: 0xa
 function main()
@@ -12,7 +12,7 @@ function main()
 }
 
 // Namespace mp_jup_elevated_audio / scripts\mp\maps\mp_jup_elevated\mp_jup_elevated_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x140
 // Size: 0xba
 function function_76d63eb8f9f0f0a6()

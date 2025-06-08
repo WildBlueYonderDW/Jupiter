@@ -4,7 +4,7 @@
 #namespace mp_jup_sira_ob_activities_doghouse_cs;
 
 // Namespace mp_jup_sira_ob_activities_doghouse_cs / namespace_5a3652d54134c056
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x151
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_sira_ob_activities_doghouse_cs / namespace_5a3652d54134c056
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c6
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_sira_ob_activities_doghouse_cs / namespace_5a3652d54134c056
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x235
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_sira_ob_activities_doghouse_cs / namespace_5a3652d54134c056
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27d
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_sira_ob_activities_doghouse_cs / namespace_5a3652d54134c056
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x287
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_sira_ob_activities_doghouse_cs / namespace_5a3652d54134c056
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29d
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_sira_ob_activities_doghouse_cs / namespace_5a3652d54134c056
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x30f
 // Size: 0x51
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -113,7 +113,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_sira_ob_activities_doghouse_cs / namespace_5a3652d54134c056
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x368
 // Size: 0xa7
 function function_de08f0a03207ca9a( fe, us, cf )
@@ -126,7 +126,7 @@ function function_de08f0a03207ca9a( fe, us, cf )
 }
 
 // Namespace mp_jup_sira_ob_activities_doghouse_cs / namespace_5a3652d54134c056
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x417
 // Size: 0xb0
 function function_6da2952367672ac0()

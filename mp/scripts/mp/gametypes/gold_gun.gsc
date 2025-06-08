@@ -13,7 +13,7 @@
 #namespace gold_gun;
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6de
 // Size: 0x89
 function function_10cc8368e439ae59()
@@ -32,7 +32,7 @@ function function_10cc8368e439ae59()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76f
 // Size: 0x39
 function onplayerdisconnect( disconnectedplayer )
@@ -46,7 +46,7 @@ function onplayerdisconnect( disconnectedplayer )
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b0
 // Size: 0x21
 function function_f77861444d155833()
@@ -59,7 +59,7 @@ function function_f77861444d155833()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d9
 // Size: 0x9b
 function function_b8fb39265d8a05a8()
@@ -92,7 +92,7 @@ function function_b8fb39265d8a05a8()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87c
 // Size: 0x46
 function function_8c754119e5c784f8()
@@ -110,7 +110,7 @@ function function_8c754119e5c784f8()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ca
 // Size: 0x4d
 function function_c10ee10d262dfd32()
@@ -121,7 +121,7 @@ function function_c10ee10d262dfd32()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91f
 // Size: 0x54
 function function_af6e58ce205b9f2c()
@@ -142,7 +142,7 @@ function function_af6e58ce205b9f2c()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97b
 // Size: 0xed
 function function_ec950a4796a1a57()
@@ -175,7 +175,7 @@ function function_ec950a4796a1a57()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa70
 // Size: 0x53
 function function_76548c401fba9e3d()
@@ -191,7 +191,7 @@ function function_76548c401fba9e3d()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xacb
 // Size: 0xbc
 function function_52aaf4a680ab51a0()
@@ -216,7 +216,7 @@ function function_52aaf4a680ab51a0()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb8f
 // Size: 0x81
 function function_5525b1dc78ff5ab4()
@@ -234,7 +234,7 @@ function function_5525b1dc78ff5ab4()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc18
 // Size: 0x85
 function function_7b782d0fa3071b68( class )
@@ -252,7 +252,7 @@ function function_7b782d0fa3071b68( class )
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca5
 // Size: 0x92
 function function_cfd132407d0f14b3()
@@ -272,7 +272,7 @@ function function_cfd132407d0f14b3()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd3f
 // Size: 0x2c
 function function_f85a7539bef30847()
@@ -291,7 +291,7 @@ function function_f85a7539bef30847()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd73
 // Size: 0xd, Type: bool
 function function_e048e0ef10222493()
@@ -300,7 +300,7 @@ function function_e048e0ef10222493()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd89
 // Size: 0x4d
 function cleanupswaploadoutflags()
@@ -314,7 +314,7 @@ function cleanupswaploadoutflags()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xdde
 // Size: 0x140
 function function_44d72e27a2afecf7( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -351,7 +351,7 @@ function function_44d72e27a2afecf7( einflictor, attacker, idamage, smeansofdeath
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf26
 // Size: 0x1d5
 function function_b030a187e2c1d0f2()
@@ -404,7 +404,7 @@ function function_b030a187e2c1d0f2()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1103
 // Size: 0x85
 function function_44533f21c13295c6()
@@ -437,7 +437,7 @@ function function_44533f21c13295c6()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1190
 // Size: 0x113
 function function_c8458e8bd7248c4c( var_8ce6b63fa3ba3490 )
@@ -474,7 +474,7 @@ function function_c8458e8bd7248c4c( var_8ce6b63fa3ba3490 )
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12ab
 // Size: 0x31
 function function_4a25cb7438a05c3f()
@@ -486,7 +486,7 @@ function function_4a25cb7438a05c3f()
 }
 
 // Namespace gold_gun / scripts\mp\gametypes\gold_gun
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e4
 // Size: 0x2e9
 function function_3de4b167d29ad5c2()

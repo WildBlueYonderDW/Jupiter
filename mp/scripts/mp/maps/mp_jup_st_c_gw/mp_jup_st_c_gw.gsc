@@ -24,7 +24,7 @@
 #namespace mp_jup_st_c_gw;
 
 // Namespace mp_jup_st_c_gw / scripts\mp\maps\mp_jup_st_c_gw\mp_jup_st_c_gw
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d4
 // Size: 0xf1
 function main()
@@ -57,7 +57,7 @@ function main()
 }
 
 // Namespace mp_jup_st_c_gw / scripts\mp\maps\mp_jup_st_c_gw\mp_jup_st_c_gw
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cd
 // Size: 0x5a
 function initvehicles()

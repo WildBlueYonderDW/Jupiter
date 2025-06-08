@@ -12,7 +12,7 @@
 #namespace bounty_system;
 
 // Namespace bounty_system / scripts\mp\bounty_system
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d4
 // Size: 0x78
 function init()
@@ -37,7 +37,7 @@ function init()
 }
 
 // Namespace bounty_system / scripts\mp\bounty_system
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x254
 // Size: 0x31
 function function_217e5c3b8a4ca539()
@@ -51,7 +51,7 @@ function function_217e5c3b8a4ca539()
 }
 
 // Namespace bounty_system / scripts\mp\bounty_system
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x28e
 // Size: 0x257
 function function_4647cbf23f54d6f6( player, overridesettings )
@@ -120,7 +120,7 @@ function function_4647cbf23f54d6f6( player, overridesettings )
 }
 
 // Namespace bounty_system / scripts\mp\bounty_system
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4ee
 // Size: 0x1d8
 function function_a10c4276271c4ad7( bountysettings, success, context )
@@ -157,7 +157,7 @@ function function_a10c4276271c4ad7( bountysettings, success, context )
 }
 
 // Namespace bounty_system / scripts\mp\bounty_system
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ce
 // Size: 0x46
 function function_55731d4969878ef( player )
@@ -177,7 +177,7 @@ function function_55731d4969878ef( player )
 }
 
 // Namespace bounty_system / scripts\mp\bounty_system
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71d
 // Size: 0x17, Type: bool
 function function_bc09557189d65e55( player )
@@ -186,7 +186,7 @@ function function_bc09557189d65e55( player )
 }
 
 // Namespace bounty_system / scripts\mp\bounty_system
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x73d
 // Size: 0x93
 function function_d34ea2b5e8f5d93( team )
@@ -211,7 +211,7 @@ function function_d34ea2b5e8f5d93( team )
 }
 
 // Namespace bounty_system / scripts\mp\bounty_system
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d9
 // Size: 0x7f, Type: bool
 function function_57736963a928db85( team )

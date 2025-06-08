@@ -25,7 +25,7 @@
 #namespace remoteuav;
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb8b
 // Size: 0x2bf
 function init()
@@ -67,7 +67,7 @@ function init()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe52
 // Size: 0x1f
 function useremoteuav( lifeid, streakname )
@@ -76,7 +76,7 @@ function useremoteuav( lifeid, streakname )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe7a
 // Size: 0x63
 function exceededmaxremoteuavs( team )
@@ -104,7 +104,7 @@ function exceededmaxremoteuavs( team )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xee5
 // Size: 0x16a
 function tryuseremoteuav( lifeid, streakname )
@@ -152,7 +152,7 @@ function tryuseremoteuav( lifeid, streakname )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1058
 // Size: 0xde
 function givecarryremoteuav( lifeid, streakname )
@@ -186,7 +186,7 @@ function givecarryremoteuav( lifeid, streakname )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x113f
 // Size: 0x204
 function createcarryremoteuav( streakname, owner )
@@ -224,7 +224,7 @@ function createcarryremoteuav( streakname, owner )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x134c
 // Size: 0x177
 function setcarryingremoteuav( carryremoteuav )
@@ -278,7 +278,7 @@ function setcarryingremoteuav( carryremoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x14cb
 // Size: 0x121
 function local_waittill_any_return_6( string1, string2, string3, string4, string5, string6 )
@@ -326,7 +326,7 @@ function local_waittill_any_return_6( string1, string2, string3, string4, string
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15f5
 // Size: 0x4c
 function carryremoteuav_setcarried( carrier )
@@ -341,7 +341,7 @@ function carryremoteuav_setcarried( carrier )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1649
 // Size: 0x41
 function carryremoteuav_delete( carryremoteuav )
@@ -360,7 +360,7 @@ function carryremoteuav_delete( carryremoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1692
 // Size: 0x77, Type: bool
 function isinremotenodeploy()
@@ -380,7 +380,7 @@ function isinremotenodeploy()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1712
 // Size: 0x1a8
 function updatecarryremoteuavplacement( carryremoteuav )
@@ -441,7 +441,7 @@ function updatecarryremoteuavplacement( carryremoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18c2
 // Size: 0x6e
 function carryremoteuav_handleexistence()
@@ -463,7 +463,7 @@ function carryremoteuav_handleexistence()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1938
 // Size: 0x16
 function removeremoteweapon()
@@ -474,7 +474,7 @@ function removeremoteweapon()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1956
 // Size: 0x163
 function startremoteuav( lifeid, streakname, origin, angles )
@@ -524,7 +524,7 @@ function startremoteuav( lifeid, streakname, origin, angles )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ac1
 // Size: 0x39
 function lockplayerforremoteuavlaunch()
@@ -536,7 +536,7 @@ function lockplayerforremoteuavlaunch()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b02
 // Size: 0x46
 function clearplayerlockfromremoteuavlaunch( lockspot )
@@ -553,7 +553,7 @@ function clearplayerlockfromremoteuavlaunch( lockspot )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1b50
 // Size: 0x23b
 function createremoteuav( lifeid, owner, streakname, origin, angles )
@@ -608,7 +608,7 @@ function createremoteuav( lifeid, owner, streakname, origin, angles )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d94
 // Size: 0xbb
 function remoteuav_ride( lifeid, remoteuav, streakname )
@@ -634,7 +634,7 @@ function remoteuav_ride( lifeid, remoteuav, streakname )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e57
 // Size: 0x3d
 function remoteuav_delaylaunchdialog( remoteuav )
@@ -649,7 +649,7 @@ function remoteuav_delaylaunchdialog( remoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e9c
 // Size: 0xb7
 function remoteuav_endride( remoteuav )
@@ -685,7 +685,7 @@ function remoteuav_endride( remoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f5b
 // Size: 0x33
 function remoteuav_freezebuffer()
@@ -698,7 +698,7 @@ function remoteuav_freezebuffer()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f96
 // Size: 0x7a
 function remoteuav_playerexit( remoteuav )
@@ -732,7 +732,7 @@ function remoteuav_playerexit( remoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2018
 // Size: 0x2c4
 function remoteuav_track( remoteuav )
@@ -828,7 +828,7 @@ function remoteuav_track( remoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x22e4
 // Size: 0x578
 function remoteuav_trackentities( remoteuav, entities, targetpos )
@@ -946,7 +946,7 @@ function remoteuav_trackentities( remoteuav, entities, targetpos )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2865
 // Size: 0x7e, Type: bool
 function remoteuav_cantargetuav( remoteuav, uav )
@@ -967,7 +967,7 @@ function remoteuav_cantargetuav( remoteuav, uav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28ec
 // Size: 0xa7
 function remoteuav_fire( remoteuav )
@@ -999,7 +999,7 @@ function remoteuav_fire( remoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x299b
 // Size: 0x69
 function remoteuav_rumble( remoteuav, amount )
@@ -1011,14 +1011,15 @@ function remoteuav_rumble( remoteuav, amount )
     remoteuav notify( "end_rumble" );
     remoteuav endon( "end_rumble" );
     
-    for (i = 0; i < amount; i++) {
+    for ( i = 0; i < amount ; i++ )
+    {
         self playrumbleonentity( "damage_heavy" );
         wait 0.05;
     }
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a0c
 // Size: 0x29e
 function remoteuav_markplayer( targetplayer )
@@ -1114,7 +1115,7 @@ function remoteuav_markplayer( targetplayer )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cb2
 // Size: 0x53
 function remoteuav_processtaggedassist( victim )
@@ -1136,7 +1137,7 @@ function remoteuav_processtaggedassist( victim )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d0d
 // Size: 0x1a9
 function remoteuav_unmarkremovedplayer( remoteuav )
@@ -1203,7 +1204,7 @@ function remoteuav_unmarkremovedplayer( remoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ebe
 // Size: 0x78
 function remoteuav_clearmarkedforowner()
@@ -1221,7 +1222,7 @@ function remoteuav_clearmarkedforowner()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f3e
 // Size: 0x41
 function remoteuav_operationrumble( remoteuav )
@@ -1239,7 +1240,7 @@ function remoteuav_operationrumble( remoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f87
 // Size: 0x1a4
 function remoteuav_watch_distance()
@@ -1300,7 +1301,7 @@ function remoteuav_watch_distance()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3133
 // Size: 0x84, Type: bool
 function remoteuav_in_range()
@@ -1321,7 +1322,7 @@ function remoteuav_in_range()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31c0
 // Size: 0x6a
 function remoteuav_staticfade( staticalpha )
@@ -1344,7 +1345,7 @@ function remoteuav_staticfade( staticalpha )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3232
 // Size: 0x42
 function remoteuav_rangecountdown()
@@ -1366,7 +1367,7 @@ function remoteuav_rangecountdown()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x327c
 // Size: 0x21
 function remoteuav_explode_on_disconnect()
@@ -1377,7 +1378,7 @@ function remoteuav_explode_on_disconnect()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32a5
 // Size: 0x2b
 function remoteuav_explode_on_changeteams()
@@ -1388,7 +1389,7 @@ function remoteuav_explode_on_changeteams()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32d8
 // Size: 0x18
 function remoteuav_clear_marked_on_gameended()
@@ -1399,7 +1400,7 @@ function remoteuav_clear_marked_on_gameended()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32f8
 // Size: 0x3e
 function remoteuav_leave_on_timeout()
@@ -1416,7 +1417,7 @@ function remoteuav_leave_on_timeout()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x333e
 // Size: 0x31
 function remoteuav_leave()
@@ -1429,7 +1430,7 @@ function remoteuav_leave()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3377
 // Size: 0x42
 function remoteuav_explode_on_death()
@@ -1442,7 +1443,7 @@ function remoteuav_explode_on_death()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33c1
 // Size: 0xab
 function remoteuav_cleanup()
@@ -1470,7 +1471,7 @@ function remoteuav_cleanup()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3474
 // Size: 0x4a
 function remoteuav_light_fx()
@@ -1481,7 +1482,7 @@ function remoteuav_light_fx()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34c6
 // Size: 0xaa
 function remoteuav_dialog( dialoggroup )
@@ -1508,7 +1509,7 @@ function remoteuav_dialog( dialoggroup )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3578
 // Size: 0xc4
 function remoteuav_handleincomingstinger()
@@ -1536,7 +1537,7 @@ function remoteuav_handleincomingstinger()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3644
 // Size: 0x119
 function remoteuav_handleincomingsam()
@@ -1577,7 +1578,7 @@ function remoteuav_handleincomingsam()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3765
 // Size: 0x189
 function watchstingerproximity( missiletarget )
@@ -1631,7 +1632,7 @@ function watchstingerproximity( missiletarget )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x38f6
 // Size: 0x2ba
 function watchsamproximity( missiletarget, missilegroup )
@@ -1715,7 +1716,7 @@ function watchsamproximity( missiletarget, missilegroup )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bb8
 // Size: 0xa9
 function deployflares()
@@ -1733,12 +1734,13 @@ function deployflares()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c6a
 // Size: 0x43
 function playflarefx()
 {
-    for (i = 0; i < 5; i++) {
+    for ( i = 0; i < 5 ; i++ )
+    {
         if ( !isdefined( self ) )
         {
             return;
@@ -1750,7 +1752,7 @@ function playflarefx()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3cb5
 // Size: 0x14
 function deleteaftertime( delay )
@@ -1760,7 +1762,7 @@ function deleteaftertime( delay )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cd1
 // Size: 0xc7
 function remoteuav_clearincomingwarning()
@@ -1773,7 +1775,8 @@ function remoteuav_clearincomingwarning()
     {
         numincoming = 0;
         
-        for (i = 0; i < self.incomingmissiles.size; i++) {
+        for ( i = 0; i < self.incomingmissiles.size ; i++ )
+        {
             if ( isdefined( self.incomingmissiles[ i ] ) && missile_isincoming( self.incomingmissiles[ i ], self ) )
             {
                 numincoming++;
@@ -1792,7 +1795,7 @@ function remoteuav_clearincomingwarning()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3da0
 // Size: 0x5e, Type: bool
 function missile_isincoming( missile, remoteuav )
@@ -1803,7 +1806,7 @@ function missile_isincoming( missile, remoteuav )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e07
 // Size: 0x191
 function remoteuav_watchheliproximity()
@@ -1849,7 +1852,7 @@ function remoteuav_watchheliproximity()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fa0
 // Size: 0x2a
 function remoteuav_handledamage()
@@ -1859,7 +1862,7 @@ function remoteuav_handledamage()
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fd2
 // Size: 0x122
 function modifydamage( data )
@@ -1886,7 +1889,7 @@ function modifydamage( data )
 }
 
 // Namespace remoteuav / scripts\mp\killstreaks\remoteuav
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40fd
 // Size: 0x7c
 function handledeathdamage( data )

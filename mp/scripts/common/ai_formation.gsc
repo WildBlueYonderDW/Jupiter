@@ -5,7 +5,7 @@
 #namespace ai_formation;
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfa
 // Size: 0x19
 function init_formations()
@@ -17,7 +17,7 @@ function init_formations()
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11b
 // Size: 0x7a
 function function_a18d80bcfacb9e00( formationname, formationtype )
@@ -38,7 +38,7 @@ function function_a18d80bcfacb9e00( formationname, formationtype )
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19e
 // Size: 0x37
 function delete_formation( formationname )
@@ -53,7 +53,7 @@ function delete_formation( formationname )
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1dd
 // Size: 0xc3
 function function_73d6d4ee28a18071( formationname, var_129f5d1ec2e3fec5, formationtype )
@@ -86,7 +86,7 @@ function function_73d6d4ee28a18071( formationname, var_129f5d1ec2e3fec5, formati
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2a8
 // Size: 0x114
 function function_98e62e94c2b167e0( formationname, horizontalcount, verticalcount, var_b4060a330731f1bd, var_1b9a7d48f06da667, var_9af84e76946ada66 )
@@ -104,8 +104,10 @@ function function_98e62e94c2b167e0( formationname, horizontalcount, verticalcoun
     mid = floor( horizontalcount / 2 );
     offsetcount = 1;
     
-    for (verticalindex = 0; verticalindex < verticalcount; verticalindex++) {
-        for (horizontalindex = 0; horizontalindex < horizontalcount; horizontalindex++) {
+    for ( verticalindex = 0; verticalindex < verticalcount ; verticalindex++ )
+    {
+        for ( horizontalindex = 0; horizontalindex < horizontalcount ; horizontalindex++ )
+        {
             if ( !var_9af84e76946ada66 && verticalindex == 0 && horizontalindex == mid )
             {
                 continue;
@@ -127,7 +129,7 @@ function function_98e62e94c2b167e0( formationname, horizontalcount, verticalcoun
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3c4
 // Size: 0x277
 function function_cf3f27c3c5266ee2( formationname, var_3f4d3640a452a225, numai, var_b4060a330731f1bd, var_1b9a7d48f06da667, var_9af84e76946ada66 )
@@ -158,8 +160,10 @@ function function_cf3f27c3c5266ee2( formationname, var_3f4d3640a452a225, numai, 
             dimension = ceil( ( sqrt( 8 * numai + 1 ) - 1 ) / 2 );
             offsetcount = 1;
             
-            for (verticalindex = 0; verticalindex < dimension; verticalindex++) {
-                for (horizontalindex = 0; horizontalindex < verticalindex + 1; horizontalindex++) {
+            for ( verticalindex = 0; verticalindex < dimension ; verticalindex++ )
+            {
+                for ( horizontalindex = 0; horizontalindex < verticalindex + 1 ; horizontalindex++ )
+                {
                     if ( verticalindex == 0 && horizontalindex == 0 )
                     {
                         continue;
@@ -197,8 +201,10 @@ function function_cf3f27c3c5266ee2( formationname, var_3f4d3640a452a225, numai, 
     
     offsetcount = 1;
     
-    for (verticalindex = 0; verticalindex < verticalcount; verticalindex++) {
-        for (horizontalindex = 0; horizontalindex < horizontalcount; horizontalindex++) {
+    for ( verticalindex = 0; verticalindex < verticalcount ; verticalindex++ )
+    {
+        for ( horizontalindex = 0; horizontalindex < horizontalcount ; horizontalindex++ )
+        {
             if ( !var_9af84e76946ada66 && verticalindex == 0 && horizontalindex == mid )
             {
                 continue;
@@ -222,7 +228,7 @@ function function_cf3f27c3c5266ee2( formationname, var_3f4d3640a452a225, numai, 
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x644
 // Size: 0xb4
 function function_e780688c49cc9549( formationname, var_93e0bc97a6d45499 )
@@ -243,7 +249,7 @@ function function_e780688c49cc9549( formationname, var_93e0bc97a6d45499 )
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x700
 // Size: 0x78
 function function_bc785df299663d60( formationname, formationslot, customoffset )
@@ -259,7 +265,7 @@ function function_bc785df299663d60( formationname, formationslot, customoffset )
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x780
 // Size: 0x35
 function set_goal( formationname, goalposition )
@@ -273,7 +279,7 @@ function set_goal( formationname, goalposition )
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7bd
 // Size: 0x68
 function leave_formation( var_cc408e19cc4792d2 )
@@ -290,7 +296,7 @@ function leave_formation( var_cc408e19cc4792d2 )
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x82d
 // Size: 0x7b, Type: bool
 function follow_entity( formationname, ent, followdistance, timestep )
@@ -323,7 +329,7 @@ function follow_entity( formationname, ent, followdistance, timestep )
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8b1
 // Size: 0x3f, Type: bool
 function function_5e8d7d93ecffa23f( formationname )
@@ -345,7 +351,7 @@ function function_5e8d7d93ecffa23f( formationname )
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f9
 // Size: 0x2c
 function get_leader( formationname )
@@ -359,7 +365,7 @@ function get_leader( formationname )
 }
 
 // Namespace ai_formation / scripts\common\ai_formation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x92e
 // Size: 0x30
 function function_679b2830741a1384( formationname )

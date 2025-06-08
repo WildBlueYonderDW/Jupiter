@@ -12,7 +12,7 @@
 #namespace jup_ob_enemy_specialist_shielded;
 
 // Namespace jup_ob_enemy_specialist_shielded / namespace_7f3fc41e5ee10d1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f8
 // Size: 0x1fd
 function main()
@@ -58,7 +58,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_specialist_shielded / namespace_7f3fc41e5ee10d1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x57
 function setup_model()
@@ -75,7 +75,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_specialist_shielded / namespace_7f3fc41e5ee10d1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55c
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -84,7 +84,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_specialist_shielded / namespace_7f3fc41e5ee10d1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56d
 // Size: 0xcf
 function precache()
@@ -113,7 +113,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_specialist_shielded / namespace_7f3fc41e5ee10d1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x644
 // Size: 0xd0
 function setup_weapons()

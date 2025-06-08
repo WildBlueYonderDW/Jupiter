@@ -8,7 +8,7 @@
 #namespace hostmigration;
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x273
 // Size: 0x1d0
 function callback_hostmigration()
@@ -68,7 +68,7 @@ function callback_hostmigration()
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44b
 // Size: 0x4d
 function hostmigrationconnectwatcher()
@@ -85,7 +85,7 @@ function hostmigrationconnectwatcher()
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a0
 // Size: 0xe9
 function hostmigrationwait()
@@ -112,7 +112,7 @@ function hostmigrationwait()
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x591
 // Size: 0xc
 function hostmigrationwaitforplayers()
@@ -122,7 +122,7 @@ function hostmigrationwaitforplayers()
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a5
 // Size: 0xd2
 function hostmigrationname( ent )
@@ -164,7 +164,7 @@ function hostmigrationname( ent )
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x680
 // Size: 0x8d
 function hostmigrationtimerthink_internal()
@@ -185,7 +185,7 @@ function hostmigrationtimerthink_internal()
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x715
 // Size: 0x9a
 function hostmigrationtimerthink()
@@ -204,7 +204,7 @@ function hostmigrationtimerthink()
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b7
 // Size: 0x31
 function waittillhostmigrationdone()
@@ -220,7 +220,7 @@ function waittillhostmigrationdone()
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f1
 // Size: 0x22
 function waittillhostmigrationstarts( duration )
@@ -235,7 +235,7 @@ function waittillhostmigrationstarts( duration )
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x81b
 // Size: 0x9a
 function waitlongdurationwithhostmigrationpause( duration )
@@ -265,7 +265,7 @@ function waitlongdurationwithhostmigrationpause( duration )
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8be
 // Size: 0x9e
 function waittill_notify_or_timeout_hostmigration_pause( msg, duration )
@@ -297,7 +297,7 @@ function waittill_notify_or_timeout_hostmigration_pause( msg, duration )
 }
 
 // Namespace hostmigration / scripts\mp\hostmigration
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x965
 // Size: 0xb6
 function waitlongdurationwithgameendtimeupdate( duration )

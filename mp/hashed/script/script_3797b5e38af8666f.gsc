@@ -6,7 +6,7 @@
 #namespace base_interaction;
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe0
 // Size: 0x6d
 function initcap( asmname, statename, params )
@@ -28,7 +28,7 @@ function initcap( asmname, statename, params )
 }
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x155
 // Size: 0x2
 function function_912821adbd16d04c()
@@ -37,7 +37,7 @@ function function_912821adbd16d04c()
 }
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15f
 // Size: 0x2
 function function_e3189c04775f3a0f()
@@ -46,7 +46,7 @@ function function_e3189c04775f3a0f()
 }
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x169
 // Size: 0x86
 function function_dc875c74aa7545f4( asmname, statename, params )
@@ -65,7 +65,7 @@ function function_dc875c74aa7545f4( asmname, statename, params )
 }
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f7
 // Size: 0x1c, Type: bool
 function function_e9f61f14d08fcd61( asmname, statename, params )
@@ -74,7 +74,7 @@ function function_e9f61f14d08fcd61( asmname, statename, params )
 }
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21c
 // Size: 0x1c, Type: bool
 function function_92087655510b0e0( asmname, statename, params )
@@ -83,7 +83,7 @@ function function_92087655510b0e0( asmname, statename, params )
 }
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x241
 // Size: 0x4b
 function function_6d55fddf9c7024e2( asmname, statename, params )
@@ -97,7 +97,7 @@ function function_6d55fddf9c7024e2( asmname, statename, params )
 }
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x294
 // Size: 0x2f
 function function_56c32e6f7b6ed8ed( asmname, statename, params )

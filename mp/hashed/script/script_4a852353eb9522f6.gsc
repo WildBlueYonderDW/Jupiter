@@ -3,7 +3,7 @@
 #namespace namespace_8e943b1ae0e1a01b;
 
 // Namespace namespace_8e943b1ae0e1a01b / namespace_1f9da9cc2a77d53e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbd
 // Size: 0x59
 function function_cdf4890b38273393( player, position, pickedcallback )
@@ -82,7 +82,7 @@ function private function_d81f5f7fa0dddb1e( var_8e973702bc8bb72a, pickedcallback
 }
 
 // Namespace namespace_8e943b1ae0e1a01b / namespace_1f9da9cc2a77d53e
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b6
 // Size: 0x35
 function function_d92343be83930b25( player, equipcallback )

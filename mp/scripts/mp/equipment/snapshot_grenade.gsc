@@ -31,7 +31,7 @@
 #namespace snapshot_grenade;
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x574
 // Size: 0x221
 function snapshot_grenade_used( grenade, isgl )
@@ -94,7 +94,7 @@ function private function_d69277b486f06d35()
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7f7
 // Size: 0x104
 function snapshot_get_flight_dest( position, direction, ignorelist )
@@ -137,7 +137,7 @@ function snapshot_get_flight_dest( position, direction, ignorelist )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x904
 // Size: 0x5c
 function entity_movingplatform_update()
@@ -154,7 +154,7 @@ function entity_movingplatform_update()
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x968
 // Size: 0x482
 function snapshot_grenade_watch_flight( position, var_800ee321b0d045e5, radius, duration, bundle )
@@ -268,7 +268,7 @@ function snapshot_grenade_watch_flight( position, var_800ee321b0d045e5, radius, 
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xdf2
 // Size: 0x23e
 function snapshot_grenade_detect( radius, duration, bundle )
@@ -324,7 +324,7 @@ function snapshot_grenade_detect( radius, duration, bundle )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1038
 // Size: 0x94
 function snapshot_grenade_createoutlinedata( owner, position, bundle )
@@ -346,7 +346,7 @@ function snapshot_grenade_createoutlinedata( owner, position, bundle )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x10d5
 // Size: 0x44d
 function snapshot_grenade_applysnapshot( victim, attacker, outlinedata, duration, var_3a0fd085ff7fb126, skipscoreevents, bundle )
@@ -476,7 +476,7 @@ function snapshot_grenade_applysnapshot( victim, attacker, outlinedata, duration
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x152a
 // Size: 0x82
 function snapshot_grenade_destroy()
@@ -492,7 +492,7 @@ function snapshot_grenade_destroy()
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15b4
 // Size: 0x42
 function snapshot_grenade_delete( delay )
@@ -512,7 +512,7 @@ function snapshot_grenade_delete( delay )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15fe
 // Size: 0xcd
 function snapshot_grenade_handle_damage( data )
@@ -548,7 +548,7 @@ function snapshot_grenade_handle_damage( data )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16d4
 // Size: 0x5f
 function snapshot_grenade_handle_fatal_damage( data )
@@ -565,7 +565,7 @@ function snapshot_grenade_handle_fatal_damage( data )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x173b
 // Size: 0x76
 function snapshot_grenade_empapplied( data )
@@ -592,7 +592,7 @@ function snapshot_grenade_empapplied( data )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17b9
 // Size: 0x1d
 function snapshot_grenade_watch_cleanup()
@@ -607,7 +607,7 @@ function snapshot_grenade_watch_cleanup()
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17de
 // Size: 0x3f
 function snapshot_grenade_watch_cleanup_end_early()
@@ -624,7 +624,7 @@ function snapshot_grenade_watch_cleanup_end_early()
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1825
 // Size: 0x24
 function snapshot_grenade_cleanup_mover( mover )
@@ -636,7 +636,7 @@ function snapshot_grenade_cleanup_mover( mover )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1851
 // Size: 0x21
 function snapshot_grenade_cleanup_danger_icon( dangericon )
@@ -647,7 +647,7 @@ function snapshot_grenade_cleanup_danger_icon( dangericon )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x187a
 // Size: 0x1a4
 function snapshot_grenade_update_outlines( attacker, bundle )
@@ -702,7 +702,7 @@ function snapshot_grenade_update_outlines( attacker, bundle )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a26
 // Size: 0x1f
 function snapshot_grenade_watch_cleanup_outlines()
@@ -714,7 +714,7 @@ function snapshot_grenade_watch_cleanup_outlines()
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a4d
 // Size: 0x3f
 function snapshot_grenade_watch_cleanup_outlines_end_early()
@@ -731,7 +731,7 @@ function snapshot_grenade_watch_cleanup_outlines_end_early()
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a94
 // Size: 0xac
 function snapshot_grenade_clear_outlines()
@@ -753,7 +753,7 @@ function snapshot_grenade_clear_outlines()
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1b48
 // Size: 0xed
 function function_6fd4060b24c5926c( var_f20913fec7561c5f, var_fa3b23d51c2dc7, hudoutlineassetname, prioritygroup )
@@ -782,7 +782,7 @@ function function_6fd4060b24c5926c( var_f20913fec7561c5f, var_fa3b23d51c2dc7, hu
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c3e
 // Size: 0x8c
 function function_3c0efada1f34af5d( var_f20913fec7561c5f )
@@ -811,7 +811,7 @@ function function_3c0efada1f34af5d( var_f20913fec7561c5f )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1cd2
 // Size: 0xd2
 function snapshot_grenade_create_marker( position, angles, target, bundle )
@@ -837,7 +837,7 @@ function snapshot_grenade_create_marker( position, angles, target, bundle )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1dac
 // Size: 0xd3
 function snapshot_grenade_watch_marker_end_early( owner, durationms, target, liveupdatedurationms, bundle )
@@ -874,7 +874,7 @@ function snapshot_grenade_watch_marker_end_early( owner, durationms, target, liv
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e87
 // Size: 0x1c
 function function_905247d1b30c84f1()
@@ -883,7 +883,7 @@ function function_905247d1b30c84f1()
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1eac
 // Size: 0x32
 function function_69b06aec4f713f3c( attacker, duration )
@@ -895,7 +895,7 @@ function function_69b06aec4f713f3c( attacker, duration )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ee6
 // Size: 0x23
 function function_b18acb87cf98dfba( attacker, duration )
@@ -906,7 +906,7 @@ function function_b18acb87cf98dfba( attacker, duration )
 }
 
 // Namespace snapshot_grenade / scripts\mp\equipment\snapshot_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f11
 // Size: 0x18
 function function_9adb54275e3a9197()

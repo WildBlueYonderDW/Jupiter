@@ -5,7 +5,7 @@
 #namespace trigger;
 
 // Namespace trigger / scripts\mp\utility\trigger
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15d
 // Size: 0x67
 function triggerutilityinit()
@@ -19,7 +19,7 @@ function triggerutilityinit()
 }
 
 // Namespace trigger / scripts\mp\utility\trigger
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1cc
 // Size: 0x41
 function makeenterexittrigger( trigger, enterfunc, exitfunc, var_1fa4e076aba70ab9, var_768b0479668f27b, filterfunc )
@@ -28,7 +28,7 @@ function makeenterexittrigger( trigger, enterfunc, exitfunc, var_1fa4e076aba70ab
 }
 
 // Namespace trigger / scripts\mp\utility\trigger
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x215
 // Size: 0x115
 function triggerenterthink( enterfunc, exitfunc, var_1fa4e076aba70ab9, var_768b0479668f27b, filterfunc )
@@ -77,7 +77,7 @@ function triggerenterthink( enterfunc, exitfunc, var_1fa4e076aba70ab9, var_768b0
 }
 
 // Namespace trigger / scripts\mp\utility\trigger
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x332
 // Size: 0x11d
 function triggerexitthink( exitfunc, var_768b0479668f27b )
@@ -126,7 +126,7 @@ function triggerexitthink( exitfunc, var_768b0479668f27b )
 }
 
 // Namespace trigger / scripts\mp\utility\trigger
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x457
 // Size: 0x81
 function function_d7f524cd920e0c79()
@@ -147,7 +147,7 @@ function function_d7f524cd920e0c79()
 }
 
 // Namespace trigger / scripts\mp\utility\trigger
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e0
 // Size: 0x1e
 function function_643debdd070d5477( var_6001320cbfd4d138 )
@@ -161,7 +161,7 @@ function function_643debdd070d5477( var_6001320cbfd4d138 )
 }
 
 // Namespace trigger / scripts\mp\utility\trigger
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x506
 // Size: 0x3d
 function function_81b4c641c1611463( player )

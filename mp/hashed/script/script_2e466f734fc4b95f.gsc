@@ -13,7 +13,7 @@
 #namespace namespace_292dbee15d1fe0e6;
 
 // Namespace namespace_292dbee15d1fe0e6 / namespace_ebbc93313fbf8b1b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x1de
 function main()
@@ -50,7 +50,7 @@ function main()
 }
 
 // Namespace namespace_292dbee15d1fe0e6 / namespace_ebbc93313fbf8b1b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x433
 // Size: 0x57
 function setup_model()
@@ -67,7 +67,7 @@ function setup_model()
 }
 
 // Namespace namespace_292dbee15d1fe0e6 / namespace_ebbc93313fbf8b1b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x492
 // Size: 0x83
 function function_9ac26a51c94ccf52()
@@ -88,7 +88,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace namespace_292dbee15d1fe0e6 / namespace_ebbc93313fbf8b1b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51d
 // Size: 0xe4
 function precache()
@@ -120,7 +120,7 @@ function precache()
 }
 
 // Namespace namespace_292dbee15d1fe0e6 / namespace_ebbc93313fbf8b1b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x609
 // Size: 0x14c
 function setup_weapons()

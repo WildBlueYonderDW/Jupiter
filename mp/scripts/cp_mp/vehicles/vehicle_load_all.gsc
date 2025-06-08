@@ -31,7 +31,7 @@
 #namespace vehicle_load_all;
 
 // Namespace vehicle_load_all / scripts\cp_mp\vehicles\vehicle_load_all
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16f
 // Size: 0xca
 function function_b82404e40cca2415()

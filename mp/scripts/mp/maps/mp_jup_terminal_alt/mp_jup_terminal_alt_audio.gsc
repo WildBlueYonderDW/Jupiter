@@ -1,7 +1,7 @@
 #namespace mp_jup_terminal_alt_audio;
 
 // Namespace mp_jup_terminal_alt_audio / scripts\mp\maps\mp_jup_terminal_alt\mp_jup_terminal_alt_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18c
 // Size: 0x2a
 function main()
@@ -11,7 +11,7 @@ function main()
 }
 
 // Namespace mp_jup_terminal_alt_audio / scripts\mp\maps\mp_jup_terminal_alt\mp_jup_terminal_alt_audio
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1be
 // Size: 0x69
 function sfx_makeup_store( var_eaad182af1b91884, alias, timer )
@@ -34,7 +34,7 @@ function sfx_makeup_store( var_eaad182af1b91884, alias, timer )
 }
 
 // Namespace mp_jup_terminal_alt_audio / scripts\mp\maps\mp_jup_terminal_alt\mp_jup_terminal_alt_audio
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x22f
 // Size: 0x8f
 function sfx_metal_det( var_eaad182af1b91884, alias, timer )
@@ -50,7 +50,7 @@ function sfx_metal_det( var_eaad182af1b91884, alias, timer )
 }
 
 // Namespace mp_jup_terminal_alt_audio / scripts\mp\maps\mp_jup_terminal_alt\mp_jup_terminal_alt_audio
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c6
 // Size: 0xf5
 function function_a0912e6a103cc3a( trig, alias, timer )
@@ -78,7 +78,7 @@ function function_a0912e6a103cc3a( trig, alias, timer )
 }
 
 // Namespace mp_jup_terminal_alt_audio / scripts\mp\maps\mp_jup_terminal_alt\mp_jup_terminal_alt_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c3
 // Size: 0x65, Type: bool
 function function_77e25cc10461d531( trig )

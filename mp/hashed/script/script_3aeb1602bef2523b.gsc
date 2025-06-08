@@ -4,7 +4,7 @@
 #namespace namespace_1d33f465eeaa6f45;
 
 // Namespace namespace_1d33f465eeaa6f45 / namespace_a0fe32f1ff1b84f9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa1
 // Size: 0x1c
 function main()

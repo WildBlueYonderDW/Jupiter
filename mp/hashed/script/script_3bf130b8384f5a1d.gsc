@@ -32,7 +32,7 @@ function private autoexec __init__system__()
 }
 
 // Namespace namespace_910f1c9e49a229ca / namespace_dff82f9820538a93
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2a
 // Size: 0x24d
 function function_144097189064ffad()
@@ -443,7 +443,7 @@ function private onplayerdeath( params )
 }
 
 // Namespace namespace_910f1c9e49a229ca / namespace_dff82f9820538a93
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15dc
 // Size: 0x2e
 function function_33a21b2ea282d115()
@@ -478,7 +478,8 @@ function private function_df4b133a2c53cb24( s_exfil, var_ae579781d2b3fea1, nexto
     
     if ( isdefined( s_exfil.var_d182b8d3f3aaa93b ) && isdefined( s_exfil.var_d182b8d3f3aaa93b.var_a49938597b3587f0 ) && array_contains( s_exfil.var_d182b8d3f3aaa93b.var_a49938597b3587f0, self ) )
     {
-        for (pingindex = 0; pingindex < 10; pingindex++) {
+        for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+        {
             target = self calloutmarkerping_getent( pingindex );
             
             if ( is_equal( target, s_exfil.var_d182b8d3f3aaa93b ) )
@@ -637,7 +638,7 @@ function private function_be25d212fb44b9a9()
 // Namespace namespace_910f1c9e49a229ca / namespace_dff82f9820538a93
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x1ba4
-// Size: 0x111, Type: bool
+// Size: 0x111
 function private function_777650b23d69e74e( event, params )
 {
     level endon( "game_ended" );
@@ -645,7 +646,7 @@ function private function_777650b23d69e74e( event, params )
     
     if ( !istrue( level.var_319c5fcabbf91284 ) || !isdefined( event ) )
     {
-        return false;
+        return 0;
     }
     
     var_ada5a9c1e47b30de = undefined;
@@ -679,10 +680,10 @@ function private function_777650b23d69e74e( event, params )
     if ( isdefined( var_ada5a9c1e47b30de ) )
     {
         function_14debcad04282fbf( var_ada5a9c1e47b30de );
-        return true;
+        return 1;
     }
     
-    return false;
+    return 0;
 }
 
 // Namespace namespace_910f1c9e49a229ca / namespace_dff82f9820538a93
@@ -743,7 +744,7 @@ function private function_5e077dbd13c9817f()
 }
 
 // Namespace namespace_910f1c9e49a229ca / namespace_dff82f9820538a93
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dcf
 // Size: 0xcc
 function onaikilled( params )
@@ -1161,7 +1162,8 @@ function private function_7b7d449978e92e60( pingowner, pingindex )
         thread function_54f1ae7e02711fc9();
     }
     
-    for (pingindex = 0; pingindex < 10; pingindex++) {
+    for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+    {
         target = self calloutmarkerping_getent( pingindex );
         
         if ( isdefined( target ) && is_equal( target.type, "cp_mp_recon_points_exfil_site_entityless" ) )
@@ -1306,7 +1308,7 @@ function private function_eed2d218028f84f2( usable, player )
 }
 
 // Namespace namespace_910f1c9e49a229ca / namespace_dff82f9820538a93
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e24
 // Size: 0x43
 function function_38d627664128e832()
@@ -1322,7 +1324,7 @@ function function_38d627664128e832()
 }
 
 // Namespace namespace_910f1c9e49a229ca / namespace_dff82f9820538a93
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2e6f
 // Size: 0x41
 function function_26704c4a43488f1( var_c1074ab6cac2169f, pingtype, pingindex )

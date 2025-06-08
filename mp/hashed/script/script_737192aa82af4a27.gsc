@@ -7,7 +7,7 @@
 #namespace warrior_knives;
 
 // Namespace warrior_knives / namespace_2abd52adb9d827b7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10b
 // Size: 0x17
 function function_bdabea561d7e97b1()
@@ -17,7 +17,7 @@ function function_bdabea561d7e97b1()
 }
 
 // Namespace warrior_knives / namespace_2abd52adb9d827b7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12a
 // Size: 0x58
 function onplayerspawned()

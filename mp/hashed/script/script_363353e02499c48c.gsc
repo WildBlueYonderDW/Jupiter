@@ -31,7 +31,7 @@ function private autoexec __init__system__()
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a7
 // Size: 0xb3
 function function_683ee3819a7ed43d()
@@ -200,7 +200,8 @@ function private function_ac298c756f30aea6( s_exfil )
     
     backpacksize = scripts\cp_mp\loot\common_inventory::function_1b35b10884bd8d67();
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         itembundle = scripts\mp\gametypes\ob_pvpve::function_fb077d5402810e85( i );
         
         if ( !isdefined( itembundle ) || itembundle.subtype != "lootcase" )
@@ -227,7 +228,8 @@ function private onplayerdisconnect( params )
     function_33ea4e78dfeb232a( self.origin, self.angles, 1, 0 );
     backpacksize = scripts\cp_mp\loot\common_inventory::function_1b35b10884bd8d67();
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         itembundle = scripts\mp\gametypes\ob_pvpve::function_fb077d5402810e85( i );
         
         if ( !isdefined( itembundle ) || itembundle.subtype != "lootcase" )
@@ -301,7 +303,8 @@ function private function_a2ea63b7a629421a()
     var_cc42fec2c0d2f282 = [];
     var_af6940dd9da83694 = [];
     
-    for (pointindex = 0; pointindex < var_449f98c54b27f6dc; pointindex++) {
+    for ( pointindex = 0; pointindex < var_449f98c54b27f6dc ; pointindex++ )
+    {
         if ( function_a59e04a186feda43( pointindex ) )
         {
             lootspawnpoint = getlootspawnpoint( pointindex );
@@ -410,7 +413,7 @@ function private function_ae88c75bd5b24729()
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1110
 // Size: 0x3ed
 function function_28440f81ec22e0ea()
@@ -436,7 +439,8 @@ function function_28440f81ec22e0ea()
     level.var_cc52ce7c03341fc0.circles = [];
     level.var_cc52ce7c03341fc0.var_7e24b4d94dc92e50 = [];
     
-    for (i = 0; i < level.var_cc52ce7c03341fc0.var_9005b102820c0d0; i++) {
+    for ( i = 0; i < level.var_cc52ce7c03341fc0.var_9005b102820c0d0 ; i++ )
+    {
         level.var_cc52ce7c03341fc0.circles[ i ] = spawnstruct();
         
         if ( i == 0 )
@@ -462,7 +466,7 @@ function function_28440f81ec22e0ea()
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1505
 // Size: 0x1d2
 function function_6ea1d9d856da2fd( team )
@@ -490,7 +494,7 @@ function function_6ea1d9d856da2fd( team )
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16df
 // Size: 0x70
 function function_e07daf5fb2a4ecd3( params )
@@ -505,12 +509,13 @@ function function_e07daf5fb2a4ecd3( params )
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1757
 // Size: 0xba
 function function_6bdc6f56944dc3aa( player, oldteam, newteam )
 {
-    for (i = level.var_cc52ce7c03341fc0.currentcircle - 1; i >= 0; i--) {
+    for ( i = level.var_cc52ce7c03341fc0.currentcircle - 1; i >= 0 ; i-- )
+    {
         if ( isdefined( level.var_cc52ce7c03341fc0.var_7e24b4d94dc92e50[ newteam ] ) && i >= level.var_cc52ce7c03341fc0.var_7e24b4d94dc92e50[ newteam ] )
         {
             level.var_cc52ce7c03341fc0.circles[ i ] function_cfd53c8f6878014f( player );
@@ -522,7 +527,7 @@ function function_6bdc6f56944dc3aa( player, oldteam, newteam )
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1819
 // Size: 0xc, Type: bool
 function function_51d188c6831d55e6()
@@ -531,7 +536,7 @@ function function_51d188c6831d55e6()
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x182e
 // Size: 0x40
 function function_c9df4b28bedf5ec1( params )
@@ -543,7 +548,7 @@ function function_c9df4b28bedf5ec1( params )
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1876
 // Size: 0x44
 function onplayerdeath( params )
@@ -555,14 +560,15 @@ function onplayerdeath( params )
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18c2
 // Size: 0x6c
 function function_39b0f5685623cc2d()
 {
     if ( !istrue( level.var_9a38550ff75ec240 ) )
     {
-        for (i = level.var_cc52ce7c03341fc0.var_9005b102820c0d0 - 1; i >= 0; i--) {
+        for ( i = level.var_cc52ce7c03341fc0.var_9005b102820c0d0 - 1; i >= 0 ; i-- )
+        {
             level.var_cc52ce7c03341fc0.circles[ i ] function_af5604ce591768e1();
         }
         
@@ -572,7 +578,7 @@ function function_39b0f5685623cc2d()
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1936
 // Size: 0x14c
 function function_a0aa79a4e4dcfee9()
@@ -581,7 +587,8 @@ function function_a0aa79a4e4dcfee9()
     level endon( "destroy_reveal_circle" );
     var_c16d261221d6a48d = level.var_cc52ce7c03341fc0.var_9005b102820c0d0 - 1;
     
-    for (i = var_c16d261221d6a48d; i >= 0; i--) {
+    for ( i = var_c16d261221d6a48d; i >= 0 ; i-- )
+    {
         questcircle = undefined;
         
         if ( i == var_c16d261221d6a48d )
@@ -598,7 +605,8 @@ function function_a0aa79a4e4dcfee9()
     
     level.var_cc52ce7c03341fc0.circles[ var_c16d261221d6a48d ] function_6988310081de7b45();
     
-    for (i = var_c16d261221d6a48d; i >= 1; i--) {
+    for ( i = var_c16d261221d6a48d; i >= 1 ; i-- )
+    {
         level.var_cc52ce7c03341fc0.currentcircle = i;
         wait level.var_cc52ce7c03341fc0.stageduration;
         level.var_cc52ce7c03341fc0.circles[ var_c16d261221d6a48d ] function_363626dce45afb67();
@@ -608,7 +616,7 @@ function function_a0aa79a4e4dcfee9()
 }
 
 // Namespace namespace_e50a4d88616acbab / namespace_86a8fb37a1de0532
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a8a
 // Size: 0x16c
 function function_363626dce45afb67()

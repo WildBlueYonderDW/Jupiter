@@ -24,7 +24,7 @@
 #namespace balloon_extract;
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x543
 // Size: 0x66
 function function_9b095d72f2911ec8()
@@ -37,7 +37,7 @@ function function_9b095d72f2911ec8()
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b1
 // Size: 0x12c
 function function_231a038d18c51203( grenade )
@@ -105,7 +105,7 @@ function function_231a038d18c51203( grenade )
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e5
 // Size: 0xc0
 function function_91bcbeaba08b3c76( grenade )
@@ -127,7 +127,7 @@ function function_91bcbeaba08b3c76( grenade )
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ad
 // Size: 0x5a
 function function_5b3519ad8f058a26()
@@ -144,7 +144,7 @@ function function_5b3519ad8f058a26()
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x80f
 // Size: 0x1b5
 function function_9f3765a323f6212a()
@@ -191,7 +191,7 @@ function function_9f3765a323f6212a()
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9cc
 // Size: 0x2f8
 function function_8e5aab643e51aaf9()
@@ -262,7 +262,7 @@ function function_8e5aab643e51aaf9()
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xccc
 // Size: 0x12
 function function_d55141fe77fa88e8()
@@ -271,7 +271,7 @@ function function_d55141fe77fa88e8()
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce7
 // Size: 0x12
 function function_529acf4763e6abc7()
@@ -280,7 +280,7 @@ function function_529acf4763e6abc7()
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd02
 // Size: 0x9a
 function function_f4dacbd721b7c845( grenade, stuckto )
@@ -305,7 +305,7 @@ function function_f4dacbd721b7c845( grenade, stuckto )
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xda4
 // Size: 0x75
 function function_28c5995798975a53()
@@ -321,7 +321,7 @@ function function_28c5995798975a53()
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe21
 // Size: 0xac, Type: bool
 function function_7abaca741b57cec( grenade )
@@ -336,7 +336,7 @@ function function_7abaca741b57cec( grenade )
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed6
 // Size: 0xa3
 function function_9e02f22decaaaf1f( contents )
@@ -355,7 +355,7 @@ function function_9e02f22decaaaf1f( contents )
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf82
 // Size: 0x2fd
 function function_cbca59c109ae17af( itemtype, itemindex )
@@ -440,7 +440,7 @@ function function_cbca59c109ae17af( itemtype, itemindex )
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1287
 // Size: 0x16c
 function function_26e3ede964cf78d9( players )
@@ -491,7 +491,7 @@ function function_26e3ede964cf78d9( players )
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13fb
 // Size: 0x60, Type: bool
 function function_6de1128240216723( itemtype, lootid )
@@ -512,7 +512,7 @@ function function_6de1128240216723( itemtype, lootid )
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1464
 // Size: 0x9e
 function function_f71f8470e2fb527c( player )
@@ -520,7 +520,8 @@ function function_f71f8470e2fb527c( player )
     playerbackpacksize = namespace_aead94004cf4c147::getplayerbackpacksize( player );
     var_bb778d2be7708cfc = 0;
     
-    for (i = 0; i < playerbackpacksize; i++) {
+    for ( i = 0; i < playerbackpacksize ; i++ )
+    {
         slotlootid = player namespace_aead94004cf4c147::getlootidatbackpackindex( i );
         
         if ( !isdefined( slotlootid ) )
@@ -550,7 +551,7 @@ function function_f71f8470e2fb527c( player )
 }
 
 // Namespace balloon_extract / scripts\mp\equipment\balloon_extract
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x150a
 // Size: 0x23
 function function_f184ae16fb9720f3( slotnum )

@@ -24,7 +24,7 @@
 #namespace namespace_609d2ee77dae3d8c;
 
 // Namespace namespace_609d2ee77dae3d8c / namespace_98c7625238714297
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ec
 // Size: 0x15a
 function function_f54ee3a0c5799ddb()
@@ -57,7 +57,7 @@ function function_f54ee3a0c5799ddb()
 }
 
 // Namespace namespace_609d2ee77dae3d8c / namespace_98c7625238714297
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44e
 // Size: 0x7e
 function function_82cc4ac452ec042d( relevantparameters )
@@ -70,7 +70,7 @@ function function_82cc4ac452ec042d( relevantparameters )
 }
 
 // Namespace namespace_609d2ee77dae3d8c / namespace_98c7625238714297
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4d4
 // Size: 0xa8
 function function_e757a367525dc6ff( activitytype, varianttag, var_fb6a27936e71b3eb, var_9334fa52c33d9f6e )
@@ -98,7 +98,7 @@ function function_e757a367525dc6ff( activitytype, varianttag, var_fb6a27936e71b3
 }
 
 // Namespace namespace_609d2ee77dae3d8c / namespace_98c7625238714297
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x585
 // Size: 0x263
 function function_8a073180260101c8( relevantparameters )
@@ -180,7 +180,7 @@ function function_8a073180260101c8( relevantparameters )
 }
 
 // Namespace namespace_609d2ee77dae3d8c / namespace_98c7625238714297
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f0
 // Size: 0x33
 function function_1b8c1eb855188865( relevantparameters )
@@ -194,7 +194,7 @@ function function_1b8c1eb855188865( relevantparameters )
 }
 
 // Namespace namespace_609d2ee77dae3d8c / namespace_98c7625238714297
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x82b
 // Size: 0x33
 function function_1dfeec7e9015cfd0( relevantparameters )
@@ -208,7 +208,7 @@ function function_1dfeec7e9015cfd0( relevantparameters )
 }
 
 // Namespace namespace_609d2ee77dae3d8c / namespace_98c7625238714297
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x866
 // Size: 0x33
 function function_26a02c0ecf9a374( relevantparameters )
@@ -222,7 +222,7 @@ function function_26a02c0ecf9a374( relevantparameters )
 }
 
 // Namespace namespace_609d2ee77dae3d8c / namespace_98c7625238714297
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x8a1
 // Size: 0xb1
 function function_447c6ab4bea16b52( activityclass, activitytype, initfunction, var_d035b0ef2ba6d096, var_4c0351dd90f219ee )
@@ -251,7 +251,7 @@ function function_447c6ab4bea16b52( activityclass, activitytype, initfunction, v
 }
 
 // Namespace namespace_609d2ee77dae3d8c / namespace_98c7625238714297
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x95a
 // Size: 0x7a
 function function_1b2b8ed00ba454f6( activityclass, activitytype, var_d035b0ef2ba6d096, var_4c0351dd90f219ee )
@@ -345,7 +345,8 @@ function private function_55b5ea1ea4a8a4e9( activityinstance, var_fb6a27936e71b3
     {
         function_430113b2f1e49ed1( var_50afda8545de94eb, var_50afda8545de94eb.cf, var_50afda8545de94eb.scriptstructoriginoffset );
         
-        for (sphereindex = 0; sphereindex < var_50afda8545de94eb.locationorigin.size; sphereindex++) {
+        for ( sphereindex = 0; sphereindex < var_50afda8545de94eb.locationorigin.size ; sphereindex++ )
+        {
             origin = var_50afda8545de94eb.locationorigin[ sphereindex ];
             radius = var_50afda8545de94eb.locationradius[ sphereindex ];
             function_51ad14107ca158fb( activityinstance, "OB_Spacer_Spatial_Zone", origin, radius );
@@ -413,7 +414,8 @@ function private function_cd7cc22590239790( activitydefinition, spatialzonename,
             function_6636b8cd03ed660e( activitydefinition, spatialzonename );
         }
         
-        for (sphereindex = 0; sphereindex < var_133e05516b126906.locationorigin.size; sphereindex++) {
+        for ( sphereindex = 0; sphereindex < var_133e05516b126906.locationorigin.size ; sphereindex++ )
+        {
             origin = var_133e05516b126906.locationorigin[ sphereindex ];
             radius = var_133e05516b126906.locationradius[ sphereindex ];
             
@@ -435,7 +437,8 @@ function private function_cd7cc22590239790( activitydefinition, spatialzonename,
 // Size: 0xb0
 function private function_430113b2f1e49ed1( var_ced62137574fbb9e, var_c0e98e89e6cd9948, centeroffset )
 {
-    for (originindex = 0; originindex < var_ced62137574fbb9e.locationorigin.size; originindex++) {
+    for ( originindex = 0; originindex < var_ced62137574fbb9e.locationorigin.size ; originindex++ )
+    {
         center = spawnstruct();
         center.origin = var_ced62137574fbb9e.locationorigin[ originindex ];
         center.angles = ( 0, 0, 0 );

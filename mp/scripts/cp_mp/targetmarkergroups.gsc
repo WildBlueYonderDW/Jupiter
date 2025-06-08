@@ -5,7 +5,7 @@
 #namespace targetmarkergroups;
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x244
 // Size: 0x63
 function init()
@@ -22,7 +22,7 @@ function init()
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x2af
 // Size: 0xd1
 function targetmarkergroup_on( var_21323aee11762c98, showto, tomark, groupowner, friendlymarker, markonspawn, var_262f4b55aa151de1 )
@@ -57,7 +57,7 @@ function targetmarkergroup_on( var_21323aee11762c98, showto, tomark, groupowner,
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x389
 // Size: 0x3b
 function targetmarkergroup_off( var_4226c12910d867d4 )
@@ -73,7 +73,7 @@ function targetmarkergroup_off( var_4226c12910d867d4 )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3cc
 // Size: 0x7b
 function function_32fdc90fc744999f( ent )
@@ -92,7 +92,7 @@ function function_32fdc90fc744999f( ent )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x450
 // Size: 0x98
 function function_b76f204edb67efc7( var_4226c12910d867d4, showto )
@@ -122,7 +122,7 @@ function function_b76f204edb67efc7( var_4226c12910d867d4, showto )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f0
 // Size: 0xfd
 function function_9f84e910425d033( var_4226c12910d867d4, showto )
@@ -154,7 +154,7 @@ function function_9f84e910425d033( var_4226c12910d867d4, showto )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5f5
 // Size: 0xf8
 function function_adb80c80f10281f9( var_4226c12910d867d4, showto )
@@ -189,7 +189,7 @@ function function_adb80c80f10281f9( var_4226c12910d867d4, showto )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6f5
 // Size: 0x166
 function function_aafa0ed4a3d69b91( var_4226c12910d867d4, showto )
@@ -226,7 +226,7 @@ function function_aafa0ed4a3d69b91( var_4226c12910d867d4, showto )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x863
 // Size: 0x1a1
 function function_fd770a1099036688( var_4226c12910d867d4, var_65f5a4e57b38d87 )
@@ -287,7 +287,7 @@ function function_fd770a1099036688( var_4226c12910d867d4, var_65f5a4e57b38d87 )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xa0c
 // Size: 0x2b0
 function addtargetmarkergroup( var_4226c12910d867d4, showto, tomark, groupowner, friendlymarker, markonspawn, var_262f4b55aa151de1 )
@@ -374,7 +374,7 @@ function addtargetmarkergroup( var_4226c12910d867d4, showto, tomark, groupowner,
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcc4
 // Size: 0xce
 function function_78264e044be08e4d( var_4226c12910d867d4 )
@@ -408,7 +408,7 @@ function function_78264e044be08e4d( var_4226c12910d867d4 )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd9a
 // Size: 0x33
 function setnewowner( var_4226c12910d867d4, newowner )
@@ -418,7 +418,7 @@ function setnewowner( var_4226c12910d867d4, newowner )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdd5
 // Size: 0xa5
 function removetargetmarkergroup( var_4226c12910d867d4 )
@@ -447,7 +447,7 @@ function removetargetmarkergroup( var_4226c12910d867d4 )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe82
 // Size: 0x8f
 function targetmarkergroupexists( var_4226c12910d867d4 )
@@ -473,7 +473,7 @@ function targetmarkergroupexists( var_4226c12910d867d4 )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf1a
 // Size: 0x8e
 function gettargetmarkergroup( var_4226c12910d867d4 )
@@ -499,7 +499,7 @@ function gettargetmarkergroup( var_4226c12910d867d4 )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfb1
 // Size: 0x54
 function targetmarkergroup_watchmarkonspawn( var_4226c12910d867d4, var_262f4b55aa151de1 )
@@ -519,7 +519,7 @@ function targetmarkergroup_watchmarkonspawn( var_4226c12910d867d4, var_262f4b55a
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x100d
 // Size: 0x4b
 function targetmarkergroup_watchfornoscopeoutlineperkunset( var_4226c12910d867d4 )
@@ -539,7 +539,7 @@ function targetmarkergroup_watchfornoscopeoutlineperkunset( var_4226c12910d867d4
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1060
 // Size: 0x4b
 function targetmarkergroup_watchfornoscopeoutlineperkset( var_4226c12910d867d4 )
@@ -586,7 +586,7 @@ function private function_74348e91568973f8()
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1145
 // Size: 0x1da
 function targetmarkergroup_markentity( ent, var_4226c12910d867d4, var_262f4b55aa151de1 )
@@ -667,7 +667,7 @@ function targetmarkergroup_markentity( ent, var_4226c12910d867d4, var_262f4b55aa
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1327
 // Size: 0x55
 function function_61a64c527b1e0c5f( markergroup )
@@ -680,7 +680,7 @@ function function_61a64c527b1e0c5f( markergroup )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1384
 // Size: 0x59
 function targetmarkergroup_removefromgroupaction( action, markergroup )
@@ -693,7 +693,7 @@ function targetmarkergroup_removefromgroupaction( action, markergroup )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e5
 // Size: 0x68
 function targetmarkergroup_addtomarkingqueue( markergroup )
@@ -713,7 +713,7 @@ function targetmarkergroup_addtomarkingqueue( markergroup )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1455
 // Size: 0x39
 function function_38a987baf2b61673( removenotify, markergroup )
@@ -725,7 +725,7 @@ function function_38a987baf2b61673( removenotify, markergroup )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1496
 // Size: 0x6b
 function targetmarkergroup_removefrommarkingqueue( markergroup )
@@ -751,7 +751,7 @@ function targetmarkergroup_removefrommarkingqueue( markergroup )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1509
 // Size: 0xbd
 function targetmarkergroup_handlemarkingfromqueue( markergroupid )
@@ -793,7 +793,7 @@ function targetmarkergroup_handlemarkingfromqueue( markergroupid )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15ce
 // Size: 0x9a
 function targetmarkergroup_unmarkentity( ent, var_4226c12910d867d4, entnumoverride )
@@ -822,7 +822,7 @@ function targetmarkergroup_unmarkentity( ent, var_4226c12910d867d4, entnumoverri
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1670
 // Size: 0x7f
 function function_6c752e44b5090154( markedents, var_a1dcb36aa55a847 )
@@ -848,7 +848,7 @@ function function_6c752e44b5090154( markedents, var_a1dcb36aa55a847 )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16f8
 // Size: 0x61, Type: bool
 function function_7c253e3d43e44097( target, var_4226c12910d867d4 )
@@ -859,7 +859,7 @@ function function_7c253e3d43e44097( target, var_4226c12910d867d4 )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1762
 // Size: 0x76
 function targetmarkergroup_getownedgroups( groupowner )
@@ -878,7 +878,7 @@ function targetmarkergroup_getownedgroups( groupowner )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17e1
 // Size: 0x13
 function targetmarkergroup_clearcacheonspawn()
@@ -887,7 +887,7 @@ function targetmarkergroup_clearcacheonspawn()
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17fc
 // Size: 0x6e, Type: bool
 function isteam( showto )
@@ -909,7 +909,7 @@ function isteam( showto )
 }
 
 // Namespace targetmarkergroups / scripts\cp_mp\targetmarkergroups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1873
 // Size: 0xde
 function canbemarkedingroup( var_4226c12910d867d4, ent )

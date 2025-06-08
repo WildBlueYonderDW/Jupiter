@@ -12,7 +12,7 @@
 #namespace mp_jup_slaughterhouse_oct;
 
 // Namespace mp_jup_slaughterhouse_oct / scripts\mp\maps\mp_jup_slaughterhouse_oct\mp_jup_slaughterhouse_oct
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37c
 // Size: 0xa8
 function main()
@@ -33,7 +33,7 @@ function main()
 }
 
 // Namespace mp_jup_slaughterhouse_oct / scripts\mp\maps\mp_jup_slaughterhouse_oct\mp_jup_slaughterhouse_oct
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42c
 // Size: 0xb2a
 function function_31dc060e85f4a689()

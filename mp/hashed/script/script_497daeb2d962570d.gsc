@@ -1,6 +1,5 @@
 #using script_1107d6250762b72b;
 #using script_2047cdbf5176ba0;
-#using script_22f1701e151b9d12;
 #using script_2816a042b9f7996;
 #using script_2a73cf62256b4021;
 #using script_5d813d45c6b1b1be;
@@ -12,6 +11,7 @@
 #using script_92b815b18f0ba61;
 #using script_a462ba1c690f492;
 #using scripts\common\callbacks;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\engine\utility;
 
 #namespace mp_jup_st_e_ob;
@@ -26,7 +26,7 @@ function autoexec init()
 }
 
 // Namespace mp_jup_st_e_ob / namespace_26f5b9f025c6ef83
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x11a
 function main()
@@ -67,14 +67,14 @@ function main()
 }
 
 // Namespace mp_jup_st_e_ob / namespace_26f5b9f025c6ef83
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c3
 // Size: 0xcd
 function function_34f9339be7842373()
 {
     waitframe();
     function_9b8829ab4092a7d7( "ob_soldier_ambient", 1 );
-    namespace_614554f86e52695c::function_e4a440552e4cf1f4( &function_7a74948bde86f65 );
+    scripts\cp_mp\agents\ai_spawn_director::function_e4a440552e4cf1f4( &function_7a74948bde86f65 );
     function_4ff17efd15d01d3f( 256 );
     function_1611d0f6b5f84b9a( 700 );
     var_6019f08417208580 = [ "c_sabotage_lowtown_park_1", "c_sabotage_lowtown_park_1", "c_sabotage_lowtown_park_1", "c_sabotage_lowtown_park_1", "c_sabotage_lowtown_park_1", "e_cover_merc_camp_lowtown_market", "e_cover_merc_camp_lowtown_riverfront", "e_cover_merc_camp_lowtown_shanty" ];
@@ -137,14 +137,14 @@ function private function_26ee393ba852c090()
 }
 
 // Namespace mp_jup_st_e_ob / namespace_26f5b9f025c6ef83
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b9
 // Size: 0x82
 function director_changes()
 {
     waitframe();
-    namespace_614554f86e52695c::director_init();
-    request_id = namespace_614554f86e52695c::function_930897c0d1a7eb24( "demo_gas_encounter" );
+    scripts\cp_mp\agents\ai_spawn_director::director_init();
+    request_id = scripts\cp_mp\agents\ai_spawn_director::function_930897c0d1a7eb24( "demo_gas_encounter" );
     function_fc38783a3da0bc71( request_id, 1 );
     waitframe();
     function_606642b946a01237( "demo1", ( 17896.5, -9628.5, 2067.5 ), 800, 1 );
@@ -153,17 +153,17 @@ function director_changes()
 }
 
 // Namespace mp_jup_st_e_ob / namespace_26f5b9f025c6ef83
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x743
 // Size: 0x10
 function function_9e62f0bf427c88b2()
 {
     function_678622c552cadad4();
-    namespace_614554f86e52695c::process_create_script();
+    scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 
 // Namespace mp_jup_st_e_ob / namespace_26f5b9f025c6ef83
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x75b
 // Size: 0xe
 function function_678622c552cadad4()
@@ -172,7 +172,7 @@ function function_678622c552cadad4()
 }
 
 // Namespace mp_jup_st_e_ob / namespace_26f5b9f025c6ef83
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x771
 // Size: 0x1ae
 function function_5e1d3784c9aa680f()

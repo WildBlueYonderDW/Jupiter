@@ -31,7 +31,7 @@
 #namespace gas_trap;
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x588
 // Size: 0x163
 function function_d8b2df497e0b97f()
@@ -55,7 +55,7 @@ function function_d8b2df497e0b97f()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f3
 // Size: 0x193
 function function_9eb2b20f81d7c464( grenade )
@@ -98,7 +98,7 @@ function function_9eb2b20f81d7c464( grenade )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88e
 // Size: 0x94
 function function_a9ef871da48567b1()
@@ -118,7 +118,7 @@ function function_a9ef871da48567b1()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x92a
 // Size: 0x155
 function function_28f1150ddecc322e( grenade, surfacetype )
@@ -161,7 +161,7 @@ function function_28f1150ddecc322e( grenade, surfacetype )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa87
 // Size: 0x8c
 function function_7250c5a8ae9c2d87( vehicle )
@@ -180,7 +180,7 @@ function function_7250c5a8ae9c2d87( vehicle )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb1b
 // Size: 0x23
 function function_42b544f5fa77cee9()
@@ -191,7 +191,7 @@ function function_42b544f5fa77cee9()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb46
 // Size: 0x24
 function function_e015ee383cd188f5( attacker )
@@ -202,7 +202,7 @@ function function_e015ee383cd188f5( attacker )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb72
 // Size: 0x15
 function function_583dd854dcee63c9( attacker )
@@ -211,7 +211,7 @@ function function_583dd854dcee63c9( attacker )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb8f
 // Size: 0x124
 function function_293cb1a08a85b8b6( deletiondelay )
@@ -262,7 +262,7 @@ function function_293cb1a08a85b8b6( deletiondelay )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcbb
 // Size: 0x74
 function function_c313265bf3cab1e0()
@@ -282,7 +282,7 @@ function function_c313265bf3cab1e0()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd37
 // Size: 0x37, Type: bool
 function function_71e843b2ae312076( mine )
@@ -291,7 +291,7 @@ function function_71e843b2ae312076( mine )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd77
 // Size: 0x118
 function function_e4221c03bb28d13f()
@@ -350,7 +350,7 @@ function function_e4221c03bb28d13f()
 /#
 
     // Namespace gas_trap / scripts\mp\supers\gas_trap
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe97
     // Size: 0x117, Type: dev
     function function_f539d5d6dc0cc4a7()
@@ -381,7 +381,7 @@ function function_e4221c03bb28d13f()
 #/
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb6
 // Size: 0x8e
 function function_e7eb101b2882a52f( ent )
@@ -398,7 +398,7 @@ function function_e7eb101b2882a52f( ent )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x104c
 // Size: 0x52
 function function_9a40b84c61fcf698( vehicle, mine )
@@ -413,7 +413,7 @@ function function_9a40b84c61fcf698( vehicle, mine )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10a6
 // Size: 0x6f
 function function_12130c6112bc91e( data )
@@ -436,7 +436,7 @@ function function_12130c6112bc91e( data )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x111d
 // Size: 0x57
 function function_49d67701924d486d()
@@ -460,7 +460,7 @@ function function_49d67701924d486d()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x117c
 // Size: 0x2a
 function function_c1abefb71b068a39()
@@ -472,7 +472,7 @@ function function_c1abefb71b068a39()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11ae
 // Size: 0x21
 function function_62a347ed3920d124( launchedmine )
@@ -483,7 +483,7 @@ function function_62a347ed3920d124( launchedmine )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11d7
 // Size: 0x3f
 function function_c80f2e10e46fac9f( attacker )
@@ -496,7 +496,7 @@ function function_c80f2e10e46fac9f( attacker )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x121e
 // Size: 0x149
 function function_b6591a59ba8c122a( position, owner, team, duration, scale )
@@ -529,7 +529,7 @@ function function_b6591a59ba8c122a( position, owner, team, duration, scale )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x136f
 // Size: 0xa
 function sweepgas()
@@ -538,7 +538,7 @@ function sweepgas()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1381
 // Size: 0x73
 function function_673266358e778a6c()
@@ -558,7 +558,7 @@ function function_673266358e778a6c()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13fc
 // Size: 0x85
 function function_e58fc6a1208d483d( trigger )
@@ -585,7 +585,7 @@ function function_e58fc6a1208d483d( trigger )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x148a
 // Size: 0x34
 function function_779cd9adc64d02e9( triggerid )
@@ -596,7 +596,7 @@ function function_779cd9adc64d02e9( triggerid )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14c6
 // Size: 0x14a
 function function_24b91e463e75891f()
@@ -664,7 +664,7 @@ function function_24b91e463e75891f()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1618
 // Size: 0xb5
 function function_cdf66f292a6d921b()
@@ -700,7 +700,7 @@ function function_cdf66f292a6d921b()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16d5
 // Size: 0x13
 function function_c0aa33366b33ddfa()
@@ -710,7 +710,7 @@ function function_c0aa33366b33ddfa()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16f0
 // Size: 0x1bc
 function function_e527fb1c56a67ed2( trigger )
@@ -773,7 +773,7 @@ function function_e527fb1c56a67ed2( trigger )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18b4
 // Size: 0x1d
 function function_c0545824b502e347( fromdeath )
@@ -783,7 +783,7 @@ function function_c0545824b502e347( fromdeath )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18d9
 // Size: 0x162
 function function_bfc451da8aefa61f( attacker )
@@ -810,7 +810,7 @@ function function_bfc451da8aefa61f( attacker )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a43
 // Size: 0x10d
 function function_ac8305738ed64f77()
@@ -851,7 +851,7 @@ function function_ac8305738ed64f77()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b58
 // Size: 0x2b
 function function_142d2f94dd33931a( fromdeath )
@@ -866,7 +866,7 @@ function function_142d2f94dd33931a( fromdeath )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b8b
 // Size: 0x9c
 function function_223c69b4c52f810( attacker, fromimpact )
@@ -905,7 +905,7 @@ function function_223c69b4c52f810( attacker, fromimpact )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c2f
 // Size: 0xd7
 function function_6c75b9d6b11459c5( isheavy )
@@ -953,7 +953,7 @@ function function_6c75b9d6b11459c5( isheavy )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d0e
 // Size: 0x10a
 function function_d96f17418ee81a89( isheavy )
@@ -991,7 +991,7 @@ function function_d96f17418ee81a89( isheavy )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e20
 // Size: 0x25
 function function_e320f43bc3d01434( fromdeath )
@@ -1002,7 +1002,7 @@ function function_e320f43bc3d01434( fromdeath )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e4d
 // Size: 0xad
 function function_cb203bea4d439b8b( fromdeath )
@@ -1037,7 +1037,7 @@ function function_cb203bea4d439b8b( fromdeath )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f02
 // Size: 0x4a
 function function_7003ab18f0d40f9e( var_33f644489e4f15ae )
@@ -1059,7 +1059,7 @@ function function_7003ab18f0d40f9e( var_33f644489e4f15ae )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f54
 // Size: 0x2f
 function function_cd8cb96396c7e7bd( var_33f644489e4f15ae )
@@ -1076,7 +1076,7 @@ function function_cd8cb96396c7e7bd( var_33f644489e4f15ae )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f8b
 // Size: 0x23
 function function_3b420f49c5a08c56( coughduration )
@@ -1088,7 +1088,7 @@ function function_3b420f49c5a08c56( coughduration )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fb6
 // Size: 0x25, Type: bool
 function function_b1c95073710796b8()
@@ -1107,7 +1107,7 @@ function function_b1c95073710796b8()
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fe4
 // Size: 0xaa
 function function_3d115d834192a21f( fromdeath )
@@ -1134,7 +1134,7 @@ function function_3d115d834192a21f( fromdeath )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2096
 // Size: 0x18, Type: bool
 function function_da8a31143b88e833( player )
@@ -1148,7 +1148,7 @@ function function_da8a31143b88e833( player )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20b7
 // Size: 0x9e, Type: bool
 function is_train_ent( hitent )
@@ -1173,7 +1173,7 @@ function is_train_ent( hitent )
 }
 
 // Namespace gas_trap / scripts\mp\supers\gas_trap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x215e
 // Size: 0xa
 function function_ba58a20b3013d0e8()

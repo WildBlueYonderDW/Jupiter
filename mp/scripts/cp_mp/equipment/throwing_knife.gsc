@@ -7,7 +7,7 @@
 #namespace throwing_knife;
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ba
 // Size: 0x5b
 function throwing_knife_init()
@@ -23,7 +23,7 @@ function throwing_knife_init()
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x41d
 // Size: 0x45
 function throwing_knife_ongive( equipmentref, equipmentslot, variantid )
@@ -35,7 +35,7 @@ function throwing_knife_ongive( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x46a
 // Size: 0x3c
 function throwing_knife_ontake( equipmentref, equipmentslot )
@@ -47,7 +47,7 @@ function throwing_knife_ontake( equipmentref, equipmentslot )
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ae
 // Size: 0x27
 function function_d763df6d36a1e34a( equipmentref, currammo )
@@ -59,7 +59,7 @@ function function_d763df6d36a1e34a( equipmentref, currammo )
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4dd
 // Size: 0x172
 function throwing_knife_used( grenade )
@@ -114,7 +114,7 @@ function throwing_knife_used( grenade )
 /#
 
     // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x657
     // Size: 0x50, Type: dev
     function function_dec7a62735f22d28()
@@ -188,7 +188,7 @@ function private function_86b5c08af20abc5e()
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x804
 // Size: 0x54
 function function_3d8b0933df7505fd( victim )
@@ -205,7 +205,7 @@ function function_3d8b0933df7505fd( victim )
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x861
 // Size: 0x16a
 function getcorpstablestate( stuckpart )
@@ -253,7 +253,7 @@ function getcorpstablestate( stuckpart )
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d3
 // Size: 0x47
 function function_a39ea6b39ffb2b53()
@@ -268,7 +268,7 @@ function function_a39ea6b39ffb2b53()
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa22
 // Size: 0x10c
 function throwing_knife_makepickup()
@@ -311,7 +311,7 @@ function throwing_knife_makepickup()
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb36
 // Size: 0x129
 function throwing_knife_watchpickup()
@@ -371,7 +371,7 @@ function throwing_knife_watchpickup()
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc67
 // Size: 0x1b
 function throwing_knife_watchpickuptimeout()
@@ -382,7 +382,7 @@ function throwing_knife_watchpickuptimeout()
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc8a
 // Size: 0x25
 function throwing_knife_deletepickup()
@@ -396,7 +396,7 @@ function throwing_knife_deletepickup()
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcb7
 // Size: 0x5a
 function throwing_knife_trytopickup( equipmentref, variantid )

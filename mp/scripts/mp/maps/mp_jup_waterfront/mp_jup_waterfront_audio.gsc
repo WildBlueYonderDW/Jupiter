@@ -1,7 +1,7 @@
 #namespace mp_jup_waterfront_audio;
 
 // Namespace mp_jup_waterfront_audio / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a0
 // Size: 0x2
 function main()
@@ -10,14 +10,15 @@ function main()
 }
 
 // Namespace mp_jup_waterfront_audio / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aa
 // Size: 0xa4
 function function_2a57309bc51d8f95()
 {
     if ( !isdefined( level.var_f8c3a13c0bbd604d ) )
     {
-        for (i = 0; i < 4; i++) {
+        for ( i = 0; i < 4 ; i++ )
+        {
             level.var_f8c3a13c0bbd604d[ i ] = spawn( "script_model", ( 0, 0, 0 ) );
         }
         
@@ -36,7 +37,7 @@ function function_2a57309bc51d8f95()
 }
 
 // Namespace mp_jup_waterfront_audio / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront_audio
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x257
 // Size: 0x104
 function train_audio( train, var_7f853c287b0b8af8 )
@@ -75,7 +76,7 @@ function train_audio( train, var_7f853c287b0b8af8 )
 }
 
 // Namespace mp_jup_waterfront_audio / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x363
 // Size: 0x17
 function bus_audio( bus )
@@ -84,7 +85,7 @@ function bus_audio( bus )
 }
 
 // Namespace mp_jup_waterfront_audio / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x382
 // Size: 0x17
 function van_audio( van )
@@ -93,7 +94,7 @@ function van_audio( van )
 }
 
 // Namespace mp_jup_waterfront_audio / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x17
 function car_audio( car )

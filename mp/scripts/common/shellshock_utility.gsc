@@ -6,7 +6,7 @@
 #namespace shellshock_utility;
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d5
 // Size: 0x179
 function init()
@@ -34,7 +34,7 @@ function init()
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x556
 // Size: 0x1f6
 function _shellshock( name, category, duration, animationresponse, interruptdelayms )
@@ -104,7 +104,7 @@ function _shellshock( name, category, duration, animationresponse, interruptdela
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x754
 // Size: 0x40
 function shellshock_cleanup( duration )
@@ -119,7 +119,7 @@ function shellshock_cleanup( duration )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x79c
 // Size: 0x3d
 function _stopshellshock( fromdeath )
@@ -137,7 +137,7 @@ function _stopshellshock( fromdeath )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e1
 // Size: 0x2
 function enableshellshockfunc()
@@ -146,7 +146,7 @@ function enableshellshockfunc()
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7eb
 // Size: 0xf
 function disableshellshockfunc()
@@ -155,7 +155,7 @@ function disableshellshockfunc()
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x802
 // Size: 0x18
 function shellshock_interruptdelayfunc( name, duration )
@@ -164,7 +164,7 @@ function shellshock_interruptdelayfunc( name, duration )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x823
 // Size: 0x7b
 function shellshock_flashinterruptdelayfunc( name, duration )
@@ -189,7 +189,7 @@ function shellshock_flashinterruptdelayfunc( name, duration )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8a7
 // Size: 0xfa
 function shellshock_stuninterruptdelayfunc( name, duration )
@@ -227,7 +227,7 @@ function shellshock_stuninterruptdelayfunc( name, duration )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9aa
 // Size: 0x82
 function shellshock_gasinterruptdelayfunc( name, duration )
@@ -253,7 +253,7 @@ function shellshock_gasinterruptdelayfunc( name, duration )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa35
 // Size: 0x76
 function shellshock_damageinterruptdelayfunc( name, duration )
@@ -278,7 +278,7 @@ function shellshock_damageinterruptdelayfunc( name, duration )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xab4
 // Size: 0x14, Type: bool
 function shellshock_nointerruptdelayfunc( name, duration )
@@ -287,7 +287,7 @@ function shellshock_nointerruptdelayfunc( name, duration )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad1
 // Size: 0x70
 function bloodmeleeeffect( objweapon )
@@ -312,7 +312,7 @@ function bloodmeleeeffect( objweapon )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb49
 // Size: 0x62
 function usescriptablemeleeblood( objweapon )
@@ -341,7 +341,7 @@ function usescriptablemeleeblood( objweapon )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbb3
 // Size: 0x5e, Type: bool
 function function_bb839bb513295f10( weapon )
@@ -365,7 +365,7 @@ function function_bb839bb513295f10( weapon )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc1a
 // Size: 0x4a, Type: bool
 function function_55d5c766b382551e( weapon )
@@ -382,7 +382,7 @@ function function_55d5c766b382551e( weapon )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6d
 // Size: 0x32
 function activatemeleeblood( state )
@@ -395,7 +395,7 @@ function activatemeleeblood( state )
 }
 
 // Namespace shellshock_utility / scripts\common\shellshock_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xca7
 // Size: 0x5b
 function play_fx_with_entity( fx, string_array, timeout )

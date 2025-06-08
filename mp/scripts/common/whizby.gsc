@@ -5,7 +5,7 @@
 #namespace whizby;
 
 // Namespace whizby / scripts\common\whizby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21f
 // Size: 0x43
 function init( var_8611e1d824bbdb4a )
@@ -19,7 +19,7 @@ function init( var_8611e1d824bbdb4a )
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26a
 // Size: 0x30
 function initplayer()
@@ -30,7 +30,7 @@ function initplayer()
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a2
 // Size: 0x222
 function function_a6e6611efb4164d5( attacker, distance, position, forward )
@@ -105,7 +105,7 @@ function function_a6e6611efb4164d5( attacker, distance, position, forward )
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4cc
 // Size: 0x106, Type: bool
 function function_43d3999d682de782( attacker, distance, position, forward, time )
@@ -164,7 +164,7 @@ function function_43d3999d682de782( attacker, distance, position, forward, time 
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5db
 // Size: 0x4b, Type: bool
 function function_cee14923e29e38ab( time )
@@ -185,7 +185,7 @@ function function_cee14923e29e38ab( time )
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x62f
 // Size: 0xb8
 function function_2fad28813245304d( var_85b3cf23250d4543 )
@@ -201,7 +201,7 @@ function function_2fad28813245304d( var_85b3cf23250d4543 )
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6ef
 // Size: 0x13c
 function function_b04dc57d51b057c( weapclass, weapon, var_85b3cf23250d4543 )
@@ -265,7 +265,7 @@ function function_b04dc57d51b057c( weapclass, weapon, var_85b3cf23250d4543 )
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x833
 // Size: 0x27e
 function function_5e980dbce5b2122( attacker, position, time, var_85b3cf23250d4543, distance )
@@ -308,7 +308,7 @@ function function_5e980dbce5b2122( attacker, position, time, var_85b3cf23250d454
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xab9
 // Size: 0x84
 function function_dbabf852a35102e4( var_31659d73698c898a, var_7f628b9bd51160d5 )
@@ -344,7 +344,7 @@ function function_dbabf852a35102e4( var_31659d73698c898a, var_7f628b9bd51160d5 )
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb46
 // Size: 0x11a
 function function_21676cfe493c7014( weapclass, distance, time )
@@ -377,7 +377,7 @@ function function_21676cfe493c7014( weapclass, distance, time )
 }
 
 // Namespace whizby / scripts\common\whizby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc69
 // Size: 0x20
 function function_bcd1a794fb26ee5c()
@@ -388,7 +388,7 @@ function function_bcd1a794fb26ee5c()
 /#
 
     // Namespace whizby / scripts\common\whizby
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xc91
     // Size: 0x4d, Type: dev
     function function_ecc51bc3ffb94164()
@@ -412,7 +412,7 @@ function function_bcd1a794fb26ee5c()
     }
 
     // Namespace whizby / scripts\common\whizby
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xce6
     // Size: 0x43, Type: dev
     function function_4905c442ccddf750()
@@ -434,7 +434,7 @@ function function_bcd1a794fb26ee5c()
     }
 
     // Namespace whizby / scripts\common\whizby
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xd31
     // Size: 0x222, Type: dev
     function function_f3cad80dd510b802()
@@ -502,7 +502,7 @@ function function_bcd1a794fb26ee5c()
     }
 
     // Namespace whizby / scripts\common\whizby
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0xf5b
     // Size: 0xdd, Type: dev
     function function_708f66676f77c951( attacker, position, backorigin, var_85b3cf23250d4543, distance )

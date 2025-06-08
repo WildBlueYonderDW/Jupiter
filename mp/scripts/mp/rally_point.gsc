@@ -14,7 +14,7 @@
 #namespace rally_point;
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39f
 // Size: 0x2
 function init()
@@ -23,7 +23,7 @@ function init()
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a9
 // Size: 0x8f
 function makerallypoint( object )
@@ -48,7 +48,7 @@ function makerallypoint( object )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x440
 // Size: 0x87
 function registerplayerwithrallypoint( player, rallypoint )
@@ -66,7 +66,7 @@ function registerplayerwithrallypoint( player, rallypoint )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4cf
 // Size: 0xc0
 function watchforplayerdeath( rallypoint )
@@ -92,7 +92,7 @@ function watchforplayerdeath( rallypoint )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x597
 // Size: 0x1d3
 function prepareplayerforrespawn( player, rallypoint )
@@ -140,7 +140,7 @@ function prepareplayerforrespawn( player, rallypoint )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x772
 // Size: 0x75
 function watchforrallypointdeath( rallypoint )
@@ -155,7 +155,7 @@ function watchforrallypointdeath( rallypoint )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ef
 // Size: 0x1a
 function debugprint( text )
@@ -169,7 +169,7 @@ function debugprint( text )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x811
 // Size: 0x107
 function rallypointvehicle_activate( vehicle )
@@ -199,7 +199,7 @@ function rallypointvehicle_activate( vehicle )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x920
 // Size: 0xb
 function rallypointvehicle_deactivate( vehicle )
@@ -208,7 +208,7 @@ function rallypointvehicle_deactivate( vehicle )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x933
 // Size: 0xe9
 function rallypoint_showafterprematch( vehicle )
@@ -229,7 +229,7 @@ function rallypoint_showafterprematch( vehicle )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa24
 // Size: 0xdd
 function rallypoint_watchforvehicledeath( vehicle )
@@ -251,7 +251,7 @@ function rallypoint_watchforvehicledeath( vehicle )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb09
 // Size: 0x2d5
 function rallypoint_activatevehiclemarker( vehicle )
@@ -313,7 +313,7 @@ function rallypoint_activatevehiclemarker( vehicle )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde6
 // Size: 0x4f
 function rallypoint_deacivatevehiclemarker( vehicle )
@@ -324,7 +324,7 @@ function rallypoint_deacivatevehiclemarker( vehicle )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe3d
 // Size: 0x73
 function rallypoint_wathcforenemydiscovery( vehicle )
@@ -343,7 +343,7 @@ function rallypoint_wathcforenemydiscovery( vehicle )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeb8
 // Size: 0xe8
 function watchrallytriggeruse( vehicle )
@@ -383,7 +383,7 @@ function watchrallytriggeruse( vehicle )
 }
 
 // Namespace rally_point / scripts\mp\rally_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfa8
 // Size: 0xe5
 function rallypoint_showtoplayer( player )

@@ -12,7 +12,7 @@
 #namespace namespace_ce833ecc1b8e98dd;
 
 // Namespace namespace_ce833ecc1b8e98dd / namespace_3d880430cde22149
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x163
 // Size: 0x18
 function init()

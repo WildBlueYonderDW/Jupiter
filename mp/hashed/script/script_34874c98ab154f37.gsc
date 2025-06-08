@@ -22,7 +22,7 @@
 #namespace namespace_6deceacb2ad6159c;
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8f2
 // Size: 0xfc
 function function_918a46f20addf647()
@@ -54,7 +54,7 @@ function function_918a46f20addf647()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9f6
 // Size: 0x210
 function function_d9a5084e1bcc12d9()
@@ -102,7 +102,7 @@ function function_d9a5084e1bcc12d9()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc0e
 // Size: 0x41
 function function_be00a6ea8c66d625()
@@ -114,7 +114,7 @@ function function_be00a6ea8c66d625()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc58
 // Size: 0x28
 function function_5d0c8ce44d66af45()
@@ -125,7 +125,7 @@ function function_5d0c8ce44d66af45()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc89
 // Size: 0x107
 function function_5c0bb5166c0babe0( interior )
@@ -169,7 +169,7 @@ function function_5c0bb5166c0babe0( interior )
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd99
 // Size: 0x2db
 function function_2dca426ba427ff57()
@@ -228,7 +228,7 @@ function function_2dca426ba427ff57()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x107c
 // Size: 0x197
 function spawn_civilian( struct, path, poiname, initialcap, var_9b2697384ed3425e, var_e195245abf56681b, var_46c6e189d91aa34c, priorityoverride )
@@ -283,7 +283,7 @@ function spawn_civilian( struct, path, poiname, initialcap, var_9b2697384ed3425e
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x121c
 // Size: 0x93
 function function_32de403142a7242e( agent, spawnorigin )
@@ -303,7 +303,7 @@ function function_32de403142a7242e( agent, spawnorigin )
 /#
 
     // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x12b7
     // Size: 0xea, Type: dev
     function function_b9c9324be6322ddf( text, offset, tag, duration )
@@ -339,7 +339,7 @@ function function_32de403142a7242e( agent, spawnorigin )
 #/
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13a9
 // Size: 0x2ff
 function civ_saydialogue()
@@ -433,7 +433,7 @@ function civ_saydialogue()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x16b0
 // Size: 0xa4
 function function_9f22513c237365a7( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -447,7 +447,7 @@ function function_9f22513c237365a7( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x175c
 // Size: 0x98
 function function_1ec45cfcafe23fa1( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname, armorhit )
@@ -457,7 +457,7 @@ function function_1ec45cfcafe23fa1( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x17fc
 // Size: 0x98
 function delaytest( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname, armorhit )
@@ -468,7 +468,7 @@ function delaytest( einflictor, eattacker, idamage, idflags, smeansofdeath, swea
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x189c
 // Size: 0x7b
 function function_50ac20187f26a0dc()
@@ -493,7 +493,7 @@ function function_50ac20187f26a0dc()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x191f
 // Size: 0x17
 function deregisterondeath()
@@ -503,7 +503,7 @@ function deregisterondeath()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x193e
 // Size: 0x236
 function doorwatcher()
@@ -568,7 +568,7 @@ function doorwatcher()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b7c
 // Size: 0xc4
 function bulletwhizbylistener()
@@ -595,7 +595,7 @@ function bulletwhizbylistener()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c48
 // Size: 0xce
 function fleefromplayerproximity()
@@ -603,7 +603,7 @@ function fleefromplayerproximity()
     self endon( "death" );
     self notify( "fleeFromPlayerProximity" );
     self endon( "fleeFromPlayerProximity" );
-    var_2e0d80daaab7f018 = getdvarint( @"hash_f862c6ae0538549f", 768 );
+    var_2e0d80daaab7f018 = getdvarint( @"scr_dmz_civ_player_flee_dist", 768 );
     var_b8c1899adc1a8760 = var_2e0d80daaab7f018 * var_2e0d80daaab7f018;
     
     while ( true )
@@ -631,7 +631,7 @@ function fleefromplayerproximity()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d1e
 // Size: 0xa5
 function function_414e92de6d8a19ad()
@@ -646,7 +646,7 @@ function function_414e92de6d8a19ad()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1dcb
 // Size: 0xdf
 function function_2d6fa894e261f129( agent, killer )
@@ -678,7 +678,7 @@ function function_2d6fa894e261f129( agent, killer )
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1eb2
 // Size: 0x303
 function function_da0c4e190ee1da89()
@@ -762,7 +762,7 @@ function function_da0c4e190ee1da89()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21bd
 // Size: 0x103
 function function_e4a099b25f255d6c()
@@ -791,7 +791,7 @@ function function_e4a099b25f255d6c()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22c8
 // Size: 0x8c
 function updatetargetlocation()
@@ -821,7 +821,7 @@ function updatetargetlocation()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x235c
 // Size: 0x1f
 function function_e2a9a038fa6830d5( dialog )
@@ -833,7 +833,7 @@ function function_e2a9a038fa6830d5( dialog )
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2383
 // Size: 0xe1
 function function_6231f251a918f35f( bountytarget )
@@ -856,7 +856,7 @@ function function_6231f251a918f35f( bountytarget )
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x246c
 // Size: 0xd7
 function function_1214aad9fb9087cc( bountytarget )
@@ -874,7 +874,7 @@ function function_1214aad9fb9087cc( bountytarget )
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x254b
 // Size: 0x71
 function updateassassinationdataomnvar( targetplayer, threatlevel )
@@ -895,7 +895,7 @@ function updateassassinationdataomnvar( targetplayer, threatlevel )
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25c4
 // Size: 0x7c
 function updateassassinationthreatlevel( targetteam )
@@ -907,7 +907,7 @@ function updateassassinationthreatlevel( targetteam )
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2648
 // Size: 0x27
 function showassassinationtargethud( targetplayer, threatlevel )
@@ -917,7 +917,7 @@ function showassassinationtargethud( targetplayer, threatlevel )
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2677
 // Size: 0x19
 function hideassassinationtargethud()
@@ -927,7 +927,7 @@ function hideassassinationtargethud()
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2698
 // Size: 0x145
 function function_a5d597201278c71c( victim )
@@ -956,7 +956,7 @@ function function_a5d597201278c71c( victim )
 }
 
 // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x27e5
 // Size: 0x67
 function function_5e94057030ae86c4( isinterior, poiname )
@@ -986,7 +986,7 @@ function function_5e94057030ae86c4( isinterior, poiname )
 /#
 
     // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2854
     // Size: 0x1be, Type: dev
     function function_553261340a810ed3()
@@ -1033,7 +1033,7 @@ function function_5e94057030ae86c4( isinterior, poiname )
     }
 
     // Namespace namespace_6deceacb2ad6159c / namespace_c50aac14f506294b
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2a1a
     // Size: 0xa4, Type: dev
     function function_5e07c420d97d072f()

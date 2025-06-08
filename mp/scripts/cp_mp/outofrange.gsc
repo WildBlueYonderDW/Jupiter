@@ -4,7 +4,7 @@
 #namespace outofrange;
 
 // Namespace outofrange / scripts\cp_mp\outofrange
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xfc
 // Size: 0xdd
 function setupoutofrangewatcher( var_616ea41542b3d45a, var_96408b0d60660b1, var_363c1035ed04723a, var_d9ffca69374e542, minrangesq, maxrangesq, inverserange )
@@ -41,7 +41,7 @@ function setupoutofrangewatcher( var_616ea41542b3d45a, var_96408b0d60660b1, var_
 }
 
 // Namespace outofrange / scripts\cp_mp\outofrange
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1e1
 // Size: 0x10a
 function watchdistancefromentity( var_363c1035ed04723a, var_d9ffca69374e542, minrangesq, maxrangesq, inverserange )
@@ -85,7 +85,7 @@ function watchdistancefromentity( var_363c1035ed04723a, var_d9ffca69374e542, min
 }
 
 // Namespace outofrange / scripts\cp_mp\outofrange
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2f3
 // Size: 0xc2
 function watchdistancefromstaticpoint( var_96408b0d60660b1, minrangesq, maxrangesq, inverserange )
@@ -117,7 +117,7 @@ function watchdistancefromstaticpoint( var_96408b0d60660b1, minrangesq, maxrange
 }
 
 // Namespace outofrange / scripts\cp_mp\outofrange
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3bd
 // Size: 0x1ee
 function watchoutofrangestrength( var_96408b0d60660b1, minrangesq, maxrangesq, var_363c1035ed04723a, var_d9ffca69374e542, inverserange )

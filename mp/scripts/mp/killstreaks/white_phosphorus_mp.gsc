@@ -18,7 +18,7 @@
 #namespace white_phosphorus_mp;
 
 // Namespace white_phosphorus_mp / scripts\mp\killstreaks\white_phosphorus_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14b
 // Size: 0x3f
 function init()
@@ -29,7 +29,7 @@ function init()
 }
 
 // Namespace white_phosphorus_mp / scripts\mp\killstreaks\white_phosphorus_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x192
 // Size: 0x41
 function white_phosphorus_startmapselectsequence( navmesh, directionalselection, directionaltype, selectortype )
@@ -39,7 +39,7 @@ function white_phosphorus_startmapselectsequence( navmesh, directionalselection,
 }
 
 // Namespace white_phosphorus_mp / scripts\mp\killstreaks\white_phosphorus_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1db
 // Size: 0x38
 function white_phosphorus_getmapselectpoint( streakinfo, selectnum, directionalselection )

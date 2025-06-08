@@ -5,7 +5,7 @@
 #namespace namespace_453f6d7726d3161e;
 
 // Namespace namespace_453f6d7726d3161e / namespace_fc8e35fbcefcfd94
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc5
 // Size: 0x5c
 function function_7f1a5cba2db537c5()
@@ -18,7 +18,7 @@ function function_7f1a5cba2db537c5()
 }
 
 // Namespace namespace_453f6d7726d3161e / namespace_fc8e35fbcefcfd94
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x129
 // Size: 0x2e
 function function_3f11738e6c8250e1( target_ent, arm_used )
@@ -29,7 +29,7 @@ function function_3f11738e6c8250e1( target_ent, arm_used )
 }
 
 // Namespace namespace_453f6d7726d3161e / namespace_fc8e35fbcefcfd94
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15f
 // Size: 0x16, Type: bool
 function function_550c2a40a7f8e322()
@@ -54,7 +54,7 @@ function private function_abafe9cd03c2c0ab()
 }
 
 // Namespace namespace_453f6d7726d3161e / namespace_fc8e35fbcefcfd94
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e4
 // Size: 0x59
 function function_703e9acc55d0902b( idamage, eattacker, objweapon )
@@ -70,7 +70,7 @@ function function_703e9acc55d0902b( idamage, eattacker, objweapon )
 /#
 
     // Namespace namespace_453f6d7726d3161e / namespace_fc8e35fbcefcfd94
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x246
     // Size: 0x30, Type: dev
     function function_a9bcc765070d0b08()

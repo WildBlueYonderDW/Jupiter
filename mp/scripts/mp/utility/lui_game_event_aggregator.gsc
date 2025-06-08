@@ -3,7 +3,7 @@
 #namespace lui_game_event_aggregator;
 
 // Namespace lui_game_event_aggregator / scripts\mp\utility\lui_game_event_aggregator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf5
 // Size: 0xb
 function init()
@@ -12,7 +12,7 @@ function init()
 }
 
 // Namespace lui_game_event_aggregator / scripts\mp\utility\lui_game_event_aggregator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108
 // Size: 0x34
 function onplayerconnect()
@@ -28,7 +28,7 @@ function onplayerconnect()
 }
 
 // Namespace lui_game_event_aggregator / scripts\mp\utility\lui_game_event_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x144
 // Size: 0x21
 function registeronluieventcallback( callback )
@@ -37,7 +37,7 @@ function registeronluieventcallback( callback )
 }
 
 // Namespace lui_game_event_aggregator / scripts\mp\utility\lui_game_event_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16d
 // Size: 0x24
 function function_89376739fb493757( callback )
@@ -46,7 +46,7 @@ function function_89376739fb493757( callback )
 }
 
 // Namespace lui_game_event_aggregator / scripts\mp\utility\lui_game_event_aggregator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x199
 // Size: 0x82
 function onplayerconnected()

@@ -4,7 +4,7 @@
 #namespace namespace_c45ac99c4997e722;
 
 // Namespace namespace_c45ac99c4997e722 / namespace_7349d2dcd492da87
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x376
 // Size: 0x4f5
 function function_1c355f42faf7f4bb()
@@ -194,7 +194,7 @@ function function_1c355f42faf7f4bb()
 }
 
 // Namespace namespace_c45ac99c4997e722 / namespace_7349d2dcd492da87
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x874
 // Size: 0xba
 function function_45d01d27e99f49d7()

@@ -7,7 +7,7 @@
 #namespace namespace_70e82607cc395cfd;
 
 // Namespace namespace_70e82607cc395cfd / namespace_10e75ada2a87ed56
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x150
 // Size: 0xd9
 function function_2a31a579270a3a95()
@@ -39,7 +39,7 @@ function function_2a31a579270a3a95()
 }
 
 // Namespace namespace_70e82607cc395cfd / namespace_10e75ada2a87ed56
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x231
 // Size: 0x8a
 function function_a41a4c9aabd6ba66( radius )
@@ -55,7 +55,7 @@ function function_a41a4c9aabd6ba66( radius )
 }
 
 // Namespace namespace_70e82607cc395cfd / namespace_10e75ada2a87ed56
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c3
 // Size: 0x63
 function function_68a54b9fdf2c60ab( radius )
@@ -69,7 +69,7 @@ function function_68a54b9fdf2c60ab( radius )
 }
 
 // Namespace namespace_70e82607cc395cfd / namespace_10e75ada2a87ed56
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32e
 // Size: 0x44
 function function_8974bd4a6c54efc1( player, trigger )
@@ -83,7 +83,7 @@ function function_8974bd4a6c54efc1( player, trigger )
 }
 
 // Namespace namespace_70e82607cc395cfd / namespace_10e75ada2a87ed56
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x37a
 // Size: 0x44
 function function_3b87b9612531dc61( player, trigger )

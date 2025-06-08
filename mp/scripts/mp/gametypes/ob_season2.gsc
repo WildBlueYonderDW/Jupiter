@@ -25,7 +25,7 @@ function autoexec init()
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45c
 // Size: 0x37
 function main( params )
@@ -39,7 +39,7 @@ function main( params )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49b
 // Size: 0xad
 function function_426e2d5e82b19fb()
@@ -56,7 +56,7 @@ function function_426e2d5e82b19fb()
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x550
 // Size: 0x1d
 function register_activities( params )
@@ -65,7 +65,7 @@ function register_activities( params )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x575
 // Size: 0x1d
 function register_objectives( params )
@@ -74,7 +74,7 @@ function register_objectives( params )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59a
 // Size: 0x47
 function register_features( params )
@@ -154,7 +154,7 @@ function private function_7d05d2bf4fbde466( params )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d6
 // Size: 0x20f
 function function_1fd107db3ec3ec54( params )
@@ -212,7 +212,7 @@ function function_1fd107db3ec3ec54( params )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ed
 // Size: 0x52
 function spawn_bone( spawn_location )
@@ -224,7 +224,7 @@ function spawn_bone( spawn_location )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa47
 // Size: 0xd1
 function spawn_skull( spawn_location, var_73a0f3ed96803f36 )
@@ -253,7 +253,7 @@ function spawn_skull( spawn_location, var_73a0f3ed96803f36 )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb20
 // Size: 0x63
 function function_637a0270d3f077d3()
@@ -274,7 +274,7 @@ function function_637a0270d3f077d3()
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb8b
 // Size: 0xa5
 function function_42322dcd60709cc3( player )
@@ -297,7 +297,7 @@ function function_42322dcd60709cc3( player )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc38
 // Size: 0x288
 function function_5ef509a71c51c2a0( player )
@@ -363,7 +363,7 @@ function function_5ef509a71c51c2a0( player )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec8
 // Size: 0x4b
 function function_b216b39d9ea94e4a( drop_amount )
@@ -378,7 +378,7 @@ function function_b216b39d9ea94e4a( drop_amount )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf1b
 // Size: 0x4b
 function function_cadce08fab348041( drop_amount )
@@ -393,7 +393,7 @@ function function_cadce08fab348041( drop_amount )
 }
 
 // Namespace ob_season2 / scripts\mp\gametypes\ob_season2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf6e
 // Size: 0x1d
 function function_e13c1c48f9ef635( data )

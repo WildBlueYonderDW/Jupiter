@@ -17,7 +17,7 @@
 #namespace fulton;
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ab
 // Size: 0xc2
 function fulton_init()
@@ -46,7 +46,7 @@ function fulton_init()
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x675
 // Size: 0x83
 function fulton_initanims()
@@ -58,7 +58,7 @@ function fulton_initanims()
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x700
 // Size: 0x1ac
 function fulton_initrepository()
@@ -87,7 +87,7 @@ function fulton_initrepository()
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8b4
 // Size: 0xeb
 function fulton_create( grenade )
@@ -118,7 +118,7 @@ function fulton_create( grenade )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9a7
 // Size: 0x9d
 function fulton_destroy( damagedata )
@@ -132,7 +132,7 @@ function fulton_destroy( damagedata )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa4c
 // Size: 0xa6
 function fulton_deletenextframe()
@@ -166,7 +166,7 @@ function fulton_deletenextframe()
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xafa
 // Size: 0x151
 function fulton_used( grenade )
@@ -243,7 +243,7 @@ function fulton_used( grenade )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc53
 // Size: 0x9a
 function fulton_check_for_moving_platform( grenade, stuckto )
@@ -268,7 +268,7 @@ function fulton_check_for_moving_platform( grenade, stuckto )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf5
 // Size: 0x15a
 function fulton_planted()
@@ -303,7 +303,7 @@ function fulton_planted()
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe57
 // Size: 0x3a
 function fulton_open()
@@ -315,7 +315,7 @@ function fulton_open()
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe99
 // Size: 0x20
 function fulton_openidle()
@@ -327,7 +327,7 @@ function fulton_openidle()
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xec1
 // Size: 0x3f
 function function_f71b5e7dfcfa8820()
@@ -340,7 +340,7 @@ function function_f71b5e7dfcfa8820()
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf08
 // Size: 0xe6
 function fulton_handledamage( damagedata )
@@ -373,7 +373,7 @@ function fulton_handledamage( damagedata )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xff7
 // Size: 0x14
 function fulton_handlefataldamage( damagedata )
@@ -382,7 +382,7 @@ function fulton_handlefataldamage( damagedata )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1013
 // Size: 0x48
 function fulton_repositoryusecallback( entity, player, amount )
@@ -392,7 +392,7 @@ function fulton_repositoryusecallback( entity, player, amount )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1063
 // Size: 0x3f
 function fulton_repositorycountdownendcallback( entity, fromtimeout )
@@ -406,7 +406,7 @@ function fulton_repositorycountdownendcallback( entity, fromtimeout )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10aa
 // Size: 0x9b
 function fulton_repositoryextractcallback( entity )
@@ -424,7 +424,7 @@ function fulton_repositoryextractcallback( entity )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x114d
 // Size: 0x34
 function fulton_repositoryatcapacitycallback( entity )
@@ -433,7 +433,7 @@ function fulton_repositoryatcapacitycallback( entity )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1189
 // Size: 0xb8, Type: bool
 function fulton_cancreate( grenade )
@@ -453,7 +453,7 @@ function fulton_cancreate( grenade )
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124a
 // Size: 0x49
 function fulton_refundsuper()
@@ -468,7 +468,7 @@ function fulton_refundsuper()
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x129b
 // Size: 0x1e
 function function_5b95dd8b798c16e1()

@@ -7,7 +7,7 @@
 #namespace warrior_shoot;
 
 // Namespace warrior_shoot / namespace_7ca3ed5b6519e0a4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x113
 // Size: 0x17
 function function_9642c94f003bc908()
@@ -17,7 +17,7 @@ function function_9642c94f003bc908()
 }
 
 // Namespace warrior_shoot / namespace_7ca3ed5b6519e0a4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x132
 // Size: 0x58
 function onplayerspawned()

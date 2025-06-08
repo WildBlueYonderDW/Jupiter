@@ -23,7 +23,7 @@
 #namespace br_c130airdrop;
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37b
 // Size: 0x105
 function init()
@@ -31,7 +31,7 @@ function init()
     registersharedfunc( "br_c130Airdrop", "c130Airdrop_onCrateUse", &c130airdrop_oncrateuse );
     level.c130deliveriesinprogress = [];
     level.c130successfulairdrops = [];
-    level.c130airdrop_heightoverride = getdvarint( @"hash_5697ce5db08f0e93", 12000 );
+    level.c130airdrop_heightoverride = getdvarint( @"scr_plunder_airdropcrateheightoverride", 12000 );
     
     /#
         setdevdvarifuninitialized( @"hash_bb26d1091b0f057d", 0 );
@@ -49,7 +49,7 @@ function init()
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x488
 // Size: 0x263
 function c130airdrop_managedrop()
@@ -109,7 +109,8 @@ function c130airdrop_managedrop()
             var_4528266cd203c948 = min( var_b63480e487f34e3a, ceil( cratedifference / var_a027d7566fc885a9 ) );
             var_734798c9f67545df = cratedifference;
             
-            for (i = 0; i < var_4528266cd203c948; i++) {
+            for ( i = 0; i < var_4528266cd203c948 ; i++ )
+            {
                 var_5ee94ae126526f2f = min( var_a027d7566fc885a9, var_734798c9f67545df );
                 var_734798c9f67545df -= var_5ee94ae126526f2f;
                 pathstruct = c130airdrop_createpath( i );
@@ -142,7 +143,7 @@ function c130airdrop_managedrop()
 /#
 
     // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6f3
     // Size: 0x11d, Type: dev
     function function_34b411986509f682()
@@ -186,7 +187,7 @@ function c130airdrop_managedrop()
     }
 
     // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x818
     // Size: 0x18e, Type: dev
     function function_73d8265b112f259d()
@@ -245,7 +246,7 @@ function c130airdrop_managedrop()
 #/
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9ae
 // Size: 0x6c
 function c130airdrop_createpath( pathindex, centerpointoverride, var_60e425cb62ae9e62 )
@@ -263,7 +264,7 @@ function c130airdrop_createpath( pathindex, centerpointoverride, var_60e425cb62a
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa23
 // Size: 0x1a9
 function c130airdrop_createpathstruct( pathindex, centerpointoverride, var_60e425cb62ae9e62 )
@@ -323,7 +324,7 @@ function c130airdrop_createpathstruct( pathindex, centerpointoverride, var_60e42
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd5
 // Size: 0x17a
 function c130airdrop_getvalidteaminlastplace()
@@ -386,7 +387,7 @@ function c130airdrop_getvalidteaminlastplace()
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd58
 // Size: 0x188
 function c130airdrop_getteamaveragepos( var_b36772ca73e9a3d )
@@ -444,7 +445,7 @@ function c130airdrop_getteamaveragepos( var_b36772ca73e9a3d )
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xee9
 // Size: 0x1f7
 function c130airdrop_spawn( pathinfo, pathdist, pathspeed, pathtime )
@@ -477,7 +478,7 @@ function c130airdrop_spawn( pathinfo, pathdist, pathspeed, pathtime )
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x10e9
 // Size: 0x62
 function c130airdrop_startdelivery( var_5ee94ae126526f2f, var_958bbdfed6f2e9ef, var_fe41be11a71dc1b4, dropcircle )
@@ -489,7 +490,7 @@ function c130airdrop_startdelivery( var_5ee94ae126526f2f, var_958bbdfed6f2e9ef, 
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1153
 // Size: 0xd8
 function c130airdrop_deleteatlifetime()
@@ -522,7 +523,7 @@ function c130airdrop_deleteatlifetime()
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1233
 // Size: 0x1b4
 function c130airdrop_dropcrates( var_5ee94ae126526f2f, var_958bbdfed6f2e9ef, var_fe41be11a71dc1b4, dropcircle )
@@ -589,7 +590,7 @@ function c130airdrop_dropcrates( var_5ee94ae126526f2f, var_958bbdfed6f2e9ef, var
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13ef
 // Size: 0xea
 function c130airdrop_findvaliddroplocation( starttrace, var_5ce47de2b275eec8, var_d637e30565be7341 )
@@ -619,7 +620,7 @@ function c130airdrop_findvaliddroplocation( starttrace, var_5ce47de2b275eec8, va
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14e2
 // Size: 0xb5
 function c130airdrop_isnearotherdrop( droplocation )
@@ -642,7 +643,7 @@ function c130airdrop_isnearotherdrop( droplocation )
 }
 
 // Namespace br_c130airdrop / scripts\mp\gametypes\br_c130airdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15a0
 // Size: 0x278
 function c130airdrop_oncrateuse( player )

@@ -1,7 +1,7 @@
 #namespace bodies_iw9_enemy_aq_ar_2;
 
 // Namespace bodies_iw9_enemy_aq_ar_2 / xmodelalias\bodies_iw9_enemy_aq_ar_2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd0
 // Size: 0x20
 function main()

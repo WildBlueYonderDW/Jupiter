@@ -24,7 +24,7 @@
 #namespace blitz;
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba3
 // Size: 0x297
 function main()
@@ -95,7 +95,7 @@ function main()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe42
 // Size: 0xea
 function initializematchrules()
@@ -113,7 +113,7 @@ function initializematchrules()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf34
 // Size: 0xb
 function onspawnplayer( revivespawn )
@@ -122,7 +122,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf47
 // Size: 0x208
 function onstartgametype()
@@ -199,7 +199,7 @@ function onstartgametype()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1157
 // Size: 0x9c
 function updategametypedvars()
@@ -214,7 +214,7 @@ function updategametypedvars()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11fb
 // Size: 0x1bd
 function createflagsandhud()
@@ -245,7 +245,7 @@ function createflagsandhud()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13c0
 // Size: 0x2
 function flag_setupvfx()
@@ -254,7 +254,7 @@ function flag_setupvfx()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13ca
 // Size: 0x14a
 function initspawns()
@@ -285,7 +285,7 @@ function initspawns()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x151c
 // Size: 0x419
 function assignteamspawns()
@@ -373,7 +373,7 @@ function assignteamspawns()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x193d
 // Size: 0xf8
 function getnearestflagteam( spawnpoint )
@@ -407,7 +407,7 @@ function getnearestflagteam( spawnpoint )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a3e
 // Size: 0xd8
 function getspawnpoint()
@@ -443,7 +443,7 @@ function getspawnpoint()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b1f
 // Size: 0x274
 function flag_default_origins()
@@ -527,7 +527,7 @@ function flag_default_origins()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d9b
 // Size: 0x97
 function flag_create_team_goal( team )
@@ -549,7 +549,7 @@ function flag_create_team_goal( team )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e3b
 // Size: 0xb2, Type: bool
 function flag_find_ground( z_offset )
@@ -564,7 +564,7 @@ function flag_find_ground( z_offset )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ef6
 // Size: 0x114
 function showflagradiuseffecttoplayers( team, player, position )
@@ -603,7 +603,7 @@ function showflagradiuseffecttoplayers( team, player, position )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2012
 // Size: 0x110
 function showbaseeffecttoplayer( team, player )
@@ -642,7 +642,7 @@ function showbaseeffecttoplayer( team, player )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x212a
 // Size: 0x3f
 function setteaminhuddatafromteamname( teamname )
@@ -663,7 +663,7 @@ function setteaminhuddatafromteamname( teamname )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2171
 // Size: 0x5cd
 function createteamflag( team, entityteam )
@@ -783,7 +783,7 @@ function createteamflag( team, entityteam )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2747
 // Size: 0xc0
 function createteamflagbase( team, teamflag )
@@ -801,7 +801,7 @@ function createteamflagbase( team, teamflag )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2810
 // Size: 0x24b
 function createcapzone( team, entityteam )
@@ -840,7 +840,7 @@ function createcapzone( team, entityteam )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a64
 // Size: 0x6a
 function onbeginuse( player )
@@ -857,7 +857,7 @@ function onbeginuse( player )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ad6
 // Size: 0x38
 function onenduse( player, team, success )
@@ -866,7 +866,7 @@ function onenduse( player, team, success )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b16
 // Size: 0x421
 function onpickup( player, playervo, defused )
@@ -990,7 +990,7 @@ function onpickup( player, playervo, defused )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f3f
 // Size: 0x44
 function returnflag( team )
@@ -1010,7 +1010,7 @@ function returnflag( team )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f8b
 // Size: 0x199
 function ondrop( player )
@@ -1080,7 +1080,7 @@ function ondrop( player )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x312c
 // Size: 0x8f
 function returnaftertime()
@@ -1106,7 +1106,7 @@ function returnaftertime()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31c3
 // Size: 0x136
 function onreset()
@@ -1145,7 +1145,7 @@ function onreset()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3301
 // Size: 0x24
 function onresetstart( player )
@@ -1154,7 +1154,7 @@ function onresetstart( player )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x332d
 // Size: 0x38
 function onresetend( player, team, success )
@@ -1166,7 +1166,7 @@ function onresetend( player, team, success )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x336d
 // Size: 0x231
 function onuse( player )
@@ -1239,7 +1239,7 @@ function onuse( player )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35a6
 // Size: 0x2e
 function onplayerconnect( player )
@@ -1250,7 +1250,7 @@ function onplayerconnect( player )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35dc
 // Size: 0x88
 function onplayerspawned()
@@ -1278,7 +1278,7 @@ function onplayerspawned()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x366c
 // Size: 0x118
 function applyflagcarrierclass()
@@ -1317,7 +1317,7 @@ function applyflagcarrierclass()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x378c
 // Size: 0x1f
 function waitattachflag()
@@ -1329,7 +1329,7 @@ function waitattachflag()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37b3
 // Size: 0x99
 function removeflagcarrierclass()
@@ -1361,7 +1361,7 @@ function removeflagcarrierclass()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x3854
 // Size: 0x341
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1447,7 +1447,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3b9d
 // Size: 0x5c
 function distsquaredcheck( attackerpos, victimpos, checkpos )
@@ -1464,7 +1464,7 @@ function distsquaredcheck( attackerpos, victimpos, checkpos )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c01
 // Size: 0x52
 function attachflag()
@@ -1475,7 +1475,7 @@ function attachflag()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c5b
 // Size: 0x21
 function detachflag()
@@ -1485,7 +1485,7 @@ function detachflag()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c84
 // Size: 0x8a
 function setspecialloadouts()
@@ -1502,7 +1502,7 @@ function setspecialloadouts()
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d16
 // Size: 0x1d, Type: bool
 function function_180943832c190cc0( isinovertime )
@@ -1511,7 +1511,7 @@ function function_180943832c190cc0( isinovertime )
 }
 
 // Namespace blitz / scripts\mp\gametypes\blitz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d3c
 // Size: 0x36f
 function setupwaypointicons()

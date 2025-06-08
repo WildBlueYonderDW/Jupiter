@@ -1,12 +1,13 @@
 #using scripts\common\callbacks;
 #using scripts\engine\math;
 #using scripts\engine\utility;
+#using scripts\mp\outofbounds;
 
 #namespace namespace_d30c3332ecd51815;
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x233
+// Params 0
+// Checksum 0x0, Offset: 0x23b
 // Size: 0xb
 function main()
 {
@@ -14,8 +15,8 @@ function main()
 }
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x246
+// Params 0
+// Checksum 0x0, Offset: 0x24e
 // Size: 0x8d
 function function_738844ba18b42814()
 {
@@ -23,7 +24,8 @@ function function_738844ba18b42814()
     var_16a2a41f25edbf03 = array_randomize( getstructarray( "limbo_mode_kill_ball_spawn_loc", "targetname" ) );
     limit = getdvarint( @"hash_1b6d772442c811a7", var_16a2a41f25edbf03.size );
     
-    for (i = 0; i < limit; i++) {
+    for ( i = 0; i < limit ; i++ )
+    {
         level thread function_273a2924623954df( var_16a2a41f25edbf03[ i ].origin );
     }
     
@@ -31,9 +33,9 @@ function function_738844ba18b42814()
 }
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2db
-// Size: 0x193
+// Params 2
+// Checksum 0x0, Offset: 0x2e3
+// Size: 0x1a9
 function function_273a2924623954df( spawnlocation, var_3fae9930f2b96d69 )
 {
     ball = spawn( "script_model", spawnlocation );
@@ -54,8 +56,10 @@ function function_273a2924623954df( spawnlocation, var_3fae9930f2b96d69 )
     ball.health = 99999;
     ball.maxhealth = 99999;
     ball.currenthealth = 99999;
+    ball.spawnloc = spawnlocation;
     ball setcandamage( 1 );
     ball thread function_b5cc3a104beea7f5();
+    ball thread function_83b8161c371893ff();
     
     if ( !isdefined( level.var_c8936f922b7d32a1 ) )
     {
@@ -67,8 +71,8 @@ function function_273a2924623954df( spawnlocation, var_3fae9930f2b96d69 )
 }
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x477
+// Params 1
+// Checksum 0x0, Offset: 0x495
 // Size: 0x61, Type: bool
 function isdeathball( ent )
 {
@@ -84,8 +88,8 @@ function isdeathball( ent )
 }
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e1
+// Params 0
+// Checksum 0x0, Offset: 0x4ff
 // Size: 0x9f
 function function_b5cc3a104beea7f5()
 {
@@ -101,8 +105,8 @@ function function_b5cc3a104beea7f5()
 }
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x588
+// Params 0
+// Checksum 0x0, Offset: 0x5a6
 // Size: 0x83
 function function_36e242799d3de02e()
 {
@@ -121,8 +125,8 @@ function function_36e242799d3de02e()
 }
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x613
+// Params 5
+// Checksum 0x0, Offset: 0x631
 // Size: 0x444
 function pushball( ent, ball, normal, var_efce983b772a6f22, contactposition )
 {
@@ -193,8 +197,8 @@ function pushball( ent, ball, normal, var_efce983b772a6f22, contactposition )
 }
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5f
+// Params 1
+// Checksum 0x0, Offset: 0xa7d
 // Size: 0xa1
 function function_eae183e660ed1bd( ball )
 {
@@ -219,8 +223,8 @@ function function_eae183e660ed1bd( ball )
 }
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb08
+// Params 4
+// Checksum 0x0, Offset: 0xb26
 // Size: 0x12b
 function function_508a666f8c32e510( ball, ballspeed, hitsurface, pulse )
 {
@@ -274,8 +278,8 @@ function function_508a666f8c32e510( ball, ballspeed, hitsurface, pulse )
 }
 
 // Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3b
+// Params 0
+// Checksum 0x0, Offset: 0xc59
 // Size: 0x167
 function function_26a3f9262c0e61c1()
 {
@@ -324,5 +328,88 @@ function function_26a3f9262c0e61c1()
             waitframe();
         }
     }
+}
+
+// Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
+// Params 0
+// Checksum 0x0, Offset: 0xdc8
+// Size: 0x14a
+function function_83b8161c371893ff()
+{
+    if ( !getdvarint( @"hash_76cb5c397872dde2", 1 ) )
+    {
+        return;
+    }
+    
+    level endon( "game_ended" );
+    self endon( "death" );
+    var_f4e356cf55b9a82e = 0;
+    waittime = 5;
+    
+    while ( true )
+    {
+        wait waittime;
+        isoob = scripts\mp\outofbounds::ispointinoutofbounds( self.origin );
+        
+        if ( isoob )
+        {
+            result = thread function_f4e356cf55b9a82e( self.spawnloc );
+            
+            if ( result )
+            {
+                return;
+            }
+        }
+        
+        dist = distancesquared( self.origin, self.spawnloc );
+        distthreshold = getdvarint( @"hash_9b4c30312253ac55", 2500 );
+        
+        if ( dist < distthreshold * distthreshold )
+        {
+            waittime = 15;
+            continue;
+        }
+        else if ( dist < distthreshold * 2 * distthreshold * 2 )
+        {
+            waittime = 10;
+        }
+        else
+        {
+            waittime = 5;
+        }
+        
+        checkradius = getdvarint( @"hash_a46e62748bd6dba4", 2000 );
+        playerlist = getplayersinradius( self.origin, checkradius, checkradius );
+        
+        if ( playerlist.size == 0 )
+        {
+            result = thread function_f4e356cf55b9a82e( self.spawnloc );
+            
+            if ( result )
+            {
+                return;
+            }
+        }
+    }
+}
+
+// Namespace namespace_d30c3332ecd51815 / namespace_2a9cffd769289a8
+// Params 1
+// Checksum 0x0, Offset: 0xf1a
+// Size: 0x6f, Type: bool
+function function_f4e356cf55b9a82e( spawnloc )
+{
+    checkradius = getdvarint( @"hash_24b341731de17be1", 2000 );
+    playerlist = getplayersinradius( spawnloc, checkradius, checkradius );
+    
+    if ( playerlist.size == 0 )
+    {
+        level.var_c8936f922b7d32a1 = array_remove( level.var_c8936f922b7d32a1, self );
+        self delete();
+        level thread function_273a2924623954df( spawnloc );
+        return true;
+    }
+    
+    return false;
 }
 

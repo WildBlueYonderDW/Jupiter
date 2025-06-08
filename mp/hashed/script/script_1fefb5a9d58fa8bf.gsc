@@ -110,7 +110,7 @@ function private getautopickupquantity( lootid, var_a06806243448e2c7, quantity, 
 }
 
 // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77b
 // Size: 0x68
 function init()
@@ -132,7 +132,7 @@ function init()
 }
 
 // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7eb
 // Size: 0x49
 function function_c227bd210d16e07c( player, context )
@@ -151,7 +151,7 @@ function private function_63bffcbc307b499()
 }
 
 // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x846
 // Size: 0x201
 function oninfil( player )
@@ -188,7 +188,7 @@ function oninfil( player )
 }
 
 // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa4f
 // Size: 0x25
 function function_8b39e363ca709341()
@@ -204,7 +204,7 @@ function function_8b39e363ca709341()
 }
 
 // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7c
 // Size: 0x15b
 function onsuccessfulextract( player )
@@ -323,7 +323,7 @@ function private function_dfa39169979c22d8( player, var_78311d69ed34c252 )
 }
 
 // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfcd
 // Size: 0x4c
 function function_10440574d3361667( lootid )
@@ -355,7 +355,7 @@ function private function_1c18fdd44dc52444()
 }
 
 // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x102c
 // Size: 0x28
 function function_d5fef0fcb4508f0a( player )
@@ -365,7 +365,7 @@ function function_d5fef0fcb4508f0a( player )
 }
 
 // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x105d
 // Size: 0x3d
 function function_56476767182e6c0e( player, var_68a57894bd5c848 )
@@ -375,7 +375,7 @@ function function_56476767182e6c0e( player, var_68a57894bd5c848 )
 }
 
 // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10a2
 // Size: 0x5f
 function function_b59c29bc25734ddf( player, var_64ad08fc292d8716 )
@@ -404,7 +404,7 @@ function private function_7d2c407c71fe805b()
 /#
 
     // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x1113
     // Size: 0x1a0, Type: dev
     function function_a2415c12f0dccc7b( player, var_2b465f51da1e8fcf, var_2b465e51da1e8d9c, var_6b92729cd2d4b6a6 )
@@ -413,7 +413,8 @@ function private function_7d2c407c71fe805b()
         var_cd8110645a9a2632 = [ "<dev string:x220>", "<dev string:x229>", "<dev string:x233>", "<dev string:x241>", "<dev string:x24d>", "<dev string:x25f>" ];
         var_871bdbc7e5abb341 = [];
         
-        for (i = 0; i < 50; i++) {
+        for ( i = 0; i < 50 ; i++ )
+        {
             lootid = player getplayerdata( level.var_5d69837cf4db0407, "<dev string:x268>", i, "<dev string:x278>" );
             quantity = player getplayerdata( level.var_5d69837cf4db0407, "<dev string:x268>", i, "<dev string:x282>" );
             lootedquantity = player getplayerdata( level.var_5d69837cf4db0407, "<dev string:x268>", i, "<dev string:x28e>" );
@@ -428,7 +429,7 @@ function private function_7d2c407c71fe805b()
     }
 
     // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x12bb
     // Size: 0x18a, Type: dev
     function function_408da9b4e0f08fb2( player, var_2b465f51da1e8fcf, var_2b465e51da1e8d9c, var_6b92729cd2d4b6a6 )
@@ -451,7 +452,7 @@ function private function_7d2c407c71fe805b()
     }
 
     // Namespace namespace_55d169675fb220b4 / namespace_6499f2212dc52bbd
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x144d
     // Size: 0x172, Type: dev
     function function_3d87fb81fa720ae2( player, var_2b465f51da1e8fcf, var_2b465e51da1e8d9c, var_6b92729cd2d4b6a6 )

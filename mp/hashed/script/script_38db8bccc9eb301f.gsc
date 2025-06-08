@@ -14,7 +14,7 @@
 #namespace field_upgrades;
 
 // Namespace field_upgrades / namespace_e23f629a8349dfaf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x229
 // Size: 0xea
 function init()
@@ -38,7 +38,7 @@ function init()
 }
 
 // Namespace field_upgrades / namespace_e23f629a8349dfaf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31b
 // Size: 0xd
 function function_549fe53b0dbd8eb9()
@@ -47,7 +47,7 @@ function function_549fe53b0dbd8eb9()
 }
 
 // Namespace field_upgrades / namespace_e23f629a8349dfaf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x330
 // Size: 0xc5
 function function_e7b6474ebd683537( var_9086f8d586abcdc2, var_bf8ab5d3f72923a8 )
@@ -67,7 +67,7 @@ function function_e7b6474ebd683537( var_9086f8d586abcdc2, var_bf8ab5d3f72923a8 )
 }
 
 // Namespace field_upgrades / namespace_e23f629a8349dfaf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fd
 // Size: 0xe5
 function function_f29f48692125dbe5()
@@ -99,7 +99,7 @@ function function_f29f48692125dbe5()
 }
 
 // Namespace field_upgrades / namespace_e23f629a8349dfaf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4ea
 // Size: 0xc7
 function function_6e6915563d108662( eventstring, victim, sweapon )
@@ -128,7 +128,7 @@ function function_6e6915563d108662( eventstring, victim, sweapon )
 }
 
 // Namespace field_upgrades / namespace_e23f629a8349dfaf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ba
 // Size: 0x3b
 function function_dabbdf1761a23f5c()
@@ -139,7 +139,7 @@ function function_dabbdf1761a23f5c()
 }
 
 // Namespace field_upgrades / namespace_e23f629a8349dfaf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fe
 // Size: 0x34
 function function_ed72d0f08d00c1c0()
@@ -150,7 +150,7 @@ function function_ed72d0f08d00c1c0()
 }
 
 // Namespace field_upgrades / namespace_e23f629a8349dfaf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63b
 // Size: 0x84, Type: bool
 function function_75abcff430ed00b7( weapon_name )
@@ -173,7 +173,7 @@ function function_75abcff430ed00b7( weapon_name )
 }
 
 // Namespace field_upgrades / namespace_e23f629a8349dfaf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c8
 // Size: 0x6d
 function function_2f2713099cb7dd02( weapon_name )
@@ -195,7 +195,7 @@ function function_2f2713099cb7dd02( weapon_name )
 /#
 
     // Namespace field_upgrades / namespace_e23f629a8349dfaf
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x73d
     // Size: 0xaf, Type: dev
     function function_a3bc0cc17a8becc7( a_params )

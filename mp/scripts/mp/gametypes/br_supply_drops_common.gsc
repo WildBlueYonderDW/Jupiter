@@ -19,7 +19,7 @@
 #namespace br_supply_drops_common;
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3df
 // Size: 0xa7
 function init()
@@ -36,7 +36,7 @@ function init()
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x48e
 // Size: 0x238
 function function_69b2e5235bfb7998( name, cratemodel, var_b55272982c57a2ce, onopenfunc )
@@ -71,7 +71,7 @@ function function_69b2e5235bfb7998( name, cratemodel, var_b55272982c57a2ce, onop
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6cf
 // Size: 0x6c
 function function_80e49e34fc8d70b8( name, funcname, func )
@@ -82,7 +82,7 @@ function function_80e49e34fc8d70b8( name, funcname, func )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x743
 // Size: 0x5f
 function function_4b941a30db41d07e( container, opener )
@@ -94,7 +94,7 @@ function function_4b941a30db41d07e( container, opener )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7aa
 // Size: 0x193
 function function_5691429fc16cddc2()
@@ -137,7 +137,7 @@ function function_5691429fc16cddc2()
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x945
 // Size: 0x5
 function function_1422ffcd34611fd1()
@@ -146,7 +146,7 @@ function function_1422ffcd34611fd1()
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x953
 // Size: 0x129
 function function_1a01863a6ec2ad05( pos, droptype )
@@ -168,7 +168,7 @@ function function_1a01863a6ec2ad05( pos, droptype )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa85
 // Size: 0x47
 function function_1241afbfb2cfed35( pos, droptype )
@@ -180,7 +180,7 @@ function function_1241afbfb2cfed35( pos, droptype )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad5
 // Size: 0x113
 function function_8862805d448b58d4( dropstruct )
@@ -231,7 +231,7 @@ function function_8862805d448b58d4( dropstruct )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbf0
 // Size: 0x141
 function function_c28362a9638e7931( dropstruct )
@@ -267,7 +267,7 @@ function function_c28362a9638e7931( dropstruct )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd39
 // Size: 0x13a
 function function_95a507dc67864770( starttrace, var_5ce47de2b275eec8 )
@@ -308,7 +308,7 @@ function function_95a507dc67864770( starttrace, var_5ce47de2b275eec8 )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe7c
 // Size: 0x154
 function function_4a7c28606a956f8d( centerpos, dropstruct )
@@ -338,7 +338,7 @@ function function_4a7c28606a956f8d( centerpos, dropstruct )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd9
 // Size: 0xa1
 function function_6cc331348e2faa9a()
@@ -369,7 +369,7 @@ function function_6cc331348e2faa9a()
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1082
 // Size: 0x141
 function function_2496cdd7babaed39( pathinfo, pathdist, pathspeed, pathtime, model )
@@ -396,7 +396,7 @@ function function_2496cdd7babaed39( pathinfo, pathdist, pathspeed, pathtime, mod
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11cc
 // Size: 0x103
 function function_52f17e5fbec318a6( dropend, dropstruct, dropstart )
@@ -423,7 +423,7 @@ function function_52f17e5fbec318a6( dropend, dropstruct, dropstart )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12d8
 // Size: 0x12d
 function function_98e40becf6aae51f( dropend, dropstruct )
@@ -464,7 +464,7 @@ function function_98e40becf6aae51f( dropend, dropstruct )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x140e
 // Size: 0x33c
 function function_7dec3b199d2e73b8( point, dropstruct )
@@ -485,7 +485,8 @@ function function_7dec3b199d2e73b8( point, dropstruct )
         thread function_d982cb8f96ba4d30();
     }
     
-    for (heightsq = distancesquared( scripts\mp\gametypes\br_public::droptogroundmultitrace( self.origin, -100 ), self.origin ); heightsq > var_81986b2d8e843970 && !istrue( self.var_69c5e9413f4bdb05 ); heightsq = distancesquared( scripts\mp\gametypes\br_public::droptogroundmultitrace( self.origin, -100 ), self.origin )) {
+    for ( heightsq = distancesquared( scripts\mp\gametypes\br_public::droptogroundmultitrace( self.origin, -100 ), self.origin ); heightsq > var_81986b2d8e843970 && !istrue( self.var_69c5e9413f4bdb05 ) ; heightsq = distancesquared( scripts\mp\gametypes\br_public::droptogroundmultitrace( self.origin, -100 ), self.origin ) )
+    {
         thread function_3a64ec0c7632f6cc( point, dropstruct );
         waitframe();
     }
@@ -560,7 +561,7 @@ function function_7dec3b199d2e73b8( point, dropstruct )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1752
 // Size: 0x29
 function function_d982cb8f96ba4d30()
@@ -573,7 +574,7 @@ function function_d982cb8f96ba4d30()
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1783
 // Size: 0x24d
 function function_3a64ec0c7632f6cc( point, dropstruct )
@@ -628,7 +629,7 @@ function function_3a64ec0c7632f6cc( point, dropstruct )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x19d8
 // Size: 0x1fb
 function function_94ff06d2db58e807( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -691,7 +692,7 @@ function function_94ff06d2db58e807( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bdb
 // Size: 0x127, Type: bool
 function function_6b3bfd072d1faafb( player )
@@ -740,7 +741,7 @@ function function_6b3bfd072d1faafb( player )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d0b
 // Size: 0x3a
 function function_b8bfc63550a2b619( player )
@@ -752,7 +753,7 @@ function function_b8bfc63550a2b619( player )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d4d
 // Size: 0x34
 function stopusingcrate( player )
@@ -764,7 +765,7 @@ function stopusingcrate( player )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d89
 // Size: 0x62, Type: bool
 function cankeepusingcrate( player )
@@ -798,7 +799,7 @@ function cankeepusingcrate( player )
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1df4
 // Size: 0x86
 function function_d545b198b75385f6()
@@ -818,7 +819,7 @@ function function_d545b198b75385f6()
 }
 
 // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e82
 // Size: 0x87
 function function_f5d7f1682f6fc578()
@@ -840,7 +841,7 @@ function function_f5d7f1682f6fc578()
 /#
 
     // Namespace br_supply_drops_common / scripts\mp\gametypes\br_supply_drops_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1f11
     // Size: 0x14e, Type: dev
     function function_d1044a7030f099f9()

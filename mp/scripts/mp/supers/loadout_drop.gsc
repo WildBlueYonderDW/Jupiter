@@ -14,7 +14,7 @@
 #namespace loadout_drop;
 
 // Namespace loadout_drop / scripts\mp\supers\loadout_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22d
 // Size: 0xd
 function function_68300cd2b488ba4d()
@@ -23,7 +23,7 @@ function function_68300cd2b488ba4d()
 }
 
 // Namespace loadout_drop / scripts\mp\supers\loadout_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x242
 // Size: 0xc, Type: bool
 function function_40f1163063c26637()
@@ -33,7 +33,7 @@ function function_40f1163063c26637()
 }
 
 // Namespace loadout_drop / scripts\mp\supers\loadout_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x257
 // Size: 0x161
 function function_b1674d8c1e11617f()
@@ -79,7 +79,7 @@ function function_b1674d8c1e11617f()
 }
 
 // Namespace loadout_drop / scripts\mp\supers\loadout_drop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c0
 // Size: 0xa3, Type: bool
 function function_4ca6b5feba808692( grenade )

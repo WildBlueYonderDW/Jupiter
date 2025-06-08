@@ -4,7 +4,7 @@
 #namespace namespace_a8c188143ce759d3;
 
 // Namespace namespace_a8c188143ce759d3 / namespace_a88fd88e39d4308
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe1
 // Size: 0x156
 function createevent( radius )
@@ -21,7 +21,8 @@ function createevent( radius )
     {
         result = [];
         
-        for (i = 0; i < getlootspawnscriptableindexfirst(); i++) {
+        for ( i = 0; i < getlootspawnscriptableindexfirst() ; i++ )
+        {
             scriptableinstance = getscriptableinstancefromindex( i );
             
             if ( !isdefined( scriptableinstance ) )
@@ -43,7 +44,7 @@ function createevent( radius )
 }
 
 // Namespace namespace_a8c188143ce759d3 / namespace_a88fd88e39d4308
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x12c
 function getevent()

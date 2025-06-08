@@ -13,7 +13,7 @@
 #namespace van_hackney_infil;
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc3a
 // Size: 0x9f
 function van_hackney_init( subtype )
@@ -33,7 +33,7 @@ function van_hackney_init( subtype )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xce1
 // Size: 0x95
 function van_hackney_spawn( team, target, subtype, originalsubtype )
@@ -48,7 +48,7 @@ function van_hackney_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd7f
 // Size: 0xd5
 function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubtype )
@@ -71,7 +71,7 @@ function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubty
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe5c
 // Size: 0x56
 function van_hackney_get_length( subtype )
@@ -91,7 +91,7 @@ function van_hackney_get_length( subtype )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xebb
 // Size: 0x3c3
 function player_van_hackney_infil_think( infil, spot_index )
@@ -204,7 +204,7 @@ function player_van_hackney_infil_think( infil, spot_index )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1286
 // Size: 0x34
 function clear_infil_ambient_zone()
@@ -221,7 +221,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c2
 // Size: 0x2c
 function player_infil_end()
@@ -234,7 +234,7 @@ function player_infil_end()
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12f6
 // Size: 0x7b
 function van_infil_radio_idle( infil )
@@ -253,7 +253,7 @@ function van_infil_radio_idle( infil )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1379
 // Size: 0x4c
 function player_van_disconnect()
@@ -272,7 +272,7 @@ function player_van_disconnect()
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13cd
 // Size: 0x17d
 function spawnactors( team, scene_name, extra_crew )
@@ -301,7 +301,7 @@ function spawnactors( team, scene_name, extra_crew )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1552
 // Size: 0x7a
 function blima_chief_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -313,7 +313,7 @@ function blima_chief_play_sound_func( alias, notification, var_9a0afe8ff3d2508f 
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15d4
 // Size: 0x28c
 function infilthink( team, scene_name )
@@ -370,7 +370,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1868
 // Size: 0x1c5
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -401,7 +401,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a35
 // Size: 0x12b
 function spawnpersistentvehicle( type, subtype )
@@ -431,7 +431,7 @@ function spawnpersistentvehicle( type, subtype )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b68
 // Size: 0xda
 function van_interior_sfx( scene_name )
@@ -453,7 +453,7 @@ function van_interior_sfx( scene_name )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c4a
 // Size: 0x17
 function van_infil_sfx_npc1( guy )
@@ -462,7 +462,7 @@ function van_infil_sfx_npc1( guy )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c69
 // Size: 0x17
 function van_infil_sfx_npc2( guy )
@@ -471,7 +471,7 @@ function van_infil_sfx_npc2( guy )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c88
 // Size: 0x17
 function van_infil_sfx_npc3( guy )
@@ -480,7 +480,7 @@ function van_infil_sfx_npc3( guy )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ca7
 // Size: 0x17
 function van_infil_sfx_npc4( guy )
@@ -489,7 +489,7 @@ function van_infil_sfx_npc4( guy )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cc6
 // Size: 0x17
 function van_infil_sfx_npc5( guy )
@@ -498,7 +498,7 @@ function van_infil_sfx_npc5( guy )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ce5
 // Size: 0x17
 function van_infil_sfx_npc6( guy )
@@ -507,7 +507,7 @@ function van_infil_sfx_npc6( guy )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d04
 // Size: 0x17
 function van_infil_sfx_chief( guy )
@@ -516,7 +516,7 @@ function van_infil_sfx_chief( guy )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d23
 // Size: 0x14d
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -538,7 +538,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1e78
 // Size: 0x245
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -636,7 +636,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20c6
 // Size: 0x47f
 function initanims( subtype )
@@ -689,7 +689,7 @@ function initanims( subtype )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x254d
 // Size: 0x34a
 function script_model_alpha_anims()
@@ -737,7 +737,7 @@ function script_model_alpha_anims()
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x289f
 // Size: 0x2
 function vehicles_alpha_anims()
@@ -746,7 +746,7 @@ function vehicles_alpha_anims()
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28a9
 // Size: 0x274
 function spawnvan( scene_node, team, scene_name )
@@ -807,7 +807,7 @@ function spawnvan( scene_node, team, scene_name )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b26
 // Size: 0x7a
 function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -819,7 +819,7 @@ function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ba8
 // Size: 0x7a
 function driver_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -831,7 +831,7 @@ function driver_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c2a
 // Size: 0x6e
 function getcommanderassets( team )
@@ -853,7 +853,7 @@ function getcommanderassets( team )
 }
 
 // Namespace van_hackney_infil / scripts\mp\infilexfil\van_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ca1
 // Size: 0x45
 function customground( guy )

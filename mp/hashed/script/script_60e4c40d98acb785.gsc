@@ -7,8 +7,8 @@
 #namespace perform_recon_contract;
 
 // Namespace perform_recon_contract / namespace_f36e2473a69e9caf
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xff
+// Params 0
+// Checksum 0x0, Offset: 0xfe
 // Size: 0x11
 function function_eda57308516bfc5f()
 {
@@ -16,8 +16,8 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace perform_recon_contract / namespace_f36e2473a69e9caf
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x119
+// Params 1
+// Checksum 0x0, Offset: 0x118
 // Size: 0x1fa
 function evaluatescore( bot )
 {
@@ -51,8 +51,8 @@ function evaluatescore( bot )
 }
 
 // Namespace perform_recon_contract / namespace_f36e2473a69e9caf
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31c
+// Params 1
+// Checksum 0x0, Offset: 0x31b
 // Size: 0xf8
 function actionprocess( bot )
 {
@@ -84,8 +84,8 @@ function actionprocess( bot )
 }
 
 // Namespace perform_recon_contract / namespace_f36e2473a69e9caf
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41c
+// Params 1
+// Checksum 0x0, Offset: 0x41b
 // Size: 0x20
 function function_f4caae7e8af9d32c( action )
 {

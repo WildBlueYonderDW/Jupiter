@@ -44,7 +44,7 @@ function private function_4707c765d202d592( throttle )
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x50b
 // Size: 0xcf
 function throttle_initialize( name, processlimit, updaterate, queuelimit )
@@ -69,7 +69,7 @@ function throttle_initialize( name, processlimit, updaterate, queuelimit )
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e3
 // Size: 0x21
 function throttle_destroy( throttle )
@@ -82,7 +82,7 @@ function throttle_destroy( throttle )
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x60c
 // Size: 0xed
 function function_f632348cbb773537( throttle, entity )
@@ -122,7 +122,7 @@ function function_f632348cbb773537( throttle, entity )
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x701
 // Size: 0x25
 function function_11ab6d104bf77779( throttle, entity )
@@ -131,7 +131,7 @@ function function_11ab6d104bf77779( throttle, entity )
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x72f
 // Size: 0x31
 function function_8ce6c42c18618555( throttle, entity )
@@ -140,7 +140,7 @@ function function_8ce6c42c18618555( throttle, entity )
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x768
 // Size: 0xaf
 function function_af33edfaf05fc572( name, processlimit, updaterate )
@@ -167,7 +167,7 @@ function function_af33edfaf05fc572( name, processlimit, updaterate )
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x820
 // Size: 0x87
 function function_6f7b33660ae155ef( throttle )
@@ -191,7 +191,7 @@ function function_6f7b33660ae155ef( throttle )
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8af
 // Size: 0x25
 function function_ffc20a0cd9408d3e()
@@ -204,7 +204,7 @@ function function_ffc20a0cd9408d3e()
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8dc
 // Size: 0x1e
 function test_print( msg )
@@ -216,7 +216,7 @@ function test_print( msg )
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x902
 // Size: 0x259
 function throttle_ut_initialize()
@@ -246,7 +246,7 @@ function throttle_ut_initialize()
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb63
 // Size: 0xc2
 function throttle_ut_queue()
@@ -264,7 +264,7 @@ function throttle_ut_queue()
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc2d
 // Size: 0x117
 function throttle_ut_queue_10()
@@ -274,7 +274,8 @@ function throttle_ut_queue_10()
     test_print( "CALL - throttle_initialize( " + 1 + ", " + level.framedurationseconds + ")" );
     ents = [];
     
-    for (i = 1; i <= 10; i++) {
+    for ( i = 1; i <= 10 ; i++ )
+    {
         ents[ ents.size ] = spawn( "script_model", ( 0, 0, 0 ) );
         function_f632348cbb773537( test_throttle, ents[ ents.size - 1 ] );
         test_print( "CALL - wait_in_queue " + i );
@@ -289,7 +290,7 @@ function throttle_ut_queue_10()
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd4c
 // Size: 0x117
 function throttle_ut_queue_10_threaded()
@@ -299,7 +300,8 @@ function throttle_ut_queue_10_threaded()
     test_print( "CALL - throttle_initialize( " + 1 + ", " + level.framedurationseconds + ")" );
     ents = [];
     
-    for (i = 1; i <= 10; i++) {
+    for ( i = 1; i <= 10 ; i++ )
+    {
         ents[ ents.size ] = spawn( "script_model", ( 0, 0, 0 ) );
         thread function_f632348cbb773537( test_throttle, ents[ ents.size - 1 ] );
         test_print( "CALL - wait_in_queue " + i );
@@ -314,7 +316,7 @@ function throttle_ut_queue_10_threaded()
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe6b
 // Size: 0x13c
 function throttle_ut_leave_queue()
@@ -324,7 +326,8 @@ function throttle_ut_leave_queue()
     test_print( "CALL - throttle_initialize( " + 1 + ", " + level.framedurationseconds + ")" );
     ents = [];
     
-    for (i = 1; i <= 10; i++) {
+    for ( i = 1; i <= 10 ; i++ )
+    {
         ents[ ents.size ] = spawn( "script_model", ( 0, 0, 0 ) );
         thread function_f632348cbb773537( test_throttle, ents[ ents.size - 1 ] );
         test_print( "CALL - wait_in_queue " + i );

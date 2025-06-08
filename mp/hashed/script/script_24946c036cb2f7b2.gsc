@@ -11,7 +11,7 @@
 #namespace namespace_c3cbdb17ee537af1;
 
 // Namespace namespace_c3cbdb17ee537af1 / namespace_9718b9a169c3ead0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd
 // Size: 0x16
 function function_cb146e445d78e9ee()
@@ -20,7 +20,7 @@ function function_cb146e445d78e9ee()
 }
 
 // Namespace namespace_c3cbdb17ee537af1 / namespace_9718b9a169c3ead0
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11b
 // Size: 0x7d
 function function_a7679b1e7a48f91( activationname, players, var_c3b480c3f8207bab )
@@ -46,7 +46,7 @@ function function_a7679b1e7a48f91( activationname, players, var_c3b480c3f8207bab
 }
 
 // Namespace namespace_c3cbdb17ee537af1 / namespace_9718b9a169c3ead0
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a1
 // Size: 0xa8
 function function_43007b614b2eb884( activationname, players, cooldownseconds )
@@ -80,7 +80,7 @@ function function_43007b614b2eb884( activationname, players, cooldownseconds )
 }
 
 // Namespace namespace_c3cbdb17ee537af1 / namespace_9718b9a169c3ead0
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x251
 // Size: 0x4e
 function function_5b45cad5c8f016ab( eventref, players, includedeadplayers, var_c3b480c3f8207bab )
@@ -96,7 +96,7 @@ function function_5b45cad5c8f016ab( eventref, players, includedeadplayers, var_c
 }
 
 // Namespace namespace_c3cbdb17ee537af1 / namespace_9718b9a169c3ead0
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a8
 // Size: 0x41
 function function_90db3e7d7b085484( var_1d1eecf1ed7cbdb0, eventref, players )
@@ -112,7 +112,7 @@ function function_90db3e7d7b085484( var_1d1eecf1ed7cbdb0, eventref, players )
 }
 
 // Namespace namespace_c3cbdb17ee537af1 / namespace_9718b9a169c3ead0
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2f2
 // Size: 0x8b
 function function_7175613cab6db0dc( var_1d1eecf1ed7cbdb0, eventref, players, cooldownseconds )
@@ -189,7 +189,7 @@ function private function_73e12b91e73e2977( players )
 }
 
 // Namespace namespace_c3cbdb17ee537af1 / namespace_9718b9a169c3ead0
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x505
 // Size: 0xce
 function function_d52f11eff492795d( player, var_45e792783f2a92ab, var_81c927dcd9cba1f9 )
@@ -225,7 +225,7 @@ function function_d52f11eff492795d( player, var_45e792783f2a92ab, var_81c927dcd9
 }
 
 // Namespace namespace_c3cbdb17ee537af1 / namespace_9718b9a169c3ead0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5dc
 // Size: 0xb9, Type: bool
 function function_1abf09c903e6c16b( players, lootref )

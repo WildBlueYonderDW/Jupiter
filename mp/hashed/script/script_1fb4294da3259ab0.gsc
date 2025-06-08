@@ -12,7 +12,7 @@
 #namespace ob_dog_whistle;
 
 // Namespace ob_dog_whistle / namespace_d546a7e525bb4c8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c4
 // Size: 0x24
 function function_d18f1e707dc52a0d()
@@ -25,7 +25,7 @@ function function_d18f1e707dc52a0d()
 }
 
 // Namespace ob_dog_whistle / namespace_d546a7e525bb4c8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f0
 // Size: 0x130
 function spawn_hellhound_pet()
@@ -136,7 +136,7 @@ function private function_1ccfcd11184fd840( params )
 /#
 
     // Namespace ob_dog_whistle / namespace_d546a7e525bb4c8
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x524
     // Size: 0x2e, Type: dev
     function function_9b5eae6a141d151()
@@ -147,7 +147,7 @@ function private function_1ccfcd11184fd840( params )
     }
 
     // Namespace ob_dog_whistle / namespace_d546a7e525bb4c8
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x55a
     // Size: 0x59, Type: dev
     function function_cb675302a33d65ae()

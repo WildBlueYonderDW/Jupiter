@@ -12,7 +12,7 @@
 #namespace mp_jup_greece;
 
 // Namespace mp_jup_greece / scripts\mp\maps\mp_jup_greece\mp_jup_greece
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a3
 // Size: 0xa6
 function main()
@@ -33,7 +33,7 @@ function main()
 }
 
 // Namespace mp_jup_greece / scripts\mp\maps\mp_jup_greece\mp_jup_greece
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x251
 // Size: 0xb1
 function initoob()

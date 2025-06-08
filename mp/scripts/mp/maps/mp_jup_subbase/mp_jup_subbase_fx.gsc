@@ -1,7 +1,7 @@
 #namespace mp_jup_subbase_fx;
 
 // Namespace mp_jup_subbase_fx / scripts\mp\maps\mp_jup_subbase\mp_jup_subbase_fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11e
 // Size: 0x50
 function main()

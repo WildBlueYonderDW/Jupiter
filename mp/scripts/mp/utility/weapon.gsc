@@ -13,7 +13,7 @@
 #namespace weapon;
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16fb
 // Size: 0x40
 function getattachmenttype( attachmentname )
@@ -29,7 +29,7 @@ function getattachmenttype( attachmentname )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1744
 // Size: 0x50
 function getcompleteweaponnamenoalt( objweapon )
@@ -51,7 +51,7 @@ function getcompleteweaponnamenoalt( objweapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x179d
 // Size: 0x266
 function getweapontype( weapon )
@@ -225,7 +225,7 @@ function getweapontype( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a0c
 // Size: 0x7f
 function getequipmenttype( objweapon )
@@ -249,7 +249,7 @@ function getequipmenttype( objweapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a93
 // Size: 0x95, Type: bool
 function isenvironmentweapon( weapon )
@@ -286,7 +286,7 @@ function isenvironmentweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b31
 // Size: 0x28, Type: bool
 function issuperweapon( weapon )
@@ -301,7 +301,7 @@ function issuperweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b62
 // Size: 0x16
 function isakimbo( weapon )
@@ -310,7 +310,7 @@ function isakimbo( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b81
 // Size: 0x69, Type: bool
 function issuperdamagesource( weapon )
@@ -350,7 +350,7 @@ function issuperdamagesource( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bf3
 // Size: 0x14a, Type: bool
 function isgamemodeweapon( weapon )
@@ -426,7 +426,7 @@ function isgamemodeweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d46
 // Size: 0x6a, Type: bool
 function islevelweapon( weapon )
@@ -456,7 +456,7 @@ function islevelweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1db9
 // Size: 0xa3
 function getweapongroup( weapon )
@@ -499,7 +499,7 @@ function getweapongroup( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e65
 // Size: 0x79
 function getbaseweapongroup( weapon )
@@ -525,7 +525,7 @@ function getbaseweapongroup( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ee7
 // Size: 0x4d, Type: bool
 function isunderwaterweapon( weapon )
@@ -550,7 +550,7 @@ function isunderwaterweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f3d
 // Size: 0x3b, Type: bool
 function isclimbweapon( weapon )
@@ -570,7 +570,7 @@ function isclimbweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f81
 // Size: 0x3b, Type: bool
 function function_1e9278ba699927f7( weapon )
@@ -590,7 +590,7 @@ function function_1e9278ba699927f7( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fc5
 // Size: 0x54, Type: bool
 function isdragonsbreath( weapon )
@@ -616,7 +616,7 @@ function isdragonsbreath( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2022
 // Size: 0xae
 function isballisticspecial( weapon )
@@ -649,7 +649,7 @@ function isballisticspecial( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20d8
 // Size: 0xa9
 function getallselectableattachments( weapon )
@@ -671,7 +671,7 @@ function getallselectableattachments( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x218a
 // Size: 0x5f
 function getdefaultweaponbasename( basename )
@@ -687,7 +687,7 @@ function getdefaultweaponbasename( basename )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21f2
 // Size: 0x40
 function getweaponbasenamescript( weapon )
@@ -706,7 +706,7 @@ function getweaponbasenamescript( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x223b
 // Size: 0x59
 function getweapongunsmithattachmenttable( weapon )
@@ -727,7 +727,7 @@ function getweapongunsmithattachmenttable( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x229d
 // Size: 0x27
 function getaltmodeweapon( objweapon )
@@ -741,7 +741,7 @@ function getaltmodeweapon( objweapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22cd
 // Size: 0x27
 function function_b53839dc08a64fde( objweapon )
@@ -755,7 +755,7 @@ function function_b53839dc08a64fde( objweapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22fd
 // Size: 0x23, Type: bool
 function isaltmodeweapon( weaponname )
@@ -769,7 +769,7 @@ function isaltmodeweapon( weaponname )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2329
 // Size: 0x20
 function removealtmodefromweaponname( weaponname )
@@ -783,7 +783,7 @@ function removealtmodefromweaponname( weaponname )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2352
 // Size: 0xa6
 function getvalidextraammoweapons()
@@ -805,7 +805,7 @@ function getvalidextraammoweapons()
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2401
 // Size: 0xbd, Type: bool
 function ispickedupweapon( weapon )
@@ -841,7 +841,7 @@ function ispickedupweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24c7
 // Size: 0x140
 function isloadoutweapon( objweapon )
@@ -870,7 +870,7 @@ function isloadoutweapon( objweapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x260f
 // Size: 0x19
 function iscacprimaryweapon( weapon )
@@ -879,7 +879,7 @@ function iscacprimaryweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2631
 // Size: 0xb1
 function iscacprimaryweapongroup( weapongroup, weapon )
@@ -904,7 +904,7 @@ function iscacprimaryweapongroup( weapongroup, weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26ea
 // Size: 0x19
 function iscacsecondaryweapon( weapon )
@@ -913,7 +913,7 @@ function iscacsecondaryweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x270c
 // Size: 0x69
 function iscacsecondaryweapongroup( weapongroup, weapon )
@@ -933,7 +933,7 @@ function iscacsecondaryweapongroup( weapongroup, weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x277d
 // Size: 0x32, Type: bool
 function iscacprimaryorsecondary( weapon )
@@ -943,7 +943,7 @@ function iscacprimaryorsecondary( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27b8
 // Size: 0x30, Type: bool
 function iscacmeleeweapon( weapon )
@@ -953,7 +953,7 @@ function iscacmeleeweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27f1
 // Size: 0x2a
 function enableweaponlaser()
@@ -968,7 +968,7 @@ function enableweaponlaser()
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2823
 // Size: 0x5c
 function disableweaponlaser()
@@ -985,7 +985,7 @@ function disableweaponlaser()
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2887
 // Size: 0x63
 function weaponperkmap( weaponroot )
@@ -1001,7 +1001,7 @@ function weaponperkmap( weaponroot )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28f3
 // Size: 0x36
 function getrandomweaponfromgroup( group )
@@ -1011,7 +1011,7 @@ function getrandomweaponfromgroup( group )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2932
 // Size: 0xa8
 function getweaponvariantids( weaponroot, blockedids )
@@ -1047,7 +1047,7 @@ function getweaponvariantids( weaponroot, blockedids )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29e3
 // Size: 0x65
 function getweaponrandomvariantid( weaponroot, blockedids )
@@ -1071,7 +1071,7 @@ function getweaponrandomvariantid( weaponroot, blockedids )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a51
 // Size: 0x17, Type: bool
 function weaponexistsinstatstable( weaponroot )
@@ -1080,7 +1080,7 @@ function weaponexistsinstatstable( weaponroot )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a71
 // Size: 0x84, Type: bool
 function weaponisvalid( weaponroot, variantid )
@@ -1101,7 +1101,7 @@ function weaponisvalid( weaponroot, variantid )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2afe
 // Size: 0x32
 function isattachmentsniperscopedefault( weaponname, attachname )
@@ -1111,7 +1111,7 @@ function isattachmentsniperscopedefault( weaponname, attachname )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b39
 // Size: 0xba
 function isattachmentsniperscopedefaulttokenized( weapontokens, attachname )
@@ -1141,7 +1141,7 @@ function isattachmentsniperscopedefaulttokenized( weapontokens, attachname )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bfc
 // Size: 0x9b
 function getnonopticattachmentlistbasenames()
@@ -1149,7 +1149,8 @@ function getnonopticattachmentlistbasenames()
     attachmentlist = [];
     numrows = tablelookupgetnumrows( "mp/attachmenttable.csv" );
     
-    for (index = 0; index < numrows; index++) {
+    for ( index = 0; index < numrows ; index++ )
+    {
         attachmentname = tablelookupbyrow( "mp/attachmenttable.csv", index, 5 );
         group = tablelookupbyrow( "mp/attachmenttable.csv", index, 2 );
         
@@ -1163,7 +1164,7 @@ function getnonopticattachmentlistbasenames()
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ca0
 // Size: 0xb9
 function getopticattachmentlistbasenames()
@@ -1176,7 +1177,8 @@ function getopticattachmentlistbasenames()
     attachmentlist = [];
     numrows = tablelookupgetnumrows( "mp/attachmenttable.csv" );
     
-    for (index = 0; index < numrows; index++) {
+    for ( index = 0; index < numrows ; index++ )
+    {
         group = tablelookupbyrow( "mp/attachmenttable.csv", index, 2 );
         attachmentname = tablelookupbyrow( "mp/attachmenttable.csv", index, 5 );
         
@@ -1191,7 +1193,7 @@ function getopticattachmentlistbasenames()
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d62
 // Size: 0x305
 function mapweapon( objweapon, inflictor, var_a2c7a399ae430eb )
@@ -1299,7 +1301,7 @@ function mapweapon( objweapon, inflictor, var_a2c7a399ae430eb )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3070
 // Size: 0x7b
 function attachmentsfilterforstats( attachments, weapon )
@@ -1323,7 +1325,7 @@ function attachmentsfilterforstats( attachments, weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30f4
 // Size: 0x3f, Type: bool
 function attachmentlogsstats( attachment, weapon )
@@ -1347,7 +1349,7 @@ function attachmentlogsstats( attachment, weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x313c
 // Size: 0x86, Type: bool
 function weaponhasattachment( weapon, attachmentname )
@@ -1376,7 +1378,7 @@ function weaponhasattachment( weapon, attachmentname )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31cb
 // Size: 0xea, Type: bool
 function function_8a4f25fb9d4c43c8( weapon )
@@ -1423,7 +1425,7 @@ function function_8a4f25fb9d4c43c8( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32be
 // Size: 0xbd
 function setrecoilscale( scaler, scaleoverride )
@@ -1468,7 +1470,7 @@ function setrecoilscale( scaler, scaleoverride )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x3383
 // Size: 0x92
 function _launchgrenade( weaponname, origin, velocity, var_c301d652d9a73075, notthrown, var_997a34f6ab5cb7fc, var_48a4928bab483049 )
@@ -1494,7 +1496,7 @@ function _launchgrenade( weaponname, origin, velocity, var_c301d652d9a73075, not
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x341e
 // Size: 0x27, Type: bool
 function grenadethrown( grenade )
@@ -1503,7 +1505,7 @@ function grenadethrown( grenade )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x344e
 // Size: 0xe, Type: bool
 function grenadeinpullback()
@@ -1512,7 +1514,7 @@ function grenadeinpullback()
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3465
 // Size: 0x9a
 function weaponignoresblastshield( objweapon, shitloc )
@@ -1543,7 +1545,7 @@ function weaponignoresblastshield( objweapon, shitloc )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3507
 // Size: 0xd6
 function issinglehitweapon( weaponname )
@@ -1573,9 +1575,9 @@ function issinglehitweapon( weaponname )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35e5
-// Size: 0x2e, Type: bool
+// Size: 0x2e
 function attachmentisselectable( weaponobj, attachment )
 {
     rootname = getweaponrootname( weaponobj );
@@ -1583,7 +1585,7 @@ function attachmentisselectable( weaponobj, attachment )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x361c
 // Size: 0x7e, Type: bool
 function attachmentisselectablerootname( weaponrootname, attachment )
@@ -1602,7 +1604,7 @@ function attachmentisselectablerootname( weaponrootname, attachment )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36a3
 // Size: 0x95
 function weapongetflinchtype( weaponobj )
@@ -1640,7 +1642,7 @@ function weapongetflinchtype( weaponobj )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3741
 // Size: 0x9e, Type: bool
 function isbombsiteweapon( weapon )
@@ -1677,7 +1679,7 @@ function isbombsiteweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37e8
 // Size: 0x2d, Type: bool
 function iskillstreakvehicleinflictor( einflictor )
@@ -1686,7 +1688,7 @@ function iskillstreakvehicleinflictor( einflictor )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x381e
 // Size: 0x8f
 function weaponbypassspawnprotection( weapon )
@@ -1718,7 +1720,7 @@ function weaponbypassspawnprotection( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38b6
 // Size: 0x3cf
 function isvehicleweapon( weapon )
@@ -1822,7 +1824,7 @@ function isvehicleweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c8d
 // Size: 0x87
 function function_858ed945747dfb28( weapon )
@@ -1856,7 +1858,7 @@ function function_858ed945747dfb28( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d1c
 // Size: 0x73
 function isgesture( weapon )
@@ -1892,7 +1894,7 @@ function isgesture( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d97
 // Size: 0x35
 function getweaponfullname( weapon )
@@ -1912,7 +1914,7 @@ function getweaponfullname( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3dd4
 // Size: 0x330
 function playdeatomizefx( soundoverride, offset )
@@ -1966,7 +1968,7 @@ function playdeatomizefx( soundoverride, offset )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x410c
 // Size: 0xc7
 function isprimaryweapon( objweapon )
@@ -1998,7 +2000,7 @@ function isprimaryweapon( objweapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41db
 // Size: 0x68, Type: bool
 function islauncherweapon( weapon )
@@ -2022,7 +2024,7 @@ function islauncherweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x424c
 // Size: 0x6e, Type: bool
 function ismeleeoverrideweapon( weapon )
@@ -2046,7 +2048,7 @@ function ismeleeoverrideweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42c3
 // Size: 0x4a
 function ismeleeonly( weapon )
@@ -2066,7 +2068,7 @@ function ismeleeonly( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4316
 // Size: 0x3e, Type: bool
 function isfistsonly( weapon )
@@ -2081,7 +2083,7 @@ function isfistsonly( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x435d
 // Size: 0x46, Type: bool
 function isballweapon( objweapon )
@@ -2096,7 +2098,7 @@ function isballweapon( objweapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43ac
 // Size: 0x3e, Type: bool
 function isakimbomeleeweapon( weapon )
@@ -2111,7 +2113,7 @@ function isakimbomeleeweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43f3
 // Size: 0x7a, Type: bool
 function isthrowingknife( weapon )
@@ -2147,7 +2149,7 @@ function isthrowingknife( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4476
 // Size: 0x6b
 function isthrowingstar( weapon )
@@ -2183,7 +2185,7 @@ function isthrowingstar( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44ea
 // Size: 0x7a, Type: bool
 function issnowball( weapon )
@@ -2219,7 +2221,7 @@ function issnowball( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x456d
 // Size: 0x6b
 function function_6acbd7091f4b88ea( weapon )
@@ -2255,7 +2257,7 @@ function function_6acbd7091f4b88ea( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45e1
 // Size: 0x6b
 function function_ef71b0d20683d9aa( weapon )
@@ -2291,7 +2293,7 @@ function function_ef71b0d20683d9aa( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4655
 // Size: 0x74, Type: bool
 function isspecialmeleeweapon( weapon )
@@ -2332,7 +2334,7 @@ function isspecialmeleeweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46d2
 // Size: 0x93, Type: bool
 function isgunlessweapon( weapon )
@@ -2368,7 +2370,7 @@ function isgunlessweapon( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x476e
 // Size: 0x6b
 function function_8dee2e8a9f97d5aa( weapon )
@@ -2404,10 +2406,10 @@ function function_8dee2e8a9f97d5aa( weapon )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 3, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x47e2
-// Size: 0xb4
-function infiniteammothread( waittime, weapons, refreshweaponlist )
+// Size: 0xec
+function infiniteammothread( waittime, weapons, refreshweaponlist, var_65fff3ee4995329b )
 {
     self endon( "death_or_disconnect" );
     self endon( "stop_infinite_ammo_thread" );
@@ -2419,6 +2421,11 @@ function infiniteammothread( waittime, weapons, refreshweaponlist )
     
     while ( true )
     {
+        if ( isdefined( self.arcade_unlimited_ammo ) && !self.arcade_unlimited_ammo )
+        {
+            return;
+        }
+        
         if ( !isdefined( weapons ) || istrue( refreshweaponlist ) )
         {
             weapons = self.equippedweapons;
@@ -2426,6 +2433,11 @@ function infiniteammothread( waittime, weapons, refreshweaponlist )
         
         foreach ( weapon in weapons )
         {
+            if ( istrue( var_65fff3ee4995329b ) && !iscacprimaryorsecondary( weapon ) )
+            {
+                continue;
+            }
+            
             self givemaxammo( weapon );
             self setweaponammoclip( weapon, weaponclipsize( weapon ) );
         }
@@ -2435,8 +2447,8 @@ function infiniteammothread( waittime, weapons, refreshweaponlist )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x489e
+// Params 0
+// Checksum 0x0, Offset: 0x48d6
 // Size: 0xa
 function stopinfiniteammothread()
 {
@@ -2444,10 +2456,10 @@ function stopinfiniteammothread()
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x48b0
-// Size: 0xae
-function function_1f1487da79807a91( waittime, refreshweaponlist )
+// Params 3
+// Checksum 0x0, Offset: 0x48e8
+// Size: 0xe6
+function function_1f1487da79807a91( waittime, refreshweaponlist, var_65fff3ee4995329b )
 {
     self endon( "death_or_disconnect" );
     self endon( "stop_infinite_ammo_thread_akimbo" );
@@ -2466,8 +2478,18 @@ function function_1f1487da79807a91( waittime, refreshweaponlist )
     
     while ( true )
     {
+        if ( isdefined( self.arcade_unlimited_ammo ) && !self.arcade_unlimited_ammo )
+        {
+            return;
+        }
+        
         foreach ( w in weapons )
         {
+            if ( istrue( var_65fff3ee4995329b ) && !iscacprimaryorsecondary( w ) )
+            {
+                continue;
+            }
+            
             self givestartammo( w );
         }
         
@@ -2476,8 +2498,8 @@ function function_1f1487da79807a91( waittime, refreshweaponlist )
 }
 
 // Namespace weapon / scripts\mp\utility\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4966
+// Params 0
+// Checksum 0x0, Offset: 0x49d6
 // Size: 0xa
 function function_c513faaa06a681b1()
 {

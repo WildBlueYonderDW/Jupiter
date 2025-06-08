@@ -5,7 +5,7 @@
 #namespace vehicle_spawn_mp;
 
 // Namespace vehicle_spawn_mp / scripts\mp\vehicles\vehicle_spawn_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe5
 // Size: 0x18
 function vehicle_spawn_mp_init()
@@ -14,7 +14,7 @@ function vehicle_spawn_mp_init()
 }
 
 // Namespace vehicle_spawn_mp / scripts\mp\vehicles\vehicle_spawn_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x105
 // Size: 0x4e, Type: bool
 function vehicle_spawn_mp_canspawnvehicle( vehicleref, owner, team )

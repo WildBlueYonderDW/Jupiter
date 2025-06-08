@@ -16,7 +16,7 @@
 #namespace molotov;
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f5
 // Size: 0x1a9
 function molotov_init()
@@ -46,7 +46,7 @@ function molotov_init()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a6
 // Size: 0x22c
 function molotov_init_cast_data()
@@ -98,7 +98,7 @@ function molotov_init_cast_data()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9da
 // Size: 0x150
 function molotov_init_pool_data()
@@ -135,7 +135,7 @@ function molotov_init_pool_data()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb32
 // Size: 0x187
 function molotov_init_pool_mask()
@@ -183,7 +183,7 @@ function molotov_init_pool_mask()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcc1
 // Size: 0x23
 function molotov_on_give( equipmentref, slot, variantid )
@@ -192,7 +192,7 @@ function molotov_on_give( equipmentref, slot, variantid )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcec
 // Size: 0x1b
 function molotov_on_take( equipmentref, slot )
@@ -201,7 +201,7 @@ function molotov_on_take( equipmentref, slot )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd0f
 // Size: 0x10d
 function molotov_used( grenade )
@@ -239,7 +239,7 @@ function molotov_used( grenade )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe24
 // Size: 0x28
 function function_e56975d29612c12a( grenade )
@@ -251,7 +251,7 @@ function function_e56975d29612c12a( grenade )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe54
 // Size: 0x131
 function molotov_stuck( grenade, stuckto, launchangles, impactvelocity )
@@ -288,7 +288,7 @@ function molotov_stuck( grenade, stuckto, launchangles, impactvelocity )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf8d
 // Size: 0x204
 function molotov_stuck_player( grenade, stuckto, launchangles, impactvelocity )
@@ -339,7 +339,7 @@ function molotov_stuck_player( grenade, stuckto, launchangles, impactvelocity )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1199
 // Size: 0x88
 function molotovbadplace( impactorigin )
@@ -362,7 +362,7 @@ function molotovbadplace( impactorigin )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x122a
 // Size: 0x6f3
 function molotov_simulate_impact( grenade, impactorigin, impactangles, impactent, impactvelocity, impacttime, var_54c186a6b8a2ae1 )
@@ -529,7 +529,7 @@ function molotov_simulate_impact( grenade, impactorigin, impactangles, impactent
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1925
 // Size: 0xbc
 function molotov_cleanup()
@@ -569,7 +569,7 @@ function molotov_cleanup()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x19e9
 // Size: 0x111
 function molotov_create_shared_data( owner, impacttime, burnsource, burnid )
@@ -591,7 +591,7 @@ function molotov_create_shared_data( owner, impacttime, burnsource, burnid )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b03
 // Size: 0x52
 function molotov_register_cast( shareddata )
@@ -604,7 +604,7 @@ function molotov_register_cast( shareddata )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b5d
 // Size: 0x95
 function molotov_register_scriptable( shareddata )
@@ -622,7 +622,7 @@ function molotov_register_scriptable( shareddata )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bfa
 // Size: 0x7e
 function molotov_register_trigger( trigger )
@@ -638,7 +638,7 @@ function molotov_register_trigger( trigger )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c80
 // Size: 0x82
 function molotov_delete_scriptable()
@@ -657,7 +657,7 @@ function molotov_delete_scriptable()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d0a
 // Size: 0xa2
 function molotov_delete_trigger()
@@ -676,7 +676,7 @@ function molotov_delete_trigger()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1db4
 // Size: 0xd6
 function molotov_delete_oldest_scriptable( immediate )
@@ -714,7 +714,7 @@ function molotov_delete_oldest_scriptable( immediate )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e92
 // Size: 0xaf
 function molotov_delete_oldest_trigger( immediate )
@@ -742,7 +742,7 @@ function molotov_delete_oldest_trigger( immediate )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f49
 // Size: 0xec
 function molotov_delete_pool_by_id( id, immediate )
@@ -775,7 +775,7 @@ function molotov_delete_pool_by_id( id, immediate )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x203d
 // Size: 0xb2, Type: bool
 function molotov_can_cast_this_frame( shareddata )
@@ -808,7 +808,7 @@ function molotov_can_cast_this_frame( shareddata )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20f8
 // Size: 0xf5
 function molotov_shared_data_is_complete( var_af8745e2185687a8 )
@@ -855,7 +855,7 @@ function molotov_shared_data_is_complete( var_af8745e2185687a8 )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21f6
 // Size: 0xf8
 function molotov_store_branch_ents()
@@ -885,7 +885,7 @@ function molotov_store_branch_ents()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x22f6
 // Size: 0x12c
 function molotov_create_branch( shareddata, castdata, pooldata, parent, startingorigin, startingangles, startingstuckto, startingcasttype, preventstarttime, oncompletedfunc )
@@ -910,7 +910,7 @@ function molotov_create_branch( shareddata, castdata, pooldata, parent, starting
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x242b
 // Size: 0x794
 function molotov_start_branch( var_54c186a6b8a2ae1 )
@@ -1129,7 +1129,7 @@ function molotov_start_branch( var_54c186a6b8a2ae1 )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2bc7
 // Size: 0x27f
 function molotov_branch_is_complete( var_af8745e2185687a8, var_f7d3f0b0605b5824, var_54c186a6b8a2ae1 )
@@ -1217,7 +1217,7 @@ function molotov_branch_is_complete( var_af8745e2185687a8, var_f7d3f0b0605b5824,
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2e4f
 // Size: 0x17a
 function molotov_branch_register_cast( casttype, var_8e87ebe279cdfcfb, hitposition )
@@ -1290,7 +1290,7 @@ function molotov_branch_register_cast( casttype, var_8e87ebe279cdfcfb, hitpositi
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x2fd1
 // Size: 0x1ce
 function molotov_create_pool( origin, angles, stuckto, owner, burnsource, burnid, starttime, pooldata, poolmask, id, var_54c186a6b8a2ae1 )
@@ -1325,7 +1325,7 @@ function molotov_create_pool( origin, angles, stuckto, owner, burnsource, burnid
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x31a8
 // Size: 0x163
 function molotov_branch_create_pool( origin, angles, stuckto, var_54c186a6b8a2ae1 )
@@ -1357,7 +1357,7 @@ function molotov_branch_create_pool( origin, angles, stuckto, var_54c186a6b8a2ae
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3314
 // Size: 0x58
 function molotov_pool_start()
@@ -1382,7 +1382,7 @@ function molotov_pool_start()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3374
 // Size: 0x14c
 function molotov_watch_pool()
@@ -1415,7 +1415,7 @@ function molotov_watch_pool()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34c8
 // Size: 0x9e
 function molotov_pool_end( immediate )
@@ -1452,7 +1452,7 @@ function molotov_pool_end( immediate )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x356e
 // Size: 0x18
 function molotov_watch_cleanup_pool()
@@ -1463,7 +1463,7 @@ function molotov_watch_cleanup_pool()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x358e
 // Size: 0x44
 function molotov_watch_cleanup_pool_internal()
@@ -1480,7 +1480,7 @@ function molotov_watch_cleanup_pool_internal()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x35da
 // Size: 0x1a8
 function molotov_create_pool_trigger( triggerradius, triggerheight, triggeroffset )
@@ -1514,7 +1514,7 @@ function molotov_create_pool_trigger( triggerradius, triggerheight, triggeroffse
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x378b
 // Size: 0x15b
 function molotov_watch_pool_trigger_enter()
@@ -1563,7 +1563,7 @@ function molotov_watch_pool_trigger_enter()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38ee
 // Size: 0xb3
 function molotov_watch_pool_trigger_exit()
@@ -1599,7 +1599,7 @@ function molotov_watch_pool_trigger_exit()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39a9
 // Size: 0x90
 function molotov_cleanup_pool_trigger()
@@ -1622,7 +1622,7 @@ function molotov_cleanup_pool_trigger()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a41
 // Size: 0x54
 function molotov_cleanup_pool_trigger_end_early()
@@ -1643,7 +1643,7 @@ function molotov_cleanup_pool_trigger_end_early()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a9d
 // Size: 0x41
 function molotov_pool_update_scriptable()
@@ -1654,7 +1654,7 @@ function molotov_pool_update_scriptable()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x3ae6
 // Size: 0x1d9
 function molotov_branch_create_sub_branch( id, starttime, firstforwarddist, firstforwardmindist, firstforwardmodanglesfunc, firstforwarddistwall, maxcasts, maxents, startbranch, var_54c186a6b8a2ae1 )
@@ -1720,7 +1720,7 @@ function molotov_branch_create_sub_branch( id, starttime, firstforwarddist, firs
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3cc8
 // Size: 0x34
 function molotov_branch_create_forward_tendril_cone( var_54c186a6b8a2ae1 )
@@ -1729,7 +1729,7 @@ function molotov_branch_create_forward_tendril_cone( var_54c186a6b8a2ae1 )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d04
 // Size: 0x38
 function molotov_branch_create_left_tendril_cone( var_54c186a6b8a2ae1 )
@@ -1738,7 +1738,7 @@ function molotov_branch_create_left_tendril_cone( var_54c186a6b8a2ae1 )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d44
 // Size: 0x38
 function molotov_branch_create_right_tendril_cone( var_54c186a6b8a2ae1 )
@@ -1747,7 +1747,7 @@ function molotov_branch_create_right_tendril_cone( var_54c186a6b8a2ae1 )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d84
 // Size: 0x3a
 function molotov_branch_create_tendril_radial( var_54c186a6b8a2ae1 )
@@ -1756,7 +1756,7 @@ function molotov_branch_create_tendril_radial( var_54c186a6b8a2ae1 )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3dc6
 // Size: 0x69
 function molotov_rotate_angles_about_up( angles, amount )
@@ -1771,7 +1771,7 @@ function molotov_rotate_angles_about_up( angles, amount )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e38
 // Size: 0x28
 function molotov_left_tendril_mod_angles( angles )
@@ -1781,7 +1781,7 @@ function molotov_left_tendril_mod_angles( angles )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e69
 // Size: 0x2b
 function molotov_right_tendril_mod_angles( angles )
@@ -1791,7 +1791,7 @@ function molotov_right_tendril_mod_angles( angles )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e9d
 // Size: 0x28
 function molotov_tendril_mod_angles_radial( angles )
@@ -1801,7 +1801,7 @@ function molotov_tendril_mod_angles_radial( angles )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ece
 // Size: 0x13
 function molotov_cleanup_burn_source()
@@ -1812,7 +1812,7 @@ function molotov_cleanup_burn_source()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ee9
 // Size: 0x2a
 function molotov_cleanup_grenade( grenade )
@@ -1823,7 +1823,7 @@ function molotov_cleanup_grenade( grenade )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f1b
 // Size: 0x23
 function molotov_get_level_data()
@@ -1833,7 +1833,7 @@ function molotov_get_level_data()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f47
 // Size: 0x3a
 function molotov_get_pool_level_data()
@@ -1845,7 +1845,7 @@ function molotov_get_pool_level_data()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f8a
 // Size: 0x3a
 function molotov_get_cast_level_data()
@@ -1857,7 +1857,7 @@ function molotov_get_cast_level_data()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fcd
 // Size: 0x54
 function molotov_get_unique_pool_id()
@@ -1870,7 +1870,7 @@ function molotov_get_unique_pool_id()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x402a
 // Size: 0x162
 function molotov_get_cast_data( castid )
@@ -1901,7 +1901,7 @@ function molotov_get_cast_data( castid )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4195
 // Size: 0x9e
 function molotov_get_pool_data( typeid )
@@ -1917,7 +1917,7 @@ function molotov_get_pool_data( typeid )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x423c
 // Size: 0x59
 function molotov_get_cast_dir( angles, casttype )
@@ -1936,7 +1936,7 @@ function molotov_get_cast_dir( angles, casttype )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x429e
 // Size: 0xae
 function molotov_get_cast_dist( casttype, castdata, iswallcast )
@@ -1966,7 +1966,7 @@ function molotov_get_cast_dist( casttype, castdata, iswallcast )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4355
 // Size: 0x35
 function molotov_get_cast_contents()
@@ -1975,7 +1975,7 @@ function molotov_get_cast_contents()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4393
 // Size: 0x3c
 function molotov_rebuild_angles_up_right( up, right )
@@ -1986,7 +1986,7 @@ function molotov_rebuild_angles_up_right( up, right )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x43d8
 // Size: 0x3c
 function molotov_rebuild_angles_up_forward( up, forward )
@@ -1997,7 +1997,7 @@ function molotov_rebuild_angles_up_forward( up, forward )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x441d
 // Size: 0xa6
 function function_d89c621ce916f11e()
@@ -2031,7 +2031,7 @@ function function_d89c621ce916f11e()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x44cc
 // Size: 0x13c
 function molotov_start_burning( attacker, inflictor, killcament, id )
@@ -2083,7 +2083,7 @@ function molotov_start_burning( attacker, inflictor, killcament, id )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4610
 // Size: 0x87
 function molotov_stop_burning( id )
@@ -2119,7 +2119,7 @@ function molotov_stop_burning( id )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x469f
 // Size: 0x58
 function molotov_burn_for_time( time, attacker, inflictor, killcament )
@@ -2133,7 +2133,7 @@ function molotov_burn_for_time( time, attacker, inflictor, killcament )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46ff
 // Size: 0xc4
 function molotov_clear_burning( immediate )
@@ -2153,7 +2153,7 @@ function molotov_clear_burning( immediate )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47cb
 // Size: 0x43e
 function molotov_update_burning( burningsource )
@@ -2276,7 +2276,7 @@ function molotov_update_burning( burningsource )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c11
 // Size: 0x28, Type: bool
 function molotov_is_burning()
@@ -2286,7 +2286,7 @@ function molotov_is_burning()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c42
 // Size: 0x9d
 function molotov_get_burning_info( create )
@@ -2310,7 +2310,7 @@ function molotov_get_burning_info( create )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4ce8
 // Size: 0xca
 function molotov_get_burning_source( attacker, inflictor, killcament, info, id, shouldcreate )
@@ -2337,7 +2337,7 @@ function molotov_get_burning_source( attacker, inflictor, killcament, info, id, 
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4dbb
 // Size: 0xe5, Type: bool
 function molotov_burning_source_is_valid()
@@ -2376,7 +2376,7 @@ function molotov_burning_source_is_valid()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ea9
 // Size: 0x52
 function molotov_get_next_burning_id()
@@ -2394,7 +2394,7 @@ function molotov_get_next_burning_id()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f04
 // Size: 0x21
 function molotov_cleanup_burning()
@@ -2406,7 +2406,7 @@ function molotov_cleanup_burning()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f2d
 // Size: 0x29
 function molotov_cleanup_burning_on_death()
@@ -2419,7 +2419,7 @@ function molotov_cleanup_burning_on_death()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f5e
 // Size: 0x20
 function molotov_cleanup_burning_on_game_end()
@@ -2431,7 +2431,7 @@ function molotov_cleanup_burning_on_game_end()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f86
 // Size: 0x9e, Type: bool
 function molotov_on_player_damaged( data )
@@ -2453,7 +2453,7 @@ function molotov_on_player_damaged( data )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x502d
 // Size: 0x94
 function molotov_watch_fx()
@@ -2488,7 +2488,7 @@ function molotov_watch_fx()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x50c9
 // Size: 0x75
 function molotov_begin_fx()
@@ -2507,7 +2507,7 @@ function molotov_begin_fx()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5146
 // Size: 0x45
 function molotov_end_fx()
@@ -2524,7 +2524,7 @@ function molotov_end_fx()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5193
 // Size: 0x12
 function molotov_clear_fx()
@@ -2534,7 +2534,7 @@ function molotov_clear_fx()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x51ad
 // Size: 0x87
 function molotov_cleanup_branch( branch, immediate )
@@ -2554,7 +2554,7 @@ function molotov_cleanup_branch( branch, immediate )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x523c
 // Size: 0x11c
 function molotov_cleanup_pool( grenade, immediate )
@@ -2583,7 +2583,7 @@ function molotov_cleanup_pool( grenade, immediate )
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5360
 // Size: 0x24
 function function_946f8ebb6c6efd92()
@@ -2593,7 +2593,7 @@ function function_946f8ebb6c6efd92()
 }
 
 // Namespace molotov / scripts\mp\equipment\molotov
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x538c
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
@@ -2604,7 +2604,7 @@ function function_49197cd063a740ea( callbackfunction )
 /#
 
     // Namespace molotov / scripts\mp\equipment\molotov
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x53a9
     // Size: 0x160, Type: dev
     function molotov_branch_draw_hits()
@@ -2650,7 +2650,7 @@ function function_49197cd063a740ea( callbackfunction )
     }
 
     // Namespace molotov / scripts\mp\equipment\molotov
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x5511
     // Size: 0xb9, Type: dev
     function function_5ac76a3e234f3e1a( hitposition, hittype, duration )

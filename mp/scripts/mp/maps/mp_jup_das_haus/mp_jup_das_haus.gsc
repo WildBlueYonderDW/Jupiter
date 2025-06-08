@@ -13,7 +13,7 @@
 #namespace mp_jup_das_haus;
 
 // Namespace mp_jup_das_haus / scripts\mp\maps\mp_jup_das_haus\mp_jup_das_haus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a1
 // Size: 0xc1
 function main()
@@ -36,7 +36,7 @@ function main()
 }
 
 // Namespace mp_jup_das_haus / scripts\mp\maps\mp_jup_das_haus\mp_jup_das_haus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36a
 // Size: 0x2ad
 function function_31dc060e85f4a689()

@@ -7,7 +7,7 @@
 #namespace entity;
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d6
 // Size: 0xcb
 function getaverageorigin( ent_array )
@@ -32,7 +32,7 @@ function getaverageorigin( ent_array )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4aa
 // Size: 0xce, Type: bool
 function touchingbadtrigger()
@@ -61,7 +61,7 @@ function touchingbadtrigger()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x581
 // Size: 0x7a, Type: bool
 function touchingoobtrigger()
@@ -88,7 +88,7 @@ function touchingoobtrigger()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x604
 // Size: 0x81, Type: bool
 function touchingballallowedtrigger()
@@ -113,7 +113,7 @@ function touchingballallowedtrigger()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68e
 // Size: 0x81, Type: bool
 function touchingplayerallowedtrigger()
@@ -138,7 +138,7 @@ function touchingplayerallowedtrigger()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x718
 // Size: 0xb9
 function findisfacing( ent1, ent2, tolerance )
@@ -161,7 +161,7 @@ function findisfacing( ent1, ent2, tolerance )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d9
 // Size: 0x36, Type: bool
 function isaiteamparticipant( ent )
@@ -180,7 +180,7 @@ function isaiteamparticipant( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x818
 // Size: 0x25, Type: bool
 function isteamparticipant( ent )
@@ -199,7 +199,7 @@ function isteamparticipant( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x846
 // Size: 0x38, Type: bool
 function isvalidteamtarget( attacker, victimteam, target )
@@ -208,7 +208,7 @@ function isvalidteamtarget( attacker, victimteam, target )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x887
 // Size: 0x1d, Type: bool
 function isvalidffatarget( attacker, victimteam, target )
@@ -217,7 +217,7 @@ function isvalidffatarget( attacker, victimteam, target )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ad
 // Size: 0x74
 function getlinknamenodes()
@@ -228,7 +228,8 @@ function getlinknamenodes()
     {
         linknames = strtok( self.script_linkto, " " );
         
-        for (i = 0; i < linknames.size; i++) {
+        for ( i = 0; i < linknames.size ; i++ )
+        {
             ent = getnode( linknames[ i ], "script_linkname" );
             
             if ( isdefined( ent ) )
@@ -242,7 +243,7 @@ function getlinknamenodes()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x92a
 // Size: 0x33
 function function_d9ce8fb00f0e5fa1( origin, radius, desiredteam, excludeent )
@@ -251,7 +252,7 @@ function function_d9ce8fb00f0e5fa1( origin, radius, desiredteam, excludeent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x966
 // Size: 0x20b
 function getentitiesinradius( origin, radius, desiredteam, excludeent, physicscontents )
@@ -320,7 +321,7 @@ function getentitiesinradius( origin, radius, desiredteam, excludeent, physicsco
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb7a
 // Size: 0x17f
 function watchentitiesinradius( radiusrange, triggernotify, var_ecea6cda97e5f7ae, checkvisibility, playersonly )
@@ -379,7 +380,7 @@ function watchentitiesinradius( radiusrange, triggernotify, var_ecea6cda97e5f7ae
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd01
 // Size: 0xa
 function cancelentitiesinradius()
@@ -388,7 +389,7 @@ function cancelentitiesinradius()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd13
 // Size: 0x10f
 function placeequipmentfailed( weapon, showfx, position, angles )
@@ -430,7 +431,7 @@ function placeequipmentfailed( weapon, showfx, position, angles )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe2a
 // Size: 0x1c
 function placeequipmentfailedinit()
@@ -439,7 +440,7 @@ function placeequipmentfailedinit()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe4e
 // Size: 0x15
 function placeequipmentfailedcleanup( fxent )
@@ -449,7 +450,7 @@ function placeequipmentfailedcleanup( fxent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe6b
 // Size: 0x17, Type: bool
 function isspidergrenade( ent )
@@ -458,7 +459,7 @@ function isspidergrenade( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe8b
 // Size: 0x77, Type: bool
 function issupertrophy( ent )
@@ -484,7 +485,7 @@ function issupertrophy( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf0b
 // Size: 0x4a, Type: bool
 function ismicroturret( ent )
@@ -505,7 +506,7 @@ function ismicroturret( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5e
 // Size: 0x5f
 function ischoppergunner( ent )
@@ -525,7 +526,7 @@ function ischoppergunner( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfc6
 // Size: 0x5f
 function issupporthelo( ent )
@@ -545,7 +546,7 @@ function issupporthelo( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x102e
 // Size: 0x5f
 function isclusterstrike( ent )
@@ -565,7 +566,7 @@ function isclusterstrike( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1096
 // Size: 0x97, Type: bool
 function isuav( ent )
@@ -589,7 +590,7 @@ function isuav( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1136
 // Size: 0x5f
 function isgunship( ent )
@@ -609,7 +610,7 @@ function isgunship( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x119e
 // Size: 0x7e
 function isradardrone( ent )
@@ -629,7 +630,7 @@ function isradardrone( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1225
 // Size: 0x7e
 function isscramblerdrone( ent )
@@ -649,7 +650,7 @@ function isscramblerdrone( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12ac
 // Size: 0x5f
 function isradarhelicopter( ent )
@@ -669,7 +670,7 @@ function isradarhelicopter( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1314
 // Size: 0x5f
 function isassaultdrone( ent )
@@ -689,7 +690,7 @@ function isassaultdrone( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x137c
 // Size: 0x2c, Type: bool
 function isturret( ent )
@@ -698,7 +699,7 @@ function isturret( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13b1
 // Size: 0x17, Type: bool
 function isdronepackage( ent )
@@ -707,7 +708,7 @@ function isdronepackage( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13d1
 // Size: 0x3a
 function _enableequipdeployvfx()
@@ -726,7 +727,7 @@ function _enableequipdeployvfx()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1413
 // Size: 0x4a
 function _disableequipdeployvfx()
@@ -742,7 +743,7 @@ function _disableequipdeployvfx()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1465
 // Size: 0x85
 function register_physics_collisions()
@@ -758,7 +759,7 @@ function register_physics_collisions()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14f2
 // Size: 0xaf
 function global_physics_sound_monitor()
@@ -778,7 +779,7 @@ function global_physics_sound_monitor()
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15a9
 // Size: 0x20
 function register_physics_collision_func( entity, function_name )
@@ -787,7 +788,7 @@ function register_physics_collision_func( entity, function_name )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15d1
 // Size: 0x17, Type: bool
 function istouchingboundstrigger( ent )
@@ -796,7 +797,7 @@ function istouchingboundstrigger( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15f1
 // Size: 0x91
 function istouchingboundsnullify( ent )
@@ -819,7 +820,7 @@ function istouchingboundsnullify( ent )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x168b
 // Size: 0x21
 function deleteonplayerdeathdisconnect( player )
@@ -830,7 +831,7 @@ function deleteonplayerdeathdisconnect( player )
 }
 
 // Namespace entity / scripts\mp\utility\entity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16b4
 // Size: 0x11
 function deleteatframeend()

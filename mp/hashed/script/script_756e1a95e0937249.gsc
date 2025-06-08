@@ -1,7 +1,7 @@
 #namespace playtest_logger;
 
 // Namespace playtest_logger / namespace_71483b158f1361f1
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xe2
 // Size: 0xcd
 function function_223a972e008c4a09( var_2ea903451e753a5f, var_9dfaf49e38b7b10f, var_9113b547554386ba, var_e16ce54aa38571c0, var_1e9d08b8e40c246a, var_7eea86c60c0788e, var_b0b33580058b7f27, var_243ec5b0a130448e )
@@ -24,7 +24,7 @@ function function_223a972e008c4a09( var_2ea903451e753a5f, var_9dfaf49e38b7b10f, 
 }
 
 // Namespace playtest_logger / namespace_71483b158f1361f1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b8
 // Size: 0x1e
 function logassert( assertmessage, var_c5dab79fa2079db9 )
@@ -33,7 +33,7 @@ function logassert( assertmessage, var_c5dab79fa2079db9 )
 }
 
 // Namespace playtest_logger / namespace_71483b158f1361f1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1de
 // Size: 0x1d
 function logerror( msg, var_c5dab79fa2079db9 )
@@ -42,7 +42,7 @@ function logerror( msg, var_c5dab79fa2079db9 )
 }
 
 // Namespace playtest_logger / namespace_71483b158f1361f1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x203
 // Size: 0x1e
 function logwarning( msg, var_c5dab79fa2079db9 )
@@ -51,7 +51,7 @@ function logwarning( msg, var_c5dab79fa2079db9 )
 }
 
 // Namespace playtest_logger / namespace_71483b158f1361f1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x229
 // Size: 0x1e
 function loginfo( msg, var_c5dab79fa2079db9 )
@@ -60,7 +60,7 @@ function loginfo( msg, var_c5dab79fa2079db9 )
 }
 
 // Namespace playtest_logger / namespace_71483b158f1361f1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x24f
 // Size: 0x9c
 function function_275c43d7dd5c74d6( msg, loglevel, var_5808a2476b7bce9b )

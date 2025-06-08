@@ -20,7 +20,7 @@
 #namespace namespace_e5887d7e575ef250;
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31c
 // Size: 0x13
 function main()
@@ -77,9 +77,9 @@ function private little_bird_initomnvars()
 // Size: 0x42
 function private little_bird_initdamage()
 {
-    var_d2e455d494f8d46e = vehicle_damage_getleveldatafordamagestate( "little_bird", "heavy", 1 );
-    var_d2e455d494f8d46e.onentercallback = &little_bird_onenterheavydamagestate;
-    var_d2e455d494f8d46e.onexitcallback = &little_bird_onexitheavydamagestate;
+    leveldatafordamagestate = vehicle_damage_getleveldatafordamagestate( "little_bird", "heavy", 1 );
+    leveldatafordamagestate.onentercallback = &little_bird_onenterheavydamagestate;
+    leveldatafordamagestate.onexitcallback = &little_bird_onexitheavydamagestate;
 }
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
@@ -536,7 +536,7 @@ function private vehicle_handleflarefire( player )
 /#
 
     // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x1240
     // Size: 0x65, Type: dev
     function collision_debug( position, normal, normalspeed, damage, debugstring )
@@ -555,7 +555,7 @@ function private vehicle_handleflarefire( player )
     }
 
     // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x12ad
     // Size: 0x1a8, Type: dev
     function function_6ae603e37e7a394f( position, normal, normalspeed, damage, debugstring )

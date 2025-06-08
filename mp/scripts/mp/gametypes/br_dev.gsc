@@ -28,6 +28,7 @@
 #using scripts\cp_mp\vehicles\vehicle_tracking;
 #using scripts\cp_mp\weapon;
 #using scripts\engine\dev;
+#using scripts\engine\scriptable;
 #using scripts\engine\trace;
 #using scripts\engine\utility;
 #using scripts\mp\agents\agent_utility;
@@ -78,8 +79,8 @@
 #namespace br_dev;
 
 // Namespace br_dev / scripts\mp\gametypes\br_dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x304
+// Params 0
+// Checksum 0x0, Offset: 0x30b
 // Size: 0x40
 function init()
 {
@@ -94,8 +95,8 @@ function init()
 }
 
 // Namespace br_dev / scripts\mp\gametypes\br_dev
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34c
+// Params 2
+// Checksum 0x0, Offset: 0x353
 // Size: 0xbd
 function commandwatcher( dvarname, var_d4bb121b87421c8 )
 {
@@ -128,8 +129,8 @@ function commandwatcher( dvarname, var_d4bb121b87421c8 )
 }
 
 // Namespace br_dev / scripts\mp\gametypes\br_dev
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x411
+// Params 2
+// Checksum 0x0, Offset: 0x418
 // Size: 0x73
 function handlecommand( command, args )
 {
@@ -145,8 +146,8 @@ function handlecommand( command, args )
 }
 
 // Namespace br_dev / scripts\mp\gametypes\br_dev
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48c
+// Params 1
+// Checksum 0x0, Offset: 0x493
 // Size: 0x38
 function registerhandlecommand( func )
 {
@@ -161,8 +162,8 @@ function registerhandlecommand( func )
 /#
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4cc
+    // Params 2
+    // Checksum 0x0, Offset: 0x4d3
     // Size: 0x76, Type: dev
     function handledevcommand( command, args )
     {
@@ -178,9 +179,9 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x54a
-    // Size: 0x4231, Type: dev
+    // Params 2
+    // Checksum 0x0, Offset: 0x551
+    // Size: 0x43bd, Type: dev
     function function_c96d7535862e245c( command, args )
     {
         firstplayer = level.players[ 0 ];
@@ -541,7 +542,8 @@ function registerhandlecommand( func )
                         var_48094c816bbd08e0 = 6;
                         level.var_2bec641aeb4e5980 = [];
                         
-                        for (i = 0; i < var_48094c816bbd08e0; i++) {
+                        for ( i = 0; i < var_48094c816bbd08e0 ; i++ )
+                        {
                             objectiveiconid = scripts\mp\objidpoolmanager::requestobjectiveid( 1 );
                             
                             if ( objectiveiconid != -1 )
@@ -585,7 +587,8 @@ function registerhandlecommand( func )
                 scripts\mp\gametypes\br_pickups::function_e2d83df8b282b199( args[ 0 ] );
                 break;
             case #"hash_c715dc4c34c07470":
-                for (index = 0; index < 20; index++) {
+                for ( index = 0; index < 20 ; index++ )
+                {
                     scripts\mp\gametypes\br_pickups::spawndebugpickupfromdevgui( args[ 0 ] );
                     wait 0.3;
                 }
@@ -612,7 +615,7 @@ function registerhandlecommand( func )
                 
                 if ( isdefined( host ) )
                 {
-                    cachetype = int( args[ 0 ] );
+                    cachetype = isdefined( args[ 0 ] ) ? int( args[ 0 ] ) : 0;
                     scripts\mp\gametypes\br_lootcache::spawnlootcache( host.origin, host.angles, cachetype );
                 }
                 
@@ -1078,14 +1081,14 @@ function registerhandlecommand( func )
                 }
                 
                 break;
+            case #"hash_dddecc2751311914":
+            case #"hash_d542616c7a17d00d":
+            case #"hash_663b0900ff0e81c7":
             case #"hash_51e0c8a1f4d5a8c":
             case #"hash_779e498488e0fd4f":
-            case #"hash_d542616c7a17d00d":
-            case #"hash_fa50aaf6bd82e000":
             case #"hash_fa4dbef6bd80c0e5":
-            case #"hash_dddecc2751311914":
+            case #"hash_fa50aaf6bd82e000":
             case #"hash_5549fae4e940416f":
-            case #"hash_663b0900ff0e81c7":
                 if ( issharedfuncdefined( command, "<dev string:xc82>" ) )
                 {
                     level thread [[ getsharedfunc( command, "<dev string:xc82>" ) ]]( args );
@@ -1530,7 +1533,8 @@ function registerhandlecommand( func )
                 rightoffset = anglestoright( var_eb88a0310ff63e64.angles ) * var_9df309bd9117ce5f;
                 var_16ec8ffc50cefb81 = forwardoffset + ( 0, 0, 75 );
                 
-                for (i = 0; i < players.size; i++) {
+                for ( i = 0; i < players.size ; i++ )
+                {
                     player = players[ i ];
                     
                     if ( !isalive( player ) )
@@ -2240,7 +2244,8 @@ function registerhandlecommand( func )
                     level.var_523ee9a874d0430b = 0;
                 }
                 
-                for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+                for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+                {
                     characterindex = level.var_523ee9a874d0430b % level.characters.size;
                     character = level.characters[ characterindex ];
                     level.var_523ee9a874d0430b++;
@@ -2291,14 +2296,87 @@ function registerhandlecommand( func )
                 }
                 
                 break;
+            case #"hash_1b06b29b865f7498":
+                if ( !( args.size == 2 || args.size == 3 ) )
+                {
+                    var_5830e0fe041611e4 = "<dev string:x1688>";
+                    iprintlnbold( var_5830e0fe041611e4 );
+                    println( var_5830e0fe041611e4 );
+                    return;
+                }
+                
+                animname = args[ 0 ];
+                var_d1bec1cd8223b6e4 = int( args[ 1 ] );
+                var_deca4c4385b27256 = 1;
+                
+                if ( isdefined( args[ 2 ] ) )
+                {
+                    var_deca4c4385b27256 = int( args[ 2 ] );
+                }
+                
+                if ( !( isstring( animname ) && isdefined( var_d1bec1cd8223b6e4 ) && isdefined( var_deca4c4385b27256 ) && var_deca4c4385b27256 >= 0 ) )
+                {
+                    var_4af8047bfd3d32e9 = "<dev string:x16c6>";
+                    iprintlnbold( var_4af8047bfd3d32e9 );
+                    println( var_4af8047bfd3d32e9 );
+                    return;
+                }
+                
+                if ( var_d1bec1cd8223b6e4 == 0 )
+                {
+                    firstplayer notify( "<dev string:x1712>" + animname );
+                }
+                else
+                {
+                    firstplayer thread function_af939b4dfd7f0769( animname, var_d1bec1cd8223b6e4, var_deca4c4385b27256 );
+                }
+                
+                break;
+            case #"hash_c86c74c954b6f1e6":
+                if ( !isdefined( level.var_fd4ccfdbe4fe025 ) )
+                {
+                    var_79a95c318068740d = "<dev string:x1748>";
+                    iprintlnbold( var_79a95c318068740d );
+                    println( var_79a95c318068740d );
+                    return;
+                }
+                
+                if ( args.size != 1 )
+                {
+                    var_5830e0fe041611e4 = "<dev string:x1770>";
+                    iprintlnbold( var_5830e0fe041611e4 );
+                    println( var_5830e0fe041611e4 );
+                    return;
+                }
+                
+                var_5d92e0911522c004 = int( args[ 0 ] );
+                
+                if ( !isdefined( var_5d92e0911522c004 ) )
+                {
+                    var_4af8047bfd3d32e9 = "<dev string:x17a1>";
+                    iprintlnbold( var_4af8047bfd3d32e9 );
+                    println( var_4af8047bfd3d32e9 );
+                    return;
+                }
+                
+                if ( var_5d92e0911522c004 == 0 )
+                {
+                    firstplayer notify( "<dev string:x17e8>" );
+                }
+                else
+                {
+                    firstplayer thread function_bc3a107bcc4124a9( var_5d92e0911522c004 - 1 );
+                }
+                
+                break;
             default:
                 break;
         }
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4783
+    // Params 1
+    // Checksum 0x0, Offset: 0x4916
     // Size: 0x86, Type: dev
     function givesuper( superref )
     {
@@ -2315,14 +2393,14 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4811
+    // Params 2
+    // Checksum 0x0, Offset: 0x49a4
     // Size: 0x9b, Type: dev
     function function_94c116c69c037a47( refname, typearr )
     {
         foreach ( type in typearr )
         {
-            bundlestr = type + "<dev string:x1676>" + refname;
+            bundlestr = type + "<dev string:x180b>" + refname;
             bundle = getscriptbundle( bundlestr );
             
             if ( isdefined( bundle ) )
@@ -2335,8 +2413,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x48b4
+    // Params 2
+    // Checksum 0x0, Offset: 0x4a47
     // Size: 0xd6, Type: dev
     function function_5da181c6905a7a49( targetplayer, botsonly )
     {
@@ -2370,14 +2448,14 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4992
+    // Params 2
+    // Checksum 0x0, Offset: 0x4b25
     // Size: 0x255, Type: dev
     function function_fb77bd36161c7d9b( scriptable, lootweaponlist )
     {
         if ( !isdefined( lootweaponlist ) )
         {
-            lootweaponlist = "<dev string:x167b>";
+            lootweaponlist = "<dev string:x1810>";
         }
         
         var_97f1b48fd49a7224 = getscriptbundle( hashcat( %"hash_36fa976a8ae12763", lootweaponlist ) );
@@ -2445,8 +2523,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4bef
+    // Params 2
+    // Checksum 0x0, Offset: 0x4d82
     // Size: 0x6a, Type: dev
     function function_9a34cb51ac957c0( var_19cadf7d520f4072, maxwaittimems )
     {
@@ -2474,38 +2552,38 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4c61
+    // Params 0
+    // Checksum 0x0, Offset: 0x4df4
     // Size: 0x3a, Type: dev
     function function_f5e211bdcc0d8f79()
     {
-        var_2e1d1af8afe39ba8 = getdvarint( @"hash_fde1113ce9981d91", 3 );
+        var_2e1d1af8afe39ba8 = getdvarint( @"scr_br_plate_carrier_start_level", 3 );
         var_347aa4935f42810 = scripts\mp\gametypes\br_public::function_c2f2bb9e0ae9a454( var_2e1d1af8afe39ba8 );
         function_9a34cb51ac957c0( var_347aa4935f42810 );
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4ca3
+    // Params 1
+    // Checksum 0x0, Offset: 0x4e36
     // Size: 0x13c, Type: dev
     function function_1eaac96384e4a9d7( revivee )
     {
-        level endon( "<dev string:x1693>" );
-        revivee endon( "<dev string:x16a1>" );
-        revivee notify( "<dev string:x16af>" );
+        level endon( "<dev string:x1828>" );
+        revivee endon( "<dev string:x1836>" );
+        revivee notify( "<dev string:x1844>" );
         revivee.revivetimems = 0;
         revivee.var_4ab61a57453e2816 = 1;
-        notifycalled = revivee waittill_any_return_4( "<dev string:x16ca>", "<dev string:x16e0>", "<dev string:x16f7>", "<dev string:x16af>" );
+        notifycalled = revivee waittill_any_return_4( "<dev string:x185f>", "<dev string:x1875>", "<dev string:x188c>", "<dev string:x1844>" );
         
-        if ( ( notifycalled == "<dev string:x16ca>" || notifycalled == "<dev string:x16e0>" ) && isalive( revivee ) && isdefined( revivee.revivetimems ) && revivee.revivetimems > 0 )
+        if ( ( notifycalled == "<dev string:x185f>" || notifycalled == "<dev string:x1875>" ) && isalive( revivee ) && isdefined( revivee.revivetimems ) && revivee.revivetimems > 0 )
         {
             targetms = 3000;
             framecount = int( targetms / level.frameduration + 0.5 );
-            revivetimestr = "<dev string:x1700>" + revivee.revivetimems + "<dev string:x1714>";
+            revivetimestr = "<dev string:x1895>" + revivee.revivetimems + "<dev string:x18a9>";
             printtoscreen2d( 800, 300, revivetimestr, ( 1, 1, 1 ), 2, framecount );
         }
         
-        if ( notifycalled != "<dev string:x16af>" )
+        if ( notifycalled != "<dev string:x1844>" )
         {
             revivee.var_4ab61a57453e2816 = undefined;
             revivee.revivetimems = undefined;
@@ -2514,8 +2592,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4de7
+    // Params 2
+    // Checksum 0x0, Offset: 0x4f7a
     // Size: 0x107, Type: dev
     function function_4d1c100badcf41a8( player, defname )
     {
@@ -2528,9 +2606,9 @@ function registerhandlecommand( func )
         trace = scripts\engine\trace::ray_trace( tracestart, traceend, player, tracecontents );
         spawnorigin = tracestart + playerforward * 100;
         
-        if ( trace[ "<dev string:x171b>" ] < 1 )
+        if ( trace[ "<dev string:x18b0>" ] < 1 )
         {
-            spawnorigin = trace[ "<dev string:x1727>" ];
+            spawnorigin = trace[ "<dev string:x18bc>" ];
         }
         
         spawnorigin += ( 0, 0, 5 );
@@ -2540,17 +2618,17 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4ef6
+    // Params 1
+    // Checksum 0x0, Offset: 0x5089
     // Size: 0x1c, Type: dev
     function function_5d92949cc218ebdd( playername )
     {
-        return strtok( playername, "<dev string:x1733>" )[ 0 ];
+        return strtok( playername, "<dev string:x18c8>" )[ 0 ];
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4f1a
+    // Params 1
+    // Checksum 0x0, Offset: 0x50ad
     // Size: 0x84, Type: dev
     function function_b2dcd958dd436171( name )
     {
@@ -2568,8 +2646,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4fa6
+    // Params 2
+    // Checksum 0x0, Offset: 0x5139
     // Size: 0x169, Type: dev
     function function_5b5ab8ab53c49d4d( victimname, attackername )
     {
@@ -2613,8 +2691,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5117
+    // Params 3
+    // Checksum 0x0, Offset: 0x52aa
     // Size: 0x1d0, Type: dev
     function function_53a0f5e4d6bbc7a4( victimname, attackername, damage )
     {
@@ -2669,8 +2747,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x52ef
+    // Params 2
+    // Checksum 0x0, Offset: 0x5482
     // Size: 0xc2, Type: dev
     function function_72c1806e62a9bd10( playername, var_6be1bd68cd41dbbd )
     {
@@ -2686,7 +2764,7 @@ function registerhandlecommand( func )
                 
                 if ( istrue( var_6be1bd68cd41dbbd ) )
                 {
-                    kick( clientnum, "<dev string:x1738>", 1 );
+                    kick( clientnum, "<dev string:x18cd>", 1 );
                 }
                 else
                 {
@@ -2699,8 +2777,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x53b9
+    // Params 0
+    // Checksum 0x0, Offset: 0x554c
     // Size: 0x94, Type: dev
     function function_5718089fc75809c3()
     {
@@ -2710,17 +2788,17 @@ function registerhandlecommand( func )
         trace = scripts\engine\trace::_bullet_trace( start, end, 1, self );
         player = undefined;
         
-        if ( isdefined( trace[ "<dev string:x1755>" ] ) && isplayer( trace[ "<dev string:x1755>" ] ) && isreallyalive( trace[ "<dev string:x1755>" ] ) )
+        if ( isdefined( trace[ "<dev string:x18ea>" ] ) && isplayer( trace[ "<dev string:x18ea>" ] ) && isreallyalive( trace[ "<dev string:x18ea>" ] ) )
         {
-            player = trace[ "<dev string:x1755>" ];
+            player = trace[ "<dev string:x18ea>" ];
         }
         
         return player;
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5455
+    // Params 1
+    // Checksum 0x0, Offset: 0x55e8
     // Size: 0xbe, Type: dev
     function function_78ec4accff5f158b( player )
     {
@@ -2732,9 +2810,9 @@ function registerhandlecommand( func )
         
         foreach ( trace in traces )
         {
-            if ( !isdefined( trace[ "<dev string:x1755>" ] ) )
+            if ( !isdefined( trace[ "<dev string:x18ea>" ] ) )
             {
-                return trace[ "<dev string:x1727>" ];
+                return trace[ "<dev string:x18bc>" ];
             }
         }
         
@@ -2742,8 +2820,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x551b
+    // Params 1
+    // Checksum 0x0, Offset: 0x56ae
     // Size: 0xbe, Type: dev
     function function_274ba9ea825a3b5f( player )
     {
@@ -2755,9 +2833,9 @@ function registerhandlecommand( func )
         
         foreach ( trace in traces )
         {
-            if ( isdefined( trace[ "<dev string:x1755>" ] ) )
+            if ( isdefined( trace[ "<dev string:x18ea>" ] ) )
             {
-                return trace[ "<dev string:x1755>" ];
+                return trace[ "<dev string:x18ea>" ];
             }
         }
         
@@ -2765,8 +2843,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x55e1
+    // Params 1
+    // Checksum 0x0, Offset: 0x5774
     // Size: 0x112, Type: dev
     function function_c3b8a31470635593( winningteam )
     {
@@ -2794,14 +2872,14 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x56fb
+    // Params 0
+    // Checksum 0x0, Offset: 0x588e
     // Size: 0x95, Type: dev
     function function_429110eb5af4a19c()
     {
         foreach ( team in level.teamnamelist )
         {
-            teamcount = getteamdata( team, "<dev string:x175f>" );
+            teamcount = getteamdata( team, "<dev string:x18f4>" );
             
             if ( teamcount && !array_contains( level.teamswithplayers, team ) )
             {
@@ -2811,12 +2889,12 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5798
+    // Params 0
+    // Checksum 0x0, Offset: 0x592b
     // Size: 0x165, Type: dev
     function function_9bb9422480e6aa6d()
     {
-        level endon( "<dev string:x1693>" );
+        level endon( "<dev string:x1828>" );
         
         if ( istrue( level.var_4887475a9fd2c26 ) )
         {
@@ -2824,11 +2902,12 @@ function registerhandlecommand( func )
         }
         
         level.var_4887475a9fd2c26 = 1;
-        hudtext = function_1ce3276d3ef55a0a( "<dev string:x176c>", 0.8 );
-        hudtext setpoint( "<dev string:x1777>", "<dev string:x1777>", 200, 160 );
-        hudtext setdevtext( "<dev string:x1782>" );
+        hudtext = function_1ce3276d3ef55a0a( "<dev string:x1901>", 0.8 );
+        hudtext setpoint( "<dev string:x190c>", "<dev string:x190c>", 200, 160 );
+        hudtext setdevtext( "<dev string:x1917>" );
         
-        for (lastmessage = "<dev string:xca1>"; true; lastmessage = nameinfo) {
+        for ( lastmessage = "<dev string:xca1>"; true ; lastmessage = nameinfo )
+        {
             wait 0.1;
             
             if ( !isdefined( level.players ) || !level.players.size )
@@ -2841,14 +2920,14 @@ function registerhandlecommand( func )
             
             foreach ( teamname in level.teamswithplayers )
             {
-                var_6428e68df37399d3 = "<dev string:x1798>";
+                var_6428e68df37399d3 = "<dev string:x192d>";
                 
                 if ( isdefined( level.var_8f337a661bccb9f ) && isdefined( level.var_8f337a661bccb9f[ teamname ] ) )
                 {
                     var_6428e68df37399d3 = level.var_8f337a661bccb9f[ teamname ];
                 }
                 
-                nameinfo += "<dev string:x17a2>" + teamname + "<dev string:x17a8>" + var_6428e68df37399d3 + "<dev string:x17b0>";
+                nameinfo += "<dev string:x1937>" + teamname + "<dev string:x193d>" + var_6428e68df37399d3 + "<dev string:x1945>";
             }
             
             if ( nameinfo != lastmessage )
@@ -2859,12 +2938,12 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5905
+    // Params 0
+    // Checksum 0x0, Offset: 0x5a98
     // Size: 0x3f1, Type: dev
     function function_2729e9ab8a4ec44e()
     {
-        level endon( "<dev string:x1693>" );
+        level endon( "<dev string:x1828>" );
         
         if ( istrue( level.var_5f61ffe168666863 ) )
         {
@@ -2872,11 +2951,12 @@ function registerhandlecommand( func )
         }
         
         level.var_5f61ffe168666863 = 1;
-        hudtext = function_1ce3276d3ef55a0a( "<dev string:x176c>", 0.8 );
-        hudtext setpoint( "<dev string:x1777>", "<dev string:x1777>", 20, 160 );
-        hudtext setdevtext( "<dev string:x17b7>" );
+        hudtext = function_1ce3276d3ef55a0a( "<dev string:x1901>", 0.8 );
+        hudtext setpoint( "<dev string:x190c>", "<dev string:x190c>", 20, 160 );
+        hudtext setdevtext( "<dev string:x194c>" );
         
-        for (lastmessage = "<dev string:xca1>"; true; lastmessage = nameinfo) {
+        for ( lastmessage = "<dev string:xca1>"; true ; lastmessage = nameinfo )
+        {
             waitframe();
             
             if ( !isdefined( level.players ) || !level.players.size )
@@ -2889,51 +2969,51 @@ function registerhandlecommand( func )
             
             foreach ( teamname in level.teamswithplayers )
             {
-                nameinfo += "<dev string:x17a2>" + teamname + "<dev string:x17cf>";
+                nameinfo += "<dev string:x1937>" + teamname + "<dev string:x1964>";
                 
                 foreach ( player in getteamarray( teamname ) )
                 {
                     entnum = player getentitynumber();
-                    print3d( player.origin + ( 0, 0, 70 ), "<dev string:x17d7>" + entnum + "<dev string:x17dc>" + player.name, ( 1, 1, 1 ), 1, 0.4, 1 );
-                    print3d( player.origin + ( 0, 0, 65 ), teamname + "<dev string:x17e2>" + player.health + player.armorhealth, ( 1, 1, 1 ), 1, 0.3, 1 );
+                    print3d( player.origin + ( 0, 0, 70 ), "<dev string:x196c>" + entnum + "<dev string:x1971>" + player.name, ( 1, 1, 1 ), 1, 0.4, 1 );
+                    print3d( player.origin + ( 0, 0, 65 ), teamname + "<dev string:x1977>" + player.health + player.armorhealth, ( 1, 1, 1 ), 1, 0.3, 1 );
                     isplayeralive = isalive( player ) && !istrue( player.gulag );
                     var_2e74464713803f2f = get_int_or_0( player.gulaguses );
-                    playername = ter_op( isdefined( player.name ), player.name, "<dev string:x17e8>" ) + "<dev string:x17f2>" + var_2e74464713803f2f + "<dev string:x17f8>";
+                    playername = ter_op( isdefined( player.name ), player.name, "<dev string:x197d>" ) + "<dev string:x1987>" + var_2e74464713803f2f + "<dev string:x198d>";
                     
                     if ( isplayeralive )
                     {
-                        nameinfo += "<dev string:x17fd>" + playername + "<dev string:x1805>";
+                        nameinfo += "<dev string:x1992>" + playername + "<dev string:x199a>";
                     }
                     else if ( !istrue( level.br_prematchstarted ) )
                     {
-                        nameinfo += "<dev string:x1810>" + playername + "<dev string:x1818>";
+                        nameinfo += "<dev string:x19a5>" + playername + "<dev string:x19ad>";
                     }
                     else if ( scripts\mp\gametypes\br_spectate::isvalidspectatetarget( player ) )
                     {
-                        nameinfo += "<dev string:x1822>" + playername + "<dev string:x182a>";
+                        nameinfo += "<dev string:x19b7>" + playername + "<dev string:x19bf>";
                     }
                     else if ( istrue( player.br_iseliminated ) )
                     {
-                        nameinfo += "<dev string:x1810>" + playername + "<dev string:x1835>";
-                        namecolor = ter_op( istrue( player.killcam ), "<dev string:x1845>", "<dev string:x17a2>" );
+                        nameinfo += "<dev string:x19a5>" + playername + "<dev string:x19ca>";
+                        namecolor = ter_op( istrue( player.killcam ), "<dev string:x19da>", "<dev string:x1937>" );
                         spectatingplayer = player getspectatingplayer();
                         
                         if ( isdefined( spectatingplayer ) )
                         {
-                            nameinfo += "<dev string:x184b>" + namecolor + spectatingplayer.name + "<dev string:x1853>";
+                            nameinfo += "<dev string:x19e0>" + namecolor + spectatingplayer.name + "<dev string:x19e8>";
                         }
                         
                         if ( isdefined( level.var_8f337a661bccb9f ) && isdefined( level.var_8f337a661bccb9f[ player.team ] ) )
                         {
-                            nameinfo += "<dev string:x185a>" + level.var_8f337a661bccb9f[ player.team ] + "<dev string:x1853>";
+                            nameinfo += "<dev string:x19ef>" + level.var_8f337a661bccb9f[ player.team ] + "<dev string:x19e8>";
                         }
                     }
                     else
                     {
-                        nameinfo += "<dev string:x17fd>" + playername + "<dev string:x1864>";
+                        nameinfo += "<dev string:x1992>" + playername + "<dev string:x19f9>";
                     }
                     
-                    nameinfo += "<dev string:x17b0>";
+                    nameinfo += "<dev string:x1945>";
                 }
             }
             
@@ -2950,13 +3030,13 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5cfe
+    // Params 2
+    // Checksum 0x0, Offset: 0x5e91
     // Size: 0xe9, Type: dev
     function function_1ce3276d3ef55a0a( font, fontscale )
     {
         hudelem = newhudelem();
-        hudelem.elemtype = "<dev string:x1871>";
+        hudelem.elemtype = "<dev string:x1a06>";
         hudelem.font = font;
         hudelem.fontscale = fontscale;
         hudelem.basefontscale = fontscale;
@@ -2973,8 +3053,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5def
+    // Params 0
+    // Checksum 0x0, Offset: 0x5f82
     // Size: 0x67, Type: dev
     function function_69dffe7a5cb1b4b9()
     {
@@ -2988,8 +3068,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5e5e
+    // Params 0
+    // Checksum 0x0, Offset: 0x5ff1
     // Size: 0x1c1, Type: dev
     function function_7a26b30793922b87()
     {
@@ -2997,17 +3077,17 @@ function registerhandlecommand( func )
         
         if ( !isdefined( notbot ) )
         {
-            iprintlnbold( "<dev string:x1879>" );
+            iprintlnbold( "<dev string:x1a0e>" );
             return;
         }
         
         if ( !istrue( level.br_prematchstarted ) )
         {
-            level notify( "<dev string:x189a>" );
+            level notify( "<dev string:x1a2f>" );
             wait 3;
         }
         
-        var_d3a4d4e30c0118d3 = [[ getsharedfunc( "<dev string:x18ad>", "<dev string:x18b5>" ) ]]( notbot.team, 1 );
+        var_d3a4d4e30c0118d3 = [[ getsharedfunc( "<dev string:x1a42>", "<dev string:x1a4a>" ) ]]( notbot.team, 1 );
         
         if ( var_d3a4d4e30c0118d3.size < 2 )
         {
@@ -3022,7 +3102,7 @@ function registerhandlecommand( func )
             while ( var_d3a4d4e30c0118d3.size < 2 )
             {
                 waitframe();
-                var_d3a4d4e30c0118d3 = [[ getsharedfunc( "<dev string:x18ad>", "<dev string:x18b5>" ) ]]( notbot.team, 1 );
+                var_d3a4d4e30c0118d3 = [[ getsharedfunc( "<dev string:x1a42>", "<dev string:x1a4a>" ) ]]( notbot.team, 1 );
             }
             
             frameswaited = 0;
@@ -3031,7 +3111,7 @@ function registerhandlecommand( func )
             {
                 if ( frameswaited > 100 )
                 {
-                    iprintlnbold( "<dev string:x18cb>" );
+                    iprintlnbold( "<dev string:x1a60>" );
                     return;
                 }
                 
@@ -3044,7 +3124,7 @@ function registerhandlecommand( func )
                         continue;
                     }
                     
-                    if ( player.sessionstate != "<dev string:x18f8>" )
+                    if ( player.sessionstate != "<dev string:x1a8d>" )
                     {
                         friendlyready = 1;
                         break;
@@ -3063,14 +3143,14 @@ function registerhandlecommand( func )
         
         waittillframeend();
         setdvar( @"hash_12d23346fbacee91", 2 );
-        setdvar( @"hash_6ce01b6572751b18", 1 );
+        setdvar( @"bot_disableattack", 1 );
         notbot.gulagloser = 1;
         notbot scripts\mp\gametypes\br::sendafksquadmembertogulag();
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6027
+    // Params 1
+    // Checksum 0x0, Offset: 0x61ba
     // Size: 0xc3, Type: dev
     function function_9cbddfdef8f1125b( bunkerindex )
     {
@@ -3080,31 +3160,31 @@ function registerhandlecommand( func )
         
         while ( true )
         {
-            player waittill( "<dev string:x1905>", message, value );
+            player waittill( "<dev string:x1a9a>", message, value );
             
             if ( isdefined( message ) )
             {
-                if ( message == "<dev string:x1918>" )
+                if ( message == "<dev string:x1aad>" )
                 {
                     if ( verifybunkercode( bunkerindex, value ) )
                     {
                         player playersetkeypadstateindex( 2 );
                         wait 2;
-                        iprintlnbold( "<dev string:x192c>" );
+                        iprintlnbold( "<dev string:x1ac1>" );
                         break;
                     }
                     else
                     {
                         player playersetkeypadstateindex( 3 );
                         waitframe();
-                        iprintlnbold( "<dev string:x1954>" );
+                        iprintlnbold( "<dev string:x1ae9>" );
                         player playersetkeypadstateindex( 1 );
                     }
                     
                     continue;
                 }
                 
-                if ( message == "<dev string:x197c>" )
+                if ( message == "<dev string:x1b11>" )
                 {
                     break;
                 }
@@ -3115,8 +3195,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x60f2
+    // Params 1
+    // Checksum 0x0, Offset: 0x6285
     // Size: 0x8c, Type: dev
     function devgetplayerbyname( playername )
     {
@@ -3136,17 +3216,17 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6186
+    // Params 1
+    // Checksum 0x0, Offset: 0x6319
     // Size: 0x36, Type: dev
     function function_bc261c1a1cb59524( player )
     {
-        br_forcegivecustompickupitem( player, "<dev string:x198e>", 1, level.br_pickups.maxcounts[ "<dev string:x198e>" ] );
+        br_forcegivecustompickupitem( player, "<dev string:x1b23>", 1, level.br_pickups.maxcounts[ "<dev string:x1b23>" ] );
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x61c4
+    // Params 1
+    // Checksum 0x0, Offset: 0x6357
     // Size: 0x65, Type: dev
     function devgivemaxammo( player )
     {
@@ -3157,8 +3237,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6231
+    // Params 1
+    // Checksum 0x0, Offset: 0x63c4
     // Size: 0x29, Type: dev
     function function_28dc06904e18e469( player )
     {
@@ -3166,8 +3246,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6262
+    // Params 1
+    // Checksum 0x0, Offset: 0x63f5
     // Size: 0x16, Type: dev
     function function_c41e8bac1d7f3bc8( player )
     {
@@ -3175,8 +3255,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6280
+    // Params 1
+    // Checksum 0x0, Offset: 0x6413
     // Size: 0x16, Type: dev
     function function_5377fd507f9ea057( player )
     {
@@ -3184,8 +3264,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x629e
+    // Params 1
+    // Checksum 0x0, Offset: 0x6431
     // Size: 0x25, Type: dev
     function function_559b4cb8f64848b5( player )
     {
@@ -3196,8 +3276,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x62cb
+    // Params 1
+    // Checksum 0x0, Offset: 0x645e
     // Size: 0x1d, Type: dev
     function function_a2fdd1067da9ff6e( player )
     {
@@ -3205,8 +3285,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x62f0
+    // Params 1
+    // Checksum 0x0, Offset: 0x6483
     // Size: 0x2b, Type: dev
     function function_26ab41fd72f1c761( player )
     {
@@ -3215,22 +3295,22 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6323
+    // Params 0
+    // Checksum 0x0, Offset: 0x64b6
     // Size: 0x73, Type: dev
     function function_fe99ab4dc900865e()
     {
-        killtriggers = getentarray( "<dev string:x19a4>", "<dev string:x19b4>" );
+        killtriggers = getentarray( "<dev string:x1b39>", "<dev string:x1b49>" );
         
         foreach ( trigger in killtriggers )
         {
-            trigger.targetname = "<dev string:x19c1>";
+            trigger.targetname = "<dev string:x1b56>";
         }
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x639e
+    // Params 0
+    // Checksum 0x0, Offset: 0x6531
     // Size: 0xb3, Type: dev
     function function_4c35185bbc6a8506()
     {
@@ -3242,19 +3322,19 @@ function registerhandlecommand( func )
             {
                 if ( isdefined( host ) )
                 {
-                    host iprintlnbold( "<dev string:x19d0>" + player.name + "<dev string:x19db>" );
+                    host iprintlnbold( "<dev string:x1b65>" + player.name + "<dev string:x1b70>" );
                 }
             }
         }
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6459
+    // Params 0
+    // Checksum 0x0, Offset: 0x65ec
     // Size: 0xf6, Type: dev
     function function_7c57dd42429eb995()
     {
-        level endon( "<dev string:x1693>" );
+        level endon( "<dev string:x1828>" );
         setdvarifuninitialized( @"hash_5ec38dd7bdfbfe50", 0 );
         
         while ( true )
@@ -3284,8 +3364,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6557
+    // Params 0
+    // Checksum 0x0, Offset: 0x66ea
     // Size: 0xfa, Type: dev
     function function_29e8c83db696b457()
     {
@@ -3293,28 +3373,28 @@ function registerhandlecommand( func )
         
         if ( !isdefined( player ) )
         {
-            iprintlnbold( "<dev string:x1879>" );
+            iprintlnbold( "<dev string:x1a0e>" );
             return;
         }
         
         spawndata = spawnstruct();
         spawndata.origin = player.origin + ( 100, 0, 0 );
         spawndata.angles = player.angles;
-        spawndata.modelname = "<dev string:x19ea>";
-        spawndata.vehicletype = "<dev string:x19fb>";
-        spawndata.targetname = "<dev string:x1a0a>";
+        spawndata.modelname = "<dev string:x1b7f>";
+        spawndata.vehicletype = "<dev string:x1b90>";
+        spawndata.targetname = "<dev string:x1b9f>";
         spawndata.cannotbesuspended = 1;
         faildata = spawnstruct();
         vehicle = scripts\cp_mp\vehicles\vehicle_tracking::_spawnvehicle( spawndata, faildata );
-        player setusingremote( "<dev string:x1a16>" );
+        player setusingremote( "<dev string:x1bab>" );
         vehicle setotherent( player );
         vehicle setentityowner( player );
         player controlslinkto( vehicle );
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6659
+    // Params 0
+    // Checksum 0x0, Offset: 0x67ec
     // Size: 0x1e, Type: dev
     function function_820b8302ada04c55()
     {
@@ -3323,8 +3403,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x667f
+    // Params 1
+    // Checksum 0x0, Offset: 0x6812
     // Size: 0x58a, Type: dev
     function function_d671c39a7867f243( args )
     {
@@ -3350,8 +3430,8 @@ function registerhandlecommand( func )
         {
             if ( istrue( level.var_90a078e35115c032 ) )
             {
-                level notify( "<dev string:x1a1e>" );
-                level notify( "<dev string:x1a32>" );
+                level notify( "<dev string:x1bb3>" );
+                level notify( "<dev string:x1bc7>" );
                 level.var_90a078e35115c032 = undefined;
                 level.holesa = [];
                 level.holesb = [];
@@ -3380,7 +3460,7 @@ function registerhandlecommand( func )
             }
         }
         
-        level endon( "<dev string:x1a1e>" );
+        level endon( "<dev string:x1bb3>" );
         level.var_90a078e35115c032 = 1;
         host = scripts\mp\gamelogic::gethostplayer();
         origin = host.origin;
@@ -3395,7 +3475,7 @@ function registerhandlecommand( func )
         level.var_8fd312aaa85b9802 = [];
         thread function_f474574f5e52f583();
         contents = scripts\engine\trace::create_contents( 0, 1, 1, 1, 0, 0, 1 );
-        org = scripts\engine\trace::sphere_trace( origin + ( 0, 0, var_e25c6801a01f7fce ), origin + ( 0, 0, var_befd185e0007a7b8 ), var_e89346b6c5bfd043, undefined, contents )[ "<dev string:x1727>" ];
+        org = scripts\engine\trace::sphere_trace( origin + ( 0, 0, var_e25c6801a01f7fce ), origin + ( 0, 0, var_befd185e0007a7b8 ), var_e89346b6c5bfd043, undefined, contents )[ "<dev string:x18bc>" ];
         checkheight = org[ 2 ] - var_fe52faf102ebf57b;
         count = 0;
         countglobal = 0;
@@ -3404,7 +3484,7 @@ function registerhandlecommand( func )
         
         while ( x <= resolution )
         {
-            host iprintlnbold( "<dev string:x1a3f>" + int( countglobal / total * 100 ) );
+            host iprintlnbold( "<dev string:x1bd4>" + int( countglobal / total * 100 ) );
             y = -1 * resolution;
             
             while ( y <= resolution )
@@ -3476,27 +3556,29 @@ function registerhandlecommand( func )
             x += precision;
         }
         
-        host iprintlnbold( "<dev string:x1a4c>" + level.holesa.size + "<dev string:x1a57>" + level.var_ca369ce88e799edd.size + "<dev string:x1a6a>" + level.var_fce03ebb07aa6a47.size );
+        host iprintlnbold( "<dev string:x1be1>" + level.holesa.size + "<dev string:x1bec>" + level.var_ca369ce88e799edd.size + "<dev string:x1bff>" + level.var_fce03ebb07aa6a47.size );
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6c11
+    // Params 0
+    // Checksum 0x0, Offset: 0x6da4
     // Size: 0x19b, Type: dev
     function function_f474574f5e52f583()
     {
-        level notify( "<dev string:x1a32>" );
-        level endon( "<dev string:x1a32>" );
+        level notify( "<dev string:x1bc7>" );
+        level endon( "<dev string:x1bc7>" );
         
         while ( true )
         {
-            for (i = 0; i < level.holesa.size; i++) {
+            for ( i = 0; i < level.holesa.size ; i++ )
+            {
                 orga = level.holesa[ i ];
                 orgb = level.holesb[ i ];
                 line( orga, orgb, ( 1, 0, 0 ), 1, 1, 1 );
             }
             
-            for (i = 0; i < level.var_ca369ce88e799edd.size; i++) {
+            for ( i = 0; i < level.var_ca369ce88e799edd.size ; i++ )
+            {
                 orga = level.var_ca369ce88e799edd[ i ];
                 orgb = level.var_ca3699e88e799844[ i ];
                 orgc = level.var_ca369ae88e799a77[ i ];
@@ -3504,13 +3586,15 @@ function registerhandlecommand( func )
                 line( orgb, orgc, ( 1, 0, 0 ), 1, 1, 1 );
             }
             
-            for (i = 0; i < level.var_fce03ebb07aa6a47.size; i++) {
+            for ( i = 0; i < level.var_fce03ebb07aa6a47.size ; i++ )
+            {
                 orga = level.var_fce03ebb07aa6a47[ i ];
                 orgb = level.var_fce03fbb07aa6c7a[ i ];
                 line( orga, orgb, ( 1, 0, 1 ), 1, 1, 1 );
             }
             
-            for (i = 0; i < level.var_8fd311aaa85b95cf.size; i++) {
+            for ( i = 0; i < level.var_8fd311aaa85b95cf.size ; i++ )
+            {
                 orga = level.var_8fd311aaa85b95cf[ i ];
                 orgb = level.var_8fd312aaa85b9802[ i ];
                 line( orga, orgb, ( 0, 1, 0 ), 1, 1, 1 );
@@ -3521,8 +3605,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6db4
+    // Params 2
+    // Checksum 0x0, Offset: 0x6f47
     // Size: 0x192, Type: dev
     function function_237b71faf9fb62d9( player, contractref )
     {
@@ -3539,9 +3623,9 @@ function registerhandlecommand( func )
         tracecontents = scripts\engine\trace::create_default_contents( 0 );
         trace = scripts\engine\trace::ray_trace( tracestart, traceend, player, tracecontents );
         
-        if ( isdefined( trace[ "<dev string:x1755>" ] ) || isalive( trace[ "<dev string:x1755>" ] ) )
+        if ( isdefined( trace[ "<dev string:x18ea>" ] ) || isalive( trace[ "<dev string:x18ea>" ] ) )
         {
-            namespace_1eb3c4e0e28fac71::function_22671614e8f79513( trace[ "<dev string:x1755>" ], contractref );
+            namespace_1eb3c4e0e28fac71::function_22671614e8f79513( trace[ "<dev string:x18ea>" ], contractref );
             return;
         }
         
@@ -3555,7 +3639,7 @@ function registerhandlecommand( func )
                 continue;
             }
             
-            dist = distance2dsquared( otherplayer.origin, trace[ "<dev string:x1727>" ] );
+            dist = distance2dsquared( otherplayer.origin, trace[ "<dev string:x18bc>" ] );
             
             if ( closestdist == 0 || dist < closestdist )
             {
@@ -3572,8 +3656,8 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6f4e
+    // Params 1
+    // Checksum 0x0, Offset: 0x70e1
     // Size: 0x166, Type: dev
     function function_9503654ca3380f8a( args )
     {
@@ -3585,7 +3669,7 @@ function registerhandlecommand( func )
         }
         else
         {
-            skins = [ "<dev string:x1a77>", "<dev string:x1a8b>", "<dev string:x1a9f>", "<dev string:x1ab3>", "<dev string:x1ac7>", "<dev string:x1adb>", "<dev string:x1aef>", "<dev string:x1b03>" ];
+            skins = [ "<dev string:x1c0c>", "<dev string:x1c20>", "<dev string:x1c34>", "<dev string:x1c48>", "<dev string:x1c5c>", "<dev string:x1c70>", "<dev string:x1c84>", "<dev string:x1c98>" ];
             skin = array_random( skins );
         }
         
@@ -3603,19 +3687,19 @@ function registerhandlecommand( func )
         end = start + 8000 * dir;
         trace = scripts\engine\trace::_bullet_trace( start, end, 1, host );
         
-        if ( trace[ "<dev string:x171b>" ] >= 1 )
+        if ( trace[ "<dev string:x18b0>" ] >= 1 )
         {
             return;
         }
         
-        neworigin = trace[ "<dev string:x1727>" ];
-        newent = spawn( "<dev string:x1b17>", neworigin );
-        newent function_dd6d30b9ec87c1b3( body, head, "<dev string:x1b27>" );
+        neworigin = trace[ "<dev string:x18bc>" ];
+        newent = spawn( "<dev string:x1cac>", neworigin );
+        newent function_dd6d30b9ec87c1b3( body, head, "<dev string:x1cbc>" );
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x70bc
+    // Params 2
+    // Checksum 0x0, Offset: 0x724f
     // Size: 0x23, Type: dev
     function showsplash( splash, var_42b1e877ab187c6 )
     {
@@ -3623,16 +3707,17 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x70e7
+    // Params 2
+    // Checksum 0x0, Offset: 0x727a
     // Size: 0x1bb, Type: dev
     function function_548e30d6072b85e9( player, amount )
     {
-        var_affbd0043656d928 = [ "<dev string:x1b43>", "<dev string:x1b56>", "<dev string:x1b69>", "<dev string:x1b7c>", "<dev string:x1b91>", "<dev string:x1198>", "<dev string:x1175>", "<dev string:x1ba7>", "<dev string:x1bc0>", "<dev string:x1be3>", "<dev string:x1c0c>", "<dev string:x1c22>", "<dev string:x1617>", "<dev string:x1c3c>", "<dev string:x1c59>" ];
+        var_affbd0043656d928 = [ "<dev string:x1cd8>", "<dev string:x1ceb>", "<dev string:x1cfe>", "<dev string:x1d11>", "<dev string:x1d26>", "<dev string:x1198>", "<dev string:x1175>", "<dev string:x1d3c>", "<dev string:x1d55>", "<dev string:x1d78>", "<dev string:x1da1>", "<dev string:x1db7>", "<dev string:x1617>", "<dev string:x1dd1>", "<dev string:x1dee>" ];
         remainingloot = arraycopy( var_affbd0043656d928 );
         dropstruct = scripts\mp\gametypes\br_pickups::function_7b9f3966a7a42003();
         
-        for (i = 0; i < amount - 2; i++) {
+        for ( i = 0; i < amount - 2 ; i++ )
+        {
             if ( remainingloot.size == 0 )
             {
                 remainingloot = array_combine( var_affbd0043656d928 );
@@ -3645,15 +3730,15 @@ function registerhandlecommand( func )
         }
         
         dropinfo = scripts\mp\gametypes\br_pickups::getitemdroporiginandangles( dropstruct, player.origin, player.angles, player );
-        scripts\mp\gametypes\br_pickups::spawnpickup( "<dev string:x1c72>", dropinfo );
+        scripts\mp\gametypes\br_pickups::spawnpickup( "<dev string:x1e07>", dropinfo );
         weapon = player getcurrentprimaryweapon();
         dropinfo = scripts\mp\gametypes\br_pickups::getitemdroporiginandangles( dropstruct, player.origin, player.angles, player );
         scripts\mp\gametypes\br_pickups::spawnpickup( weapon.basename, dropinfo, 1, undefined, weapon );
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x72aa
+    // Params 1
+    // Checksum 0x0, Offset: 0x743d
     // Size: 0x226, Type: dev
     function function_510cb3df7efc44a7( player )
     {
@@ -3688,7 +3773,8 @@ function registerhandlecommand( func )
         var_b2e0a2db9493ce49 = 5000;
         var_1bd3970314fa9aea = var_6e226a212b12f77f + playerforward * var_b2e0a2db9493ce49;
         
-        for (var_abc56346e63aa2e3 = 0; var_abc56346e63aa2e3 < 10; var_abc56346e63aa2e3++) {
+        for ( var_abc56346e63aa2e3 = 0; var_abc56346e63aa2e3 < 10 ; var_abc56346e63aa2e3++ )
+        {
             isowner = player scripts\cp_mp\calloutmarkerping::function_1e008bf9d31b2b01( var_abc56346e63aa2e3 );
             
             if ( isowner && player calloutmarkerping_getactive( var_abc56346e63aa2e3 ) )
@@ -3720,20 +3806,20 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x74d8
+    // Params 0
+    // Checksum 0x0, Offset: 0x766b
     // Size: 0x37, Type: dev
     function function_5263a8371400329b()
     {
-        level endon( "<dev string:x1693>" );
-        namespace_27cdbf2464b21c84::function_ed4c2d913d203bf( level.players, "<dev string:x1c92>" );
+        level endon( "<dev string:x1828>" );
+        namespace_27cdbf2464b21c84::function_ed4c2d913d203bf( level.players, "<dev string:x1e27>" );
         waitframe();
-        namespace_27cdbf2464b21c84::function_ed4c2d913d203bf( level.players, "<dev string:x1ca9>" );
+        namespace_27cdbf2464b21c84::function_ed4c2d913d203bf( level.players, "<dev string:x1e3e>" );
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7517
+    // Params 0
+    // Checksum 0x0, Offset: 0x76aa
     // Size: 0x94, Type: dev
     function function_bfe726b5e0b35c27()
     {
@@ -3743,17 +3829,17 @@ function registerhandlecommand( func )
         trace = scripts\engine\trace::_bullet_trace( start, end, 1, self );
         player = undefined;
         
-        if ( isdefined( trace[ "<dev string:x1755>" ] ) && isplayer( trace[ "<dev string:x1755>" ] ) && isreallyalive( trace[ "<dev string:x1755>" ] ) )
+        if ( isdefined( trace[ "<dev string:x18ea>" ] ) && isplayer( trace[ "<dev string:x18ea>" ] ) && isreallyalive( trace[ "<dev string:x18ea>" ] ) )
         {
-            player = trace[ "<dev string:x1755>" ];
+            player = trace[ "<dev string:x18ea>" ];
         }
         
         return player;
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x75b3
+    // Params 0
+    // Checksum 0x0, Offset: 0x7746
     // Size: 0x39, Type: dev
     function function_d3b9dc1b6f956ff8()
     {
@@ -3769,13 +3855,13 @@ function registerhandlecommand( func )
     }
 
     // Namespace br_dev / scripts\mp\gametypes\br_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x75f4
+    // Params 2
+    // Checksum 0x0, Offset: 0x7787
     // Size: 0x48, Type: dev
     function function_533bda33b99fab22( victim, var_742e3b452c9bb9b0 )
     {
-        level endon( "<dev string:x1693>" );
-        victim scripts\cp_mp\armor::function_13caa305c839a278( "<dev string:x1cbf>", var_742e3b452c9bb9b0 );
+        level endon( "<dev string:x1828>" );
+        victim scripts\cp_mp\armor::function_13caa305c839a278( "<dev string:x1e54>", var_742e3b452c9bb9b0 );
         waitframe();
         waitframe();
         waitframe();
@@ -3784,6 +3870,140 @@ function registerhandlecommand( func )
         waitframe();
         waitframe();
         function_53a0f5e4d6bbc7a4( victim.name, undefined, 300 );
+    }
+
+    // Namespace br_dev / scripts\mp\gametypes\br_dev
+    // Params 3
+    // Checksum 0x0, Offset: 0x77d7
+    // Size: 0x1f9, Type: dev
+    function function_af939b4dfd7f0769( var_90ac04838df7e429, var_d1bec1cd8223b6e4, var_81abad5fa1e318d5 )
+    {
+        player = self;
+        player notify( "<dev string:x1712>" + var_90ac04838df7e429 );
+        player endon( "<dev string:x1712>" + var_90ac04838df7e429 );
+        
+        if ( var_d1bec1cd8223b6e4 == 0 )
+        {
+            return;
+        }
+        
+        while ( true )
+        {
+            player waittill( "<dev string:x1e69>", _anime, _duration );
+            
+            if ( _anime != var_90ac04838df7e429 )
+            {
+                continue;
+            }
+            
+            var_28281bdcf431feb4 = var_81abad5fa1e318d5 * function_676cfe2ab64ea758() / 1000;
+            
+            if ( var_28281bdcf431feb4 )
+            {
+                wait var_28281bdcf431feb4;
+            }
+            
+            switch ( var_d1bec1cd8223b6e4 )
+            {
+                case 1:
+                    player scripts\cp_mp\armor::setarmorhealth( 0, 1 );
+                    var_8a2afee27c81fff7 = player dodamage( player.health / 2, player.origin, player, player );
+                    break;
+                case 2:
+                    player scripts\cp_mp\armor::setarmorhealth( 0, 1 );
+                    var_8a2afee27c81fff7 = player dodamage( player.health, player.origin, player, player );
+                    break;
+                case 3:
+                    player kill();
+                    break;
+                case 4:
+                    player scripts\cp_mp\armor::setarmorhealth( 0, 1 );
+                    var_8a2afee27c81fff7 = player dodamage( player.health, player.origin, player, player );
+                    wait var_28281bdcf431feb4;
+                    player kill();
+                    break;
+                case 5:
+                    player scripts\cp_mp\armor::setarmorhealth( 0, 1 );
+                    var_8a2afee27c81fff7 = player dodamage( player.health / 2, player.origin, player, player );
+                    wait var_28281bdcf431feb4;
+                    var_8a2afee27c81fff7 = player dodamage( player.health, player.origin, player, player );
+                    wait var_28281bdcf431feb4;
+                    player kill();
+                    break;
+            }
+            
+            iprintln( "<dev string:x1e87>" + var_90ac04838df7e429 + "<dev string:x1e97>" + var_28281bdcf431feb4 + "<dev string:x1ea2>" );
+        }
+    }
+
+    // Namespace br_dev / scripts\mp\gametypes\br_dev
+    // Params 1
+    // Checksum 0x0, Offset: 0x79d8
+    // Size: 0x1b4, Type: dev
+    function function_bc3a107bcc4124a9( var_5d92e0911522c004 )
+    {
+        player = self;
+        player notify( "<dev string:x17e8>" );
+        player endon( "<dev string:x17e8>" );
+        
+        if ( isdefined( level.var_fd4ccfdbe4fe025 ) && isdefined( level.var_fd4ccfdbe4fe025[ var_5d92e0911522c004 ] ) )
+        {
+            scanner = level.var_fd4ccfdbe4fe025[ var_5d92e0911522c004 ].var_7599776c4d607964;
+        }
+        else
+        {
+            return;
+        }
+        
+        iprintln( "<dev string:x1ea7>" + var_5d92e0911522c004 );
+        wait 2;
+        playerorigin = scanner.origin + 30 * anglestoforward( scanner.angles );
+        playerangles = invertangles( scanner.angles );
+        player setorigin( playerorigin );
+        player setplayerangles( playerangles );
+        player.health = player.maxhealth;
+        iprintln( "<dev string:x1ecb>" );
+        wait 3;
+        
+        while ( true )
+        {
+            if ( !isreallyalive( player ) )
+            {
+                player waittill( "<dev string:x1f02>" );
+                player setorigin( playerorigin );
+                player setplayerangles( playerangles );
+                wait 1;
+            }
+            
+            if ( !player hasweapon( "<dev string:x1f16>" ) )
+            {
+                player giveweapon( "<dev string:x1f16>" );
+            }
+            
+            wait 0.05;
+            scripts\engine\scriptable::scriptable_engineused( scanner, "<dev string:x1f85>", "<dev string:x1f9a>", player );
+            
+            while ( scanner getscriptablepartstate( "<dev string:x1f85>" ) != "<dev string:x1f9a>" )
+            {
+                wait 0.1;
+            }
+            
+            wait 1;
+            
+            if ( isinlaststand( player ) )
+            {
+                /#
+                    setdevdvar( @"hash_a28e203d53e8292d", 1 );
+                #/
+            }
+            
+            wait 1;
+            
+            if ( isreallyalive( player ) )
+            {
+                player.health = player.maxhealth;
+            }
+        }
     }
 
 #/

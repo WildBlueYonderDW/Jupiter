@@ -7,7 +7,7 @@
 #namespace namespace_463c541c6afd19ee;
 
 // Namespace namespace_463c541c6afd19ee / namespace_61562d3eb0e80552
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13f
 // Size: 0x65
 function function_bcfbb1093d28dce6( taskid, params )
@@ -28,7 +28,7 @@ function function_bcfbb1093d28dce6( taskid, params )
 }
 
 // Namespace namespace_463c541c6afd19ee / namespace_61562d3eb0e80552
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad
 // Size: 0x14
 function function_5ccebaad82aa8913()

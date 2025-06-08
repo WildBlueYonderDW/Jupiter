@@ -13,7 +13,7 @@
 #namespace mp_jup_emergency;
 
 // Namespace mp_jup_emergency / scripts\mp\maps\mp_jup_emergency\mp_jup_emergency
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c2
 // Size: 0x97
 function main()
@@ -34,7 +34,7 @@ function main()
 }
 
 // Namespace mp_jup_emergency / scripts\mp\maps\mp_jup_emergency\mp_jup_emergency
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x361
 // Size: 0x13ec
 function function_31dc060e85f4a689()

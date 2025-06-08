@@ -7,7 +7,7 @@
 #namespace playerstats;
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b4
 // Size: 0x214
 function init()
@@ -41,7 +41,7 @@ function init()
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d0
 // Size: 0xb0
 function initplayer()
@@ -71,7 +71,7 @@ function initplayer()
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x488
 // Size: 0x2e
 function bufferedstatwritethink()
@@ -88,7 +88,7 @@ function bufferedstatwritethink()
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4be
 // Size: 0xd0
 function writebufferedstats()
@@ -109,7 +109,7 @@ function writebufferedstats()
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x596
 // Size: 0xc1
 function getplayerstatpathkey( path1, path2, path3, path4, path5 )
@@ -141,7 +141,7 @@ function getplayerstatpathkey( path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x660
 // Size: 0xd5
 function writeplayerstat( value, path1, path2, path3, path4, path5 )
@@ -177,7 +177,7 @@ function writeplayerstat( value, path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x73d
 // Size: 0xc8
 function readplayerstat( path1, path2, path3, path4, path5 )
@@ -209,7 +209,7 @@ function readplayerstat( path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x80d
 // Size: 0xa0
 function flagstatforbufferedwrite( pathkey )
@@ -228,7 +228,7 @@ function flagstatforbufferedwrite( pathkey )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x8b5
 // Size: 0x96
 function setplayerstat_internal( value, pathkey, path1, path2, path3, path4, path5 )
@@ -243,7 +243,7 @@ function setplayerstat_internal( value, pathkey, path1, path2, path3, path4, pat
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x953
 // Size: 0xfc
 function addtoplayerstat_internal( var_930290d7f474a0ae, pathkey, path1, path2, path3, path4, path5 )
@@ -266,7 +266,7 @@ function addtoplayerstat_internal( var_930290d7f474a0ae, pathkey, path1, path2, 
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa57
 // Size: 0xbd
 function modifystatwritability( pathkey, writable )
@@ -296,7 +296,7 @@ function modifystatwritability( pathkey, writable )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb1c
 // Size: 0x2c, Type: bool
 function isstatwritable_internal( pathkey )
@@ -305,7 +305,7 @@ function isstatwritable_internal( pathkey )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xb51
 // Size: 0xa0
 function addtostatgroup( statgroup, path1, path2, path3, path4, path5 )
@@ -322,7 +322,7 @@ function addtostatgroup( statgroup, path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbf9
 // Size: 0x7f
 function modifystatgroupwritability( statgroup, writable )
@@ -336,7 +336,7 @@ function modifystatgroupwritability( statgroup, writable )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xc80
 // Size: 0x124
 function calculateplayerstatratio( path1, path2, path3, path4, path5 )
@@ -373,7 +373,7 @@ function calculateplayerstatratio( path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xdad
 // Size: 0x4f
 function updateplayerstatratio( path1, path2, path3, path4, path5 )
@@ -383,7 +383,7 @@ function updateplayerstatratio( path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xe04
 // Size: 0x4f
 function updateplayerstatratiobuffered( path1, path2, path3, path4, path5 )
@@ -393,7 +393,7 @@ function updateplayerstatratiobuffered( path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe5b
 // Size: 0x9a
 function updateparentratios( var_795f8fa71513ebce )
@@ -412,7 +412,7 @@ function updateparentratios( var_795f8fa71513ebce )
 }
 
 // Namespace playerstats / scripts\mp\playerstats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xefd
 // Size: 0x9a
 function updateparentratiosbuffered( var_795f8fa71513ebce )

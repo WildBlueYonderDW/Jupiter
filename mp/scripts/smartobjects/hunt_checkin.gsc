@@ -7,7 +7,7 @@
 #namespace hunt_checkin;
 
 // Namespace hunt_checkin / scripts\smartobjects\hunt_checkin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x171
 // Size: 0x18
 function main()
@@ -16,7 +16,7 @@ function main()
 }
 
 // Namespace hunt_checkin / scripts\smartobjects\hunt_checkin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x191
 // Size: 0xd, Type: bool
 function canuse( object )
@@ -25,7 +25,7 @@ function canuse( object )
 }
 
 // Namespace hunt_checkin / scripts\smartobjects\hunt_checkin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a7
 // Size: 0x5d
 function getinfo()
@@ -40,7 +40,7 @@ function getinfo()
 }
 
 // Namespace hunt_checkin / scripts\smartobjects\hunt_checkin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20d
 // Size: 0x169
 function onuse( object )
@@ -85,7 +85,7 @@ function onuse( object )
 }
 
 // Namespace hunt_checkin / scripts\smartobjects\hunt_checkin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37e
 // Size: 0x68
 function waitforgesture( flag )
@@ -108,7 +108,7 @@ function waitforgesture( flag )
 }
 
 // Namespace hunt_checkin / scripts\smartobjects\hunt_checkin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ee
 // Size: 0x22
 function function_522562e28309afaa( t )

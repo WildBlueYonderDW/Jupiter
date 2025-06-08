@@ -4,7 +4,7 @@
 #namespace namespace_eacada4b289f07a0;
 
 // Namespace namespace_eacada4b289f07a0 / namespace_e1179dfac473753b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa1
 // Size: 0xc9
 function charm( durations, attacker, end_callback )

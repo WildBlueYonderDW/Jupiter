@@ -14,8 +14,8 @@
 #namespace zombie_base_abom_crawler;
 
 // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bd
+// Params 0
+// Checksum 0x0, Offset: 0x3bc
 // Size: 0x84
 function init_zombie_base_abom_crawler()
 {
@@ -34,7 +34,7 @@ function init_zombie_base_abom_crawler()
 
 // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x449
+// Checksum 0x0, Offset: 0x448
 // Size: 0x5a
 function private on_zombie_base_abom_crawler_spawned( params )
 {
@@ -48,7 +48,7 @@ function private on_zombie_base_abom_crawler_spawned( params )
 
 // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4ab
+// Checksum 0x0, Offset: 0x4aa
 // Size: 0x75
 function private function_13da6f593406ec4d( dmg_struct )
 {
@@ -60,7 +60,7 @@ function private function_13da6f593406ec4d( dmg_struct )
 
 // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x528
+// Checksum 0x0, Offset: 0x527
 // Size: 0x2c
 function private function_322d8cb834021eb0()
 {
@@ -71,7 +71,7 @@ function private function_322d8cb834021eb0()
 
 // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x55c
+// Checksum 0x0, Offset: 0x55b
 // Size: 0x89
 function private function_ec481db6f0a4e653()
 {
@@ -87,7 +87,7 @@ function private function_ec481db6f0a4e653()
 
 // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5ed
+// Checksum 0x0, Offset: 0x5ec
 // Size: 0x1ed
 function private function_5b62af1eb5b04cc9( position, friendly_team )
 {
@@ -140,7 +140,7 @@ function private function_5b62af1eb5b04cc9( position, friendly_team )
 
 // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x7e2
+// Checksum 0x0, Offset: 0x7e1
 // Size: 0x46
 function private wander_listener()
 {
@@ -157,7 +157,7 @@ function private wander_listener()
 
 // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x830
+// Checksum 0x0, Offset: 0x82f
 // Size: 0x9b
 function private function_3ef8c54a29b98522()
 {
@@ -182,7 +182,7 @@ function private function_3ef8c54a29b98522()
 
 // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x8d3
+// Checksum 0x0, Offset: 0x8d2
 // Size: 0xc0
 function private function_6e789d7df8701ad3()
 {
@@ -226,7 +226,7 @@ function private function_6e789d7df8701ad3()
 
     // Namespace zombie_base_abom_crawler / namespace_757f0fc2fc31608f
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x99b
+    // Checksum 0x0, Offset: 0x99a
     // Size: 0x17, Type: dev
     function private function_8320c7d13584d021()
     {

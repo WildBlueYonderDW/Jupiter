@@ -9,8 +9,8 @@
 #namespace namespace_3d584eb182204aa6;
 
 // Namespace namespace_3d584eb182204aa6 / namespace_a0ec72d04b7f766b
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x77a
+// Params 0
+// Checksum 0x0, Offset: 0x77b
 // Size: 0x31
 function function_fdcb8b9791123648()
 {
@@ -21,8 +21,8 @@ function function_fdcb8b9791123648()
 }
 
 // Namespace namespace_3d584eb182204aa6 / namespace_a0ec72d04b7f766b
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b3
+// Params 0
+// Checksum 0x0, Offset: 0x7b4
 // Size: 0x29
 function onstartgametypefinished()
 {
@@ -33,8 +33,8 @@ function onstartgametypefinished()
 }
 
 // Namespace namespace_3d584eb182204aa6 / namespace_a0ec72d04b7f766b
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e4
+// Params 0
+// Checksum 0x0, Offset: 0x7e5
 // Size: 0x5e
 function onplayerconnect()
 {
@@ -48,8 +48,8 @@ function onplayerconnect()
 }
 
 // Namespace namespace_3d584eb182204aa6 / namespace_a0ec72d04b7f766b
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84a
+// Params 0
+// Checksum 0x0, Offset: 0x84b
 // Size: 0x71
 function onplayerspawned()
 {
@@ -60,8 +60,8 @@ function onplayerspawned()
 }
 
 // Namespace namespace_3d584eb182204aa6 / namespace_a0ec72d04b7f766b
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c3
+// Params 0
+// Checksum 0x0, Offset: 0x8c4
 // Size: 0x671
 function setspecialloadouts()
 {
@@ -131,8 +131,8 @@ function setspecialloadouts()
 }
 
 // Namespace namespace_3d584eb182204aa6 / namespace_a0ec72d04b7f766b
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3c
+// Params 1
+// Checksum 0x0, Offset: 0xf3d
 // Size: 0x68
 function function_14d01be4caf93d0a( var_608cc23373c0fd33 )
 {

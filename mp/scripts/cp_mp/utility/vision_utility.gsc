@@ -4,7 +4,7 @@
 #namespace vision_utility;
 
 // Namespace vision_utility / scripts\cp_mp\utility\vision_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb8
 // Size: 0x94
 function function_27a921508cb04613( visionset, transitionduration )
@@ -37,7 +37,7 @@ function function_27a921508cb04613( visionset, transitionduration )
 }
 
 // Namespace vision_utility / scripts\cp_mp\utility\vision_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x154
 // Size: 0xc5
 function function_9a92ae402e209ecc( visionset, removeduration )
@@ -74,7 +74,7 @@ function function_9a92ae402e209ecc( visionset, removeduration )
 }
 
 // Namespace vision_utility / scripts\cp_mp\utility\vision_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x221
 // Size: 0x27
 function function_cb1caaf18300a508()
@@ -88,7 +88,7 @@ function function_cb1caaf18300a508()
 }
 
 // Namespace vision_utility / scripts\cp_mp\utility\vision_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x250
 // Size: 0x3f, Type: bool
 function function_8e888e08a6ab22d3( visionset )

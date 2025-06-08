@@ -20,7 +20,7 @@ function private autoexec __init__system__()
 }
 
 // Namespace ob_grenade_bandolier / namespace_593e9276deb68376
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x185
 // Size: 0x24
 function function_c781372c4c11366d()
@@ -33,7 +33,7 @@ function function_c781372c4c11366d()
 }
 
 // Namespace ob_grenade_bandolier / namespace_593e9276deb68376
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b1
 // Size: 0x33
 function function_2cbcbfe35fda7eed()
@@ -47,7 +47,7 @@ function function_2cbcbfe35fda7eed()
 /#
 
     // Namespace ob_grenade_bandolier / namespace_593e9276deb68376
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1ec
     // Size: 0x2e, Type: dev
     function function_cb20a7fcb97fd9c3()

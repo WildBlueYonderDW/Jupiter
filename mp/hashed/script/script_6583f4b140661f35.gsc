@@ -152,7 +152,7 @@ function private function_3b015b3d933c20ef( cost )
 /#
 
     // Namespace namespace_c79c976ae904fa16 / namespace_26298812b4c5954b
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x436
     // Size: 0x97, Type: dev
     function function_3195d135ced85ef8( command, args )

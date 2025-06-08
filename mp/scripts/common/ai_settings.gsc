@@ -4,7 +4,7 @@
 #namespace ai_settings;
 
 // Namespace ai_settings / scripts\common\ai_settings
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcc
 // Size: 0x302
 function function_7b25d1c42e7f75be( var_f76baeb1c3556fab )

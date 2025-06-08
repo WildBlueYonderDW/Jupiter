@@ -22,7 +22,7 @@ function autoexec main()
 /#
 
     // Namespace zombie_entity / namespace_75bb5b9aa3fc4820
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x136
     // Size: 0x1d, Type: dev
     function function_fe9929b42e5a99e4()
@@ -34,7 +34,7 @@ function autoexec main()
 #/
 
 // Namespace zombie_entity / namespace_75bb5b9aa3fc4820
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15b
 // Size: 0x129
 function function_3d588dcd552b26db( params )

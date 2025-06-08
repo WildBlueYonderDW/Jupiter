@@ -8,7 +8,7 @@
 #namespace wm_zombie;
 
 // Namespace wm_zombie / namespace_bc9acb05ff207ddd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x145
 // Size: 0x40
 function init()
@@ -25,7 +25,7 @@ function init()
 }
 
 // Namespace wm_zombie / namespace_bc9acb05ff207ddd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18d
 // Size: 0x98
 function function_4fa29d44e69039cb( origin, angles )
@@ -52,7 +52,7 @@ function function_4fa29d44e69039cb( origin, angles )
 }
 
 // Namespace wm_zombie / namespace_bc9acb05ff207ddd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22e
 // Size: 0xd3
 function function_2e97441e00b9a886( params )
@@ -78,7 +78,7 @@ function function_2e97441e00b9a886( params )
 }
 
 // Namespace wm_zombie / namespace_bc9acb05ff207ddd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x309
 // Size: 0x51
 function function_346d8332b7c75c38()
@@ -96,7 +96,7 @@ function function_346d8332b7c75c38()
 }
 
 // Namespace wm_zombie / namespace_bc9acb05ff207ddd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x362
 // Size: 0x41
 function function_ce8588d31df66dd8( origin, angles, disable_physics )
@@ -106,7 +106,7 @@ function function_ce8588d31df66dd8( origin, angles, disable_physics )
 }
 
 // Namespace wm_zombie / namespace_bc9acb05ff207ddd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ac
 // Size: 0x44
 function function_c601738431d10af5()
@@ -121,7 +121,7 @@ function function_c601738431d10af5()
 }
 
 // Namespace wm_zombie / namespace_bc9acb05ff207ddd
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x3f8
 // Size: 0x64
 function function_aa2be556dc1c242( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon )

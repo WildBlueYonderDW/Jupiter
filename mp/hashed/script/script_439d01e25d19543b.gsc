@@ -18,7 +18,7 @@
 #namespace namespace_39beb6d4ea2b65f4;
 
 // Namespace namespace_39beb6d4ea2b65f4 / namespace_acc3d8ec1f00ce29
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x204
 // Size: 0x5f
 function init()
@@ -34,7 +34,7 @@ function init()
 }
 
 // Namespace namespace_39beb6d4ea2b65f4 / namespace_acc3d8ec1f00ce29
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26b
 // Size: 0x3ab
 function spawnpalfa()
@@ -83,7 +83,7 @@ function spawnpalfa()
         struct.var_ce5c1024bca39998 = 1;
     }
     
-    tospawn = getdvarint( @"hash_d796f74dcf2618ef", 1 );
+    tospawn = getdvarint( @"scr_emptypalfa_numgascans", 1 );
     
     foreach ( chosen in array_randomize( level.var_343e61767f194b9d ) )
     {
@@ -166,7 +166,7 @@ function private function_4579ae632e8313bd( scriptable, player )
 }
 
 // Namespace namespace_39beb6d4ea2b65f4 / namespace_acc3d8ec1f00ce29
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x702
 // Size: 0xc2
 function function_354bd1ba3062243d()

@@ -6,7 +6,7 @@
 #namespace callbacksetup;
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad
 // Size: 0x53
 function codecallback_startgametype()
@@ -24,7 +24,7 @@ function codecallback_startgametype()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x208
 // Size: 0x41
 function codecallback_playeractive()
@@ -43,7 +43,7 @@ function codecallback_playeractive()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x251
 // Size: 0x40
 function codecallback_playerconnect()
@@ -59,7 +59,7 @@ function codecallback_playerconnect()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x299
 // Size: 0xb4
 function codecallback_playerdisconnect( reason )
@@ -88,7 +88,7 @@ function codecallback_playerdisconnect( reason )
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0x355
 // Size: 0xc4
 function codecallback_playerdamage( einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1 )
@@ -104,7 +104,7 @@ function codecallback_playerdamage( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x421
 // Size: 0x72
 function codecallback_playerfinishweaponchange( objoldweapon, objnewweapon )
@@ -124,7 +124,7 @@ function codecallback_playerfinishweaponchange( objoldweapon, objnewweapon )
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x49b
 // Size: 0x8f
 function codecallback_playerimpaled( eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34, var_d3564b2364cb59e6, var_a4d8eb0a63f60f6b )
@@ -140,7 +140,7 @@ function codecallback_playerimpaled( eattacker, objweapon, vpointclient, vpoint,
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x532
 // Size: 0x5e
 function function_352bf03b62b5e7d3( eattacker, objweapon, vdir, magnitude, shitloc )
@@ -156,7 +156,7 @@ function function_352bf03b62b5e7d3( eattacker, objweapon, vdir, magnitude, shitl
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x598
 // Size: 0x90
 function codecallback_playerkilled( einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration )
@@ -172,7 +172,7 @@ function codecallback_playerkilled( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x630
 // Size: 0x1b8
 function codecallback_vehicledamage( inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, attachtagname, partname, eventid )
@@ -216,7 +216,7 @@ function codecallback_vehicledamage( inflictor, attacker, damage, dflags, meanso
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x7f0
 // Size: 0xed
 function codecallback_playerlaststand( einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration )
@@ -242,7 +242,7 @@ function codecallback_playerlaststand( einflictor, eattacker, idamage, smeansofd
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e5
 // Size: 0x25
 function codecallback_spawnpointsprecalc( team )
@@ -254,7 +254,7 @@ function codecallback_spawnpointsprecalc( team )
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x912
 // Size: 0x3c
 function codecallback_spawnpointscore( player, spawnpoint, team )
@@ -268,7 +268,7 @@ function codecallback_spawnpointscore( player, spawnpoint, team )
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x957
 // Size: 0x71
 function codecallback_spawnpointcritscore( player, spawnpoint, team )
@@ -293,7 +293,7 @@ function codecallback_spawnpointcritscore( player, spawnpoint, team )
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d1
 // Size: 0x15
 function codecallback_playermigrated()
@@ -303,7 +303,7 @@ function codecallback_playermigrated()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ee
 // Size: 0xe
 function codecallback_hostmigration()
@@ -312,7 +312,7 @@ function codecallback_hostmigration()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa04
 // Size: 0x34
 function function_99f3c84cf3b7ceb8()
@@ -327,7 +327,7 @@ function function_99f3c84cf3b7ceb8()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa40
 // Size: 0x20
 function function_dbf77b841cfb8d59( reason )
@@ -337,7 +337,7 @@ function function_dbf77b841cfb8d59( reason )
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa68
 // Size: 0x21
 function function_c305fc8bed32b81e( achievementid, progressdata )
@@ -346,7 +346,7 @@ function function_c305fc8bed32b81e( achievementid, progressdata )
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa91
 // Size: 0x43
 function function_493bb22764bc865()
@@ -361,7 +361,7 @@ function function_493bb22764bc865()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xadd
 // Size: 0x18
 function function_216b4c739c8bf413()
@@ -370,7 +370,7 @@ function function_216b4c739c8bf413()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xafd
 // Size: 0x18
 function function_c45c947888c3a913()
@@ -379,7 +379,7 @@ function function_c45c947888c3a913()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb1d
 // Size: 0xe1
 function abortlevel()
@@ -403,7 +403,7 @@ function abortlevel()
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc06
 // Size: 0x2
 function callbackvoid()

@@ -13,7 +13,7 @@
 #namespace killstreakdeploy;
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x92b
 // Size: 0x266, Type: bool
 function candeploykillstreak( streakinfo, deployweaponobj, var_818a18147626dfbf )
@@ -94,7 +94,7 @@ function candeploykillstreak( streakinfo, deployweaponobj, var_818a18147626dfbf 
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb9a
 // Size: 0x105
 function ondeploystart( streakinfo )
@@ -119,7 +119,7 @@ function ondeploystart( streakinfo )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca7
 // Size: 0x11d
 function ondeployfinished( streakinfo )
@@ -158,7 +158,7 @@ function ondeployfinished( streakinfo )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdcc
 // Size: 0xa
 function streakdeploy_cancelalldeployments()
@@ -167,7 +167,7 @@ function streakdeploy_cancelalldeployments()
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdde
 // Size: 0xe9
 function streakdeploy_dogesturedeploy( streakinfo, gestureweaponobj )
@@ -203,7 +203,7 @@ function streakdeploy_dogesturedeploy( streakinfo, gestureweaponobj )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xed0
 // Size: 0x3f
 function watchforcancelduringgesture( streakinfo, gestureweaponobj )
@@ -217,7 +217,7 @@ function watchforcancelduringgesture( streakinfo, gestureweaponobj )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf17
 // Size: 0x29
 function watchlaststandend( gestureweaponobj )
@@ -229,7 +229,7 @@ function watchlaststandend( gestureweaponobj )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf48
 // Size: 0x3a
 function function_44d17dbe4db72ea9( streakinfo )
@@ -246,7 +246,7 @@ function function_44d17dbe4db72ea9( streakinfo )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xf8a
 // Size: 0xda, Type: bool
 function streakdeploy_doweaponswitchdeploy( streakinfo, weaponobj, keepweapon, weapongivencallback, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b )
@@ -272,7 +272,7 @@ function streakdeploy_doweaponswitchdeploy( streakinfo, weaponobj, keepweapon, w
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x106d
 // Size: 0x165, Type: bool
 function streakdeploy_doweaponfireddeploy( streakinfo, weaponobj, firednotify, weapongivencallback, var_8fd4d93dd619da88, weaponfiredcallback, var_91f739c2c51347d4, var_d55d8445518099b )
@@ -314,7 +314,7 @@ function streakdeploy_doweaponfireddeploy( streakinfo, weaponobj, firednotify, w
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x11db
 // Size: 0x241, Type: bool
 function streakdeploy_doweapontabletdeploy( streakinfo, weapongivencallback, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b, var_f6a32dcc4b19aad9, var_67a06b4ea269058e, var_afe464c242489272, var_818a18147626dfbf, var_c2a00d4f077ebd87 )
@@ -399,7 +399,7 @@ function streakdeploy_doweapontabletdeploy( streakinfo, weapongivencallback, var
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1425
 // Size: 0x57
 function streakdeploy_playtabletdeploydialog( streakinfo )
@@ -415,7 +415,7 @@ function streakdeploy_playtabletdeploydialog( streakinfo )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1484
 // Size: 0x133, Type: bool
 function streakdeploy_dothrowbackmarkerdeploy( streakinfo, weaponoverride, weapongivencallback, var_8fd4d93dd619da88, weaponfiredcallback, var_91f739c2c51347d4, var_d55d8445518099b )
@@ -454,7 +454,7 @@ function streakdeploy_dothrowbackmarkerdeploy( streakinfo, weaponoverride, weapo
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x15c0
 // Size: 0x176
 function switchtodeployweapon( deployweaponobj, streakinfo, cleanupwaitfunc, weapongivencallback, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b, skipfirstraise )
@@ -523,7 +523,7 @@ function switchtodeployweapon( deployweaponobj, streakinfo, cleanupwaitfunc, wea
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x173f
 // Size: 0x3c
 function callweapongivencallback( streakinfo, weapongivencallback )
@@ -542,7 +542,7 @@ function callweapongivencallback( streakinfo, weapongivencallback )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1784
 // Size: 0x49
 function watchforcancelduringweaponswitch( streakinfo, deployweaponobj )
@@ -560,7 +560,7 @@ function watchforcancelduringweaponswitch( streakinfo, deployweaponobj )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17d5
 // Size: 0x93
 function function_7605a5b4c0a6e117( streakinfo, deployweaponobj )
@@ -590,7 +590,7 @@ function function_7605a5b4c0a6e117( streakinfo, deployweaponobj )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1870
 // Size: 0x155, Type: bool
 function watchdeployweaponfired( streakinfo, firednotify, var_4ef1099365450bae, weaponfiredcallback )
@@ -665,7 +665,7 @@ function watchdeployweaponfired( streakinfo, firednotify, var_4ef1099365450bae, 
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19ce
 // Size: 0x1e9, Type: bool
 function watchdeployweaponanimtransition( streakinfo, animlength, var_67a06b4ea269058e )
@@ -726,7 +726,7 @@ function watchdeployweaponanimtransition( streakinfo, animlength, var_67a06b4ea2
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bc0
 // Size: 0x26
 function unfreezecontrolsonroundend()
@@ -771,7 +771,7 @@ function private startweapontabletfadetransition( timedelay, streakinfo )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cb9
 // Size: 0xa4
 function watchweapontabletstop( streakinfo )
@@ -804,7 +804,7 @@ function watchweapontabletstop( streakinfo )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d65
 // Size: 0xce
 function watchweapontabletcallinpos( streakinfo )
@@ -852,7 +852,7 @@ function watchweapontabletcallinpos( streakinfo )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e3b
 // Size: 0x13
 function function_67f13db1409ec06d( streakinfo )
@@ -964,7 +964,7 @@ function private cleanupdeployweapon( switchresult, streakinfo, weaponobj, clean
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20c9
 // Size: 0x54
 function getridofkillstreakdeployweapon( weaponobj )
@@ -997,7 +997,7 @@ function private function_1a815b06ac8daec6( objweapon )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x218f
 // Size: 0x48, Type: bool
 function function_b752eaae4d806c4c( currentweapon )
@@ -1015,7 +1015,7 @@ function function_b752eaae4d806c4c( currentweapon )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21e0
 // Size: 0x33f
 function candeploykillstreakweapon( streakinfo, objweapon )
@@ -1143,7 +1143,7 @@ function candeploykillstreakweapon( streakinfo, objweapon )
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2528
 // Size: 0x76
 function function_9c92daea59d1e8cf( messagetype )

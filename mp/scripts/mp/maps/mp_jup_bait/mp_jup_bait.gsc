@@ -15,7 +15,7 @@
 #namespace mp_jup_bait;
 
 // Namespace mp_jup_bait / scripts\mp\maps\mp_jup_bait\mp_jup_bait
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x375
 // Size: 0xff
 function main()
@@ -40,7 +40,7 @@ function main()
 }
 
 // Namespace mp_jup_bait / scripts\mp\maps\mp_jup_bait\mp_jup_bait
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47c
 // Size: 0x40
 function function_1682cf22619a5e55()
@@ -55,7 +55,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_jup_bait / scripts\mp\maps\mp_jup_bait\mp_jup_bait
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c4
 // Size: 0x9d
 function function_4b72f18862c4fa5c()
@@ -70,7 +70,8 @@ function function_4b72f18862c4fa5c()
         boi hide();
     }
     
-    for (i = 1; i <= 20; i++) {
+    for ( i = 1; i <= 20 ; i++ )
+    {
         var_531ba5580fd8e7b7 = getent( "small_duck" + string( i ), "targetname" );
         
         if ( isdefined( var_531ba5580fd8e7b7 ) )
@@ -82,7 +83,7 @@ function function_4b72f18862c4fa5c()
 }
 
 // Namespace mp_jup_bait / scripts\mp\maps\mp_jup_bait\mp_jup_bait
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x569
 // Size: 0x150
 function mount_watcher( params )
@@ -138,7 +139,7 @@ function mount_watcher( params )
 }
 
 // Namespace mp_jup_bait / scripts\mp\maps\mp_jup_bait\mp_jup_bait
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6c1
 // Size: 0x1b8
 function function_18c9c22299cc517f( player, index )
@@ -160,8 +161,10 @@ function function_18c9c22299cc517f( player, index )
                 level.var_f29f62be2292a8af = [];
                 var_a1a05daa21d9018a = [];
                 
-                for (i = 0; i < 15; i++) {
-                    for (spawnernum = undefined; !isdefined( spawnernum ) || array_contains( var_a1a05daa21d9018a, spawnernum ); spawnernum = randomint( 20 ) + 1) {
+                for ( i = 0; i < 15 ; i++ )
+                {
+                    for ( spawnernum = undefined; !isdefined( spawnernum ) || array_contains( var_a1a05daa21d9018a, spawnernum ) ; spawnernum = randomint( 20 ) + 1 )
+                    {
                     }
                     
                     var_a1a05daa21d9018a = array_add( var_a1a05daa21d9018a, spawnernum );
@@ -182,7 +185,7 @@ function function_18c9c22299cc517f( player, index )
 }
 
 // Namespace mp_jup_bait / scripts\mp\maps\mp_jup_bait\mp_jup_bait
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x881
 // Size: 0x102
 function function_19608f86dac72ab()
@@ -211,7 +214,7 @@ function function_19608f86dac72ab()
 }
 
 // Namespace mp_jup_bait / scripts\mp\maps\mp_jup_bait\mp_jup_bait
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98b
 // Size: 0x9e
 function damage_watcher()
@@ -238,7 +241,7 @@ function damage_watcher()
 }
 
 // Namespace mp_jup_bait / scripts\mp\maps\mp_jup_bait\mp_jup_bait
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa31
 // Size: 0xc2
 function function_461c8de9d8189070()
@@ -269,7 +272,7 @@ function function_461c8de9d8189070()
 }
 
 // Namespace mp_jup_bait / scripts\mp\maps\mp_jup_bait\mp_jup_bait
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xafb
 // Size: 0xb1
 function function_6ba4aa0274475b37()

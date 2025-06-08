@@ -23,7 +23,7 @@
 #namespace namespace_b238231af8cd48f9;
 
 // Namespace namespace_b238231af8cd48f9 / namespace_f9b6a4254d2d8100
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f2
 // Size: 0x2a8
 function init_vehicles()
@@ -90,7 +90,7 @@ function init_vehicles()
 }
 
 // Namespace namespace_b238231af8cd48f9 / namespace_f9b6a4254d2d8100
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a2
 // Size: 0x157
 function function_48f13f47907a7e67( var_fcd28e3502bd7a3f )
@@ -119,7 +119,7 @@ function function_48f13f47907a7e67( var_fcd28e3502bd7a3f )
 }
 
 // Namespace namespace_b238231af8cd48f9 / namespace_f9b6a4254d2d8100
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x802
 // Size: 0x1c3
 function function_c7028a51e2858e73()
@@ -163,7 +163,8 @@ function function_c7028a51e2858e73()
             
             if ( var_6faca44abd05e178.size >= var_484a5eb0bb208daf )
             {
-                for (i = 0; i < var_484a5eb0bb208daf; i++) {
+                for ( i = 0; i < var_484a5eb0bb208daf ; i++ )
+                {
                     var_2b3cfed5214352a4[ i ] = var_6faca44abd05e178[ i ];
                 }
             }
@@ -179,7 +180,7 @@ function function_c7028a51e2858e73()
 }
 
 // Namespace namespace_b238231af8cd48f9 / namespace_f9b6a4254d2d8100
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ce
 // Size: 0x29
 function spawn_vehicle( s_spawn )
@@ -189,7 +190,7 @@ function spawn_vehicle( s_spawn )
 }
 
 // Namespace namespace_b238231af8cd48f9 / namespace_f9b6a4254d2d8100
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ff
 // Size: 0x27e
 function function_63c6d4fbc0bc4d94( var_fcd28e3502bd7a3f )
@@ -230,7 +231,8 @@ function function_63c6d4fbc0bc4d94( var_fcd28e3502bd7a3f )
             
             if ( var_1e021a30b73c352[ 0 ].refname == "atv" )
             {
-                for (i = 1; i < var_1e021a30b73c352.size - 1; i++) {
+                for ( i = 1; i < var_1e021a30b73c352.size - 1 ; i++ )
+                {
                     if ( var_1e021a30b73c352[ i ].refname == "atv" )
                     {
                         vh_atv = scripts\cp_mp\vehicles\vehicle::vehicle_spawn( var_1e021a30b73c352[ i ].refname, var_1e021a30b73c352[ i ] );
@@ -242,7 +244,7 @@ function function_63c6d4fbc0bc4d94( var_fcd28e3502bd7a3f )
 }
 
 // Namespace namespace_b238231af8cd48f9 / namespace_f9b6a4254d2d8100
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc85
 // Size: 0x110
 function on_ai_killed( sparams )
@@ -268,7 +270,7 @@ function on_ai_killed( sparams )
 }
 
 // Namespace namespace_b238231af8cd48f9 / namespace_f9b6a4254d2d8100
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd9d
 // Size: 0x6f
 function function_743e37eebd6ba8e2( n_damage )

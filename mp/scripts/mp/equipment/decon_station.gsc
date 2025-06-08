@@ -46,7 +46,7 @@ function autoexec main()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x76b
 // Size: 0x73
 function function_1842bad814634447()
@@ -63,7 +63,7 @@ function function_1842bad814634447()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e6
 // Size: 0x1c
 function function_a443e13b4a9bee87()
@@ -72,7 +72,7 @@ function function_a443e13b4a9bee87()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x80a
 // Size: 0x19f
 function function_9748251d23375c78()
@@ -97,7 +97,7 @@ function function_9748251d23375c78()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b1
 // Size: 0x43
 function function_1625d782aa1489fa()
@@ -111,7 +111,7 @@ function function_1625d782aa1489fa()
 /#
 
     // Namespace decon_station / scripts\mp\equipment\decon_station
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9fc
     // Size: 0x21, Type: dev
     function update_dvars()
@@ -128,7 +128,7 @@ function function_1625d782aa1489fa()
 #/
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa25
 // Size: 0x34a
 function function_a04b98235b2cc5d6()
@@ -182,7 +182,7 @@ function function_a04b98235b2cc5d6()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd77
 // Size: 0x95
 function function_5662b53af19eebe4( newhealth )
@@ -197,7 +197,7 @@ function function_5662b53af19eebe4( newhealth )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe14
 // Size: 0x47
 function function_e61a64964ffa423e()
@@ -207,7 +207,7 @@ function function_e61a64964ffa423e()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe63
 // Size: 0x15
 function function_694daaec66c48da3( pct )
@@ -216,7 +216,7 @@ function function_694daaec66c48da3( pct )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe80
 // Size: 0xb
 function function_fe4d2e7bc5d4b7f7()
@@ -225,7 +225,7 @@ function function_fe4d2e7bc5d4b7f7()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe94
 // Size: 0xb
 function function_b675a78bc2fc89cc()
@@ -234,7 +234,7 @@ function function_b675a78bc2fc89cc()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea7
 // Size: 0xb
 function function_8fe25bd617773044()
@@ -243,7 +243,7 @@ function function_8fe25bd617773044()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeba
 // Size: 0x2d4
 function function_c06383227e374b98( instance )
@@ -297,7 +297,7 @@ function function_c06383227e374b98( instance )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1196
 // Size: 0x44
 function function_dfe95384cf2267b0()
@@ -319,7 +319,7 @@ function function_dfe95384cf2267b0()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11e2
 // Size: 0x1e4
 function function_34f8be6e5619de8e()
@@ -356,7 +356,7 @@ function function_34f8be6e5619de8e()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13ce
 // Size: 0xaa
 function function_a51acf6aec4e93f6( instance )
@@ -381,7 +381,7 @@ function function_a51acf6aec4e93f6( instance )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1480
 // Size: 0xd2
 function function_8e816db9a263e987( instance )
@@ -411,7 +411,7 @@ function function_8e816db9a263e987( instance )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x155a
 // Size: 0x35
 function function_6b5fe5bb09eb8d12( instance )
@@ -423,7 +423,7 @@ function function_6b5fe5bb09eb8d12( instance )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1597
 // Size: 0x207
 function function_128a4fee743da6b8()
@@ -502,7 +502,7 @@ function function_128a4fee743da6b8()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17a6
 // Size: 0x42
 function function_100c065ef26d8383( instance )
@@ -524,7 +524,7 @@ function function_100c065ef26d8383( instance )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17f0
 // Size: 0x2f
 function function_702dc1894784f5d6( instance )
@@ -538,7 +538,7 @@ function function_702dc1894784f5d6( instance )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1827
 // Size: 0x31, Type: bool
 function function_5982c547b3946148( ent, trigger )
@@ -552,7 +552,7 @@ function function_5982c547b3946148( ent, trigger )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1861
 // Size: 0x25, Type: bool
 function function_5aac0a0b99e895e6( ent )
@@ -561,7 +561,7 @@ function function_5aac0a0b99e895e6( ent )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x188f
 // Size: 0x82
 function function_24da645ff5f35063()
@@ -571,7 +571,8 @@ function function_24da645ff5f35063()
         playfxontag( getfx( "vfx_br_decontamination_station_circle_aura" ), self, "tag_origin" );
     }
     
-    for (i = 1; i <= 6; i++) {
+    for ( i = 1; i <= 6 ; i++ )
+    {
         partname = "canister" + string( i );
         self setscriptablepartstate( partname, "active" );
     }
@@ -581,7 +582,7 @@ function function_24da645ff5f35063()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1919
 // Size: 0x87
 function function_6712a3a393684237()
@@ -591,7 +592,8 @@ function function_6712a3a393684237()
     level endon( "game_ended" );
     timeinterval = level.decon_station.lifetime / float( 6 );
     
-    for (var_f32964e4d7f1f9d3 = 1; var_f32964e4d7f1f9d3 <= 6; var_f32964e4d7f1f9d3++) {
+    for ( var_f32964e4d7f1f9d3 = 1; var_f32964e4d7f1f9d3 <= 6 ; var_f32964e4d7f1f9d3++ )
+    {
         partname = "canister" + string( var_f32964e4d7f1f9d3 );
         wait timeinterval;
         self setscriptablepartstate( partname, "hidden" );
@@ -600,7 +602,7 @@ function function_6712a3a393684237()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a8
 // Size: 0xba
 function function_e05e6e05f45badd7()
@@ -613,7 +615,8 @@ function function_e05e6e05f45badd7()
     {
         timeinterval = 0.1 / float( 6 );
         
-        for (var_f32964e4d7f1f9d3 = 6 - self.var_8904bf911dce8250 + 1; var_f32964e4d7f1f9d3 <= 6; var_f32964e4d7f1f9d3++) {
+        for ( var_f32964e4d7f1f9d3 = 6 - self.var_8904bf911dce8250 + 1; var_f32964e4d7f1f9d3 <= 6 ; var_f32964e4d7f1f9d3++ )
+        {
             partname = "canister" + string( var_f32964e4d7f1f9d3 );
             self setscriptablepartstate( partname, "hidden" );
             self.var_8904bf911dce8250--;
@@ -630,7 +633,7 @@ function function_e05e6e05f45badd7()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a6a
 // Size: 0x30
 function function_77b0e78777cab441()
@@ -642,7 +645,7 @@ function function_77b0e78777cab441()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aa2
 // Size: 0x32
 function function_9258952190753eb6()
@@ -654,7 +657,7 @@ function function_9258952190753eb6()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1adc
 // Size: 0x10
 function function_1a0e76814e6cd04e()
@@ -663,7 +666,7 @@ function function_1a0e76814e6cd04e()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1af5
 // Size: 0x53
 function function_85e5fd047d8781ff( data )
@@ -675,7 +678,7 @@ function function_85e5fd047d8781ff( data )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b50
 // Size: 0x28
 function function_1c39cb7e142659cb()
@@ -690,7 +693,7 @@ function function_1c39cb7e142659cb()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b80
 // Size: 0x2b
 function function_9f9a669cc625c8fd()
@@ -705,7 +708,7 @@ function function_9f9a669cc625c8fd()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bb3
 // Size: 0x8b
 function function_e216e49842f16c3e( data )
@@ -721,7 +724,7 @@ function function_e216e49842f16c3e( data )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c47
 // Size: 0x18d
 function function_ee7db96b190a4b50()
@@ -766,7 +769,7 @@ function function_ee7db96b190a4b50()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ddc
 // Size: 0x35
 function function_3787dffc5737dab7( data )
@@ -777,7 +780,7 @@ function function_3787dffc5737dab7( data )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e19
 // Size: 0xfe
 function function_ce125b637ef3e995( attacker, wasdestroyed, delay )
@@ -813,7 +816,7 @@ function function_ce125b637ef3e995( attacker, wasdestroyed, delay )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f1f
 // Size: 0x1d7
 function function_f828f503fe8f1ac8( deletiondelay, wasdestroyed )
@@ -868,7 +871,7 @@ function function_f828f503fe8f1ac8( deletiondelay, wasdestroyed )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20fe
 // Size: 0x3f
 function function_aa96f22f194adefa( attacker )
@@ -882,7 +885,7 @@ function function_aa96f22f194adefa( attacker )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2145
 // Size: 0xc1
 function function_cf193b9f9be4558a()
@@ -901,7 +904,7 @@ function function_cf193b9f9be4558a()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x220f
 // Size: 0x51
 function function_e11ba21269ccd5aa()
@@ -915,7 +918,7 @@ function function_e11ba21269ccd5aa()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2268
 // Size: 0x26
 function function_4755de31a950115()
@@ -926,7 +929,7 @@ function function_4755de31a950115()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2296
 // Size: 0x128
 function function_292eab686b6b2a43( player )
@@ -965,7 +968,7 @@ function function_292eab686b6b2a43( player )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23c6
 // Size: 0x28
 function function_fd34b36b5287c008()
@@ -981,7 +984,7 @@ function function_fd34b36b5287c008()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23f6
 // Size: 0x31
 function function_af799b82948f975f( time, offset )
@@ -993,7 +996,7 @@ function function_af799b82948f975f( time, offset )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x242f
 // Size: 0x14c
 function function_4ab4129843b283fd()
@@ -1030,7 +1033,7 @@ function function_4ab4129843b283fd()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2583
 // Size: 0x48
 function function_d5e3dcb372af63ff()
@@ -1052,7 +1055,7 @@ function function_d5e3dcb372af63ff()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25d3
 // Size: 0x22
 function function_f32b8dc9b65a1bd()
@@ -1066,7 +1069,7 @@ function function_f32b8dc9b65a1bd()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25fd
 // Size: 0x19
 function function_29e9926ce02e1444()
@@ -1077,7 +1080,7 @@ function function_29e9926ce02e1444()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x261e
 // Size: 0x21
 function function_b200ebacdbaee4ad()
@@ -1090,7 +1093,7 @@ function function_b200ebacdbaee4ad()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2647
 // Size: 0x20
 function function_fd28f2264da9d3c7()
@@ -1103,7 +1106,7 @@ function function_fd28f2264da9d3c7()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x266f
 // Size: 0x9e, Type: bool
 function is_train_ent( hitent )
@@ -1128,7 +1131,7 @@ function is_train_ent( hitent )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2716
 // Size: 0x65, Type: bool
 function function_8b9d56208d268672( target )
@@ -1142,7 +1145,7 @@ function function_8b9d56208d268672( target )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2784
 // Size: 0x75
 function function_a033c27491518fb0( player, position, circle_index )
@@ -1152,7 +1155,7 @@ function function_a033c27491518fb0( player, position, circle_index )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2801
 // Size: 0x84
 function function_62cfac8169ea6a74( params )
@@ -1162,7 +1165,7 @@ function function_62cfac8169ea6a74( params )
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x288d
 // Size: 0x27
 function function_9680f87ffa3dbd74()
@@ -1179,7 +1182,7 @@ function function_9680f87ffa3dbd74()
 }
 
 // Namespace decon_station / scripts\mp\equipment\decon_station
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28bc
 // Size: 0xca
 function function_99d221b1b6568bf5()
@@ -1210,7 +1213,7 @@ function function_99d221b1b6568bf5()
 /#
 
     // Namespace decon_station / scripts\mp\equipment\decon_station
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x298e
     // Size: 0x1a, Type: dev
     function init_debug()
@@ -1220,7 +1223,7 @@ function function_99d221b1b6568bf5()
     }
 
     // Namespace decon_station / scripts\mp\equipment\decon_station
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x29b0
     // Size: 0x33, Type: dev
     function setup_devgui()
@@ -1237,7 +1240,7 @@ function function_99d221b1b6568bf5()
     }
 
     // Namespace decon_station / scripts\mp\equipment\decon_station
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x29eb
     // Size: 0x164, Type: dev
     function function_c290f027b8bc76e1( command, args )

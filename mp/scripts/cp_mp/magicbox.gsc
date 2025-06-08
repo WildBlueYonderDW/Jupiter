@@ -15,7 +15,7 @@
 #namespace magicbox;
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x977
 // Size: 0x111
 function init_magicbox( var_ab2f2c696f2e969d )
@@ -52,7 +52,7 @@ function init_magicbox( var_ab2f2c696f2e969d )
 /#
 
     // Namespace magicbox / scripts\cp_mp\magicbox
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa90
     // Size: 0x160, Type: dev
     function function_9433af8de8931e12()
@@ -78,7 +78,7 @@ function init_magicbox( var_ab2f2c696f2e969d )
     }
 
     // Namespace magicbox / scripts\cp_mp\magicbox
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xbf8
     // Size: 0x82, Type: dev
     function function_d5899f2536209f81( params )
@@ -98,7 +98,7 @@ function init_magicbox( var_ab2f2c696f2e969d )
     }
 
     // Namespace magicbox / scripts\cp_mp\magicbox
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xc82
     // Size: 0x129, Type: dev
     function function_69e55cbe67712bf1( s_bundle )
@@ -126,7 +126,7 @@ function init_magicbox( var_ab2f2c696f2e969d )
     }
 
     // Namespace magicbox / scripts\cp_mp\magicbox
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xdb3
     // Size: 0x5d, Type: dev
     function function_a611dfe6a478e045( params )
@@ -143,7 +143,7 @@ function init_magicbox( var_ab2f2c696f2e969d )
     }
 
     // Namespace magicbox / scripts\cp_mp\magicbox
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe18
     // Size: 0xf3, Type: dev
     function function_49b1a3d1fe2ab11f()
@@ -175,7 +175,7 @@ function init_magicbox( var_ab2f2c696f2e969d )
     }
 
     // Namespace magicbox / scripts\cp_mp\magicbox
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xf13
     // Size: 0x10, Type: dev
     function function_4dd640fcb2a0c79e()
@@ -184,7 +184,7 @@ function init_magicbox( var_ab2f2c696f2e969d )
     }
 
     // Namespace magicbox / scripts\cp_mp\magicbox
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xf2b
     // Size: 0x1dd, Type: dev
     function function_8d554b62a88524e7()
@@ -233,7 +233,7 @@ function init_magicbox( var_ab2f2c696f2e969d )
 #/
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1110
 // Size: 0x315
 function function_8eda83df58e1a162( params )
@@ -303,7 +303,7 @@ function function_8eda83df58e1a162( params )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x142d
 // Size: 0x1bb
 function setup_magicbox_weapons( var_ab2f2c696f2e969d )
@@ -353,7 +353,7 @@ function setup_magicbox_weapons( var_ab2f2c696f2e969d )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15f0
 // Size: 0x15c
 function function_e4f5deb03f4e035b()
@@ -379,7 +379,7 @@ function function_e4f5deb03f4e035b()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1754
 // Size: 0xcd
 function function_7f4d7d96a3f25be( destination )
@@ -399,7 +399,7 @@ function function_7f4d7d96a3f25be( destination )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1829
 // Size: 0x184
 function function_c8563800655fa24f()
@@ -458,7 +458,7 @@ function private function_5432ff3fb5bd59c9( instance )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a3e
 // Size: 0x297
 function function_5cc90fd8a70217c7()
@@ -509,7 +509,7 @@ function function_5cc90fd8a70217c7()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cdd
 // Size: 0xda
 function hide_magicbox( b_immediate, var_c28202badd40890a )
@@ -543,7 +543,7 @@ function hide_magicbox( b_immediate, var_c28202badd40890a )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1dbf
 // Size: 0xb9
 function show_magicbox( b_immediate, var_c28202badd40890a )
@@ -568,7 +568,7 @@ function show_magicbox( b_immediate, var_c28202badd40890a )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e80
 // Size: 0x22
 function enable_interact()
@@ -612,7 +612,7 @@ function private function_6d88ee94fd62afcb( usable, player )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2000
 // Size: 0x1ac
 function firesale_start()
@@ -686,7 +686,7 @@ function private function_556557bb00022522()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2226
 // Size: 0x9a
 function function_201ddd270d6d9a83()
@@ -706,7 +706,7 @@ function function_201ddd270d6d9a83()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22c8
 // Size: 0x2e4
 function move_magicbox()
@@ -773,7 +773,7 @@ function move_magicbox()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25b4
 // Size: 0x17
 function function_8dc72235fa40c1b4()
@@ -784,7 +784,7 @@ function function_8dc72235fa40c1b4()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25d3
 // Size: 0x108
 function function_93b6d9d9170876bd( player )
@@ -817,7 +817,7 @@ function function_93b6d9d9170876bd( player )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26e3
 // Size: 0x7a
 function open_magicbox()
@@ -835,7 +835,7 @@ function open_magicbox()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2765
 // Size: 0x59
 function close_magicbox()
@@ -848,7 +848,7 @@ function close_magicbox()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27c6
 // Size: 0x87a
 function function_d97bbdb67211e6ba()
@@ -986,7 +986,8 @@ function function_d97bbdb67211e6ba()
     
     var_a41b3f4b1aaba46c = getscriptbundle( "itemspawnentry:" + self.var_79c38a575c9cdcbe );
     
-    for (var_747f59f41919885f = 0; self.var_c80acd5b1945a70f function_d5432d867711d5a( var_a41b3f4b1aaba46c ) && var_747f59f41919885f < 10; var_747f59f41919885f++) {
+    for ( var_747f59f41919885f = 0; self.var_c80acd5b1945a70f function_d5432d867711d5a( var_a41b3f4b1aaba46c ) && var_747f59f41919885f < 10 ; var_747f59f41919885f++ )
+    {
         var_6fd21a56d5787ec2 = function_bc2f4857c90f5344( level.str_magicbox_weapon_itemspawnlist, 1 );
         self.var_79c38a575c9cdcbe = var_6fd21a56d5787ec2[ 0 ];
         var_a41b3f4b1aaba46c = getscriptbundle( "itemspawnentry:" + self.var_79c38a575c9cdcbe );
@@ -1098,7 +1099,7 @@ function private function_d5432d867711d5a( var_a41b3f4b1aaba46c )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31df
 // Size: 0xc8
 function function_8c0d1d51b9a310b9()
@@ -1129,7 +1130,7 @@ function function_8c0d1d51b9a310b9()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32b0
 // Size: 0x23
 function function_e51e139834121ccb( player )
@@ -1143,7 +1144,7 @@ function function_e51e139834121ccb( player )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32dc
 // Size: 0xedb
 function function_e4f1c5e85e0d69a()
@@ -1462,7 +1463,7 @@ function function_e4f1c5e85e0d69a()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41bf
 // Size: 0x67
 function function_6723ddf7ee271958( str_weapon_name, item )
@@ -1483,7 +1484,7 @@ function function_6723ddf7ee271958( str_weapon_name, item )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x422f
 // Size: 0xde
 function function_7b2d9fabb5c06de2( usable, player )
@@ -1513,7 +1514,7 @@ function private function_4ce554761d2246b1()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x434a
 // Size: 0x3c
 function function_e911d6218f8a1c97( cost )
@@ -1527,7 +1528,7 @@ function function_e911d6218f8a1c97( cost )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x438f
 // Size: 0x221
 function function_c6bcc8af70c669d6( player )
@@ -1593,7 +1594,7 @@ function function_c6bcc8af70c669d6( player )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45b8
 // Size: 0x63
 function function_6743ce9942654f5c()
@@ -1609,7 +1610,7 @@ function function_6743ce9942654f5c()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4624
 // Size: 0x4f
 function function_d26b24de82eb5022()
@@ -1625,9 +1626,9 @@ function function_d26b24de82eb5022()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x467c
-// Size: 0xf1, Type: bool
+// Size: 0xf1
 function function_87c4b368c1103687()
 {
     var_5d2f2f0ef7fb6d7c = getscriptbundle( "magicbox:" + level.gamemodebundle.magicboxbundle );
@@ -1645,14 +1646,14 @@ function function_87c4b368c1103687()
     
     if ( self.var_fec5078e78eb7217 <= function_d26b24de82eb5022() )
     {
-        return false;
+        return 0;
     }
     
     return utility::percent_chance( 40 );
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4776
 // Size: 0xb5
 function function_a937ca6de2a9bd6a( itemname )
@@ -1674,9 +1675,9 @@ function function_a937ca6de2a9bd6a( itemname )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4834
-// Size: 0x84, Type: bool
+// Size: 0x84
 function function_77b2927185ade6cf()
 {
     if ( istrue( level.var_7b92ca8fe0fc2411 ) )
@@ -1685,40 +1686,40 @@ function function_77b2927185ade6cf()
             iprintlnbold( "<dev string:x67e>" );
         #/
         
-        return false;
+        return 0;
     }
     
     if ( istrue( level.var_9a3999e1157b96b2 ) )
     {
-        return true;
+        return 1;
     }
     
     if ( flag( "powerup_fire_sale_active" ) )
     {
-        return false;
+        return 0;
     }
     
     if ( !self.var_75e032c5035207fe )
     {
         if ( self.var_fec5078e78eb7217 >= function_6743ce9942654f5c() )
         {
-            return true;
+            return 1;
         }
     }
     else if ( self.var_fec5078e78eb7217 < function_d26b24de82eb5022() )
     {
-        return false;
+        return 0;
     }
     else
     {
         return function_87c4b368c1103687();
     }
     
-    return false;
+    return 0;
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48c1
 // Size: 0x10
 function function_beb43989a331e2cb()
@@ -1727,7 +1728,7 @@ function function_beb43989a331e2cb()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48d9
 // Size: 0x1f4
 function function_f3df4ac07d385cbb()
@@ -1776,7 +1777,7 @@ function function_f3df4ac07d385cbb()
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ad5
 // Size: 0xb
 function on_round_end( params )
@@ -1785,7 +1786,7 @@ function on_round_end( params )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ae8
 // Size: 0x15a
 function function_76a849c903b6174d( str_rarity )
@@ -1826,7 +1827,7 @@ function function_76a849c903b6174d( str_rarity )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c4a
 // Size: 0x163
 function function_df75e34b6f908603( str_rarity, var_9d40b17c398849c6 )
@@ -1908,7 +1909,7 @@ function function_df75e34b6f908603( str_rarity, var_9d40b17c398849c6 )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4db6
 // Size: 0x112
 function function_62d33a3eda193ce( str_rarity )
@@ -1944,7 +1945,7 @@ function function_62d33a3eda193ce( str_rarity )
 }
 
 // Namespace magicbox / scripts\cp_mp\magicbox
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ed0
 // Size: 0xbd
 function function_7fa5860a8e414317( rarity )

@@ -9,7 +9,7 @@
 #namespace namespace_6d86fa067dd1151d;
 
 // Namespace namespace_6d86fa067dd1151d / namespace_cf330d307304e7fc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdf
 // Size: 0x29
 function function_f383491974a17b9a()
@@ -19,7 +19,7 @@ function function_f383491974a17b9a()
 }
 
 // Namespace namespace_6d86fa067dd1151d / namespace_cf330d307304e7fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x110
 // Size: 0x20
 function function_1f3181d1053887e6( escortheli )

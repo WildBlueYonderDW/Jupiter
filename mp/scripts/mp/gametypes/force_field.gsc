@@ -27,7 +27,7 @@ function autoexec callback_init()
 }
 
 // Namespace force_field / scripts\mp\gametypes\force_field
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x192
 // Size: 0x3a
 function function_2fe1faaffe9ed832()
@@ -38,7 +38,7 @@ function function_2fe1faaffe9ed832()
 }
 
 // Namespace force_field / scripts\mp\gametypes\force_field
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d4
 // Size: 0x19
 function force_field_deploy( params )
@@ -48,7 +48,7 @@ function force_field_deploy( params )
 }
 
 // Namespace force_field / scripts\mp\gametypes\force_field
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1f5
 // Size: 0x83
 function function_ebf9c5039dea6423( health, player, attacker, victim, damage )

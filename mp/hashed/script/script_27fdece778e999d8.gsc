@@ -11,7 +11,7 @@
 #namespace namespace_e8b353934f3548ee;
 
 // Namespace namespace_e8b353934f3548ee / namespace_da125b44c190d236
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c2
 // Size: 0x69
 function initialize( var_f9320d3953360ca2 )
@@ -29,7 +29,7 @@ function initialize( var_f9320d3953360ca2 )
 }
 
 // Namespace namespace_e8b353934f3548ee / namespace_da125b44c190d236
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x233
 // Size: 0x23
 function onbotspawned()
@@ -40,7 +40,7 @@ function onbotspawned()
 }
 
 // Namespace namespace_e8b353934f3548ee / namespace_da125b44c190d236
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25e
 // Size: 0x48
 function function_5f51c5c13fd2911b()
@@ -55,7 +55,7 @@ function function_5f51c5c13fd2911b()
 }
 
 // Namespace namespace_e8b353934f3548ee / namespace_da125b44c190d236
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ae
 // Size: 0xb9
 function function_a3b11047212a9bbd()
@@ -97,7 +97,7 @@ function function_a3b11047212a9bbd()
 }
 
 // Namespace namespace_e8b353934f3548ee / namespace_da125b44c190d236
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x36f
 // Size: 0x77
 function modifyplayerdamage( einflictor, victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, idflags, var_be4285b26ed99ab1 )
@@ -107,7 +107,7 @@ function modifyplayerdamage( einflictor, victim, eattacker, idamage, smeansofdea
 }
 
 // Namespace namespace_e8b353934f3548ee / namespace_da125b44c190d236
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ef
 // Size: 0xb5
 function function_c38398385afc10fc( var_245fedb867efee4b )
@@ -146,14 +146,15 @@ function function_c38398385afc10fc( var_245fedb867efee4b )
 }
 
 // Namespace namespace_e8b353934f3548ee / namespace_da125b44c190d236
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0x6f
 function function_f166b9f78beca5e6( count, team )
 {
     var_50ade409b1e5efcb = [];
     
-    for (i = 1; i <= count; i++) {
+    for ( i = 1; i <= count ; i++ )
+    {
         botinfo = spawnstruct();
         botinfo.name = "";
         var_50ade409b1e5efcb[ var_50ade409b1e5efcb.size ] = botinfo;
@@ -163,7 +164,7 @@ function function_f166b9f78beca5e6( count, team )
 }
 
 // Namespace namespace_e8b353934f3548ee / namespace_da125b44c190d236
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x523
 // Size: 0x12
 function isvalidplayermp( player )

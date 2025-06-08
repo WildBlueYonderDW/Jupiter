@@ -11,7 +11,7 @@
 #namespace crossbow;
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9c9
 // Size: 0xe1
 function initcrossbowusage( weapon )
@@ -41,7 +41,7 @@ function initcrossbowusage( weapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xab2
 // Size: 0x3d
 function crossbowusageloop( weapon )
@@ -54,7 +54,7 @@ function crossbowusageloop( weapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf7
 // Size: 0x1c
 function cleanupafterweaponswitch()
@@ -66,7 +66,7 @@ function cleanupafterweaponswitch()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb1b
 // Size: 0x4e
 function crossbowimpactwatcher( watcherweapon, ammotype )
@@ -81,7 +81,7 @@ function crossbowimpactwatcher( watcherweapon, ammotype )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb71
 // Size: 0xc5
 function watchforimpact( watcherweapon, ammotype )
@@ -103,7 +103,7 @@ function watchforimpact( watcherweapon, ammotype )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc3e
 // Size: 0x7b
 function function_f16d37d0028d5de3( watcherweapon, ammotype )
@@ -125,16 +125,16 @@ function function_f16d37d0028d5de3( watcherweapon, ammotype )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xcc1
-// Size: 0xce
+// Size: 0xcf
 function handleimpact( bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype, weapon, bulletdir, impactpos, crossbowimpactfunc )
 {
     if ( shouldreflect( surfacetype, bolt, hitent, hitentpart, weapon ) )
     {
         reflectbolt( bolt, surfacenormal, bulletdir, impactpos );
     }
-    else if ( shoulddeleteimmediately( hitent ) )
+    else if ( shoulddeleteimmediately( hitent, weapon ) )
     {
         bolt delete();
         return;
@@ -155,8 +155,8 @@ function handleimpact( bolt, hitent, hitentpart, hitloc, surfacenormal, surfacet
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd97
+// Params 2
+// Checksum 0x0, Offset: 0xd98
 // Size: 0x1d
 function function_5c14133d6577bef( bolt, var_a0dfb992760d09e3 )
 {
@@ -167,8 +167,8 @@ function function_5c14133d6577bef( bolt, var_a0dfb992760d09e3 )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xdbc
+// Params 6
+// Checksum 0x0, Offset: 0xdbd
 // Size: 0x11c
 function impactfunc_explo( bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype )
 {
@@ -196,8 +196,8 @@ function impactfunc_explo( bolt, hitent, hitentpart, hitloc, surfacenormal, surf
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xee0
+// Params 6
+// Checksum 0x0, Offset: 0xee1
 // Size: 0x3f
 function impactfunc_fire( bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype )
 {
@@ -205,8 +205,8 @@ function impactfunc_fire( bolt, hitent, hitentpart, hitloc, surfacenormal, surfa
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xf27
+// Params 6
+// Checksum 0x0, Offset: 0xf28
 // Size: 0x6a
 function impactfunc_stun( bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype )
 {
@@ -226,8 +226,8 @@ function impactfunc_stun( bolt, hitent, hitentpart, hitloc, surfacenormal, surfa
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xf99
+// Params 6
+// Checksum 0x0, Offset: 0xf9a
 // Size: 0x3f
 function function_b086ad2ca32b8b08( bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype )
 {
@@ -235,8 +235,8 @@ function function_b086ad2ca32b8b08( bolt, hitent, hitentpart, hitloc, surfacenor
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe0
+// Params 6
+// Checksum 0x0, Offset: 0xfe1
 // Size: 0x103
 function function_4001c2c1b47fb0be( bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype )
 {
@@ -255,8 +255,8 @@ function function_4001c2c1b47fb0be( bolt, hitent, hitentpart, hitloc, surfacenor
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10eb
+// Params 1
+// Checksum 0x0, Offset: 0x10ec
 // Size: 0xb
 function function_a73c5b03989d6eda( bolt )
 {
@@ -264,8 +264,8 @@ function function_a73c5b03989d6eda( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10fe
+// Params 1
+// Checksum 0x0, Offset: 0x10ff
 // Size: 0xb
 function function_1cc12bdc257818cc( bolt )
 {
@@ -273,8 +273,8 @@ function function_1cc12bdc257818cc( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1111
+// Params 1
+// Checksum 0x0, Offset: 0x1112
 // Size: 0xb
 function function_3088a41a2ae98710( bolt )
 {
@@ -282,9 +282,9 @@ function function_3088a41a2ae98710( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1124
-// Size: 0x1e2
+// Params 3
+// Checksum 0x0, Offset: 0x1125
+// Size: 0x21e
 function exploboltexplode( bolt, fusetime, surfacenormal )
 {
     self endon( "disconnect" );
@@ -312,7 +312,16 @@ function exploboltexplode( bolt, fusetime, surfacenormal )
     if ( isdefined( bolt.stuckenemyentity ) && isalive( bolt.stuckenemyentity ) )
     {
         bolt.stuckenemyentity scripts\cp_mp\utility\damage_utility::forcestuckdamage();
-        bolt.stuckenemyentity dodamage( stuckdamage, bolt.origin, self, bolt.grenade, "MOD_EXPLOSIVE", stuckweapon, "none" );
+        
+        if ( isdefined( bolt.grenade ) )
+        {
+            bolt.stuckenemyentity dodamage( stuckdamage, bolt.origin, self, bolt.grenade, "MOD_EXPLOSIVE", stuckweapon, "none" );
+        }
+        else
+        {
+            bolt.stuckenemyentity dodamage( stuckdamage, bolt.origin, self, undefined, "MOD_EXPLOSIVE", stuckweapon, "none" );
+        }
+        
         bolt.stuckenemyentity scripts\cp_mp\utility\damage_utility::forcestuckdamageclear();
         bolt.stuckenemyentity thread function_a8a4ce8f3b02b96( self );
     }
@@ -329,8 +338,8 @@ function exploboltexplode( bolt, fusetime, surfacenormal )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x130e
+// Params 1
+// Checksum 0x0, Offset: 0x134b
 // Size: 0x59
 function function_a8a4ce8f3b02b96( inflictor )
 {
@@ -349,8 +358,8 @@ function function_a8a4ce8f3b02b96( inflictor )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x136f
+// Params 4
+// Checksum 0x0, Offset: 0x13ac
 // Size: 0x67
 function function_9bda31fd01a8cb74( bolt, hitent, hitentpart, hitloc )
 {
@@ -364,8 +373,8 @@ function function_9bda31fd01a8cb74( bolt, hitent, hitentpart, hitloc )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x13de
+// Params 4
+// Checksum 0x0, Offset: 0x141b
 // Size: 0x16a
 function thermiteboltstuckto( bolt, hitent, hitentpart, hitloc )
 {
@@ -405,8 +414,8 @@ function thermiteboltstuckto( bolt, hitent, hitentpart, hitloc )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1550
+// Params 1
+// Checksum 0x0, Offset: 0x158d
 // Size: 0x32
 function function_28832848cd860d4e( hitent )
 {
@@ -423,8 +432,8 @@ function function_28832848cd860d4e( hitent )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x158a
+// Params 2
+// Checksum 0x0, Offset: 0x15c7
 // Size: 0x14e
 function thermiteboltradiusdamage( bolt, hitent )
 {
@@ -460,8 +469,8 @@ function thermiteboltradiusdamage( bolt, hitent )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16e0
+// Params 1
+// Checksum 0x0, Offset: 0x171d
 // Size: 0x38
 function thermitebadplace( impactpoint )
 {
@@ -470,8 +479,8 @@ function thermitebadplace( impactpoint )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x1721
+// Params 7
+// Checksum 0x0, Offset: 0x175e
 // Size: 0x91, Type: bool
 function thermite_damagemodifierignorefunc( inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc )
 {
@@ -494,8 +503,8 @@ function thermite_damagemodifierignorefunc( inflictor, attacker, victim, damage,
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17bb
+// Params 1
+// Checksum 0x0, Offset: 0x17f8
 // Size: 0x78
 function thermiteboltburnout( bolt )
 {
@@ -520,8 +529,8 @@ function thermiteboltburnout( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x183b
+// Params 2
+// Checksum 0x0, Offset: 0x1878
 // Size: 0xd3
 function function_2a6ac0fc60af6c16( bolt, surfacenormal )
 {
@@ -547,8 +556,8 @@ function function_2a6ac0fc60af6c16( bolt, surfacenormal )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1916
+// Params 1
+// Checksum 0x0, Offset: 0x1953
 // Size: 0x30
 function function_8fd268f7be208047( bolt )
 {
@@ -559,8 +568,8 @@ function function_8fd268f7be208047( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x194e
+// Params 1
+// Checksum 0x0, Offset: 0x198b
 // Size: 0x30
 function function_397bf021cc9037f8( bolt )
 {
@@ -571,8 +580,8 @@ function function_397bf021cc9037f8( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1986
+// Params 1
+// Checksum 0x0, Offset: 0x19c3
 // Size: 0x2a
 function stunboltdelete( bolt )
 {
@@ -588,8 +597,8 @@ function stunboltdelete( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b8
+// Params 4
+// Checksum 0x0, Offset: 0x19f5
 // Size: 0xd5
 function function_704dd2c09ad39716( bolt, hitent, hitentpart, hitloc )
 {
@@ -611,8 +620,8 @@ function function_704dd2c09ad39716( bolt, hitent, hitentpart, hitloc )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a95
+// Params 4
+// Checksum 0x0, Offset: 0x1ad2
 // Size: 0x1c0
 function function_8add0b9e806fa2fb( bolt, hitent, launchangles, impactvelocity )
 {
@@ -648,8 +657,8 @@ function function_8add0b9e806fa2fb( bolt, hitent, launchangles, impactvelocity )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c5d
+// Params 4
+// Checksum 0x0, Offset: 0x1c9a
 // Size: 0xc7
 function function_a61b7128bcea5142( bolt, stuckto, launchangles, impactvelocity )
 {
@@ -671,8 +680,8 @@ function function_a61b7128bcea5142( bolt, stuckto, launchangles, impactvelocity 
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d2c
+// Params 6
+// Checksum 0x0, Offset: 0x1d69
 // Size: 0x5c
 function function_8b65648a30994e16( bolt, castend, impactangles, casthitent, impactvelocity, impacttime )
 {
@@ -681,8 +690,8 @@ function function_8b65648a30994e16( bolt, castend, impactangles, casthitent, imp
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d90
+// Params 1
+// Checksum 0x0, Offset: 0x1dcd
 // Size: 0x2a
 function function_8d43b846ff1837f1( bolt )
 {
@@ -698,8 +707,8 @@ function function_8d43b846ff1837f1( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc2
+// Params 2
+// Checksum 0x0, Offset: 0x1dff
 // Size: 0x83, Type: bool
 function stunshoulddetonate( hitent, surfacetype )
 {
@@ -737,8 +746,8 @@ function stunshoulddetonate( hitent, surfacetype )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e4e
+// Params 1
+// Checksum 0x0, Offset: 0x1e8b
 // Size: 0x31, Type: bool
 function stununderwater( bolt )
 {
@@ -751,8 +760,8 @@ function stununderwater( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e88
+// Params 4
+// Checksum 0x0, Offset: 0x1ec5
 // Size: 0x112
 function spawncrossbowbolt( impactpos, bulletdir, ammotype, weapon )
 {
@@ -789,8 +798,8 @@ function spawncrossbowbolt( impactpos, bulletdir, ammotype, weapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fa3
+// Params 1
+// Checksum 0x0, Offset: 0x1fe0
 // Size: 0x50, Type: bool
 function shouldpickup( ammotype )
 {
@@ -803,8 +812,8 @@ function shouldpickup( ammotype )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ffc
+// Params 1
+// Checksum 0x0, Offset: 0x2039
 // Size: 0xd3
 function makepickup( bolt )
 {
@@ -821,8 +830,8 @@ function makepickup( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20d8
+// Params 1
+// Checksum 0x0, Offset: 0x2115
 // Size: 0x33
 function removepickup( bolt )
 {
@@ -835,8 +844,8 @@ function removepickup( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2113
+// Params 0
+// Checksum 0x0, Offset: 0x2150
 // Size: 0xb9
 function bolt_watchpickup()
 {
@@ -878,8 +887,8 @@ function bolt_watchpickup()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21d4
+// Params 1
+// Checksum 0x0, Offset: 0x2211
 // Size: 0x14d
 function get_weapon_ammo_matched( weapons )
 {
@@ -903,8 +912,8 @@ function get_weapon_ammo_matched( weapons )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x232a
+// Params 1
+// Checksum 0x0, Offset: 0x2367
 // Size: 0x86, Type: bool
 function bolt_trytopickup( weapon )
 {
@@ -928,8 +937,8 @@ function bolt_trytopickup( weapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23b9
+// Params 1
+// Checksum 0x0, Offset: 0x23f6
 // Size: 0x99
 function setdeleteable( ammotype )
 {
@@ -954,8 +963,8 @@ function setdeleteable( ammotype )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x245a
+// Params 1
+// Checksum 0x0, Offset: 0x2497
 // Size: 0x26
 function setdeleteabletimer( time )
 {
@@ -966,8 +975,8 @@ function setdeleteabletimer( time )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2488
+// Params 1
+// Checksum 0x0, Offset: 0x24c5
 // Size: 0xb0
 function manageworldspawnedbolts( newbolt )
 {
@@ -1003,8 +1012,8 @@ function manageworldspawnedbolts( newbolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2540
+// Params 1
+// Checksum 0x0, Offset: 0x257d
 // Size: 0xda
 function getcrossbowammotype( weapon )
 {
@@ -1038,8 +1047,8 @@ function getcrossbowammotype( weapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2622
+// Params 1
+// Checksum 0x0, Offset: 0x265f
 // Size: 0x87
 function getcrossbowimpactfunc( ammotype )
 {
@@ -1062,8 +1071,8 @@ function getcrossbowimpactfunc( ammotype )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26b1
+// Params 1
+// Checksum 0x0, Offset: 0x26ee
 // Size: 0x69
 function function_f7e93e7794bb696d( ammotype )
 {
@@ -1083,8 +1092,8 @@ function function_f7e93e7794bb696d( ammotype )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2722
+// Params 1
+// Checksum 0x0, Offset: 0x275f
 // Size: 0x80
 function getboltmodel( ammotype )
 {
@@ -1106,9 +1115,9 @@ function getboltmodel( ammotype )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x27aa
-// Size: 0x1fd
+// Params 5
+// Checksum 0x0, Offset: 0x27e7
+// Size: 0x1fa
 function shouldreflect( surfacetype, bolt, hitent, hitentpart, weapon )
 {
     if ( !isdefined( hitent ) && isdefined( hitentpart ) && hitentpart == function_3db00f01cdba4538( "tag_origin" ) )
@@ -1126,14 +1135,16 @@ function shouldreflect( surfacetype, bolt, hitent, hitentpart, weapon )
         return 1;
     }
     
-    if ( issameteamplayer( hitent ) )
+    if ( issameteamplayer( hitent ) || issameteamagent( hitent ) )
     {
-        return 1;
-    }
-    
-    if ( issameteamagent( hitent ) )
-    {
-        return 1;
+        if ( weapon.basename == "iw9_dm_crossbow_mp" )
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
     }
     
     if ( !isdefined( surfacetype ) )
@@ -1156,16 +1167,6 @@ function shouldreflect( surfacetype, bolt, hitent, hitentpart, weapon )
     if ( bolt.ammotype == "bolt_explo" )
     {
         return 0;
-    }
-    
-    if ( issameteamplayer( hitent ) )
-    {
-        return 1;
-    }
-    
-    if ( issameteamagent( hitent ) )
-    {
-        return 1;
     }
     
     if ( getcrossbowammotype( weapon ) == "bolt_stun_vday" && ( isplayer( hitent ) || isagent( hitent ) ) && !isalive( hitent ) )
@@ -1201,8 +1202,8 @@ function shouldreflect( surfacetype, bolt, hitent, hitentpart, weapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x29af
+// Params 4
+// Checksum 0x0, Offset: 0x29e9
 // Size: 0x7b
 function reflectbolt( bolt, surfacenormal, bulletdir, impactpos )
 {
@@ -1215,10 +1216,10 @@ function reflectbolt( bolt, surfacenormal, bulletdir, impactpos )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a32
-// Size: 0x57, Type: bool
-function shoulddeleteimmediately( hitent )
+// Params 2
+// Checksum 0x0, Offset: 0x2a6c
+// Size: 0x8c, Type: bool
+function shoulddeleteimmediately( hitent, weapon )
 {
     if ( !isdefined( hitent ) )
     {
@@ -1235,12 +1236,17 @@ function shoulddeleteimmediately( hitent )
         return true;
     }
     
+    if ( ( issameteamplayer( hitent ) || issameteamagent( hitent ) ) && weapon.basename != "iw9_dm_crossbow_mp" )
+    {
+        return true;
+    }
+    
     return false;
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a92
+// Params 2
+// Checksum 0x0, Offset: 0x2b01
 // Size: 0x95, Type: bool
 function shoulddrop( hitent, hitloc )
 {
@@ -1271,8 +1277,8 @@ function shoulddrop( hitent, hitloc )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b30
+// Params 1
+// Checksum 0x0, Offset: 0x2b9f
 // Size: 0x19
 function dropbolt( bolt )
 {
@@ -1281,8 +1287,8 @@ function dropbolt( bolt )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b51
+// Params 3
+// Checksum 0x0, Offset: 0x2bc0
 // Size: 0x24, Type: bool
 function shouldlink( hitent, hitentpart, weapon )
 {
@@ -1295,8 +1301,8 @@ function shouldlink( hitent, hitentpart, weapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b7e
+// Params 0
+// Checksum 0x0, Offset: 0x2bed
 // Size: 0x20, Type: bool
 function is_suicidebomber()
 {
@@ -1304,8 +1310,8 @@ function is_suicidebomber()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ba7
+// Params 3
+// Checksum 0x0, Offset: 0x2c16
 // Size: 0x169
 function function_5478d81cf5ea8d4( bolt, hitent, hitentpart )
 {
@@ -1364,8 +1370,8 @@ function function_5478d81cf5ea8d4( bolt, hitent, hitentpart )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d18
+// Params 0
+// Checksum 0x0, Offset: 0x2d87
 // Size: 0x29
 function validateboltent()
 {
@@ -1378,8 +1384,8 @@ function validateboltent()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d49
+// Params 1
+// Checksum 0x0, Offset: 0x2db8
 // Size: 0x60
 function removestuckenemyondeathordisconnect( hitent )
 {
@@ -1402,8 +1408,8 @@ function removestuckenemyondeathordisconnect( hitent )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2db1
+// Params 1
+// Checksum 0x0, Offset: 0x2e20
 // Size: 0x37
 function isenemycorpse( hitent )
 {
@@ -1416,8 +1422,8 @@ function isenemycorpse( hitent )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2df0
+// Params 0
+// Checksum 0x0, Offset: 0x2e5f
 // Size: 0x1d
 function function_a4930163e0971504()
 {
@@ -1433,8 +1439,8 @@ function function_a4930163e0971504()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e15
+// Params 1
+// Checksum 0x0, Offset: 0x2e84
 // Size: 0x2b
 function boltunlinkonnote( hitent )
 {
@@ -1444,8 +1450,8 @@ function boltunlinkonnote( hitent )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e48
+// Params 1
+// Checksum 0x0, Offset: 0x2eb7
 // Size: 0xad
 function boltunlink( launchvec )
 {
@@ -1486,8 +1492,8 @@ function boltunlink( launchvec )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2efd
+// Params 2
+// Checksum 0x0, Offset: 0x2f6c
 // Size: 0x2f
 function boltdeleteonnote( hitent, note )
 {
@@ -1503,8 +1509,8 @@ function boltdeleteonnote( hitent, note )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f34
+// Params 0
+// Checksum 0x0, Offset: 0x2fa3
 // Size: 0x42
 function boltdeletethread()
 {
@@ -1522,8 +1528,8 @@ function boltdeletethread()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f7e
+// Params 1
+// Checksum 0x0, Offset: 0x2fed
 // Size: 0x29
 function function_acd8433c3043c4f2( surfacenormal )
 {
@@ -1535,8 +1541,8 @@ function function_acd8433c3043c4f2( surfacenormal )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2faf
+// Params 1
+// Checksum 0x0, Offset: 0x301e
 // Size: 0x28
 function issameteamplayer( hitent )
 {
@@ -1554,8 +1560,8 @@ function issameteamplayer( hitent )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fdf
+// Params 1
+// Checksum 0x0, Offset: 0x304e
 // Size: 0x42, Type: bool
 function issameteamagent( hitent )
 {
@@ -1573,8 +1579,8 @@ function issameteamagent( hitent )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x302a
+// Params 1
+// Checksum 0x0, Offset: 0x3099
 // Size: 0x131, Type: bool
 function cansticktoent( hitent )
 {
@@ -1626,8 +1632,8 @@ function cansticktoent( hitent )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3164
+// Params 1
+// Checksum 0x0, Offset: 0x31d3
 // Size: 0x2d, Type: bool
 function isthermitecrossbow( objweapon )
 {
@@ -1640,8 +1646,8 @@ function isthermitecrossbow( objweapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x319a
+// Params 0
+// Checksum 0x0, Offset: 0x3209
 // Size: 0x7
 function function_42b0dfeb350f6ea5()
 {
@@ -1649,8 +1655,8 @@ function function_42b0dfeb350f6ea5()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31aa
+// Params 1
+// Checksum 0x0, Offset: 0x3219
 // Size: 0x53
 function function_5d09c8fae400afb2( watcherweapon )
 {
@@ -1673,8 +1679,8 @@ function function_5d09c8fae400afb2( watcherweapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3205
+// Params 1
+// Checksum 0x0, Offset: 0x3274
 // Size: 0x49
 function function_f023a978eea742d3( objweapon )
 {
@@ -1687,8 +1693,8 @@ function function_f023a978eea742d3( objweapon )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3256
+// Params 0
+// Checksum 0x0, Offset: 0x32c5
 // Size: 0x91
 function function_e27041f5372c53f1()
 {
@@ -1706,8 +1712,8 @@ function function_e27041f5372c53f1()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32ef
+// Params 0
+// Checksum 0x0, Offset: 0x335e
 // Size: 0x1f
 function function_e26f4be6d803c186()
 {
@@ -1718,8 +1724,8 @@ function function_e26f4be6d803c186()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3316
+// Params 0
+// Checksum 0x0, Offset: 0x3385
 // Size: 0xf
 function function_c0ab8a070e986732()
 {
@@ -1727,8 +1733,8 @@ function function_c0ab8a070e986732()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x332d
+// Params 0
+// Checksum 0x0, Offset: 0x339c
 // Size: 0x10
 function function_a2e0841b4f6a8c5f()
 {
@@ -1736,8 +1742,8 @@ function function_a2e0841b4f6a8c5f()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3345
+// Params 0
+// Checksum 0x0, Offset: 0x33b4
 // Size: 0x10
 function function_32dd4ab63407230e()
 {
@@ -1745,8 +1751,8 @@ function function_32dd4ab63407230e()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x335d
+// Params 0
+// Checksum 0x0, Offset: 0x33cc
 // Size: 0x10
 function function_4d540620ce852f82()
 {
@@ -1754,8 +1760,8 @@ function function_4d540620ce852f82()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3375
+// Params 0
+// Checksum 0x0, Offset: 0x33e4
 // Size: 0x10
 function function_182a5b792f5c615a()
 {
@@ -1763,8 +1769,8 @@ function function_182a5b792f5c615a()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x338d
+// Params 0
+// Checksum 0x0, Offset: 0x33fc
 // Size: 0x7e
 function function_163ded397285c41e()
 {
@@ -1780,8 +1786,8 @@ function function_163ded397285c41e()
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3413
+// Params 2
+// Checksum 0x0, Offset: 0x3482
 // Size: 0xb3, Type: bool
 function function_1cef76b86c23032b( hitent, hitentpart )
 {
@@ -1816,8 +1822,8 @@ function function_1cef76b86c23032b( hitent, hitentpart )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34cf
+// Params 2
+// Checksum 0x0, Offset: 0x353e
 // Size: 0xc7
 function function_4510118c9d9ee7b2( hitent, hitentpart )
 {
@@ -1840,8 +1846,8 @@ function function_4510118c9d9ee7b2( hitent, hitentpart )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x359e
+// Params 1
+// Checksum 0x0, Offset: 0x360d
 // Size: 0x34
 function function_8ed0ffa3f8be7c75( xhash )
 {
@@ -1854,8 +1860,8 @@ function function_8ed0ffa3f8be7c75( xhash )
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35db
+// Params 1
+// Checksum 0x0, Offset: 0x364a
 // Size: 0x30
 function function_6efe6c06514615( partstring )
 {

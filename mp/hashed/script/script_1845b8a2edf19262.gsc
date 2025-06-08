@@ -25,7 +25,7 @@
 #namespace namespace_733126084ca779c5;
 
 // Namespace namespace_733126084ca779c5 / namespace_4a32b5725832011a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ff
 // Size: 0xf0
 function function_77a37b3f4896fc9b()
@@ -49,7 +49,7 @@ function function_77a37b3f4896fc9b()
 }
 
 // Namespace namespace_733126084ca779c5 / namespace_4a32b5725832011a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8f7
 // Size: 0x1f2
 function function_12920ead9cafd0e1( origin, angles )

@@ -11,7 +11,7 @@
 #namespace wm_ui;
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe70
 // Size: 0x10
 function init()
@@ -21,7 +21,7 @@ function init()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe88
 // Size: 0x1e0
 function function_56e0031a424d8009( capture_zones )
@@ -111,7 +111,7 @@ function function_56e0031a424d8009( capture_zones )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1070
 // Size: 0x11b
 function function_8f9f8e317d100761()
@@ -162,7 +162,7 @@ function function_8f9f8e317d100761()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1193
 // Size: 0x46
 function function_98625aa96f4af3f4()
@@ -181,7 +181,7 @@ function function_98625aa96f4af3f4()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e1
 // Size: 0x192
 function function_bd670364611e5003( objectives )
@@ -225,7 +225,7 @@ function function_bd670364611e5003( objectives )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x137b
 // Size: 0xca
 function function_ace0b0228cd34c4b()
@@ -248,7 +248,7 @@ function function_ace0b0228cd34c4b()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x144d
 // Size: 0xa0
 function function_a79d4af0fcd2254()
@@ -272,7 +272,7 @@ function function_a79d4af0fcd2254()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14f5
 // Size: 0xa0
 function function_31c1ef0e3da10143()
@@ -296,7 +296,7 @@ function function_31c1ef0e3da10143()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x159d
 // Size: 0x1ab
 function function_9fcbcb3aa626b914()
@@ -341,7 +341,7 @@ function function_9fcbcb3aa626b914()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1750
 // Size: 0xa0
 function function_3de47cff2123e1d()
@@ -365,7 +365,7 @@ function function_3de47cff2123e1d()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17f8
 // Size: 0xa0
 function function_55c691baef314f84()
@@ -389,7 +389,7 @@ function function_55c691baef314f84()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18a0
 // Size: 0x123
 function function_db1805fcbcb64e80()
@@ -435,7 +435,7 @@ function function_db1805fcbcb64e80()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19cb
 // Size: 0x46
 function function_375e9b4b38c52544()
@@ -454,7 +454,7 @@ function function_375e9b4b38c52544()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a19
 // Size: 0x16d
 function function_84b6083a11611721()
@@ -500,7 +500,7 @@ function function_84b6083a11611721()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b8e
 // Size: 0x44
 function function_20ecdab10ad77b65()
@@ -514,7 +514,7 @@ function function_20ecdab10ad77b65()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bda
 // Size: 0x46
 function function_62f6b2de158a6952()
@@ -533,7 +533,7 @@ function function_62f6b2de158a6952()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c28
 // Size: 0x4b
 function function_7f3a51d588ffeb11()
@@ -549,7 +549,7 @@ function function_7f3a51d588ffeb11()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c7c
 // Size: 0x4b
 function function_e53cbc2fb3dfe2bf()
@@ -565,7 +565,7 @@ function function_e53cbc2fb3dfe2bf()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cd0
 // Size: 0x1ab
 function function_400f3f1de2faf5e1()
@@ -610,7 +610,7 @@ function function_400f3f1de2faf5e1()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e83
 // Size: 0x139
 function function_1fcd300591a7cf98()
@@ -648,7 +648,7 @@ function function_1fcd300591a7cf98()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fc4
 // Size: 0x4b
 function function_fcc3c58a459eb914()
@@ -664,7 +664,7 @@ function function_fcc3c58a459eb914()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2018
 // Size: 0x4b
 function function_d6e9255e29b5fd5c()
@@ -680,7 +680,7 @@ function function_d6e9255e29b5fd5c()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x206c
 // Size: 0x6b
 function function_ff17535db12ae897()
@@ -702,7 +702,7 @@ function function_ff17535db12ae897()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20df
 // Size: 0xeb
 function function_f56dd59bba71b655( attackerswon )
@@ -734,7 +734,7 @@ function function_f56dd59bba71b655( attackerswon )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21d2
 // Size: 0x1c8
 function function_d2ac05c6539c221e( objectivetype )
@@ -787,7 +787,7 @@ function function_d2ac05c6539c221e( objectivetype )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x23a2
 // Size: 0x3f
 function function_cae7c80607a403a7( player, uid, total, remaining )
@@ -798,7 +798,7 @@ function function_cae7c80607a403a7( player, uid, total, remaining )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23e9
 // Size: 0x67
 function function_92b2c173041b8fb6( player, remaining )
@@ -811,7 +811,7 @@ function function_92b2c173041b8fb6( player, remaining )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2458
 // Size: 0x79
 function function_b41a05f6198e9a29( player, progress, state )
@@ -825,7 +825,7 @@ function function_b41a05f6198e9a29( player, progress, state )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24d9
 // Size: 0x6c
 function function_23db8dc38b007d5e()
@@ -839,7 +839,7 @@ function function_23db8dc38b007d5e()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x254d
 // Size: 0x67
 function function_5e299d656e336919( player, timeremaining )
@@ -852,7 +852,7 @@ function function_5e299d656e336919( player, timeremaining )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25bc
 // Size: 0x86
 function function_557efb699f50447b( oobtimelimit, isfallback )
@@ -882,7 +882,7 @@ function function_557efb699f50447b( oobtimelimit, isfallback )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x264a
 // Size: 0x58
 function function_353ca278babb871e( player )
@@ -900,7 +900,7 @@ function function_353ca278babb871e( player )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26aa
 // Size: 0xa4
 function start_objective( uid, ui_key, var_4f1c7c8ad5d5b9e4 )
@@ -926,7 +926,7 @@ function start_objective( uid, ui_key, var_4f1c7c8ad5d5b9e4 )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2756
 // Size: 0x75
 function complete_objective( uid, is_successful )
@@ -940,7 +940,7 @@ function complete_objective( uid, is_successful )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27d3
 // Size: 0x7b
 function function_4ca6dc38a2cb2639( is_successful )
@@ -957,7 +957,7 @@ function function_4ca6dc38a2cb2639( is_successful )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2856
 // Size: 0xa1
 function function_be0ddc8cccc0f4a4( is_successful )
@@ -977,7 +977,7 @@ function function_be0ddc8cccc0f4a4( is_successful )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28ff
 // Size: 0x48
 function clear_objective( uid )
@@ -991,7 +991,7 @@ function clear_objective( uid )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x294f
 // Size: 0x63
 function function_d4a8824fbf63451d()
@@ -1008,7 +1008,7 @@ function function_d4a8824fbf63451d()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29bb
 // Size: 0x215
 function function_2ea2aacc5d66ae03()
@@ -1067,7 +1067,7 @@ function function_2ea2aacc5d66ae03()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bd8
 // Size: 0x39
 function function_a2b714e5d5977e3a( zone )
@@ -1081,7 +1081,7 @@ function function_a2b714e5d5977e3a( zone )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c19
 // Size: 0x101
 function function_707fa37138f06a58( objectivetype )
@@ -1132,7 +1132,7 @@ function function_707fa37138f06a58( objectivetype )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d22
 // Size: 0x1d
 function function_20c1029d048bbe3c( attackingteam )
@@ -1141,7 +1141,7 @@ function function_20c1029d048bbe3c( attackingteam )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d47
 // Size: 0x47
 function function_e20cff3c3800c3a()
@@ -1155,7 +1155,7 @@ function function_e20cff3c3800c3a()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d96
 // Size: 0x167
 function function_104402acd2337387( objectivetype )
@@ -1193,7 +1193,7 @@ function function_104402acd2337387( objectivetype )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f05
 // Size: 0xbf
 function function_51bce80de8cbf370( var_a56d40e76fdbc670, var_15ec18bea9b1ec17 )
@@ -1212,7 +1212,7 @@ function function_51bce80de8cbf370( var_a56d40e76fdbc670, var_15ec18bea9b1ec17 )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fcc
 // Size: 0x167
 function function_ab0851fa181e1fb2( objectivetype )
@@ -1250,7 +1250,7 @@ function function_ab0851fa181e1fb2( objectivetype )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x313b
 // Size: 0x167
 function function_b5b3534cd8504c4b( objectivetype )
@@ -1288,7 +1288,7 @@ function function_b5b3534cd8504c4b( objectivetype )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32aa
 // Size: 0x183
 function function_524eac445bf29eab()
@@ -1331,7 +1331,7 @@ function function_524eac445bf29eab()
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3435
 // Size: 0x156
 function function_37b37dfde06a36af( objectivetype, team )
@@ -1344,7 +1344,7 @@ function function_37b37dfde06a36af( objectivetype, team )
 }
 
 // Namespace wm_ui / scripts\mp\gametypes\wm_ui
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3594
 // Size: 0x34
 function function_7e6a8f883ef06080( objectivetype, team )

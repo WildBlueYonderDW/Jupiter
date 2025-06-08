@@ -9,7 +9,7 @@
 #namespace patrol;
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22f
 // Size: 0x25
 function function_3aba5f22b60d37f5()
@@ -20,7 +20,7 @@ function function_3aba5f22b60d37f5()
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25c
 // Size: 0x18f
 function playanim_patrolreact_internal( asmname, statename, arcstatename )
@@ -69,7 +69,7 @@ function playanim_patrolreact_internal( asmname, statename, arcstatename )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3f3
 // Size: 0x45, Type: bool
 function shouldpatrolreactaim( asmname, statename, tostatename, params )
@@ -79,7 +79,7 @@ function shouldpatrolreactaim( asmname, statename, tostatename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x441
 // Size: 0x5f
 function chooseanim_patrolreactlookaround( asmname, statename, params )
@@ -95,7 +95,7 @@ function chooseanim_patrolreactlookaround( asmname, statename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4a9
 // Size: 0x63
 function chooseanim_patrolreactlookaround_checkflashlight( asmname, statename, params )
@@ -111,7 +111,7 @@ function chooseanim_patrolreactlookaround_checkflashlight( asmname, statename, p
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x515
 // Size: 0x72
 function getpatrolreactdirindex()
@@ -137,7 +137,7 @@ function getpatrolreactdirindex()
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x590
 // Size: 0xb7
 function function_a23a26adcf97fdd0()
@@ -168,7 +168,7 @@ function function_a23a26adcf97fdd0()
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x650
 // Size: 0x65
 function getpatrolreactalias()
@@ -189,7 +189,7 @@ function getpatrolreactalias()
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6be
 // Size: 0x71
 function chooseanim_patrolreact( asmname, statename, params )
@@ -213,7 +213,7 @@ function chooseanim_patrolreact( asmname, statename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x738
 // Size: 0x36
 function chooseanim_patrolreact_checkflashlight( asmname, statename, params )
@@ -223,7 +223,7 @@ function chooseanim_patrolreact_checkflashlight( asmname, statename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x777
 // Size: 0x54
 function getreactangleindex( angle )
@@ -251,7 +251,7 @@ function getreactangleindex( angle )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d4
 // Size: 0x54
 function function_de2aa7eb339a432c( angle )
@@ -279,7 +279,7 @@ function function_de2aa7eb339a432c( angle )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x831
 // Size: 0x89
 function function_7889a8a760c6e02( turnanim, desiredyaw, beyondyaw, endtime )
@@ -293,7 +293,7 @@ function function_7889a8a760c6e02( turnanim, desiredyaw, beyondyaw, endtime )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8c3
 // Size: 0x202, Type: bool
 function handlefacegoalnotetrack( statename, note, params )
@@ -365,7 +365,7 @@ function handlefacegoalnotetrack( statename, note, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xace
 // Size: 0x293
 function facegoalthread( statename, turnyaw, beyondyaw, reactpos, reactworldyaw, turntime, turnanim, endtime )
@@ -458,7 +458,7 @@ function facegoalthread( statename, turnyaw, beyondyaw, reactpos, reactworldyaw,
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd69
 // Size: 0x43
 function patrol_playanim_idlecurious( asmname, statename, params )
@@ -469,7 +469,7 @@ function patrol_playanim_idlecurious( asmname, statename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdb4
 // Size: 0x69
 function patrol_playanim_idlecurious_facelastknownhelper( statename, target )
@@ -486,7 +486,7 @@ function patrol_playanim_idlecurious_facelastknownhelper( statename, target )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe25
 // Size: 0x6e
 function patrol_magicflashlightdetach( asmname, statename, params )
@@ -503,7 +503,7 @@ function patrol_magicflashlightdetach( asmname, statename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe9b
 // Size: 0x3f
 function patrol_magicflashlighton( asmname, statename, params )
@@ -515,7 +515,7 @@ function patrol_magicflashlighton( asmname, statename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xee2
 // Size: 0x5e
 function chooseanim_patrol_checkflashlight( asmname, statename, params )
@@ -532,7 +532,7 @@ function chooseanim_patrol_checkflashlight( asmname, statename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf49
 // Size: 0xd6
 function flashlightnotehandler( note )
@@ -570,7 +570,7 @@ function flashlightnotehandler( note )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1027
 // Size: 0x45
 function setflashlightmodel( flashlightmodel )
@@ -589,7 +589,7 @@ function setflashlightmodel( flashlightmodel )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1074
 // Size: 0x47
 function getflashlightmodel()
@@ -609,7 +609,7 @@ function getflashlightmodel()
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10c4
 // Size: 0xb2
 function attachflashlight( var_4d65db1b45602939 )
@@ -630,7 +630,7 @@ function attachflashlight( var_4d65db1b45602939 )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x117e
 // Size: 0x71
 function detachflashlight()
@@ -655,7 +655,7 @@ function detachflashlight()
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11f7
 // Size: 0x2c, Type: bool
 function flashlightreactionnotehandler( statename, note, params )
@@ -665,7 +665,7 @@ function flashlightreactionnotehandler( statename, note, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x122c
 // Size: 0x25, Type: bool
 function function_2be03b6fc63e8c8b( asmname, statename, params )
@@ -674,7 +674,7 @@ function function_2be03b6fc63e8c8b( asmname, statename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x125a
 // Size: 0x5f
 function function_70d280c57c0cfee9( asmname, statename, params )
@@ -690,7 +690,7 @@ function function_70d280c57c0cfee9( asmname, statename, params )
 }
 
 // Namespace patrol / scripts\asm\soldier\patrol
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12c2
 // Size: 0x41
 function function_8c0e27519be09045( note, params )

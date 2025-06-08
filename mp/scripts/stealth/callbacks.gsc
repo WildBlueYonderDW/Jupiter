@@ -4,7 +4,7 @@
 #namespace callbacks;
 
 // Namespace callbacks / scripts\stealth\callbacks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x141
 // Size: 0xd3
 function init_callbacks()
@@ -33,7 +33,7 @@ function init_callbacks()
 }
 
 // Namespace callbacks / scripts\stealth\callbacks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x21c
 // Size: 0x39
 function global_empty_callback( empty1, empty2, empty3, empty4, empty5 )
@@ -42,7 +42,7 @@ function global_empty_callback( empty1, empty2, empty3, empty4, empty5 )
 }
 
 // Namespace callbacks / scripts\stealth\callbacks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25d
 // Size: 0x9c
 function stealth_get_func( type )
@@ -61,7 +61,7 @@ function stealth_get_func( type )
 }
 
 // Namespace callbacks / scripts\stealth\callbacks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x302
 // Size: 0x87
 function stealth_call( type, parm1, parm2, parm3, parm4 )
@@ -96,7 +96,7 @@ function stealth_call( type, parm1, parm2, parm3, parm4 )
 }
 
 // Namespace callbacks / scripts\stealth\callbacks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x392
 // Size: 0x8c
 function stealth_call_thread( type, parm1, parm2, parm3, parm4 )

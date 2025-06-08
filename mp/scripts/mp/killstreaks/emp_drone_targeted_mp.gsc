@@ -5,7 +5,7 @@
 #namespace emp_drone_targeted_mp;
 
 // Namespace emp_drone_targeted_mp / scripts\mp\killstreaks\emp_drone_targeted_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf4
 // Size: 0x44
 function init()
@@ -16,7 +16,7 @@ function init()
 }
 
 // Namespace emp_drone_targeted_mp / scripts\mp\killstreaks\emp_drone_targeted_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x140
 // Size: 0x24
 function emp_drone_targeted_getmapselectpoint( streakinfo, selectnum, directionalselection )
@@ -25,7 +25,7 @@ function emp_drone_targeted_getmapselectpoint( streakinfo, selectnum, directiona
 }
 
 // Namespace emp_drone_targeted_mp / scripts\mp\killstreaks\emp_drone_targeted_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x16d
 // Size: 0x2e
 function emp_drone_targeted_startmapselectsequence( navmesh, directionalselection, directionaltype, selectortype )
@@ -34,7 +34,7 @@ function emp_drone_targeted_startmapselectsequence( navmesh, directionalselectio
 }
 
 // Namespace emp_drone_targeted_mp / scripts\mp\killstreaks\emp_drone_targeted_mp
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1a3
 // Size: 0x4a
 function emp_drone_targeted_monitordamage( maxhealth, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak, rumble, resetdamagetaken )

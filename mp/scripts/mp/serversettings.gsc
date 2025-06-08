@@ -4,7 +4,7 @@
 #namespace serversettings;
 
 // Namespace serversettings / scripts\mp\serversettings
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf2
 // Size: 0x41
 function init()
@@ -21,7 +21,7 @@ function init()
 }
 
 // Namespace serversettings / scripts\mp\serversettings
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13b
 // Size: 0x34
 function updateserversettings()
@@ -35,14 +35,15 @@ function updateserversettings()
 }
 
 // Namespace serversettings / scripts\mp\serversettings
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x177
 // Size: 0x1a4
 function constraingametype( gametype )
 {
     entities = getentarray();
     
-    for (i = 0; i < entities.size; i++) {
+    for ( i = 0; i < entities.size ; i++ )
+    {
         entity = entities[ i ];
         
         if ( gametype == "dm" )
@@ -106,7 +107,7 @@ function constraingametype( gametype )
 }
 
 // Namespace serversettings / scripts\mp\serversettings
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x323
 // Size: 0x35
 function setfriendlyfire( enabled )

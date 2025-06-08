@@ -15,7 +15,7 @@
 #namespace movers;
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59e
 // Size: 0x14d
 function main()
@@ -49,7 +49,7 @@ function main()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f3
 // Size: 0x15
 function script_mover_classnames()
@@ -58,7 +58,7 @@ function script_mover_classnames()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x711
 // Size: 0x8a
 function script_mover_is_script_mover()
@@ -83,7 +83,7 @@ function script_mover_is_script_mover()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7a4
 // Size: 0x37
 function script_mover_add_hintstring( name, hintstring )
@@ -97,7 +97,7 @@ function script_mover_add_hintstring( name, hintstring )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7e3
 // Size: 0x37
 function script_mover_add_parameters( name, parameters )
@@ -111,7 +111,7 @@ function script_mover_add_parameters( name, parameters )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x822
 // Size: 0x2ff
 function script_mover_int()
@@ -194,7 +194,7 @@ function script_mover_int()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb29
 // Size: 0x4f
 function script_mover_use_trigger( trigger )
@@ -217,7 +217,7 @@ function script_mover_use_trigger( trigger )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb80
 // Size: 0x43
 function script_mover_move_to_named_goal( goal_name )
@@ -231,7 +231,7 @@ function script_mover_move_to_named_goal( goal_name )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbcb
 // Size: 0x26
 function anglesclamp180( angles )
@@ -240,7 +240,7 @@ function anglesclamp180( angles )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbfa
 // Size: 0x3b9
 function script_mover_parse_targets()
@@ -263,7 +263,8 @@ function script_mover_parse_targets()
         ents = getentarray( self.target, "targetname" );
     }
     
-    for (i = 0; i < structs.size; i++) {
+    for ( i = 0; i < structs.size ; i++ )
+    {
         target = structs[ i ];
         
         if ( !isdefined( target.script_noteworthy ) )
@@ -356,7 +357,7 @@ function script_mover_parse_targets()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfbb
 // Size: 0x3a
 function script_mover_func_on_notify( ent, func, note )
@@ -372,7 +373,7 @@ function script_mover_func_on_notify( ent, func, note )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xffd
 // Size: 0x3b
 function script_mover_call_func_on_notify( ent, func, note )
@@ -388,7 +389,7 @@ function script_mover_call_func_on_notify( ent, func, note )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1040
 // Size: 0x9
 function script_mover_trigger_on()
@@ -397,7 +398,7 @@ function script_mover_trigger_on()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1051
 // Size: 0x521
 function script_mover_move_to_target( current )
@@ -409,7 +410,8 @@ function script_mover_move_to_target( current )
     {
     }
     
-    for (current = self; current.goals.size != 0; current = goal) {
+    for ( current = self; current.goals.size != 0 ; current = goal )
+    {
         goal = random( current.goals );
         mover = self;
         mover script_mover_apply_move_parameters( goal );
@@ -532,7 +534,7 @@ function script_mover_move_to_target( current )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x157a
 // Size: 0x87
 function script_mover_run_notify( notify_origin, level_notify, start, end )
@@ -557,7 +559,7 @@ function script_mover_run_notify( notify_origin, level_notify, start, end )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1609
 // Size: 0x57
 function script_mover_init_move_parameters()
@@ -574,7 +576,7 @@ function script_mover_init_move_parameters()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1668
 // Size: 0x221
 function script_mover_parse_move_parameters( parameters )
@@ -642,7 +644,7 @@ function script_mover_parse_move_parameters( parameters )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1891
 // Size: 0x85
 function script_mover_parse_range( str )
@@ -673,7 +675,7 @@ function script_mover_parse_range( str )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x191f
 // Size: 0x69
 function script_mover_apply_move_parameters( from )
@@ -687,7 +689,7 @@ function script_mover_apply_move_parameters( from )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1990
 // Size: 0x3f
 function script_mover_set_param( param_name, value )
@@ -706,7 +708,7 @@ function script_mover_set_param( param_name, value )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19d7
 // Size: 0x7b
 function script_mover_allow_usable( usable )
@@ -723,7 +725,7 @@ function script_mover_allow_usable( usable )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a5a
 // Size: 0x54
 function script_mover_set_usable( use_ent, usable )
@@ -740,7 +742,7 @@ function script_mover_set_usable( use_ent, usable )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ab6
 // Size: 0x65
 function script_mover_save_default_move_parameters()
@@ -754,7 +756,7 @@ function script_mover_save_default_move_parameters()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b23
 // Size: 0xc5
 function script_mover_set_defaults()
@@ -780,7 +782,7 @@ function script_mover_set_defaults()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bf0
 // Size: 0x14
 function init()
@@ -790,7 +792,7 @@ function init()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c0c
 // Size: 0x27
 function script_mover_connect_watch()
@@ -803,7 +805,7 @@ function script_mover_connect_watch()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c3b
 // Size: 0x27
 function script_mover_agent_spawn_watch()
@@ -816,7 +818,7 @@ function script_mover_agent_spawn_watch()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c6a
 // Size: 0x1db
 function player_update_unresolved_collision( mover, penetration )
@@ -871,7 +873,7 @@ function player_update_unresolved_collision( mover, penetration )
     {
         if ( isplayer( self ) && isdefined( mover ) )
         {
-            radius = getdvarint( @"hash_98464424b89c8652", 1000 );
+            radius = getdvarint( @"scr_unresolved_collision_door_check_radius", 1000 );
             nearestdoor = function_65eef2622bd403cf( self.origin, radius );
             
             if ( isdefined( nearestdoor ) && nearestdoor function_73cc0f04c4c5001d() )
@@ -885,7 +887,7 @@ function player_update_unresolved_collision( mover, penetration )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e4d
 // Size: 0x24, Type: bool
 function player_should_be_killed_by_mover( mover )
@@ -899,7 +901,7 @@ function player_should_be_killed_by_mover( mover )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e7a
 // Size: 0x62
 function player_unresolved_collision_watch()
@@ -929,7 +931,7 @@ function player_unresolved_collision_watch()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ee4
 // Size: 0x7a
 function player_ignore_mover( mover )
@@ -955,7 +957,7 @@ function player_ignore_mover( mover )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f67
 // Size: 0x19
 function clear_unresolved_collision_count_next_frame()
@@ -970,7 +972,7 @@ function clear_unresolved_collision_count_next_frame()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f88
 // Size: 0xfa
 function unresolved_collision_owner_damage( player )
@@ -1014,7 +1016,7 @@ function unresolved_collision_owner_damage( player )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x208a
 // Size: 0x45b
 function unresolved_collision_nearest_node( player, var_4258fb168fb20ba6, mover, var_8f2da01924d0ae97 )
@@ -1131,7 +1133,8 @@ function unresolved_collision_nearest_node( player, var_4258fb168fb20ba6, mover,
             
             ignorelist = get_array_of_closest( player.origin, ignorelist, undefined, 128 );
             
-            for (i = 0; i < nodes.size; i++) {
+            for ( i = 0; i < nodes.size ; i++ )
+            {
                 if ( i == 3 )
                 {
                     break;
@@ -1191,7 +1194,7 @@ function unresolved_collision_nearest_node( player, var_4258fb168fb20ba6, mover,
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24ed
 // Size: 0x9c
 function get_mover_ents( mover )
@@ -1218,7 +1221,7 @@ function get_mover_ents( mover )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2592
 // Size: 0x13
 function unresolved_collision_void( player, penetration )
@@ -1227,7 +1230,7 @@ function unresolved_collision_void( player, penetration )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25ad
 // Size: 0x9
 function mover_suicide()
@@ -1236,7 +1239,7 @@ function mover_suicide()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25be
 // Size: 0x70
 function player_pushed_kill( min_mph )
@@ -1261,7 +1264,7 @@ function player_pushed_kill( min_mph )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2636
 // Size: 0xa
 function stop_player_pushed_kill()
@@ -1270,14 +1273,15 @@ function stop_player_pushed_kill()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2648
 // Size: 0x33
 function script_mover_get_top_parent()
 {
     topparent = self getlinkedparent();
     
-    for (parent = topparent; isdefined( parent ); parent = parent getlinkedparent()) {
+    for ( parent = topparent; isdefined( parent ) ; parent = parent getlinkedparent() )
+    {
         topparent = parent;
     }
     
@@ -1285,7 +1289,7 @@ function script_mover_get_top_parent()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2684
 // Size: 0xa5
 function script_mover_start_use( useent )
@@ -1313,7 +1317,7 @@ function script_mover_start_use( useent )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2731
 // Size: 0x34, Type: bool
 function script_mover_has_parent_moved( parent )
@@ -1327,7 +1331,7 @@ function script_mover_has_parent_moved( parent )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x276e
 // Size: 0x82, Type: bool
 function script_mover_use_can_link( ent )
@@ -1369,7 +1373,7 @@ function script_mover_use_can_link( ent )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27f9
 // Size: 0x2d
 function script_mover_link_to_use_object( player )
@@ -1384,7 +1388,7 @@ function script_mover_link_to_use_object( player )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x282e
 // Size: 0x1d
 function script_mover_unlink_from_use_object( player )
@@ -1394,7 +1398,7 @@ function script_mover_unlink_from_use_object( player )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2853
 // Size: 0x8e
 function notify_moving_platform_invalid()
@@ -1419,7 +1423,7 @@ function notify_moving_platform_invalid()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x28e9
 // Size: 0x6f
 function process_moving_platform_death( data, platform )
@@ -1440,7 +1444,7 @@ function process_moving_platform_death( data, platform )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2960
 // Size: 0x13b
 function handle_moving_platform_touch( data )
@@ -1500,7 +1504,7 @@ function handle_moving_platform_touch( data )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aa3
 // Size: 0x23
 function platform_cleanup_on_death()
@@ -1511,7 +1515,7 @@ function platform_cleanup_on_death()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ace
 // Size: 0x8c
 function handle_moving_platform_invalid( data )
@@ -1539,7 +1543,7 @@ function handle_moving_platform_invalid( data )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b62
 // Size: 0xf2
 function handle_moving_platforms( data )
@@ -1582,7 +1586,7 @@ function handle_moving_platforms( data )
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c5c
 // Size: 0xa
 function stop_handling_moving_platforms()
@@ -1591,7 +1595,7 @@ function stop_handling_moving_platforms()
 }
 
 // Namespace movers / scripts\mp\movers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c6e
 // Size: 0xb
 function moving_platform_empty_func( data )

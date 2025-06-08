@@ -20,14 +20,14 @@
 #namespace br_vehicles;
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e8
 // Size: 0x2e7
 function brvehiclesinit()
 {
     level.modecontrolledvehiclespawningonly = 1;
     var_6fc423af9a153f6b = getdvarint( @"hash_bb06b4f8c704366b", 1 );
-    vehiclesbuffer = getdvarint( @"hash_2d93bd0eac4c5e38", 24 );
+    vehiclesbuffer = getdvarint( @"scr_br_dynamic_spawn_veh_buffer", 24 );
     level.br_totalvehiclesmax = 128 - vehiclesbuffer;
     level.br_totalvehiclesspawned = 0;
     level.br_helosmax = getdvarint( @"hash_389f02283326428e", 3 );
@@ -98,12 +98,12 @@ function private function_f2f0d979611c9bdb()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb87
 // Size: 0x5b
 function function_ec5f666d56372630( vehicleref )
 {
-    if ( !getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( !getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         return 0;
     }
@@ -122,7 +122,7 @@ function function_ec5f666d56372630( vehicleref )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbeb
 // Size: 0x168
 function function_10bd49da0d1d0e99()
@@ -146,7 +146,7 @@ function function_10bd49da0d1d0e99()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd5b
 // Size: 0x2f
 function brvehiclesonstartgametype()
@@ -164,7 +164,7 @@ function brvehiclesonstartgametype()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd92
 // Size: 0x494
 function setupvehiclespawnvolumes()
@@ -278,7 +278,7 @@ function setupvehiclespawnvolumes()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x122e
 // Size: 0x2d
 function initvehiclespawnvolume( vol )
@@ -289,7 +289,7 @@ function initvehiclespawnvolume( vol )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1263
 // Size: 0x283
 function assignvehicleminimumsforvolume( vol )
@@ -363,7 +363,7 @@ function assignvehicleminimumsforvolume( vol )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14ee
 // Size: 0xd3
 function emptyallvehicles()
@@ -386,7 +386,7 @@ function emptyallvehicles()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15c9
 // Size: 0xe8
 function deleteextantvehicles()
@@ -410,7 +410,7 @@ function deleteextantvehicles()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x16b9
 // Size: 0x167
 function tryspawnavehicle( refname, locstruct, volname, faildata )
@@ -463,7 +463,7 @@ function tryspawnavehicle( refname, locstruct, volname, faildata )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1829
 // Size: 0xb7
 function spawnavehicle( refname, locstruct, faildata )
@@ -491,7 +491,7 @@ function spawnavehicle( refname, locstruct, faildata )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18e9
 // Size: 0x11a3
 function spawninitialvehicles()
@@ -650,7 +650,8 @@ function spawninitialvehicles()
                 {
                     randomspawns = array_remove_array( array_randomize( vol.vehiclespawns ), usedspawns );
                     
-                    for (spawnindex = 0; vol.vehiclesspawned < var_b243344e26fc2116 && spawnindex < randomspawns.size; spawnindex++) {
+                    for ( spawnindex = 0; vol.vehiclesspawned < var_b243344e26fc2116 && spawnindex < randomspawns.size ; spawnindex++ )
+                    {
                         faildata = spawnstruct();
                         spawnpoint = randomspawns[ spawnindex ];
                         refname = level.br_vehtargetnametoref[ spawnpoint.targetname ];
@@ -798,7 +799,8 @@ function spawninitialvehicles()
             
             spawns = array_randomize( spawns );
             
-            for (i = 0; i < level.var_a5791492570c75fc[ refname ]; i++) {
+            for ( i = 0; i < level.var_a5791492570c75fc[ refname ] ; i++ )
+            {
                 spawnpoint = spawns[ i ];
                 
                 if ( !isdefined( spawnpoint ) )
@@ -873,7 +875,8 @@ function spawninitialvehicles()
                 
                 spawns = array_randomize( subarea.vehiclespawnpoints );
                 
-                for (i = 0; subarea.spawnedvehicles < subarea.minvehicles && i < spawns.size; i++) {
+                for ( i = 0; subarea.spawnedvehicles < subarea.minvehicles && i < spawns.size ; i++ )
+                {
                     spawnpoint = spawns[ i ];
                     faildata = spawnstruct();
                     refname = level.br_vehtargetnametoref[ spawnpoint.targetname ];
@@ -1056,7 +1059,7 @@ function spawninitialvehicles()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a94
 // Size: 0x6e
 function function_cb75d1e034823cb5( vehicleref, loc )
@@ -1077,7 +1080,7 @@ function function_cb75d1e034823cb5( vehicleref, loc )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b0b
 // Size: 0x6a
 function vehiclespawn_getspawndata( loc )
@@ -1091,7 +1094,7 @@ function vehiclespawn_getspawndata( loc )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b7e
 // Size: 0x54
 function function_5e2ac14f881014b( loc, vehicleref )
@@ -1106,12 +1109,12 @@ function function_5e2ac14f881014b( loc, vehicleref )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bdb
 // Size: 0xda
 function function_fb0db2fc84df7793( refname )
 {
-    if ( !getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( !getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         return;
     }
@@ -1146,12 +1149,12 @@ function function_fb0db2fc84df7793( refname )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cbd
 // Size: 0x77
 function function_cd9f2fe51c02d74e()
 {
-    if ( !getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( !getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         return;
     }
@@ -1168,7 +1171,7 @@ function function_cd9f2fe51c02d74e()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d3c
 // Size: 0x194
 function function_9856ad860555f8b9()
@@ -1182,7 +1185,8 @@ function function_9856ad860555f8b9()
     
     numrows = tablelookupgetnumrows( table );
     
-    for (i = 0; i < numrows; i++) {
+    for ( i = 0; i < numrows ; i++ )
+    {
         poiname = tablelookupbyrow( table, i, 0 );
         var_71ad22c5d093d90b = tolower( tablelookupbyrow( table, i, 1 ) );
         minvehicles = int( tablelookupbyrow( table, i, 6 ) );
@@ -1213,7 +1217,7 @@ function function_9856ad860555f8b9()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ed8
 // Size: 0x75
 function brvehiclespawnvolreset()
@@ -1228,7 +1232,7 @@ function brvehiclespawnvolreset()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f55
 // Size: 0x4c
 function waitforvehiclestodeletethenspawninitial()
@@ -1253,7 +1257,7 @@ function waitforvehiclestodeletethenspawninitial()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fa9
 // Size: 0x20
 function brvehiclesreset()
@@ -1265,7 +1269,7 @@ function brvehiclesreset()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fd1
 // Size: 0x52
 function brvehicleonprematchstarted()
@@ -1292,7 +1296,7 @@ function brvehicleonprematchstarted()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x302b
 // Size: 0x63
 function function_c3fe673ce43bb311( vehicleref, defaultpct )
@@ -1307,7 +1311,7 @@ function function_c3fe673ce43bb311( vehicleref, defaultpct )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3096
 // Size: 0x5f
 function function_4e336cd994097306( vehicle, defaultdamage )
@@ -1324,7 +1328,7 @@ function function_4e336cd994097306( vehicle, defaultdamage )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30fe
 // Size: 0x60
 function function_a3c6f2c2714ee754()
@@ -1337,7 +1341,7 @@ function function_a3c6f2c2714ee754()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3167
 // Size: 0x1a4
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
@@ -1396,7 +1400,7 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3313
 // Size: 0x147
 function function_1a1709943670772a()
@@ -1435,7 +1439,7 @@ function function_1a1709943670772a()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3462
 // Size: 0x35
 function function_b5a8e76fbf49784a( vehicleref )
@@ -1449,7 +1453,7 @@ function function_b5a8e76fbf49784a( vehicleref )
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x349f
 // Size: 0xb9
 function function_ebf775f8fdd1d098()
@@ -1486,7 +1490,7 @@ function function_ebf775f8fdd1d098()
 }
 
 // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3560
 // Size: 0x6f
 function function_ee64ebb471957dc7()
@@ -1503,7 +1507,7 @@ function function_ee64ebb471957dc7()
 /#
 
     // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x35d7
     // Size: 0x77a, Type: dev
     function function_1c7a4c53fa428606()
@@ -1544,7 +1548,8 @@ function function_ee64ebb471957dc7()
                     bestdistsq = 65536;
                     var_aa61357de4bb54ed = undefined;
                     
-                    for (index = 0; index < var_a25d74cbd44ff62.size; index++) {
+                    for ( index = 0; index < var_a25d74cbd44ff62.size ; index++ )
+                    {
                         distsq = distancesquared( var_a25d74cbd44ff62[ index ].origin, endpos );
                         
                         if ( distsq < bestdistsq )
@@ -1667,7 +1672,7 @@ function function_ee64ebb471957dc7()
     }
 
     // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3d59
     // Size: 0x204, Type: dev
     function function_d96e7d92cdd79f9e( spawnpoint )
@@ -1730,7 +1735,7 @@ function function_ee64ebb471957dc7()
     }
 
     // Namespace br_vehicles / scripts\mp\gametypes\br_vehicles
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3f65
     // Size: 0x26, Type: dev
     function mychangeswatcher()

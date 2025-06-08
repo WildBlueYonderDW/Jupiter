@@ -12,7 +12,7 @@
 #namespace oxygenmask;
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x411
 // Size: 0x65
 function function_234851f94416f178()
@@ -28,7 +28,7 @@ function function_234851f94416f178()
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47e
 // Size: 0x25, Type: bool
 function give_oxygenmask()
@@ -43,7 +43,7 @@ function give_oxygenmask()
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0xc, Type: bool
 function function_23a6763562820c70()
@@ -52,7 +52,7 @@ function function_23a6763562820c70()
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c1
 // Size: 0xe0
 function oxygenmask_tryshowhint()
@@ -90,7 +90,7 @@ function oxygenmask_tryshowhint()
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a9
 // Size: 0x66, Type: bool
 function function_8fc85383e9f1b6e6()
@@ -186,7 +186,7 @@ function private function_80143a61b671bdd3()
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c0
 // Size: 0x166
 function function_7823f77f978a3360()
@@ -250,7 +250,7 @@ function function_7823f77f978a3360()
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92e
 // Size: 0x8, Type: bool
 function function_2e4cd4d627c30c24()
@@ -347,7 +347,7 @@ function private givedeployweapon( deployweaponname )
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaac
 // Size: 0x2b
 function function_8b61dac63b58c6ce( state )
@@ -360,7 +360,7 @@ function function_8b61dac63b58c6ce( state )
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xadf
 // Size: 0x1e
 function function_ddd53cc3c592bd02()
@@ -401,7 +401,7 @@ function private oxygenmask_handle_death()
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb6e
 // Size: 0xd8
 function function_a51cb31233eacf9e()
@@ -585,7 +585,7 @@ function private function_eae1981ab021806b()
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb2
 // Size: 0x2d
 function function_1ab4e7e73ad0c18e()
@@ -599,7 +599,7 @@ function function_1ab4e7e73ad0c18e()
 }
 
 // Namespace oxygenmask / scripts\cp_mp\oxygenmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee7
 // Size: 0x14
 function function_9ac10cec8e7b9d40()
@@ -643,7 +643,8 @@ function private enable_headicon()
         return;
     }
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         if ( level.players[ i ] != self )
         {
             toshowto[ toshowto.size ] = level.players[ i ];

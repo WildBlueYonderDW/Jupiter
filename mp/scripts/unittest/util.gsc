@@ -1,7 +1,7 @@
 #namespace util;
 
 // Namespace util / scripts\unittest\util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7
 // Size: 0x1b
 function test_print( msg )
@@ -11,7 +11,7 @@ function test_print( msg )
 }
 
 // Namespace util / scripts\unittest\util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca
 // Size: 0x19
 function test_begin( tag )
@@ -20,7 +20,7 @@ function test_begin( tag )
 }
 
 // Namespace util / scripts\unittest\util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeb
 // Size: 0x19
 function test_end( tag )

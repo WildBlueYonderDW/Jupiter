@@ -37,7 +37,7 @@ function private autoexec init()
 }
 
 // Namespace namespace_b3f671d851067611 / namespace_2a5ddef6b9e7fc31
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x195
 // Size: 0xba
 function main()
@@ -61,7 +61,7 @@ function main()
 }
 
 // Namespace namespace_b3f671d851067611 / namespace_2a5ddef6b9e7fc31
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x257
 // Size: 0x2
 function precache()
@@ -70,7 +70,7 @@ function precache()
 }
 
 // Namespace namespace_b3f671d851067611 / namespace_2a5ddef6b9e7fc31
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x261
 // Size: 0x1f
 function precache_sp()
@@ -81,7 +81,7 @@ function precache_sp()
 }
 
 // Namespace namespace_b3f671d851067611 / namespace_2a5ddef6b9e7fc31
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x288
 // Size: 0x9
 function precache_cpmp()

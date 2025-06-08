@@ -38,8 +38,8 @@
 #namespace br_ending;
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x676
+// Params 0
+// Checksum 0x0, Offset: 0x69a
 // Size: 0x194
 function br_ending_init()
 {
@@ -57,7 +57,8 @@ function br_ending_init()
         setdvarifuninitialized( @"hash_85485bbe1bfbee98", 0 );
         setdvarifuninitialized( @"hash_5be228e043cb645a", 0 );
         
-        for (i = 0; i < 6; i++) {
+        for ( i = 0; i < 6 ; i++ )
+        {
             setdvarifuninitialized( hashcat( @"hash_e340a5ee5afde790", string( i ) ), "<dev string:x1c>" );
         }
     #/
@@ -98,8 +99,8 @@ function br_ending_init()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x812
+// Params 1
+// Checksum 0x0, Offset: 0x836
 // Size: 0xad
 function function_43043ce856efd41b( player )
 {
@@ -126,8 +127,8 @@ function function_43043ce856efd41b( player )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c7
+// Params 0
+// Checksum 0x0, Offset: 0x8eb
 // Size: 0x37, Type: bool
 function can_play_ending()
 {
@@ -150,8 +151,8 @@ function can_play_ending()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x907
+// Params 1
+// Checksum 0x0, Offset: 0x92b
 // Size: 0xfd
 function mode_can_play_ending( mode )
 {
@@ -182,9 +183,9 @@ function mode_can_play_ending( mode )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0c
-// Size: 0xfa2
+// Params 2
+// Checksum 0x0, Offset: 0xa30
+// Size: 0xfbf
 function play_ending( winners, var_cbfc3ba10cefc8ce )
 {
     if ( !can_play_ending() )
@@ -230,6 +231,11 @@ function play_ending( winners, var_cbfc3ba10cefc8ce )
         {
             player scripts\mp\utility\lower_message::setlowermessageomnvar( "clear_lower_msg" );
         }
+    }
+    
+    if ( scripts\mp\gametypes\br_gametypes::isbrgametypefuncdefined( "exfilStart" ) )
+    {
+        thread scripts\mp\gametypes\br_gametypes::runbrgametypefunc( "exfilStart", winners );
     }
     
     winners = undefined;
@@ -532,8 +538,8 @@ function play_ending( winners, var_cbfc3ba10cefc8ce )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b6
+// Params 0
+// Checksum 0x0, Offset: 0x19f7
 // Size: 0x80
 function function_84068c30364b89cb()
 {
@@ -558,8 +564,8 @@ function function_84068c30364b89cb()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a3e
+// Params 1
+// Checksum 0x0, Offset: 0x1a7f
 // Size: 0x443
 function cleanup_ending( animstruct )
 {
@@ -677,8 +683,8 @@ function cleanup_ending( animstruct )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e89
+// Params 0
+// Checksum 0x0, Offset: 0x1eca
 // Size: 0x26
 function stopfaderunner()
 {
@@ -691,8 +697,8 @@ function stopfaderunner()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1eb7
+// Params 1
+// Checksum 0x0, Offset: 0x1ef8
 // Size: 0x271
 function faderunner( pack )
 {
@@ -760,8 +766,8 @@ function faderunner( pack )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2130
+// Params 2
+// Checksum 0x0, Offset: 0x2171
 // Size: 0x36, Type: bool
 function compare_higher_score( player1, player2 )
 {
@@ -769,8 +775,8 @@ function compare_higher_score( player1, player2 )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x216f
+// Params 2
+// Checksum 0x0, Offset: 0x21b0
 // Size: 0x12f
 function function_4b3d6ad67eba0f73( team1, team2 )
 {
@@ -799,8 +805,8 @@ function function_4b3d6ad67eba0f73( team1, team2 )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22a7
+// Params 0
+// Checksum 0x0, Offset: 0x22e8
 // Size: 0x5d
 function temp_debug_wait_and_stop_music_loop()
 {
@@ -813,8 +819,8 @@ function temp_debug_wait_and_stop_music_loop()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x230c
+// Params 1
+// Checksum 0x0, Offset: 0x234d
 // Size: 0x22a
 function ending_viewing_players_setup( animstruct )
 {
@@ -873,8 +879,8 @@ function ending_viewing_players_setup( animstruct )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x253e
+// Params 1
+// Checksum 0x0, Offset: 0x257f
 // Size: 0x3c3
 function ending_winning_players_setup( animstruct )
 {
@@ -999,8 +1005,8 @@ function ending_winning_players_setup( animstruct )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x290a
+// Params 1
+// Checksum 0x0, Offset: 0x294b
 // Size: 0x3f
 function function_e50b941afd09e62e( winnerplayers )
 {
@@ -1016,8 +1022,8 @@ function function_e50b941afd09e62e( winnerplayers )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2951
+// Params 1
+// Checksum 0x0, Offset: 0x2992
 // Size: 0xef
 function function_226b83f846d32ff2( winnerplayers )
 {
@@ -1052,8 +1058,8 @@ function function_226b83f846d32ff2( winnerplayers )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a48
+// Params 0
+// Checksum 0x0, Offset: 0x2a89
 // Size: 0x110
 function player_equipment_use_stop()
 {
@@ -1100,8 +1106,8 @@ function player_equipment_use_stop()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b60
+// Params 0
+// Checksum 0x0, Offset: 0x2ba1
 // Size: 0x8e
 function player_abilities_disable()
 {
@@ -1121,8 +1127,8 @@ function player_abilities_disable()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bf6
+// Params 0
+// Checksum 0x0, Offset: 0x2c37
 // Size: 0x26
 function player_abilities_enable()
 {
@@ -1136,8 +1142,8 @@ function player_abilities_enable()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c24
+// Params 0
+// Checksum 0x0, Offset: 0x2c65
 // Size: 0x309
 function player_set_weapon()
 {
@@ -1252,8 +1258,8 @@ function player_set_weapon()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f35
+// Params 0
+// Checksum 0x0, Offset: 0x2f76
 // Size: 0x44
 function function_9afbee75cfe14b8d()
 {
@@ -1268,8 +1274,8 @@ function function_9afbee75cfe14b8d()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f82
+// Params 1
+// Checksum 0x0, Offset: 0x2fc3
 // Size: 0x49
 function function_b5e265cde17f09d1( type )
 {
@@ -1285,8 +1291,8 @@ function function_b5e265cde17f09d1( type )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fd3
+// Params 2
+// Checksum 0x0, Offset: 0x3014
 // Size: 0xc8
 function set_ending_pack( type, var_cbfc3ba10cefc8ce )
 {
@@ -1318,8 +1324,8 @@ function set_ending_pack( type, var_cbfc3ba10cefc8ce )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x30a3
+// Params 4
+// Checksum 0x0, Offset: 0x30e4
 // Size: 0xaf
 function create_exfil_animstruct( var_a6b3fae0395f75c3, winners, var_cbfc3ba10cefc8ce, var_bf0495a4761c14d0 )
 {
@@ -1345,8 +1351,8 @@ function create_exfil_animstruct( var_a6b3fae0395f75c3, winners, var_cbfc3ba10ce
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x315b
+// Params 0
+// Checksum 0x0, Offset: 0x319c
 // Size: 0x32
 function function_87f45430d8de267a()
 {
@@ -1357,9 +1363,9 @@ function function_87f45430d8de267a()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3195
-// Size: 0x157
+// Params 0
+// Checksum 0x0, Offset: 0x31d6
+// Size: 0x16a
 function function_bd87576b75af246()
 {
     if ( level.script == "mp_br_mechanics" || level.script == "mp_jup_br_mechanics" )
@@ -1392,7 +1398,7 @@ function function_bd87576b75af246()
         return function_bce27e24255486f0();
     }
     
-    if ( level.script == "mp_jup_escape5" )
+    if ( level.script == "mp_jup_escape5" || level.script == "mp_jup_escape5_hell" )
     {
         return function_adb0a839c433d47();
     }
@@ -1431,8 +1437,8 @@ function function_bd87576b75af246()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32f4
+// Params 0
+// Checksum 0x0, Offset: 0x3348
 // Size: 0x17
 function function_74fb520cb28210ad()
 {
@@ -1445,8 +1451,8 @@ function function_74fb520cb28210ad()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3313
+// Params 3
+// Checksum 0x0, Offset: 0x3367
 // Size: 0x95
 function get_ending_struct( var_a6b3fae0395f75c3, players, var_cbfc3ba10cefc8ce )
 {
@@ -1473,8 +1479,8 @@ function get_ending_struct( var_a6b3fae0395f75c3, players, var_cbfc3ba10cefc8ce 
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33b1
+// Params 1
+// Checksum 0x0, Offset: 0x3405
 // Size: 0x41
 function function_2979939f678d3ad1( var_a6b3fae0395f75c3 )
 {
@@ -1487,8 +1493,8 @@ function function_2979939f678d3ad1( var_a6b3fae0395f75c3 )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x33fb
+// Params 2
+// Checksum 0x0, Offset: 0x344f
 // Size: 0x81
 function clear_vehicles( origin, radius )
 {
@@ -1504,8 +1510,8 @@ function clear_vehicles( origin, radius )
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3484
+// Params 0
+// Checksum 0x0, Offset: 0x34d8
 // Size: 0x85
 function clear_outlines()
 {
@@ -1520,8 +1526,8 @@ function clear_outlines()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3511
+// Params 0
+// Checksum 0x0, Offset: 0x3565
 // Size: 0x1a03
 function mp_donetsk_locations()
 {
@@ -1702,8 +1708,8 @@ function mp_donetsk_locations()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f1d
+// Params 0
+// Checksum 0x0, Offset: 0x4f71
 // Size: 0x35
 function function_50c9687cccd76c7f()
 {
@@ -1713,8 +1719,8 @@ function function_50c9687cccd76c7f()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f5b
+// Params 0
+// Checksum 0x0, Offset: 0x4faf
 // Size: 0xa4
 function mp_br_quarry_locations()
 {
@@ -1727,8 +1733,8 @@ function mp_br_quarry_locations()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5008
+// Params 0
+// Checksum 0x0, Offset: 0x505c
 // Size: 0xc8
 function function_35c3e71a666e6cb2()
 {
@@ -1742,8 +1748,8 @@ function function_35c3e71a666e6cb2()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50d9
+// Params 0
+// Checksum 0x0, Offset: 0x512d
 // Size: 0xc8
 function function_bce27e24255486f0()
 {
@@ -1757,8 +1763,8 @@ function function_bce27e24255486f0()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x51aa
+// Params 0
+// Checksum 0x0, Offset: 0x51fe
 // Size: 0x112
 function function_adb0a839c433d47()
 {
@@ -1774,8 +1780,8 @@ function function_adb0a839c433d47()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x52c5
+// Params 0
+// Checksum 0x0, Offset: 0x5319
 // Size: 0xf61
 function function_d076db51878a786b()
 {
@@ -1890,8 +1896,8 @@ function function_d076db51878a786b()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x622f
+// Params 0
+// Checksum 0x0, Offset: 0x6283
 // Size: 0xa3
 function function_def43d85b603ef19()
 {
@@ -1904,8 +1910,8 @@ function function_def43d85b603ef19()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x62db
+// Params 0
+// Checksum 0x0, Offset: 0x632f
 // Size: 0xb1
 function function_c5c3d7914a4df89a()
 {
@@ -1923,8 +1929,8 @@ function function_c5c3d7914a4df89a()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6395
+// Params 0
+// Checksum 0x0, Offset: 0x63e9
 // Size: 0xc8b
 function mp_jup_bigmap_locations()
 {
@@ -2024,8 +2030,8 @@ function mp_jup_bigmap_locations()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7029
+// Params 0
+// Checksum 0x0, Offset: 0x707d
 // Size: 0x10f8
 function function_5e3eb8b4dd5708d5()
 {
@@ -2151,8 +2157,8 @@ function function_5e3eb8b4dd5708d5()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x812a
+// Params 0
+// Checksum 0x0, Offset: 0x817e
 // Size: 0x7e
 function function_2727828d27cbdf05()
 {
@@ -2164,8 +2170,8 @@ function function_2727828d27cbdf05()
 }
 
 // Namespace br_ending / scripts\mp\gametypes\br_ending
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x81b1
+// Params 3
+// Checksum 0x0, Offset: 0x8205
 // Size: 0x57
 function create_struct( org, ang, var_252267264f5269fe )
 {

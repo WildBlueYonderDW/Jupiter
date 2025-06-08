@@ -4,7 +4,7 @@
 #namespace mp_jup_st_b_ob_activities_harvesterorb_cs;
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15a
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cf
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x23e
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x286
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x290
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a6
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x318
 // Size: 0x6a
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -116,7 +116,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x38a
 // Size: 0x2c
 function function_638a89617d235e02( fe, us, cf )
@@ -125,7 +125,7 @@ function function_638a89617d235e02( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3be
 // Size: 0x2c
 function function_7bd81421320dd209( fe, us, cf )
@@ -134,7 +134,7 @@ function function_7bd81421320dd209( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_harvesterorb_cs / namespace_ec21045038c5cdd2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f2
 // Size: 0x1bc
 function function_6da2952367672ac0()

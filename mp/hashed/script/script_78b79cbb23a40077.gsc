@@ -16,7 +16,7 @@
 #namespace jup_ob_enemy_basic_soldier_long;
 
 // Namespace jup_ob_enemy_basic_soldier_long / namespace_d290599b5a4d09e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c3
 // Size: 0x23c
 function main()
@@ -67,7 +67,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_basic_soldier_long / namespace_d290599b5a4d09e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x507
 // Size: 0x57
 function setup_model()
@@ -84,7 +84,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_basic_soldier_long / namespace_d290599b5a4d09e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x566
 // Size: 0x99
 function function_9ac26a51c94ccf52()
@@ -107,7 +107,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_basic_soldier_long / namespace_d290599b5a4d09e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x607
 // Size: 0xeb
 function precache()
@@ -140,7 +140,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_basic_soldier_long / namespace_d290599b5a4d09e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6fa
 // Size: 0x13b
 function setup_weapons()

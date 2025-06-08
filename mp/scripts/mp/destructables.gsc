@@ -1,7 +1,7 @@
 #namespace destructables;
 
 // Namespace destructables / scripts\mp\destructables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb9
 // Size: 0x73
 function init()
@@ -10,20 +10,22 @@ function init()
     
     if ( getdvar( @"scr_destructables" ) == "0" )
     {
-        for (i = 0; i < ents.size; i++) {
+        for ( i = 0; i < ents.size ; i++ )
+        {
             ents[ i ] delete();
         }
         
         return;
     }
     
-    for (i = 0; i < ents.size; i++) {
+    for ( i = 0; i < ents.size ; i++ )
+    {
         ents[ i ] thread destructable_think();
     }
 }
 
 // Namespace destructables / scripts\mp\destructables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x134
 // Size: 0x10e
 function destructable_think()
@@ -45,7 +47,8 @@ function destructable_think()
     {
         areas = strtok( self.script_destructable_area, " " );
         
-        for (i = 0; i < areas.size; i++) {
+        for ( i = 0; i < areas.size ; i++ )
+        {
             blockarea( areas[ i ] );
         }
     }
@@ -76,7 +79,7 @@ function destructable_think()
 }
 
 // Namespace destructables / scripts\mp\destructables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24a
 // Size: 0x9b
 function destructable_destruct()
@@ -87,7 +90,8 @@ function destructable_destruct()
     {
         areas = strtok( self.script_destructable_area, " " );
         
-        for (i = 0; i < areas.size; i++) {
+        for ( i = 0; i < areas.size ; i++ )
+        {
             unblockarea( areas[ i ] );
         }
     }
@@ -101,7 +105,7 @@ function destructable_destruct()
 }
 
 // Namespace destructables / scripts\mp\destructables
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ed
 // Size: 0xb
 function blockarea( area )
@@ -110,7 +114,7 @@ function blockarea( area )
 }
 
 // Namespace destructables / scripts\mp\destructables
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x300
 // Size: 0x13
 function blockentsinarea( ents, area )
@@ -119,7 +123,7 @@ function blockentsinarea( ents, area )
 }
 
 // Namespace destructables / scripts\mp\destructables
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31b
 // Size: 0xb
 function unblockarea( area )
@@ -128,7 +132,7 @@ function unblockarea( area )
 }
 
 // Namespace destructables / scripts\mp\destructables
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32e
 // Size: 0x13
 function unblockentsinarea( ents, area )

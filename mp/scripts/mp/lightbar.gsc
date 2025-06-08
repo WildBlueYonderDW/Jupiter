@@ -4,7 +4,7 @@
 #namespace lightbar;
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ba
 // Size: 0x2
 function init()
@@ -13,7 +13,7 @@ function init()
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1c4
 // Size: 0x263
 function add_to_lightbar_stack( lbcolor, pulsetime, priority, endondeath, time, endonnotification )
@@ -72,7 +72,7 @@ function add_to_lightbar_stack( lbcolor, pulsetime, priority, endondeath, time, 
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42f
 // Size: 0x20d
 function managelightbarstack()
@@ -155,7 +155,7 @@ function managelightbarstack()
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x644
 // Size: 0x27
 function cleanlbarray()
@@ -165,7 +165,7 @@ function cleanlbarray()
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x673
 // Size: 0xb9
 function removetimedoutinstructions( structarray )
@@ -194,7 +194,7 @@ function removetimedoutinstructions( structarray )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x735
 // Size: 0x2a, Type: bool
 function is_higher_priority( a, b )
@@ -203,7 +203,7 @@ function is_higher_priority( a, b )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x768
 // Size: 0x2a
 function set_lightbar( lbcolor, pulsetime )
@@ -214,7 +214,7 @@ function set_lightbar( lbcolor, pulsetime )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x79a
 // Size: 0x61
 function set_lightbar_for_time( lbcolor, pulsetime, time )
@@ -237,7 +237,7 @@ function set_lightbar_for_time( lbcolor, pulsetime, time )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x803
 // Size: 0x39
 function set_lightbar_perm( lbcolor, pulsetime )
@@ -250,7 +250,7 @@ function set_lightbar_perm( lbcolor, pulsetime )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x844
 // Size: 0x32
 function set_lightbar_endon_death( lbcolor, pulsetime )
@@ -262,7 +262,7 @@ function set_lightbar_endon_death( lbcolor, pulsetime )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x87e
 // Size: 0x7c
 function set_lightbar_for_time_endon_death( lbcolor, pulsetime, time )
@@ -287,7 +287,7 @@ function set_lightbar_for_time_endon_death( lbcolor, pulsetime, time )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x902
 // Size: 0x41
 function set_lightbar_perm_endon_death( lbcolor, pulsetime )
@@ -301,7 +301,7 @@ function set_lightbar_perm_endon_death( lbcolor, pulsetime )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x94b
 // Size: 0x63
 function endinactiveinstructionondeath( var_bbfd8d645f3d6f98 )
@@ -327,7 +327,7 @@ function endinactiveinstructionondeath( var_bbfd8d645f3d6f98 )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9b6
 // Size: 0x9b
 function endinstructiononnotification( endonnotification, var_bbfd8d645f3d6f98 )
@@ -348,7 +348,8 @@ function endinstructiononnotification( endonnotification, var_bbfd8d645f3d6f98 )
         return;
     }
     
-    for (i = 0; i < self.lightbarstructs.size; i++) {
+    for ( i = 0; i < self.lightbarstructs.size ; i++ )
+    {
         if ( var_bbfd8d645f3d6f98 == self.lightbarstructs[ i ] )
         {
             if ( var_bbfd8d645f3d6f98.executing )
@@ -364,7 +365,7 @@ function endinstructiononnotification( endonnotification, var_bbfd8d645f3d6f98 )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa59
 // Size: 0x5a
 function turn_off_light_bar_on_death()
@@ -390,7 +391,7 @@ function turn_off_light_bar_on_death()
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xabb
 // Size: 0x18
 function set_lightbar_color( lbcolor )
@@ -399,7 +400,7 @@ function set_lightbar_color( lbcolor )
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xadb
 // Size: 0x10
 function set_lightbar_on()
@@ -408,7 +409,7 @@ function set_lightbar_on()
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf3
 // Size: 0xf
 function set_lightbar_off()
@@ -417,7 +418,7 @@ function set_lightbar_off()
 }
 
 // Namespace lightbar / scripts\mp\lightbar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb0a
 // Size: 0x18
 function set_lightbar_pulse_time( pulsetime )

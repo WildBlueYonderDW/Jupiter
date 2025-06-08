@@ -7,7 +7,7 @@
 #namespace namespace_d0fc9ba845d3f014;
 
 // Namespace namespace_d0fc9ba845d3f014 / namespace_c7c8e97cfcdfb1e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d0
 // Size: 0x13c
 function init( var_c8fe12c76b06111e, activityinstance )
@@ -44,7 +44,7 @@ function init( var_c8fe12c76b06111e, activityinstance )
 }
 
 // Namespace namespace_d0fc9ba845d3f014 / namespace_c7c8e97cfcdfb1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x314
 // Size: 0x63
 function create_laser_trap()
@@ -62,7 +62,7 @@ function create_laser_trap()
 }
 
 // Namespace namespace_d0fc9ba845d3f014 / namespace_c7c8e97cfcdfb1e1
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x380
 // Size: 0x45
 function function_836cdac4b1d38941( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -74,7 +74,7 @@ function function_836cdac4b1d38941( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace namespace_d0fc9ba845d3f014 / namespace_c7c8e97cfcdfb1e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3cd
 // Size: 0xa3
 function function_de1ff0b717ef1a19( var_8b429ec000467dcb, var_130c845ace729a7e )
@@ -97,7 +97,7 @@ function function_de1ff0b717ef1a19( var_8b429ec000467dcb, var_130c845ace729a7e )
 }
 
 // Namespace namespace_d0fc9ba845d3f014 / namespace_c7c8e97cfcdfb1e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x478
 // Size: 0x155
 function function_1de2b98e5b1f0590( einflictor, rangeoverride )
@@ -128,7 +128,7 @@ function function_1de2b98e5b1f0590( einflictor, rangeoverride )
 }
 
 // Namespace namespace_d0fc9ba845d3f014 / namespace_c7c8e97cfcdfb1e1
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x5d5
 // Size: 0xaf
 function function_2a19c46ce6857095( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -143,7 +143,7 @@ function function_2a19c46ce6857095( einflictor, eattacker, instance, idamage, id
 }
 
 // Namespace namespace_d0fc9ba845d3f014 / namespace_c7c8e97cfcdfb1e1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x68c
 // Size: 0x69
 function trigger_trap( player )
@@ -166,7 +166,7 @@ function trigger_trap( player )
 }
 
 // Namespace namespace_d0fc9ba845d3f014 / namespace_c7c8e97cfcdfb1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6fd
 // Size: 0x1b8
 function detectplayer()

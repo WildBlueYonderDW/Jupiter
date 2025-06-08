@@ -19,7 +19,7 @@
 #namespace mp_jup_scrapyard;
 
 // Namespace mp_jup_scrapyard / scripts\mp\maps\mp_jup_scrapyard\mp_jup_scrapyard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b4
 // Size: 0xd0
 function main()
@@ -48,7 +48,7 @@ function main()
 }
 
 // Namespace mp_jup_scrapyard / scripts\mp\maps\mp_jup_scrapyard\mp_jup_scrapyard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48c
 // Size: 0x9a
 function function_476e26432f5d3edd()
@@ -66,7 +66,7 @@ function function_476e26432f5d3edd()
 }
 
 // Namespace mp_jup_scrapyard / scripts\mp\maps\mp_jup_scrapyard\mp_jup_scrapyard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52e
 // Size: 0x40
 function function_1682cf22619a5e55()
@@ -81,7 +81,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_jup_scrapyard / scripts\mp\maps\mp_jup_scrapyard\mp_jup_scrapyard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x576
 // Size: 0x2a
 function function_e06c6de255dd9770()
@@ -92,11 +92,11 @@ function function_e06c6de255dd9770()
     }
     
     level.var_648cfe8e093ab1e = &function_f4c47c36c9a0f0d;
-    setdvar( @"hash_365d77262b3a350e", 0 );
+    setdvar( @"scr_starsystem", 0 );
 }
 
 // Namespace mp_jup_scrapyard / scripts\mp\maps\mp_jup_scrapyard\mp_jup_scrapyard
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a8
 // Size: 0x1a8
 function function_f4c47c36c9a0f0d( player )
@@ -122,7 +122,8 @@ function function_f4c47c36c9a0f0d( player )
         }
     #/
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         x = offsets[ i ][ 0 ];
         y = offsets[ i ][ 1 ];
         z = 0;
@@ -144,7 +145,7 @@ function function_f4c47c36c9a0f0d( player )
 }
 
 // Namespace mp_jup_scrapyard / scripts\mp\maps\mp_jup_scrapyard\mp_jup_scrapyard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x758
 // Size: 0x11
 function function_d86d387e8205b87f()
@@ -153,7 +154,7 @@ function function_d86d387e8205b87f()
 }
 
 // Namespace mp_jup_scrapyard / scripts\mp\maps\mp_jup_scrapyard\mp_jup_scrapyard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x772
 // Size: 0x6f9
 function function_31dc060e85f4a689()

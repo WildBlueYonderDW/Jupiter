@@ -5,7 +5,7 @@
 #namespace print;
 
 // Namespace print / scripts\mp\utility\print
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10f
 // Size: 0x7a
 function printonteam( printstring, team )
@@ -22,14 +22,15 @@ function printonteam( printstring, team )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x191
 // Size: 0x91
 function printboldonteam( text, team )
 {
     assert( isdefined( level.players ) );
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         player = level.players[ i ];
         
         if ( isdefined( player.pers[ "team" ] ) && player.pers[ "team" ] == team )
@@ -40,14 +41,15 @@ function printboldonteam( text, team )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x22a
 // Size: 0x9a
 function printboldonteamarg( text, team, arg )
 {
     assert( isdefined( level.players ) );
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         player = level.players[ i ];
         
         if ( isdefined( player.pers[ "team" ] ) && player.pers[ "team" ] == team )
@@ -58,14 +60,15 @@ function printboldonteamarg( text, team, arg )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cc
 // Size: 0x9a
 function printonteamarg( text, team, arg )
 {
     assert( isdefined( level.players ) );
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         player = level.players[ i ];
         
         if ( isdefined( player.pers[ "team" ] ) && player.pers[ "team" ] == team )
@@ -76,14 +79,15 @@ function printonteamarg( text, team, arg )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36e
 // Size: 0x8c
 function printonplayers( text, team )
 {
     players = level.players;
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         if ( isdefined( team ) )
         {
             if ( isdefined( players[ i ].pers[ "team" ] ) && players[ i ].pers[ "team" ] == team )
@@ -99,7 +103,7 @@ function printonplayers( text, team )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x402
 // Size: 0x22a
 function printandsoundoneveryone( team, otherteam, printfriendly, printenemy, soundfriendly, soundenemy, printarg )
@@ -115,7 +119,8 @@ function printandsoundoneveryone( team, otherteam, printfriendly, printenemy, so
     
     if ( level.splitscreen || !shoulddosounds )
     {
-        for (i = 0; i < level.players.size; i++) {
+        for ( i = 0; i < level.players.size ; i++ )
+        {
             player = level.players[ i ];
             playerteam = player.team;
             
@@ -147,7 +152,8 @@ function printandsoundoneveryone( team, otherteam, printfriendly, printenemy, so
     
     if ( shoulddoenemysounds )
     {
-        for (i = 0; i < level.players.size; i++) {
+        for ( i = 0; i < level.players.size ; i++ )
+        {
             player = level.players[ i ];
             playerteam = player.team;
             
@@ -179,7 +185,8 @@ function printandsoundoneveryone( team, otherteam, printfriendly, printenemy, so
         return;
     }
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         player = level.players[ i ];
         playerteam = player.team;
         
@@ -208,7 +215,7 @@ function printandsoundoneveryone( team, otherteam, printfriendly, printenemy, so
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x634
 // Size: 0x84
 function printandsoundonteam( team, printstring, soundalias )
@@ -225,7 +232,7 @@ function printandsoundonteam( team, printstring, soundalias )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6c0
 // Size: 0x23
 function printandsoundonplayer( printstring, soundalias )
@@ -235,7 +242,7 @@ function printandsoundonplayer( printstring, soundalias )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6eb
 // Size: 0xa9
 function printgameaction( msg, player )
@@ -263,7 +270,7 @@ function printgameaction( msg, player )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x79c
 // Size: 0x85
 function teamhudtutorialmessage( msg, team, time )
@@ -280,7 +287,7 @@ function teamhudtutorialmessage( msg, team, time )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x829
 // Size: 0x44
 function tutorialprint( msg, time, optional_state )
@@ -299,7 +306,7 @@ function tutorialprint( msg, time, optional_state )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x875
 // Size: 0x16a
 function getformattedtimestamp( var_5020b0f5e510abb3 )
@@ -355,7 +362,7 @@ function getformattedtimestamp( var_5020b0f5e510abb3 )
 }
 
 // Namespace print / scripts\mp\utility\print
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e8
 // Size: 0x55
 function datalogprint( message, tag )

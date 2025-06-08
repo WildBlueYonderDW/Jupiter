@@ -6,7 +6,7 @@
 /#
 
     // Namespace status_effects / namespace_c56b0b75fd51eab1
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xc0
     // Size: 0xe, Type: dev
     function init_status_effects()
@@ -17,7 +17,7 @@
 #/
 
 // Namespace status_effects / namespace_c56b0b75fd51eab1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd6
 // Size: 0x37, Type: bool
 function function_8ce7894f1a52fb77( effect_type )
@@ -26,7 +26,7 @@ function function_8ce7894f1a52fb77( effect_type )
 }
 
 // Namespace status_effects / namespace_c56b0b75fd51eab1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x116
 // Size: 0x1d, Type: bool
 function function_3b7a43c0f32fc107()
@@ -40,7 +40,7 @@ function function_3b7a43c0f32fc107()
 }
 
 // Namespace status_effects / namespace_c56b0b75fd51eab1
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x13c
 // Size: 0xa1
 function function_108973a907c11ca7( effect_type, durations, unique_id, start_func, end_func )
@@ -56,7 +56,7 @@ function function_108973a907c11ca7( effect_type, durations, unique_id, start_fun
 }
 
 // Namespace status_effects / namespace_c56b0b75fd51eab1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e6
 // Size: 0x150, Type: bool
 function start_effect( effect )

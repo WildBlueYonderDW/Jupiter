@@ -15,7 +15,7 @@
 #namespace mp_jup_waterfront;
 
 // Namespace mp_jup_waterfront / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a3
 // Size: 0xc0
 function main()
@@ -45,7 +45,7 @@ function main()
 }
 
 // Namespace mp_jup_waterfront / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36b
 // Size: 0x95
 function bus_spawn()
@@ -60,7 +60,7 @@ function bus_spawn()
 }
 
 // Namespace mp_jup_waterfront / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x408
 // Size: 0x121
 function function_1e575c6c1a602ca2()
@@ -92,7 +92,7 @@ function function_1e575c6c1a602ca2()
 }
 
 // Namespace mp_jup_waterfront / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x531
 // Size: 0xb8
 function train_spawn()
@@ -112,7 +112,7 @@ function train_spawn()
 }
 
 // Namespace mp_jup_waterfront / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f1
 // Size: 0x9e
 function vehicle_movement( vehmodel )
@@ -132,7 +132,7 @@ function vehicle_movement( vehmodel )
 }
 
 // Namespace mp_jup_waterfront / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x697
 // Size: 0x39
 function function_bd3aa5ee59da5a59( vehmodel, targetorigin, targetangle, var_4187040fa98742ee )
@@ -142,7 +142,7 @@ function function_bd3aa5ee59da5a59( vehmodel, targetorigin, targetangle, var_418
 }
 
 // Namespace mp_jup_waterfront / scripts\mp\maps\mp_jup_waterfront\mp_jup_waterfront
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d8
 // Size: 0x40
 function function_1682cf22619a5e55()

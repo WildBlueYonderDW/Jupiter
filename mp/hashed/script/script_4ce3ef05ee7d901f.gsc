@@ -11,7 +11,7 @@
 #namespace jup_ob_warlord_chemist;
 
 // Namespace jup_ob_warlord_chemist / namespace_ddc2fc61e816ce2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d7
 // Size: 0x1fa
 function main()
@@ -50,7 +50,7 @@ function main()
 }
 
 // Namespace jup_ob_warlord_chemist / namespace_ddc2fc61e816ce2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d9
 // Size: 0x57
 function setup_model()
@@ -67,7 +67,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_warlord_chemist / namespace_ddc2fc61e816ce2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x538
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -76,7 +76,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_warlord_chemist / namespace_ddc2fc61e816ce2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x549
 // Size: 0xcf
 function precache()
@@ -105,7 +105,7 @@ function precache()
 }
 
 // Namespace jup_ob_warlord_chemist / namespace_ddc2fc61e816ce2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x620
 // Size: 0x131
 function setup_weapons()

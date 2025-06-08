@@ -32,7 +32,7 @@
 #namespace super_electric_discharge;
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x408
 // Size: 0x8c
 function function_9e8a4373c9755f3d()
@@ -43,7 +43,7 @@ function function_9e8a4373c9755f3d()
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49c
 // Size: 0x32
 function function_c0327b881b392647()
@@ -60,14 +60,14 @@ function function_c0327b881b392647()
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d7
-// Size: 0x4a, Type: bool
+// Size: 0x4a
 function function_4468fd6516623b9f()
 {
     if ( self isinexecutionattack() || self isinexecutionvictim() )
     {
-        return false;
+        return 0;
     }
     
     thread scripts\mp\hud_message::showsplash( "super_electric_discharge" + "_activate", undefined, self, undefined, undefined, undefined, 1 );
@@ -76,9 +76,9 @@ function function_4468fd6516623b9f()
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x52a
-// Size: 0x12c, Type: bool
+// Size: 0x12c
 function function_1b73127b2849cc95( killstreakbundle )
 {
     self endon( "disconnect" );
@@ -86,7 +86,7 @@ function function_1b73127b2849cc95( killstreakbundle )
     
     if ( self isinexecutionattack() || self isinexecutionvictim() )
     {
-        return false;
+        return 0;
     }
     
     objweapon = makeweapon( "electric_discharge_mp" );
@@ -103,13 +103,13 @@ function function_1b73127b2849cc95( killstreakbundle )
         
         if ( ( gettime() - lastfiretime ) / 1000 <= 1.5 )
         {
-            return false;
+            return 0;
         }
     }
     
     if ( !function_da1cc53c13568565() )
     {
-        return false;
+        return 0;
     }
     
     self giveandfireoffhand( objweapon );
@@ -126,11 +126,11 @@ function function_1b73127b2849cc95( killstreakbundle )
         self.var_f3bc490293d6afd5 = undefined;
     }
     
-    return false;
+    return 0;
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x65f
 // Size: 0xd, Type: bool
 function function_e721c06d0e8502bf()
@@ -181,7 +181,7 @@ function private function_9abe408951f8cc02()
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ad
 // Size: 0x43
 function function_127ef8142005081a()
@@ -279,7 +279,7 @@ function private function_b07326afbb0334d3( killstreakbundle )
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa54
 // Size: 0xc1
 function function_2c9f694b8b0758e1( sourcearray, reforigin, shockdata )
@@ -312,7 +312,7 @@ function function_2c9f694b8b0758e1( sourcearray, reforigin, shockdata )
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb1e
 // Size: 0x160
 function function_8b664d9dfe6f4a7e( sourcearray, reforigin )
@@ -363,7 +363,7 @@ function function_8b664d9dfe6f4a7e( sourcearray, reforigin )
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc87
 // Size: 0xc6
 function function_3ce4b28ed71f750a()
@@ -384,7 +384,7 @@ function function_3ce4b28ed71f750a()
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd55
 // Size: 0x28
 function function_ef718870091ebbd9( victim, shockdata )
@@ -393,7 +393,7 @@ function function_ef718870091ebbd9( victim, shockdata )
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd85
 // Size: 0x1a1
 function function_55d0db940f81e2e6( victim, weaponobj, shockdata )
@@ -441,7 +441,7 @@ function function_55d0db940f81e2e6( victim, weaponobj, shockdata )
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf2e
 // Size: 0x50
 function function_83a614bd6a1f69f0( victim, totalshocktime )
@@ -455,7 +455,7 @@ function function_83a614bd6a1f69f0( victim, totalshocktime )
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf86
 // Size: 0x14d
 function function_822a7fd2e23b8fb6( ent )
@@ -504,7 +504,7 @@ function function_822a7fd2e23b8fb6( ent )
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10db
 // Size: 0x8d, Type: bool
 function function_456170ef7257430b( var_58e914135e6ea706, iskillstreak )
@@ -530,7 +530,7 @@ function function_456170ef7257430b( var_58e914135e6ea706, iskillstreak )
 }
 
 // Namespace super_electric_discharge / scripts\mp\supers\super_electric_discharge
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1171
 // Size: 0x15b
 function function_1fd889c40c7941b8( killstreakbundle )

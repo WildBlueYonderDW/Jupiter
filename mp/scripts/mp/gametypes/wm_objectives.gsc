@@ -50,7 +50,7 @@
 #namespace wm_objectives;
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2751
 // Size: 0x5a7
 function function_16d881992389f811()
@@ -158,7 +158,7 @@ function function_16d881992389f811()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d00
 // Size: 0xb3
 function function_4b399156131ac605()
@@ -189,7 +189,7 @@ function function_4b399156131ac605()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dbb
 // Size: 0x14d
 function function_458432ef4351024c( player )
@@ -203,7 +203,7 @@ function function_458432ef4351024c( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f10
 // Size: 0x190
 function function_bc781bec44dec115( player, success )
@@ -224,7 +224,7 @@ function function_bc781bec44dec115( player, success )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x30a8
 // Size: 0x1a2
 function function_333f4c66e6305891( objectivetype, objectivekey, objectiveid, targetname, params )
@@ -261,7 +261,7 @@ function function_333f4c66e6305891( objectivetype, objectivekey, objectiveid, ta
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3252
 // Size: 0x130
 function function_a6cc7589a41d621e( objectivetype, objectivekey, objectiveid, targetname, params, forceobjective )
@@ -298,7 +298,7 @@ function function_a6cc7589a41d621e( objectivetype, objectivekey, objectiveid, ta
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x338a
 // Size: 0xdd
 function function_58f22e4d0d5e523a( objectivetype )
@@ -336,7 +336,7 @@ function function_58f22e4d0d5e523a( objectivetype )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x346f
 // Size: 0x37
 function function_145c8a3b2e26106b( objectivetype, func )
@@ -350,7 +350,7 @@ function function_145c8a3b2e26106b( objectivetype, func )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34ae
 // Size: 0x70
 function function_4b6345bd08cabf83()
@@ -374,7 +374,7 @@ function function_4b6345bd08cabf83()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3526
 // Size: 0x53
 function function_f62d15beff032deb( zone )
@@ -390,7 +390,7 @@ function function_f62d15beff032deb( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3581
 // Size: 0x3a
 function function_3c45c49970a7becb( zone, var_8d8e1e93369f1251 )
@@ -402,7 +402,7 @@ function function_3c45c49970a7becb( zone, var_8d8e1e93369f1251 )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35c3
 // Size: 0x8f
 function function_f7b85d2223351788( func, zone )
@@ -429,7 +429,7 @@ function function_f7b85d2223351788( func, zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x365a
 // Size: 0x37
 function function_eb9bcbf70f099dea( objectivetype, func )
@@ -443,7 +443,7 @@ function function_eb9bcbf70f099dea( objectivetype, func )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3699
 // Size: 0x37
 function function_ffc7820b3cd963b3( objectivetype, func )
@@ -457,7 +457,7 @@ function function_ffc7820b3cd963b3( objectivetype, func )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36d8
 // Size: 0x37
 function function_ed01ebaaf7e97967( objectivetype, func )
@@ -471,7 +471,7 @@ function function_ed01ebaaf7e97967( objectivetype, func )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3717
 // Size: 0x37
 function function_65668288d02bbcba( objectivetype, func )
@@ -485,7 +485,7 @@ function function_65668288d02bbcba( objectivetype, func )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3756
 // Size: 0x37
 function function_e4285658260d1bfa( objectivetype, func )
@@ -499,7 +499,7 @@ function function_e4285658260d1bfa( objectivetype, func )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3795
 // Size: 0x61
 function function_86e5700d7971e414( objectivetype, voline )
@@ -518,7 +518,7 @@ function function_86e5700d7971e414( objectivetype, voline )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x37fe
 // Size: 0x61
 function function_5580ef2fc74eb79c( objectivetype, voline )
@@ -537,7 +537,7 @@ function function_5580ef2fc74eb79c( objectivetype, voline )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3867
 // Size: 0x71
 function function_8ee1bbc9a60b0b00( objectivetype, var_e504da863a6e3dcc, var_850279df06d6ac74 )
@@ -553,7 +553,7 @@ function function_8ee1bbc9a60b0b00( objectivetype, var_e504da863a6e3dcc, var_850
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38e0
 // Size: 0xbf
 function function_c4835bfede02aee0( objectivetype )
@@ -572,7 +572,7 @@ function function_c4835bfede02aee0( objectivetype )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39a7
 // Size: 0xa1
 function function_1de7ce0d073824b5( label )
@@ -585,7 +585,7 @@ function function_1de7ce0d073824b5( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a50
 // Size: 0x83
 function function_b067e01602805443( label )
@@ -597,7 +597,7 @@ function function_b067e01602805443( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3adb
 // Size: 0xbb
 function function_af3f1639fddce6e6( label )
@@ -611,7 +611,7 @@ function function_af3f1639fddce6e6( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b9e
 // Size: 0x49
 function function_efbf76fb0a1ae4d2( label )
@@ -621,7 +621,7 @@ function function_efbf76fb0a1ae4d2( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bef
 // Size: 0x49
 function function_2cbdea506661cfc5( label )
@@ -631,7 +631,7 @@ function function_2cbdea506661cfc5( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c40
 // Size: 0x85
 function function_9673371186f2b1c3( label )
@@ -643,7 +643,7 @@ function function_9673371186f2b1c3( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ccd
 // Size: 0xc1
 function function_15e2fb8e5bf9b01e( label )
@@ -657,7 +657,7 @@ function function_15e2fb8e5bf9b01e( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d96
 // Size: 0x167
 function function_a9895b70c0316593( label )
@@ -681,7 +681,7 @@ function function_a9895b70c0316593( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f05
 // Size: 0x47
 function function_d52c2ed64193ecf9( label )
@@ -691,7 +691,7 @@ function function_d52c2ed64193ecf9( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f54
 // Size: 0x179
 function function_b010a1f5f8885a06( label )
@@ -711,7 +711,7 @@ function function_b010a1f5f8885a06( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40d5
 // Size: 0x119
 function function_505b442c33eb2055( label )
@@ -728,7 +728,7 @@ function function_505b442c33eb2055( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41f6
 // Size: 0x2c
 function function_3b22215c63a7e4e5( zone )
@@ -738,7 +738,7 @@ function function_3b22215c63a7e4e5( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x422a
 // Size: 0xeb
 function function_fa3e625bbc963a01( zone )
@@ -767,7 +767,7 @@ function function_fa3e625bbc963a01( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x431d
 // Size: 0xb
 function function_bd6d6ca7a1eaafd0( objective )
@@ -776,7 +776,7 @@ function function_bd6d6ca7a1eaafd0( objective )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4330
 // Size: 0x589
 function function_a6cf61bad14de666( zone, ailockdown )
@@ -890,7 +890,7 @@ function function_a6cf61bad14de666( zone, ailockdown )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x48c1
 // Size: 0x17a
 function function_eee86cff5328a5f2( zone, ailockdown )
@@ -920,7 +920,7 @@ function function_eee86cff5328a5f2( zone, ailockdown )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a43
 // Size: 0xde
 function function_bd98c9e85905e50d( capture_zone )
@@ -950,7 +950,7 @@ function function_bd98c9e85905e50d( capture_zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b29
 // Size: 0x215
 function end_zone_objective( zone )
@@ -975,7 +975,8 @@ function end_zone_objective( zone )
     {
         if ( is_equal( chevron.script_noteworthy, zone.targetname ) )
         {
-            for (i = 0; i < 1; i++) {
+            for ( i = 0; i < 1 ; i++ )
+            {
                 chevron setscriptablepartstate( "chevron_" + i, "off" );
             }
         }
@@ -1000,7 +1001,7 @@ function end_zone_objective( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4d46
 // Size: 0x47
 function function_8752b093985bf8e7( time, post_time, dialog, team )
@@ -1013,7 +1014,7 @@ function function_8752b093985bf8e7( time, post_time, dialog, team )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d95
 // Size: 0x42e
 function function_3cdc401d9689c176( zone )
@@ -1095,7 +1096,7 @@ function function_3cdc401d9689c176( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51cb
 // Size: 0x7c
 function function_30887e570cb220ca( zone )
@@ -1109,7 +1110,7 @@ function function_30887e570cb220ca( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x524f
 // Size: 0xb
 function function_fc4467c9f0610bb9( zone )
@@ -1118,7 +1119,7 @@ function function_fc4467c9f0610bb9( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5262
 // Size: 0x379
 function function_d1346b4018cc1509( zone )
@@ -1195,7 +1196,7 @@ function function_d1346b4018cc1509( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55e3
 // Size: 0x247
 function function_3b680608aad5e785( zone )
@@ -1231,7 +1232,7 @@ function function_3b680608aad5e785( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5832
 // Size: 0x191
 function function_e94ef69d91354ea0( zone )
@@ -1268,7 +1269,7 @@ function function_e94ef69d91354ea0( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x59cb
 // Size: 0x4bf
 function function_4a6cef3b190c8082( objective, vehicle, objectivekey, spawndata, node, marker, endnode )
@@ -1312,7 +1313,8 @@ function function_4a6cef3b190c8082( objective, vehicle, objectivekey, spawndata,
     {
         pathnodes = [];
         
-        for (nextnode = node; isdefined( nextnode ); nextnode = undefined) {
+        for ( nextnode = node; isdefined( nextnode ) ; nextnode = undefined )
+        {
             pathnodes[ pathnodes.size ] = nextnode;
             
             if ( isdefined( nextnode.target ) )
@@ -1341,7 +1343,8 @@ function function_4a6cef3b190c8082( objective, vehicle, objectivekey, spawndata,
         totaldistance = 0;
         vehicle.pathnodes[ 0 ].var_1d7ebd1bcc23a4e1 = 0;
         
-        for (i = 0; i < vehicle.pathnodes.size - 1; i++) {
+        for ( i = 0; i < vehicle.pathnodes.size - 1 ; i++ )
+        {
             currentnode = vehicle.pathnodes[ i ];
             nextnode = vehicle.pathnodes[ i + 1 ];
             totaldistance += distance2d( currentnode.origin, nextnode.origin );
@@ -1404,7 +1407,7 @@ function function_4a6cef3b190c8082( objective, vehicle, objectivekey, spawndata,
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e92
 // Size: 0x388
 function function_eb31d2457d09576( var_e21fdc330521a449 )
@@ -1500,7 +1503,7 @@ function function_eb31d2457d09576( var_e21fdc330521a449 )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6222
 // Size: 0xbf
 function function_367f87c96dccaf2()
@@ -1536,7 +1539,7 @@ function function_367f87c96dccaf2()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x62e9
 // Size: 0x10a
 function function_305ffac5102f1b2b( node, teamrelative, backgroundtype )
@@ -1569,7 +1572,7 @@ function function_305ffac5102f1b2b( node, teamrelative, backgroundtype )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63fb
 // Size: 0x109
 function function_1f435a041b5ad1d2( zone )
@@ -1595,7 +1598,7 @@ function function_1f435a041b5ad1d2( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x650c
 // Size: 0x13
 function function_f9fc871c251cd35e( zone )
@@ -1604,7 +1607,7 @@ function function_f9fc871c251cd35e( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6527
 // Size: 0xb
 function function_673741f361e9dcf3( zone )
@@ -1613,7 +1616,7 @@ function function_673741f361e9dcf3( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x653a
 // Size: 0x364
 function function_7bcfd3c0f707dfd0( zone )
@@ -1670,7 +1673,7 @@ function function_7bcfd3c0f707dfd0( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x68a6
 // Size: 0x67
 function function_fe6c238f87f0d34( zone )
@@ -1684,7 +1687,7 @@ function function_fe6c238f87f0d34( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6915
 // Size: 0x8c
 function function_20ac728c10edaff1( zone )
@@ -1698,7 +1701,7 @@ function function_20ac728c10edaff1( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69a9
 // Size: 0xaaa
 function function_841f344a6ab9d6f9( zone )
@@ -1789,7 +1792,7 @@ function function_841f344a6ab9d6f9( zone )
         
         if ( getdvarint( @"hash_c44109000ed1922d" ) != 0 )
         {
-            hostage scripts\mp\gameobjects::function_316d9da870e12a03( [ visuals[ 0 ], hostage.head ], undefined, undefined, 32, 180, undefined, 1 );
+            hostage scripts\mp\gameobjects::create_manual_drop_data_struct( [ visuals[ 0 ], hostage.head ], undefined, undefined, 32, 180, undefined, 1 );
         }
         
         hostage.objidpingfriendly = 0;
@@ -1881,7 +1884,7 @@ function function_841f344a6ab9d6f9( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x745b
 // Size: 0x13
 function function_ecbcf255884135c5( zone )
@@ -1890,7 +1893,7 @@ function function_ecbcf255884135c5( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7476
 // Size: 0x50
 function function_274763e755af09dc( zone )
@@ -1905,7 +1908,7 @@ function function_274763e755af09dc( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x74ce
 // Size: 0x303
 function init_bomb_objective( zone )
@@ -1959,7 +1962,7 @@ function init_bomb_objective( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x77d9
 // Size: 0x8b
 function function_2e079de28a14edf4( zone )
@@ -1975,7 +1978,7 @@ function function_2e079de28a14edf4( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x786c
 // Size: 0x8c
 function function_b1e48e6ea7e1a047( zone )
@@ -1989,7 +1992,7 @@ function function_b1e48e6ea7e1a047( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7900
 // Size: 0x1aa
 function function_2d7f27839316e035( zone )
@@ -2023,7 +2026,7 @@ function function_2d7f27839316e035( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ab2
 // Size: 0xc3
 function function_8ed8bdf501691dc9( zone )
@@ -2041,7 +2044,7 @@ function function_8ed8bdf501691dc9( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b7d
 // Size: 0x153
 function function_2816c555d1a0bde( zone )
@@ -2073,7 +2076,7 @@ function function_2816c555d1a0bde( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7cd8
 // Size: 0x71b
 function function_b707f54f7de4fd15( zone )
@@ -2213,7 +2216,7 @@ function function_b707f54f7de4fd15( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x83fb
 // Size: 0x28
 function function_ba09d65c3d7386ea( player )
@@ -2223,7 +2226,7 @@ function function_ba09d65c3d7386ea( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x842b
 // Size: 0x322
 function function_653bab3ddec214a3( team, progress, change, capplayer )
@@ -2290,7 +2293,7 @@ function function_653bab3ddec214a3( team, progress, change, capplayer )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8755
 // Size: 0xef
 function function_4f20ec3b4b62da91( zone )
@@ -2315,7 +2318,7 @@ function function_4f20ec3b4b62da91( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x884c
 // Size: 0xda
 function function_df7bc18f8882600e( zone )
@@ -2340,7 +2343,7 @@ function function_df7bc18f8882600e( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x892e
 // Size: 0x476
 function function_cb215e355cb593c6( zone )
@@ -2411,7 +2414,7 @@ function function_cb215e355cb593c6( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8dac
 // Size: 0x29
 function function_3437d0c8eca62f1c( zone, player )
@@ -2421,7 +2424,7 @@ function function_3437d0c8eca62f1c( zone, player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8ddd
 // Size: 0x29
 function function_cc4020b25a7774e9( zone, player )
@@ -2431,7 +2434,7 @@ function function_cc4020b25a7774e9( zone, player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e0e
 // Size: 0x12
 function function_b56f77a071745943()
@@ -2440,7 +2443,7 @@ function function_b56f77a071745943()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e28
 // Size: 0x2a
 function bombzone_onbeginuse( player )
@@ -2451,7 +2454,7 @@ function bombzone_onbeginuse( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8e5a
 // Size: 0x2f
 function bombzone_onenduse( team, player, result )
@@ -2461,7 +2464,7 @@ function bombzone_onenduse( team, player, result )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e91
 // Size: 0xa8
 function onbombplanted( player )
@@ -2478,7 +2481,7 @@ function onbombplanted( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f41
 // Size: 0x98
 function onbombdefused( player )
@@ -2493,7 +2496,7 @@ function onbombdefused( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8fe1
 // Size: 0x65
 function onbombexploded()
@@ -2507,7 +2510,7 @@ function onbombexploded()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x904e
 // Size: 0x11d
 function function_758991cbe4837f5c()
@@ -2546,7 +2549,7 @@ function function_758991cbe4837f5c()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9173
 // Size: 0xb1
 function function_392116cb868e4771()
@@ -2573,7 +2576,7 @@ function function_392116cb868e4771()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x922c
 // Size: 0x13e
 function function_45828a6389a8309a( zone )
@@ -2601,7 +2604,7 @@ function function_45828a6389a8309a( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9372
 // Size: 0xe3
 function function_ffe3e3561b343b7d( zone )
@@ -2623,7 +2626,7 @@ function function_ffe3e3561b343b7d( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x945d
 // Size: 0x15a
 function function_3e616a6187e9d6ff( zone )
@@ -2655,7 +2658,7 @@ function function_3e616a6187e9d6ff( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x95bf
 // Size: 0x9d
 function function_77dccebe95510a4f()
@@ -2674,7 +2677,7 @@ function function_77dccebe95510a4f()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9665
 // Size: 0x15
 function function_d277ca7e1acc3003()
@@ -2683,7 +2686,7 @@ function function_d277ca7e1acc3003()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9683
 // Size: 0x79
 function function_a62aee0aefa751b3( struct, objective, objectivekey )
@@ -2696,7 +2699,7 @@ function function_a62aee0aefa751b3( struct, objective, objectivekey )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9705
 // Size: 0x170
 function function_684d385924b600cb( spawndata, marker, objectivekey )
@@ -2734,7 +2737,7 @@ function function_684d385924b600cb( spawndata, marker, objectivekey )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x987d
 // Size: 0xec
 function function_ae789c283dba54c2( marker, spawndata )
@@ -2765,7 +2768,7 @@ function function_ae789c283dba54c2( marker, spawndata )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9971
 // Size: 0x86
 function function_f181e89f2aa5615f()
@@ -2785,7 +2788,7 @@ function function_f181e89f2aa5615f()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99ff
 // Size: 0x104
 function tankscoreevent()
@@ -2822,7 +2825,7 @@ function tankscoreevent()
 /#
 
     // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9b0b
     // Size: 0x24, Type: dev
     function function_86bddcb4c5e824e9()
@@ -2839,7 +2842,7 @@ function tankscoreevent()
 #/
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9b37
 // Size: 0x8a9
 function function_7d5057db2f8ddb6f( tank, objidnum )
@@ -3099,7 +3102,7 @@ function function_7d5057db2f8ddb6f( tank, objidnum )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa3e8
 // Size: 0x116
 function function_3cd19573df126b43( objidnum, tank )
@@ -3152,7 +3155,7 @@ function function_3cd19573df126b43( objidnum, tank )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa506
 // Size: 0x7f
 function function_e9ecbc39979febfd( objidnum, var_974cca039ded252e, text, var_d2f33cb2882e714d )
@@ -3179,7 +3182,7 @@ function function_e9ecbc39979febfd( objidnum, var_974cca039ded252e, text, var_d2
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa58d
 // Size: 0xab
 function function_221a50fb1dadfc46( speed )
@@ -3217,7 +3220,7 @@ function function_221a50fb1dadfc46( speed )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa640
 // Size: 0x2f
 function function_796a1097d8a12f6a()
@@ -3231,7 +3234,7 @@ function function_796a1097d8a12f6a()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa677
 // Size: 0x180
 function function_c1bc249b0499979e()
@@ -3289,7 +3292,7 @@ function function_c1bc249b0499979e()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7ff
 // Size: 0x2c5
 function function_2fd30b01784b1b6b()
@@ -3386,7 +3389,7 @@ function function_2fd30b01784b1b6b()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaacc
 // Size: 0x43
 function function_28518f0349b4e5cb()
@@ -3403,7 +3406,7 @@ function function_28518f0349b4e5cb()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xab17
 // Size: 0x15e
 function function_56a6df7bc15c1d56( tank, objidnum )
@@ -3454,7 +3457,7 @@ function function_56a6df7bc15c1d56( tank, objidnum )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xac7d
 // Size: 0x107
 function function_98b9f09341fd9ba8( vehicle, objidnum, pathend )
@@ -3489,7 +3492,7 @@ function function_98b9f09341fd9ba8( vehicle, objidnum, pathend )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xad8c
 // Size: 0x4b8
 function function_f2a1c180dc67b7f8( vehicle, objidnum )
@@ -3592,7 +3595,7 @@ function function_f2a1c180dc67b7f8( vehicle, objidnum )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb24c
 // Size: 0x137
 function function_d507ea0668f3666c( vehicle )
@@ -3624,7 +3627,7 @@ function function_d507ea0668f3666c( vehicle )
 /#
 
     // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xb38b
     // Size: 0xc5, Type: dev
     function function_d36257ceb2380e24( vehicle, pathnodes )
@@ -3634,7 +3637,8 @@ function function_d507ea0668f3666c( vehicle )
         
         while ( true )
         {
-            for (i = 0; i < pathnodes.size; i++) {
+            for ( i = 0; i < pathnodes.size ; i++ )
+            {
                 print3d( pathnodes[ i ].origin + ( 0, 0, 50 ), "<dev string:xb8>" + i + "<dev string:xc1>" + pathnodes[ i ].var_1d7ebd1bcc23a4e1 );
                 print3d( pathnodes[ i ].origin + ( 0, 0, 36 ), "<dev string:xc7>" + int( pathnodes[ i ].progress * 100 ) + "<dev string:xcb>" );
             }
@@ -3646,7 +3650,7 @@ function function_d507ea0668f3666c( vehicle )
 #/
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb458
 // Size: 0x2a0, Type: bool
 function function_a13d6040c09f7f03( c4, samsite, player )
@@ -3740,7 +3744,7 @@ function function_a13d6040c09f7f03( c4, samsite, player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb701
 // Size: 0x184
 function function_e70d07a164d078c2( state )
@@ -3778,7 +3782,7 @@ function function_e70d07a164d078c2( state )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb88d
 // Size: 0xdc
 function function_ee3f9522a825f738( player )
@@ -3818,7 +3822,7 @@ function function_ee3f9522a825f738( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb971
 // Size: 0x35
 function function_fb532e39e9edebf5( turret )
@@ -3832,7 +3836,7 @@ function function_fb532e39e9edebf5( turret )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb9ae
 // Size: 0x65
 function function_2e03390bf1d8959d( player, bool )
@@ -3856,7 +3860,7 @@ function function_2e03390bf1d8959d( player, bool )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xba1b
 // Size: 0x5b
 function function_4f1745dec2e39ab4( player, bool )
@@ -3875,7 +3879,7 @@ function function_4f1745dec2e39ab4( player, bool )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xba7e
 // Size: 0xd4
 function function_cbd3979676d57efe( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -3890,7 +3894,7 @@ function function_cbd3979676d57efe( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbb5a
 // Size: 0x90
 function function_3121d0837c912266( objidnum, bombendtime, totaltime )
@@ -3911,7 +3915,7 @@ function function_3121d0837c912266( objidnum, bombendtime, totaltime )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbbf2
 // Size: 0x8b
 function function_4af811e7fdb1c621( struct )
@@ -3925,7 +3929,7 @@ function function_4af811e7fdb1c621( struct )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc86
 // Size: 0xb8
 function function_3683331ec49168ba()
@@ -3945,7 +3949,7 @@ function function_3683331ec49168ba()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd46
 // Size: 0x31
 function function_ce07c8b7bf47de7b()
@@ -3959,7 +3963,7 @@ function function_ce07c8b7bf47de7b()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd7f
 // Size: 0x90
 function function_260a303b50ba69cc()
@@ -3983,7 +3987,7 @@ function function_260a303b50ba69cc()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbe17
 // Size: 0x5d
 function function_6ce08fcf00f18e1()
@@ -3996,7 +4000,7 @@ function function_6ce08fcf00f18e1()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xbe7c
 // Size: 0x12c
 function function_bbcd7058816ef794( objectivekey, attackermsg, defendermsg, objectiveicon, overrideownerteam, offset )
@@ -4028,7 +4032,7 @@ function function_bbcd7058816ef794( objectivekey, attackermsg, defendermsg, obje
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbfb1
 // Size: 0x51
 function function_389ebc5025c28934( turret )
@@ -4040,7 +4044,7 @@ function function_389ebc5025c28934( turret )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc00a
 // Size: 0x6a
 function function_3073d3141c30bbe5( turret )
@@ -4062,7 +4066,7 @@ function function_3073d3141c30bbe5( turret )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc07c
 // Size: 0x16a
 function function_e1c17d4c7c7e96a5( data )
@@ -4097,7 +4101,7 @@ function function_e1c17d4c7c7e96a5( data )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc1ef
 // Size: 0xc
 function function_58f7ac8cca982832()
@@ -4106,7 +4110,7 @@ function function_58f7ac8cca982832()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc203
 // Size: 0x1ab
 function function_14aa40ae092fe7b1( turret )
@@ -4150,7 +4154,7 @@ function function_14aa40ae092fe7b1( turret )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc3b6
 // Size: 0x7b
 function function_70c8684c2c29bf59( type )
@@ -4171,7 +4175,7 @@ function function_70c8684c2c29bf59( type )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc439
 // Size: 0x433
 function function_3f70bb8b39738c34( var_2776aeb45e3f60f0, vehicles, dropoff_marker )
@@ -4278,7 +4282,7 @@ function function_3f70bb8b39738c34( var_2776aeb45e3f60f0, vehicles, dropoff_mark
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc874
 // Size: 0x8d
 function function_1e6e529917057bf2( player )
@@ -4305,7 +4309,7 @@ function function_1e6e529917057bf2( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc909
 // Size: 0xa1
 function vehicle_move_forward_until( name )
@@ -4332,7 +4336,7 @@ function vehicle_move_forward_until( name )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc9b2
 // Size: 0x3f
 function function_13db2131b3f0851f( player, var_20034b7333f48b8c, manualdrop )
@@ -4343,7 +4347,7 @@ function function_13db2131b3f0851f( player, var_20034b7333f48b8c, manualdrop )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc9f9
 // Size: 0x76
 function function_37487e9ef3996964( objective )
@@ -4362,7 +4366,7 @@ function function_37487e9ef3996964( objective )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca77
 // Size: 0x47
 function function_ceb1bb733cf25d55( player )
@@ -4376,7 +4380,7 @@ function function_ceb1bb733cf25d55( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcac6
 // Size: 0x2e
 function function_9e4725f0fafd0f29( team, player, success )
@@ -4386,7 +4390,7 @@ function function_9e4725f0fafd0f29( team, player, success )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcafc
 // Size: 0x1e7
 function function_7d30ae61c44bd1a0( player )
@@ -4441,7 +4445,7 @@ function function_7d30ae61c44bd1a0( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcceb
 // Size: 0x80
 function function_b8bd193977a27782()
@@ -4460,7 +4464,7 @@ function function_b8bd193977a27782()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd74
 // Size: 0x4f
 function function_1b196fb976284ed1( player )
@@ -4477,7 +4481,7 @@ function function_1b196fb976284ed1( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcdcb
 // Size: 0x2e
 function function_e47da7dc98a3d8cc( team, player, result )
@@ -4487,7 +4491,7 @@ function function_e47da7dc98a3d8cc( team, player, result )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce01
 // Size: 0x33
 function function_ef39f46e9b9dcb50( player )
@@ -4497,7 +4501,7 @@ function function_ef39f46e9b9dcb50( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce3c
 // Size: 0x2b
 function onbeginuse( player )
@@ -4508,7 +4512,7 @@ function onbeginuse( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce6f
 // Size: 0x45
 function onuseplantobject( player )
@@ -4520,7 +4524,7 @@ function onuseplantobject( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcebc
 // Size: 0x23
 function function_434d2efc22402e59( objectivekey )
@@ -4529,7 +4533,7 @@ function function_434d2efc22402e59( objectivekey )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcee7
 // Size: 0xed
 function function_a2ef0341d328f8e1( objectivekey )
@@ -4545,7 +4549,7 @@ function function_a2ef0341d328f8e1( objectivekey )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcfdc
 // Size: 0x143
 function function_8bce9c7e1a380040( objectivekey, objectivestatus, var_a49251cd591656c0 )
@@ -4579,7 +4583,7 @@ function function_8bce9c7e1a380040( objectivekey, objectivestatus, var_a49251cd5
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd127
 // Size: 0x9e
 function onenduse( team, player, result )
@@ -4603,7 +4607,7 @@ function onenduse( team, player, result )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd1cd
 // Size: 0x70
 function function_21ee5fc831ef88cc( zone )
@@ -4615,7 +4619,7 @@ function function_21ee5fc831ef88cc( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd245
 // Size: 0x2
 function sdhack()
@@ -4624,7 +4628,7 @@ function sdhack()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xd24f
 // Size: 0x99
 function function_1e87a912abc079e4( zone, team, dialog, condition, cooldown, delaystart, initialcooldown )
@@ -4639,7 +4643,7 @@ function function_1e87a912abc079e4( zone, team, dialog, condition, cooldown, del
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd2f0
 // Size: 0xc3
 function function_7de515850cb39482( zone, team, struct )
@@ -4670,7 +4674,7 @@ function function_7de515850cb39482( zone, team, struct )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd3bb
 // Size: 0xf1
 function function_266f0d24f28fc974( zone, objectivetype )
@@ -4688,7 +4692,7 @@ function function_266f0d24f28fc974( zone, objectivetype )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd4b4
 // Size: 0x18b
 function function_55922f60531de59( zone, callback, team )
@@ -4760,7 +4764,7 @@ function function_55922f60531de59( zone, callback, team )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd647
 // Size: 0x93
 function function_fb82e12375af065f()
@@ -4779,7 +4783,7 @@ function function_fb82e12375af065f()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd6e3
 // Size: 0x5e2
 function function_c00d3986d67e0f5e( zone )
@@ -4878,7 +4882,7 @@ function function_c00d3986d67e0f5e( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdccd
 // Size: 0x3f1
 function function_df478f29c9a89d5a( zone )
@@ -4946,7 +4950,7 @@ function function_df478f29c9a89d5a( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0c6
 // Size: 0x26
 function function_8cf94a98c8d72df0()
@@ -4959,7 +4963,7 @@ function function_8cf94a98c8d72df0()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0f4
 // Size: 0xca
 function function_839e95bec92424a7()
@@ -4994,7 +4998,7 @@ function function_839e95bec92424a7()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe1c6
 // Size: 0x143
 function function_96d01b17312762c7( zone )
@@ -5026,7 +5030,7 @@ function function_96d01b17312762c7( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe311
 // Size: 0xe4
 function function_60f4fb33f7ba40cc( capturezone )
@@ -5057,7 +5061,7 @@ function function_60f4fb33f7ba40cc( capturezone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe3fd
 // Size: 0x44a
 function function_7318c4542deb6762( var_3abf844425ac7c00 )
@@ -5153,7 +5157,7 @@ function function_7318c4542deb6762( var_3abf844425ac7c00 )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe84f
 // Size: 0x3d
 function function_cc40376968f08b19( trigger, distsquared )
@@ -5170,7 +5174,7 @@ function function_cc40376968f08b19( trigger, distsquared )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe894
 // Size: 0x1f8
 function function_de7525871e8ec1a( team, progress, change, capplayer )
@@ -5231,7 +5235,7 @@ function function_de7525871e8ec1a( team, progress, change, capplayer )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xea94
 // Size: 0x495
 function function_b63c307e88f55d86( vehicle, objidnum )
@@ -5347,7 +5351,7 @@ function function_b63c307e88f55d86( vehicle, objidnum )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xef31
 // Size: 0x1f1
 function function_61f03fb6556f5c7f( zone )
@@ -5391,7 +5395,7 @@ function function_61f03fb6556f5c7f( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf12a
 // Size: 0x132
 function function_a1f09cc4dd4b4d47()
@@ -5419,7 +5423,7 @@ function function_a1f09cc4dd4b4d47()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf264
 // Size: 0x37
 function function_e7ed2e5d8bd37b25( isfirstactivation )
@@ -5434,7 +5438,7 @@ function function_e7ed2e5d8bd37b25( isfirstactivation )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf2a3
 // Size: 0x17a
 function function_97bf2e4752f68b38( player )
@@ -5468,7 +5472,7 @@ function function_97bf2e4752f68b38( player )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf425
 // Size: 0x8f
 function airdrop_wheelson( var_1604f1383b5b8325, destination )
@@ -5481,7 +5485,7 @@ function airdrop_wheelson( var_1604f1383b5b8325, destination )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf4bd
 // Size: 0x52
 function function_e21690c11ec9f5ec( time )
@@ -5503,7 +5507,7 @@ function function_e21690c11ec9f5ec( time )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf517
 // Size: 0x9c
 function function_64bb0e20a20f59b7( players, tankorigin, nearbyrange )
@@ -5525,7 +5529,7 @@ function function_64bb0e20a20f59b7( players, tankorigin, nearbyrange )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5bc
 // Size: 0x29e
 function function_60cc645082562276( zone )
@@ -5589,7 +5593,7 @@ function function_60cc645082562276( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf862
 // Size: 0xe5
 function function_a8542f181657fc32( zone )
@@ -5604,7 +5608,7 @@ function function_a8542f181657fc32( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf94f
 // Size: 0x123
 function function_d3768b4626b853b9( zone )
@@ -5633,7 +5637,7 @@ function function_d3768b4626b853b9( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfa7a
 // Size: 0xc1
 function function_81e0bb0e29ca78c5( label )
@@ -5647,7 +5651,7 @@ function function_81e0bb0e29ca78c5( label )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb43
 // Size: 0x37a
 function function_436f588312714b4a( zone )
@@ -5701,7 +5705,7 @@ function function_436f588312714b4a( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfec5
 // Size: 0x117
 function function_fa563dd5b7992edf()
@@ -5724,7 +5728,7 @@ function function_fa563dd5b7992edf()
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xffe4
 // Size: 0xa0
 function function_3e3c26832b57e926( zone )
@@ -5742,7 +5746,7 @@ function function_3e3c26832b57e926( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1008c
 // Size: 0xac
 function function_e42b4521f694e3f9( zone )
@@ -5760,7 +5764,7 @@ function function_e42b4521f694e3f9( zone )
 }
 
 // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10140
 // Size: 0x119
 function function_f4284f31e0cf6cc1( label )
@@ -5779,7 +5783,7 @@ function function_f4284f31e0cf6cc1( label )
 /#
 
     // Namespace wm_objectives / scripts\mp\gametypes\wm_objectives
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x10261
     // Size: 0x76, Type: dev
     function function_4453e34ea22074df()

@@ -3,7 +3,7 @@
 #namespace br_anims;
 
 // Namespace br_anims / scripts\mp\gametypes\br_anims
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa819
 // Size: 0x561
 function function_8d59ea17104ccc81()
@@ -66,7 +66,7 @@ function function_8d59ea17104ccc81()
 }
 
 // Namespace br_anims / scripts\mp\gametypes\br_anims
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xad82
 // Size: 0x183a
 function function_9552697d50ec08e1()
@@ -322,7 +322,7 @@ function function_9552697d50ec08e1()
 }
 
 // Namespace br_anims / scripts\mp\gametypes\br_anims
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc5c4
 // Size: 0x3bb7
 function init()
@@ -944,7 +944,7 @@ function init()
 }
 
 // Namespace br_anims / scripts\mp\gametypes\br_anims
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10183
 // Size: 0x3b
 function function_bea4801ea91bd2f4( animname )

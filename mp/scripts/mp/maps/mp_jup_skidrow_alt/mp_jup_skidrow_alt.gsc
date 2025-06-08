@@ -17,7 +17,7 @@
 #namespace mp_jup_skidrow_alt;
 
 // Namespace mp_jup_skidrow_alt / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x339
 // Size: 0xcd
 function main()
@@ -41,7 +41,7 @@ function main()
 }
 
 // Namespace mp_jup_skidrow_alt / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40e
 // Size: 0x40
 function function_1682cf22619a5e55()
@@ -56,7 +56,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_jup_skidrow_alt / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x456
 // Size: 0xb51
 function function_31dc060e85f4a689()

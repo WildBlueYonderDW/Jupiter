@@ -16,8 +16,8 @@
 #namespace throwing_knife_mp;
 
 // Namespace throwing_knife_mp / scripts\mp\equipment\throwing_knife_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a
+// Params 0
+// Checksum 0x0, Offset: 0x1b1
 // Size: 0x44
 function throwing_knife_mp_init()
 {
@@ -27,8 +27,8 @@ function throwing_knife_mp_init()
 }
 
 // Namespace throwing_knife_mp / scripts\mp\equipment\throwing_knife_mp
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e6
+// Params 3
+// Checksum 0x0, Offset: 0x1fd
 // Size: 0xbf
 function throwing_knife_mp_ongive( equipmentref, equipmentslot, variantid )
 {
@@ -60,8 +60,8 @@ function throwing_knife_mp_ongive( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace throwing_knife_mp / scripts\mp\equipment\throwing_knife_mp
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ad
+// Params 2
+// Checksum 0x0, Offset: 0x2c4
 // Size: 0x37
 function throwing_knife_mp_ontake( equipmentref, equipmentslot )
 {
@@ -74,8 +74,8 @@ function throwing_knife_mp_ontake( equipmentref, equipmentslot )
 }
 
 // Namespace throwing_knife_mp / scripts\mp\equipment\throwing_knife_mp
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ec
+// Params 2
+// Checksum 0x0, Offset: 0x303
 // Size: 0xa4, Type: bool
 function throwing_knife_mp_trytopickup( equipmentref, variantid )
 {
@@ -107,9 +107,9 @@ function throwing_knife_mp_trytopickup( equipmentref, variantid )
 }
 
 // Namespace throwing_knife_mp / scripts\mp\equipment\throwing_knife_mp
-// Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x399
-// Size: 0x19b
+// Params 12
+// Checksum 0x0, Offset: 0x3b0
+// Size: 0x1ff
 function function_4d6d6bc790611975( eattacker, einflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, unmodifieddamage, partname, var_1da1a66b5c6a06a7 )
 {
     if ( !scripts\cp_mp\utility\game_utility::isbrstylegametype() )
@@ -117,7 +117,20 @@ function function_4d6d6bc790611975( eattacker, einflictor, victim, idamage, objw
         return;
     }
     
-    var_1841e6c16aa6ce41 = einflictor.bundle;
+    if ( objweapon.basename == "jup_jp23_me_spear_mp" )
+    {
+        var_1841e6c16aa6ce41 = spawnstruct();
+        var_1841e6c16aa6ce41.var_947ae0321588cb2e = 1;
+        var_1841e6c16aa6ce41.var_5e4f661ca09750d8 = 2;
+        var_1841e6c16aa6ce41.var_65bf5b5f2601ced1 = 1;
+        var_1841e6c16aa6ce41.var_a1d921d11e0991fd = 2;
+        var_1841e6c16aa6ce41.var_fedb584266557d46 = 150;
+    }
+    else
+    {
+        var_1841e6c16aa6ce41 = einflictor.bundle;
+    }
+    
     healthdamage = 0;
     partname = scripts\cp_mp\utility\damage_utility::function_edefa1e693dd3c7d( partname );
     
@@ -155,5 +168,27 @@ function function_4d6d6bc790611975( eattacker, einflictor, victim, idamage, objw
     }
     
     return [ healthdamage, var_1da1a66b5c6a06a7 ];
+}
+
+// Namespace throwing_knife_mp / scripts\mp\equipment\throwing_knife_mp
+// Params 2
+// Checksum 0x0, Offset: 0x5b8
+// Size: 0x43
+function function_3ea0bf8465c74efc( victim, partname )
+{
+    if ( scripts\cp_mp\utility\damage_utility::function_b656251147d7d40b( partname ) )
+    {
+        if ( isdefined( victim ) )
+        {
+            victim.var_21d6bd6b0d89a70c = 1;
+        }
+        
+        return;
+    }
+    
+    if ( isdefined( victim ) )
+    {
+        victim.var_21d6bd6b0d89a70c = undefined;
+    }
 }
 

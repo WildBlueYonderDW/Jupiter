@@ -6,7 +6,7 @@
 #namespace namespace_4671974d6a45393e;
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x507
 // Size: 0xb4
 function getfunction( funcid )
@@ -35,7 +35,7 @@ function getfunction( funcid )
 }
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c3
 // Size: 0x20
 function function_72d72588305107b4( interactionid )
@@ -45,7 +45,7 @@ function function_72d72588305107b4( interactionid )
 }
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5eb
 // Size: 0x35
 function function_8add99cb1b82b964( interactionid )
@@ -57,7 +57,7 @@ function function_8add99cb1b82b964( interactionid )
 }
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x628
 // Size: 0x1b
 function function_ea2a4a330d127793( statename )
@@ -66,7 +66,7 @@ function function_ea2a4a330d127793( statename )
 }
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64b
 // Size: 0x15
 function function_336db229eb81d51e( statename )
@@ -75,7 +75,7 @@ function function_336db229eb81d51e( statename )
 }
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x668
 // Size: 0x29
 function function_280aee8c8ab42ef7( statename )
@@ -85,7 +85,7 @@ function function_280aee8c8ab42ef7( statename )
 }
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x699
 // Size: 0x28
 function function_1f0637e40c2a0dda( statename )
@@ -95,7 +95,7 @@ function function_1f0637e40c2a0dda( statename )
 }
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6c9
 // Size: 0x37
 function function_414b3c5423728952( statename, t )
@@ -108,7 +108,7 @@ function function_414b3c5423728952( statename, t )
 }
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x708
 // Size: 0x1bd
 function playdialog( statename, params )

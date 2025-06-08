@@ -7,7 +7,7 @@
 #namespace mp_jup_tower_lighting;
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x509
 // Size: 0x51
 function main()
@@ -25,7 +25,7 @@ function main()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x562
 // Size: 0x2
 function lighting_setup_dvars()
@@ -34,7 +34,7 @@ function lighting_setup_dvars()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56c
 // Size: 0x1b
 function function_e86c2fa07545c6a()
@@ -44,7 +44,7 @@ function function_e86c2fa07545c6a()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x58f
 // Size: 0x6c
 function function_5235b83db5ab55c6()
@@ -62,7 +62,7 @@ function function_5235b83db5ab55c6()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x603
 // Size: 0x41
 function function_68853a568289b2e9()
@@ -75,7 +75,7 @@ function function_68853a568289b2e9()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64c
 // Size: 0x5b
 function function_20af2a22bde1086b()
@@ -92,7 +92,7 @@ function function_20af2a22bde1086b()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6af
 // Size: 0x2e
 function function_ab2d757f0392fef9()
@@ -103,7 +103,7 @@ function function_ab2d757f0392fef9()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e5
 // Size: 0x12
 function lgt_entityfight_phase1_death()
@@ -113,7 +113,7 @@ function lgt_entityfight_phase1_death()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ff
 // Size: 0x12
 function lgt_entityfight_phase2_death()
@@ -123,7 +123,7 @@ function lgt_entityfight_phase2_death()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x719
 // Size: 0x22
 function function_c8ffe0e0ff8966b2()
@@ -134,7 +134,7 @@ function function_c8ffe0e0ff8966b2()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x743
 // Size: 0xa7
 function function_5750c22e249264ed()
@@ -158,7 +158,7 @@ function function_5750c22e249264ed()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f2
 // Size: 0x6e
 function function_448f852a8710b8ea()
@@ -172,7 +172,7 @@ function function_448f852a8710b8ea()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x868
 // Size: 0x87
 function function_bfd6485208f4b621( params )
@@ -206,7 +206,7 @@ function private function_e05a4e827e4d647a( time, endintensity )
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x921
 // Size: 0x53
 function function_88cd754a904f2c0a()
@@ -219,7 +219,7 @@ function function_88cd754a904f2c0a()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x97c
 // Size: 0x95
 function function_36552610035fd32e( var_28f8f8b442df4f9e, var_39d209c4a94dfabb, duration )
@@ -246,7 +246,7 @@ function function_36552610035fd32e( var_28f8f8b442df4f9e, var_39d209c4a94dfabb, 
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa19
 // Size: 0x66
 function function_b64b9624f284a07f()
@@ -271,7 +271,7 @@ function function_b64b9624f284a07f()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa87
 // Size: 0x22
 function function_5f9fa5db9197d79b()
@@ -283,7 +283,7 @@ function function_5f9fa5db9197d79b()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab1
 // Size: 0x70
 function function_a4e6bf2bf902f2bb()
@@ -297,7 +297,7 @@ function function_a4e6bf2bf902f2bb()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb29
 // Size: 0x70
 function function_654ec5d2324dd96f()
@@ -311,7 +311,7 @@ function function_654ec5d2324dd96f()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba1
 // Size: 0x70
 function function_7b292e2041de06e3()
@@ -325,7 +325,7 @@ function function_7b292e2041de06e3()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc19
 // Size: 0x70
 function function_558b781842a5f957()
@@ -339,7 +339,7 @@ function function_558b781842a5f957()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc91
 // Size: 0x70
 function function_7b292f2041de0916()
@@ -353,7 +353,7 @@ function function_7b292f2041de0916()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd09
 // Size: 0x70
 function function_558b791842a5fb8a()
@@ -367,7 +367,7 @@ function function_558b791842a5fb8a()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd81
 // Size: 0x70
 function function_7b29302041de0b49()
@@ -381,7 +381,7 @@ function function_7b29302041de0b49()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdf9
 // Size: 0x70
 function function_558b7a1842a5fdbd()
@@ -395,7 +395,7 @@ function function_558b7a1842a5fdbd()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe71
 // Size: 0x70
 function function_7b29312041de0d7c()
@@ -409,7 +409,7 @@ function function_7b29312041de0d7c()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee9
 // Size: 0x70
 function function_558b731842a5ee58()
@@ -423,7 +423,7 @@ function function_558b731842a5ee58()
 }
 
 // Namespace mp_jup_tower_lighting / scripts\mp\maps\mp_jup_tower\mp_jup_tower_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf61
 // Size: 0x14a
 function function_f330971a2d808169()

@@ -11,7 +11,7 @@
 #namespace track;
 
 // Namespace track / scripts\asm\track
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fd
 // Size: 0xf8
 function track( asmname )
@@ -34,7 +34,7 @@ function track( asmname )
 }
 
 // Namespace track / scripts\asm\track
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2fd
 // Size: 0x12d
 function trackinit( aim_2, aim_4, aim_6, aim_8 )
@@ -54,7 +54,7 @@ function trackinit( aim_2, aim_4, aim_6, aim_8 )
 /#
 
     // Namespace track / scripts\asm\track
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x432
     // Size: 0xae, Type: dev
     function laserthread()
@@ -80,7 +80,7 @@ function trackinit( aim_2, aim_4, aim_6, aim_8 )
 #/
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e8
 // Size: 0x2d
 function sniperdeathcleanup()
@@ -95,7 +95,7 @@ function sniperdeathcleanup()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51d
 // Size: 0x7b
 function sniperlaserhackstop()
@@ -121,7 +121,7 @@ function sniperlaserhackstop()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a0
 // Size: 0x44, Type: bool
 function shoulduselasertag()
@@ -140,7 +140,7 @@ function shoulduselasertag()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ed
 // Size: 0x8e
 function getlaserstartpoint()
@@ -177,7 +177,7 @@ function getlaserstartpoint()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x684
 // Size: 0x8
 function getlaserdirection()
@@ -186,7 +186,7 @@ function getlaserdirection()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x695
 // Size: 0x8
 function getlaserangles()
@@ -195,7 +195,7 @@ function getlaserangles()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a6
 // Size: 0x236
 function sniperlaserhackstart()
@@ -258,7 +258,7 @@ function sniperlaserhackstart()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e4
 // Size: 0x1f
 function trackturnofflaser()
@@ -273,7 +273,7 @@ function trackturnofflaser()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x90b
 // Size: 0x2d
 function trackturnonlaser()
@@ -291,7 +291,7 @@ function trackturnonlaser()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x940
 // Size: 0x16
 function clearconvergence()
@@ -301,7 +301,7 @@ function clearconvergence()
 }
 
 // Namespace track / scripts\asm\track
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x95e
 // Size: 0x508
 function resetconvergence( bnewtarget, var_c5686a51213bf45e, bretarget )
@@ -459,7 +459,7 @@ function resetconvergence( bnewtarget, var_c5686a51213bf45e, bretarget )
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe6e
 // Size: 0x32f
 function calcconvergencetarget()
@@ -529,7 +529,7 @@ function calcconvergencetarget()
 }
 
 // Namespace track / scripts\asm\track
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11a6
 // Size: 0x43
 function turnlaserbackon( waittime )
@@ -547,7 +547,7 @@ function turnlaserbackon( waittime )
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11f1
 // Size: 0x414
 function convergencetargettick()
@@ -690,7 +690,7 @@ function convergencetargettick()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x160e
 // Size: 0x13, Type: bool
 function issniperconverging()
@@ -704,7 +704,7 @@ function issniperconverging()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x162a
 // Size: 0x13, Type: bool
 function issniperlaseron()
@@ -718,7 +718,7 @@ function issniperlaseron()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1646
 // Size: 0x5f, Type: bool
 function isaiming()
@@ -741,7 +741,7 @@ function isaiming()
 }
 
 // Namespace track / scripts\asm\track
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16ae
 // Size: 0x5fd
 function trackloop( asmname )
@@ -944,7 +944,7 @@ function trackloop( asmname )
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cb3
 // Size: 0xc7
 function trackloop_restoreaim()
@@ -967,7 +967,7 @@ function trackloop_restoreaim()
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d82
 // Size: 0x5d
 function getcurrentpoi()
@@ -987,7 +987,7 @@ function getcurrentpoi()
 }
 
 // Namespace track / scripts\asm\track
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1de8
 // Size: 0x39b
 function trackloop_setanimweights( pitchdelta, yawdelta )
@@ -1071,7 +1071,7 @@ function trackloop_setanimweights( pitchdelta, yawdelta )
 }
 
 // Namespace track / scripts\asm\track
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x218b
 // Size: 0x4ea
 function trackloop_setanimweightslmg( pitchdelta, yawdelta )
@@ -1095,7 +1095,8 @@ function trackloop_setanimweightslmg( pitchdelta, yawdelta )
     desired_yaw = vectortoyaw( var_effbd89ceed72f4f );
     desired_yaw = angleclamp180( desired_yaw );
     
-    for (first_index = 0; desired_yaw > degrees[ first_index ]; first_index++) {
+    for ( first_index = 0; desired_yaw > degrees[ first_index ] ; first_index++ )
+    {
     }
     
     if ( first_index == 0 )
@@ -1106,7 +1107,8 @@ function trackloop_setanimweightslmg( pitchdelta, yawdelta )
     assertex( first_index < aim_anims.size && first_index > 0, "<dev string:x75>" + first_index + "<dev string:x85>" + desired_yaw );
     statename = self.asm.track.lmg_aim_state;
     
-    for (index = 0; index < aim_anims.size; index++) {
+    for ( index = 0; index < aim_anims.size ; index++ )
+    {
         if ( index == first_index || index == first_index - 1 )
         {
             anim_time = clamp( desired_length / max_angles[ index ], 0, 1 );
@@ -1138,7 +1140,7 @@ function trackloop_setanimweightslmg( pitchdelta, yawdelta )
 }
 
 // Namespace track / scripts\asm\track
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x267d
 // Size: 0x111
 function setanimaimweight( goalweight, goaltime )
@@ -1166,7 +1168,7 @@ function setanimaimweight( goalweight, goaltime )
 }
 
 // Namespace track / scripts\asm\track
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2796
 // Size: 0xbb
 function incranimaimweight()

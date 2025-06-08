@@ -10,7 +10,7 @@
 #namespace perk_quick_revive;
 
 // Namespace perk_quick_revive / namespace_b55e809bab3e839
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x101
 // Size: 0x39
 function function_5282518f868ab7b6( str_currency, var_fe59c44529c721a0 )
@@ -20,7 +20,7 @@ function function_5282518f868ab7b6( str_currency, var_fe59c44529c721a0 )
 }
 
 // Namespace perk_quick_revive / namespace_b55e809bab3e839
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x142
 // Size: 0x9
 function give_quick_revive_perk()
@@ -29,7 +29,7 @@ function give_quick_revive_perk()
 }
 
 // Namespace perk_quick_revive / namespace_b55e809bab3e839
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x153
 // Size: 0x2a
 function take_quick_revive_perk( b_pause, str_perk, str_result, n_slot )
@@ -38,7 +38,7 @@ function take_quick_revive_perk( b_pause, str_perk, str_result, n_slot )
 }
 
 // Namespace perk_quick_revive / namespace_b55e809bab3e839
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x185
 // Size: 0x4b
 function function_c90f0f12e436d73c()
@@ -49,7 +49,7 @@ function function_c90f0f12e436d73c()
 }
 
 // Namespace perk_quick_revive / namespace_b55e809bab3e839
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d8
 // Size: 0x1a
 function function_b55fab7706270fe()
@@ -59,7 +59,7 @@ function function_b55fab7706270fe()
 }
 
 // Namespace perk_quick_revive / namespace_b55e809bab3e839
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x19
 function function_736b6262165f91e( healthperframe )

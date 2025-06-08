@@ -6,8 +6,8 @@
 #namespace vehicle_mines;
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e
+// Params 0
+// Checksum 0x0, Offset: 0x14d
 // Size: 0x73
 function vehicle_mines_init()
 {
@@ -23,8 +23,8 @@ function vehicle_mines_init()
 }
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c9
+// Params 0
+// Checksum 0x0, Offset: 0x1c8
 // Size: 0x37
 function vehicle_mines_getleveldata()
 {
@@ -33,8 +33,8 @@ function vehicle_mines_getleveldata()
 }
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x209
+// Params 2
+// Checksum 0x0, Offset: 0x208
 // Size: 0xd0
 function vehicle_mines_getleveldataforvehicle( vehicleref, create )
 {
@@ -61,8 +61,8 @@ function vehicle_mines_getleveldataforvehicle( vehicleref, create )
 }
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e2
+// Params 2
+// Checksum 0x0, Offset: 0x2e1
 // Size: 0x78
 function vehicle_mines_getleveldataformine( equipref, create )
 {
@@ -81,19 +81,24 @@ function vehicle_mines_getleveldataformine( equipref, create )
 }
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x363
-// Size: 0x396, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0x362
+// Size: 0x418, Type: bool
 function vehicle_mines_shouldvehicletriggermine( vehicle, mine )
 {
-    if ( !vehicle scripts\cp_mp\vehicles\vehicle::isvehicle() )
+    if ( !isdefined( vehicle ) || !vehicle scripts\cp_mp\vehicles\vehicle::isvehicle() || !isdefined( vehicle.origin ) || !isdefined( vehicle.angles ) )
     {
         return false;
     }
     
     leveldataforvehicle = vehicle_mines_getleveldataforvehicle( vehicle.vehiclename );
     
-    if ( !isdefined( leveldataforvehicle ) )
+    if ( !isdefined( leveldataforvehicle ) || !isdefined( leveldataforvehicle.frontextents ) || !isdefined( leveldataforvehicle.leftextents ) || !isdefined( leveldataforvehicle.rightextents ) || !isdefined( leveldataforvehicle.loscheckoffset ) )
+    {
+        return false;
+    }
+    
+    if ( !isdefined( mine ) || !isdefined( mine.origin ) )
     {
         return false;
     }
@@ -194,8 +199,8 @@ function vehicle_mines_shouldvehicletriggermine( vehicle, mine )
 }
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x702
+// Params 2
+// Checksum 0x0, Offset: 0x783
 // Size: 0xe8
 function vehicle_mines_minetrigger( vehicle, mine )
 {
@@ -232,8 +237,8 @@ function vehicle_mines_minetrigger( vehicle, mine )
 }
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f2
+// Params 1
+// Checksum 0x0, Offset: 0x873
 // Size: 0x11d
 function vehicle_mines_isfriendlytomine( mine )
 {
@@ -283,8 +288,8 @@ function vehicle_mines_isfriendlytomine( mine )
 }
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x918
+// Params 1
+// Checksum 0x0, Offset: 0x999
 // Size: 0x17
 function vehicle_mines_getnormal2d( vector )
 {
@@ -292,8 +297,8 @@ function vehicle_mines_getnormal2d( vector )
 }
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x938
+// Params 0
+// Checksum 0x0, Offset: 0x9b9
 // Size: 0x35
 function vehicle_mines_getloscheckcontents()
 {

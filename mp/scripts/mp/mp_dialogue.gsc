@@ -5,10 +5,10 @@
 #using scripts\engine\utility;
 #using scripts\mp\utility\player;
 
-#namespace namespace_f83311618817dbe7;
+#namespace mp_dialogue;
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 0, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 0
 // Checksum 0x0, Offset: 0x1f7
 // Size: 0x44
 function main()
@@ -20,8 +20,8 @@ function main()
     level.var_1da0697a602f5a04 = &function_46d1642a9a982a8a;
 }
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 4, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 4
 // Checksum 0x0, Offset: 0x243
 // Size: 0x65
 function function_e174f6ae044c693e( origin, radius, desiredteam, excludeents )
@@ -39,8 +39,8 @@ function function_e174f6ae044c693e( origin, radius, desiredteam, excludeents )
     return scripts\mp\utility\player::getplayersinradius( origin, radius, desiredteam, excludeents );
 }
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 4, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 4
 // Checksum 0x0, Offset: 0x2b1
 // Size: 0x8b
 function function_46d1642a9a982a8a( origin, radius, desiredteam, excludeents )
@@ -68,8 +68,8 @@ function function_46d1642a9a982a8a( origin, radius, desiredteam, excludeents )
     return getaiarrayinradius( origin, radius );
 }
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 2, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 2
 // Checksum 0x0, Offset: 0x345
 // Size: 0xf3, Type: bool
 function function_7bdde7f2158ec720( alias, audience )
@@ -105,8 +105,8 @@ function function_7bdde7f2158ec720( alias, audience )
     return true;
 }
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 1, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 1
 // Checksum 0x0, Offset: 0x441
 // Size: 0x31
 function function_ea5c0accfc20ea48( alias )
@@ -117,8 +117,8 @@ function function_ea5c0accfc20ea48( alias )
     wait duration;
 }
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 1, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 1
 // Checksum 0x0, Offset: 0x47a
 // Size: 0x6d
 function get_intensity( alias )
@@ -133,8 +133,8 @@ function get_intensity( alias )
     return var_c59c1d18b26c886e[ intensity ];
 }
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 3, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 3
 // Checksum 0x0, Offset: 0x4f0
 // Size: 0xf7
 function function_63a29fee1a93c0a8( alias, context, audience )
@@ -187,8 +187,8 @@ function function_63a29fee1a93c0a8( alias, context, audience )
     self playsound( alias, undefined, self );
 }
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 5, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 5
 // Checksum 0x0, Offset: 0x5ef
 // Size: 0x25e
 function anim_facialfiller( msg, looktarget, force, msg_ent, intensity )
@@ -285,8 +285,8 @@ function anim_facialfiller( msg, looktarget, force, msg_ent, intensity )
     scripts\asm\shared\utility::clearfacialstate( "filler" );
 }
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 3, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 3
 // Checksum 0x0, Offset: 0x855
 // Size: 0xc0
 function anim_facialanim( guy, anime, faceanim )
@@ -310,8 +310,8 @@ function anim_facialanim( guy, anime, faceanim )
     thread clearfaceanimonanimdone( guy, animflag, anime );
 }
 
-// Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
-// Params 3, eflags: 0x0
+// Namespace mp_dialogue / scripts\mp\mp_dialogue
+// Params 3
 // Checksum 0x0, Offset: 0x91d
 // Size: 0x6a
 function clearfaceanimonanimdone( guy, animflag, anime )

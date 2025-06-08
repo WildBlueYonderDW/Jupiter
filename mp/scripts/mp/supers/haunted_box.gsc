@@ -32,7 +32,7 @@ function autoexec main()
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f8
 // Size: 0xc4
 function function_8639626f9311efca()
@@ -52,7 +52,7 @@ function function_8639626f9311efca()
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c4
 // Size: 0x21a
 function function_2f61e64b72dcb65f()
@@ -64,7 +64,8 @@ function function_2f61e64b72dcb65f()
     level.hauntedbox.var_11975321cc51ccc = strtok( getdvar( @"hash_b38913c76fca302f", "25 25 15 15 15" ), " " );
     assertex( level.hauntedbox.lootarray.size == level.hauntedbox.var_11975321cc51ccc.size, "<dev string:x1c>" );
     
-    for (i = 0; i < level.hauntedbox.lootarray.size; i++) {
+    for ( i = 0; i < level.hauntedbox.lootarray.size ; i++ )
+    {
         lootstruct = spawnstruct();
         lootstruct.scriptablename = level.hauntedbox.lootarray[ i ];
         lootstruct.var_b9a439caf48188ef = float( level.hauntedbox.var_11975321cc51ccc[ i ] );
@@ -86,7 +87,7 @@ function function_2f61e64b72dcb65f()
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e6
 // Size: 0x2c, Type: bool
 function function_82dfe148ced1f477( player )
@@ -100,7 +101,7 @@ function function_82dfe148ced1f477( player )
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x61b
 // Size: 0x2d
 function function_53905c7899018074( useplayer )
@@ -113,7 +114,7 @@ function function_53905c7899018074( useplayer )
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x650
 // Size: 0x49, Type: bool
 function function_bdd4c7db07903046( useplayer )
@@ -132,7 +133,7 @@ function function_bdd4c7db07903046( useplayer )
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a2
 // Size: 0x37
 function function_1dcd3d5457634b51( useplayer )
@@ -147,7 +148,7 @@ function function_1dcd3d5457634b51( useplayer )
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e1
 // Size: 0x68
 function function_1865381550bb926c()
@@ -167,7 +168,7 @@ function function_1865381550bb926c()
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x751
 // Size: 0xca
 function function_9adf7587abc3af97( player )
@@ -184,7 +185,7 @@ function function_9adf7587abc3af97( player )
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x823
 // Size: 0x6e
 function function_f4c93829f6081d50( lootstructs )
@@ -200,7 +201,7 @@ function function_f4c93829f6081d50( lootstructs )
 }
 
 // Namespace haunted_box / scripts\mp\supers\haunted_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x89a
 // Size: 0x7e
 function function_71bf565567b813e1( lootstructs, chosenweight )

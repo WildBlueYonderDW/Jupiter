@@ -9,7 +9,7 @@
 #namespace player;
 
 // Namespace player / scripts\stealth\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x343
 // Size: 0xea
 function main()
@@ -55,7 +55,7 @@ function main()
 }
 
 // Namespace player / scripts\stealth\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x435
 // Size: 0x1d
 function function_e403865f115834a8( message )
@@ -65,7 +65,7 @@ function function_e403865f115834a8( message )
 }
 
 // Namespace player / scripts\stealth\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45a
 // Size: 0x1c
 function function_3718fc282393305( message )
@@ -75,7 +75,7 @@ function function_3718fc282393305( message )
 }
 
 // Namespace player / scripts\stealth\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47e
 // Size: 0x4e2
 function combatstate_thread( enabled )
@@ -259,7 +259,7 @@ function combatstate_thread( enabled )
 }
 
 // Namespace player / scripts\stealth\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x968
 // Size: 0x8e
 function combatstate_updatethread()
@@ -276,7 +276,7 @@ function combatstate_updatethread()
 }
 
 // Namespace player / scripts\stealth\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9fe
 // Size: 0xbe
 function combatstate_addupdatefunc( key, func )
@@ -290,7 +290,7 @@ function combatstate_addupdatefunc( key, func )
 }
 
 // Namespace player / scripts\stealth\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac4
 // Size: 0xd6
 function combatstate_removeupdatefunc( key )
@@ -304,7 +304,7 @@ function combatstate_removeupdatefunc( key )
 }
 
 // Namespace player / scripts\stealth\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba2
 // Size: 0x2a
 function playerattackedmonitor()
@@ -317,7 +317,7 @@ function playerattackedmonitor()
 }
 
 // Namespace player / scripts\stealth\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd4
 // Size: 0x15a
 function stealthhints_thread()
@@ -338,7 +338,7 @@ function stealthhints_thread()
 }
 
 // Namespace player / scripts\stealth\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd36
 // Size: 0x266
 function stealthhints_eventmonitor()
@@ -430,7 +430,7 @@ function stealthhints_eventmonitor()
 }
 
 // Namespace player / scripts\stealth\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfa4
 // Size: 0x16b
 function stealthhints_aimonitor( ai, eventtype )
@@ -462,7 +462,7 @@ function stealthhints_aimonitor( ai, eventtype )
 }
 
 // Namespace player / scripts\stealth\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1117
 // Size: 0xa0
 function stealthhints_deathmonitor()
@@ -493,7 +493,7 @@ function stealthhints_deathmonitor()
 }
 
 // Namespace player / scripts\stealth\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11bf
 // Size: 0x84
 function stealthhints_combatmonitor()

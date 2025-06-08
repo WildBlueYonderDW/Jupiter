@@ -12,7 +12,7 @@
 #namespace namespace_8761bd55318677aa;
 
 // Namespace namespace_8761bd55318677aa / namespace_27def95c6086c32a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x147
 // Size: 0x22b
 function function_a7dc4a67100b768c( relevantparameters )
@@ -65,7 +65,7 @@ function function_a7dc4a67100b768c( relevantparameters )
 }
 
 // Namespace namespace_8761bd55318677aa / namespace_27def95c6086c32a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37b
 // Size: 0x32
 function function_f805f042fa2f4b2( var_7273458500a1706 )
@@ -76,7 +76,7 @@ function function_f805f042fa2f4b2( var_7273458500a1706 )
 }
 
 // Namespace namespace_8761bd55318677aa / namespace_27def95c6086c32a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b6
 // Size: 0x39, Type: bool
 function function_6e345470b71653a4( activityinstance, params )
@@ -86,7 +86,7 @@ function function_6e345470b71653a4( activityinstance, params )
 }
 
 // Namespace namespace_8761bd55318677aa / namespace_27def95c6086c32a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f8
 // Size: 0x39, Type: bool
 function function_a74910a9002633d0( activityinstance, params )
@@ -96,7 +96,7 @@ function function_a74910a9002633d0( activityinstance, params )
 }
 
 // Namespace namespace_8761bd55318677aa / namespace_27def95c6086c32a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x43a
 // Size: 0x44, Type: bool
 function function_c37214cf3d029093( activityinstance, params )
@@ -107,7 +107,7 @@ function function_c37214cf3d029093( activityinstance, params )
 }
 
 // Namespace namespace_8761bd55318677aa / namespace_27def95c6086c32a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x487
 // Size: 0x39, Type: bool
 function function_1de0e40ac4e9356f( activityinstance, params )
@@ -117,7 +117,7 @@ function function_1de0e40ac4e9356f( activityinstance, params )
 }
 
 // Namespace namespace_8761bd55318677aa / namespace_27def95c6086c32a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c9
 // Size: 0x70, Type: bool
 function function_4a1651413519d392( activityinstance, params )
@@ -131,7 +131,7 @@ function function_4a1651413519d392( activityinstance, params )
 }
 
 // Namespace namespace_8761bd55318677aa / namespace_27def95c6086c32a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x542
 // Size: 0x80, Type: bool
 function function_133d3f81f9f3ab58( activityinstance, params )

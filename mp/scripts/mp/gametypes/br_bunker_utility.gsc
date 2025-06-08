@@ -10,7 +10,7 @@
 #namespace br_bunker_utility;
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x896
 // Size: 0x40
 function init()
@@ -24,7 +24,7 @@ function init()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8de
 // Size: 0x52
 function initbunkeranims()
@@ -35,7 +35,7 @@ function initbunkeranims()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x938
 // Size: 0x120
 function initbunkervfx()
@@ -54,7 +54,7 @@ function initbunkervfx()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa60
 // Size: 0x3c
 function function_69e8580b3055b335()
@@ -66,7 +66,7 @@ function function_69e8580b3055b335()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaa4
 // Size: 0x7a, Type: bool
 function function_5581450b830e0245( origin )
@@ -88,7 +88,7 @@ function function_5581450b830e0245( origin )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb27
 // Size: 0x1c6
 function initbunkerdoor( door, openable, var_6c797412fa41d3ac )
@@ -132,7 +132,7 @@ function initbunkerdoor( door, openable, var_6c797412fa41d3ac )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcf5
 // Size: 0x94
 function initbunkerdooreffects( door, openable )
@@ -149,7 +149,7 @@ function initbunkerdooreffects( door, openable )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd91
 // Size: 0x346
 function openbunkerdoor( door, var_6f1440da20aca842, var_d5a6386c41776b72, overrideanim )
@@ -223,7 +223,7 @@ function openbunkerdoor( door, var_6f1440da20aca842, var_d5a6386c41776b72, overr
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10df
 // Size: 0x588
 function spawnbunkerloot( var_e6b931cf5ee6f106, var_f7696f3f59f35f14 )
@@ -271,7 +271,8 @@ function spawnbunkerloot( var_e6b931cf5ee6f106, var_f7696f3f59f35f14 )
     cache_lege = array_randomize( cache_lege );
     cache_basic = array_randomize( cache_basic );
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         if ( isdefined( cache_lege[ i ] ) )
         {
             scriptable = spawnscriptable( cache_lege[ i ].script_noteworthy, cache_lege[ i ].origin, cache_lege[ i ].angles );
@@ -281,7 +282,8 @@ function spawnbunkerloot( var_e6b931cf5ee6f106, var_f7696f3f59f35f14 )
     
     numtospawn = randomintrange( var_412a308a15a75881, var_760e71b0b094d28f );
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         if ( isdefined( cache_basic[ i ] ) )
         {
             scriptable = spawnscriptable( cache_basic[ i ].script_noteworthy, cache_basic[ i ].origin, cache_basic[ i ].angles );
@@ -381,7 +383,7 @@ function spawnbunkerloot( var_e6b931cf5ee6f106, var_f7696f3f59f35f14 )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x166f
 // Size: 0x5e
 function getitemcount( var_4b4b03cc9e68b30a )
@@ -400,7 +402,7 @@ function getitemcount( var_4b4b03cc9e68b30a )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16d5
 // Size: 0x4a
 function uniquelootitemlookup( index )
@@ -417,7 +419,7 @@ function uniquelootitemlookup( index )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1727
 // Size: 0xa3
 function getclosestmatchingmasterlootnode( var_e6b931cf5ee6f106, var_f7696f3f59f35f14 )
@@ -435,7 +437,8 @@ function getclosestmatchingmasterlootnode( var_e6b931cf5ee6f106, var_f7696f3f59f
             closestnode = undefined;
             closestdist = undefined;
             
-            for (i = 0; i < var_5af9689121f18502.size; i++) {
+            for ( i = 0; i < var_5af9689121f18502.size ; i++ )
+            {
                 dist = distance2dsquared( var_e6b931cf5ee6f106, var_5af9689121f18502[ i ].origin );
                 
                 if ( !isdefined( closestdist ) || dist < closestdist )
@@ -453,7 +456,7 @@ function getclosestmatchingmasterlootnode( var_e6b931cf5ee6f106, var_f7696f3f59f
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17d3
 // Size: 0x132
 function adjustuniqueitemposition( item )
@@ -477,7 +480,7 @@ function adjustuniqueitemposition( item )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x190e
 // Size: 0x25, Type: bool
 function iscloseto( value1, value2, tolerance )
@@ -486,7 +489,7 @@ function iscloseto( value1, value2, tolerance )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x193c
 // Size: 0xde
 function disablelootbunkercachelocations()
@@ -505,7 +508,7 @@ function disablelootbunkercachelocations()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a22
 // Size: 0x16
 function disablebunker11cachelocations()
@@ -514,7 +517,7 @@ function disablebunker11cachelocations()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a40
 // Size: 0x92
 function diablecachesaroundorigin( origin )
@@ -531,7 +534,7 @@ function diablecachesaroundorigin( origin )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ada
 // Size: 0xd9
 function initbunkerbackwallkeypads()
@@ -553,7 +556,7 @@ function initbunkerbackwallkeypads()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1bbb
 // Size: 0x41
 function keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -562,7 +565,7 @@ function keypadscriptableused( instance, part, state, player, var_a5b2c541413aa8
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1c04
 // Size: 0x85
 function _keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -581,7 +584,7 @@ function _keypadscriptableused( instance, part, state, player, var_a5b2c541413aa
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c91
 // Size: 0x1ba
 function keypad_playerinteractwithkeypadloop( instance )
@@ -609,7 +612,7 @@ function keypad_playerinteractwithkeypadloop( instance )
         {
             if ( message == "submit_br_keypad" )
             {
-                if ( getdvarint( @"hash_cc6142f2bf8a87b7", 0 ) )
+                if ( getdvarint( @"scr_br_bunker_keypad_refresh_idle_timer_on_try", 0 ) )
                 {
                     thread keypad_playeridlewatch();
                 }
@@ -665,7 +668,7 @@ function keypad_playerinteractwithkeypadloop( instance )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e53
 // Size: 0x2e
 function keypad_damagedeathdisconnectwatch()
@@ -677,7 +680,7 @@ function keypad_damagedeathdisconnectwatch()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e89
 // Size: 0x20
 function function_5fd9cf8258fba16d()
@@ -689,7 +692,7 @@ function function_5fd9cf8258fba16d()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1eb1
 // Size: 0x31
 function keypad_playeridlewatch()
@@ -702,7 +705,7 @@ function keypad_playeridlewatch()
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1eea
 // Size: 0x55
 function iscodecorrect( instance, value )
@@ -723,14 +726,15 @@ function iscodecorrect( instance, value )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f48
 // Size: 0x98
 function generatenumbercode_array( codelength, codestruct )
 {
     numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
     
-    for (i = 0; i < codelength; i++) {
+    for ( i = 0; i < codelength ; i++ )
+    {
         numbers = array_randomize( numbers );
         codestruct.code[ i ] = numbers[ 0 ];
         numbers = array_remove( numbers, numbers[ 0 ] );
@@ -738,7 +742,7 @@ function generatenumbercode_array( codelength, codestruct )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1fe8
 // Size: 0x30c
 function generatenumbercode( codelength, codestruct, var_2e698aed0de1ce13, var_d3da81df8d468200 )
@@ -768,23 +772,27 @@ function generatenumbercode( codelength, codestruct, var_2e698aed0de1ce13, var_d
     assert( var_6cb4c9e48f55503e > var_2e698aed0de1ce13 + var_d3da81df8d468200, "<dev string:x69>" );
     numbers = array_randomize( numbers );
     
-    for (i = 0; i < var_6cb4c9e48f55503e; i++) {
+    for ( i = 0; i < var_6cb4c9e48f55503e ; i++ )
+    {
         codestruct.code[ "array" ][ i ] = numbers[ i ];
     }
     
     var_91ef66919bfe4233 = codestruct.code[ "array" ];
     
-    for (i = 0; i < var_2e698aed0de1ce13; i++) {
+    for ( i = 0; i < var_2e698aed0de1ce13 ; i++ )
+    {
         var_19f414b6862a5d43 = var_91ef66919bfe4233[ i ];
         codestruct.code[ "array" ][ codestruct.code[ "array" ].size ] = var_19f414b6862a5d43;
         codestruct.code[ "doubles" ][ codestruct.code[ "doubles" ].size ] = var_19f414b6862a5d43;
         var_91ef66919bfe4233 = array_remove( var_91ef66919bfe4233, var_91ef66919bfe4233[ i ] );
     }
     
-    for (i = 0; i < var_d3da81df8d468200; i++) {
+    for ( i = 0; i < var_d3da81df8d468200 ; i++ )
+    {
         var_7e2e31fbe4946a0a = var_91ef66919bfe4233[ i ];
         
-        for (x = 0; x < 2; x++) {
+        for ( x = 0; x < 2 ; x++ )
+        {
             codestruct.code[ "array" ][ codestruct.code[ "array" ].size ] = var_7e2e31fbe4946a0a;
         }
         
@@ -803,7 +811,7 @@ function generatenumbercode( codelength, codestruct, var_2e698aed0de1ce13, var_d
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x22fc
 // Size: 0x223
 function generatecodestoshow( code, var_9453f59efcd1ed15, var_a889768a352ba094, var_c36f81528cf3aa0d )
@@ -825,7 +833,8 @@ function generatecodestoshow( code, var_9453f59efcd1ed15, var_a889768a352ba094, 
     remainingnumbers = array_randomize( array_remove_duplicates( code[ "array" ] ) );
     var_cb805991d3bb8626 = [];
     
-    for (i = 0; i < var_9453f59efcd1ed15; i++) {
+    for ( i = 0; i < var_9453f59efcd1ed15 ; i++ )
+    {
         if ( var_a5f8f3404bcc96dd < var_a889768a352ba094 )
         {
             var_42c5483c4e175fd6 = code[ "doubles" ][ var_a5f8f3404bcc96dd ];
@@ -879,7 +888,7 @@ function generatecodestoshow( code, var_9453f59efcd1ed15, var_a889768a352ba094, 
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2528
 // Size: 0x81
 function assigncodecomputersdisplaycodes( var_406981c6d2ed9301, displaycodes )
@@ -898,7 +907,7 @@ function assigncodecomputersdisplaycodes( var_406981c6d2ed9301, displaycodes )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25b1
 // Size: 0x20
 function getcodecomputerdisplaycode( codestruct, displaycodeindex )
@@ -907,7 +916,7 @@ function getcodecomputerdisplaycode( codestruct, displaycodeindex )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25da
 // Size: 0x71
 function lockscriptabledoors( scriptable )
@@ -922,7 +931,7 @@ function lockscriptabledoors( scriptable )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2653
 // Size: 0x70
 function unlockscriptabledoors( scriptable )
@@ -937,7 +946,7 @@ function unlockscriptabledoors( scriptable )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x26cb
 // Size: 0x88
 function openscriptabledoors( scriptable, var_d647b24e544508f6 )
@@ -955,7 +964,7 @@ function openscriptabledoors( scriptable, var_d647b24e544508f6 )
 }
 
 // Namespace br_bunker_utility / scripts\mp\gametypes\br_bunker_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x275b
 // Size: 0x90
 function closescriptabledoors( scriptable, var_d647b24e544508f6 )

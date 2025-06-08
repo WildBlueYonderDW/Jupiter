@@ -5,8 +5,8 @@
 #namespace br_gametypes;
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd4
+// Params 0
+// Checksum 0x0, Offset: 0xd2
 // Size: 0x97
 function init()
 {
@@ -24,8 +24,8 @@ function init()
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x173
+// Params 2
+// Checksum 0x0, Offset: 0x171
 // Size: 0x57
 function registerbrgametypefunc( funcname, function )
 {
@@ -38,8 +38,8 @@ function registerbrgametypefunc( funcname, function )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d2
+// Params 1
+// Checksum 0x0, Offset: 0x1d0
 // Size: 0x20
 function function_ec416fa15d5fa6af( funcname )
 {
@@ -47,8 +47,17 @@ function function_ec416fa15d5fa6af( funcname )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fa
+// Params 1
+// Checksum 0x0, Offset: 0x1f8
+// Size: 0x20
+function function_ac438828015a7653( funcname )
+{
+    return level.brgametype.funcs[ funcname ];
+}
+
+// Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
+// Params 7
+// Checksum 0x0, Offset: 0x221
 // Size: 0x59
 function runbrgametypefunc6( funcname, param1, param2, param3, param4, param5, param6 )
 {
@@ -56,8 +65,8 @@ function runbrgametypefunc6( funcname, param1, param2, param3, param4, param5, p
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25c
+// Params 3
+// Checksum 0x0, Offset: 0x283
 // Size: 0x9d
 function runbrgametypefunc( funcname, param1, param2 )
 {
@@ -78,8 +87,8 @@ function runbrgametypefunc( funcname, param1, param2 )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x301
+// Params 4
+// Checksum 0x0, Offset: 0x328
 // Size: 0x57
 function function_d72afdccedfc9b07( funcname, param1, param2, param3 )
 {
@@ -90,8 +99,8 @@ function function_d72afdccedfc9b07( funcname, param1, param2, param3 )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x360
+// Params 5
+// Checksum 0x0, Offset: 0x387
 // Size: 0x60
 function function_d72afaccedfc946e( funcname, param1, param2, param3, param4 )
 {
@@ -102,8 +111,8 @@ function function_d72afaccedfc946e( funcname, param1, param2, param3, param4 )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c8
+// Params 8
+// Checksum 0x0, Offset: 0x3ef
 // Size: 0x7e
 function function_d72af9ccedfc923b( funcname, param1, param2, param3, param4, param5, param6, param7 )
 {
@@ -114,8 +123,8 @@ function function_d72af9ccedfc923b( funcname, param1, param2, param3, param4, pa
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44e
+// Params 1
+// Checksum 0x0, Offset: 0x475
 // Size: 0x2f, Type: bool
 function isbrgametypefuncdefined( funcname )
 {
@@ -123,8 +132,8 @@ function isbrgametypefuncdefined( funcname )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x486
+// Params 1
+// Checksum 0x0, Offset: 0x4ad
 // Size: 0x23
 function disablefeature( featurename )
 {
@@ -132,8 +141,8 @@ function disablefeature( featurename )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b1
+// Params 1
+// Checksum 0x0, Offset: 0x4d8
 // Size: 0x30, Type: bool
 function isfeaturedisabled( featurename )
 {
@@ -141,8 +150,8 @@ function isfeaturedisabled( featurename )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ea
+// Params 1
+// Checksum 0x0, Offset: 0x511
 // Size: 0x23
 function enablefeature( featurename )
 {
@@ -150,8 +159,8 @@ function enablefeature( featurename )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x515
+// Params 1
+// Checksum 0x0, Offset: 0x53c
 // Size: 0x2f, Type: bool
 function isfeatureenabled( featurename )
 {
@@ -159,8 +168,8 @@ function isfeatureenabled( featurename )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54d
+// Params 2
+// Checksum 0x0, Offset: 0x574
 // Size: 0x2a
 function registerbrgametypedata( dataref, data )
 {
@@ -168,8 +177,8 @@ function registerbrgametypedata( dataref, data )
 }
 
 // Namespace br_gametypes / scripts\mp\gametypes\br_gametypes
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x57f
+// Params 1
+// Checksum 0x0, Offset: 0x5a6
 // Size: 0x20
 function getbrgametypedata( dataref )
 {

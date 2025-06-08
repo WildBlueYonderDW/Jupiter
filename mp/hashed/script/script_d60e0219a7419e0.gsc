@@ -5,7 +5,7 @@
 #namespace namespace_bd7428f3122be80f;
 
 // Namespace namespace_bd7428f3122be80f / namespace_40713433c91dd86c
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf3
 // Size: 0x1c3
 function function_c402ecda1e84ba27( players, is_major, difficulty_region, activity_origin )

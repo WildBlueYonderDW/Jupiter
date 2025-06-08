@@ -4,7 +4,7 @@
 #namespace hostmigration;
 
 // Namespace hostmigration / scripts\cp_mp\hostmigration
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe6
 // Size: 0x37
 function hostmigration_waitlongdurationwithpause( duration )
@@ -19,7 +19,7 @@ function hostmigration_waitlongdurationwithpause( duration )
 }
 
 // Namespace hostmigration / scripts\cp_mp\hostmigration
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x125
 // Size: 0x47
 function hostmigration_waittillnotifyortimeoutpause( msg, duration )

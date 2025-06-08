@@ -22,7 +22,7 @@ function private autoexec __init__system__()
 }
 
 // Namespace ob_disciple_bottle / namespace_ebfce08b730cf5cb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x278
 // Size: 0x39
 function function_eba97067b05d0ffe()
@@ -36,9 +36,9 @@ function function_eba97067b05d0ffe()
 }
 
 // Namespace ob_disciple_bottle / namespace_ebfce08b730cf5cb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b9
-// Size: 0x274
+// Size: 0x282
 function spawn_disciple_pet()
 {
     player = self;
@@ -96,13 +96,14 @@ function spawn_disciple_pet()
         setheadicondrawinmap( disciple.headicon, 1 );
         setheadiconzoffset( disciple.headicon, 20 );
         function_51044b10b2b673df( disciple.headicon, "icon_small" );
+        disciple.var_66c8cd2e51badc67 = 1;
         disciple callback::add( "on_zombie_ai_killed", &function_b29bb18f0ae7a8a5 );
     }
 }
 
 // Namespace ob_disciple_bottle / namespace_ebfce08b730cf5cb
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x535
+// Checksum 0x0, Offset: 0x543
 // Size: 0x69
 function private function_b29bb18f0ae7a8a5( params )
 {
@@ -118,8 +119,8 @@ function private function_b29bb18f0ae7a8a5( params )
 }
 
 // Namespace ob_disciple_bottle / namespace_ebfce08b730cf5cb
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a6
+// Params 0
+// Checksum 0x0, Offset: 0x5b4
 // Size: 0x12a
 function behavior_watcher()
 {
@@ -160,7 +161,7 @@ function behavior_watcher()
 
 // Namespace ob_disciple_bottle / namespace_ebfce08b730cf5cb
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x6d8
+// Checksum 0x0, Offset: 0x6e6
 // Size: 0xba
 function private function_4dd2426d4ab62466()
 {
@@ -192,8 +193,8 @@ function private function_4dd2426d4ab62466()
 }
 
 // Namespace ob_disciple_bottle / namespace_ebfce08b730cf5cb
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x79a
+// Params 0
+// Checksum 0x0, Offset: 0x7a8
 // Size: 0x38
 function function_b6aa31e0cb281dc8()
 {
@@ -205,8 +206,8 @@ function function_b6aa31e0cb281dc8()
 /#
 
     // Namespace ob_disciple_bottle / namespace_ebfce08b730cf5cb
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7db
+    // Params 0
+    // Checksum 0x0, Offset: 0x7e9
     // Size: 0x2e, Type: dev
     function function_54c73947b0cc64a8()
     {
@@ -216,8 +217,8 @@ function function_b6aa31e0cb281dc8()
     }
 
     // Namespace ob_disciple_bottle / namespace_ebfce08b730cf5cb
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x811
+    // Params 0
+    // Checksum 0x0, Offset: 0x81f
     // Size: 0x59, Type: dev
     function function_5cbd6f25b33ea5a6()
     {

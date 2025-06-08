@@ -4,7 +4,7 @@
 #namespace variant_asm;
 
 // Namespace variant_asm / scripts\asm\shared\variant_asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe3
 // Size: 0x144
 function function_406984e213848212( anim_id, selector_fn, var_ebc45f79e4f8b88b )
@@ -21,7 +21,7 @@ function function_406984e213848212( anim_id, selector_fn, var_ebc45f79e4f8b88b )
 }
 
 // Namespace variant_asm / scripts\asm\shared\variant_asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x22f
 // Size: 0xb2
 function function_3f5173a731bdfe2f( anim_id, base_struct, num_variants )
@@ -34,7 +34,7 @@ function function_3f5173a731bdfe2f( anim_id, base_struct, num_variants )
 }
 
 // Namespace variant_asm / scripts\asm\shared\variant_asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e9
 // Size: 0x18
 function function_a5390330ee29d0eb( anim_id )
@@ -43,7 +43,7 @@ function function_a5390330ee29d0eb( anim_id )
 }
 
 // Namespace variant_asm / scripts\asm\shared\variant_asm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x309
 // Size: 0x215
 function function_8626c13b5be18c1b( anim_id )
@@ -89,7 +89,7 @@ function function_8626c13b5be18c1b( anim_id )
 }
 
 // Namespace variant_asm / scripts\asm\shared\variant_asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x527
 // Size: 0x7c
 function function_70705ab80bbaca39( asmname, statename, params )
@@ -105,7 +105,7 @@ function function_70705ab80bbaca39( asmname, statename, params )
 }
 
 // Namespace variant_asm / scripts\asm\shared\variant_asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5ac
 // Size: 0x5b
 function function_5ab423119778dda3( asmname, statename, params )
@@ -116,7 +116,7 @@ function function_5ab423119778dda3( asmname, statename, params )
 }
 
 // Namespace variant_asm / scripts\asm\shared\variant_asm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x610
 // Size: 0x7e
 function function_18086be1394726c9( asmname, statename, params )

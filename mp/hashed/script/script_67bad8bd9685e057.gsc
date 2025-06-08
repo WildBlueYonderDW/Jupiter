@@ -8,7 +8,7 @@
 #namespace capture_flag;
 
 // Namespace capture_flag / namespace_4c49d1b7e0800f5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf5
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -17,7 +17,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace capture_flag / namespace_4c49d1b7e0800f5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10b
 // Size: 0xb7
 function evaluatescore( bot )
@@ -46,7 +46,7 @@ function evaluatescore( bot )
 }
 
 // Namespace capture_flag / namespace_4c49d1b7e0800f5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cb
 // Size: 0xae
 function function_2613aec5fa0a8620( domflags )
@@ -55,7 +55,8 @@ function function_2613aec5fa0a8620( domflags )
     weightssize = min( weights.size, domflags.size );
     weightstotal = 0;
     
-    for (i = 0; i < weightssize; i++) {
+    for ( i = 0; i < weightssize ; i++ )
+    {
         weightstotal += weights[ i ];
     }
     
@@ -79,7 +80,7 @@ function function_2613aec5fa0a8620( domflags )
 }
 
 // Namespace capture_flag / namespace_4c49d1b7e0800f5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x282
 // Size: 0xee
 function actionprocess( bot )
@@ -103,7 +104,7 @@ function actionprocess( bot )
 }
 
 // Namespace capture_flag / namespace_4c49d1b7e0800f5
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x378
 // Size: 0xc6
 function function_6f7d8428f06122a7( flagorigin, flagradius, flagheight, wanderradius )

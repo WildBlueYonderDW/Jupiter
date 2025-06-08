@@ -5,7 +5,7 @@
 #namespace remoteturret;
 
 // Namespace remoteturret / scripts\mp\killstreaks\remoteturret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f7
 // Size: 0x328
 function init()
@@ -46,7 +46,7 @@ function init()
 }
 
 // Namespace remoteturret / scripts\mp\killstreaks\remoteturret
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x627
 // Size: 0x13
 function tryuseremotemgturret( lifeid, streakname )

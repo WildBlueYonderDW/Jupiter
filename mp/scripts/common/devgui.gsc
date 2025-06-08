@@ -7,7 +7,7 @@
 /#
 
     // Namespace devgui / scripts\common\devgui
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa0
     // Size: 0x6b, Type: dev
     function init_devgui()
@@ -33,7 +33,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x113
     // Size: 0xb7, Type: dev
     function function_de5696a0706893d4()
@@ -60,7 +60,8 @@
             waitframe();
         }
         
-        for (i = 0; i < level.var_de5696a0706893d4.size; i++) {
+        for ( i = 0; i < level.var_de5696a0706893d4.size ; i++ )
+        {
             cmd = level.var_de5696a0706893d4[ i ];
             adddebugcommand( cmd + "<dev string:x4f>" );
             
@@ -75,7 +76,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1d2
     // Size: 0x43, Type: dev
     function add_debug_command( cmd )
@@ -90,7 +91,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x21d
     // Size: 0xc0, Type: dev
     function add_devgui_command( path, cmd, index )
@@ -111,7 +112,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x2e5
     // Size: 0xf0, Type: dev
     function function_a9a864379a098ad6( path, name, func, toggle, index )
@@ -133,7 +134,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x3dd
     // Size: 0xd1, Type: dev
     function function_df648211d66cd3dd( path, dvar, index )
@@ -159,7 +160,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4b6
     // Size: 0xcd, Type: dev
     function function_b2159fbbd7ac094e( path, var_eab44bfaa256f64b, index )
@@ -181,7 +182,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x58b
     // Size: 0x12b, Type: dev
     function function_b23a59dfb4ca49a1( path, var_9af94c1035c9530e, func, toggle, index )
@@ -207,7 +208,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x6be
     // Size: 0x8e, Type: dev
     function function_6e7290c8ee4f558b( base_path )
@@ -225,7 +226,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x754
     // Size: 0x22, Type: dev
     function function_fe953f000498048f()
@@ -235,7 +236,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x77e
     // Size: 0xae, Type: dev
     function function_9b4c82dba041b23d()
@@ -254,7 +255,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x834
     // Size: 0x68, Type: dev
     function function_5ee398aaf3f11e0d( params )
@@ -267,7 +268,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x8a4
     // Size: 0x41, Type: dev
     function function_2fb888667001fc39( dvar, dvar_hash )
@@ -277,7 +278,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x8ed
     // Size: 0x2f, Type: dev
     function function_7ac3c4c1bce16dd2( name )
@@ -286,7 +287,7 @@
     }
 
     // Namespace devgui / scripts\common\devgui
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x924
     // Size: 0xac, Type: dev
     function toggle_thread( name, func, params )

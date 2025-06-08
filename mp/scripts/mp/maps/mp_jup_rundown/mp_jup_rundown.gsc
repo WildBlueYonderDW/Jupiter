@@ -12,7 +12,7 @@
 #namespace mp_jup_rundown;
 
 // Namespace mp_jup_rundown / scripts\mp\maps\mp_jup_rundown\mp_jup_rundown
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b6
 // Size: 0xa8
 function main()
@@ -33,7 +33,7 @@ function main()
 }
 
 // Namespace mp_jup_rundown / scripts\mp\maps\mp_jup_rundown\mp_jup_rundown
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x266
 // Size: 0x11a
 function function_b2d0d10e6da4e389()

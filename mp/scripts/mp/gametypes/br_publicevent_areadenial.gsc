@@ -15,7 +15,7 @@
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x50d
+// Checksum 0x0, Offset: 0x50c
 // Size: 0x17
 function autoexec main()
 {
@@ -23,8 +23,8 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x52c
+// Params 1
+// Checksum 0x0, Offset: 0x52b
 // Size: 0x60
 function init( eventinfo )
 {
@@ -36,8 +36,8 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x594
+// Params 0
+// Checksum 0x0, Offset: 0x593
 // Size: 0x40f
 function postinitfunc()
 {
@@ -53,7 +53,7 @@ function postinitfunc()
     level.pe_areadenial.var_88f734bb6033570 = getdvarfloat( @"hash_eeeb1f6afe3519ee", 0.05 );
     level.pe_areadenial.var_ad4754cdffb212ee = getdvarfloat( @"hash_c80aab9d623eec4f", 525 );
     level.pe_areadenial.var_49a91f803883d065 = getdvarfloat( @"hash_d6eab54faa5aafc7", 38 );
-    level.pe_areadenial.var_a7ff560156dd7340 = getdvarfloat( @"hash_7960ba20c43fef93", 3 );
+    level.pe_areadenial.var_a7ff560156dd7340 = getdvarfloat( @"scr_br_pe_areadenial_area_recon_fleet_size", 3 );
     level.pe_areadenial.var_5900c5a18edd28b8 = getdvarfloat( @"hash_43fe04b82f4f4", 4650 );
     level.pe_areadenial.var_c25236f9a676187e = getdvarint( @"hash_2ea7541ddf02bd32", 2 );
     level.pe_areadenial.var_444c60db3001d089 = getdvarfloat( @"hash_158f4b7e0b27abcf", 2 );
@@ -89,8 +89,8 @@ function postinitfunc()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ab
+// Params 0
+// Checksum 0x0, Offset: 0x9aa
 // Size: 0x4, Type: bool
 function validatefunc()
 {
@@ -98,8 +98,8 @@ function validatefunc()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b8
+// Params 0
+// Checksum 0x0, Offset: 0x9b7
 // Size: 0x3b
 function activatefunc()
 {
@@ -110,8 +110,8 @@ function activatefunc()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fb
+// Params 0
+// Checksum 0x0, Offset: 0x9fa
 // Size: 0x28e
 function function_9d7adb0c85ad032c()
 {
@@ -127,7 +127,8 @@ function function_9d7adb0c85ad032c()
     var_5432f286e9fd81eb = 0;
     var_db18d54fe0bfc2aa = level.pe_areadenial.var_c25236f9a676187e;
     
-    for (i = 0; i < var_db18d54fe0bfc2aa; i++) {
+    for ( i = 0; i < var_db18d54fe0bfc2aa ; i++ )
+    {
         var_4c77bdbee25f55d9 = function_b26cda0ae84a23c9();
         var_77044f83c48cfc86 = function_b1b8c12b0e570254( var_4c77bdbee25f55d9 );
         var_9b6910a128f07c81[ i ] = var_77044f83c48cfc86;
@@ -139,7 +140,8 @@ function function_9d7adb0c85ad032c()
     thread starttimer( var_927c9ccd0c6657f2 );
     sweepdirection = undefined;
     
-    for (i = 0; i < level.pe_areadenial.var_c25236f9a676187e; i++) {
+    for ( i = 0; i < level.pe_areadenial.var_c25236f9a676187e ; i++ )
+    {
         function_b5df83a2947e7f8( i );
         var_761bbb068c79f3f2 = function_e5c53607a2a43f2c();
         var_761bbb068c79f3f2 -= ( 0, 0, var_761bbb068c79f3f2[ 2 ] );
@@ -165,8 +167,8 @@ function function_9d7adb0c85ad032c()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xc91
+// Params 6
+// Checksum 0x0, Offset: 0xc90
 // Size: 0x10b
 function function_c2d3b64efe3c0908( var_2ec15a7b9d6c1831, var_761bbb068c79f3f2, radius, sweepdirection, height, var_5034a2690f4a2717 )
 {
@@ -186,7 +188,8 @@ function function_c2d3b64efe3c0908( var_2ec15a7b9d6c1831, var_761bbb068c79f3f2, 
     
     var_72c40a2a16128375 = ( sweepdirection[ 1 ], sweepdirection[ 0 ] * -1, 0 );
     
-    for (i = 0; i < level.pe_areadenial.var_a7ff560156dd7340; i++) {
+    for ( i = 0; i < level.pe_areadenial.var_a7ff560156dd7340 ; i++ )
+    {
         offsetmult = ( i & 1 ) == 0 ? i / 2 : ( i + 1 ) * -1 / 2;
         offsetmult *= level.pe_areadenial.var_5900c5a18edd28b8;
         offsetvector = var_72c40a2a16128375 * offsetmult;
@@ -195,8 +198,8 @@ function function_c2d3b64efe3c0908( var_2ec15a7b9d6c1831, var_761bbb068c79f3f2, 
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xda4
+// Params 7
+// Checksum 0x0, Offset: 0xda3
 // Size: 0x590
 function function_cb80ba26086187c4( var_2ec15a7b9d6c1831, var_761bbb068c79f3f2, radius, direction, height, startdelay, originoffset )
 {
@@ -284,8 +287,8 @@ function function_cb80ba26086187c4( var_2ec15a7b9d6c1831, var_761bbb068c79f3f2, 
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x133d
+// Params 1
+// Checksum 0x0, Offset: 0x133c
 // Size: 0x150
 function function_d61de56f5c16dd6a( var_a5cb914a9154c613 )
 {
@@ -316,8 +319,8 @@ function function_d61de56f5c16dd6a( var_a5cb914a9154c613 )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1496
+// Params 1
+// Checksum 0x0, Offset: 0x1495
 // Size: 0x211
 function function_8da121b7be71313( var_a5cb914a9154c613 )
 {
@@ -363,8 +366,8 @@ function function_8da121b7be71313( var_a5cb914a9154c613 )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b0
+// Params 1
+// Checksum 0x0, Offset: 0x16af
 // Size: 0x6e, Type: bool
 function function_de42c0e4d1be699b( var_a5cb914a9154c613 )
 {
@@ -402,8 +405,8 @@ function function_de42c0e4d1be699b( var_a5cb914a9154c613 )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1727
+// Params 0
+// Checksum 0x0, Offset: 0x1726
 // Size: 0x151
 function function_1b86e63b88f95880()
 {
@@ -441,8 +444,8 @@ function function_1b86e63b88f95880()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1880
+// Params 0
+// Checksum 0x0, Offset: 0x187f
 // Size: 0x172
 function function_710abf9f376821bd()
 {
@@ -482,8 +485,8 @@ function function_710abf9f376821bd()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19fa
+// Params 0
+// Checksum 0x0, Offset: 0x19f9
 // Size: 0x17e
 function function_8ba6729fe64a5b69()
 {
@@ -529,8 +532,8 @@ function function_8ba6729fe64a5b69()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b80
+// Params 1
+// Checksum 0x0, Offset: 0x1b7f
 // Size: 0xa8
 function function_aec9c54c8967fe89( durationseconds )
 {
@@ -548,8 +551,8 @@ function function_aec9c54c8967fe89( durationseconds )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c30
+// Params 1
+// Checksum 0x0, Offset: 0x1c2f
 // Size: 0xfc
 function function_d4a1bf18d5ba7df1( durationseconds )
 {
@@ -585,8 +588,8 @@ function function_d4a1bf18d5ba7df1( durationseconds )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d34
+// Params 0
+// Checksum 0x0, Offset: 0x1d33
 // Size: 0x1c
 function function_4a6a9d022db5af8c()
 {
@@ -594,8 +597,8 @@ function function_4a6a9d022db5af8c()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d58
+// Params 0
+// Checksum 0x0, Offset: 0x1d57
 // Size: 0x23
 function function_84db74c613606304()
 {
@@ -604,8 +607,8 @@ function function_84db74c613606304()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d83
+// Params 0
+// Checksum 0x0, Offset: 0x1d82
 // Size: 0x1c
 function function_b8f94321062a981b()
 {
@@ -613,8 +616,8 @@ function function_b8f94321062a981b()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1da7
+// Params 0
+// Checksum 0x0, Offset: 0x1da6
 // Size: 0x1f9
 function function_4d19d4aa5e8c6865()
 {
@@ -657,8 +660,8 @@ function function_4d19d4aa5e8c6865()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fa8
+// Params 1
+// Checksum 0x0, Offset: 0x1fa7
 // Size: 0xf3
 function function_d3ce533932f11610( player )
 {
@@ -688,8 +691,8 @@ function function_d3ce533932f11610( player )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20a3
+// Params 1
+// Checksum 0x0, Offset: 0x20a2
 // Size: 0xd8
 function function_d788489e8b30bb51( player )
 {
@@ -719,8 +722,8 @@ function function_d788489e8b30bb51( player )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2183
+// Params 2
+// Checksum 0x0, Offset: 0x2182
 // Size: 0xf9
 function function_e99b445ad2890c72( var_761bbb068c79f3f2, var_a87e0ef0a96c75ad )
 {
@@ -760,8 +763,8 @@ function function_e99b445ad2890c72( var_761bbb068c79f3f2, var_a87e0ef0a96c75ad )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2285
+// Params 2
+// Checksum 0x0, Offset: 0x2284
 // Size: 0x195
 function function_885a34198bc9d718( var_761bbb068c79f3f2, sweepdirection )
 {
@@ -805,8 +808,8 @@ function function_885a34198bc9d718( var_761bbb068c79f3f2, sweepdirection )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2423
+// Params 2
+// Checksum 0x0, Offset: 0x2422
 // Size: 0xdf
 function function_eb7b779e8b1dec9f( var_761bbb068c79f3f2, mindistance )
 {
@@ -835,8 +838,8 @@ function function_eb7b779e8b1dec9f( var_761bbb068c79f3f2, mindistance )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x250b
+// Params 0
+// Checksum 0x0, Offset: 0x250a
 // Size: 0x18e
 function function_b26cda0ae84a23c9()
 {
@@ -868,8 +871,8 @@ function function_b26cda0ae84a23c9()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x26a2
+// Params 2
+// Checksum 0x0, Offset: 0x26a1
 // Size: 0xc6
 function function_70fec4c2d7c0974f( var_9e41af9fd3481ddc, var_d684ad9d6be46e5a )
 {
@@ -902,8 +905,8 @@ function function_70fec4c2d7c0974f( var_9e41af9fd3481ddc, var_d684ad9d6be46e5a )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2771
+// Params 1
+// Checksum 0x0, Offset: 0x2770
 // Size: 0x80
 function function_b1b8c12b0e570254( var_5034a2690f4a2717 )
 {
@@ -926,8 +929,8 @@ function function_b1b8c12b0e570254( var_5034a2690f4a2717 )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27fa
+// Params 0
+// Checksum 0x0, Offset: 0x27f9
 // Size: 0x9e
 function function_ac2852cc4522a585()
 {
@@ -948,8 +951,8 @@ function function_ac2852cc4522a585()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28a1
+// Params 0
+// Checksum 0x0, Offset: 0x28a0
 // Size: 0x8
 function function_e5c53607a2a43f2c()
 {
@@ -957,8 +960,8 @@ function function_e5c53607a2a43f2c()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x28b2
+// Params 3
+// Checksum 0x0, Offset: 0x28b1
 // Size: 0x4b
 function function_b4a05caf7d582d27( var_761bbb068c79f3f2, sweepdirection, var_ef1b7c45e403c3fc )
 {
@@ -973,8 +976,8 @@ function function_b4a05caf7d582d27( var_761bbb068c79f3f2, sweepdirection, var_ef
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2906
+// Params 0
+// Checksum 0x0, Offset: 0x2905
 // Size: 0x16
 function waitfunc()
 {
@@ -983,8 +986,8 @@ function waitfunc()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2924
+// Params 0
+// Checksum 0x0, Offset: 0x2923
 // Size: 0x9
 function function_ce2238c881cf779f()
 {
@@ -992,8 +995,8 @@ function function_ce2238c881cf779f()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2935
+// Params 0
+// Checksum 0x0, Offset: 0x2934
 // Size: 0x183
 function function_cd5d0ed82eacf32d()
 {
@@ -1023,8 +1026,8 @@ function function_cd5d0ed82eacf32d()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ac0
+// Params 1
+// Checksum 0x0, Offset: 0x2abf
 // Size: 0x82
 function starttimer( var_1cffeaf190a5b40f )
 {
@@ -1042,8 +1045,8 @@ function starttimer( var_1cffeaf190a5b40f )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b4a
+// Params 0
+// Checksum 0x0, Offset: 0x2b49
 // Size: 0x6b
 function calculateeventstarttime()
 {
@@ -1056,8 +1059,8 @@ function calculateeventstarttime()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bbe
+// Params 1
+// Checksum 0x0, Offset: 0x2bbd
 // Size: 0x54
 function function_b5df83a2947e7f8( var_7dea120eca8e0fca )
 {
@@ -1076,8 +1079,8 @@ function function_b5df83a2947e7f8( var_7dea120eca8e0fca )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c1a
+// Params 1
+// Checksum 0x0, Offset: 0x2c19
 // Size: 0x18
 function function_53e36f636092bfb( value )
 {
@@ -1085,8 +1088,8 @@ function function_53e36f636092bfb( value )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c3a
+// Params 0
+// Checksum 0x0, Offset: 0x2c39
 // Size: 0xfb
 function function_b7e920cec1a740f0()
 {
@@ -1102,8 +1105,8 @@ function function_b7e920cec1a740f0()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d3d
+// Params 0
+// Checksum 0x0, Offset: 0x2d3c
 // Size: 0x128
 function function_e8b32e400a713124()
 {
@@ -1116,8 +1119,8 @@ function function_e8b32e400a713124()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e6d
+// Params 0
+// Checksum 0x0, Offset: 0x2e6c
 // Size: 0xba
 function function_f1155cc70db3c061()
 {
@@ -1126,8 +1129,8 @@ function function_f1155cc70db3c061()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f2f
+// Params 1
+// Checksum 0x0, Offset: 0x2f2e
 // Size: 0x6a
 function function_ed53542e4f0e5f9d( deathdata )
 {
@@ -1138,8 +1141,8 @@ function function_ed53542e4f0e5f9d( deathdata )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fa1
+// Params 1
+// Checksum 0x0, Offset: 0x2fa0
 // Size: 0x57
 function function_5b8bc97b741c879c( allicon )
 {
@@ -1150,8 +1153,8 @@ function function_5b8bc97b741c879c( allicon )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3000
+// Params 0
+// Checksum 0x0, Offset: 0x2fff
 // Size: 0x32
 function function_c1c078ad060622ed()
 {
@@ -1167,8 +1170,8 @@ function function_c1c078ad060622ed()
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x303a
+// Params 2
+// Checksum 0x0, Offset: 0x3039
 // Size: 0xb1
 function function_be29729b31039b7e( playintro, showdistance )
 {
@@ -1194,8 +1197,8 @@ function function_be29729b31039b7e( playintro, showdistance )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30f3
+// Params 1
+// Checksum 0x0, Offset: 0x30f2
 // Size: 0x7a
 function function_770fc7b53ba3b55b( var_4cf3f1d180aa34e7 )
 {
@@ -1215,8 +1218,8 @@ function function_770fc7b53ba3b55b( var_4cf3f1d180aa34e7 )
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3175
+// Params 4
+// Checksum 0x0, Offset: 0x3174
 // Size: 0x125
 function function_1ebb6fa0116af5bb( uiicon, iconorigin, playintro, showdistance )
 {
@@ -1256,8 +1259,8 @@ function function_1ebb6fa0116af5bb( uiicon, iconorigin, playintro, showdistance 
 }
 
 // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32a3
+// Params 0
+// Checksum 0x0, Offset: 0x32a2
 // Size: 0x2d
 function function_2c54b00f5b9dbfcf()
 {
@@ -1268,8 +1271,8 @@ function function_2c54b00f5b9dbfcf()
 /#
 
     // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x32d9
+    // Params 0
+    // Checksum 0x0, Offset: 0x32d8
     // Size: 0x5, Type: dev
     function __debug()
     {
@@ -1277,8 +1280,8 @@ function function_2c54b00f5b9dbfcf()
     }
 
     // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x32e6
+    // Params 0
+    // Checksum 0x0, Offset: 0x32e5
     // Size: 0x2e, Type: dev
     function debug_init()
     {
@@ -1288,8 +1291,8 @@ function function_2c54b00f5b9dbfcf()
     }
 
     // Namespace br_publicevent_areadenial / scripts\mp\gametypes\br_publicevent_areadenial
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x331c
+    // Params 0
+    // Checksum 0x0, Offset: 0x331b
     // Size: 0x17, Type: dev
     function function_db70bae7732f5204()
     {

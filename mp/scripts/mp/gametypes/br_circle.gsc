@@ -39,8 +39,8 @@
 #namespace br_circle;
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e6
+// Params 0
+// Checksum 0x0, Offset: 0x11fb
 // Size: 0x27a
 function initcircle()
 {
@@ -58,9 +58,9 @@ function initcircle()
     level.br_circle = spawnstruct();
     level.br_circle.mapbounds = level.br_level.br_mapbounds;
     
-    if ( getdvarint( @"hash_b5133e800e8d7fef", 10 ) > 0 )
+    if ( getdvarint( @"scr_br_circle_fixed_damage", 10 ) > 0 )
     {
-        level.br_circle.damagetick = [ getdvarint( @"hash_b5133e800e8d7fef", 10 ) ];
+        level.br_circle.damagetick = [ getdvarint( @"scr_br_circle_fixed_damage", 10 ) ];
     }
     else if ( level.mapname == "mp_quarry2" || level.mapname == "mp_prison" || level.mapname == "mp_lumber" )
     {
@@ -115,8 +115,8 @@ function initcircle()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1468
+// Params 0
+// Checksum 0x0, Offset: 0x147d
 // Size: 0x17e
 function function_c85d65f8d1f9413()
 {
@@ -159,14 +159,15 @@ function function_c85d65f8d1f9413()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ee
+// Params 1
+// Checksum 0x0, Offset: 0x1603
 // Size: 0x47
 function function_38773ae9c311a6ea( dvarvalue )
 {
     array = strtok( dvarvalue, " " );
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         array[ i ] = int( array[ i ] );
     }
     
@@ -174,14 +175,15 @@ function function_38773ae9c311a6ea( dvarvalue )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x163e
+// Params 1
+// Checksum 0x0, Offset: 0x1653
 // Size: 0x47
 function function_488d5286d6e45d8b( dvarvalue )
 {
     array = strtok( dvarvalue, " " );
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         array[ i ] = float( array[ i ] );
     }
     
@@ -189,8 +191,8 @@ function function_488d5286d6e45d8b( dvarvalue )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x168e
+// Params 4
+// Checksum 0x0, Offset: 0x16a3
 // Size: 0x37f
 function initcirclepoststarttocircleindex( origin, var_8f6402ad8e91da6a, startcircleindex, var_26189638809f7b88 )
 {
@@ -259,8 +261,8 @@ function initcirclepoststarttocircleindex( origin, var_8f6402ad8e91da6a, startci
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a15
+// Params 2
+// Checksum 0x0, Offset: 0x1a2a
 // Size: 0x28
 function copycirclearraystartingat( circlearray, startindex )
 {
@@ -274,15 +276,16 @@ function copycirclearraystartingat( circlearray, startindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a46
+// Params 2
+// Checksum 0x0, Offset: 0x1a5b
 // Size: 0x44
 function getzeroarray( size, var_3739e75778ddc8ca )
 {
     newarray = [];
     newarray[ 0 ] = var_3739e75778ddc8ca;
     
-    for (i = 1; i < size; i++) {
+    for ( i = 1; i < size ; i++ )
+    {
         newarray[ newarray.size ] = 0;
     }
     
@@ -290,8 +293,8 @@ function getzeroarray( size, var_3739e75778ddc8ca )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a93
+// Params 0
+// Checksum 0x0, Offset: 0x1aa8
 // Size: 0x7a
 function getsafecircleorigin()
 {
@@ -304,8 +307,8 @@ function getsafecircleorigin()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b15
+// Params 0
+// Checksum 0x0, Offset: 0x1b2a
 // Size: 0x4d
 function getsafecircleradius()
 {
@@ -318,8 +321,8 @@ function getsafecircleradius()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b6a
+// Params 0
+// Checksum 0x0, Offset: 0x1b7f
 // Size: 0x7a
 function getdangercircleorigin()
 {
@@ -332,8 +335,8 @@ function getdangercircleorigin()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bec
+// Params 0
+// Checksum 0x0, Offset: 0x1c01
 // Size: 0x4d
 function getdangercircleradius()
 {
@@ -346,8 +349,8 @@ function getdangercircleradius()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c41
+// Params 0
+// Checksum 0x0, Offset: 0x1c56
 // Size: 0x58
 function getnextsafecircleorigin()
 {
@@ -362,8 +365,8 @@ function getnextsafecircleorigin()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ca1
+// Params 0
+// Checksum 0x0, Offset: 0x1cb6
 // Size: 0x58
 function getnextsafecircleradius()
 {
@@ -378,8 +381,8 @@ function getnextsafecircleradius()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d01
+// Params 0
+// Checksum 0x0, Offset: 0x1d16
 // Size: 0x55
 function function_88f7b8fa20846f45()
 {
@@ -392,8 +395,8 @@ function function_88f7b8fa20846f45()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d5f
+// Params 0
+// Checksum 0x0, Offset: 0x1d74
 // Size: 0x55
 function function_6249dca788e0dff0()
 {
@@ -406,8 +409,8 @@ function function_6249dca788e0dff0()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dbd
+// Params 1
+// Checksum 0x0, Offset: 0x1dd2
 // Size: 0x27, Type: bool
 function function_d6f728b66bd3966( circleindex )
 {
@@ -422,8 +425,8 @@ function function_d6f728b66bd3966( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ded
+// Params 0
+// Checksum 0x0, Offset: 0x1e02
 // Size: 0x38, Type: bool
 function canseesafecircleui()
 {
@@ -431,8 +434,8 @@ function canseesafecircleui()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e2e
+// Params 0
+// Checksum 0x0, Offset: 0x1e43
 // Size: 0x38, Type: bool
 function canseedangercircleui()
 {
@@ -440,8 +443,8 @@ function canseedangercircleui()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e6f
+// Params 0
+// Checksum 0x0, Offset: 0x1e84
 // Size: 0x7b
 function playercanseedangercircleworld()
 {
@@ -472,8 +475,8 @@ function playercanseedangercircleworld()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ef3
+// Params 1
+// Checksum 0x0, Offset: 0x1f08
 // Size: 0x85, Type: bool
 function cancircledamageplayer( player )
 {
@@ -481,8 +484,8 @@ function cancircledamageplayer( player )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f81
+// Params 1
+// Checksum 0x0, Offset: 0x1f96
 // Size: 0x1a4
 function tryplaycoughaudio( var_dc548d1807ca0b2f )
 {
@@ -561,8 +564,8 @@ function tryplaycoughaudio( var_dc548d1807ca0b2f )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x212d
+// Params 0
+// Checksum 0x0, Offset: 0x2142
 // Size: 0x2b
 function function_f8d9c5f59fc6c187()
 {
@@ -574,8 +577,8 @@ function function_f8d9c5f59fc6c187()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2160
+// Params 0
+// Checksum 0x0, Offset: 0x2175
 // Size: 0x19
 function function_6fcdea7a7060ce40()
 {
@@ -584,8 +587,8 @@ function function_6fcdea7a7060ce40()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2181
+// Params 0
+// Checksum 0x0, Offset: 0x2196
 // Size: 0x202
 function function_ce6456364079cce7()
 {
@@ -600,7 +603,8 @@ function function_ce6456364079cce7()
     curtime = 0;
     curmult = 1;
     
-    for (i = 0; i < data.var_8d1ed26b4a14cb16; i++) {
+    for ( i = 0; i < data.var_8d1ed26b4a14cb16 ; i++ )
+    {
         defaulttime = undefined;
         defaultmult = undefined;
         
@@ -627,8 +631,8 @@ function function_ce6456364079cce7()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x238c
+// Params 0
+// Checksum 0x0, Offset: 0x23a1
 // Size: 0xa4
 function function_b5597479d3e5b628()
 {
@@ -655,8 +659,8 @@ function function_b5597479d3e5b628()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2439
+// Params 2
+// Checksum 0x0, Offset: 0x244e
 // Size: 0xb5
 function function_1e0f84e555b3de7d( data, damagetick )
 {
@@ -672,7 +676,8 @@ function function_1e0f84e555b3de7d( data, damagetick )
     
     var_8c4fa1bb96483aac = ( gettime() - self.var_8d272c0341202e9d ) * 0.001;
     
-    for (i = data.var_8d1ed26b4a14cb16 - 1; i >= 0; i--) {
+    for ( i = data.var_8d1ed26b4a14cb16 - 1; i >= 0 ; i-- )
+    {
         curtime = data.timeinseconds[ i ];
         
         if ( var_8c4fa1bb96483aac >= curtime )
@@ -686,8 +691,8 @@ function function_1e0f84e555b3de7d( data, damagetick )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x24f7
+// Params 3
+// Checksum 0x0, Offset: 0x250c
 // Size: 0x6c, Type: bool
 function function_24c5a8d31ae262f( origin, dangercircleorigin, dangercircleradius )
 {
@@ -712,8 +717,8 @@ function function_24c5a8d31ae262f( origin, dangercircleorigin, dangercircleradiu
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x256c
+// Params 1
+// Checksum 0x0, Offset: 0x2581
 // Size: 0xb6, Type: bool
 function ispointwithininitialdangercircle( origin )
 {
@@ -728,8 +733,8 @@ function ispointwithininitialdangercircle( origin )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x262b
+// Params 0
+// Checksum 0x0, Offset: 0x2640
 // Size: 0x4c6
 function circledamagetick()
 {
@@ -746,7 +751,7 @@ function circledamagetick()
         level waittill( "infils_ready" );
     }
     
-    thresholdradius = getdvarfloat( @"hash_d6d1181cd67d957d", 1000 );
+    thresholdradius = getdvarfloat( @"scr_br_circle_object_cleanup_threshold", 1000 );
     var_a058dc250ace641d = function_ce6456364079cce7();
     
     while ( true )
@@ -794,7 +799,7 @@ function circledamagetick()
                             var_acfa1a113ba7d7c7 = 1;
                             player function_f8d9c5f59fc6c187();
                             
-                            if ( getdvarint( @"hash_2b717602559e86b8", 0 ) == 1 )
+                            if ( getdvarint( @"scr_time_in_gas_damage_modifier_enabled", 0 ) == 1 )
                             {
                                 modifieddamagetick = player function_1e0f84e555b3de7d( var_a058dc250ace641d, damagetick );
                             }
@@ -924,8 +929,8 @@ function circledamagetick()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2af9
+// Params 1
+// Checksum 0x0, Offset: 0x2b0e
 // Size: 0xdc
 function function_81652bad17cd28bd( modifieddamagetick )
 {
@@ -961,8 +966,8 @@ function function_81652bad17cd28bd( modifieddamagetick )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bdd
+// Params 1
+// Checksum 0x0, Offset: 0x2bf2
 // Size: 0xed
 function updateindangercirclestate( isincircle )
 {
@@ -1005,8 +1010,8 @@ function updateindangercirclestate( isincircle )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cd2
+// Params 5
+// Checksum 0x0, Offset: 0x2ce7
 // Size: 0x351
 function startuiclosetimer( waittime, var_f007ce073dc3c519, var_6b890e6be7982efb, circleindex, skipsplash )
 {
@@ -1054,7 +1059,8 @@ function startuiclosetimer( waittime, var_f007ce073dc3c519, var_6b890e6be7982efb
     var_4f9eb3b7488639db = [ 60, 30, 20, 10, 0 ];
     startindex = var_4f9eb3b7488639db.size - 1;
     
-    for (i = 0; i < var_4f9eb3b7488639db.size; i++) {
+    for ( i = 0; i < var_4f9eb3b7488639db.size ; i++ )
+    {
         if ( waittime > var_4f9eb3b7488639db[ i ] )
         {
             startindex = i;
@@ -1069,7 +1075,8 @@ function startuiclosetimer( waittime, var_f007ce073dc3c519, var_6b890e6be7982efb
     
     wait waittime - var_4f9eb3b7488639db[ startindex ];
     
-    for (i = startindex; i < var_4f9eb3b7488639db.size - 1; i++) {
+    for ( i = startindex; i < var_4f9eb3b7488639db.size - 1 ; i++ )
+    {
         if ( i == 3 )
         {
             if ( !isdefined( level.var_e486acb8f70c45a2 ) )
@@ -1109,8 +1116,8 @@ function startuiclosetimer( waittime, var_f007ce073dc3c519, var_6b890e6be7982efb
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x302b
+// Params 0
+// Checksum 0x0, Offset: 0x3040
 // Size: 0x2c
 function _hidesafecircleui()
 {
@@ -1124,8 +1131,8 @@ function _hidesafecircleui()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x305f
+// Params 1
+// Checksum 0x0, Offset: 0x3074
 // Size: 0x7a
 function setpreviewuicircle( safecircleent )
 {
@@ -1140,8 +1147,8 @@ function setpreviewuicircle( safecircleent )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x30e1
+// Params 4
+// Checksum 0x0, Offset: 0x30f6
 // Size: 0x122
 function setstaticuicircles( duration, safecircleent, var_fb3b2613d6f0eb05, var_6b890e6be7982efb )
 {
@@ -1172,8 +1179,8 @@ function setstaticuicircles( duration, safecircleent, var_fb3b2613d6f0eb05, var_
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x320b
+// Params 4
+// Checksum 0x0, Offset: 0x3220
 // Size: 0x123
 function setclosinguicircle( duration, safecircleent, var_fb3b2613d6f0eb05, var_6b890e6be7982efb )
 {
@@ -1204,8 +1211,8 @@ function setclosinguicircle( duration, safecircleent, var_fb3b2613d6f0eb05, var_
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3336
+// Params 3
+// Checksum 0x0, Offset: 0x334b
 // Size: 0xc7
 function updatecirclehide( duration, safecircleent, var_fb3b2613d6f0eb05 )
 {
@@ -1230,8 +1237,8 @@ function updatecirclehide( duration, safecircleent, var_fb3b2613d6f0eb05 )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3405
+// Params 2
+// Checksum 0x0, Offset: 0x341a
 // Size: 0x2c
 function _dangercircledurationforplayer( player, default_duration )
 {
@@ -1244,8 +1251,8 @@ function _dangercircledurationforplayer( player, default_duration )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3439
+// Params 2
+// Checksum 0x0, Offset: 0x344e
 // Size: 0x2c
 function _safecircledurationforplayer( player, default_duration )
 {
@@ -1258,8 +1265,8 @@ function _safecircledurationforplayer( player, default_duration )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x346d
+// Params 0
+// Checksum 0x0, Offset: 0x3482
 // Size: 0x5d, Type: bool
 function islastcircle()
 {
@@ -1267,8 +1274,8 @@ function islastcircle()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34d3
+// Params 2
+// Checksum 0x0, Offset: 0x34e8
 // Size: 0x8f
 function gettimetillcircleclosing( circleindex, timeoffset )
 {
@@ -1286,8 +1293,8 @@ function gettimetillcircleclosing( circleindex, timeoffset )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x356b
+// Params 2
+// Checksum 0x0, Offset: 0x3580
 // Size: 0x8f
 function function_8aeca3abf89a629d( circleindex, timeoffset )
 {
@@ -1305,8 +1312,8 @@ function function_8aeca3abf89a629d( circleindex, timeoffset )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3603
+// Params 1
+// Checksum 0x0, Offset: 0x3618
 // Size: 0x6b
 function circleduration( circleindex )
 {
@@ -1318,8 +1325,8 @@ function circleduration( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3677
+// Params 0
+// Checksum 0x0, Offset: 0x368c
 // Size: 0x77
 function function_abbfb4d18d1a9ca7()
 {
@@ -1332,8 +1339,8 @@ function function_abbfb4d18d1a9ca7()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x36f7
+// Params 3
+// Checksum 0x0, Offset: 0x370c
 // Size: 0x302
 function function_bf5f4d7a498988a8( player, var_498e4e279fb8ed85, timeoffset )
 {
@@ -1398,8 +1405,8 @@ function function_bf5f4d7a498988a8( player, var_498e4e279fb8ed85, timeoffset )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a02
+// Params 3
+// Checksum 0x0, Offset: 0x3a17
 // Size: 0x5d, Type: bool
 function isvalidpointinbounds( point, var_ae913f2dc0534b48, var_498e4e279fb8ed85 )
 {
@@ -1427,8 +1434,8 @@ function isvalidpointinbounds( point, var_ae913f2dc0534b48, var_498e4e279fb8ed85
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a68
+// Params 2
+// Checksum 0x0, Offset: 0x3a7d
 // Size: 0xf4
 function function_fc52ae1478a8fc25( radiuspercent, var_498e4e279fb8ed85 )
 {
@@ -1459,8 +1466,8 @@ function function_fc52ae1478a8fc25( radiuspercent, var_498e4e279fb8ed85 )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b65
+// Params 2
+// Checksum 0x0, Offset: 0x3b7a
 // Size: 0x2a, Type: bool
 function function_dab8de01355c25ec( player1, player2 )
 {
@@ -1468,8 +1475,8 @@ function function_dab8de01355c25ec( player1, player2 )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b98
+// Params 2
+// Checksum 0x0, Offset: 0x3bad
 // Size: 0x10e
 function function_bf16029a7b6ff1fa( radiuspercent, var_498e4e279fb8ed85 )
 {
@@ -1500,8 +1507,8 @@ function function_bf16029a7b6ff1fa( radiuspercent, var_498e4e279fb8ed85 )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3caf
+// Params 3
+// Checksum 0x0, Offset: 0x3cc4
 // Size: 0x1ca
 function function_2548c1ccae77830b( targetpos, radiuspercent, var_498e4e279fb8ed85 )
 {
@@ -1513,7 +1520,8 @@ function function_2548c1ccae77830b( targetpos, radiuspercent, var_498e4e279fb8ed
     currentclosestpoint = undefined;
     var_a243a9012c90f841 = undefined;
     
-    for (index = 0; index < safeorigins.size; index++) {
+    for ( index = 0; index < safeorigins.size ; index++ )
+    {
         safeorigin = safeorigins[ index ];
         saferadius = saferadii[ index ];
         dangerorigin = dangerorigins[ index ];
@@ -1525,7 +1533,8 @@ function function_2548c1ccae77830b( targetpos, radiuspercent, var_498e4e279fb8ed
             targetdistance = distance2d( targetpos, dangerorigin );
             totalsteps = 4;
             
-            for (currentstep = totalsteps; currentstep >= 0; currentstep--) {
+            for ( currentstep = totalsteps; currentstep >= 0 ; currentstep-- )
+            {
                 testdistance = dangerradius * currentstep / totalsteps;
                 var_eb253da880af5bb6 = ( targetpos - dangerorigin ) * testdistance / targetdistance * radiuspercent + dangerorigin;
                 
@@ -1559,8 +1568,8 @@ function function_2548c1ccae77830b( targetpos, radiuspercent, var_498e4e279fb8ed
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e82
+// Params 4
+// Checksum 0x0, Offset: 0x3e97
 // Size: 0x1d9
 function function_177e9958fce17793( targetpos, radiuspercent, var_498e4e279fb8ed85, var_59e43f8ce6784122 )
 {
@@ -1572,7 +1581,8 @@ function function_177e9958fce17793( targetpos, radiuspercent, var_498e4e279fb8ed
     currentclosestpoint = undefined;
     var_a243a9012c90f841 = undefined;
     
-    for (index = 0; index < safeorigins.size; index++) {
+    for ( index = 0; index < safeorigins.size ; index++ )
+    {
         safeorigin = safeorigins[ index ];
         saferadius = saferadii[ index ];
         dangerorigin = dangerorigins[ index ];
@@ -1584,7 +1594,8 @@ function function_177e9958fce17793( targetpos, radiuspercent, var_498e4e279fb8ed
             targetdistance = distance2d( targetpos, dangerorigin );
             totalsteps = 4;
             
-            for (currentstep = totalsteps; currentstep >= 0; currentstep--) {
+            for ( currentstep = totalsteps; currentstep >= 0 ; currentstep-- )
+            {
                 stepratio = currentstep / totalsteps;
                 vector = targetpos - dangerorigin;
                 
@@ -1625,8 +1636,8 @@ function function_177e9958fce17793( targetpos, radiuspercent, var_498e4e279fb8ed
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x4064
+// Params 10
+// Checksum 0x0, Offset: 0x4079
 // Size: 0x168
 function getrandompointinboundscircle( origin, radius, percentmin, percentmax, droptoground, snaptonavmesh, var_ae913f2dc0534b48, var_498e4e279fb8ed85, anglemin, anglemax )
 {
@@ -1682,8 +1693,8 @@ function getrandompointinboundscircle( origin, radius, percentmin, percentmax, d
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x41d5
+// Params 8
+// Checksum 0x0, Offset: 0x41ea
 // Size: 0x1e8
 function getrandompointincircle( origin, radius, percentmin, percentmax, droptoground, snaptonavmesh, minangle, maxangle )
 {
@@ -1763,8 +1774,8 @@ function getrandompointincircle( origin, radius, percentmin, percentmax, droptog
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x43c6
+// Params 2
+// Checksum 0x0, Offset: 0x43db
 // Size: 0x63
 function getrandompointincurrentcircle( percentmin, percentmax )
 {
@@ -1774,8 +1785,8 @@ function getrandompointincurrentcircle( percentmin, percentmax )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4432
+// Params 2
+// Checksum 0x0, Offset: 0x4447
 // Size: 0x3f
 function getrandompointinsafecircle( percentmin, percentmax )
 {
@@ -1785,8 +1796,8 @@ function getrandompointinsafecircle( percentmin, percentmax )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x447a
+// Params 2
+// Checksum 0x0, Offset: 0x448f
 // Size: 0x3f
 function getrandompointinboundssafecircle( percentmin, percentmax )
 {
@@ -1796,8 +1807,8 @@ function getrandompointinboundssafecircle( percentmin, percentmax )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44c2
+// Params 1
+// Checksum 0x0, Offset: 0x44d7
 // Size: 0xc2, Type: bool
 function ispointincurrentsafecircle( point )
 {
@@ -1819,8 +1830,8 @@ function ispointincurrentsafecircle( point )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x458d
+// Params 1
+// Checksum 0x0, Offset: 0x45a2
 // Size: 0x58, Type: bool
 function ispointinnextsafecircle( point )
 {
@@ -1843,8 +1854,8 @@ function ispointinnextsafecircle( point )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x45ee
+// Params 2
+// Checksum 0x0, Offset: 0x4603
 // Size: 0x5c, Type: bool
 function function_c11714256f856e10( point, gracedistance )
 {
@@ -1867,8 +1878,8 @@ function function_c11714256f856e10( point, gracedistance )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4653
+// Params 0
+// Checksum 0x0, Offset: 0x4668
 // Size: 0x7e
 function dangercircleenthidefromplayers()
 {
@@ -1893,8 +1904,8 @@ function dangercircleenthidefromplayers()
 /#
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x46d9
+    // Params 3
+    // Checksum 0x0, Offset: 0x46ee
     // Size: 0x54f, Type: dev
     function function_907a72325980713f( maxpoints, areacount, circleindex )
     {
@@ -1941,10 +1952,12 @@ function dangercircleenthidefromplayers()
         var_b3dd581cafbd5000 = ysize / areacount;
         areacounts = [];
         
-        for (x = 0; x < areacount; x++) {
+        for ( x = 0; x < areacount ; x++ )
+        {
             areacounts[ x ] = [];
             
-            for (y = 0; y < areacount; y++) {
+            for ( y = 0; y < areacount ; y++ )
+            {
                 areacounts[ x ][ y ] = 0;
             }
         }
@@ -1952,7 +1965,8 @@ function dangercircleenthidefromplayers()
         waitevery = 500;
         maxcount = 0;
         
-        for (i = 0; i < maxpoints; i++) {
+        for ( i = 0; i < maxpoints ; i++ )
+        {
             var_926527df010af9f4 = !circleindex || circleindex == level.br_level.br_circlecenters.size - 1 - level.br_level.br_movingcirclecount;
             scripts\mp\gametypes\br_multi_circle::function_f92da29572a7dc78();
             _precalcsafecirclecenters( undefined, 1, var_926527df010af9f4 );
@@ -1989,8 +2003,10 @@ function dangercircleenthidefromplayers()
         _precalcsafecirclecenters();
         mincount = maxcount;
         
-        for (x = 0; x < areacount; x++) {
-            for (y = 0; y < areacount; y++) {
+        for ( x = 0; x < areacount ; x++ )
+        {
+            for ( y = 0; y < areacount ; y++ )
+            {
                 if ( areacounts[ x ][ y ] < mincount )
                 {
                     mincount = areacounts[ x ][ y ];
@@ -2002,16 +2018,20 @@ function dangercircleenthidefromplayers()
         
         while ( true )
         {
-            for (x = 0; x <= areacount; x++) {
+            for ( x = 0; x <= areacount ; x++ )
+            {
                 line( ( xmin + x * var_d3426ff50f0ff497, ymin, 0 ), ( xmin + x * var_d3426ff50f0ff497, ymax, 0 ), ( 1, 1, 0 ) );
             }
             
-            for (y = 0; y <= areacount; y++) {
+            for ( y = 0; y <= areacount ; y++ )
+            {
                 line( ( xmin, ymin + y * var_d3426ff50f0ff497, 0 ), ( xmax, ymin + y * var_d3426ff50f0ff497, 0 ), ( 1, 1, 0 ) );
             }
             
-            for (x = 0; x < areacount; x++) {
-                for (y = 0; y < areacount; y++) {
+            for ( x = 0; x < areacount ; x++ )
+            {
+                for ( y = 0; y < areacount ; y++ )
+                {
                     count = areacounts[ x ][ y ];
                     
                     if ( count == 0 )
@@ -2058,8 +2078,8 @@ function dangercircleenthidefromplayers()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4c30
+    // Params 1
+    // Checksum 0x0, Offset: 0x4c45
     // Size: 0x1f9, Type: dev
     function function_184d1e23ec969c18( simulations )
     {
@@ -2075,7 +2095,8 @@ function dangercircleenthidefromplayers()
         level.var_184d1e23ec969c18 = 1;
         circlesimulations = [];
         
-        for (i = 0; i < simulations; i++) {
+        for ( i = 0; i < simulations ; i++ )
+        {
             scripts\mp\gametypes\br_multi_circle::function_f92da29572a7dc78();
             _precalcsafecirclecenters( undefined, 1 );
             var_3db3628ca5e80be6 = spawnstruct();
@@ -2116,8 +2137,8 @@ function dangercircleenthidefromplayers()
 #/
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e31
+// Params 1
+// Checksum 0x0, Offset: 0x4e46
 // Size: 0xb4
 function function_64f6d9b4ba95ed35( var_21231f7b22a75955 )
 {
@@ -2144,8 +2165,8 @@ function function_64f6d9b4ba95ed35( var_21231f7b22a75955 )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eed
+// Params 0
+// Checksum 0x0, Offset: 0x4f02
 // Size: 0x12e
 function function_84e5ef30b000ef20()
 {
@@ -2154,7 +2175,7 @@ function function_84e5ef30b000ef20()
         return;
     }
     
-    var_e60bfc21d3dced49 = getdvarint( @"hash_d87502944afeee16", 0 );
+    var_e60bfc21d3dced49 = getdvarint( @"scr_br_final_circle_override", 0 );
     
     if ( isdefined( level.br_multi_circle ) && isdefined( level.br_multi_circle.var_e60bfc21d3dced49 ) )
     {
@@ -2187,14 +2208,15 @@ function function_84e5ef30b000ef20()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5023
+// Params 0
+// Checksum 0x0, Offset: 0x5038
 // Size: 0x1b7
 function function_72cbdb2550894694()
 {
     level.var_da89dff7e3009777 = [];
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         locationname = tablelookupbyrow( level.br_level.var_257dee2bbc2480f5, row, 1 );
         
         if ( locationname == "" )
@@ -2222,8 +2244,8 @@ function function_72cbdb2550894694()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x51e2
+// Params 1
+// Checksum 0x0, Offset: 0x51f7
 // Size: 0x81
 function function_8e888649a8178cea( searchid )
 {
@@ -2242,8 +2264,8 @@ function function_8e888649a8178cea( searchid )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x526c
+// Params 1
+// Checksum 0x0, Offset: 0x5281
 // Size: 0xbd, Type: bool
 function _ispointinbadarea( point )
 {
@@ -2271,8 +2293,8 @@ function _ispointinbadarea( point )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5332
+// Params 1
+// Checksum 0x0, Offset: 0x5347
 // Size: 0xe7
 function function_5ad21cddca41580f( circleindex )
 {
@@ -2289,8 +2311,8 @@ function function_5ad21cddca41580f( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5422
+// Params 3
+// Checksum 0x0, Offset: 0x5437
 // Size: 0x14b
 function function_d45be26e9bfb904( var_50c422b464b3e15d, var_ad4d828d3b1da2e6, var_b7c9fe00120ea96c )
 {
@@ -2300,7 +2322,8 @@ function function_d45be26e9bfb904( var_50c422b464b3e15d, var_ad4d828d3b1da2e6, v
     var_eb03f3d04f21f2b = distance2d( endcenter, startcenter );
     var_370050a3c3a88a8f = 0;
     
-    for (circleindex = var_50c422b464b3e15d; circleindex >= var_ad4d828d3b1da2e6; circleindex--) {
+    for ( circleindex = var_50c422b464b3e15d; circleindex >= var_ad4d828d3b1da2e6 ; circleindex-- )
+    {
         movedistances[ circleindex ] = function_5ad21cddca41580f( circleindex );
         var_370050a3c3a88a8f += movedistances[ circleindex ];
     }
@@ -2327,8 +2350,8 @@ function function_d45be26e9bfb904( var_50c422b464b3e15d, var_ad4d828d3b1da2e6, v
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5576
+// Params 4
+// Checksum 0x0, Offset: 0x558b
 // Size: 0x141
 function function_4ae4729139de5b5c( circleindex, movedist, fixedcircleindex, snaptonavmesh )
 {
@@ -2349,21 +2372,22 @@ function function_4ae4729139de5b5c( circleindex, movedist, fixedcircleindex, sna
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x56c0
+// Params 3
+// Checksum 0x0, Offset: 0x56d5
 // Size: 0x6b
 function function_23be439885e300bd( var_50c422b464b3e15d, var_ad4d828d3b1da2e6, snaptonavmesh )
 {
     var_bdd890aa9e9f45a0 = function_d45be26e9bfb904( var_50c422b464b3e15d, var_ad4d828d3b1da2e6 );
     
-    for (circleindex = var_50c422b464b3e15d - 1; circleindex > var_ad4d828d3b1da2e6; circleindex--) {
+    for ( circleindex = var_50c422b464b3e15d - 1; circleindex > var_ad4d828d3b1da2e6 ; circleindex-- )
+    {
         level.br_level.br_circlecenters[ circleindex ] = function_4ae4729139de5b5c( circleindex, var_bdd890aa9e9f45a0[ circleindex ], var_ad4d828d3b1da2e6, snaptonavmesh );
     }
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5733
+// Checksum 0x0, Offset: 0x5748
 // Size: 0x67
 function private function_c67687c48431cc40( totaltime, resolution )
 {
@@ -2386,7 +2410,7 @@ function private function_c67687c48431cc40( totaltime, resolution )
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x57a3
+// Checksum 0x0, Offset: 0x57b8
 // Size: 0x4a5
 function private _generatetraintrackingdata( lastcircleindex )
 {
@@ -2404,7 +2428,8 @@ function private _generatetraintrackingdata( lastcircleindex )
     trainspeeds = [];
     var_752dff205e471b6d = 0;
     
-    for (index = 0; index < lastcircleindex; index++) {
+    for ( index = 0; index < lastcircleindex ; index++ )
+    {
         delaytime = level.br_level.br_circledelaytimes[ index ];
         closetime = level.br_level.br_circleclosetimes[ index ];
         
@@ -2442,14 +2467,16 @@ function private _generatetraintrackingdata( lastcircleindex )
             trainspeeds[ var_752dff205e471b6d + var_93bd2c53c5aa16aa.size ] = level.br_level.var_da8bd27126f360d7[ index ];
         }
         
-        for (i = 0; i < var_a18f202f13a64612.var_194f74574e93969c; i++) {
+        for ( i = 0; i < var_a18f202f13a64612.var_194f74574e93969c ; i++ )
+        {
             var_470ca2f7362b4ca8[ var_470ca2f7362b4ca8.size ] = var_93bd2c53c5aa16aa[ i ];
             var_122e31d885c687af[ var_122e31d885c687af.size ] = startradius;
         }
         
         var_b5b056f5d00776c9 = 0;
         
-        for (i = 0; i < var_a18f202f13a64612.var_af48e8effb6c228f; i++) {
+        for ( i = 0; i < var_a18f202f13a64612.var_af48e8effb6c228f ; i++ )
+        {
             var_470ca2f7362b4ca8[ var_470ca2f7362b4ca8.size ] = var_2691c62bd6725529[ i ];
             
             if ( closetime > 0 )
@@ -2485,7 +2512,8 @@ function private _generatetraintrackingdata( lastcircleindex )
     level.br_level.var_af96b25973d3fe7e = var_397178cf705a478f;
     var_45a0323d1fcaaf4 = [];
     
-    for (index = 0; index < var_397178cf705a478f.size; index++) {
+    for ( index = 0; index < var_397178cf705a478f.size ; index++ )
+    {
         var_45a0323d1fcaaf4[ var_45a0323d1fcaaf4.size ] = var_576703236f9af9d2[ var_397178cf705a478f[ index ].var_a38cece927aa04a8 + 1 ];
     }
     
@@ -2494,8 +2522,8 @@ function private _generatetraintrackingdata( lastcircleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c51
+// Params 3
+// Checksum 0x0, Offset: 0x5c66
 // Size: 0xc99
 function _precalcsafecirclecenters( var_21231f7b22a75955, var_b7c9fe00120ea96c, var_437c3e3159a04f4e )
 {
@@ -2530,7 +2558,7 @@ function _precalcsafecirclecenters( var_21231f7b22a75955, var_b7c9fe00120ea96c, 
     var_b3ac9b6e95d79e0e = getdvarfloat( @"hash_94d6e49f6f5a39b6", 180 );
     var_6692bcf69c8ab74 = getdvarfloat( @"hash_357248a19e6e2e6c", 10000 );
     var_d62a50630c1a525a = getdvarfloat( @"hash_8b1c4ddad73b9352", 30000 );
-    var_b0fdc1a74465d5b3 = getdvarfloat( @"hash_14f6d33e8f4f0c84", 0 );
+    var_b0fdc1a74465d5b3 = getdvarfloat( @"scr_br_circle_first_placement_scale", 0 );
     var_ba2d3e495cf92c77 = var_b0fdc1a74465d5b3 * level.br_level.br_circleradii[ 1 ];
     radiusbounds = [];
     radiusbounds[ 0 ] = level.br_circle.mapbounds[ 0 ][ 0 ] - var_ba2d3e495cf92c77;
@@ -2606,7 +2634,8 @@ function _precalcsafecirclecenters( var_21231f7b22a75955, var_b7c9fe00120ea96c, 
     {
         maxtests = 8;
         
-        for (testcount = 0; testcount < maxtests; testcount++) {
+        for ( testcount = 0; testcount < maxtests ; testcount++ )
+        {
             testx = randomfloatrange( xmin, xmax );
             testy = randomfloatrange( ymin, ymax );
             
@@ -2648,7 +2677,7 @@ function _precalcsafecirclecenters( var_21231f7b22a75955, var_b7c9fe00120ea96c, 
     }
     
     playerspeed = getdvarfloat( @"hash_917b939513f89b55", 200 );
-    var_11c1e6222da58849 = getdvarint( @"hash_e65611a4d524bcbe", 0 );
+    var_11c1e6222da58849 = getdvarint( @"scr_br_circle_clamp_max_circle_speed", 0 );
     circleindex = lastcircleindex - 1;
     
     if ( isdefined( var_2a89c7b0c1c8790a ) )
@@ -2671,7 +2700,8 @@ function _precalcsafecirclecenters( var_21231f7b22a75955, var_b7c9fe00120ea96c, 
     
     var_2c81885db7212a3a = circleindex + 1;
     
-    for (fixedcircleindex = circleindex; fixedcircleindex >= 0; fixedcircleindex--) {
+    for ( fixedcircleindex = circleindex; fixedcircleindex >= 0 ; fixedcircleindex-- )
+    {
         if ( getdvarint( hashcat( @"hash_6e15be73eb8cd142", fixedcircleindex ), 0 ) )
         {
             var_eec904e8534cd82d = getdvarvector( hashcat( @"hash_1f5d1ccbe88f98a5", fixedcircleindex ), ( 0, 0, 0 ) );
@@ -2682,7 +2712,7 @@ function _precalcsafecirclecenters( var_21231f7b22a75955, var_b7c9fe00120ea96c, 
         }
     }
     
-    var_f673782a03024301 = getdvarint( @"hash_9f2ed77c01240fef", 0 );
+    var_f673782a03024301 = getdvarint( @"scr_br_circle_allow_inner_circle_to_overlap_outer_circle", 0 );
     
     while ( circleindex >= 0 )
     {
@@ -2750,7 +2780,8 @@ function _precalcsafecirclecenters( var_21231f7b22a75955, var_b7c9fe00120ea96c, 
         circleindex--;
     }
     
-    for (circleindex = lastcircleindex + 1; circleindex < lastcircleindex + 1 + level.br_level.br_movingcirclecount; circleindex++) {
+    for ( circleindex = lastcircleindex + 1; circleindex < lastcircleindex + 1 + level.br_level.br_movingcirclecount ; circleindex++ )
+    {
         var_9d2610f6a0b725a4 = level.br_level.br_circleradii[ circleindex - 1 ];
         var_a754cfa0ff072630 = level.br_level.br_circlecenters[ circleindex - 1 ];
         current_circle_radius = level.br_level.br_circleradii[ circleindex ];
@@ -2763,8 +2794,8 @@ function _precalcsafecirclecenters( var_21231f7b22a75955, var_b7c9fe00120ea96c, 
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x68f2
+// Params 0
+// Checksum 0x0, Offset: 0x6907
 // Size: 0x21c
 function function_3011d71052d72d2a()
 {
@@ -2772,7 +2803,8 @@ function function_3011d71052d72d2a()
     totalweight = 0;
     var_84c71fbaede8b93d = getdvarint( @"hash_29097e089cd5654f", 0 );
     
-    for (i = 0; i < var_84c71fbaede8b93d; i++) {
+    for ( i = 0; i < var_84c71fbaede8b93d ; i++ )
+    {
         pos = getdvarvector( hashcat( @"hash_97bfc9bb98165cc0", i ) );
         endinfo = spawnstruct();
         endinfo.pos = pos;
@@ -2806,7 +2838,8 @@ function function_3011d71052d72d2a()
     {
         rand = randomfloatrange( 0, totalweight );
         
-        for (i = 0; i < circleends.size; i++) {
+        for ( i = 0; i < circleends.size ; i++ )
+        {
             if ( rand < circleends[ i ].weight )
             {
                 var_901f7f6175b781f0 = circleends[ i ];
@@ -2830,8 +2863,8 @@ function function_3011d71052d72d2a()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b16
+// Params 1
+// Checksum 0x0, Offset: 0x6b2b
 // Size: 0x3e
 function runcircles( var_7b6d5db8cb3c5782 )
 {
@@ -2848,8 +2881,8 @@ function runcircles( var_7b6d5db8cb3c5782 )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b5c
+// Params 1
+// Checksum 0x0, Offset: 0x6b71
 // Size: 0x321
 function function_3f9dc64647891e08( var_7b6d5db8cb3c5782 )
 {
@@ -2883,7 +2916,8 @@ function function_3f9dc64647891e08( var_7b6d5db8cb3c5782 )
     
     if ( isdefined( level.br_level.br_circledelaytimes ) )
     {
-        for (i = 0; i < level.br_level.br_circledelaytimes.size; i++) {
+        for ( i = 0; i < level.br_level.br_circledelaytimes.size ; i++ )
+        {
             circletimer( i );
         }
     }
@@ -2898,8 +2932,8 @@ function function_3f9dc64647891e08( var_7b6d5db8cb3c5782 )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e85
+// Params 0
+// Checksum 0x0, Offset: 0x6e9a
 // Size: 0x38
 function stopcirclesatgameend()
 {
@@ -2914,8 +2948,8 @@ function stopcirclesatgameend()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ec5
+// Params 2
+// Checksum 0x0, Offset: 0x6eda
 // Size: 0xd5
 function getcircleindexforpoint( point, startfrom )
 {
@@ -2931,7 +2965,8 @@ function getcircleindexforpoint( point, startfrom )
     
     circleindex = -1;
     
-    for (i = startfrom; i < level.br_level.br_circlecenters.size - level.br_level.br_movingcirclecount; i++) {
+    for ( i = startfrom; i < level.br_level.br_circlecenters.size - level.br_level.br_movingcirclecount ; i++ )
+    {
         center = level.br_level.br_circlecenters[ i ];
         radius = level.br_level.br_circleradii[ i ];
         dist = distance2d( point, center );
@@ -2948,8 +2983,8 @@ function getcircleindexforpoint( point, startfrom )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fa3
+// Params 1
+// Checksum 0x0, Offset: 0x6fb8
 // Size: 0x492
 function getmintimetillpointindangercircle( point )
 {
@@ -3031,7 +3066,8 @@ function getmintimetillpointindangercircle( point )
         return 99999;
     }
     
-    for (i = circleindex + 1; i < pointindex; i++) {
+    for ( i = circleindex + 1; i < pointindex ; i++ )
+    {
         safetime += level.br_level.br_circleclosetimes[ i ];
         safetime += level.br_level.br_circledelaytimes[ i ];
     }
@@ -3091,8 +3127,8 @@ function getmintimetillpointindangercircle( point )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x743e
+// Params 6
+// Checksum 0x0, Offset: 0x7453
 // Size: 0x210
 function function_3fa958de973c98c6( point, startorigin, endorigin, startradius, endradius, timeremaining )
 {
@@ -3139,8 +3175,8 @@ function function_3fa958de973c98c6( point, startorigin, endorigin, startradius, 
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x7656
+// Params 6
+// Checksum 0x0, Offset: 0x766b
 // Size: 0x206
 function function_70cdd4433dd1da2e( point, testindex, startorigin, startradius, delaytimeremaining, closetimeremaining )
 {
@@ -3152,7 +3188,8 @@ function function_70cdd4433dd1da2e( point, testindex, startorigin, startradius, 
     var_4253bfd10ceb435c = 0;
     var_101022abd3aad1e3 = 0;
     
-    for (var_752dff205e471b6d = var_df03e2e71962e81b; var_752dff205e471b6d <= var_8bbdb8905c9834e; var_752dff205e471b6d++) {
+    for ( var_752dff205e471b6d = var_df03e2e71962e81b; var_752dff205e471b6d <= var_8bbdb8905c9834e ; var_752dff205e471b6d++ )
+    {
         segmenttime = level.br_level.var_9ca5e77c0ae08bab[ var_752dff205e471b6d ];
         var_101022abd3aad1e3 += segmenttime;
         
@@ -3188,8 +3225,8 @@ function function_70cdd4433dd1da2e( point, testindex, startorigin, startradius, 
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7865
+// Params 0
+// Checksum 0x0, Offset: 0x787a
 // Size: 0x6d
 function hidedangercircle()
 {
@@ -3204,8 +3241,8 @@ function hidedangercircle()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x78da
+// Params 0
+// Checksum 0x0, Offset: 0x78ef
 // Size: 0x46
 function hidesafecircle()
 {
@@ -3215,8 +3252,8 @@ function hidesafecircle()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7928
+// Params 0
+// Checksum 0x0, Offset: 0x793d
 // Size: 0x131
 function showdangercircle()
 {
@@ -3234,8 +3271,8 @@ function showdangercircle()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a61
+// Params 0
+// Checksum 0x0, Offset: 0x7a76
 // Size: 0x131
 function showsafecircle()
 {
@@ -3253,8 +3290,8 @@ function showsafecircle()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b9a
+// Params 1
+// Checksum 0x0, Offset: 0x7baf
 // Size: 0x671
 function circletimer( circleindex )
 {
@@ -3400,8 +3437,8 @@ function circletimer( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8213
+// Params 0
+// Checksum 0x0, Offset: 0x8228
 // Size: 0x13, Type: bool
 function function_ab678f36f465fdeb()
 {
@@ -3409,8 +3446,8 @@ function function_ab678f36f465fdeb()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x822f
+// Params 0
+// Checksum 0x0, Offset: 0x8244
 // Size: 0x1e, Type: bool
 function function_4bff90e55e5e18e4()
 {
@@ -3418,8 +3455,8 @@ function function_4bff90e55e5e18e4()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8256
+// Params 0
+// Checksum 0x0, Offset: 0x826b
 // Size: 0x3c
 function function_e32a50f37301a6ab()
 {
@@ -3432,8 +3469,8 @@ function function_e32a50f37301a6ab()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x829b
+// Params 1
+// Checksum 0x0, Offset: 0x82b0
 // Size: 0xa5
 function pausecircle( value )
 {
@@ -3454,8 +3491,8 @@ function pausecircle( value )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8348
+// Params 0
+// Checksum 0x0, Offset: 0x835d
 // Size: 0x27
 function function_2f4fb0777ebb4cc0()
 {
@@ -3466,8 +3503,8 @@ function function_2f4fb0777ebb4cc0()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8377
+// Params 1
+// Checksum 0x0, Offset: 0x838c
 // Size: 0x140
 function br_lerp_minimap_zoom( circleindex )
 {
@@ -3490,7 +3527,8 @@ function br_lerp_minimap_zoom( circleindex )
         var_777913b6f66c8417 = int( ( previouszoom - goalzoom ) / var_7f479bce3abf8b1b );
         var_d1f50321d77c76dc = level.br_level.br_circleminimapradii[ previousindex ];
         
-        for (i = 0; i < var_7f479bce3abf8b1b; i++) {
+        for ( i = 0; i < var_7f479bce3abf8b1b ; i++ )
+        {
             var_d1f50321d77c76dc -= var_777913b6f66c8417;
             setomnvar( "ui_br_minimap_radius", var_d1f50321d77c76dc );
             wait zoominterval;
@@ -3504,8 +3542,8 @@ function br_lerp_minimap_zoom( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x84bf
+// Params 2
+// Checksum 0x0, Offset: 0x84d4
 // Size: 0x12d
 function cleanupouterspawnclosets( center, saferadius )
 {
@@ -3533,8 +3571,8 @@ function cleanupouterspawnclosets( center, saferadius )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x85f4
+// Params 2
+// Checksum 0x0, Offset: 0x8609
 // Size: 0x42
 function gathervalidspawnclosets( center, safecircleradius )
 {
@@ -3548,8 +3586,8 @@ function gathervalidspawnclosets( center, safecircleradius )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x863f
+// Params 2
+// Checksum 0x0, Offset: 0x8654
 // Size: 0xbc
 function gatheroutercrates( center, saferadius )
 {
@@ -3565,8 +3603,8 @@ function gatheroutercrates( center, saferadius )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8703
+// Params 0
+// Checksum 0x0, Offset: 0x8718
 // Size: 0x8c
 function cleanupoutercrates()
 {
@@ -3583,7 +3621,7 @@ function cleanupoutercrates()
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x8797
+// Checksum 0x0, Offset: 0x87ac
 // Size: 0x11
 function private function_37a87bb09c54ad61( to_copy )
 {
@@ -3592,8 +3630,8 @@ function private function_37a87bb09c54ad61( to_copy )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87b1
+// Params 0
+// Checksum 0x0, Offset: 0x87c6
 // Size: 0x16, Type: bool
 function function_b0fce807928f02d5()
 {
@@ -3601,8 +3639,8 @@ function function_b0fce807928f02d5()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87d0
+// Params 0
+// Checksum 0x0, Offset: 0x87e5
 // Size: 0x15
 function function_b7d104153c964304()
 {
@@ -3610,8 +3648,8 @@ function function_b7d104153c964304()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87ed
+// Params 0
+// Checksum 0x0, Offset: 0x8802
 // Size: 0x128
 function function_82619889c2be0bb2()
 {
@@ -3627,8 +3665,8 @@ function function_82619889c2be0bb2()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x891d
+// Params 0
+// Checksum 0x0, Offset: 0x8932
 // Size: 0x10e
 function function_36de39286177a9b()
 {
@@ -3643,14 +3681,15 @@ function function_36de39286177a9b()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a33
+// Params 2
+// Checksum 0x0, Offset: 0x8a48
 // Size: 0x3e
 function array_init_fill( value, count )
 {
     array = [];
     
-    for (i = 0; i < count; i++) {
+    for ( i = 0; i < count ; i++ )
+    {
         array[ array.size ] = value;
     }
     
@@ -3658,8 +3697,8 @@ function array_init_fill( value, count )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a7a
+// Params 6
+// Checksum 0x0, Offset: 0x8a8f
 // Size: 0x113
 function array_init_distribute( value, num, reverse, a, b, c )
 {
@@ -3687,7 +3726,8 @@ function array_init_distribute( value, num, reverse, a, b, c )
     
     totalarea = a / 3 + b / 2 + c;
     
-    for (i = 0; i < num; i++) {
+    for ( i = 0; i < num ; i++ )
+    {
         if ( reverse )
         {
             index = num - i - 1;
@@ -3706,8 +3746,8 @@ function array_init_distribute( value, num, reverse, a, b, c )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b96
+// Params 6
+// Checksum 0x0, Offset: 0x8bab
 // Size: 0x2d7
 function extendcirclelist( circleradius, circleclosetime, circledelaytime, circleminimapradius, circleshowdelaydanger, circleshowdelaysafe )
 {
@@ -3759,7 +3799,8 @@ function extendcirclelist( circleradius, circleclosetime, circledelaytime, circl
     lastradius = level.br_level.br_circleradii[ level.br_level.br_circleradii.size - 1 ];
     level.br_level.br_circleradii[ level.br_level.br_circleradii.size - 1 ] = undefined;
     
-    for (i = 0; i < circleradius.size; i++) {
+    for ( i = 0; i < circleradius.size ; i++ )
+    {
         size = level.br_level.br_circleradii.size;
         level.br_level.br_circleradii[ size ] = circleradius[ i ];
         size = level.br_level.br_circleclosetimes.size;
@@ -3778,8 +3819,8 @@ function extendcirclelist( circleradius, circleclosetime, circledelaytime, circl
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e75
+// Params 1
+// Checksum 0x0, Offset: 0x8e8a
 // Size: 0x11f
 function deletecircle( circleindex )
 {
@@ -3792,8 +3833,8 @@ function deletecircle( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f9c
+// Params 0
+// Checksum 0x0, Offset: 0x8fb1
 // Size: 0x34, Type: bool
 function function_c71842e1caea72f8()
 {
@@ -3811,8 +3852,8 @@ function function_c71842e1caea72f8()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fd9
+// Params 0
+// Checksum 0x0, Offset: 0x8fee
 // Size: 0x1c, Type: bool
 function function_e7f05a5632a76aea()
 {
@@ -3825,8 +3866,8 @@ function function_e7f05a5632a76aea()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ffe
+// Params 0
+// Checksum 0x0, Offset: 0x9013
 // Size: 0xea0
 function applymovingcircles()
 {
@@ -3838,9 +3879,9 @@ function applymovingcircles()
     }
     
     level.br_level.br_movingcirclecount = getdvarint( @"hash_2499127213b409af", 0 );
-    level.br_level.br_movingcirclemovedistmin = getdvarfloat( @"hash_c2162f0faf12f429", 100 );
-    level.br_level.br_movingcirclemovedistmax = getdvarfloat( @"hash_c1f3210faeec8da7", 300 );
-    preset = getdvarint( @"hash_7edc88917d09c24f", 0 );
+    level.br_level.br_movingcirclemovedistmin = getdvarfloat( @"scr_br_moving_circle_move_dist_min", 100 );
+    level.br_level.br_movingcirclemovedistmax = getdvarfloat( @"scr_br_moving_circle_move_dist_max", 300 );
+    preset = getdvarint( @"scr_br_moving_circle_preset", 0 );
     circlecount = level.br_level.br_circleradii.size - 1;
     
     switch ( preset )
@@ -3863,7 +3904,8 @@ function applymovingcircles()
             circleradiusdeltas = array_init_distribute( lastradius - endradius, var_f59ab661ba766221 + 1, 1, scales[ 0 ], scales[ 1 ], scales[ 2 ] );
             delta = 0;
             
-            for (i = 0; i < var_f59ab661ba766221; i++) {
+            for ( i = 0; i < var_f59ab661ba766221 ; i++ )
+            {
                 delta += circleradiusdeltas[ i ];
                 circleradius[ i ] = lastradius - delta;
             }
@@ -4045,8 +4087,8 @@ function applymovingcircles()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ea6
+// Params 0
+// Checksum 0x0, Offset: 0x9ebb
 // Size: 0x337
 function function_64757fdc2b889d2c()
 {
@@ -4071,7 +4113,8 @@ function function_64757fdc2b889d2c()
     level.br_level.var_eebe251c015c91b5 = [];
     var_16968864452e1cbf = circletrainspeeds.size - 1;
     
-    for (i = level.br_level.br_circleclosetimes.size - 1; i >= 0; i--) {
+    for ( i = level.br_level.br_circleclosetimes.size - 1; i >= 0 ; i-- )
+    {
         if ( var_16968864452e1cbf >= 0 )
         {
             level.br_level.var_572a1674797a9fa8[ i ] = circletrainspeeds[ var_16968864452e1cbf ];
@@ -4087,7 +4130,8 @@ function function_64757fdc2b889d2c()
     
     var_78b922ea6aeb59b0 = var_b624c07627bb3af4.size - 1;
     
-    for (i = level.br_level.br_circleclosetimes.size - 1; i >= 0; i--) {
+    for ( i = level.br_level.br_circleclosetimes.size - 1; i >= 0 ; i-- )
+    {
         if ( var_78b922ea6aeb59b0 < 0 )
         {
             break;
@@ -4104,7 +4148,8 @@ function function_64757fdc2b889d2c()
     var_358325b5487d10dc = level.br_level.br_circleradii.size - 1;
     var_78b922ea6aeb59b0 = radiusoverrides.size - 1;
     
-    for (i = 0; i < level.br_level.var_8e40f29c8cdeb0f4; i++) {
+    for ( i = 0; i < level.br_level.var_8e40f29c8cdeb0f4 ; i++ )
+    {
         if ( var_78b922ea6aeb59b0 < 0 || var_358325b5487d10dc < 0 )
         {
             break;
@@ -4123,8 +4168,8 @@ function function_64757fdc2b889d2c()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa1e5
+// Params 0
+// Checksum 0x0, Offset: 0xa1fa
 // Size: 0x324
 function applycirclesetdvars()
 {
@@ -4132,7 +4177,8 @@ function applycirclesetdvars()
     numcircles = br.br_circleclosetimes.size;
     finalradius = br.br_circleradii[ numcircles ];
     
-    for (i = 0; i < numcircles + 1; i++) {
+    for ( i = 0; i < numcircles + 1 ; i++ )
+    {
         name_hash = hashcat( @"scr_br_circle_set_", i );
         var_1641afe84817865a = "scr_br_circle_set_" + i;
         value = getdvar( name_hash, "" );
@@ -4144,7 +4190,8 @@ function applycirclesetdvars()
         
         if ( value == "delete" )
         {
-            for (j = i; j < numcircles; j++) {
+            for ( j = i; j < numcircles ; j++ )
+            {
                 br.br_circleradii[ j ] = undefined;
                 br.br_circleclosetimes[ j ] = undefined;
                 br.br_circledelaytimes[ j ] = undefined;
@@ -4172,7 +4219,8 @@ function applycirclesetdvars()
             
             var_a15637a9566cdcb4 = 1;
             
-            for (j = 0; j < var_30886feff7e7284c; j++) {
+            for ( j = 0; j < var_30886feff7e7284c ; j++ )
+            {
                 if ( toks[ j ] == "?" )
                 {
                     var_a15637a9566cdcb4 = 0;
@@ -4188,7 +4236,8 @@ function applycirclesetdvars()
             }
         }
         
-        for (j = 0; j < toks.size; j++) {
+        for ( j = 0; j < toks.size ; j++ )
+        {
             tok = toks[ j ];
             
             if ( tok == "?" )
@@ -4230,11 +4279,26 @@ function applycirclesetdvars()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa511
-// Size: 0x2d9
+// Params 2
+// Checksum 0x0, Offset: 0xa526
+// Size: 0x3bc
 function initcirclesettings( circlesettingsbundle, var_e891c8f4915dff8a )
 {
+    bundle = level.gametypebundle;
+    
+    if ( isdefined( bundle ) && isdefined( bundle.var_a0d5ca6de3472c8c ) && bundle.var_a0d5ca6de3472c8c.size > 0 )
+    {
+        foreach ( map in bundle.var_a0d5ca6de3472c8c )
+        {
+            if ( level.mapname == map.var_de5f69b6af0f5116 )
+            {
+                circlesettingsbundle = "brcirclesettings:" + map.var_b1da4d4c6cb62b0b;
+            }
+        }
+    }
+    
+    var_9b923f1fd27d76b5 = getdvar( @"scr_br_circlesettings" );
+    circlesettingsbundle = isdefined( var_9b923f1fd27d76b5 ) && var_9b923f1fd27d76b5 != "" ? var_9b923f1fd27d76b5 : circlesettingsbundle;
     circlesettings = getscriptbundle( circlesettingsbundle );
     
     if ( !isdefined( circlesettings ) )
@@ -4273,8 +4337,8 @@ function initcirclesettings( circlesettingsbundle, var_e891c8f4915dff8a )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7f2
+// Params 0
+// Checksum 0x0, Offset: 0xa8ea
 // Size: 0x13c
 function applycirclesettings()
 {
@@ -4310,14 +4374,15 @@ function applycirclesettings()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa936
+// Params 3
+// Checksum 0x0, Offset: 0xaa2e
 // Size: 0xaa
 function _applydvarstosettings( settings, dvarstr, timescale )
 {
     dvartimescale = getdvarfloat( hashcat( @"hash_2f30e28124ff7895", dvarstr, "_scale" ), 1 );
     
-    for (i = 0; i < settings.size; i++) {
+    for ( i = 0; i < settings.size ; i++ )
+    {
         closetime = getdvarfloat( hashcat( @"hash_f3544a0fde0fb9b6", dvarstr, "_", string( i ) ), -1 );
         
         if ( closetime > 0 )
@@ -4333,8 +4398,8 @@ function _applydvarstosettings( settings, dvarstr, timescale )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9e9
+// Params 0
+// Checksum 0x0, Offset: 0xaae1
 // Size: 0x3fa
 function assertcirclesettings()
 {
@@ -4351,7 +4416,8 @@ function assertcirclesettings()
     circlesettingsassert( numcircles == level.br_level.br_circleminimapradii.size, "level.br_level.br_circleMinimapRadii size != " + numcircles );
     circlesettingsassert( numcircles == level.br_level.br_circleradii.size - 1, "level.br_level.br_circleRadii size-1 != " + numcircles );
     
-    for (i = 0; i < numcircles; i++) {
+    for ( i = 0; i < numcircles ; i++ )
+    {
         delaytime = level.br_level.br_circledelaytimes[ i ];
         
         if ( !isdefined( delaytime ) )
@@ -4399,8 +4465,8 @@ function assertcirclesettings()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xadeb
+// Params 2
+// Checksum 0x0, Offset: 0xaee3
 // Size: 0x21
 function circlesettingsassert( value, msg )
 {
@@ -4411,8 +4477,8 @@ function circlesettingsassert( value, msg )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xae14
+// Params 1
+// Checksum 0x0, Offset: 0xaf0c
 // Size: 0xe0
 function getcircleclosetime( targetindex )
 {
@@ -4435,7 +4501,8 @@ function getcircleclosetime( targetindex )
     
     time = 0;
     
-    for (circleindex = 0; circleindex <= targetindex; circleindex++) {
+    for ( circleindex = 0; circleindex <= targetindex ; circleindex++ )
+    {
         timedelay = level.br_level.br_circledelaytimes[ circleindex ];
         timeclose = level.br_level.br_circleclosetimes[ circleindex ];
         time = time + timedelay + timeclose;
@@ -4445,8 +4512,8 @@ function getcircleclosetime( targetindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaefd
+// Params 1
+// Checksum 0x0, Offset: 0xaff5
 // Size: 0x8f
 function brcirclebattlechatter( circleindex )
 {
@@ -4460,8 +4527,8 @@ function brcirclebattlechatter( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf94
+// Params 1
+// Checksum 0x0, Offset: 0xb08c
 // Size: 0x133
 function doteamcirclebattlechatter( team )
 {
@@ -4514,8 +4581,8 @@ function doteamcirclebattlechatter( team )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb0cf
+// Params 2
+// Checksum 0x0, Offset: 0xb1c7
 // Size: 0x4e
 function createinvalidcirclearea( origin, radius )
 {
@@ -4527,8 +4594,8 @@ function createinvalidcirclearea( origin, radius )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb126
+// Params 1
+// Checksum 0x0, Offset: 0xb21e
 // Size: 0xe3
 function canplaycircleopendialog( circleindex )
 {
@@ -4555,8 +4622,8 @@ function canplaycircleopendialog( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb212
+// Params 1
+// Checksum 0x0, Offset: 0xb30a
 // Size: 0xaf
 function canplaycircleclosedialog( circleindex )
 {
@@ -4579,8 +4646,8 @@ function canplaycircleclosedialog( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2ca
+// Params 1
+// Checksum 0x0, Offset: 0xb3c2
 // Size: 0x87
 function resetdangercircleorigin( circleindex )
 {
@@ -4607,8 +4674,8 @@ function resetdangercircleorigin( circleindex )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xb35a
+// Params 5
+// Checksum 0x0, Offset: 0xb452
 // Size: 0xfd
 function registercirclecallbacks( var_7f590f6ae7f3bc83, var_457258eed204db55, var_1dc8b3a2ba6e135c, var_ac90ea5dc05930cd, var_c660f86463f75e9e )
 {
@@ -4640,8 +4707,8 @@ function registercirclecallbacks( var_7f590f6ae7f3bc83, var_457258eed204db55, va
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb45f
+// Params 1
+// Checksum 0x0, Offset: 0xb557
 // Size: 0xc9
 function function_4448b165e1f42719( var_7f590f6ae7f3bc83 )
 {
@@ -4672,8 +4739,8 @@ function function_4448b165e1f42719( var_7f590f6ae7f3bc83 )
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb530
+// Params 0
+// Checksum 0x0, Offset: 0xb628
 // Size: 0x33, Type: bool
 function function_fc0f865ddcf551ad()
 {
@@ -4681,8 +4748,8 @@ function function_fc0f865ddcf551ad()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb56c
+// Params 0
+// Checksum 0x0, Offset: 0xb664
 // Size: 0x164
 function function_7fb9a2d57c0c42e2()
 {
@@ -4698,8 +4765,8 @@ function function_7fb9a2d57c0c42e2()
 }
 
 // Namespace br_circle / scripts\mp\gametypes\br_circle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6d8
+// Params 0
+// Checksum 0x0, Offset: 0xb7d0
 // Size: 0x45
 function function_e900c5a0c7a22c7a()
 {
@@ -4712,8 +4779,8 @@ function function_e900c5a0c7a22c7a()
 /#
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb725
+    // Params 0
+    // Checksum 0x0, Offset: 0xb81d
     // Size: 0x1e7, Type: dev
     function function_e5958529715b6395()
     {
@@ -4751,8 +4818,8 @@ function function_e900c5a0c7a22c7a()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb914
+    // Params 4
+    // Checksum 0x0, Offset: 0xba0c
     // Size: 0xc3, Type: dev
     function function_7f31d213264baf4d( header, circleorigin, circleradius, circletime )
     {
@@ -4771,8 +4838,8 @@ function function_e900c5a0c7a22c7a()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb9df
+    // Params 0
+    // Checksum 0x0, Offset: 0xbad7
     // Size: 0xd, Type: dev
     function function_6a6e7f489e42bcda()
     {
@@ -4780,8 +4847,8 @@ function function_e900c5a0c7a22c7a()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb9f4
+    // Params 0
+    // Checksum 0x0, Offset: 0xbaec
     // Size: 0x116, Type: dev
     function function_673b160b18fe0611()
     {
@@ -4819,8 +4886,8 @@ function function_e900c5a0c7a22c7a()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xbb12
+    // Params 0
+    // Checksum 0x0, Offset: 0xbc0a
     // Size: 0x33f, Type: dev
     function function_9eb173d6a8fed181()
     {
@@ -4840,7 +4907,8 @@ function function_e900c5a0c7a22c7a()
         thread function_7486a9cd4aef46c8();
         test_colors = [ "<dev string:x31e>", "<dev string:x328>", "<dev string:x330>" ];
         
-        for (spawnents = 1; true; spawnents = 0) {
+        for ( spawnents = 1; true ; spawnents = 0 )
+        {
             waitframe();
             
             if ( !isdefined( level.br_level.br_circlecenters ) || !level.br_level.br_circlecenters.size )
@@ -4850,7 +4918,8 @@ function function_e900c5a0c7a22c7a()
             
             colorindex = 0;
             
-            for (circleindex = 0; circleindex < level.br_level.br_circlecenters.size; circleindex++) {
+            for ( circleindex = 0; circleindex < level.br_level.br_circlecenters.size ; circleindex++ )
+            {
                 radius = level.br_level.br_circleradii[ circleindex ];
                 center = level.br_level.br_circlecenters[ circleindex ];
                 
@@ -4889,8 +4958,8 @@ function function_e900c5a0c7a22c7a()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xbe59
+    // Params 0
+    // Checksum 0x0, Offset: 0xbf51
     // Size: 0x1c, Type: dev
     function function_7486a9cd4aef46c8()
     {
@@ -4900,8 +4969,8 @@ function function_e900c5a0c7a22c7a()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xbe7d
+    // Params 0
+    // Checksum 0x0, Offset: 0xbf75
     // Size: 0x2b, Type: dev
     function function_c3f32250a5b22066()
     {
@@ -4911,8 +4980,8 @@ function function_e900c5a0c7a22c7a()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xbeb0
+    // Params 0
+    // Checksum 0x0, Offset: 0xbfa8
     // Size: 0xd, Type: dev
     function function_46097952cff4dc2e()
     {
@@ -4920,8 +4989,8 @@ function function_e900c5a0c7a22c7a()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xbec5
+    // Params 1
+    // Checksum 0x0, Offset: 0xbfbd
     // Size: 0x4d, Type: dev
     function function_acc901c78fe65b94( args )
     {
@@ -4938,8 +5007,8 @@ function function_e900c5a0c7a22c7a()
     }
 
     // Namespace br_circle / scripts\mp\gametypes\br_circle
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xbf1a
+    // Params 1
+    // Checksum 0x0, Offset: 0xc012
     // Size: 0x202, Type: dev
     function function_8ebb53f2c5ed597d( args )
     {

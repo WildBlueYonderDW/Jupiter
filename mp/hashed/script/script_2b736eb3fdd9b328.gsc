@@ -15,7 +15,7 @@
 #namespace namespace_9e3d69dfe999c1f;
 
 // Namespace namespace_9e3d69dfe999c1f / namespace_d2c35aa0ab3fe2d2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23d
 // Size: 0xbc
 function function_a9e26388b8dc22b3()
@@ -25,7 +25,8 @@ function function_a9e26388b8dc22b3()
     scripts\mp\flags::gameflaginit( "vehicle_patrol_paths_selected", 0 );
     level.var_5731a15ecc971a53 = getdvarint( @"hash_71a6a8a8255b301f", 30 );
     
-    for (pathnum = 1; true; pathnum++) {
+    for ( pathnum = 1; true ; pathnum++ )
+    {
         pathnodes = getstructarray( "vehiclePatrol_" + pathnum, "script_noteworthy" );
         
         if ( pathnodes.size == 0 )
@@ -47,7 +48,7 @@ function function_a9e26388b8dc22b3()
 }
 
 // Namespace namespace_9e3d69dfe999c1f / namespace_d2c35aa0ab3fe2d2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x301
 // Size: 0x28a
 function function_7bb5daf93766fb3d()
@@ -111,7 +112,7 @@ function function_7bb5daf93766fb3d()
 }
 
 // Namespace namespace_9e3d69dfe999c1f / namespace_d2c35aa0ab3fe2d2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x593
 // Size: 0xe7
 function function_cbae2bd62d2e7086()
@@ -159,7 +160,8 @@ function private function_8263f9488230c012( pathdata, pathnum, vehicletype )
     
     if ( isdefined( level.vehiclepatrolspawns ) )
     {
-        for (i = 0; i < pathdata.path.size - 1; i++) {
+        for ( i = 0; i < pathdata.path.size - 1 ; i++ )
+        {
             pathdata.index = ( pathdata.index + 1 ) % pathdata.path.size;
             reinforcenode = pathdata.path[ pathdata.index ];
             closestspawn = sortbydistance( level.vehiclepatrolspawns, reinforcenode.origin )[ 0 ];
@@ -349,7 +351,7 @@ function private function_9ec2524e968c9eb2( rider, isdriver )
 }
 
 // Namespace namespace_9e3d69dfe999c1f / namespace_d2c35aa0ab3fe2d2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe09
 // Size: 0xf5
 function function_8667ff5c61e579ed()
@@ -385,7 +387,7 @@ function private function_865676e356a22103()
 }
 
 // Namespace namespace_9e3d69dfe999c1f / namespace_d2c35aa0ab3fe2d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf31
 // Size: 0x91
 function function_ab0ee2215eb51dd5( exittype )
@@ -414,7 +416,7 @@ function function_ab0ee2215eb51dd5( exittype )
 /#
 
     // Namespace namespace_9e3d69dfe999c1f / namespace_d2c35aa0ab3fe2d2
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xfca
     // Size: 0xa1, Type: dev
     function function_6994a068636ec457()
@@ -450,7 +452,8 @@ function function_ab0ee2215eb51dd5( exittype )
         
         foreach ( pathdata in level.var_ad58c9c70a5db5bb )
         {
-            for (i = 0; i < pathdata.path.size; i++) {
+            for ( i = 0; i < pathdata.path.size ; i++ )
+            {
                 startnode = pathdata.path[ i ];
                 endnode = pathdata.path[ ( i + 1 ) % pathdata.path.size ];
                 line( startnode.origin, endnode.origin, ter_op( istrue( pathdata.spawned ), ( 0, 1, 0 ), ( 0, 0, 1 ) ), 1, 0, 100000 );
@@ -484,7 +487,8 @@ function function_ab0ee2215eb51dd5( exittype )
         start = self.origin + ( 0, 0, 50 );
         end = self.origin + anglestoforward( self.angles ) * 400 + ( 0, 0, 50 );
         
-        for (prevpos = self.origin; true; prevpos = self.origin) {
+        for ( prevpos = self.origin; true ; prevpos = self.origin )
+        {
             wait 1;
             line( start, end, ( 1, 1, 1 ), 1, 0, 20 );
             sphere( start, 100, ( 1, 1, 1 ), 0, 20 );

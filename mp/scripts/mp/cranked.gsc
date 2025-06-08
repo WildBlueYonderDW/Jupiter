@@ -14,7 +14,7 @@
 #namespace cranked;
 
 // Namespace cranked / scripts\mp\cranked
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x447
 // Size: 0x20
 function registercrankedtimerdvar( dvarstring, value )
@@ -25,7 +25,7 @@ function registercrankedtimerdvar( dvarstring, value )
 /#
 
     // Namespace cranked / scripts\mp\cranked
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x46f
     // Size: 0x35, Type: dev
     function setcrankeddvarfordev()
@@ -41,7 +41,7 @@ function registercrankedtimerdvar( dvarstring, value )
 #/
 
 // Namespace cranked / scripts\mp\cranked
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0xaa
 function makeplayercranked( event )
@@ -63,7 +63,7 @@ function makeplayercranked( event )
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x55e
 // Size: 0x1e2
 function oncranked( victim, attacker, lifeid )
@@ -132,7 +132,7 @@ function oncranked( victim, attacker, lifeid )
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x748
 // Size: 0x1e
 function oncrankedhit( victim )
@@ -146,7 +146,7 @@ function oncrankedhit( victim )
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x76e
 // Size: 0x35
 function cleanupcrankedplayertimer()
@@ -159,7 +159,7 @@ function cleanupcrankedplayertimer()
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ab
 // Size: 0xb
 function waitthenstopcrankedbombtimer()
@@ -169,7 +169,7 @@ function waitthenstopcrankedbombtimer()
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7be
 // Size: 0x36
 function oncrankedkill( event )
@@ -186,7 +186,7 @@ function oncrankedkill( event )
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7fc
 // Size: 0x25
 function oncrankedassist( event )
@@ -197,7 +197,7 @@ function oncrankedassist( event )
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x829
 // Size: 0x222
 function setcrankedplayerbombtimer( type )
@@ -259,7 +259,7 @@ function setcrankedplayerbombtimer( type )
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa53
 // Size: 0x75
 function watchcrankedplayerhostmigration()
@@ -282,7 +282,7 @@ function watchcrankedplayerhostmigration()
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xad0
 // Size: 0x5a
 function watchcrankedendgame()
@@ -305,7 +305,7 @@ function watchcrankedendgame()
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb32
 // Size: 0x18a
 function watchcrankedbombtimer( waittime )
@@ -362,7 +362,7 @@ function watchcrankedbombtimer( waittime )
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcc4
 // Size: 0xa5
 function crankedprogressuiupdater( waittime )
@@ -388,7 +388,7 @@ function crankedprogressuiupdater( waittime )
 }
 
 // Namespace cranked / scripts\mp\cranked
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd71
 // Size: 0x48
 function function_68a1353068460d1()

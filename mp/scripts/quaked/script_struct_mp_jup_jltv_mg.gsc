@@ -6,9 +6,9 @@
 #using scripts\cp_mp\vehicles\vehicle_spawn;
 #using scripts\engine\utility;
 
-#namespace namespace_1f456ca67a596eec;
+#namespace script_struct_mp_jup_jltv_mg;
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x29e
 // Size: 0x13
@@ -17,8 +17,8 @@ function autoexec main()
     function_c0b3ddc9a6bdcc46( "veh_jup_jltv_mg", &function_36f3aa21fcac5b21 );
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
-// Params 1, eflags: 0x0
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Params 1
 // Checksum 0x0, Offset: 0x2b9
 // Size: 0x35
 function function_41840e7c1272c050( veh_spawner )
@@ -28,7 +28,7 @@ function function_41840e7c1272c050( veh_spawner )
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x2f7
 // Size: 0x73
@@ -49,7 +49,7 @@ function private function_36f3aa21fcac5b21()
     function_f2a24ca61d1563a();
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x372
 // Size: 0x19a
@@ -110,7 +110,7 @@ function private function_d2a84209a50b34d2( spawndata, faildata )
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0x515
 // Size: 0x57
@@ -122,7 +122,7 @@ function private function_4c41d739b1eb8cd0( position, angles, spawndata, faildat
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0x575
 // Size: 0x9e
@@ -144,7 +144,7 @@ function private function_62204f70106947a6( spawnposition, spawnangles, spawndat
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x61c
 // Size: 0x98
@@ -165,7 +165,7 @@ function private function_83972c0fabc82c9f( spawndata, faildata )
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x6bd
 // Size: 0x70
@@ -178,7 +178,7 @@ function private function_f2a24ca61d1563a()
     leveldataforvehicle.rotationrefsbyseatandweapon[ "gunner" ][ function_edcae4b27a6f7abe() ] = 1;
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x735
 // Size: 0x5a
@@ -201,7 +201,7 @@ function private function_edcae4b27a6f7abe()
     return "jup_mg_jltv_mp";
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 5, eflags: 0x4
 // Checksum 0x0, Offset: 0x798
 // Size: 0x94
@@ -223,7 +223,7 @@ function private function_7abe06772f227330( vehicle, seatid, var_fc7c7a874b43a31
     }
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 5, eflags: 0x4
 // Checksum 0x0, Offset: 0x834
 // Size: 0x8e
@@ -240,7 +240,7 @@ function private function_2aa52f506944ea71( vehicle, seatid, var_fc7c7a874b43a31
     vehomn_updateomnvarsonseatenter( vehicle, var_fc7c7a874b43a31a, seatid, player );
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 5, eflags: 0x4
 // Checksum 0x0, Offset: 0x8ca
 // Size: 0x46
@@ -252,7 +252,7 @@ function private function_2fdd0e40db525024( vehicle, seatid, var_7558f98f3236963
     }
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 5, eflags: 0x4
 // Checksum 0x0, Offset: 0x918
 // Size: 0x136
@@ -301,7 +301,7 @@ function private function_3d7fcd7f8aa45e0d( vehicle, seatid, var_7558f98f3236963
     vehomn_updateomnvarsonseatexit( vehicle, seatid, var_7558f98f3236963d, player );
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 5, eflags: 0x4
 // Checksum 0x0, Offset: 0xa56
 // Size: 0x5b
@@ -314,7 +314,7 @@ function private function_4b1ad3b1d7810658( vehicle, var_9de41f2ee77c33ba, var_3
     }
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0xab9
 // Size: 0x126
@@ -344,7 +344,7 @@ function private function_9e1cb0f4ea79f09e( vehicle, spawndata, turretweapon )
     return turret;
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0xbe8
 // Size: 0x91
@@ -367,7 +367,7 @@ function private function_d09b279cd811f266( vehicle, var_7558f98f3236963d, playe
     }
 }
 
-// Namespace namespace_1f456ca67a596eec / scripts\quaked\script_struct_mp_jup_jltv_mg
+// Namespace script_struct_mp_jup_jltv_mg / scripts\quaked\script_struct_mp_jup_jltv_mg
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0xc81
 // Size: 0x48

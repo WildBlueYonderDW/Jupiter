@@ -31,7 +31,7 @@
 #namespace mp_agent_damage;
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ce
 // Size: 0xb2
 function register_ai_damage_callbacks()
@@ -46,7 +46,7 @@ function register_ai_damage_callbacks()
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x988
 // Size: 0xa97
 function callbacksoldieragentdamaged( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -402,7 +402,7 @@ function private function_2587e7c010a44740()
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x1473
 // Size: 0xe5
 function callbacksoldieragentgametypedamagefinished( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname )
@@ -432,7 +432,7 @@ function callbacksoldieragentgametypedamagefinished( einflictor, eattacker, idam
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x1560
 // Size: 0x933
 function callbacksoldieragentgametypekilled( einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration )
@@ -705,7 +705,7 @@ function callbacksoldieragentgametypekilled( einflictor, eattacker, idamage, sme
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e9b
 // Size: 0xad, Type: bool
 function is_friendly_damage( agent, attacker )
@@ -727,7 +727,7 @@ function is_friendly_damage( agent, attacker )
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1f51
 // Size: 0x99, Type: bool
 function should_do_damage_checks( eattacker, idamage, smeansofdeath, sweapon, shitloc, victim )
@@ -749,7 +749,7 @@ function should_do_damage_checks( eattacker, idamage, smeansofdeath, sweapon, sh
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ff3
 // Size: 0x20, Type: bool
 function is_suicide_bomber()
@@ -758,7 +758,7 @@ function is_suicide_bomber()
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x201c
 // Size: 0xea
 function adjust_damage_based_on_weaponclass( idamage, sweapon, weaponclass, type, attacker )
@@ -794,7 +794,7 @@ function adjust_damage_based_on_weaponclass( idamage, sweapon, weaponclass, type
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x210f
 // Size: 0x22, Type: bool
 function is_flashbang( weaponname, objweapon, inflictor )
@@ -803,7 +803,7 @@ function is_flashbang( weaponname, objweapon, inflictor )
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x213a
 // Size: 0x12, Type: bool
 function is_gas( weaponname )
@@ -812,7 +812,7 @@ function is_gas( weaponname )
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2155
 // Size: 0xc9
 function handle_death_sounds( attacker, victim, smeansofdeath )
@@ -841,7 +841,7 @@ function handle_death_sounds( attacker, victim, smeansofdeath )
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x2226
 // Size: 0x6e3
 function process_damage_feedback( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, victim )
@@ -1032,7 +1032,7 @@ function process_damage_feedback( einflictor, eattacker, idamage, idflags, smean
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2911
 // Size: 0x32, Type: bool
 function _hasperk( perkname )
@@ -1053,7 +1053,7 @@ function _hasperk( perkname )
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x294c
 // Size: 0x467, Type: bool
 function shouldblockdamage( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -1198,7 +1198,7 @@ function shouldblockdamage( einflictor, eattacker, idamage, idflags, smeansofdea
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2dbc
 // Size: 0xb4
 function function_42baa3bb97d2d1d7( player, var_a3732517126407b2, idamage, vpoint, ielement )
@@ -1214,7 +1214,7 @@ function function_42baa3bb97d2d1d7( player, var_a3732517126407b2, idamage, vpoin
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e78
 // Size: 0x37, Type: bool
 function function_73075c88c97d2d50()
@@ -1223,7 +1223,7 @@ function function_73075c88c97d2d50()
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2eb8
 // Size: 0x37, Type: bool
 function function_9db5f6f105cde5da()
@@ -1232,7 +1232,7 @@ function function_9db5f6f105cde5da()
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ef8
 // Size: 0x37, Type: bool
 function function_87c3b43d00319847()
@@ -1241,7 +1241,7 @@ function function_87c3b43d00319847()
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x2f38
 // Size: 0x20f
 function function_c54b2cc2e762c201( eattacker, etargethit, shitloc, smeansofdeath, sweapon, idamage, vpoint, isimmnue, selement, var_14edc6d1db3695bc, var_feef4b237a6beb07 )
@@ -1313,7 +1313,7 @@ function function_c54b2cc2e762c201( eattacker, etargethit, shitloc, smeansofdeat
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x314f
 // Size: 0x93
 function function_7a6bbb24289296e7( player, var_a3732517126407b2, idamage, vpoint, ielement )
@@ -1338,7 +1338,7 @@ function function_7a6bbb24289296e7( player, var_a3732517126407b2, idamage, vpoin
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x31ea
 // Size: 0xe2
 function updaterecentagentkills( victim, einflictor, objweapon )

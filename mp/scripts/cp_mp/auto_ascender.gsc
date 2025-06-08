@@ -13,7 +13,7 @@
 #namespace auto_ascender;
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ee
 // Size: 0x133
 function init()
@@ -40,7 +40,7 @@ function init()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x929
 // Size: 0x7
 function function_68fe08d119bbd54f()
@@ -49,7 +49,7 @@ function function_68fe08d119bbd54f()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x939
 // Size: 0x7
 function function_9412c45e2bc1218b()
@@ -58,7 +58,7 @@ function function_9412c45e2bc1218b()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x949
 // Size: 0x7
 function function_f3c35aacfbe68158()
@@ -67,7 +67,7 @@ function function_f3c35aacfbe68158()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x959
 // Size: 0x7
 function function_99e7d00e9d903c57()
@@ -76,7 +76,7 @@ function function_99e7d00e9d903c57()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x969
 // Size: 0x7
 function function_ca18084bdcc82ea8()
@@ -85,7 +85,7 @@ function function_ca18084bdcc82ea8()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x979
 // Size: 0x5
 function function_211b63898ba23e96()
@@ -94,7 +94,7 @@ function function_211b63898ba23e96()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x987
 // Size: 0x4
 function function_9bb960f8f80f543f()
@@ -103,7 +103,7 @@ function function_9bb960f8f80f543f()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x994
 // Size: 0x494
 function initanimtree()
@@ -150,7 +150,7 @@ function initanimtree()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe30
 // Size: 0x1d9
 function markupascenderstruct( struct, dir )
@@ -181,7 +181,7 @@ function markupascenderstruct( struct, dir )
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1011
 // Size: 0x67
 function ascenderscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -200,7 +200,7 @@ function ascenderscriptableused( instance, part, state, player, var_a5b2c541413a
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1080
 // Size: 0x6b
 function function_3af132aed5f667c5()
@@ -223,7 +223,7 @@ function function_3af132aed5f667c5()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f3
 // Size: 0x6b
 function denyascendmessagelaststand()
@@ -246,7 +246,7 @@ function denyascendmessagelaststand()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1166
 // Size: 0x6b
 function denyascendmessage()
@@ -269,7 +269,7 @@ function denyascendmessage()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11d9
 // Size: 0x4d
 function ascenddeathlistener( ascendstart )
@@ -289,7 +289,7 @@ function ascenddeathlistener( ascendstart )
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x122e
 // Size: 0x74
 function endascenderanim( player, dir, ascendermodelview, ascendermodelworld )
@@ -311,7 +311,7 @@ function endascenderanim( player, dir, ascendermodelview, ascendermodelworld )
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x12aa
 // Size: 0x2fb
 function startascenderanim( player, dir, ascendermodelview, ascendermodelworld )
@@ -363,7 +363,7 @@ function startascenderanim( player, dir, ascendermodelview, ascendermodelworld )
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x15ad
 // Size: 0xbd
 function loopwaitanim( scenenode, ascendermodelview, ascendermodelworld, dir )
@@ -403,7 +403,7 @@ function loopwaitanim( scenenode, ascendermodelview, ascendermodelworld, dir )
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1672
 // Size: 0x11d, Type: bool
 function function_3070aab95202a0e6( instance, player )
@@ -471,7 +471,7 @@ function function_3070aab95202a0e6( instance, player )
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1798
 // Size: 0x4a3
 function ascenderuse( instance, player )
@@ -582,7 +582,7 @@ function ascenderuse( instance, player )
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c43
 // Size: 0x1e3
 function cleanupascenduse( player )
@@ -652,7 +652,7 @@ function cleanupascenduse( player )
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e2e
 // Size: 0xbc
 function ascenderinstantstop()
@@ -676,7 +676,7 @@ function ascenderinstantstop()
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ef2
 // Size: 0x42
 function vectortoanglessafe( forward, up )
@@ -688,7 +688,7 @@ function vectortoanglessafe( forward, up )
 }
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f3d
 // Size: 0x98, Type: bool
 function function_ff57f9acf27bbc3c( point )

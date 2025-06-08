@@ -42,7 +42,7 @@
 #namespace brtdm_mgl;
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1120
 // Size: 0x2e9
 function main()
@@ -118,7 +118,7 @@ function main()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1411
 // Size: 0x37
 function initializematchrules()
@@ -130,7 +130,7 @@ function initializematchrules()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1450
 // Size: 0x150
 function onstartgametype()
@@ -183,7 +183,7 @@ function onstartgametype()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15a8
 // Size: 0x310
 function updategametypedvars()
@@ -196,7 +196,7 @@ function updategametypedvars()
     level.autorespawnwaittime = getdvarint( @"hash_4beac336193a373d", 3 );
     level.parachutedeploydelay = getdvarfloat( @"hash_12027360b079c1db", 0.5 );
     level.brtdm_config = spawnstruct();
-    level.brtdm_config.locale = getdvar( @"hash_7dcd947b5e9add11", "" );
+    level.brtdm_config.locale = getdvar( @"scr_brtdm_locale", "" );
     applylocaledefaults();
     level.brtdm_config.circlecenter = getdvarvector( @"scr_brtdm_circle_center", level.brtdm_config.locale_defaults[ "scr_brtdm_circle_center" ] );
     level.brtdm_config.circleradius = getdvarint( @"scr_brtdm_circle_radius", level.brtdm_config.locale_defaults[ "scr_brtdm_circle_radius" ] );
@@ -224,7 +224,7 @@ function updategametypedvars()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18c0
 // Size: 0x2a
 function setlocaledefaultvalue( dvar, value )
@@ -233,7 +233,7 @@ function setlocaledefaultvalue( dvar, value )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18f2
 // Size: 0x2fd6
 function applylocaledefaults()
@@ -785,7 +785,7 @@ function applylocaledefaults()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48d0
 // Size: 0x243
 function initcircledata()
@@ -807,7 +807,7 @@ function initcircledata()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b1b
 // Size: 0x3ca
 function initspawns()
@@ -833,7 +833,7 @@ function initspawns()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4eed
 // Size: 0x4c5
 function getspawnpoint()
@@ -911,7 +911,7 @@ function getspawnpoint()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53bb
 // Size: 0x392
 function pregeneratespawnpoints()
@@ -925,7 +925,8 @@ function pregeneratespawnpoints()
     
     foreach ( team in level.teamnamelist )
     {
-        for (i = 0; i < spawncount; i++) {
+        for ( i = 0; i < spawncount ; i++ )
+        {
             spawnpoint = spawnstruct();
             spawnangles = vectortoangles( level.brtdm_config.spawnvector[ team ] );
             randomyaw = randomfloatrange( level.brtdm_config.spawnanglemin, level.brtdm_config.spawnanglemax );
@@ -949,7 +950,8 @@ function pregeneratespawnpoints()
             anglestep = 10;
             results = [];
             
-            for (j = 0; j < tracecount; j++) {
+            for ( j = 0; j < tracecount ; j++ )
+            {
                 result = scripts\engine\trace::ray_trace( spawnorigin + ( 0, 0, 10000 ), spawnorigin - ( 0, 0, 20000 ) + anglestoforward( spawnangles ) * j * 2000, undefined, tracecontents )[ "position" ];
                 results[ results.size ] = result;
                 
@@ -982,7 +984,7 @@ function pregeneratespawnpoints()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5755
 // Size: 0xf6
 function generatespawnpoint()
@@ -1001,7 +1003,7 @@ function generatespawnpoint()
 /#
 
     // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5854
     // Size: 0xcbd, Type: dev
     function function_14d9ef66ff3c55fe()
@@ -1045,7 +1047,8 @@ function generatespawnpoint()
                 {
                     foreach ( spawnpoint in level.redeployspawns[ team ] )
                     {
-                        for (i = 0; i < spawnpoint.traceresults.size; i++) {
+                        for ( i = 0; i < spawnpoint.traceresults.size ; i++ )
+                        {
                             color = ( 1, 1, 0 );
                             
                             if ( spawnpoint.highesttraceindex == i )
@@ -1064,7 +1067,7 @@ function generatespawnpoint()
     }
 
     // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6519
     // Size: 0xa4, Type: dev
     function function_4e89ea3291f12198()
@@ -1087,7 +1090,7 @@ function generatespawnpoint()
     }
 
     // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x65c5
     // Size: 0xa0, Type: dev
     function function_3fe54271a36d4f0d()
@@ -1110,7 +1113,7 @@ function generatespawnpoint()
 #/
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x666d
 // Size: 0x108
 function onplayerconnect( player )
@@ -1141,7 +1144,7 @@ function onplayerconnect( player )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x677d
 // Size: 0x81
 function manageprematchfade( delay_time, var_c82eabb722c361a7 )
@@ -1163,7 +1166,7 @@ function manageprematchfade( delay_time, var_c82eabb722c361a7 )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6806
 // Size: 0x15, Type: bool
 function modespawn( revivespawn )
@@ -1173,7 +1176,7 @@ function modespawn( revivespawn )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6824
 // Size: 0x28, Type: bool
 function playerkilledspawn( deathdata, finaldeath )
@@ -1183,7 +1186,7 @@ function playerkilledspawn( deathdata, finaldeath )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6855
 // Size: 0x10f
 function playerrespawn()
@@ -1230,7 +1233,7 @@ function playerrespawn()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x696c
 // Size: 0x90
 function onspawnplayer( revivespawn )
@@ -1266,7 +1269,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a04
 // Size: 0x2d
 function removespawnprotectiononnotify()
@@ -1278,7 +1281,7 @@ function removespawnprotectiononnotify()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a39
 // Size: 0x2a
 function removespawnprotectiononads()
@@ -1295,7 +1298,7 @@ function removespawnprotectiononads()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a6b
 // Size: 0x4d
 function manageafktracking()
@@ -1312,7 +1315,7 @@ function manageafktracking()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x6ac0
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -1321,7 +1324,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x6b08
 // Size: 0x6c
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1330,7 +1333,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b7c
 // Size: 0x53
 function ontimelimit()
@@ -1350,7 +1353,7 @@ function ontimelimit()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6bd7
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()
@@ -1362,7 +1365,7 @@ function shouldgamelobbyremainintact()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c2d
 // Size: 0x6a
 function vehiclespawn_getspawndata( loc )
@@ -1376,7 +1379,7 @@ function vehiclespawn_getspawndata( loc )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ca0
 // Size: 0x7e
 function registervehicletype( refname, spawnvehiclecallback )
@@ -1391,7 +1394,7 @@ function registervehicletype( refname, spawnvehiclecallback )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d26
 // Size: 0x39b
 function initvehicles()
@@ -1459,13 +1462,15 @@ function initvehicles()
     
     if ( false )
     {
-        for (i = 0; i < numtospawn; i++) {
+        for ( i = 0; i < numtospawn ; i++ )
+        {
             loc = level.vehiclespawnlocs[ i ];
             thread drawline( loc.origin + ( 0, 0, 1500 ), loc.origin + ( 0, 0, 2500 ), 1000, ( 0, 1, 0 ) );
         }
     }
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         loc = level.vehiclespawnlocs[ i ];
         
         if ( isdefined( loc ) )
@@ -1477,7 +1482,7 @@ function initvehicles()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x70c9
 // Size: 0x198
 function getvehiclespawns( vehicleref, vehicletype )
@@ -1485,7 +1490,8 @@ function getvehiclespawns( vehicleref, vehicletype )
     spawns = [];
     dvarstring = hashcat( @"hash_ad95d7262a11119e", vehicleref );
     
-    for (index = 0; true; index++) {
+    for ( index = 0; true ; index++ )
+    {
         origindvarstring = hashcat( dvarstring, "_origin_", index );
         angledvarstring = hashcat( dvarstring, "_angles_", index );
         defaultorigin = ( 0, 0, 0 );
@@ -1527,7 +1533,7 @@ function getvehiclespawns( vehicleref, vehicletype )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x726a
 // Size: 0x297
 function getatvspawns()
@@ -1582,7 +1588,7 @@ function getatvspawns()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x750a
 // Size: 0x297
 function gettacroverspawns()
@@ -1637,7 +1643,7 @@ function gettacroverspawns()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x77aa
 // Size: 0x59
 function vehiclespawn_littlebird( loc, faildata )
@@ -1652,7 +1658,7 @@ function vehiclespawn_littlebird( loc, faildata )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x780c
 // Size: 0x59
 function vehiclespawn_atv( loc, faildata )
@@ -1667,7 +1673,7 @@ function vehiclespawn_atv( loc, faildata )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x786e
 // Size: 0x59
 function vehiclespawn_tacrover( loc, faildata )
@@ -1682,7 +1688,7 @@ function vehiclespawn_tacrover( loc, faildata )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x78d0
 // Size: 0xe2
 function filtervehiclespawnstructs( structs )
@@ -1706,7 +1712,7 @@ function filtervehiclespawnstructs( structs )
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79bb
 // Size: 0x4b7
 function initprematchc130()
@@ -1754,7 +1760,7 @@ function initprematchc130()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e7a
 // Size: 0xba
 function infil_radio_idle()
@@ -1790,7 +1796,7 @@ function infil_radio_idle()
 }
 
 // Namespace brtdm_mgl / scripts\mp\gametypes\brtdm_mgl
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f3c
 // Size: 0x15, Type: bool
 function vehicle_compass_br_shouldbevisibletoplayer( vehicle, player )

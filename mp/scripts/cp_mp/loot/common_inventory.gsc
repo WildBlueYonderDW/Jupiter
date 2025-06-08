@@ -15,7 +15,7 @@
 #namespace common_inventory;
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59a
 // Size: 0x51
 function inventory_init()
@@ -334,7 +334,7 @@ function private function_80fcd9b9bddea7a9( itemtype, itemindex, quantity )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf15
 // Size: 0xaa
 function function_400fb193601d3a21()
@@ -357,7 +357,7 @@ function function_400fb193601d3a21()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfc7
 // Size: 0x48
 function function_777092be5abab355( itemslotindex )
@@ -374,7 +374,7 @@ function function_777092be5abab355( itemslotindex )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1017
 // Size: 0x263, Type: bool
 function function_b9d2aee928c46b5f( lootid, quantity, inventoryslotindex, countalt, var_cbc0ab512152abfc )
@@ -455,7 +455,7 @@ function function_b9d2aee928c46b5f( lootid, quantity, inventoryslotindex, counta
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1283
 // Size: 0x122
 function function_f64964e50cc34c47( itembundlename, itembundle, item, autouse )
@@ -492,7 +492,7 @@ function function_f64964e50cc34c47( itembundlename, itembundle, item, autouse )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13ae
 // Size: 0xed, Type: bool
 function function_3298f1ad0b756cbd( itembundle, quantity, autouse )
@@ -500,7 +500,8 @@ function function_3298f1ad0b756cbd( itembundle, quantity, autouse )
     backpacksize = function_1b35b10884bd8d67();
     lootid = function_6d15e119c2779a93( itembundle );
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         currentlootid = function_d870b2c45335bd88( i );
         
         if ( currentlootid == 0 && currentlootid != lootid && ( !istrue( autouse ) || istrue( itembundle.var_bbae53787b1abf3e ) && istrue( itembundle.var_515391a9c294e239 ) ) )
@@ -523,14 +524,15 @@ function function_3298f1ad0b756cbd( itembundle, quantity, autouse )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14a4
 // Size: 0x46, Type: bool
 function function_4f73be3d1273e86b()
 {
     backpacksize = function_1b35b10884bd8d67();
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         currentlootid = function_d870b2c45335bd88( i );
         
         if ( currentlootid == 0 )
@@ -543,7 +545,7 @@ function function_4f73be3d1273e86b()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14f3
 // Size: 0x65
 function function_4776284a348ebb6a( targetlootid )
@@ -556,7 +558,8 @@ function function_4776284a348ebb6a( targetlootid )
     
     backpacksize = function_1b35b10884bd8d67();
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         currentlootid = function_d870b2c45335bd88( i );
         
         if ( currentlootid == targetlootid )
@@ -569,7 +572,7 @@ function function_4776284a348ebb6a( targetlootid )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1561
 // Size: 0x1c4
 function function_4b5b6b5953138fe7( itembundle, itemcount )
@@ -597,7 +600,8 @@ function function_4b5b6b5953138fe7( itembundle, itemcount )
     
     if ( !istrue( itembundle.disablestacking ) )
     {
-        for (i = 0; i < function_1b35b10884bd8d67(); i++) {
+        for ( i = 0; i < function_1b35b10884bd8d67() ; i++ )
+        {
             currentlootid = function_d870b2c45335bd88( i );
             
             if ( currentlootid == lootid )
@@ -620,7 +624,8 @@ function function_4b5b6b5953138fe7( itembundle, itemcount )
         }
     }
     
-    for (i = 0; i < function_1b35b10884bd8d67(); i++) {
+    for ( i = 0; i < function_1b35b10884bd8d67() ; i++ )
+    {
         currentlootid = function_d870b2c45335bd88( i );
         
         if ( currentlootid == 0 && currentlootid != lootid )
@@ -640,7 +645,7 @@ function function_4b5b6b5953138fe7( itembundle, itemcount )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x172e
 // Size: 0x207
 function function_dbd1a6ad7182a0da()
@@ -667,7 +672,8 @@ function function_dbd1a6ad7182a0da()
         self.var_8bebfe2a52f10bf7 = undefined;
     }
     
-    for (index = 0; index < 50; index++) {
+    for ( index = 0; index < 50 ; index++ )
+    {
         lootid = self getplayerdata( level.var_5d69837cf4db0407, "dmzInventory", index, "lootID" );
         quantity = self getplayerdata( level.var_5d69837cf4db0407, "dmzInventory", index, "quantity" );
         type = scripts\cp_mp\utility\loot::function_282cf83c9eeda744( lootid );
@@ -696,7 +702,7 @@ function function_dbd1a6ad7182a0da()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x193d
 // Size: 0x247
 function function_a342582cc42f28cb()
@@ -766,7 +772,7 @@ function function_a342582cc42f28cb()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b8c
 // Size: 0x1e9
 function function_48b99b38763ac68c()
@@ -808,7 +814,8 @@ function function_48b99b38763ac68c()
         items_dropitem( itembundle, quantity, dropstruct );
     }
     
-    for (i = 0; i < function_1b35b10884bd8d67(); i++) {
+    for ( i = 0; i < function_1b35b10884bd8d67() ; i++ )
+    {
         lootid = function_d870b2c45335bd88( i );
         quantity = function_5ce7fe3dca9c1a22( i );
         
@@ -822,7 +829,7 @@ function function_48b99b38763ac68c()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d7d
 // Size: 0x4, Type: bool
 function function_ceee9e1f4c8d1135()
@@ -840,7 +847,7 @@ function private shoulddropitem( itembundle, quantity )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1db5
 // Size: 0x8c
 function function_4433fa5f0f02ffd8( dropstruct, itemindex )
@@ -929,7 +936,7 @@ function private function_3d862161c8265c44( callbacks, dropstruct, var_16e342d69
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1f5e
 // Size: 0x285
 function function_2166e0fab7a3263( itemtype, dropstruct, itemindex, var_16e342d6918d81d1, var_26b448211c62d57a )
@@ -1003,7 +1010,7 @@ function function_2166e0fab7a3263( itemtype, dropstruct, itemindex, var_16e342d6
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21eb
 // Size: 0x172, Type: bool
 function function_10e55eeb4c15dd5a( item, autouse, var_95484d8d503de3b8 )
@@ -1069,7 +1076,7 @@ function function_10e55eeb4c15dd5a( item, autouse, var_95484d8d503de3b8 )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2366
 // Size: 0x17a
 function function_354e083223035de2( item, lootid )
@@ -1130,7 +1137,7 @@ function function_354e083223035de2( item, lootid )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24e8
 // Size: 0x158
 function function_86d7576fb0f41e09( item, lootid )
@@ -1160,7 +1167,7 @@ function function_86d7576fb0f41e09( item, lootid )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2648
 // Size: 0x1ec
 function function_7ea0601f1375d4c7( stubcache )
@@ -1195,7 +1202,8 @@ function function_7ea0601f1375d4c7( stubcache )
     
     scripts\cp_mp\loot\common_cache::function_446c7ad7bcc70992( self, 0, itemlootid, function_b8bfea9514c89a77( itemcount ), itemweapondata );
     
-    for (itemindex = 1; itemindex < 10; itemindex++) {
+    for ( itemindex = 1; itemindex < 10 ; itemindex++ )
+    {
         scripts\cp_mp\loot\common_cache::function_c7294f5b9b5006d5( self, itemindex );
     }
     
@@ -1206,7 +1214,7 @@ function function_7ea0601f1375d4c7( stubcache )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x283c
 // Size: 0x186
 function function_cc518f9c6e1d9543( stubcache )
@@ -1250,7 +1258,7 @@ function function_cc518f9c6e1d9543( stubcache )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29ca
 // Size: 0x49
 function function_833716900e3b8d89( cache )
@@ -1270,7 +1278,7 @@ function function_833716900e3b8d89( cache )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a1b
 // Size: 0x85, Type: bool
 function function_d47564d30fb44889( cache )
@@ -1307,7 +1315,7 @@ function function_d47564d30fb44889( cache )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2aa9
 // Size: 0x50
 function function_ceec15c03350d7d3( player )
@@ -1321,7 +1329,7 @@ function function_ceec15c03350d7d3( player )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b01
 // Size: 0xe2
 function function_2d05d3354917445b( backpackindex, lootid, quantity )
@@ -1354,7 +1362,7 @@ function function_2d05d3354917445b( backpackindex, lootid, quantity )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2beb
 // Size: 0x71, Type: bool
 function inventory_isenabled()
@@ -1371,7 +1379,7 @@ function inventory_isenabled()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c65
 // Size: 0x15
 function function_9bb27db31cac473d()
@@ -1380,7 +1388,7 @@ function function_9bb27db31cac473d()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c83
 // Size: 0x7
 function function_2205ef8e9a67e1be()
@@ -1389,7 +1397,7 @@ function function_2205ef8e9a67e1be()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c93
 // Size: 0x7
 function function_5f55af0d9c99908b()
@@ -1398,7 +1406,7 @@ function function_5f55af0d9c99908b()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ca3
 // Size: 0x83
 function function_d3405ff387ff4f2e()
@@ -1415,7 +1423,7 @@ function function_d3405ff387ff4f2e()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d2e
 // Size: 0x12
 function function_286713f0349afb22()
@@ -1424,7 +1432,7 @@ function function_286713f0349afb22()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d49
 // Size: 0x75, Type: bool
 function function_181a584e4a68d5d6( lootid, quantity )
@@ -1463,7 +1471,7 @@ function function_181a584e4a68d5d6( lootid, quantity )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dc7
 // Size: 0x3f
 function function_1b35b10884bd8d67()
@@ -1480,7 +1488,7 @@ function function_1b35b10884bd8d67()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e0f
 // Size: 0x79
 function function_32c79be2384f10fb( size, itembundle )
@@ -1503,7 +1511,7 @@ function function_32c79be2384f10fb( size, itembundle )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e90
 // Size: 0x66
 function function_afb28406eb20d361( itembundle )
@@ -1534,7 +1542,7 @@ function function_afb28406eb20d361( itembundle )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2eff
 // Size: 0x26
 function function_d870b2c45335bd88( index )
@@ -1543,7 +1551,7 @@ function function_d870b2c45335bd88( index )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f2e
 // Size: 0x26
 function function_5ce7fe3dca9c1a22( index )
@@ -1552,7 +1560,7 @@ function function_5ce7fe3dca9c1a22( index )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f5d
 // Size: 0xc2
 function function_ca3bbb1070436540( index, lootid, quantity )
@@ -1579,7 +1587,7 @@ function function_ca3bbb1070436540( index, lootid, quantity )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3027
 // Size: 0xda
 function function_e2b4c63cab73c1f1()
@@ -1595,7 +1603,8 @@ function function_e2b4c63cab73c1f1()
     attachments = [];
     attachmentids = [];
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         attachments[ attachmentindex ] = self getplayerdata( level.var_5d69837cf4db0407, function_5f55af0d9c99908b(), "attachmentSetup", attachmentindex, "attachment" );
         attachmentids[ attachmentindex ] = self getplayerdata( level.var_5d69837cf4db0407, function_5f55af0d9c99908b(), "attachmentSetup", attachmentindex, "variantID" );
     }
@@ -1604,7 +1613,7 @@ function function_e2b4c63cab73c1f1()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x310a
 // Size: 0x1b5
 function function_ad55c4cd0426138d( weapon )
@@ -1640,7 +1649,8 @@ function function_ad55c4cd0426138d( weapon )
     defaulttoidmap = scripts\cp_mp\weapon::function_792bacb194f6f862( rootname );
     var_428a6c7cd65625c0 = 0;
     
-    for (attachmentindex = 0; attachmentindex < attachments.size && var_428a6c7cd65625c0 < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < attachments.size && var_428a6c7cd65625c0 < 7 ; attachmentindex++ )
+    {
         if ( !isdefined( defaulttoidmap[ attachments[ attachmentindex ] ] ) )
         {
             self setplayerdata( level.var_5d69837cf4db0407, function_5f55af0d9c99908b(), "attachmentSetup", var_428a6c7cd65625c0, "attachment", attachments[ attachmentindex ] );
@@ -1651,7 +1661,7 @@ function function_ad55c4cd0426138d( weapon )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32c7
 // Size: 0x22, Type: bool
 function function_ced2abb96f1d86a5()
@@ -1660,7 +1670,7 @@ function function_ced2abb96f1d86a5()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32f2
 // Size: 0x1c
 function function_69df855efa3b5b9e()
@@ -1669,7 +1679,7 @@ function function_69df855efa3b5b9e()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3317
 // Size: 0x175
 function function_bd059d6c2e0ece90()
@@ -1682,25 +1692,28 @@ function function_bd059d6c2e0ece90()
     self setplayerdata( level.var_5d69837cf4db0407, function_5f55af0d9c99908b(), "variantID", 0 );
     self setplayerdata( level.var_5d69837cf4db0407, function_5f55af0d9c99908b(), "blueprintName", "" );
     
-    for (attachindex = 0; attachindex < 5; attachindex++) {
+    for ( attachindex = 0; attachindex < 5 ; attachindex++ )
+    {
         self setplayerdata( level.var_5d69837cf4db0407, function_5f55af0d9c99908b(), "attachmentSetup", attachindex, "attachment", "none" );
         self setplayerdata( level.var_5d69837cf4db0407, function_5f55af0d9c99908b(), "attachmentSetup", attachindex, "variantID", 0 );
     }
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4 ; var_36d2abbdcbcb186c++ )
+    {
         self setplayerdata( level.var_5d69837cf4db0407, function_5f55af0d9c99908b(), "sticker", var_36d2abbdcbcb186c, "none" );
     }
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3494
 // Size: 0x3c
 function function_389d4cd85d174957()
 {
     backpacksize = function_1b35b10884bd8d67();
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         function_ca3bbb1070436540( i, 0, 0 );
     }
     
@@ -1708,7 +1721,7 @@ function function_389d4cd85d174957()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34d8
 // Size: 0x5d
 function function_e70feddd94ade74f()
@@ -1722,7 +1735,7 @@ function function_e70feddd94ade74f()
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x353d
 // Size: 0x260
 function function_9ac814eecef8b3af( classindex, weaponindex, clearweapon, clearweaponid )
@@ -1744,18 +1757,20 @@ function function_9ac814eecef8b3af( classindex, weaponindex, clearweapon, clearw
     self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "variantID", 0 );
     self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "blueprintName", "" );
     
-    for (attachindex = 0; attachindex < 5; attachindex++) {
+    for ( attachindex = 0; attachindex < 5 ; attachindex++ )
+    {
         self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "attachmentSetup", attachindex, "attachment", "none" );
         self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "attachmentSetup", attachindex, "variantID", 0 );
     }
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4 ; var_36d2abbdcbcb186c++ )
+    {
         self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "sticker", var_36d2abbdcbcb186c, "none" );
     }
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x37a5
 // Size: 0x42
 function function_cf99f67e363f5d6c( classindex, equipindex, ref )
@@ -1764,7 +1779,7 @@ function function_cf99f67e363f5d6c( classindex, equipindex, ref )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x37ef
 // Size: 0x3d
 function function_b10833eee9e6a55f( classindex, superindex, ref )
@@ -1773,7 +1788,7 @@ function function_b10833eee9e6a55f( classindex, superindex, ref )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3834
 // Size: 0x34
 function function_9000524cb245fdbe( index, ref )
@@ -1782,7 +1797,7 @@ function function_9000524cb245fdbe( index, ref )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3870
 // Size: 0x21
 function function_4df538728f6d3815( weaponslotindex )
@@ -1796,7 +1811,7 @@ function function_4df538728f6d3815( weaponslotindex )
 }
 
 // Namespace common_inventory / scripts\cp_mp\loot\common_inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3899
 // Size: 0xd5, Type: bool
 function function_852cd6dd29c274bd( currentweapon )

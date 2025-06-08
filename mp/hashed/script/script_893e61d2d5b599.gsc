@@ -4,7 +4,7 @@
 #namespace jup_ob_quest_s0_act_1_cs;
 
 // Namespace jup_ob_quest_s0_act_1_cs / namespace_8f52b12ca3af49b1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1741
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace jup_ob_quest_s0_act_1_cs / namespace_8f52b12ca3af49b1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17b6
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace jup_ob_quest_s0_act_1_cs / namespace_8f52b12ca3af49b1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1825
 // Size: 0x71ce
 function createstructs( fe, us, cf )
@@ -1339,7 +1339,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace jup_ob_quest_s0_act_1_cs / namespace_8f52b12ca3af49b1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x89fb
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -1348,7 +1348,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace jup_ob_quest_s0_act_1_cs / namespace_8f52b12ca3af49b1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a05
 // Size: 0xe
 function cleanup()

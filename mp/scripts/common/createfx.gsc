@@ -7,7 +7,7 @@
 #namespace createfx;
 
 // Namespace createfx / scripts\common\createfx
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcd2
 // Size: 0xf4
 function createeffect( type, fxid, islevelexploder )
@@ -43,7 +43,7 @@ function createeffect( type, fxid, islevelexploder )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdcf
 // Size: 0x7
 function getloopeffectdelaydefault()
@@ -52,7 +52,7 @@ function getloopeffectdelaydefault()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xddf
 // Size: 0x4
 function getoneshoteffectdelaydefault()
@@ -61,7 +61,7 @@ function getoneshoteffectdelaydefault()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdec
 // Size: 0x3, Type: bool
 function getexploderdelaydefault()
@@ -70,7 +70,7 @@ function getexploderdelaydefault()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdf8
 // Size: 0x7
 function getintervalsounddelaymindefault()
@@ -79,7 +79,7 @@ function getintervalsounddelaymindefault()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe08
 // Size: 0x4
 function getintervalsounddelaymaxdefault()
@@ -88,7 +88,7 @@ function getintervalsounddelaymaxdefault()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe15
 // Size: 0x133
 function createloopsound()
@@ -127,7 +127,7 @@ function createloopsound()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf51
 // Size: 0x5c
 function createintervalsound()
@@ -140,7 +140,7 @@ function createintervalsound()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfb6
 // Size: 0x42
 function createnewexploder()
@@ -156,7 +156,7 @@ function createnewexploder()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1001
 // Size: 0x4f
 function add_exploder( exploderid, ent )
@@ -173,7 +173,7 @@ function add_exploder( exploderid, ent )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1058
 // Size: 0x1fd
 function createnewexploder_internal( ent )
@@ -240,7 +240,7 @@ function createnewexploder_internal( ent )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x125e
 // Size: 0x3a
 function createexploderex( fxid, exploderid )
@@ -251,7 +251,7 @@ function createexploderex( fxid, exploderid )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12a1
 // Size: 0xeb
 function createreactiveent( fxid )
@@ -283,7 +283,7 @@ function createreactiveent( fxid )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1395
 // Size: 0x4f
 function set_origin_and_angles( origin, angles )
@@ -298,7 +298,7 @@ function set_origin_and_angles( origin, angles )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13ec
 // Size: 0x4a
 function set_forward_and_up_vectors()
@@ -308,7 +308,7 @@ function set_forward_and_up_vectors()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x143e
 // Size: 0x10a
 function createfx_common()
@@ -335,7 +335,7 @@ function createfx_common()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1550
 // Size: 0x17f
 function init_level_variables()
@@ -360,7 +360,7 @@ function init_level_variables()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16d7
 // Size: 0xbf
 function init_locked_list()
@@ -375,7 +375,7 @@ function init_locked_list()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x179e
 // Size: 0x25b
 function init_colors()
@@ -406,7 +406,7 @@ function init_colors()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a01
 // Size: 0x775
 function createfxlogic()
@@ -614,7 +614,8 @@ function createfxlogic()
             menu_fx_option_set();
         }
         
-        for (i = 0; i < level.createfxent.size; i++) {
+        for ( i = 0; i < level.createfxent.size ; i++ )
+        {
             ent = level.createfxent[ i ];
             difference = vectornormalize( ent.v[ "origin" ] - level.player.origin + ( 0, 0, 55 ) );
             newdot = vectordot( forward, difference );
@@ -687,7 +688,7 @@ function createfxlogic()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x217e
 // Size: 0x1b2
 function modify_player_speed()
@@ -745,7 +746,7 @@ function modify_player_speed()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2338
 // Size: 0x16b
 function set_player_speed_hud()
@@ -784,7 +785,7 @@ function set_player_speed_hud()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24ab
 // Size: 0x15
 function toggle_createfx_drawing()
@@ -793,7 +794,7 @@ function toggle_createfx_drawing()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24c8
 // Size: 0xca
 function insert_effect()
@@ -825,7 +826,7 @@ function insert_effect()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x259a
 // Size: 0xbd, Type: bool
 function is_ent_filtered_out( ent, filter )
@@ -852,7 +853,7 @@ function is_ent_filtered_out( ent, filter )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2660
 // Size: 0x1e5
 function manipulate_createfx_ents( highlightedent, var_24762ec425490dd4, leftheld, ctrlheld, right )
@@ -872,7 +873,8 @@ function manipulate_createfx_ents( highlightedent, var_24762ec425490dd4, lefthel
         highlightedent = undefined;
     }
     
-    for (i = 0; i < level.createfxent.size; i++) {
+    for ( i = 0; i < level.createfxent.size ; i++ )
+    {
         ent = level.createfxent[ i ];
         
         if ( !ent.drawn )
@@ -945,7 +947,7 @@ function manipulate_createfx_ents( highlightedent, var_24762ec425490dd4, lefthel
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x284d
 // Size: 0x2e1
 function draw_origin( scale, colorindex )
@@ -996,7 +998,7 @@ function draw_origin( scale, colorindex )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b36
 // Size: 0x18f
 function createfx_print3d( colorindex, scale, right )
@@ -1038,7 +1040,7 @@ function createfx_print3d( colorindex, scale, right )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ccd
 // Size: 0xbe
 function get_print3d_text()
@@ -1063,7 +1065,7 @@ function get_print3d_text()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d93
 // Size: 0x26
 function select_by_name_list()
@@ -1075,7 +1077,7 @@ function select_by_name_list()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dc1
 // Size: 0x295
 function handle_selected_ents( var_c42084c511513568 )
@@ -1109,7 +1111,8 @@ function handle_selected_ents( var_c42084c511513568 )
                 copy_angles_of_selected_ents();
             }
             
-            for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+            for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+            {
                 level._createfx.selected_fx_ents[ i ] draw_axis();
             }
             
@@ -1123,7 +1126,8 @@ function handle_selected_ents( var_c42084c511513568 )
             set_tool_hudelem( "Mode:", "move" );
             var_22f5978e35ba0e7d = get_selected_move_vector();
             
-            for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+            for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+            {
                 ent = level._createfx.selected_fx_ents[ i ];
                 
                 if ( isdefined( ent.model ) )
@@ -1150,7 +1154,7 @@ function handle_selected_ents( var_c42084c511513568 )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x305f
 // Size: 0xb1
 function selected_ent_buttons( var_c42084c511513568 )
@@ -1194,7 +1198,7 @@ function selected_ent_buttons( var_c42084c511513568 )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3119
 // Size: 0x21a
 function modify_rate()
@@ -1252,7 +1256,7 @@ function modify_rate()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x333b
 // Size: 0x2a
 function toggle_axismode()
@@ -1261,7 +1265,7 @@ function toggle_axismode()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x336d
 // Size: 0x49
 function toggle_snap2normal()
@@ -1271,7 +1275,7 @@ function toggle_snap2normal()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33be
 // Size: 0x9f
 function toggle_snap2angle()
@@ -1287,14 +1291,15 @@ function toggle_snap2angle()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3465
 // Size: 0xb1
 function copy_angles_of_selected_ents()
 {
     level notify( "new_ent_selection" );
     
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         ent = level._createfx.selected_fx_ents[ i ];
         ent.v[ "angles" ] = level._createfx.selected_fx_ents[ level._createfx.selected_fx_ents.size - 1 ].v[ "angles" ];
         ent set_forward_and_up_vectors();
@@ -1304,14 +1309,15 @@ function copy_angles_of_selected_ents()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x351e
 // Size: 0x83
 function reset_axis_of_selected_ents()
 {
     level notify( "new_ent_selection" );
     
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         ent = level._createfx.selected_fx_ents[ i ];
         ent.v[ "angles" ] = ( 0, 0, 0 );
         ent set_forward_and_up_vectors();
@@ -1321,7 +1327,7 @@ function reset_axis_of_selected_ents()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35a9
 // Size: 0x53
 function last_selected_entity_has_changed( lastselectentity )
@@ -1342,12 +1348,13 @@ function last_selected_entity_has_changed( lastselectentity )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3605
 // Size: 0xa8
 function drop_selection_to_ground()
 {
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         ent = level._createfx.selected_fx_ents[ i ];
         trace = scripts\engine\trace::_bullet_trace( ent.v[ "origin" ], ent.v[ "origin" ] + ( 0, 0, -2048 ), 0, undefined );
         ent.v[ "origin" ] = trace[ "position" ];
@@ -1355,7 +1362,7 @@ function drop_selection_to_ground()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36b5
 // Size: 0xe1
 function set_off_exploders()
@@ -1378,7 +1385,7 @@ function set_off_exploders()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x379e
 // Size: 0xe3
 function draw_distance()
@@ -1397,7 +1404,8 @@ function draw_distance()
         maxdist = getdvarint( @"hash_8ba61355a9c9b4fb" );
         maxdist *= maxdist;
         
-        for (i = 0; i < level.createfxent.size; i++) {
+        for ( i = 0; i < level.createfxent.size ; i++ )
+        {
             ent = level.createfxent[ i ];
             ent.drawn = distancesquared( level.player.origin, ent.v[ "origin" ] ) <= maxdist;
             count++;
@@ -1417,7 +1425,7 @@ function draw_distance()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3889
 // Size: 0x51
 function createfx_autosave()
@@ -1439,7 +1447,7 @@ function createfx_autosave()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x38e2
 // Size: 0x139
 function rotate_over_time( org, rotater )
@@ -1447,7 +1455,8 @@ function rotate_over_time( org, rotater )
     level endon( "new_ent_selection" );
     timer = 0.1;
     
-    for (p = 0; p < timer * 20; p++) {
+    for ( p = 0; p < timer * 20 ; p++ )
+    {
         if ( level.selectedrotate_pitch != 0 )
         {
             org addpitch( level.selectedrotate_pitch );
@@ -1464,7 +1473,8 @@ function rotate_over_time( org, rotater )
         waitframe();
         org draw_axis();
         
-        for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+        for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+        {
             ent = level._createfx.selected_fx_ents[ i ];
             
             if ( isdefined( ent.model ) )
@@ -1479,7 +1489,7 @@ function rotate_over_time( org, rotater )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a23
 // Size: 0x1d
 function delete_pressed()
@@ -1494,7 +1504,7 @@ function delete_pressed()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a48
 // Size: 0xac
 function remove_selected_option()
@@ -1506,7 +1516,8 @@ function remove_selected_option()
     
     name = level._createfx.options[ level._createfx.selected_fx_option_index ][ "name" ];
     
-    for (i = 0; i < level.createfxent.size; i++) {
+    for ( i = 0; i < level.createfxent.size ; i++ )
+    {
         ent = level.createfxent[ i ];
         
         if ( !ent_is_selected( ent ) )
@@ -1522,7 +1533,7 @@ function remove_selected_option()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3afc
 // Size: 0x16
 function remove_option( name )
@@ -1531,14 +1542,15 @@ function remove_option( name )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b1a
 // Size: 0xf2
 function delete_selection()
 {
     newarray = [];
     
-    for (i = 0; i < level.createfxent.size; i++) {
+    for ( i = 0; i < level.createfxent.size ; i++ )
+    {
         ent = level.createfxent[ i ];
         
         if ( ent_is_selected( ent ) )
@@ -1569,7 +1581,7 @@ function delete_selection()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c14
 // Size: 0x136
 function move_selection_to_cursor()
@@ -1584,7 +1596,8 @@ function move_selection_to_cursor()
     center = get_center_of_array( level._createfx.selected_fx_ents );
     difference = center - origin;
     
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         ent = level._createfx.selected_fx_ents[ i ];
         
         if ( isdefined( ent.model ) )
@@ -1605,7 +1618,7 @@ function move_selection_to_cursor()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d52
 // Size: 0xfc
 function convert_selection_to_exploder()
@@ -1637,7 +1650,7 @@ function convert_selection_to_exploder()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e56
 // Size: 0x2d
 function select_last_entity()
@@ -1646,7 +1659,7 @@ function select_last_entity()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e8b
 // Size: 0x165
 function select_all_exploders_of_currently_selected( key )
@@ -1691,7 +1704,7 @@ function select_all_exploders_of_currently_selected( key )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ff8
 // Size: 0xb0
 function copy_ents()
@@ -1703,7 +1716,8 @@ function copy_ents()
     
     array = [];
     
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         ent = level._createfx.selected_fx_ents[ i ];
         newent = spawnstruct();
         newent.v = ent.v;
@@ -1715,7 +1729,7 @@ function copy_ents()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40b0
 // Size: 0x17
 function post_entity_creation_function()
@@ -1725,7 +1739,7 @@ function post_entity_creation_function()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40cf
 // Size: 0x6a
 function paste_ents()
@@ -1737,7 +1751,8 @@ function paste_ents()
     
     clear_entity_selection();
     
-    for (i = 0; i < level.stored_ents.size; i++) {
+    for ( i = 0; i < level.stored_ents.size ; i++ )
+    {
         add_and_select_entity( level.stored_ents[ i ] );
     }
     
@@ -1748,7 +1763,7 @@ function paste_ents()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4141
 // Size: 0x28
 function add_and_select_entity( ent )
@@ -1758,14 +1773,15 @@ function add_and_select_entity( ent )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4171
 // Size: 0xa3
 function get_center_of_array( array )
 {
     center = ( 0, 0, 0 );
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         center = ( center[ 0 ] + array[ i ].v[ "origin" ][ 0 ], center[ 1 ] + array[ i ].v[ "origin" ][ 1 ], center[ 2 ] + array[ i ].v[ "origin" ][ 2 ] );
     }
     
@@ -1773,7 +1789,7 @@ function get_center_of_array( array )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x421d
 // Size: 0xf0
 function goto_selected()
@@ -1802,7 +1818,7 @@ function goto_selected()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4315
 // Size: 0x14
 function ent_draw_axis()
@@ -1817,7 +1833,7 @@ function ent_draw_axis()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4331
 // Size: 0x2f, Type: bool
 function rotation_is_occuring()
@@ -1836,12 +1852,13 @@ function rotation_is_occuring()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4369
 // Size: 0x20f
 function print_fx_options( ent, tab, autosave )
 {
-    for (i = 0; i < level._createfx.options.size; i++) {
+    for ( i = 0; i < level._createfx.options.size ; i++ )
+    {
         option = level._createfx.options[ i ];
         optionname = option[ "name" ];
         
@@ -1898,7 +1915,7 @@ function print_fx_options( ent, tab, autosave )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4580
 // Size: 0x65
 function entity_highlight_disable()
@@ -1923,7 +1940,7 @@ function entity_highlight_disable()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45ed
 // Size: 0x62
 function entity_highlight_enable()
@@ -1948,7 +1965,7 @@ function entity_highlight_enable()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4657
 // Size: 0x3d
 function clear_settable_fx()
@@ -1964,18 +1981,19 @@ function clear_settable_fx()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x469c
 // Size: 0x5c
 function reset_fx_hud_colors()
 {
-    for (i = 0; i < level._createfx.hudelem_count; i++) {
+    for ( i = 0; i < level._createfx.hudelem_count ; i++ )
+    {
         level._createfx.hudelems[ i ][ 0 ].color = ( 1, 1, 1 );
     }
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4700
 // Size: 0x41
 function toggle_entity_selection( index, ent )
@@ -1990,7 +2008,7 @@ function toggle_entity_selection( index, ent )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4749
 // Size: 0x87
 function select_entity( index, ent )
@@ -2008,7 +2026,7 @@ function select_entity( index, ent )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47d8
 // Size: 0x25, Type: bool
 function ent_is_highlighted( ent )
@@ -2022,7 +2040,7 @@ function ent_is_highlighted( ent )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4806
 // Size: 0xe4
 function deselect_entity( index, ent )
@@ -2043,7 +2061,8 @@ function deselect_entity( index, ent )
     
     newarray = [];
     
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         if ( level._createfx.selected_fx_ents[ i ] != ent )
         {
             newarray[ newarray.size ] = level._createfx.selected_fx_ents[ i ];
@@ -2054,7 +2073,7 @@ function deselect_entity( index, ent )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48f2
 // Size: 0x21, Type: bool
 function index_is_selected( index )
@@ -2063,12 +2082,13 @@ function index_is_selected( index )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x491c
 // Size: 0x55, Type: bool
 function ent_is_selected( ent )
 {
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         if ( level._createfx.selected_fx_ents[ i ] == ent )
         {
             return true;
@@ -2079,12 +2099,13 @@ function ent_is_selected( ent )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x497a
 // Size: 0x93
 function clear_entity_selection()
 {
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         if ( !ent_is_highlighted( level._createfx.selected_fx_ents[ i ] ) )
         {
             level._createfx.selected_fx_ents[ i ] thread entity_highlight_disable();
@@ -2096,7 +2117,7 @@ function clear_entity_selection()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a15
 // Size: 0x21d
 function draw_axis()
@@ -2130,7 +2151,7 @@ function draw_axis()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c3a
 // Size: 0x8c
 function set_axis_model( model )
@@ -2148,7 +2169,7 @@ function set_axis_model( model )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cce
 // Size: 0x33
 function remove_axis_model()
@@ -2162,7 +2183,7 @@ function remove_axis_model()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d09
 // Size: 0x138
 function draw_cross()
@@ -2187,7 +2208,7 @@ function draw_cross()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e49
 // Size: 0x64
 function toggle_createfx_axis()
@@ -2206,7 +2227,7 @@ function toggle_createfx_axis()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4eb5
 // Size: 0x14
 function createfx_centerprint( text )
@@ -2215,7 +2236,7 @@ function createfx_centerprint( text )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ed1
 // Size: 0x47
 function createfx_centerprint_thread( text )
@@ -2231,7 +2252,7 @@ function createfx_centerprint_thread( text )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f20
 // Size: 0x26e
 function get_selected_move_vector()
@@ -2321,7 +2342,7 @@ function get_selected_move_vector()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5197
 // Size: 0x207
 function set_anglemod_move_vector()
@@ -2406,7 +2427,7 @@ function set_anglemod_move_vector()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53a6
 // Size: 0x99
 function update_selected_entities()
@@ -2430,7 +2451,7 @@ function update_selected_entities()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5447
 // Size: 0x25
 function stop_fx_looper()
@@ -2444,7 +2465,7 @@ function stop_fx_looper()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5474
 // Size: 0xa
 function stop_loopsound()
@@ -2453,7 +2474,7 @@ function stop_loopsound()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5486
 // Size: 0x90
 function func_get_level_fx()
@@ -2481,7 +2502,7 @@ function func_get_level_fx()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x551f
 // Size: 0x7f
 function restart_fx_looper()
@@ -2507,7 +2528,7 @@ function restart_fx_looper()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55a6
 // Size: 0x8b
 function refresh_reactive_fx_ents()
@@ -2525,7 +2546,7 @@ function refresh_reactive_fx_ents()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5639
 // Size: 0x28a
 function process_fx_rotater()
@@ -2552,7 +2573,8 @@ function process_fx_rotater()
         org.v[ "origin" ] = center;
         rotater = [];
         
-        for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+        for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+        {
             rotater[ i ] = spawn( "script_origin", level._createfx.selected_fx_ents[ i ].v[ "origin" ] );
             rotater[ i ].angles = level._createfx.selected_fx_ents[ i ].v[ "angles" ];
             rotater[ i ] linkto( org );
@@ -2561,7 +2583,8 @@ function process_fx_rotater()
         rotate_over_time( org, rotater );
         org delete();
         
-        for (i = 0; i < rotater.size; i++) {
+        for ( i = 0; i < rotater.size ; i++ )
+        {
             rotater[ i ] delete();
         }
     }
@@ -2593,7 +2616,7 @@ function process_fx_rotater()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x58cb
 // Size: 0xdb
 function spawn_grenade()
@@ -2605,7 +2628,7 @@ function spawn_grenade()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59ae
 // Size: 0x14d
 function show_help()
@@ -2641,7 +2664,7 @@ function show_help()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b03
 // Size: 0x15e
 function generate_fx_log( autosave )
@@ -2679,7 +2702,7 @@ function generate_fx_log( autosave )
 /#
 
     // Namespace createfx / scripts\common\createfx
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x5c69
     // Size: 0x423, Type: dev
     function write_log( array, type, autosave, var_331d6624ff42ad58 )
@@ -2779,7 +2802,7 @@ function generate_fx_log( autosave )
 #/
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6094
 // Size: 0x12b
 function createfx_adjust_array()
@@ -2791,7 +2814,8 @@ function createfx_adjust_array()
         origin = [];
         angles = [];
         
-        for (i = 0; i < 3; i++) {
+        for ( i = 0; i < 3 ; i++ )
+        {
             origin[ i ] = ent.v[ "origin" ][ i ];
             angles[ i ] = ent.v[ "angles" ][ i ];
             
@@ -2812,7 +2836,7 @@ function createfx_adjust_array()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x61c7
 // Size: 0x191
 function get_createfx_array( type )
@@ -2844,7 +2868,8 @@ function get_createfx_array( type )
     
     new_array = [];
     
-    for (i = 0; i < types.size; i++) {
+    for ( i = 0; i < types.size ; i++ )
+    {
         foreach ( ent in array[ i ] )
         {
             new_array[ new_array.size ] = ent;
@@ -2855,7 +2880,7 @@ function get_createfx_array( type )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6361
 // Size: 0x6a
 function get_createfx_types( type )
@@ -2880,7 +2905,7 @@ function get_createfx_types( type )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x63d4
 // Size: 0x64, Type: bool
 function check_reactive_fx_type( ent, type )
@@ -2899,7 +2924,7 @@ function check_reactive_fx_type( ent, type )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6441
 // Size: 0xaf, Type: bool
 function is_createfx_type( ent, type )
@@ -2930,7 +2955,7 @@ function is_createfx_type( ent, type )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64f9
 // Size: 0x201
 function createfx_filter_types()
@@ -2975,7 +3000,8 @@ function createfx_filter_types()
     
     new_array = [];
     
-    for (i = 0; i < types.size; i++) {
+    for ( i = 0; i < types.size ; i++ )
+    {
         foreach ( ent in array[ i ] )
         {
             new_array[ new_array.size ] = ent;
@@ -2988,7 +3014,7 @@ function createfx_filter_types()
 /#
 
     // Namespace createfx / scripts\common\createfx
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6702
     // Size: 0xc, Type: dev
     function cfxprintlnstart()
@@ -2997,7 +3023,7 @@ function createfx_filter_types()
     }
 
     // Namespace createfx / scripts\common\createfx
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x6716
     // Size: 0x16, Type: dev
     function cfxprintln( string )
@@ -3006,7 +3032,7 @@ function createfx_filter_types()
     }
 
     // Namespace createfx / scripts\common\createfx
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x6734
     // Size: 0xfe, Type: dev
     function cfxprintlnend( autosave, var_331d6624ff42ad58, type )
@@ -3045,7 +3071,7 @@ function createfx_filter_types()
 #/
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x683a
 // Size: 0x2b
 function get_raw_or_devraw_subdir()
@@ -3059,7 +3085,7 @@ function get_raw_or_devraw_subdir()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x686d
 // Size: 0x2c
 function get_gamemode_subdir()
@@ -3078,7 +3104,7 @@ function get_gamemode_subdir()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68a1
 // Size: 0x30e
 function process_button_held_and_clicked()
@@ -3151,7 +3177,7 @@ function process_button_held_and_clicked()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6bb7
 // Size: 0x2d
 function locked( name )
@@ -3165,7 +3191,7 @@ function locked( name )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6bed
 // Size: 0x24, Type: bool
 function kb_locked( name )
@@ -3174,7 +3200,7 @@ function kb_locked( name )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c1a
 // Size: 0x73
 function add_button( name )
@@ -3202,7 +3228,7 @@ function add_button( name )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c95
 // Size: 0x21
 function add_kb_button( name )
@@ -3212,7 +3238,7 @@ function add_kb_button( name )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6cbe
 // Size: 0x25, Type: bool
 function buttondown( button, button2 )
@@ -3221,7 +3247,7 @@ function buttondown( button, button2 )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6cec
 // Size: 0x2d
 function buttonpressed_internal( button )
@@ -3240,7 +3266,7 @@ function buttonpressed_internal( button )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6d22
 // Size: 0x55, Type: bool
 function button_is_held( name, name2, name3 )
@@ -3265,7 +3291,7 @@ function button_is_held( name, name2, name3 )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6d80
 // Size: 0x55, Type: bool
 function button_is_clicked( name, name2, name3 )
@@ -3290,7 +3316,7 @@ function button_is_clicked( name, name2, name3 )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6dde
 // Size: 0x2bb
 function init_huds()
@@ -3323,10 +3349,12 @@ function init_huds()
         level.cleartextmarker setdevtext( "<dev string:x519>" );
     #/
     
-    for (i = 0; i < level._createfx.hudelem_count; i++) {
+    for ( i = 0; i < level._createfx.hudelem_count ; i++ )
+    {
         var_9af634fe97c006f5 = [];
         
-        for (p = 0; p < 1; p++) {
+        for ( p = 0; p < 1 ; p++ )
+        {
             newstr = newhudelem();
             newstr.alignx = "left";
             newstr.archived = 0;
@@ -3363,7 +3391,7 @@ function init_huds()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x70a1
 // Size: 0xb3
 function init_crosshair()
@@ -3386,7 +3414,7 @@ function init_crosshair()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x715c
 // Size: 0x83
 function clear_fx_hudelements()
@@ -3394,8 +3422,10 @@ function clear_fx_hudelements()
     level.cleartextmarker clearalltextafterhudelem();
     
     /#
-        for (i = 0; i < level._createfx.hudelem_count; i++) {
-            for (p = 0; p < 1; p++) {
+        for ( i = 0; i < level._createfx.hudelem_count ; i++ )
+        {
+            for ( p = 0; p < 1 ; p++ )
+            {
                 level._createfx.hudelems[ i ][ p ] setdevtext( "<dev string:x23>" );
             }
         }
@@ -3405,13 +3435,14 @@ function clear_fx_hudelements()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71e7
 // Size: 0x7e
 function set_fx_hudelement( text )
 {
     /#
-        for (p = 0; p < 1; p++) {
+        for ( p = 0; p < 1 ; p++ )
+        {
             level._createfx.hudelems[ level.fxhudelements ][ p ] setdevtext( text );
         }
     #/
@@ -3421,7 +3452,7 @@ function set_fx_hudelement( text )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x726d
 // Size: 0x8b
 function init_tool_hud()
@@ -3443,7 +3474,7 @@ function init_tool_hud()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7300
 // Size: 0xb2
 function new_tool_hud( name )
@@ -3463,7 +3494,7 @@ function new_tool_hud( name )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x73ba
 // Size: 0x20, Type: bool
 function current_mode_hud( name )
@@ -3472,7 +3503,7 @@ function current_mode_hud( name )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73e3
 // Size: 0xe
 function clear_tool_hud()
@@ -3481,7 +3512,7 @@ function clear_tool_hud()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x73f9
 // Size: 0x96
 function new_tool_hudelem( n )
@@ -3499,7 +3530,7 @@ function new_tool_hudelem( n )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7498
 // Size: 0x3b
 function get_tool_hudelem( name )
@@ -3513,7 +3544,7 @@ function get_tool_hudelem( name )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x74dc
 // Size: 0x142
 function set_tool_hudelem( var, value )
@@ -3565,7 +3596,7 @@ function set_tool_hudelem( var, value )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7626
 // Size: 0x161, Type: bool
 function select_by_substring()
@@ -3608,7 +3639,7 @@ function select_by_substring()
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7790
 // Size: 0x6d
 function select_index_array( index_array )
@@ -3621,7 +3652,7 @@ function select_index_array( index_array )
 }
 
 // Namespace createfx / scripts\common\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7805
 // Size: 0x61
 function deselect_all_ents()

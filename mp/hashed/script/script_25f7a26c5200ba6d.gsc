@@ -9,7 +9,7 @@
 #namespace warrior_ninja;
 
 // Namespace warrior_ninja / namespace_97d631f86585e487
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14f
 // Size: 0x72
 function function_575e0b9cb7ee4d8f()
@@ -23,7 +23,7 @@ function function_575e0b9cb7ee4d8f()
 }
 
 // Namespace warrior_ninja / namespace_97d631f86585e487
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c9
 // Size: 0xe3
 function function_b56a350cf32bf14f()
@@ -48,7 +48,7 @@ function function_b56a350cf32bf14f()
 }
 
 // Namespace warrior_ninja / namespace_97d631f86585e487
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b4
 // Size: 0x88
 function onplayerspawned()

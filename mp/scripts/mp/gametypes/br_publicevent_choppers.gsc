@@ -19,7 +19,7 @@
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x369
+// Checksum 0x0, Offset: 0x368
 // Size: 0x17
 function autoexec main()
 {
@@ -27,8 +27,8 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x388
+// Params 1
+// Checksum 0x0, Offset: 0x387
 // Size: 0xbd
 function init( eventinfo )
 {
@@ -44,8 +44,8 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44d
+// Params 0
+// Checksum 0x0, Offset: 0x44c
 // Size: 0x15
 function postinitfunc()
 {
@@ -53,8 +53,8 @@ function postinitfunc()
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x46a
+// Params 0
+// Checksum 0x0, Offset: 0x469
 // Size: 0x4, Type: bool
 function validatefunc()
 {
@@ -62,8 +62,8 @@ function validatefunc()
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x477
+// Params 0
+// Checksum 0x0, Offset: 0x476
 // Size: 0x24
 function waitfunc()
 {
@@ -74,8 +74,8 @@ function waitfunc()
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a3
+// Params 0
+// Checksum 0x0, Offset: 0x4a2
 // Size: 0xc5
 function activatefunc()
 {
@@ -95,13 +95,13 @@ function activatefunc()
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x570
+// Params 0
+// Checksum 0x0, Offset: 0x56f
 // Size: 0x51
 function calculateeventstarttime()
 {
-    minstarttime = getdvarfloat( @"hash_1eff74e2cf4c0351", 555 );
-    maxstarttime = getdvarfloat( @"hash_1f2286e2cf72729f", 765 );
+    minstarttime = getdvarfloat( @"scr_br_pe_choppers_starttime_min", 555 );
+    maxstarttime = getdvarfloat( @"scr_br_pe_choppers_starttime_max", 765 );
     
     if ( maxstarttime > minstarttime )
     {
@@ -112,8 +112,8 @@ function calculateeventstarttime()
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c9
+// Params 2
+// Checksum 0x0, Offset: 0x5c8
 // Size: 0x89
 function waituntilallchoppersaredead( mintime, eventendtime )
 {
@@ -153,8 +153,8 @@ function waituntilallchoppersaredead( mintime, eventendtime )
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x65a
+// Params 1
+// Checksum 0x0, Offset: 0x659
 // Size: 0x2d3
 function spawnchoppers( numchoppers )
 {
@@ -190,7 +190,8 @@ function spawnchoppers( numchoppers )
         var_35039a9883ab69d2 = 1000;
     }
     
-    for (i = 0; i < numchoppers; i++) {
+    for ( i = 0; i < numchoppers ; i++ )
+    {
         patrolzone = undefined;
         
         if ( isdefined( level.pe_chopper_zones ) )
@@ -234,8 +235,8 @@ function spawnchoppers( numchoppers )
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x935
+// Params 0
+// Checksum 0x0, Offset: 0x934
 // Size: 0x96
 function dropcrate()
 {
@@ -257,8 +258,8 @@ function dropcrate()
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d3
+// Params 1
+// Checksum 0x0, Offset: 0x9d2
 // Size: 0x124
 function oncrateuse( player )
 {
@@ -310,8 +311,8 @@ function oncrateuse( player )
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xaff
+// Params 3
+// Checksum 0x0, Offset: 0xafe
 // Size: 0x21c
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
 {
@@ -348,7 +349,7 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
         }
     }
     
-    thresholddistance = getdvarfloat( @"hash_d6d1181cd67d957d", 1000 );
+    thresholddistance = getdvarfloat( @"scr_br_circle_object_cleanup_threshold", 1000 );
     crates = level.br_pe_chopper_crates;
     
     if ( isdefined( crates ) )
@@ -369,8 +370,8 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd23
+// Params 1
+// Checksum 0x0, Offset: 0xd22
 // Size: 0x1f9
 function calculatehelispawndata( numchoppers )
 {
@@ -414,7 +415,8 @@ function calculatehelispawndata( numchoppers )
     angleincrement = ( maxyaw - minyaw ) / max( 1, numchoppers - 1 );
     level.pe_chopper_zones = [];
     
-    for (chopperindex = 0; chopperindex < numchoppers; chopperindex++) {
+    for ( chopperindex = 0; chopperindex < numchoppers ; chopperindex++ )
+    {
         chopperyaw = minyaw + angleincrement * chopperindex;
         choppervec = anglestoforward( ( 0, chopperyaw, 0 ) );
         chopperrange = randomfloatrange( minrange, maxrange );
@@ -432,8 +434,8 @@ function calculatehelispawndata( numchoppers )
 }
 
 // Namespace br_publicevent_choppers / scripts\mp\gametypes\br_publicevent_choppers
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf24
+// Params 3
+// Checksum 0x0, Offset: 0xf23
 // Size: 0x2bd
 function findminmaxangleovertime( circlecenter, minrange, maxrange )
 {

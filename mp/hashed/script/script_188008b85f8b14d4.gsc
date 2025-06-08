@@ -5,7 +5,7 @@
 #namespace namespace_973ecfc2f54e9ac3;
 
 // Namespace namespace_973ecfc2f54e9ac3 / namespace_27cdbf2464b21c84
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18d
 // Size: 0x7a
 function function_ed4c2d913d203bf( players, notifytype, timeoutoverride )
@@ -22,7 +22,7 @@ function function_ed4c2d913d203bf( players, notifytype, timeoutoverride )
 }
 
 // Namespace namespace_973ecfc2f54e9ac3 / namespace_27cdbf2464b21c84
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x20f
 // Size: 0xb1
 function function_2a728f0062b4e436( player, notifytype, timeoutoverride )
@@ -57,7 +57,7 @@ function function_2a728f0062b4e436( player, notifytype, timeoutoverride )
 }
 
 // Namespace namespace_973ecfc2f54e9ac3 / namespace_27cdbf2464b21c84
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c8
 // Size: 0x55
 function dangernotifyresetforplayer( player, timeoutoverride )
@@ -75,7 +75,7 @@ function dangernotifyresetforplayer( player, timeoutoverride )
 }
 
 // Namespace namespace_973ecfc2f54e9ac3 / namespace_27cdbf2464b21c84
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x325
 // Size: 0x6b
 function watchdangerresetaction( player, playerid, action, timeout )

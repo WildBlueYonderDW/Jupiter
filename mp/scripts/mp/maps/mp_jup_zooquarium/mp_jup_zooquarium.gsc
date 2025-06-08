@@ -15,9 +15,9 @@
 #namespace mp_jup_zooquarium;
 
 // Namespace mp_jup_zooquarium / scripts\mp\maps\mp_jup_zooquarium\mp_jup_zooquarium
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x201
-// Size: 0xc8
+// Params 0
+// Checksum 0x0, Offset: 0x213
+// Size: 0xd0
 function main()
 {
     scripts\mp\maps\mp_jup_zooquarium\mp_jup_zooquarium_precache::main();
@@ -35,11 +35,12 @@ function main()
     game[ "allies_outfit" ] = "urban";
     game[ "axis_outfit" ] = "woodland";
     level thread function_713f089988ee955e();
+    thread function_79d4df95607e117();
 }
 
 // Namespace mp_jup_zooquarium / scripts\mp\maps\mp_jup_zooquarium\mp_jup_zooquarium
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d1
+// Params 0
+// Checksum 0x0, Offset: 0x2eb
 // Size: 0xb0
 function function_713f089988ee955e()
 {
@@ -59,5 +60,19 @@ function function_713f089988ee955e()
         axle rotateroll( 360, 60 );
         wait 60;
     }
+}
+
+// Namespace mp_jup_zooquarium / scripts\mp\maps\mp_jup_zooquarium\mp_jup_zooquarium
+// Params 0
+// Checksum 0x0, Offset: 0x3a3
+// Size: 0xa2
+function function_79d4df95607e117()
+{
+    trigger_1 = spawn( "trigger_radius", ( -3832, -7082, -4 ), 0, 512, 1024 );
+    trigger_1.targetname = "OutOfBounds";
+    var_b1a2a4451f616e1e = spawn( "trigger_radius", ( -4466, -8168, -4 ), 0, 512, 1024 );
+    var_b1a2a4451f616e1e.targetname = "OutOfBounds";
+    level.outofboundstriggers[ level.outofboundstriggers.size ] = trigger_1;
+    level.outofboundstriggers[ level.outofboundstriggers.size ] = var_b1a2a4451f616e1e;
 }
 

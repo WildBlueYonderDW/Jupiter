@@ -13,7 +13,7 @@ function autoexec auto()
 }
 
 // Namespace namespace_ccabef44488edcf1 / namespace_31a4c6c3ceab6b2a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10e
 // Size: 0x42
 function init()
@@ -32,7 +32,7 @@ function init()
 }
 
 // Namespace namespace_ccabef44488edcf1 / namespace_31a4c6c3ceab6b2a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x158
 // Size: 0x10f
 function function_d963b1c1ea4328e6()

@@ -16,7 +16,7 @@
 #namespace mp_observatory;
 
 // Namespace mp_observatory / namespace_acedac41ac7002ef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x253
 // Size: 0xc8
 function main()
@@ -41,7 +41,7 @@ function main()
 }
 
 // Namespace mp_observatory / namespace_acedac41ac7002ef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x323
 // Size: 0x47
 function function_1682cf22619a5e55()
@@ -57,7 +57,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_observatory / namespace_acedac41ac7002ef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x372
 // Size: 0x13a
 function function_b82d39658afa02e9()
@@ -88,7 +88,7 @@ function function_b82d39658afa02e9()
 }
 
 // Namespace mp_observatory / namespace_acedac41ac7002ef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b4
 // Size: 0x44
 function function_57be8efc25591b9c()

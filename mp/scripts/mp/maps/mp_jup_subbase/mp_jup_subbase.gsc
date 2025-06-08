@@ -16,7 +16,7 @@
 #namespace mp_jup_subbase;
 
 // Namespace mp_jup_subbase / scripts\mp\maps\mp_jup_subbase\mp_jup_subbase
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20a
 // Size: 0x17c
 function main()
@@ -50,7 +50,7 @@ function main()
 }
 
 // Namespace mp_jup_subbase / scripts\mp\maps\mp_jup_subbase\mp_jup_subbase
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38e
 // Size: 0x85
 function function_b1262e3cb659add1()
@@ -70,7 +70,7 @@ function function_b1262e3cb659add1()
 }
 
 // Namespace mp_jup_subbase / scripts\mp\maps\mp_jup_subbase\mp_jup_subbase
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41b
 // Size: 0x75
 function function_79d4df95607e117()

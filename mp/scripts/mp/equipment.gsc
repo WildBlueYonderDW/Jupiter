@@ -67,8 +67,8 @@
 #namespace equipment;
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf11
+// Params 0
+// Checksum 0x0, Offset: 0xf10
 // Size: 0x148
 function init()
 {
@@ -112,8 +112,8 @@ function init()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1061
+// Params 0
+// Checksum 0x0, Offset: 0x1060
 // Size: 0x87c
 function inititems()
 {
@@ -238,7 +238,7 @@ function inititems()
 
 // Namespace equipment / scripts\mp\equipment
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x18e5
+// Checksum 0x0, Offset: 0x18e4
 // Size: 0x55
 function private function_f8d145900d997580()
 {
@@ -256,8 +256,8 @@ function private function_f8d145900d997580()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1942
+// Params 2
+// Checksum 0x0, Offset: 0x1941
 // Size: 0x45
 function getcallback( ref, callback )
 {
@@ -270,8 +270,8 @@ function getcallback( ref, callback )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1990
+// Params 1
+// Checksum 0x0, Offset: 0x198f
 // Size: 0x3ad
 function loadequipmentbundles( equipmenttable )
 {
@@ -279,7 +279,8 @@ function loadequipmentbundles( equipmenttable )
     level.var_415476758ec47760 = [];
     var_9df9fe298aef6003 = getscriptbundle( equipmenttable );
     
-    for (i = 0; i < var_9df9fe298aef6003.equipment_list.size; i++) {
+    for ( i = 0; i < var_9df9fe298aef6003.equipment_list.size ; i++ )
+    {
         equipmentref = var_9df9fe298aef6003.equipment_list[ i ].ref;
         equipmentbundlename = var_9df9fe298aef6003.equipment_list[ i ].bundle;
         
@@ -357,8 +358,8 @@ function loadequipmentbundles( equipmenttable )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d45
+// Params 1
+// Checksum 0x0, Offset: 0x1d44
 // Size: 0x27
 function getequipmenttableinfo( ref )
 {
@@ -371,8 +372,8 @@ function getequipmenttableinfo( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d75
+// Params 4
+// Checksum 0x0, Offset: 0x1d74
 // Size: 0x276
 function giveequipment( ref, slot, class, variantid )
 {
@@ -460,8 +461,8 @@ function giveequipment( ref, slot, class, variantid )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ff3
+// Params 1
+// Checksum 0x0, Offset: 0x1ff2
 // Size: 0x1e5
 function takeequipment( slot )
 {
@@ -536,8 +537,8 @@ function takeequipment( slot )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21e0
+// Params 1
+// Checksum 0x0, Offset: 0x21df
 // Size: 0x13d
 function equiponplayerdamaged( data )
 {
@@ -564,8 +565,8 @@ function equiponplayerdamaged( data )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2325
+// Params 0
+// Checksum 0x0, Offset: 0x2324
 // Size: 0x56, Type: bool
 function ondestroyedbytrophy()
 {
@@ -589,8 +590,8 @@ function ondestroyedbytrophy()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2384
+// Params 1
+// Checksum 0x0, Offset: 0x2383
 // Size: 0x67
 function function_4967838290cb31b9( index )
 {
@@ -609,8 +610,8 @@ function function_4967838290cb31b9( index )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23f3
+// Params 1
+// Checksum 0x0, Offset: 0x23f2
 // Size: 0x44
 function disableslotinternal( slot )
 {
@@ -633,8 +634,8 @@ function disableslotinternal( slot )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x243f
+// Params 1
+// Checksum 0x0, Offset: 0x243e
 // Size: 0xb3
 function enableslotinternal( slot )
 {
@@ -669,8 +670,8 @@ function enableslotinternal( slot )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24fa
+// Params 1
+// Checksum 0x0, Offset: 0x24f9
 // Size: 0x6b
 function is_equipment_slot_allowed( slot )
 {
@@ -686,8 +687,8 @@ function is_equipment_slot_allowed( slot )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x256d
+// Params 2
+// Checksum 0x0, Offset: 0x256c
 // Size: 0x2c
 function sethudslot( slot, id )
 {
@@ -698,8 +699,8 @@ function sethudslot( slot, id )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25a1
+// Params 1
+// Checksum 0x0, Offset: 0x25a0
 // Size: 0x2a
 function getcurrentequipment( slot )
 {
@@ -712,8 +713,8 @@ function getcurrentequipment( slot )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x25d4
+// Params 0
+// Checksum 0x0, Offset: 0x25d3
 // Size: 0x64
 function clearallequipment()
 {
@@ -729,8 +730,8 @@ function clearallequipment()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2640
+// Params 2
+// Checksum 0x0, Offset: 0x263f
 // Size: 0x36d
 function getequipmentmaxammo( ref, class )
 {
@@ -872,26 +873,26 @@ function getequipmentmaxammo( ref, class )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29b6
-// Size: 0x1c, Type: bool
+// Params 0
+// Checksum 0x0, Offset: 0x29b5
+// Size: 0x2b, Type: bool
 function function_ba9b7632e5af58c1()
 {
-    return _hasperk( "specialty_grenadier_vest" ) || _hasperk( "specialty_rhino_rig" );
+    return _hasperk( "specialty_grenadier_vest" ) || _hasperk( "specialty_rhino_rig" ) || _hasperk( "specialty_pistol_vest" );
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29db
-// Size: 0x2b, Type: bool
+// Params 0
+// Checksum 0x0, Offset: 0x29e9
+// Size: 0x3a, Type: bool
 function function_a81e1cac79744c02()
 {
-    return _hasperk( "specialty_tac_vest" ) || _hasperk( "specialty_rhino_rig" ) || _hasperk( "specialty_pistol_vest" );
+    return _hasperk( "specialty_tac_vest" ) || _hasperk( "specialty_rhino_rig" ) || _hasperk( "specialty_pistol_vest" ) || _hasperk( "specialty_pistol_vest" );
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a0f
+// Params 1
+// Checksum 0x0, Offset: 0x2a2c
 // Size: 0x5c
 function getequipmentstartammo( ref )
 {
@@ -912,8 +913,8 @@ function getequipmentstartammo( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a74
+// Params 1
+// Checksum 0x0, Offset: 0x2a91
 // Size: 0xdb
 function getequipmentammo( ref )
 {
@@ -948,8 +949,8 @@ function getequipmentammo( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b58
+// Params 2
+// Checksum 0x0, Offset: 0x2b75
 // Size: 0x169
 function setequipmentammo( ref, amount )
 {
@@ -998,8 +999,8 @@ function setequipmentammo( ref, amount )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cc9
+// Params 4
+// Checksum 0x0, Offset: 0x2ce6
 // Size: 0x94
 function incrementequipmentammo( ref, var_930290d7f474a0ae, class, var_7af3206c6ef0c3f0 )
 {
@@ -1025,8 +1026,8 @@ function incrementequipmentammo( ref, var_930290d7f474a0ae, class, var_7af3206c6
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d65
+// Params 3
+// Checksum 0x0, Offset: 0x2d82
 // Size: 0x73
 function decrementequipmentammo( ref, var_7d2e0ea9107a4c02, class )
 {
@@ -1046,8 +1047,8 @@ function decrementequipmentammo( ref, var_7d2e0ea9107a4c02, class )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2de0
+// Params 2
+// Checksum 0x0, Offset: 0x2dfd
 // Size: 0x6e
 function incrementequipmentslotammo( slot, var_930290d7f474a0ae )
 {
@@ -1069,8 +1070,8 @@ function incrementequipmentslotammo( slot, var_930290d7f474a0ae )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e56
+// Params 2
+// Checksum 0x0, Offset: 0x2e73
 // Size: 0x6e
 function decrementequipmentslotammo( slot, var_7d2e0ea9107a4c02 )
 {
@@ -1092,8 +1093,8 @@ function decrementequipmentslotammo( slot, var_7d2e0ea9107a4c02 )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ecc
+// Params 1
+// Checksum 0x0, Offset: 0x2ee9
 // Size: 0x2c
 function getequipmentslotammo( slot )
 {
@@ -1108,8 +1109,8 @@ function getequipmentslotammo( slot )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f01
+// Params 1
+// Checksum 0x0, Offset: 0x2f1e
 // Size: 0x56
 function function_fe48baf929906883( slot )
 {
@@ -1128,8 +1129,8 @@ function function_fe48baf929906883( slot )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f60
+// Params 2
+// Checksum 0x0, Offset: 0x2f7d
 // Size: 0x35
 function setequipmentslotammo( slot, count )
 {
@@ -1144,8 +1145,8 @@ function setequipmentslotammo( slot, count )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f9e
+// Params 1
+// Checksum 0x0, Offset: 0x2fbb
 // Size: 0x16
 function function_7f245729fcb6414d( weaponname )
 {
@@ -1153,8 +1154,8 @@ function function_7f245729fcb6414d( weaponname )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fbd
+// Params 1
+// Checksum 0x0, Offset: 0x2fda
 // Size: 0x1f8
 function mapequipmentweaponforref( objweapon )
 {
@@ -1228,8 +1229,8 @@ function mapequipmentweaponforref( objweapon )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31be
+// Params 1
+// Checksum 0x0, Offset: 0x31db
 // Size: 0x3f
 function getequipmentreffromweapon( objweapon )
 {
@@ -1243,8 +1244,8 @@ function getequipmentreffromweapon( objweapon )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3206
+// Params 1
+// Checksum 0x0, Offset: 0x3223
 // Size: 0x95
 function function_2113b6f7cb462692( weaponname )
 {
@@ -1265,8 +1266,8 @@ function function_2113b6f7cb462692( weaponname )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32a4
+// Params 1
+// Checksum 0x0, Offset: 0x32c1
 // Size: 0x95
 function function_2cbf1e7261f0c42a( equipmentref )
 {
@@ -1287,8 +1288,8 @@ function function_2cbf1e7261f0c42a( equipmentref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3342
+// Params 1
+// Checksum 0x0, Offset: 0x335f
 // Size: 0x3e
 function getweaponfromequipmentref( equipref )
 {
@@ -1303,8 +1304,8 @@ function getweaponfromequipmentref( equipref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3389
+// Params 1
+// Checksum 0x0, Offset: 0x33a6
 // Size: 0x70, Type: bool
 function hasequipment( ref )
 {
@@ -1325,8 +1326,8 @@ function hasequipment( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3402
+// Params 1
+// Checksum 0x0, Offset: 0x341f
 // Size: 0x6e
 function findequipmentslot( ref )
 {
@@ -1345,8 +1346,8 @@ function findequipmentslot( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3478
+// Params 1
+// Checksum 0x0, Offset: 0x3495
 // Size: 0x12
 function isequipmentlethal( ref )
 {
@@ -1354,8 +1355,8 @@ function isequipmentlethal( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3493
+// Params 1
+// Checksum 0x0, Offset: 0x34b0
 // Size: 0x4f
 function isequipmentprimary( ref )
 {
@@ -1368,8 +1369,8 @@ function isequipmentprimary( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34ea
+// Params 1
+// Checksum 0x0, Offset: 0x3507
 // Size: 0x12
 function isequipmenttactical( ref )
 {
@@ -1377,8 +1378,8 @@ function isequipmenttactical( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3505
+// Params 1
+// Checksum 0x0, Offset: 0x3522
 // Size: 0x4f
 function isequipmentsecondary( ref )
 {
@@ -1391,8 +1392,8 @@ function isequipmentsecondary( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x355c
+// Params 1
+// Checksum 0x0, Offset: 0x3579
 // Size: 0x4a
 function isequipmentselectable( ref )
 {
@@ -1405,8 +1406,8 @@ function isequipmentselectable( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x35ae
+// Params 2
+// Checksum 0x0, Offset: 0x35cb
 // Size: 0x12d
 function function_22bf78eca6578d7d( slot, class )
 {
@@ -1457,8 +1458,8 @@ function function_22bf78eca6578d7d( slot, class )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e3
+// Params 0
+// Checksum 0x0, Offset: 0x3700
 // Size: 0xa
 function equiponplayerspawned()
 {
@@ -1466,8 +1467,8 @@ function equiponplayerspawned()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36f5
+// Params 0
+// Checksum 0x0, Offset: 0x3712
 // Size: 0xc
 function resetequipment()
 {
@@ -1475,8 +1476,8 @@ function resetequipment()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3709
+// Params 1
+// Checksum 0x0, Offset: 0x3726
 // Size: 0x2e6
 function executeoffhandfired( objweapon )
 {
@@ -1567,8 +1568,8 @@ function executeoffhandfired( objweapon )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39f7
+// Params 0
+// Checksum 0x0, Offset: 0x3a14
 // Size: 0x4a
 function watchoffhandfired()
 {
@@ -1590,8 +1591,8 @@ function watchoffhandfired()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a49
+// Params 0
+// Checksum 0x0, Offset: 0x3a66
 // Size: 0x99
 function function_312cbcf07904565d()
 {
@@ -1612,8 +1613,8 @@ function function_312cbcf07904565d()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3aea
+// Params 0
+// Checksum 0x0, Offset: 0x3b07
 // Size: 0x88
 function givescavengerammo()
 {
@@ -1629,8 +1630,8 @@ function givescavengerammo()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b7a
+// Params 1
+// Checksum 0x0, Offset: 0x3b97
 // Size: 0x30
 function getdefaultslot( ref )
 {
@@ -1645,8 +1646,8 @@ function getdefaultslot( ref )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bb3
+// Params 0
+// Checksum 0x0, Offset: 0x3bd0
 // Size: 0xec
 function watchlethaldelay()
 {
@@ -1699,8 +1700,8 @@ function watchlethaldelay()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ca7
+// Params 2
+// Checksum 0x0, Offset: 0x3cc4
 // Size: 0x118
 function watchlethaldelayplayer( equipmentref, slot )
 {
@@ -1752,8 +1753,8 @@ function watchlethaldelayplayer( equipmentref, slot )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dc7
+// Params 2
+// Checksum 0x0, Offset: 0x3de4
 // Size: 0xe8
 function watchlethaldelayfeedbackplayer( player, slot )
 {
@@ -1799,8 +1800,8 @@ function watchlethaldelayfeedbackplayer( player, slot )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3eb7
+// Params 0
+// Checksum 0x0, Offset: 0x3ed4
 // Size: 0x4f
 function cancellethaldelay()
 {
@@ -1820,8 +1821,8 @@ function cancellethaldelay()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f0e
+// Params 0
+// Checksum 0x0, Offset: 0x3f2b
 // Size: 0x63, Type: bool
 function lethaldelaypassed()
 {
@@ -1850,8 +1851,8 @@ function lethaldelaypassed()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f7a
+// Params 0
+// Checksum 0x0, Offset: 0x3f97
 // Size: 0x38, Type: bool
 function currentgametypestopsclock()
 {
@@ -1866,8 +1867,8 @@ function currentgametypestopsclock()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fbb
+// Params 1
+// Checksum 0x0, Offset: 0x3fd8
 // Size: 0x68
 function onownerdisconnect( player )
 {
@@ -1880,8 +1881,8 @@ function onownerdisconnect( player )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x402b
+// Params 1
+// Checksum 0x0, Offset: 0x4048
 // Size: 0xa9
 function hackequipment( hacker )
 {
@@ -1910,8 +1911,8 @@ function hackequipment( hacker )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x40dc
+// Params 1
+// Checksum 0x0, Offset: 0x40f9
 // Size: 0x99
 function changeowner( newowner )
 {
@@ -1932,8 +1933,8 @@ function changeowner( newowner )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x417d
+// Params 0
+// Checksum 0x0, Offset: 0x419a
 // Size: 0x3c
 function function_f69ed22535d90b78()
 {
@@ -1947,8 +1948,8 @@ function function_f69ed22535d90b78()
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41c2
+// Params 1
+// Checksum 0x0, Offset: 0x41df
 // Size: 0x40
 function function_bdde0931accf955b( stuckdata )
 {
@@ -1964,8 +1965,8 @@ function function_bdde0931accf955b( stuckdata )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x420a
+// Params 1
+// Checksum 0x0, Offset: 0x4227
 // Size: 0x30
 function function_449e67a68fa04968( stuckdata )
 {
@@ -1976,8 +1977,8 @@ function function_449e67a68fa04968( stuckdata )
 }
 
 // Namespace equipment / scripts\mp\equipment
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4242
+// Params 3
+// Checksum 0x0, Offset: 0x425f
 // Size: 0x68
 function function_4af015619e2534ba( stuckto, destroyfunc, isimmediate )
 {
@@ -2001,8 +2002,8 @@ function function_4af015619e2534ba( stuckto, destroyfunc, isimmediate )
 /#
 
     // Namespace equipment / scripts\mp\equipment
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x42b2
+    // Params 0
+    // Checksum 0x0, Offset: 0x42cf
     // Size: 0x100, Type: dev
     function debughackequipment()
     {
@@ -2016,7 +2017,8 @@ function function_4af015619e2534ba( stuckto, destroyfunc, isimmediate )
                 mainplayer = level.players[ 0 ];
                 enemyplayer = undefined;
                 
-                for (i = 1; i < level.players.size; i++) {
+                for ( i = 1; i < level.players.size ; i++ )
+                {
                     if ( mainplayer scripts\cp_mp\utility\player_utility::isenemy( level.players[ i ] ) )
                     {
                         enemyplayer = level.players[ i ];
@@ -2052,8 +2054,8 @@ function function_4af015619e2534ba( stuckto, destroyfunc, isimmediate )
     }
 
     // Namespace equipment / scripts\mp\equipment
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x43ba
+    // Params 0
+    // Checksum 0x0, Offset: 0x43d7
     // Size: 0xa4, Type: dev
     function debugemp()
     {
@@ -2080,8 +2082,8 @@ function function_4af015619e2534ba( stuckto, destroyfunc, isimmediate )
     }
 
     // Namespace equipment / scripts\mp\equipment
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4466
+    // Params 0
+    // Checksum 0x0, Offset: 0x4483
     // Size: 0x101, Type: dev
     function debugempdrone()
     {
@@ -2115,8 +2117,8 @@ function function_4af015619e2534ba( stuckto, destroyfunc, isimmediate )
     }
 
     // Namespace equipment / scripts\mp\equipment
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x456f
+    // Params 0
+    // Checksum 0x0, Offset: 0x458c
     // Size: 0xc3, Type: dev
     function debugdestroyempdrones()
     {
@@ -2144,8 +2146,8 @@ function function_4af015619e2534ba( stuckto, destroyfunc, isimmediate )
 #/
 
 // Namespace equipment / scripts\mp\equipment
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x463a
+// Params 0
+// Checksum 0x0, Offset: 0x4657
 // Size: 0xc5
 function initlethalmaxoffsetmap()
 {

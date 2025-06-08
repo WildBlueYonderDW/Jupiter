@@ -1,7 +1,7 @@
 #namespace namespace_9b9fbf828d53f353;
 
 // Namespace namespace_9b9fbf828d53f353 / namespace_4525f113583a8ae5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac
 // Size: 0x51
 function function_54dfca3641c2c1ab( filenamerequested )

@@ -3,7 +3,7 @@
 #namespace namespace_94efe9b48c602c39;
 
 // Namespace namespace_94efe9b48c602c39 / namespace_954524c8d6293cb9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e
 // Size: 0x34
 function function_628ac163573e544e()
@@ -18,7 +18,7 @@ function function_628ac163573e544e()
 }
 
 // Namespace namespace_94efe9b48c602c39 / namespace_954524c8d6293cb9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1aa
 // Size: 0xad
 function use_ammo( itembundle, item )
@@ -47,7 +47,7 @@ function use_ammo( itembundle, item )
 }
 
 // Namespace namespace_94efe9b48c602c39 / namespace_954524c8d6293cb9
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x260
 // Size: 0xc3, Type: bool
 function function_67d2e1159a24893( itembundle, item, autouse, allowswap )
@@ -105,7 +105,7 @@ function private function_207fcdc93a85aa07( primary_weapon )
 }
 
 // Namespace namespace_94efe9b48c602c39 / namespace_954524c8d6293cb9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x41d
 // Size: 0xa6
 function function_dbeac47bbdfe2c89( primary_weapon, itembundle, ammoleft )

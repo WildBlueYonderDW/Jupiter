@@ -16,7 +16,7 @@
 #namespace combat;
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x226
 // Size: 0x34
 function soldier_init_common()
@@ -28,7 +28,7 @@ function soldier_init_common()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x262
 // Size: 0x199
 function function_33ef051afbf024e2( guy )
@@ -66,7 +66,7 @@ function function_33ef051afbf024e2( guy )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x404
 // Size: 0x5c7
 function vehiclejump( taskid )
@@ -228,7 +228,7 @@ function vehiclejump( taskid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9d4
 // Size: 0x8a
 function function_a38ad5564fcafc54( taskid )
@@ -252,7 +252,7 @@ function function_a38ad5564fcafc54( taskid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa67
 // Size: 0x11e
 function updateeveryframe_noncombat( taskid )
@@ -288,7 +288,7 @@ function updateeveryframe_noncombat( taskid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb8e
 // Size: 0x1a
 function shouldbefrantic()
@@ -302,7 +302,7 @@ function shouldbefrantic()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb1
 // Size: 0x4b, Type: bool
 function hasammoinclip()
@@ -328,7 +328,7 @@ function hasammoinclip()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc05
 // Size: 0x30
 function islowonammo( task, params )
@@ -342,7 +342,7 @@ function islowonammo( task, params )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc3e
 // Size: 0x65
 function withindistancetoenemy( task, params )
@@ -361,7 +361,7 @@ function withindistancetoenemy( task, params )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcac
 // Size: 0x64
 function mayshoot( task )
@@ -391,7 +391,7 @@ function mayshoot( task )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd19
 // Size: 0x4b
 function updatelooktarget( taskid )
@@ -405,7 +405,7 @@ function updatelooktarget( taskid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd6d
 // Size: 0x17
 function shoot_clearconvergence()
@@ -414,7 +414,7 @@ function shoot_clearconvergence()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd8c
 // Size: 0x18
 function shoot_enableconvergence()
@@ -423,7 +423,7 @@ function shoot_enableconvergence()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdac
 // Size: 0x16, Type: bool
 function isaimedataimtarget()
@@ -432,7 +432,7 @@ function isaimedataimtarget()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdcb
 // Size: 0x38, Type: bool
 function hasatleastammo( threshold )
@@ -446,7 +446,7 @@ function hasatleastammo( threshold )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0c
 // Size: 0x4f
 function reload_cheatammo()
@@ -457,7 +457,7 @@ function reload_cheatammo()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe63
 // Size: 0x2f, Type: bool
 function shouldbeajerk()
@@ -471,7 +471,7 @@ function shouldbeajerk()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe9b
 // Size: 0x32, Type: bool
 function shoulddosemiforvariety( distancesq )
@@ -482,7 +482,7 @@ function shoulddosemiforvariety( distancesq )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed6
 // Size: 0x3d
 function shoulddosemiprobabilityline( distancetotarget )
@@ -496,7 +496,7 @@ function shoulddosemiprobabilityline( distancetotarget )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf1c
 // Size: 0x1b
 function getusedturret()
@@ -508,7 +508,7 @@ function getusedturret()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf3f
 // Size: 0xc9, Type: bool
 function shouldshoot()
@@ -546,7 +546,7 @@ function shouldshoot()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1011
 // Size: 0x9b
 function calcgoodshootpos()
@@ -573,7 +573,7 @@ function calcgoodshootpos()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10b5
 // Size: 0x285
 function isenemyinlowcover( taskid )
@@ -666,7 +666,7 @@ function isenemyinlowcover( taskid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1343
 // Size: 0x9c, Type: bool
 function valid_reaction_sound( npcid )
@@ -691,7 +691,7 @@ function valid_reaction_sound( npcid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e8
 // Size: 0x28
 function turretrequested( task )
@@ -705,7 +705,7 @@ function turretrequested( task )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1419
 // Size: 0xae
 function ifshoulddosmartobject( taskid )
@@ -738,7 +738,7 @@ function ifshoulddosmartobject( taskid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14d0
 // Size: 0x53
 function dosmartobject_init( taskid )
@@ -755,7 +755,7 @@ function dosmartobject_init( taskid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x152b
 // Size: 0x4b
 function dosmartobject( taskid )
@@ -771,7 +771,7 @@ function dosmartobject( taskid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x157f
 // Size: 0x4b
 function dosmartobjectterminate( taskid )
@@ -782,7 +782,7 @@ function dosmartobjectterminate( taskid )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15d2
 // Size: 0x19d
 function low_cover_combat_areas()
@@ -840,7 +840,7 @@ function low_cover_combat_areas()
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1777
 // Size: 0x112
 function player_under_low_cover_monitor( vol )
@@ -881,7 +881,7 @@ function player_under_low_cover_monitor( vol )
 }
 
 // Namespace combat / scripts\aitypes\combat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1891
 // Size: 0x182
 function transfer_damage_to_player( vol )

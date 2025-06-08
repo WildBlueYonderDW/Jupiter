@@ -14,7 +14,7 @@
 #namespace rusher_agent;
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ab
 // Size: 0x2
 function function_5171170ac608ca01()
@@ -23,7 +23,7 @@ function function_5171170ac608ca01()
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x1a0
 function initrusher( taskid )
@@ -67,7 +67,7 @@ function initrusher( taskid )
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35e
 // Size: 0x14
 function initscriptable()
@@ -76,7 +76,7 @@ function initscriptable()
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37a
 // Size: 0x28f
 function setupagent()
@@ -142,7 +142,7 @@ function setupagent()
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x611
 // Size: 0x2d
 function function_3a6c3f63da7103bf()
@@ -154,7 +154,7 @@ function function_3a6c3f63da7103bf()
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x646
 // Size: 0xbe
 function function_4222d0ecf1d363ba()
@@ -194,7 +194,7 @@ function function_4222d0ecf1d363ba()
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x70c
 // Size: 0x2b
 function checkscripted( taskid )
@@ -208,7 +208,7 @@ function checkscripted( taskid )
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x740
 // Size: 0x11c
 function function_16cf274ffc86e1e2( distenemysq )
@@ -241,7 +241,7 @@ function function_16cf274ffc86e1e2( distenemysq )
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x864
 // Size: 0x6b
 function function_5213d881f2e26966( defpos, defradius )
@@ -266,7 +266,7 @@ function function_5213d881f2e26966( defpos, defradius )
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d7
 // Size: 0xc
 function stopdefending()
@@ -275,7 +275,7 @@ function stopdefending()
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8eb
 // Size: 0x21, Type: bool
 function rusher_ondeath()
@@ -291,7 +291,7 @@ function rusher_ondeath()
 }
 
 // Namespace rusher_agent / namespace_c77c96f1aa8fcce1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x915
 // Size: 0xe4
 function droppostoground( position, drop_distance )

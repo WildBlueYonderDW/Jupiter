@@ -22,7 +22,7 @@
 #namespace lbravo_infil;
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x186d
 // Size: 0x87
 function lbravo_init( subtype )
@@ -40,7 +40,7 @@ function lbravo_init( subtype )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x18fc
 // Size: 0x12d
 function lbravo_spawn( team, target, subtype, originalsubtype )
@@ -70,7 +70,7 @@ function lbravo_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a32
 // Size: 0xb2
 function printdata( infil, subtype, originalsubtype )
@@ -90,7 +90,7 @@ function printdata( infil, subtype, originalsubtype )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1aec
 // Size: 0x1fc
 function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubtype )
@@ -148,7 +148,7 @@ function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubty
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cf0
 // Size: 0x10b
 function lbravo_get_length( subtype )
@@ -177,7 +177,7 @@ function lbravo_get_length( subtype )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e03
 // Size: 0x20
 function function_198048f0cd4924b3( infil )
@@ -186,7 +186,7 @@ function function_198048f0cd4924b3( infil )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e2c
 // Size: 0x412
 function player_lbravo_infil_think( infil, spot_index )
@@ -323,7 +323,7 @@ function player_lbravo_infil_think( infil, spot_index )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2246
 // Size: 0x158
 function playerthinkpath( infil, spot_index )
@@ -358,7 +358,7 @@ function playerthinkpath( infil, spot_index )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23a6
 // Size: 0x77
 function rideloop( infil )
@@ -375,7 +375,7 @@ function rideloop( infil )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2425
 // Size: 0x254
 function playerthinkanim( infil, spot_index )
@@ -432,7 +432,7 @@ function playerthinkanim( infil, spot_index )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2681
 // Size: 0xb
 function scriptswitchweaponhack()
@@ -442,7 +442,7 @@ function scriptswitchweaponhack()
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2694
 // Size: 0x39
 function clear_infil_ambient_zone()
@@ -462,7 +462,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26d5
 // Size: 0x64
 function lbravo_infil_radio_idle()
@@ -480,7 +480,7 @@ function lbravo_infil_radio_idle()
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2741
 // Size: 0x40
 function player_infil_end( infil )
@@ -493,7 +493,7 @@ function player_infil_end( infil )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2789
 // Size: 0x53
 function player_van_disconnect()
@@ -513,7 +513,7 @@ function player_van_disconnect()
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x27e4
 // Size: 0x194
 function infilthink( team, scene_name )
@@ -562,7 +562,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2980
 // Size: 0x98
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -591,7 +591,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a20
 // Size: 0x169
 function vehiclethinkanim( team, scene_node, scene_name, extra_crew )
@@ -618,7 +618,7 @@ function vehiclethinkanim( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b91
 // Size: 0x156
 function spawninfilvehicle( scene_node, team, scene_name )
@@ -661,7 +661,7 @@ function spawninfilvehicle( scene_node, team, scene_name )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2cf0
 // Size: 0xbc
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -683,7 +683,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2db4
 // Size: 0x4a
 function actorthinkpath( team, scene_node, scene_name, extra_crew )
@@ -693,7 +693,7 @@ function actorthinkpath( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e06
 // Size: 0x13
 function actorloopthink( actor )
@@ -702,7 +702,7 @@ function actorloopthink( actor )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e21
 // Size: 0x5a
 function actorloop( actor )
@@ -717,7 +717,7 @@ function actorloop( actor )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2e83
 // Size: 0xdf
 function actorthinkanim( team, scene_node, scene_name, extra_crew )
@@ -738,7 +738,7 @@ function actorthinkanim( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f6a
 // Size: 0xc8
 function spawnactors( team, scene_name, extra_crew )
@@ -756,7 +756,7 @@ function spawnactors( team, scene_name, extra_crew )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x303b
 // Size: 0x178
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -795,7 +795,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x31bc
 // Size: 0x681
 function initanims( subtype, team, originalsubtype )
@@ -865,7 +865,7 @@ function initanims( subtype, team, originalsubtype )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3845
 // Size: 0x1a2f
 function script_model_alpha_anims( subtype )
@@ -1085,7 +1085,7 @@ function script_model_alpha_anims( subtype )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x527c
 // Size: 0xcda
 function vehicles_alpha_anims( subtype, team, originalsubtype )
@@ -1385,7 +1385,7 @@ function vehicles_alpha_anims( subtype, team, originalsubtype )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5f5e
 // Size: 0x83
 function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -1400,7 +1400,7 @@ function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5fe9
 // Size: 0xcc
 function vehiclethinkpath( team, scene_node, scene_name, extra_crew )
@@ -1417,7 +1417,7 @@ function vehiclethinkpath( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60bd
 // Size: 0x96
 function heli_interior_sfx( scene_name )
@@ -1442,7 +1442,7 @@ function heli_interior_sfx( scene_name )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x615b
 // Size: 0xba
 function giveinteractiveinfilweapon()
@@ -1468,7 +1468,7 @@ function giveinteractiveinfilweapon()
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x621e
 // Size: 0xc9
 function allowinteractivecombat( combatduration )
@@ -1492,7 +1492,7 @@ function allowinteractivecombat( combatduration )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62ef
 // Size: 0x8a
 function interactivecombatmessaging()
@@ -1521,7 +1521,7 @@ function interactivecombatmessaging()
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6381
 // Size: 0xb2
 function getinteractiveinfilline( slot, levelname )
@@ -1557,7 +1557,7 @@ function getinteractiveinfilline( slot, levelname )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x643b
 // Size: 0x15
 function interactiveinfilthink( team )
@@ -1566,7 +1566,7 @@ function interactiveinfilthink( team )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6458
 // Size: 0x81
 function manageinteractivecombattargets( team )
@@ -1584,7 +1584,7 @@ function manageinteractivecombattargets( team )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64e1
 // Size: 0x13c
 function targetdamagethink( team )
@@ -1623,7 +1623,7 @@ function targetdamagethink( team )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6625
 // Size: 0x4b
 function deleteoninfilcomplete()
@@ -1648,7 +1648,7 @@ function deleteoninfilcomplete()
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6678
 // Size: 0x92
 function cinematiccameratimeline( infil )
@@ -1671,7 +1671,7 @@ function cinematiccameratimeline( infil )
 }
 
 // Namespace lbravo_infil / scripts\mp\infilexfil\lbravo_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6712
 // Size: 0x45
 function customground( guy )

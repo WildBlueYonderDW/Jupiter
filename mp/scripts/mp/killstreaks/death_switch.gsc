@@ -23,7 +23,7 @@
 #namespace death_switch;
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x322
 // Size: 0x35
 function init()
@@ -38,9 +38,9 @@ function init()
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35f
-// Size: 0x21, Type: bool
+// Size: 0x21
 function tryusedeathswitch()
 {
     streakinfo = createstreakinfo( "death_switch", self );
@@ -48,7 +48,7 @@ function tryusedeathswitch()
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x389
 // Size: 0xd1, Type: bool
 function tryusedeathswitchfromstruct( streakinfo )
@@ -87,7 +87,7 @@ function tryusedeathswitchfromstruct( streakinfo )
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x463
 // Size: 0xd, Type: bool
 function weapongivendeathswitch( streakinfo )
@@ -96,7 +96,7 @@ function weapongivendeathswitch( streakinfo )
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x479
 // Size: 0xc2
 function startdeathswitch( streakinfo )
@@ -114,7 +114,7 @@ function startdeathswitch( streakinfo )
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x543
 // Size: 0x52
 function deathswitch_loopblinkinglight()
@@ -133,7 +133,7 @@ function deathswitch_loopblinkinglight()
 /#
 
     // Namespace death_switch / scripts\mp\killstreaks\death_switch
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x59d
     // Size: 0x36, Type: dev
     function debugloc()
@@ -150,7 +150,7 @@ function deathswitch_loopblinkinglight()
 #/
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5db
 // Size: 0x5b
 function deathswitch_startpayloadreleasesequence()
@@ -165,7 +165,7 @@ function deathswitch_startpayloadreleasesequence()
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63e
 // Size: 0xe6
 function deathswitch_payloadrelease( var_3b40edf8da5d7be3 )
@@ -183,7 +183,8 @@ function deathswitch_payloadrelease( var_3b40edf8da5d7be3 )
     projectile linkto( self );
     thread deathswitch_payloadreleaseondeath( payloadtype, projectile );
     
-    for (startingwait = 1; var_3b40edf8da5d7be3 > 0; startingwait = 0.05) {
+    for ( startingwait = 1; var_3b40edf8da5d7be3 > 0 ; startingwait = 0.05 )
+    {
         self iprintlnbold( "Death Switch Countdown: " + var_3b40edf8da5d7be3 );
         var_3b40edf8da5d7be3 -= startingwait;
         playsoundatpos( self.origin, "death_switch_beep" );
@@ -199,7 +200,7 @@ function deathswitch_payloadrelease( var_3b40edf8da5d7be3 )
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x72c
 // Size: 0x48
 function deathswitch_payloadreleaseondeath( payloadtype, projectile )
@@ -214,7 +215,7 @@ function deathswitch_payloadreleaseondeath( payloadtype, projectile )
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x77c
 // Size: 0x91
 function deathswitch_payloadreleasetype( payloadtype, projectile )
@@ -243,7 +244,7 @@ function deathswitch_payloadreleasetype( payloadtype, projectile )
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x815
 // Size: 0x6f
 function deathswitch_releaselocalexplosion()
@@ -258,7 +259,7 @@ function deathswitch_releaselocalexplosion()
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88c
 // Size: 0x98
 function deathswitch_releaseartilleryexplosion()
@@ -274,7 +275,7 @@ function deathswitch_releaseartilleryexplosion()
 }
 
 // Namespace death_switch / scripts\mp\killstreaks\death_switch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x92c
 // Size: 0x28
 function deathswitch_watchbleedout( bleedouttime )

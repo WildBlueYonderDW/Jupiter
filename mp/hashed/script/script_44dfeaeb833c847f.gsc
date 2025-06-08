@@ -10,7 +10,7 @@
 #namespace jup_exgm_enemy_warlord_stalker_chemist;
 
 // Namespace jup_exgm_enemy_warlord_stalker_chemist / namespace_da24df8ecd0985cb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x243
 // Size: 0x19f
 function main()
@@ -44,7 +44,7 @@ function main()
 }
 
 // Namespace jup_exgm_enemy_warlord_stalker_chemist / namespace_da24df8ecd0985cb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ea
 // Size: 0x57
 function setup_model()
@@ -61,7 +61,7 @@ function setup_model()
 }
 
 // Namespace jup_exgm_enemy_warlord_stalker_chemist / namespace_da24df8ecd0985cb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x449
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -70,7 +70,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_exgm_enemy_warlord_stalker_chemist / namespace_da24df8ecd0985cb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45a
 // Size: 0xaf
 function precache()
@@ -98,7 +98,7 @@ function precache()
 }
 
 // Namespace jup_exgm_enemy_warlord_stalker_chemist / namespace_da24df8ecd0985cb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x511
 // Size: 0x128
 function setup_weapons()

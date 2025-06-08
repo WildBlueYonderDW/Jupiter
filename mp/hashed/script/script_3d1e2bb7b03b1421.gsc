@@ -4,7 +4,7 @@
 #namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs;
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f8
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x46d
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4dc
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x524
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52e
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x544
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5b6
 // Size: 0xce
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -128,7 +128,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x68c
 // Size: 0x18b
 function function_9fa4aa5d1979f24( fe, us, cf )
@@ -149,7 +149,7 @@ function function_9fa4aa5d1979f24( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x81f
 // Size: 0x18b
 function function_6ae6134a8a4cafd3( fe, us, cf )
@@ -170,7 +170,7 @@ function function_6ae6134a8a4cafd3( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9b2
 // Size: 0x18b
 function function_186e53c9f517e49( fe, us, cf )
@@ -191,7 +191,7 @@ function function_186e53c9f517e49( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb45
 // Size: 0x18b
 function function_6748d5eb4b58268a( fe, us, cf )
@@ -212,7 +212,7 @@ function function_6748d5eb4b58268a( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcd8
 // Size: 0x18b
 function function_a0c3fcc7bfcd3c84( fe, us, cf )
@@ -233,7 +233,7 @@ function function_a0c3fcc7bfcd3c84( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe6b
 // Size: 0x18b
 function function_444b684c0f0a406d( fe, us, cf )
@@ -254,7 +254,7 @@ function function_444b684c0f0a406d( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_unstable_rift_obelisk_cs / namespace_e8b4c184a6d86a1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xffe
 // Size: 0x504
 function function_6da2952367672ac0()

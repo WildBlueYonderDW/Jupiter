@@ -54,7 +54,7 @@
 #namespace br_gametype_plunder;
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cad
 // Size: 0x17
 function main()
@@ -64,7 +64,7 @@ function main()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ccc
 // Size: 0xda2
 function init()
@@ -132,8 +132,8 @@ function init()
     }
     
     setdvar( @"hash_da4f64f6eb4d97da", 3 );
-    setdvar( @"hash_f6f24e020168ade8", "nothing" );
-    setdvarifuninitialized( @"hash_8d9ad523f40be455", 12000 );
+    setdvar( @"scr_br_loadout_option", "nothing" );
+    setdvarifuninitialized( @"scr_br_respawnmaxteammateoffset", 12000 );
     setomnvar( "ui_br_circle_state", 4 );
     setomnvar( "ui_gulag_state", 1 );
     setomnvar( "ui_hide_redeploy_timer", 1 );
@@ -154,8 +154,8 @@ function init()
     level.secondsbeforeplacementupdates = getdvarint( @"hash_e616cb0e727859dd", 60 );
     level.disablepercentageannouncements = getdvarint( @"hash_69e6435403e5c322", 0 );
     level.var_29af3a470e92b6e1 = getdvarint( @"hash_50c18d3651edf35d", 0 );
-    level.lootleadermarkcount = getdvarint( @"hash_3ada79b2236a5c12", 3 );
-    level.maxlootleadermarkcount = getdvarint( @"hash_3ada79b2236a5c12", 3 );
+    level.lootleadermarkcount = getdvarint( @"scr_plunder_loot_leader_mark_count", 3 );
+    level.maxlootleadermarkcount = getdvarint( @"scr_plunder_loot_leader_mark_count", 3 );
     level.lootleadermarksize = getdvarint( @"hash_1650346812659df2", 5000 );
     level.lootleaderoneperteam = getdvarint( @"hash_5fd1126ec81d6b0b", 1 ) == 1;
     level.lootleadermarksizedynamic = getdvarint( @"hash_1b7554a04b02683c", 1 );
@@ -164,7 +164,7 @@ function init()
     level.lootleadermarkweaksize = getdvarint( @"hash_fc8b22a888365974", 5000 );
     level.lootleadermarkweakvalue = getdvarint( @"hash_43d67f5054412e02", 1000 );
     level.expiredlootleaderenabled = getdvarint( @"hash_a88980519c8d01b6", 0 ) == 1;
-    level.lootleadermarksontopteams = getdvarint( @"hash_66caf7f753f08487", 2 );
+    level.lootleadermarksontopteams = getdvarint( @"scr_plunder_loot_leader_mark_top_teams", 2 );
     level.plundermusicfirst = getdvarfloat( @"hash_24c7c305d1ead986", 0.3 );
     level.plundermusicsecond = getdvarfloat( @"hash_3f1f73f0aeec8fd4", 0.5 );
     level.plundermusicthird = getdvarfloat( @"hash_25360b6a507d1e21", 0.75 );
@@ -174,7 +174,7 @@ function init()
     level.tokenrespawnwaittime = getdvarint( @"hash_728cba7a2adc64db", level.autorespawnwaittime );
     level.incrementalrespawnpunish = getdvarint( @"hash_fc3a0f4f0cdd615e", 0 );
     level.incrementalrespawnpunishmax = getdvarfloat( @"hash_5eb645f42926f53b", 15 );
-    level.respawnheightoverride = getdvarint( @"hash_8495ad89c3580163", 6000 );
+    level.respawnheightoverride = getdvarint( @"scr_plunder_respawnheightoverride", 6000 );
     level.respawntimedisable = getdvarint( @"hash_73dbc19ad4c85d57", 0 );
     level.parachutedeploydelay = getdvarfloat( @"hash_12027360b079c1db", 1.5 );
     level.bonusdeathplunder = getdvarint( @"hash_d8ce253f7d3b81ff", 400 );
@@ -185,7 +185,7 @@ function init()
     level.var_b5bc63fa8162fce0 = getdvarint( @"hash_4e0de97531d62635", 25 );
     level.plunderfxondropthreashold = getdvarint( @"hash_9421b492cb2d2db8", 1500 );
     level.maxplunderdropinovertime = getdvarint( @"hash_f9a79b878dee90d", 20000 );
-    level.executioncashmultiplier = getdvarfloat( @"hash_3f5135381420d42e", 1 );
+    level.executioncashmultiplier = getdvarfloat( @"scr_plunder_executioncashmultiplier", 1 );
     level.autoassignfirstquest = getdvarint( @"hash_4a06e0523640f8fa", 0 );
     level.quest_domdistmin = getdvarint( @"hash_ad5a509fceccdbca", 5000 );
     level.quest_domdistmax = getdvarint( @"hash_ad7d5a9fcef33980", 10000 );
@@ -253,7 +253,7 @@ function init()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a76
 // Size: 0x368
 function initpostmain()
@@ -281,7 +281,8 @@ function initpostmain()
     level.lootleadermarks = [];
     level.expiredlootleadermarks = [];
     
-    for (i = 0; i < level.lootleadermarkcount; i++) {
+    for ( i = 0; i < level.lootleadermarkcount ; i++ )
+    {
         if ( level.lootleadermarksontopteams > 0 && i == 0 )
         {
             idindex = "LootLeaderTop_Plunder";
@@ -369,7 +370,7 @@ function initpostmain()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2de6
 // Size: 0x63
 function onprematchfadedone()
@@ -383,7 +384,7 @@ function onprematchfadedone()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e51
 // Size: 0x3d
 function function_dc2b625c4d2e4f5()
@@ -402,7 +403,7 @@ function function_dc2b625c4d2e4f5()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e96
 // Size: 0x86
 function changecirclestateatlowtime()
@@ -416,7 +417,7 @@ function changecirclestateatlowtime()
     
     level endon( "end_circlestate_timer" );
     scripts\mp\flags::gameflagwait( "prematch_done" );
-    timer = getdvarint( @"hash_e022fd0199a95f84" );
+    timer = getdvarint( @"scr_br_timelimit" );
     setomnvar( "ui_br_circle_state", 5 );
     setomnvar( "ui_hardpoint_timer", gettime() + int( timer * 1000 ) );
     wait int( max( timer - 300, 0 ) );
@@ -424,14 +425,14 @@ function changecirclestateatlowtime()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f24
 // Size: 0x6d
 function changetimertoovertimetimer()
 {
     level endon( "game_ended" );
     scripts\mp\flags::gameflagwait( "prematch_done" );
-    timer = getdvarint( @"hash_e022fd0199a95f84" );
+    timer = getdvarint( @"scr_br_timelimit" );
     waittime = int( max( timer - level.doendofmatchotsequence, 0 ) );
     
     if ( waittime <= 0 )
@@ -445,7 +446,7 @@ function changetimertoovertimetimer()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f99
 // Size: 0x1d
 function waitandstartplunderpolling()
@@ -456,7 +457,7 @@ function waitandstartplunderpolling()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fbe
 // Size: 0x3d
 function cleanupents()
@@ -468,7 +469,7 @@ function cleanupents()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3003
 // Size: 0x69
 function onplayerdisconnect( player )
@@ -492,7 +493,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3074
 // Size: 0xb
 function ononeleftevent( team )
@@ -501,7 +502,7 @@ function ononeleftevent( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3087
 // Size: 0x56
 function onpickuptakenintobackpack( pickupent )
@@ -520,7 +521,7 @@ function onpickuptakenintobackpack( pickupent )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30e5
 // Size: 0x110
 function playerwelcomesplashes( data )
@@ -574,7 +575,7 @@ function playerwelcomesplashes( data )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31fd
 // Size: 0x26, Type: bool
 function spawnhandled( player )
@@ -583,7 +584,7 @@ function spawnhandled( player )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x322c
 // Size: 0x2
 function getdropbagdelay()
@@ -592,7 +593,7 @@ function getdropbagdelay()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3236
 // Size: 0x227
 function trackserverend()
@@ -673,7 +674,7 @@ function trackserverend()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3465
 // Size: 0x8a
 function findanyaliveplayer()
@@ -692,7 +693,7 @@ function findanyaliveplayer()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34f8
 // Size: 0x7c
 function findteamwithnoplayers()
@@ -711,7 +712,7 @@ function findteamwithnoplayers()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x357d
 // Size: 0x148
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -747,7 +748,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36cd
 // Size: 0xd, Type: bool
 function brmayconsiderplayerdead( player )
@@ -756,7 +757,7 @@ function brmayconsiderplayerdead( player )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36e3
 // Size: 0xd, Type: bool
 function playershouldrespawn( data )
@@ -765,7 +766,7 @@ function playershouldrespawn( data )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36f9
 // Size: 0x24
 function setupmission()
@@ -775,7 +776,7 @@ function setupmission()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3725
 // Size: 0xf1
 function getextractionposition()
@@ -802,7 +803,7 @@ function getextractionposition()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x381f
 // Size: 0x75
 function makeextractionobjective()
@@ -820,7 +821,7 @@ function makeextractionobjective()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x389c
 // Size: 0x91
 function setupmissionwidget()
@@ -837,7 +838,7 @@ function setupmissionwidget()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3935
 // Size: 0x7f
 function getcurrentxp()
@@ -855,7 +856,7 @@ function getcurrentxp()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39bd
 // Size: 0x85
 function showextractionobjectivetoteam( team )
@@ -869,7 +870,7 @@ function showextractionobjectivetoteam( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a4a
 // Size: 0x85
 function hideextractionobjectivefromteam( team )
@@ -883,7 +884,7 @@ function hideextractionobjectivefromteam( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ad7
 // Size: 0x198
 function doteamextractedupdate()
@@ -916,7 +917,7 @@ function doteamextractedupdate()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c77
 // Size: 0x43
 function brendgame()
@@ -927,7 +928,7 @@ function brendgame()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cc2
 // Size: 0x71
 function handleendgamesplash()
@@ -942,7 +943,7 @@ function handleendgamesplash()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d3b
 // Size: 0x548
 function function_34e46d26df79fdad()
@@ -1006,7 +1007,7 @@ function function_34e46d26df79fdad()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x428b
 // Size: 0x214
 function setuptimelimit()
@@ -1064,7 +1065,7 @@ function setuptimelimit()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44a7
 // Size: 0xcf
 function clocksounds( timeleft )
@@ -1095,7 +1096,7 @@ function clocksounds( timeleft )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x457e
 // Size: 0xac
 function function_9846f99ee86791d8( timeleft )
@@ -1127,7 +1128,7 @@ function function_9846f99ee86791d8( timeleft )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4632
 // Size: 0x332
 function setupteamplunderhud()
@@ -1186,7 +1187,7 @@ function setupteamplunderhud()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x496c
 // Size: 0x40
 function setteamplunderhud( team, hudelem )
@@ -1197,7 +1198,7 @@ function setteamplunderhud( team, hudelem )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49b4
 // Size: 0x1c
 function getteamplunderhud( team )
@@ -1206,7 +1207,7 @@ function getteamplunderhud( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x49d9
 // Size: 0x1a6
 function createhudelem( label, value, point, relativepoint, xoffset, yoffset, color, team, fontscale, player )
@@ -1264,7 +1265,7 @@ function createhudelem( label, value, point, relativepoint, xoffset, yoffset, co
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b88
 // Size: 0x16, Type: bool
 function sortplayerplunderscores( score1, score2 )
@@ -1273,7 +1274,7 @@ function sortplayerplunderscores( score1, score2 )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ba7
 // Size: 0x4b
 function hackclientomnvarclamp( omnvar, val )
@@ -1284,7 +1285,7 @@ function hackclientomnvarclamp( omnvar, val )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4bfa
 // Size: 0x4b
 function hackomnvarclamp( omnvar, val )
@@ -1295,7 +1296,7 @@ function hackomnvarclamp( omnvar, val )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c4d
 // Size: 0xdd7
 function plunderrankupdate()
@@ -1742,7 +1743,7 @@ function plunderrankupdate()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a2c
 // Size: 0x105
 function autobankteamplunder( team )
@@ -1778,7 +1779,7 @@ function autobankteamplunder( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b39
 // Size: 0x14
 function overtimecashmultiplier()
@@ -1787,7 +1788,7 @@ function overtimecashmultiplier()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b55
 // Size: 0x31
 function placementupdatewait()
@@ -1803,7 +1804,7 @@ function placementupdatewait()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b8e
 // Size: 0x26
 function getpreviousplacement( team )
@@ -1817,7 +1818,7 @@ function getpreviousplacement( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5bbd
 // Size: 0x97
 function triggermatchendtimer( endtime )
@@ -1833,7 +1834,7 @@ function triggermatchendtimer( endtime )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c5c
 // Size: 0xe7
 function updateteamplunderhud( team )
@@ -1855,7 +1856,7 @@ function updateteamplunderhud( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d4b
 // Size: 0xee
 function dohudplunderrollsound( sign, team )
@@ -1892,7 +1893,7 @@ function dohudplunderrollsound( sign, team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e41
 // Size: 0x61
 function givewincondition( winteam )
@@ -1912,7 +1913,7 @@ function givewincondition( winteam )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5eaa
 // Size: 0x3c7
 function playerdropplunderondeath( dropstruct, attacker )
@@ -2060,7 +2061,7 @@ function playerdropplunderondeath( dropstruct, attacker )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x627a
 // Size: 0x33
 function onpostkillcamcallback()
@@ -2073,7 +2074,7 @@ function onpostkillcamcallback()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x62b5
 // Size: 0x229
 function dropplunderbyrarity( amount, dropstruct )
@@ -2087,7 +2088,8 @@ function dropplunderbyrarity( amount, dropstruct )
     numspawns = [];
     totalcount = 0;
     
-    for (i = level.br_plunder.quantity.size - 1; i >= 0; i--) {
+    for ( i = level.br_plunder.quantity.size - 1; i >= 0 ; i-- )
+    {
         numspawns[ i ] = int( amount / level.br_plunder.quantity[ i ] );
         totalcount += numspawns[ i ];
         
@@ -2099,13 +2101,15 @@ function dropplunderbyrarity( amount, dropstruct )
         amount -= numspawns[ i ] * level.br_plunder.quantity[ i ];
     }
     
-    for (var_f90d0e006a1f717b = level.br_plunder.quantity.size - 1; var_f90d0e006a1f717b >= 0; var_f90d0e006a1f717b--) {
+    for ( var_f90d0e006a1f717b = level.br_plunder.quantity.size - 1; var_f90d0e006a1f717b >= 0 ; var_f90d0e006a1f717b-- )
+    {
         if ( !isdefined( numspawns[ var_f90d0e006a1f717b ] ) )
         {
             continue;
         }
         
-        for (itemindex = 0; itemindex < numspawns[ var_f90d0e006a1f717b ]; itemindex++) {
+        for ( itemindex = 0; itemindex < numspawns[ var_f90d0e006a1f717b ] ; itemindex++ )
+        {
             dropinfo = scripts\mp\gametypes\br_pickups::getitemdroporiginandangles( dropstruct, self.origin, self.angles, self );
             pickupent = scripts\mp\gametypes\br_pickups::spawnpickup( level.br_plunder.names[ var_f90d0e006a1f717b ], dropinfo, level.br_plunder.quantity[ var_f90d0e006a1f717b ], 1 );
             scripts\mp\gametypes\br_plunder::modify_plunder_itemsinworld( level.br_plunder.names[ var_f90d0e006a1f717b ], 1 );
@@ -2129,7 +2133,7 @@ function dropplunderbyrarity( amount, dropstruct )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64e7
 // Size: 0x5f
 function getcost()
@@ -2143,7 +2147,7 @@ function getcost()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x654f
 // Size: 0xb
 function getwincost()
@@ -2152,7 +2156,7 @@ function getwincost()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6563
 // Size: 0x62
 function playertakeextractionplunder( amount )
@@ -2173,7 +2177,7 @@ function playertakeextractionplunder( amount )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65ce
 // Size: 0x77
 function teamclearextractplunder( team )
@@ -2187,7 +2191,7 @@ function teamclearextractplunder( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x664d
 // Size: 0xa9
 function teamrefundplunder( team )
@@ -2206,7 +2210,7 @@ function teamrefundplunder( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66fe
 // Size: 0x82
 function huddopulse()
@@ -2231,7 +2235,7 @@ function huddopulse()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6788
 // Size: 0x114
 function drophelicrate( heli )
@@ -2259,7 +2263,7 @@ function drophelicrate( heli )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68a4
 // Size: 0x2d
 function cratedropplunder()
@@ -2270,7 +2274,7 @@ function cratedropplunder()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x68d9
 // Size: 0x8e
 function calculatehelitimetoflysec( distinches, speedmph, accelmph )
@@ -2286,7 +2290,7 @@ function calculatehelitimetoflysec( distinches, speedmph, accelmph )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6970
 // Size: 0x4d
 function calculatehelitimetoarrive( var_625180ce8d2f8f77 )
@@ -2298,7 +2302,7 @@ function calculatehelitimetoarrive( var_625180ce8d2f8f77 )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x69c6
 // Size: 0xb1
 function helisetteamextractionhud( state, timesec )
@@ -2314,7 +2318,7 @@ function helisetteamextractionhud( state, timesec )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a7f
 // Size: 0x125
 function helibankplunder()
@@ -2345,7 +2349,7 @@ function helibankplunder()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6bac
 // Size: 0x3a
 function heliusecleanup()
@@ -2358,7 +2362,7 @@ function heliusecleanup()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6bee
 // Size: 0x32
 function helicleanupdepotonleaving( usable )
@@ -2369,7 +2373,7 @@ function helicleanupdepotonleaving( usable )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c28
 // Size: 0x81
 function helicreateextractvfx( position )
@@ -2382,7 +2386,7 @@ function helicreateextractvfx( position )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6cb1
 // Size: 0x7e
 function helicleanupextract( enablesite )
@@ -2400,7 +2404,7 @@ function helicleanupextract( enablesite )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d37
 // Size: 0x7d
 function helidisapateextractvfx()
@@ -2423,7 +2427,7 @@ function helidisapateextractvfx()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6dbc
 // Size: 0x236
 function spawnheli( owner, pathstart, pathgoal, pathexit )
@@ -2478,7 +2482,7 @@ function spawnheli( owner, pathstart, pathgoal, pathexit )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ffb
 // Size: 0xcf
 function spawnrope( heli )
@@ -2494,7 +2498,7 @@ function spawnrope( heli )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x70d2
 // Size: 0xc2
 function helidestroyed()
@@ -2523,7 +2527,7 @@ function helidestroyed()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x719c
 // Size: 0x3a
 function helicleanup()
@@ -2540,7 +2544,7 @@ function helicleanup()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71de
 // Size: 0xf5
 function heliexplode( attacker )
@@ -2560,7 +2564,7 @@ function heliexplode( attacker )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x72db
 // Size: 0xa
 function helidelete()
@@ -2569,7 +2573,7 @@ function helidelete()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x72ed
 // Size: 0x6b
 function helicrash( speed )
@@ -2583,7 +2587,7 @@ function helicrash( speed )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7360
 // Size: 0x129
 function handledestroydamage()
@@ -2606,7 +2610,7 @@ function handledestroydamage()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x7491
 // Size: 0x18e
 function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, partname, eventid )
@@ -2642,7 +2646,7 @@ function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdea
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7627
 // Size: 0xc1
 function helileave()
@@ -2666,7 +2670,7 @@ function helileave()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x76f0
 // Size: 0xa3
 function helidescend( location, groundz )
@@ -2687,7 +2691,7 @@ function helidescend( location, groundz )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x779b
 // Size: 0x33, Type: bool
 function entisalivevehicle()
@@ -2696,7 +2700,7 @@ function entisalivevehicle()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77d7
 // Size: 0x5e
 function helidestroyvehiclestouchnotify()
@@ -2716,7 +2720,7 @@ function helidestroyvehiclestouchnotify()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x783d
 // Size: 0x282
 function helidestroyvehiclestouchtrace()
@@ -2779,7 +2783,7 @@ function helidestroyvehiclestouchtrace()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ac7
 // Size: 0x4e
 function tracegroundheight( start )
@@ -2792,7 +2796,7 @@ function tracegroundheight( start )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7b1e
 // Size: 0x84
 function tracegroundpoint( start, radius, ignorelist )
@@ -2815,7 +2819,7 @@ function tracegroundpoint( start, radius, ignorelist )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bab
 // Size: 0x20
 function heliwatchgameendleave()
@@ -2827,7 +2831,7 @@ function heliwatchgameendleave()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bd3
 // Size: 0x175
 function initextractionlocations()
@@ -2869,7 +2873,7 @@ function initextractionlocations()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d50
 // Size: 0xb
 function createextractionlocation( origin )
@@ -2878,7 +2882,7 @@ function createextractionlocation( origin )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d63
 // Size: 0x23c
 function monitorextractionlocations()
@@ -2937,7 +2941,7 @@ function monitorextractionlocations()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7fa7
 // Size: 0x7a
 function spawnextractsmoke( location )
@@ -2951,7 +2955,7 @@ function spawnextractsmoke( location )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8029
 // Size: 0x4d
 function extactionstart( location )
@@ -2964,7 +2968,7 @@ function extactionstart( location )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x807e
 // Size: 0x40
 function showextractiontime()
@@ -2980,7 +2984,7 @@ function showextractiontime()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x80c6
 // Size: 0x43
 function extactioncancel()
@@ -2993,7 +2997,7 @@ function extactioncancel()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8111
 // Size: 0x43
 function extactioncomplete()
@@ -3005,7 +3009,7 @@ function extactioncomplete()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x815c
 // Size: 0x189
 function autoassignquest( player )
@@ -3050,7 +3054,7 @@ function autoassignquest( player )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x82ed
 // Size: 0x6d
 function missions_clearinappropriaterewards( rewards )
@@ -3071,7 +3075,7 @@ function missions_clearinappropriaterewards( rewards )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8363
 // Size: 0xe0
 function handleplunderendgamesplash( winner )
@@ -3100,7 +3104,7 @@ function handleplunderendgamesplash( winner )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x844b
 // Size: 0x6a
 function updateteamplunderscore( var_7eddf19f11da2f94, team, var_c6544e2c82d62dfb )
@@ -3118,7 +3122,7 @@ function updateteamplunderscore( var_7eddf19f11da2f94, team, var_c6544e2c82d62df
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84be
 // Size: 0xf7
 function updatelootleadersonfixedinterval()
@@ -3133,7 +3137,8 @@ function updatelootleadersonfixedinterval()
     solidinterval = interval - blinkinterval;
     scripts\mp\flags::gameflagwait( "placement_updates_allowed" );
     
-    for (firstpass = 1; true; firstpass = 0) {
+    for ( firstpass = 1; true ; firstpass = 0 )
+    {
         level.plunderupdatelootleadermarks = 1;
         scripts\engine\utility::waittill_notify_or_timeout( "bmo_overtime_start", solidinterval );
         
@@ -3147,12 +3152,13 @@ function updatelootleadersonfixedinterval()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x85bd
 // Size: 0x77
 function function_b97f3e1b29916d34( indexprefix )
 {
-    for (i = 0; i < level.lootleadermarkcount; i++) {
+    for ( i = 0; i < level.lootleadermarkcount ; i++ )
+    {
         if ( level.lootleadermarksontopteams > 0 && i == 0 )
         {
             idindex = "LootLeaderTop_Plunder";
@@ -3172,7 +3178,7 @@ function function_b97f3e1b29916d34( indexprefix )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x863c
 // Size: 0xcb
 function updatecirclepulse( startval, endval, duration )
@@ -3199,7 +3205,7 @@ function updatecirclepulse( startval, endval, duration )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x870f
 // Size: 0x62a
 function updatelootleadermarks( playerscores, playersorted, playerlookup, teamsorted )
@@ -3222,7 +3228,8 @@ function updatelootleadermarks( playerscores, playersorted, playerlookup, teamso
     
     if ( level.lootleadermarksontopteams == 1 )
     {
-        for (i = 0; i < level.lootleadermarkcount; i++) {
+        for ( i = 0; i < level.lootleadermarkcount ; i++ )
+        {
             var_d546f00edc1b5fc7 = getlootteamleader( i, playerscores, teamsorted );
             
             if ( isdefined( var_d546f00edc1b5fc7 ) )
@@ -3323,7 +3330,8 @@ function updatelootleadermarks( playerscores, playersorted, playerlookup, teamso
         }
     }
     
-    for (i = 0; i < level.lootleadermarkcount; i++) {
+    for ( i = 0; i < level.lootleadermarkcount ; i++ )
+    {
         instance = level.lootleadermarks[ i ];
         
         if ( isdefined( level.lootleaders[ i ] ) )
@@ -3377,7 +3385,7 @@ function updatelootleadermarks( playerscores, playersorted, playerlookup, teamso
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8d41
 // Size: 0xfc
 function getlootteamleader( index, playerscores, teamsorted )
@@ -3408,7 +3416,7 @@ function getlootteamleader( index, playerscores, teamsorted )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e46
 // Size: 0x6a
 function addplayeraslootleader( instance )
@@ -3432,7 +3440,7 @@ function addplayeraslootleader( instance )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8eb8
 // Size: 0xfa
 function removeplayeraslootleader( player )
@@ -3464,7 +3472,7 @@ function removeplayeraslootleader( player )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8fba
 // Size: 0x46
 function watchforplayerdeath( instance )
@@ -3477,7 +3485,7 @@ function watchforplayerdeath( instance )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9008
 // Size: 0x2d9
 function addplayerasexpiredlootleader( player, circleorigin )
@@ -3553,7 +3561,7 @@ function addplayerasexpiredlootleader( player, circleorigin )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x92e9
 // Size: 0x2a
 function updateexpiredlootleader( instance )
@@ -3564,7 +3572,7 @@ function updateexpiredlootleader( instance )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x931b
 // Size: 0xc0
 function removeplayerasexpiredlootleader( instance )
@@ -3583,7 +3591,7 @@ function removeplayerasexpiredlootleader( instance )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x93e3
 // Size: 0xc4
 function cashleaderbag_attach()
@@ -3612,7 +3620,7 @@ function cashleaderbag_attach()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94af
 // Size: 0x91
 function cashleaderbag_detach()
@@ -3635,7 +3643,7 @@ function cashleaderbag_detach()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9548
 // Size: 0x27
 function cashleader_trackdeath()
@@ -3648,7 +3656,7 @@ function cashleader_trackdeath()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9577
 // Size: 0xdc
 function packextrascore0( data )
@@ -3701,7 +3709,7 @@ function packextrascore0( data )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x965b
 // Size: 0xa2
 function packclientmatchdata()
@@ -3744,7 +3752,7 @@ function packclientmatchdata()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9706
 // Size: 0x46
 function playerlootleadervalidity()
@@ -3759,7 +3767,7 @@ function playerlootleadervalidity()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9754
 // Size: 0xd6
 function updatelootleadercirclesize( instance )
@@ -3782,7 +3790,7 @@ function updatelootleadercirclesize( instance )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9832
 // Size: 0xeb
 function adjustlootleadermarkcount( placements )
@@ -3791,7 +3799,8 @@ function adjustlootleadermarkcount( placements )
     placements = getteamscoreplacements();
     wintarget = getwincost();
     
-    for (i = 1; i < level.maxlootleadermarkcount + 1; i++) {
+    for ( i = 1; i < level.maxlootleadermarkcount + 1 ; i++ )
+    {
         foreach ( team in level.teamnamelist )
         {
             if ( placements[ team ] != i )
@@ -3817,7 +3826,7 @@ function adjustlootleadermarkcount( placements )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9926
 // Size: 0x1fb
 function displayplunderloss( player, delta )
@@ -3868,7 +3877,7 @@ function displayplunderloss( player, delta )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9b29
 // Size: 0x38b
 function _getplunderextractlocations( var_532388c61e12b9df, maxlocations, var_395f0c06f7abdcc1 )
@@ -3895,7 +3904,8 @@ function _getplunderextractlocations( var_532388c61e12b9df, maxlocations, var_39
         {
             siteindex = 0;
             
-            for (i = 0; i < newarraysize; i++) {
+            for ( i = 0; i < newarraysize ; i++ )
+            {
                 if ( siteindex > level.paddedquadgridcenterpoints.size - 1 )
                 {
                     siteindex = 0;
@@ -3936,7 +3946,8 @@ function _getplunderextractlocations( var_532388c61e12b9df, maxlocations, var_39
             
             siteindex = 0;
             
-            for (i = 0; i < newarraysize; i++) {
+            for ( i = 0; i < newarraysize ; i++ )
+            {
                 if ( siteindex > level.quadgridcenterpoints.size - 1 )
                 {
                     siteindex = 0;
@@ -3963,7 +3974,8 @@ function _getplunderextractlocations( var_532388c61e12b9df, maxlocations, var_39
         var_532388c61e12b9df = scripts\engine\utility::array_randomize( var_532388c61e12b9df );
         newarraysize = int( min( maxlocations, var_532388c61e12b9df.size ) );
         
-        for (i = 0; i < newarraysize; i++) {
+        for ( i = 0; i < newarraysize ; i++ )
+        {
             spawnstructs[ spawnstructs.size ] = var_532388c61e12b9df[ i ];
         }
     }
@@ -3983,7 +3995,7 @@ function _getplunderextractlocations( var_532388c61e12b9df, maxlocations, var_39
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9ebd
 // Size: 0x7d, Type: bool
 function pointinsquare( point, center, width )
@@ -3996,7 +4008,7 @@ function pointinsquare( point, center, width )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f43
 // Size: 0x75
 function _getsingleplunderextractlocations( var_532388c61e12b9df, maxlocations )
@@ -4012,7 +4024,8 @@ function _getsingleplunderextractlocations( var_532388c61e12b9df, maxlocations )
     {
         var_532388c61e12b9df = scripts\engine\utility::array_randomize( var_532388c61e12b9df );
         
-        for (i = 0; i < var_532388c61e12b9df.size; i++) {
+        for ( i = 0; i < var_532388c61e12b9df.size ; i++ )
+        {
             if ( !array_contains( level.br_plunder_sites, var_532388c61e12b9df[ i ] ) )
             {
                 site = var_532388c61e12b9df[ i ];
@@ -4025,7 +4038,7 @@ function _getsingleplunderextractlocations( var_532388c61e12b9df, maxlocations )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9fc1
 // Size: 0x157
 function findnewplunderextractsite( oldsite )
@@ -4050,7 +4063,7 @@ function findnewplunderextractsite( oldsite )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa120
 // Size: 0xf3
 function startplunderextractiontimers()
@@ -4075,7 +4088,7 @@ function startplunderextractiontimers()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa21b
 // Size: 0x3b
 function runplunderextractsitetimer()
@@ -4087,7 +4100,7 @@ function runplunderextractsitetimer()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa25e
 // Size: 0x58
 function runextractreroll()
@@ -4104,7 +4117,7 @@ function runextractreroll()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2be
 // Size: 0xa1
 function createheliextractobjectiveicons()
@@ -4120,7 +4133,7 @@ function createheliextractobjectiveicons()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa367
 // Size: 0xcc
 function timeoutradialunfill()
@@ -4146,7 +4159,7 @@ function timeoutradialunfill()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa43b
 // Size: 0xb5
 function createquestobjicon( iconref, state, var_38116998df9814d4 )
@@ -4172,7 +4185,7 @@ function createquestobjicon( iconref, state, var_38116998df9814d4 )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa4f8
 // Size: 0x1c
 function movequestobjicon( neworigin )
@@ -4181,7 +4194,7 @@ function movequestobjicon( neworigin )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa51c
 // Size: 0x1b
 function showquestobjicontoplayer( player )
@@ -4190,7 +4203,7 @@ function showquestobjicontoplayer( player )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa53f
 // Size: 0x12
 function showquestobjicontoall( objid )
@@ -4199,7 +4212,7 @@ function showquestobjicontoall( objid )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa559
 // Size: 0x1b
 function hidequestobjiconfromplayer( player )
@@ -4208,7 +4221,7 @@ function hidequestobjiconfromplayer( player )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa57c
 // Size: 0x22
 function deletequestobjicon()
@@ -4218,7 +4231,7 @@ function deletequestobjicon()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa5a6
 // Size: 0x5b
 function startbmoexfilprocess( team )
@@ -4241,7 +4254,7 @@ function startbmoexfilprocess( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa609
 // Size: 0x8e
 function setexfiltimer()
@@ -4257,7 +4270,7 @@ function setexfiltimer()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa69f
 // Size: 0xcc
 function showexfilstartsplash( winningteam )
@@ -4275,7 +4288,7 @@ function showexfilstartsplash( winningteam )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa773
 // Size: 0x41
 function startvipteamuav( team )
@@ -4287,7 +4300,7 @@ function startvipteamuav( team )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7bc
 // Size: 0x47
 function removenonvipteamlocations()
@@ -4304,7 +4317,7 @@ function removenonvipteamlocations()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa80b
 // Size: 0x154
 function startexfilchoppers()
@@ -4315,7 +4328,8 @@ function startexfilchoppers()
         groundorg = getgroundposition( site.origin, 1 ) + ( 0, 0, 2 );
         var_6b2ff09e35c441ce = level.players[ 0 ];
         
-        for (i = 0; i < 200; i++) {
+        for ( i = 0; i < 200 ; i++ )
+        {
             var_6b2ff09e35c441ce = findanyaliveplayer();
             
             if ( isplayer( var_6b2ff09e35c441ce ) )
@@ -4339,7 +4353,7 @@ function startexfilchoppers()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa967
 // Size: 0x104
 function playerspawnexfilchopper( position, site )
@@ -4365,7 +4379,7 @@ function playerspawnexfilchopper( position, site )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaa74
 // Size: 0x1d2
 function extractplayers()
@@ -4406,7 +4420,7 @@ function extractplayers()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xac4e
 // Size: 0x116
 function helimakeexfilwait()
@@ -4439,7 +4453,7 @@ function helimakeexfilwait()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad6c
 // Size: 0xf4
 function heliexfilthink( usable )
@@ -4473,7 +4487,7 @@ function heliexfilthink( usable )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xae68
 // Size: 0xc3
 function healdamage()
@@ -4490,7 +4504,7 @@ function healdamage()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf33
 // Size: 0x4f
 function tracegroundheightexfil( start )
@@ -4503,7 +4517,7 @@ function tracegroundheightexfil( start )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaf8b
 // Size: 0x14d
 function findclearflightyaw( descendpoint, site )
@@ -4561,7 +4575,7 @@ function findclearflightyaw( descendpoint, site )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb0e1
 // Size: 0xd5
 function nuke_startexfilcountdown( winteam )
@@ -4590,7 +4604,7 @@ function nuke_startexfilcountdown( winteam )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb1be
 // Size: 0x33c
 function triggerovertimetimer( team, var_c0174fb6729764e5, ontimelimitot )
@@ -4683,7 +4697,7 @@ function triggerovertimetimer( team, var_c0174fb6729764e5, ontimelimitot )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb502
 // Size: 0x7e
 function getinitialwinningteam()
@@ -4705,7 +4719,7 @@ function getinitialwinningteam()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb589
 // Size: 0xb0
 function ontimelimit()
@@ -4730,7 +4744,7 @@ function ontimelimit()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb641
 // Size: 0x52
 function bmoendgameot()
@@ -4745,7 +4759,7 @@ function bmoendgameot()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb69b
 // Size: 0x6c
 function handlebmoendgamesplash()
@@ -4759,7 +4773,7 @@ function handlebmoendgamesplash()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb70f
 // Size: 0x102, Type: bool
 function playerspawnendofgame()
@@ -4803,7 +4817,7 @@ function playerspawnendofgame()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb81a
 // Size: 0x5a2
 function eomawardplayerxp()
@@ -4931,7 +4945,7 @@ function eomawardplayerxp()
 /#
 
     // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xbdc4
     // Size: 0x25c, Type: dev
     function devthink()
@@ -4996,7 +5010,7 @@ function eomawardplayerxp()
 #/
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc028
 // Size: 0x587
 function initendcameralocations()
@@ -5071,7 +5085,7 @@ function initendcameralocations()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc5b7
 // Size: 0x78
 function triggerbloodmoneyendcameras()
@@ -5092,7 +5106,7 @@ function triggerbloodmoneyendcameras()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc637
 // Size: 0x62
 function endcameradebug_think()
@@ -5112,7 +5126,7 @@ function endcameradebug_think()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6a1
 // Size: 0xa8
 function getbestcameraindex( player )
@@ -5140,7 +5154,7 @@ function getbestcameraindex( player )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc752
 // Size: 0xbf
 function playmatchendcamera( player, cameraindex )
@@ -5164,7 +5178,7 @@ function playmatchendcamera( player, cameraindex )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc819
 // Size: 0x94
 function printallteamsplundercount()
@@ -5174,7 +5188,8 @@ function printallteamsplundercount()
         wintarget = getwincost();
         teamsorted = tablesort( game[ "<dev string:x295>" ], "<dev string:x2a7>" );
         
-        for (i = 0; i < teamsorted.size - 1; i++) {
+        for ( i = 0; i < teamsorted.size - 1 ; i++ )
+        {
             if ( isdefined( level.teamdata[ teamsorted[ i ] ][ "<dev string:x281>" ] ) )
             {
                 teamplunder = scripts\mp\gametypes\br_plunder::getteamplunder( teamsorted[ i ] ) * 10;
@@ -5185,7 +5200,7 @@ function printallteamsplundercount()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc8b5
 // Size: 0x2dc
 function initdialog()
@@ -5233,7 +5248,7 @@ function initdialog()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb99
 // Size: 0xdf
 function function_597185764a5679f4()
@@ -5256,7 +5271,7 @@ function function_597185764a5679f4()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcc80
 // Size: 0x50
 function function_af537bbd5b957fa6()
@@ -5270,7 +5285,7 @@ function function_af537bbd5b957fa6()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xccd8
 // Size: 0x26
 function lootallowedinbackpack( scriptablename )
@@ -5284,7 +5299,7 @@ function lootallowedinbackpack( scriptablename )
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd06
 // Size: 0x3, Type: bool
 function markplayeraseliminatedonkilled()
@@ -5293,7 +5308,7 @@ function markplayeraseliminatedonkilled()
 }
 
 // Namespace br_gametype_plunder / scripts\mp\gametypes\br_gametype_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd12
 // Size: 0x265
 function watchparachutersoverhead( intervalms )

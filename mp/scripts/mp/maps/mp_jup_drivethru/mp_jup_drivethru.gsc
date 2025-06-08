@@ -19,7 +19,7 @@
 #namespace mp_jup_drivethru;
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x998
 // Size: 0x129
 function main()
@@ -53,7 +53,7 @@ function main()
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xac9
 // Size: 0x348
 function fun_machine()
@@ -120,7 +120,7 @@ function fun_machine()
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe19
 // Size: 0x33
 function function_40b13ec476b59230( movingplatforment )
@@ -139,7 +139,7 @@ function function_40b13ec476b59230( movingplatforment )
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe55
 // Size: 0x1ce
 function function_bb96f5c1668f85a8( state )
@@ -181,7 +181,7 @@ function function_bb96f5c1668f85a8( state )
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x102b
 // Size: 0x103
 function function_d9f78a611c4686bb( state )
@@ -211,7 +211,7 @@ function function_d9f78a611c4686bb( state )
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1136
 // Size: 0xac
 function function_77c5bd936b9b3a50()
@@ -234,7 +234,7 @@ function function_77c5bd936b9b3a50()
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11ea
 // Size: 0x24
 function button_mover( angle )
@@ -244,7 +244,7 @@ function button_mover( angle )
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1216
 // Size: 0x40
 function function_1682cf22619a5e55()
@@ -259,7 +259,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x125e
 // Size: 0x3d8
 function function_98d7d107ecc37654()
@@ -335,7 +335,7 @@ function function_98d7d107ecc37654()
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x163e
 // Size: 0x93
 function function_cdefe9ef996be481()
@@ -360,7 +360,7 @@ function function_cdefe9ef996be481()
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16d9
 // Size: 0x95
 function function_60f3ea12bac7b984( clear, static )
@@ -384,7 +384,7 @@ function function_60f3ea12bac7b984( clear, static )
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1776
 // Size: 0x29c
 function easter_egg()
@@ -445,7 +445,7 @@ function easter_egg()
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a1a
 // Size: 0x108
 function trig_watcher()
@@ -486,7 +486,7 @@ function trig_watcher()
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b2a
 // Size: 0x36
 function function_e9e8d0b6a3b254af( trig, player )
@@ -502,7 +502,7 @@ function function_e9e8d0b6a3b254af( trig, player )
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b69
 // Size: 0x13c
 function function_ab40957f314a872b()
@@ -537,7 +537,7 @@ function function_ab40957f314a872b()
 }
 
 // Namespace mp_jup_drivethru / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cad
 // Size: 0x184
 function function_31dc060e85f4a689()

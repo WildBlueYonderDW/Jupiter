@@ -30,7 +30,7 @@ function autoexec main()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbbd
 // Size: 0x113
 function function_67dd16c63e4dfc65()
@@ -60,7 +60,7 @@ function function_67dd16c63e4dfc65()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd8
 // Size: 0x2e
 function function_b2f29740cb52f391()
@@ -70,7 +70,7 @@ function function_b2f29740cb52f391()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd0e
 // Size: 0x65
 function function_287c3582fae35289( player )
@@ -85,7 +85,7 @@ function function_287c3582fae35289( player )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd7b
 // Size: 0x2c4
 function capturebot_used( grenade )
@@ -150,7 +150,7 @@ function capturebot_used( grenade )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1047
 // Size: 0x128
 function function_4ef1bb5943972405( player )
@@ -189,7 +189,7 @@ function function_4ef1bb5943972405( player )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1177
 // Size: 0x9e, Type: bool
 function is_train_ent( hitent )
@@ -214,7 +214,7 @@ function is_train_ent( hitent )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x121e
 // Size: 0x99
 function function_c0e6a02651998844()
@@ -237,7 +237,7 @@ function function_c0e6a02651998844()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12bf
 // Size: 0x188
 function function_41639d40af82c243( immediate, wasdestroyed )
@@ -307,7 +307,7 @@ function function_41639d40af82c243( immediate, wasdestroyed )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x144f
 // Size: 0x12e
 function function_58dfa4afe1169c68( deletiondelay, wasdestroyed )
@@ -342,7 +342,7 @@ function function_58dfa4afe1169c68( deletiondelay, wasdestroyed )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1585
 // Size: 0x77
 function capturebot_getteamindex( team )
@@ -370,7 +370,7 @@ function capturebot_getteamindex( team )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1605
 // Size: 0xaa
 function capturebot_setclaimants( team, var_51f08547fa39ce14, objidnum )
@@ -392,7 +392,7 @@ function capturebot_setclaimants( team, var_51f08547fa39ce14, objidnum )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16b7
 // Size: 0x23, Type: bool
 function function_1411e5eb39a3b4b6( capturebotindex )
@@ -406,7 +406,7 @@ function function_1411e5eb39a3b4b6( capturebotindex )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16e3
 // Size: 0x1ae
 function function_4daa2b488e4b8604( currindex )
@@ -483,7 +483,7 @@ function function_4daa2b488e4b8604( currindex )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1899
 // Size: 0x987
 function function_edccceae8cca6c8d( hackingdistsqr )
@@ -821,7 +821,7 @@ function function_edccceae8cca6c8d( hackingdistsqr )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2228
 // Size: 0x2f6
 function function_aabf8c1c069532()
@@ -913,7 +913,7 @@ function function_aabf8c1c069532()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2526
 // Size: 0x33
 function function_4120d7ad8ea536( currentobjective )
@@ -925,7 +925,7 @@ function function_4120d7ad8ea536( currentobjective )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2561
 // Size: 0x40
 function function_ed4aa674488778bd( obj )
@@ -942,7 +942,7 @@ function function_ed4aa674488778bd( obj )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25a9
 // Size: 0x27
 function function_4018710483e06467( obj )
@@ -958,7 +958,7 @@ function function_4018710483e06467( obj )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25d8
 // Size: 0x175
 function function_2f3251d1a020fb1d()
@@ -1015,7 +1015,7 @@ function function_2f3251d1a020fb1d()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2755
 // Size: 0x72, Type: bool
 function function_38946e56052cc38d( obj )
@@ -1029,7 +1029,7 @@ function function_38946e56052cc38d( obj )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27d0
 // Size: 0x183
 function function_1fa1324f0208e72d( obj )
@@ -1060,7 +1060,7 @@ function function_1fa1324f0208e72d( obj )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x295b
 // Size: 0x3a, Type: bool
 function capturebot_shouldcaptureobjective( obj )
@@ -1069,7 +1069,7 @@ function capturebot_shouldcaptureobjective( obj )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x299e
 // Size: 0x260
 function function_e23fba4163e12de6( obj, aitype )
@@ -1126,7 +1126,7 @@ function function_e23fba4163e12de6( obj, aitype )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c06
 // Size: 0x58
 function function_3bd485992b40ae54( obj )
@@ -1146,7 +1146,7 @@ function function_3bd485992b40ae54( obj )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c66
 // Size: 0x158
 function function_e1fe4c930d13eaec()
@@ -1192,7 +1192,7 @@ function function_e1fe4c930d13eaec()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dc6
 // Size: 0x81
 function function_2d798bcb76b38072()
@@ -1214,7 +1214,7 @@ function function_2d798bcb76b38072()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e4f
 // Size: 0x81
 function function_8b221111ad9228b8()
@@ -1236,7 +1236,7 @@ function function_8b221111ad9228b8()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ed8
 // Size: 0x5a, Type: bool
 function function_fe95326bec37c707()
@@ -1250,7 +1250,7 @@ function function_fe95326bec37c707()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f3b
 // Size: 0x1a5, Type: bool
 function function_654bd872537c923( var_5a425ca023be6097 )
@@ -1337,7 +1337,7 @@ function function_654bd872537c923( var_5a425ca023be6097 )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30e9
 // Size: 0x75
 function function_1b3ec96c8e90d21c()
@@ -1357,7 +1357,7 @@ function function_1b3ec96c8e90d21c()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3166
 // Size: 0x29
 function function_cc6cf839252877ac( data )
@@ -1367,7 +1367,7 @@ function function_cc6cf839252877ac( data )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3197
 // Size: 0x26, Type: bool
 function capturebot_isgrenadeentity()
@@ -1381,7 +1381,7 @@ function capturebot_isgrenadeentity()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31c6
 // Size: 0x3f
 function function_fd1ef4f80a8a90bc()
@@ -1396,7 +1396,7 @@ function function_fd1ef4f80a8a90bc()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x320d
 // Size: 0x50
 function function_d4e56c54c8235018()
@@ -1415,7 +1415,7 @@ function function_d4e56c54c8235018()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3265
 // Size: 0x8d
 function function_2c95b12fb62aed02( attacker )
@@ -1437,7 +1437,7 @@ function function_2c95b12fb62aed02( attacker )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x32fa
 // Size: 0xef
 function function_9d62753b509a9310( player, eventname, persstat, supername )
@@ -1467,7 +1467,7 @@ function function_9d62753b509a9310( player, eventname, persstat, supername )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33f1
 // Size: 0x14
 function function_9269207a0488f67b( data )
@@ -1476,7 +1476,7 @@ function function_9269207a0488f67b( data )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x340d
 // Size: 0xd0
 function function_fa5b4ff59c725f9e( data )
@@ -1509,7 +1509,7 @@ function function_fa5b4ff59c725f9e( data )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34e5
 // Size: 0xba
 function function_4325018d2242ad19( stuckto )
@@ -1534,7 +1534,7 @@ function function_4325018d2242ad19( stuckto )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35a7
 // Size: 0x2d
 function function_78e3ab1589a567fa()
@@ -1549,7 +1549,7 @@ function function_78e3ab1589a567fa()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35dc
 // Size: 0x7f
 function function_6644754dabdb7f27()
@@ -1566,7 +1566,7 @@ function function_6644754dabdb7f27()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3663
 // Size: 0x5f
 function function_e9230259bf4617b2( data )
@@ -1579,7 +1579,7 @@ function function_e9230259bf4617b2( data )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36ca
 // Size: 0x35
 function function_714e85f59c6e39f8( data )
@@ -1590,7 +1590,7 @@ function function_714e85f59c6e39f8( data )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3707
 // Size: 0x13
 function function_3d80d4d22659ee31( data )
@@ -1599,7 +1599,7 @@ function function_3d80d4d22659ee31( data )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3722
 // Size: 0x91
 function function_774ef28b06fdf891( data )
@@ -1619,7 +1619,7 @@ function function_774ef28b06fdf891( data )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37bb
 // Size: 0x99
 function function_86c56d246ccda848( data )
@@ -1635,7 +1635,7 @@ function function_86c56d246ccda848( data )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x385c
 // Size: 0x34
 function function_a5cef44666db8c3f( data )
@@ -1646,7 +1646,7 @@ function function_a5cef44666db8c3f( data )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3898
 // Size: 0x6f
 function function_ae7efb31b65492c6()
@@ -1666,7 +1666,7 @@ function function_ae7efb31b65492c6()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x390f
 // Size: 0x58
 function function_4cee86508ff92bb5()
@@ -1680,7 +1680,7 @@ function function_4cee86508ff92bb5()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x396f
 // Size: 0x1bd
 function function_fabe2e590fd0eeea()
@@ -1748,7 +1748,7 @@ function function_fabe2e590fd0eeea()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b34
 // Size: 0x40
 function function_f46e9de463ee24b5( attacker )
@@ -1762,7 +1762,7 @@ function function_f46e9de463ee24b5( attacker )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b7c
 // Size: 0x84
 function function_a3b944ae13709c67( attackerlist )
@@ -1779,7 +1779,7 @@ function function_a3b944ae13709c67( attackerlist )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c08
 // Size: 0x5c
 function function_9df1056705dc708e()
@@ -1796,7 +1796,7 @@ function function_9df1056705dc708e()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c6c
 // Size: 0xdd
 function function_136158ea18135f55( player )
@@ -1848,7 +1848,7 @@ function function_136158ea18135f55( player )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d51
 // Size: 0x156
 function function_c66d85003c294dcf()
@@ -1891,7 +1891,7 @@ function function_c66d85003c294dcf()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3eaf
 // Size: 0xb2
 function capturebot_getallcapturebotsforteam( team, var_449ca312093e0cbc )
@@ -1916,7 +1916,7 @@ function capturebot_getallcapturebotsforteam( team, var_449ca312093e0cbc )
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f6a
 // Size: 0x10
 function function_2f1a6016f12d412c()
@@ -1925,7 +1925,7 @@ function function_2f1a6016f12d412c()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f83
 // Size: 0x10
 function function_f677e51f4fa22a46()
@@ -1934,7 +1934,7 @@ function function_f677e51f4fa22a46()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f9c
 // Size: 0x10
 function function_8e87b1379bf12c7c()
@@ -1943,7 +1943,7 @@ function function_8e87b1379bf12c7c()
 }
 
 // Namespace capture_bot / scripts\cp_mp\supers\capture_bot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fb5
 // Size: 0x10
 function function_d459d243d134c89a()

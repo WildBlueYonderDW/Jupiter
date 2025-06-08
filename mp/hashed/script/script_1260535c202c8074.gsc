@@ -9,7 +9,7 @@
 #namespace zombie_deathworm;
 
 // Namespace zombie_deathworm / namespace_3ee1bcf1bebb6728
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x150
 // Size: 0x60
 function function_14c91797faca36ea()
@@ -127,7 +127,7 @@ function private function_1e6eb451a42c6428()
 /#
 
     // Namespace zombie_deathworm / namespace_3ee1bcf1bebb6728
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x48b
     // Size: 0x44, Type: dev
     function function_ac58fa04e888ee59()

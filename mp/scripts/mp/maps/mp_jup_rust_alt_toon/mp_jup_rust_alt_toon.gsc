@@ -17,7 +17,7 @@
 #namespace mp_jup_rust_alt_toon;
 
 // Namespace mp_jup_rust_alt_toon / scripts\mp\maps\mp_jup_rust_alt_toon\mp_jup_rust_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x361
 // Size: 0xe7
 function main()
@@ -47,7 +47,7 @@ function main()
 }
 
 // Namespace mp_jup_rust_alt_toon / scripts\mp\maps\mp_jup_rust_alt_toon\mp_jup_rust_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x450
 // Size: 0x40
 function function_1682cf22619a5e55()
@@ -62,7 +62,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_jup_rust_alt_toon / scripts\mp\maps\mp_jup_rust_alt_toon\mp_jup_rust_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x498
 // Size: 0x413
 function function_31dc060e85f4a689()

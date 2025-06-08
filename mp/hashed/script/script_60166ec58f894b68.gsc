@@ -12,7 +12,7 @@
 #namespace namespace_925730df71cc5248;
 
 // Namespace namespace_925730df71cc5248 / namespace_da0c0b0c4bfbcc8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e8
 // Size: 0x10
 function init()
@@ -330,7 +330,8 @@ function private function_21c7f1a87f076126()
             function_ad698ba26068ea05( "Warping player (" + player.name + ") to location " + new_origin );
             wait 2;
             
-            for (i = 0; i < 10; i++) {
+            for ( i = 0; i < 10 ; i++ )
+            {
                 player startforcedfire();
                 wait 2;
                 player stopforcedfire();

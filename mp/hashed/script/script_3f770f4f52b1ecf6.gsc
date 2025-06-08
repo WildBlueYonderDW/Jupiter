@@ -5,7 +5,7 @@
 #namespace namespace_359eabeed0aa16a9;
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d3
 // Size: 0x2
 function function_1bdc76359002a87d()
@@ -14,7 +14,7 @@ function function_1bdc76359002a87d()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1dd
 // Size: 0x2f
 function function_6c1e0eb333fee7fe()
@@ -28,7 +28,7 @@ function function_6c1e0eb333fee7fe()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x214
 // Size: 0x67
 function function_6a4d394e7f9fc34e()
@@ -54,7 +54,7 @@ function function_6a4d394e7f9fc34e()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x283
 // Size: 0x3e, Type: bool
 function function_a48875a04bede9a6( weaponobj )
@@ -68,7 +68,7 @@ function function_a48875a04bede9a6( weaponobj )
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ca
 // Size: 0xac
 function function_48c1bb804931bb07()
@@ -93,7 +93,7 @@ function function_48c1bb804931bb07()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37e
 // Size: 0x6d
 function function_844dc249ef1b3a5e()
@@ -123,7 +123,7 @@ function function_844dc249ef1b3a5e()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f3
 // Size: 0x97
 function function_3e83a8605613947c( contents )
@@ -147,7 +147,7 @@ function function_3e83a8605613947c( contents )
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x492
 // Size: 0x92
 function function_46d948b40cc362dc()
@@ -188,12 +188,13 @@ function function_46d948b40cc362dc()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52c
 // Size: 0x6a
 function function_86dae4285c17eba2()
 {
-    for (startingenemies = undefined; !isdefined( startingenemies ); startingenemies = getaiarray( "axis" )) {
+    for ( startingenemies = undefined; !isdefined( startingenemies ) ; startingenemies = getaiarray( "axis" ) )
+    {
         waitframe();
     }
     
@@ -222,7 +223,7 @@ function function_86dae4285c17eba2()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59e
 // Size: 0x74
 function targetenemy( enemy )
@@ -246,7 +247,7 @@ function targetenemy( enemy )
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61a
 // Size: 0xa2
 function function_808cd37a5a40862d()
@@ -284,7 +285,7 @@ function function_808cd37a5a40862d()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c4
 // Size: 0x74
 function function_e8ca271588171c26()
@@ -305,7 +306,7 @@ function function_e8ca271588171c26()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x740
 // Size: 0x59
 function function_621629aca9bfb262( range )
@@ -326,7 +327,7 @@ function function_621629aca9bfb262( range )
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a2
 // Size: 0x18
 function function_d2c67316e3340d42()
@@ -335,7 +336,7 @@ function function_d2c67316e3340d42()
 }
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c2
 // Size: 0x1a
 function deathcleanup()

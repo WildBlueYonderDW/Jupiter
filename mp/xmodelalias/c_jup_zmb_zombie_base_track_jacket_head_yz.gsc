@@ -1,7 +1,7 @@
 #namespace c_jup_zmb_zombie_base_track_jacket_head_yz;
 
 // Namespace c_jup_zmb_zombie_base_track_jacket_head_yz / xmodelalias\c_jup_zmb_zombie_base_track_jacket_head_yz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd8
 // Size: 0x20
 function main()

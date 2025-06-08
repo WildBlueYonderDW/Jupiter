@@ -19,7 +19,7 @@ function autoexec init()
 }
 
 // Namespace namespace_9d9cf08d2a584bbd / namespace_66d1114680040ff2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x234
 // Size: 0x7b
 function main( params )
@@ -68,7 +68,7 @@ function private function_866ec2626b84937a()
 }
 
 // Namespace namespace_9d9cf08d2a584bbd / namespace_66d1114680040ff2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c1
 // Size: 0xed
 function function_7eb73407060d7cb6( state )

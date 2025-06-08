@@ -14,7 +14,7 @@ function private autoexec init()
 }
 
 // Namespace zombie_stun / namespace_ed7c38f3847343dc
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x104
 // Size: 0x36
 function processstun( taskid, params )
@@ -29,7 +29,7 @@ function processstun( taskid, params )
 }
 
 // Namespace zombie_stun / namespace_ed7c38f3847343dc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x143
 // Size: 0xe0
 function stun_ai( duration )
@@ -69,7 +69,7 @@ function stun_ai( duration )
 }
 
 // Namespace zombie_stun / namespace_ed7c38f3847343dc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22b
 // Size: 0x33, Type: bool
 function is_stunned()
@@ -78,7 +78,7 @@ function is_stunned()
 }
 
 // Namespace zombie_stun / namespace_ed7c38f3847343dc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x267
 // Size: 0x39
 function clear_stun()

@@ -20,7 +20,7 @@
 /#
 
     // Namespace namespace_42a724f5ada005f2 / namespace_d1a9ca87d78d9813
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x108
     // Size: 0x83, Type: dev
     function function_df414d6582eeca3()
@@ -90,7 +90,7 @@
     }
 
     // Namespace namespace_42a724f5ada005f2 / namespace_d1a9ca87d78d9813
-    // Params 8, eflags: 0x0
+    // Params 8
     // Checksum 0x0, Offset: 0x2e6
     // Size: 0xc8, Type: dev
     function function_9533653868e59fb6( identifier, classname, script_noteworthy, model, targetname, target, poi, origin )
@@ -125,7 +125,8 @@
         lootcount = getlootspawnpointcount();
         linenum = 0;
         
-        for (i = 0; i < lootcount; i++) {
+        for ( i = 0; i < lootcount ; i++ )
+        {
             loot = getlootspawnpoint( i );
             
             if ( !istrue( loot.game_extrainfo ) )
@@ -194,7 +195,8 @@
             startpointstrings[ startpointstrings.size ] = "<dev string:x145>" + "<dev string:x119>" + "<dev string:x184>" + function_3a41ae43e44d1c4b( startpoint.poi ) + function_8ca7e0ea3c4eba9f( startpoint.origin );
         }
         
-        for (i = 1; getstructarray( "<dev string:x18e>" + i, "<dev string:x130>" ).size > 0; i++) {
+        for ( i = 1; getstructarray( "<dev string:x18e>" + i, "<dev string:x130>" ).size > 0 ; i++ )
+        {
             foreach ( startpoint in getstructarray( "<dev string:x18e>" + i, "<dev string:x130>" ) )
             {
                 startpointstrings[ startpointstrings.size ] = "<dev string:x1b1>" + i + "<dev string:x1cc>" + "<dev string:x119>" + i + "<dev string:x184>" + function_3a41ae43e44d1c4b( startpoint.poi ) + function_8ca7e0ea3c4eba9f( startpoint.origin );
@@ -217,7 +219,8 @@
             var_68bb623616b45317[ var_68bb623616b45317.size ] = "<dev string:x212>" + "<dev string:x1fb>" + "<dev string:x184>" + function_3a41ae43e44d1c4b( exfil.poi ) + function_8ca7e0ea3c4eba9f( exfil.origin );
         }
         
-        for (i = 1; getstructarray( "<dev string:x25a>" + i, "<dev string:x130>" ).size > 0; i++) {
+        for ( i = 1; getstructarray( "<dev string:x25a>" + i, "<dev string:x130>" ).size > 0 ; i++ )
+        {
             foreach ( exfil in getstructarray( "<dev string:x25a>" + i, "<dev string:x130>" ) )
             {
                 var_68bb623616b45317[ var_68bb623616b45317.size ] = "<dev string:x274>" + i + "<dev string:x1cc>" + "<dev string:x25a>" + i + "<dev string:x184>" + function_3a41ae43e44d1c4b( exfil.poi ) + function_8ca7e0ea3c4eba9f( exfil.origin );
@@ -403,7 +406,8 @@
         lootcount = getlootspawnpointcount();
         linenum = 0;
         
-        for (i = 0; i < lootcount; i++) {
+        for ( i = 0; i < lootcount ; i++ )
+        {
             loot = getlootspawnpoint( i );
             
             if ( loot.type == 0 )

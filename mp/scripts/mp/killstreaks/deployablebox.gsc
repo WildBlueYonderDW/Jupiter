@@ -26,8 +26,8 @@
 #namespace deployablebox;
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a2
+// Params 0
+// Checksum 0x0, Offset: 0x3a3
 // Size: 0x19
 function init()
 {
@@ -38,8 +38,8 @@ function init()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c3
+// Params 8
+// Checksum 0x0, Offset: 0x3c4
 // Size: 0x60, Type: bool
 function begindeployableviamarker( streakinfo, lifeid, boxtype, projectileentity, weaponname, damagefuncoverride, deathfuncoverride, var_2deffe8b3af50b42 )
 {
@@ -49,8 +49,8 @@ function begindeployableviamarker( streakinfo, lifeid, boxtype, projectileentity
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x42c
+// Params 8
+// Checksum 0x0, Offset: 0x42d
 // Size: 0x11b
 function watchdeployablemarkerplacement( streakinfo, boxtype, lifeid, marker, weaponname, damagefunc, deathfunc, timeoutfunc )
 {
@@ -91,8 +91,8 @@ function watchdeployablemarkerplacement( streakinfo, boxtype, lifeid, marker, we
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54f
+// Params 1
+// Checksum 0x0, Offset: 0x550
 // Size: 0x3b
 function cleanupdeployablemarkerondisconnect( marker )
 {
@@ -104,8 +104,8 @@ function cleanupdeployablemarkerondisconnect( marker )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x592
+// Params 1
+// Checksum 0x0, Offset: 0x593
 // Size: 0x1e
 function override_box_moving_platform_death( data )
 {
@@ -114,8 +114,8 @@ function override_box_moving_platform_death( data )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b8
+// Params 7
+// Checksum 0x0, Offset: 0x5b9
 // Size: 0x1e2
 function markeractivate( streakinfo, lifeid, boxtype, usedcallback, damagecallback, deathcallback, timeoutcallback )
 {
@@ -166,8 +166,8 @@ function markeractivate( streakinfo, lifeid, boxtype, usedcallback, damagecallba
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a2
+// Params 1
+// Checksum 0x0, Offset: 0x7a3
 // Size: 0x41, Type: bool
 function deployableexclusion( parentmodel )
 {
@@ -188,8 +188,8 @@ function deployableexclusion( parentmodel )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ec
+// Params 0
+// Checksum 0x0, Offset: 0x7ed
 // Size: 0x7c, Type: bool
 function isholdingdeployablebox()
 {
@@ -210,8 +210,8 @@ function isholdingdeployablebox()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x871
+// Params 3
+// Checksum 0x0, Offset: 0x872
 // Size: 0x164
 function createboxforplayer( boxtype, position, owner )
 {
@@ -244,8 +244,8 @@ function createboxforplayer( boxtype, position, owner )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9de
+// Params 3
+// Checksum 0x0, Offset: 0x9df
 // Size: 0x44f
 function box_setactive( damagecallback, deathcallback, timeoutcallback )
 {
@@ -390,8 +390,8 @@ function box_setactive( damagecallback, deathcallback, timeoutcallback )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe35
+// Params 3
+// Checksum 0x0, Offset: 0xe36
 // Size: 0x5e
 function _box_setactivehelper( player, bactivate, canusefunc )
 {
@@ -415,8 +415,8 @@ function _box_setactivehelper( player, bactivate, canusefunc )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9b
+// Params 0
+// Checksum 0x0, Offset: 0xe9c
 // Size: 0x2e
 function box_playerconnected()
 {
@@ -430,8 +430,8 @@ function box_playerconnected()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xed1
+// Params 0
+// Checksum 0x0, Offset: 0xed2
 // Size: 0x2d
 function box_agentconnected()
 {
@@ -445,8 +445,8 @@ function box_agentconnected()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf06
+// Params 1
+// Checksum 0x0, Offset: 0xf07
 // Size: 0x30
 function box_waittill_player_spawn_and_add_box( player )
 {
@@ -460,8 +460,8 @@ function box_waittill_player_spawn_and_add_box( player )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3e
+// Params 1
+// Checksum 0x0, Offset: 0xf3f
 // Size: 0x3d
 function box_playerjoinedteam( player )
 {
@@ -480,8 +480,8 @@ function box_playerjoinedteam( player )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf83
+// Params 1
+// Checksum 0x0, Offset: 0xf84
 // Size: 0x7f
 function box_addboxforplayer( player )
 {
@@ -501,8 +501,8 @@ function box_addboxforplayer( player )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x100a
+// Params 3
+// Checksum 0x0, Offset: 0x100b
 // Size: 0x85
 function box_seticon( player, streakname, voffset )
 {
@@ -521,8 +521,8 @@ function box_seticon( player, streakname, voffset )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1097
+// Params 1
+// Checksum 0x0, Offset: 0x1098
 // Size: 0x2e
 function box_enableplayeruse( player )
 {
@@ -535,8 +535,8 @@ function box_enableplayeruse( player )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10cd
+// Params 1
+// Checksum 0x0, Offset: 0x10ce
 // Size: 0x2f
 function box_disableplayeruse( player )
 {
@@ -549,8 +549,8 @@ function box_disableplayeruse( player )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1104
+// Params 0
+// Checksum 0x0, Offset: 0x1105
 // Size: 0x30
 function box_setinactive()
 {
@@ -564,8 +564,8 @@ function box_setinactive()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x113c
+// Params 0
+// Checksum 0x0, Offset: 0x113d
 // Size: 0x4a
 function box_handledamage()
 {
@@ -574,8 +574,8 @@ function box_handledamage()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x118e
+// Params 1
+// Checksum 0x0, Offset: 0x118f
 // Size: 0xdb
 function box_modifydamage( data )
 {
@@ -599,8 +599,8 @@ function box_modifydamage( data )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1272
+// Params 1
+// Checksum 0x0, Offset: 0x1273
 // Size: 0xc4
 function box_handledeathdamage( data )
 {
@@ -619,8 +619,8 @@ function box_handledeathdamage( data )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x133e
+// Params 0
+// Checksum 0x0, Offset: 0x133f
 // Size: 0x154
 function box_handledeath()
 {
@@ -669,8 +669,8 @@ function box_handledeath()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x149a
+// Params 0
+// Checksum 0x0, Offset: 0x149b
 // Size: 0x46
 function box_handleownerdisconnect()
 {
@@ -684,8 +684,8 @@ function box_handleownerdisconnect()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e8
+// Params 1
+// Checksum 0x0, Offset: 0x14e9
 // Size: 0x2a
 function box_watchownerstatus( notifymsg )
 {
@@ -695,8 +695,8 @@ function box_watchownerstatus( notifymsg )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x151a
+// Params 1
+// Checksum 0x0, Offset: 0x151b
 // Size: 0x22e
 function boxthink( player )
 {
@@ -774,8 +774,8 @@ function boxthink( player )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1750
+// Params 1
+// Checksum 0x0, Offset: 0x1751
 // Size: 0xb0
 function doubledip( player )
 {
@@ -810,8 +810,8 @@ function doubledip( player )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1808
+// Params 1
+// Checksum 0x0, Offset: 0x1809
 // Size: 0xba
 function boxcapturethink( player )
 {
@@ -834,8 +834,8 @@ function boxcapturethink( player )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ca
+// Params 1
+// Checksum 0x0, Offset: 0x18cb
 // Size: 0x2d, Type: bool
 function isfriendlytobox( box )
 {
@@ -843,8 +843,8 @@ function isfriendlytobox( box )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1900
+// Params 0
+// Checksum 0x0, Offset: 0x1901
 // Size: 0x7e
 function box_timeout()
 {
@@ -863,8 +863,8 @@ function box_timeout()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1986
+// Params 0
+// Checksum 0x0, Offset: 0x1987
 // Size: 0x16
 function box_leave()
 {
@@ -874,8 +874,8 @@ function box_leave()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a4
+// Params 1
+// Checksum 0x0, Offset: 0x19a5
 // Size: 0x47
 function deleteonownerdeath( owner )
 {
@@ -886,8 +886,8 @@ function deleteonownerdeath( owner )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19f3
+// Params 1
+// Checksum 0x0, Offset: 0x19f4
 // Size: 0xe9
 function box_modelteamupdater( var_ef682a37eef48976 )
 {
@@ -918,8 +918,8 @@ function box_modelteamupdater( var_ef682a37eef48976 )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ae4
+// Params 2
+// Checksum 0x0, Offset: 0x1ae5
 // Size: 0x14e
 function useholdthink( player, usetime )
 {
@@ -960,8 +960,8 @@ function useholdthink( player, usetime )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c3b
+// Params 1
+// Checksum 0x0, Offset: 0x1c3c
 // Size: 0xf1
 function useholdthinkloop( player )
 {
@@ -1002,8 +1002,8 @@ function useholdthinkloop( player )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d35
+// Params 0
+// Checksum 0x0, Offset: 0x1d36
 // Size: 0x1e
 function addboxtolevelarray()
 {
@@ -1011,8 +1011,8 @@ function addboxtolevelarray()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d5b
+// Params 0
+// Checksum 0x0, Offset: 0x1d5c
 // Size: 0x1c
 function removeboxfromlevelarray()
 {
@@ -1020,8 +1020,8 @@ function removeboxfromlevelarray()
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d7f
+// Params 1
+// Checksum 0x0, Offset: 0x1d80
 // Size: 0x7b, Type: bool
 function isplayerusingbox( box )
 {
@@ -1029,8 +1029,8 @@ function isplayerusingbox( box )
 }
 
 // Namespace deployablebox / scripts\mp\killstreaks\deployablebox
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e03
+// Params 1
+// Checksum 0x0, Offset: 0x1e04
 // Size: 0x1c
 function isgrenadedeployable( boxtype )
 {

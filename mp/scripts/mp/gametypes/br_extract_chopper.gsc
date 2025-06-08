@@ -16,7 +16,7 @@
 #namespace br_extract_chopper;
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3e1
 // Size: 0x1fe
 function spawnextractchopper( zone, positionoverride, onhelikilled, helitimeoffset )
@@ -48,7 +48,7 @@ function spawnextractchopper( zone, positionoverride, onhelikilled, helitimeoffs
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e8
 // Size: 0xd5
 function fakestreakinfo()
@@ -70,7 +70,7 @@ function fakestreakinfo()
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x6c6
 // Size: 0x22e
 function beginlittlebird( lifeid, startpoint, endpoint, streakinfo, lz, positionoverride, team, helitimeoffset )
@@ -139,7 +139,7 @@ function beginlittlebird( lifeid, startpoint, endpoint, streakinfo, lz, position
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x8fd
 // Size: 0x2f2
 function spawnlittlebird( lifeid, owner, pathstart, pathgoal, streakinfo, lz )
@@ -215,7 +215,7 @@ function spawnlittlebird( lifeid, owner, pathstart, pathgoal, streakinfo, lz )
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbf8
 // Size: 0x12
 function delay_jackal_arrive_sfx()
@@ -225,7 +225,7 @@ function delay_jackal_arrive_sfx()
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc12
 // Size: 0x2a
 function delayjackalloopsfx( delaytime, alias )
@@ -236,7 +236,7 @@ function delayjackalloopsfx( delaytime, alias )
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc44
 // Size: 0xb2
 function littlebirddestroyed()
@@ -271,7 +271,7 @@ function littlebirddestroyed()
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcfe
 // Size: 0x5f
 function littlebirdexplode()
@@ -290,7 +290,7 @@ function littlebirdexplode()
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd65
 // Size: 0xc9
 function littlebirddelete()
@@ -321,7 +321,7 @@ function littlebirddelete()
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe36
 // Size: 0x72
 function littlebirdcrash( speed )
@@ -336,7 +336,7 @@ function littlebirdcrash( speed )
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb0
 // Size: 0x13b
 function handledestroydamage()
@@ -362,7 +362,7 @@ function handledestroydamage()
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0xff3
 // Size: 0x206
 function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, partname, eventid )
@@ -407,7 +407,7 @@ function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdea
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1201
 // Size: 0xf1
 function monitorarriveoverdestination( littlebird, marker, team, helitimeoffset )
@@ -436,7 +436,7 @@ function monitorarriveoverdestination( littlebird, marker, team, helitimeoffset 
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12fa
 // Size: 0x1b7
 function littlebirdleave()
@@ -493,7 +493,7 @@ function littlebirdleave()
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14b9
 // Size: 0x5e
 function getpathend()
@@ -507,7 +507,7 @@ function getpathend()
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1520
 // Size: 0x93
 function littlebirddescendtoextraction( location, zone, team )
@@ -522,7 +522,7 @@ function littlebirddescendtoextraction( location, zone, team )
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15bb
 // Size: 0x1aa
 function descend( location, zone )
@@ -575,7 +575,7 @@ function descend( location, zone )
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x176d
 // Size: 0x62
 function tracegroundheight( x, y, rand, var_ffa2f7672c0c1531 )
@@ -593,7 +593,7 @@ function tracegroundheight( x, y, rand, var_ffa2f7672c0c1531 )
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17d8
 // Size: 0x160
 function tracegroundpoint( x, y, var_ffa2f7672c0c1531 )
@@ -638,7 +638,7 @@ function tracegroundpoint( x, y, var_ffa2f7672c0c1531 )
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1941
 // Size: 0x20
 function watchgameendleave()
@@ -650,7 +650,7 @@ function watchgameendleave()
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1969
 // Size: 0x4d
 function changemaxpitchrollwhenclosetogoal( pathgoal )
@@ -672,7 +672,7 @@ function changemaxpitchrollwhenclosetogoal( pathgoal )
 }
 
 // Namespace br_extract_chopper / scripts\mp\gametypes\br_extract_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19be
 // Size: 0xa
 function abortextractpickup()

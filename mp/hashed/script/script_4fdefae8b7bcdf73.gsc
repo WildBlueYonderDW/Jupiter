@@ -12,7 +12,7 @@
 #namespace namespace_c669075cf56436f4;
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cf
 // Size: 0x3f
 function function_36a95c9de2ace25a( bundlename, shouldpin, var_777b269d7a4d5633 )
@@ -22,7 +22,7 @@ function function_36a95c9de2ace25a( bundlename, shouldpin, var_777b269d7a4d5633 
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x217
 // Size: 0x81
 function function_f7680f0db96cad7b( bundlexhash, shouldpin, var_777b269d7a4d5633 )
@@ -44,7 +44,7 @@ function function_f7680f0db96cad7b( bundlexhash, shouldpin, var_777b269d7a4d5633
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a1
 // Size: 0xb8
 function function_6f02ac608d44fdbf( markerid, shouldpin, var_777b269d7a4d5633 )
@@ -66,7 +66,7 @@ function function_6f02ac608d44fdbf( markerid, shouldpin, var_777b269d7a4d5633 )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x362
 // Size: 0x52
 function function_70fba69479c7f650( markerid )
@@ -81,7 +81,7 @@ function function_70fba69479c7f650( markerid )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bc
 // Size: 0x61
 function function_765b706dc170e214( markerid )
@@ -97,7 +97,7 @@ function function_765b706dc170e214( markerid )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x425
 // Size: 0x4e
 function function_2a691f6f7cceb283( markerid )
@@ -108,7 +108,7 @@ function function_2a691f6f7cceb283( markerid )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47b
 // Size: 0x4d
 function function_48f5297a819ff2e( markerid )
@@ -119,7 +119,7 @@ function function_48f5297a819ff2e( markerid )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4d0
 // Size: 0x90
 function function_47a5129abc55bd53( activityinstance, activitymoment )
@@ -155,7 +155,7 @@ function function_47a5129abc55bd53( activityinstance, activitymoment )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x568
 // Size: 0x16
 function function_592fd3b0ebcfd2dc( activityinstance )
@@ -164,7 +164,7 @@ function function_592fd3b0ebcfd2dc( activityinstance )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x587
 // Size: 0xa3
 function function_451ffc1b7133042f( player )
@@ -184,7 +184,7 @@ function function_451ffc1b7133042f( player )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x632
 // Size: 0xa3
 function function_2d38888e45d6a28a( player )
@@ -204,7 +204,7 @@ function function_2d38888e45d6a28a( player )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6dd
 // Size: 0x6a
 function function_1c5d0098478465a()
@@ -218,7 +218,7 @@ function function_1c5d0098478465a()
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x74f
 // Size: 0x85
 function function_c32880b1943fa8ba( players, markerid )
@@ -232,7 +232,7 @@ function function_c32880b1943fa8ba( players, markerid )
 }
 
 // Namespace namespace_c669075cf56436f4 / namespace_5ab9942d4e45708d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7dc
 // Size: 0x7e
 function function_271c0af82f71d8b8( players, markerid )

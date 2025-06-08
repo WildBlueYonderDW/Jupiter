@@ -8,7 +8,7 @@
 #namespace namespace_de071cd40cea8c48;
 
 // Namespace namespace_de071cd40cea8c48 / namespace_3d71451eda8e6c03
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x137
 // Size: 0xba
 function pyro_register()
@@ -26,7 +26,7 @@ function pyro_register()
 }
 
 // Namespace namespace_de071cd40cea8c48 / namespace_3d71451eda8e6c03
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f9
 // Size: 0xb
 function pyro_init( bossdetails )
@@ -35,7 +35,7 @@ function pyro_init( bossdetails )
 }
 
 // Namespace namespace_de071cd40cea8c48 / namespace_3d71451eda8e6c03
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20c
 // Size: 0x5e
 function function_4108074415abc816( node )
@@ -52,7 +52,7 @@ function function_4108074415abc816( node )
 }
 
 // Namespace namespace_de071cd40cea8c48 / namespace_3d71451eda8e6c03
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x273
 // Size: 0xa4
 function function_fb62bcef7fab15fb( agent )
@@ -74,7 +74,7 @@ function function_fb62bcef7fab15fb( agent )
 }
 
 // Namespace namespace_de071cd40cea8c48 / namespace_3d71451eda8e6c03
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31f
 // Size: 0x15
 function function_b08878702405e6b8()

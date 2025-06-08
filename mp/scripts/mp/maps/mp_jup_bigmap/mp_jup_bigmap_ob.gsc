@@ -14,7 +14,6 @@
 #using script_221e4f7ccdd70004;
 #using script_222f62686867436a;
 #using script_22ab685624290457;
-#using script_22f1701e151b9d12;
 #using script_2322b42c4dbbfaf0;
 #using script_277259cfc5f60311;
 #using script_2816a042b9f7996;
@@ -95,6 +94,7 @@
 #using script_df078f814c869a1;
 #using script_fc3b3ba6dd4e0ce;
 #using scripts\common\callbacks;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\utility\game_utility;
 #using scripts\engine\utility;
 
@@ -110,7 +110,7 @@ function autoexec init()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67c
 // Size: 0x367
 function main()
@@ -243,7 +243,8 @@ function main()
 // Size: 0x1c3
 function private cleanup_map()
 {
-    for (index = 1; index < 13; index++) {
+    for ( index = 1; index < 13 ; index++ )
+    {
         number = "";
         
         if ( index < 10 )
@@ -302,7 +303,8 @@ function private cleanup_map()
             {
                 entities = getentarray( entityname, "targetname" );
                 
-                for (index = 0; index < entities.size; index++) {
+                for ( index = 0; index < entities.size ; index++ )
+                {
                     entities[ index ] delete();
                 }
             }
@@ -313,7 +315,7 @@ function private cleanup_map()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb6
 // Size: 0x34
 function function_a39aa470df6cd578()
@@ -331,7 +333,7 @@ function function_a39aa470df6cd578()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbf2
 // Size: 0x49
 function function_3dfc24cbac6795be()
@@ -349,7 +351,7 @@ function function_3dfc24cbac6795be()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc43
 // Size: 0x34
 function function_6ad85f8d5c683ce4()
@@ -367,7 +369,7 @@ function function_6ad85f8d5c683ce4()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc7f
 // Size: 0x49
 function function_9fb88526b60e2e45()
@@ -385,7 +387,7 @@ function function_9fb88526b60e2e45()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd0
 // Size: 0x34
 function function_67ce1aff066faf12()
@@ -403,7 +405,7 @@ function function_67ce1aff066faf12()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd0c
 // Size: 0x42
 function function_78795efa67a421b()
@@ -420,7 +422,7 @@ function function_78795efa67a421b()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd56
 // Size: 0x147
 function function_bc95ea3a25ee0024()
@@ -458,7 +460,7 @@ function function_bc95ea3a25ee0024()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea5
 // Size: 0x21
 function function_ce4bae9d68c21731()
@@ -469,7 +471,7 @@ function function_ce4bae9d68c21731()
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xece
 // Size: 0x48
 function function_cc66dbf966dfae8a()
@@ -483,6 +485,6 @@ function function_cc66dbf966dfae8a()
     namespace_f14d97da70ba358f::function_95dc47abc9ef28ae();
     namespace_dd96b963491cdbaf::function_ff6d5421a485cc11();
     namespace_722ce752470892b::function_699dd374c113c360();
-    namespace_614554f86e52695c::process_create_script();
+    scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 

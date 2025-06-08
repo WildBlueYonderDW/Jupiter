@@ -14,7 +14,7 @@
 #namespace vehicle_aianim;
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x665
 // Size: 0x5f4
 function guy_enter( guy, var_5b0cab0a9420da60 )
@@ -193,7 +193,7 @@ function guy_enter( guy, var_5b0cab0a9420da60 )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc61
 // Size: 0x1a
 function vehicle_allows_driver_death()
@@ -207,7 +207,7 @@ function vehicle_allows_driver_death()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc84
 // Size: 0x1b
 function vehicle_allows_rider_death()
@@ -221,7 +221,7 @@ function vehicle_allows_rider_death()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca8
 // Size: 0x36, Type: bool
 function guy_should_man_turret( animpos )
@@ -240,7 +240,7 @@ function guy_should_man_turret( animpos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce7
 // Size: 0x177
 function handle_attached_guys()
@@ -266,7 +266,8 @@ function handle_attached_guys()
     self.delayer = 0;
     vehicleanim = level.vehicle.templates.aianims[ classname ];
     
-    for (i = 0; i < maxpos; i++) {
+    for ( i = 0; i < maxpos ; i++ )
+    {
         self.usedpositions[ i ] = 0;
         
         if ( isdefined( self.script_nomg ) && self.script_nomg && isdefined( vehicleanim[ i ].bisgunner ) && vehicleanim[ i ].bisgunner )
@@ -277,7 +278,7 @@ function handle_attached_guys()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe66
 // Size: 0x15
 function load_ai_goddriver( array )
@@ -286,7 +287,7 @@ function load_ai_goddriver( array )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe83
 // Size: 0xf5
 function guy_death( guy, animpos )
@@ -322,7 +323,7 @@ function guy_death( guy, animpos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf80
 // Size: 0x10f
 function guy_deathimate_me( guy, animpos )
@@ -362,7 +363,7 @@ function guy_deathimate_me( guy, animpos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1097
 // Size: 0x87
 function load_ai( array, var_2d4646dcbb00a733, group )
@@ -387,12 +388,13 @@ function load_ai( array, var_2d4646dcbb00a733, group )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1126
 // Size: 0x41, Type: bool
 function is_rider( guy )
 {
-    for (i = 0; i < self.riders.size; i++) {
+    for ( i = 0; i < self.riders.size ; i++ )
+    {
         if ( self.riders[ i ] == guy )
         {
             return true;
@@ -403,7 +405,7 @@ function is_rider( guy )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1170
 // Size: 0x4f
 function get_in_vehicle( guy, var_2d4646dcbb00a733, group )
@@ -423,7 +425,7 @@ function get_in_vehicle( guy, var_2d4646dcbb00a733, group )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11c7
 // Size: 0x6f
 function handle_detached_guys_check()
@@ -446,7 +448,7 @@ function handle_detached_guys_check()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x123e
 // Size: 0x3d
 function vehicle_hasavailablespots()
@@ -460,7 +462,7 @@ function vehicle_hasavailablespots()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1283
 // Size: 0xe4
 function guy_runtovehicle_loaded( guy, vehicle )
@@ -487,7 +489,7 @@ function guy_runtovehicle_loaded( guy, vehicle )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x136f
 // Size: 0xaf
 function vehicle_loaded_if_full( vehicle )
@@ -518,7 +520,7 @@ function vehicle_loaded_if_full( vehicle )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1426
 // Size: 0x4f
 function vehicle_reload()
@@ -532,7 +534,7 @@ function vehicle_reload()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x147d
 // Size: 0x24
 function remove_magic_bullet_shield_from_guy_on_unload_or_death( guy )
@@ -542,7 +544,7 @@ function remove_magic_bullet_shield_from_guy_on_unload_or_death( guy )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14a9
 // Size: 0xed
 function choose_vehicle_position( guy, vehiclepositions, var_2d4646dcbb00a733 )
@@ -586,7 +588,7 @@ function choose_vehicle_position( guy, vehiclepositions, var_2d4646dcbb00a733 )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x159f
 // Size: 0x689
 function guy_runtovehicle( guy, vehicle, var_2d4646dcbb00a733, group )
@@ -617,7 +619,8 @@ function guy_runtovehicle( guy, vehicle, var_2d4646dcbb00a733, group )
     origin = 0;
     var_f15089151c320c06 = getdvarint( @"hash_9403d7d31fc1d981" );
     
-    for (i = 0; i < vehicleanim.size; i++) {
+    for ( i = 0; i < vehicleanim.size ; i++ )
+    {
         if ( isdefined( vehicleanim[ i ].getin ) )
         {
             var_f15089151c320c06 = 1;
@@ -785,7 +788,7 @@ function guy_runtovehicle( guy, vehicle, var_2d4646dcbb00a733, group )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c30
 // Size: 0xa
 function entered_vehicle_notify()
@@ -794,7 +797,7 @@ function entered_vehicle_notify()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c42
 // Size: 0xb6
 function driverdead( guy )
@@ -836,7 +839,7 @@ function driverdead( guy )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d00
 // Size: 0x110
 function guy_becomes_real_ai( guy, pos )
@@ -877,7 +880,7 @@ function guy_becomes_real_ai( guy, pos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1e19
 // Size: 0x87
 function link_to_sittag( guy, tag, origin_offset, angles_offset, linktoblend )
@@ -907,7 +910,7 @@ function link_to_sittag( guy, tag, origin_offset, angles_offset, linktoblend )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ea8
 // Size: 0x63
 function anim_pos( vehicle, pos )
@@ -923,7 +926,7 @@ function anim_pos( vehicle, pos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f14
 // Size: 0x47
 function guy_deathhandle( guy, pos )
@@ -940,7 +943,7 @@ function guy_deathhandle( guy, pos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f63
 // Size: 0x98
 function setup_aianimthreads()
@@ -960,7 +963,7 @@ function setup_aianimthreads()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2003
 // Size: 0x2b
 function guy_handle( guy, pos )
@@ -970,7 +973,7 @@ function guy_handle( guy, pos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2036
 // Size: 0x86
 function driver_idle_speed( driver, pos )
@@ -996,7 +999,7 @@ function driver_idle_speed( driver, pos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x20c4
 // Size: 0xc1
 function guy_idle( guy, pos, ignoredeath )
@@ -1037,7 +1040,7 @@ function guy_idle( guy, pos, ignoredeath )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x218d
 // Size: 0x171
 function play_new_idle( guy, animpos )
@@ -1070,7 +1073,7 @@ function play_new_idle( guy, animpos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2306
 // Size: 0x79
 function randomoccurrance( guy, occurrences )
@@ -1078,14 +1081,16 @@ function randomoccurrance( guy, occurrences )
     range = [];
     var_c32808289f6a7cc0 = 0;
     
-    for (i = 0; i < occurrences.size; i++) {
+    for ( i = 0; i < occurrences.size ; i++ )
+    {
         var_c32808289f6a7cc0 += occurrences[ i ];
         range[ i ] = var_c32808289f6a7cc0;
     }
     
     pick = randomint( var_c32808289f6a7cc0 );
     
-    for (i = 0; i < occurrences.size; i++) {
+    for ( i = 0; i < occurrences.size ; i++ )
+    {
         if ( pick < range[ i ] )
         {
             return i;
@@ -1094,7 +1099,7 @@ function randomoccurrance( guy, occurrences )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2387
 // Size: 0x7d
 function function_b4600df9b9f46f3d( guy )
@@ -1118,7 +1123,7 @@ function function_b4600df9b9f46f3d( guy )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x240c
 // Size: 0x84
 function guy_unload_que( guy )
@@ -1137,7 +1142,7 @@ function guy_unload_que( guy )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2498
 // Size: 0xbb, Type: bool
 function riders_unloadable( unload_group )
@@ -1152,7 +1157,8 @@ function riders_unloadable( unload_group )
         return false;
     }
     
-    for (i = 0; i < self.riders.size; i++) {
+    for ( i = 0; i < self.riders.size ; i++ )
+    {
         if ( !isalive( self.riders[ i ] ) && !isdefined( self.riders[ i ].isvehicle ) )
         {
             continue;
@@ -1173,7 +1179,7 @@ function riders_unloadable( unload_group )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x255c
 // Size: 0xe2
 function get_unload_group()
@@ -1203,7 +1209,7 @@ function get_unload_group()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2647
 // Size: 0x110, Type: bool
 function check_unloadgroup( pos, unload_group )
@@ -1229,7 +1235,8 @@ function check_unloadgroup( pos, unload_group )
     
     group = level.vehicle.templates.unloadgroups[ classname ][ unload_group ];
     
-    for (i = 0; i < group.size; i++) {
+    for ( i = 0; i < group.size ; i++ )
+    {
         if ( pos == group[ i ] )
         {
             return true;
@@ -1240,7 +1247,7 @@ function check_unloadgroup( pos, unload_group )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2760
 // Size: 0x34
 function getoutrig_model_idle( model, tag, animation )
@@ -1254,7 +1261,7 @@ function getoutrig_model_idle( model, tag, animation )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x279c
 // Size: 0x133
 function getoutrig_model( animpos, model, tag, animation, var_ec8a68bde7ac6a73 )
@@ -1297,7 +1304,7 @@ function getoutrig_model( animpos, model, tag, animation, var_ec8a68bde7ac6a73 )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x28d7
 // Size: 0x3cc
 function getoutrig_model_new( animpos, model, tag, animation, var_ec8a68bde7ac6a73 )
@@ -1396,7 +1403,7 @@ function getoutrig_model_new( animpos, model, tag, animation, var_ec8a68bde7ac6a
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cab
 // Size: 0x48
 function getoutrig_disable_abort_notify_after_riders_out()
@@ -1417,7 +1424,7 @@ function getoutrig_disable_abort_notify_after_riders_out()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cfb
 // Size: 0x97
 function getoutrig_abort_while_deploying()
@@ -1445,7 +1452,7 @@ function getoutrig_abort_while_deploying()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2d9a
 // Size: 0x2f0
 function getoutrig_abort( model, tag, animation, ropeorigin )
@@ -1521,7 +1528,8 @@ function getoutrig_abort( model, tag, animation, ropeorigin )
         attacker = self.original_attacker;
     }
     
-    for (i = 0; i < self.riders.size; i++) {
+    for ( i = 0; i < self.riders.size ; i++ )
+    {
         if ( !isdefined( self.riders[ i ] ) )
         {
             continue;
@@ -1552,7 +1560,7 @@ function getoutrig_abort( model, tag, animation, ropeorigin )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3092
 // Size: 0x6b
 function setanimrestart_once( vehicle_anim, bclearanim )
@@ -1577,7 +1585,7 @@ function setanimrestart_once( vehicle_anim, bclearanim )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3105
 // Size: 0x30d
 function getout_rigspawn( animatemodel, animpos, var_ec8a68bde7ac6a73 )
@@ -1627,7 +1635,7 @@ function getout_rigspawn( animatemodel, animpos, var_ec8a68bde7ac6a73 )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x341b
 // Size: 0x5d
 function check_sound_tag_dupe( soundtag )
@@ -1653,7 +1661,7 @@ function check_sound_tag_dupe( soundtag )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3481
 // Size: 0x71
 function check_sound_tag_dupe_reset( soundtag )
@@ -1668,7 +1676,8 @@ function check_sound_tag_dupe_reset( soundtag )
     self.sound_tag_dupe[ soundtag ] = 0;
     keys = getarraykeys( self.sound_tag_dupe );
     
-    for (i = 0; i < keys.size; i++) {
+    for ( i = 0; i < keys.size ; i++ )
+    {
         if ( self.sound_tag_dupe[ keys[ i ] ] )
         {
             return;
@@ -1679,7 +1688,7 @@ function check_sound_tag_dupe_reset( soundtag )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x34fa
 // Size: 0x110
 function vehicle_play_exit_anim( animpos, vehicle_getoutanim, vehicle_getoutanim_clear )
@@ -1722,7 +1731,7 @@ function vehicle_play_exit_anim( animpos, vehicle_getoutanim, vehicle_getoutanim
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3612
 // Size: 0xcf
 function vehicle_end_loop_sounds( guy, pos )
@@ -1746,7 +1755,7 @@ function vehicle_end_loop_sounds( guy, pos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36e9
 // Size: 0xaa
 function prepdoorsforunload()
@@ -1756,7 +1765,8 @@ function prepdoorsforunload()
         return;
     }
     
-    for (i = 0; i < level.vehicle.templates.aianims[ get_vehicle_classname() ].size; i++) {
+    for ( i = 0; i < level.vehicle.templates.aianims[ get_vehicle_classname() ].size ; i++ )
+    {
         animpos = level.vehicle.templates.aianims[ get_vehicle_classname() ][ i ];
         
         if ( isdefined( animpos.vehicle_getoutanim ) )
@@ -1768,7 +1778,7 @@ function prepdoorsforunload()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x379b
 // Size: 0x192
 function wait_for_open_door( guy, animpos )
@@ -1819,7 +1829,7 @@ function wait_for_open_door( guy, animpos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3935
 // Size: 0x45
 function guy_setup_rope( guy, animpos )
@@ -1835,7 +1845,7 @@ function guy_setup_rope( guy, animpos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3982
 // Size: 0xb65
 function guy_unload( guy, pos )
@@ -2243,7 +2253,7 @@ function guy_unload( guy, pos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x44ef
 // Size: 0x2e2
 function guy_unload_land( guy, exittag, jumpanim, loopanim, landanim )
@@ -2303,7 +2313,7 @@ function guy_unload_land( guy, exittag, jumpanim, loopanim, landanim )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47d9
 // Size: 0x7e
 function guy_fall_loop()
@@ -2328,7 +2338,7 @@ function guy_fall_loop()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x485f
 // Size: 0x2
 function guy_fall_loop_end()
@@ -2337,7 +2347,7 @@ function guy_fall_loop_end()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4869
 // Size: 0xe0, Type: bool
 function guy_resets_goalpos( guy )
@@ -2381,7 +2391,7 @@ function guy_resets_goalpos( guy )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x4952
 // Size: 0x317
 function animontag( guy, tag, animation, notetracks, sthreads, flag, origin_offset, angles_offset )
@@ -2425,7 +2435,8 @@ function animontag( guy, tag, animation, notetracks, sthreads, flag, origin_offs
         axes = anglestoaxis( angles );
         var_8131b69e561ed5ac = [ "forward", "right", "up" ];
         
-        for (i = 0; i < axes.size; i++) {
+        for ( i = 0; i < axes.size ; i++ )
+        {
             org += axes[ var_8131b69e561ed5ac[ i ] ] * origin_offset[ i ];
         }
     }
@@ -2478,7 +2489,8 @@ function animontag( guy, tag, animation, notetracks, sthreads, flag, origin_offs
     {
         if ( isdefined( notetracks ) )
         {
-            for (i = 0; i < notetracks.size; i++) {
+            for ( i = 0; i < notetracks.size ; i++ )
+            {
                 guy waittillmatch( flag, notetracks[ i ] );
                 guy thread [[ sthreads[ i ] ]]();
             }
@@ -2492,7 +2504,7 @@ function animontag( guy, tag, animation, notetracks, sthreads, flag, origin_offs
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c71
 // Size: 0x25
 function recover_interval()
@@ -2507,7 +2519,7 @@ function recover_interval()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c9e
 // Size: 0xfa
 function animontag_ragdoll_death( guy, vehicle )
@@ -2571,7 +2583,7 @@ function animontag_ragdoll_death( guy, vehicle )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4da0
 // Size: 0x298
 function animontag_ragdoll_death_fall( guy, vehicle, attacker )
@@ -2635,7 +2647,7 @@ function animontag_ragdoll_death_fall( guy, vehicle, attacker )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5040
 // Size: 0x45
 function donotetracks( guy, vehicle, flag )
@@ -2648,7 +2660,7 @@ function donotetracks( guy, vehicle, flag )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x508d
 // Size: 0x41
 function animatemoveintoplace( guy, org, angles, var_4e90bf2523360f6c )
@@ -2658,7 +2670,7 @@ function animatemoveintoplace( guy, org, angles, var_4e90bf2523360f6c )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x50d6
 // Size: 0x1b0
 function guy_vehicle_death( guy, attacker )
@@ -2722,7 +2734,7 @@ function guy_vehicle_death( guy, attacker )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x528e
 // Size: 0x19
 function ai_wait_go()
@@ -2733,7 +2745,7 @@ function ai_wait_go()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x52af
 // Size: 0x13e
 function set_pos( guy, vehicleanim )
@@ -2759,7 +2771,8 @@ function set_pos( guy, vehicleanim )
     
     assertex( !isdefined( pos ), "<dev string:x2f4>" );
     
-    for (j = 0; j < self.usedpositions.size; j++) {
+    for ( j = 0; j < self.usedpositions.size ; j++ )
+    {
         if ( self.usedpositions[ j ] )
         {
             continue;
@@ -2788,7 +2801,7 @@ function set_pos( guy, vehicleanim )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x53f5
 // Size: 0x102
 function guy_man_turret( guy, pos, var_5b0cab0a9420da60 )
@@ -2826,7 +2839,7 @@ function guy_man_turret( guy, pos, var_5b0cab0a9420da60 )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x54ff
 // Size: 0x26
 function guy_unlink_on_death( guy )
@@ -2841,7 +2854,7 @@ function guy_unlink_on_death( guy )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x552d
 // Size: 0x2d0
 function guy_blowup( guy )
@@ -2921,7 +2934,8 @@ function guy_blowup( guy )
     wait 0.05;
     force *= 20000;
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         if ( isdefined( guy ) )
         {
             org = guy.origin;
@@ -2937,7 +2951,7 @@ function guy_blowup( guy )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5805
 // Size: 0xe9
 function convert_guy_to_drone( guy, var_5d30c43be498cbaf )
@@ -2952,7 +2966,8 @@ function convert_guy_to_drone( guy, var_5d30c43be498cbaf )
     model setmodel( guy.model );
     size = guy getattachsize();
     
-    for (i = 0; i < size; i++) {
+    for ( i = 0; i < size ; i++ )
+    {
         model attach( guy getattachmodelname( i ), guy getattachtagname( i ) );
     }
     
@@ -2973,7 +2988,7 @@ function convert_guy_to_drone( guy, var_5d30c43be498cbaf )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x58f7
 // Size: 0x23
 function vehicle_animate( animation, animtree )
@@ -2983,7 +2998,7 @@ function vehicle_animate( animation, animtree )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5922
 // Size: 0x8e
 function vehicle_getinstart( pos )
@@ -2996,7 +3011,7 @@ function vehicle_getinstart( pos )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x59b9
 // Size: 0xfa
 function vehicle_getanimstart( animation, tag, pos, canshootinvehicle )
@@ -3027,7 +3042,7 @@ function vehicle_getanimstart( animation, tag, pos, canshootinvehicle )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5abc
 // Size: 0xda, Type: bool
 function is_position_in_group( vehicle, pos, group )
@@ -3053,7 +3068,7 @@ function is_position_in_group( vehicle, pos, group )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b9f
 // Size: 0xf1
 function get_availablepositions( group )
@@ -3062,7 +3077,8 @@ function get_availablepositions( group )
     availablepositions = [];
     nonanimatedpositions = [];
     
-    for (i = 0; i < self.usedpositions.size; i++) {
+    for ( i = 0; i < self.usedpositions.size ; i++ )
+    {
         if ( self.usedpositions[ i ] )
         {
             continue;
@@ -3084,7 +3100,7 @@ function get_availablepositions( group )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c99
 // Size: 0x1e
 function getanimatemodel()
@@ -3098,7 +3114,7 @@ function getanimatemodel()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5cbf
 // Size: 0xb6
 function detach_models_with_substr( guy, substr )
@@ -3108,7 +3124,8 @@ function detach_models_with_substr( guy, substr )
     var_e51d4c9a2f109b4b = [];
     index = 0;
     
-    for (i = 0; i < size; i++) {
+    for ( i = 0; i < size ; i++ )
+    {
         modelname = guy getattachmodelname( i );
         tagname = guy getattachtagname( i );
         
@@ -3119,13 +3136,14 @@ function detach_models_with_substr( guy, substr )
         }
     }
     
-    for (i = 0; i < var_895aea96c7debffd.size; i++) {
+    for ( i = 0; i < var_895aea96c7debffd.size ; i++ )
+    {
         guy detach( var_895aea96c7debffd[ i ], var_e51d4c9a2f109b4b[ i ] );
     }
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d7d
 // Size: 0x27, Type: bool
 function should_give_orghealth()
@@ -3144,7 +3162,7 @@ function should_give_orghealth()
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5dad
 // Size: 0x23
 function stable_unlink( guy )
@@ -3158,7 +3176,7 @@ function stable_unlink( guy )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5dd8
 // Size: 0x11a
 function animate_guys( other )
@@ -3192,7 +3210,7 @@ function animate_guys( other )
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5efb
 // Size: 0x2a
 function guy_cleanup_vehiclevars()

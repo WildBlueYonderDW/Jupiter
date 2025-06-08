@@ -10,7 +10,7 @@
 #namespace vehicle_paths;
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x453
 // Size: 0x92
 function gopath( vehicle )
@@ -46,7 +46,7 @@ function gopath( vehicle )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4ed
 // Size: 0x39
 function _vehicle_paths( node, var_269fb0ec10b51524, var_cfa3aafb71b08d36 )
@@ -61,7 +61,7 @@ function _vehicle_paths( node, var_269fb0ec10b51524, var_cfa3aafb71b08d36 )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x52e
 // Size: 0x285
 function trigger_process_node( node )
@@ -176,7 +176,7 @@ function trigger_process_node( node )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bb
 // Size: 0x116
 function delete_riders()
@@ -224,7 +224,7 @@ function delete_riders()
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d9
 // Size: 0x51, Type: bool
 function islastnode( node )
@@ -243,7 +243,7 @@ function islastnode( node )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x933
 // Size: 0x8b, Type: bool
 function vehicle_should_unload( wait_func, nextpoint )
@@ -277,7 +277,7 @@ function vehicle_should_unload( wait_func, nextpoint )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9c7
 // Size: 0x7a
 function overshoot_next_node( vnode )
@@ -300,7 +300,7 @@ function overshoot_next_node( vnode )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa49
 // Size: 0x7a
 function vehicle_resumepathvehicle()
@@ -327,7 +327,7 @@ function vehicle_resumepathvehicle()
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xacb
 // Size: 0xd4
 function get_path_getfunc( pathpoint )
@@ -362,7 +362,7 @@ function get_path_getfunc( pathpoint )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xba8
 // Size: 0xe0
 function struct_wait( nextpoint, lastpoint, dist_sq )
@@ -398,7 +398,7 @@ function struct_wait( nextpoint, lastpoint, dist_sq )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc90
 // Size: 0x8d
 function node_wait( nextpoint, lastpoint, get_func )
@@ -427,7 +427,7 @@ function node_wait( nextpoint, lastpoint, get_func )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd25
 // Size: 0x65
 function nodes_flag_triggered( nodeflag, nextpoint, get_func )
@@ -449,7 +449,7 @@ function nodes_flag_triggered( nodeflag, nextpoint, get_func )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd92
 // Size: 0x64
 function node_flag_triggered( nodeflag, node )
@@ -470,7 +470,7 @@ function node_flag_triggered( nodeflag, node )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdfe
 // Size: 0x3d
 function node_flag_triggered_cleanup( node, nodeflag )
@@ -481,7 +481,7 @@ function node_flag_triggered_cleanup( node, nodeflag )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe43
 // Size: 0x7e3
 function vehicle_paths_non_heli( node )
@@ -829,7 +829,7 @@ function vehicle_paths_non_heli( node )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x162e
 // Size: 0x2e
 function vehicle_notifyonstop()
@@ -847,7 +847,7 @@ function vehicle_notifyonstop()
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1664
 // Size: 0xf
 function vehicle_waittill_stopped()
@@ -859,7 +859,7 @@ function vehicle_waittill_stopped()
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x167b
 // Size: 0x21
 function add_z( vec, zplus )
@@ -868,7 +868,7 @@ function add_z( vec, zplus )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x16a5
 // Size: 0x442
 function vehicle_paths_helicopter( node, var_269fb0ec10b51524, var_cfa3aafb71b08d36 )
@@ -1077,7 +1077,7 @@ function vehicle_paths_helicopter( node, var_269fb0ec10b51524, var_cfa3aafb71b08
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1aef
 // Size: 0x4cf
 function heli_wait_node( nextpoint, lastpoint, var_cfa3aafb71b08d36 )
@@ -1241,7 +1241,7 @@ function heli_wait_node( nextpoint, lastpoint, var_cfa3aafb71b08d36 )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fc6
 // Size: 0x323
 function function_fabc06bb049f87ee( node, var_b1f8b992bf79f2d3 )
@@ -1397,7 +1397,7 @@ function function_fabc06bb049f87ee( node, var_b1f8b992bf79f2d3 )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x22f1
 // Size: 0x320
 function function_2936413eac5d78b1( nextpoint, lastpoint, var_b1f8b992bf79f2d3 )
@@ -1503,7 +1503,7 @@ function function_2936413eac5d78b1( nextpoint, lastpoint, var_b1f8b992bf79f2d3 )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2619
 // Size: 0xd8
 function get_pathstruct()
@@ -1531,7 +1531,7 @@ function get_pathstruct()
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26fa
 // Size: 0x214
 function getonpath( skip_attach )
@@ -1625,7 +1625,7 @@ function getonpath( skip_attach )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2916
 // Size: 0x6c
 function _vehicle_resume_named( stop_name )
@@ -1648,7 +1648,7 @@ function _vehicle_resume_named( stop_name )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x298a
 // Size: 0x99
 function _vehicle_stop_named( stop_name, acceleration, deceleration )
@@ -1672,7 +1672,7 @@ function _vehicle_stop_named( stop_name, acceleration, deceleration )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a2b
 // Size: 0x1ed
 function unload_node( node )
@@ -1745,7 +1745,7 @@ function unload_node( node )
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c21
 // Size: 0x11d
 function checkvehiclenavsplinestuck()
@@ -1796,7 +1796,7 @@ function checkvehiclenavsplinestuck()
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d46
 // Size: 0x6c
 function checkvehiclenavsplineinterrupted()
@@ -1820,7 +1820,7 @@ function checkvehiclenavsplineinterrupted()
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2dba
 // Size: 0xfe
 function function_b5e5b1755c705053( goallocation, speedmph, var_56c51d0b8c3270ca, debugdraw )
@@ -1844,7 +1844,7 @@ function function_b5e5b1755c705053( goallocation, speedmph, var_56c51d0b8c3270ca
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ec0
 // Size: 0x2dd
 function vehiclenavsplinesimplefollowbehavior( speedmph, var_56c51d0b8c3270ca, debugdraw )
@@ -1938,7 +1938,7 @@ function vehiclenavsplinesimplefollowbehavior( speedmph, var_56c51d0b8c3270ca, d
 /#
 
     // Namespace vehicle_paths / scripts\common\vehicle_paths
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x31a5
     // Size: 0x188, Type: dev
     function function_2a708e9755fc798b( var_56c51d0b8c3270ca, speed )
@@ -1962,7 +1962,7 @@ function vehiclenavsplinesimplefollowbehavior( speedmph, var_56c51d0b8c3270ca, d
     }
 
     // Namespace vehicle_paths / scripts\common\vehicle_paths
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x3335
     // Size: 0x8c, Type: dev
     function function_68d5232181fec390( splinepoints, pathcolor )
@@ -1977,7 +1977,8 @@ function vehiclenavsplinesimplefollowbehavior( speedmph, var_56c51d0b8c3270ca, d
             sphere( splinepoints[ 0 ], 5, pathcolor, 0, 1 );
             pathcolor = ter_op( isdefined( pathcolor ), pathcolor, ( 1, 1, 1 ) );
             
-            for (index = 1; index < splinepoints.size; index++) {
+            for ( index = 1; index < splinepoints.size ; index++ )
+            {
                 line( splinepoints[ index - 1 ], splinepoints[ index ], pathcolor, 1, 0, 1 );
             }
         }

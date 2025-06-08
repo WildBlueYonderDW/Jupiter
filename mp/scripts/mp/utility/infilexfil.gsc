@@ -8,7 +8,7 @@
 #namespace infilexfil;
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x75f
 // Size: 0xd6
 function getinfilpath( targetname )
@@ -41,7 +41,7 @@ function getinfilpath( targetname )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x83d
 // Size: 0x4d
 function player_unlink( guy )
@@ -67,7 +67,7 @@ function player_unlink( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x892
 // Size: 0x58
 function player_free_look( guy )
@@ -93,7 +93,7 @@ function player_free_look( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f2
 // Size: 0x49
 function player_fov_80_instant( guy )
@@ -116,7 +116,7 @@ function player_fov_80_instant( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x943
 // Size: 0x49
 function player_fov_default_1( guy )
@@ -139,7 +139,7 @@ function player_fov_default_1( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x994
 // Size: 0x5c
 function player_fov_default_2( guy )
@@ -165,7 +165,7 @@ function player_fov_default_2( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f8
 // Size: 0x5d
 function player_lock_look_1_second( guy )
@@ -191,7 +191,7 @@ function player_lock_look_1_second( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa5d
 // Size: 0x5d
 function player_lock_look_2_second( guy )
@@ -217,7 +217,7 @@ function player_lock_look_2_second( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac2
 // Size: 0x54
 function player_lock_look_instant( guy )
@@ -243,7 +243,7 @@ function player_lock_look_instant( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb1e
 // Size: 0x5a
 function rumble_low( guy )
@@ -266,7 +266,7 @@ function rumble_low( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb80
 // Size: 0x6f
 function cam_shake_low( guy )
@@ -289,7 +289,7 @@ function cam_shake_low( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbf7
 // Size: 0x6b
 function cam_shake_running( guy )
@@ -312,7 +312,7 @@ function cam_shake_running( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6a
 // Size: 0x6e
 function cam_shake_parked( guy )
@@ -335,7 +335,7 @@ function cam_shake_parked( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce0
 // Size: 0x45
 function cam_shake_off( guy )
@@ -358,7 +358,7 @@ function cam_shake_off( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xd2d
 // Size: 0xc9
 function updateshakeonplayer( var_7ac5f1f9205ac776, var_7ae8e3f92080f064, var_fa5a6ef8c302a935, var_5c7fa8f909b33748, quakeradius, rumblename, waitmin, waitmax )
@@ -391,7 +391,7 @@ function updateshakeonplayer( var_7ac5f1f9205ac776, var_7ae8e3f92080f064, var_fa
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdfe
 // Size: 0x63
 function hideactors()
@@ -408,7 +408,7 @@ function hideactors()
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe69
 // Size: 0x63
 function showactors()
@@ -425,7 +425,7 @@ function showactors()
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed4
 // Size: 0x49
 function setcinematicmotion_heli( guy )
@@ -448,7 +448,7 @@ function setcinematicmotion_heli( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf25
 // Size: 0x49
 function setcinematicmotion_playermotion( guy )
@@ -471,7 +471,7 @@ function setcinematicmotion_playermotion( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf76
 // Size: 0x49
 function setcinematicmotion_disabled( guy )
@@ -494,7 +494,7 @@ function setcinematicmotion_disabled( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfc7
 // Size: 0x3f
 function set_cinematicmotionomnvaroverrides( value )
@@ -506,7 +506,7 @@ function set_cinematicmotionomnvaroverrides( value )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x100e
 // Size: 0xca
 function set_cinematicmotionomnvarovertime( startval, endval, duration )
@@ -534,7 +534,7 @@ function set_cinematicmotionomnvarovertime( startval, endval, duration )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e0
 // Size: 0x4a
 function setcinematicmotion_omnvaroverride_max_instant( guy )
@@ -557,7 +557,7 @@ function setcinematicmotion_omnvaroverride_max_instant( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1132
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_max_1( guy )
@@ -580,7 +580,7 @@ function setcinematicmotion_omnvaroverride_max_1( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x118f
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_max_2( guy )
@@ -603,7 +603,7 @@ function setcinematicmotion_omnvaroverride_max_2( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11ec
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_max_3( guy )
@@ -626,7 +626,7 @@ function setcinematicmotion_omnvaroverride_max_3( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1249
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_max_4( guy )
@@ -649,7 +649,7 @@ function setcinematicmotion_omnvaroverride_max_4( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12a6
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_max_5( guy )
@@ -672,7 +672,7 @@ function setcinematicmotion_omnvaroverride_max_5( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1303
 // Size: 0x4a
 function setcinematicmotion_omnvaroverride_min_instant( guy )
@@ -695,7 +695,7 @@ function setcinematicmotion_omnvaroverride_min_instant( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1355
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_min_1( guy )
@@ -718,7 +718,7 @@ function setcinematicmotion_omnvaroverride_min_1( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13b2
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_min_2( guy )
@@ -741,7 +741,7 @@ function setcinematicmotion_omnvaroverride_min_2( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x140f
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_min_3( guy )
@@ -764,7 +764,7 @@ function setcinematicmotion_omnvaroverride_min_3( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146c
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_min_4( guy )
@@ -787,7 +787,7 @@ function setcinematicmotion_omnvaroverride_min_4( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14c9
 // Size: 0x55
 function setcinematicmotion_omnvaroverride_min_5( guy )
@@ -810,7 +810,7 @@ function setcinematicmotion_omnvaroverride_min_5( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1526
 // Size: 0x4e
 function player_equip_nvg( guy )
@@ -838,7 +838,7 @@ function player_equip_nvg( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x157c
 // Size: 0x116
 function getgroundcompensationheight( guy )
@@ -867,7 +867,7 @@ function getgroundcompensationheight( guy )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x169a
 // Size: 0xea
 function compensatetoground()
@@ -893,7 +893,7 @@ function compensatetoground()
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x178c
 // Size: 0x26b
 function infil_player_rig_updated( animname, spawnpos, spawnang )
@@ -964,7 +964,7 @@ function infil_player_rig_updated( animname, spawnpos, spawnang )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19ff
 // Size: 0xb1a
 function handledofnotetrack( type )
@@ -1212,7 +1212,7 @@ function handledofnotetrack( type )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2521
 // Size: 0x17f
 function handlecinematicmotionnotetrack( var_d8958445ed7ab829 )
@@ -1273,7 +1273,7 @@ function handlecinematicmotionnotetrack( var_d8958445ed7ab829 )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26a8
 // Size: 0x5d0
 function handleweaponstatenotetrack( state )
@@ -1425,7 +1425,7 @@ function handleweaponstatenotetrack( state )
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c80
 // Size: 0x46
 function cleanupswaploadoutflags()
@@ -1438,7 +1438,7 @@ function cleanupswaploadoutflags()
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cce
 // Size: 0xe8
 function function_c96464f39952b78a( vehicle )

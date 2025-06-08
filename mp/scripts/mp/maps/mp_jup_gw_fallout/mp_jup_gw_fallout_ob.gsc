@@ -1,11 +1,11 @@
 #using script_2047cdbf5176ba0;
 #using script_222f62686867436a;
-#using script_22f1701e151b9d12;
 #using script_36b7b4e4089e73a3;
 #using script_62a4f7a62643fe8;
 #using script_6c49326fa248a5f;
 #using script_92b815b18f0ba61;
 #using scripts\common\callbacks;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\engine\utility;
 
 #namespace mp_jup_gw_fallout_ob;
@@ -20,7 +20,7 @@ function autoexec init()
 }
 
 // Namespace mp_jup_gw_fallout_ob / scripts\mp\maps\mp_jup_gw_fallout\mp_jup_gw_fallout_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11c
 // Size: 0x6c
 function main()
@@ -46,12 +46,12 @@ function main()
 }
 
 // Namespace mp_jup_gw_fallout_ob / scripts\mp\maps\mp_jup_gw_fallout\mp_jup_gw_fallout_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x190
 // Size: 0x16
 function function_969adf7620768917()
 {
     level flag_wait( "ai_spawn_director_initialized" );
-    namespace_614554f86e52695c::process_create_script();
+    scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 

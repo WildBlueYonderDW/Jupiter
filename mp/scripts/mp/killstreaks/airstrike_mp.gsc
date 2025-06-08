@@ -20,7 +20,7 @@
 #namespace airstrike_mp;
 
 // Namespace airstrike_mp / scripts\mp\killstreaks\airstrike_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x8d
 function init()
@@ -35,7 +35,7 @@ function init()
 }
 
 // Namespace airstrike_mp / scripts\mp\killstreaks\airstrike_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e2
 // Size: 0x1d1
 function init_airstrike_params()
@@ -59,7 +59,7 @@ function init_airstrike_params()
 }
 
 // Namespace airstrike_mp / scripts\mp\killstreaks\airstrike_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4bb
 // Size: 0x30
 function airstrike_getmapselectpoint( streakinfo, selectnum, directionalselection )
@@ -69,7 +69,7 @@ function airstrike_getmapselectpoint( streakinfo, selectnum, directionalselectio
 }
 
 // Namespace airstrike_mp / scripts\mp\killstreaks\airstrike_mp
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4f4
 // Size: 0x37
 function airstrike_startmapselectsequence( navmesh, directionalselection, directionaltype, selectortype, streakinfo )
@@ -78,7 +78,7 @@ function airstrike_startmapselectsequence( navmesh, directionalselection, direct
 }
 
 // Namespace airstrike_mp / scripts\mp\killstreaks\airstrike_mp
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x533
 // Size: 0x5e
 function airstrike_addspawndangerzone( pos, radius, height, friendlyteam, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1 )

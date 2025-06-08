@@ -12,7 +12,7 @@
 #namespace accolades;
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xed3
 // Size: 0x1308
 function init()
@@ -189,7 +189,7 @@ function init()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x21e3
 // Size: 0xe2
 function registeraccolade( ref, datapoints, priority, var_b9056cc2c7e5783e, validatefunc, updatefunc, evaluatefunc )
@@ -211,7 +211,7 @@ function registeraccolade( ref, datapoints, priority, var_b9056cc2c7e5783e, vali
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22cd
 // Size: 0xdd
 function applyaccoladestructtoplayerpers()
@@ -238,7 +238,7 @@ function applyaccoladestructtoplayerpers()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23b2
 // Size: 0x309
 function evaluateallaccolades()
@@ -320,7 +320,7 @@ function evaluateallaccolades()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26c3
 // Size: 0x1b8
 function evaluateaccolade( ref )
@@ -367,7 +367,7 @@ function evaluateaccolade( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2883
 // Size: 0xc, Type: bool
 function arekillcamsenabled()
@@ -376,7 +376,7 @@ function arekillcamsenabled()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2898
 // Size: 0x9, Type: bool
 function isnotleanthreadmode()
@@ -385,7 +385,7 @@ function isnotleanthreadmode()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28aa
 // Size: 0x14
 function isclasschoiceallowed()
@@ -395,7 +395,7 @@ function isclasschoiceallowed()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28c7
 // Size: 0xc, Type: bool
 function isreviveenabled()
@@ -404,7 +404,7 @@ function isreviveenabled()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28dc
 // Size: 0x9, Type: bool
 function iscorempgametype()
@@ -413,7 +413,7 @@ function iscorempgametype()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28ee
 // Size: 0xc, Type: bool
 function arekillstreaksallowed()
@@ -422,7 +422,7 @@ function arekillstreaksallowed()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2903
 // Size: 0xc, Type: bool
 function arefieldupgradesallowed()
@@ -431,7 +431,7 @@ function arefieldupgradesallowed()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2918
 // Size: 0x28, Type: bool
 function isobjectivegametype()
@@ -440,7 +440,7 @@ function isobjectivegametype()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2949
 // Size: 0x8
 function isbombgametype()
@@ -449,7 +449,7 @@ function isbombgametype()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x295a
 // Size: 0x38, Type: bool
 function iscarrygametype()
@@ -470,7 +470,7 @@ function iscarrygametype()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x299b
 // Size: 0xb0, Type: bool
 function iscapturegametype()
@@ -497,7 +497,7 @@ function iscapturegametype()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a54
 // Size: 0xe, Type: bool
 function isctf()
@@ -506,7 +506,7 @@ function isctf()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a6b
 // Size: 0xc, Type: bool
 function isspawnselectionenabled()
@@ -515,7 +515,7 @@ function isspawnselectionenabled()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a80
 // Size: 0xc, Type: bool
 function aretagsenabled()
@@ -524,7 +524,7 @@ function aretagsenabled()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a95
 // Size: 0xe, Type: bool
 function isgrind()
@@ -533,7 +533,7 @@ function isgrind()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aac
 // Size: 0x8
 function isinfected()
@@ -542,7 +542,7 @@ function isinfected()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2abd
 // Size: 0xe, Type: bool
 function isgungame()
@@ -551,7 +551,7 @@ function isgungame()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ad4
 // Size: 0x3e, Type: bool
 function ishardpoint()
@@ -560,7 +560,7 @@ function ishardpoint()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b1b
 // Size: 0x1c
 function arevehiclesenabled()
@@ -574,7 +574,7 @@ function arevehiclesenabled()
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b40
 // Size: 0x5a
 function scoreminimum( ref )
@@ -584,7 +584,7 @@ function scoreminimum( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ba3
 // Size: 0x30, Type: bool
 function nokillswithdeath_evaluate( ref )
@@ -598,7 +598,7 @@ function nokillswithdeath_evaluate( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bdc
 // Size: 0x30, Type: bool
 function nokillnodeath_evaluate( ref )
@@ -612,7 +612,7 @@ function nokillnodeath_evaluate( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c15
 // Size: 0x31, Type: bool
 function nokill10deaths_evaluate( ref )
@@ -626,7 +626,7 @@ function nokill10deaths_evaluate( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c4f
 // Size: 0x6e, Type: bool
 function mostkillsleastdeaths_evaluate( ref )
@@ -643,7 +643,7 @@ function mostkillsleastdeaths_evaluate( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cc6
 // Size: 0x6e, Type: bool
 function mostkillsmostheadshots_evaluate( ref )
@@ -660,7 +660,7 @@ function mostkillsmostheadshots_evaluate( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d3d
 // Size: 0x6e, Type: bool
 function mostkillslongeststreak_evaluate( ref )
@@ -677,7 +677,7 @@ function mostkillslongeststreak_evaluate( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2db4
 // Size: 0x31, Type: bool
 function kills10nodeaths_evaluate( ref )
@@ -691,7 +691,7 @@ function kills10nodeaths_evaluate( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dee
 // Size: 0x3d, Type: bool
 function nodeathsfrombehind_evaluate( ref )
@@ -705,7 +705,7 @@ function nodeathsfrombehind_evaluate( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e34
 // Size: 0x38
 function highestavgaltitude_evaluate( ref )
@@ -719,7 +719,7 @@ function highestavgaltitude_evaluate( ref )
 }
 
 // Namespace accolades / scripts\mp\accolades
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e74
 // Size: 0x3b
 function lowestavgaltitude_evaluate( ref )

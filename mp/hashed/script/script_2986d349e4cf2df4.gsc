@@ -4,7 +4,7 @@
 #namespace mp_jup_st_c_ob_activities_merc_camp_cs;
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb5b
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbd0
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc3f
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc87
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc91
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca7
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd19
 // Size: 0xce
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -128,7 +128,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xdef
 // Size: 0xa4c
 function function_c43311846aff6778( fe, us, cf )
@@ -226,7 +226,7 @@ function function_c43311846aff6778( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1843
 // Size: 0x875
 function function_253e79ec672f5995( fe, us, cf )
@@ -308,7 +308,7 @@ function function_253e79ec672f5995( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x20c0
 // Size: 0xa37
 function function_94a32de83ec40f5f( fe, us, cf )
@@ -406,7 +406,7 @@ function function_94a32de83ec40f5f( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2aff
 // Size: 0x9b3
 function function_f835abb516c2a93d( fe, us, cf )
@@ -499,7 +499,7 @@ function function_f835abb516c2a93d( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x34ba
 // Size: 0xd93
 function function_1abdfbe08bb43b3d( fe, us, cf )
@@ -627,7 +627,7 @@ function function_1abdfbe08bb43b3d( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4255
 // Size: 0xd1b
 function function_9ab035399e469e39( fe, us, cf )
@@ -750,7 +750,7 @@ function function_9ab035399e469e39( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_camp_cs / namespace_79ba1524e1edcc86
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f78
 // Size: 0xcb4
 function function_6da2952367672ac0()

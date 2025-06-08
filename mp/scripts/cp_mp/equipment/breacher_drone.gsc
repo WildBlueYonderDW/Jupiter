@@ -22,7 +22,7 @@ function autoexec main()
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ce
 // Size: 0x45
 function function_dd3ae1df4fce2e85()
@@ -37,7 +37,7 @@ function function_dd3ae1df4fce2e85()
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31b
 // Size: 0xf7
 function function_633c7f773e57ca31()
@@ -59,7 +59,7 @@ function function_633c7f773e57ca31()
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41a
 // Size: 0x1ea
 function breacher_drone_used( breacher_drone )
@@ -104,7 +104,7 @@ function breacher_drone_used( breacher_drone )
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60c
 // Size: 0x118
 function function_cab343d49c8e389a( isarmed )
@@ -127,7 +127,7 @@ function function_cab343d49c8e389a( isarmed )
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x72c
 // Size: 0xb4
 function function_f3b97e69ad4c367d()
@@ -159,7 +159,7 @@ function function_f3b97e69ad4c367d()
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7e8
 // Size: 0x8e
 function function_afec6a5d0c967d39( ent )
@@ -184,7 +184,7 @@ function function_afec6a5d0c967d39( ent )
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87e
 // Size: 0x118
 function function_a608fdd8e2a06891()
@@ -221,7 +221,7 @@ function function_a608fdd8e2a06891()
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99e
 // Size: 0x108
 function function_3fb4e2d77e555bc6()
@@ -253,7 +253,7 @@ function function_3fb4e2d77e555bc6()
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaae
 // Size: 0x200
 function function_d6d18aaab42129ad( direction, velocity, gunangle )
@@ -299,7 +299,7 @@ function function_d6d18aaab42129ad( direction, velocity, gunangle )
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb6
 // Size: 0x61
 function function_f6f652e978862b5a()
@@ -331,7 +331,7 @@ function function_f6f652e978862b5a()
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd1f
 // Size: 0xaf
 function function_7bee8dd6e886169c( params )
@@ -351,7 +351,7 @@ function function_7bee8dd6e886169c( params )
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdd6
 // Size: 0x9c
 function function_859275f92a03628c( attacker )
@@ -365,7 +365,7 @@ function function_859275f92a03628c( attacker )
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe7a
 // Size: 0x32
 function function_42393d355d1090ff( data )
@@ -377,7 +377,7 @@ function function_42393d355d1090ff( data )
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeb4
 // Size: 0x32
 function function_a58b5b2b75da6f18( data )
@@ -389,7 +389,7 @@ function function_a58b5b2b75da6f18( data )
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeee
 // Size: 0x8c
 function function_c367714fa20f379()
@@ -416,7 +416,7 @@ function function_c367714fa20f379()
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf82
 // Size: 0x15a
 function function_8729672225464641( dirvector )
@@ -447,7 +447,7 @@ function function_8729672225464641( dirvector )
 }
 
 // Namespace breacher_drone / scripts\cp_mp\equipment\breacher_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10e5
 // Size: 0x209
 function function_ca0071a0a7dc0d4f()

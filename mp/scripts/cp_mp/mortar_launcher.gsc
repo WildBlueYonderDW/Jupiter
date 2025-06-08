@@ -9,7 +9,7 @@
 #namespace mortar_launcher;
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e8
 // Size: 0xe5
 function mortar_launcher_init()
@@ -43,7 +43,7 @@ function mortar_launcher_init()
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d5
 // Size: 0x50
 function load_fx()
@@ -54,7 +54,7 @@ function load_fx()
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62d
 // Size: 0x6d
 function setupmortarplayeranimscripts()
@@ -66,7 +66,7 @@ function setupmortarplayeranimscripts()
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a2
 // Size: 0x63
 function setupmortarmodelanimscripts()
@@ -78,7 +78,7 @@ function setupmortarmodelanimscripts()
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x70d
 // Size: 0xc1
 function create_player_rig( player, animname, rig_model, blockview )
@@ -99,7 +99,7 @@ function create_player_rig( player, animname, rig_model, blockview )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x7d6
 // Size: 0xba
 function put_player_into_rig( rig, blendtime, right, left, top, bottom, player )
@@ -119,7 +119,7 @@ function put_player_into_rig( rig, blendtime, right, left, top, bottom, player )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x898
 // Size: 0x3d
 function take_player_out_of_rig( player )
@@ -131,7 +131,7 @@ function take_player_out_of_rig( player )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8dd
 // Size: 0x70
 function mortar_launch_player_effect( player, mortar )
@@ -148,7 +148,7 @@ function mortar_launch_player_effect( player, mortar )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x955
 // Size: 0x219
 function movemortar( model, start, end, time, height )
@@ -212,7 +212,7 @@ function movemortar( model, start, end, time, height )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb76
 // Size: 0x5f
 function anglemortar()
@@ -229,7 +229,7 @@ function anglemortar()
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbdd
 // Size: 0x191
 function mortar_test( mortar )
@@ -264,7 +264,7 @@ function mortar_test( mortar )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd76
 // Size: 0x1d9
 function player_launch_mortar( player, mortar )
@@ -303,7 +303,7 @@ function player_launch_mortar( player, mortar )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf57
 // Size: 0x24f
 function mortar_targetting( mortar )
@@ -366,7 +366,7 @@ function mortar_targetting( mortar )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11ae
 // Size: 0x3a
 function mortar_ondeathcleanup( mortar )
@@ -381,7 +381,7 @@ function mortar_ondeathcleanup( mortar )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11f0
 // Size: 0x2af
 function launch_mortar( endpos, player )
@@ -460,7 +460,7 @@ function launch_mortar( endpos, player )
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14a7
 // Size: 0x1b
 function kill_mortar_target()
@@ -469,7 +469,7 @@ function kill_mortar_target()
 }
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x14ca
 // Size: 0x1b7
 function mortarlauncher_createhintobject( org, type, icon, hintstring, priority, duration, onobstruction, hintdist, hintfov, usedist, usefov, useent )

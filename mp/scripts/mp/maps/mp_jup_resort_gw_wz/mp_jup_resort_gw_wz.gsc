@@ -17,7 +17,7 @@
 #namespace mp_jup_resort_gw_wz;
 
 // Namespace mp_jup_resort_gw_wz / scripts\mp\maps\mp_jup_resort_gw_wz\mp_jup_resort_gw_wz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ed
 // Size: 0x196
 function main()
@@ -65,13 +65,13 @@ function main()
     game[ "defenders" ] = "axis";
     game[ "allies_outfit" ] = "urban";
     game[ "axis_outfit" ] = "woodland";
-    setdvar( @"hash_be80c9650d91b8ac", 5000 );
+    setdvar( @"fd_helicopter_altitude_limiter", 5000 );
     level.var_56bcdc219d432f80[ "axis" ] = 15;
     level.var_56bcdc219d432f80[ "allies" ] = 15;
 }
 
 // Namespace mp_jup_resort_gw_wz / scripts\mp\maps\mp_jup_resort_gw_wz\mp_jup_resort_gw_wz
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38b
 // Size: 0x6b
 function function_40066db0bee45b43( var_3d727559df866469 )

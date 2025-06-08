@@ -13,7 +13,7 @@
 #namespace mp_frontend_jup_01;
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a2
 // Size: 0xad
 function onplayerconnectrunonce()
@@ -45,7 +45,7 @@ function onplayerconnectrunonce()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x957
 // Size: 0xa
 function callback_frontendplayerconnect()
@@ -54,7 +54,7 @@ function callback_frontendplayerconnect()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x969
 // Size: 0x1f
 function callback_frontendplayerdisconnect( reason )
@@ -63,7 +63,7 @@ function callback_frontendplayerdisconnect( reason )
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x990
 // Size: 0xaa
 function function_725ec88952496746()
@@ -80,7 +80,7 @@ function function_725ec88952496746()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa42
 // Size: 0x1a4
 function function_b5f3ddb65d04e2fd()
@@ -131,7 +131,7 @@ function function_b5f3ddb65d04e2fd()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbee
 // Size: 0xec
 function function_90384e8d6b1996d5()
@@ -148,7 +148,7 @@ function function_90384e8d6b1996d5()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce2
 // Size: 0xec
 function main()
@@ -182,7 +182,7 @@ function main()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdd6
 // Size: 0x351
 function function_118645267f63501d()
@@ -249,7 +249,7 @@ function function_118645267f63501d()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112f
 // Size: 0x11e
 function function_2e13e46e49665acb()
@@ -287,7 +287,7 @@ function function_2e13e46e49665acb()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1255
 // Size: 0x1e6
 function function_ba26a4bcb29225cb( lane )
@@ -335,7 +335,7 @@ function function_ba26a4bcb29225cb( lane )
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1443
 // Size: 0x19a
 function function_f18749ddfef7d6c0( newposition )
@@ -393,7 +393,7 @@ function function_f18749ddfef7d6c0( newposition )
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15e5
 // Size: 0x79
 function watchdeathonmove( position )
@@ -418,7 +418,7 @@ function watchdeathonmove( position )
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1666
 // Size: 0x51
 function function_65cc3cb6946266d8( position )
@@ -437,7 +437,7 @@ function function_65cc3cb6946266d8( position )
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16bf
 // Size: 0xe
 function function_e9618a25a1c711d0()
@@ -446,7 +446,7 @@ function function_e9618a25a1c711d0()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16d5
 // Size: 0x13
 function play_fx()
@@ -457,7 +457,7 @@ function play_fx()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16f0
 // Size: 0x279
 function endlesslobbyfloor()
@@ -519,7 +519,7 @@ function endlesslobbyfloor()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1971
 // Size: 0x122
 function function_777406e0dd520161()
@@ -551,7 +551,7 @@ function function_777406e0dd520161()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a9b
 // Size: 0x34d
 function function_2c304f9c3c96cd70()
@@ -651,7 +651,7 @@ function function_2c304f9c3c96cd70()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1df0
 // Size: 0xb1
 function trial_target_think()
@@ -689,7 +689,7 @@ function trial_target_think()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ea9
 // Size: 0x1a3
 function gettargetarray()
@@ -697,7 +697,8 @@ function gettargetarray()
     target_types = [ "standard_target", "standard_target_180", "standard_target_civilian", "lean_target", "lean_target_civilian", "moving_target", "moving_target_civilian" ];
     target_arrays = [];
     
-    for (i = 0; i < target_types.size; i++) {
+    for ( i = 0; i < target_types.size ; i++ )
+    {
         var_15684233dc41d60a[ i ] = getstructarray( target_types[ i ], "script_noteworthy" );
         
         foreach ( struct in var_15684233dc41d60a[ i ] )
@@ -712,7 +713,8 @@ function gettargetarray()
         }
     }
     
-    for (i = 0; i < target_types.size; i++) {
+    for ( i = 0; i < target_types.size ; i++ )
+    {
         target_arrays[ i ] = getentarray( target_types[ i ], "script_noteworthy" );
     }
     
@@ -720,7 +722,7 @@ function gettargetarray()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2055
 // Size: 0x31a
 function trial_target_damage()
@@ -830,7 +832,7 @@ function trial_target_damage()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2377
 // Size: 0x28c
 function trial_target_flip( var_f1118c1a072b6415 )
@@ -954,7 +956,7 @@ function trial_target_flip( var_f1118c1a072b6415 )
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x260b
 // Size: 0x2bc
 function trial_moving_target_think()
@@ -1017,7 +1019,7 @@ function trial_moving_target_think()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28cf
 // Size: 0x105
 function trial_moving_target_mover()
@@ -1042,7 +1044,7 @@ function trial_moving_target_mover()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29dc
 // Size: 0x61
 function trial_moving_target_reset()
@@ -1058,7 +1060,7 @@ function trial_moving_target_reset()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a45
 // Size: 0x4e
 function trial_target_follow_dummy()
@@ -1072,7 +1074,7 @@ function trial_target_follow_dummy()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a9b
 // Size: 0xf2
 function trial_target_arm_damage()
@@ -1093,7 +1095,7 @@ function trial_target_arm_damage()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b95
 // Size: 0xc9
 function trial_target_requisites()
@@ -1134,7 +1136,7 @@ function trial_target_requisites()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c66
 // Size: 0x114
 function trial_trigger_think()
@@ -1199,7 +1201,7 @@ function trial_trigger_think()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d82
 // Size: 0x61, Type: bool
 function all_end_checkpoints_activated( checkpoints )
@@ -1216,7 +1218,7 @@ function all_end_checkpoints_activated( checkpoints )
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2dec
 // Size: 0x64
 function trial_hitmarker( var_f182d284b07a828e, isdeath, iscivilian, isbody )
@@ -1241,7 +1243,7 @@ function trial_hitmarker( var_f182d284b07a828e, isdeath, iscivilian, isbody )
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2e58
 // Size: 0x156
 function trial_updatehitmarker( markertype, killingblow, headshot, nonplayer, icontype )
@@ -1313,7 +1315,7 @@ function trial_updatehitmarker( markertype, killingblow, headshot, nonplayer, ic
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fb6
 // Size: 0x27
 function trial_gethitmarkerpriority( hitmarkertype )
@@ -1327,7 +1329,7 @@ function trial_gethitmarkerpriority( hitmarkertype )
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fe6
 // Size: 0x17b
 function resettargets()
@@ -1371,7 +1373,7 @@ function resettargets()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3169
 // Size: 0x104
 function function_b73c05f4babd6b8e()
@@ -1402,7 +1404,7 @@ function function_b73c05f4babd6b8e()
 }
 
 // Namespace mp_frontend_jup_01 / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3275
 // Size: 0x1c1
 function function_9f7978a6a0c46c0b()

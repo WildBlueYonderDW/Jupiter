@@ -28,7 +28,7 @@ function private function_f49a30f92555b827()
 }
 
 // Namespace namespace_50f6658a88689353 / namespace_b9742a57ad9ac793
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21c
 // Size: 0xef
 function function_f4d5b246417ef16a( asmname, statename, params )
@@ -60,7 +60,7 @@ function private on_ai_init( params )
 }
 
 // Namespace namespace_50f6658a88689353 / namespace_b9742a57ad9ac793
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x349
 // Size: 0x41
 function wander_listener()
@@ -77,7 +77,7 @@ function wander_listener()
 }
 
 // Namespace namespace_50f6658a88689353 / namespace_b9742a57ad9ac793
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x392
 // Size: 0x1a
 function on_move_speed_changed( params )

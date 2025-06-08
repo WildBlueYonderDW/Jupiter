@@ -31,7 +31,7 @@
 #namespace claymore;
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x565
 // Size: 0x52
 function claymore_init()
@@ -48,7 +48,7 @@ function claymore_init()
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5bf
 // Size: 0x2c7
 function claymore_use( grenade )
@@ -137,7 +137,7 @@ function claymore_use( grenade )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88e
 // Size: 0x23d
 function claymore_plant()
@@ -195,7 +195,7 @@ function claymore_plant()
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xad3
 // Size: 0x6e
 function claymore_updatedangerzone()
@@ -214,7 +214,7 @@ function claymore_updatedangerzone()
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb49
 // Size: 0x71
 function claymore_forceclampangles()
@@ -233,7 +233,7 @@ function claymore_forceclampangles()
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc2
 // Size: 0x342
 function claymore_watchfortrigger()
@@ -353,7 +353,7 @@ function claymore_watchfortrigger()
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf0c
 // Size: 0xd3
 function claymore_trigger( ent, attacker )
@@ -387,7 +387,7 @@ function claymore_trigger( ent, attacker )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfe7
 // Size: 0x86
 function claymore_triggerfromvehicle( vehicle, mine )
@@ -404,7 +404,7 @@ function claymore_triggerfromvehicle( vehicle, mine )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1075
 // Size: 0x8a
 function claymore_explodefromvehicletrigger( vehicle )
@@ -421,7 +421,7 @@ function claymore_explodefromvehicletrigger( vehicle )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1107
 // Size: 0x2a9
 function claymore_explode( attacker )
@@ -497,7 +497,7 @@ function claymore_explode( attacker )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13b8
 // Size: 0x76
 function claymore_explodeonnotify()
@@ -514,7 +514,7 @@ function claymore_explodeonnotify()
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1436
 // Size: 0x9
 function sweepclaymore()
@@ -523,7 +523,7 @@ function sweepclaymore()
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1447
 // Size: 0x36
 function claymore_destroy( destroydelay )
@@ -539,7 +539,7 @@ function claymore_destroy( destroydelay )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1485
 // Size: 0x98
 function claymore_empapplied( data )
@@ -568,7 +568,7 @@ function claymore_empapplied( data )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1525
 // Size: 0x88
 function function_ac5843028846c67( data )
@@ -597,7 +597,7 @@ function function_ac5843028846c67( data )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15b5
 // Size: 0x84
 function function_4373872960a2d51a( data )
@@ -626,7 +626,7 @@ function function_4373872960a2d51a( data )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1641
 // Size: 0x43
 function function_8ebab9db1b5be748( attacker )
@@ -638,7 +638,7 @@ function function_8ebab9db1b5be748( attacker )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x168c
 // Size: 0x2c
 function function_6d0e1341e170c6( attacker )
@@ -649,7 +649,7 @@ function function_6d0e1341e170c6( attacker )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c0
 // Size: 0x12e
 function claymore_delete( deletiondelay )
@@ -706,7 +706,7 @@ function claymore_delete( deletiondelay )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x17f6
 // Size: 0x488
 function claymore_modifieddamage( victim, objweapon, inflictor, meansofdeath, damage )
@@ -834,7 +834,7 @@ function claymore_modifieddamage( victim, objweapon, inflictor, meansofdeath, da
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c87
 // Size: 0x59
 function claymore_blockdamageuntilframeend( inflictor )
@@ -854,7 +854,7 @@ function claymore_blockdamageuntilframeend( inflictor )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ce8
 // Size: 0x87
 function claymore_onownerchanged( oldowner )
@@ -870,7 +870,7 @@ function claymore_onownerchanged( oldowner )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d77
 // Size: 0xa6
 function claymore_stunned( attacker, duration )
@@ -898,7 +898,7 @@ function claymore_stunned( attacker, duration )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e25
 // Size: 0x66
 function function_3120a2693959efa1( attacker )
@@ -918,7 +918,7 @@ function function_3120a2693959efa1( attacker )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e93
 // Size: 0x27
 function function_b3a55145aba7855e( data )
@@ -928,7 +928,7 @@ function function_b3a55145aba7855e( data )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ec2
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
@@ -937,7 +937,7 @@ function function_49197cd063a740ea( callbackfunction )
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1edf
 // Size: 0x2a
 function function_773e48f8d031510e()
@@ -949,7 +949,7 @@ function function_773e48f8d031510e()
 }
 
 // Namespace claymore / scripts\mp\equipment\claymore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f11
 // Size: 0x1f
 function function_a05a0b89582e22a3()

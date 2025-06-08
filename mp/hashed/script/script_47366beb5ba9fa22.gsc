@@ -5,7 +5,7 @@
 #namespace namespace_4b022bbde284cec1;
 
 // Namespace namespace_4b022bbde284cec1 / namespace_45524b6bc7f1f3ac
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfa
 // Size: 0x65
 function createevent()
@@ -18,7 +18,7 @@ function createevent()
 }
 
 // Namespace namespace_4b022bbde284cec1 / namespace_45524b6bc7f1f3ac
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x167
 // Size: 0x1a9
 function getevent()
@@ -76,7 +76,7 @@ function getevent()
 }
 
 // Namespace namespace_4b022bbde284cec1 / namespace_45524b6bc7f1f3ac
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x319
 // Size: 0x46, Type: bool
 function function_cb083b117c783af( flaga, flagb )
@@ -85,7 +85,7 @@ function function_cb083b117c783af( flaga, flagb )
 }
 
 // Namespace namespace_4b022bbde284cec1 / namespace_45524b6bc7f1f3ac
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x368
 // Size: 0x74
 function function_b4e30a9548aa351b()

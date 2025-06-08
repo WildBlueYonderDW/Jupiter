@@ -1,10 +1,10 @@
 #using script_2047cdbf5176ba0;
-#using script_22f1701e151b9d12;
 #using script_31b70210f1726bd2;
 #using script_62a4f7a62643fe8;
 #using script_92b815b18f0ba61;
 #using script_badad75eef11559;
 #using scripts\common\callbacks;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\engine\utility;
 
 #namespace mp_jup_resort_gw_ob;
@@ -19,7 +19,7 @@ function autoexec init()
 }
 
 // Namespace mp_jup_resort_gw_ob / scripts\mp\maps\mp_jup_resort_gw\mp_jup_resort_gw_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x115
 // Size: 0x57
 function main()
@@ -36,6 +36,6 @@ function main()
     }
     
     level flag_wait( "ai_spawn_director_initialized" );
-    thread namespace_614554f86e52695c::process_create_script();
+    thread scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 

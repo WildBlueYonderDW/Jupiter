@@ -11,7 +11,7 @@
 #namespace weapon_drop;
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38a
 // Size: 0x1c
 function weapondrop_init()
@@ -20,7 +20,7 @@ function weapondrop_init()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ae
 // Size: 0xc, Type: bool
 function weapondrop_beginsuper()
@@ -30,7 +30,7 @@ function weapondrop_beginsuper()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c3
 // Size: 0xdc
 function weapondrop_givedropweapon()
@@ -63,7 +63,7 @@ function weapondrop_givedropweapon()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a7
 // Size: 0x39, Type: bool
 function weapondrop_used( grenade )
@@ -76,7 +76,7 @@ function weapondrop_used( grenade )
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e9
 // Size: 0xfb
 function weapondrop_deploydrone( owner, pos )
@@ -108,7 +108,7 @@ function weapondrop_deploydrone( owner, pos )
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ec
 // Size: 0x12
 function weapondrop_dronedelivery()
@@ -117,7 +117,7 @@ function weapondrop_dronedelivery()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x606
 // Size: 0x38
 function weapondrop_createdropondeath( deliverybox )
@@ -131,7 +131,7 @@ function weapondrop_createdropondeath( deliverybox )
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x646
 // Size: 0x89
 function weapondrop_createdrop()
@@ -152,7 +152,7 @@ function weapondrop_createdrop()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d7
 // Size: 0x10
 function deletecrate()
@@ -162,7 +162,7 @@ function deletecrate()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ef
 // Size: 0x78
 function cratephysicson()
@@ -181,7 +181,7 @@ function cratephysicson()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x76f
 // Size: 0x4d
 function cratephysicsoff()
@@ -201,7 +201,7 @@ function cratephysicsoff()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c4
 // Size: 0x5c
 function watchcratesettle()
@@ -223,7 +223,7 @@ function watchcratesettle()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x828
 // Size: 0x5b
 function watchcratesettleinternal()
@@ -246,7 +246,7 @@ function watchcratesettleinternal()
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x88b
 // Size: 0x118
 function watchcrateimpact( delay )
@@ -292,7 +292,7 @@ function watchcrateimpact( delay )
 }
 
 // Namespace weapon_drop / scripts\mp\equipment\weapon_drop
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9ab
 // Size: 0x7e
 function playcrateimpactfx( position, normal, impulse, surfacetype )

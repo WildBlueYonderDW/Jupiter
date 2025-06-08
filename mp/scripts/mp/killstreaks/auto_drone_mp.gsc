@@ -20,7 +20,7 @@
 #namespace auto_drone_mp;
 
 // Namespace auto_drone_mp / scripts\mp\killstreaks\auto_drone_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x135
 // Size: 0x29
 function init()
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace auto_drone_mp / scripts\mp\killstreaks\auto_drone_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x166
 // Size: 0x20
 function function_76db348491610f8a( autodrone )

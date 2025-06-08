@@ -18,7 +18,7 @@
 #namespace ai_behavior;
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x551
 // Size: 0x18
 function function_2585b1944b7884c0()
@@ -27,7 +27,7 @@ function function_2585b1944b7884c0()
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x571
 // Size: 0x33
 function function_304da84d9a815c01( origin, goalradius, var_3a21f8213541aec5 )
@@ -41,7 +41,7 @@ function function_304da84d9a815c01( origin, goalradius, var_3a21f8213541aec5 )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5ac
 // Size: 0x145
 function _setgoalpos( origin, goalradius, var_1b6352ceb9bbc1d )
@@ -91,7 +91,7 @@ function _setgoalpos( origin, goalradius, var_1b6352ceb9bbc1d )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f9
 // Size: 0x2d
 function function_c6930ac29fe6ff53( goalradius )
@@ -106,7 +106,7 @@ function function_c6930ac29fe6ff53( goalradius )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x72e
 // Size: 0x1b
 function function_b91038b6725a259a( agent, targetent )
@@ -115,7 +115,7 @@ function function_b91038b6725a259a( agent, targetent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x751
 // Size: 0x13
 function function_aa8f023c16fc448d( node )
@@ -124,7 +124,7 @@ function function_aa8f023c16fc448d( node )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76c
 // Size: 0x31
 function function_61cbc488b27a6e61( origin )
@@ -135,7 +135,7 @@ function function_61cbc488b27a6e61( origin )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a6
 // Size: 0x20
 function function_1670c315976c767b()
@@ -149,7 +149,7 @@ function function_1670c315976c767b()
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7ce
 // Size: 0xf0
 function function_b11c1964f528574b( agent, var_ba8b04eb4b683e67, origin )
@@ -200,7 +200,7 @@ function function_b11c1964f528574b( agent, var_ba8b04eb4b683e67, origin )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8c6
 // Size: 0x225
 function function_9bbf1713a14fa580( agent, radius, var_c154e6e386654a30, origin )
@@ -271,7 +271,7 @@ function function_9bbf1713a14fa580( agent, radius, var_c154e6e386654a30, origin 
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xaf3
 // Size: 0x1e4
 function function_a057ee9adc9547d5( agent, radius, var_c154e6e386654a30, origin )
@@ -336,7 +336,7 @@ function function_a057ee9adc9547d5( agent, radius, var_c154e6e386654a30, origin 
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcdf
 // Size: 0x41
 function function_bf182f1600fec92a( agent, time )
@@ -355,7 +355,7 @@ function function_bf182f1600fec92a( agent, time )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xd28
 // Size: 0x317
 function behavior_patrol( var_886dfa499937a071, pathstruct, startindex, goalradiusoverride, idletimeoverride )
@@ -485,7 +485,7 @@ function behavior_patrol( var_886dfa499937a071, pathstruct, startindex, goalradi
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1047
 // Size: 0x194
 function function_b4fd9f6bd59a64f0( var_886dfa499937a071 )
@@ -531,7 +531,7 @@ function function_b4fd9f6bd59a64f0( var_886dfa499937a071 )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e3
 // Size: 0xe8, Type: bool
 function function_21014e3c42bcc249( event )
@@ -556,7 +556,7 @@ function function_21014e3c42bcc249( event )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12d4
 // Size: 0x75
 function function_1a2e58ffaafb1d40( var_db585b8134eed64c )
@@ -576,7 +576,7 @@ function function_1a2e58ffaafb1d40( var_db585b8134eed64c )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1352
 // Size: 0x19e
 function function_7e69553f058c867b( agent )
@@ -649,7 +649,7 @@ function function_7e69553f058c867b( agent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14f8
 // Size: 0x6f
 function function_67ddae411c6c353e( agent )
@@ -675,7 +675,7 @@ function function_67ddae411c6c353e( agent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x156f
 // Size: 0x140
 function function_447a25af0131832e( agent )
@@ -704,7 +704,7 @@ function function_447a25af0131832e( agent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x16b7
 // Size: 0x11a
 function function_65f6a39e1083fb6b( agent, var_2bd923437ecc04bd, var_e298cec41261345c, goalradiusoverride, var_21f24aecb313e479, var_3e332762c9138001, rushgroup, var_1b3d1c2f22b62206 )
@@ -735,7 +735,7 @@ function function_65f6a39e1083fb6b( agent, var_2bd923437ecc04bd, var_e298cec4126
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x17d9
 // Size: 0x4c2
 function function_a5117518725da028( agent, reinforceorigin, var_e298cec41261345c, goalradiusoverride, var_21f24aecb313e479, var_3e332762c9138001, rushgroup, var_66db74486a8f804, var_1b3d1c2f22b62206, targetent )
@@ -906,7 +906,7 @@ function function_a5117518725da028( agent, reinforceorigin, var_e298cec41261345c
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1ca3
 // Size: 0xe6
 function function_490ff4d545e089bc( agent, var_2bc30fcff884b1ba, var_145bc4a8e47c0991, var_34ed52869f44afbb, var_1e6879f36e59bea5 )
@@ -951,7 +951,7 @@ function function_490ff4d545e089bc( agent, var_2bc30fcff884b1ba, var_145bc4a8e47
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1d91
 // Size: 0xd3
 function function_547dc153b092906d( agent, abortdistance, validtargetdist, var_95f125b69bd6e39e, var_3e332762c9138001, var_66db74486a8f804 )
@@ -985,7 +985,7 @@ function function_547dc153b092906d( agent, abortdistance, validtargetdist, var_9
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1e6c
 // Size: 0xf2
 function function_55149707e1d77b1e( validtargetdist, var_95f125b69bd6e39e, var_3e332762c9138001, var_66db74486a8f804 )
@@ -1009,7 +1009,8 @@ function function_55149707e1d77b1e( validtargetdist, var_95f125b69bd6e39e, var_3
         
         curtime = 0;
         
-        for (has_enemy = 0; curtime <= losttimer && !has_enemy; has_enemy = 1) {
+        for ( has_enemy = 0; curtime <= losttimer && !has_enemy ; has_enemy = 1 )
+        {
             wait 1;
             curtime++;
             
@@ -1025,7 +1026,7 @@ function function_55149707e1d77b1e( validtargetdist, var_95f125b69bd6e39e, var_3
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f66
 // Size: 0x90
 function function_9af4d877e8bb0ac1( groupname )
@@ -1050,7 +1051,7 @@ function function_9af4d877e8bb0ac1( groupname )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ffe
 // Size: 0xd9
 function function_467f737adf6aeee4( groupname )
@@ -1071,7 +1072,7 @@ function function_467f737adf6aeee4( groupname )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20df
 // Size: 0xcb
 function function_ba90928315aa754d( groupname )
@@ -1091,7 +1092,7 @@ function function_ba90928315aa754d( groupname )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21b3
 // Size: 0x52
 function ai_watchforbadpath( agent )
@@ -1109,7 +1110,7 @@ function ai_watchforbadpath( agent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x220d
 // Size: 0x161
 function function_9d28d5b70aa9f5e4( agent, var_772edbdcfe906c73 )
@@ -1157,7 +1158,7 @@ function function_9d28d5b70aa9f5e4( agent, var_772edbdcfe906c73 )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2376
 // Size: 0x2d3, Type: bool
 function function_5867290fda7a1ac1( spawnpos, spawnradius, checkradius, spawnheight )
@@ -1250,7 +1251,7 @@ function function_5867290fda7a1ac1( spawnpos, spawnradius, checkradius, spawnhei
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2652
 // Size: 0x24e
 function function_d378cc95abab583b( origin, poiname )
@@ -1318,7 +1319,7 @@ function function_d378cc95abab583b( origin, poiname )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28a9
 // Size: 0x36
 function function_e4275ec4ec5dcdd0( agent, origin, radius )
@@ -1333,7 +1334,7 @@ function function_e4275ec4ec5dcdd0( agent, origin, radius )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28e7
 // Size: 0xd3
 function function_38eeb3c2a1b3bd14( agent )
@@ -1365,7 +1366,7 @@ function function_38eeb3c2a1b3bd14( agent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29c2
 // Size: 0x69
 function function_a0e63fe5c7a71428( agent )
@@ -1381,7 +1382,7 @@ function function_a0e63fe5c7a71428( agent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a33
 // Size: 0x55, Type: bool
 function function_59565896f06f1220( agent, player )
@@ -1392,7 +1393,7 @@ function function_59565896f06f1220( agent, player )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a91
 // Size: 0x104
 function function_a80e7e8f2c9d73c( event )
@@ -1422,7 +1423,7 @@ function function_a80e7e8f2c9d73c( event )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b9d
 // Size: 0xb1
 function function_810a6443bde30366( origin, radius, var_68ca75f051e913a )
@@ -1446,7 +1447,7 @@ function function_810a6443bde30366( origin, radius, var_68ca75f051e913a )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c56
 // Size: 0xe1
 function function_4c61a6fd42fa58( nodes, optional_arrived_at_node_func, var_5e38f20c9628ae25 )
@@ -1474,7 +1475,8 @@ function function_4c61a6fd42fa58( nodes, optional_arrived_at_node_func, var_5e38
         nodes = [ nodes ];
     }
     
-    for (i = 0; i < nodes.size; i++) {
+    for ( i = 0; i < nodes.size ; i++ )
+    {
         if ( isvector( nodes[ i ] ) )
         {
             struct = spawnstruct();
@@ -1488,7 +1490,7 @@ function function_4c61a6fd42fa58( nodes, optional_arrived_at_node_func, var_5e38
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d3f
 // Size: 0x3b
 function function_9abbce4b66ee25d4()
@@ -1507,7 +1509,7 @@ function function_9abbce4b66ee25d4()
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d83
 // Size: 0xc1
 function function_697e9bf539bed8b6( target )
@@ -1522,7 +1524,8 @@ function function_697e9bf539bed8b6( target )
     
     new_goals = getentarray( target, "targetname" );
     
-    for (i = 0; i < new_goals.size; i++) {
+    for ( i = 0; i < new_goals.size ; i++ )
+    {
         new = new_goals[ i ];
         
         if ( !function_f2d40d9b75cbc023( new ) )
@@ -1537,7 +1540,7 @@ function function_697e9bf539bed8b6( target )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e4d
 // Size: 0x5d, Type: bool
 function function_f2d40d9b75cbc023( object )
@@ -1560,7 +1563,7 @@ function function_f2d40d9b75cbc023( object )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2eb3
 // Size: 0x58
 function function_ee9a5bcd6b164ce2()
@@ -1579,7 +1582,7 @@ function function_ee9a5bcd6b164ce2()
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f14
 // Size: 0x64
 function _behavior_gotonodeend()
@@ -1596,7 +1599,7 @@ function _behavior_gotonodeend()
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f80
 // Size: 0xbb
 function function_95419b47267b7dea( array )
@@ -1614,7 +1617,8 @@ function function_95419b47267b7dea( array )
         least_used.used_time = 0;
     }
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         node = array[ i ];
         
         if ( !isdefined( node.used_time ) )
@@ -1633,7 +1637,7 @@ function function_95419b47267b7dea( array )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3044
 // Size: 0xa2
 function function_db4ad034e4606091( node, startnode )
@@ -1680,14 +1684,15 @@ function function_db4ad034e4606091( node, startnode )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x30ef
 // Size: 0xb2
 function function_d0ea0bd3d1a6c928( patharray, optional_arrived_at_node_func, var_5e38f20c9628ae25 )
 {
     self setgoalpath( patharray );
     
-    for (i = 0; i < patharray.size; i++) {
+    for ( i = 0; i < patharray.size ; i++ )
+    {
         index = i;
         tempnode = patharray[ i ];
         self.currentnode = tempnode;
@@ -1708,7 +1713,7 @@ function function_d0ea0bd3d1a6c928( patharray, optional_arrived_at_node_func, va
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31a9
 // Size: 0x24, Type: bool
 function is_specified_unittype( unittype )
@@ -1717,7 +1722,7 @@ function is_specified_unittype( unittype )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31d6
 // Size: 0x43
 function function_43c2f1d3946e3ea8( demeanor )
@@ -1737,7 +1742,7 @@ function function_43c2f1d3946e3ea8( demeanor )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3221
 // Size: 0x40
 function function_cd64ed2eddf5cb1c( demeanor )
@@ -1753,7 +1758,7 @@ function function_cd64ed2eddf5cb1c( demeanor )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3269
 // Size: 0xb
 function function_4dea69a8c26a5378( node )
@@ -1762,7 +1767,7 @@ function function_4dea69a8c26a5378( node )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x327c
 // Size: 0x80
 function function_8d1fd30657566aea( node, optional_arrived_at_node_func )
@@ -1789,7 +1794,7 @@ function function_8d1fd30657566aea( node, optional_arrived_at_node_func )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3304
 // Size: 0x123
 function function_ef3a20cdb3c82b48( node )
@@ -1831,7 +1836,7 @@ function function_ef3a20cdb3c82b48( node )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x342f
 // Size: 0x7b
 function function_fde914f2364973e2( node, var_dd1921916c4e99c7 )
@@ -1853,7 +1858,7 @@ function function_fde914f2364973e2( node, var_dd1921916c4e99c7 )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34b2
 // Size: 0x15e
 function function_5dcbed48df675e1( node, var_5e38f20c9628ae25 )
@@ -1917,12 +1922,13 @@ function function_5dcbed48df675e1( node, var_5e38f20c9628ae25 )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3618
 // Size: 0x216
 function function_557601291bb22faa( node, get_target_func )
 {
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         player = level.players[ i ];
         
         if ( distancesquared( player.origin, node.origin ) < distancesquared( self.origin, node.origin ) )
@@ -1981,7 +1987,7 @@ function function_557601291bb22faa( node, get_target_func )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3836
 // Size: 0x1e
 function waittill_subgoal()
@@ -1992,7 +1998,7 @@ function waittill_subgoal()
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x385d
 // Size: 0x110, Type: bool
 function function_91dff8e3ec6780c3( arrivaltarget )
@@ -2076,7 +2082,7 @@ function function_91dff8e3ec6780c3( arrivaltarget )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3976
 // Size: 0x1e9
 function function_db64d1e0f2b06482( node, optional_arrived_at_node_func, var_5e38f20c9628ae25 )
@@ -2175,7 +2181,7 @@ function function_db64d1e0f2b06482( node, optional_arrived_at_node_func, var_5e3
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b67
 // Size: 0x26
 function function_4b6a41e8b3ee5932()
@@ -2189,7 +2195,7 @@ function function_4b6a41e8b3ee5932()
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b95
 // Size: 0x1b
 function function_a2ffe923e7d0a34c( node )
@@ -2199,7 +2205,7 @@ function function_a2ffe923e7d0a34c( node )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bb8
 // Size: 0x6a
 function function_e04e9f343593bf4e( ent )
@@ -2224,7 +2230,7 @@ function function_e04e9f343593bf4e( ent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c2a
 // Size: 0x3f
 function function_3cfe299baaf790b5( ent )
@@ -2240,7 +2246,7 @@ function function_3cfe299baaf790b5( ent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c71
 // Size: 0x25
 function function_dae5fd9c1e198e1a( ent )
@@ -2250,7 +2256,7 @@ function function_dae5fd9c1e198e1a( ent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3c9e
 // Size: 0x5c
 function function_37e5a190e3c946d5( agent, behaviorpackage )
@@ -2268,7 +2274,7 @@ function function_37e5a190e3c946d5( agent, behaviorpackage )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3d02
 // Size: 0x4a
 function function_d1e130608e4f8487( agent, origin, var_ba8b04eb4b683e67, combatcenter, combatradius )
@@ -2278,7 +2284,7 @@ function function_d1e130608e4f8487( agent, origin, var_ba8b04eb4b683e67, combatc
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3d54
 // Size: 0x85
 function function_2f254cf573da1a36( origin, var_ba8b04eb4b683e67, combatcenter, combatradius )
@@ -2298,7 +2304,7 @@ function function_2f254cf573da1a36( origin, var_ba8b04eb4b683e67, combatcenter, 
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3de2
 // Size: 0x41
 function function_e786aa52b93833eb( agent, origin, radius, var_c154e6e386654a30 )
@@ -2308,7 +2314,7 @@ function function_e786aa52b93833eb( agent, origin, radius, var_c154e6e386654a30 
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3e2b
 // Size: 0x65
 function function_f592b31e1a9c245c( origin, radius, var_c154e6e386654a30 )
@@ -2322,7 +2328,7 @@ function function_f592b31e1a9c245c( origin, radius, var_c154e6e386654a30 )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3e99
 // Size: 0x41
 function function_fe5620595915170f( agent, origin, radius, var_c154e6e386654a30 )
@@ -2332,7 +2338,7 @@ function function_fe5620595915170f( agent, origin, radius, var_c154e6e386654a30 
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3ee2
 // Size: 0x65
 function function_f9a6beb9ce9044e8( origin, radius, var_c154e6e386654a30 )
@@ -2346,7 +2352,7 @@ function function_f9a6beb9ce9044e8( origin, radius, var_c154e6e386654a30 )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3f50
 // Size: 0x4a
 function function_4561fe6bfc76f8ec( agent, var_886dfa499937a071, pathstruct, combatcenter, combatradius )
@@ -2356,7 +2362,7 @@ function function_4561fe6bfc76f8ec( agent, var_886dfa499937a071, pathstruct, com
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3fa2
 // Size: 0x85
 function function_57d602c47bb19473( var_886dfa499937a071, pathstruct, combatcenter, combatradius )
@@ -2376,7 +2382,7 @@ function function_57d602c47bb19473( var_886dfa499937a071, pathstruct, combatcent
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x4030
 // Size: 0x68
 function function_bd9acc7c99ad884( agent, reinforceorigin, var_e298cec41261345c, goalradiusoverride, var_21f24aecb313e479, var_3e332762c9138001, rushgroup, var_1b3d1c2f22b62206 )
@@ -2386,7 +2392,7 @@ function function_bd9acc7c99ad884( agent, reinforceorigin, var_e298cec41261345c,
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x40a0
 // Size: 0xbb
 function function_4b8038fe29027d5f( reinforceorigin, var_e298cec41261345c, goalradiusoverride, var_21f24aecb313e479, var_3e332762c9138001, rushgroup, var_1b3d1c2f22b62206 )
@@ -2404,7 +2410,7 @@ function function_4b8038fe29027d5f( reinforceorigin, var_e298cec41261345c, goalr
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x4164
 // Size: 0x68
 function function_6e3dd46c3475cd2d( agent, var_2bd923437ecc04bd, var_e298cec41261345c, goalradiusoverride, var_21f24aecb313e479, var_3e332762c9138001, rushgroup, var_1b3d1c2f22b62206 )
@@ -2414,7 +2420,7 @@ function function_6e3dd46c3475cd2d( agent, var_2bd923437ecc04bd, var_e298cec4126
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x41d4
 // Size: 0xbb
 function function_4b8735c04ece8334( var_2bd923437ecc04bd, var_e298cec41261345c, goalradiusoverride, var_21f24aecb313e479, var_3e332762c9138001, rushgroup, var_1b3d1c2f22b62206 )
@@ -2432,7 +2438,7 @@ function function_4b8735c04ece8334( var_2bd923437ecc04bd, var_e298cec41261345c, 
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4298
 // Size: 0x4a
 function function_29b1f7f88b879860( agent, cqbnodes, var_bc0d4c6360efc237, var_c7988fd0b09710bc, var_3431921fac306239 )
@@ -2442,7 +2448,7 @@ function function_29b1f7f88b879860( agent, cqbnodes, var_bc0d4c6360efc237, var_c
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x42ea
 // Size: 0x7a
 function function_d9b313747ecdf8a9( cqbnodes, var_bc0d4c6360efc237, var_c7988fd0b09710bc, var_3431921fac306239 )
@@ -2457,7 +2463,7 @@ function function_d9b313747ecdf8a9( cqbnodes, var_bc0d4c6360efc237, var_c7988fd0
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x436d
 // Size: 0x61
 function function_f0c78111ce0cdc0a( agent )
@@ -2475,7 +2481,7 @@ function function_f0c78111ce0cdc0a( agent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43d7
 // Size: 0x31c
 function behavior_executebehaviorpackage( agent )
@@ -2526,7 +2532,7 @@ function behavior_executebehaviorpackage( agent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x46fb
 // Size: 0x7a
 function function_8dad0c97c82fb52f( agent, targetent )
@@ -2545,7 +2551,7 @@ function function_8dad0c97c82fb52f( agent, targetent )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x477d
 // Size: 0x167
 function behavior_cqb( agent, cqbnodes, var_bc0d4c6360efc237, var_c7988fd0b09710bc, var_3431921fac306239 )
@@ -2596,7 +2602,7 @@ function behavior_cqb( agent, cqbnodes, var_bc0d4c6360efc237, var_c7988fd0b09710
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x48ec
 // Size: 0x167
 function function_2e33f8e46f95167c( origin, searchradius, var_d0e8277402331171 )
@@ -2641,7 +2647,7 @@ function function_2e33f8e46f95167c( origin, searchradius, var_d0e8277402331171 )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a5c
 // Size: 0x1e8
 function function_b60b5affd510926c( fortress, var_d0e8277402331171 )
@@ -2697,7 +2703,7 @@ function function_b60b5affd510926c( fortress, var_d0e8277402331171 )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c4c
 // Size: 0x6a
 function function_984e27d6c139a63d( cqbnodes )
@@ -2716,7 +2722,7 @@ function function_984e27d6c139a63d( cqbnodes )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4cbf
 // Size: 0x30b
 function function_3a17f0ccddc999b4( origin, cqbnodes, numnodes, maxheightdifference, var_d557a0584f34f219 )
@@ -2832,7 +2838,7 @@ function function_3a17f0ccddc999b4( origin, cqbnodes, numnodes, maxheightdiffere
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4fd3
 // Size: 0x1e
 function cqb_claimnode( node )
@@ -2844,7 +2850,7 @@ function cqb_claimnode( node )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ff9
 // Size: 0x1d
 function function_25190883a02fdef7( node )
@@ -2856,7 +2862,7 @@ function function_25190883a02fdef7( node )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x501e
 // Size: 0x88, Type: bool
 function function_2b26d000f2ccfc11( agent, node )
@@ -2877,7 +2883,7 @@ function function_2b26d000f2ccfc11( agent, node )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x50af
 // Size: 0x125
 function function_c78dddf4b72b2bb8( agent, nodes, waitmin, waitmax )
@@ -2939,7 +2945,7 @@ function function_c78dddf4b72b2bb8( agent, nodes, waitmin, waitmax )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x51dc
 // Size: 0x22a
 function function_64045ea3246c7b09( agent, origin, var_bc0d4c6360efc237, var_c7988fd0b09710bc, var_3431921fac306239 )
@@ -3017,7 +3023,7 @@ function function_64045ea3246c7b09( agent, origin, var_bc0d4c6360efc237, var_c79
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x540e
 // Size: 0x2b9
 function function_9bcf6b76ea52ee4c()
@@ -3081,7 +3087,7 @@ function function_9bcf6b76ea52ee4c()
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x56cf
 // Size: 0x8f
 function function_249321aebdee5ddc( agent, nodes )
@@ -3110,7 +3116,7 @@ function function_249321aebdee5ddc( agent, nodes )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5766
 // Size: 0xc3
 function function_a1d0e5ea1a887436( agent, node, time )
@@ -3139,7 +3145,7 @@ function function_a1d0e5ea1a887436( agent, node, time )
 }
 
 // Namespace ai_behavior / scripts\mp\ai_behavior
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5831
 // Size: 0xcc
 function function_b8687f27cfc0719c( agent, nodes )
@@ -3162,7 +3168,7 @@ function function_b8687f27cfc0719c( agent, nodes )
 /#
 
     // Namespace ai_behavior / scripts\mp\ai_behavior
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5905
     // Size: 0x2ed, Type: dev
     function function_1efa739f9e55871f()

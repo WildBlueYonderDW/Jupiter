@@ -39,7 +39,7 @@
 #namespace ballmode;
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1147
 // Size: 0x3b7
 function main()
@@ -96,7 +96,7 @@ function main()
     
     game[ "dialog" ][ "offense_obj" ] = "iw9_gmst_anno_uktl_gsoa";
     game[ "dialog" ][ "defense_obj" ] = "iw9_gmst_anno_uktl_gsoa";
-    level.testtdmanywhere = getdvarint( @"hash_157f06aff3c1f357", 0 );
+    level.testtdmanywhere = getdvarint( @"scr_tdmanywhere", 0 );
     level.tdmanywhere_dropheight = getdvarfloat( @"hash_c692d2a11dd6615", 1000 );
     level.tdmanywhere_perpenoffset = getdvarfloat( @"hash_631c58033f43c2dc", 2048 );
     level.tdmanywhere_distoffset = getdvarfloat( @"hash_f314048c87ae28aa", 4092 );
@@ -201,7 +201,7 @@ function private function_fb4fcf1cecf14944()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1695
 // Size: 0x95
 function vehiclespawn_getspawndata( loc )
@@ -216,7 +216,7 @@ function vehiclespawn_getspawndata( loc )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1733
 // Size: 0xe0
 function function_d7522ff35ba39906()
@@ -244,7 +244,7 @@ function function_d7522ff35ba39906()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x181b
 // Size: 0x303
 function entervehicle( vehicle )
@@ -369,7 +369,7 @@ function private function_ac6a3bde1c50bf84( vehicle, timedout )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c1b
 // Size: 0x9d
 function function_690be95de2e8c072()
@@ -393,7 +393,7 @@ function function_690be95de2e8c072()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cc0
 // Size: 0x37
 function function_d9702c5b7d3eaa95()
@@ -410,7 +410,7 @@ function function_d9702c5b7d3eaa95()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cff
 // Size: 0x189
 function onplayerspawned( params )
@@ -459,7 +459,7 @@ function onplayerspawned( params )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e90
 // Size: 0x3f
 function time()
@@ -476,7 +476,7 @@ function time()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ed7
 // Size: 0xd8
 function function_e1ef76f2cb1b17a1()
@@ -496,7 +496,7 @@ function function_e1ef76f2cb1b17a1()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fb7
 // Size: 0x19
 function function_b81ddb79cb822f7a( var_b81ddb79cb822f7a )
@@ -510,7 +510,7 @@ function function_b81ddb79cb822f7a( var_b81ddb79cb822f7a )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fd8
 // Size: 0x321
 function function_9e64420982a86219()
@@ -600,7 +600,7 @@ function function_9e64420982a86219()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2301
 // Size: 0x17b
 function function_e69ba41ccdf770af( pickuplocation )
@@ -649,7 +649,7 @@ function function_e69ba41ccdf770af( pickuplocation )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2484
 // Size: 0x5e4
 function gamemodestates()
@@ -761,7 +761,7 @@ function gamemodestates()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a70
 // Size: 0x7f
 function function_75ca6e1e31fa03a8( goalteam )
@@ -782,7 +782,7 @@ function function_75ca6e1e31fa03a8( goalteam )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2af7
 // Size: 0x19
 function function_d5fe07f36853c957()
@@ -791,7 +791,7 @@ function function_d5fe07f36853c957()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b18
 // Size: 0x66, Type: bool
 function function_76d65f0b5902d51d()
@@ -806,7 +806,7 @@ function function_76d65f0b5902d51d()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2b87
 // Size: 0x291
 function pushball( vehicle, ball, normal, var_efce983b772a6f22, contactposition )
@@ -870,7 +870,7 @@ function pushball( vehicle, ball, normal, var_efce983b772a6f22, contactposition 
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2e20
 // Size: 0x12a
 function function_508a666f8c32e510( ball, ballspeed, hitsurface, pulse )
@@ -925,7 +925,7 @@ function function_508a666f8c32e510( ball, ballspeed, hitsurface, pulse )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f52
 // Size: 0x364
 function function_cb63e733bd0d9f0b()
@@ -988,7 +988,7 @@ function function_cb63e733bd0d9f0b()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32be
 // Size: 0x171
 function function_26a3f9262c0e61c1()
@@ -1041,7 +1041,7 @@ function function_26a3f9262c0e61c1()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3437
 // Size: 0x22
 function vectorproject( v, onto )
@@ -1050,7 +1050,7 @@ function vectorproject( v, onto )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3462
 // Size: 0x475
 function function_7331ba007cea2319()
@@ -1188,7 +1188,7 @@ function private function_3ea35b42c5e9419e()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3980
 // Size: 0x398
 function function_263274274f7871fa()
@@ -1271,7 +1271,8 @@ function function_263274274f7871fa()
                 scripts\mp\utility\points::doscoreevent( #"ballmode_pulse" );
                 self.pers[ "hasDoneAnyCombat" ] = 1;
                 
-                for (x = 0; x < 5; x++) {
+                for ( x = 0; x < 5 ; x++ )
+                {
                     self.vehicle function_e0201404a8b6f664( anglestoforward( self.vehicle.angles ), 55, 0 );
                     wait 0.1;
                     
@@ -1298,7 +1299,7 @@ function function_263274274f7871fa()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d20
 // Size: 0x181
 function function_57751ab79abf8f20()
@@ -1367,7 +1368,7 @@ function function_57751ab79abf8f20()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ea9
 // Size: 0xd8
 function function_72b3e6d160929c0a()
@@ -1434,7 +1435,7 @@ function private listenforvehicleexit( player )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x400f
 // Size: 0x43
 function deleteondisconnect()
@@ -1448,7 +1449,7 @@ function deleteondisconnect()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x405a
 // Size: 0xe3
 function function_eae183e660ed1bd( ball )
@@ -1471,7 +1472,7 @@ function function_eae183e660ed1bd( ball )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4145
 // Size: 0x37
 function initializematchrules()
@@ -1483,7 +1484,7 @@ function initializematchrules()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4184
 // Size: 0x163
 function onstartgametype()
@@ -1548,7 +1549,7 @@ function onstartgametype()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42ef
 // Size: 0xce
 function updategametypedvars()
@@ -1565,7 +1566,7 @@ function updategametypedvars()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43c5
 // Size: 0x271
 function initspawns()
@@ -1624,7 +1625,7 @@ function initspawns()
 /#
 
     // Namespace ballmode / scripts\mp\gametypes\ballmode
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x463e
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -1640,7 +1641,7 @@ function initspawns()
 #/
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46a9
 // Size: 0x74
 function getspawnpoint()
@@ -1663,7 +1664,7 @@ function getspawnpoint()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4726
 // Size: 0x44
 function onspawnplayer( revivespawn )
@@ -1681,7 +1682,7 @@ function onspawnplayer( revivespawn )
 /#
 
     // Namespace ballmode / scripts\mp\gametypes\ballmode
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x4772
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -1720,7 +1721,7 @@ function onspawnplayer( revivespawn )
 #/
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x48f4
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -1729,7 +1730,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x493c
 // Size: 0x130
 function ontimelimit()
@@ -1763,7 +1764,7 @@ function ontimelimit()
 /#
 
     // Namespace ballmode / scripts\mp\gametypes\ballmode
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4a74
     // Size: 0xe8, Type: dev
     function function_8469a5927d069db7()
@@ -1778,7 +1779,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x102>", points, 0 );
@@ -1790,7 +1791,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x10c>", points, 0 );
@@ -1806,7 +1807,7 @@ function ontimelimit()
     }
 
     // Namespace ballmode / scripts\mp\gametypes\ballmode
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4b64
     // Size: 0x1ee, Type: dev
     function function_bf2918399f1800b1()
@@ -1844,7 +1845,7 @@ function ontimelimit()
 #/
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d5a
 // Size: 0x19a
 function tdmanywhere_debugshowlocs()
@@ -1867,7 +1868,7 @@ function tdmanywhere_debugshowlocs()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4efc
 // Size: 0x24
 function enemyteam( friendlyteam )
@@ -1881,7 +1882,7 @@ function enemyteam( friendlyteam )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f28
 // Size: 0x3fd
 function monitorhotfoot()
@@ -1988,7 +1989,7 @@ function monitorhotfoot()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x532d
 // Size: 0xc0
 function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -2008,7 +2009,7 @@ function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, ob
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53f5
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()
@@ -2020,7 +2021,7 @@ function shouldgamelobbyremainintact()
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x544b
 // Size: 0x50
 function onplayerconnect( player )
@@ -2033,7 +2034,7 @@ function onplayerconnect( player )
 }
 
 // Namespace ballmode / scripts\mp\gametypes\ballmode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54a3
 // Size: 0x19a
 function setspecialloadout()

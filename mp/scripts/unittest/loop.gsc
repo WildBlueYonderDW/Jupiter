@@ -3,28 +3,31 @@
 #namespace unittest_loop;
 
 // Namespace unittest_loop / scripts\unittest\loop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b9
 // Size: 0xa5
 function for_simple()
 {
     test_print( "for simple" );
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         test_print( "for: " + i );
     }
     
     x = 0;
     test_print( "for 2 cond" );
     
-    for (i = 0; i < 10 && x < 20; i++) {
+    for ( i = 0; i < 10 && x < 20 ; i++ )
+    {
         x += i;
         test_print( "for: " + i );
     }
     
     test_print( "for empty" );
     
-    for (i = 0; ; i++) {
+    for ( i = 0;  ; i++ )
+    {
         test_print( "for: " + i );
         
         if ( i >= 9 )
@@ -35,7 +38,7 @@ function for_simple()
 }
 
 // Namespace unittest_loop / scripts\unittest\loop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x266
 // Size: 0xba
 function foreach_shared_variables( x )
@@ -61,7 +64,7 @@ function foreach_shared_variables( x )
 }
 
 // Namespace unittest_loop / scripts\unittest\loop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x328
 // Size: 0x91
 function foreach_mutable_key()
@@ -77,7 +80,7 @@ function foreach_mutable_key()
 }
 
 // Namespace unittest_loop / scripts\unittest\loop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c1
 // Size: 0xee
 function foreach_simple()
@@ -102,28 +105,31 @@ function foreach_simple()
 }
 
 // Namespace unittest_loop / scripts\unittest\loop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b7
 // Size: 0xaa
 function while_simple()
 {
     test_print( "while simple" );
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         test_print( "while: " + i );
     }
     
     test_print( "while 2 cond" );
     x = 0;
     
-    for (i = 0; i < 10 && x < 20; i++) {
+    for ( i = 0; i < 10 && x < 20 ; i++ )
+    {
         x += i;
         test_print( "while: " + i );
     }
     
     test_print( "while true" );
     
-    for (i = 0; true; i++) {
+    for ( i = 0; true ; i++ )
+    {
         test_print( "while: " + i );
         
         if ( i >= 9 )
@@ -134,14 +140,15 @@ function while_simple()
 }
 
 // Namespace unittest_loop / scripts\unittest\loop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x569
 // Size: 0x94
 function loop_control()
 {
     test_print( "for control" );
     
-    for (i = 0; i < 1; i++) {
+    for ( i = 0; i < 1 ; i++ )
+    {
         if ( i % 1 )
         {
             sum = 1;
@@ -172,7 +179,7 @@ function loop_control()
 }
 
 // Namespace unittest_loop / scripts\unittest\loop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x605
 // Size: 0x36
 function main()

@@ -23,9 +23,9 @@
 #namespace ai_heli_reinforce;
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c0
-// Size: 0x11b
+// Params 0
+// Checksum 0x0, Offset: 0x3e5
+// Size: 0x131
 function function_d0ffcd08e0870cf2()
 {
     level.var_425df8e23aaef18c = 1;
@@ -49,6 +49,7 @@ function function_d0ffcd08e0870cf2()
     
     level.var_4eb71f2b8cba5cb = &function_9be6618055ceb851;
     function_203ace42414afb23();
+    registersharedfunc( "ai_heli_reinforce", "release_path", &function_e1310878ab1f5e7c );
     
     /#
         level thread function_d3d8ae54f1db925();
@@ -57,8 +58,8 @@ function function_d0ffcd08e0870cf2()
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e3
+// Params 0
+// Checksum 0x0, Offset: 0x51e
 // Size: 0x18
 function initvehicles()
 {
@@ -69,8 +70,8 @@ function initvehicles()
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x503
+// Params 0
+// Checksum 0x0, Offset: 0x53e
 // Size: 0x628
 function function_203ace42414afb23()
 {
@@ -135,7 +136,8 @@ function function_203ace42414afb23()
                 
                 if ( isdefined( pathnode.target ) )
                 {
-                    for (node = getstruct( pathnode.target, "targetname" ); isdefined( node ) && isdefined( node.target ); node = getstruct( node.target, "targetname" )) {
+                    for ( node = getstruct( pathnode.target, "targetname" ); isdefined( node ) && isdefined( node.target ) ; node = getstruct( node.target, "targetname" ) )
+                    {
                         if ( isdefined( node.script_unload ) )
                         {
                             node.path_start_node = pathnode;
@@ -167,7 +169,8 @@ function function_203ace42414afb23()
         
         if ( isdefined( pathnode.target ) )
         {
-            for (node = getstruct( pathnode.target, "targetname" ); isdefined( node.target ); node = getstruct( node.target, "targetname" )) {
+            for ( node = getstruct( pathnode.target, "targetname" ); isdefined( node.target ) ; node = getstruct( node.target, "targetname" ) )
+            {
                 if ( isdefined( node.script_unload ) )
                 {
                     node.path_start_node = pathnode;
@@ -181,8 +184,8 @@ function function_203ace42414afb23()
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb33
+// Params 2
+// Checksum 0x0, Offset: 0xb6e
 // Size: 0x10d
 function function_7802832a1f064ccd( array, name )
 {
@@ -212,8 +215,8 @@ function function_7802832a1f064ccd( array, name )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc49
+// Params 4
+// Checksum 0x0, Offset: 0xc84
 // Size: 0x2be
 function function_9be6618055ceb851( reinforceorigin, var_93390a6953905fef, team, poiname )
 {
@@ -321,8 +324,8 @@ function function_9be6618055ceb851( reinforceorigin, var_93390a6953905fef, team,
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf10
+// Params 1
+// Checksum 0x0, Offset: 0xf4b
 // Size: 0x11d
 function function_34ea974920aa74b9( unloadlocs )
 {
@@ -357,8 +360,8 @@ function function_34ea974920aa74b9( unloadlocs )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1036
+// Params 4
+// Checksum 0x0, Offset: 0x1071
 // Size: 0x1e7
 function function_321665dcdcbf401e( array, desired_origin, skiptoindex, poiname )
 {
@@ -375,7 +378,8 @@ function function_321665dcdcbf401e( array, desired_origin, skiptoindex, poiname 
         index = skiptoindex;
     }
     
-    for (i = index; i < array.size; i++) {
+    for ( i = index; i < array.size ; i++ )
+    {
         if ( !isdefined( array[ i ] ) )
         {
             continue;
@@ -446,8 +450,8 @@ function function_321665dcdcbf401e( array, desired_origin, skiptoindex, poiname 
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1226
+// Params 3
+// Checksum 0x0, Offset: 0x1261
 // Size: 0xc5
 function function_42aa412d7e4d7c37( loc, desired_origin, poiname )
 {
@@ -467,7 +471,8 @@ function function_42aa412d7e4d7c37( loc, desired_origin, poiname )
         startnodearray = sortbydistance( level.helireinforcestruct.pathstartnodes, desired_origin );
     }
     
-    for (i = 0; i < startnodearray.size; i++) {
+    for ( i = 0; i < startnodearray.size ; i++ )
+    {
         if ( istrue( startnodearray[ i ].used ) )
         {
             continue;
@@ -485,8 +490,8 @@ function function_42aa412d7e4d7c37( loc, desired_origin, poiname )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f4
+// Params 2
+// Checksum 0x0, Offset: 0x132f
 // Size: 0x22
 function function_db68d9a06b8c63a6( node, timer )
 {
@@ -495,8 +500,8 @@ function function_db68d9a06b8c63a6( node, timer )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x131e
+// Params 1
+// Checksum 0x0, Offset: 0x1359
 // Size: 0x52
 function function_307d3746c484ec65( desired_loc )
 {
@@ -510,8 +515,8 @@ function function_307d3746c484ec65( desired_loc )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1379
+// Params 2
+// Checksum 0x0, Offset: 0x13b4
 // Size: 0x3c
 function function_b3d7b682f3c2d9d( startloc, unloadloc )
 {
@@ -521,8 +526,8 @@ function function_b3d7b682f3c2d9d( startloc, unloadloc )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13bd
+// Params 1
+// Checksum 0x0, Offset: 0x13f8
 // Size: 0x49
 function function_e1310878ab1f5e7c( startloc )
 {
@@ -536,8 +541,8 @@ function function_e1310878ab1f5e7c( startloc )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x140e
+// Params 0
+// Checksum 0x0, Offset: 0x1449
 // Size: 0x190
 function function_8062c7f3856760fc()
 {
@@ -566,7 +571,8 @@ function function_8062c7f3856760fc()
         
         tested = 0;
         
-        for (i = 0; i < locs.size; i++) {
+        for ( i = 0; i < locs.size ; i++ )
+        {
             loc = locs[ i ];
             
             if ( istrue( loc.debug_used ) )
@@ -591,9 +597,9 @@ function function_8062c7f3856760fc()
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 17, eflags: 0x0
-// Checksum 0x0, Offset: 0x15a6
-// Size: 0x24d
+// Params 17
+// Checksum 0x0, Offset: 0x15e1
+// Size: 0x25b
 function function_3779deb97b61a65( numagents, reinforceorigin, priority, category, subcategory, groupname, team, var_93390a6953905fef, poiname, goalradius, var_21f24aecb313e479, var_ec862c2c00c7ab5d, skipstealth, var_ebc42e43f4b05504, nationality, vehicletypeoverride, overridetier )
 {
     if ( isdefined( level.radiation ) && istrue( level.radiation.spreading ) )
@@ -657,6 +663,7 @@ function function_3779deb97b61a65( numagents, reinforceorigin, priority, categor
                 [[ level.var_4691a578582af454 ]]( vehicle );
             }
             
+            vehicle.var_605b121f1fadd46c = 1;
             return vehicle.riders;
         }
     }
@@ -665,8 +672,8 @@ function function_3779deb97b61a65( numagents, reinforceorigin, priority, categor
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17fc
+// Params 2
+// Checksum 0x0, Offset: 0x1845
 // Size: 0x8c
 function function_173e2a87c2a19acc( riders, typeoverride )
 {
@@ -699,8 +706,8 @@ function function_173e2a87c2a19acc( riders, typeoverride )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1891
+// Params 0
+// Checksum 0x0, Offset: 0x18da
 // Size: 0x1a
 function function_bd28fa0797f4d5ec()
 {
@@ -710,9 +717,9 @@ function function_bd28fa0797f4d5ec()
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 15, eflags: 0x0
-// Checksum 0x0, Offset: 0x18b3
-// Size: 0x788
+// Params 15
+// Checksum 0x0, Offset: 0x18fc
+// Size: 0x796
 function heli_spawnheli( var_a4e4a71852a83d8f, type_override, num_riders, priority, category, subcategory, groupname, team, var_93390a6953905fef, poiname, var_ec862c2c00c7ab5d, skipstealth, var_ebc42e43f4b05504, nationality, overridetier )
 {
     heli_type = function_173e2a87c2a19acc( num_riders, type_override );
@@ -851,6 +858,7 @@ function heli_spawnheli( var_a4e4a71852a83d8f, type_override, num_riders, priori
             }
             
             vehicle = vehicle_spawn( heli_type, spawndata );
+            vehicle.spawnernode = var_a4e4a71852a83d8f;
             
             if ( !isdefined( vehicle ) )
             {
@@ -947,8 +955,8 @@ function heli_spawnheli( var_a4e4a71852a83d8f, type_override, num_riders, priori
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2043
+// Params 4
+// Checksum 0x0, Offset: 0x209a
 // Size: 0x3fd
 function function_bbfeb6cfdbc102a1( vehicle, var_a4e4a71852a83d8f, heli_type, var_ebc42e43f4b05504 )
 {
@@ -1049,8 +1057,8 @@ function function_bbfeb6cfdbc102a1( vehicle, var_a4e4a71852a83d8f, heli_type, va
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2448
+// Params 2
+// Checksum 0x0, Offset: 0x249f
 // Size: 0x192
 function function_88b89f0f153d496( var_a4e4a71852a83d8f, unload_struct )
 {
@@ -1059,7 +1067,8 @@ function function_88b89f0f153d496( var_a4e4a71852a83d8f, unload_struct )
     struct_path = [];
     struct_path[ 0 ] = next_struct;
     
-    for (i = 0; i < end; i++) {
+    for ( i = 0; i < end ; i++ )
+    {
         next_struct = struct_path[ i ];
         next_struct.script_goalyaw = 1;
         prev_struct = spawnstruct();
@@ -1099,8 +1108,8 @@ function function_88b89f0f153d496( var_a4e4a71852a83d8f, unload_struct )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x25e3
+// Params 4
+// Checksum 0x0, Offset: 0x263a
 // Size: 0x67
 function function_3bd98e79a697ce64( start_node, end_node, z_val, mag )
 {
@@ -1112,8 +1121,8 @@ function function_3bd98e79a697ce64( start_node, end_node, z_val, mag )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2653
+// Params 2
+// Checksum 0x0, Offset: 0x26aa
 // Size: 0xc9
 function function_e92bac7b0b067a7b( unloadorigin, helitype )
 {
@@ -1154,8 +1163,8 @@ function function_e92bac7b0b067a7b( unloadorigin, helitype )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2724
+// Params 1
+// Checksum 0x0, Offset: 0x277b
 // Size: 0x32, Type: bool
 function function_3e4b3c31abee91e7( heli_type )
 {
@@ -1171,8 +1180,8 @@ function function_3e4b3c31abee91e7( heli_type )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x275f
+// Params 1
+// Checksum 0x0, Offset: 0x27b6
 // Size: 0x51, Type: bool
 function function_bb0826e06fc68038( helitype )
 {
@@ -1191,8 +1200,8 @@ function function_bb0826e06fc68038( helitype )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27b9
+// Params 1
+// Checksum 0x0, Offset: 0x2810
 // Size: 0x1b0
 function function_fc805ec1e7b08264( pathnode )
 {
@@ -1241,8 +1250,8 @@ function function_fc805ec1e7b08264( pathnode )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2971
+// Params 1
+// Checksum 0x0, Offset: 0x29c8
 // Size: 0x145
 function function_757672b5f0cde59a( pathnode )
 {
@@ -1289,8 +1298,8 @@ function function_757672b5f0cde59a( pathnode )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x2abf
+// Params 10
+// Checksum 0x0, Offset: 0x2b16
 // Size: 0x336
 function function_b276f0690ce15746( heli_type, numriders, origin, poiname, priority, var_ec862c2c00c7ab5d, category, team, nationality, overridetier )
 {
@@ -1336,7 +1345,8 @@ function function_b276f0690ce15746( heli_type, numriders, origin, poiname, prior
     
     if ( isdefined( var_ec862c2c00c7ab5d ) )
     {
-        for (i = 0; i < numriders; i++) {
+        for ( i = 0; i < numriders ; i++ )
+        {
             riders[ i ] = spawnstruct();
             riders[ i ].origin = standardorigin;
             riders[ i ].angles = var_ca38685e5bf373f4;
@@ -1368,7 +1378,8 @@ function function_b276f0690ce15746( heli_type, numriders, origin, poiname, prior
     }
     else
     {
-        for (i = 0; i < numriders; i++) {
+        for ( i = 0; i < numriders ; i++ )
+        {
             aitype = function_d5bc07eabf352abb( undefined, poiname, undefined, undefined, overridetier, nationality );
             riders[ i ] = spawnstruct();
             riders[ i ].origin = standardorigin;
@@ -1381,8 +1392,8 @@ function function_b276f0690ce15746( heli_type, numriders, origin, poiname, prior
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dfe
+// Params 1
+// Checksum 0x0, Offset: 0x2e55
 // Size: 0x13b
 function function_7045fb761a4998e3( vehicle )
 {
@@ -1401,7 +1412,8 @@ function function_7045fb761a4998e3( vehicle )
     
     fake_guys = [];
     
-    for (i = 0; i < pilot_num; i++) {
+    for ( i = 0; i < pilot_num ; i++ )
+    {
         struct = level.vehicle.templates.aianims[ function_29b4292c92443328( vehicle function_d93ec4635290febd() ).ai.classname ][ i ];
         tag = struct.sittag;
         fake_guy = vehicle function_97dc419ef1552c44( i, tag, struct.idle_anim, struct.idle, drivermodels[ i ] );
@@ -1412,8 +1424,8 @@ function function_7045fb761a4998e3( vehicle )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f41
+// Params 1
+// Checksum 0x0, Offset: 0x2f98
 // Size: 0x3c
 function function_c69ae9cd7a024f7a( fake_guys )
 {
@@ -1421,15 +1433,16 @@ function function_c69ae9cd7a024f7a( fake_guys )
     
     if ( isdefined( fake_guys ) )
     {
-        for (i = 0; i < fake_guys.size; i++) {
+        for ( i = 0; i < fake_guys.size ; i++ )
+        {
             fake_guys[ i ] function_3a1b698f5e1a66da();
         }
     }
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f85
+// Params 0
+// Checksum 0x0, Offset: 0x2fdc
 // Size: 0x3a
 function function_3a1b698f5e1a66da()
 {
@@ -1445,8 +1458,8 @@ function function_3a1b698f5e1a66da()
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fc7
+// Params 5
+// Checksum 0x0, Offset: 0x301e
 // Size: 0x139
 function function_97dc419ef1552c44( posindex, tag, animname, xanim, model )
 {
@@ -1483,8 +1496,8 @@ function function_97dc419ef1552c44( posindex, tag, animname, xanim, model )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3109
+// Params 1
+// Checksum 0x0, Offset: 0x3160
 // Size: 0x1c2
 function function_369da33099abb357( var_c2f1ca305ee16808 )
 {
@@ -1535,8 +1548,8 @@ function function_369da33099abb357( var_c2f1ca305ee16808 )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32d3
+// Params 1
+// Checksum 0x0, Offset: 0x332a
 // Size: 0x29
 function function_e7d3411db935e99b( pos )
 {
@@ -1547,8 +1560,8 @@ function function_e7d3411db935e99b( pos )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3304
+// Params 3
+// Checksum 0x0, Offset: 0x335b
 // Size: 0x1d1
 function function_88982797150bf237( vehicle, var_a4e4a71852a83d8f, var_ebc42e43f4b05504 )
 {
@@ -1591,8 +1604,8 @@ function function_88982797150bf237( vehicle, var_a4e4a71852a83d8f, var_ebc42e43f
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34dd
+// Params 0
+// Checksum 0x0, Offset: 0x3534
 // Size: 0x17
 function function_e42f5ec55b8546b()
 {
@@ -1602,8 +1615,8 @@ function function_e42f5ec55b8546b()
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34fc
+// Params 2
+// Checksum 0x0, Offset: 0x3553
 // Size: 0x1dd
 function function_a130de01f9e62aa4( origin, toleranceoverride )
 {
@@ -1649,8 +1662,8 @@ function function_a130de01f9e62aa4( origin, toleranceoverride )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e1
+// Params 2
+// Checksum 0x0, Offset: 0x3738
 // Size: 0x9b
 function function_16c5ca10b4c664a7( nodes, override )
 {
@@ -1666,8 +1679,8 @@ function function_16c5ca10b4c664a7( nodes, override )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3784
+// Params 1
+// Checksum 0x0, Offset: 0x37db
 // Size: 0x15
 function function_bf8ab11dd9e76f93( function )
 {
@@ -1675,8 +1688,8 @@ function function_bf8ab11dd9e76f93( function )
 }
 
 // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x37a1
+// Params 3
+// Checksum 0x0, Offset: 0x37f8
 // Size: 0x58
 function function_4a64c621dd8090ab( heli_type, riders, nationality )
 {
@@ -1700,8 +1713,8 @@ function function_4a64c621dd8090ab( heli_type, riders, nationality )
 /#
 
     // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3801
+    // Params 2
+    // Checksum 0x0, Offset: 0x3858
     // Size: 0x17b, Type: dev
     function function_cd8465a96bf94b14( var_a4e4a71852a83d8f, vehicle )
     {
@@ -1729,8 +1742,8 @@ function function_4a64c621dd8090ab( heli_type, riders, nationality )
     }
 
     // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3984
+    // Params 0
+    // Checksum 0x0, Offset: 0x39db
     // Size: 0x568, Type: dev
     function function_d3d8ae54f1db925()
     {
@@ -1809,8 +1822,8 @@ function function_4a64c621dd8090ab( heli_type, riders, nationality )
     }
 
     // Namespace ai_heli_reinforce / scripts\mp\ai_heli_reinforce
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3ef4
+    // Params 0
+    // Checksum 0x0, Offset: 0x3f4b
     // Size: 0x5f, Type: dev
     function function_6bbc2202f6cb024d()
     {

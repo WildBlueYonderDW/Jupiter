@@ -11,7 +11,7 @@
 /#
 
     // Namespace notetracks / scripts\anim\notetracks
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xa91
     // Size: 0x1a6, Type: dev
     function shownotetrack( note )
@@ -36,7 +36,8 @@
             color = ( 1, 0.5, 0.5 );
         }
         
-        for (i = 0; i < duration; i++) {
+        for ( i = 0; i < duration ; i++ )
+        {
             if ( duration - i <= anim.var_6bf5d5ac4b32352f )
             {
                 amnt = 1 * ( i - duration - anim.var_6bf5d5ac4b32352f ) / anim.var_6bf5d5ac4b32352f;
@@ -66,7 +67,7 @@
 #/
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc3f
 // Size: 0x4dd
 function registernotetracks()
@@ -138,7 +139,7 @@ function registernotetracks()
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1124
 // Size: 0x13
 function notetrackstopanim( note, flagname )
@@ -147,7 +148,7 @@ function notetrackstopanim( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x113f
 // Size: 0xdd
 function notetrackcoverposerequest( note, flagname )
@@ -175,7 +176,7 @@ function notetrackcoverposerequest( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1224
 // Size: 0x2c
 function notetrackmovementstop( note, flagname )
@@ -184,7 +185,7 @@ function notetrackmovementstop( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1258
 // Size: 0x2c
 function notetrackmovementwalk( note, flagname )
@@ -193,7 +194,7 @@ function notetrackmovementwalk( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x128c
 // Size: 0x2c
 function notetrackmovementrun( note, flagname )
@@ -202,7 +203,7 @@ function notetrackmovementrun( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12c0
 // Size: 0x2c
 function notetrackmovementgunposeoverride( note, flagname )
@@ -211,7 +212,7 @@ function notetrackmovementgunposeoverride( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12f4
 // Size: 0x13
 function notetrackalertnessaiming( note, flagname )
@@ -220,7 +221,7 @@ function notetrackalertnessaiming( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x130f
 // Size: 0x13
 function notetrackalertnesscasual( note, flagname )
@@ -229,7 +230,7 @@ function notetrackalertnesscasual( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x132a
 // Size: 0x13
 function notetrackalertnessalert( note, flagname )
@@ -240,7 +241,7 @@ function notetrackalertnessalert( note, flagname )
 /#
 
     // Namespace notetracks / scripts\anim\notetracks
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1345
     // Size: 0x6e, Type: dev
     function function_48e7a4a270c0d370( note, flagname )
@@ -266,7 +267,7 @@ function notetrackalertnessalert( note, flagname )
 #/
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13bb
 // Size: 0x13
 function notetrackloadshell( note, flagname )
@@ -275,7 +276,7 @@ function notetrackloadshell( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13d6
 // Size: 0x13
 function notetrackpistolrechamber( note, flagname )
@@ -284,7 +285,7 @@ function notetrackpistolrechamber( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13f1
 // Size: 0x4a
 function notetrackgravity( note, flagname )
@@ -302,7 +303,7 @@ function notetrackgravity( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1443
 // Size: 0x141
 function customnotetrackfx( note, flagname )
@@ -353,7 +354,7 @@ function customnotetrackfx( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x158c
 // Size: 0x18
 function notetrackcodemove( note, flagname )
@@ -362,7 +363,7 @@ function notetrackcodemove( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15ad
 // Size: 0x1f
 function notetrackfaceenemy( note, flagname )
@@ -371,7 +372,7 @@ function notetrackfaceenemy( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15d4
 // Size: 0x8a
 function notetrackbodyfall( note, flagname )
@@ -402,7 +403,7 @@ function notetrackbodyfall( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1666
 // Size: 0xb9
 function donotetracks( flagname, customfunction, debugidentifier )
@@ -436,7 +437,7 @@ function donotetracks( flagname, customfunction, debugidentifier )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1727
 // Size: 0x78
 function handlenotetrack( note, flagname, customfunction, customparams )
@@ -455,7 +456,7 @@ function handlenotetrack( note, flagname, customfunction, customparams )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17a7
 // Size: 0x3b, Type: bool
 function hascustomnotetrackhandler( note )
@@ -476,7 +477,7 @@ function hascustomnotetrackhandler( note )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x17eb
 // Size: 0x98
 function handlecustomnotetrackhandler( note, flagname, customfunction, customparams )
@@ -505,7 +506,7 @@ function handlecustomnotetrackhandler( note, flagname, customfunction, custompar
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x188b
 // Size: 0x27b
 function handlecommonnotetrack( note, flagname, customfunction, customparams )
@@ -585,7 +586,7 @@ function handlecommonnotetrack( note, flagname, customfunction, customparams )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b0e
 // Size: 0xfb
 function donotetracksintercept( flagname, interceptfunction, debugidentifier )
@@ -635,7 +636,7 @@ function donotetracksintercept( flagname, interceptfunction, debugidentifier )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c11
 // Size: 0xd7
 function donotetrackspostcallback( flagname, postfunction )
@@ -680,7 +681,7 @@ function donotetrackspostcallback( flagname, postfunction )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1cf0
 // Size: 0x2d
 function donotetracksfortimeout( flagname, killstring, customfunction, debugidentifier )
@@ -689,7 +690,7 @@ function donotetracksfortimeout( flagname, killstring, customfunction, debugiden
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d25
 // Size: 0x33
 function donotetracksforever( flagname, killstring, customfunction, debugidentifier )
@@ -698,7 +699,7 @@ function donotetracksforever( flagname, killstring, customfunction, debugidentif
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d60
 // Size: 0x33
 function donotetracksforeverintercept( flagname, killstring, interceptfunction, debugidentifier )
@@ -707,7 +708,7 @@ function donotetracksforeverintercept( flagname, killstring, interceptfunction, 
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1d9b
 // Size: 0xe0
 function donotetracksforeverproc( notetracksfunc, flagname, killstring, customfunction, debugidentifier )
@@ -746,7 +747,7 @@ function donotetracksforeverproc( notetracksfunc, flagname, killstring, customfu
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1e83
 // Size: 0x4e
 function donotetrackswithtimeout( flagname, time, customfunction, debugidentifier )
@@ -757,7 +758,7 @@ function donotetrackswithtimeout( flagname, time, customfunction, debugidentifie
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1ed9
 // Size: 0x4e
 function donotetracksfortime( time, flagname, customfunction, debugidentifier )
@@ -768,7 +769,7 @@ function donotetracksfortime( time, flagname, customfunction, debugidentifier )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1f2f
 // Size: 0x4e
 function donotetracksfortimeintercept( time, flagname, interceptfunction, debugidentifier )
@@ -779,7 +780,7 @@ function donotetracksfortimeintercept( time, flagname, interceptfunction, debugi
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1f85
 // Size: 0x3a
 function donotetracksfortimeproc( donotetracksforeverfunc, flagname, customfunction, debugidentifier, ent )
@@ -789,7 +790,7 @@ function donotetracksfortimeproc( donotetracksforeverfunc, flagname, customfunct
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fc7
 // Size: 0x15
 function donotetracksfortimeendnotify( time )
@@ -799,7 +800,7 @@ function donotetracksfortimeendnotify( time )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fe4
 // Size: 0x2a
 function notetrack_prefix_handler( notetrack )
@@ -809,7 +810,7 @@ function notetrack_prefix_handler( notetrack )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2017
 // Size: 0x1b
 function function_8b5c774e7238fec5( guy, notetrack )
@@ -818,7 +819,7 @@ function function_8b5c774e7238fec5( guy, notetrack )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x203a
 // Size: 0x7d
 function function_6ba70af530538250()
@@ -840,7 +841,7 @@ function function_6ba70af530538250()
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20c0
 // Size: 0xa9e
 function notetrack_prefix_handler_common( notetrack )
@@ -1241,7 +1242,7 @@ function notetrack_prefix_handler_common( notetrack )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b67
 // Size: 0x9f
 function shootnotetrack()
@@ -1270,7 +1271,7 @@ function shootnotetrack()
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c0e
 // Size: 0x28
 function function_df92aadf78bfcf42( note, flagname )
@@ -1282,7 +1283,7 @@ function function_df92aadf78bfcf42( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c3e
 // Size: 0x5a
 function notetrackfire( note, flagname )
@@ -1297,7 +1298,7 @@ function notetrackfire( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ca0
 // Size: 0x1e7
 function notetrackfirespray( note, flagname )
@@ -1363,7 +1364,7 @@ function notetrackfirespray( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e8f
 // Size: 0x1a
 function notetrackrefillclip( note, flagname )
@@ -1372,7 +1373,7 @@ function notetrackrefillclip( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2eb1
 // Size: 0x49
 function notetracknotify( note, flagname, customparams )
@@ -1386,7 +1387,7 @@ function notetracknotify( note, flagname, customparams )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f02
 // Size: 0x73
 function function_5b7a0a74bd3d5e0b( note, flagname, customparams )
@@ -1409,7 +1410,7 @@ function function_5b7a0a74bd3d5e0b( note, flagname, customparams )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f7d
 // Size: 0x6c
 function getpreferredweapon()
@@ -1427,7 +1428,7 @@ function getpreferredweapon()
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ff2
 // Size: 0x3b
 function notetrackguntochest( note, flagname )
@@ -1439,7 +1440,7 @@ function notetrackguntochest( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3035
 // Size: 0x61
 function notetrackguntoback( note, flagname )
@@ -1454,7 +1455,7 @@ function notetrackguntoback( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x309e
 // Size: 0x106
 function notetrackpistolpickup( note, flagname )
@@ -1481,7 +1482,7 @@ function notetrackpistolpickup( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31ac
 // Size: 0x90
 function notetrackpistolputaway( note, flagname )
@@ -1503,7 +1504,7 @@ function notetrackpistolputaway( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3244
 // Size: 0xef
 function function_c99ec552dfea0f86( note, flagname )
@@ -1526,7 +1527,7 @@ function function_c99ec552dfea0f86( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x333b
 // Size: 0x90
 function function_316d2ec7583a1e29( note, flagname )
@@ -1548,7 +1549,7 @@ function function_316d2ec7583a1e29( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x33d3
 // Size: 0x52
 function notetrackguntoright( note, flagname )
@@ -1562,7 +1563,7 @@ function notetrackguntoright( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x342d
 // Size: 0x52
 function function_12e1635911fd2716( note, flagname )
@@ -1576,7 +1577,7 @@ function function_12e1635911fd2716( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3487
 // Size: 0x30
 function notetrackhton0( note, flagname )
@@ -1593,7 +1594,7 @@ function notetrackhton0( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34bf
 // Size: 0x31
 function notetrackhton1( note, flagname )
@@ -1610,7 +1611,7 @@ function notetrackhton1( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34f8
 // Size: 0x2e
 function notetrackhtoff( note, flagname )
@@ -1627,7 +1628,7 @@ function notetrackhtoff( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x352e
 // Size: 0x41
 function function_5a8f2c4ba78d7bff( note, flagname )
@@ -1644,7 +1645,7 @@ function function_5a8f2c4ba78d7bff( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3577
 // Size: 0x2f
 function function_ab37da002eddaf9f( note, flagname )
@@ -1657,7 +1658,7 @@ function function_ab37da002eddaf9f( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35ae
 // Size: 0x2f
 function function_b67df3617c4f2903( note, flagname )
@@ -1670,7 +1671,7 @@ function function_b67df3617c4f2903( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35e5
 // Size: 0x2d
 function function_28b89c4ec5292326( note, flagname )
@@ -1682,7 +1683,7 @@ function function_28b89c4ec5292326( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x361a
 // Size: 0x2e
 function function_1777a8463e80f52e( note, flagname )
@@ -1694,7 +1695,7 @@ function function_1777a8463e80f52e( note, flagname )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3650
 // Size: 0x1eb
 function function_6b6fe2ba8bff11cd( var_bed488ee5acfc2b9 )
@@ -1754,7 +1755,7 @@ function function_6b6fe2ba8bff11cd( var_bed488ee5acfc2b9 )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3844
 // Size: 0xa7
 function function_fdb7ea91bda694dc( attachinfo )
@@ -1775,7 +1776,7 @@ function function_fdb7ea91bda694dc( attachinfo )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38f3
 // Size: 0x15b
 function function_f22b886a2036c871( attachinfo )
@@ -1826,7 +1827,7 @@ function function_f22b886a2036c871( attachinfo )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a57
 // Size: 0x6b
 function function_a06953a984b6a42a( attachinfo )
@@ -1854,7 +1855,7 @@ function private function_bccbbce06002296d( tag )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b06
 // Size: 0xdd
 function function_e5e7e79093ba26ea( attachinfo )
@@ -1890,7 +1891,7 @@ function private function_ef14ac1aa72b102c( tag )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c25
 // Size: 0xa5
 function function_45f825a87c104b8e( attachinfo )
@@ -1910,7 +1911,7 @@ function function_45f825a87c104b8e( attachinfo )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3cd2
 // Size: 0x91
 function function_8ecc4b9e8758773e( info )
@@ -1926,7 +1927,7 @@ function function_8ecc4b9e8758773e( info )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d6b
 // Size: 0xb5
 function function_78157f1bf846e991( var_9d5f59d543dcaaab )
@@ -1952,7 +1953,7 @@ function function_78157f1bf846e991( var_9d5f59d543dcaaab )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e28
 // Size: 0xb5
 function function_b305ad01e100f851( var_9d5f59d543dcaaab )
@@ -1978,7 +1979,7 @@ function function_b305ad01e100f851( var_9d5f59d543dcaaab )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ee5
 // Size: 0x1d
 function function_580423f29d7d5065( note )
@@ -1988,7 +1989,7 @@ function function_580423f29d7d5065( note )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3f0a
 // Size: 0x3c
 function function_f74121b03472e19d( var_3e748cf38c614200, var_21e5d264c2eefa94, var_9f075c08a89eab6f )
@@ -2010,7 +2011,7 @@ function function_f74121b03472e19d( var_3e748cf38c614200, var_21e5d264c2eefa94, 
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f4e
 // Size: 0x100
 function fadetoblack( fadetime )
@@ -2040,7 +2041,7 @@ function fadetoblack( fadetime )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4056
 // Size: 0x10f
 function fadefromblack( fadetime )
@@ -2071,7 +2072,7 @@ function fadefromblack( fadetime )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x416d
 // Size: 0x4f
 function function_305541769c1da042( numberstring )
@@ -2094,7 +2095,7 @@ function function_305541769c1da042( numberstring )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41c5
 // Size: 0x3d
 function function_b8ba8f3c8f62ace7( boolstring )
@@ -2117,7 +2118,7 @@ function function_b8ba8f3c8f62ace7( boolstring )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x420b
 // Size: 0x4e
 function function_71da05b697e393a1( stringx, stringy, stringz )
@@ -2132,7 +2133,7 @@ function function_71da05b697e393a1( stringx, stringy, stringz )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4262
 // Size: 0x59
 function cleanup_string( string )
@@ -2149,7 +2150,7 @@ function cleanup_string( string )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x42c4
 // Size: 0x1b
 function function_6add3fe5d360337b( notetrack, note_prefix )
@@ -2158,7 +2159,7 @@ function function_6add3fe5d360337b( notetrack, note_prefix )
 }
 
 // Namespace notetracks / scripts\anim\notetracks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42e8
 // Size: 0x2ad
 function function_1f7bb66025f2aedf()

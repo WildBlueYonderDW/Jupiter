@@ -7,7 +7,7 @@
 #namespace equip_armor;
 
 // Namespace equip_armor / namespace_44e61c324d97fb99
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f
 // Size: 0x12
 function function_eda57308516bfc5f()
@@ -16,7 +16,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace equip_armor / namespace_44e61c324d97fb99
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12a
 // Size: 0x112
 function evaluatescore( bot )
@@ -45,7 +45,7 @@ function evaluatescore( bot )
 }
 
 // Namespace equip_armor / namespace_44e61c324d97fb99
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x245
 // Size: 0x2c
 function createaction( bot )
@@ -54,7 +54,7 @@ function createaction( bot )
 }
 
 // Namespace equip_armor / namespace_44e61c324d97fb99
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27a
 // Size: 0x46
 function actionprocess( bot )
@@ -70,7 +70,7 @@ function actionprocess( bot )
 }
 
 // Namespace equip_armor / namespace_44e61c324d97fb99
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c8
 // Size: 0x3a, Type: bool
 function function_fc5d9d6dc490ce2e()
@@ -79,7 +79,7 @@ function function_fc5d9d6dc490ce2e()
 }
 
 // Namespace equip_armor / namespace_44e61c324d97fb99
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30b
 // Size: 0x22
 function function_f4caae7e8af9d32c( action )

@@ -14,7 +14,7 @@
 #namespace auto_ascender_solo;
 
 // Namespace auto_ascender_solo / scripts\cp_mp\auto_ascender_solo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f6
 // Size: 0x2b8
 function init()
@@ -70,7 +70,7 @@ function init()
 }
 
 // Namespace auto_ascender_solo / scripts\cp_mp\auto_ascender_solo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b6
 // Size: 0x494
 function initanimtree()
@@ -117,7 +117,7 @@ function initanimtree()
 }
 
 // Namespace auto_ascender_solo / scripts\cp_mp\auto_ascender_solo
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xe52
 // Size: 0x67
 function ascendersoloscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -136,7 +136,7 @@ function ascendersoloscriptableused( instance, part, state, player, var_a5b2c541
 }
 
 // Namespace auto_ascender_solo / scripts\cp_mp\auto_ascender_solo
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xec1
 // Size: 0x7b
 function endascenderanim( player, dir, ascendermodelview, ascendermodelworld )
@@ -159,7 +159,7 @@ function endascenderanim( player, dir, ascendermodelview, ascendermodelworld )
 }
 
 // Namespace auto_ascender_solo / scripts\cp_mp\auto_ascender_solo
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf44
 // Size: 0x3d
 function spinafterdelay( goalangles )
@@ -172,7 +172,7 @@ function spinafterdelay( goalangles )
 }
 
 // Namespace auto_ascender_solo / scripts\cp_mp\auto_ascender_solo
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xf89
 // Size: 0x34c
 function startascenderanim( player, dir, ascendermodelview, ascendermodelworld, var_8ea61c746773c4ae )
@@ -238,7 +238,7 @@ function startascenderanim( player, dir, ascendermodelview, ascendermodelworld, 
 }
 
 // Namespace auto_ascender_solo / scripts\cp_mp\auto_ascender_solo
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x12dd
 // Size: 0xc4
 function loopwaitanim( scenenode, ascendermodelview, ascendermodelworld, dir )
@@ -279,7 +279,7 @@ function loopwaitanim( scenenode, ascendermodelview, ascendermodelworld, dir )
 }
 
 // Namespace auto_ascender_solo / scripts\cp_mp\auto_ascender_solo
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13a9
 // Size: 0x54d
 function ascenderuse( instance, player )
@@ -419,7 +419,7 @@ function ascenderuse( instance, player )
 }
 
 // Namespace auto_ascender_solo / scripts\cp_mp\auto_ascender_solo
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18fe
 // Size: 0xd4, Type: bool
 function ispointnearsoloascenderline( point )

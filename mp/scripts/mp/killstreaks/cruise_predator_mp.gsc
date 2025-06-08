@@ -13,7 +13,7 @@
 #namespace cruise_predator_mp;
 
 // Namespace cruise_predator_mp / scripts\mp\killstreaks\cruise_predator_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0x55
 function init()
@@ -25,7 +25,7 @@ function init()
 }
 
 // Namespace cruise_predator_mp / scripts\mp\killstreaks\cruise_predator_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x203
 // Size: 0x5f
 function cruisepredator_registervo()
@@ -36,7 +36,7 @@ function cruisepredator_registervo()
 }
 
 // Namespace cruise_predator_mp / scripts\mp\killstreaks\cruise_predator_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26a
 // Size: 0x18
 function cruisepredator_eventrecord( explodepos )
@@ -48,7 +48,7 @@ function cruisepredator_eventrecord( explodepos )
 }
 
 // Namespace cruise_predator_mp / scripts\mp\killstreaks\cruise_predator_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28a
 // Size: 0x15a
 function cruisepredator_assigntargetmarkers( user )

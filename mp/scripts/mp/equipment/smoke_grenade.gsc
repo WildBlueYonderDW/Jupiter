@@ -16,7 +16,7 @@
 #namespace smoke_grenade;
 
 // Namespace smoke_grenade / scripts\mp\equipment\smoke_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c3
 // Size: 0x149
 function smokegrenadeused( isgl )
@@ -54,7 +54,7 @@ function smokegrenadeused( isgl )
 }
 
 // Namespace smoke_grenade / scripts\mp\equipment\smoke_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x414
 // Size: 0x95
 function sfx_smoke_grenade_smoke( position, bundle )
@@ -115,7 +115,7 @@ function private function_9e58baa59719d027( bundle )
 }
 
 // Namespace smoke_grenade / scripts\mp\equipment\smoke_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x581
 // Size: 0x1c0
 function smokegrenadeexplode( position, owner, bundle )
@@ -154,7 +154,7 @@ function smokegrenadeexplode( position, owner, bundle )
 }
 
 // Namespace smoke_grenade / scripts\mp\equipment\smoke_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x749
 // Size: 0x37
 function smokeglvfx( position, normal )
@@ -163,7 +163,7 @@ function smokeglvfx( position, normal )
 }
 
 // Namespace smoke_grenade / scripts\mp\equipment\smoke_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x788
 // Size: 0xdf
 function smokegrenadegiveblindeye( position, owner, bundle )
@@ -185,7 +185,7 @@ function smokegrenadegiveblindeye( position, owner, bundle )
 }
 
 // Namespace smoke_grenade / scripts\mp\equipment\smoke_grenade
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x86f
 // Size: 0x2f9
 function smokegrenademonitorblindeyerecipients( struct, position, owner, bundle )
@@ -290,7 +290,7 @@ function smokegrenademonitorblindeyerecipients( struct, position, owner, bundle 
 }
 
 // Namespace smoke_grenade / scripts\mp\equipment\smoke_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb70
 // Size: 0x79
 function monitorsmokeactive( bundle )

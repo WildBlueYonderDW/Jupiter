@@ -14,7 +14,7 @@
 #namespace common_kiosk;
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4af
 // Size: 0x207
 function init_kiosk()
@@ -63,12 +63,12 @@ function init_kiosk()
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6be
 // Size: 0xbf
 function function_b38f5ffe645943c3( stationref )
 {
-    setdvar( @"hash_f8e5c3daa6c01012", stationref );
+    setdvar( @"br_buy_station", stationref );
     level.var_e7cee4fbb5b46ef2 = scripts\cp_mp\utility\loot::function_54b046aa3ba2678a( stationref );
     
     if ( !isdefined( level.var_6be7b375ec4a629c ) )
@@ -88,7 +88,7 @@ function function_b38f5ffe645943c3( stationref )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x785
 // Size: 0x2b
 function getallspawninstances()
@@ -103,7 +103,7 @@ function getallspawninstances()
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b9
 // Size: 0x2f
 function setspawninstances( instances )
@@ -113,7 +113,7 @@ function setspawninstances( instances )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f0
 // Size: 0x56
 function function_51f6eab92b227b84( instance )
@@ -124,9 +124,9 @@ function function_51f6eab92b227b84( instance )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x84e
-// Size: 0x81, Type: bool
+// Size: 0x98, Type: bool
 function function_3058b3e95a1bf984( instance, player )
 {
     if ( istrue( level.gameended ) )
@@ -149,6 +149,11 @@ function function_3058b3e95a1bf984( instance, player )
         return false;
     }
     
+    if ( isdefined( player ) && isdefined( player.var_e5520effcbe8bd30 ) )
+    {
+        return false;
+    }
+    
     if ( istrue( player.iscarrying ) )
     {
         player function_ced51005e26102fa( "MP/FIELD_UPGRADE_CANNOT_USE" );
@@ -159,8 +164,8 @@ function function_3058b3e95a1bf984( instance, player )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d8
+// Params 6
+// Checksum 0x0, Offset: 0x8ef
 // Size: 0x142
 function armorykioskused( instance, part, state, player, var_a5b2c541413aa895, usestring )
 {
@@ -234,8 +239,8 @@ function armorykioskused( instance, part, state, player, var_a5b2c541413aa895, u
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa22
+// Params 1
+// Checksum 0x0, Offset: 0xa39
 // Size: 0x116
 function function_d84cdb7463425ba( var_9023cea8f03e72d2 )
 {
@@ -271,8 +276,8 @@ function function_d84cdb7463425ba( var_9023cea8f03e72d2 )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb41
+// Params 0
+// Checksum 0x0, Offset: 0xb58
 // Size: 0x11
 function function_7e0281196d6407c8()
 {
@@ -280,8 +285,8 @@ function function_7e0281196d6407c8()
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5b
+// Params 0
+// Checksum 0x0, Offset: 0xb72
 // Size: 0x2aa
 function _parsepurchaseitemtables()
 {
@@ -290,13 +295,14 @@ function _parsepurchaseitemtables()
         level.var_6be7b375ec4a629c = [];
     }
     
-    var_8c0c54c9e01403ca = getdvar( @"hash_894c0b1c4e700989" );
+    var_8c0c54c9e01403ca = getdvar( @"scr_buy_station_pool" );
     
     if ( isdefined( var_8c0c54c9e01403ca ) && var_8c0c54c9e01403ca != "" )
     {
         var_3d321e8859561813 = array_randomize( strtok( var_8c0c54c9e01403ca, "," ) );
         
-        for (var_3d329ebb0d03d6db = 0; var_3d329ebb0d03d6db < var_3d321e8859561813.size; var_3d329ebb0d03d6db++) {
+        for ( var_3d329ebb0d03d6db = 0; var_3d329ebb0d03d6db < var_3d321e8859561813.size ; var_3d329ebb0d03d6db++ )
+        {
             level.var_6be7b375ec4a629c[ level.var_6be7b375ec4a629c.size ] = function_d84cdb7463425ba( var_3d321e8859561813[ var_3d329ebb0d03d6db ] );
         }
     }
@@ -308,7 +314,8 @@ function _parsepurchaseitemtables()
     level.var_989093b9a969783.items = [];
     numrows = tablelookupgetnumrows( "mp/buyStation/buyStationItems.csv" );
     
-    for (row = 0; row < numrows; row++) {
+    for ( row = 0; row < numrows ; row++ )
+    {
         itemindex = int( tablelookupbyrow( "mp/buyStation/buyStationItems.csv", row, 0 ) );
         assert( !isdefined( level.var_989093b9a969783.items[ itemindex ] ) );
         var_97642cc850f90ca0 = spawnstruct();
@@ -332,8 +339,8 @@ function _parsepurchaseitemtables()
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0d
+// Params 0
+// Checksum 0x0, Offset: 0xe24
 // Size: 0x110
 function kioskfixupproneplayers()
 {
@@ -371,8 +378,8 @@ function kioskfixupproneplayers()
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf25
+// Params 1
+// Checksum 0x0, Offset: 0xf3c
 // Size: 0x1ac
 function _runpurchasemenu( kiosk )
 {
@@ -426,8 +433,8 @@ function _runpurchasemenu( kiosk )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d9
+// Params 1
+// Checksum 0x0, Offset: 0x10f0
 // Size: 0x61
 function _watchtoautoclosemenu( kiosk )
 {
@@ -441,8 +448,8 @@ function _watchtoautoclosemenu( kiosk )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1142
+// Params 2
+// Checksum 0x0, Offset: 0x1159
 // Size: 0x38
 function function_28d837f720b03bfa( kiosk, player )
 {
@@ -452,8 +459,8 @@ function function_28d837f720b03bfa( kiosk, player )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1182
+// Params 1
+// Checksum 0x0, Offset: 0x1199
 // Size: 0x5c
 function function_ab62cd6135dfe6( kiosk )
 {
@@ -471,8 +478,8 @@ function function_ab62cd6135dfe6( kiosk )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e6
+// Params 1
+// Checksum 0x0, Offset: 0x11fd
 // Size: 0x7e
 function function_59e987d44a301ef5( kiosk )
 {
@@ -493,8 +500,8 @@ function function_59e987d44a301ef5( kiosk )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x126c
+// Params 1
+// Checksum 0x0, Offset: 0x1283
 // Size: 0x91
 function _proximitywatcher( kiosk )
 {
@@ -517,8 +524,8 @@ function _proximitywatcher( kiosk )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1305
+// Params 1
+// Checksum 0x0, Offset: 0x131c
 // Size: 0x9b
 function _closepurchasemenuwithresponse( var_97aa74c2193a9dc6 )
 {
@@ -540,8 +547,8 @@ function _closepurchasemenuwithresponse( var_97aa74c2193a9dc6 )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a8
+// Params 1
+// Checksum 0x0, Offset: 0x13bf
 // Size: 0x1c
 function _purchasemenuclosedbyclient( player )
 {
@@ -550,8 +557,8 @@ function _purchasemenuclosedbyclient( player )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13cc
+// Params 2
+// Checksum 0x0, Offset: 0x13e3
 // Size: 0xf3
 function function_65b2a9d69f873524( itemref, player )
 {
@@ -577,8 +584,8 @@ function function_65b2a9d69f873524( itemref, player )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c7
+// Params 2
+// Checksum 0x0, Offset: 0x14de
 // Size: 0xff
 function _getactualcost( player, itemdata )
 {
@@ -618,8 +625,8 @@ function _getactualcost( player, itemdata )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15cf
+// Params 2
+// Checksum 0x0, Offset: 0x15e6
 // Size: 0x57
 function _applysalesdiscount( originalprice, discount )
 {
@@ -637,8 +644,8 @@ function _applysalesdiscount( originalprice, discount )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x162f
+// Params 2
+// Checksum 0x0, Offset: 0x1646
 // Size: 0x35, Type: bool
 function iskioskfiresaleactiveforplayer( kiosk, player )
 {
@@ -651,8 +658,8 @@ function iskioskfiresaleactiveforplayer( kiosk, player )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x166d
+// Params 2
+// Checksum 0x0, Offset: 0x1684
 // Size: 0x53a
 function onarmorykioskpurchase( channel, purchaseindex )
 {
@@ -785,15 +792,16 @@ function onarmorykioskpurchase( channel, purchaseindex )
     
     if ( channel == "sell_all_valuables" )
     {
-        for (itemindex = 0; itemindex < scripts\cp_mp\loot\common_inventory::function_1b35b10884bd8d67(); itemindex++) {
+        for ( itemindex = 0; itemindex < scripts\cp_mp\loot\common_inventory::function_1b35b10884bd8d67() ; itemindex++ )
+        {
             function_8e857ffadd6d1af2( self, itemindex, 1 );
         }
     }
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1baf
+// Params 1
+// Checksum 0x0, Offset: 0x1bc6
 // Size: 0xa0
 function function_38859e49d1ac69a0( itemref )
 {
@@ -812,8 +820,8 @@ function function_38859e49d1ac69a0( itemref )
 }
 
 // Namespace common_kiosk / scripts\cp_mp\loot\common_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c57
+// Params 3
+// Checksum 0x0, Offset: 0x1c6e
 // Size: 0x263
 function function_8e857ffadd6d1af2( player, itemslotindex, sellall )
 {

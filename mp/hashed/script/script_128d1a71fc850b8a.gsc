@@ -11,7 +11,7 @@
 #namespace namespace_550d8f4896d02349;
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x299
 // Size: 0x307
 function init()
@@ -53,7 +53,8 @@ function init()
     
     level.brgametype.var_74cbed034a36dbaa = [];
     
-    for (i = 0; i < level.brgametype.var_d03527ff0e6315; i++) {
+    for ( i = 0; i < level.brgametype.var_d03527ff0e6315 ; i++ )
+    {
         racket = var_6269246106806189[ i ];
         level.brgametype.var_74cbed034a36dbaa[ level.brgametype.var_74cbed034a36dbaa.size ] = racket;
         thread function_eb74659878a99a6c( racket );
@@ -69,7 +70,7 @@ function init()
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a8
 // Size: 0x155
 function function_719e6e9e78eec15f( racket )
@@ -106,7 +107,7 @@ function function_719e6e9e78eec15f( racket )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x705
 // Size: 0x38
 function function_eb74659878a99a6c( racket )
@@ -121,7 +122,7 @@ function function_eb74659878a99a6c( racket )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x745
 // Size: 0xbc
 function function_73572d13bc47f601( racket )
@@ -140,7 +141,7 @@ function function_73572d13bc47f601( racket )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x809
 // Size: 0x70
 function function_a33799270d64c339( racket )
@@ -159,7 +160,7 @@ function function_a33799270d64c339( racket )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x882
 // Size: 0xdb
 function function_675517b7c4c0de3d( racket, number, tier )
@@ -171,7 +172,8 @@ function function_675517b7c4c0de3d( racket, number, tier )
         number = racket.guardnodes.size;
     }
     
-    for (i = 0; i < number; i++) {
+    for ( i = 0; i < number ; i++ )
+    {
         guardnode = racket.guardnodes[ 0 ];
         agent = function_e7ef87a1bf538dbc( racket, guardnode, tier );
         racket.agents[ racket.agents.size ] = agent;
@@ -180,7 +182,7 @@ function function_675517b7c4c0de3d( racket, number, tier )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x965
 // Size: 0x115
 function function_e7ef87a1bf538dbc( racket, guardnode, tier )
@@ -205,7 +207,7 @@ function function_e7ef87a1bf538dbc( racket, guardnode, tier )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa83
 // Size: 0x114
 function function_625fd0eb153c43b0( racket )
@@ -219,7 +221,8 @@ function function_625fd0eb153c43b0( racket )
         number = racket.cachenodes.size;
     }
     
-    for (i = 0; i < number; i++) {
+    for ( i = 0; i < number ; i++ )
+    {
         node = racket.cachenodes[ i ];
         roll = randomint( 100 );
         cachetype = "br_loot_cache";
@@ -235,7 +238,7 @@ function function_625fd0eb153c43b0( racket )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb9f
 // Size: 0xb1
 function function_c851837194379726( racket )
@@ -253,7 +256,7 @@ function function_c851837194379726( racket )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc58
 // Size: 0x71
 function function_d34497ae5051ab11( racket )
@@ -268,7 +271,7 @@ function function_d34497ae5051ab11( racket )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd1
 // Size: 0x36
 function function_2ccbd153c93aade1( racket )
@@ -279,7 +282,7 @@ function function_2ccbd153c93aade1( racket )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd0f
 // Size: 0x9f
 function function_3d9918f00f98b775( racket )
@@ -305,7 +308,7 @@ function function_3d9918f00f98b775( racket )
 }
 
 // Namespace namespace_550d8f4896d02349 / namespace_fc28fc5402338af6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdb6
 // Size: 0x51
 function agent_watchdeath( racket )

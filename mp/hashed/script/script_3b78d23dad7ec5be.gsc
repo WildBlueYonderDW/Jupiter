@@ -15,7 +15,7 @@ function private autoexec init()
 }
 
 // Namespace zombie_knockdown / namespace_db1ce2c035564e2c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x119
 // Size: 0x78
 function knockdown_ai( source_pos )
@@ -46,7 +46,7 @@ function knockdown_ai( source_pos )
 }
 
 // Namespace zombie_knockdown / namespace_db1ce2c035564e2c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x199
 // Size: 0x16, Type: bool
 function function_e67a89537ae7d4b7()

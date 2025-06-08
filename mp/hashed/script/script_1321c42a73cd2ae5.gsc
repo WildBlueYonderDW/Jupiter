@@ -10,7 +10,7 @@
 #namespace jup_exgm_enemy_warlord_test_jugg;
 
 // Namespace jup_exgm_enemy_warlord_test_jugg / namespace_f18581fcd98d055d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d9
 // Size: 0x1bc
 function main()
@@ -45,7 +45,7 @@ function main()
 }
 
 // Namespace jup_exgm_enemy_warlord_test_jugg / namespace_f18581fcd98d055d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39d
 // Size: 0x57
 function setup_model()
@@ -62,7 +62,7 @@ function setup_model()
 }
 
 // Namespace jup_exgm_enemy_warlord_test_jugg / namespace_f18581fcd98d055d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fc
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -71,7 +71,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_exgm_enemy_warlord_test_jugg / namespace_f18581fcd98d055d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40d
 // Size: 0xcf
 function precache()
@@ -100,7 +100,7 @@ function precache()
 }
 
 // Namespace jup_exgm_enemy_warlord_test_jugg / namespace_f18581fcd98d055d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e4
 // Size: 0xd6
 function setup_weapons()

@@ -23,7 +23,7 @@ function autoexec init()
 }
 
 // Namespace ob_season1 / scripts\mp\gametypes\ob_season1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x217
 // Size: 0x61
 function main( params )
@@ -43,7 +43,7 @@ function main( params )
 }
 
 // Namespace ob_season1 / scripts\mp\gametypes\ob_season1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x280
 // Size: 0x1d
 function register_activities( params )
@@ -52,7 +52,7 @@ function register_activities( params )
 }
 
 // Namespace ob_season1 / scripts\mp\gametypes\ob_season1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a5
 // Size: 0x1d
 function register_objectives( params )
@@ -61,7 +61,7 @@ function register_objectives( params )
 }
 
 // Namespace ob_season1 / scripts\mp\gametypes\ob_season1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ca
 // Size: 0x47
 function register_features( params )

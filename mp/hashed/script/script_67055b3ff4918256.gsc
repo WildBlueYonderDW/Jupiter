@@ -14,7 +14,7 @@
 /#
 
     // Namespace namespace_740a076c3d0a164d / namespace_b1453e6e8267c3ce
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x429
     // Size: 0x5, Type: dev
     function function_7c6822271ce8a12()
@@ -25,7 +25,7 @@
 #/
 
 // Namespace namespace_740a076c3d0a164d / namespace_b1453e6e8267c3ce
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x436
 // Size: 0x10b
 function init( manager )
@@ -46,7 +46,7 @@ function init( manager )
 }
 
 // Namespace namespace_740a076c3d0a164d / namespace_b1453e6e8267c3ce
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x549
 // Size: 0x24
 function function_2cade2c182251141( digit )
@@ -55,7 +55,7 @@ function function_2cade2c182251141( digit )
 }
 
 // Namespace namespace_740a076c3d0a164d / namespace_b1453e6e8267c3ce
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x575
 // Size: 0x1ec
 function function_3edb9b978dca8642( scriptable, value )
@@ -90,7 +90,7 @@ function function_3edb9b978dca8642( scriptable, value )
 }
 
 // Namespace namespace_740a076c3d0a164d / namespace_b1453e6e8267c3ce
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x769
 // Size: 0x118
 function function_a69dbc79d8e0c7c( var_d6bfa53c531546d6 )
@@ -117,7 +117,8 @@ function function_a69dbc79d8e0c7c( var_d6bfa53c531546d6 )
         self.active = 1;
         self.door_object setscriptablepartstate( "door", "spawned" );
         
-        for (idx = 0; idx < self.digits.size; idx++) {
+        for ( idx = 0; idx < self.digits.size ; idx++ )
+        {
             if ( istrue( self.digits[ idx ].spawned ) )
             {
                 continue;
@@ -137,7 +138,7 @@ function function_a69dbc79d8e0c7c( var_d6bfa53c531546d6 )
 }
 
 // Namespace namespace_740a076c3d0a164d / namespace_b1453e6e8267c3ce
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x889
 // Size: 0x74
 function function_4dc883726bbcee81( var_d6bfa53c531546d6 )
@@ -187,7 +188,8 @@ function private function_b62de3e2fa216219()
     self.active = 0;
     self.door_object setscriptablepartstate( "door", "disappear" );
     
-    for (idx = 0; idx < self.digits.size; idx++) {
+    for ( idx = 0; idx < self.digits.size ; idx++ )
+    {
         self.digits[ idx ] namespace_26e60c953dc40f2c::digit_activate( 0 );
         wait 0.1;
     }

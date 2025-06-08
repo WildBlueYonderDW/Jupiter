@@ -1,7 +1,7 @@
 #namespace hud;
 
 // Namespace hud / scripts\mp\hud
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfb
 // Size: 0x1c1
 function init()
@@ -37,7 +37,7 @@ function init()
 }
 
 // Namespace hud / scripts\mp\hud
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c4
 // Size: 0x6e
 function fontpulseinit( maxfontscale )
@@ -58,7 +58,7 @@ function fontpulseinit( maxfontscale )
 }
 
 // Namespace hud / scripts\mp\hud
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33a
 // Size: 0x96
 function fontpulse( player )

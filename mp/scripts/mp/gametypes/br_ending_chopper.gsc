@@ -7,7 +7,7 @@
 #namespace br_ending_chopper;
 
 // Namespace br_ending_chopper / scripts\mp\gametypes\br_ending_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x101c
 // Size: 0x9
 function function_e04bd99e1bb6430b()
@@ -16,7 +16,7 @@ function function_e04bd99e1bb6430b()
 }
 
 // Namespace br_ending_chopper / scripts\mp\gametypes\br_ending_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x102d
 // Size: 0xed0
 function chopperexfil_pack( var_cbfc3ba10cefc8ce )
@@ -34,7 +34,8 @@ function chopperexfil_pack( var_cbfc3ba10cefc8ce )
         loadinfiltransient( self.transientname );
         setomnvarforallclients( "ui_br_end_game_splash_type", 18 );
         
-        for (var_24b79087f3897e94 = 0; !var_24b79087f3897e94; var_24b79087f3897e94 = function_2030cc4ad67d1634( self.transientname )) {
+        for ( var_24b79087f3897e94 = 0; !var_24b79087f3897e94 ; var_24b79087f3897e94 = function_2030cc4ad67d1634( self.transientname ) )
+        {
             waitframe();
         }
     }
@@ -202,7 +203,7 @@ function chopperexfil_pack( var_cbfc3ba10cefc8ce )
 }
 
 // Namespace br_ending_chopper / scripts\mp\gametypes\br_ending_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f05
 // Size: 0x2e4
 function function_a5538b1593309bb0()
@@ -265,7 +266,7 @@ function private chopperexfil_introsound( time, var_cbfc3ba10cefc8ce )
 }
 
 // Namespace br_ending_chopper / scripts\mp\gametypes\br_ending_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22de
 // Size: 0x12c
 function get_chopperexfil_transient()
@@ -307,7 +308,7 @@ function get_chopperexfil_transient()
 }
 
 // Namespace br_ending_chopper / scripts\mp\gametypes\br_ending_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2413
 // Size: 0x183
 function chopperexfil_music_start()
@@ -635,7 +636,7 @@ function private chopperexfil_sh070_start( array )
 }
 
 // Namespace br_ending_chopper / scripts\mp\gametypes\br_ending_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f39
 // Size: 0x63
 function chopperexfil_sitting_wind( players )
@@ -698,7 +699,7 @@ function private chopperexfil_slamtoblack( ent )
 }
 
 // Namespace br_ending_chopper / scripts\mp\gametypes\br_ending_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x306d
 // Size: 0x26
 function chopper_playfx()

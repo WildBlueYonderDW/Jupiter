@@ -17,7 +17,7 @@
 #namespace namespace_9271e2e508a17556;
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2de
 // Size: 0x420
 function function_80d68c9701e1aea5( data )
@@ -32,7 +32,8 @@ function function_80d68c9701e1aea5( data )
     level.var_51f143645abc8911 = [];
     potentialnodes = [];
     
-    for (i = 0; i < 60; i++) {
+    for ( i = 0; i < 60 ; i++ )
+    {
         pos = ( randomfloatrange( -40000, 40000 ), randomfloatrange( -40000, 40000 ), 0 );
         z = getclosestpointonnavmesh( getgroundposition( pos, 15, 10000, 10000 ) );
         struct = spawnstruct();
@@ -51,7 +52,8 @@ function function_80d68c9701e1aea5( data )
         node.taken = 1;
         node.nodes = [];
         
-        for (i = 0; i < level.supplyprops.numcaches - 1; i++) {
+        for ( i = 0; i < level.supplyprops.numcaches - 1 ; i++ )
+        {
             foreach ( othernode in potentialnodes )
             {
                 if ( istrue( othernode.taken ) )
@@ -90,7 +92,7 @@ function function_80d68c9701e1aea5( data )
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x706
 // Size: 0xec
 function function_f641a4efd6f76f39( activity, node )
@@ -109,7 +111,7 @@ function function_f641a4efd6f76f39( activity, node )
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7fb
 // Size: 0x188
 function function_fa794f583171a19e()
@@ -134,7 +136,7 @@ function function_fa794f583171a19e()
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x98b
 // Size: 0xb
 function function_1db1eaa131875c8c( player )
@@ -143,7 +145,7 @@ function function_1db1eaa131875c8c( player )
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x99e
 // Size: 0x1b
 function function_5c452f9fb09a22cf( player )
@@ -153,7 +155,7 @@ function function_5c452f9fb09a22cf( player )
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9c1
 // Size: 0x119
 function function_651ec6d76d0e7cd5( teamname )
@@ -176,7 +178,7 @@ function function_651ec6d76d0e7cd5( teamname )
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae2
 // Size: 0xb
 function function_acf1fc6fec698927( teamname )
@@ -185,7 +187,7 @@ function function_acf1fc6fec698927( teamname )
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf5
 // Size: 0x3b
 function function_20d0c1b71a58edee( teamname )
@@ -197,7 +199,7 @@ function function_20d0c1b71a58edee( teamname )
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb38
 // Size: 0x14
 function function_8250fd658e3aae32()
@@ -219,7 +221,7 @@ function private function_aaf82d7c71b92a61( teamname )
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xb95
 // Size: 0x19b
 function function_e63f55869e4d74ed( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -302,7 +304,7 @@ function private function_d8352a33e10df5a8( instance, player )
 }
 
 // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf4e
 // Size: 0x19a
 function function_79057fbcbf8eed31()
@@ -351,7 +353,7 @@ function function_79057fbcbf8eed31()
 /#
 
     // Namespace namespace_9271e2e508a17556 / namespace_20374f100d8c4183
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x10f0
     // Size: 0x2f, Type: dev
     function function_b9a9ef982e2d12a1()

@@ -6,7 +6,7 @@
 #namespace notetrack;
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x348
 // Size: 0xb
 function function_11f8c6d6f5ba948()
@@ -15,7 +15,7 @@ function function_11f8c6d6f5ba948()
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35b
 // Size: 0x96
 function agent_notetrack_redirect( guy, msg )
@@ -40,7 +40,7 @@ function agent_notetrack_redirect( guy, msg )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3f9
 // Size: 0x4a
 function start_notetrack_wait( guy, anim_string, anime, animname, animation, var_173bdb8ba434651d )
@@ -50,7 +50,7 @@ function start_notetrack_wait( guy, anim_string, anime, animname, animation, var
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x44b
 // Size: 0x399
 function notetrack_wait( guy, msg, tag_entity, anime, animname_override, animation, var_173bdb8ba434651d )
@@ -172,7 +172,7 @@ function notetrack_wait( guy, msg, tag_entity, anime, animname_override, animati
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ec
 // Size: 0xa
 function function_e2bc0c9e826cf659()
@@ -181,7 +181,7 @@ function function_e2bc0c9e826cf659()
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7fe
 // Size: 0xae
 function function_392d5e426b4896d2()
@@ -214,7 +214,7 @@ function function_392d5e426b4896d2()
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x8b4
 // Size: 0x190
 function notetrack_handler( guy, anime, notetrack, animname, scripted_notetracks, tag_owner, var_966821fc90c3ca9d )
@@ -257,7 +257,7 @@ function notetrack_handler( guy, anime, notetrack, animname, scripted_notetracks
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa4c
 // Size: 0x2eb
 function anim_handle_notetrack( scr_notetrack, guy, var_966821fc90c3ca9d, tag_owner )
@@ -371,7 +371,7 @@ function anim_handle_notetrack( scr_notetrack, guy, var_966821fc90c3ca9d, tag_ow
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd3f
 // Size: 0xd0
 function anim_addmodel( guy, array )
@@ -389,7 +389,7 @@ function anim_addmodel( guy, array )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe17
 // Size: 0x11b
 function anim_removemodel( guy, array )
@@ -401,7 +401,8 @@ function anim_removemodel( guy, array )
         }
     #/
     
-    for (i = 0; i < guy.scriptmodel.size; i++) {
+    for ( i = 0; i < guy.scriptmodel.size ; i++ )
+    {
         if ( isdefined( array[ "explosion" ] ) )
         {
             forward = anglestoforward( guy.scriptmodel[ i ].angles );
@@ -416,7 +417,7 @@ function anim_removemodel( guy, array )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf3a
 // Size: 0x66
 function notetrack_effect( guy, scr_notetrack )
@@ -437,7 +438,7 @@ function notetrack_effect( guy, scr_notetrack )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfa8
 // Size: 0x15
 function trace_part_for_efx_cancel( part )
@@ -446,7 +447,7 @@ function trace_part_for_efx_cancel( part )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xfc5
 // Size: 0x188
 function trace_part_for_efx( part, effect, water_effect, delete_depth )
@@ -498,7 +499,7 @@ function trace_part_for_efx( part, effect, water_effect, delete_depth )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1155
 // Size: 0x3a
 function hidepartatdepth( depth, part )
@@ -514,7 +515,7 @@ function hidepartatdepth( depth, part )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1197
 // Size: 0x382
 function test_trace_tag( struct )
@@ -613,7 +614,7 @@ function test_trace_tag( struct )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1521
 // Size: 0x21
 function _add_z( vec, zplus )
@@ -622,7 +623,7 @@ function _add_z( vec, zplus )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x154b
 // Size: 0x11e
 function validatenotetracks( flagname, notes, animation )
@@ -637,10 +638,12 @@ function validatenotetracks( flagname, notes, animation )
             assertex( notes.size <= 4, "<dev string:xb6>" + notes.size + "<dev string:x119>" + flagname + "<dev string:x16d>" );
         }
         
-        for (i = 0; i < notes.size; i++) {
+        for ( i = 0; i < notes.size ; i++ )
+        {
             found = 0;
             
-            for (j = i + 1; j < notes.size; j++) {
+            for ( j = i + 1; j < notes.size ; j++ )
+            {
                 if ( notes[ i ] == notes[ j ] )
                 {
                     found = 1;
@@ -667,7 +670,7 @@ function validatenotetracks( flagname, notes, animation )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1671
 // Size: 0x97
 function printnotetracks( notes )
@@ -680,7 +683,8 @@ function printnotetracks( notes )
         
         msg = notes[ 0 ];
         
-        for (i = 1; i < notes.size; i++) {
+        for ( i = 1; i < notes.size ; i++ )
+        {
             msg += "<dev string:x1f4>" + notes[ i ];
         }
         
@@ -689,7 +693,7 @@ function printnotetracks( notes )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1710
 // Size: 0x8b
 function animsound_start_tracker( anime, animname )
@@ -710,7 +714,7 @@ function animsound_start_tracker( anime, animname )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17a3
 // Size: 0x98
 function animsound_start_tracker_loop( anime, loop, animname )
@@ -732,7 +736,7 @@ function animsound_start_tracker_loop( anime, loop, animname )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1843
 // Size: 0x96
 function animsound_tracker( anime, notetrack, animname )
@@ -759,7 +763,7 @@ function animsound_tracker( anime, notetrack, animname )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18e1
 // Size: 0xb7, Type: bool
 function animsound_exists( anime, notetrack )
@@ -767,7 +771,8 @@ function animsound_exists( anime, notetrack )
     notetrack = tolower( notetrack );
     keys = getarraykeys( self.animsounds );
     
-    for (i = 0; i < keys.size; i++) {
+    for ( i = 0; i < keys.size ; i++ )
+    {
         key = keys[ i ];
         
         if ( self.animsounds[ key ].anime != anime )
@@ -788,12 +793,13 @@ function animsound_exists( anime, notetrack )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19a1
 // Size: 0xef
 function add_animsound( newsound )
 {
-    for (i = 0; i < level.animsound_hudlimit; i++) {
+    for ( i = 0; i < level.animsound_hudlimit ; i++ )
+    {
         if ( isdefined( self.animsounds[ i ] ) )
         {
             continue;
@@ -807,7 +813,8 @@ function add_animsound( newsound )
     index = keys[ 0 ];
     timer = self.animsounds[ index ].end_time;
     
-    for (i = 1; i < keys.size; i++) {
+    for ( i = 1; i < keys.size ; i++ )
+    {
         key = keys[ i ];
         
         if ( self.animsounds[ key ].end_time < timer )
@@ -821,7 +828,7 @@ function add_animsound( newsound )
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a98
 // Size: 0x77
 function add_to_animsound()
@@ -833,7 +840,8 @@ function add_to_animsound()
     
     isinarray = 0;
     
-    for (i = 0; i < level.animsounds.size; i++) {
+    for ( i = 0; i < level.animsounds.size ; i++ )
+    {
         if ( self == level.animsounds[ i ] )
         {
             isinarray = 1;
@@ -848,7 +856,7 @@ function add_to_animsound()
 }
 
 // Namespace notetrack / scripts\common\notetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b17
 // Size: 0xa7
 function function_9ce792d127499205()

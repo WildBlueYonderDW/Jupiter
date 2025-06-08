@@ -5,7 +5,7 @@
 #namespace namespace_702fb5f6d0e65edf;
 
 // Namespace namespace_702fb5f6d0e65edf / namespace_b09d1ea3e62b8710
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112
 // Size: 0x70
 function init()
@@ -20,7 +20,7 @@ function init()
 }
 
 // Namespace namespace_702fb5f6d0e65edf / namespace_b09d1ea3e62b8710
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18a
 // Size: 0x41
 function rewardassistpoints()
@@ -30,7 +30,7 @@ function rewardassistpoints()
 }
 
 // Namespace namespace_702fb5f6d0e65edf / namespace_b09d1ea3e62b8710
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d3
 // Size: 0x41
 function function_c3dfa7a42967be85()
@@ -40,7 +40,7 @@ function function_c3dfa7a42967be85()
 }
 
 // Namespace namespace_702fb5f6d0e65edf / namespace_b09d1ea3e62b8710
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21c
 // Size: 0xae
 function setkillstreakpoints( var_6ab5606da9634c9a )
@@ -73,7 +73,7 @@ function setkillstreakpoints( var_6ab5606da9634c9a )
 }
 
 // Namespace namespace_702fb5f6d0e65edf / namespace_b09d1ea3e62b8710
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x32
 function onplayerspawned()
@@ -88,7 +88,7 @@ function onplayerspawned()
 }
 
 // Namespace namespace_702fb5f6d0e65edf / namespace_b09d1ea3e62b8710
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30d
 // Size: 0x22
 function onplayerdeath( params )

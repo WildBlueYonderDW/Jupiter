@@ -7,7 +7,7 @@
 #namespace namespace_8774b67219227679;
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb
 // Size: 0x9
 function init()
@@ -16,7 +16,7 @@ function init()
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc
 // Size: 0xa5
 function function_7bf95013c0b101c8()
@@ -40,7 +40,7 @@ function function_7bf95013c0b101c8()
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18a
 // Size: 0x120
 function function_7e0fb3d81ab13495()
@@ -62,7 +62,8 @@ function function_7e0fb3d81ab13495()
     level.var_de8fabd95ccbd2f = [];
     level.var_d856da568e5992c0 = [];
     
-    for (achievementindex = 0; achievementindex < var_e2e97a737d97f20b; achievementindex++) {
+    for ( achievementindex = 0; achievementindex < var_e2e97a737d97f20b ; achievementindex++ )
+    {
         achievement_id = tablelookupbyrow( "ae/ae_personal_bests.csv", achievementindex, var_a6521f8c3fdde3ce );
         level.var_de8fabd95ccbd2f[ achievementindex ] = achievement_id;
         target_ids = [];
@@ -71,7 +72,8 @@ function function_7e0fb3d81ab13495()
             logstring( "<dev string:x1c>" + achievement_id );
         #/
         
-        for (targetindex = 1; targetindex <= 10; targetindex++) {
+        for ( targetindex = 1; targetindex <= 10 ; targetindex++ )
+        {
             target_id = tablelookupbyrow( "ae/ae_personal_bests.csv", achievementindex, targetindex );
             
             if ( !isdefined( target_id ) || target_id == 0 )
@@ -91,7 +93,7 @@ function function_7e0fb3d81ab13495()
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b2
 // Size: 0x163
 function function_c24d9aca5f9eba35()
@@ -126,7 +128,8 @@ function function_c24d9aca5f9eba35()
         
         var_ab63741a5a3bda4c = tablelookuprownum( "ae/ae_personal_bests.csv", var_a6521f8c3fdde3ce, achievement );
         
-        for (targetindex = 1; targetindex <= 10; targetindex++) {
+        for ( targetindex = 1; targetindex <= 10 ; targetindex++ )
+        {
             target_id = tablelookupbyrow( "ae/ae_personal_bests.csv", var_ab63741a5a3bda4c, targetindex );
             
             if ( !isdefined( target_id ) || target_id == 0 )
@@ -141,7 +144,7 @@ function function_c24d9aca5f9eba35()
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41d
 // Size: 0xcc
 function function_4b12e9b5e37d05c2( achievementid, progressdata )
@@ -169,7 +172,7 @@ function function_4b12e9b5e37d05c2( achievementid, progressdata )
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f1
 // Size: 0x25
 function function_66a24c548ba8c8ac( progressname )
@@ -179,7 +182,7 @@ function function_66a24c548ba8c8ac( progressname )
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51f
 // Size: 0xae
 function function_e31138cb546a1f22( progressid )
@@ -209,7 +212,7 @@ function function_e31138cb546a1f22( progressid )
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d6
 // Size: 0x40
 function function_cfab25659633eefc( player, progressname )
@@ -220,7 +223,7 @@ function function_cfab25659633eefc( player, progressname )
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x61f
 // Size: 0x44
 function function_2813a0563ed5efa5( player, progressid, achievementid )
@@ -237,7 +240,7 @@ function function_2813a0563ed5efa5( player, progressid, achievementid )
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x66c
 // Size: 0x40
 function function_23e202899daef423( players, progressname )
@@ -248,7 +251,7 @@ function function_23e202899daef423( players, progressname )
 }
 
 // Namespace namespace_8774b67219227679 / namespace_8885c19c053dcb46
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6b5
 // Size: 0xa1
 function function_c74c0ac757347d36( players, progressid, achievementid )

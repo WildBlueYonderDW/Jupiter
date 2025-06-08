@@ -9,7 +9,7 @@
 #namespace namespace_bebd6cb802693d5;
 
 // Namespace namespace_bebd6cb802693d5 / namespace_4d3c0289243b34f8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bf
 // Size: 0x4d
 function function_efcef5f4202ca985()
@@ -19,7 +19,7 @@ function function_efcef5f4202ca985()
 }
 
 // Namespace namespace_bebd6cb802693d5 / namespace_4d3c0289243b34f8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x214
 // Size: 0x92
 function function_5c2396a10a0c5296( powerstruct, powerref )
@@ -52,7 +52,7 @@ function function_5c2396a10a0c5296( powerstruct, powerref )
 }
 
 // Namespace namespace_bebd6cb802693d5 / namespace_4d3c0289243b34f8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ae
 // Size: 0x1b6
 function function_747fdce9aa07ad2b( powerstruct, powerref )

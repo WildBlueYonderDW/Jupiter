@@ -6,7 +6,7 @@
 #namespace loot_spawner;
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x235
 // Size: 0x4b
 function init()
@@ -22,7 +22,7 @@ function init()
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x288
 // Size: 0x135
 function initdvars()
@@ -45,7 +45,7 @@ function initdvars()
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3c5
 // Size: 0x83
 function function_8cd7f4939fad286d( key, loottable )
@@ -66,7 +66,7 @@ function function_8cd7f4939fad286d( key, loottable )
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x450
 // Size: 0x52
 function function_7b8ccedb73cc8fd3( var_d974cc8b12dcba2f, var_b3067c4046466191 )
@@ -83,7 +83,7 @@ function function_7b8ccedb73cc8fd3( var_d974cc8b12dcba2f, var_b3067c4046466191 )
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4aa
 // Size: 0xb2
 function function_ef51288f40f95d1b( key, itemid, spawnratio )
@@ -106,7 +106,7 @@ function function_ef51288f40f95d1b( key, itemid, spawnratio )
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x564
 // Size: 0xc3
 function function_26022cd17e1904ce( key, itemid )
@@ -129,7 +129,7 @@ function function_26022cd17e1904ce( key, itemid )
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x62f
 // Size: 0x2b
 function function_b3d3903f8130fff7( key )
@@ -143,7 +143,7 @@ function function_b3d3903f8130fff7( key )
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x663
 // Size: 0x25
 function function_d9ef8d5dab99814c( key )
@@ -152,7 +152,7 @@ function function_d9ef8d5dab99814c( key )
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x691
 // Size: 0x27e
 function function_889a4446bb24ec16( var_bab91ec21655f39c, position, spawncount, spawnvfx, args )
@@ -176,7 +176,8 @@ function function_889a4446bb24ec16( var_bab91ec21655f39c, position, spawncount, 
         playfx( getfx( "vfx_golden_loot_explosion_flare" ), position );
     }
     
-    for (i = 0; i < spawncount; i++) {
+    for ( i = 0; i < spawncount ; i++ )
+    {
         random_value = randomfloat( 1 );
         
         foreach ( key, entry in loot_table )
@@ -238,7 +239,7 @@ function function_889a4446bb24ec16( var_bab91ec21655f39c, position, spawncount, 
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x917
 // Size: 0x3c, Type: bool
 function function_53b4df89c7012e9a( key )
@@ -253,7 +254,7 @@ function function_53b4df89c7012e9a( key )
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x95c
 // Size: 0xb9
 function spawnloot( lootinfo )
@@ -267,7 +268,7 @@ function spawnloot( lootinfo )
 }
 
 // Namespace loot_spawner / namespace_5ec5215ed7483164
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa1d
 // Size: 0x194
 function function_7d7a712ef3b127ea( var_ccf10def4015e022, loot_table )

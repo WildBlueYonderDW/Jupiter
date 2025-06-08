@@ -4,7 +4,7 @@
 #namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs;
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3da
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x44f
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4be
 // Size: 0x8bc
 function createstructs( fe, us, cf )
@@ -179,7 +179,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd82
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -188,7 +188,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd8c
 // Size: 0xe
 function cleanup()
@@ -197,7 +197,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xda2
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -212,7 +212,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe14
 // Size: 0xce
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -246,7 +246,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xeea
 // Size: 0x280
 function function_4ebdf78c6accdfce( fe, us, cf )
@@ -273,7 +273,7 @@ function function_4ebdf78c6accdfce( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1172
 // Size: 0x970
 function function_9aba773c4694cc11( fe, us, cf )
@@ -367,7 +367,7 @@ function function_9aba773c4694cc11( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1aea
 // Size: 0x970
 function function_f8945d85638bf6cd( fe, us, cf )
@@ -461,7 +461,7 @@ function function_f8945d85638bf6cd( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2462
 // Size: 0x970
 function function_e16189c6b7546f79( fe, us, cf )
@@ -555,7 +555,7 @@ function function_e16189c6b7546f79( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2dda
 // Size: 0xa5e
 function function_f2d1647cd27070ae( fe, us, cf )
@@ -657,7 +657,7 @@ function function_f2d1647cd27070ae( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3840
 // Size: 0x1006
 function function_b7d3d84c51e7e1f( fe, us, cf )
@@ -820,7 +820,7 @@ function function_b7d3d84c51e7e1f( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_lowtown_aethernest_cs / namespace_de604a96ca328533
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x484e
 // Size: 0x504
 function function_6da2952367672ac0()

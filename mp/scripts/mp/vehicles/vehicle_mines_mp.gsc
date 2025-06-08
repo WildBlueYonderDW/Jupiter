@@ -5,7 +5,7 @@
 #namespace vehicle_mines_mp;
 
 // Namespace vehicle_mines_mp / scripts\mp\vehicles\vehicle_mines_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb
 // Size: 0x18
 function vehicle_mines_mp_init()
@@ -14,7 +14,7 @@ function vehicle_mines_mp_init()
 }
 
 // Namespace vehicle_mines_mp / scripts\mp\vehicles\vehicle_mines_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdb
 // Size: 0x13
 function vehicle_mines_mp_minetrigger( vehicle, mine )

@@ -1,7 +1,7 @@
 #namespace namespace_36ca8e067ac8d11c;
 
 // Namespace namespace_36ca8e067ac8d11c / namespace_9925758f6cac1b5c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc6
 // Size: 0x42
 function function_79f476ea258c486d( asmname, statename, params )

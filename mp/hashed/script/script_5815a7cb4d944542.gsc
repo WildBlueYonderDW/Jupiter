@@ -11,7 +11,7 @@
 #namespace activity_rewards;
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x19e
 // Size: 0x104
 function function_49f447d3531edf7e( activityinstance, activitymoment, var_8436ec5bdd7c457d, var_e0a0dc78cd0e70f3, var_44fadde66021a763 )
@@ -40,7 +40,7 @@ function function_49f447d3531edf7e( activityinstance, activitymoment, var_8436ec
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2aa
 // Size: 0xfd
 function function_efd24b6185b08515( activityinstance, var_40bdc956443135c6, var_e0a0dc78cd0e70f3, var_3c99a2a84c4b850f )
@@ -60,7 +60,7 @@ function function_efd24b6185b08515( activityinstance, var_40bdc956443135c6, var_
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3af
 // Size: 0x50
 function function_8fdd18e047a23b6a( activityinstance, rewardgrouptype, perplayerloot )
@@ -72,7 +72,7 @@ function function_8fdd18e047a23b6a( activityinstance, rewardgrouptype, perplayer
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x408
 // Size: 0x40
 function function_ca5f5e4bcc7eeb6b( activityinstance, var_40bdc956443135c6 )
@@ -83,7 +83,7 @@ function function_ca5f5e4bcc7eeb6b( activityinstance, var_40bdc956443135c6 )
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x451
 // Size: 0xda
 function function_7af151bd42e8132d( activityinstance, var_2b5aa40272b0bbce )
@@ -118,7 +118,7 @@ function function_7af151bd42e8132d( activityinstance, var_2b5aa40272b0bbce )
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x534
 // Size: 0x2e
 function function_b62ec8e6a3683859( activityinstance, var_40bdc956443135c6 )
@@ -128,7 +128,7 @@ function function_b62ec8e6a3683859( activityinstance, var_40bdc956443135c6 )
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x56b
 // Size: 0x16
 function function_885b8eee6652a555( argstruct )
@@ -137,7 +137,7 @@ function function_885b8eee6652a555( argstruct )
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x589
 // Size: 0x21
 function function_a524fa56ca65ce48( argsstruct )
@@ -208,7 +208,7 @@ function private function_91913c72212591e4( var_44fadde66021a763, var_2b3da9e0b7
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7b2
 // Size: 0x41
 function function_488dc16c77130e3e( var_9ff035d5fc0b423c, var_695aa6b24855b76d, rewardcaches )
@@ -229,7 +229,7 @@ function private function_bb5549431bc6e2db( var_ed118e6dd8c246 )
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x85b
 // Size: 0x88
 function function_d8812f59f918bbc( var_6f8af5eb76deac21 )
@@ -296,7 +296,7 @@ function private function_eb4ddda3cbeb99b1( activityinstance, rewardgrouptype )
 }
 
 // Namespace activity_rewards / namespace_48e03aa61a98f61c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa48
 // Size: 0x3a, Type: bool
 function function_1edea59f189f9a02( activityinstance, activitymoment, var_8436ec5bdd7c457d )

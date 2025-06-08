@@ -81,7 +81,7 @@
 #namespace pmc_missions;
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5116
 // Size: 0xac
 function pmc_init()
@@ -104,7 +104,7 @@ function pmc_init()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51ca
 // Size: 0x1b2
 function cleanup()
@@ -323,7 +323,7 @@ function private function_11adb36b4aa3e03b( missionid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cce
 // Size: 0x3c
 function function_16ae6d8b5f25f31b( challengeref )
@@ -339,7 +339,7 @@ function function_16ae6d8b5f25f31b( challengeref )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d13
 // Size: 0x197
 function function_d57e0f306b88dd37()
@@ -378,7 +378,7 @@ function function_d57e0f306b88dd37()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5eb2
 // Size: 0x95
 function function_46bfece294c56645( challengeref, itemlist, identifier )
@@ -400,7 +400,7 @@ function function_46bfece294c56645( challengeref, itemlist, identifier )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5f4f
 // Size: 0x156
 function function_d5394a20735bc2f1( struct, item, identifier, collectitem, modeloverride )
@@ -427,7 +427,7 @@ function function_d5394a20735bc2f1( struct, item, identifier, collectitem, model
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60ae
 // Size: 0x8c
 function function_5c280a977f39790e( struct )
@@ -444,7 +444,7 @@ function function_5c280a977f39790e( struct )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x6143
 // Size: 0xa3
 function function_5fb061ad407e6e6c( script_noteworthy, item, identifier, collectitem, modeloverride )
@@ -461,7 +461,7 @@ function function_5fb061ad407e6e6c( script_noteworthy, item, identifier, collect
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61ee
 // Size: 0x241
 function function_2537e0b46ae9a7f1()
@@ -499,7 +499,7 @@ function function_2537e0b46ae9a7f1()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x6437
 // Size: 0x273
 function function_c335cf2377039ba5( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -568,7 +568,7 @@ function function_c335cf2377039ba5( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66b2
 // Size: 0x33e
 function function_fabd5665eee8cc3a()
@@ -649,12 +649,13 @@ function function_fabd5665eee8cc3a()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69f8
 // Size: 0x124
 function function_e634010f11d249eb( player )
 {
-    for (missionindex = 0; missionindex < 1; missionindex++) {
+    for ( missionindex = 0; missionindex < 1 ; missionindex++ )
+    {
         id = function_47f721114fed37e7( player, missionindex );
         
         if ( id > 0 && isdefined( level.pmcmissions.missiondata[ id ] ) )
@@ -692,7 +693,7 @@ function function_e634010f11d249eb( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b24
 // Size: 0x24
 function function_b0ca76f04ad0e0c3( player )
@@ -704,7 +705,7 @@ function function_b0ca76f04ad0e0c3( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b50
 // Size: 0xc0
 function function_44d9a690ed5b6e76()
@@ -721,7 +722,7 @@ function function_44d9a690ed5b6e76()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c18
 // Size: 0x109
 function function_6d402ea224e021c2( sparams )
@@ -736,7 +737,7 @@ function function_6d402ea224e021c2( sparams )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d29
 // Size: 0x30
 function function_cff2f4f168b29b81()
@@ -750,7 +751,7 @@ function function_cff2f4f168b29b81()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d62
 // Size: 0x6e
 function function_545dc7a8e9dc2b05()
@@ -766,7 +767,7 @@ function function_545dc7a8e9dc2b05()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6dd9
 // Size: 0x48
 function function_47f721114fed37e7( player, missionindex )
@@ -781,7 +782,7 @@ function function_47f721114fed37e7( player, missionindex )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6e2a
 // Size: 0x51
 function function_7159ceb842152778( player, missionindex, childindex )
@@ -796,14 +797,15 @@ function function_7159ceb842152778( player, missionindex, childindex )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e84
 // Size: 0x3e
 function function_31b54d12c6b13a7c( player )
 {
     challenges = [];
     
-    for (missionindex = 0; missionindex < 1; missionindex++) {
+    for ( missionindex = 0; missionindex < 1 ; missionindex++ )
+    {
         challenges[ challenges.size ] = function_47f721114fed37e7( player, missionindex );
     }
     
@@ -811,7 +813,7 @@ function function_31b54d12c6b13a7c( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ecb
 // Size: 0x98
 function function_850c980cd2929d25( player, missionindex )
@@ -824,7 +826,8 @@ function function_850c980cd2929d25( player, missionindex )
         {
             player.var_c2cb671fe02fa346 = [];
             
-            for (index = 0; index < 1; index++) {
+            for ( index = 0; index < 1 ; index++ )
+            {
                 player.var_c2cb671fe02fa346[ index ] = function_47f721114fed37e7( player, index );
             }
         }
@@ -839,7 +842,7 @@ function function_850c980cd2929d25( player, missionindex )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6f6c
 // Size: 0x106, Type: bool
 function function_c7d3c1cb4a3958cf( player, challengeid )
@@ -856,7 +859,8 @@ function function_c7d3c1cb4a3958cf( player, challengeid )
         return false;
     }
     
-    for (missionindex = 0; missionindex < 1; missionindex++) {
+    for ( missionindex = 0; missionindex < 1 ; missionindex++ )
+    {
         challenge = function_850c980cd2929d25( player, missionindex );
         
         if ( isdefined( challenge ) && challenge > 0 && challenge == challengeid )
@@ -870,7 +874,8 @@ function function_c7d3c1cb4a3958cf( player, challengeid )
             
             if ( isdefined( challengedata ) && isarray( challengedata.children ) )
             {
-                for (childindex = 0; childindex < challengedata.children.size; childindex++) {
+                for ( childindex = 0; childindex < challengedata.children.size ; childindex++ )
+                {
                     child = challengedata.children[ childindex ];
                     
                     if ( isdefined( child ) && child == challengeid )
@@ -886,7 +891,7 @@ function function_c7d3c1cb4a3958cf( player, challengeid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x707b
 // Size: 0x136, Type: bool
 function function_62b41959b3c5a9ca( player, challengeid )
@@ -903,7 +908,8 @@ function function_62b41959b3c5a9ca( player, challengeid )
         return false;
     }
     
-    for (missionindex = 0; missionindex < 1; missionindex++) {
+    for ( missionindex = 0; missionindex < 1 ; missionindex++ )
+    {
         challenge = function_850c980cd2929d25( player, missionindex );
         
         if ( !isdefined( challenge ) || challenge <= 0 )
@@ -917,7 +923,8 @@ function function_62b41959b3c5a9ca( player, challengeid )
         {
             if ( isdefined( parentdata.children ) )
             {
-                for (childindex = 0; childindex < parentdata.children.size; childindex++) {
+                for ( childindex = 0; childindex < parentdata.children.size ; childindex++ )
+                {
                     child = parentdata.children[ childindex ];
                     
                     if ( isdefined( child ) && child == challengeid )
@@ -939,7 +946,7 @@ function function_62b41959b3c5a9ca( player, challengeid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x71ba
 // Size: 0x11b
 function function_ff53d8b600dbc74( player, challengeid )
@@ -956,7 +963,8 @@ function function_ff53d8b600dbc74( player, challengeid )
         return undefined;
     }
     
-    for (missionindex = 0; missionindex < 1; missionindex++) {
+    for ( missionindex = 0; missionindex < 1 ; missionindex++ )
+    {
         challenge = function_850c980cd2929d25( player, missionindex );
         
         if ( !isdefined( challenge ) || challenge <= 0 )
@@ -970,7 +978,8 @@ function function_ff53d8b600dbc74( player, challengeid )
         {
             if ( isdefined( parentdata.children ) )
             {
-                for (childindex = 0; childindex < parentdata.children.size; childindex++) {
+                for ( childindex = 0; childindex < parentdata.children.size ; childindex++ )
+                {
                     child = parentdata.children[ childindex ];
                     
                     if ( isdefined( child ) && child == challengeid )
@@ -987,7 +996,7 @@ function function_ff53d8b600dbc74( player, challengeid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x72de
 // Size: 0x91, Type: bool
 function function_c5e0bac8f123cc88( team, challengeid )
@@ -1011,7 +1020,7 @@ function function_c5e0bac8f123cc88( team, challengeid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7378
 // Size: 0x9a
 function function_4e577d33450caee4( challengeid )
@@ -1035,7 +1044,7 @@ function function_4e577d33450caee4( challengeid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x741b
 // Size: 0xab
 function function_ab5c0b42f31a0d20( missionid )
@@ -1057,7 +1066,7 @@ function function_ab5c0b42f31a0d20( missionid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x74ce
 // Size: 0x5b
 function function_ef63cdebaaff3440()
@@ -1072,7 +1081,7 @@ function function_ef63cdebaaff3440()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7531
 // Size: 0xd8
 function createprogressbar( icon, offset, team )
@@ -1108,7 +1117,7 @@ function createprogressbar( icon, offset, team )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7612
 // Size: 0x55
 function function_280edf3f47535ae9( name, key, type, var_1fbc3549649926b6 )
@@ -1125,7 +1134,7 @@ function function_280edf3f47535ae9( name, key, type, var_1fbc3549649926b6 )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x766f
 // Size: 0x83
 function function_89a7111bd154e223( name, key, var_bb7537f2ccd47382, var_1fbc3549649926b6 )
@@ -1142,7 +1151,7 @@ function function_89a7111bd154e223( name, key, var_bb7537f2ccd47382, var_1fbc354
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x76fa
 // Size: 0xcd
 function watchplayertrigger( trigger, type, var_1fbc3549649926b6 )
@@ -1177,7 +1186,7 @@ function watchplayertrigger( trigger, type, var_1fbc3549649926b6 )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x77cf
 // Size: 0x219
 function function_a0af645242dc7260( player, lootid, loottype )
@@ -1237,7 +1246,7 @@ function function_a0af645242dc7260( player, lootid, loottype )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x79f1
 // Size: 0x57
 function function_6c11b28b956bf6ad( mapid )
@@ -1268,7 +1277,7 @@ function function_6c11b28b956bf6ad( mapid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7a51
 // Size: 0x14d
 function additemtodeaddrop( missionid, containerposition, lootid, quantity, mapid )
@@ -1312,7 +1321,7 @@ function additemtodeaddrop( missionid, containerposition, lootid, quantity, mapi
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7ba6
 // Size: 0x16a
 function function_3079d4d1c0ee380e( missionid, containerposition, weaponobj, mapid )
@@ -1358,7 +1367,7 @@ function function_3079d4d1c0ee380e( missionid, containerposition, weaponobj, map
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7d18
 // Size: 0x124
 function function_955e6c9750ee6b5e( var_694cf27a7080216, container )
@@ -1391,7 +1400,7 @@ function function_955e6c9750ee6b5e( var_694cf27a7080216, container )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7e44
 // Size: 0x525
 function function_b944a4d927f9c28a( player, incomingid )
@@ -1424,7 +1433,8 @@ function function_b944a4d927f9c28a( player, incomingid )
     
     foreach ( teamplayer in players )
     {
-        for (missionindex = 0; missionindex < 1; missionindex++) {
+        for ( missionindex = 0; missionindex < 1 ; missionindex++ )
+        {
             memberindex = teamplayer.sessionuimemberindex;
             
             if ( !isdefined( activechallenges[ memberindex ] ) )
@@ -1440,7 +1450,8 @@ function function_b944a4d927f9c28a( player, incomingid )
             activechallenges[ memberindex ][ size ] = id;
             var_a0f0fc2f7ff8f287[ memberindex ][ size ] = [];
             
-            for (childindex = 0; childindex < 4; childindex++) {
+            for ( childindex = 0; childindex < 4 ; childindex++ )
+            {
                 var_a0f0fc2f7ff8f287[ memberindex ][ size ][ childindex ] = function_7159ceb842152778( teamplayer, missionindex, childindex );
             }
             
@@ -1452,7 +1463,8 @@ function function_b944a4d927f9c28a( player, incomingid )
                     {
                         allcompleted = 1;
                         
-                        for (child = 0; child < 4; child++) {
+                        for ( child = 0; child < 4 ; child++ )
+                        {
                             childid = level.pmcmissions.missiondata[ id ].children[ child ];
                             
                             if ( isdefined( childid ) && childid > 0 )
@@ -1504,7 +1516,8 @@ function function_b944a4d927f9c28a( player, incomingid )
     
     foreach ( teamplayer in players )
     {
-        for (memberindex = 0; memberindex < players.size; memberindex++) {
+        for ( memberindex = 0; memberindex < players.size ; memberindex++ )
+        {
             challengeindex = 0;
             
             if ( isdefined( clientnums[ memberindex ] ) )
@@ -1514,10 +1527,12 @@ function function_b944a4d927f9c28a( player, incomingid )
             
             if ( isdefined( activechallenges[ memberindex ] ) && isdefined( var_a0f0fc2f7ff8f287[ memberindex ] ) )
             {
-                for (challengeindex = 0; challengeindex < min( activechallenges[ memberindex ].size, 1 ); challengeindex++) {
+                for ( challengeindex = 0; challengeindex < min( activechallenges[ memberindex ].size, 1 ) ; challengeindex++ )
+                {
                     teamplayer setplayerdata( level.var_5d69837cf4db0407, "squadPMCMissionGroups", memberindex, "missions", challengeindex, "challengeID", activechallenges[ memberindex ][ challengeindex ] );
                     
-                    for (childindex = 0; childindex < 4; childindex++) {
+                    for ( childindex = 0; childindex < 4 ; childindex++ )
+                    {
                         teamplayer setplayerdata( level.var_5d69837cf4db0407, "squadPMCMissionGroups", memberindex, "missions", challengeindex, "challengeProgress", childindex, var_a0f0fc2f7ff8f287[ memberindex ][ challengeindex ][ childindex ] );
                     }
                 }
@@ -1527,7 +1542,8 @@ function function_b944a4d927f9c28a( player, incomingid )
             {
                 teamplayer setplayerdata( level.var_5d69837cf4db0407, "squadPMCMissionGroups", memberindex, "missions", challengeindex, "challengeID", 0 );
                 
-                for (childindex = 0; childindex < 4; childindex++) {
+                for ( childindex = 0; childindex < 4 ; childindex++ )
+                {
                     teamplayer setplayerdata( level.var_5d69837cf4db0407, "squadPMCMissionGroups", memberindex, "missions", challengeindex, "challengeProgress", childindex, 0 );
                 }
                 
@@ -1538,7 +1554,7 @@ function function_b944a4d927f9c28a( player, incomingid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8371
 // Size: 0xd0
 function function_b2d5fe14937fa854( player, id )
@@ -1559,7 +1575,7 @@ function function_b2d5fe14937fa854( player, id )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8449
 // Size: 0x38
 function luinotifylistener( notification, value )
@@ -1576,7 +1592,7 @@ function luinotifylistener( notification, value )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8489
 // Size: 0x19
 function function_728323a4ebcaa0cb( value )
@@ -1588,7 +1604,7 @@ function function_728323a4ebcaa0cb( value )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x84aa
 // Size: 0x19
 function function_db6a7576652ee974( value )
@@ -1600,7 +1616,7 @@ function function_db6a7576652ee974( value )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x84cb
 // Size: 0x77
 function on_pmc_mission_tier_complete( value )
@@ -1617,7 +1633,7 @@ function on_pmc_mission_tier_complete( value )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x854a
 // Size: 0x1c, Type: bool
 function function_6f6cc16c0528de5b( player )
@@ -1626,7 +1642,7 @@ function function_6f6cc16c0528de5b( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x856f
 // Size: 0x12f
 function function_1120295a2cd880f4( player, missionxp )
@@ -1669,7 +1685,7 @@ function function_1120295a2cd880f4( player, missionxp )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x86a6
 // Size: 0x325
 function function_1a3bd4602e62e661( player, players, ref )
@@ -1762,7 +1778,7 @@ function function_1a3bd4602e62e661( player, players, ref )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x89d3
 // Size: 0x421
 function function_dab637c713e2986f( player, id )
@@ -1864,7 +1880,7 @@ function function_dab637c713e2986f( player, id )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8dfc
 // Size: 0x1c
 function function_41d63c1ace07fa21()
@@ -1878,7 +1894,7 @@ function function_41d63c1ace07fa21()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8e20
 // Size: 0x197
 function function_5ddb9007ee69fe54( player, lootid, loottype )
@@ -1933,7 +1949,7 @@ function function_5ddb9007ee69fe54( player, lootid, loottype )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8fc0
 // Size: 0xc9
 function function_7bb64b8f4eea0443( player, lootid )
@@ -1961,7 +1977,7 @@ function function_7bb64b8f4eea0443( player, lootid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9091
 // Size: 0xf0
 function onpickupweapon( player, weapon, metadata )
@@ -2008,7 +2024,7 @@ function onpickupweapon( player, weapon, metadata )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9189
 // Size: 0x3c
 function function_c2bc51039a2df634( player )
@@ -2022,7 +2038,7 @@ function function_c2bc51039a2df634( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x91cd
 // Size: 0x411
 function onexfil( player, inventory, backpackinventory, clipammo, cash, var_3064fa24dbbd5bbf )
@@ -2138,7 +2154,7 @@ function onexfil( player, inventory, backpackinventory, clipammo, cash, var_3064
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x95e6
 // Size: 0x8e
 function function_4249ec519aa97cd( player, inventory, backpackinventory, clipammo, cash, var_3064fa24dbbd5bbf )
@@ -2155,7 +2171,7 @@ function function_4249ec519aa97cd( player, inventory, backpackinventory, clipamm
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x967c
 // Size: 0xbb
 function function_b0537ee3a491b4dd( player, contents, cash )
@@ -2174,7 +2190,7 @@ function function_b0537ee3a491b4dd( player, contents, cash )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x973f
 // Size: 0x490
 function function_baeceec743d9a737( player, items, cash, method, isexfil )
@@ -2299,7 +2315,7 @@ function function_baeceec743d9a737( player, items, cash, method, isexfil )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9bd8
 // Size: 0x2d
 function function_68d841f5bc2dd2b6( player, cache )
@@ -2349,7 +2365,7 @@ function private onopensupplydrop( player, cache, items )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9d1c
 // Size: 0x176
 function function_1d1df26df05a6c8( door, player )
@@ -2408,7 +2424,7 @@ function function_1d1df26df05a6c8( door, player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e9a
 // Size: 0x4a
 function function_f00aa0c3b58c13f2( cache, player )
@@ -2427,7 +2443,7 @@ function function_f00aa0c3b58c13f2( cache, player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9eec
 // Size: 0x1f2
 function function_d10645afed0f00fe( player, poi )
@@ -2486,7 +2502,7 @@ function function_d10645afed0f00fe( player, poi )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa0e6
 // Size: 0x144
 function onvehicleenter( player, vehicle )
@@ -2536,7 +2552,7 @@ function onvehicleenter( player, vehicle )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa232
 // Size: 0x2c
 function onvehicleoutoffuel( player )
@@ -2550,7 +2566,7 @@ function onvehicleoutoffuel( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa266
 // Size: 0x225
 function onvehiclefullrefuelandrepair( vehicle, gasstation )
@@ -2614,7 +2630,7 @@ function onvehiclefullrefuelandrepair( vehicle, gasstation )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa493
 // Size: 0x6b
 function function_719e931249c15652( vehicle )
@@ -2635,7 +2651,7 @@ function function_719e931249c15652( vehicle )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa506
 // Size: 0xbe
 function ongrenadeused( grenade, player, weaponrootname )
@@ -2664,7 +2680,7 @@ function ongrenadeused( grenade, player, weaponrootname )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa5cc
 // Size: 0x7a
 function function_5d2504919b717097( owner, victim )
@@ -2686,7 +2702,7 @@ function function_5d2504919b717097( owner, victim )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa64e
 // Size: 0x80
 function function_815a3dcb943176b3( owner, victim )
@@ -2708,7 +2724,7 @@ function function_815a3dcb943176b3( owner, victim )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa6d6
 // Size: 0x57
 function function_2910bc79a4d8427b( owner, victim )
@@ -2728,7 +2744,7 @@ function function_2910bc79a4d8427b( owner, victim )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa735
 // Size: 0xa5
 function function_c0a3853f9497fad3( revivedata )
@@ -2743,7 +2759,7 @@ function function_c0a3853f9497fad3( revivedata )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7e2
 // Size: 0xd5
 function function_b71395f12af20a42( instance )
@@ -2766,7 +2782,7 @@ function function_b71395f12af20a42( instance )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa8bf
 // Size: 0x24
 function function_19d6e799236e4435( instance )
@@ -2775,7 +2791,7 @@ function function_19d6e799236e4435( instance )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa8eb
 // Size: 0x2e1
 function function_da13a73169d19313( ref )
@@ -2826,7 +2842,7 @@ function function_da13a73169d19313( ref )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xabd4
 // Size: 0x1dc
 function function_a9f8fa06a358585b( captureteam, activityref, iscompletion, poi, var_a7828126a34279e8 )
@@ -2904,7 +2920,7 @@ function function_a9f8fa06a358585b( captureteam, activityref, iscompletion, poi,
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xadb8
 // Size: 0x94
 function onsquadwiped( attackers )
@@ -2927,7 +2943,7 @@ function onsquadwiped( attackers )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae54
 // Size: 0x24
 function function_5e98eb5de21b3a8c( player )
@@ -2974,7 +2990,7 @@ function private onrequestteamassimilate( player, validplayers )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf9c
 // Size: 0x25
 function onpingcontractphone( player )
@@ -2988,7 +3004,7 @@ function onpingcontractphone( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xafc9
 // Size: 0x34
 function function_58d9b223aaf4966c( fortress )
@@ -3004,7 +3020,7 @@ function function_58d9b223aaf4966c( fortress )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb006
 // Size: 0x137
 function function_59fe5e0d7d5e7947( player, fortress )
@@ -3046,7 +3062,7 @@ function function_59fe5e0d7d5e7947( player, fortress )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb145
 // Size: 0x16f
 function onuavtowerused( player, index )
@@ -3099,7 +3115,7 @@ function onuavtowerused( player, index )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb2bc
 // Size: 0x2d
 function function_3d12fce128d424b1( player, instance )
@@ -3113,7 +3129,7 @@ function function_3d12fce128d424b1( player, instance )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb2f1
 // Size: 0x4e2
 function onaikill( victim, player, objweapon )
@@ -3266,7 +3282,7 @@ function onaikill( victim, player, objweapon )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb7db
 // Size: 0x216
 function function_398906218a0dd7da( player, victim, objweapon, modifiers )
@@ -3290,7 +3306,8 @@ function function_398906218a0dd7da( player, victim, objweapon, modifiers )
     
     if ( isdefined( bitarray ) && isdefined( bitarray[ ae_utility::function_e2ff8f4b4e94f723( #"hash_7f94e81c1787ff7a", #"vehiclesurf" ) ] ) )
     {
-        for (moverparent = player; true; moverparent = newparent) {
+        for ( moverparent = player; true ; moverparent = newparent )
+        {
             if ( ( isplayer( moverparent ) || isactor( moverparent ) ) && !moverparent islinked() )
             {
                 newparent = moverparent getmovingplatformparent( 1 );
@@ -3335,7 +3352,7 @@ function function_398906218a0dd7da( player, victim, objweapon, modifiers )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb9f9
 // Size: 0xfb
 function function_e06a127b0dd6af8( player, fixedweaponclass )
@@ -3368,7 +3385,7 @@ function function_e06a127b0dd6af8( player, fixedweaponclass )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbafc
 // Size: 0x101
 function function_22024087c0855cde()
@@ -3413,7 +3430,7 @@ function function_22024087c0855cde()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbc05
 // Size: 0x173
 function function_7184abfe5941a710( player, cashspent )
@@ -3454,7 +3471,7 @@ function function_7184abfe5941a710( player, cashspent )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbd80
 // Size: 0xa4
 function onitemsold( player, var_6e36889d56716c4 )
@@ -3482,7 +3499,7 @@ function onitemsold( player, var_6e36889d56716c4 )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbe2c
 // Size: 0x7a
 function function_8a7a2427622e7572( team, type, quantity )
@@ -3695,7 +3712,7 @@ function private function_4e6833308f41021e()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc430
 // Size: 0xe0
 function function_44cb8b0c33cef670( player, deaddrop, weapon )
@@ -3837,7 +3854,8 @@ function private function_492d7c202b56dc1()
     flag_wait( "scriptables_ready" );
     lootids = [ 11209, 11208, 11201 ];
     
-    for (i = 1; i <= 3; i++) {
+    for ( i = 1; i <= 3 ; i++ )
+    {
         cachespawn = getstruct( "puzzle_buried_cache_" + i, "script_noteworthy" );
         var_fa4fff8ad27727e2 = lootids[ i - 1 ];
         
@@ -3850,7 +3868,8 @@ function private function_492d7c202b56dc1()
         contents = scripts\mp\gametypes\br_lootcache::function_ec87b214cd429e96( getscriptablelootcachecontents( cache ) );
         newcontents = [];
         
-        for (j = 0; j < contents.size; j++) {
+        for ( j = 0; j < contents.size ; j++ )
+        {
             lootid = contents[ j ][ "lootID" ];
             
             if ( array_contains( lootids, lootid ) )
@@ -3924,7 +3943,7 @@ function private onplacetaccamera( camera )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcb4a
 // Size: 0x89
 function function_635937c689ec374( camera )
@@ -3945,7 +3964,7 @@ function function_635937c689ec374( camera )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcbdb
 // Size: 0x89
 function function_5175fa97870923ad()
@@ -3963,7 +3982,7 @@ function function_5175fa97870923ad()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xcc6c
 // Size: 0x8a
 function function_7cfd9e977f412d78( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -3986,7 +4005,7 @@ function function_7cfd9e977f412d78( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xccfe
 // Size: 0x114
 function function_7868d975ef389aba()
@@ -4672,7 +4691,7 @@ function private oncontainerlooted( player, lootid, quantity, container )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe380
 // Size: 0xe6
 function function_187f4232dcd3b0e9( player, poi )
@@ -4705,7 +4724,7 @@ function function_187f4232dcd3b0e9( player, poi )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe46e
 // Size: 0x4f, Type: bool
 function function_438dae3e86a38aba( team, sessionsquadid )
@@ -5269,7 +5288,7 @@ function private function_6012affe882a1565( team )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf590
 // Size: 0x24
 function function_a3e1795e126d3738( player )
@@ -5283,7 +5302,7 @@ function function_a3e1795e126d3738( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf5bc
 // Size: 0x4f
 function function_800f75fe5e5c7462( player, triggeredtrap )
@@ -5303,7 +5322,7 @@ function function_800f75fe5e5c7462( player, triggeredtrap )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf613
 // Size: 0xf6
 function function_ec8a620f07dbcb21()
@@ -6372,7 +6391,7 @@ function private function_f8d258990c78569( lootid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x117f9
 // Size: 0x20
 function function_5a9dc1917ed8bcdf( player )
@@ -6587,7 +6606,7 @@ function private function_3e5ce38e7e8f69( scriptable, player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11e42
 // Size: 0x50
 function function_944498dd24bc5348()
@@ -6597,7 +6616,7 @@ function function_944498dd24bc5348()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11e9a
 // Size: 0x29
 function function_38dd5f365b6d2135()
@@ -6606,7 +6625,7 @@ function function_38dd5f365b6d2135()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11ecb
 // Size: 0x29
 function function_2345dc4fa1f40628()
@@ -6615,7 +6634,7 @@ function function_2345dc4fa1f40628()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11efc
 // Size: 0x29
 function function_126c379552e5f3b7()
@@ -6624,7 +6643,7 @@ function function_126c379552e5f3b7()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11f2d
 // Size: 0x50
 function function_71192f593da6cf()
@@ -6634,7 +6653,7 @@ function function_71192f593da6cf()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11f85
 // Size: 0x50
 function function_573c2d675de0604c()
@@ -6644,7 +6663,7 @@ function function_573c2d675de0604c()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11fdd
 // Size: 0x93
 function function_285b8dcd4ea4da26()
@@ -6654,7 +6673,7 @@ function function_285b8dcd4ea4da26()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12078
 // Size: 0x30
 function function_8882ca663f07c0cf()
@@ -6668,7 +6687,7 @@ function function_8882ca663f07c0cf()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120b0
 // Size: 0xb4
 function function_3de41a0f1613060f()
@@ -6688,7 +6707,7 @@ function function_3de41a0f1613060f()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1216c
 // Size: 0x31
 function function_4dd8f8cbcba13e0a()
@@ -6697,7 +6716,7 @@ function function_4dd8f8cbcba13e0a()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x121a5
 // Size: 0x31
 function function_871ab85492b81d67()
@@ -6706,7 +6725,7 @@ function function_871ab85492b81d67()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x121de
 // Size: 0x31
 function function_b4824dfa90ca1ab9()
@@ -6715,7 +6734,7 @@ function function_b4824dfa90ca1ab9()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12217
 // Size: 0x17
 function function_b93ca7db745586f6()
@@ -6727,7 +6746,7 @@ function function_b93ca7db745586f6()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12236
 // Size: 0x30
 function function_4168098f4ad31178( player, oldteam, newteam )
@@ -6741,7 +6760,7 @@ function function_4168098f4ad31178( player, oldteam, newteam )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1226e
 // Size: 0x91
 function function_924e9e46e918d2ea()
@@ -6765,7 +6784,7 @@ function function_924e9e46e918d2ea()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12307
 // Size: 0xb2
 function function_70280eb87761bcd0()
@@ -6796,7 +6815,7 @@ function function_70280eb87761bcd0()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x123c1
 // Size: 0xfc
 function function_e3b5db8f3422827e( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -6907,7 +6926,7 @@ function private function_7993f38e8643f95d( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12773
 // Size: 0x9c
 function function_f91e78aad103b663()
@@ -6917,7 +6936,7 @@ function function_f91e78aad103b663()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12817
 // Size: 0x78
 function function_41c54a1f9c108720()
@@ -6936,7 +6955,7 @@ function function_41c54a1f9c108720()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12897
 // Size: 0x11b
 function function_4132600c37883f0b( struct )
@@ -7067,7 +7086,7 @@ function private function_a28e5fe14b06de35( container, lootid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e0b
 // Size: 0x66
 function function_45dcf3dfcc5d1674()
@@ -7081,7 +7100,7 @@ function function_45dcf3dfcc5d1674()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e79
 // Size: 0x18
 function function_265739b4859488d7()
@@ -7090,7 +7109,7 @@ function function_265739b4859488d7()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e99
 // Size: 0x18
 function function_bb6de40dd726b4d9()
@@ -7099,7 +7118,7 @@ function function_bb6de40dd726b4d9()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12eb9
 // Size: 0x31
 function function_359f7f436de6ba09()
@@ -7108,7 +7127,7 @@ function function_359f7f436de6ba09()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12ef2
 // Size: 0x31
 function function_3c989ad19e62de6c()
@@ -7117,7 +7136,7 @@ function function_3c989ad19e62de6c()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12f2b
 // Size: 0xdb
 function function_88d8597beafdd628( player, poi )
@@ -7147,7 +7166,7 @@ function function_88d8597beafdd628( player, poi )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1300e
 // Size: 0x1a
 function function_8706a89fae666d51( player )
@@ -7211,7 +7230,7 @@ function private function_d6fab9bc69a92a51( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x131c9
 // Size: 0x1a
 function function_2b7cc5d62043202e( player )
@@ -7220,7 +7239,7 @@ function function_2b7cc5d62043202e( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x131eb
 // Size: 0x1a
 function function_93ab9968bf96e2b0( player )
@@ -7229,7 +7248,7 @@ function function_93ab9968bf96e2b0( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1320d
 // Size: 0x1a
 function function_c2b3319eb135740( player )
@@ -7238,7 +7257,7 @@ function function_c2b3319eb135740( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1322f
 // Size: 0x86
 function function_38d565bd866ced0e( player, deaddrop )
@@ -7251,7 +7270,7 @@ function function_38d565bd866ced0e( player, deaddrop )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x132bd
 // Size: 0x9e
 function function_c543832fab9303cb( player, deaddrop )
@@ -7265,7 +7284,7 @@ function function_c543832fab9303cb( player, deaddrop )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13363
 // Size: 0x86
 function function_f3f7cf5aa591a391( player, deaddrop )
@@ -7287,7 +7306,7 @@ function private function_554ec348cfc62f37()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x133fb
 // Size: 0x1a
 function function_b49c89ad7edcf17b( player )
@@ -7296,7 +7315,7 @@ function function_b49c89ad7edcf17b( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1341d
 // Size: 0x2d2
 function function_a7fb9d5548d2455a()
@@ -7360,7 +7379,7 @@ function function_a7fb9d5548d2455a()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x136f7
 // Size: 0x333
 function function_a7614ce40d9dbe48()
@@ -7441,7 +7460,7 @@ function function_a7614ce40d9dbe48()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13a32
 // Size: 0x77
 function function_901bc7e60ba89f7f( instance, player )
@@ -7458,7 +7477,7 @@ function function_901bc7e60ba89f7f( instance, player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13ab1
 // Size: 0x91
 function function_4baddf78c907e8f9()
@@ -7475,7 +7494,7 @@ function function_4baddf78c907e8f9()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13b4a
 // Size: 0x53
 function function_3ce8c941726c2400( player )
@@ -7488,7 +7507,7 @@ function function_3ce8c941726c2400( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13ba5
 // Size: 0xef
 function function_ab1164302301c233()
@@ -7513,7 +7532,7 @@ function function_ab1164302301c233()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x13c9c
 // Size: 0xbf
 function function_48a98ebe20dd89f2( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -7541,7 +7560,7 @@ function function_48a98ebe20dd89f2( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13d63
 // Size: 0x6e
 function onflareplaced( grenade )
@@ -7581,7 +7600,7 @@ function private function_7757687df059eb94( teamname )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13e7d
 // Size: 0x46
 function function_5ff4af6e7a002c62( teamname, var_11807f242097f672 )
@@ -7597,7 +7616,7 @@ function function_5ff4af6e7a002c62( teamname, var_11807f242097f672 )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13ecc
 // Size: 0xe2
 function function_6adb8d95823366cb( teamname )
@@ -7628,7 +7647,7 @@ function function_6adb8d95823366cb( teamname )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13fb7
 // Size: 0x55, Type: bool
 function function_4cba31e79d4e5166( teamname )
@@ -7646,7 +7665,7 @@ function function_4cba31e79d4e5166( teamname )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14015
 // Size: 0x7a
 function function_538ab9a6a1f38f55( teamname, var_11807f242097f672 )
@@ -7678,7 +7697,7 @@ function function_538ab9a6a1f38f55( teamname, var_11807f242097f672 )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14098
 // Size: 0x1a6
 function function_6245fc3e65911655( var_11807f242097f672, var_694cf27a7080216 )
@@ -7964,7 +7983,8 @@ function private function_afd9995bf86b7912( objidnum )
     ticktime = 120 / numticks;
     scripts\mp\objidpoolmanager::function_ce702e5925e31fc9( objidnum, player, 2, 2, %PMC_S4/GO_FOR_A_DRIVE_TIMER );
     
-    for (i = 1; i <= numticks; i++) {
+    for ( i = 1; i <= numticks ; i++ )
+    {
         objective_setprogress( objidnum, i / numticks );
         wait ticktime;
     }
@@ -8117,7 +8137,7 @@ function private function_892733a0f84dedcf( lootid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14daa
 // Size: 0x1f, Type: bool
 function function_bebcefbd95a287ec( player )
@@ -8126,7 +8146,7 @@ function function_bebcefbd95a287ec( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14dd2
 // Size: 0x158
 function function_fea699cf9870f641( radar, vehicle )
@@ -8161,7 +8181,7 @@ function function_fea699cf9870f641( radar, vehicle )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14f32
 // Size: 0xca
 function function_6300f1d8a3c7644( vehicle )
@@ -8190,7 +8210,7 @@ function function_6300f1d8a3c7644( vehicle )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x15004
 // Size: 0x189
 function function_6234d21aecef0158( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -8220,7 +8240,7 @@ function function_6234d21aecef0158( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x15195
 // Size: 0x41
 function function_9d1f0973f606c702( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -8229,7 +8249,7 @@ function function_9d1f0973f606c702( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x151de
 // Size: 0x1a
 function function_7616962f7c523a5d( player )
@@ -8238,7 +8258,7 @@ function function_7616962f7c523a5d( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15200
 // Size: 0x1a
 function function_d8bae32458ce35b7( player )
@@ -8247,7 +8267,7 @@ function function_d8bae32458ce35b7( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15222
 // Size: 0x1a
 function function_8b3be362bff6847f( player )
@@ -8256,7 +8276,7 @@ function function_8b3be362bff6847f( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15244
 // Size: 0x25
 function onbombdefused( defuser )
@@ -8270,7 +8290,7 @@ function onbombdefused( defuser )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15271
 // Size: 0xd7
 function function_d882e5d473c9b258( player, item, var_ec22a950f210e39 )
@@ -8294,7 +8314,7 @@ function function_d882e5d473c9b258( player, item, var_ec22a950f210e39 )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15350
 // Size: 0x1c2
 function function_794d65c4d264dcc0()
@@ -8326,7 +8346,7 @@ function function_794d65c4d264dcc0()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1551a
 // Size: 0x41
 function function_c55dae311ea23861( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -8335,7 +8355,7 @@ function function_c55dae311ea23861( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x15563
 // Size: 0x4b1
 function function_dacdd049029751a8( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -8499,7 +8519,7 @@ function private function_1db8528d0d503797()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15c1e
 // Size: 0xae
 function function_d7fd9f403937e688( origin, angles )
@@ -8513,7 +8533,7 @@ function function_d7fd9f403937e688( origin, angles )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15cd5
 // Size: 0x35a
 function function_6ce896ca48e4c62a()
@@ -8574,7 +8594,7 @@ function function_6ce896ca48e4c62a()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16037
 // Size: 0x76
 function function_8ef059ceb8bb6f26( agent, dormancyid )
@@ -8585,7 +8605,7 @@ function function_8ef059ceb8bb6f26( agent, dormancyid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x160b5
 // Size: 0x6b
 function pmc_agentpostdormancy( agent )
@@ -8595,7 +8615,7 @@ function pmc_agentpostdormancy( agent )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16128
 // Size: 0x2f
 function function_507b92d2539b9074( struct, id )
@@ -8604,7 +8624,7 @@ function function_507b92d2539b9074( struct, id )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1615f
 // Size: 0x17c
 function function_5629fa2cae5846f2( agent, killer )
@@ -8643,7 +8663,7 @@ function function_5629fa2cae5846f2( agent, killer )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x162e3
 // Size: 0x28a
 function function_5678739494bf8de1( group )
@@ -8718,7 +8738,7 @@ function function_5678739494bf8de1( group )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16575
 // Size: 0x47
 function function_ea506e1f9c05efc8( missilesilo, player )
@@ -8732,7 +8752,7 @@ function function_ea506e1f9c05efc8( missilesilo, player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x165c4
 // Size: 0x1a
 function function_2d3c14faa38e2146( player )
@@ -8741,7 +8761,7 @@ function function_2d3c14faa38e2146( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x165e6
 // Size: 0x1a
 function function_4f23417a848e2f5f( player )
@@ -8750,7 +8770,7 @@ function function_4f23417a848e2f5f( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16608
 // Size: 0x90
 function function_54e624d4ac58b723()
@@ -8769,7 +8789,7 @@ function function_54e624d4ac58b723()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x166a0
 // Size: 0x41
 function function_ac56c0ec10ac3e25( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -8778,7 +8798,7 @@ function function_ac56c0ec10ac3e25( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x166e9
 // Size: 0x1ca
 function function_6871a50434e7cc31( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -8794,7 +8814,8 @@ function function_6871a50434e7cc31( instance, part, state, player, var_a5b2c5414
     
     package = scripts\mp\ai_mp_controller::function_ab14d6652e44fda0( 8, level.spawnset[ "guard" ], 3, undefined, "Helicopter" );
     
-    for (agents = undefined; !isdefined( agents ); agents = scripts\mp\ai_mp_controller::function_77acc10c4823dd8a( undefined, instance.origin, "absolute", "mission", "false_signal", undefined, undefined, 1, undefined, undefined, undefined, undefined, package, "ru" )) {
+    for ( agents = undefined; !isdefined( agents ) ; agents = scripts\mp\ai_mp_controller::function_77acc10c4823dd8a( undefined, instance.origin, "absolute", "mission", "false_signal", undefined, undefined, 1, undefined, undefined, undefined, undefined, package, "ru" ) )
+    {
     }
     
     var_fc1c9cebe104f3fe = 0;
@@ -8814,7 +8835,7 @@ function function_6871a50434e7cc31( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x168bb
 // Size: 0x1e9
 function function_1665f2fe0ae0d024()
@@ -8854,7 +8875,7 @@ function function_1665f2fe0ae0d024()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16aac
 // Size: 0xbc
 function function_e13625d770059ef9( node, missionid )
@@ -8870,7 +8891,7 @@ function function_e13625d770059ef9( node, missionid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16b71
 // Size: 0x159
 function function_afe925f2dee5f03e( silo )
@@ -8878,7 +8899,8 @@ function function_afe925f2dee5f03e( silo )
     scripts\mp\flags::function_1240434f4201ac9d( "prematch_done" );
     numagents = 4;
     
-    for (i = 0; i < numagents; i++) {
+    for ( i = 0; i < numagents ; i++ )
+    {
         var_de2d3e1486e4e9d3 = randomfloatrange( 200, 400 );
         forward = anglestoforward( silo.angles ) * var_de2d3e1486e4e9d3;
         right = vectorcross( ( 0, 0, 1 ), forward );
@@ -8893,7 +8915,7 @@ function function_afe925f2dee5f03e( silo )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x16cd2
 // Size: 0x179
 function function_948991a18b048182( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -8928,7 +8950,7 @@ function function_948991a18b048182( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16e53
 // Size: 0x1a
 function function_7fc83d63a85c14d( player )
@@ -8937,7 +8959,7 @@ function function_7fc83d63a85c14d( player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16e75
 // Size: 0x61
 function function_496b109dc14fa57d( task )
@@ -8949,7 +8971,7 @@ function function_496b109dc14fa57d( task )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16ede
 // Size: 0x31
 function function_a07e5e1f98c14d68()
@@ -8958,7 +8980,7 @@ function function_a07e5e1f98c14d68()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16f17
 // Size: 0x5f
 function function_cc6a02d4564d9f07( player, metadata )
@@ -9031,7 +9053,7 @@ function private function_b55402e6d4fae450( vehicle )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17109
 // Size: 0x1d
 function function_7854f54f01615a6e( vehicle )
@@ -9045,7 +9067,7 @@ function function_7854f54f01615a6e( vehicle )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1712e
 // Size: 0x2b8
 function function_34969e35391841ba()
@@ -9116,7 +9138,7 @@ function function_34969e35391841ba()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x173ee
 // Size: 0x1a6
 function function_f37f5d719bc2f2f0( grenade, player )
@@ -9177,7 +9199,7 @@ function function_f37f5d719bc2f2f0( grenade, player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1759c
 // Size: 0x27
 function function_4404ed46f49e5ba1( grenade )
@@ -9188,7 +9210,7 @@ function function_4404ed46f49e5ba1( grenade )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x175cc
 // Size: 0xfc
 function function_7a1e65b949e0b879()
@@ -9210,7 +9232,7 @@ function function_7a1e65b949e0b879()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x176d0
 // Size: 0x197
 function function_f7d8054ae05de10f( door, player )
@@ -9254,7 +9276,7 @@ function function_f7d8054ae05de10f( door, player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1786f
 // Size: 0xe8
 function function_cd8c827e2b6115ea( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -9264,7 +9286,8 @@ function function_cd8c827e2b6115ea( instance, part, state, player, var_a5b2c5414
         instance setscriptablepartstate( "brloot_pmc_unobserved_radio", "visible_unusable" );
         function_8359cadd253f9604( player, "unobserved_activated_radio", 1 );
         
-        for (i = 0; i < level.var_cc75a90d4b9108b1.size; i++) {
+        for ( i = 0; i < level.var_cc75a90d4b9108b1.size ; i++ )
+        {
             var_ab70ae90be101a99 = function_7bbdbbc6cb745dc6( int( level.var_cc75a90d4b9108b1[ i ] ) );
             playsoundatpos( instance.origin, var_ab70ae90be101a99 );
             wait getdvarfloat( @"hash_291c19b0a2eb5ce4", 1 );
@@ -9278,7 +9301,7 @@ function function_cd8c827e2b6115ea( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1795f
 // Size: 0x11e
 function function_7bbdbbc6cb745dc6( currentnum )
@@ -9326,7 +9349,7 @@ function function_7bbdbbc6cb745dc6( currentnum )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17a86
 // Size: 0x1bd
 function function_562889df3a616506()
@@ -9375,7 +9398,7 @@ function function_562889df3a616506()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17c4b
 // Size: 0x625
 function function_48864d898e5100c0()
@@ -9479,7 +9502,7 @@ function function_48864d898e5100c0()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18278
 // Size: 0x1b0
 function function_139abff6182eebcb()
@@ -9522,7 +9545,7 @@ function function_139abff6182eebcb()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18430
 // Size: 0x7c
 function function_a30ad7c4a9b45232( origin, count )
@@ -9548,7 +9571,7 @@ function function_a30ad7c4a9b45232( origin, count )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x184b4
 // Size: 0x98
 function function_2039e3a5f09b1a11( node )
@@ -9572,7 +9595,7 @@ function function_2039e3a5f09b1a11( node )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18554
 // Size: 0x21c
 function pmc_terminalwatchagentdisarmtimer( node, agent )
@@ -9650,7 +9673,7 @@ function pmc_terminalwatchagentdisarmtimer( node, agent )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18778
 // Size: 0x174
 function function_b7fa1e109d78dfe5( node )
@@ -9679,7 +9702,7 @@ function function_b7fa1e109d78dfe5( node )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x188f4
 // Size: 0xa2
 function function_dd80845d6200b0dc( time )
@@ -9705,7 +9728,7 @@ function function_dd80845d6200b0dc( time )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1899e
 // Size: 0x106
 function function_849b91807bee7e34( time )
@@ -9739,7 +9762,7 @@ function function_849b91807bee7e34( time )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x18aac
 // Size: 0x187
 function function_5df48be36d20a070( nearbyplayers, shownplayers, progress, text )
@@ -9782,7 +9805,7 @@ function function_5df48be36d20a070( nearbyplayers, shownplayers, progress, text 
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18c3c
 // Size: 0x35
 function function_9dfa2432e378262a( timer )
@@ -9794,7 +9817,7 @@ function function_9dfa2432e378262a( timer )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18c79
 // Size: 0x121
 function function_2e94d8da4a6ed951()
@@ -9824,7 +9847,7 @@ function function_2e94d8da4a6ed951()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18da2
 // Size: 0x13
 function function_7ef66059655c6e3e( agent )
@@ -9833,7 +9856,7 @@ function function_7ef66059655c6e3e( agent )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18dbd
 // Size: 0xd3
 function function_1e1fb042a28726e6( trigger, radius )
@@ -9863,7 +9886,7 @@ function function_1e1fb042a28726e6( trigger, radius )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18e98
 // Size: 0x81
 function function_34a83ef704f155d7( trigger, player, radius )
@@ -9877,7 +9900,7 @@ function function_34a83ef704f155d7( trigger, player, radius )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x18f21
 // Size: 0x42e
 function function_ec7e73044204b1cf( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -9990,7 +10013,7 @@ function function_ec7e73044204b1cf( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x19357
 // Size: 0x2b1
 function function_2d2046e72a3653fb( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -10063,7 +10086,7 @@ function function_2d2046e72a3653fb( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19610
 // Size: 0x1d1
 function function_c606a52499149c25()
@@ -10107,7 +10130,7 @@ function function_c606a52499149c25()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x197e9
 // Size: 0xbd
 function function_1c9e346732c1dcc5( agent )
@@ -10124,7 +10147,7 @@ function function_1c9e346732c1dcc5( agent )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x198ae
 // Size: 0x108
 function function_c0849326027254f0()
@@ -10160,7 +10183,7 @@ function function_c0849326027254f0()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x199be
 // Size: 0x77
 function function_39564755f8f1046b()
@@ -10180,7 +10203,7 @@ function function_39564755f8f1046b()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a3d
 // Size: 0x27f
 function function_c7cfd1ad1977f03e()
@@ -10203,7 +10226,8 @@ function function_c7cfd1ad1977f03e()
                 footstepsound = random( footstepsounds );
                 footsteptype = random( footsteptypes );
                 
-                for (i = 0; i < stepcount; i++) {
+                for ( i = 0; i < stepcount ; i++ )
+                {
                     if ( istrue( level.var_877f557047d60fb5.playsounds ) )
                     {
                         level.var_877f557047d60fb5 setscriptablepartstate( footstepsound, footsteptype );
@@ -10243,7 +10267,7 @@ function function_c7cfd1ad1977f03e()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19cc4
 // Size: 0x5d
 function function_32cb9876a487c40f( scriptable, player )
@@ -10254,7 +10278,7 @@ function function_32cb9876a487c40f( scriptable, player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19d29
 // Size: 0x5b
 function function_5df8cf35b1de080c( container, player )
@@ -10265,7 +10289,7 @@ function function_5df8cf35b1de080c( container, player )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19d8c
 // Size: 0x59
 function function_b46d7d7d4eccda8c( pickup, player, origin )
@@ -10276,7 +10300,7 @@ function function_b46d7d7d4eccda8c( pickup, player, origin )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19ded
 // Size: 0x66
 function function_be5af8dc2f94e2ee( deaddrop, lootid )
@@ -10288,7 +10312,7 @@ function function_be5af8dc2f94e2ee( deaddrop, lootid )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19e5c
 // Size: 0x2a
 function function_29ddd40932b14edb()
@@ -10298,7 +10322,7 @@ function function_29ddd40932b14edb()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19e8e
 // Size: 0x3b
 function function_792282e9cede4876( player, item )
@@ -10308,7 +10332,7 @@ function function_792282e9cede4876( player, item )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x19ed1
 // Size: 0x53
 function function_54e94e9563adff5e( player, lootid, type, var_9fb3b576439ee3d, cashvalue )
@@ -10318,7 +10342,7 @@ function function_54e94e9563adff5e( player, lootid, type, var_9fb3b576439ee3d, c
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19f2c
 // Size: 0x13d
 function function_83ba07b9cb8b0809()
@@ -10348,7 +10372,7 @@ function function_83ba07b9cb8b0809()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a071
 // Size: 0xf0
 function function_ff7f720788558a70( agent, players )
@@ -10370,7 +10394,7 @@ function function_ff7f720788558a70( agent, players )
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a169
 // Size: 0x274
 function function_b74ad2c2c1691b18()
@@ -10426,7 +10450,7 @@ function function_b74ad2c2c1691b18()
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1a3e5
 // Size: 0x252
 function function_c9ec79155b2119ba( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -10491,7 +10515,7 @@ function function_c9ec79155b2119ba( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace pmc_missions / scripts\mp\pmc_missions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a63f
 // Size: 0x297
 function function_65ccf76ea342606()
@@ -10562,7 +10586,7 @@ function function_65ccf76ea342606()
 /#
 
     // Namespace pmc_missions / scripts\mp\pmc_missions
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1a8de
     // Size: 0x244, Type: dev
     function function_7b91bc1947716bcf()

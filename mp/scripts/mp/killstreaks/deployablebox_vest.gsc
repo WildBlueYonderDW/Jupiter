@@ -8,7 +8,7 @@
 #namespace deployablebox_vest;
 
 // Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x264
 // Size: 0x1fa
 function init()
@@ -47,7 +47,7 @@ function init()
 }
 
 // Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x466
 // Size: 0x58, Type: bool
 function tryusedeployablevest( lifeid, streakname )
@@ -64,7 +64,7 @@ function tryusedeployablevest( lifeid, streakname )
 }
 
 // Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c7
 // Size: 0x13, Type: bool
 function canusedeployable( boxent )
@@ -73,7 +73,7 @@ function canusedeployable( boxent )
 }
 
 // Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e3
 // Size: 0x12
 function onusedeployable( boxent )
@@ -82,7 +82,7 @@ function onusedeployable( boxent )
 }
 
 // Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x44
 function get_adjusted_armor( existing_armor, rank )

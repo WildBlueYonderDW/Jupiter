@@ -21,8 +21,8 @@
 #namespace perk_tombstone;
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cb
+// Params 2
+// Checksum 0x0, Offset: 0x599
 // Size: 0x233
 function function_ce82f1d47d2e5a58( str_currency, var_fe59c44529c721a0 )
 {
@@ -50,8 +50,8 @@ function function_ce82f1d47d2e5a58( str_currency, var_fe59c44529c721a0 )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x706
+// Params 0
+// Checksum 0x0, Offset: 0x7d4
 // Size: 0x9
 function function_c9b691d2acfb3c55()
 {
@@ -59,8 +59,8 @@ function function_c9b691d2acfb3c55()
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x717
+// Params 4
+// Checksum 0x0, Offset: 0x7e5
 // Size: 0x2a
 function function_be6733eb26422227( b_pause, str_perk, str_result, n_slot )
 {
@@ -68,8 +68,8 @@ function function_be6733eb26422227( b_pause, str_perk, str_result, n_slot )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x749
+// Params 0
+// Checksum 0x0, Offset: 0x817
 // Size: 0xe
 function function_d60544ce1e681740()
 {
@@ -77,8 +77,8 @@ function function_d60544ce1e681740()
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x75f
+// Params 0
+// Checksum 0x0, Offset: 0x82d
 // Size: 0xe
 function function_480ad40598a5406a()
 {
@@ -86,8 +86,8 @@ function function_480ad40598a5406a()
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x775
+// Params 1
+// Checksum 0x0, Offset: 0x843
 // Size: 0x4f0
 function function_c0a90b470c8db3b5( params )
 {
@@ -165,8 +165,8 @@ function function_c0a90b470c8db3b5( params )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6d
+// Params 1
+// Checksum 0x0, Offset: 0xd3b
 // Size: 0x4d
 function function_5f75982dd09c5aff( params )
 {
@@ -177,8 +177,8 @@ function function_5f75982dd09c5aff( params )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc2
+// Params 1
+// Checksum 0x0, Offset: 0xd90
 // Size: 0x12
 function function_828d4e52d624e921( params )
 {
@@ -186,8 +186,8 @@ function function_828d4e52d624e921( params )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcdc
+// Params 1
+// Checksum 0x0, Offset: 0xdaa
 // Size: 0x74
 function function_cb0dffa5e243988f( params )
 {
@@ -204,8 +204,8 @@ function function_cb0dffa5e243988f( params )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd58
+// Params 1
+// Checksum 0x0, Offset: 0xe26
 // Size: 0x48
 function function_68a1dda7fd1c33f9( param )
 {
@@ -219,8 +219,8 @@ function function_68a1dda7fd1c33f9( param )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xda8
+// Params 1
+// Checksum 0x0, Offset: 0xe76
 // Size: 0x6d
 function function_daacf7d82f553a35( params )
 {
@@ -234,8 +234,8 @@ function function_daacf7d82f553a35( params )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1d
+// Params 0
+// Checksum 0x0, Offset: 0xeeb
 // Size: 0xde
 function function_5f07fd4885970a1d()
 {
@@ -280,8 +280,8 @@ function function_5f07fd4885970a1d()
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf03
+// Params 1
+// Checksum 0x0, Offset: 0xfd1
 // Size: 0x3f
 function function_72a8eb52f0be7b20( params )
 {
@@ -294,8 +294,8 @@ function function_72a8eb52f0be7b20( params )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf4a
+// Params 1
+// Checksum 0x0, Offset: 0x1018
 // Size: 0x3b
 function function_a96eb05bcccdae3d( params )
 {
@@ -308,9 +308,23 @@ function function_a96eb05bcccdae3d( params )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8d
-// Size: 0x41a
+// Params 1
+// Checksum 0x0, Offset: 0x105b
+// Size: 0x77, Type: bool
+function function_5421a86d7a9a981d( itembundlename )
+{
+    if ( isdefined( itembundlename ) && ( itembundlename == "ob_jup_item_rift_object_season3_vision" || itembundlename == "ob_jup_item_rift_object_season3_speed" || itembundlename == "ob_jup_item_rift_object_season3_damage" || itembundlename == "ob_jup_item_thermal_phone" || itembundlename == "ob_jup_item_rr_s5_gold_skull" || itembundlename == "ob_jup_item_rr_s5_thumb_drive" || itembundlename == "ob_jup_item_key_tower_roof" || itembundlename == "ob_jup_item_key_rift_run_tower_thermal_hunt" || itembundlename == "ob_jup_item_key_tower_breakroom" ) )
+    {
+        return true;
+    }
+    
+    return false;
+}
+
+// Namespace perk_tombstone / namespace_8f3ef228cc9c9507
+// Params 1
+// Checksum 0x0, Offset: 0x10db
+// Size: 0x402
 function function_ea489c9a3e230419( params )
 {
     if ( isdefined( self.var_9b55e3337571adb4 ) && isdefined( self.var_9b55e3337571adb4.cache ) )
@@ -328,7 +342,8 @@ function function_ea489c9a3e230419( params )
     self.var_9b55e3337571adb4.a_backpack = [];
     self.var_9b55e3337571adb4.var_af2cea418410a822 = [];
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         lootid = function_d870b2c45335bd88( i );
         lootcount = function_5ce7fe3dca9c1a22( i );
         self.var_9b55e3337571adb4.var_af2cea418410a822[ lootid ] = lootcount;
@@ -339,7 +354,7 @@ function function_ea489c9a3e230419( params )
             continue;
         }
         
-        if ( itembundlename == "ob_jup_item_rift_object_season3_vision" || itembundlename == "ob_jup_item_rift_object_season3_speed" || itembundlename == "ob_jup_item_rift_object_season3_damage" )
+        if ( function_5421a86d7a9a981d( itembundlename ) )
         {
             continue;
         }
@@ -387,8 +402,8 @@ function function_ea489c9a3e230419( params )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13af
+// Params 0
+// Checksum 0x0, Offset: 0x14e5
 // Size: 0x3ed
 function function_388d12d30b04fbc1()
 {
@@ -487,8 +502,8 @@ function function_388d12d30b04fbc1()
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17a4
+// Params 2
+// Checksum 0x0, Offset: 0x18da
 // Size: 0x115
 function cleanup_cache( player, is_immediate )
 {
@@ -536,8 +551,8 @@ function cleanup_cache( player, is_immediate )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18c1
+// Params 1
+// Checksum 0x0, Offset: 0x19f7
 // Size: 0xaf
 function function_db8eb6248ea8a6df( params )
 {
@@ -551,8 +566,8 @@ function function_db8eb6248ea8a6df( params )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1978
+// Params 4
+// Checksum 0x0, Offset: 0x1aae
 // Size: 0x2c
 function function_53984676bfb1fe35( instance, note, param, var_535d9c3fdddab5a9 )
 {
@@ -561,8 +576,8 @@ function function_53984676bfb1fe35( instance, note, param, var_535d9c3fdddab5a9 
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19ac
+// Params 2
+// Checksum 0x0, Offset: 0x1ae2
 // Size: 0x13
 function function_70cb750bdeab27e1( instance, player )
 {
@@ -570,8 +585,8 @@ function function_70cb750bdeab27e1( instance, player )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c7
+// Params 1
+// Checksum 0x0, Offset: 0x1afd
 // Size: 0x71
 function function_47a4709ac15919( oldweaponobj )
 {
@@ -584,8 +599,8 @@ function function_47a4709ac15919( oldweaponobj )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a41
+// Params 1
+// Checksum 0x0, Offset: 0x1b77
 // Size: 0x6c, Type: bool
 function function_ebc56eeecea60302( weapon )
 {
@@ -609,8 +624,8 @@ function function_ebc56eeecea60302( weapon )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab6
+// Params 0
+// Checksum 0x0, Offset: 0x1bec
 // Size: 0x18a
 function function_58b9475ad345f0d3()
 {
@@ -622,7 +637,8 @@ function function_58b9475ad345f0d3()
         self.var_9b55e3337571adb4.a_backpack = [];
         self.var_9b55e3337571adb4.var_af2cea418410a822 = [];
         
-        for (i = 0; i < 10; i++) {
+        for ( i = 0; i < 10 ; i++ )
+        {
             [ lootid, lootcount ] = function_eb02768c294d3e1c( i );
             
             if ( lootid != 0 )
@@ -650,8 +666,8 @@ function function_58b9475ad345f0d3()
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c48
+// Params 1
+// Checksum 0x0, Offset: 0x1d7e
 // Size: 0x60
 function function_eb02768c294d3e1c( index )
 {
@@ -661,14 +677,15 @@ function function_eb02768c294d3e1c( index )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cb1
+// Params 0
+// Checksum 0x0, Offset: 0x1de7
 // Size: 0x7b
 function function_8ec2a2bfd11473be()
 {
     self endon( "disconnect" );
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         self setplayerdata( level.var_5d69837cf4db0407, "tombstoneBackpack", i, "lootID", 0 );
         self setplayerdata( level.var_5d69837cf4db0407, "tombstoneBackpack", i, "quantity", 0 );
     }
@@ -680,7 +697,7 @@ function function_8ec2a2bfd11473be()
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1d34
+// Checksum 0x0, Offset: 0x1e6a
 // Size: 0xa5
 function private function_efda1ea04874e527( origin )
 {
@@ -701,8 +718,8 @@ function private function_efda1ea04874e527( origin )
 }
 
 // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de2
+// Params 1
+// Checksum 0x0, Offset: 0x1f18
 // Size: 0x54
 function on_item_pickup( params )
 {
@@ -716,8 +733,8 @@ function on_item_pickup( params )
 /#
 
     // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1e3e
+    // Params 1
+    // Checksum 0x0, Offset: 0x1f74
     // Size: 0x49, Type: dev
     function function_e8e91e981eed0341( a_params )
     {
@@ -731,8 +748,8 @@ function on_item_pickup( params )
     }
 
     // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1e8f
+    // Params 1
+    // Checksum 0x0, Offset: 0x1fc5
     // Size: 0x52, Type: dev
     function function_1829cbe6d232c1d9( a_params )
     {
@@ -749,8 +766,8 @@ function on_item_pickup( params )
     }
 
     // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1ee9
+    // Params 1
+    // Checksum 0x0, Offset: 0x201f
     // Size: 0x43, Type: dev
     function function_d809d194ca48db47( a_params )
     {
@@ -759,8 +776,8 @@ function on_item_pickup( params )
     }
 
     // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f34
+    // Params 1
+    // Checksum 0x0, Offset: 0x206a
     // Size: 0x38, Type: dev
     function function_f8a387a8c88b1c8a( a_params )
     {
@@ -769,8 +786,8 @@ function on_item_pickup( params )
     }
 
     // Namespace perk_tombstone / namespace_8f3ef228cc9c9507
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f74
+    // Params 1
+    // Checksum 0x0, Offset: 0x20aa
     // Size: 0x246, Type: dev
     function function_39c1cce4c78f1e6c( params )
     {
@@ -789,7 +806,8 @@ function on_item_pickup( params )
         self.var_9b55e3337571adb4.a_backpack = [];
         self.var_9b55e3337571adb4.var_af2cea418410a822 = [];
         
-        for (i = 0; i < 10; i++) {
+        for ( i = 0; i < 10 ; i++ )
+        {
             lootid = level.players[ 0 ] function_d870b2c45335bd88( i );
             lootcount = level.players[ 0 ] function_5ce7fe3dca9c1a22( i );
             self.var_9b55e3337571adb4.var_af2cea418410a822[ lootid ] = lootcount;

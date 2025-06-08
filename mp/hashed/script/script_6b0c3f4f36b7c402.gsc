@@ -5,7 +5,7 @@
 #namespace namespace_af0491fa25f2c7da;
 
 // Namespace namespace_af0491fa25f2c7da / namespace_44da43ac5e4a0e62
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8
 // Size: 0x10
 function main()
@@ -17,7 +17,7 @@ function main()
 /#
 
     // Namespace namespace_af0491fa25f2c7da / namespace_44da43ac5e4a0e62
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x100
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -28,7 +28,7 @@ function main()
 #/
 
 // Namespace namespace_af0491fa25f2c7da / namespace_44da43ac5e4a0e62
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10d
 // Size: 0x17
 function setup_callbacks()
@@ -37,7 +37,7 @@ function setup_callbacks()
 }
 
 // Namespace namespace_af0491fa25f2c7da / namespace_44da43ac5e4a0e62
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c
 // Size: 0x2
 function setup_bot_war()
@@ -46,7 +46,7 @@ function setup_bot_war()
 }
 
 // Namespace namespace_af0491fa25f2c7da / namespace_44da43ac5e4a0e62
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x136
 // Size: 0x57
 function bot_war_think()

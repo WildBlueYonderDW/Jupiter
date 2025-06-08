@@ -7,7 +7,7 @@
 #namespace gesture;
 
 // Namespace gesture / scripts\asm\gesture
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x23d
 // Size: 0x38
 function ai_request_gesture( gesture, target_obj, timeout_ms, notify_name )
@@ -21,7 +21,7 @@ function ai_request_gesture( gesture, target_obj, timeout_ms, notify_name )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27d
 // Size: 0x73
 function ai_cancel_gesture()
@@ -40,7 +40,7 @@ function ai_cancel_gesture()
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f8
 // Size: 0x19e
 function handlegesturenotetrack( flagname )
@@ -102,7 +102,7 @@ function handlegesturenotetrack( flagname )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49f
 // Size: 0x44
 function gesturedonotetracks( animlength )
@@ -124,7 +124,7 @@ function gesturedonotetracks( animlength )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4eb
 // Size: 0x1c
 function gesturenotetracktimeoutthread( timeout_sec )
@@ -135,7 +135,7 @@ function gesturenotetracktimeoutthread( timeout_sec )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50f
 // Size: 0x340
 function gesture( asmname )
@@ -230,7 +230,7 @@ function gesture( asmname )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x857
 // Size: 0x8a, Type: bool
 function gesture_should_disable_lookat( gesture )
@@ -251,7 +251,7 @@ function gesture_should_disable_lookat( gesture )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8ea
 // Size: 0x162
 function ai_request_gesture_internal( gesture, target_object, timeout_ms, notify_name )
@@ -278,7 +278,7 @@ function ai_request_gesture_internal( gesture, target_object, timeout_ms, notify
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa54
 // Size: 0x18, Type: bool
 function civisfocusingleft()
@@ -287,7 +287,7 @@ function civisfocusingleft()
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa75
 // Size: 0x18, Type: bool
 function civisfocusingright()
@@ -296,7 +296,7 @@ function civisfocusingright()
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa96
 // Size: 0x1a4
 function get_gesture_alias( gesture, gesture_target )
@@ -353,7 +353,7 @@ function get_gesture_alias( gesture, gesture_target )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc43
 // Size: 0x78
 function ai_finish_gesture()
@@ -369,7 +369,7 @@ function ai_finish_gesture()
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcc3
 // Size: 0x74
 function chooseanim_gesture( asmname, statename, params )
@@ -381,7 +381,7 @@ function chooseanim_gesture( asmname, statename, params )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd40
 // Size: 0x1c9
 function playcoveranim_gesture( asmname, statename, params )
@@ -420,7 +420,7 @@ function playcoveranim_gesture( asmname, statename, params )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf11
 // Size: 0x60
 function cleargestureanim( asmname, statename, params )
@@ -433,7 +433,7 @@ function cleargestureanim( asmname, statename, params )
 }
 
 // Namespace gesture / scripts\asm\gesture
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf79
 // Size: 0xea, Type: bool
 function gesture_finishearly( asmname, statename, tostatename, gesture )

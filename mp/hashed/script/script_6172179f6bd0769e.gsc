@@ -8,7 +8,7 @@
 #namespace namespace_66419bf0e1470e9d;
 
 // Namespace namespace_66419bf0e1470e9d / namespace_817a152f5a5554f8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a7
 // Size: 0x8e
 function function_4c60c607a6e7b9ae()
@@ -25,7 +25,7 @@ function function_4c60c607a6e7b9ae()
 }
 
 // Namespace namespace_66419bf0e1470e9d / namespace_817a152f5a5554f8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33d
 // Size: 0xae
 function function_d05835744ff53415( bossdetails )
@@ -40,7 +40,7 @@ function function_d05835744ff53415( bossdetails )
 }
 
 // Namespace namespace_66419bf0e1470e9d / namespace_817a152f5a5554f8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f3
 // Size: 0x2a5
 function function_7f6818be5068dd4e( node, category )
@@ -96,7 +96,7 @@ function function_7f6818be5068dd4e( node, category )
 }
 
 // Namespace namespace_66419bf0e1470e9d / namespace_817a152f5a5554f8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a1
 // Size: 0x15
 function function_b97f2c6555713007()
@@ -106,7 +106,7 @@ function function_b97f2c6555713007()
 }
 
 // Namespace namespace_66419bf0e1470e9d / namespace_817a152f5a5554f8
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x6be
 // Size: 0x114
 function function_9188f360f73c894a( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -137,7 +137,7 @@ function function_9188f360f73c894a( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace namespace_66419bf0e1470e9d / namespace_817a152f5a5554f8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7da
 // Size: 0xd7
 function function_504b9ffb4562c0bc( part, damage )

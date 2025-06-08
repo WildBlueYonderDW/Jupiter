@@ -27,7 +27,7 @@
 #namespace br_c130;
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c0
 // Size: 0x23
 function init()
@@ -37,7 +37,7 @@ function init()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7eb
 // Size: 0x39
 function spawnc130pathstruct( centeroverride, radiusoverride )
@@ -48,7 +48,7 @@ function spawnc130pathstruct( centeroverride, radiusoverride )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x82d
 // Size: 0x11f
 function makepathparamsstruct( centeroverride, radiusoverride )
@@ -94,7 +94,7 @@ function makepathparamsstruct( centeroverride, radiusoverride )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x955
 // Size: 0x121
 function makepathstruct( pathparamsstruct )
@@ -117,7 +117,7 @@ function makepathstruct( pathparamsstruct )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7f
 // Size: 0xa9
 function snappointtomapbounds2d( point )
@@ -146,7 +146,7 @@ function snappointtomapbounds2d( point )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb31
 // Size: 0x12d
 function ray_trace_trigger_radius_2d( start, end, triggerradiusents )
@@ -178,7 +178,7 @@ function ray_trace_trigger_radius_2d( start, end, triggerradiusents )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc67
 // Size: 0x135
 function snappointtooutofboundstriggertrace( startpoint, var_c1e273ba6cef8058 )
@@ -221,7 +221,7 @@ function snappointtooutofboundstriggertrace( startpoint, var_c1e273ba6cef8058 )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda5
 // Size: 0x9a
 function getplanepathsaferadiusfromcenter( radiusoverride )
@@ -243,7 +243,7 @@ function getplanepathsaferadiusfromcenter( radiusoverride )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe48
 // Size: 0x8c
 function function_1f389456d7c530a()
@@ -269,7 +269,7 @@ function function_1f389456d7c530a()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xedd
 // Size: 0x58, Type: bool
 function iswithinplanepathsaferadius( pt )
@@ -282,7 +282,7 @@ function iswithinplanepathsaferadius( pt )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf3e
 // Size: 0x2d4
 function spawnc130pathstructnew( var_1ac3dec2a5426bd4, radiusoverride, mapcenteroverride, var_92fcc390c4c0acd7 )
@@ -390,7 +390,7 @@ function spawnc130pathstructnew( var_1ac3dec2a5426bd4, radiusoverride, mapcenter
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x121b
 // Size: 0x1fe
 function spawnc130pathstructnewinternal( centerpt, angles, planeheight, pathradius )
@@ -460,7 +460,7 @@ function spawnc130pathstructnewinternal( centerpt, angles, planeheight, pathradi
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1422
 // Size: 0x7e
 function function_130df32ea7502b9e()
@@ -481,7 +481,7 @@ function function_130df32ea7502b9e()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14a9
 // Size: 0x90
 function getc130speed()
@@ -511,7 +511,7 @@ function getc130speed()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1542
 // Size: 0x5
 function getc130knownsafeheight()
@@ -520,7 +520,7 @@ function getc130knownsafeheight()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1550
 // Size: 0x69
 function setc130heightoverrides( heightoverride, sealeveloverride )
@@ -540,7 +540,7 @@ function setc130heightoverrides( heightoverride, sealeveloverride )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15c1
 // Size: 0x1a9
 function updatec130pathomnvars( c130path )
@@ -575,7 +575,7 @@ function updatec130pathomnvars( c130path )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1772
 // Size: 0xbe
 function createtestc130path( var_1ac3dec2a5426bd4, radiusoverride, mapcenteroverride, var_92fcc390c4c0acd7 )
@@ -597,7 +597,7 @@ function createtestc130path( var_1ac3dec2a5426bd4, radiusoverride, mapcenterover
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1839
 // Size: 0xcd
 function spawnc130( planemodel, var_954a35001716e7cb, var_8281f83c750dace6, pathstruct, var_58bb50874e340160, soundalias )
@@ -612,7 +612,7 @@ function spawnc130( planemodel, var_954a35001716e7cb, var_8281f83c750dace6, path
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x190f
 // Size: 0xf5
 function spawnplayertoc130()
@@ -648,7 +648,7 @@ function spawnplayertoc130()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a0c
 // Size: 0x9b
 function playerputinc130( c130 )
@@ -676,7 +676,7 @@ function playerputinc130( c130 )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1aaf
 // Size: 0xe6
 function orbitcam( gunship )
@@ -731,7 +731,7 @@ function private gunship_sound( soundalias )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x1bc7
 // Size: 0x256
 function gunship_spawn( planemodel, var_954a35001716e7cb, var_8281f83c750dace6, startpt, endpt, time, var_8f56f6c6c54e17d9, var_58bb50874e340160, soundalias )
@@ -829,7 +829,7 @@ function private function_14df8550b1ce14be()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ed5
 // Size: 0xba
 function gunship_handlemovement( movedestination, movetime )
@@ -873,7 +873,7 @@ function gunship_handlemovement( movedestination, movetime )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f97
 // Size: 0x7c
 function gunship_spawnvfx()
@@ -912,7 +912,7 @@ function gunship_spawnvfx()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x201b
 // Size: 0xf3
 function inmapbounds( pt )
@@ -937,7 +937,7 @@ function inmapbounds( pt )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2117
 // Size: 0x141
 function ispointinbounds( pt, checkplayerradius )
@@ -989,7 +989,7 @@ function ispointinbounds( pt, checkplayerradius )
 /#
 
     // Namespace br_c130 / scripts\mp\gametypes\br_c130
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2261
     // Size: 0x3b, Type: dev
     function function_7d4cd5dc8e9151a0()
@@ -1006,7 +1006,7 @@ function ispointinbounds( pt, checkplayerradius )
     }
 
     // Namespace br_c130 / scripts\mp\gametypes\br_c130
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x22a4
     // Size: 0xc2, Type: dev
     function function_5c36b2448f145721()
@@ -1035,7 +1035,7 @@ function ispointinbounds( pt, checkplayerradius )
 #/
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x236e
 // Size: 0x7e
 function planewaittillcandrop()
@@ -1058,7 +1058,7 @@ function planewaittillcandrop()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23f4
 // Size: 0x432
 function kickwhenoutofbounds( flighttype )
@@ -1130,7 +1130,7 @@ function kickwhenoutofbounds( flighttype )
         waitframe();
     }
     
-    var_35a6a9c45130ec10 = getdvarint( @"hash_e82b8618853a182c", 3500 );
+    var_35a6a9c45130ec10 = getdvarint( @"scr_br_project_kick", 3500 );
     
     while ( true )
     {
@@ -1195,7 +1195,7 @@ function kickwhenoutofbounds( flighttype )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x282e
 // Size: 0x29f
 function killaftertime( time, flighttype )
@@ -1281,7 +1281,7 @@ function killaftertime( time, flighttype )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ad5
 // Size: 0x2a
 function calctrailpoint()
@@ -1291,7 +1291,7 @@ function calctrailpoint()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b08
 // Size: 0x75
 function listenkick( c130, forcechute )
@@ -1312,7 +1312,7 @@ function listenkick( c130, forcechute )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b85
 // Size: 0x395
 function listenjump( c130, var_1b89121ef11344d5 )
@@ -1442,7 +1442,7 @@ function listenjump( c130, var_1b89121ef11344d5 )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2f22
 // Size: 0x24e
 function leaveplane( c130, forcechute, viewanglesoverride, inheritvelocity )
@@ -1498,7 +1498,7 @@ function leaveplane( c130, forcechute, viewanglesoverride, inheritvelocity )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3178
 // Size: 0x225
 function holdteammatestosquadleader( teammates )
@@ -1567,7 +1567,7 @@ function holdteammatestosquadleader( teammates )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33a5
 // Size: 0xa9
 function watchforsquadleaddisconnect( teammates )
@@ -1594,7 +1594,7 @@ function watchforsquadleaddisconnect( teammates )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3456
 // Size: 0x45
 function setteammateomnvarsforplayer( player, teamplayers, defaultvalue )
@@ -1604,7 +1604,7 @@ function setteammateomnvarsforplayer( player, teamplayers, defaultvalue )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34a3
 // Size: 0x49
 function playerparachutedetachresetomnvars()
@@ -1618,7 +1618,7 @@ function playerparachutedetachresetomnvars()
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34f4
 // Size: 0x157
 function pushplayertoplayeroffset( squadleader, offset )
@@ -1654,7 +1654,7 @@ function pushplayertoplayeroffset( squadleader, offset )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3653
 // Size: 0x115
 function parachute( c130, var_1b89121ef11344d5, var_e7edb50a3e562402, inheritvelocity )
@@ -1697,7 +1697,7 @@ function parachute( c130, var_1b89121ef11344d5, var_e7edb50a3e562402, inheritvel
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3770
 // Size: 0xd1
 function infilfreefallparachuteaudio( c130 )
@@ -1728,7 +1728,7 @@ function infilfreefallparachuteaudio( c130 )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3849
 // Size: 0x3a
 function setplayervarinrespawnc130( value )
@@ -1743,7 +1743,7 @@ function setplayervarinrespawnc130( value )
 }
 
 // Namespace br_c130 / scripts\mp\gametypes\br_c130
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x388b
 // Size: 0xe2
 function waittoplayinfildialog()
@@ -1780,7 +1780,7 @@ function waittoplayinfildialog()
 /#
 
     // Namespace br_c130 / scripts\mp\gametypes\br_c130
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3975
     // Size: 0x187, Type: dev
     function function_6fd27619248c2584()
@@ -1821,7 +1821,7 @@ function waittoplayinfildialog()
                 host updatec130pathomnvars( pathstruct );
                 var_35a6a9c45130ec10 = 600;
                 dir = anglestoforward( host.angles );
-                forwardorg = host.origin + dir * getdvarint( @"hash_e82b8618853a182c", 3500 );
+                forwardorg = host.origin + dir * getdvarint( @"scr_br_project_kick", 3500 );
                 inbounds = scripts\mp\gametypes\br_c130::ispointinbounds( forwardorg );
                 color = ( 0, 1, 0 );
                 
@@ -1838,7 +1838,7 @@ function waittoplayinfildialog()
     }
 
     // Namespace br_c130 / scripts\mp\gametypes\br_c130
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3b04
     // Size: 0xe2, Type: dev
     function function_c6f09ac70af3c7cb( host )
@@ -1870,7 +1870,7 @@ function waittoplayinfildialog()
     }
 
     // Namespace br_c130 / scripts\mp\gametypes\br_c130
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3bee
     // Size: 0x1ba, Type: dev
     function function_22c604d143e3eb87( num )
@@ -1902,7 +1902,8 @@ function waittoplayinfildialog()
         smallestdist = undefined;
         chosenpath = undefined;
         
-        for (i = 0; i < num; i++) {
+        for ( i = 0; i < num ; i++ )
+        {
             originoverride = undefined;
             radiusoverride = undefined;
             

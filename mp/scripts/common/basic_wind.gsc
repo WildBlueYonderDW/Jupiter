@@ -3,7 +3,7 @@
 #namespace basic_wind;
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8f4
 // Size: 0xed
 function load_wind( direction, intensity )
@@ -17,7 +17,7 @@ function load_wind( direction, intensity )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9e9
 // Size: 0x1c
 function load_debug_particles()
@@ -26,7 +26,7 @@ function load_debug_particles()
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0d
 // Size: 0x28c
 function load_all_wind()
@@ -59,7 +59,7 @@ function load_all_wind()
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xca1
 // Size: 0xe1
 function init_wind( direction, strength, permanent )
@@ -85,7 +85,7 @@ function init_wind( direction, strength, permanent )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd8a
 // Size: 0xec
 function init_wind_at_point( direction, strength, location, permanent )
@@ -112,7 +112,7 @@ function init_wind_at_point( direction, strength, location, permanent )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xe7e
 // Size: 0xa4
 function function_7c798f6cb0754110( min_value, max_value, pause_time, ramp_time, start_paused )
@@ -135,7 +135,7 @@ function function_7c798f6cb0754110( min_value, max_value, pause_time, ramp_time,
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xf2a
 // Size: 0x8a
 function function_3bf9ed80166e5b45( dvar, min_value, max_value, pause_time, ramp_time )
@@ -165,7 +165,7 @@ function function_3bf9ed80166e5b45( dvar, min_value, max_value, pause_time, ramp
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfbc
 // Size: 0xb3
 function function_a334760f5ed07966( name, value, time )
@@ -194,7 +194,7 @@ function function_a334760f5ed07966( name, value, time )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1077
 // Size: 0x48
 function stop_wind( windobj )
@@ -209,7 +209,7 @@ function stop_wind( windobj )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10c7
 // Size: 0x1b
 function set_wind_amplitude( amplitude )
@@ -218,7 +218,7 @@ function set_wind_amplitude( amplitude )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10ea
 // Size: 0x1b
 function set_wind_frequency( frequency )
@@ -227,7 +227,7 @@ function set_wind_frequency( frequency )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x110d
 // Size: 0x1b
 function set_wind_area_scale( areascale )
@@ -236,7 +236,7 @@ function set_wind_area_scale( areascale )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1130
 // Size: 0x45
 function spawn_debug_particles( location )
@@ -248,7 +248,7 @@ function spawn_debug_particles( location )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x117e
 // Size: 0xaa
 function get_wind_index( windstring )
@@ -281,7 +281,7 @@ function get_wind_index( windstring )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1230
 // Size: 0x63
 function get_wind_string( windindex )
@@ -291,7 +291,7 @@ function get_wind_string( windindex )
 }
 
 // Namespace basic_wind / scripts\common\basic_wind
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x129c
 // Size: 0x12c
 function wind_index( direction, strength )

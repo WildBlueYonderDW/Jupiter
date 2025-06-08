@@ -16,7 +16,7 @@
 #namespace mp_jup_delayed;
 
 // Namespace mp_jup_delayed / scripts\mp\maps\mp_jup_delayed\mp_jup_delayed
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25d
 // Size: 0xce
 function main()
@@ -40,7 +40,7 @@ function main()
 }
 
 // Namespace mp_jup_delayed / scripts\mp\maps\mp_jup_delayed\mp_jup_delayed
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x333
 // Size: 0x170
 function function_2c1e7d6df0d51540()
@@ -73,7 +73,7 @@ function function_2c1e7d6df0d51540()
 }
 
 // Namespace mp_jup_delayed / scripts\mp\maps\mp_jup_delayed\mp_jup_delayed
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ab
 // Size: 0x57
 function play_movie( bink )

@@ -7,7 +7,7 @@
 #namespace mp_jup_fort;
 
 // Namespace mp_jup_fort / scripts\mp\maps\mp_jup_fort\mp_jup_fort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c
 // Size: 0x5b
 function main()

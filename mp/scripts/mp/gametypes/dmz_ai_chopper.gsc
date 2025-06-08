@@ -27,7 +27,7 @@
 /#
 
     // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x460
     // Size: 0x4f, Type: dev
     function debug()
@@ -47,7 +47,7 @@
 #/
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4b7
 // Size: 0x442
 function function_4c4df9aeb773709a( pos, vehicle, model, patrolradius, name )
@@ -136,7 +136,7 @@ function function_4c4df9aeb773709a( pos, vehicle, model, patrolradius, name )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x902
 // Size: 0x6e
 function function_9910a6cd29958a7f( vehicle, ent, position, normal, normalspeed )
@@ -155,7 +155,7 @@ function function_9910a6cd29958a7f( vehicle, ent, position, normal, normalspeed 
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x978
 // Size: 0x91, Type: bool
 function chopper_postmodifydamage( data )
@@ -181,7 +181,7 @@ function chopper_postmodifydamage( data )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa12
 // Size: 0x2f
 function chopper_think()
@@ -197,7 +197,7 @@ function chopper_think()
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa49
 // Size: 0x1d, Type: bool
 function chopper_handledeathdamage( data )
@@ -208,7 +208,7 @@ function chopper_handledeathdamage( data )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa6f
 // Size: 0x87
 function function_5159bd9771a61868()
@@ -230,7 +230,7 @@ function function_5159bd9771a61868()
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xafe
 // Size: 0x109
 function chopper_patrol()
@@ -261,7 +261,7 @@ function chopper_patrol()
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc0f
 // Size: 0x36
 function function_7743aeff79a08975( state )
@@ -272,7 +272,7 @@ function function_7743aeff79a08975( state )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc4d
 // Size: 0x50
 function chopper_idle()
@@ -292,7 +292,7 @@ function chopper_idle()
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca5
 // Size: 0x7f
 function chopper_attack()
@@ -317,7 +317,7 @@ function chopper_attack()
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd2c
 // Size: 0x4ce
 function function_3be784d69cc30a0( player, value, ignoredist )
@@ -423,7 +423,7 @@ function function_3be784d69cc30a0( player, value, ignoredist )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1202
 // Size: 0x15b
 function function_83388ed388ddbddc( guid )
@@ -457,7 +457,7 @@ function function_83388ed388ddbddc( guid )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1365
 // Size: 0x138
 function function_9e2e41a3f8f5ded( guid, guidbefore )
@@ -489,7 +489,7 @@ function function_9e2e41a3f8f5ded( guid, guidbefore )
 /#
 
     // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x14a5
     // Size: 0x89, Type: dev
     function function_204882e766bf721d()
@@ -514,7 +514,7 @@ function function_9e2e41a3f8f5ded( guid, guidbefore )
     }
 
     // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1536
     // Size: 0x5b, Type: dev
     function function_6ccd7cebb1144062()
@@ -535,14 +535,15 @@ function function_9e2e41a3f8f5ded( guid, guidbefore )
 #/
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1599
 // Size: 0xc3
 function function_ef8a0089f2c25099()
 {
     checkedids = [];
     
-    for (checktargetid = self.var_38076ea016478f2f; isdefined( checktargetid ) && isdefined( self.threatlist[ checktargetid ] ); checktargetid = self.threatlist[ checktargetid ].down) {
+    for ( checktargetid = self.var_38076ea016478f2f; isdefined( checktargetid ) && isdefined( self.threatlist[ checktargetid ] ) ; checktargetid = self.threatlist[ checktargetid ].down )
+    {
         if ( array_contains( checkedids, checktargetid ) )
         {
             self.threatlist = [];
@@ -569,7 +570,7 @@ function function_ef8a0089f2c25099()
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1665
 // Size: 0x150
 function chopper_canseetarget( targetplayer, overridetestpoint )
@@ -611,7 +612,7 @@ function chopper_canseetarget( targetplayer, overridetestpoint )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17be
 // Size: 0x124
 function tracegroundpoint( x, y )
@@ -647,7 +648,7 @@ function tracegroundpoint( x, y )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18eb
 // Size: 0x5d
 function getcorrectheight( x, y, rand )
@@ -660,7 +661,7 @@ function getcorrectheight( x, y, rand )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1951
 // Size: 0x11b, Type: bool
 function function_e9cb677b6ba63162( target, dist, checks, startrot )
@@ -706,7 +707,7 @@ function function_e9cb677b6ba63162( target, dist, checks, startrot )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1a75
 // Size: 0x276, Type: bool
 function function_9f656e924a854c1b( target, dist, checks, startrot, overrideheight, var_4f4c3a288df043c0, var_5f1f469d27d6af1a )
@@ -789,7 +790,7 @@ function function_9f656e924a854c1b( target, dist, checks, startrot, overrideheig
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1cf4
 // Size: 0x25b
 function function_276c4659222d7c6a( target, forcestopatgoal, forceheight, ignoreblocks )
@@ -875,7 +876,7 @@ function function_276c4659222d7c6a( target, forcestopatgoal, forceheight, ignore
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f57
 // Size: 0xda, Type: bool
 function function_9eda5834c2fa3898( targetinfo )
@@ -887,7 +888,7 @@ function function_9eda5834c2fa3898( targetinfo )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x203a
 // Size: 0x74
 function function_a4f67639da6c8a7d()
@@ -914,7 +915,7 @@ function function_a4f67639da6c8a7d()
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20b6
 // Size: 0x6f
 function chopper_explode()
@@ -934,7 +935,7 @@ function chopper_explode()
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x212d
 // Size: 0xf7
 function choppersupport_crash( speed, var_1f1fbcef1d9b080a )
@@ -972,7 +973,7 @@ function choppersupport_crash( speed, var_1f1fbcef1d9b080a )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x222c
 // Size: 0x216
 function function_e2c4e07ce9823056( crashdist, var_6c56ff5ecc704c48, var_6c7af55ecc98b102 )
@@ -1051,7 +1052,7 @@ function function_e2c4e07ce9823056( crashdist, var_6c56ff5ecc704c48, var_6c7af55
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x244b
 // Size: 0x4c
 function chopper_spinout( speed )
@@ -1067,7 +1068,7 @@ function chopper_spinout( speed )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x249f
 // Size: 0xd4
 function chopper_splash( bossorigin, poiname )
@@ -1099,7 +1100,7 @@ function chopper_splash( bossorigin, poiname )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x257b
 // Size: 0x69
 function chopper_droploot()
@@ -1115,7 +1116,7 @@ function chopper_droploot()
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25ec
 // Size: 0x81
 function chopper_finddroplocation( starttrace )
@@ -1134,7 +1135,7 @@ function chopper_finddroplocation( starttrace )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2676
 // Size: 0x27e
 function chopper_oncrateuse( player )
@@ -1142,7 +1143,8 @@ function chopper_oncrateuse( player )
     self.itemsdropped = 0;
     pickups = [];
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         pos = drop_to_ground( self.origin + rotatepointaroundvector( ( 0, 0, 1 ), ( 20, 0, 0 ), 120 * i ) );
         dropinfo = scripts\mp\gametypes\br_pickups::getitemdropinfo( pos );
         streak = ter_op( percent_chance( 50 ), "brloot_killstreak_clusterstrike", "brloot_killstreak_precision_airstrike" );
@@ -1150,7 +1152,8 @@ function chopper_oncrateuse( player )
         self.itemsdropped++;
     }
     
-    for (i = 0; i < 8; i++) {
+    for ( i = 0; i < 8 ; i++ )
+    {
         pos = drop_to_ground( self.origin + rotatepointaroundvector( ( 0, 0, 1 ), ( 40, 0, 0 ), 45 * i ) );
         dropinfo = scripts\mp\gametypes\br_pickups::getitemdropinfo( pos );
         var_8a3a7194e96ea2c = ter_op( i % 2 == 0, "brloot_valuable_goldbar", "brloot_plunder_cash_rare_1" );
@@ -1158,7 +1161,8 @@ function chopper_oncrateuse( player )
         self.itemsdropped++;
     }
     
-    for (i = 0; i < 6; i++) {
+    for ( i = 0; i < 6 ; i++ )
+    {
         var_1e251ffd71396d15 = random( [ "brloot_weapon_sm_papa90_rare", "brloot_weapon_sh_romeo870_rare", "brloot_weapon_sn_sbeta_lege" ] );
         itemname = ter_op( i % 3 == 0, "brloot_armor_plate", var_1e251ffd71396d15 );
         var_144769f518d71226 = ter_op( i % 3 == 0, 8, 1 );
@@ -1176,7 +1180,7 @@ function chopper_oncrateuse( player )
 }
 
 // Namespace dmz_ai_chopper / scripts\mp\gametypes\dmz_ai_chopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28fc
 // Size: 0xa5
 function chopper_cleanup( wasdestroyed )

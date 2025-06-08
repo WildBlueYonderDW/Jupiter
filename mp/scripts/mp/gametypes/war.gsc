@@ -27,7 +27,7 @@
 #namespace war;
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51a
 // Size: 0x320
 function main()
@@ -100,7 +100,7 @@ function main()
     game[ "dialog" ][ "boost" ] = "dx_mp_tdth_game_uktl_bost";
     game[ "dialog" ][ "offense_obj" ] = "dx_mp_tdth_game_uktl_bost";
     game[ "dialog" ][ "defense_obj" ] = "dx_mp_tdth_game_uktl_bost";
-    level.testtdmanywhere = getdvarint( @"hash_157f06aff3c1f357", 0 );
+    level.testtdmanywhere = getdvarint( @"scr_tdmanywhere", 0 );
     level.tdmanywhere_dropheight = getdvarfloat( @"hash_c692d2a11dd6615", 1000 );
     level.tdmanywhere_perpenoffset = getdvarfloat( @"hash_631c58033f43c2dc", 2048 );
     level.tdmanywhere_distoffset = getdvarfloat( @"hash_f314048c87ae28aa", 4092 );
@@ -140,7 +140,7 @@ function main()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x842
 // Size: 0x51
 function initializematchrules()
@@ -157,7 +157,7 @@ function initializematchrules()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x89b
 // Size: 0x14a
 function onstartgametype()
@@ -220,7 +220,7 @@ function onstartgametype()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ed
 // Size: 0x26
 function onplayerconnect( player )
@@ -232,7 +232,7 @@ function onplayerconnect( player )
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa1b
 // Size: 0x9
 function updategametypedvars()
@@ -241,7 +241,7 @@ function updategametypedvars()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2c
 // Size: 0x293
 function initspawns()
@@ -311,7 +311,7 @@ function initspawns()
 /#
 
     // Namespace war / scripts\mp\gametypes\war
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xcc7
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -327,7 +327,7 @@ function initspawns()
 #/
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd32
 // Size: 0x142
 function getspawnpoint()
@@ -370,7 +370,7 @@ function getspawnpoint()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe7d
 // Size: 0x78
 function onspawnplayer( revivespawn )
@@ -398,7 +398,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xefd
 // Size: 0x95
 function onspawnfinished()
@@ -422,7 +422,7 @@ function onspawnfinished()
 /#
 
     // Namespace war / scripts\mp\gametypes\war
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xf9a
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -461,7 +461,7 @@ function onspawnfinished()
 #/
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x111c
 // Size: 0xb2
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -481,7 +481,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11d6
 // Size: 0x53
 function ontimelimit()
@@ -503,7 +503,7 @@ function ontimelimit()
 /#
 
     // Namespace war / scripts\mp\gametypes\war
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1231
     // Size: 0xe8, Type: dev
     function function_8469a5927d069db7()
@@ -518,7 +518,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x103>", points, 0 );
@@ -530,7 +530,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x10d>", points, 0 );
@@ -546,7 +546,7 @@ function ontimelimit()
     }
 
     // Namespace war / scripts\mp\gametypes\war
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1321
     // Size: 0x1ee, Type: dev
     function function_bf2918399f1800b1()
@@ -584,7 +584,7 @@ function ontimelimit()
 #/
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1517
 // Size: 0x19a
 function tdmanywhere_debugshowlocs()
@@ -607,7 +607,7 @@ function tdmanywhere_debugshowlocs()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16b9
 // Size: 0x40f
 function monitorhotfoot()
@@ -722,7 +722,7 @@ function monitorhotfoot()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x1ad0
 // Size: 0xc0
 function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -742,7 +742,7 @@ function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, ob
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b98
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()
@@ -754,7 +754,7 @@ function shouldgamelobbyremainintact()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bee
 // Size: 0x1b, Type: bool
 function function_22ba3797e41fc607()
@@ -763,7 +763,7 @@ function function_22ba3797e41fc607()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c12
 // Size: 0x1b, Type: bool
 function function_d7731b03489e8384()
@@ -772,7 +772,7 @@ function function_d7731b03489e8384()
 }
 
 // Namespace war / scripts\mp\gametypes\war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c36
 // Size: 0x1b, Type: bool
 function function_2898a9c3d425a919()

@@ -4,7 +4,7 @@
 #namespace bots_loadout;
 
 // Namespace bots_loadout / scripts\mp\bots\bots_loadout
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f1
 // Size: 0x6c
 function init()
@@ -118,7 +118,7 @@ function private function_b1cbf0185df8c1a8( personality, difficulty, archetype )
 }
 
 // Namespace bots_loadout / scripts\mp\bots\bots_loadout
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x70b
 // Size: 0x3cc
 function function_70d701f63acab018()
@@ -169,7 +169,7 @@ function function_70d701f63acab018()
 }
 
 // Namespace bots_loadout / scripts\mp\bots\bots_loadout
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae0
 // Size: 0x54, Type: bool
 function function_ebe5d810fc2c7196( loadoutname )
@@ -186,7 +186,7 @@ function function_ebe5d810fc2c7196( loadoutname )
 }
 
 // Namespace bots_loadout / scripts\mp\bots\bots_loadout
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb3d
 // Size: 0x99, Type: bool
 function function_4f1b939bbc96291b( personality, difficulty, archetype )
@@ -204,7 +204,7 @@ function function_4f1b939bbc96291b( personality, difficulty, archetype )
 }
 
 // Namespace bots_loadout / scripts\mp\bots\bots_loadout
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbdf
 // Size: 0x4c, Type: bool
 function function_a693c24def6fb1ed()
@@ -224,7 +224,7 @@ function function_a693c24def6fb1ed()
 }
 
 // Namespace bots_loadout / scripts\mp\bots\bots_loadout
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc34
 // Size: 0xc0
 function function_b606843c205d2dfc()

@@ -32,7 +32,7 @@ function autoexec main()
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x372
 // Size: 0xe1
 function init()
@@ -50,7 +50,7 @@ function init()
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45b
 // Size: 0x18
 function function_c00a33b9a89f6639()
@@ -61,7 +61,7 @@ function function_c00a33b9a89f6639()
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47b
 // Size: 0x6a
 function init_callbacks()
@@ -81,7 +81,7 @@ function init_callbacks()
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ed
 // Size: 0x24
 function function_aea3555854e2a2c0( params )
@@ -91,7 +91,7 @@ function function_aea3555854e2a2c0( params )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x519
 // Size: 0x1d
 function function_482776d07f76084b( params )
@@ -100,7 +100,7 @@ function function_482776d07f76084b( params )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x53e
 // Size: 0x211
 function function_c6c9e69416294659( attacker )
@@ -164,7 +164,7 @@ function function_c6c9e69416294659( attacker )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x757
 // Size: 0x22f
 function function_e1be58260c40835e( params )
@@ -211,7 +211,7 @@ function function_e1be58260c40835e( params )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x98e
 // Size: 0xcd
 function function_d5aec492bdff1104( location, context )
@@ -244,7 +244,7 @@ function function_d5aec492bdff1104( location, context )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa63
 // Size: 0x399
 function function_71bf1100ed637af1( location, context )
@@ -369,7 +369,7 @@ function function_71bf1100ed637af1( location, context )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe05
 // Size: 0x1e9
 function function_9097cec00b0a918a( powerup_ref, spawn_pos, var_a3bd3a0466a6a50b )
@@ -409,7 +409,7 @@ function function_9097cec00b0a918a( powerup_ref, spawn_pos, var_a3bd3a0466a6a50b
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xff7
 // Size: 0x108
 function function_a6eb87ea91df000c( var_a3bd3a0466a6a50b )
@@ -438,7 +438,7 @@ function function_a6eb87ea91df000c( var_a3bd3a0466a6a50b )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1107
 // Size: 0x52
 function function_bc6da2635941d488()
@@ -455,7 +455,7 @@ function function_bc6da2635941d488()
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1161
 // Size: 0x1fa
 function function_26d7152de10f312f( delay )
@@ -514,7 +514,7 @@ function function_26d7152de10f312f( delay )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1363
 // Size: 0x20
 function function_1e46f5354a009162()
@@ -526,7 +526,7 @@ function function_1e46f5354a009162()
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x138b
 // Size: 0x7c
 function function_e5d214c66b6e0082( alias )
@@ -576,7 +576,7 @@ function private ftue_play( ref )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1487
 // Size: 0x33
 function function_a5954aee8a02845e()
@@ -593,7 +593,7 @@ function function_a5954aee8a02845e()
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14c2
 // Size: 0x43
 function function_de43cee7dc74dcd7( eventstring, points, victim )
@@ -607,7 +607,7 @@ function function_de43cee7dc74dcd7( eventstring, points, victim )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x150d
 // Size: 0x36
 function function_504645669cd3844f( value )
@@ -618,7 +618,7 @@ function function_504645669cd3844f( value )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x154b
 // Size: 0x1d
 function function_2f0136fd318f2b9e()
@@ -632,7 +632,7 @@ function function_2f0136fd318f2b9e()
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1570
 // Size: 0x34
 function function_eb64b9fa2d5352ee( powerup_name )
@@ -644,7 +644,7 @@ function function_eb64b9fa2d5352ee( powerup_name )
 }
 
 // Namespace br_powerups / namespace_5b05f2c13a074660
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15ac
 // Size: 0x48
 function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
@@ -656,7 +656,7 @@ function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
 /#
 
     // Namespace br_powerups / namespace_5b05f2c13a074660
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x15fc
     // Size: 0x44, Type: dev
     function debug_init()
@@ -668,7 +668,7 @@ function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
     }
 
     // Namespace br_powerups / namespace_5b05f2c13a074660
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1648
     // Size: 0x1b0, Type: dev
     function function_8d84a74b56d3e373()
@@ -697,7 +697,7 @@ function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
     }
 
     // Namespace br_powerups / namespace_5b05f2c13a074660
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1800
     // Size: 0x7c, Type: dev
     function function_f3d67f6efe03526b()
@@ -715,7 +715,7 @@ function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
     }
 
     // Namespace br_powerups / namespace_5b05f2c13a074660
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1884
     // Size: 0x56, Type: dev
     function function_f52df32abe0fc9ea()
@@ -732,7 +732,7 @@ function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
     }
 
     // Namespace br_powerups / namespace_5b05f2c13a074660
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x18e2
     // Size: 0x2c, Type: dev
     function function_f52df42abe0fcc1d()
@@ -745,7 +745,7 @@ function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
     }
 
     // Namespace br_powerups / namespace_5b05f2c13a074660
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1916
     // Size: 0x27, Type: dev
     function function_517f474edb3d3972()
@@ -760,7 +760,7 @@ function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
     }
 
     // Namespace br_powerups / namespace_5b05f2c13a074660
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1945
     // Size: 0x21, Type: dev
     function function_16ba5e09063f2292()
@@ -770,7 +770,7 @@ function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
     }
 
     // Namespace br_powerups / namespace_5b05f2c13a074660
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x196e
     // Size: 0x28, Type: dev
     function function_3b22b1d8bd000324()
@@ -781,7 +781,7 @@ function function_cc7d2e0d5b5d6ad7( powerup_name, spawn_method )
     }
 
     // Namespace br_powerups / namespace_5b05f2c13a074660
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x199e
     // Size: 0x45, Type: dev
     function function_a0bd8c322e7661ce( v_pos, str_print, str_color, i_row )

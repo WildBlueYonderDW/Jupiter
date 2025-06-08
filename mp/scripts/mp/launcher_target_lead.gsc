@@ -11,7 +11,7 @@
 #namespace launcher_target_lead;
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20e
 // Size: 0x94
 function targetleadusageloop()
@@ -40,7 +40,7 @@ function targetleadusageloop()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aa
 // Size: 0x19e
 function targetlead_init()
@@ -61,7 +61,7 @@ function targetlead_init()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x450
 // Size: 0xe6
 function targetlead_reset()
@@ -84,7 +84,7 @@ function targetlead_reset()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x53e
 // Size: 0x3d
 function targetlead_offstateenter( fromstate )
@@ -97,7 +97,7 @@ function targetlead_offstateenter( fromstate )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x583
 // Size: 0x1d
 function targetlead_offstateupdate()
@@ -109,7 +109,7 @@ function targetlead_offstateupdate()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a8
 // Size: 0x2
 function targetlead_offstateexit()
@@ -118,7 +118,7 @@ function targetlead_offstateexit()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b2
 // Size: 0x59
 function targetlead_scanningstateenter( fromstate )
@@ -132,7 +132,7 @@ function targetlead_scanningstateenter( fromstate )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x613
 // Size: 0x66
 function targetlead_scanningstateupdate()
@@ -156,7 +156,7 @@ function targetlead_scanningstateupdate()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x681
 // Size: 0x8f
 function targetlead_holdstateenter( fromstate )
@@ -170,7 +170,7 @@ function targetlead_holdstateenter( fromstate )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x718
 // Size: 0x151
 function targetlead_holdstateupdate()
@@ -211,7 +211,7 @@ function targetlead_holdstateupdate()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x871
 // Size: 0x83
 function targetlead_holdstateexit()
@@ -230,7 +230,7 @@ function targetlead_holdstateexit()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8fc
 // Size: 0x39
 function targetlead_preupdate()
@@ -245,7 +245,7 @@ function targetlead_preupdate()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x93d
 // Size: 0x2
 function targetlead_onstartthink()
@@ -254,7 +254,7 @@ function targetlead_onstartthink()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x947
 // Size: 0x42
 function targetlead_onstopthink()
@@ -266,7 +266,7 @@ function targetlead_onstopthink()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x991
 // Size: 0xe1
 function targetlead_getleadposition( trackedentity )
@@ -300,7 +300,7 @@ function targetlead_getleadposition( trackedentity )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7b
 // Size: 0x102
 function targetlead_getvehicleoffset( vehicletarget )
@@ -344,7 +344,7 @@ function targetlead_getvehicleoffset( vehicletarget )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb86
 // Size: 0x47, Type: bool
 function targetlead_checktargetstillheld( targetent )
@@ -370,7 +370,7 @@ function targetlead_checktargetstillheld( targetent )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbd6
 // Size: 0x2e
 function targetlead_looplocalseeksound( alias, interval )
@@ -386,7 +386,7 @@ function targetlead_looplocalseeksound( alias, interval )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc0c
 // Size: 0x20
 function targetlead_queuestate( statename )
@@ -395,7 +395,7 @@ function targetlead_queuestate( statename )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc34
 // Size: 0x15
 function targetlead_getqueuedstate()
@@ -404,7 +404,7 @@ function targetlead_getqueuedstate()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc52
 // Size: 0x15a
 function targetlead_enterstate( statename )
@@ -438,7 +438,7 @@ function targetlead_enterstate( statename )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdb4
 // Size: 0x9, Type: bool
 function targetlead_shouldtargetleadthink()
@@ -447,7 +447,7 @@ function targetlead_shouldtargetleadthink()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc6
 // Size: 0xee
 function targetlead_think()
@@ -484,7 +484,7 @@ function targetlead_think()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xebc
 // Size: 0x21
 function targetlead_earlyoutthink()
@@ -495,7 +495,7 @@ function targetlead_earlyoutthink()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee5
 // Size: 0xc4
 function targetlead_scanforvehicletarget()
@@ -531,7 +531,7 @@ function targetlead_scanforvehicletarget()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb2
 // Size: 0xbe, Type: bool
 function targetlead_vehiclelocksighttest( target )
@@ -577,7 +577,7 @@ function targetlead_vehiclelocksighttest( target )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1079
 // Size: 0x8f, Type: bool
 function targetlead_softsighttest( targetent )
@@ -604,7 +604,7 @@ function targetlead_softsighttest( targetent )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1111
 // Size: 0x5f
 function targetlead_airburstholdthink()
@@ -621,7 +621,7 @@ function targetlead_airburstholdthink()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1178
 // Size: 0x9b
 function targetlead_airburstmissilethink( targetent, missileowner )
@@ -650,7 +650,7 @@ function targetlead_airburstmissilethink( targetent, missileowner )
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x121b
 // Size: 0xb5
 function targetlead_uimarkentities()
@@ -662,7 +662,7 @@ function targetlead_uimarkentities()
 }
 
 // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12d8
 // Size: 0x5a
 function targetlead_uiunmarkentities()
@@ -674,7 +674,7 @@ function targetlead_uiunmarkentities()
 /#
 
     // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x133a
     // Size: 0x2c, Type: dev
     function function_7ea27fe25f2f18e5( text )
@@ -686,7 +686,7 @@ function targetlead_uiunmarkentities()
     }
 
     // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x136e
     // Size: 0xe6, Type: dev
     function function_6eee6cec92ff2a91( point, color, radius )
@@ -710,7 +710,7 @@ function targetlead_uiunmarkentities()
     }
 
     // Namespace launcher_target_lead / scripts\mp\launcher_target_lead
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x145c
     // Size: 0x87, Type: dev
     function function_7db309b40a632139( start, end, passed )

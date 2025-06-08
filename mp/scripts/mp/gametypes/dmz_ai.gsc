@@ -6,7 +6,7 @@
 #namespace dmz_ai;
 
 // Namespace dmz_ai / scripts\mp\gametypes\dmz_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c8
 // Size: 0x9a
 function init()
@@ -34,7 +34,7 @@ function init()
 }
 
 // Namespace dmz_ai / scripts\mp\gametypes\dmz_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26a
 // Size: 0x37
 function function_3c5c2e3402f0431e()
@@ -51,7 +51,7 @@ function function_3c5c2e3402f0431e()
 }
 
 // Namespace dmz_ai / scripts\mp\gametypes\dmz_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a9
 // Size: 0x2d
 function function_bbbd3531ab976b5e()
@@ -67,7 +67,7 @@ function function_bbbd3531ab976b5e()
 }
 
 // Namespace dmz_ai / scripts\mp\gametypes\dmz_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2de
 // Size: 0x9a
 function function_428703950599c9e9()

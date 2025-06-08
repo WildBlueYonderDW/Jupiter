@@ -4,7 +4,7 @@
 #namespace elevator;
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52d
 // Size: 0x135
 function init()
@@ -52,7 +52,7 @@ function init()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66a
 // Size: 0x175
 function elevator_update_global_dvars()
@@ -84,7 +84,7 @@ function elevator_update_global_dvars()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e7
 // Size: 0xe
 function elevator_think()
@@ -93,7 +93,7 @@ function elevator_think()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7fd
 // Size: 0x57
 function elevator_call()
@@ -105,7 +105,7 @@ function elevator_call()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x85c
 // Size: 0x62
 function floor_override( inside_trig )
@@ -126,7 +126,7 @@ function floor_override( inside_trig )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c6
 // Size: 0x34f
 function elevator_fsm( state )
@@ -246,7 +246,7 @@ function elevator_fsm( state )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc1d
 // Size: 0x1a8
 function monitor_callbutton()
@@ -303,7 +303,7 @@ function monitor_callbutton()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdcd
 // Size: 0x57
 function call_elevator( call_floor )
@@ -319,7 +319,7 @@ function call_elevator( call_floor )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe2c
 // Size: 0xa1
 function get_floor( player )
@@ -352,7 +352,7 @@ function get_floor( player )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed5
 // Size: 0x60
 function elevator_interrupt( door_trig )
@@ -369,7 +369,7 @@ function elevator_interrupt( door_trig )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf3d
 // Size: 0xb8
 function elevator_floor_update()
@@ -393,7 +393,7 @@ function elevator_floor_update()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xffe
 // Size: 0x128
 function elevator_sound_think()
@@ -424,7 +424,7 @@ function elevator_sound_think()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x112e
 // Size: 0xc3
 function listen_for( msg )
@@ -465,7 +465,7 @@ function listen_for( msg )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11f9
 // Size: 0xbf
 function position_elevators()
@@ -485,7 +485,7 @@ function position_elevators()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12c0
 // Size: 0x1ae
 function elevator_move( floor_num )
@@ -517,7 +517,7 @@ function elevator_move( floor_num )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1476
 // Size: 0xff
 function close_inner_doors()
@@ -540,7 +540,7 @@ function close_inner_doors()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x157d
 // Size: 0x12a
 function open_inner_doors()
@@ -564,7 +564,7 @@ function open_inner_doors()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16af
 // Size: 0x108
 function close_outer_doors( floor_num )
@@ -586,7 +586,7 @@ function close_outer_doors( floor_num )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17bf
 // Size: 0x11a
 function open_outer_doors( floor_num )
@@ -609,7 +609,7 @@ function open_outer_doors( floor_num )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18e1
 // Size: 0xc53
 function build_elevators()
@@ -701,8 +701,10 @@ function build_elevators()
         
         assert( isdefined( parts.e[ "<dev string:x113>" ] ) );
         
-        for (i = 0; i < parts.e[ "outer_doorset" ].size - 1; i++) {
-            for (j = 0; j < parts.e[ "outer_doorset" ].size - 1 - i; j++) {
+        for ( i = 0; i < parts.e[ "outer_doorset" ].size - 1 ; i++ )
+        {
+            for ( j = 0; j < parts.e[ "outer_doorset" ].size - 1 - i ; j++ )
+            {
                 if ( parts.e[ "outer_doorset" ][ j + 1 ][ "door_closed_pos" ][ 2 ] < parts.e[ "outer_doorset" ][ j ][ "door_closed_pos" ][ 2 ] )
                 {
                     var_7f2dad6015bc0d0a = parts.e[ "outer_doorset" ][ j ][ "left_door" ];
@@ -771,7 +773,7 @@ function build_elevators()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x253c
 // Size: 0x2ad
 function build_call_buttons()
@@ -811,7 +813,7 @@ function build_call_buttons()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27f1
 // Size: 0x10e
 function setup_hints()
@@ -840,7 +842,7 @@ function setup_hints()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2907
 // Size: 0x14
 function make_discrete_trigger()
@@ -850,7 +852,7 @@ function make_discrete_trigger()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2923
 // Size: 0x5a
 function discrete_waittill( msg )
@@ -872,7 +874,7 @@ function discrete_waittill( msg )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2986
 // Size: 0x7b
 function enable_trigger()
@@ -890,7 +892,7 @@ function enable_trigger()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a09
 // Size: 0x1e
 function disable_trigger()
@@ -904,7 +906,7 @@ function disable_trigger()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a2f
 // Size: 0x7b
 function disable_trigger_helper()
@@ -921,7 +923,7 @@ function disable_trigger_helper()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ab2
 // Size: 0x1c
 function get_outer_doorset( floor_num )
@@ -930,7 +932,7 @@ function get_outer_doorset( floor_num )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ad7
 // Size: 0x11
 function get_outer_doorsets()
@@ -939,7 +941,7 @@ function get_outer_doorsets()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2af1
 // Size: 0x22
 function get_outer_closedpos( floor_num )
@@ -948,7 +950,7 @@ function get_outer_closedpos( floor_num )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b1c
 // Size: 0x22
 function get_outer_leftdoor( floor_num )
@@ -957,7 +959,7 @@ function get_outer_leftdoor( floor_num )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b47
 // Size: 0x22
 function get_outer_rightdoor( floor_num )
@@ -966,7 +968,7 @@ function get_outer_rightdoor( floor_num )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b72
 // Size: 0x22
 function get_outer_leftdoor_openedpos( floor_num )
@@ -975,7 +977,7 @@ function get_outer_leftdoor_openedpos( floor_num )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b9d
 // Size: 0x22
 function get_outer_rightdoor_openedpos( floor_num )
@@ -984,7 +986,7 @@ function get_outer_rightdoor_openedpos( floor_num )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bc8
 // Size: 0x148
 function get_housing_children()
@@ -1023,7 +1025,7 @@ function get_housing_children()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d19
 // Size: 0xbe
 function get_housing_mainframe()
@@ -1045,7 +1047,7 @@ function get_housing_mainframe()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2de0
 // Size: 0x8b
 function get_housing_models()
@@ -1065,7 +1067,7 @@ function get_housing_models()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e74
 // Size: 0x8b
 function get_housing_primarylight()
@@ -1085,7 +1087,7 @@ function get_housing_primarylight()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f08
 // Size: 0x89
 function get_housing_musak_model()
@@ -1105,7 +1107,7 @@ function get_housing_musak_model()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f9a
 // Size: 0x17
 function get_housing_door_trigger()
@@ -1114,7 +1116,7 @@ function get_housing_door_trigger()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fba
 // Size: 0x17
 function get_housing_inside_trigger()
@@ -1123,7 +1125,7 @@ function get_housing_inside_trigger()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fda
 // Size: 0x17
 function get_housing_closedpos()
@@ -1132,7 +1134,7 @@ function get_housing_closedpos()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ffa
 // Size: 0x17
 function get_housing_leftdoor()
@@ -1141,7 +1143,7 @@ function get_housing_leftdoor()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x301a
 // Size: 0x17
 function get_housing_rightdoor()
@@ -1150,7 +1152,7 @@ function get_housing_rightdoor()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x303a
 // Size: 0x17
 function get_housing_leftdoor_opened_pos()
@@ -1159,7 +1161,7 @@ function get_housing_leftdoor_opened_pos()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x305a
 // Size: 0x17
 function get_housing_rightdoor_opened_pos()
@@ -1168,7 +1170,7 @@ function get_housing_rightdoor_opened_pos()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x307a
 // Size: 0x23
 function get_curfloor()
@@ -1178,7 +1180,7 @@ function get_curfloor()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30a6
 // Size: 0x11
 function get_initfloor()
@@ -1187,7 +1189,7 @@ function get_initfloor()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x30c0
 // Size: 0x7f
 function waittill_finish_moving( ent1, var_e46b13ef3f8c9dcb, ent2, var_4ed727c032053180 )
@@ -1213,7 +1215,7 @@ function waittill_finish_moving( ent1, var_e46b13ef3f8c9dcb, ent2, var_4ed727c03
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3147
 // Size: 0xa5, Type: bool
 function isinbound( var_45287878f0bc903f )
@@ -1229,7 +1231,7 @@ function isinbound( var_45287878f0bc903f )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31f5
 // Size: 0xc3, Type: bool
 function isinboundingspere( var_45287878f0bc903f )
@@ -1247,7 +1249,7 @@ function isinboundingspere( var_45287878f0bc903f )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32c1
 // Size: 0x18
 function waittill_or_timeout( msg, timer )
@@ -1257,7 +1259,7 @@ function waittill_or_timeout( msg, timer )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32e1
 // Size: 0x20
 function elevator_get_dvar_int( dvar, def )
@@ -1266,7 +1268,7 @@ function elevator_get_dvar_int( dvar, def )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x330a
 // Size: 0x36
 function elevator_get_dvar( dvar, def )
@@ -1281,7 +1283,7 @@ function elevator_get_dvar( dvar, def )
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3348
 // Size: 0x553
 function elevator_debug()
@@ -1374,7 +1376,7 @@ function elevator_debug()
 }
 
 // Namespace elevator / scripts\common\elevator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38a3
 // Size: 0x91, Type: bool
 function function_d9d18dab18ebded( movingplatforment )

@@ -7,7 +7,7 @@
 #namespace door_check;
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x343
 // Size: 0x13b
 function getfunction( funcid )
@@ -413,7 +413,7 @@ function private onenter( statename, params )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1000
 // Size: 0x37, Type: bool
 function function_27dc505064bcf45b( asmname, statename, tostatename, params )
@@ -422,7 +422,7 @@ function function_27dc505064bcf45b( asmname, statename, tostatename, params )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1040
 // Size: 0x37, Type: bool
 function function_57787698e416086f( asmname, statename, tostatename, params )
@@ -431,7 +431,7 @@ function function_57787698e416086f( asmname, statename, tostatename, params )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1080
 // Size: 0x42
 function function_14242f7e3e92261c( asmname, statename, params )
@@ -441,7 +441,7 @@ function function_14242f7e3e92261c( asmname, statename, params )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10cb
 // Size: 0x76
 function function_cfa7813e89867c4( asmname, statename, params )
@@ -451,7 +451,7 @@ function function_cfa7813e89867c4( asmname, statename, params )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x114a
 // Size: 0x1a
 function function_cea2a40434f5918()
@@ -465,7 +465,7 @@ function function_cea2a40434f5918()
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x116c
 // Size: 0x14b
 function function_ce30ac74cab64cfd( note )
@@ -510,7 +510,7 @@ function function_ce30ac74cab64cfd( note )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12bf
 // Size: 0x92
 function function_184b5862455e8902()
@@ -531,7 +531,7 @@ function function_184b5862455e8902()
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1359
 // Size: 0x70
 function function_a3564484875da8f8( asmname, statename, params )
@@ -543,7 +543,7 @@ function function_a3564484875da8f8( asmname, statename, params )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13d1
 // Size: 0x58
 function function_26b903a39f018550( asmname, statename, params )
@@ -553,7 +553,7 @@ function function_26b903a39f018550( asmname, statename, params )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1431
 // Size: 0xe9, Type: bool
 function function_a910d69a0daa7775( asmname, statename, tostatename, params )
@@ -694,7 +694,7 @@ function private function_af686e8a0657ce57( interactionid )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x180a
 // Size: 0xb
 function function_8055622a418ebd4f( interactionid )
@@ -703,7 +703,7 @@ function function_8055622a418ebd4f( interactionid )
 }
 
 // Namespace door_check / namespace_4ef97519f59e04e6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x181d
 // Size: 0xb
 function function_767fb54813708a82( interactionid )

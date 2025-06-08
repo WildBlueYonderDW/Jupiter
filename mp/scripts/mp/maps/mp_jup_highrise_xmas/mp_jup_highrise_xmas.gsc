@@ -16,7 +16,7 @@
 #namespace mp_jup_highrise_xmas;
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b7
 // Size: 0xe3
 function main()
@@ -45,7 +45,7 @@ function main()
 }
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a2
 // Size: 0x20
 function function_4f48f01701f9e22b()
@@ -60,7 +60,7 @@ function function_4f48f01701f9e22b()
 }
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ca
 // Size: 0x5f
 function function_a1f774c728610421()
@@ -77,7 +77,7 @@ function function_a1f774c728610421()
 }
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x531
 // Size: 0x152
 function function_359d426bc2dca387()
@@ -110,7 +110,7 @@ function function_359d426bc2dca387()
 }
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68b
 // Size: 0xbe
 function setupsnowballs()
@@ -139,7 +139,7 @@ function setupsnowballs()
 }
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x751
 // Size: 0x1c8
 function function_976a45c1d451c212( loc, self_remove )
@@ -188,7 +188,7 @@ function private getequipmenthinticon( weapon )
 }
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x95b
 // Size: 0x1b3
 function watchsnowballpickup( loc, self_remove )
@@ -250,7 +250,7 @@ function watchsnowballpickup( loc, self_remove )
 }
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb16
 // Size: 0x3d
 function checkissameequip( player )
@@ -266,7 +266,7 @@ function checkissameequip( player )
 }
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb5b
 // Size: 0x15
 function dropoldequipinplace( equipment )
@@ -275,7 +275,7 @@ function dropoldequipinplace( equipment )
 }
 
 // Namespace mp_jup_highrise_xmas / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb78
 // Size: 0x3a
 function checkcurrentequiptypeammocount( player )

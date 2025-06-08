@@ -8,7 +8,7 @@
 #namespace hunt_point;
 
 // Namespace hunt_point / scripts\smartobjects\hunt_point
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x186
 // Size: 0x18
 function main()
@@ -17,7 +17,7 @@ function main()
 }
 
 // Namespace hunt_point / scripts\smartobjects\hunt_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0xd, Type: bool
 function canuse( object )
@@ -26,7 +26,7 @@ function canuse( object )
 }
 
 // Namespace hunt_point / scripts\smartobjects\hunt_point
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bc
 // Size: 0x5d
 function getinfo()
@@ -41,7 +41,7 @@ function getinfo()
 }
 
 // Namespace hunt_point / scripts\smartobjects\hunt_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x222
 // Size: 0x17b
 function onuse( object )
@@ -88,7 +88,7 @@ function onuse( object )
 }
 
 // Namespace hunt_point / scripts\smartobjects\hunt_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a5
 // Size: 0x6f
 function waitforgesture( flag )
@@ -112,7 +112,7 @@ function waitforgesture( flag )
 }
 
 // Namespace hunt_point / scripts\smartobjects\hunt_point
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41c
 // Size: 0x22
 function function_522562e28309afaa( t )

@@ -58,7 +58,7 @@ function private init()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe74
 // Size: 0x28
 function function_cf9f8b598647e363( streakinfo, switchresult, weaponobj )
@@ -70,9 +70,9 @@ function function_cf9f8b598647e363( streakinfo, switchresult, weaponobj )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xea4
-// Size: 0x26, Type: bool
+// Size: 0x26
 function function_3149fdf577104365( streakname )
 {
     streakinfo = createstreakinfo( streakname, self );
@@ -80,7 +80,7 @@ function function_3149fdf577104365( streakname )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed3
 // Size: 0x2ff, Type: bool
 function function_c916c5b82db1290( streakinfo )
@@ -188,7 +188,7 @@ function function_c916c5b82db1290( streakinfo )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11db
 // Size: 0x6a
 function function_a6f142a3e83c312e( owner )
@@ -205,7 +205,7 @@ function function_a6f142a3e83c312e( owner )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x124d
 // Size: 0x60
 function function_3da5b516d6b9a223( turret )
@@ -223,7 +223,7 @@ function function_3da5b516d6b9a223( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x12b5
 // Size: 0x13a
 function function_302dac858d0c3cf4( turret, streakinfo, ignorecancel, var_290b1442271ab369 )
@@ -270,7 +270,7 @@ function function_302dac858d0c3cf4( turret, streakinfo, ignorecancel, var_290b14
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13f8
 // Size: 0x50
 function function_654def657f4f961( delaytime )
@@ -285,7 +285,7 @@ function function_654def657f4f961( delaytime )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1450
 // Size: 0x439
 function function_ff68719c4aed211e( turrettype, streakinfo )
@@ -377,7 +377,7 @@ function function_ff68719c4aed211e( turrettype, streakinfo )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1892
 // Size: 0x75d
 function function_688e15aadc8b2663( turret, marker )
@@ -554,7 +554,7 @@ function function_688e15aadc8b2663( turret, marker )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ff7
 // Size: 0x50
 function function_3650adfd6e0d1fb9( killstreakid )
@@ -573,7 +573,7 @@ function function_3650adfd6e0d1fb9( killstreakid )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x204f
 // Size: 0xff
 function function_691b0d98100b44cd()
@@ -607,7 +607,7 @@ function function_691b0d98100b44cd()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2156
 // Size: 0x45a
 function function_2bd5e2012f429ae3( turret )
@@ -750,7 +750,7 @@ function function_2bd5e2012f429ae3( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25b8
 // Size: 0x1df
 function function_a920f20104777b97( turret, var_de4dbbca9f355800 )
@@ -808,7 +808,7 @@ function function_a920f20104777b97( turret, var_de4dbbca9f355800 )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x279f
 // Size: 0x9d
 function function_baa645fe416db1d5( turret )
@@ -826,7 +826,7 @@ function function_baa645fe416db1d5( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2844
 // Size: 0xf2
 function function_478f159eb6d02ae8( turret )
@@ -862,7 +862,7 @@ function function_478f159eb6d02ae8( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x293e
 // Size: 0x71, Type: bool
 function function_8cf8be1c2f72ddd5()
@@ -881,7 +881,7 @@ function function_8cf8be1c2f72ddd5()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29b8
 // Size: 0x1db
 function function_dc251dedf977c842( turret )
@@ -1012,7 +1012,7 @@ function private function_7317b5e0cedc533d( turret, var_43b83976503b9e6d )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ca9
 // Size: 0x31
 function function_fcf0bb8342007af( turret )
@@ -1027,9 +1027,9 @@ function function_fcf0bb8342007af( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ce2
-// Size: 0x2f3
+// Size: 0x310
 function function_c35af9dc8b19b148( turret )
 {
     turret endon( "kill_turret" );
@@ -1107,6 +1107,9 @@ function function_c35af9dc8b19b148( turret )
     
     if ( !istrue( switchsuccess ) )
     {
+        self notify( endonnotify );
+        _takeweapon( "deploy_remote_turret_mp" );
+        turret notify( "kill_turret", 1, 1 );
         return 0;
     }
     
@@ -1124,8 +1127,8 @@ function function_c35af9dc8b19b148( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fdd
+// Params 1
+// Checksum 0x0, Offset: 0x2ffa
 // Size: 0x3f
 function function_7c80dd2c0c7ee701( immediateswitch )
 {
@@ -1142,8 +1145,8 @@ function function_7c80dd2c0c7ee701( immediateswitch )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3024
+// Params 1
+// Checksum 0x0, Offset: 0x3041
 // Size: 0x68
 function function_fbce760dc23e09f( turret )
 {
@@ -1155,8 +1158,8 @@ function function_fbce760dc23e09f( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3094
+// Params 2
+// Checksum 0x0, Offset: 0x30b1
 // Size: 0x47
 function function_e4b89077ed169ef8( turret, marker )
 {
@@ -1171,8 +1174,8 @@ function function_e4b89077ed169ef8( turret, marker )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30e3
+// Params 2
+// Checksum 0x0, Offset: 0x3100
 // Size: 0x58
 function function_80ff81904f57cb37( turret, useobj )
 {
@@ -1193,8 +1196,8 @@ function function_80ff81904f57cb37( turret, useobj )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3143
+// Params 1
+// Checksum 0x0, Offset: 0x3160
 // Size: 0x133
 function function_839405550006f5b9( turret )
 {
@@ -1234,8 +1237,8 @@ function function_839405550006f5b9( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x327e
+// Params 1
+// Checksum 0x0, Offset: 0x329b
 // Size: 0x5d
 function function_9e8098735889a91c( turret )
 {
@@ -1253,8 +1256,8 @@ function function_9e8098735889a91c( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32e3
+// Params 1
+// Checksum 0x0, Offset: 0x3300
 // Size: 0xd9
 function function_60712857f1107040( turret )
 {
@@ -1291,8 +1294,8 @@ function function_60712857f1107040( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33c4
+// Params 1
+// Checksum 0x0, Offset: 0x33e1
 // Size: 0x5d
 function function_24b36e1359ab805c( turret )
 {
@@ -1310,8 +1313,8 @@ function function_24b36e1359ab805c( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3429
+// Params 1
+// Checksum 0x0, Offset: 0x3446
 // Size: 0x72
 function function_7230352706ac17db( turret )
 {
@@ -1336,8 +1339,8 @@ function function_7230352706ac17db( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34a3
+// Params 1
+// Checksum 0x0, Offset: 0x34c0
 // Size: 0x7f
 function function_58cc23bccf168a2d( data )
 {
@@ -1358,8 +1361,8 @@ function function_58cc23bccf168a2d( data )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x352a
+// Params 1
+// Checksum 0x0, Offset: 0x3547
 // Size: 0xb9
 function function_aef483ef5ed5cff4( isdeath )
 {
@@ -1388,8 +1391,8 @@ function function_aef483ef5ed5cff4( isdeath )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35eb
+// Params 1
+// Checksum 0x0, Offset: 0x3608
 // Size: 0x89
 function function_371131da10a20bb( data )
 {
@@ -1410,8 +1413,8 @@ function function_371131da10a20bb( data )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x367c
+// Params 0
+// Checksum 0x0, Offset: 0x3699
 // Size: 0x22f
 function function_9830ac9a0fbf0d6e()
 {
@@ -1469,8 +1472,8 @@ function function_9830ac9a0fbf0d6e()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38b3
+// Params 1
+// Checksum 0x0, Offset: 0x38d0
 // Size: 0xb4
 function function_958fed8d4d1143fa( data )
 {
@@ -1494,8 +1497,8 @@ function function_958fed8d4d1143fa( data )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x396f
+// Params 1
+// Checksum 0x0, Offset: 0x398c
 // Size: 0x1f
 function function_a9d407dcc53c2a3d( var_9f1f082eeef5d90b )
 {
@@ -1506,7 +1509,7 @@ function function_a9d407dcc53c2a3d( var_9f1f082eeef5d90b )
 
     // Namespace remote_turret / scripts\killstreaks\remote_turret
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3996
+    // Checksum 0x0, Offset: 0x39b3
     // Size: 0x52, Type: dev
     function private function_1f85068748abaa9b( turret )
     {
@@ -1523,8 +1526,8 @@ function function_a9d407dcc53c2a3d( var_9f1f082eeef5d90b )
 #/
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x39f0
+// Params 1
+// Checksum 0x0, Offset: 0x3a0d
 // Size: 0x298
 function function_cc47405c2cd435e( data )
 {
@@ -1593,8 +1596,8 @@ function function_cc47405c2cd435e( data )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c90
+// Params 1
+// Checksum 0x0, Offset: 0x3cad
 // Size: 0xf0
 function function_fe21c57503ab070f( data )
 {
@@ -1626,8 +1629,8 @@ function function_fe21c57503ab070f( data )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d88
+// Params 0
+// Checksum 0x0, Offset: 0x3da5
 // Size: 0x64
 function function_66a63d2003156721()
 {
@@ -1643,8 +1646,8 @@ function function_66a63d2003156721()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3df4
+// Params 1
+// Checksum 0x0, Offset: 0x3e11
 // Size: 0x37
 function function_aa2dc590a653d06e( owner )
 {
@@ -1663,8 +1666,8 @@ function function_aa2dc590a653d06e( owner )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e33
+// Params 1
+// Checksum 0x0, Offset: 0x3e50
 // Size: 0x1b4
 function function_3b0cd265e614031a( owner )
 {
@@ -1720,8 +1723,8 @@ function function_3b0cd265e614031a( owner )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fef
+// Params 1
+// Checksum 0x0, Offset: 0x400c
 // Size: 0x3c2
 function function_7a35c7c95b25b0e9( turret )
 {
@@ -1841,8 +1844,8 @@ function function_7a35c7c95b25b0e9( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43b9
+// Params 1
+// Checksum 0x0, Offset: 0x43d6
 // Size: 0x17
 function function_3eccd3cd75317e53( data )
 {
@@ -1850,8 +1853,8 @@ function function_3eccd3cd75317e53( data )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x43d8
+// Params 0
+// Checksum 0x0, Offset: 0x43f5
 // Size: 0x19
 function function_f8e82a6dd884bd91()
 {
@@ -1861,8 +1864,8 @@ function function_f8e82a6dd884bd91()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43f9
+// Params 1
+// Checksum 0x0, Offset: 0x4416
 // Size: 0xfd
 function function_1ad21168e3b8db0c( turret )
 {
@@ -1890,8 +1893,8 @@ function function_1ad21168e3b8db0c( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44fe
+// Params 1
+// Checksum 0x0, Offset: 0x451b
 // Size: 0x39
 function function_cfb4701398c755b5( turret )
 {
@@ -1902,8 +1905,8 @@ function function_cfb4701398c755b5( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x453f
+// Params 1
+// Checksum 0x0, Offset: 0x455c
 // Size: 0x2b
 function function_40906ee89de6f708( turret )
 {
@@ -1914,8 +1917,8 @@ function function_40906ee89de6f708( turret )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4572
+// Params 1
+// Checksum 0x0, Offset: 0x458f
 // Size: 0xa3
 function function_20db11c0f7f046c1( type )
 {
@@ -1944,8 +1947,8 @@ function function_20db11c0f7f046c1( type )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x461d
+// Params 2
+// Checksum 0x0, Offset: 0x463a
 // Size: 0xf1
 function function_3bb43305bf56bfec( var_630af5192659dd3b, player )
 {
@@ -1988,8 +1991,8 @@ function function_3bb43305bf56bfec( var_630af5192659dd3b, player )
 /#
 
     // Namespace remote_turret / scripts\killstreaks\remote_turret
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4716
+    // Params 1
+    // Checksum 0x0, Offset: 0x4733
     // Size: 0x25f, Type: dev
     function function_1223f321ae6ff9a5( var_630af5192659dd3b )
     {
@@ -2075,8 +2078,8 @@ function function_3bb43305bf56bfec( var_630af5192659dd3b, player )
     }
 
     // Namespace remote_turret / scripts\killstreaks\remote_turret
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x497d
+    // Params 1
+    // Checksum 0x0, Offset: 0x499a
     // Size: 0x1a1, Type: dev
     function function_ee5cbfd60227d0b8( firepos )
     {
@@ -2115,8 +2118,8 @@ function function_3bb43305bf56bfec( var_630af5192659dd3b, player )
     }
 
     // Namespace remote_turret / scripts\killstreaks\remote_turret
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4b26
+    // Params 0
+    // Checksum 0x0, Offset: 0x4b43
     // Size: 0x39, Type: dev
     function function_c151e4a17d929b78()
     {
@@ -2127,8 +2130,8 @@ function function_3bb43305bf56bfec( var_630af5192659dd3b, player )
     }
 
     // Namespace remote_turret / scripts\killstreaks\remote_turret
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4b67
+    // Params 1
+    // Checksum 0x0, Offset: 0x4b84
     // Size: 0x61, Type: dev
     function function_8ffe5560e2df8a72( turret )
     {
@@ -2149,8 +2152,8 @@ function function_3bb43305bf56bfec( var_630af5192659dd3b, player )
     }
 
     // Namespace remote_turret / scripts\killstreaks\remote_turret
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4bd0
+    // Params 1
+    // Checksum 0x0, Offset: 0x4bed
     // Size: 0x39, Type: dev
     function function_818d215a79eecafe( turret )
     {
@@ -2165,8 +2168,8 @@ function function_3bb43305bf56bfec( var_630af5192659dd3b, player )
 #/
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c11
+// Params 0
+// Checksum 0x0, Offset: 0x4c2e
 // Size: 0x1a
 function function_7e11984961aa0adb()
 {
@@ -2175,8 +2178,8 @@ function function_7e11984961aa0adb()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c33
+// Params 1
+// Checksum 0x0, Offset: 0x4c50
 // Size: 0x6b
 function function_7a41af7e47221e8f( var_630af5192659dd3b )
 {
@@ -2196,8 +2199,8 @@ function function_7a41af7e47221e8f( var_630af5192659dd3b )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ca6
+// Params 0
+// Checksum 0x0, Offset: 0x4cc3
 // Size: 0x2a
 function function_361d73970f697d6a()
 {
@@ -2211,8 +2214,8 @@ function function_361d73970f697d6a()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cd8
+// Params 3
+// Checksum 0x0, Offset: 0x4cf5
 // Size: 0x182
 function function_da96aa677b43fd18( var_630af5192659dd3b, var_ebed6e83eb956d18, var_7a4f7bd11952e7bc )
 {
@@ -2251,7 +2254,8 @@ function function_da96aa677b43fd18( var_630af5192659dd3b, var_ebed6e83eb956d18, 
             numshots = var_ebed6e83eb956d18;
         }
         
-        for (i = 0; i < numshots; i++) {
+        for ( i = 0; i < numshots ; i++ )
+        {
             self shootturret( "tag_flash", lockstrength );
             self.streakinfo.shots_fired++;
             wait firetime;
@@ -2267,8 +2271,8 @@ function function_da96aa677b43fd18( var_630af5192659dd3b, var_ebed6e83eb956d18, 
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e62
+// Params 0
+// Checksum 0x0, Offset: 0x4e7f
 // Size: 0xa
 function function_b7ffbe66f2c448fc()
 {
@@ -2276,8 +2280,8 @@ function function_b7ffbe66f2c448fc()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e74
+// Params 0
+// Checksum 0x0, Offset: 0x4e91
 // Size: 0x4a
 function function_7bd876f944b5caf3()
 {
@@ -2300,9 +2304,9 @@ function function_7bd876f944b5caf3()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ec6
-// Size: 0xa0
+// Params 0
+// Checksum 0x0, Offset: 0x4ee3
+// Size: 0xb7
 function turret_heatmonitor()
 {
     /#
@@ -2313,6 +2317,11 @@ function turret_heatmonitor()
     self endon( "carried" );
     level endon( "game_ended" );
     overheattime = level.sentrysettings[ self.turrettype ].overheattime;
+    
+    if ( !isdefined( self.heatlevel ) )
+    {
+        self.heatlevel = 0;
+    }
     
     while ( true )
     {
@@ -2334,8 +2343,8 @@ function turret_heatmonitor()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f6e
+// Params 0
+// Checksum 0x0, Offset: 0x4fa2
 // Size: 0x5e
 function playheatfx()
 {
@@ -2353,9 +2362,9 @@ function playheatfx()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fd4
-// Size: 0x92
+// Params 0
+// Checksum 0x0, Offset: 0x5008
+// Size: 0xbd
 function turret_coolmonitor()
 {
     /#
@@ -2368,9 +2377,19 @@ function turret_coolmonitor()
     
     while ( true )
     {
+        if ( !isdefined( self ) )
+        {
+            return;
+        }
+        
+        if ( !isdefined( self.heatlevel ) )
+        {
+            self.heatlevel = 0;
+        }
+        
         if ( self.heatlevel > 0 )
         {
-            if ( self.cooldownwaittime <= 0 )
+            if ( isdefined( self.cooldownwaittime ) && self.cooldownwaittime <= 0 )
             {
                 self.heatlevel = max( 0, self.heatlevel - 0.05 );
             }
@@ -2385,8 +2404,8 @@ function turret_coolmonitor()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x506e
+// Params 0
+// Checksum 0x0, Offset: 0x50cd
 // Size: 0x39
 function function_2c51e186f21ecfae()
 {
@@ -2408,8 +2427,8 @@ function function_2c51e186f21ecfae()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50af
+// Params 0
+// Checksum 0x0, Offset: 0x510e
 // Size: 0x206
 function function_1baea357653599af()
 {
@@ -2487,8 +2506,8 @@ function function_1baea357653599af()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x52bd
+// Params 1
+// Checksum 0x0, Offset: 0x531c
 // Size: 0x76
 function function_a8c3018671379cee( target )
 {
@@ -2507,7 +2526,7 @@ function function_a8c3018671379cee( target )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x533c
+// Checksum 0x0, Offset: 0x539b
 // Size: 0x226
 function private function_3456f1755f48358c( scantarget, scanfov, var_5e43b44751d01b1a )
 {
@@ -2582,8 +2601,8 @@ function private function_3456f1755f48358c( scantarget, scanfov, var_5e43b44751d
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x556b
+// Params 1
+// Checksum 0x0, Offset: 0x55ca
 // Size: 0x77, Type: bool
 function function_84c67e2797c250e9( target )
 {
@@ -2604,8 +2623,8 @@ function function_84c67e2797c250e9( target )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x55eb
+// Params 1
+// Checksum 0x0, Offset: 0x564a
 // Size: 0x77, Type: bool
 function function_7bf16f569dc33813( target )
 {
@@ -2626,8 +2645,8 @@ function function_7bf16f569dc33813( target )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x566b
+// Params 1
+// Checksum 0x0, Offset: 0x56ca
 // Size: 0x268
 function function_a13b737dd0cea460( target )
 {
@@ -2691,7 +2710,8 @@ function function_a13b737dd0cea460( target )
     
     icansee = 0;
     
-    for (i = 0; i < tracepoints.size; i++) {
+    for ( i = 0; i < tracepoints.size ; i++ )
+    {
         trace = scripts\engine\trace::ray_trace( camorigin, tracepoints[ i ], ignorelist, tracecontents, 1 );
         
         if ( trace[ "hittype" ] == "hittype_none" )
@@ -2705,8 +2725,8 @@ function function_a13b737dd0cea460( target )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x58dc
+// Params 1
+// Checksum 0x0, Offset: 0x593b
 // Size: 0x247
 function function_f232be2b19471805( target )
 {
@@ -2774,7 +2794,7 @@ function function_f232be2b19471805( target )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5b2c
+// Checksum 0x0, Offset: 0x5b8b
 // Size: 0x51, Type: bool
 function private function_d326d254331ad16b( target )
 {
@@ -2801,8 +2821,8 @@ function private function_d326d254331ad16b( target )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b86
+// Params 1
+// Checksum 0x0, Offset: 0x5be5
 // Size: 0xc2
 function function_bcc24554453f6d67( player )
 {
@@ -2841,8 +2861,8 @@ function function_bcc24554453f6d67( player )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c50
+// Params 1
+// Checksum 0x0, Offset: 0x5caf
 // Size: 0x35
 function function_1a5c1f370962e7bc( cameratype )
 {
@@ -2853,7 +2873,7 @@ function function_1a5c1f370962e7bc( cameratype )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x5c8e
+// Checksum 0x0, Offset: 0x5ced
 // Size: 0x80
 function private function_b25c3111cbbcee44( target, sensorduration, supername )
 {
@@ -2872,7 +2892,7 @@ function private function_b25c3111cbbcee44( target, sensorduration, supername )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5d16
+// Checksum 0x0, Offset: 0x5d75
 // Size: 0x7e
 function private function_cb0d2df7f050aa8e( target )
 {
@@ -2895,7 +2915,7 @@ function private function_cb0d2df7f050aa8e( target )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5d9c
+// Checksum 0x0, Offset: 0x5dfb
 // Size: 0x67
 function private function_487185d4893d5f85( supername )
 {
@@ -2911,8 +2931,8 @@ function private function_487185d4893d5f85( supername )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e0b
+// Params 0
+// Checksum 0x0, Offset: 0x5e6a
 // Size: 0x7f
 function function_9553839f6b149375()
 {
@@ -2924,8 +2944,8 @@ function function_9553839f6b149375()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e92
+// Params 3
+// Checksum 0x0, Offset: 0x5ef1
 // Size: 0x123
 function function_768370d8be2da2d2( player, unset, supername )
 {
@@ -3006,7 +3026,7 @@ function function_768370d8be2da2d2( player, unset, supername )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5fbd
+// Checksum 0x0, Offset: 0x601c
 // Size: 0x4f
 function private function_10aa38d58090b230( player, supername )
 {
@@ -3020,7 +3040,7 @@ function private function_10aa38d58090b230( player, supername )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x6014
+// Checksum 0x0, Offset: 0x6073
 // Size: 0x24, Type: bool
 function private function_9b936bec0466b8b5()
 {
@@ -3039,7 +3059,7 @@ function private function_9b936bec0466b8b5()
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6041
+// Checksum 0x0, Offset: 0x60a0
 // Size: 0x3e
 function private function_f38fae4f6dd4b035( player )
 {
@@ -3050,7 +3070,7 @@ function private function_f38fae4f6dd4b035( player )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6087
+// Checksum 0x0, Offset: 0x60e6
 // Size: 0x3e
 function private function_9cc5ca1b073338ab( player )
 {
@@ -3061,7 +3081,7 @@ function private function_9cc5ca1b073338ab( player )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x60cd
+// Checksum 0x0, Offset: 0x612c
 // Size: 0x3e
 function private function_13a319439a116d2( player )
 {
@@ -3072,7 +3092,7 @@ function private function_13a319439a116d2( player )
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6113
+// Checksum 0x0, Offset: 0x6172
 // Size: 0x3e
 function private function_58672d602d2120d3( player )
 {
@@ -3082,8 +3102,8 @@ function private function_58672d602d2120d3( player )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x6159
+// Params 5
+// Checksum 0x0, Offset: 0x61b8
 // Size: 0xc0
 function function_e793fcf03710f124( camera, index, status, forcestate, var_be632e8c9259a360 )
 {
@@ -3103,8 +3123,8 @@ function function_e793fcf03710f124( camera, index, status, forcestate, var_be632
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6221
+// Params 0
+// Checksum 0x0, Offset: 0x6280
 // Size: 0xce
 function function_d094908c5788a3e9()
 {
@@ -3130,7 +3150,7 @@ function function_d094908c5788a3e9()
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x62f7
+// Checksum 0x0, Offset: 0x6356
 // Size: 0x4a
 function private function_2a98f46d2b757869( sensordata, sensorduration, supername )
 {
@@ -3144,7 +3164,7 @@ function private function_2a98f46d2b757869( sensordata, sensorduration, supernam
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6349
+// Checksum 0x0, Offset: 0x63a8
 // Size: 0x39
 function private function_d27569772a3ad7d7( sensordata )
 {
@@ -3155,8 +3175,8 @@ function private function_d27569772a3ad7d7( sensordata )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x638a
+// Params 0
+// Checksum 0x0, Offset: 0x63e9
 // Size: 0x10
 function function_57bec1aaf3404bf6()
 {
@@ -3164,8 +3184,8 @@ function function_57bec1aaf3404bf6()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x63a2
+// Params 0
+// Checksum 0x0, Offset: 0x6401
 // Size: 0x10
 function function_ca5bd9a5609d8ba3()
 {
@@ -3173,8 +3193,8 @@ function function_ca5bd9a5609d8ba3()
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63ba
+// Params 1
+// Checksum 0x0, Offset: 0x6419
 // Size: 0x38
 function function_392e60623411ef42( player )
 {
@@ -3183,8 +3203,8 @@ function function_392e60623411ef42( player )
 }
 
 // Namespace remote_turret / scripts\killstreaks\remote_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63fa
+// Params 1
+// Checksum 0x0, Offset: 0x6459
 // Size: 0x2b
 function function_911cde43e0f3c6b6( player )
 {
@@ -3194,8 +3214,8 @@ function function_911cde43e0f3c6b6( player )
 /#
 
     // Namespace remote_turret / scripts\killstreaks\remote_turret
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x642d
+    // Params 1
+    // Checksum 0x0, Offset: 0x648c
     // Size: 0x30, Type: dev
     function function_45456bb78fa8eb2d( printmsg )
     {

@@ -6,7 +6,7 @@
 #namespace mp_jup_wasteland_lighting;
 
 // Namespace mp_jup_wasteland_lighting / scripts\mp\maps\mp_jup_wasteland\mp_jup_wasteland_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x117
 // Size: 0x2c
 function main()

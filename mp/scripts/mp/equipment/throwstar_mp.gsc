@@ -11,7 +11,7 @@
 #namespace throwstar_mp;
 
 // Namespace throwstar_mp / scripts\mp\equipment\throwstar_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11a
 // Size: 0x44
 function function_12d7ca3ff609caba()
@@ -22,7 +22,7 @@ function function_12d7ca3ff609caba()
 }
 
 // Namespace throwstar_mp / scripts\mp\equipment\throwstar_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x166
 // Size: 0x1b
 function function_e7715ffb329c1b40( equipmentref, equipmentslot, variantid )
@@ -31,7 +31,7 @@ function function_e7715ffb329c1b40( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace throwstar_mp / scripts\mp\equipment\throwstar_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x189
 // Size: 0x13
 function function_92e126d1a5d3fb2( equipmentref, equipmentslot )
@@ -40,7 +40,7 @@ function function_92e126d1a5d3fb2( equipmentref, equipmentslot )
 }
 
 // Namespace throwstar_mp / scripts\mp\equipment\throwstar_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a4
 // Size: 0x8d, Type: bool
 function function_94dcdd399513b2ce( equipmentref )

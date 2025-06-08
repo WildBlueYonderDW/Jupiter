@@ -15,7 +15,7 @@
 /#
 
     // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1c6
     // Size: 0x5, Type: dev
     function function_b1466004f2cd38fe()
@@ -26,7 +26,7 @@
 #/
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1d3
 // Size: 0x3d9
 function function_5b4245d8e50d6cc3( dialogue, players, radiotype, var_49a8c885c448979f, clearcurrent, maxlines )
@@ -160,7 +160,7 @@ function function_5b4245d8e50d6cc3( dialogue, players, radiotype, var_49a8c885c4
 }
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b4
 // Size: 0x5a0
 function function_e232a099eb1f3824( string, player )
@@ -307,7 +307,7 @@ function function_e232a099eb1f3824( string, player )
 }
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb5c
 // Size: 0xac
 function ob_dialogue_print_clear( players, immediate, maxlines )
@@ -333,7 +333,7 @@ function ob_dialogue_print_clear( players, immediate, maxlines )
 }
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc10
 // Size: 0x240
 function function_52f5db5262924a8e( player, immediate, maxlines )
@@ -346,7 +346,8 @@ function function_52f5db5262924a8e( player, immediate, maxlines )
     linestoclear = [];
     currentlines = player.dialoguehud.size;
     
-    for (i = 0; i < currentlines && currentlines - linestoclear.size > maxlines; i++) {
+    for ( i = 0; i < currentlines && currentlines - linestoclear.size > maxlines ; i++ )
+    {
         player.dialoguehud[ i ][ 0 ] notify( "ob_dialogue_print_clear" );
         linestoclear[ linestoclear.size ] = player.dialoguehud[ i ];
         player.dialoguehud = array_remove_index( player.dialoguehud, i, 1 );
@@ -391,7 +392,7 @@ function function_52f5db5262924a8e( player, immediate, maxlines )
 /#
 
     // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe58
     // Size: 0x5, Type: dev
     function function_fa26a1bcd7a2798()
@@ -402,7 +403,7 @@ function function_52f5db5262924a8e( player, immediate, maxlines )
 #/
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe65
 // Size: 0xf5
 function function_5a6644a3e62d5303( str_message, position, endons )
@@ -417,7 +418,8 @@ function function_5a6644a3e62d5303( str_message, position, endons )
         }
     }
     
-    for (removed_players = []; isdefined( position ); removed_players = array_combine( players, removed_players )) {
+    for ( removed_players = []; isdefined( position ) ; removed_players = array_combine( players, removed_players ) )
+    {
         wait 1;
         
         if ( isvector( position ) )
@@ -444,7 +446,7 @@ function function_5a6644a3e62d5303( str_message, position, endons )
 }
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf62
 // Size: 0x43
 function function_d23f4a621dca2786( str_message, position )
@@ -460,7 +462,7 @@ function function_d23f4a621dca2786( str_message, position )
 }
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfad
 // Size: 0xc8
 function function_bef306b5e7aefafc( position )
@@ -486,7 +488,7 @@ function function_bef306b5e7aefafc( position )
 }
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x107e
 // Size: 0x115
 function function_77a5f408a4193b40( str_message, position, range, endons )
@@ -503,7 +505,8 @@ function function_77a5f408a4193b40( str_message, position, range, endons )
     
     range = default_to( range, 3072 );
     
-    for (removed_players = []; isdefined( position ); removed_players = array_combine( players, removed_players )) {
+    for ( removed_players = []; isdefined( position ) ; removed_players = array_combine( players, removed_players ) )
+    {
         wait 1;
         
         if ( !isdefined( position ) )
@@ -535,7 +538,7 @@ function function_77a5f408a4193b40( str_message, position, range, endons )
 }
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x119b
 // Size: 0x7c
 function function_9af7ccdced20e387( str_message, position, range )
@@ -562,7 +565,7 @@ function function_9af7ccdced20e387( str_message, position, range )
 }
 
 // Namespace namespace_94e3188e9c550ef8 / namespace_32e74fbed1406ca3
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x121f
 // Size: 0x9c
 function function_a0f48eb3578c88bd( position, range )

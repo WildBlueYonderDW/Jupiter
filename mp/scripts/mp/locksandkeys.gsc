@@ -26,7 +26,7 @@
 #namespace locksandkeys;
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a00
 // Size: 0x997
 function init()
@@ -259,7 +259,7 @@ function init()
     function_b35796a7c0a71079();
     function_e726302a1f8d9a1a();
     
-    if ( getdvarint( @"hash_3260888995a11bf7", 0 ) != 1 )
+    if ( getdvarint( @"scr_disable_unique_doors", 0 ) != 1 )
     {
         function_3e0f1ceeb525c408();
     }
@@ -274,7 +274,7 @@ function init()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x539f
 // Size: 0x27
 function function_5d0e6d83fdc95800()
@@ -286,7 +286,7 @@ function function_5d0e6d83fdc95800()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53ce
 // Size: 0x66
 function function_fad5181703a528ee()
@@ -300,7 +300,7 @@ function function_fad5181703a528ee()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x543c
 // Size: 0x106, Type: bool
 function function_1420863a23deab24( scriptable, player )
@@ -312,7 +312,7 @@ function function_1420863a23deab24( scriptable, player )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x554b
 // Size: 0x9b
 function getaikeylootdrop( agent, agenttype )
@@ -336,7 +336,7 @@ function getaikeylootdrop( agent, agenttype )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x55ef
 // Size: 0x274
 function function_6416fb9a24d278b4( scriptable, player )
@@ -415,7 +415,7 @@ function function_6416fb9a24d278b4( scriptable, player )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x586c
 // Size: 0x139, Type: bool
 function function_e0e50ef00477deeb( scriptablename, player, scriptable )
@@ -467,7 +467,7 @@ function function_e0e50ef00477deeb( scriptablename, player, scriptable )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59ae
 // Size: 0x67, Type: bool
 function function_92063f2c6a1ca2bf( player )
@@ -497,7 +497,7 @@ function function_92063f2c6a1ca2bf( player )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5a1e
 // Size: 0x428
 function function_b88d3fe223408f2b( scriptable, player, var_85e3240d30e184e7 )
@@ -618,7 +618,7 @@ function function_b88d3fe223408f2b( scriptable, player, var_85e3240d30e184e7 )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5e4f
 // Size: 0xd4
 function function_504f19b32802cb8d( scriptable, player, var_85e3240d30e184e7 )
@@ -652,7 +652,7 @@ function function_504f19b32802cb8d( scriptable, player, var_85e3240d30e184e7 )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5f2c
 // Size: 0x2d6
 function function_87997fcee4a6e14c( scriptable, unlocker )
@@ -744,7 +744,7 @@ function function_87997fcee4a6e14c( scriptable, unlocker )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x620a
 // Size: 0x156
 function function_7d321a63bc56c65c( rootkeyname, player, noskeleton )
@@ -787,7 +787,7 @@ function function_7d321a63bc56c65c( rootkeyname, player, noskeleton )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6369
 // Size: 0x28
 function function_475482bfe3feb25( var_fd28c1fc64c971b4 )
@@ -798,7 +798,7 @@ function function_475482bfe3feb25( var_fd28c1fc64c971b4 )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x639a
 // Size: 0x60
 function doorunlocked( scriptable, player )
@@ -817,7 +817,7 @@ function doorunlocked( scriptable, player )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6402
 // Size: 0x1b0
 function function_83f5cdc3d883507e( scriptable, player )
@@ -872,7 +872,7 @@ function function_83f5cdc3d883507e( scriptable, player )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x65ba
 // Size: 0x75, Type: bool
 function function_ed2cf116dda82611( player, numkeys, keyname, teamkeys )
@@ -908,7 +908,7 @@ function function_ed2cf116dda82611( player, numkeys, keyname, teamkeys )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6638
 // Size: 0x2a
 function function_830809e6920e8bed( category, keyname, callback )
@@ -917,7 +917,7 @@ function function_830809e6920e8bed( category, keyname, callback )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x666a
 // Size: 0x105
 function function_1a037d5cd64dc892()
@@ -963,7 +963,7 @@ function private function_3e0f1ceeb525c408()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67f7
 // Size: 0x14
 function function_fbbfe6f05eda5eb1( door )
@@ -972,7 +972,7 @@ function function_fbbfe6f05eda5eb1( door )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6813
 // Size: 0x32
 function function_b092780f9ec4496e( door )
@@ -986,7 +986,7 @@ function function_b092780f9ec4496e( door )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x684d
 // Size: 0x3d
 function function_4327a2c68eef5db9( struct )
@@ -999,7 +999,7 @@ function function_4327a2c68eef5db9( struct )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x6892
 // Size: 0x41
 function function_2166c547b0d38235( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -1008,7 +1008,7 @@ function function_2166c547b0d38235( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x68db
 // Size: 0x11a
 function function_a95d35e420c6a968( instance, part, state, player, var_a5b2c541413aa895 )
@@ -1035,7 +1035,7 @@ function function_a95d35e420c6a968( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x69fd
 // Size: 0x41
 function function_ee4e77bc15da5eae( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -1044,7 +1044,7 @@ function function_ee4e77bc15da5eae( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x6a46
 // Size: 0xd5
 function function_44017cc8b84b87ad( instance, part, state, player, var_a5b2c541413aa895 )
@@ -1063,7 +1063,7 @@ function function_44017cc8b84b87ad( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6b23
 // Size: 0x314
 function function_ad1b6accbaab404e( node, var_fa9e859ca98dcdbf, keyname, highpriority )
@@ -1150,7 +1150,7 @@ function function_ad1b6accbaab404e( node, var_fa9e859ca98dcdbf, keyname, highpri
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e40
 // Size: 0xf4
 function function_e6df49dda3f9a00e()
@@ -1174,7 +1174,7 @@ function function_e6df49dda3f9a00e()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f3c
 // Size: 0x8f
 function function_af0108718cddff00()
@@ -1187,7 +1187,7 @@ function function_af0108718cddff00()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6fd3
 // Size: 0x1adf
 function function_20466dfc92ecf1a9()
@@ -1480,7 +1480,7 @@ function function_20466dfc92ecf1a9()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8aba
 // Size: 0x5a
 function function_94f5e3929619c3d1( doorname )
@@ -1497,7 +1497,7 @@ function function_94f5e3929619c3d1( doorname )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8b1d
 // Size: 0x5a
 function function_54f0ba9ac5666aba( doorname )
@@ -1514,7 +1514,7 @@ function function_54f0ba9ac5666aba( doorname )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b80
 // Size: 0x2c
 function function_2a56c656879dbf63()
@@ -1529,7 +1529,7 @@ function function_2a56c656879dbf63()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bb4
 // Size: 0xac
 function function_29e046251bdc472c()
@@ -1556,7 +1556,7 @@ function function_29e046251bdc472c()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c68
 // Size: 0x24c
 function function_2039418022567d47( var_809fdff7726141bb )
@@ -1607,7 +1607,7 @@ function function_2039418022567d47( var_809fdff7726141bb )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8ebc
 // Size: 0x155
 function function_dcec5158a800e39d( var_7be3a4ca79d6d8e6, var_14dcea3d745e5b2b )
@@ -1640,7 +1640,7 @@ function function_dcec5158a800e39d( var_7be3a4ca79d6d8e6, var_14dcea3d745e5b2b )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9019
 // Size: 0x74, Type: bool
 function function_64332f29e2409e55( origin )
@@ -1662,7 +1662,7 @@ function function_64332f29e2409e55( origin )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9096
 // Size: 0x1c
 function function_bf5ad2061b782c3c( scriptable, player )
@@ -1671,7 +1671,7 @@ function function_bf5ad2061b782c3c( scriptable, player )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x90ba
 // Size: 0xe2
 function function_ed1aea6648bcdc28( scriptablename, keylevel )
@@ -1716,7 +1716,7 @@ function function_ed1aea6648bcdc28( scriptablename, keylevel )
 /#
 
     // Namespace locksandkeys / scripts\mp\locksandkeys
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x91a4
     // Size: 0xd3, Type: dev
     function function_ed06a4c85b7994a0()
@@ -1741,7 +1741,7 @@ function function_ed1aea6648bcdc28( scriptablename, keylevel )
 #/
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x927f
 // Size: 0x137
 function function_8e1cbe18678d7fff()
@@ -1750,7 +1750,8 @@ function function_8e1cbe18678d7fff()
     level.var_3da7559f232a2ca9 = [];
     numrows = tablelookupgetnumrows( var_5374a9df4582df00 );
     
-    for (i = 0; istrue( i < numrows ); i++) {
+    for ( i = 0; istrue( i < numrows ) ; i++ )
+    {
         var_49710df804bea4d0 = tablelookupbyrow( var_5374a9df4582df00, i, 0 );
         
         if ( !isdefined( level.var_3da7559f232a2ca9[ var_49710df804bea4d0 ] ) )
@@ -1770,7 +1771,7 @@ function function_8e1cbe18678d7fff()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x93be
 // Size: 0xa6, Type: bool
 function function_799a9ee634da2160( node )
@@ -1799,7 +1800,7 @@ function function_799a9ee634da2160( node )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x946d
 // Size: 0x423
 function function_4c877fc54e2e6854( node, var_49710df804bea4d0 )
@@ -1960,7 +1961,7 @@ function function_4c877fc54e2e6854( node, var_49710df804bea4d0 )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9898
 // Size: 0x85, Type: bool
 function function_e05f1f84bb69a4d2( var_49710df804bea4d0, itemtype )
@@ -1994,7 +1995,7 @@ function function_e05f1f84bb69a4d2( var_49710df804bea4d0, itemtype )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9926
 // Size: 0xf9
 function function_a894d6041798cc06()
@@ -2030,7 +2031,7 @@ function function_a894d6041798cc06()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9a27
 // Size: 0xad
 function lockedcache_lock( origin, keyname, lockstate, unlockstate )
@@ -2051,7 +2052,7 @@ function lockedcache_lock( origin, keyname, lockstate, unlockstate )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9add
 // Size: 0x3b
 function function_f3b1f1d41c65b340()
@@ -2061,7 +2062,7 @@ function function_f3b1f1d41c65b340()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x9b20
 // Size: 0x47e
 function function_38904bc3a49af40c( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -2173,7 +2174,7 @@ function function_38904bc3a49af40c( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9fa6
 // Size: 0x4bc
 function function_a9d72a6ee70123e5()
@@ -2252,7 +2253,7 @@ function function_a9d72a6ee70123e5()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa46a
 // Size: 0x39
 function function_bd958525be466cd7( keyname )
@@ -2268,7 +2269,7 @@ function function_bd958525be466cd7( keyname )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa4ac
 // Size: 0x22c
 function function_b98c91e5697edb49( var_49710df804bea4d0 )
@@ -2343,7 +2344,7 @@ function function_b98c91e5697edb49( var_49710df804bea4d0 )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa6e1
 // Size: 0xb3c
 function function_b35796a7c0a71079()
@@ -2527,7 +2528,7 @@ function function_b35796a7c0a71079()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb225
 // Size: 0x70
 function function_b96ca3c98ca2fb0a( category, keyname, var_4baad979fef17bc0 )
@@ -2546,7 +2547,7 @@ function function_b96ca3c98ca2fb0a( category, keyname, var_4baad979fef17bc0 )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb29d
 // Size: 0xd2
 function function_f4c3a9c8da53fbc9( categories, categoryweights, pristinechance, usedchance, wornchance )
@@ -2570,7 +2571,7 @@ function function_f4c3a9c8da53fbc9( categories, categoryweights, pristinechance,
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0xb378
 // Size: 0x2e2
 function function_23326c8ac97c60c7( tier1ok, tier2ok, tier3ok, herook, tier1chance, tier2chance, tier3chance, herochance, pristinechance, usedchance, wornchance, mapnameoverride )
@@ -2703,7 +2704,7 @@ function function_23326c8ac97c60c7( tier1ok, tier2ok, tier3ok, herook, tier1chan
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb663
 // Size: 0x7b6
 function function_e726302a1f8d9a1a()
@@ -2748,7 +2749,7 @@ function function_e726302a1f8d9a1a()
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbe21
 // Size: 0x40
 function function_3c30cd923087306b( category )
@@ -2762,7 +2763,7 @@ function function_3c30cd923087306b( category )
 }
 
 // Namespace locksandkeys / scripts\mp\locksandkeys
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbe6a
 // Size: 0x206
 function function_a60e40071d04db92( player, keyused )
@@ -2804,7 +2805,7 @@ function function_a60e40071d04db92( player, keyused )
 /#
 
     // Namespace locksandkeys / scripts\mp\locksandkeys
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xc078
     // Size: 0x37, Type: dev
     function function_ffc077d5175e066a()
@@ -2818,7 +2819,7 @@ function function_a60e40071d04db92( player, keyused )
     }
 
     // Namespace locksandkeys / scripts\mp\locksandkeys
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xc0b7
     // Size: 0x310, Type: dev
     function function_af458cfdaf8d86e4()

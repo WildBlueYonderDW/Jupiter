@@ -7,7 +7,7 @@
 #namespace fx;
 
 // Namespace fx / scripts\mp\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x111
 // Size: 0x18d
 function script_print_fx()
@@ -47,7 +47,7 @@ function script_print_fx()
 }
 
 // Namespace fx / scripts\mp\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a6
 // Size: 0x34
 function grenadeexplosionfx( pos )
@@ -57,7 +57,7 @@ function grenadeexplosionfx( pos )
 }
 
 // Namespace fx / scripts\mp\fx
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2e2
 // Size: 0x62
 function soundfx( fxid, fxpos, endonnotify )
@@ -73,7 +73,7 @@ function soundfx( fxid, fxpos, endonnotify )
 }
 
 // Namespace fx / scripts\mp\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34c
 // Size: 0x16
 function soundfxdelete( endonnotify )
@@ -83,7 +83,7 @@ function soundfxdelete( endonnotify )
 }
 
 // Namespace fx / scripts\mp\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36a
 // Size: 0x152
 function func_glass_handler()
@@ -124,7 +124,8 @@ function func_glass_handler()
         {
         }
         
-        for (current_index = 0; current_index < max_index; current_index++) {
+        for ( current_index = 0; current_index < max_index ; current_index++ )
+        {
             glass_index = var_f5207dc7648baed9[ current_index ];
             decal = var_5f91ac0fae720aac[ glass_index ];
             
@@ -144,7 +145,7 @@ function func_glass_handler()
 }
 
 // Namespace fx / scripts\mp\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c4
 // Size: 0x1a
 function blenddelete( blend )

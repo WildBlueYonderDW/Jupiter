@@ -31,7 +31,7 @@ function autoexec main()
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x355
 // Size: 0xc9
 function function_7e4ada39cadeebf8()
@@ -45,7 +45,7 @@ function function_7e4ada39cadeebf8()
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x426
 // Size: 0xbc
 function function_6fb82c7fdd547028( arena )
@@ -74,7 +74,7 @@ function function_6fb82c7fdd547028( arena )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ea
 // Size: 0x221
 function function_a9218c1e84d16a40( ladderstruct )
@@ -129,7 +129,7 @@ function function_a9218c1e84d16a40( ladderstruct )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x713
 // Size: 0x27, Type: bool
 function function_9ab1c5b876dc8c7c( ladderstruct )
@@ -138,7 +138,7 @@ function function_9ab1c5b876dc8c7c( ladderstruct )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x743
 // Size: 0x94
 function function_a20583b52edba770( ladderstruct )
@@ -151,7 +151,7 @@ function function_a20583b52edba770( ladderstruct )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7df
 // Size: 0x7b
 function function_a4b1de48eb1290a4( ladderstruct )
@@ -163,7 +163,7 @@ function function_a4b1de48eb1290a4( ladderstruct )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x862
 // Size: 0x166
 function function_acdf468e29550c88( arena, activate )
@@ -206,7 +206,7 @@ function function_acdf468e29550c88( arena, activate )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9d0
 // Size: 0x118
 function function_3d9356bf0e591d4e( ladderstruct, down )
@@ -245,7 +245,7 @@ function function_3d9356bf0e591d4e( ladderstruct, down )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaf0
 // Size: 0x4d
 function function_26e6507f5ae3fe8e( ladderstruct, activate )
@@ -260,7 +260,7 @@ function function_26e6507f5ae3fe8e( ladderstruct, activate )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb45
 // Size: 0xc8
 function function_4b188b3d73cd1824( arena )
@@ -277,7 +277,7 @@ function function_4b188b3d73cd1824( arena )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc15
 // Size: 0x4a
 function function_ef17db4d092d9b5e( player, arena )
@@ -305,7 +305,7 @@ function private function_c7b98110b2dbff43( params, arena )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd00
 // Size: 0x16
 function function_c8608aeb89ed5e36( arena )
@@ -314,7 +314,7 @@ function function_c8608aeb89ed5e36( arena )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd1f
 // Size: 0x67
 function function_6eb8ca12ec6fc71( ladderstruct, arena )
@@ -335,7 +335,7 @@ function function_6eb8ca12ec6fc71( ladderstruct, arena )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd8e
 // Size: 0x49
 function function_f320d154ca60c728( ladderstruct, player )
@@ -351,7 +351,7 @@ function function_f320d154ca60c728( ladderstruct, player )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xddf
 // Size: 0x9b
 function function_cc61daea9bf5854c( arena, player )
@@ -379,7 +379,7 @@ function function_cc61daea9bf5854c( arena, player )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe82
 // Size: 0x25
 function function_85177aa5ffd825a( arena )
@@ -389,7 +389,7 @@ function function_85177aa5ffd825a( arena )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeaf
 // Size: 0x133
 function function_69c78f5a75eafdfc( arena )
@@ -415,7 +415,7 @@ function function_69c78f5a75eafdfc( arena )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfea
 // Size: 0x79
 function function_f88a5e25e9290dcf( arena )
@@ -428,7 +428,7 @@ function function_f88a5e25e9290dcf( arena )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x106b
 // Size: 0x75
 function function_13f686fc9f3c8840( arena )
@@ -445,7 +445,7 @@ function function_13f686fc9f3c8840( arena )
 }
 
 // Namespace namespace_e05e905a3c01778f / namespace_738d50d2ccc2cd74
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e8
 // Size: 0xa2
 function function_7e7f61cb536d3c0c( ladderstruct )

@@ -30,7 +30,7 @@ function private screenshot( text )
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5eb
 // Size: 0x193
 function function_d63760cb7c36587( smoke_level )
@@ -89,7 +89,7 @@ function function_d63760cb7c36587( smoke_level )
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x786
 // Size: 0x170
 function autotestcommandmonitor()
@@ -258,7 +258,7 @@ function private function_4cafad2d016399da()
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe6a
 // Size: 0x9a, Type: bool
 function function_243de27a2b9ecbbe( origin, angles, dist )
@@ -286,7 +286,7 @@ function function_243de27a2b9ecbbe( origin, angles, dist )
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf0d
 // Size: 0x5b
 function function_e8bd86d0c0f85749( var_6c3200050ed240a2, wait_time )
@@ -302,7 +302,7 @@ function function_e8bd86d0c0f85749( var_6c3200050ed240a2, wait_time )
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf70
 // Size: 0x5b
 function function_852d53e299c34e9c( stance, wait_time )
@@ -393,7 +393,8 @@ function private function_c7aeb5253e41a015()
     {
         players = getentarray( "player", "classname" );
         
-        for (index = 0; index < players.size; index++) {
+        for ( index = 0; index < players.size ; index++ )
+        {
             plr = players[ index ];
             
             if ( isbot( plr ) && isalive( plr ) )
@@ -662,7 +663,7 @@ function private function_afc83012117903d9( player, spawndist )
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x193e
 // Size: 0xbc
 function function_b6dccdc08d6a79cf( enabled, logdestination )
@@ -672,7 +673,8 @@ function function_b6dccdc08d6a79cf( enabled, logdestination )
     logger.logdestination = default_to( logdestination, 0 );
     logger.messages = [];
     
-    for (i = 0; i < 5; i++) {
+    for ( i = 0; i < 5 ; i++ )
+    {
         logger.messages[ i ] = 0;
     }
     
@@ -713,7 +715,7 @@ function private log_msg( loglevel, thetext )
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b2e
 // Size: 0x2a
 function get_player()

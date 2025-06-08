@@ -42,9 +42,9 @@
 #namespace koth;
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe18
-// Size: 0x3c0
+// Size: 0x3d0
 function main()
 {
     if ( getdvar( @"g_mapname" ) == "mp_background" )
@@ -155,6 +155,7 @@ function main()
     {
         scripts\mp\gametypes\trickrtreat::init();
         scripts\common\powerups::function_8edb8c0ed499f61e( 0 );
+        setdvarifuninitialized( @"hash_56c4a304cb548a29", 0 );
     }
     
     /#
@@ -166,8 +167,8 @@ function main()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e0
+// Params 0
+// Checksum 0x0, Offset: 0x11f0
 // Size: 0x168
 function initializematchrules()
 {
@@ -187,8 +188,8 @@ function initializematchrules()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1350
+// Params 0
+// Checksum 0x0, Offset: 0x1360
 // Size: 0x159
 function onstartgametype()
 {
@@ -244,7 +245,7 @@ function onstartgametype()
 
 // Namespace koth / scripts\mp\gametypes\koth
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x14b1
+// Checksum 0x0, Offset: 0x14c1
 // Size: 0x27
 function private function_952bd6e10104d8a()
 {
@@ -255,8 +256,8 @@ function private function_952bd6e10104d8a()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e0
+// Params 0
+// Checksum 0x0, Offset: 0x14f0
 // Size: 0x180
 function updategametypedvars()
 {
@@ -286,8 +287,8 @@ function updategametypedvars()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1668
+// Params 0
+// Checksum 0x0, Offset: 0x1678
 // Size: 0x88
 function adjustzoneactivationdelayforlargemaps()
 {
@@ -307,8 +308,8 @@ function adjustzoneactivationdelayforlargemaps()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16f8
+// Params 0
+// Checksum 0x0, Offset: 0x1708
 // Size: 0x80
 function seticonnames()
 {
@@ -324,8 +325,8 @@ function seticonnames()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1780
+// Params 0
+// Checksum 0x0, Offset: 0x1790
 // Size: 0x520
 function hardpointmainloop()
 {
@@ -457,8 +458,8 @@ function hardpointmainloop()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ca8
+// Params 0
+// Checksum 0x0, Offset: 0x1cb8
 // Size: 0x77
 function waitthenplaynewobj()
 {
@@ -478,8 +479,8 @@ function waitthenplaynewobj()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d27
+// Params 0
+// Checksum 0x0, Offset: 0x1d37
 // Size: 0x134
 function killhardpointvfx()
 {
@@ -508,8 +509,8 @@ function killhardpointvfx()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e63
+// Params 0
+// Checksum 0x0, Offset: 0x1e73
 // Size: 0x2
 function remaphardpointorder()
 {
@@ -517,8 +518,8 @@ function remaphardpointorder()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e6d
+// Params 0
+// Checksum 0x0, Offset: 0x1e7d
 // Size: 0xa3
 function getfirstzone()
 {
@@ -540,8 +541,8 @@ function getfirstzone()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f19
+// Params 0
+// Checksum 0x0, Offset: 0x1f29
 // Size: 0x503
 function getnextzone()
 {
@@ -670,8 +671,8 @@ function getnextzone()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2425
+// Params 0
+// Checksum 0x0, Offset: 0x2435
 // Size: 0x186
 function spawn_next_zone()
 {
@@ -703,8 +704,8 @@ function spawn_next_zone()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x25b3
+// Params 2
+// Checksum 0x0, Offset: 0x25c3
 // Size: 0x362
 function function_79cef04e7bd8c4c7( var_570ba02607c0425c, firstzone )
 {
@@ -790,8 +791,8 @@ function function_79cef04e7bd8c4c7( var_570ba02607c0425c, firstzone )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x291d
+// Params 0
+// Checksum 0x0, Offset: 0x292d
 // Size: 0x178
 function hpcaptureloop()
 {
@@ -836,8 +837,8 @@ function hpcaptureloop()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a9d
+// Params 0
+// Checksum 0x0, Offset: 0x2aad
 // Size: 0x395
 function initspawns()
 {
@@ -910,8 +911,8 @@ function initspawns()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e3a
+// Params 2
+// Checksum 0x0, Offset: 0x2e4a
 // Size: 0xdd, Type: bool
 function comparezoneindexes( zone_a, zone_b )
 {
@@ -945,8 +946,8 @@ function comparezoneindexes( zone_a, zone_b )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f20
+// Params 1
+// Checksum 0x0, Offset: 0x2f30
 // Size: 0x97
 function getzonearray( targetname )
 {
@@ -966,8 +967,8 @@ function getzonearray( targetname )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fc0
+// Params 0
+// Checksum 0x0, Offset: 0x2fd0
 // Size: 0x169, Type: bool
 function setupzones()
 {
@@ -975,7 +976,8 @@ function setupzones()
     assertex( isdefined( primaryzones ) && primaryzones.size >= 3, "<dev string:x116>" );
     triggers = [];
     
-    for (index = 0; index < primaryzones.size; index++) {
+    for ( index = 0; index < primaryzones.size ; index++ )
+    {
         triggers[ triggers.size ] = primaryzones[ index ];
     }
     
@@ -1011,8 +1013,8 @@ function setupzones()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3132
+// Params 1
+// Checksum 0x0, Offset: 0x3142
 // Size: 0x106
 function setupzonecallouts( firstzone )
 {
@@ -1046,14 +1048,15 @@ function setupzonecallouts( firstzone )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3240
+// Params 0
+// Checksum 0x0, Offset: 0x3250
 // Size: 0x58
 function forcespawnplayers()
 {
     players = level.players;
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         player = players[ i ];
         
         if ( !isdefined( player ) || isalive( player ) )
@@ -1067,8 +1070,8 @@ function forcespawnplayers()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32a0
+// Params 0
+// Checksum 0x0, Offset: 0x32b0
 // Size: 0x13d
 function getspawnpoint()
 {
@@ -1106,8 +1109,8 @@ function getspawnpoint()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33e6
+// Params 0
+// Checksum 0x0, Offset: 0x33f6
 // Size: 0x5
 function getkothzonedeadzonedist()
 {
@@ -1115,8 +1118,8 @@ function getkothzonedeadzonedist()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33f4
+// Params 1
+// Checksum 0x0, Offset: 0x3404
 // Size: 0x3a
 function onspawnplayer( revivespawn )
 {
@@ -1131,8 +1134,8 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3436
+// Params 1
+// Checksum 0x0, Offset: 0x3446
 // Size: 0xc9
 function movezoneaftertime( time )
 {
@@ -1158,8 +1161,8 @@ function movezoneaftertime( time )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x3507
+// Params 10
+// Checksum 0x0, Offset: 0x3517
 // Size: 0x30c
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
 {
@@ -1234,8 +1237,8 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x381b
+// Params 6
+// Checksum 0x0, Offset: 0x382b
 // Size: 0x507
 function give_capture_credit( touchlist, capturetime, capture_team, lastcaptureteam, credit_player, gameobject )
 {
@@ -1326,7 +1329,8 @@ function give_capture_credit( touchlist, capturetime, capture_team, lastcapturet
     
     players = getarraykeys( touchlist );
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         player = touchlist[ players[ i ] ].player;
         var_64656a8b87eaae16 = touchlist[ players[ i ] ].player;
         player = scripts\mp\gameobjects::function_15a05ddc354746a2( player );
@@ -1389,8 +1393,8 @@ function give_capture_credit( touchlist, capturetime, capture_team, lastcapturet
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d2a
+// Params 1
+// Checksum 0x0, Offset: 0x3d3a
 // Size: 0x153
 function function_9c5c0e02b3615275( team )
 {
@@ -1399,7 +1403,8 @@ function function_9c5c0e02b3615275( team )
     
     if ( var_9eb80458ef362367.size > 0 )
     {
-        for (index = 0; index < var_9eb80458ef362367.size; index++) {
+        for ( index = 0; index < var_9eb80458ef362367.size ; index++ )
+        {
             var_6c7881393d098340 = self.assisttouchlist[ team ][ var_9eb80458ef362367[ index ] ];
             var_8a11b26acefd3594 = var_6c7881393d098340.var_d96989d14549fd76;
             
@@ -1445,8 +1450,8 @@ function function_9c5c0e02b3615275( team )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e85
+// Params 0
+// Checksum 0x0, Offset: 0x3e95
 // Size: 0x406
 function awardcapturepoints()
 {
@@ -1459,7 +1464,8 @@ function awardcapturepoints()
     
     while ( !level.gameended )
     {
-        for (waittime = 0; waittime < seconds && !level.gameended; waittime = 0) {
+        for ( waittime = 0; waittime < seconds && !level.gameended ; waittime = 0 )
+        {
             wait level.framedurationseconds;
             scripts\mp\hostmigration::waittillhostmigrationdone();
             waittime += level.framedurationseconds;
@@ -1581,8 +1587,8 @@ function awardcapturepoints()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4293
+// Params 1
+// Checksum 0x0, Offset: 0x42a3
 // Size: 0xcb
 function updatecapsperminute( lastownerteam )
 {
@@ -1614,8 +1620,8 @@ function updatecapsperminute( lastownerteam )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4366
+// Params 1
+// Checksum 0x0, Offset: 0x4376
 // Size: 0x29, Type: bool
 function isscoreboosting( player )
 {
@@ -1623,8 +1629,8 @@ function isscoreboosting( player )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4398
+// Params 1
+// Checksum 0x0, Offset: 0x43a8
 // Size: 0x29, Type: bool
 function isexcessivescoreboosting( player )
 {
@@ -1632,8 +1638,8 @@ function isexcessivescoreboosting( player )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43ca
+// Params 1
+// Checksum 0x0, Offset: 0x43da
 // Size: 0x139
 function onplayerconnect( player )
 {
@@ -1674,8 +1680,8 @@ function onplayerconnect( player )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x450b
+// Params 1
+// Checksum 0x0, Offset: 0x451b
 // Size: 0xa9
 function onplayerspawned( player )
 {
@@ -1700,8 +1706,8 @@ function onplayerspawned( player )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x45bc
+// Params 2
+// Checksum 0x0, Offset: 0x45cc
 // Size: 0x9b
 function updateservericons( state, contested )
 {
@@ -1737,8 +1743,8 @@ function updateservericons( state, contested )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x465f
+// Params 1
+// Checksum 0x0, Offset: 0x466f
 // Size: 0x79
 function getownerteamplayer( ownerteam )
 {
@@ -1757,8 +1763,8 @@ function getownerteamplayer( ownerteam )
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x46e1
+// Params 0
+// Checksum 0x0, Offset: 0x46f1
 // Size: 0xb2
 function refreshfreecamhardpointfx()
 {
@@ -1783,8 +1789,8 @@ function refreshfreecamhardpointfx()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x479b
+// Params 0
+// Checksum 0x0, Offset: 0x47ab
 // Size: 0x76
 function getrespawndelay()
 {
@@ -1805,8 +1811,8 @@ function getrespawndelay()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x481a
+// Params 0
+// Checksum 0x0, Offset: 0x482a
 // Size: 0x11
 function writeplayerrotationscoretomatchdataongameend()
 {
@@ -1815,8 +1821,8 @@ function writeplayerrotationscoretomatchdataongameend()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4833
+// Params 0
+// Checksum 0x0, Offset: 0x4843
 // Size: 0x4d
 function writecurrentrotationteamscore()
 {
@@ -1828,8 +1834,8 @@ function writecurrentrotationteamscore()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4888
+// Params 0
+// Checksum 0x0, Offset: 0x4898
 // Size: 0x11a
 function setkothwaypoints()
 {
@@ -1845,8 +1851,8 @@ function setkothwaypoints()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x49aa
+// Params 0
+// Checksum 0x0, Offset: 0x49ba
 // Size: 0x31
 function updatematchstatushintonspawn()
 {
@@ -1862,8 +1868,8 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x49e3
+// Params 0
+// Checksum 0x0, Offset: 0x49f3
 // Size: 0x20
 function function_fab770bfe4b14e75()
 {
@@ -1877,8 +1883,8 @@ function function_fab770bfe4b14e75()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a0b
+// Params 0
+// Checksum 0x0, Offset: 0x4a1b
 // Size: 0x5a
 function function_94ae9bf19d8942d9()
 {
@@ -1889,9 +1895,9 @@ function function_94ae9bf19d8942d9()
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a6d
-// Size: 0x11d
+// Params 0
+// Checksum 0x0, Offset: 0x4a7d
+// Size: 0x122
 function function_69c581621849df52()
 {
     level endon( "game_ended" );
@@ -1916,15 +1922,18 @@ function function_69c581621849df52()
                     player = player.owner;
                 }
                 
-                player function_1882f80b14421089( 5, timeincrement );
+                if ( isdefined( player ) )
+                {
+                    player function_1882f80b14421089( 5, timeincrement );
+                }
             }
         }
     }
 }
 
 // Namespace koth / scripts\mp\gametypes\koth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b92
+// Params 0
+// Checksum 0x0, Offset: 0x4ba7
 // Size: 0x4b
 function function_1134d3068749d68e()
 {
@@ -1948,12 +1957,13 @@ function function_1134d3068749d68e()
 /#
 
     // Namespace koth / scripts\mp\gametypes\koth
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4be5
+    // Params 3
+    // Checksum 0x0, Offset: 0x4bfa
     // Size: 0xa4, Type: dev
     function drawpoint( org, size, color )
     {
-        for (i = 0; i < 10; i++) {
+        for ( i = 0; i < 10 ; i++ )
+        {
             a1 = i / 10 * 360;
             a2 = ( i + 1 ) / 10 * 360;
             pt1 = org + ( cos( a1 ), sin( a1 ), 0 ) * size;
@@ -1963,8 +1973,8 @@ function function_1134d3068749d68e()
     }
 
     // Namespace koth / scripts\mp\gametypes\koth
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4c91
+    // Params 0
+    // Checksum 0x0, Offset: 0x4ca6
     // Size: 0x2f8, Type: dev
     function kothdebug()
     {
@@ -2032,8 +2042,8 @@ function function_1134d3068749d68e()
     }
 
     // Namespace koth / scripts\mp\gametypes\koth
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4f91
+    // Params 0
+    // Checksum 0x0, Offset: 0x4fa6
     // Size: 0x75, Type: dev
     function function_1f98c5616d8b3d67()
     {
@@ -2058,8 +2068,8 @@ function function_1134d3068749d68e()
     }
 
     // Namespace koth / scripts\mp\gametypes\koth
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x500e
+    // Params 0
+    // Checksum 0x0, Offset: 0x5023
     // Size: 0xb1, Type: dev
     function function_bed0f399bee034f8()
     {
@@ -2094,8 +2104,8 @@ function function_1134d3068749d68e()
     }
 
     // Namespace koth / scripts\mp\gametypes\koth
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x50c7
+    // Params 0
+    // Checksum 0x0, Offset: 0x50dc
     // Size: 0x7f, Type: dev
     function function_ef4f5aa9c42838b2()
     {
@@ -2120,8 +2130,8 @@ function function_1134d3068749d68e()
     }
 
     // Namespace koth / scripts\mp\gametypes\koth
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x514e
+    // Params 0
+    // Checksum 0x0, Offset: 0x5163
     // Size: 0x25b, Type: dev
     function function_be67fb2ebcca86d1()
     {
@@ -2154,7 +2164,8 @@ function function_1134d3068749d68e()
                     
                     zone.neutralhardpointfx = [];
                     
-                    for (i = 1; i < zone.visuals.size; i++) {
+                    for ( i = 1; i < zone.visuals.size ; i++ )
+                    {
                         fxfwd = anglestoforward( zone.visuals[ i ].angles );
                         zone.neutralhardpointfx[ zone.neutralhardpointfx.size ] = spawnfx( level.hardpointfxid[ "<dev string:x264>" ], zone.visuals[ i ].baseorigin, fxfwd );
                         zone.neutralhardpointfx[ zone.neutralhardpointfx.size - 1 ] setfxkilldefondelete();
@@ -2172,8 +2183,8 @@ function function_1134d3068749d68e()
     }
 
     // Namespace koth / scripts\mp\gametypes\koth
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x53b1
+    // Params 0
+    // Checksum 0x0, Offset: 0x53c6
     // Size: 0xa4, Type: dev
     function function_b4c2563f73b02c80()
     {
@@ -2201,8 +2212,8 @@ function function_1134d3068749d68e()
     }
 
     // Namespace koth / scripts\mp\gametypes\koth
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x545d
+    // Params 0
+    // Checksum 0x0, Offset: 0x5472
     // Size: 0x1f5, Type: dev
     function function_97b50111eebb7239()
     {

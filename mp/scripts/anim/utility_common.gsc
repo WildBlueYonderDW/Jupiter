@@ -4,14 +4,15 @@
 #namespace utility_common;
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1ff
 // Size: 0x73
 function print3dtime( timer, org, msg, color, alpha, scale )
 {
     newtime = timer / 0.05;
     
-    for (i = 0; i < newtime; i++) {
+    for ( i = 0; i < newtime ; i++ )
+    {
         /#
             print3d( org, msg, color, alpha, scale );
         #/
@@ -21,7 +22,7 @@ function print3dtime( timer, org, msg, color, alpha, scale )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x27a
 // Size: 0x8f
 function print3drise( org, msg, color, alpha, scale )
@@ -30,7 +31,8 @@ function print3drise( org, msg, color, alpha, scale )
     up = 0;
     org += randomvector( 30 );
     
-    for (i = 0; i < newtime; i++) {
+    for ( i = 0; i < newtime ; i++ )
+    {
         up += 0.5;
         
         /#
@@ -42,7 +44,7 @@ function print3drise( org, msg, color, alpha, scale )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x311
 // Size: 0x26, Type: bool
 function crossproduct( vec1, vec2 )
@@ -51,7 +53,7 @@ function crossproduct( vec1, vec2 )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x340
 // Size: 0x2f
 function safemod( a, b )
@@ -62,7 +64,7 @@ function safemod( a, b )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x378
 // Size: 0xff
 function quadrantanimweights( yaw )
@@ -118,7 +120,7 @@ function quadrantanimweights( yaw )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x480
 // Size: 0x61
 function getquadrant( angle )
@@ -146,12 +148,13 @@ function getquadrant( angle )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ea
 // Size: 0x3c, Type: bool
 function isinset( input, set )
 {
-    for (i = set.size - 1; i >= 0; i--) {
+    for ( i = set.size - 1; i >= 0 ; i-- )
+    {
         if ( input == set[ i ] )
         {
             return true;
@@ -162,7 +165,7 @@ function isinset( input, set )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52f
 // Size: 0x29, Type: bool
 function weapon_genade_launcher()
@@ -171,7 +174,7 @@ function weapon_genade_launcher()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x561
 // Size: 0x3b, Type: bool
 function weapon_pump_action_shotgun()
@@ -180,7 +183,7 @@ function weapon_pump_action_shotgun()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a5
 // Size: 0x17, Type: bool
 function islmg( weapon )
@@ -189,7 +192,7 @@ function islmg( weapon )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c5
 // Size: 0x17, Type: bool
 function isshotgun( weapon )
@@ -198,7 +201,7 @@ function isshotgun( weapon )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e5
 // Size: 0x17, Type: bool
 function issniperrifle( weapon )
@@ -207,7 +210,7 @@ function issniperrifle( weapon )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x605
 // Size: 0x11, Type: bool
 function isshotgunai()
@@ -216,7 +219,7 @@ function isshotgunai()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61f
 // Size: 0x12, Type: bool
 function islongrangeai()
@@ -225,7 +228,7 @@ function islongrangeai()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x63a
 // Size: 0x16, Type: bool
 function usingpistol()
@@ -234,7 +237,7 @@ function usingpistol()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x659
 // Size: 0x16, Type: bool
 function usingrocketlauncher()
@@ -243,7 +246,7 @@ function usingrocketlauncher()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x678
 // Size: 0x16, Type: bool
 function usingmg()
@@ -252,7 +255,7 @@ function usingmg()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x697
 // Size: 0x16, Type: bool
 function isusingshotgun()
@@ -261,7 +264,7 @@ function isusingshotgun()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b6
 // Size: 0x65, Type: bool
 function usingriflelikeweapon()
@@ -282,7 +285,7 @@ function usingriflelikeweapon()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x724
 // Size: 0xf6
 function repeater_headshot_ammo_passive( objweapon, attacker, victim )
@@ -322,7 +325,7 @@ function repeater_headshot_ammo_passive( objweapon, attacker, victim )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x822
 // Size: 0xba, Type: bool
 function needtoreload( thresholdfraction )
@@ -364,7 +367,7 @@ function needtoreload( thresholdfraction )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e5
 // Size: 0x11d, Type: bool
 function cheatammoifnecessary()
@@ -411,7 +414,7 @@ function cheatammoifnecessary()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0b
 // Size: 0x27, Type: bool
 function isusingprimary()
@@ -420,7 +423,7 @@ function isusingprimary()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa3b
 // Size: 0x27, Type: bool
 function isusingsecondary()
@@ -429,7 +432,7 @@ function isusingsecondary()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa6b
 // Size: 0x27, Type: bool
 function isusingsidearm()
@@ -438,7 +441,7 @@ function isusingsidearm()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa9b
 // Size: 0xb
 function getclaimednode()
@@ -447,7 +450,7 @@ function getclaimednode()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaaf
 // Size: 0x21
 function shootenemywrapper( var_9bc9d0ee2a8a46f5 )
@@ -461,7 +464,7 @@ function shootenemywrapper( var_9bc9d0ee2a8a46f5 )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad8
 // Size: 0x74
 function getnodeyawtoorigin( pos )
@@ -482,7 +485,7 @@ function getnodeyawtoorigin( pos )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb55
 // Size: 0xf0
 function getnodeyawtoenemy()
@@ -523,7 +526,7 @@ function getnodeyawtoenemy()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc4e
 // Size: 0x96
 function getyawtoenemy()
@@ -548,7 +551,7 @@ function getyawtoenemy()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xced
 // Size: 0x53
 function getyaw2d( org )
@@ -559,7 +562,7 @@ function getyaw2d( org )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd49
 // Size: 0x6c
 function absyawtoenemy()
@@ -578,7 +581,7 @@ function absyawtoenemy()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdbe
 // Size: 0x6c
 function absyawtoenemy2d()
@@ -597,7 +600,7 @@ function absyawtoenemy2d()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe33
 // Size: 0x50
 function absyawtoorigin( org )
@@ -615,7 +618,7 @@ function absyawtoorigin( org )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe8c
 // Size: 0x4a
 function absyawtoangles( angles )
@@ -633,7 +636,7 @@ function absyawtoangles( angles )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xedf
 // Size: 0x3b
 function getyawfromorigin( org, start )
@@ -644,7 +647,7 @@ function getyawfromorigin( org, start )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf23
 // Size: 0x10
 function getgrenademodel()
@@ -653,7 +656,7 @@ function getgrenademodel()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf3c
 // Size: 0xf5
 function getenemyeyepos( enemy )
@@ -681,7 +684,7 @@ function getenemyeyepos( enemy )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1039
 // Size: 0xa4
 function gettruenodeangles( node )
@@ -704,7 +707,7 @@ function gettruenodeangles( node )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e6
 // Size: 0xc4
 function getyawtoorigin( org )
@@ -728,7 +731,7 @@ function getyawtoorigin( org )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11b3
 // Size: 0x62, Type: bool
 function canseepointfromexposedatcorner( point, node )
@@ -754,7 +757,7 @@ function canseepointfromexposedatcorner( point, node )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x121e
 // Size: 0x2ac
 function getnodeoffset( node )
@@ -831,7 +834,7 @@ function getnodeoffset( node )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14d3
 // Size: 0x115
 function getcover3dnodeoffset( node, leandir )
@@ -865,7 +868,7 @@ function getcover3dnodeoffset( node, leandir )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x15f1
 // Size: 0x36
 function calculatenodeoffset( right, forward, up, baseoffset )
@@ -876,7 +879,7 @@ function calculatenodeoffset( right, forward, up, baseoffset )
 /#
 
     // Namespace utility_common / scripts\anim\utility_common
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1630
     // Size: 0x4c, Type: dev
     function persistentdebugline( start, end )
@@ -895,7 +898,7 @@ function calculatenodeoffset( right, forward, up, baseoffset )
 #/
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1684
 // Size: 0x110
 function canseeenemyfromexposed()
@@ -929,7 +932,7 @@ function canseeenemyfromexposed()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x179d
 // Size: 0xac
 function function_e28d706f2d3f4c65( enemy, node )
@@ -976,7 +979,7 @@ function function_e28d706f2d3f4c65( enemy, node )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1852
 // Size: 0xb4
 function function_a76836ca0f1172ab( enemy, point, node )
@@ -1012,7 +1015,7 @@ function function_a76836ca0f1172ab( enemy, point, node )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x190f
 // Size: 0xf4, Type: bool
 function checkpitchvisibility( frompoint, topoint, atnode )
@@ -1061,7 +1064,7 @@ function checkpitchvisibility( frompoint, topoint, atnode )
 /#
 
     // Namespace utility_common / scripts\anim\utility_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1a0c
     // Size: 0x10, Type: dev
     function dontgiveuponsuppressionyet()
@@ -1072,7 +1075,7 @@ function checkpitchvisibility( frompoint, topoint, atnode )
 #/
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a24
 // Size: 0x9c
 function cansuppressenemy()
@@ -1108,7 +1111,7 @@ function cansuppressenemy()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ac9
 // Size: 0x47, Type: bool
 function hassuppressableenemy()
@@ -1137,7 +1140,7 @@ function hassuppressableenemy()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b19
 // Size: 0xbe, Type: bool
 function aisuppressai()
@@ -1169,7 +1172,7 @@ function aisuppressai()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1be0
 // Size: 0x74
 function canseeandshootpoint( point )
@@ -1189,7 +1192,7 @@ function canseeandshootpoint( point )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c5d
 // Size: 0x6e, Type: bool
 function needrecalculatesuppressspot()
@@ -1203,7 +1206,7 @@ function needrecalculatesuppressspot()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cd4
 // Size: 0x152, Type: bool
 function findgoodsuppressspot( startoffset )
@@ -1240,7 +1243,7 @@ function findgoodsuppressspot( startoffset )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e2f
 // Size: 0x69, Type: bool
 function canseeenemy( cacheduration )
@@ -1264,7 +1267,7 @@ function canseeenemy( cacheduration )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ea1
 // Size: 0x36, Type: bool
 function recentlysawenemy( time )
@@ -1278,7 +1281,7 @@ function recentlysawenemy( time )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ee0
 // Size: 0x2f
 function issuppressedwrapper()
@@ -1297,7 +1300,7 @@ function issuppressedwrapper()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f18
 // Size: 0xd8, Type: bool
 function enemyishiding()
@@ -1333,7 +1336,7 @@ function enemyishiding()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ff9
 // Size: 0x25, Type: bool
 function shouldshootenemyent()
@@ -1354,7 +1357,7 @@ function shouldshootenemyent()
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2027
 // Size: 0xcd
 function sortandcullanimstructarray( animstructarray )
@@ -1368,10 +1371,12 @@ function sortandcullanimstructarray( animstructarray )
             continue;
         }
         
-        for (i = 0; i < var_28656d665cf2b0fa.size; i++) {
+        for ( i = 0; i < var_28656d665cf2b0fa.size ; i++ )
+        {
             if ( animstruct.weight < var_28656d665cf2b0fa[ i ].weight )
             {
-                for (j = var_28656d665cf2b0fa.size; j > i; j--) {
+                for ( j = var_28656d665cf2b0fa.size; j > i ; j-- )
+                {
                     var_28656d665cf2b0fa[ j ] = var_28656d665cf2b0fa[ j - 1 ];
                 }
                 
@@ -1386,7 +1391,7 @@ function sortandcullanimstructarray( animstructarray )
 }
 
 // Namespace utility_common / scripts\anim\utility_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x20fd
 // Size: 0x17d
 function player_can_see_ai( player, ai, latency )

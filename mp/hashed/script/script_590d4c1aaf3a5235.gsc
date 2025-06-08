@@ -14,7 +14,7 @@
 #namespace namespace_57e5dd82a72e648a;
 
 // Namespace namespace_57e5dd82a72e648a / namespace_e5a48e48e132c025
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x235
 // Size: 0x1d6
 function function_2e887982267d85a8()
@@ -42,14 +42,15 @@ function function_2e887982267d85a8()
     level.var_4b11054eaa9aa4ec = array_randomize( level.var_4b11054eaa9aa4ec );
     numtospawn = randomintrange( level.convoyattack.var_19b2f27954f6434e, level.convoyattack.var_14ec3f04478a5448 + 1 );
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         patrolstruct = spawnstruct();
         patrolstruct thread function_c089b1c94e960517( level.var_4b11054eaa9aa4ec[ i ] );
     }
 }
 
 // Namespace namespace_57e5dd82a72e648a / namespace_e5a48e48e132c025
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x413
 // Size: 0x1c6
 function function_c089b1c94e960517( patrolpath )
@@ -84,7 +85,7 @@ function function_c089b1c94e960517( patrolpath )
 }
 
 // Namespace namespace_57e5dd82a72e648a / namespace_e5a48e48e132c025
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e1
 // Size: 0xf4
 function function_3878e6cb9cf4e33f()
@@ -110,7 +111,7 @@ function function_3878e6cb9cf4e33f()
 }
 
 // Namespace namespace_57e5dd82a72e648a / namespace_e5a48e48e132c025
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6dd
 // Size: 0xb4
 function function_f1323c29e2c131af( offset, angles )
@@ -125,7 +126,7 @@ function function_f1323c29e2c131af( offset, angles )
 }
 
 // Namespace namespace_57e5dd82a72e648a / namespace_e5a48e48e132c025
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x799
 // Size: 0x30
 function function_7f20e60880a9bfdd( cache )
@@ -135,7 +136,7 @@ function function_7f20e60880a9bfdd( cache )
 }
 
 // Namespace namespace_57e5dd82a72e648a / namespace_e5a48e48e132c025
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d1
 // Size: 0x236
 function function_96b8ab6bf1035b06()
@@ -179,7 +180,7 @@ function function_96b8ab6bf1035b06()
 }
 
 // Namespace namespace_57e5dd82a72e648a / namespace_e5a48e48e132c025
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa10
 // Size: 0x78
 function function_71b01f0d4ec1f90d()
@@ -198,7 +199,7 @@ function function_71b01f0d4ec1f90d()
 }
 
 // Namespace namespace_57e5dd82a72e648a / namespace_e5a48e48e132c025
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa90
 // Size: 0x43
 function function_15cf713dcbf2c97f( driver )

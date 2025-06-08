@@ -1,7 +1,7 @@
 #namespace mp_frontend_jup_01_fx;
 
 // Namespace mp_frontend_jup_01_fx / scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01_fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ec
 // Size: 0xd2
 function main()

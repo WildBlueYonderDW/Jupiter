@@ -4,7 +4,7 @@
 #namespace bcs_location_trigs;
 
 // Namespace bcs_location_trigs / scripts\common\bcs_location_trigs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25fc
 // Size: 0x5b
 function bcs_location_trigs_init()
@@ -24,7 +24,7 @@ function bcs_location_trigs_init()
 }
 
 // Namespace bcs_location_trigs / scripts\common\bcs_location_trigs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x265f
 // Size: 0x206
 function bcs_trigs_assign_aliases()
@@ -84,7 +84,7 @@ function bcs_trigs_assign_aliases()
 }
 
 // Namespace bcs_location_trigs / scripts\common\bcs_location_trigs
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x286d
 // Size: 0x23
 function parselocationaliases( locationstr )
@@ -94,7 +94,7 @@ function parselocationaliases( locationstr )
 }
 
 // Namespace bcs_location_trigs / scripts\common\bcs_location_trigs
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2899
 // Size: 0x11a
 function add_bcs_location_mapping( classname, alias )
@@ -125,7 +125,7 @@ function add_bcs_location_mapping( classname, alias )
 }
 
 // Namespace bcs_location_trigs / scripts\common\bcs_location_trigs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29bb
 // Size: 0x3b
 function bcs_location_trigger_mapping()
@@ -144,7 +144,7 @@ function bcs_location_trigger_mapping()
 }
 
 // Namespace bcs_location_trigs / scripts\common\bcs_location_trigs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29fe
 // Size: 0x8a4
 function sp()
@@ -282,7 +282,7 @@ function sp()
 }
 
 // Namespace bcs_location_trigs / scripts\common\bcs_location_trigs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32aa
 // Size: 0x68
 function sp_embassy()
@@ -296,7 +296,7 @@ function sp_embassy()
 }
 
 // Namespace bcs_location_trigs / scripts\common\bcs_location_trigs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x331a
 // Size: 0x35
 function sp_lab()
@@ -307,7 +307,7 @@ function sp_lab()
 }
 
 // Namespace bcs_location_trigs / scripts\common\bcs_location_trigs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3357
 // Size: 0x475
 function mp_callouts()

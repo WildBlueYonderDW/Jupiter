@@ -39,8 +39,8 @@
 #namespace remotetank;
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcdd
+// Params 0
+// Checksum 0x0, Offset: 0xcde
 // Size: 0x106
 function init()
 {
@@ -75,8 +75,8 @@ function init()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdeb
+// Params 0
+// Checksum 0x0, Offset: 0xdec
 // Size: 0x454
 function function_d029f84fc08948be()
 {
@@ -134,8 +134,8 @@ function function_d029f84fc08948be()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1247
+// Params 0
+// Checksum 0x0, Offset: 0x1248
 // Size: 0x2
 function function_6866db861ac3911c()
 {
@@ -143,8 +143,8 @@ function function_6866db861ac3911c()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1251
+// Params 0
+// Checksum 0x0, Offset: 0x1252
 // Size: 0x2
 function function_1cf50b689d874cab()
 {
@@ -152,8 +152,8 @@ function function_1cf50b689d874cab()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x125b
+// Params 0
+// Checksum 0x0, Offset: 0x125c
 // Size: 0x1f6
 function function_94c2e83dcb13ec31()
 {
@@ -178,8 +178,8 @@ function function_94c2e83dcb13ec31()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1459
+// Params 0
+// Checksum 0x0, Offset: 0x145a
 // Size: 0x7e
 function function_67b3c8209aee7fd0()
 {
@@ -190,8 +190,8 @@ function function_67b3c8209aee7fd0()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14df
+// Params 0
+// Checksum 0x0, Offset: 0x14e0
 // Size: 0x2
 function function_67f9bf209b3afb75()
 {
@@ -199,8 +199,8 @@ function function_67f9bf209b3afb75()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e9
+// Params 0
+// Checksum 0x0, Offset: 0x14ea
 // Size: 0x2
 function function_e46c604fe3e0c63a()
 {
@@ -208,8 +208,8 @@ function function_e46c604fe3e0c63a()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14f3
+// Params 1
+// Checksum 0x0, Offset: 0x14f4
 // Size: 0xd, Type: bool
 function weapongivenremotetank( streakinfo )
 {
@@ -217,8 +217,8 @@ function weapongivenremotetank( streakinfo )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1509
+// Params 1
+// Checksum 0x0, Offset: 0x150a
 // Size: 0x13
 function deployweapontaken( streakinfo )
 {
@@ -226,9 +226,9 @@ function deployweapontaken( streakinfo )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1524
-// Size: 0x21, Type: bool
+// Params 0
+// Checksum 0x0, Offset: 0x1525
+// Size: 0x21
 function tryuseremotetank()
 {
     streakinfo = createstreakinfo( "pac_sentry", self );
@@ -236,8 +236,8 @@ function tryuseremotetank()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x154e
+// Params 1
+// Checksum 0x0, Offset: 0x154f
 // Size: 0xe5, Type: bool
 function tryuseremotetankfromstruct( streakinfo )
 {
@@ -285,8 +285,8 @@ function tryuseremotetankfromstruct( streakinfo )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x163c
+// Params 1
+// Checksum 0x0, Offset: 0x163d
 // Size: 0x209, Type: bool
 function function_e6904a8315db4476( streakinfo )
 {
@@ -362,8 +362,8 @@ function function_e6904a8315db4476( streakinfo )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x184e
+// Params 1
+// Checksum 0x0, Offset: 0x184f
 // Size: 0x85, Type: bool
 function function_8dc34405adaf04fe( streakinfo )
 {
@@ -395,8 +395,8 @@ function function_8dc34405adaf04fe( streakinfo )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18dc
+// Params 1
+// Checksum 0x0, Offset: 0x18dd
 // Size: 0x11c, Type: bool
 function starttankdropoff( streakinfo )
 {
@@ -448,8 +448,8 @@ function starttankdropoff( streakinfo )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a01
+// Params 4
+// Checksum 0x0, Offset: 0x1a02
 // Size: 0x6d7
 function createtank( tanktype, owner, streakinfo, spawnloc )
 {
@@ -595,8 +595,8 @@ function createtank( tanktype, owner, streakinfo, spawnloc )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x20e1
+// Params 3
+// Checksum 0x0, Offset: 0x20e2
 // Size: 0x142
 function function_b0f0e3d826fdb35( bundle, var_a84cfd847dc1f677, blueprintindex )
 {
@@ -621,8 +621,8 @@ function function_b0f0e3d826fdb35( bundle, var_a84cfd847dc1f677, blueprintindex 
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x222c
+// Params 1
+// Checksum 0x0, Offset: 0x222d
 // Size: 0xfe
 function function_de3e4e392c558d37( streakname )
 {
@@ -643,8 +643,8 @@ function function_de3e4e392c558d37( streakname )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2332
+// Params 1
+// Checksum 0x0, Offset: 0x2333
 // Size: 0x5c
 function function_89445073f3e86e5c( streakname )
 {
@@ -657,8 +657,8 @@ function function_89445073f3e86e5c( streakname )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2396
+// Params 1
+// Checksum 0x0, Offset: 0x2397
 // Size: 0x141
 function function_e2797fdb403c45e0( streakname )
 {
@@ -709,8 +709,8 @@ function function_e2797fdb403c45e0( streakname )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24df
+// Params 0
+// Checksum 0x0, Offset: 0x24e0
 // Size: 0x1c
 function function_7fa9ed782d7c0734()
 {
@@ -718,8 +718,8 @@ function function_7fa9ed782d7c0734()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2503
+// Params 0
+// Checksum 0x0, Offset: 0x2504
 // Size: 0x1c
 function function_13a9b220f9377bba()
 {
@@ -727,8 +727,8 @@ function function_13a9b220f9377bba()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2527
+// Params 1
+// Checksum 0x0, Offset: 0x2528
 // Size: 0x2db
 function function_cfd4851e4ca5b834( remotetank )
 {
@@ -818,8 +818,8 @@ function function_cfd4851e4ca5b834( remotetank )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x280a
+// Params 0
+// Checksum 0x0, Offset: 0x280b
 // Size: 0x89
 function function_2461578b0348aa35()
 {
@@ -840,8 +840,8 @@ function function_2461578b0348aa35()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x289b
+// Params 1
+// Checksum 0x0, Offset: 0x289c
 // Size: 0x39, Type: bool
 function function_944f35a106cf0b72( data )
 {
@@ -851,8 +851,8 @@ function function_944f35a106cf0b72( data )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28dd
+// Params 1
+// Checksum 0x0, Offset: 0x28de
 // Size: 0x16d, Type: bool
 function function_75ab8f8d5f7aff1d( data )
 {
@@ -885,8 +885,8 @@ function function_75ab8f8d5f7aff1d( data )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a53
+// Params 0
+// Checksum 0x0, Offset: 0x2a54
 // Size: 0x14
 function function_30214d9ff0a7ec22()
 {
@@ -894,8 +894,8 @@ function function_30214d9ff0a7ec22()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a6f
+// Params 0
+// Checksum 0x0, Offset: 0x2a70
 // Size: 0x14
 function function_d0fc0ddcbaeef567()
 {
@@ -903,8 +903,8 @@ function function_d0fc0ddcbaeef567()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a8b
+// Params 0
+// Checksum 0x0, Offset: 0x2a8c
 // Size: 0x26
 function function_b89384926b7b6217()
 {
@@ -913,8 +913,8 @@ function function_b89384926b7b6217()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ab9
+// Params 1
+// Checksum 0x0, Offset: 0x2aba
 // Size: 0x41, Type: bool
 function function_c2a6845f0336b0f1( data )
 {
@@ -925,8 +925,8 @@ function function_c2a6845f0336b0f1( data )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b03
+// Params 1
+// Checksum 0x0, Offset: 0x2b04
 // Size: 0x13
 function function_f49e3a7cfdb07f52( data )
 {
@@ -934,8 +934,8 @@ function function_f49e3a7cfdb07f52( data )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b1e
+// Params 0
+// Checksum 0x0, Offset: 0x2b1f
 // Size: 0x38
 function function_371a76c203bdc938()
 {
@@ -947,8 +947,8 @@ function function_371a76c203bdc938()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b5e
+// Params 0
+// Checksum 0x0, Offset: 0x2b5f
 // Size: 0xe2
 function function_cee9be98157cd644()
 {
@@ -978,8 +978,8 @@ function function_cee9be98157cd644()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c48
+// Params 0
+// Checksum 0x0, Offset: 0x2c49
 // Size: 0x23
 function function_7f192a2a47cf2a7d()
 {
@@ -989,8 +989,8 @@ function function_7f192a2a47cf2a7d()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c73
+// Params 2
+// Checksum 0x0, Offset: 0x2c74
 // Size: 0x242
 function function_4334ace787c46d9e( attacker, wasdestroyed )
 {
@@ -1066,8 +1066,8 @@ function function_4334ace787c46d9e( attacker, wasdestroyed )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ebd
+// Params 1
+// Checksum 0x0, Offset: 0x2ebe
 // Size: 0x15f
 function function_fd5a2ca6a710c2c8( tank )
 {
@@ -1119,8 +1119,8 @@ function function_fd5a2ca6a710c2c8( tank )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3024
+// Params 0
+// Checksum 0x0, Offset: 0x3025
 // Size: 0x10c
 function function_717645ad31e6b064()
 {
@@ -1145,8 +1145,8 @@ function function_717645ad31e6b064()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3138
+// Params 2
+// Checksum 0x0, Offset: 0x3139
 // Size: 0x194
 function function_93c80ddc3857d00d( var_ee356ed81b5cb7f4, explosionent )
 {
@@ -1160,7 +1160,8 @@ function function_93c80ddc3857d00d( var_ee356ed81b5cb7f4, explosionent )
     
     if ( isdefined( spheretrace[ 0 ] ) )
     {
-        for (i = 0; i < spheretrace.size - 1; i++) {
+        for ( i = 0; i < spheretrace.size - 1 ; i++ )
+        {
             potentialtarget = spheretrace[ i ][ "entity" ];
             entityhitpos = spheretrace[ i ][ "position" ];
             burstpos = spheretrace[ i ][ "shape_position" ];
@@ -1198,8 +1199,8 @@ function function_93c80ddc3857d00d( var_ee356ed81b5cb7f4, explosionent )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x32d4
+// Params 5
+// Checksum 0x0, Offset: 0x32d5
 // Size: 0xdf
 function function_21526388ce8cfe7c( entityhitpos, burstpos, traveltime, explosionent, tank )
 {
@@ -1232,8 +1233,8 @@ function function_21526388ce8cfe7c( entityhitpos, burstpos, traveltime, explosio
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33bb
+// Params 0
+// Checksum 0x0, Offset: 0x33bc
 // Size: 0x1ca
 function function_1dcee2ab6d1348c2()
 {
@@ -1303,8 +1304,8 @@ function function_1dcee2ab6d1348c2()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x358d
+// Params 1
+// Checksum 0x0, Offset: 0x358e
 // Size: 0x20e
 function function_44208c5a6449e697( target )
 {
@@ -1398,8 +1399,8 @@ function function_44208c5a6449e697( target )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37a4
+// Params 0
+// Checksum 0x0, Offset: 0x37a5
 // Size: 0x112
 function function_d8ff9ab17cba9862()
 {
@@ -1437,8 +1438,8 @@ function function_d8ff9ab17cba9862()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38be
+// Params 0
+// Checksum 0x0, Offset: 0x38bf
 // Size: 0x282
 function function_b1ccab9347662a31()
 {
@@ -1508,8 +1509,8 @@ function function_b1ccab9347662a31()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b48
+// Params 1
+// Checksum 0x0, Offset: 0x3b49
 // Size: 0x77
 function function_416e1c2f79fce693( var_a84cfd847dc1f677 )
 {
@@ -1528,8 +1529,8 @@ function function_416e1c2f79fce693( var_a84cfd847dc1f677 )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bc7
+// Params 0
+// Checksum 0x0, Offset: 0x3bc8
 // Size: 0x28
 function function_6add0f629e59f222()
 {
@@ -1542,8 +1543,8 @@ function function_6add0f629e59f222()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bf7
+// Params 0
+// Checksum 0x0, Offset: 0x3bf8
 // Size: 0x105
 function function_66cd16d1ea616b67()
 {
@@ -1582,8 +1583,8 @@ function function_66cd16d1ea616b67()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d04
+// Params 0
+// Checksum 0x0, Offset: 0x3d05
 // Size: 0x38
 function function_79479ff61f57b90b()
 {
@@ -1594,8 +1595,8 @@ function function_79479ff61f57b90b()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d44
+// Params 0
+// Checksum 0x0, Offset: 0x3d45
 // Size: 0x158
 function function_bd237957848037c8()
 {
@@ -1637,8 +1638,8 @@ function function_bd237957848037c8()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ea4
+// Params 1
+// Checksum 0x0, Offset: 0x3ea5
 // Size: 0x5e
 function function_3c864cee6ca51e89( var_93c07017fa762d2b )
 {
@@ -1672,8 +1673,8 @@ function function_3c864cee6ca51e89( var_93c07017fa762d2b )
 /#
 
     // Namespace remotetank / scripts\mp\killstreaks\remotetank
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3f0a
+    // Params 2
+    // Checksum 0x0, Offset: 0x3f0b
     // Size: 0x140, Type: dev
     function function_257b6f1cf0249339( entityhitpos, tank )
     {
@@ -1700,8 +1701,8 @@ function function_3c864cee6ca51e89( var_93c07017fa762d2b )
 #/
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4052
+// Params 0
+// Checksum 0x0, Offset: 0x4053
 // Size: 0x24
 function function_a2d262a682ad5e0()
 {
@@ -1712,8 +1713,8 @@ function function_a2d262a682ad5e0()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x407e
+// Params 0
+// Checksum 0x0, Offset: 0x407f
 // Size: 0xa0
 function function_da556e71229fa017()
 {
@@ -1742,8 +1743,8 @@ function function_da556e71229fa017()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4126
+// Params 0
+// Checksum 0x0, Offset: 0x4127
 // Size: 0x93
 function function_cba0065c10ac9099()
 {
@@ -1785,8 +1786,8 @@ function function_cba0065c10ac9099()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x41c1
+// Params 0
+// Checksum 0x0, Offset: 0x41c2
 // Size: 0x4e
 function function_cf71eb6e0611096c()
 {
@@ -1806,8 +1807,8 @@ function function_cf71eb6e0611096c()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4217
+// Params 1
+// Checksum 0x0, Offset: 0x4218
 // Size: 0x7a
 function function_c5b2e0bb2a8d5f68( fromdeath )
 {
@@ -1835,8 +1836,8 @@ function function_c5b2e0bb2a8d5f68( fromdeath )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4299
+// Params 0
+// Checksum 0x0, Offset: 0x429a
 // Size: 0x19
 function function_c495d6715028bedf()
 {
@@ -1846,8 +1847,8 @@ function function_c495d6715028bedf()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42ba
+// Params 1
+// Checksum 0x0, Offset: 0x42bb
 // Size: 0xb2
 function function_766f7c743d266217( data )
 {
@@ -1878,8 +1879,8 @@ function function_766f7c743d266217( data )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4374
+// Params 1
+// Checksum 0x0, Offset: 0x4375
 // Size: 0x51
 function function_db443c859c55e450( isenabled )
 {
@@ -1895,8 +1896,8 @@ function function_db443c859c55e450( isenabled )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x43cd
+// Params 2
+// Checksum 0x0, Offset: 0x43ce
 // Size: 0x9f
 function function_e4adb8dfbd1e62dd( isdisable, var_e796719320e13e49 )
 {
@@ -1927,8 +1928,8 @@ function function_e4adb8dfbd1e62dd( isdisable, var_e796719320e13e49 )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4474
+// Params 1
+// Checksum 0x0, Offset: 0x4475
 // Size: 0x70
 function function_a05d4cd1fe21c586( isdeath )
 {
@@ -1950,8 +1951,8 @@ function function_a05d4cd1fe21c586( isdeath )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44ec
+// Params 1
+// Checksum 0x0, Offset: 0x44ed
 // Size: 0x6a
 function function_8c02e338af14541c( data )
 {
@@ -1973,8 +1974,8 @@ function function_8c02e338af14541c( data )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x455e
+// Params 1
+// Checksum 0x0, Offset: 0x455f
 // Size: 0xab
 function function_f149e9383f183cf0( data )
 {
@@ -2003,8 +2004,8 @@ function function_f149e9383f183cf0( data )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4611
+// Params 1
+// Checksum 0x0, Offset: 0x4612
 // Size: 0x8b
 function function_5c67fa91fe5b79( data )
 {
@@ -2027,8 +2028,8 @@ function function_5c67fa91fe5b79( data )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46a4
+// Params 1
+// Checksum 0x0, Offset: 0x46a5
 // Size: 0x12
 function function_ec5cf58c50eedc47( var_9f1f082eeef5d90b )
 {
@@ -2036,8 +2037,8 @@ function function_ec5cf58c50eedc47( var_9f1f082eeef5d90b )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x46be
+// Params 0
+// Checksum 0x0, Offset: 0x46bf
 // Size: 0xa7
 function function_e6cbf8131b64e6db()
 {
@@ -2059,8 +2060,8 @@ function function_e6cbf8131b64e6db()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x476d
+// Params 1
+// Checksum 0x0, Offset: 0x476e
 // Size: 0x2a
 function function_4973f20495f7d1ff( firetime )
 {
@@ -2075,8 +2076,8 @@ function function_4973f20495f7d1ff( firetime )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x479f
+// Params 0
+// Checksum 0x0, Offset: 0x47a0
 // Size: 0x5c
 function function_6f3f7278c3e229d7()
 {
@@ -2092,8 +2093,8 @@ function function_6f3f7278c3e229d7()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4803
+// Params 1
+// Checksum 0x0, Offset: 0x4804
 // Size: 0x13e
 function function_8acee201d15f4c71( spawndist )
 {
@@ -2118,8 +2119,8 @@ function function_8acee201d15f4c71( spawndist )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x494a
+// Params 2
+// Checksum 0x0, Offset: 0x494b
 // Size: 0x24f
 function function_a03fd14f53c89e53( startpoint, spawnpoint )
 {
@@ -2184,8 +2185,8 @@ function function_a03fd14f53c89e53( startpoint, spawnpoint )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ba2
+// Params 0
+// Checksum 0x0, Offset: 0x4ba3
 // Size: 0xba
 function function_a46005e27c92c2ca()
 {
@@ -2215,8 +2216,8 @@ function function_a46005e27c92c2ca()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c64
+// Params 0
+// Checksum 0x0, Offset: 0x4c65
 // Size: 0x168
 function function_4048c2ca00c4690()
 {
@@ -2267,8 +2268,8 @@ function function_4048c2ca00c4690()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4dd4
+// Params 0
+// Checksum 0x0, Offset: 0x4dd5
 // Size: 0x56
 function function_865318fe12d890e8()
 {
@@ -2286,8 +2287,8 @@ function function_865318fe12d890e8()
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e32
+// Params 1
+// Checksum 0x0, Offset: 0x4e33
 // Size: 0x20
 function function_8cba478f80e8ac72( remotetank )
 {
@@ -2296,8 +2297,8 @@ function function_8cba478f80e8ac72( remotetank )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e5b
+// Params 1
+// Checksum 0x0, Offset: 0x4e5c
 // Size: 0x103
 function function_876be54dd49f69a9( data )
 {
@@ -2345,8 +2346,8 @@ function function_876be54dd49f69a9( data )
 }
 
 // Namespace remotetank / scripts\mp\killstreaks\remotetank
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f66
+// Params 0
+// Checksum 0x0, Offset: 0x4f67
 // Size: 0x2f
 function function_6f35c67c1d78b1d5()
 {

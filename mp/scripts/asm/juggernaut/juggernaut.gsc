@@ -13,7 +13,7 @@
 #namespace juggernaut;
 
 // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x244
 // Size: 0xa2
 function juggernaut( asmname )
@@ -31,7 +31,7 @@ function juggernaut( asmname )
 }
 
 // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ee
 // Size: 0x4a
 function initanimspeedthresholds_juggernaut( animsetname )
@@ -48,7 +48,7 @@ function initanimspeedthresholds_juggernaut( animsetname )
 }
 
 // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x340
 // Size: 0x1e4
 function enable_casual_killer()
@@ -108,7 +108,7 @@ function enable_casual_killer()
 }
 
 // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52c
 // Size: 0x17
 function disable_casual_killer()
@@ -120,7 +120,7 @@ function disable_casual_killer()
 }
 
 // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54b
 // Size: 0x269
 function disable_casual_killer_internal()
@@ -210,7 +210,7 @@ function disable_casual_killer_internal()
 /#
 
     // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7bc
     // Size: 0x4b, Type: dev
     function function_f8bf65b96ea0085e()
@@ -228,7 +228,7 @@ function disable_casual_killer_internal()
 #/
 
 // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x80f
 // Size: 0x6f
 function casual_killer_damage_func( damage, attacker, direction_vec, point, type, modelname, tagname, partname, idflags, objweapon )
@@ -240,7 +240,7 @@ function casual_killer_damage_func( damage, attacker, direction_vec, point, type
 }
 
 // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x886
 // Size: 0x66
 function casual_killer_enemy_reaction()
@@ -261,7 +261,7 @@ function casual_killer_enemy_reaction()
 }
 
 // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8f4
 // Size: 0x462
 function casual_killer_targeting()
@@ -412,7 +412,7 @@ function casual_killer_targeting()
 }
 
 // Namespace juggernaut / scripts\asm\juggernaut\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd5e
 // Size: 0x6a0
 function casual_killer_sweep()

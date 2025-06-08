@@ -64,8 +64,8 @@
 #namespace br_gametype_resurgence;
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d6f
+// Params 0
+// Checksum 0x0, Offset: 0x1d05
 // Size: 0x17
 function main()
 {
@@ -74,8 +74,8 @@ function main()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d8e
+// Params 0
+// Checksum 0x0, Offset: 0x1d24
 // Size: 0x66
 function init()
 {
@@ -86,7 +86,7 @@ function init()
     level thread function_d7a7aa9ee1cc1071();
     function_67caacec6ddd6a25();
     setdvarifuninitialized( @"hash_98fad011285f3011", 0 );
-    setdvarifuninitialized( @"hash_e82b8618853a182c", 2000 );
+    setdvarifuninitialized( @"scr_br_project_kick", 2000 );
     
     /#
         setdevdvarifuninitialized( @"hash_5a1dae481ef5d089", 0 );
@@ -94,8 +94,8 @@ function init()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dfc
+// Params 2
+// Checksum 0x0, Offset: 0x1d92
 // Size: 0x133
 function initloadouts( table, forcereset )
 {
@@ -108,7 +108,8 @@ function initloadouts( table, forcereset )
     var_7d958726e11b327 = scripts\mp\class::function_df2933f96d726d71( table );
     level.var_c04b5edf3f9ea340[ newloadoutindex ] = [];
     
-    for (classindex = 0; classindex < var_7d958726e11b327; classindex++) {
+    for ( classindex = 0; classindex < var_7d958726e11b327 ; classindex++ )
+    {
         level.var_c04b5edf3f9ea340[ newloadoutindex ][ level.var_c04b5edf3f9ea340[ newloadoutindex ].size ] = function_aa8a954d66bf39b4( classindex, table );
     }
     
@@ -124,8 +125,8 @@ function initloadouts( table, forcereset )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f37
+// Params 2
+// Checksum 0x0, Offset: 0x1ecd
 // Size: 0x34a
 function function_aa8a954d66bf39b4( classindex, table )
 {
@@ -162,8 +163,8 @@ function function_aa8a954d66bf39b4( classindex, table )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x228a
+// Params 0
+// Checksum 0x0, Offset: 0x2220
 // Size: 0xbab
 function function_d7a7aa9ee1cc1071()
 {
@@ -204,13 +205,13 @@ function function_d7a7aa9ee1cc1071()
     function_e30bfec8b3d65b77();
     level.brgametype.var_6420b42c7add53cc = getdvarint( @"hash_d2891d4180de0553", 1 );
     level.brgametype.var_840b848760f488a4 = getdvarint( @"hash_96c8e4682ff85b5f", 0 );
-    level.brgametype.var_428c736511619824 = getdvarfloat( @"hash_dc284649b5343df1", 2.5 );
+    level.brgametype.var_428c736511619824 = getdvarfloat( @"scr_br_tracked_teams_clear_delay", 2.5 );
     level.brgametype.var_6ee71092be57820c = getdvarfloat( @"hash_8217b0dfa2d04c31", 10 );
     level.brgametype.usevengeance = getmatchrulesdata( "brData", "resurgenceUseVengeance" );
     level.brgametype.vengeanceuseanykill = getmatchrulesdata( "brData", "resurgenceVengeanceUseAnyKill" );
     level.brgametype.usevengeancedecreaserespawntimer = getmatchrulesdata( "brData", "resurgenceUseVengeanceDecreaseRespawnTimer" );
     level.brgametype.usepointstoreducerespawntime = getmatchrulesdata( "brData", "resurgenceUsePointsToReduceRespawnTime" );
-    level.respawnheightoverride = getdvarint( @"hash_ae35e4bb8a3aa9e7", 7500 );
+    level.respawnheightoverride = getdvarint( @"scr_bmo_respawnheightoverride", 7500 );
     level.brgametype.var_2cfdc1d6e92251bf = getmatchrulesdata( "brData", "resurgenceVengeanceDecreaseRespawnDelay" );
     level.brgametype.var_b30e180b0b50d598 = getdvarint( @"hash_5dc7ba56c5253ee8", 1 );
     level.brgametype.var_14afb82aa29bc57c = getdvarint( @"hash_77028b51cd3d0a56", -1 );
@@ -297,8 +298,8 @@ function function_d7a7aa9ee1cc1071()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e3d
+// Params 0
+// Checksum 0x0, Offset: 0x2dd3
 // Size: 0x41
 function function_e30bfec8b3d65b77()
 {
@@ -314,8 +315,8 @@ function function_e30bfec8b3d65b77()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e86
+// Params 0
+// Checksum 0x0, Offset: 0x2e1c
 // Size: 0x95
 function function_528570ceb9dc7bf4()
 {
@@ -342,8 +343,8 @@ function function_528570ceb9dc7bf4()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f23
+// Params 0
+// Checksum 0x0, Offset: 0x2eb9
 // Size: 0x69
 function function_67caacec6ddd6a25()
 {
@@ -360,8 +361,8 @@ function function_67caacec6ddd6a25()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f94
+// Params 0
+// Checksum 0x0, Offset: 0x2f2a
 // Size: 0x15f
 function function_8af96d3889f46280()
 {
@@ -407,8 +408,8 @@ function function_8af96d3889f46280()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30fb
+// Params 0
+// Checksum 0x0, Offset: 0x3091
 // Size: 0x61
 function function_cee78f828e373996()
 {
@@ -417,8 +418,8 @@ function function_cee78f828e373996()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3164
+// Params 4
+// Checksum 0x0, Offset: 0x30fa
 // Size: 0x121
 function function_b79b55c5a0aaa08( player_ref, state, missionid, var_c08e41851ed100e8 )
 {
@@ -459,8 +460,8 @@ function function_b79b55c5a0aaa08( player_ref, state, missionid, var_c08e41851ed
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x328d
+// Params 5
+// Checksum 0x0, Offset: 0x3223
 // Size: 0x88
 function function_4bb3153d2bc88c04( team, player_ref, state, missionid, var_c08e41851ed100e8 )
 {
@@ -471,8 +472,8 @@ function function_4bb3153d2bc88c04( team, player_ref, state, missionid, var_c08e
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x331d
+// Params 3
+// Checksum 0x0, Offset: 0x32b3
 // Size: 0x1a2
 function function_5367b756a0eeb9db( attacker, killedtarget, var_73cacd5a645aab1f )
 {
@@ -510,7 +511,8 @@ function function_5367b756a0eeb9db( attacker, killedtarget, var_73cacd5a645aab1f
         index++;
     }
     
-    for (var_ac61d946afdba08b = index; var_ac61d946afdba08b < 4; var_ac61d946afdba08b++) {
+    for ( var_ac61d946afdba08b = index; var_ac61d946afdba08b < 4 ; var_ac61d946afdba08b++ )
+    {
         var_af9cbb6cb7344131[ var_ac61d946afdba08b ] = 0;
     }
     
@@ -518,8 +520,8 @@ function function_5367b756a0eeb9db( attacker, killedtarget, var_73cacd5a645aab1f
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34c7
+// Params 0
+// Checksum 0x0, Offset: 0x345d
 // Size: 0xdb
 function function_7269c88a927e7937()
 {
@@ -539,8 +541,8 @@ function function_7269c88a927e7937()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35aa
+// Params 0
+// Checksum 0x0, Offset: 0x3540
 // Size: 0x15
 function function_683452dfa2b09ccd()
 {
@@ -548,8 +550,8 @@ function function_683452dfa2b09ccd()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35c7
+// Params 0
+// Checksum 0x0, Offset: 0x355d
 // Size: 0x3d
 function function_171e7f7d10b8131()
 {
@@ -560,8 +562,8 @@ function function_171e7f7d10b8131()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x360c
+// Params 0
+// Checksum 0x0, Offset: 0x35a2
 // Size: 0x42
 function function_c3aa670d2773db51()
 {
@@ -573,8 +575,8 @@ function function_c3aa670d2773db51()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3656
+// Params 0
+// Checksum 0x0, Offset: 0x35ec
 // Size: 0x14e
 function function_aa202a5e20886406()
 {
@@ -606,8 +608,8 @@ function function_aa202a5e20886406()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37ac
+// Params 0
+// Checksum 0x0, Offset: 0x3742
 // Size: 0xc0
 function function_9f61893413e0093c()
 {
@@ -628,8 +630,8 @@ function function_9f61893413e0093c()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3874
+// Params 0
+// Checksum 0x0, Offset: 0x380a
 // Size: 0x24
 function function_60a9f05beb5e480()
 {
@@ -642,8 +644,8 @@ function function_60a9f05beb5e480()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38a0
+// Params 1
+// Checksum 0x0, Offset: 0x3836
 // Size: 0x66
 function function_411af8132ca77d3a( player )
 {
@@ -670,8 +672,8 @@ function function_411af8132ca77d3a( player )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x390f
+// Params 1
+// Checksum 0x0, Offset: 0x38a5
 // Size: 0x36, Type: bool
 function function_c76781b1d95bb338( player )
 {
@@ -686,8 +688,8 @@ function function_c76781b1d95bb338( player )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x394e
+// Params 1
+// Checksum 0x0, Offset: 0x38e4
 // Size: 0xb9, Type: bool
 function function_afb309407c44fc11( player )
 {
@@ -718,8 +720,8 @@ function function_afb309407c44fc11( player )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a10
+// Params 1
+// Checksum 0x0, Offset: 0x39a6
 // Size: 0xda
 function function_2ffb02751eba32df( deadplayer )
 {
@@ -744,8 +746,8 @@ function function_2ffb02751eba32df( deadplayer )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3af2
+// Params 0
+// Checksum 0x0, Offset: 0x3a88
 // Size: 0x8d
 function function_ece0d8ae46d230c8()
 {
@@ -780,8 +782,8 @@ function function_ece0d8ae46d230c8()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b88
+// Params 2
+// Checksum 0x0, Offset: 0x3b1e
 // Size: 0x181
 function function_fb9ed4b8a0e55bfc( teamdata, var_75c8cc005e7e9f3 )
 {
@@ -831,8 +833,8 @@ function function_fb9ed4b8a0e55bfc( teamdata, var_75c8cc005e7e9f3 )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d11
+// Params 0
+// Checksum 0x0, Offset: 0x3ca7
 // Size: 0x83, Type: bool
 function function_4001b05bdb048819()
 {
@@ -849,8 +851,8 @@ function function_4001b05bdb048819()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d9d
+// Params 1
+// Checksum 0x0, Offset: 0x3d33
 // Size: 0x1d
 function function_f9d21088ed2c3306( var_84e2123aaca9a965 )
 {
@@ -863,8 +865,8 @@ function function_f9d21088ed2c3306( var_84e2123aaca9a965 )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dc2
+// Params 2
+// Checksum 0x0, Offset: 0x3d58
 // Size: 0x69
 function function_f9a2b6ae09e7a00( var_84e2123aaca9a965, tokenused )
 {
@@ -880,8 +882,8 @@ function function_f9a2b6ae09e7a00( var_84e2123aaca9a965, tokenused )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e34
+// Params 1
+// Checksum 0x0, Offset: 0x3dca
 // Size: 0x5e
 function function_59e26a5b68b2b39a( attacker )
 {
@@ -899,8 +901,8 @@ function function_59e26a5b68b2b39a( attacker )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e9b
+// Params 1
+// Checksum 0x0, Offset: 0x3e31
 // Size: 0x377
 function function_277c5d414a129608( deathdata )
 {
@@ -987,8 +989,8 @@ function function_277c5d414a129608( deathdata )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x421a
+// Params 1
+// Checksum 0x0, Offset: 0x41b0
 // Size: 0xb9
 function function_28fe2aed2424b8f( victim )
 {
@@ -1014,8 +1016,8 @@ function function_28fe2aed2424b8f( victim )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x42db
+// Params 0
+// Checksum 0x0, Offset: 0x4271
 // Size: 0x23f
 function function_5a5bb23fc0b48595()
 {
@@ -1072,8 +1074,8 @@ function function_5a5bb23fc0b48595()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4522
+// Params 0
+// Checksum 0x0, Offset: 0x44b8
 // Size: 0x7c, Type: bool
 function function_240527b0a85a24b()
 {
@@ -1089,8 +1091,8 @@ function function_240527b0a85a24b()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x45a7
+// Params 2
+// Checksum 0x0, Offset: 0x453d
 // Size: 0x46
 function function_778d96c94679909c( trackerteam, trackedteam )
 {
@@ -1103,8 +1105,8 @@ function function_778d96c94679909c( trackerteam, trackedteam )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x45f5
+// Params 2
+// Checksum 0x0, Offset: 0x458b
 // Size: 0xa6
 function function_8cc833b706d330bf( team, potentialkiller )
 {
@@ -1139,8 +1141,8 @@ function function_8cc833b706d330bf( team, potentialkiller )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x46a3
+// Params 2
+// Checksum 0x0, Offset: 0x4639
 // Size: 0x11b
 function function_d99ec654fcd96cc6( var_d0b996fde8bfc937, potentialkiller )
 {
@@ -1179,8 +1181,8 @@ function function_d99ec654fcd96cc6( var_d0b996fde8bfc937, potentialkiller )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x47c7
+// Params 2
+// Checksum 0x0, Offset: 0x475d
 // Size: 0xc3
 function function_2d3b9a726feb5dc2( team, weaponused )
 {
@@ -1210,8 +1212,8 @@ function function_2d3b9a726feb5dc2( team, weaponused )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4892
+// Params 2
+// Checksum 0x0, Offset: 0x4828
 // Size: 0x62
 function function_a045bcdb0d1bebf9( victim, attacker )
 {
@@ -1222,8 +1224,8 @@ function function_a045bcdb0d1bebf9( victim, attacker )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48fc
+// Params 1
+// Checksum 0x0, Offset: 0x4892
 // Size: 0x12d
 function function_266b9fb5e9453ef1( victim )
 {
@@ -1269,8 +1271,8 @@ function function_266b9fb5e9453ef1( victim )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a31
+// Params 1
+// Checksum 0x0, Offset: 0x49c7
 // Size: 0x70
 function function_4e3aa4dbe97c98c4( victim )
 {
@@ -1292,8 +1294,8 @@ function function_4e3aa4dbe97c98c4( victim )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4aa9
+// Params 0
+// Checksum 0x0, Offset: 0x4a3f
 // Size: 0x5d
 function function_2a897cd68a200cb2()
 {
@@ -1311,8 +1313,8 @@ function function_2a897cd68a200cb2()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b0e
+// Params 0
+// Checksum 0x0, Offset: 0x4aa4
 // Size: 0x154
 function function_1ee2942f2a3ba7b()
 {
@@ -1365,8 +1367,8 @@ function function_1ee2942f2a3ba7b()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c6a
+// Params 0
+// Checksum 0x0, Offset: 0x4c00
 // Size: 0xfc
 function function_213349d38bdbacc7()
 {
@@ -1388,8 +1390,8 @@ function function_213349d38bdbacc7()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d6e
+// Params 1
+// Checksum 0x0, Offset: 0x4d04
 // Size: 0xfe
 function function_60f89ea387e4fd31( victim )
 {
@@ -1413,8 +1415,8 @@ function function_60f89ea387e4fd31( victim )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e74
+// Params 1
+// Checksum 0x0, Offset: 0x4e0a
 // Size: 0x18c
 function function_183e83cf14bfeb7a( nemesis )
 {
@@ -1455,8 +1457,8 @@ function function_183e83cf14bfeb7a( nemesis )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5008
+// Params 1
+// Checksum 0x0, Offset: 0x4f9e
 // Size: 0x49
 function function_2c7bb4c045e81497( victim )
 {
@@ -1476,8 +1478,8 @@ function function_2c7bb4c045e81497( victim )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5059
+// Params 1
+// Checksum 0x0, Offset: 0x4fef
 // Size: 0x7a
 function function_d0262f6a0c49edbb( victim )
 {
@@ -1501,8 +1503,8 @@ function function_d0262f6a0c49edbb( victim )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x50db
+// Params 1
+// Checksum 0x0, Offset: 0x5071
 // Size: 0x59
 function function_d17aa77ca39e8d00( victim )
 {
@@ -1517,8 +1519,8 @@ function function_d17aa77ca39e8d00( victim )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x513c
+// Params 1
+// Checksum 0x0, Offset: 0x50d2
 // Size: 0x64
 function function_58d39d7db7e05d7a( victim )
 {
@@ -1534,8 +1536,8 @@ function function_58d39d7db7e05d7a( victim )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x51a8
+// Params 2
+// Checksum 0x0, Offset: 0x513e
 // Size: 0xbb
 function function_ffcd45c1b7a5355a( var_4e776a22240ff174, killedtarget )
 {
@@ -1565,8 +1567,8 @@ function function_ffcd45c1b7a5355a( var_4e776a22240ff174, killedtarget )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x526b
+// Params 1
+// Checksum 0x0, Offset: 0x5201
 // Size: 0x102
 function function_d33f6589a1c04ee9( var_92a674d94df29e77 )
 {
@@ -1595,8 +1597,8 @@ function function_d33f6589a1c04ee9( var_92a674d94df29e77 )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5375
+// Params 1
+// Checksum 0x0, Offset: 0x530b
 // Size: 0xd1
 function function_c86eefdaf13d0d81( victim )
 {
@@ -1628,8 +1630,8 @@ function function_c86eefdaf13d0d81( victim )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x544e
+// Params 1
+// Checksum 0x0, Offset: 0x53e4
 // Size: 0x83
 function function_6f0f4e7b3ff7b57c( trackedteams )
 {
@@ -1649,8 +1651,8 @@ function function_6f0f4e7b3ff7b57c( trackedteams )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54da
+// Params 2
+// Checksum 0x0, Offset: 0x5470
 // Size: 0x76
 function function_85fee305e2d829c1( array, teamname )
 {
@@ -1669,8 +1671,8 @@ function function_85fee305e2d829c1( array, teamname )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5559
+// Params 3
+// Checksum 0x0, Offset: 0x54ef
 // Size: 0xfc
 function function_611500f4751aaf1( bitfield, teamindex, arrayindex )
 {
@@ -1689,8 +1691,8 @@ function function_611500f4751aaf1( bitfield, teamindex, arrayindex )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x565e
+// Params 5
+// Checksum 0x0, Offset: 0x55f4
 // Size: 0x1a9
 function function_d6d795db2cae2c1b( var_29412b34af141c29, var_38678fa9bdc12fdf, trackedteamindex, var_8db0c8d0a8da2329, tracktime )
 {
@@ -1736,8 +1738,8 @@ function function_d6d795db2cae2c1b( var_29412b34af141c29, var_38678fa9bdc12fdf, 
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x580f
+// Params 0
+// Checksum 0x0, Offset: 0x57a5
 // Size: 0x62
 function function_f6686365221e78cb()
 {
@@ -1761,8 +1763,8 @@ function function_f6686365221e78cb()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x587a
+// Params 3
+// Checksum 0x0, Offset: 0x5810
 // Size: 0x94
 function function_63c057f27dc906b5( trackerteam, trackedteam, tracktime )
 {
@@ -1796,8 +1798,8 @@ function function_63c057f27dc906b5( trackerteam, trackedteam, tracktime )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5916
+// Params 4
+// Checksum 0x0, Offset: 0x58ac
 // Size: 0x163
 function function_7278f9076c781224( trackerteam, trackedteam, addindex, tracktime )
 {
@@ -1840,8 +1842,8 @@ function function_7278f9076c781224( trackerteam, trackedteam, addindex, tracktim
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a81
+// Params 0
+// Checksum 0x0, Offset: 0x5a17
 // Size: 0x273
 function function_3ee5f100eb900caf()
 {
@@ -1867,7 +1869,8 @@ function function_3ee5f100eb900caf()
         totaltime = 1;
     }
     
-    for (i = 0; i < var_10b5c13c81db5079; i++) {
+    for ( i = 0; i < var_10b5c13c81db5079 ; i++ )
+    {
         totaltime += level.br_level.br_circleclosetimes[ i ] + level.br_level.br_circledelaytimes[ i ];
     }
     
@@ -1914,8 +1917,8 @@ function function_3ee5f100eb900caf()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cfc
+// Params 1
+// Checksum 0x0, Offset: 0x5c92
 // Size: 0x29
 function function_5a44c88bdf9b01ae( remainingtime )
 {
@@ -1925,8 +1928,8 @@ function function_5a44c88bdf9b01ae( remainingtime )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d2d
+// Params 1
+// Checksum 0x0, Offset: 0x5cc3
 // Size: 0x28
 function function_852d53966b46f329( remainingtime )
 {
@@ -1936,8 +1939,8 @@ function function_852d53966b46f329( remainingtime )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d5d
+// Params 0
+// Checksum 0x0, Offset: 0x5cf3
 // Size: 0x18c
 function function_809485f51d59ebb()
 {
@@ -1951,7 +1954,8 @@ function function_809485f51d59ebb()
     
     foreach ( var_53a4a1c920def4bd in level.brgametype.var_34af112c77c2c381 )
     {
-        for (i = 0; i < var_10b5c13c81db5079; i++) {
+        for ( i = 0; i < var_10b5c13c81db5079 ; i++ )
+        {
             overridedelay = getdvarint( hashcat( @"hash_fa5f73966eb446d7", i + 1, var_53a4a1c920def4bd ), -1 );
             
             if ( overridedelay >= 0 )
@@ -1969,14 +1973,15 @@ function function_809485f51d59ebb()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ef1
+// Params 0
+// Checksum 0x0, Offset: 0x5e87
 // Size: 0x10f
 function function_e6ca3c2ca24b16f()
 {
     var_8e52126aeaaf8ab8 = level.brgametype.var_8e52126aeaaf8ab8;
     
-    for (i = 0; i < var_8e52126aeaaf8ab8.percircle.size; i++) {
+    for ( i = 0; i < var_8e52126aeaaf8ab8.percircle.size ; i++ )
+    {
         level.brgametype.respawndelay[ "_solos" ][ i ] = var_8e52126aeaaf8ab8.percircle[ i ].var_a85640a8d2256218;
         level.brgametype.respawndelay[ "_duos" ][ i ] = var_8e52126aeaaf8ab8.percircle[ i ].var_88414606541a6379;
         level.brgametype.respawndelay[ "_trios" ][ i ] = var_8e52126aeaaf8ab8.percircle[ i ].var_d626a1e8c8874d8f;
@@ -1985,8 +1990,8 @@ function function_e6ca3c2ca24b16f()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6008
+// Params 0
+// Checksum 0x0, Offset: 0x5f9e
 // Size: 0x36
 function function_bbee565c7645ea29()
 {
@@ -1996,8 +2001,8 @@ function function_bbee565c7645ea29()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6046
+// Params 0
+// Checksum 0x0, Offset: 0x5fdc
 // Size: 0x35
 function function_fff107d76eb56064()
 {
@@ -2007,8 +2012,8 @@ function function_fff107d76eb56064()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6083
+// Params 0
+// Checksum 0x0, Offset: 0x6019
 // Size: 0x35
 function function_aae3ac84b3ff8e6d()
 {
@@ -2018,8 +2023,8 @@ function function_aae3ac84b3ff8e6d()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x60c0
+// Params 0
+// Checksum 0x0, Offset: 0x6056
 // Size: 0x36
 function function_1f013990c19fcd88()
 {
@@ -2029,8 +2034,8 @@ function function_1f013990c19fcd88()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x60fe
+// Params 1
+// Checksum 0x0, Offset: 0x6094
 // Size: 0x60
 function function_b12988fdf64efe98( value )
 {
@@ -2042,8 +2047,8 @@ function function_b12988fdf64efe98( value )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6166
+// Params 1
+// Checksum 0x0, Offset: 0x60fc
 // Size: 0xc5
 function function_230ea867cd69c598( value )
 {
@@ -2074,8 +2079,8 @@ function function_230ea867cd69c598( value )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6233
+// Params 1
+// Checksum 0x0, Offset: 0x61c9
 // Size: 0x141
 function function_77b9dedb0b66ca96( data )
 {
@@ -2122,8 +2127,8 @@ function function_77b9dedb0b66ca96( data )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x637c
+// Params 1
+// Checksum 0x0, Offset: 0x6312
 // Size: 0xb5, Type: bool
 function function_d04daab64ea0d3df( player )
 {
@@ -2144,8 +2149,8 @@ function function_d04daab64ea0d3df( player )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x643a
+// Params 0
+// Checksum 0x0, Offset: 0x63d0
 // Size: 0x7f
 function function_eb172b91a9fdf684()
 {
@@ -2169,8 +2174,8 @@ function function_eb172b91a9fdf684()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x64c1
+// Params 0
+// Checksum 0x0, Offset: 0x6457
 // Size: 0xb2
 function function_2310e5a630ab167c()
 {
@@ -2192,7 +2197,8 @@ function function_2310e5a630ab167c()
         return;
     }
     
-    for (var_849d01afb2fc0f0a = getteamdata( self.team, "aliveCount" ); var_849d01afb2fc0f0a > 0; var_849d01afb2fc0f0a = getteamdata( self.team, "aliveCount" )) {
+    for ( var_849d01afb2fc0f0a = getteamdata( self.team, "aliveCount" ); var_849d01afb2fc0f0a > 0 ; var_849d01afb2fc0f0a = getteamdata( self.team, "aliveCount" ) )
+    {
         waitframe();
     }
     
@@ -2202,8 +2208,8 @@ function function_2310e5a630ab167c()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x657b
+// Params 1
+// Checksum 0x0, Offset: 0x6511
 // Size: 0xb9
 function function_140be6f794c627c9( deathdata )
 {
@@ -2226,8 +2232,8 @@ function function_140be6f794c627c9( deathdata )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x663c
+// Params 5
+// Checksum 0x0, Offset: 0x65d2
 // Size: 0x54a
 function function_3709903d7ad3f711( player, evictim, event, points, var_645b1a1d2a1ddfb7 )
 {
@@ -2397,8 +2403,8 @@ function function_3709903d7ad3f711( player, evictim, event, points, var_645b1a1d
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b8e
+// Params 3
+// Checksum 0x0, Offset: 0x6b24
 // Size: 0x8a
 function function_366c394e9dc1e32d( player, delaymodifier, event )
 {
@@ -2427,8 +2433,8 @@ function function_366c394e9dc1e32d( player, delaymodifier, event )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c20
+// Params 2
+// Checksum 0x0, Offset: 0x6bb6
 // Size: 0xa2
 function function_4e47f37a50cbac36( player, delaymodifier )
 {
@@ -2448,8 +2454,8 @@ function function_4e47f37a50cbac36( player, delaymodifier )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cca
+// Params 3
+// Checksum 0x0, Offset: 0x6c60
 // Size: 0x396
 function function_249ed663848b0e5f( player, delaymodifier, event )
 {
@@ -2545,8 +2551,8 @@ function function_249ed663848b0e5f( player, delaymodifier, event )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7068
+// Params 0
+// Checksum 0x0, Offset: 0x6ffe
 // Size: 0x6d
 function function_5d3d825b6d78b130()
 {
@@ -2576,8 +2582,8 @@ function function_5d3d825b6d78b130()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x70dd
+// Params 0
+// Checksum 0x0, Offset: 0x7073
 // Size: 0x420
 function function_b1dfe6c6434fc16c()
 {
@@ -2696,8 +2702,8 @@ function function_b1dfe6c6434fc16c()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7505
+// Params 0
+// Checksum 0x0, Offset: 0x749b
 // Size: 0x4b
 function function_46261e8da3c3005e()
 {
@@ -2714,8 +2720,8 @@ function function_46261e8da3c3005e()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7558
+// Params 0
+// Checksum 0x0, Offset: 0x74ee
 // Size: 0x17c
 function function_8d7079499b5b7d01()
 {
@@ -2763,8 +2769,8 @@ function function_8d7079499b5b7d01()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x76dc
+// Params 1
+// Checksum 0x0, Offset: 0x7672
 // Size: 0x64
 function function_4744bb1db1b48f9a( alivecount )
 {
@@ -2783,8 +2789,8 @@ function function_4744bb1db1b48f9a( alivecount )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7748
+// Params 0
+// Checksum 0x0, Offset: 0x76de
 // Size: 0x49
 function function_dd82fe8b8e1d0ecb()
 {
@@ -2798,8 +2804,8 @@ function function_dd82fe8b8e1d0ecb()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7799
+// Params 0
+// Checksum 0x0, Offset: 0x772f
 // Size: 0xd9
 function function_b3b332f4d23eb080()
 {
@@ -2828,8 +2834,8 @@ function function_b3b332f4d23eb080()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x787a
+// Params 0
+// Checksum 0x0, Offset: 0x7810
 // Size: 0xf9
 function function_263e1e65ec02113b()
 {
@@ -2859,8 +2865,8 @@ function function_263e1e65ec02113b()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x797b
+// Params 1
+// Checksum 0x0, Offset: 0x7911
 // Size: 0xc0
 function function_9dd5db08596c6a71( teammates )
 {
@@ -2884,8 +2890,8 @@ function function_9dd5db08596c6a71( teammates )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a43
+// Params 0
+// Checksum 0x0, Offset: 0x79d9
 // Size: 0x2f
 function function_4c5ae16ac1a3265f()
 {
@@ -2897,8 +2903,8 @@ function function_4c5ae16ac1a3265f()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a7a
+// Params 0
+// Checksum 0x0, Offset: 0x7a10
 // Size: 0x18
 function function_f1262ab9b4bf1697()
 {
@@ -2909,8 +2915,8 @@ function function_f1262ab9b4bf1697()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a9a
+// Params 0
+// Checksum 0x0, Offset: 0x7a30
 // Size: 0x15b
 function function_65114ae4a91a1013()
 {
@@ -2944,8 +2950,8 @@ function function_65114ae4a91a1013()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bfd
+// Params 0
+// Checksum 0x0, Offset: 0x7b93
 // Size: 0xea
 function function_c3c91f0dfbf4f683()
 {
@@ -2979,8 +2985,8 @@ function function_c3c91f0dfbf4f683()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cef
+// Params 0
+// Checksum 0x0, Offset: 0x7c85
 // Size: 0x112
 function function_cd4132b03ffcf8cf()
 {
@@ -3021,8 +3027,8 @@ function function_cd4132b03ffcf8cf()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e09
+// Params 0
+// Checksum 0x0, Offset: 0x7d9f
 // Size: 0xa7
 function function_e37ac9f8cbed03eb()
 {
@@ -3051,8 +3057,8 @@ function function_e37ac9f8cbed03eb()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7eb8
+// Params 2
+// Checksum 0x0, Offset: 0x7e4e
 // Size: 0x91
 function function_f99a079543f11bf7( deathdata, finaldeath )
 {
@@ -3084,8 +3090,8 @@ function function_f99a079543f11bf7( deathdata, finaldeath )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f52
+// Params 2
+// Checksum 0x0, Offset: 0x7ee8
 // Size: 0x62
 function function_7cb9398c136b6a50( var_cb5ba4c3282c39c1, aliveteammates )
 {
@@ -3099,8 +3105,8 @@ function function_7cb9398c136b6a50( var_cb5ba4c3282c39c1, aliveteammates )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fbc
+// Params 0
+// Checksum 0x0, Offset: 0x7f52
 // Size: 0xa, Type: bool
 function function_2e712bc64fde7()
 {
@@ -3109,8 +3115,8 @@ function function_2e712bc64fde7()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fcf
+// Params 2
+// Checksum 0x0, Offset: 0x7f65
 // Size: 0x20e
 function function_8a747fed5fdc31ed( spawnpoint, streamtimeout )
 {
@@ -3155,8 +3161,8 @@ function function_8a747fed5fdc31ed( spawnpoint, streamtimeout )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x81e5
+// Params 2
+// Checksum 0x0, Offset: 0x817b
 // Size: 0xa8
 function function_2d7ef4d534930df4( var_cb5ba4c3282c39c1, aliveteammates )
 {
@@ -3171,8 +3177,8 @@ function function_2d7ef4d534930df4( var_cb5ba4c3282c39c1, aliveteammates )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8296
+// Params 1
+// Checksum 0x0, Offset: 0x822c
 // Size: 0x1f
 function function_ff75bbd246d432ec( optparams )
 {
@@ -3183,8 +3189,8 @@ function function_ff75bbd246d432ec( optparams )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x82bd
+// Params 1
+// Checksum 0x0, Offset: 0x8253
 // Size: 0x99
 function function_e762446073ac085( optparams )
 {
@@ -3208,8 +3214,8 @@ function function_e762446073ac085( optparams )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x835e
+// Params 1
+// Checksum 0x0, Offset: 0x82f4
 // Size: 0x7c
 function function_777d7ef570638306( optparams )
 {
@@ -3236,8 +3242,8 @@ function function_777d7ef570638306( optparams )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x83e3
+// Params 1
+// Checksum 0x0, Offset: 0x8379
 // Size: 0xb9, Type: bool
 function function_47f3ced79ed3a338( optparams )
 {
@@ -3274,8 +3280,8 @@ function function_47f3ced79ed3a338( optparams )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x84a5
+// Params 1
+// Checksum 0x0, Offset: 0x843b
 // Size: 0x44
 function function_179991a5f6040f91( optparams )
 {
@@ -3286,8 +3292,8 @@ function function_179991a5f6040f91( optparams )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84f1
+// Params 0
+// Checksum 0x0, Offset: 0x8487
 // Size: 0x30
 function function_c04b5edf3f9ea340()
 {
@@ -3298,8 +3304,8 @@ function function_c04b5edf3f9ea340()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8529
+// Params 0
+// Checksum 0x0, Offset: 0x84bf
 // Size: 0x17
 function function_b0fc27ec6e239628()
 {
@@ -3308,8 +3314,8 @@ function function_b0fc27ec6e239628()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8549
+// Params 0
+// Checksum 0x0, Offset: 0x84df
 // Size: 0x11c, Type: bool
 function function_6ab3fa08604ded12()
 {
@@ -3351,8 +3357,8 @@ function function_6ab3fa08604ded12()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x866e
+// Params 0
+// Checksum 0x0, Offset: 0x8604
 // Size: 0xdc
 function function_decd4293c451c70()
 {
@@ -3380,7 +3386,7 @@ function function_decd4293c451c70()
     }
     else
     {
-        var_ce214afc7b96a3a7 = getdvarint( @"hash_cd33c7ad9a88587f", 0 );
+        var_ce214afc7b96a3a7 = getdvarint( @"scr_br_give_self_revive_on_respawn", 0 );
         
         if ( var_ce214afc7b96a3a7 )
         {
@@ -3404,8 +3410,8 @@ function function_decd4293c451c70()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8753
+// Params 0
+// Checksum 0x0, Offset: 0x86e9
 // Size: 0x5b
 function function_b1eaa06eea44951b()
 {
@@ -3418,8 +3424,8 @@ function function_b1eaa06eea44951b()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87b6
+// Params 0
+// Checksum 0x0, Offset: 0x874c
 // Size: 0x31
 function function_53382489ff523151()
 {
@@ -3428,8 +3434,8 @@ function function_53382489ff523151()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x87f0
+// Params 1
+// Checksum 0x0, Offset: 0x8786
 // Size: 0x1c
 function getrandomkillstreak( raritymax )
 {
@@ -3437,8 +3443,8 @@ function getrandomkillstreak( raritymax )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8815
+// Params 0
+// Checksum 0x0, Offset: 0x87ab
 // Size: 0x6e
 function function_b398acc9ba21ecb5()
 {
@@ -3451,8 +3457,8 @@ function function_b398acc9ba21ecb5()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x888c
+// Params 1
+// Checksum 0x0, Offset: 0x8822
 // Size: 0x41
 function circletimer( circleindex )
 {
@@ -3468,8 +3474,8 @@ function circletimer( circleindex )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x88d5
+// Params 0
+// Checksum 0x0, Offset: 0x886b
 // Size: 0xec
 function function_338ba9b353a9a78b()
 {
@@ -3498,9 +3504,9 @@ function function_338ba9b353a9a78b()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x89ca
-// Size: 0x155
+// Params 0
+// Checksum 0x0, Offset: 0x8960
+// Size: 0x17a
 function getrespawndelay()
 {
     var_53a4a1c920def4bd = function_338ba9b353a9a78b();
@@ -3515,7 +3521,15 @@ function getrespawndelay()
     }
     else
     {
-        circleindex = int( max( 0, int( min( level.br_circle.circleindex, level.brgametype.respawndelay[ var_53a4a1c920def4bd ].size - 1 ) ) ) );
+        if ( !br_gametypes::isfeatureenabled( "circle" ) && scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5() == "limbo" )
+        {
+            circleindex = 0;
+        }
+        else
+        {
+            circleindex = int( max( 0, int( min( level.br_circle.circleindex, level.brgametype.respawndelay[ var_53a4a1c920def4bd ].size - 1 ) ) ) );
+        }
+        
         respawndelay = level.brgametype.respawndelay[ var_53a4a1c920def4bd ][ circleindex ];
     }
     
@@ -3528,8 +3542,8 @@ function getrespawndelay()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b28
+// Params 1
+// Checksum 0x0, Offset: 0x8ae3
 // Size: 0x7a
 function function_f39fa02f6ed912fc( attackers )
 {
@@ -3552,8 +3566,8 @@ function function_f39fa02f6ed912fc( attackers )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8baa
+// Params 0
+// Checksum 0x0, Offset: 0x8b65
 // Size: 0x1c9
 function disablerespawn()
 {
@@ -3616,8 +3630,8 @@ function disablerespawn()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d7b
+// Params 0
+// Checksum 0x0, Offset: 0x8d36
 // Size: 0x1b
 function function_3d8918359e1b33c5()
 {
@@ -3627,8 +3641,8 @@ function function_3d8918359e1b33c5()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d9e
+// Params 0
+// Checksum 0x0, Offset: 0x8d59
 // Size: 0xe2
 function function_38a46a469c73dc2c()
 {
@@ -3640,8 +3654,8 @@ function function_38a46a469c73dc2c()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e89
+// Params 0
+// Checksum 0x0, Offset: 0x8e44
 // Size: 0xa
 function function_c338e39db41d9374()
 {
@@ -3649,8 +3663,8 @@ function function_c338e39db41d9374()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e9b
+// Params 0
+// Checksum 0x0, Offset: 0x8e56
 // Size: 0x24
 function function_f13ec0f9fbe36171()
 {
@@ -3661,8 +3675,8 @@ function function_f13ec0f9fbe36171()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ec7
+// Params 1
+// Checksum 0x0, Offset: 0x8e82
 // Size: 0x146
 function function_7ea88dd9bc483463( player )
 {
@@ -3705,8 +3719,8 @@ function function_7ea88dd9bc483463( player )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9015
+// Params 2
+// Checksum 0x0, Offset: 0x8fd0
 // Size: 0x43
 function function_9bf15d9bf66ead8d( player, aeeventname )
 {
@@ -3724,8 +3738,8 @@ function function_9bf15d9bf66ead8d( player, aeeventname )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9061
+// Params 1
+// Checksum 0x0, Offset: 0x901c
 // Size: 0x15
 function function_e60ebcdf4083532e( player )
 {
@@ -3733,8 +3747,8 @@ function function_e60ebcdf4083532e( player )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x907e
+// Params 2
+// Checksum 0x0, Offset: 0x9039
 // Size: 0x17e
 function function_c4d09e34eb4d8e2b( player, isdisconnect )
 {
@@ -3801,8 +3815,8 @@ function function_c4d09e34eb4d8e2b( player, isdisconnect )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9204
+// Params 2
+// Checksum 0x0, Offset: 0x91bf
 // Size: 0xa3
 function function_cc9995519d9cee6( player, initialupdate )
 {
@@ -3825,8 +3839,8 @@ function function_cc9995519d9cee6( player, initialupdate )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92af
+// Params 0
+// Checksum 0x0, Offset: 0x926a
 // Size: 0xe2
 function function_22ef1cd58a8d87e8()
 {
@@ -3852,8 +3866,8 @@ function function_22ef1cd58a8d87e8()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9399
+// Params 3
+// Checksum 0x0, Offset: 0x9354
 // Size: 0xa4
 function function_c17a21e7020df4c( player, initialupdate, leavingplayer )
 {
@@ -3870,8 +3884,8 @@ function function_c17a21e7020df4c( player, initialupdate, leavingplayer )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9445
+// Params 0
+// Checksum 0x0, Offset: 0x9400
 // Size: 0x6e
 function function_81baad6d96ff2130()
 {
@@ -3887,8 +3901,8 @@ function function_81baad6d96ff2130()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x94bb
+// Params 1
+// Checksum 0x0, Offset: 0x9476
 // Size: 0x111
 function function_797b21b78b5e0a26( respawntype )
 {
@@ -3917,8 +3931,8 @@ function function_797b21b78b5e0a26( respawntype )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x95d4
+// Params 0
+// Checksum 0x0, Offset: 0x958f
 // Size: 0xb6
 function function_4f5568cf15d60b8()
 {
@@ -3942,8 +3956,8 @@ function function_4f5568cf15d60b8()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9692
+// Params 0
+// Checksum 0x0, Offset: 0x964d
 // Size: 0xe3
 function function_90507e372a40c684()
 {
@@ -3976,8 +3990,8 @@ function function_90507e372a40c684()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x977d
+// Params 1
+// Checksum 0x0, Offset: 0x9738
 // Size: 0x65, Type: bool
 function function_793956fb93de9504( perkref )
 {
@@ -3985,14 +3999,14 @@ function function_793956fb93de9504( perkref )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x97eb
+// Params 0
+// Checksum 0x0, Offset: 0x97a6
 // Size: 0xe2
 function function_10870c1a437402b()
 {
     var_faeedaf859fd76f6 = [];
     deltatime = -15;
-    circleindex = getdvarint( @"hash_d8b0fcd21faaa19", 1 );
+    circleindex = getdvarint( @"scr_br_dropbag_circle_index", 1 );
     closetime = scripts\mp\gametypes\br_circle::getcircleclosetime( circleindex );
     defaultval = max( 0, closetime + deltatime );
     dropdelay = getdvarfloat( @"hash_b81b25bcd8c7d749", defaultval );
@@ -4023,8 +4037,8 @@ function function_10870c1a437402b()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98d5
+// Params 0
+// Checksum 0x0, Offset: 0x9890
 // Size: 0x152
 function function_9680317afd0e4558()
 {
@@ -4039,7 +4053,8 @@ function function_9680317afd0e4558()
     step = 360 / count;
     yaw = 0;
     
-    for (i = 0; i < count; i++) {
+    for ( i = 0; i < count ; i++ )
+    {
         yaw += step;
         var_f7d73ac7e17aa57e = ( 0, yaw, 0 );
         dropcenter = circlecenter + anglestoforward( var_f7d73ac7e17aa57e ) * radius * 0.5;
@@ -4056,8 +4071,8 @@ function function_9680317afd0e4558()
 /#
 
     // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9a2f
+    // Params 0
+    // Checksum 0x0, Offset: 0x99ea
     // Size: 0x156, Type: dev
     function function_721a7410f27c2d8f()
     {
@@ -4076,7 +4091,8 @@ function function_9680317afd0e4558()
                 step = 360 / count;
                 yaw = 0;
                 
-                for (i = 0; i < count; i++) {
+                for ( i = 0; i < count ; i++ )
+                {
                     yaw += step;
                     var_f7d73ac7e17aa57e = ( 0, yaw, 0 );
                     dropcenter = circlecenter + anglestoforward( var_f7d73ac7e17aa57e ) * radius * 0.5;
@@ -4093,8 +4109,8 @@ function function_9680317afd0e4558()
 #/
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b8d
+// Params 0
+// Checksum 0x0, Offset: 0x9b48
 // Size: 0x26
 function function_c2e48f2200bd249b()
 {
@@ -4105,8 +4121,8 @@ function function_c2e48f2200bd249b()
 /#
 
     // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9bbc
+    // Params 1
+    // Checksum 0x0, Offset: 0x9b77
     // Size: 0xc6, Type: dev
     function function_98609987fbc9bcc3( args )
     {
@@ -4147,8 +4163,8 @@ function function_c2e48f2200bd249b()
     }
 
     // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9c8a
+    // Params 1
+    // Checksum 0x0, Offset: 0x9c45
     // Size: 0x126, Type: dev
     function function_9e3c77b199d3c8c8( forceshow )
     {
@@ -4181,8 +4197,8 @@ function function_c2e48f2200bd249b()
     }
 
     // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9db8
+    // Params 0
+    // Checksum 0x0, Offset: 0x9d73
     // Size: 0x13a, Type: dev
     function function_cb7114374c912a6f()
     {
@@ -4217,8 +4233,8 @@ function function_c2e48f2200bd249b()
     }
 
     // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9efa
+    // Params 1
+    // Checksum 0x0, Offset: 0x9eb5
     // Size: 0x41, Type: dev
     function function_927f6139e79412c1( event )
     {
@@ -4230,8 +4246,8 @@ function function_c2e48f2200bd249b()
 #/
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f43
+// Params 0
+// Checksum 0x0, Offset: 0x9efe
 // Size: 0x42
 function function_e793259b8f9d5b2d()
 {
@@ -4242,8 +4258,8 @@ function function_e793259b8f9d5b2d()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f8d
+// Params 1
+// Checksum 0x0, Offset: 0x9f48
 // Size: 0xc, Type: bool
 function function_ed345d3efb37c25c( teamname )
 {
@@ -4251,8 +4267,8 @@ function function_ed345d3efb37c25c( teamname )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fa2
+// Params 2
+// Checksum 0x0, Offset: 0x9f5d
 // Size: 0x14, Type: bool
 function function_7657b6775b05e1b9( victim, islaststanddeath )
 {
@@ -4261,7 +4277,7 @@ function function_7657b6775b05e1b9( victim, islaststanddeath )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9fbf
+// Checksum 0x0, Offset: 0x9f7a
 // Size: 0x1b
 function private function_123793b0882ec6fb( newstate )
 {
@@ -4270,7 +4286,7 @@ function private function_123793b0882ec6fb( newstate )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9fe2
+// Checksum 0x0, Offset: 0x9f9d
 // Size: 0x1c
 function private function_bd49896ab411c64c( alivecount )
 {
@@ -4278,8 +4294,8 @@ function private function_bd49896ab411c64c( alivecount )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa006
+// Params 1
+// Checksum 0x0, Offset: 0x9fc1
 // Size: 0x78
 function playerwelcomesplashes( data )
 {
@@ -4302,7 +4318,7 @@ function playerwelcomesplashes( data )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xa086
+// Checksum 0x0, Offset: 0xa041
 // Size: 0x5b
 function private function_dbe2065974832286()
 {
@@ -4322,7 +4338,7 @@ function private function_dbe2065974832286()
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xa0e9
+// Checksum 0x0, Offset: 0xa0a4
 // Size: 0xb1
 function private function_f94d1138d1114c5d()
 {
@@ -4336,12 +4352,11 @@ function private function_f94d1138d1114c5d()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa1a2
-// Size: 0x302
+// Params 1
+// Checksum 0x0, Offset: 0xa15d
+// Size: 0x1e9
 function on_squad_wiped( params )
 {
-    attackers = params.attackers;
     victim = params.victim;
     
     if ( !isdefined( victim ) )
@@ -4359,16 +4374,6 @@ function on_squad_wiped( params )
         if ( getdvarint( @"hash_30bdc56c2a2ef592", 1 ) )
         {
             logstring( "[SQUAD WIPE] There was no attacker on the victim." );
-        }
-        
-        return;
-    }
-    
-    if ( !isdefined( attackers ) || attackers.size == 0 )
-    {
-        if ( getdvarint( @"hash_30bdc56c2a2ef592", 1 ) )
-        {
-            logstring( "[SQUAD WIPE] There were no attackers for the victim." );
         }
         
         return;
@@ -4394,30 +4399,6 @@ function on_squad_wiped( params )
         return;
     }
     
-    found_attacker = arraycontains( attackers, victim.attacker );
-    
-    if ( !found_attacker )
-    {
-        attackersprint = "";
-        
-        if ( isdefined( attackers ) )
-        {
-            attackersprint += "Attackers size " + attackers.size + "  Attackers: ";
-            
-            foreach ( attacker in attackers )
-            {
-                attackersprint += " ";
-                attackersprint += isdefined( attacker ) ? attacker.name : "undefined";
-            }
-        }
-        else
-        {
-            attackersprint = "Undefined attackers list";
-        }
-        
-        assertex( 0, "<dev string:x394>" + "<dev string:x3be>" + attackersprint );
-    }
-    
     params = { #notification:"team_wiped", #victim:victim, #attacker:victim.attacker, #var_e6b4a44e236fd54f:"squad_wipes" };
     level function_c2154554e89d5e91( params );
     attacker_streak = level teams::getteamdata( victim.attacker.team, "squad_wipes" );
@@ -4429,8 +4410,8 @@ function on_squad_wiped( params )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4ac
+// Params 1
+// Checksum 0x0, Offset: 0xa34e
 // Size: 0xab
 function function_8882e0941c41b8ce( params )
 {
@@ -4458,7 +4439,7 @@ function function_8882e0941c41b8ce( params )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa55f
+// Checksum 0x0, Offset: 0xa401
 // Size: 0x592
 function private function_c2154554e89d5e91( params )
 {
@@ -4581,7 +4562,7 @@ function private function_c2154554e89d5e91( params )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xaaf9
+// Checksum 0x0, Offset: 0xa99b
 // Size: 0xd5
 function private function_1e1cf28c03396eb0( var_e6b4a44e236fd54f )
 {
@@ -4603,7 +4584,7 @@ function private function_1e1cf28c03396eb0( var_e6b4a44e236fd54f )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xabd7
+// Checksum 0x0, Offset: 0xaa79
 // Size: 0x1f
 function private function_36a7e4c6cbac83d6( outpos )
 {
@@ -4613,7 +4594,7 @@ function private function_36a7e4c6cbac83d6( outpos )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xabfe
+// Checksum 0x0, Offset: 0xaaa0
 // Size: 0x64, Type: bool
 function private function_dbbb1cb5b53ea9e5( a, b )
 {
@@ -4632,7 +4613,7 @@ function private function_dbbb1cb5b53ea9e5( a, b )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xac6b
+// Checksum 0x0, Offset: 0xab0d
 // Size: 0xf0
 function private function_541b1f28c772eb1f( team, streak, var_e6b4a44e236fd54f, notification )
 {
@@ -4656,7 +4637,7 @@ function private function_541b1f28c772eb1f( team, streak, var_e6b4a44e236fd54f, 
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xad63
+// Checksum 0x0, Offset: 0xac05
 // Size: 0x23
 function private function_3e57da11d0b56753( team, streak )
 {
@@ -4665,7 +4646,7 @@ function private function_3e57da11d0b56753( team, streak )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xad8f
+// Checksum 0x0, Offset: 0xac31
 // Size: 0x9f
 function private function_9c7dc3a5c44b7ab5( team )
 {
@@ -4683,13 +4664,13 @@ function private function_9c7dc3a5c44b7ab5( team )
         }
     }
     
-    assertex( timer > 0, "<dev string:x422>" );
+    assertex( timer > 0, "<dev string:x394>" );
     return timer;
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xae37
+// Checksum 0x0, Offset: 0xacd9
 // Size: 0xde
 function private function_15795adcb3808397( team, time, var_e6b4a44e236fd54f, notification )
 {
@@ -4712,7 +4693,7 @@ function private function_15795adcb3808397( team, time, var_e6b4a44e236fd54f, no
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xaf1d
+// Checksum 0x0, Offset: 0xadbf
 // Size: 0x90
 function private register_team_data( params )
 {
@@ -4726,7 +4707,7 @@ function private register_team_data( params )
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xafb5
+// Checksum 0x0, Offset: 0xae57
 // Size: 0x48
 function private function_234b304f15f0399a( attacker_streak, victim_streak )
 {
@@ -4735,8 +4716,8 @@ function private function_234b304f15f0399a( attacker_streak, victim_streak )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb005
+// Params 0
+// Checksum 0x0, Offset: 0xaea7
 // Size: 0x39
 function function_b0bb8889afbb0c83()
 {
@@ -4747,8 +4728,8 @@ function function_b0bb8889afbb0c83()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb047
+// Params 0
+// Checksum 0x0, Offset: 0xaee9
 // Size: 0x7
 function function_843d05502816cbce()
 {
@@ -4756,8 +4737,8 @@ function function_843d05502816cbce()
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb057
+// Params 1
+// Checksum 0x0, Offset: 0xaef9
 // Size: 0x2f
 function function_635472137de2fc6a( player )
 {
@@ -4770,8 +4751,8 @@ function function_635472137de2fc6a( player )
 }
 
 // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb08f
+// Params 0
+// Checksum 0x0, Offset: 0xaf31
 // Size: 0x91
 function function_68890b211f0ae411()
 {
@@ -4800,36 +4781,36 @@ function function_68890b211f0ae411()
 /#
 
     // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb129
+    // Params 0
+    // Checksum 0x0, Offset: 0xafcb
     // Size: 0x6a, Type: dev
     function debug_init()
     {
         setdvarifuninitialized( @"hash_980df9696fd73176", function_3e57da11d0b56753() );
-        scripts\common\devgui::function_6e7290c8ee4f558b( "<dev string:x45d>" );
-        scripts\common\devgui::function_a9a864379a098ad6( "<dev string:x472>", "<dev string:x48d>", &function_cec96fed16a6d8e8 );
-        scripts\common\devgui::function_a9a864379a098ad6( "<dev string:x4ac>", "<dev string:x4c7>", &function_eaf6e107769f9877 );
-        scripts\common\devgui::function_df648211d66cd3dd( "<dev string:x4de>", "<dev string:x4f2>" );
+        scripts\common\devgui::function_6e7290c8ee4f558b( "<dev string:x3cf>" );
+        scripts\common\devgui::function_a9a864379a098ad6( "<dev string:x3e4>", "<dev string:x3ff>", &function_cec96fed16a6d8e8 );
+        scripts\common\devgui::function_a9a864379a098ad6( "<dev string:x41e>", "<dev string:x439>", &function_eaf6e107769f9877 );
+        scripts\common\devgui::function_df648211d66cd3dd( "<dev string:x450>", "<dev string:x464>" );
         scripts\common\devgui::function_fe953f000498048f();
     }
 
     // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb19b
+    // Params 0
+    // Checksum 0x0, Offset: 0xb03d
     // Size: 0x51, Type: dev
     function function_cec96fed16a6d8e8()
     {
         shoot_pos = level.players[ 0 ].origin + anglestoforward( level.players[ 0 ].angles ) * 240;
-        namespace_1eb3c4e0e28fac71::utilflare_shootflare( shoot_pos, "<dev string:x515>" );
+        namespace_1eb3c4e0e28fac71::utilflare_shootflare( shoot_pos, "<dev string:x487>" );
     }
 
     // Namespace br_gametype_resurgence / scripts\mp\gametypes\br_gametype_resurgence
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb1f4
-    // Size: 0x10c, Type: dev
+    // Params 0
+    // Checksum 0x0, Offset: 0xb096
+    // Size: 0xf3, Type: dev
     function function_eaf6e107769f9877()
     {
-        if ( !isdefined( level.teamdata[ level.players[ 0 ].team ][ "<dev string:x52a>" ] ) )
+        if ( !isdefined( level.teamdata[ level.players[ 0 ].team ][ "<dev string:x49c>" ] ) )
         {
             setdvar( @"hash_6ffa7b0113bccfb7", 0 );
             register_team_data();
@@ -4845,9 +4826,9 @@ function function_68890b211f0ae411()
             }
         }
         
-        assertex( !player ishost(), "<dev string:x539>" );
+        assertex( !player ishost(), "<dev string:x4ab>" );
         player.attacker = level.players[ 0 ];
-        params = { #victim:player, #attackers:[ level.players[ 0 ] ] };
+        params = { #victim:player };
         on_squad_wiped( params );
     }
 

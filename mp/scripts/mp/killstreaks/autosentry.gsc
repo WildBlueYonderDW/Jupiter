@@ -30,7 +30,7 @@
 #namespace autosentry;
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf0f
 // Size: 0x717
 function init()
@@ -106,7 +106,7 @@ function init()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x162e
 // Size: 0x61
 function tryuseautosentry( lifeid, streakname )
@@ -122,7 +122,7 @@ function tryuseautosentry( lifeid, streakname )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1698
 // Size: 0x61
 function tryusesam( lifeid, streakname )
@@ -138,7 +138,7 @@ function tryusesam( lifeid, streakname )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1702
 // Size: 0x51
 function tryuseshocksentry( streakinfo )
@@ -158,7 +158,7 @@ function tryuseshocksentry( streakinfo )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x175c
 // Size: 0x51
 function tryusemanualturret( streakinfo )
@@ -178,7 +178,7 @@ function tryusemanualturret( streakinfo )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17b6
 // Size: 0xe2
 function givesentry( sentrytype, pickuptriggeroverride, streakinfo )
@@ -225,7 +225,7 @@ function givesentry( sentrytype, pickuptriggeroverride, streakinfo )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x18a0
 // Size: 0x1a7
 function setcarryingsentry( sentrygun, allowcancel, enablepickup, cancelondeath )
@@ -284,7 +284,7 @@ function setcarryingsentry( sentrygun, allowcancel, enablepickup, cancelondeath 
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a4f
 // Size: 0x1b
 function enablemeleeforsentry()
@@ -295,7 +295,7 @@ function enablemeleeforsentry()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a72
 // Size: 0x2a
 function removeweapons()
@@ -308,7 +308,7 @@ function removeweapons()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aa4
 // Size: 0x2a
 function removeperks()
@@ -321,7 +321,7 @@ function removeperks()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad6
 // Size: 0x29
 function restoreweapons()
@@ -334,7 +334,7 @@ function restoreweapons()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b07
 // Size: 0x29
 function restoreperks()
@@ -347,7 +347,7 @@ function restoreperks()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b38
 // Size: 0x18
 function waitrestoreperks()
@@ -359,7 +359,7 @@ function waitrestoreperks()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1b58
 // Size: 0xd0
 function createsentryforplayer( sentrytype, owner, enablepickup, streakinfo )
@@ -378,7 +378,7 @@ function createsentryforplayer( sentrytype, owner, enablepickup, streakinfo )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1c31
 // Size: 0x4b6
 function sentry_initsentry( sentrytype, owner, enablepickup, timeout )
@@ -517,7 +517,7 @@ function sentry_initsentry( sentrytype, owner, enablepickup, timeout )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20ef
 // Size: 0x7f
 function sentry_setteamheadicon()
@@ -540,7 +540,7 @@ function sentry_setteamheadicon()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2176
 // Size: 0x41
 function sentry_clearteamheadicon()
@@ -556,7 +556,7 @@ function sentry_clearteamheadicon()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21bf
 // Size: 0x23
 function sentry_destroyongameend()
@@ -567,7 +567,7 @@ function sentry_destroyongameend()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21ea
 // Size: 0x8f
 function sentry_handledamage()
@@ -590,7 +590,7 @@ function sentry_handledamage()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2281
 // Size: 0xb8
 function sentrymodifydamage( data )
@@ -612,7 +612,7 @@ function sentrymodifydamage( data )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2342
 // Size: 0x18b
 function sentryhandledeathdamage( data )
@@ -662,7 +662,7 @@ function sentryhandledeathdamage( data )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24d5
 // Size: 0x6d
 function sentry_empstarted( data )
@@ -676,7 +676,7 @@ function sentry_empstarted( data )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x254a
 // Size: 0x5b
 function sentry_empcleared( isdeath )
@@ -693,7 +693,7 @@ function sentry_empcleared( isdeath )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25ad
 // Size: 0x344
 function sentry_handledeath()
@@ -800,7 +800,7 @@ function sentry_handledeath()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28f9
 // Size: 0xeb
 function sentry_handleuse( enablepickup )
@@ -830,7 +830,7 @@ function sentry_handleuse( enablepickup )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29ec
 // Size: 0x161
 function turret_handlepickup( turret )
@@ -899,7 +899,7 @@ function turret_handlepickup( turret )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b55
 // Size: 0x454
 function turret_handleuse()
@@ -1025,7 +1025,7 @@ function turret_handleuse()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fb1
 // Size: 0x46
 function sentry_handleownerdisconnect()
@@ -1040,7 +1040,7 @@ function sentry_handleownerdisconnect()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fff
 // Size: 0x1f
 function sentry_watchownerstatus( notifymsg )
@@ -1050,7 +1050,7 @@ function sentry_watchownerstatus( notifymsg )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3026
 // Size: 0xa7
 function sentry_setowner( owner )
@@ -1071,7 +1071,7 @@ function sentry_setowner( owner )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30d5
 // Size: 0x13
 function sentry_moving_platform_death( data )
@@ -1080,7 +1080,7 @@ function sentry_moving_platform_death( data )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30f0
 // Size: 0x3fc
 function sentry_setplaced( enablepickup )
@@ -1192,7 +1192,7 @@ function sentry_setplaced( enablepickup )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34f4
 // Size: 0x9a
 function sentry_setcancelled( var_ddd5b75d0cd367c5 )
@@ -1222,7 +1222,7 @@ function sentry_setcancelled( var_ddd5b75d0cd367c5 )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3596
 // Size: 0x173
 function sentry_setcarried( carrier, enablepickup, cancelondeath )
@@ -1274,7 +1274,7 @@ function sentry_setcarried( carrier, enablepickup, cancelondeath )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3711
 // Size: 0x1e2
 function updatesentryplacement( sentrygun )
@@ -1324,7 +1324,7 @@ function updatesentryplacement( sentrygun )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x38fb
 // Size: 0x67
 function sentry_oncarrierdeathoremp( carrier, cancelondeath )
@@ -1344,7 +1344,7 @@ function sentry_oncarrierdeathoremp( carrier, cancelondeath )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x396a
 // Size: 0x28
 function sentry_oncarrierdisconnect( carrier )
@@ -1356,7 +1356,7 @@ function sentry_oncarrierdisconnect( carrier )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x399a
 // Size: 0x32
 function sentry_oncarrierchangedteam( carrier )
@@ -1368,7 +1368,7 @@ function sentry_oncarrierchangedteam( carrier )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39d4
 // Size: 0x28
 function sentry_ongameended( carrier )
@@ -1380,7 +1380,7 @@ function sentry_ongameended( carrier )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a04
 // Size: 0x252
 function sentry_setactive( enablepickup )
@@ -1457,7 +1457,7 @@ function sentry_setactive( enablepickup )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c5e
 // Size: 0x52
 function sentry_setinactive()
@@ -1473,7 +1473,7 @@ function sentry_setinactive()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cb8
 // Size: 0x9
 function sentry_makesolid()
@@ -1482,7 +1482,7 @@ function sentry_makesolid()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cc9
 // Size: 0x9
 function sentry_makenotsolid()
@@ -1491,7 +1491,7 @@ function sentry_makenotsolid()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3cda
 // Size: 0x34, Type: bool
 function isfriendlytosentry( sentrygun )
@@ -1505,7 +1505,7 @@ function isfriendlytosentry( sentrygun )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d17
 // Size: 0x6d
 function sentry_attacktargets()
@@ -1533,7 +1533,7 @@ function sentry_attacktargets()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d8c
 // Size: 0x104
 function sentry_timeout()
@@ -1577,7 +1577,7 @@ function sentry_timeout()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e98
 // Size: 0x39
 function sentry_targetlocksound()
@@ -1591,7 +1591,7 @@ function sentry_targetlocksound()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ed9
 // Size: 0x55
 function sentry_spinup()
@@ -1606,7 +1606,7 @@ function sentry_spinup()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f36
 // Size: 0xc
 function sentry_spindown()
@@ -1615,7 +1615,7 @@ function sentry_spindown()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f4a
 // Size: 0x12b
 function sentry_laser_burstfirestart()
@@ -1639,7 +1639,8 @@ function sentry_laser_burstfirestart()
         numshots = minshots;
     }
     
-    for (i = 0; i < numshots; i++) {
+    for ( i = 0; i < numshots ; i++ )
+    {
         turrettarget = self getturrettarget( 1 );
         
         if ( !isdefined( turrettarget ) )
@@ -1656,7 +1657,7 @@ function sentry_laser_burstfirestart()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x407d
 // Size: 0x152
 function sentry_burstfirestart()
@@ -1675,7 +1676,8 @@ function sentry_burstfirestart()
     {
         numshots = randomintrange( minshots, maxshots + 1 );
         
-        for (i = 0; i < numshots && !self.overheated; i++) {
+        for ( i = 0; i < numshots && !self.overheated ; i++ )
+        {
             self shootturret();
             self notify( "bullet_fired" );
             self.heatlevel += firetime;
@@ -1687,7 +1689,7 @@ function sentry_burstfirestart()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41d7
 // Size: 0xa
 function sentry_burstfirestop()
@@ -1696,7 +1698,7 @@ function sentry_burstfirestop()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41e9
 // Size: 0x88
 function turret_shotmonitor( turret )
@@ -1716,7 +1718,7 @@ function turret_shotmonitor( turret )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4279
 // Size: 0x1b8
 function sentry_heatmonitor()
@@ -1773,7 +1775,7 @@ function sentry_heatmonitor()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4439
 // Size: 0xce
 function turret_heatmonitor()
@@ -1811,7 +1813,7 @@ function turret_heatmonitor()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x450f
 // Size: 0x72
 function turret_coolmonitor()
@@ -1837,7 +1839,7 @@ function turret_coolmonitor()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4589
 // Size: 0x5e
 function playheatfx()
@@ -1856,7 +1858,7 @@ function playheatfx()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45ef
 // Size: 0x37
 function playsmokefx()
@@ -1873,7 +1875,7 @@ function playsmokefx()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x462e
 // Size: 0x32
 function sentry_beepsounds()
@@ -1893,7 +1895,7 @@ function sentry_beepsounds()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4668
 // Size: 0x4f
 function sam_attacktargets()
@@ -1913,7 +1915,7 @@ function sam_attacktargets()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46bf
 // Size: 0x5d5
 function sam_acquiretarget()
@@ -2071,7 +2073,7 @@ function sam_acquiretarget()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c9c
 // Size: 0x25f
 function sam_fireontarget()
@@ -2122,7 +2124,8 @@ function sam_fireontarget()
         rocketoffsets[ 3 ] = self gettagorigin( "tag_ri_missile2" );
         missilegroup = self.sammissilegroups.size;
         
-        for (i = 0; i < 4; i++) {
+        for ( i = 0; i < 4 ; i++ )
+        {
             if ( !isdefined( self.samtargetent ) )
             {
                 return;
@@ -2156,7 +2159,7 @@ function sam_fireontarget()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f03
 // Size: 0x9b
 function sam_watchlineofsight()
@@ -2180,7 +2183,7 @@ function sam_watchlineofsight()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4fa6
 // Size: 0x60
 function sam_watchlaser()
@@ -2199,7 +2202,7 @@ function sam_watchlaser()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x500e
 // Size: 0x51
 function sam_watchcrashing()
@@ -2218,7 +2221,7 @@ function sam_watchcrashing()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5067
 // Size: 0x6d
 function sam_watchleaving()
@@ -2240,7 +2243,7 @@ function sam_watchleaving()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x50dc
 // Size: 0x81
 function scrambleturretattacktargets()
@@ -2264,7 +2267,7 @@ function scrambleturretattacktargets()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5165
 // Size: 0x8
 function scramble_acquiretarget()
@@ -2273,7 +2276,7 @@ function scramble_acquiretarget()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5176
 // Size: 0x128
 function scrambletarget()
@@ -2334,7 +2337,7 @@ function scrambletarget()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52a6
 // Size: 0x93
 function setscrambled()
@@ -2358,7 +2361,7 @@ function setscrambled()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5341
 // Size: 0x9b
 function scramble_watchlineofsight()
@@ -2382,7 +2385,7 @@ function scramble_watchlineofsight()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53e4
 // Size: 0x65
 function scramble_watchlaser()
@@ -2401,7 +2404,7 @@ function scramble_watchlaser()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5451
 // Size: 0x51
 function scramble_watchcrashing()
@@ -2420,7 +2423,7 @@ function scramble_watchcrashing()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54aa
 // Size: 0x6d
 function scramble_watchleaving()
@@ -2442,7 +2445,7 @@ function scramble_watchleaving()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x551f
 // Size: 0xcd
 function sentryshocktargets()
@@ -2474,7 +2477,7 @@ function sentryshocktargets()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55f4
 // Size: 0x221
 function searchforshocksentryairtarget()
@@ -2541,7 +2544,7 @@ function searchforshocksentryairtarget()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x581d
 // Size: 0x107
 function targetvisibleinfront( target )
@@ -2568,7 +2571,7 @@ function targetvisibleinfront( target )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x592d
 // Size: 0x20c
 function shootshocksentrysamtarget( target, var_bea243c252114a9c )
@@ -2623,7 +2626,7 @@ function shootshocksentrysamtarget( target, var_bea243c252114a9c )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b41
 // Size: 0x4a
 function sentry_handlemanualuse()
@@ -2650,7 +2653,7 @@ function sentry_handlemanualuse()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b93
 // Size: 0x154
 function sentry_handlealteratepickup( enablepickup )
@@ -2686,7 +2689,7 @@ function sentry_handlealteratepickup( enablepickup )
 /#
 
     // Namespace autosentry / scripts\mp\killstreaks\autosentry
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5cef
     // Size: 0x36, Type: dev
     function function_edb5f98849f3a4d6()
@@ -2703,7 +2706,7 @@ function sentry_handlealteratepickup( enablepickup )
 #/
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d2d
 // Size: 0xb2
 function setshocksamtargetent( target, var_bea243c252114a9c )
@@ -2729,7 +2732,7 @@ function setshocksamtargetent( target, var_bea243c252114a9c )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5de7
 // Size: 0x4e
 function watchsentryshockpickup()
@@ -2755,7 +2758,7 @@ function watchsentryshockpickup()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e3d
 // Size: 0xf2
 function shocktarget( target )
@@ -2788,7 +2791,7 @@ function shocktarget( target )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f37
 // Size: 0xf7
 function missileburstfire( target )
@@ -2829,7 +2832,7 @@ function missileburstfire( target )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6036
 // Size: 0x98
 function gettargetoffset( target )
@@ -2854,7 +2857,7 @@ function gettargetoffset( target )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60d7
 // Size: 0x3c
 function watchtargetchange( target )
@@ -2875,7 +2878,7 @@ function watchtargetchange( target )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x611b
 // Size: 0x46
 function marktargetlaser( target )
@@ -2889,7 +2892,7 @@ function marktargetlaser( target )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6169
 // Size: 0x1df
 function watchshockdamage( target )
@@ -2937,7 +2940,7 @@ function watchshockdamage( target )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6350
 // Size: 0x40
 function allowweaponsforsentry( allow )
@@ -2954,7 +2957,7 @@ function allowweaponsforsentry( allow )
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6398
 // Size: 0x4d
 function placehinton()
@@ -2971,7 +2974,7 @@ function placehinton()
 }
 
 // Namespace autosentry / scripts\mp\killstreaks\autosentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x63ed
 // Size: 0x4d
 function cannotplacehinton()

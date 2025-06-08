@@ -17,7 +17,7 @@
 #namespace enemy;
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5da
 // Size: 0x261
 function main()
@@ -90,7 +90,7 @@ function main()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x843
 // Size: 0x26
 function init_flags()
@@ -101,7 +101,7 @@ function init_flags()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x871
 // Size: 0x6c
 function stealth_init_goal_radius()
@@ -130,7 +130,7 @@ function stealth_init_goal_radius()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e5
 // Size: 0x14b
 function init_settings()
@@ -166,7 +166,7 @@ function init_settings()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa38
 // Size: 0x31
 function death_cleanup()
@@ -183,7 +183,7 @@ function death_cleanup()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa71
 // Size: 0x11
 function death_vo_cleanup()
@@ -194,7 +194,7 @@ function death_vo_cleanup()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa8a
 // Size: 0x90
 function add_active_sense_function( function )
@@ -210,7 +210,7 @@ function add_active_sense_function( function )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb22
 // Size: 0xe2
 function set_blind( blind, force )
@@ -248,7 +248,7 @@ function set_blind( blind, force )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc0c
 // Size: 0x41
 function alertlevel_normal( param )
@@ -260,7 +260,7 @@ function alertlevel_normal( param )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc55
 // Size: 0xc8
 function set_default_stealth_funcs()
@@ -279,7 +279,7 @@ function set_default_stealth_funcs()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd25
 // Size: 0x268
 function monitor_damage_thread( rangeauto, rangesight )
@@ -371,7 +371,7 @@ function monitor_damage_thread( rangeauto, rangesight )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf95
 // Size: 0xcb
 function check_kill_damage( damage, attacker, origin )
@@ -394,7 +394,7 @@ function check_kill_damage( damage, attacker, origin )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1068
 // Size: 0x17a, Type: bool
 function shotisreasonablysafe( target )
@@ -446,7 +446,7 @@ function shotisreasonablysafe( target )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11eb
 // Size: 0x17c, Type: bool
 function shotisbadidea( target )
@@ -501,7 +501,7 @@ function shotisbadidea( target )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1370
 // Size: 0xce
 function headtrack_player_toggle( bool )
@@ -534,7 +534,7 @@ function headtrack_player_toggle( bool )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1446
 // Size: 0x31
 function lock_player_headtracking_off( duration )
@@ -548,7 +548,7 @@ function lock_player_headtracking_off( duration )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x147f
 // Size: 0x1f
 function disable_player_headtracking()
@@ -558,7 +558,7 @@ function disable_player_headtracking()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14a6
 // Size: 0x18
 function enable_player_headtracking()
@@ -567,7 +567,7 @@ function enable_player_headtracking()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14c6
 // Size: 0x1fe
 function event_handler_should_ignore( event )
@@ -633,7 +633,7 @@ function event_handler_should_ignore( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16cd
 // Size: 0xfd
 function function_d83f0e5272e07d8c( event )
@@ -667,7 +667,7 @@ function function_d83f0e5272e07d8c( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17d3
 // Size: 0x3e, Type: bool
 function function_44f457c9d6a9d038( event )
@@ -686,7 +686,7 @@ function function_44f457c9d6a9d038( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x181a
 // Size: 0x11d, Type: bool
 function should_ignore_sprint_footstep( event )
@@ -727,7 +727,7 @@ function should_ignore_sprint_footstep( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1940
 // Size: 0x7d, Type: bool
 function event_override_disguise( event )
@@ -749,7 +749,7 @@ function event_override_disguise( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19c6
 // Size: 0xcb, Type: bool
 function event_override_controlling_robot( event )
@@ -782,7 +782,7 @@ function event_override_controlling_robot( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a9a
 // Size: 0x98, Type: bool
 function event_anyone_within_radius( eventorigin, dist )
@@ -802,7 +802,7 @@ function event_anyone_within_radius( eventorigin, dist )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b3b
 // Size: 0x2f6
 function event_handler_translate_severity( event )
@@ -896,7 +896,7 @@ function event_handler_translate_severity( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e39
 // Size: 0x24
 function trigger_cover_blown( event )
@@ -910,7 +910,7 @@ function trigger_cover_blown( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e65
 // Size: 0x171, Type: bool
 function react_announce( event )
@@ -953,7 +953,7 @@ function react_announce( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fdf
 // Size: 0x5f, Type: bool
 function react_announce_specific( event )
@@ -971,7 +971,7 @@ function react_announce_specific( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2047
 // Size: 0x52
 function go_to_node_wait_investigate( goto_func, node, var_5297224e2a5333e6 )
@@ -994,7 +994,7 @@ function go_to_node_wait_investigate( goto_func, node, var_5297224e2a5333e6 )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20a1
 // Size: 0x4a
 function go_to_node_wait( goto_func, node )
@@ -1013,7 +1013,7 @@ function go_to_node_wait( goto_func, node )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20f3
 // Size: 0x41
 function function_b6a081f78a507c7a( goto_func, node )
@@ -1029,7 +1029,7 @@ function function_b6a081f78a507c7a( goto_func, node )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x213c
 // Size: 0x7d
 function go_to_node_post_wait( goto_func, node )
@@ -1055,7 +1055,7 @@ function go_to_node_post_wait( goto_func, node )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21c1
 // Size: 0x205
 function go_to_node_arrived( goto_func, node )
@@ -1114,7 +1114,7 @@ function go_to_node_arrived( goto_func, node )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23ce
 // Size: 0x35
 function bt_set_stealth_state( statename, event )
@@ -1124,7 +1124,7 @@ function bt_set_stealth_state( statename, event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x240b
 // Size: 0x20b, Type: bool
 function bt_event_handler_severity( event )
@@ -1178,7 +1178,7 @@ function bt_event_handler_severity( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x261f
 // Size: 0xc1, Type: bool
 function function_dfdec2ff9ba6b863( event )
@@ -1216,7 +1216,7 @@ function function_dfdec2ff9ba6b863( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26e9
 // Size: 0x34
 function bt_event_investigate( event )
@@ -1231,7 +1231,7 @@ function bt_event_investigate( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2725
 // Size: 0x12f
 function bt_event_cover_blown( event )
@@ -1279,7 +1279,7 @@ function bt_event_cover_blown( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x285c
 // Size: 0x4d
 function bt_event_combat( event )
@@ -1297,7 +1297,7 @@ function bt_event_combat( event )
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28b1
 // Size: 0x36
 function set_provide_cover_fire()
@@ -1312,7 +1312,7 @@ function set_provide_cover_fire()
 }
 
 // Namespace enemy / scripts\stealth\enemy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28ef
 // Size: 0x2a0
 function onstatechange( fromstate, tostate, var_d24e406e7deefabc )

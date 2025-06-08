@@ -12,7 +12,7 @@
 #namespace mp_jup_quarry_alt;
 
 // Namespace mp_jup_quarry_alt / scripts\mp\maps\mp_jup_quarry_alt\mp_jup_quarry_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27b
 // Size: 0x90
 function main()
@@ -32,7 +32,7 @@ function main()
 }
 
 // Namespace mp_jup_quarry_alt / scripts\mp\maps\mp_jup_quarry_alt\mp_jup_quarry_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x313
 // Size: 0x238
 function function_31dc060e85f4a689()

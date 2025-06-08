@@ -12,7 +12,7 @@
 #namespace gestures;
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x81e
 // Size: 0x101
 function init()
@@ -21,7 +21,8 @@ function init()
     level.gestureinfobyindex = [];
     val::register( "gesture", 1, 0, "$self", &function_9e06fa9c92578f0d, "$value" );
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         ref = tablelookupbyrow( "mp/gesturetable.csv", row, 0 );
         
         if ( !isdefined( ref ) || ref == "" )
@@ -50,7 +51,7 @@ function init()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x927
 // Size: 0x31
 function getgesturedata( ref )
@@ -64,7 +65,7 @@ function getgesturedata( ref )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x961
 // Size: 0x16
 function getgesturedatabyindex( index )
@@ -107,7 +108,7 @@ function private function_9e06fa9c92578f0d( b_value )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9f2
 // Size: 0x82
 function cleargesture()
@@ -135,7 +136,7 @@ function cleargesture()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7c
 // Size: 0x134
 function givegesture( gestureweapon )
@@ -184,7 +185,7 @@ function givegesture( gestureweapon )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb8
 // Size: 0xa3
 function monitorgamepadswitch()
@@ -223,7 +224,7 @@ function monitorgamepadswitch()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc63
 // Size: 0x25
 function gesture_manage3rdperson()
@@ -237,7 +238,7 @@ function gesture_manage3rdperson()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc90
 // Size: 0x1c
 function gesture_pickrockpaperscissors()
@@ -246,7 +247,7 @@ function gesture_pickrockpaperscissors()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb5
 // Size: 0xb8
 function gesture_rockpaperscissorsthink()
@@ -286,7 +287,7 @@ function gesture_rockpaperscissorsthink()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd75
 // Size: 0x15
 function gesture_resetrockpaperscissorsgesture()
@@ -296,7 +297,7 @@ function gesture_resetrockpaperscissorsgesture()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd92
 // Size: 0x10e
 function gesture_playrockpaperscissors()
@@ -336,7 +337,7 @@ function gesture_playrockpaperscissors()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea8
 // Size: 0x127
 function gesture_getrockpaperscissorsplayers()
@@ -379,7 +380,7 @@ function gesture_getrockpaperscissorsplayers()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xfd7
 // Size: 0x88
 function gesture_determinerockpaperscissorswinner( player1, player1choice, player2, player2choice )
@@ -401,7 +402,7 @@ function gesture_determinerockpaperscissorswinner( player1, player1choice, playe
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1067
 // Size: 0x5d
 function gesture_coinflipthink( gesture )
@@ -431,7 +432,7 @@ function gesture_coinflipthink( gesture )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10cc
 // Size: 0x15
 function gesture_resetcoinflipgesture()
@@ -441,7 +442,7 @@ function gesture_resetcoinflipgesture()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10e9
 // Size: 0x39, Type: bool
 function haschangedarchetype()
@@ -463,7 +464,7 @@ function haschangedarchetype()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112b
 // Size: 0x7d
 function monitorcontextualcallout()
@@ -499,7 +500,7 @@ function monitorcontextualcallout()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11b0
 // Size: 0x2fe
 function processcontext()
@@ -575,7 +576,7 @@ function processcontext()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14b6
 // Size: 0x12b
 function markworldposition( org )
@@ -618,7 +619,7 @@ function markworldposition( org )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15e9
 // Size: 0x232
 function applyoutlinecalloutsource( ent )
@@ -691,7 +692,7 @@ function applyoutlinecalloutsource( ent )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1823
 // Size: 0xdb
 function processtimeout( attacker, outlines )
@@ -701,7 +702,8 @@ function processtimeout( attacker, outlines )
     timeout = 30;
     wait timeout;
     
-    for (i = 0; i < self.outlinecalloutsource.size; i++) {
+    for ( i = 0; i < self.outlinecalloutsource.size ; i++ )
+    {
         if ( self.outlinecalloutsource[ i ] == attacker )
         {
             self.outlinecalloutsource[ i ] = undefined;
@@ -718,7 +720,7 @@ function processtimeout( attacker, outlines )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1906
 // Size: 0x1dd
 function processcalloutdeath( ent, attacker )
@@ -793,7 +795,7 @@ function processcalloutdeath( ent, attacker )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1aeb
 // Size: 0x285
 function applygamemodecallout( ent, msg, event )
@@ -877,7 +879,7 @@ function applygamemodecallout( ent, msg, event )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d78
 // Size: 0x217
 function waittillobjectiveevent( id, ent, event )
@@ -954,7 +956,7 @@ function waittillobjectiveevent( id, ent, event )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f97
 // Size: 0x7d
 function waittillobjectivereplaced( id, ent, event )
@@ -974,7 +976,7 @@ function waittillobjectivereplaced( id, ent, event )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x201c
 // Size: 0x8d
 function startholowatchvfx()
@@ -991,7 +993,7 @@ function startholowatchvfx()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20b1
 // Size: 0x4e
 function startbluntwatchvfx()
@@ -1009,7 +1011,7 @@ function startbluntwatchvfx()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2107
 // Size: 0x45
 function function_a4f0da4979f60824()
@@ -1027,7 +1029,7 @@ function function_a4f0da4979f60824()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2154
 // Size: 0x8e
 function tryreenablescriptablevfx()
@@ -1052,7 +1054,7 @@ function tryreenablescriptablevfx()
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21ea
 // Size: 0x205
 function watchradialgestureactivation( gesturenotify, gestureindex )
@@ -1139,7 +1141,7 @@ function watchradialgestureactivation( gesturenotify, gestureindex )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23f7
 // Size: 0x76
 function watchspraygesturedosprayevent( sprayindex )
@@ -1166,7 +1168,7 @@ function watchspraygesturedosprayevent( sprayindex )
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2475
 // Size: 0x71
 function watchradialgesture( objweapon )
@@ -1197,7 +1199,7 @@ function watchradialgesture( objweapon )
 /#
 
     // Namespace gestures / scripts\cp_mp\gestures
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x24ee
     // Size: 0x23, Type: dev
     function function_199e645a5bbf82a7()

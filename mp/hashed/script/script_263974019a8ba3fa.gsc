@@ -4,7 +4,7 @@
 #namespace exclusion_zones;
 
 // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x98
 // Size: 0xe7
 function function_39e1cd8a0fce827a( position, dimensions, rot, shape, inverted )
@@ -30,7 +30,8 @@ function function_39e1cd8a0fce827a( position, dimensions, rot, shape, inverted )
         inverted = 0;
     }
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         if ( !isdefined( level.exclusionzones ) || !isdefined( level.exclusionzones[ i ] ) )
         {
             level.exclusionzones[ i ] = function_7d635301465bbed1( position, dimensions, rot, shape, inverted );
@@ -42,7 +43,7 @@ function function_39e1cd8a0fce827a( position, dimensions, rot, shape, inverted )
 }
 
 // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x187
 // Size: 0xa6
 function function_de57b9616f575a63( position, var_72759fb8bd38aa1e, var_584ecd81b5529ed2 )
@@ -62,7 +63,8 @@ function function_de57b9616f575a63( position, var_72759fb8bd38aa1e, var_584ecd81
         var_584ecd81b5529ed2 = 0;
     }
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         if ( isdefined( level.exclusionzones[ i ] ) && var_584ecd81b5529ed2 == function_704a7fe0058bba45( level.exclusionzones[ i ] ) )
         {
             if ( level.exclusionzones[ i ] function_91bf6ad362e62084( position, var_72759fb8bd38aa1e, var_584ecd81b5529ed2 ) )
@@ -76,7 +78,7 @@ function function_de57b9616f575a63( position, var_72759fb8bd38aa1e, var_584ecd81
 }
 
 // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x236
 // Size: 0x5c
 function function_91bf6ad362e62084( position, var_72759fb8bd38aa1e, var_584ecd81b5529ed2 )
@@ -91,7 +93,7 @@ function function_91bf6ad362e62084( position, var_72759fb8bd38aa1e, var_584ecd81
 }
 
 // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29b
 // Size: 0x49
 function function_781b540fbee7109a( zone )
@@ -103,7 +105,7 @@ function function_781b540fbee7109a( zone )
 }
 
 // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ec
 // Size: 0x5a
 function function_7f267ef8e2210d1d( var_de595808b3e6a948, duration )
@@ -139,7 +141,7 @@ function private function_a4b442ebe4020bb( var_5f6228d3e1d47c7f, duration )
 }
 
 // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3d2
 // Size: 0x59
 function function_ca194605b904c777( var_de595808b3e6a948, rate, linear )
@@ -173,7 +175,8 @@ function private function_a4547a6f54ebab99( var_5f6228d3e1d47c7f, rate, linear )
         {
             var_de595808b3e6a948 += ( var_5f6228d3e1d47c7f - var_de595808b3e6a948 ) * rate;
             
-            for (i = 0; i < 3; i++) {
+            for ( i = 0; i < 3 ; i++ )
+            {
                 if ( abs( var_5f6228d3e1d47c7f[ i ] - var_de595808b3e6a948[ i ] ) < abs( var_e046a46d224708ed[ i ] ) )
                 {
                     var_de595808b3e6a948 = var_5f6228d3e1d47c7f;
@@ -185,7 +188,8 @@ function private function_a4547a6f54ebab99( var_5f6228d3e1d47c7f, rate, linear )
             var_de595808b3e6a948 += rate;
         }
         
-        for (i = 0; i < 3; i++) {
+        for ( i = 0; i < 3 ; i++ )
+        {
             if ( sign( var_5f6228d3e1d47c7f[ i ] - var_de595808b3e6a948[ i ] ) != initialsign[ i ] )
             {
                 self function_7b19792f59d0889d( self.origin, var_5f6228d3e1d47c7f, self.angles, level.framedurationseconds );
@@ -206,7 +210,7 @@ function private function_a4547a6f54ebab99( var_5f6228d3e1d47c7f, rate, linear )
 /#
 
     // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x57f
     // Size: 0x5, Type: dev
     function function_b1eab7c7fda1fb57()
@@ -215,7 +219,7 @@ function private function_a4547a6f54ebab99( var_5f6228d3e1d47c7f, rate, linear )
     }
 
     // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x58c
     // Size: 0x5a, Type: dev
     function function_14767b88f55e26e0()
@@ -228,7 +232,7 @@ function private function_a4547a6f54ebab99( var_5f6228d3e1d47c7f, rate, linear )
     }
 
     // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5ee
     // Size: 0x16, Type: dev
     function function_7176642fe2ed10cd( var_72759fb8bd38aa1e )
@@ -237,7 +241,7 @@ function private function_a4547a6f54ebab99( var_5f6228d3e1d47c7f, rate, linear )
     }
 
     // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x60c
     // Size: 0xc6, Type: dev
     function function_afa41ee45eb3172f()
@@ -257,7 +261,7 @@ function private function_a4547a6f54ebab99( var_5f6228d3e1d47c7f, rate, linear )
     }
 
     // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x6da
     // Size: 0xda, Type: dev
     function in_exclusion_zone( var_72759fb8bd38aa1e )
@@ -271,7 +275,8 @@ function private function_a4547a6f54ebab99( var_5f6228d3e1d47c7f, rate, linear )
         position = level.players[ 0 ].origin;
         string = "<dev string:x144>";
         
-        for (i = 0; i < 3; i++) {
+        for ( i = 0; i < 3 ; i++ )
+        {
             if ( isdefined( level.exclusionzones[ i ] ) )
             {
                 string = string + i + "<dev string:x15d>" + ( level.exclusionzones[ i ] function_91bf6ad362e62084( position, var_72759fb8bd38aa1e ) ? "<dev string:x163>" : "<dev string:x16e>" );
@@ -284,7 +289,7 @@ function private function_a4547a6f54ebab99( var_5f6228d3e1d47c7f, rate, linear )
     }
 
     // Namespace exclusion_zones / namespace_1ebea70fc689e6c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7bc
     // Size: 0x19a, Type: dev
     function lerp_exclusion_zone()

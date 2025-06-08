@@ -9,7 +9,7 @@
 #namespace warrior_metagame;
 
 // Namespace warrior_metagame / namespace_7a7ed8e4984bff6e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c
 // Size: 0x17
 function function_84ff73203e4fc8a4()
@@ -19,7 +19,7 @@ function function_84ff73203e4fc8a4()
 }
 
 // Namespace warrior_metagame / namespace_7a7ed8e4984bff6e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14b
 // Size: 0x40
 function onplayerspawned()
@@ -36,7 +36,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_metagame / namespace_7a7ed8e4984bff6e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x193
 // Size: 0x12f
 function function_d513817a1e585d0f( blueprintname )

@@ -3,7 +3,7 @@
 #namespace rollup_doors;
 
 // Namespace rollup_doors / namespace_ba0e313b6e029ac1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15b
 // Size: 0x96
 function rollup_doors()
@@ -19,7 +19,7 @@ function rollup_doors()
 }
 
 // Namespace rollup_doors / namespace_ba0e313b6e029ac1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f9
 // Size: 0xa7
 function function_4c1e29fbd2f64593()

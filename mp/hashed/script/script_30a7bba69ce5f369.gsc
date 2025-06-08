@@ -24,8 +24,8 @@
 #namespace zombie_mimic;
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x86f
+// Params 1
+// Checksum 0x0, Offset: 0x86e
 // Size: 0x95
 function precache( params )
 {
@@ -39,7 +39,7 @@ function precache( params )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x90c
+// Checksum 0x0, Offset: 0x90b
 // Size: 0x1a0
 function private function_51470bb89e9a816( params )
 {
@@ -61,8 +61,8 @@ function private function_51470bb89e9a816( params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xab4
+// Params 1
+// Checksum 0x0, Offset: 0xab3
 // Size: 0x1d2
 function function_25dabcda59af1c66( taskid )
 {
@@ -92,7 +92,7 @@ function function_25dabcda59af1c66( taskid )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc8f
+// Checksum 0x0, Offset: 0xc8e
 // Size: 0x38
 function private initscriptable()
 {
@@ -105,7 +105,7 @@ function private initscriptable()
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xccf
+// Checksum 0x0, Offset: 0xcce
 // Size: 0x47
 function private function_a295306038aa1d4e( params )
 {
@@ -117,7 +117,7 @@ function private function_a295306038aa1d4e( params )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xd1e
+// Checksum 0x0, Offset: 0xd1d
 // Size: 0x68
 function private function_c8c10b313b3fcf09( params )
 {
@@ -145,8 +145,8 @@ function private function_c8c10b313b3fcf09( params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8e
+// Params 4
+// Checksum 0x0, Offset: 0xd8d
 // Size: 0xe6
 function function_a33c1ed9fb3e400e( notename, endonnotify, custom_func, flagname )
 {
@@ -199,7 +199,7 @@ function function_a33c1ed9fb3e400e( notename, endonnotify, custom_func, flagname
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xe7c
+// Checksum 0x0, Offset: 0xe7b
 // Size: 0x1c
 function private function_c8bbb80c04cd9a37( var_a21093610d4de2ed )
 {
@@ -208,7 +208,7 @@ function private function_c8bbb80c04cd9a37( var_a21093610d4de2ed )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xea0
+// Checksum 0x0, Offset: 0xe9f
 // Size: 0x1c
 function private function_deadba29b36b687d( var_a21093610d4de2ed )
 {
@@ -217,7 +217,7 @@ function private function_deadba29b36b687d( var_a21093610d4de2ed )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xec4
+// Checksum 0x0, Offset: 0xec3
 // Size: 0x1c
 function private function_bf0fe7b30fa14180( var_12c084a213d7ad2 )
 {
@@ -226,7 +226,7 @@ function private function_bf0fe7b30fa14180( var_12c084a213d7ad2 )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xee8
+// Checksum 0x0, Offset: 0xee7
 // Size: 0x1c
 function private function_788a3fa28ef17f52( var_12c084a213d7ad2 )
 {
@@ -235,7 +235,7 @@ function private function_788a3fa28ef17f52( var_12c084a213d7ad2 )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf0c
+// Checksum 0x0, Offset: 0xf0b
 // Size: 0x1c
 function private function_dbb5710ec418627e( var_12c084a213d7ad2 )
 {
@@ -244,7 +244,7 @@ function private function_dbb5710ec418627e( var_12c084a213d7ad2 )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf30
+// Checksum 0x0, Offset: 0xf2f
 // Size: 0x1c
 function private function_afa5ec2deb3f62a0( var_12c084a213d7ad2 )
 {
@@ -253,7 +253,7 @@ function private function_afa5ec2deb3f62a0( var_12c084a213d7ad2 )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf54
+// Checksum 0x0, Offset: 0xf53
 // Size: 0x79
 function private function_84a9a40f78a814cd( attacker )
 {
@@ -267,7 +267,7 @@ function private function_84a9a40f78a814cd( attacker )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xfd5
+// Checksum 0x0, Offset: 0xfd4
 // Size: 0x46
 function private function_d18ca757733c1f7f( params )
 {
@@ -278,8 +278,8 @@ function private function_d18ca757733c1f7f( params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1023
+// Params 0
+// Checksum 0x0, Offset: 0x1022
 // Size: 0x13, Type: bool
 function function_a8c9248308033e4e()
 {
@@ -292,8 +292,8 @@ function function_a8c9248308033e4e()
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x103f
+// Params 1
+// Checksum 0x0, Offset: 0x103e
 // Size: 0xb5
 function function_b5764abaf3c1c8de( params )
 {
@@ -309,8 +309,8 @@ function function_b5764abaf3c1c8de( params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10fc
+// Params 2
+// Checksum 0x0, Offset: 0x10fb
 // Size: 0x47
 function function_f407dae1f3f118e8( taskid, params )
 {
@@ -324,8 +324,8 @@ function function_f407dae1f3f118e8( taskid, params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x114c
+// Params 2
+// Checksum 0x0, Offset: 0x114b
 // Size: 0x39
 function function_97872f112975e7a5( taskid, params )
 {
@@ -338,8 +338,8 @@ function function_97872f112975e7a5( taskid, params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x118e
+// Params 2
+// Checksum 0x0, Offset: 0x118d
 // Size: 0x29
 function function_972fb80508bb6bdb( taskid, params )
 {
@@ -349,8 +349,8 @@ function function_972fb80508bb6bdb( taskid, params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11bf
+// Params 0
+// Checksum 0x0, Offset: 0x11be
 // Size: 0x49, Type: bool
 function function_4582540b7ff726e1()
 {
@@ -364,8 +364,8 @@ function function_4582540b7ff726e1()
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1211
+// Params 0
+// Checksum 0x0, Offset: 0x1210
 // Size: 0xf3
 function function_bdcc0a0ca6396e2a()
 {
@@ -412,7 +412,7 @@ function function_bdcc0a0ca6396e2a()
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x130c
+// Checksum 0x0, Offset: 0x130b
 // Size: 0x5f
 function private function_9ae856c35fa71be8( params )
 {
@@ -430,7 +430,7 @@ function private function_9ae856c35fa71be8( params )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1373
+// Checksum 0x0, Offset: 0x1372
 // Size: 0x50
 function private function_b735f24952147af( prop )
 {
@@ -443,7 +443,7 @@ function private function_b735f24952147af( prop )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x13cb
+// Checksum 0x0, Offset: 0x13ca
 // Size: 0x251
 function private function_88950ad5e3ce8e13( params )
 {
@@ -507,8 +507,8 @@ function private function_88950ad5e3ce8e13( params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1624
+// Params 0
+// Checksum 0x0, Offset: 0x1623
 // Size: 0x89
 function function_6bdfe7a8ca9c56ba()
 {
@@ -526,8 +526,8 @@ function function_6bdfe7a8ca9c56ba()
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b5
+// Params 1
+// Checksum 0x0, Offset: 0x16b4
 // Size: 0x64
 function function_a45d79b43b8a55d7( b_multiple )
 {
@@ -545,7 +545,7 @@ function function_a45d79b43b8a55d7( b_multiple )
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1721
+// Checksum 0x0, Offset: 0x1720
 // Size: 0x32
 function private function_abafe9cd03c2c0ab()
 {
@@ -561,7 +561,7 @@ function private function_abafe9cd03c2c0ab()
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x175b
+// Checksum 0x0, Offset: 0x175a
 // Size: 0x18d
 function private function_17bed982df752ea9()
 {
@@ -608,7 +608,7 @@ function private function_17bed982df752ea9()
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x18f0
+// Checksum 0x0, Offset: 0x18ef
 // Size: 0xdc, Type: bool
 function private function_e0bf32008879b3fd( ranged_target, var_5345a087e822b319 )
 {
@@ -645,8 +645,8 @@ function private function_e0bf32008879b3fd( ranged_target, var_5345a087e822b319 
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19d5
+// Params 2
+// Checksum 0x0, Offset: 0x19d4
 // Size: 0x19d, Type: bool
 function function_479960c6dfffd9c6( origin, angles )
 {
@@ -694,8 +694,8 @@ function function_479960c6dfffd9c6( origin, angles )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b7b
+// Params 1
+// Checksum 0x0, Offset: 0x1b7a
 // Size: 0x13a
 function mimic_emerge_grab( player )
 {
@@ -718,8 +718,8 @@ function mimic_emerge_grab( player )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cbd
+// Params 4
+// Checksum 0x0, Offset: 0x1cbc
 // Size: 0x320
 function function_4744995ac583c880( player_anim, mimic, origin, angles )
 {
@@ -803,8 +803,8 @@ function function_4744995ac583c880( player_anim, mimic, origin, angles )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fe5
+// Params 0
+// Checksum 0x0, Offset: 0x1fe4
 // Size: 0xc0
 function function_95c7e0ea826c97ea()
 {
@@ -831,8 +831,8 @@ function function_95c7e0ea826c97ea()
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20ad
+// Params 0
+// Checksum 0x0, Offset: 0x20ac
 // Size: 0x9b
 function function_c97059c441653141()
 {
@@ -845,8 +845,8 @@ function function_c97059c441653141()
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2150
+// Params 0
+// Checksum 0x0, Offset: 0x214f
 // Size: 0xca, Type: bool
 function function_5aeb3ae4ed6135f9()
 {
@@ -862,8 +862,8 @@ function function_5aeb3ae4ed6135f9()
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2223
+// Params 2
+// Checksum 0x0, Offset: 0x2222
 // Size: 0xba, Type: bool
 function function_df0b176709835ef4( taskid, params )
 {
@@ -886,8 +886,8 @@ function function_df0b176709835ef4( taskid, params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x22e6
+// Params 2
+// Checksum 0x0, Offset: 0x22e5
 // Size: 0x22
 function function_e9e7acaf7ce05aba( taskid, params )
 {
@@ -896,8 +896,8 @@ function function_e9e7acaf7ce05aba( taskid, params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2310
+// Params 2
+// Checksum 0x0, Offset: 0x230f
 // Size: 0x36
 function function_17b5cbf9f7aba1fb( taskid, params )
 {
@@ -910,8 +910,8 @@ function function_17b5cbf9f7aba1fb( taskid, params )
 }
 
 // Namespace zombie_mimic / namespace_99e25c27505b58fd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x234f
+// Params 2
+// Checksum 0x0, Offset: 0x234e
 // Size: 0x32
 function function_2cbb5fa528d8c675( taskid, params )
 {

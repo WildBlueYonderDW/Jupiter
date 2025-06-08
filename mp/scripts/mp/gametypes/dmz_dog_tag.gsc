@@ -19,7 +19,7 @@
 #namespace dmz_dog_tag;
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32f
 // Size: 0x170
 function function_d22b3026c3183ead()
@@ -81,7 +81,8 @@ function private onteamchange( player, oldteam, newteam )
     
     foreach ( teammember in getteamdata( newteam, "players" ) )
     {
-        for (i = 0; i < namespace_aead94004cf4c147::getplayerbackpacksize( teammember ); i++) {
+        for ( i = 0; i < namespace_aead94004cf4c147::getplayerbackpacksize( teammember ) ; i++ )
+        {
             if ( !function_3c17a26ce6a4668( teammember namespace_aead94004cf4c147::getlootidatbackpackindex( i ) ) )
             {
                 continue;
@@ -112,7 +113,7 @@ function private onteamchange( player, oldteam, newteam )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x660
 // Size: 0xc, Type: bool
 function function_2f6772930123576c()
@@ -121,7 +122,7 @@ function function_2f6772930123576c()
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x675
 // Size: 0x7a
 function function_8e643d6706defeea( player, dogtagcount )
@@ -141,7 +142,7 @@ function function_8e643d6706defeea( player, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6f7
 // Size: 0x15f
 function function_b5fbe3cb4ed955f4( enemy, dogtagcount )
@@ -187,7 +188,7 @@ function function_b5fbe3cb4ed955f4( enemy, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x85e
 // Size: 0x9b
 function function_ab266ca8693e5618()
@@ -213,7 +214,7 @@ function function_ab266ca8693e5618()
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x901
 // Size: 0xa9
 function function_ea29bccf97cb1b9a( killer, dogtagcount )
@@ -228,7 +229,7 @@ function function_ea29bccf97cb1b9a( killer, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9b2
 // Size: 0x3e
 function function_1a21a83169ad19f9( player )
@@ -242,7 +243,7 @@ function function_1a21a83169ad19f9( player )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f8
 // Size: 0x34
 function function_6cd8c4885cb6775c( dogtagcount )
@@ -256,7 +257,7 @@ function function_6cd8c4885cb6775c( dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa34
 // Size: 0x99
 function function_3bfe56fc3c2bb91e( origin, inworld )
@@ -272,7 +273,7 @@ function function_3bfe56fc3c2bb91e( origin, inworld )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xad6
 // Size: 0xf1
 function function_42426b559596ae56( scriptable, dogtagcount )
@@ -287,7 +288,7 @@ function function_42426b559596ae56( scriptable, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbcf
 // Size: 0x6e
 function function_62b5f185de3ab25d( array, objstruct )
@@ -306,7 +307,7 @@ function function_62b5f185de3ab25d( array, objstruct )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc46
 // Size: 0xdb
 function function_e98b03b1ec8385fe( objstruct )
@@ -327,7 +328,7 @@ function function_e98b03b1ec8385fe( objstruct )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd29
 // Size: 0x3f
 function function_77060da87f0214f7( origin )
@@ -338,7 +339,7 @@ function function_77060da87f0214f7( origin )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd71
 // Size: 0x65
 function function_3de97c52c88c8a20( objstruct, player )
@@ -350,7 +351,7 @@ function function_3de97c52c88c8a20( objstruct, player )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdde
 // Size: 0x1b9
 function function_433d4c5bc4da9ead( player, dogtagcount )
@@ -384,7 +385,7 @@ function function_433d4c5bc4da9ead( player, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf9f
 // Size: 0x150
 function function_8945131b7b8a89c8( player, dogtagcount )
@@ -411,7 +412,7 @@ function function_8945131b7b8a89c8( player, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10f7
 // Size: 0x142
 function function_a9e95e007eb70709( objstruct, dogtagcount )
@@ -444,7 +445,7 @@ function function_a9e95e007eb70709( objstruct, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1241
 // Size: 0xcc
 function function_8a3a6225b2e11801( objstruct )
@@ -466,7 +467,7 @@ function function_8a3a6225b2e11801( objstruct )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1315
 // Size: 0x89
 function function_dfe0992113030bd0( objstruct )
@@ -488,7 +489,7 @@ function function_dfe0992113030bd0( objstruct )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13a6
 // Size: 0x11f, Type: bool
 function function_2e13cc7d90ee5683( player, team )
@@ -512,7 +513,7 @@ function function_2e13cc7d90ee5683( player, team )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14ce
 // Size: 0x80, Type: bool
 function hasdogtag( player )
@@ -542,7 +543,7 @@ function hasdogtag( player )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1557
 // Size: 0x64
 function function_59771b0cc100410a( player )
@@ -563,7 +564,7 @@ function function_59771b0cc100410a( player )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15c4
 // Size: 0x3a
 function function_777013e79be19c16( player )
@@ -579,7 +580,7 @@ function function_777013e79be19c16( player )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1607
 // Size: 0x5d
 function function_2d2f7e8a6547ae42( lootid )
@@ -650,7 +651,7 @@ function private function_de2c669caf6fb1d( player )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1741
 // Size: 0x83
 function function_bc03aa369196f2bf( player, hastag )
@@ -675,7 +676,7 @@ function function_bc03aa369196f2bf( player, hastag )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17cc
 // Size: 0x6a, Type: bool
 function function_dd15435220e4207( player, dogtagcount )
@@ -697,7 +698,7 @@ function function_dd15435220e4207( player, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x183f
 // Size: 0x2f, Type: bool
 function function_3c17a26ce6a4668( lootid )
@@ -706,7 +707,7 @@ function function_3c17a26ce6a4668( lootid )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1877
 // Size: 0xb3, Type: bool
 function function_d9f5c5090de1241b( player, dogtagcount )
@@ -721,7 +722,7 @@ function function_d9f5c5090de1241b( player, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1933
 // Size: 0xb9, Type: bool
 function function_1129ba5718d33025( killer, dogtagcount )
@@ -736,7 +737,7 @@ function function_1129ba5718d33025( killer, dogtagcount )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19f5
 // Size: 0x7a
 function function_57711583c5d26490( victim )
@@ -765,7 +766,7 @@ function function_57711583c5d26490( victim )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a78
 // Size: 0x3c
 function function_379463a84adb07b4( count )
@@ -779,7 +780,7 @@ function function_379463a84adb07b4( count )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1abd
 // Size: 0xa0
 function function_b5d4fcc3fab92696( pickup )
@@ -807,7 +808,7 @@ function function_b5d4fcc3fab92696( pickup )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b66
 // Size: 0x90
 function function_f6d685cabfad2ce9( victim, killer, weapon )
@@ -861,7 +862,7 @@ function private function_ad150ee445d765a6( player )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d0c
 // Size: 0x58
 function getdogtagvictimandkiller( dogtagcount )
@@ -898,7 +899,7 @@ function private function_99cbbc040233be98( victimindex, killerindex )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1da0
 // Size: 0x86
 function function_fb2923d9d7eb7aac( player )
@@ -963,7 +964,7 @@ function private function_56995ecb525c7b1( victim, killer )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f89
 // Size: 0xa7
 function function_941fe2b16d6fff9d( player )
@@ -973,7 +974,8 @@ function function_941fe2b16d6fff9d( player )
         level.dogtaginfo = [];
     }
     
-    for (index = 0; index < 60; index++) {
+    for ( index = 0; index < 60 ; index++ )
+    {
         xuid = "0";
         
         if ( isdefined( level.dogtaginfo[ index ] ) && isdefined( level.dogtaginfo[ index ].xuid ) )
@@ -986,7 +988,7 @@ function function_941fe2b16d6fff9d( player )
 }
 
 // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2038
 // Size: 0xa
 function function_20d00accaa12c27f()
@@ -997,7 +999,7 @@ function function_20d00accaa12c27f()
 /#
 
     // Namespace dmz_dog_tag / scripts\mp\gametypes\dmz_dog_tag
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x204b
     // Size: 0x288, Type: dev
     function debugdogtags()

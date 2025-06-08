@@ -55,7 +55,7 @@ function autoexec main()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7a1
 // Size: 0xb2
 function function_4862ad097a85e6b8( perkslot, achievementid, var_7ab6dba5e9adbffb )
@@ -82,7 +82,7 @@ function function_4862ad097a85e6b8( perkslot, achievementid, var_7ab6dba5e9adbff
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x85b
 // Size: 0x7d
 function onplayerconnect( params )
@@ -101,7 +101,7 @@ function onplayerconnect( params )
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e0
 // Size: 0x132
 function function_539593ba238cc26c()
@@ -130,7 +130,7 @@ function function_539593ba238cc26c()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa1a
 // Size: 0x19e
 function function_7fb91ca0ab6978c0( achievementid, progressdata )
@@ -150,7 +150,8 @@ function function_7fb91ca0ab6978c0( achievementid, progressdata )
     var_d5f1c80151eeba85 = scripts\cp_mp\playerachievements::function_691880160b33d133( "progress" );
     progress = 0;
     
-    for (index = 0; index < progressdata.progress_values.size; index++) {
+    for ( index = 0; index < progressdata.progress_values.size ; index++ )
+    {
         progress_id = progressdata.progress_values[ index ].progress_id;
         
         if ( is_equal( var_d5f1c80151eeba85, progress_id ) )
@@ -184,7 +185,7 @@ function function_7fb91ca0ab6978c0( achievementid, progressdata )
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc0
 // Size: 0xeb
 function packandsendperkinfobits()
@@ -213,7 +214,7 @@ function packandsendperkinfobits()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb3
 // Size: 0x77
 function mutationmodegiveearnedperks()
@@ -231,7 +232,7 @@ function mutationmodegiveearnedperks()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd32
 // Size: 0x8b
 function function_5ba9e679fe13fe5e( achievementid, var_51c6029a1deceecf )
@@ -245,7 +246,7 @@ function function_5ba9e679fe13fe5e( achievementid, var_51c6029a1deceecf )
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc6
 // Size: 0xc
 function setmutationmodeperk01()
@@ -254,7 +255,7 @@ function setmutationmodeperk01()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdda
 // Size: 0x2
 function setmutationmodeperk02()
@@ -263,7 +264,7 @@ function setmutationmodeperk02()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xde4
 // Size: 0x2
 function setmutationmodeperk03()
@@ -272,7 +273,7 @@ function setmutationmodeperk03()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdee
 // Size: 0x9
 function setmutationmodeperk04()
@@ -281,7 +282,7 @@ function setmutationmodeperk04()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdff
 // Size: 0x9
 function setmutationmodeperk05()
@@ -290,7 +291,7 @@ function setmutationmodeperk05()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe10
 // Size: 0x2
 function unsetmutationmodeperk01()
@@ -299,7 +300,7 @@ function unsetmutationmodeperk01()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe1a
 // Size: 0x2
 function unsetmutationmodeperk02()
@@ -308,7 +309,7 @@ function unsetmutationmodeperk02()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe24
 // Size: 0xc
 function unsetmutationmodeperk03()
@@ -317,7 +318,7 @@ function unsetmutationmodeperk03()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe38
 // Size: 0x2
 function unsetmutationmodeperk04()
@@ -326,7 +327,7 @@ function unsetmutationmodeperk04()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe42
 // Size: 0x2
 function unsetmutationmodeperk05()
@@ -335,7 +336,7 @@ function unsetmutationmodeperk05()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe4c
 // Size: 0x2
 function hasmutationmodeperk01()
@@ -344,7 +345,7 @@ function hasmutationmodeperk01()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe56
 // Size: 0xd
 function hasmutationmodeperk02()
@@ -353,7 +354,7 @@ function hasmutationmodeperk02()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe6c
 // Size: 0xd
 function hasmutationmodeperk03()
@@ -362,7 +363,7 @@ function hasmutationmodeperk03()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe82
 // Size: 0x2
 function hasmutationmodeperk04()
@@ -371,7 +372,7 @@ function hasmutationmodeperk04()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8c
 // Size: 0xd
 function hasmutationmodeperk05()
@@ -380,7 +381,7 @@ function hasmutationmodeperk05()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea2
 // Size: 0x2
 function activatemutationmodeperk01()
@@ -389,7 +390,7 @@ function activatemutationmodeperk01()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeac
 // Size: 0x97
 function activatemutationmodeperk02()
@@ -405,7 +406,7 @@ function activatemutationmodeperk02()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf4b
 // Size: 0x81
 function function_2ee91f207f07f84e( params )
@@ -439,7 +440,7 @@ function function_2ee91f207f07f84e( params )
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfd4
 // Size: 0x55, Type: bool
 function function_150d67ea1dfd1f31( objweapon )
@@ -468,7 +469,7 @@ function function_150d67ea1dfd1f31( objweapon )
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1032
 // Size: 0xd
 function activatemutationmodeperk03()
@@ -477,7 +478,7 @@ function activatemutationmodeperk03()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1047
 // Size: 0x14
 function activatemutationmodeperk04()
@@ -486,7 +487,7 @@ function activatemutationmodeperk04()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1063
 // Size: 0x18
 function activatemutationmodeperk05()
@@ -496,7 +497,7 @@ function activatemutationmodeperk05()
 }
 
 // Namespace escort_horde_event_perks / scripts\mp\gametypes\escort_horde_event_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1083
 // Size: 0x119
 function function_5aa0301754c24686( params )

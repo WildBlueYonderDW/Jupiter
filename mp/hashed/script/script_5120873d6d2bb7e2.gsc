@@ -6,7 +6,7 @@
 #namespace namespace_b9f8f8dc9fce21f5;
 
 // Namespace namespace_b9f8f8dc9fce21f5 / namespace_27cc7cdc2e4475be
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10a
 // Size: 0x92
 function createevent( minradius, minspeed )
@@ -21,7 +21,7 @@ function createevent( minradius, minspeed )
 }
 
 // Namespace namespace_b9f8f8dc9fce21f5 / namespace_27cc7cdc2e4475be
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a4
 // Size: 0x190
 function getevent()
@@ -60,7 +60,7 @@ function getevent()
 }
 
 // Namespace namespace_b9f8f8dc9fce21f5 / namespace_27cc7cdc2e4475be
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33d
 // Size: 0x1cb
 function function_608ad5a3783431d9()

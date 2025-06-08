@@ -26,7 +26,7 @@
 #namespace menus;
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x83b
 // Size: 0x283
 function init()
@@ -48,7 +48,8 @@ function init()
         
         if ( level.multiteambased )
         {
-            for (i = 0; i < level.teamnamelist.size; i++) {
+            for ( i = 0; i < level.teamnamelist.size ; i++ )
+            {
                 var_62890c80c835c4a5 = "menu_class_" + level.teamnamelist[ i ];
                 var_90e671d45a71be99 = "menu_changeclass_" + level.teamnamelist[ i ];
                 game[ var_62890c80c835c4a5 ] = game[ "menu_class_allies" ];
@@ -63,7 +64,8 @@ function init()
         {
             if ( level.multiteambased )
             {
-                for (i = 0; i < level.teamnamelist.size; i++) {
+                for ( i = 0; i < level.teamnamelist.size ; i++ )
+                {
                     var_62890c80c835c4a5 = "menu_class_" + level.teamnamelist[ i ];
                     var_90e671d45a71be99 = "menu_changeclass_" + level.teamnamelist[ i ];
                     game[ var_62890c80c835c4a5 ] += "_splitscreen";
@@ -94,7 +96,7 @@ function init()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xac6
 // Size: 0x67
 function onteamchangecallback( channel, teamselected )
@@ -118,7 +120,7 @@ function onteamchangecallback( channel, teamselected )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb35
 // Size: 0x19
 function setintrocamnetworkmodel()
@@ -129,7 +131,7 @@ function setintrocamnetworkmodel()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb56
 // Size: 0xf, Type: bool
 function isloadoutindexdefault( index )
@@ -138,7 +140,7 @@ function isloadoutindexdefault( index )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb6e
 // Size: 0x5a
 function getclasschoice( menuindex )
@@ -164,7 +166,7 @@ function getclasschoice( menuindex )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbd1
 // Size: 0x175
 function executeclasschange( newclass, var_fda7f7e8fc307aba )
@@ -214,7 +216,7 @@ function executeclasschange( newclass, var_fda7f7e8fc307aba )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd4e
 // Size: 0x58
 function setnextroundclass( newclass )
@@ -235,7 +237,7 @@ function setnextroundclass( newclass )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdae
 // Size: 0x64
 function onleavegamecallback( channel, val )
@@ -265,7 +267,7 @@ function onleavegamecallback( channel, val )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe1a
 // Size: 0x38
 function onclasseditcallback( newclass )
@@ -281,14 +283,14 @@ function onclasseditcallback( newclass )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe5a
 // Size: 0x153
 function onclasschoicecallback( newclass, var_f01f8e178ff54eda )
 {
     self notify( "loadout_class_selected", newclass );
     
-    if ( level.systemlink && getdvarint( @"hash_9cc8c81329e0bdbf" ) && self iscodcaster() )
+    if ( level.systemlink && getdvarint( @"xblive_competitionmatch" ) && self iscodcaster() )
     {
         self setclientomnvar( "ui_options_menu", 0 );
         return;
@@ -344,7 +346,7 @@ function onclasschoicecallback( newclass, var_f01f8e178ff54eda )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfb5
 // Size: 0x247
 function handleteamchange( channel, teamselected )
@@ -454,7 +456,7 @@ function handleteamchange( channel, teamselected )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1204
 // Size: 0x86
 function handleclassedit( newclass )
@@ -471,12 +473,13 @@ function handleclassedit( newclass )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1292
 // Size: 0x10e, Type: bool
 function function_c69c22ef9e1e92a0( var_f0c136ca13f8bc76 )
 {
-    for (teamindex = level.teamnamelist.size - 1; teamindex >= 0; teamindex--) {
+    for ( teamindex = level.teamnamelist.size - 1; teamindex >= 0 ; teamindex-- )
+    {
         candidate = level.teamnamelist[ teamindex ];
         teamplayers = getteamdata( candidate, "players" );
         hashuman = 0;
@@ -508,7 +511,7 @@ function function_c69c22ef9e1e92a0( var_f0c136ca13f8bc76 )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13a9
 // Size: 0x3c6
 function autoassign( firstconnect )
@@ -519,7 +522,7 @@ function autoassign( firstconnect )
         return;
     }
     
-    forceteam = getdvar( @"hash_aea3ac32a07685ba", "" );
+    forceteam = getdvar( @"scr_force_team", "" );
     
     if ( isgameplayteam( forceteam ) )
     {
@@ -570,7 +573,8 @@ function autoassign( firstconnect )
             return;
         }
         
-        for (teamindex = 0; teamindex < level.teamnamelist.size; teamindex++) {
+        for ( teamindex = 0; teamindex < level.teamnamelist.size ; teamindex++ )
+        {
             entry = level.teamnamelist[ teamindex ];
             
             if ( var_f0c136ca13f8bc76 )
@@ -668,7 +672,7 @@ function autoassign( firstconnect )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1777
 // Size: 0x79
 function function_e9a6fdc468a5fa73( team )
@@ -683,7 +687,7 @@ function function_e9a6fdc468a5fa73( team )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17f8
 // Size: 0x365
 function setteam( selection, firstconnect )
@@ -788,7 +792,7 @@ function setteam( selection, firstconnect )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b65
 // Size: 0x1c, Type: bool
 function playerisstreaming()
@@ -797,7 +801,7 @@ function playerisstreaming()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b8a
 // Size: 0x13, Type: bool
 function function_eb9e2bb02ecff5b5()
@@ -806,7 +810,7 @@ function function_eb9e2bb02ecff5b5()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ba6
 // Size: 0x13, Type: bool
 function function_2c0eb018b319f66()
@@ -815,7 +819,7 @@ function function_2c0eb018b319f66()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bc2
 // Size: 0xe5
 function setspectator( needrespawn )
@@ -846,7 +850,7 @@ function setspectator( needrespawn )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1caf
 // Size: 0xd3
 function function_9ff5c7531349cdfc( needrespawn )
@@ -873,7 +877,7 @@ function function_9ff5c7531349cdfc( needrespawn )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d8a
 // Size: 0x94, Type: bool
 function function_788bcfab4101649a( player )
@@ -919,7 +923,7 @@ function function_788bcfab4101649a( player )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e27
 // Size: 0x3cc
 function waitforclassselect()
@@ -1041,7 +1045,7 @@ function waitforclassselect()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21fb
 // Size: 0x2c
 function function_941a6cafc9c004e4( var_3c8dceee54a35f62 )
@@ -1053,7 +1057,7 @@ function function_941a6cafc9c004e4( var_3c8dceee54a35f62 )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x222f
 // Size: 0x1ea
 function beginclasschoice( forcenewchoice )
@@ -1110,7 +1114,7 @@ function beginclasschoice( forcenewchoice )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2421
 // Size: 0x127
 function bypassclasschoice()
@@ -1148,7 +1152,7 @@ function bypassclasschoice()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2550
 // Size: 0x5d, Type: bool
 function ispresstofirstspawnmode()
@@ -1175,7 +1179,7 @@ function ispresstofirstspawnmode()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25b6
 // Size: 0x1d
 function waitthensetspawnomnvar()
@@ -1190,7 +1194,7 @@ function waitthensetspawnomnvar()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25db
 // Size: 0x10
 function beginteamchoice()
@@ -1199,7 +1203,7 @@ function beginteamchoice()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25f3
 // Size: 0xb6
 function menuspectator()
@@ -1225,7 +1229,7 @@ function menuspectator()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26b1
 // Size: 0x2ed
 function menuclass( response )
@@ -1303,7 +1307,7 @@ function menuclass( response )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x29a6
 // Size: 0x2de
 function addtoteam( team, firstconnect, var_67d0631ad9027f83, var_26c802633f90a05c )
@@ -1407,7 +1411,7 @@ function addtoteam( team, firstconnect, var_67d0631ad9027f83, var_26c802633f90a0
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c8c
 // Size: 0x2c
 function setsessionteam( teamset )
@@ -1422,7 +1426,7 @@ function setsessionteam( teamset )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cc0
 // Size: 0x4f
 function setemptysessionteam( teamset )
@@ -1443,7 +1447,7 @@ function setemptysessionteam( teamset )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d17
 // Size: 0x14
 function endrespawnnotify()
@@ -1453,7 +1457,7 @@ function endrespawnnotify()
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d33
 // Size: 0x45
 function logteamselection( teamselection )
@@ -1470,7 +1474,7 @@ function logteamselection( teamselection )
 }
 
 // Namespace menus / scripts\mp\menus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d80
 // Size: 0x236
 function debugprintsquads()

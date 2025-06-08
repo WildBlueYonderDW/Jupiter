@@ -8,7 +8,7 @@
 #namespace namespace_ffc66489af4e13ac;
 
 // Namespace namespace_ffc66489af4e13ac / namespace_31c289156a6de223
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf3
 // Size: 0x20
 function function_d5724a0f0cd63d12()
@@ -19,7 +19,7 @@ function function_d5724a0f0cd63d12()
 }
 
 // Namespace namespace_ffc66489af4e13ac / namespace_31c289156a6de223
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11b
 // Size: 0x33
 function function_422c480d1e41bff2()
@@ -30,7 +30,7 @@ function function_422c480d1e41bff2()
 }
 
 // Namespace namespace_ffc66489af4e13ac / namespace_31c289156a6de223
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x156
 // Size: 0x2ad
 function function_bc9bc92f91fb076d( var_7b6d5db8cb3c5782 )
@@ -62,7 +62,8 @@ function function_bc9bc92f91fb076d( var_7b6d5db8cb3c5782 )
     
     if ( isdefined( level.br_level.br_circledelaytimes ) )
     {
-        for (i = 0; i < level.br_level.br_circledelaytimes.size; i++) {
+        for ( i = 0; i < level.br_level.br_circledelaytimes.size ; i++ )
+        {
             circletimer( i );
         }
     }

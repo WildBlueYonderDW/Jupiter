@@ -35,7 +35,7 @@
 #namespace tjugg;
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94a
 // Size: 0x188
 function main()
@@ -81,7 +81,7 @@ function main()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xada
 // Size: 0x16b
 function initializematchrules()
@@ -103,12 +103,12 @@ function initializematchrules()
     setdynamicdvar( @"hash_cfc79c8d140c710d", 0 );
     setdynamicdvar( @"hash_9cadb51d661e162d", 0 );
     setdynamicdvar( @"hash_5d64cd3b24cf883a", 1 );
-    setdynamicdvar( @"hash_e5a33d679c26221f", 0 );
+    setdynamicdvar( @"scr_team_fftype", 0 );
     setdynamicdvar( @"hash_3d9b2dcdb77fe161", 0 );
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc4d
 // Size: 0x373
 function onstartgametype()
@@ -175,7 +175,7 @@ function onstartgametype()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfc8
 // Size: 0x8e
 function updategametypedvars()
@@ -189,7 +189,7 @@ function updategametypedvars()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x105e
 // Size: 0x25
 function onplayerconnect( player )
@@ -199,7 +199,7 @@ function onplayerconnect( player )
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108b
 // Size: 0x114
 function initspawns()
@@ -229,7 +229,7 @@ function initspawns()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11a7
 // Size: 0x8d
 function getspawnpoint()
@@ -261,7 +261,7 @@ function getspawnpoint()
 /#
 
     // Namespace tjugg / scripts\mp\gametypes\tjugg
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x123d
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -300,7 +300,7 @@ function getspawnpoint()
 #/
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x13bf
 // Size: 0x555
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, lifeid )
@@ -484,7 +484,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x191c
 // Size: 0x10e
 function resetjugg( newjugg, var_a978e1b119c99ae5 )
@@ -515,7 +515,7 @@ function resetjugg( newjugg, var_a978e1b119c99ae5 )
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a32
 // Size: 0x361
 function givejuggloadout()
@@ -606,7 +606,7 @@ function givejuggloadout()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d9b
 // Size: 0x103
 function nextjuggtimeout()
@@ -640,7 +640,7 @@ function nextjuggtimeout()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ea6
 // Size: 0x136
 function respawnoldjugg()
@@ -689,7 +689,7 @@ function respawnoldjugg()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fe4
 // Size: 0x105
 function rewardteammateproximity()
@@ -718,7 +718,7 @@ function rewardteammateproximity()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20f1
 // Size: 0x9d
 function logattackers()
@@ -741,7 +741,7 @@ function logattackers()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2196
 // Size: 0x126
 function resetjuggloadoutondisconnect( endondeath )
@@ -788,7 +788,7 @@ function resetjuggloadoutondisconnect( endondeath )
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22c4
 // Size: 0x122
 function resetjuggloadoutonchangeteam()
@@ -827,7 +827,7 @@ function resetjuggloadoutonchangeteam()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23ee
 // Size: 0xc0
 function getbestteammate( team, allowremote )
@@ -848,7 +848,7 @@ function getbestteammate( team, allowremote )
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24b7
 // Size: 0x20
 function hidetimerdisplayongameend( timerdisplay )
@@ -858,7 +858,7 @@ function hidetimerdisplayongameend( timerdisplay )
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24df
 // Size: 0xed
 function createjuggobjectiveicon( juggplayer )
@@ -880,7 +880,7 @@ function createjuggobjectiveicon( juggplayer )
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25d4
 // Size: 0x28
 function cleanupobjectiveiconsforjugg( juggplayer )
@@ -890,7 +890,7 @@ function cleanupobjectiveiconsforjugg( juggplayer )
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2604
 // Size: 0x39
 function updatejuggcurorigin()
@@ -906,7 +906,7 @@ function updatejuggcurorigin()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2645
 // Size: 0xbb
 function updatejuggpingorigin()
@@ -936,7 +936,7 @@ function updatejuggpingorigin()
 }
 
 // Namespace tjugg / scripts\mp\gametypes\tjugg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2708
 // Size: 0x247
 function setspecialloadouts()

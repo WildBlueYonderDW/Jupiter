@@ -41,7 +41,7 @@
 #namespace xfire;
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10ff
 // Size: 0x3c9
 function main()
@@ -120,7 +120,7 @@ function main()
     setomnvar( "ui_arena_allies_health_max", 100 );
     setomnvar( "ui_arena_axis_health_max", 100 );
     setomnvar( "ui_arena_team_three_health_max", 100 );
-    level.testtdmanywhere = getdvarint( @"hash_157f06aff3c1f357", 0 );
+    level.testtdmanywhere = getdvarint( @"scr_tdmanywhere", 0 );
     level.tdmanywhere_dropheight = getdvarfloat( @"hash_c692d2a11dd6615", 1000 );
     level.tdmanywhere_perpenoffset = getdvarfloat( @"hash_631c58033f43c2dc", 2048 );
     level.tdmanywhere_distoffset = getdvarfloat( @"hash_f314048c87ae28aa", 4092 );
@@ -146,7 +146,7 @@ function main()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14d0
 // Size: 0x20
 function onplayerconnect( player )
@@ -156,7 +156,7 @@ function onplayerconnect( player )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14f8
 // Size: 0x14
 function onplayerdisconnect( player )
@@ -165,7 +165,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1514
 // Size: 0x24
 function onjoinedteam()
@@ -180,7 +180,7 @@ function onjoinedteam()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1540
 // Size: 0x91
 function initializematchrules()
@@ -195,7 +195,7 @@ function initializematchrules()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15d9
 // Size: 0x180
 function onstartgametype()
@@ -268,7 +268,7 @@ function onstartgametype()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1761
 // Size: 0xb9
 function updategametypedvars()
@@ -290,7 +290,7 @@ function updategametypedvars()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1822
 // Size: 0x274
 function initspawns()
@@ -349,7 +349,7 @@ function initspawns()
 /#
 
     // Namespace xfire / scripts\mp\gametypes\xfire
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1a9e
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -365,7 +365,7 @@ function initspawns()
 #/
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b09
 // Size: 0x234
 function getspawnpoint()
@@ -385,7 +385,8 @@ function getspawnpoint()
     
     var_cafc02fbf308d35b = level.teamnamelist;
     
-    for (i = 0; i < game[ "roundsPlayed" ]; i++) {
+    for ( i = 0; i < game[ "roundsPlayed" ] ; i++ )
+    {
         var_cafc02fbf308d35b = array_add( var_cafc02fbf308d35b, var_cafc02fbf308d35b[ 0 ] );
         var_cafc02fbf308d35b = array_slice( var_cafc02fbf308d35b, 1, level.teamnamelist.size + 1 );
     }
@@ -428,7 +429,7 @@ function getspawnpoint()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d46
 // Size: 0x2e5
 function spawngameendflagzone( ispreview )
@@ -494,7 +495,7 @@ function spawngameendflagzone( ispreview )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2033
 // Size: 0x2a
 function function_439c040e29fb9b3d()
@@ -504,7 +505,7 @@ function function_439c040e29fb9b3d()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2065
 // Size: 0x9f
 function function_59176f33753f0b5b()
@@ -525,7 +526,7 @@ function function_59176f33753f0b5b()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x210c
 // Size: 0x1ab
 function function_865ee3863054db0a( credit_player )
@@ -562,7 +563,7 @@ function function_865ee3863054db0a( credit_player )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22bf
 // Size: 0x83
 function onspawnplayer( revivespawn )
@@ -584,7 +585,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x234a
 // Size: 0xc0
 function onspawnfinished()
@@ -613,12 +614,12 @@ function onspawnfinished()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2412
 // Size: 0x383
 function setteamhealthhud( isdisconnect )
 {
-    var_586dc9dc0cf668ad = getdvarint( @"hash_b1d561f9a9241e09", 100 );
+    var_586dc9dc0cf668ad = getdvarint( @"scr_player_maxhealth", 100 );
     alliesplayers = getteamdata( "allies", "teamCount" );
     
     if ( alliesplayers )
@@ -719,7 +720,7 @@ function setteamhealthhud( isdisconnect )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x279d
 // Size: 0x288
 function damagewatcher()
@@ -797,7 +798,7 @@ function damagewatcher()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a2d
 // Size: 0xa9
 function function_d2e1978421f560a8( playerteam )
@@ -823,7 +824,7 @@ function function_d2e1978421f560a8( playerteam )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ade
 // Size: 0x146
 function outlinemultiteam()
@@ -860,7 +861,7 @@ function outlinemultiteam()
 /#
 
     // Namespace xfire / scripts\mp\gametypes\xfire
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x2c2c
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -899,7 +900,7 @@ function outlinemultiteam()
 #/
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2dae
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -908,7 +909,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x2df6
 // Size: 0x182
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, lifeid )
@@ -945,7 +946,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f80
 // Size: 0x2a
 function checkallowspectating( eliminatedteam )
@@ -955,7 +956,7 @@ function checkallowspectating( eliminatedteam )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2fb2
 // Size: 0x460
 function function_cf32b8de85ca585a( victim, islaststanddeath )
@@ -1074,7 +1075,7 @@ function function_cf32b8de85ca585a( victim, islaststanddeath )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x341b
 // Size: 0xdc
 function ontimelimit()
@@ -1124,7 +1125,7 @@ function ontimelimit()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34ff
 // Size: 0x1c3
 function checkhealthwinner()
@@ -1203,7 +1204,7 @@ function checkhealthwinner()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36ca
 // Size: 0x4e
 function getwinningteam()
@@ -1221,7 +1222,7 @@ function getwinningteam()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3721
 // Size: 0x2c, Type: bool
 function function_857670a0af36d589( left, right )
@@ -1231,7 +1232,7 @@ function function_857670a0af36d589( left, right )
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3756
 // Size: 0x43
 function function_6fcd898faf41205d()
@@ -1244,7 +1245,7 @@ function function_6fcd898faf41205d()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x37a2
 // Size: 0x1f0
 function arena_endgame( winningteam, endreasontext, endreasontextloss, nukedetonated, var_8e4a26ed257a393b )
@@ -1310,7 +1311,7 @@ function arena_endgame( winningteam, endreasontext, endreasontextloss, nukedeton
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x399a
 // Size: 0xb
 function ontimelimitot()
@@ -1321,7 +1322,7 @@ function ontimelimitot()
 /#
 
     // Namespace xfire / scripts\mp\gametypes\xfire
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x39ad
     // Size: 0xe8, Type: dev
     function function_8469a5927d069db7()
@@ -1336,7 +1337,7 @@ function ontimelimitot()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x125>", points, 0 );
@@ -1348,7 +1349,7 @@ function ontimelimitot()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x12f>", points, 0 );
@@ -1364,7 +1365,7 @@ function ontimelimitot()
     }
 
     // Namespace xfire / scripts\mp\gametypes\xfire
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3a9d
     // Size: 0x1ee, Type: dev
     function function_bf2918399f1800b1()
@@ -1402,7 +1403,7 @@ function ontimelimitot()
 #/
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c93
 // Size: 0x19a
 function tdmanywhere_debugshowlocs()
@@ -1425,7 +1426,7 @@ function tdmanywhere_debugshowlocs()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e35
 // Size: 0x40f
 function monitorhotfoot()
@@ -1540,7 +1541,7 @@ function monitorhotfoot()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x424c
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()
@@ -1552,7 +1553,7 @@ function shouldgamelobbyremainintact()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42a2
 // Size: 0x11a
 function seticonnames()
@@ -1580,7 +1581,7 @@ function seticonnames()
 }
 
 // Namespace xfire / scripts\mp\gametypes\xfire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43c4
 // Size: 0x336
 function setupwaypointicons()

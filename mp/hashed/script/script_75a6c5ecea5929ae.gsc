@@ -9,21 +9,21 @@
 #namespace namespace_2d3858b0486afd15;
 
 // Namespace namespace_2d3858b0486afd15 / namespace_bd8dd5dc71a74700
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ab
+// Params 0
+// Checksum 0x0, Offset: 0x2aa
 // Size: 0x42
 function function_17a8b3a21e25bce4()
 {
     level.denyclasschoice = 1;
-    setdvar( @"hash_c55dc89ef275cdaa", 1 );
+    setdvar( @"scr_skip_infils", 1 );
     level thread onstartgametypefinished();
     level scripts\mp\utility\spawn_event_aggregator::registeronplayerspawncallback( &onplayerspawned );
     level.bypassclasschoicefunc = &scripts\mp\class::alwaysgamemodeclass;
 }
 
 // Namespace namespace_2d3858b0486afd15 / namespace_bd8dd5dc71a74700
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f5
+// Params 0
+// Checksum 0x0, Offset: 0x2f4
 // Size: 0x29
 function onstartgametypefinished()
 {
@@ -34,8 +34,8 @@ function onstartgametypefinished()
 }
 
 // Namespace namespace_2d3858b0486afd15 / namespace_bd8dd5dc71a74700
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x326
+// Params 0
+// Checksum 0x0, Offset: 0x325
 // Size: 0x5e
 function onplayerconnect()
 {
@@ -49,8 +49,8 @@ function onplayerconnect()
 }
 
 // Namespace namespace_2d3858b0486afd15 / namespace_bd8dd5dc71a74700
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38c
+// Params 0
+// Checksum 0x0, Offset: 0x38b
 // Size: 0x4d
 function onplayerspawned()
 {
@@ -59,8 +59,8 @@ function onplayerspawned()
 }
 
 // Namespace namespace_2d3858b0486afd15 / namespace_bd8dd5dc71a74700
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e1
+// Params 0
+// Checksum 0x0, Offset: 0x3e0
 // Size: 0x15b
 function setspecialloadouts()
 {
@@ -80,8 +80,8 @@ function setspecialloadouts()
 }
 
 // Namespace namespace_2d3858b0486afd15 / namespace_bd8dd5dc71a74700
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x544
+// Params 1
+// Checksum 0x0, Offset: 0x543
 // Size: 0x68
 function function_177aaacdaae75fd6( var_608cc23373c0fd33 )
 {

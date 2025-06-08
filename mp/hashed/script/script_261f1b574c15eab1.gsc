@@ -6,7 +6,7 @@
 #namespace namespace_ddf44c860acc3f80;
 
 // Namespace namespace_ddf44c860acc3f80 / namespace_8db7d778efdc3d65
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd
 // Size: 0x13
 function main()

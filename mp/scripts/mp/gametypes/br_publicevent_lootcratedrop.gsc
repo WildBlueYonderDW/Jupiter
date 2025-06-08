@@ -16,7 +16,7 @@
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x3f9
+// Checksum 0x0, Offset: 0x3f8
 // Size: 0x17
 function autoexec main()
 {
@@ -24,8 +24,8 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x418
+// Params 1
+// Checksum 0x0, Offset: 0x417
 // Size: 0x54
 function function_a84cf6614b8b31e( eventinfo )
 {
@@ -36,8 +36,8 @@ function function_a84cf6614b8b31e( eventinfo )
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x474
+// Params 1
+// Checksum 0x0, Offset: 0x473
 // Size: 0xb
 function initweaponcrate( eventinfo )
 {
@@ -45,8 +45,8 @@ function initweaponcrate( eventinfo )
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x487
+// Params 1
+// Checksum 0x0, Offset: 0x486
 // Size: 0xb
 function function_51c524af89207cd5( eventinfo )
 {
@@ -54,8 +54,8 @@ function function_51c524af89207cd5( eventinfo )
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x49a
+// Params 0
+// Checksum 0x0, Offset: 0x499
 // Size: 0x11
 function function_e85cf8591ec416e4()
 {
@@ -64,8 +64,8 @@ function function_e85cf8591ec416e4()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b3
+// Params 0
+// Checksum 0x0, Offset: 0x4b2
 // Size: 0x9
 function function_87e6691e7d8c03ac()
 {
@@ -73,8 +73,8 @@ function function_87e6691e7d8c03ac()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c4
+// Params 0
+// Checksum 0x0, Offset: 0x4c3
 // Size: 0x9
 function function_a77e39e3a8937837()
 {
@@ -82,8 +82,8 @@ function function_a77e39e3a8937837()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d5
+// Params 0
+// Checksum 0x0, Offset: 0x4d4
 // Size: 0x6e
 function postinitfunc()
 {
@@ -100,8 +100,8 @@ function postinitfunc()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x54b
+// Params 0
+// Checksum 0x0, Offset: 0x54a
 // Size: 0x4, Type: bool
 function function_a78763ea0cf7510e()
 {
@@ -109,8 +109,8 @@ function function_a78763ea0cf7510e()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x558
+// Params 0
+// Checksum 0x0, Offset: 0x557
 // Size: 0x4, Type: bool
 function function_1d60c987a31953a6()
 {
@@ -118,8 +118,8 @@ function function_1d60c987a31953a6()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x565
+// Params 0
+// Checksum 0x0, Offset: 0x564
 // Size: 0x4, Type: bool
 function function_599c8b86b0fede65()
 {
@@ -127,8 +127,8 @@ function function_599c8b86b0fede65()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x572
+// Params 0
+// Checksum 0x0, Offset: 0x571
 // Size: 0xb
 function function_71b5f57cd836a45d()
 {
@@ -136,8 +136,8 @@ function function_71b5f57cd836a45d()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x585
+// Params 0
+// Checksum 0x0, Offset: 0x584
 // Size: 0xb
 function function_183f7f5ceb7a8f3b()
 {
@@ -145,8 +145,8 @@ function function_183f7f5ceb7a8f3b()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x598
+// Params 0
+// Checksum 0x0, Offset: 0x597
 // Size: 0xb
 function function_921e8477fdbb38ba()
 {
@@ -154,8 +154,8 @@ function function_921e8477fdbb38ba()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ab
+// Params 1
+// Checksum 0x0, Offset: 0x5aa
 // Size: 0x1df
 function activateinternal( var_afb1e307ca3c0ed7 )
 {
@@ -200,8 +200,8 @@ function activateinternal( var_afb1e307ca3c0ed7 )
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x792
+// Params 2
+// Checksum 0x0, Offset: 0x791
 // Size: 0x301
 function function_1e632783fe9d057d( dropend, dropstruct )
 {
@@ -270,8 +270,8 @@ function function_1e632783fe9d057d( dropend, dropstruct )
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9c
+// Params 1
+// Checksum 0x0, Offset: 0xa9b
 // Size: 0x136
 function function_fc6fffaed5b50c85( player )
 {
@@ -321,8 +321,8 @@ function function_fc6fffaed5b50c85( player )
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbda
+// Params 0
+// Checksum 0x0, Offset: 0xbd9
 // Size: 0xbc
 function function_fae94a598dce531e()
 {
@@ -338,8 +338,8 @@ function function_fae94a598dce531e()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9e
+// Params 0
+// Checksum 0x0, Offset: 0xc9d
 // Size: 0xd3
 function deactivate()
 {
@@ -364,8 +364,8 @@ function deactivate()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd79
+// Params 1
+// Checksum 0x0, Offset: 0xd78
 // Size: 0x6e
 function function_a7b6924c27b24419( safecircles )
 {
@@ -380,8 +380,8 @@ function function_a7b6924c27b24419( safecircles )
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf0
+// Params 2
+// Checksum 0x0, Offset: 0xdef
 // Size: 0x7e
 function function_33edfefab8f13307( safecircles, chosenweight )
 {
@@ -401,8 +401,8 @@ function function_33edfefab8f13307( safecircles, chosenweight )
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe77
+// Params 3
+// Checksum 0x0, Offset: 0xe76
 // Size: 0x61
 function function_24d2f715eea2a268( dangercircleorigin, var_1062ad70c2ee0fd1, var_5cae8dadbf316a7d )
 {
@@ -412,8 +412,8 @@ function function_24d2f715eea2a268( dangercircleorigin, var_1062ad70c2ee0fd1, va
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xee1
+// Params 3
+// Checksum 0x0, Offset: 0xee0
 // Size: 0xdd
 function function_fcc289142135e1a4( dangercircleorigin, var_1062ad70c2ee0fd1, var_5cae8dadbf316a7d )
 {
@@ -439,8 +439,8 @@ function function_fcc289142135e1a4( dangercircleorigin, var_1062ad70c2ee0fd1, va
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc7
+// Params 0
+// Checksum 0x0, Offset: 0xfc6
 // Size: 0x8f
 function function_ae1a3e74689d656a()
 {
@@ -461,8 +461,8 @@ function function_ae1a3e74689d656a()
 }
 
 // Namespace br_publicevent_lootcratedrop / scripts\mp\gametypes\br_publicevent_lootcratedrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x105e
+// Params 0
+// Checksum 0x0, Offset: 0x105d
 // Size: 0x8f
 function onplayerrespawn()
 {

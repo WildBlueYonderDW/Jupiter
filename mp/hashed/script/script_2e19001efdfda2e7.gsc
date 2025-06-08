@@ -37,7 +37,7 @@
 #namespace jup_spawner_zombie_base;
 
 // Namespace jup_spawner_zombie_base / namespace_cecd894aa2e09559
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32d
 // Size: 0x1e6
 function main()
@@ -75,7 +75,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_base / namespace_cecd894aa2e09559
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51b
 // Size: 0x99
 function setup_model()
@@ -101,7 +101,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_base / namespace_cecd894aa2e09559
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bc
 // Size: 0x6d
 function function_9ac26a51c94ccf52()
@@ -120,7 +120,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_base / namespace_cecd894aa2e09559
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x631
 // Size: 0x11d
 function function_7a493635b81d4ce7()
@@ -155,7 +155,7 @@ function function_7a493635b81d4ce7()
 }
 
 // Namespace jup_spawner_zombie_base / namespace_cecd894aa2e09559
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x756
 // Size: 0xf1
 function function_8d815580e4ab1e96()
@@ -186,7 +186,7 @@ function function_8d815580e4ab1e96()
 }
 
 // Namespace jup_spawner_zombie_base / namespace_cecd894aa2e09559
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84f
 // Size: 0xaf
 function function_1566a42efce5d0f8()
@@ -211,7 +211,7 @@ function function_1566a42efce5d0f8()
 }
 
 // Namespace jup_spawner_zombie_base / namespace_cecd894aa2e09559
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x906
 // Size: 0x1cc
 function precache()
@@ -272,7 +272,7 @@ function precache()
 }
 
 // Namespace jup_spawner_zombie_base / namespace_cecd894aa2e09559
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xada
 // Size: 0xd6
 function setup_weapons()

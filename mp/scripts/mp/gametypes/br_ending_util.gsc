@@ -7,7 +7,7 @@
 #namespace br_ending_util;
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x309
 // Size: 0x69
 function create_animpack( anime )
@@ -23,7 +23,7 @@ function create_animpack( anime )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37b
 // Size: 0x20
 function function_5c32248dfffac064()
@@ -37,7 +37,7 @@ function function_5c32248dfffac064()
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a3
 // Size: 0x15
 function function_2d4c340dd3908b2d( fov )
@@ -46,7 +46,7 @@ function function_2d4c340dd3908b2d( fov )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3c0
 // Size: 0x5d
 function function_b8f86028bcc64f84( fstop, focusdist, focusspeed, aperturespeed, var_c06551440b16249c )
@@ -59,7 +59,7 @@ function function_b8f86028bcc64f84( fstop, focusdist, focusspeed, aperturespeed,
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x425
 // Size: 0x4a
 function add_pack_modelanim( ent, animation )
@@ -69,7 +69,7 @@ function add_pack_modelanim( ent, animation )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x477
 // Size: 0x27
 function add_pack_startfunc( paramarray, func )
@@ -79,7 +79,7 @@ function add_pack_startfunc( paramarray, func )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a6
 // Size: 0x27
 function function_decf1e23d78d0944( paramarray, func )
@@ -89,7 +89,7 @@ function function_decf1e23d78d0944( paramarray, func )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4d5
 // Size: 0x27
 function function_e718ba63d511fcde( paramarray, func )
@@ -99,7 +99,7 @@ function function_e718ba63d511fcde( paramarray, func )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x504
 // Size: 0x15
 function function_6098f3014cd4c598( fadeinlength )
@@ -108,7 +108,7 @@ function function_6098f3014cd4c598( fadeinlength )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x521
 // Size: 0x15
 function function_6372afdc0e9ee2dd( fadeoutlength )
@@ -117,7 +117,7 @@ function function_6372afdc0e9ee2dd( fadeoutlength )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x53e
 // Size: 0x119
 function add_pack_playeranim( player, var_f8896cb359eab159, var_b1e61449da6ba188 )
@@ -156,7 +156,7 @@ function add_pack_playeranim( player, var_f8896cb359eab159, var_b1e61449da6ba188
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x65f
 // Size: 0x43
 function add_pack_camanim( animation, xcamasset )
@@ -167,7 +167,7 @@ function add_pack_camanim( animation, xcamasset )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6aa
 // Size: 0x39
 function add_pack_fx( fxid, origin, angles )
@@ -178,7 +178,7 @@ function add_pack_fx( fxid, origin, angles )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6eb
 // Size: 0x21
 function function_707983b9fdb53c55( rig )
@@ -187,7 +187,7 @@ function function_707983b9fdb53c55( rig )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x714
 // Size: 0x132
 function spawn_script_model( modelname, animname, extramodels )
@@ -222,7 +222,7 @@ function spawn_script_model( modelname, animname, extramodels )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x84f
 // Size: 0xad
 function function_38c7f6bc1deef269( modelname, animname, vehicletype )
@@ -254,7 +254,7 @@ function function_38c7f6bc1deef269( modelname, animname, vehicletype )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x905
 // Size: 0x5e
 function function_c880edba9face762( scenename )
@@ -271,7 +271,7 @@ function function_c880edba9face762( scenename )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x96b
 // Size: 0x3e
 function function_fce988291dbc4649( scenename )
@@ -286,7 +286,7 @@ function function_fce988291dbc4649( scenename )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9b2
 // Size: 0x369
 function function_8c2d124dbef4fa60( scenename, linkent, var_f08f74fd62b74b9a )
@@ -410,7 +410,7 @@ function private function_89a2405953b84136( rig, override_og )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xe1a
 // Size: 0x1a0
 function add_pack_characteranim( modelname, extramodels, animation, animstr, animnameoverride )
@@ -454,7 +454,7 @@ function add_pack_characteranim( modelname, extramodels, animation, animstr, ani
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xfc3
 // Size: 0xf7
 function allplayers_setphysicaldof( fstop, focusdist, focusspeed, aperturespeed, var_c06551440b16249c )
@@ -500,7 +500,7 @@ function allplayers_setphysicaldof( fstop, focusdist, focusspeed, aperturespeed,
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10c2
 // Size: 0x7a
 function allplayers_setfov( fov )
@@ -513,7 +513,7 @@ function allplayers_setfov( fov )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1144
 // Size: 0x89
 function function_cf47ab3f9defe35b()
@@ -527,7 +527,7 @@ function function_cf47ab3f9defe35b()
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11d5
 // Size: 0x6f
 function allplayers_clearphysicaldof()
@@ -543,7 +543,7 @@ function allplayers_clearphysicaldof()
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124c
 // Size: 0x60
 function chopperexfil_set_brcircle()
@@ -562,7 +562,7 @@ function chopperexfil_set_brcircle()
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12b4
 // Size: 0x122
 function create_disconnectplayer( animstruct )
@@ -587,7 +587,7 @@ function create_disconnectplayer( animstruct )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13de
 // Size: 0xb0
 function ending_player_disconnect_thread( player, skipwaittill )
@@ -620,7 +620,7 @@ function ending_player_disconnect_thread( player, skipwaittill )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1496
 // Size: 0x51
 function create_cam()
@@ -634,7 +634,7 @@ function create_cam()
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x14f0
 // Size: 0x231
 function create_player_rig( animname, rig_model, animstruct, var_40a4287d8d2e7ef9 )
@@ -682,7 +682,7 @@ function create_player_rig( animname, rig_model, animstruct, var_40a4287d8d2e7ef
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1729
 // Size: 0x278
 function function_50962e9f971266e( animname, origin )
@@ -729,7 +729,7 @@ function function_50962e9f971266e( animname, origin )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a9
 // Size: 0xf7
 function function_2839481298d2e5f4()
@@ -778,7 +778,7 @@ function function_2839481298d2e5f4()
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1aa8
 // Size: 0x52
 function function_e874fd3a9c016379( shouldforcehide, var_cbaf46af6f07196 )
@@ -792,7 +792,7 @@ function function_e874fd3a9c016379( shouldforcehide, var_cbaf46af6f07196 )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b02
 // Size: 0xd7
 function remove_player_rig()
@@ -820,14 +820,15 @@ function remove_player_rig()
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1be1
 // Size: 0x9a
 function get_center_of_array( array )
 {
     center = ( 0, 0, 0 );
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         center = ( center[ 0 ] + array[ i ].origin[ 0 ], center[ 1 ] + array[ i ].origin[ 1 ], center[ 2 ] + array[ i ].origin[ 2 ] );
     }
     
@@ -840,7 +841,7 @@ function get_center_of_array( array )
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1c84
 // Size: 0xa4
 function function_3f005b301ec7f15b( testarray, animref, animpct, originoffset, radius, height, var_d4364a524e8a2bcd )
@@ -857,7 +858,7 @@ function function_3f005b301ec7f15b( testarray, animref, animpct, originoffset, r
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1d31
 // Size: 0xa4
 function function_f317a6f0ae25e3d4( testarray, modelname, animref, animpct, originoffset, radius, var_d4364a524e8a2bcd )
@@ -874,7 +875,7 @@ function function_f317a6f0ae25e3d4( testarray, modelname, animref, animpct, orig
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1dde
 // Size: 0xa4
 function function_19ae50e23fe0625a( testarray, modelname, animref, originoffset, radius, numsegments, var_d4364a524e8a2bcd )
@@ -891,7 +892,7 @@ function function_19ae50e23fe0625a( testarray, modelname, animref, originoffset,
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e8b
 // Size: 0x14b
 function function_c300d34e34164b6d( fadedowntime, var_95a318d022e623a7, var_1bb7594c18d17443 )
@@ -940,7 +941,7 @@ function function_c300d34e34164b6d( fadedowntime, var_95a318d022e623a7, var_1bb7
 }
 
 // Namespace br_ending_util / scripts\mp\gametypes\br_ending_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fde
 // Size: 0x146
 function function_3681a4700f5bb7c1( fadedowntime, var_1bb7594c18d17443, holdnotify )

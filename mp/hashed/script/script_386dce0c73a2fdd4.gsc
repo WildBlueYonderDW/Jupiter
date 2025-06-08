@@ -6,7 +6,7 @@
 #namespace namespace_b4de76d2d2c1c2ca;
 
 // Namespace namespace_b4de76d2d2c1c2ca / namespace_e14c6ab0ceb9c048
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18c
 // Size: 0x113
 function function_29b5fb70d7ea841()
@@ -25,7 +25,7 @@ function function_29b5fb70d7ea841()
 }
 
 // Namespace namespace_b4de76d2d2c1c2ca / namespace_e14c6ab0ceb9c048
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a7
 // Size: 0x62
 function function_52b682d1bb0ddc02()
@@ -36,7 +36,7 @@ function function_52b682d1bb0ddc02()
 }
 
 // Namespace namespace_b4de76d2d2c1c2ca / namespace_e14c6ab0ceb9c048
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x311
 // Size: 0xe
 function init_melee()

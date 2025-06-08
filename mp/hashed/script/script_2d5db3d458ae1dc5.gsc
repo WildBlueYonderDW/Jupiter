@@ -14,7 +14,7 @@
 #namespace mp_m_exhibit;
 
 // Namespace mp_m_exhibit / namespace_1f903bb587a3a7d1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e4
 // Size: 0xbc
 function main()
@@ -38,7 +38,7 @@ function main()
 }
 
 // Namespace mp_m_exhibit / namespace_1f903bb587a3a7d1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a8
 // Size: 0x223
 function function_da52d377ff534ecc()

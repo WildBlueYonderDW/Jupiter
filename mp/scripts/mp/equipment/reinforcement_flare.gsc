@@ -29,7 +29,7 @@ function autoexec main()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e9
 // Size: 0x18
 function init_when_ready()
@@ -40,7 +40,7 @@ function init_when_ready()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x309
 // Size: 0x162
 function init()
@@ -61,7 +61,7 @@ function init()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x473
 // Size: 0x59
 function init_anim()
@@ -76,7 +76,7 @@ function init_anim()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d4
 // Size: 0x4d
 function init_dev_gui()
@@ -92,7 +92,7 @@ function init_dev_gui()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x529
 // Size: 0xb
 function function_454bc6bf585af432()
@@ -101,7 +101,7 @@ function function_454bc6bf585af432()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53c
 // Size: 0xa
 function function_90c4a88974378104()
@@ -110,7 +110,7 @@ function function_90c4a88974378104()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x54e
 // Size: 0x51
 function function_a69a3c97f0e5fb45( on )
@@ -125,7 +125,7 @@ function function_a69a3c97f0e5fb45( on )
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a7
 // Size: 0xb5, Type: bool
 function function_abefbdbd41128e07()
@@ -157,7 +157,7 @@ function function_abefbdbd41128e07()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x665
 // Size: 0xd5
 function function_1d40065a3c6120da()
@@ -184,7 +184,7 @@ function function_1d40065a3c6120da()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x742
 // Size: 0x6a
 function function_be3f53a872e6984( respawnlist, var_1604d9f4d5cc32d7 )
@@ -216,7 +216,7 @@ function function_be3f53a872e6984( respawnlist, var_1604d9f4d5cc32d7 )
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b5
 // Size: 0x20
 function function_917bdaef968dc5b4()
@@ -226,7 +226,7 @@ function function_917bdaef968dc5b4()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7dd
 // Size: 0xb4, Type: bool
 function function_7511c0cbd6c3f1cf()
@@ -247,7 +247,7 @@ function function_7511c0cbd6c3f1cf()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x89a
 // Size: 0x34, Type: bool
 function function_22f07d1048d1a37( hint, reason )
@@ -259,7 +259,7 @@ function function_22f07d1048d1a37( hint, reason )
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d7
 // Size: 0x90
 function function_59dd9b163e569a63()
@@ -284,7 +284,7 @@ function function_59dd9b163e569a63()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x970
 // Size: 0x12, Type: bool
 function function_a36dfafc12f9a469()
@@ -293,7 +293,7 @@ function function_a36dfafc12f9a469()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98b
 // Size: 0x7c
 function function_81973eac6cda5de8()
@@ -320,7 +320,7 @@ function function_81973eac6cda5de8()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0f
 // Size: 0x4e
 function function_e02eb68b52ee2576()
@@ -333,7 +333,7 @@ function function_e02eb68b52ee2576()
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa65
 // Size: 0x17d
 function function_bd86834dafc95671( respawnlist )
@@ -381,7 +381,7 @@ function function_bd86834dafc95671( respawnlist )
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbea
 // Size: 0x52, Type: bool
 function function_ae1f6e9c36dbaf8d( player1, player2 )
@@ -392,7 +392,7 @@ function function_ae1f6e9c36dbaf8d( player1, player2 )
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc45
 // Size: 0x50, Type: bool
 function function_6061807fd4bf9173( player1, player2 )
@@ -403,7 +403,7 @@ function function_6061807fd4bf9173( player1, player2 )
 }
 
 // Namespace reinforcement_flare / scripts\mp\equipment\reinforcement_flare
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc9e
 // Size: 0x17
 function function_304d5fa1128c5a76( grenade )

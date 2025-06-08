@@ -8,7 +8,7 @@
 #namespace battlechatter_ai;
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1db
 // Size: 0x143
 function addtosystem()
@@ -50,7 +50,7 @@ function addtosystem()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x326
 // Size: 0x94
 function setup_mp_hero( var_c6910a7018189965, var_4189af81d34b8804, var_10e927a072c477b )
@@ -66,7 +66,7 @@ function setup_mp_hero( var_c6910a7018189965, var_4189af81d34b8804, var_10e927a0
 /#
 
     // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x3c2
     // Size: 0x20, Type: dev
     function function_ffd2cfb5b8a113ac( text, duration )
@@ -124,7 +124,7 @@ function setup_mp_hero( var_c6910a7018189965, var_4189af81d34b8804, var_10e927a0
 #/
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x503
 // Size: 0xc1
 function clearvoice()
@@ -145,7 +145,7 @@ function clearvoice()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cc
 // Size: 0x9a
 function setvoice( voice )
@@ -176,7 +176,7 @@ function setvoice( voice )
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66e
 // Size: 0x10
 function function_da324cd732971e8c()
@@ -186,7 +186,7 @@ function function_da324cd732971e8c()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x686
 // Size: 0x185
 function removefromsystem( squad )
@@ -221,7 +221,7 @@ function removefromsystem( squad )
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x813
 // Size: 0x195
 function function_bd6944098e09347f( team, countryid, npcid, name )
@@ -273,7 +273,7 @@ function function_bd6944098e09347f( team, countryid, npcid, name )
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b0
 // Size: 0x2
 function function_3e6d99e336341602()
@@ -282,7 +282,7 @@ function function_3e6d99e336341602()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ba
 // Size: 0x2
 function corpseloop()
@@ -291,7 +291,7 @@ function corpseloop()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9c4
 // Size: 0xe7
 function setnpcid()
@@ -302,7 +302,8 @@ function setnpcid()
     startindex = randomint( numids );
     lowestid = startindex;
     
-    for (index = 0; index <= numids; index++) {
+    for ( index = 0; index <= numids ; index++ )
+    {
         if ( usedids[ ( startindex + index ) % numids ].count < usedids[ lowestid ].count )
         {
             lowestid = ( startindex + index ) % numids;
@@ -314,7 +315,7 @@ function setnpcid()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xab3
 // Size: 0x13
 function evaluateattackevent( weapon )
@@ -323,7 +324,7 @@ function evaluateattackevent( weapon )
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xace
 // Size: 0x47
 function aithreadwaiter()
@@ -340,7 +341,7 @@ function aithreadwaiter()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb1d
 // Size: 0x4c
 function waittill_missile_fire()
@@ -358,7 +359,7 @@ function waittill_missile_fire()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb71
 // Size: 0x66
 function waittill_grenade_fire()
@@ -380,7 +381,7 @@ function waittill_grenade_fire()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbdf
 // Size: 0x1f
 function function_ad344a5a58977b39()
@@ -393,7 +394,7 @@ function function_ad344a5a58977b39()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc06
 // Size: 0x3d
 function waittill_move()
@@ -410,7 +411,7 @@ function waittill_move()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc4b
 // Size: 0x37
 function function_69110de99255d852()
@@ -434,7 +435,7 @@ function function_69110de99255d852()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc8a
 // Size: 0x2
 function aivehiclekillwaiter()
@@ -443,7 +444,7 @@ function aivehiclekillwaiter()
 }
 
 // Namespace battlechatter_ai / scripts\anim\battlechatter_ai
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xc94
 // Size: 0x40
 function custom_battlechatter_internal( phrase, sequence, priority, timeout, cooldown, endons )

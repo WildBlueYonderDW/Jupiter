@@ -3,7 +3,7 @@
 #namespace bt_util;
 
 // Namespace bt_util / scripts\aitypes\bt_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x90
 // Size: 0x50
 function init()
@@ -22,7 +22,7 @@ function init()
 }
 
 // Namespace bt_util / scripts\aitypes\bt_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8
 // Size: 0x56
 function bt_init()
@@ -39,7 +39,7 @@ function bt_init()
 }
 
 // Namespace bt_util / scripts\aitypes\bt_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146
 // Size: 0x31
 function bt_terminateandreplace( var_99252870276d5b3e )

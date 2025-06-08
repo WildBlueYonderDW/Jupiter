@@ -3,7 +3,7 @@
 #namespace namespace_9e7e287a72e995a1;
 
 // Namespace namespace_9e7e287a72e995a1 / namespace_2db0a94a6f3680c9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x90
 // Size: 0x45
 function function_88de778c36c85601( taskid )
@@ -19,7 +19,7 @@ function function_88de778c36c85601( taskid )
 }
 
 // Namespace namespace_9e7e287a72e995a1 / namespace_2db0a94a6f3680c9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde
 // Size: 0x6e
 function function_d76a0008f2159ab4( taskid )

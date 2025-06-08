@@ -7,7 +7,7 @@
 #namespace cqb;
 
 // Namespace cqb / scripts\anim\cqb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc5
 // Size: 0x33
 function setupcqbpointsofinterest()
@@ -23,7 +23,7 @@ function setupcqbpointsofinterest()
 }
 
 // Namespace cqb / scripts\anim\cqb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x100
 // Size: 0x82
 function gatherdynamiccqbstructs()
@@ -39,7 +39,7 @@ function gatherdynamiccqbstructs()
 }
 
 // Namespace cqb / scripts\anim\cqb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18a
 // Size: 0x9b
 function function_50fb5efa67518b10( poi )
@@ -64,7 +64,7 @@ function function_50fb5efa67518b10( poi )
 }
 
 // Namespace cqb / scripts\anim\cqb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22d
 // Size: 0x132
 function findcqbpointsofinterest()
@@ -121,7 +121,7 @@ function findcqbpointsofinterest()
 }
 
 // Namespace cqb / scripts\anim\cqb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x367
 // Size: 0x85
 function findbestpoi()
@@ -143,7 +143,7 @@ function findbestpoi()
 }
 
 // Namespace cqb / scripts\anim\cqb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f4
 // Size: 0x91
 function findfirstpoiinlink()
@@ -175,7 +175,7 @@ function findfirstpoiinlink()
 }
 
 // Namespace cqb / scripts\anim\cqb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48d
 // Size: 0x1c6
 function findnextpoiinlink( haspoi )
@@ -251,7 +251,7 @@ function findnextpoiinlink( haspoi )
 }
 
 // Namespace cqb / scripts\anim\cqb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65b
 // Size: 0x89, Type: bool
 function iswithinfov( poi )
@@ -270,7 +270,7 @@ function iswithinfov( poi )
 /#
 
     // Namespace cqb / scripts\anim\cqb
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6ed
     // Size: 0x24, Type: dev
     function cqbdebug()
@@ -282,7 +282,7 @@ function iswithinfov( poi )
     }
 
     // Namespace cqb / scripts\anim\cqb
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x719
     // Size: 0x172, Type: dev
     function function_2cbce60ec0b41d2f()

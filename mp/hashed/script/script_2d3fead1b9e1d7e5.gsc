@@ -6,7 +6,7 @@
 #namespace namespace_9e66f70aad951124;
 
 // Namespace namespace_9e66f70aad951124 / namespace_a8c01726524388f5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf
 // Size: 0x13
 function main()

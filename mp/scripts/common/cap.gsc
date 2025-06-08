@@ -7,7 +7,7 @@
 #namespace cap;
 
 // Namespace cap / scripts\common\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33a
 // Size: 0x50
 function init_cap()
@@ -23,7 +23,7 @@ function init_cap()
 }
 
 // Namespace cap / scripts\common\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x392
 // Size: 0x148
 function cap_start( capname, animset, animscripted )
@@ -65,7 +65,7 @@ function cap_start( capname, animset, animscripted )
 }
 
 // Namespace cap / scripts\common\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e2
 // Size: 0x116
 function function_b69db84955df12e5( var_b5da6777bfe1ace8, archetypename )
@@ -108,14 +108,15 @@ function function_b69db84955df12e5( var_b5da6777bfe1ace8, archetypename )
 }
 
 // Namespace cap / scripts\common\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x600
 // Size: 0x57
 function function_896667bf7f3ed3dc()
 {
     while ( true )
     {
-        for (capindex = 0; capindex < level.capscriptmodels.size; capindex++) {
+        for ( capindex = 0; capindex < level.capscriptmodels.size ; capindex++ )
+        {
             capent = level.capscriptmodels[ capindex ];
             
             if ( isalive( capent ) )
@@ -129,7 +130,7 @@ function function_896667bf7f3ed3dc()
 }
 
 // Namespace cap / scripts\common\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x65f
 // Size: 0x50
 function function_fb2e421e36c177a0( var_f48b8938602f359b, newarchetype )
@@ -147,7 +148,7 @@ function function_fb2e421e36c177a0( var_f48b8938602f359b, newarchetype )
 }
 
 // Namespace cap / scripts\common\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b7
 // Size: 0xf8
 function cap_exit()
@@ -193,7 +194,7 @@ function cap_exit()
 }
 
 // Namespace cap / scripts\common\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b7
 // Size: 0x9d
 function function_a996f137b4ef05ed()
@@ -230,7 +231,7 @@ function function_a996f137b4ef05ed()
 }
 
 // Namespace cap / scripts\common\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x85c
 // Size: 0xb5
 function function_b58f0a57adf2948e( origin, capname, animset, var_9e6dcf179d658229 )
@@ -257,7 +258,7 @@ function function_b58f0a57adf2948e( origin, capname, animset, var_9e6dcf179d6582
 }
 
 // Namespace cap / scripts\common\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x919
 // Size: 0x92
 function function_3a8bc84c604f9755()
@@ -290,7 +291,7 @@ function function_3a8bc84c604f9755()
 }
 
 // Namespace cap / scripts\common\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9b3
 // Size: 0x2d5
 function cap_reach_and_arrive( scriptednode, capname, animset, var_26b7b68bee5a2349 )
@@ -394,7 +395,7 @@ function private function_e1c21b37d95134a()
 }
 
 // Namespace cap / scripts\common\cap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdb5
 // Size: 0xa3
 function function_a1ed6ae80ed92596( group )
@@ -416,7 +417,7 @@ function function_a1ed6ae80ed92596( group )
 }
 
 // Namespace cap / scripts\common\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe60
 // Size: 0x9b
 function function_5a9987f1e5bbd641()
@@ -431,12 +432,12 @@ function function_5a9987f1e5bbd641()
 }
 
 // Namespace cap / scripts\common\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf03
 // Size: 0xda
 function function_3327078daa3ecd38()
 {
-    if ( isdefined( level.var_ba6be00a0c2658cc ) && function_a6025442a4e1c649( level.var_ba6be00a0c2658cc, self ) )
+    if ( isdefined( level.sight_trace_queue ) && function_a6025442a4e1c649( level.sight_trace_queue, self ) )
     {
         level notify( "player_look_at_process" );
         
@@ -445,9 +446,9 @@ function function_3327078daa3ecd38()
             level.var_f62b6e59c0e00d48.lookatlock = 0;
         }
         
-        if ( isdefined( level.var_ba6be00a0c2658cc ) )
+        if ( isdefined( level.sight_trace_queue ) )
         {
-            level.var_ba6be00a0c2658cc = undefined;
+            level.sight_trace_queue = undefined;
         }
     }
     
@@ -468,7 +469,7 @@ function function_3327078daa3ecd38()
 }
 
 // Namespace cap / scripts\common\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfe5
 // Size: 0x61
 function cap_prop( capname, animset )
@@ -486,7 +487,7 @@ function cap_prop( capname, animset )
 }
 
 // Namespace cap / scripts\common\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x104e
 // Size: 0x92
 function function_882c76a8f1f5f9a6( states, var_b4c3697a9d2ed329 )
@@ -510,7 +511,7 @@ function function_882c76a8f1f5f9a6( states, var_b4c3697a9d2ed329 )
 }
 
 // Namespace cap / scripts\common\cap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e8
 // Size: 0x26
 function function_a05f4d85f33e9eea( states )

@@ -3,7 +3,7 @@
 #namespace zombie_traverse;
 
 // Namespace zombie_traverse / namespace_49a23839f1dcc76a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9b
 // Size: 0x32
 function processtraverse( taskid, params )
@@ -17,7 +17,7 @@ function processtraverse( taskid, params )
 }
 
 // Namespace zombie_traverse / namespace_49a23839f1dcc76a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd6
 // Size: 0x11, Type: bool
 function is_traversing()

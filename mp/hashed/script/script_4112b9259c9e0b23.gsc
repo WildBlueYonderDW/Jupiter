@@ -4,7 +4,7 @@
 #namespace mp_jup_st_c_ob_ambient_biomes_cs;
 
 // Namespace mp_jup_st_c_ob_ambient_biomes_cs / namespace_644f62ff38e6df05
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x103
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_c_ob_ambient_biomes_cs / namespace_644f62ff38e6df05
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x178
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_c_ob_ambient_biomes_cs / namespace_644f62ff38e6df05
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e7
 // Size: 0x263
 function createstructs( fe, us, cf )
@@ -82,7 +82,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_ambient_biomes_cs / namespace_644f62ff38e6df05
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x452
 // Size: 0x2
 function function_7af6d59eef91a7dd()

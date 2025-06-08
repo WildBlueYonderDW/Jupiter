@@ -15,7 +15,7 @@
 #namespace destructible;
 
 // Namespace destructible / scripts\mp\destructible
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b5
 // Size: 0x2
 function init()
@@ -24,7 +24,7 @@ function init()
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bf
 // Size: 0x2
 function script_model_anims()
@@ -33,7 +33,7 @@ function script_model_anims()
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5c9
 // Size: 0xe8
 function create_player_rig( player, animname, rig_model )
@@ -61,7 +61,7 @@ function create_player_rig( player, animname, rig_model )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b9
 // Size: 0x92
 function remove_player_rig( player )
@@ -88,7 +88,7 @@ function remove_player_rig( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x753
 // Size: 0x1c
 function watch_remove_rig( struct )
@@ -97,7 +97,7 @@ function watch_remove_rig( struct )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x777
 // Size: 0xd9
 function add_destructible_array( value, type )
@@ -121,7 +121,7 @@ function add_destructible_array( value, type )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x858
 // Size: 0xf0
 function add_destructible( struct, ent )
@@ -151,7 +151,7 @@ function add_destructible( struct, ent )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x950
 // Size: 0x1c4
 function read_properties( ent )
@@ -218,7 +218,7 @@ function read_properties( ent )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb1c
 // Size: 0x11c
 function read_actions( ent )
@@ -256,14 +256,15 @@ function read_actions( ent )
             ent.actions[ type ] = [];
         }
         
-        for (index = 1; index < actions.size; index++) {
+        for ( index = 1; index < actions.size ; index++ )
+        {
             ent.actions[ type ][ ent.actions[ type ].size ] = actions[ index ];
         }
     }
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc40
 // Size: 0x24
 function waittime_process_action( type, time )
@@ -274,7 +275,7 @@ function waittime_process_action( type, time )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6c
 // Size: 0x1e
 function waitmsg_process_action( waitmsg )
@@ -285,7 +286,7 @@ function waitmsg_process_action( waitmsg )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc92
 // Size: 0xea
 function process_action( type )
@@ -310,7 +311,7 @@ function process_action( type )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd84
 // Size: 0x15e
 function actionmap( action )
@@ -349,7 +350,7 @@ function actionmap( action )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeea
 // Size: 0x7a
 function setup_bomb_object( position )
@@ -368,7 +369,7 @@ function setup_bomb_object( position )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf6d
 // Size: 0x381
 function bomb_planted_think( scenenodekey, player )
@@ -462,7 +463,7 @@ function bomb_planted_think( scenenodekey, player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12f6
 // Size: 0x46
 function playhostagehelp( origin )
@@ -476,7 +477,7 @@ function playhostagehelp( origin )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1344
 // Size: 0x1fe
 function bomb_fuse_think( team )
@@ -542,7 +543,7 @@ function bomb_fuse_think( team )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x154a
 // Size: 0x8c
 function usetriggerthink( trigger )
@@ -582,7 +583,7 @@ function usetriggerthink( trigger )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15de
 // Size: 0x3b7, Type: bool
 function plantbreachc4( trigger, player )
@@ -655,7 +656,7 @@ function plantbreachc4( trigger, player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x199e
 // Size: 0xc7
 function watchplayerdeath( player )
@@ -688,7 +689,7 @@ function watchplayerdeath( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a6d
 // Size: 0x6c
 function allowplayertobreach( player )
@@ -703,7 +704,7 @@ function allowplayertobreach( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ae1
 // Size: 0x6c
 function disallowplayertobreach( player )
@@ -718,7 +719,7 @@ function disallowplayertobreach( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b55
 // Size: 0x26
 function defusec4( player )
@@ -729,7 +730,7 @@ function defusec4( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b83
 // Size: 0xa3
 function onplayerjoinedteam( player )
@@ -744,7 +745,7 @@ function onplayerjoinedteam( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c2e
 // Size: 0x69
 function assigninteractteam( teams )
@@ -758,7 +759,7 @@ function assigninteractteam( teams )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c9f
 // Size: 0x1c4
 function applyinteractteam( player )
@@ -819,7 +820,7 @@ function applyinteractteam( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e6b
 // Size: 0x46
 function givebreachscore( player )
@@ -831,7 +832,7 @@ function givebreachscore( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1eb9
 // Size: 0x46
 function givedefusescore( player )
@@ -843,7 +844,7 @@ function givedefusescore( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f07
 // Size: 0x94
 function givegunless()
@@ -870,7 +871,7 @@ function givegunless()
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fa4
 // Size: 0xa8
 function takegunless()
@@ -905,7 +906,7 @@ function takegunless()
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2054
 // Size: 0x13
 function rockable_cars_init()
@@ -916,7 +917,7 @@ function rockable_cars_init()
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x206f
 // Size: 0x48f
 function rockable_cars_watch_players()
@@ -1061,7 +1062,7 @@ function rockable_cars_watch_players()
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2506
 // Size: 0x3b
 function rockable_car_add_player( player )
@@ -1072,7 +1073,7 @@ function rockable_car_add_player( player )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2549
 // Size: 0x99
 function rockable_car_remove_player( player, id, touchdelay, var_bd8dbaf4dd9ca95d )
@@ -1105,7 +1106,7 @@ function rockable_car_remove_player( player, id, touchdelay, var_bd8dbaf4dd9ca95
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x25ea
 // Size: 0x83
 function rockable_car_rock( player, var_60bc4ce4bc1694b7, halfwidthratio, forwarddot, rightdot, rockstr )
@@ -1163,7 +1164,7 @@ function private function_a06f32bc36f6c177( scriptable )
 }
 
 // Namespace destructible / scripts\mp\destructible
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x276f
 // Size: 0x1a5
 function function_aaab78a3cf337331()

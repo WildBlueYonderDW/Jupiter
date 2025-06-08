@@ -6,7 +6,7 @@
 #namespace namespace_30101e0cca498f6;
 
 // Namespace namespace_30101e0cca498f6 / namespace_8a8c1d3ffd176d9c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x176
 // Size: 0x3b
 function init()

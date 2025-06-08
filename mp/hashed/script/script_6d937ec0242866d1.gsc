@@ -13,7 +13,7 @@
 #namespace perk_elemental_pop;
 
 // Namespace perk_elemental_pop / namespace_a5e5d39b40a1867d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1da
 // Size: 0x3b
 function function_1c48a1ed54087b1a( str_currency, var_fe59c44529c721a0 )
@@ -23,7 +23,7 @@ function function_1c48a1ed54087b1a( str_currency, var_fe59c44529c721a0 )
 }
 
 // Namespace perk_elemental_pop / namespace_a5e5d39b40a1867d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21d
 // Size: 0x9
 function function_ce2ae1a55866d69f()
@@ -32,7 +32,7 @@ function function_ce2ae1a55866d69f()
 }
 
 // Namespace perk_elemental_pop / namespace_a5e5d39b40a1867d
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x22e
 // Size: 0x2a
 function function_c7c84f82dc37b551( b_pause, str_perk, str_result, n_slot )
@@ -41,7 +41,7 @@ function function_c7c84f82dc37b551( b_pause, str_perk, str_result, n_slot )
 }
 
 // Namespace perk_elemental_pop / namespace_a5e5d39b40a1867d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x260
 // Size: 0xe
 function function_3d3c00faf71112ba()
@@ -50,7 +50,7 @@ function function_3d3c00faf71112ba()
 }
 
 // Namespace perk_elemental_pop / namespace_a5e5d39b40a1867d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x276
 // Size: 0xe
 function function_a95149aa2feecfbc()
@@ -59,7 +59,7 @@ function function_a95149aa2feecfbc()
 }
 
 // Namespace perk_elemental_pop / namespace_a5e5d39b40a1867d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28c
 // Size: 0x331
 function function_d7e4ceb7a0efa76d( params )
@@ -128,7 +128,7 @@ function function_d7e4ceb7a0efa76d( params )
 }
 
 // Namespace perk_elemental_pop / namespace_a5e5d39b40a1867d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c6
 // Size: 0x3f
 function unset_aat_override( w_aat )
@@ -143,7 +143,7 @@ function unset_aat_override( w_aat )
 }
 
 // Namespace perk_elemental_pop / namespace_a5e5d39b40a1867d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60d
 // Size: 0x55, Type: bool
 function is_valid_weapon( weapon )
@@ -167,7 +167,7 @@ function is_valid_weapon( weapon )
 }
 
 // Namespace perk_elemental_pop / namespace_a5e5d39b40a1867d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66b
 // Size: 0x55
 function function_9504b6ab098fd387( str_mod )

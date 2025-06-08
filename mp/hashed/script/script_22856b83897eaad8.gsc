@@ -8,8 +8,8 @@
 #namespace ob_armor;
 
 // Namespace ob_armor / namespace_c7a286c0a621f184
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x150
+// Params 0
+// Checksum 0x0, Offset: 0x14f
 // Size: 0x40
 function init_armor()
 {
@@ -23,8 +23,8 @@ function init_armor()
 }
 
 // Namespace ob_armor / namespace_c7a286c0a621f184
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x198
+// Params 0
+// Checksum 0x0, Offset: 0x197
 // Size: 0x1c
 function set_golden_armor()
 {
@@ -34,8 +34,8 @@ function set_golden_armor()
 }
 
 // Namespace ob_armor / namespace_c7a286c0a621f184
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bc
+// Params 0
+// Checksum 0x0, Offset: 0x1bb
 // Size: 0x13
 function function_ed2a0bbe317941f6()
 {
@@ -44,8 +44,8 @@ function function_ed2a0bbe317941f6()
 }
 
 // Namespace ob_armor / namespace_c7a286c0a621f184
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d7
+// Params 0
+// Checksum 0x0, Offset: 0x1d6
 // Size: 0xb2
 function function_fdb99149ef6e3583()
 {
@@ -78,8 +78,8 @@ function function_fdb99149ef6e3583()
 }
 
 // Namespace ob_armor / namespace_c7a286c0a621f184
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x291
+// Params 3
+// Checksum 0x0, Offset: 0x290
 // Size: 0x57
 function function_c71dfd42d05c80b1( damage, eattacker, smeansofdeath )
 {
@@ -100,8 +100,8 @@ function function_c71dfd42d05c80b1( damage, eattacker, smeansofdeath )
 }
 
 // Namespace ob_armor / namespace_c7a286c0a621f184
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f0
+// Params 3
+// Checksum 0x0, Offset: 0x2ef
 // Size: 0xba
 function function_1260ae7112d01f9c( damage, eattacker, smeansofdeath )
 {
@@ -139,8 +139,8 @@ function function_1260ae7112d01f9c( damage, eattacker, smeansofdeath )
 /#
 
     // Namespace ob_armor / namespace_c7a286c0a621f184
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3b3
+    // Params 0
+    // Checksum 0x0, Offset: 0x3b2
     // Size: 0x73, Type: dev
     function function_e54948c0841f1fd5()
     {
@@ -153,8 +153,8 @@ function function_1260ae7112d01f9c( damage, eattacker, smeansofdeath )
     }
 
     // Namespace ob_armor / namespace_c7a286c0a621f184
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x42e
+    // Params 0
+    // Checksum 0x0, Offset: 0x42d
     // Size: 0x59, Type: dev
     function function_1e66cdd3c32a9cd9()
     {
@@ -165,8 +165,8 @@ function function_1260ae7112d01f9c( damage, eattacker, smeansofdeath )
     }
 
     // Namespace ob_armor / namespace_c7a286c0a621f184
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x48f
+    // Params 1
+    // Checksum 0x0, Offset: 0x48e
     // Size: 0x75, Type: dev
     function function_b24d8b90edce1cf8( params )
     {
@@ -179,8 +179,8 @@ function function_1260ae7112d01f9c( damage, eattacker, smeansofdeath )
     }
 
     // Namespace ob_armor / namespace_c7a286c0a621f184
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x50c
+    // Params 1
+    // Checksum 0x0, Offset: 0x50b
     // Size: 0x3e, Type: dev
     function function_f9dabaa1b39d496c( platecarrierlevel )
     {

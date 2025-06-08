@@ -25,7 +25,7 @@
 #namespace light_tank_mp;
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3de
 // Size: 0xf3
 function light_tank_mp_init()
@@ -46,7 +46,7 @@ function light_tank_mp_init()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d9
 // Size: 0x2
 function light_tank_mp_initlate()
@@ -55,7 +55,7 @@ function light_tank_mp_initlate()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e3
 // Size: 0x88
 function light_tank_mp_initspawning()
@@ -74,7 +74,7 @@ function light_tank_mp_initspawning()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x573
 // Size: 0x33
 function light_tank_mp_initcapture()
@@ -83,7 +83,7 @@ function light_tank_mp_initcapture()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5ae
 // Size: 0x21
 function light_tank_mp_activate( vehicle )
@@ -93,7 +93,7 @@ function light_tank_mp_activate( vehicle )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5d7
 // Size: 0x3d
 function light_tank_mp_startcapture( vehicle, owner, team )
@@ -110,7 +110,7 @@ function light_tank_mp_startcapture( vehicle, owner, team )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x61c
 // Size: 0x13
 function light_tank_mp_endcapture( vehicle )
@@ -119,7 +119,7 @@ function light_tank_mp_endcapture( vehicle )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x637
 // Size: 0x79
 function light_tank_mp_createownercaptureobject( vehicle, owner )
@@ -135,7 +135,7 @@ function light_tank_mp_createownercaptureobject( vehicle, owner )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b9
 // Size: 0x6c
 function light_tank_mp_createothercaptureobject( vehicle )
@@ -151,7 +151,7 @@ function light_tank_mp_createothercaptureobject( vehicle )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x72e
 // Size: 0xc7
 function light_tank_mp_setupcaptureobject( usetime )
@@ -181,7 +181,7 @@ function light_tank_mp_setupcaptureobject( usetime )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7fd
 // Size: 0x26
 function light_tank_mp_deletecaptureobject()
@@ -195,7 +195,7 @@ function light_tank_mp_deletecaptureobject()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x82b
 // Size: 0x3c
 function light_tank_mp_deletecaptureobjects()
@@ -212,7 +212,7 @@ function light_tank_mp_deletecaptureobjects()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x86f
 // Size: 0xcd
 function light_tank_mp_monitorownercapture( owner, vehicle )
@@ -247,7 +247,7 @@ function light_tank_mp_monitorownercapture( owner, vehicle )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x944
 // Size: 0xc0
 function light_tank_mp_monitorothercapture( vehicle )
@@ -284,7 +284,7 @@ function light_tank_mp_monitorothercapture( vehicle )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0c
 // Size: 0x70
 function light_tank_mp_monitorcaptureinternal()
@@ -306,7 +306,7 @@ function light_tank_mp_monitorcaptureinternal()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa84
 // Size: 0xb5
 function light_tank_mp_monitorownercapturevisibility( owner )
@@ -345,7 +345,7 @@ function light_tank_mp_monitorownercapturevisibility( owner )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb41
 // Size: 0xf6
 function light_tank_mp_monitorothercapturevisibility()
@@ -387,7 +387,7 @@ function light_tank_mp_monitorothercapturevisibility()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc3f
 // Size: 0x76, Type: bool
 function light_tank_mp_canstartcapture( player )
@@ -426,7 +426,7 @@ function light_tank_mp_canstartcapture( player )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcbe
 // Size: 0xb9, Type: bool
 function light_tank_mp_cankeepcapturing()
@@ -470,7 +470,7 @@ function light_tank_mp_cankeepcapturing()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd80
 // Size: 0x23
 function light_tank_mp_playerstartcapture( player )
@@ -480,7 +480,7 @@ function light_tank_mp_playerstartcapture( player )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdab
 // Size: 0x2c
 function light_tank_mp_playerstopcapture( player )
@@ -494,7 +494,7 @@ function light_tank_mp_playerstopcapture( player )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xddf
 // Size: 0x67, Type: bool
 function light_tank_mp_shouldawardattacker( vehicle, attacker )
@@ -518,7 +518,7 @@ function light_tank_mp_shouldawardattacker( vehicle, attacker )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe4f
 // Size: 0x119
 function bctracking()
@@ -560,7 +560,7 @@ function bctracking()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf70
 // Size: 0xa5
 function light_tank_mp_spawncallback( spawndata, faildata )
@@ -584,7 +584,7 @@ function light_tank_mp_spawncallback( spawndata, faildata )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x101e
 // Size: 0xa
 function light_tank_mp_ondeathrespawncallback()
@@ -593,7 +593,7 @@ function light_tank_mp_ondeathrespawncallback()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1030
 // Size: 0x143
 function light_tank_mp_waitandspawn()
@@ -637,7 +637,7 @@ function light_tank_mp_waitandspawn()
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x117b
 // Size: 0x8d
 function light_tank_mp_filterdropspawns( dropspawns )
@@ -661,7 +661,7 @@ function light_tank_mp_filterdropspawns( dropspawns )
 }
 
 // Namespace light_tank_mp / scripts\mp\vehicles\light_tank_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1211
 // Size: 0x96
 function light_tank_mp_getdropspawnignorelist( ignorelist )

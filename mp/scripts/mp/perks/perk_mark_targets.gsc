@@ -8,7 +8,7 @@
 #namespace perk_mark_targets;
 
 // Namespace perk_mark_targets / scripts\mp\perks\perk_mark_targets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x105
 // Size: 0x2
 function marktarget_init()
@@ -17,7 +17,7 @@ function marktarget_init()
 }
 
 // Namespace perk_mark_targets / scripts\mp\perks\perk_mark_targets
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10f
 // Size: 0x71
 function marktarget_run( victim, objweapon, smeansofdeath )
@@ -29,7 +29,7 @@ function marktarget_run( victim, objweapon, smeansofdeath )
 }
 
 // Namespace perk_mark_targets / scripts\mp\perks\perk_mark_targets
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x188
 // Size: 0x3d
 function marktarget_execute( target )
@@ -46,7 +46,7 @@ function marktarget_execute( target )
 }
 
 // Namespace perk_mark_targets / scripts\mp\perks\perk_mark_targets
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cd
 // Size: 0x70
 function tagmarkedplayer( target )
@@ -69,7 +69,7 @@ function tagmarkedplayer( target )
 }
 
 // Namespace perk_mark_targets / scripts\mp\perks\perk_mark_targets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x245
 // Size: 0xc
 function removemarkfromtarget()

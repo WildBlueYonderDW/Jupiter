@@ -21,7 +21,7 @@
 #namespace br_extract_quest;
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b4
 // Size: 0x2b9
 function init()
@@ -74,7 +74,7 @@ function init()
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x875
 // Size: 0x9f
 function extracthelipadusecallback( entity, player, amount )
@@ -90,7 +90,7 @@ function extracthelipadusecallback( entity, player, amount )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91c
 // Size: 0x63
 function extractquest_removequestinstance()
@@ -112,7 +112,7 @@ function extractquest_removequestinstance()
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x987
 // Size: 0x79
 function extractlocale_removelocaleinstance()
@@ -131,7 +131,7 @@ function extractlocale_removelocaleinstance()
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa08
 // Size: 0x48, Type: bool
 function extracttablet_init()
@@ -153,7 +153,7 @@ function extracttablet_init()
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa59
 // Size: 0x272
 function extractlocale_createquestlocale( placement )
@@ -195,7 +195,7 @@ function extractlocale_createquestlocale( placement )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd4
 // Size: 0x52, Type: bool
 function extractlocale_islocaleavailable( position )
@@ -208,7 +208,7 @@ function extractlocale_islocaleavailable( position )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd2f
 // Size: 0x62
 function removeextracthelipad()
@@ -229,7 +229,7 @@ function removeextracthelipad()
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd99
 // Size: 0x15
 function extractlocale_checkiflocaleisavailable( search_params )
@@ -240,7 +240,7 @@ function extractlocale_checkiflocaleisavailable( search_params )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdb6
 // Size: 0x109
 function extractlocale_circletick( dangercircleorigin, dangercircleradius )
@@ -278,7 +278,7 @@ function extractlocale_circletick( dangercircleorigin, dangercircleradius )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec7
 // Size: 0x1d
 function extractlocale_onentergulag( player )
@@ -291,7 +291,7 @@ function extractlocale_onentergulag( player )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeec
 // Size: 0x41
 function extractlocale_onrespawn( player )
@@ -307,7 +307,7 @@ function extractlocale_onrespawn( player )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf35
 // Size: 0xe7
 function extractupdateicons()
@@ -332,7 +332,7 @@ function extractupdateicons()
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1024
 // Size: 0x25
 function extracthideiconfromplayer( player )
@@ -345,7 +345,7 @@ function extracthideiconfromplayer( player )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1051
 // Size: 0x25
 function extractshowicontoplayer( player )
@@ -358,7 +358,7 @@ function extractshowicontoplayer( player )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107e
 // Size: 0x1b
 function extractupdateiconsframeend()
@@ -373,7 +373,7 @@ function extractupdateiconsframeend()
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10a1
 // Size: 0xe0
 function extractupdatehud( var_c8029619477a0d4b, carryingplayer )
@@ -398,7 +398,7 @@ function extractupdatehud( var_c8029619477a0d4b, carryingplayer )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1189
 // Size: 0x398
 function takequestitem( pickupent )
@@ -472,7 +472,7 @@ function takequestitem( pickupent )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1529
 // Size: 0x54
 function setweaponcarry( locale, unlockablelootid )
@@ -484,7 +484,7 @@ function setweaponcarry( locale, unlockablelootid )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1585
 // Size: 0x2a
 function unsetweaponcarry()
@@ -496,7 +496,7 @@ function unsetweaponcarry()
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15b7
 // Size: 0x7a
 function extract_removemissionweapon( quest )
@@ -516,7 +516,7 @@ function extract_removemissionweapon( quest )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1639
 // Size: 0x25, Type: bool
 function extract_ismissionweapon( weapon )
@@ -530,7 +530,7 @@ function extract_ismissionweapon( weapon )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1667
 // Size: 0xfc
 function watchweapondrop( player )
@@ -558,7 +558,7 @@ function watchweapondrop( player )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x176b
 // Size: 0x7d
 function watchweapondeathordisconnect( player )
@@ -584,7 +584,7 @@ function watchweapondeathordisconnect( player )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17f0
 // Size: 0x1e6
 function watchfordeposit( player )
@@ -626,7 +626,7 @@ function watchfordeposit( player )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19de
 // Size: 0xbf
 function displaydelayedmissioncompletesplash( player )
@@ -644,7 +644,7 @@ function displaydelayedmissioncompletesplash( player )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1aa5
 // Size: 0xd2
 function getsearchparams( tablet )
@@ -662,7 +662,7 @@ function getsearchparams( tablet )
 }
 
 // Namespace br_extract_quest / scripts\mp\gametypes\br_extract_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b80
 // Size: 0x30
 function extract_ontimerexpired()

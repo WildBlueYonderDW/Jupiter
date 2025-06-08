@@ -9,7 +9,7 @@
 #namespace elevators;
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bc
 // Size: 0x1e7
 function initelevators()
@@ -57,7 +57,7 @@ function initelevators()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ab
 // Size: 0x2fd
 function function_b0811deba3748e9d( stop )
@@ -129,7 +129,7 @@ function function_b0811deba3748e9d( stop )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcb1
 // Size: 0x9b2
 function function_c0032a2e585d337b( elevatorset, var_9c512bd31f6b92d0, overridemodel )
@@ -354,7 +354,7 @@ function function_c0032a2e585d337b( elevatorset, var_9c512bd31f6b92d0, overridem
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x166c
 // Size: 0xa
 function elevatoronspawnplayer()
@@ -363,7 +363,7 @@ function elevatoronspawnplayer()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x167e
 // Size: 0x24
 function onspawnfinished()
@@ -378,7 +378,7 @@ function onspawnfinished()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16aa
 // Size: 0x154
 function isentitytouchingdoortrigger( ent )
@@ -442,7 +442,7 @@ function isentitytouchingdoortrigger( ent )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1806
 // Size: 0x20c
 function function_29de8f099a0a63df( ent )
@@ -517,7 +517,7 @@ function function_29de8f099a0a63df( ent )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a1a
 // Size: 0x154
 function function_a465aa01fa0187d8( ent )
@@ -581,7 +581,7 @@ function function_a465aa01fa0187d8( ent )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b76
 // Size: 0xb1
 function function_e7dd97852a7b0baf()
@@ -610,7 +610,7 @@ function function_e7dd97852a7b0baf()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c2f
 // Size: 0x26
 function function_bd1cd7b7c484f126()
@@ -626,7 +626,7 @@ function function_bd1cd7b7c484f126()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c5d
 // Size: 0xd
 function function_12e75ac514f84d03()
@@ -636,7 +636,7 @@ function function_12e75ac514f84d03()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1c72
 // Size: 0x199
 function function_52b0636366efd3e4( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -666,7 +666,7 @@ function function_52b0636366efd3e4( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1e13
 // Size: 0xaa
 function function_d99e32e6787622fe( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -681,7 +681,7 @@ function function_d99e32e6787622fe( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ec5
 // Size: 0x81
 function function_c327c9e30f9df682()
@@ -697,7 +697,7 @@ function function_c327c9e30f9df682()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1f4e
 // Size: 0x102
 function elevatorbuttonpressed( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -722,7 +722,7 @@ function elevatorbuttonpressed( instance, part, state, player, var_a5b2c541413aa
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2058
 // Size: 0x9f
 function function_fea8a1d17e4d669f()
@@ -741,7 +741,7 @@ function function_fea8a1d17e4d669f()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20ff
 // Size: 0x86
 function function_7c2abb1b0d147a89()
@@ -757,7 +757,7 @@ function function_7c2abb1b0d147a89()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x218d
 // Size: 0x21
 function function_580e82173ae3940c()
@@ -769,7 +769,7 @@ function function_580e82173ae3940c()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21b6
 // Size: 0x62
 function function_4497ec9c55f12123()
@@ -792,7 +792,7 @@ function function_4497ec9c55f12123()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2220
 // Size: 0xfb
 function function_ec009a967d1d5eb9()
@@ -817,7 +817,7 @@ function function_ec009a967d1d5eb9()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2323
 // Size: 0x185
 function function_8b680b3ef155fc34()
@@ -860,12 +860,13 @@ function function_8b680b3ef155fc34()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24b0
 // Size: 0x455
 function function_82893c609a46609()
 {
-    for (i = 0; i < self.floors.size; i++) {
+    for ( i = 0; i < self.floors.size ; i++ )
+    {
         if ( isdefined( self.floors[ i ].indicator ) )
         {
             if ( self.floors[ i ].floornum == self.targetfloor )
@@ -926,7 +927,8 @@ function function_82893c609a46609()
     self.currentfloor = self.targetfloor;
     self.state = "doors_open";
     
-    for (i = 0; i < self.floors.size; i++) {
+    for ( i = 0; i < self.floors.size ; i++ )
+    {
         if ( isdefined( self.floors[ i ].indicator ) )
         {
             if ( self.floors[ i ].floornum != self.currentfloor )
@@ -938,7 +940,7 @@ function function_82893c609a46609()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x290d
 // Size: 0x2b
 function function_7995b0b9c011087( duration )
@@ -950,7 +952,7 @@ function function_7995b0b9c011087( duration )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2940
 // Size: 0x6e
 function function_f99e0077b2350e7()
@@ -975,7 +977,7 @@ function function_f99e0077b2350e7()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29b6
 // Size: 0x3e
 function function_ef19d9446fc2352( num )
@@ -984,7 +986,7 @@ function function_ef19d9446fc2352( num )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29fd
 // Size: 0x26
 function function_c78df968f4751498()
@@ -995,7 +997,7 @@ function function_c78df968f4751498()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a2b
 // Size: 0x111
 function function_bc48943904164e29( str )
@@ -1019,7 +1021,7 @@ function function_bc48943904164e29( str )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b44
 // Size: 0x3cb
 function script_model_anims( subtype )
@@ -1063,7 +1065,7 @@ function script_model_anims( subtype )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f17
 // Size: 0xd5
 function elevatoroccupancytracking( enttriggered, car )
@@ -1107,7 +1109,7 @@ function elevatoroccupancytracking( enttriggered, car )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ff4
 // Size: 0x5ac
 function function_8e2d666b5b0f2bd3( car )
@@ -1232,7 +1234,7 @@ function function_8e2d666b5b0f2bd3( car )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35a8
 // Size: 0xb7
 function function_e7de8f7b4f13cd26( occupant, remove_occupant )
@@ -1263,7 +1265,7 @@ function function_e7de8f7b4f13cd26( occupant, remove_occupant )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3667
 // Size: 0x73
 function removeoccupantondeath( occupant )
@@ -1284,7 +1286,7 @@ function removeoccupantondeath( occupant )
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x36e2
 // Size: 0xd1, Type: bool
 function function_cba565314ac6a79e( point, corner_a, corner_b, corner_c, corner_d )
@@ -1307,7 +1309,7 @@ function function_cba565314ac6a79e( point, corner_a, corner_b, corner_c, corner_
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37bc
 // Size: 0x79
 function function_5bfc9aae53c14056()
@@ -1330,7 +1332,7 @@ function function_5bfc9aae53c14056()
 }
 
 // Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x383d
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )

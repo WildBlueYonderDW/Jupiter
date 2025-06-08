@@ -22,7 +22,7 @@
 #namespace wlk;
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f6
 // Size: 0x245
 function main()
@@ -71,7 +71,7 @@ function main()
     game[ "dialog" ][ "boost" ] = "iw9_mtdm_mode_uktl_bost";
     game[ "dialog" ][ "offense_obj" ] = "iw9_mtdm_mode_uktl_bost";
     game[ "dialog" ][ "defense_obj" ] = "iw9_mtdm_mode_uktl_bost";
-    level.testtdmanywhere = getdvarint( @"hash_157f06aff3c1f357", 0 );
+    level.testtdmanywhere = getdvarint( @"scr_tdmanywhere", 0 );
     level.tdmanywhere_dropheight = getdvarfloat( @"hash_c692d2a11dd6615", 1000 );
     level.tdmanywhere_perpenoffset = getdvarfloat( @"hash_631c58033f43c2dc", 2048 );
     level.tdmanywhere_distoffset = getdvarfloat( @"hash_f314048c87ae28aa", 4092 );
@@ -92,7 +92,7 @@ function main()
 }
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x643
 // Size: 0x37
 function initializematchrules()
@@ -104,7 +104,7 @@ function initializematchrules()
 }
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x682
 // Size: 0x14a
 function onstartgametype()
@@ -167,7 +167,7 @@ function onstartgametype()
 }
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d4
 // Size: 0x9
 function updategametypedvars()
@@ -176,7 +176,7 @@ function updategametypedvars()
 }
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e5
 // Size: 0x286
 function initspawns()
@@ -240,7 +240,7 @@ function initspawns()
 /#
 
     // Namespace wlk / scripts\mp\gametypes\wlk
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa73
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -256,7 +256,7 @@ function initspawns()
 #/
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xade
 // Size: 0x1a5
 function getspawnpoint()
@@ -310,7 +310,7 @@ function getspawnpoint()
 }
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc8c
 // Size: 0x44
 function onspawnplayer( revivespawn )
@@ -328,7 +328,7 @@ function onspawnplayer( revivespawn )
 /#
 
     // Namespace wlk / scripts\mp\gametypes\wlk
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xcd8
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -367,7 +367,7 @@ function onspawnplayer( revivespawn )
 #/
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xe5a
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -376,7 +376,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea2
 // Size: 0x53
 function ontimelimit()
@@ -398,7 +398,7 @@ function ontimelimit()
 /#
 
     // Namespace wlk / scripts\mp\gametypes\wlk
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xefd
     // Size: 0xe8, Type: dev
     function function_8469a5927d069db7()
@@ -413,7 +413,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x102>", points, 0 );
@@ -425,7 +425,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x10c>", points, 0 );
@@ -441,7 +441,7 @@ function ontimelimit()
     }
 
     // Namespace wlk / scripts\mp\gametypes\wlk
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xfed
     // Size: 0x1ee, Type: dev
     function function_bf2918399f1800b1()
@@ -479,7 +479,7 @@ function ontimelimit()
 #/
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11e3
 // Size: 0x19a
 function tdmanywhere_debugshowlocs()
@@ -502,7 +502,7 @@ function tdmanywhere_debugshowlocs()
 }
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1385
 // Size: 0x40f
 function monitorhotfoot()
@@ -617,7 +617,7 @@ function monitorhotfoot()
 }
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x179c
 // Size: 0xc0
 function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -637,7 +637,7 @@ function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, ob
 }
 
 // Namespace wlk / scripts\mp\gametypes\wlk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1864
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()

@@ -7,7 +7,7 @@
 #namespace fire_traps;
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22a
 // Size: 0x2b4
 function init()
@@ -49,7 +49,7 @@ function init()
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e6
 // Size: 0x70
 function function_86e572a7a586ff11()
@@ -69,7 +69,7 @@ function function_86e572a7a586ff11()
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55e
 // Size: 0x18b
 function function_468ebe30ca565ce4( traptype )
@@ -110,7 +110,7 @@ function function_468ebe30ca565ce4( traptype )
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f1
 // Size: 0xf6
 function function_7d27b7091e90ddfc()
@@ -130,7 +130,7 @@ function function_7d27b7091e90ddfc()
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ef
 // Size: 0x2a
 function function_b93f535898283956( traptype )
@@ -139,7 +139,7 @@ function function_b93f535898283956( traptype )
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x822
 // Size: 0xa9
 function function_be9b3ba9656f790b( node )
@@ -160,7 +160,7 @@ function function_be9b3ba9656f790b( node )
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d4
 // Size: 0xd9
 function function_a68fe4f7ab9386b4( scriptable )
@@ -204,7 +204,7 @@ function function_a68fe4f7ab9386b4( scriptable )
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x9b5
 // Size: 0x8d
 function function_5413e583733d8000( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -216,7 +216,7 @@ function function_5413e583733d8000( einflictor, eattacker, instance, idamage, id
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa4a
 // Size: 0xff
 function function_abfa9fc534304bac( node )
@@ -246,7 +246,7 @@ function function_abfa9fc534304bac( node )
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb52
 // Size: 0xbb
 function function_9b60acd4b5af2d71( scriptable, radius, prelit )
@@ -277,7 +277,7 @@ function function_9b60acd4b5af2d71( scriptable, radius, prelit )
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc15
 // Size: 0xd4
 function function_24ad6db34abe8024( scriptable, radius, prelit, navobstacle )
@@ -285,7 +285,8 @@ function function_24ad6db34abe8024( scriptable, radius, prelit, navobstacle )
     level endon( "game_ended" );
     elapsedtime = 0;
     
-    for (keepburning = 1; keepburning; keepburning = 0) {
+    for ( keepburning = 1; keepburning ; keepburning = 0 )
+    {
         level.var_cbe618f35b332990 radiusdamage( scriptable.origin, radius, 5, 5, level.var_cbe618f35b332990, "MOD_FIRE", "molotov_mp", 0, 0 );
         wait 1;
         
@@ -308,7 +309,7 @@ function function_24ad6db34abe8024( scriptable, radius, prelit, navobstacle )
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcf1
 // Size: 0xbd
 function function_835640d85f3eb9c7( node )
@@ -336,7 +337,7 @@ function function_835640d85f3eb9c7( node )
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdb7
 // Size: 0xb0
 function function_53b4a8ace69c59ea()
@@ -362,7 +363,7 @@ function function_53b4a8ace69c59ea()
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe6f
 // Size: 0x2e
 function function_7fdb264c9e19b7b8()
@@ -377,7 +378,7 @@ function function_7fdb264c9e19b7b8()
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea5
 // Size: 0x73
 function function_45b0ef5d9cef9c8d()
@@ -393,7 +394,7 @@ function function_45b0ef5d9cef9c8d()
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf20
 // Size: 0xeb
 function function_c6434d5c21b8f943()
@@ -415,7 +416,7 @@ function function_c6434d5c21b8f943()
 }
 
 // Namespace fire_traps / scripts\mp\fire_traps
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1013
 // Size: 0xad
 function function_4ef3b2c51679f626()

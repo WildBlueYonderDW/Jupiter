@@ -5,7 +5,7 @@
 #namespace trace;
 
 // Namespace trace / scripts\engine\trace
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x3fc
 // Size: 0xa9
 function ray_trace( start, end, ignore, contentoverride, getsurfacetype, ignoreclutter, var_b00c60a54d663ca2 )
@@ -34,7 +34,7 @@ function ray_trace( start, end, ignore, contentoverride, getsurfacetype, ignorec
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4ae
 // Size: 0xbf
 function ray_trace_ents( start, end, ents, contentoverride, getsurfacetype, ignoreclutter )
@@ -65,7 +65,7 @@ function ray_trace_ents( start, end, ents, contentoverride, getsurfacetype, igno
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x576
 // Size: 0x85
 function player_viewangles( collisioncontents, getsurfacetype, ignoreclutter, var_b00c60a54d663ca2 )
@@ -95,7 +95,7 @@ function player_viewangles( collisioncontents, getsurfacetype, ignoreclutter, va
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x604
 // Size: 0x114
 function _bullet_trace( start, end, hitcharacters, ignore, itemclip, var_45ab9428a87b2b9f, var_c368ea2402a6a1ad, var_8812897bd00bf028, testglass )
@@ -136,7 +136,7 @@ function _bullet_trace( start, end, hitcharacters, ignore, itemclip, var_45ab942
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x720
 // Size: 0x34
 function _bullet_trace_passed( start, end, hitcharacters, ignore )
@@ -145,7 +145,7 @@ function _bullet_trace_passed( start, end, hitcharacters, ignore )
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x75d
 // Size: 0xe9
 function ray_trace_detail( start, end, ignore, contentoverride, getsurfacetype, ignoreclutter, var_b00c60a54d663ca2 )
@@ -184,7 +184,7 @@ function ray_trace_detail( start, end, ignore, contentoverride, getsurfacetype, 
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x84f
 // Size: 0xd1
 function ray_trace_get_all_results( start, end, ignore, contentoverride, getsurfacetype )
@@ -208,7 +208,7 @@ function ray_trace_get_all_results( start, end, ignore, contentoverride, getsurf
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x929
 // Size: 0x4e, Type: bool
 function ray_trace_passed( start, end, ignore, contentoverride )
@@ -218,7 +218,7 @@ function ray_trace_passed( start, end, ignore, contentoverride )
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x980
 // Size: 0x4f, Type: bool
 function ray_trace_detail_passed( start, end, ignore, contentoverride )
@@ -228,7 +228,7 @@ function ray_trace_detail_passed( start, end, ignore, contentoverride )
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9d8
 // Size: 0x73, Type: bool
 function can_see_origin( origin, test_characters )
@@ -250,7 +250,7 @@ function can_see_origin( origin, test_characters )
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xa54
 // Size: 0xb6
 function sphere_trace( start, end, radius, ignore, contentoverride, getsurfacetype, var_b00c60a54d663ca2 )
@@ -280,7 +280,7 @@ function sphere_trace( start, end, radius, ignore, contentoverride, getsurfacety
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xb13
 // Size: 0xbc
 function sphere_trace_get_all_results( start, end, radius, ignore, contentoverride, getsurfacetype, var_b00c60a54d663ca2 )
@@ -290,7 +290,8 @@ function sphere_trace_get_all_results( start, end, radius, ignore, contentoverri
     
     if ( isdefined( getsurfacetype ) && getsurfacetype )
     {
-        for (i = 0; i < trace.size; i++) {
+        for ( i = 0; i < trace.size ; i++ )
+        {
             trace[ i ] = convert_surface_flag( trace[ i ] );
         }
     }
@@ -303,7 +304,7 @@ function sphere_trace_get_all_results( start, end, radius, ignore, contentoverri
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xbd8
 // Size: 0x56, Type: bool
 function sphere_trace_passed( start, end, radius, ignore, contentoverride )
@@ -313,7 +314,7 @@ function sphere_trace_passed( start, end, radius, ignore, contentoverride )
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xc37
 // Size: 0xad
 function sphere_get_closest_point( position, radius, search_distance, ignore, contentoverride, getsurfacetype )
@@ -343,7 +344,7 @@ function sphere_get_closest_point( position, radius, search_distance, ignore, co
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xced
 // Size: 0x102
 function capsule_trace( start, end, radius, height, angles, ignore, contentoverride, getsurfacetype )
@@ -379,7 +380,7 @@ function capsule_trace( start, end, radius, height, angles, ignore, contentoverr
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xdf8
 // Size: 0x132
 function capsule_trace_get_all_results( start, end, radius, height, angles, ignore, contentoverride, getsurfacetype )
@@ -409,7 +410,7 @@ function capsule_trace_get_all_results( start, end, radius, height, angles, igno
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xf33
 // Size: 0xa7, Type: bool
 function capsule_trace_passed( start, end, radius, height, angles, ignore, contentoverride )
@@ -425,7 +426,7 @@ function capsule_trace_passed( start, end, radius, height, angles, ignore, conte
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xfe3
 // Size: 0xfd
 function capsule_get_closest_point( position, radius, height, angles, search_distance, ignore, contentoverride, getsurfacetype )
@@ -461,7 +462,7 @@ function capsule_get_closest_point( position, radius, height, angles, search_dis
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x10e9
 // Size: 0xe8
 function player_trace( start, end, angles, ignore, contentoverride, getsurfacetype, var_e98b3969bbe145d3 )
@@ -508,7 +509,7 @@ function player_trace( start, end, angles, ignore, contentoverride, getsurfacety
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x11da
 // Size: 0x118
 function player_trace_get_all_results( start, end, angles, ignore, contentoverride, getsurfacetype, var_e98b3969bbe145d3 )
@@ -549,7 +550,7 @@ function player_trace_get_all_results( start, end, angles, ignore, contentoverri
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x12fb
 // Size: 0x8e
 function player_trace_passed( start, end, angles, ignore, contentoverride, var_e98b3969bbe145d3 )
@@ -576,7 +577,7 @@ function player_trace_passed( start, end, angles, ignore, contentoverride, var_e
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1392
 // Size: 0x3f
 function player_get_closest_point_static( search_distance, ignore, contentoverride, getsurfacetype )
@@ -585,7 +586,7 @@ function player_get_closest_point_static( search_distance, ignore, contentoverri
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x13da
 // Size: 0xf7
 function player_get_closest_point( position, angles, search_distance, ignore, contentoverride, getsurfacetype )
@@ -640,7 +641,7 @@ function player_get_closest_point( position, angles, search_distance, ignore, co
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x14da
 // Size: 0xeb
 function ai_trace( start, end, angles, ignore, contentoverride, getsurfacetype, var_e98b3969bbe145d3 )
@@ -687,7 +688,7 @@ function ai_trace( start, end, angles, ignore, contentoverride, getsurfacetype, 
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x15ce
 // Size: 0x11b
 function ai_trace_get_all_results( start, end, angles, ignore, contentoverride, getsurfacetype, var_e98b3969bbe145d3 )
@@ -728,7 +729,7 @@ function ai_trace_get_all_results( start, end, angles, ignore, contentoverride, 
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x16f2
 // Size: 0x91
 function ai_trace_passed( start, end, angles, ignore, contentoverride, var_e98b3969bbe145d3 )
@@ -755,7 +756,7 @@ function ai_trace_passed( start, end, angles, ignore, contentoverride, var_e98b3
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x178c
 // Size: 0xe1
 function ai_get_closest_point( position, angles, search_distance, ignore, contentoverride, getsurfacetype )
@@ -801,7 +802,7 @@ function ai_get_closest_point( position, angles, search_distance, ignore, conten
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1876
 // Size: 0x52
 function create_solid_ai_contents( ignore_characters )
@@ -817,7 +818,7 @@ function create_solid_ai_contents( ignore_characters )
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18d1
 // Size: 0x39
 function function_2d88cb1f022d0989()
@@ -827,7 +828,7 @@ function function_2d88cb1f022d0989()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1913
 // Size: 0x56
 function create_opaque_ai_contents( ignore_character, ignore_foliage )
@@ -848,7 +849,7 @@ function create_opaque_ai_contents( ignore_character, ignore_foliage )
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1972
 // Size: 0x27
 function function_416688b9ffe933c4()
@@ -858,7 +859,7 @@ function function_416688b9ffe933c4()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a2
 // Size: 0x1e
 function create_ainosight_contents()
@@ -868,7 +869,7 @@ function create_ainosight_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19c9
 // Size: 0x27
 function create_world_contents()
@@ -878,7 +879,7 @@ function create_world_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19f9
 // Size: 0x11
 function function_b88b8bd51ea7fe24()
@@ -887,7 +888,7 @@ function function_b88b8bd51ea7fe24()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a13
 // Size: 0x1e
 function create_glass_contents()
@@ -897,7 +898,7 @@ function create_glass_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a3a
 // Size: 0x1e
 function create_ainoshoot_contents()
@@ -907,7 +908,7 @@ function create_ainoshoot_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a61
 // Size: 0x1e
 function create_item_contents()
@@ -917,7 +918,7 @@ function create_item_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a88
 // Size: 0x1e
 function create_itemclip_contents()
@@ -927,7 +928,7 @@ function create_itemclip_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aaf
 // Size: 0x1e
 function create_vehicle_contents()
@@ -937,7 +938,7 @@ function create_vehicle_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad6
 // Size: 0x1e
 function function_f3dae12daeb1e8bb()
@@ -947,7 +948,7 @@ function function_f3dae12daeb1e8bb()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1afd
 // Size: 0x27
 function create_shotclip_contents()
@@ -957,7 +958,7 @@ function create_shotclip_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b2d
 // Size: 0x1e
 function create_playerclip_contents()
@@ -967,7 +968,7 @@ function create_playerclip_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b54
 // Size: 0x1e
 function create_character_contents()
@@ -977,7 +978,7 @@ function create_character_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b7b
 // Size: 0x1e
 function function_95da3996aeae6098()
@@ -987,7 +988,7 @@ function function_95da3996aeae6098()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ba2
 // Size: 0x24
 function create_default_contents( ignore_characters )
@@ -1001,7 +1002,7 @@ function create_default_contents( ignore_characters )
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x1bcf
 // Size: 0x192
 function create_contents( character, world, glass, shotclip, item, vehicle, playerclip, ainosight, itemclip, vehicleclip, waterclip, cameraclip )
@@ -1073,7 +1074,7 @@ function create_contents( character, world, glass, shotclip, item, vehicle, play
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d6a
 // Size: 0xc9
 function function_f00c9e807784481e()
@@ -1083,7 +1084,7 @@ function function_f00c9e807784481e()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e3c
 // Size: 0xb7
 function create_all_contents()
@@ -1093,7 +1094,7 @@ function create_all_contents()
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1efc
 // Size: 0x42
 function convert_surface_flag( trace )
@@ -1105,7 +1106,7 @@ function convert_surface_flag( trace )
 }
 
 // Namespace trace / scripts\engine\trace
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1f47
 // Size: 0xbc
 function convert_capsule_data( var_cc43f8a28dc3bc22, var_b26c88a9b9f4ef65, radius, height, angles )
@@ -1135,7 +1136,7 @@ function convert_capsule_data( var_cc43f8a28dc3bc22, var_b26c88a9b9f4ef65, radiu
 /#
 
     // Namespace trace / scripts\engine\trace
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x200c
     // Size: 0xd2, Type: dev
     function draw_trace( trace, color, display_details, duration )
@@ -1169,7 +1170,7 @@ function convert_capsule_data( var_cc43f8a28dc3bc22, var_b26c88a9b9f4ef65, radiu
     }
 
     // Namespace trace / scripts\engine\trace
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x20e6
     // Size: 0x3cb, Type: dev
     function draw_trace_hit( trace, var_42ef1b9ce9e7de9c, color, display_details, duration )
@@ -1255,7 +1256,7 @@ function convert_capsule_data( var_cc43f8a28dc3bc22, var_b26c88a9b9f4ef65, radiu
     }
 
     // Namespace trace / scripts\engine\trace
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x24b9
     // Size: 0x3a9, Type: dev
     function draw_trace_type( debugdata, color, duration )
@@ -1290,7 +1291,8 @@ function convert_capsule_data( var_cc43f8a28dc3bc22, var_b26c88a9b9f4ef65, radiu
                 dist = distance( debugdata[ "<dev string:x350>" ], debugdata[ "<dev string:x361>" ] );
                 count = max( ceil( dist / 128 ), 1 );
                 
-                for (i = 0; i <= count; i++) {
+                for ( i = 0; i <= count ; i++ )
+                {
                     sphere( vectorlerp( start, end, i / count ), radius, no_color, 0, duration );
                     sphere( vectorlerp( start, end, i / count ), radius, half_color, 1, duration );
                 }
@@ -1329,7 +1331,8 @@ function convert_capsule_data( var_cc43f8a28dc3bc22, var_b26c88a9b9f4ef65, radiu
                 dist = distance( debugdata[ "<dev string:x350>" ], debugdata[ "<dev string:x361>" ] );
                 count = max( ceil( dist / 128 ), 1 );
                 
-                for (i = 0; i <= count; i++) {
+                for ( i = 0; i <= count ; i++ )
+                {
                     draw_capsule( vectorlerp( start, end, i / count ), radius, height, angles, no_color, 0, duration );
                     draw_capsule( vectorlerp( start, end, i / count ), radius, height, angles, half_color, 1, duration );
                 }
@@ -1351,7 +1354,7 @@ function convert_capsule_data( var_cc43f8a28dc3bc22, var_b26c88a9b9f4ef65, radiu
 #/
 
 // Namespace trace / scripts\engine\trace
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x286a
 // Size: 0x7e
 function internal_pack_default_trace( pos )
@@ -1371,7 +1374,7 @@ function internal_pack_default_trace( pos )
 /#
 
     // Namespace trace / scripts\engine\trace
-    // Params 9, eflags: 0x0
+    // Params 9
     // Checksum 0x0, Offset: 0x28f1
     // Size: 0xcb, Type: dev
     function internal_create_debug_data( trace, type, start, end, radius, height, angles, search_distance, character )

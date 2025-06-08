@@ -3,7 +3,7 @@
 #namespace easing;
 
 // Namespace easing / scripts\engine\easing
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120
 // Size: 0x108
 function ease_init()
@@ -24,7 +24,7 @@ function ease_init()
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x230
 // Size: 0x38
 function ease_linear( start, end, pct, ease_in, ease_out )
@@ -33,7 +33,7 @@ function ease_linear( start, end, pct, ease_in, ease_out )
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x271
 // Size: 0x4b
 function ease_power( start, end, pct, ease_in, ease_out, power )
@@ -43,7 +43,7 @@ function ease_power( start, end, pct, ease_in, ease_out, power )
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2c5
 // Size: 0x44
 function function_5076f55422e87aca( start, end, pct, ease_in, ease_out )
@@ -53,7 +53,7 @@ function function_5076f55422e87aca( start, end, pct, ease_in, ease_out )
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x312
 // Size: 0x44
 function ease_cubic( start, end, pct, ease_in, ease_out )
@@ -63,7 +63,7 @@ function ease_cubic( start, end, pct, ease_in, ease_out )
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x35f
 // Size: 0x44
 function function_651839ae5c237167( start, end, pct, ease_in, ease_out )
@@ -73,7 +73,7 @@ function function_651839ae5c237167( start, end, pct, ease_in, ease_out )
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3ac
 // Size: 0x44
 function function_8ed1dfbb99ebbffb( start, end, pct, ease_in, ease_out )
@@ -83,7 +83,7 @@ function function_8ed1dfbb99ebbffb( start, end, pct, ease_in, ease_out )
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3f9
 // Size: 0x4b
 function function_7c81847ebfb3f5b3( start, end, pct, ease_in, ease_out, scale )
@@ -93,7 +93,7 @@ function function_7c81847ebfb3f5b3( start, end, pct, ease_in, ease_out, scale )
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x44d
 // Size: 0x4b
 function function_26eb6629640c404b( start, end, pct, ease_in, ease_out, log_base )
@@ -103,7 +103,7 @@ function function_26eb6629640c404b( start, end, pct, ease_in, ease_out, log_base
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4a1
 // Size: 0x42
 function ease_sine( start, end, pct, ease_in, ease_out )
@@ -113,7 +113,7 @@ function ease_sine( start, end, pct, ease_in, ease_out )
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x4ec
 // Size: 0x55
 function ease_back( start, end, pct, ease_in, ease_out, var_210d57017070b86f, power )
@@ -123,7 +123,7 @@ function ease_back( start, end, pct, ease_in, ease_out, var_210d57017070b86f, po
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x54a
 // Size: 0x5f
 function function_d66c45282cb1cbcf( start, end, pct, ease_in, ease_out, amplitude, frequency, fade_scalar )
@@ -133,7 +133,7 @@ function function_d66c45282cb1cbcf( start, end, pct, ease_in, ease_out, amplitud
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x5b2
 // Size: 0x55
 function ease_bounce( start, end, pct, ease_in, ease_out, bounces, decay_scalar )
@@ -143,7 +143,7 @@ function ease_bounce( start, end, pct, ease_in, ease_out, bounces, decay_scalar 
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x610
 // Size: 0x61
 function ease_dvar( dvar, value, time, ease_type, ease_in, ease_out, ease_param1, ease_param2, ease_param3 )
@@ -152,7 +152,7 @@ function ease_dvar( dvar, value, time, ease_type, ease_in, ease_out, ease_param1
 }
 
 // Namespace easing / scripts\engine\easing
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x679
 // Size: 0x61
 function function_106f0697ee4d2c55( dvar, value, time, ease_type, ease_in, ease_out, ease_param1, ease_param2, ease_param3 )

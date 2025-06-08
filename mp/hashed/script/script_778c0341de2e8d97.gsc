@@ -4,7 +4,7 @@
 #namespace mp_jup_st_h_ob_contracts_zombie_control_cs;
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b6
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x52b
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x59a
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e2
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ec
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x602
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x674
 // Size: 0x6a
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -116,7 +116,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6e6
 // Size: 0x840
 function function_411515957b967b70( fe, us, cf )
@@ -186,7 +186,7 @@ function function_411515957b967b70( fe, us, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf2e
 // Size: 0x840
 function function_7e86e34407f01c56( fe, us, cf )
@@ -256,7 +256,7 @@ function function_7e86e34407f01c56( fe, us, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_zombie_control_cs / namespace_af59b089869acf99
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1776
 // Size: 0x1bc
 function function_6da2952367672ac0()

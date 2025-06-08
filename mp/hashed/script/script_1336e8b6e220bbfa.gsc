@@ -6,7 +6,7 @@
 #namespace namespace_b17ec7b025ea4a4c;
 
 // Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x183
 // Size: 0xda
 function function_29b5fb70d7ea841()
@@ -23,7 +23,7 @@ function function_29b5fb70d7ea841()
 }
 
 // Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x265
 // Size: 0x41
 function init_melee()

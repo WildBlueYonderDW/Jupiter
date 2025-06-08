@@ -20,7 +20,7 @@
 #namespace mit;
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x500
 // Size: 0x11
 function function_5a60778277d6ae4b()
@@ -107,7 +107,7 @@ function private mapinitialize()
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ba
 // Size: 0x86
 function getspawnpoint()
@@ -120,7 +120,7 @@ function getspawnpoint()
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x749
 // Size: 0x112
 function initialize()
@@ -219,7 +219,7 @@ function private function_ba26c6f0f3861ea2()
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x95b
 // Size: 0xa7
 function function_b564050a363f08ec( bot, waitseconds )
@@ -260,7 +260,7 @@ function private onplayerkilled( einflictor, attacker, idamage, smeansofdeath, o
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb27
 // Size: 0x4c
 function botteleport( position, distancetolerance, var_f24bccd9181848c1 )
@@ -342,7 +342,7 @@ function private function_8deb12db7dc34202()
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd4a
 // Size: 0xd8
 function outputlog( category, reportstr, append )
@@ -366,7 +366,8 @@ function outputlog( category, reportstr, append )
         return;
     }
     
-    for (startindex = 0; startindex < reportstr.size; startindex = endindex) {
+    for ( startindex = 0; startindex < reportstr.size ; startindex = endindex )
+    {
         endindex = int( min( startindex + maxlength, reportstr.size ) );
         substring = getsubstring( reportstr, startindex, endindex );
         logstring( header + substring );
@@ -399,7 +400,7 @@ function private getsubstring( str, start, end )
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe97
 // Size: 0x25, Type: bool
 function floatequal( float1, float2, epsilon )
@@ -408,7 +409,7 @@ function floatequal( float1, float2, epsilon )
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xec5
 // Size: 0x202, Type: bool
 function function_3c55380b5e177254( p1, p2, q1, q2 )
@@ -435,7 +436,7 @@ function function_3c55380b5e177254( p1, p2, q1, q2 )
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10d0
 // Size: 0xd
 function function_71b519a5e0525acc()
@@ -444,7 +445,7 @@ function function_71b519a5e0525acc()
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e6
 // Size: 0x55
 function function_cc7e90653e9dab25( durationsec )
@@ -470,7 +471,8 @@ function private generatespawnpoints( secondaryminradius, secondarymaxradius )
     points = [];
     num = getdvarint( @"hash_a9944abc2f276e96", 1 ) + 1;
     
-    for (i = 0; i < num; i++) {
+    for ( i = 0; i < num ; i++ )
+    {
         randompoint = namespace_4dbcecb8aa6160e3::function_3ec57983d173d1e3();
         startpoint = spawnstruct();
         startpoint.origin = function_cf24515b476de99e( randompoint, secondaryminradius, secondarymaxradius );
@@ -649,7 +651,7 @@ function private function_f62e0c533ead8b59()
 }
 
 // Namespace mit / namespace_ef54497d29a56093
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1597
 // Size: 0x24
 function function_d4cc0fe3bc1557bf()
@@ -675,7 +677,7 @@ function private filterstructs( struct )
 /#
 
     // Namespace mit / namespace_ef54497d29a56093
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x1605
     // Size: 0xbe, Type: dev
     function function_f2bc01a7b0321f52( testphase, targetpos, camerapos, originaltask, var_31e45429b9998458 )
@@ -691,7 +693,7 @@ function private filterstructs( struct )
     }
 
     // Namespace mit / namespace_ef54497d29a56093
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x16cb
     // Size: 0x27b, Type: dev
     function function_6d1c17a3f1f2d562()
@@ -755,7 +757,7 @@ function private filterstructs( struct )
     }
 
     // Namespace mit / namespace_ef54497d29a56093
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x194e
     // Size: 0x8e, Type: dev
     function function_3e26a18e77c086b0( pos )

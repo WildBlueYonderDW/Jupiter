@@ -21,7 +21,7 @@
 #namespace hstg;
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c5
 // Size: 0x236
 function main()
@@ -69,7 +69,7 @@ function main()
     game[ "dialog" ][ "boost" ] = "boost_tdm";
     game[ "dialog" ][ "offense_obj" ] = "boost_tdm";
     game[ "dialog" ][ "defense_obj" ] = "boost_tdm";
-    level.testtdmanywhere = getdvarint( @"hash_157f06aff3c1f357", 0 );
+    level.testtdmanywhere = getdvarint( @"scr_tdmanywhere", 0 );
     level.tdmanywhere_dropheight = getdvarfloat( @"hash_c692d2a11dd6615", 1000 );
     level.tdmanywhere_perpenoffset = getdvarfloat( @"hash_631c58033f43c2dc", 2048 );
     level.tdmanywhere_distoffset = getdvarfloat( @"hash_f314048c87ae28aa", 4092 );
@@ -90,7 +90,7 @@ function main()
 }
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x603
 // Size: 0x37
 function initializematchrules()
@@ -102,7 +102,7 @@ function initializematchrules()
 }
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x642
 // Size: 0x14a
 function onstartgametype()
@@ -165,7 +165,7 @@ function onstartgametype()
 }
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x794
 // Size: 0x9
 function updategametypedvars()
@@ -174,7 +174,7 @@ function updategametypedvars()
 }
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a5
 // Size: 0x24c
 function initspawns()
@@ -229,7 +229,7 @@ function initspawns()
 /#
 
     // Namespace hstg / scripts\mp\gametypes\hstg
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9f9
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -245,7 +245,7 @@ function initspawns()
 #/
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa64
 // Size: 0x1a5
 function getspawnpoint()
@@ -299,7 +299,7 @@ function getspawnpoint()
 }
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc12
 // Size: 0x44
 function onspawnplayer( revivespawn )
@@ -317,7 +317,7 @@ function onspawnplayer( revivespawn )
 /#
 
     // Namespace hstg / scripts\mp\gametypes\hstg
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xc5e
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -356,7 +356,7 @@ function onspawnplayer( revivespawn )
 #/
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xde0
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -365,7 +365,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe28
 // Size: 0x53
 function ontimelimit()
@@ -387,7 +387,7 @@ function ontimelimit()
 /#
 
     // Namespace hstg / scripts\mp\gametypes\hstg
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe83
     // Size: 0xe8, Type: dev
     function function_8469a5927d069db7()
@@ -402,7 +402,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x102>", points, 0 );
@@ -414,7 +414,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x10c>", points, 0 );
@@ -430,7 +430,7 @@ function ontimelimit()
     }
 
     // Namespace hstg / scripts\mp\gametypes\hstg
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xf73
     // Size: 0x1ee, Type: dev
     function function_bf2918399f1800b1()
@@ -468,7 +468,7 @@ function ontimelimit()
 #/
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1169
 // Size: 0x19a
 function tdmanywhere_debugshowlocs()
@@ -491,7 +491,7 @@ function tdmanywhere_debugshowlocs()
 }
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x130b
 // Size: 0x40f
 function monitorhotfoot()
@@ -606,7 +606,7 @@ function monitorhotfoot()
 }
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x1722
 // Size: 0xc0
 function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -626,7 +626,7 @@ function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, ob
 }
 
 // Namespace hstg / scripts\mp\gametypes\hstg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17ea
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()

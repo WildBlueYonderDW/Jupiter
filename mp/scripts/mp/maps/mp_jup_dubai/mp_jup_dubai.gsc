@@ -14,7 +14,7 @@
 #namespace mp_jup_dubai;
 
 // Namespace mp_jup_dubai / scripts\mp\maps\mp_jup_dubai\mp_jup_dubai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x297
 // Size: 0xc2
 function main()
@@ -38,7 +38,7 @@ function main()
 }
 
 // Namespace mp_jup_dubai / scripts\mp\maps\mp_jup_dubai\mp_jup_dubai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x361
 // Size: 0x18d
 function function_31dc060e85f4a689()

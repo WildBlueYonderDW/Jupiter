@@ -13,7 +13,7 @@
 /#
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xd0
     // Size: 0xee, Type: dev
     function function_6cd499378aadcad8()
@@ -492,7 +492,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x12bf
     // Size: 0xc12, Type: dev
     function display_scene_menu( var_8e2d937d4bb36011 )
@@ -944,7 +944,8 @@
             var_9a294debc8b593a8 = 1;
         }
         
-        for (i = 0; i < var_9a294debc8b593a8; i++) {
+        for ( i = 0; i < var_9a294debc8b593a8 ; i++ )
+        {
             printtoscreen2d( 150, 310, str_title, ( 1, 1, 1 ), 2.5 );
             str_mode = "<dev string:x48d>";
             
@@ -961,7 +962,8 @@
                     break;
             }
             
-            for (i = 0; i < 16; i++) {
+            for ( i = 0; i < 16 ; i++ )
+            {
                 index = i + n_selected - 5;
                 
                 if ( isdefined( strings[ index ] ) )
@@ -1149,7 +1151,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x26f2
     // Size: 0x39f, Type: dev
     function function_c623b8e6e4b0a90( tag, size, duration, blendtimesec )
@@ -1222,7 +1224,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x2a99
     // Size: 0xcf, Type: dev
     function function_ce4b6d4d859ede39( var_214d924f4e137244, event, origin, angles )
@@ -1243,7 +1245,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x2b70
     // Size: 0x63e, Type: dev
     function function_baa34fb5707b7466( var_214d924f4e137244, event, origin, angles )
@@ -1304,7 +1306,8 @@
             lastobject = undefined;
             offset = ( 0, 0, 0 );
             
-            for (i = 0; i < eventlist.events.size; i++) {
+            for ( i = 0; i < eventlist.events.size ; i++ )
+            {
                 event = eventlist.events[ i ];
                 
                 if ( !isdefined( drawnorigin ) || drawnorigin != event.origin || drawnangles != event.angles )
@@ -1357,7 +1360,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x31b6
     // Size: 0xc5, Type: dev
     function function_eeff9ce6b23bb906()
@@ -1383,7 +1386,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3283
     // Size: 0x388, Type: dev
     function function_d4cfde3fa9af7e5a( shotindex )
@@ -1440,7 +1443,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3613
     // Size: 0xee, Type: dev
     function function_6b2bc344ea55f120()
@@ -1474,7 +1477,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x3709
     // Size: 0x2c5, Type: dev
     function function_ffae6ec92028ce08( shotindexes, duration, cameras )
@@ -1537,7 +1540,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x39d6
     // Size: 0x86, Type: dev
     function function_7fb7bdf37cd47759()
@@ -1564,7 +1567,7 @@
     }
 
     // Namespace scene / scripts\common\scene_debug
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x3a64
     // Size: 0x7b, Type: dev
     function function_2fbba7f29e8d78ce( var_56f4af8746a2d458, var_36ca2785f01c660c )

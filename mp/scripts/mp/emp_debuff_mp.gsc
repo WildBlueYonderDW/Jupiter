@@ -8,7 +8,7 @@
 #namespace emp_debuff_mp;
 
 // Namespace emp_debuff_mp / scripts\mp\emp_debuff_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x125
 // Size: 0x5a
 function emp_debuff_init()
@@ -20,7 +20,7 @@ function emp_debuff_init()
 }
 
 // Namespace emp_debuff_mp / scripts\mp\emp_debuff_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x187
 // Size: 0xd
 function getplayerempimmune()
@@ -29,7 +29,7 @@ function getplayerempimmune()
 }
 
 // Namespace emp_debuff_mp / scripts\mp\emp_debuff_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19d
 // Size: 0x2a
 function setplayerempimmune( isimmune )
@@ -44,7 +44,7 @@ function setplayerempimmune( isimmune )
 }
 
 // Namespace emp_debuff_mp / scripts\mp\emp_debuff_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cf
 // Size: 0x37
 function onplayeremped( data )
@@ -58,7 +58,7 @@ function onplayeremped( data )
 }
 
 // Namespace emp_debuff_mp / scripts\mp\emp_debuff_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20e
 // Size: 0x77
 function onvehicleemped( data )
@@ -83,7 +83,7 @@ function onvehicleemped( data )
 }
 
 // Namespace emp_debuff_mp / scripts\mp\emp_debuff_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x3e
 function function_a3a4d32a799e95d5( data )

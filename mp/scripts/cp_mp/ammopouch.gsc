@@ -3,6 +3,8 @@
 #using scripts\common\utility;
 #using scripts\cp_mp\calloutmarkerping;
 #using scripts\cp_mp\loot\common_item;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
 #using scripts\cp_mp\weapon;
 #using scripts\engine\throttle;
 #using scripts\engine\utility;
@@ -10,8 +12,8 @@
 #namespace ammopouch;
 
 // Namespace ammopouch / scripts\cp_mp\ammopouch
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21e
+// Params 0
+// Checksum 0x0, Offset: 0x22e
 // Size: 0x359
 function init_ammopouch()
 {
@@ -82,8 +84,8 @@ function init_ammopouch()
 }
 
 // Namespace ammopouch / scripts\cp_mp\ammopouch
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x57f
+// Params 0
+// Checksum 0x0, Offset: 0x58f
 // Size: 0x1d
 function function_3af8e1abc2693305()
 {
@@ -91,8 +93,8 @@ function function_3af8e1abc2693305()
 }
 
 // Namespace ammopouch / scripts\cp_mp\ammopouch
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a4
+// Params 1
+// Checksum 0x0, Offset: 0x5b4
 // Size: 0x49
 function on_zombie_ai_killed( sparams )
 {
@@ -103,8 +105,8 @@ function on_zombie_ai_killed( sparams )
 }
 
 // Namespace ammopouch / scripts\cp_mp\ammopouch
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f5
+// Params 1
+// Checksum 0x0, Offset: 0x605
 // Size: 0x4d
 function function_1ebeccaabab5d730( sparams )
 {
@@ -118,8 +120,8 @@ function function_1ebeccaabab5d730( sparams )
 }
 
 // Namespace ammopouch / scripts\cp_mp\ammopouch
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x64a
+// Params 2
+// Checksum 0x0, Offset: 0x65a
 // Size: 0x26a
 function function_da6722b81ec7cdc4( smeansofdeath, eattacker )
 {
@@ -189,8 +191,8 @@ function function_da6722b81ec7cdc4( smeansofdeath, eattacker )
 }
 
 // Namespace ammopouch / scripts\cp_mp\ammopouch
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bc
+// Params 4
+// Checksum 0x0, Offset: 0x8cc
 // Size: 0xe4, Type: bool
 function can_refill_ammo( item_def, item, auto_pickup, var_d3c1dfe8dea4ec26 )
 {
@@ -231,8 +233,8 @@ function can_refill_ammo( item_def, item, auto_pickup, var_d3c1dfe8dea4ec26 )
 }
 
 // Namespace ammopouch / scripts\cp_mp\ammopouch
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a9
+// Params 2
+// Checksum 0x0, Offset: 0x9b9
 // Size: 0x17a, Type: bool
 function refill_ammo( item_def, item )
 {

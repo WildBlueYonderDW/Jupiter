@@ -84,18 +84,18 @@
 #namespace br_armory_kiosk;
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d0e
+// Params 0
+// Checksum 0x0, Offset: 0x1d0f
 // Size: 0x269
 function init()
 {
     level.br_armory_kiosk = spawnstruct();
     level.br_armory_kiosk.scriptables = [];
-    level.br_armory_kiosk_enabled = getdvarint( @"hash_880384e6dfe250ba", 1 ) != 0;
-    level.var_11a3973390a71e8 = getdvar( @"hash_f8e5c3daa6c01012", "purchases" );
+    level.br_armory_kiosk_enabled = getdvarint( @"scr_br_armory_kiosk", 1 ) != 0;
+    level.var_11a3973390a71e8 = getdvar( @"br_buy_station", "purchases" );
     level.var_8dea6607b3189a60 = getdvarint( @"hash_32c09327627c883c", 0 );
     level.var_77e4add813fca6ae = getdvarint( @"hash_e024cf932ef753dc", 0 );
-    level.var_f38c74334d6ff472 = getdvarint( @"hash_6e135c0a5edc02b1", 0 );
+    level.var_f38c74334d6ff472 = getdvarint( @"scr_br_kiosk_perk_package_enabled", 0 );
     level.br_armory_kiosk.var_aaa31c1e28a5663c = getdvarint( @"hash_95d75e4aac93c20d", 0 );
     level.br_armory_kiosk.var_da1e0a23728ec36 = getdvarint( @"hash_650073c7a7222ae2", 138 );
     level.var_ee08b1f41e7c2444 = function_ba5574c7f287c587();
@@ -137,8 +137,8 @@ function init()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f7f
+// Params 0
+// Checksum 0x0, Offset: 0x1f80
 // Size: 0x48
 function function_28d7437a275a45c7()
 {
@@ -150,12 +150,12 @@ function function_28d7437a275a45c7()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fcf
+// Params 1
+// Checksum 0x0, Offset: 0x1fd0
 // Size: 0xd9
 function function_b38f5ffe645943c3( stationref )
 {
-    setdvar( @"hash_f8e5c3daa6c01012", stationref );
+    setdvar( @"br_buy_station", stationref );
     level.var_e7cee4fbb5b46ef2 = scripts\cp_mp\utility\loot::function_54b046aa3ba2678a( stationref );
     
     if ( !isdefined( level.var_6be7b375ec4a629c ) )
@@ -177,12 +177,12 @@ function function_b38f5ffe645943c3( stationref )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20b0
+// Params 0
+// Checksum 0x0, Offset: 0x20b1
 // Size: 0x177
 function _initsalesdiscount()
 {
-    var_db834d1cac99ea96 = getdvarint( @"hash_828fb46e27ef695d", 0 );
+    var_db834d1cac99ea96 = getdvarint( @"br_kiosk_sales_discount", 0 );
     level.br_armory_kiosk.sales_discount = int( clamp( var_db834d1cac99ea96, 0, 100 ) );
     var_bc97c6f634d832a0 = getdvar( @"hash_68eb502c50f9a22", "" );
     level.br_armory_kiosk.sales_discount_items = strtok( var_bc97c6f634d832a0, "," );
@@ -204,14 +204,14 @@ function _initsalesdiscount()
     
     if ( var_db834d1cac99ea96 != level.br_armory_kiosk.sales_discount )
     {
-        setdvar( @"hash_828fb46e27ef695d", level.br_armory_kiosk.sales_discount );
+        setdvar( @"br_kiosk_sales_discount", level.br_armory_kiosk.sales_discount );
         assertmsg( "<dev string:x1c>" + var_db834d1cac99ea96 + "<dev string:x3f>" + level.br_armory_kiosk.sales_discount + "<dev string:x6d>" );
     }
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x222f
+// Params 2
+// Checksum 0x0, Offset: 0x2230
 // Size: 0x57
 function _applysalesdiscount( originalprice, discount )
 {
@@ -229,8 +229,8 @@ function _applysalesdiscount( originalprice, discount )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x228f
+// Params 2
+// Checksum 0x0, Offset: 0x2290
 // Size: 0x163, Type: bool
 function function_a0389e3244a68894( kiosk, var_cf9d634ef87d898b )
 {
@@ -284,8 +284,8 @@ function function_a0389e3244a68894( kiosk, var_cf9d634ef87d898b )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23fb
+// Params 1
+// Checksum 0x0, Offset: 0x23fc
 // Size: 0x16b, Type: bool
 function function_a83ac2899e1fe5eb( kiosk )
 {
@@ -327,8 +327,8 @@ function function_a83ac2899e1fe5eb( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x256f
+// Params 1
+// Checksum 0x0, Offset: 0x2570
 // Size: 0xc6
 function function_879d297885591207( kiosk )
 {
@@ -358,8 +358,8 @@ function function_879d297885591207( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x263e
+// Params 1
+// Checksum 0x0, Offset: 0x263f
 // Size: 0x22
 function function_2a50f66eb0ec8756( kiosk )
 {
@@ -372,8 +372,8 @@ function function_2a50f66eb0ec8756( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2669
+// Params 1
+// Checksum 0x0, Offset: 0x266a
 // Size: 0x32b, Type: bool
 function function_ac84b48bb39d674f( kiosk )
 {
@@ -461,8 +461,8 @@ function function_ac84b48bb39d674f( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x299d
+// Params 2
+// Checksum 0x0, Offset: 0x299e
 // Size: 0x23b
 function function_6af40e269aae683e( kiosk, var_cf9d634ef87d898b )
 {
@@ -542,8 +542,8 @@ function function_6af40e269aae683e( kiosk, var_cf9d634ef87d898b )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2be0
+// Params 1
+// Checksum 0x0, Offset: 0x2be1
 // Size: 0x247
 function function_66cd523e6167613( kiosk )
 {
@@ -614,8 +614,8 @@ function function_66cd523e6167613( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e30
+// Params 1
+// Checksum 0x0, Offset: 0x2e31
 // Size: 0x52
 function function_3c3bca629d687994( kiosk )
 {
@@ -631,8 +631,8 @@ function function_3c3bca629d687994( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e8b
+// Params 1
+// Checksum 0x0, Offset: 0x2e8c
 // Size: 0xb8
 function function_b88d64cd67bbe60f( kiosk )
 {
@@ -660,8 +660,8 @@ function function_b88d64cd67bbe60f( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f4c
+// Params 2
+// Checksum 0x0, Offset: 0x2f4d
 // Size: 0x80
 function function_469cfcbc4a5185c1( kiosk, var_cf9d634ef87d898b )
 {
@@ -679,8 +679,8 @@ function function_469cfcbc4a5185c1( kiosk, var_cf9d634ef87d898b )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fd4
+// Params 1
+// Checksum 0x0, Offset: 0x2fd5
 // Size: 0x45
 function function_ef08eb6f31f46bc3( lootid )
 {
@@ -700,8 +700,8 @@ function function_ef08eb6f31f46bc3( lootid )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3022
+// Params 1
+// Checksum 0x0, Offset: 0x3023
 // Size: 0x9c
 function function_3fb403d950df330a( var_cf9d634ef87d898b )
 {
@@ -719,8 +719,8 @@ function function_3fb403d950df330a( var_cf9d634ef87d898b )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30c7
+// Params 1
+// Checksum 0x0, Offset: 0x30c8
 // Size: 0x10d
 function function_596ce27c393e3593( kiosk )
 {
@@ -754,8 +754,8 @@ function function_596ce27c393e3593( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31dc
+// Params 1
+// Checksum 0x0, Offset: 0x31dd
 // Size: 0x287
 function function_d84cdb7463425ba( var_9023cea8f03e72d2 )
 {
@@ -841,8 +841,8 @@ function function_d84cdb7463425ba( var_9023cea8f03e72d2 )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x346c
+// Params 1
+// Checksum 0x0, Offset: 0x346d
 // Size: 0x1e
 function function_fe176342ed52b44f( itemref )
 {
@@ -850,8 +850,8 @@ function function_fe176342ed52b44f( itemref )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3493
+// Params 1
+// Checksum 0x0, Offset: 0x3494
 // Size: 0x1f
 function function_517b8730ddec7f59( itemref )
 {
@@ -859,8 +859,8 @@ function function_517b8730ddec7f59( itemref )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34bb
+// Params 0
+// Checksum 0x0, Offset: 0x34bc
 // Size: 0x11
 function function_7e0281196d6407c8()
 {
@@ -869,7 +869,7 @@ function function_7e0281196d6407c8()
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x34d5
+// Checksum 0x0, Offset: 0x34d6
 // Size: 0x159
 function private function_4d81ae9cb22f4180( dvar, backupref )
 {
@@ -886,7 +886,8 @@ function private function_4d81ae9cb22f4180( dvar, backupref )
             var_919b9496930895b6 = int( var_3d08c62a01a4bedd[ 0 ] );
             var_36336cefcad243f5 = int( var_3d08c62a01a4bedd[ 1 ] );
             
-            for (var_c5dcc7e2f341bf0b = var_919b9496930895b6; var_c5dcc7e2f341bf0b <= var_36336cefcad243f5; var_c5dcc7e2f341bf0b++) {
+            for ( var_c5dcc7e2f341bf0b = var_919b9496930895b6; var_c5dcc7e2f341bf0b <= var_36336cefcad243f5 ; var_c5dcc7e2f341bf0b++ )
+            {
                 var_904eefa8f06ceecb = tablelookuprownum( "mp/buyStation/buyStationDefs.csv", 0, var_c5dcc7e2f341bf0b );
                 
                 if ( var_904eefa8f06ceecb != -1 )
@@ -907,7 +908,8 @@ function private function_4d81ae9cb22f4180( dvar, backupref )
         
         var_3d321e8859561813 = array_randomize( var_3d321e8859561813 );
         
-        for (var_3d329ebb0d03d6db = 0; var_3d329ebb0d03d6db < var_3d321e8859561813.size; var_3d329ebb0d03d6db++) {
+        for ( var_3d329ebb0d03d6db = 0; var_3d329ebb0d03d6db < var_3d321e8859561813.size ; var_3d329ebb0d03d6db++ )
+        {
             var_c95404cd83f761b6[ var_c95404cd83f761b6.size ] = function_d84cdb7463425ba( var_3d321e8859561813[ var_3d329ebb0d03d6db ] );
         }
     }
@@ -921,7 +923,7 @@ function private function_4d81ae9cb22f4180( dvar, backupref )
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3637
+// Checksum 0x0, Offset: 0x3638
 // Size: 0xdb, Type: bool
 function private function_ad499107951c0a81( index )
 {
@@ -955,8 +957,8 @@ function private function_ad499107951c0a81( index )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x371b
+// Params 0
+// Checksum 0x0, Offset: 0x371c
 // Size: 0xe3
 function function_9bd43636f6f0d8c4()
 {
@@ -964,7 +966,8 @@ function function_9bd43636f6f0d8c4()
     level.br_armory_kiosk.weapons.staticprices = [];
     var_f615e27fabb97e45 = tablelookupgetnumrows( "mp/buyStation/staticPriceList.csv" );
     
-    for (var_46d56db0a72eb5d4 = 0; var_46d56db0a72eb5d4 < var_f615e27fabb97e45; var_46d56db0a72eb5d4++) {
+    for ( var_46d56db0a72eb5d4 = 0; var_46d56db0a72eb5d4 < var_f615e27fabb97e45 ; var_46d56db0a72eb5d4++ )
+    {
         var_46ba7eb0a7107f2d = tablelookupbyrow( "mp/buyStation/staticPriceList.csv", var_46d56db0a72eb5d4, 0 );
         var_87d8e30fbd1164a5 = tablelookupbyrow( "mp/buyStation/staticPriceList.csv", var_46d56db0a72eb5d4, 1 );
         assert( !isdefined( level.br_armory_kiosk.weapons.staticprices[ var_46ba7eb0a7107f2d ] ) );
@@ -973,8 +976,8 @@ function function_9bd43636f6f0d8c4()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3806
+// Params 0
+// Checksum 0x0, Offset: 0x3807
 // Size: 0xe4
 function function_2d02167adeb2e60d()
 {
@@ -982,7 +985,8 @@ function function_2d02167adeb2e60d()
     level.br_armory_kiosk.weapons.weaponprices = [];
     var_63cec4db64e32297 = tablelookupgetnumrows( "mp/buyStation/weaponPriceList.csv" );
     
-    for (var_279c628b1346e27e = 0; var_279c628b1346e27e < var_63cec4db64e32297; var_279c628b1346e27e++) {
+    for ( var_279c628b1346e27e = 0; var_279c628b1346e27e < var_63cec4db64e32297 ; var_279c628b1346e27e++ )
+    {
         var_2770738b1316a17b = tablelookupbyrow( "mp/buyStation/weaponPriceList.csv", var_279c628b1346e27e, 1 );
         var_fa1ab16b7b374db3 = tablelookupbyrow( "mp/buyStation/weaponPriceList.csv", var_279c628b1346e27e, 2 );
         assert( !isdefined( level.br_armory_kiosk.weapons.weaponprices[ var_2770738b1316a17b ] ) );
@@ -991,8 +995,8 @@ function function_2d02167adeb2e60d()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38f2
+// Params 0
+// Checksum 0x0, Offset: 0x38f3
 // Size: 0xe4
 function function_d872d1b4b7c3c32e()
 {
@@ -1000,7 +1004,8 @@ function function_d872d1b4b7c3c32e()
     level.br_armory_kiosk.weapons.var_f6619d771d944fd2 = [];
     var_648068a3992692f7 = tablelookupgetnumrows( "mp/buyStation/weaponPriceScalars.csv" );
     
-    for (var_6dca16d75df1105e = 0; var_6dca16d75df1105e < var_648068a3992692f7; var_6dca16d75df1105e++) {
+    for ( var_6dca16d75df1105e = 0; var_6dca16d75df1105e < var_648068a3992692f7 ; var_6dca16d75df1105e++ )
+    {
         var_6d9e27d75dc0cf5b = tablelookupbyrow( "mp/buyStation/weaponPriceScalars.csv", var_6dca16d75df1105e, 1 );
         var_facc5533af7abe13 = tablelookupbyrow( "mp/buyStation/weaponPriceScalars.csv", var_6dca16d75df1105e, 2 );
         assert( !isdefined( level.br_armory_kiosk.weapons.var_f6619d771d944fd2[ var_6d9e27d75dc0cf5b ] ) );
@@ -1009,8 +1014,8 @@ function function_d872d1b4b7c3c32e()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39de
+// Params 0
+// Checksum 0x0, Offset: 0x39df
 // Size: 0xe4
 function function_723777567250afb4()
 {
@@ -1018,7 +1023,8 @@ function function_723777567250afb4()
     level.br_armory_kiosk.weapons.attachmentprices = [];
     var_522088a531963514 = tablelookupgetnumrows( "mp/buyStation/attachmentPriceList.csv" );
     
-    for (var_a1d7492c6665aaef = 0; var_a1d7492c6665aaef < var_522088a531963514; var_a1d7492c6665aaef++) {
+    for ( var_a1d7492c6665aaef = 0; var_a1d7492c6665aaef < var_522088a531963514 ; var_a1d7492c6665aaef++ )
+    {
         var_a1f1582c6681f4f6 = tablelookupbyrow( "mp/buyStation/attachmentPriceList.csv", var_a1d7492c6665aaef, 1 );
         var_dba2830453494044 = tablelookupbyrow( "mp/buyStation/attachmentPriceList.csv", var_a1d7492c6665aaef, 2 );
         assert( !isdefined( level.br_armory_kiosk.weapons.attachmentprices[ var_a1f1582c6681f4f6 ] ) );
@@ -1027,8 +1033,8 @@ function function_723777567250afb4()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3aca
+// Params 0
+// Checksum 0x0, Offset: 0x3acb
 // Size: 0xe4
 function function_98b7422b7dcbcd5d()
 {
@@ -1036,7 +1042,8 @@ function function_98b7422b7dcbcd5d()
     level.br_armory_kiosk.weapons.var_40484251044547c1 = [];
     var_22c065782099074 = tablelookupgetnumrows( "mp/buyStation/attachmentPriceScalars.csv" );
     
-    for (var_e3113d8479a341cf = 0; var_e3113d8479a341cf < var_22c065782099074; var_e3113d8479a341cf++) {
+    for ( var_e3113d8479a341cf = 0; var_e3113d8479a341cf < var_22c065782099074 ; var_e3113d8479a341cf++ )
+    {
         var_e32b4c8479bf8bd6 = tablelookupbyrow( "mp/buyStation/attachmentPriceScalars.csv", var_e3113d8479a341cf, 1 );
         var_8bae00b6a3bc9ba4 = tablelookupbyrow( "mp/buyStation/attachmentPriceScalars.csv", var_e3113d8479a341cf, 2 );
         assert( !isdefined( level.br_armory_kiosk.weapons.var_40484251044547c1[ var_e32b4c8479bf8bd6 ] ) );
@@ -1045,8 +1052,8 @@ function function_98b7422b7dcbcd5d()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bb6
+// Params 0
+// Checksum 0x0, Offset: 0x3bb7
 // Size: 0x3e
 function function_6f3bd3113a48f7b7()
 {
@@ -1059,8 +1066,8 @@ function function_6f3bd3113a48f7b7()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bfc
+// Params 0
+// Checksum 0x0, Offset: 0x3bfd
 // Size: 0x268
 function _parsepurchaseitemtables()
 {
@@ -1069,7 +1076,8 @@ function _parsepurchaseitemtables()
     var_5a3d34c6e7bf27e4 = getdvarint( @"hash_51099664f5b3c5c", 1 );
     numrows = tablelookupgetnumrows( "mp/buyStation/buyStationItems.csv" );
     
-    for (row = 0; row < numrows; row++) {
+    for ( row = 0; row < numrows ; row++ )
+    {
         itemindex = int( tablelookupbyrow( "mp/buyStation/buyStationItems.csv", row, 0 ) );
         assert( !isdefined( level.br_armory_kiosk.items[ itemindex ] ) );
         var_97642cc850f90ca0 = spawnstruct();
@@ -1117,8 +1125,8 @@ function _parsepurchaseitemtables()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e6c
+// Params 2
+// Checksum 0x0, Offset: 0x3e6d
 // Size: 0x86
 function function_6ce8d88dab67a185( entryref, cost )
 {
@@ -1132,11 +1140,16 @@ function function_6ce8d88dab67a185( entryref, cost )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3efa
-// Size: 0x93
+// Params 2
+// Checksum 0x0, Offset: 0x3efb
+// Size: 0xa1
 function function_3cb66deb101988ce( var_cf9d634ef87d898b, stock )
 {
+    if ( !isdefined( level.var_44235d71492fa1a5 ) )
+    {
+        return;
+    }
+    
     foreach ( index, kiosk in level.var_44235d71492fa1a5 )
     {
         if ( isdefined( level.var_44235d71492fa1a5[ index ].stock[ var_cf9d634ef87d898b ] ) )
@@ -1147,14 +1160,14 @@ function function_3cb66deb101988ce( var_cf9d634ef87d898b, stock )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f95
+// Params 0
+// Checksum 0x0, Offset: 0x3fa4
 // Size: 0x55
 function function_3e6ddd0ae062ac75()
 {
     if ( !isdefined( level.var_6be7b375ec4a629c ) )
     {
-        level.var_6be7b375ec4a629c = function_4d81ae9cb22f4180( @"hash_894c0b1c4e700989", level.var_11a3973390a71e8 );
+        level.var_6be7b375ec4a629c = function_4d81ae9cb22f4180( @"scr_buy_station_pool", level.var_11a3973390a71e8 );
     }
     
     if ( !isdefined( level.var_3899105ceec08fb8 ) )
@@ -1165,7 +1178,7 @@ function function_3e6ddd0ae062ac75()
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x3ff2
+// Checksum 0x0, Offset: 0x4001
 // Size: 0xc5
 function private function_d1687e85988049bb( itemref, var_c95404cd83f761b6 )
 {
@@ -1185,7 +1198,7 @@ function private function_d1687e85988049bb( itemref, var_c95404cd83f761b6 )
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x40bf
+// Checksum 0x0, Offset: 0x40ce
 // Size: 0x68
 function private function_d0e1afe1bd3614df( itemref )
 {
@@ -1201,8 +1214,8 @@ function private function_d0e1afe1bd3614df( itemref )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4130
+// Params 2
+// Checksum 0x0, Offset: 0x413f
 // Size: 0x29b
 function function_3cc8b2630d4f56e7( weaponref, attachmentrefs )
 {
@@ -1267,8 +1280,8 @@ function function_3cc8b2630d4f56e7( weaponref, attachmentrefs )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x43d4
+// Params 2
+// Checksum 0x0, Offset: 0x43e3
 // Size: 0x285
 function _getactualcost( player, itemdata )
 {
@@ -1341,8 +1354,8 @@ function _getactualcost( player, itemdata )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4662
+// Params 1
+// Checksum 0x0, Offset: 0x4671
 // Size: 0x94
 function function_59e987d44a301ef5( kiosk )
 {
@@ -1368,8 +1381,8 @@ function function_59e987d44a301ef5( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x46fe
+// Params 0
+// Checksum 0x0, Offset: 0x470d
 // Size: 0xdd
 function _watchforcircleclosure()
 {
@@ -1408,8 +1421,8 @@ function _watchforcircleclosure()
 /#
 
     // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x47e3
+    // Params 0
+    // Checksum 0x0, Offset: 0x47f2
     // Size: 0xb5, Type: dev
     function function_54fdd9330a3bed3e()
     {
@@ -1430,8 +1443,8 @@ function _watchforcircleclosure()
 #/
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48a0
+// Params 1
+// Checksum 0x0, Offset: 0x48af
 // Size: 0xbb
 function showdiscountsplash( delayseconds )
 {
@@ -1471,8 +1484,8 @@ function showdiscountsplash( delayseconds )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4963
+// Params 0
+// Checksum 0x0, Offset: 0x4972
 // Size: 0x11
 function function_8807282a387bb5b4()
 {
@@ -1480,8 +1493,8 @@ function function_8807282a387bb5b4()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x497d
+// Params 0
+// Checksum 0x0, Offset: 0x498c
 // Size: 0x149
 function function_f29b0d39f0da104d()
 {
@@ -1506,8 +1519,8 @@ function function_f29b0d39f0da104d()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ace
+// Params 0
+// Checksum 0x0, Offset: 0x4add
 // Size: 0x7e
 function onprematchdone()
 {
@@ -1521,17 +1534,17 @@ function onprematchdone()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b54
+// Params 3
+// Checksum 0x0, Offset: 0x4b63
 // Size: 0x167
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
 {
-    if ( scripts\mp\gametypes\br_gametypes::isfeaturedisabled( "kiosk" ) || getdvarint( @"hash_ac54858b3fd07daf", 0 ) == 1 || istrue( level.br_armory_kiosk.all_disabled ) )
+    if ( scripts\mp\gametypes\br_gametypes::isfeaturedisabled( "kiosk" ) || getdvarint( @"scr_br_kiosk_ignore_circle", 0 ) == 1 || istrue( level.br_armory_kiosk.all_disabled ) )
     {
         return;
     }
     
-    var_52d59c928eb97c81 = dangercircleradius + getdvarfloat( @"hash_64432e664d4ae36a", 1574 );
+    var_52d59c928eb97c81 = dangercircleradius + getdvarfloat( @"scr_br_circle_object_long_distance_cleanup_threshold", 1574 );
     var_c434624ff361bba2 = var_52d59c928eb97c81 * var_52d59c928eb97c81;
     
     foreach ( armorykiosk in level.br_armory_kiosk.scriptables )
@@ -1556,12 +1569,12 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cc3
+// Params 0
+// Checksum 0x0, Offset: 0x4cd2
 // Size: 0x131
 function function_1a1709943670772a()
 {
-    if ( scripts\mp\gametypes\br_gametypes::isfeaturedisabled( "kiosk" ) || getdvarint( @"hash_ac54858b3fd07daf", 0 ) == 1 || istrue( level.br_armory_kiosk.all_disabled ) )
+    if ( scripts\mp\gametypes\br_gametypes::isfeaturedisabled( "kiosk" ) || getdvarint( @"scr_br_kiosk_ignore_circle", 0 ) == 1 || istrue( level.br_armory_kiosk.all_disabled ) )
     {
         return;
     }
@@ -1593,8 +1606,8 @@ function function_1a1709943670772a()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4dfd
+// Params 0
+// Checksum 0x0, Offset: 0x4e0c
 // Size: 0x94
 function disableallarmorykiosks()
 {
@@ -1615,8 +1628,8 @@ function disableallarmorykiosks()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e99
+// Params 1
+// Checksum 0x0, Offset: 0x4ea8
 // Size: 0x46
 function function_d9a3848f71c7c63a( armorykiosk )
 {
@@ -1632,8 +1645,8 @@ function function_d9a3848f71c7c63a( armorykiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ee7
+// Params 1
+// Checksum 0x0, Offset: 0x4ef6
 // Size: 0x106
 function disablearmorykiosk( armorykiosk )
 {
@@ -1672,8 +1685,8 @@ function disablearmorykiosk( armorykiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ff5
+// Params 1
+// Checksum 0x0, Offset: 0x5004
 // Size: 0x2f
 function setspawninstances( instances )
 {
@@ -1682,8 +1695,8 @@ function setspawninstances( instances )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x502c
+// Params 0
+// Checksum 0x0, Offset: 0x503b
 // Size: 0x2b
 function getallspawninstances()
 {
@@ -1697,8 +1710,8 @@ function getallspawninstances()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5060
+// Params 0
+// Checksum 0x0, Offset: 0x506f
 // Size: 0x30
 function function_68f55b32ad3368e1()
 {
@@ -1712,7 +1725,7 @@ function function_68f55b32ad3368e1()
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x5099
+// Checksum 0x0, Offset: 0x50a8
 // Size: 0x30
 function private function_315d0a115fe536ee()
 {
@@ -1725,8 +1738,8 @@ function private function_315d0a115fe536ee()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x50d2
+// Params 2
+// Checksum 0x0, Offset: 0x50e1
 // Size: 0x24
 function function_785d7c2ae5066f66( var_3d329ebb0d03d6db, var_c95404cd83f761b6 )
 {
@@ -1741,7 +1754,7 @@ function function_785d7c2ae5066f66( var_3d329ebb0d03d6db, var_c95404cd83f761b6 )
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x50ff
+// Checksum 0x0, Offset: 0x510e
 // Size: 0x25c
 function private function_96e56767b949c013( stationstruct, var_3d329ebb0d03d6db, var_849e91c5e0d0e0df )
 {
@@ -1765,7 +1778,7 @@ function private function_96e56767b949c013( stationstruct, var_3d329ebb0d03d6db,
     buystation = spawnscriptable( stationstruct.scriptableid, stationstruct.origin, stationstruct.angles );
     var_11a7769e6c3c691f = "visible";
     
-    if ( getdvarint( @"hash_be0526203e262092", 0 ) && getdvarint( @"hash_bac643b1a9d211a7", 0 ) )
+    if ( getdvarint( @"scr_ssc_use_buy_station", 0 ) && getdvarint( @"hash_bac643b1a9d211a7", 0 ) )
     {
         var_11a7769e6c3c691f = "hidden";
     }
@@ -1808,7 +1821,7 @@ function private function_96e56767b949c013( stationstruct, var_3d329ebb0d03d6db,
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5364
+// Checksum 0x0, Offset: 0x5373
 // Size: 0x139
 function private function_b8e0fea098fb260b( var_cb8ce683e2999310 )
 {
@@ -1841,8 +1854,8 @@ function private function_b8e0fea098fb260b( var_cb8ce683e2999310 )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x54a5
+// Params 0
+// Checksum 0x0, Offset: 0x54b4
 // Size: 0x5d8
 function function_e486c07c28a71f34()
 {
@@ -1876,7 +1889,8 @@ function function_e486c07c28a71f34()
         var_2446ae45ef06bf3d = [];
         level.var_6aa304e25520289f = array_randomize( level.var_6aa304e25520289f );
         
-        for (stationindex = 0; stationindex < numlocations; stationindex++) {
+        for ( stationindex = 0; stationindex < numlocations ; stationindex++ )
+        {
             if ( scripts\mp\gametypes\br_circle::ispointwithininitialdangercircle( level.var_6aa304e25520289f[ stationindex ].origin ) )
             {
                 inrange = 0;
@@ -1911,7 +1925,8 @@ function function_e486c07c28a71f34()
         var_932be85924f099d8 = [];
         numlocations = level.var_6aa304e25520289f.size;
         
-        for (stationindex = 0; stationindex < numlocations; stationindex++) {
+        for ( stationindex = 0; stationindex < numlocations ; stationindex++ )
+        {
             buystation = level.var_6aa304e25520289f[ stationindex ];
             
             if ( !isdefined( buystation.poi ) )
@@ -1960,7 +1975,8 @@ function function_e486c07c28a71f34()
             
             var_8761fecdf09added = array_slice( array_randomize( var_8761fecdf09added ), 0, var_2a980b0531901c38 );
             
-            for (stationindex = 0; stationindex < var_8761fecdf09added.size; stationindex++) {
+            for ( stationindex = 0; stationindex < var_8761fecdf09added.size ; stationindex++ )
+            {
                 scripts\mp\gametypes\br_armory_kiosk::function_2fcaa447c4e7d4a0( var_8761fecdf09added[ stationindex ], stationsspawned );
                 stationsspawned++;
             }
@@ -1978,7 +1994,8 @@ function function_e486c07c28a71f34()
         numlocations = var_6aa304e25520289f.size;
         stationsspawned = 0;
         
-        for (stationindex = 0; stationindex < numlocations; stationindex++) {
+        for ( stationindex = 0; stationindex < numlocations ; stationindex++ )
+        {
             scripts\mp\gametypes\br_armory_kiosk::function_2fcaa447c4e7d4a0( var_6aa304e25520289f[ stationindex ], stationsspawned );
             stationsspawned++;
         }
@@ -1992,7 +2009,8 @@ function function_e486c07c28a71f34()
         level.var_6aa304e25520289f = sortbydistance( level.var_6aa304e25520289f, dangercenterorigin );
         stationsinrange = 0;
         
-        for (stationindex = 0; stationindex < level.var_6aa304e25520289f.size; stationindex++) {
+        for ( stationindex = 0; stationindex < level.var_6aa304e25520289f.size ; stationindex++ )
+        {
             inrange = 0;
             
             foreach ( buystation in level.br_armory_kiosk.scriptables )
@@ -2031,8 +2049,8 @@ function function_e486c07c28a71f34()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a85
+// Params 1
+// Checksum 0x0, Offset: 0x5a94
 // Size: 0x86
 function function_86f5339f1334e16( structname )
 {
@@ -2049,7 +2067,8 @@ function function_86f5339f1334e16( structname )
         return;
     }
     
-    for (i = 0; i < level.var_f3bff22d504c243a.size; i++) {
+    for ( i = 0; i < level.var_f3bff22d504c243a.size ; i++ )
+    {
         function_7cb54f604c35be8c( level.var_f3bff22d504c243a[ i ] );
     }
     
@@ -2057,8 +2076,8 @@ function function_86f5339f1334e16( structname )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b13
+// Params 2
+// Checksum 0x0, Offset: 0x5b22
 // Size: 0x1a5
 function function_2fcaa447c4e7d4a0( stationstruct, stationsspawned )
 {
@@ -2109,8 +2128,8 @@ function function_2fcaa447c4e7d4a0( stationstruct, stationsspawned )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cc1
+// Params 2
+// Checksum 0x0, Offset: 0x5cd0
 // Size: 0x41
 function function_53542c92143aa5eb( structname, stationstruct )
 {
@@ -2124,8 +2143,8 @@ function function_53542c92143aa5eb( structname, stationstruct )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d0b
+// Params 1
+// Checksum 0x0, Offset: 0x5d1a
 // Size: 0x51
 function function_7cb54f604c35be8c( stationstruct )
 {
@@ -2136,20 +2155,21 @@ function function_7cb54f604c35be8c( stationstruct )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d65
+// Params 1
+// Checksum 0x0, Offset: 0x5d74
 // Size: 0x63
 function function_27c1cd609d90c09( stationstructs )
 {
-    for (stationsspawned = 0; stationsspawned < stationstructs.size; stationsspawned++) {
+    for ( stationsspawned = 0; stationsspawned < stationstructs.size ; stationsspawned++ )
+    {
         scriptedkiosk = function_2fcaa447c4e7d4a0( stationstructs[ stationsspawned ], stationsspawned );
         level.br_armory_kiosk.scriptables[ level.br_armory_kiosk.scriptables.size ] = scriptedkiosk;
     }
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dd0
+// Params 1
+// Checksum 0x0, Offset: 0x5ddf
 // Size: 0x6d
 function function_e6c1c35181a2870f( structname )
 {
@@ -2171,9 +2191,9 @@ function function_e6c1c35181a2870f( structname )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e46
-// Size: 0xf9, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0x5e55
+// Size: 0x110, Type: bool
 function canusekiosk( instance, player )
 {
     if ( istrue( level.gameended ) )
@@ -2192,6 +2212,11 @@ function canusekiosk( instance, player )
     }
     
     if ( player scripts\cp_mp\utility\player_utility::isinvehicle() )
+    {
+        return false;
+    }
+    
+    if ( isdefined( player ) && isdefined( player.var_e5520effcbe8bd30 ) )
     {
         return false;
     }
@@ -2228,8 +2253,8 @@ function canusekiosk( instance, player )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f48
+// Params 6
+// Checksum 0x0, Offset: 0x5f6e
 // Size: 0x287
 function armorykioskused( instance, part, state, player, var_a5b2c541413aa895, usestring )
 {
@@ -2342,8 +2367,8 @@ function armorykioskused( instance, part, state, player, var_a5b2c541413aa895, u
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x61d7
+// Params 0
+// Checksum 0x0, Offset: 0x61fd
 // Size: 0x2e
 function function_3b647c2b49a4e63e()
 {
@@ -2355,8 +2380,8 @@ function function_3b647c2b49a4e63e()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x620d
+// Params 3
+// Checksum 0x0, Offset: 0x6233
 // Size: 0xef
 function function_9bca399aafce0b41( kiosk, part, currentstate )
 {
@@ -2405,8 +2430,8 @@ function function_9bca399aafce0b41( kiosk, part, currentstate )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6304
+// Params 0
+// Checksum 0x0, Offset: 0x632a
 // Size: 0x275
 function function_c471a0358a06a7f0()
 {
@@ -2457,8 +2482,8 @@ function function_c471a0358a06a7f0()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6581
+// Params 0
+// Checksum 0x0, Offset: 0x65a7
 // Size: 0x110
 function kioskfixupproneplayers()
 {
@@ -2496,8 +2521,8 @@ function kioskfixupproneplayers()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6699
+// Params 2
+// Checksum 0x0, Offset: 0x66bf
 // Size: 0xc2
 function kiosksetupfiresaleforplayer( kiosk, player )
 {
@@ -2524,8 +2549,8 @@ function kiosksetupfiresaleforplayer( kiosk, player )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6763
+// Params 0
+// Checksum 0x0, Offset: 0x6789
 // Size: 0x41
 function function_7e681bf3d2159ccf()
 {
@@ -2544,8 +2569,8 @@ function function_7e681bf3d2159ccf()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x67ac
+// Params 0
+// Checksum 0x0, Offset: 0x67d2
 // Size: 0x18, Type: bool
 function function_d7f25b3c73157f5c()
 {
@@ -2558,8 +2583,8 @@ function function_d7f25b3c73157f5c()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x67cd
+// Params 2
+// Checksum 0x0, Offset: 0x67f3
 // Size: 0x78
 function iskioskfiresaleactiveforplayer( kiosk, player )
 {
@@ -2592,8 +2617,8 @@ function iskioskfiresaleactiveforplayer( kiosk, player )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x684e
+// Params 2
+// Checksum 0x0, Offset: 0x6874
 // Size: 0x60
 function kioskfiresaledoneforplayer( kiosk, player )
 {
@@ -2612,8 +2637,8 @@ function kioskfiresaledoneforplayer( kiosk, player )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x68b6
+// Params 0
+// Checksum 0x0, Offset: 0x68dc
 // Size: 0x28
 function function_1a8066ccdb91c1d1()
 {
@@ -2626,8 +2651,8 @@ function function_1a8066ccdb91c1d1()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x68e7
+// Params 0
+// Checksum 0x0, Offset: 0x690d
 // Size: 0x75
 function getkioskyawoffsetoverride()
 {
@@ -2647,8 +2672,8 @@ function getkioskyawoffsetoverride()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6965
+// Params 1
+// Checksum 0x0, Offset: 0x698b
 // Size: 0xa9
 function function_33ee0ada0b02b12a( kiosk )
 {
@@ -2671,8 +2696,8 @@ function function_33ee0ada0b02b12a( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a16
+// Params 1
+// Checksum 0x0, Offset: 0x6a3c
 // Size: 0x65
 function function_a5f8189dc840e9d6( blocktime )
 {
@@ -2691,8 +2716,8 @@ function function_a5f8189dc840e9d6( blocktime )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a83
+// Params 1
+// Checksum 0x0, Offset: 0x6aa9
 // Size: 0x2f9
 function _runpurchasemenu( kiosk )
 {
@@ -2815,8 +2840,8 @@ function _runpurchasemenu( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d84
+// Params 2
+// Checksum 0x0, Offset: 0x6daa
 // Size: 0x70
 function function_28d837f720b03bfa( kiosk, player )
 {
@@ -2836,8 +2861,8 @@ function function_28d837f720b03bfa( kiosk, player )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6dfc
+// Params 0
+// Checksum 0x0, Offset: 0x6e22
 // Size: 0x43
 function function_5221f0c9bdea6589()
 {
@@ -2850,8 +2875,8 @@ function function_5221f0c9bdea6589()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e47
+// Params 1
+// Checksum 0x0, Offset: 0x6e6d
 // Size: 0x62
 function function_ab62cd6135dfe6( kiosk )
 {
@@ -2870,7 +2895,7 @@ function function_ab62cd6135dfe6( kiosk )
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6eb1
+// Checksum 0x0, Offset: 0x6ed7
 // Size: 0x25
 function private function_ef547f1865e05653( var_97aa74c2193a9dc6 )
 {
@@ -2880,7 +2905,7 @@ function private function_ef547f1865e05653( var_97aa74c2193a9dc6 )
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6ede
+// Checksum 0x0, Offset: 0x6f04
 // Size: 0x71
 function private function_c8bd59cde912455f( var_97aa74c2193a9dc6 )
 {
@@ -2899,8 +2924,8 @@ function private function_c8bd59cde912455f( var_97aa74c2193a9dc6 )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f57
+// Params 1
+// Checksum 0x0, Offset: 0x6f7d
 // Size: 0x29c
 function _closepurchasemenuwithresponse( var_97aa74c2193a9dc6 )
 {
@@ -2955,8 +2980,8 @@ function _closepurchasemenuwithresponse( var_97aa74c2193a9dc6 )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x71fb
+// Params 1
+// Checksum 0x0, Offset: 0x7221
 // Size: 0x1c
 function _purchasemenuclosedbyclient( player )
 {
@@ -2965,8 +2990,8 @@ function _purchasemenuclosedbyclient( player )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x721f
+// Params 1
+// Checksum 0x0, Offset: 0x7245
 // Size: 0xd0
 function watchtoautoclosemenu( kiosk )
 {
@@ -2990,8 +3015,8 @@ function watchtoautoclosemenu( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x72f7
+// Params 1
+// Checksum 0x0, Offset: 0x731d
 // Size: 0xa7
 function _proximitywatcher( kiosk )
 {
@@ -3019,8 +3044,8 @@ function _proximitywatcher( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x73a6
+// Params 1
+// Checksum 0x0, Offset: 0x73cc
 // Size: 0x4c
 function _getequipmentammotomax( equipmentref )
 {
@@ -3037,8 +3062,8 @@ function _getequipmentammotomax( equipmentref )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x73fb
+// Params 1
+// Checksum 0x0, Offset: 0x7421
 // Size: 0x53
 function _maxoutequipmentammo( equipmentref )
 {
@@ -3059,8 +3084,8 @@ function _maxoutequipmentammo( equipmentref )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7456
+// Params 0
+// Checksum 0x0, Offset: 0x747c
 // Size: 0x2
 function function_8c8f1e3f153a6fa3()
 {
@@ -3068,8 +3093,8 @@ function function_8c8f1e3f153a6fa3()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7460
+// Params 2
+// Checksum 0x0, Offset: 0x7486
 // Size: 0x2f7
 function _findgivearmoramountanddropleftovers( fromkiosk, var_2737cac9ee8f6098 )
 {
@@ -3083,7 +3108,7 @@ function _findgivearmoramountanddropleftovers( fromkiosk, var_2737cac9ee8f6098 )
     
     maxarmorcount = player scripts\mp\equipment::getequipmentmaxammo( "equip_armorplate" );
     
-    if ( getdvarint( @"hash_ad67cf67992fe5f2", 0 ) )
+    if ( getdvarint( @"scr_br_alt_mode_gg", 0 ) )
     {
         bundlecount = 2;
     }
@@ -3145,8 +3170,8 @@ function _findgivearmoramountanddropleftovers( fromkiosk, var_2737cac9ee8f6098 )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x7760
+// Params 5
+// Checksum 0x0, Offset: 0x7786
 // Size: 0xd9f
 function _validateitempurchase( kiosk, itemdata, var_6dc0e605ecd21eee, var_7c3865dee4abed6, var_d260df4653b74cef )
 {
@@ -3780,8 +3805,8 @@ function _validateitempurchase( kiosk, itemdata, var_6dc0e605ecd21eee, var_7c386
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8508
+// Params 1
+// Checksum 0x0, Offset: 0x852e
 // Size: 0x5b
 function _killstreakneedslocationselection( killstreakref )
 {
@@ -3799,8 +3824,8 @@ function _killstreakneedslocationselection( killstreakref )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x856b
+// Params 0
+// Checksum 0x0, Offset: 0x8591
 // Size: 0x2a
 function _locationselectioninterrupt()
 {
@@ -3810,8 +3835,8 @@ function _locationselectioninterrupt()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x859d
+// Params 4
+// Checksum 0x0, Offset: 0x85c3
 // Size: 0x1e6
 function _handlekillstreakpurchase( itemdata, dropcurrent, droppurchased, var_db943473454f6ea6 )
 {
@@ -3866,8 +3891,8 @@ function _handlekillstreakpurchase( itemdata, dropcurrent, droppurchased, var_db
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x878b
+// Params 4
+// Checksum 0x0, Offset: 0x87b1
 // Size: 0x150
 function function_90b0e9eb26e38443( itemdata, var_7dddac09987d559e, var_452130d9d126e506, var_db943473454f6ea6 )
 {
@@ -3887,8 +3912,8 @@ function function_90b0e9eb26e38443( itemdata, var_7dddac09987d559e, var_452130d9
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x88e3
+// Params 4
+// Checksum 0x0, Offset: 0x8909
 // Size: 0x164
 function _handlefieldupgradepurchase( itemdata, var_7dddac09987d559e, var_452130d9d126e506, var_db943473454f6ea6 )
 {
@@ -3928,8 +3953,8 @@ function _handlefieldupgradepurchase( itemdata, var_7dddac09987d559e, var_452130
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a4f
+// Params 4
+// Checksum 0x0, Offset: 0x8a75
 // Size: 0x1fd
 function function_b140d6e72b665c8f( itemdata, var_7dddac09987d559e, var_452130d9d126e506, kiosk )
 {
@@ -3983,8 +4008,8 @@ function function_b140d6e72b665c8f( itemdata, var_7dddac09987d559e, var_452130d9
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c54
+// Params 7
+// Checksum 0x0, Offset: 0x8c7a
 // Size: 0x19b
 function function_bddeda747a14d679( purchasesuccess, kiosk, player, scriptablename, count, shoulddrop, quickdropcache )
 {
@@ -4032,8 +4057,8 @@ function function_bddeda747a14d679( purchasesuccess, kiosk, player, scriptablena
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x8df8
+// Params 6
+// Checksum 0x0, Offset: 0x8e1e
 // Size: 0xcd0
 function _handlespecialpurchase( itemdata, var_7dddac09987d559e, var_452130d9d126e506, kiosk, var_682e4b53880a6720, var_db943473454f6ea6 )
 {
@@ -4364,8 +4389,8 @@ function _handlespecialpurchase( itemdata, var_7dddac09987d559e, var_452130d9d12
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ad0
+// Params 4
+// Checksum 0x0, Offset: 0x9af6
 // Size: 0x19e
 function function_202bf25cc40d87b4( itemdata, var_7dddac09987d559e, var_452130d9d126e506, var_db943473454f6ea6 )
 {
@@ -4417,8 +4442,8 @@ function function_202bf25cc40d87b4( itemdata, var_7dddac09987d559e, var_452130d9
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c77
+// Params 3
+// Checksum 0x0, Offset: 0x9c9d
 // Size: 0x2a8, Type: bool
 function _handlevehiclepurchase( itemdata, var_7dddac09987d559e, var_5c529b214774f72d )
 {
@@ -4484,8 +4509,8 @@ function _handlevehiclepurchase( itemdata, var_7dddac09987d559e, var_5c529b21477
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f28
+// Params 3
+// Checksum 0x0, Offset: 0x9f4e
 // Size: 0x144
 function function_3f45b3c575ec001b( itemdata, spawndata, var_5c529b214774f72d )
 {
@@ -4526,8 +4551,8 @@ function function_3f45b3c575ec001b( itemdata, spawndata, var_5c529b214774f72d )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa074
+// Params 0
+// Checksum 0x0, Offset: 0xa09a
 // Size: 0x49, Type: bool
 function function_334bee7871c3ae0f()
 {
@@ -4548,8 +4573,8 @@ function function_334bee7871c3ae0f()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0c6
+// Params 0
+// Checksum 0x0, Offset: 0xa0ec
 // Size: 0x6c, Type: bool
 function function_a037837dc6c85636()
 {
@@ -4572,8 +4597,8 @@ function function_a037837dc6c85636()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa13b
+// Params 1
+// Checksum 0x0, Offset: 0xa161
 // Size: 0x46, Type: bool
 function function_ff0081ca56b5a384( upgradetype )
 {
@@ -4596,8 +4621,8 @@ function function_ff0081ca56b5a384( upgradetype )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa18a
+// Params 2
+// Checksum 0x0, Offset: 0xa1b0
 // Size: 0x18d, Type: bool
 function _handlevehiclerepair( itemdata, var_7dddac09987d559e )
 {
@@ -4642,8 +4667,8 @@ function _handlevehiclerepair( itemdata, var_7dddac09987d559e )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa320
+// Params 1
+// Checksum 0x0, Offset: 0xa346
 // Size: 0x40, Type: bool
 function function_9fc999a4450eacb2( upgradetype )
 {
@@ -4660,8 +4685,8 @@ function function_9fc999a4450eacb2( upgradetype )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa369
+// Params 1
+// Checksum 0x0, Offset: 0xa38f
 // Size: 0x50, Type: bool
 function function_388aa30e37abbb0( upgradetype )
 {
@@ -4685,8 +4710,8 @@ function function_388aa30e37abbb0( upgradetype )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3c2
+// Params 4
+// Checksum 0x0, Offset: 0xa3e8
 // Size: 0x52
 function function_365e64606d4f3da8( itemdata, var_7dddac09987d559e, var_452130d9d126e506, var_db943473454f6ea6 )
 {
@@ -4696,8 +4721,8 @@ function function_365e64606d4f3da8( itemdata, var_7dddac09987d559e, var_452130d9
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa41d
+// Params 4
+// Checksum 0x0, Offset: 0xa443
 // Size: 0x8f
 function function_6c02b611541421d2( itemdata, var_7dddac09987d559e, var_452130d9d126e506, var_db943473454f6ea6 )
 {
@@ -4714,8 +4739,8 @@ function function_6c02b611541421d2( itemdata, var_7dddac09987d559e, var_452130d9
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4b4
+// Params 4
+// Checksum 0x0, Offset: 0xa4da
 // Size: 0x8f
 function function_f1d968fd69ab759a( itemdata, var_7dddac09987d559e, var_452130d9d126e506, var_db943473454f6ea6 )
 {
@@ -4732,8 +4757,8 @@ function function_f1d968fd69ab759a( itemdata, var_7dddac09987d559e, var_452130d9
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa54b
+// Params 4
+// Checksum 0x0, Offset: 0xa571
 // Size: 0x60
 function function_157316f7321dd26b( itemdata, dropcurrent, droppurchased, var_db943473454f6ea6 )
 {
@@ -4744,8 +4769,8 @@ function function_157316f7321dd26b( itemdata, dropcurrent, droppurchased, var_db
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5b4
+// Params 5
+// Checksum 0x0, Offset: 0xa5da
 // Size: 0xb0
 function function_9c38fec481b62d3b( itemdata, dropcurrent, droppurchased, kiosk, var_db943473454f6ea6 )
 {
@@ -4761,8 +4786,8 @@ function function_9c38fec481b62d3b( itemdata, dropcurrent, droppurchased, kiosk,
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xa66c
+// Params 5
+// Checksum 0x0, Offset: 0xa692
 // Size: 0x71
 function function_bc5f62f877be030f( func, itemdata, var_7dddac09987d559e, var_452130d9d126e506, var_db943473454f6ea6 )
 {
@@ -4783,8 +4808,8 @@ function function_bc5f62f877be030f( func, itemdata, var_7dddac09987d559e, var_45
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6e5
+// Params 3
+// Checksum 0x0, Offset: 0xa70b
 // Size: 0x178
 function _purchaseloadout( player, loadoutindex, var_7dddac09987d559e )
 {
@@ -4835,8 +4860,8 @@ function _purchaseloadout( player, loadoutindex, var_7dddac09987d559e )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa865
+// Params 2
+// Checksum 0x0, Offset: 0xa88b
 // Size: 0xc0
 function function_9353e641ab9b0884( weaponref, attachmentrefs )
 {
@@ -4860,8 +4885,8 @@ function function_9353e641ab9b0884( weaponref, attachmentrefs )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa92e
+// Params 1
+// Checksum 0x0, Offset: 0xa954
 // Size: 0x73
 function function_601181692f53e4ed( itemref )
 {
@@ -4875,8 +4900,8 @@ function function_601181692f53e4ed( itemref )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9a9
+// Params 2
+// Checksum 0x0, Offset: 0xa9cf
 // Size: 0xbdf
 function onarmorykioskpurchase( channel, purchaseindex )
 {
@@ -5222,8 +5247,8 @@ function onarmorykioskpurchase( channel, purchaseindex )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb590
+// Params 2
+// Checksum 0x0, Offset: 0xb5b6
 // Size: 0x25e
 function function_2d04108c0a0ed7a5( player, targetweapon )
 {
@@ -5288,8 +5313,8 @@ function function_2d04108c0a0ed7a5( player, targetweapon )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb7f6
+// Params 1
+// Checksum 0x0, Offset: 0xb81c
 // Size: 0x227
 function _makekioskpurchase( itemdata )
 {
@@ -5357,8 +5382,8 @@ function _makekioskpurchase( itemdata )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xba26
+// Params 5
+// Checksum 0x0, Offset: 0xba4c
 // Size: 0x230
 function function_a573b91325f9ea32( player, itemdata, itemtyperef, splashref, quantity )
 {
@@ -5432,8 +5457,8 @@ function function_a573b91325f9ea32( player, itemdata, itemtyperef, splashref, qu
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc5e
+// Params 1
+// Checksum 0x0, Offset: 0xbc84
 // Size: 0x7e
 function function_2fc170c3c08ec46( plunderspent )
 {
@@ -5452,8 +5477,8 @@ function function_2fc170c3c08ec46( plunderspent )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbce4
+// Params 0
+// Checksum 0x0, Offset: 0xbd0a
 // Size: 0x3f
 function playerlocationselectinterrupt()
 {
@@ -5466,8 +5491,8 @@ function playerlocationselectinterrupt()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd2b
+// Params 0
+// Checksum 0x0, Offset: 0xbd51
 // Size: 0x120
 function playerhandlecirclepickitem()
 {
@@ -5506,8 +5531,8 @@ function playerhandlecirclepickitem()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe54
+// Params 1
+// Checksum 0x0, Offset: 0xbe7a
 // Size: 0x29b
 function restartcircleelimination( origin )
 {
@@ -5585,8 +5610,8 @@ function restartcircleelimination( origin )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0f7
+// Params 0
+// Checksum 0x0, Offset: 0xc11d
 // Size: 0x127
 function playerhandleredeploy()
 {
@@ -5626,8 +5651,8 @@ function playerhandleredeploy()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc227
+// Params 3
+// Checksum 0x0, Offset: 0xc24d
 // Size: 0x2ce
 function playerredeploy( groundorigin, overrideheight, overrideyaw )
 {
@@ -5723,8 +5748,8 @@ function playerredeploy( groundorigin, overrideheight, overrideyaw )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4fd
+// Params 0
+// Checksum 0x0, Offset: 0xc523
 // Size: 0x9d
 function function_8301ce82f0ae1be6()
 {
@@ -5747,8 +5772,8 @@ function function_8301ce82f0ae1be6()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5a3
+// Params 0
+// Checksum 0x0, Offset: 0xc5c9
 // Size: 0xbc
 function function_a4078546548cb0a()
 {
@@ -5771,8 +5796,8 @@ function function_a4078546548cb0a()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc667
+// Params 0
+// Checksum 0x0, Offset: 0xc68d
 // Size: 0xce
 function function_4fecf02c9241f7f0()
 {
@@ -5799,8 +5824,8 @@ function function_4fecf02c9241f7f0()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc73d
+// Params 0
+// Checksum 0x0, Offset: 0xc763
 // Size: 0x89
 function function_665291fdc0b65758()
 {
@@ -5811,8 +5836,8 @@ function function_665291fdc0b65758()
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7ce
+// Params 1
+// Checksum 0x0, Offset: 0xc7f4
 // Size: 0x61
 function function_fbea988da0967dbc( index )
 {
@@ -5832,8 +5857,8 @@ function function_fbea988da0967dbc( index )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc838
+// Params 1
+// Checksum 0x0, Offset: 0xc85e
 // Size: 0x19
 function kiosk_lock( kiosk )
 {
@@ -5841,8 +5866,8 @@ function kiosk_lock( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc859
+// Params 1
+// Checksum 0x0, Offset: 0xc87f
 // Size: 0x18
 function kiosk_unlock( kiosk )
 {
@@ -5850,8 +5875,8 @@ function kiosk_unlock( kiosk )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc879
+// Params 3
+// Checksum 0x0, Offset: 0xc89f
 // Size: 0x120
 function function_eaca292314678f38( stationsspawned, var_f3bff22d504c243a, poiname )
 {
@@ -5877,7 +5902,8 @@ function function_eaca292314678f38( stationsspawned, var_f3bff22d504c243a, poina
     numtospawn = randomintrange( level.poi[ poiname ][ "minExtraBuyStations" ], level.poi[ poiname ][ "maxExtraBuyStations" ] + 1 );
     remainingstations = array_randomize( remainingstations );
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         if ( !isdefined( remainingstations[ i ] ) )
         {
             continue;
@@ -5891,8 +5917,8 @@ function function_eaca292314678f38( stationsspawned, var_f3bff22d504c243a, poina
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9a2
+// Params 1
+// Checksum 0x0, Offset: 0xc9c8
 // Size: 0x1c
 function function_d1e097b50729f36e( data )
 {
@@ -5901,8 +5927,8 @@ function function_d1e097b50729f36e( data )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9c6
+// Params 1
+// Checksum 0x0, Offset: 0xc9ec
 // Size: 0x1e3
 function function_ed7c6787b596188e( data )
 {
@@ -5941,15 +5967,16 @@ function function_ed7c6787b596188e( data )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcbb1
+// Params 2
+// Checksum 0x0, Offset: 0xcbd7
 // Size: 0x89
 function function_874033fd7b181f01( player, trigger )
 {
     self endon( "buyStationDisableForTime" );
     scripts\mp\utility\lower_message::setlowermessageomnvar( "buystation_offline", trigger.endtime );
     
-    for (timeleft = function_c89ed1840c8d0f0f( trigger.endtime - gettime() ); isdefined( trigger ) && timeleft > 0; timeleft = function_c89ed1840c8d0f0f( trigger.endtime - gettime() )) {
+    for ( timeleft = function_c89ed1840c8d0f0f( trigger.endtime - gettime() ); isdefined( trigger ) && timeleft > 0 ; timeleft = function_c89ed1840c8d0f0f( trigger.endtime - gettime() ) )
+    {
         wait timeleft;
     }
     
@@ -5958,8 +5985,8 @@ function function_874033fd7b181f01( player, trigger )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc42
+// Params 2
+// Checksum 0x0, Offset: 0xcc68
 // Size: 0x27
 function function_96d54069af0dee07( player, trigger )
 {
@@ -5968,8 +5995,8 @@ function function_96d54069af0dee07( player, trigger )
 }
 
 // Namespace br_armory_kiosk / scripts\mp\gametypes\br_armory_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc71
+// Params 2
+// Checksum 0x0, Offset: 0xcc97
 // Size: 0x96
 function function_345964aeab85e020( kiosk, dropstruct )
 {

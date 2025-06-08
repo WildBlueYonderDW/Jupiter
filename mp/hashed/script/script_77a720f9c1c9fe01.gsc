@@ -11,7 +11,7 @@
 #namespace jup_ob_warlord_maestro;
 
 // Namespace jup_ob_warlord_maestro / namespace_ded27a9017510079
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x352
 // Size: 0x207
 function main()
@@ -51,7 +51,7 @@ function main()
 }
 
 // Namespace jup_ob_warlord_maestro / namespace_ded27a9017510079
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x561
 // Size: 0x57
 function setup_model()
@@ -68,7 +68,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_warlord_maestro / namespace_ded27a9017510079
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c0
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -77,7 +77,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_warlord_maestro / namespace_ded27a9017510079
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d1
 // Size: 0xcf
 function precache()
@@ -106,7 +106,7 @@ function precache()
 }
 
 // Namespace jup_ob_warlord_maestro / namespace_ded27a9017510079
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a8
 // Size: 0x173
 function setup_weapons()

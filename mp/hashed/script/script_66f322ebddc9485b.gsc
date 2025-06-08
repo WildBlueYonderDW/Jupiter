@@ -10,7 +10,7 @@
 #namespace namespace_85955b341e67f12f;
 
 // Namespace namespace_85955b341e67f12f / namespace_15764f2455729041
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x217
 // Size: 0x2ce
 function function_304c63cbb536c526( shouldstrip )
@@ -51,7 +51,7 @@ function function_304c63cbb536c526( shouldstrip )
 }
 
 // Namespace namespace_85955b341e67f12f / namespace_15764f2455729041
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ed
 // Size: 0x62
 function function_d03eea41ff9cfe90()
@@ -62,7 +62,7 @@ function function_d03eea41ff9cfe90()
 }
 
 // Namespace namespace_85955b341e67f12f / namespace_15764f2455729041
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x557
 // Size: 0x19
 function function_3426adec3c5d6cb6()

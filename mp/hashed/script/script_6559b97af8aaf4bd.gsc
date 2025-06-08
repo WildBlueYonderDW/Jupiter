@@ -8,7 +8,7 @@
 #namespace ai_revival;
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x371
 // Size: 0x10e
 function getfunction( funcid )
@@ -47,7 +47,7 @@ function getfunction( funcid )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x487
 // Size: 0xb
 function function_3dbd361f74b442f9( interactionid )
@@ -56,7 +56,7 @@ function function_3dbd361f74b442f9( interactionid )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49a
 // Size: 0x136
 function function_a157fbbc31d9eb1a( interactionid )
@@ -110,7 +110,7 @@ function function_a157fbbc31d9eb1a( interactionid )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5d8
 // Size: 0x8c, Type: bool
 function oneventreceived( receiver, info, origin )
@@ -131,7 +131,7 @@ function oneventreceived( receiver, info, origin )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x66d
 // Size: 0x3b6
 function function_13c5106712ee80f6( statename, params )
@@ -156,7 +156,8 @@ function function_13c5106712ee80f6( statename, params )
     self.var_c3b6984b9532af5b = 1;
     var_6bc273ba321491f0 = 200;
     
-    for (pathlength = self pathdisttogoal(); pathlength > var_6bc273ba321491f0; pathlength = self pathdisttogoal()) {
+    for ( pathlength = self pathdisttogoal(); pathlength > var_6bc273ba321491f0 ; pathlength = self pathdisttogoal() )
+    {
         if ( !isdefined( dyingguy ) )
         {
             function_2d7fa1f11c70ad04();
@@ -238,7 +239,7 @@ function function_13c5106712ee80f6( statename, params )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa2b
 // Size: 0x7a
 function reviving( statename, params )
@@ -261,7 +262,7 @@ function reviving( statename, params )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaad
 // Size: 0x96
 function function_7436e5b9117c6fab( statename, params )
@@ -284,7 +285,7 @@ function function_7436e5b9117c6fab( statename, params )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb4b
 // Size: 0x67
 function earlyrevivedsuccess( statename, params )
@@ -304,7 +305,7 @@ function earlyrevivedsuccess( statename, params )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbba
 // Size: 0x11c
 function function_3f662d6595827e55( statename, params )
@@ -337,7 +338,7 @@ function function_3f662d6595827e55( statename, params )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcde
 // Size: 0x3a
 function remoterevive( statename, params )
@@ -349,7 +350,7 @@ function remoterevive( statename, params )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd20
 // Size: 0x95
 function function_44b26bbd70e007bd( statename, params )
@@ -368,7 +369,7 @@ function function_44b26bbd70e007bd( statename, params )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdbd
 // Size: 0x29
 function waitforreviver( statename, params )
@@ -379,7 +380,7 @@ function waitforreviver( statename, params )
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdee
 // Size: 0x56
 function function_8cfa9efbcd45c5b1( statename, params )

@@ -7,7 +7,7 @@
 #namespace namespace_4f424515b9703262;
 
 // Namespace namespace_4f424515b9703262 / namespace_3f4e80ef87da7f80
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x398
 // Size: 0x178
 function function_842e17022dab63c3()
@@ -38,7 +38,7 @@ function function_842e17022dab63c3()
 }
 
 // Namespace namespace_4f424515b9703262 / namespace_3f4e80ef87da7f80
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x518
 // Size: 0x27
 function function_8f8cff4c91f6845b()
@@ -83,7 +83,7 @@ function private play_death_vo( params )
 }
 
 // Namespace namespace_4f424515b9703262 / namespace_3f4e80ef87da7f80
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x628
 // Size: 0x105
 function function_78c6b4fdf8524643()

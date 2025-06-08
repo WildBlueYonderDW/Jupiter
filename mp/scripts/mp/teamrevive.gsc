@@ -58,7 +58,7 @@
 #namespace teamrevive;
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd2
 // Size: 0x2b3
 function init()
@@ -126,7 +126,7 @@ function init()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf8d
 // Size: 0x24
 function function_df4a3cff3137d441( player, oldteam, newteam )
@@ -151,7 +151,7 @@ function private function_3dbfc03b90783f06()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfdf
 // Size: 0xbf
 function function_66e35a0b8bd5c2a7( revivehealth, revivetime, revivetimeout )
@@ -165,7 +165,7 @@ function function_66e35a0b8bd5c2a7( revivehealth, revivetime, revivetimeout )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10a6
 // Size: 0x7
 function function_692cdf5f87a8667b()
@@ -174,7 +174,7 @@ function function_692cdf5f87a8667b()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10b6
 // Size: 0x3a
 function onplayerconnect()
@@ -189,7 +189,7 @@ function onplayerconnect()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f8
 // Size: 0xb
 function onteamchangedeath( player )
@@ -198,7 +198,7 @@ function onteamchangedeath( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x110b
 // Size: 0x57
 function function_5343ecb486b66bf1( ref, cb )
@@ -217,7 +217,7 @@ function function_5343ecb486b66bf1( ref, cb )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x116a
 // Size: 0x3e
 function function_34727d1cdc47572e( ref )
@@ -231,7 +231,7 @@ function function_34727d1cdc47572e( ref )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11b0
 // Size: 0xe7
 function updaterevivetriggerspawnposition()
@@ -274,7 +274,7 @@ function updaterevivetriggerspawnposition()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x129f
 // Size: 0x12b
 function setvalidreviveposition()
@@ -342,7 +342,7 @@ function setvalidreviveposition()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13d2
 // Size: 0x104
 function isvalidrevivetriggerspawnposition()
@@ -386,7 +386,7 @@ function isvalidrevivetriggerspawnposition()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x14de
 // Size: 0x84a
 function spawnrevivetrigger( victim, attacker, victimnotification, meansofdeath )
@@ -631,7 +631,7 @@ function spawnrevivetrigger( victim, attacker, victimnotification, meansofdeath 
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d30
 // Size: 0x1d
 function makereviveteamusable( team, limitedrevives )
@@ -704,7 +704,7 @@ function private function_9cdce27af3d1224c( team, limitedrevives, var_6b8279c8c2
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ee1
 // Size: 0x82
 function function_3679ae96cc4f6706( player )
@@ -729,7 +729,7 @@ function function_3679ae96cc4f6706( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f6b
 // Size: 0x2a3
 function revivetimeoutthink( timeleft )
@@ -818,7 +818,7 @@ function revivetimeoutthink( timeleft )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2216
 // Size: 0xbb
 function function_fd4841a123583725( player, team, time, squadmemberindex )
@@ -833,7 +833,7 @@ function function_fd4841a123583725( player, team, time, squadmemberindex )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x22d9
 // Size: 0x135
 function removetrigger( guid, notifyattacker, var_efc3f7a85cdedb9b, team, squadmemberindex )
@@ -880,7 +880,7 @@ function removetrigger( guid, notifyattacker, var_efc3f7a85cdedb9b, team, squadm
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2416
 // Size: 0x74
 function relocatetrigger( pos )
@@ -894,7 +894,7 @@ function relocatetrigger( pos )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2492
 // Size: 0x5b
 function function_4a3b25b6b877fe73( player, revivetrigger )
@@ -917,7 +917,7 @@ function function_4a3b25b6b877fe73( player, revivetrigger )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24f5
 // Size: 0x87
 function function_ffc734bc64e389b( team )
@@ -938,7 +938,7 @@ function function_ffc734bc64e389b( team )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2584
 // Size: 0x83
 function revivetriggerteamupdater( revivetrigger )
@@ -958,7 +958,7 @@ function revivetriggerteamupdater( revivetrigger )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x260f
 // Size: 0x57
 function revivetriggerspectateteamupdater( revivetrigger )
@@ -979,7 +979,7 @@ function revivetriggerspectateteamupdater( revivetrigger )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x266e
 // Size: 0x86
 function onrevivepickupevent( event, victim )
@@ -1006,7 +1006,7 @@ function onrevivepickupevent( event, victim )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26fc
 // Size: 0x24f
 function lifelimitedallyonuse( player )
@@ -1073,7 +1073,7 @@ function lifelimitedallyonuse( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2953
 // Size: 0x5f
 function finishrevive( player )
@@ -1093,7 +1093,7 @@ function finishrevive( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29ba
 // Size: 0x144
 function lifelimitedenemyonuse( player )
@@ -1130,7 +1130,7 @@ function lifelimitedenemyonuse( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b06
 // Size: 0x5c
 function respawn()
@@ -1153,7 +1153,7 @@ function respawn()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b6a
 // Size: 0x1a4
 function revivetriggerholdonuse( player )
@@ -1200,7 +1200,7 @@ function revivetriggerholdonuse( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2d16
 // Size: 0xf0
 function function_301c4ec489f9bd39( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -1234,7 +1234,7 @@ function function_301c4ec489f9bd39( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e0e
 // Size: 0x21c
 function revivetriggerholdonusebegin( player, ignoreallows )
@@ -1329,7 +1329,7 @@ function private function_c164fed51c204630( deadplayer, reviver )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3126
 // Size: 0x1f8
 function function_c86cf00d5859ce10( target )
@@ -1398,7 +1398,7 @@ function function_c86cf00d5859ce10( target )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3326
 // Size: 0xf8
 function function_34fd10b9791b7bb2( mover )
@@ -1440,7 +1440,7 @@ function function_34fd10b9791b7bb2( mover )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3426
 // Size: 0x62
 function function_d75bbd43c2e29f0c()
@@ -1461,7 +1461,7 @@ function function_d75bbd43c2e29f0c()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3490
 // Size: 0x11e
 function function_1012e32b79f1e975( target )
@@ -1497,7 +1497,7 @@ function function_1012e32b79f1e975( target )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35b6
 // Size: 0x26
 function function_7f0aebb7ad935939( player )
@@ -1512,7 +1512,7 @@ function function_7f0aebb7ad935939( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35e4
 // Size: 0x7f
 function function_a3ffe1d08888c2()
@@ -1541,7 +1541,7 @@ function function_a3ffe1d08888c2()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x366b
 // Size: 0x1f
 function function_849e441cb5be1bda()
@@ -1557,7 +1557,7 @@ function function_849e441cb5be1bda()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3692
 // Size: 0xb9
 function function_877aee1f2cdae81c( player )
@@ -1575,7 +1575,7 @@ function function_877aee1f2cdae81c( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3753
 // Size: 0x53b
 function revivetriggerholdonuseend( team, player, success, ignoreallows )
@@ -1738,7 +1738,7 @@ function revivetriggerholdonuseend( team, player, success, ignoreallows )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c96
 // Size: 0x18
 function revivetriggeroncantuse( player )
@@ -1747,7 +1747,7 @@ function revivetriggeroncantuse( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3cb6
 // Size: 0x2bd
 function getrevivecameradata( deadplayer, reviver )
@@ -1825,7 +1825,7 @@ function getrevivecameradata( deadplayer, reviver )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f7c
 // Size: 0xed
 function revivecamerapullin( cameraent )
@@ -1838,7 +1838,7 @@ function revivecamerapullin( cameraent )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4071
 // Size: 0x1d
 function applynvgforrevive()
@@ -1850,7 +1850,7 @@ function applynvgforrevive()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4096
 // Size: 0x28
 function deleteonspawn( cameraent )
@@ -1862,7 +1862,7 @@ function deleteonspawn( cameraent )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40c6
 // Size: 0x78
 function allowedwhilereviving( isallowed )
@@ -1881,7 +1881,7 @@ function allowedwhilereviving( isallowed )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4146
 // Size: 0x80
 function movecameratorevivepos( var_9813182985677b23, finalangles, player )
@@ -1894,7 +1894,7 @@ function movecameratorevivepos( var_9813182985677b23, finalangles, player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41ce
 // Size: 0x63
 function function_7dce7a3af5b0ce26()
@@ -1910,7 +1910,7 @@ function function_7dce7a3af5b0ce26()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4239
 // Size: 0x1b3
 function addtriggerdeathicon( icon, dyingplayer, team )
@@ -1983,7 +1983,7 @@ function addtriggerdeathicon( icon, dyingplayer, team )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43f4
 // Size: 0x13a
 function runslamzoomonspawn()
@@ -2033,7 +2033,7 @@ function runslamzoomonspawn()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4536
 // Size: 0xd8
 function playslamzoomflash()
@@ -2056,7 +2056,7 @@ function playslamzoomflash()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4616
 // Size: 0x4c, Type: bool
 function hasrevivetrigger( player )
@@ -2070,7 +2070,7 @@ function hasrevivetrigger( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x466b
 // Size: 0x79
 function cleanuprevivetriggericons()
@@ -2092,7 +2092,7 @@ function cleanuprevivetriggericons()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46ec
 // Size: 0x2
 function updatetimerwaitforjoined()
@@ -2101,7 +2101,7 @@ function updatetimerwaitforjoined()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46f6
 // Size: 0x69
 function assigntimervisibleteam( teams )
@@ -2115,7 +2115,7 @@ function assigntimervisibleteam( teams )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4767
 // Size: 0x4a
 function applytimervisibleteam( player )
@@ -2130,7 +2130,7 @@ function applytimervisibleteam( player )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47b9
 // Size: 0x79
 function waitrespawnbutton()
@@ -2168,7 +2168,7 @@ function waitrespawnbutton()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x483a
 // Size: 0x6a, Type: bool
 function function_68ac13d2d66b844a()
@@ -2190,7 +2190,7 @@ function function_68ac13d2d66b844a()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x48ad
 // Size: 0x110
 function function_855b084a3f053964( pos, optionalrange )
@@ -2245,7 +2245,7 @@ function function_855b084a3f053964( pos, optionalrange )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49c6
 // Size: 0x95
 function function_15933e1583288208()
@@ -2272,7 +2272,7 @@ function function_15933e1583288208()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a64
 // Size: 0x13, Type: bool
 function function_bb57ed6218a82d1c()
@@ -2281,7 +2281,7 @@ function function_bb57ed6218a82d1c()
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 17, eflags: 0x0
+// Params 17
 // Checksum 0x0, Offset: 0x4a80
 // Size: 0x2f6
 function function_9341574d596e9d36( player, contents, containertype, deadplayerindex, weaponslotcontents, weaponslotobj, weaponslotclip, var_86b32aff94b5714e, var_275f4441ab7920c8, hasweaponcase, loadoutcontents, var_c299c08e4b8a8e56, var_a0e9fef038504bd0, var_fd8a9b46f4a1e27c, var_9d09471027604346, var_c31356a794d8cb46, var_ad7897ecdbcb63 )
@@ -2332,7 +2332,7 @@ function function_9341574d596e9d36( player, contents, containertype, deadplayeri
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4d7e
 // Size: 0x206
 function function_d5c44af2144b00b3( deadplayer, model, corpse )
@@ -2391,7 +2391,7 @@ function function_d5c44af2144b00b3( deadplayer, model, corpse )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f8c
 // Size: 0x236
 function function_85b5becfebdc7b62( corpse, backpack )
@@ -2430,7 +2430,7 @@ function function_85b5becfebdc7b62( corpse, backpack )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51ca
 // Size: 0x32, Type: bool
 function function_5b55070c02328ea7( corpse )
@@ -2439,7 +2439,7 @@ function function_5b55070c02328ea7( corpse )
 }
 
 // Namespace teamrevive / scripts\mp\teamrevive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5205
 // Size: 0x2d, Type: bool
 function function_957a13a14cdab289( player )
@@ -2450,7 +2450,7 @@ function function_957a13a14cdab289( player )
 /#
 
     // Namespace teamrevive / scripts\mp\teamrevive
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x523b
     // Size: 0x351, Type: dev
     function selfrevive()
@@ -2534,7 +2534,7 @@ function function_957a13a14cdab289( player )
     }
 
     // Namespace teamrevive / scripts\mp\teamrevive
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5594
     // Size: 0x21e, Type: dev
     function function_c4c78f8ceb5aa5f9()

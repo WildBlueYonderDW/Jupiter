@@ -5,7 +5,7 @@
 #namespace cash;
 
 // Namespace cash / scripts\cp_mp\cash
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe1
 // Size: 0x175
 function playersetplunderomnvar( value )
@@ -47,7 +47,7 @@ function playersetplunderomnvar( value )
 }
 
 // Namespace cash / scripts\cp_mp\cash
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25e
 // Size: 0x1e7
 function function_52bea99a5c38fbe5( value, var_10aaaaa566515888 )
@@ -114,7 +114,7 @@ function function_52bea99a5c38fbe5( value, var_10aaaaa566515888 )
 }
 
 // Namespace cash / scripts\cp_mp\cash
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44d
 // Size: 0x175
 function function_6da8b65579348d0b()

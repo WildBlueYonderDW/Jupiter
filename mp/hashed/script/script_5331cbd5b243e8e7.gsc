@@ -9,7 +9,7 @@
 #namespace warrior_breacher;
 
 // Namespace warrior_breacher / namespace_b823624c3b9ff9f3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x165
 // Size: 0x17
 function function_1e328551d2f6d389()
@@ -19,7 +19,7 @@ function function_1e328551d2f6d389()
 }
 
 // Namespace warrior_breacher / namespace_b823624c3b9ff9f3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x184
 // Size: 0x9d
 function onplayerspawned()
@@ -47,7 +47,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_breacher / namespace_b823624c3b9ff9f3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x229
 // Size: 0x31
 function waittill_grenade_fire()
@@ -63,7 +63,7 @@ function waittill_grenade_fire()
 }
 
 // Namespace warrior_breacher / namespace_b823624c3b9ff9f3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x262
 // Size: 0x6a
 function function_5e68e790dbe88d75()

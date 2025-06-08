@@ -58,7 +58,7 @@ function private common_init()
 }
 
 // Namespace lightning_chain / scripts\cp_mp\weapons\lightning_chain
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x741
 // Size: 0x7e
 function create_lightning_chain_params( max_enemies_killed, radius, head_gib_chance, arc_travel_time, var_232825c32e606ba4 )
@@ -73,7 +73,7 @@ function create_lightning_chain_params( max_enemies_killed, radius, head_gib_cha
 }
 
 // Namespace lightning_chain / scripts\cp_mp\weapons\lightning_chain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7c8
 // Size: 0x76
 function arc_damage( source_enemy, player, params )
@@ -95,7 +95,7 @@ function arc_damage( source_enemy, player, params )
 }
 
 // Namespace lightning_chain / scripts\cp_mp\weapons\lightning_chain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x846
 // Size: 0x70, Type: bool
 function function_9754219dda9b7840( params )
@@ -137,7 +137,8 @@ function private lc_expand( start_point, count_left, params )
     
     var_4e83f2f535a21158 = sortbydistance( var_4e83f2f535a21158, start_point );
     
-    for (i = 0; i < var_ec235e528a1b6682; i++) {
+    for ( i = 0; i < var_ec235e528a1b6682 ; i++ )
+    {
         level thread function_ba46a0d1e783a686( start_point, var_4e83f2f535a21158[ i ], params );
     }
     
@@ -161,7 +162,7 @@ function private lc_expand( start_point, count_left, params )
 }
 
 // Namespace lightning_chain / scripts\cp_mp\weapons\lightning_chain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa3a
 // Size: 0x3a
 function function_36230b878a401091( waittime, start_point, count_left, params )
@@ -171,7 +172,7 @@ function function_36230b878a401091( waittime, start_point, count_left, params )
 }
 
 // Namespace lightning_chain / scripts\cp_mp\weapons\lightning_chain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7c
 // Size: 0x37
 function function_ae21b7c8d9bf419c( ai_target )
@@ -187,7 +188,7 @@ function function_ae21b7c8d9bf419c( ai_target )
 }
 
 // Namespace lightning_chain / scripts\cp_mp\weapons\lightning_chain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xabc
 // Size: 0xe6
 function function_ba46a0d1e783a686( start_point, ai_target, params )
@@ -223,7 +224,7 @@ function function_ba46a0d1e783a686( start_point, ai_target, params )
 }
 
 // Namespace lightning_chain / scripts\cp_mp\weapons\lightning_chain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbaa
 // Size: 0xca
 function function_ca73f0d9e9cea887( duration )
@@ -342,7 +343,7 @@ function private lc_stun_and_damage( var_6344ee17398456ea, params )
 }
 
 // Namespace lightning_chain / scripts\cp_mp\weapons\lightning_chain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe95
 // Size: 0x64
 function lc_do_damage( params )

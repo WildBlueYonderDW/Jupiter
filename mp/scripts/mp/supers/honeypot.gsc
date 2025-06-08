@@ -12,7 +12,7 @@
 #namespace honeypot;
 
 // Namespace honeypot / scripts\mp\supers\honeypot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a3
 // Size: 0x51, Type: bool
 function function_99877ccd9f1a6857()
@@ -27,7 +27,7 @@ function function_99877ccd9f1a6857()
 }
 
 // Namespace honeypot / scripts\mp\supers\honeypot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fd
 // Size: 0x62, Type: bool
 function function_c91188ff5b13a34b( attacker )
@@ -51,7 +51,7 @@ function function_c91188ff5b13a34b( attacker )
 }
 
 // Namespace honeypot / scripts\mp\supers\honeypot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x268
 // Size: 0x12
 function onplayerdisconnect( params )
@@ -72,7 +72,7 @@ function private function_b26e128f86f6c616()
 }
 
 // Namespace honeypot / scripts\mp\supers\honeypot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cc
 // Size: 0x12
 function function_9bc4debdef524e6a()

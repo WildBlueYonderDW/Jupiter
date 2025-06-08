@@ -10,7 +10,7 @@
 #namespace ob_stealth;
 
 // Namespace ob_stealth / namespace_1b08b59b8674c1cc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25e
 // Size: 0xd6
 function function_fb9de2c84b81e225()
@@ -160,7 +160,8 @@ function private function_60ec71076d4f96b6()
         region = "default_stealth_group_";
     }
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         stealthgroup = region + i;
         a_grp = function_dbc2d928c8e424d9( stealthgroup );
         

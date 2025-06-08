@@ -9,7 +9,7 @@
 #namespace namespace_3ffbdf8bac74c31e;
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15c
 // Size: 0x15
 function function_58adef5faf094375()
@@ -19,7 +19,7 @@ function function_58adef5faf094375()
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x179
 // Size: 0xa4
 function function_12d0f398c50fd950()
@@ -50,7 +50,7 @@ function function_12d0f398c50fd950()
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x225
 // Size: 0x3d5
 function function_3e6d63e335461d9f( var_7483491932b87344 )
@@ -72,7 +72,8 @@ function function_3e6d63e335461d9f( var_7483491932b87344 )
         var_4a3eefb757083721 = isdefined( weaponscale.var_4a3eefb757083721 ) ? weaponscale.var_4a3eefb757083721 : 0;
         var_318fdf592e2fa508 = isdefined( weaponscale.var_318fdf592e2fa508 ) ? weaponscale.var_318fdf592e2fa508 : 0;
         
-        for (i = 1; i <= 55; i++) {
+        for ( i = 1; i <= 55 ; i++ )
+        {
             if ( i >= 1 && i <= 10 )
             {
                 bonus_damage += var_8be978d92a5f491b;
@@ -115,7 +116,7 @@ function function_3e6d63e335461d9f( var_7483491932b87344 )
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x602
 // Size: 0x1e
 function function_75f8b3962a591c57()
@@ -125,7 +126,7 @@ function function_75f8b3962a591c57()
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x629
 // Size: 0x81
 function function_52890514a3a728b7( weaponobject )
@@ -148,7 +149,7 @@ function function_52890514a3a728b7( weaponobject )
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6b3
 // Size: 0x33, Type: bool
 function function_c88d1c26bf2574e( weaponobject, player )
@@ -163,7 +164,7 @@ function function_c88d1c26bf2574e( weaponobject, player )
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ef
 // Size: 0x22a
 function function_75c0fdca3c75b192( params )
@@ -233,7 +234,7 @@ function function_75c0fdca3c75b192( params )
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x922
 // Size: 0x1bd
 function function_33b2645c578ef6f6( params )
@@ -286,7 +287,7 @@ function function_33b2645c578ef6f6( params )
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xae8
 // Size: 0x1b4
 function function_6f4c937aa843fac2( n_base_damage, roundnumber, weaponrootname, aicategory, maxhealth, dmg_struct, packdamagescalar )
@@ -349,7 +350,7 @@ function function_6f4c937aa843fac2( n_base_damage, roundnumber, weaponrootname, 
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca5
 // Size: 0x26
 function function_416466f336d75ef6( sweapon )
@@ -363,7 +364,7 @@ function function_416466f336d75ef6( sweapon )
 }
 
 // Namespace namespace_3ffbdf8bac74c31e / namespace_73f07f62510f0f5b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd4
 // Size: 0x159
 function scale_underbarrel_damage( dmg_struct )

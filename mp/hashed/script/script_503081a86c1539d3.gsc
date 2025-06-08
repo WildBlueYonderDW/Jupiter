@@ -4,7 +4,7 @@
 #namespace namespace_5e75b5a54fb4603f;
 
 // Namespace namespace_5e75b5a54fb4603f / namespace_8fb1124048da2603
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7
 // Size: 0x99
 function function_a57e56c880e80cdd()

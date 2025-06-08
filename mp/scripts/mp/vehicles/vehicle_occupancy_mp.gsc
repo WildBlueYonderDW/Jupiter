@@ -25,7 +25,7 @@
 #namespace vehicle_occupancy_mp;
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x374
 // Size: 0x199
 function vehicle_occupancy_mp_init()
@@ -53,7 +53,7 @@ function vehicle_occupancy_mp_init()
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x515
 // Size: 0xf7
 function vehicle_occupancy_mp_onentervehicle( vehicle, var_7558f98f3236963d, player, data )
@@ -94,7 +94,7 @@ function vehicle_occupancy_mp_onentervehicle( vehicle, var_7558f98f3236963d, pla
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x614
 // Size: 0x12a
 function vehicle_occupancy_mp_onexitvehicle( vehicle, var_fc7c7a874b43a31a, player, data )
@@ -139,7 +139,7 @@ function vehicle_occupancy_mp_onexitvehicle( vehicle, var_fc7c7a874b43a31a, play
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x746
 // Size: 0x49
 function function_53280c8defb18363( player, vehicle )
@@ -154,7 +154,7 @@ function function_53280c8defb18363( player, vehicle )
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x797
 // Size: 0x94
 function vehicle_occupancy_mp_changedseats( player, vehicle, var_fc7c7a874b43a31a, seatid )
@@ -179,7 +179,7 @@ function vehicle_occupancy_mp_changedseats( player, vehicle, var_fc7c7a874b43a31
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x833
 // Size: 0x166
 function vehicle_occupancy_mp_updatemarkfilter( vehicle )
@@ -230,7 +230,7 @@ function vehicle_occupancy_mp_updatemarkfilter( vehicle )
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9a1
 // Size: 0x16
 function vehicle_occupancy_mp_registerinstance( vehicle )
@@ -241,7 +241,7 @@ function vehicle_occupancy_mp_registerinstance( vehicle )
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9bf
 // Size: 0x16
 function vehicle_occupancy_mp_deregisterinstance( vehicle )
@@ -252,16 +252,16 @@ function vehicle_occupancy_mp_deregisterinstance( vehicle )
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9dd
 // Size: 0x5e
 function vehicle_occupancy_mp_hidecashbag( vehicle, var_7558f98f3236963d, player, data )
 {
     if ( isdefined( var_7558f98f3236963d ) )
     {
-        var_c50b485a43752fd = vehicle_occupancy_getleveldataforseat( vehicle.vehiclename, var_7558f98f3236963d );
+        leveldataforseat = vehicle_occupancy_getleveldataforseat( vehicle.vehiclename, var_7558f98f3236963d );
         
-        if ( istrue( var_c50b485a43752fd.showcashbag ) )
+        if ( istrue( leveldataforseat.showcashbag ) )
         {
             return;
         }
@@ -271,16 +271,16 @@ function vehicle_occupancy_mp_hidecashbag( vehicle, var_7558f98f3236963d, player
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa43
 // Size: 0x5e
 function vehicle_occupancy_mp_showcashbag( vehicle, var_fc7c7a874b43a31a, player, data )
 {
     if ( isdefined( var_fc7c7a874b43a31a ) )
     {
-        var_c50b485a43752fd = vehicle_occupancy_getleveldataforseat( vehicle.vehiclename, var_fc7c7a874b43a31a );
+        leveldataforseat = vehicle_occupancy_getleveldataforseat( vehicle.vehiclename, var_fc7c7a874b43a31a );
         
-        if ( istrue( var_c50b485a43752fd.showcashbag ) )
+        if ( istrue( leveldataforseat.showcashbag ) )
         {
             return;
         }
@@ -290,7 +290,7 @@ function vehicle_occupancy_mp_showcashbag( vehicle, var_fc7c7a874b43a31a, player
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaa9
 // Size: 0x39
 function vehicle_occupancy_mp_updateowner( vehicle )
@@ -304,7 +304,7 @@ function vehicle_occupancy_mp_updateowner( vehicle )
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaea
 // Size: 0x2a3
 function vehicle_occupancy_mp_takeriotshield( player, vehicle, var_7558f98f3236963d )
@@ -363,7 +363,8 @@ function vehicle_occupancy_mp_takeriotshield( player, vehicle, var_7558f98f32369
     {
         if ( scripts\cp_mp\utility\game_utility::isbrstylegametype() && namespace_aead94004cf4c147::isbackpackinventoryenabled() )
         {
-            for (i = 0; i < 3; i++) {
+            for ( i = 0; i < 3 ; i++ )
+            {
                 weapontocheck = scripts\mp\gametypes\br_pickups::function_13ecf3644442a3e7( player, i );
                 
                 if ( isdefined( weapontocheck ) && weapontocheck == riotshieldweapon )
@@ -414,7 +415,7 @@ function vehicle_occupancy_mp_takeriotshield( player, vehicle, var_7558f98f32369
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd95
 // Size: 0x1d7
 function vehicle_occupancy_mp_giveriotshield( player, fromdeath, fromlaststand )
@@ -474,7 +475,7 @@ function vehicle_occupancy_mp_giveriotshield( player, fromdeath, fromlaststand )
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf74
 // Size: 0x91
 function vehicle_occupancy_mp_updateriotshield( player, vehicle, var_7558f98f3236963d )
@@ -496,9 +497,9 @@ function vehicle_occupancy_mp_updateriotshield( player, vehicle, var_7558f98f323
             return;
         }
         
-        var_c50b485a43752fd = vehicle_occupancy_getleveldataforseat( vehicle.vehiclename, var_7558f98f3236963d );
+        leveldataforseat = vehicle_occupancy_getleveldataforseat( vehicle.vehiclename, var_7558f98f3236963d );
         
-        if ( isdefined( var_c50b485a43752fd.turretobjweapon ) )
+        if ( isdefined( leveldataforseat.turretobjweapon ) )
         {
             return;
         }
@@ -508,7 +509,7 @@ function vehicle_occupancy_mp_updateriotshield( player, vehicle, var_7558f98f323
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x100d
 // Size: 0x116
 function vehicle_occupancy_mp_registersentient( vehicle )
@@ -554,7 +555,7 @@ function vehicle_occupancy_mp_registersentient( vehicle )
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x112b
 // Size: 0x1e
 function vehicle_occupancy_mp_unregistersentient( vehicle )
@@ -564,7 +565,7 @@ function vehicle_occupancy_mp_unregistersentient( vehicle )
 }
 
 // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1151
 // Size: 0x17, Type: bool
 function vehicle_occupancy_mp_issentient( vehicle )
@@ -575,7 +576,7 @@ function vehicle_occupancy_mp_issentient( vehicle )
 /#
 
     // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1171
     // Size: 0x2c, Type: dev
     function function_a24b81b039ab82a2()
@@ -586,7 +587,7 @@ function vehicle_occupancy_mp_issentient( vehicle )
     }
 
     // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x11a5
     // Size: 0x5b, Type: dev
     function function_c69e3a63719e7856( vehicle )
@@ -597,7 +598,7 @@ function vehicle_occupancy_mp_issentient( vehicle )
     }
 
     // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1208
     // Size: 0x3e, Type: dev
     function function_8bccda4687e38719( vehicle )
@@ -607,7 +608,7 @@ function vehicle_occupancy_mp_issentient( vehicle )
     }
 
     // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x124e
     // Size: 0x62, Type: dev
     function function_e04e6e6510f701ff()
@@ -629,7 +630,7 @@ function vehicle_occupancy_mp_issentient( vehicle )
     }
 
     // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x12b8
     // Size: 0x5f6, Type: dev
     function function_d5250ff459d106fe()
@@ -705,7 +706,7 @@ function vehicle_occupancy_mp_issentient( vehicle )
     }
 
     // Namespace vehicle_occupancy_mp / scripts\mp\vehicles\vehicle_occupancy_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x18b6
     // Size: 0x703, Type: dev
     function function_da867e6291c3df56()

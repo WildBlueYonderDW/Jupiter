@@ -10,7 +10,7 @@
 #namespace namespace_23065dd8923d8d1e;
 
 // Namespace namespace_23065dd8923d8d1e / namespace_9bdb6600db5e24a4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ca
 // Size: 0x42
 function function_7dcdb0119cb801c6()
@@ -20,7 +20,7 @@ function function_7dcdb0119cb801c6()
 }
 
 // Namespace namespace_23065dd8923d8d1e / namespace_9bdb6600db5e24a4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x214
 // Size: 0x7c
 function init_pain()

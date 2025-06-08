@@ -13,7 +13,7 @@
 #namespace proxyagent;
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1bd
 // Size: 0xc2, Type: bool
 function controlproxyagent( agent, streakinfo, endnotifymsg, playerkillstreaktimeout, var_f661e51eafc4f486, visionset )
@@ -54,7 +54,7 @@ function controlproxyagent( agent, streakinfo, endnotifymsg, playerkillstreaktim
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x288
 // Size: 0xf0
 function watchplayerkillstreakdeath( endnotifymsg, streakname )
@@ -80,7 +80,7 @@ function watchplayerkillstreakdeath( endnotifymsg, streakname )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x380
 // Size: 0x1c
 function watchplayerkillstreakdisconnect( endnotifymsg )
@@ -91,7 +91,7 @@ function watchplayerkillstreakdisconnect( endnotifymsg )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a4
 // Size: 0x1c
 function watchplayerkillstreakswitchteam( endnotifymsg )
@@ -102,7 +102,7 @@ function watchplayerkillstreakswitchteam( endnotifymsg )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c8
 // Size: 0x72
 function watchplayerkillstreakearlyexit( endnotifymsg )
@@ -134,7 +134,7 @@ function watchplayerkillstreakearlyexit( endnotifymsg )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x442
 // Size: 0x25
 function watchplayerkillstreaktimeout( endnotifymsg, var_e6bcba36402ee560 )
@@ -146,7 +146,7 @@ function watchplayerkillstreaktimeout( endnotifymsg, var_e6bcba36402ee560 )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46f
 // Size: 0x3e
 function watchplayerkillstreakemp( endnotifymsg )
@@ -164,7 +164,7 @@ function watchplayerkillstreakemp( endnotifymsg )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b5
 // Size: 0x1f
 function watchplayerkillstreakend( endnotifymsg )
@@ -174,7 +174,7 @@ function watchplayerkillstreakend( endnotifymsg )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4dc
 // Size: 0x12
 function watchgameend()
@@ -184,7 +184,7 @@ function watchgameend()
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4f6
 // Size: 0x52
 function startcontrol( agent, streakname, endnotifymsg, visionset )
@@ -203,7 +203,7 @@ function startcontrol( agent, streakname, endnotifymsg, visionset )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x550
 // Size: 0x4c
 function stopcontrol()
@@ -223,7 +223,7 @@ function stopcontrol()
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a4
 // Size: 0x24
 function cleararchetype( classstruct )
@@ -233,7 +233,7 @@ function cleararchetype( classstruct )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d0
 // Size: 0x53
 function reapplyarchetype( classstruct )
@@ -256,7 +256,7 @@ function reapplyarchetype( classstruct )
 }
 
 // Namespace proxyagent / scripts\mp\killstreaks\proxyagent
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x62b
 // Size: 0xb
 function killproxy( keepcorpse )

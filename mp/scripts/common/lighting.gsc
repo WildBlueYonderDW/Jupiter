@@ -8,7 +8,7 @@
 #namespace lighting;
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x601
 // Size: 0x42
 function is_light()
@@ -22,7 +22,7 @@ function is_light()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x64b
 // Size: 0x82
 function function_70a9f70afd49dead( time, endintensity )
@@ -45,7 +45,7 @@ function function_70a9f70afd49dead( time, endintensity )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6d5
 // Size: 0x81
 function function_c690755ae1e4d083( time, endcolor )
@@ -68,7 +68,7 @@ function function_c690755ae1e4d083( time, endcolor )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x75e
 // Size: 0x82
 function function_8b766b3f91e671e2( time, endradius )
@@ -103,7 +103,7 @@ function private function_90d577e206f6609()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x806
 // Size: 0x3ae
 function flicker_light( min_delay, max_delay, var_327a4187018839, var_894b79fbcc60eeef, min_time, max_time, lerp_amount, min_num, max_num, min_pause, max_pause, pause_scale, intensity )
@@ -213,7 +213,8 @@ function flicker_light( min_delay, max_delay, var_327a4187018839, var_894b79fbcc
     
     for ( ;; )
     {
-        for (z = 0; z < num_flicker; z++) {
+        for ( z = 0; z < num_flicker ; z++ )
+        {
             if ( min_intensity < max_intensity )
             {
                 flicker_intensity = randomfloatrange( min_intensity, max_intensity );
@@ -334,7 +335,7 @@ function flicker_light( min_delay, max_delay, var_327a4187018839, var_894b79fbcc
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xbbc
 // Size: 0x159
 function function_d688e745daa6f5d( min_time, max_time, var_327a4187018839, var_894b79fbcc60eeef, max_move, intensity )
@@ -395,7 +396,7 @@ function function_d688e745daa6f5d( min_time, max_time, var_327a4187018839, var_8
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xd1d
 // Size: 0x8b
 function blink_light( on_time, off_time, lerp_amount, blink_num, pause, intensity )
@@ -438,7 +439,7 @@ function blink_light( on_time, off_time, lerp_amount, blink_num, pause, intensit
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdb0
 // Size: 0x32
 function light_init()
@@ -453,7 +454,7 @@ function light_init()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdea
 // Size: 0x1f6
 function function_3e8e3c226faefbe3()
@@ -471,7 +472,7 @@ function function_3e8e3c226faefbe3()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xfe8
 // Size: 0xdf
 function function_dbec921ed499ee34( name, color0, color1, intensity, mindelay, maxdelay, maxmove )
@@ -492,7 +493,7 @@ function function_dbec921ed499ee34( name, color0, color1, intensity, mindelay, m
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10cf
 // Size: 0x53
 function function_8826927b5fe822eb( name )
@@ -506,7 +507,7 @@ function function_8826927b5fe822eb( name )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x112b
 // Size: 0x1cc
 function function_985b4b064b531836( name, targetname, intensity_ )
@@ -554,7 +555,7 @@ function function_985b4b064b531836( name, targetname, intensity_ )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x12ff
 // Size: 0x1a1
 function function_1d321dd7f8b825ce( name, targetname, intensity_, lerptime )
@@ -620,7 +621,7 @@ function function_1d321dd7f8b825ce( name, targetname, intensity_, lerptime )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x14a8
 // Size: 0x208
 function function_2540bf17dc38be84( color0, color1, intensity, mindelay, maxdelay, maxmove )
@@ -660,14 +661,16 @@ function function_2540bf17dc38be84( color0, color1, intensity, mindelay, maxdela
         
         if ( isdefined( color1 ) )
         {
-            for (i = 1; i <= steps; i++) {
+            for ( i = 1; i <= steps ; i++ )
+            {
                 tocolor = vectorlerp( color0, color1, delay );
                 self setlightcolor( tocolor );
             }
             
             wait 0.05;
             
-            for (i = steps; i > 0; i--) {
+            for ( i = steps; i > 0 ; i-- )
+            {
                 fromcolor = vectorlerp( color1, color0, delay );
                 self setlightcolor( fromcolor );
             }
@@ -685,7 +688,7 @@ function function_2540bf17dc38be84( color0, color1, intensity, mindelay, maxdela
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16b8
 // Size: 0xf4
 function fire_flicker( min_delay, max_delay )
@@ -696,7 +699,8 @@ function fire_flicker( min_delay, max_delay )
     self endon( "kill_flicker" );
     self endon( "death" );
     
-    for (old_intensity = full; ; old_intensity = intensity) {
+    for ( old_intensity = full;  ; old_intensity = intensity )
+    {
         intensity = randomfloatrange( full * 0.5, full * 1.2 );
         timer = randomfloatrange( min_delay, max_delay );
         timer *= 0.75;
@@ -706,7 +710,8 @@ function fire_flicker( min_delay, max_delay )
             wait 0.05;
         }
         
-        for (i = 0; i < timer; i++) {
+        for ( i = 0; i < timer ; i++ )
+        {
             new_intensity = intensity * i / timer + old_intensity * ( timer - i ) / timer;
             self setlightintensity( new_intensity );
             wait 0.05;
@@ -715,7 +720,7 @@ function fire_flicker( min_delay, max_delay )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17b4
 // Size: 0x111
 function function_9958ec3e24311088( script_noteworthy, fxid )
@@ -748,7 +753,7 @@ function function_9958ec3e24311088( script_noteworthy, fxid )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18ce
 // Size: 0x186
 function function_bd4b36550dbd76( intensity, color, is_on )
@@ -788,7 +793,7 @@ function function_bd4b36550dbd76( intensity, color, is_on )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1a5c
 // Size: 0xc1
 function flickering_light( light_object, off_color, off_intensity, on_color, on_intensity, min_delay, max_delay )
@@ -826,7 +831,7 @@ function flickering_light( light_object, off_color, off_intensity, on_color, on_
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1b25
 // Size: 0x64
 function function_e986d74a7d49f65f( light_object, off_color, off_intensity, on_color, on_intensity )
@@ -843,7 +848,7 @@ function function_e986d74a7d49f65f( light_object, off_color, off_intensity, on_c
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x1b91
 // Size: 0x10b
 function function_bf134e4c6c36436( name, minintensity, maxintensity, mindelay, maxdelay, minflicker, maxflicker, minpause, maxpause )
@@ -866,7 +871,7 @@ function function_bf134e4c6c36436( name, minintensity, maxintensity, mindelay, m
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ca4
 // Size: 0x53
 function function_ec6b3b3a4ca37980( name )
@@ -880,7 +885,7 @@ function function_ec6b3b3a4ca37980( name )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d00
 // Size: 0x21f
 function function_bb536503bca3484c( name, targetname, minintensity, maxintensity )
@@ -939,7 +944,7 @@ function function_bb536503bca3484c( name, targetname, minintensity, maxintensity
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x1f27
 // Size: 0x168
 function function_8ebd596ef73e60c7( minintensity, maxintensity, mindelay, maxdelay, minflicker, maxflicker, minpause, maxpause )
@@ -983,7 +988,7 @@ function function_8ebd596ef73e60c7( minintensity, maxintensity, mindelay, maxdel
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x2097
 // Size: 0x20a
 function electric_flicker( min_intensity, max_intensity, min_delay, max_delay, min_flicker, max_flicker, min_pause, max_pause )
@@ -1011,7 +1016,8 @@ function electric_flicker( min_intensity, max_intensity, min_delay, max_delay, m
             }
             else
             {
-                for (z = 0; z < var_3c672bdc3ad1c909; z++) {
+                for ( z = 0; z < var_3c672bdc3ad1c909 ; z++ )
+                {
                     intensity = randomfloatrange( min_intensity, max_intensity );
                     timer = randomfloatrange( min_delay, max_delay );
                     timer *= 0.75;
@@ -1021,7 +1027,8 @@ function electric_flicker( min_intensity, max_intensity, min_delay, max_delay, m
                         wait 0.05;
                     }
                     
-                    for (i = 0; i < timer; i++) {
+                    for ( i = 0; i < timer ; i++ )
+                    {
                         new_intensity = intensity * i / timer + old_intensity * ( timer - i ) / timer;
                         self setlightintensity( new_intensity );
                         wait 0.05;
@@ -1035,7 +1042,8 @@ function electric_flicker( min_intensity, max_intensity, min_delay, max_delay, m
             continue;
         }
         
-        for (i = 0; i < var_da011e1105e9147a; i++) {
+        for ( i = 0; i < var_da011e1105e9147a ; i++ )
+        {
             intensity = randomfloatrange( max_intensity * 0.95, max_intensity );
             
             while ( self.var_873c86db89081397 )
@@ -1054,7 +1062,7 @@ function electric_flicker( min_intensity, max_intensity, min_delay, max_delay, m
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x22a9
 // Size: 0xd6
 function function_238c2a0aae70e973( targetname, time, endintensity, flickerpercentage )
@@ -1080,7 +1088,7 @@ function function_238c2a0aae70e973( targetname, time, endintensity, flickerperce
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2387
 // Size: 0x1bb
 function lerp_spot_intensity_manage( ent, time, endintensity, flickerpercentage )
@@ -1148,7 +1156,7 @@ function lerp_spot_intensity_manage( ent, time, endintensity, flickerpercentage 
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x254a
 // Size: 0xa7
 function function_e5074ba6c35b7cc5( ent, new_intensity )
@@ -1168,7 +1176,7 @@ function function_e5074ba6c35b7cc5( ent, new_intensity )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25f9
 // Size: 0x96
 function function_ee3c5a9a02050510( targetname, time, endradius )
@@ -1190,7 +1198,7 @@ function function_ee3c5a9a02050510( targetname, time, endradius )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2697
 // Size: 0x32
 function function_f5600319797ffa1e( targetname, endintensity )
@@ -1200,7 +1208,7 @@ function function_f5600319797ffa1e( targetname, endintensity )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26d1
 // Size: 0xad
 function function_4592ed3200c60f5( targetname, time, endcolor )
@@ -1217,7 +1225,7 @@ function function_4592ed3200c60f5( targetname, time, endcolor )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2786
 // Size: 0x80
 function function_b8c80e21f9ae102d( ent, time, endcolor )
@@ -1238,7 +1246,7 @@ function function_b8c80e21f9ae102d( ent, time, endcolor )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x280e
 // Size: 0x32
 function function_269d4562a553f14c( targetname, endcolor )
@@ -1248,7 +1256,7 @@ function function_269d4562a553f14c( targetname, endcolor )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x2848
 // Size: 0x667
 function function_b01bc37bb97ec069( targetname, var_595f214a0c836320, min_intensity, max_intensity, fxid1, fxid2, var_7a699ba6660f6247, var_73423fd4b925b5f1, var_e40d0e4f030018db, var_75289c46941c448d, ender, snd_params, offint, oneshot_sfx )
@@ -1496,7 +1504,7 @@ function function_b01bc37bb97ec069( targetname, var_595f214a0c836320, min_intens
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x2eb7
 // Size: 0x197
 function function_86db5c6ec8a91629( ent, ent2, var_595f214a0c836320, min_intensity, var_7a699ba6660f6247, var_73423fd4b925b5f1, var_e40d0e4f030018db, var_75289c46941c448d, ender, snd_params, offint )
@@ -1523,7 +1531,8 @@ function function_86db5c6ec8a91629( ent, ent2, var_595f214a0c836320, min_intensi
     lightents = [];
     modelents = [];
     
-    for (flicker_count = 0; flicker_count < var_595f214a0c836320 || var_595f214a0c836320 == 0; flicker_count++) {
+    for ( flicker_count = 0; flicker_count < var_595f214a0c836320 || var_595f214a0c836320 == 0 ; flicker_count++ )
+    {
         on = undefined;
         
         if ( isdefined( offint ) )
@@ -1569,7 +1578,7 @@ function function_86db5c6ec8a91629( ent, ent2, var_595f214a0c836320, min_intensi
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3056
 // Size: 0x2a
 function function_a7bb69ffe1fbf84e()
@@ -1581,7 +1590,7 @@ function function_a7bb69ffe1fbf84e()
 /#
 
     // Namespace lighting / scripts\common\lighting
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3088
     // Size: 0x15, Type: dev
     function function_c2b7330a1c8f43d8()
@@ -1592,7 +1601,7 @@ function function_a7bb69ffe1fbf84e()
 #/
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30a5
 // Size: 0x63
 function function_278d40887314db6d( message, callback )
@@ -1603,7 +1612,7 @@ function function_278d40887314db6d( message, callback )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3110
 // Size: 0xfa
 function light_message( message, arg1, arg2, arg3 )
@@ -1636,7 +1645,7 @@ function light_message( message, arg1, arg2, arg3 )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3212
 // Size: 0x58
 function function_2ceafa9e1e353535( outer_start, inner_start, outer_end, inner_end, duration )
@@ -1652,7 +1661,7 @@ function function_2ceafa9e1e353535( outer_start, inner_start, outer_end, inner_e
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3272
 // Size: 0x17
 function function_47579c7a8607898a( fx_name )
@@ -1661,7 +1670,7 @@ function function_47579c7a8607898a( fx_name )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3291
 // Size: 0xed
 function function_aafda6e6603c63ca( fxid, dist )
@@ -1689,7 +1698,7 @@ function function_aafda6e6603c63ca( fxid, dist )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3386
 // Size: 0x36
 function function_39eced3283796f8d( fxid, ent )
@@ -1700,7 +1709,7 @@ function function_39eced3283796f8d( fxid, ent )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33c4
 // Size: 0x1b
 function function_70aa892bc033402d( var_2968e9b67915600 )
@@ -1710,7 +1719,7 @@ function function_70aa892bc033402d( var_2968e9b67915600 )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33e7
 // Size: 0x27
 function function_8ad7f8bc3ab43c98()
@@ -1724,7 +1733,7 @@ function function_8ad7f8bc3ab43c98()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3416
 // Size: 0x6a
 function function_91aa9c6b08cb18be( time, destfov )
@@ -1738,7 +1747,7 @@ function function_91aa9c6b08cb18be( time, destfov )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3488
 // Size: 0x6a
 function function_c58a66b712fbc58e( time, destfov )
@@ -1752,7 +1761,7 @@ function function_c58a66b712fbc58e( time, destfov )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34fa
 // Size: 0x1c4
 function lerp_fov_over_distance_trigger()
@@ -1795,7 +1804,7 @@ function lerp_fov_over_distance_trigger()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x36c6
 // Size: 0x3c6
 function function_9ce312d3d1b90fc4( var_d17bc90beaceba66, var_235ac5072a1ae788, var_b3c4e0e491f9176b, in_time, wait_time, out_time )
@@ -1929,7 +1938,7 @@ function function_9ce312d3d1b90fc4( var_d17bc90beaceba66, var_235ac5072a1ae788, 
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a94
 // Size: 0xd
 function function_6a722d3b33217661()
@@ -1938,7 +1947,7 @@ function function_6a722d3b33217661()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x3aa9
 // Size: 0x1aa
 function function_830e692e8b173603( dvar_name, state, var_6030244e11bf3e1b, strength_goal, var_235ac5072a1ae788, var_1339c9f748769b8b, var_bf8e19640d7f4ad0 )
@@ -2027,7 +2036,7 @@ function function_830e692e8b173603( dvar_name, state, var_6030244e11bf3e1b, stre
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3c5c
 // Size: 0x8e
 function function_d8d7817826eadad8( ent, time, target )
@@ -2049,7 +2058,7 @@ function function_d8d7817826eadad8( ent, time, target )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cf2
 // Size: 0x7c
 function function_a73453a4796f91f4()
@@ -2071,7 +2080,7 @@ function function_a73453a4796f91f4()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x3d76
 // Size: 0x4fa
 function function_31c01ed170a03ed6( var_3ab4fd4794242e73, var_8a618ecfa14c2858, var_9e8f0007b795320f, spotdistcull, var_b2f5ddc90a053b53, endflag, var_8d3d30eebe904364 )
@@ -2180,7 +2189,8 @@ function function_31c01ed170a03ed6( var_3ab4fd4794242e73, var_8a618ecfa14c2858, 
             index += 1;
         }
         
-        for (i = 0; i < var_6eeebda7526c440d.size; i++) {
+        for ( i = 0; i < var_6eeebda7526c440d.size ; i++ )
+        {
             dist = distance( var_6eeebda7526c440d[ i ].origin, level.player.origin );
             dot = vectordot( vectornormalize( var_6eeebda7526c440d[ i ].origin - level.player.origin ), forward );
             
@@ -2197,7 +2207,8 @@ function function_31c01ed170a03ed6( var_3ab4fd4794242e73, var_8a618ecfa14c2858, 
         
         if ( var_6eeebda7526c440d.size > var_c3b392000803f5c4 )
         {
-            for (i = var_c3b392000803f5c4; i < var_6eeebda7526c440d.size; i++) {
+            for ( i = var_c3b392000803f5c4; i < var_6eeebda7526c440d.size ; i++ )
+            {
             }
         }
         
@@ -2206,7 +2217,7 @@ function function_31c01ed170a03ed6( var_3ab4fd4794242e73, var_8a618ecfa14c2858, 
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4278
 // Size: 0xd
 function function_4bcc2f384d0be5d8()
@@ -2216,7 +2227,7 @@ function function_4bcc2f384d0be5d8()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x428d
 // Size: 0x66
 function dazed_effect( intensity, time )
@@ -2245,7 +2256,7 @@ function dazed_effect( intensity, time )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42fb
 // Size: 0xb3
 function function_e1f5d98cfa1ab7a( time )
@@ -2262,7 +2273,7 @@ function function_e1f5d98cfa1ab7a( time )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43b6
 // Size: 0xd5
 function function_1a6f8798d7db1402( time )
@@ -2281,7 +2292,7 @@ function function_1a6f8798d7db1402( time )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4493
 // Size: 0x2a
 function function_4593f6ae7d958614( time )
@@ -2292,7 +2303,7 @@ function function_4593f6ae7d958614( time )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x44c5
 // Size: 0x76
 function function_c62d87226808cd1c( end_value, duration )
@@ -2310,7 +2321,7 @@ function function_c62d87226808cd1c( end_value, duration )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4543
 // Size: 0x85
 function lerp_dvar( dvar, end_value, duration )
@@ -2329,7 +2340,7 @@ function lerp_dvar( dvar, end_value, duration )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45d0
 // Size: 0xb3
 function function_b46bbb8e3437e8de()
@@ -2342,7 +2353,7 @@ function function_b46bbb8e3437e8de()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x468b
 // Size: 0xd5
 function function_f7daaf8937034883( name, nstart, nend, nblur, fstart, fend, fblur, fbias )
@@ -2364,7 +2375,7 @@ function function_f7daaf8937034883( name, nstart, nend, nblur, fstart, fend, fbl
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4768
 // Size: 0x68
 function function_5eae701181e1340c( name )
@@ -2378,7 +2389,7 @@ function function_5eae701181e1340c( name )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x47d8
 // Size: 0x8c
 function function_3e26806946a389b1( preset1, preset2, time )
@@ -2399,7 +2410,7 @@ function function_3e26806946a389b1( preset1, preset2, time )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x486c
 // Size: 0x32
 function function_1b05e078eb7808c7()
@@ -2410,7 +2421,7 @@ function function_1b05e078eb7808c7()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x48a6
 // Size: 0xb0
 function function_3036060d639e67e8( name, start, end )
@@ -2428,7 +2439,7 @@ function function_3036060d639e67e8( name, start, end )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x495e
 // Size: 0x68
 function function_d27c01c01b7af003( name )
@@ -2442,7 +2453,7 @@ function function_d27c01c01b7af003( name )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x49ce
 // Size: 0x96
 function function_728e6d70bfd337c( preset1, preset2, time )
@@ -2464,7 +2475,7 @@ function function_728e6d70bfd337c( preset1, preset2, time )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4a6c
 // Size: 0xa9
 function function_9009498f4845910b( start_viewmodel, end_viewmodel, time )
@@ -2482,7 +2493,7 @@ function function_9009498f4845910b( start_viewmodel, end_viewmodel, time )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4b1d
 // Size: 0x1b8
 function lerp_viewmodel_dof( end_viewmodel, var_a43d50fddef154c2, var_fbd33eaf8837fcaf )
@@ -2522,7 +2533,7 @@ function lerp_viewmodel_dof( end_viewmodel, var_a43d50fddef154c2, var_fbd33eaf88
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4cdd
 // Size: 0x1ce
 function lighting_target_dof( player, target, aperture, var_965582b4f1f2f995, var_a90c6783e05bab5f, tag )
@@ -2609,7 +2620,7 @@ function lighting_target_dof( player, target, aperture, var_965582b4f1f2f995, va
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4eb3
 // Size: 0x25
 function function_87231e6662dd640e()
@@ -2620,7 +2631,7 @@ function function_87231e6662dd640e()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x4ee0
 // Size: 0x356
 function function_c4c9f41e618cb8a1( time, materials, fadein_, fadeout_, var_f9d4ee89841a793b, xpos, ypos, sort )
@@ -2746,7 +2757,7 @@ function function_c4c9f41e618cb8a1( time, materials, fadein_, fadeout_, var_f9d4
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x523e
 // Size: 0x11
 function cleanup_overlay()
@@ -2756,7 +2767,7 @@ function cleanup_overlay()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5257
 // Size: 0x2
 function function_b7384d47f4e553ba()
@@ -2765,7 +2776,7 @@ function function_b7384d47f4e553ba()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5261
 // Size: 0x10f
 function function_a5aa23c60a77c71d()
@@ -2790,7 +2801,7 @@ function function_a5aa23c60a77c71d()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5378
 // Size: 0x382
 function bob_mask( hudelement )
@@ -2865,7 +2876,7 @@ function bob_mask( hudelement )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5702
 // Size: 0x240
 function function_ff3f488d3c6c7c42( bfadein, fadeouttime, fadeintime, darktime )
@@ -2927,7 +2938,7 @@ function function_ff3f488d3c6c7c42( bfadein, fadeouttime, fadeintime, darktime )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x594a
 // Size: 0x93
 function function_46a70661ce1c9488()
@@ -2954,7 +2965,7 @@ function function_46a70661ce1c9488()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59e5
 // Size: 0x24
 function function_9a29641575c38bf3()
@@ -2969,7 +2980,7 @@ function function_9a29641575c38bf3()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a11
 // Size: 0x65
 function function_6c09ddf0408997a2()
@@ -2980,7 +2991,7 @@ function function_6c09ddf0408997a2()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a7e
 // Size: 0x1e
 function function_24468c3e7aa94338()
@@ -2992,7 +3003,7 @@ function function_24468c3e7aa94338()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5aa4
 // Size: 0xbb
 function function_1fce2623d8fec063( time, targetsample )
@@ -3001,13 +3012,13 @@ function function_1fce2623d8fec063( time, targetsample )
     currframe = 0;
     numframes = time * 20;
     var_93c5968061111907 = numframes - 1;
-    currsample = getdvarfloat( @"hash_9ab6a766fc4e0c06" );
+    currsample = getdvarfloat( @"sm_sunsamplesizenear" );
     
     while ( currframe < numframes )
     {
         var_c3c8ead438d06ca0 = ( targetsample - currsample ) * currframe / var_93c5968061111907;
         var_c3c8ead438d06ca0 += currsample;
-        noself_func( "setsaveddvar", @"hash_9ab6a766fc4e0c06", var_c3c8ead438d06ca0 );
+        noself_func( "setsaveddvar", @"sm_sunsamplesizenear", var_c3c8ead438d06ca0 );
         currframe++;
         waitframe();
     }
@@ -3016,7 +3027,7 @@ function function_1fce2623d8fec063( time, targetsample )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b67
 // Size: 0xe8
 function function_395761b4520b0c62( time, target_value )
@@ -3046,7 +3057,7 @@ function function_395761b4520b0c62( time, target_value )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c57
 // Size: 0x42
 function function_e3e16e6e2ec15751()
@@ -3060,7 +3071,7 @@ function function_e3e16e6e2ec15751()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ca1
 // Size: 0xac
 function function_4a7732ef052bbd94()
@@ -3089,7 +3100,7 @@ function function_4a7732ef052bbd94()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d55
 // Size: 0x76
 function function_89243203381caa61()
@@ -3120,7 +3131,7 @@ function function_89243203381caa61()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5dd3
 // Size: 0x69, Type: bool
 function function_13efea510c8ee6e7()
@@ -3147,7 +3158,7 @@ function function_13efea510c8ee6e7()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e45
 // Size: 0x20a
 function function_46434b79368903f9()
@@ -3209,7 +3220,7 @@ function function_46434b79368903f9()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6057
 // Size: 0x11
 function function_61a998996cc98831()
@@ -3218,7 +3229,7 @@ function function_61a998996cc98831()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6070
 // Size: 0x11
 function function_9160006a3f10b2cd()
@@ -3227,7 +3238,7 @@ function function_9160006a3f10b2cd()
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6089
 // Size: 0x82
 function function_3f730819900e0fa0( duration, end_value )
@@ -3250,7 +3261,7 @@ function function_3f730819900e0fa0( duration, end_value )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6113
 // Size: 0x82
 function lerplightradius( duration, end_value )
@@ -3273,7 +3284,7 @@ function lerplightradius( duration, end_value )
 }
 
 // Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x619d
 // Size: 0x8d
 function function_a18b3876df7ffbb1( timeleft )

@@ -30,7 +30,7 @@
 #namespace agents;
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b7
 // Size: 0x9e
 function main()
@@ -64,7 +64,7 @@ function main()
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45d
 // Size: 0xc7
 function setup_callbacks()
@@ -84,7 +84,7 @@ function setup_callbacks()
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52c
 // Size: 0x18
 function wait_till_agent_funcs_defined()
@@ -98,7 +98,7 @@ function wait_till_agent_funcs_defined()
 /#
 
     // Namespace agents / scripts\mp\agents\agents
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x54c
     // Size: 0x116, Type: dev
     function function_1903f7dc32253cb8()
@@ -133,7 +133,7 @@ function wait_till_agent_funcs_defined()
     }
 
     // Namespace agents / scripts\mp\agents\agents
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x66a
     // Size: 0x192, Type: dev
     function function_8a38b0ab8ed5310d()
@@ -162,7 +162,8 @@ function wait_till_agent_funcs_defined()
                 setdevdvar( @"hash_35fa3411ab03151f", 0 );
             }
             
-            for (i = 0; i < var_61c0d85a0968950b; i++) {
+            for ( i = 0; i < var_61c0d85a0968950b ; i++ )
+            {
                 agent = add_humanoid_agent( "<dev string:x40>", function_1903f7dc32253cb8(), undefined, undefined, undefined, undefined, 1, 1 );
                 
                 if ( isdefined( agent ) )
@@ -194,7 +195,7 @@ function wait_till_agent_funcs_defined()
 #/
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x804
 // Size: 0xe1
 function add_humanoid_agent( agent_type, team, class, optional_spawnorigin, optional_spawnangles, optional_owner, var_9fee3fe2e8ddd1f3, respawn_on_death, difficulty, classcallback, disableloadout, var_b72e32b38f8041c6, disablehealthregen, disablebattlechatter )
@@ -216,7 +217,7 @@ function add_humanoid_agent( agent_type, team, class, optional_spawnorigin, opti
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x8ee
 // Size: 0x30b
 function spawn_agent_player( optional_spawnorigin, optional_spawnangles, optional_owner, var_9fee3fe2e8ddd1f3, respawn_on_death, difficulty, disableloadout, var_b72e32b38f8041c6, disablehealthregen, disablebattlechatter )
@@ -344,7 +345,7 @@ function spawn_agent_player( optional_spawnorigin, optional_spawnangles, optiona
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc01
 // Size: 0x3c
 function destroyonownerdisconnect( owner )
@@ -356,7 +357,7 @@ function destroyonownerdisconnect( owner )
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc45
 // Size: 0x35
 function watchownerstatus( notifymsg, owner )
@@ -373,7 +374,7 @@ function watchownerstatus( notifymsg, owner )
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0xc82
 // Size: 0x193
 function agent_damage_finished( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname )
@@ -423,7 +424,7 @@ function agent_damage_finished( einflictor, eattacker, idamage, idflags, smeanso
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0xe1d
 // Size: 0x2b2
 function on_agent_generic_damaged( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname )
@@ -502,7 +503,7 @@ function on_agent_generic_damaged( einflictor, eattacker, idamage, idflags, smea
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x10d8
 // Size: 0x10d
 function on_agent_player_damaged( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -534,7 +535,7 @@ function on_agent_player_damaged( einflictor, eattacker, idamage, idflags, smean
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x11ed
 // Size: 0x102
 function on_agent_player_killed( einflictor, eattacker, idamage, smeansofdeath, sweapon, vdir, shitloc, timeoffset, deathanimduration )
@@ -563,7 +564,7 @@ function on_agent_player_killed( einflictor, eattacker, idamage, smeansofdeath, 
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x12f7
 // Size: 0x195
 function on_humanoid_agent_killed_common( einflictor, eattacker, idamage, smeansofdeath, sweapon, vdir, shitloc, timeoffset, deathanimduration, dropweapons )
@@ -619,7 +620,7 @@ function on_humanoid_agent_killed_common( einflictor, eattacker, idamage, smeans
 }
 
 // Namespace agents / scripts\mp\agents\agents
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1494
 // Size: 0x4c
 function initplayerclass()

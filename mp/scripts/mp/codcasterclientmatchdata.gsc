@@ -8,7 +8,7 @@
 #namespace codcasterclientmatchdata;
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e2
 // Size: 0x3e
 function function_5281975e60eac3a( var_127743befe53da2e )
@@ -25,7 +25,7 @@ function function_5281975e60eac3a( var_127743befe53da2e )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x328
 // Size: 0x66
 function function_cc33f4ece5dca487( var_127743befe53da2e, index )
@@ -47,7 +47,7 @@ function function_cc33f4ece5dca487( var_127743befe53da2e, index )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x396
 // Size: 0x3e
 function function_b899bce95b7d6a94( var_cf76a3550b35080c )
@@ -64,7 +64,7 @@ function function_b899bce95b7d6a94( var_cf76a3550b35080c )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3dc
 // Size: 0x47
 function function_d16498b27251da56( var_127743befe53da2e, increment )
@@ -75,7 +75,7 @@ function function_d16498b27251da56( var_127743befe53da2e, increment )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x42b
 // Size: 0x30
 function function_48544e365f4f5648( var_cf76a3550b35080c, increment )
@@ -85,7 +85,7 @@ function function_48544e365f4f5648( var_cf76a3550b35080c, increment )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x463
 // Size: 0x3b
 function function_7ee466e81b1afc12( var_127743befe53da2e, value )
@@ -101,7 +101,7 @@ function function_7ee466e81b1afc12( var_127743befe53da2e, value )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4a6
 // Size: 0x47
 function function_6807ed320b73be7f( var_127743befe53da2e, index, value )
@@ -117,7 +117,7 @@ function function_6807ed320b73be7f( var_127743befe53da2e, index, value )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f5
 // Size: 0x4b
 function function_f8b808cd6473e6cc( var_cf76a3550b35080c, value )
@@ -137,7 +137,7 @@ function function_f8b808cd6473e6cc( var_cf76a3550b35080c, value )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x548
 // Size: 0x1e
 function function_815fee43d577e1b6( var_127743befe53da2e )
@@ -147,7 +147,7 @@ function function_815fee43d577e1b6( var_127743befe53da2e )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x56f
 // Size: 0x1e
 function function_a08fea26a49145a8( var_cf76a3550b35080c )
@@ -157,7 +157,7 @@ function function_a08fea26a49145a8( var_cf76a3550b35080c )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x596
 // Size: 0x3e
 function function_aef8a28143d1f9ad( var_9138ab59ff517f7b )
@@ -174,7 +174,7 @@ function function_aef8a28143d1f9ad( var_9138ab59ff517f7b )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5dc
 // Size: 0x47
 function function_1882f80b14421089( var_9138ab59ff517f7b, increment )
@@ -185,7 +185,7 @@ function function_1882f80b14421089( var_9138ab59ff517f7b, increment )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x62b
 // Size: 0x3a
 function function_5a82c337b996baa5( var_9138ab59ff517f7b, value )
@@ -201,7 +201,7 @@ function function_5a82c337b996baa5( var_9138ab59ff517f7b, value )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66d
 // Size: 0x1e
 function function_e42724fbfacff469( var_9138ab59ff517f7b )
@@ -211,7 +211,7 @@ function function_e42724fbfacff469( var_9138ab59ff517f7b )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x694
 // Size: 0x123
 function function_ad829fab97971b4b( var_9138ab59ff517f7b )
@@ -265,7 +265,7 @@ function function_ad829fab97971b4b( var_9138ab59ff517f7b )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bf
 // Size: 0x29, Type: bool
 function function_726f071c1f349dd4()
@@ -275,7 +275,7 @@ function function_726f071c1f349dd4()
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f1
 // Size: 0x73
 function function_1b32a33893becbcf()
@@ -297,7 +297,7 @@ function function_1b32a33893becbcf()
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x86d
 // Size: 0x21
 function function_d1f982e1e54336ec( var_3436f757aee9ef90 )
@@ -306,7 +306,7 @@ function function_d1f982e1e54336ec( var_3436f757aee9ef90 )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x897
 // Size: 0x1a
 function function_d6a8339d07d64d73( var_3436f757aee9ef90 )
@@ -315,7 +315,7 @@ function function_d6a8339d07d64d73( var_3436f757aee9ef90 )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8ba
 // Size: 0x2f
 function dividestats( stat, denominator )
@@ -329,7 +329,7 @@ function dividestats( stat, denominator )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f2
 // Size: 0x2e4
 function function_2e28105e6500a144( player )
@@ -409,7 +409,7 @@ function function_2e28105e6500a144( player )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbde
 // Size: 0xe3
 function function_edba1ee7c2375a5()
@@ -432,7 +432,7 @@ function function_edba1ee7c2375a5()
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcc9
 // Size: 0x20a
 function function_9b229b18b0750bad()
@@ -501,7 +501,7 @@ function function_9b229b18b0750bad()
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xedb
 // Size: 0x396
 function function_ee3acf6a8baa2ff8( killtime, attacker, victim )
@@ -560,7 +560,8 @@ function function_ee3acf6a8baa2ff8( killtime, attacker, victim )
                 self.var_b33b6a18519b1bbe = array_remove_index( self.var_b33b6a18519b1bbe, 0, 0 );
             }
             
-            for (entryindex = self.var_b33b6a18519b1bbe.size - 1; entryindex >= 0; entryindex--) {
+            for ( entryindex = self.var_b33b6a18519b1bbe.size - 1; entryindex >= 0 ; entryindex-- )
+            {
                 entry = self.var_b33b6a18519b1bbe[ entryindex ];
                 
                 if ( isdefined( entry ) && isdefined( entry[ "attacker" ] ) && isdefined( entry[ "victim" ] ) )
@@ -596,7 +597,7 @@ function function_ee3acf6a8baa2ff8( killtime, attacker, victim )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1279
 // Size: 0x22
 function function_6f792f70ffe4cd4d( attacker, victim )
@@ -605,7 +606,7 @@ function function_6f792f70ffe4cd4d( attacker, victim )
 }
 
 // Namespace codcasterclientmatchdata / scripts\mp\codcasterclientmatchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12a3
 // Size: 0x96
 function function_94c8f3722d550646()

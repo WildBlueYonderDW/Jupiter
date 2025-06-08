@@ -14,12 +14,12 @@
 #namespace br_alt_mode_inflation;
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31b
 // Size: 0x1bc
 function init()
 {
-    if ( !getdvarint( @"hash_9d10ec32552bd102", 0 ) )
+    if ( !getdvarint( @"scr_br_alt_mode_inflation", 0 ) )
     {
         return;
     }
@@ -27,8 +27,8 @@ function init()
     level.br_alt_mode_inflation = spawnstruct();
     level.br_alt_mode_inflation.disabled = 0;
     level.br_alt_mode_inflation.cost = getdvarint( @"hash_ec3657bee62b649e", 450 );
-    level.br_alt_mode_inflation.drop_percent = getdvarfloat( @"hash_4d6e3b73a7976700", 0.5 );
-    level.br_alt_mode_inflation.drop_max = getdvarint( @"hash_7fd93ee5262c8a9b", -1 );
+    level.br_alt_mode_inflation.drop_percent = getdvarfloat( @"scr_br_alt_mode_inflation_drop_percent", 0.5 );
+    level.br_alt_mode_inflation.drop_max = getdvarint( @"scr_br_alt_mode_inflation_drop_max", -1 );
     level.br_alt_mode_inflation.end_circle = getdvarint( @"hash_eebc33bdcbc28415", 5 );
     level.br_alt_mode_inflation.respawn_delay = getdvarfloat( @"hash_82a04f5b65ed7d09", 10 );
     scripts\mp\gametypes\br_gametypes::registerbrgametypefunc( "onPrematchDone", &function_57b3ca6a58c2c42b );
@@ -55,7 +55,7 @@ function init()
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4df
 // Size: 0x6a
 function initdialog()
@@ -68,7 +68,7 @@ function initdialog()
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x551
 // Size: 0x1f
 function initcallbacks()
@@ -82,7 +82,7 @@ function initcallbacks()
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x578
 // Size: 0x9
 function onplayerspawned()
@@ -91,7 +91,7 @@ function onplayerspawned()
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x589
 // Size: 0x52, Type: bool
 function playercanbuyrespawn()
@@ -100,7 +100,7 @@ function playercanbuyrespawn()
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5e4
 // Size: 0xe5
 function playerdropplunderondeath( dropstruct, attacker )
@@ -141,7 +141,7 @@ function playerdropplunderondeath( dropstruct, attacker )
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d2
 // Size: 0x1c
 function function_57b3ca6a58c2c42b()
@@ -150,7 +150,7 @@ function function_57b3ca6a58c2c42b()
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f6
 // Size: 0xf6, Type: bool
 function circletimer( circleindex )
@@ -181,7 +181,7 @@ function circletimer( circleindex )
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f5
 // Size: 0x32
 function postplunder( data )
@@ -197,7 +197,7 @@ function postplunder( data )
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x82f
 // Size: 0x5d
 function updaterespawnstatus( skipsplash )
@@ -229,7 +229,7 @@ function updaterespawnstatus( skipsplash )
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x894
 // Size: 0x39
 function showrespawntimer( timer )
@@ -241,7 +241,7 @@ function showrespawntimer( timer )
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d5
 // Size: 0x35
 function hiderespawntimer( waittime )
@@ -259,7 +259,7 @@ function hiderespawntimer( waittime )
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x912
 // Size: 0x22
 function getsetplundercountdatanosplash()
@@ -270,7 +270,7 @@ function getsetplundercountdatanosplash()
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x93d
 // Size: 0x3, Type: bool
 function markplayeraseliminatedonkilled()
@@ -279,7 +279,7 @@ function markplayeraseliminatedonkilled()
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x949
 // Size: 0x67
 function spectatorrespawntimer( victim )
@@ -297,7 +297,7 @@ function spectatorrespawntimer( victim )
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9b8
 // Size: 0x37
 function function_c178be44974d74ea( victim )
@@ -311,7 +311,7 @@ function function_c178be44974d74ea( victim )
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f7
 // Size: 0x5c, Type: bool
 function playergulagautowinwait( sponsor, tokenused )
@@ -331,7 +331,7 @@ function playergulagautowinwait( sponsor, tokenused )
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa5c
 // Size: 0xd, Type: bool
 function triggerrespawnoverlay( overlaytype )
@@ -342,7 +342,7 @@ function triggerrespawnoverlay( overlaytype )
 /#
 
     // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa72
     // Size: 0x96, Type: dev
     function function_fbfcdb4534b7b0d8()
@@ -352,14 +352,15 @@ function triggerrespawnoverlay( overlaytype )
         thread scripts\mp\gametypes\br_quest_util::adddebugcommanddelayed( debughud + "<dev string:x46>" );
         thread scripts\mp\gametypes\br_quest_util::adddebugcommanddelayed( debughud + "<dev string:x83>" );
         
-        for (i = 0; i < 5; i++) {
+        for ( i = 0; i < 5 ; i++ )
+        {
             thread scripts\mp\gametypes\br_quest_util::adddebugcommanddelayed( debughud + "<dev string:xc6>" + i + "<dev string:xd6>" + i + "<dev string:xfa>" );
             thread scripts\mp\gametypes\br_quest_util::adddebugcommanddelayed( debughud + "<dev string:x100>" + i + "<dev string:x113>" + i + "<dev string:xfa>" );
         }
     }
 
     // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xb10
     // Size: 0x168, Type: dev
     function function_cd5dfc5762199c46( args )
@@ -415,7 +416,7 @@ function triggerrespawnoverlay( overlaytype )
     }
 
     // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xc80
     // Size: 0x83, Type: dev
     function function_94d8f65b7519f9fe( command, args )

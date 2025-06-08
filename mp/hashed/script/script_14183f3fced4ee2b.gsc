@@ -4,7 +4,7 @@
 #namespace namespace_ab72fb42cd326323;
 
 // Namespace namespace_ab72fb42cd326323 / namespace_abc8365716fb73a3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0
 // Size: 0x3e
 function function_4113bac1fcc24f04()
@@ -19,7 +19,7 @@ function function_4113bac1fcc24f04()
 }
 
 // Namespace namespace_ab72fb42cd326323 / namespace_abc8365716fb73a3
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe6
 // Size: 0x8f
 function use_perk( itembundle, item )
@@ -45,7 +45,7 @@ function use_perk( itembundle, item )
 }
 
 // Namespace namespace_ab72fb42cd326323 / namespace_abc8365716fb73a3
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x17e
 // Size: 0x24, Type: bool
 function function_60a287a143186571( itembundle, item, autouse, allowswap )
@@ -54,7 +54,7 @@ function function_60a287a143186571( itembundle, item, autouse, allowswap )
 }
 
 // Namespace namespace_ab72fb42cd326323 / namespace_abc8365716fb73a3
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1ab
 // Size: 0x35, Type: bool
 function can_use_perk( itembundle, item, autouse, allowswap )
@@ -63,7 +63,7 @@ function can_use_perk( itembundle, item, autouse, allowswap )
 }
 
 // Namespace namespace_ab72fb42cd326323 / namespace_abc8365716fb73a3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e9
 // Size: 0x25
 function function_aac0b757b5a813f6()

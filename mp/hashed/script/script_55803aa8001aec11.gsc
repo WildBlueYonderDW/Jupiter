@@ -8,7 +8,7 @@
 #namespace jup_ob_wheelson_healthbar;
 
 // Namespace jup_ob_wheelson_healthbar / namespace_7fb0b50097b3f103
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124
 // Size: 0x11b
 function main()
@@ -34,7 +34,7 @@ function main()
 }
 
 // Namespace jup_ob_wheelson_healthbar / namespace_7fb0b50097b3f103
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x247
 // Size: 0x57
 function setup_model()
@@ -51,7 +51,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_wheelson_healthbar / namespace_7fb0b50097b3f103
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a6
 // Size: 0x1a
 function function_9ac26a51c94ccf52()
@@ -60,7 +60,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_wheelson_healthbar / namespace_7fb0b50097b3f103
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c8
 // Size: 0xc0
 function precache()

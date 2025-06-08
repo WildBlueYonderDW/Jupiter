@@ -4,7 +4,7 @@
 #namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs;
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x426
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x49b
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x50a
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x552
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55c
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x572
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5e4
 // Size: 0xce
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -128,7 +128,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6ba
 // Size: 0x18b
 function function_e238ce32e8c33dfb( fe, us, cf )
@@ -149,7 +149,7 @@ function function_e238ce32e8c33dfb( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x84d
 // Size: 0x18b
 function function_b7e58900423b725e( fe, us, cf )
@@ -170,7 +170,7 @@ function function_b7e58900423b725e( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9e0
 // Size: 0x18b
 function function_77bd806245bea5ef( fe, us, cf )
@@ -191,7 +191,7 @@ function function_77bd806245bea5ef( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb73
 // Size: 0x18b
 function function_8a608c81c082eaac( fe, us, cf )
@@ -212,7 +212,7 @@ function function_8a608c81c082eaac( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd06
 // Size: 0x18b
 function function_d1feba32e9244488( fe, us, cf )
@@ -233,7 +233,7 @@ function function_d1feba32e9244488( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe99
 // Size: 0x18b
 function function_1c5b22a590c0816b( fe, us, cf )
@@ -254,7 +254,7 @@ function function_1c5b22a590c0816b( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_unstable_rift_obelisk_cs / namespace_15ac7d7a0789715f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x102c
 // Size: 0x504
 function function_6da2952367672ac0()

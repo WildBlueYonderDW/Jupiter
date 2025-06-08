@@ -5,7 +5,7 @@
 #namespace squad_utility;
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ce
 // Size: 0x28
 function function_c9406922e0267f09()
@@ -17,7 +17,7 @@ function function_c9406922e0267f09()
 }
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fe
 // Size: 0x57
 function getsquadmembers( testteam, aliveonly )
@@ -36,7 +36,7 @@ function getsquadmembers( testteam, aliveonly )
 }
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25e
 // Size: 0x51
 function getsquadmembersbyid( teamid, squadid, aliveonly )
@@ -55,7 +55,7 @@ function getsquadmembersbyid( teamid, squadid, aliveonly )
 }
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b8
 // Size: 0x4c
 function getsquadleader( team, index )
@@ -74,7 +74,7 @@ function getsquadleader( team, index )
 }
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30d
 // Size: 0x16e
 function shouldmodesetsquads()
@@ -123,7 +123,7 @@ function shouldmodesetsquads()
 }
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x483
 // Size: 0x9e
 function function_a9cb1bbce9eb3d1b()
@@ -160,7 +160,7 @@ function function_a9cb1bbce9eb3d1b()
 }
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x529
 // Size: 0xe, Type: bool
 function issquadmode()
@@ -169,7 +169,7 @@ function issquadmode()
 }
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x540
 // Size: 0x48, Type: bool
 function function_6b09c63febc4655c( team, index )
@@ -183,7 +183,7 @@ function function_6b09c63febc4655c( team, index )
 }
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x591
 // Size: 0x39
 function function_9b1d18c04d310cfc( player1, player2 )
@@ -193,7 +193,7 @@ function function_9b1d18c04d310cfc( player1, player2 )
 }
 
 // Namespace squad_utility / scripts\cp_mp\utility\squad_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d3
 // Size: 0x68
 function function_927316c54a7540ae( player )

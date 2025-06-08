@@ -8,7 +8,7 @@
 #namespace nearby_targets;
 
 // Namespace nearby_targets / namespace_5524884c16a95af2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd9
 // Size: 0xd1
 function createevent( radius )
@@ -33,7 +33,7 @@ function createevent( radius )
 }
 
 // Namespace nearby_targets / namespace_5524884c16a95af2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b2
 // Size: 0x2a6
 function getevent( searchtypes )
@@ -96,7 +96,7 @@ function getevent( searchtypes )
 }
 
 // Namespace nearby_targets / namespace_5524884c16a95af2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x461
 // Size: 0xb6
 function indistance( distance )
@@ -105,7 +105,8 @@ function indistance( distance )
     distsq = squared( distance );
     result = [];
     
-    for (i = 0; i < self.result.size; i++) {
+    for ( i = 0; i < self.result.size ; i++ )
+    {
         target = self.result[ i ];
         
         if ( distancesquared( target.origin, self.event.origin ) > distsq )
@@ -120,14 +121,15 @@ function indistance( distance )
 }
 
 // Namespace nearby_targets / namespace_5524884c16a95af2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x51f
 // Size: 0x7c
 function function_12203d401cb8332a( var_180f6abe6571c69f, var_4951c8537d45134f )
 {
     result = [];
     
-    for (i = 0; i < self.result.size; i++) {
+    for ( i = 0; i < self.result.size ; i++ )
+    {
         target = self.result[ i ];
         isallied = isalliedsentient( var_180f6abe6571c69f, target );
         
@@ -141,7 +143,7 @@ function function_12203d401cb8332a( var_180f6abe6571c69f, var_4951c8537d45134f )
 }
 
 // Namespace nearby_targets / namespace_5524884c16a95af2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a3
 // Size: 0x14
 function keepenemies( target )
@@ -150,7 +152,7 @@ function keepenemies( target )
 }
 
 // Namespace nearby_targets / namespace_5524884c16a95af2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5bf
 // Size: 0x15
 function function_3e53d600c1f31122( target )
@@ -159,7 +161,7 @@ function function_3e53d600c1f31122( target )
 }
 
 // Namespace nearby_targets / namespace_5524884c16a95af2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5dc
 // Size: 0x36
 function getradius()

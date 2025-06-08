@@ -9,7 +9,7 @@
 #namespace doorbuy;
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45e
 // Size: 0xb
 function init_doorbuy()
@@ -18,7 +18,7 @@ function init_doorbuy()
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x471
 // Size: 0x6d
 function function_7d7811a152066077()
@@ -41,7 +41,7 @@ function function_7d7811a152066077()
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e6
 // Size: 0xcd
 function function_272932835d23225c( destination )
@@ -61,7 +61,7 @@ function function_272932835d23225c( destination )
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bb
 // Size: 0x8a
 function function_233b115afbbdb524()
@@ -325,7 +325,7 @@ function private function_eeb8c278274b96c3()
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10dc
 // Size: 0x365
 function doorbuy_used( player )
@@ -415,7 +415,7 @@ function doorbuy_used( player )
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1449
 // Size: 0x269
 function open_doorbuy()
@@ -536,7 +536,7 @@ function open_doorbuy()
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16ba
 // Size: 0x82
 function function_bfd5db9911f7056b()
@@ -555,7 +555,7 @@ function function_bfd5db9911f7056b()
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1745
 // Size: 0x6f, Type: bool
 function function_be31d2b54e616fb7()
@@ -566,14 +566,15 @@ function function_be31d2b54e616fb7()
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17bd
 // Size: 0xf0
 function function_1071fb611dd3d29c()
 {
     level endon( "game_ended" );
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         if ( isarray( level.players[ i ].c4s ) )
         {
             foreach ( c4 in level.players[ i ].c4s )
@@ -588,7 +589,7 @@ function function_1071fb611dd3d29c()
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18b5
 // Size: 0x13
 function function_db6ccc8e1166190c()
@@ -599,7 +600,7 @@ function function_db6ccc8e1166190c()
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18d0
 // Size: 0x3b
 function function_b92412ffa0393ddc( func )
@@ -613,7 +614,7 @@ function function_b92412ffa0393ddc( func )
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1913
 // Size: 0x122
 function trigger_power( b_state, n_power_zone )
@@ -715,7 +716,7 @@ function private function_e9c313af43b8ffa6()
 }
 
 // Namespace doorbuy / scripts\cp_mp\doorbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c5e
 // Size: 0x85
 function function_a7ca20ea38e7dd83()

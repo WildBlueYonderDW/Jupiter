@@ -8,7 +8,7 @@
 #namespace namespace_41183c2c6273d8f;
 
 // Namespace namespace_41183c2c6273d8f / namespace_b5e6108f786dfb5a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x109
 // Size: 0x1f, Type: bool
 function function_89e1a31bd1de0567()
@@ -17,7 +17,7 @@ function function_89e1a31bd1de0567()
 }
 
 // Namespace namespace_41183c2c6273d8f / namespace_b5e6108f786dfb5a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x131
 // Size: 0x25, Type: bool
 function function_ee43f827080726b1()
@@ -27,7 +27,7 @@ function function_ee43f827080726b1()
 }
 
 // Namespace namespace_41183c2c6273d8f / namespace_b5e6108f786dfb5a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15f
 // Size: 0x3e
 function function_87ecb716bc207294( player )
@@ -51,7 +51,7 @@ function function_87ecb716bc207294( player )
 }
 
 // Namespace namespace_41183c2c6273d8f / namespace_b5e6108f786dfb5a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0x6a
 function function_8b40ab90e906603c()
@@ -72,7 +72,8 @@ function function_8b40ab90e906603c()
     
     if ( !tipsenabled )
     {
-        for (progress = 3; progress <= 12; progress++) {
+        for ( progress = 3; progress <= 12 ; progress++ )
+        {
             if ( function_6e6a5ca23b27a0f7( progress ) )
             {
                 tipsenabled = 1;
@@ -126,7 +127,7 @@ function private function_6e6a5ca23b27a0f7( match )
 }
 
 // Namespace namespace_41183c2c6273d8f / namespace_b5e6108f786dfb5a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b3
 // Size: 0x26, Type: bool
 function function_70781ace6e552a59()

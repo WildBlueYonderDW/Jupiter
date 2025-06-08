@@ -15,7 +15,7 @@
 #namespace zombie_deathworm;
 
 // Namespace zombie_deathworm / namespace_f00b3245968fa941
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x291
 // Size: 0x34
 function function_2dd162d826667677()
@@ -31,7 +31,7 @@ function function_2dd162d826667677()
 }
 
 // Namespace zombie_deathworm / namespace_f00b3245968fa941
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cd
 // Size: 0xd9
 function startsnakebite( asmname, statename, params )
@@ -56,7 +56,7 @@ function startsnakebite( asmname, statename, params )
 }
 
 // Namespace zombie_deathworm / namespace_f00b3245968fa941
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3ae
 // Size: 0x36
 function function_82000d1cf70c611d( asmname, statename, params )
@@ -291,7 +291,7 @@ function private function_2ec0b59b433b1f34()
 }
 
 // Namespace zombie_deathworm / namespace_f00b3245968fa941
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xba3
 // Size: 0x30d
 function melee_impact( var_f238c840934e431e, damage_radius, max_damage )
@@ -424,7 +424,7 @@ function private function_d26c4202b8c890da( player, damage_point )
 /#
 
     // Namespace zombie_deathworm / namespace_f00b3245968fa941
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xf5e
     // Size: 0x44, Type: dev
     function function_c321972f4a10279a()

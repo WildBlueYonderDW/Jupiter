@@ -11,7 +11,7 @@
 #namespace zombie_perks;
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f5
 // Size: 0xe2
 function init_perks()
@@ -38,7 +38,7 @@ function init_perks()
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x3df
 // Size: 0x25c
 function register_perk_basic_info( str_perk, str_alias, n_perk_cost, str_hint_string, var_378b8fa4cbad01e3, w_perk_bottle_weapon, var_e89a9a6a3475bd0a, var_e3d5b979024de96, var_6e91b48935b6d44f, var_de61bccad0dcc303, var_f209168e865e2517 )
@@ -70,7 +70,7 @@ function register_perk_basic_info( str_perk, str_alias, n_perk_cost, str_hint_st
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x643
 // Size: 0x71
 function register_perk_threads( str_perk, func_give_player_perk, func_take_player_perk )
@@ -83,7 +83,7 @@ function register_perk_threads( str_perk, func_give_player_perk, func_take_playe
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x6bc
 // Size: 0x163
 function function_f3a23df892bf82f6( var_18a7e443a83e6708, str_currency, var_fe59c44529c721a0, func_give_player_perk, func_take_player_perk, var_de61bccad0dcc303, var_f209168e865e2517 )
@@ -112,7 +112,7 @@ function function_f3a23df892bf82f6( var_18a7e443a83e6708, str_currency, var_fe59
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x827
 // Size: 0x44
 function _register_undefined_perk( str_perk )
@@ -126,7 +126,7 @@ function _register_undefined_perk( str_perk )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x873
 // Size: 0x42
 function function_e96c0612e2d3b323( params )
@@ -142,7 +142,7 @@ function function_e96c0612e2d3b323( params )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8bd
 // Size: 0x147
 function function_6935a6121f60fefb( params )
@@ -171,7 +171,7 @@ function function_6935a6121f60fefb( params )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa0c
 // Size: 0x173
 function give_perk( perk, bought )
@@ -216,7 +216,7 @@ function give_perk( perk, bought )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb87
 // Size: 0x119
 function perk_think( perk )
@@ -245,7 +245,7 @@ function perk_think( perk )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca8
 // Size: 0x40
 function give_perk_presentation( perk )
@@ -262,7 +262,7 @@ function give_perk_presentation( perk )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcf0
 // Size: 0x12
 function function_aca2962451f93f78( perk )
@@ -271,7 +271,7 @@ function function_aca2962451f93f78( perk )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd0a
 // Size: 0x110
 function function_886e9c6f3a5ab9bb( perk )
@@ -301,7 +301,7 @@ function function_886e9c6f3a5ab9bb( perk )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe22
 // Size: 0x32, Type: bool
 function has_perk( perkname )
@@ -322,7 +322,7 @@ function has_perk( perkname )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe5d
 // Size: 0xa7
 function function_cdb669c56d86f5c4( var_2398867c16e7d267 )
@@ -354,7 +354,7 @@ function function_cdb669c56d86f5c4( var_2398867c16e7d267 )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf0d
 // Size: 0x48
 function function_fe9f92094d839eaf( gesture )
@@ -375,7 +375,7 @@ function function_fe9f92094d839eaf( gesture )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf5d
 // Size: 0x78
 function function_47a5564594564627()
@@ -394,7 +394,7 @@ function function_47a5564594564627()
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfde
 // Size: 0x3c
 function function_b01d83652396cbb0( var_29eaf15edd1cfdd4 )
@@ -411,7 +411,7 @@ function function_b01d83652396cbb0( var_29eaf15edd1cfdd4 )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1023
 // Size: 0x6e
 function function_ad6e85c9533ac466()
@@ -430,7 +430,7 @@ function function_ad6e85c9533ac466()
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x109a
 // Size: 0x8b
 function function_ab7a3ff9f75e4867( var_5ef4401adf60da76 )
@@ -445,7 +445,7 @@ function function_ab7a3ff9f75e4867( var_5ef4401adf60da76 )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x112d
 // Size: 0x8b
 function function_fe0d28e6f0008329( var_5ef4401adf60da76 )
@@ -460,7 +460,7 @@ function function_fe0d28e6f0008329( var_5ef4401adf60da76 )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11c0
 // Size: 0x81
 function function_b1e24c0eaeadfac7()
@@ -481,7 +481,7 @@ function function_b1e24c0eaeadfac7()
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x124a
 // Size: 0x24
 function register_lost_perk_override( func_override )
@@ -490,7 +490,7 @@ function register_lost_perk_override( func_override )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1276
 // Size: 0x6f, Type: bool
 function lost_perk_override( perk )
@@ -512,7 +512,7 @@ function lost_perk_override( perk )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12ee
 // Size: 0x125
 function function_1f957407227bb410()
@@ -546,7 +546,7 @@ function function_1f957407227bb410()
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x141b
 // Size: 0x29
 function function_c3fda966e9a355c1()
@@ -557,7 +557,7 @@ function function_c3fda966e9a355c1()
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x144c
 // Size: 0xab
 function function_df76bc163c4ea0a9( params )
@@ -589,7 +589,7 @@ function function_df76bc163c4ea0a9( params )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14ff
 // Size: 0xb5
 function function_8df3a882ad56636( params )
@@ -608,7 +608,8 @@ function function_8df3a882ad56636( params )
         
         if ( perks.size > 0 && perks.size > 3 )
         {
-            for (i = perks.size; i > 3; i--) {
+            for ( i = perks.size; i > 3 ; i-- )
+            {
                 self notify( perks[ i - 1 ] + "_stop" );
             }
         }
@@ -621,7 +622,7 @@ function function_8df3a882ad56636( params )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15bc
 // Size: 0xa3
 function function_1617ba608cb9b50c( params )
@@ -636,7 +637,8 @@ function function_1617ba608cb9b50c( params )
             num_perks = perks.size;
             var_abd05eac3931616a = 3 - self.var_8259418ae21ea504;
             
-            for (i = num_perks; i > var_abd05eac3931616a; i--) {
+            for ( i = num_perks; i > var_abd05eac3931616a ; i-- )
+            {
                 take_perk( perks[ i - 1 ] );
             }
         }
@@ -644,7 +646,7 @@ function function_1617ba608cb9b50c( params )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1667
 // Size: 0x1f
 function function_9c2682b7c1e353d3( params )
@@ -654,7 +656,7 @@ function function_9c2682b7c1e353d3( params )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x168e
 // Size: 0x46
 function function_37c9042a45291641()
@@ -666,7 +668,7 @@ function function_37c9042a45291641()
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16dc
 // Size: 0x22
 function take_perk( str_perk )
@@ -676,7 +678,7 @@ function take_perk( str_perk )
 }
 
 // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1706
 // Size: 0x58, Type: bool
 function function_fd9a6fb7a67bcf3e( str_perk )
@@ -695,7 +697,7 @@ function function_fd9a6fb7a67bcf3e( str_perk )
 /#
 
     // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1767
     // Size: 0xf5, Type: dev
     function function_e4d3cdf382f6b0b3()
@@ -731,7 +733,7 @@ function function_fd9a6fb7a67bcf3e( str_perk )
     }
 
     // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1864
     // Size: 0x7c, Type: dev
     function function_d6df8a69866fa55d( a_params, play_gesture )
@@ -754,7 +756,7 @@ function function_fd9a6fb7a67bcf3e( str_perk )
     }
 
     // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x18e8
     // Size: 0x46, Type: dev
     function function_edb352d1101bc34f( a_params )
@@ -766,7 +768,7 @@ function function_fd9a6fb7a67bcf3e( str_perk )
     }
 
     // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1936
     // Size: 0x96, Type: dev
     function function_4395673d0d4ae3c6( a_params )
@@ -787,7 +789,7 @@ function function_fd9a6fb7a67bcf3e( str_perk )
     }
 
     // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x19d4
     // Size: 0x92, Type: dev
     function function_33e402afcb6d2c04( a_params )
@@ -803,7 +805,7 @@ function function_fd9a6fb7a67bcf3e( str_perk )
     }
 
     // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1a6e
     // Size: 0xe, Type: dev
     function function_dbc961776f2f056a( a_params )
@@ -812,7 +814,7 @@ function function_fd9a6fb7a67bcf3e( str_perk )
     }
 
     // Namespace zombie_perks / scripts\cp_mp\zombie_perks
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1a84
     // Size: 0x8e, Type: dev
     function function_b3818ef99e063667( str_name )

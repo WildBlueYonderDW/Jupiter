@@ -23,7 +23,7 @@
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x1b8f
+// Checksum 0x0, Offset: 0x1ba0
 // Size: 0x18
 function autoexec main()
 {
@@ -31,8 +31,8 @@ function autoexec main()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1baf
+// Params 0
+// Checksum 0x0, Offset: 0x1bc0
 // Size: 0x13b
 function init()
 {
@@ -71,8 +71,8 @@ function init()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf2
+// Params 1
+// Checksum 0x0, Offset: 0x1d03
 // Size: 0xd, Type: bool
 function function_62380ee42a08020c( streakinfo )
 {
@@ -80,8 +80,8 @@ function function_62380ee42a08020c( streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d08
+// Params 0
+// Checksum 0x0, Offset: 0x1d19
 // Size: 0xb4
 function function_1cd11c6f0c051cdd()
 {
@@ -110,8 +110,8 @@ function function_1cd11c6f0c051cdd()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc4
+// Params 0
+// Checksum 0x0, Offset: 0x1dd5
 // Size: 0xd6
 function function_39b0f1f060c13982()
 {
@@ -127,8 +127,8 @@ function function_39b0f1f060c13982()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ea2
+// Params 0
+// Checksum 0x0, Offset: 0x1eb3
 // Size: 0xb5
 function function_2e34e3b637838a30()
 {
@@ -137,8 +137,8 @@ function function_2e34e3b637838a30()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f5f
+// Params 0
+// Checksum 0x0, Offset: 0x1f70
 // Size: 0x576
 function function_3ad16832e078048f()
 {
@@ -222,8 +222,8 @@ function function_3ad16832e078048f()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24dd
+// Params 0
+// Checksum 0x0, Offset: 0x24ee
 // Size: 0x1d3
 function function_a108cf47f68d34cc()
 {
@@ -245,8 +245,8 @@ function function_a108cf47f68d34cc()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26b8
+// Params 0
+// Checksum 0x0, Offset: 0x26c9
 // Size: 0x50
 function function_a14fde47f6dc1839()
 {
@@ -256,8 +256,8 @@ function function_a14fde47f6dc1839()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2710
+// Params 0
+// Checksum 0x0, Offset: 0x2721
 // Size: 0x77
 function function_31303a706f015e()
 {
@@ -273,8 +273,8 @@ function function_31303a706f015e()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x278f
+// Params 1
+// Checksum 0x0, Offset: 0x27a0
 // Size: 0x22
 function function_f8a7db702dbfd424( streakinfo )
 {
@@ -282,8 +282,8 @@ function function_f8a7db702dbfd424( streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27b9
+// Params 1
+// Checksum 0x0, Offset: 0x27ca
 // Size: 0x10c
 function function_c02ec136b61774c7( streakinfo )
 {
@@ -345,8 +345,8 @@ function function_c02ec136b61774c7( streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x28ce
+// Params 2
+// Checksum 0x0, Offset: 0x28df
 // Size: 0x70
 function function_db39a901a1eb2961( owner, streakinfo )
 {
@@ -366,8 +366,8 @@ function function_db39a901a1eb2961( owner, streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2946
+// Params 2
+// Checksum 0x0, Offset: 0x2957
 // Size: 0x5f7, Type: bool
 function function_8c158c00964032fb( player, streakinfo )
 {
@@ -557,8 +557,8 @@ function function_8c158c00964032fb( player, streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f46
+// Params 2
+// Checksum 0x0, Offset: 0x2f57
 // Size: 0xe6
 function function_30d9d17051520c48( owner, launchorigin )
 {
@@ -595,8 +595,8 @@ function function_30d9d17051520c48( owner, launchorigin )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3035
+// Params 0
+// Checksum 0x0, Offset: 0x3046
 // Size: 0x3b
 function function_4303ddf58d0b4c9c()
 {
@@ -605,8 +605,8 @@ function function_4303ddf58d0b4c9c()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3078
+// Params 0
+// Checksum 0x0, Offset: 0x3089
 // Size: 0x1c
 function function_7d7d3fc47e51dcf2()
 {
@@ -614,8 +614,8 @@ function function_7d7d3fc47e51dcf2()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x309c
+// Params 5
+// Checksum 0x0, Offset: 0x30ad
 // Size: 0x133
 function function_6d7d875b0d6d2608( player, streakinfo, angle, anglevector, var_5118005380cb1d91 )
 {
@@ -665,8 +665,8 @@ function function_6d7d875b0d6d2608( player, streakinfo, angle, anglevector, var_
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x31d8
+// Params 2
+// Checksum 0x0, Offset: 0x31e9
 // Size: 0x5e
 function function_3bafd58eb00dd62f( action, streakinfo )
 {
@@ -685,8 +685,8 @@ function function_3bafd58eb00dd62f( action, streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x323e
+// Params 2
+// Checksum 0x0, Offset: 0x324f
 // Size: 0xcd
 function function_38f7b42a53263e60( owner, streakinfo )
 {
@@ -717,8 +717,8 @@ function function_38f7b42a53263e60( owner, streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3313
+// Params 1
+// Checksum 0x0, Offset: 0x3324
 // Size: 0x3d
 function function_db2de60186f3a10b( owner )
 {
@@ -733,8 +733,8 @@ function function_db2de60186f3a10b( owner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3358
+// Params 3
+// Checksum 0x0, Offset: 0x3369
 // Size: 0x139
 function function_9a5d614fcfd652b( animlength, owner, introsequence )
 {
@@ -772,8 +772,8 @@ function function_9a5d614fcfd652b( animlength, owner, introsequence )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3499
+// Params 6
+// Checksum 0x0, Offset: 0x34aa
 // Size: 0x55
 function function_b302a1a5a4bbea3b( owner, delaytime, fstop, focusdistance, focusspeed, var_5587778bb9d6e798 )
 {
@@ -785,8 +785,8 @@ function function_b302a1a5a4bbea3b( owner, delaytime, fstop, focusdistance, focu
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x34f6
+// Params 3
+// Checksum 0x0, Offset: 0x3507
 // Size: 0xe3
 function function_1c58d316ba362c44( animlength, owner, introsequence )
 {
@@ -838,8 +838,8 @@ function function_1c58d316ba362c44( animlength, owner, introsequence )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x35e1
+// Params 2
+// Checksum 0x0, Offset: 0x35f2
 // Size: 0x60
 function function_7aa4f7c9f7b0880f( animlength, owner )
 {
@@ -853,8 +853,8 @@ function function_7aa4f7c9f7b0880f( animlength, owner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3649
+// Params 1
+// Checksum 0x0, Offset: 0x365a
 // Size: 0x48
 function function_131a8cac896bb430( owner )
 {
@@ -867,8 +867,8 @@ function function_131a8cac896bb430( owner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3699
+// Params 2
+// Checksum 0x0, Offset: 0x36aa
 // Size: 0x2f6
 function function_cf067ca1169bed53( player, crashing )
 {
@@ -979,8 +979,8 @@ function function_cf067ca1169bed53( player, crashing )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3997
+// Params 1
+// Checksum 0x0, Offset: 0x39a8
 // Size: 0x100
 function function_b9abd8c489937d57( streakinfo )
 {
@@ -1006,8 +1006,8 @@ function function_b9abd8c489937d57( streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a9f
+// Params 1
+// Checksum 0x0, Offset: 0x3ab0
 // Size: 0x4ca
 function missiledrone_watchdamage( gunner )
 {
@@ -1126,8 +1126,8 @@ function missiledrone_watchdamage( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f71
+// Params 0
+// Checksum 0x0, Offset: 0x3f82
 // Size: 0x7d
 function function_bf8fd9a25ca54d8a()
 {
@@ -1143,8 +1143,8 @@ function function_bf8fd9a25ca54d8a()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ff6
+// Params 0
+// Checksum 0x0, Offset: 0x4007
 // Size: 0x90
 function function_5673c34db51b275f()
 {
@@ -1161,8 +1161,8 @@ function function_5673c34db51b275f()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x408e
+// Params 0
+// Checksum 0x0, Offset: 0x409f
 // Size: 0x8a
 function function_203aef5b54babd0f()
 {
@@ -1179,8 +1179,8 @@ function function_203aef5b54babd0f()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4120
+// Params 0
+// Checksum 0x0, Offset: 0x4131
 // Size: 0x2b
 function function_93a48e1984430560()
 {
@@ -1190,8 +1190,8 @@ function function_93a48e1984430560()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4153
+// Params 2
+// Checksum 0x0, Offset: 0x4164
 // Size: 0x49
 function function_cc8a7a4a6e6336a( gunner, streakinfo )
 {
@@ -1204,8 +1204,8 @@ function function_cc8a7a4a6e6336a( gunner, streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x41a4
+// Params 2
+// Checksum 0x0, Offset: 0x41b5
 // Size: 0x44
 function function_805dc4b378be50a2( gunner, streakinfo )
 {
@@ -1217,8 +1217,8 @@ function function_805dc4b378be50a2( gunner, streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x41f0
+// Params 2
+// Checksum 0x0, Offset: 0x4201
 // Size: 0xfa
 function missiledrone_leave( gunner, streakinfo )
 {
@@ -1245,8 +1245,8 @@ function missiledrone_leave( gunner, streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42f2
+// Params 1
+// Checksum 0x0, Offset: 0x4303
 // Size: 0x23
 function function_4350b2bdabf0cce2( destination )
 {
@@ -1257,8 +1257,8 @@ function function_4350b2bdabf0cce2( destination )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x431d
+// Params 3
+// Checksum 0x0, Offset: 0x432e
 // Size: 0x5b
 function function_f655625d476b6a88( gunner, exitaction, streakinfo )
 {
@@ -1278,8 +1278,8 @@ function function_f655625d476b6a88( gunner, exitaction, streakinfo )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4380
+// Params 1
+// Checksum 0x0, Offset: 0x4391
 // Size: 0x5c
 function function_10f1246952e7502e( gunner )
 {
@@ -1293,8 +1293,8 @@ function function_10f1246952e7502e( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43e4
+// Params 1
+// Checksum 0x0, Offset: 0x43f5
 // Size: 0x87
 function missiledrone_trackvelocity( gunner )
 {
@@ -1313,8 +1313,8 @@ function missiledrone_trackvelocity( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x4473
+// Params 6
+// Checksum 0x0, Offset: 0x4484
 // Size: 0x373
 function missiledrone_spawn( owner, streakinfo, angle, anglevector, missiledroneintro, var_5118005380cb1d91 )
 {
@@ -1390,8 +1390,8 @@ function missiledrone_spawn( owner, streakinfo, angle, anglevector, missiledrone
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47ef
+// Params 1
+// Checksum 0x0, Offset: 0x4800
 // Size: 0x4f
 function function_970fae719e73bb11( plane )
 {
@@ -1407,8 +1407,8 @@ function function_970fae719e73bb11( plane )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4846
+// Params 1
+// Checksum 0x0, Offset: 0x4857
 // Size: 0x98
 function function_83970e7a3032f374( plane )
 {
@@ -1428,8 +1428,8 @@ function function_83970e7a3032f374( plane )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48e6
+// Params 1
+// Checksum 0x0, Offset: 0x48f7
 // Size: 0x85
 function function_39246ee5f77f5891( plane )
 {
@@ -1445,8 +1445,8 @@ function function_39246ee5f77f5891( plane )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4973
+// Params 1
+// Checksum 0x0, Offset: 0x4984
 // Size: 0xb8
 function function_6d0704818ddf4f84( plane )
 {
@@ -1469,8 +1469,8 @@ function function_6d0704818ddf4f84( plane )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a33
+// Params 0
+// Checksum 0x0, Offset: 0x4a44
 // Size: 0xbb
 function missiledrone_rotaterig()
 {
@@ -1490,8 +1490,8 @@ function missiledrone_rotaterig()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4af6
+// Params 1
+// Checksum 0x0, Offset: 0x4b07
 // Size: 0x459
 function function_9606c15566d61486( gunner )
 {
@@ -1594,8 +1594,8 @@ function function_9606c15566d61486( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f57
+// Params 1
+// Checksum 0x0, Offset: 0x4f68
 // Size: 0x1cd
 function function_ad3e744a5b339fe4( bundle )
 {
@@ -1658,8 +1658,8 @@ function function_ad3e744a5b339fe4( bundle )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x512d
+// Params 1
+// Checksum 0x0, Offset: 0x513e
 // Size: 0x5f
 function function_17184b70f0bb1fd0( gunner )
 {
@@ -1682,8 +1682,8 @@ function function_17184b70f0bb1fd0( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5194
+// Params 1
+// Checksum 0x0, Offset: 0x51a5
 // Size: 0x15c
 function function_8f9ac2ebbb4f7815( gunner )
 {
@@ -1730,8 +1730,8 @@ function function_8f9ac2ebbb4f7815( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x52f8
+// Params 2
+// Checksum 0x0, Offset: 0x5309
 // Size: 0xaa
 function function_6e4f826f6f06f7f2( missiledrone, gunner )
 {
@@ -1754,8 +1754,8 @@ function function_6e4f826f6f06f7f2( missiledrone, gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x53aa
+// Params 1
+// Checksum 0x0, Offset: 0x53bb
 // Size: 0x3c
 function function_6f740ebda17653c2( gunner )
 {
@@ -1773,8 +1773,8 @@ function function_6f740ebda17653c2( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x53ee
+// Params 1
+// Checksum 0x0, Offset: 0x53ff
 // Size: 0x357
 function function_c34bf26ae4a7084f( gunner )
 {
@@ -1870,8 +1870,8 @@ function function_c34bf26ae4a7084f( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x574d
+// Params 1
+// Checksum 0x0, Offset: 0x575e
 // Size: 0x6d
 function function_78cf37cb70874140( weaponbasename )
 {
@@ -1888,8 +1888,8 @@ function function_78cf37cb70874140( weaponbasename )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x57c3
+// Params 2
+// Checksum 0x0, Offset: 0x57d4
 // Size: 0x9a
 function function_9820f2512425d34e( missiledrone, gunner )
 {
@@ -1925,8 +1925,8 @@ function function_9820f2512425d34e( missiledrone, gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5865
+// Params 0
+// Checksum 0x0, Offset: 0x5876
 // Size: 0x71
 function function_24616cc755cc01fb()
 {
@@ -1944,8 +1944,8 @@ function function_24616cc755cc01fb()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x58de
+// Params 2
+// Checksum 0x0, Offset: 0x58ef
 // Size: 0x168
 function function_80144ddd67d04fed( weapon, missiledrone )
 {
@@ -1988,8 +1988,8 @@ function function_80144ddd67d04fed( weapon, missiledrone )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a4e
+// Params 2
+// Checksum 0x0, Offset: 0x5a5f
 // Size: 0x7e
 function function_bd38f2af58223930( weapon, weaponrootname )
 {
@@ -2016,8 +2016,8 @@ function function_bd38f2af58223930( weapon, weaponrootname )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ad4
+// Params 1
+// Checksum 0x0, Offset: 0x5ae5
 // Size: 0x52
 function function_21c6809e6006460e( weapon )
 {
@@ -2028,8 +2028,8 @@ function function_21c6809e6006460e( weapon )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b2f
+// Params 1
+// Checksum 0x0, Offset: 0x5b40
 // Size: 0x21
 function deleteaftertime( delay )
 {
@@ -2039,8 +2039,8 @@ function deleteaftertime( delay )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b58
+// Params 1
+// Checksum 0x0, Offset: 0x5b69
 // Size: 0x2f
 function missiledrone_crash( gunner )
 {
@@ -2051,8 +2051,8 @@ function missiledrone_crash( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b8f
+// Params 1
+// Checksum 0x0, Offset: 0x5ba0
 // Size: 0x56
 function function_65e8d13e7627aa30( gunner )
 {
@@ -2075,8 +2075,8 @@ function function_65e8d13e7627aa30( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bed
+// Params 0
+// Checksum 0x0, Offset: 0x5bfe
 // Size: 0x2a
 function function_4f343c3570ec8c83()
 {
@@ -2087,8 +2087,8 @@ function function_4f343c3570ec8c83()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c1f
+// Params 0
+// Checksum 0x0, Offset: 0x5c30
 // Size: 0x16
 function function_8c83bb59a3b39d63()
 {
@@ -2098,8 +2098,8 @@ function function_8c83bb59a3b39d63()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c3d
+// Params 1
+// Checksum 0x0, Offset: 0x5c4e
 // Size: 0x98
 function function_89e2c5d8943c1d34( delaytime )
 {
@@ -2117,8 +2117,8 @@ function function_89e2c5d8943c1d34( delaytime )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cdd
+// Params 1
+// Checksum 0x0, Offset: 0x5cee
 // Size: 0x2b
 function function_b0907b95aa104523( delaytime )
 {
@@ -2128,8 +2128,8 @@ function function_b0907b95aa104523( delaytime )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d10
+// Params 0
+// Checksum 0x0, Offset: 0x5d21
 // Size: 0x3
 function function_b6b762b383a503ea()
 {
@@ -2137,8 +2137,8 @@ function function_b6b762b383a503ea()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d1b
+// Params 1
+// Checksum 0x0, Offset: 0x5d2c
 // Size: 0xe8
 function function_389bbae7183fba66( wasdestroyed )
 {
@@ -2178,8 +2178,8 @@ function function_389bbae7183fba66( wasdestroyed )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e0b
+// Params 1
+// Checksum 0x0, Offset: 0x5e1c
 // Size: 0xac
 function function_be60e349949d9e87( intro )
 {
@@ -2210,8 +2210,8 @@ function function_be60e349949d9e87( intro )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ebf
+// Params 1
+// Checksum 0x0, Offset: 0x5ed0
 // Size: 0x84
 function function_20836c46516ad037( intro )
 {
@@ -2231,8 +2231,8 @@ function function_20836c46516ad037( intro )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f4b
+// Params 2
+// Checksum 0x0, Offset: 0x5f5c
 // Size: 0x27d
 function function_54bfc1d6d0f13763( intro, sequence )
 {
@@ -2320,8 +2320,8 @@ function function_54bfc1d6d0f13763( intro, sequence )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x61d0
+// Params 2
+// Checksum 0x0, Offset: 0x61e1
 // Size: 0x245
 function function_d176c031e49a9127( var_5e0676140eecdf2d, brush_name )
 {
@@ -2385,8 +2385,8 @@ function function_d176c031e49a9127( var_5e0676140eecdf2d, brush_name )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x641e
+// Params 3
+// Checksum 0x0, Offset: 0x642f
 // Size: 0xed
 function function_59fe44dabb80351e( owner, lighting_info, showlighting )
 {
@@ -2411,8 +2411,8 @@ function function_59fe44dabb80351e( owner, lighting_info, showlighting )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6513
+// Params 1
+// Checksum 0x0, Offset: 0x6524
 // Size: 0x42
 function function_a9b2c690b95247eb( lighting_info )
 {
@@ -2425,8 +2425,8 @@ function function_a9b2c690b95247eb( lighting_info )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x655d
+// Params 1
+// Checksum 0x0, Offset: 0x656e
 // Size: 0x86
 function function_58320b18c3e339fe( lighting_info )
 {
@@ -2442,8 +2442,8 @@ function function_58320b18c3e339fe( lighting_info )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x65eb
+// Params 1
+// Checksum 0x0, Offset: 0x65fc
 // Size: 0x70
 function function_38101db6ed950f17( lighting_info )
 {
@@ -2458,8 +2458,8 @@ function function_38101db6ed950f17( lighting_info )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6663
+// Params 0
+// Checksum 0x0, Offset: 0x6674
 // Size: 0x79
 function function_fff560b330fd842d()
 {
@@ -2475,8 +2475,8 @@ function function_fff560b330fd842d()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x66e4
+// Params 1
+// Checksum 0x0, Offset: 0x66f5
 // Size: 0xa4
 function unlink_brushes( lighting_info )
 {
@@ -2494,8 +2494,8 @@ function unlink_brushes( lighting_info )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x6790
+// Params 5
+// Checksum 0x0, Offset: 0x67a1
 // Size: 0x138
 function function_c97862ceafbf17b1( player, scriptablepart, state, visionset_name, time )
 {
@@ -2538,8 +2538,8 @@ function function_c97862ceafbf17b1( player, scriptablepart, state, visionset_nam
 /#
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x68d0
+    // Params 3
+    // Checksum 0x0, Offset: 0x68e1
     // Size: 0x5b, Type: dev
     function function_c0266d473bad8324( intro, animent, var_465db5572e637fb7 )
     {
@@ -2556,8 +2556,8 @@ function function_c97862ceafbf17b1( player, scriptablepart, state, visionset_nam
 #/
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6933
+// Params 0
+// Checksum 0x0, Offset: 0x6944
 // Size: 0x325
 function function_bb02235216647beb()
 {
@@ -2648,9 +2648,9 @@ function function_bb02235216647beb()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c60
-// Size: 0x140
+// Params 4
+// Checksum 0x0, Offset: 0x6c71
+// Size: 0x1de
 function function_531405487af921f1( player, missileteam, missiletarget, fxtagoverride )
 {
     self endon( "death" );
@@ -2690,14 +2690,27 @@ function function_531405487af921f1( player, missileteam, missiletarget, fxtagove
             self notify( "missile_pairedWithFlare" );
             return;
         }
+        else if ( curdist < 300 && missiletarget.flaresreservecount <= 0 )
+        {
+            missiletarget thread function_da9aa7a5e0fe681e();
+            weapon = makeweapon( self.weapon_name );
+            missiledamage = weapon getmaxdamage( 0 );
+            
+            if ( isdefined( self.owner ) )
+            {
+                missiletarget dodamage( missiledamage, self.owner.origin, self.owner, self, "MOD_EXPLOSIVE", self.weapon_name );
+            }
+            
+            self delete();
+        }
         
         waitframe();
     }
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6da8
+// Params 0
+// Checksum 0x0, Offset: 0x6e57
 // Size: 0x83
 function function_da9aa7a5e0fe681e()
 {
@@ -2720,8 +2733,8 @@ function function_da9aa7a5e0fe681e()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e33
+// Params 1
+// Checksum 0x0, Offset: 0x6ee2
 // Size: 0x73
 function function_d16a3ecb8c5bc2a1( fxtagoverride )
 {
@@ -2739,8 +2752,8 @@ function function_d16a3ecb8c5bc2a1( fxtagoverride )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6eae
+// Params 0
+// Checksum 0x0, Offset: 0x6f5d
 // Size: 0xc, Type: bool
 function function_37aa153b0366cc11()
 {
@@ -2748,8 +2761,8 @@ function function_37aa153b0366cc11()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ec3
+// Params 0
+// Checksum 0x0, Offset: 0x6f72
 // Size: 0x27
 function function_9897e70f93923dcf()
 {
@@ -2762,8 +2775,8 @@ function function_9897e70f93923dcf()
 /#
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6ef2
+    // Params 1
+    // Checksum 0x0, Offset: 0x6fa1
     // Size: 0x4d, Type: dev
     function function_9a76988758d4b96d( wingfxent )
     {
@@ -2780,8 +2793,8 @@ function function_9897e70f93923dcf()
 #/
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f47
+// Params 1
+// Checksum 0x0, Offset: 0x6ff6
 // Size: 0x1ca
 function function_64a14223afd3adcb( gunner )
 {
@@ -2849,8 +2862,8 @@ function function_64a14223afd3adcb( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7119
+// Params 1
+// Checksum 0x0, Offset: 0x71c8
 // Size: 0xc8
 function function_13c4d6f32613eca7( maintarget )
 {
@@ -2876,8 +2889,8 @@ function function_13c4d6f32613eca7( maintarget )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x71ea
+// Params 1
+// Checksum 0x0, Offset: 0x7299
 // Size: 0xbd
 function function_b9ab0154dac4fa55( gunner )
 {
@@ -2914,8 +2927,8 @@ function function_b9ab0154dac4fa55( gunner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x72af
+// Params 0
+// Checksum 0x0, Offset: 0x735e
 // Size: 0x3f
 function function_d4f51332e1325a1c()
 {
@@ -2931,8 +2944,8 @@ function function_d4f51332e1325a1c()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x72f6
+// Params 0
+// Checksum 0x0, Offset: 0x73a5
 // Size: 0x3f
 function function_112adc3b48b77e0d()
 {
@@ -2948,8 +2961,8 @@ function function_112adc3b48b77e0d()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x733d
+// Params 1
+// Checksum 0x0, Offset: 0x73ec
 // Size: 0x4c
 function missiledrone_iskillstreakweapon( weaponname )
 {
@@ -2958,8 +2971,8 @@ function missiledrone_iskillstreakweapon( weaponname )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7392
+// Params 0
+// Checksum 0x0, Offset: 0x7441
 // Size: 0x39
 function function_aedf1601f279fceb()
 {
@@ -2978,8 +2991,8 @@ function function_aedf1601f279fceb()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x73d4
+// Params 1
+// Checksum 0x0, Offset: 0x7483
 // Size: 0xe7
 function function_2a0298fbe5f18722( boolean )
 {
@@ -3010,8 +3023,8 @@ function function_2a0298fbe5f18722( boolean )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x74c3
+// Params 0
+// Checksum 0x0, Offset: 0x7572
 // Size: 0x31
 function function_a69bf71155feb4e()
 {
@@ -3022,8 +3035,8 @@ function function_a69bf71155feb4e()
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x74fc
+// Params 1
+// Checksum 0x0, Offset: 0x75ab
 // Size: 0x44
 function function_399152c6672be76a( ent )
 {
@@ -3034,8 +3047,8 @@ function function_399152c6672be76a( ent )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7548
+// Params 1
+// Checksum 0x0, Offset: 0x75f7
 // Size: 0x64
 function function_8aa94ec41c3e88cc( owner )
 {
@@ -3059,8 +3072,8 @@ function function_8aa94ec41c3e88cc( owner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x75b4
+// Params 1
+// Checksum 0x0, Offset: 0x7663
 // Size: 0x158
 function function_2c910042f77e1aa5( owner )
 {
@@ -3130,8 +3143,8 @@ function function_2c910042f77e1aa5( owner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7714
+// Params 1
+// Checksum 0x0, Offset: 0x77c3
 // Size: 0xab
 function function_a35bbae32a730b2d( owner )
 {
@@ -3146,8 +3159,8 @@ function function_a35bbae32a730b2d( owner )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x77c8
+// Params 1
+// Checksum 0x0, Offset: 0x7877
 // Size: 0x74
 function function_ef631bb902b0143b( targetweapon )
 {
@@ -3171,8 +3184,8 @@ function function_ef631bb902b0143b( targetweapon )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7844
+// Params 3
+// Checksum 0x0, Offset: 0x78f3
 // Size: 0xb7
 function function_b16043b8aa64aa83( missiledrone, gunner, weaponbasename )
 {
@@ -3190,8 +3203,8 @@ function function_b16043b8aa64aa83( missiledrone, gunner, weaponbasename )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7903
+// Params 1
+// Checksum 0x0, Offset: 0x79b2
 // Size: 0x20
 function function_a97a45c5bcdf7177( data )
 {
@@ -3202,8 +3215,8 @@ function function_a97a45c5bcdf7177( data )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x792b
+// Params 1
+// Checksum 0x0, Offset: 0x79da
 // Size: 0x226
 function function_30cc55dbff70c92f( data )
 {
@@ -3272,8 +3285,8 @@ function function_30cc55dbff70c92f( data )
 }
 
 // Namespace missile_drone / scripts\killstreaks\missile_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b59
+// Params 0
+// Checksum 0x0, Offset: 0x7c08
 // Size: 0x177
 function function_54dc6e57b9bebd23()
 {
@@ -3307,8 +3320,8 @@ function function_54dc6e57b9bebd23()
 /#
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7cd8
+    // Params 1
+    // Checksum 0x0, Offset: 0x7d87
     // Size: 0xe4, Type: dev
     function function_86d2c07ecf9891c8( var_5118005380cb1d91 )
     {
@@ -3327,10 +3340,10 @@ function function_54dc6e57b9bebd23()
     }
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7dc4
+    // Params 2
+    // Checksum 0x0, Offset: 0x7e73
     // Size: 0x114, Type: dev
-    function function_9d69dd8c1ff1265c( tagname, var_22c53c353885fe59 )
+    function watchdebuglocation( tagname, var_22c53c353885fe59 )
     {
         self endon( "<dev string:xb7>" );
         
@@ -3360,8 +3373,8 @@ function function_54dc6e57b9bebd23()
     }
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7ee0
+    // Params 0
+    // Checksum 0x0, Offset: 0x7f8f
     // Size: 0x158, Type: dev
     function function_a7ae61ca6cbcb70a()
     {
@@ -3407,8 +3420,8 @@ function function_54dc6e57b9bebd23()
     }
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8040
+    // Params 1
+    // Checksum 0x0, Offset: 0x80ef
     // Size: 0x15, Type: dev
     function function_4dbd9a1ea2d94c05( weapon )
     {
@@ -3416,8 +3429,8 @@ function function_54dc6e57b9bebd23()
     }
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x805d
+    // Params 1
+    // Checksum 0x0, Offset: 0x810c
     // Size: 0xa2, Type: dev
     function function_1a59507eefd55d13( owner )
     {
@@ -3431,8 +3444,8 @@ function function_54dc6e57b9bebd23()
     }
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8107
+    // Params 2
+    // Checksum 0x0, Offset: 0x81b6
     // Size: 0x165, Type: dev
     function function_91136bd1e9d68478( shotgoal, currentdebugweapon )
     {
@@ -3480,8 +3493,8 @@ function function_54dc6e57b9bebd23()
     }
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8274
+    // Params 1
+    // Checksum 0x0, Offset: 0x8323
     // Size: 0x90, Type: dev
     function function_4edd23e2f400d3c6( shotgoal )
     {
@@ -3500,8 +3513,8 @@ function function_54dc6e57b9bebd23()
     }
 
     // Namespace missile_drone / scripts\killstreaks\missile_drone
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x830c
+    // Params 0
+    // Checksum 0x0, Offset: 0x83bb
     // Size: 0x55, Type: dev
     function function_b4f83c42aa587a5b()
     {

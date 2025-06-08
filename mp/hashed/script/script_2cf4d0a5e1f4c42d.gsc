@@ -9,7 +9,7 @@
 #namespace laststand;
 
 // Namespace laststand / namespace_da6770cba19d3de9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x113
 // Size: 0x12
 function function_eda57308516bfc5f()
@@ -18,7 +18,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace laststand / namespace_da6770cba19d3de9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12e
 // Size: 0x1f
 function evaluatescore( bot )
@@ -32,7 +32,7 @@ function evaluatescore( bot )
 }
 
 // Namespace laststand / namespace_da6770cba19d3de9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x156
 // Size: 0x27
 function createaction( squadmaster )
@@ -41,7 +41,7 @@ function createaction( squadmaster )
 }
 
 // Namespace laststand / namespace_da6770cba19d3de9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x186
 // Size: 0x1c3
 function actionprocess( bot )
@@ -115,7 +115,7 @@ function actionprocess( bot )
 }
 
 // Namespace laststand / namespace_da6770cba19d3de9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x351
 // Size: 0xe8
 function function_a0bb005ec23fa9af( bot, teammate )
@@ -148,7 +148,7 @@ function function_a0bb005ec23fa9af( bot, teammate )
 }
 
 // Namespace laststand / namespace_da6770cba19d3de9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x442
 // Size: 0xef
 function function_4f3ea8c58542178a( bot )
@@ -188,7 +188,7 @@ function function_4f3ea8c58542178a( bot )
 }
 
 // Namespace laststand / namespace_da6770cba19d3de9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x53a
 // Size: 0x72, Type: bool
 function function_cf7b2c0abeafba37( bot, closestteammate, attacker )

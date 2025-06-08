@@ -9,7 +9,7 @@
 #namespace long_death;
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30d
 // Size: 0x163
 function preventpainforashorttime()
@@ -51,7 +51,7 @@ function preventpainforashorttime()
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x478
 // Size: 0x1a4
 function dyingcrawlbackaim( statename )
@@ -115,7 +115,7 @@ function dyingcrawlbackaim( statename )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x624
 // Size: 0x67
 function setupaiming( statename )
@@ -133,7 +133,7 @@ function setupaiming( statename )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x693
 // Size: 0x113
 function dodyingcrawlbloodsmear()
@@ -166,7 +166,7 @@ function dodyingcrawlbloodsmear()
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ae
 // Size: 0x23
 function iscrawldeltaallowed( thexanim )
@@ -180,7 +180,7 @@ function iscrawldeltaallowed( thexanim )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7da
 // Size: 0x51
 function startdyingcrawlbackaimsoon( statename )
@@ -198,7 +198,7 @@ function startdyingcrawlbackaimsoon( statename )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x833
 // Size: 0xbc, Type: bool
 function handlebackcrawlnotetracks( statename, note, params )
@@ -243,7 +243,7 @@ function handlebackcrawlnotetracks( statename, note, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8f8
 // Size: 0x136
 function playdyingcrawl( asmname, statename, params )
@@ -265,7 +265,8 @@ function playdyingcrawl( asmname, statename, params )
     self aisetanim( statename, animid );
     asm_playfacialanim( asmname, statename, xanim );
     
-    for (i = 0; i < numcrawls; i++) {
+    for ( i = 0; i < numcrawls ; i++ )
+    {
         if ( !iscrawldeltaallowed( xanim ) )
         {
             break;
@@ -291,7 +292,7 @@ function playdyingcrawl( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa36
 // Size: 0x154
 function playdyingcrawlback( asmname, statename, params )
@@ -319,7 +320,8 @@ function playdyingcrawlback( asmname, statename, params )
     asm_playfacialanim( asmname, statename, crawlxanim );
     self aisetanim( statename, crawlanim );
     
-    for (i = 0; i < numcrawls; i++) {
+    for ( i = 0; i < numcrawls ; i++ )
+    {
         if ( !iscrawldeltaallowed( crawlxanim ) )
         {
             break;
@@ -345,7 +347,7 @@ function playdyingcrawlback( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb92
 // Size: 0x30
 function playcrawlflipover( asmname, statename, params )
@@ -355,7 +357,7 @@ function playcrawlflipover( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbca
 // Size: 0x69
 function playcrawlingpaintransition( asmname, statename, params )
@@ -378,7 +380,7 @@ function playcrawlingpaintransition( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc3b
 // Size: 0x44
 function setearlyfinishtime()
@@ -392,7 +394,7 @@ function setearlyfinishtime()
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc87
 // Size: 0xaa
 function playdyingbackshoot( asmname, statename, params )
@@ -419,7 +421,7 @@ function playdyingbackshoot( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd39
 // Size: 0x3e
 function choosedyingbackidle( asmname, statename, params )
@@ -433,7 +435,7 @@ function choosedyingbackidle( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd80
 // Size: 0xc4
 function playdyingbackidle( asmname, statename, params )
@@ -466,7 +468,7 @@ function playdyingbackidle( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe4c
 // Size: 0x3a
 function playstumblingpaintransition( asmname, statename, params )
@@ -478,7 +480,7 @@ function playstumblingpaintransition( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe8e
 // Size: 0x154
 function playstumblingwander( asmname, statename, params )
@@ -528,7 +530,7 @@ function playstumblingwander( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xfea
 // Size: 0x2d, Type: bool
 function hasbeenhitwithemp( asmname, statename, tostatename, params )
@@ -537,7 +539,7 @@ function hasbeenhitwithemp( asmname, statename, tostatename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1020
 // Size: 0xed, Type: bool
 function shoulddodyingcrawl( asmname, statename, tostatename, params )
@@ -583,7 +585,7 @@ function shoulddodyingcrawl( asmname, statename, tostatename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1116
 // Size: 0x8e
 function playlongdeathintro( asmname, statename, params )
@@ -613,7 +615,7 @@ function playlongdeathintro( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11ac
 // Size: 0x5c
 function function_c19267f99ab2ffe4( asmname, statename, params )
@@ -627,7 +629,7 @@ function function_c19267f99ab2ffe4( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1210
 // Size: 0x25
 function playlongdeathmercy( asmname, statename, params )
@@ -636,7 +638,7 @@ function playlongdeathmercy( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x123d
 // Size: 0xa8
 function playlongdeathidle( asmname, statename, params )
@@ -665,7 +667,7 @@ function playlongdeathidle( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12ed
 // Size: 0xb5
 function playshootinglongdeathidle( asmname, statename, params )
@@ -692,16 +694,16 @@ function playshootinglongdeathidle( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13aa
-// Size: 0x24, Type: bool
+// Size: 0x24
 function longdeathidlesingleloop( asmname, statename, params )
 {
     return playlongdeathanim( asmname, statename, 0 );
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13d7
 // Size: 0x4c
 function playlongdeathgrenade( asmname, statename, params )
@@ -711,7 +713,7 @@ function playlongdeathgrenade( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x142b
 // Size: 0x48
 function playlongdeathgrenadepull( asmname, statename, params )
@@ -721,7 +723,7 @@ function playlongdeathgrenadepull( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x147b
 // Size: 0x8a, Type: bool
 function playlongdeathanim( asmname, statename, var_9d93fc2c06b1754f )
@@ -744,7 +746,7 @@ function playlongdeathanim( asmname, statename, var_9d93fc2c06b1754f )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x150e
 // Size: 0x8a
 function isanimdeltaallowed( thexanim )
@@ -770,7 +772,7 @@ function isanimdeltaallowed( thexanim )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15a1
 // Size: 0x12
 function checkstairsoffsetpoint( endpoint )
@@ -779,7 +781,7 @@ function checkstairsoffsetpoint( endpoint )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15bc
 // Size: 0x66
 function playlongdeathfinaldeath( asmname, statename, params )
@@ -793,7 +795,7 @@ function playlongdeathfinaldeath( asmname, statename, params )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x162a
 // Size: 0x141
 function onfinaldeathdropgrenade()
@@ -833,7 +835,7 @@ function onfinaldeathdropgrenade()
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1773
 // Size: 0x79
 function longdeathgrenadepullnotetrackhandler( note )
@@ -852,7 +854,7 @@ function longdeathgrenadepullnotetrackhandler( note )
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x17f4
 // Size: 0x9d, Type: bool
 function function_633f7da4f34bba83( asmname, statename, tostatename, params )

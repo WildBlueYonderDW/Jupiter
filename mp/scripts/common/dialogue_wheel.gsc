@@ -7,7 +7,7 @@
 #namespace dialogue_wheel;
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x564
 // Size: 0x226
 function function_306c305b8c51b11c( options, duration, active, positions, var_6b9a984d61c9ff12, player )
@@ -42,7 +42,8 @@ function function_306c305b8c51b11c( options, duration, active, positions, var_6b
     }
     else
     {
-        for (position = 0; position < options.size; position++) {
+        for ( position = 0; position < options.size ; position++ )
+        {
             if ( !( isstring( options[ position ] ) && options[ position ] == "none" ) )
             {
                 player function_e61ab3e2bde6b663( options, position );
@@ -84,7 +85,7 @@ function function_306c305b8c51b11c( options, duration, active, positions, var_6b
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x792
 // Size: 0x6a
 function function_e61ab3e2bde6b663( options, position )
@@ -96,7 +97,7 @@ function function_e61ab3e2bde6b663( options, position )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x804
 // Size: 0x86
 function function_27cb1968e9f31a97( position )
@@ -123,7 +124,7 @@ function function_27cb1968e9f31a97( position )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x893
 // Size: 0x66
 function function_544db35a3301834f()
@@ -135,7 +136,7 @@ function function_544db35a3301834f()
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x901
 // Size: 0x46
 function function_20245cecf244d934( player )
@@ -154,7 +155,7 @@ function function_20245cecf244d934( player )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94f
 // Size: 0x24
 function function_ffdce2654ea23d5a()
@@ -168,7 +169,7 @@ function function_ffdce2654ea23d5a()
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x97c
 // Size: 0x13a
 function function_ba24ddb136cbab67( player )
@@ -316,7 +317,7 @@ function private function_8d81c892708a5d8e( player )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xff6
 // Size: 0x40, Type: bool
 function function_861dc23c52d31c41( var_5c76167572fce9c1, var_8c791b0ce2679fba )
@@ -330,7 +331,7 @@ function function_861dc23c52d31c41( var_5c76167572fce9c1, var_8c791b0ce2679fba )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x103f
 // Size: 0xbd
 function function_6f846e9519b4cff2( player )
@@ -353,7 +354,7 @@ function function_6f846e9519b4cff2( player )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1104
 // Size: 0x15
 function function_3d548a32743df49b( duration )
@@ -362,7 +363,7 @@ function function_3d548a32743df49b( duration )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1121
 // Size: 0x20
 function function_64c637dd115ff678( duration )
@@ -371,7 +372,7 @@ function function_64c637dd115ff678( duration )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1149
 // Size: 0x70
 function function_d92b8b076e34f82b( options, duration, positions, player )
@@ -391,7 +392,7 @@ function function_d92b8b076e34f82b( options, duration, positions, player )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x11c2
 // Size: 0xef
 function function_dad8b67b4a097168( options, funcs, duration, positions, player )
@@ -441,7 +442,7 @@ function function_dad8b67b4a097168( options, funcs, duration, positions, player 
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x12b9
 // Size: 0x11b
 function function_e6acdf1a7626587e( options, nodes, duration, player )
@@ -485,7 +486,7 @@ function function_e6acdf1a7626587e( options, nodes, duration, player )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13dc
 // Size: 0xd, Type: bool
 function function_b7d7a703c13eb1df( binding )
@@ -494,7 +495,7 @@ function function_b7d7a703c13eb1df( binding )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x13f2
 // Size: 0x17c
 function play_dialogue( aliases, stringfile, var_85aedcd1aaf0a83, var_ae7efd102fc19bb5, var_bb81dd63c26df58d )
@@ -550,7 +551,7 @@ function play_dialogue( aliases, stringfile, var_85aedcd1aaf0a83, var_ae7efd102f
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1577
 // Size: 0xc4
 function function_1d914778ed5e4032()
@@ -566,7 +567,7 @@ function function_1d914778ed5e4032()
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1643
 // Size: 0x80
 function function_53e4805c5404e4bb( buttons, result )
@@ -583,7 +584,7 @@ function function_53e4805c5404e4bb( buttons, result )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16cc
 // Size: 0x21e
 function function_98936c4e24c0d9fa( player )
@@ -658,7 +659,7 @@ function function_98936c4e24c0d9fa( player )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18f2
 // Size: 0x2fe
 function function_afeae0424199f820( player )
@@ -765,7 +766,7 @@ function function_afeae0424199f820( player )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bf8
 // Size: 0x90
 function function_98a2a3001f683ec5( result )
@@ -785,7 +786,7 @@ function function_98a2a3001f683ec5( result )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c90
 // Size: 0x80
 function function_dc4eb1cb90de68ed()
@@ -799,7 +800,7 @@ function function_dc4eb1cb90de68ed()
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d18
 // Size: 0x16c
 function function_cfe381f310a0f174( player )
@@ -816,7 +817,8 @@ function function_cfe381f310a0f174( player )
     
     while ( player.dialogue_wheel.active && ( !isdefined( end_time ) || gettime() < end_time ) )
     {
-        for (i = 1; i <= player.dialogue_wheel.options.size; i++) {
+        for ( i = 1; i <= player.dialogue_wheel.options.size ; i++ )
+        {
             if ( player function_98a2a3001f683ec5( i ) )
             {
                 result = i;
@@ -858,7 +860,7 @@ function function_cfe381f310a0f174( player )
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e8c
 // Size: 0x47
 function function_aba526840f970cda()
@@ -872,7 +874,7 @@ function function_aba526840f970cda()
 }
 
 // Namespace dialogue_wheel / scripts\common\dialogue_wheel
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1edc
 // Size: 0x2e
 function function_279fb9d5f4a3d7b2()

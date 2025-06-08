@@ -14,7 +14,7 @@
 #namespace jltv_infil;
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x70f
 // Size: 0x9d
 function function_20d96b1495a37dbc( subtype )
@@ -35,7 +35,7 @@ function function_20d96b1495a37dbc( subtype )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7b4
 // Size: 0x8a
 function jltv_spawn( team, target, subtype, originalsubtype )
@@ -49,7 +49,7 @@ function jltv_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x847
 // Size: 0x32
 function function_4a194e1e79f7387( subtype )
@@ -59,7 +59,7 @@ function function_4a194e1e79f7387( subtype )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x882
 // Size: 0x29e
 function function_c2028d1fd6c8df8b( infil, spot_index )
@@ -128,7 +128,7 @@ function function_c2028d1fd6c8df8b( infil, spot_index )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb28
 // Size: 0x27
 function resetfov()
@@ -140,7 +140,7 @@ function resetfov()
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb57
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -158,7 +158,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb9b
 // Size: 0x53
 function player_infil_end()
@@ -174,7 +174,7 @@ function player_infil_end()
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbf6
 // Size: 0x4c
 function player_disconnect()
@@ -193,7 +193,7 @@ function player_disconnect()
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc4a
 // Size: 0x8f
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -210,7 +210,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xce1
 // Size: 0xf5
 function infilthink( team, scene_name )
@@ -239,7 +239,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xdde
 // Size: 0x14d
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -271,7 +271,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf33
 // Size: 0x309
 function initanims( subtype )
@@ -311,7 +311,7 @@ function initanims( subtype )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1244
 // Size: 0x45b
 function script_model_anims( subtype )
@@ -365,7 +365,7 @@ function script_model_anims( subtype )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16a7
 // Size: 0xbf
 function vehicles_anims( subtype )
@@ -385,7 +385,7 @@ function vehicles_anims( subtype )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x176e
 // Size: 0xdf
 function function_2fb21394a7c522f4( scene_node, team, scene_name, model, animname, vehicle )
@@ -410,7 +410,7 @@ function function_2fb21394a7c522f4( scene_node, team, scene_name, model, animnam
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1856
 // Size: 0xce
 function function_7e1450de3ed44e58( scene_node, team, scene_name, model, animname, vehicle )
@@ -433,7 +433,7 @@ function function_7e1450de3ed44e58( scene_node, team, scene_name, model, animnam
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x192d
 // Size: 0x70
 function function_738ae64326e0d993()
@@ -447,7 +447,7 @@ function function_738ae64326e0d993()
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a5
 // Size: 0x89
 function function_656dd56e607ec3de()
@@ -462,7 +462,7 @@ function function_656dd56e607ec3de()
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a36
 // Size: 0xde
 function infil_radio_idle( infil )
@@ -498,7 +498,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b1c
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -514,7 +514,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b52
 // Size: 0x139
 function function_fea19c0d10ed34e9()
@@ -540,7 +540,7 @@ function function_fea19c0d10ed34e9()
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c93
 // Size: 0x19
 function function_55fd55bdea97d9be()
@@ -551,7 +551,7 @@ function function_55fd55bdea97d9be()
 }
 
 // Namespace jltv_infil / scripts\mp\infilexfil\jltv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cb4
 // Size: 0x31
 function function_6158ef142e9bd640()

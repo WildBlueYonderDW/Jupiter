@@ -4,7 +4,7 @@
 #namespace headhunter;
 
 // Namespace headhunter / scripts\mp\gametypes\headhunter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x136
 // Size: 0x12
 function init()
@@ -14,7 +14,7 @@ function init()
 }
 
 // Namespace headhunter / scripts\mp\gametypes\headhunter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x150
 // Size: 0x24
 function function_117e2995648ba30c()
@@ -25,7 +25,7 @@ function function_117e2995648ba30c()
 }
 
 // Namespace headhunter / scripts\mp\gametypes\headhunter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17c
 // Size: 0x5c
 function onplayerspawned()

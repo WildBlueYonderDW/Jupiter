@@ -35,8 +35,8 @@
 #namespace gas_grenade;
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x62c
+// Params 1
+// Checksum 0x0, Offset: 0x62d
 // Size: 0x94
 function gas_used( grenade )
 {
@@ -51,8 +51,8 @@ function gas_used( grenade )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c8
+// Params 2
+// Checksum 0x0, Offset: 0x6c9
 // Size: 0x7c
 function gas_watchexplode( grenade, team )
 {
@@ -65,8 +65,8 @@ function gas_watchexplode( grenade, team )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x74c
+// Params 1
+// Checksum 0x0, Offset: 0x74d
 // Size: 0x37
 function function_60397906a6eb5a4f( grenade )
 {
@@ -77,8 +77,8 @@ function function_60397906a6eb5a4f( grenade )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x78b
+// Params 1
+// Checksum 0x0, Offset: 0x78c
 // Size: 0x78
 function function_da09131c75ad4b63( grenade )
 {
@@ -90,8 +90,8 @@ function function_da09131c75ad4b63( grenade )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x80b
+// Params 1
+// Checksum 0x0, Offset: 0x80c
 // Size: 0x192, Type: bool
 function gas_onplayerdamaged( data )
 {
@@ -134,8 +134,8 @@ function gas_onplayerdamaged( data )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a6
+// Params 1
+// Checksum 0x0, Offset: 0x9a7
 // Size: 0xa0
 function gas_clear( fromdeath )
 {
@@ -160,8 +160,8 @@ function gas_clear( fromdeath )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4e
+// Params 10
+// Checksum 0x0, Offset: 0xa4f
 // Size: 0x2fe
 function gas_createtrigger( position, owner, team, duration, scale, iscrossbow, crossbowlevel, radius, height, offset )
 {
@@ -260,8 +260,8 @@ function gas_createtrigger( position, owner, team, duration, scale, iscrossbow, 
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd54
+// Params 4
+// Checksum 0x0, Offset: 0xd55
 // Size: 0x82
 function function_b3f6ad35b2a40677( location, radius, height, duration )
 {
@@ -279,17 +279,17 @@ function function_b3f6ad35b2a40677( location, radius, height, duration )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdde
+// Params 0
+// Checksum 0x0, Offset: 0xddf
 // Size: 0x1b, Type: bool
 function function_4cd5239298745de7()
 {
-    return scripts\cp_mp\utility\game_utility::isbrstylegametype() && getdvarint( @"hash_7c4fbf3fce66f376", 0 );
+    return scripts\cp_mp\utility\game_utility::isbrstylegametype() && getdvarint( @"scr_gas_grenade_gas_mask_protection", 0 );
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe02
+// Params 0
+// Checksum 0x0, Offset: 0xe03
 // Size: 0x1c, Type: bool
 function function_97782fcb5ee69702()
 {
@@ -297,8 +297,8 @@ function function_97782fcb5ee69702()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe27
+// Params 0
+// Checksum 0x0, Offset: 0xe28
 // Size: 0xa
 function sweepgas()
 {
@@ -306,8 +306,8 @@ function sweepgas()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe39
+// Params 0
+// Checksum 0x0, Offset: 0xe3a
 // Size: 0xd2
 function gas_destroytrigger()
 {
@@ -343,8 +343,8 @@ function gas_destroytrigger()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf13
+// Params 2
+// Checksum 0x0, Offset: 0xf14
 // Size: 0x4c
 function function_4a5b553867d71fa9( delaytime, var_aecde818fb1b329 )
 {
@@ -366,8 +366,8 @@ function function_4a5b553867d71fa9( delaytime, var_aecde818fb1b329 )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf67
+// Params 1
+// Checksum 0x0, Offset: 0xf68
 // Size: 0x245
 function gas_onentertrigger( trigger )
 {
@@ -440,8 +440,8 @@ function gas_onentertrigger( trigger )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b5
+// Params 1
+// Checksum 0x0, Offset: 0x11b6
 // Size: 0x9c
 function gas_onexittrigger( triggerid )
 {
@@ -471,9 +471,9 @@ function gas_onexittrigger( triggerid )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1259
-// Size: 0x219
+// Params 0
+// Checksum 0x0, Offset: 0x125a
+// Size: 0x22b
 function gas_watchtriggerenter()
 {
     self endon( "death" );
@@ -514,6 +514,11 @@ function gas_watchtriggerenter()
                 }
             }
             
+            continue;
+        }
+        
+        if ( istrue( player.var_f8e21465665e3f81 ) )
+        {
             continue;
         }
         
@@ -564,8 +569,8 @@ function gas_watchtriggerenter()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x147a
+// Params 0
+// Checksum 0x0, Offset: 0x148d
 // Size: 0xcb
 function gas_watchtriggerexit()
 {
@@ -606,8 +611,8 @@ function gas_watchtriggerexit()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x154d
+// Params 1
+// Checksum 0x0, Offset: 0x1560
 // Size: 0x18, Type: bool
 function function_da8a31143b88e833( player )
 {
@@ -620,8 +625,8 @@ function function_da8a31143b88e833( player )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x156e
+// Params 2
+// Checksum 0x0, Offset: 0x1581
 // Size: 0xaa
 function gas_applycough( attacker, fromimpact )
 {
@@ -659,8 +664,8 @@ function gas_applycough( attacker, fromimpact )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1620
+// Params 1
+// Checksum 0x0, Offset: 0x1633
 // Size: 0xd7
 function gas_queuecough( isheavy )
 {
@@ -707,8 +712,8 @@ function gas_queuecough( isheavy )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ff
+// Params 1
+// Checksum 0x0, Offset: 0x1712
 // Size: 0x143
 function gas_begincoughing( isheavy )
 {
@@ -753,8 +758,8 @@ function gas_begincoughing( isheavy )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x184a
+// Params 1
+// Checksum 0x0, Offset: 0x185d
 // Size: 0x3e
 function gas_removecough( fromdeath )
 {
@@ -772,8 +777,8 @@ function gas_removecough( fromdeath )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1890
+// Params 1
+// Checksum 0x0, Offset: 0x18a3
 // Size: 0xba
 function gas_clearcough( fromdeath )
 {
@@ -811,8 +816,8 @@ function gas_clearcough( fromdeath )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1952
+// Params 1
+// Checksum 0x0, Offset: 0x1965
 // Size: 0x4a
 function gas_monitorcoughweaponfired( var_33f644489e4f15ae )
 {
@@ -833,8 +838,8 @@ function gas_monitorcoughweaponfired( var_33f644489e4f15ae )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a4
+// Params 1
+// Checksum 0x0, Offset: 0x19b7
 // Size: 0x2f
 function gas_monitorcoughweapontaken( var_33f644489e4f15ae )
 {
@@ -850,8 +855,8 @@ function gas_monitorcoughweapontaken( var_33f644489e4f15ae )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19db
+// Params 1
+// Checksum 0x0, Offset: 0x19ee
 // Size: 0x23
 function gas_monitorcoughduration( coughduration )
 {
@@ -862,8 +867,8 @@ function gas_monitorcoughduration( coughduration )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a06
+// Params 0
+// Checksum 0x0, Offset: 0x1a19
 // Size: 0x166
 function gas_takeheldoffhand()
 {
@@ -915,8 +920,8 @@ function gas_takeheldoffhand()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b74
+// Params 0
+// Checksum 0x0, Offset: 0x1b87
 // Size: 0x23e
 function gas_restoreheldoffhand()
 {
@@ -994,8 +999,8 @@ function gas_restoreheldoffhand()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dba
+// Params 0
+// Checksum 0x0, Offset: 0x1dcd
 // Size: 0x205
 function gas_applyspeedredux()
 {
@@ -1072,8 +1077,8 @@ function gas_applyspeedredux()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc7
+// Params 0
+// Checksum 0x0, Offset: 0x1fda
 // Size: 0x3f
 function gas_removespeedredux()
 {
@@ -1092,8 +1097,8 @@ function gas_removespeedredux()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x200e
+// Params 1
+// Checksum 0x0, Offset: 0x2021
 // Size: 0x62
 function gas_modifyspeed( var_d255a8b6d0ef299d )
 {
@@ -1109,8 +1114,8 @@ function gas_modifyspeed( var_d255a8b6d0ef299d )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2078
+// Params 1
+// Checksum 0x0, Offset: 0x208b
 // Size: 0x29
 function gas_clearspeedredux( fromdeath )
 {
@@ -1124,8 +1129,8 @@ function gas_clearspeedredux( fromdeath )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20a9
+// Params 0
+// Checksum 0x0, Offset: 0x20bc
 // Size: 0x101
 function gas_applyblur()
 {
@@ -1164,8 +1169,8 @@ function gas_applyblur()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21b2
+// Params 0
+// Checksum 0x0, Offset: 0x21c5
 // Size: 0xa
 function gas_removeblur()
 {
@@ -1173,8 +1178,8 @@ function gas_removeblur()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21c4
+// Params 1
+// Checksum 0x0, Offset: 0x21d7
 // Size: 0x1f
 function gas_clearblur( fromdeath )
 {
@@ -1187,8 +1192,8 @@ function gas_clearblur( fromdeath )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21eb
+// Params 0
+// Checksum 0x0, Offset: 0x21fe
 // Size: 0x38, Type: bool
 function gas_shouldtakeheldoffhand()
 {
@@ -1204,8 +1209,8 @@ function gas_shouldtakeheldoffhand()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x222c
+// Params 0
+// Checksum 0x0, Offset: 0x223f
 // Size: 0x4e, Type: bool
 function gas_coughisblocked()
 {
@@ -1233,8 +1238,8 @@ function gas_coughisblocked()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2283
+// Params 0
+// Checksum 0x0, Offset: 0x2296
 // Size: 0x24, Type: bool
 function gas_isintrigger()
 {
@@ -1252,8 +1257,8 @@ function gas_isintrigger()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22b0
+// Params 0
+// Checksum 0x0, Offset: 0x22c3
 // Size: 0x36
 function gas_updateplayereffects()
 {
@@ -1271,8 +1276,8 @@ function gas_updateplayereffects()
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x22ee
+// Params 1
+// Checksum 0x0, Offset: 0x2301
 // Size: 0x10
 function gas_getblurinterruptdelayms( duration )
 {
@@ -1280,8 +1285,8 @@ function gas_getblurinterruptdelayms( duration )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2307
+// Params 1
+// Checksum 0x0, Offset: 0x231a
 // Size: 0x149
 function function_3a3f27425a46d2cb( trigger )
 {
@@ -1319,8 +1324,8 @@ function function_3a3f27425a46d2cb( trigger )
 }
 
 // Namespace gas_grenade / scripts\mp\equipment\gas_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2458
+// Params 1
+// Checksum 0x0, Offset: 0x246b
 // Size: 0x55
 function function_8f331092cff3bb6b( trigger )
 {

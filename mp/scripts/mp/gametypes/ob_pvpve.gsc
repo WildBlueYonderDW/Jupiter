@@ -39,7 +39,7 @@
 #namespace ob_pvpve;
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcca
 // Size: 0x7d
 function main()
@@ -62,7 +62,7 @@ function main()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd4f
 // Size: 0x2f1
 function initpostmain()
@@ -115,7 +115,7 @@ function initpostmain()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1048
 // Size: 0x6b
 function initspawn()
@@ -131,7 +131,7 @@ function initspawn()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10bb
 // Size: 0x9c
 function initsuper()
@@ -157,7 +157,7 @@ function initsuper()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x115f
 // Size: 0x99
 function initrespawn()
@@ -177,7 +177,7 @@ function initrespawn()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1200
 // Size: 0x10
 function function_ea1e7eeb0d48ba61()
@@ -186,7 +186,7 @@ function function_ea1e7eeb0d48ba61()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1218
 // Size: 0x3, Type: bool
 function function_127cc78420f659f8()
@@ -195,7 +195,7 @@ function function_127cc78420f659f8()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1224
 // Size: 0x1e
 function function_7e852bbad70e2a5e()
@@ -205,7 +205,7 @@ function function_7e852bbad70e2a5e()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x124a
 // Size: 0x1d
 function function_172cc7874c623df2( owner )
@@ -219,7 +219,7 @@ function function_172cc7874c623df2( owner )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x126f
 // Size: 0x19
 function function_6007f92acc049c02( team )
@@ -229,7 +229,7 @@ function function_6007f92acc049c02( team )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1290
 // Size: 0x39
 function function_7a48f3c1e25d94ea()
@@ -240,7 +240,7 @@ function function_7a48f3c1e25d94ea()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12d1
 // Size: 0x55
 function function_600cc18a5b7b64b0( table )
@@ -248,7 +248,8 @@ function function_600cc18a5b7b64b0( table )
     level.var_15c03fdd665277c0 = [];
     var_7d958726e11b327 = tablelookupgetnumcols( table ) - 1;
     
-    for (i = 0; i < var_7d958726e11b327; i++) {
+    for ( i = 0; i < var_7d958726e11b327 ; i++ )
+    {
         level.var_15c03fdd665277c0[ i ] = function_aa8a954d66bf39b4( i, table );
     }
 }
@@ -278,7 +279,7 @@ function private function_aa8a954d66bf39b4( classindex, table )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0x14bd
 // Size: 0x1a2
 function callback_playerdamage( einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1 )
@@ -346,7 +347,7 @@ function private function_4f2d84b47d6319a2( params )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1742
 // Size: 0xec
 function function_59bb85cf2b5af12f( params )
@@ -372,7 +373,7 @@ function function_59bb85cf2b5af12f( params )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1836
 // Size: 0x4d
 function function_8dd7e341052992()
@@ -388,7 +389,7 @@ function function_8dd7e341052992()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x188b
 // Size: 0x7e
 function on_player_spawned( params )
@@ -411,7 +412,7 @@ function on_player_spawned( params )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1911
 // Size: 0x12
 function on_player_disconnect( params )
@@ -429,7 +430,7 @@ function private prespawnplayer( var_f0729562cde426a3 )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1949
 // Size: 0x204
 function function_d496bb74f129b113()
@@ -659,7 +660,8 @@ function private function_becdb4f09c5e8ab0( var_c301ae3e58a075e1, var_67d48175b1
     rownum = tablelookupgetnumrows( "ob/ob_pvpve/ob_pvpve_item_drop_life_time.csv" );
     lifetimes = undefined;
     
-    for (rowindex = 0; rowindex < rownum; rowindex++) {
+    for ( rowindex = 0; rowindex < rownum ; rowindex++ )
+    {
         itemtype = tablelookupbyrow( "ob/ob_pvpve/ob_pvpve_item_drop_life_time.csv", rowindex, 0 );
         
         if ( itemtype != var_c301ae3e58a075e1 )
@@ -734,7 +736,8 @@ function private function_b56001789cfbe83c( dropstruct )
 {
     backpacksize = function_1b35b10884bd8d67();
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         itembundle = function_fb077d5402810e85( i );
         
         if ( !isdefined( itembundle ) || istrue( function_7192774bb894cced( itembundle ) ) )
@@ -812,7 +815,7 @@ function private function_af0e816da6ba7671()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2235
 // Size: 0xdf
 function function_a6a654c500d6b6c2()
@@ -873,7 +876,7 @@ function private function_7192774bb894cced( itembundle )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2357
 // Size: 0x6f
 function respawnplayer()
@@ -893,7 +896,7 @@ function respawnplayer()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23ce
 // Size: 0x211
 function setspawnpoint()
@@ -913,7 +916,8 @@ function setspawnpoint()
     randomdistance = ter_op( var_736bfbe730557cf.size > 0, randomintrange( 0, 7500 ), randomintrange( 7500, 20000 ) );
     var_773f52a7d94b7f69 = [];
     
-    for (i = 1; i <= 32; i++) {
+    for ( i = 1; i <= 32 ; i++ )
+    {
         pos = respawnorigin + anglestoforward( ( 0, randomangle + 11.25 * i, 0 ) ) * randomdistance;
         
         if ( !scripts\mp\outofbounds::ispointinoutofbounds( pos ) && function_bdf19384dd9c7829( pos ) )
@@ -950,7 +954,7 @@ function setspawnpoint()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25e8
 // Size: 0xa0
 function function_e21d77ea0f26bfd1()
@@ -972,7 +976,7 @@ function function_e21d77ea0f26bfd1()
 /#
 
     // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x2691
     // Size: 0xb5, Type: dev
     function function_99cccfd31080bb65( respawnorigin, var_773f52a7d94b7f69 )
@@ -996,7 +1000,7 @@ function function_e21d77ea0f26bfd1()
 #/
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x274e
 // Size: 0xd7, Type: bool
 function function_bdf19384dd9c7829( pos )
@@ -1075,7 +1079,7 @@ function private function_50c0ea10b250b9e()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2977
 // Size: 0x284
 function function_5fedebeea12bd089( randomloadoutindex )
@@ -1127,7 +1131,7 @@ function function_5fedebeea12bd089( randomloadoutindex )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c03
 // Size: 0x17e
 function function_b08c8369dffc535f()
@@ -1165,7 +1169,7 @@ function function_b08c8369dffc535f()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d89
 // Size: 0xaa
 function function_27fd1477dccfa12b()
@@ -1205,7 +1209,8 @@ function private function_4f46db58d9b511a4( currentpoints )
     rownum = tablelookupgetnumrows( "ob/ob_pvpve/ob_pvpve_respawn_currency_limit.csv" );
     var_6d792a41b59f62f8 = undefined;
     
-    for (rowindex = 0; rowindex < rownum; rowindex++) {
+    for ( rowindex = 0; rowindex < rownum ; rowindex++ )
+    {
         minutes = int( tablelookupbyrow( "ob/ob_pvpve/ob_pvpve_respawn_currency_limit.csv", rowindex, 0 ) );
         mincount = int( tablelookupbyrow( "ob/ob_pvpve/ob_pvpve_respawn_currency_limit.csv", rowindex, 1 ) );
         
@@ -1239,7 +1244,8 @@ function private function_feab0a1523a87a88()
     rownum = tablelookupgetnumrows( spawnpointcsv );
     spawnpointslist = [];
     
-    for (rowindex = 0; rowindex < rownum; rowindex++) {
+    for ( rowindex = 0; rowindex < rownum ; rowindex++ )
+    {
         originstring = tablelookupbyrow( spawnpointcsv, rowindex, 0 );
         anglesstring = tablelookupbyrow( spawnpointcsv, rowindex, 1 );
         scriptnoteworthy = tablelookupbyrow( spawnpointcsv, rowindex, 2 );
@@ -1266,7 +1272,7 @@ function private function_feab0a1523a87a88()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30d8
 // Size: 0x1b
 function function_3b0edbbabf280e78( params )
@@ -1276,7 +1282,7 @@ function function_3b0edbbabf280e78( params )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30fb
 // Size: 0x3d
 function function_3938090780aa0be( player )
@@ -1288,7 +1294,7 @@ function function_3938090780aa0be( player )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3140
 // Size: 0xd4
 function adddeathicon()
@@ -1344,7 +1350,7 @@ function private onspawnrevivetrigger()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32a8
 // Size: 0x224
 function function_8bc4148d7acee203()
@@ -1394,7 +1400,8 @@ function function_8bc4148d7acee203()
                 var_4b823d93740fc9dd = int( round( subzones.size * ( 1 - pow( intensitymultiplier, enemyteamnum ) ) ) );
                 subzones = array_randomize( subzones );
                 
-                for (i = 0; i < var_4b823d93740fc9dd; i++) {
+                for ( i = 0; i < var_4b823d93740fc9dd ; i++ )
+                {
                     subzoneindex = subzones[ i ].subzoneindex;
                     player function_a8e1fec0a897a1be( zoneindex, subzoneindex );
                 }
@@ -1410,7 +1417,7 @@ function function_8bc4148d7acee203()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34d4
 // Size: 0xbc
 function function_eb0aa531d61fa07f( dist )
@@ -1435,7 +1442,7 @@ function function_eb0aa531d61fa07f( dist )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3599
 // Size: 0x23f
 function function_3bbb149b603a44f9( player )
@@ -1445,7 +1452,7 @@ function function_3bbb149b603a44f9( player )
     player endon( "death" );
     player endon( "monitor_enemy_prox_ob" );
     level endon( "game_ended" );
-    proximitydistance = getdvarint( @"hash_57797986a6d60476", 4096 );
+    proximitydistance = getdvarint( @"scr_overlord_enemy_proximity_radius", 4096 );
     proximitydistancesq = proximitydistance * proximitydistance;
     ignoretime = getdvarfloat( @"hash_32244d6acf101808", 60 );
     var_a6cdf55657dde0fe = undefined;
@@ -1540,7 +1547,8 @@ function private function_5a6cae9be5731fa6()
         {
             shouldclear = 0;
             
-            for (i = 0; i < var_707742a55c7a4d52.size; i++) {
+            for ( i = 0; i < var_707742a55c7a4d52.size ; i++ )
+            {
                 if ( isdefined( var_707742a55c7a4d52[ i ] ) && playerid == var_707742a55c7a4d52[ i ] )
                 {
                     level.var_32d6d39f3da920ca[ zoneindex ][ subzoneindex ] = array_remove_index( var_707742a55c7a4d52, i );
@@ -1560,7 +1568,7 @@ function private function_5a6cae9be5731fa6()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x39d5
 // Size: 0xd1
 function function_6beff7b631ab7e18( kiosk, player )
@@ -1585,7 +1593,7 @@ function function_6beff7b631ab7e18( kiosk, player )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3aae
 // Size: 0x21
 function function_881e64f6b6191304()
@@ -1594,7 +1602,7 @@ function function_881e64f6b6191304()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ad7
 // Size: 0x1b0
 function function_4fbb19878e3ae3e8( params )
@@ -1628,7 +1636,7 @@ function function_4fbb19878e3ae3e8( params )
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c8f
 // Size: 0x1c
 function function_5d7af95f131c52aa()
@@ -1639,7 +1647,7 @@ function function_5d7af95f131c52aa()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cb3
 // Size: 0x167
 function function_fb5b37eb3eccc267()
@@ -1669,7 +1677,8 @@ function function_fb5b37eb3eccc267()
     
     assertex( var_5fe035f355489855.size >= var_6e374d053c0edc74, "<dev string:x157>" );
     
-    for (i = 0; i < var_6e374d053c0edc74; i++) {
+    for ( i = 0; i < var_6e374d053c0edc74 ; i++ )
+    {
         s_exfil = var_5fe035f355489855[ i ];
         
         if ( isdefined( s_exfil ) )
@@ -1682,7 +1691,7 @@ function function_fb5b37eb3eccc267()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e22
 // Size: 0x34
 function function_511e530940a6e570()
@@ -1694,7 +1703,7 @@ function function_511e530940a6e570()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e5e
 // Size: 0x27c
 function function_68556cab1f415279()
@@ -1739,7 +1748,7 @@ function function_68556cab1f415279()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x40e2
 // Size: 0x34
 function function_dfdda3d98b049b3c( s_exfil, var_6d94a1f3678a98a6 )
@@ -1789,7 +1798,7 @@ function function_dfdda3d98b049b3c( s_exfil, var_6d94a1f3678a98a6 )
 #/
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41c2
 // Size: 0x71
 function function_f664e717ec410248()
@@ -1803,7 +1812,7 @@ function function_f664e717ec410248()
 }
 
 // Namespace ob_pvpve / scripts\mp\gametypes\ob_pvpve
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x423b
 // Size: 0x166
 function function_f99a74573f5d4158( params )

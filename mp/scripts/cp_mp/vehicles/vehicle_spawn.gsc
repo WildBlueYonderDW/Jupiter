@@ -11,7 +11,7 @@
 #namespace vehicle_spawn;
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x374
 // Size: 0xcd
 function vehicle_spawn_getleveldataforvehicle( vehicleref, create )
@@ -42,7 +42,7 @@ function vehicle_spawn_getleveldataforvehicle( vehicleref, create )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x449
 // Size: 0x1b2
 function function_37480e9c9c701cf2( vehicleref, spawndata )
@@ -98,7 +98,7 @@ function function_37480e9c9c701cf2( vehicleref, spawndata )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x604
 // Size: 0x1c0
 function function_1cc780d5cac1e7cd( vehicleref, spawndata, fallbackvehicletype )
@@ -147,7 +147,7 @@ function function_1cc780d5cac1e7cd( vehicleref, spawndata, fallbackvehicletype )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7cd
 // Size: 0x183
 function function_75ce57f81b582b38( vehicle, vehicleref )
@@ -177,7 +177,7 @@ function function_75ce57f81b582b38( vehicle, vehicleref )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x959
 // Size: 0x1e1
 function vehicle_spawn_canspawnvehicle( vehicleref, owner, team, spawntype )
@@ -280,7 +280,7 @@ function vehicle_spawn_canspawnvehicle( vehicleref, owner, team, spawntype )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb43
 // Size: 0x247
 function function_25d4b673539659a1()
@@ -350,7 +350,7 @@ function function_25d4b673539659a1()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xd93
 // Size: 0xeb
 function function_9f3ee4972dec5b57( vehicleref, origin, angles, targetname, vehicletype, script_noteworthy )
@@ -387,7 +387,7 @@ function function_9f3ee4972dec5b57( vehicleref, origin, angles, targetname, vehi
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe86
 // Size: 0x5d
 function function_b08e7e3a0b14f76f( vehicleref )
@@ -415,7 +415,7 @@ function function_b08e7e3a0b14f76f( vehicleref )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeec
 // Size: 0x4c
 function function_5a6b4f3358f3e3cc( vehicleref )
@@ -438,7 +438,7 @@ function function_5a6b4f3358f3e3cc( vehicleref )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf41
 // Size: 0x76
 function function_348b69ec4082ceba( vehicleref )
@@ -462,7 +462,7 @@ function function_348b69ec4082ceba( vehicleref )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfbf
 // Size: 0x76
 function function_8fb5b3da3ad4d628( vehicleref )
@@ -486,7 +486,7 @@ function function_8fb5b3da3ad4d628( vehicleref )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x103d
 // Size: 0xa9
 function vehicle_spawn_removespawnstructswithflag( spawnstructs )
@@ -513,7 +513,7 @@ function vehicle_spawn_removespawnstructswithflag( spawnstructs )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10ef
 // Size: 0x7a
 function vehicle_spawn_gamemodesupportsrespawn( vehicleref )
@@ -531,7 +531,7 @@ function vehicle_spawn_gamemodesupportsrespawn( vehicleref )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1172
 // Size: 0x1c3
 function vehicle_spawn_init()
@@ -575,7 +575,7 @@ function vehicle_spawn_init()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x133d
 // Size: 0x28
 function vehicle_spawn_initlate()
@@ -587,7 +587,7 @@ function vehicle_spawn_initlate()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x136d
 // Size: 0x2a, Type: bool
 function vehicle_spawn_spawnfromstructscomparefunc( var_336fd2a2db40c0ee, var_336fd1a2db40bebb )
@@ -596,7 +596,7 @@ function vehicle_spawn_spawnfromstructscomparefunc( var_336fd2a2db40c0ee, var_33
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13a0
 // Size: 0x4f
 function vehicle_spawn_getleveldata()
@@ -607,7 +607,7 @@ function vehicle_spawn_getleveldata()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13f8
 // Size: 0xeb, Type: bool
 function vehicle_spawn_isvehiclespawnstruct()
@@ -643,7 +643,7 @@ function vehicle_spawn_isvehiclespawnstruct()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14ec
 // Size: 0x21
 function vehicle_spawn_initspawnclearance()
@@ -653,7 +653,7 @@ function vehicle_spawn_initspawnclearance()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1515
 // Size: 0x2c3, Type: bool
 function vehicle_spawn_checkspawnclearance( position, vehicleref, contentsoverride, var_4aaf9f2ce5798f37, positionoffsetz )
@@ -755,7 +755,7 @@ function vehicle_spawn_checkspawnclearance( position, vehicleref, contentsoverri
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17e1
 // Size: 0x58
 function vehicle_spawn_setclearancecheckminradius( ref, minradius )
@@ -773,7 +773,7 @@ function vehicle_spawn_setclearancecheckminradius( ref, minradius )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1841
 // Size: 0x13
 function function_b09e91c2e808dbcd( spawndata, faildata )
@@ -782,7 +782,7 @@ function function_b09e91c2e808dbcd( spawndata, faildata )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x185d
 // Size: 0xa
 function function_fa044e2304e9e1a4()
@@ -791,7 +791,7 @@ function function_fa044e2304e9e1a4()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x186f
 // Size: 0x50
 function function_fc6ead687e73f25f()
@@ -803,7 +803,7 @@ function function_fc6ead687e73f25f()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18c7
 // Size: 0xa
 function function_284795e4a9e3762c()
@@ -812,7 +812,7 @@ function function_284795e4a9e3762c()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18d9
 // Size: 0x73
 function function_9a5d0431afaf5b80()
@@ -831,7 +831,7 @@ function function_9a5d0431afaf5b80()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1954
 // Size: 0x165
 function vehicle_spawn_waitandrespawn( ref, spawndata, faildata )
@@ -876,7 +876,8 @@ function vehicle_spawn_waitandrespawn( ref, spawndata, faildata )
     {
     }
     
-    for (delay = 1; true; delay = 5) {
+    for ( delay = 1; true ; delay = 5 )
+    {
         wait delay;
         
         if ( vehicle_spawn_canspawnvehicle( ref ) )
@@ -904,7 +905,7 @@ function vehicle_spawn_waitandrespawn( ref, spawndata, faildata )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ac1
 // Size: 0x19
 function vehicle_spawn_preventrespawn( vehicle )
@@ -913,7 +914,7 @@ function vehicle_spawn_preventrespawn( vehicle )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ae2
 // Size: 0xa
 function vehicle_spawn_cancelpendingrespawns()
@@ -922,7 +923,7 @@ function vehicle_spawn_cancelpendingrespawns()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1af4
 // Size: 0x95
 function function_6c65df1f40e10037()
@@ -965,7 +966,7 @@ function function_6c65df1f40e10037()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b91
 // Size: 0x8e
 function vehicle_spawn_gamemodesupportsabandonedtimeout( ishusk )
@@ -992,7 +993,7 @@ function vehicle_spawn_gamemodesupportsabandonedtimeout( ishusk )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c28
 // Size: 0x1ad
 function vehicle_spawn_watchabandoned()
@@ -1091,7 +1092,7 @@ function vehicle_spawn_watchabandoned()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ddd
 // Size: 0x14
 function vehicle_spawn_stopwatchingabandoned()
@@ -1101,7 +1102,7 @@ function vehicle_spawn_stopwatchingabandoned()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1df9
 // Size: 0x3c
 function vehicle_spawn_abandonedtimeout()
@@ -1113,7 +1114,7 @@ function vehicle_spawn_abandonedtimeout()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e3d
 // Size: 0x1c
 function function_357783d7c1d96273()
@@ -1124,7 +1125,7 @@ function function_357783d7c1d96273()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e61
 // Size: 0x66
 function vehicle_spawn_abandonedtimeoutcallback()
@@ -1133,11 +1134,11 @@ function vehicle_spawn_abandonedtimeoutcallback()
     
     if ( damagestate != "heavy" )
     {
-        var_4e49623dc4538a67 = scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_getheavystatemaxhealth( self );
+        heavystatemaxhealth = scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_getheavystatemaxhealth( self );
         
-        if ( isdefined( var_4e49623dc4538a67 ) )
+        if ( isdefined( heavystatemaxhealth ) )
         {
-            self.health = int( min( var_4e49623dc4538a67, self.health ) );
+            self.health = int( min( heavystatemaxhealth, self.health ) );
             scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_updateomnvarsondamage( self );
         }
         
@@ -1146,7 +1147,7 @@ function vehicle_spawn_abandonedtimeoutcallback()
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ecf
 // Size: 0x1c
 function function_17bb29fece7da497( vehicleref )
@@ -1155,7 +1156,7 @@ function function_17bb29fece7da497( vehicleref )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ef4
 // Size: 0x63
 function function_aade62c6cf163888( vehicleref )
@@ -1169,7 +1170,7 @@ function function_aade62c6cf163888( vehicleref )
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f5f
 // Size: 0x1c
 function function_89cda5ba9bfc8d56( vehicleref )
@@ -1180,7 +1181,7 @@ function function_89cda5ba9bfc8d56( vehicleref )
 /#
 
     // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1f84
     // Size: 0xbb, Type: dev
     function vehicle_spawn_initdev()

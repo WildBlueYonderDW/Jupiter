@@ -58,7 +58,7 @@
 #namespace activity_manager;
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ee
 // Size: 0x2a9
 function function_df15f72187363229()
@@ -101,7 +101,7 @@ function function_df15f72187363229()
     level.var_d1404cd77b68f22e = getdvarint( @"hash_51ca2e83111f7340", 0 );
     level.var_fc3962361e2033a9 = getdvarint( @"hash_a17f8c87a9ffefa6", 1 );
     level.var_427f173fa29d4e80 = getdvarint( @"hash_f173806bc718ddd1", 1 );
-    level.var_a4840e7885ef58e = getdvarint( @"hash_66a4a1572a0e159d", 1 );
+    level.var_a4840e7885ef58e = getdvarint( @"scr_activity_autoassign", 1 );
     
     if ( istrue( level.var_1e0470dbb6cf1859 ) )
     {
@@ -122,7 +122,7 @@ function function_df15f72187363229()
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xa9f
 // Size: 0x3d
 function function_7460e0aba0b1f1b3( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -131,7 +131,7 @@ function function_7460e0aba0b1f1b3( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae4
 // Size: 0x115
 function onteameliminated( team )
@@ -340,7 +340,7 @@ function onteameliminated( team )
 #/
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1400
 // Size: 0x51
 function function_b713f2d39b34540f( data, createfunc, nodes )
@@ -381,7 +381,8 @@ function private function_38228778814192a()
         }
     }
     
-    for (row = 0; row < numrows; row++) {
+    for ( row = 0; row < numrows ; row++ )
+    {
         enabled = int( tablelookupbyrow( var_a3e3841ab1affb3c, row, 2 ) );
         name = tablelookupbyrow( var_a3e3841ab1affb3c, row, 0 );
         function_975afdc14c65649c( name, row );
@@ -518,7 +519,7 @@ function private function_38228778814192a()
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b09
 // Size: 0x153
 function function_aece1e424e300380()
@@ -526,7 +527,8 @@ function function_aece1e424e300380()
     spawndata = [];
     numrows = tablelookupgetnumrows( "mp/bractivities.csv" );
     
-    for (row = 0; row < numrows; row++) {
+    for ( row = 0; row < numrows ; row++ )
+    {
         enabled = int( tablelookupbyrow( "mp/bractivities.csv", row, 2 ) );
         name = tablelookupbyrow( "mp/bractivities.csv", row, 0 );
         function_975afdc14c65649c( name, row );
@@ -564,7 +566,7 @@ function function_aece1e424e300380()
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c64
 // Size: 0x3e
 function function_6507dea837a9799c( name )
@@ -744,7 +746,7 @@ function private function_fa609575f2417f18( spawndatamap )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22b7
 // Size: 0xec
 function function_f222bd80432744ff( name )
@@ -1028,7 +1030,7 @@ function private function_234dfccd8495c7d1( teamname )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2dc7
 // Size: 0x190
 function function_821fa443949531c9( missiontrigger, activity )
@@ -1089,7 +1091,7 @@ function function_821fa443949531c9( missiontrigger, activity )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f5f
 // Size: 0x7a
 function function_c4839e806ac50bd6( player )
@@ -1109,7 +1111,7 @@ function function_c4839e806ac50bd6( player )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fe1
 // Size: 0xc5, Type: bool
 function function_1a0a0367591e7f87( player )
@@ -1153,9 +1155,9 @@ function function_1a0a0367591e7f87( player )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x30af
-// Size: 0x36, Type: bool
+// Size: 0x36
 function function_7098ff5bc0ec9505( player, triggerentnum, triggerowner )
 {
     playerentnum = player getentitynumber();
@@ -1163,7 +1165,7 @@ function function_7098ff5bc0ec9505( player, triggerentnum, triggerowner )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30ee
 // Size: 0x23a
 function function_a33c10c0682918bd( missiontrigger, var_9399bf62b66519d1 )
@@ -1281,7 +1283,7 @@ function private function_98c331a3e2621695()
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3493
 // Size: 0x29a, Type: bool
 function function_c509b7faae587820( triggerowner )
@@ -1345,7 +1347,7 @@ function function_c509b7faae587820( triggerowner )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3736
 // Size: 0x2a, Type: bool
 function function_ced68e0624873af5( player, triggerentnum, triggerowner )
@@ -1359,7 +1361,7 @@ function function_ced68e0624873af5( player, triggerentnum, triggerowner )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3769
 // Size: 0x389
 function function_18d4e8025ec24a0( task, var_5e671fc71e72d5e8, var_644a33d86d8514bf )
@@ -1445,7 +1447,7 @@ function function_18d4e8025ec24a0( task, var_5e671fc71e72d5e8, var_644a33d86d851
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3afa
 // Size: 0x1b0
 function activity_ended( var_5e671fc71e72d5e8 )
@@ -1517,7 +1519,7 @@ function private function_6e31cc7110b536fd( team )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3dbd
 // Size: 0xc6
 function function_bf253015ff42711( player, team )
@@ -1538,7 +1540,7 @@ function function_bf253015ff42711( player, team )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e8b
 // Size: 0x30
 function function_90603f537224e960()
@@ -1552,7 +1554,7 @@ function function_90603f537224e960()
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ec3
 // Size: 0x33
 function function_8d4a1199159f7d52( team )
@@ -1564,7 +1566,7 @@ function function_8d4a1199159f7d52( team )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3efe
 // Size: 0x1da
 function function_b2aef739a3653a70( player, team )
@@ -1610,7 +1612,7 @@ function function_b2aef739a3653a70( player, team )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x40e0
 // Size: 0x9b, Type: bool
 function function_513d7f67ab57c97( toremove, toadd )
@@ -1633,7 +1635,7 @@ function function_513d7f67ab57c97( toremove, toadd )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4184
 // Size: 0x76
 function function_22e206cc7ae5dbfd( player, oldteam, newteam )
@@ -1655,7 +1657,7 @@ function function_22e206cc7ae5dbfd( player, oldteam, newteam )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4202
 // Size: 0x3bd
 function activity_assign( team, taskindex, var_27e49251bb3376ea, var_21d04ce2f9146315 )
@@ -1742,7 +1744,7 @@ function activity_assign( team, taskindex, var_27e49251bb3376ea, var_21d04ce2f91
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x45c7
 // Size: 0x209
 function function_ecef3f5e98fb83c1( teamname, player )
@@ -1881,7 +1883,7 @@ function private function_415205c2b0df5476( team, var_27e49251bb3376ea )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4b29
 // Size: 0x10d
 function function_ced2dbd3ba98d2( team, var_27e49251bb3376ea, shouldping )
@@ -1973,7 +1975,7 @@ function private function_3fd9d5652f4642ad( team )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4df4
 // Size: 0x1a2
 function function_ca85c43247ab6279()
@@ -2174,7 +2176,7 @@ function private function_84ed600d2bd001ad()
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5781
 // Size: 0x3e
 function function_5220f38b5239eac8()
@@ -2189,7 +2191,7 @@ function function_5220f38b5239eac8()
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57c7
 // Size: 0x25
 function function_66da9365bbfea8b7()
@@ -2250,7 +2252,7 @@ function private activity_getbestspawnpoint( structs, origin, mindistancesq, var
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a47
 // Size: 0x2f1
 function function_ebe9b1e455d46450( player )
@@ -2306,7 +2308,8 @@ function function_ebe9b1e455d46450( player )
     var_7f767d0b39d7e455 = [];
     var_32f9bd0ca63c013e = 0;
     
-    for (index = 0; index < var_c56664807b194adb.size && var_32f9bd0ca63c013e < 10; index++) {
+    for ( index = 0; index < var_c56664807b194adb.size && var_32f9bd0ca63c013e < 10 ; index++ )
+    {
         activity = var_c56664807b194adb[ index ];
         
         if ( array_contains_key( activity.teams, player.team ) )
@@ -2490,7 +2493,8 @@ function private function_76e8e9f07068ad3( var_5201ad92c6e26086 )
     {
         if ( getdvarint( @"hash_e0b8b49a793faf58", 0 ) == 1 )
         {
-            for (index = 0; index < var_c56664807b194adb.size; index++) {
+            for ( index = 0; index < var_c56664807b194adb.size ; index++ )
+            {
                 vectorheight = 1000;
                 color = ( 1, 0, 0 );
                 activity = var_c56664807b194adb[ index ];
@@ -2517,7 +2521,7 @@ function private function_76e8e9f07068ad3( var_5201ad92c6e26086 )
 #/
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x62a1
 // Size: 0xac
 function function_57ac6111c7db410f( struct, player )
@@ -2536,7 +2540,7 @@ function function_57ac6111c7db410f( struct, player )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6355
 // Size: 0x5d
 function function_3ab4a84501caacde( container, player )
@@ -2553,7 +2557,7 @@ function function_3ab4a84501caacde( container, player )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x63ba
 // Size: 0x6b
 function function_d8625665d55f3941( team, show )
@@ -2565,7 +2569,7 @@ function function_d8625665d55f3941( team, show )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x642d
 // Size: 0xac
 function function_64623e2ff7409f39( player, show )
@@ -2586,7 +2590,7 @@ function function_64623e2ff7409f39( player, show )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64e1
 // Size: 0x97, Type: bool
 function function_5ea5a722c499078f( team )
@@ -2595,7 +2599,7 @@ function function_5ea5a722c499078f( team )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6581
 // Size: 0x4b
 function function_37416c14e9703fb6( player )
@@ -2614,7 +2618,7 @@ function function_37416c14e9703fb6( player )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x65d4
 // Size: 0xc8, Type: bool
 function function_a2dcdcd112310e33( team, fortress )
@@ -2636,7 +2640,7 @@ function function_a2dcdcd112310e33( team, fortress )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x66a5
 // Size: 0x92
 function function_40143c869e13213( teamname, dialog )
@@ -2651,7 +2655,7 @@ function function_40143c869e13213( teamname, dialog )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x673f
 // Size: 0x69
 function function_73fd6fe2488e3ebf( activity, team )
@@ -2679,7 +2683,7 @@ function private function_675059586a84fa06( team, func )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x680a
 // Size: 0x45
 function function_43c0a14bae1aa483( player )
@@ -2728,7 +2732,7 @@ function private function_c251e35450891f3()
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x694b
 // Size: 0x14b
 function function_ad20469c1815a7c7( team, var_693b800e6cd7b21c )
@@ -2777,7 +2781,7 @@ function function_ad20469c1815a7c7( team, var_693b800e6cd7b21c )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a9f
 // Size: 0x9c
 function function_133eba493f1f3636( team )
@@ -2802,7 +2806,7 @@ function function_133eba493f1f3636( team )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b44
 // Size: 0x105, Type: bool
 function function_37db4c1f01e80f2f( team )
@@ -2840,7 +2844,7 @@ function function_37db4c1f01e80f2f( team )
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c52
 // Size: 0x1ac
 function function_15ab6babbe46e018()
@@ -2887,7 +2891,7 @@ function function_15ab6babbe46e018()
 }
 
 // Namespace activity_manager / scripts\mp\gametypes\activity_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6e06
 // Size: 0x37
 function function_279c4202b5ed4980( notification, value )

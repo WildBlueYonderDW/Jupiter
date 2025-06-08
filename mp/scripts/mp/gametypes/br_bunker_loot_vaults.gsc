@@ -10,7 +10,7 @@
 #namespace br_bunker_loot_vaults;
 
 // Namespace br_bunker_loot_vaults / scripts\mp\gametypes\br_bunker_loot_vaults
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x156
 // Size: 0x20c
 function init()
@@ -34,7 +34,8 @@ function init()
     level.bunker_loot_vaults.doors = [];
     level.bunker_loot_vaults.hints = [];
     
-    for (i = 0; i <= 10; i++) {
+    for ( i = 0; i <= 10 ; i++ )
+    {
         var_ac7a80eca239ede7 = "bunker_door_" + i;
         var_4ea0a8f8e7fb6273 = getaltbunkerindexforname( var_ac7a80eca239ede7 );
         
@@ -57,7 +58,7 @@ function init()
 }
 
 // Namespace br_bunker_loot_vaults / scripts\mp\gametypes\br_bunker_loot_vaults
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x36a
 // Size: 0x1f4
 function initlootvaultkeypad( var_a0636bd2191a4bbc, bunkerindex, var_2d0e7ac083ad5250, var_b0bd841cacf6d96d )
@@ -98,7 +99,7 @@ function initlootvaultkeypad( var_a0636bd2191a4bbc, bunkerindex, var_2d0e7ac083a
 }
 
 // Namespace br_bunker_loot_vaults / scripts\mp\gametypes\br_bunker_loot_vaults
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x566
 // Size: 0x41
 function keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -107,7 +108,7 @@ function keypadscriptableused( instance, part, state, player, var_a5b2c541413aa8
 }
 
 // Namespace br_bunker_loot_vaults / scripts\mp\gametypes\br_bunker_loot_vaults
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5af
 // Size: 0x167
 function _keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895 )

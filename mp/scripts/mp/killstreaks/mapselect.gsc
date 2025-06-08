@@ -12,7 +12,7 @@
 #namespace mapselect;
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dd
 // Size: 0x9
 function init()
@@ -21,7 +21,7 @@ function init()
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ee
 // Size: 0x69
 function function_8bb8ac075d5a87dc()
@@ -30,7 +30,7 @@ function function_8bb8ac075d5a87dc()
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45f
 // Size: 0x7
 function function_5d9830f341fbd83a()
@@ -39,7 +39,7 @@ function function_5d9830f341fbd83a()
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x46f
 // Size: 0x176
 function function_a5839924b6723eac( info, selectnum, directionalselection )
@@ -110,7 +110,7 @@ function function_a5839924b6723eac( info, selectnum, directionalselection )
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ee
 // Size: 0x293
 function function_7023c245afe8cd79( selectnum, directionalselection )
@@ -184,7 +184,7 @@ function function_7023c245afe8cd79( selectnum, directionalselection )
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88a
 // Size: 0x43
 function function_12a0597458af2369()
@@ -206,7 +206,7 @@ function function_12a0597458af2369()
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8d5
 // Size: 0x3f
 function function_b34ec2892ae5b88d( info, issuper )
@@ -218,7 +218,7 @@ function function_b34ec2892ae5b88d( info, issuper )
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91c
 // Size: 0x34
 function function_f2e8c1603fc727ea()
@@ -240,7 +240,7 @@ function function_f2e8c1603fc727ea()
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x958
 // Size: 0x42
 function function_69db129634b2bcb()
@@ -254,7 +254,7 @@ function function_69db129634b2bcb()
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x9a2
 // Size: 0x167
 function function_90f093ca8576232f( navmesh, directionalselection, directionaltype, selectortype, info, selectorradius )
@@ -315,7 +315,7 @@ function function_90f093ca8576232f( navmesh, directionalselection, directionalty
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb11
 // Size: 0xe5
 function function_4f783849d35ee7( info, issuper, exitinfo )
@@ -456,7 +456,7 @@ function private function_13b26fcc6dde1c17( info )
 }
 
 // Namespace mapselect / scripts\mp\killstreaks\mapselect
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe42
 // Size: 0x102
 function waittill_confirm_or_cancel( confirmstring, cancelstring, endstring )

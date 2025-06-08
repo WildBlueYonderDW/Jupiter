@@ -7,7 +7,7 @@
 #namespace createfx;
 
 // Namespace createfx / scripts\mp\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfa
 // Size: 0x14c
 function createfx()
@@ -41,7 +41,7 @@ function createfx()
 }
 
 // Namespace createfx / scripts\mp\createfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24e
 // Size: 0x1e
 function func_position_player_get( lastplayerorigin )
@@ -50,7 +50,7 @@ function func_position_player_get( lastplayerorigin )
 }
 
 // Namespace createfx / scripts\mp\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x275
 // Size: 0xa1
 function callback_playerconnect()
@@ -73,7 +73,7 @@ function callback_playerconnect()
 }
 
 // Namespace createfx / scripts\mp\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31e
 // Size: 0x56
 function func_player_speed()
@@ -84,7 +84,7 @@ function func_player_speed()
 }
 
 // Namespace createfx / scripts\mp\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37c
 // Size: 0x17f
 function reflectionprobe_hide_hp()
@@ -118,7 +118,7 @@ function reflectionprobe_hide_hp()
 }
 
 // Namespace createfx / scripts\mp\createfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x503
 // Size: 0xe5
 function reflectionprobe_hide_front()

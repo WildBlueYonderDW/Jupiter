@@ -26,7 +26,7 @@
 #namespace quest_cursed;
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x602
 // Size: 0x6b
 function init()
@@ -36,7 +36,7 @@ function init()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x675
 // Size: 0x36
 function on_init()
@@ -56,7 +56,7 @@ function on_init()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b3
 // Size: 0x13
 function on_precache()
@@ -65,7 +65,7 @@ function on_precache()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ce
 // Size: 0x74
 function on_start()
@@ -78,7 +78,7 @@ function on_start()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x74a
 // Size: 0x2
 function on_prematch_end()
@@ -87,7 +87,7 @@ function on_prematch_end()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x754
 // Size: 0x5f
 function on_infil()
@@ -99,7 +99,7 @@ function on_infil()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bb
 // Size: 0x66
 function set_dvars()
@@ -114,7 +114,7 @@ function set_dvars()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x829
 // Size: 0x109
 function function_47883c99846943d0()
@@ -136,7 +136,7 @@ function function_47883c99846943d0()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x93a
 // Size: 0x69
 function function_3b1a4e5d006d826e( loc )
@@ -146,7 +146,7 @@ function function_3b1a4e5d006d826e( loc )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ac
 // Size: 0x66
 function set_callbacks()
@@ -159,7 +159,7 @@ function set_callbacks()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa1a
 // Size: 0x9a
 function spawn_item()
@@ -173,14 +173,15 @@ function spawn_item()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xabd
 // Size: 0xb3
 function function_20b222942020715()
 {
     rewards = [];
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         rewards[ rewards.size ] = scripts\mp\gametypes\br_plunder::getplundernamebyamount( ter_op( cointoss(), 50, 80 ) );
     }
     
@@ -197,7 +198,7 @@ function function_20b222942020715()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb79
 // Size: 0x1c7
 function function_eab7b539afd6dd11()
@@ -237,7 +238,7 @@ function function_eab7b539afd6dd11()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd48
 // Size: 0x59
 function function_fddcbf27c0f66fd5()
@@ -255,7 +256,7 @@ function function_fddcbf27c0f66fd5()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xda9
 // Size: 0x5e
 function function_8e0ee42aeeba8bae()
@@ -271,7 +272,7 @@ function function_8e0ee42aeeba8bae()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0f
 // Size: 0xed
 function function_94dbf32b1cf86b34()
@@ -295,7 +296,7 @@ function function_94dbf32b1cf86b34()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf04
 // Size: 0x4a
 function quest_complete( player )
@@ -305,7 +306,7 @@ function quest_complete( player )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf56
 // Size: 0x22c
 function function_51c00a1f35c303( player )
@@ -350,7 +351,7 @@ function function_51c00a1f35c303( player )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x118a
 // Size: 0x8c
 function function_661c0753eb356280( crate )
@@ -367,7 +368,8 @@ function function_661c0753eb356280( crate )
     
     if ( isdefined( id ) )
     {
-        for (i = 0; i < level.objectiveidpool.reclaimed.size; i++) {
+        for ( i = 0; i < level.objectiveidpool.reclaimed.size ; i++ )
+        {
             if ( id == level.objectiveidpool.reclaimed[ i ] )
             {
                 return;
@@ -379,7 +381,7 @@ function function_661c0753eb356280( crate )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x121e
 // Size: 0x61
 function function_710d5f503b5060a1( origin )
@@ -397,7 +399,7 @@ function function_710d5f503b5060a1( origin )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1287
 // Size: 0x74
 function teleport_player()
@@ -421,7 +423,7 @@ function teleport_player()
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1303
 // Size: 0x111
 function function_3df74fa4218e45c( player )
@@ -456,7 +458,7 @@ function function_3df74fa4218e45c( player )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x141c
 // Size: 0x22b
 function on_player_killed( death_data )
@@ -504,7 +506,7 @@ function on_player_killed( death_data )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x164f
 // Size: 0xc, Type: bool
 function function_ae7fdf79614c9f6f( player )
@@ -513,7 +515,7 @@ function function_ae7fdf79614c9f6f( player )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1664
 // Size: 0xeb
 function function_1f7f65169228bd71( item, player )
@@ -548,7 +550,7 @@ function function_1f7f65169228bd71( item, player )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1758
 // Size: 0xae
 function function_8cd3ce612122fbab( dropped_ent, player, dropped_origin )
@@ -566,7 +568,7 @@ function function_8cd3ce612122fbab( dropped_ent, player, dropped_origin )
 }
 
 // Namespace quest_cursed / namespace_f535fbda13ff584d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x180e
 // Size: 0x3b0
 function function_a0233f797c081c46( dead_player, attacker )
@@ -662,7 +664,7 @@ function function_a0233f797c081c46( dead_player, attacker )
 /#
 
     // Namespace quest_cursed / namespace_f535fbda13ff584d
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1bc6
     // Size: 0xde, Type: dev
     function debug_init()
@@ -681,7 +683,7 @@ function function_a0233f797c081c46( dead_player, attacker )
     }
 
     // Namespace quest_cursed / namespace_f535fbda13ff584d
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1cac
     // Size: 0x9c, Type: dev
     function function_8ceab4fddfa5e5ea()
@@ -694,7 +696,7 @@ function function_a0233f797c081c46( dead_player, attacker )
     }
 
     // Namespace quest_cursed / namespace_f535fbda13ff584d
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d50
     // Size: 0xf4, Type: dev
     function function_d12cfb94fb1e29a5()
@@ -720,7 +722,7 @@ function function_a0233f797c081c46( dead_player, attacker )
     }
 
     // Namespace quest_cursed / namespace_f535fbda13ff584d
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1e4c
     // Size: 0xae, Type: dev
     function function_f92a2485d314b50b()
@@ -749,7 +751,7 @@ function function_a0233f797c081c46( dead_player, attacker )
     }
 
     // Namespace quest_cursed / namespace_f535fbda13ff584d
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1f02
     // Size: 0x263, Type: dev
     function function_28455d21c0029079()
@@ -798,7 +800,7 @@ function function_a0233f797c081c46( dead_player, attacker )
     }
 
     // Namespace quest_cursed / namespace_f535fbda13ff584d
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x216d
     // Size: 0x17, Type: dev
     function function_ba8b401af36a89ed()
@@ -807,7 +809,7 @@ function function_a0233f797c081c46( dead_player, attacker )
     }
 
     // Namespace quest_cursed / namespace_f535fbda13ff584d
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x218c
     // Size: 0x17a, Type: dev
     function function_7c780b4fa5300b49( params )
@@ -818,7 +820,8 @@ function function_a0233f797c081c46( dead_player, attacker )
         player_pos = player.origin;
         version = int( params[ 0 ] );
         
-        for (i = 0; i < 100; i++) {
+        for ( i = 0; i < 100 ; i++ )
+        {
             switch ( version )
             {
                 case 0:

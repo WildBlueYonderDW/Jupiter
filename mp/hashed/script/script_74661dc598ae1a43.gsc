@@ -9,7 +9,7 @@
 #namespace namespace_ae731a50428dac3c;
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x220
 // Size: 0x2e
 function inittask()
@@ -19,7 +19,7 @@ function inittask()
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x256
 // Size: 0x3c
 function function_f5539669faf51bc2( taskinstance )
@@ -29,7 +29,7 @@ function function_f5539669faf51bc2( taskinstance )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29a
 // Size: 0x4a
 function function_87e60ed6830d13bc( subcategory )
@@ -46,7 +46,7 @@ function function_87e60ed6830d13bc( subcategory )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ec
 // Size: 0x8f
 function function_9b1529847df228e( weapon, taskinstance )
@@ -64,7 +64,7 @@ function function_9b1529847df228e( weapon, taskinstance )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x383
 // Size: 0x7b, Type: bool
 function function_2bd81bb8ee30bed8( myteam, attacker, victim )
@@ -75,7 +75,7 @@ function function_2bd81bb8ee30bed8( myteam, attacker, victim )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x407
 // Size: 0xe9
 function function_6d92f87ff87fe83f( taskinstance )
@@ -95,7 +95,7 @@ function function_6d92f87ff87fe83f( taskinstance )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f8
 // Size: 0xaa
 function function_c93e0a98f146b313( taskinstance )
@@ -116,7 +116,7 @@ function function_c93e0a98f146b313( taskinstance )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5aa
 // Size: 0x13f
 function checkcombat( taskinstance, flag )
@@ -178,7 +178,7 @@ function checkcombat( taskinstance, flag )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6f1
 // Size: 0x65, Type: bool
 function function_c17dee650b7cbcb2( taskinstance, baseweapon )
@@ -190,7 +190,7 @@ function function_c17dee650b7cbcb2( taskinstance, baseweapon )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x75f
 // Size: 0x76, Type: bool
 function function_f4ee103b33981325( taskinstance )
@@ -209,7 +209,7 @@ function function_f4ee103b33981325( taskinstance )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7de
 // Size: 0x11c, Type: bool
 function function_59c1dbdc2ad03ad6( taskinstance, loot )
@@ -257,7 +257,7 @@ function function_59c1dbdc2ad03ad6( taskinstance, loot )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x903
 // Size: 0xa9
 function trybindobjective( taskinstance )
@@ -281,7 +281,7 @@ function trybindobjective( taskinstance )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b4
 // Size: 0x95
 function function_b6974f3087e0fd6d()
@@ -300,7 +300,7 @@ function function_b6974f3087e0fd6d()
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa52
 // Size: 0x90
 function trackenemy( taskinstance )
@@ -321,7 +321,7 @@ function trackenemy( taskinstance )
 }
 
 // Namespace namespace_ae731a50428dac3c / namespace_ac1fbb84a83113b9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaea
 // Size: 0x6a
 function function_278ca71c59288fc7()

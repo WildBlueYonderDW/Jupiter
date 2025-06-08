@@ -6,7 +6,7 @@
 #namespace animation_suite;
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d4
 // Size: 0x137
 function animationsuite()
@@ -47,7 +47,7 @@ function animationsuite()
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x413
 // Size: 0x10c
 function setupvfxobjs( objects )
@@ -78,7 +78,7 @@ function setupvfxobjs( objects )
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x527
 // Size: 0x37
 function delayfxcall( fx, model, tag )
@@ -94,7 +94,7 @@ function delayfxcall( fx, model, tag )
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x566
 // Size: 0x92
 function setupsfxobjs( objects )
@@ -110,7 +110,7 @@ function setupsfxobjs( objects )
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x600
 // Size: 0x34
 function debug_temp_sphere()
@@ -123,7 +123,7 @@ function debug_temp_sphere()
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63c
 // Size: 0x188
 function gathergroups( objects )
@@ -160,7 +160,7 @@ function gathergroups( objects )
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7cd
 // Size: 0x60
 function animsuite_getparentobject( group )
@@ -175,7 +175,7 @@ function animsuite_getparentobject( group )
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x835
 // Size: 0x73
 function animsuite_linkchildrentoparentobject( parent, group )
@@ -195,7 +195,7 @@ function animsuite_linkchildrentoparentobject( parent, group )
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8b0
 // Size: 0x37
 function animsuite_translation( translation_type )
@@ -212,7 +212,7 @@ function animsuite_translation( translation_type )
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ef
 // Size: 0x1b6
 function animsuite_translation_pingpong()
@@ -297,7 +297,7 @@ function animsuite_translation_pingpong()
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaad
 // Size: 0x35
 function animsuite_playthreadedsound( waittime, alias )
@@ -313,7 +313,7 @@ function animsuite_playthreadedsound( waittime, alias )
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaea
 // Size: 0x88
 function animsuite_translation_once()
@@ -345,7 +345,7 @@ function animsuite_translation_once()
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb7a
 // Size: 0x37
 function animsuite_rotation( rotation_type )
@@ -362,7 +362,7 @@ function animsuite_rotation( rotation_type )
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb9
 // Size: 0x14a
 function animsuite_rotation_pingpong()
@@ -428,7 +428,7 @@ function animsuite_rotation_pingpong()
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd0b
 // Size: 0xa7
 function animsuite_rotation_continuous()
@@ -461,7 +461,7 @@ function animsuite_rotation_continuous()
 }
 
 // Namespace animation_suite / scripts\mp\animation_suite
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdba
 // Size: 0x2c, Type: bool
 function isvalidanimsuiteentity( funcname, ent )

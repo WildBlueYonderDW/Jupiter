@@ -35,23 +35,23 @@
 #namespace spawnselection;
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdbe
 // Size: 0x281
 function init()
 {
     if ( scripts\mp\spawnselection::function_167619fe3d0cff00() )
     {
-        setdvar( @"hash_5fc696f5bbb3ca62", 0 );
+        setdvar( @"scr_game_disablespawncamera", 0 );
     }
     else
     {
         return;
     }
     
-    level.usec130spawn = getdvarint( @"hash_d5257119daec762d", 0 ) == 1;
-    level.usesquadspawn = getdvarint( @"hash_2314646deabe3144", 0 ) == 1;
-    level.usesquadspawnselection = getdvarint( @"hash_923f96b1d9a290b4", 1 ) == 1;
+    level.usec130spawn = getdvarint( @"scr_game_c130_spawn", 0 ) == 1;
+    level.usesquadspawn = getdvarint( @"scr_game_squad_spawn", 0 ) == 1;
+    level.usesquadspawnselection = getdvarint( @"scr_game_spawnselection_squad", 1 ) == 1;
     level.spawnsquadleaderonly = getdvarint( @"hash_fc11053944ab5f7e", 0 ) == 1;
     level.var_f15becfbc1b01a1b = getdvarint( @"hash_ee75f0b9d9e03349", 1 ) == 1;
     level.var_a50b22fa98674a50 = getdvarint( @"hash_ef54007b614237da", 0 ) == 1;
@@ -59,12 +59,12 @@ function init()
     level.var_757ec02df4d678f5 = getdvarint( @"hash_537448d6935dd02b", 1 ) == 1;
     level.var_111c5f085a86c2f0 = &function_f83711dd7546db96;
     level.var_aba39caf969cd3f7 = &function_dc659688380c4195;
-    level.checkspawnselectionafk = matchmakinggame() && getdvarint( @"hash_a66999457b70da2", 1 ) == 1;
+    level.checkspawnselectionafk = matchmakinggame() && getdvarint( @"scr_game_spawnselection_afk", 1 ) == 1;
     level.var_f13131261b4c6ad5 = getdvarint( @"hash_6560b9b4c5fcbab", 0 ) == 1;
     level.var_ca4fe20b267c4f54 = getdvarint( @"hash_9fe20711e5bcee42", 0 ) == 1;
     level.var_4d2556c1d0f4893e = getdvarint( @"hash_a959156dff929a38", 0 ) == 1;
     level.var_7119a108c4ba4d2c = getdvarint( @"hash_4ce0b40aac178e56", 0 ) == 1;
-    level.var_c0e8540c63b7af50 = getdvarfloat( @"hash_79708dd3ddf8ed32", 0 );
+    level.var_c0e8540c63b7af50 = getdvarfloat( @"scr_spawnselection_obj_owned_partial_pct", 0 );
     level.var_f335c53db1d6dd34 = getdvarint( @"hash_8e9e98f013db1ac4", 1 ) == 1;
     level.availablespawnlocations = [];
     
@@ -84,7 +84,7 @@ function init()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1047
 // Size: 0x4, Type: bool
 function function_dc3a172bf923d9b3()
@@ -93,7 +93,7 @@ function function_dc3a172bf923d9b3()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1054
 // Size: 0x2
 function delayspawntoc130()
@@ -102,7 +102,7 @@ function delayspawntoc130()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x105e
 // Size: 0x184
 function churnareas()
@@ -141,7 +141,7 @@ function churnareas()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11ea
 // Size: 0x194
 function setspawnlocations( refarray, team )
@@ -176,7 +176,7 @@ function setspawnlocations( refarray, team )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1386
 // Size: 0x42
 function allowspawnlocation( ref, team )
@@ -188,7 +188,7 @@ function allowspawnlocation( ref, team )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13d0
 // Size: 0x85
 function removespawnlocation( ref, team )
@@ -207,7 +207,7 @@ function removespawnlocation( ref, team )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x145d
 // Size: 0xa
 function updatespawnareas()
@@ -216,7 +216,7 @@ function updatespawnareas()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x146f
 // Size: 0x9e
 function initspawns()
@@ -238,7 +238,7 @@ function initspawns()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1515
 // Size: 0x4ac
 function setupspawnlocations()
@@ -375,7 +375,7 @@ function setupspawnlocations()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19c9
 // Size: 0x169
 function initspawnarea( team, struct, ref )
@@ -421,7 +421,7 @@ function initspawnarea( team, struct, ref )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b3a
 // Size: 0x2c
 function getlabelid( ref )
@@ -437,7 +437,7 @@ function getlabelid( ref )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b6f
 // Size: 0x34
 function setanchorent( ref, team, ent )
@@ -446,14 +446,15 @@ function setanchorent( ref, team, ent )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bab
 // Size: 0x7e
 function setupspawninfluencezones()
 {
     level.spawninfluencezones = [];
     
-    for (i = 1; i <= 5; i++) {
+    for ( i = 1; i <= 5 ; i++ )
+    {
         trigger = scripts\cp_mp\utility\game_utility::getlocaleent( "gw_fob_0" + i + "_spawnInfluenceZone" );
         
         if ( !isdefined( trigger ) )
@@ -468,7 +469,7 @@ function setupspawninfluencezones()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c31
 // Size: 0x56
 function spawninfluencezone_onusebegin( ent, trigger )
@@ -482,7 +483,7 @@ function spawninfluencezone_onusebegin( ent, trigger )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c8f
 // Size: 0x56
 function spawninfluencezone_onuseend( ent, trigger )
@@ -496,7 +497,7 @@ function spawninfluencezone_onuseend( ent, trigger )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ced
 // Size: 0xaa
 function isteamtouching( team )
@@ -524,7 +525,7 @@ function isteamtouching( team )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1da0
 // Size: 0x816
 function getspawnpoint()
@@ -721,12 +722,13 @@ function getspawnpoint()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25bf
 // Size: 0x8a
 function refreshplayerspawnareaomnvars()
 {
-    for (var_7df4a8a7599bcca3 = 0; var_7df4a8a7599bcca3 < 16; var_7df4a8a7599bcca3++) {
+    for ( var_7df4a8a7599bcca3 = 0; var_7df4a8a7599bcca3 < 16 ; var_7df4a8a7599bcca3++ )
+    {
         self setclientomnvar( "ui_tom_spawn_entity_" + var_7df4a8a7599bcca3, undefined );
         self setclientomnvar( "ui_tom_spawn_id_" + var_7df4a8a7599bcca3, -1 );
     }
@@ -750,7 +752,7 @@ function refreshplayerspawnareaomnvars()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2651
 // Size: 0x3be
 function evaluatefobspawns()
@@ -882,7 +884,7 @@ function evaluatefobspawns()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a17
 // Size: 0x234, Type: bool
 function isobjectiveindanger( objectivekey, team )
@@ -947,7 +949,7 @@ function isobjectiveindanger( objectivekey, team )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c54
 // Size: 0x157, Type: bool
 function isvehicleindanger( vehent )
@@ -978,21 +980,21 @@ function isvehicleindanger( vehent )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2db4
 // Size: 0x32
 function function_167619fe3d0cff00()
 {
     if ( !isdefined( level.usespawnselection ) )
     {
-        level.usespawnselection = getdvarint( @"hash_6e73595f4ce7501e", 0 ) != 0;
+        level.usespawnselection = getdvarint( @"scr_game_usespawnselection", 0 ) != 0;
     }
     
     return level.usespawnselection;
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2def
 // Size: 0x2c8
 function vehicleindangertracking( vehent )
@@ -1052,7 +1054,7 @@ function vehicleindangertracking( vehent )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30bf
 // Size: 0xee, Type: bool
 function hassquadmatepassengers( vehicle, player )
@@ -1079,7 +1081,7 @@ function hassquadmatepassengers( vehicle, player )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31b6
 // Size: 0x220
 function setspawnselectionorder()
@@ -1137,7 +1139,7 @@ function setspawnselectionorder()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x33de
 // Size: 0x46, Type: bool
 function sortlocationsbydistance_closestfirst( location1, location2 )
@@ -1146,7 +1148,7 @@ function sortlocationsbydistance_closestfirst( location1, location2 )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x342d
 // Size: 0x46, Type: bool
 function sortlocationsbydistance_farthestfirst( location1, location2 )
@@ -1155,7 +1157,7 @@ function sortlocationsbydistance_farthestfirst( location1, location2 )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x347c
 // Size: 0x1ac
 function picklane( lane )
@@ -1215,7 +1217,7 @@ function picklane( lane )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3630
 // Size: 0xc6
 function refreshsquadspawns()
@@ -1235,7 +1237,7 @@ function refreshsquadspawns()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36fe
 // Size: 0xea
 function refreshdynamicspawns()
@@ -1266,7 +1268,7 @@ function refreshdynamicspawns()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x37f0
 // Size: 0x103
 function waitforspawnselection( timeuntilspawn, forcepick )
@@ -1313,7 +1315,7 @@ function waitforspawnselection( timeuntilspawn, forcepick )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38fb
 // Size: 0x91
 function pickrandomnonvehiclespawn()
@@ -1331,7 +1333,7 @@ function pickrandomnonvehiclespawn()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3994
 // Size: 0x97
 function pickrandomvehiclespawn( var_b6603908715584da )
@@ -1354,7 +1356,7 @@ function pickrandomvehiclespawn( var_b6603908715584da )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a33
 // Size: 0x33
 function pickrandomspawn()
@@ -1363,7 +1365,7 @@ function pickrandomspawn()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a6f
 // Size: 0xa6
 function function_37b8d5f51288ba7d()
@@ -1384,7 +1386,7 @@ function function_37b8d5f51288ba7d()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b1d
 // Size: 0x2db
 function spawnselectionthink( timeuntilspawn )
@@ -1513,7 +1515,7 @@ function spawnselectionthink( timeuntilspawn )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e00
 // Size: 0x2e
 function checkformatchend()
@@ -1530,7 +1532,7 @@ function checkformatchend()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e36
 // Size: 0x4e
 function watchforafk()
@@ -1553,7 +1555,7 @@ function watchforafk()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e8c
 // Size: 0x108
 function selectiondelaymessaging( timeuntilspawn )
@@ -1586,7 +1588,7 @@ function selectiondelaymessaging( timeuntilspawn )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f9c
 // Size: 0x79
 function validateselectedspawnarea()
@@ -1604,7 +1606,7 @@ function validateselectedspawnarea()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x401d
 // Size: 0x46a
 function selectionmade()
@@ -1715,7 +1717,7 @@ function selectionmade()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x448f
 // Size: 0x10e
 function updateplayerspawninputtype( var_84d6164f2a6eb8da )
@@ -1737,7 +1739,7 @@ function updateplayerspawninputtype( var_84d6164f2a6eb8da )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45a6
 // Size: 0x77
 function watchendconditions()
@@ -1755,7 +1757,7 @@ function watchendconditions()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4626
 // Size: 0x3a
 function endconditionwatcher_selectionmade()
@@ -1774,7 +1776,7 @@ function endconditionwatcher_selectionmade()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4668
 // Size: 0x339
 function endcondition_focuschanged( var_84d6164f2a6eb8da )
@@ -1877,7 +1879,7 @@ function endcondition_focuschanged( var_84d6164f2a6eb8da )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49a9
 // Size: 0x47
 function keepstreamposfresh( origin )
@@ -1896,7 +1898,7 @@ function keepstreamposfresh( origin )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49f8
 // Size: 0x2f
 function endconditionwatcher_gameended()
@@ -1910,7 +1912,7 @@ function endconditionwatcher_gameended()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a2f
 // Size: 0x2f
 function endconditionwatcher_mapcleared()
@@ -1924,7 +1926,7 @@ function endconditionwatcher_mapcleared()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a66
 // Size: 0x2f
 function endconditionwatcher_mapchanged()
@@ -1938,7 +1940,7 @@ function endconditionwatcher_mapchanged()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a9d
 // Size: 0x2f
 function endconditionwatcher_nuke()
@@ -1952,7 +1954,7 @@ function endconditionwatcher_nuke()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ad4
 // Size: 0x2b
 function function_b0e57461a4af2476()
@@ -1969,7 +1971,7 @@ function function_b0e57461a4af2476()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b07
 // Size: 0x46
 function spawnselectionshutdown_nuke()
@@ -1991,7 +1993,7 @@ function spawnselectionshutdown_nuke()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4b55
 // Size: 0x11c
 function adddynamicspawnarea( team, ent, ref, offset )
@@ -2014,7 +2016,7 @@ function adddynamicspawnarea( team, ent, ref, offset )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c79
 // Size: 0x64
 function removedynamicspawnarea( team, ref )
@@ -2033,7 +2035,7 @@ function removedynamicspawnarea( team, ref )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ce5
 // Size: 0x5f
 function getsquadspawnlocations( team, squadindex )
@@ -2049,7 +2051,7 @@ function getsquadspawnlocations( team, squadindex )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4d4d
 // Size: 0x16a
 function updatesquadspawn( team, squad, ref, ent )
@@ -2099,7 +2101,7 @@ function updatesquadspawn( team, squad, ref, ent )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ebf
 // Size: 0x36
 function removespawnareaondeathdisconnect( team, ref )
@@ -2111,7 +2113,7 @@ function removespawnareaondeathdisconnect( team, ref )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4efd
 // Size: 0x3c
 function addspawnareaonspawn( team, ref )
@@ -2124,7 +2126,7 @@ function addspawnareaonspawn( team, ref )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f41
 // Size: 0x9c
 function function_360feec64890e6f1()
@@ -2156,7 +2158,7 @@ function function_360feec64890e6f1()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4fe5
 // Size: 0x11f
 function function_7de3f8f504024fde()
@@ -2198,7 +2200,7 @@ function function_7de3f8f504024fde()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x510c
 // Size: 0x56e
 function evaluatesquadspawn()
@@ -2221,7 +2223,8 @@ function evaluatesquadspawn()
     squadleaderid = tablelookuprownum( "mp/spawnSelectionMapData.csv", 0, "squad_leader" );
     var_5966e8a05a4d1903 = [];
     
-    for (i = 0; i < 4; i++) {
+    for ( i = 0; i < 4 ; i++ )
+    {
         data = spawnstruct();
         data.guid = undefined;
         data.entity = undefined;
@@ -2231,7 +2234,8 @@ function evaluatesquadspawn()
     
     squadrefs = [];
     
-    for (i = 0; i < 4; i++) {
+    for ( i = 0; i < 4 ; i++ )
+    {
         squadrefs[ i ] = "squad_" + i;
     }
     
@@ -2240,7 +2244,8 @@ function evaluatesquadspawn()
         squadleader = scripts\cp_mp\utility\squad_utility::getsquadleader( self.team, self.sessionsquadid );
         players = level.squaddata[ self.team ][ self.sessionsquadid ].players;
         
-        for (i = 0; i < 4; i++) {
+        for ( i = 0; i < 4 ; i++ )
+        {
             if ( !isdefined( var_5966e8a05a4d1903[ i ].guid ) )
             {
                 continue;
@@ -2253,7 +2258,8 @@ function evaluatesquadspawn()
             }
         }
         
-        for (i = 0; i < 4; i++) {
+        for ( i = 0; i < 4 ; i++ )
+        {
             if ( i < players.size )
             {
                 player = players[ i ];
@@ -2269,7 +2275,8 @@ function evaluatesquadspawn()
         
         locations = getsquadspawnlocations( self.team, self.sessionsquadid );
         
-        for (i = 0; i < 4; i++) {
+        for ( i = 0; i < 4 ; i++ )
+        {
             if ( i < players.size )
             {
                 player = players[ i ];
@@ -2360,7 +2367,7 @@ function evaluatesquadspawn()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5682
 // Size: 0x504
 function handlerespawnselection( spawnedasspectator, timeuntilspawn )
@@ -2567,7 +2574,7 @@ function handlerespawnselection( spawnedasspectator, timeuntilspawn )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b8e
 // Size: 0x4f
 function handlesquadspawnabort()
@@ -2583,7 +2590,7 @@ function handlesquadspawnabort()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5be5
 // Size: 0xb0
 function handlesquadspawncycle()
@@ -2618,7 +2625,7 @@ function handlesquadspawncycle()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c9d
 // Size: 0x54, Type: bool
 function handlesquadspawnconfirm( timeuntilspawn )
@@ -2634,7 +2641,7 @@ function handlesquadspawnconfirm( timeuntilspawn )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5cfa
 // Size: 0xea, Type: bool
 function cyclevalidsquadspectate( startindex, positive )
@@ -2648,7 +2655,8 @@ function cyclevalidsquadspectate( startindex, positive )
     checkindex = startindex;
     step = ter_op( positive, 1, -1 );
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         if ( iscurrentspectatetarget( players[ checkindex ] ) || !issquadspawnable( players[ checkindex ] ) )
         {
             checkindex += step;
@@ -2674,7 +2682,7 @@ function cyclevalidsquadspectate( startindex, positive )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5ded
 // Size: 0x36, Type: bool
 function iscurrentspectatetarget( player )
@@ -2695,7 +2703,7 @@ function iscurrentspectatetarget( player )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e2c
 // Size: 0x48, Type: bool
 function issquadspawnable( player )
@@ -2729,7 +2737,7 @@ function issquadspawnable( player )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e7d
 // Size: 0x27
 function isplayerindanger_think()
@@ -2743,7 +2751,7 @@ function isplayerindanger_think()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5eac
 // Size: 0x33
 function internal_isplayerindanger_think()
@@ -2763,7 +2771,7 @@ function internal_isplayerindanger_think()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5ee7
 // Size: 0x21e, Type: bool
 function issquadmateindanger( player )
@@ -2842,7 +2850,7 @@ function issquadmateindanger( player )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x610e
 // Size: 0x103
 function monitorsquadspectator( target )
@@ -2881,7 +2889,7 @@ function monitorsquadspectator( target )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6219
 // Size: 0x100
 function spawntoc130()
@@ -2917,7 +2925,7 @@ function spawntoc130()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6321
 // Size: 0x69, Type: bool
 function needsbuttontorespawn()
@@ -2948,7 +2956,7 @@ function needsbuttontorespawn()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6393
 // Size: 0x2a
 function waitrespawnbutton()
@@ -2968,7 +2976,7 @@ function waitrespawnbutton()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x63c5
 // Size: 0x51
 function timeuntilspawnmessaging( timeuntilspawn, reason )
@@ -2988,7 +2996,7 @@ function timeuntilspawnmessaging( timeuntilspawn, reason )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x641e
 // Size: 0x2a2
 function managesquadcameraposition( ref )
@@ -3053,7 +3061,7 @@ function managesquadcameraposition( ref )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66c8
 // Size: 0x2db
 function managevehiclecameraposition( ref )
@@ -3116,7 +3124,7 @@ function managevehiclecameraposition( ref )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69ab
 // Size: 0xe3
 function managevehiclehealthui( ref )
@@ -3153,7 +3161,7 @@ function managevehiclehealthui( ref )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a96
 // Size: 0x377
 function getclosestavailablespawnlocation()
@@ -3258,7 +3266,7 @@ function getclosestavailablespawnlocation()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e15
 // Size: 0x4d6
 function getstaticcameraposition( team )
@@ -3392,7 +3400,7 @@ function getstaticcameraposition( team )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x72f4
 // Size: 0x15e
 function function_87bbbee0bbf27304()
@@ -3452,7 +3460,7 @@ function function_87bbbee0bbf27304()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x745a
 // Size: 0x107
 function updatefobindanger()
@@ -3484,7 +3492,7 @@ function updatefobindanger()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7569
 // Size: 0x2f0
 function updatefobspawnsindanger()
@@ -3576,7 +3584,7 @@ function updatefobspawnsindanger()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7861
 // Size: 0x295
 function updatespecificfobindanger( location, player, team )
@@ -3658,7 +3666,7 @@ function updatespecificfobindanger( location, player, team )
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7afe
 // Size: 0x162
 function vehicle_showteamtanks()
@@ -3688,7 +3696,7 @@ function vehicle_showteamtanks()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c68
 // Size: 0x214
 function function_f83711dd7546db96()
@@ -3740,7 +3748,7 @@ function function_f83711dd7546db96()
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e84
 // Size: 0x214
 function function_dc659688380c4195()

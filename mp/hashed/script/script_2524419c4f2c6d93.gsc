@@ -1,7 +1,7 @@
 #namespace namespace_60a2d1d0ec8353a7;
 
 // Namespace namespace_60a2d1d0ec8353a7 / namespace_fd55f844ee62daaf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x88
 // Size: 0x44
 function function_c60f471b78ed1507( taskid )

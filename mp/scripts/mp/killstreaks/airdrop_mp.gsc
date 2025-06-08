@@ -34,7 +34,7 @@
 #namespace airdrop_mp;
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52e
 // Size: 0x189
 function init()
@@ -60,7 +60,7 @@ function init()
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6bf
 // Size: 0x9
 function airdrop_airdropmultipleinit()
@@ -69,7 +69,7 @@ function airdrop_airdropmultipleinit()
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d0
 // Size: 0x9
 function function_563387bd27d5b942()
@@ -78,7 +78,7 @@ function function_563387bd27d5b942()
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e1
 // Size: 0x1d
 function airdrop_registerscoreinfo()
@@ -87,7 +87,7 @@ function airdrop_registerscoreinfo()
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x706
 // Size: 0x151
 function airdrop_registeractionset()
@@ -105,7 +105,7 @@ function airdrop_registeractionset()
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x85f
 // Size: 0x1c
 function airdrop_updateuiprogress( object, bool )
@@ -114,7 +114,7 @@ function airdrop_updateuiprogress( object, bool )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x883
 // Size: 0x2c
 function airdrop_allowactionset( name, allow )
@@ -129,7 +129,7 @@ function airdrop_allowactionset( name, allow )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8b7
 // Size: 0x26
 function airdrop_unresolvedcollisionnearestnode( player, var_4258fb168fb20ba6, mover )
@@ -138,7 +138,7 @@ function airdrop_unresolvedcollisionnearestnode( player, var_4258fb168fb20ba6, m
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8e5
 // Size: 0x118
 function airdrop_awardkillstreak( streakname, owner, crate )
@@ -161,7 +161,7 @@ function airdrop_awardkillstreak( streakname, owner, crate )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa05
 // Size: 0x25
 function airdrop_showkillstreaksplash( splashref, streakval, fromcarepackage )
@@ -170,7 +170,7 @@ function airdrop_showkillstreaksplash( splashref, streakval, fromcarepackage )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa32
 // Size: 0x12
 function airdrop_gettargetmarker( streakinfo )
@@ -179,7 +179,7 @@ function airdrop_gettargetmarker( streakinfo )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xa4d
 // Size: 0x49
 function airdrop_airdropmultipledropcrates( owner, team, position, angles, destination, reservevehicle, streakinfo )
@@ -188,7 +188,7 @@ function airdrop_airdropmultipledropcrates( owner, team, position, angles, desti
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xa9f
 // Size: 0x41
 function function_bb8fa277bef21a11( owner, team, position, angles, destination, streakinfo )
@@ -197,7 +197,7 @@ function function_bb8fa277bef21a11( owner, team, position, angles, destination, 
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xae9
 // Size: 0x1c
 function airdrop_outlinedisable( id, var_420a996e67989dc4 )
@@ -206,7 +206,7 @@ function airdrop_outlinedisable( id, var_420a996e67989dc4 )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb0d
 // Size: 0x20
 function airdrop_capturelootcachecallback( player )
@@ -216,7 +216,7 @@ function airdrop_capturelootcachecallback( player )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb35
 // Size: 0x13e
 function airdrop_applyimmediatejuggernaut( useimmediate, isrecon )
@@ -251,7 +251,7 @@ function airdrop_applyimmediatejuggernaut( useimmediate, isrecon )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc7b
 // Size: 0x19d
 function function_3fbfee87ee058fe1( crate )
@@ -304,7 +304,7 @@ function function_3fbfee87ee058fe1( crate )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe20
 // Size: 0x2a
 function function_f3ff35367b5981a0( var_28f54410c9ffeb40 )
@@ -316,7 +316,7 @@ function function_f3ff35367b5981a0( var_28f54410c9ffeb40 )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe52
 // Size: 0x7c
 function function_91993094d8aade48( actionnotify )
@@ -350,7 +350,7 @@ function function_91993094d8aade48( actionnotify )
 }
 
 // Namespace airdrop_mp / scripts\mp\killstreaks\airdrop_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed6
 // Size: 0x2f
 function function_bc67641e1dcc58b3( crate )

@@ -6,7 +6,7 @@
 #namespace gasmask;
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x663
 // Size: 0x21f
 function init( gasmaskhealth, gasmasktype, gasmaskmaxhealth )
@@ -89,7 +89,7 @@ function init( gasmaskhealth, gasmasktype, gasmaskmaxhealth )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88a
 // Size: 0x80
 function ai_init()
@@ -104,7 +104,7 @@ function ai_init()
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x912
 // Size: 0x26
 function function_c9d4cf3c20195afa( mask )
@@ -119,7 +119,7 @@ function function_c9d4cf3c20195afa( mask )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x940
 // Size: 0xf7
 function getmaxhealth( var_1680a35fe50dc05e )
@@ -178,7 +178,7 @@ function getmaxhealth( var_1680a35fe50dc05e )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa40
 // Size: 0x75
 function getscriptablename( var_d5f96a53f7f4002e )
@@ -203,7 +203,7 @@ function getscriptablename( var_d5f96a53f7f4002e )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xabe
 // Size: 0x42e
 function processdamage( damage )
@@ -311,7 +311,7 @@ function processdamage( damage )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xef4
 // Size: 0x7a
 function function_4262ecea32819701( damage )
@@ -331,7 +331,7 @@ function function_4262ecea32819701( damage )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf76
 // Size: 0xd1, Type: bool
 function didgasmaskpipschange( oldhealth, newhealth )
@@ -356,7 +356,7 @@ function didgasmaskpipschange( oldhealth, newhealth )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1050
 // Size: 0x10c
 function equipgasmask()
@@ -400,7 +400,7 @@ function equipgasmask()
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1164
 // Size: 0x234
 function removegasmask()
@@ -467,7 +467,7 @@ function removegasmask()
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13a0
 // Size: 0x1de
 function breakgasmask()
@@ -516,7 +516,7 @@ function breakgasmask()
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1586
 // Size: 0x238
 function createoverlay( fadeintime, delaytime )
@@ -574,7 +574,7 @@ function createoverlay( fadeintime, delaytime )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17c6
 // Size: 0x50
 function setbrokenoverlaymaterial( material )
@@ -592,7 +592,7 @@ function setbrokenoverlaymaterial( material )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x181e
 // Size: 0x4d
 function fadeoutoverlay( fadeouttime )
@@ -603,7 +603,7 @@ function fadeoutoverlay( fadeouttime )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1873
 // Size: 0x78
 function destroyoverlay( fadeouttime, delaytime )
@@ -638,7 +638,7 @@ function destroyoverlay( fadeouttime, delaytime )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18f3
 // Size: 0x17, Type: bool
 function hasgasmask( player )
@@ -647,7 +647,7 @@ function hasgasmask( player )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1913
 // Size: 0x17, Type: bool
 function function_260708c89a11f0c3( player )
@@ -656,7 +656,7 @@ function function_260708c89a11f0c3( player )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1933
 // Size: 0x28, Type: bool
 function function_27e68abe09612a13( player )
@@ -665,7 +665,7 @@ function function_27e68abe09612a13( player )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1964
 // Size: 0x22
 function function_385d397d3fab6715( player )
@@ -679,7 +679,7 @@ function function_385d397d3fab6715( player )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x198f
 // Size: 0x22
 function function_2bcab76045fdd1fa( player )
@@ -693,7 +693,7 @@ function function_2bcab76045fdd1fa( player )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19ba
 // Size: 0x4a, Type: bool
 function function_d036366985435d3( player, pickupent )
@@ -707,7 +707,7 @@ function function_d036366985435d3( player, pickupent )
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a0d
 // Size: 0x47
 function function_58687e8e71126788()
@@ -793,7 +793,8 @@ function private function_960e55afc8644ee5()
     var_f4d1d255166d0b8a = 0;
     var_a58c1fca5d8a5b2 = undefined;
     
-    for (index = 0; index < backpacksize; index++) {
+    for ( index = 0; index < backpacksize ; index++ )
+    {
         lootid = utility::function_f3bb4f4911a1beb2( "game", "getLootIDAtBackpackIndex", index );
         
         if ( lootid != 0 )
@@ -848,7 +849,7 @@ function private function_d143d66d458e4cab()
 }
 
 // Namespace gasmask / scripts\cp_mp\gasmask
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d1a
 // Size: 0xd8
 function function_156ee9d604eac35c()

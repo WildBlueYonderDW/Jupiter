@@ -26,7 +26,7 @@
 #namespace super_deadsilence;
 
 // Namespace super_deadsilence / scripts\mp\supers\super_deadsilence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x355
 // Size: 0x15
 function superdeadsilence_beginsuper()
@@ -102,7 +102,7 @@ function private function_2649cdb548d89c04()
 }
 
 // Namespace super_deadsilence / scripts\mp\supers\super_deadsilence
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x545
 // Size: 0x190, Type: bool
 function superdeadsilence_endsuper( fromdeath )
@@ -152,7 +152,7 @@ function superdeadsilence_endsuper( fromdeath )
 }
 
 // Namespace super_deadsilence / scripts\mp\supers\super_deadsilence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6de
 // Size: 0xb6
 function superdeadsilence_onkill()
@@ -183,7 +183,7 @@ function superdeadsilence_onkill()
 }
 
 // Namespace super_deadsilence / scripts\mp\supers\super_deadsilence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79c
 // Size: 0x1e
 function superdeadsilence_endhudsequence()
@@ -195,7 +195,7 @@ function superdeadsilence_endhudsequence()
 }
 
 // Namespace super_deadsilence / scripts\mp\supers\super_deadsilence
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7c2
 // Size: 0x22
 function superdeadsilence_updateuistate( newstate )
@@ -205,7 +205,7 @@ function superdeadsilence_updateuistate( newstate )
 }
 
 // Namespace super_deadsilence / scripts\mp\supers\super_deadsilence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ec
 // Size: 0xa5
 function applyfovpresentation()
@@ -225,7 +225,7 @@ function applyfovpresentation()
 }
 
 // Namespace super_deadsilence / scripts\mp\supers\super_deadsilence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x899
 // Size: 0x39
 function superdeadsilence_watchforgameended()
@@ -239,7 +239,7 @@ function superdeadsilence_watchforgameended()
 }
 
 // Namespace super_deadsilence / scripts\mp\supers\super_deadsilence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8da
 // Size: 0xc0
 function function_43eba8eb08bb6edc()

@@ -17,7 +17,7 @@
 #namespace vehicle;
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4d5
 // Size: 0x3c
 function setvehiclearchetype( asmname, statename, params )
@@ -26,7 +26,7 @@ function setvehiclearchetype( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x519
 // Size: 0x2a
 function clearvehiclearchetype( asmname, statename, params )
@@ -35,7 +35,7 @@ function clearvehiclearchetype( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x54b
 // Size: 0x80, Type: bool
 function function_35baeb62e712b6b4( asmname, statename, tostatename, params )
@@ -56,7 +56,7 @@ function function_35baeb62e712b6b4( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d4
 // Size: 0x3a, Type: bool
 function function_b3bb4d116f5a79cb( currentvehicle, position )
@@ -71,7 +71,7 @@ function function_b3bb4d116f5a79cb( currentvehicle, position )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x617
 // Size: 0xcc
 function function_ef715d817b10b063()
@@ -114,7 +114,7 @@ function function_ef715d817b10b063()
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ec
 // Size: 0x11b
 function function_ad6244629719d941( aianims )
@@ -168,7 +168,7 @@ function function_ad6244629719d941( aianims )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x810
 // Size: 0x84
 function function_37da44a7cf24fdad( aianims )
@@ -196,7 +196,7 @@ function function_37da44a7cf24fdad( aianims )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x89d
 // Size: 0x3b
 function chooseanim_vehicle( asmname, statename, params )
@@ -205,7 +205,7 @@ function chooseanim_vehicle( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8e1
 // Size: 0x118
 function function_93584fe710642bd2( asmname, statename, params )
@@ -232,7 +232,7 @@ function function_93584fe710642bd2( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa01
 // Size: 0xd4
 function function_47a713aa81f9ae9e( asmname, statename, params )
@@ -252,7 +252,7 @@ function function_47a713aa81f9ae9e( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xade
 // Size: 0xe5
 function function_9cc47d66814e0219( asmname, statename, params )
@@ -279,7 +279,7 @@ function function_9cc47d66814e0219( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbcc
 // Size: 0x24
 function function_71542e68d0fa0478( asmname, statename, params )
@@ -288,7 +288,7 @@ function function_71542e68d0fa0478( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbf9
 // Size: 0x9a
 function function_b2e6831f01246042( asmname, statename, params )
@@ -307,7 +307,7 @@ function function_b2e6831f01246042( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc9c
 // Size: 0x181
 function function_7f09702cf0b2e4b5( asmname, statename, params )
@@ -344,7 +344,7 @@ function function_7f09702cf0b2e4b5( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe26
 // Size: 0xbb
 function function_f96dcce7d9cc58a5( asmname, statename, params )
@@ -363,7 +363,7 @@ function function_f96dcce7d9cc58a5( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xeea
 // Size: 0x2f
 function function_6bc1a54175023072( asmname, statename, tostatename, param )
@@ -372,7 +372,7 @@ function function_6bc1a54175023072( asmname, statename, tostatename, param )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf22
 // Size: 0x66, Type: bool
 function vehicleincombat( asmname, statename, tostatename, params )
@@ -386,7 +386,7 @@ function vehicleincombat( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf91
 // Size: 0x125, Type: bool
 function function_222ef5b005c37d77( asmname, statename, tostatename, param )
@@ -423,7 +423,7 @@ function function_222ef5b005c37d77( asmname, statename, tostatename, param )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10bf
 // Size: 0x2b4
 function function_d4533dcc81147462( asmname, statename, param )
@@ -505,7 +505,7 @@ function function_d4533dcc81147462( asmname, statename, param )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x137c
 // Size: 0x246
 function function_3a547f046d6592a( asmname, statename, params )
@@ -559,7 +559,7 @@ function function_3a547f046d6592a( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15ca
 // Size: 0x27
 function chooseanim_vehicleturret( asmname, statename, params )
@@ -568,7 +568,7 @@ function chooseanim_vehicleturret( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15fa
 // Size: 0x27
 function chooseanim_vehicleturretdeath( asmname, statename, params )
@@ -577,7 +577,7 @@ function chooseanim_vehicleturretdeath( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x162a
 // Size: 0x152
 function getvehicleanimtargetoriginandangles( vehicle, vehicleanim, vehicletag, vehiclelocation, vehicleangles, var_47b4bdc915cff70d )
@@ -614,7 +614,7 @@ function getvehicleanimtargetoriginandangles( vehicle, vehicleanim, vehicletag, 
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1785
 // Size: 0x216
 function linktovehicle( org, ang, linktoblend, sittag )
@@ -669,7 +669,7 @@ function linktovehicle( org, ang, linktoblend, sittag )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19a3
 // Size: 0x290
 function faceenemyincombat( asmname, statename )
@@ -712,7 +712,7 @@ function faceenemyincombat( asmname, statename )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c3b
 // Size: 0x1d6
 function playanim_vehicleidle( asmname, statename, params )
@@ -747,7 +747,7 @@ function playanim_vehicleidle( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e19
 // Size: 0x59
 function function_7d994706653f02b4( asmname, statename, params )
@@ -761,7 +761,7 @@ function function_7d994706653f02b4( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e7a
 // Size: 0x2c
 function function_e985e877247d21e9( asmname, statename, params )
@@ -771,7 +771,7 @@ function function_e985e877247d21e9( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1eae
 // Size: 0x2c
 function function_3cb7671ef707bc14( asmname, statename, params )
@@ -781,7 +781,7 @@ function function_3cb7671ef707bc14( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ee2
 // Size: 0x187
 function vehicleturretshootthread( turret )
@@ -805,7 +805,8 @@ function vehicleturretshootthread( turret )
             shots = 0;
             minshots = randomintrange( 7, 12 );
             
-            for (i = 0; i < burst; i++) {
+            for ( i = 0; i < burst ; i++ )
+            {
                 shots++;
                 turret shootturret();
                 wait 0.05;
@@ -842,7 +843,7 @@ function vehicleturretshootthread( turret )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2071
 // Size: 0x1ba
 function playanim_vehicleturret( asmname, statename, params )
@@ -875,7 +876,7 @@ function playanim_vehicleturret( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2233
 // Size: 0xd4
 function playanim_vehicleturret_terminate( asmname, statename, params )
@@ -894,7 +895,7 @@ function playanim_vehicleturret_terminate( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x230f
 // Size: 0x35
 function rotatetocurrentangles()
@@ -911,7 +912,7 @@ function rotatetocurrentangles()
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x234c
 // Size: 0xdb4
 function enterexitvehiclemotionwarp( asmname, statename, xanim, vehicletag, exiting, var_d1b180ee30493e0b )
@@ -1193,7 +1194,7 @@ function enterexitvehiclemotionwarp( asmname, statename, xanim, vehicletag, exit
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3108
 // Size: 0x16c
 function function_710d997ba5906931( waitduration, targetpoint, targetangles, tagorigin, tagangles, warpduration )
@@ -1227,7 +1228,7 @@ function function_710d997ba5906931( waitduration, targetpoint, targetangles, tag
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x327c
 // Size: 0x19d
 function playanim_entervehicle( asmname, statename, params )
@@ -1254,7 +1255,7 @@ function playanim_entervehicle( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3421
 // Size: 0x1fd
 function entervehicle_terminate( asmname, statename, params )
@@ -1306,7 +1307,7 @@ function entervehicle_terminate( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3626
 // Size: 0x4a
 function exitvehiclewatchpath( statename )
@@ -1330,7 +1331,7 @@ function exitvehiclewatchpath( statename )
 /#
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3678
     // Size: 0xc3, Type: dev
     function function_ee4d3aa4c40e4e63( xanim )
@@ -1355,7 +1356,7 @@ function exitvehiclewatchpath( statename )
 #/
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3743
 // Size: 0x246
 function playanim_exitvehicle( asmname, statename, params )
@@ -1411,7 +1412,7 @@ function playanim_exitvehicle( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3991
 // Size: 0x24
 function endvehiclemotionwarp()
@@ -1422,7 +1423,7 @@ function endvehiclemotionwarp()
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x39bd
 // Size: 0x42f
 function exitvehicle_terminate( asmname, statename, params )
@@ -1530,7 +1531,7 @@ function exitvehicle_terminate( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3df4
 // Size: 0x36
 function vehicletransition_terminate( asmname, statename, params )
@@ -1544,7 +1545,7 @@ function vehicletransition_terminate( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e32
 // Size: 0xa8
 function watchvehicledeath()
@@ -1589,7 +1590,7 @@ function watchvehicledeath()
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3ee2
 // Size: 0x41e
 function playanim_vehicledeath( asmname, statename, params )
@@ -1698,7 +1699,7 @@ function playanim_vehicledeath( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4308
 // Size: 0x2c
 function playanim_vehicle( asmname, statename, params )
@@ -1708,7 +1709,7 @@ function playanim_vehicle( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x433c
 // Size: 0x37
 function function_863eaacfe47cedee( asmname, statename, params )
@@ -1719,7 +1720,7 @@ function function_863eaacfe47cedee( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x437b
 // Size: 0x9c
 function playanim_vehiclereload( asmname, statename, params )
@@ -1736,7 +1737,7 @@ function playanim_vehiclereload( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x441f
 // Size: 0x4d
 function function_59af18a4aee683ff( asmname, statename, params )
@@ -1748,7 +1749,7 @@ function function_59af18a4aee683ff( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4474
 // Size: 0x4b
 function function_97519548bded06bd( asmname, statename, params )
@@ -1760,7 +1761,7 @@ function function_97519548bded06bd( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x44c7
 // Size: 0x122
 function function_e2cdb897d2f82507( asmname, statename, params )
@@ -1794,7 +1795,7 @@ function function_e2cdb897d2f82507( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x45f1
 // Size: 0x2c
 function vehiclereload_terminate( asmname, statename, params )
@@ -1804,7 +1805,7 @@ function vehiclereload_terminate( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4625
 // Size: 0x3c, Type: bool
 function isvehicledead( asmname, statename, tostatename, params )
@@ -1813,7 +1814,7 @@ function isvehicledead( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x466a
 // Size: 0x16, Type: bool
 function isnotinvehicle()
@@ -1822,7 +1823,7 @@ function isnotinvehicle()
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4689
 // Size: 0xc7, Type: bool
 function function_99cabda949b9375a( asmname, statename, tostatename, params )
@@ -1850,7 +1851,7 @@ function function_99cabda949b9375a( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4759
 // Size: 0x6c, Type: bool
 function function_29fed6f5a8b07e74( asmname, statename, tostatename, params )
@@ -1864,7 +1865,7 @@ function function_29fed6f5a8b07e74( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x47ce
 // Size: 0x107
 function function_3e064916882c7b95( asmname, statename, params )
@@ -1893,7 +1894,7 @@ function function_3e064916882c7b95( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x48de
 // Size: 0xa9
 function function_b6fb6cffe3f92b36( asmname, statename, params )
@@ -1914,7 +1915,7 @@ function function_b6fb6cffe3f92b36( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x498f
 // Size: 0x68
 function vehicleshouldstophide( asmname, statename, tostatename, params )
@@ -1928,7 +1929,7 @@ function vehicleshouldstophide( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x49ff
 // Size: 0x3b
 function function_fda43da6e52af4b5( asmname, statename, params )
@@ -1938,7 +1939,7 @@ function function_fda43da6e52af4b5( asmname, statename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4a42
 // Size: 0xee, Type: bool
 function function_b4b7ff53be58de23( asmname, statename, tostatename, params )
@@ -1959,7 +1960,7 @@ function function_b4b7ff53be58de23( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4b39
 // Size: 0x123
 function function_b0734010e3a7e4b3( asmname, statename, tostatename, params )
@@ -1987,7 +1988,7 @@ function function_b0734010e3a7e4b3( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4c64
 // Size: 0xa1, Type: bool
 function function_b373bc69137d18d1( asmname, statename, tostatename, params )
@@ -2006,7 +2007,7 @@ function function_b373bc69137d18d1( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4d0e
 // Size: 0x2d, Type: bool
 function vehicleshouldrunexit( asmname, statename, tostatename, params )
@@ -2015,7 +2016,7 @@ function vehicleshouldrunexit( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4d44
 // Size: 0x44, Type: bool
 function vehiclegetoutcodemove( asmname, statename, tostatename, params )
@@ -2029,10 +2030,10 @@ function vehiclegetoutcodemove( asmname, statename, tostatename, params )
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d91
 // Size: 0x18b
-function function_eba2c90ee8749a0f()
+function vehiclecollisionwatcher()
 {
     self endon( "EndVehicleCollisionThread" );
     self endon( "death" );
@@ -2063,16 +2064,16 @@ function function_eba2c90ee8749a0f()
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4f24
 // Size: 0x23
 function function_c9c1b653ecdcaffd( asmname, statename, params )
 {
-    thread function_eba2c90ee8749a0f();
+    thread vehiclecollisionwatcher();
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f4f
 // Size: 0x19
 function function_535f605646d65a4d()
@@ -2084,7 +2085,7 @@ function function_535f605646d65a4d()
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4f70
 // Size: 0x23
 function function_ea6fcddde1c07c00( asmname, statename, params )
@@ -2095,7 +2096,7 @@ function function_ea6fcddde1c07c00( asmname, statename, params )
 /#
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4f9b
     // Size: 0x1b, Type: dev
     function function_ef6a628ea4adc090()
@@ -2107,7 +2108,7 @@ function function_ea6fcddde1c07c00( asmname, statename, params )
 #/
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4fbe
 // Size: 0x17a, Type: bool
 function function_9e3ca0a0abcf9cf0( asmname, statename, tostatename, params )
@@ -2151,7 +2152,7 @@ function function_9e3ca0a0abcf9cf0( asmname, statename, tostatename, params )
 /#
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x5141
     // Size: 0x80, Type: dev
     function function_b8fad26db245639d( asmname, statename, arc, alias, xanim, message )
@@ -2162,7 +2163,7 @@ function function_9e3ca0a0abcf9cf0( asmname, statename, tostatename, params )
     }
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x51c9
     // Size: 0x3a3, Type: dev
     function function_f3e1b78b6e0b6b0( asmname, statename, arc )
@@ -2272,7 +2273,7 @@ function function_9e3ca0a0abcf9cf0( asmname, statename, tostatename, params )
     }
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x5574
     // Size: 0x136, Type: dev
     function function_839aa14eda8a2d82( asmname, statename, params )

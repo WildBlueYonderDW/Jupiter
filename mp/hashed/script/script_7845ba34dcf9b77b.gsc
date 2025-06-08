@@ -5,7 +5,7 @@
 #namespace namespace_746991ada5f529ec;
 
 // Namespace namespace_746991ada5f529ec / namespace_ba8cfebbc70bb00b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9e
 // Size: 0x65
 function createevent()
@@ -18,7 +18,7 @@ function createevent()
 }
 
 // Namespace namespace_746991ada5f529ec / namespace_ba8cfebbc70bb00b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10b
 // Size: 0x122
 function getevent()

@@ -1,5 +1,4 @@
 #using script_16ea1b94f0f381b3;
-#using script_22f1701e151b9d12;
 #using script_3a13b8032b62a5e6;
 #using script_41387eecc35b88bf;
 #using script_4e6e58ab5d96c2b0;
@@ -14,6 +13,7 @@
 #using scripts\common\devgui;
 #using scripts\common\system;
 #using scripts\common\utility;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\loot\common_item;
 #using scripts\cp_mp\overlord;
 #using scripts\cp_mp\radiation;
@@ -34,7 +34,7 @@
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 0, eflags: 0x5
-// Checksum 0x0, Offset: 0xb36
+// Checksum 0x0, Offset: 0xb38
 // Size: 0x21
 function private autoexec __init__system__()
 {
@@ -43,7 +43,7 @@ function private autoexec __init__system__()
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xb5f
+// Checksum 0x0, Offset: 0xb61
 // Size: 0x17
 function private function_13dad5c9339829d7()
 {
@@ -52,8 +52,8 @@ function private function_13dad5c9339829d7()
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb7e
+// Params 3
+// Checksum 0x0, Offset: 0xb80
 // Size: 0x84c
 function init( var_736128b97152603e, no_timer, disable_ai )
 {
@@ -187,8 +187,8 @@ function init( var_736128b97152603e, no_timer, disable_ai )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d2
+// Params 0
+// Checksum 0x0, Offset: 0x13d4
 // Size: 0x22
 function function_d090388a81292bef()
 {
@@ -201,8 +201,8 @@ function function_d090388a81292bef()
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13fd
+// Params 0
+// Checksum 0x0, Offset: 0x13ff
 // Size: 0x38, Type: bool
 function expansion_started()
 {
@@ -210,8 +210,8 @@ function expansion_started()
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x143e
+// Params 0
+// Checksum 0x0, Offset: 0x1440
 // Size: 0x222
 function start_expansion()
 {
@@ -252,8 +252,8 @@ function start_expansion()
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1668
+// Params 1
+// Checksum 0x0, Offset: 0x166a
 // Size: 0x247
 function function_dd834b585f86b332( params )
 {
@@ -326,8 +326,8 @@ function function_dd834b585f86b332( params )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18b7
+// Params 1
+// Checksum 0x0, Offset: 0x18b9
 // Size: 0xa1
 function function_8f95016c770a1f8c( params )
 {
@@ -359,7 +359,7 @@ function function_8f95016c770a1f8c( params )
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1960
+// Checksum 0x0, Offset: 0x1962
 // Size: 0x15a
 function private function_698d99f6cc939e34( heli )
 {
@@ -387,7 +387,7 @@ function private function_698d99f6cc939e34( heli )
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1ac2
+// Checksum 0x0, Offset: 0x1ac4
 // Size: 0x2a
 function private function_6203604aa47a23a3( heli, gasmask )
 {
@@ -397,8 +397,8 @@ function private function_6203604aa47a23a3( heli, gasmask )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1af4
+// Params 0
+// Checksum 0x0, Offset: 0x1af6
 // Size: 0x18c
 function function_7bf6e6f83216f4bd()
 {
@@ -424,8 +424,8 @@ function function_7bf6e6f83216f4bd()
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c89
+// Params 0
+// Checksum 0x0, Offset: 0x1c8b
 // Size: 0x81d
 function function_4b40a61f53dd9122()
 {
@@ -552,8 +552,8 @@ function function_4b40a61f53dd9122()
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24ae
+// Params 1
+// Checksum 0x0, Offset: 0x24b0
 // Size: 0x61
 function function_2deaea362f60497a( s_exfil )
 {
@@ -563,8 +563,8 @@ function function_2deaea362f60497a( s_exfil )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2518
+// Params 1
+// Checksum 0x0, Offset: 0x251a
 // Size: 0xa3
 function function_52be02397ea5f937( info_struct )
 {
@@ -580,8 +580,8 @@ function function_52be02397ea5f937( info_struct )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25c3
+// Params 1
+// Checksum 0x0, Offset: 0x25c5
 // Size: 0xe8
 function function_d52bfc09d86c8636( params )
 {
@@ -607,8 +607,8 @@ function function_d52bfc09d86c8636( params )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26b3
+// Params 1
+// Checksum 0x0, Offset: 0x26b5
 // Size: 0x17
 function function_1e80b64e11b75717( state )
 {
@@ -616,8 +616,8 @@ function function_1e80b64e11b75717( state )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26d2
+// Params 1
+// Checksum 0x0, Offset: 0x26d4
 // Size: 0x4d
 function set_timer_time( seconds )
 {
@@ -627,7 +627,7 @@ function set_timer_time( seconds )
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2727
+// Checksum 0x0, Offset: 0x2729
 // Size: 0x87
 function private function_d8626a2206442680()
 {
@@ -658,7 +658,7 @@ function private function_d8626a2206442680()
 
     // Namespace aether_storm / namespace_6776e8e74ed64842
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x27b6
+    // Checksum 0x0, Offset: 0x27b8
     // Size: 0x64, Type: dev
     function private function_82d15002698f32a8()
     {
@@ -685,7 +685,7 @@ function private function_d8626a2206442680()
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2822
+// Checksum 0x0, Offset: 0x2824
 // Size: 0x2de
 function private function_abc28a284657371f()
 {
@@ -761,7 +761,7 @@ function private function_abc28a284657371f()
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2b08
+// Checksum 0x0, Offset: 0x2b0a
 // Size: 0x13f
 function private function_9a4d5d4bcc9e2c58()
 {
@@ -792,8 +792,8 @@ function private function_9a4d5d4bcc9e2c58()
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c4f
+// Params 0
+// Checksum 0x0, Offset: 0x2c51
 // Size: 0x95
 function function_a143c9a0fa3af9f6()
 {
@@ -810,7 +810,7 @@ function function_a143c9a0fa3af9f6()
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x2cec
+// Checksum 0x0, Offset: 0x2cee
 // Size: 0x4a, Type: bool
 function private function_8adcb7c5489211ae( requestid, instance, agent, ai_data )
 {
@@ -828,8 +828,8 @@ function private function_8adcb7c5489211ae( requestid, instance, agent, ai_data 
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d3f
+// Params 0
+// Checksum 0x0, Offset: 0x2d41
 // Size: 0x294
 function function_e427c341b9abc409()
 {
@@ -874,7 +874,7 @@ function function_e427c341b9abc409()
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x2fdb
+// Checksum 0x0, Offset: 0x2fdd
 // Size: 0x76
 function private function_9b971ebaff7c3eaa( requestid, instance, agent, ai_data )
 {
@@ -890,7 +890,7 @@ function private function_9b971ebaff7c3eaa( requestid, instance, agent, ai_data 
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3059
+// Checksum 0x0, Offset: 0x305b
 // Size: 0x81
 function private function_ff996236e6d7763e( params )
 {
@@ -902,11 +902,11 @@ function private function_ff996236e6d7763e( params )
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x30e2
-// Size: 0x205
+// Checksum 0x0, Offset: 0x30e4
+// Size: 0x21a
 function private function_1852c6ed3ffb360e( params )
 {
-    if ( !isdefined( params.smeansofdeath ) || params.smeansofdeath == "MOD_SUICIDE" )
+    if ( !isdefined( params.smeansofdeath ) || params.smeansofdeath == "MOD_SUICIDE" || params.smeansofdeath == "MOD_TRIGGER_HURT" )
     {
         spawnpoint = getclosestpointonnavmesh( level.aether_storm.starting_origin );
         var_957d0419ff6605b9 = namespace_2b1145f62aa835b8::get_aitype_by_subclass_sharedfunc( "zombie_disciple_hvt_stormcaller" );
@@ -932,7 +932,7 @@ function private function_1852c6ed3ffb360e( params )
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x32ef
+// Checksum 0x0, Offset: 0x3306
 // Size: 0x1d7
 function private function_94ed84e06d08efd3()
 {
@@ -960,7 +960,7 @@ function private function_94ed84e06d08efd3()
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x34ce
+// Checksum 0x0, Offset: 0x34e5
 // Size: 0x144
 function private function_fad17bd00c6aaaa2( params )
 {
@@ -989,7 +989,7 @@ function private function_fad17bd00c6aaaa2( params )
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x361a
+// Checksum 0x0, Offset: 0x3631
 // Size: 0x5dd
 function private function_db25872d3eb4f360()
 {
@@ -1130,7 +1130,7 @@ function private function_db25872d3eb4f360()
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3bff
+// Checksum 0x0, Offset: 0x3c16
 // Size: 0x3b5
 function private function_ebf8ee98cf7a3be0()
 {
@@ -1194,8 +1194,8 @@ function private function_ebf8ee98cf7a3be0()
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fbc
+// Params 1
+// Checksum 0x0, Offset: 0x3fd3
 // Size: 0x1cd
 function function_ea13f5b63d920d2f( cluster_origin )
 {
@@ -1233,7 +1233,7 @@ function function_ea13f5b63d920d2f( cluster_origin )
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x4191
+// Checksum 0x0, Offset: 0x41a8
 // Size: 0x283
 function private _lightning_strike_damage( instance, note, param, var_535d9c3fdddab5a9 )
 {
@@ -1268,7 +1268,7 @@ function private _lightning_strike_damage( instance, note, param, var_535d9c3fdd
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x441c
+// Checksum 0x0, Offset: 0x4433
 // Size: 0x2b
 function private _lightning_strike_finished( instance, note, param, var_535d9c3fdddab5a9 )
 {
@@ -1276,8 +1276,8 @@ function private _lightning_strike_finished( instance, note, param, var_535d9c3f
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x444f
+// Params 3
+// Checksum 0x0, Offset: 0x4466
 // Size: 0x15f
 function function_1ccf067179383388( victim, shock_duration, damage )
 {
@@ -1326,8 +1326,8 @@ function function_1ccf067179383388( victim, shock_duration, damage )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x45b6
+// Params 3
+// Checksum 0x0, Offset: 0x45cd
 // Size: 0x7d
 function function_1e93e4747cd83387( victim, shock_duration, damage )
 {
@@ -1343,8 +1343,8 @@ function function_1e93e4747cd83387( victim, shock_duration, damage )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x463b
+// Params 3
+// Checksum 0x0, Offset: 0x4652
 // Size: 0xe4
 function function_88888e5d4a0feebd( victim, shock_duration, damage )
 {
@@ -1367,8 +1367,8 @@ function function_88888e5d4a0feebd( victim, shock_duration, damage )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4727
+// Params 1
+// Checksum 0x0, Offset: 0x473e
 // Size: 0x39
 function function_f4df458e2841cbf1( params )
 {
@@ -1381,8 +1381,8 @@ function function_f4df458e2841cbf1( params )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4768
+// Params 1
+// Checksum 0x0, Offset: 0x477f
 // Size: 0x39
 function function_38b3b1600f7440b1( params )
 {
@@ -1395,8 +1395,8 @@ function function_38b3b1600f7440b1( params )
 }
 
 // Namespace aether_storm / namespace_6776e8e74ed64842
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47a9
+// Params 1
+// Checksum 0x0, Offset: 0x47c0
 // Size: 0x21
 function function_d0f8b9fdea272469( sparams )
 {
@@ -1410,7 +1410,7 @@ function function_d0f8b9fdea272469( sparams )
 
     // Namespace aether_storm / namespace_6776e8e74ed64842
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x47d2
+    // Checksum 0x0, Offset: 0x47e9
     // Size: 0x82f, Type: dev
     function private function_3a2ca530d33dbb7c()
     {
@@ -1564,13 +1564,14 @@ function function_d0f8b9fdea272469( sparams )
 
     // Namespace aether_storm / namespace_6776e8e74ed64842
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x5009
+    // Checksum 0x0, Offset: 0x5020
     // Size: 0x24e, Type: dev
     function private function_8c073da924b036f8()
     {
         level endon( "<dev string:x53f>" );
         
-        for (timer = 0; true; timer = 0) {
+        for ( timer = 0; true ; timer = 0 )
+        {
             if ( getdvarint( @"hash_e2d799f3be57182c", 0 ) && timer == 0 )
             {
                 print3d( level.aether_storm.final_exfil.origin + ( 0, 0, 300 ), "<dev string:x13db>", ( 1, 1, 1 ), 1, 25, 5, 1 );
@@ -1598,8 +1599,8 @@ function function_d0f8b9fdea272469( sparams )
     }
 
     // Namespace aether_storm / namespace_6776e8e74ed64842
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x525f
+    // Params 1
+    // Checksum 0x0, Offset: 0x5276
     // Size: 0x578, Type: dev
     function function_108d531ae15fcc87( params )
     {
@@ -1663,8 +1664,8 @@ function function_d0f8b9fdea272469( sparams )
     }
 
     // Namespace aether_storm / namespace_6776e8e74ed64842
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x57df
+    // Params 1
+    // Checksum 0x0, Offset: 0x57f6
     // Size: 0x397, Type: dev
     function debug_announcement( params )
     {
@@ -1763,8 +1764,8 @@ function function_d0f8b9fdea272469( sparams )
     }
 
     // Namespace aether_storm / namespace_6776e8e74ed64842
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5b7e
+    // Params 2
+    // Checksum 0x0, Offset: 0x5b95
     // Size: 0x1f, Type: dev
     function function_fb316270994fd943( notification, delay )
     {

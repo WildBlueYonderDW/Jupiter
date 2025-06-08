@@ -7,7 +7,7 @@
 #namespace samsite;
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55c
 // Size: 0x227
 function function_4390cfb8004a4e9c( turret )
@@ -53,7 +53,7 @@ function function_4390cfb8004a4e9c( turret )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x78b
 // Size: 0x1d5
 function function_fefa23bed4e70fb2( struct, model, turretweapon )
@@ -106,7 +106,7 @@ function function_fefa23bed4e70fb2( struct, model, turretweapon )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x969
 // Size: 0x5b
 function function_f7c5fc38fdc4df8c( turret, sam_modelname )
@@ -122,7 +122,7 @@ function function_f7c5fc38fdc4df8c( turret, sam_modelname )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9cc
 // Size: 0x85
 function function_5970ddc4fd448e37( num, sam_modelname )
@@ -145,7 +145,7 @@ function function_5970ddc4fd448e37( num, sam_modelname )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa5a
 // Size: 0x263
 function function_44e4433ebac52609( istest )
@@ -226,7 +226,7 @@ function function_44e4433ebac52609( istest )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcc5
 // Size: 0xc2
 function sam_spawn( struct )
@@ -242,7 +242,7 @@ function sam_spawn( struct )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd90
 // Size: 0xfb
 function sam_idle()
@@ -277,7 +277,7 @@ function sam_idle()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe93
 // Size: 0x104
 function function_71cf043af949590c()
@@ -310,7 +310,7 @@ function function_71cf043af949590c()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf9f
 // Size: 0x33
 function function_2add68d4c86e555b()
@@ -322,7 +322,7 @@ function function_2add68d4c86e555b()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfda
 // Size: 0xe7
 function function_37cc51487b6e95dc( point, num_positions, path_radius )
@@ -347,7 +347,7 @@ function function_37cc51487b6e95dc( point, num_positions, path_radius )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10ca
 // Size: 0x23f
 function function_e6142ecc1a9ce89( sam_site )
@@ -413,7 +413,7 @@ function function_e6142ecc1a9ce89( sam_site )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1311
 // Size: 0x2ef
 function function_fc364b4fcc0d2051( sam_site )
@@ -504,7 +504,7 @@ function function_fc364b4fcc0d2051( sam_site )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1608
 // Size: 0x2ff
 function sam_explode( attacker, part, var_a69a18b6e859e6b4 )
@@ -597,7 +597,7 @@ function sam_explode( attacker, part, var_a69a18b6e859e6b4 )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x190f
 // Size: 0x3e
 function function_bc293ec7591c985()
@@ -617,7 +617,7 @@ function function_bc293ec7591c985()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1955
 // Size: 0x5d
 function sam_playerdamage( player )
@@ -634,7 +634,7 @@ function sam_playerdamage( player )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19ba
 // Size: 0x3b
 function function_e864db8a259b11d0()
@@ -651,7 +651,7 @@ function function_e864db8a259b11d0()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19fd
 // Size: 0x27, Type: bool
 function function_a00baa7c74f5f04d( idamage )
@@ -665,7 +665,7 @@ function function_a00baa7c74f5f04d( idamage )
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a2d
 // Size: 0x23
 function function_ad922931d55b782b()
@@ -681,7 +681,7 @@ function function_ad922931d55b782b()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a58
 // Size: 0x68
 function function_d8ca43a821bdfe1a()
@@ -714,7 +714,7 @@ function function_d8ca43a821bdfe1a()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ac8
 // Size: 0x65
 function function_7647015ee3137876()
@@ -737,7 +737,7 @@ function function_7647015ee3137876()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b35
 // Size: 0x39
 function function_3c11327e37345bb2()
@@ -747,7 +747,7 @@ function function_3c11327e37345bb2()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b76
 // Size: 0x33
 function function_14c8eb2e0b67d409()
@@ -757,7 +757,7 @@ function function_14c8eb2e0b67d409()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bb1
 // Size: 0x35, Type: bool
 function isvalidplayer()
@@ -786,7 +786,7 @@ function isvalidplayer()
 }
 
 // Namespace samsite / scripts\cp_mp\samsite
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bef
 // Size: 0x63
 function function_3e95edbf2a19f0a1()

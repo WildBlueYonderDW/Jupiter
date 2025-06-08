@@ -11,7 +11,7 @@
 #namespace loot_drop;
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x622
 // Size: 0x4a
 function function_251cd47c5242ae4f()
@@ -26,7 +26,7 @@ function function_251cd47c5242ae4f()
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x674
 // Size: 0x24f
 function on_zombie_ai_killed( params )
@@ -111,7 +111,7 @@ function on_zombie_ai_killed( params )
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8cb
 // Size: 0x82
 function on_ai_killed( params )
@@ -139,7 +139,7 @@ function on_ai_killed( params )
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x955
 // Size: 0x1b2
 function function_1ebeccaabab5d730( params )
@@ -207,7 +207,7 @@ function function_1ebeccaabab5d730( params )
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb0f
 // Size: 0xb5
 function function_97ed4e4e49d3e1b()
@@ -226,7 +226,7 @@ function function_97ed4e4e49d3e1b()
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbcc
 // Size: 0x18d
 function function_1415d77bc67b91fc( weapon, origin )
@@ -253,7 +253,7 @@ function function_1415d77bc67b91fc( weapon, origin )
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd61
 // Size: 0x49
 function function_97263a41a3e0f9d7()
@@ -273,7 +273,7 @@ function function_97263a41a3e0f9d7()
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdb3
 // Size: 0xd4
 function function_ecfc5eec680d2b6()
@@ -311,7 +311,7 @@ function function_ecfc5eec680d2b6()
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe90
 // Size: 0xba
 function function_25c1bfac5c9b6573()
@@ -346,7 +346,7 @@ function function_25c1bfac5c9b6573()
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf53
 // Size: 0x3c
 function function_f22dd81df2150b04()
@@ -365,7 +365,7 @@ function function_f22dd81df2150b04()
 }
 
 // Namespace loot_drop / namespace_4fc51f3f2cc55291
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf98
 // Size: 0x33
 function function_3ca2b9357c34701()

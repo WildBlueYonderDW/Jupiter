@@ -16,7 +16,7 @@
 #namespace manager;
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46d
 // Size: 0x2b
 function main()
@@ -35,7 +35,7 @@ function main()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a0
 // Size: 0x2e6
 function init()
@@ -95,7 +95,7 @@ function init()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x78e
 // Size: 0x75
 function function_cadea9f6440479c0( stealthbundlename )
@@ -212,7 +212,7 @@ function private set_stealth_bundle_internal( stealthbundle )
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc20
 // Size: 0xeb
 function function_dc19ea08106ca928( state )
@@ -241,7 +241,7 @@ function function_dc19ea08106ca928( state )
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd14
 // Size: 0x64
 function function_ef72c03cbcb43194( state, var_b8f2440e43198535 )
@@ -260,7 +260,7 @@ function function_ef72c03cbcb43194( state, var_b8f2440e43198535 )
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd80
 // Size: 0x60
 function setup_stealth_funcs()
@@ -273,7 +273,7 @@ function setup_stealth_funcs()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xde8
 // Size: 0x47e
 function set_default_settings()
@@ -336,7 +336,7 @@ function set_default_settings()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x126e
 // Size: 0x1f3
 function init_event_distances()
@@ -369,7 +369,7 @@ function init_event_distances()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1469
 // Size: 0xd5
 function set_event_distances( array )
@@ -392,7 +392,7 @@ function set_event_distances( array )
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1546
 // Size: 0x13
 function set_custom_distances( array )
@@ -401,7 +401,7 @@ function set_custom_distances( array )
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1561
 // Size: 0x172
 function set_detect_ranges_internal( hidden, spotted, var_8f3f480583606401 )
@@ -456,7 +456,7 @@ function set_detect_ranges_internal( hidden, spotted, var_8f3f480583606401 )
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16db
 // Size: 0xe1
 function manager_thread()
@@ -497,7 +497,7 @@ function manager_thread()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17c4
 // Size: 0xae, Type: bool
 function anyone_in_combat()
@@ -526,7 +526,7 @@ function anyone_in_combat()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x187b
 // Size: 0x91, Type: bool
 function function_6c78f7f002b9d507()
@@ -546,7 +546,7 @@ function function_6c78f7f002b9d507()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1915
 // Size: 0x3, Type: bool
 function anyone_in_hunt()
@@ -555,7 +555,7 @@ function anyone_in_hunt()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1921
 // Size: 0x10e
 function update_stealth_spotted_thread()
@@ -608,7 +608,7 @@ function update_stealth_spotted_thread()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a37
 // Size: 0x99
 function teams_thread()
@@ -626,7 +626,7 @@ function teams_thread()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ad8
 // Size: 0xc0
 function event_change( name )
@@ -648,7 +648,7 @@ function event_change( name )
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ba0
 // Size: 0x4c
 function init_save()
@@ -665,7 +665,7 @@ function init_save()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bf4
 // Size: 0x3b
 function player_grenade_check()
@@ -680,7 +680,7 @@ function player_grenade_check()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c37
 // Size: 0x83
 function player_grenade_check_dieout( grenade )
@@ -697,7 +697,7 @@ function player_grenade_check_dieout( grenade )
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cc2
 // Size: 0x60d
 function init_stealth_volumes()
@@ -797,7 +797,7 @@ function init_stealth_volumes()
 }
 
 // Namespace manager / scripts\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22d7
 // Size: 0x3e
 function playerlootenabled()

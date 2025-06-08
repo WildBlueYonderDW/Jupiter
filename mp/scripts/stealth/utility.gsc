@@ -16,7 +16,7 @@
 #namespace utility;
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x261
 // Size: 0x59
 function get_group( name )
@@ -30,7 +30,7 @@ function get_group( name )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c3
 // Size: 0xe3
 function group_flag_clear( f, group )
@@ -57,7 +57,7 @@ function group_flag_clear( f, group )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ae
 // Size: 0x58
 function group_flag_set( f )
@@ -75,7 +75,7 @@ function group_flag_set( f )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40e
 // Size: 0x39, Type: bool
 function group_flag( f )
@@ -86,7 +86,7 @@ function group_flag( f )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x450
 // Size: 0x4d
 function get_group_flagname( f, group )
@@ -102,7 +102,7 @@ function get_group_flagname( f, group )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a6
 // Size: 0x26
 function group_flag_wait( f )
@@ -112,7 +112,7 @@ function group_flag_wait( f )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d4
 // Size: 0x26
 function group_flag_waitopen( f )
@@ -122,7 +122,7 @@ function group_flag_waitopen( f )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x502
 // Size: 0x2f
 function group_flag_wait_or_timeout( f, timer )
@@ -132,7 +132,7 @@ function group_flag_wait_or_timeout( f, timer )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x539
 // Size: 0x2f
 function group_flag_waitopen_or_timeout( f, timer )
@@ -142,7 +142,7 @@ function group_flag_waitopen_or_timeout( f, timer )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x570
 // Size: 0x147
 function group_flag_init( f )
@@ -184,7 +184,7 @@ function group_flag_init( f )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6bf
 // Size: 0x69
 function group_setcombatgoalradius( group, goalradius )
@@ -200,7 +200,7 @@ function group_setcombatgoalradius( group, goalradius )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x730
 // Size: 0xda
 function group_add()
@@ -217,7 +217,7 @@ function group_add()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x812
 // Size: 0x46, Type: bool
 function group_spotted_flag()
@@ -232,7 +232,7 @@ function group_spotted_flag()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x861
 // Size: 0x17
 function any_groups_in_combat()
@@ -248,7 +248,7 @@ function any_groups_in_combat()
 /#
 
     // Namespace utility / scripts\stealth\utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x881
     // Size: 0x24, Type: dev
     function check_stealth()
@@ -259,7 +259,7 @@ function any_groups_in_combat()
 #/
 
 // Namespace utility / scripts\stealth\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8ad
 // Size: 0x3f
 function set_detect_ranges( hidden, spotted, var_8f3f480583606401 )
@@ -273,7 +273,7 @@ function set_detect_ranges( hidden, spotted, var_8f3f480583606401 )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8f4
 // Size: 0xc1
 function set_min_detect_range_darkness( hidden, spotted )
@@ -299,7 +299,7 @@ function set_min_detect_range_darkness( hidden, spotted )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9bd
 // Size: 0xc1
 function function_f3883fe06a11269( hidden, spotted )
@@ -325,7 +325,7 @@ function function_f3883fe06a11269( hidden, spotted )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa86
 // Size: 0x84
 function do_stealth()
@@ -351,7 +351,7 @@ function do_stealth()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb12
 // Size: 0x10f
 function save_last_goal()
@@ -394,7 +394,7 @@ function save_last_goal()
 /#
 
     // Namespace utility / scripts\stealth\utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xc29
     // Size: 0x19, Type: dev
     function set_patrol_move_loop_anim( animoverride )
@@ -405,7 +405,7 @@ function save_last_goal()
 #/
 
 // Namespace utility / scripts\stealth\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc4a
 // Size: 0x51
 function set_patrol_style( style, allowreact, reactposition, magnitude )
@@ -421,7 +421,7 @@ function set_patrol_style( style, allowreact, reactposition, magnitude )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca3
 // Size: 0x1b
 function get_patrol_style()
@@ -431,7 +431,7 @@ function get_patrol_style()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcc7
 // Size: 0x1c
 function set_patrol_react( position, magnitude )
@@ -440,7 +440,7 @@ function set_patrol_react( position, magnitude )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xceb
 // Size: 0xb0, Type: bool
 function function_783cf2a7aaab23c()
@@ -463,7 +463,7 @@ function function_783cf2a7aaab23c()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda4
 // Size: 0x32
 function set_path_dist( ent )
@@ -472,7 +472,7 @@ function set_path_dist( ent )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xdde
 // Size: 0x78
 function get_path_dist_sq( from, to, var_320b468dc1d97042 )
@@ -486,7 +486,8 @@ function get_path_dist_sq( from, to, var_320b468dc1d97042 )
     
     distsq = 0;
     
-    for (i = 1; i < path.size; i++) {
+    for ( i = 1; i < path.size ; i++ )
+    {
         distsq += distancesquared( path[ i - 1 ], path[ i ] );
     }
     
@@ -494,7 +495,7 @@ function get_path_dist_sq( from, to, var_320b468dc1d97042 )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe5f
 // Size: 0x16
 function remove_path_dist()
@@ -504,7 +505,7 @@ function remove_path_dist()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe7d
 // Size: 0xad
 function is_visible( other )
@@ -537,7 +538,7 @@ function is_visible( other )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf33
 // Size: 0x3b, Type: bool
 function tagging_shield()
@@ -546,7 +547,7 @@ function tagging_shield()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf77
 // Size: 0x47
 function setbattlechatter( state )
@@ -558,7 +559,7 @@ function setbattlechatter( state )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xfc6
 // Size: 0x74
 function addeventplaybcs( eventaction, eventtype, modifier, delay, eventstruct, force )
@@ -570,7 +571,7 @@ function addeventplaybcs( eventaction, eventtype, modifier, delay, eventstruct, 
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1042
 // Size: 0x74
 function animgenericcustomanimmode( guy, custom_animmode, anime, tag, thread_func, var_212b748f7df888b0 )
@@ -582,7 +583,7 @@ function animgenericcustomanimmode( guy, custom_animmode, anime, tag, thread_fun
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10be
 // Size: 0x11f
 function stealth_music( musichidden, musicspotted )
@@ -615,7 +616,7 @@ function stealth_music( musichidden, musicspotted )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11e5
 // Size: 0x3d
 function function_4efc63abff5f42d3()
@@ -632,7 +633,7 @@ function function_4efc63abff5f42d3()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x122a
 // Size: 0x3d
 function function_f81d9864f1fc95a6()
@@ -649,7 +650,7 @@ function function_f81d9864f1fc95a6()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x126f
 // Size: 0x68
 function stealth_music_stop()
@@ -664,7 +665,7 @@ function stealth_music_stop()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12df
 // Size: 0x146
 function stealth_music_pause_monitor( musichidden, musicspotted )
@@ -701,7 +702,7 @@ function stealth_music_pause_monitor( musichidden, musicspotted )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x142d
 // Size: 0x25
 function stealth_music_transition( aliasto )
@@ -713,7 +714,7 @@ function stealth_music_transition( aliasto )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x145a
 // Size: 0x1b
 function update_light_meter()
@@ -725,7 +726,7 @@ function update_light_meter()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x147d
 // Size: 0x124
 function enable_stealth_for_ai( enabled )
@@ -761,7 +762,7 @@ function enable_stealth_for_ai( enabled )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15a9
 // Size: 0x68
 function custom_state_functions( array )
@@ -780,7 +781,7 @@ function custom_state_functions( array )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1619
 // Size: 0x3c
 function set_stealth_func( type, func )
@@ -794,7 +795,7 @@ function set_stealth_func( type, func )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x165d
 // Size: 0x5b
 function set_event_override( eventtype, funcoverride )
@@ -806,7 +807,7 @@ function set_event_override( eventtype, funcoverride )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c0
 // Size: 0x3a, Type: bool
 function bcisincombat()
@@ -827,7 +828,7 @@ function bcisincombat()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1703
 // Size: 0x4, Type: bool
 function _autosave_stealthcheck()
@@ -836,7 +837,7 @@ function _autosave_stealthcheck()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1710
 // Size: 0x30
 function get_player_drone()
@@ -848,7 +849,7 @@ function get_player_drone()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1748
 // Size: 0x1d
 function is_idling()
@@ -862,7 +863,7 @@ function is_idling()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x176e
 // Size: 0x1d
 function function_c9f8c83eb3de1b32()
@@ -876,7 +877,7 @@ function function_c9f8c83eb3de1b32()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1794
 // Size: 0x1d
 function function_cdca96a984fdb85()
@@ -890,7 +891,7 @@ function function_cdca96a984fdb85()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17ba
 // Size: 0x1e
 function function_6a86dd83c01f8faa()
@@ -904,7 +905,7 @@ function function_6a86dd83c01f8faa()
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17e1
 // Size: 0x30
 function function_c14048638b343b7f( state, event )
@@ -918,7 +919,7 @@ function function_c14048638b343b7f( state, event )
 }
 
 // Namespace utility / scripts\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1819
 // Size: 0xbb
 function function_6516755416a6584b( filter_func, severity )

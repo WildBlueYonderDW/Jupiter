@@ -6,7 +6,7 @@
 #namespace init;
 
 // Namespace init / scripts\stealth\init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7
 // Size: 0x9
 function main()
@@ -15,7 +15,7 @@ function main()
 }
 
 // Namespace init / scripts\stealth\init
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb8
 // Size: 0xdd
 function set_stealth_mode( enabled, musichidden, musicspotted )

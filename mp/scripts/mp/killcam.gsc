@@ -32,7 +32,7 @@
 #namespace killcam;
 
 // Namespace killcam / scripts\mp\killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd27
 // Size: 0xe0
 function init()
@@ -40,7 +40,8 @@ function init()
     level.killcam = scripts\mp\tweakables::gettweakablevalue( "game", "allowkillcam" );
     level.killcammiscitems = [];
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         id = tablelookupbyrow( "mp_cp/miscKillcamItems.csv", row, 0 );
         
         if ( !isdefined( id ) || id == "" )
@@ -63,7 +64,7 @@ function init()
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe0f
 // Size: 0x249
 function getkillcamentity( attacker, einflictor, objweapon, meansofdeath )
@@ -140,7 +141,7 @@ function getkillcamentity( attacker, einflictor, objweapon, meansofdeath )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1061
 // Size: 0x1a2, Type: bool
 function usesattackeraskillcamentity( attacker, inflictor, objweapon, meansofdeath )
@@ -184,7 +185,7 @@ function usesattackeraskillcamentity( attacker, inflictor, objweapon, meansofdea
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x120c
 // Size: 0x89, Type: bool
 function function_51cff425beb83788( attacker, einflictor, objweapon, meansofdeath )
@@ -211,7 +212,7 @@ function function_51cff425beb83788( attacker, einflictor, objweapon, meansofdeat
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x129e
 // Size: 0x80
 function usesvehiclekillcamentityrelay( attacker, inflictor, objweapon, meansofdeath )
@@ -239,7 +240,7 @@ function usesvehiclekillcamentityrelay( attacker, inflictor, objweapon, meansofd
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1326
 // Size: 0x199
 function prekillcamnotify( attacker )
@@ -299,7 +300,7 @@ function prekillcamnotify( attacker )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 16, eflags: 0x0
+// Params 16
 // Checksum 0x0, Offset: 0x14c7
 // Size: 0x1fd
 function makekillcamdata( einflictor, inflictoragentinfo, attackernum, killcamentityindex, killcamentitystarttime, killcamlookatentityindex, killcamentstickstolookatent, objweapon, offsettime, maxtime, attacker, victim, smeansofdeath, attackerloadoutperks, skippable, doslowmo )
@@ -341,7 +342,7 @@ function makekillcamdata( einflictor, inflictoragentinfo, attackernum, killcamen
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x16cd
 // Size: 0xe8
 function dokillcamfromstruct( killcamstruct, predelay, var_53c65e436a20e8e4, isfinalkillcam )
@@ -350,7 +351,7 @@ function dokillcamfromstruct( killcamstruct, predelay, var_53c65e436a20e8e4, isf
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x17bd
 // Size: 0x4a2
 function calckillcamtimes( einflictor, inflictoragentinfo, attacker, attackernum, victim, maxtime, predelay, objweapon, var_53c65e436a20e8e4, delayedtime, smeansofdeath )
@@ -504,7 +505,7 @@ function calckillcamtimes( einflictor, inflictoragentinfo, attacker, attackernum
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c68
 // Size: 0x1d
 function setkilledbyuiomnvar( killedbyplayer )
@@ -513,7 +514,7 @@ function setkilledbyuiomnvar( killedbyplayer )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c8d
 // Size: 0xb7
 function function_b07f44c04a1ab4d2( attacker )
@@ -537,7 +538,7 @@ function function_b07f44c04a1ab4d2( attacker )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d4c
 // Size: 0x31
 function function_64266f65b359ad7( attacker )
@@ -547,7 +548,7 @@ function function_64266f65b359ad7( attacker )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1d85
 // Size: 0x19e
 function setupkillcamui( attacker, victim, objweapon, killcamtimes, var_53c65e436a20e8e4, attackerloadoutperks )
@@ -592,7 +593,7 @@ function setupkillcamui( attacker, victim, objweapon, killcamtimes, var_53c65e43
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f2b
 // Size: 0x97
 function queueforkillcam()
@@ -620,7 +621,7 @@ function queueforkillcam()
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fcb
 // Size: 0x8d
 function function_89219d56ee2cf4e2()
@@ -641,7 +642,7 @@ function function_89219d56ee2cf4e2()
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 20, eflags: 0x0
+// Params 20
 // Checksum 0x0, Offset: 0x2060
 // Size: 0x455
 function killcam( einflictor, inflictoragentinfo, attackernum, killcamentityindex, killcamentitystarttime, killcamlookatentityindex, killcamentstickstolookatent, objweapon, predelay, offsettime, var_53c65e436a20e8e4, maxtime, attacker, victim, smeansofdeath, attackerloadoutperks, skippable, doslowmo, attackerhealthratio, isfinalkillcam )
@@ -787,7 +788,7 @@ function killcam( einflictor, inflictoragentinfo, attackernum, killcamentityinde
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24bd
 // Size: 0x57
 function resetstreamerposhint()
@@ -807,7 +808,7 @@ function resetstreamerposhint()
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x251c
 // Size: 0x23
 function setuppotgui( spectateplayer, durationsec )
@@ -817,7 +818,7 @@ function setuppotgui( spectateplayer, durationsec )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2547
 // Size: 0x116
 function potg_killcam( spectateentity, psoffsettime, starttimems, endtimems )
@@ -856,7 +857,7 @@ function potg_killcam( spectateentity, psoffsettime, starttimems, endtimems )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2665
 // Size: 0x2e
 function potgkillcamcleanup()
@@ -869,7 +870,7 @@ function potgkillcamcleanup()
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x269b
 // Size: 0x11d
 function setkillcamnormalweaponomnvars( objweapon, smeansofdeath, einflictor, executionref, attacker )
@@ -919,7 +920,7 @@ function setkillcamnormalweaponomnvars( objweapon, smeansofdeath, einflictor, ex
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27c0
 // Size: 0xa4
 function waitskipkillcambutton( var_53c65e436a20e8e4 )
@@ -948,7 +949,7 @@ function waitskipkillcambutton( var_53c65e436a20e8e4 )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x286c
 // Size: 0x8a
 function function_7e144cfdd1c3385e()
@@ -981,7 +982,7 @@ function function_7e144cfdd1c3385e()
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28fe
 // Size: 0x2b
 function spawnedkillcamcleanup( isfinalkillcam )
@@ -993,7 +994,7 @@ function spawnedkillcamcleanup( isfinalkillcam )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2931
 // Size: 0x2d
 function endedkillcamcleanup( isfinalkillcam )
@@ -1005,7 +1006,7 @@ function endedkillcamcleanup( isfinalkillcam )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2966
 // Size: 0xbb
 function killcamcleanup( updatesession, gameended, isfinalkillcam )
@@ -1039,7 +1040,7 @@ function killcamcleanup( updatesession, gameended, isfinalkillcam )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a29
 // Size: 0x1fe
 function setkillcamweapontypeomnvars( objweapon, einflictor, attacker )
@@ -1087,7 +1088,8 @@ function setkillcamweapontypeomnvars( objweapon, einflictor, attacker )
         
         var_26e8678bd2761ff9 = 0;
         
-        for (attachindex = 0; attachindex < attachments.size; attachindex++) {
+        for ( attachindex = 0; attachindex < attachments.size ; attachindex++ )
+        {
             var_b72fb037a64a6025 = attachments[ attachindex ];
             
             if ( attachmentisselectable( rootweaponname, var_b72fb037a64a6025 ) )
@@ -1107,14 +1109,15 @@ function setkillcamweapontypeomnvars( objweapon, einflictor, attacker )
             }
         }
         
-        for (attachindex = var_26e8678bd2761ff9; attachindex < 8; attachindex++) {
+        for ( attachindex = var_26e8678bd2761ff9; attachindex < 8 ; attachindex++ )
+        {
             self setclientomnvar( "ui_killcam_killedby_attachment" + attachindex + 1, -1 );
         }
     }
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c2f
 // Size: 0x47
 function setkillcamsupertypeomnvars( objweapon )
@@ -1127,7 +1130,7 @@ function setkillcamsupertypeomnvars( objweapon )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c7e
 // Size: 0x56
 function setkillcamequipmenttypeomnvars( objweapon )
@@ -1145,7 +1148,7 @@ function setkillcamequipmenttypeomnvars( objweapon )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cdc
 // Size: 0x41
 function setkillcamexecutiontypeomnvars( ref )
@@ -1165,7 +1168,7 @@ function setkillcamexecutiontypeomnvars( ref )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d25
 // Size: 0x23
 function setkillcammisctypeomnvars( id )
@@ -1176,7 +1179,7 @@ function setkillcammisctypeomnvars( id )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d50
 // Size: 0xa8
 function isnoneweaponinflictor( einflictor )
@@ -1204,7 +1207,7 @@ function isnoneweaponinflictor( einflictor )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e01
 // Size: 0x76
 function isenvironmentalinflictor( einflictor )
@@ -1227,7 +1230,7 @@ function isenvironmentalinflictor( einflictor )
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e80
 // Size: 0xa
 function resetplayeromnvarsonkillcam()
@@ -1236,7 +1239,7 @@ function resetplayeromnvarsonkillcam()
 }
 
 // Namespace killcam / scripts\mp\killcam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e92
 // Size: 0xe5
 function function_e2177089f4dd55a( time )

@@ -9,7 +9,7 @@
 #namespace perk_equipmentping;
 
 // Namespace perk_equipmentping / scripts\mp\perks\perk_equipmentping
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d0
 // Size: 0x233
 function runequipmentping( ignore, lastpingtime )
@@ -103,7 +103,7 @@ function runequipmentping( ignore, lastpingtime )
 }
 
 // Namespace perk_equipmentping / scripts\mp\perks\perk_equipmentping
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x40b
 // Size: 0x91
 function markdangerzoneonminimap( target, equipment )
@@ -131,7 +131,7 @@ function markdangerzoneonminimap( target, equipment )
 }
 
 // Namespace perk_equipmentping / scripts\mp\perks\perk_equipmentping
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a4
 // Size: 0x1b
 function watchfordeath( objid )
@@ -141,7 +141,7 @@ function watchfordeath( objid )
 }
 
 // Namespace perk_equipmentping / scripts\mp\perks\perk_equipmentping
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c7
 // Size: 0x8d
 function markasrelaysource( otherplayer )

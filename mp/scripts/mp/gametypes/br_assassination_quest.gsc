@@ -26,9 +26,9 @@
 #namespace br_assassination_quest;
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe2f
-// Size: 0x707
+// Params 2
+// Checksum 0x0, Offset: 0xe38
+// Size: 0x723
 function getcontractdata( data, questmodifier )
 {
     if ( !isdefined( level.var_7e12f6eb4fcb4ea1 ) )
@@ -36,18 +36,18 @@ function getcontractdata( data, questmodifier )
         level.var_7e12f6eb4fcb4ea1 = spawnstruct();
         var_ad60abb5340e959d = getdvarint( @"hash_364dca8e32d958fa", 0 );
         level.var_7e12f6eb4fcb4ea1.time = var_ad60abb5340e959d != 0 ? var_ad60abb5340e959d : function_ea591c2a379e3424( "assassination" );
-        level.var_7e12f6eb4fcb4ea1.minsearchradius = getdvarint( @"hash_7959df486cbcdfd1", 5000 );
+        level.var_7e12f6eb4fcb4ea1.minsearchradius = getdvarint( @"scr_br_asn_min_search_radius", 5000 );
         level.var_7e12f6eb4fcb4ea1.searchlimit = getdvarint( @"hash_c7054640761be2ef", 30000 );
         level.var_7e12f6eb4fcb4ea1.searchincrement = getdvarint( @"hash_34d149dfddecfa91", 5000 );
         level.var_7e12f6eb4fcb4ea1.var_fddf856ca727f674 = getdvarint( @"hash_4caf4c58c978d604", 100000 );
         level.var_7e12f6eb4fcb4ea1.circlerangemin = getdvarint( @"hash_50295a3311ce37ee", 100 );
         level.var_7e12f6eb4fcb4ea1.circlerangemax = getdvarint( @"hash_50064c3311a7d16c", 1000 );
-        level.var_7e12f6eb4fcb4ea1.var_3bd4a66a02968ecc = getdvarint( @"hash_25ba69e846763b6", 1500 );
+        level.var_7e12f6eb4fcb4ea1.var_3bd4a66a02968ecc = getdvarint( @"scr_br_asn_circle_radius_small", 1500 );
         level.var_7e12f6eb4fcb4ea1.var_5094b22fd45a3ef6 = getdvarint( @"hash_dd2f37f5ec580f08", 2000 );
-        level.var_7e12f6eb4fcb4ea1.var_a3487335038df794 = getdvarint( @"hash_fadec1d4adeb8ac2", 3500 );
+        level.var_7e12f6eb4fcb4ea1.var_a3487335038df794 = getdvarint( @"scr_br_asn_circle_radius_large", 3500 );
         level.var_7e12f6eb4fcb4ea1.var_65dd392cafab8111 = getdvarint( @"hash_5b3f6111a22668cd", 2500 );
         level.var_7e12f6eb4fcb4ea1.var_a12a720226632b47 = getdvarint( @"hash_befde6c410585907", 5000 );
-        level.var_7e12f6eb4fcb4ea1.var_7ff8f0c0c1a00138 = getdvarint( @"hash_39de8fbdf85b44b4", 16000 );
+        level.var_7e12f6eb4fcb4ea1.var_7ff8f0c0c1a00138 = getdvarint( @"scr_br_asn_ideal_search_radius", 16000 );
         level.var_7e12f6eb4fcb4ea1.var_7be7f4c0bdc1c7b0 = getdvarint( @"hash_581d50a4690192ae", 1 );
         level.var_7e12f6eb4fcb4ea1.var_892526141a627e1 = getdvarint( @"hash_5746ccd8cb2f6b4f", 1 );
         level.var_7e12f6eb4fcb4ea1.pingreward = getdvarint( @"hash_27b13c5274e3fd4f", 1 );
@@ -59,7 +59,12 @@ function getcontractdata( data, questmodifier )
         level.var_7e12f6eb4fcb4ea1.var_b98803eb51e32299 = getdvarint( @"hash_bdcbfd809661e5c", 1 );
         level.var_aab4fba7a041b281 = [];
         assert( isdefined( game[ "<dev string:x1c>" ] ) );
-        game[ "dialog" ][ "mission_ass_accept" ] = "mssc_grav_mssn";
+        
+        if ( getdvar( @"ui_gametype", "" ) != "limbo" )
+        {
+            game[ "dialog" ][ "mission_ass_accept" ] = "mssc_grav_mssn";
+        }
+        
         game[ "dialog" ][ "mission_ass_hunted" ] = "mssh_grav_mssn";
         game[ "dialog" ][ "mission_ass_success" ] = "msss_grav_mssn";
         game[ "dialog" ][ "mission_ass_hunted_success" ] = "mshs_grav_mssn";
@@ -110,8 +115,8 @@ function getcontractdata( data, questmodifier )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x153e
+// Params 0
+// Checksum 0x0, Offset: 0x1563
 // Size: 0x26, Type: bool
 function function_45cad8c5444e638d()
 {
@@ -124,8 +129,8 @@ function function_45cad8c5444e638d()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x156d
+// Params 0
+// Checksum 0x0, Offset: 0x1592
 // Size: 0x4, Type: bool
 function function_6e27ee56573d1441()
 {
@@ -133,8 +138,8 @@ function function_6e27ee56573d1441()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x157a
+// Params 0
+// Checksum 0x0, Offset: 0x159f
 // Size: 0x4f4
 function function_a7284c22710ed3dc()
 {
@@ -233,8 +238,8 @@ function function_a7284c22710ed3dc()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a76
+// Params 2
+// Checksum 0x0, Offset: 0x1a9b
 // Size: 0x3d
 function function_ad56d982450c9db2( var_765bece0781ff770, var_19400d1b86740a76 )
 {
@@ -250,8 +255,8 @@ function function_ad56d982450c9db2( var_765bece0781ff770, var_19400d1b86740a76 )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1abc
+// Params 0
+// Checksum 0x0, Offset: 0x1ae1
 // Size: 0x3c4
 function function_b946c0db13d4d90e()
 {
@@ -330,8 +335,8 @@ function function_b946c0db13d4d90e()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e88
+// Params 0
+// Checksum 0x0, Offset: 0x1ead
 // Size: 0x141
 function function_2529487ea7a39317()
 {
@@ -360,8 +365,8 @@ function function_2529487ea7a39317()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fd1
+// Params 6
+// Checksum 0x0, Offset: 0x1ff6
 // Size: 0x62
 function function_cba960b48c4b1e3c( splashref, contractindex, rewardcash, team, delay, var_42b1e877ab187c6 )
 {
@@ -374,8 +379,8 @@ function function_cba960b48c4b1e3c( splashref, contractindex, rewardcash, team, 
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x203b
+// Params 4
+// Checksum 0x0, Offset: 0x2060
 // Size: 0x50
 function function_6a5270845ce88f1e( team, splash_key, params, var_42b1e877ab187c6 )
 {
@@ -388,8 +393,8 @@ function function_6a5270845ce88f1e( team, splash_key, params, var_42b1e877ab187c
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2093
+// Params 4
+// Checksum 0x0, Offset: 0x20b8
 // Size: 0x50
 function function_70eb08dc68820a5a( player, splash_key, params, var_42b1e877ab187c6 )
 {
@@ -402,8 +407,8 @@ function function_70eb08dc68820a5a( player, splash_key, params, var_42b1e877ab18
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20eb
+// Params 1
+// Checksum 0x0, Offset: 0x2110
 // Size: 0x4e
 function function_ca07a6ca5c3c8af5( player )
 {
@@ -420,8 +425,8 @@ function function_ca07a6ca5c3c8af5( player )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2141
+// Params 1
+// Checksum 0x0, Offset: 0x2166
 // Size: 0x60
 function function_f6755bd234f8e261( player )
 {
@@ -438,8 +443,8 @@ function function_f6755bd234f8e261( player )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x21a9
+// Params 2
+// Checksum 0x0, Offset: 0x21ce
 // Size: 0x1b
 function quest_onplayerkilled( attacker, victim )
 {
@@ -447,8 +452,8 @@ function quest_onplayerkilled( attacker, victim )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21cc
+// Params 1
+// Checksum 0x0, Offset: 0x21f1
 // Size: 0x13
 function function_4f702ea532a7ca6e( victim )
 {
@@ -456,8 +461,8 @@ function function_4f702ea532a7ca6e( victim )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21e7
+// Params 1
+// Checksum 0x0, Offset: 0x220c
 // Size: 0x13
 function quest_onplayerdisconnect( player )
 {
@@ -465,8 +470,8 @@ function quest_onplayerdisconnect( player )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2202
+// Params 1
+// Checksum 0x0, Offset: 0x2227
 // Size: 0x15c
 function aq_playerremoved( player )
 {
@@ -500,8 +505,8 @@ function aq_playerremoved( player )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2366
+// Params 1
+// Checksum 0x0, Offset: 0x238b
 // Size: 0x124
 function quest_oncancel( team )
 {
@@ -533,8 +538,8 @@ function quest_oncancel( team )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2492
+// Params 3
+// Checksum 0x0, Offset: 0x24b7
 // Size: 0x14b
 function function_83d3732a571f142a( player, oldteam, newteam )
 {
@@ -568,8 +573,8 @@ function function_83d3732a571f142a( player, oldteam, newteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25e5
+// Params 3
+// Checksum 0x0, Offset: 0x260a
 // Size: 0x6f
 function function_75b53ad947495f9c( player, oldteam, newteam )
 {
@@ -591,8 +596,8 @@ function function_75b53ad947495f9c( player, oldteam, newteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x265c
+// Params 3
+// Checksum 0x0, Offset: 0x2681
 // Size: 0x23
 function function_39d180c28fe14643( player, oldteam, newteam )
 {
@@ -600,8 +605,8 @@ function function_39d180c28fe14643( player, oldteam, newteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2687
+// Params 3
+// Checksum 0x0, Offset: 0x26ac
 // Size: 0x36
 function function_1a1b4d2219442853( player, oldteam, newteam )
 {
@@ -609,8 +614,8 @@ function function_1a1b4d2219442853( player, oldteam, newteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26c5
+// Params 3
+// Checksum 0x0, Offset: 0x26ea
 // Size: 0xd2
 function function_da75eeb9ce2e7700( player, oldteam, newteam )
 {
@@ -638,8 +643,8 @@ function function_da75eeb9ce2e7700( player, oldteam, newteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x279f
+// Params 3
+// Checksum 0x0, Offset: 0x27c4
 // Size: 0xb9
 function function_ac21667e0f251104( success, results, endstate )
 {
@@ -666,8 +671,8 @@ function function_ac21667e0f251104( success, results, endstate )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2860
+// Params 0
+// Checksum 0x0, Offset: 0x2885
 // Size: 0x77
 function function_7b16ac880855a705()
 {
@@ -691,8 +696,8 @@ function function_7b16ac880855a705()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x28df
+// Params 3
+// Checksum 0x0, Offset: 0x2904
 // Size: 0x2d0
 function function_68046efe0486e9b( contract, instance, team )
 {
@@ -787,8 +792,8 @@ function function_68046efe0486e9b( contract, instance, team )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bb7
+// Params 0
+// Checksum 0x0, Offset: 0x2bdc
 // Size: 0x1a
 function function_a9b3b9469a7a2746()
 {
@@ -799,8 +804,8 @@ function function_a9b3b9469a7a2746()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bd9
+// Params 1
+// Checksum 0x0, Offset: 0x2bfe
 // Size: 0x165
 function function_d1967972e47f382a( time )
 {
@@ -835,8 +840,8 @@ function function_d1967972e47f382a( time )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d46
+// Params 0
+// Checksum 0x0, Offset: 0x2d6b
 // Size: 0x45
 function function_6ca0a919d228d381()
 {
@@ -853,8 +858,8 @@ function function_6ca0a919d228d381()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d93
+// Params 3
+// Checksum 0x0, Offset: 0x2db8
 // Size: 0x704
 function determinetargetteam( player, var_86a80a97f4672fc8, var_3aac45873695d767 )
 {
@@ -1055,8 +1060,8 @@ function determinetargetteam( player, var_86a80a97f4672fc8, var_3aac45873695d767
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x34a0
+// Params 4
+// Checksum 0x0, Offset: 0x34c5
 // Size: 0x462
 function determinetargetplayer( targetteam, hunter, var_86a80a97f4672fc8, var_3aac45873695d767 )
 {
@@ -1191,8 +1196,8 @@ function determinetargetplayer( targetteam, hunter, var_86a80a97f4672fc8, var_3a
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x390b
+// Params 2
+// Checksum 0x0, Offset: 0x3930
 // Size: 0x7d8
 function function_296cd8d07488f3bc( player, var_86a80a97f4672fc8 )
 {
@@ -1440,8 +1445,8 @@ function function_296cd8d07488f3bc( player, var_86a80a97f4672fc8 )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x40eb
+// Params 3
+// Checksum 0x0, Offset: 0x4110
 // Size: 0x486
 function function_fb19ef2575c8b7d0( targetteam, hunter, var_86a80a97f4672fc8 )
 {
@@ -1587,11 +1592,12 @@ function function_fb19ef2575c8b7d0( targetteam, hunter, var_86a80a97f4672fc8 )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4579
-// Size: 0x8d
+// Params 1
+// Checksum 0x0, Offset: 0x459e
+// Size: 0xa1
 function determinetrackingcircleposition( targetplayer )
 {
+    self.var_570d954fd995e267 = targetplayer.origin;
     search_location = ( targetplayer.origin[ 0 ], targetplayer.origin[ 1 ], level.var_7e12f6eb4fcb4ea1.var_5094b22fd45a3ef6 );
     
     if ( !scripts\mp\gametypes\br_public::function_d6ae35e0ce14bbaf() )
@@ -1603,8 +1609,8 @@ function determinetrackingcircleposition( targetplayer )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x460e
+// Params 0
+// Checksum 0x0, Offset: 0x4647
 // Size: 0x168
 function determinetrackingcirclesize()
 {
@@ -1657,8 +1663,8 @@ function determinetrackingcirclesize()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x477e
+// Params 1
+// Checksum 0x0, Offset: 0x47b7
 // Size: 0x92
 function function_654d23cd5c127447( targetteam )
 {
@@ -1679,8 +1685,8 @@ function function_654d23cd5c127447( targetteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4819
+// Params 1
+// Checksum 0x0, Offset: 0x4852
 // Size: 0x15e
 function function_bb57baa350ae283d( var_8e264a7a7f2c12d7 )
 {
@@ -1718,8 +1724,8 @@ function function_bb57baa350ae283d( var_8e264a7a7f2c12d7 )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4980
+// Params 1
+// Checksum 0x0, Offset: 0x49b9
 // Size: 0x49
 function function_1386cea959e64462( dist )
 {
@@ -1737,8 +1743,8 @@ function function_1386cea959e64462( dist )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x49d1
+// Params 0
+// Checksum 0x0, Offset: 0x4a0a
 // Size: 0x16b
 function determineobjectivevisibility()
 {
@@ -1776,8 +1782,8 @@ function determineobjectivevisibility()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b44
+// Params 1
+// Checksum 0x0, Offset: 0x4b7d
 // Size: 0x5f
 function getnewtargetplayer( hunter )
 {
@@ -1796,8 +1802,8 @@ function getnewtargetplayer( hunter )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bab
+// Params 0
+// Checksum 0x0, Offset: 0x4be4
 // Size: 0xdf
 function removeallaqui()
 {
@@ -1820,9 +1826,9 @@ function removeallaqui()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c92
-// Size: 0x21d
+// Params 2
+// Checksum 0x0, Offset: 0x4ccb
+// Size: 0x236
 function function_210be3d9455cfb83( hunter, victim )
 {
     level endon( "game_ended" );
@@ -1866,24 +1872,31 @@ function function_210be3d9455cfb83( hunter, victim )
     {
         pingorigin = hunter.origin;
     }
-    else
+    else if ( isdefined( victim ) )
     {
         pingorigin = victim.origin;
     }
-    
-    timepassed = 0;
-    
-    while ( timepassed < pingtime )
+    else
     {
-        triggerportableradarpingteam( pingorigin, self.hunterteam, radius, var_ec00e2b85c91da0c );
-        wait var_6c3716013ea4f716;
-        timepassed += var_6c3716013ea4f716;
+        pingorigin = self.var_570d954fd995e267;
+    }
+    
+    if ( isdefined( pingorigin ) )
+    {
+        timepassed = 0;
+        
+        while ( timepassed < pingtime )
+        {
+            triggerportableradarpingteam( pingorigin, self.hunterteam, radius, var_ec00e2b85c91da0c );
+            wait var_6c3716013ea4f716;
+            timepassed += var_6c3716013ea4f716;
+        }
     }
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb7
+// Params 1
+// Checksum 0x0, Offset: 0x4f09
 // Size: 0x7a
 function gettargetteamkills( targetteam )
 {
@@ -1898,8 +1911,8 @@ function gettargetteamkills( targetteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f3a
+// Params 1
+// Checksum 0x0, Offset: 0x4f8c
 // Size: 0x7a
 function gettargetteamscore( targetteam )
 {
@@ -1914,8 +1927,8 @@ function gettargetteamscore( targetteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fbd
+// Params 1
+// Checksum 0x0, Offset: 0x500f
 // Size: 0x7a
 function function_ad9233002503b2de( targetteam )
 {
@@ -1930,8 +1943,8 @@ function function_ad9233002503b2de( targetteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5040
+// Params 1
+// Checksum 0x0, Offset: 0x5092
 // Size: 0x9c
 function function_be40beb0c9cc8727( targetteam )
 {
@@ -1953,8 +1966,8 @@ function function_be40beb0c9cc8727( targetteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50e5
+// Params 0
+// Checksum 0x0, Offset: 0x5137
 // Size: 0x1f, Type: bool
 function function_2755c7f527cf8d2()
 {
@@ -1962,8 +1975,8 @@ function function_2755c7f527cf8d2()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x510d
+// Params 0
+// Checksum 0x0, Offset: 0x515f
 // Size: 0x26
 function getplayerkills()
 {
@@ -1976,8 +1989,8 @@ function getplayerkills()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x513b
+// Params 1
+// Checksum 0x0, Offset: 0x518d
 // Size: 0x4e
 function getfilterformodifier( modifier )
 {
@@ -1992,8 +2005,8 @@ function getfilterformodifier( modifier )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5191
+// Params 2
+// Checksum 0x0, Offset: 0x51e3
 // Size: 0x5a
 function showassassinationhud( instance, questmodifier )
 {
@@ -2012,8 +2025,8 @@ function showassassinationhud( instance, questmodifier )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x51f3
+// Params 1
+// Checksum 0x0, Offset: 0x5245
 // Size: 0x25
 function hideassassinationhud( instance )
 {
@@ -2023,8 +2036,8 @@ function hideassassinationhud( instance )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5220
+// Params 1
+// Checksum 0x0, Offset: 0x5272
 // Size: 0x7c
 function updateassassinationthreatlevel( targetteam )
 {
@@ -2035,8 +2048,8 @@ function updateassassinationthreatlevel( targetteam )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x52a4
+// Params 2
+// Checksum 0x0, Offset: 0x52f6
 // Size: 0x27
 function showassassinationtargethud( targetplayer, threatlevel )
 {
@@ -2045,8 +2058,8 @@ function showassassinationtargethud( targetplayer, threatlevel )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x52d3
+// Params 3
+// Checksum 0x0, Offset: 0x5325
 // Size: 0x46
 function function_70b452a81a4408d6( targetplayer, threatlevel, task )
 {
@@ -2056,8 +2069,8 @@ function function_70b452a81a4408d6( targetplayer, threatlevel, task )
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5321
+// Params 0
+// Checksum 0x0, Offset: 0x5373
 // Size: 0x19
 function hideassassinationtargethud()
 {
@@ -2066,8 +2079,8 @@ function hideassassinationtargethud()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5342
+// Params 0
+// Checksum 0x0, Offset: 0x5394
 // Size: 0xfd
 function updateassassinationhud()
 {
@@ -2085,8 +2098,8 @@ function updateassassinationhud()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5447
+// Params 0
+// Checksum 0x0, Offset: 0x5499
 // Size: 0x6c
 function gametypeoverrideassassinsearchparams()
 {
@@ -2108,8 +2121,8 @@ function gametypeoverrideassassinsearchparams()
 }
 
 // Namespace br_assassination_quest / scripts\mp\gametypes\br_assassination_quest
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x54bc
+// Params 0
+// Checksum 0x0, Offset: 0x550e
 // Size: 0x21
 function function_5f352fb76c54705c()
 {

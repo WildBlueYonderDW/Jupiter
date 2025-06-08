@@ -1,7 +1,7 @@
 #namespace mp_jup_skydiving_fx;
 
 // Namespace mp_jup_skydiving_fx / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1217
 // Size: 0x516
 function main()

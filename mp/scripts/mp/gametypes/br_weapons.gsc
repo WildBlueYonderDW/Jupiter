@@ -36,8 +36,8 @@
 #namespace br_weapons;
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe57
+// Params 3
+// Checksum 0x0, Offset: 0xe8b
 // Size: 0xbd
 function createspawnweaponatpos( pos, ori, fullweaponobj )
 {
@@ -70,8 +70,8 @@ function createspawnweaponatpos( pos, ori, fullweaponobj )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1d
+// Params 2
+// Checksum 0x0, Offset: 0xf51
 // Size: 0xa0
 function createspawnweaponatposfromname( pos, completeweaponname )
 {
@@ -89,8 +89,8 @@ function createspawnweaponatposfromname( pos, completeweaponname )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc6
+// Params 0
+// Checksum 0x0, Offset: 0xffa
 // Size: 0x1db
 function stripweaponsfromplayer()
 {
@@ -153,8 +153,8 @@ function stripweaponsfromplayer()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11a9
+// Params 1
+// Checksum 0x0, Offset: 0x11dd
 // Size: 0x234
 function playerdropweaponfrominventory( itemtype )
 {
@@ -235,8 +235,8 @@ function playerdropweaponfrominventory( itemtype )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e5
+// Params 5
+// Checksum 0x0, Offset: 0x1419
 // Size: 0x6c
 function weaponspawn( weaponobj, droppingplayer, dropinfo, firstspawn, showtrail )
 {
@@ -247,8 +247,8 @@ function weaponspawn( weaponobj, droppingplayer, dropinfo, firstspawn, showtrail
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x145a
+// Params 1
+// Checksum 0x0, Offset: 0x148e
 // Size: 0xfe
 function function_55c5d35c8c76a95b( pickupent )
 {
@@ -287,8 +287,8 @@ function function_55c5d35c8c76a95b( pickupent )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1561
+// Params 1
+// Checksum 0x0, Offset: 0x1595
 // Size: 0x48
 function function_5a80dba504420037( index )
 {
@@ -306,8 +306,8 @@ function function_5a80dba504420037( index )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15b1
+// Params 1
+// Checksum 0x0, Offset: 0x15e5
 // Size: 0x48
 function function_2bf8eaf550fbe399( ammotype )
 {
@@ -325,8 +325,8 @@ function function_2bf8eaf550fbe399( ammotype )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1601
+// Params 2
+// Checksum 0x0, Offset: 0x1635
 // Size: 0x5d
 function function_1352197e2482f1cf( player, ammotype )
 {
@@ -344,8 +344,8 @@ function function_1352197e2482f1cf( player, ammotype )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1666
+// Params 2
+// Checksum 0x0, Offset: 0x169a
 // Size: 0x53
 function function_88d62a65ff69eac( player, ammotype )
 {
@@ -362,7 +362,7 @@ function function_88d62a65ff69eac( player, ammotype )
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x16c2
+// Checksum 0x0, Offset: 0x16f6
 // Size: 0x60
 function private function_64f6ebff728689ab( player, weapon )
 {
@@ -381,8 +381,8 @@ function private function_64f6ebff728689ab( player, weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x172a
+// Params 2
+// Checksum 0x0, Offset: 0x175e
 // Size: 0x7e
 function function_2ab3bda08c595a32( player, weapon )
 {
@@ -405,14 +405,15 @@ function function_2ab3bda08c595a32( player, weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17b1
+// Params 2
+// Checksum 0x0, Offset: 0x17e5
 // Size: 0x62
 function function_a41d365900f73302( player, weapon )
 {
     heavyweapons = player.heavyweapons;
     
-    for (heavyweaponindex = 0; heavyweaponindex < heavyweapons.size; heavyweaponindex++) {
+    for ( heavyweaponindex = 0; heavyweaponindex < heavyweapons.size ; heavyweaponindex++ )
+    {
         heavyweapon = heavyweapons[ heavyweaponindex ];
         
         if ( isdefined( heavyweapon ) && issameweapon( heavyweapon, weapon ) )
@@ -425,8 +426,8 @@ function function_a41d365900f73302( player, weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x181c
+// Params 2
+// Checksum 0x0, Offset: 0x1850
 // Size: 0x6e
 function function_86a5c7670325346b( player, index )
 {
@@ -449,8 +450,8 @@ function function_86a5c7670325346b( player, index )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1892
+// Params 2
+// Checksum 0x0, Offset: 0x18c6
 // Size: 0x3a
 function function_9db6a7e1567bb1f9( player, weaponindex )
 {
@@ -465,8 +466,8 @@ function function_9db6a7e1567bb1f9( player, weaponindex )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d5
+// Params 2
+// Checksum 0x0, Offset: 0x1909
 // Size: 0x2f
 function function_1a561e5ef2eca63a( player, weapon )
 {
@@ -475,8 +476,8 @@ function function_1a561e5ef2eca63a( player, weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x190d
+// Params 3
+// Checksum 0x0, Offset: 0x1941
 // Size: 0x46
 function function_ae30366a2d519a57( player, index, team )
 {
@@ -489,8 +490,8 @@ function function_ae30366a2d519a57( player, index, team )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x195b
+// Params 6
+// Checksum 0x0, Offset: 0x198f
 // Size: 0x108b
 function takeweaponpickup( pickupent, var_db943473454f6ea6, weaponstowed, backpackequip, fromkiosk, var_b4b637b07f3f9f25 )
 {
@@ -772,7 +773,8 @@ function takeweaponpickup( pickupent, var_db943473454f6ea6, weaponstowed, backpa
                         
                         if ( namespace_b16531563568eaba::function_e0fc1230452cf4e7() )
                         {
-                            for (i = 0; i < 3; i++) {
+                            for ( i = 0; i < 3 ; i++ )
+                            {
                                 weapontocheck = br_pickups::function_13ecf3644442a3e7( self, i );
                                 
                                 if ( isdefined( weapontocheck ) && weapontocheck == var_ec22a950f210e39 )
@@ -990,8 +992,8 @@ function takeweaponpickup( pickupent, var_db943473454f6ea6, weaponstowed, backpa
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29ee
+// Params 0
+// Checksum 0x0, Offset: 0x2a22
 // Size: 0x99
 function function_27ef2c36eb95d796()
 {
@@ -1019,8 +1021,8 @@ function function_27ef2c36eb95d796()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a90
+// Params 1
+// Checksum 0x0, Offset: 0x2ac4
 // Size: 0x31
 function function_9c602bfca5626687( pickupent )
 {
@@ -1037,8 +1039,8 @@ function function_9c602bfca5626687( pickupent )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ac9
+// Params 2
+// Checksum 0x0, Offset: 0x2afd
 // Size: 0x11b
 function takeammopickup( pickupent, fromdelay )
 {
@@ -1082,8 +1084,8 @@ function takeammopickup( pickupent, fromdelay )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bed
+// Params 3
+// Checksum 0x0, Offset: 0x2c21
 // Size: 0xae
 function br_forcegiveweapon( weaponname, player, completeweapon )
 {
@@ -1103,8 +1105,8 @@ function br_forcegiveweapon( weaponname, player, completeweapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ca3
+// Params 2
+// Checksum 0x0, Offset: 0x2cd7
 // Size: 0x101
 function br_getrandomlootweapon( weapontype, rarity )
 {
@@ -1138,8 +1140,8 @@ function br_getrandomlootweapon( weapontype, rarity )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dad
+// Params 1
+// Checksum 0x0, Offset: 0x2de1
 // Size: 0x23
 function br_getweaponstartingclipammo( weaponobj )
 {
@@ -1148,8 +1150,8 @@ function br_getweaponstartingclipammo( weaponobj )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dd9
+// Params 9
+// Checksum 0x0, Offset: 0x2e0d
 // Size: 0x2eb, Type: bool
 function br_forcegivecustomweapon( player, weaponobj, weaponfullname, weaponbasename, var_bde57922cf2180d3, var_eaac92793f70b7df, overrideorigin, metadata, pastteam )
 {
@@ -1234,8 +1236,8 @@ function br_forcegivecustomweapon( player, weaponobj, weaponfullname, weaponbase
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30cd
+// Params 0
+// Checksum 0x0, Offset: 0x3101
 // Size: 0x308
 function br_ammo_init()
 {
@@ -1294,8 +1296,8 @@ function br_ammo_init()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33dd
+// Params 0
+// Checksum 0x0, Offset: 0x3411
 // Size: 0x236
 function br_ammo_player_init()
 {
@@ -1369,8 +1371,8 @@ function br_ammo_player_init()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x361b
+// Params 0
+// Checksum 0x0, Offset: 0x364f
 // Size: 0x5a8
 function function_6681a5284fd5fad1()
 {
@@ -1594,8 +1596,8 @@ function function_6681a5284fd5fad1()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bcb
+// Params 0
+// Checksum 0x0, Offset: 0x3bff
 // Size: 0x21
 function br_give_starting_ammo()
 {
@@ -1608,8 +1610,8 @@ function br_give_starting_ammo()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bf4
+// Params 0
+// Checksum 0x0, Offset: 0x3c28
 // Size: 0x72
 function br_ammo_player_clear()
 {
@@ -1627,8 +1629,8 @@ function br_ammo_player_clear()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c6e
+// Params 0
+// Checksum 0x0, Offset: 0x3ca2
 // Size: 0xe9, Type: bool
 function br_ammo_player_is_maxed_out()
 {
@@ -1670,8 +1672,8 @@ function br_ammo_player_is_maxed_out()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d60
+// Params 0
+// Checksum 0x0, Offset: 0x3d94
 // Size: 0x111
 function br_ammo_player_max_out()
 {
@@ -1701,8 +1703,8 @@ function br_ammo_player_max_out()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e79
+// Params 2
+// Checksum 0x0, Offset: 0x3ead
 // Size: 0xaf, Type: bool
 function br_ammo_type_player_full( player, ammotype )
 {
@@ -1731,8 +1733,8 @@ function br_ammo_type_player_full( player, ammotype )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f31
+// Params 5
+// Checksum 0x0, Offset: 0x3f65
 // Size: 0x246
 function br_ammo_give_type( player, ammotype, amount, dropleftovers, var_ef37464796f8ed )
 {
@@ -1810,8 +1812,8 @@ function br_ammo_give_type( player, ammotype, amount, dropleftovers, var_ef37464
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4180
+// Params 3
+// Checksum 0x0, Offset: 0x41b4
 // Size: 0x80, Type: bool
 function br_ammo_take_type( player, ammotype, amount )
 {
@@ -1833,8 +1835,8 @@ function br_ammo_take_type( player, ammotype, amount )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4209
+// Params 0
+// Checksum 0x0, Offset: 0x423d
 // Size: 0x74
 function br_ammo_player_hud_monitor()
 {
@@ -1853,8 +1855,8 @@ function br_ammo_player_hud_monitor()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4285
+// Params 2
+// Checksum 0x0, Offset: 0x42b9
 // Size: 0x82
 function br_ammo_player_hud_update_ammotype( ammotype, bpulse )
 {
@@ -1873,8 +1875,8 @@ function br_ammo_player_hud_update_ammotype( ammotype, bpulse )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x430f
+// Params 1
+// Checksum 0x0, Offset: 0x4343
 // Size: 0xb8
 function br_ammo_update_weapons( player )
 {
@@ -1908,8 +1910,8 @@ function br_ammo_update_weapons( player )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43cf
+// Params 1
+// Checksum 0x0, Offset: 0x4403
 // Size: 0xd2
 function function_b91fb4a74bcae056( player )
 {
@@ -1944,8 +1946,8 @@ function function_b91fb4a74bcae056( player )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x44a9
+// Params 2
+// Checksum 0x0, Offset: 0x44dd
 // Size: 0xfa
 function function_5143c54fb8c3c4fd( player, ammotype )
 {
@@ -1980,8 +1982,8 @@ function function_5143c54fb8c3c4fd( player, ammotype )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x45ab
+// Params 3
+// Checksum 0x0, Offset: 0x45df
 // Size: 0x267
 function br_ammo_update_ammotype_weapons( player, ammotype, newweaponstock )
 {
@@ -1996,7 +1998,8 @@ function br_ammo_update_ammotype_weapons( player, ammotype, newweaponstock )
         lootid = loot::function_fae5e1d3de32d3f7( ammotype );
         var_750fcc188317845a = [];
         
-        for (i = 0; i < player namespace_e50e624d9af51c8c::getplayerbackpacksize( player ); i++) {
+        for ( i = 0; i < player namespace_e50e624d9af51c8c::getplayerbackpacksize( player ) ; i++ )
+        {
             if ( player namespace_e50e624d9af51c8c::getlootidatbackpackindex( i ) == lootid )
             {
                 var_750fcc188317845a[ i ] = player namespace_e50e624d9af51c8c::function_897b29adb37f06a7( i );
@@ -2052,8 +2055,8 @@ function br_ammo_update_ammotype_weapons( player, ammotype, newweaponstock )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x481a
+// Params 1
+// Checksum 0x0, Offset: 0x484e
 // Size: 0x51, Type: bool
 function function_d132e8c198bedadb( weapon )
 {
@@ -2062,8 +2065,8 @@ function function_d132e8c198bedadb( weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4874
+// Params 1
+// Checksum 0x0, Offset: 0x48a8
 // Size: 0xcb
 function function_32e653f0d47413ae( weapclass )
 {
@@ -2094,8 +2097,8 @@ function function_32e653f0d47413ae( weapclass )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4948
+// Params 1
+// Checksum 0x0, Offset: 0x497c
 // Size: 0x32, Type: bool
 function function_e659ea94b8de314d( weapon )
 {
@@ -2105,8 +2108,8 @@ function function_e659ea94b8de314d( weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4983
+// Params 1
+// Checksum 0x0, Offset: 0x49b7
 // Size: 0x3a
 function function_96133dbb3bbead33( weapon )
 {
@@ -2120,8 +2123,8 @@ function function_96133dbb3bbead33( weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49c6
+// Params 1
+// Checksum 0x0, Offset: 0x49fa
 // Size: 0x35
 function function_5b5009e9b863f073( weapon )
 {
@@ -2135,8 +2138,8 @@ function function_5b5009e9b863f073( weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a04
+// Params 1
+// Checksum 0x0, Offset: 0x4a38
 // Size: 0xd2
 function br_ammo_type_for_weapon( weapon )
 {
@@ -2181,8 +2184,8 @@ function br_ammo_type_for_weapon( weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4adf
+// Params 1
+// Checksum 0x0, Offset: 0x4b13
 // Size: 0x16
 function function_a2fa56c4e1c77ba9( weapclass )
 {
@@ -2190,8 +2193,8 @@ function function_a2fa56c4e1c77ba9( weapclass )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4afe
+// Params 1
+// Checksum 0x0, Offset: 0x4b32
 // Size: 0x54, Type: bool
 function function_9e44f8d2e11ef1a( var_73d33f45a70bfc9f )
 {
@@ -2209,8 +2212,8 @@ function function_9e44f8d2e11ef1a( var_73d33f45a70bfc9f )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b5b
+// Params 0
+// Checksum 0x0, Offset: 0x4b8f
 // Size: 0x1a
 function function_801f575ba3157258()
 {
@@ -2228,8 +2231,8 @@ function function_801f575ba3157258()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b7d
+// Params 0
+// Checksum 0x0, Offset: 0x4bb1
 // Size: 0x1dd
 function function_c0848667d62ed371()
 {
@@ -2304,8 +2307,8 @@ function function_c0848667d62ed371()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d62
+// Params 0
+// Checksum 0x0, Offset: 0x4d96
 // Size: 0x24
 function br_wait_for_complete_reload()
 {
@@ -2320,8 +2323,8 @@ function br_wait_for_complete_reload()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d8e
+// Params 3
+// Checksum 0x0, Offset: 0x4dc2
 // Size: 0x15b
 function function_c668c8660ab99773( objweapon, player, dropstruct )
 {
@@ -2369,9 +2372,9 @@ function function_c668c8660ab99773( objweapon, player, dropstruct )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ef1
-// Size: 0xc8
+// Params 2
+// Checksum 0x0, Offset: 0x4f25
+// Size: 0x103
 function br_give_weapon_clip( objweapon, numclips )
 {
     player = self;
@@ -2386,6 +2389,12 @@ function br_give_weapon_clip( objweapon, numclips )
     if ( isdefined( ammotype ) )
     {
         var_c1192c297bbf292f = int( level.br_ammo_clipsize[ ammotype ] * numclips );
+        
+        if ( function_d75b73c443421047() && objweapon.basename == "jup_cp01_sh_aromeo410_mp" && objweapon hasattachment( "jup_ammo_410g_vortex" ) )
+        {
+            var_c1192c297bbf292f = objweapon.clipsize;
+        }
+        
         maxammostock = level.var_e6ea72fc5e3fcd00[ ammotype ];
         
         if ( br_public::function_6b531c76815d77f3( ammotype ) )
@@ -2400,8 +2409,8 @@ function br_give_weapon_clip( objweapon, numclips )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fc1
+// Params 2
+// Checksum 0x0, Offset: 0x5030
 // Size: 0xa1
 function br_give_weapon_ammo( objweapon, ammo )
 {
@@ -2424,8 +2433,8 @@ function br_give_weapon_ammo( objweapon, ammo )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x506a
+// Params 1
+// Checksum 0x0, Offset: 0x50d9
 // Size: 0x4c, Type: bool
 function isvalidcustomweapon( weaponobj )
 {
@@ -2453,8 +2462,8 @@ function isvalidcustomweapon( weaponobj )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50bf
+// Params 0
+// Checksum 0x0, Offset: 0x512e
 // Size: 0x1c
 function brallowclasschoicefunc()
 {
@@ -2465,8 +2474,8 @@ function brallowclasschoicefunc()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x50e3
+// Params 1
+// Checksum 0x0, Offset: 0x5152
 // Size: 0x62
 function brloadoutupdateammo( loadoutweapons )
 {
@@ -2477,8 +2486,8 @@ function brloadoutupdateammo( loadoutweapons )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x514d
+// Params 2
+// Checksum 0x0, Offset: 0x51bc
 // Size: 0x127
 function loadout_updatebrammo( weapon, hasmaxammo )
 {
@@ -2528,8 +2537,8 @@ function loadout_updatebrammo( weapon, hasmaxammo )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x527c
+// Params 1
+// Checksum 0x0, Offset: 0x52eb
 // Size: 0xc1, Type: bool
 function function_d885e66811ee3a4d( var_4ce224053f650637 )
 {
@@ -2561,8 +2570,8 @@ function function_d885e66811ee3a4d( var_4ce224053f650637 )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5346
+// Params 0
+// Checksum 0x0, Offset: 0x53b5
 // Size: 0x2b
 function function_937acc181cfc6285()
 {
@@ -2575,8 +2584,8 @@ function function_937acc181cfc6285()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x537a
+// Params 0
+// Checksum 0x0, Offset: 0x53e9
 // Size: 0x1ff
 function function_823964aa15b30575()
 {
@@ -2597,7 +2606,8 @@ function function_823964aa15b30575()
     {
         var_aa84da7b844edaa5 = 8;
         
-        for (i = 0; i < self.primaryweapons.size; i++) {
+        for ( i = 0; i < self.primaryweapons.size ; i++ )
+        {
             primaryweaponobj = self.primaryweapons[ i ];
             
             if ( !isnullweapon( primaryweaponobj ) && !br_pickups::function_af4aefc234671c2f( i ) )
@@ -2655,8 +2665,8 @@ function function_823964aa15b30575()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5582
+// Params 1
+// Checksum 0x0, Offset: 0x55f1
 // Size: 0x107
 function function_744e28ebe63c0358( pickupweapon )
 {
@@ -2705,8 +2715,8 @@ function function_744e28ebe63c0358( pickupweapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5692
+// Params 2
+// Checksum 0x0, Offset: 0x5701
 // Size: 0x57
 function function_8dabe5259e6844e9( var_ec22a950f210e39, newweapon )
 {
@@ -2726,8 +2736,8 @@ function function_8dabe5259e6844e9( var_ec22a950f210e39, newweapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x56f2
+// Params 1
+// Checksum 0x0, Offset: 0x5761
 // Size: 0xab
 function function_671df7651500ea08( newweapon )
 {
@@ -2747,8 +2757,8 @@ function function_671df7651500ea08( newweapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x57a6
+// Params 0
+// Checksum 0x0, Offset: 0x5815
 // Size: 0x11
 function function_b1dd9dcae2f63965()
 {
@@ -2756,8 +2766,8 @@ function function_b1dd9dcae2f63965()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x57c0
+// Params 0
+// Checksum 0x0, Offset: 0x582f
 // Size: 0x39
 function function_b9da718e50063452()
 {
@@ -2771,8 +2781,8 @@ function function_b9da718e50063452()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5801
+// Params 1
+// Checksum 0x0, Offset: 0x5870
 // Size: 0xb1, Type: bool
 function function_ac3ec31be7aad7a7( weaponinstance )
 {
@@ -2795,8 +2805,8 @@ function function_ac3ec31be7aad7a7( weaponinstance )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x58bb
+// Params 2
+// Checksum 0x0, Offset: 0x592a
 // Size: 0x12a
 function function_8e7e1da48d7746e5( player, weaponpickup )
 {
@@ -2821,8 +2831,8 @@ function function_8e7e1da48d7746e5( player, weaponpickup )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x59ed
+// Params 1
+// Checksum 0x0, Offset: 0x5a5c
 // Size: 0xdc
 function function_a856fc2139eef0c( tickinterval )
 {
@@ -2851,8 +2861,8 @@ function function_a856fc2139eef0c( tickinterval )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ad1
+// Params 0
+// Checksum 0x0, Offset: 0x5b40
 // Size: 0xc4
 function function_c50d56273471bf54()
 {
@@ -2878,8 +2888,8 @@ function function_c50d56273471bf54()
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b9d
+// Params 2
+// Checksum 0x0, Offset: 0x5c0c
 // Size: 0x109, Type: bool
 function function_ad972c1d0f29841c( player, weapon )
 {
@@ -2931,8 +2941,8 @@ function function_ad972c1d0f29841c( player, weapon )
 }
 
 // Namespace br_weapons / scripts\mp\gametypes\br_weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5caf
+// Params 1
+// Checksum 0x0, Offset: 0x5d1e
 // Size: 0x3b
 function isexcludedweapon( weapon )
 {

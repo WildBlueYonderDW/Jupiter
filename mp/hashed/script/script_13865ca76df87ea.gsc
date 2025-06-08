@@ -5,7 +5,7 @@
 #namespace namespace_4f3742cd39063b9;
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf6
 // Size: 0x107
 function function_8df651a1b2728b15( blueprintname, weaponkey )
@@ -44,7 +44,7 @@ function function_8df651a1b2728b15( blueprintname, weaponkey )
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x206
 // Size: 0x107
 function function_b9ff4b6230995332( blueprintname, weaponkey )
@@ -83,7 +83,7 @@ function function_b9ff4b6230995332( blueprintname, weaponkey )
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x316
 // Size: 0xbd
 function getassetlist( bundle, assettype )
@@ -111,7 +111,7 @@ function getassetlist( bundle, assettype )
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3db
 // Size: 0x123
 function function_29e16a88682086b2( blueprintname, assettype, key )
@@ -152,7 +152,7 @@ function function_29e16a88682086b2( blueprintname, assettype, key )
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x507
 // Size: 0x13e
 function function_b9bd0a3d37510bfd( weaponname, var_85b2a5343fc91ccb, attachmentname, var_1fe8655c442492dc )
@@ -201,7 +201,7 @@ function function_b9bd0a3d37510bfd( weaponname, var_85b2a5343fc91ccb, attachment
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x64e
 // Size: 0xb6
 function function_71efed8bf57f1d39( bundle, blueprintindex )
@@ -221,7 +221,7 @@ function function_71efed8bf57f1d39( bundle, blueprintindex )
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x70d
 // Size: 0x1ad
 function function_dd2a4fb3522f314( blueprintname, weaponkey )
@@ -270,7 +270,7 @@ function function_dd2a4fb3522f314( blueprintname, weaponkey )
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c2
 // Size: 0x9d
 function function_a03b57f924bf9a77( var_9b32d1936831f5aa )
@@ -284,7 +284,7 @@ function function_a03b57f924bf9a77( var_9b32d1936831f5aa )
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x967
 // Size: 0x9c
 function function_b68fa1978a63823a( bundle )
@@ -299,7 +299,7 @@ function function_b68fa1978a63823a( bundle )
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa0b
 // Size: 0x52
 function function_1792d9f5ade0ae4a( bundle, blueprintindex, vfxkey, position )
@@ -309,7 +309,7 @@ function function_1792d9f5ade0ae4a( bundle, blueprintindex, vfxkey, position )
 }
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa65
 // Size: 0x38
 function function_696473ef4d75f1d3( bundle, blueprintindex )

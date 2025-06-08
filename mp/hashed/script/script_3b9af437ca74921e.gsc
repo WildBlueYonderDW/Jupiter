@@ -7,7 +7,7 @@
 #namespace namespace_2711c9ad461eb709;
 
 // Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16d
 // Size: 0x50
 function inittask()
@@ -19,7 +19,7 @@ function inittask()
 }
 
 // Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c5
 // Size: 0x14
 function function_851152959e7c1c87( taskinstance )
@@ -28,7 +28,7 @@ function function_851152959e7c1c87( taskinstance )
 }
 
 // Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e1
 // Size: 0xfd
 function function_4da8fcef740e954f( taskinstance )
@@ -62,7 +62,7 @@ function function_4da8fcef740e954f( taskinstance )
 }
 
 // Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e6
 // Size: 0x84
 function updateprogress( taskinstance, player )
@@ -79,7 +79,7 @@ function updateprogress( taskinstance, player )
 }
 
 // Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x372
 // Size: 0xb8
 function function_17aae3fd2c16468( taskinstance )
@@ -106,7 +106,7 @@ function function_17aae3fd2c16468( taskinstance )
 }
 
 // Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x433
 // Size: 0xd
 function oninfiljumpcompleted()
@@ -115,7 +115,7 @@ function oninfiljumpcompleted()
 }
 
 // Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x448
 // Size: 0x11a
 function onplayerentervehicle( vehicle, target )
@@ -143,7 +143,7 @@ function onplayerentervehicle( vehicle, target )
 }
 
 // Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x56a
 // Size: 0x97, Type: bool
 function function_59c1dbdc2ad03ad6( taskinstance, vehicle )
@@ -162,7 +162,7 @@ function function_59c1dbdc2ad03ad6( taskinstance, vehicle )
 }
 
 // Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60a
 // Size: 0x63
 function trybindobjective( taskinstance )

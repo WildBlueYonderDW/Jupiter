@@ -15,7 +15,7 @@
 #namespace namespace_5a87d005bee83137;
 
 // Namespace namespace_5a87d005bee83137 / namespace_d2273ed91d2b732b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e
 // Size: 0x13
 function precache( params )
@@ -34,7 +34,7 @@ function private function_f49a30f92555b827()
 }
 
 // Namespace namespace_5a87d005bee83137 / namespace_d2273ed91d2b732b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x171
 // Size: 0xe7
 function function_7c45a7e2b8990bee( asmname, statename, params )

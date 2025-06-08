@@ -16,7 +16,7 @@
 #namespace quest_race;
 
 // Namespace quest_race / namespace_61a698d8b0d50c4d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x446
 // Size: 0x6b
 function init()
@@ -26,7 +26,7 @@ function init()
 }
 
 // Namespace quest_race / namespace_61a698d8b0d50c4d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b9
 // Size: 0x21
 function on_init()
@@ -41,7 +41,7 @@ function on_init()
 }
 
 // Namespace quest_race / namespace_61a698d8b0d50c4d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e2
 // Size: 0x2
 function on_precache()
@@ -50,7 +50,7 @@ function on_precache()
 }
 
 // Namespace quest_race / namespace_61a698d8b0d50c4d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ec
 // Size: 0x2
 function on_start()
@@ -59,7 +59,7 @@ function on_start()
 }
 
 // Namespace quest_race / namespace_61a698d8b0d50c4d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f6
 // Size: 0x2
 function on_prematch_end()
@@ -68,7 +68,7 @@ function on_prematch_end()
 }
 
 // Namespace quest_race / namespace_61a698d8b0d50c4d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x500
 // Size: 0xa
 function on_infil()
@@ -77,7 +77,7 @@ function on_infil()
 }
 
 // Namespace quest_race / namespace_61a698d8b0d50c4d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x512
 // Size: 0x1e
 function set_dvars()
@@ -205,7 +205,8 @@ function private function_4534506ee8107463( race )
 // Size: 0x132
 function private function_44a6333bd124cb10( race )
 {
-    for (i = 0; i < race.checkpoint_structs.size; i++) {
+    for ( i = 0; i < race.checkpoint_structs.size ; i++ )
+    {
         checkpoint_struct = race.checkpoint_structs[ i ];
         
         if ( i != race.start_index )
@@ -332,7 +333,8 @@ function private function_cd537c18037efbe( race, var_5552fd240a86b1ae )
     radius = 80;
     angle_frac = 360 / reward_size;
     
-    for (i = 0; i < reward_size; i++) {
+    for ( i = 0; i < reward_size ; i++ )
+    {
         angle = angle_frac * i;
         xadd = cos( angle ) * radius;
         yadd = sin( angle ) * radius;
@@ -594,7 +596,7 @@ function private function_19d4d8b59f6fbfcd( race )
     }
 
     // Namespace quest_race / namespace_61a698d8b0d50c4d
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1554
     // Size: 0x17d, Type: dev
     function function_edb97f584e954807( params )

@@ -1,5 +1,4 @@
 #using script_16ea1b94f0f381b3;
-#using script_22f1701e151b9d12;
 #using script_2d400da2610fe542;
 #using script_2ff6eb4f5b8663fb;
 #using script_443d99fe707f1d9f;
@@ -16,6 +15,7 @@
 #using scripts\common\vehicle_aianim;
 #using scripts\common\vehicle_code;
 #using scripts\common\vehicle_paths;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\loot\common_cache;
 #using scripts\cp_mp\loot\common_item;
 #using scripts\cp_mp\utility\squad_utility;
@@ -37,7 +37,7 @@
 #namespace namespace_945da193e84ea7bb;
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc9
 // Size: 0xcd
 function init()
@@ -56,7 +56,7 @@ function init()
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc9e
 // Size: 0x364
 function function_d248cfa981edc561()
@@ -105,7 +105,8 @@ function function_d248cfa981edc561()
         self.vault_doors = namespace_f6368c72597c6d90::function_ad1b6accbaab404e( s_door, self.vault_doors, "vault", 1 );
     }
     
-    for (i = 0; i < var_aee2168ef9296c2b.size; i++) {
+    for ( i = 0; i < var_aee2168ef9296c2b.size ; i++ )
+    {
         cache_struct = var_aee2168ef9296c2b[ i ];
         
         if ( i == 0 )
@@ -136,7 +137,7 @@ function function_d248cfa981edc561()
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x100a
 // Size: 0x7d
 function function_b6f48b1b3dcc129b( instance, player )
@@ -149,7 +150,7 @@ function function_b6f48b1b3dcc129b( instance, player )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x108f
 // Size: 0x56
 function function_d8e0882d86531309( piecename )
@@ -164,7 +165,7 @@ function function_d8e0882d86531309( piecename )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10ed
 // Size: 0x161
 function function_a35cf12bd47f74d0()
@@ -191,13 +192,13 @@ function function_a35cf12bd47f74d0()
         thread play_sound_in_space( "smoke_grenade_expl_trans", smokegrenadeent.origin );
     }
     
-    requestid = namespace_614554f86e52695c::spawn_request( "ai_encounter:enc_vault_bishop", loc.origin, loc.radius, 1, 1, 0 );
-    namespace_614554f86e52695c::function_e4a67fe4ddca7ed5( requestid, &function_145c21969dc1144d, self );
+    requestid = scripts\cp_mp\agents\ai_spawn_director::spawn_request( "ai_encounter:enc_vault_bishop", loc.origin, loc.radius, 1, 1, 0 );
+    scripts\cp_mp\agents\ai_spawn_director::function_e4a67fe4ddca7ed5( requestid, &function_145c21969dc1144d, self );
     function_adcc96a7d541aa36( requestid, 0 );
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1256
 // Size: 0x107
 function function_145c21969dc1144d( requestid, instance, agent, data )
@@ -233,7 +234,7 @@ function private function_e4314d1dd59383d5()
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1395
 // Size: 0x261
 function function_f5041efcb5c830e0()
@@ -248,8 +249,8 @@ function function_f5041efcb5c830e0()
     
     self.var_fddd4165e203ecbf = getstruct( loc.target, "targetname" );
     self.rook_trigger = getstruct( "rook_trigger_location", "targetname" );
-    requestid = namespace_614554f86e52695c::spawn_request( "ai_encounter:enc_vault_rook", loc.origin, loc.radius, 1, 1, 0 );
-    namespace_614554f86e52695c::function_e4a67fe4ddca7ed5( requestid, &function_213b8f238df26b55, self );
+    requestid = scripts\cp_mp\agents\ai_spawn_director::spawn_request( "ai_encounter:enc_vault_rook", loc.origin, loc.radius, 1, 1, 0 );
+    scripts\cp_mp\agents\ai_spawn_director::function_e4a67fe4ddca7ed5( requestid, &function_213b8f238df26b55, self );
     function_adcc96a7d541aa36( requestid, 0 );
     data = function_9a39e23c3c52c2af( requestid );
     
@@ -281,13 +282,13 @@ function function_f5041efcb5c830e0()
     }
     
     loc2 = getstruct( "vault_rook_zombies_encounter", "targetname" );
-    var_a4d0ab6d312a821f = namespace_614554f86e52695c::spawn_request( "ai_flood_fill_encounter:enc_vault_rook_flood_zombies", loc2.origin, loc2.radius, 1, 1, 0 );
-    namespace_614554f86e52695c::function_e4a67fe4ddca7ed5( var_a4d0ab6d312a821f, &function_b125915248d5d6f8, self );
-    namespace_614554f86e52695c::function_73147cdf5c28d10c( var_a4d0ab6d312a821f, &function_71515921947dd954, rook );
+    var_a4d0ab6d312a821f = scripts\cp_mp\agents\ai_spawn_director::spawn_request( "ai_flood_fill_encounter:enc_vault_rook_flood_zombies", loc2.origin, loc2.radius, 1, 1, 0 );
+    scripts\cp_mp\agents\ai_spawn_director::function_e4a67fe4ddca7ed5( var_a4d0ab6d312a821f, &function_b125915248d5d6f8, self );
+    scripts\cp_mp\agents\ai_spawn_director::function_73147cdf5c28d10c( var_a4d0ab6d312a821f, &function_71515921947dd954, rook );
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15fe
 // Size: 0x34, Type: bool
 function function_71515921947dd954( requestid, data )
@@ -301,7 +302,7 @@ function function_71515921947dd954( requestid, data )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x163b
 // Size: 0x40
 function function_b125915248d5d6f8( requestid, instance, agent, data )
@@ -312,7 +313,7 @@ function function_b125915248d5d6f8( requestid, instance, agent, data )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1683
 // Size: 0x10e
 function function_213b8f238df26b55( requestid, instance, agent, data )
@@ -462,7 +463,7 @@ function private spawn_trigger( location, angles, length, width, height )
     }
 
     // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1abc
     // Size: 0x90, Type: dev
     function function_a913a37e48f4f7ae( v_goal, n_goal_radius )
@@ -484,7 +485,7 @@ function private spawn_trigger( location, angles, length, width, height )
 #/
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b54
 // Size: 0xc6
 function function_50eaf1d6526a26c3()
@@ -521,13 +522,13 @@ function private function_a8e25edd9bd5d91( transmission_device, player )
     if ( isdefined( s_vault_pawn_encounter ) )
     {
         earthquake( 0.25, 1.25, transmission_device.origin, s_vault_pawn_encounter.radius );
-        var_a4d0ab6d312a821f = namespace_614554f86e52695c::spawn_request( "ai_encounter:enc_vault_pawn_zombies", s_vault_pawn_encounter.origin, s_vault_pawn_encounter.radius, 1, 0 );
-        namespace_614554f86e52695c::function_e4a67fe4ddca7ed5( var_a4d0ab6d312a821f, &function_5a686d590d9806d3, level.vault_manager );
+        var_a4d0ab6d312a821f = scripts\cp_mp\agents\ai_spawn_director::spawn_request( "ai_encounter:enc_vault_pawn_zombies", s_vault_pawn_encounter.origin, s_vault_pawn_encounter.radius, 1, 0 );
+        scripts\cp_mp\agents\ai_spawn_director::function_e4a67fe4ddca7ed5( var_a4d0ab6d312a821f, &function_5a686d590d9806d3, level.vault_manager );
     }
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d07
 // Size: 0x38
 function function_5a686d590d9806d3( requestid, instance, agent, data )
@@ -536,7 +537,7 @@ function function_5a686d590d9806d3( requestid, instance, agent, data )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d47
 // Size: 0x162
 function function_ed2e505118e05ca4()
@@ -573,7 +574,7 @@ function function_ed2e505118e05ca4()
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1eb2
 // Size: 0x28
 function function_a2955e32519b544f()
@@ -591,8 +592,8 @@ function function_a2955e32519b544f()
 // Size: 0x82
 function private function_1dbb97673ec1e0c7( encounterdata, origin, vehicle )
 {
-    vehicle.requestid = namespace_614554f86e52695c::spawn_request( "ai_encounter:" + encounterdata.encounterbundle, origin, 128, 1, 1, 0 );
-    namespace_614554f86e52695c::function_e4a67fe4ddca7ed5( vehicle.requestid, &function_bed20391ba8dcfce, vehicle );
+    vehicle.requestid = scripts\cp_mp\agents\ai_spawn_director::spawn_request( "ai_encounter:" + encounterdata.encounterbundle, origin, 128, 1, 1, 0 );
+    scripts\cp_mp\agents\ai_spawn_director::function_e4a67fe4ddca7ed5( vehicle.requestid, &function_bed20391ba8dcfce, vehicle );
     function_adcc96a7d541aa36( vehicle.requestid, 0 );
     function_b0a68315f80cb547( vehicle.requestid, vehicle );
 }
@@ -617,7 +618,7 @@ function private function_bed20391ba8dcfce( requestid, instance, agent, data )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2055
 // Size: 0x65
 function function_b5fc6db21a3000c8()
@@ -758,7 +759,7 @@ function private function_c87978976b1e2686( cooldowntype, cooldowntime )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2358
 // Size: 0x73
 function function_a2f48e85dd453198( players )
@@ -864,7 +865,7 @@ function private function_86c0d294557b3f18()
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2614
 // Size: 0x14f
 function function_598bba9d433d8d5a( requestid )
@@ -1001,7 +1002,8 @@ function private function_a646f25304f0c578( splinepoints, var_bfe90410fad38aaa )
     
     if ( splinepoints.size >= 2 )
     {
-        for (index = 0; index < splinepoints.size - 1; index++) {
+        for ( index = 0; index < splinepoints.size - 1 ; index++ )
+        {
             currentpoint = splinepoints[ index ];
             nextpoint = splinepoints[ index + 1 ];
             durations[ durations.size ] = function_215e10bf17f98702( currentpoint, nextpoint, var_bfe90410fad38aaa );
@@ -1031,14 +1033,14 @@ function private function_215e10bf17f98702( startpos, endpos, speed )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c5c
 // Size: 0x53
 function function_6ce516b4bbba4cae()
 {
     loc = getstruct( "vault_king_encounter", "targetname" );
-    requestid = namespace_614554f86e52695c::spawn_request( "ai_encounter:enc_vault_king", loc.origin, 90, 1, 1, 0 );
-    namespace_614554f86e52695c::function_e4a67fe4ddca7ed5( requestid, &function_8e73dcfacecaa96b, self );
+    requestid = scripts\cp_mp\agents\ai_spawn_director::spawn_request( "ai_encounter:enc_vault_king", loc.origin, 90, 1, 1, 0 );
+    scripts\cp_mp\agents\ai_spawn_director::function_e4a67fe4ddca7ed5( requestid, &function_8e73dcfacecaa96b, self );
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
@@ -1059,7 +1061,7 @@ function private function_8e73dcfacecaa96b( requestid, instance, agent, data )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2dcd
 // Size: 0x10b
 function function_3ecabd59662c63e4( var_b4eb12f662dd36a6, on_use_function )
@@ -1114,7 +1116,7 @@ function private function_e6b0b57c7fd33045( player )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fa0
 // Size: 0x1cd
 function function_94b78afd5298be48( var_c606b11086a2b24b )
@@ -1159,7 +1161,7 @@ function function_94b78afd5298be48( var_c606b11086a2b24b )
 }
 
 // Namespace namespace_945da193e84ea7bb / namespace_d7e80b14e1130dc4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3175
 // Size: 0x5e
 function function_8884edbcdf7fafcf( var_27d6902091f45267, var_92d6f86c9665c12e )

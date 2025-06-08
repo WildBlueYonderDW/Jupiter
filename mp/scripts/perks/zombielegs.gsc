@@ -14,7 +14,7 @@ function autoexec main()
 }
 
 // Namespace zombielegs / scripts\perks\zombielegs
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x179
 // Size: 0x6c
 function perk_register( params )
@@ -33,7 +33,7 @@ function perk_register( params )
 }
 
 // Namespace zombielegs / scripts\perks\zombielegs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ed
 // Size: 0xa
 function perk_set()
@@ -42,7 +42,7 @@ function perk_set()
 }
 
 // Namespace zombielegs / scripts\perks\zombielegs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ff
 // Size: 0x27
 function perk_unset()
@@ -54,7 +54,7 @@ function perk_unset()
 }
 
 // Namespace zombielegs / scripts\perks\zombielegs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22e
 // Size: 0x53
 function function_c6668bb917e966b2()
@@ -78,7 +78,7 @@ function function_c6668bb917e966b2()
 }
 
 // Namespace zombielegs / scripts\perks\zombielegs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x289
 // Size: 0x77
 function function_74ef4a883340b273()
@@ -94,7 +94,7 @@ function function_74ef4a883340b273()
 }
 
 // Namespace zombielegs / scripts\perks\zombielegs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x308
 // Size: 0x30
 function function_b87b3a7ec17c52ba()

@@ -16,7 +16,7 @@
 #namespace front;
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56d
 // Size: 0x1d8
 function main()
@@ -71,7 +71,7 @@ function main()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x74d
 // Size: 0x91
 function initializematchrules()
@@ -85,7 +85,7 @@ function initializematchrules()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e6
 // Size: 0x13e
 function onstartgametype()
@@ -135,7 +135,7 @@ function onstartgametype()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92c
 // Size: 0x6d
 function updategametypedvars()
@@ -148,7 +148,7 @@ function updategametypedvars()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a1
 // Size: 0x106
 function initspawns()
@@ -177,7 +177,7 @@ function initspawns()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaaf
 // Size: 0xc9
 function onspawnplayer( revivespawn )
@@ -206,7 +206,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb80
 // Size: 0x50
 function getspawnpoint()
@@ -223,7 +223,7 @@ function getspawnpoint()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xbd9
 // Size: 0x198
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -263,7 +263,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd79
 // Size: 0xb6
 function enemybasekillreveal()
@@ -293,7 +293,7 @@ function enemybasekillreveal()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe37
 // Size: 0x3ad
 function setupbases()
@@ -368,7 +368,7 @@ function setupbases()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11ec
 // Size: 0x8c
 function setupvisuals( zone )
@@ -380,7 +380,8 @@ function setupvisuals( zone )
     {
         othervisuals = getentarray( zone.target, "targetname" );
         
-        for (j = 0; j < othervisuals.size; j++) {
+        for ( j = 0; j < othervisuals.size ; j++ )
+        {
             visuals[ visuals.size ] = othervisuals[ j ];
         }
     }
@@ -390,7 +391,7 @@ function setupvisuals( zone )
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1280
 // Size: 0xcd
 function mappatchborders( visuals, targetname )
@@ -411,7 +412,7 @@ function mappatchborders( visuals, targetname )
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1356
 // Size: 0x6e
 function friendlybasewatcher()
@@ -443,7 +444,7 @@ function friendlybasewatcher()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13cc
 // Size: 0x128
 function friendlybasetriggerwatcher( trigger )
@@ -501,7 +502,7 @@ function friendlybasetriggerwatcher( trigger )
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14fc
 // Size: 0xa1
 function enemybasewatcher()
@@ -526,7 +527,7 @@ function enemybasewatcher()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15a5
 // Size: 0x77
 function enemybasetriggerwatcher( trigger )
@@ -561,7 +562,7 @@ function enemybasetriggerwatcher( trigger )
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1624
 // Size: 0x65
 function enableenemybaseoutline()
@@ -580,7 +581,7 @@ function enableenemybaseoutline()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1691
 // Size: 0x42
 function disableenemybaseoutline()
@@ -596,7 +597,7 @@ function disableenemybaseoutline()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16db
 // Size: 0x7a
 function enemybasekillstreakwatcher()
@@ -618,7 +619,7 @@ function enemybasekillstreakwatcher()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x175d
 // Size: 0x9f
 function handleoutlinesforstreaks( streak )
@@ -646,7 +647,7 @@ function handleoutlinesforstreaks( streak )
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1804
 // Size: 0x1d, Type: bool
 function playercontrolledstreak( player )
@@ -660,7 +661,7 @@ function playercontrolledstreak( player )
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x182a
 // Size: 0x101
 function showbaseeffecttoplayer( player )
@@ -700,29 +701,31 @@ function showbaseeffecttoplayer( player )
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1933
 // Size: 0x37
 function showfxarray( array, player )
 {
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         array[ i ] showtoplayer( player );
     }
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1972
 // Size: 0x37
 function hidefxarray( array, player )
 {
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         array[ i ] hidefromplayer( player );
     }
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19b1
 // Size: 0x184
 function spawnfxarray()
@@ -730,14 +733,16 @@ function spawnfxarray()
     self._baseeffectfriendly = [];
     self._baseeffectenemy = [];
     
-    for (i = 1; i < self.visuals.size; i++) {
+    for ( i = 1; i < self.visuals.size ; i++ )
+    {
         fxfwd = anglestoforward( self.visuals[ i ].angles );
         self._baseeffectfriendly[ self._baseeffectfriendly.size ] = spawnfx( level.basefxid[ "friendly" ], self.visuals[ i ].origin, fxfwd );
         self._baseeffectfriendly[ self._baseeffectfriendly.size - 1 ] setfxkilldefondelete();
         triggerfx( self._baseeffectfriendly[ self._baseeffectfriendly.size - 1 ] );
     }
     
-    for (i = 1; i < self.visuals.size; i++) {
+    for ( i = 1; i < self.visuals.size ; i++ )
+    {
         fxfwd = anglestoforward( self.visuals[ i ].angles );
         self._baseeffectenemy[ self._baseeffectenemy.size ] = spawnfx( level.basefxid[ "enemy" ], self.visuals[ i ].origin, fxfwd );
         self._baseeffectenemy[ self._baseeffectenemy.size - 1 ] setfxkilldefondelete();
@@ -746,7 +751,7 @@ function spawnfxarray()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b3d
 // Size: 0x36
 function base_setupvfx()
@@ -756,7 +761,7 @@ function base_setupvfx()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b7b
 // Size: 0x57
 function spawnzonefx()
@@ -770,7 +775,7 @@ function spawnzonefx()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bda
 // Size: 0x60
 function onplayerconnect( player )
@@ -782,7 +787,7 @@ function onplayerconnect( player )
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c42
 // Size: 0xb2
 function setupbaseareabrushes()
@@ -802,21 +807,22 @@ function setupbaseareabrushes()
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cfc
 // Size: 0x33
 function hidebasebrushes( brush )
 {
     if ( isdefined( brush ) )
     {
-        for (index = 0; index < brush.size; index++) {
+        for ( index = 0; index < brush.size ; index++ )
+        {
             brush[ index ] hide();
         }
     }
 }
 
 // Namespace front / scripts\mp\gametypes\front
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d37
 // Size: 0x33
 function getbasearray( targetname )
@@ -834,7 +840,7 @@ function getbasearray( targetname )
 /#
 
     // Namespace front / scripts\mp\gametypes\front
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d73
     // Size: 0xa4, Type: dev
     function function_8469a5927d069db7()

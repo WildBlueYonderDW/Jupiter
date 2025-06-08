@@ -45,14 +45,14 @@ function autoexec main()
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d3
 // Size: 0x2fd
 function init( params )
 {
     level.br_armory_trader = spawnstruct();
     level.br_armory_trader.scriptables = [];
-    level.var_6254899bb2142d87 = getdvarint( @"hash_708738ae7dcb76af", 0 ) != 0;
+    level.var_6254899bb2142d87 = getdvarint( @"scr_br_armory_trader", 0 ) != 0;
     
     if ( scripts\mp\gametypes\br_gametypes::isfeaturedisabled( "trader" ) || !function_8e0659b7f9568144() )
     {
@@ -163,7 +163,7 @@ function private function_707d6cfaa04dbe98( position )
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdf6
 // Size: 0x6e
 function onprematchdone( params )
@@ -368,7 +368,7 @@ function private function_d78e7b34b99b0458()
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x125f
 // Size: 0xcd
 function function_74a3f02a496877c6()
@@ -390,7 +390,7 @@ function function_74a3f02a496877c6()
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1334
 // Size: 0xfd
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
@@ -414,7 +414,7 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1439
 // Size: 0xd9
 function function_1a1709943670772a()
@@ -440,7 +440,7 @@ function function_1a1709943670772a()
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x151b
 // Size: 0x7e
 function function_f58f16a632b7409d()
@@ -482,7 +482,7 @@ function private function_d41e030d04bf2b79( armorytrader )
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x163b
 // Size: 0x81
 function function_83c65466cc2272dd( armorytrader )
@@ -712,7 +712,8 @@ function private function_4c930f9f8b0a20a6()
     self endon( "trader_use_start" );
     self endon( "disabled" );
     
-    for (totalwait = 0; totalwait < 30; totalwait = 0) {
+    for ( totalwait = 0; totalwait < 30 ; totalwait = 0 )
+    {
         wait 1.5;
         totalwait += 1.5;
         playersnearby = scripts\mp\utility\player::getplayersinradius( self.origin, 175 );
@@ -738,7 +739,8 @@ function private function_2cb33b237d4fde89()
     self endon( "trader_use_start" );
     self endon( "disabled" );
     
-    for (var_9ab9272aaf73e6ae = 1; var_9ab9272aaf73e6ae; var_9ab9272aaf73e6ae = playersnearby.size > 0) {
+    for ( var_9ab9272aaf73e6ae = 1; var_9ab9272aaf73e6ae ; var_9ab9272aaf73e6ae = playersnearby.size > 0 )
+    {
         wait 2;
         playersnearby = scripts\mp\utility\player::getplayersinradius( self.origin, 1000 );
     }
@@ -1680,8 +1682,10 @@ function private function_144ca1193f36516e()
     forward = anglestoforward( self.angles );
     right = anglestoright( self.angles );
     
-    for (i = -3; i < 3; i++) {
-        for (y = 0; y < 3; y++) {
+    for ( i = -3; i < 3 ; i++ )
+    {
+        for ( y = 0; y < 3 ; y++ )
+        {
             forwarddist = y * var_f370fe6773cc902 + gridradius + 30;
             rightdist = i * var_f370fe6773cc902 + gridradius;
             cellcenter = self.origin + forwarddist * forward + rightdist * right;
@@ -1741,7 +1745,8 @@ function private function_4bb5acc222d109bf()
 // Size: 0x52, Type: bool
 function private function_d791856a2f7a58ed( point, shape )
 {
-    for (i = 0; i < shape.size; i++) {
+    for ( i = 0; i < shape.size ; i++ )
+    {
         next = ( i + 1 ) % shape.size;
         
         if ( !isright( point, shape[ i ], shape[ next ] ) )
@@ -2146,7 +2151,8 @@ function private function_fd903fd1e352532f( player )
     loadoutstable = [];
     maxloadouts = 12;
     
-    for (classindex = 0; classindex < maxloadouts; classindex++) {
+    for ( classindex = 0; classindex < maxloadouts ; classindex++ )
+    {
         primaryweaponstruct = player function_da6e32d894f578af( classindex, 0 );
         secondaryweaponstruct = player function_da6e32d894f578af( classindex, 1 );
         
@@ -2199,7 +2205,8 @@ function private function_da6e32d894f578af( classindex, weaponindex )
     weapongroup = scripts\mp\utility\weapon::getweapongroup( weaponbasename );
     attachmentcount = 0;
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         attachmentname = cac_getweaponattachment( classindex, weaponindex, attachmentindex );
         
         if ( attachmentname != "none" )
@@ -2269,7 +2276,8 @@ function private function_56309723c94ec45( player, currentweapon )
         player function_8db0ca04a85b7487( loadoutweapon.isprimary );
     }
     
-    for (i = 0; i < 5; i++) {
+    for ( i = 0; i < 5 ; i++ )
+    {
         scriptableid = undefined;
         
         if ( var_c4cd691657517bb9.size > i )
@@ -2405,12 +2413,12 @@ function private function_47a3c10b62f047d()
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ee7
 // Size: 0x24, Type: bool
 function function_8e0659b7f9568144()
 {
-    return getdvarint( @"hash_a18fc523432e8d5a", 0 ) && getdvarint( @"hash_89be1a979c1ec008", 0 );
+    return getdvarint( @"scr_ssc_use_armory_trader", 0 ) && getdvarint( @"scr_ssc_enabled", 0 );
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
@@ -2486,7 +2494,7 @@ function private function_11554a45a6bd9bb6( structname )
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50f7
 // Size: 0x1c
 function traderemp( data )
@@ -2496,7 +2504,7 @@ function traderemp( data )
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x511b
 // Size: 0x1af
 function traderdisablefortime( data )
@@ -2530,7 +2538,7 @@ function traderdisablefortime( data )
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x52d2
 // Size: 0x89
 function function_c10b28e865a8a4e6( player, trigger )
@@ -2538,7 +2546,8 @@ function function_c10b28e865a8a4e6( player, trigger )
     self endon( "armoryTraderDisableForTime" );
     scripts\mp\utility\lower_message::setlowermessageomnvar( "weapon_trade_station_offline", trigger.endtime );
     
-    for (timeleft = function_c89ed1840c8d0f0f( trigger.endtime - gettime() ); isdefined( trigger ) && timeleft > 0; timeleft = function_c89ed1840c8d0f0f( trigger.endtime - gettime() )) {
+    for ( timeleft = function_c89ed1840c8d0f0f( trigger.endtime - gettime() ); isdefined( trigger ) && timeleft > 0 ; timeleft = function_c89ed1840c8d0f0f( trigger.endtime - gettime() ) )
+    {
         wait timeleft;
     }
     
@@ -2547,7 +2556,7 @@ function function_c10b28e865a8a4e6( player, trigger )
 }
 
 // Namespace br_armory_trader / scripts\mp\gametypes\br_armory_trader
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5363
 // Size: 0x27
 function function_4b152e3cac01e780( player, trigger )
@@ -2691,7 +2700,8 @@ function function_4b152e3cac01e780( player, trigger )
                 maxvalue = undefined;
                 successcount = 0;
                 
-                for (i = 0; i < iteration; i++) {
+                for ( i = 0; i < iteration ; i++ )
+                {
                     seed = i;
                     randval = min + seed % range;
                     

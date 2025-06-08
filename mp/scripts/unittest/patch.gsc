@@ -4,7 +4,7 @@
 #namespace unittest_patch;
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x602
 // Size: 0xe
 function add()
@@ -13,7 +13,7 @@ function add()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x618
 // Size: 0x2
 function patch_self_check()
@@ -22,7 +22,7 @@ function patch_self_check()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x622
 // Size: 0xd
 function meth_patch()
@@ -31,7 +31,7 @@ function meth_patch()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x637
 // Size: 0x3a
 function meth()
@@ -43,7 +43,7 @@ function meth()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x679
 // Size: 0x3, Type: bool
 function func_patch()
@@ -52,7 +52,7 @@ function func_patch()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x685
 // Size: 0x22
 function func()
@@ -62,7 +62,7 @@ function func()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6af
 // Size: 0x3b
 function vars_print( s )
@@ -72,7 +72,7 @@ function vars_print( s )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f2
 // Size: 0x2b
 function vars_update( s )
@@ -83,7 +83,7 @@ function vars_update( s )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x725
 // Size: 0x62
 function vars()
@@ -99,7 +99,7 @@ function vars()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x78f
 // Size: 0xe
 function func_thread()
@@ -108,7 +108,7 @@ function func_thread()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7a5
 // Size: 0x6d
 function thread_wait_patch( deep )
@@ -133,7 +133,7 @@ function thread_wait_patch( deep )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x81a
 // Size: 0x2f
 function thread_wait_native( deep )
@@ -144,7 +144,7 @@ function thread_wait_native( deep )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x851
 // Size: 0x30
 function thread_wait_local()
@@ -156,7 +156,7 @@ function thread_wait_local()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x889
 // Size: 0x68
 function thread_wait( ignorelocal )
@@ -182,7 +182,7 @@ function thread_wait( ignorelocal )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8f9
 // Size: 0xf
 function native_wait()
@@ -192,7 +192,7 @@ function native_wait()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x910
 // Size: 0x3
 function patch_wait_frameend()
@@ -201,7 +201,7 @@ function patch_wait_frameend()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91b
 // Size: 0x22
 function patch_wait()
@@ -213,7 +213,7 @@ function patch_wait()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x945
 // Size: 0x1d
 function define()
@@ -222,7 +222,7 @@ function define()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x96a
 // Size: 0xe
 function f1()
@@ -231,7 +231,7 @@ function f1()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x980
 // Size: 0x14
 function f2( tp )
@@ -240,7 +240,7 @@ function f2( tp )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99c
 // Size: 0x2e
 function func_pointer()
@@ -252,7 +252,7 @@ function func_pointer()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d2
 // Size: 0x9
 function far()
@@ -261,7 +261,7 @@ function far()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e3
 // Size: 0x3d
 function e5( t, n )
@@ -272,7 +272,7 @@ function e5( t, n )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa28
 // Size: 0x46
 function e4( t, n )
@@ -284,7 +284,7 @@ function e4( t, n )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa76
 // Size: 0x46
 function e3( t, n )
@@ -296,7 +296,7 @@ function e3( t, n )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xac4
 // Size: 0x46
 function e2( t, n )
@@ -308,7 +308,7 @@ function e2( t, n )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb12
 // Size: 0x46
 function e1( t, n )
@@ -320,7 +320,7 @@ function e1( t, n )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb60
 // Size: 0x52
 function endontest_endon( t, n )
@@ -333,7 +333,7 @@ function endontest_endon( t, n )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbba
 // Size: 0x2
 function endontest()
@@ -342,7 +342,7 @@ function endontest()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc4
 // Size: 0x2a
 function anim_test()
@@ -352,7 +352,7 @@ function anim_test()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbf6
 // Size: 0xe
 function stack_patch_waittill_leaf()
@@ -361,7 +361,7 @@ function stack_patch_waittill_leaf()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc0c
 // Size: 0x15
 function stack_patch_waittill_node()
@@ -371,7 +371,7 @@ function stack_patch_waittill_node()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc29
 // Size: 0x15
 function stack_patch_waittill_stack()
@@ -381,7 +381,7 @@ function stack_patch_waittill_stack()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc46
 // Size: 0x1c
 function stack_patch_waittill_root()
@@ -392,7 +392,7 @@ function stack_patch_waittill_root()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc6a
 // Size: 0x1a
 function stack_patch_waittill_context_patch()
@@ -402,7 +402,7 @@ function stack_patch_waittill_context_patch()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc8c
 // Size: 0x4f
 function stack_patch_waittill_context( s )
@@ -415,7 +415,7 @@ function stack_patch_waittill_context( s )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce3
 // Size: 0x1a
 function stack_patch_waittill_context_far_patch()
@@ -425,7 +425,7 @@ function stack_patch_waittill_context_far_patch()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd05
 // Size: 0x4f
 function stack_patch_waittill_context_far( s )
@@ -438,7 +438,7 @@ function stack_patch_waittill_context_far( s )
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd5c
 // Size: 0x22
 function stack_patch_thread()
@@ -449,7 +449,7 @@ function stack_patch_thread()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd86
 // Size: 0x21
 function stack_patch_thread_leaf()
@@ -460,7 +460,7 @@ function stack_patch_thread_leaf()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdaf
 // Size: 0x1a
 function stack_patch_thread_node()
@@ -470,7 +470,7 @@ function stack_patch_thread_node()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdd1
 // Size: 0x21
 function stack_patch_thread_root()
@@ -481,7 +481,7 @@ function stack_patch_thread_root()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdfa
 // Size: 0x62
 function stack_patch()
@@ -499,7 +499,7 @@ function stack_patch()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe64
 // Size: 0x2c
 function builtin_patch()
@@ -509,7 +509,7 @@ function builtin_patch()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe98
 // Size: 0x2
 function sre()
@@ -518,7 +518,7 @@ function sre()
 }
 
 // Namespace unittest_patch / scripts\unittest\patch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea2
 // Size: 0x96
 function main()

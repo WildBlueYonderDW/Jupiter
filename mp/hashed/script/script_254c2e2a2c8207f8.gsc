@@ -9,7 +9,7 @@
 #namespace namespace_50d72387c573652d;
 
 // Namespace namespace_50d72387c573652d / namespace_6894b8a1efafd980
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc0
 // Size: 0x56b
 function function_a63069a72c46f64b()

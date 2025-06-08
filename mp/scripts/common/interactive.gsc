@@ -3,7 +3,7 @@
 #namespace interactive;
 
 // Namespace interactive / scripts\common\interactive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8f
 // Size: 0x66
 function entity_used( entity, player )
@@ -27,7 +27,7 @@ function entity_used( entity, player )
 }
 
 // Namespace interactive / scripts\common\interactive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfd
 // Size: 0x80
 function interactive_addusedcallback( usedcallback, id )
@@ -54,7 +54,7 @@ function interactive_addusedcallback( usedcallback, id )
 }
 
 // Namespace interactive / scripts\common\interactive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x186
 // Size: 0x15
 function interactive_addusedcallbacktoentity( id )
@@ -63,7 +63,7 @@ function interactive_addusedcallbacktoentity( id )
 }
 
 // Namespace interactive / scripts\common\interactive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a3
 // Size: 0xc
 function interactive_removeusedcallbackfromentity()
@@ -72,7 +72,7 @@ function interactive_removeusedcallbackfromentity()
 }
 
 // Namespace interactive / scripts\common\interactive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b7
 // Size: 0x6f
 function function_366418be14db1a9f( usable, player )
@@ -88,7 +88,7 @@ function function_366418be14db1a9f( usable, player )
 }
 
 // Namespace interactive / scripts\common\interactive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22f
 // Size: 0x41
 function function_14ec0a1f46d4d2d0( usable, player )

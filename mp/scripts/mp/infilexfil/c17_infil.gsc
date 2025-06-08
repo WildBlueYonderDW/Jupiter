@@ -16,7 +16,7 @@
 #namespace c17_infil;
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa52
 // Size: 0xa7
 function function_2f340eb1a058fd55( subtype )
@@ -39,7 +39,7 @@ function function_2f340eb1a058fd55( subtype )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb01
 // Size: 0x10a
 function function_d888327084c9f8e( team, target, subtype, originalsubtype )
@@ -65,7 +65,7 @@ function function_d888327084c9f8e( team, target, subtype, originalsubtype )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc14
 // Size: 0x23
 function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubtype )
@@ -74,7 +74,7 @@ function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubty
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc3f
 // Size: 0x7a
 function function_33ceeca5ce1d876a( subtype )
@@ -84,7 +84,7 @@ function function_33ceeca5ce1d876a( subtype )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcc2
 // Size: 0x3e6
 function function_15c741a7b627d900( infil, spot_index )
@@ -157,7 +157,7 @@ function function_15c741a7b627d900( infil, spot_index )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10b0
 // Size: 0x4a
 function function_5994f877fc793456( var_ee69967fa93826fc )
@@ -181,7 +181,7 @@ function function_5994f877fc793456( var_ee69967fa93826fc )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1102
 // Size: 0xb3
 function function_36154e36d2455566()
@@ -206,7 +206,7 @@ function function_36154e36d2455566()
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11bd
 // Size: 0x51
 function getrandompointincircle( origin, radius )
@@ -218,7 +218,7 @@ function getrandompointincircle( origin, radius )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1217
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -236,7 +236,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x125b
 // Size: 0x38
 function player_infil_end()
@@ -250,7 +250,7 @@ function player_infil_end()
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x129b
 // Size: 0xcd
 function infil_radio_idle( infil )
@@ -285,7 +285,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1370
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -301,7 +301,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13a6
 // Size: 0x4c
 function player_disconnect()
@@ -320,7 +320,7 @@ function player_disconnect()
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13fa
 // Size: 0x135
 function infilthink( team, scene_name )
@@ -352,7 +352,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1537
 // Size: 0x1c1
 function vehiclethink( team, start_node, scene_name, extra_crew )
@@ -377,7 +377,7 @@ function vehiclethink( team, start_node, scene_name, extra_crew )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1700
 // Size: 0x5e
 function function_479353a38aa88191( destination_node, time )
@@ -390,7 +390,7 @@ function function_479353a38aa88191( destination_node, time )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1766
 // Size: 0x32
 function function_30068db72cedafa7()
@@ -409,7 +409,7 @@ function function_30068db72cedafa7()
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17a0
 // Size: 0x284
 function actorthink()
@@ -431,7 +431,8 @@ function actorthink()
     var_eeb97c6ecf58b59f = [ "body_c_jup_mp_india", "body_c_jup_mp_bravo", "body_c_jup_mp_delta", "body_c_jup_mp_hotel", "body_c_jup_mp_mike" ];
     var_1e03d15d7802705d = [ "head_c_jup_mp_india", "head_c_jup_mp_bravo", "head_c_jup_mp_delta", "head_c_jup_mp_hotel", "head_c_jup_mp_mike" ];
     
-    for (i = attackers.size; i < 6; i++) {
+    for ( i = attackers.size; i < 6 ; i++ )
+    {
         slotindex = fillorder[ i ][ 0 ];
         var_6302d354f4b42771 = randomint( var_eeb97c6ecf58b59f.size );
         self.actors[ i ] = self.linktoent spawn_anim_model( slotindex, "tag_origin_animate", var_eeb97c6ecf58b59f[ var_6302d354f4b42771 ], var_1e03d15d7802705d[ var_6302d354f4b42771 ] );
@@ -456,7 +457,7 @@ function actorthink()
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a2c
 // Size: 0x10b
 function spawn_anim_model( slotindex, linkto_ent, body, headmodel )
@@ -482,7 +483,7 @@ function spawn_anim_model( slotindex, linkto_ent, body, headmodel )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b40
 // Size: 0x555
 function initanims( subtype, team, originalsubtype )
@@ -552,7 +553,7 @@ function initanims( subtype, team, originalsubtype )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x209d
 // Size: 0x4f8
 function script_model_alpha_anims( subtype )
@@ -598,7 +599,7 @@ function script_model_alpha_anims( subtype )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x259d
 // Size: 0x8a
 function vehicles_anims( subtype, team, originalsubtype )
@@ -609,7 +610,7 @@ function vehicles_anims( subtype, team, originalsubtype )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x262f
 // Size: 0x10d
 function spawninfilvehicle( start_node, team, scene_name )
@@ -629,7 +630,7 @@ function spawninfilvehicle( start_node, team, scene_name )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2745
 // Size: 0xe4
 function function_c089e2d730340dd3( subtype )
@@ -662,7 +663,7 @@ function function_c089e2d730340dd3( subtype )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2832
 // Size: 0x2a
 function function_89a2405953b84136( var_addd3217bc59a7b8, override_og )
@@ -676,7 +677,7 @@ function function_89a2405953b84136( var_addd3217bc59a7b8, override_og )
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2864
 // Size: 0x19
 function function_725375206755d1c3()
@@ -687,7 +688,7 @@ function function_725375206755d1c3()
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2885
 // Size: 0x13
 function function_6158ef142e9bd640()
@@ -697,7 +698,7 @@ function function_6158ef142e9bd640()
 }
 
 // Namespace c17_infil / scripts\mp\infilexfil\c17_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28a0
 // Size: 0x67
 function play_xcam( entity, tag, xcamasset )

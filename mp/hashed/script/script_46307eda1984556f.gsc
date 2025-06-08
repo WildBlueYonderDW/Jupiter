@@ -21,7 +21,7 @@
 #namespace namespace_e1628666367511e6;
 
 // Namespace namespace_e1628666367511e6 / namespace_1a5e9e1bbf009981
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ba
 // Size: 0x13
 function main()
@@ -30,7 +30,7 @@ function main()
 }
 
 // Namespace namespace_e1628666367511e6 / namespace_1a5e9e1bbf009981
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d5
 // Size: 0x2c2
 function function_7290f6d8c7a2a47b( var_39a0d8ee3716ac3a )

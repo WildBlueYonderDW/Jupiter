@@ -293,7 +293,7 @@ function private end_pull()
 }
 
 // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc93
 // Size: 0xe0
 function function_6a0fdda07c1ebbf7( vortex_struct, var_89d9e69374754848 )
@@ -323,7 +323,7 @@ function function_6a0fdda07c1ebbf7( vortex_struct, var_89d9e69374754848 )
 }
 
 // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd7b
 // Size: 0x103
 function function_81e9889140d42fa9( vortex_struct, damage_ratio )
@@ -681,7 +681,7 @@ function private function_804aa4597eb3df2c( center_height )
 }
 
 // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x16ff
 // Size: 0x11d
 function start_timed_vortex( vortex_origin, center_height, var_d2b0a5e37e2f66d4, var_eb1ea2de02f5efc2, duration, death_range, is_static )
@@ -729,7 +729,7 @@ function private function_8a5e1113c836189f()
 /#
 
     // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1868
     // Size: 0xbd, Type: dev
     function debug_vortex()
@@ -748,7 +748,7 @@ function private function_8a5e1113c836189f()
 #/
 
 // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x192d
 // Size: 0x192
 function generate_portal_exits( exit_count )
@@ -759,7 +759,8 @@ function generate_portal_exits( exit_count )
     var_81366857d9eacda2 = self.var_a2ba86d22c3b53dc;
     self.var_a2ba86d22c3b53dc = 0;
     
-    for (i = 0; i < var_81366857d9eacda2; i++) {
+    for ( i = 0; i < var_81366857d9eacda2 ; i++ )
+    {
         exit_point = self.cached_exits[ i ];
         assert( isvector( exit_point ) );
         var_11b2830c58bc9036 = distance2dsquared( self.anchor.origin, exit_point );
@@ -802,7 +803,8 @@ function generate_portal_exits( exit_count )
         {
             if ( getdvarint( @"hash_888c38619e0ec63a", 0 ) )
             {
-                for (i = 0; i < self.var_a2ba86d22c3b53dc; i++) {
+                for ( i = 0; i < self.var_a2ba86d22c3b53dc ; i++ )
+                {
                     debugstar( self.cached_exits[ i ], ( 1, 1, 1 ), 1, "<dev string:xbe>" );
                 }
             }
@@ -942,7 +944,7 @@ function private teleport_screen_flash()
 }
 
 // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f89
 // Size: 0x6f
 function function_c94f363ec8793bc2( origin, radius )
@@ -960,7 +962,7 @@ function function_c94f363ec8793bc2( origin, radius )
 }
 
 // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2001
 // Size: 0x62
 function function_e05a3fe61be76eed( bad_place )
@@ -987,7 +989,7 @@ function function_e05a3fe61be76eed( bad_place )
 }
 
 // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x206b
 // Size: 0x8a, Type: bool
 function function_e15ef6f504e18e4c( exit_point )
@@ -1092,7 +1094,7 @@ function private teleport_players()
 }
 
 // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2343
 // Size: 0xa6
 function function_b24870401644121d( portal_origin, is_static )

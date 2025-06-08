@@ -6,7 +6,7 @@
 #namespace monkey_bomb;
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23b
 // Size: 0x47
 function function_9cb7762eeb57f57c()
@@ -19,7 +19,7 @@ function function_9cb7762eeb57f57c()
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28a
 // Size: 0x24a
 function function_f72973904792660f( grenade )
@@ -64,7 +64,7 @@ function function_f72973904792660f( grenade )
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4dc
 // Size: 0xac
 function function_625a3cda727914a8( grenade )
@@ -89,7 +89,7 @@ function function_625a3cda727914a8( grenade )
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x590
 // Size: 0x6e
 function function_bbb16715e494b23( attractor, zombie )
@@ -117,7 +117,7 @@ function function_bbb16715e494b23( attractor, zombie )
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x606
 // Size: 0x73
 function function_9b3a45e77a17ad86( monkey_model, attractor )
@@ -178,7 +178,7 @@ function private function_1d982537b9dcb924( player )
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6f5
 // Size: 0x2d4
 function grenade_stolen_by_sam( grenade, e_actor )
@@ -277,7 +277,7 @@ function grenade_stolen_by_sam( grenade, e_actor )
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d1
 // Size: 0xeb
 function function_37ae9ad9c5dea6c2()
@@ -315,7 +315,7 @@ function function_37ae9ad9c5dea6c2()
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac4
 // Size: 0x3c, Type: bool
 function function_7119b9ec768ee712( checkloc )
@@ -330,7 +330,7 @@ function function_7119b9ec768ee712( checkloc )
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb09
 // Size: 0x137
 function function_4fd6f1249646368d()
@@ -374,7 +374,7 @@ function function_4fd6f1249646368d()
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc48
 // Size: 0x20
 function function_980a6fd749f5e09a()
@@ -385,7 +385,7 @@ function function_980a6fd749f5e09a()
 }
 
 // Namespace monkey_bomb / scripts\cp_mp\equipment\monkey_bomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc70
 // Size: 0x28
 function function_cfd45d884eb33a37()

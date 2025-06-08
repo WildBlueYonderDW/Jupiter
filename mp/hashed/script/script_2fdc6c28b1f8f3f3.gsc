@@ -8,7 +8,7 @@
 #namespace brainrot;
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17c
 // Size: 0x334
 function init_brainrot()
@@ -44,7 +44,7 @@ function init_brainrot()
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b8
 // Size: 0x21
 function function_8bd543daa9037db7( func )
@@ -53,7 +53,7 @@ function function_8bd543daa9037db7( func )
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e1
 // Size: 0x21
 function function_7d4e03466fcf5dc9( func )
@@ -62,7 +62,7 @@ function function_7d4e03466fcf5dc9( func )
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x50a
 // Size: 0x2a
 function function_aada6661ca89c2af()
@@ -72,7 +72,7 @@ function function_aada6661ca89c2af()
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53d
 // Size: 0x2a
 function function_3c3ea73ba0073f0a()
@@ -82,7 +82,7 @@ function function_3c3ea73ba0073f0a()
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x570
 // Size: 0xbf
 function set_brainrot( attacker, player_owner )
@@ -106,7 +106,7 @@ function set_brainrot( attacker, player_owner )
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x637
 // Size: 0xf0
 function function_52575fe8c8a247f8( death, attacker, mod, sweapon, vpoint, shitloc, modelindex )
@@ -131,7 +131,7 @@ function function_52575fe8c8a247f8( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x72f
 // Size: 0x3f
 function zombie_kill_tracker()
@@ -151,7 +151,7 @@ function zombie_kill_tracker()
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x776
 // Size: 0x24
 function function_9814cb5a82d0bc92()
@@ -165,7 +165,7 @@ function function_9814cb5a82d0bc92()
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a2
 // Size: 0xab, Type: bool
 function function_e77373dffa58f4fe()
@@ -197,7 +197,7 @@ function function_e77373dffa58f4fe()
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x856
 // Size: 0x76
 function brainrot_end()
@@ -215,7 +215,7 @@ function brainrot_end()
 }
 
 // Namespace brainrot / namespace_73918c307cdbe1ff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d4
 // Size: 0x4a
 function function_266be48a55c0cdc5( sparams )
@@ -229,7 +229,7 @@ function function_266be48a55c0cdc5( sparams )
 /#
 
     // Namespace brainrot / namespace_73918c307cdbe1ff
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x926
     // Size: 0x7b, Type: dev
     function function_4eca2aaa68c96aa0()
@@ -243,7 +243,7 @@ function function_266be48a55c0cdc5( sparams )
     }
 
     // Namespace brainrot / namespace_73918c307cdbe1ff
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9a9
     // Size: 0x2f, Type: dev
     function function_eb3305baa083c02d()

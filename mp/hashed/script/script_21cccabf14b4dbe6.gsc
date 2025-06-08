@@ -10,8 +10,8 @@
 #namespace namespace_9ced0748cfd1d189;
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x239
+// Params 0
+// Checksum 0x0, Offset: 0x23a
 // Size: 0x26
 function init()
 {
@@ -25,8 +25,8 @@ function init()
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x267
+// Params 0
+// Checksum 0x0, Offset: 0x268
 // Size: 0xe2
 function function_a8a81e6bc157564d()
 {
@@ -63,8 +63,8 @@ function function_a8a81e6bc157564d()
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x351
+// Params 0
+// Checksum 0x0, Offset: 0x352
 // Size: 0x1b6
 function initleveldata()
 {
@@ -88,8 +88,8 @@ function initleveldata()
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x50f
+// Params 6
+// Checksum 0x0, Offset: 0x510
 // Size: 0xa2
 function createmulticircleobjectivesstruct( var_9da79c80305f58db, positiondurations, transitionduration, nextpositiondelays, circlepositions, circleradius )
 {
@@ -105,15 +105,16 @@ function createmulticircleobjectivesstruct( var_9da79c80305f58db, positiondurati
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ba
+// Params 1
+// Checksum 0x0, Offset: 0x5bb
 // Size: 0x17e
 function function_4139b5956f07453b( circlespath )
 {
     circlespath.var_4ab02385b70ecb03 = [];
     circlespath.var_260f61b74d1459ff = [];
     
-    for (i = 0; i < circlespath.positionscount - 1; i++) {
+    for ( i = 0; i < circlespath.positionscount - 1 ; i++ )
+    {
         var_c661e5b77c016382 = int( min( circlespath.transitionduration, circlespath.positiondurations[ i ] ) );
         nextpositiondistance = distance2d( circlespath.circlepositions[ i ], circlespath.circlepositions[ i + 1 ] );
         var_fd0a56e53772cdba = circlespath.nextpositiondelays[ i ] + circlespath.positiondurations[ i + 1 ] - var_c661e5b77c016382 - 1;
@@ -129,8 +130,8 @@ function function_4139b5956f07453b( circlespath )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x740
+// Params 5
+// Checksum 0x0, Offset: 0x741
 // Size: 0x6e
 function function_10a532c516175bbe( centerstart, centertarget, radiusstart, radiustarget, maxduration )
 {
@@ -140,8 +141,8 @@ function function_10a532c516175bbe( centerstart, centertarget, radiusstart, radi
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b7
+// Params 0
+// Checksum 0x0, Offset: 0x7b8
 // Size: 0x180
 function function_2788e39d9b57d9fb()
 {
@@ -155,7 +156,8 @@ function function_2788e39d9b57d9fb()
     circledelaytime = circlespath.var_9da79c80305f58db + circlespath.positiondurations[ 0 ];
     circleclosetime = circlespath.var_260f61b74d1459ff[ 0 ];
     
-    for (i = 0; i < circlespath.positionscount; i++) {
+    for ( i = 0; i < circlespath.positionscount ; i++ )
+    {
         function_1949107e97911ea5( i + 1, i, circledelaytime, circleclosetime );
         
         if ( i < circlespath.positionscount - 1 )
@@ -169,14 +171,15 @@ function function_2788e39d9b57d9fb()
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x93f
+// Params 0
+// Checksum 0x0, Offset: 0x940
 // Size: 0xba
 function function_82664500e421fe22()
 {
     circlespath = level.var_9ced0748cfd1d189.circlespath;
     
-    for (positionindex = 0; positionindex < circlespath.positionscount; positionindex++) {
+    for ( positionindex = 0; positionindex < circlespath.positionscount ; positionindex++ )
+    {
         circleindex = int( max( positionindex - 1, 0 ) );
         level.br_multi_circle.circles[ 0 ].circlecenters[ positionindex ] = circlespath.circlepositions[ circleindex ];
         level.br_multi_circle.circles[ 1 ].circlecenters[ positionindex ] = circlespath.circlepositions[ circleindex ];
@@ -184,8 +187,8 @@ function function_82664500e421fe22()
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa01
+// Params 4
+// Checksum 0x0, Offset: 0xa02
 // Size: 0xb6
 function function_1949107e97911ea5( circleindex, positionindex, circledelaytime, circleclosetime )
 {
@@ -197,8 +200,8 @@ function function_1949107e97911ea5( circleindex, positionindex, circledelaytime,
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xabf
+// Params 1
+// Checksum 0x0, Offset: 0xac0
 // Size: 0x1e
 function function_29e8194ff7e13e2e( circleindex )
 {
@@ -206,8 +209,8 @@ function function_29e8194ff7e13e2e( circleindex )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xae6
+// Params 1
+// Checksum 0x0, Offset: 0xae7
 // Size: 0x205
 function function_931e40c0a6e8719b( var_7b6d5db8cb3c5782 )
 {
@@ -240,7 +243,8 @@ function function_931e40c0a6e8719b( var_7b6d5db8cb3c5782 )
     wait circlespath.var_9da79c80305f58db;
     level notify( "update_circle_hide" );
     
-    for (i = 0; i < circlespath.positionscount - 1; i++) {
+    for ( i = 0; i < circlespath.positionscount - 1 ; i++ )
+    {
         wait circlespath.positiondurations[ i ] - circlespath.var_4ab02385b70ecb03[ i ];
         function_78ca95c1137689e6( i + 1, circlespath.var_4ab02385b70ecb03[ i ] );
         wait circlespath.var_4ab02385b70ecb03[ i ];
@@ -259,8 +263,8 @@ function function_931e40c0a6e8719b( var_7b6d5db8cb3c5782 )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf3
+// Params 2
+// Checksum 0x0, Offset: 0xcf4
 // Size: 0x1ca
 function function_78ca95c1137689e6( posindex, duration )
 {
@@ -292,8 +296,8 @@ function function_78ca95c1137689e6( posindex, duration )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xec5
+// Params 1
+// Checksum 0x0, Offset: 0xec6
 // Size: 0xa7
 function function_a3eb5d233829a440( posindex )
 {
@@ -309,8 +313,8 @@ function function_a3eb5d233829a440( posindex )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf74
+// Params 1
+// Checksum 0x0, Offset: 0xf75
 // Size: 0x8e
 function staticcircle( circleindex )
 {
@@ -321,8 +325,8 @@ function staticcircle( circleindex )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x100a
+// Params 3
+// Checksum 0x0, Offset: 0x100b
 // Size: 0x8f
 function movecircle( circleindex, posindex, duration )
 {
@@ -333,8 +337,8 @@ function movecircle( circleindex, posindex, duration )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x10a1
+// Params 4
+// Checksum 0x0, Offset: 0x10a2
 // Size: 0x12e
 function function_f8d91790d1f698f2( circleindex, duration, position, radius )
 {
@@ -358,8 +362,8 @@ function function_f8d91790d1f698f2( circleindex, duration, position, radius )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d7
+// Params 2
+// Checksum 0x0, Offset: 0x11d8
 // Size: 0xb5
 function function_edf140306fca3e8b( position, radius )
 {
@@ -370,8 +374,8 @@ function function_edf140306fca3e8b( position, radius )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1294
+// Params 2
+// Checksum 0x0, Offset: 0x1295
 // Size: 0x210
 function function_628f61246095f688( positionindex, transitionmaxduration )
 {
@@ -396,8 +400,8 @@ function function_628f61246095f688( positionindex, transitionmaxduration )
 }
 
 // Namespace namespace_9ced0748cfd1d189 / namespace_813f5a035e59565a
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ac
+// Params 2
+// Checksum 0x0, Offset: 0x14ad
 // Size: 0x12a
 function function_272ddfaeb01d36fc( totallerptime, iszoomout )
 {
@@ -426,7 +430,8 @@ function function_272ddfaeb01d36fc( totallerptime, iszoomout )
     var_777913b6f66c8417 = int( ( previouszoom - goalzoom ) / var_7f479bce3abf8b1b );
     var_d1f50321d77c76dc = previouszoom;
     
-    for (i = 0; i < var_7f479bce3abf8b1b; i++) {
+    for ( i = 0; i < var_7f479bce3abf8b1b ; i++ )
+    {
         var_d1f50321d77c76dc -= var_777913b6f66c8417;
         level.var_9ced0748cfd1d189.var_b0f77e41b73f0632 = var_d1f50321d77c76dc;
         setomnvar( "ui_br_minimap_radius", var_d1f50321d77c76dc );

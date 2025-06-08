@@ -14,7 +14,7 @@
 #namespace toma_strike_mp;
 
 // Namespace toma_strike_mp / scripts\mp\killstreaks\toma_strike_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15b
 // Size: 0xa5
 function init()
@@ -31,7 +31,7 @@ function init()
 }
 
 // Namespace toma_strike_mp / scripts\mp\killstreaks\toma_strike_mp
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x208
 // Size: 0x4a
 function toma_strike_monitordamage( maxhealth, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak, rumble, resetdamagetaken )
@@ -40,7 +40,7 @@ function toma_strike_monitordamage( maxhealth, damagefeedback, ondeathfunc, var_
 }
 
 // Namespace toma_strike_mp / scripts\mp\killstreaks\toma_strike_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25a
 // Size: 0xd
 function toma_strike_molotov_branch_draw_hits()

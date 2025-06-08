@@ -12,7 +12,7 @@
 #namespace jup_spawner_zombie_hellhound_spatial;
 
 // Namespace jup_spawner_zombie_hellhound_spatial / namespace_e1087572f5e844c0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x233
 // Size: 0x1e3
 function main()
@@ -50,7 +50,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_hellhound_spatial / namespace_e1087572f5e844c0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41e
 // Size: 0x57
 function setup_model()
@@ -67,7 +67,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_hellhound_spatial / namespace_e1087572f5e844c0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47d
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -76,7 +76,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_hellhound_spatial / namespace_e1087572f5e844c0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48e
 // Size: 0x108
 function precache()
@@ -109,7 +109,7 @@ function precache()
 }
 
 // Namespace jup_spawner_zombie_hellhound_spatial / namespace_e1087572f5e844c0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59e
 // Size: 0xa2
 function setup_weapons()

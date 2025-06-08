@@ -18,7 +18,7 @@
 #namespace namespace_3a1684420d8c7ba3;
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x720
 // Size: 0x1d3
 function init()
@@ -56,7 +56,7 @@ function init()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8fb
 // Size: 0x3d
 function domquest_removequestinstance()
@@ -71,7 +71,7 @@ function domquest_removequestinstance()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x940
 // Size: 0x72
 function domlocale_removelocaleinstance()
@@ -90,7 +90,7 @@ function domlocale_removelocaleinstance()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ba
 // Size: 0x59, Type: bool
 function domtablet_init()
@@ -113,7 +113,7 @@ function domtablet_init()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa1c
 // Size: 0x2af
 function domlocale_createquestlocale( placement )
@@ -177,7 +177,7 @@ function domlocale_createquestlocale( placement )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd4
 // Size: 0xb4, Type: bool
 function domlocale_checkiflocaleisavailable( search_params )
@@ -209,7 +209,7 @@ function domlocale_checkiflocaleisavailable( search_params )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd91
 // Size: 0x109
 function domlocale_circletick( dangercircleorigin, dangercircleradius )
@@ -247,7 +247,7 @@ function domlocale_circletick( dangercircleorigin, dangercircleradius )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xea2
 // Size: 0x1d
 function domlocale_onentergulag( player )
@@ -260,7 +260,7 @@ function domlocale_onentergulag( player )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec7
 // Size: 0x51
 function domlocale_onrespawn( player )
@@ -276,7 +276,7 @@ function domlocale_onrespawn( player )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf20
 // Size: 0x229
 function takequestitem( pickupent )
@@ -324,7 +324,7 @@ function takequestitem( pickupent )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1151
 // Size: 0x105
 function domflagupdateicons()
@@ -349,7 +349,7 @@ function domflagupdateicons()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x125e
 // Size: 0x2f
 function domflag_hideiconfromplayer( player )
@@ -362,7 +362,7 @@ function domflag_hideiconfromplayer( player )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1295
 // Size: 0x2f
 function domflag_showicontoplayer( player )
@@ -375,7 +375,7 @@ function domflag_showicontoplayer( player )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12cc
 // Size: 0x1b
 function domflagupdateiconsframeend()
@@ -390,7 +390,7 @@ function domflagupdateiconsframeend()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12ef
 // Size: 0x12d
 function deletedomflaggameobject()
@@ -425,7 +425,7 @@ function deletedomflaggameobject()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1424
 // Size: 0xf
 function gameobjectreleaseid_delayed()
@@ -435,7 +435,7 @@ function gameobjectreleaseid_delayed()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x143b
 // Size: 0x1c3
 function setupdom()
@@ -471,7 +471,7 @@ function setupdom()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1606
 // Size: 0x69
 function _setdomflagiconinfo( name, colors, string, pulses )
@@ -484,7 +484,7 @@ function _setdomflagiconinfo( name, colors, string, pulses )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1677
 // Size: 0x6b
 function domflag_onuseupdate( team, progress, change, capplayer )
@@ -501,7 +501,7 @@ function domflag_onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16ea
 // Size: 0x15b
 function domflag_onbeginuse( credit_player )
@@ -535,7 +535,7 @@ function domflag_onbeginuse( credit_player )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x184d
 // Size: 0x2f0
 function domflag_onuse( credit_player )
@@ -599,7 +599,7 @@ function domflag_onuse( credit_player )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b45
 // Size: 0x25
 function domflag_onenduse( team, player, success )
@@ -608,7 +608,7 @@ function domflag_onenduse( team, player, success )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b72
 // Size: 0x8f
 function play_spotrep_capture_sfx( progress, team )
@@ -629,7 +629,7 @@ function play_spotrep_capture_sfx( progress, team )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c09
 // Size: 0x9a
 function domflag_setdomscriptablepartstate( part, state, statemod )
@@ -660,7 +660,7 @@ function domflag_setdomscriptablepartstate( part, state, statemod )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cab
 // Size: 0x8a, Type: bool
 function domflag_usecondition( player )
@@ -679,7 +679,7 @@ function domflag_usecondition( player )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d3e
 // Size: 0x68
 function dom_ontimerexpired()
@@ -698,7 +698,7 @@ function dom_ontimerexpired()
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dae
 // Size: 0x15c
 function getserachparams( tablet )
@@ -730,7 +730,7 @@ function getserachparams( tablet )
 }
 
 // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f13
 // Size: 0x6c
 function gametypeoverridedomsearchparams()
@@ -755,7 +755,7 @@ function gametypeoverridedomsearchparams()
 /#
 
     // Namespace namespace_3a1684420d8c7ba3 / namespace_8e6e608bc83e3d46
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1f88
     // Size: 0x168, Type: dev
     function function_34015dcd2a361807()
@@ -781,7 +781,8 @@ function gametypeoverridedomsearchparams()
         strings[ strings.size ] = "<dev string:xd2>" + originstr + "<dev string:xde>" + distance( level.player.origin, locale.domflag.curorigin );
         teamsstr = "<dev string:xe9>" + locale.subscribedinstances.size + "<dev string:xf4>";
         
-        for (i = 0; i < locale.subscribedinstances.size; i++) {
+        for ( i = 0; i < locale.subscribedinstances.size ; i++ )
+        {
             teamsstr += locale.subscribedinstances[ i ].team;
             
             if ( i < locale.subscribedinstances.size - 1 )

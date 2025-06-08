@@ -26,7 +26,7 @@
 #namespace namespace_147cc21b507a21ed;
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf90
 // Size: 0x44
 function init()
@@ -37,7 +37,7 @@ function init()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfdc
 // Size: 0xb
 function function_b4e9d46918f067bb()
@@ -46,7 +46,7 @@ function function_b4e9d46918f067bb()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xff0
 // Size: 0xe7
 function main()
@@ -80,7 +80,7 @@ function main()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10df
 // Size: 0x70
 function function_5df8c6abd0b861cd()
@@ -108,7 +108,7 @@ function function_5df8c6abd0b861cd()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1157
 // Size: 0x1ab
 function postprematch()
@@ -179,7 +179,7 @@ function postprematch()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x130a
 // Size: 0x201
 function latespawnplayer()
@@ -264,7 +264,7 @@ function latespawnplayer()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1513
 // Size: 0xf5
 function oldlatespawnplayer()
@@ -318,7 +318,7 @@ function oldlatespawnplayer()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1610
 // Size: 0x2ed
 function latespawnsnatchtoc130()
@@ -347,11 +347,13 @@ function latespawnsnatchtoc130()
         teamplayers = getteamdata( player.team, "players" );
         possibleindices = [];
         
-        for (i = 0; i < teamplayers.size - 1; i++) {
+        for ( i = 0; i < teamplayers.size - 1 ; i++ )
+        {
             possibleindices[ i ] = i + 2;
         }
         
-        for (i = 0; i < possibleindices.size; i++) {
+        for ( i = 0; i < possibleindices.size ; i++ )
+        {
             used = 0;
             
             foreach ( teamplayer in teamplayers )
@@ -406,7 +408,7 @@ function latespawnsnatchtoc130()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1905
 // Size: 0x84
 function playerlinktopositionent( animstruct )
@@ -430,7 +432,7 @@ function playerlinktopositionent( animstruct )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1991
 // Size: 0x11
 function function_35be50043c0855ae()
@@ -439,7 +441,7 @@ function function_35be50043c0855ae()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19ab
 // Size: 0x17c
 function playinfilplayeranims( animstruct, players )
@@ -484,7 +486,7 @@ function playinfilplayeranims( animstruct, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b2f
 // Size: 0x54
 function playerplayinfilloopanim( animstruct )
@@ -500,7 +502,7 @@ function playerplayinfilloopanim( animstruct )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b8b
 // Size: 0x5fb
 function watchinfiljumpanim( animstruct )
@@ -639,7 +641,7 @@ function watchinfiljumpanim( animstruct )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x218e
 // Size: 0x1a2
 function getanimsforplanefacing( animstruct )
@@ -676,7 +678,7 @@ function getanimsforplanefacing( animstruct )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2338
 // Size: 0x41
 function playjumpsoundtosquad( player )
@@ -692,7 +694,7 @@ function playjumpsoundtosquad( player )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2381
 // Size: 0x38
 function missedinfilplayerhandler()
@@ -704,7 +706,7 @@ function missedinfilplayerhandler()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23c1
 // Size: 0xa9
 function playerjoininfil()
@@ -730,7 +732,7 @@ function playerjoininfil()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2472
 // Size: 0x79
 function playersetupcontrolsforinfil( soloonly )
@@ -757,7 +759,7 @@ function playersetupcontrolsforinfil( soloonly )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24f3
 // Size: 0x78
 function playercleanupinfilondisconnect()
@@ -775,7 +777,7 @@ function playercleanupinfilondisconnect()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2573
 // Size: 0x3ad
 function beginbrc130playeraniminfilsequence( c130pathstruct, infil_anim_type, players )
@@ -880,7 +882,7 @@ function beginbrc130playeraniminfilsequence( c130pathstruct, infil_anim_type, pl
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2928
 // Size: 0x7a
 function infilvideopreload( players )
@@ -903,7 +905,7 @@ function infilvideopreload( players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29aa
 // Size: 0x14
 function function_f94830ac89cbe22c( waittime )
@@ -913,7 +915,7 @@ function function_f94830ac89cbe22c( waittime )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29c6
 // Size: 0x1f8
 function infilvideoplay( players )
@@ -986,7 +988,7 @@ function infilvideoplay( players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2bc6
 // Size: 0x31
 function infilvideocompletecallback( channel, val )
@@ -999,7 +1001,7 @@ function infilvideocompletecallback( channel, val )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bff
 // Size: 0x118
 function infilvideowaituntilcomplete( players )
@@ -1037,7 +1039,7 @@ function infilvideowaituntilcomplete( players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d1f
 // Size: 0x10f
 function gunship_updateplayercount()
@@ -1078,7 +1080,7 @@ function gunship_updateplayercount()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e36
 // Size: 0x8d
 function spawnplayerpositionparentent( animstruct, ac130 )
@@ -1089,7 +1091,7 @@ function spawnplayerpositionparentent( animstruct, ac130 )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ecb
 // Size: 0x99
 function spawnplayerpositionent( animstruct, prop_tag )
@@ -1100,7 +1102,7 @@ function spawnplayerpositionent( animstruct, prop_tag )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f6c
 // Size: 0x6ba
 function buildac130infilanimstruct( movingc130, infil_anim_type )
@@ -1121,7 +1123,7 @@ function buildac130infilanimstruct( movingc130, infil_anim_type )
     }
     else
     {
-        animstruct.staticc130 = spawn( "script_model", getdvarvector( @"hash_223915c6339dbc10", ( 0, 0, 0 ) ) );
+        animstruct.staticc130 = spawn( "script_model", getdvarvector( @"br_infil_anim_pos", ( 0, 0, 0 ) ) );
         animstruct.staticc130 setmodel( "veh8_mil_air_acharlie130_magma_animated" );
         animstruct.staticc130.cleanme = 1;
     }
@@ -1199,7 +1201,7 @@ function buildac130infilanimstruct( movingc130, infil_anim_type )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x362f
 // Size: 0x92
 function setuphudelemninfilblack( hudelem )
@@ -1216,7 +1218,7 @@ function setuphudelemninfilblack( hudelem )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x36c9
 // Size: 0x4db
 function infilallfadetoblack( fadeintime, timeblack, fadeouttime, var_bfd3cec846e4fbf7, players, var_69618eb692fc8288 )
@@ -1381,7 +1383,7 @@ function infilallfadetoblack( fadeintime, timeblack, fadeouttime, var_bfd3cec846
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3bac
 // Size: 0x332
 function transitionplayerstoac130cinematic( players, infil_anim_type, c130 )
@@ -1495,7 +1497,7 @@ function transitionplayerstoac130cinematic( players, infil_anim_type, c130 )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ee6
 // Size: 0x231
 function waitforc130andforcespawnallplayers( players )
@@ -1576,7 +1578,7 @@ function waitforc130andforcespawnallplayers( players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x411f
 // Size: 0x94
 function c130forcespawnplayer()
@@ -1603,7 +1605,7 @@ function c130forcespawnplayer()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41bb
 // Size: 0xdd
 function transitionplayersoutofac130cinematic( players, infil_anim_type )
@@ -1638,7 +1640,7 @@ function transitionplayersoutofac130cinematic( players, infil_anim_type )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42a0
 // Size: 0x90
 function clearsoundsubmixmpbrinfilac130( players )
@@ -1658,7 +1660,7 @@ function clearsoundsubmixmpbrinfilac130( players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4338
 // Size: 0x90
 function clearsoundsubmixmpbrinfilanim( players )
@@ -1678,7 +1680,7 @@ function clearsoundsubmixmpbrinfilanim( players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43d0
 // Size: 0x90
 function clearsoundsubmixfadetoblackamb( players )
@@ -1698,7 +1700,7 @@ function clearsoundsubmixfadetoblackamb( players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4468
 // Size: 0xa1
 function setsoundsubmixfadetoblackamb( players )
@@ -1719,7 +1721,7 @@ function setsoundsubmixfadetoblackamb( players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4511
 // Size: 0x37
 function playac130infilanim( animstruct, players )
@@ -1731,7 +1733,7 @@ function playac130infilanim( animstruct, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4550
 // Size: 0x773
 function playac130animinternal( animstruct, players )
@@ -1914,7 +1916,7 @@ function playac130animinternal( animstruct, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ccb
 // Size: 0x50f
 function transitionac130tomovinganim( animstruct, players )
@@ -2041,7 +2043,7 @@ function transitionac130tomovinganim( animstruct, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x51e2
 // Size: 0x86
 function unfreezeplayercontrols( delaytime, players )
@@ -2061,7 +2063,7 @@ function unfreezeplayercontrols( delaytime, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5270
 // Size: 0x11d
 function endac130infilanimsinternal( animstruct, players )
@@ -2095,7 +2097,7 @@ function endac130infilanimsinternal( animstruct, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5395
 // Size: 0x7b
 function playac130infilloopanims( animstruct )
@@ -2110,7 +2112,7 @@ function playac130infilloopanims( animstruct )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5418
 // Size: 0x7b
 function offlight( animstruct )
@@ -2124,7 +2126,7 @@ function offlight( animstruct )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x549b
 // Size: 0x9b
 function redlight( animstruct )
@@ -2140,7 +2142,7 @@ function redlight( animstruct )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x553e
 // Size: 0x9b
 function greenlight( animstruct )
@@ -2156,7 +2158,7 @@ function greenlight( animstruct )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x55e1
 // Size: 0xde
 function playerwind( animstruct, players )
@@ -2184,7 +2186,7 @@ function playerwind( animstruct, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x56c7
 // Size: 0xaa
 function clearplayerwind( animstruct, players )
@@ -2206,7 +2208,7 @@ function clearplayerwind( animstruct, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5779
 // Size: 0x56
 function cloud_cover( animstruct )
@@ -2222,7 +2224,7 @@ function cloud_cover( animstruct )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x57d7
 // Size: 0x145
 function infil_light_dvars( animstruct )
@@ -2230,23 +2232,23 @@ function infil_light_dvars( animstruct )
     var_c3ed855fe7c983e3 = getdvarfloat( @"hash_8667c0bb90c5bfc3" );
     var_1800e53d66415e2d = getdvarint( @"hash_63eb1893f96ac98d" );
     var_5506432d2291c178 = getdvarint( @"hash_1dde331a8e0153d8" );
-    var_488f9b9fe1ead0a6 = getdvarfloat( @"hash_9ab6a766fc4e0c06" );
+    var_488f9b9fe1ead0a6 = getdvarfloat( @"sm_sunsamplesizenear" );
     var_99598b81ba0f7519 = getdvarfloat( @"hash_a589d43a51d526df" );
     setdvar( @"hash_8667c0bb90c5bfc3", 1000 );
     setdvar( @"hash_63eb1893f96ac98d", 6 );
     setdvar( @"hash_1dde331a8e0153d8", 8 );
-    setdvar( @"hash_9ab6a766fc4e0c06", 0.25 );
+    setdvar( @"sm_sunsamplesizenear", 0.25 );
     setdvar( @"hash_a589d43a51d526df", 0.5 );
     animstruct waittill_either( "infil_reset_light_dvars", "stopScene" );
     setdvar( @"hash_8667c0bb90c5bfc3", var_c3ed855fe7c983e3 );
     setdvar( @"hash_63eb1893f96ac98d", var_1800e53d66415e2d );
     setdvar( @"hash_1dde331a8e0153d8", var_5506432d2291c178 );
-    setdvar( @"hash_9ab6a766fc4e0c06", var_488f9b9fe1ead0a6 );
+    setdvar( @"sm_sunsamplesizenear", var_488f9b9fe1ead0a6 );
     setdvar( @"hash_a589d43a51d526df", var_99598b81ba0f7519 );
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5924
 // Size: 0x153
 function delaystreamtomovingplane( animstruct, players )
@@ -2280,7 +2282,7 @@ function delaystreamtomovingplane( animstruct, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5a7f
 // Size: 0xc6
 function stopstreamtomovingplane( animstruct, players )
@@ -2304,7 +2306,7 @@ function stopstreamtomovingplane( animstruct, players )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b4d
 // Size: 0x2
 function getlightingvalues()
@@ -2313,7 +2315,7 @@ function getlightingvalues()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b57
 // Size: 0x2
 function lightsreset()
@@ -2324,16 +2326,16 @@ function lightsreset()
 /#
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5b61
     // Size: 0x120, Type: dev
     function function_36ebdcea4a9d96ce( infil_anim_type )
     {
         level.infil_vignette_anim_type = infil_anim_type;
-        var_b37140bfa8ba2461 = spawn( "<dev string:x16b>", getdvarvector( @"hash_223915c6339dbc10", ( 0, 0, 0 ) ) );
+        var_b37140bfa8ba2461 = spawn( "<dev string:x16b>", getdvarvector( @"br_infil_anim_pos", ( 0, 0, 0 ) ) );
         var_b37140bfa8ba2461 setmodel( "<dev string:x17b>" );
         var_b37140bfa8ba2461.cleanme = 1;
-        var_b37140bfa8ba2461.innards = spawn( "<dev string:x16b>", getdvarvector( @"hash_223915c6339dbc10", ( 0, 0, 0 ) ) );
+        var_b37140bfa8ba2461.innards = spawn( "<dev string:x16b>", getdvarvector( @"br_infil_anim_pos", ( 0, 0, 0 ) ) );
         var_b37140bfa8ba2461.innards setmodel( "<dev string:x1a6>" );
         var_b37140bfa8ba2461.innards linkto( var_b37140bfa8ba2461, "<dev string:x1ce>" );
         var_b37140bfa8ba2461.innards.cleanme = 1;
@@ -2348,7 +2350,7 @@ function lightsreset()
 #/
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5c89
 // Size: 0x47
 function movetowithpause( point, time, accel, decel )
@@ -2365,7 +2367,7 @@ function movetowithpause( point, time, accel, decel )
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5cd8
 // Size: 0x47
 function rotatetowithpause( angles, time, accel, decel )
@@ -2384,7 +2386,7 @@ function rotatetowithpause( angles, time, accel, decel )
 /#
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5d27
     // Size: 0x19d, Type: dev
     function function_ec887b61b1baeba8( host )
@@ -2422,7 +2424,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x5ecc
     // Size: 0x3d, Type: dev
     function function_3a001a7d1d9a2ca3( player, animstruct, models )
@@ -2433,7 +2435,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x5f11
     // Size: 0x7b, Type: dev
     function endanimsequence( player, animstruct, models )
@@ -2448,7 +2450,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x5f94
     // Size: 0x47, Type: dev
     function function_9384c9ed097bf7b9( player, buttonstring )
@@ -2465,7 +2467,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x5fe3
     // Size: 0x11f, Type: dev
     function function_710d2b779609907d( player, models, animstruct )
@@ -2511,7 +2513,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x610a
     // Size: 0x186, Type: dev
     function function_b51365f787d44355( player, animstruct )
@@ -2569,7 +2571,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 14, eflags: 0x0
+    // Params 14
     // Checksum 0x0, Offset: 0x6298
     // Size: 0xa1, Type: dev
     function function_77108c1c4c1defef( func, timer, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12 )
@@ -2580,7 +2582,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 14, eflags: 0x0
+    // Params 14
     // Checksum 0x0, Offset: 0x6341
     // Size: 0x1c7, Type: dev
     function function_3fc888ca7a09b8d( func, timer, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12 )
@@ -2663,7 +2665,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x6510
     // Size: 0x84, Type: dev
     function movetopause( point, timesec, accel, decel )
@@ -2691,7 +2693,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x659c
     // Size: 0x84, Type: dev
     function rotatetopause( angles, timesec, accel, decel )
@@ -2719,7 +2721,7 @@ function rotatetowithpause( angles, time, accel, decel )
     }
 
     // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x6628
     // Size: 0x2cb, Type: dev
     function function_b0f7742c6d38dbd1( animstruct )
@@ -2761,7 +2763,7 @@ function rotatetowithpause( angles, time, accel, decel )
 #/
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68fb
 // Size: 0xa8
 function headlessinfils()
@@ -2769,7 +2771,8 @@ function headlessinfils()
     dist = distance( level.br_ac130.pathstruct.startpt, level.br_ac130.pathstruct.endpt );
     time = dist / scripts\mp\gametypes\br_c130::getc130speed() / level.headlessinfilplayers.size;
     
-    for (i = 0; i < level.headlessinfilplayers.size; i++) {
+    for ( i = 0; i < level.headlessinfilplayers.size ; i++ )
+    {
         wait time;
         level.headlessinfilplayers[ i ] notify( "halo_jump_c130" );
     }
@@ -2778,7 +2781,7 @@ function headlessinfils()
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69ab
 // Size: 0x38
 function registerheadlessinfil( player )

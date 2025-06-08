@@ -13,8 +13,8 @@
 /#
 
     // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x242
+    // Params 0
+    // Checksum 0x0, Offset: 0x243
     // Size: 0xd, Type: dev
     function function_75d03a2a8cb2b64()
     {
@@ -24,8 +24,8 @@
 #/
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x257
+// Params 5
+// Checksum 0x0, Offset: 0x258
 // Size: 0x195, Type: bool
 function function_aec261e207cbd04a( device, player, activation_time, interact_struct, restrictmovement )
 {
@@ -95,7 +95,7 @@ function function_aec261e207cbd04a( device, player, activation_time, interact_st
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3f5
+// Checksum 0x0, Offset: 0x3f6
 // Size: 0x1e, Type: bool
 function private isvaliddevice( device )
 {
@@ -109,7 +109,7 @@ function private isvaliddevice( device )
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x41c
+// Checksum 0x0, Offset: 0x41d
 // Size: 0x60
 function private switchtodevice( device, player, restrictmovement )
 {
@@ -124,7 +124,7 @@ function private switchtodevice( device, player, restrictmovement )
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x485
+// Checksum 0x0, Offset: 0x486
 // Size: 0x82
 function private function_2d339ccf11a6db49( isrestricted )
 {
@@ -143,7 +143,7 @@ function private function_2d339ccf11a6db49( isrestricted )
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x50f
+// Checksum 0x0, Offset: 0x510
 // Size: 0x23
 function private function_26f48c219f97a889()
 {
@@ -154,7 +154,7 @@ function private function_26f48c219f97a889()
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x53a
+// Checksum 0x0, Offset: 0x53b
 // Size: 0x8a
 function private watchcancel( player )
 {
@@ -170,8 +170,8 @@ function private watchcancel( player )
 }
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cc
+// Params 6
+// Checksum 0x0, Offset: 0x5cd
 // Size: 0xa1
 function function_3cec1b2981075936( interaction_device, scriptable, on_use_function, var_81adce70ad13cf33, var_f3bf6e6da951239b, activation_time )
 {
@@ -186,8 +186,8 @@ function function_3cec1b2981075936( interaction_device, scriptable, on_use_funct
 }
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x675
+// Params 2
+// Checksum 0x0, Offset: 0x676
 // Size: 0x42
 function function_e9aa849fed70470d( origin, angles )
 {
@@ -198,11 +198,27 @@ function function_e9aa849fed70470d( origin, angles )
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6c0
-// Size: 0x1a5
+// Checksum 0x0, Offset: 0x6c1
+// Size: 0x216
 function private function_d562e8fefd4e2fb( player )
 {
     player endon( "interaction_complete" );
+    
+    if ( getdvarint( @"hash_3d9571e01e8ae72b", 1 ) )
+    {
+        var_962e2a9f239f17c2 = function_9ec2f480552af944( player );
+        
+        if ( !istrue( var_962e2a9f239f17c2 ) )
+        {
+            var_24d46afdd864f9fe = isdefined( self ) && isdefined( self.activation_time ) && self.activation_time < 250 ? 1 : 0;
+            
+            if ( var_24d46afdd864f9fe == 0 )
+            {
+                return ( player isreloading() ? 0 : 1 );
+            }
+        }
+    }
+    
     thread function_ff435575adff1b0f( player );
     
     if ( isdefined( self.var_f3bf6e6da951239b ) )
@@ -252,7 +268,7 @@ function private function_d562e8fefd4e2fb( player )
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x86d
+// Checksum 0x0, Offset: 0x8df
 // Size: 0x4d
 function private function_2a27403675796f41( player, var_ddad3435bff34bfe )
 {
@@ -273,7 +289,7 @@ function private function_2a27403675796f41( player, var_ddad3435bff34bfe )
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x8c2
+// Checksum 0x0, Offset: 0x934
 // Size: 0x50
 function private function_f3f4132cb28e3739( player, activationtime )
 {
@@ -294,7 +310,7 @@ function private function_f3f4132cb28e3739( player, activationtime )
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x91a
+// Checksum 0x0, Offset: 0x98c
 // Size: 0x25
 function private function_e4571272ae008ea7( player )
 {
@@ -306,7 +322,7 @@ function private function_e4571272ae008ea7( player )
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x947
+// Checksum 0x0, Offset: 0x9b9
 // Size: 0x225
 function private function_3cd671ed8c469f52( player )
 {
@@ -372,7 +388,7 @@ function private function_3cd671ed8c469f52( player )
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xb74
+// Checksum 0x0, Offset: 0xbe6
 // Size: 0xb4
 function private function_ff435575adff1b0f( player )
 {
@@ -398,8 +414,8 @@ function private function_ff435575adff1b0f( player )
 }
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc30
+// Params 1
+// Checksum 0x0, Offset: 0xca2
 // Size: 0x82
 function function_70946e24f54d3f1a( interact_device )
 {
@@ -424,8 +440,8 @@ function function_70946e24f54d3f1a( interact_device )
 }
 
 // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xcba
+// Params 6
+// Checksum 0x0, Offset: 0xd2c
 // Size: 0x89
 function function_a7ed9b756a764621( interaction_device, var_22e1dd3e25642d69, var_28f03cd0fca2c176, on_use_function, var_81adce70ad13cf33, var_f3bf6e6da951239b )
 {
@@ -450,8 +466,8 @@ function function_a7ed9b756a764621( interaction_device, var_22e1dd3e25642d69, va
 /#
 
     // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd4c
+    // Params 1
+    // Checksum 0x0, Offset: 0xdbe
     // Size: 0x54, Type: dev
     function function_13ef2d3c992a2954( params )
     {
@@ -463,8 +479,8 @@ function function_a7ed9b756a764621( interaction_device, var_22e1dd3e25642d69, va
     }
 
     // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xda8
+    // Params 1
+    // Checksum 0x0, Offset: 0xe1a
     // Size: 0x32, Type: dev
     function function_e0a739780149a4c3( params )
     {
@@ -472,8 +488,8 @@ function function_a7ed9b756a764621( interaction_device, var_22e1dd3e25642d69, va
     }
 
     // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xde2
+    // Params 1
+    // Checksum 0x0, Offset: 0xe54
     // Size: 0x86, Type: dev
     function function_dd51ec3ef232fe0f( params )
     {
@@ -488,8 +504,8 @@ function function_a7ed9b756a764621( interaction_device, var_22e1dd3e25642d69, va
     }
 
     // Namespace namespace_166fd5d99fbeb429 / namespace_29b5250e9959ea
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe70
+    // Params 1
+    // Checksum 0x0, Offset: 0xee2
     // Size: 0xe, Type: dev
     function function_a0cf72fa5939f30b( params )
     {

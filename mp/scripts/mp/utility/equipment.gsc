@@ -6,7 +6,7 @@
 #namespace equipment;
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20c
 // Size: 0x108
 function get_mine_ignore_list()
@@ -42,7 +42,7 @@ function get_mine_ignore_list()
 }
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x31d
 // Size: 0x435
 function get_sticky_grenade_destination( grenade, gunangles, speedforward, speedup, fusetime, data )
@@ -102,7 +102,8 @@ function get_sticky_grenade_destination( grenade, gunangles, speedforward, speed
     var_71b049ff6296dc2f = dirup * vectordot( dirup, vel );
     var_60cecc5d1218a89e = vel - var_71b049ff6296dc2f;
     
-    for (i = 1; i < data.divisions; i++) {
+    for ( i = 1; i < data.divisions ; i++ )
+    {
         prevtime = times[ i - 1 ];
         prevposition = positions[ i - 1 ];
         nexttime = i * steptime;
@@ -151,7 +152,7 @@ function get_sticky_grenade_destination( grenade, gunangles, speedforward, speed
 }
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x75b
 // Size: 0x94
 function get_grenade_cast_contents( includeplayers )
@@ -171,7 +172,7 @@ function get_grenade_cast_contents( includeplayers )
 }
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f8
 // Size: 0x611, Type: bool
 function plant( grenade, data )
@@ -388,7 +389,7 @@ function plant( grenade, data )
 }
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe12
 // Size: 0x43
 function plant_watch_stuck( grenade, data )
@@ -403,7 +404,7 @@ function plant_watch_stuck( grenade, data )
 }
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe5e
 // Size: 0x7f
 function plant_watch_stuck_notify( grenade, data )
@@ -418,7 +419,7 @@ function plant_watch_stuck_notify( grenade, data )
 }
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xee5
 // Size: 0xac
 function plant_watch_stuck_calculate( grenade, data )
@@ -432,7 +433,7 @@ function plant_watch_stuck_calculate( grenade, data )
 }
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf99
 // Size: 0x2e
 function plant_watch_stuck_timeout( grenade, data )
@@ -443,7 +444,7 @@ function plant_watch_stuck_timeout( grenade, data )
 }
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfcf
 // Size: 0x94
 function plant_clamp_angles( angles, data )
@@ -468,7 +469,7 @@ function plant_clamp_angles( angles, data )
 }
 
 // Namespace equipment / scripts\mp\utility\equipment
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x106c
 // Size: 0x62
 function watch_flight_collision()

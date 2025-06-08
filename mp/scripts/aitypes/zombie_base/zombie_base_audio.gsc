@@ -8,8 +8,8 @@
 #namespace zombie_base_audio;
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x496
+// Params 0
+// Checksum 0x0, Offset: 0x497
 // Size: 0x2b1
 function function_dbd4fdd08f5252a3()
 {
@@ -50,8 +50,8 @@ function function_dbd4fdd08f5252a3()
 }
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x74f
+// Params 0
+// Checksum 0x0, Offset: 0x750
 // Size: 0x2c
 function function_f54dcf741aec59fb()
 {
@@ -62,7 +62,7 @@ function function_f54dcf741aec59fb()
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x783
+// Checksum 0x0, Offset: 0x784
 // Size: 0x7e
 function private function_cd12e4b6f6fa089c( event, zombie, var_c2aec59361d95878, alias, priority )
 {
@@ -81,7 +81,7 @@ function private function_cd12e4b6f6fa089c( event, zombie, var_c2aec59361d95878,
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x809
+// Checksum 0x0, Offset: 0x80a
 // Size: 0xb3
 function private play_death_vo( params )
 {
@@ -106,7 +106,7 @@ function private play_death_vo( params )
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x8c4
+// Checksum 0x0, Offset: 0x8c5
 // Size: 0x4a
 function private function_94fe21f6edbcec92( params )
 {
@@ -121,7 +121,7 @@ function private function_94fe21f6edbcec92( params )
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x916
+// Checksum 0x0, Offset: 0x917
 // Size: 0x17
 function private function_7ca612e0628da67( params )
 {
@@ -129,8 +129,8 @@ function private function_7ca612e0628da67( params )
 }
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x935
+// Params 0
+// Checksum 0x0, Offset: 0x936
 // Size: 0xcd
 function function_78c6b4fdf8524643()
 {
@@ -177,7 +177,7 @@ function function_78c6b4fdf8524643()
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xa0a
+// Checksum 0x0, Offset: 0xa0b
 // Size: 0xb4
 function private function_c9f228f5a6b505a0()
 {
@@ -214,7 +214,7 @@ function private function_c9f228f5a6b505a0()
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xac7
+// Checksum 0x0, Offset: 0xac8
 // Size: 0x2b
 function private function_1dc3dbebbb45158a()
 {
@@ -230,7 +230,7 @@ function private function_1dc3dbebbb45158a()
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xafa
+// Checksum 0x0, Offset: 0xafb
 // Size: 0x1c
 function private function_622dfa9ef1c9ec44( params, archetype )
 {
@@ -239,7 +239,7 @@ function private function_622dfa9ef1c9ec44( params, archetype )
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xb1e
+// Checksum 0x0, Offset: 0xb1f
 // Size: 0x11b
 function private zombie_behind_vo( archetype )
 {
@@ -279,7 +279,7 @@ function private zombie_behind_vo( archetype )
 
 // Namespace zombie_base_audio / scripts\aitypes\zombie_base\zombie_base_audio
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xc41
+// Checksum 0x0, Offset: 0xc42
 // Size: 0x12a, Type: bool
 function private function_c7ac2345de8620e8( zombie )
 {

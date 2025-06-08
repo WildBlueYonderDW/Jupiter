@@ -13,7 +13,7 @@
 #namespace missilelauncher;
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x378
 // Size: 0x9
 function initmissilelauncherusage()
@@ -22,7 +22,7 @@ function initmissilelauncherusage()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x389
 // Size: 0x2a
 function resetmissilelaunchertargets()
@@ -34,7 +34,7 @@ function resetmissilelaunchertargets()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bb
 // Size: 0x76
 function resetmissilelauncherlocking()
@@ -61,7 +61,7 @@ function resetmissilelauncherlocking()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x439
 // Size: 0x31
 function resetmissilelauncherlockingondeath()
@@ -79,7 +79,7 @@ function resetmissilelauncherlockingondeath()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x472
 // Size: 0xe9
 function loopmissilelauncherlockingfeedback()
@@ -106,7 +106,7 @@ function loopmissilelauncherlockingfeedback()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x563
 // Size: 0xe9
 function loopmissilelauncherlockedfeedback()
@@ -133,7 +133,7 @@ function loopmissilelauncherlockedfeedback()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x654
 // Size: 0x77, Type: bool
 function softsighttest( stingtargstruct )
@@ -163,7 +163,7 @@ function softsighttest( stingtargstruct )
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d4
 // Size: 0x3d6
 function missilelauncherusage()
@@ -350,7 +350,7 @@ function missilelauncherusage()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab2
 // Size: 0x39
 function missilelauncherusageloop()
@@ -373,7 +373,7 @@ function missilelauncherusageloop()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf3
 // Size: 0xfb
 function missilelauncher_finalizelock( stingtargstruct )
@@ -404,7 +404,7 @@ function missilelauncher_finalizelock( stingtargstruct )
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbf6
 // Size: 0x8c
 function stingtargstruct_create( player, target )
@@ -422,7 +422,7 @@ function stingtargstruct_create( player, target )
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc8b
 // Size: 0x688
 function stingtargstruct_getoffsets()
@@ -560,7 +560,7 @@ function stingtargstruct_getoffsets()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x131b
 // Size: 0xc5
 function stingtargstruct_getorigins()
@@ -571,21 +571,23 @@ function stingtargstruct_getorigins()
     right = anglestoright( angles );
     up = anglestoup( angles );
     
-    for (i = 0; i < self.offsets.size; i++) {
+    for ( i = 0; i < self.offsets.size ; i++ )
+    {
         offset = self.offsets[ i ];
         self.origins[ i ] = origin + right * offset[ 0 ] + forward * offset[ 1 ] + up * offset[ 2 ];
     }
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13e8
 // Size: 0x1a9
 function stingtargstruct_getinreticle()
 {
     foreach ( origin in self.origins )
     {
-        for (i = 0; i < self.origins.size; i++) {
+        for ( i = 0; i < self.origins.size ; i++ )
+        {
             screenpos = self.player worldpointtoscreenpos( self.origins[ i ], 65 );
             
             if ( isdefined( screenpos ) )
@@ -603,8 +605,10 @@ function stingtargstruct_getinreticle()
     
     if ( self.inreticlesortedids.size > 1 )
     {
-        for (i = 0; i < self.inreticlesortedids.size; i++) {
-            for (j = i + 1; j < self.inreticlesortedids.size; j++) {
+        for ( i = 0; i < self.inreticlesortedids.size ; i++ )
+        {
+            for ( j = i + 1; j < self.inreticlesortedids.size ; j++ )
+            {
                 i_id = self.inreticlesortedids[ i ];
                 j_id = self.inreticlesortedids[ j ];
                 var_8eba9ec305d4a611 = self.inreticledistssqr[ i_id ];
@@ -622,7 +626,7 @@ function stingtargstruct_getinreticle()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1599
 // Size: 0x444
 function stingtargstruct_getinlos()
@@ -634,7 +638,8 @@ function stingtargstruct_getinlos()
     {
         ignorearr = [ self.player ];
         
-        for (i = 0; i < self.inreticlesortedids.size; i++) {
+        for ( i = 0; i < self.inreticlesortedids.size ; i++ )
+        {
             id = self.inreticlesortedids[ i ];
             castend = self.origins[ id ];
             castresults = physics_raycast( caststart, castend, contents, ignorearr, 0, "physicsquery_closest", 1 );
@@ -659,7 +664,8 @@ function stingtargstruct_getinlos()
     
     if ( !self.useoldlosverification )
     {
-        for (i = 0; i < self.inreticlesortedids.size; i++) {
+        for ( i = 0; i < self.inreticlesortedids.size ; i++ )
+        {
             id = self.inreticlesortedids[ i ];
             castend = self.origins[ id ];
             castresults = physics_raycast( caststart, castend, contents, ignorearr, 0, "physicsquery_closest", 1 );
@@ -726,7 +732,7 @@ function stingtargstruct_getinlos()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19e5
 // Size: 0xe, Type: bool
 function stingtargstruct_isinreticle()
@@ -735,7 +741,7 @@ function stingtargstruct_isinreticle()
 }
 
 // Namespace missilelauncher / scripts\mp\missilelauncher
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19fc
 // Size: 0xc, Type: bool
 function stingtargstruct_isinlos()
@@ -746,7 +752,7 @@ function stingtargstruct_isinlos()
 /#
 
     // Namespace missilelauncher / scripts\mp\missilelauncher
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1a11
     // Size: 0xe3, Type: dev
     function debug_init()
@@ -767,7 +773,7 @@ function stingtargstruct_isinlos()
     }
 
     // Namespace missilelauncher / scripts\mp\missilelauncher
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1afc
     // Size: 0x260, Type: dev
     function function_b787474070c5281b( jackal )
@@ -807,7 +813,7 @@ function stingtargstruct_isinlos()
     }
 
     // Namespace missilelauncher / scripts\mp\missilelauncher
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1d64
     // Size: 0xd3, Type: dev
     function function_86fc943ed3331734( supertrophy )
@@ -830,7 +836,7 @@ function stingtargstruct_isinlos()
     }
 
     // Namespace missilelauncher / scripts\mp\missilelauncher
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1e3f
     // Size: 0x97, Type: dev
     function function_5942767696e14755( microturret )
@@ -850,7 +856,7 @@ function stingtargstruct_isinlos()
     }
 
     // Namespace missilelauncher / scripts\mp\missilelauncher
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1ede
     // Size: 0xd3, Type: dev
     function function_7ea2aeeed11a82c8( shocksentry )
@@ -873,7 +879,7 @@ function stingtargstruct_isinlos()
     }
 
     // Namespace missilelauncher / scripts\mp\missilelauncher
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1fb9
     // Size: 0x73, Type: dev
     function function_5875284c0e0f1e40( target )
@@ -897,7 +903,7 @@ function stingtargstruct_isinlos()
     }
 
     // Namespace missilelauncher / scripts\mp\missilelauncher
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2034
     // Size: 0x7a, Type: dev
     function drawstar( point )

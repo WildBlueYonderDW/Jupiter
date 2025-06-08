@@ -33,7 +33,7 @@
 #namespace teams;
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x319f
 // Size: 0xb31
 function init()
@@ -62,7 +62,8 @@ function init()
     
     if ( activeteamcount >= 3 )
     {
-        for (i = 3; i < activeteamcount + var_75d2cd1035b7c557; i++) {
+        for ( i = 3; i < activeteamcount + var_75d2cd1035b7c557 ; i++ )
+        {
             combatteams[ combatteams.size ] = level.allteamnamelist[ i ];
             
             if ( !isdefined( game[ level.allteamnamelist[ i ] ] ) )
@@ -92,7 +93,7 @@ function init()
     level.teambased = activeteamcount > 1 || getdvarint( @"hash_6bfddbbc0765d353", 0 ) == 1;
     setdvar( @"ui_numteams", level.teamnamelist.size );
     
-    if ( getdvarint( @"hash_f16ba8db72f34fc3", 0 ) != 0 && level.teambased )
+    if ( getdvarint( @"scr_game_forceuav", 0 ) != 0 && level.teambased )
     {
         level thread scripts\cp_mp\killstreaks\uav::function_c11936b9c6c3a076( undefined, 1 );
     }
@@ -131,7 +132,7 @@ function init()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cd8
 // Size: 0x1d4
 function function_6f61a7ebcd7859f6()
@@ -175,7 +176,7 @@ function function_6f61a7ebcd7859f6()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3eb4
 // Size: 0x1d4
 function function_67fd50c33d15b163()
@@ -219,7 +220,7 @@ function function_67fd50c33d15b163()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4090
 // Size: 0x13f
 function initteamdata( team )
@@ -250,7 +251,7 @@ function initteamdata( team )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41d7
 // Size: 0xe1
 function onplayerconnect()
@@ -278,7 +279,7 @@ function onplayerconnect()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42c0
 // Size: 0x34
 function onjoinedteam( player )
@@ -292,7 +293,7 @@ function onjoinedteam( player )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42fc
 // Size: 0x2b
 function onjoinedspectators( player )
@@ -304,7 +305,7 @@ function onjoinedspectators( player )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x432f
 // Size: 0xf6
 function trackplayedtime()
@@ -323,7 +324,8 @@ function trackplayedtime()
         playersupdated = 0;
         framesprocessed = 0;
         
-        for (playeridx = 0; playeridx < players.size; playeridx++) {
+        for ( playeridx = 0; playeridx < players.size ; playeridx++ )
+        {
             if ( !isdefined( players[ playeridx ] ) )
             {
                 continue;
@@ -346,7 +348,7 @@ function trackplayedtime()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x442d
 // Size: 0xd9
 function trackplayedtimeupdate()
@@ -383,7 +385,7 @@ function trackplayedtimeupdate()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x450e
 // Size: 0x96
 function updateplayertimes()
@@ -399,7 +401,8 @@ function updateplayertimes()
         {
             scripts\mp\hostmigration::waittillhostmigrationdone();
             
-            for (updateindex = 0; updateindex < 20; updateindex++) {
+            for ( updateindex = 0; updateindex < 20 ; updateindex++ )
+            {
                 playerindex = startplayer + updateindex;
                 player = level.players[ playerindex ];
                 
@@ -418,7 +421,7 @@ function updateplayertimes()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45ac
 // Size: 0x84
 function finalizeplayertimes()
@@ -441,7 +444,7 @@ function finalizeplayertimes()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4638
 // Size: 0x141
 function updateplayedtime()
@@ -477,7 +480,7 @@ function updateplayedtime()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4781
 // Size: 0x28
 function updateteamtime()
@@ -491,7 +494,7 @@ function updateteamtime()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47b1
 // Size: 0x47
 function updateteambalancedvar()
@@ -510,7 +513,7 @@ function updateteambalancedvar()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4800
 // Size: 0xc9
 function updateteambalance()
@@ -565,7 +568,7 @@ function updateteambalance()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48d1
 // Size: 0x105
 function getteambalance()
@@ -574,7 +577,8 @@ function getteambalance()
     team[ "axis" ] = 0;
     players = level.players;
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         if ( isdefined( players[ i ].pers[ "team" ] ) && players[ i ].pers[ "team" ] == "allies" )
         {
             team[ "allies" ]++;
@@ -596,7 +600,7 @@ function getteambalance()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49de
 // Size: 0x2b2
 function balanceteams()
@@ -606,7 +610,8 @@ function balanceteams()
     axisplayers = [];
     players = level.players;
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         if ( !isdefined( players[ i ].pers[ "teamTime" ] ) )
         {
             continue;
@@ -630,7 +635,8 @@ function balanceteams()
     {
         if ( var_4b60537d15df5108.size > axisplayers.size + 1 )
         {
-            for (j = 0; j < var_4b60537d15df5108.size; j++) {
+            for ( j = 0; j < var_4b60537d15df5108.size ; j++ )
+            {
                 if ( isdefined( var_4b60537d15df5108[ j ].dont_auto_balance ) )
                 {
                     continue;
@@ -652,7 +658,8 @@ function balanceteams()
         }
         else if ( axisplayers.size > var_4b60537d15df5108.size + 1 )
         {
-            for (j = 0; j < axisplayers.size; j++) {
+            for ( j = 0; j < axisplayers.size ; j++ )
+            {
                 if ( isdefined( axisplayers[ j ].dont_auto_balance ) )
                 {
                     continue;
@@ -678,7 +685,8 @@ function balanceteams()
         axisplayers = [];
         players = level.players;
         
-        for (i = 0; i < players.size; i++) {
+        for ( i = 0; i < players.size ; i++ )
+        {
             if ( isdefined( players[ i ].pers[ "team" ] ) && players[ i ].pers[ "team" ] == "allies" )
             {
                 var_4b60537d15df5108[ var_4b60537d15df5108.size ] = players[ i ];
@@ -694,7 +702,7 @@ function balanceteams()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c98
 // Size: 0x13
 function playermodelforweapon( weapon, secondary )
@@ -703,18 +711,20 @@ function playermodelforweapon( weapon, secondary )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cb3
 // Size: 0x11c
 function countplayers()
 {
     player_counts = [];
     
-    for (i = 0; i < level.teamnamelist.size; i++) {
+    for ( i = 0; i < level.teamnamelist.size ; i++ )
+    {
         player_counts[ level.teamnamelist[ i ] ] = 0;
     }
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         if ( level.players[ i ] == self )
         {
             continue;
@@ -741,7 +751,7 @@ function countplayers()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4dd8
 // Size: 0x33, Type: bool
 function function_4455d13943035bfc( headmodelname )
@@ -750,7 +760,7 @@ function function_4455d13943035bfc( headmodelname )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e14
 // Size: 0x33, Type: bool
 function function_9af61b2ea4d9febe( headmodelname )
@@ -759,7 +769,7 @@ function function_9af61b2ea4d9febe( headmodelname )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e50
 // Size: 0x4c
 function function_4baf40dc0ba10b6b( var_7be7b8557140e52f, headmodelname )
@@ -780,7 +790,7 @@ function function_4baf40dc0ba10b6b( var_7be7b8557140e52f, headmodelname )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4ea5
 // Size: 0xa5
 function setcharactermodels( bodymodelname, headmodelname, viewmodelname )
@@ -814,7 +824,7 @@ function setcharactermodels( bodymodelname, headmodelname, viewmodelname )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f52
 // Size: 0x143
 function forcecustomization( index )
@@ -868,7 +878,7 @@ function forcecustomization( index )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x509d
 // Size: 0x7d
 function getcustomization()
@@ -891,7 +901,7 @@ function getcustomization()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5123
 // Size: 0x7d
 function setmodelfromcustomization()
@@ -907,7 +917,7 @@ function setmodelfromcustomization()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51a8
 // Size: 0x37
 function getplayerviewmodelfrombody( bodyref )
@@ -923,7 +933,7 @@ function getplayerviewmodelfrombody( bodyref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51e8
 // Size: 0x12
 function getplayerfoleytype( bodyref )
@@ -932,7 +942,7 @@ function getplayerfoleytype( bodyref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5203
 // Size: 0x12
 function getplayermodelname( bodyindex )
@@ -941,7 +951,7 @@ function getplayermodelname( bodyindex )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x521e
 // Size: 0x107
 function setupplayermodel()
@@ -968,7 +978,7 @@ function setupplayermodel()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x532d
 // Size: 0x141
 function function_e7fe5b7d4b92813c()
@@ -1022,7 +1032,7 @@ function function_e7fe5b7d4b92813c()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5477
 // Size: 0x475
 function createoperatorcustomization( operatorref, operatorskin )
@@ -1047,7 +1057,7 @@ function createoperatorcustomization( operatorref, operatorskin )
         }
     }
     
-    var_de6cf437be756ee1 = istrue( getdvarint( @"hash_576703ba86051da6", 0 ) );
+    var_de6cf437be756ee1 = istrue( getdvarint( @"scr_loadout_validate_banned_items", 0 ) );
     
     if ( var_de6cf437be756ee1 && scripts\cp_mp\utility\loot::function_8c610908c0e9c6e4( operatorskin ) )
     {
@@ -1144,7 +1154,7 @@ function createoperatorcustomization( operatorref, operatorskin )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x58f4
 // Size: 0x8d
 function function_66b30579f9f18786()
@@ -1167,7 +1177,7 @@ function function_66b30579f9f18786()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x598a
 // Size: 0xe7
 function function_1800697eba3f6660( operatorcustomization )
@@ -1203,7 +1213,7 @@ function function_1800697eba3f6660( operatorcustomization )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a79
 // Size: 0x92
 function lookupotheroperator( team )
@@ -1228,7 +1238,7 @@ function lookupotheroperator( team )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b14
 // Size: 0x43f
 function lookupcurrentoperator( team )
@@ -1392,7 +1402,7 @@ function lookupcurrentoperator( team )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f5c
 // Size: 0x93
 function function_1851de461471fd20()
@@ -1421,7 +1431,7 @@ function function_1851de461471fd20()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ff8
 // Size: 0x225
 function function_47ba2341114690ad( clientnum, team )
@@ -1485,9 +1495,9 @@ function function_47ba2341114690ad( clientnum, team )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6226
-// Size: 0x260
+// Size: 0x298
 function function_ed273e317490cb02( operatorref )
 {
     team = getoperatorteambyref( operatorref );
@@ -1504,19 +1514,19 @@ function function_ed273e317490cb02( operatorref )
     {
         self.pers[ "operatorSkinRef" ] = function_45bf24706ce6aeef();
     }
-    else if ( self.team == "axis" && getdvarint( @"hash_4753586a2ac8718f", 0 ) == 1 )
+    else if ( isdefined( self.team ) && self.team == "axis" && getdvarint( @"hash_4753586a2ac8718f", 0 ) == 1 )
     {
         self.pers[ "operatorSkinRef" ] = function_523d23443e43909c();
     }
-    else if ( self.team == "allies" && getdvarint( @"hash_4753586a2ac8718f", 0 ) == 1 )
+    else if ( isdefined( self.team ) && self.team == "allies" && getdvarint( @"hash_4753586a2ac8718f", 0 ) == 1 )
     {
         self.pers[ "operatorSkinRef" ] = function_143d479c862a125f();
     }
-    else if ( self.team == "axis" && function_4ef12b6ed882dc9b() )
+    else if ( isdefined( self.team ) && self.team == "axis" && function_4ef12b6ed882dc9b() )
     {
         self.pers[ "operatorSkinRef" ] = function_dc7975eb5711e101();
     }
-    else if ( self.team == "allies" && function_4ef12b6ed882dc9b() )
+    else if ( isdefined( self.team ) && self.team == "allies" && function_4ef12b6ed882dc9b() )
     {
         self.pers[ "operatorSkinRef" ] = function_e3a9bccddf207ec6();
     }
@@ -1538,12 +1548,17 @@ function function_ed273e317490cb02( operatorref )
 
 // Namespace teams / scripts\mp\teams
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x648f
-// Size: 0x84
+// Checksum 0x0, Offset: 0x64c7
+// Size: 0xeb
 function private function_45bf24706ce6aeef()
 {
     if ( getdvarint( @"hash_15da2a2e260eac5e" ) == 1 )
     {
+        if ( isdefined( self.pers[ "operatorSkinRef" ] ) && ( self.pers[ "operatorSkinRef" ] == getdvar( @"hash_c997af43c2e9cad1" ) || self.pers[ "operatorSkinRef" ] == getdvar( @"hash_23c98470d0fc89e8" ) ) )
+        {
+            return self.pers[ "operatorSkinRef" ];
+        }
+        
         return function_b834526542f5f364();
     }
     
@@ -1566,12 +1581,17 @@ function private function_45bf24706ce6aeef()
 
 // Namespace teams / scripts\mp\teams
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x651c
-// Size: 0x84
+// Checksum 0x0, Offset: 0x65bb
+// Size: 0xeb
 function private function_51e69e2a2754278d()
 {
     if ( getdvarint( @"hash_30467475d23368bc" ) == 1 )
     {
+        if ( isdefined( self.pers[ "operatorSkinRef" ] ) && ( self.pers[ "operatorSkinRef" ] == getdvar( @"hash_ff1e67478325c867" ) || self.pers[ "operatorSkinRef" ] == getdvar( @"hash_11f8a0acb74bc22e" ) ) )
+        {
+            return self.pers[ "operatorSkinRef" ];
+        }
+        
         return function_b834526542f5f364();
     }
     
@@ -1594,7 +1614,7 @@ function private function_51e69e2a2754278d()
 
 // Namespace teams / scripts\mp\teams
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x65a9
+// Checksum 0x0, Offset: 0x66af
 // Size: 0xbd
 function private function_b834526542f5f364()
 {
@@ -1617,7 +1637,7 @@ function private function_b834526542f5f364()
 
 // Namespace teams / scripts\mp\teams
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x666e
+// Checksum 0x0, Offset: 0x6774
 // Size: 0x2e
 function private function_523d23443e43909c()
 {
@@ -1628,7 +1648,7 @@ function private function_523d23443e43909c()
 
 // Namespace teams / scripts\mp\teams
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x66a5
+// Checksum 0x0, Offset: 0x67ab
 // Size: 0x2e
 function private function_143d479c862a125f()
 {
@@ -1639,7 +1659,7 @@ function private function_143d479c862a125f()
 
 // Namespace teams / scripts\mp\teams
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x66dc
+// Checksum 0x0, Offset: 0x67e2
 // Size: 0x1c
 function private function_dc7975eb5711e101()
 {
@@ -1650,7 +1670,7 @@ function private function_dc7975eb5711e101()
 
 // Namespace teams / scripts\mp\teams
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x6701
+// Checksum 0x0, Offset: 0x6807
 // Size: 0x1c
 function private function_e3a9bccddf207ec6()
 {
@@ -1661,7 +1681,7 @@ function private function_e3a9bccddf207ec6()
 
 // Namespace teams / scripts\mp\teams
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6726
+// Checksum 0x0, Offset: 0x682c
 // Size: 0x54
 function private function_1842592e93b27ffd( operatorskinref )
 {
@@ -1673,7 +1693,7 @@ function private function_1842592e93b27ffd( operatorskinref )
 
 // Namespace teams / scripts\mp\teams
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6782
+// Checksum 0x0, Offset: 0x6888
 // Size: 0x38
 function private function_5908c8ee9ec5ed78( operatorskinref )
 {
@@ -1684,7 +1704,7 @@ function private function_5908c8ee9ec5ed78( operatorskinref )
 
 // Namespace teams / scripts\mp\teams
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x67c2
+// Checksum 0x0, Offset: 0x68c8
 // Size: 0x54
 function private function_1a29e257d3433d8c( operatorskinref )
 {
@@ -1710,8 +1730,8 @@ function private function_1a29e257d3433d8c( operatorskinref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x681e
+// Params 1
+// Checksum 0x0, Offset: 0x6924
 // Size: 0x65
 function botpickskinid( operatorref )
 {
@@ -1721,8 +1741,8 @@ function botpickskinid( operatorref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x688c
+// Params 1
+// Checksum 0x0, Offset: 0x6992
 // Size: 0x98
 function picklaunchchunkoperatorskin( team )
 {
@@ -1748,8 +1768,8 @@ function picklaunchchunkoperatorskin( team )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x692d
+// Params 0
+// Checksum 0x0, Offset: 0x6a33
 // Size: 0x3c6
 function getoperatorcustomization()
 {
@@ -1841,8 +1861,8 @@ function getoperatorcustomization()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cfc
+// Params 0
+// Checksum 0x0, Offset: 0x6e02
 // Size: 0x120
 function initlaunchchunkoperatorskins()
 {
@@ -1863,8 +1883,8 @@ function initlaunchchunkoperatorskins()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e24
+// Params 0
+// Checksum 0x0, Offset: 0x6f2a
 // Size: 0xa81
 function initdefaultoperatorskins()
 {
@@ -1951,8 +1971,8 @@ function initdefaultoperatorskins()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x78ad
+// Params 1
+// Checksum 0x0, Offset: 0x79b3
 // Size: 0xc1
 function pickdefaultoperatorskin( weapon )
 {
@@ -1991,8 +2011,8 @@ function pickdefaultoperatorskin( weapon )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7977
+// Params 0
+// Checksum 0x0, Offset: 0x7a7d
 // Size: 0x30d
 function getglcustomization()
 {
@@ -2105,8 +2125,8 @@ function getglcustomization()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c8d
+// Params 0
+// Checksum 0x0, Offset: 0x7d93
 // Size: 0x2da
 function getglcustomizationhackney()
 {
@@ -2210,8 +2230,8 @@ function getglcustomizationhackney()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f70
+// Params 0
+// Checksum 0x0, Offset: 0x8076
 // Size: 0xa4
 function forcedefaultmodel()
 {
@@ -2240,8 +2260,8 @@ function forcedefaultmodel()
 /#
 
     // Namespace teams / scripts\mp\teams
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x801c
+    // Params 0
+    // Checksum 0x0, Offset: 0x8122
     // Size: 0x92, Type: dev
     function function_5933f55517e82c57()
     {
@@ -2267,7 +2287,7 @@ function forcedefaultmodel()
 
 // Namespace teams / scripts\mp\teams
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x80b6
+// Checksum 0x0, Offset: 0x81bc
 // Size: 0x143, Type: bool
 function private function_8075b157830461e0()
 {
@@ -2301,12 +2321,12 @@ function private function_8075b157830461e0()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8202
+// Params 0
+// Checksum 0x0, Offset: 0x8308
 // Size: 0x258
 function watchafk()
 {
-    if ( getdvarint( @"hash_b66208719c6bae6a", 0 ) == 1 )
+    if ( getdvarint( @"debug_stopafkcheck", 0 ) == 1 )
     {
         return;
     }
@@ -2382,8 +2402,8 @@ function watchafk()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8462
+// Params 0
+// Checksum 0x0, Offset: 0x8568
 // Size: 0xc8
 function function_19300abfbb10928b()
 {
@@ -2403,8 +2423,8 @@ function function_19300abfbb10928b()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8533
+// Params 3
+// Checksum 0x0, Offset: 0x8639
 // Size: 0x55
 function function_7b76ffd725358204( time, maxthreshold, warningtime )
 {
@@ -2426,8 +2446,8 @@ function function_7b76ffd725358204( time, maxthreshold, warningtime )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8591
+// Params 0
+// Checksum 0x0, Offset: 0x8697
 // Size: 0x150, Type: bool
 function dontconsiderafk()
 {
@@ -2483,8 +2503,8 @@ function dontconsiderafk()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x86ea
+// Params 3
+// Checksum 0x0, Offset: 0x87f0
 // Size: 0x902
 function checkforafk( var_6d2f7985df18659a, var_55d48eee7e287cda, var_bdbf4608f99aedb3 )
 {
@@ -2749,8 +2769,8 @@ function checkforafk( var_6d2f7985df18659a, var_55d48eee7e287cda, var_bdbf4608f9
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ff4
+// Params 2
+// Checksum 0x0, Offset: 0x90fa
 // Size: 0x65
 function kickafkplayer( player, reason )
 {
@@ -2773,8 +2793,8 @@ function kickafkplayer( player, reason )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9061
+// Params 4
+// Checksum 0x0, Offset: 0x9167
 // Size: 0xa4
 function function_f66fc78c2cb0c0d3( player, reason, afkstate, allowkick )
 {
@@ -2799,8 +2819,8 @@ function function_f66fc78c2cb0c0d3( player, reason, afkstate, allowkick )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x910d
+// Params 1
+// Checksum 0x0, Offset: 0x9213
 // Size: 0x18d
 function getjointeampermissions( team )
 {
@@ -2808,7 +2828,8 @@ function getjointeampermissions( team )
     botcount = 0;
     players = level.players;
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         player = players[ i ];
         
         if ( isdefined( player scripts\mp\utility\stats::getpersstat( "team" ) ) && player scripts\mp\utility\stats::getpersstat( "team" ) == team )
@@ -2871,8 +2892,8 @@ function getjointeampermissions( team )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92a2
+// Params 0
+// Checksum 0x0, Offset: 0x93a8
 // Size: 0x6c
 function onplayerspawned()
 {
@@ -2894,8 +2915,8 @@ function onplayerspawned()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9316
+// Params 0
+// Checksum 0x0, Offset: 0x941c
 // Size: 0xae
 function outlinefriendly_apply()
 {
@@ -2928,8 +2949,8 @@ function outlinefriendly_apply()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x93cc
+// Params 1
+// Checksum 0x0, Offset: 0x94d2
 // Size: 0x2c
 function outlinefriendly_remove( outlineid )
 {
@@ -2939,8 +2960,8 @@ function outlinefriendly_remove( outlineid )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9400
+// Params 0
+// Checksum 0x0, Offset: 0x9506
 // Size: 0xc1
 function outlinesquad_apply()
 {
@@ -2978,8 +2999,8 @@ function outlinesquad_apply()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x94c9
+// Params 1
+// Checksum 0x0, Offset: 0x95cf
 // Size: 0x31
 function outlinesquad_remove( outlineid )
 {
@@ -2989,8 +3010,8 @@ function outlinesquad_remove( outlineid )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9502
+// Params 1
+// Checksum 0x0, Offset: 0x9608
 // Size: 0x67
 function function_ada9a2308a4046e2( operatorref )
 {
@@ -3012,8 +3033,8 @@ function function_ada9a2308a4046e2( operatorref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9572
+// Params 1
+// Checksum 0x0, Offset: 0x9678
 // Size: 0x65
 function getoperatorexecution( operatorref )
 {
@@ -3024,8 +3045,8 @@ function getoperatorexecution( operatorref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x95e0
+// Params 1
+// Checksum 0x0, Offset: 0x96e6
 // Size: 0x24
 function getoperatorexecutionquip( operatorref )
 {
@@ -3034,8 +3055,8 @@ function getoperatorexecutionquip( operatorref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x960d
+// Params 1
+// Checksum 0x0, Offset: 0x9713
 // Size: 0x24
 function getoperatorsuperfaction( operatorref )
 {
@@ -3044,8 +3065,8 @@ function getoperatorsuperfaction( operatorref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x963a
+// Params 2
+// Checksum 0x0, Offset: 0x9740
 // Size: 0x67
 function getoperatorvoice( operatorref, skinref )
 {
@@ -3066,8 +3087,8 @@ function getoperatorvoice( operatorref, skinref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x96aa
+// Params 1
+// Checksum 0x0, Offset: 0x97b0
 // Size: 0x2f
 function getoperatorclothtype( skinref )
 {
@@ -3077,8 +3098,8 @@ function getoperatorclothtype( skinref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x96e2
+// Params 1
+// Checksum 0x0, Offset: 0x97e8
 // Size: 0x2f
 function function_e8770349a2b50bec( skinref )
 {
@@ -3088,8 +3109,8 @@ function function_e8770349a2b50bec( skinref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x971a
+// Params 1
+// Checksum 0x0, Offset: 0x9820
 // Size: 0x1f
 function getoperatorgender( operatorref )
 {
@@ -3098,8 +3119,8 @@ function getoperatorgender( operatorref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9742
+// Params 1
+// Checksum 0x0, Offset: 0x9848
 // Size: 0x1f
 function function_29b2af59258d6501( skinref )
 {
@@ -3108,8 +3129,8 @@ function function_29b2af59258d6501( skinref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x976a
+// Params 1
+// Checksum 0x0, Offset: 0x9870
 // Size: 0x93
 function getoperatorbrinfilsmokesuffix( skinref )
 {
@@ -3135,8 +3156,8 @@ function getoperatorbrinfilsmokesuffix( skinref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9806
+// Params 0
+// Checksum 0x0, Offset: 0x990c
 // Size: 0x19d
 function initnightvisionheadoverrides()
 {
@@ -3179,8 +3200,8 @@ function initnightvisionheadoverrides()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x99ab
+// Params 0
+// Checksum 0x0, Offset: 0x9ab1
 // Size: 0x118
 function initheadlessoperatorcustomization()
 {
@@ -3211,8 +3232,8 @@ function initheadlessoperatorcustomization()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9acb
+// Params 0
+// Checksum 0x0, Offset: 0x9bd1
 // Size: 0x318
 function function_d650608c959c9675()
 {
@@ -3317,8 +3338,8 @@ function function_d650608c959c9675()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9deb
+// Params 1
+// Checksum 0x0, Offset: 0x9ef1
 // Size: 0xa3
 function getoperatorteambyref( operatorref )
 {
@@ -3337,8 +3358,8 @@ function getoperatorteambyref( operatorref )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e97
+// Params 2
+// Checksum 0x0, Offset: 0x9f9d
 // Size: 0xda
 function getnextoperatorindex( operatorref, userandom )
 {
@@ -3371,8 +3392,8 @@ function getnextoperatorindex( operatorref, userandom )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f79
+// Params 0
+// Checksum 0x0, Offset: 0xa07f
 // Size: 0xad
 function getplayerlookattarget()
 {
@@ -3394,8 +3415,8 @@ function getplayerlookattarget()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa02e
+// Params 0
+// Checksum 0x0, Offset: 0xa134
 // Size: 0x11b
 function devmonitoroperatorcustomizationprint()
 {
@@ -3449,8 +3470,8 @@ function devmonitoroperatorcustomizationprint()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa151
+// Params 0
+// Checksum 0x0, Offset: 0xa257
 // Size: 0xa8
 function printcustomization()
 {
@@ -3471,8 +3492,8 @@ function printcustomization()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa201
+// Params 0
+// Checksum 0x0, Offset: 0xa307
 // Size: 0x106
 function persistantgametypeteamassign()
 {
@@ -3514,8 +3535,8 @@ function persistantgametypeteamassign()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa30f
+// Params 1
+// Checksum 0x0, Offset: 0xa415
 // Size: 0xfd
 function findavailableteam( count )
 {
@@ -3555,8 +3576,8 @@ function findavailableteam( count )
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa415
+// Params 0
+// Checksum 0x0, Offset: 0xa51b
 // Size: 0x75
 function function_14a6f65e85694c21()
 {
@@ -3574,8 +3595,8 @@ function function_14a6f65e85694c21()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa493
+// Params 0
+// Checksum 0x0, Offset: 0xa599
 // Size: 0x75
 function getactiveteamcount()
 {
@@ -3593,8 +3614,8 @@ function getactiveteamcount()
 }
 
 // Namespace teams / scripts\mp\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa511
+// Params 0
+// Checksum 0x0, Offset: 0xa617
 // Size: 0x1e1
 function debugprintteams()
 {

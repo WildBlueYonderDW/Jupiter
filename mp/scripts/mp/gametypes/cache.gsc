@@ -12,8 +12,8 @@
 #namespace cache;
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a9
+// Params 0
+// Checksum 0x0, Offset: 0x2aa
 // Size: 0xa8
 function init()
 {
@@ -28,8 +28,8 @@ function init()
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x359
+// Params 0
+// Checksum 0x0, Offset: 0x35a
 // Size: 0x14a
 function SetDvars()
 {
@@ -55,8 +55,8 @@ function SetDvars()
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ab
+// Params 4
+// Checksum 0x0, Offset: 0x4ac
 // Size: 0x846
 function function_9e0ae8b3ac9a190f( victim, attacker, victimnotification, meansofdeath )
 {
@@ -214,8 +214,8 @@ function function_9e0ae8b3ac9a190f( victim, attacker, victimnotification, meanso
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf9
+// Params 1
+// Checksum 0x0, Offset: 0xcfa
 // Size: 0xb4, Type: bool
 function function_70eda0e3c11182d2( attacker )
 {
@@ -248,8 +248,8 @@ function function_70eda0e3c11182d2( attacker )
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb6
+// Params 0
+// Checksum 0x0, Offset: 0xdb7
 // Size: 0x33
 function function_7268d2c44a8eb36c()
 {
@@ -262,8 +262,8 @@ function function_7268d2c44a8eb36c()
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf1
+// Params 0
+// Checksum 0x0, Offset: 0xdf2
 // Size: 0xbd
 function function_f4a26084558ba5bf()
 {
@@ -282,8 +282,8 @@ function function_f4a26084558ba5bf()
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb6
+// Params 1
+// Checksum 0x0, Offset: 0xeb7
 // Size: 0x14e
 function onuse( player )
 {
@@ -314,8 +314,8 @@ function onuse( player )
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x100c
+// Params 1
+// Checksum 0x0, Offset: 0x100d
 // Size: 0x50
 function function_b4c15cacbfad2d83( cache )
 {
@@ -327,8 +327,8 @@ function function_b4c15cacbfad2d83( cache )
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1064
+// Params 1
+// Checksum 0x0, Offset: 0x1065
 // Size: 0x49
 function function_402da06a87e59da4( cache )
 {
@@ -340,8 +340,8 @@ function function_402da06a87e59da4( cache )
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b5
+// Params 1
+// Checksum 0x0, Offset: 0x10b6
 // Size: 0x4f
 function function_932003199f578b69( cache )
 {
@@ -357,8 +357,8 @@ function function_932003199f578b69( cache )
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x110c
+// Params 3
+// Checksum 0x0, Offset: 0x110d
 // Size: 0x122
 function function_4ccc1c9389ac4346( guid, notifyattacker, collector )
 {
@@ -376,7 +376,8 @@ function function_4ccc1c9389ac4346( guid, notifyattacker, collector )
         
         level.caches[ guid ] notify( "death" );
         
-        for (i = 0; i < level.caches[ guid ].visuals.size; i++) {
+        for ( i = 0; i < level.caches[ guid ].visuals.size ; i++ )
+        {
             level.caches[ guid ].visuals[ i ] freescriptable();
         }
         
@@ -390,8 +391,8 @@ function function_4ccc1c9389ac4346( guid, notifyattacker, collector )
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1236
+// Params 1
+// Checksum 0x0, Offset: 0x1237
 // Size: 0x11d
 function function_3eac026bd8b3a18e( victim )
 {
@@ -417,8 +418,8 @@ function function_3eac026bd8b3a18e( victim )
 }
 
 // Namespace cache / scripts\mp\gametypes\cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x135c
+// Params 1
+// Checksum 0x0, Offset: 0x135d
 // Size: 0x2b
 function onplayerdisconnect( params )
 {

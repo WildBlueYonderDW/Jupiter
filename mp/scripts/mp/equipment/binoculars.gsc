@@ -20,7 +20,7 @@
 #namespace binoculars;
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f1
 // Size: 0x2c
 function binoculars_init()
@@ -35,7 +35,7 @@ function binoculars_init()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x525
 // Size: 0x63
 function binoculars_onstateupdatefunc( stateindex, targetent, cansee )
@@ -52,7 +52,7 @@ function binoculars_onstateupdatefunc( stateindex, targetent, cansee )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x590
 // Size: 0x70
 function binoculars_onstateenterfunc( stateindex, targetent )
@@ -75,7 +75,7 @@ function binoculars_onstateenterfunc( stateindex, targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x608
 // Size: 0x46
 function binoculars_onstateexitfunc( stateindex, targetent )
@@ -92,7 +92,7 @@ function binoculars_onstateexitfunc( stateindex, targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x656
 // Size: 0x4c
 function binoculars_ongive( equipmentref, equipmentslot, variantid )
@@ -107,7 +107,7 @@ function binoculars_ongive( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6aa
 // Size: 0x26
 function binoculars_ontake( equipmentref, equipmentslot )
@@ -121,7 +121,7 @@ function binoculars_ontake( equipmentref, equipmentslot )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d8
 // Size: 0x18
 function binoculars_used( grenade )
@@ -135,7 +135,7 @@ function binoculars_used( grenade )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f8
 // Size: 0x1a9
 function binoculars_watchforads()
@@ -188,7 +188,7 @@ function binoculars_watchforads()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8a9
 // Size: 0x30
 function binoculars_watchracedeath( raceresult )
@@ -200,7 +200,7 @@ function binoculars_watchracedeath( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e1
 // Size: 0x30
 function binoculars_watchracelaststand( raceresult )
@@ -212,7 +212,7 @@ function binoculars_watchracelaststand( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x919
 // Size: 0x39
 function function_621d5bba47a7c73( raceresult )
@@ -224,7 +224,7 @@ function function_621d5bba47a7c73( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x95a
 // Size: 0x30
 function binoculars_watchracetake( raceresult )
@@ -236,7 +236,7 @@ function binoculars_watchracetake( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x992
 // Size: 0x63
 function binoculars_watchraceadson( raceresult )
@@ -261,7 +261,7 @@ function binoculars_watchraceadson( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9fd
 // Size: 0x56
 function binoculars_watchraceadsoff( raceresult )
@@ -283,7 +283,7 @@ function binoculars_watchraceadsoff( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa5b
 // Size: 0x3b
 function function_1ba52d293a13fe7a( raceresult )
@@ -301,7 +301,7 @@ function function_1ba52d293a13fe7a( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa9e
 // Size: 0x3b
 function function_f802aa89b1f729a0( raceresult )
@@ -319,7 +319,7 @@ function function_f802aa89b1f729a0( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae1
 // Size: 0x30
 function function_faec4945097de55d( raceresult )
@@ -331,7 +331,7 @@ function function_faec4945097de55d( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb19
 // Size: 0x30
 function function_d32f05ddfe8701fe( raceresult )
@@ -343,7 +343,7 @@ function function_d32f05ddfe8701fe( raceresult )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb51
 // Size: 0x115
 function binoculars_endadslogic()
@@ -382,7 +382,7 @@ function binoculars_endadslogic()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc6e
 // Size: 0xba
 function binoculars_runadslogic()
@@ -406,7 +406,7 @@ function binoculars_runadslogic()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd30
 // Size: 0x6a
 function function_b2875ea64bc1896f()
@@ -431,7 +431,7 @@ function function_b2875ea64bc1896f()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xda2
 // Size: 0x24, Type: bool
 function binoculars_isads()
@@ -440,7 +440,7 @@ function binoculars_isads()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdcf
 // Size: 0x42e
 function binoculars_processtargetdata()
@@ -641,7 +641,7 @@ function binoculars_processtargetdata()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1205
 // Size: 0x3e
 function function_856db8d000d0be6( targetnum )
@@ -657,7 +657,7 @@ function function_856db8d000d0be6( targetnum )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124c
 // Size: 0xeb
 function function_5c3ab97c636c1b90()
@@ -673,7 +673,7 @@ function function_5c3ab97c636c1b90()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x133f
 // Size: 0x112
 function binoculars_updatemarkedents()
@@ -717,7 +717,7 @@ function binoculars_updatemarkedents()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1459
 // Size: 0x1ba, Type: bool
 function function_67da6f8a8e37737b( targetent )
@@ -766,7 +766,7 @@ function function_67da6f8a8e37737b( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x161c
 // Size: 0x5b
 function function_34d6333ca8b1f289( targetent )
@@ -778,7 +778,7 @@ function function_34d6333ca8b1f289( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x167f
 // Size: 0x73, Type: bool
 function binoculars_cansee( targetent )
@@ -795,7 +795,7 @@ function binoculars_cansee( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16fb
 // Size: 0x75
 function binoculars_setcurrentstate( targetent, newstate )
@@ -817,7 +817,7 @@ function binoculars_setcurrentstate( targetent, newstate )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1778
 // Size: 0x21, Type: bool
 function binoculars_hascoldblooded( targetent )
@@ -826,7 +826,7 @@ function binoculars_hascoldblooded( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17a2
 // Size: 0xbd
 function binoculars_showtargetmarker( targetent, ismarked )
@@ -862,7 +862,7 @@ function binoculars_showtargetmarker( targetent, ismarked )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1867
 // Size: 0x6a
 function binoculars_updatetargetmarker( targetent, ismarked )
@@ -890,7 +890,7 @@ function binoculars_updatetargetmarker( targetent, ismarked )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18d9
 // Size: 0x74
 function binoculars_hidetargetmarker( targetent )
@@ -911,7 +911,7 @@ function binoculars_hidetargetmarker( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1955
 // Size: 0x72
 function binoculars_settargetmarkerstate( targetent, state )
@@ -923,7 +923,7 @@ function binoculars_settargetmarkerstate( targetent, state )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19cf
 // Size: 0xb5
 function binoculars_addheadicon( targetent )
@@ -946,7 +946,7 @@ function binoculars_addheadicon( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a8c
 // Size: 0xb1
 function binoculars_updateheadiconvisibility( targetent )
@@ -967,7 +967,7 @@ function binoculars_updateheadiconvisibility( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b45
 // Size: 0x91
 function binoculars_updateheadiconvisibilityforplayer( targetdata, player )
@@ -991,7 +991,7 @@ function binoculars_updateheadiconvisibilityforplayer( targetdata, player )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bde
 // Size: 0xa0
 function binoculars_cleanupheadiconondisconnect( targetent )
@@ -1013,7 +1013,7 @@ function binoculars_cleanupheadiconondisconnect( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c86
 // Size: 0x5d
 function binoculars_removeheadicon( targetent )
@@ -1025,7 +1025,7 @@ function binoculars_removeheadicon( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ceb
 // Size: 0x1c
 function binoculars_onstateinvalidenter( targetent )
@@ -1035,7 +1035,7 @@ function binoculars_onstateinvalidenter( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d0f
 // Size: 0x33
 function binoculars_onstateinvalidupdate( targetent, cansee )
@@ -1051,7 +1051,7 @@ function binoculars_onstateinvalidupdate( targetent, cansee )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d4b
 // Size: 0x1e
 function binoculars_onstateunmarkedenter( targetent )
@@ -1061,7 +1061,7 @@ function binoculars_onstateunmarkedenter( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d71
 // Size: 0x75
 function binoculars_onstateunmarkedupdate( targetent, cansee )
@@ -1097,7 +1097,7 @@ function binoculars_onstateunmarkedupdate( targetent, cansee )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1def
 // Size: 0x29
 function binoculars_onstatemarkpendingenter( targetent )
@@ -1108,7 +1108,7 @@ function binoculars_onstatemarkpendingenter( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e20
 // Size: 0x1f
 function binoculars_onstatemarkpendingexit( targetent )
@@ -1118,7 +1118,7 @@ function binoculars_onstatemarkpendingexit( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e47
 // Size: 0xda
 function binoculars_onstatemarkpendingupdate( targetent, cansee )
@@ -1162,7 +1162,7 @@ function binoculars_onstatemarkpendingupdate( targetent, cansee )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f2a
 // Size: 0xa8
 function binoculars_onstatemarkedenter( targetent )
@@ -1180,7 +1180,7 @@ function binoculars_onstatemarkedenter( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fda
 // Size: 0x27
 function binoculars_onstatemarkedexit( targetent )
@@ -1191,7 +1191,7 @@ function binoculars_onstatemarkedexit( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2009
 // Size: 0x69
 function binoculars_onstatemarkedupdate( targetent )
@@ -1218,7 +1218,7 @@ function binoculars_onstatemarkedupdate( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x207b
 // Size: 0x93, Type: bool
 function binoculars_targetisvalid( targetent )
@@ -1227,7 +1227,7 @@ function binoculars_targetisvalid( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2117
 // Size: 0x80, Type: bool
 function binoculars_targetisvalidmark( targetent )
@@ -1263,7 +1263,7 @@ function binoculars_targetisvalidmark( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21a0
 // Size: 0x41
 function binoculars_getmaxrange()
@@ -1279,7 +1279,7 @@ function binoculars_getmaxrange()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21e9
 // Size: 0x15
 function binoculars_getfov()
@@ -1289,7 +1289,7 @@ function binoculars_getfov()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2207
 // Size: 0x38, Type: bool
 function binoculars_istargetinrange( targetent )
@@ -1298,7 +1298,7 @@ function binoculars_istargetinrange( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2248
 // Size: 0x3e
 function binoculars_istargetinbroadfov( targetent )
@@ -1307,7 +1307,7 @@ function binoculars_istargetinbroadfov( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x228f
 // Size: 0x152, Type: bool
 function binoculars_iswithinprojectiondistance_compute( targetent )
@@ -1341,7 +1341,7 @@ function binoculars_iswithinprojectiondistance_compute( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23ea
 // Size: 0x6d
 function binoculars_updateprojectiondistance( targetent )
@@ -1360,7 +1360,7 @@ function binoculars_updateprojectiondistance( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x245f
 // Size: 0x48, Type: bool
 function binoculars_iswithinprojectiondistance( targetent )
@@ -1371,7 +1371,7 @@ function binoculars_iswithinprojectiondistance( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24b0
 // Size: 0x55
 function binoculars_setpendingtimer( targetent )
@@ -1382,7 +1382,7 @@ function binoculars_setpendingtimer( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x250d
 // Size: 0x47
 function binoculars_clearpendingtimer( targetent )
@@ -1393,7 +1393,7 @@ function binoculars_clearpendingtimer( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x255c
 // Size: 0x5e, Type: bool
 function binoculars_checkpendingtimer( targetent )
@@ -1410,7 +1410,7 @@ function binoculars_checkpendingtimer( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25c3
 // Size: 0x10c
 function binoculars_getpendingtime( targetent )
@@ -1442,7 +1442,7 @@ function binoculars_getpendingtime( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26d7
 // Size: 0x64
 function binoculars_getpendingendtime( targetent )
@@ -1459,7 +1459,7 @@ function binoculars_getpendingendtime( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2744
 // Size: 0x6a
 function binoculars_setexpirationtimer( targetent )
@@ -1471,7 +1471,7 @@ function binoculars_setexpirationtimer( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27b6
 // Size: 0x47
 function binoculars_clearexpirationtimer( targetent )
@@ -1482,7 +1482,7 @@ function binoculars_clearexpirationtimer( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2805
 // Size: 0x5f, Type: bool
 function binoculars_checkexpirationtimer( targetent )
@@ -1499,7 +1499,7 @@ function binoculars_checkexpirationtimer( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x286d
 // Size: 0x9e
 function binoculars_addmarkpoints( targetent )
@@ -1521,7 +1521,7 @@ function binoculars_addmarkpoints( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2913
 // Size: 0x6e, Type: bool
 function binoculars_targetismarked( targetent )
@@ -1542,7 +1542,7 @@ function binoculars_targetismarked( targetent )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x298a
 // Size: 0xc8
 function binoculars_giveassistpoints( attacker, victim )
@@ -1574,7 +1574,7 @@ function binoculars_giveassistpoints( attacker, victim )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a5a
 // Size: 0x28
 function binoculars_clearuidata()
@@ -1585,7 +1585,7 @@ function binoculars_clearuidata()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a8a
 // Size: 0x4f
 function binoculars_setuidata( state, timer )
@@ -1600,7 +1600,7 @@ function binoculars_setuidata( state, timer )
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ae1
 // Size: 0xae
 function binoculars_updateuidata()
@@ -1631,7 +1631,7 @@ function binoculars_updateuidata()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b97
 // Size: 0xb9
 function function_972e3424668e97f4()
@@ -1662,7 +1662,7 @@ function function_972e3424668e97f4()
 }
 
 // Namespace binoculars / scripts\mp\equipment\binoculars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c58
 // Size: 0xab
 function function_8a8136a64df0f01d()

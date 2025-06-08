@@ -23,7 +23,7 @@ function autoexec main()
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b9
 // Size: 0x14c
 function init()
@@ -46,7 +46,7 @@ function init()
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40d
 // Size: 0x21
 function function_998577120b21a50b()
@@ -55,7 +55,7 @@ function function_998577120b21a50b()
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x436
 // Size: 0x53
 function function_23b84686f47e78f4( owner, team, cratetype, position, angles, destination, data, streakinfo )
@@ -64,7 +64,7 @@ function function_23b84686f47e78f4( owner, team, cratetype, position, angles, de
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x492
 // Size: 0x41
 function function_a9e9a04447be5abb( config, streakinfo )
@@ -74,7 +74,7 @@ function function_a9e9a04447be5abb( config, streakinfo )
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4dc
 // Size: 0x12
 function function_6cbad31a27208d32( config )
@@ -83,7 +83,7 @@ function function_6cbad31a27208d32( config )
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f7
 // Size: 0x12
 function function_9701a01eee186094( ref )
@@ -92,7 +92,7 @@ function function_9701a01eee186094( ref )
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x512
 // Size: 0x14
 function function_c7dc75a1f2dc340d( droppingplayer )
@@ -101,7 +101,7 @@ function function_c7dc75a1f2dc340d( droppingplayer )
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52e
 // Size: 0x32
 function function_beb2f24f2f22abe2()
@@ -111,7 +111,7 @@ function function_beb2f24f2f22abe2()
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x569
 // Size: 0x9
 function function_eee408b4aae805c5()
@@ -120,7 +120,7 @@ function function_eee408b4aae805c5()
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x57a
 // Size: 0x1c
 function function_e8acfbf95ff60c47( name, allow )
@@ -129,7 +129,7 @@ function function_e8acfbf95ff60c47( name, allow )
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59e
 // Size: 0x9
 function function_46cfff4421ac1b50()
@@ -138,7 +138,7 @@ function function_46cfff4421ac1b50()
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5af
 // Size: 0x9
 function function_ce88bec69240f560()
@@ -147,7 +147,7 @@ function function_ce88bec69240f560()
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c0
 // Size: 0x77, Type: bool
 function function_22256c01d8eb752c( streakinfo )
@@ -171,7 +171,7 @@ function function_22256c01d8eb752c( streakinfo )
 }
 
 // Namespace juggernaut_recon_mp / scripts\mp\killstreaks\juggernaut_recon_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x640
 // Size: 0x1e
 function function_44d1e060ec177f59( player )

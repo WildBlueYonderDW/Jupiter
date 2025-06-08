@@ -25,7 +25,7 @@
 #namespace sharp;
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7f
 // Size: 0x1f2
 function main()
@@ -82,7 +82,7 @@ function main()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc79
 // Size: 0x66
 function initializematchrules()
@@ -97,7 +97,7 @@ function initializematchrules()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce7
 // Size: 0x190
 function onstartgametype()
@@ -143,7 +143,7 @@ function onstartgametype()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe7f
 // Size: 0x9
 function updategametypedvars()
@@ -152,7 +152,7 @@ function updategametypedvars()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe90
 // Size: 0xb4
 function getspawnpoint()
@@ -194,7 +194,7 @@ function getspawnpoint()
 /#
 
     // Namespace sharp / scripts\mp\gametypes\sharp
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xf4d
     // Size: 0x17a, Type: dev
     function comparespawns( spawnpoint )
@@ -233,7 +233,7 @@ function getspawnpoint()
 #/
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10cf
 // Size: 0x62
 function onspawnplayer( revivespawn )
@@ -252,7 +252,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1139
 // Size: 0x161
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -291,7 +291,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x12a2
 // Size: 0x165
 function onplayerscore( event, player, originalpoints, victim, eventinfo )
@@ -331,7 +331,7 @@ function onplayerscore( event, player, originalpoints, victim, eventinfo )
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1410
 // Size: 0xa3
 function dohalftimevo( attacker )
@@ -358,7 +358,7 @@ function dohalftimevo( attacker )
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14bb
 // Size: 0x2a, Type: bool
 function compare_player_score( left, right )
@@ -367,7 +367,7 @@ function compare_player_score( left, right )
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14ee
 // Size: 0x2b
 function onplayerconnect( player )
@@ -379,7 +379,7 @@ function onplayerconnect( player )
 /#
 
     // Namespace sharp / scripts\mp\gametypes\sharp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1521
     // Size: 0x150, Type: dev
     function function_aeefcd8920dc46e0()
@@ -406,12 +406,13 @@ function onplayerconnect( player )
                 
                 if ( var_ff962a1182d547dc == -1 || var_f104804091b9dedf == -1 )
                 {
-                    points = getdvarint( @"hash_dba1d87860792cd4" ) - 1;
+                    points = getdvarint( @"scr_dm_scorelimit" ) - 1;
                 }
                 
                 foreach ( player in level.players )
                 {
-                    for (i = 0; i < points; i++) {
+                    for ( i = 0; i < points ; i++ )
+                    {
                         player scripts\mp\gamescore::giveplayerscore( #"kill", 1 );
                     }
                     
@@ -432,7 +433,7 @@ function onplayerconnect( player )
 #/
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1679
 // Size: 0xd7
 function createloadouts()
@@ -451,7 +452,7 @@ function createloadouts()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1758
 // Size: 0xc9
 function function_326e3b76fdc1f2()
@@ -472,7 +473,7 @@ function function_326e3b76fdc1f2()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x182a
 // Size: 0x95
 function function_326d3b76fdbfbf()
@@ -489,7 +490,7 @@ function function_326d3b76fdbfbf()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18c8
 // Size: 0x88
 function function_326c3b76fdbd8c()
@@ -505,7 +506,7 @@ function function_326c3b76fdbd8c()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1959
 // Size: 0x8c
 function function_326b3b76fdbb59()
@@ -522,7 +523,7 @@ function function_326b3b76fdbb59()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19ee
 // Size: 0x7f
 function function_326a3b76fdb926()
@@ -538,7 +539,7 @@ function function_326a3b76fdb926()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a76
 // Size: 0x8c
 function function_32693b76fdb6f3()
@@ -555,7 +556,7 @@ function function_32693b76fdb6f3()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b0b
 // Size: 0x8c
 function function_32683b76fdb4c0()
@@ -572,7 +573,7 @@ function function_32683b76fdb4c0()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ba0
 // Size: 0x7f
 function function_32773b76fdd5bd()
@@ -588,7 +589,7 @@ function function_32773b76fdd5bd()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c28
 // Size: 0x7f
 function function_32763b76fdd38a()
@@ -604,7 +605,7 @@ function function_32763b76fdd38a()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cb0
 // Size: 0x7f
 function function_6caa2ec6b0111da6()
@@ -620,7 +621,7 @@ function function_6caa2ec6b0111da6()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d38
 // Size: 0xb
 function function_f158d813fe86ec48()
@@ -629,7 +630,7 @@ function function_f158d813fe86ec48()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d4c
 // Size: 0x1e
 function function_488cb469cc7ac9b4()
@@ -638,7 +639,7 @@ function function_488cb469cc7ac9b4()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d72
 // Size: 0x2a
 function function_6ac6e27728aa9bf2()
@@ -650,7 +651,7 @@ function function_6ac6e27728aa9bf2()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1da4
 // Size: 0x1b
 function function_1072c9acffb341d5()
@@ -660,7 +661,7 @@ function function_1072c9acffb341d5()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dc7
 // Size: 0x186
 function function_405ec19f3c7a5c25( var_c6a739346165199a )
@@ -707,7 +708,7 @@ function function_405ec19f3c7a5c25( var_c6a739346165199a )
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f55
 // Size: 0xb5
 function function_2a30633c5961be0e()
@@ -730,7 +731,7 @@ function function_2a30633c5961be0e()
 }
 
 // Namespace sharp / scripts\mp\gametypes\sharp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2012
 // Size: 0x152
 function givebonus( streak )

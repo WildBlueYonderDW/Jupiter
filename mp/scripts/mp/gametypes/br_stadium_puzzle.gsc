@@ -16,7 +16,7 @@
 #namespace br_stadium_puzzle;
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61e
 // Size: 0x9a
 function init()
@@ -37,7 +37,7 @@ function init()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c0
 // Size: 0x96
 function initpostmain()
@@ -73,7 +73,7 @@ function initpostmain()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x75e
 // Size: 0x102
 function setupboardroomcode( codelength, codestruct )
@@ -94,7 +94,7 @@ function setupboardroomcode( codelength, codestruct )
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x868
 // Size: 0x51
 function codecomputerscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -104,7 +104,7 @@ function codecomputerscriptableused( instance, part, state, player, var_a5b2c541
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x8c1
 // Size: 0x21d
 function _codecomputerscriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -157,7 +157,7 @@ function _codecomputerscriptableused( instance, part, state, player, var_a5b2c54
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xae6
 // Size: 0x41
 function accessreaderscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -166,7 +166,7 @@ function accessreaderscriptableused( instance, part, state, player, var_a5b2c541
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb2f
 // Size: 0x10a
 function _accessreaderscriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -195,7 +195,7 @@ function _accessreaderscriptableused( instance, part, state, player, var_a5b2c54
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc41
 // Size: 0xcb
 function boardroomdoorcodeentrysuccess( instance )
@@ -222,7 +222,7 @@ function boardroomdoorcodeentrysuccess( instance )
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd14
 // Size: 0x165
 function spawnuniqueboardroomloot()
@@ -278,7 +278,7 @@ function spawnuniqueboardroomloot()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe81
 // Size: 0x13b
 function spawnboardroomblueprintweapons()
@@ -316,7 +316,7 @@ function spawnboardroomblueprintweapons()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfc4
 // Size: 0x80
 function spawnboardroom_auav()
@@ -334,7 +334,7 @@ function spawnboardroom_auav()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x104c
 // Size: 0x132
 function spawnboardroom_specialist()
@@ -372,7 +372,7 @@ function spawnboardroom_specialist()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1186
 // Size: 0x80
 function spawnboardroom_loadoutdrop()
@@ -390,7 +390,7 @@ function spawnboardroom_loadoutdrop()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120e
 // Size: 0x132
 function spawnboardroom_gasmask()
@@ -428,7 +428,7 @@ function spawnboardroom_gasmask()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1348
 // Size: 0x10c
 function spawnboardroom_miniguns()
@@ -455,7 +455,7 @@ function spawnboardroom_miniguns()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x145c
 // Size: 0x80
 function spawnboardroom_juggdrop()
@@ -473,7 +473,7 @@ function spawnboardroom_juggdrop()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14e4
 // Size: 0xb1, Type: bool
 function awardstadiumblueprint( player )
@@ -499,7 +499,7 @@ function awardstadiumblueprint( player )
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x159e
 // Size: 0x87
 function activatemusictrigger()
@@ -513,7 +513,7 @@ function activatemusictrigger()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x162d
 // Size: 0x7b
 function musictriggerthink( trigger )
@@ -551,7 +551,7 @@ function musictriggerthink( trigger )
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16b0
 // Size: 0x7ce
 function gatherstadiumlocs()
@@ -656,7 +656,7 @@ function gatherstadiumlocs()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e86
 // Size: 0x4ba
 function registeraccesscardlocs()
@@ -698,7 +698,7 @@ function registeraccesscardlocs()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2348
 // Size: 0x224
 function spawnaccesscards()
@@ -746,7 +746,7 @@ function spawnaccesscards()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2574
 // Size: 0x540
 function serverroomrewardroll()
@@ -831,7 +831,7 @@ function serverroomrewardroll()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2abc
 // Size: 0x6b
 function serverroomrewardspawn( rewardtype )
@@ -842,7 +842,7 @@ function serverroomrewardspawn( rewardtype )
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b2f
 // Size: 0x4b
 function showdebugresult( resulttext )
@@ -861,7 +861,7 @@ function showdebugresult( resulttext )
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b82
 // Size: 0xfa
 function debug_printcode( codestruct )
@@ -897,7 +897,7 @@ function debug_printcode( codestruct )
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c84
 // Size: 0x112
 function debug_bunkertestaccesscardlocs()
@@ -913,7 +913,7 @@ function debug_bunkertestaccesscardlocs()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d9e
 // Size: 0xe4
 function debug_spawnallaccesscards()
@@ -931,7 +931,7 @@ function debug_spawnallaccesscards()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e8a
 // Size: 0x184
 function debug_spawnrewardstest()
@@ -964,7 +964,7 @@ function debug_spawnrewardstest()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3016
 // Size: 0x153
 function computer_debugtestloop( scriptable )
@@ -1007,7 +1007,7 @@ function computer_debugtestloop( scriptable )
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3171
 // Size: 0xa5
 function debug_showcardlocs()
@@ -1030,7 +1030,7 @@ function debug_showcardlocs()
 }
 
 // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x321e
 // Size: 0x61
 function debug_show2dvotext( text, time )
@@ -1056,7 +1056,7 @@ function debug_show2dvotext( text, time )
 /#
 
     // Namespace br_stadium_puzzle / scripts\mp\gametypes\br_stadium_puzzle
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3287
     // Size: 0x163, Type: dev
     function function_138da425d10b4a04()

@@ -1,7 +1,7 @@
 #namespace mp_jup_launchfacility_fx;
 
 // Namespace mp_jup_launchfacility_fx / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility_fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x82c
 // Size: 0x258
 function main()

@@ -12,7 +12,7 @@
 #namespace jup_spawner_zombie_hellhound_s3_rr_unlock;
 
 // Namespace jup_spawner_zombie_hellhound_s3_rr_unlock / namespace_cc19dba5c45f4f90
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x234
 // Size: 0x1d3
 function main()
@@ -49,7 +49,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_hellhound_s3_rr_unlock / namespace_cc19dba5c45f4f90
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40f
 // Size: 0x57
 function setup_model()
@@ -66,7 +66,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_hellhound_s3_rr_unlock / namespace_cc19dba5c45f4f90
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46e
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -75,7 +75,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_hellhound_s3_rr_unlock / namespace_cc19dba5c45f4f90
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47f
 // Size: 0x108
 function precache()
@@ -108,7 +108,7 @@ function precache()
 }
 
 // Namespace jup_spawner_zombie_hellhound_s3_rr_unlock / namespace_cc19dba5c45f4f90
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x58f
 // Size: 0xa2
 function setup_weapons()

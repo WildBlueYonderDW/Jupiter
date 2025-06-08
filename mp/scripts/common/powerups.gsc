@@ -11,7 +11,7 @@
 #namespace powerups;
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x48d
 // Size: 0x94
 function init_powerups( var_751ff6b802605de7, var_931062a9b77a0c65 )
@@ -119,7 +119,7 @@ function private function_4d4c49885e6b2490( var_751ff6b802605de7, var_931062a9b7
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa14
 // Size: 0x19
 function function_8ca4b49ee68720bf( event )
@@ -128,7 +128,7 @@ function function_8ca4b49ee68720bf( event )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa35
 // Size: 0x152
 function function_e6f547b7f0a996ed()
@@ -167,7 +167,7 @@ function function_e6f547b7f0a996ed()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb90
 // Size: 0x73
 function register_powerup( str_powerup, func_grab_powerup, func_should_drop_with_regular_powerups, var_58a4e1d475eb979b )
@@ -184,7 +184,7 @@ function register_powerup( str_powerup, func_grab_powerup, func_should_drop_with
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc0b
 // Size: 0x9c
 function _register( str_powerup, func_grab_powerup, func_should_drop_with_regular_powerups, var_58a4e1d475eb979b )
@@ -200,7 +200,7 @@ function _register( str_powerup, func_grab_powerup, func_should_drop_with_regula
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xcaf
 // Size: 0xb2
 function function_854b2d27ee860e0e( str_powerup, func_grab_powerup, func_should_drop_with_regular_powerups, var_58a4e1d475eb979b )
@@ -221,7 +221,7 @@ function function_854b2d27ee860e0e( str_powerup, func_grab_powerup, func_should_
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd69
 // Size: 0x52
 function powerup_activate( str_powerup, ent_powerup )
@@ -233,7 +233,7 @@ function powerup_activate( str_powerup, ent_powerup )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdc3
 // Size: 0x1d, Type: bool
 function function_a7f6960c623182d2( str_powerup )
@@ -242,7 +242,7 @@ function function_a7f6960c623182d2( str_powerup )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde9
 // Size: 0x29, Type: bool
 function function_c414330b83d2e427( str_powerup )
@@ -251,7 +251,7 @@ function function_c414330b83d2e427( str_powerup )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe1b
 // Size: 0x34
 function function_896f9300bcde23c2( str_powerup )
@@ -267,7 +267,7 @@ function function_896f9300bcde23c2( str_powerup )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe58
 // Size: 0x1d
 function function_519d44e54a9b8ae5( str_powerup )
@@ -276,7 +276,7 @@ function function_519d44e54a9b8ae5( str_powerup )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe7e
 // Size: 0x191
 function function_a56a8b17eae57b09( str_powerup, powerup_origin )
@@ -329,7 +329,7 @@ function function_a56a8b17eae57b09( str_powerup, powerup_origin )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1018
 // Size: 0x117
 function function_d4be622286a198( str_powerup, v_spawn_pos, v_spawn_angles )
@@ -357,7 +357,7 @@ function function_d4be622286a198( str_powerup, v_spawn_pos, v_spawn_angles )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1137
 // Size: 0x4e
 function function_c38c89a662ac4f51( str_powerup, origin )
@@ -373,7 +373,7 @@ function function_c38c89a662ac4f51( str_powerup, origin )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x118d
 // Size: 0x1a3
 function powerup_drop( str_powerup, v_spawn_pos, var_cfca9abfbb48775e, var_31a30ed92b3baeec )
@@ -418,7 +418,7 @@ function powerup_drop( str_powerup, v_spawn_pos, var_cfca9abfbb48775e, var_31a30
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1339
 // Size: 0xe7
 function function_ff48fa45d1f0c4e1( offset )
@@ -446,7 +446,7 @@ function function_ff48fa45d1f0c4e1( offset )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1429
 // Size: 0x53
 function function_6941afdf7d54f58c( func_callback )
@@ -462,7 +462,7 @@ function function_6941afdf7d54f58c( func_callback )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1484
 // Size: 0x7d
 function function_afb7ebfa593cc2d5( str_powerup )
@@ -485,7 +485,7 @@ function function_afb7ebfa593cc2d5( str_powerup )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1509
 // Size: 0x113
 function powerup_wobble( ent_model, groundent )
@@ -531,7 +531,7 @@ function powerup_wobble( ent_model, groundent )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1624
 // Size: 0xe2
 function powerup_timeout( n_lifetime )
@@ -562,7 +562,7 @@ function powerup_timeout( n_lifetime )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x170e
 // Size: 0xb2
 function powerup_hide()
@@ -591,7 +591,7 @@ function powerup_hide()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17c8
 // Size: 0xdc
 function powerup_show( var_bce144cbc1e37b8e )
@@ -628,7 +628,7 @@ function powerup_show( var_bce144cbc1e37b8e )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18ac
 // Size: 0x82
 function hide_and_show( hide_func, show_func )
@@ -636,7 +636,8 @@ function hide_and_show( hide_func, show_func )
     self endon( "death" );
     var_bce144cbc1e37b8e = 0;
     
-    for (i = 0; i < 40; i++) {
+    for ( i = 0; i < 40 ; i++ )
+    {
         if ( i % 2 )
         {
             self [[ show_func ]]( var_bce144cbc1e37b8e );
@@ -665,7 +666,7 @@ function hide_and_show( hide_func, show_func )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1936
 // Size: 0x76
 function powerup_delete()
@@ -690,7 +691,7 @@ function powerup_delete()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19b4
 // Size: 0x35f
 function powerup_wait_for_pickup()
@@ -771,7 +772,7 @@ function powerup_wait_for_pickup()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d1b
 // Size: 0xbd
 function get_next_powerup()
@@ -808,7 +809,7 @@ function get_next_powerup()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1de1
 // Size: 0x31
 function function_39a01e773f00003()
@@ -818,7 +819,7 @@ function function_39a01e773f00003()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e1a
 // Size: 0x4, Type: bool
 function func_should_always_drop()
@@ -827,7 +828,7 @@ function func_should_always_drop()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e27
 // Size: 0x3, Type: bool
 function func_should_never_drop()
@@ -836,7 +837,7 @@ function func_should_never_drop()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e33
 // Size: 0x147
 function function_320c6c17c3136d0a( params )
@@ -892,7 +893,7 @@ function function_320c6c17c3136d0a( params )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f82
 // Size: 0xb8
 function function_3f65dbe307c93086()
@@ -909,7 +910,8 @@ function function_3f65dbe307c93086()
         }
     #/
     
-    for (n_loop = root.var_211f18c4ee5c760f.size * 2; n_loop > 0; n_loop--) {
+    for ( n_loop = root.var_211f18c4ee5c760f.size * 2; n_loop > 0 ; n_loop-- )
+    {
         str_powerup = get_next_powerup();
         powerup_info = function_519d44e54a9b8ae5( str_powerup );
         
@@ -930,7 +932,7 @@ function function_3f65dbe307c93086()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2043
 // Size: 0x1d
 function function_8edb8c0ed499f61e( var_b963bd568903c6d )
@@ -955,7 +957,7 @@ function private function_76ccbdb9c3d32f22()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20a2
 // Size: 0x3c
 function function_5b0b83c04b92d1fa( zvar, value )
@@ -971,7 +973,7 @@ function function_5b0b83c04b92d1fa( zvar, value )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20e7
 // Size: 0x2a
 function function_edeba0070ca0709e( zvar )
@@ -981,7 +983,7 @@ function function_edeba0070ca0709e( zvar )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x211a
 // Size: 0x8a
 function powerup_hud_show( str_powerup, n_lifetime )
@@ -996,7 +998,7 @@ function powerup_hud_show( str_powerup, n_lifetime )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21ac
 // Size: 0x199
 function function_587ecc90909a8c38( str_powerup )
@@ -1026,7 +1028,8 @@ function function_587ecc90909a8c38( str_powerup )
     powerupindex = 0;
     spotfound = 0;
     
-    for (i = 0; i < poweruplist.size; i++) {
+    for ( i = 0; i < poweruplist.size ; i++ )
+    {
         var_f8358178900f0d5f = isdefined( self.var_a0e1c0f50ca3ef0f[ i ] );
         var_8952024062b19822 = var_f8358178900f0d5f && self.var_a0e1c0f50ca3ef0f[ i ] == str_powerup;
         
@@ -1051,7 +1054,7 @@ function function_587ecc90909a8c38( str_powerup )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x234e
 // Size: 0x263
 function function_e91cc9367bcb7f1a( hud_powerup, n_lifetime )
@@ -1099,7 +1102,7 @@ function function_e91cc9367bcb7f1a( hud_powerup, n_lifetime )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25b9
 // Size: 0x16d
 function function_aa5cdd71af797058( hud_powerup, n_lifetime )
@@ -1136,7 +1139,7 @@ function function_aa5cdd71af797058( hud_powerup, n_lifetime )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x272e
 // Size: 0xd1
 function function_5bfe254c7e9aa4db()
@@ -1148,7 +1151,8 @@ function function_5bfe254c7e9aa4db()
     
     poweruplist = function_e6f547b7f0a996ed();
     
-    for (i = 0; i < self.var_a0e1c0f50ca3ef0f.size; i++) {
+    for ( i = 0; i < self.var_a0e1c0f50ca3ef0f.size ; i++ )
+    {
         self.var_a0e1c0f50ca3ef0f[ i ] = undefined;
     }
     
@@ -1165,7 +1169,7 @@ function function_5bfe254c7e9aa4db()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2807
 // Size: 0x13f
 function function_52bb753b67c409bd( model_name, var_f77ed8ae404fb650 )
@@ -1199,7 +1203,7 @@ function function_52bb753b67c409bd( model_name, var_f77ed8ae404fb650 )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x294e
 // Size: 0xda
 function function_98041907892dbd80( b_play_fx )
@@ -1234,7 +1238,7 @@ function function_98041907892dbd80( b_play_fx )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a30
 // Size: 0x3e
 function function_5b0773c04b8eb8f3( str_fx_name )
@@ -1255,7 +1259,7 @@ function function_5b0773c04b8eb8f3( str_fx_name )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a76
 // Size: 0x2e
 function stop_vfx()
@@ -1268,7 +1272,7 @@ function stop_vfx()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2aac
 // Size: 0x20
 function play_vfx( str_fx )
@@ -1277,7 +1281,7 @@ function play_vfx( str_fx )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ad4
 // Size: 0x50
 function function_e419d148895ea689( powerup_name )
@@ -1332,7 +1336,7 @@ function private function_fb089abb8dac6216()
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c26
 // Size: 0x1d
 function function_1652f8a8050283bd( var_a24595ceea8d9a67, var_9c82af4273cc1f01 )
@@ -1341,7 +1345,7 @@ function function_1652f8a8050283bd( var_a24595ceea8d9a67, var_9c82af4273cc1f01 )
 }
 
 // Namespace powerups / scripts\common\powerups
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c4c
 // Size: 0x26
 function function_ecdae672c660149e()
@@ -1357,7 +1361,7 @@ function function_ecdae672c660149e()
 /#
 
     // Namespace powerups / scripts\common\powerups
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2c7b
     // Size: 0xb9, Type: dev
     function function_e2b8eeccc951133f( a_params )

@@ -48,7 +48,7 @@
 #namespace shock_stick;
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xae7
 // Size: 0x130
 function function_54655641d3957e3( grenade, isgl )
@@ -84,7 +84,7 @@ function function_54655641d3957e3( grenade, isgl )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc1f
 // Size: 0x87
 function function_f7d28ac22f07d9c0( empstruct )
@@ -104,7 +104,7 @@ function function_f7d28ac22f07d9c0( empstruct )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcae
 // Size: 0x37
 function function_c00fb7cc84f2d066()
@@ -116,7 +116,7 @@ function function_c00fb7cc84f2d066()
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xced
 // Size: 0x20
 function function_50a6b61f28ff21c8()
@@ -128,7 +128,7 @@ function function_50a6b61f28ff21c8()
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd15
 // Size: 0x79
 function function_c44b639f5005afa( isimmediate )
@@ -156,7 +156,7 @@ function function_c44b639f5005afa( isimmediate )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd96
 // Size: 0x122
 function function_c5852887bdea3efb( deletiondelay )
@@ -213,7 +213,7 @@ function function_c5852887bdea3efb( deletiondelay )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec0
 // Size: 0x3c, Type: bool
 function function_ca6c37e5d8f35c8b( data )
@@ -228,7 +228,7 @@ function function_ca6c37e5d8f35c8b( data )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf05
 // Size: 0x7b
 function function_2bcd92a365fef09( params )
@@ -248,7 +248,7 @@ function function_2bcd92a365fef09( params )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf88
 // Size: 0xb7
 function function_a5e91eaa60d034d7( grenade )
@@ -266,7 +266,7 @@ function function_a5e91eaa60d034d7( grenade )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1048
 // Size: 0x1a7
 function function_374b1abf46319e21( grenade )
@@ -391,7 +391,7 @@ function private function_8e8a3b7d66fdc1b1( data )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x136f
 // Size: 0x50
 function function_4714b4df7581ef29( attacker )
@@ -405,19 +405,19 @@ function function_4714b4df7581ef29( attacker )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13c7
-// Size: 0x65, Type: bool
+// Size: 0x65
 function shockstick_canbehaywire( shockstick, ignoresight )
 {
     if ( self == shockstick )
     {
-        return false;
+        return 0;
     }
     
     if ( !isdefined( self ) )
     {
-        return false;
+        return 0;
     }
     
     if ( isplayer( self ) )
@@ -426,22 +426,22 @@ function shockstick_canbehaywire( shockstick, ignoresight )
     }
     else if ( istrue( self.exploding ) )
     {
-        return false;
+        return 0;
     }
     else if ( istrue( self.var_98e373d243c1936f ) )
     {
-        return false;
+        return 0;
     }
     else
     {
         return function_407cdd75e41a385d( shockstick );
     }
     
-    return true;
+    return 1;
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1435
 // Size: 0x173, Type: bool
 function function_407cdd75e41a385d( shockstick )
@@ -496,7 +496,7 @@ function function_407cdd75e41a385d( shockstick )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15b1
 // Size: 0x15a, Type: bool
 function function_d3690389f7d8334c( shockstick, ignoresight )
@@ -556,7 +556,7 @@ function function_d3690389f7d8334c( shockstick, ignoresight )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1714
 // Size: 0xd2, Type: bool
 function function_f793c14e21581402( shockstick, chainorigin )
@@ -586,7 +586,7 @@ function function_f793c14e21581402( shockstick, chainorigin )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17ef
 // Size: 0x45
 function function_91a16c9b36fa1b5c( target )
@@ -607,7 +607,7 @@ function function_91a16c9b36fa1b5c( target )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x183c
 // Size: 0x73, Type: bool
 function function_b80ed39805876e5c( shockstick )
@@ -624,7 +624,7 @@ function function_b80ed39805876e5c( shockstick )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18b8
 // Size: 0x84b
 function function_f47ab824a48fe570()
@@ -862,7 +862,7 @@ function function_f47ab824a48fe570()
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x210b
 // Size: 0xa7, Type: bool
 function function_488eafef5447330e( ent )
@@ -889,7 +889,7 @@ function function_488eafef5447330e( ent )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21bb
 // Size: 0x7a
 function function_1ff93e5069cbb8e2( location, radius, height )
@@ -908,7 +908,7 @@ function function_1ff93e5069cbb8e2( location, radius, height )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x223d
 // Size: 0xcd
 function function_bba576fc720ed9c5( ent )
@@ -945,7 +945,7 @@ function function_bba576fc720ed9c5( ent )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2312
 // Size: 0x41c
 function function_afa7236ce2426c99( victim )
@@ -1020,7 +1020,8 @@ function function_afa7236ce2426c99( victim )
             {
                 firsttimecheck = 0;
                 
-                for (i = 0; i < targets.size; i++) {
+                for ( i = 0; i < targets.size ; i++ )
+                {
                     targets[ i ].dist = distancesquared( victimorigin, targets[ i ].ent.origin );
                     
                     if ( targets[ i ].dist > maxdistance )
@@ -1040,7 +1041,8 @@ function function_afa7236ce2426c99( victim )
                 maxdistance = -1;
                 maxdistanceindex = -1;
                 
-                for (i = 0; i < targets.size; i++) {
+                for ( i = 0; i < targets.size ; i++ )
+                {
                     if ( targets[ i ].dist > maxdistance )
                     {
                         maxdistance = targets[ i ].dist;
@@ -1058,7 +1060,7 @@ function function_afa7236ce2426c99( victim )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2736
 // Size: 0x19a
 function function_4d13735859a44508( stuckdata )
@@ -1114,7 +1116,7 @@ function function_4d13735859a44508( stuckdata )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28d8
 // Size: 0xea
 function function_9b3d2da91a6665( victim )
@@ -1150,7 +1152,7 @@ function function_9b3d2da91a6665( victim )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x29ca
 // Size: 0x127
 function shockstick_applyhaywire( victim, objweapon, chain )
@@ -1193,7 +1195,7 @@ function shockstick_applyhaywire( victim, objweapon, chain )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2af9
 // Size: 0xc
 function function_b3a0629a55a36978()
@@ -1202,7 +1204,7 @@ function function_b3a0629a55a36978()
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b0d
 // Size: 0x25f
 function function_ea2863c73339ae9e( data )
@@ -1286,7 +1288,7 @@ function function_ea2863c73339ae9e( data )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d74
 // Size: 0xb9
 function function_805969ca0925b2bd( data )
@@ -1319,7 +1321,7 @@ function function_805969ca0925b2bd( data )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e35
 // Size: 0xb2
 function function_fb327fd48c0e34e0( data )
@@ -1334,7 +1336,7 @@ function function_fb327fd48c0e34e0( data )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2eef
 // Size: 0x36
 function function_48f07ea78daa5b21()
@@ -1358,7 +1360,7 @@ function function_48f07ea78daa5b21()
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f2d
 // Size: 0x1b7
 function function_a9a57668997e3c85( ishaywire, islauncher )
@@ -1404,7 +1406,7 @@ function function_a9a57668997e3c85( ishaywire, islauncher )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30ec
 // Size: 0x351
 function function_c927fd013fc6e502( var_91beb5c3a5ab6910, bundle )
@@ -1517,11 +1519,12 @@ function function_c927fd013fc6e502( var_91beb5c3a5ab6910, bundle )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3445
-// Size: 0x9b
+// Size: 0xa2
 function function_efe1093111eaf7c2( bundle )
 {
+    self endon( "death_or_disconnect" );
     movespeedscale = getdvarfloat( @"hash_d677956e73b3bfb4", 0.8 );
     movespeedscale = default_to( bundle.var_77ae83eedd8cab0c, movespeedscale );
     
@@ -1542,8 +1545,8 @@ function function_efe1093111eaf7c2( bundle )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x34e8
+// Params 3
+// Checksum 0x0, Offset: 0x34ef
 // Size: 0x99
 function function_6cda7b0c3d3f6f3c( curweapon, gestureref, grenade )
 {
@@ -1572,8 +1575,8 @@ function function_6cda7b0c3d3f6f3c( curweapon, gestureref, grenade )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3589
+// Params 2
+// Checksum 0x0, Offset: 0x3590
 // Size: 0x2e
 function function_a386b883464f4891( bundle, islauncher )
 {
@@ -1584,8 +1587,8 @@ function function_a386b883464f4891( bundle, islauncher )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35bf
+// Params 1
+// Checksum 0x0, Offset: 0x35c6
 // Size: 0x50
 function function_627c93c58129d8f4( bundle )
 {
@@ -1604,8 +1607,8 @@ function function_627c93c58129d8f4( bundle )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3617
+// Params 1
+// Checksum 0x0, Offset: 0x361e
 // Size: 0x42
 function function_e57c787da33655d9( bundle )
 {
@@ -1623,8 +1626,8 @@ function function_e57c787da33655d9( bundle )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3661
+// Params 1
+// Checksum 0x0, Offset: 0x3668
 // Size: 0x98
 function function_cf082013d5205e0d( weapon )
 {
@@ -1669,8 +1672,8 @@ function function_cf082013d5205e0d( weapon )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3701
+// Params 1
+// Checksum 0x0, Offset: 0x3708
 // Size: 0x6d
 function function_aa6acff8443c394b( weaponname )
 {
@@ -1689,8 +1692,8 @@ function function_aa6acff8443c394b( weaponname )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3776
+// Params 1
+// Checksum 0x0, Offset: 0x377d
 // Size: 0x3d
 function function_ed29898d6e83dd3( weaponname )
 {
@@ -1705,8 +1708,8 @@ function function_ed29898d6e83dd3( weaponname )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x37bb
+// Params 1
+// Checksum 0x0, Offset: 0x37c2
 // Size: 0x27f
 function function_5e15cf3721cdcaab( shockstick )
 {
@@ -1806,8 +1809,8 @@ function function_5e15cf3721cdcaab( shockstick )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a42
+// Params 0
+// Checksum 0x0, Offset: 0x3a49
 // Size: 0x25, Type: bool
 function function_e3bcea2db6ca29bc()
 {
@@ -1815,8 +1818,8 @@ function function_e3bcea2db6ca29bc()
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a70
+// Params 1
+// Checksum 0x0, Offset: 0x3a77
 // Size: 0x144
 function function_de0e81433eb4b20c( currentweapon )
 {
@@ -1887,8 +1890,8 @@ function function_de0e81433eb4b20c( currentweapon )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bbc
+// Params 1
+// Checksum 0x0, Offset: 0x3bc3
 // Size: 0xff
 function function_5ac47272c12bd920( weapon )
 {
@@ -1930,8 +1933,8 @@ function function_5ac47272c12bd920( weapon )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cc3
+// Params 1
+// Checksum 0x0, Offset: 0x3cca
 // Size: 0x62
 function function_84422a637aa542e2( weaponname )
 {
@@ -1953,8 +1956,8 @@ function function_84422a637aa542e2( weaponname )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d2d
+// Params 1
+// Checksum 0x0, Offset: 0x3d34
 // Size: 0x238
 function shockstick_haywireagent( var_91beb5c3a5ab6910 )
 {
@@ -2015,8 +2018,8 @@ function shockstick_haywireagent( var_91beb5c3a5ab6910 )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f6d
+// Params 1
+// Checksum 0x0, Offset: 0x3f74
 // Size: 0x50
 function function_5dd66ebda239d1b( data )
 {
@@ -2029,8 +2032,8 @@ function function_5dd66ebda239d1b( data )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fc5
+// Params 2
+// Checksum 0x0, Offset: 0x3fcc
 // Size: 0x2e6
 function function_46b866d198a76ddc( data, fromdeath )
 {
@@ -2096,8 +2099,8 @@ function function_46b866d198a76ddc( data, fromdeath )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42b3
+// Params 1
+// Checksum 0x0, Offset: 0x42ba
 // Size: 0x15
 function function_f100472240074998( applycallback )
 {
@@ -2105,8 +2108,8 @@ function function_f100472240074998( applycallback )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42d0
+// Params 1
+// Checksum 0x0, Offset: 0x42d7
 // Size: 0x15
 function function_6eb20c71654fb6b4( removecallback )
 {
@@ -2114,8 +2117,8 @@ function function_6eb20c71654fb6b4( removecallback )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x42ed
+// Params 2
+// Checksum 0x0, Offset: 0x42f4
 // Size: 0xf1
 function function_6c0a9d95ebb14f2a( fromdeath, bundle )
 {
@@ -2156,8 +2159,8 @@ function function_6c0a9d95ebb14f2a( fromdeath, bundle )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43e6
+// Params 1
+// Checksum 0x0, Offset: 0x43ed
 // Size: 0xc0
 function function_600c7c4c73c6a773( lock )
 {
@@ -2188,8 +2191,8 @@ function function_600c7c4c73c6a773( lock )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x44ae
+// Params 2
+// Checksum 0x0, Offset: 0x44b5
 // Size: 0x80
 function function_9c95c914395a9d4a( impactorigin, radius )
 {
@@ -2211,8 +2214,8 @@ function function_9c95c914395a9d4a( impactorigin, radius )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4537
+// Params 1
+// Checksum 0x0, Offset: 0x453e
 // Size: 0x39
 function function_5d58ea6516bf050c( duration )
 {
@@ -2226,8 +2229,8 @@ function function_5d58ea6516bf050c( duration )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4578
+// Params 0
+// Checksum 0x0, Offset: 0x457f
 // Size: 0x9c
 function function_17adeb1fe103990d()
 {
@@ -2261,8 +2264,8 @@ function function_17adeb1fe103990d()
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x461c
+// Params 0
+// Checksum 0x0, Offset: 0x4623
 // Size: 0x20
 function stopshockfx()
 {
@@ -2272,8 +2275,8 @@ function stopshockfx()
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4644
+// Params 1
+// Checksum 0x0, Offset: 0x464b
 // Size: 0x1d
 function function_a09639f24d4e918e( corpsetable )
 {
@@ -2281,8 +2284,8 @@ function function_a09639f24d4e918e( corpsetable )
 }
 
 // Namespace shock_stick / scripts\mp\equipment\shock_stick
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4669
+// Params 1
+// Checksum 0x0, Offset: 0x4670
 // Size: 0x76
 function function_4ce69562a1b41fc7( objweapon )
 {

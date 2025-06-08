@@ -46,7 +46,7 @@
 #namespace br_gametype_zxp;
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f3
 // Size: 0x20
 function main()
@@ -57,7 +57,7 @@ function main()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x111b
 // Size: 0x59d
 function init()
@@ -154,7 +154,7 @@ function init()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c0
 // Size: 0x20a
 function initdialog()
@@ -191,7 +191,7 @@ function initdialog()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18d2
 // Size: 0x67
 function initpostmain()
@@ -216,7 +216,7 @@ function initpostmain()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1941
 // Size: 0xad
 function playerwelcomesplashes()
@@ -252,7 +252,7 @@ function playerwelcomesplashes()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19f6
 // Size: 0x50
 function onplayerconnect( player )
@@ -266,7 +266,7 @@ function onplayerconnect( player )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a4e
 // Size: 0x45
 function packclientmatchdata()
@@ -278,7 +278,7 @@ function packclientmatchdata()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a9c
 // Size: 0x18, Type: bool
 function iszombieroyalezombie()
@@ -287,7 +287,7 @@ function iszombieroyalezombie()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1abd
 // Size: 0x5b
 function setdropbagdelay()
@@ -300,7 +300,7 @@ function setdropbagdelay()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b20
 // Size: 0x8
 function markplayeraseliminatedonkilled()
@@ -309,7 +309,7 @@ function markplayeraseliminatedonkilled()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b31
 // Size: 0x1b
 function playerkilledspawn( deathdata, finaldeath )
@@ -318,7 +318,7 @@ function playerkilledspawn( deathdata, finaldeath )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b55
 // Size: 0x21
 function playershouldrespawn( data )
@@ -332,7 +332,7 @@ function playershouldrespawn( data )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b7f
 // Size: 0x7a
 function playerskiplootpickup( instance, var_a5b2c541413aa895 )
@@ -355,7 +355,7 @@ function playerskiplootpickup( instance, var_a5b2c541413aa895 )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c01
 // Size: 0x11
 function playerskipkioskuse( instance )
@@ -364,7 +364,7 @@ function playerskipkioskuse( instance )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c1b
 // Size: 0x8d, Type: bool
 function shouldlaststanddamagescale( data )
@@ -381,7 +381,7 @@ function shouldlaststanddamagescale( data )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cb1
 // Size: 0x3d
 function allowmeleevehicledamage( data )
@@ -391,7 +391,7 @@ function allowmeleevehicledamage( data )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cf7
 // Size: 0xb0
 function function_cd17fd9df37e3def()
@@ -415,7 +415,7 @@ function function_cd17fd9df37e3def()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1daf
 // Size: 0x46
 function function_172ca8a9c3a0981d( value )
@@ -436,7 +436,7 @@ function function_172ca8a9c3a0981d( value )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dfd
 // Size: 0x723
 function playerzombiebacktohuman( force )
@@ -668,7 +668,7 @@ function playerzombiebacktohuman( force )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2528
 // Size: 0x5f
 function function_1d81091658f53612()
@@ -680,7 +680,7 @@ function function_1d81091658f53612()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2590
 // Size: 0x5a
 function function_1a67db35424bf909()
@@ -696,7 +696,7 @@ function function_1a67db35424bf909()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25f3
 // Size: 0x1b2
 function function_afbd524fec2f5ec0()
@@ -724,7 +724,8 @@ function function_afbd524fec2f5ec0()
     var_ac2e1efdf095af8c = ( self.origin[ 0 ], self.origin[ 1 ], 0 );
     dirtoplayer = vectornormalize( var_ac2e1efdf095af8c - dangerorigin );
     
-    for (i = 1; i <= const_attempts; i++) {
+    for ( i = 1; i <= const_attempts ; i++ )
+    {
         distfromcenter = dangerradius - var_72541f27d0911a16 * i;
         
         if ( distfromcenter < 0 )
@@ -751,7 +752,7 @@ function function_afbd524fec2f5ec0()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x27ae
 // Size: 0x79
 function function_fb6925f5e828580d( origin, dir, dist )
@@ -769,7 +770,7 @@ function function_fb6925f5e828580d( origin, dir, dist )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x282f
 // Size: 0x2c
 function playerhumanhitground()
@@ -787,7 +788,7 @@ function playerhumanhitground()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2863
 // Size: 0x3f6
 function playerloadoutrestore()
@@ -893,7 +894,7 @@ function playerloadoutrestore()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c61
 // Size: 0x1d
 function addtoteamlives( player, team )
@@ -902,7 +903,7 @@ function addtoteamlives( player, team )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c86
 // Size: 0x1d
 function removefromteamlives( player, team )
@@ -911,7 +912,7 @@ function removefromteamlives( player, team )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cab
 // Size: 0x32
 function gulagwinnerrespawn( player )
@@ -923,7 +924,7 @@ function gulagwinnerrespawn( player )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ce5
 // Size: 0x9b
 function function_536210a44b407bf4()
@@ -942,7 +943,7 @@ function function_536210a44b407bf4()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d88
 // Size: 0x16
 function playernakeddroploadout()
@@ -956,7 +957,7 @@ function playernakeddroploadout()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2da6
 // Size: 0x35, Type: bool
 function droponplayerdeath( attacker )
@@ -975,7 +976,7 @@ function droponplayerdeath( attacker )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2de4
 // Size: 0x33d
 function onplayerkilled( deathdata )
@@ -1076,7 +1077,7 @@ function onplayerkilled( deathdata )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3129
 // Size: 0x5e
 function function_85ac199ed33991d6()
@@ -1094,7 +1095,7 @@ function function_85ac199ed33991d6()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x318f
 // Size: 0x9a, Type: bool
 function function_17d34b7536ee4da5( deathdata )
@@ -1128,7 +1129,7 @@ function function_17d34b7536ee4da5( deathdata )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3232
 // Size: 0xb7, Type: bool
 function shouldspawndropscommon( attacker, var_7159f30ea8781c0b )
@@ -1157,7 +1158,7 @@ function shouldspawndropscommon( attacker, var_7159f30ea8781c0b )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32f2
 // Size: 0x24, Type: bool
 function shouldspawnloot( attacker )
@@ -1176,7 +1177,7 @@ function shouldspawnloot( attacker )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x331f
 // Size: 0x6a, Type: bool
 function function_5b11d4c1dcfb5c70( attacker, meansofdeath )
@@ -1203,7 +1204,7 @@ function function_5b11d4c1dcfb5c70( attacker, meansofdeath )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3392
 // Size: 0x1f, Type: bool
 function function_d54483159d739a01( var_26784414a3b75d58 )
@@ -1217,14 +1218,15 @@ function function_d54483159d739a01( var_26784414a3b75d58 )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x33ba
 // Size: 0xc6
 function function_7fa9a8fb1f8cb5a7( origin, angles, ent, count )
 {
     dropstruct = scripts\mp\gametypes\br_pickups::function_7b9f3966a7a42003();
     
-    for (i = 0; i < count; i++) {
+    for ( i = 0; i < count ; i++ )
+    {
         offsetangles = ( 0, randomfloatrange( 0, 360 ), 0 );
         dropinfo = scripts\mp\gametypes\br_pickups::getitemdroporiginandangles( dropstruct, origin, angles + offsetangles, ent, undefined, 35 );
         
@@ -1241,7 +1243,7 @@ function function_7fa9a8fb1f8cb5a7( origin, angles, ent, count )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3488
 // Size: 0xa
 function function_d22ff024b17335f9()
@@ -1250,7 +1252,7 @@ function function_d22ff024b17335f9()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x349a
 // Size: 0xcf
 function function_179b77928ea64469()
@@ -1259,7 +1261,8 @@ function function_179b77928ea64469()
     self.criticalitem = 1;
     self.ownerteam = "neutral";
     
-    for (state = self getscriptablepartstate( "brloot_zmb_stim" ); state != "visible" && state != "delayauto" && state != "noauto"; state = self getscriptablepartstate( "brloot_zmb_stim" )) {
+    for ( state = self getscriptablepartstate( "brloot_zmb_stim" ); state != "visible" && state != "delayauto" && state != "noauto" ; state = self getscriptablepartstate( "brloot_zmb_stim" ) )
+    {
         waitframe();
         
         if ( !isdefined( self ) )
@@ -1274,7 +1277,7 @@ function function_179b77928ea64469()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3571
 // Size: 0x2a
 function function_231de05cf1cbadb9()
@@ -1286,7 +1289,7 @@ function function_231de05cf1cbadb9()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35a3
 // Size: 0x51
 function function_87aa367a0fc501cd( victim, attacker )
@@ -1296,7 +1299,7 @@ function function_87aa367a0fc501cd( victim, attacker )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35fc
 // Size: 0x35, Type: bool
 function function_3406e94db80d3df1( attacker )
@@ -1315,7 +1318,7 @@ function function_3406e94db80d3df1( attacker )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x363a
 // Size: 0x4e
 function function_d4881e5a408d9c4a( victim, attacker )
@@ -1325,7 +1328,7 @@ function function_d4881e5a408d9c4a( victim, attacker )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3690
 // Size: 0xf7
 function function_3bbc840fb244d188( syringe, var_426ec555fff751be, player )
@@ -1358,7 +1361,7 @@ function function_3bbc840fb244d188( syringe, var_426ec555fff751be, player )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x378f
 // Size: 0x13
 function onuse( player )
@@ -1367,7 +1370,7 @@ function onuse( player )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37aa
 // Size: 0x64
 function circletimernext( circleindex )
@@ -1389,7 +1392,7 @@ function circletimernext( circleindex )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3816
 // Size: 0x15b
 function setupzombierespawnglobaltimer()
@@ -1438,7 +1441,7 @@ function setupzombierespawnglobaltimer()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3979
 // Size: 0x2f
 function function_8e4317f4e78b9488( sponsor, var_df2fbb13c226be75 )
@@ -1450,7 +1453,7 @@ function function_8e4317f4e78b9488( sponsor, var_df2fbb13c226be75 )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x39b0
 // Size: 0x10b
 function createhudelem( font, fontscale, team )
@@ -1482,7 +1485,7 @@ function createhudelem( font, fontscale, team )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ac4
 // Size: 0x76
 function circlesetup()
@@ -1494,7 +1497,7 @@ function circlesetup()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b42
 // Size: 0xdd
 function createc130pathstruct()
@@ -1516,7 +1519,7 @@ function createc130pathstruct()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c28
 // Size: 0xa
 function addtoc130infil()
@@ -1525,7 +1528,7 @@ function addtoc130infil()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c3a
 // Size: 0xfb
 function kickplayersatcircleedge()
@@ -1547,7 +1550,7 @@ function kickplayersatcircleedge()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d3d
 // Size: 0x1a0
 function exfilstart( winners )
@@ -1601,7 +1604,7 @@ function exfilstart( winners )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ee5
 // Size: 0x9a
 function setuphumanpowers()
@@ -1617,7 +1620,7 @@ function setuphumanpowers()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f87
 // Size: 0x35
 function playerhumanpowers()
@@ -1631,7 +1634,7 @@ function playerhumanpowers()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3fc4
 // Size: 0xa6
 function playerhumanconcusspush( powerstruct, powerref )
@@ -1659,7 +1662,7 @@ function playerhumanconcusspush( powerstruct, powerref )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4072
 // Size: 0x155
 function function_5855e4b39bae3587()
@@ -1689,7 +1692,7 @@ function function_5855e4b39bae3587()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41cf
 // Size: 0x1d
 function playerhumanconcusspushcleanup( powerstruct, powerref )
@@ -1698,7 +1701,7 @@ function playerhumanconcusspushcleanup( powerstruct, powerref )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41f4
 // Size: 0x83
 function function_66653a9a40e32d36( deathdata, meansofdeath )
@@ -1720,7 +1723,7 @@ function function_66653a9a40e32d36( deathdata, meansofdeath )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4280
 // Size: 0x102
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
@@ -1751,7 +1754,7 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x438a
 // Size: 0xea
 function function_1a1709943670772a()
@@ -1782,7 +1785,7 @@ function function_1a1709943670772a()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x447c
 // Size: 0x39
 function function_547be82353222cb4( item, delay )
@@ -1798,7 +1801,7 @@ function function_547be82353222cb4( item, delay )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44bd
 // Size: 0xb0
 function function_b7ba0e456d366ce0( var_86b7e6514f63521e )
@@ -1825,7 +1828,7 @@ function function_b7ba0e456d366ce0( var_86b7e6514f63521e )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4575
 // Size: 0x92
 function function_17faa3b3fa0fe88d( var_7c66490610b6f676 )
@@ -1843,7 +1846,7 @@ function function_17faa3b3fa0fe88d( var_7c66490610b6f676 )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x460f
 // Size: 0x1b
 function function_c99c402a4b8728d5( player )
@@ -1852,7 +1855,7 @@ function function_c99c402a4b8728d5( player )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4632
 // Size: 0x92
 function function_441a6c6ffaa18dde( var_1543f2cbb2cdf3d2 )
@@ -1874,7 +1877,7 @@ function function_441a6c6ffaa18dde( var_1543f2cbb2cdf3d2 )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46cc
 // Size: 0x6d
 function function_d4b27081237958b4()
@@ -1895,7 +1898,7 @@ function function_d4b27081237958b4()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4741
 // Size: 0x25
 function function_ff7abda78e137510()
@@ -1904,7 +1907,7 @@ function function_ff7abda78e137510()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x476e
 // Size: 0x2a3e
 function function_b283548972ee46d2()
@@ -2261,7 +2264,7 @@ function function_b283548972ee46d2()
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x71b4
 // Size: 0xaa
 function function_dab1e28ddbbc63ca( origin, angles, var_8ae63b0d643d4e2a, var_8216c9148d9cf617, forcespawn )
@@ -2289,7 +2292,7 @@ function function_dab1e28ddbbc63ca( origin, angles, var_8ae63b0d643d4e2a, var_82
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7267
 // Size: 0x19, Type: bool
 function function_9486695a83828a6b( var_af4cbac5d9f8d2dd )
@@ -2303,7 +2306,7 @@ function function_9486695a83828a6b( var_af4cbac5d9f8d2dd )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7289
 // Size: 0x18
 function function_c37a0b3355a0200d( attackent )
@@ -2317,7 +2320,7 @@ function function_c37a0b3355a0200d( attackent )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x72aa
 // Size: 0xbf
 function function_7998a7de21fc202e( einflictor, eattacker, idamage, smeansofdeath, sweapon, vdir, shitloc, timeoffset, deathanimduration )
@@ -2355,7 +2358,7 @@ function private function_528397b2b79b6e9c( agent, attacker, inflictor, meansofd
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x73df
 // Size: 0x52, Type: bool
 function allowimpactvehicledamage( data )
@@ -2371,7 +2374,7 @@ function allowimpactvehicledamage( data )
 }
 
 // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x743a
 // Size: 0x46, Type: bool
 function function_c271e4000367648f( location1, location2 )
@@ -2382,7 +2385,7 @@ function function_c271e4000367648f( location1, location2 )
 /#
 
     // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7489
     // Size: 0x94, Type: dev
     function function_bfe726b5e0b35c27()
@@ -2402,7 +2405,7 @@ function function_c271e4000367648f( location1, location2 )
     }
 
     // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x7525
     // Size: 0x46, Type: dev
     function function_c8f3d5a97c5a34d6( var_589c0eb9803a3415 )
@@ -2416,7 +2419,7 @@ function function_c271e4000367648f( location1, location2 )
     }
 
     // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x7573
     // Size: 0x5af, Type: dev
     function runcommand( args )
@@ -2658,7 +2661,7 @@ function function_c271e4000367648f( location1, location2 )
     }
 
     // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7b2a
     // Size: 0x68, Type: dev
     function function_fe2c5864c61ef6e7()
@@ -2679,7 +2682,7 @@ function function_c271e4000367648f( location1, location2 )
     }
 
     // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7b9a
     // Size: 0x37, Type: dev
     function function_2a87a924534f06fb()
@@ -2694,7 +2697,7 @@ function function_c271e4000367648f( location1, location2 )
     }
 
     // Namespace br_gametype_zxp / scripts\mp\gametypes\br_gametype_zxp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7bd9
     // Size: 0xa8, Type: dev
     function getvehicle()

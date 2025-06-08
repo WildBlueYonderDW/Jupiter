@@ -12,7 +12,7 @@
 #namespace namespace_ae11c87b7bfa2daa;
 
 // Namespace namespace_ae11c87b7bfa2daa / namespace_abc53b2852cb38c6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35d
 // Size: 0x30
 function function_c84ae25edc875e49()
@@ -28,7 +28,7 @@ function function_c84ae25edc875e49()
 }
 
 // Namespace namespace_ae11c87b7bfa2daa / namespace_abc53b2852cb38c6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x395
 // Size: 0x37f, Type: bool
 function function_e1fbc72dd102b947( asmname, statename, tostatename, params )
@@ -118,7 +118,7 @@ function function_e1fbc72dd102b947( asmname, statename, tostatename, params )
 }
 
 // Namespace namespace_ae11c87b7bfa2daa / namespace_abc53b2852cb38c6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x71d
 // Size: 0x403, Type: bool
 function function_4397b9eb5fee6a23( asmname, statename, tostatename, params )
@@ -560,7 +560,7 @@ function private function_f30eecf314f3f1e0( var_34e47768dd28215e )
 /#
 
     // Namespace namespace_ae11c87b7bfa2daa / namespace_abc53b2852cb38c6
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x148a
     // Size: 0x5a, Type: dev
     function function_b03f7c7561b40e5d()

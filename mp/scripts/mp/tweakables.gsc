@@ -3,7 +3,7 @@
 #namespace tweakables;
 
 // Namespace tweakables / scripts\mp\tweakables
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x357
 // Size: 0x184
 function gettweakabledvarvalue( category, name )
@@ -45,7 +45,7 @@ function gettweakabledvarvalue( category, name )
 }
 
 // Namespace tweakables / scripts\mp\tweakables
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e4
 // Size: 0x174
 function gettweakabledvar( category, name )
@@ -86,7 +86,7 @@ function gettweakabledvar( category, name )
 }
 
 // Namespace tweakables / scripts\mp\tweakables
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x661
 // Size: 0x1e7
 function gettweakablevalue( category, name )
@@ -144,7 +144,7 @@ function gettweakablevalue( category, name )
 }
 
 // Namespace tweakables / scripts\mp\tweakables
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x851
 // Size: 0x174
 function gettweakablelastvalue( category, name )
@@ -185,7 +185,7 @@ function gettweakablelastvalue( category, name )
 }
 
 // Namespace tweakables / scripts\mp\tweakables
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9ce
 // Size: 0x178
 function settweakabledvar( category, name, value )
@@ -225,7 +225,7 @@ function settweakabledvar( category, name, value )
 }
 
 // Namespace tweakables / scripts\mp\tweakables
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb4e
 // Size: 0x163
 function settweakablevalue( category, name, value )
@@ -262,7 +262,7 @@ function settweakablevalue( category, name, value )
 }
 
 // Namespace tweakables / scripts\mp\tweakables
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcb9
 // Size: 0x163
 function settweakablelastvalue( category, name, value )
@@ -299,7 +299,7 @@ function settweakablelastvalue( category, name, value )
 }
 
 // Namespace tweakables / scripts\mp\tweakables
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe24
 // Size: 0x3ea
 function registertweakable( category, name, dvar, value )
@@ -399,7 +399,7 @@ function registertweakable( category, name, dvar, value )
 }
 
 // Namespace tweakables / scripts\mp\tweakables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1216
 // Size: 0x47f
 function init()
@@ -417,9 +417,9 @@ function init()
     registertweakable( "game", "graceperiod", @"hash_c653d32c30815d2b", 20 );
     registertweakable( "game", "graceperiod_comp", @"hash_72b071fcab2e5a53", 30 );
     registertweakable( "game", "onlyheadshots", @"hash_a54edeed7c5b587f", 0 );
-    registertweakable( "game", "allowkillcam", @"hash_399f13d1217738fe", 1 );
-    registertweakable( "game", "spectatetype", @"hash_df992051d6fe8149", 1 );
-    registertweakable( "game", "allow3rdspectate", @"hash_433ce15d514ef091", 0 );
+    registertweakable( "game", "allowkillcam", @"scr_game_allowkillcam", 1 );
+    registertweakable( "game", "spectatetype", @"scr_game_spectatetype", 1 );
+    registertweakable( "game", "allow3rdspectate", @"scr_game_allow3rdspectate", 0 );
     registertweakable( "game", "deathpointloss", @"hash_cd8fc3bf8aba4931", 0 );
     registertweakable( "game", "suicidepointloss", @"hash_1ef34a7cbafda853", 0 );
     registertweakable( "team", "teamkillpointloss", @"hash_e8121d056bde22a3", 0 );
@@ -428,15 +428,15 @@ function init()
     registertweakable( "game", "lowgravitystrength", @"hash_2f4cf62df1af9a6", 125 );
     registertweakable( "game", "minfalldamageheight", @"bg_falldamageminheight", 225 );
     registertweakable( "game", "herodrop", @"hash_f1b2bd0a1fa58a73", 0 );
-    registertweakable( "game", "perkpackage", @"hash_b01050da9b96d273", 1 );
+    registertweakable( "game", "perkpackage", @"perk_package_enabled", 1 );
     registertweakable( "game", "showperksonspawn", @"scr_showperksonspawn", 1 );
     registertweakable( "game", "loadoutperksoff", @"hash_8463bc866e14f4c7", 0 );
     registertweakable( "game", "one_tap_headshot", @"hash_c0f3f80ec94308d1", 0 );
-    registertweakable( "team", "fftype", @"hash_e5a33d679c26221f", 0 );
+    registertweakable( "team", "fftype", @"scr_team_fftype", 0 );
     registertweakable( "team", "teamkillspawndelay", @"hash_15ee15c57c8bc94c", 0 );
-    registertweakable( "player", "maxhealth", @"hash_b1d561f9a9241e09", 150 );
-    registertweakable( "player", "laststand", @"hash_e723cc761de7b161", 0 );
-    registertweakable( "player", "healthregentime", @"hash_2922210021914dd7", 6 );
+    registertweakable( "player", "maxhealth", @"scr_player_maxhealth", 150 );
+    registertweakable( "player", "laststand", @"scr_player_laststand", 0 );
+    registertweakable( "player", "healthregentime", @"scr_player_healthregentime", 6 );
     registertweakable( "player", "forcerespawn", @"hash_5d64cd3b24cf883a", 1 );
     registertweakable( "player", "streamingwaittime", @"hash_2ec2ff107406b60d", 5 );
     registertweakable( "weapon", "allowfrag", @"scr_weapon_allowfrags", 1 );

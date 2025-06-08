@@ -17,7 +17,7 @@
 #namespace spawnscoring;
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c6
 // Size: 0x27
 function checkdynamicspawns( spawnpoints )
@@ -31,7 +31,7 @@ function checkdynamicspawns( spawnpoints )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f6
 // Size: 0x21
 function selectbestspawnpoint( highestscoringspawn, spawnpoints )
@@ -41,7 +41,7 @@ function selectbestspawnpoint( highestscoringspawn, spawnpoints )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x420
 // Size: 0x297
 function findbuddyspawn()
@@ -128,7 +128,7 @@ function findbuddyspawn()
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c0
 // Size: 0x326
 function findteammatebuddyspawn( teammate )
@@ -198,7 +198,7 @@ function findteammatebuddyspawn( teammate )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9ef
 // Size: 0x45a
 function capsulepass( spawninfo, teammate )
@@ -321,7 +321,7 @@ function capsulepass( spawninfo, teammate )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe52
 // Size: 0x2f
 function scorebuddyspawn( spawnpoint )
@@ -331,7 +331,7 @@ function scorebuddyspawn( spawnpoint )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe89
 // Size: 0x31
 function getbuddyspawnangles( buddy, spawnlocation )
@@ -341,7 +341,7 @@ function getbuddyspawnangles( buddy, spawnlocation )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec3
 // Size: 0xfb
 function getteammatesoutofcombat( team )
@@ -393,7 +393,7 @@ function getteammatesoutofcombat( team )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfc7
 // Size: 0x113, Type: bool
 function canplayerbebuddyspawnedon( player )
@@ -460,7 +460,7 @@ function canplayerbebuddyspawnedon( player )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e3
 // Size: 0x49
 function findspawnlocationnearplayer( player )
@@ -477,7 +477,7 @@ function findspawnlocationnearplayer( player )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1135
 // Size: 0x172
 function findbuddypathnode( buddy, playerheight, cosangle )
@@ -526,7 +526,7 @@ function findbuddypathnode( buddy, playerheight, cosangle )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12b0
 // Size: 0x14b
 function initscoredata( spawnpoint )
@@ -554,7 +554,7 @@ function initscoredata( spawnpoint )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1403
 // Size: 0xcd
 function updatespawnpoints( spawnpoints, skipfrontline )
@@ -588,7 +588,7 @@ function updatespawnpoints( spawnpoints, skipfrontline )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14d8
 // Size: 0x33
 function criticalfactors_callback( spawnpoint )
@@ -603,7 +603,7 @@ function criticalfactors_callback( spawnpoint )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1514
 // Size: 0x1d1
 function function_3bf7bd55a835ee3a( spawnpoint )
@@ -679,7 +679,7 @@ function function_3bf7bd55a835ee3a( spawnpoint )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16ee
 // Size: 0x104, Type: bool
 function testbuddyspawncriticalfactors( spawnpoint )
@@ -755,7 +755,7 @@ function testbuddyspawncriticalfactors( spawnpoint )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17fb
 // Size: 0x172
 function getstartspawnpoint_freeforall( spawnpoints )
@@ -809,7 +809,7 @@ function getstartspawnpoint_freeforall( spawnpoints )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1976
 // Size: 0x84
 function logbadspawn( typestring, spawningentity )
@@ -837,7 +837,7 @@ function logbadspawn( typestring, spawningentity )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1a02
 // Size: 0x2be
 function getspawnpoint_legacy( spawnpoints, fallbackspawnpoints, factorparams, var_fcb3e7fed624752a, nobuddyspawns )
@@ -971,7 +971,7 @@ function getspawnpoint_legacy( spawnpoints, fallbackspawnpoints, factorparams, v
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cc9
 // Size: 0x1fb
 function function_fd731d7880fa8ed6( spawnpoints, var_29b92441af87f23f )
@@ -1037,7 +1037,7 @@ function function_fd731d7880fa8ed6( spawnpoints, var_29b92441af87f23f )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ecd
 // Size: 0x31
 function resetperupdatespawnglobals()
@@ -1048,7 +1048,7 @@ function resetperupdatespawnglobals()
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f06
 // Size: 0x1b5
 function function_14ba921001eb3164()
@@ -1098,7 +1098,7 @@ function function_14ba921001eb3164()
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20c3
 // Size: 0x8c
 function gethighestscoringspawn( spawnpoints )
@@ -1120,7 +1120,7 @@ function gethighestscoringspawn( spawnpoints )
 }
 
 // Namespace spawnscoring / scripts\mp\spawnscoring
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2158
 // Size: 0xf3
 function squadspawndebug()

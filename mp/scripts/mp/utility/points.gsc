@@ -30,7 +30,7 @@
 #namespace points;
 
 // Namespace points / scripts\mp\utility\points
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c1
 // Size: 0x10
 function initpoints()
@@ -39,7 +39,7 @@ function initpoints()
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4d9
 // Size: 0x81
 function givestreakpointswithtext( event, objweapon, pointsoverride )
@@ -65,7 +65,7 @@ function givestreakpointswithtext( event, objweapon, pointsoverride )
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x562
 // Size: 0x81
 function givexpwithtext( event, pointsoverride )
@@ -93,7 +93,7 @@ function givexpwithtext( event, pointsoverride )
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x5eb
 // Size: 0x27d
 function doscoreevent( event, objweapon, pointsoverride, xpoverride, victim, var_51bdae03b05bc75e, dontwait, cankillchain, streakinfo, var_827c276da1cdcf23, eventinfo, var_339e50a026e4674f )
@@ -184,7 +184,7 @@ function doscoreevent( event, objweapon, pointsoverride, xpoverride, victim, var
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x870
 // Size: 0x66
 function function_e3e3e81453fd788b( event, objweapon, victim )
@@ -199,7 +199,7 @@ function function_e3e3e81453fd788b( event, objweapon, victim )
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x8de
 // Size: 0x556
 function giveunifiedpoints( event, objweapon, pointsoverride, xpoverride, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, eventinfo, var_339e50a026e4674f )
@@ -429,7 +429,7 @@ function giveunifiedpoints( event, objweapon, pointsoverride, xpoverride, victim
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe3c
 // Size: 0x41f
 function sharekillxp( inxp )
@@ -638,7 +638,7 @@ function private modifyunifiedpoints( event, points, objweapon )
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14e6
 // Size: 0x11a
 function displayscoreeventpoints( points, event )
@@ -685,7 +685,7 @@ function displayscoreeventpoints( points, event )
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1608
 // Size: 0x1a, Type: bool
 function function_caddf81c02734fa0( objweapon )
@@ -699,7 +699,7 @@ function function_caddf81c02734fa0( objweapon )
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x162b
 // Size: 0x6a, Type: bool
 function isforcekillstreakprogressweapon( objweapon )
@@ -727,7 +727,7 @@ function isforcekillstreakprogressweapon( objweapon )
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x169e
 // Size: 0x3, Type: bool
 function function_423a6ac43d977bb6()
@@ -736,7 +736,7 @@ function function_423a6ac43d977bb6()
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16aa
 // Size: 0x31
 function function_fa5f24df7c838fe0( multiplier )
@@ -750,7 +750,7 @@ function function_fa5f24df7c838fe0( multiplier )
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16e4
 // Size: 0x3a
 function function_9c1e3c18b99409e9( cash )
@@ -768,7 +768,7 @@ function function_9c1e3c18b99409e9( cash )
 }
 
 // Namespace points / scripts\mp\utility\points
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1726
 // Size: 0x76
 function function_2a66e9acc30896c( team, event )

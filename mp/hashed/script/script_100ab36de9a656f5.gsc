@@ -8,7 +8,7 @@
 #namespace civilian_mp_dmz_base;
 
 // Namespace civilian_mp_dmz_base / namespace_fe1b774f444697f1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x173
 // Size: 0x120
 function main()
@@ -36,7 +36,7 @@ function main()
 }
 
 // Namespace civilian_mp_dmz_base / namespace_fe1b774f444697f1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29b
 // Size: 0x57
 function setup_model()
@@ -53,7 +53,7 @@ function setup_model()
 }
 
 // Namespace civilian_mp_dmz_base / namespace_fe1b774f444697f1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fa
 // Size: 0x1a
 function function_9ac26a51c94ccf52()
@@ -62,7 +62,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace civilian_mp_dmz_base / namespace_fe1b774f444697f1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31c
 // Size: 0xa0
 function precache()

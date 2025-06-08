@@ -5,7 +5,7 @@
 #namespace geiger_counter;
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ad
 // Size: 0x93
 function function_58bf160252f94e21()
@@ -23,7 +23,7 @@ function function_58bf160252f94e21()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x348
 // Size: 0x8e
 function function_60cba38635fd35cb( equipmentref, equipmentslot, variantid )
@@ -43,7 +43,7 @@ function function_60cba38635fd35cb( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3de
 // Size: 0x4e
 function function_bdd02627bcafe359( equipmentref, equipmentslot )
@@ -59,7 +59,7 @@ function function_bdd02627bcafe359( equipmentref, equipmentslot )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x434
 // Size: 0x27
 function function_3d5c1674387c936e( grenade )
@@ -76,7 +76,7 @@ function function_3d5c1674387c936e( grenade )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x463
 // Size: 0x168
 function geigercounter_watchfordevicepullout()
@@ -144,7 +144,7 @@ function geigercounter_watchfordevicepullout()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d3
 // Size: 0x91, Type: bool
 function function_f6ae22a0ef39407b()
@@ -167,7 +167,7 @@ function function_f6ae22a0ef39407b()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66d
 // Size: 0x249
 function function_bcbff1c1b64843b6( dist )
@@ -215,7 +215,7 @@ function function_bcbff1c1b64843b6( dist )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8be
 // Size: 0x1a, Type: bool
 function function_a9d03825299dd6bf()
@@ -229,7 +229,7 @@ function function_a9d03825299dd6bf()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e1
 // Size: 0x30
 function function_9b3c029182bf2647( raceresult )
@@ -241,7 +241,7 @@ function function_9b3c029182bf2647( raceresult )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x919
 // Size: 0x30
 function function_f668eed31b686b60( raceresult )
@@ -253,7 +253,7 @@ function function_f668eed31b686b60( raceresult )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x951
 // Size: 0x5b
 function function_841d127cb52727a9( raceresult )
@@ -274,7 +274,7 @@ function function_841d127cb52727a9( raceresult )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9b4
 // Size: 0x47
 function function_b33a67426542b0c5( raceresult )
@@ -294,7 +294,7 @@ function function_b33a67426542b0c5( raceresult )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa03
 // Size: 0x42
 function function_ce0fef2f2c7f1717()
@@ -311,7 +311,7 @@ function function_ce0fef2f2c7f1717()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa4d
 // Size: 0x24, Type: bool
 function function_27b913c5a2199f7f()
@@ -320,7 +320,7 @@ function function_27b913c5a2199f7f()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7a
 // Size: 0xf
 function function_c5211deb59bc819a()
@@ -329,7 +329,7 @@ function function_c5211deb59bc819a()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa91
 // Size: 0x18
 function function_7842c49c4d21bd5b( data )
@@ -338,7 +338,7 @@ function function_7842c49c4d21bd5b( data )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab1
 // Size: 0x3b
 function function_18ad59d3abd30f4()
@@ -355,7 +355,7 @@ function function_18ad59d3abd30f4()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf4
 // Size: 0x3b
 function function_5600972de1b79706()
@@ -372,7 +372,7 @@ function function_5600972de1b79706()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb37
 // Size: 0x35
 function function_c8b79f6694c62ee8( overridevalue )
@@ -387,7 +387,7 @@ function function_c8b79f6694c62ee8( overridevalue )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb74
 // Size: 0x26
 function function_f0d61e14dfde9ccd( object )
@@ -396,7 +396,7 @@ function function_f0d61e14dfde9ccd( object )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba2
 // Size: 0x26
 function function_a67007b5af86ff0b( object )
@@ -405,7 +405,7 @@ function function_a67007b5af86ff0b( object )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbd0
 // Size: 0x7f, Type: bool
 function function_38c53210a5291d71( object )
@@ -420,7 +420,7 @@ function function_38c53210a5291d71( object )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc58
 // Size: 0x71
 function function_eff6d6db587f143d()
@@ -442,7 +442,7 @@ function function_eff6d6db587f143d()
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd2
 // Size: 0x3c
 function function_296cad0fb60ab083( var_476ba0cad41d3b92 )
@@ -453,7 +453,7 @@ function function_296cad0fb60ab083( var_476ba0cad41d3b92 )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd17
 // Size: 0x3c, Type: bool
 function function_4385c3a2905eef3b( player, var_1e331291fa3bd60 )
@@ -462,7 +462,7 @@ function function_4385c3a2905eef3b( player, var_1e331291fa3bd60 )
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd5c
 // Size: 0x2d2
 function _geigercounter_calculategeigercounterpulserate( var_1e331291fa3bd60, object )
@@ -525,7 +525,7 @@ function _geigercounter_calculategeigercounterpulserate( var_1e331291fa3bd60, ob
 }
 
 // Namespace geiger_counter / scripts\cp_mp\equipment\geiger_counter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1037
 // Size: 0x3a
 function function_a8a342d8f1a62582()

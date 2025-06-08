@@ -138,7 +138,7 @@ function private function_5fe394c76f3bb67e( prompttype )
 }
 
 // Namespace quickprompt / scripts\cp_mp\quickprompt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x339
 // Size: 0x13, Type: bool
 function function_7ba31cb6b21c346f()
@@ -147,7 +147,7 @@ function function_7ba31cb6b21c346f()
 }
 
 // Namespace quickprompt / scripts\cp_mp\quickprompt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x355
 // Size: 0x21, Type: bool
 function function_9e4834f9ae737884()
@@ -157,7 +157,7 @@ function function_9e4834f9ae737884()
 }
 
 // Namespace quickprompt / scripts\cp_mp\quickprompt
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37f
 // Size: 0x44, Type: bool
 function function_74c8eb2aaf9f5d14( prompttype )
@@ -173,7 +173,7 @@ function function_74c8eb2aaf9f5d14( prompttype )
 }
 
 // Namespace quickprompt / scripts\cp_mp\quickprompt
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3cc
 // Size: 0x20c
 function function_36edf91561322753( prompttype, timeout, callback )
@@ -229,7 +229,7 @@ function function_36edf91561322753( prompttype, timeout, callback )
 }
 
 // Namespace quickprompt / scripts\cp_mp\quickprompt
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e0
 // Size: 0x63
 function function_24a08f8a03be8244( var_8f23c9dc9608a79f )

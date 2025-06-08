@@ -18,7 +18,7 @@
 #namespace namespace_a53e1309bce2ad2c;
 
 // Namespace namespace_a53e1309bce2ad2c / namespace_29f407445e2b0d95
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x379
 // Size: 0x13
 function main()

@@ -24,7 +24,7 @@
 #namespace arcade;
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7aa
 // Size: 0x2a2
 function main()
@@ -67,8 +67,8 @@ function main()
     level.denyclasschoice = 1;
     level.bypassclasschoicefunc = &scripts\mp\class::alwaysgamemodeclass;
     function_e88d9ec1d5270bad();
-    setdvar( @"hash_3c4d1d9e67d42b87", 0 );
-    setdvar( @"hash_365d77262b3a350e", 0 );
+    setdvar( @"r_identifyoldmaterial", 0 );
+    setdvar( @"scr_starsystem", 0 );
     scripts\mp\ai_mp_controller::init();
     level.supportsai = 1;
     
@@ -81,7 +81,7 @@ function main()
     game[ "dialog" ][ "boost" ] = "iw9_mtdm_mode_uktl_bost";
     game[ "dialog" ][ "offense_obj" ] = "iw9_mtdm_mode_uktl_bost";
     game[ "dialog" ][ "defense_obj" ] = "iw9_mtdm_mode_uktl_bost";
-    level.testtdmanywhere = getdvarint( @"hash_157f06aff3c1f357", 0 );
+    level.testtdmanywhere = getdvarint( @"scr_tdmanywhere", 0 );
     level.tdmanywhere_dropheight = getdvarfloat( @"hash_c692d2a11dd6615", 1000 );
     level.tdmanywhere_perpenoffset = getdvarfloat( @"hash_631c58033f43c2dc", 2048 );
     level.tdmanywhere_distoffset = getdvarfloat( @"hash_f314048c87ae28aa", 4092 );
@@ -138,7 +138,7 @@ function private function_e88d9ec1d5270bad()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca2
 // Size: 0x10a
 function function_2a1ce8d7b1f21db9( player )
@@ -182,7 +182,7 @@ function function_2a1ce8d7b1f21db9( player )
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdb4
 // Size: 0xe3
 function find_player()
@@ -212,7 +212,7 @@ function find_player()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe9f
 // Size: 0x77
 function function_ca817bf862167332()
@@ -225,7 +225,7 @@ function function_ca817bf862167332()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf1f
 // Size: 0x37
 function initializematchrules()
@@ -237,7 +237,7 @@ function initializematchrules()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf5e
 // Size: 0x14a
 function onstartgametype()
@@ -300,7 +300,7 @@ function onstartgametype()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10b0
 // Size: 0x9
 function updategametypedvars()
@@ -309,7 +309,7 @@ function updategametypedvars()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10c1
 // Size: 0x286
 function initspawns()
@@ -373,7 +373,7 @@ function initspawns()
 /#
 
     // Namespace arcade / scripts\mp\gametypes\arcade
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x134f
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -389,7 +389,7 @@ function initspawns()
 #/
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13ba
 // Size: 0x1be
 function getspawnpoint()
@@ -444,7 +444,7 @@ function getspawnpoint()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1581
 // Size: 0x75
 function onspawnplayer( revivespawn )
@@ -463,7 +463,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15fe
 // Size: 0x9c
 function function_c97e11b8cda0d02a()
@@ -481,7 +481,7 @@ function function_c97e11b8cda0d02a()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16a2
 // Size: 0x103
 function run_barrels()
@@ -501,7 +501,8 @@ function run_barrels()
     ent thread alwaysrotate();
     ent thread followplayer( self );
     
-    for (i = 0; i < num; i++) {
+    for ( i = 0; i < num ; i++ )
+    {
         angle = i * baseangle;
         offsetx = dist * cos( angle );
         offsety = dist * sin( angle );
@@ -512,7 +513,7 @@ function run_barrels()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17ad
 // Size: 0x40
 function alwaysrotate()
@@ -527,7 +528,7 @@ function alwaysrotate()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17f5
 // Size: 0x66
 function dropgrenade()
@@ -538,7 +539,7 @@ function dropgrenade()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1863
 // Size: 0x28
 function followplayer( player )
@@ -553,7 +554,7 @@ function followplayer( player )
 /#
 
     // Namespace arcade / scripts\mp\gametypes\arcade
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1893
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -592,7 +593,7 @@ function followplayer( player )
 #/
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1a15
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -601,7 +602,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a5d
 // Size: 0x53
 function ontimelimit()
@@ -623,7 +624,7 @@ function ontimelimit()
 /#
 
     // Namespace arcade / scripts\mp\gametypes\arcade
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1ab8
     // Size: 0xe8, Type: dev
     function function_8469a5927d069db7()
@@ -638,7 +639,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x12f>", points, 0 );
@@ -650,7 +651,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x139>", points, 0 );
@@ -666,7 +667,7 @@ function ontimelimit()
     }
 
     // Namespace arcade / scripts\mp\gametypes\arcade
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1ba8
     // Size: 0x1ee, Type: dev
     function function_bf2918399f1800b1()
@@ -704,7 +705,7 @@ function ontimelimit()
 #/
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d9e
 // Size: 0x19a
 function tdmanywhere_debugshowlocs()
@@ -727,7 +728,7 @@ function tdmanywhere_debugshowlocs()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f40
 // Size: 0x40f
 function monitorhotfoot()
@@ -842,7 +843,7 @@ function monitorhotfoot()
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x2357
 // Size: 0xc0
 function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -862,7 +863,7 @@ function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, ob
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x241f
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()

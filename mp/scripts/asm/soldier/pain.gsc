@@ -13,7 +13,7 @@
 #namespace pain;
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6d2
 // Size: 0x46
 function isdamagelocation_rarm( asmname, statename, tostatename, params )
@@ -27,7 +27,7 @@ function isdamagelocation_rarm( asmname, statename, tostatename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x721
 // Size: 0x46
 function isdamagelocation_rleg( asmname, statename, tostatename, params )
@@ -41,7 +41,7 @@ function isdamagelocation_rleg( asmname, statename, tostatename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x770
 // Size: 0x46
 function isdamagelocation_lleg( asmname, statename, tostatename, params )
@@ -55,7 +55,7 @@ function isdamagelocation_lleg( asmname, statename, tostatename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7bf
 // Size: 0x46
 function isdamagelocation_larm( asmname, statename, tostatename, params )
@@ -69,7 +69,7 @@ function isdamagelocation_larm( asmname, statename, tostatename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x80e
 // Size: 0x41
 function isdamagelocation_torso( asmname, statename, tostatename, params )
@@ -83,7 +83,7 @@ function isdamagelocation_torso( asmname, statename, tostatename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x858
 // Size: 0x46
 function isdamagelocation_head( asmname, statename, tostatename, params )
@@ -97,7 +97,7 @@ function isdamagelocation_head( asmname, statename, tostatename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8a7
 // Size: 0x4c
 function isdamagelocation_larmcrouch( asmname, statename, tostatename, params )
@@ -106,7 +106,7 @@ function isdamagelocation_larmcrouch( asmname, statename, tostatename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8fc
 // Size: 0x67, Type: bool
 function isdamagelocation_back( asmname, statename, tostatename, params )
@@ -123,7 +123,7 @@ function isdamagelocation_back( asmname, statename, tostatename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x96c
 // Size: 0x65
 function isdamagelocation_torsocovercrouch( asmname, statename, tostatename, params )
@@ -132,7 +132,7 @@ function isdamagelocation_torsocovercrouch( asmname, statename, tostatename, par
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9da
 // Size: 0x31
 function choosepainanimshock( asmname, statename, params )
@@ -141,7 +141,7 @@ function choosepainanimshock( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa14
 // Size: 0x5e
 function playsonicshockfx()
@@ -154,7 +154,7 @@ function playsonicshockfx()
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa7a
 // Size: 0x111
 function playshockpainloop( asmname, statename, params )
@@ -185,7 +185,7 @@ function playshockpainloop( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb93
 // Size: 0x22
 function shockpainloop_c6_cleanup( asmname, statename, params )
@@ -194,7 +194,7 @@ function shockpainloop_c6_cleanup( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xbbd
 // Size: 0xf0
 function shockpainloop_internal( asmname, statename, playbackrate, ismovestate, allowrandom )
@@ -231,7 +231,7 @@ function shockpainloop_internal( asmname, statename, playbackrate, ismovestate, 
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcb5
 // Size: 0x31
 function chooseshockpainrecovery( asmname, statename, params )
@@ -240,7 +240,7 @@ function chooseshockpainrecovery( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcef
 // Size: 0x26
 function playpainanim( asmname, statename, params )
@@ -249,7 +249,7 @@ function playpainanim( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd1d
 // Size: 0x27
 function playpainanimwithadditives( asmname, statename, params )
@@ -258,7 +258,7 @@ function playpainanimwithadditives( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd4c
 // Size: 0x3c
 function playpainanimlmg( asmname, statename, params )
@@ -268,7 +268,7 @@ function playpainanimlmg( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd90
 // Size: 0x20
 function pain_can_use_handler( note, params )
@@ -280,7 +280,7 @@ function pain_can_use_handler( note, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdb8
 // Size: 0x13a
 function getpainweaponsize()
@@ -325,7 +325,7 @@ function getpainweaponsize()
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xefb
 // Size: 0xc0
 function getpaindirectiontoactor()
@@ -353,7 +353,7 @@ function getpaindirectiontoactor()
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfc3
 // Size: 0x4d
 function choosedirectionalpainanim_transition( asmname, statename, params )
@@ -368,7 +368,7 @@ function choosedirectionalpainanim_transition( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x1019
 // Size: 0x273
 function playpainaniminternal( asmname, statename, params, var_837bcc3e005feb5d, var_96d69c0cc6fb90c1, statenameoverride, var_b6a66cc6c81067a0, var_94987ccb5819c6e9 )
@@ -462,7 +462,7 @@ function playpainaniminternal( asmname, statename, params, var_837bcc3e005feb5d,
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1294
 // Size: 0x2b
 function paincanend( statename, notename )
@@ -475,7 +475,7 @@ function paincanend( statename, notename )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12c7
 // Size: 0x57
 function coverexppainselectreturna( asmname, statename, params )
@@ -489,7 +489,7 @@ function coverexppainselectreturna( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1326
 // Size: 0x6c
 function finishpain( asmname, statename, params )
@@ -519,7 +519,7 @@ function finishpain( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x139a
 // Size: 0x32
 function playcoverpainanimwithadditives( asmname, statename, params )
@@ -529,7 +529,7 @@ function playcoverpainanimwithadditives( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13d4
 // Size: 0x30
 function playcoverpainanim( asmname, statename, params )
@@ -539,7 +539,7 @@ function playcoverpainanim( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x140c
 // Size: 0x97
 function choosepainanim_standtorsotoexposed( asmname, statename, params )
@@ -564,7 +564,7 @@ function choosepainanim_standtorsotoexposed( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14ac
 // Size: 0x8e
 function choosepainanim_standtorso( asmname, statename, params )
@@ -586,7 +586,7 @@ function choosepainanim_standtorso( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1542
 // Size: 0x17f
 function choosepainanim_stand( asmname, statename, params )
@@ -637,7 +637,7 @@ function choosepainanim_stand( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x16ca
 // Size: 0x59
 function choosepainanim_damageshield( asmname, statename, params )
@@ -654,7 +654,7 @@ function choosepainanim_damageshield( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x172c
 // Size: 0x51
 function choosedynamicpainanim_expcrouchlegs( asmname, statename, params )
@@ -666,7 +666,7 @@ function choosedynamicpainanim_expcrouchlegs( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1786
 // Size: 0xa3
 function choosepainanim_crouch( asmname, statename, params )
@@ -689,7 +689,7 @@ function choosepainanim_crouch( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1832
 // Size: 0x18d
 function choosepainanim_pistol( asmname, statename, params )
@@ -743,7 +743,7 @@ function choosepainanim_pistol( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x19c8
 // Size: 0x6c
 function choosepainanim_covercorner_helper( asmname, statename, params, angles )
@@ -762,7 +762,7 @@ function choosepainanim_covercorner_helper( asmname, statename, params, angles )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a3c
 // Size: 0x25
 function choosepainanim_covercorner( asmname, statename, params )
@@ -771,7 +771,7 @@ function choosepainanim_covercorner( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a6a
 // Size: 0x34
 function choosedynamicpainanim_back( asmname, statename, params )
@@ -781,7 +781,7 @@ function choosedynamicpainanim_back( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1aa7
 // Size: 0xa9
 function choosedynamicpainanim_covercrouch( asmname, statename, params )
@@ -807,7 +807,7 @@ function choosedynamicpainanim_covercrouch( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b59
 // Size: 0x16c
 function choosedynamicpainanim_coverstand( asmname, statename, params )
@@ -853,7 +853,7 @@ function choosedynamicpainanim_coverstand( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cce
 // Size: 0x3a
 function function_9a4a7270010ada09( asmname, statename, params )
@@ -863,7 +863,7 @@ function function_9a4a7270010ada09( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d10
 // Size: 0x175
 function cleanuppainanim( asmname, statename, params )
@@ -913,7 +913,7 @@ function cleanuppainanim( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1e8d
 // Size: 0x60, Type: bool
 function transition_flashfinished( asmname, fromstate, tostate, params )
@@ -932,7 +932,7 @@ function transition_flashfinished( asmname, fromstate, tostate, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ef6
 // Size: 0x5c
 function function_f0cf338a66c2a842( asmname, statename, params )
@@ -948,7 +948,7 @@ function function_f0cf338a66c2a842( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f5a
 // Size: 0x42
 function function_5f1b71fde3cd5900( asmname, statename, params )
@@ -959,7 +959,7 @@ function function_5f1b71fde3cd5900( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fa4
 // Size: 0x32, Type: bool
 function function_e00aa948164f088c( asmname, statename, params )
@@ -974,7 +974,7 @@ function function_e00aa948164f088c( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fdf
 // Size: 0x40
 function playanim_flashed( asmname, statename, params )
@@ -986,7 +986,7 @@ function playanim_flashed( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2027
 // Size: 0xd1
 function playanim_flashed_internal( asmname, statename )
@@ -1014,7 +1014,7 @@ function playanim_flashed_internal( asmname, statename )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2100
 // Size: 0x64
 function playanim_monitorflashrestart( asmname, statename )
@@ -1035,7 +1035,7 @@ function playanim_monitorflashrestart( asmname, statename )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x216c
 // Size: 0x2c
 function cleanupflashanim( asmname, statename, params )
@@ -1045,7 +1045,7 @@ function cleanupflashanim( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21a0
 // Size: 0xae
 function playanim_burning( asmname, statename, params )
@@ -1066,7 +1066,7 @@ function playanim_burning( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2256
 // Size: 0xf4
 function burn_notetrack_handler( note )
@@ -1097,7 +1097,7 @@ function burn_notetrack_handler( note )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2352
 // Size: 0x21a
 function painanimfaceenemy( asmname, statename, animid, xanim )
@@ -1159,7 +1159,7 @@ function painanimfaceenemy( asmname, statename, animid, xanim )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2574
 // Size: 0x7f
 function playpainanim_faceplayer( asmname, statename, params )
@@ -1176,7 +1176,7 @@ function playpainanim_faceplayer( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25fb
 // Size: 0x7e
 function playpainanim_exposedstand( asmname, statename, params )
@@ -1193,7 +1193,7 @@ function playpainanim_exposedstand( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2681
 // Size: 0x43
 function playpainanim_exposedcrouch( asmname, statename, params )
@@ -1204,7 +1204,7 @@ function playpainanim_exposedcrouch( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26cc
 // Size: 0xb6
 function playpainanim_exposedcrouchtransition( asmname, statename, params )
@@ -1224,7 +1224,7 @@ function playpainanim_exposedcrouchtransition( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x278a
 // Size: 0x44
 function clearpainturnrate( asmname, statename, params )
@@ -1237,7 +1237,7 @@ function clearpainturnrate( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x27d6
 // Size: 0xc7
 function function_111158d9cee51970( asmname, statename, params )
@@ -1273,7 +1273,7 @@ function function_111158d9cee51970( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x28a5
 // Size: 0xb1
 function function_56a47f26f49fc5eb( asmname, statename, blendtime, params )
@@ -1294,7 +1294,7 @@ function function_56a47f26f49fc5eb( asmname, statename, blendtime, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x295e
 // Size: 0x3b
 function function_6d4426b00706324e()
@@ -1310,7 +1310,7 @@ function function_6d4426b00706324e()
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29a1
 // Size: 0x3b
 function function_b3b20911062201ad()
@@ -1326,7 +1326,7 @@ function function_b3b20911062201ad()
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x29e4
 // Size: 0x2d, Type: bool
 function function_e585c560d79f00f8( asmname, statename, tostatename, params )
@@ -1335,7 +1335,7 @@ function function_e585c560d79f00f8( asmname, statename, tostatename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a1a
 // Size: 0x46
 function function_5e9e03bdd9237c0f( asmname, statename, params )
@@ -1346,7 +1346,7 @@ function function_5e9e03bdd9237c0f( asmname, statename, params )
 }
 
 // Namespace pain / scripts\asm\soldier\pain
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a69
 // Size: 0x46
 function function_a131b253107d514b( asmname, statename, params )

@@ -33,7 +33,7 @@ function autoexec auto_init()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47e
 // Size: 0x150
 function function_18646af290fbfbb2()
@@ -65,7 +65,7 @@ function function_18646af290fbfbb2()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d6
 // Size: 0x44
 function function_5ce1095d3ebdaa68( shitloc, partname )
@@ -84,7 +84,7 @@ function function_5ce1095d3ebdaa68( shitloc, partname )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x623
 // Size: 0xec
 function modifyhelmetdamage( attacker, victim, idamage, var_c619bd3ead94932e, objweapon, shitloc, partname, smeansofdeath )
@@ -120,7 +120,7 @@ function modifyhelmetdamage( attacker, victim, idamage, var_c619bd3ead94932e, ob
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x718
 // Size: 0xeb
 function init( var_5698e367753e03ba, var_113085cb6cb9173c, var_c36a76d3071e80ae )
@@ -142,7 +142,7 @@ function init( var_5698e367753e03ba, var_113085cb6cb9173c, var_c36a76d3071e80ae 
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x80b
 // Size: 0x15, Type: bool
 function function_820310353aa408e()
@@ -151,7 +151,7 @@ function function_820310353aa408e()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x829
 // Size: 0x69
 function getscriptablename( var_b14a276853a7becd )
@@ -175,7 +175,7 @@ function getscriptablename( var_b14a276853a7becd )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x89b
 // Size: 0xf8
 function modifydamage( damage, attacker, objweapon, smeansofdeath )
@@ -211,7 +211,7 @@ function modifydamage( damage, attacker, objweapon, smeansofdeath )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x99c
 // Size: 0x35, Type: bool
 function function_91b88df2883c5dd( objweapon )
@@ -225,7 +225,7 @@ function function_91b88df2883c5dd( objweapon )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9da
 // Size: 0x2b, Type: bool
 function function_d9824ece84e7fe6( smeansofdeath )
@@ -239,7 +239,7 @@ function function_d9824ece84e7fe6( smeansofdeath )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa0e
 // Size: 0x50
 function setbrokenoverlaymaterial( material )
@@ -257,7 +257,7 @@ function setbrokenoverlaymaterial( material )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa66
 // Size: 0x17, Type: bool
 function hashelmet( player )
@@ -266,7 +266,7 @@ function hashelmet( player )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa86
 // Size: 0x17, Type: bool
 function function_a1207d6155a4cb21( player )
@@ -275,7 +275,7 @@ function function_a1207d6155a4cb21( player )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaa6
 // Size: 0x9
 function function_99410e7ff54d683c()
@@ -284,7 +284,7 @@ function function_99410e7ff54d683c()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab7
 // Size: 0x4e
 function function_e0e91b770d992a81()
@@ -300,7 +300,7 @@ function function_e0e91b770d992a81()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb0e
 // Size: 0x4e, Type: bool
 function function_d9d43450e3d74d25()
@@ -316,7 +316,7 @@ function function_d9d43450e3d74d25()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb65
 // Size: 0xf
 function function_da78138ef883afb9()
@@ -325,7 +325,7 @@ function function_da78138ef883afb9()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb7c
 // Size: 0x72
 function function_d01dc4dc9edc024()
@@ -346,7 +346,7 @@ function function_d01dc4dc9edc024()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbf6
 // Size: 0xf
 function function_2a823033fec9c3a3()
@@ -355,7 +355,7 @@ function function_2a823033fec9c3a3()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc0d
 // Size: 0x25
 function function_47f53709b7a29a77()
@@ -367,7 +367,7 @@ function function_47f53709b7a29a77()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc3a
 // Size: 0x78
 function breakhelmet( attacker )
@@ -392,7 +392,7 @@ function breakhelmet( attacker )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcba
 // Size: 0x5b
 function function_52dad6cd70b673b2()
@@ -408,7 +408,7 @@ function function_52dad6cd70b673b2()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd1d
 // Size: 0x41
 function function_9ad6194c61c4bd34()
@@ -429,7 +429,7 @@ function function_9ad6194c61c4bd34()
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd66
 // Size: 0x4a, Type: bool
 function function_d036366985435d3( player, pickupent )
@@ -443,7 +443,7 @@ function function_d036366985435d3( player, pickupent )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdb9
 // Size: 0x22
 function function_a3a56edac9b26e89( player )
@@ -457,7 +457,7 @@ function function_a3a56edac9b26e89( player )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde4
 // Size: 0x28, Type: bool
 function function_4aef917a60fe6683( player )
@@ -466,7 +466,7 @@ function function_4aef917a60fe6683( player )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe15
 // Size: 0x22
 function function_914175cb65959c24( player )
@@ -480,7 +480,7 @@ function function_914175cb65959c24( player )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe40
 // Size: 0x2c, Type: bool
 function helmet_wasbroke( attacker )
@@ -489,7 +489,7 @@ function helmet_wasbroke( attacker )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe75
 // Size: 0x1c
 function helmet_setbroke( attacker )
@@ -498,7 +498,7 @@ function helmet_setbroke( attacker )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe99
 // Size: 0x16
 function helmet_clearbroke( attacker )
@@ -507,7 +507,7 @@ function helmet_clearbroke( attacker )
 }
 
 // Namespace helmet / scripts\mp\helmet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeb7
 // Size: 0x75
 function function_299cd501b61c0d3c( player )

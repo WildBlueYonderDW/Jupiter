@@ -16,7 +16,7 @@
 #namespace namespace_495d1b5a786a2174;
 
 // Namespace namespace_495d1b5a786a2174 / namespace_65ad5249b19d5d41
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f6
 // Size: 0x13
 function main()

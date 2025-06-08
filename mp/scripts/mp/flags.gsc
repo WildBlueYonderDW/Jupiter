@@ -1,7 +1,7 @@
 #namespace flags;
 
 // Namespace flags / scripts\mp\flags
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x90
 // Size: 0x16
 function initgameflags()
@@ -13,7 +13,7 @@ function initgameflags()
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xae
 // Size: 0x2f
 function gameflaginit( flagname, isenabled )
@@ -23,7 +23,7 @@ function gameflaginit( flagname, isenabled )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe5
 // Size: 0x21, Type: bool
 function gameflagexists( flagname )
@@ -32,7 +32,7 @@ function gameflagexists( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f
 // Size: 0x34
 function gameflag( flagname )
@@ -42,7 +42,7 @@ function gameflag( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14c
 // Size: 0x3b
 function gameflagset( flagname )
@@ -53,7 +53,7 @@ function gameflagset( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18f
 // Size: 0x36
 function gameflagclear( flagname )
@@ -63,7 +63,7 @@ function gameflagclear( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cd
 // Size: 0x3c
 function gameflagwait( flagname )
@@ -77,7 +77,7 @@ function gameflagwait( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x211
 // Size: 0x21
 function function_1240434f4201ac9d( flagname )
@@ -91,7 +91,7 @@ function function_1240434f4201ac9d( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23a
 // Size: 0x19
 function initlevelflags()
@@ -103,7 +103,7 @@ function initlevelflags()
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25b
 // Size: 0x33
 function levelflaginit( flagname, isenabled )
@@ -113,7 +113,7 @@ function levelflaginit( flagname, isenabled )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x296
 // Size: 0x38
 function levelflag( flagname )
@@ -123,7 +123,7 @@ function levelflag( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d7
 // Size: 0x3f
 function levelflagset( flagname )
@@ -134,7 +134,7 @@ function levelflagset( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31e
 // Size: 0x3e
 function levelflagclear( flagname )
@@ -145,7 +145,7 @@ function levelflagclear( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x364
 // Size: 0x3e
 function levelflagwait( flagname )
@@ -159,7 +159,7 @@ function levelflagwait( flagname )
 }
 
 // Namespace flags / scripts\mp\flags
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3aa
 // Size: 0x3e
 function levelflagwaitopen( flagname )

@@ -4,7 +4,7 @@
 #namespace sentientpoolmanager;
 
 // Namespace sentientpoolmanager / scripts\mp\sentientpoolmanager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a
 // Size: 0x1f4
 function init()
@@ -35,7 +35,8 @@ function init()
     level.sentientpools[ level.sentientpools.size ] = "Drone";
     level.activesentients = [];
     
-    for (i = 0; i < level.sentientpools.size; i++) {
+    for ( i = 0; i < level.sentientpools.size ; i++ )
+    {
         level.activesentients[ level.sentientpools[ i ] ] = [];
     }
     
@@ -43,14 +44,15 @@ function init()
 }
 
 // Namespace sentientpoolmanager / scripts\mp\sentientpoolmanager
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x396
 // Size: 0x1b2
 function registersentient( threatbiasgroup, var_5c00772332ce642c, islethal, var_5f6534ad3a0a1fa2, var_719c179eabb70b31, var_8928fdf873929e88 )
 {
     var_ee6f4af9861df2ab = -1;
     
-    for (i = 0; i < level.sentientpools.size; i++) {
+    for ( i = 0; i < level.sentientpools.size ; i++ )
+    {
         if ( level.sentientpools[ i ] == threatbiasgroup )
         {
             var_ee6f4af9861df2ab = i;
@@ -118,7 +120,7 @@ function registersentient( threatbiasgroup, var_5c00772332ce642c, islethal, var_
 }
 
 // Namespace sentientpoolmanager / scripts\mp\sentientpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x550
 // Size: 0x6e
 function monitorsentient( var_5f6534ad3a0a1fa2 )
@@ -140,7 +142,7 @@ function monitorsentient( var_5f6534ad3a0a1fa2 )
 }
 
 // Namespace sentientpoolmanager / scripts\mp\sentientpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c6
 // Size: 0xa2, Type: bool
 function removebestsentient( var_6f03d6ebff31de00 )
@@ -148,7 +150,8 @@ function removebestsentient( var_6f03d6ebff31de00 )
     assert( var_6f03d6ebff31de00 >= 0 && var_6f03d6ebff31de00 < level.sentientpools.size );
     bestsentient = undefined;
     
-    for (i = 0; i <= var_6f03d6ebff31de00; i++) {
+    for ( i = 0; i <= var_6f03d6ebff31de00 ; i++ )
+    {
         assert( isdefined( level.sentientpools[ i ] ) );
         bestsentient = getbestsentientfrompool( level.sentientpools[ i ] );
         
@@ -168,7 +171,7 @@ function removebestsentient( var_6f03d6ebff31de00 )
 }
 
 // Namespace sentientpoolmanager / scripts\mp\sentientpoolmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x671
 // Size: 0x97
 function getbestsentientfrompool( pooltype )
@@ -189,7 +192,7 @@ function getbestsentientfrompool( pooltype )
 }
 
 // Namespace sentientpoolmanager / scripts\mp\sentientpoolmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x711
 // Size: 0x56
 function unregistersentient( poolid, keyid )

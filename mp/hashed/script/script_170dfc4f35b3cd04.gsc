@@ -21,7 +21,7 @@ function autoexec init()
 }
 
 // Namespace namespace_bca03e8d41cf9507 / namespace_84badf469645cefc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x277
 // Size: 0xa7
 function main( params )
@@ -95,7 +95,7 @@ function private function_866ec2626b84937a( mapname )
 }
 
 // Namespace namespace_bca03e8d41cf9507 / namespace_84badf469645cefc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x513
 // Size: 0xed
 function function_7eb73407060d7cb6( state )

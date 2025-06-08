@@ -1,7 +1,7 @@
 #namespace br_keypad_util;
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc
 // Size: 0x10
 function getkeypadstatefromomnvar()
@@ -10,7 +10,7 @@ function getkeypadstatefromomnvar()
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd5
 // Size: 0x11
 function getkeypadcodelengthfromomnvar()
@@ -19,7 +19,7 @@ function getkeypadcodelengthfromomnvar()
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xef
 // Size: 0x14
 function playersetkeypadstateindex( stateindex )
@@ -28,7 +28,7 @@ function playersetkeypadstateindex( stateindex )
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10b
 // Size: 0x15
 function playersetkeypadcodelengthindex( codelengthindex )
@@ -37,7 +37,7 @@ function playersetkeypadcodelengthindex( codelengthindex )
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x128
 // Size: 0x15
 function function_b899a0471538d3d4( var_62a655cbda625e8d )
@@ -46,7 +46,7 @@ function function_b899a0471538d3d4( var_62a655cbda625e8d )
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x145
 // Size: 0x3f
 function function_da718c8ec624b4da( objid )
@@ -65,7 +65,7 @@ function function_da718c8ec624b4da( objid )
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18c
 // Size: 0x3f
 function function_5392765d56bf59ea( attemptsremaining )
@@ -84,7 +84,7 @@ function function_5392765d56bf59ea( attemptsremaining )
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d3
 // Size: 0x114
 function function_b751dd55c6c31d6d( var_6f6d810585c7349b, var_fa0f2d5aeb7a3af9, objid )
@@ -132,7 +132,7 @@ function function_b751dd55c6c31d6d( var_6f6d810585c7349b, var_fa0f2d5aeb7a3af9, 
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ef
 // Size: 0x7c
 function playersetomnvarkeypad( dataref, value )
@@ -149,7 +149,7 @@ function playersetomnvarkeypad( dataref, value )
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x373
 // Size: 0x19e
 function getkeypadomnvarbitpackinginfo( dataref, value )
@@ -189,7 +189,7 @@ function getkeypadomnvarbitpackinginfo( dataref, value )
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x51a
 // Size: 0x9c
 function playerpackdataintoomnvar( var_8e90fa6d5789ad63, value, bitoffset, bitwidth )
@@ -208,7 +208,7 @@ function playerpackdataintoomnvar( var_8e90fa6d5789ad63, value, bitoffset, bitwi
 }
 
 // Namespace br_keypad_util / scripts\mp\gametypes\br_keypad_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5be
 // Size: 0x5b
 function playerunpackdatafromomnvar( var_8e90fa6d5789ad63, var_c20319aa0598dc14, var_7214adeafee0fc1b )

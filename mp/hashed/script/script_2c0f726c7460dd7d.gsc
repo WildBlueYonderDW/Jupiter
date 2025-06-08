@@ -6,7 +6,7 @@
 #namespace namespace_a461e274605f517e;
 
 // Namespace namespace_a461e274605f517e / namespace_ae612cf681deb69f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x148
 // Size: 0xda
 function init( var_5179c48492d1d2c2 )

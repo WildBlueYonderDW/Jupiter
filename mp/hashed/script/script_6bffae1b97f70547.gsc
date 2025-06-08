@@ -8,7 +8,7 @@
 #namespace ammo_mod;
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27f
 // Size: 0x135
 function function_9623157b28098d1()
@@ -40,7 +40,7 @@ function function_9623157b28098d1()
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0x3bc
 // Size: 0x446
 function function_7f759db5de1b44b0( ammomodname, var_49acfea1433dc914, percentage, special_percentage, cooldown_time_entity, cooldown_time_attacker, cooldown_time_global, occurs_on_death, result_func, damage_feedback_icon, damage_feedback_sound, validation_func, element, var_ba6c8434012a2654, var_f253123a174ef757 )
@@ -116,7 +116,7 @@ function private function_eba55122e11c8f35( weapon )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d6
 // Size: 0x16e
 function function_352659ff5187d66d( damagestruct )
@@ -145,7 +145,7 @@ function function_352659ff5187d66d( damagestruct )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0xa4c
 // Size: 0x53d, Type: bool
 function function_5a96f5a116c2b46e( death, einflictor, eattacker, idamage, idflags, mod, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -324,7 +324,7 @@ function function_5a96f5a116c2b46e( death, einflictor, eattacker, idamage, idfla
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf92
 // Size: 0x18b
 function function_6c40f58b29a952a9( weapon, ammo_mod_name, var_3d61bd5c1fd55131 )
@@ -385,7 +385,7 @@ function function_6c40f58b29a952a9( weapon, ammo_mod_name, var_3d61bd5c1fd55131 
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1125
 // Size: 0xe8
 function function_b4da81e43557ada1( weapon, var_3d61bd5c1fd55131 )
@@ -451,7 +451,7 @@ function private function_f645fcd5bf711882( weapon )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12ae
 // Size: 0x78
 function function_66f877e287154069( params )
@@ -466,7 +466,7 @@ function function_66f877e287154069( params )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x132e
 // Size: 0x2e, Type: bool
 function function_efdce4b346c97324( entity )
@@ -480,7 +480,7 @@ function function_efdce4b346c97324( entity )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1365
 // Size: 0x3d, Type: bool
 function is_exempt_weapon( weapon )
@@ -496,7 +496,7 @@ function is_exempt_weapon( weapon )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13ab
 // Size: 0x5c
 function function_6a22621172a35366( weapon )
@@ -525,7 +525,7 @@ function function_6a22621172a35366( weapon )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1410
 // Size: 0x73
 function ammo_mod_cooldown_init()
@@ -544,7 +544,7 @@ function ammo_mod_cooldown_init()
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x148b
 // Size: 0x164
 function register_immunity( ammo_mod_name, archetype, immune_trigger, immune_result_direct, immune_result_indirect )
@@ -581,7 +581,7 @@ function register_immunity( ammo_mod_name, archetype, immune_trigger, immune_res
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15f7
 // Size: 0x27
 function register_aat_exemption( var_88260bb1ed608124 )
@@ -595,7 +595,7 @@ function register_aat_exemption( var_88260bb1ed608124 )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1626
 // Size: 0xda, Type: bool
 function has_ammo_mod( w_current )
@@ -627,7 +627,7 @@ function has_ammo_mod( w_current )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1709
 // Size: 0xd6, Type: bool
 function function_60ade27585bef67( w_current, ammo_mod_name )
@@ -656,7 +656,7 @@ function function_60ade27585bef67( w_current, ammo_mod_name )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17e8
 // Size: 0xef
 function function_10839073a33f4feb( w_current )
@@ -686,7 +686,7 @@ function function_10839073a33f4feb( w_current )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18e0
 // Size: 0xce
 function get_ammo_mod_name( w_current )
@@ -715,7 +715,7 @@ function get_ammo_mod_name( w_current )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19b7
 // Size: 0xa4
 function function_bd988da177969d52( id )
@@ -742,7 +742,7 @@ function function_bd988da177969d52( id )
 }
 
 // Namespace ammo_mod / namespace_dc2e59577d3a271f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a64
 // Size: 0x8c
 function function_2373b67af9c1cfc0( name )
@@ -771,7 +771,7 @@ function function_2373b67af9c1cfc0( name )
 /#
 
     // Namespace ammo_mod / namespace_dc2e59577d3a271f
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1af9
     // Size: 0x6b, Type: dev
     function function_3275fc3cab7a7a32()
@@ -789,7 +789,7 @@ function function_2373b67af9c1cfc0( name )
     }
 
     // Namespace ammo_mod / namespace_dc2e59577d3a271f
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1b6c
     // Size: 0x56, Type: dev
     function function_b9f455f8500b002e()
@@ -807,7 +807,7 @@ function function_2373b67af9c1cfc0( name )
     }
 
     // Namespace ammo_mod / namespace_dc2e59577d3a271f
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1bca
     // Size: 0x46, Type: dev
     function function_6f55a7e8fe9f4746()

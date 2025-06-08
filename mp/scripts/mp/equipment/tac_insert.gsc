@@ -44,7 +44,7 @@
 #namespace tac_insert;
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x835
 // Size: 0x2a
 function tacinsert_init()
@@ -59,7 +59,7 @@ function tacinsert_init()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x867
 // Size: 0x69
 function tacinsert_onjoinedteam( player )
@@ -72,7 +72,7 @@ function tacinsert_onjoinedteam( player )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d8
 // Size: 0x13b
 function tacinsert_deleteontoofar()
@@ -125,7 +125,7 @@ function tacinsert_deleteontoofar()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa1b
 // Size: 0x23
 function tacinsert_set( equipmentref, slot, variantid )
@@ -134,7 +134,7 @@ function tacinsert_set( equipmentref, slot, variantid )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa46
 // Size: 0x1b
 function tacinsert_unset( equipmentref, slot )
@@ -143,7 +143,7 @@ function tacinsert_unset( equipmentref, slot )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa69
 // Size: 0x85
 function tacinsert_monitorupdatespawnposition()
@@ -164,7 +164,7 @@ function tacinsert_monitorupdatespawnposition()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf6
 // Size: 0x40
 function function_48444bc9e4a578ff( player )
@@ -182,7 +182,7 @@ function function_48444bc9e4a578ff( player )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb3e
 // Size: 0x35
 function tacinsert_updatespawnposition()
@@ -197,7 +197,7 @@ function tacinsert_updatespawnposition()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb7b
 // Size: 0x33, Type: bool
 function function_801a0264d93b7be6( spawnpos )
@@ -213,7 +213,7 @@ function function_801a0264d93b7be6( spawnpos )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbb7
 // Size: 0x6a, Type: bool
 function tacinsert_isvalidspawnposition( spawnpos, isonspawn )
@@ -252,7 +252,7 @@ function tacinsert_isvalidspawnposition( spawnpos, isonspawn )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc2a
 // Size: 0x51
 function tacinsert_cachespawnposition( newposition )
@@ -267,7 +267,7 @@ function tacinsert_cachespawnposition( newposition )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc83
 // Size: 0x4b
 function tacinsert_getspawnposition()
@@ -288,7 +288,7 @@ function tacinsert_getspawnposition()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd7
 // Size: 0x9
 function deletetacinsert()
@@ -297,7 +297,7 @@ function deletetacinsert()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce8
 // Size: 0x2a
 function tacinsert_used( grenade )
@@ -311,7 +311,7 @@ function tacinsert_used( grenade )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd1a
 // Size: 0x3b7, Type: bool
 function tacinsert_deploy( grenade )
@@ -438,7 +438,7 @@ function tacinsert_deploy( grenade )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10da
 // Size: 0x35
 function function_176bfee86c8e71cc( tacinsert )
@@ -449,7 +449,7 @@ function function_176bfee86c8e71cc( tacinsert )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1117
 // Size: 0x1c4
 function function_f480e30874e3b591( grenade, startpos, endpos )
@@ -487,7 +487,7 @@ function function_f480e30874e3b591( grenade, startpos, endpos )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12e4
 // Size: 0xd5
 function function_69248052b7181e1a( tacinsert )
@@ -504,7 +504,7 @@ function function_69248052b7181e1a( tacinsert )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x13c1
 // Size: 0x1ca
 function function_1f15609989e6bf6f( grenade, startpos, endpos, var_5a413baccf7593f7 )
@@ -561,7 +561,7 @@ function function_1f15609989e6bf6f( grenade, startpos, endpos, var_5a413baccf759
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1594
 // Size: 0x127
 function function_b2e205b73c40f44f( tacinsertent )
@@ -619,7 +619,7 @@ function function_b2e205b73c40f44f( tacinsertent )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c3
 // Size: 0x3a
 function function_c21a6baeeb5139be( grenade )
@@ -632,7 +632,7 @@ function function_c21a6baeeb5139be( grenade )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1705
 // Size: 0x32
 function tacinsert_setupandwaitfordeath( owner )
@@ -647,7 +647,7 @@ function tacinsert_setupandwaitfordeath( owner )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x173f
 // Size: 0x45
 function tacinsert_damagelistener( owner )
@@ -657,7 +657,7 @@ function tacinsert_damagelistener( owner )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x178c
 // Size: 0x4a
 function tacinsert_modifydamage( data )
@@ -668,7 +668,7 @@ function tacinsert_modifydamage( data )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17df
 // Size: 0x9d
 function tacinsert_handledeathdamage( data )
@@ -687,7 +687,7 @@ function tacinsert_handledeathdamage( data )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1884
 // Size: 0x116
 function tacinsert_pickuplistener( owner )
@@ -716,7 +716,7 @@ function tacinsert_pickuplistener( owner )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19a2
 // Size: 0x80
 function tacinsert_updatepickupusability( player )
@@ -748,7 +748,7 @@ function tacinsert_updatepickupusability( player )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a2a
 // Size: 0x1ea
 function tacinsert_destroy( wasdestroyed, var_809a2ecf919c757a, hidefeedback )
@@ -814,7 +814,7 @@ function tacinsert_destroy( wasdestroyed, var_809a2ecf919c757a, hidefeedback )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c1c
 // Size: 0x50
 function tacinsert_tacinsertdestroyedfeedback()
@@ -838,7 +838,7 @@ function tacinsert_tacinsertdestroyedfeedback()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c74
 // Size: 0x43
 function tacinsert_brrespawnsplash()
@@ -856,7 +856,7 @@ function tacinsert_brrespawnsplash()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cbf
 // Size: 0x1d
 function tacinsert_destroyongameended()
@@ -867,7 +867,7 @@ function tacinsert_destroyongameended()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ce4
 // Size: 0x13
 function tacinsert_delayeddelete()
@@ -878,7 +878,7 @@ function tacinsert_delayeddelete()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cff
 // Size: 0xcc
 function tacinsert_destroyuselistener( owner )
@@ -907,7 +907,7 @@ function tacinsert_destroyuselistener( owner )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dd3
 // Size: 0x1a6
 function tacinsert_respawn( var_fef2728753dd969c )
@@ -972,7 +972,7 @@ function tacinsert_respawn( var_fef2728753dd969c )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f81
 // Size: 0x62
 function function_67567cb3076fb060( timeout )
@@ -991,7 +991,7 @@ function function_67567cb3076fb060( timeout )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1feb
 // Size: 0x14d
 function function_afe3d129af2c2ada( cameraent )
@@ -1058,7 +1058,7 @@ function function_afe3d129af2c2ada( cameraent )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2140
 // Size: 0x207
 function function_167f151646e822dc( cameraent )
@@ -1109,7 +1109,7 @@ function function_167f151646e822dc( cameraent )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x234f
 // Size: 0x5c
 function function_3807e5acb77b5011( revivespawn )
@@ -1128,7 +1128,7 @@ function function_3807e5acb77b5011( revivespawn )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23b3
 // Size: 0x2e
 function function_2fdad346acd5e7d5( cameraent )
@@ -1140,7 +1140,7 @@ function function_2fdad346acd5e7d5( cameraent )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x23e9
 // Size: 0xdb
 function function_eeeb466cb2ddd1c4( cameraent, targetpos, targetangles, var_a54a664cef414612 )
@@ -1158,7 +1158,7 @@ function function_eeeb466cb2ddd1c4( cameraent, targetpos, targetangles, var_a54a
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x24cc
 // Size: 0x12f
 function function_6a6876b45711760f( cameraent, targetpos, targetangles, var_a54a664cef414612 )
@@ -1184,7 +1184,7 @@ function function_6a6876b45711760f( cameraent, targetpos, targetangles, var_a54a
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2603
 // Size: 0x12a
 function function_ca63411e99d83e54( cameraent )
@@ -1235,7 +1235,7 @@ function function_ca63411e99d83e54( cameraent )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2735
 // Size: 0x105
 function function_41fd0549b6e60a03( var_f503170ef47452e7, holdtime, var_1bb7594c18d17443 )
@@ -1296,7 +1296,7 @@ function function_41fd0549b6e60a03( var_f503170ef47452e7, holdtime, var_1bb7594c
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2842
 // Size: 0xdf
 function function_eeb16781ffde3d11()
@@ -1313,7 +1313,7 @@ function function_eeb16781ffde3d11()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x292a
 // Size: 0x34
 function function_c273570f23917192( timeout )
@@ -1327,7 +1327,7 @@ function function_c273570f23917192( timeout )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2966
 // Size: 0xca
 function function_e1a9e6a0debbc17f()
@@ -1375,7 +1375,7 @@ function function_e1a9e6a0debbc17f()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a38
 // Size: 0x1ff
 function function_b90a2bd2987f0bac( origin, angles )
@@ -1433,7 +1433,7 @@ function function_b90a2bd2987f0bac( origin, angles )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c40
 // Size: 0x58
 function tacinsert_updatedestroyusability( player )
@@ -1465,7 +1465,7 @@ function tacinsert_updatedestroyusability( player )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ca0
 // Size: 0x86
 function tacinsert_empapplied( data )
@@ -1483,7 +1483,7 @@ function tacinsert_empapplied( data )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d2e
 // Size: 0x5a
 function tacinsert_givepointsfordeath( attacker, fromemp )
@@ -1497,7 +1497,7 @@ function tacinsert_givepointsfordeath( attacker, fromemp )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d90
 // Size: 0x1d0, Type: bool
 function function_6aa9474826722600( grenade, starttracepos, endtracepos )
@@ -1576,7 +1576,7 @@ function function_6aa9474826722600( grenade, starttracepos, endtracepos )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f69
 // Size: 0x7c
 function function_3fd179c2e0859395()
@@ -1604,7 +1604,7 @@ function function_3fd179c2e0859395()
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fed
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
@@ -1613,7 +1613,7 @@ function function_49197cd063a740ea( callbackfunction )
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x300a
 // Size: 0xf5
 function spawnpoint_setspawnpoint( pos, angles, overrideent, isti, var_97f4d755d6790643 )
@@ -1646,7 +1646,7 @@ function spawnpoint_setspawnpoint( pos, angles, overrideent, isti, var_97f4d755d
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3107
 // Size: 0x64
 function spawnpoint_clearspawnpoint( wasdestroyed, var_809a2ecf919c757a, hidefeedback )
@@ -1664,7 +1664,7 @@ function spawnpoint_clearspawnpoint( wasdestroyed, var_809a2ecf919c757a, hidefee
 }
 
 // Namespace tac_insert / scripts\mp\equipment\tac_insert
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3173
 // Size: 0x93
 function function_3ad5d3768653f711( ent, isti )

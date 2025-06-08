@@ -23,8 +23,8 @@
 #namespace gunship;
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e5a
+// Params 0
+// Checksum 0x0, Offset: 0x1e59
 // Size: 0x142
 function init()
 {
@@ -64,8 +64,8 @@ function init()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fa4
+// Params 1
+// Checksum 0x0, Offset: 0x1fa3
 // Size: 0xd, Type: bool
 function weapongivengunship( streakinfo )
 {
@@ -73,8 +73,8 @@ function weapongivengunship( streakinfo )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fba
+// Params 0
+// Checksum 0x0, Offset: 0x1fb9
 // Size: 0x4d
 function function_7ab42d42f465952f()
 {
@@ -91,8 +91,8 @@ function function_7ab42d42f465952f()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x200f
+// Params 0
+// Checksum 0x0, Offset: 0x200e
 // Size: 0x194
 function function_8e8513a8b071336c()
 {
@@ -115,8 +115,8 @@ function function_8e8513a8b071336c()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21ab
+// Params 0
+// Checksum 0x0, Offset: 0x21aa
 // Size: 0xb5
 function function_77e6149ef483d24a()
 {
@@ -125,8 +125,8 @@ function function_77e6149ef483d24a()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2268
+// Params 0
+// Checksum 0x0, Offset: 0x2267
 // Size: 0x576
 function function_b0280ee1765554d1()
 {
@@ -210,8 +210,8 @@ function function_b0280ee1765554d1()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27e6
+// Params 0
+// Checksum 0x0, Offset: 0x27e5
 // Size: 0x211
 function init_gunship_vo()
 {
@@ -235,8 +235,8 @@ function init_gunship_vo()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29ff
+// Params 0
+// Checksum 0x0, Offset: 0x29fe
 // Size: 0x50
 function function_6fcb27d917ef709b()
 {
@@ -246,8 +246,8 @@ function function_6fcb27d917ef709b()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a57
+// Params 0
+// Checksum 0x0, Offset: 0x2a56
 // Size: 0xcb
 function function_ea9e0f077f0d655c()
 {
@@ -265,8 +265,8 @@ function function_ea9e0f077f0d655c()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b2a
+// Params 0
+// Checksum 0x0, Offset: 0x2b29
 // Size: 0x21
 function tryusegunship()
 {
@@ -275,8 +275,8 @@ function tryusegunship()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b54
+// Params 1
+// Checksum 0x0, Offset: 0x2b53
 // Size: 0xea
 function tryusegunshipfromstruct( streakinfo )
 {
@@ -331,8 +331,8 @@ function tryusegunshipfromstruct( streakinfo )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c47
+// Params 1
+// Checksum 0x0, Offset: 0x2c46
 // Size: 0x67
 function gunship_monitormanualplayerexit( owner )
 {
@@ -352,8 +352,8 @@ function gunship_monitormanualplayerexit( owner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cb6
+// Params 2
+// Checksum 0x0, Offset: 0x2cb5
 // Size: 0x628, Type: bool
 function gunship_startuse( player, streakinfo )
 {
@@ -526,7 +526,7 @@ function gunship_startuse( player, streakinfo )
         if ( thirdpersoncam )
         {
             gunship thread function_45ad456c933cbb32();
-            gunship thread function_ae468fe5beababc0( var_2136b63785ee0579 );
+            gunship thread gunship_watchplanedistance( var_2136b63785ee0579 );
         }
     #/
     
@@ -546,8 +546,8 @@ function gunship_startuse( player, streakinfo )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x32e7
+// Params 2
+// Checksum 0x0, Offset: 0x32e6
 // Size: 0xd8
 function function_25233a050a5e41f0( owner, launchorigin )
 {
@@ -584,8 +584,8 @@ function function_25233a050a5e41f0( owner, launchorigin )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33c8
+// Params 0
+// Checksum 0x0, Offset: 0x33c7
 // Size: 0x3b
 function gunship_lockedoncallback()
 {
@@ -594,8 +594,8 @@ function gunship_lockedoncallback()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x340b
+// Params 0
+// Checksum 0x0, Offset: 0x340a
 // Size: 0x1c
 function gunship_lockedonremovedcallback()
 {
@@ -603,8 +603,8 @@ function gunship_lockedonremovedcallback()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x342f
+// Params 5
+// Checksum 0x0, Offset: 0x342e
 // Size: 0x8fb
 function gunship_playintro( player, streakinfo, angle, anglevector, var_2136b63785ee0579 )
 {
@@ -824,8 +824,8 @@ function gunship_playintro( player, streakinfo, angle, anglevector, var_2136b637
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d33
+// Params 2
+// Checksum 0x0, Offset: 0x3d32
 // Size: 0x5e
 function gunship_watchintrodisown( action, streakinfo )
 {
@@ -844,8 +844,8 @@ function gunship_watchintrodisown( action, streakinfo )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d99
+// Params 2
+// Checksum 0x0, Offset: 0x3d98
 // Size: 0xcd
 function gunship_detachplayerfromintro( gunshipowner, streakinfo )
 {
@@ -876,8 +876,8 @@ function gunship_detachplayerfromintro( gunshipowner, streakinfo )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e6e
+// Params 1
+// Checksum 0x0, Offset: 0x3e6d
 // Size: 0x3d
 function gunship_hideintromodelonplayerconnect( owner )
 {
@@ -892,8 +892,8 @@ function gunship_hideintromodelonplayerconnect( owner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3eb3
+// Params 3
+// Checksum 0x0, Offset: 0x3eb2
 // Size: 0x139
 function function_c285675bee6618a3( animlength, owner, introsequence )
 {
@@ -931,8 +931,8 @@ function function_c285675bee6618a3( animlength, owner, introsequence )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ff4
+// Params 6
+// Checksum 0x0, Offset: 0x3ff3
 // Size: 0x55
 function function_37b61f53bc7c8643( owner, delaytime, fstop, focusdistance, focusspeed, var_5587778bb9d6e798 )
 {
@@ -944,8 +944,8 @@ function function_37b61f53bc7c8643( owner, delaytime, fstop, focusdistance, focu
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4051
+// Params 3
+// Checksum 0x0, Offset: 0x4050
 // Size: 0xe3
 function gunship_startintroshake( animlength, owner, introsequence )
 {
@@ -997,8 +997,8 @@ function gunship_startintroshake( animlength, owner, introsequence )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x413c
+// Params 2
+// Checksum 0x0, Offset: 0x413b
 // Size: 0x60
 function gunship_queuecamerazoom( animlength, owner )
 {
@@ -1012,8 +1012,8 @@ function gunship_queuecamerazoom( animlength, owner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x41a4
+// Params 2
+// Checksum 0x0, Offset: 0x41a3
 // Size: 0x57
 function function_2be9ae7928984f8( animlength, owner )
 {
@@ -1027,8 +1027,8 @@ function function_2be9ae7928984f8( animlength, owner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4203
+// Params 2
+// Checksum 0x0, Offset: 0x4202
 // Size: 0x2d4
 function gunship_returnplayer( player, crashing )
 {
@@ -1136,8 +1136,8 @@ function gunship_returnplayer( player, crashing )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44df
+// Params 1
+// Checksum 0x0, Offset: 0x44de
 // Size: 0x124
 function gunship_restoreplayerweapon( streakinfo )
 {
@@ -1165,8 +1165,8 @@ function gunship_restoreplayerweapon( streakinfo )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x460b
+// Params 1
+// Checksum 0x0, Offset: 0x460a
 // Size: 0x4ca
 function gunship_watchdamage( gunner )
 {
@@ -1285,8 +1285,8 @@ function gunship_watchdamage( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4add
+// Params 0
+// Checksum 0x0, Offset: 0x4adc
 // Size: 0x71
 function function_fd00f7fcdbcd8972()
 {
@@ -1301,8 +1301,8 @@ function function_fd00f7fcdbcd8972()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b56
+// Params 0
+// Checksum 0x0, Offset: 0x4b55
 // Size: 0x9c
 function function_ab0ec37ba0afd257()
 {
@@ -1320,8 +1320,8 @@ function function_ab0ec37ba0afd257()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bfa
+// Params 0
+// Checksum 0x0, Offset: 0x4bf9
 // Size: 0x8a
 function function_cf130118900c4c47()
 {
@@ -1338,8 +1338,8 @@ function function_cf130118900c4c47()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c8c
+// Params 0
+// Checksum 0x0, Offset: 0x4c8b
 // Size: 0x8d
 function gunship_startengineblowoutfx()
 {
@@ -1353,8 +1353,8 @@ function gunship_startengineblowoutfx()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d21
+// Params 1
+// Checksum 0x0, Offset: 0x4d20
 // Size: 0x40
 function gunship_watchtimeout( gunner )
 {
@@ -1367,8 +1367,8 @@ function gunship_watchtimeout( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d69
+// Params 1
+// Checksum 0x0, Offset: 0x4d68
 // Size: 0x3b
 function gunship_watchgameend( gunner )
 {
@@ -1380,8 +1380,8 @@ function gunship_watchgameend( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4dac
+// Params 1
+// Checksum 0x0, Offset: 0x4dab
 // Size: 0xd5
 function gunship_leave( gunner )
 {
@@ -1406,8 +1406,8 @@ function gunship_leave( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e89
+// Params 1
+// Checksum 0x0, Offset: 0x4e88
 // Size: 0x23
 function gunship_waittilldestination( destination )
 {
@@ -1418,8 +1418,8 @@ function gunship_waittilldestination( destination )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb4
+// Params 2
+// Checksum 0x0, Offset: 0x4eb3
 // Size: 0x52
 function gunship_watchownerexitaction( gunner, exitaction )
 {
@@ -1439,8 +1439,8 @@ function gunship_watchownerexitaction( gunner, exitaction )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f0e
+// Params 1
+// Checksum 0x0, Offset: 0x4f0d
 // Size: 0x5c
 function gunship_watchendgame( gunner )
 {
@@ -1454,8 +1454,8 @@ function gunship_watchendgame( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f72
+// Params 1
+// Checksum 0x0, Offset: 0x4f71
 // Size: 0x87
 function gunship_trackvelocity( gunner )
 {
@@ -1474,8 +1474,8 @@ function gunship_trackvelocity( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x5001
+// Params 6
+// Checksum 0x0, Offset: 0x5000
 // Size: 0x346
 function gunship_spawn( owner, streakinfo, angle, anglevector, gunshipintro, var_2136b63785ee0579 )
 {
@@ -1549,8 +1549,8 @@ function gunship_spawn( owner, streakinfo, angle, anglevector, gunshipintro, var
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5350
+// Params 1
+// Checksum 0x0, Offset: 0x534f
 // Size: 0x4f
 function gunship_updateoverlaycoords( plane )
 {
@@ -1566,8 +1566,8 @@ function gunship_updateoverlaycoords( plane )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x53a7
+// Params 1
+// Checksum 0x0, Offset: 0x53a6
 // Size: 0x98
 function gunship_updateplanemodelcoords( plane )
 {
@@ -1587,8 +1587,8 @@ function gunship_updateplanemodelcoords( plane )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5447
+// Params 1
+// Checksum 0x0, Offset: 0x5446
 // Size: 0x85
 function gunship_updateplayerpositioncoords( plane )
 {
@@ -1604,8 +1604,8 @@ function gunship_updateplayerpositioncoords( plane )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54d4
+// Params 1
+// Checksum 0x0, Offset: 0x54d3
 // Size: 0xb8
 function gunship_updateaimingcoords( plane )
 {
@@ -1628,8 +1628,8 @@ function gunship_updateaimingcoords( plane )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5594
+// Params 0
+// Checksum 0x0, Offset: 0x5593
 // Size: 0xbb
 function gunship_rotaterig()
 {
@@ -1649,8 +1649,8 @@ function gunship_rotaterig()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5657
+// Params 1
+// Checksum 0x0, Offset: 0x5656
 // Size: 0x4c8
 function gunship_attachgunner( gunner )
 {
@@ -1757,8 +1757,8 @@ function gunship_attachgunner( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b27
+// Params 1
+// Checksum 0x0, Offset: 0x5b26
 // Size: 0x1cd
 function function_58415bfdad59562c( bundle )
 {
@@ -1821,8 +1821,8 @@ function function_58415bfdad59562c( bundle )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cfd
+// Params 1
+// Checksum 0x0, Offset: 0x5cfc
 // Size: 0xc2
 function function_623a9b1b10d1db2e( gunner )
 {
@@ -1863,8 +1863,8 @@ function function_623a9b1b10d1db2e( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dc7
+// Params 1
+// Checksum 0x0, Offset: 0x5dc6
 // Size: 0x93
 function function_7f87e01d436c03cc( gunner )
 {
@@ -1891,8 +1891,8 @@ function function_7f87e01d436c03cc( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e62
+// Params 2
+// Checksum 0x0, Offset: 0x5e61
 // Size: 0x2e3
 function function_dceaa78f8d315302( gunner, var_cc706c96147ed540 )
 {
@@ -2021,8 +2021,8 @@ function function_dceaa78f8d315302( gunner, var_cc706c96147ed540 )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x614d
+// Params 1
+// Checksum 0x0, Offset: 0x614c
 // Size: 0x93
 function function_2b613e06060d8b55( gunner )
 {
@@ -2044,8 +2044,8 @@ function function_2b613e06060d8b55( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61e8
+// Params 1
+// Checksum 0x0, Offset: 0x61e7
 // Size: 0x8c
 function function_75eee29aa3795a05( gunner )
 {
@@ -2066,8 +2066,8 @@ function function_75eee29aa3795a05( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x627c
+// Params 2
+// Checksum 0x0, Offset: 0x627b
 // Size: 0x1ba
 function function_a3ec651ef5989fb9( gunner, targetoverride )
 {
@@ -2150,8 +2150,8 @@ function function_a3ec651ef5989fb9( gunner, targetoverride )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x643f
+// Params 1
+// Checksum 0x0, Offset: 0x643e
 // Size: 0x2f6
 function gunship_watchchangeweapons( gunner )
 {
@@ -2270,8 +2270,8 @@ function gunship_watchchangeweapons( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x673d
+// Params 1
+// Checksum 0x0, Offset: 0x673c
 // Size: 0x1bf
 function gunship_watchweaponfired( gunner )
 {
@@ -2326,8 +2326,8 @@ function gunship_watchweaponfired( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6904
+// Params 1
+// Checksum 0x0, Offset: 0x6903
 // Size: 0x71
 function getmissileexplscale( weaponname )
 {
@@ -2347,8 +2347,8 @@ function getmissileexplscale( weaponname )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x697e
+// Params 1
+// Checksum 0x0, Offset: 0x697d
 // Size: 0x85
 function getmissileexplradius( weaponname )
 {
@@ -2372,8 +2372,8 @@ function getmissileexplradius( weaponname )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a0c
+// Params 2
+// Checksum 0x0, Offset: 0x6a0b
 // Size: 0xaa
 function function_3f087cf63f4156fa( gunship, gunner )
 {
@@ -2396,8 +2396,8 @@ function function_3f087cf63f4156fa( gunship, gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6abe
+// Params 1
+// Checksum 0x0, Offset: 0x6abd
 // Size: 0x3c
 function gunship_watchthermaltoggle( gunner )
 {
@@ -2415,8 +2415,8 @@ function gunship_watchthermaltoggle( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b02
+// Params 1
+// Checksum 0x0, Offset: 0x6b01
 // Size: 0x363
 function gunship_watchthermaltoggleinternal( gunner )
 {
@@ -2512,8 +2512,8 @@ function gunship_watchthermaltoggleinternal( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e6d
+// Params 1
+// Checksum 0x0, Offset: 0x6e6c
 // Size: 0xcd
 function gunship_getdofinfobyweapon( weaponbasename )
 {
@@ -2540,8 +2540,8 @@ function gunship_getdofinfobyweapon( weaponbasename )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f43
+// Params 2
+// Checksum 0x0, Offset: 0x6f42
 // Size: 0x9a
 function gunship_watchthermalflashlightpos( gunship, gunner )
 {
@@ -2577,8 +2577,8 @@ function gunship_watchthermalflashlightpos( gunship, gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fe5
+// Params 0
+// Checksum 0x0, Offset: 0x6fe4
 // Size: 0x71
 function gunship_showflashlight()
 {
@@ -2596,8 +2596,8 @@ function gunship_showflashlight()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x705e
+// Params 2
+// Checksum 0x0, Offset: 0x705d
 // Size: 0x1fc
 function gunship_weaponreload( weapon, gunship )
 {
@@ -2615,7 +2615,8 @@ function gunship_weaponreload( weapon, gunship )
     {
         reloadsound = "ac130";
         
-        for (i = 1; i < var_dd020944ee631ba8.size; i++) {
+        for ( i = 1; i < var_dd020944ee631ba8.size ; i++ )
+        {
             appendstring = var_dd020944ee631ba8[ i ];
             
             if ( appendstring == "hellfire" )
@@ -2666,8 +2667,8 @@ function gunship_weaponreload( weapon, gunship )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7262
+// Params 2
+// Checksum 0x0, Offset: 0x7261
 // Size: 0xc2
 function gunship_waitforweaponreloadtime( weapon, weaponrootname )
 {
@@ -2702,8 +2703,8 @@ function gunship_waitforweaponreloadtime( weapon, weaponrootname )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x732c
+// Params 1
+// Checksum 0x0, Offset: 0x732b
 // Size: 0x52
 function getgunshipweaponrootname( weapon )
 {
@@ -2714,8 +2715,8 @@ function getgunshipweaponrootname( weapon )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7387
+// Params 1
+// Checksum 0x0, Offset: 0x7386
 // Size: 0xb6
 function gunship_playpilotfx( pilot )
 {
@@ -2741,8 +2742,8 @@ function gunship_playpilotfx( pilot )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7445
+// Params 1
+// Checksum 0x0, Offset: 0x7444
 // Size: 0x21
 function deleteaftertime( delay )
 {
@@ -2752,8 +2753,8 @@ function deleteaftertime( delay )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x746e
+// Params 1
+// Checksum 0x0, Offset: 0x746d
 // Size: 0x2f
 function gunship_crash( gunner )
 {
@@ -2764,8 +2765,8 @@ function gunship_crash( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x74a5
+// Params 1
+// Checksum 0x0, Offset: 0x74a4
 // Size: 0xfe
 function function_43c36396180ee798( gunner )
 {
@@ -2794,8 +2795,8 @@ function function_43c36396180ee798( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x75ab
+// Params 0
+// Checksum 0x0, Offset: 0x75aa
 // Size: 0x2f7
 function gunship_movetocrashpos()
 {
@@ -2847,8 +2848,8 @@ function gunship_movetocrashpos()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x78aa
+// Params 0
+// Checksum 0x0, Offset: 0x78a9
 // Size: 0x16
 function gunship_delayhide()
 {
@@ -2858,8 +2859,8 @@ function gunship_delayhide()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x78c8
+// Params 1
+// Checksum 0x0, Offset: 0x78c7
 // Size: 0x98
 function gunship_crashexplosionscreenshake( delaytime )
 {
@@ -2877,8 +2878,8 @@ function gunship_crashexplosionscreenshake( delaytime )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7968
+// Params 1
+// Checksum 0x0, Offset: 0x7967
 // Size: 0x2b
 function gunship_crashexplosionradiostatic( delaytime )
 {
@@ -2888,8 +2889,8 @@ function gunship_crashexplosionradiostatic( delaytime )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x799b
+// Params 0
+// Checksum 0x0, Offset: 0x799a
 // Size: 0x53
 function gunship_crash_audio()
 {
@@ -2901,8 +2902,8 @@ function gunship_crash_audio()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x79f6
+// Params 1
+// Checksum 0x0, Offset: 0x79f5
 // Size: 0x13c
 function gunship_removeplane( wasdestroyed )
 {
@@ -2957,8 +2958,8 @@ function gunship_removeplane( wasdestroyed )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b3a
+// Params 1
+// Checksum 0x0, Offset: 0x7b39
 // Size: 0xd0
 function function_3856d3338b2c7ebf( gunshipintro )
 {
@@ -2991,8 +2992,8 @@ function function_3856d3338b2c7ebf( gunshipintro )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c12
+// Params 1
+// Checksum 0x0, Offset: 0x7c11
 // Size: 0x84
 function function_5efa20e5c624be8f( gunshipintro )
 {
@@ -3012,8 +3013,8 @@ function function_5efa20e5c624be8f( gunshipintro )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c9e
+// Params 2
+// Checksum 0x0, Offset: 0x7c9d
 // Size: 0x2d5
 function function_fa9987de43a6169b( gunshipintro, sequence )
 {
@@ -3106,8 +3107,8 @@ function function_fa9987de43a6169b( gunshipintro, sequence )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f7b
+// Params 2
+// Checksum 0x0, Offset: 0x7f7a
 // Size: 0x245
 function function_d176c031e49a9127( var_5e0676140eecdf2d, brush_name )
 {
@@ -3171,8 +3172,8 @@ function function_d176c031e49a9127( var_5e0676140eecdf2d, brush_name )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x81c9
+// Params 3
+// Checksum 0x0, Offset: 0x81c8
 // Size: 0xed
 function function_4293b1250d8a40ec( owner, lighting_info, showlighting )
 {
@@ -3197,8 +3198,8 @@ function function_4293b1250d8a40ec( owner, lighting_info, showlighting )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x82be
+// Params 1
+// Checksum 0x0, Offset: 0x82bd
 // Size: 0x42
 function function_4d00f78750774093( lighting_info )
 {
@@ -3211,8 +3212,8 @@ function function_4d00f78750774093( lighting_info )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8308
+// Params 1
+// Checksum 0x0, Offset: 0x8307
 // Size: 0x86
 function function_bbfa3bca65cb8e4c( lighting_info )
 {
@@ -3228,8 +3229,8 @@ function function_bbfa3bca65cb8e4c( lighting_info )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8396
+// Params 1
+// Checksum 0x0, Offset: 0x8395
 // Size: 0x70
 function function_38101db6ed950f17( lighting_info )
 {
@@ -3244,8 +3245,8 @@ function function_38101db6ed950f17( lighting_info )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x840e
+// Params 0
+// Checksum 0x0, Offset: 0x840d
 // Size: 0x79
 function function_fff560b330fd842d()
 {
@@ -3261,8 +3262,8 @@ function function_fff560b330fd842d()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x848f
+// Params 1
+// Checksum 0x0, Offset: 0x848e
 // Size: 0xa4
 function unlink_brushes( lighting_info )
 {
@@ -3280,8 +3281,8 @@ function unlink_brushes( lighting_info )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x853b
+// Params 5
+// Checksum 0x0, Offset: 0x853a
 // Size: 0x138
 function function_7eb343dd6a3f639( player, scriptablepart, state, visionset_name, time )
 {
@@ -3324,8 +3325,8 @@ function function_7eb343dd6a3f639( player, scriptablepart, state, visionset_name
 /#
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x867b
+    // Params 3
+    // Checksum 0x0, Offset: 0x867a
     // Size: 0x5b, Type: dev
     function function_eb2299f7c29ac70c( gunshipintro, animent, var_465db5572e637fb7 )
     {
@@ -3342,8 +3343,8 @@ function function_7eb343dd6a3f639( player, scriptablepart, state, visionset_name
 #/
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x86de
+// Params 0
+// Checksum 0x0, Offset: 0x86dd
 // Size: 0x325
 function gunship_control_bot_aiming()
 {
@@ -3434,8 +3435,8 @@ function gunship_control_bot_aiming()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a0b
+// Params 4
+// Checksum 0x0, Offset: 0x8a0a
 // Size: 0x1de
 function gunship_handlemissiledetection( player, missileteam, missiletarget, fxtagoverride )
 {
@@ -3495,8 +3496,8 @@ function gunship_handlemissiledetection( player, missileteam, missiletarget, fxt
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bf1
+// Params 0
+// Checksum 0x0, Offset: 0x8bf0
 // Size: 0x83
 function gunship_playfakebodyexplosion()
 {
@@ -3519,8 +3520,8 @@ function gunship_playfakebodyexplosion()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c7c
+// Params 1
+// Checksum 0x0, Offset: 0x8c7b
 // Size: 0x73
 function gunship_playflaresfx( fxtagoverride )
 {
@@ -3538,8 +3539,8 @@ function gunship_playflaresfx( fxtagoverride )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8cf7
+// Params 0
+// Checksum 0x0, Offset: 0x8cf6
 // Size: 0xc, Type: bool
 function isusinggunship()
 {
@@ -3547,8 +3548,8 @@ function isusinggunship()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d0c
+// Params 0
+// Checksum 0x0, Offset: 0x8d0b
 // Size: 0x41
 function gunship_linklightfxent()
 {
@@ -3560,8 +3561,8 @@ function gunship_linklightfxent()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d55
+// Params 0
+// Checksum 0x0, Offset: 0x8d54
 // Size: 0x16b
 function gunship_linkwingfxents()
 {
@@ -3586,8 +3587,8 @@ function gunship_linkwingfxents()
 /#
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8ec8
+    // Params 1
+    // Checksum 0x0, Offset: 0x8ec7
     // Size: 0x4d, Type: dev
     function function_9a76988758d4b96d( wingfxent )
     {
@@ -3604,8 +3605,8 @@ function gunship_linkwingfxents()
 #/
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f1d
+// Params 1
+// Checksum 0x0, Offset: 0x8f1c
 // Size: 0x1ca
 function gunship_watchtargets( gunner )
 {
@@ -3673,8 +3674,8 @@ function gunship_watchtargets( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x90ef
+// Params 1
+// Checksum 0x0, Offset: 0x90ee
 // Size: 0xc8
 function gunship_getnearbytargets( maintarget )
 {
@@ -3700,8 +3701,8 @@ function gunship_getnearbytargets( maintarget )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x91c0
+// Params 1
+// Checksum 0x0, Offset: 0x91bf
 // Size: 0xbd
 function function_39464052869b655d( gunner )
 {
@@ -3738,8 +3739,8 @@ function function_39464052869b655d( gunner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9285
+// Params 0
+// Checksum 0x0, Offset: 0x9284
 // Size: 0x3f
 function gunship_watchkills()
 {
@@ -3755,8 +3756,8 @@ function gunship_watchkills()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92cc
+// Params 0
+// Checksum 0x0, Offset: 0x92cb
 // Size: 0x3f
 function function_c8437bfb873fd165()
 {
@@ -3772,8 +3773,8 @@ function function_c8437bfb873fd165()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9313
+// Params 1
+// Checksum 0x0, Offset: 0x9312
 // Size: 0x6e
 function gunship_iskillstreakweapon( weaponname )
 {
@@ -3782,8 +3783,8 @@ function gunship_iskillstreakweapon( weaponname )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x938a
+// Params 0
+// Checksum 0x0, Offset: 0x9389
 // Size: 0x39
 function gunship_islargemap()
 {
@@ -3802,8 +3803,8 @@ function gunship_islargemap()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x93cc
+// Params 1
+// Checksum 0x0, Offset: 0x93cb
 // Size: 0xe7
 function gunship_allowstances( boolean )
 {
@@ -3834,8 +3835,8 @@ function gunship_allowstances( boolean )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x94bb
+// Params 0
+// Checksum 0x0, Offset: 0x94ba
 // Size: 0x31
 function function_486b043f227fca86()
 {
@@ -3846,8 +3847,8 @@ function function_486b043f227fca86()
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x94f4
+// Params 1
+// Checksum 0x0, Offset: 0x94f3
 // Size: 0x44
 function function_f14aa90c4ef905d2( ent )
 {
@@ -3858,8 +3859,8 @@ function function_f14aa90c4ef905d2( ent )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9540
+// Params 1
+// Checksum 0x0, Offset: 0x953f
 // Size: 0x64
 function function_aafc33d685563aa4( owner )
 {
@@ -3883,8 +3884,8 @@ function function_aafc33d685563aa4( owner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x95ac
+// Params 1
+// Checksum 0x0, Offset: 0x95ab
 // Size: 0x13e
 function function_5fbd9704078207ad( owner )
 {
@@ -3952,8 +3953,8 @@ function function_5fbd9704078207ad( owner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x96f2
+// Params 1
+// Checksum 0x0, Offset: 0x96f1
 // Size: 0xa9
 function function_cdf6e1bdfe5b42b5( owner )
 {
@@ -3968,8 +3969,8 @@ function function_cdf6e1bdfe5b42b5( owner )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x97a4
+// Params 1
+// Checksum 0x0, Offset: 0x97a3
 // Size: 0x74
 function function_9214536761e6be23( targetweapon )
 {
@@ -3993,8 +3994,8 @@ function function_9214536761e6be23( targetweapon )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9820
+// Params 3
+// Checksum 0x0, Offset: 0x981f
 // Size: 0xce
 function function_ccaa72b347c823bb( gunship, gunner, weaponbasename )
 {
@@ -4022,8 +4023,8 @@ function function_ccaa72b347c823bb( gunship, gunner, weaponbasename )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x98f6
+// Params 1
+// Checksum 0x0, Offset: 0x98f5
 // Size: 0x20
 function function_aaedf89b93495d4f( data )
 {
@@ -4034,8 +4035,8 @@ function function_aaedf89b93495d4f( data )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x991e
+// Params 1
+// Checksum 0x0, Offset: 0x991d
 // Size: 0x226
 function function_377ab89187436937( data )
 {
@@ -4104,11 +4105,14 @@ function function_377ab89187436937( data )
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b4c
-// Size: 0x177
+// Params 0
+// Checksum 0x0, Offset: 0x9b4b
+// Size: 0x1c0
 function function_f4b2a9371b53b7ab()
 {
+    self endon( "death" );
+    self.owner endon( "detach_gunship_intro" );
+    self.owner endon( "returning_killstreak_player" );
     self.owner _setvisibiilityomnvarforkillstreak( self.streakname, "off" );
     result = waittill_any_ents_or_timeout_return( 0.1, self.owner, "detach_gunship_intro", self.owner, "returning_killstreak_player", self, "death" );
     
@@ -4117,7 +4121,11 @@ function function_f4b2a9371b53b7ab()
         return;
     }
     
-    self.owner _setvisibiilityomnvarforkillstreak( self.streakname, "on" );
+    if ( self.owner isusinggunship() )
+    {
+        self.owner _setvisibiilityomnvarforkillstreak( self.streakname, "on" );
+    }
+    
     result = waittill_any_ents_or_timeout_return( 0.05, self.owner, "detach_gunship_intro", self.owner, "returning_killstreak_player", self, "death" );
     
     if ( !isdefined( result ) || result != "timeout" || !isdefined( self ) || !isalive( self ) )
@@ -4133,16 +4141,19 @@ function function_f4b2a9371b53b7ab()
         return;
     }
     
-    self.owner _setvisibiilityomnvarforkillstreak( self.streakname, "on" );
+    if ( self.owner isusinggunship() )
+    {
+        self.owner _setvisibiilityomnvarforkillstreak( self.streakname, "on" );
+    }
 }
 
 /#
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9ccb
+    // Params 1
+    // Checksum 0x0, Offset: 0x9d13
     // Size: 0xe4, Type: dev
-    function function_ae468fe5beababc0( var_2136b63785ee0579 )
+    function gunship_watchplanedistance( var_2136b63785ee0579 )
     {
         self endon( "<dev string:xb1>" );
         self.owner endon( "<dev string:xe7>" );
@@ -4159,10 +4170,10 @@ function function_f4b2a9371b53b7ab()
     }
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9db7
+    // Params 2
+    // Checksum 0x0, Offset: 0x9dff
     // Size: 0x114, Type: dev
-    function function_9d69dd8c1ff1265c( tagname, var_22c53c353885fe59 )
+    function watchdebuglocation( tagname, var_22c53c353885fe59 )
     {
         self endon( "<dev string:xb1>" );
         
@@ -4192,8 +4203,8 @@ function function_f4b2a9371b53b7ab()
     }
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9ed3
+    // Params 0
+    // Checksum 0x0, Offset: 0x9f1b
     // Size: 0x176, Type: dev
     function function_45ad456c933cbb32()
     {
@@ -4233,25 +4244,25 @@ function function_f4b2a9371b53b7ab()
                 continue;
             }
             
-            shotgoal = function_120feaa7e2f0658b( self.owner );
+            shotgoal = gunship_getshotgoal( self.owner );
             thread function_4f101b253c661e40( shotgoal, currentdebugweapon );
         }
     }
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa051
+    // Params 1
+    // Checksum 0x0, Offset: 0xa099
     // Size: 0x15, Type: dev
-    function function_ce1591d034df25ad( weapon )
+    function gunship_getfiretime( weapon )
     {
         return weaponfiretime( weapon );
     }
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa06e
+    // Params 1
+    // Checksum 0x0, Offset: 0xa0b6
     // Size: 0xa2, Type: dev
-    function function_120feaa7e2f0658b( owner )
+    function gunship_getshotgoal( owner )
     {
         content = [ "<dev string:x1b9>", "<dev string:x1d5>", "<dev string:x1f4>" ];
         contentoverride = physics_createcontents( content );
@@ -4263,8 +4274,8 @@ function function_f4b2a9371b53b7ab()
     }
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa118
+    // Params 2
+    // Checksum 0x0, Offset: 0xa160
     // Size: 0x165, Type: dev
     function function_4f101b253c661e40( shotgoal, currentdebugweapon )
     {
@@ -4279,7 +4290,7 @@ function function_f4b2a9371b53b7ab()
             sphere( shotgoal, 10, ( 1, 1, 0 ), 0, 60 );
             self.owner iprintlnbold( "<dev string:x20f>" + currentdebugweapon + "<dev string:x21a>" + shotgoal + "<dev string:x222>" + getweaponexplosionradius( currentdebugweapon ) );
             ammoleft = weaponmaxammo( currentdebugweapon );
-            thread function_5d02a3b580b4d80e( shotgoal );
+            thread gunship_updatedebugflashlight( shotgoal );
             
             while ( ammoleft > 0 )
             {
@@ -4306,16 +4317,16 @@ function function_f4b2a9371b53b7ab()
                     }
                 }
                 
-                wait function_ce1591d034df25ad( currentdebugweapon );
+                wait gunship_getfiretime( currentdebugweapon );
             }
         }
     }
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa285
+    // Params 1
+    // Checksum 0x0, Offset: 0xa2cd
     // Size: 0x90, Type: dev
-    function function_5d02a3b580b4d80e( shotgoal )
+    function gunship_updatedebugflashlight( shotgoal )
     {
         self endon( "<dev string:xb1>" );
         self endon( "<dev string:x140>" );
@@ -4332,8 +4343,8 @@ function function_f4b2a9371b53b7ab()
     }
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa31d
+    // Params 0
+    // Checksum 0x0, Offset: 0xa365
     // Size: 0x55, Type: dev
     function function_66f838db99a91aa3()
     {

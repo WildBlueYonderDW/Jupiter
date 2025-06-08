@@ -8,7 +8,7 @@
 #namespace execution;
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x579
 // Size: 0x47, Type: bool
 function function_1ea3e44fd8a18d1()
@@ -37,7 +37,7 @@ function function_1ea3e44fd8a18d1()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5c9
 // Size: 0x1a7
 function _giveexecution( ref, isfirstperson )
@@ -47,7 +47,7 @@ function _giveexecution( ref, isfirstperson )
         return;
     }
     
-    if ( istrue( getdvarint( @"hash_576703ba86051da6", 0 ) ) && scripts\cp_mp\utility\loot::function_8c610908c0e9c6e4( ref ) )
+    if ( istrue( getdvarint( @"scr_loadout_validate_banned_items", 0 ) ) && scripts\cp_mp\utility\loot::function_8c610908c0e9c6e4( ref ) )
     {
         ref = scripts\cp_mp\operator::function_a9722d35258230d2( self.operatorcustomization.operatorref );
     }
@@ -104,7 +104,7 @@ function _giveexecution( ref, isfirstperson )
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x778
 // Size: 0x94
 function _clearexecution( isfirstperson )
@@ -129,7 +129,7 @@ function _clearexecution( isfirstperson )
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x814
 // Size: 0xc, Type: bool
 function hasexecution()
@@ -138,7 +138,7 @@ function hasexecution()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x829
 // Size: 0xf1
 function execution_monitor()
@@ -180,14 +180,20 @@ function execution_monitor()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x922
-// Size: 0x764
+// Size: 0x76e
 function function_e4ea09e7e5e2d5f1( victiment )
 {
     self endon( "death_or_disconnect" );
     self endon( "execution_stopped" );
     victiment endon( "disconnect" );
+    
+    if ( isai( victiment ) )
+    {
+        return;
+    }
+    
     var_ff5b782e4a5bcc05 = victiment getstance();
     
     switch ( self.executionref )
@@ -196,11 +202,11 @@ function function_e4ea09e7e5e2d5f1( victiment )
             switch ( var_ff5b782e4a5bcc05 )
             {
                 case #"hash_c6775c88e38f7803":
-                    wait 0.9;
+                    wait 1.2;
                     self playsoundtoplayer( "dx_mp_mpce_cste_ctrd_ce04", self );
                     break;
                 case #"hash_3fed0cbd303639eb":
-                    wait 0.9;
+                    wait 1.2;
                     self playsoundtoplayer( "dx_mp_mpce_cste_ctrd_ce04", self );
                     break;
                 case #"hash_d91940431ed7c605":
@@ -225,11 +231,11 @@ function function_e4ea09e7e5e2d5f1( victiment )
             switch ( var_ff5b782e4a5bcc05 )
             {
                 case #"hash_c6775c88e38f7803":
-                    wait 0.9;
+                    wait 1.2;
                     self playsoundtoplayer( "dx_mp_mpce_cste_ctrd_ce04", self );
                     break;
                 case #"hash_3fed0cbd303639eb":
-                    wait 0.9;
+                    wait 1.2;
                     self playsoundtoplayer( "dx_mp_mpce_cste_ctrd_ce04", self );
                     break;
                 case #"hash_d91940431ed7c605":
@@ -488,8 +494,8 @@ function function_e4ea09e7e5e2d5f1( victiment )
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x108e
+// Params 0
+// Checksum 0x0, Offset: 0x1098
 // Size: 0x8e
 function execution_init()
 {
@@ -508,8 +514,8 @@ function execution_init()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1124
+// Params 0
+// Checksum 0x0, Offset: 0x112e
 // Size: 0x9
 function enableexecutionattackwrapper()
 {
@@ -517,8 +523,8 @@ function enableexecutionattackwrapper()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1135
+// Params 0
+// Checksum 0x0, Offset: 0x113f
 // Size: 0x9
 function disableexecutionattackwrapper()
 {
@@ -526,8 +532,8 @@ function disableexecutionattackwrapper()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1146
+// Params 0
+// Checksum 0x0, Offset: 0x1150
 // Size: 0x9
 function enableexecutionvictimwrapper()
 {
@@ -535,8 +541,8 @@ function enableexecutionvictimwrapper()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1157
+// Params 0
+// Checksum 0x0, Offset: 0x1161
 // Size: 0x9
 function disableexecutionvictimwrapper()
 {
@@ -544,8 +550,8 @@ function disableexecutionvictimwrapper()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1168
+// Params 0
+// Checksum 0x0, Offset: 0x1172
 // Size: 0x1a2
 function execution_loadtable()
 {
@@ -589,8 +595,8 @@ function execution_loadtable()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1312
+// Params 1
+// Checksum 0x0, Offset: 0x131c
 // Size: 0x56
 function execution_getexecutionbyref( ref )
 {
@@ -606,8 +612,8 @@ function execution_getexecutionbyref( ref )
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1371
+// Params 1
+// Checksum 0x0, Offset: 0x137b
 // Size: 0x56
 function execution_getpropweaponbyref( ref )
 {
@@ -623,8 +629,8 @@ function execution_getpropweaponbyref( ref )
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d0
+// Params 1
+// Checksum 0x0, Offset: 0x13da
 // Size: 0x16
 function execution_getrefbyplayer( player )
 {
@@ -632,8 +638,8 @@ function execution_getrefbyplayer( player )
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ef
+// Params 1
+// Checksum 0x0, Offset: 0x13f9
 // Size: 0x55
 function execution_getidbyref( ref )
 {
@@ -647,8 +653,8 @@ function execution_getidbyref( ref )
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x144c
+// Params 1
+// Checksum 0x0, Offset: 0x1456
 // Size: 0x5d
 function function_700277400dcb7857( ref )
 {
@@ -668,8 +674,8 @@ function function_700277400dcb7857( ref )
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b1
+// Params 0
+// Checksum 0x0, Offset: 0x14bb
 // Size: 0x15
 function function_43a90e553f84c31c()
 {
@@ -677,8 +683,8 @@ function function_43a90e553f84c31c()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ce
+// Params 0
+// Checksum 0x0, Offset: 0x14d8
 // Size: 0x6d
 function execution_blockladders()
 {
@@ -702,8 +708,8 @@ function execution_blockladders()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1543
+// Params 0
+// Checksum 0x0, Offset: 0x154d
 // Size: 0x8a
 function watchinexecution()
 {
@@ -736,8 +742,8 @@ function watchinexecution()
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d5
+// Params 0
+// Checksum 0x0, Offset: 0x15df
 // Size: 0x12, Type: bool
 function is_in_takedown()
 {

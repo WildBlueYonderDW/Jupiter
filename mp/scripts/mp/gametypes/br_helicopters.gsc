@@ -10,7 +10,7 @@
 #namespace br_helicopters;
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x435
 // Size: 0x134
 function setuphalodropplayer( player )
@@ -41,7 +41,7 @@ function setuphalodropplayer( player )
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x571
 // Size: 0x53
 function spawnplayertohelicam( player )
@@ -54,7 +54,7 @@ function spawnplayertohelicam( player )
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cc
 // Size: 0x126
 function orbitcam( heli )
@@ -82,7 +82,7 @@ function orbitcam( heli )
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6fa
 // Size: 0x5e
 function forceejectall()
@@ -95,7 +95,7 @@ function forceejectall()
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x760
 // Size: 0x297
 function jumplistener( heli, jumptime )
@@ -150,7 +150,7 @@ function jumplistener( heli, jumptime )
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ff
 // Size: 0x82
 function parachuteupdater( parachute )
@@ -174,7 +174,7 @@ function parachuteupdater( parachute )
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa89
 // Size: 0x1d7
 function spawnheli( helinum, spawnpos )
@@ -202,7 +202,8 @@ function spawnheli( helinum, spawnpos )
     heli.playeroffsets = [ ( 32, 30, -135 ), ( -32, 30, -135 ), ( 0, 30, -135 ), ( 16, 30, -135 ), ( -16, 30, -135 ) ];
     heli.jumpslots = [];
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         heli.jumpslots[ i ] = 0;
     }
     
@@ -210,7 +211,7 @@ function spawnheli( helinum, spawnpos )
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc69
 // Size: 0x6b
 function getfirstopenjumporigin()
@@ -220,7 +221,8 @@ function getfirstopenjumporigin()
         return self.trail[ 0 ];
     }
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         if ( self.jumpslots[ i ] == 0 )
         {
             self.jumpslots[ i ] = 1;
@@ -232,7 +234,7 @@ function getfirstopenjumporigin()
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcdd
 // Size: 0x2a
 function calctrailpoint()
@@ -242,7 +244,7 @@ function calctrailpoint()
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd10
 // Size: 0x159
 function helipathmemory()
@@ -251,7 +253,8 @@ function helipathmemory()
     self endon( "leaving" );
     self.trail = [];
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         struct = spawnstruct();
         struct.origin = self.origin;
         struct.angles = self.angles;
@@ -260,7 +263,8 @@ function helipathmemory()
     
     while ( true )
     {
-        for (i = 9; i > 0; i--) {
+        for ( i = 9; i > 0 ; i-- )
+        {
             self.trail[ i ].origin = self.trail[ i - 1 ].origin;
             self.trail[ i ].angles = self.trail[ i - 1 ].angles;
             self.jumpslots[ i ] = self.jumpslots[ i - 1 ];
@@ -274,7 +278,7 @@ function helipathmemory()
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe71
 // Size: 0xe2
 function fakestreakinfo()
@@ -297,7 +301,7 @@ function fakestreakinfo()
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5c
 // Size: 0x1a, Type: bool
 function ishelicopterfull( copter )
@@ -306,7 +310,7 @@ function ishelicopterfull( copter )
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf7f
 // Size: 0x2c, Type: bool
 function sorthelosize( a, b )
@@ -315,7 +319,7 @@ function sorthelosize( a, b )
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb4
 // Size: 0x165
 function getnexthelicopterwithroom( team )
@@ -356,7 +360,7 @@ function getnexthelicopterwithroom( team )
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1122
 // Size: 0x87
 function kickanyremainingplayers()
@@ -372,7 +376,7 @@ function kickanyremainingplayers()
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11b1
 // Size: 0x144
 function exitandcleanup()
@@ -400,7 +404,7 @@ function exitandcleanup()
 }
 
 // Namespace br_helicopters / scripts\mp\gametypes\br_helicopters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12fd
 // Size: 0x6e
 function jumpdone()

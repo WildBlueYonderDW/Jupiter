@@ -4,7 +4,7 @@
 #namespace mp_jup_st_h_ob_puzzles;
 
 // Namespace mp_jup_st_h_ob_puzzles / namespace_2f386c52939edecf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x153
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_h_ob_puzzles / namespace_2f386c52939edecf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c8
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_h_ob_puzzles / namespace_2f386c52939edecf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x237
 // Size: 0x3d1
 function createstructs( fe, us, cf )
@@ -105,7 +105,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_h_ob_puzzles / namespace_2f386c52939edecf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x610
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -114,7 +114,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_h_ob_puzzles / namespace_2f386c52939edecf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61a
 // Size: 0xe
 function cleanup()

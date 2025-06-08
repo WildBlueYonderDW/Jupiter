@@ -16,7 +16,7 @@
 #namespace br_secretstash_quest;
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b0
 // Size: 0x103
 function init()
@@ -42,7 +42,7 @@ function init()
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4bb
 // Size: 0x79, Type: bool
 function sstablet_init()
@@ -67,7 +67,7 @@ function sstablet_init()
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x53d
 // Size: 0x100
 function ss_circletick( dangercircleorigin, dangercircleradius )
@@ -101,7 +101,7 @@ function ss_circletick( dangercircleorigin, dangercircleradius )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x645
 // Size: 0x30
 function ss_entergulag( player )
@@ -120,7 +120,7 @@ function ss_entergulag( player )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67d
 // Size: 0x35
 function ss_respawn( player )
@@ -139,7 +139,7 @@ function ss_respawn( player )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ba
 // Size: 0x30
 function ss_ontimerexpired()
@@ -149,7 +149,7 @@ function ss_ontimerexpired()
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f2
 // Size: 0x23
 function ss_removequestinstance()
@@ -163,7 +163,7 @@ function ss_removequestinstance()
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71d
 // Size: 0xb7
 function ss_playerdisconnect( disconnectplayer )
@@ -187,7 +187,7 @@ function ss_playerdisconnect( disconnectplayer )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7dc
 // Size: 0x2b
 function checkforcorrectinstance( player )
@@ -201,7 +201,7 @@ function checkforcorrectinstance( player )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x80f
 // Size: 0x23c
 function takequestitem( pickupent )
@@ -236,7 +236,7 @@ function takequestitem( pickupent )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa53
 // Size: 0x10c
 function lootcachesearchparams( searchcircleorigin, reservedplacement )
@@ -267,7 +267,7 @@ function lootcachesearchparams( searchcircleorigin, reservedplacement )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb68
 // Size: 0x143
 function spawnsecretstashlootcache( inorigin, var_5b9c864b21207ff6 )
@@ -296,7 +296,7 @@ function spawnsecretstashlootcache( inorigin, var_5b9c864b21207ff6 )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb3
 // Size: 0xd4
 function updatesecretstashhud()
@@ -321,7 +321,7 @@ function updatesecretstashhud()
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd8f
 // Size: 0x25
 function hidesecretstashhudfromplayer( player )
@@ -335,7 +335,7 @@ function hidesecretstashhudfromplayer( player )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdbc
 // Size: 0x67
 function deletesecretstashhud()
@@ -353,7 +353,7 @@ function deletesecretstashhud()
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xe2b
 // Size: 0x21b
 function secretstashlootcacheused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -394,7 +394,7 @@ function secretstashlootcacheused( instance, part, state, player, var_a5b2c54141
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x104e
 // Size: 0xc2
 function completesecretstashquest( chest )
@@ -417,7 +417,7 @@ function completesecretstashquest( chest )
 }
 
 // Namespace br_secretstash_quest / scripts\mp\gametypes\br_secretstash_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1118
 // Size: 0x4f
 function failsecretstashquest()

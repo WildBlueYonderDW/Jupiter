@@ -3,7 +3,7 @@
 #namespace minefields;
 
 // Namespace minefields / scripts\mp\minefields
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107
 // Size: 0x61
 function minefields()
@@ -15,13 +15,14 @@ function minefields()
         level._effect[ "mine_explosion" ] = loadfx( "vfx/core/expl/weap/gre/vfx_exp_gre_dirt_cg" );
     }
     
-    for (i = 0; i < minefields.size; i++) {
+    for ( i = 0; i < minefields.size ; i++ )
+    {
         minefields[ i ] thread minefield_think();
     }
 }
 
 // Namespace minefields / scripts\mp\minefields
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x170
 // Size: 0x3d
 function minefield_think()
@@ -40,7 +41,7 @@ function minefield_think()
 }
 
 // Namespace minefields / scripts\mp\minefields
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x91
 function minefield_kill( trigger )

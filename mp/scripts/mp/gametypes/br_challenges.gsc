@@ -10,7 +10,7 @@
 #namespace br_challenges;
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ca
 // Size: 0x72
 function init()
@@ -29,7 +29,7 @@ function init()
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x344
 // Size: 0x5a
 function registerchallenge( challengeref, challengefunc )
@@ -44,7 +44,7 @@ function registerchallenge( challengeref, challengefunc )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a6
 // Size: 0x50
 function challengeevaluator( challengeref, paramstruct )
@@ -65,7 +65,7 @@ function challengeevaluator( challengeref, paramstruct )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fe
 // Size: 0x38
 function awardmasterychallenge( challengeref )
@@ -79,7 +79,7 @@ function awardmasterychallenge( challengeref )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x43e
 // Size: 0xe2
 function fivecontracts( challengeref, paramstruct )
@@ -113,7 +113,7 @@ function fivecontracts( challengeref, paramstruct )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x528
 // Size: 0x12c
 function pointblank_airstrike( challengeref, paramstruct )
@@ -157,7 +157,7 @@ function pointblank_airstrike( challengeref, paramstruct )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x65c
 // Size: 0xe7
 function pointblank_tomahawk( challengeref, paramstruct )
@@ -204,7 +204,7 @@ function pointblank_tomahawk( challengeref, paramstruct )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x74c
 // Size: 0x170
 function c4vehiclemultkill( challengeref, paramstruct )
@@ -258,7 +258,7 @@ function c4vehiclemultkill( challengeref, paramstruct )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c4
 // Size: 0x102, Type: bool
 function isvalidinflictorc4vehicle( inflictor )
@@ -294,7 +294,7 @@ function isvalidinflictorc4vehicle( inflictor )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9cf
 // Size: 0x59
 function c4vehiclecooperator( inflictor )
@@ -313,7 +313,7 @@ function c4vehiclecooperator( inflictor )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa31
 // Size: 0x1f
 function roundkillexecute( challengeref, paramstruct )
@@ -322,7 +322,7 @@ function roundkillexecute( challengeref, paramstruct )
 }
 
 // Namespace br_challenges / scripts\mp\gametypes\br_challenges
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa58
 // Size: 0x108
 function ghostridewhip( challengeref, paramstruct )

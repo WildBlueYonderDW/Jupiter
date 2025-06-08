@@ -11,7 +11,7 @@
 #namespace cap;
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb18
 // Size: 0x133
 function function_11bc1c4cee238a68( asmname, statename, params )
@@ -63,7 +63,7 @@ function function_11bc1c4cee238a68( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc54
 // Size: 0x64
 function function_64d568ec73ec23f9( asmname, statename, params )
@@ -75,7 +75,7 @@ function function_64d568ec73ec23f9( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcc0
 // Size: 0x1b5
 function function_286c69ed2c750e6c( asmname, sourceciv )
@@ -127,7 +127,7 @@ function function_286c69ed2c750e6c( asmname, sourceciv )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe7d
 // Size: 0x4b
 function function_c72398c24fe24b5b( asmname, statename, params )
@@ -139,7 +139,7 @@ function function_c72398c24fe24b5b( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed0
 // Size: 0x12a
 function function_f16999f33ef5381d( statename )
@@ -174,7 +174,7 @@ function function_f16999f33ef5381d( statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1002
 // Size: 0x3f
 function function_59308d53cabcdfdb( asmname, statename, params )
@@ -184,7 +184,7 @@ function function_59308d53cabcdfdb( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1049
 // Size: 0x14a
 function function_fb8afeabd23a5ef5( asmname, statename, params, animid )
@@ -226,7 +226,7 @@ function function_fb8afeabd23a5ef5( asmname, statename, params, animid )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x119b
 // Size: 0x3d
 function function_e7652690c4fbe131( asmname, statename, params )
@@ -240,7 +240,7 @@ function function_e7652690c4fbe131( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11e0
 // Size: 0x25
 function function_ae21268aec38d315( asmname, statename, params )
@@ -249,7 +249,7 @@ function function_ae21268aec38d315( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x120d
 // Size: 0xef
 function function_38adb9f7ae99df6a( statename, xanim, animtime )
@@ -287,7 +287,7 @@ function function_38adb9f7ae99df6a( statename, xanim, animtime )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1304
 // Size: 0x6e
 function function_76b0413f0e5d4dd2()
@@ -321,7 +321,7 @@ function function_76b0413f0e5d4dd2()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x137b
 // Size: 0xa7
 function function_7d6e619c3450bef3( statename, xanim )
@@ -346,7 +346,7 @@ function function_7d6e619c3450bef3( statename, xanim )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x142a
 // Size: 0x38
 function function_c886dae06eba7d4a( statename, xanim )
@@ -361,7 +361,7 @@ function function_c886dae06eba7d4a( statename, xanim )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x146a
 // Size: 0x240
 function function_f498a27eb642642c()
@@ -425,7 +425,7 @@ function function_f498a27eb642642c()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16b2
 // Size: 0x224
 function function_46602711ed8e40d6()
@@ -482,7 +482,7 @@ function function_46602711ed8e40d6()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18de
 // Size: 0x13
 function function_2944e6470a84b96d( xanim, tracktime )
@@ -491,7 +491,7 @@ function function_2944e6470a84b96d( xanim, tracktime )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18f9
 // Size: 0x13
 function function_f9d6133768491200( xanim, tracktime )
@@ -500,7 +500,7 @@ function function_f9d6133768491200( xanim, tracktime )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1914
 // Size: 0xb
 function function_7495a975f79b957( player )
@@ -509,7 +509,7 @@ function function_7495a975f79b957( player )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1927
 // Size: 0xda
 function function_c6f62de5c6e04207( asmname, statename, params )
@@ -540,21 +540,22 @@ function function_c6f62de5c6e04207( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a09
 // Size: 0x5c
 function cap_donotetracks( asmname, statename )
 {
     notehandler = asm_getnotehandler( asmname, statename );
     
-    for (endnote = undefined; !isdefined( endnote ) || !isstring( endnote ) || endnote != "end"; endnote = asm_donotetracks( asmname, statename, notehandler )) {
+    for ( endnote = undefined; !isdefined( endnote ) || !isstring( endnote ) || endnote != "end" ; endnote = asm_donotetracks( asmname, statename, notehandler ) )
+    {
     }
     
     return endnote;
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a6e
 // Size: 0x14
 function cap_notetrackhandler( notetrack )
@@ -564,7 +565,7 @@ function cap_notetrackhandler( notetrack )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a8b
 // Size: 0x83
 function function_a0dfeea159aa7f64( asmname, statename, params )
@@ -592,7 +593,7 @@ function function_a0dfeea159aa7f64( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b16
 // Size: 0x32, Type: bool
 function function_f179ede0989e6734( statename, alias )
@@ -602,7 +603,7 @@ function function_f179ede0989e6734( statename, alias )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b51
 // Size: 0x1ce
 function function_b6050fd3b28e7aef( asmname, statename, params )
@@ -669,7 +670,7 @@ function function_b6050fd3b28e7aef( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d28
 // Size: 0x83
 function function_7c6b7c2cd3357729( asmname, statename, params )
@@ -697,7 +698,7 @@ function function_7c6b7c2cd3357729( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1db3
 // Size: 0x83
 function function_18e6c36c02a94dbd( statename, alias )
@@ -710,7 +711,7 @@ function function_18e6c36c02a94dbd( statename, alias )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e3f
 // Size: 0xd7
 function function_658df657ca37f542( statename, alias )
@@ -745,7 +746,7 @@ function function_658df657ca37f542( statename, alias )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f1f
 // Size: 0x184
 function function_976d6ccb0a2807f3( statename, optionalprefix, allownone )
@@ -812,7 +813,7 @@ function function_976d6ccb0a2807f3( statename, optionalprefix, allownone )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x20ac
 // Size: 0x24, Type: bool
 function cap_event( asmname, statename, tostatename, params )
@@ -821,7 +822,7 @@ function cap_event( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x20d9
 // Size: 0x24, Type: bool
 function function_2d6b1385ffc3f5ca( asmname, statename, tostatename, params )
@@ -830,7 +831,7 @@ function function_2d6b1385ffc3f5ca( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2106
 // Size: 0x34
 function function_85eca0a1310a70c( asmname, statename, tostatename, params )
@@ -844,7 +845,7 @@ function function_85eca0a1310a70c( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2143
 // Size: 0xb3
 function function_304541cf33d2193c( asmname, statename, params )
@@ -877,7 +878,7 @@ function function_304541cf33d2193c( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21fe
 // Size: 0x178
 function function_c779dc23caccb19c( asmname, statename, params )
@@ -932,7 +933,7 @@ function function_c779dc23caccb19c( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x237e
 // Size: 0x2c
 function cap_exit( asmname, statename, params )
@@ -946,7 +947,7 @@ function cap_exit( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x23b2
 // Size: 0x2e
 function function_a646f2b30e1f417( asmname, statename, params )
@@ -956,7 +957,7 @@ function function_a646f2b30e1f417( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x23e8
 // Size: 0x2e
 function function_c348991ddd3c9ce5( asmname, statename, params )
@@ -966,7 +967,7 @@ function function_c348991ddd3c9ce5( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x241e
 // Size: 0x4f
 function function_db8201ba3a4a894d( asmname, statename, params )
@@ -983,7 +984,7 @@ function function_db8201ba3a4a894d( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2475
 // Size: 0x58
 function function_71fe3f0b4ea06ff1( asmname, statename, params )
@@ -996,7 +997,7 @@ function function_71fe3f0b4ea06ff1( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x24d5
 // Size: 0x1b
 function cap_donothing( asmname, statename, params )
@@ -1005,7 +1006,7 @@ function cap_donothing( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x24f8
 // Size: 0x31
 function cap_init( asmname, fromstate, tostate, params )
@@ -1014,7 +1015,7 @@ function cap_init( asmname, fromstate, tostate, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2531
 // Size: 0x51, Type: bool
 function cap_attitude( asmname, fromstate, tostate, params )
@@ -1024,7 +1025,7 @@ function cap_attitude( asmname, fromstate, tostate, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x258b
 // Size: 0x32, Type: bool
 function cap_shouldreact( asmname, statename, tostatename, params )
@@ -1033,7 +1034,7 @@ function cap_shouldreact( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x25c6
 // Size: 0x51
 function function_e44a6892e1d2ec( asmname, statename, tostatename, params )
@@ -1048,7 +1049,7 @@ function function_e44a6892e1d2ec( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x261f
 // Size: 0x5d
 function function_11df7068a03bb818( asmname, statename, tostatename, params )
@@ -1064,7 +1065,7 @@ function function_11df7068a03bb818( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2684
 // Size: 0x5d
 function function_9cfcf25e2674ea46( asmname, statename, tostatename, params )
@@ -1080,7 +1081,7 @@ function function_9cfcf25e2674ea46( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x26e9
 // Size: 0x46
 function function_fbaf3f50df29a0ca( asmname, statename, tostatename, params )
@@ -1096,7 +1097,7 @@ function function_fbaf3f50df29a0ca( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2738
 // Size: 0xad, Type: bool
 function function_84e2d261814f426( asmname, statename, tostatename, params )
@@ -1115,7 +1116,7 @@ function function_84e2d261814f426( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x27ee
 // Size: 0x2c
 function function_d87741ac656cc282( asmname, statename, tostatename, params )
@@ -1124,7 +1125,7 @@ function function_d87741ac656cc282( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2823
 // Size: 0x2b
 function function_cd7b18478f9925a2( asmname, statename, tostatename, params )
@@ -1181,7 +1182,7 @@ function private function_9f458b5f165cfd34( params, dosighttrace )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2961
 // Size: 0x3e
 function function_eef8d65ad14bc7d( asmname, statename, tostatename, params )
@@ -1195,7 +1196,7 @@ function function_eef8d65ad14bc7d( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x29a8
 // Size: 0x3e
 function function_2c8145ed8b6c8504( asmname, statename, tostatename, params )
@@ -1209,7 +1210,7 @@ function function_2c8145ed8b6c8504( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x29ef
 // Size: 0x3e
 function function_9bfddb0e0134923b( asmname, statename, tostatename, params )
@@ -1223,7 +1224,7 @@ function function_9bfddb0e0134923b( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a36
 // Size: 0x3f
 function function_df51607ee78d1190( asmname, statename, tostatename, params )
@@ -1237,7 +1238,7 @@ function function_df51607ee78d1190( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a7e
 // Size: 0x40, Type: bool
 function function_276b2832ae7c7cf7( asmname, statename, tostatename, params )
@@ -1247,7 +1248,7 @@ function function_276b2832ae7c7cf7( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2ac7
 // Size: 0xa4, Type: bool
 function function_8439b78c94685919( asmname, statename, tostatename, params )
@@ -1274,7 +1275,7 @@ function function_8439b78c94685919( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b74
 // Size: 0x20e
 function function_2bd39480ae487049( note, params )
@@ -1356,7 +1357,7 @@ function function_2bd39480ae487049( note, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d8a
 // Size: 0x1a4
 function function_245f3c9cf9fb2ed4( note, statename )
@@ -1408,7 +1409,7 @@ function function_245f3c9cf9fb2ed4( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f36
 // Size: 0xcb
 function function_c2c313a844d139b9()
@@ -1442,7 +1443,7 @@ function function_c2c313a844d139b9()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3009
 // Size: 0x51
 function function_591bd29f12b13862( note )
@@ -1459,7 +1460,7 @@ function function_591bd29f12b13862( note )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3063
 // Size: 0xa9
 function notehandler_cellphone( note, statename )
@@ -1490,7 +1491,7 @@ function notehandler_cellphone( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3114
 // Size: 0x46
 function idle_getcellphone()
@@ -1506,7 +1507,7 @@ function idle_getcellphone()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3163
 // Size: 0xa9
 function function_f0a5a6335f173f80( note, statename )
@@ -1537,7 +1538,7 @@ function function_f0a5a6335f173f80( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3214
 // Size: 0x46
 function function_4c8b20626e0c2f54()
@@ -1553,7 +1554,7 @@ function function_4c8b20626e0c2f54()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3263
 // Size: 0xa9
 function function_2e7191a29c3331b3( note, statename )
@@ -1584,7 +1585,7 @@ function function_2e7191a29c3331b3( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3314
 // Size: 0x46
 function function_cc9b64be81cb46ef()
@@ -1600,7 +1601,7 @@ function function_cc9b64be81cb46ef()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3363
 // Size: 0x9a
 function function_fb2c788fbeb2ed0e( note, statename )
@@ -1626,7 +1627,7 @@ function function_fb2c788fbeb2ed0e( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3405
 // Size: 0x9a
 function function_2059f541bb4ec92b( note, statename )
@@ -1652,7 +1653,7 @@ function function_2059f541bb4ec92b( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34a7
 // Size: 0x1e6
 function notehandler_smoking( note, statename )
@@ -1708,7 +1709,7 @@ function notehandler_smoking( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3695
 // Size: 0x46
 function function_f7b213561a5c3b4c()
@@ -1724,7 +1725,7 @@ function function_f7b213561a5c3b4c()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36e4
 // Size: 0x81
 function smoking_blowsmoke( statename )
@@ -1747,7 +1748,7 @@ function smoking_blowsmoke( statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x376d
 // Size: 0x94
 function smoking_cleanup( asmname, statename, params )
@@ -1771,7 +1772,7 @@ function smoking_cleanup( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3809
 // Size: 0xbb
 function function_78fc852578a2d6a9( note, statename )
@@ -1802,7 +1803,7 @@ function function_78fc852578a2d6a9( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38cc
 // Size: 0x46
 function function_34554aaf056d23d()
@@ -1818,7 +1819,7 @@ function function_34554aaf056d23d()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x391b
 // Size: 0xa8
 function function_65bcde73638156e( note, statename )
@@ -1849,7 +1850,7 @@ function function_65bcde73638156e( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39cb
 // Size: 0x46
 function idle_focusflashlight()
@@ -1865,7 +1866,7 @@ function idle_focusflashlight()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a1a
 // Size: 0xa0
 function notehandler_drinking( note, statename )
@@ -1895,7 +1896,7 @@ function notehandler_drinking( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ac2
 // Size: 0x46
 function function_6d9a6be03f41b2c()
@@ -1911,7 +1912,7 @@ function function_6d9a6be03f41b2c()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b11
 // Size: 0xa0
 function function_75ab18574236de38( note, statename )
@@ -1941,7 +1942,7 @@ function function_75ab18574236de38( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bb9
 // Size: 0x46
 function function_ccfa6fb9cdc07744()
@@ -1957,7 +1958,7 @@ function function_ccfa6fb9cdc07744()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3c08
 // Size: 0x24
 function function_2e7f07f6090ddeb5( note, statename )
@@ -1969,7 +1970,7 @@ function function_2e7f07f6090ddeb5( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3c34
 // Size: 0x147
 function function_9e1b3a33e6a8c117( note, statename )
@@ -2005,7 +2006,7 @@ function function_9e1b3a33e6a8c117( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3d83
 // Size: 0x7e
 function function_ad085c5f946742f4( note, statename )
@@ -2021,7 +2022,7 @@ function function_ad085c5f946742f4( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e09
 // Size: 0xf4
 function function_8b7e11da82242584( note, statename )
@@ -2049,7 +2050,7 @@ function function_8b7e11da82242584( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f05
 // Size: 0x46
 function function_1ee6622550f2a5d0()
@@ -2065,7 +2066,7 @@ function function_1ee6622550f2a5d0()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f54
 // Size: 0x93
 function function_425680112c205848( note, statename )
@@ -2093,7 +2094,7 @@ function function_425680112c205848( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3fef
 // Size: 0x1e7
 function function_18f4224c27507c56( note, statename )
@@ -2130,7 +2131,7 @@ function function_18f4224c27507c56( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41de
 // Size: 0x2a
 function function_cbde85a808114924()
@@ -2143,7 +2144,7 @@ function function_cbde85a808114924()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4210
 // Size: 0x3f
 function function_399c8ad9434488e8()
@@ -2161,7 +2162,7 @@ function function_399c8ad9434488e8()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4257
 // Size: 0x211
 function function_ad40b641674a572d( note, statename )
@@ -2221,7 +2222,7 @@ function function_ad40b641674a572d( note, statename )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4470
 // Size: 0x87
 function spawnchair()
@@ -2242,7 +2243,7 @@ function spawnchair()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4500
 // Size: 0x46
 function function_fe4813e6b6140728()
@@ -2258,7 +2259,7 @@ function function_fe4813e6b6140728()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x454f
 // Size: 0x2f
 function cappropcleanup( asmname, statename, params )
@@ -2268,7 +2269,7 @@ function cappropcleanup( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4586
 // Size: 0xda
 function prop_drop( asmname, statename, params )
@@ -2307,7 +2308,7 @@ function prop_drop( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4668
 // Size: 0xb3
 function launchprop( prop )
@@ -2327,7 +2328,7 @@ function launchprop( prop )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4723
 // Size: 0xa0
 function prop_delete()
@@ -2353,7 +2354,7 @@ function prop_delete()
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x47cb
 // Size: 0x5e
 function idle_cleanup( asmname, statename, params )
@@ -2371,7 +2372,7 @@ function idle_cleanup( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4831
 // Size: 0x57, Type: bool
 function function_eaf18f0250abb7e7( asmname, statename, params )
@@ -2389,7 +2390,7 @@ function function_eaf18f0250abb7e7( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4891
 // Size: 0x22, Type: bool
 function ininteraction( asmname, statename, params )
@@ -2398,7 +2399,7 @@ function ininteraction( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x48bc
 // Size: 0x38, Type: bool
 function incap( asmname, statename, params )
@@ -2407,7 +2408,7 @@ function incap( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x48fd
 // Size: 0x9c
 function function_8c68332a9a43f4ea( asmname, statename, params )
@@ -2429,7 +2430,7 @@ function function_8c68332a9a43f4ea( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x49a2
 // Size: 0x37, Type: bool
 function function_741a8c95a0ba229a( asmname, statename, tostatename, params )
@@ -2438,7 +2439,7 @@ function function_741a8c95a0ba229a( asmname, statename, tostatename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x49e2
 // Size: 0x1bb
 function function_85c5a3c3c6f345c4( asmname, statename, params )
@@ -2481,7 +2482,7 @@ function function_85c5a3c3c6f345c4( asmname, statename, params )
 }
 
 // Namespace cap / scripts\asm\cap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4ba6
 // Size: 0x2d, Type: bool
 function function_b98734875ecb0d81( asmname, statename, tostatename, params )

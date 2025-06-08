@@ -6,7 +6,7 @@
 #namespace namespace_688ed4709dca758f;
 
 // Namespace namespace_688ed4709dca758f / namespace_779ebc650a9ef856
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x113
 // Size: 0x66
 function function_cb2e672e5fb4f3( activityinstance, scriptablename, origin, var_401b874a8c1c501f )
@@ -25,7 +25,7 @@ function function_cb2e672e5fb4f3( activityinstance, scriptablename, origin, var_
 }
 
 // Namespace namespace_688ed4709dca758f / namespace_779ebc650a9ef856
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x182
 // Size: 0x41
 function function_5b71b730bfefd36a( activityinstance, scriptable, var_401b874a8c1c501f )
@@ -40,7 +40,7 @@ function function_5b71b730bfefd36a( activityinstance, scriptable, var_401b874a8c
 }
 
 // Namespace namespace_688ed4709dca758f / namespace_779ebc650a9ef856
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cb
 // Size: 0x69
 function function_5c4c35644d53846f( activityinstance, scriptables, var_401b874a8c1c501f )
@@ -52,7 +52,7 @@ function function_5c4c35644d53846f( activityinstance, scriptables, var_401b874a8
 }
 
 // Namespace namespace_688ed4709dca758f / namespace_779ebc650a9ef856
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x23c
 // Size: 0x122
 function function_12e90953c7c6cbf4( activityinstance, activitymoment, scriptable, partname, statename )
@@ -92,7 +92,7 @@ function function_12e90953c7c6cbf4( activityinstance, activitymoment, scriptable
 }
 
 // Namespace namespace_688ed4709dca758f / namespace_779ebc650a9ef856
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x366
 // Size: 0x1a5
 function function_dfe0a21d9848315e( activityinstance, activitymoment )
@@ -138,7 +138,7 @@ function function_dfe0a21d9848315e( activityinstance, activitymoment )
 }
 
 // Namespace namespace_688ed4709dca758f / namespace_779ebc650a9ef856
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x513
 // Size: 0x48
 function function_494bce73f65c6b6f( activityinstance )
@@ -150,7 +150,7 @@ function function_494bce73f65c6b6f( activityinstance )
 }
 
 // Namespace namespace_688ed4709dca758f / namespace_779ebc650a9ef856
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x564
 // Size: 0xeb
 function function_d81c572daff63cf9( activityinstance )

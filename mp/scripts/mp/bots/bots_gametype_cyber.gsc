@@ -12,7 +12,7 @@
 #namespace bots_gametype_cyber;
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x287
 // Size: 0x10
 function main()
@@ -24,7 +24,7 @@ function main()
 /#
 
     // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x29f
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -35,7 +35,7 @@ function main()
 #/
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ac
 // Size: 0x65
 function setup_callbacks()
@@ -48,7 +48,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x319
 // Size: 0xa3
 function setup_bot_cyber()
@@ -70,7 +70,7 @@ function setup_bot_cyber()
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c4
 // Size: 0x46e
 function bot_cyber_think()
@@ -198,7 +198,7 @@ function bot_cyber_think()
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x83a
 // Size: 0x26, Type: bool
 function bot_abort_emp_pickup( goal )
@@ -212,7 +212,7 @@ function bot_abort_emp_pickup( goal )
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x869
 // Size: 0x49
 function cyber_bot_pickup_emp( goal )
@@ -227,7 +227,7 @@ function cyber_bot_pickup_emp( goal )
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ba
 // Size: 0x5d
 function waittill_usebutton_released_or_time_or_bomb_planted( time )
@@ -243,7 +243,7 @@ function waittill_usebutton_released_or_time_or_bomb_planted( time )
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91f
 // Size: 0x8
 function is_defending_bombzone()
@@ -252,7 +252,7 @@ function is_defending_bombzone()
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x930
 // Size: 0x28
 function init_bot_game_cyber()
@@ -266,7 +266,7 @@ function init_bot_game_cyber()
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x960
 // Size: 0x333
 function update_game_cyber()
@@ -360,7 +360,7 @@ function update_game_cyber()
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc9b
 // Size: 0x1a8
 function bomber_think()
@@ -400,7 +400,7 @@ function bomber_think()
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe4b
 // Size: 0x62, Type: bool
 function crate_can_use( crate )
@@ -429,7 +429,7 @@ function crate_can_use( crate )
 }
 
 // Namespace bots_gametype_cyber / scripts\mp\bots\bots_gametype_cyber
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb6
 // Size: 0x17d, Type: bool
 function bot_abort_tactical_goal_for_revive()

@@ -15,7 +15,7 @@
 #namespace br_history_quest;
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a5
 // Size: 0xd9
 function init()
@@ -39,7 +39,7 @@ function init()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x386
 // Size: 0x35
 function his_respawn( player )
@@ -58,7 +58,7 @@ function his_respawn( player )
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c3
 // Size: 0x1b
 function his_ontimerexpired()
@@ -67,7 +67,7 @@ function his_ontimerexpired()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e6
 // Size: 0xbb
 function his_removequestinstance()
@@ -90,7 +90,7 @@ function his_removequestinstance()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a9
 // Size: 0x4c
 function his_playerdisconnect( disconnectplayer )
@@ -106,7 +106,7 @@ function his_playerdisconnect( disconnectplayer )
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x2b
 function checkforcorrectinstance( player )
@@ -120,7 +120,7 @@ function checkforcorrectinstance( player )
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x530
 // Size: 0x1cb
 function givequest( team, id, player, modifier, rewardscriptable )
@@ -150,7 +150,7 @@ function givequest( team, id, player, modifier, rewardscriptable )
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x704
 // Size: 0x78
 function applyquest()
@@ -173,7 +173,7 @@ function applyquest()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x785
 // Size: 0x29
 function oninstanceremoved()
@@ -188,7 +188,7 @@ function oninstanceremoved()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b6
 // Size: 0x39d
 function createallhistorydestinations()
@@ -225,7 +225,7 @@ function createallhistorydestinations()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb5b
 // Size: 0xbf
 function createhistorydestination( destorigin )
@@ -241,7 +241,7 @@ function createhistorydestination( destorigin )
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc23
 // Size: 0x41
 function function_d2d089ee1f5a18cf()
@@ -258,7 +258,7 @@ function function_d2d089ee1f5a18cf()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6c
 // Size: 0xcc
 function function_61ede860368601be( destination )
@@ -279,7 +279,7 @@ function function_61ede860368601be( destination )
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd40
 // Size: 0x220
 function sethistorydestination()
@@ -318,7 +318,7 @@ function sethistorydestination()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf68
 // Size: 0xac
 function setfirsthistorydestination()
@@ -329,7 +329,8 @@ function setfirsthistorydestination()
     
     self.destorder = [];
     
-    for (index = 0; index < getquestdata( "history" ).destinations.size; index++) {
+    for ( index = 0; index < getquestdata( "history" ).destinations.size ; index++ )
+    {
         self.destorder[ index ] = index;
     }
     
@@ -340,7 +341,7 @@ function setfirsthistorydestination()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x101c
 // Size: 0x2f
 function setnexthistorydestination()
@@ -354,7 +355,7 @@ function setnexthistorydestination()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1053
 // Size: 0xbf
 function reachhistorydestination()
@@ -381,7 +382,7 @@ function reachhistorydestination()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x111a
 // Size: 0x20
 function his_think()
@@ -397,7 +398,7 @@ function his_think()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1142
 // Size: 0x129
 function his_completemission()
@@ -429,7 +430,7 @@ function his_completemission()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1273
 // Size: 0x21
 function failhistoryquest()
@@ -443,7 +444,7 @@ function failhistoryquest()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x129c
 // Size: 0x63
 function updatehistoryhud()
@@ -456,7 +457,7 @@ function updatehistoryhud()
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1307
 // Size: 0x25
 function hidehistoryhudfromplayer( player )
@@ -470,7 +471,7 @@ function hidehistoryhudfromplayer( player )
 }
 
 // Namespace br_history_quest / scripts\mp\gametypes\br_history_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1334
 // Size: 0xc3
 function deletehistoryhud()

@@ -11,7 +11,7 @@
 #namespace jup_ob_enemy_specialist_heavytactician_fortressguard;
 
 // Namespace jup_ob_enemy_specialist_heavytactician_fortressguard / namespace_9a2277de2fa644a6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x235
 // Size: 0x1c9
 function main()
@@ -47,7 +47,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_specialist_heavytactician_fortressguard / namespace_9a2277de2fa644a6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x406
 // Size: 0x57
 function setup_model()
@@ -64,7 +64,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_specialist_heavytactician_fortressguard / namespace_9a2277de2fa644a6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x465
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -73,7 +73,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_specialist_heavytactician_fortressguard / namespace_9a2277de2fa644a6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x476
 // Size: 0xcf
 function precache()
@@ -102,7 +102,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_specialist_heavytactician_fortressguard / namespace_9a2277de2fa644a6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54d
 // Size: 0xb2
 function setup_weapons()

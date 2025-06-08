@@ -137,8 +137,8 @@
 #namespace weapons;
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bc0
+// Params 1
+// Checksum 0x0, Offset: 0x3c0e
 // Size: 0x1a
 function attachmentgroup( attachmentname )
 {
@@ -146,8 +146,8 @@ function attachmentgroup( attachmentname )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3be3
+// Params 0
+// Checksum 0x0, Offset: 0x3c31
 // Size: 0x380
 function init()
 {
@@ -226,8 +226,8 @@ function init()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f6b
+// Params 0
+// Checksum 0x0, Offset: 0x3fb9
 // Size: 0x25c
 function savegraverobberammo()
 {
@@ -282,8 +282,8 @@ function savegraverobberammo()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41cf
+// Params 1
+// Checksum 0x0, Offset: 0x421d
 // Size: 0x13
 function enablevisibilitycullingforclient( client )
 {
@@ -291,8 +291,8 @@ function enablevisibilitycullingforclient( client )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x41ea
+// Params 0
+// Checksum 0x0, Offset: 0x4238
 // Size: 0x80
 function onplayerconnect()
 {
@@ -314,8 +314,8 @@ function onplayerconnect()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4272
+// Params 0
+// Checksum 0x0, Offset: 0x42c0
 // Size: 0x4cf
 function function_627adf66cf046c65()
 {
@@ -514,8 +514,8 @@ function function_627adf66cf046c65()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4749
+// Params 0
+// Checksum 0x0, Offset: 0x4797
 // Size: 0x17b
 function watchchangeweapon()
 {
@@ -525,7 +525,8 @@ function watchchangeweapon()
     level endon( "game_ended" );
     var_8d9fb0db0c319184 = spawnstruct();
     
-    for (lastweapon = undefined; true; lastweapon = objweapon) {
+    for ( lastweapon = undefined; true ; lastweapon = objweapon )
+    {
         objweapon = self getcurrentweapon();
         
         if ( isdefined( objweapon ) )
@@ -571,8 +572,8 @@ function watchchangeweapon()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48cc
+// Params 1
+// Checksum 0x0, Offset: 0x491a
 // Size: 0x84
 function dochangeweapon( objweapon )
 {
@@ -595,8 +596,8 @@ function dochangeweapon( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4958
+// Params 1
+// Checksum 0x0, Offset: 0x49a6
 // Size: 0x4f
 function scriptedmountdisable( objweapon )
 {
@@ -614,8 +615,8 @@ function scriptedmountdisable( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x49af
+// Params 0
+// Checksum 0x0, Offset: 0x49fd
 // Size: 0x26
 function function_5845dd5192f930b7()
 {
@@ -625,8 +626,8 @@ function function_5845dd5192f930b7()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49dd
+// Params 1
+// Checksum 0x0, Offset: 0x4a2b
 // Size: 0x3b, Type: bool
 function function_dd461671d4007c1f( objweapon )
 {
@@ -641,8 +642,8 @@ function function_dd461671d4007c1f( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a21
+// Params 1
+// Checksum 0x0, Offset: 0x4a6f
 // Size: 0x143
 function logchangeweapon( objweapon )
 {
@@ -692,8 +693,8 @@ function logchangeweapon( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b6c
+// Params 0
+// Checksum 0x0, Offset: 0x4bba
 // Size: 0x1a
 function updateweaponperks()
 {
@@ -701,8 +702,8 @@ function updateweaponperks()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b8e
+// Params 1
+// Checksum 0x0, Offset: 0x4bdc
 // Size: 0x1e
 function updatesniperglint( objweapon )
 {
@@ -713,8 +714,8 @@ function updatesniperglint( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bb4
+// Params 1
+// Checksum 0x0, Offset: 0x4c02
 // Size: 0x2b
 function function_daef03172b217e78( objweapon )
 {
@@ -726,8 +727,8 @@ function function_daef03172b217e78( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4be7
+// Params 0
+// Checksum 0x0, Offset: 0x4c35
 // Size: 0x26c
 function updatelauncherusage()
 {
@@ -807,8 +808,8 @@ function updatelauncherusage()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e5b
+// Params 1
+// Checksum 0x0, Offset: 0x4ea9
 // Size: 0x2f
 function setlastdroppableweaponobj( weaponobj )
 {
@@ -821,8 +822,8 @@ function setlastdroppableweaponobj( weaponobj )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e92
+// Params 1
+// Checksum 0x0, Offset: 0x4ee0
 // Size: 0x6d
 function updatelastweaponobj( objnewweapon )
 {
@@ -852,8 +853,8 @@ function updatelastweaponobj( objnewweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f07
+// Params 1
+// Checksum 0x0, Offset: 0x4f55
 // Size: 0xb9
 function updateweaponspeed( objnewweapon )
 {
@@ -887,8 +888,8 @@ function updateweaponspeed( objnewweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fc8
+// Params 1
+// Checksum 0x0, Offset: 0x5016
 // Size: 0x42
 function function_9085d7f0321ea2a4( objweapon )
 {
@@ -903,8 +904,8 @@ function function_9085d7f0321ea2a4( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5012
+// Params 0
+// Checksum 0x0, Offset: 0x5060
 // Size: 0x144
 function function_c49a0d832ace8e5e()
 {
@@ -934,8 +935,8 @@ function function_c49a0d832ace8e5e()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x515e
+// Params 0
+// Checksum 0x0, Offset: 0x51ac
 // Size: 0x1c3
 function onplayerspawned()
 {
@@ -996,8 +997,8 @@ function onplayerspawned()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5329
+// Params 0
+// Checksum 0x0, Offset: 0x5377
 // Size: 0xe9
 function savealtstates()
 {
@@ -1018,8 +1019,8 @@ function savealtstates()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x541a
+// Params 0
+// Checksum 0x0, Offset: 0x5468
 // Size: 0x187
 function savetogglescopestates()
 {
@@ -1062,8 +1063,8 @@ function savetogglescopestates()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x55a9
+// Params 1
+// Checksum 0x0, Offset: 0x55f7
 // Size: 0xac
 function updatetogglescopestate( objweapon )
 {
@@ -1085,8 +1086,8 @@ function updatetogglescopestate( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x565d
+// Params 1
+// Checksum 0x0, Offset: 0x56ab
 // Size: 0x5d, Type: bool
 function function_dab7bc436f0b0bde( objweapon )
 {
@@ -1099,8 +1100,8 @@ function function_dab7bc436f0b0bde( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x56c3
+// Params 1
+// Checksum 0x0, Offset: 0x5711
 // Size: 0x8e
 function updatesavedaltstate( objweapon )
 {
@@ -1120,8 +1121,8 @@ function updatesavedaltstate( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x575a
+// Params 2
+// Checksum 0x0, Offset: 0x57a8
 // Size: 0x34, Type: bool
 function istogglescope( weapon, attachment )
 {
@@ -1135,8 +1136,8 @@ function istogglescope( weapon, attachment )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5797
+// Params 1
+// Checksum 0x0, Offset: 0x57e5
 // Size: 0x3e, Type: bool
 function shouldweaponsavealtstate( objweapon )
 {
@@ -1152,17 +1153,17 @@ function shouldweaponsavealtstate( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x57de
-// Size: 0x1b, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0x582c
+// Size: 0x1b
 function shouldattachmentsavealtstate( objweapon, attachunique )
 {
     return isattachmentselectfire( objweapon, attachunique );
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5802
+// Params 2
+// Checksum 0x0, Offset: 0x5850
 // Size: 0x2d, Type: bool
 function isattachmentselectfire( weapon, attachment )
 {
@@ -1171,8 +1172,8 @@ function isattachmentselectfire( weapon, attachment )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5838
+// Params 1
+// Checksum 0x0, Offset: 0x5886
 // Size: 0xc, Type: bool
 function isattachmentgrenadelauncher( attachunique )
 {
@@ -1180,8 +1181,8 @@ function isattachmentgrenadelauncher( attachunique )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x584d
+// Params 2
+// Checksum 0x0, Offset: 0x589b
 // Size: 0x99
 function weaponperkupdate( currweaponobj, prevweaponobj )
 {
@@ -1209,8 +1210,8 @@ function weaponperkupdate( currweaponobj, prevweaponobj )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x58ee
+// Params 2
+// Checksum 0x0, Offset: 0x593c
 // Size: 0x1b6
 function weaponattachmentperkupdate( currweaponobj, prevweaponobj )
 {
@@ -1265,8 +1266,8 @@ function weaponattachmentperkupdate( currweaponobj, prevweaponobj )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5aac
+// Params 1
+// Checksum 0x0, Offset: 0x5afa
 // Size: 0x30
 function doweaponperkupdate( prevweaponobj )
 {
@@ -1277,8 +1278,8 @@ function doweaponperkupdate( prevweaponobj )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ae5
+// Params 0
+// Checksum 0x0, Offset: 0x5b33
 // Size: 0x3d
 function watchweaponperkupdates()
 {
@@ -1295,8 +1296,8 @@ function watchweaponperkupdates()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b2a
+// Params 1
+// Checksum 0x0, Offset: 0x5b78
 // Size: 0x2a
 function function_a7adacdb4c7641c9( usefirstperson )
 {
@@ -1310,29 +1311,29 @@ function function_a7adacdb4c7641c9( usefirstperson )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b5c
-// Size: 0x70, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0x5baa
+// Size: 0x70
 function sniperglint_supported( weapon )
 {
     if ( isnullweapon( weapon ) || !isdefined( weapon.scope ) || weaponclass( weapon ) == "rocketlauncher" )
     {
-        return false;
+        return 0;
     }
     
     class = weaponclass( weapon );
     
     if ( self isalternatemode( weapon ) && ( class == "grenade" || class == "spread" ) )
     {
-        return false;
+        return 0;
     }
     
     return function_cb81eb90ddc79ab7();
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bd5
+// Params 0
+// Checksum 0x0, Offset: 0x5c23
 // Size: 0x50, Type: bool
 function function_cb81eb90ddc79ab7()
 {
@@ -1345,8 +1346,8 @@ function function_cb81eb90ddc79ab7()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c2e
+// Params 1
+// Checksum 0x0, Offset: 0x5c7c
 // Size: 0x74, Type: bool
 function function_b3e5f50a0d4a9c86( weapon )
 {
@@ -1364,8 +1365,8 @@ function function_b3e5f50a0d4a9c86( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cab
+// Params 1
+// Checksum 0x0, Offset: 0x5cf9
 // Size: 0xae
 function sniperglint_manage( objweapon )
 {
@@ -1396,8 +1397,8 @@ function sniperglint_manage( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d61
+// Params 0
+// Checksum 0x0, Offset: 0x5daf
 // Size: 0x3e
 function sniperglint_cleanup()
 {
@@ -1411,8 +1412,8 @@ function sniperglint_cleanup()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5da7
+// Params 0
+// Checksum 0x0, Offset: 0x5df5
 // Size: 0xf9
 function sniperglint_add()
 {
@@ -1444,8 +1445,8 @@ function sniperglint_add()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ea8
+// Params 0
+// Checksum 0x0, Offset: 0x5ef6
 // Size: 0x64
 function sniperglint_remove()
 {
@@ -1460,8 +1461,8 @@ function sniperglint_remove()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f14
+// Params 1
+// Checksum 0x0, Offset: 0x5f62
 // Size: 0x63
 function sniperadsblur( weapon )
 {
@@ -1484,8 +1485,8 @@ function sniperadsblur( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f7f
+// Params 1
+// Checksum 0x0, Offset: 0x5fcd
 // Size: 0x48
 function sniperadsblur_execute( weapon )
 {
@@ -1498,8 +1499,8 @@ function sniperadsblur_execute( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fcf
+// Params 0
+// Checksum 0x0, Offset: 0x601d
 // Size: 0x1d
 function sniperadsblur_remove()
 {
@@ -1509,8 +1510,8 @@ function sniperadsblur_remove()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ff4
+// Params 1
+// Checksum 0x0, Offset: 0x6042
 // Size: 0x72
 function getsniperadsblurtime( weapon )
 {
@@ -1533,8 +1534,8 @@ function getsniperadsblurtime( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x606f
+// Params 0
+// Checksum 0x0, Offset: 0x60bd
 // Size: 0x102
 function watchsniperboltactionkills()
 {
@@ -1568,8 +1569,8 @@ function watchsniperboltactionkills()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6179
+// Params 0
+// Checksum 0x0, Offset: 0x61c7
 // Size: 0x31
 function watchsniperboltactionkills_ondeath()
 {
@@ -1581,8 +1582,8 @@ function watchsniperboltactionkills_ondeath()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61b2
+// Params 1
+// Checksum 0x0, Offset: 0x6200
 // Size: 0xc, Type: bool
 function isrecoilreducingweapon( weapon )
 {
@@ -1590,8 +1591,8 @@ function isrecoilreducingweapon( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x61c7
+// Params 0
+// Checksum 0x0, Offset: 0x6215
 // Size: 0x38
 function getrecoilreductionvalue()
 {
@@ -1604,8 +1605,8 @@ function getrecoilreductionvalue()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6208
+// Params 1
+// Checksum 0x0, Offset: 0x6256
 // Size: 0x3c, Type: bool
 function ishackweapon( weapon )
 {
@@ -1623,8 +1624,8 @@ function ishackweapon( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x624d
+// Params 1
+// Checksum 0x0, Offset: 0x629b
 // Size: 0x1b, Type: bool
 function isfistweapon( weapon )
 {
@@ -1633,8 +1634,8 @@ function isfistweapon( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6271
+// Params 1
+// Checksum 0x0, Offset: 0x62bf
 // Size: 0x3e, Type: bool
 function isbombplantweapon( weapon )
 {
@@ -1642,8 +1643,8 @@ function isbombplantweapon( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x62b8
+// Params 4
+// Checksum 0x0, Offset: 0x6306
 // Size: 0x2cc
 function dropweaponfordeath( attacker, smeansofdeath, weaponoverride, damage )
 {
@@ -1783,8 +1784,8 @@ function dropweaponfordeath( attacker, smeansofdeath, weaponoverride, damage )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x658c
+// Params 1
+// Checksum 0x0, Offset: 0x65da
 // Size: 0x74
 function function_ea90a9bb06631b2b( player )
 {
@@ -1811,8 +1812,8 @@ function function_ea90a9bb06631b2b( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6608
+// Params 1
+// Checksum 0x0, Offset: 0x6656
 // Size: 0x249
 function forcedropweapon( weaponoverride )
 {
@@ -1939,14 +1940,15 @@ function forcedropweapon( weaponoverride )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x685a
+// Params 2
+// Checksum 0x0, Offset: 0x68a8
 // Size: 0xb8, Type: bool
 function detachifattached( model, basetag )
 {
     attachsize = self getattachsize();
     
-    for (i = 0; i < attachsize; i++) {
+    for ( i = 0; i < attachsize ; i++ )
+    {
         attach = self getattachmodelname( i );
         
         if ( attach != model )
@@ -1961,7 +1963,8 @@ function detachifattached( model, basetag )
         {
             attachsize = self getattachsize();
             
-            for (i = 0; i < attachsize; i++) {
+            for ( i = 0; i < attachsize ; i++ )
+            {
                 tag = self getattachtagname( i );
                 
                 if ( tag != basetag )
@@ -1982,8 +1985,8 @@ function detachifattached( model, basetag )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x691b
+// Params 0
+// Checksum 0x0, Offset: 0x6969
 // Size: 0x14
 function deletepickupafterawhile()
 {
@@ -1993,8 +1996,8 @@ function deletepickupafterawhile()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6937
+// Params 1
+// Checksum 0x0, Offset: 0x6985
 // Size: 0x29
 function function_aeabbb3b58e1d822( player )
 {
@@ -2005,8 +2008,8 @@ function function_aeabbb3b58e1d822( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6968
+// Params 1
+// Checksum 0x0, Offset: 0x69b6
 // Size: 0x20
 function pickupdelete( pickup )
 {
@@ -2020,8 +2023,8 @@ function pickupdelete( pickup )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6990
+// Params 0
+// Checksum 0x0, Offset: 0x69de
 // Size: 0x42
 function getitemweaponname()
 {
@@ -2032,8 +2035,8 @@ function getitemweaponname()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x69db
+// Params 1
+// Checksum 0x0, Offset: 0x6a29
 // Size: 0x5bb
 function watchpickup( droppingplayer )
 {
@@ -2240,8 +2243,8 @@ function watchpickup( droppingplayer )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f9e
+// Params 1
+// Checksum 0x0, Offset: 0x6fec
 // Size: 0x76
 function waitthengivecyberweapon( var_8a5abcce61604b23 )
 {
@@ -2263,8 +2266,8 @@ function waitthengivecyberweapon( var_8a5abcce61604b23 )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x701c
+// Params 3
+// Checksum 0x0, Offset: 0x706a
 // Size: 0xd9
 function watchpickupcomplete( desiredweapon, previousweapon, var_fee12400d8814b47 )
 {
@@ -2320,8 +2323,8 @@ function watchpickupcomplete( desiredweapon, previousweapon, var_fee12400d8814b4
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x70fd
+// Params 2
+// Checksum 0x0, Offset: 0x714b
 // Size: 0x14
 function getrandomgraverobberattachment( currentweapon, var_79583f5b5010a954 )
 {
@@ -2329,8 +2332,8 @@ function getrandomgraverobberattachment( currentweapon, var_79583f5b5010a954 )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x711a
+// Params 2
+// Checksum 0x0, Offset: 0x7168
 // Size: 0x2a0
 function addattachmenttoweapon( newweapon, var_effb4ae1788a8b10 )
 {
@@ -2416,8 +2419,8 @@ function addattachmenttoweapon( newweapon, var_effb4ae1788a8b10 )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x73c3
+// Params 3
+// Checksum 0x0, Offset: 0x7411
 // Size: 0xcf
 function function_71dc088dc384ef8d( weaponname, numattachments, var_a4d5e0f6b90df7eb )
 {
@@ -2452,8 +2455,8 @@ function function_71dc088dc384ef8d( weaponname, numattachments, var_a4d5e0f6b90d
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x749b
+// Params 5
+// Checksum 0x0, Offset: 0x74e9
 // Size: 0x23f
 function function_8df87e6b1d13c15a( weaponobj, numattachments, var_a4d5e0f6b90df7eb, excludeslots, minpriority )
 {
@@ -2536,8 +2539,8 @@ function function_8df87e6b1d13c15a( weaponobj, numattachments, var_a4d5e0f6b90df
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x76e3
+// Params 2
+// Checksum 0x0, Offset: 0x7731
 // Size: 0x1d4
 function getammooverride( weaponobj, forceclipsize )
 {
@@ -2620,8 +2623,8 @@ function getammooverride( weaponobj, forceclipsize )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x78c0
+// Params 2
+// Checksum 0x0, Offset: 0x790e
 // Size: 0x85, Type: bool
 function isgraverobberattachment( weapon, attachmentbasename )
 {
@@ -2657,8 +2660,8 @@ function isgraverobberattachment( weapon, attachmentbasename )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x794e
+// Params 0
+// Checksum 0x0, Offset: 0x799c
 // Size: 0x2
 function notifyuiofpickedupweapon()
 {
@@ -2666,23 +2669,24 @@ function notifyuiofpickedupweapon()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7958
+// Params 0
+// Checksum 0x0, Offset: 0x79a6
 // Size: 0x5a
 function itemremoveammofromaltmodes()
 {
     var_b2cac67dce789126 = getitemweaponname();
     var_f3a75b200cedf31f = weaponaltweaponname( var_b2cac67dce789126 );
     
-    for (altindex = 1; var_f3a75b200cedf31f != "none" && var_f3a75b200cedf31f != var_b2cac67dce789126; altindex++) {
+    for ( altindex = 1; var_f3a75b200cedf31f != "none" && var_f3a75b200cedf31f != var_b2cac67dce789126 ; altindex++ )
+    {
         self itemweaponsetammo( 0, 0, 0, altindex );
         var_f3a75b200cedf31f = weaponaltweaponname( var_f3a75b200cedf31f );
     }
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x79ba
+// Params 2
+// Checksum 0x0, Offset: 0x7a08
 // Size: 0x62
 function function_7e895e1c85354e17( attacker, meansofdeath )
 {
@@ -2708,8 +2712,8 @@ function function_7e895e1c85354e17( attacker, meansofdeath )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a24
+// Params 2
+// Checksum 0x0, Offset: 0x7a72
 // Size: 0x2f, Type: bool
 function function_8380039e393ec43a( attacker, meansofdeath )
 {
@@ -2732,8 +2736,8 @@ function function_8380039e393ec43a( attacker, meansofdeath )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a5c
+// Params 1
+// Checksum 0x0, Offset: 0x7aaa
 // Size: 0xc4
 function function_1e5278055e7032ee( attacker )
 {
@@ -2763,8 +2767,8 @@ function function_1e5278055e7032ee( attacker )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b28
+// Params 1
+// Checksum 0x0, Offset: 0x7b76
 // Size: 0x1c
 function armoronuse( player )
 {
@@ -2772,8 +2776,8 @@ function armoronuse( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b4c
+// Params 0
+// Checksum 0x0, Offset: 0x7b9a
 // Size: 0xde
 function function_40c995b337d540b5()
 {
@@ -2813,8 +2817,8 @@ function function_40c995b337d540b5()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c32
+// Params 1
+// Checksum 0x0, Offset: 0x7c80
 // Size: 0x12b
 function function_2be53701abcf1e63( armor )
 {
@@ -2858,8 +2862,8 @@ function function_2be53701abcf1e63( armor )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d65
+// Params 0
+// Checksum 0x0, Offset: 0x7db3
 // Size: 0x25
 function function_a642b6997daab69a()
 {
@@ -2872,8 +2876,8 @@ function function_a642b6997daab69a()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d92
+// Params 0
+// Checksum 0x0, Offset: 0x7de0
 // Size: 0x50
 function function_cb9c3a8ed8dae404()
 {
@@ -2894,8 +2898,8 @@ function function_cb9c3a8ed8dae404()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7dea
+// Params 0
+// Checksum 0x0, Offset: 0x7e38
 // Size: 0x2f
 function function_6b7147d3c072f4bd()
 {
@@ -2911,8 +2915,8 @@ function function_6b7147d3c072f4bd()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e21
+// Params 0
+// Checksum 0x0, Offset: 0x7e6f
 // Size: 0x21
 function function_8dd67f32058884cf()
 {
@@ -2924,8 +2928,8 @@ function function_8dd67f32058884cf()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e4a
+// Params 0
+// Checksum 0x0, Offset: 0x7e98
 // Size: 0x20, Type: bool
 function function_934801be51b4393f()
 {
@@ -2938,8 +2942,8 @@ function function_934801be51b4393f()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e73
+// Params 1
+// Checksum 0x0, Offset: 0x7ec1
 // Size: 0x1c9
 function onscavengerbagpickup( player )
 {
@@ -2997,7 +3001,7 @@ function onscavengerbagpickup( player )
 
 // Namespace weapons / scripts\mp\weapons
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x8044
+// Checksum 0x0, Offset: 0x8092
 // Size: 0x38
 function private function_44e99168f6830136( player )
 {
@@ -3013,8 +3017,8 @@ function private function_44e99168f6830136( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8085
+// Params 1
+// Checksum 0x0, Offset: 0x80d3
 // Size: 0xc8
 function handlescavengerbagpickup( scrplayer )
 {
@@ -3051,8 +3055,8 @@ function handlescavengerbagpickup( scrplayer )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8155
+// Params 0
+// Checksum 0x0, Offset: 0x81a3
 // Size: 0x21
 function function_208e1193f12b970a()
 {
@@ -3064,8 +3068,8 @@ function function_208e1193f12b970a()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x817e
+// Params 1
+// Checksum 0x0, Offset: 0x81cc
 // Size: 0x16
 function function_722431104048241d( location )
 {
@@ -3073,8 +3077,8 @@ function function_722431104048241d( location )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x819c
+// Params 1
+// Checksum 0x0, Offset: 0x81ea
 // Size: 0x6a
 function scavengergiveammo( player )
 {
@@ -3087,9 +3091,9 @@ function scavengergiveammo( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x820e
-// Size: 0xbb
+// Params 3
+// Checksum 0x0, Offset: 0x825c
+// Size: 0xc6
 function addscavengercliptoweapon( player, weapon, numclips )
 {
     if ( !weapon::iscacprimaryweapon( weapon ) && !level.scavenger_secondary )
@@ -3121,12 +3125,13 @@ function addscavengercliptoweapon( player, weapon, numclips )
         addstockammo *= 1;
     }
     
-    player setweaponammostock( weapon, currentstockammo + addstockammo );
+    newammo = currentstockammo + addstockammo;
+    player setweaponammostock( weapon, newammo );
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x82d1
+// Params 0
+// Checksum 0x0, Offset: 0x832a
 // Size: 0x25
 function scavenger_budget_delete()
 {
@@ -3139,8 +3144,8 @@ function scavenger_budget_delete()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x82fe
+// Params 2
+// Checksum 0x0, Offset: 0x8357
 // Size: 0x97
 function dropscavengerfordeath( attacker, meansofdeath )
 {
@@ -3176,8 +3181,8 @@ function dropscavengerfordeath( attacker, meansofdeath )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x839d
+// Params 1
+// Checksum 0x0, Offset: 0x83f6
 // Size: 0xcf
 function dropscavengerfordeathinternal( attacker )
 {
@@ -3210,8 +3215,8 @@ function dropscavengerfordeathinternal( attacker )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8474
+// Params 2
+// Checksum 0x0, Offset: 0x84cd
 // Size: 0x24, Type: bool
 function shoulddropscavengerbag( attacker, meansofdeath )
 {
@@ -3229,8 +3234,8 @@ function shoulddropscavengerbag( attacker, meansofdeath )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84a1
+// Params 0
+// Checksum 0x0, Offset: 0x84fa
 // Size: 0x5e
 function scavengerbagcleanupthink()
 {
@@ -3251,8 +3256,8 @@ function scavengerbagcleanupthink()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8507
+// Params 0
+// Checksum 0x0, Offset: 0x8560
 // Size: 0x37
 function scavengerbagtimeoutthink()
 {
@@ -3268,8 +3273,8 @@ function scavengerbagtimeoutthink()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8546
+// Params 0
+// Checksum 0x0, Offset: 0x859f
 // Size: 0x17b
 function scavengerbagusesetup()
 {
@@ -3311,8 +3316,8 @@ function scavengerbagusesetup()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x86c9
+// Params 0
+// Checksum 0x0, Offset: 0x8722
 // Size: 0xda
 function scavengebagusemonitoring()
 {
@@ -3345,8 +3350,8 @@ function scavengebagusemonitoring()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87ab
+// Params 0
+// Checksum 0x0, Offset: 0x8804
 // Size: 0xbe
 function scavengebagthink()
 {
@@ -3382,8 +3387,8 @@ function scavengebagthink()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8871
+// Params 1
+// Checksum 0x0, Offset: 0x88ca
 // Size: 0x4d
 function function_653e9f15896017ed( victim )
 {
@@ -3400,8 +3405,8 @@ function function_653e9f15896017ed( victim )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x88c6
+// Params 2
+// Checksum 0x0, Offset: 0x891f
 // Size: 0xa9
 function useholdthink( player, usetime )
 {
@@ -3434,8 +3439,8 @@ function useholdthink( player, usetime )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8978
+// Params 1
+// Checksum 0x0, Offset: 0x89d1
 // Size: 0x2f, Type: bool
 function useholdthinkloop( player )
 {
@@ -3450,9 +3455,9 @@ function useholdthinkloop( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x89b0
-// Size: 0xae, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0x8a09
+// Size: 0xae
 function internal_useholdthinkloop( player )
 {
     self endon( "endUseHoldThink" );
@@ -3461,7 +3466,7 @@ function internal_useholdthinkloop( player )
     {
         if ( !player movers::script_mover_use_can_link( self ) )
         {
-            return false;
+            return 0;
         }
         
         self.curprogress += level.framedurationseconds * self.userate;
@@ -3485,12 +3490,12 @@ function internal_useholdthinkloop( player )
         waitframe();
     }
     
-    return false;
+    return 0;
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a67
+// Params 0
+// Checksum 0x0, Offset: 0x8ac0
 // Size: 0x7f
 function createuseent()
 {
@@ -3506,8 +3511,8 @@ function createuseent()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8aef
+// Params 1
+// Checksum 0x0, Offset: 0x8b48
 // Size: 0x92
 function deleteuseent( owner )
 {
@@ -3527,8 +3532,8 @@ function deleteuseent( owner )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b89
+// Params 1
+// Checksum 0x0, Offset: 0x8be2
 // Size: 0x7b, Type: bool
 function isplayerusing( weapon )
 {
@@ -3536,8 +3541,8 @@ function isplayerusing( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c0d
+// Params 1
+// Checksum 0x0, Offset: 0x8c66
 // Size: 0x47, Type: bool
 function weaponcanstoreaccuracystats( objweapon )
 {
@@ -3550,8 +3555,8 @@ function weaponcanstoreaccuracystats( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c5d
+// Params 4
+// Checksum 0x0, Offset: 0x8cb6
 // Size: 0x2e
 function setweaponstat( weapon, incvalue, statname, otherent )
 {
@@ -3559,8 +3564,8 @@ function setweaponstat( weapon, incvalue, statname, otherent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c93
+// Params 1
+// Checksum 0x0, Offset: 0x8cec
 // Size: 0xa9
 function watchweaponusage( weaponhand )
 {
@@ -3594,8 +3599,8 @@ function watchweaponusage( weaponhand )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d44
+// Params 2
+// Checksum 0x0, Offset: 0x8d9d
 // Size: 0xe4
 function onweaponfired( objweapon, missileent )
 {
@@ -3639,9 +3644,9 @@ function onweaponfired( objweapon, missileent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e30
-// Size: 0x311
+// Params 2
+// Checksum 0x0, Offset: 0x8e89
+// Size: 0x321
 function processactiveshots( objweapon, missileent )
 {
     self endon( "disconnect" );
@@ -3666,7 +3671,7 @@ function processactiveshots( objweapon, missileent )
         self.activemissiles = [];
     }
     
-    if ( issubstr( var_366b0ecc2f28aead, "jup_jp22_la_dromeo" ) )
+    if ( issubstr( var_366b0ecc2f28aead, "jup_jp22_la_dromeo" ) && !objweapon hasattachment( "jup_dromeo_rec_amp" ) )
     {
         self setweaponammoclip( objweapon, 999 );
         var_a2cfbc2c4f504a0e = getgametype() == "ob";
@@ -3732,7 +3737,7 @@ function processactiveshots( objweapon, missileent )
 
 // Namespace weapons / scripts\mp\weapons
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x9149
+// Checksum 0x0, Offset: 0x91b2
 // Size: 0xa5
 function private watchformiss( objweapon, var_366b0ecc2f28aead )
 {
@@ -3767,8 +3772,8 @@ function private watchformiss( objweapon, var_366b0ecc2f28aead )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91f6
+// Params 0
+// Checksum 0x0, Offset: 0x925f
 // Size: 0x3a
 function watchfornearmisswhizby()
 {
@@ -3784,8 +3789,8 @@ function watchfornearmisswhizby()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9238
+// Params 4
+// Checksum 0x0, Offset: 0x92a1
 // Size: 0x588
 function checkhit( objweapon, victim, shitloc, idamage )
 {
@@ -3979,8 +3984,8 @@ function checkhit( objweapon, victim, shitloc, idamage )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x97c8
+// Params 4
+// Checksum 0x0, Offset: 0x9831
 // Size: 0x107, Type: bool
 function friendlyfirecheck( owner, attacker, forcedfriendlyfirerule, forced )
 {
@@ -4036,8 +4041,8 @@ function friendlyfirecheck( owner, attacker, forcedfriendlyfirerule, forced )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98d8
+// Params 0
+// Checksum 0x0, Offset: 0x9941
 // Size: 0xbf
 function watchequipmentonspawn()
 {
@@ -4061,8 +4066,8 @@ function watchequipmentonspawn()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x999f
+// Params 0
+// Checksum 0x0, Offset: 0x9a08
 // Size: 0x8c
 function getallequip()
 {
@@ -4092,8 +4097,8 @@ function getallequip()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a34
+// Params 1
+// Checksum 0x0, Offset: 0x9a9d
 // Size: 0xa3
 function removeequip( equip )
 {
@@ -4119,8 +4124,8 @@ function removeequip( equip )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9adf
+// Params 0
+// Checksum 0x0, Offset: 0x9b48
 // Size: 0x7b, Type: bool
 function checkequipforrugged()
 {
@@ -4138,8 +4143,8 @@ function checkequipforrugged()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b63
+// Params 0
+// Checksum 0x0, Offset: 0x9bcc
 // Size: 0x35
 function watchgrenadeusage()
 {
@@ -4156,8 +4161,8 @@ function watchgrenadeusage()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ba0
+// Params 0
+// Checksum 0x0, Offset: 0x9c09
 // Size: 0x33
 function watchgrenadethrows()
 {
@@ -4171,8 +4176,8 @@ function watchgrenadethrows()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bdb
+// Params 2
+// Checksum 0x0, Offset: 0x9c44
 // Size: 0x52
 function registerusedcallback( weaponrootstring, callback )
 {
@@ -4186,8 +4191,8 @@ function registerusedcallback( weaponrootstring, callback )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c35
+// Params 1
+// Checksum 0x0, Offset: 0x9c9e
 // Size: 0xbc5
 function grenadeused( grenade )
 {
@@ -4580,8 +4585,8 @@ function grenadeused( grenade )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa802
+// Params 1
+// Checksum 0x0, Offset: 0xa86b
 // Size: 0x6d
 function logequipmentuse( grenade )
 {
@@ -4601,8 +4606,8 @@ function logequipmentuse( grenade )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa877
+// Params 0
+// Checksum 0x0, Offset: 0xa8e0
 // Size: 0x4c
 function concussionused()
 {
@@ -4614,8 +4619,8 @@ function concussionused()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8cb
+// Params 0
+// Checksum 0x0, Offset: 0xa934
 // Size: 0x42
 function watchgrenadedeath()
 {
@@ -4633,8 +4638,8 @@ function watchgrenadedeath()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa915
+// Params 1
+// Checksum 0x0, Offset: 0xa97e
 // Size: 0x38
 function function_e00b77a9cb4d8322( target )
 {
@@ -4647,8 +4652,8 @@ function function_e00b77a9cb4d8322( target )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa955
+// Params 1
+// Checksum 0x0, Offset: 0xa9be
 // Size: 0x3b
 function function_1a33bd42949ccbda( target )
 {
@@ -4661,9 +4666,9 @@ function function_1a33bd42949ccbda( target )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa998
-// Size: 0x619
+// Params 1
+// Checksum 0x0, Offset: 0xaa01
+// Size: 0x6cf
 function lockonlaunchers_gettargetarray( addcharacters )
 {
     targets = [];
@@ -4744,6 +4749,14 @@ function lockonlaunchers_gettargetarray( addcharacters )
                 }
             }
         }
+        
+        if ( isdefined( level.var_cbfdb6b806e34512 ) )
+        {
+            foreach ( locktarget in level.var_cbfdb6b806e34512 )
+            {
+                targets[ targets.size ] = locktarget;
+            }
+        }
     }
     else
     {
@@ -4808,14 +4821,22 @@ function lockonlaunchers_gettargetarray( addcharacters )
                 }
             }
         }
+        
+        if ( isdefined( level.var_cbfdb6b806e34512 ) )
+        {
+            foreach ( locktarget in level.var_cbfdb6b806e34512 )
+            {
+                targets[ targets.size ] = locktarget;
+            }
+        }
     }
     
     return targets;
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xafba
+// Params 0
+// Checksum 0x0, Offset: 0xb0d9
 // Size: 0x4b
 function watchmissileusage()
 {
@@ -4830,9 +4851,9 @@ function watchmissileusage()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb00d
-// Size: 0x4aa
+// Params 1
+// Checksum 0x0, Offset: 0xb12c
+// Size: 0x4b0
 function updatemissilefire( missile )
 {
     missiletarget = undefined;
@@ -4913,7 +4934,7 @@ function updatemissilefire( missile )
             break;
     }
     
-    if ( isdefined( missile.weapon_name ) && missile.weapon_name == "jup_jp26_la_mike32_mp" && isdefined( missile.weapon_object ) )
+    if ( isdefined( missile ) && isdefined( missile.weapon_name ) && missile.weapon_name == "jup_jp26_la_mike32_mp" && isdefined( missile.weapon_object ) )
     {
         thread function_2d2bee2ee8b4efee( missile );
     }
@@ -4963,8 +4984,8 @@ function updatemissilefire( missile )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4bf
+// Params 1
+// Checksum 0x0, Offset: 0xb5e4
 // Size: 0xc, Type: bool
 function issmallmissile( weapon )
 {
@@ -4972,8 +4993,8 @@ function issmallmissile( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4d4
+// Params 1
+// Checksum 0x0, Offset: 0xb5f9
 // Size: 0x66, Type: bool
 function isexplosivemissile( weapon )
 {
@@ -4993,8 +5014,8 @@ function isexplosivemissile( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb543
+// Params 1
+// Checksum 0x0, Offset: 0xb668
 // Size: 0x37, Type: bool
 function function_63de97cb47983c1b( weapon_name )
 {
@@ -5012,8 +5033,23 @@ function function_63de97cb47983c1b( weapon_name )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb583
+// Params 1
+// Checksum 0x0, Offset: 0xb6a8
+// Size: 0x30, Type: bool
+function function_d24bf01d284ef941( objweapon )
+{
+    if ( !isdefined( objweapon ) )
+    {
+        return false;
+    }
+    
+    var_366b0ecc2f28aead = getcompleteweaponname( objweapon );
+    return istrue( issubstr( var_366b0ecc2f28aead, "jup_jp22_la_dromeo" ) );
+}
+
+// Namespace weapons / scripts\mp\weapons
+// Params 1
+// Checksum 0x0, Offset: 0xb6e1
 // Size: 0x56
 function movingplatformdetonate( data )
 {
@@ -5024,8 +5060,8 @@ function movingplatformdetonate( data )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5e1
+// Params 3
+// Checksum 0x0, Offset: 0xb73f
 // Size: 0x71
 function monitordisownedequipment( player, equipment, var_93494d8d17d67d84 )
 {
@@ -5047,8 +5083,8 @@ function monitordisownedequipment( player, equipment, var_93494d8d17d67d84 )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb65a
+// Params 2
+// Checksum 0x0, Offset: 0xb7b8
 // Size: 0x53
 function monitordisownedgrenade( player, grenade )
 {
@@ -5064,8 +5100,8 @@ function monitordisownedgrenade( player, grenade )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6b5
+// Params 1
+// Checksum 0x0, Offset: 0xb813
 // Size: 0x2c, Type: bool
 function isplantedequipment( ent )
 {
@@ -5073,8 +5109,8 @@ function isplantedequipment( ent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6ea
+// Params 1
+// Checksum 0x0, Offset: 0xb848
 // Size: 0x7a
 function getmaxplantedlethalequip( player )
 {
@@ -5099,8 +5135,8 @@ function getmaxplantedlethalequip( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb76d
+// Params 1
+// Checksum 0x0, Offset: 0xb8cb
 // Size: 0x69
 function getmaxplantedtacticalequip( player )
 {
@@ -5124,8 +5160,8 @@ function getmaxplantedtacticalequip( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb7df
+// Params 1
+// Checksum 0x0, Offset: 0xb93d
 // Size: 0x19
 function getmaxplantedsuperequip( equipmentref )
 {
@@ -5138,8 +5174,8 @@ function getmaxplantedsuperequip( equipmentref )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb801
+// Params 0
+// Checksum 0x0, Offset: 0xb95f
 // Size: 0x4
 function function_80809994f5a396d0()
 {
@@ -5147,8 +5183,8 @@ function function_80809994f5a396d0()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb80e
+// Params 0
+// Checksum 0x0, Offset: 0xb96c
 // Size: 0x4
 function getmaxplantedhackedequip()
 {
@@ -5156,8 +5192,8 @@ function getmaxplantedhackedequip()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb81b
+// Params 4
+// Checksum 0x0, Offset: 0xb979
 // Size: 0xbc
 function onequipmentplanted( newequipment, equipmentref, deletefunc, isagentowned )
 {
@@ -5191,8 +5227,8 @@ function onequipmentplanted( newequipment, equipmentref, deletefunc, isagentowne
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8df
+// Params 1
+// Checksum 0x0, Offset: 0xba3d
 // Size: 0x30e
 function updateplantedarray( equipment )
 {
@@ -5291,8 +5327,8 @@ function updateplantedarray( equipment )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbf5
+// Params 1
+// Checksum 0x0, Offset: 0xbd53
 // Size: 0xbd
 function setplantedequipmentuse( enabled )
 {
@@ -5314,8 +5350,8 @@ function setplantedequipmentuse( enabled )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbcba
+// Params 3
+// Checksum 0x0, Offset: 0xbe18
 // Size: 0x43
 function cleanupequipment( equipnum, equipkillcament, equiptrigger )
 {
@@ -5336,8 +5372,8 @@ function cleanupequipment( equipnum, equipkillcament, equiptrigger )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd05
+// Params 4
+// Checksum 0x0, Offset: 0xbe63
 // Size: 0x1cd
 function equipmenthit( owner, attacker, objweapon, meansofdeath )
 {
@@ -5405,8 +5441,8 @@ function equipmenthit( owner, attacker, objweapon, meansofdeath )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbeda
+// Params 0
+// Checksum 0x0, Offset: 0xc038
 // Size: 0xaf
 function deleteexplosive()
 {
@@ -5435,8 +5471,8 @@ function deleteexplosive()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf91
+// Params 1
+// Checksum 0x0, Offset: 0xc0ef
 // Size: 0x8f
 function makeexplosiveusable( offset )
 {
@@ -5457,8 +5493,8 @@ function makeexplosiveusable( offset )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc029
+// Params 0
+// Checksum 0x0, Offset: 0xc187
 // Size: 0x4b
 function makeexplosiveusableinternal()
 {
@@ -5479,8 +5515,8 @@ function makeexplosiveusableinternal()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc07c
+// Params 0
+// Checksum 0x0, Offset: 0xc1da
 // Size: 0x35
 function makeexplosiveunusable()
 {
@@ -5495,8 +5531,8 @@ function makeexplosiveunusable()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0b9
+// Params 0
+// Checksum 0x0, Offset: 0xc217
 // Size: 0x142
 function watchexplosiveusable()
 {
@@ -5544,7 +5580,7 @@ function watchexplosiveusable()
 
 // Namespace weapons / scripts\mp\weapons
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xc203
+// Checksum 0x0, Offset: 0xc361
 // Size: 0x6b, Type: bool
 function private function_1d982537b9dcb924( player )
 {
@@ -5572,8 +5608,8 @@ function private function_1d982537b9dcb924( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc277
+// Params 2
+// Checksum 0x0, Offset: 0xc3d5
 // Size: 0x3f5
 function makeexplosiveusabletag( tagname, isgrenade )
 {
@@ -5723,8 +5759,8 @@ function makeexplosiveusabletag( tagname, isgrenade )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc674
+// Params 0
+// Checksum 0x0, Offset: 0xc7d2
 // Size: 0x11
 function makeexplosiveunusuabletag()
 {
@@ -5733,8 +5769,8 @@ function makeexplosiveunusuabletag()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc68d
+// Params 1
+// Checksum 0x0, Offset: 0xc7eb
 // Size: 0x116
 function setexplosiveusablehintstring( weaponname )
 {
@@ -5770,8 +5806,8 @@ function setexplosiveusablehintstring( weaponname )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7ab
+// Params 2
+// Checksum 0x0, Offset: 0xc909
 // Size: 0x99
 function explosivehandlemovers( parent, var_b5f7c0806632d99b )
 {
@@ -5795,8 +5831,8 @@ function explosivehandlemovers( parent, var_b5f7c0806632d99b )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc84c
+// Params 3
+// Checksum 0x0, Offset: 0xc9aa
 // Size: 0x4a
 function explosivetrigger( target, graceperiod, notifystr )
 {
@@ -5810,8 +5846,8 @@ function explosivetrigger( target, graceperiod, notifystr )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc89e
+// Params 4
+// Checksum 0x0, Offset: 0xc9fc
 // Size: 0x4c1
 function getdamageableents( pos, radius, dolos, startradius )
 {
@@ -5830,7 +5866,8 @@ function getdamageableents( pos, radius, dolos, startradius )
     radiussq = radius * radius;
     players = level.players;
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         if ( !isalive( players[ i ] ) || players[ i ].sessionstate != "playing" )
         {
             continue;
@@ -5847,7 +5884,8 @@ function getdamageableents( pos, radius, dolos, startradius )
     
     grenades = getentarray( "grenade", "classname" );
     
-    for (i = 0; i < grenades.size; i++) {
+    for ( i = 0; i < grenades.size ; i++ )
+    {
         entpos = get_damageable_grenade_pos( grenades[ i ] );
         distsq = distancesquared( pos, entpos );
         
@@ -5859,7 +5897,8 @@ function getdamageableents( pos, radius, dolos, startradius )
     
     destructibles = getentarray( "destructible", "targetname" );
     
-    for (i = 0; i < destructibles.size; i++) {
+    for ( i = 0; i < destructibles.size ; i++ )
+    {
         entpos = destructibles[ i ].origin;
         distsq = distancesquared( pos, entpos );
         
@@ -5876,7 +5915,8 @@ function getdamageableents( pos, radius, dolos, startradius )
     
     destructables = getentarray( "destructable", "targetname" );
     
-    for (i = 0; i < destructables.size; i++) {
+    for ( i = 0; i < destructables.size ; i++ )
+    {
         entpos = destructables[ i ].origin;
         distsq = distancesquared( pos, entpos );
         
@@ -5934,8 +5974,8 @@ function getdamageableents( pos, radius, dolos, startradius )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd68
+// Params 4
+// Checksum 0x0, Offset: 0xcec6
 // Size: 0x160, Type: bool
 function weapondamagetracepassed( from, to, startradius, ent )
 {
@@ -5979,8 +6019,8 @@ function weapondamagetracepassed( from, to, startradius, ent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xced1
+// Params 7
+// Checksum 0x0, Offset: 0xd02f
 // Size: 0x12e
 function damageent( einflictor, eattacker, idamage, smeansofdeath, objweapon, damagepos, damagedir )
 {
@@ -6000,13 +6040,14 @@ function damageent( einflictor, eattacker, idamage, smeansofdeath, objweapon, da
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd007
+// Params 3
+// Checksum 0x0, Offset: 0xd165
 // Size: 0x48
 function debugline( a, b, color )
 {
     /#
-        for (i = 0; i < 600; i++) {
+        for ( i = 0; i < 600 ; i++ )
+        {
             line( a, b, color );
             wait 0.05;
         }
@@ -6016,8 +6057,8 @@ function debugline( a, b, color )
 /#
 
     // Namespace weapons / scripts\mp\weapons
-    // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd057
+    // Params 4
+    // Checksum 0x0, Offset: 0xd1b5
     // Size: 0x126, Type: dev
     function debugcircle( center, radius, color, segments )
     {
@@ -6029,7 +6070,8 @@ function debugline( a, b, color )
         anglefrac = 360 / segments;
         circlepoints = [];
         
-        for (i = 0; i < segments; i++) {
+        for ( i = 0; i < segments ; i++ )
+        {
             angle = anglefrac * i;
             xadd = cos( angle ) * radius;
             yadd = sin( angle ) * radius;
@@ -6039,7 +6081,8 @@ function debugline( a, b, color )
             circlepoints[ circlepoints.size ] = ( x, y, z );
         }
         
-        for (i = 0; i < circlepoints.size; i++) {
+        for ( i = 0; i < circlepoints.size ; i++ )
+        {
             start = circlepoints[ i ];
             
             if ( i + 1 >= circlepoints.size )
@@ -6058,13 +6101,14 @@ function debugline( a, b, color )
 #/
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd185
+// Params 2
+// Checksum 0x0, Offset: 0xd2e3
 // Size: 0x3f
 function debugprint( pt, txt )
 {
     /#
-        for (i = 0; i < 600; i++) {
+        for ( i = 0; i < 600 ; i++ )
+        {
             print3d( pt, txt );
             wait 0.05;
         }
@@ -6072,8 +6116,8 @@ function debugprint( pt, txt )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xd1cc
+// Params 5
+// Checksum 0x0, Offset: 0xd32a
 // Size: 0x17b
 function onweapondamage( einflictor, objweapon, meansofdeath, damage, eattacker )
 {
@@ -6118,8 +6162,8 @@ function onweapondamage( einflictor, objweapon, meansofdeath, damage, eattacker 
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd34f
+// Params 0
+// Checksum 0x0, Offset: 0xd4ad
 // Size: 0x11d
 function updatelastweapon()
 {
@@ -6153,8 +6197,8 @@ function updatelastweapon()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd474
+// Params 1
+// Checksum 0x0, Offset: 0xd5d2
 // Size: 0xc0, Type: bool
 function isnormallastweapon( objweapon )
 {
@@ -6207,8 +6251,8 @@ function isnormallastweapon( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd53d
+// Params 1
+// Checksum 0x0, Offset: 0xd69b
 // Size: 0xdf, Type: bool
 function isdroppableweapon( objweapon )
 {
@@ -6261,8 +6305,8 @@ function isdroppableweapon( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd625
+// Params 0
+// Checksum 0x0, Offset: 0xd783
 // Size: 0xd5
 function updatemovespeedonweaponchange()
 {
@@ -6301,8 +6345,8 @@ function updatemovespeedonweaponchange()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd702
+// Params 0
+// Checksum 0x0, Offset: 0xd860
 // Size: 0x10d
 function getweaponspeedslowest()
 {
@@ -6358,8 +6402,8 @@ function getweaponspeedslowest()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd818
+// Params 1
+// Checksum 0x0, Offset: 0xd976
 // Size: 0xc5
 function getweaponspeed( weapon )
 {
@@ -6383,8 +6427,8 @@ function getweaponspeed( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8e6
+// Params 1
+// Checksum 0x0, Offset: 0xda44
 // Size: 0x10
 function getgamemodeweaponspeed( weapon )
 {
@@ -6392,8 +6436,8 @@ function getgamemodeweaponspeed( weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8ff
+// Params 1
+// Checksum 0x0, Offset: 0xda5d
 // Size: 0x3d
 function clampweaponspeed( value )
 {
@@ -6402,8 +6446,8 @@ function clampweaponspeed( value )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd945
+// Params 1
+// Checksum 0x0, Offset: 0xdaa3
 // Size: 0x100
 function updateviewkickscale( perc )
 {
@@ -6449,8 +6493,8 @@ function updateviewkickscale( perc )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xda4d
+// Params 0
+// Checksum 0x0, Offset: 0xdbab
 // Size: 0x3e3
 function updatemovespeedscale()
 {
@@ -6593,8 +6637,8 @@ function updatemovespeedscale()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xde38
+// Params 2
+// Checksum 0x0, Offset: 0xdf96
 // Size: 0x37
 function addextramovespeed( str_id, value )
 {
@@ -6607,8 +6651,8 @@ function addextramovespeed( str_id, value )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xde77
+// Params 1
+// Checksum 0x0, Offset: 0xdfd5
 // Size: 0x3c
 function removeextramovespeed( str_id )
 {
@@ -6617,8 +6661,8 @@ function removeextramovespeed( str_id )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdebb
+// Params 2
+// Checksum 0x0, Offset: 0xe019
 // Size: 0x37
 function function_6ebef9d9e0d137b2( str_id, value )
 {
@@ -6631,8 +6675,8 @@ function function_6ebef9d9e0d137b2( str_id, value )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdefa
+// Params 1
+// Checksum 0x0, Offset: 0xe058
 // Size: 0x3c
 function function_20187c06010f854f( str_id )
 {
@@ -6641,8 +6685,8 @@ function function_20187c06010f854f( str_id )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf3e
+// Params 0
+// Checksum 0x0, Offset: 0xe09c
 // Size: 0x2
 function function_e5642864900c1064()
 {
@@ -6650,8 +6694,8 @@ function function_e5642864900c1064()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf48
+// Params 1
+// Checksum 0x0, Offset: 0xe0a6
 // Size: 0x54
 function weapon_giveperk( perkname )
 {
@@ -6670,8 +6714,8 @@ function weapon_giveperk( perkname )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdfa4
+// Params 1
+// Checksum 0x0, Offset: 0xe102
 // Size: 0xa3
 function function_ec132c173d4532ee( perkname )
 {
@@ -6700,8 +6744,8 @@ function function_ec132c173d4532ee( perkname )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe04f
+// Params 1
+// Checksum 0x0, Offset: 0xe1ad
 // Size: 0x2a
 function weapon_hasperk( perkname )
 {
@@ -6714,8 +6758,8 @@ function weapon_hasperk( perkname )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe082
+// Params 1
+// Checksum 0x0, Offset: 0xe1e0
 // Size: 0x1b8
 function getplayerspeedbyweapon( player )
 {
@@ -6797,8 +6841,8 @@ function getplayerspeedbyweapon( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe243
+// Params 0
+// Checksum 0x0, Offset: 0xe3a1
 // Size: 0xef
 function stancerecoiladjuster()
 {
@@ -6832,8 +6876,8 @@ function stancerecoiladjuster()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe33a
+// Params 1
+// Checksum 0x0, Offset: 0xe498
 // Size: 0x129
 function stancerecoilupdate( stance )
 {
@@ -6909,8 +6953,8 @@ function stancerecoilupdate( stance )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe46b
+// Params 0
+// Checksum 0x0, Offset: 0xe5c9
 // Size: 0x100
 function deleteallgrenades()
 {
@@ -6938,8 +6982,8 @@ function deleteallgrenades()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe573
+// Params 0
+// Checksum 0x0, Offset: 0xe6d1
 // Size: 0x4
 function minegettwohitthreshold()
 {
@@ -6947,8 +6991,8 @@ function minegettwohitthreshold()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe580
+// Params 1
+// Checksum 0x0, Offset: 0xe6de
 // Size: 0x471
 function minedamagemonitor( hitsmax )
 {
@@ -7074,8 +7118,8 @@ function minedamagemonitor( hitsmax )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9f9
+// Params 0
+// Checksum 0x0, Offset: 0xeb57
 // Size: 0x3c
 function mineselfdestruct()
 {
@@ -7088,8 +7132,8 @@ function mineselfdestruct()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xea3d
+// Params 0
+// Checksum 0x0, Offset: 0xeb9b
 // Size: 0x233
 function mineexplodeonnotify()
 {
@@ -7163,8 +7207,8 @@ function mineexplodeonnotify()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xec78
+// Params 1
+// Checksum 0x0, Offset: 0xedd6
 // Size: 0x31f
 function deleteplacedequipment( var_475474534fba73ef )
 {
@@ -7245,8 +7289,8 @@ function deleteplacedequipment( var_475474534fba73ef )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xef9f
+// Params 0
+// Checksum 0x0, Offset: 0xf0fd
 // Size: 0x14f
 function deletedisparateplacedequipment()
 {
@@ -7281,8 +7325,8 @@ function deletedisparateplacedequipment()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0f6
+// Params 2
+// Checksum 0x0, Offset: 0xf254
 // Size: 0x109
 function equipmentdeletevfx( position, angles )
 {
@@ -7317,8 +7361,8 @@ function equipmentdeletevfx( position, angles )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf207
+// Params 3
+// Checksum 0x0, Offset: 0xf365
 // Size: 0x201
 function grenadestuckto( grenade, stuckto, ignoresplash )
 {
@@ -7393,8 +7437,8 @@ function grenadestuckto( grenade, stuckto, ignoresplash )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf410
+// Params 2
+// Checksum 0x0, Offset: 0xf56e
 // Size: 0x86
 function grenadestucktosplash( var_d658f0b6bc4fd513, stuckto )
 {
@@ -7417,8 +7461,8 @@ function grenadestucktosplash( var_d658f0b6bc4fd513, stuckto )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf49e
+// Params 1
+// Checksum 0x0, Offset: 0xf5fc
 // Size: 0xb
 function outlineequipmentforowner( equipment )
 {
@@ -7426,8 +7470,8 @@ function outlineequipmentforowner( equipment )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf4b1
+// Params 2
+// Checksum 0x0, Offset: 0xf60f
 // Size: 0x36
 function outlinesuperequipment( equipment, player )
 {
@@ -7441,8 +7485,8 @@ function outlinesuperequipment( equipment, player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf4ef
+// Params 2
+// Checksum 0x0, Offset: 0xf64d
 // Size: 0x4c
 function outlinesuperequipmentforteam( equipment, player )
 {
@@ -7452,8 +7496,8 @@ function outlinesuperequipmentforteam( equipment, player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf543
+// Params 2
+// Checksum 0x0, Offset: 0xf6a1
 // Size: 0x42
 function outlinesuperequipmentforplayer( equipment, player )
 {
@@ -7463,8 +7507,8 @@ function outlinesuperequipmentforplayer( equipment, player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf58d
+// Params 0
+// Checksum 0x0, Offset: 0xf6eb
 // Size: 0xc, Type: bool
 function grenadeheldatdeath()
 {
@@ -7472,8 +7516,8 @@ function grenadeheldatdeath()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf5a2
+// Params 0
+// Checksum 0x0, Offset: 0xf700
 // Size: 0x17
 function grenadehealthatdeathframeupdatecallback()
 {
@@ -7481,8 +7525,8 @@ function grenadehealthatdeathframeupdatecallback()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf5c1
+// Params 2
+// Checksum 0x0, Offset: 0xf71f
 // Size: 0x69
 function trace_impale( vpoint, endpoint )
 {
@@ -7492,8 +7536,8 @@ function trace_impale( vpoint, endpoint )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf633
+// Params 2
+// Checksum 0x0, Offset: 0xf791
 // Size: 0x27
 function impale_endpoint( vpoint, vdir )
 {
@@ -7502,9 +7546,9 @@ function impale_endpoint( vpoint, vdir )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0xf663
-// Size: 0x38b
+// Params 12
+// Checksum 0x0, Offset: 0xf7c1
+// Size: 0x3b0
 function impale( eattacker, evictim, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34, var_d3564b2364cb59e6, var_a4d8eb0a63f60f6b, isagent )
 {
     evictim endon( "death_or_disconnect" );
@@ -7530,6 +7574,11 @@ function impale( eattacker, evictim, objweapon, vpointclient, vpoint, vdir, shit
     if ( istrue( isagent ) )
     {
         if ( isdefined( corpse.aicategory ) && ( corpse.aicategory == "special" || corpse.aicategory == "elite" || corpse.aicategory == "boss" ) )
+        {
+            return;
+        }
+        
+        if ( isdefined( corpse.subclass ) && corpse.subclass == "zombie_hellhound" )
         {
             return;
         }
@@ -7622,8 +7671,8 @@ function impale( eattacker, evictim, objweapon, vpointclient, vpoint, vdir, shit
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9f6
+// Params 4
+// Checksum 0x0, Offset: 0xfb79
 // Size: 0xfd
 function function_a4ae1baa56b9f490( corpsetable, var_d3564b2364cb59e6, objweapon, shitloc )
 {
@@ -7664,8 +7713,8 @@ function function_a4ae1baa56b9f490( corpsetable, var_d3564b2364cb59e6, objweapon
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xfafb
+// Params 7
+// Checksum 0x0, Offset: 0xfc7e
 // Size: 0xd5
 function launch( eattacker, evictim, objweapon, vdir, magnitude, shitloc, isagent )
 {
@@ -7699,8 +7748,8 @@ function launch( eattacker, evictim, objweapon, vdir, magnitude, shitloc, isagen
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbd8
+// Params 2
+// Checksum 0x0, Offset: 0xfd5b
 // Size: 0x2e
 function function_ac635aad489c4eb3( var_d3564b2364cb59e6, constraint )
 {
@@ -7714,8 +7763,8 @@ function function_ac635aad489c4eb3( var_d3564b2364cb59e6, constraint )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc0e
+// Params 2
+// Checksum 0x0, Offset: 0xfd91
 // Size: 0x21
 function impale_detachaftertime( constraint, time )
 {
@@ -7728,8 +7777,8 @@ function impale_detachaftertime( constraint, time )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc37
+// Params 2
+// Checksum 0x0, Offset: 0xfdba
 // Size: 0x39
 function impale_effects( endpoint, time )
 {
@@ -7738,8 +7787,8 @@ function impale_effects( endpoint, time )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc78
+// Params 3
+// Checksum 0x0, Offset: 0xfdfb
 // Size: 0x35
 function impale_cleanup( evictim, railent, time )
 {
@@ -7752,8 +7801,8 @@ function impale_cleanup( evictim, railent, time )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfcb5
+// Params 2
+// Checksum 0x0, Offset: 0xfe38
 // Size: 0x26
 function codecallback_getprojectilespeedscale( attackerentity, objweapon )
 {
@@ -7761,8 +7810,8 @@ function codecallback_getprojectilespeedscale( attackerentity, objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfce4
+// Params 0
+// Checksum 0x0, Offset: 0xfe67
 // Size: 0x20, Type: bool
 function isstunned()
 {
@@ -7770,8 +7819,8 @@ function isstunned()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd0d
+// Params 0
+// Checksum 0x0, Offset: 0xfe90
 // Size: 0x27
 function setplayerblinded()
 {
@@ -7785,8 +7834,8 @@ function setplayerblinded()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd3c
+// Params 0
+// Checksum 0x0, Offset: 0xfebf
 // Size: 0x3d
 function setplayerunblinded()
 {
@@ -7796,8 +7845,8 @@ function setplayerunblinded()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd81
+// Params 0
+// Checksum 0x0, Offset: 0xff04
 // Size: 0x20, Type: bool
 function isblinded()
 {
@@ -7805,8 +7854,8 @@ function isblinded()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfdaa
+// Params 1
+// Checksum 0x0, Offset: 0xff2d
 // Size: 0x66, Type: bool
 function isblindedby( player )
 {
@@ -7827,8 +7876,8 @@ function isblindedby( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe19
+// Params 1
+// Checksum 0x0, Offset: 0xff9c
 // Size: 0x66, Type: bool
 function isstunnedby( player )
 {
@@ -7849,8 +7898,8 @@ function isstunnedby( player )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe88
+// Params 0
+// Checksum 0x0, Offset: 0x1000b
 // Size: 0x12, Type: bool
 function isstunnedorblinded()
 {
@@ -7858,8 +7907,8 @@ function isstunnedorblinded()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfea3
+// Params 0
+// Checksum 0x0, Offset: 0x10026
 // Size: 0x40
 function applyweaponsonicstun()
 {
@@ -7874,8 +7923,8 @@ function applyweaponsonicstun()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfeeb
+// Params 0
+// Checksum 0x0, Offset: 0x1006e
 // Size: 0x6e
 function watchinvalidweaponchange()
 {
@@ -7894,8 +7943,8 @@ function watchinvalidweaponchange()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xff61
+// Params 1
+// Checksum 0x0, Offset: 0x100e4
 // Size: 0x9c, Type: bool
 function weaponhasselectableoptic( fullweaponname )
 {
@@ -7919,8 +7968,8 @@ function weaponhasselectableoptic( fullweaponname )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10006
+// Params 0
+// Checksum 0x0, Offset: 0x10189
 // Size: 0x91
 function watchdropweapons()
 {
@@ -7944,8 +7993,8 @@ function watchdropweapons()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1009f
+// Params 0
+// Checksum 0x0, Offset: 0x10222
 // Size: 0x13a
 function weapondrop_physics_callback_monitor()
 {
@@ -7968,8 +8017,8 @@ function weapondrop_physics_callback_monitor()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x101e1
+// Params 1
+// Checksum 0x0, Offset: 0x10364
 // Size: 0x6c
 function function_e7dbbe9220d5e27b( surfacetype )
 {
@@ -7986,8 +8035,8 @@ function function_e7dbbe9220d5e27b( surfacetype )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10255
+// Params 1
+// Checksum 0x0, Offset: 0x103d8
 // Size: 0x15
 function weapondrop_physics_timeout( time )
 {
@@ -7996,8 +8045,8 @@ function weapondrop_physics_timeout( time )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10272
+// Params 2
+// Checksum 0x0, Offset: 0x103f5
 // Size: 0x1b9
 function watchgrenadeaxepickup( player, weaponnameoverride )
 {
@@ -8044,8 +8093,8 @@ function watchgrenadeaxepickup( player, weaponnameoverride )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10433
+// Params 1
+// Checksum 0x0, Offset: 0x105b6
 // Size: 0xc9
 function axedetachfromcorpse( stuckent )
 {
@@ -8071,8 +8120,8 @@ function axedetachfromcorpse( stuckent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10504
+// Params 2
+// Checksum 0x0, Offset: 0x10687
 // Size: 0x8d
 function relaunchaxe( weaponname, weaponowner )
 {
@@ -8085,8 +8134,8 @@ function relaunchaxe( weaponname, weaponowner )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10599
+// Params 1
+// Checksum 0x0, Offset: 0x1071c
 // Size: 0x28
 function watchaxetimeout( timeoutduration )
 {
@@ -8097,8 +8146,8 @@ function watchaxetimeout( timeoutduration )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x105c9
+// Params 2
+// Checksum 0x0, Offset: 0x1074c
 // Size: 0xbf
 function watchaxeautopickup( player, weapon )
 {
@@ -8133,8 +8182,8 @@ function watchaxeautopickup( player, weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10690
+// Params 2
+// Checksum 0x0, Offset: 0x10813
 // Size: 0x109
 function watchaxeuse( player, weapon )
 {
@@ -8177,8 +8226,8 @@ function watchaxeuse( player, weapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x107a1
+// Params 1
+// Checksum 0x0, Offset: 0x10924
 // Size: 0x122
 function playercanautopickupaxe( axeent )
 {
@@ -8225,9 +8274,9 @@ function playercanautopickupaxe( axeent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x108cc
-// Size: 0x5c, Type: bool
+// Params 0
+// Checksum 0x0, Offset: 0x10a4f
+// Size: 0x7d, Type: bool
 function function_2cd4f9393314e60a()
 {
     if ( scripts\mp\gametypes\infect::function_dbead865fbbae378() && isdefined( self.team ) && self.team == "axis" )
@@ -8240,13 +8289,19 @@ function function_2cd4f9393314e60a()
         return false;
     }
     
+    if ( isjuggernaut() )
+    {
+        function_f3bb4f4911a1beb2( "hud", "showErrorMessage", "KILLSTREAKS/JUGG_CANNOT_BE_USED" );
+        return false;
+    }
+    
     return true;
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10931
-// Size: 0x454, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0x10ad5
+// Size: 0x421, Type: bool
 function playerpickupaxe( objweapon, isautopickup )
 {
     assert( isweapon( objweapon ) );
@@ -8272,11 +8327,6 @@ function playerpickupaxe( objweapon, isautopickup )
                 self dropitem( objweapon );
                 inventory_utility::_giveweapon( var_aaa00e27a60773a1 );
             }
-        }
-        else if ( !issubstr( currentweapon.basename, objweapon.basename ) )
-        {
-            inventory_utility::_takeweapon( objweapon );
-            inventory_utility::_giveweapon( var_aaa00e27a60773a1 );
         }
         
         var_3bcedee676d43cf1 = self getweaponammoclip( currentweapon ) == 0 && isaxeweapon( currentweapon );
@@ -8393,8 +8443,8 @@ function playerpickupaxe( objweapon, isautopickup )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d8e
+// Params 4
+// Checksum 0x0, Offset: 0x10eff
 // Size: 0x106
 function callback_finishweaponchange( objnewweapon, objoldweapon, var_6f14f21684b6976d, var_14f4860c3d155d12 )
 {
@@ -8419,8 +8469,8 @@ function callback_finishweaponchange( objnewweapon, objoldweapon, var_6f14f21684
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e9c
+// Params 4
+// Checksum 0x0, Offset: 0x1100d
 // Size: 0x8b
 function updateweaponscriptvfx( newweapon, oldweapon, var_6f14f21684b6976d, var_14f4860c3d155d12 )
 {
@@ -8443,8 +8493,8 @@ function updateweaponscriptvfx( newweapon, oldweapon, var_6f14f21684b6976d, var_
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f2f
+// Params 2
+// Checksum 0x0, Offset: 0x110a0
 // Size: 0x4b
 function runweaponscriptvfx( newweapon, var_6f14f21684b6976d )
 {
@@ -8463,8 +8513,8 @@ function runweaponscriptvfx( newweapon, var_6f14f21684b6976d )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f82
+// Params 2
+// Checksum 0x0, Offset: 0x110f3
 // Size: 0x21f
 function clearweaponscriptvfx( oldweapon, var_14f4860c3d155d12 )
 {
@@ -8527,8 +8577,8 @@ function clearweaponscriptvfx( oldweapon, var_14f4860c3d155d12 )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x111a9
+// Params 2
+// Checksum 0x0, Offset: 0x1131a
 // Size: 0x2d
 function updatecamoscripts( objnewweapon, objoldweapon )
 {
@@ -8537,8 +8587,8 @@ function updatecamoscripts( objnewweapon, objoldweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x111de
+// Params 1
+// Checksum 0x0, Offset: 0x1134f
 // Size: 0x31
 function runcamoscripts( camo )
 {
@@ -8556,8 +8606,8 @@ function runcamoscripts( camo )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11217
+// Params 1
+// Checksum 0x0, Offset: 0x11388
 // Size: 0x31
 function clearcamoscripts( camo )
 {
@@ -8575,8 +8625,8 @@ function clearcamoscripts( camo )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11250
+// Params 0
+// Checksum 0x0, Offset: 0x113c1
 // Size: 0x8f
 function blood_camo_84()
 {
@@ -8601,8 +8651,8 @@ function blood_camo_84()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x112e7
+// Params 0
+// Checksum 0x0, Offset: 0x11458
 // Size: 0x11
 function getactiveequipmentarray()
 {
@@ -8610,8 +8660,8 @@ function getactiveequipmentarray()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11301
+// Params 0
+// Checksum 0x0, Offset: 0x11472
 // Size: 0x10
 function init_function_refs()
 {
@@ -8619,8 +8669,8 @@ function init_function_refs()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11319
+// Params 1
+// Checksum 0x0, Offset: 0x1148a
 // Size: 0x48, Type: bool
 function doesshareammo( objweapon )
 {
@@ -8628,8 +8678,8 @@ function doesshareammo( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1136a
+// Params 0
+// Checksum 0x0, Offset: 0x114db
 // Size: 0x96
 function waittill_grenade_throw()
 {
@@ -8657,8 +8707,8 @@ function waittill_grenade_throw()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x11408
+// Params 4
+// Checksum 0x0, Offset: 0x11579
 // Size: 0x198
 function grenadeinitialize( grenade, weapon_object, tickpercent, originalowner )
 {
@@ -8713,8 +8763,8 @@ function grenadeinitialize( grenade, weapon_object, tickpercent, originalowner )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x115a8
+// Params 0
+// Checksum 0x0, Offset: 0x11719
 // Size: 0xe9
 function waittill_missile_fire()
 {
@@ -8755,8 +8805,8 @@ function waittill_missile_fire()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1169a
+// Params 3
+// Checksum 0x0, Offset: 0x1180b
 // Size: 0x73
 function enableburnfx( skip_sound, var_ee8fa35daedf8c6b, var_f65d8a5147a9a0f )
 {
@@ -8785,8 +8835,8 @@ function enableburnfx( skip_sound, var_ee8fa35daedf8c6b, var_f65d8a5147a9a0f )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11715
+// Params 1
+// Checksum 0x0, Offset: 0x11886
 // Size: 0x4f
 function getburnfxstatepriority( state )
 {
@@ -8804,8 +8854,8 @@ function getburnfxstatepriority( state )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1176c
+// Params 2
+// Checksum 0x0, Offset: 0x118dd
 // Size: 0x58
 function gethightestpriotiryactiveburnstate( burnfxstates, var_ac89efd5a1a335cb )
 {
@@ -8832,8 +8882,8 @@ function gethightestpriotiryactiveburnstate( burnfxstates, var_ac89efd5a1a335cb 
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x117cd
+// Params 0
+// Checksum 0x0, Offset: 0x1193e
 // Size: 0xba
 function enableburnsfx()
 {
@@ -8865,8 +8915,8 @@ function enableburnsfx()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1188f
+// Params 2
+// Checksum 0x0, Offset: 0x11a00
 // Size: 0x5d
 function enableburnfxfortime( duration, var_ee8fa35daedf8c6b )
 {
@@ -8886,8 +8936,8 @@ function enableburnfxfortime( duration, var_ee8fa35daedf8c6b )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x118f4
+// Params 3
+// Checksum 0x0, Offset: 0x11a65
 // Size: 0xb2
 function disableburnfx( skip_sound, burningstate, burningpart )
 {
@@ -8926,8 +8976,8 @@ function disableburnfx( skip_sound, burningstate, burningpart )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x119ae
+// Params 0
+// Checksum 0x0, Offset: 0x11b1f
 // Size: 0x79
 function disable_burnsfx()
 {
@@ -8950,8 +9000,8 @@ function disable_burnsfx()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11a2f
+// Params 1
+// Checksum 0x0, Offset: 0x11ba0
 // Size: 0x28
 function clearburning( var_f60ee8b9e17970e6 )
 {
@@ -8963,7 +9013,7 @@ function clearburning( var_f60ee8b9e17970e6 )
 
 // Namespace weapons / scripts\mp\weapons
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x11a5f
+// Checksum 0x0, Offset: 0x11bd0
 // Size: 0x67
 function private clearburnfx( var_f60ee8b9e17970e6 )
 {
@@ -8985,8 +9035,8 @@ function private clearburnfx( var_f60ee8b9e17970e6 )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ace
+// Params 0
+// Checksum 0x0, Offset: 0x11c3f
 // Size: 0xc5
 function startburnfx()
 {
@@ -9011,8 +9061,8 @@ function startburnfx()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b9b
+// Params 0
+// Checksum 0x0, Offset: 0x11d0c
 // Size: 0x2a
 function function_4a895aafec5dd891()
 {
@@ -9024,8 +9074,8 @@ function function_4a895aafec5dd891()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11bcd
+// Params 2
+// Checksum 0x0, Offset: 0x11d3e
 // Size: 0x13f
 function function_fc27c713595c6a00( var_ee8fa35daedf8c6b, burningpart )
 {
@@ -9074,8 +9124,8 @@ function function_fc27c713595c6a00( var_ee8fa35daedf8c6b, burningpart )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d14
+// Params 0
+// Checksum 0x0, Offset: 0x11e85
 // Size: 0x3b
 function stopburnfx()
 {
@@ -9091,8 +9141,8 @@ function stopburnfx()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d57
+// Params 0
+// Checksum 0x0, Offset: 0x11ec8
 // Size: 0x8b
 function function_11bc0d93953a155a()
 {
@@ -9112,8 +9162,8 @@ function function_11bc0d93953a155a()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11dea
+// Params 0
+// Checksum 0x0, Offset: 0x11f5b
 // Size: 0x76
 function function_d9fcebdb704a67fa()
 {
@@ -9135,8 +9185,8 @@ function function_d9fcebdb704a67fa()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e68
+// Params 1
+// Checksum 0x0, Offset: 0x11fd9
 // Size: 0x88
 function burnfxcorpstablefunc( corpsetable )
 {
@@ -9155,8 +9205,8 @@ function burnfxcorpstablefunc( corpsetable )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ef8
+// Params 1
+// Checksum 0x0, Offset: 0x12069
 // Size: 0x114
 function semtex_used( grenade )
 {
@@ -9193,8 +9243,8 @@ function semtex_used( grenade )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12014
+// Params 2
+// Checksum 0x0, Offset: 0x12185
 // Size: 0xc8
 function semtex_stuckplayer( grenade, stuckto )
 {
@@ -9215,8 +9265,8 @@ function semtex_stuckplayer( grenade, stuckto )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x120e4
+// Params 4
+// Checksum 0x0, Offset: 0x12255
 // Size: 0x86
 function function_c50caf1f56ecf73( stuckto, position, stuckdamage, var_68647a50e85e8152 )
 {
@@ -9240,8 +9290,8 @@ function function_c50caf1f56ecf73( stuckto, position, stuckdamage, var_68647a50e
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12172
+// Params 1
+// Checksum 0x0, Offset: 0x122e3
 // Size: 0x36
 function function_7a91162092cc11ec( lootid )
 {
@@ -9251,8 +9301,8 @@ function function_7a91162092cc11ec( lootid )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x121b1
+// Params 3
+// Checksum 0x0, Offset: 0x12322
 // Size: 0x96
 function function_15abe90be101ffc8( weaponassetname, attachment, variantlootid )
 {
@@ -9272,8 +9322,8 @@ function function_15abe90be101ffc8( weaponassetname, attachment, variantlootid )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12250
+// Params 3
+// Checksum 0x0, Offset: 0x123c1
 // Size: 0x84
 function function_1c6803f36c2ea0a6( weaponassetname, attachment, variantid )
 {
@@ -9291,8 +9341,8 @@ function function_1c6803f36c2ea0a6( weaponassetname, attachment, variantid )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x122dd
+// Params 1
+// Checksum 0x0, Offset: 0x1244e
 // Size: 0x2b
 function function_82a0e6138ba06718( objweapon )
 {
@@ -9305,8 +9355,8 @@ function function_82a0e6138ba06718( objweapon )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12310
+// Params 0
+// Checksum 0x0, Offset: 0x12481
 // Size: 0x52
 function function_f0ab1405beddd91f()
 {
@@ -9331,9 +9381,9 @@ function function_f0ab1405beddd91f()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1236a
-// Size: 0x1f3d
+// Params 2
+// Checksum 0x0, Offset: 0x124db
+// Size: 0x1f9c
 function function_e0780928b2591268( objweapon, missileent )
 {
     level endon( "game_ended" );
@@ -9471,7 +9521,7 @@ function function_e0780928b2591268( objweapon, missileent )
     
     foreach ( ent in level.grenades )
     {
-        if ( !isdefined( ent ) )
+        if ( !isdefined( ent ) || !isdefined( ent.origin ) )
         {
             continue;
         }
@@ -9489,6 +9539,11 @@ function function_e0780928b2591268( objweapon, missileent )
     {
         foreach ( cyst in level.brgametype.cysts )
         {
+            if ( !isdefined( cyst ) || !isdefined( cyst.origin ) )
+            {
+                continue;
+            }
+            
             if ( distancesquared( self.origin, cyst.origin ) <= 640000 )
             {
                 if ( self worldpointinreticle_circle( cyst.origin, 65, 90 ) == 1 )
@@ -9510,6 +9565,11 @@ function function_e0780928b2591268( objweapon, missileent )
         {
             foreach ( tower in level.uavtowers )
             {
+                if ( !isdefined( tower ) || !isdefined( tower.origin ) )
+                {
+                    continue;
+                }
+                
                 if ( distancesquared( self.origin, tower.origin + toweroffset ) <= 3841600 )
                 {
                     if ( self worldpointinreticle_circle( tower.origin + toweroffset, 65, 90 ) == 1 )
@@ -9529,7 +9589,7 @@ function function_e0780928b2591268( objweapon, missileent )
         {
             foreach ( var_bb19a0b11e79e6cb in level.var_fc4bb27a820f54dd.var_cd2de8814a52f22c )
             {
-                if ( !istrue( var_bb19a0b11e79e6cb.b_occupied ) )
+                if ( !isdefined( var_bb19a0b11e79e6cb ) || !istrue( var_bb19a0b11e79e6cb.b_occupied ) )
                 {
                     continue;
                 }
@@ -9553,6 +9613,11 @@ function function_e0780928b2591268( objweapon, missileent )
         {
             foreach ( buystation in level.br_armory_kiosk.scriptables )
             {
+                if ( !isdefined( buystation ) )
+                {
+                    continue;
+                }
+                
                 if ( distancesquared( self.origin, buystation.origin ) <= 3841600 )
                 {
                     if ( self worldpointinreticle_circle( buystation.origin, 65, 90 ) == 1 )
@@ -9571,6 +9636,11 @@ function function_e0780928b2591268( objweapon, missileent )
     
     foreach ( ent in var_c8863cdecb0560f4 )
     {
+        if ( !isdefined( ent ) )
+        {
+            continue;
+        }
+        
         if ( ent scripts\common\vehicle::isvehicle() )
         {
             if ( scripts\cp_mp\vehicles\vehicle::vehicle_isfriendlytoplayer( ent, self ) )
@@ -9999,8 +10069,8 @@ function function_e0780928b2591268( objweapon, missileent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x142af
+// Params 1
+// Checksum 0x0, Offset: 0x1447f
 // Size: 0x59
 function function_63476cca54e728ce( ent )
 {
@@ -10012,8 +10082,8 @@ function function_63476cca54e728ce( ent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14310
+// Params 2
+// Checksum 0x0, Offset: 0x144e0
 // Size: 0x1127
 function function_aa3939ed0f60d04e( objweapon, missileent )
 {
@@ -10418,8 +10488,8 @@ function function_aa3939ed0f60d04e( objweapon, missileent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1543f
+// Params 5
+// Checksum 0x0, Offset: 0x1560f
 // Size: 0x84
 function function_bdeef7bfa895108c( damage, attacker, origin, weapon, var_8df4d6ecebcb0faf )
 {
@@ -10443,8 +10513,8 @@ function function_bdeef7bfa895108c( damage, attacker, origin, weapon, var_8df4d6
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x154cb
+// Params 2
+// Checksum 0x0, Offset: 0x1569b
 // Size: 0x170
 function function_a0a176ec45783695( attacker, time )
 {
@@ -10500,8 +10570,8 @@ function function_a0a176ec45783695( attacker, time )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15643
+// Params 1
+// Checksum 0x0, Offset: 0x15813
 // Size: 0x83
 function function_258b974cf7d16877( attackingplayer )
 {
@@ -10524,8 +10594,8 @@ function function_258b974cf7d16877( attackingplayer )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x156ce
+// Params 1
+// Checksum 0x0, Offset: 0x1589e
 // Size: 0x83
 function function_4e9544f537fa99d6( attackingplayer )
 {
@@ -10548,8 +10618,8 @@ function function_4e9544f537fa99d6( attackingplayer )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15759
+// Params 1
+// Checksum 0x0, Offset: 0x15929
 // Size: 0x79
 function function_1475aa09aebba72( killstreakent )
 {
@@ -10569,8 +10639,8 @@ function function_1475aa09aebba72( killstreakent )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x157da
+// Params 2
+// Checksum 0x0, Offset: 0x159aa
 // Size: 0x56
 function function_2b68ad55a6fdd0d4( killstreakent, timer )
 {
@@ -10584,8 +10654,8 @@ function function_2b68ad55a6fdd0d4( killstreakent, timer )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15838
+// Params 0
+// Checksum 0x0, Offset: 0x15a08
 // Size: 0x64
 function function_e1e1af51fbad6907()
 {
@@ -10600,8 +10670,8 @@ function function_e1e1af51fbad6907()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x158a4
+// Params 2
+// Checksum 0x0, Offset: 0x15a74
 // Size: 0x1b5
 function recommendedstatusbyseason( objweapon, inflictor )
 {
@@ -10672,18 +10742,24 @@ function recommendedstatusbyseason( objweapon, inflictor )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15a61
-// Size: 0x157
+// Params 1
+// Checksum 0x0, Offset: 0x15c31
+// Size: 0x195
 function function_2d2bee2ee8b4efee( missile )
 {
     level endon( "game_ended" );
-    var_580837ba9de8f3d4 = missile.weapon_object.override;
     
-    if ( !isdefined( var_580837ba9de8f3d4 ) )
+    if ( !isdefined( missile.weapon_object ) )
     {
         return;
     }
+    
+    if ( !isdefined( missile.weapon_object.override ) )
+    {
+        return;
+    }
+    
+    var_580837ba9de8f3d4 = missile.weapon_object.override;
     
     switch ( var_580837ba9de8f3d4 )
     {
@@ -10692,7 +10768,7 @@ function function_2d2bee2ee8b4efee( missile )
             launchvelocity = missile getmissilevelocity();
             grenadeweaponname = "jup_semtex_mike32_mp";
             
-            if ( isdefined( missile.weapon_object.weaponblueprint.lootid ) && missile.weapon_object.weaponblueprint.lootid == 68641 )
+            if ( isdefined( missile.weapon_object.weaponblueprint ) && isdefined( missile.weapon_object.weaponblueprint.lootid ) && missile.weapon_object.weaponblueprint.lootid == 68641 )
             {
                 grenadeweaponname = "jup_semtex_mike32_v5008_mp";
             }
@@ -10717,8 +10793,8 @@ function function_2d2bee2ee8b4efee( missile )
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15bc0
+// Params 0
+// Checksum 0x0, Offset: 0x15dce
 // Size: 0xdf
 function function_6989a64fc49d022()
 {
@@ -10758,8 +10834,8 @@ function function_6989a64fc49d022()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ca7
+// Params 0
+// Checksum 0x0, Offset: 0x15eb5
 // Size: 0xb8
 function function_130230f6bb9e9666()
 {
@@ -10802,8 +10878,8 @@ function function_130230f6bb9e9666()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d67
+// Params 0
+// Checksum 0x0, Offset: 0x15f75
 // Size: 0x1eb
 function function_4afcb847b264f855()
 {
@@ -10851,8 +10927,8 @@ function function_4afcb847b264f855()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f5a
+// Params 0
+// Checksum 0x0, Offset: 0x16168
 // Size: 0x7e
 function function_450edf11cb278f66()
 {
@@ -10882,8 +10958,8 @@ function function_450edf11cb278f66()
 }
 
 // Namespace weapons / scripts\mp\weapons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15fe0
+// Params 0
+// Checksum 0x0, Offset: 0x161ee
 // Size: 0x50
 function function_946eed4c32b18d98()
 {

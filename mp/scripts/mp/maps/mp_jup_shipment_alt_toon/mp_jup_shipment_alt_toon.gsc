@@ -19,7 +19,7 @@
 #namespace mp_jup_shipment_alt_toon;
 
 // Namespace mp_jup_shipment_alt_toon / scripts\mp\maps\mp_jup_shipment_alt_toon\mp_jup_shipment_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32f
 // Size: 0xf2
 function main()
@@ -52,7 +52,7 @@ function main()
 }
 
 // Namespace mp_jup_shipment_alt_toon / scripts\mp\maps\mp_jup_shipment_alt_toon\mp_jup_shipment_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x429
 // Size: 0x13
 function function_69fcdbec24a02352()
@@ -61,7 +61,7 @@ function function_69fcdbec24a02352()
 }
 
 // Namespace mp_jup_shipment_alt_toon / scripts\mp\maps\mp_jup_shipment_alt_toon\mp_jup_shipment_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x445
 // Size: 0x14
 function function_e182fb0acb8f13db()
@@ -71,7 +71,7 @@ function function_e182fb0acb8f13db()
 }
 
 // Namespace mp_jup_shipment_alt_toon / scripts\mp\maps\mp_jup_shipment_alt_toon\mp_jup_shipment_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x461
 // Size: 0x9a
 function function_3c37e8e4377aa2b3()
@@ -86,7 +86,7 @@ function function_3c37e8e4377aa2b3()
 }
 
 // Namespace mp_jup_shipment_alt_toon / scripts\mp\maps\mp_jup_shipment_alt_toon\mp_jup_shipment_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x503
 // Size: 0xaed
 function function_31dc060e85f4a689()

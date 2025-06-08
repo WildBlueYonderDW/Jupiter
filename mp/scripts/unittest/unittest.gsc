@@ -14,7 +14,7 @@
 #namespace unittest;
 
 // Namespace unittest / scripts\unittest\unittest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8
 // Size: 0x4c
 function test()
@@ -35,7 +35,7 @@ function test()
 }
 
 // Namespace unittest / scripts\unittest\unittest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13c
 // Size: 0x9
 function error()
@@ -44,7 +44,7 @@ function error()
 }
 
 // Namespace unittest / scripts\unittest\unittest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d
 // Size: 0x8c
 function main()

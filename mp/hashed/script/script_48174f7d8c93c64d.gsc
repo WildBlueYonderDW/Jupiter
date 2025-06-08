@@ -24,7 +24,7 @@
 #namespace zombie_hellhound;
 
 // Namespace zombie_hellhound / namespace_66aa06755cfb5bdd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x54f
 // Size: 0x13
 function precache( params )
@@ -57,7 +57,7 @@ function private function_f49a30f92555b827( params )
 }
 
 // Namespace zombie_hellhound / namespace_66aa06755cfb5bdd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d5
 // Size: 0x14f
 function function_e62bc0179274066c( taskid )
@@ -95,7 +95,7 @@ function function_e62bc0179274066c( taskid )
 }
 
 // Namespace zombie_hellhound / namespace_66aa06755cfb5bdd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x82d
 // Size: 0x68
 function initscriptable()
@@ -253,7 +253,7 @@ function private function_e809d2e0583ea302( var_8c62cb683d643eb7 )
 }
 
 // Namespace zombie_hellhound / namespace_66aa06755cfb5bdd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb65
 // Size: 0x13, Type: bool
 function function_a8c9248308033e4e()
@@ -615,7 +615,7 @@ function private function_37e7327e560b34b6()
 }
 
 // Namespace zombie_hellhound / namespace_66aa06755cfb5bdd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1605
 // Size: 0x12e
 function hellhound_dig( item_count )

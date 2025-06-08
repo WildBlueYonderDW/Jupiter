@@ -5,7 +5,7 @@
 #namespace screenshotcity;
 
 // Namespace screenshotcity / scripts\mp\screenshotcity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120
 // Size: 0x125
 function move_to_blue_background()
@@ -24,7 +24,7 @@ function move_to_blue_background()
 }
 
 // Namespace screenshotcity / scripts\mp\screenshotcity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x125
 function move_to_blue_background_side_on()
@@ -43,7 +43,7 @@ function move_to_blue_background_side_on()
 }
 
 // Namespace screenshotcity / scripts\mp\screenshotcity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37a
 // Size: 0x125
 function move_to_grey_background()
@@ -62,7 +62,7 @@ function move_to_grey_background()
 }
 
 // Namespace screenshotcity / scripts\mp\screenshotcity
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a7
 // Size: 0x125
 function move_to_grey_background_side_on()
@@ -83,7 +83,7 @@ function move_to_grey_background_side_on()
 /#
 
     // Namespace screenshotcity / scripts\mp\screenshotcity
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5d4
     // Size: 0xd6, Type: dev
     function take_screenshots( weaponindex )

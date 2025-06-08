@@ -22,8 +22,8 @@
 #namespace cluster_spike;
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x698
+// Params 0
+// Checksum 0x0, Offset: 0x699
 // Size: 0xe9
 function init()
 {
@@ -54,8 +54,8 @@ function init()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x789
+// Params 1
+// Checksum 0x0, Offset: 0x78a
 // Size: 0xb7
 function function_ddb866cc574674c0( bundle )
 {
@@ -73,8 +73,8 @@ function function_ddb866cc574674c0( bundle )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x848
+// Params 0
+// Checksum 0x0, Offset: 0x849
 // Size: 0x69
 function function_1ceb81f4abe9cc5e()
 {
@@ -83,8 +83,8 @@ function function_1ceb81f4abe9cc5e()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b9
+// Params 0
+// Checksum 0x0, Offset: 0x8ba
 // Size: 0x2
 function function_9d6b4ec9f5809bc5()
 {
@@ -92,8 +92,8 @@ function function_9d6b4ec9f5809bc5()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c3
+// Params 0
+// Checksum 0x0, Offset: 0x8c4
 // Size: 0x2
 function function_b7fe23eb11f96086()
 {
@@ -101,8 +101,8 @@ function function_b7fe23eb11f96086()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8cd
+// Params 0
+// Checksum 0x0, Offset: 0x8ce
 // Size: 0x2
 function function_b7b736eb11aac7df()
 {
@@ -110,8 +110,8 @@ function function_b7b736eb11aac7df()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d7
+// Params 2
+// Checksum 0x0, Offset: 0x8d8
 // Size: 0x21
 function function_bde7fd6853600da4( streakinfo, switchresult )
 {
@@ -122,8 +122,8 @@ function function_bde7fd6853600da4( streakinfo, switchresult )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x900
+// Params 1
+// Checksum 0x0, Offset: 0x901
 // Size: 0x80
 function function_736a390857671cae( streakinfo )
 {
@@ -143,8 +143,8 @@ function function_736a390857671cae( streakinfo )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x988
+// Params 1
+// Checksum 0x0, Offset: 0x989
 // Size: 0x32
 function function_ee88b06e55dd9ca3( streakinfo )
 {
@@ -155,8 +155,8 @@ function function_ee88b06e55dd9ca3( streakinfo )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c2
+// Params 3
+// Checksum 0x0, Offset: 0x9c3
 // Size: 0x7d
 function function_baff78978772ecec( streakinfo, weaponobj, projectile )
 {
@@ -173,9 +173,9 @@ function function_baff78978772ecec( streakinfo, weaponobj, projectile )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa48
-// Size: 0x21, Type: bool
+// Params 0
+// Checksum 0x0, Offset: 0xa49
+// Size: 0x21
 function function_43fcf054875c96c5()
 {
     streakinfo = createstreakinfo( "cluster_spike", self );
@@ -183,8 +183,8 @@ function function_43fcf054875c96c5()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa72
+// Params 1
+// Checksum 0x0, Offset: 0xa73
 // Size: 0x1ea, Type: bool
 function function_4d4dfa5c57455df0( streakinfo )
 {
@@ -253,8 +253,8 @@ function function_4d4dfa5c57455df0( streakinfo )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc65
+// Params 3
+// Checksum 0x0, Offset: 0xc66
 // Size: 0x29d
 function function_ae64d36f507aca45( player, streakinfo, weaponobj )
 {
@@ -329,8 +329,8 @@ function function_ae64d36f507aca45( player, streakinfo, weaponobj )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0a
+// Params 7
+// Checksum 0x0, Offset: 0xf0b
 // Size: 0x3a9
 function function_cc8b9ef243e90347( clusterspike, weaponobj, streakinfo, bundle, owner, lifetimeoverride, maindevice )
 {
@@ -405,8 +405,8 @@ function function_cc8b9ef243e90347( clusterspike, weaponobj, streakinfo, bundle,
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12bb
+// Params 1
+// Checksum 0x0, Offset: 0x12bc
 // Size: 0x4e
 function function_4d7b7570ddab816d( data )
 {
@@ -418,8 +418,8 @@ function function_4d7b7570ddab816d( data )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1311
+// Params 1
+// Checksum 0x0, Offset: 0x1312
 // Size: 0x4d
 function function_cae5c83763020435( data )
 {
@@ -430,8 +430,8 @@ function function_cae5c83763020435( data )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1366
+// Params 1
+// Checksum 0x0, Offset: 0x1367
 // Size: 0x3a
 function function_1d0735b9c8b14634( data )
 {
@@ -443,8 +443,8 @@ function function_1d0735b9c8b14634( data )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a8
+// Params 1
+// Checksum 0x0, Offset: 0x13a9
 // Size: 0x48
 function function_7558c2019a377bd9( data )
 {
@@ -462,8 +462,8 @@ function function_7558c2019a377bd9( data )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f8
+// Params 0
+// Checksum 0x0, Offset: 0x13f9
 // Size: 0xf
 function function_b89726dbbc1c74f6()
 {
@@ -471,8 +471,8 @@ function function_b89726dbbc1c74f6()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x140f
+// Params 0
+// Checksum 0x0, Offset: 0x1410
 // Size: 0xf
 function function_af4dc22e59f3b17()
 {
@@ -480,8 +480,8 @@ function function_af4dc22e59f3b17()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1426
+// Params 1
+// Checksum 0x0, Offset: 0x1427
 // Size: 0xdb
 function clusterspike_explode( explodestate )
 {
@@ -520,8 +520,8 @@ function clusterspike_explode( explodestate )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1509
+// Params 1
+// Checksum 0x0, Offset: 0x150a
 // Size: 0xf0
 function function_b53e15638ce719b2( wasdestroyed )
 {
@@ -557,8 +557,8 @@ function function_b53e15638ce719b2( wasdestroyed )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1601
+// Params 5
+// Checksum 0x0, Offset: 0x1602
 // Size: 0x14b
 function function_723aa6329b751bc7( victim, inflictor, objweapon, meansofdeath, damage )
 {
@@ -622,8 +622,8 @@ function function_723aa6329b751bc7( victim, inflictor, objweapon, meansofdeath, 
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1755
+// Params 1
+// Checksum 0x0, Offset: 0x1756
 // Size: 0x5d
 function function_a868fa9dc357d535( owner )
 {
@@ -636,8 +636,8 @@ function function_a868fa9dc357d535( owner )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ba
+// Params 0
+// Checksum 0x0, Offset: 0x17bb
 // Size: 0x46
 function function_31be5250a8292b48()
 {
@@ -649,8 +649,8 @@ function function_31be5250a8292b48()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1808
+// Params 0
+// Checksum 0x0, Offset: 0x1809
 // Size: 0x5a
 function function_76424b83e8eccb98()
 {
@@ -663,8 +663,8 @@ function function_76424b83e8eccb98()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x186a
+// Params 0
+// Checksum 0x0, Offset: 0x186b
 // Size: 0x38
 function function_61ad64f233f8040a()
 {
@@ -676,8 +676,8 @@ function function_61ad64f233f8040a()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18aa
+// Params 0
+// Checksum 0x0, Offset: 0x18ab
 // Size: 0xbe
 function function_fd6a27936d8258f4()
 {
@@ -703,8 +703,8 @@ function function_fd6a27936d8258f4()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1970
+// Params 1
+// Checksum 0x0, Offset: 0x1971
 // Size: 0x3d
 function function_2f8d16ebd367c6e7( clusterid )
 {
@@ -726,8 +726,8 @@ function function_2f8d16ebd367c6e7( clusterid )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b5
+// Params 0
+// Checksum 0x0, Offset: 0x19b6
 // Size: 0x334
 function function_fb3d88b9443dd19c()
 {
@@ -811,8 +811,8 @@ function function_fb3d88b9443dd19c()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf1
+// Params 1
+// Checksum 0x0, Offset: 0x1cf2
 // Size: 0x1fb
 function function_31edd36326bada17( var_632c2d9d36540b99 )
 {
@@ -903,8 +903,8 @@ function function_31edd36326bada17( var_632c2d9d36540b99 )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ef4
+// Params 2
+// Checksum 0x0, Offset: 0x1ef5
 // Size: 0x156
 function function_6360197cfe54c18e( immediaterelease, streakinfo )
 {
@@ -938,8 +938,8 @@ function function_6360197cfe54c18e( immediaterelease, streakinfo )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2052
+// Params 2
+// Checksum 0x0, Offset: 0x2053
 // Size: 0x73
 function function_daff421c657d09ca( var_f92dd6ce11a58204, bundle )
 {
@@ -957,8 +957,8 @@ function function_daff421c657d09ca( var_f92dd6ce11a58204, bundle )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x20cd
+// Params 2
+// Checksum 0x0, Offset: 0x20ce
 // Size: 0x63
 function function_bdde9fcc527c241b( immediaterelease, streakinfo )
 {
@@ -978,8 +978,8 @@ function function_bdde9fcc527c241b( immediaterelease, streakinfo )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2138
+// Params 2
+// Checksum 0x0, Offset: 0x2139
 // Size: 0x1db
 function function_e328684112fe03c5( immediaterelease, streakinfo )
 {
@@ -999,7 +999,8 @@ function function_e328684112fe03c5( immediaterelease, streakinfo )
     
     self setscriptablepartstate( "release", "on", 0 );
     
-    for (i = 0; i < self.bundle.var_c8cf96acb2102d41; i++) {
+    for ( i = 0; i < self.bundle.var_c8cf96acb2102d41 ; i++ )
+    {
         discnum = "0" + i + 1;
         mineorigin = self gettagorigin( "j_disc_" + discnum );
         launchdir = vectornormalize( mineorigin - self.origin );
@@ -1026,8 +1027,8 @@ function function_e328684112fe03c5( immediaterelease, streakinfo )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x231b
+// Params 0
+// Checksum 0x0, Offset: 0x231c
 // Size: 0xf
 function function_94d34a6ffa8cd741()
 {
@@ -1035,8 +1036,8 @@ function function_94d34a6ffa8cd741()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2332
+// Params 2
+// Checksum 0x0, Offset: 0x2333
 // Size: 0x7e
 function function_7fb05833db79cf2d( vehicle, mine )
 {
@@ -1053,8 +1054,8 @@ function function_7fb05833db79cf2d( vehicle, mine )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23b8
+// Params 1
+// Checksum 0x0, Offset: 0x23b9
 // Size: 0x100
 function function_ff273de0f0971ad( vehicle )
 {
@@ -1088,8 +1089,8 @@ function function_ff273de0f0971ad( vehicle )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24c0
+// Params 1
+// Checksum 0x0, Offset: 0x24c1
 // Size: 0x4e, Type: bool
 function function_60dface26506153e( weaponref )
 {
@@ -1098,8 +1099,8 @@ function function_60dface26506153e( weaponref )
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2517
+// Params 0
+// Checksum 0x0, Offset: 0x2518
 // Size: 0xf
 function function_9537ab94dab9a1c0()
 {
@@ -1107,8 +1108,8 @@ function function_9537ab94dab9a1c0()
 }
 
 // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x252e
+// Params 1
+// Checksum 0x0, Offset: 0x252f
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
 {
@@ -1118,8 +1119,8 @@ function function_49197cd063a740ea( callbackfunction )
 /#
 
     // Namespace cluster_spike / scripts\cp_mp\killstreaks\cluster_spike
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x254b
+    // Params 0
+    // Checksum 0x0, Offset: 0x254c
     // Size: 0x78, Type: dev
     function function_b6f9b15b3da67aa0()
     {

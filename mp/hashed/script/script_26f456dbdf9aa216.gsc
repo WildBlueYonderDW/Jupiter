@@ -6,7 +6,7 @@
 #namespace namespace_cbce62193111f79;
 
 // Namespace namespace_cbce62193111f79 / namespace_a3bb9840357a7ef2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb2
 // Size: 0xbe
 function function_5ad32ab5f21ddf93( statename, params )

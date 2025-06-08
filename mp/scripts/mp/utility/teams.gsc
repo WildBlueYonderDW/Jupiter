@@ -9,8 +9,8 @@
 #namespace teams;
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x55d
+// Params 2
+// Checksum 0x0, Offset: 0x567
 // Size: 0x68
 function getteamdata( team, property )
 {
@@ -20,8 +20,8 @@ function getteamdata( team, property )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ce
+// Params 3
+// Checksum 0x0, Offset: 0x5d8
 // Size: 0x82
 function setteamdata( team, property, value )
 {
@@ -32,8 +32,8 @@ function setteamdata( team, property, value )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x658
+// Params 3
+// Checksum 0x0, Offset: 0x662
 // Size: 0x90
 function modifyteamdata( team, property, value )
 {
@@ -44,8 +44,8 @@ function modifyteamdata( team, property, value )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f0
+// Params 2
+// Checksum 0x0, Offset: 0x6fa
 // Size: 0x43, Type: bool
 function function_ef7cf07ba921200e( team, property )
 {
@@ -54,8 +54,8 @@ function function_ef7cf07ba921200e( team, property )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x73c
+// Params 3
+// Checksum 0x0, Offset: 0x746
 // Size: 0xc9
 function addplayertoteam( player, team, var_cf5d3f8f0d10e600 )
 {
@@ -77,8 +77,8 @@ function addplayertoteam( player, team, var_cf5d3f8f0d10e600 )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x80d
+// Params 2
+// Checksum 0x0, Offset: 0x817
 // Size: 0xad
 function removeplayerfromteam( player, team )
 {
@@ -95,8 +95,8 @@ function removeplayerfromteam( player, team )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c2
+// Params 4
+// Checksum 0x0, Offset: 0x8cc
 // Size: 0x181
 function addtoteamlives( player, team, var_28335de6505d7e0c, context )
 {
@@ -137,8 +137,8 @@ function addtoteamlives( player, team, var_28335de6505d7e0c, context )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4b
+// Params 4
+// Checksum 0x0, Offset: 0xa55
 // Size: 0x19f
 function removefromteamlives( player, team, var_28335de6505d7e0c, context )
 {
@@ -180,8 +180,8 @@ function removefromteamlives( player, team, var_28335de6505d7e0c, context )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf2
+// Params 4
+// Checksum 0x0, Offset: 0xbfc
 // Size: 0x2ff
 function validatealivecount( eventtype, team, player, context )
 {
@@ -260,8 +260,8 @@ function validatealivecount( eventtype, team, player, context )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xef9
+// Params 2
+// Checksum 0x0, Offset: 0xf03
 // Size: 0x41
 function getteamcount( team, aliveonly )
 {
@@ -274,8 +274,8 @@ function getteamcount( team, aliveonly )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf42
+// Params 1
+// Checksum 0x0, Offset: 0xf4c
 // Size: 0x42
 function getenemyteams( testteam )
 {
@@ -286,8 +286,8 @@ function getenemyteams( testteam )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8d
+// Params 2
+// Checksum 0x0, Offset: 0xf97
 // Size: 0xf3
 function getfriendlyplayers( testteam, aliveonly )
 {
@@ -315,41 +315,59 @@ function getfriendlyplayers( testteam, aliveonly )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1089
-// Size: 0x14b
+// Params 2
+// Checksum 0x0, Offset: 0x1093
+// Size: 0x1f2
 function getenemyplayers( testteam, aliveonly )
 {
     enemies = [];
-    enemyteams = getenemyteams( testteam );
     
-    foreach ( team in enemyteams )
+    if ( istrue( level.teambased ) )
     {
-        if ( istrue( aliveonly ) )
+        enemyteams = getenemyteams( testteam );
+        
+        foreach ( team in enemyteams )
         {
-            foreach ( player in level.teamdata[ team ][ "alivePlayers" ] )
+            if ( istrue( aliveonly ) )
             {
-                if ( isdefined( player ) && isalive( player ) && !isdefined( player.fauxdead ) )
+                foreach ( player in level.teamdata[ team ][ "alivePlayers" ] )
                 {
-                    enemies[ enemies.size ] = player;
+                    if ( isdefined( player ) && isalive( player ) && !isdefined( player.fauxdead ) )
+                    {
+                        enemies[ enemies.size ] = player;
+                    }
                 }
+                
+                continue;
             }
             
-            continue;
+            foreach ( player in level.teamdata[ team ][ "players" ] )
+            {
+                enemies[ enemies.size ] = player;
+            }
         }
-        
-        foreach ( player in level.teamdata[ team ][ "players" ] )
+    }
+    else if ( istrue( aliveonly ) )
+    {
+        foreach ( player in level.players )
         {
-            enemies[ enemies.size ] = player;
+            if ( isdefined( player ) && isdefined( self ) && isalive( player ) && player != self && !isdefined( player.fauxdead ) )
+            {
+                enemies[ enemies.size ] = player;
+            }
         }
+    }
+    else
+    {
+        enemies = array_remove( level.players, self );
     }
     
     return enemies;
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11dd
+// Params 3
+// Checksum 0x0, Offset: 0x128e
 // Size: 0xc9
 function getsquadmates( testteam, testsquadindex, aliveonly )
 {
@@ -379,17 +397,17 @@ function getsquadmates( testteam, testsquadindex, aliveonly )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12af
-// Size: 0x27, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0x1360
+// Size: 0x27
 function function_5b7802e04b6d946( player )
 {
     return function_d0e67bb0e7f430f8( player.team, player.sessionsquadid );
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12df
+// Params 2
+// Checksum 0x0, Offset: 0x1390
 // Size: 0x4b, Type: bool
 function function_d0e67bb0e7f430f8( team, squadindex )
 {
@@ -397,8 +415,8 @@ function function_d0e67bb0e7f430f8( team, squadindex )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1333
+// Params 2
+// Checksum 0x0, Offset: 0x13e4
 // Size: 0x82
 function getenemycount( testteam, aliveonly )
 {
@@ -414,19 +432,19 @@ function getenemycount( testteam, aliveonly )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13be
-// Size: 0x97, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0x146f
+// Size: 0xa7, Type: bool
 function function_44a6f98cc3c0f5f4( team )
 {
-    var_7d247415a9640d07 = getsubgametype() == "dmz" || getsubgametype() == "exgm";
+    var_7d247415a9640d07 = getsubgametype() == "dmz" || getsubgametype() == "exgm" || getsubgametype() == "limbo";
     var_65c32dd267d39ddb = team == "team_hundred_ninety_five" || team == "team_hundred_ninety_three" || team == "team_hundred_ninety_four" || team == "team_hundred_ninety_five" || team == "team_hundred_ninety_six" || team == "team_hundred_ninety_seven" || team == "team_hundred_ninety_eight" || team == "team_hundred_ninety_nine";
     return var_7d247415a9640d07 && var_65c32dd267d39ddb;
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x145e
+// Params 1
+// Checksum 0x0, Offset: 0x151f
 // Size: 0x20, Type: bool
 function isgameplayteam( team )
 {
@@ -434,8 +452,8 @@ function isgameplayteam( team )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1487
+// Params 1
+// Checksum 0x0, Offset: 0x1548
 // Size: 0xe
 function getfaction( team )
 {
@@ -443,8 +461,8 @@ function getfaction( team )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x149e
+// Params 1
+// Checksum 0x0, Offset: 0x155f
 // Size: 0x19b
 function function_dd622cd64f483958( teamref )
 {
@@ -488,8 +506,8 @@ function function_dd622cd64f483958( teamref )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1641
+// Params 1
+// Checksum 0x0, Offset: 0x1702
 // Size: 0x67
 function getteamname( teamref )
 {
@@ -503,8 +521,8 @@ function getteamname( teamref )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b1
+// Params 1
+// Checksum 0x0, Offset: 0x1772
 // Size: 0x67
 function getteamshortname( teamref )
 {
@@ -518,8 +536,8 @@ function getteamshortname( teamref )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1721
+// Params 1
+// Checksum 0x0, Offset: 0x17e2
 // Size: 0x67
 function getteamicon( teamref )
 {
@@ -533,8 +551,8 @@ function getteamicon( teamref )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1791
+// Params 1
+// Checksum 0x0, Offset: 0x1852
 // Size: 0x67
 function getteamheadicon( teamref )
 {
@@ -548,8 +566,8 @@ function getteamheadicon( teamref )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1801
+// Params 1
+// Checksum 0x0, Offset: 0x18c2
 // Size: 0x67
 function getteamvoiceinfix( teamref )
 {
@@ -563,8 +581,8 @@ function getteamvoiceinfix( teamref )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1871
+// Params 1
+// Checksum 0x0, Offset: 0x1932
 // Size: 0x67
 function getcustomizationprefix( teamref )
 {
@@ -578,8 +596,8 @@ function getcustomizationprefix( teamref )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e1
+// Params 1
+// Checksum 0x0, Offset: 0x19a2
 // Size: 0x67
 function function_f5f92738a88b4577( teamref )
 {
@@ -593,8 +611,8 @@ function function_f5f92738a88b4577( teamref )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1951
+// Params 1
+// Checksum 0x0, Offset: 0x1a12
 // Size: 0x1a7
 function getteamfactionsfrommap( teamref )
 {
@@ -650,8 +668,8 @@ function getteamfactionsfrommap( teamref )
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b01
+// Params 0
+// Checksum 0x0, Offset: 0x1bc2
 // Size: 0x2f
 function getcustomgametypeteammax()
 {
@@ -660,8 +678,8 @@ function getcustomgametypeteammax()
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b39
+// Params 0
+// Checksum 0x0, Offset: 0x1bfa
 // Size: 0x2e
 function function_f6728366ba30005c()
 {
@@ -670,8 +688,8 @@ function function_f6728366ba30005c()
 }
 
 // Namespace teams / scripts\mp\utility\teams
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b6f
+// Params 0
+// Checksum 0x0, Offset: 0x1c30
 // Size: 0x73
 function calculatenumteamswithplayers()
 {

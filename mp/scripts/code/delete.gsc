@@ -1,7 +1,7 @@
 #namespace delete;
 
 // Namespace delete / scripts\code\delete
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88
 // Size: 0x1b
 function main()

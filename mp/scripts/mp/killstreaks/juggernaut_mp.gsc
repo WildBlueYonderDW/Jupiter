@@ -15,7 +15,7 @@
 #namespace juggernaut_mp;
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x326
 // Size: 0x1c6
 function init()
@@ -44,7 +44,7 @@ function init()
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f4
 // Size: 0x21
 function jugg_registeractionset()
@@ -53,7 +53,7 @@ function jugg_registeractionset()
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51d
 // Size: 0xb
 function jugg_registeronplayerspawncallback( function )
@@ -62,7 +62,7 @@ function jugg_registeronplayerspawncallback( function )
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x530
 // Size: 0x53
 function jugg_dropcratefromscriptedheli( owner, team, cratetype, position, angles, destination, data, streakinfo )
@@ -71,7 +71,7 @@ function jugg_dropcratefromscriptedheli( owner, team, cratetype, position, angle
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x58c
 // Size: 0x1b
 function jugg_makejuggernautcallback( config, streakinfo )
@@ -80,7 +80,7 @@ function jugg_makejuggernautcallback( config, streakinfo )
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0x12
 function jugg_initconfig( config )
@@ -89,7 +89,7 @@ function jugg_initconfig( config )
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cb
 // Size: 0x12
 function jugg_leveldata( ref )
@@ -98,7 +98,7 @@ function jugg_leveldata( ref )
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e6
 // Size: 0x14
 function jugg_watchpickup( droppingplayer )
@@ -107,7 +107,7 @@ function jugg_watchpickup( droppingplayer )
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x602
 // Size: 0x8
 function jugg_getmovespeedscalar()
@@ -116,7 +116,7 @@ function jugg_getmovespeedscalar()
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x613
 // Size: 0x9
 function jugg_updatemovespeedscale()
@@ -125,7 +125,7 @@ function jugg_updatemovespeedscale()
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x624
 // Size: 0x1c
 function jugg_allowactionset( name, allow )
@@ -134,7 +134,7 @@ function jugg_allowactionset( name, allow )
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x648
 // Size: 0x9
 function jugg_decrementfauxvehiclecount()
@@ -143,7 +143,7 @@ function jugg_decrementfauxvehiclecount()
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x659
 // Size: 0x9
 function jugg_incrementfauxvehiclecount()
@@ -152,7 +152,7 @@ function jugg_incrementfauxvehiclecount()
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66a
 // Size: 0x77, Type: bool
 function jugg_cantriggerjuggernaut( streakinfo )
@@ -176,7 +176,7 @@ function jugg_cantriggerjuggernaut( streakinfo )
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ea
 // Size: 0xd9
 function juggernautweaponpickedup( juggernautweaponobject, prevweaponobject )
@@ -209,7 +209,7 @@ function juggernautweaponpickedup( juggernautweaponobject, prevweaponobject )
 }
 
 // Namespace juggernaut_mp / scripts\mp\killstreaks\juggernaut_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7cb
 // Size: 0x1e
 function jugg_playoperatoruseline( player )

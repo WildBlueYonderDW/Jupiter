@@ -16,7 +16,7 @@
 #namespace player;
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a2
 // Size: 0x8e
 function getstancecenter()
@@ -38,7 +38,7 @@ function getstancecenter()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x839
 // Size: 0x93
 function getstancetop( stanceoverride )
@@ -67,7 +67,7 @@ function getstancetop( stanceoverride )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d5
 // Size: 0x41, Type: bool
 function isreallyalive( player )
@@ -76,7 +76,7 @@ function isreallyalive( player )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x91f
 // Size: 0x17, Type: bool
 function isinlaststand( player )
@@ -85,7 +85,7 @@ function isinlaststand( player )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x93f
 // Size: 0x37, Type: bool
 function function_d7afe062ef51bd77( player )
@@ -94,7 +94,7 @@ function function_d7afe062ef51bd77( player )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x97f
 // Size: 0x11d
 function function_311066dfee085643( player, damagetype )
@@ -141,7 +141,7 @@ function function_311066dfee085643( player, damagetype )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaa5
 // Size: 0x23, Type: bool
 function isaliveandnotinlaststand( player )
@@ -150,7 +150,7 @@ function isaliveandnotinlaststand( player )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad1
 // Size: 0x24, Type: bool
 function isarchetype( type )
@@ -159,7 +159,7 @@ function isarchetype( type )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xafe
 // Size: 0xe, Type: bool
 function isplayerads()
@@ -168,7 +168,7 @@ function isplayerads()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb15
 // Size: 0x20
 function setthirdpersondof( isenabled )
@@ -183,7 +183,7 @@ function setthirdpersondof( isenabled )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb3d
 // Size: 0x1c
 function updatesessionstate( sessionstate, statusicon )
@@ -192,7 +192,7 @@ function updatesessionstate( sessionstate, statusicon )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb61
 // Size: 0x10b
 function getteamarray( team, var_dcc07fcc8a9beb59 )
@@ -224,7 +224,7 @@ function getteamarray( team, var_dcc07fcc8a9beb59 )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc75
 // Size: 0x14d
 function get_players_watching( just_spectators, just_killcam )
@@ -287,7 +287,7 @@ function get_players_watching( just_spectators, just_killcam )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xdcb
 // Size: 0xf4
 function set_visionset_for_watching_players( new_visionset, var_98b0a8ec6eeff568, var_e0d7f346bd955cdc, var_fc0b50f08da38b65, just_spectators, just_killcam )
@@ -321,7 +321,7 @@ function set_visionset_for_watching_players( new_visionset, var_98b0a8ec6eeff568
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xec7
 // Size: 0x22
 function reset_visionset_on_spawn()
@@ -332,7 +332,7 @@ function reset_visionset_on_spawn()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xef1
 // Size: 0x8e
 function reset_visionset_on_team_change( var_d6263ebe22d2bee2, var_e4b1ee6125b0d25b )
@@ -355,7 +355,7 @@ function reset_visionset_on_team_change( var_d6263ebe22d2bee2, var_e4b1ee6125b0d
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf87
 // Size: 0x2b
 function reset_visionset_on_disconnect( entity_watching )
@@ -366,7 +366,7 @@ function reset_visionset_on_disconnect( entity_watching )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfba
 // Size: 0x26
 function restorebasevisionset( fadetime )
@@ -380,7 +380,7 @@ function restorebasevisionset( fadetime )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfe8
 // Size: 0x3a
 function init_visionsetnight()
@@ -396,7 +396,7 @@ function init_visionsetnight()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x102a
 // Size: 0x22
 function overridevisionsetnightforlevel( newvisionset )
@@ -406,7 +406,7 @@ function overridevisionsetnightforlevel( newvisionset )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1054
 // Size: 0xae
 function getuniqueid()
@@ -442,7 +442,7 @@ function getuniqueid()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x110b
 // Size: 0x2d
 function getplayersinradius( origin, radius, desiredteam, excludeent )
@@ -451,7 +451,7 @@ function getplayersinradius( origin, radius, desiredteam, excludeent )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1141
 // Size: 0x178
 function getplayersinradiusview( origin, radius, desiredteam, excludeent )
@@ -464,7 +464,8 @@ function getplayersinradiusview( origin, radius, desiredteam, excludeent )
         structcreated = undefined;
         tracepoints = [ player gettagorigin( "j_head" ), player gettagorigin( "j_mainroot" ), player gettagorigin( "tag_origin" ) ];
         
-        for (i = 0; i < tracepoints.size; i++) {
+        for ( i = 0; i < tracepoints.size ; i++ )
+        {
             if ( !scripts\engine\trace::ray_trace_passed( origin, tracepoints[ i ], level.characters, scripts\engine\trace::create_contents( 0, 1, 1, 1, 1, 1 ) ) )
             {
                 continue;
@@ -486,7 +487,7 @@ function getplayersinradiusview( origin, radius, desiredteam, excludeent )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12c2
 // Size: 0x7f
 function _enablecollisionnotifies( bool )
@@ -519,7 +520,7 @@ function _enablecollisionnotifies( bool )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1349
 // Size: 0x98
 function allow_dodge( bool )
@@ -557,7 +558,7 @@ function allow_dodge( bool )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13e9
 // Size: 0x63
 function isplayerproxyagent( ent, player )
@@ -576,7 +577,7 @@ function isplayerproxyagent( ent, player )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1455
 // Size: 0x41
 function enableragdollzerog( arg, scale )
@@ -593,7 +594,7 @@ function enableragdollzerog( arg, scale )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x149e
 // Size: 0xc, Type: bool
 function isragdollzerog()
@@ -602,7 +603,7 @@ function isragdollzerog()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14b3
 // Size: 0x7c
 function _visionsetnaked( visionset, time )
@@ -667,7 +668,8 @@ function private function_d93211a15c000cd( victim, attacker, var_d198b30dc157c5c
     maxsteps = 360 / stepangle;
     validpositions = [];
     
-    for (i = 0; i < maxsteps; i++) {
+    for ( i = 0; i < maxsteps ; i++ )
+    {
         stepvector = anglestoforward( baseangles + ( 0, stepangle * i, 0 ) );
         startposition = deathpos + ( 0, 0, 12 );
         endposition = deathpos + stepvector * cameradistance + ( 0, 0, 150 );
@@ -714,7 +716,7 @@ function private function_fdff38028c016239()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17ed
 // Size: 0x23
 function function_6d606d81ea9ab50b( var_81aa39b3e585cd66, var_d198b30dc157c5cd, contentoverride )
@@ -723,7 +725,7 @@ function function_6d606d81ea9ab50b( var_81aa39b3e585cd66, var_d198b30dc157c5cd, 
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1819
 // Size: 0x19
 function hidehudclear()
@@ -733,7 +735,7 @@ function hidehudclear()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x183a
 // Size: 0xa9
 function hideminimap( forcehide )
@@ -768,7 +770,7 @@ function hideminimap( forcehide )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18eb
 // Size: 0x63
 function showminimap()
@@ -788,7 +790,7 @@ function showminimap()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1956
 // Size: 0xc, Type: bool
 function alwaysshowminimap()
@@ -797,7 +799,7 @@ function alwaysshowminimap()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x196b
 // Size: 0x41, Type: bool
 function isfemale()
@@ -806,7 +808,7 @@ function isfemale()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19b5
 // Size: 0xc7
 function getlowestclientnum( players, var_e1fea15ff7126a10 )
@@ -829,7 +831,7 @@ function getlowestclientnum( players, var_e1fea15ff7126a10 )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a85
 // Size: 0xd9
 function setusingremote( remotename )
@@ -858,7 +860,7 @@ function setusingremote( remotename )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b66
 // Size: 0x1a
 function getremotename()
@@ -868,7 +870,7 @@ function getremotename()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b89
 // Size: 0x73
 function clearusingremote( var_2c111f02d48e2671 )
@@ -893,7 +895,7 @@ function clearusingremote( var_2c111f02d48e2671 )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c04
 // Size: 0x21c
 function _freezecontrols( frozen, force, debug )
@@ -971,7 +973,7 @@ function _freezecontrols( frozen, force, debug )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e28
 // Size: 0x149
 function function_5471a04faad16a00()
@@ -1015,7 +1017,7 @@ function function_5471a04faad16a00()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f79
 // Size: 0xd7
 function function_8213d31f7a3c32e2()
@@ -1046,7 +1048,7 @@ function function_8213d31f7a3c32e2()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2058
 // Size: 0xdf
 function _freezelookcontrols( frozen, force )
@@ -1088,7 +1090,7 @@ function _freezelookcontrols( frozen, force )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x213f
 // Size: 0x6a
 function getplayerforguid( guid )
@@ -1105,7 +1107,7 @@ function getplayerforguid( guid )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x21b2
 // Size: 0xb3
 function set_temp_energy_restore_rate( energygroup, temprate, time, untilfull )
@@ -1140,7 +1142,7 @@ function set_temp_energy_restore_rate( energygroup, temprate, time, untilfull )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x226d
 // Size: 0xb3
 function set_temp_energy_rest_time( energygroup, tempresttime, time, untilfull )
@@ -1175,7 +1177,7 @@ function set_temp_energy_rest_time( energygroup, tempresttime, time, untilfull )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2328
 // Size: 0x3c
 function _enableignoreme()
@@ -1194,7 +1196,7 @@ function _enableignoreme()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x236c
 // Size: 0x4c
 function _disableignoreme()
@@ -1210,7 +1212,7 @@ function _disableignoreme()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23c0
 // Size: 0x16
 function _resetenableignoreme()
@@ -1220,7 +1222,7 @@ function _resetenableignoreme()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x23de
 // Size: 0xd8
 function watchbuttonpressed( key, commanddown, commandup, startpressed )
@@ -1246,7 +1248,7 @@ function watchbuttonpressed( key, commanddown, commandup, startpressed )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24be
 // Size: 0x40
 function getbuttonpressed( key )
@@ -1265,7 +1267,7 @@ function getbuttonpressed( key )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2507
 // Size: 0x4c
 function watchbuttonpressedend( key )
@@ -1280,7 +1282,7 @@ function watchbuttonpressedend( key )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x255b
 // Size: 0x95
 function watchbuttonpressedinternal()
@@ -1314,7 +1316,7 @@ function watchbuttonpressedinternal()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25f8
 // Size: 0x51
 function watchbuttondown()
@@ -1327,7 +1329,7 @@ function watchbuttondown()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2651
 // Size: 0x51
 function watchbuttonup()
@@ -1340,7 +1342,7 @@ function watchbuttonup()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26aa
 // Size: 0x21
 function watchbuttonpressendondisconnect()
@@ -1351,7 +1353,7 @@ function watchbuttonpressendondisconnect()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x26d3
 // Size: 0x91
 function _setdof_internal( nearstart, nearend, farstart, farend, nearblur, farblur )
@@ -1378,7 +1380,7 @@ function _setdof_internal( nearstart, nearend, farstart, farend, nearblur, farbl
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x276c
 // Size: 0x619
 function setdof_dynamic()
@@ -1523,7 +1525,7 @@ function setdof_dynamic()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d8d
 // Size: 0x22
 function setdof_killer()
@@ -1535,7 +1537,7 @@ function setdof_killer()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2db7
 // Size: 0x1b2
 function setdof_killer_update()
@@ -1570,7 +1572,7 @@ function setdof_killer_update()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f71
 // Size: 0x1e
 function setdof_default()
@@ -1580,7 +1582,7 @@ function setdof_default()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f97
 // Size: 0x1f
 function setdof_spectator()
@@ -1590,7 +1592,7 @@ function setdof_spectator()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fbe
 // Size: 0x24
 function setdof_infil()
@@ -1600,7 +1602,7 @@ function setdof_infil()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fea
 // Size: 0x25
 function setdof_apache()
@@ -1610,7 +1612,7 @@ function setdof_apache()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3017
 // Size: 0x25
 function setdof_cruisethird()
@@ -1620,7 +1622,7 @@ function setdof_cruisethird()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3044
 // Size: 0x21
 function setdof_cruisefirst()
@@ -1630,7 +1632,7 @@ function setdof_cruisefirst()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x306d
 // Size: 0x25
 function setdof_tank()
@@ -1640,7 +1642,7 @@ function setdof_tank()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x309a
 // Size: 0x24
 function setdof_thirdperson()
@@ -1650,7 +1652,7 @@ function setdof_thirdperson()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30c6
 // Size: 0x21
 function setdof_gunship()
@@ -1660,7 +1662,7 @@ function setdof_gunship()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30ef
 // Size: 0x22
 function setdof_gunship_zoom()
@@ -1670,7 +1672,7 @@ function setdof_gunship_zoom()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3119
 // Size: 0x25
 function setdof_scrambler_strength_1()
@@ -1680,7 +1682,7 @@ function setdof_scrambler_strength_1()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3146
 // Size: 0x28
 function setdof_scrambler_strength_2()
@@ -1690,7 +1692,7 @@ function setdof_scrambler_strength_2()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3176
 // Size: 0x25
 function setdof_scrambler_strength_3()
@@ -1700,7 +1702,7 @@ function setdof_scrambler_strength_3()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31a3
 // Size: 0x28
 function setdof_scrambler_strength_4()
@@ -1710,7 +1712,7 @@ function setdof_scrambler_strength_4()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31d3
 // Size: 0x25
 function setdof_scrambler_strength_5()
@@ -1720,7 +1722,7 @@ function setdof_scrambler_strength_5()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3200
 // Size: 0x9
 function clearkillcamstate()
@@ -1729,7 +1731,7 @@ function clearkillcamstate()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3211
 // Size: 0x43
 function isinkillcam()
@@ -1751,7 +1753,7 @@ function isinkillcam()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x325d
 // Size: 0x86
 function waittillrecoveredhealth( time, interval )
@@ -1790,7 +1792,7 @@ function waittillrecoveredhealth( time, interval )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32ec
 // Size: 0x41
 function _setsuit( suit )
@@ -1806,7 +1808,7 @@ function _setsuit( suit )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3335
 // Size: 0x50
 function setwind( value, manualoverride )
@@ -1821,7 +1823,7 @@ function setwind( value, manualoverride )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x338d
 // Size: 0x13
 function printspawnmessage( message )
@@ -1830,7 +1832,7 @@ function printspawnmessage( message )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x33a8
 // Size: 0xfc
 function codcastersetplayerstatuseffect( category, duration )
@@ -1883,7 +1885,7 @@ function codcastersetplayerstatuseffect( category, duration )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34ac
 // Size: 0xbc, Type: bool
 function isincombat()
@@ -1912,7 +1914,7 @@ function isincombat()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3571
 // Size: 0xc9
 function function_9612d351d714efb1()
@@ -1941,7 +1943,7 @@ function function_9612d351d714efb1()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3643
 // Size: 0x1d
 function setbeingrevivedinternal( isbeingrevived )
@@ -1951,7 +1953,7 @@ function setbeingrevivedinternal( isbeingrevived )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3668
 // Size: 0x1a, Type: bool
 function getbeingrevivedinternal()
@@ -1960,7 +1962,7 @@ function getbeingrevivedinternal()
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x368b
 // Size: 0x4f
 function function_d80ebbf694920c5f( notifyname, commandname, actioncallback, var_3fd755a4695815a9, endons, inputtype, var_a5b5522433ca23bc )
@@ -1969,7 +1971,7 @@ function function_d80ebbf694920c5f( notifyname, commandname, actioncallback, var
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x36e2
 // Size: 0x61
 function function_bbf44d52ca2820cd( notifyname, commandname, actioncallback, var_3fd755a4695815a9, endons, holdduration, var_52273a4095c18970, inputtype, var_a5b5522433ca23bc )
@@ -1978,7 +1980,7 @@ function function_bbf44d52ca2820cd( notifyname, commandname, actioncallback, var
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x374b
 // Size: 0x59
 function function_4b6858706980b154( notifyname, commandname, actioncallback, var_3fd755a4695815a9, endons, inputtype, var_5bbf4defc70826d0, var_a5b5522433ca23bc )
@@ -1987,7 +1989,7 @@ function function_4b6858706980b154( notifyname, commandname, actioncallback, var
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x37ac
 // Size: 0x1be
 function function_bce0309beb222741( notifyname, commandname, actioncallback, var_3fd755a4695815a9, endons, holdduration, var_52273a4095c18970, inputtype, isrepeat, var_5bbf4defc70826d0, var_a5b5522433ca23bc )
@@ -2043,7 +2045,7 @@ function function_bce0309beb222741( notifyname, commandname, actioncallback, var
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3972
 // Size: 0x14f
 function function_efc7b5130b976314( player )
@@ -2084,7 +2086,7 @@ function function_efc7b5130b976314( player )
 }
 
 // Namespace player / scripts\mp\utility\player
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ac9
 // Size: 0x192
 function function_affaefa6ea1b971d( player )

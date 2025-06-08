@@ -18,7 +18,7 @@
 #namespace namespace_7ba9e064ad5276fb;
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54d
 // Size: 0x1f8
 function init()
@@ -57,7 +57,7 @@ function init()
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x74d
 // Size: 0x1c
 function sq_removequestinstance()
@@ -70,7 +70,7 @@ function sq_removequestinstance()
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x771
 // Size: 0xd3
 function sq_playerdisconnect( disconnectplayer )
@@ -94,7 +94,7 @@ function sq_playerdisconnect( disconnectplayer )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x84c
 // Size: 0x30
 function sq_entergulag( player )
@@ -113,7 +113,7 @@ function sq_entergulag( player )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x884
 // Size: 0x44
 function sq_respawn( player )
@@ -136,7 +136,7 @@ function sq_respawn( player )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d0
 // Size: 0x37
 function checkforcorrectinstance( player )
@@ -150,7 +150,7 @@ function checkforcorrectinstance( player )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x90f
 // Size: 0xdf
 function sq_createquestlocale( placement )
@@ -183,7 +183,7 @@ function sq_createquestlocale( placement )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f7
 // Size: 0x109
 function sq_movequestlocale( placedorigin )
@@ -212,7 +212,7 @@ function sq_movequestlocale( placedorigin )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb08
 // Size: 0x20f, Type: bool
 function setuplocalelocation( placedorigin )
@@ -264,7 +264,7 @@ function setuplocalelocation( placedorigin )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd20
 // Size: 0x5f
 function sq_removelocaleinstance()
@@ -287,7 +287,7 @@ function sq_removelocaleinstance()
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd87
 // Size: 0x10a
 function sq_circletick( dangercircleorigin, dangercircleradius )
@@ -325,7 +325,7 @@ function sq_circletick( dangercircleorigin, dangercircleradius )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe99
 // Size: 0xd, Type: bool
 function sq_checkiflocaleisavailable()
@@ -338,7 +338,7 @@ function sq_checkiflocaleisavailable()
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeaf
 // Size: 0x360
 function takequestitem( pickupent )
@@ -405,7 +405,7 @@ function takequestitem( pickupent )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1217
 // Size: 0x106
 function lootcachesearchparams( searchcircleorigin, reservedplacement )
@@ -436,7 +436,7 @@ function lootcachesearchparams( searchcircleorigin, reservedplacement )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1326
 // Size: 0x6c
 function gametypeoverridescavsearchparams()
@@ -459,7 +459,7 @@ function gametypeoverridescavsearchparams()
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x139b
 // Size: 0x11e
 function completescavengerquest( chest )
@@ -492,7 +492,7 @@ function completescavengerquest( chest )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14c1
 // Size: 0x4f
 function failscavengerquest()
@@ -508,7 +508,7 @@ function failscavengerquest()
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1518
 // Size: 0x13c
 function updatescavengerhud()
@@ -543,7 +543,7 @@ function updatescavengerhud()
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x165c
 // Size: 0x25
 function hidescavengerhudfromplayer( player )
@@ -557,7 +557,7 @@ function hidescavengerhudfromplayer( player )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1689
 // Size: 0x67
 function deletescavengerhud()
@@ -575,7 +575,7 @@ function deletescavengerhud()
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16f8
 // Size: 0x30
 function sq_ontimerexpired()
@@ -585,7 +585,7 @@ function sq_ontimerexpired()
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1730
 // Size: 0x14b
 function spawnscavengerlootcache( inorigin, var_5b9c864b21207ff6, locale )
@@ -610,7 +610,7 @@ function spawnscavengerlootcache( inorigin, var_5b9c864b21207ff6, locale )
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1883
 // Size: 0x394
 function scavengerlootcacheused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -675,7 +675,7 @@ function scavengerlootcacheused( instance, part, state, player, var_a5b2c541413a
 }
 
 // Namespace namespace_7ba9e064ad5276fb / namespace_2af0110302b87c2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c1f
 // Size: 0x9e, Type: bool
 function sqtablet_init()
@@ -687,7 +687,8 @@ function sqtablet_init()
     self.reservedplacement = [];
     searchorigin = self.origin;
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         search_params = lootcachesearchparams( searchorigin );
         placement = findquestplacement( "scavenger", search_params );
         

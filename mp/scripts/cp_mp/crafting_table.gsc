@@ -16,7 +16,7 @@
 #namespace crafting_table;
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x354
 // Size: 0x19
 function function_207ef3b2b9684645()
@@ -47,7 +47,7 @@ function private function_92e996e62ae888cc()
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d8
 // Size: 0x17b
 function function_7e01e70947d29a55()
@@ -88,7 +88,7 @@ function function_7e01e70947d29a55()
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55b
 // Size: 0xcd
 function spawn_destination( destination )
@@ -110,7 +110,7 @@ function spawn_destination( destination )
 /#
 
     // Namespace crafting_table / scripts\cp_mp\crafting_table
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x630
     // Size: 0x5, Type: dev
     function function_3575e808663ab031()
@@ -121,7 +121,7 @@ function spawn_destination( destination )
 #/
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63d
 // Size: 0x78
 function function_699b88a1e45c0279( instance )
@@ -152,7 +152,7 @@ function private function_56432a6c9dc16f88()
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7a3
 // Size: 0x23
 function function_fd14e351e1c3868e( player )
@@ -185,7 +185,7 @@ function private function_6a4771c206414984( usable, player )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x85d
 // Size: 0xcf
 function function_2cf60e1dd7c2f302( player )
@@ -208,7 +208,7 @@ function function_2cf60e1dd7c2f302( player )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x934
 // Size: 0x74
 function function_dddb14a98ae3b238()
@@ -244,7 +244,7 @@ function function_dddb14a98ae3b238()
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b0
 // Size: 0x6c
 function function_baa9f4ba6ddc9e64()
@@ -264,7 +264,7 @@ function function_baa9f4ba6ddc9e64()
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa24
 // Size: 0xa2
 function function_bf5ef5411b8ab9fe( state )
@@ -297,7 +297,7 @@ function function_bf5ef5411b8ab9fe( state )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xace
 // Size: 0x5b
 function function_fcdcc8a41c178a71( channel, purchaseindex )
@@ -319,7 +319,7 @@ function function_fcdcc8a41c178a71( channel, purchaseindex )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb31
 // Size: 0xef
 function craft_item( craftableitemindex )
@@ -353,7 +353,7 @@ function craft_item( craftableitemindex )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc28
 // Size: 0xa9
 function function_c302c35a4fb18338( equipref, slot )
@@ -390,7 +390,7 @@ function function_c302c35a4fb18338( equipref, slot )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcda
 // Size: 0xa0
 function craft_equipment( item )
@@ -414,7 +414,7 @@ function craft_equipment( item )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd83
 // Size: 0x1c8
 function craft_support( item )
@@ -483,7 +483,7 @@ function craft_support( item )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf54
 // Size: 0x86
 function drop_item( str_ref, n_count )
@@ -499,7 +499,7 @@ function drop_item( str_ref, n_count )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfe2
 // Size: 0xc3
 function function_a98f099f96cf1fe( item )
@@ -536,7 +536,7 @@ function function_a98f099f96cf1fe( item )
 }
 
 // Namespace crafting_table / scripts\cp_mp\crafting_table
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10ae
 // Size: 0xcc
 function give_armor( platecarrierlevel )

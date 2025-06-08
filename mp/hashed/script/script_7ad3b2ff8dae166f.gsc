@@ -18,7 +18,7 @@ function autoexec main()
 }
 
 // Namespace namespace_e422f53ac4bc98a4 / namespace_94b697e2ef867537
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cb
 // Size: 0x2d0
 function function_a114d6863af2f149()
@@ -67,7 +67,7 @@ function function_a114d6863af2f149()
 }
 
 // Namespace namespace_e422f53ac4bc98a4 / namespace_94b697e2ef867537
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a3
 // Size: 0xa4
 function function_784a9a0ec8d203b9( bundle )

@@ -8,7 +8,7 @@
 #namespace bots_gametype_dd;
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c2
 // Size: 0x10
 function main()
@@ -20,7 +20,7 @@ function main()
 /#
 
     // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2da
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -31,7 +31,7 @@ function main()
 #/
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e7
 // Size: 0x3d
 function setup_callbacks()
@@ -45,7 +45,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32c
 // Size: 0x14
 function bot_dd_start()
@@ -58,7 +58,7 @@ function bot_dd_start()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x348
 // Size: 0x9f
 function setup_bot_dd()
@@ -82,7 +82,7 @@ function setup_bot_dd()
 /#
 
     // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x3ef
     // Size: 0xfd, Type: dev
     function function_b6dcc7c53780923c( label, trigger )
@@ -121,7 +121,7 @@ function setup_bot_dd()
 #/
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f4
 // Size: 0x37c
 function bot_dd_think()
@@ -246,7 +246,7 @@ function bot_dd_think()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x878
 // Size: 0x9e
 function notify_enemy_team_bomb_used( type )
@@ -264,7 +264,7 @@ function notify_enemy_team_bomb_used( type )
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91e
 // Size: 0x107
 function plant_bomb()
@@ -298,7 +298,7 @@ function plant_bomb()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2d
 // Size: 0x237
 function defuse_bomb()
@@ -382,7 +382,7 @@ function defuse_bomb()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc6c
 // Size: 0x64
 function investigate_someone_using_bomb()
@@ -405,7 +405,7 @@ function investigate_someone_using_bomb()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd8
 // Size: 0xed
 function get_player_defusing_zone( zone )
@@ -438,7 +438,7 @@ function get_player_defusing_zone( zone )
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdce
 // Size: 0xed
 function get_player_planting_zone( zone )
@@ -471,7 +471,7 @@ function get_player_planting_zone( zone )
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec4
 // Size: 0x23, Type: bool
 function bombzone_is_active( zone )
@@ -485,7 +485,7 @@ function bombzone_is_active( zone )
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef0
 // Size: 0x6a
 function get_active_bombzones()
@@ -504,7 +504,7 @@ function get_active_bombzones()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf63
 // Size: 0xe7
 function get_players_at_zone( zone, team )
@@ -534,7 +534,7 @@ function get_players_at_zone( zone, team )
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1053
 // Size: 0x7d
 function bot_pick_dd_zone_with_fewer_defenders( zones, difference )
@@ -555,7 +555,7 @@ function bot_pick_dd_zone_with_fewer_defenders( zones, difference )
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10d8
 // Size: 0x73
 function bot_pick_new_zone( type )
@@ -579,7 +579,7 @@ function bot_pick_new_zone( type )
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1153
 // Size: 0x18e
 function bot_choose_defend_zone()
@@ -645,7 +645,7 @@ function bot_choose_defend_zone()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12ea
 // Size: 0x75
 function get_other_active_zone( test_zone )
@@ -663,7 +663,7 @@ function get_other_active_zone( test_zone )
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1367
 // Size: 0xce
 function bot_choose_attack_zone()
@@ -700,7 +700,7 @@ function bot_choose_attack_zone()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x143e
 // Size: 0x99
 function bot_try_switch_attack_zone()
@@ -721,7 +721,7 @@ function bot_try_switch_attack_zone()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14df
 // Size: 0x11e
 function bot_choose_attack_role()
@@ -772,7 +772,7 @@ function bot_choose_attack_role()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1605
 // Size: 0x114
 function bot_choose_defend_role()
@@ -819,7 +819,7 @@ function bot_choose_defend_role()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1721
 // Size: 0x39
 function bot_dd_set_role( new_role )
@@ -832,7 +832,7 @@ function bot_dd_set_role( new_role )
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1762
 // Size: 0x34
 function bot_dd_clear_role()
@@ -846,7 +846,7 @@ function bot_dd_clear_role()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x179e
 // Size: 0x15c
 function bot_dd_ai_director_update()
@@ -890,7 +890,7 @@ function bot_dd_ai_director_update()
 }
 
 // Namespace bots_gametype_dd / scripts\mp\bots\bots_gametype_dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1902
 // Size: 0x17, Type: bool
 function is_bomb_planted_on( zone )

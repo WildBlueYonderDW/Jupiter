@@ -7,7 +7,7 @@
 #namespace meatshield;
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17d
 // Size: 0x75
 function init()
@@ -25,7 +25,7 @@ function init()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x46
 function function_8f2f9f02b630ed27()
@@ -39,7 +39,7 @@ function function_8f2f9f02b630ed27()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x248
 // Size: 0x4c
 function function_8562e6b396459b10()
@@ -59,7 +59,7 @@ function function_8562e6b396459b10()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29c
 // Size: 0xe2
 function function_3f6c57b19f80fbd9()
@@ -95,7 +95,7 @@ function function_3f6c57b19f80fbd9()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x386
 // Size: 0xaf
 function function_a29f3f8e24309d49()
@@ -110,7 +110,7 @@ function function_a29f3f8e24309d49()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43d
 // Size: 0x4d
 function function_139a67a31afc452b()
@@ -124,7 +124,7 @@ function function_139a67a31afc452b()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x492
 // Size: 0x2d
 function function_90c280e11232303b( enabled )
@@ -135,7 +135,7 @@ function function_90c280e11232303b( enabled )
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c7
 // Size: 0x6a
 function function_afdf3e6cbe0522d7( damage, instantkill )
@@ -151,7 +151,7 @@ function function_afdf3e6cbe0522d7( damage, instantkill )
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x539
 // Size: 0x43
 function function_aaf92259b5005889()
@@ -170,7 +170,7 @@ function function_aaf92259b5005889()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x584
 // Size: 0x32
 function function_7e80a2f5d64a4196()
@@ -182,7 +182,7 @@ function function_7e80a2f5d64a4196()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5be
 // Size: 0x33
 function function_a7db18d919050692()
@@ -194,7 +194,7 @@ function function_a7db18d919050692()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f9
 // Size: 0x54
 function function_d8aeb1fac2d32123()
@@ -211,7 +211,7 @@ function function_d8aeb1fac2d32123()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x655
 // Size: 0x59
 function function_7b59a9e133d4cb45()
@@ -228,7 +228,7 @@ function function_7b59a9e133d4cb45()
 }
 
 // Namespace meatshield / scripts\mp\meatshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b6
 // Size: 0x33, Type: bool
 function function_10de2964abd64e1f()
@@ -254,7 +254,7 @@ function function_10de2964abd64e1f()
 /#
 
     // Namespace meatshield / scripts\mp\meatshield
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6f2
     // Size: 0x1f0, Type: dev
     function function_23f1fe988c0500d1()
@@ -271,7 +271,8 @@ function function_10de2964abd64e1f()
             
             if ( attackerentnum == -2 || victimentnum == -2 )
             {
-                for (i = 0; i < var_be7af47bf33d6b22.size; i++) {
+                for ( i = 0; i < var_be7af47bf33d6b22.size ; i++ )
+                {
                     victim = var_be7af47bf33d6b22[ i ].victim;
                     attacker = var_be7af47bf33d6b22[ i ].attacker;
                     

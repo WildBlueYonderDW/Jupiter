@@ -4,7 +4,7 @@
 #namespace mp_jup_st_h_ob_contracts_weapon_stash_cs;
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x274
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2e9
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x358
 // Size: 0xbd8
 function createstructs( fe, us, cf )
@@ -221,7 +221,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf38
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -230,7 +230,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf42
 // Size: 0xe
 function cleanup()
@@ -239,7 +239,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf58
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -254,7 +254,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xfca
 // Size: 0x6a
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -276,7 +276,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x103c
 // Size: 0x438
 function function_33b4f960ad68299( fe, us, cf )
@@ -317,7 +317,7 @@ function function_33b4f960ad68299( fe, us, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x147c
 // Size: 0x3d4
 function function_16a08d0077c1f3b6( fe, us, cf )
@@ -355,7 +355,7 @@ function function_16a08d0077c1f3b6( fe, us, cf )
 }
 
 // Namespace mp_jup_st_h_ob_contracts_weapon_stash_cs / namespace_193558b0d3a39d63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1858
 // Size: 0x1ba
 function function_6da2952367672ac0()

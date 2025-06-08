@@ -6,7 +6,7 @@
 #namespace namespace_63bf3f1fa5dc2ff7;
 
 // Namespace namespace_63bf3f1fa5dc2ff7 / namespace_47a22a8f9dbdb88d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x258
 // Size: 0x1a1
 function init()
@@ -45,7 +45,7 @@ function init()
 }
 
 // Namespace namespace_63bf3f1fa5dc2ff7 / namespace_47a22a8f9dbdb88d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x401
 // Size: 0x24a
 function testprocess()
@@ -90,7 +90,8 @@ function testprocess()
     
     self.mit.var_97dd4f64f6425eaa.testingresult = 0;
     
-    for (targetpositions = [ doorinfo.var_518a4e9f2d3b108d, doorinfo.var_5394fc468396843c ]; targetpositions.size > 0; targetpositions = array_remove( targetpositions, nextpos )) {
+    for ( targetpositions = [ doorinfo.var_518a4e9f2d3b108d, doorinfo.var_5394fc468396843c ]; targetpositions.size > 0 ; targetpositions = array_remove( targetpositions, nextpos ) )
+    {
         nextpos = targetpositions[ 0 ];
         
         if ( !function_41eeb1b4bf5b7790( self, doorinfo, nextpos ) )
@@ -108,7 +109,7 @@ function testprocess()
 }
 
 // Namespace namespace_63bf3f1fa5dc2ff7 / namespace_47a22a8f9dbdb88d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x653
 // Size: 0x288
 function endhandler()
@@ -189,7 +190,7 @@ function private function_3ea375eb460f79a4( situation, bot, lastposition, door, 
 }
 
 // Namespace namespace_63bf3f1fa5dc2ff7 / namespace_47a22a8f9dbdb88d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab7
 // Size: 0x22, Type: bool
 function function_3113f44ebafe71b1()

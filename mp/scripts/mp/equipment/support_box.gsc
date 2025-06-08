@@ -10,8 +10,10 @@
 #using scripts\cp_mp\equipment\haywire;
 #using scripts\cp_mp\supers\supers;
 #using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
 #using scripts\cp_mp\utility\player_utility;
 #using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\utility\weapon_utility;
 #using scripts\cp_mp\weapon;
 #using scripts\engine\utility;
 #using scripts\mp\analyticslog;
@@ -37,8 +39,8 @@
 #namespace support_box;
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa50
+// Params 0
+// Checksum 0x0, Offset: 0xa86
 // Size: 0x1c0
 function supportbox_init()
 {
@@ -68,8 +70,8 @@ function supportbox_init()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc18
+// Params 1
+// Checksum 0x0, Offset: 0xc4e
 // Size: 0x65
 function supportbox_updateheadicononjointeam( player )
 {
@@ -83,8 +85,8 @@ function supportbox_updateheadicononjointeam( player )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc85
+// Params 4
+// Checksum 0x0, Offset: 0xcbb
 // Size: 0x2f8
 function box_used_common_setup( grenade, equipmentname, superid, headicon )
 {
@@ -175,8 +177,8 @@ function box_used_common_setup( grenade, equipmentname, superid, headicon )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf85
+// Params 1
+// Checksum 0x0, Offset: 0xfbb
 // Size: 0x9e, Type: bool
 function is_train_ent( hitent )
 {
@@ -200,9 +202,9 @@ function is_train_ent( hitent )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x102c
-// Size: 0x2db
+// Params 1
+// Checksum 0x0, Offset: 0x1062
+// Size: 0x2c4
 function supportbox_used( grenade )
 {
     grenade endon( "death" );
@@ -229,7 +231,7 @@ function supportbox_used( grenade )
                 vfxtimeout = "vfx/jup/fieldupgrades/vfx_utilitybox_timeout.vfx";
                 equipname = "equip_utilitybox";
                 supername = "super_utility_drop";
-                headicon = "hud_icon_fieldupgrade_haunted_box";
+                headicon = "hud_icon_fieldupgrade_utility_box";
                 usehint = %EQUIPMENT_HINTS/UTILITY_BOX_USE;
                 break;
             case #"hash_5bb446fe7b2c92da":
@@ -275,16 +277,12 @@ function supportbox_used( grenade )
     grenade.timeoutvfxname = vfxtimeout;
     box_used_common_setup( grenade, equipname, supername, headicon );
     grenade thread supportbox_makeusable( equipname, usehint );
-    
-    if ( supername == "super_armor_drop" || supername == "super_ammo_drop" )
-    {
-        scripts\cp_mp\challenges::function_d997435895422ecc( supername, function_e2ff8f4b4e94f723( #"hash_83a2d67994d7e295", #"use" ) );
-    }
+    scripts\cp_mp\challenges::function_d997435895422ecc( supername, function_e2ff8f4b4e94f723( #"hash_83a2d67994d7e295", #"use" ) );
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x130f
+// Params 1
+// Checksum 0x0, Offset: 0x132e
 // Size: 0x6c
 function supportbox_hideandshowaftertime( time )
 {
@@ -299,8 +297,8 @@ function supportbox_hideandshowaftertime( time )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1383
+// Params 0
+// Checksum 0x0, Offset: 0x13a2
 // Size: 0xa3
 function supportbox_unset()
 {
@@ -318,8 +316,8 @@ function supportbox_unset()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x142e
+// Params 3
+// Checksum 0x0, Offset: 0x144d
 // Size: 0x231
 function supportbox_destroy( immediate, wasdestroyed, var_d3f5ceb48370a22a )
 {
@@ -402,8 +400,8 @@ function supportbox_destroy( immediate, wasdestroyed, var_d3f5ceb48370a22a )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1667
+// Params 2
+// Checksum 0x0, Offset: 0x1686
 // Size: 0x1b8
 function supportbox_delete( deletiondelay, wasdestroyed )
 {
@@ -460,8 +458,8 @@ function supportbox_delete( deletiondelay, wasdestroyed )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1827
+// Params 2
+// Checksum 0x0, Offset: 0x1846
 // Size: 0x8d
 function supportbox_makeusable( equipmentname, hintstring )
 {
@@ -481,8 +479,8 @@ function supportbox_makeusable( equipmentname, hintstring )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18bc
+// Params 0
+// Checksum 0x0, Offset: 0x18db
 // Size: 0x22
 function supportbox_makeunusable()
 {
@@ -493,8 +491,8 @@ function supportbox_makeunusable()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e6
+// Params 0
+// Checksum 0x0, Offset: 0x1905
 // Size: 0x4c
 function supportbox_watchallplayeruse()
 {
@@ -517,8 +515,8 @@ function supportbox_watchallplayeruse()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x193a
+// Params 0
+// Checksum 0x0, Offset: 0x1959
 // Size: 0x84
 function supportbox_updateplayerusevisibility()
 {
@@ -540,8 +538,8 @@ function supportbox_updateplayerusevisibility()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c6
+// Params 0
+// Checksum 0x0, Offset: 0x19e5
 // Size: 0x91
 function supportbox_updateplayersused()
 {
@@ -561,8 +559,8 @@ function supportbox_updateplayersused()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a5f
+// Params 1
+// Checksum 0x0, Offset: 0x1a7e
 // Size: 0x55, Type: bool
 function supportbox_playercanuse( player )
 {
@@ -590,9 +588,9 @@ function supportbox_playercanuse( player )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1abd
-// Size: 0x30a
+// Params 1
+// Checksum 0x0, Offset: 0x1adc
+// Size: 0x316
 function supportbox_onplayeruse( player )
 {
     if ( !isdefined( self.equipmentref ) )
@@ -633,7 +631,7 @@ function supportbox_onplayeruse( player )
                 clipnum = 3;
             }
             
-            if ( istrue( weaponobj.hasalternate ) )
+            if ( istrue( weaponobj.hasalternate ) && !isaxeweapon( weaponobj ) )
             {
                 var_6890a4ce965bba99 = weaponobj getaltweapon();
                 var_91093ef03654702c = weaponclass( var_6890a4ce965bba99 );
@@ -702,8 +700,8 @@ function supportbox_onplayeruse( player )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dd0
+// Params 1
+// Checksum 0x0, Offset: 0x1dfb
 // Size: 0x45
 function function_bea6f988c3fbb7a1( equipref )
 {
@@ -722,8 +720,8 @@ function function_bea6f988c3fbb7a1( equipref )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e1e
+// Params 1
+// Checksum 0x0, Offset: 0x1e49
 // Size: 0x90
 function supportbox_playusesound( player )
 {
@@ -746,8 +744,8 @@ function supportbox_playusesound( player )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1eb6
+// Params 0
+// Checksum 0x0, Offset: 0x1ee1
 // Size: 0x57
 function supportbox_onplayeruseanim()
 {
@@ -766,8 +764,8 @@ function supportbox_onplayeruseanim()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f15
+// Params 0
+// Checksum 0x0, Offset: 0x1f40
 // Size: 0x75
 function supportbox_makedamageable()
 {
@@ -791,8 +789,8 @@ function supportbox_makedamageable()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f92
+// Params 1
+// Checksum 0x0, Offset: 0x1fbd
 // Size: 0x174
 function supportbox_handledamage( data )
 {
@@ -829,8 +827,8 @@ function supportbox_handledamage( data )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x210f
+// Params 1
+// Checksum 0x0, Offset: 0x213a
 // Size: 0x3c
 function supportbox_handlefataldamage( data )
 {
@@ -840,8 +838,8 @@ function supportbox_handlefataldamage( data )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2153
+// Params 2
+// Checksum 0x0, Offset: 0x217e
 // Size: 0x96
 function supportbox_bulletdamagetohits( data, isenemydamage )
 {
@@ -866,8 +864,8 @@ function supportbox_bulletdamagetohits( data, isenemydamage )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x21f1
+// Params 2
+// Checksum 0x0, Offset: 0x221c
 // Size: 0x58
 function supportbox_explosivedamagetohits( data, isenemydamage )
 {
@@ -890,8 +888,8 @@ function supportbox_explosivedamagetohits( data, isenemydamage )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2251
+// Params 0
+// Checksum 0x0, Offset: 0x227c
 // Size: 0x20
 function supportbox_removeowneroutline()
 {
@@ -902,8 +900,8 @@ function supportbox_removeowneroutline()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2279
+// Params 1
+// Checksum 0x0, Offset: 0x22a4
 // Size: 0x47
 function supportbox_addheadicon( headicon )
 {
@@ -913,8 +911,8 @@ function supportbox_addheadicon( headicon )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22c8
+// Params 0
+// Checksum 0x0, Offset: 0x22f3
 // Size: 0x50
 function supportbox_removeheadicon()
 {
@@ -932,8 +930,8 @@ function supportbox_removeheadicon()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2320
+// Params 1
+// Checksum 0x0, Offset: 0x234b
 // Size: 0x8e
 function supportbox_givepointsfordeath( attacker )
 {
@@ -956,8 +954,8 @@ function supportbox_givepointsfordeath( attacker )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x23b6
+// Params 4
+// Checksum 0x0, Offset: 0x23e1
 // Size: 0x92
 function supportbox_givexpforuse( player, eventname, persstat, supername )
 {
@@ -975,8 +973,8 @@ function supportbox_givexpforuse( player, eventname, persstat, supername )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2450
+// Params 1
+// Checksum 0x0, Offset: 0x247b
 // Size: 0x14
 function supportbox_onmovingplatformdeath( data )
 {
@@ -984,8 +982,8 @@ function supportbox_onmovingplatformdeath( data )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x246c
+// Params 1
+// Checksum 0x0, Offset: 0x2497
 // Size: 0x7c
 function function_ab33fbbbb68ea535( data )
 {
@@ -1011,8 +1009,8 @@ function function_ab33fbbbb68ea535( data )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x24f0
+// Params 6
+// Checksum 0x0, Offset: 0x251b
 // Size: 0xb6
 function function_225b99924f316bc1( dropstruct, player, scriptablename, var_416102a18fc1fd69, weaponobj, var_6d6f8d51a1b7b6cd )
 {
@@ -1033,8 +1031,8 @@ function function_225b99924f316bc1( dropstruct, player, scriptablename, var_4161
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25ae
+// Params 1
+// Checksum 0x0, Offset: 0x25d9
 // Size: 0x9a
 function supportbox_handlemovingplatforms( stuckto )
 {
@@ -1055,8 +1053,8 @@ function supportbox_handlemovingplatforms( stuckto )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2650
+// Params 0
+// Checksum 0x0, Offset: 0x267b
 // Size: 0x2d
 function supportbox_watchdisownedtimeout()
 {
@@ -1070,8 +1068,8 @@ function supportbox_watchdisownedtimeout()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2685
+// Params 0
+// Checksum 0x0, Offset: 0x26b0
 // Size: 0x62
 function supportbox_watchdisownedtimeoutinternal()
 {
@@ -1087,8 +1085,8 @@ function supportbox_watchdisownedtimeoutinternal()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26ef
+// Params 1
+// Checksum 0x0, Offset: 0x271a
 // Size: 0x34
 function supportbox_empapplied( data )
 {
@@ -1098,8 +1096,8 @@ function supportbox_empapplied( data )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x272b
+// Params 1
+// Checksum 0x0, Offset: 0x2756
 // Size: 0x34
 function function_f7bd40787418df02( data )
 {
@@ -1109,8 +1107,8 @@ function function_f7bd40787418df02( data )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2767
+// Params 0
+// Checksum 0x0, Offset: 0x2792
 // Size: 0x5c
 function supportbox_updateheadiconallplayers()
 {
@@ -1126,8 +1124,8 @@ function supportbox_updateheadiconallplayers()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27cb
+// Params 1
+// Checksum 0x0, Offset: 0x27f6
 // Size: 0xef
 function supportbox_updateheadicon( player )
 {
@@ -1182,8 +1180,8 @@ function supportbox_updateheadicon( player )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28c2
+// Params 0
+// Checksum 0x0, Offset: 0x28ed
 // Size: 0x7f
 function supportbox_getdeployanimduration()
 {
@@ -1201,8 +1199,8 @@ function supportbox_getdeployanimduration()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2949
+// Params 0
+// Checksum 0x0, Offset: 0x2974
 // Size: 0x55
 function supportbox_getuseanimduration()
 {
@@ -1217,8 +1215,8 @@ function supportbox_getuseanimduration()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29a6
+// Params 0
+// Checksum 0x0, Offset: 0x29d1
 // Size: 0x70
 function supportbox_getcloseanimduration()
 {
@@ -1235,8 +1233,8 @@ function supportbox_getcloseanimduration()
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a1e
+// Params 2
+// Checksum 0x0, Offset: 0x2a49
 // Size: 0x412
 function supportbox_usedcallback( entity, player )
 {
@@ -1388,8 +1386,8 @@ function supportbox_usedcallback( entity, player )
 }
 
 // Namespace support_box / scripts\mp\equipment\support_box
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e38
+// Params 1
+// Checksum 0x0, Offset: 0x2e63
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
 {

@@ -7,7 +7,7 @@
 #namespace namespace_8dea0c1922c392c6;
 
 // Namespace namespace_8dea0c1922c392c6 / namespace_8073b31fb342e7bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18b
 // Size: 0x5a
 function inittask()
@@ -19,7 +19,7 @@ function inittask()
 }
 
 // Namespace namespace_8dea0c1922c392c6 / namespace_8073b31fb342e7bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ed
 // Size: 0x96
 function function_8a64133f5d5f7dd( taskinstance )
@@ -34,7 +34,7 @@ function function_8a64133f5d5f7dd( taskinstance )
 }
 
 // Namespace namespace_8dea0c1922c392c6 / namespace_8073b31fb342e7bb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x28b
 // Size: 0x1a2
 function function_e92b6ecc9ab0f07a( taskref, var_2e16d30576073b00 )
@@ -74,7 +74,7 @@ function function_e92b6ecc9ab0f07a( taskref, var_2e16d30576073b00 )
 }
 
 // Namespace namespace_8dea0c1922c392c6 / namespace_8073b31fb342e7bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x436
 // Size: 0x63
 function oncontractend( taskinstance )
@@ -93,7 +93,7 @@ function oncontractend( taskinstance )
 }
 
 // Namespace namespace_8dea0c1922c392c6 / namespace_8073b31fb342e7bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a1
 // Size: 0xf7
 function function_a24a232718dd45b7( taskinstance )
@@ -115,7 +115,7 @@ function function_a24a232718dd45b7( taskinstance )
 }
 
 // Namespace namespace_8dea0c1922c392c6 / namespace_8073b31fb342e7bb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5a0
 // Size: 0x57, Type: bool
 function checktaskvalid( selectedtask, team )
@@ -132,7 +132,7 @@ function checktaskvalid( selectedtask, team )
 }
 
 // Namespace namespace_8dea0c1922c392c6 / namespace_8073b31fb342e7bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x600
 // Size: 0x8b
 function trybindobjective( taskinstance )
@@ -161,7 +161,7 @@ function trybindobjective( taskinstance )
 }
 
 // Namespace namespace_8dea0c1922c392c6 / namespace_8073b31fb342e7bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x693
 // Size: 0x7b
 function function_53053ea95e1148c2()

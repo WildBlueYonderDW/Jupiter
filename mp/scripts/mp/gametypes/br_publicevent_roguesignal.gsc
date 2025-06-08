@@ -37,7 +37,7 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa45
 // Size: 0x403
 function init( event_info )
@@ -111,7 +111,7 @@ function init( event_info )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe50
 // Size: 0xb
 function function_de40a46baab733f5()
@@ -134,7 +134,7 @@ function private function_21aefd57e8313bda()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee8
 // Size: 0x4, Type: bool
 function event_validate()
@@ -143,7 +143,7 @@ function event_validate()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef5
 // Size: 0x2
 function event_wait()
@@ -152,7 +152,7 @@ function event_wait()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeff
 // Size: 0x171
 function event_activate()
@@ -196,7 +196,7 @@ function event_activate()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1078
 // Size: 0x41f
 function startevent( eventtype )
@@ -303,7 +303,7 @@ function startevent( eventtype )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x149f
 // Size: 0x9
 function event_deactivate()
@@ -312,7 +312,7 @@ function event_deactivate()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14b0
 // Size: 0x483
 function function_c32ed6d14f08bd09()
@@ -343,7 +343,8 @@ function function_c32ed6d14f08bd09()
     level.var_7576c890644a91ad.scoreboard = array_sort_with_func( level.var_7576c890644a91ad.scoreboard, &sortbyscore );
     winners = [];
     
-    for (i = 0; i < level.var_7576c890644a91ad.scoreboard.size; i++) {
+    for ( i = 0; i < level.var_7576c890644a91ad.scoreboard.size ; i++ )
+    {
         if ( !isdefined( level.var_7576c890644a91ad.scoreboard[ i ] ) || !isdefined( level.var_7576c890644a91ad.scoreboard[ i ].teamid ) || level.var_7576c890644a91ad.scoreboard[ i ].score <= 0 )
         {
             continue;
@@ -412,7 +413,7 @@ function function_c32ed6d14f08bd09()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x193b
 // Size: 0x2c1
 function function_b78eb63b1da9329f( team_list, is_locked, valid_caches )
@@ -478,7 +479,7 @@ function function_b78eb63b1da9329f( team_list, is_locked, valid_caches )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c05
 // Size: 0x129
 function function_3aa223d058a74fdc( team_list, progress )
@@ -501,7 +502,7 @@ function function_3aa223d058a74fdc( team_list, progress )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d36
 // Size: 0x24d
 function function_23812764e79c036e( team_list, time, buffer )
@@ -565,7 +566,7 @@ function function_23812764e79c036e( team_list, time, buffer )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f8b
 // Size: 0x32
 function function_a1cc9fb22f673f1f( time )
@@ -581,7 +582,7 @@ function function_a1cc9fb22f673f1f( time )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fc5
 // Size: 0x65
 function function_930417b755e89419()
@@ -599,7 +600,7 @@ function function_930417b755e89419()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2032
 // Size: 0xde
 function function_43cb953ab1404232( interact, player )
@@ -620,7 +621,7 @@ function function_43cb953ab1404232( interact, player )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2119
 // Size: 0x46
 function function_9c876f98fad72467()
@@ -632,7 +633,7 @@ function function_9c876f98fad72467()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2167
 // Size: 0xa0
 function function_1e66b4ffb3e558c( items, instance )
@@ -656,7 +657,7 @@ function function_1e66b4ffb3e558c( items, instance )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2210
 // Size: 0x68
 function function_4917d9a7cbf80754()
@@ -676,7 +677,7 @@ function function_4917d9a7cbf80754()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2280
 // Size: 0x10e
 function function_724769eeddf32c63( instance, player )
@@ -703,7 +704,7 @@ function function_724769eeddf32c63( instance, player )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2396
 // Size: 0x80
 function function_a077537746482e54( player )
@@ -725,7 +726,7 @@ function function_a077537746482e54( player )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x241e
 // Size: 0x29
 function function_2535e8d31a4bf0c()
@@ -742,14 +743,15 @@ function function_2535e8d31a4bf0c()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x244f
 // Size: 0x2ae
 function function_f6f98d0b64ac42b4()
 {
     level.var_7576c890644a91ad.scoreboard = array_sort_with_func( level.var_7576c890644a91ad.scoreboard, &sortbyscore );
     
-    for (i = 0; i < level.var_7576c890644a91ad.scoreboard.size; i++) {
+    for ( i = 0; i < level.var_7576c890644a91ad.scoreboard.size ; i++ )
+    {
         foreach ( player in teams::getteamdata( level.var_7576c890644a91ad.scoreboard[ i ].teamid, "players" ) )
         {
             player setclientomnvar( "ui_br_roguesignal_progress", level.var_7576c890644a91ad.scoreboard[ i ].score );
@@ -786,7 +788,7 @@ function function_f6f98d0b64ac42b4()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2705
 // Size: 0x2a, Type: bool
 function sortbyscore( lhs, rhs )
@@ -795,7 +797,7 @@ function sortbyscore( lhs, rhs )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2738
 // Size: 0x49
 function function_1db6f2da4e798b82( params )
@@ -805,7 +807,7 @@ function function_1db6f2da4e798b82( params )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2789
 // Size: 0x3a
 function on_player_killed( deathdata )
@@ -818,7 +820,7 @@ function on_player_killed( deathdata )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27cb
 // Size: 0xbc
 function on_player_damaged( damagedata )
@@ -838,7 +840,7 @@ function on_player_damaged( damagedata )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x288f
 // Size: 0xc6
 function function_82dd024933a0589b( cachedata )
@@ -869,7 +871,7 @@ function function_82dd024933a0589b( cachedata )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x295d
 // Size: 0x30
 function function_2d1d43c029c51bbf( params )
@@ -879,7 +881,7 @@ function function_2d1d43c029c51bbf( params )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2995
 // Size: 0x38
 function on_squad_eliminated( params )
@@ -889,7 +891,7 @@ function on_squad_eliminated( params )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29d5
 // Size: 0x88
 function function_6f8fb9835eea1e2e( params )
@@ -909,7 +911,7 @@ function function_6f8fb9835eea1e2e( params )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a65
 // Size: 0x88
 function function_fb0c55ff9c9c67db( params )
@@ -929,7 +931,7 @@ function function_fb0c55ff9c9c67db( params )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2af5
 // Size: 0xe6
 function function_6a2c3bf56d02b683( teamid, delta )
@@ -950,7 +952,7 @@ function function_6a2c3bf56d02b683( teamid, delta )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2be3
 // Size: 0x7e
 function function_d4475734232b2734( teamid )
@@ -967,7 +969,7 @@ function function_d4475734232b2734( teamid )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c6a
 // Size: 0x25b, Type: bool
 function function_2536f6802979033b( data )
@@ -1100,7 +1102,7 @@ function private ftue_play( index )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fd5
 // Size: 0x58
 function function_6e0d478e2fb36607( params )
@@ -1114,14 +1116,15 @@ function function_6e0d478e2fb36607( params )
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3035
 // Size: 0xb2
 function function_ba9ba8eb661af8f1()
 {
     top_scores = [];
     
-    for (i = 0; i < 5; i++) {
+    for ( i = 0; i < 5 ; i++ )
+    {
         if ( isdefined( level.var_7576c890644a91ad.scoreboard[ i ] ) )
         {
             top_scores[ top_scores.size ] = level.var_7576c890644a91ad.scoreboard[ i ].score;
@@ -1136,7 +1139,7 @@ function function_ba9ba8eb661af8f1()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30ef
 // Size: 0x18a
 function register_dialog()
@@ -1160,7 +1163,7 @@ function register_dialog()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3281
 // Size: 0x10e
 function function_651abe7893b1347f()
@@ -1173,7 +1176,8 @@ function function_651abe7893b1347f()
         timer_reminder = level.var_7576c890644a91ad.eventlength - 45;
         wait timer_reminder;
         
-        for (i = 0; i < level.var_7576c890644a91ad.scoreboard.size; i++) {
+        for ( i = 0; i < level.var_7576c890644a91ad.scoreboard.size ; i++ )
+        {
             entry = level.var_7576c890644a91ad.scoreboard[ i ];
             team = entry.teamid;
             score = entry.score;
@@ -1190,7 +1194,7 @@ function function_651abe7893b1347f()
 }
 
 // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3397
 // Size: 0x162
 function function_75033550b2c672be( type, player )
@@ -1224,7 +1228,7 @@ function function_75033550b2c672be( type, player )
 /#
 
     // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3501
     // Size: 0xe, Type: dev
     function initdebug()
@@ -1233,7 +1237,7 @@ function function_75033550b2c672be( type, player )
     }
 
     // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3517
     // Size: 0x178, Type: dev
     function setup_devgui()
@@ -1259,7 +1263,7 @@ function function_75033550b2c672be( type, player )
     }
 
     // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3697
     // Size: 0x3c, Type: dev
     function function_cf63c7be326bd2b9( params )
@@ -1269,7 +1273,7 @@ function function_75033550b2c672be( type, player )
     }
 
     // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x36db
     // Size: 0x2a0, Type: dev
     function function_ba6d67317370830a( params )
@@ -1329,7 +1333,7 @@ function function_75033550b2c672be( type, player )
     }
 
     // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3983
     // Size: 0xc0, Type: dev
     function function_52c67898af722766( player )
@@ -1354,7 +1358,7 @@ function function_75033550b2c672be( type, player )
     }
 
     // Namespace br_publicevent_roguesignal / scripts\mp\gametypes\br_publicevent_roguesignal
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3a4b
     // Size: 0x108, Type: dev
     function function_dfd27b3e2ea43440( caches )

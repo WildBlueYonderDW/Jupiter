@@ -7,7 +7,7 @@
 #namespace utility;
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x343
 // Size: 0xb
 function initialize( type )
@@ -16,7 +16,7 @@ function initialize( type )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x356
 // Size: 0x140
 function updateanimpose()
@@ -44,7 +44,7 @@ function updateanimpose()
 /#
 
     // Namespace utility / scripts\anim\utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x49e
     // Size: 0xcd, Type: dev
     function checkgrenadeinhand( animscript )
@@ -59,7 +59,8 @@ function updateanimpose()
         
         attachsize = self getattachsize();
         
-        for (i = 0; i < attachsize; i++) {
+        for ( i = 0; i < attachsize ; i++ )
+        {
             model = tolower( self getattachmodelname( i ) );
             assertex( model != "<dev string:x6e>", "<dev string:x84>" + self.origin );
             assertex( model != "<dev string:xde>", "<dev string:x84>" + self.origin );
@@ -70,7 +71,7 @@ function updateanimpose()
 #/
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x573
 // Size: 0x5d
 function printdisplaceinfo()
@@ -92,7 +93,7 @@ function printdisplaceinfo()
 /#
 
     // Namespace utility / scripts\anim\utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5d8
     // Size: 0x34, Type: dev
     function isdebugon()
@@ -101,19 +102,20 @@ function printdisplaceinfo()
     }
 
     // Namespace utility / scripts\anim\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x614
     // Size: 0x4e, Type: dev
     function drawdebuglineinternal( frompoint, topoint, color, durationframes )
     {
-        for (i = 0; i < durationframes; i++) {
+        for ( i = 0; i < durationframes ; i++ )
+        {
             line( frompoint, topoint, color );
             wait 0.05;
         }
     }
 
     // Namespace utility / scripts\anim\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x66a
     // Size: 0x3b, Type: dev
     function drawdebugline( frompoint, topoint, color, durationframes )
@@ -125,12 +127,13 @@ function printdisplaceinfo()
     }
 
     // Namespace utility / scripts\anim\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x6ad
     // Size: 0x51, Type: dev
     function debugline( frompoint, topoint, color, durationframes )
     {
-        for (i = 0; i < durationframes * 20; i++) {
+        for ( i = 0; i < durationframes * 20 ; i++ )
+        {
             line( frompoint, topoint, color );
             wait 0.05;
         }
@@ -139,7 +142,7 @@ function printdisplaceinfo()
 #/
 
 // Namespace utility / scripts\anim\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x706
 // Size: 0x2b
 function notifyaftertime( notifystring, killmestring, time )
@@ -151,14 +154,15 @@ function notifyaftertime( notifystring, killmestring, time )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x739
 // Size: 0x60
 function drawstringtime( msg, org, color, timer )
 {
     maxtime = timer * 20;
     
-    for (i = 0; i < maxtime; i++) {
+    for ( i = 0; i < maxtime ; i++ )
+    {
         /#
             print3d( org, msg, color, 1, 1 );
         #/
@@ -168,7 +172,7 @@ function drawstringtime( msg, org, color, timer )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7a1
 // Size: 0xaf
 function showlastenemysightpos( string )
@@ -209,7 +213,7 @@ function showlastenemysightpos( string )
 /#
 
     // Namespace utility / scripts\anim\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x858
     // Size: 0x8a, Type: dev
     function function_f5e6ad17591107bc( string, org, printtime, color )
@@ -234,7 +238,7 @@ function showlastenemysightpos( string )
     }
 
     // Namespace utility / scripts\anim\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x8ea
     // Size: 0x4a, Type: dev
     function function_e125b2100c281c9c( string, org, printtime, color )
@@ -248,7 +252,7 @@ function showlastenemysightpos( string )
 #/
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x93c
 // Size: 0x34
 function hasenemysightpos()
@@ -262,7 +266,7 @@ function hasenemysightpos()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x978
 // Size: 0xb
 function getenemysightpos()
@@ -271,7 +275,7 @@ function getenemysightpos()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98c
 // Size: 0xd
 function debugtimeout()
@@ -281,7 +285,7 @@ function debugtimeout()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9a1
 // Size: 0xb8
 function debugposinternal( org, string, size )
@@ -312,7 +316,7 @@ function debugposinternal( org, string, size )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa61
 // Size: 0x22
 function debugpos( org, string )
@@ -321,7 +325,7 @@ function debugpos( org, string )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa8b
 // Size: 0x26
 function debugpossize( org, string, size )
@@ -330,7 +334,7 @@ function debugpossize( org, string, size )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xab9
 // Size: 0xbd
 function debugburstprint( numshots, maxshots )
@@ -362,7 +366,7 @@ function debugburstprint( numshots, maxshots )
 /#
 
     // Namespace utility / scripts\anim\utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xb7e
     // Size: 0xa1, Type: dev
     function printshootproc()
@@ -383,7 +387,7 @@ function debugburstprint( numshots, maxshots )
     }
 
     // Namespace utility / scripts\anim\utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xc27
     // Size: 0x24, Type: dev
     function printshoot()
@@ -397,7 +401,7 @@ function debugburstprint( numshots, maxshots )
 #/
 
 // Namespace utility / scripts\anim\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc53
 // Size: 0x66
 function showdebugproc( frompoint, topoint, color, printtime )
@@ -417,7 +421,7 @@ function showdebugproc( frompoint, topoint, color, printtime )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xcc1
 // Size: 0x3d
 function showdebugline( frompoint, topoint, color, printtime )
@@ -426,7 +430,7 @@ function showdebugline( frompoint, topoint, color, printtime )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd06
 // Size: 0xe5
 function shootenemywrapper_normal( var_9bc9d0ee2a8a46f5 )
@@ -458,7 +462,7 @@ function shootenemywrapper_normal( var_9bc9d0ee2a8a46f5 )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdf3
 // Size: 0x1c
 function shootenemywrapper_shootnotify( var_9bc9d0ee2a8a46f5 )
@@ -468,7 +472,7 @@ function shootenemywrapper_shootnotify( var_9bc9d0ee2a8a46f5 )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe17
 // Size: 0xb3
 function shootposwrapper( shootpos, var_9bc9d0ee2a8a46f5 )
@@ -500,7 +504,7 @@ function shootposwrapper( shootpos, var_9bc9d0ee2a8a46f5 )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xed2
 // Size: 0x216
 function throwgun()
@@ -553,7 +557,7 @@ function throwgun()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f0
 // Size: 0xc1
 function personalcoldbreath()
@@ -589,7 +593,7 @@ function personalcoldbreath()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11b9
 // Size: 0x26
 function ispartiallysuppressedwrapper()
@@ -605,7 +609,7 @@ function ispartiallysuppressedwrapper()
 /#
 
     // Namespace utility / scripts\anim\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x11e8
     // Size: 0x5b, Type: dev
     function showlines( start, end, end2 )
@@ -622,7 +626,7 @@ function ispartiallysuppressedwrapper()
 #/
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124b
 // Size: 0x10
 function usingboltactionweapon()
@@ -631,7 +635,7 @@ function usingboltactionweapon()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1264
 // Size: 0x85
 function setfootstepeffect( type, name, fx )
@@ -650,7 +654,7 @@ function setfootstepeffect( type, name, fx )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12f1
 // Size: 0x85
 function setfootstepeffectsmall( type, name, fx )
@@ -669,7 +673,7 @@ function setfootstepeffectsmall( type, name, fx )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x137e
 // Size: 0x9c
 function setfootprinteffect( type, name, fx )
@@ -693,7 +697,7 @@ function setfootprinteffect( type, name, fx )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1422
 // Size: 0x44
 function unsetfootstepeffect( name )
@@ -709,7 +713,7 @@ function unsetfootstepeffect( name )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146e
 // Size: 0x44
 function unsetfootstepeffectsmall( name )
@@ -725,7 +729,7 @@ function unsetfootstepeffectsmall( name )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14ba
 // Size: 0x44
 function unsetfootprinteffect( name )
@@ -741,7 +745,7 @@ function unsetfootprinteffect( name )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1506
 // Size: 0xdb
 function setnotetrackeffect( notetrack, tag, surfacename, fx, sound_prefix, sound_suffix )
@@ -768,7 +772,7 @@ function setnotetrackeffect( notetrack, tag, surfacename, fx, sound_prefix, soun
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x15e9
 // Size: 0xad
 function setnotetracksound( notetrack, surfacename, sound_prefix, sound_suffix )
@@ -805,7 +809,7 @@ function setnotetracksound( notetrack, surfacename, sound_prefix, sound_suffix )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x169e
 // Size: 0x14
 function enterpronewrapper( timer )
@@ -814,7 +818,7 @@ function enterpronewrapper( timer )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16ba
 // Size: 0x7d
 function enterpronewrapperproc( timer )
@@ -832,7 +836,7 @@ function enterpronewrapperproc( timer )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x173f
 // Size: 0x21
 function stoponback()
@@ -842,7 +846,7 @@ function stoponback()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1768
 // Size: 0x14
 function exitpronewrapper( timer )
@@ -851,7 +855,7 @@ function exitpronewrapper( timer )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1784
 // Size: 0x51
 function exitpronewrapperproc( timer )
@@ -869,7 +873,7 @@ function exitpronewrapperproc( timer )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17dd
 // Size: 0xb
 function getaiprimaryweapon()
@@ -878,7 +882,7 @@ function getaiprimaryweapon()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17f1
 // Size: 0xb
 function getaisecondaryweapon()
@@ -887,7 +891,7 @@ function getaisecondaryweapon()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1805
 // Size: 0xb
 function getaisidearmweapon()
@@ -896,7 +900,7 @@ function getaisidearmweapon()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1819
 // Size: 0xb
 function getaicurrentweapon()
@@ -905,7 +909,7 @@ function getaicurrentweapon()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x182d
 // Size: 0x6d
 function getaicurrentweaponslot()
@@ -929,7 +933,7 @@ function getaicurrentweaponslot()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18a2
 // Size: 0x3f, Type: bool
 function aihasweapon( objweapon )
@@ -946,7 +950,7 @@ function aihasweapon( objweapon )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18ea
 // Size: 0x27
 function getanimendpos( theanim )
@@ -956,7 +960,7 @@ function getanimendpos( theanim )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x191a
 // Size: 0xc5
 function ragdolldeath( moveanim )
@@ -985,7 +989,7 @@ function ragdolldeath( moveanim )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19e7
 // Size: 0xc, Type: bool
 function iscqbwalkingorfacingenemy()
@@ -994,7 +998,7 @@ function iscqbwalkingorfacingenemy()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19fc
 // Size: 0x1d
 function randomizeidleset()
@@ -1003,7 +1007,7 @@ function randomizeidleset()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a21
 // Size: 0x43
 function getrandomintfromseed( intseed, intmax )
@@ -1014,7 +1018,7 @@ function getrandomintfromseed( intseed, intmax )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a6d
 // Size: 0x30
 function getcurrentweaponslotname()
@@ -1035,7 +1039,7 @@ function getcurrentweaponslotname()
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1aa6
 // Size: 0xed
 function lookupanim( var_4cabf1b2b096a23a, anim_index )
@@ -1057,7 +1061,7 @@ function lookupanim( var_4cabf1b2b096a23a, anim_index )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b9c
 // Size: 0x11f
 function lookupanimarray( var_4cabf1b2b096a23a )
@@ -1086,7 +1090,7 @@ function lookupanimarray( var_4cabf1b2b096a23a )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cc4
 // Size: 0x11
 function isenergyweapon( weapon )
@@ -1095,7 +1099,7 @@ function isenergyweapon( weapon )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cde
 // Size: 0x8c
 function function_b5216a6d7bd17210( str_gestureweapon, var_d160dd91a3ae5bb8 )
@@ -1126,7 +1130,7 @@ function function_b5216a6d7bd17210( str_gestureweapon, var_d160dd91a3ae5bb8 )
 }
 
 // Namespace utility / scripts\anim\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d72
 // Size: 0x2f
 function function_422595121745c8a1( gestureweapon )

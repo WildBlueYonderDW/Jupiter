@@ -10,7 +10,7 @@
 #namespace warrior_stunning;
 
 // Namespace warrior_stunning / namespace_df2ddeb4fdbbdcb7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14f
 // Size: 0x17
 function function_a081e7290fcbe2c5()
@@ -20,7 +20,7 @@ function function_a081e7290fcbe2c5()
 }
 
 // Namespace warrior_stunning / namespace_df2ddeb4fdbbdcb7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e
 // Size: 0x90
 function onplayerspawned()
@@ -41,7 +41,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_stunning / namespace_df2ddeb4fdbbdcb7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x206
 // Size: 0x44
 function function_550ae6d214fc09e6( einflictor )

@@ -99,7 +99,7 @@ function private function_93982614eb857c90()
 }
 
 // Namespace namespace_83df3740e3ffc9d0 / namespace_354979ae5b15fe8f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7db
 // Size: 0x15, Type: bool
 function function_5dcc10a8600d8e45( player )
@@ -108,7 +108,7 @@ function function_5dcc10a8600d8e45( player )
 }
 
 // Namespace namespace_83df3740e3ffc9d0 / namespace_354979ae5b15fe8f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f9
 // Size: 0x177
 function function_c77b3c46fdc103a6( player )
@@ -136,14 +136,15 @@ function function_c77b3c46fdc103a6( player )
 }
 
 // Namespace namespace_83df3740e3ffc9d0 / namespace_354979ae5b15fe8f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x978
 // Size: 0x85
 function function_19b3d7d43b86499a( player )
 {
     items = [];
     
-    for (lootid = player function_7c2b6cf6df98262a( items.size ); lootid != 0; lootid = player function_7c2b6cf6df98262a( items.size )) {
+    for ( lootid = player function_7c2b6cf6df98262a( items.size ); lootid != 0 ; lootid = player function_7c2b6cf6df98262a( items.size ) )
+    {
         item = spawnstruct();
         item.lootid = lootid;
         item.quantity = player getplayerdata( "jupiter_exgm", "lostGear", items.size, "quantity" );
@@ -154,7 +155,7 @@ function function_19b3d7d43b86499a( player )
 }
 
 // Namespace namespace_83df3740e3ffc9d0 / namespace_354979ae5b15fe8f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa06
 // Size: 0x62
 function function_b2addcd483da442f( player )
@@ -162,14 +163,15 @@ function function_b2addcd483da442f( player )
     namespace_36be7f9eab6ca7bc::function_e1b1d2af636da618( "EXGM Inventory | Lost Gear (clearLostGearList): player '%s'", player.name );
     index = 0;
     
-    for (lootid = player function_7c2b6cf6df98262a( index ); lootid != 0; lootid = player function_7c2b6cf6df98262a( index )) {
+    for ( lootid = player function_7c2b6cf6df98262a( index ); lootid != 0 ; lootid = player function_7c2b6cf6df98262a( index ) )
+    {
         player function_34ccfb334ace1f1c( index, 0, 0 );
         index++;
     }
 }
 
 // Namespace namespace_83df3740e3ffc9d0 / namespace_354979ae5b15fe8f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa70
 // Size: 0xcb
 function onplayerspawn( player )
@@ -345,7 +347,7 @@ function private function_7d2c407c71fe805b()
 /#
 
     // Namespace namespace_83df3740e3ffc9d0 / namespace_354979ae5b15fe8f
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x1095
     // Size: 0x172, Type: dev
     function function_9eaf6bf92f55ed1b( player, var_2b465f51da1e8fcf, var_2b465e51da1e8d9c, var_6b92729cd2d4b6a6 )
@@ -381,7 +383,7 @@ function private function_c77d7050e6b8e9b()
 /#
 
     // Namespace namespace_83df3740e3ffc9d0 / namespace_354979ae5b15fe8f
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1219
     // Size: 0x4c, Type: dev
     function function_309fc74e41014bf3( player )

@@ -7,7 +7,7 @@
 #namespace namespace_14494b17e1758742;
 
 // Namespace namespace_14494b17e1758742 / namespace_e62527f32363042f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa56
 // Size: 0x9
 function function_e04bd99e1bb6430b()
@@ -16,7 +16,7 @@ function function_e04bd99e1bb6430b()
 }
 
 // Namespace namespace_14494b17e1758742 / namespace_e62527f32363042f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa67
 // Size: 0x7d4
 function chopperexfil_pack( var_cbfc3ba10cefc8ce )
@@ -34,7 +34,8 @@ function chopperexfil_pack( var_cbfc3ba10cefc8ce )
         loadinfiltransient( self.transientname );
         setomnvarforallclients( "ui_br_end_game_splash_type", 18 );
         
-        for (var_24b79087f3897e94 = 0; !var_24b79087f3897e94; var_24b79087f3897e94 = function_2030cc4ad67d1634( self.transientname )) {
+        for ( var_24b79087f3897e94 = 0; !var_24b79087f3897e94 ; var_24b79087f3897e94 = function_2030cc4ad67d1634( self.transientname ) )
+        {
             waitframe();
         }
     }
@@ -144,7 +145,7 @@ function chopperexfil_pack( var_cbfc3ba10cefc8ce )
 }
 
 // Namespace namespace_14494b17e1758742 / namespace_e62527f32363042f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1243
 // Size: 0x2e4
 function function_a5538b1593309bb0()
@@ -209,7 +210,7 @@ function private chopperexfil_introsound( time, var_cbfc3ba10cefc8ce )
 }
 
 // Namespace namespace_14494b17e1758742 / namespace_e62527f32363042f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1638
 // Size: 0x11a
 function get_chopperexfil_transient()

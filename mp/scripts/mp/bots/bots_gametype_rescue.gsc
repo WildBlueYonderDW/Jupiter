@@ -10,7 +10,7 @@
 /#
 
     // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d7
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -21,7 +21,7 @@
 #/
 
 // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e4
 // Size: 0x10
 function main()
@@ -31,7 +31,7 @@ function main()
 }
 
 // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fc
 // Size: 0x17
 function setup_callbacks()
@@ -40,7 +40,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21b
 // Size: 0x2a
 function function_a342a902f130ffd8()
@@ -51,7 +51,7 @@ function function_a342a902f130ffd8()
 }
 
 // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x390
 function bot_rescue_think()
@@ -169,7 +169,7 @@ function bot_rescue_think()
 }
 
 // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e5
 // Size: 0xc, Type: bool
 function function_7eeb6264cce0f89f()
@@ -178,7 +178,7 @@ function function_7eeb6264cce0f89f()
 }
 
 // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fa
 // Size: 0x49
 function function_a6592c048f7b884a()
@@ -196,7 +196,7 @@ function function_a6592c048f7b884a()
 }
 
 // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64b
 // Size: 0x10b
 function function_4e910d37a5b529bf( hostage )
@@ -226,7 +226,7 @@ function function_4e910d37a5b529bf( hostage )
 }
 
 // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x75f
 // Size: 0x12
 function clear_defend()
@@ -238,7 +238,7 @@ function clear_defend()
 }
 
 // Namespace bots_gametype_rescue / scripts\mp\bots\bots_gametype_rescue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x779
 // Size: 0x187
 function bot_rescue_ai_director_update()

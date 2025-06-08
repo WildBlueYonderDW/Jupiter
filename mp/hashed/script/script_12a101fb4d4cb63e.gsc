@@ -10,8 +10,8 @@
 #namespace namespace_fcd9a54e8b7f9724;
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x334
+// Params 0
+// Checksum 0x0, Offset: 0x335
 // Size: 0x78
 function function_ef5eba565dd3356d()
 {
@@ -28,8 +28,8 @@ function function_ef5eba565dd3356d()
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b4
+// Params 3
+// Checksum 0x0, Offset: 0x3b5
 // Size: 0xa0
 function function_305c6fc0fc454238( itembundle, item, auto_use )
 {
@@ -55,8 +55,8 @@ function function_305c6fc0fc454238( itembundle, item, auto_use )
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x45d
+// Params 4
+// Checksum 0x0, Offset: 0x45e
 // Size: 0x24, Type: bool
 function function_387d47abb2c993f4( itembundle, item, autouse, allowswap )
 {
@@ -64,8 +64,8 @@ function function_387d47abb2c993f4( itembundle, item, autouse, allowswap )
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48a
+// Params 1
+// Checksum 0x0, Offset: 0x48b
 // Size: 0x2e
 function function_1fb722119725a2fb( slot )
 {
@@ -75,9 +75,9 @@ function function_1fb722119725a2fb( slot )
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c1
-// Size: 0x93, Type: bool
+// Params 4
+// Checksum 0x0, Offset: 0x4c2
+// Size: 0x93
 function function_bd0abf833bce4547( itembundle, item, autouse, allowswap )
 {
     if ( isdefined( itembundle.subtype ) )
@@ -87,20 +87,20 @@ function function_bd0abf833bce4547( itembundle, item, autouse, allowswap )
             case #"hash_9bbb9bc426bb5e34":
                 return function_223094b2ed141ff( itembundle, item );
             case #"hash_d42d44f53610ee5":
-                return true;
+                return 1;
             case #"hash_7eee054ac1766fba":
-                return true;
+                return 1;
             default:
-                return false;
+                return 0;
         }
     }
     
-    return false;
+    return 0;
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x55d
+// Params 2
+// Checksum 0x0, Offset: 0x55e
 // Size: 0x19a
 function function_83497abd7c9780c6( itembundle, item )
 {
@@ -160,8 +160,8 @@ function function_83497abd7c9780c6( itembundle, item )
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x700
+// Params 2
+// Checksum 0x0, Offset: 0x701
 // Size: 0x16e
 function function_dac0c3ec1375e14( itembundle, item )
 {
@@ -201,8 +201,8 @@ function function_dac0c3ec1375e14( itembundle, item )
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x877
+// Params 1
+// Checksum 0x0, Offset: 0x878
 // Size: 0xc4
 function function_b3d32603c3dea744( var_379371b67c6dcccb )
 {
@@ -231,8 +231,8 @@ function function_b3d32603c3dea744( var_379371b67c6dcccb )
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x944
+// Params 2
+// Checksum 0x0, Offset: 0x945
 // Size: 0x242, Type: bool
 function function_223094b2ed141ff( itembundle, item )
 {
@@ -309,8 +309,8 @@ function function_223094b2ed141ff( itembundle, item )
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8f
+// Params 2
+// Checksum 0x0, Offset: 0xb90
 // Size: 0x36, Type: bool
 function function_3b5ce4bc5dac6b1a( itembundle, item )
 {
@@ -323,8 +323,8 @@ function function_3b5ce4bc5dac6b1a( itembundle, item )
 }
 
 // Namespace namespace_fcd9a54e8b7f9724 / namespace_1af8963a4d835ca4
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xbce
+// Params 5
+// Checksum 0x0, Offset: 0xbcf
 // Size: 0x170
 function function_ff41eb8083c83fd8( itembundle, count, origin, angles, overridelifetime )
 {

@@ -5,7 +5,7 @@
 #namespace namespace_3e8924d2d52a5e37;
 
 // Namespace namespace_3e8924d2d52a5e37 / namespace_b294929e0e35387a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f
 // Size: 0x68
 function function_63555ee8e5fb64fc( cachesize )
@@ -20,7 +20,7 @@ function function_63555ee8e5fb64fc( cachesize )
 }
 
 // Namespace namespace_3e8924d2d52a5e37 / namespace_b294929e0e35387a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x110
 // Size: 0x23, Type: bool
 function function_6331b84385d676bc( var_c41e3f9d7499501f )
@@ -29,7 +29,7 @@ function function_6331b84385d676bc( var_c41e3f9d7499501f )
 }
 
 // Namespace namespace_3e8924d2d52a5e37 / namespace_b294929e0e35387a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13c
 // Size: 0x16d
 function addtocache( datakey, datacontents )
@@ -72,7 +72,7 @@ function addtocache( datakey, datacontents )
 }
 
 // Namespace namespace_3e8924d2d52a5e37 / namespace_b294929e0e35387a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b1
 // Size: 0x80
 function function_992d181b387ca849( datakey )
@@ -90,7 +90,7 @@ function function_992d181b387ca849( datakey )
 }
 
 // Namespace namespace_3e8924d2d52a5e37 / namespace_b294929e0e35387a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x339
 // Size: 0x75
 function function_c908ab3353601192( datakey )
@@ -111,7 +111,7 @@ function function_c908ab3353601192( datakey )
 /#
 
     // Namespace namespace_3e8924d2d52a5e37 / namespace_b294929e0e35387a
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3b7
     // Size: 0x5, Type: dev
     function function_b070450a1a879374()
@@ -120,7 +120,7 @@ function function_c908ab3353601192( datakey )
     }
 
     // Namespace namespace_3e8924d2d52a5e37 / namespace_b294929e0e35387a
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3c4
     // Size: 0x21, Type: dev
     function function_7f5414a2ec3af004()
@@ -131,7 +131,7 @@ function function_c908ab3353601192( datakey )
     }
 
     // Namespace namespace_3e8924d2d52a5e37 / namespace_b294929e0e35387a
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3ed
     // Size: 0x5a, Type: dev
     function function_e72dd453d0c738eb( var_f6db2dc3ab7b9a12 )

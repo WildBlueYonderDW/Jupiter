@@ -15,7 +15,7 @@
 #namespace namespace_9571f642f38c8169;
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0x11c
 function function_9c1a92865568b559()
@@ -49,7 +49,7 @@ function function_9c1a92865568b559()
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d7
 // Size: 0x6a
 function function_a6172e49f7313fd8()
@@ -70,7 +70,7 @@ function function_a6172e49f7313fd8()
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64a
 // Size: 0x91
 function function_f9dea9ba0820dc12( player )
@@ -92,7 +92,7 @@ function function_f9dea9ba0820dc12( player )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e4
 // Size: 0x15
 function function_6aa0d0467dfd4624( keeploot )
@@ -101,7 +101,7 @@ function function_6aa0d0467dfd4624( keeploot )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x701
 // Size: 0xc, Type: bool
 function function_c82e8cdc726067e()
@@ -110,7 +110,7 @@ function function_c82e8cdc726067e()
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x716
 // Size: 0x11
 function function_be000b0b3db20f5d( player )
@@ -210,7 +210,8 @@ function private function_7afe055995edf844()
         var_760480dc8b6f2623 = [];
         ismaptomapinfil = istrue( utility::function_f3bb4f4911a1beb2( "instanceInventory", "isMapToMapInfil" ) );
         
-        for (backpackindex = 0; backpackindex < 10; backpackindex++) {
+        for ( backpackindex = 0; backpackindex < 10 ; backpackindex++ )
+        {
             iteminstance = self function_644ed519cac9722b( 2, 1 + backpackindex );
             
             if ( !function_3f8c62126708afe6( iteminstance ) || iteminstance.kind != 17 )
@@ -459,7 +460,8 @@ function private function_1100308907e5eb6a()
 {
     ismaptomapinfil = istrue( utility::function_f3bb4f4911a1beb2( "instanceInventory", "isMapToMapInfil" ) );
     
-    for (backpackindex = 0; backpackindex < 10; backpackindex++) {
+    for ( backpackindex = 0; backpackindex < 10 ; backpackindex++ )
+    {
         lootinstance = self function_644ed519cac9722b( 2, 1 + backpackindex );
         
         if ( function_3f8c62126708afe6( lootinstance ) )
@@ -591,7 +593,7 @@ function private function_65fe8e9157854159( params )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16b2
 // Size: 0xa0
 function function_80c587026fbc6e0d()
@@ -669,7 +671,8 @@ function private function_ab1ee99079e4c5a0()
     
     ismaptomapexfil = istrue( utility::function_f3bb4f4911a1beb2( "instanceInventory", "isMapToMapExfil", self ) );
     
-    for (backpackindex = 0; backpackindex < 10; backpackindex++) {
+    for ( backpackindex = 0; backpackindex < 10 ; backpackindex++ )
+    {
         sublocation = 1 + backpackindex;
         function_5a62e05c264fbe50( 2, sublocation );
         lootid = function_d870b2c45335bd88( backpackindex );
@@ -927,7 +930,8 @@ function private function_340f746f0eb455d9()
         var_21341c7142d7e704 += 1;
     }
     
-    for (backpackindex = 1; backpackindex <= 10; backpackindex++) {
+    for ( backpackindex = 1; backpackindex <= 10 ; backpackindex++ )
+    {
         backpackinstance = self function_644ed519cac9722b( 2, backpackindex );
         
         if ( function_3f8c62126708afe6( backpackinstance ) )
@@ -1166,7 +1170,8 @@ function private function_f9d6e71a677be0bf( player, struct, class )
             primaryweaponstruct = player function_77046e6abbff19e5( iteminstance, blueprintindex );
             struct.loadoutprimary = primaryweaponstruct.weaponref;
             
-            for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+            for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+            {
                 struct.loadoutprimaryattachments[ attachmentindex ] = primaryweaponstruct.attachmentrefs[ attachmentindex ];
                 struct.loadoutprimaryattachmentids[ attachmentindex ] = primaryweaponstruct.attachmentids[ attachmentindex ];
                 tuningvalues = primaryweaponstruct.var_eae5a591e200672[ attachmentindex ];
@@ -1183,7 +1188,8 @@ function private function_f9d6e71a677be0bf( player, struct, class )
             struct.loadoutprimaryvariantid = primaryweaponstruct.weaponvariant;
             struct.loadoutprimarycosmeticattachment = primaryweaponstruct.var_67dfd35699ba2d3e;
             
-            for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+            for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+            {
                 struct.loadoutprimarystickers[ var_36d2abbdcbcb186c ] = primaryweaponstruct.weaponstickers[ var_36d2abbdcbcb186c ];
             }
             
@@ -1234,7 +1240,8 @@ function private function_f9d6e71a677be0bf( player, struct, class )
             secondaryweaponstruct = player function_77046e6abbff19e5( iteminstance, blueprintindex );
             struct.loadoutsecondary = secondaryweaponstruct.weaponref;
             
-            for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+            for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+            {
                 struct.loadoutsecondaryattachments[ attachmentindex ] = secondaryweaponstruct.attachmentrefs[ attachmentindex ];
                 struct.loadoutsecondaryattachmentids[ attachmentindex ] = secondaryweaponstruct.attachmentids[ attachmentindex ];
                 tuningvalues = secondaryweaponstruct.var_eae5a591e200672[ attachmentindex ];
@@ -1251,7 +1258,8 @@ function private function_f9d6e71a677be0bf( player, struct, class )
             struct.loadoutsecondaryvariantid = secondaryweaponstruct.weaponvariant;
             struct.loadoutsecondarycosmeticattachment = secondaryweaponstruct.var_67dfd35699ba2d3e;
             
-            for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+            for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+            {
                 struct.loadoutsecondarystickers[ var_36d2abbdcbcb186c ] = secondaryweaponstruct.weaponstickers[ var_36d2abbdcbcb186c ];
             }
             
@@ -1552,7 +1560,8 @@ function private function_77046e6abbff19e5( instance, blueprintindex )
     
     if ( isdefined( instance.var_d3c548c09bb62da2 ) )
     {
-        for (i = 2; i <= 6; i++) {
+        for ( i = 2; i <= 6 ; i++ )
+        {
             value = function_f6c6c8920a5333e7( i, instance, 1 );
             
             if ( isdefined( value ) && int( value ) != 0 )
@@ -1654,7 +1663,7 @@ function private function_5bee5ced081d48c0( player )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a03
 // Size: 0x51
 function function_d1df77dc341aa4e5()
@@ -1669,7 +1678,7 @@ function function_d1df77dc341aa4e5()
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a5d
 // Size: 0x39
 function function_25c00f7dd055c100( player )
@@ -1685,7 +1694,7 @@ function function_25c00f7dd055c100( player )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a9f
 // Size: 0x5c
 function function_5c97e8ce13fa6a89( player )
@@ -1704,7 +1713,7 @@ function function_5c97e8ce13fa6a89( player )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b04
 // Size: 0x5e
 function function_6e550258f79b1ef0( player )
@@ -1723,7 +1732,7 @@ function function_6e550258f79b1ef0( player )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b6b
 // Size: 0x1a4
 function function_e8e46cba4fcc05f7( player, var_5c6aca696200f252 )
@@ -1798,7 +1807,7 @@ function function_e8e46cba4fcc05f7( player, var_5c6aca696200f252 )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3d17
 // Size: 0xf3
 function function_f6c6c8920a5333e7( key, instance, var_469244507bbe1b12, var_7f24f2a49f4715f7 )
@@ -1832,7 +1841,7 @@ function function_f6c6c8920a5333e7( key, instance, var_469244507bbe1b12, var_7f2
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3e13
 // Size: 0x277
 function function_8715433c6e64940b( keys, values, instance, var_469244507bbe1b12 )
@@ -1912,7 +1921,7 @@ function function_8715433c6e64940b( keys, values, instance, var_469244507bbe1b12
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4092
 // Size: 0x94
 function function_2c7fe4b882b6d63e( var_eda1e1681182223b )
@@ -1931,7 +1940,7 @@ function function_2c7fe4b882b6d63e( var_eda1e1681182223b )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x412f
 // Size: 0x77
 function function_ab4ddb325aae30a5( kind, location, sublocation, weaponobj )
@@ -2032,7 +2041,7 @@ function private function_c9de41def051c9fc( params )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4497
 // Size: 0x17
 function function_dd9df8b3dd285733()
@@ -2043,7 +2052,7 @@ function function_dd9df8b3dd285733()
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44b6
 // Size: 0x80
 function function_7912e187e23451eb()
@@ -2083,18 +2092,19 @@ function function_7912e187e23451eb()
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x453e
 // Size: 0x29
 function function_eb3f359f9bd87c16()
 {
-    for (backpackindex = 0; backpackindex < 10; backpackindex++) {
+    for ( backpackindex = 0; backpackindex < 10 ; backpackindex++ )
+    {
         function_5a62e05c264fbe50( 2, 1 + backpackindex );
     }
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x456f
 // Size: 0x17
 function function_a38bb104e7769055()
@@ -2104,7 +2114,7 @@ function function_a38bb104e7769055()
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x458e
 // Size: 0x1b
 function function_213e09add40997f4( location, sublocation )
@@ -2113,7 +2123,7 @@ function function_213e09add40997f4( location, sublocation )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x45b2
 // Size: 0x43
 function function_5a62e05c264fbe50( location, sublocation )
@@ -2127,7 +2137,7 @@ function function_5a62e05c264fbe50( location, sublocation )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x45fd
 // Size: 0x37
 function function_b1fcbec168284539( lootid, kind, location, sublocation, components )
@@ -2136,7 +2146,7 @@ function function_b1fcbec168284539( lootid, kind, location, sublocation, compone
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x463c
 // Size: 0x1b
 function function_31e22109050ae853()
@@ -2145,7 +2155,7 @@ function function_31e22109050ae853()
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4660
 // Size: 0x33, Type: bool
 function function_3f8c62126708afe6( instance )
@@ -2206,7 +2216,7 @@ function private function_c37d02edd52c6892( iteminstance )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x483f
 // Size: 0x3c
 function function_f1cc6a55aace03aa( iteminstance )
@@ -2227,7 +2237,7 @@ function function_f1cc6a55aace03aa( iteminstance )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4884
 // Size: 0x10f
 function function_7cce337c4902cbb6( weaponslotindex )
@@ -2272,7 +2282,7 @@ function function_7cce337c4902cbb6( weaponslotindex )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x499c
 // Size: 0x8d
 function function_874d25a7167d2051( location, sublocation, reductionseconds )
@@ -2309,7 +2319,7 @@ function private function_9488239f459b656d()
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a6b
 // Size: 0x44, Type: bool
 function function_3bb8b73991355a1( var_7c870fc702057b7b )
@@ -2334,7 +2344,7 @@ function function_3bb8b73991355a1( var_7c870fc702057b7b )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ab8
 // Size: 0x29
 function function_1291b99db1d57936( var_7c870fc702057b7b )
@@ -2353,7 +2363,7 @@ function function_1291b99db1d57936( var_7c870fc702057b7b )
 }
 
 // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4aea
 // Size: 0x2c2
 function function_dec054b294d48a5c( weaponobj )
@@ -2443,7 +2453,7 @@ function function_dec054b294d48a5c( weaponobj )
     }
 
     // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4deb
     // Size: 0x77, Type: dev
     function function_b34a4271751db584()
@@ -2458,7 +2468,7 @@ function function_dec054b294d48a5c( weaponobj )
     }
 
     // Namespace namespace_9571f642f38c8169 / namespace_510e82113265fae9
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4e6a
     // Size: 0x1b4, Type: dev
     function function_221fabd6ffdb8013( instance, player, context )

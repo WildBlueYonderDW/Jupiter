@@ -3,7 +3,7 @@
 #namespace ae_utility;
 
 // Namespace ae_utility / scripts\common\ae_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab
 // Size: 0x9
 function init()
@@ -68,7 +68,8 @@ function private function_28026771d64f5484()
     eventlist = var_eb8b55369eb4fd41.eventlist;
     var_1878b2531d72df64 = var_7b9e1c88d69bf5ba.var_1878b2531d72df64;
     
-    for (i = 0; i < eventlist.size; i++) {
+    for ( i = 0; i < eventlist.size ; i++ )
+    {
         var_87db3db683ff41b3 = getscriptbundle( hashcat( %"hash_6dd4e4d4a6505f3a", eventlist[ i ].event ) );
         
         /#
@@ -86,7 +87,8 @@ function private function_28026771d64f5484()
             keymapping = [];
             eventkeys = var_87db3db683ff41b3.keys;
             
-            for (j = 0; j < eventkeys.size; j++) {
+            for ( j = 0; j < eventkeys.size ; j++ )
+            {
                 var_d2de5b69db3b768c = getscriptbundle( hashcat( %"hash_683f777d2122709b", eventkeys[ j ].key ) );
                 var_cb4e6cbee807f160 = var_d2de5b69db3b768c.sharedname;
                 keymapping[ keymapping.size ] = var_cb4e6cbee807f160;
@@ -100,7 +102,8 @@ function private function_28026771d64f5484()
                 {
                     level.var_dee8cd959aa57e26[ var_cb4e6cbee807f160 ] = [];
                     
-                    for (k = 0; k < var_d2de5b69db3b768c.bitfield.size; k++) {
+                    for ( k = 0; k < var_d2de5b69db3b768c.bitfield.size ; k++ )
+                    {
                         bitname = var_d2de5b69db3b768c.bitfield[ k ].sharedname;
                         level.var_dee8cd959aa57e26[ var_cb4e6cbee807f160 ][ bitname ] = var_d2de5b69db3b768c.bitfield[ k ].bitindex;
                     }
@@ -111,7 +114,8 @@ function private function_28026771d64f5484()
         }
     }
     
-    for (i = 0; i < var_1878b2531d72df64.size; i++) {
+    for ( i = 0; i < var_1878b2531d72df64.size ; i++ )
+    {
         var_1cdcaa1b699683c2 = getscriptbundle( hashcat( %"hash_56154d39395feb69", var_1878b2531d72df64[ i ].enum ) );
         
         /#
@@ -125,7 +129,8 @@ function private function_28026771d64f5484()
         var_d0ef8c79b6e23661 = [];
         elements = var_1cdcaa1b699683c2.elements;
         
-        for (j = 0; j < elements.size; j++) {
+        for ( j = 0; j < elements.size ; j++ )
+        {
             element = elements[ j ];
             var_d0ef8c79b6e23661[ element.sharedname ] = element.id;
         }
@@ -157,7 +162,7 @@ function private function_5ca3bdbcf741615f( eventname, keyname )
 }
 
 // Namespace ae_utility / scripts\common\ae_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x56f
 // Size: 0x61
 function function_6e2deb013c9ca85e( eventname )
@@ -178,7 +183,7 @@ function function_6e2deb013c9ca85e( eventname )
 }
 
 // Namespace ae_utility / scripts\common\ae_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d9
 // Size: 0xa2
 function function_d6f771aedba70ce7( eventname, keyname )
@@ -208,7 +213,7 @@ function function_d6f771aedba70ce7( eventname, keyname )
 }
 
 // Namespace ae_utility / scripts\common\ae_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x684
 // Size: 0xa2
 function function_e2ff8f4b4e94f723( keyname, bitname )
@@ -239,7 +244,7 @@ function function_e2ff8f4b4e94f723( keyname, bitname )
 }
 
 // Namespace ae_utility / scripts\common\ae_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x72f
 // Size: 0x99
 function function_ec8877db4e73e4e8( eventparams, eventname, keyname, value )
@@ -262,7 +267,7 @@ function function_ec8877db4e73e4e8( eventparams, eventname, keyname, value )
 }
 
 // Namespace ae_utility / scripts\common\ae_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7d1
 // Size: 0x9d
 function function_b40278e5e468c6c1( var_5d4647843a66d457, elementname )
@@ -290,7 +295,7 @@ function function_b40278e5e468c6c1( var_5d4647843a66d457, elementname )
 }
 
 // Namespace ae_utility / scripts\common\ae_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x877
 // Size: 0x59
 function function_7042dad035dc176c( stringref )

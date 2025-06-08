@@ -13,7 +13,7 @@
 #namespace bots_gametype_common;
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2db
 // Size: 0x149
 function bot_cache_entrances_to_bombzones()
@@ -55,7 +55,7 @@ function bot_cache_entrances_to_bombzones()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x42c
 // Size: 0x234
 function bot_cache_entrances_to_gametype_array( array, label_prefix, ignore_paths, var_59d7820e096a5ff9 )
@@ -117,7 +117,7 @@ function bot_cache_entrances_to_gametype_array( array, label_prefix, ignore_path
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x668
 // Size: 0x438
 function bot_cache_entrances( origin_array, label_array, ignore_paths, var_59d7820e096a5ff9 )
@@ -143,7 +143,8 @@ function bot_cache_entrances( origin_array, label_array, ignore_paths, var_59d78
     
     entrance_points = [];
     
-    for (i = 0; i < origin_array.size; i++) {
+    for ( i = 0; i < origin_array.size ; i++ )
+    {
         index = label_array[ i ];
         entrance_points[ index ] = findentrances( origin_array[ i ] );
         wait 0.05;
@@ -155,7 +156,8 @@ function bot_cache_entrances( origin_array, label_array, ignore_paths, var_59d78
             var_9b944e0aa5fad8cb = 4;
         }
         
-        for (j = 0; j < entrance_points[ index ].size; j++) {
+        for ( j = 0; j < entrance_points[ index ].size ; j++ )
+        {
             entrance = entrance_points[ index ][ j ];
             entrance.is_precalculated_entrance = 1;
             entrance.prone_visible_from[ index ] = entrance_visible_from( entrance.origin, origin_array[ i ], "prone" );
@@ -182,8 +184,10 @@ function bot_cache_entrances( origin_array, label_array, ignore_paths, var_59d78
     
     if ( calculate_paths )
     {
-        for (i = 0; i < origin_array.size; i++) {
-            for (j = i + 1; j < origin_array.size; j++) {
+        for ( i = 0; i < origin_array.size ; i++ )
+        {
+            for ( j = i + 1; j < origin_array.size ; j++ )
+            {
                 path = get_extended_path( origin_array[ i ], origin_array[ j ] );
                 assertex( isdefined( path ), "<dev string:x1bd>" + label_array[ i ] + "<dev string:x1dd>" + origin_array[ i ] + "<dev string:x1e2>" + label_array[ j ] + "<dev string:x1dd>" + origin_array[ j ] + "<dev string:x1ea>" );
                 
@@ -263,7 +267,7 @@ function bot_cache_entrances( origin_array, label_array, ignore_paths, var_59d78
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaa8
 // Size: 0x2aa
 function bot_add_missing_nodes( nodes, trigger )
@@ -320,7 +324,7 @@ function bot_add_missing_nodes( nodes, trigger )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd5b
 // Size: 0x23
 function bot_setup_objective_bottargets()
@@ -331,7 +335,7 @@ function bot_setup_objective_bottargets()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd86
 // Size: 0x7b
 function bot_setup_bot_targets( array )
@@ -348,7 +352,7 @@ function bot_setup_bot_targets( array )
 /#
 
     // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe09
     // Size: 0x1d, Type: dev
     function function_5c7085cb60319b4()
@@ -359,7 +363,7 @@ function bot_setup_bot_targets( array )
 #/
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe2e
 // Size: 0xaa
 function bot_gametype_get_num_players_on_team( team )
@@ -385,7 +389,7 @@ function bot_gametype_get_num_players_on_team( team )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xee1
 // Size: 0xea
 function bot_gametype_get_allied_attackers_for_team( team, defend_origin, defend_radius )
@@ -414,7 +418,7 @@ function bot_gametype_get_allied_attackers_for_team( team, defend_origin, defend
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfd4
 // Size: 0xea
 function bot_gametype_get_allied_defenders_for_team( team, defend_origin, defend_radius )
@@ -443,7 +447,7 @@ function bot_gametype_get_allied_defenders_for_team( team, defend_origin, defend
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10c7
 // Size: 0x1d
 function bot_gametype_human_player_always_considered_attacker()
@@ -457,7 +461,7 @@ function bot_gametype_human_player_always_considered_attacker()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10ed
 // Size: 0x1d
 function bot_gametype_human_player_always_considered_defender()
@@ -471,7 +475,7 @@ function bot_gametype_human_player_always_considered_defender()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1113
 // Size: 0x23
 function bot_gametype_set_role( new_role )
@@ -482,7 +486,7 @@ function bot_gametype_set_role( new_role )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x113e
 // Size: 0xc7
 function bot_gametype_get_players_by_role( role, team )
@@ -501,7 +505,7 @@ function bot_gametype_get_players_by_role( role, team )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120e
 // Size: 0x240
 function bot_gametype_initialize_attacker_defender_role()
@@ -578,7 +582,7 @@ function bot_gametype_initialize_attacker_defender_role()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1456
 // Size: 0x2bf
 function bot_gametype_attacker_defender_ai_director_update()
@@ -661,7 +665,7 @@ function bot_gametype_attacker_defender_ai_director_update()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x171d
 // Size: 0x1e
 function bot_can_switch_to_attacker()
@@ -675,7 +679,7 @@ function bot_can_switch_to_attacker()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1744
 // Size: 0x1e
 function bot_can_switch_to_defender()
@@ -689,7 +693,7 @@ function bot_can_switch_to_defender()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x176b
 // Size: 0x1a3, Type: bool
 function bot_verify_and_cache_bombzones( var_d36a7e987347e24d )
@@ -742,7 +746,7 @@ function bot_verify_and_cache_bombzones( var_d36a7e987347e24d )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1917
 // Size: 0xb2
 function bot_get_valid_nodes_in_trigger( trigger )
@@ -762,7 +766,7 @@ function bot_get_valid_nodes_in_trigger( trigger )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19d2
 // Size: 0x1cf
 function bot_cache_entrances_to_zones( zones )
@@ -795,7 +799,7 @@ function bot_cache_entrances_to_zones( zones )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ba9
 // Size: 0x285
 function calculate_zone_node_extents( zone )
@@ -818,7 +822,7 @@ function calculate_zone_node_extents( zone )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e37
 // Size: 0x157
 function zone_get_node_nearest_2d_bounds( zone, var_d83e63db6c0197b6, var_3653eb9930616b55 )
@@ -845,7 +849,7 @@ function zone_get_node_nearest_2d_bounds( zone, var_d83e63db6c0197b6, var_3653eb
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f97
 // Size: 0xe3
 function monitor_zone_control()
@@ -893,7 +897,7 @@ function monitor_zone_control()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2082
 // Size: 0xbd
 function monitor_bombzone_control()
@@ -932,7 +936,7 @@ function monitor_bombzone_control()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2147
 // Size: 0xa3
 function find_closest_bombzone_to_player( player )
@@ -955,7 +959,7 @@ function find_closest_bombzone_to_player( player )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21f3
 // Size: 0xce
 function get_living_players_on_team( team, var_11739f6565c4bf01 )
@@ -982,7 +986,7 @@ function get_living_players_on_team( team, var_11739f6565c4bf01 )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22ca
 // Size: 0x183
 function get_bombzone_node_to_plant_on( bombzone, var_5a63f206b448f5bd )
@@ -1033,7 +1037,7 @@ function get_bombzone_node_to_plant_on( bombzone, var_5a63f206b448f5bd )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2455
 // Size: 0x15b
 function get_bombzone_node_to_defuse_on( bombzone )
@@ -1076,7 +1080,7 @@ function get_bombzone_node_to_defuse_on( bombzone )
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x25b8
 // Size: 0xf7
 function bombzone_press_use( time, var_206bf0ac411b2257, var_5b45d81d67839650, dont_prone )
@@ -1113,7 +1117,7 @@ function bombzone_press_use( time, var_206bf0ac411b2257, var_5b45d81d67839650, d
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26b8
 // Size: 0x88
 function notify_planter_on_whizby()
@@ -1134,7 +1138,7 @@ function notify_planter_on_whizby()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2748
 // Size: 0x58
 function notify_planter_on_damage()
@@ -1149,7 +1153,7 @@ function notify_planter_on_damage()
 }
 
 // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27a8
 // Size: 0x11c
 function get_ai_hearing_bomb_plant_sound( type )
@@ -1192,7 +1196,7 @@ function get_ai_hearing_bomb_plant_sound( type )
 /#
 
     // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x28cd
     // Size: 0x12e, Type: dev
     function function_6cffc65203b4d521()
@@ -1227,7 +1231,7 @@ function get_ai_hearing_bomb_plant_sound( type )
     }
 
     // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2a03
     // Size: 0xf, Type: dev
     function function_7b6b2ac24a72824a()
@@ -1236,7 +1240,7 @@ function get_ai_hearing_bomb_plant_sound( type )
     }
 
     // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2a1a
     // Size: 0x19, Type: dev
     function function_bdf33f81ff7efcf8()
@@ -1245,7 +1249,7 @@ function get_ai_hearing_bomb_plant_sound( type )
     }
 
     // Namespace bots_gametype_common / scripts\mp\bots\bots_gametype_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2a3b
     // Size: 0x34c, Type: dev
     function function_63289ab47f52d209()

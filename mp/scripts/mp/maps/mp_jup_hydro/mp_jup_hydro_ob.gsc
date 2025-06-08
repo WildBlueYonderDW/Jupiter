@@ -2,7 +2,6 @@
 #using script_16ea1b94f0f381b3;
 #using script_1d43c78ad6bb95e2;
 #using script_2047cdbf5176ba0;
-#using script_22f1701e151b9d12;
 #using script_253bcb0ddbc438ca;
 #using script_3d91fbc054526de1;
 #using script_41ffdbe01998b61a;
@@ -19,6 +18,7 @@
 #using scripts\common\cap;
 #using scripts\common\utility;
 #using scripts\common\values;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\armor;
 #using scripts\cp_mp\laststand;
 #using scripts\cp_mp\loot\common_item;
@@ -44,7 +44,7 @@ function autoexec init()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce4
 // Size: 0x246
 function main()
@@ -117,7 +117,7 @@ function main()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf32
 // Size: 0x26
 function function_e12249c96bb7bd37()
@@ -128,7 +128,7 @@ function function_e12249c96bb7bd37()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf60
 // Size: 0x1a
 function disable_announcer()
@@ -138,7 +138,7 @@ function disable_announcer()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf82
 // Size: 0x1e7
 function function_e9d22563e1d95d65()
@@ -176,7 +176,7 @@ function function_e9d22563e1d95d65()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1171
 // Size: 0x125
 function function_fe00122676a4c472()
@@ -211,7 +211,7 @@ function function_fe00122676a4c472()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x129e
 // Size: 0xdb
 function function_b896c581d1a39b24( teamname, squadid )
@@ -247,7 +247,7 @@ function function_b896c581d1a39b24( teamname, squadid )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1382
 // Size: 0x1de
 function function_809182c66f4e3922( teamname, squadid )
@@ -295,7 +295,7 @@ function function_809182c66f4e3922( teamname, squadid )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1568
 // Size: 0x10f
 function function_82b06dfd59cced40( player )
@@ -323,7 +323,7 @@ function function_82b06dfd59cced40( player )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x167f
 // Size: 0xb0
 function function_3592326f48a109c9()
@@ -343,7 +343,7 @@ function function_3592326f48a109c9()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1737
 // Size: 0x1a8
 function function_219ccd13654aeca0()
@@ -391,7 +391,7 @@ function function_219ccd13654aeca0()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18e7
 // Size: 0x50
 function function_f39906ad71bd2029()
@@ -407,7 +407,7 @@ function function_f39906ad71bd2029()
 /#
 
     // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x193f
     // Size: 0xdd, Type: dev
     function function_fa78585bed75ccf7()
@@ -430,7 +430,7 @@ function function_f39906ad71bd2029()
 #/
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a24
 // Size: 0x1a1
 function function_67d9a8af368e98a0( teamname, squadid )
@@ -483,7 +483,7 @@ function function_67d9a8af368e98a0( teamname, squadid )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bce
 // Size: 0x219
 function function_7cec19ffa37cd482( players )
@@ -526,7 +526,7 @@ function function_7cec19ffa37cd482( players )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1def
 // Size: 0x86
 function function_b34e1f20415bda49( var_cdd0724a1b84bd90 )
@@ -545,7 +545,7 @@ function function_b34e1f20415bda49( var_cdd0724a1b84bd90 )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e7d
 // Size: 0x29b
 function function_30ce08f2e9b1715a( var_cdd0724a1b84bd90, var_4254242e225c8fac, var_7ec747ab678812ae )
@@ -614,7 +614,7 @@ function function_30ce08f2e9b1715a( var_cdd0724a1b84bd90, var_4254242e225c8fac, 
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2120
 // Size: 0x31
 function function_1809dfa468133ff8()
@@ -628,7 +628,7 @@ function function_1809dfa468133ff8()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2159
 // Size: 0x9b
 function function_5cb50d89c340d04f()
@@ -647,7 +647,7 @@ function function_5cb50d89c340d04f()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21fc
 // Size: 0x50
 function function_ad199ba79ff9da5c()
@@ -666,7 +666,7 @@ function function_ad199ba79ff9da5c()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2254
 // Size: 0x37
 function function_5eb2824d433804f3()
@@ -677,7 +677,7 @@ function function_5eb2824d433804f3()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2293
 // Size: 0x50
 function function_f3c5700c7fbc20aa()
@@ -690,7 +690,7 @@ function function_f3c5700c7fbc20aa()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22eb
 // Size: 0x31
 function function_6fc794f2bb3469b1()
@@ -704,7 +704,7 @@ function function_6fc794f2bb3469b1()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2324
 // Size: 0x110
 function function_48dc1d3baa07c8f0()
@@ -732,7 +732,7 @@ function function_48dc1d3baa07c8f0()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x243c
 // Size: 0x37
 function function_648f240b0093dddd()
@@ -743,7 +743,7 @@ function function_648f240b0093dddd()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x247b
 // Size: 0x50
 function function_2a543136fec78fcb()
@@ -762,7 +762,7 @@ function function_2a543136fec78fcb()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x24d3
 // Size: 0x62
 function initcap( asmname, statename, params )
@@ -775,7 +775,7 @@ function initcap( asmname, statename, params )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x253d
 // Size: 0x2d
 function function_1834bd086c8afb3a( asmname, statename, params )
@@ -784,7 +784,7 @@ function function_1834bd086c8afb3a( asmname, statename, params )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2572
 // Size: 0x3d, Type: bool
 function function_78f4d64469ef2c66( asmname, statename, params )
@@ -793,7 +793,7 @@ function function_78f4d64469ef2c66( asmname, statename, params )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25b8
 // Size: 0x3d, Type: bool
 function function_eb38a032512f79d( asmname, statename, params )
@@ -802,7 +802,7 @@ function function_eb38a032512f79d( asmname, statename, params )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25fe
 // Size: 0x59, Type: bool
 function function_26ddc4d1a0a9958a( asmname, statename, params )
@@ -817,7 +817,7 @@ function function_26ddc4d1a0a9958a( asmname, statename, params )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2660
 // Size: 0x90
 function function_c154e3abec6b5381( sparams )
@@ -842,7 +842,7 @@ function function_c154e3abec6b5381( sparams )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26f8
 // Size: 0x15d
 function function_8bdadb53e67e2c47()
@@ -883,17 +883,17 @@ function function_8bdadb53e67e2c47()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x285d
 // Size: 0x16
 function function_135c08561081b6cf()
 {
     level flag_wait( "ai_spawn_director_initialized" );
-    namespace_614554f86e52695c::process_create_script();
+    scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x287b
 // Size: 0x220
 function function_632bf331b85b85ac()
@@ -956,7 +956,7 @@ function function_632bf331b85b85ac()
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aa3
 // Size: 0x135
 function function_edb604ca8191a7a1()
@@ -1118,7 +1118,7 @@ function private function_a3b9cffbd4aab638( isinvulnerable )
 }
 
 // Namespace mp_jup_hydro_ob / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ea0
 // Size: 0x230
 function function_b60de1b748c7230f()
@@ -1158,7 +1158,8 @@ function function_b60de1b748c7230f()
     wait 0.5;
     a_weapons = self getweaponslist( "primary" );
     
-    for (i = 0; i < 2; i++) {
+    for ( i = 0; i < 2 ; i++ )
+    {
         currentweapon = a_weapons[ i ];
         
         if ( scripts\cp_mp\pack_a_punch::can_pap( currentweapon ) )

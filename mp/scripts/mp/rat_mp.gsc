@@ -7,7 +7,7 @@
 #namespace rat_mp;
 
 // Namespace rat_mp / scripts\mp\rat_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x140
 // Size: 0x5f
 function init()
@@ -21,7 +21,7 @@ function init()
 }
 
 // Namespace rat_mp / scripts\mp\rat_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a7
 // Size: 0x29
 function ratgetplayerteam( params )
@@ -31,7 +31,7 @@ function ratgetplayerteam( params )
 }
 
 // Namespace rat_mp / scripts\mp\rat_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d9
 // Size: 0x7d
 function ratgetteamcount( params )
@@ -60,7 +60,7 @@ function ratgetteamcount( params )
 }
 
 // Namespace rat_mp / scripts\mp\rat_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25f
 // Size: 0x51
 function ratgetplayerequipment( params )

@@ -4,7 +4,7 @@
 #namespace mp_jup_st_b_ob_activities_mrp_challenges_cs;
 
 // Namespace mp_jup_st_b_ob_activities_mrp_challenges_cs / namespace_76dff16242afc74b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15e
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_b_ob_activities_mrp_challenges_cs / namespace_76dff16242afc74b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d3
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_mrp_challenges_cs / namespace_76dff16242afc74b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x242
 // Size: 0x1b8
 function createstructs( fe, us, cf )
@@ -79,7 +79,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_activities_mrp_challenges_cs / namespace_76dff16242afc74b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x402
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -88,7 +88,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_b_ob_activities_mrp_challenges_cs / namespace_76dff16242afc74b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40c
 // Size: 0xe
 function cleanup()

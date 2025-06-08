@@ -28,7 +28,7 @@
 #namespace namespace_f545455fbfd50745;
 
 // Namespace namespace_f545455fbfd50745 / namespace_30baceecda213256
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8db
 // Size: 0x25
 function function_80d68c9701e1aea5( data )
@@ -40,7 +40,7 @@ function function_80d68c9701e1aea5( data )
 /#
 
     // Namespace namespace_f545455fbfd50745 / namespace_30baceecda213256
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x908
     // Size: 0x16, Type: dev
     function function_a07f7c4c0c4ef8e3()
@@ -51,7 +51,7 @@ function function_80d68c9701e1aea5( data )
 #/
 
 // Namespace namespace_f545455fbfd50745 / namespace_30baceecda213256
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x926
 // Size: 0xe3
 function function_60616e75be26b24f( activity, node )
@@ -75,7 +75,7 @@ function function_60616e75be26b24f( activity, node )
 }
 
 // Namespace namespace_f545455fbfd50745 / namespace_30baceecda213256
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa12
 // Size: 0x14f
 function function_129f1ef2e5686f84()
@@ -102,7 +102,7 @@ function function_129f1ef2e5686f84()
 }
 
 // Namespace namespace_f545455fbfd50745 / namespace_30baceecda213256
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb69
 // Size: 0x35
 function function_65fceeccc5c94e3d( teamname )
@@ -116,7 +116,7 @@ function function_65fceeccc5c94e3d( teamname )
 }
 
 // Namespace namespace_f545455fbfd50745 / namespace_30baceecda213256
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba6
 // Size: 0x87
 function function_59ae2a3abcf5622f( teamname )
@@ -137,7 +137,7 @@ function function_59ae2a3abcf5622f( teamname )
 }
 
 // Namespace namespace_f545455fbfd50745 / namespace_30baceecda213256
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc35
 // Size: 0xad
 function function_930bc6dc39f516db( teamname )
@@ -164,7 +164,8 @@ function private function_49c1da07d69b6895( numagents )
     self.numagents = 0;
     self.agents = [];
     
-    for (i = 0; i < numagents; i++) {
+    for ( i = 0; i < numagents ; i++ )
+    {
         aitype = function_d5bc07eabf352abb( undefined, undefined, "overwatch" );
         var_fb30e2e6aca1d19 = randomfloatrange( 144, 360 );
         forward = anglestoforward( self.samsite.angles ) * var_fb30e2e6aca1d19;
@@ -677,7 +678,7 @@ function private function_bf9ec93bee75f88c( isallowed )
 }
 
 // Namespace namespace_f545455fbfd50745 / namespace_30baceecda213256
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2586
 // Size: 0xe4
 function playtickingsound()

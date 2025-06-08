@@ -7,7 +7,7 @@
 #namespace civilian_logic;
 
 // Namespace civilian_logic / scripts\aitypes\human\civilian_logic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x138
 // Size: 0x113
 function initcivilian( taskid )
@@ -39,7 +39,7 @@ function initcivilian( taskid )
 }
 
 // Namespace civilian_logic / scripts\aitypes\human\civilian_logic
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x254
 // Size: 0x2c
 function setstealthstate_neutral( statename, e )
@@ -53,7 +53,7 @@ function setstealthstate_neutral( statename, e )
 }
 
 // Namespace civilian_logic / scripts\aitypes\human\civilian_logic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x289
 // Size: 0x23
 function function_216b6a27f343c39b( taskid )
@@ -64,7 +64,7 @@ function function_216b6a27f343c39b( taskid )
 }
 
 // Namespace civilian_logic / scripts\aitypes\human\civilian_logic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b5
 // Size: 0x6e
 function function_f10a50a61d990568( taskid )
@@ -85,7 +85,7 @@ function function_f10a50a61d990568( taskid )
 }
 
 // Namespace civilian_logic / scripts\aitypes\human\civilian_logic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32b
 // Size: 0x16
 function interactioncleanup( taskid )
@@ -94,7 +94,7 @@ function interactioncleanup( taskid )
 }
 
 // Namespace civilian_logic / scripts\aitypes\human\civilian_logic
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x349
 // Size: 0x1c
 function function_fa485278009f93a7( taskid )

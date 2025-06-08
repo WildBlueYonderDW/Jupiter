@@ -8,7 +8,7 @@
 #namespace capture_flag_gw;
 
 // Namespace capture_flag_gw / namespace_500245c51ae01944
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf8
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -17,7 +17,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace capture_flag_gw / namespace_500245c51ae01944
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e
 // Size: 0x7b
 function evaluatescore( bot )
@@ -35,7 +35,7 @@ function evaluatescore( bot )
 }
 
 // Namespace capture_flag_gw / namespace_500245c51ae01944
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x192
 // Size: 0x133
 function actionprocess( bot )

@@ -19,7 +19,7 @@
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x991
+// Checksum 0x0, Offset: 0x9a9
 // Size: 0x18
 function autoexec main()
 {
@@ -28,7 +28,7 @@ function autoexec main()
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x9b1
+// Checksum 0x0, Offset: 0x9c9
 // Size: 0x119
 function private init()
 {
@@ -54,8 +54,8 @@ function private init()
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xad2
+// Params 0
+// Checksum 0x0, Offset: 0xaea
 // Size: 0x1cc
 function function_1e5a79cefb8818fb()
 {
@@ -88,8 +88,8 @@ function function_1e5a79cefb8818fb()
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xca6
+// Params 0
+// Checksum 0x0, Offset: 0xcbe
 // Size: 0x61
 function function_167cc15cd8218528()
 {
@@ -101,8 +101,8 @@ function function_167cc15cd8218528()
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd0f
+// Params 1
+// Checksum 0x0, Offset: 0xd27
 // Size: 0x138
 function function_fac3964b226792c1( streakinfo )
 {
@@ -154,8 +154,8 @@ function function_fac3964b226792c1( streakinfo )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe50
+// Params 0
+// Checksum 0x0, Offset: 0xe68
 // Size: 0x175, Type: bool
 function function_df1cf83495e38426()
 {
@@ -209,8 +209,8 @@ function function_df1cf83495e38426()
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfce
+// Params 2
+// Checksum 0x0, Offset: 0xfe6
 // Size: 0x54
 function function_7bf1d7276d8de2c3( streakinfo, switchresult )
 {
@@ -225,8 +225,8 @@ function function_7bf1d7276d8de2c3( streakinfo, switchresult )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x102a
+// Params 0
+// Checksum 0x0, Offset: 0x1042
 // Size: 0x81
 function function_fd39610812b871ee()
 {
@@ -254,8 +254,8 @@ function function_fd39610812b871ee()
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b3
+// Params 1
+// Checksum 0x0, Offset: 0x10cb
 // Size: 0x15b
 function function_cde5ec93a0a3eaad( streakinfo )
 {
@@ -295,8 +295,8 @@ function function_cde5ec93a0a3eaad( streakinfo )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1216
+// Params 3
+// Checksum 0x0, Offset: 0x122e
 // Size: 0x575
 function function_7f27487dffce9217( streakinfo, weaponobj, projectile )
 {
@@ -433,9 +433,9 @@ function function_7f27487dffce9217( streakinfo, weaponobj, projectile )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1794
-// Size: 0xa8
+// Params 3
+// Checksum 0x0, Offset: 0x17ac
+// Size: 0xd3
 function function_44b0c510768ad13e( weaponobj, swapdelay, takedelay )
 {
     if ( isdefined( takedelay ) )
@@ -444,6 +444,12 @@ function function_44b0c510768ad13e( weaponobj, swapdelay, takedelay )
     }
     
     val::group_reset( "switchbladeDrone_deploy" );
+    currentweapon = self getcurrentweapon();
+    
+    if ( isdefined( currentweapon ) && scripts\cp_mp\killstreaks\killstreakdeploy::function_b752eaae4d806c4c( currentweapon.basename ) )
+    {
+        return;
+    }
     
     if ( !isdefined( self.lastdroppableweaponobj ) || !self hasweapon( self.lastdroppableweaponobj ) )
     {
@@ -465,8 +471,8 @@ function function_44b0c510768ad13e( weaponobj, swapdelay, takedelay )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1844
+// Params 1
+// Checksum 0x0, Offset: 0x1887
 // Size: 0x3f
 function function_a66b069993cf9abb( var_b7fd22ccc4fb4299 )
 {
@@ -486,8 +492,8 @@ function function_a66b069993cf9abb( var_b7fd22ccc4fb4299 )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x188b
+// Params 1
+// Checksum 0x0, Offset: 0x18ce
 // Size: 0x219
 function function_6fd64a7766f2f12a( grenade )
 {
@@ -526,8 +532,8 @@ function function_6fd64a7766f2f12a( grenade )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aad
+// Params 2
+// Checksum 0x0, Offset: 0x1af0
 // Size: 0x30a
 function function_f50add73e923b629( streakname, location )
 {
@@ -634,8 +640,8 @@ function function_f50add73e923b629( streakname, location )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc0
+// Params 0
+// Checksum 0x0, Offset: 0x1e03
 // Size: 0x1dd
 function function_e2cf8a8b93a4a86f()
 {
@@ -684,8 +690,8 @@ function function_e2cf8a8b93a4a86f()
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fa5
+// Params 0
+// Checksum 0x0, Offset: 0x1fe8
 // Size: 0x2fa
 function function_f57f532b8644012a()
 {
@@ -761,8 +767,8 @@ function function_f57f532b8644012a()
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x22a7
+// Params 3
+// Checksum 0x0, Offset: 0x22ea
 // Size: 0x24b
 function function_6ec67c6c636c25d0( centerpos, startpos, flyvelocity )
 {
@@ -812,8 +818,8 @@ function function_6ec67c6c636c25d0( centerpos, startpos, flyvelocity )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x24fa
+// Params 3
+// Checksum 0x0, Offset: 0x253d
 // Size: 0x136
 function function_5c89eb12f323ab1e( centerpos, startpos, flyvelocity )
 {
@@ -855,9 +861,9 @@ function function_5c89eb12f323ab1e( centerpos, startpos, flyvelocity )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2638
-// Size: 0x447
+// Params 2
+// Checksum 0x0, Offset: 0x267b
+// Size: 0x45a
 function function_171c9b525186dfee( streakname, centerposzoffset )
 {
     self endon( "death" );
@@ -872,7 +878,7 @@ function function_171c9b525186dfee( streakname, centerposzoffset )
     {
         centerpos = ( self.origin[ 0 ], self.origin[ 1 ], self.origin[ 2 ] / 1.5 );
         
-        if ( level.mapname == "mp_jup_vertigo" )
+        if ( level.mapname == "mp_jup_vertigo" || level.mapname == "mp_jup_observatory" )
         {
             centerpos = ( self.origin[ 0 ], self.origin[ 1 ], self.origin[ 2 ] - 500 );
         }
@@ -977,8 +983,8 @@ function function_171c9b525186dfee( streakname, centerposzoffset )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a87
+// Params 1
+// Checksum 0x0, Offset: 0x2add
 // Size: 0x1c2
 function function_a831421d6d91a68( validtargets )
 {
@@ -1024,8 +1030,8 @@ function function_a831421d6d91a68( validtargets )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c51
+// Params 1
+// Checksum 0x0, Offset: 0x2ca7
 // Size: 0xd0, Type: bool
 function function_e99de59922a658c2( besttarget )
 {
@@ -1051,8 +1057,8 @@ function function_e99de59922a658c2( besttarget )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d2a
+// Params 2
+// Checksum 0x0, Offset: 0x2d80
 // Size: 0x267
 function function_1c87d0008280beb0( besttarget, targetloc )
 {
@@ -1119,8 +1125,8 @@ function function_1c87d0008280beb0( besttarget, targetloc )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f99
+// Params 2
+// Checksum 0x0, Offset: 0x2fef
 // Size: 0xd2, Type: bool
 function function_b6d0baeed8dac51( target, targetloc )
 {
@@ -1161,8 +1167,8 @@ function function_b6d0baeed8dac51( target, targetloc )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3074
+// Params 2
+// Checksum 0x0, Offset: 0x30ca
 // Size: 0x34f
 function function_3c15b092a77b0142( target, targetloc )
 {
@@ -1252,8 +1258,8 @@ function function_3c15b092a77b0142( target, targetloc )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33cb
+// Params 1
+// Checksum 0x0, Offset: 0x3421
 // Size: 0x2a
 function function_ea343190a5d1301e( data )
 {
@@ -1262,8 +1268,8 @@ function function_ea343190a5d1301e( data )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33fd
+// Params 1
+// Checksum 0x0, Offset: 0x3453
 // Size: 0x2a
 function function_3a93e509a610b4bd( data )
 {
@@ -1272,8 +1278,8 @@ function function_3a93e509a610b4bd( data )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x342f
+// Params 1
+// Checksum 0x0, Offset: 0x3485
 // Size: 0x3d
 function function_344501824416bd86( fromtrigger )
 {
@@ -1284,8 +1290,8 @@ function function_344501824416bd86( fromtrigger )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3474
+// Params 1
+// Checksum 0x0, Offset: 0x34ca
 // Size: 0x27
 function function_ba6789000bf88889( params )
 {
@@ -1295,8 +1301,8 @@ function function_ba6789000bf88889( params )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34a3
+// Params 1
+// Checksum 0x0, Offset: 0x34f9
 // Size: 0x2d
 function function_4706f9311a69b5bc( params )
 {
@@ -1305,8 +1311,8 @@ function function_4706f9311a69b5bc( params )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34d8
+// Params 2
+// Checksum 0x0, Offset: 0x352e
 // Size: 0x2a6
 function switchblade_drone_explode( params, var_f543b7749f9023af )
 {
@@ -1387,8 +1393,8 @@ function switchblade_drone_explode( params, var_f543b7749f9023af )
 }
 
 // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3786
+// Params 5
+// Checksum 0x0, Offset: 0x37dc
 // Size: 0x20f
 function function_8e41e9774021d4f0( msg, timer, radius, targetlength, var_781e7fd99e3f80a0 )
 {
@@ -1424,8 +1430,8 @@ function function_8e41e9774021d4f0( msg, timer, radius, targetlength, var_781e7f
 /#
 
     // Namespace switchblade_drone / scripts\killstreaks\switchblade_drone
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x399d
+    // Params 1
+    // Checksum 0x0, Offset: 0x39f3
     // Size: 0x40, Type: dev
     function function_47bd4689d0d9b39e( center )
     {

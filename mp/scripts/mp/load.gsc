@@ -50,7 +50,7 @@
 #namespace load;
 
 // Namespace load / scripts\mp\load
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x536
 // Size: 0x6cb
 function main()
@@ -136,7 +136,8 @@ function main()
     function_c838f02b25da3712( "whizby" );
     lanterns = getentarray( "lantern_glowFX_origin", "targetname" );
     
-    for (i = 0; i < lanterns.size; i++) {
+    for ( i = 0; i < lanterns.size ; i++ )
+    {
         lanterns[ i ] thread lanterns();
     }
     
@@ -170,7 +171,8 @@ function main()
     level thread scripts\mp\destructible::rockable_cars_init();
     level thread scripts\mp\destructible::function_aaab78a3cf337331();
     
-    for (p = 0; p < 7; p++) {
+    for ( p = 0; p < 7 ; p++ )
+    {
         switch ( p )
         {
             case 0:
@@ -199,7 +201,8 @@ function main()
         
         triggers = getentarray( triggertype, "classname" );
         
-        for (i = 0; i < triggers.size; i++) {
+        for ( i = 0; i < triggers.size ; i++ )
+        {
             if ( isdefined( triggers[ i ].script_prefab_exploder ) )
             {
                 triggers[ i ].script_exploder = triggers[ i ].script_prefab_exploder;
@@ -281,7 +284,7 @@ function main()
 }
 
 // Namespace load / scripts\mp\load
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc09
 // Size: 0x1d
 function function_5727ac40e6ef5456( params )
@@ -290,7 +293,7 @@ function function_5727ac40e6ef5456( params )
 }
 
 // Namespace load / scripts\mp\load
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc2e
 // Size: 0x9e
 function exploder_load( trigger )
@@ -318,7 +321,7 @@ function exploder_load( trigger )
 }
 
 // Namespace load / scripts\mp\load
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd4
 // Size: 0x60
 function lanterns()
@@ -332,7 +335,7 @@ function lanterns()
 }
 
 // Namespace load / scripts\mp\load
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd3c
 // Size: 0x2df
 function setupdestructiblekillcaments()
@@ -375,7 +378,7 @@ function setupdestructiblekillcaments()
 }
 
 // Namespace load / scripts\mp\load
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1023
 // Size: 0x3c
 function deletedestructiblekillcament()
@@ -393,7 +396,7 @@ function deletedestructiblekillcament()
 }
 
 // Namespace load / scripts\mp\load
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1067
 // Size: 0x11e, Type: bool
 function filterstructs( struct )

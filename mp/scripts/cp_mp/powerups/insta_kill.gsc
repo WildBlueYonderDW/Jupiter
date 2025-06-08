@@ -19,7 +19,7 @@ function autoexec main()
 }
 
 // Namespace insta_kill / scripts\cp_mp\powerups\insta_kill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1de
 // Size: 0x61
 function function_f9a50549e0b4a614()
@@ -36,7 +36,7 @@ function function_f9a50549e0b4a614()
 }
 
 // Namespace insta_kill / scripts\cp_mp\powerups\insta_kill
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x247
 // Size: 0x79
 function grab_insta_kill( str_powerup, ent_powerup )
@@ -52,7 +52,7 @@ function grab_insta_kill( str_powerup, ent_powerup )
 }
 
 // Namespace insta_kill / scripts\cp_mp\powerups\insta_kill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c8
 // Size: 0xbf
 function function_1eeed7712fef95ac()
@@ -86,7 +86,7 @@ function function_1eeed7712fef95ac()
 }
 
 // Namespace insta_kill / scripts\cp_mp\powerups\insta_kill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38f
 // Size: 0x6f
 function function_bdbabfc99054986b( params )
@@ -100,7 +100,7 @@ function function_bdbabfc99054986b( params )
 }
 
 // Namespace insta_kill / scripts\cp_mp\powerups\insta_kill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x407
 // Size: 0x4a, Type: bool
 function function_c88394be6941559a()
@@ -119,7 +119,7 @@ function function_c88394be6941559a()
 }
 
 // Namespace insta_kill / scripts\cp_mp\powerups\insta_kill
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x45a
 // Size: 0x18f
 function function_941a468f40ccf551( idamage, eattacker, smeansofdeath, shitloc, sweapon )

@@ -6,7 +6,7 @@
 #namespace mp_jup_elevated_lighting;
 
 // Namespace mp_jup_elevated_lighting / scripts\mp\maps\mp_jup_elevated\mp_jup_elevated_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc6
 // Size: 0x56
 function main()

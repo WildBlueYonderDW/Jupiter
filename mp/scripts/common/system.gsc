@@ -3,7 +3,7 @@
 #namespace system;
 
 // Namespace system / scripts\common\system
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xac
 // Size: 0x13a
 function register( str_name, reqs, func_preinit, func_postinit )
@@ -33,7 +33,7 @@ function register( str_name, reqs, func_preinit, func_postinit )
 }
 
 // Namespace system / scripts\common\system
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ee
 // Size: 0x6d
 function ignore( str_name )
@@ -55,7 +55,7 @@ function ignore( str_name )
 }
 
 // Namespace system / scripts\common\system
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x263
 // Size: 0x7e
 function function_9c9c8162e507420()
@@ -77,7 +77,7 @@ function function_9c9c8162e507420()
 }
 
 // Namespace system / scripts\common\system
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e9
 // Size: 0x95
 function function_d9624eb09b844ca1()
@@ -237,7 +237,7 @@ function private function_5d3461c8ae875db7( func )
 }
 
 // Namespace system / scripts\common\system
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79f
 // Size: 0xf
 function function_3f680182ad0b9ef7()
@@ -246,7 +246,7 @@ function function_3f680182ad0b9ef7()
 }
 
 // Namespace system / scripts\common\system
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b6
 // Size: 0x4d
 function system_error( msg )

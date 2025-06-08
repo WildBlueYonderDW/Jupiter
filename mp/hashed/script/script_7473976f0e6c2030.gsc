@@ -6,7 +6,7 @@
 #namespace warrior_lts;
 
 // Namespace warrior_lts / namespace_50d2fd0b3bec9c66
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb7
 // Size: 0xf
 function function_22096e1dcb46edfa()

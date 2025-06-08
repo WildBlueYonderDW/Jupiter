@@ -8,7 +8,7 @@
 #namespace anim_scene;
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x18d
 // Size: 0x157
 function anim_scene_create_actor( entity, animname, is_player, player_rig_visible, disable_weapons, maintain_swimming )
@@ -63,7 +63,7 @@ function anim_scene_create_actor( entity, animname, is_player, player_rig_visibl
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ed
 // Size: 0x50
 function anim_scene_set_actor_interruptable( var_9c5feb9c7ef9892d, interrupt_anime, first_frame )
@@ -85,7 +85,7 @@ function anim_scene_set_actor_interruptable( var_9c5feb9c7ef9892d, interrupt_ani
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x345
 // Size: 0xd3
 function anim_scene( actors, anime, start_scene, end_scene, tag, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b )
@@ -107,7 +107,7 @@ function anim_scene( actors, anime, start_scene, end_scene, tag, blend_in_time, 
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x420
 // Size: 0x117
 function anim_scene_loop( actors, anime, start_scene, end_scene, tag, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b )
@@ -134,7 +134,7 @@ function anim_scene_loop( actors, anime, start_scene, end_scene, tag, blend_in_t
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x540
 // Size: 0x28
 function anim_scene_stop( var_ec951e7a56c0f445 )
@@ -149,7 +149,7 @@ function anim_scene_stop( var_ec951e7a56c0f445 )
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x570
 // Size: 0x19
 function anim_scene_stop_actor( actor )
@@ -158,7 +158,7 @@ function anim_scene_stop_actor( actor )
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x591
 // Size: 0x2bc, Type: bool
 function _anim_scene_internal( actors, anime, looping, tag, start_scene, end_scene, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b )
@@ -256,7 +256,7 @@ function _anim_scene_internal( actors, anime, looping, tag, start_scene, end_sce
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x856
 // Size: 0x241
 function _anim_scene_internal_blend_in( actors, anime, tag, blend_in_time, var_e1c732b6f63f3e8b )
@@ -296,7 +296,7 @@ function _anim_scene_internal_blend_in( actors, anime, tag, blend_in_time, var_e
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa9f
 // Size: 0x3f
 function get_actor_stance( actor )
@@ -310,7 +310,7 @@ function get_actor_stance( actor )
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xae7
 // Size: 0x1cf
 function _anim_scene_internal_finish_blend( actors, blend_in_time, var_aa3247c3c61f5e1c )
@@ -368,7 +368,7 @@ function _anim_scene_internal_finish_blend( actors, blend_in_time, var_aa3247c3c
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcbe
 // Size: 0x96
 function _anim_scene_internal_get_anim_duration( actor, anime )
@@ -398,7 +398,7 @@ function _anim_scene_internal_get_anim_duration( actor, anime )
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd5d
 // Size: 0x39f
 function _anim_scene_internal_start_anims( actors, anime, looping, tag )
@@ -465,7 +465,7 @@ function _anim_scene_internal_start_anims( actors, anime, looping, tag )
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1104
 // Size: 0xb2
 function _anim_scene_internal_end( actors )
@@ -488,7 +488,7 @@ function _anim_scene_internal_end( actors )
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11be
 // Size: 0x73
 function _anim_scene_ender_think( actors )
@@ -504,7 +504,7 @@ function _anim_scene_ender_think( actors )
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1239
 // Size: 0x73
 function _anim_scene_force_end_think( actors )
@@ -520,7 +520,7 @@ function _anim_scene_force_end_think( actors )
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12b4
 // Size: 0x41
 function _anim_scene_actor_end_interrupt_think( actor )
@@ -536,7 +536,7 @@ function _anim_scene_actor_end_interrupt_think( actor )
 }
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12fd
 // Size: 0x3fc
 function _anim_scene_interrupt_think( actors, tag, end_scene )
@@ -650,14 +650,15 @@ function _anim_scene_interrupt_think( actors, tag, end_scene )
 /#
 
     // Namespace anim_scene / scripts\cp_mp\anim_scene
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1701
     // Size: 0x8b, Type: dev
     function function_a3ec83bacb1ebf0f( actors, anime )
     {
         scenelength = 0;
         
-        for (i = 0; i < actors.size; i++) {
+        for ( i = 0; i < actors.size ; i++ )
+        {
             actor = actors[ i ];
             thisduration = getanimlength( level.scr_anim[ actor.animname ][ anime ] );
             

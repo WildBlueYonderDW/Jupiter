@@ -8,7 +8,7 @@
 #namespace zombie_melee;
 
 // Namespace zombie_melee / namespace_f025828c76741718
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1af
 // Size: 0x22
 function function_8e401d26d58bc32d()
@@ -17,7 +17,7 @@ function function_8e401d26d58bc32d()
 }
 
 // Namespace zombie_melee / namespace_f025828c76741718
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d9
 // Size: 0x18
 function function_265e0e58c950559()
@@ -27,7 +27,7 @@ function function_265e0e58c950559()
 }
 
 // Namespace zombie_melee / namespace_f025828c76741718
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1f9
 // Size: 0x115
 function function_e700d8944532443d( damage_amount, range, var_6a3d37541ccb42e7, var_2c1d789f7a25cad1, always_knockback, knockback_strength, var_7921c0704abad1a3 )
@@ -48,7 +48,7 @@ function function_e700d8944532443d( damage_amount, range, var_6a3d37541ccb42e7, 
 }
 
 // Namespace zombie_melee / namespace_f025828c76741718
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x316
 // Size: 0x39
 function function_1fc0eb1eb90c8dd0( movetype, range_override )
@@ -58,7 +58,7 @@ function function_1fc0eb1eb90c8dd0( movetype, range_override )
 }
 
 // Namespace zombie_melee / namespace_f025828c76741718
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x357
 // Size: 0x83
 function function_2423853525ee87d7( params )
@@ -70,7 +70,7 @@ function function_2423853525ee87d7( params )
 }
 
 // Namespace zombie_melee / namespace_f025828c76741718
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e2
 // Size: 0x70
 function request_melee( var_eb9973984c6db0df, var_f261c2f31d7de033 )

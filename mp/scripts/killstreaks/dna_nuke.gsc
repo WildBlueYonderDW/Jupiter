@@ -52,9 +52,9 @@ function private init()
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x779
-// Size: 0x25, Type: bool
+// Size: 0x25
 function function_63a10439d3742bf( streakinfo )
 {
     if ( !isdefined( streakinfo ) )
@@ -66,7 +66,7 @@ function function_63a10439d3742bf( streakinfo )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7a7
 // Size: 0x145, Type: bool
 function function_245ad11ce8c700da( streakinfo )
@@ -119,7 +119,7 @@ function function_245ad11ce8c700da( streakinfo )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f5
 // Size: 0x2bb
 function function_3f5928ab9073266c( streakinfo )
@@ -185,7 +185,7 @@ function function_3f5928ab9073266c( streakinfo )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbb9
 // Size: 0x1b2, Type: bool
 function function_4fa820930b2857d6( pod, breakpos, streakinfo )
@@ -217,7 +217,7 @@ function function_4fa820930b2857d6( pod, breakpos, streakinfo )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd74
 // Size: 0x230
 function function_861e303c08602058( pod, streakinfo, targetpos )
@@ -266,7 +266,7 @@ function function_861e303c08602058( pod, streakinfo, targetpos )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfac
 // Size: 0x122
 function function_ecc8ce9e6c65dae6()
@@ -303,7 +303,7 @@ function function_ecc8ce9e6c65dae6()
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10d6
 // Size: 0x42
 function function_f292f763187b6ac5()
@@ -314,7 +314,7 @@ function function_f292f763187b6ac5()
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1120
 // Size: 0x6e
 function function_76178b6493ecf6d7( rider, targetpos )
@@ -339,7 +339,7 @@ function function_76178b6493ecf6d7( rider, targetpos )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1196
 // Size: 0x5d
 function function_11126110d38cf99e( missile, streakinfo )
@@ -358,7 +358,7 @@ function function_11126110d38cf99e( missile, streakinfo )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11fb
 // Size: 0x43
 function function_7750c53508718dbd( missile )
@@ -374,7 +374,7 @@ function function_7750c53508718dbd( missile )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1246
 // Size: 0x225
 function function_9d55bde0bcef1158( missile )
@@ -447,7 +447,7 @@ function function_9d55bde0bcef1158( missile )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1473
 // Size: 0x1a5
 function function_db4cffecf38064e7( var_e127af0eab592c1a, var_e127ae0eab5929e7, var_e127ad0eab5927b4, var_e127ac0eab592581, var_e127ab0eab59234e, var_e127aa0eab59211b )
@@ -500,7 +500,7 @@ function function_db4cffecf38064e7( var_e127af0eab592c1a, var_e127ae0eab5929e7, 
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1621
 // Size: 0x76
 function waittill_explodestring( msg, ent )
@@ -512,7 +512,7 @@ function waittill_explodestring( msg, ent )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x169f
 // Size: 0x14a
 function function_d09b046309c9310( explodeinfo, owner, streakinfo )
@@ -549,7 +549,7 @@ function function_d09b046309c9310( explodeinfo, owner, streakinfo )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17f1
 // Size: 0x41
 function function_9814fc51454dfe88( action )
@@ -563,7 +563,7 @@ function function_9814fc51454dfe88( action )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x183a
 // Size: 0x31
 function function_43bec35d6ecff18b()
@@ -576,7 +576,7 @@ function function_43bec35d6ecff18b()
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1873
 // Size: 0x2f
 function function_6c9d4dd877455600( rider )
@@ -587,7 +587,7 @@ function function_6c9d4dd877455600( rider )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18aa
 // Size: 0x3d6
 function function_bdd2da5ebac80af9( streakinfo )
@@ -662,7 +662,7 @@ function function_bdd2da5ebac80af9( streakinfo )
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c88
 // Size: 0xce
 function function_a1560cbf0f2ff9aa()
@@ -689,7 +689,7 @@ function function_a1560cbf0f2ff9aa()
 }
 
 // Namespace dna_nuke / scripts\killstreaks\dna_nuke
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d5e
 // Size: 0x17
 function function_fa1f6bc26884af64()

@@ -7,7 +7,7 @@
 #namespace corpse;
 
 // Namespace corpse / scripts\stealth\corpse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d
 // Size: 0x2e
 function corpse_init_entity()
@@ -17,7 +17,7 @@ function corpse_init_entity()
 }
 
 // Namespace corpse / scripts\stealth\corpse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x183
 // Size: 0x8c
 function corpse_init_level()
@@ -35,7 +35,7 @@ function corpse_init_level()
 }
 
 // Namespace corpse / scripts\stealth\corpse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x217
 // Size: 0x34
 function set_corpse_ranges_default()
@@ -47,7 +47,7 @@ function set_corpse_ranges_default()
 }
 
 // Namespace corpse / scripts\stealth\corpse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x253
 // Size: 0x2c
 function set_corpse_ranges( array )
@@ -61,7 +61,7 @@ function set_corpse_ranges( array )
 }
 
 // Namespace corpse / scripts\stealth\corpse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x287
 // Size: 0x1a
 function set_corpse_ignore()
@@ -71,7 +71,7 @@ function set_corpse_ignore()
 }
 
 // Namespace corpse / scripts\stealth\corpse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a9
 // Size: 0xc7, Type: bool
 function corpse_check_shadow( origin )
@@ -99,7 +99,7 @@ function corpse_check_shadow( origin )
 }
 
 // Namespace corpse / scripts\stealth\corpse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x379
 // Size: 0xfb
 function corpse_found( event )
@@ -135,7 +135,7 @@ function corpse_found( event )
 }
 
 // Namespace corpse / scripts\stealth\corpse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47c
 // Size: 0xde
 function corpse_seen( event )

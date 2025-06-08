@@ -23,16 +23,16 @@
 #namespace carriable;
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa8c
 // Size: 0x539
 function initcarriables()
 {
     setdvarifuninitialized( @"hash_29937c7775cf43e8", 0 );
     setdvarifuninitialized( @"hash_4e50a1220c7fd1b7", 300 );
-    setdvarifuninitialized( @"hash_ac0cfac5bbc642a1", 0 );
+    setdvarifuninitialized( @"scr_br_carriable_spawn_system", 0 );
     setdvarifuninitialized( @"hash_b52d6fd4249064e5", 50 );
-    setdvarifuninitialized( @"hash_538da4cbdf728ccc", 0 );
+    setdvarifuninitialized( @"scr_br_carriable_spawn_chance", 0 );
     
     /#
         if ( getdvarint( @"hash_74cacae425805743", 0 ) > 0 )
@@ -91,7 +91,7 @@ function initcarriables()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfcd
 // Size: 0x1bf
 function spawn_entity_carriable( type, origin, angles )
@@ -151,7 +151,7 @@ function spawn_entity_carriable( type, origin, angles )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1195
 // Size: 0xe1
 function clean_and_spawn_carriables()
@@ -173,7 +173,7 @@ function clean_and_spawn_carriables()
     
     level.usablecarriables = [];
     
-    switch ( getdvarint( @"hash_ac0cfac5bbc642a1", 0 ) )
+    switch ( getdvarint( @"scr_br_carriable_spawn_system", 0 ) )
     {
         case 0:
             spawn_carriables_from_scriptables_total_percentage();
@@ -189,7 +189,7 @@ function clean_and_spawn_carriables()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x127e
 // Size: 0xc9
 function spawn_carriables_from_scriptables_total_percentage()
@@ -203,10 +203,11 @@ function spawn_carriables_from_scriptables_total_percentage()
         return;
     }
     
-    spawnchance = getdvarfloat( @"hash_538da4cbdf728ccc", 0 );
+    spawnchance = getdvarfloat( @"scr_br_carriable_spawn_chance", 0 );
     numenabled = floor( spawnchance * var_dc44d971ba523f8.size );
     
-    for (i = 0; i < var_dc44d971ba523f8.size; i++) {
+    for ( i = 0; i < var_dc44d971ba523f8.size ; i++ )
+    {
         if ( i < numenabled )
         {
             var_dc44d971ba523f8[ i ] setscriptablepartstate( "br_carriable_pickup", "useable" );
@@ -218,12 +219,12 @@ function spawn_carriables_from_scriptables_total_percentage()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x134f
 // Size: 0x10d
 function spawn_carriables_from_scriptables_individual_percentage()
 {
-    spawnchance = getdvarfloat( @"hash_538da4cbdf728ccc", 0 );
+    spawnchance = getdvarfloat( @"scr_br_carriable_spawn_chance", 0 );
     var_f6765e70dd9ad53f = array_randomize( getentitylessscriptablearray( "scriptable_br_carriable_propane", "classname" ) );
     var_187ccfe910b75663 = array_randomize( getentitylessscriptablearray( "scriptable_br_carriable_neurotoxin", "classname" ) );
     
@@ -231,7 +232,8 @@ function spawn_carriables_from_scriptables_individual_percentage()
     {
         numenabled = floor( spawnchance * var_f6765e70dd9ad53f.size );
         
-        for (i = 0; i < var_f6765e70dd9ad53f.size; i++) {
+        for ( i = 0; i < var_f6765e70dd9ad53f.size ; i++ )
+        {
             if ( i < numenabled )
             {
                 var_f6765e70dd9ad53f[ i ] setscriptablepartstate( "br_carriable_pickup", "useable" );
@@ -246,7 +248,8 @@ function spawn_carriables_from_scriptables_individual_percentage()
     {
         numenabled = floor( spawnchance * var_187ccfe910b75663.size );
         
-        for (i = 0; i < var_187ccfe910b75663.size; i++) {
+        for ( i = 0; i < var_187ccfe910b75663.size ; i++ )
+        {
             if ( i < numenabled )
             {
                 var_187ccfe910b75663[ i ] setscriptablepartstate( "br_carriable_pickup", "useable" );
@@ -259,7 +262,7 @@ function spawn_carriables_from_scriptables_individual_percentage()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1464
 // Size: 0x145
 function scriptable_carriable_use( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -308,7 +311,7 @@ function scriptable_carriable_use( instance, part, state, player, var_a5b2c54141
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15b1
 // Size: 0x31, Type: bool
 function iscarriablescriptable( instance )
@@ -317,7 +320,7 @@ function iscarriablescriptable( instance )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x15eb
 // Size: 0x88
 function scriptable_carriable_damage( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -331,7 +334,7 @@ function scriptable_carriable_damage( einflictor, eattacker, instance, idamage, 
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x167b
 // Size: 0x149
 function scriptable_carriable_damage_internal( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -357,7 +360,7 @@ function scriptable_carriable_damage_internal( einflictor, eattacker, instance, 
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17cc
 // Size: 0x48
 function respawn_scriptible_carriable_wait( instance, part )
@@ -374,7 +377,7 @@ function respawn_scriptible_carriable_wait( instance, part )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x181c
 // Size: 0x68
 function spawn_carriable_at_struct( struct )
@@ -393,7 +396,7 @@ function spawn_carriable_at_struct( struct )
 /#
 
     // Namespace carriable / scripts\mp\carriable
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x188c
     // Size: 0xd5, Type: dev
     function function_a1a40eb763fdd549( arg )
@@ -422,7 +425,7 @@ function spawn_carriable_at_struct( struct )
     }
 
     // Namespace carriable / scripts\mp\carriable
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1969
     // Size: 0x23, Type: dev
     function function_a6ec7bb20c89f0e8()
@@ -439,7 +442,7 @@ function spawn_carriable_at_struct( struct )
 #/
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1994
 // Size: 0x7e
 function carriable_init( carriabletype )
@@ -460,7 +463,7 @@ function carriable_init( carriabletype )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a1a
 // Size: 0x22
 function carriable_respawn()
@@ -471,7 +474,7 @@ function carriable_respawn()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a44
 // Size: 0x99
 function carriable_ready()
@@ -503,7 +506,7 @@ function carriable_ready()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ae5
 // Size: 0x120
 function carriable_damage_wait()
@@ -540,7 +543,7 @@ function carriable_damage_wait()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c0d
 // Size: 0xdb
 function carriable_lightfuse( player )
@@ -571,7 +574,7 @@ function carriable_lightfuse( player )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cf0
 // Size: 0x93
 function carriable_fuse_ui( player )
@@ -593,7 +596,7 @@ function carriable_fuse_ui( player )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d8b
 // Size: 0xdc
 function carriable_explode()
@@ -623,7 +626,7 @@ function carriable_explode()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e6f
 // Size: 0x57
 function carriable_pickup_wait()
@@ -645,7 +648,7 @@ function carriable_pickup_wait()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ece
 // Size: 0x23b
 function carriable_pickup( player )
@@ -708,7 +711,7 @@ function carriable_pickup( player )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2111
 // Size: 0x12d, Type: bool
 function valid_carriable_pickup_weapon( weapon )
@@ -765,7 +768,7 @@ function valid_carriable_pickup_weapon( weapon )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2247
 // Size: 0x193, Type: bool
 function carriable_can_pickup( player )
@@ -878,7 +881,7 @@ function carriable_can_pickup( player )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23e3
 // Size: 0x130
 function carriable_throw_watch( carriable )
@@ -924,7 +927,7 @@ function carriable_throw_watch( carriable )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x251b
 // Size: 0x26
 function disable_weapon_swap_until_swap_finished()
@@ -935,7 +938,7 @@ function disable_weapon_swap_until_swap_finished()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2549
 // Size: 0x73
 function carriable_weapon_change_watch( carriable )
@@ -964,7 +967,7 @@ function carriable_weapon_change_watch( carriable )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25c4
 // Size: 0x33
 function carriable_error_messsage_watch()
@@ -981,7 +984,7 @@ function carriable_error_messsage_watch()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25ff
 // Size: 0x6f
 function carriable_player_state_drop_watch( carriable )
@@ -1019,7 +1022,7 @@ function carriable_player_state_drop_watch( carriable )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2676
 // Size: 0x8b
 function carriable_fuse_light_watch( carriable )
@@ -1044,7 +1047,7 @@ function carriable_fuse_light_watch( carriable )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2709
 // Size: 0x75
 function carriable_player_death_watch( carriable )
@@ -1060,7 +1063,7 @@ function carriable_player_death_watch( carriable )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2786
 // Size: 0x1c3
 function carriable_physics_launch( force, droppingplayer, spawnorigin )
@@ -1116,7 +1119,7 @@ function carriable_physics_launch( force, droppingplayer, spawnorigin )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2951
 // Size: 0xe4
 function carriable_watch_for_physics_collison()
@@ -1155,7 +1158,7 @@ function carriable_watch_for_physics_collison()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a3d
 // Size: 0x40
 function carriable_physics_launch_drop( force, droppingplayer, spawnorigin )
@@ -1167,7 +1170,7 @@ function carriable_physics_launch_drop( force, droppingplayer, spawnorigin )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a85
 // Size: 0x186, Type: bool
 function carriable_set_dropped( skip_physics )
@@ -1226,7 +1229,7 @@ function carriable_set_dropped( skip_physics )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c14
 // Size: 0x104
 function carrier_cleanup()
@@ -1257,7 +1260,7 @@ function carrier_cleanup()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d20
 // Size: 0xea
 function carrier_remove_carriable_weapon()
@@ -1291,7 +1294,7 @@ function carrier_remove_carriable_weapon()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2e12
 // Size: 0xb0
 function dangercircletick_carriable( dangercircleorigin, dangercircleradius, thresholdradius )
@@ -1313,7 +1316,7 @@ function dangercircletick_carriable( dangercircleorigin, dangercircleradius, thr
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2eca
 // Size: 0x44
 function carriable_inactive_delete_wait()
@@ -1333,7 +1336,7 @@ function carriable_inactive_delete_wait()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f16
 // Size: 0x308
 function carriable_detonate_propane()
@@ -1407,7 +1410,7 @@ function carriable_detonate_propane()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3226
 // Size: 0xe1
 function getfirespoutlaunchvectors( numvectors )
@@ -1422,7 +1425,8 @@ function getfirespoutlaunchvectors( numvectors )
     var_61c09649126ded45 = 360 / numvectors;
     var_d470a1b4d4afb175 = randomfloatrange( -1 * var_61c09649126ded45, var_61c09649126ded45 );
     
-    for (i = 0; i < numvectors; i++) {
+    for ( i = 0; i < numvectors ; i++ )
+    {
         randomoffset = randomfloatrange( -0.5 * var_61c09649126ded45, 0.5 * var_61c09649126ded45 );
         angle = i * var_61c09649126ded45 + randomoffset + var_d470a1b4d4afb175;
         dir = vectornormalize( rotatepointaroundvector( ( 0, 0, 1 ), ( 0, 0.7, 0.7 ), angle ) );
@@ -1434,7 +1438,7 @@ function getfirespoutlaunchvectors( numvectors )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3310
 // Size: 0x7d
 function firespoutwatch( burnsource )
@@ -1448,7 +1452,7 @@ function firespoutwatch( burnsource )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3395
 // Size: 0x3c
 function cleanupexplosionleftovers( waittime )
@@ -1475,7 +1479,7 @@ function cleanupexplosionleftovers( waittime )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33d9
 // Size: 0xea
 function carriable_detonate_neurotoxin()
@@ -1505,7 +1509,7 @@ function carriable_detonate_neurotoxin()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x34cb
 // Size: 0xa0
 function neurotoxin_damage_loop( fxscriptable, inairdetonation, owner )
@@ -1531,7 +1535,7 @@ function neurotoxin_damage_loop( fxscriptable, inairdetonation, owner )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3573
 // Size: 0x9d
 function add_neurotoxin_damage_area( cloudorigin, owner )
@@ -1556,7 +1560,7 @@ function add_neurotoxin_damage_area( cloudorigin, owner )
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3618
 // Size: 0x2bf
 function neurotoxin_damage_monitor()
@@ -1639,7 +1643,7 @@ function neurotoxin_damage_monitor()
 }
 
 // Namespace carriable / scripts\mp\carriable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38df
 // Size: 0xc2
 function neurotoxin_mask_monitor()
@@ -1678,7 +1682,7 @@ function neurotoxin_mask_monitor()
 /#
 
     // Namespace carriable / scripts\mp\carriable
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x39a9
     // Size: 0x1cb, Type: dev
     function function_a48e852b0f6a3295( args )

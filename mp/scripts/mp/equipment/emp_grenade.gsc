@@ -16,7 +16,7 @@
 #namespace emp_grenade;
 
 // Namespace emp_grenade / scripts\mp\equipment\emp_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x193
 // Size: 0x274
 function emp_grenade_used( grenade )

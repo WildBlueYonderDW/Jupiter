@@ -33,8 +33,8 @@
 #namespace uav_tower;
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb52
+// Params 1
+// Checksum 0x0, Offset: 0xb60
 // Size: 0x499
 function init( waitprematch )
 {
@@ -43,7 +43,7 @@ function init( waitprematch )
         return;
     }
     
-    if ( getdvarint( @"hash_2b66f14a52279087", 0 ) && getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( getdvarint( @"scr_ssc_use_uav_tower", 0 ) && getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         scripts\mp\flags::function_1240434f4201ac9d( "ssc_initialized" );
         scripts\cp_mp\structspawnconfig::function_4f7660cfd85cd517( "uav_tower", &function_e6c1c35181a2870f );
@@ -58,11 +58,11 @@ function init( waitprematch )
     }
     
     script_model_anims();
-    level.towerusetime = getdvarfloat( @"hash_401140680b9e3119", 3.4 );
+    level.towerusetime = getdvarfloat( @"scr_uav_tower_use_time", 3.4 );
     level.var_6acf91bbf5273e8f = getdvarint( @"hash_bd581b3a13b81db8", 5000 );
     level.var_39f69f7dfc40a323 = getdvarint( @"hash_e466d59282ecb790", 3000 );
     level.var_ab2c4542c95656cb = getdvarint( @"hash_d6193a209d3948a4", 3 );
-    level.var_20ebe48820fd70a2 = getdvarint( @"hash_62ba9cf492c77f30", 40 );
+    level.var_20ebe48820fd70a2 = getdvarint( @"scr_uav_tower_uptime", 40 );
     level.var_c5bbb7914cb760cf = getdvarint( @"hash_25af310c5bc4bc7c", 3 );
     level.var_eb56ea0bfdaa4011 = getdvarint( @"hash_4704cc015db60ad2", 3 );
     level.var_174fe9ecce8fb96b = randomintrange( level.var_c5bbb7914cb760cf, level.var_eb56ea0bfdaa4011 + 1 );
@@ -71,8 +71,8 @@ function init( waitprematch )
     level.towercooldown = getmatchrulesdata( "commonOption", "uavTowerCooldown" );
     level.var_815479da1dafbdb0 = getdvarint( @"hash_45f42bcb4e5d758d", 1 );
     level.var_66bf5bfca21a8d52 = getdvarint( @"hash_c7c9d45312dd7ec", 1 );
-    level.var_d507e35282b50614 = getdvarint( @"hash_87edec4ce0d7b969", 200 );
-    level.var_db9587440497015c = getdvarint( @"hash_86826c94b10ecab", 1 );
+    level.var_d507e35282b50614 = getdvarint( @"scr_uav_tower_cost", 200 );
+    level.var_db9587440497015c = getdvarint( @"scr_uav_tower_sound", 1 );
     level.var_9f740c9281d0c7f4 = getdvarint( @"hash_5569456c0eff0d5b", 1 );
     level.var_21da00da533a4de5 = getdvarint( @"hash_2d4b53ed39fc8215", 1 );
     level.var_6bacc8cb646fa5cd = getdvarint( @"hash_21c230525b7cf2be", 1 );
@@ -85,7 +85,7 @@ function init( waitprematch )
     level.uavtowers = [];
     scripts\engine\scriptable::scriptable_addusedcallbackbypart( "dmz_uav_tower", &tower_used );
     
-    if ( !getdvarint( @"hash_2b66f14a52279087", 0 ) || !getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( !getdvarint( @"scr_ssc_use_uav_tower", 0 ) || !getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         level thread function_d45b1fddb87cf6bc();
     }
@@ -132,8 +132,8 @@ function init( waitprematch )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xff3
+// Params 0
+// Checksum 0x0, Offset: 0x1001
 // Size: 0x11f
 function script_model_anims()
 {
@@ -150,9 +150,9 @@ function script_model_anims()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x111a
-// Size: 0x345
+// Params 4
+// Checksum 0x0, Offset: 0x1128
+// Size: 0x382
 function create_player_rig( animname, spawnpos, spawnang, uav_tower )
 {
     self.animname = animname;
@@ -185,7 +185,7 @@ function create_player_rig( animname, spawnpos, spawnang, uav_tower )
     }
     
     self notify( "rig_created" );
-    waittill_any_2( "remove_rig", "player_free_spot" );
+    waittill_any_3( "remove_rig", "player_free_spot", "disconnect" );
     
     if ( istrue( level.gameended ) )
     {
@@ -195,6 +195,15 @@ function create_player_rig( animname, spawnpos, spawnang, uav_tower )
     if ( isdefined( self ) )
     {
         self unlink();
+        self stopviewmodelanim();
+        hackwaitframes = getdvarint( @"hash_3cee7c513ae578f7", 0 );
+        
+        while ( hackwaitframes > 0 )
+        {
+            waitframe();
+            hackwaitframes -= 1;
+        }
+        
         thread scripts\cp_mp\utility\inventory_utility::function_9897d143c3feee05();
     }
     
@@ -208,7 +217,7 @@ function create_player_rig( animname, spawnpos, spawnang, uav_tower )
         player_rig delete();
     }
     
-    if ( isdefined( uav_tower ) && isdefined( uav_tower.linkedparent ) )
+    if ( isdefined( uav_tower ) && isdefined( uav_tower.linkedparent ) && isdefined( self ) )
     {
         parent = uav_tower.linkedparent;
         
@@ -235,8 +244,8 @@ function create_player_rig( animname, spawnpos, spawnang, uav_tower )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1467
+// Params 2
+// Checksum 0x0, Offset: 0x14b2
 // Size: 0x41
 function function_dc8fd3d5775fe8bd( structname, towerstruct )
 {
@@ -250,8 +259,8 @@ function function_dc8fd3d5775fe8bd( structname, towerstruct )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b1
+// Params 1
+// Checksum 0x0, Offset: 0x14fc
 // Size: 0x98
 function function_b0ce2500fdbd63b1( structname )
 {
@@ -273,8 +282,8 @@ function function_b0ce2500fdbd63b1( structname )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1551
+// Params 2
+// Checksum 0x0, Offset: 0x159c
 // Size: 0x50
 function function_a517440c8faa2939( towerstruct, var_73aa4684ecff09e9 )
 {
@@ -285,8 +294,8 @@ function function_a517440c8faa2939( towerstruct, var_73aa4684ecff09e9 )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15aa
+// Params 3
+// Checksum 0x0, Offset: 0x15f5
 // Size: 0x21b
 function function_858af52a8e277a68( towerstruct, identifier, var_73aa4684ecff09e9 )
 {
@@ -348,7 +357,7 @@ function function_858af52a8e277a68( towerstruct, identifier, var_73aa4684ecff09e
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x17ce
+// Checksum 0x0, Offset: 0x1819
 // Size: 0xc0
 function private function_aaf7a2b88614befa( usable, player )
 {
@@ -362,7 +371,7 @@ function private function_aaf7a2b88614befa( usable, player )
         }
         else
         {
-            displaycost = playercost * getdvarint( @"hash_bb0a8c315698fa34", 10 );
+            displaycost = playercost * getdvarint( @"playlist_ui_cash_scalar", 10 );
             return { #params:[ displaycost ], #string:%DMZ/ACTIVATE_UAV_TOWER_COST, #type:"HINT_BUTTON" };
         }
     }
@@ -372,7 +381,7 @@ function private function_aaf7a2b88614befa( usable, player )
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1897
+// Checksum 0x0, Offset: 0x18e2
 // Size: 0x30
 function private function_fe7e4144e9133c3a()
 {
@@ -385,8 +394,8 @@ function private function_fe7e4144e9133c3a()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d0
+// Params 1
+// Checksum 0x0, Offset: 0x191b
 // Size: 0x5f
 function function_e6c1c35181a2870f( structname )
 {
@@ -406,8 +415,8 @@ function function_e6c1c35181a2870f( structname )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1938
+// Params 1
+// Checksum 0x0, Offset: 0x1983
 // Size: 0x12
 function function_c2c04f8e7be26a06( sparams )
 {
@@ -415,8 +424,8 @@ function function_c2c04f8e7be26a06( sparams )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1952
+// Params 0
+// Checksum 0x0, Offset: 0x199d
 // Size: 0x2e8
 function function_d45b1fddb87cf6bc()
 {
@@ -444,7 +453,8 @@ function function_d45b1fddb87cf6bc()
         var_34965515ac54e0b5 = [];
         var_371c833eba04930e = issharedfuncdefined( "poi", "poi_isPOIActive", 0 );
         
-        for (towerindex = 0; towerindex < var_b2c90dc03f470a24.size; towerindex++) {
+        for ( towerindex = 0; towerindex < var_b2c90dc03f470a24.size ; towerindex++ )
+        {
             uavtower = var_b2c90dc03f470a24[ towerindex ];
             
             if ( !isdefined( uavtower.poi ) )
@@ -489,7 +499,8 @@ function function_d45b1fddb87cf6bc()
             
             var_dc97ba189a64519e = array_slice( array_randomize( var_dc97ba189a64519e ), 0, var_b677145bce94aeb6 );
             
-            for (towerindex = 0; towerindex < var_dc97ba189a64519e.size; towerindex++) {
+            for ( towerindex = 0; towerindex < var_dc97ba189a64519e.size ; towerindex++ )
+            {
                 towerstruct = var_dc97ba189a64519e[ towerindex ];
                 function_858af52a8e277a68( towerstruct, towersspawned );
                 towersspawned++;
@@ -508,7 +519,8 @@ function function_d45b1fddb87cf6bc()
         }
     }
     
-    for (towerindex = 0; towerindex < var_b2c90dc03f470a24.size; towerindex++) {
+    for ( towerindex = 0; towerindex < var_b2c90dc03f470a24.size ; towerindex++ )
+    {
         towerstruct = var_b2c90dc03f470a24[ towerindex ];
         function_858af52a8e277a68( towerstruct, towersspawned );
         towersspawned++;
@@ -516,8 +528,8 @@ function function_d45b1fddb87cf6bc()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c42
+// Params 3
+// Checksum 0x0, Offset: 0x1c8d
 // Size: 0x1b5
 function _ping( scriptable, playerteam, var_b608af6e8d86fe42 )
 {
@@ -559,8 +571,8 @@ function _ping( scriptable, playerteam, var_b608af6e8d86fe42 )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dff
+// Params 2
+// Checksum 0x0, Offset: 0x1e4a
 // Size: 0x1be
 function tower_disable( scriptable, disablereason )
 {
@@ -608,8 +620,8 @@ function tower_disable( scriptable, disablereason )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc5
+// Params 2
+// Checksum 0x0, Offset: 0x2010
 // Size: 0x80
 function function_9a71dd352fe6da4b( scriptable, var_b608af6e8d86fe42 )
 {
@@ -625,8 +637,8 @@ function function_9a71dd352fe6da4b( scriptable, var_b608af6e8d86fe42 )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x204d
+// Params 1
+// Checksum 0x0, Offset: 0x2098
 // Size: 0xc0
 function function_550deeac761ab7b9( scriptable )
 {
@@ -649,9 +661,9 @@ function function_550deeac761ab7b9( scriptable )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x2115
-// Size: 0x3e6
+// Params 6
+// Checksum 0x0, Offset: 0x2160
+// Size: 0x3ea
 function tower_used( instance, part, state, player, var_a5b2c541413aa895, usestring )
 {
     if ( !tower_canuse( player ) )
@@ -711,8 +723,15 @@ function tower_used( instance, part, state, player, var_a5b2c541413aa895, usestr
         
         instance.successfuluse = 0;
         instance function_678ea4319b42dfed( player );
-        player setclientomnvar( "ui_dmz_uav_tower_screen", 0 );
         instance setscriptablepartstate( "dmz_uav_tower", "usable" );
+        
+        if ( !isdefined( player ) )
+        {
+            return;
+        }
+        
+        player notifyonplayercommandremove( "interact_cancelled", "+weapnext" );
+        player setclientomnvar( "ui_dmz_uav_tower_screen", 0 );
         
         if ( cost > 0 )
         {
@@ -743,10 +762,6 @@ function tower_used( instance, part, state, player, var_a5b2c541413aa895, usestr
         {
             players = level.players;
             instance thread function_a301051f63fbbff9( instance, part, state, player, var_a5b2c541413aa895, usestring, players, oldteam );
-        }
-        else
-        {
-            instance setscriptablepartstate( "dmz_uav_tower", "usable" );
         }
         
         return;
@@ -779,9 +794,9 @@ function tower_used( instance, part, state, player, var_a5b2c541413aa895, usestr
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2503
-// Size: 0xb9
+// Params 1
+// Checksum 0x0, Offset: 0x2552
+// Size: 0xb8
 function function_678ea4319b42dfed( player )
 {
     if ( istrue( self.var_45e35ef2a973ecb ) )
@@ -802,7 +817,6 @@ function function_678ea4319b42dfed( player )
     function_e71d6089ebd93181( player );
     function_b61464b3867d7ba3( player );
     player notify( "interact_finished" );
-    waitframe();
     player function_3c288bbdd4016fd4( 1 );
     
     if ( istrue( level.gameended ) )
@@ -818,7 +832,7 @@ function function_678ea4319b42dfed( player )
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x25c4
+// Checksum 0x0, Offset: 0x2612
 // Size: 0x27
 function private function_a39eabffc4fe3719()
 {
@@ -827,7 +841,7 @@ function private function_a39eabffc4fe3719()
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x25f4
+// Checksum 0x0, Offset: 0x2642
 // Size: 0x1d
 function private function_af548fb33b12cba1()
 {
@@ -835,8 +849,8 @@ function private function_af548fb33b12cba1()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x261a
+// Params 0
+// Checksum 0x0, Offset: 0x2668
 // Size: 0x2c
 function watchgunlessweapon()
 {
@@ -850,8 +864,8 @@ function watchgunlessweapon()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x264e
+// Params 1
+// Checksum 0x0, Offset: 0x269c
 // Size: 0x322
 function typinganimstart( player )
 {
@@ -925,7 +939,7 @@ function typinganimstart( player )
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x2978
+// Checksum 0x0, Offset: 0x29c6
 // Size: 0x182
 function private function_1f6d35ecbf0ed006( uav_tower, goaloffset, goalangles, movetotime )
 {
@@ -950,18 +964,18 @@ function private function_1f6d35ecbf0ed006( uav_tower, goaloffset, goalangles, m
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b02
-// Size: 0xaa
+// Params 1
+// Checksum 0x0, Offset: 0x2b50
+// Size: 0xa0
 function function_667fd79f2b5d6436( player )
 {
     player endon( "interact_interrupt" );
+    player endon( "disconnect" );
     waitframe();
     player notifyonplayercommand( "interact_cancelled", "+weapnext" );
     self.cancel = 0;
-    msg = player waittill_any_timeout_1( level.towerusetime, "interact_cancelled" );
+    msg = player waittill_any_timeout_no_endon_death_1( level.towerusetime, "interact_cancelled" );
     self.cancel = 1;
-    player notifyonplayercommandremove( "interact_cancelled", "+weapnext" );
     
     if ( msg == "interact_cancelled" )
     {
@@ -976,8 +990,8 @@ function function_667fd79f2b5d6436( player )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bb4
+// Params 1
+// Checksum 0x0, Offset: 0x2bf8
 // Size: 0x95
 function watchplayerdeathordisconnect( player )
 {
@@ -1006,8 +1020,8 @@ function watchplayerdeathordisconnect( player )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c51
+// Params 2
+// Checksum 0x0, Offset: 0x2c95
 // Size: 0x5d
 function function_e71d6089ebd93181( player, instance )
 {
@@ -1023,8 +1037,8 @@ function function_e71d6089ebd93181( player, instance )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cb6
+// Params 1
+// Checksum 0x0, Offset: 0x2cfa
 // Size: 0x75
 function function_b61464b3867d7ba3( player )
 {
@@ -1045,8 +1059,8 @@ function function_b61464b3867d7ba3( player )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d33
+// Params 1
+// Checksum 0x0, Offset: 0x2d77
 // Size: 0x167
 function function_3c288bbdd4016fd4( isallowed )
 {
@@ -1079,8 +1093,8 @@ function function_3c288bbdd4016fd4( isallowed )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ea2
+// Params 8
+// Checksum 0x0, Offset: 0x2ee6
 // Size: 0x6d8
 function function_a301051f63fbbff9( instance, part, state, player, var_a5b2c541413aa895, usestring, players, oldteam )
 {
@@ -1249,8 +1263,8 @@ function function_a301051f63fbbff9( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3582
+// Params 0
+// Checksum 0x0, Offset: 0x35c6
 // Size: 0x13b
 function function_2a905da0882c958()
 {
@@ -1258,7 +1272,8 @@ function function_2a905da0882c958()
     
     while ( true )
     {
-        for (i = 0; i < level.uavtowers.size; i++) {
+        for ( i = 0; i < level.uavtowers.size ; i++ )
+        {
             if ( isdefined( level.uavtowers[ i ] ) && isdefined( level.uavtowers[ i ].uav_station ) )
             {
                 instance = level.uavtowers[ i ].uav_station;
@@ -1290,17 +1305,17 @@ function function_2a905da0882c958()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36c5
+// Params 0
+// Checksum 0x0, Offset: 0x3709
 // Size: 0x15, Type: bool
 function function_fcd65de73a5fd25()
 {
-    return getdvarint( @"hash_5af0f9b3aea8fda6", 1 ) == 1;
+    return getdvarint( @"scr_enable_uav_towers", 1 ) == 1;
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e3
+// Params 1
+// Checksum 0x0, Offset: 0x3727
 // Size: 0xdd, Type: bool
 function tower_canuse( player )
 {
@@ -1328,8 +1343,8 @@ function tower_canuse( player )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x37c9
+// Params 1
+// Checksum 0x0, Offset: 0x380d
 // Size: 0x37
 function function_449f829c0284b870( instance )
 {
@@ -1340,8 +1355,8 @@ function function_449f829c0284b870( instance )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3808
+// Params 2
+// Checksum 0x0, Offset: 0x384c
 // Size: 0xba
 function function_1dd4b75d0a512fcc( amount, data )
 {
@@ -1367,8 +1382,8 @@ function function_1dd4b75d0a512fcc( amount, data )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x38cb
+// Params 3
+// Checksum 0x0, Offset: 0x390f
 // Size: 0x20a
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
 {
@@ -1413,8 +1428,8 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3add
+// Params 0
+// Checksum 0x0, Offset: 0x3b21
 // Size: 0x1e5
 function function_1a1709943670772a()
 {
@@ -1450,8 +1465,8 @@ function function_1a1709943670772a()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cca
+// Params 1
+// Checksum 0x0, Offset: 0x3d0e
 // Size: 0xe7
 function function_907613649c1c683d( allowgas )
 {
@@ -1476,8 +1491,8 @@ function function_907613649c1c683d( allowgas )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3db9
+// Params 2
+// Checksum 0x0, Offset: 0x3dfd
 // Size: 0xc5
 function function_86a96e658bbd0cba( team, var_b608af6e8d86fe42 )
 {
@@ -1495,8 +1510,8 @@ function function_86a96e658bbd0cba( team, var_b608af6e8d86fe42 )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e86
+// Params 0
+// Checksum 0x0, Offset: 0x3eca
 // Size: 0x3c
 function function_e1a473f05677516b()
 {
@@ -1517,8 +1532,8 @@ function function_e1a473f05677516b()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3eca
+// Params 0
+// Checksum 0x0, Offset: 0x3f0e
 // Size: 0x12
 function function_c3476653bc728729()
 {
@@ -1529,8 +1544,8 @@ function function_c3476653bc728729()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ee4
+// Params 3
+// Checksum 0x0, Offset: 0x3f28
 // Size: 0xb4
 function function_6bdc6f56944dc3aa( player, oldteam, newteam )
 {
@@ -1555,8 +1570,8 @@ function function_6bdc6f56944dc3aa( player, oldteam, newteam )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fa0
+// Params 1
+// Checksum 0x0, Offset: 0x3fe4
 // Size: 0x4e
 function function_26fc3305456d700f( instance )
 {
@@ -1569,8 +1584,8 @@ function function_26fc3305456d700f( instance )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ff7
+// Params 0
+// Checksum 0x0, Offset: 0x403b
 // Size: 0xc0
 function function_e1693023b9a46a8a()
 {
@@ -1595,8 +1610,8 @@ function function_e1693023b9a46a8a()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x40c0
+// Params 4
+// Checksum 0x0, Offset: 0x4104
 // Size: 0xe5
 function function_5ee813ae390b4ce5( source, modifier, additive, overwriteexisting )
 {
@@ -1617,8 +1632,8 @@ function function_5ee813ae390b4ce5( source, modifier, additive, overwriteexistin
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41ad
+// Params 1
+// Checksum 0x0, Offset: 0x41f1
 // Size: 0x67
 function function_ade912f6ea99fe68( source )
 {
@@ -1629,8 +1644,8 @@ function function_ade912f6ea99fe68( source )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x421c
+// Params 0
+// Checksum 0x0, Offset: 0x4260
 // Size: 0x3e
 function function_9ecd5a6088d14c68()
 {
@@ -1641,8 +1656,8 @@ function function_9ecd5a6088d14c68()
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4262
+// Params 1
+// Checksum 0x0, Offset: 0x42a6
 // Size: 0x1ff
 function function_1d71dc9529bef550( var_351a92897da4ba3a )
 {
@@ -1725,8 +1740,8 @@ function function_1d71dc9529bef550( var_351a92897da4ba3a )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4469
+// Params 1
+// Checksum 0x0, Offset: 0x44ad
 // Size: 0x2d
 function function_dc9f963b97f73b1a( data )
 {
@@ -1735,8 +1750,8 @@ function function_dc9f963b97f73b1a( data )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x449e
+// Params 1
+// Checksum 0x0, Offset: 0x44e2
 // Size: 0x1ec
 function uavtowerdisablefortime( data )
 {
@@ -1772,8 +1787,8 @@ function uavtowerdisablefortime( data )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4692
+// Params 2
+// Checksum 0x0, Offset: 0x46d6
 // Size: 0x89
 function function_2a4470bcf739b0e3( player, trigger )
 {
@@ -1792,8 +1807,8 @@ function function_2a4470bcf739b0e3( player, trigger )
 }
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4723
+// Params 2
+// Checksum 0x0, Offset: 0x4767
 // Size: 0x27
 function playerexituavtowerdisabled( player, trigger )
 {
@@ -1803,7 +1818,7 @@ function playerexituavtowerdisabled( player, trigger )
 
 // Namespace uav_tower / scripts\cp_mp\uav_tower
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x4752
+// Checksum 0x0, Offset: 0x4796
 // Size: 0xf7
 function private function_66a1278496e46edb( squadmates, team )
 {
@@ -1831,8 +1846,8 @@ function private function_66a1278496e46edb( squadmates, team )
 /#
 
     // Namespace uav_tower / scripts\cp_mp\uav_tower
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4851
+    // Params 0
+    // Checksum 0x0, Offset: 0x4895
     // Size: 0x9f, Type: dev
     function function_83565380b036f12d()
     {
@@ -1850,7 +1865,7 @@ function private function_66a1278496e46edb( squadmates, team )
 
     // Namespace uav_tower / scripts\cp_mp\uav_tower
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x48f8
+    // Checksum 0x0, Offset: 0x493c
     // Size: 0x466, Type: dev
     function private function_853901492bb15e03()
     {

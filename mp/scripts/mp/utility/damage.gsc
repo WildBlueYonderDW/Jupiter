@@ -21,7 +21,7 @@
 #namespace damage;
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x539
 // Size: 0x5a
 function get_damageable_player( player, playerpos )
@@ -35,7 +35,7 @@ function get_damageable_player( player, playerpos )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x59c
 // Size: 0x67
 function get_damageable_sentry( sentry, sentrypos )
@@ -50,7 +50,7 @@ function get_damageable_sentry( sentry, sentrypos )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x60c
 // Size: 0x59
 function get_damageable_grenade( grenade, entpos )
@@ -64,7 +64,7 @@ function get_damageable_grenade( grenade, entpos )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x66e
 // Size: 0x59
 function get_damageable_mine( mine, entpos )
@@ -78,7 +78,7 @@ function get_damageable_mine( mine, entpos )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d0
 // Size: 0x24
 function get_damageable_player_pos( player )
@@ -87,7 +87,7 @@ function get_damageable_player_pos( player )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fd
 // Size: 0x16
 function get_damageable_grenade_pos( grenade )
@@ -96,7 +96,7 @@ function get_damageable_grenade_pos( grenade )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x71c
 // Size: 0x9b
 function istacticaldamage( objweapon, smeansofdeath )
@@ -127,7 +127,7 @@ function istacticaldamage( objweapon, smeansofdeath )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7bf
 // Size: 0x60
 function function_4766094b15b00a8( weapon, smeansofdeath, attacker )
@@ -151,7 +151,7 @@ function function_4766094b15b00a8( weapon, smeansofdeath, attacker )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x828
 // Size: 0x44
 function function_e287831520aa308b( weapon, attacker )
@@ -170,7 +170,7 @@ function function_e287831520aa308b( weapon, attacker )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x875
 // Size: 0x49
 function isfmjdamage( weapon, smeansofdeath )
@@ -189,7 +189,7 @@ function isfmjdamage( weapon, smeansofdeath )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8c7
 // Size: 0x37, Type: bool
 function function_73d1d5d600a0cbc3( smeansofdeath, attacker )
@@ -203,7 +203,7 @@ function function_73d1d5d600a0cbc3( smeansofdeath, attacker )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x907
 // Size: 0x8e, Type: bool
 function function_3201a1bc3ff0e482( attacker, victim, smeansofdeath, idflags )
@@ -240,7 +240,7 @@ function function_3201a1bc3ff0e482( attacker, victim, smeansofdeath, idflags )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x99e
 // Size: 0x151, Type: bool
 function islethalmeleeweapon( attacker, victim, objweapon, smeansofdeath )
@@ -307,7 +307,7 @@ function islethalmeleeweapon( attacker, victim, objweapon, smeansofdeath )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaf8
 // Size: 0x236
 function attackerishittingteam( victim, attacker )
@@ -396,7 +396,7 @@ function attackerishittingteam( victim, attacker )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd36
 // Size: 0x6a, Type: bool
 function function_7cc9753f2f84e883( eattacker, victim )
@@ -405,7 +405,7 @@ function function_7cc9753f2f84e883( eattacker, victim )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda9
 // Size: 0x37
 function _validateattacker( eattacker )
@@ -427,7 +427,7 @@ function _validateattacker( eattacker )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde9
 // Size: 0x18
 function _validatevictim( victim )
@@ -441,7 +441,7 @@ function _validatevictim( victim )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xe0a
 // Size: 0x1c6, Type: bool
 function damage_should_ignore_blast_shield( attacker, victim, objweapon, smeansofdeath, inflictor, hitloc )
@@ -507,7 +507,7 @@ function damage_should_ignore_blast_shield( attacker, victim, objweapon, smeanso
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xfd9
 // Size: 0x4a
 function _radiusdamage( origin, range, maxdamage, mindamage, attacker, meansofdeath, weapon )
@@ -516,7 +516,7 @@ function _radiusdamage( origin, range, maxdamage, mindamage, attacker, meansofde
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x102b
 // Size: 0x271
 function radiusplayerdamage( origin, minradius, maxradius, mindamage, maxdamage, attacker, inflictor, meansofdeath, weaponname, ignoreattacker )
@@ -561,7 +561,8 @@ function radiusplayerdamage( origin, minradius, maxradius, mindamage, maxdamage,
     
     if ( isdefined( var_45724690f28d7899 ) && var_45724690f28d7899.size > 0 )
     {
-        for (i = 0; i < var_45724690f28d7899.size; i++) {
+        for ( i = 0; i < var_45724690f28d7899.size ; i++ )
+        {
             ent = var_45724690f28d7899[ i ][ "entity" ];
             dist = var_45724690f28d7899[ i ][ "distance" ];
             point = var_45724690f28d7899[ i ][ "position" ];
@@ -586,7 +587,7 @@ function radiusplayerdamage( origin, minradius, maxradius, mindamage, maxdamage,
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12a4
 // Size: 0x1d, Type: bool
 function hashealthshield( player )
@@ -595,7 +596,7 @@ function hashealthshield( player )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12ca
 // Size: 0x33
 function gethealthshielddamage( damage )
@@ -605,7 +606,7 @@ function gethealthshielddamage( damage )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1306
 // Size: 0x69
 function sethealthshield( shieldvalue )
@@ -627,7 +628,7 @@ function sethealthshield( shieldvalue )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1377
 // Size: 0x16
 function clearhealthshield()
@@ -637,7 +638,7 @@ function clearhealthshield()
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1395
 // Size: 0xb5
 function _suicide( checkremote, var_1044662d97e67562 )
@@ -661,7 +662,7 @@ function _suicide( checkremote, var_1044662d97e67562 )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1452
 // Size: 0x27
 function suicide_on_end_remote()
@@ -674,7 +675,7 @@ function suicide_on_end_remote()
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1481
 // Size: 0x48
 function suicide_on_alive()
@@ -693,7 +694,7 @@ function suicide_on_alive()
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14d1
 // Size: 0x72, Type: bool
 function playershoulddofauxdeath( checkremote )
@@ -725,7 +726,7 @@ function playershoulddofauxdeath( checkremote )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x154c
 // Size: 0x2a, Type: bool
 function isprojectiledamage( meansofdeath )
@@ -741,7 +742,7 @@ function isprojectiledamage( meansofdeath )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x157f
 // Size: 0xf6
 function non_player_log_attacker_data( data, attacker )
@@ -798,7 +799,7 @@ function non_player_log_attacker_data( data, attacker )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x167d
 // Size: 0x129
 function non_player_add_attacker_data( data, attacker )
@@ -829,7 +830,7 @@ function non_player_add_attacker_data( data, attacker )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17ae
 // Size: 0x146
 function non_player_get_attacker_data( attacker, create )
@@ -877,7 +878,7 @@ function non_player_get_attacker_data( attacker, create )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18fd
 // Size: 0xc
 function non_player_clear_attacker_data()
@@ -886,7 +887,7 @@ function non_player_clear_attacker_data()
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1911
 // Size: 0x150, Type: bool
 function non_player_should_ignore_damage( attacker, objweapon, inflictor, meansofdeath )
@@ -941,7 +942,7 @@ function non_player_should_ignore_damage( attacker, objweapon, inflictor, meanso
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a6a
 // Size: 0x127
 function non_player_add_ignore_damage_signature( attacker, objweapon, inflictor, meansofdeath )
@@ -979,7 +980,7 @@ function non_player_add_ignore_damage_signature( attacker, objweapon, inflictor,
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b9a
 // Size: 0x24
 function non_player_remove_ignore_damage_signature( id )
@@ -993,7 +994,7 @@ function non_player_remove_ignore_damage_signature( id )
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bc6
 // Size: 0xc
 function non_player_clear_ignore_damage_signatures()
@@ -1002,7 +1003,7 @@ function non_player_clear_ignore_damage_signatures()
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1bda
 // Size: 0x1bf, Type: bool
 function non_player_should_ignore_damage_signature( attacker, objweapon, inflictor, meansofdeath )
@@ -1089,7 +1090,7 @@ function non_player_should_ignore_damage_signature( attacker, objweapon, inflict
 }
 
 // Namespace damage / scripts\mp\utility\damage
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1da2
 // Size: 0x8f, Type: bool
 function islauncherdirectimpactdamage( objweapon, meansofdeath, var_68d17572ef704fa8 )

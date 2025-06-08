@@ -15,7 +15,7 @@
 #namespace namespace_ef7dd1046a7b0ee;
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x410
 // Size: 0x15b
 function init()
@@ -49,7 +49,7 @@ function init()
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x573
 // Size: 0x23a
 function takequestitem( pickupent )
@@ -83,7 +83,7 @@ function takequestitem( pickupent )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b5
 // Size: 0x130
 function viphud_setupvisibility()
@@ -113,7 +113,7 @@ function viphud_setupvisibility()
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8ed
 // Size: 0x3c
 function vip_playerdied( attacker, victim )
@@ -131,7 +131,7 @@ function vip_playerdied( attacker, victim )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x931
 // Size: 0x1d
 function vip_playerdisconnect( player )
@@ -144,7 +144,7 @@ function vip_playerdisconnect( player )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x956
 // Size: 0x1d
 function vip_onentergulag( player )
@@ -157,7 +157,7 @@ function vip_onentergulag( player )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x97b
 // Size: 0x3d
 function vip_onrespawn( player )
@@ -175,7 +175,7 @@ function vip_onrespawn( player )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9c0
 // Size: 0x61
 function vip_playerremoved( removedplayer, attacker )
@@ -202,7 +202,7 @@ function vip_playerremoved( removedplayer, attacker )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa29
 // Size: 0x13
 function vip_ontimerexpired()
@@ -215,7 +215,7 @@ function vip_ontimerexpired()
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa44
 // Size: 0x35
 function vip_removequestinstance()
@@ -230,7 +230,7 @@ function vip_removequestinstance()
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa81
 // Size: 0x40
 function viphud_showtoplayer( player )
@@ -245,7 +245,7 @@ function viphud_showtoplayer( player )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac9
 // Size: 0x25
 function viphud_hidefromplayer( player )
@@ -259,7 +259,7 @@ function viphud_hidefromplayer( player )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf6
 // Size: 0x72
 function viphud_deletehud()
@@ -277,7 +277,7 @@ function viphud_deletehud()
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb70
 // Size: 0x74
 function vip_respawnplayer( player, sponsor, var_df2fbb13c226be75 )
@@ -300,7 +300,7 @@ function vip_respawnplayer( player, sponsor, var_df2fbb13c226be75 )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbec
 // Size: 0x1ad
 function vip_completequest()
@@ -332,7 +332,7 @@ function vip_completequest()
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda1
 // Size: 0x1bc
 function vip_failquest( attacker )
@@ -365,7 +365,7 @@ function vip_failquest( attacker )
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf65
 // Size: 0x34
 function vip_questthink_iconposition()
@@ -378,7 +378,7 @@ function vip_questthink_iconposition()
 }
 
 // Namespace namespace_ef7dd1046a7b0ee / namespace_5a4a9f3e4a0baf2f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfa1
 // Size: 0x80, Type: bool
 function function_5f352fb76c54705c()

@@ -16,7 +16,7 @@
 #namespace namespace_1e1e8fdc0b6e3977;
 
 // Namespace namespace_1e1e8fdc0b6e3977 / namespace_3f6c2ec2b6aeead8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x137
 // Size: 0x3f
 function init()
@@ -27,7 +27,7 @@ function init()
 }
 
 // Namespace namespace_1e1e8fdc0b6e3977 / namespace_3f6c2ec2b6aeead8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17e
 // Size: 0x1c
 function function_c414d20013783e62( ref, hitstokill )
@@ -36,7 +36,7 @@ function function_c414d20013783e62( ref, hitstokill )
 }
 
 // Namespace namespace_1e1e8fdc0b6e3977 / namespace_3f6c2ec2b6aeead8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a2
 // Size: 0x1c
 function function_c8ababcac24ad291( threatbiasgroup, var_5c00772332ce642c )

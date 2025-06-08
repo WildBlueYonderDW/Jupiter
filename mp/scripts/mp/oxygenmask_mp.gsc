@@ -5,7 +5,7 @@
 #namespace oxygenmask_mp;
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1eb
 // Size: 0x73
 function init()
@@ -18,7 +18,7 @@ function init()
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x266
 // Size: 0x7b
 function function_afb7a317198d0688()
@@ -46,7 +46,7 @@ function function_afb7a317198d0688()
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e9
 // Size: 0x44
 function function_c3adccf5abf65331( errorref )
@@ -63,7 +63,7 @@ function function_c3adccf5abf65331( errorref )
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x335
 // Size: 0x84
 function function_a387d51c1bace19( var_b5bf99952e022dbe )
@@ -97,7 +97,7 @@ function function_a387d51c1bace19( var_b5bf99952e022dbe )
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c1
 // Size: 0xa
 function function_5320a46c0e139cb5()
@@ -106,7 +106,7 @@ function function_5320a46c0e139cb5()
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d3
 // Size: 0x84
 function function_824af6d3bd562a89()
@@ -132,7 +132,7 @@ function function_824af6d3bd562a89()
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45f
 // Size: 0x42
 function function_c6f7c3926e6e4522()
@@ -146,7 +146,7 @@ function function_c6f7c3926e6e4522()
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a9
 // Size: 0x38
 function function_fedcd0dbe67afaef()
@@ -168,7 +168,7 @@ function function_fedcd0dbe67afaef()
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e9
 // Size: 0x2e
 function function_58611da8ae346833()
@@ -182,7 +182,7 @@ function function_58611da8ae346833()
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51f
 // Size: 0x33
 function function_5a7760580acb149c( failnotify )
@@ -196,7 +196,7 @@ function function_5a7760580acb149c( failnotify )
 }
 
 // Namespace oxygenmask_mp / scripts\mp\oxygenmask_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55a
 // Size: 0xa
 function function_cad73059babfbe29()

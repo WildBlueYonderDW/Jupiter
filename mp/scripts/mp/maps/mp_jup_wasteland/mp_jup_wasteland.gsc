@@ -11,7 +11,7 @@
 #namespace mp_jup_wasteland;
 
 // Namespace mp_jup_wasteland / scripts\mp\maps\mp_jup_wasteland\mp_jup_wasteland
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x185
 // Size: 0xb1
 function main()

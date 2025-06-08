@@ -19,7 +19,7 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_traincircle / scripts\mp\gametypes\br_publicevent_traincircle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ea
 // Size: 0x60
 function init( eventinfo )
@@ -32,7 +32,7 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_traincircle / scripts\mp\gametypes\br_publicevent_traincircle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x252
 // Size: 0x2f, Type: bool
 function validatefunc()
@@ -56,7 +56,7 @@ function validatefunc()
 }
 
 // Namespace br_publicevent_traincircle / scripts\mp\gametypes\br_publicevent_traincircle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28a
 // Size: 0x55
 function postinitfunc()
@@ -79,7 +79,7 @@ function private function_208df6f2463fdebf()
 }
 
 // Namespace br_publicevent_traincircle / scripts\mp\gametypes\br_publicevent_traincircle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30e
 // Size: 0x15
 function function_b22310d8fb6c98fa()
@@ -88,7 +88,7 @@ function function_b22310d8fb6c98fa()
 }
 
 // Namespace br_publicevent_traincircle / scripts\mp\gametypes\br_publicevent_traincircle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32c
 // Size: 0x2
 function waitfunc()
@@ -97,7 +97,7 @@ function waitfunc()
 }
 
 // Namespace br_publicevent_traincircle / scripts\mp\gametypes\br_publicevent_traincircle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x336
 // Size: 0x53
 function activatefunc()

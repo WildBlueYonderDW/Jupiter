@@ -3,7 +3,7 @@
 #namespace namespace_7c0e88f32463912b;
 
 // Namespace namespace_7c0e88f32463912b / namespace_8b5a0cf52cbe3e30
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x156
 // Size: 0x33
 function function_2fce2f81588a2462()
@@ -17,7 +17,7 @@ function function_2fce2f81588a2462()
 }
 
 // Namespace namespace_7c0e88f32463912b / namespace_8b5a0cf52cbe3e30
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x191
 // Size: 0xcc
 function init_juggernaut_damage_states()

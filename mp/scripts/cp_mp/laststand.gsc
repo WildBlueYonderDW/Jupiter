@@ -59,8 +59,8 @@
 #namespace laststand;
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ea
+// Params 0
+// Checksum 0x0, Offset: 0x13eb
 // Size: 0x5f4
 function init()
 {
@@ -85,7 +85,7 @@ function init()
         registerlaststandweapondelaydvar( 0 );
     }
     
-    level.laststandhealth = getoverridedvarintexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_lastStandHealth" ), @"hash_984461a4d8ff9473" );
+    level.laststandhealth = getoverridedvarintexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_lastStandHealth" ), @"scr_player_laststandhealth" );
     level.laststandrevivehealth = getoverridedvarintexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_lastStandReviveHealth" ), @"hash_555967257cd98a4a" );
     
     if ( level.laststandhealth > scripts\mp\tweakables::gettweakablevalue( "player", "maxhealth" ) )
@@ -98,7 +98,7 @@ function init()
         level.laststandrevivehealth = scripts\mp\tweakables::gettweakablevalue( "player", "maxhealth" );
     }
     
-    level.laststandinvulntime = getoverridedvarfloatexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_lastStandInvulnTime" ), @"hash_429478ea05ec5f08" );
+    level.laststandinvulntime = getoverridedvarfloatexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_lastStandInvulnTime" ), @"scr_player_laststandinvulntime" );
     level.laststandrevivedecayscale = getoverridedvarfloatexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_lastStandReviveDecayScale" ), @"hash_e0f04861824e8440" );
     level.laststandrevivetimer = getoverridedvarfloatexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_lastStandReviveTimer" ), @"hash_e89b9c15abbfb1ad" );
     level.laststandsuicidetimer = getoverridedvarfloatexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_lastStandSuicideTimer" ), @"hash_812e42c73d4bd8d0" );
@@ -137,8 +137,8 @@ function init()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19e6
+// Params 1
+// Checksum 0x0, Offset: 0x19e7
 // Size: 0x16a
 function on_player_spawned( params )
 {
@@ -177,8 +177,8 @@ function on_player_spawned( params )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b58
+// Params 0
+// Checksum 0x0, Offset: 0x1b59
 // Size: 0xf5
 function laststandthink()
 {
@@ -218,8 +218,8 @@ function laststandthink()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c55
+// Params 0
+// Checksum 0x0, Offset: 0x1c56
 // Size: 0x561
 function onenter()
 {
@@ -248,7 +248,7 @@ function onenter()
             
             if ( !isdefined( healthvalue ) )
             {
-                healthvalue = getdvarint( @"hash_984461a4d8ff9473", 50 );
+                healthvalue = getdvarint( @"scr_player_laststandhealth", 50 );
             }
             
             if ( healthvalue > scripts\mp\tweakables::gettweakablevalue( "<dev string:x102>", "<dev string:x10c>" ) )
@@ -438,8 +438,8 @@ function onenter()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21be
+// Params 0
+// Checksum 0x0, Offset: 0x21bf
 // Size: 0x50
 function last_stand_sfx()
 {
@@ -455,8 +455,8 @@ function last_stand_sfx()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2216
+// Params 1
+// Checksum 0x0, Offset: 0x2217
 // Size: 0x182
 function handlelaststandweapongivepipeline( laststandweapon )
 {
@@ -520,8 +520,8 @@ function handlelaststandweapongivepipeline( laststandweapon )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x23a0
+// Params 0
+// Checksum 0x0, Offset: 0x23a1
 // Size: 0x36
 function takelaststandtransitionweapon()
 {
@@ -535,8 +535,8 @@ function takelaststandtransitionweapon()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23de
+// Params 2
+// Checksum 0x0, Offset: 0x23df
 // Size: 0x5f
 function handlelaststandweapongivedelay( laststandweapondelay, laststandweapon )
 {
@@ -557,8 +557,8 @@ function handlelaststandweapongivedelay( laststandweapondelay, laststandweapon )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2445
+// Params 0
+// Checksum 0x0, Offset: 0x2446
 // Size: 0x4b
 function givedefaultlaststandweapon()
 {
@@ -576,8 +576,8 @@ function givedefaultlaststandweapon()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2499
+// Params 1
+// Checksum 0x0, Offset: 0x249a
 // Size: 0x58
 function givelaststandweapon( laststandweapon )
 {
@@ -598,8 +598,8 @@ function givelaststandweapon( laststandweapon )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24f9
+// Params 1
+// Checksum 0x0, Offset: 0x24fa
 // Size: 0x3d
 function disableweaponsovertime( t )
 {
@@ -610,8 +610,8 @@ function disableweaponsovertime( t )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x253e
+// Params 1
+// Checksum 0x0, Offset: 0x253f
 // Size: 0x2b
 function switchtofists( laststandweapon )
 {
@@ -625,8 +625,8 @@ function switchtofists( laststandweapon )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2571
+// Params 0
+// Checksum 0x0, Offset: 0x2572
 // Size: 0x1c5
 function dodamagewhiledown()
 {
@@ -643,7 +643,7 @@ function dodamagewhiledown()
             
             if ( !isdefined( basehealth ) )
             {
-                basehealth = getdvarint( @"hash_984461a4d8ff9473", 50 );
+                basehealth = getdvarint( @"scr_player_laststandhealth", 50 );
             }
             
             if ( basehealth > scripts\mp\tweakables::gettweakablevalue( "<dev string:x102>", "<dev string:x10c>" ) )
@@ -700,8 +700,8 @@ function dodamagewhiledown()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x273e
+// Params 1
+// Checksum 0x0, Offset: 0x273f
 // Size: 0x102
 function stucktime( var_276b87b88716c2a5 )
 {
@@ -754,8 +754,8 @@ function stucktime( var_276b87b88716c2a5 )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2848
+// Params 1
+// Checksum 0x0, Offset: 0x2849
 // Size: 0x51
 function selfrevivebuttonpressed( downedplayer )
 {
@@ -782,8 +782,8 @@ function selfrevivebuttonpressed( downedplayer )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28a1
+// Params 1
+// Checksum 0x0, Offset: 0x28a2
 // Size: 0x5a
 function function_188085b8b8d431f2( self_revive_count )
 {
@@ -801,8 +801,8 @@ function function_188085b8b8d431f2( self_revive_count )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2903
+// Params 0
+// Checksum 0x0, Offset: 0x2904
 // Size: 0x12
 function function_546201bb34cf36ce()
 {
@@ -810,8 +810,8 @@ function function_546201bb34cf36ce()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x291e
+// Params 2
+// Checksum 0x0, Offset: 0x291f
 // Size: 0x64
 function function_7eba90a4d2ef6d6f( n_count, var_dedcc81d0707427d )
 {
@@ -828,8 +828,8 @@ function function_7eba90a4d2ef6d6f( n_count, var_dedcc81d0707427d )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x298a
+// Params 2
+// Checksum 0x0, Offset: 0x298b
 // Size: 0x5e
 function function_d7827c7865b2089b( n_count, b_revived )
 {
@@ -846,8 +846,8 @@ function function_d7827c7865b2089b( n_count, b_revived )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29f0
+// Params 0
+// Checksum 0x0, Offset: 0x29f1
 // Size: 0x23, Type: bool
 function function_85bcfa7d00b8bb6b()
 {
@@ -860,8 +860,8 @@ function function_85bcfa7d00b8bb6b()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a1c
+// Params 0
+// Checksum 0x0, Offset: 0x2a1d
 // Size: 0x154
 function selfrevivethink()
 {
@@ -915,8 +915,8 @@ function selfrevivethink()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b78
+// Params 0
+// Checksum 0x0, Offset: 0x2b79
 // Size: 0x3db
 function selfrevivemonitorrevivebuttonpressed()
 {
@@ -1066,8 +1066,8 @@ function selfrevivemonitorrevivebuttonpressed()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f5b
+// Params 0
+// Checksum 0x0, Offset: 0x2f5c
 // Size: 0xc, Type: bool
 function function_77799f0211be1728()
 {
@@ -1075,8 +1075,8 @@ function function_77799f0211be1728()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f70
+// Params 0
+// Checksum 0x0, Offset: 0x2f71
 // Size: 0x18
 function function_51feaa413342a5a1()
 {
@@ -1085,8 +1085,8 @@ function function_51feaa413342a5a1()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f90
+// Params 0
+// Checksum 0x0, Offset: 0x2f91
 // Size: 0xfa
 function selfrevivebuttonpresscleanup()
 {
@@ -1122,8 +1122,8 @@ function selfrevivebuttonpresscleanup()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3092
+// Params 1
+// Checksum 0x0, Offset: 0x3093
 // Size: 0x17f
 function onexitcommon( revived )
 {
@@ -1198,8 +1198,8 @@ function onexitcommon( revived )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3219
+// Params 2
+// Checksum 0x0, Offset: 0x321a
 // Size: 0x35d
 function onrevive( var_4920bf02df960be9, var_d07b7dcc79b24490 )
 {
@@ -1250,7 +1250,7 @@ function onrevive( var_4920bf02df960be9, var_d07b7dcc79b24490 )
                 
                 if ( !isdefined( healthvalue ) )
                 {
-                    healthvalue = getdvarint( @"hash_984461a4d8ff9473", 50 );
+                    healthvalue = getdvarint( @"scr_player_laststandhealth", 50 );
                 }
                 
                 if ( healthvalue > scripts\mp\tweakables::gettweakablevalue( "<dev string:x102>", "<dev string:x10c>" ) )
@@ -1260,7 +1260,7 @@ function onrevive( var_4920bf02df960be9, var_d07b7dcc79b24490 )
             }
         #/
         
-        if ( !getdvarint( @"hash_bba79eeb1c990103", 0 ) || self.health < level.laststandrevivehealth )
+        if ( !getdvarint( @"scr_player_laststandreviveretainhealth", 0 ) || self.health < level.laststandrevivehealth )
         {
             self.health = level.laststandrevivehealth;
         }
@@ -1318,8 +1318,8 @@ function onrevive( var_4920bf02df960be9, var_d07b7dcc79b24490 )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x357e
+// Params 0
+// Checksum 0x0, Offset: 0x357f
 // Size: 0xb9
 function onbleedout()
 {
@@ -1357,8 +1357,8 @@ function onbleedout()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x363f
+// Params 1
+// Checksum 0x0, Offset: 0x3640
 // Size: 0xb8
 function ondeath( deathdata )
 {
@@ -1398,8 +1398,8 @@ function ondeath( deathdata )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36ff
+// Params 0
+// Checksum 0x0, Offset: 0x3700
 // Size: 0x20
 function dropcarryobject()
 {
@@ -1410,8 +1410,8 @@ function dropcarryobject()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3727
+// Params 1
+// Checksum 0x0, Offset: 0x3728
 // Size: 0x212
 function revivesetup( owner )
 {
@@ -1453,8 +1453,8 @@ function revivesetup( owner )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3941
+// Params 1
+// Checksum 0x0, Offset: 0x3942
 // Size: 0x156
 function function_6b9549a69dc6a346( reviveent )
 {
@@ -1488,8 +1488,8 @@ function function_6b9549a69dc6a346( reviveent )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a9f
+// Params 1
+// Checksum 0x0, Offset: 0x3aa0
 // Size: 0x1af
 function interrogationsetup( owner )
 {
@@ -1531,8 +1531,8 @@ function interrogationsetup( owner )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c56
+// Params 0
+// Checksum 0x0, Offset: 0x3c57
 // Size: 0x23c
 function secondwindthink()
 {
@@ -1587,8 +1587,8 @@ function secondwindthink()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e9a
+// Params 3
+// Checksum 0x0, Offset: 0x3e9b
 // Size: 0xe1
 function onlaststandkillenemy( deathdata, laststandmeansofdeath, laststandweaponobj )
 {
@@ -1610,8 +1610,8 @@ function onlaststandkillenemy( deathdata, laststandmeansofdeath, laststandweapon
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f83
+// Params 0
+// Checksum 0x0, Offset: 0x3f84
 // Size: 0x5b
 function endreviveonownerdeathordisconnect()
 {
@@ -1628,8 +1628,8 @@ function endreviveonownerdeathordisconnect()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fe6
+// Params 0
+// Checksum 0x0, Offset: 0x3fe7
 // Size: 0x2e
 function removereviveentfromlevelarrayondeath()
 {
@@ -1640,8 +1640,8 @@ function removereviveentfromlevelarrayondeath()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x401c
+// Params 1
+// Checksum 0x0, Offset: 0x401d
 // Size: 0x100
 function updateusablebyteam( team )
 {
@@ -1677,8 +1677,8 @@ function updateusablebyteam( team )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4124
+// Params 1
+// Checksum 0x0, Offset: 0x4125
 // Size: 0xb1
 function function_38f5ade989b3848f( team )
 {
@@ -1698,8 +1698,8 @@ function function_38f5ade989b3848f( team )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41dd
+// Params 1
+// Checksum 0x0, Offset: 0x41de
 // Size: 0x39
 function function_4a3b25b6b877fe73( team )
 {
@@ -1714,8 +1714,8 @@ function function_4a3b25b6b877fe73( team )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x421e
+// Params 1
+// Checksum 0x0, Offset: 0x421f
 // Size: 0x39
 function function_dc8861a5e3b418d5( team )
 {
@@ -1730,8 +1730,8 @@ function function_dc8861a5e3b418d5( team )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x425f
+// Params 1
+// Checksum 0x0, Offset: 0x4260
 // Size: 0x267
 function revivetriggerthink( team )
 {
@@ -1827,8 +1827,8 @@ function revivetriggerthink( team )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44ce
+// Params 1
+// Checksum 0x0, Offset: 0x44cf
 // Size: 0x24c
 function function_56e47961499ca06c( team )
 {
@@ -1926,8 +1926,8 @@ function function_56e47961499ca06c( team )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4722
+// Params 2
+// Checksum 0x0, Offset: 0x4723
 // Size: 0x123
 function switchtoteammatereviveweapon( revivee, interrogation )
 {
@@ -1977,8 +1977,8 @@ function switchtoteammatereviveweapon( revivee, interrogation )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x484d
+// Params 2
+// Checksum 0x0, Offset: 0x484e
 // Size: 0x27
 function onteammatereviveweaponswitchcomplete( streakinfo, switchresult )
 {
@@ -1987,8 +1987,8 @@ function onteammatereviveweaponswitchcomplete( streakinfo, switchresult )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x487c
+// Params 2
+// Checksum 0x0, Offset: 0x487d
 // Size: 0xa0
 function onteammatereviveweapontaken( streakinfo, switchresult )
 {
@@ -2006,8 +2006,8 @@ function onteammatereviveweapontaken( streakinfo, switchresult )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4924
+// Params 1
+// Checksum 0x0, Offset: 0x4925
 // Size: 0x57
 function teammatereviveweaponwaitputaway( streakinfo )
 {
@@ -2023,8 +2023,8 @@ function teammatereviveweaponwaitputaway( streakinfo )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4983
+// Params 0
+// Checksum 0x0, Offset: 0x4984
 // Size: 0x3a
 function watchfordeathwhilereviving()
 {
@@ -2038,8 +2038,8 @@ function watchfordeathwhilereviving()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49c5
+// Params 1
+// Checksum 0x0, Offset: 0x49c6
 // Size: 0x44
 function watchforteammatedeathwhilereviving( revivee )
 {
@@ -2053,8 +2053,8 @@ function watchforteammatedeathwhilereviving( revivee )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a11
+// Params 1
+// Checksum 0x0, Offset: 0x4a12
 // Size: 0x44
 function watchforteammaterevivedwhilereviving( revivee )
 {
@@ -2068,8 +2068,8 @@ function watchforteammaterevivedwhilereviving( revivee )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a5d
+// Params 2
+// Checksum 0x0, Offset: 0x4a5e
 // Size: 0x252
 function finishreviveplayer( notifymsg, reviver )
 {
@@ -2171,7 +2171,7 @@ function finishreviveplayer( notifymsg, reviver )
 
 // Namespace laststand / scripts\cp_mp\laststand
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x4cb8
+// Checksum 0x0, Offset: 0x4cb9
 // Size: 0xfd
 function private function_a3a340a5d9222a17()
 {
@@ -2208,8 +2208,8 @@ function private function_a3a340a5d9222a17()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4dbd
+// Params 3
+// Checksum 0x0, Offset: 0x4dbe
 // Size: 0xc5
 function function_70f1dbc7125939b8( notifymsg, interrogator, team )
 {
@@ -2250,8 +2250,8 @@ function function_70f1dbc7125939b8( notifymsg, interrogator, team )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e8b
+// Params 0
+// Checksum 0x0, Offset: 0x4e8c
 // Size: 0xca
 function decayreviveprogress()
 {
@@ -2295,8 +2295,8 @@ function decayreviveprogress()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f5d
+// Params 1
+// Checksum 0x0, Offset: 0x4f5e
 // Size: 0x107
 function interrogationreward( victim )
 {
@@ -2320,8 +2320,8 @@ function interrogationreward( victim )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x506c
+// Params 2
+// Checksum 0x0, Offset: 0x506d
 // Size: 0x1ca
 function function_ab6a75b53de148ab( interrogator, outlinetime )
 {
@@ -2378,8 +2378,8 @@ function function_ab6a75b53de148ab( interrogator, outlinetime )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x523e
+// Params 2
+// Checksum 0x0, Offset: 0x523f
 // Size: 0x58
 function watchpainted( id, timeout )
 {
@@ -2394,8 +2394,8 @@ function watchpainted( id, timeout )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x529e
+// Params 1
+// Checksum 0x0, Offset: 0x529f
 // Size: 0x33
 function watchpaintedagain( id )
 {
@@ -2406,8 +2406,8 @@ function watchpaintedagain( id )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x52d9
+// Params 3
+// Checksum 0x0, Offset: 0x52da
 // Size: 0x262
 function useholdthink( reviver, usetime, interrogation )
 {
@@ -2499,8 +2499,8 @@ function useholdthink( reviver, usetime, interrogation )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5543
+// Params 2
+// Checksum 0x0, Offset: 0x5544
 // Size: 0x4c
 function dragallyprototype( reviver, revivee )
 {
@@ -2512,8 +2512,8 @@ function dragallyprototype( reviver, revivee )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5597
+// Params 2
+// Checksum 0x0, Offset: 0x5598
 // Size: 0x2c
 function cleanupdragallyprototype( reviver, revivee )
 {
@@ -2523,8 +2523,8 @@ function cleanupdragallyprototype( reviver, revivee )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x55cb
+// Params 3
+// Checksum 0x0, Offset: 0x55cc
 // Size: 0x262
 function useholdthinkcleanup( reviver, revivespot, interrogation )
 {
@@ -2658,8 +2658,8 @@ function useholdthinkcleanup( reviver, revivespot, interrogation )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5835
+// Params 0
+// Checksum 0x0, Offset: 0x5836
 // Size: 0x58
 function sfx_revive_lp()
 {
@@ -2672,8 +2672,8 @@ function sfx_revive_lp()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5895
+// Params 1
+// Checksum 0x0, Offset: 0x5896
 // Size: 0x1c3
 function useholdthinkloop( reviver )
 {
@@ -2718,8 +2718,8 @@ function useholdthinkloop( reviver )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a61
+// Params 0
+// Checksum 0x0, Offset: 0x5a62
 // Size: 0x2a6
 function suicidesetup()
 {
@@ -2827,8 +2827,8 @@ function suicidesetup()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d0f
+// Params 0
+// Checksum 0x0, Offset: 0x5d10
 // Size: 0x1be
 function suicidemonitorcrouchbuttonpress()
 {
@@ -2900,8 +2900,8 @@ function suicidemonitorcrouchbuttonpress()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ed5
+// Params 0
+// Checksum 0x0, Offset: 0x5ed6
 // Size: 0x30
 function suicideonend()
 {
@@ -2915,8 +2915,8 @@ function suicideonend()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f0d
+// Params 0
+// Checksum 0x0, Offset: 0x5f0e
 // Size: 0x61
 function showsuicidehintstring()
 {
@@ -2941,8 +2941,8 @@ function showsuicidehintstring()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f76
+// Params 0
+// Checksum 0x0, Offset: 0x5f77
 // Size: 0x206
 function handlerevivemessage()
 {
@@ -3019,8 +3019,8 @@ function handlerevivemessage()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6184
+// Params 0
+// Checksum 0x0, Offset: 0x6185
 // Size: 0x109
 function bleedoutthink()
 {
@@ -3077,8 +3077,8 @@ function bleedoutthink()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6295
+// Params 0
+// Checksum 0x0, Offset: 0x6296
 // Size: 0xd4
 function addoverheadicon()
 {
@@ -3106,8 +3106,8 @@ function addoverheadicon()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6371
+// Params 1
+// Checksum 0x0, Offset: 0x6372
 // Size: 0x1a
 function cleanupoverheadicon( icon )
 {
@@ -3116,8 +3116,8 @@ function cleanupoverheadicon( icon )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6393
+// Params 0
+// Checksum 0x0, Offset: 0x6394
 // Size: 0xbb
 function showwaverespawnmessage()
 {
@@ -3148,8 +3148,8 @@ function showwaverespawnmessage()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6456
+// Params 1
+// Checksum 0x0, Offset: 0x6457
 // Size: 0x2a
 function allowselfrevive( allow )
 {
@@ -3159,8 +3159,8 @@ function allowselfrevive( allow )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6488
+// Params 0
+// Checksum 0x0, Offset: 0x6489
 // Size: 0x52
 function laststandmonitor()
 {
@@ -3186,8 +3186,8 @@ function laststandmonitor()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x64e2
+// Params 0
+// Checksum 0x0, Offset: 0x64e3
 // Size: 0x168
 function laststandkillteamifdown()
 {
@@ -3229,8 +3229,8 @@ function laststandkillteamifdown()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6652
+// Params 0
+// Checksum 0x0, Offset: 0x6653
 // Size: 0x98
 function getclassiclaststandpistol()
 {
@@ -3251,8 +3251,8 @@ function getclassiclaststandpistol()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x66f3
+// Params 0
+// Checksum 0x0, Offset: 0x66f4
 // Size: 0x90
 function makelaststandinvuln()
 {
@@ -3280,8 +3280,8 @@ function makelaststandinvuln()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x678b
+// Params 0
+// Checksum 0x0, Offset: 0x678c
 // Size: 0x17
 function clearlaststandinvuln()
 {
@@ -3290,8 +3290,8 @@ function clearlaststandinvuln()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x67aa
+// Params 7
+// Checksum 0x0, Offset: 0x67ab
 // Size: 0x49, Type: bool
 function laststandinvulnignorefunc( inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc )
 {
@@ -3304,8 +3304,8 @@ function laststandinvulnignorefunc( inflictor, attacker, victim, damage, meansof
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x67fc
+// Params 0
+// Checksum 0x0, Offset: 0x67fd
 // Size: 0x4
 function getdefaultlaststandtimervalue()
 {
@@ -3313,8 +3313,8 @@ function getdefaultlaststandtimervalue()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6809
+// Params 0
+// Checksum 0x0, Offset: 0x680a
 // Size: 0x4
 function getdefaultlaststandrevivetimervalue()
 {
@@ -3322,8 +3322,8 @@ function getdefaultlaststandrevivetimervalue()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6816
+// Params 1
+// Checksum 0x0, Offset: 0x6817
 // Size: 0x10
 function getshellshockinterruptdelayms( duration )
 {
@@ -3331,8 +3331,8 @@ function getshellshockinterruptdelayms( duration )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x682f
+// Params 9
+// Checksum 0x0, Offset: 0x6830
 // Size: 0x234, Type: bool
 function function_27d0ea02ed3cc35f( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration )
 {
@@ -3417,8 +3417,8 @@ function function_27d0ea02ed3cc35f( einflictor, attacker, idamage, smeansofdeath
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a6c
+// Params 1
+// Checksum 0x0, Offset: 0x6a6d
 // Size: 0x69
 function survivorondeath( attacker )
 {
@@ -3437,8 +3437,8 @@ function survivorondeath( attacker )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6add
+// Params 0
+// Checksum 0x0, Offset: 0x6ade
 // Size: 0x26, Type: bool
 function function_2a3c9a91bf1d3911()
 {
@@ -3453,8 +3453,8 @@ function function_2a3c9a91bf1d3911()
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b0c
+// Params 1
+// Checksum 0x0, Offset: 0x6b0d
 // Size: 0x4b
 function function_d9bd056c79a6077b( revivee )
 {
@@ -3468,8 +3468,8 @@ function function_d9bd056c79a6077b( revivee )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b5f
+// Params 1
+// Checksum 0x0, Offset: 0x6b60
 // Size: 0x48
 function function_42d99e200aa9762a( revivee )
 {
@@ -3483,8 +3483,8 @@ function function_42d99e200aa9762a( revivee )
 }
 
 // Namespace laststand / scripts\cp_mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6baf
+// Params 0
+// Checksum 0x0, Offset: 0x6bb0
 // Size: 0x20
 function function_538e8d0f5b4d6383()
 {
@@ -3499,8 +3499,8 @@ function function_538e8d0f5b4d6383()
 /#
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6bd8
+    // Params 0
+    // Checksum 0x0, Offset: 0x6bd9
     // Size: 0xef, Type: dev
     function function_9168ee31efcf3393()
     {
@@ -3547,8 +3547,8 @@ function function_538e8d0f5b4d6383()
     }
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6ccf
+    // Params 0
+    // Checksum 0x0, Offset: 0x6cd0
     // Size: 0x3f, Type: dev
     function forcelaststand()
     {
@@ -3561,8 +3561,8 @@ function function_538e8d0f5b4d6383()
     }
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6d16
+    // Params 0
+    // Checksum 0x0, Offset: 0x6d17
     // Size: 0x433, Type: dev
     function function_e7884f1619dc53be()
     {
@@ -3681,8 +3681,8 @@ function function_538e8d0f5b4d6383()
     }
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7151
+    // Params 0
+    // Checksum 0x0, Offset: 0x7152
     // Size: 0x5ce, Type: dev
     function function_cb1f25df9191cd3c()
     {
@@ -3847,8 +3847,8 @@ function function_538e8d0f5b4d6383()
     }
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7727
+    // Params 0
+    // Checksum 0x0, Offset: 0x7728
     // Size: 0x43, Type: dev
     function function_5b2d5cabc8a36244()
     {
@@ -3862,8 +3862,8 @@ function function_538e8d0f5b4d6383()
     }
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7772
+    // Params 1
+    // Checksum 0x0, Offset: 0x7773
     // Size: 0x190, Type: dev
     function debug_laststand( params )
     {
@@ -3886,8 +3886,8 @@ function function_538e8d0f5b4d6383()
     }
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x790a
+    // Params 1
+    // Checksum 0x0, Offset: 0x790b
     // Size: 0xdc, Type: dev
     function function_c7fdbd03f0cc2398( params )
     {
@@ -3913,8 +3913,8 @@ function function_538e8d0f5b4d6383()
     }
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x79ee
+    // Params 1
+    // Checksum 0x0, Offset: 0x79ef
     // Size: 0xd7, Type: dev
     function function_2fd31e84d4bfc226( params )
     {
@@ -3935,8 +3935,8 @@ function function_538e8d0f5b4d6383()
     }
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7acd
+    // Params 1
+    // Checksum 0x0, Offset: 0x7ace
     // Size: 0x23c, Type: dev
     function function_6acfa89023b79437( params )
     {
@@ -3995,8 +3995,8 @@ function function_538e8d0f5b4d6383()
     }
 
     // Namespace laststand / scripts\cp_mp\laststand
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7d11
+    // Params 1
+    // Checksum 0x0, Offset: 0x7d12
     // Size: 0xa7, Type: dev
     function function_3ade7c3fe243f058( params )
     {

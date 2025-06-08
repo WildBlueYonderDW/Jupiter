@@ -29,7 +29,7 @@ function autoexec main()
 }
 
 // Namespace emp_grenade / scripts\cp_mp\equipment\emp_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x241
 // Size: 0xde
 function emp_grenade_init()
@@ -48,7 +48,7 @@ function emp_grenade_init()
 }
 
 // Namespace emp_grenade / scripts\cp_mp\equipment\emp_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x327
 // Size: 0x20c
 function emp_grenade_used( grenade )

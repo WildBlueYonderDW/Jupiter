@@ -12,7 +12,7 @@
 #namespace jup_spawner_zombie_base_armored_light;
 
 // Namespace jup_spawner_zombie_base_armored_light / namespace_dce1bbb1009753a7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x254
 // Size: 0x1e6
 function main()
@@ -50,7 +50,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_base_armored_light / namespace_dce1bbb1009753a7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x442
 // Size: 0x57
 function setup_model()
@@ -67,7 +67,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_base_armored_light / namespace_dce1bbb1009753a7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a1
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -76,7 +76,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_base_armored_light / namespace_dce1bbb1009753a7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b2
 // Size: 0x108
 function precache()
@@ -109,7 +109,7 @@ function precache()
 }
 
 // Namespace jup_spawner_zombie_base_armored_light / namespace_dce1bbb1009753a7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c2
 // Size: 0xd6
 function setup_weapons()

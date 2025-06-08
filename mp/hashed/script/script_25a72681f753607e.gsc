@@ -8,8 +8,8 @@
 #namespace killstreak_airstrike;
 
 // Namespace killstreak_airstrike / namespace_afdc3db19e194d5c
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e
+// Params 0
+// Checksum 0x0, Offset: 0x11f
 // Size: 0xd
 function function_eda57308516bfc5f()
 {
@@ -17,8 +17,8 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace killstreak_airstrike / namespace_afdc3db19e194d5c
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x134
+// Params 1
+// Checksum 0x0, Offset: 0x135
 // Size: 0x23a
 function evaluatescore( bot )
 {
@@ -92,8 +92,8 @@ function evaluatescore( bot )
 }
 
 // Namespace killstreak_airstrike / namespace_afdc3db19e194d5c
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x377
+// Params 0
+// Checksum 0x0, Offset: 0x378
 // Size: 0x89
 function function_f3b2bb1e37a0abae()
 {
@@ -110,8 +110,8 @@ function function_f3b2bb1e37a0abae()
 }
 
 // Namespace killstreak_airstrike / namespace_afdc3db19e194d5c
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x409
+// Params 2
+// Checksum 0x0, Offset: 0x40a
 // Size: 0x4b
 function createaction( targetpos, striketype )
 {
@@ -119,8 +119,8 @@ function createaction( targetpos, striketype )
 }
 
 // Namespace killstreak_airstrike / namespace_afdc3db19e194d5c
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x45d
+// Params 1
+// Checksum 0x0, Offset: 0x45e
 // Size: 0xa0
 function actionprocess( bot )
 {

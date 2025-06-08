@@ -10,7 +10,7 @@
 #namespace warrior_bullettime;
 
 // Namespace warrior_bullettime / namespace_364d3183e2eb6684
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x143
 // Size: 0x17
 function function_b4220bf7ade5fc76()
@@ -20,7 +20,7 @@ function function_b4220bf7ade5fc76()
 }
 
 // Namespace warrior_bullettime / namespace_364d3183e2eb6684
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x162
 // Size: 0x62
 function onplayerspawned()
@@ -40,7 +40,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_bullettime / namespace_364d3183e2eb6684
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cc
 // Size: 0x45
 function waittill_reload( var_260024495ccb1af0 )

@@ -1,7 +1,7 @@
 #namespace c_jup_zmb_zombie_base_female_jeans_head_rz;
 
 // Namespace c_jup_zmb_zombie_base_female_jeans_head_rz / xmodelalias\c_jup_zmb_zombie_base_female_jeans_head_rz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe9
 // Size: 0x20
 function main()

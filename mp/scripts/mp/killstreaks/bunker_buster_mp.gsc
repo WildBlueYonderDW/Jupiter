@@ -49,7 +49,7 @@ function private init()
 }
 
 // Namespace bunker_buster_mp / scripts\mp\killstreaks\bunker_buster_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3e9
 // Size: 0x53
 function missile_gas_volume( startposition, endposition, radius, streak_info )
@@ -58,7 +58,7 @@ function missile_gas_volume( startposition, endposition, radius, streak_info )
 }
 
 // Namespace bunker_buster_mp / scripts\mp\killstreaks\bunker_buster_mp
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x444
 // Size: 0x12b
 function function_8800c8028368dc18( position, owner, team, duration, radius, height, streak_info )
@@ -87,7 +87,7 @@ function function_8800c8028368dc18( position, owner, team, duration, radius, hei
 }
 
 // Namespace bunker_buster_mp / scripts\mp\killstreaks\bunker_buster_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x577
 // Size: 0x97
 function function_69a839ba80dc08f0( duration, streak_info )
@@ -108,7 +108,7 @@ function function_69a839ba80dc08f0( duration, streak_info )
 }
 
 // Namespace bunker_buster_mp / scripts\mp\killstreaks\bunker_buster_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x616
 // Size: 0x2c
 function dialog_deploy( player )
@@ -117,7 +117,7 @@ function dialog_deploy( player )
 }
 
 // Namespace bunker_buster_mp / scripts\mp\killstreaks\bunker_buster_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x64a
 // Size: 0x67
 function dialog_warning( friendlies, enemies )
@@ -134,7 +134,7 @@ function dialog_warning( friendlies, enemies )
 }
 
 // Namespace bunker_buster_mp / scripts\mp\killstreaks\bunker_buster_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6b9
 // Size: 0x135
 function dialog_hits( player, streak_info )
@@ -296,7 +296,8 @@ function dialog_hits( player, streak_info )
             {
                 has_debug = isdefined( dir_trace[ "<dev string:x258>" ] ) + isdefined( dir_trace[ dir_trace.size - 1 ][ "<dev string:x265>" ] );
                 
-                for (i = 0; i < dir_trace.size - has_debug; i++) {
+                for ( i = 0; i < dir_trace.size - has_debug ; i++ )
+                {
                     potential_output = dir_trace[ i ];
                     
                     if ( i > 1 )
@@ -415,7 +416,8 @@ function dialog_hits( player, streak_info )
             trace = utility::array_reverse( trace );
         }
         
-        for (i = 0; i < trace.size; i++) {
+        for ( i = 0; i < trace.size ; i++ )
+        {
             if ( !isdefined( trace[ i ] ) )
             {
                 continue;
@@ -591,7 +593,7 @@ function dialog_hits( player, streak_info )
     // Size: 0x76, Type: dev
     function private function_e9b8d48cb8dd3d5a()
     {
-        impact_info = killstreak_shared::function_51afe751c1e36723( "<dev string:x32e>", "<dev string:x33f>" );
+        impact_info = killstreak_shared::function_675ba1ee79efdc70( "<dev string:x32e>", "<dev string:x33f>" );
         stuck_to = undefined;
         
         if ( isdefined( impact_info ) )

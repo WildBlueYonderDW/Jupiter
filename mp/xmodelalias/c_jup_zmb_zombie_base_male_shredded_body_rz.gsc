@@ -1,7 +1,7 @@
 #namespace c_jup_zmb_zombie_base_male_shredded_body_rz;
 
 // Namespace c_jup_zmb_zombie_base_male_shredded_body_rz / xmodelalias\c_jup_zmb_zombie_base_male_shredded_body_rz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x133
 // Size: 0x34
 function main()

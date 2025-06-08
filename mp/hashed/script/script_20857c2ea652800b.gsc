@@ -26,7 +26,7 @@
 #namespace namespace_aec225c929af7985;
 
 // Namespace namespace_aec225c929af7985 / namespace_9bc9a222fe5ea105
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x495
 // Size: 0x65
 function function_f9574994ef82946e()
@@ -45,7 +45,7 @@ function function_f9574994ef82946e()
 }
 
 // Namespace namespace_aec225c929af7985 / namespace_9bc9a222fe5ea105
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x502
 // Size: 0x3e
 function function_7fbc1ef6c7042b4d( itembundle, item )
@@ -100,7 +100,7 @@ function private function_3fb94d3acc6c5bfa()
 }
 
 // Namespace namespace_aec225c929af7985 / namespace_9bc9a222fe5ea105
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x60d
 // Size: 0x2f9
 function function_df47984aec8fdb53()
@@ -168,7 +168,7 @@ function function_df47984aec8fdb53()
 }
 
 // Namespace namespace_aec225c929af7985 / namespace_9bc9a222fe5ea105
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x90e
 // Size: 0x17
 function function_27e5f3c43590e3f9( person )
@@ -353,7 +353,8 @@ function private function_882be57ee5bdc7fd()
     playerteam = player.team;
     playersquadindex = player.sessionsquadid;
     
-    for (squadmembers = level.squaddata[ playerteam ][ playersquadindex ].players; true; squadmembers = level.squaddata[ playerteam ][ playersquadindex ].players) {
+    for ( squadmembers = level.squaddata[ playerteam ][ playersquadindex ].players; true ; squadmembers = level.squaddata[ playerteam ][ playersquadindex ].players )
+    {
         foreach ( member in squadmembers )
         {
             if ( istrue( member.inlaststand ) && !istrue( self.reviving ) )
@@ -522,7 +523,7 @@ function private function_30bf0929c0733c83()
 }
 
 // Namespace namespace_aec225c929af7985 / namespace_9bc9a222fe5ea105
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x128d
 // Size: 0x45a
 function function_c528340bc6dfaa78( dmgstruct )
@@ -656,7 +657,7 @@ function function_c528340bc6dfaa78( dmgstruct )
 /#
 
     // Namespace namespace_aec225c929af7985 / namespace_9bc9a222fe5ea105
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x16ef
     // Size: 0x9c, Type: dev
     function function_7d77a58b06201f26()

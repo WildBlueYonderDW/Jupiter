@@ -32,7 +32,7 @@ function autoexec function_6f185a47e9e89d31()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x488
 // Size: 0x97, Type: bool
 function function_905b7bada6fd91cb( var_fd778fc5467d97b2, var_67d84be6232392d2 )
@@ -65,7 +65,7 @@ function function_905b7bada6fd91cb( var_fd778fc5467d97b2, var_67d84be6232392d2 )
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x528
 // Size: 0xd7, Type: bool
 function function_d04e75b8e793111f( equipmentref, slot, objweapon )
@@ -130,7 +130,7 @@ function private function_c98b181b50b131b2()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6a6
 // Size: 0x159
 function battlerage_beginsuper( var_fd778fc5467d97b2, var_67d84be6232392d2 )
@@ -205,7 +205,7 @@ function private function_14b332b353d098d5()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8fe
 // Size: 0x48
 function function_f009283993c81afd( var_959265805dc9a79d )
@@ -224,7 +224,7 @@ function function_f009283993c81afd( var_959265805dc9a79d )
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94e
 // Size: 0x1e
 function function_7fa9c564c245f4e3()
@@ -234,7 +234,7 @@ function function_7fa9c564c245f4e3()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x975
 // Size: 0x93
 function function_fe088cdea420c6d6( attacker, victim )
@@ -261,7 +261,7 @@ function function_fe088cdea420c6d6( attacker, victim )
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa10
 // Size: 0x9
 function function_3f783a5aca22152d()
@@ -402,7 +402,7 @@ function private battlerage_monitoroverheal()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xced
 // Size: 0x1a3
 function function_739a5f064c7debdf( var_fd778fc5467d97b2, var_67d84be6232392d2, var_84ad7d139c3431dc )
@@ -462,7 +462,7 @@ function function_739a5f064c7debdf( var_fd778fc5467d97b2, var_67d84be6232392d2, 
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe98
 // Size: 0x1c6
 function function_130f3c57dcc28043( var_84ad7d139c3431dc )
@@ -522,7 +522,7 @@ function function_130f3c57dcc28043( var_84ad7d139c3431dc )
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1066
 // Size: 0x1b
 function function_bd68ba32d66dde65( equipmentref, slot )
@@ -802,7 +802,7 @@ function private function_170fa6465d8f157a( var_4776e6542f71c13e, var_b70102123f
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x157e
 // Size: 0xd
 function function_67a8dd7e70c037cc()
@@ -811,7 +811,7 @@ function function_67a8dd7e70c037cc()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1593
 // Size: 0xc
 function function_b2cbb30462cc3a75()
@@ -876,7 +876,7 @@ function private function_cba32179eb094ec9( var_d64fcaaa5c3dda68, var_e477d58790
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16d2
 // Size: 0x13
 function function_6722a2088302142b()
@@ -885,7 +885,7 @@ function function_6722a2088302142b()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16ed
 // Size: 0x13
 function function_cbcbdc79db5a1426()
@@ -894,7 +894,7 @@ function function_cbcbdc79db5a1426()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1708
 // Size: 0x13
 function function_532d00cda484cdf3()
@@ -903,7 +903,7 @@ function function_532d00cda484cdf3()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1723
 // Size: 0x13
 function function_903a8abde1f77240()
@@ -912,7 +912,7 @@ function function_903a8abde1f77240()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x173e
 // Size: 0x7d
 function function_63172f4acc7e60e7()
@@ -932,7 +932,7 @@ function function_63172f4acc7e60e7()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17c3
 // Size: 0x92
 function function_86f5e70ef8ff3f00()
@@ -963,7 +963,7 @@ function function_86f5e70ef8ff3f00()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x185d
 // Size: 0x9
 function function_9e87f6624dd929f1()
@@ -972,7 +972,7 @@ function function_9e87f6624dd929f1()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x186e
 // Size: 0x144
 function function_8d51c3ded47b38dd()
@@ -1020,7 +1020,7 @@ function function_8d51c3ded47b38dd()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19ba
 // Size: 0xbd
 function function_f53fab1c650c0081()
@@ -1056,7 +1056,7 @@ function function_f53fab1c650c0081()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a7f
 // Size: 0x14
 function function_cc4ed2ddd1a0c88d()
@@ -1065,7 +1065,7 @@ function function_cc4ed2ddd1a0c88d()
 }
 
 // Namespace battlerage / scripts\mp\equipment\battlerage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a9b
 // Size: 0xbd
 function function_b117e43076596748( var_67d84be6232392d2 )

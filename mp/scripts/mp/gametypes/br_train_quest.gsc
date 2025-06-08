@@ -16,7 +16,7 @@
 #namespace br_train_quest;
 
 // Namespace br_train_quest / scripts\mp\gametypes\br_train_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c1
 // Size: 0x1c
 function init_if_enabled()
@@ -81,7 +81,7 @@ function private function_62bd404312cecada( type, origin, angles, traincar )
 }
 
 // Namespace br_train_quest / scripts\mp\gametypes\br_train_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x557
 // Size: 0x162
 function spawn_safe( origin, angles )
@@ -111,7 +111,7 @@ function spawn_safe( origin, angles )
 }
 
 // Namespace br_train_quest / scripts\mp\gametypes\br_train_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6c2
 // Size: 0xc2
 function function_ace8423d837f14d1( carriage, offset, angles )
@@ -135,7 +135,7 @@ function function_ace8423d837f14d1( carriage, offset, angles )
 }
 
 // Namespace br_train_quest / scripts\mp\gametypes\br_train_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x78c
 // Size: 0xd
 function get_state()
@@ -614,7 +614,8 @@ function private function_af479268b6eab7f8( var_6d520edad329f3f9 )
     
     offset = 0;
     
-    for (tempcount = 0; tempcount < rewardcount; tempcount++) {
+    for ( tempcount = 0; tempcount < rewardcount ; tempcount++ )
+    {
         items = getscriptcachecontents( "br_train_safe", self.openindex );
         lootspawnorigin = coordtransform( ( 18 + offset, 0, 10 + offset ), self.origin, self.angles );
         lootspawnangles = combineangles( self.angles, ( 0, -70 + offset * 2, 0 ) );

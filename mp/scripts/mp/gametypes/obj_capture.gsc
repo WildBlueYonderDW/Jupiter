@@ -6,7 +6,7 @@
 #namespace obj_capture;
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x206
 // Size: 0xbd
 function init()
@@ -25,7 +25,7 @@ function init()
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cb
 // Size: 0x7d
 function createcaptureobjective( objectname, team, settings )
@@ -41,7 +41,7 @@ function createcaptureobjective( objectname, team, settings )
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x350
 // Size: 0x1eb
 function createcarryobject( objectname, team, settings )
@@ -82,7 +82,7 @@ function createcarryobject( objectname, team, settings )
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x544
 // Size: 0xe1
 function creategoal( goalname, var_c07321ac837070b6, team, settings )
@@ -107,7 +107,7 @@ function creategoal( goalname, var_c07321ac837070b6, team, settings )
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x62e
 // Size: 0x72
 function onobjectpickup( player, playervo, defused )
@@ -124,7 +124,7 @@ function onobjectpickup( player, playervo, defused )
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a8
 // Size: 0x34
 function onobjectdrop( player )
@@ -135,7 +135,7 @@ function onobjectdrop( player )
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e4
 // Size: 0x3c
 function returnaftertime()
@@ -151,7 +151,7 @@ function returnaftertime()
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x728
 // Size: 0x2
 function onobjectreset()
@@ -160,7 +160,7 @@ function onobjectreset()
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x732
 // Size: 0x44
 function onobjectdelivered( player )
@@ -172,7 +172,7 @@ function onobjectdelivered( player )
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x77e
 // Size: 0x24
 function attachobjecttocarrier( objectmodelname )
@@ -182,7 +182,7 @@ function attachobjecttocarrier( objectmodelname )
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7aa
 // Size: 0x2e
 function detachobjectifcarried()
@@ -195,7 +195,7 @@ function detachobjectifcarried()
 }
 
 // Namespace obj_capture / scripts\mp\gametypes\obj_capture
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x7e0
 // Size: 0x5a
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )

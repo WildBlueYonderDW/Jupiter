@@ -6,7 +6,7 @@
 #namespace namespace_119c80c54f2f80e1;
 
 // Namespace namespace_119c80c54f2f80e1 / namespace_7c996eebd51b5b1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ae
 // Size: 0x86
 function init()
@@ -29,7 +29,7 @@ function private isusingscubagasmask( player )
 }
 
 // Namespace namespace_119c80c54f2f80e1 / namespace_7c996eebd51b5b1f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25a
 // Size: 0x1d, Type: bool
 function hasscubagasmask( player )
@@ -38,7 +38,7 @@ function hasscubagasmask( player )
 }
 
 // Namespace namespace_119c80c54f2f80e1 / namespace_7c996eebd51b5b1f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x280
 // Size: 0x1d, Type: bool
 function isscubagasmaskequipped( player )
@@ -47,7 +47,7 @@ function isscubagasmaskequipped( player )
 }
 
 // Namespace namespace_119c80c54f2f80e1 / namespace_7c996eebd51b5b1f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a6
 // Size: 0x20
 function removescubagasmaskfromplayer( player )
@@ -59,7 +59,7 @@ function removescubagasmaskfromplayer( player )
 }
 
 // Namespace namespace_119c80c54f2f80e1 / namespace_7c996eebd51b5b1f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ce
 // Size: 0x33
 function updatescubagasmask( player, isunderwater )
@@ -71,7 +71,7 @@ function updatescubagasmask( player, isunderwater )
 }
 
 // Namespace namespace_119c80c54f2f80e1 / namespace_7c996eebd51b5b1f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x309
 // Size: 0x6c
 function function_9c13c9f95161d576( player, isunderwater )
@@ -101,7 +101,7 @@ function function_9c13c9f95161d576( player, isunderwater )
 }
 
 // Namespace namespace_119c80c54f2f80e1 / namespace_7c996eebd51b5b1f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37d
 // Size: 0x99
 function function_4e41bf5f9d46e115()

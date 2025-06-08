@@ -4,7 +4,7 @@
 #namespace mp_jup_st_g_ob_activities_vault_cs;
 
 // Namespace mp_jup_st_g_ob_activities_vault_cs / namespace_b543cbaf1e32456f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b2
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_g_ob_activities_vault_cs / namespace_b543cbaf1e32456f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x527
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_vault_cs / namespace_b543cbaf1e32456f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x596
 // Size: 0xe3f
 function createstructs( fe, us, cf )
@@ -179,7 +179,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_vault_cs / namespace_b543cbaf1e32456f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13dd
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -188,7 +188,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_g_ob_activities_vault_cs / namespace_b543cbaf1e32456f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13e7
 // Size: 0xe
 function cleanup()

@@ -7,7 +7,7 @@
 #namespace br_window_alarm;
 
 // Namespace br_window_alarm / scripts\mp\br_window_alarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19c
 // Size: 0x1e
 function init()
@@ -21,7 +21,7 @@ function init()
 }
 
 // Namespace br_window_alarm / scripts\mp\br_window_alarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c2
 // Size: 0x132
 function function_6daf5a86616316bd()
@@ -53,7 +53,7 @@ function function_6daf5a86616316bd()
 }
 
 // Namespace br_window_alarm / scripts\mp\br_window_alarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fc
 // Size: 0x1c7
 function windowwatcher()

@@ -9,7 +9,7 @@
 #namespace xmike109;
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e0
 // Size: 0x53
 function initusage( weapon )
@@ -28,7 +28,7 @@ function initusage( weapon )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43b
 // Size: 0x5a
 function usageloop( weapon )
@@ -48,7 +48,7 @@ function usageloop( weapon )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49d
 // Size: 0x15
 function cleanupafterweaponswitch()
@@ -59,7 +59,7 @@ function cleanupafterweaponswitch()
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4ba
 // Size: 0xd0
 function impactwatcher( watcherweapon, ammotype, xmike109impactfunc )
@@ -88,7 +88,7 @@ function impactwatcher( watcherweapon, ammotype, xmike109impactfunc )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x592
 // Size: 0xc8
 function handleimpact( hitent, hitentpart, hitloc, surfacenormal, surfacetype, weapon, bulletdir, impactpos, xmike109impactfunc, ammotype )
@@ -113,7 +113,7 @@ function handleimpact( hitent, hitentpart, hitloc, surfacenormal, surfacetype, w
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x662
 // Size: 0xb8
 function impactfunc_explo( projectile, hitent, hitentpart, hitloc, surfacetype, reflected )
@@ -126,7 +126,7 @@ function impactfunc_explo( projectile, hitent, hitentpart, hitloc, surfacetype, 
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x722
 // Size: 0x40
 function impactfunc_fire( projectile, hitent, hitentpart, hitloc, surfacetype, reflected )
@@ -135,7 +135,7 @@ function impactfunc_fire( projectile, hitent, hitentpart, hitloc, surfacetype, r
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x76a
 // Size: 0x33
 function impactfunc_null( projectile, hitent, hitentpart, hitloc, surfacetype, reflected )
@@ -144,7 +144,7 @@ function impactfunc_null( projectile, hitent, hitentpart, hitloc, surfacetype, r
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7a5
 // Size: 0x163
 function projectileimpactexplode( projectile, fusetime, hitloc )
@@ -178,7 +178,7 @@ function projectileimpactexplode( projectile, fusetime, hitloc )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x910
 // Size: 0x7f
 function projectileimpactthermite( projectile, hitent, hitentpart, hitloc, reflected )
@@ -196,7 +196,7 @@ function projectileimpactthermite( projectile, hitent, hitentpart, hitloc, refle
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x997
 // Size: 0x56
 function waitforstuck( projectile )
@@ -213,7 +213,7 @@ function waitforstuck( projectile )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9f5
 // Size: 0x12
 function projectilewaittilstucktimeout()
@@ -227,7 +227,7 @@ function projectilewaittilstucktimeout()
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa0f
 // Size: 0x198
 function thermitestuckto( projectile )
@@ -267,7 +267,7 @@ function thermitestuckto( projectile )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbaf
 // Size: 0x11a
 function thermiteradiusdamage( projectile )
@@ -299,7 +299,7 @@ function thermiteradiusdamage( projectile )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xcd1
 // Size: 0x91, Type: bool
 function thermite_damagemodifierignorefunc( inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc )
@@ -323,7 +323,7 @@ function thermite_damagemodifierignorefunc( inflictor, attacker, victim, damage,
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd6b
 // Size: 0x71
 function thermiteburnout( projectile )
@@ -350,7 +350,7 @@ function thermiteburnout( projectile )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xde4
 // Size: 0x153
 function spawnprojectile( impactpos, bulletdir, ammotype, weapon, reflected, surfacenormal )
@@ -388,7 +388,7 @@ function spawnprojectile( impactpos, bulletdir, ammotype, weapon, reflected, sur
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf40
 // Size: 0x6a
 function setdeleteable( ammotype )
@@ -409,7 +409,7 @@ function setdeleteable( ammotype )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb2
 // Size: 0x26
 function setdeleteabletimer( time )
@@ -421,7 +421,7 @@ function setdeleteabletimer( time )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfe0
 // Size: 0xb0
 function manageworldspawnedprojectiles( newstruct )
@@ -458,7 +458,7 @@ function manageworldspawnedprojectiles( newstruct )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1098
 // Size: 0xbb
 function getxmike109ammotype( weapon )
@@ -486,7 +486,7 @@ function getxmike109ammotype( weapon )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x115b
 // Size: 0x4a
 function getxmike109impactfunc( ammotype )
@@ -503,7 +503,7 @@ function getxmike109impactfunc( ammotype )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x11ad
 // Size: 0x136
 function shouldreflect( surfacetype, ammotype, hitent, hitentpart, surfacenormal, bulletdir )
@@ -574,7 +574,7 @@ function shouldreflect( surfacetype, ammotype, hitent, hitentpart, surfacenormal
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x12eb
 // Size: 0xed
 function reflectprojectile( surfacenormal, bulletdir, impactpos, isgrenade )
@@ -612,7 +612,7 @@ function reflectprojectile( surfacenormal, bulletdir, impactpos, isgrenade )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e1
 // Size: 0x3f, Type: bool
 function shoulddeleteimmediately( hitent )
@@ -631,7 +631,7 @@ function shoulddeleteimmediately( hitent )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1429
 // Size: 0x21, Type: bool
 function shouldlink( hitent, reflected )
@@ -645,7 +645,7 @@ function shouldlink( hitent, reflected )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1453
 // Size: 0x20, Type: bool
 function is_suicidebomber()
@@ -654,7 +654,7 @@ function is_suicidebomber()
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x147c
 // Size: 0xea
 function linktoent( projectile, hitent, hitentpart )
@@ -701,7 +701,7 @@ function linktoent( projectile, hitent, hitentpart )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x156e
 // Size: 0x29
 function validateprojectileent()
@@ -715,7 +715,7 @@ function validateprojectileent()
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x159f
 // Size: 0x59
 function removestuckenemyondeathordisconnect( hitent )
@@ -737,7 +737,7 @@ function removestuckenemyondeathordisconnect( hitent )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1600
 // Size: 0x49
 function projectileunlinkonnote( hitent )
@@ -762,7 +762,7 @@ function projectileunlinkonnote( hitent )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1651
 // Size: 0x54
 function projectileunlink( launchvec )
@@ -786,7 +786,7 @@ function projectileunlink( launchvec )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16ad
 // Size: 0x2f
 function projectiledeleteonnote( hitent, note )
@@ -803,7 +803,7 @@ function projectiledeleteonnote( hitent, note )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e4
 // Size: 0x26
 function projectiledeletethread()
@@ -817,7 +817,7 @@ function projectiledeletethread()
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1712
 // Size: 0x28
 function issameteamplayer( hitent )
@@ -836,7 +836,7 @@ function issameteamplayer( hitent )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1742
 // Size: 0x28
 function isenemyteamplayer( hitent )
@@ -855,7 +855,7 @@ function isenemyteamplayer( hitent )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1772
 // Size: 0x42, Type: bool
 function issameteamagent( hitent )
@@ -874,7 +874,7 @@ function issameteamagent( hitent )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17bd
 // Size: 0x42, Type: bool
 function isenemyteamagent( hitent )
@@ -893,7 +893,7 @@ function isenemyteamagent( hitent )
 }
 
 // Namespace xmike109 / scripts\cp_mp\xmike109
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1808
 // Size: 0xf1
 function cansticktoent( hitent )

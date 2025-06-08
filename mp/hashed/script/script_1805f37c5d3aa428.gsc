@@ -11,7 +11,7 @@
 #namespace jup_spawner_zombie_abom_s3_rr_unlock;
 
 // Namespace jup_spawner_zombie_abom_s3_rr_unlock / namespace_c6b69b15ed6e1d28
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad
 // Size: 0x173
 function main()
@@ -43,7 +43,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_abom_s3_rr_unlock / namespace_c6b69b15ed6e1d28
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x328
 // Size: 0x57
 function setup_model()
@@ -60,7 +60,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_abom_s3_rr_unlock / namespace_c6b69b15ed6e1d28
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x387
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -69,7 +69,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_abom_s3_rr_unlock / namespace_c6b69b15ed6e1d28
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x398
 // Size: 0x100
 function precache()

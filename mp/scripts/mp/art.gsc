@@ -6,7 +6,7 @@
 /#
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x98
     // Size: 0x4d, Type: dev
     function main()
@@ -22,7 +22,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xed
     // Size: 0x49, Type: dev
     function inittweaks()
@@ -40,7 +40,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x13e
     // Size: 0x8d, Type: dev
     function tweakart()
@@ -73,7 +73,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d3
     // Size: 0x11d, Type: dev
     function tess_init()
@@ -97,7 +97,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x2f8
     // Size: 0x5d, Type: dev
     function tess_set_goal( var_92ad28aede5bf05e, cutoff_falloff, blend_time )
@@ -108,7 +108,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x35d
     // Size: 0x234, Type: dev
     function tess_update()
@@ -147,7 +147,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x599
     // Size: 0xa8, Type: dev
     function dumpsettings()
@@ -175,7 +175,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x649
     // Size: 0x93, Type: dev
     function button_down( btn, btn2 )
@@ -202,7 +202,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6e4
     // Size: 0x168, Type: dev
     function hud_init()
@@ -215,7 +215,8 @@
         alphainc = 0.5 / div;
         alpha = alphainc;
         
-        for (i = 0; i < listsize; i++) {
+        for ( i = 0; i < listsize ; i++ )
+        {
             hudelems[ i ] = _newhudelem();
             hudelems[ i ].location = 0;
             hudelems[ i ].alignx = "<dev string:x12a>";
@@ -250,7 +251,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x854
     // Size: 0x45, Type: dev
     function _newhudelem()
@@ -266,7 +267,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x8a1
     // Size: 0xc1, Type: dev
     function _settext( text )
@@ -289,7 +290,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x96a
     // Size: 0x34, Type: dev
     function _clearalltextafterhudelem()
@@ -306,7 +307,7 @@
     }
 
     // Namespace art / scripts\mp\art
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9a6
     // Size: 0x25, Type: dev
     function function_67bc9d1f5c5c787c()

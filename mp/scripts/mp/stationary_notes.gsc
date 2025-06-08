@@ -12,7 +12,7 @@
 #namespace stationary_notes;
 
 // Namespace stationary_notes / scripts\mp\stationary_notes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23e
 // Size: 0xdd
 function function_d197edbd2618c9d1()
@@ -42,7 +42,7 @@ function function_d197edbd2618c9d1()
 }
 
 // Namespace stationary_notes / scripts\mp\stationary_notes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x323
 // Size: 0x7c
 function function_597067d183e31ed9( loc )
@@ -68,7 +68,7 @@ function function_597067d183e31ed9( loc )
 }
 
 // Namespace stationary_notes / scripts\mp\stationary_notes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a7
 // Size: 0x2a
 function function_466d1fc9a557d7c9( key, noteref )
@@ -77,7 +77,7 @@ function function_466d1fc9a557d7c9( key, noteref )
 }
 
 // Namespace stationary_notes / scripts\mp\stationary_notes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d9
 // Size: 0x50
 function function_793a7b85ffb737d1( noteref )
@@ -94,7 +94,7 @@ function function_793a7b85ffb737d1( noteref )
 }
 
 // Namespace stationary_notes / scripts\mp\stationary_notes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x432
 // Size: 0xe2
 function function_f915120f9b1ad6e( loc )
@@ -123,7 +123,7 @@ function function_f915120f9b1ad6e( loc )
 }
 
 // Namespace stationary_notes / scripts\mp\stationary_notes
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x51c
 // Size: 0x41
 function function_c4a730f3fc3d42f5( instance, part, state, player, var_a5b2c541413aa895, usestring )

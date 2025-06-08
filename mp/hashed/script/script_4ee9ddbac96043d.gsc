@@ -1,5 +1,6 @@
 #using script_100adcc1cc11d2fa;
 #using script_3390b73ac3318fe;
+#using script_3559130ee2bb3a29;
 #using script_485622d93fa7e4cf;
 #using script_6f65366f542f6627;
 #using script_7f9409b703dad400;
@@ -16,8 +17,8 @@
 #namespace namespace_7765eded20782405;
 
 // Namespace namespace_7765eded20782405 / namespace_c20fe7cc65d9c979
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26f
+// Params 0
+// Checksum 0x0, Offset: 0x2b1
 // Size: 0x37
 function function_f4c2323079c53ba9()
 {
@@ -32,8 +33,8 @@ function function_f4c2323079c53ba9()
 }
 
 // Namespace namespace_7765eded20782405 / namespace_c20fe7cc65d9c979
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ae
+// Params 0
+// Checksum 0x0, Offset: 0x2f0
 // Size: 0x88
 function create_portal()
 {
@@ -48,17 +49,27 @@ function create_portal()
 }
 
 // Namespace namespace_7765eded20782405 / namespace_c20fe7cc65d9c979
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x33f
-// Size: 0x30
+// Params 2
+// Checksum 0x0, Offset: 0x381
+// Size: 0x99
 function function_816b580f6517f4fa( interact, player )
 {
+    if ( isdefined( player.team ) && isdefined( player.sessionsquadid ) )
+    {
+        votinginprogress = namespace_af93597583d94051::function_755c94f4a8509b03( player.team, player.sessionsquadid );
+    }
+    
+    if ( istrue( votinginprogress ) )
+    {
+        return { #string:%JUP_OB_S1/RIFT_TOKEN_VOTE_IN_PROGRESS, #type:"HINT_NOBUTTON" };
+    }
+    
     return { #string:%JUP_OB_S1/MISSION_RIFT_ENTRY_HINT, #type:"HINT_BUTTON" };
 }
 
 // Namespace namespace_7765eded20782405 / namespace_c20fe7cc65d9c979
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x378
+// Params 1
+// Checksum 0x0, Offset: 0x423
 // Size: 0xce
 function activate_portal( riftgate )
 {
@@ -78,8 +89,8 @@ function activate_portal( riftgate )
 }
 
 // Namespace namespace_7765eded20782405 / namespace_c20fe7cc65d9c979
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44e
+// Params 0
+// Checksum 0x0, Offset: 0x4f9
 // Size: 0x19
 function function_8b67e03b991ac60f()
 {
@@ -88,8 +99,8 @@ function function_8b67e03b991ac60f()
 }
 
 // Namespace namespace_7765eded20782405 / namespace_c20fe7cc65d9c979
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46f
+// Params 1
+// Checksum 0x0, Offset: 0x51a
 // Size: 0x49
 function function_771cbd84a236e2ba( portalloc )
 {
@@ -106,11 +117,21 @@ function function_771cbd84a236e2ba( portalloc )
 }
 
 // Namespace namespace_7765eded20782405 / namespace_c20fe7cc65d9c979
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c0
-// Size: 0xd5
+// Params 1
+// Checksum 0x0, Offset: 0x56b
+// Size: 0x15d
 function function_eedd40fa46e83c7( player )
 {
+    if ( isdefined( player.team ) && isdefined( player.sessionsquadid ) )
+    {
+        votinginprogress = namespace_af93597583d94051::function_755c94f4a8509b03( player.team, player.sessionsquadid );
+    }
+    
+    if ( istrue( votinginprogress ) )
+    {
+        return;
+    }
+    
     level thread scripts\cp_mp\overlord::playevent( "quest_s1_infil_interact", player getsquadmembers( undefined, 0 ) );
     player_squad = player getsquadmembers( undefined, 0 );
     
@@ -119,7 +140,9 @@ function function_eedd40fa46e83c7( player )
         self disableplayeruse( var_3329887886bd6a4b );
     }
     
+    namespace_af93597583d94051::function_fd5211de155982af( player.team, player.sessionsquadid, 1 );
     namespace_6c57c664b4288f88::function_93c8f90c3bd798c6( player, 30, &function_d7cf952e6f352615 );
+    namespace_af93597583d94051::function_fd5211de155982af( player.team, player.sessionsquadid, 0 );
     
     foreach ( var_3329887886bd6a4b in player_squad )
     {
@@ -128,8 +151,8 @@ function function_eedd40fa46e83c7( player )
 }
 
 // Namespace namespace_7765eded20782405 / namespace_c20fe7cc65d9c979
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x59d
+// Params 1
+// Checksum 0x0, Offset: 0x6d0
 // Size: 0x14
 function function_dd50de34ad9f5b2f( player )
 {
@@ -137,8 +160,8 @@ function function_dd50de34ad9f5b2f( player )
 }
 
 // Namespace namespace_7765eded20782405 / namespace_c20fe7cc65d9c979
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b9
+// Params 1
+// Checksum 0x0, Offset: 0x6ec
 // Size: 0x1de
 function function_d7cf952e6f352615( player )
 {

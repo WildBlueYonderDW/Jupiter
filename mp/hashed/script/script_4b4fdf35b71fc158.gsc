@@ -6,8 +6,8 @@
 #namespace namespace_c8f50c27f5dd5ed8;
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b9
+// Params 0
+// Checksum 0x0, Offset: 0x1ba
 // Size: 0xd9
 function function_b60c68caa2f279ab()
 {
@@ -26,8 +26,8 @@ function function_b60c68caa2f279ab()
 }
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29a
+// Params 1
+// Checksum 0x0, Offset: 0x29b
 // Size: 0xd5
 function function_32e0e65cc21dd2fe( itembundlename )
 {
@@ -40,8 +40,8 @@ function function_32e0e65cc21dd2fe( itembundlename )
 }
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x377
+// Params 4
+// Checksum 0x0, Offset: 0x378
 // Size: 0x25, Type: bool
 function function_794ffcdb7828ea7a( itembundle, item, auto_use, var_18fc734ec7194ede )
 {
@@ -49,8 +49,8 @@ function function_794ffcdb7828ea7a( itembundle, item, auto_use, var_18fc734ec719
 }
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a5
+// Params 3
+// Checksum 0x0, Offset: 0x3a6
 // Size: 0x10d
 function use_currency( itembundle, item, auto_use )
 {
@@ -81,8 +81,8 @@ function use_currency( itembundle, item, auto_use )
 }
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bb
+// Params 0
+// Checksum 0x0, Offset: 0x4bc
 // Size: 0x5a
 function get_currency()
 {
@@ -100,8 +100,8 @@ function get_currency()
 }
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x51e
+// Params 1
+// Checksum 0x0, Offset: 0x51f
 // Size: 0x70
 function remove_currency( quantity )
 {
@@ -114,8 +114,8 @@ function remove_currency( quantity )
 }
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x597
+// Params 5
+// Checksum 0x0, Offset: 0x598
 // Size: 0x16f
 function drop_currency( itembundle, count, droporigin, dropangles, overridelifetime )
 {
@@ -151,8 +151,8 @@ function drop_currency( itembundle, count, droporigin, dropangles, overridelifet
 }
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x70f
+// Params 1
+// Checksum 0x0, Offset: 0x710
 // Size: 0xab
 function function_3bc86b6f6e18eea7( params )
 {
@@ -173,8 +173,8 @@ function function_3bc86b6f6e18eea7( params )
 }
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c2
+// Params 1
+// Checksum 0x0, Offset: 0x7c3
 // Size: 0xcc
 function function_aba001929fc2df47( params )
 {
@@ -203,8 +203,8 @@ function function_aba001929fc2df47( params )
 }
 
 // Namespace namespace_c8f50c27f5dd5ed8 / namespace_990cd49f5c79b158
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x896
+// Params 1
+// Checksum 0x0, Offset: 0x897
 // Size: 0x21d
 function watch_vehicle_overlap_essence( vehicle )
 {
@@ -240,7 +240,8 @@ function watch_vehicle_overlap_essence( vehicle )
             collision = 1;
             var_abef6236abf0cefb = scriptable.origin - vehicle_midpoint;
             
-            for (i = 0; i <= 2; i++) {
+            for ( i = 0; i <= 2 ; i++ )
+            {
                 var_9ca188f217947e12 = abs( vectordot( var_8c26ad19a0970e6d[ i ], var_abef6236abf0cefb ) );
                 
                 if ( var_9ca188f217947e12 > var_15877ef521e5cb07[ i ] )

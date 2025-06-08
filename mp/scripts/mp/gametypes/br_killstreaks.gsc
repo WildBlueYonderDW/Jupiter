@@ -14,7 +14,7 @@
 #namespace br_killstreaks;
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x302
 // Size: 0x1b
 function init()
@@ -23,7 +23,7 @@ function init()
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x325
 // Size: 0xd, Type: bool
 function playercanpickupkillstreak()
@@ -32,7 +32,7 @@ function playercanpickupkillstreak()
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33b
 // Size: 0x58
 function takekillstreakpickup( pickupent )
@@ -45,7 +45,7 @@ function takekillstreakpickup( pickupent )
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39b
 // Size: 0xe2
 function playerkillstreakhud( streakname )
@@ -60,7 +60,7 @@ function playerkillstreakhud( streakname )
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x485
 // Size: 0x28
 function playergivetriggerweapon()
@@ -71,7 +71,7 @@ function playergivetriggerweapon()
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b5
 // Size: 0x62
 function playerhandlekillstreak( gamestring )
@@ -95,7 +95,7 @@ function playerhandlekillstreak( gamestring )
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51f
 // Size: 0x3b, Type: bool
 function playertriggerkillstreak()
@@ -111,7 +111,7 @@ function playertriggerkillstreak()
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x563
 // Size: 0x50
 function playerremovekillstreak()
@@ -131,7 +131,7 @@ function playerremovekillstreak()
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5bb
 // Size: 0x7a
 function function_90e0f83e97306bff( players, notifytype, timeoutoverride )
@@ -148,7 +148,7 @@ function function_90e0f83e97306bff( players, notifytype, timeoutoverride )
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x63d
 // Size: 0x1b4
 function dangernotifyplayer( player, notifytype, timeoutoverride, isfriendlyplayer )
@@ -226,7 +226,7 @@ function dangernotifyplayer( player, notifytype, timeoutoverride, isfriendlyplay
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f9
 // Size: 0x55
 function dangernotifyresetforplayer( player, timeoutoverride )
@@ -244,7 +244,7 @@ function dangernotifyresetforplayer( player, timeoutoverride )
 }
 
 // Namespace br_killstreaks / scripts\mp\gametypes\br_killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x856
 // Size: 0x6b
 function watchdangerresetaction( player, playerid, action, timeout )

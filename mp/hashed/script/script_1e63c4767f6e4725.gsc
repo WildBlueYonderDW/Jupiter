@@ -102,7 +102,8 @@ function private lc_expand( start_point, count_left, params )
     
     filtered_targets = sortbydistance( filtered_targets, start_point );
     
-    for (i = 0; i < var_ec235e528a1b6682; i++) {
+    for ( i = 0; i < var_ec235e528a1b6682 ; i++ )
+    {
         level thread lightning_chain::function_ba46a0d1e783a686( start_point, filtered_targets[ i ], params );
     }
     
@@ -294,7 +295,8 @@ function private lc_do_tick_damage( params, duration )
     params.var_8de885f6fab113ba = 0;
     var_885efccb799e30cc = int( ceil( lc_damage / total_ticks ) );
     
-    for (tick = 0; tick < total_ticks; tick++) {
+    for ( tick = 0; tick < total_ticks ; tick++ )
+    {
         if ( tick + 1 == total_ticks )
         {
             var_885efccb799e30cc = lc_damage - total_damage;

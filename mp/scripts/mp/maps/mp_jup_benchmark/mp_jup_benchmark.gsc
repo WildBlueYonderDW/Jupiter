@@ -46,7 +46,7 @@ function private function_f6c2f942cbce9169()
 }
 
 // Namespace mp_jup_benchmark / scripts\mp\maps\mp_jup_benchmark\mp_jup_benchmark
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xebd
 // Size: 0x1d3
 function main()
@@ -90,7 +90,8 @@ function main()
     {
         var_3739d740ec871550 = zone_info[ 0 ].duration_seconds;
         
-        for (i = 1; i < zone_info.size; i++) {
+        for ( i = 1; i < zone_info.size ; i++ )
+        {
             var_3739d740ec871550 = var_3739d740ec871550 << 5 | zone_info[ i ].duration_seconds;
         }
         
@@ -192,7 +193,8 @@ function private function_83b40bc68a15eb7c()
                 var_128347c669b00c0d++;
             }
             
-            for (j = 0; j < struct_array.size; j++) {
+            for ( j = 0; j < struct_array.size ; j++ )
+            {
                 struct = struct_array[ j ];
                 
                 if ( j + 1 < struct_array.size )
@@ -278,9 +280,9 @@ function private initdvars()
     }
     
     setdvar( @"hash_c11db9baa9e5bc9b", 1 );
-    setdvar( @"hash_c55dc89ef275cdaa", 1 );
+    setdvar( @"scr_skip_infils", 1 );
     setdvar( @"hash_c653d32c30815d2b", 0 );
-    setdvar( @"hash_704afe6f6c582ee0", 0 );
+    setdvar( @"scr_game_matchstarttime", 0 );
     setdvar( @"hash_94af58bec500b3b9", 1 );
     setdvar( @"hash_2a4f08bc79265550", 1 );
     setdvar( @"player_sustainammo", 1 );
@@ -486,7 +488,7 @@ function private function_45d9f7f1ca6bd8dd( player )
     /#
         iprintlnbold( "<dev string:x16d>" );
         adddebugcommand( "<dev string:x1ce>" );
-        setdevdvar( @"hash_b1f216df6049c46a", 0 );
+        setdevdvar( @"scr_devchangetimelimit", 0 );
         setdvar( @"hash_aff3efc76e4dfeb2", 0 );
         namespace_5d1a752b8be8c9e4::function_3f766cec506a0862( %"hash_55b1316b0c9bbe85", 0 );
         thread namespace_6c0bcb025e487cb4::function_f178ffb3b7e8f054( player );
@@ -807,7 +809,8 @@ function private function_4f89e05a88128c9( player )
     player endon( "death_or_disconnect" );
     zone_info = function_f6c2f942cbce9169();
     
-    for (i = 0; i < zone_info.size; i++) {
+    for ( i = 0; i < zone_info.size ; i++ )
+    {
         if ( isdefined( zone_info[ i ].var_5d3f1f6ae5e71bc6 ) )
         {
             thread [[ zone_info[ i ].var_5d3f1f6ae5e71bc6 ]]( zone_info[ i ].duration_seconds, player );
@@ -1299,7 +1302,8 @@ function private spawnhelicopters( chopper_speed, var_9a385189e17648d7, var_cccd
     direction_vector = vectornormalize( var_cccda3070a0fe6b6 - var_9a385189e17648d7 );
     starting_angles = generateaxisanglesfromforwardvector( direction_vector, ( 0, 0, 1 ) );
     
-    for (i = 0; i < var_178deecd85fa4021; i++) {
+    for ( i = 0; i < var_178deecd85fa4021 ; i++ )
+    {
         var_ccd3e6f1fa89f0eb = var_963fa64a0c086512 * i;
         var_e634d026ea7a8691 = var_9a385189e17648d7 + ( direction_vector[ 0 ] + var_ccd3e6f1fa89f0eb, direction_vector[ 1 ] + var_ccd3e6f1fa89f0eb, var_9a385189e17648d7[ 2 ] );
         chopper = spawnvehicle( "veh9_mil_air_heli_ahotel64_mp", "apache_spawner", "veh_apache_mp_phys", var_e634d026ea7a8691, starting_angles );
@@ -1351,7 +1355,8 @@ function private function_f8a56971cf3264c1( start_position, end_position, var_d9
             var_a24ff953682e3b2e = var_d9ca98eb73e09c8f.size;
         }
         
-        for (i = 0; i < var_a24ff953682e3b2e; i++) {
+        for ( i = 0; i < var_a24ff953682e3b2e ; i++ )
+        {
             turret shootturret( undefined, 6 );
             
             if ( !playsound )
@@ -1511,7 +1516,8 @@ function private function_e82a6af3d2195354( player )
     radiusdamage( ( 386, 1973, 67 ), 100, 100, 100, player, "MOD_EXPLOSIVE", "c4_mp" );
     wait 0.5;
     
-    for (i = 0; i < 2; i++) {
+    for ( i = 0; i < 2 ; i++ )
+    {
         player launchgrenade( "semtex_mp", ( -974, 2148, -160 ), ( 0, 0, 0 ), 0.05 );
         wait 0.1;
     }
@@ -1786,7 +1792,8 @@ function private function_c0af2b7def50dcc7()
         
         fprintln( fileid, "<dev string:x68b>" );
         
-        for (i = 0; i < amount; i++) {
+        for ( i = 0; i < amount ; i++ )
+        {
             var_1855726eba4efd75 = ( randomfloatrange( abs( spread ) * -1, abs( spread ) ), randomfloatrange( abs( spread ) * -1, abs( spread ) ), randomfloatrange( abs( spread ) * -1, abs( spread ) ) );
             fprintln( fileid, "<dev string:x6eb>" + var_1855726eba4efd75[ 0 ] + "<dev string:x6f1>" + var_1855726eba4efd75[ 1 ] + "<dev string:x6f1>" + var_1855726eba4efd75[ 2 ] + "<dev string:x6f7>" );
         }

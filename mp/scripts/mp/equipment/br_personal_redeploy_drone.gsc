@@ -30,7 +30,7 @@ function autoexec main()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f0
 // Size: 0x18
 function init_when_ready()
@@ -41,7 +41,7 @@ function init_when_ready()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x710
 // Size: 0x31
 function init()
@@ -53,7 +53,7 @@ function init()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x749
 // Size: 0x4d
 function init_dev_gui()
@@ -69,7 +69,7 @@ function init_dev_gui()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79e
 // Size: 0x1e2
 function initanims()
@@ -95,7 +95,7 @@ function initanims()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x988
 // Size: 0x35d
 function init_variables()
@@ -129,7 +129,7 @@ function init_variables()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xced
 // Size: 0x29, Type: bool
 function function_1798be0772912ae0()
@@ -146,7 +146,7 @@ function function_1798be0772912ae0()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd1f
 // Size: 0x257
 function function_7283ccb271e018bf()
@@ -224,7 +224,7 @@ function function_7283ccb271e018bf()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf7e
 // Size: 0x214, Type: bool
 function function_e339e9564fb310bf()
@@ -279,7 +279,7 @@ function function_e339e9564fb310bf()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x119b
 // Size: 0x3b
 function function_e78d15128f9493ec( string, iserror )
@@ -295,7 +295,7 @@ function function_e78d15128f9493ec( string, iserror )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11de
 // Size: 0x7d
 function function_72df25da8f8ab5ad( drone )
@@ -321,7 +321,7 @@ function function_72df25da8f8ab5ad( drone )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1264
 // Size: 0x1d
 function function_b3116874a755bacb( time )
@@ -332,7 +332,7 @@ function function_b3116874a755bacb( time )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1289
 // Size: 0xd4
 function function_2d7daba228b34e42()
@@ -354,7 +354,7 @@ function function_2d7daba228b34e42()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1366
 // Size: 0xc5
 function function_4975171080daff49()
@@ -370,7 +370,7 @@ function function_4975171080daff49()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1433
 // Size: 0x109
 function function_84536c668d8bafe3( einflictor, damage, smeansofdeath, objweapon )
@@ -407,7 +407,7 @@ function function_84536c668d8bafe3( einflictor, damage, smeansofdeath, objweapon
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1544
 // Size: 0xc9
 function function_6646a5b323817f55( drone )
@@ -435,7 +435,7 @@ function function_6646a5b323817f55( drone )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1615
 // Size: 0x38f
 function function_e4b9fa2e443d43bb( drone, movenode )
@@ -518,7 +518,7 @@ function function_e4b9fa2e443d43bb( drone, movenode )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19ac
 // Size: 0x5c
 function function_b94eb4a66fceae77( time )
@@ -538,7 +538,7 @@ function function_b94eb4a66fceae77( time )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a10
 // Size: 0x164
 function function_d2f06d117f39b7a5( var_694fdb0983e994e7, totaltimeremaining, player )
@@ -572,7 +572,7 @@ function function_d2f06d117f39b7a5( var_694fdb0983e994e7, totaltimeremaining, pl
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b7d
 // Size: 0x1f8
 function function_3dd876c5ec4242e4( drone )
@@ -643,7 +643,7 @@ function function_3dd876c5ec4242e4( drone )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d7d
 // Size: 0x25
 function function_3829486573c64cef( var_75b6bbe9a2cafb35, waittime )
@@ -655,7 +655,7 @@ function function_3829486573c64cef( var_75b6bbe9a2cafb35, waittime )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1daa
 // Size: 0x13c
 function function_4d20ccb0d953c558( drone )
@@ -694,7 +694,7 @@ function function_4d20ccb0d953c558( drone )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1eee
 // Size: 0x38
 function function_1e44eab5a1bd4890( player, lockout )
@@ -709,7 +709,7 @@ function function_1e44eab5a1bd4890( player, lockout )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f2e
 // Size: 0x28
 function allowstances( player, lockout )
@@ -722,7 +722,7 @@ function allowstances( player, lockout )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f5e
 // Size: 0x11d
 function function_60f4517c89229b( player )
@@ -732,7 +732,8 @@ function function_60f4517c89229b( player )
     player endon( "death_or_disconnect" );
     launchvector = ( 0, 0, 0 );
     
-    for (flag = 0; !flag && isdefined( player ); flag = 1) {
+    for ( flag = 0; !flag && isdefined( player ) ; flag = 1 )
+    {
         prevorigin = player.origin;
         wait 0.05;
         launchvector = ( player.origin - prevorigin ) * 20;
@@ -767,7 +768,7 @@ function function_60f4517c89229b( player )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2083
 // Size: 0xed
 function function_289028d1d029beea( player )
@@ -790,7 +791,7 @@ function function_289028d1d029beea( player )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2179
 // Size: 0x14
 function function_dc2e55a1917188aa( player )
@@ -799,7 +800,7 @@ function function_dc2e55a1917188aa( player )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2195
 // Size: 0x28
 function function_a97e8b060f3de437( player )
@@ -810,7 +811,7 @@ function function_a97e8b060f3de437( player )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21c5
 // Size: 0x3f
 function function_9f5e1de6c65ab230( player, waittime )
@@ -825,7 +826,7 @@ function function_9f5e1de6c65ab230( player, waittime )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x220c
 // Size: 0x4f
 function setusetime( usetime )
@@ -837,7 +838,7 @@ function setusetime( usetime )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2263
 // Size: 0x46
 function function_ebf1c3baec50725a()
@@ -850,7 +851,7 @@ function function_ebf1c3baec50725a()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22b2
 // Size: 0x21
 function function_29e6b46ab07b2eff()
@@ -861,7 +862,7 @@ function function_29e6b46ab07b2eff()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22db
 // Size: 0x69
 function function_e4420426a0d7adf4( grenade )
@@ -878,7 +879,7 @@ function function_e4420426a0d7adf4( grenade )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x234c
 // Size: 0x82
 function function_19a9f4ecc201f1a9( instantexplode )
@@ -905,7 +906,7 @@ function function_19a9f4ecc201f1a9( instantexplode )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23d6
 // Size: 0x7b
 function function_98b959294d2558cb( ally, grenade )
@@ -934,7 +935,7 @@ function function_98b959294d2558cb( ally, grenade )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2459
 // Size: 0x9e
 function function_90faf31a7d15329b( ally, icon )
@@ -963,7 +964,7 @@ function function_90faf31a7d15329b( ally, icon )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24ff
 // Size: 0x21
 function function_aa3baee5bf078d29()
@@ -975,7 +976,7 @@ function function_aa3baee5bf078d29()
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2528
 // Size: 0x1f
 function function_b8e3d75435404865( soundentity )
@@ -989,7 +990,7 @@ function function_b8e3d75435404865( soundentity )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x254f
 // Size: 0x60
 function function_785eff769617c70b( player )
@@ -1006,7 +1007,7 @@ function function_785eff769617c70b( player )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25b7
 // Size: 0x5e
 function function_6d77b16d46e949e1( skiptoexplosion )
@@ -1022,7 +1023,7 @@ function function_6d77b16d46e949e1( skiptoexplosion )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x261d
 // Size: 0x5c
 function function_2c67f15bcd9c7f6a( player )
@@ -1042,7 +1043,7 @@ function function_2c67f15bcd9c7f6a( player )
 }
 
 // Namespace br_personal_redeploy_drone / scripts\mp\equipment\br_personal_redeploy_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2681
 // Size: 0x22, Type: bool
 function function_5e020010d5658ebe( player )

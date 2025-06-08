@@ -5,7 +5,7 @@
 #namespace assets;
 
 // Namespace assets / scripts\aitypes\assets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67e
 // Size: 0x2
 function main()
@@ -14,7 +14,7 @@ function main()
 }
 
 // Namespace assets / scripts\aitypes\assets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x688
 // Size: 0x153
 function soldier()
@@ -42,7 +42,7 @@ function soldier()
 }
 
 // Namespace assets / scripts\aitypes\assets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e3
 // Size: 0x2
 function civilian()
@@ -51,7 +51,7 @@ function civilian()
 }
 
 // Namespace assets / scripts\aitypes\assets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ed
 // Size: 0x2
 function dog()
@@ -60,7 +60,7 @@ function dog()
 }
 
 // Namespace assets / scripts\aitypes\assets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f7
 // Size: 0x81
 function juggernaut()
@@ -80,7 +80,7 @@ function juggernaut()
 }
 
 // Namespace assets / scripts\aitypes\assets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x880
 // Size: 0x9a
 function suicidebomber()
@@ -105,7 +105,7 @@ function suicidebomber()
 }
 
 // Namespace assets / scripts\aitypes\assets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x922
 // Size: 0x1c
 function zombie()
@@ -117,7 +117,7 @@ function zombie()
 }
 
 // Namespace assets / scripts\aitypes\assets
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x946
 // Size: 0x73
 function function_89bd0a0f1b23fe8d( type )
@@ -142,7 +142,7 @@ function function_89bd0a0f1b23fe8d( type )
 }
 
 // Namespace assets / scripts\aitypes\assets
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9c1
 // Size: 0x25, Type: bool
 function function_fca40a005d4059d6( type )
@@ -151,7 +151,7 @@ function function_fca40a005d4059d6( type )
 }
 
 // Namespace assets / scripts\aitypes\assets
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ef
 // Size: 0xcb
 function function_7d79a3fa97a020cc()

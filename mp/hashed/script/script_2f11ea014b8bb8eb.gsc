@@ -31,7 +31,7 @@
 #namespace ob_laststand;
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48f
 // Size: 0x247
 function function_77d7e4f0ae4fa9be()
@@ -73,7 +73,7 @@ function function_77d7e4f0ae4fa9be()
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x6de
 // Size: 0x6d, Type: bool
 function function_e3a66691f547f69d( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration )
@@ -87,7 +87,7 @@ function function_e3a66691f547f69d( einflictor, attacker, idamage, smeansofdeath
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x754
 // Size: 0x13
 function on_player_connect( params )
@@ -96,7 +96,7 @@ function on_player_connect( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76f
 // Size: 0x39
 function on_player_disconnect( params )
@@ -111,7 +111,7 @@ function on_player_disconnect( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b0
 // Size: 0x12
 function function_baa9acb14150c174()
@@ -121,7 +121,7 @@ function function_baa9acb14150c174()
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7cb
 // Size: 0xb6
 function function_dbc4f2e956dc67dd()
@@ -151,7 +151,7 @@ function function_dbc4f2e956dc67dd()
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x889
 // Size: 0x1e7
 function check_self_revive_for_hotjoin( params )
@@ -213,7 +213,7 @@ function check_self_revive_for_hotjoin( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa78
 // Size: 0xde
 function function_8d9342e5f3da44a()
@@ -260,7 +260,7 @@ function function_8d9342e5f3da44a()
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb5e
 // Size: 0x121
 function function_133892d59b149cce()
@@ -300,7 +300,7 @@ function function_133892d59b149cce()
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc87
 // Size: 0xa4
 function on_player_bleedout( params )
@@ -325,7 +325,7 @@ function on_player_bleedout( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd33
 // Size: 0x92
 function on_player_death( params )
@@ -346,7 +346,7 @@ function on_player_death( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdcd
 // Size: 0x30
 function function_21773d54ce6837b2( corpse, animduration )
@@ -358,7 +358,7 @@ function function_21773d54ce6837b2( corpse, animduration )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe05
 // Size: 0xb8, Type: bool
 function function_be83ba972fd71c80( deathdata, finaldeath )
@@ -377,7 +377,7 @@ function function_be83ba972fd71c80( deathdata, finaldeath )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xec6
 // Size: 0x21
 function function_6040f7fbe4b91c73()
@@ -388,7 +388,7 @@ function function_6040f7fbe4b91c73()
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeef
 // Size: 0x18c
 function on_player_spawn( params )
@@ -449,7 +449,7 @@ function on_player_spawn( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1083
 // Size: 0xf1
 function on_player_laststand( params )
@@ -478,7 +478,7 @@ function on_player_laststand( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x117c
 // Size: 0x57
 function on_player_revived( params )
@@ -491,7 +491,7 @@ function on_player_revived( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11db
 // Size: 0x91
 function function_6cc14e0f7058fbf4( params )
@@ -509,7 +509,7 @@ function function_6cc14e0f7058fbf4( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1274
 // Size: 0x299
 function function_1867a137f8974cd9()
@@ -578,7 +578,7 @@ function function_1867a137f8974cd9()
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1515
 // Size: 0x1d
 function function_d564d036834cc766()
@@ -588,7 +588,7 @@ function function_d564d036834cc766()
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x153a
 // Size: 0x9e
 function function_59bb85cf2b5af12f( params )
@@ -608,7 +608,7 @@ function function_59bb85cf2b5af12f( params )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15e0
 // Size: 0x14
 function function_144b0ea22640fc8e( revived )
@@ -718,7 +718,7 @@ function private ob_laststand_alive_check( revived )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18e0
 // Size: 0x8e, Type: bool
 function function_f3645fa4bfb45a97( player )
@@ -747,7 +747,7 @@ function function_f3645fa4bfb45a97( player )
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1977
 // Size: 0x143
 function function_493ca4f5db3e7909( purchaseindex )
@@ -792,7 +792,7 @@ function private function_8868d59e008df32d()
 }
 
 // Namespace ob_laststand / namespace_b3fcba693d3adc37
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1aff
 // Size: 0x22c
 function function_ef6adc9492d03ef( v_start )

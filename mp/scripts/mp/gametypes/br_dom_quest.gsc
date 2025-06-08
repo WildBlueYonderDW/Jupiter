@@ -19,7 +19,7 @@
 #namespace br_dom_quest;
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67f
 // Size: 0xf1
 function getcontractdata( data )
@@ -37,7 +37,7 @@ function getcontractdata( data )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x778
 // Size: 0x30, Type: bool
 function function_9088ffe8cb64311f()
@@ -54,7 +54,7 @@ function function_9088ffe8cb64311f()
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b1
 // Size: 0x144
 function function_e387efb61ad86b48()
@@ -94,7 +94,7 @@ function function_e387efb61ad86b48()
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8fd
 // Size: 0x4f
 function function_34a295960f3d086( success )
@@ -107,7 +107,7 @@ function function_34a295960f3d086( success )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x954
 // Size: 0x75
 function function_a859560671de3158( time )
@@ -123,7 +123,7 @@ function function_a859560671de3158( time )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d1
 // Size: 0x166
 function function_8baad4bd99e782a3()
@@ -192,7 +192,7 @@ function function_8baad4bd99e782a3()
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb40
 // Size: 0x1e3
 function function_a5ecbc99b54d31da( placement )
@@ -228,7 +228,7 @@ function function_a5ecbc99b54d31da( placement )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd2b
 // Size: 0xb1
 function domflagupdateicons()
@@ -246,7 +246,7 @@ function domflagupdateicons()
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde4
 // Size: 0x25
 function domflag_hideiconfromplayer( player )
@@ -255,7 +255,7 @@ function domflag_hideiconfromplayer( player )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe11
 // Size: 0x25
 function domflag_showicontoplayer( player )
@@ -264,7 +264,7 @@ function domflag_showicontoplayer( player )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe3e
 // Size: 0x11
 function domflagupdateiconsframeend()
@@ -275,7 +275,7 @@ function domflagupdateiconsframeend()
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe57
 // Size: 0x123
 function deletedomflaggameobject()
@@ -306,7 +306,7 @@ function deletedomflaggameobject()
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf82
 // Size: 0xf
 function gameobjectreleaseid_delayed()
@@ -316,7 +316,7 @@ function gameobjectreleaseid_delayed()
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf99
 // Size: 0x1c3
 function setupdom()
@@ -352,7 +352,7 @@ function setupdom()
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1164
 // Size: 0x69
 function _setdomflagiconinfo( name, colors, string, pulses )
@@ -365,7 +365,7 @@ function _setdomflagiconinfo( name, colors, string, pulses )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x11d5
 // Size: 0x6b
 function domflag_onuseupdate( team, progress, change, capplayer )
@@ -382,7 +382,7 @@ function domflag_onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1248
 // Size: 0x14d
 function domflag_onbeginuse( credit_player )
@@ -412,7 +412,7 @@ function domflag_onbeginuse( credit_player )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x139d
 // Size: 0x1e9
 function domflag_onuse( credit_player )
@@ -443,7 +443,7 @@ function domflag_onuse( credit_player )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x158e
 // Size: 0x25
 function domflag_onenduse( team, player, success )
@@ -452,7 +452,7 @@ function domflag_onenduse( team, player, success )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15bb
 // Size: 0x8f
 function play_spotrep_capture_sfx( progress, team )
@@ -473,7 +473,7 @@ function play_spotrep_capture_sfx( progress, team )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1652
 // Size: 0x9a
 function domflag_setdomscriptablepartstate( part, state, statemod )
@@ -504,7 +504,7 @@ function domflag_setdomscriptablepartstate( part, state, statemod )
 }
 
 // Namespace br_dom_quest / scripts\mp\gametypes\br_dom_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16f4
 // Size: 0x44, Type: bool
 function domflag_usecondition( player )

@@ -3,7 +3,7 @@
 #namespace uav_manager;
 
 // Namespace uav_manager / namespace_4ad0bd66eaa05ae7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc
 // Size: 0x1e
 function function_360128ec8c9d243()
@@ -14,7 +14,7 @@ function function_360128ec8c9d243()
 }
 
 // Namespace uav_manager / namespace_4ad0bd66eaa05ae7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe2
 // Size: 0x54
 function function_8371656cac31e3e5()
@@ -35,7 +35,7 @@ function function_8371656cac31e3e5()
 }
 
 // Namespace uav_manager / namespace_4ad0bd66eaa05ae7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13e
 // Size: 0x5e
 function function_ee39a757e5ab8fbe()
@@ -61,7 +61,7 @@ function function_ee39a757e5ab8fbe()
 }
 
 // Namespace uav_manager / namespace_4ad0bd66eaa05ae7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a4
 // Size: 0xe, Type: bool
 function function_296623d26e11725()

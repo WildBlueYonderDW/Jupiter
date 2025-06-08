@@ -24,7 +24,7 @@ function autoexec main()
 }
 
 // Namespace powerup_zombie_legs / namespace_6aa38109e829c5b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x191
 // Size: 0x18
 function init()
@@ -33,7 +33,7 @@ function init()
 }
 
 // Namespace powerup_zombie_legs / namespace_6aa38109e829c5b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b1
 // Size: 0x71
 function powerup_grab( str_powerup, ent_powerup )
@@ -47,7 +47,7 @@ function powerup_grab( str_powerup, ent_powerup )
 }
 
 // Namespace powerup_zombie_legs / namespace_6aa38109e829c5b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22a
 // Size: 0x4, Type: bool
 function function_3be4188976ad0fe9()
@@ -56,7 +56,7 @@ function function_3be4188976ad0fe9()
 }
 
 // Namespace powerup_zombie_legs / namespace_6aa38109e829c5b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x237
 // Size: 0x86
 function powerup_apply_zombie_legs( n_lifetime )
@@ -84,7 +84,7 @@ function powerup_apply_zombie_legs( n_lifetime )
 }
 
 // Namespace powerup_zombie_legs / namespace_6aa38109e829c5b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c5
 // Size: 0x20
 function powerup_remove_zombie_legs()
@@ -95,7 +95,7 @@ function powerup_remove_zombie_legs()
 }
 
 // Namespace powerup_zombie_legs / namespace_6aa38109e829c5b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ed
 // Size: 0x33
 function function_569121dd947653d1()
@@ -113,7 +113,7 @@ function function_569121dd947653d1()
 /#
 
     // Namespace powerup_zombie_legs / namespace_6aa38109e829c5b
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x328
     // Size: 0x5c, Type: dev
     function init_debug()

@@ -8,7 +8,7 @@
 #namespace namespace_cf0b338237e9bb2f;
 
 // Namespace namespace_cf0b338237e9bb2f / namespace_9ea631c76b6bef2c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x128
 // Size: 0x83
 function init( var_5179c48492d1d2c2 )
@@ -25,7 +25,7 @@ function init( var_5179c48492d1d2c2 )
 }
 
 // Namespace namespace_cf0b338237e9bb2f / namespace_9ea631c76b6bef2c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b3
 // Size: 0x1f0
 function function_78a99f6fa6a3f5de( var_5179c48492d1d2c2 )
@@ -73,7 +73,7 @@ function function_78a99f6fa6a3f5de( var_5179c48492d1d2c2 )
 }
 
 // Namespace namespace_cf0b338237e9bb2f / namespace_9ea631c76b6bef2c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ab
 // Size: 0xd5
 function function_9789f9ab1fa68a93( projectile )

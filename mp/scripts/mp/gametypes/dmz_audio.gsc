@@ -26,7 +26,7 @@ function private function_7e508409c4935112( music )
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x201
 // Size: 0x2d
 function function_9941dad3d3d51468( var_6b9a0dbbf039dece )
@@ -47,7 +47,7 @@ function function_9941dad3d3d51468( var_6b9a0dbbf039dece )
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x237
 // Size: 0xa0
 function function_caeaf68ab0e87565( players, music, delaytime, var_6b9a0dbbf039dece )
@@ -71,7 +71,7 @@ function function_caeaf68ab0e87565( players, music, delaytime, var_6b9a0dbbf039d
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2df
 // Size: 0x9f
 function function_c1fd3441ccfba6f8( teamname, music, delaytime, var_6b9a0dbbf039dece )
@@ -95,7 +95,7 @@ function function_c1fd3441ccfba6f8( teamname, music, delaytime, var_6b9a0dbbf039
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x386
 // Size: 0x74
 function function_9b8077b5cd6f43b1( teams, music )
@@ -109,7 +109,7 @@ function function_9b8077b5cd6f43b1( teams, music )
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x402
 // Size: 0xb5
 function function_202ae29f54b67993( teamname, var_6e077719c0efcb61, radius, music, delaytime, var_6b9a0dbbf039dece )
@@ -133,7 +133,7 @@ function function_202ae29f54b67993( teamname, var_6e077719c0efcb61, radius, musi
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4bf
 // Size: 0x14b
 function function_4231b99c9d0e1875( music_target, players, music, delay, var_6b9a0dbbf039dece )
@@ -167,7 +167,7 @@ function function_4231b99c9d0e1875( music_target, players, music, delay, var_6b9
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x612
 // Size: 0x10a
 function function_30f2d27959ca7507( music_target, players, music, delay )
@@ -193,7 +193,7 @@ function function_30f2d27959ca7507( music_target, players, music, delay )
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x724
 // Size: 0x9c
 function function_889b71cbcb02d4e1( music_target, var_6e077719c0efcb61, radius, team, music, delay, var_6b9a0dbbf039dece )
@@ -205,7 +205,7 @@ function function_889b71cbcb02d4e1( music_target, var_6e077719c0efcb61, radius, 
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7c8
 // Size: 0x122
 function function_ae73dbedf54b701f( players, music, delaytime, var_6b9a0dbbf039dece )
@@ -249,7 +249,7 @@ function function_ae73dbedf54b701f( players, music, delaytime, var_6b9a0dbbf039d
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x8f2
 // Size: 0x8d
 function function_5c07a5046a6dc0f4( team_name, var_6e077719c0efcb61, radius, music, delaytime, var_6b9a0dbbf039dece )
@@ -271,7 +271,7 @@ function function_5c07a5046a6dc0f4( team_name, var_6e077719c0efcb61, radius, mus
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x987
 // Size: 0x79
 function function_12bb57e8dd07e939( array )
@@ -294,7 +294,7 @@ function function_12bb57e8dd07e939( array )
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa09
 // Size: 0x5d
 function function_38d3ca2b80804e24( players, origin, radius, team )
@@ -306,7 +306,7 @@ function function_38d3ca2b80804e24( players, origin, radius, team )
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa6f
 // Size: 0x31
 function function_ba92e3ab3234f345( players )
@@ -317,7 +317,7 @@ function function_ba92e3ab3234f345( players )
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xaa9
 // Size: 0x83
 function function_882459b3aa239c4( players, origin, radius, team )
@@ -331,7 +331,7 @@ function function_882459b3aa239c4( players, origin, radius, team )
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb35
 // Size: 0x182
 function function_62ca322dde3ab783( agent, var_e52f572dfadb149f, var_e23b09de2e27ed9 )
@@ -392,7 +392,7 @@ function function_62ca322dde3ab783( agent, var_e52f572dfadb149f, var_e23b09de2e2
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcc0
 // Size: 0x133
 function function_cadc473b3a7d171c( vehicle, var_e52f572dfadb149f, var_e23b09de2e27ed9 )
@@ -446,7 +446,7 @@ function function_cadc473b3a7d171c( vehicle, var_e52f572dfadb149f, var_e23b09de2
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xdfc
 // Size: 0x86
 function function_2d29365e60139df1( ent, var_e52f572dfadb149f, var_e23b09de2e27ed9 )
@@ -474,7 +474,7 @@ function function_2d29365e60139df1( ent, var_e52f572dfadb149f, var_e23b09de2e27e
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe8b
 // Size: 0xf9
 function function_2351f113d5579540( ent )
@@ -508,7 +508,7 @@ function function_2351f113d5579540( ent )
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xf8d
 // Size: 0x416
 function function_b5be3a44077aec21( bossinstance, var_985ae874212b863e, var_e52f572dfadb149f, var_e23b09de2e27ed9, var_6b9a0dbbf039dece )
@@ -614,7 +614,7 @@ function function_b5be3a44077aec21( bossinstance, var_985ae874212b863e, var_e52f
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x13ab
 // Size: 0x104
 function function_73f954808739f7bc( bossinstance, killer, killer_music, var_1ccbc0e90fcc38ca, loser_music, var_d4222fe9c4d26866 )
@@ -639,7 +639,7 @@ function function_73f954808739f7bc( bossinstance, killer, killer_music, var_1ccb
 }
 
 // Namespace dmz_audio / scripts\mp\gametypes\dmz_audio
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14b7
 // Size: 0x9b
 function function_2e4afbf3aeaf31e4( bossinstance, music, music_delay )

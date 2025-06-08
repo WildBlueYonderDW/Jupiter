@@ -23,8 +23,8 @@
 #namespace outofbounds;
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f6
+// Params 2
+// Checksum 0x0, Offset: 0x3f5
 // Size: 0x4a
 function registerentforoob( ent, ref )
 {
@@ -41,8 +41,8 @@ function registerentforoob( ent, ref )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x448
+// Params 1
+// Checksum 0x0, Offset: 0x447
 // Size: 0x16
 function deregisterentforoob( ent )
 {
@@ -50,8 +50,8 @@ function deregisterentforoob( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x466
+// Params 2
+// Checksum 0x0, Offset: 0x465
 // Size: 0x34
 function registeroobentercallback( ref, callback )
 {
@@ -60,8 +60,8 @@ function registeroobentercallback( ref, callback )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a2
+// Params 2
+// Checksum 0x0, Offset: 0x4a1
 // Size: 0x34
 function registeroobexitcallback( ref, callback )
 {
@@ -70,8 +70,8 @@ function registeroobexitcallback( ref, callback )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4de
+// Params 2
+// Checksum 0x0, Offset: 0x4dd
 // Size: 0x34
 function registerooboutoftimecallback( ref, callback )
 {
@@ -80,8 +80,8 @@ function registerooboutoftimecallback( ref, callback )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x51a
+// Params 2
+// Checksum 0x0, Offset: 0x519
 // Size: 0x34
 function registeroobclearcallback( ref, callback )
 {
@@ -90,8 +90,8 @@ function registeroobclearcallback( ref, callback )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x556
+// Params 2
+// Checksum 0x0, Offset: 0x555
 // Size: 0x4e, Type: bool
 function isoob( ent, var_3e36f415f762070e )
 {
@@ -109,8 +109,8 @@ function isoob( ent, var_3e36f415f762070e )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ad
+// Params 1
+// Checksum 0x0, Offset: 0x5ac
 // Size: 0x7a
 function enableoob( ent )
 {
@@ -133,8 +133,8 @@ function enableoob( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x62f
+// Params 1
+// Checksum 0x0, Offset: 0x62e
 // Size: 0xa1
 function disableoob( ent )
 {
@@ -159,8 +159,8 @@ function disableoob( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d8
+// Params 1
+// Checksum 0x0, Offset: 0x6d7
 // Size: 0x28, Type: bool
 function isoobimmune( ent )
 {
@@ -168,8 +168,8 @@ function isoobimmune( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x709
+// Params 1
+// Checksum 0x0, Offset: 0x708
 // Size: 0x6d
 function enableoobimmunity( ent )
 {
@@ -190,8 +190,8 @@ function enableoobimmunity( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x77e
+// Params 1
+// Checksum 0x0, Offset: 0x77d
 // Size: 0x8f
 function disableoobimmunity( ent )
 {
@@ -211,8 +211,8 @@ function disableoobimmunity( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x815
+// Params 2
+// Checksum 0x0, Offset: 0x814
 // Size: 0x1d3
 function clearoob( ent, fromdeath )
 {
@@ -270,8 +270,8 @@ function clearoob( ent, fromdeath )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f0
+// Params 0
+// Checksum 0x0, Offset: 0x9ef
 // Size: 0xa9, Type: bool
 function istouchingoobtrigger()
 {
@@ -307,8 +307,8 @@ function istouchingoobtrigger()
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa2
+// Params 2
+// Checksum 0x0, Offset: 0xaa1
 // Size: 0xdc
 function ispointinoutofbounds( var_863c619037f3ac74, var_da8cec9bce12f9cb )
 {
@@ -344,8 +344,8 @@ function ispointinoutofbounds( var_863c619037f3ac74, var_da8cec9bce12f9cb )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb87
+// Params 0
+// Checksum 0x0, Offset: 0xb86
 // Size: 0x29
 function initoob()
 {
@@ -354,8 +354,8 @@ function initoob()
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb8
+// Params 1
+// Checksum 0x0, Offset: 0xbb7
 // Size: 0x2ec
 function onenteroob( ent )
 {
@@ -432,8 +432,8 @@ function onenteroob( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xeac
+// Params 3
+// Checksum 0x0, Offset: 0xeab
 // Size: 0x1eb
 function onexitoob( ent, fromdeath, fromclear )
 {
@@ -490,8 +490,8 @@ function onexitoob( ent, fromdeath, fromclear )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x109f
+// Params 1
+// Checksum 0x0, Offset: 0x109e
 // Size: 0xc4
 function onooboutoftime( ent )
 {
@@ -531,8 +531,8 @@ function onooboutoftime( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x116b
+// Params 2
+// Checksum 0x0, Offset: 0x116a
 // Size: 0x4e
 function watchooboutoftime( ent, timeleft )
 {
@@ -553,8 +553,8 @@ function watchooboutoftime( ent, timeleft )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c1
+// Params 2
+// Checksum 0x0, Offset: 0x11c0
 // Size: 0x5b
 function watchoobcooldown( ent, timeleft )
 {
@@ -576,8 +576,8 @@ function watchoobcooldown( ent, timeleft )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1224
+// Params 3
+// Checksum 0x0, Offset: 0x1223
 // Size: 0xad
 function playerentercallback( exitnotify, clearnotify, triggertype )
 {
@@ -599,8 +599,8 @@ function playerentercallback( exitnotify, clearnotify, triggertype )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12d9
+// Params 3
+// Checksum 0x0, Offset: 0x12d8
 // Size: 0x58
 function playerexitcallback( fromdeath, fromclear, clearnotify )
 {
@@ -615,8 +615,8 @@ function playerexitcallback( fromdeath, fromclear, clearnotify )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1339
+// Params 2
+// Checksum 0x0, Offset: 0x1338
 // Size: 0x6e
 function playeroutoftimecallback( timeoutendnotify, clearnotify )
 {
@@ -635,8 +635,8 @@ function playeroutoftimecallback( timeoutendnotify, clearnotify )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13af
+// Params 1
+// Checksum 0x0, Offset: 0x13ae
 // Size: 0x25
 function playerclearcallback( clearnotify )
 {
@@ -645,8 +645,8 @@ function playerclearcallback( clearnotify )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13dc
+// Params 2
+// Checksum 0x0, Offset: 0x13db
 // Size: 0xe4
 function playeroutoftimeminefield( timeoutendnotify, clearnotify )
 {
@@ -674,8 +674,8 @@ function playeroutoftimeminefield( timeoutendnotify, clearnotify )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c8
+// Params 3
+// Checksum 0x0, Offset: 0x14c7
 // Size: 0x77, Type: bool
 function playeroutoftimeminefieldinternal( mine, timeoutendnotify, clearnotify )
 {
@@ -699,8 +699,8 @@ function playeroutoftimeminefieldinternal( mine, timeoutendnotify, clearnotify )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1548
+// Params 0
+// Checksum 0x0, Offset: 0x1547
 // Size: 0x45
 function function_39c5bd55494a224b()
 {
@@ -715,8 +715,8 @@ function function_39c5bd55494a224b()
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1595
+// Params 0
+// Checksum 0x0, Offset: 0x1594
 // Size: 0x62
 function checkinvalidoobtriggers()
 {
@@ -730,8 +730,8 @@ function checkinvalidoobtriggers()
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ff
+// Params 3
+// Checksum 0x0, Offset: 0x15fe
 // Size: 0x85
 function killstreakentercallback( exitnotify, clearnotify, triggertype )
 {
@@ -746,8 +746,8 @@ function killstreakentercallback( exitnotify, clearnotify, triggertype )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x168c
+// Params 3
+// Checksum 0x0, Offset: 0x168b
 // Size: 0x60
 function killstreakexitcallback( fromdeath, fromclear, clearnotify )
 {
@@ -759,8 +759,8 @@ function killstreakexitcallback( fromdeath, fromclear, clearnotify )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16f4
+// Params 2
+// Checksum 0x0, Offset: 0x16f3
 // Size: 0x43
 function killstreakoutoftimecallback( timeoutendnotify, clearnotify )
 {
@@ -768,8 +768,8 @@ function killstreakoutoftimecallback( timeoutendnotify, clearnotify )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x173f
+// Params 0
+// Checksum 0x0, Offset: 0x173e
 // Size: 0x47
 function killstreakclearcallback()
 {
@@ -781,8 +781,8 @@ function killstreakclearcallback()
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x178e
+// Params 0
+// Checksum 0x0, Offset: 0x178d
 // Size: 0x46
 function killstreakregisteroobcallbacks()
 {
@@ -793,8 +793,8 @@ function killstreakregisteroobcallbacks()
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17dc
+// Params 0
+// Checksum 0x0, Offset: 0x17db
 // Size: 0xda
 function watchoobtriggers()
 {
@@ -821,8 +821,8 @@ function watchoobtriggers()
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18be
+// Params 1
+// Checksum 0x0, Offset: 0x18bd
 // Size: 0x3f
 function watchoobtrigger( trigger )
 {
@@ -838,8 +838,8 @@ function watchoobtrigger( trigger )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1905
+// Params 1
+// Checksum 0x0, Offset: 0x1904
 // Size: 0x4c
 function watchoobtriggerenter( trigger )
 {
@@ -860,12 +860,17 @@ function watchoobtriggerenter( trigger )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1959
-// Size: 0x5a, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0x1958
+// Size: 0x79, Type: bool
 function function_4badb9b6ac027b93( ent, trigger )
 {
     if ( istrue( trigger.isdisabled ) )
+    {
+        return false;
+    }
+    
+    if ( isdefined( level.var_54d973dccda0ef8b ) && [[ level.var_54d973dccda0ef8b ]]( ent ) )
     {
         return false;
     }
@@ -889,8 +894,8 @@ function function_4badb9b6ac027b93( ent, trigger )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19bc
+// Params 1
+// Checksum 0x0, Offset: 0x19da
 // Size: 0xd9
 function watchoobtriggerexit( trigger )
 {
@@ -921,7 +926,7 @@ function watchoobtriggerexit( trigger )
 
 // Namespace outofbounds / scripts\mp\outofbounds
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1a9d
+// Checksum 0x0, Offset: 0x1abb
 // Size: 0x3a, Type: bool
 function private istouchingtrigger( ent, var_994e7746ed176aec )
 {
@@ -929,8 +934,8 @@ function private istouchingtrigger( ent, var_994e7746ed176aec )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ae0
+// Params 3
+// Checksum 0x0, Offset: 0x1afe
 // Size: 0xed
 function onenteroobtrigger( trigger, ent, forceentry )
 {
@@ -960,8 +965,8 @@ function onenteroobtrigger( trigger, ent, forceentry )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bd5
+// Params 2
+// Checksum 0x0, Offset: 0x1bf3
 // Size: 0x8b
 function onexitoobtrigger( trigger, ent )
 {
@@ -988,8 +993,8 @@ function onexitoobtrigger( trigger, ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c68
+// Params 1
+// Checksum 0x0, Offset: 0x1c86
 // Size: 0x36
 function watchoobsuppressiontrigger( trigger )
 {
@@ -1000,8 +1005,8 @@ function watchoobsuppressiontrigger( trigger )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ca6
+// Params 1
+// Checksum 0x0, Offset: 0x1cc4
 // Size: 0x44
 function watchoobsupressiontriggerenter( trigger )
 {
@@ -1021,8 +1026,8 @@ function watchoobsupressiontriggerenter( trigger )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf2
+// Params 1
+// Checksum 0x0, Offset: 0x1d10
 // Size: 0xa4
 function watchoobsuppressiontriggerexit( trigger )
 {
@@ -1053,8 +1058,8 @@ function watchoobsuppressiontriggerexit( trigger )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d9e
+// Params 2
+// Checksum 0x0, Offset: 0x1dbc
 // Size: 0xda
 function onenteroobsuppressiontrigger( trigger, ent )
 {
@@ -1084,8 +1089,8 @@ function onenteroobsuppressiontrigger( trigger, ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e80
+// Params 2
+// Checksum 0x0, Offset: 0x1e9e
 // Size: 0x68
 function onexitoobsupressiontrigger( trigger, ent )
 {
@@ -1102,8 +1107,8 @@ function onexitoobsupressiontrigger( trigger, ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ef0
+// Params 2
+// Checksum 0x0, Offset: 0x1f0e
 // Size: 0x1e5, Type: bool
 function interactswithgivenoobtrigger( trigger, ent )
 {
@@ -1170,8 +1175,8 @@ function interactswithgivenoobtrigger( trigger, ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20de
+// Params 1
+// Checksum 0x0, Offset: 0x20fc
 // Size: 0x83, Type: bool
 function interactswithoobtriggers( ent )
 {
@@ -1206,8 +1211,8 @@ function interactswithoobtriggers( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x216a
+// Params 0
+// Checksum 0x0, Offset: 0x2188
 // Size: 0x62
 function getoobdata()
 {
@@ -1227,8 +1232,8 @@ function getoobdata()
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21d5
+// Params 1
+// Checksum 0x0, Offset: 0x21f3
 // Size: 0x4d
 function iskillstreakaffectedbyobb( streakname )
 {
@@ -1247,8 +1252,8 @@ function iskillstreakaffectedbyobb( streakname )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x222b
+// Params 2
+// Checksum 0x0, Offset: 0x2249
 // Size: 0xc1
 function gettriggertype( ent, trigger )
 {
@@ -1289,7 +1294,7 @@ function gettriggertype( ent, trigger )
 
 // Namespace outofbounds / scripts\mp\outofbounds
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x22f5
+// Checksum 0x0, Offset: 0x2313
 // Size: 0xb0
 function private function_c6aa39a55c49dc1( triggertype )
 {
@@ -1329,8 +1334,8 @@ function private function_c6aa39a55c49dc1( triggertype )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23ae
+// Params 1
+// Checksum 0x0, Offset: 0x23cc
 // Size: 0x58
 function getcooldowntime( triggertype )
 {
@@ -1348,8 +1353,8 @@ function getcooldowntime( triggertype )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x240f
+// Params 1
+// Checksum 0x0, Offset: 0x242d
 // Size: 0x74
 function getoutofboundstime( triggertype )
 {
@@ -1371,8 +1376,8 @@ function getoutofboundstime( triggertype )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x248c
+// Params 1
+// Checksum 0x0, Offset: 0x24aa
 // Size: 0x29
 function getlastoobtrigger( ent )
 {
@@ -1385,8 +1390,8 @@ function getlastoobtrigger( ent )
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x24be
+// Params 2
+// Checksum 0x0, Offset: 0x24dc
 // Size: 0x81
 function previouslytouchedtriggertype( var_7edface381884ca9, currenttriggertype )
 {
@@ -1410,8 +1415,8 @@ function previouslytouchedtriggertype( var_7edface381884ca9, currenttriggertype 
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x2548
+// Params 6
+// Checksum 0x0, Offset: 0x2566
 // Size: 0x9b
 function function_420d6eda841fd001( triggertype, origin, angles, radius, height, drawdebug )
 {
@@ -1428,8 +1433,8 @@ function function_420d6eda841fd001( triggertype, origin, angles, radius, height,
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x25eb
+// Params 0
+// Checksum 0x0, Offset: 0x2609
 // Size: 0xa9
 function function_49f55ab317da5250()
 {
@@ -1446,8 +1451,8 @@ function function_49f55ab317da5250()
 }
 
 // Namespace outofbounds / scripts\mp\outofbounds
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x269c
+// Params 1
+// Checksum 0x0, Offset: 0x26ba
 // Size: 0x77
 function function_99d6508da7894de2( triggers )
 {

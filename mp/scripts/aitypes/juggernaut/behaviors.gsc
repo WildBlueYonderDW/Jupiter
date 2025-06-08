@@ -11,7 +11,7 @@
 #namespace behaviors;
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cf
 // Size: 0x2aa
 function juggernaut_init( taskid )
@@ -80,7 +80,7 @@ function juggernaut_init( taskid )
 }
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x481
 // Size: 0x125
 function juggernaut_shouldexecute( taskid )
@@ -122,7 +122,7 @@ function juggernaut_shouldexecute( taskid )
 }
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5af
 // Size: 0x188
 function juggernaut_setupexecute( taskid )
@@ -176,7 +176,7 @@ function juggernaut_setupexecute( taskid )
 }
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x740
 // Size: 0x68
 function function_aad2563e98827b23( taskid )
@@ -194,7 +194,7 @@ function function_aad2563e98827b23( taskid )
 }
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b0
 // Size: 0x2b
 function function_c082b9efbf242464( taskid )
@@ -208,7 +208,7 @@ function function_c082b9efbf242464( taskid )
 }
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7e4
 // Size: 0x52
 function function_e1138cce8b2f28d4( taskid )
@@ -225,7 +225,7 @@ function function_e1138cce8b2f28d4( taskid )
 }
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x83e
 // Size: 0x1b
 function function_9db78f7b52b4ad06()

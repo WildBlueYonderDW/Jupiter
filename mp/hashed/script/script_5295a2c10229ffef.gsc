@@ -11,7 +11,7 @@
 #namespace namespace_3fa2391f9077d907;
 
 // Namespace namespace_3fa2391f9077d907 / namespace_c569d26b8efc6f63
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f1
 // Size: 0x6f
 function function_841c25eb1c7438b( var_f03196013d5cd011, spawntriggers )
@@ -32,7 +32,7 @@ function function_841c25eb1c7438b( var_f03196013d5cd011, spawntriggers )
 }
 
 // Namespace namespace_3fa2391f9077d907 / namespace_c569d26b8efc6f63
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x368
 // Size: 0x57
 function function_6c904abfe5e38110( var_f03196013d5cd011 )
@@ -167,7 +167,7 @@ function private function_bdca389bf7863d86()
 }
 
 // Namespace namespace_3fa2391f9077d907 / namespace_c569d26b8efc6f63
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7e5
 // Size: 0x22
 function function_22bf381d4d467316( lifetime )

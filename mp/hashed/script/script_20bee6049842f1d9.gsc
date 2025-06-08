@@ -122,7 +122,7 @@ function private function_c9012886e786a2bf( vehicle, victim, var_4efc84988865490
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb2c
 // Size: 0xa3
 function motorcycle_blood_burner_spawn( params )
@@ -219,7 +219,8 @@ function private function_efab80a73dfa8de4()
         
         retries = 0;
         
-        for (var_b5db534c21869b12 = function_b81e710fd636efab( vehicle.safepos ); isdefined( var_b5db534c21869b12 ) && var_b5db534c21869b12 + 10 >= vehicle.safepos[ 2 ]; var_b5db534c21869b12 = function_b81e710fd636efab( vehicle.safepos )) {
+        for ( var_b5db534c21869b12 = function_b81e710fd636efab( vehicle.safepos ); isdefined( var_b5db534c21869b12 ) && var_b5db534c21869b12 + 10 >= vehicle.safepos[ 2 ] ; var_b5db534c21869b12 = function_b81e710fd636efab( vehicle.safepos ) )
+        {
             retries += 1;
             
             if ( retries > 5 )
@@ -295,7 +296,7 @@ function private function_2a9a27964f2e0c7c()
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f9
 // Size: 0x46
 function function_49acba6f5122bf26( vehicle )
@@ -315,7 +316,7 @@ function function_49acba6f5122bf26( vehicle )
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1147
 // Size: 0x71
 function function_385464026db6da5e( vehicle )
@@ -336,7 +337,7 @@ function function_385464026db6da5e( vehicle )
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11c0
 // Size: 0xc9
 function function_cc9bdf08b7b35ecf( params )
@@ -361,7 +362,7 @@ function function_cc9bdf08b7b35ecf( params )
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1291
 // Size: 0x8a
 function function_5d401524a5903e6a( player, vehicle, var_fc7c7a874b43a31a, seatid )
@@ -382,7 +383,7 @@ function function_5d401524a5903e6a( player, vehicle, var_fc7c7a874b43a31a, seati
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1323
 // Size: 0x62
 function function_e0964d069df8d7e9( vehicle, seatid, var_7558f98f3236963d, player, data, specialexit )
@@ -396,7 +397,7 @@ function function_e0964d069df8d7e9( vehicle, seatid, var_7558f98f3236963d, playe
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x138d
 // Size: 0xb4
 function function_1e4734b2e10489eb( params )
@@ -801,7 +802,8 @@ function private function_9d4a88926a9dba87()
     vehicle thread function_f6d80db3ce624a90( vehiclebundle.var_67ef4a311cfaa39f );
     function_b2468eef57806590( vehicle, "powerUp" );
     
-    for (i = 0; i < vehiclebundle.var_48a5318dcd55b195; i++) {
+    for ( i = 0; i < vehiclebundle.var_48a5318dcd55b195 ; i++ )
+    {
         function_e77e6b2700a0390( vehicle );
         wait waveinterval;
     }
@@ -1630,7 +1632,8 @@ function private function_9e4ec0fff7182025()
     var_c488d3848dac94e7 = 10;
     pulseseed = randomint( var_c488d3848dac94e7 );
     
-    for (currenttime = gettime() / 1000; true; currenttime = gettime() / 1000) {
+    for ( currenttime = gettime() / 1000; true ; currenttime = gettime() / 1000 )
+    {
         waitframe();
         
         switch ( vehicle.audiorequest )
@@ -1761,7 +1764,7 @@ function private perpendicularvector( src )
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3916
 // Size: 0x2e, Type: bool
 function function_c563a44e50fa0b5c( vehicle )
@@ -1771,7 +1774,7 @@ function function_c563a44e50fa0b5c( vehicle )
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x394d
 // Size: 0x3e
 function function_2f6a72df73552b60( vehicle )
@@ -1790,7 +1793,7 @@ function function_2f6a72df73552b60( vehicle )
 }
 
 // Namespace namespace_7c315ec0762657c0 / namespace_aa1c4c94ef382c5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3994
 // Size: 0x88
 function function_bbc0921bf4618fe2( vehicle )

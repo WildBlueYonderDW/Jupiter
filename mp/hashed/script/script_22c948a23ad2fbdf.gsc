@@ -7,7 +7,7 @@
 #namespace namespace_84c887a505a8f661;
 
 // Namespace namespace_84c887a505a8f661 / namespace_f36c21ab2aeb70a1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc6
 // Size: 0x2a
 function function_ce55987060167d4a()
@@ -71,7 +71,8 @@ function private function_42fe8c75207b05b3()
         
         if ( ai_spawned.size > var_c7cebf8a7deb73e3 && ai_spawned.size > 0 )
         {
-            for (ai_index = var_c7cebf8a7deb73e3; ai_index < ai_spawned.size; ai_index++) {
+            for ( ai_index = var_c7cebf8a7deb73e3; ai_index < ai_spawned.size ; ai_index++ )
+            {
                 if ( isalive( ai_spawned[ ai_index ] ) )
                 {
                     ai_spawned[ ai_index ] kill();
@@ -157,7 +158,7 @@ function private function_42fe8c75207b05b3()
     }
 
     // Namespace namespace_84c887a505a8f661 / namespace_f36c21ab2aeb70a1
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x4c2
     // Size: 0x87, Type: dev
     function function_f5d0a47d9a35743c( aitype )

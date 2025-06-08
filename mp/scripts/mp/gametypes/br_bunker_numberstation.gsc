@@ -15,7 +15,7 @@
 #namespace br_bunker_numberstation;
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb6a
 // Size: 0x25d
 function init()
@@ -59,7 +59,7 @@ function init()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdcf
 // Size: 0xf4
 function initpostmain()
@@ -112,7 +112,7 @@ function initpostmain()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xecb
 // Size: 0x19b
 function initvo()
@@ -140,7 +140,7 @@ function initvo()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x106e
 // Size: 0xa9
 function initbunker11keypad()
@@ -153,7 +153,7 @@ function initbunker11keypad()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x111f
 // Size: 0x10
 function initlocs_donetsk()
@@ -163,7 +163,7 @@ function initlocs_donetsk()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1137
 // Size: 0x4c1
 function initlocs_morsephones()
@@ -206,7 +206,7 @@ function initlocs_morsephones()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1600
 // Size: 0x6c1
 function initlocs_codeprovidingphones()
@@ -261,7 +261,7 @@ function initlocs_codeprovidingphones()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cc9
 // Size: 0xb1, Type: bool
 function awardbunker11blueprint( player )
@@ -287,7 +287,7 @@ function awardbunker11blueprint( player )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1d83
 // Size: 0x51
 function codephonescriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -297,7 +297,7 @@ function codephonescriptableused( instance, part, state, player, var_a5b2c541413
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1ddc
 // Size: 0x42b
 function _codephonescriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -384,7 +384,7 @@ function _codephonescriptableused( instance, part, state, player, var_a5b2c54141
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x220f
 // Size: 0x1f8
 function phonemorsesinglescriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -432,7 +432,7 @@ function phonemorsesinglescriptableused( instance, part, state, player, var_a5b2
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x240f
 // Size: 0x2cb
 function _phonemorsesinglescriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -503,7 +503,7 @@ function _phonemorsesinglescriptableused( instance, part, state, player, var_a5b
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x26e2
 // Size: 0x41
 function keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -512,7 +512,7 @@ function keypadscriptableused( instance, part, state, player, var_a5b2c541413aa8
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x272b
 // Size: 0x14a
 function _keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -544,7 +544,7 @@ function _keypadscriptableused( instance, part, state, player, var_a5b2c541413aa
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x287d
 // Size: 0x87
 function activatemusictrigger()
@@ -558,7 +558,7 @@ function activatemusictrigger()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x290c
 // Size: 0x7b
 function musictriggerthink( trigger )
@@ -596,7 +596,7 @@ function musictriggerthink( trigger )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x298f
 // Size: 0x172
 function phonesringing_code()
@@ -606,7 +606,8 @@ function phonesringing_code()
     level.bunker_numberstation.hints[ "phones_code" ] = array_randomize( level.bunker_numberstation.hints[ "phones_code" ] );
     var_f557519e38cbe212 = [];
     
-    for (i = 0; i < int( var_e40f74266c39d166 ); i++) {
+    for ( i = 0; i < int( var_e40f74266c39d166 ) ; i++ )
+    {
         var_f557519e38cbe212[ var_f557519e38cbe212.size ] = level.bunker_numberstation.hints[ "phones_code" ][ i ];
     }
     
@@ -621,7 +622,7 @@ function phonesringing_code()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b09
 // Size: 0x71
 function phonesringing_singlemorse()
@@ -633,7 +634,7 @@ function phonesringing_singlemorse()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b82
 // Size: 0xae
 function codephonescodeenteredringingfrenzy()
@@ -651,7 +652,7 @@ function codephonescodeenteredringingfrenzy()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c38
 // Size: 0xd3
 function ringphoneoccasionally()
@@ -661,7 +662,8 @@ function ringphoneoccasionally()
     
     while ( !istrue( level.bunker_numberstation.bunkeropened ) )
     {
-        for (i = 0; i < 4; i++) {
+        for ( i = 0; i < 4 ; i++ )
+        {
             self.ringing = 1;
             
             if ( true )
@@ -691,7 +693,7 @@ function ringphoneoccasionally()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d13
 // Size: 0x9c
 function ringcodephoneconstantly()
@@ -726,7 +728,7 @@ function ringcodephoneconstantly()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2db7
 // Size: 0x11
 function tracktimeringingfrenzy()
@@ -736,7 +738,7 @@ function tracktimeringingfrenzy()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dd0
 // Size: 0x158
 function computerrebootsequence_init()
@@ -758,7 +760,7 @@ function computerrebootsequence_init()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2f30
 // Size: 0x3e
 function computerrebootused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -767,7 +769,7 @@ function computerrebootused( instance, part, state, player, var_a5b2c541413aa895
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f76
 // Size: 0x207
 function _computerrebootsequence_start( instance, player )
@@ -805,7 +807,7 @@ function _computerrebootsequence_start( instance, player )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3185
 // Size: 0x1aa
 function redbutton_init()
@@ -841,7 +843,7 @@ function redbutton_init()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3337
 // Size: 0x3e
 function redbuttonused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -850,7 +852,7 @@ function redbuttonused( instance, part, state, player, var_a5b2c541413aa895, use
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x337d
 // Size: 0x11c
 function _redbuttonused_internal( instance, player )
@@ -873,7 +875,7 @@ function _redbuttonused_internal( instance, player )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34a1
 // Size: 0x34
 function generatenumbercode( codelength, codestruct )
@@ -888,7 +890,7 @@ function generatenumbercode( codelength, codestruct )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x34dd
 // Size: 0x59
 function entercodenumber( codestruct, number, team )
@@ -902,7 +904,7 @@ function entercodenumber( codestruct, number, team )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x353e
 // Size: 0x7c
 function checkcodeentered( codestruct, team )
@@ -912,7 +914,8 @@ function checkcodeentered( codestruct, team )
         return -1;
     }
     
-    for (i = 0; i < codestruct.code.size; i++) {
+    for ( i = 0; i < codestruct.code.size ; i++ )
+    {
         if ( codestruct.code[ i ] != codestruct.codeentered[ team ][ i ] )
         {
             return 0;
@@ -923,7 +926,7 @@ function checkcodeentered( codestruct, team )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x35c3
 // Size: 0x1bf
 function correctcodeentered( instance, codestruct, team )
@@ -966,7 +969,7 @@ function correctcodeentered( instance, codestruct, team )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x378a
 // Size: 0xf5
 function incorrectcodeentered( instance, codestruct, team )
@@ -991,7 +994,7 @@ function incorrectcodeentered( instance, codestruct, team )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3887
 // Size: 0x4b
 function showdebugresult( resulttext )
@@ -1010,7 +1013,7 @@ function showdebugresult( resulttext )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38da
 // Size: 0x103
 function printcodechosen( codestruct )
@@ -1046,7 +1049,7 @@ function printcodechosen( codestruct )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39e5
 // Size: 0x189
 function printcodeentered( codestruct )
@@ -1090,7 +1093,7 @@ function printcodeentered( codestruct )
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b76
 // Size: 0x55f
 function initlocs_bunkertest()
@@ -1138,7 +1141,7 @@ function initlocs_bunkertest()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40dd
 // Size: 0x100
 function debug_hintadjustmentthink()
@@ -1169,7 +1172,7 @@ function debug_hintadjustmentthink()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41e5
 // Size: 0x1b1
 function debug_bunkerpuzzledebugdraw()
@@ -1201,7 +1204,7 @@ function debug_bunkerpuzzledebugdraw()
 }
 
 // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x439e
 // Size: 0x61
 function debug_show2dvotext( text, time )
@@ -1227,7 +1230,7 @@ function debug_show2dvotext( text, time )
 /#
 
     // Namespace br_bunker_numberstation / scripts\mp\gametypes\br_bunker_numberstation
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4407
     // Size: 0x85, Type: dev
     function function_138da425d10b4a04()

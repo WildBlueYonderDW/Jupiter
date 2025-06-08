@@ -6,7 +6,7 @@
 #namespace namespace_8894a0caa4c34dc6;
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2c7
 // Size: 0x4b
 function function_9469d528dd1ee44d( streakname, scorepopup, vodestroyed, destroyedsplash )
@@ -18,7 +18,7 @@ function function_9469d528dd1ee44d( streakname, scorepopup, vodestroyed, destroy
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31a
 // Size: 0x17d
 function function_66a7440055d386c3( data )
@@ -51,7 +51,7 @@ function function_66a7440055d386c3( data )
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49f
 // Size: 0xcf
 function function_7bdb3610d602438d( data )
@@ -76,7 +76,7 @@ function function_7bdb3610d602438d( data )
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x577
 // Size: 0x211
 function function_90663ca0d2564cb( data, var_b2c38c8cc8672f83, var_8097775071dc6820, meleehitcount )
@@ -152,7 +152,7 @@ function function_90663ca0d2564cb( data, var_b2c38c8cc8672f83, var_8097775071dc6
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x791
 // Size: 0x63
 function function_79a97ee01dc267d3( data )
@@ -219,7 +219,7 @@ function private function_f9dbf2d9862d62ab( data, isenemydamage )
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x928
 // Size: 0x1be
 function function_62c1c6833c19817c( maxrolldegrees, maxyawdiff )
@@ -267,7 +267,7 @@ function function_62c1c6833c19817c( maxrolldegrees, maxyawdiff )
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaee
 // Size: 0x2cb
 function function_74f5ba869b257143( var_38a541b4d6af30a9, var_9d60d851a7af2d4e, var_2a86c82583ac927b )
@@ -341,7 +341,7 @@ function function_74f5ba869b257143( var_38a541b4d6af30a9, var_9d60d851a7af2d4e, 
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xdc1
 // Size: 0x65
 function function_63d1a11f8b22244( streakinfo, var_c09f3239d7caa490, destroyfunc )
@@ -354,7 +354,7 @@ function function_63d1a11f8b22244( streakinfo, var_c09f3239d7caa490, destroyfunc
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe2e
 // Size: 0xb5
 function onfunctionaldeath( callbackparams, initparams )
@@ -391,7 +391,7 @@ function onfunctionaldeath( callbackparams, initparams )
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeeb
 // Size: 0x48
 function function_2eff4cd94c3243e8()
@@ -408,7 +408,7 @@ function function_2eff4cd94c3243e8()
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf3b
 // Size: 0x150
 function function_47b5394a301d8c5( maxlifetime, var_bb3f35f040f4f38b, var_70a1d6b89907db6b, var_b0dfff7cb4b7be34 )
@@ -454,7 +454,7 @@ function function_47b5394a301d8c5( maxlifetime, var_bb3f35f040f4f38b, var_70a1d6
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1093
 // Size: 0x8f
 function function_708fc89de0e3cd1( direction, velocity )
@@ -477,7 +477,7 @@ function function_708fc89de0e3cd1( direction, velocity )
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x112a
 // Size: 0x14b
 function function_888f3a0124b03ddc( newowner, challengeeventid, outlineasset, onhackedcallback )
@@ -531,7 +531,7 @@ function function_888f3a0124b03ddc( newowner, challengeeventid, outlineasset, on
 /#
 
     // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x127d
     // Size: 0x148, Type: dev
     function function_36c55ae71072bd03( aabbmin, aabbmax, duration )

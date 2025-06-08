@@ -16,7 +16,7 @@ function autoexec main()
 }
 
 // Namespace free_perk / scripts\cp_mp\powerups\free_perk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce
 // Size: 0x55
 function function_bf3da8298127a63b()
@@ -32,7 +32,7 @@ function function_bf3da8298127a63b()
 }
 
 // Namespace free_perk / scripts\cp_mp\powerups\free_perk
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12b
 // Size: 0x7a
 function grab_free_perk( str_powerup, ent_powerup )
@@ -47,7 +47,7 @@ function grab_free_perk( str_powerup, ent_powerup )
 }
 
 // Namespace free_perk / scripts\cp_mp\powerups\free_perk
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad
 // Size: 0x37
 function function_236b69ee9dd7d2d()

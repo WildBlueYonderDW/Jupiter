@@ -5,7 +5,7 @@
 #namespace namespace_7062ba3752363b0;
 
 // Namespace namespace_7062ba3752363b0 / namespace_93602eb41105ea2a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0
 // Size: 0x26
 function init_knockdown()

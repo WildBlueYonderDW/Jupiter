@@ -9,7 +9,7 @@
 #namespace airdrop_multiple;
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x702
 // Size: 0x87
 function airdrop_multiple_init()
@@ -32,7 +32,7 @@ function airdrop_multiple_init()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x791
 // Size: 0x1e
 function airdrop_multiple_initanimations()
@@ -44,7 +44,7 @@ function airdrop_multiple_initanimations()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b7
 // Size: 0x1b
 function function_4d3d5b47e3ef44cd()
@@ -53,7 +53,7 @@ function function_4d3d5b47e3ef44cd()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7da
 // Size: 0x176
 function function_dd9c6b6a52a14c8d()
@@ -84,7 +84,7 @@ function function_dd9c6b6a52a14c8d()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x958
 // Size: 0x47
 function function_cff636ac94a2febc()
@@ -96,7 +96,7 @@ function function_cff636ac94a2febc()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a7
 // Size: 0xb1
 function function_64d1f666aecf56f0()
@@ -114,7 +114,7 @@ function function_64d1f666aecf56f0()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa60
 // Size: 0x147
 function function_86d69a3dbc763cb9()
@@ -141,7 +141,7 @@ function function_86d69a3dbc763cb9()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xbaf
 // Size: 0x335
 function airdrop_multiple_dropcrates( owner, team, position, angles, destination, vehiclereserved, streakinfo )
@@ -194,7 +194,8 @@ function airdrop_multiple_dropcrates( owner, team, position, angles, destination
         usephysics = streakinfo.usephysics;
     }
     
-    for (i = 0; i < numcrates; i++) {
+    for ( i = 0; i < numcrates ; i++ )
+    {
         streakname = undefined;
         
         if ( streaknames.size > 0 )
@@ -257,7 +258,7 @@ function airdrop_multiple_dropcrates( owner, team, position, angles, destination
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeed
 // Size: 0xdd
 function airdrop_multiple_watchdropcrates()
@@ -280,7 +281,7 @@ function airdrop_multiple_watchdropcrates()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd2
 // Size: 0x413
 function airdrop_multiple_watchdropcratesinternal()
@@ -430,7 +431,7 @@ function airdrop_multiple_watchdropcratesinternal()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13ed
 // Size: 0xd9
 function airdrop_multiple_watchdropcratesend()
@@ -460,7 +461,7 @@ function airdrop_multiple_watchdropcratesend()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14ce
 // Size: 0x1be
 function airdrop_multiple_createac130( scenenode )
@@ -498,7 +499,7 @@ function airdrop_multiple_createac130( scenenode )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1695
 // Size: 0x75
 function airdrop_multiple_ac130firstframe()
@@ -515,7 +516,7 @@ function airdrop_multiple_ac130firstframe()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1712
 // Size: 0x9
 function airdrop_multiple_destroyac130()
@@ -524,7 +525,7 @@ function airdrop_multiple_destroyac130()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1723
 // Size: 0xb6
 function airdrop_multiple_deleteac130( deletiondelay )
@@ -560,7 +561,7 @@ function airdrop_multiple_deleteac130( deletiondelay )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17e1
 // Size: 0x65, Type: bool
 function airdrop_multiple_ac130handledamage( data )
@@ -577,7 +578,7 @@ function airdrop_multiple_ac130handledamage( data )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x184f
 // Size: 0x104
 function airdrop_multiple_ac130handlefataldamage( data )
@@ -613,7 +614,7 @@ function airdrop_multiple_ac130handlefataldamage( data )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x195b
 // Size: 0x36f
 function function_1c989718d26b182d( scenenode, vehiclereserved, streakinfo )
@@ -695,7 +696,7 @@ function function_1c989718d26b182d( scenenode, vehiclereserved, streakinfo )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cd3
 // Size: 0x10a
 function function_3856d0dd250dd766( streakname )
@@ -722,7 +723,7 @@ function function_3856d0dd250dd766( streakname )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1de5
 // Size: 0x34
 function function_abf972f8c94ee5a4( streakname )
@@ -734,7 +735,7 @@ function function_abf972f8c94ee5a4( streakname )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e21
 // Size: 0xb
 function function_6ad0d2b89ebccb68( streakname )
@@ -743,7 +744,7 @@ function function_6ad0d2b89ebccb68( streakname )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e34
 // Size: 0x39, Type: bool
 function function_cc5032d2f9d08d1a( data )
@@ -754,7 +755,7 @@ function function_cc5032d2f9d08d1a( data )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e76
 // Size: 0x9c, Type: bool
 function function_f1e65202514970c5( data )
@@ -770,7 +771,7 @@ function function_f1e65202514970c5( data )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f1b
 // Size: 0x2
 function function_36159d21c49360ca()
@@ -779,7 +780,7 @@ function function_36159d21c49360ca()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f25
 // Size: 0x2
 function function_870290238449589f()
@@ -788,7 +789,7 @@ function function_870290238449589f()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f2f
 // Size: 0x2
 function function_1a3db0d03ec0014f()
@@ -797,7 +798,7 @@ function function_1a3db0d03ec0014f()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f39
 // Size: 0x29, Type: bool
 function function_71d81f98f8638b99( data )
@@ -808,7 +809,7 @@ function function_71d81f98f8638b99( data )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f6b
 // Size: 0xef
 function function_a1c4a7ca871dcdf5( scenenode, streaklist )
@@ -833,7 +834,7 @@ function function_a1c4a7ca871dcdf5( scenenode, streaklist )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2063
 // Size: 0x16a
 function function_af5c454f08db45e1( cratetype, scenenode, streaklist, streakinfo, markerposition )
@@ -845,7 +846,8 @@ function function_af5c454f08db45e1( cratetype, scenenode, streaklist, streakinfo
     animbasename = "care_package_drop_multiple";
     crates = [];
     
-    for (i = 0; i < streaklist.size; i++) {
+    for ( i = 0; i < streaklist.size ; i++ )
+    {
         animindex = function_e23eb6d57186432c( i, streaklist );
         data = getkillstreakcratedatabystreakname( streaklist[ i ], 0 );
         crate = createcrateforscripteddrop( owner, team, cratetype, destination, usephysics, 0, data, streakinfo, scenenode, animbasename, animindex, 1, markerposition );
@@ -866,7 +868,7 @@ function function_af5c454f08db45e1( cratetype, scenenode, streaklist, streakinfo
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21d6
 // Size: 0xb8
 function function_d1443844f7590343( var_c5701227f7f0d907 )
@@ -899,7 +901,7 @@ function function_d1443844f7590343( var_c5701227f7f0d907 )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2296
 // Size: 0xb8
 function function_8e3fa08965432cfa()
@@ -917,7 +919,7 @@ function function_8e3fa08965432cfa()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2356
 // Size: 0xc7
 function function_de1cce0b2d73d436()
@@ -940,7 +942,7 @@ function function_de1cce0b2d73d436()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2425
 // Size: 0x7c
 function function_26877d0b1b30bd68( crate )
@@ -955,7 +957,7 @@ function function_26877d0b1b30bd68( crate )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24a9
 // Size: 0x6e
 function function_ad08ac92f283b91e( position )
@@ -968,7 +970,7 @@ function function_ad08ac92f283b91e( position )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2520
 // Size: 0x4c
 function airdrop_multiple_getcratedropcaststart( position )
@@ -980,7 +982,7 @@ function airdrop_multiple_getcratedropcaststart( position )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2575
 // Size: 0x56
 function airdrop_multiple_getdropheight()
@@ -990,7 +992,7 @@ function airdrop_multiple_getdropheight()
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25d4
 // Size: 0x4c
 function airdrop_multiple_addac130tolist( ac130 )
@@ -1001,7 +1003,7 @@ function airdrop_multiple_addac130tolist( ac130 )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2628
 // Size: 0x20
 function airdrop_multiple_removeac130fromlist( entnum )
@@ -1010,7 +1012,7 @@ function airdrop_multiple_removeac130fromlist( entnum )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2650
 // Size: 0x76
 function function_6624058bac19055d( streaklist )
@@ -1032,7 +1034,7 @@ function function_6624058bac19055d( streaklist )
 }
 
 // Namespace airdrop_multiple / scripts\cp_mp\killstreaks\airdrop_multiple
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x26cf
 // Size: 0x102
 function function_e23eb6d57186432c( index, streaklist )

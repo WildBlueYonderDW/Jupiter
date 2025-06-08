@@ -5,7 +5,7 @@
 #namespace despawn;
 
 // Namespace despawn / scripts\asm\shared\despawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xca
 // Size: 0x1b
 function terminatedespawn( asmname, statename )
@@ -14,7 +14,7 @@ function terminatedespawn( asmname, statename )
 }
 
 // Namespace despawn / scripts\asm\shared\despawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xed
 // Size: 0x6d
 function queue_despawn()

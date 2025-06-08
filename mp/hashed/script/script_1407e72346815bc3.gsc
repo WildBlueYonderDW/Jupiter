@@ -8,7 +8,7 @@
 #namespace manager_mp;
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf4
 // Size: 0x5d
 function init()
@@ -16,9 +16,9 @@ function init()
     if ( scripts\cp_mp\utility\game_utility::function_42e2dcfd4571b89b() )
     {
         level.var_6ccee8e6c00f06e6 = &namespace_583fd9066a09cd33::init_player;
-        setdvarifuninitialized( @"hash_50363b4004713d67", 1 );
+        setdvarifuninitialized( @"scr_sixthsense_enabled", 1 );
         
-        if ( getdvarint( @"hash_50363b4004713d67" ) )
+        if ( getdvarint( @"scr_sixthsense_enabled" ) )
         {
             level.stealth.fnsixthsense = &sixthsense_init;
             level thread scripts\cp_mp\stealth\utility::function_a5ff5e1965faf40e();
@@ -27,7 +27,7 @@ function init()
 }
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x159
 // Size: 0x37
 function init_player()
@@ -41,7 +41,7 @@ function init_player()
 }
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x198
 // Size: 0x4c
 function sixthsense_init()
@@ -58,7 +58,7 @@ function sixthsense_init()
 }
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ec
 // Size: 0x2c
 function dropaiaccuracy()
@@ -73,7 +73,7 @@ function dropaiaccuracy()
 }
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x220
 // Size: 0x29
 function revertaiaccuracy()

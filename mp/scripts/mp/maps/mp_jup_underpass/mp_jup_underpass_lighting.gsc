@@ -6,7 +6,7 @@
 #namespace mp_jup_underpass_lighting;
 
 // Namespace mp_jup_underpass_lighting / scripts\mp\maps\mp_jup_underpass\mp_jup_underpass_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x117
 // Size: 0x2c
 function main()

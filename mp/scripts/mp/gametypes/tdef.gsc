@@ -32,7 +32,7 @@
 #namespace tdef;
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc75
 // Size: 0x3d9
 function main()
@@ -127,7 +127,7 @@ function main()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1056
 // Size: 0x1bc
 function initializematchrules()
@@ -152,7 +152,7 @@ function initializematchrules()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x121a
 // Size: 0xfc
 function onstartgametype()
@@ -193,7 +193,7 @@ function onstartgametype()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x131e
 // Size: 0x14e
 function updategametypedvars()
@@ -215,7 +215,7 @@ function updategametypedvars()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1474
 // Size: 0x18a
 function initspawns()
@@ -252,7 +252,7 @@ function initspawns()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1606
 // Size: 0x8d
 function calculatespawndisttodefenderflagstart( spawnpoint )
@@ -273,7 +273,7 @@ function calculatespawndisttodefenderflagstart( spawnpoint )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x169b
 // Size: 0x110
 function getspawnpoint()
@@ -312,7 +312,7 @@ function getspawnpoint()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17b4
 // Size: 0xfe
 function tdef()
@@ -336,7 +336,7 @@ function tdef()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18ba
 // Size: 0xec
 function setupwaypointicons()
@@ -352,7 +352,7 @@ function setupwaypointicons()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19ae
 // Size: 0xad
 function createflagstart()
@@ -367,7 +367,7 @@ function createflagstart()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a63
 // Size: 0x14e
 function flaglockedtimer()
@@ -395,7 +395,7 @@ function flaglockedtimer()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bb9
 // Size: 0x43d
 function createteamdefenderflag( team )
@@ -487,7 +487,7 @@ function createteamdefenderflag( team )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fff
 // Size: 0x13, Type: bool
 function flagpickupchecks( player )
@@ -496,7 +496,7 @@ function flagpickupchecks( player )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x201b
 // Size: 0x13d
 function createteamdefenderflagbase( team, teamflag )
@@ -524,7 +524,7 @@ function createteamdefenderflagbase( team, teamflag )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2161
 // Size: 0x3f
 function setteaminhuddatafromteamname( teamname )
@@ -545,7 +545,7 @@ function setteaminhuddatafromteamname( teamname )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21a8
 // Size: 0x356
 function onpickup( player, playervo, defused )
@@ -643,7 +643,7 @@ function onpickup( player, playervo, defused )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2506
 // Size: 0x9
 function returnflag()
@@ -652,7 +652,7 @@ function returnflag()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2517
 // Size: 0x288
 function ondrop( player )
@@ -751,7 +751,7 @@ function ondrop( player )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27a7
 // Size: 0xa9
 function returnaftertime()
@@ -778,7 +778,7 @@ function returnaftertime()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2858
 // Size: 0x17b
 function onreset()
@@ -824,7 +824,7 @@ function onreset()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29db
 // Size: 0x59
 function attachflag()
@@ -836,7 +836,7 @@ function attachflag()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a3c
 // Size: 0x21
 function detachflag()
@@ -846,7 +846,7 @@ function detachflag()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a65
 // Size: 0xe
 function updatematchstatushintonnoflag()
@@ -855,7 +855,7 @@ function updatematchstatushintonnoflag()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a7b
 // Size: 0xe
 function updatematchstatushintonhasflag()
@@ -864,7 +864,7 @@ function updatematchstatushintonhasflag()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a91
 // Size: 0x12e
 function awardobjtimeforcarrier( team )
@@ -891,7 +891,7 @@ function awardobjtimeforcarrier( team )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bc7
 // Size: 0x13f
 function flagattachradar( radarteam )
@@ -924,7 +924,7 @@ function flagattachradar( radarteam )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d0e
 // Size: 0xec
 function getflagradarowner( team )
@@ -964,7 +964,7 @@ function getflagradarowner( team )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e02
 // Size: 0x56
 function flagradarmover()
@@ -982,7 +982,7 @@ function flagradarmover()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e60
 // Size: 0x84
 function flagwatchradarownerlost()
@@ -998,7 +998,7 @@ function flagwatchradarownerlost()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2eec
 // Size: 0x6e
 function getrespawndelay()
@@ -1025,14 +1025,15 @@ function getrespawndelay()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f62
 // Size: 0x83
 function forcespawnplayers()
 {
     players = level.players;
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         player = players[ i ];
         
         if ( !isdefined( player ) || istrue( player.fauxdead ) && player isusingremote() || isalive( player ) && !istrue( player.fauxdead ) )
@@ -1046,7 +1047,7 @@ function forcespawnplayers()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fed
 // Size: 0x14
 function onplayerconnect( player )
@@ -1055,7 +1056,7 @@ function onplayerconnect( player )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3009
 // Size: 0xa1
 function onplayerspawned( player )
@@ -1082,7 +1083,7 @@ function onplayerspawned( player )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x30b2
 // Size: 0x4d1
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1198,7 +1199,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x358b
 // Size: 0x5c
 function distsquaredcheck( attackerpos, victimpos, checkpos )
@@ -1215,7 +1216,7 @@ function distsquaredcheck( attackerpos, victimpos, checkpos )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35ef
 // Size: 0x40
 function carriergivescore()
@@ -1232,7 +1233,7 @@ function carriergivescore()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3637
 // Size: 0x188
 function awardcapturepoints( team )
@@ -1268,7 +1269,7 @@ function awardcapturepoints( team )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37c7
 // Size: 0x48
 function function_3b12569ebd75de5b()
@@ -1283,7 +1284,7 @@ function function_3b12569ebd75de5b()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3817
 // Size: 0x25
 function createhudelems()
@@ -1294,7 +1295,7 @@ function createhudelems()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3844
 // Size: 0x12c
 function updatetimers( ownerteam, stoptimer, resethome, resetpossession )
@@ -1339,7 +1340,7 @@ function updatetimers( ownerteam, stoptimer, resethome, resetpossession )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3978
 // Size: 0x4a
 function defenderflagruntimer( ownerteam, timeoverride )
@@ -1354,7 +1355,7 @@ function defenderflagruntimer( ownerteam, timeoverride )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x39ca
 // Size: 0x79
 function function_1a73c412bbdd19ac( ownerteam, timeoverride )
@@ -1369,7 +1370,7 @@ function function_1a73c412bbdd19ac( ownerteam, timeoverride )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a4b
 // Size: 0xc4
 function function_797aa8aed455dc96( duration )
@@ -1409,7 +1410,7 @@ function function_797aa8aed455dc96( duration )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b18
 // Size: 0x30
 function function_4f70f01f97007f69( duration )
@@ -1427,7 +1428,7 @@ function function_4f70f01f97007f69( duration )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b50
 // Size: 0x8b
 function handlehostmigration( var_ff049ff4093f7a4e )
@@ -1453,7 +1454,7 @@ function handlehostmigration( var_ff049ff4093f7a4e )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3be3
 // Size: 0x135
 function watchtimerpause()
@@ -1497,7 +1498,7 @@ function watchtimerpause()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d20
 // Size: 0x93
 function function_ee738ab8ec64bde3( timeoverride )
@@ -1524,7 +1525,7 @@ function function_ee738ab8ec64bde3( timeoverride )
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dbb
 // Size: 0x14
 function pausedefenderflagtimer()
@@ -1534,7 +1535,7 @@ function pausedefenderflagtimer()
 }
 
 // Namespace tdef / scripts\mp\gametypes\tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3dd7
 // Size: 0x1d
 function function_d06f48b387ff75bc( timeoverride )

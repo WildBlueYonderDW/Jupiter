@@ -10,7 +10,7 @@
 #namespace mgl_mp;
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c7
 // Size: 0x7d
 function function_8bb13aa2a5d32576( player, splashref, var_de02835724550257 )
@@ -30,7 +30,7 @@ function function_8bb13aa2a5d32576( player, splashref, var_de02835724550257 )
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34c
 // Size: 0x1d
 function function_97a717c89c217036( additional )
@@ -39,7 +39,7 @@ function function_97a717c89c217036( additional )
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x372
 // Size: 0xb
 function function_da8af86f82f90504()
@@ -48,7 +48,7 @@ function function_da8af86f82f90504()
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x385
 // Size: 0x55
 function function_f9ae07213a0af3de()
@@ -76,7 +76,7 @@ function function_f9ae07213a0af3de()
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e2
 // Size: 0x7d
 function function_212d126522ad2c4f( var_cba993afe88eb432 )
@@ -99,7 +99,7 @@ function function_212d126522ad2c4f( var_cba993afe88eb432 )
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x467
 // Size: 0xe
 function function_9acf99e8c077e74d()
@@ -119,7 +119,7 @@ function private function_8bd0955f703e9104( mind_personality )
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ae
 // Size: 0x12
 function function_4248416fffb4c5b3()
@@ -128,7 +128,7 @@ function function_4248416fffb4c5b3()
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c9
 // Size: 0x21
 function function_8c9c24a50231b1f9()
@@ -138,7 +138,7 @@ function function_8c9c24a50231b1f9()
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f2
 // Size: 0x39
 function function_53ae52a625b5c703()
@@ -185,7 +185,7 @@ function private function_d4307f8c6af7844()
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57d
 // Size: 0x12
 function function_e6cabfefe9db5685()
@@ -194,7 +194,7 @@ function function_e6cabfefe9db5685()
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x598
 // Size: 0x38
 function function_ce76a0f1345b7f4f()
@@ -218,7 +218,7 @@ function private war_onplayerconnect( player )
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fa
 // Size: 0xe
 function function_892db361940e142d()
@@ -238,7 +238,7 @@ function private function_8aac6813797463e4( mind_personality )
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x641
 // Size: 0x24
 function function_7b7c572755736c13()
@@ -247,7 +247,7 @@ function function_7b7c572755736c13()
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66e
 // Size: 0x1b
 function function_29020e26e20049d9()
@@ -259,7 +259,7 @@ function function_29020e26e20049d9()
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x691
 // Size: 0x7
 function function_d91924619ae46b1f()
@@ -268,7 +268,7 @@ function function_d91924619ae46b1f()
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a1
 // Size: 0x8b
 function function_afadc6882a95f376( revivespawn )
@@ -297,7 +297,7 @@ function function_afadc6882a95f376( revivespawn )
 }
 
 // Namespace mgl_mp / scripts\mp\gametypes\mgl_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x734
 // Size: 0x10
 function function_47e2a0de1d6b6115()

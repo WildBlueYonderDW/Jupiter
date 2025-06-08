@@ -6,7 +6,7 @@
 #namespace secrethunt;
 
 // Namespace secrethunt / scripts\mp\secrethunt
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14c
 // Size: 0x7e
 function secrethunt( targetname )
@@ -25,7 +25,7 @@ function secrethunt( targetname )
 }
 
 // Namespace secrethunt / scripts\mp\secrethunt
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d2
 // Size: 0x1c1
 function trackhiddenobj( numobjs )
@@ -81,7 +81,7 @@ function trackhiddenobj( numobjs )
 }
 
 // Namespace secrethunt / scripts\mp\secrethunt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39b
 // Size: 0x6b
 function secrethunt_debuglocations()

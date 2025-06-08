@@ -17,7 +17,7 @@ function autoexec main()
 }
 
 // Namespace nuke / scripts\cp_mp\powerups\nuke
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ba
 // Size: 0x5a
 function init_nuke()
@@ -47,7 +47,7 @@ function private function_f23ad00303ba63e2()
 }
 
 // Namespace nuke / scripts\cp_mp\powerups\nuke
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x339
 // Size: 0x2ba
 function grab_nuke( str_powerup, ent_powerup, var_e3f071c0be79ecce, var_1c0c489113c9d46a, var_8d1aa1efbf8b3c6e, var_2bb5673b997944c1, var_82bc4143d5c2c838, ai_override )
@@ -429,7 +429,7 @@ function private function_d4e0b51ec4d153cd()
 }
 
 // Namespace nuke / scripts\cp_mp\powerups\nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5b
 // Size: 0x53
 function function_15bb2ab41d66232b( var_74eaaa06e59a9abe )
@@ -445,7 +445,7 @@ function function_15bb2ab41d66232b( var_74eaaa06e59a9abe )
 }
 
 // Namespace nuke / scripts\cp_mp\powerups\nuke
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb6
 // Size: 0x2a
 function function_5e61eba5db66a9d4( var_c73f22604801c8a8 )
@@ -455,7 +455,7 @@ function function_5e61eba5db66a9d4( var_c73f22604801c8a8 )
 }
 
 // Namespace nuke / scripts\cp_mp\powerups\nuke
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfe8
 // Size: 0x31
 function function_3204683321678438()

@@ -2,7 +2,6 @@
 #using script_1be98242d2bd926e;
 #using script_1c6e50e1bfd8faaa;
 #using script_2047cdbf5176ba0;
-#using script_22f1701e151b9d12;
 #using script_355d3dcecb9a21f4;
 #using script_4e6e58ab5d96c2b0;
 #using script_528320cb3630530d;
@@ -11,6 +10,7 @@
 #using script_92b815b18f0ba61;
 #using script_afd81a5975a288c;
 #using scripts\common\callbacks;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\engine\utility;
 #using scripts\mp\flags;
 #using scripts\mp\maps\mp_jup_fort\mp_jup_fort_lighting;
@@ -28,7 +28,7 @@ function autoexec init()
 }
 
 // Namespace mp_jup_fort_ob / scripts\mp\maps\mp_jup_fort\mp_jup_fort_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x514
 // Size: 0x25f
 function main()
@@ -99,7 +99,7 @@ function main()
 }
 
 // Namespace mp_jup_fort_ob / scripts\mp\maps\mp_jup_fort\mp_jup_fort_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77b
 // Size: 0x1a
 function disable_announcer()
@@ -109,7 +109,7 @@ function disable_announcer()
 }
 
 // Namespace mp_jup_fort_ob / scripts\mp\maps\mp_jup_fort\mp_jup_fort_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x79d
 // Size: 0x21
 function function_c154e3abec6b5381( sparams )
@@ -118,7 +118,7 @@ function function_c154e3abec6b5381( sparams )
 }
 
 // Namespace mp_jup_fort_ob / scripts\mp\maps\mp_jup_fort\mp_jup_fort_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c6
 // Size: 0xeb
 function function_9afbb024ba4b1116()
@@ -148,17 +148,17 @@ function function_9afbb024ba4b1116()
 }
 
 // Namespace mp_jup_fort_ob / scripts\mp\maps\mp_jup_fort\mp_jup_fort_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b9
 // Size: 0x16
 function function_135c08561081b6cf()
 {
     level flag_wait( "ai_spawn_director_initialized" );
-    namespace_614554f86e52695c::process_create_script();
+    scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 
 // Namespace mp_jup_fort_ob / scripts\mp\maps\mp_jup_fort\mp_jup_fort_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d7
 // Size: 0x220
 function function_632bf331b85b85ac()

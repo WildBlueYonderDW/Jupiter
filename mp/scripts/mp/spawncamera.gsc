@@ -22,14 +22,14 @@
 #namespace spawncamera;
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab6
 // Size: 0x1b0
 function init()
 {
     if ( !isdefined( level.disablespawncamera ) )
     {
-        level.disablespawncamera = getdvarint( @"hash_5fc696f5bbb3ca62", 1 ) == 1;
+        level.disablespawncamera = getdvarint( @"scr_game_disablespawncamera", 1 ) == 1;
     }
     
     level.snaptospawncamera = getdvarint( @"hash_1a2c3b67392b6657", 1 ) == 1;
@@ -75,7 +75,7 @@ function init()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc6e
 // Size: 0x2
 function blank_func()
@@ -84,7 +84,7 @@ function blank_func()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc78
 // Size: 0x2dc
 function initcameras()
@@ -169,7 +169,7 @@ function initcameras()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf5c
 // Size: 0x58a
 function createdefaultcameras()
@@ -289,7 +289,7 @@ function createdefaultcameras()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14ee
 // Size: 0x14f
 function createspawncamera()
@@ -333,7 +333,7 @@ function createspawncamera()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1645
 // Size: 0x1b2
 function startspawncamera( var_ad4dd16f29e24b77, holdduration, var_dfab0807d83a77fe )
@@ -412,7 +412,7 @@ function startspawncamera( var_ad4dd16f29e24b77, holdduration, var_dfab0807d83a7
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17ff
 // Size: 0x76
 function getspawncamerawaittime()
@@ -431,7 +431,7 @@ function getspawncamerawaittime()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x187d
 // Size: 0x7, Type: bool
 function getspawncamerablendtime()
@@ -440,7 +440,7 @@ function getspawncamerablendtime()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x188d
 // Size: 0x755
 function getspawncamera()
@@ -631,7 +631,7 @@ function getspawncamera()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1feb
 // Size: 0x238
 function movetospawncamerainitial()
@@ -683,7 +683,7 @@ function movetospawncamerainitial()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x222b
 // Size: 0x1d7
 function movetospawncamera( var_7c207c285f05dbb2 )
@@ -724,7 +724,7 @@ function movetospawncamera( var_7c207c285f05dbb2 )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x240a
 // Size: 0x1b2
 function snaptospawncamera()
@@ -767,7 +767,7 @@ function snaptospawncamera()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25c4
 // Size: 0x9f
 function endspawncamera()
@@ -803,7 +803,7 @@ function endspawncamera()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x266b
 // Size: 0x58
 function deletespawncamera()
@@ -819,7 +819,7 @@ function deletespawncamera()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26cb
 // Size: 0x2e
 function removecameraondisconnect( cameraent )
@@ -835,7 +835,7 @@ function removecameraondisconnect( cameraent )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2701
 // Size: 0x65
 function streamforslamzoomonspawn()
@@ -858,7 +858,7 @@ function streamforslamzoomonspawn()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x276e
 // Size: 0x27a
 function runslamzoomonspawn( var_595879a0845617f6 )
@@ -934,7 +934,7 @@ function runslamzoomonspawn( var_595879a0845617f6 )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29f0
 // Size: 0x1e0
 function function_d28ef4117a443666()
@@ -959,7 +959,7 @@ function function_d28ef4117a443666()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bd8
 // Size: 0x185
 function handlemoveto( duration )
@@ -986,7 +986,7 @@ function handlemoveto( duration )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d65
 // Size: 0x355
 function handlemovetoblended( duration )
@@ -1089,7 +1089,7 @@ function handlemovetoblended( duration )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30c2
 // Size: 0x275
 function fadeblackforgeo( targetpos )
@@ -1156,7 +1156,7 @@ function fadeblackforgeo( targetpos )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x333f
 // Size: 0x19
 function waitandgetnewspawnpoint()
@@ -1167,7 +1167,7 @@ function waitandgetnewspawnpoint()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3360
 // Size: 0x1d
 function clear_plr_vehicle_submix()
@@ -1178,7 +1178,7 @@ function clear_plr_vehicle_submix()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3385
 // Size: 0x167
 function playslamzoomflash( var_ad4dd16f29e24b77, holdduration, var_dfab0807d83a77fe )
@@ -1245,7 +1245,7 @@ function playslamzoomflash( var_ad4dd16f29e24b77, holdduration, var_dfab0807d83a
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x34f4
 // Size: 0x58
 function movecameratomappos( player, var_9813182985677b23, finalangles )
@@ -1257,7 +1257,7 @@ function movecameratomappos( player, var_9813182985677b23, finalangles )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3554
 // Size: 0x65
 function applythermal()
@@ -1286,7 +1286,7 @@ function applythermal()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35c1
 // Size: 0x2
 function removethermal()
@@ -1295,7 +1295,7 @@ function removethermal()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35cb
 // Size: 0xd6
 function startoperatorsound()
@@ -1330,7 +1330,7 @@ function startoperatorsound()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36a9
 // Size: 0x4d
 function endoperatorsfxondisconnect()
@@ -1348,7 +1348,7 @@ function endoperatorsfxondisconnect()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36fe
 // Size: 0x33
 function setgamemodecamera( team, cameraent )
@@ -1358,7 +1358,7 @@ function setgamemodecamera( team, cameraent )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3739
 // Size: 0x20
 function setspawncamera( team, ref )
@@ -1367,7 +1367,7 @@ function setspawncamera( team, ref )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3761
 // Size: 0x26d
 function orientdefaulttomapcenterusingmapcorners()
@@ -1415,7 +1415,7 @@ function orientdefaulttomapcenterusingmapcorners()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39d6
 // Size: 0x49
 function function_9dd9773c51f39a12()
@@ -1435,7 +1435,7 @@ function function_9dd9773c51f39a12()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a27
 // Size: 0x32e
 function orientdefaulttofrontline()
@@ -1494,7 +1494,7 @@ function orientdefaulttofrontline()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d5d
 // Size: 0x1cd
 function calulatefrontline()
@@ -1541,7 +1541,7 @@ function calulatefrontline()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f33
 // Size: 0x12f
 function getstartspawnavg( team, classname )
@@ -1584,7 +1584,7 @@ function getstartspawnavg( team, classname )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x406b
 // Size: 0x26
 function angle_diff( value1, value2 )
@@ -1593,7 +1593,7 @@ function angle_diff( value1, value2 )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x409a
 // Size: 0x18, Type: bool
 function function_bf0e17930d534ab1()
@@ -1602,7 +1602,7 @@ function function_bf0e17930d534ab1()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x40bb
 // Size: 0x1d6
 function function_71a2a6a6f52ab30b( keyarray, team, forward, forwardoffset, heightoffset )
@@ -1648,7 +1648,7 @@ function function_71a2a6a6f52ab30b( keyarray, team, forward, forwardoffset, heig
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4299
 // Size: 0x24f
 function calculatecameraoffset( team, objectiveorigin )
@@ -1718,7 +1718,7 @@ function calculatecameraoffset( team, objectiveorigin )
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44f0
 // Size: 0x39, Type: bool
 function function_581a8fc6f76d525d()
@@ -1727,7 +1727,7 @@ function function_581a8fc6f76d525d()
 }
 
 // Namespace spawncamera / scripts\mp\spawncamera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4532
 // Size: 0x3a
 function function_cdff2f0b5dcf3aa1()

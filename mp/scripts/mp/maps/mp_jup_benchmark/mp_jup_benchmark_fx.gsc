@@ -1,7 +1,7 @@
 #namespace mp_jup_benchmark_fx;
 
 // Namespace mp_jup_benchmark_fx / scripts\mp\maps\mp_jup_benchmark\mp_jup_benchmark_fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x170
 // Size: 0x6a
 function main()

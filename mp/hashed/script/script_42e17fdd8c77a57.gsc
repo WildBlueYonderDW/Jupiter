@@ -7,7 +7,7 @@
 #namespace warrior_dontshoot;
 
 // Namespace warrior_dontshoot / namespace_9763669b9aad9111
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x127
 // Size: 0x17
 function function_3c1a6c0c2ccb4869()
@@ -17,7 +17,7 @@ function function_3c1a6c0c2ccb4869()
 }
 
 // Namespace warrior_dontshoot / namespace_9763669b9aad9111
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x146
 // Size: 0x61
 function onplayerspawned()
@@ -37,7 +37,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_dontshoot / namespace_9763669b9aad9111
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1af
 // Size: 0x1f
 function function_724cc0f31814881c()

@@ -3,7 +3,7 @@
 #namespace objpoints;
 
 // Namespace objpoints / scripts\mp\objpoints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc3
 // Size: 0x62
 function init()
@@ -26,7 +26,7 @@ function init()
 }
 
 // Namespace objpoints / scripts\mp\objpoints
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x12d
 // Size: 0x14f
 function createteamobjpoint( index, origin, team, shader, alpha, scale )
@@ -78,7 +78,7 @@ function createteamobjpoint( index, origin, team, shader, alpha, scale )
 }
 
 // Namespace objpoints / scripts\mp\objpoints
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x285
 // Size: 0x11e
 function deleteobjpoint( var_2f8b2ff7e0389b27 )
@@ -106,7 +106,7 @@ function deleteobjpoint( var_2f8b2ff7e0389b27 )
 }
 
 // Namespace objpoints / scripts\mp\objpoints
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ab
 // Size: 0x63
 function updateorigin( origin )
@@ -128,7 +128,7 @@ function updateorigin( origin )
 }
 
 // Namespace objpoints / scripts\mp\objpoints
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x416
 // Size: 0x2f
 function setoriginbyname( name, origin )
@@ -138,7 +138,7 @@ function setoriginbyname( name, origin )
 }
 
 // Namespace objpoints / scripts\mp\objpoints
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44d
 // Size: 0x2b
 function getobjpointbyname( name )
@@ -152,7 +152,7 @@ function getobjpointbyname( name )
 }
 
 // Namespace objpoints / scripts\mp\objpoints
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x480
 // Size: 0x35
 function getobjpointbyindex( index )
@@ -166,7 +166,7 @@ function getobjpointbyindex( index )
 }
 
 // Namespace objpoints / scripts\mp\objpoints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4bd
 // Size: 0x90
 function startflashing()
@@ -194,7 +194,7 @@ function startflashing()
 }
 
 // Namespace objpoints / scripts\mp\objpoints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x555
 // Size: 0x19
 function stopflashing()

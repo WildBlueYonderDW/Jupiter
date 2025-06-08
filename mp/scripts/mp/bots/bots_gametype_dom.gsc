@@ -15,7 +15,7 @@
 #namespace bots_gametype_dom;
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bc
 // Size: 0x53
 function main()
@@ -41,7 +41,7 @@ function main()
 /#
 
     // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x417
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -52,7 +52,7 @@ function main()
 #/
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x424
 // Size: 0x77
 function setup_callbacks()
@@ -69,7 +69,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a3
 // Size: 0x39
 function crate_can_use( crate )
@@ -90,7 +90,7 @@ function crate_can_use( crate )
 /#
 
     // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4e5
     // Size: 0x1a9, Type: dev
     function function_f0399eb73eb290b1()
@@ -131,7 +131,7 @@ function crate_can_use( crate )
 #/
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x696
 // Size: 0x70
 function monitor_flag_control()
@@ -159,7 +159,7 @@ function monitor_flag_control()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x70e
 // Size: 0x5b
 function monitor_flag_ownership()
@@ -185,7 +185,7 @@ function monitor_flag_ownership()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x771
 // Size: 0x2ff
 function setup_bot_dom( var_c09effe906c04618, var_c9d880ac3d2f2d31 )
@@ -257,7 +257,7 @@ function setup_bot_dom( var_c09effe906c04618, var_c9d880ac3d2f2d31 )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa78
 // Size: 0xf6
 function bot_wait_for_event_flag_swap( flags )
@@ -282,7 +282,7 @@ function bot_wait_for_event_flag_swap( flags )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb76
 // Size: 0x26
 function bot_get_all_possible_flags()
@@ -296,7 +296,7 @@ function bot_get_all_possible_flags()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba4
 // Size: 0x13c
 function bot_cache_flag_distances( flags )
@@ -315,8 +315,10 @@ function bot_cache_flag_distances( flags )
         i++;
     }
     
-    for (i = 0; i < var_dea51d2a009ac6e7.size - 1; i++) {
-        for (j = i + 1; j < var_dea51d2a009ac6e7.size; j++) {
+    for ( i = 0; i < var_dea51d2a009ac6e7.size - 1 ; i++ )
+    {
+        for ( j = i + 1; j < var_dea51d2a009ac6e7.size ; j++ )
+        {
             var_a5b88c96222e6a1b = distance( var_dea51d2a009ac6e7[ i ].trigger.origin, var_dea51d2a009ac6e7[ j ].trigger.origin );
             i_label = get_flag_label( var_dea51d2a009ac6e7[ i ] );
             j_label = get_flag_label( var_dea51d2a009ac6e7[ j ] );
@@ -327,7 +329,7 @@ function bot_cache_flag_distances( flags )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce8
 // Size: 0x11d
 function should_start_cautious_approach_dom( firstcheck )
@@ -360,7 +362,7 @@ function should_start_cautious_approach_dom( firstcheck )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0e
 // Size: 0x20, Type: bool
 function bot_dom_debug_should_capture_all()
@@ -376,7 +378,7 @@ function bot_dom_debug_should_capture_all()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe37
 // Size: 0x20, Type: bool
 function bot_dom_debug_should_protect_all()
@@ -392,7 +394,7 @@ function bot_dom_debug_should_protect_all()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe60
 // Size: 0x155
 function bot_dom_think()
@@ -452,7 +454,7 @@ function bot_dom_think()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfbd
 // Size: 0xc8, Type: bool
 function should_delay_flag_decision()
@@ -490,7 +492,7 @@ function should_delay_flag_decision()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108e
 // Size: 0x15
 function get_override_flag_targets()
@@ -499,7 +501,7 @@ function get_override_flag_targets()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10ac
 // Size: 0x18, Type: bool
 function has_override_flag_targets()
@@ -509,7 +511,7 @@ function has_override_flag_targets()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10cd
 // Size: 0x13, Type: bool
 function flag_has_been_captured_before( flag )
@@ -518,7 +520,7 @@ function flag_has_been_captured_before( flag )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e9
 // Size: 0x16
 function flag_has_never_been_captured( flag )
@@ -527,7 +529,7 @@ function flag_has_never_been_captured( flag )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1108
 // Size: 0xbbe
 function bot_choose_flag()
@@ -758,7 +760,8 @@ function bot_choose_flag()
             var_51eed82f15a0c64c = [];
             var_5eb2d3db89e5673b = [];
             
-            for (i = 0; i < var_7727a8a4f4a2e7fe.size; i++) {
+            for ( i = 0; i < var_7727a8a4f4a2e7fe.size ; i++ )
+            {
                 dist = distance( var_7727a8a4f4a2e7fe[ i ].trigger.origin, self.origin );
                 var_5eb2d3db89e5673b[ i ] = dist;
                 var_51eed82f15a0c64c[ i ] = dist;
@@ -768,7 +771,8 @@ function bot_choose_flag()
             {
                 var_8b12e8f5719a1c61 = 1.5;
                 
-                for (i = 0; i < var_51eed82f15a0c64c.size; i++) {
+                for ( i = 0; i < var_51eed82f15a0c64c.size ; i++ )
+                {
                     var_51eed82f15a0c64c[ i ] += level.flag_distances[ get_flag_label( var_7727a8a4f4a2e7fe[ i ] ) ][ get_flag_label( var_23b9e499d084cad[ 0 ] ) ] * var_8b12e8f5719a1c61;
                 }
             }
@@ -795,7 +799,8 @@ function bot_choose_flag()
                 var_168860c6fed89ec2[ 0 ] = 50;
                 var_168860c6fed89ec2[ 1 ] = 50;
                 
-                for (i = 0; i < var_7727a8a4f4a2e7fe.size; i++) {
+                for ( i = 0; i < var_7727a8a4f4a2e7fe.size ; i++ )
+                {
                     if ( var_51eed82f15a0c64c[ i ] < var_51eed82f15a0c64c[ 1 - i ] )
                     {
                         var_168860c6fed89ec2[ i ] += 20;
@@ -832,7 +837,8 @@ function bot_choose_flag()
                 var_168860c6fed89ec2[ 1 ] = 33;
                 var_168860c6fed89ec2[ 2 ] = 33;
                 
-                for (i = 0; i < var_7727a8a4f4a2e7fe.size; i++) {
+                for ( i = 0; i < var_7727a8a4f4a2e7fe.size ; i++ )
+                {
                     var_226e0424f3cc40a6 = ( i + 1 ) % 3;
                     var_226e0324f3cc3e73 = ( i + 2 ) % 3;
                     
@@ -980,7 +986,7 @@ function bot_choose_flag()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cce
 // Size: 0x26
 function min_num_bots_assaulting_first_flag()
@@ -990,7 +996,7 @@ function min_num_bots_assaulting_first_flag()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cfd
 // Size: 0x98
 function bot_allowed_to_3_cap()
@@ -1016,7 +1022,7 @@ function bot_allowed_to_3_cap()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d9e
 // Size: 0x77
 function bot_should_defend( var_e8d030a9fa5114ee )
@@ -1043,7 +1049,7 @@ function bot_should_defend( var_e8d030a9fa5114ee )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e1d
 // Size: 0xe0
 function capture_flag( var_f0b1a2262b2f7dfc, override_goal_type, var_119041cda5e9adf2 )
@@ -1071,7 +1077,7 @@ function capture_flag( var_f0b1a2262b2f7dfc, override_goal_type, var_119041cda5e
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f05
 // Size: 0xc6
 function defend_flag( var_3e376080e8dc9e3a )
@@ -1095,7 +1101,7 @@ function defend_flag( var_3e376080e8dc9e3a )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fd3
 // Size: 0x23
 function get_flag_capture_radius()
@@ -1109,7 +1115,7 @@ function get_flag_capture_radius()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fff
 // Size: 0x57
 function get_flag_protect_radius()
@@ -1125,7 +1131,7 @@ function get_flag_protect_radius()
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x205f
 // Size: 0x1ae
 function bot_dom_leader_dialog( dialog, location )
@@ -1168,7 +1174,7 @@ function bot_dom_leader_dialog( dialog, location )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2215
 // Size: 0x36, Type: bool
 function bot_allow_to_capture_flag( flag )
@@ -1189,7 +1195,7 @@ function bot_allow_to_capture_flag( flag )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2254
 // Size: 0x3d7
 function monitor_flag_status( flag )
@@ -1312,7 +1318,7 @@ function monitor_flag_status( flag )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2633
 // Size: 0x13a
 function bot_dom_get_node_chance( node )
@@ -1362,7 +1368,7 @@ function bot_dom_get_node_chance( node )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2776
 // Size: 0x56
 function get_flag_label( flag )
@@ -1379,7 +1385,7 @@ function get_flag_label( flag )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x27d5
 // Size: 0x84
 function get_other_flag( flag1, flag2 )
@@ -1396,7 +1402,7 @@ function get_other_flag( flag1, flag2 )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2861
 // Size: 0x50
 function get_specific_flag_by_letter( flag_letter )
@@ -1407,7 +1413,7 @@ function get_specific_flag_by_letter( flag_letter )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28ba
 // Size: 0x69
 function get_specific_flag_by_label( flag_label )
@@ -1422,7 +1428,7 @@ function get_specific_flag_by_label( flag_label )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x292b
 // Size: 0xa7
 function get_closest_flag( origin )
@@ -1445,7 +1451,7 @@ function get_closest_flag( origin )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29db
 // Size: 0xeb
 function get_num_allies_capturing_flag( flag, ignore_humans )
@@ -1486,35 +1492,35 @@ function get_num_allies_capturing_flag( flag, ignore_humans )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2acf
-// Size: 0x1d, Type: bool
+// Size: 0x1d
 function bot_is_capturing_flag( flag )
 {
     if ( !bot_is_capturing() )
     {
-        return false;
+        return 0;
     }
     
     return bot_target_is_flag( flag );
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2af5
-// Size: 0x1d, Type: bool
+// Size: 0x1d
 function bot_is_protecting_flag( flag )
 {
     if ( !bot_is_protecting() )
     {
-        return false;
+        return 0;
     }
     
     return bot_target_is_flag( flag );
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b1b
 // Size: 0x16, Type: bool
 function bot_target_is_flag( flag )
@@ -1523,7 +1529,7 @@ function bot_target_is_flag( flag )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b3a
 // Size: 0x7d
 function get_num_ally_flags( team )
@@ -1544,7 +1550,7 @@ function get_num_ally_flags( team )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bc0
 // Size: 0x8a
 function get_enemy_flags( team )
@@ -1565,7 +1571,7 @@ function get_enemy_flags( team )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c53
 // Size: 0x84
 function get_ally_flags( team )
@@ -1586,7 +1592,7 @@ function get_ally_flags( team )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ce0
 // Size: 0x3b, Type: bool
 function bot_should_defend_flag( potential_flag, var_2d7337cdf8f706c0 )
@@ -1597,7 +1603,7 @@ function bot_should_defend_flag( potential_flag, var_2d7337cdf8f706c0 )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d24
 // Size: 0x44
 function get_max_num_defenders_wanted_per_flag( var_2d7337cdf8f706c0 )
@@ -1613,7 +1619,7 @@ function get_max_num_defenders_wanted_per_flag( var_2d7337cdf8f706c0 )
 }
 
 // Namespace bots_gametype_dom / scripts\mp\bots\bots_gametype_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d70
 // Size: 0x150
 function get_players_defending_flag( potential_flag )

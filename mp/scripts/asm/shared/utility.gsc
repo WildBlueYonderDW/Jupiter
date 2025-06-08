@@ -12,7 +12,7 @@
 #namespace utility;
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6d3
 // Size: 0x8c
 function chooseanimshoot( asmname, statename, params )
@@ -30,7 +30,7 @@ function chooseanimshoot( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x768
 // Size: 0x7f
 function choosedemeanoranimwithoverride( asmname, statename, params )
@@ -58,7 +58,7 @@ function choosedemeanoranimwithoverride( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7f0
 // Size: 0xc2
 function choosedemeanoranimwithoverridevariants( asmname, statename, params )
@@ -91,7 +91,7 @@ function choosedemeanoranimwithoverridevariants( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8bb
 // Size: 0x56
 function overridecovercrouchnodetype( node )
@@ -105,7 +105,7 @@ function overridecovercrouchnodetype( node )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91a
 // Size: 0xb6, Type: bool
 function allowlmgarrival()
@@ -136,7 +136,7 @@ function allowlmgarrival()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9d9
 // Size: 0x68
 function getnodeforwardyaw( node, poseoverride, var_83ca7917ee6a88e8 )
@@ -154,7 +154,7 @@ function getnodeforwardyaw( node, poseoverride, var_83ca7917ee6a88e8 )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa4a
 // Size: 0x29, Type: bool
 function nodeiscoverstand3dtype( node )
@@ -168,7 +168,7 @@ function nodeiscoverstand3dtype( node )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7c
 // Size: 0x47, Type: bool
 function nodeiscoverexposed3dtype( node )
@@ -185,7 +185,7 @@ function nodeiscoverexposed3dtype( node )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xacc
 // Size: 0x34
 function getnodetypename( node )
@@ -206,7 +206,7 @@ function getnodetypename( node )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb09
 // Size: 0xba
 function choosestrongdamagedeath( asmname, statename, params )
@@ -241,7 +241,7 @@ function choosestrongdamagedeath( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbcc
 // Size: 0x9, Type: bool
 function isatcovernode()
@@ -250,7 +250,7 @@ function isatcovernode()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xbde
 // Size: 0xaa, Type: bool
 function shouldleaveanimscripted( asmname, statename, tostatename, params )
@@ -287,7 +287,7 @@ function shouldleaveanimscripted( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc91
 // Size: 0x7d
 function animscriptedaction( asmname, statename, params )
@@ -301,7 +301,7 @@ function animscriptedaction( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd16
 // Size: 0xe0, Type: bool
 function randomizepassthroughchildren( asmname, statename, tostatename, params )
@@ -330,7 +330,7 @@ function randomizepassthroughchildren( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdff
 // Size: 0x5b, Type: bool
 function nodeshouldfaceangles( node )
@@ -354,7 +354,7 @@ function nodeshouldfaceangles( node )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe63
 // Size: 0x4d
 function choosecrouchorstand( guy, node )
@@ -363,7 +363,7 @@ function choosecrouchorstand( guy, node )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xeb9
 // Size: 0x34
 function choosecrouchorstandtac( guy, tacorigin )
@@ -372,7 +372,7 @@ function choosecrouchorstandtac( guy, tacorigin )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef6
 // Size: 0xd3
 function getarrivalnode()
@@ -407,7 +407,7 @@ function getarrivalnode()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfd2
 // Size: 0x37a
 function isarrivaltypecivilian( asmname, arrivaltype )
@@ -502,7 +502,7 @@ function isarrivaltypecivilian( asmname, arrivaltype )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1355
 // Size: 0x735
 function isarrivaltype( asmname, statename, tostatename, params )
@@ -709,7 +709,7 @@ function isarrivaltype( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a93
 // Size: 0x61
 function playmoveloop( asmname, statename, params )
@@ -723,7 +723,7 @@ function playmoveloop( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1afc
 // Size: 0x25
 function playmoveloopcasual( asmname, statename, params )
@@ -732,7 +732,7 @@ function playmoveloopcasual( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b29
 // Size: 0x3b
 function playanimwithdooropen( asmname, statename, params )
@@ -743,7 +743,7 @@ function playanimwithdooropen( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b6c
 // Size: 0x1b
 function playmoveloopcasualcleanup( asmname, statename, params )
@@ -752,7 +752,7 @@ function playmoveloopcasualcleanup( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b8f
 // Size: 0x66
 function calcdooropenspeed()
@@ -783,7 +783,7 @@ function calcdooropenspeed()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bfe
 // Size: 0x156
 function opendooratreasonabletime()
@@ -829,7 +829,7 @@ function opendooratreasonabletime()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d5d
 // Size: 0x4b
 function opendooratreasonabletime_waitforabort( statename )
@@ -848,7 +848,7 @@ function opendooratreasonabletime_waitforabort( statename )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1db0
 // Size: 0x3c
 function closedoorifnecessary( door )
@@ -862,7 +862,7 @@ function closedoorifnecessary( door )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1df4
 // Size: 0x9c
 function function_b6a072e9e59fb82e( asmname, statename, var_d6e02014cb6c5b06 )
@@ -895,7 +895,7 @@ function function_b6a072e9e59fb82e( asmname, statename, var_d6e02014cb6c5b06 )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e98
 // Size: 0x88
 function isdoorclear()
@@ -919,7 +919,7 @@ function isdoorclear()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f29
 // Size: 0xd1
 function function_ff35aef6aed32425( statename )
@@ -953,7 +953,7 @@ function function_ff35aef6aed32425( statename )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2003
 // Size: 0x1fa
 function function_4d06ccc14a583480( asmname, statename, var_d6e02014cb6c5b06 )
@@ -1022,7 +1022,7 @@ function function_4d06ccc14a583480( asmname, statename, var_d6e02014cb6c5b06 )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2205
 // Size: 0xba
 function function_e183019dcea5b774( doorstate, var_60caa01062501fdc, targetspeed )
@@ -1038,7 +1038,7 @@ function function_e183019dcea5b774( doorstate, var_60caa01062501fdc, targetspeed
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22c8
 // Size: 0xb8
 function function_20962146e1a2e0dd( statename, targetspeed )
@@ -1073,7 +1073,7 @@ function function_20962146e1a2e0dd( statename, targetspeed )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2389
 // Size: 0x125
 function handledooropennotetrack( asmname, statename )
@@ -1090,7 +1090,8 @@ function handledooropennotetrack( asmname, statename )
             notes = [ notes ];
         }
         
-        for (inote = 0; inote < notes.size; inote++) {
+        for ( inote = 0; inote < notes.size ; inote++ )
+        {
             if ( notes[ inote ] == "door_open" )
             {
                 if ( isdefined( self.fndooropen ) && isdefined( self._blackboard.doortoopen ) )
@@ -1118,7 +1119,7 @@ function handledooropennotetrack( asmname, statename )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24b6
 // Size: 0x78
 function handledooropenterminate( asmname, statename )
@@ -1142,7 +1143,7 @@ function handledooropenterminate( asmname, statename )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2536
 // Size: 0x52
 function function_4dd19bfd2ee610f1( statename )
@@ -1159,7 +1160,7 @@ function function_4dd19bfd2ee610f1( statename )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2590
 // Size: 0x59
 function getdooropenspeedlookup()
@@ -1183,7 +1184,7 @@ function getdooropenspeedlookup()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25f1
 // Size: 0x25
 function playanim( asmname, statename, params )
@@ -1192,7 +1193,7 @@ function playanim( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x261e
 // Size: 0x2d
 function playanimwithsound( asmname, statename, params )
@@ -1202,7 +1203,7 @@ function playanimwithsound( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2653
 // Size: 0x29
 function loopanim( asmname, statename, params )
@@ -1211,7 +1212,7 @@ function loopanim( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2684
 // Size: 0xba
 function chooseanimidle( asmname, statename, params )
@@ -1242,7 +1243,7 @@ function chooseanimidle( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2747
 // Size: 0xbf
 function chooseanim_weaponclassprepended( asmname, statename, params )
@@ -1270,7 +1271,7 @@ function chooseanim_weaponclassprepended( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x280f
 // Size: 0x266
 function getarrivaltype()
@@ -1362,7 +1363,7 @@ function getarrivaltype()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a7e
 // Size: 0x43, Type: bool
 function shouldstrafe( asmname, statename, tostatename, params )
@@ -1371,7 +1372,7 @@ function shouldstrafe( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2aca
 // Size: 0x51, Type: bool
 function shouldabortstrafe( asmname, statename, tostatename, params )
@@ -1395,7 +1396,7 @@ function shouldabortstrafe( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b24
 // Size: 0x4a
 function chooseanimmovetype( asmname, statename, params )
@@ -1411,7 +1412,7 @@ function chooseanimmovetype( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2b77
 // Size: 0x29
 function transition_isflashed( asmname, statename, tostatename, params )
@@ -1420,7 +1421,7 @@ function transition_isflashed( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2ba9
 // Size: 0x29
 function transition_isstunned( asmname, statename, tostatename, params )
@@ -1429,7 +1430,7 @@ function transition_isstunned( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2bdb
 // Size: 0x45, Type: bool
 function transition_isburning( asmname, statename, tostatename, params )
@@ -1438,7 +1439,7 @@ function transition_isburning( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2c29
 // Size: 0x57, Type: bool
 function function_5129b58498c1a96f( asmname, statename, tostatename, params )
@@ -1447,7 +1448,7 @@ function function_5129b58498c1a96f( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2c89
 // Size: 0x6c, Type: bool
 function shouldreacttolight( asmname, statename, tostatename, params )
@@ -1466,7 +1467,7 @@ function shouldreacttolight( asmname, statename, tostatename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cfe
 // Size: 0x149
 function chooselightreactionanim( asmname, statename, params )
@@ -1511,7 +1512,7 @@ function chooselightreactionanim( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2e50
 // Size: 0xe2, Type: bool
 function isshocked( asmname, currentstate, var_caae90accdd1699c, params )
@@ -1543,7 +1544,7 @@ function isshocked( asmname, currentstate, var_caae90accdd1699c, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f3b
 // Size: 0x92
 function getdamagedirstring()
@@ -1573,7 +1574,7 @@ function getdamagedirstring()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fd5
 // Size: 0x51, Type: bool
 function gethumandamagedirstring()
@@ -1591,7 +1592,7 @@ function gethumandamagedirstring()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x302f
 // Size: 0x30
 function playanimandusegoalweight( asmname, statename, params )
@@ -1601,7 +1602,7 @@ function playanimandusegoalweight( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3067
 // Size: 0x75
 function animscriptedaction_terminate( asmname, statename, params )
@@ -1622,7 +1623,7 @@ function animscriptedaction_terminate( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x30e4
 // Size: 0x5f
 function animsriptedactioncivilian_terminate( asmname, statename, params )
@@ -1640,7 +1641,7 @@ function animsriptedactioncivilian_terminate( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x314b
 // Size: 0x13
 function cleanupanimscriptedheadlook()
@@ -1650,7 +1651,7 @@ function cleanupanimscriptedheadlook()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3166
 // Size: 0x2c
 function animscriptedstartup( asmname, statename, params )
@@ -1660,7 +1661,7 @@ function animscriptedstartup( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x319a
 // Size: 0x2f
 function animscriptedcleanup( asmname, statename, params )
@@ -1670,7 +1671,7 @@ function animscriptedcleanup( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x31d1
 // Size: 0x22
 function animscriptedaction_cleanup( asmname, statename, params )
@@ -1679,7 +1680,7 @@ function animscriptedaction_cleanup( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31fb
 // Size: 0x86
 function disabledefaultfacialanims( bdisable )
@@ -1709,7 +1710,7 @@ function disabledefaultfacialanims( bdisable )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3289
 // Size: 0x152
 function setfacialindexfornonai( state )
@@ -1746,7 +1747,7 @@ function setfacialindexfornonai( state )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33e3
 // Size: 0xaa
 function function_ee3e5d584e317d35( state )
@@ -1770,7 +1771,7 @@ function function_ee3e5d584e317d35( state )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3495
 // Size: 0x15
 function setfacialstate( state )
@@ -1779,7 +1780,7 @@ function setfacialstate( state )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34b2
 // Size: 0x3b
 function clearfacialstate( state )
@@ -1793,7 +1794,7 @@ function clearfacialstate( state )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34f5
 // Size: 0xa8, Type: bool
 function isfacialstateallowed( state )
@@ -1823,7 +1824,7 @@ function isfacialstateallowed( state )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35a6
 // Size: 0x18
 function decrementbulletsinclip()
@@ -1835,7 +1836,7 @@ function decrementbulletsinclip()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35c6
 // Size: 0xb
 function grenadelauncherfirerate()
@@ -1844,7 +1845,7 @@ function grenadelauncherfirerate()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35da
 // Size: 0x2c
 function shotgunfirerate()
@@ -1863,7 +1864,7 @@ function shotgunfirerate()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x360f
 // Size: 0xc2
 function melee_checktimer( unittype, checkplayer )
@@ -1914,7 +1915,7 @@ function melee_checktimer( unittype, checkplayer )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36d9
 // Size: 0x231
 function setupsoldierdefaults()
@@ -1977,7 +1978,7 @@ function setupsoldierdefaults()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3912
 // Size: 0x92
 function getspeedmatchanimrate( xanim, samplestart, sampleend )
@@ -2003,7 +2004,7 @@ function getspeedmatchanimrate( xanim, samplestart, sampleend )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39ad
 // Size: 0x24, Type: bool
 function isentasoldier()
@@ -2012,7 +2013,7 @@ function isentasoldier()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39da
 // Size: 0x24, Type: bool
 function isentnotabomber()
@@ -2021,7 +2022,7 @@ function isentnotabomber()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a07
 // Size: 0x1b, Type: bool
 function demeanorhasblendspace()
@@ -2031,7 +2032,7 @@ function demeanorhasblendspace()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a2b
 // Size: 0x58, Type: bool
 function isfixednodeinbadplaceandshouldcrouch()
@@ -2045,7 +2046,7 @@ function isfixednodeinbadplaceandshouldcrouch()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a8c
 // Size: 0x284
 function gethighestallowedstance()
@@ -2124,7 +2125,7 @@ function gethighestallowedstance()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d19
 // Size: 0x14a
 function determinerequestedstance()
@@ -2182,7 +2183,7 @@ function determinerequestedstance()
 /#
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3e6c
     // Size: 0x53, Type: dev
     function function_87d74491d0318ba3( archetype )
@@ -2207,7 +2208,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x3ec7
     // Size: 0x6f, Type: dev
     function function_d6919795e4b24d3a( asmname, statename, xanim, note )
@@ -2220,7 +2221,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x3f3e
     // Size: 0x6f, Type: dev
     function function_37064c5f2a8f68ef( asmname, statename, xanim, note )
@@ -2233,7 +2234,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x3fb5
     // Size: 0xa2, Type: dev
     function function_6893c43c1838f552( asmname, statename, xanim, note1, note2 )
@@ -2251,7 +2252,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x405f
     // Size: 0x9a, Type: dev
     function function_3474c2003e05a5e0( asmname, statename, xanim, min_translation )
@@ -2268,7 +2269,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x4101
     // Size: 0x194, Type: dev
     function function_481385c3b908b994( asmname, statename, xanim, max_translation )
@@ -2304,7 +2305,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x429d
     // Size: 0x1f4, Type: dev
     function function_7329f095ddbdb229( asmname, statename, xanim, notetrack, max_translation )
@@ -2365,7 +2366,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4499
     // Size: 0x89, Type: dev
     function function_96b38b91937c6971( asmname, statename, note )
@@ -2384,7 +2385,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x452a
     // Size: 0x8d, Type: dev
     function function_2376c1e1ca3ac68e( asmname, statename, params )
@@ -2403,7 +2404,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x45bf
     // Size: 0x95, Type: dev
     function function_6421e5a82688da9d( asmname, statename, tolerance )
@@ -2427,7 +2428,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x465c
     // Size: 0x142, Type: dev
     function function_fb8af5455aa10890( asmname, statename, params )
@@ -2463,7 +2464,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x47a6
     // Size: 0x2cd, Type: dev
     function function_e291a61d131cb535( asmname, statename, params )
@@ -2553,7 +2554,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4a7b
     // Size: 0x1e, Type: dev
     function function_3668c851be298257( asmname, statename, params )
@@ -2562,7 +2563,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4aa1
     // Size: 0x1e, Type: dev
     function function_e7680ae9c1ad905c( asmname, statename, params )
@@ -2571,7 +2572,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x4ac7
     // Size: 0xac, Type: dev
     function function_291d962b22a07e21( asmname, statename, alias, xanim )
@@ -2589,7 +2590,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4b7b
     // Size: 0x17d, Type: dev
     function function_5ac3e08bd8b8783b( asmname, statename, params )
@@ -2628,7 +2629,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4d00
     // Size: 0x19a, Type: dev
     function function_498119c92072487f( asmname, statename, params )
@@ -2669,7 +2670,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4ea2
     // Size: 0x1f0, Type: dev
     function function_9a500dc0cc17d6da( asmname, statename, params )
@@ -2715,7 +2716,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x509a
     // Size: 0x19f, Type: dev
     function function_5cfc0f7a00ff16ae( asmname, statename, params )
@@ -2756,7 +2757,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x5241
     // Size: 0x1f1, Type: dev
     function function_d63d29d0192b914( asmname, statename, params )
@@ -2805,7 +2806,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x543a
     // Size: 0x1a2, Type: dev
     function function_a61779d8c4b66cda( asmname, statename, params )
@@ -2846,7 +2847,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x55e4
     // Size: 0x152, Type: dev
     function function_a92ee440c129eb3b( asmname, statename, params )
@@ -2886,7 +2887,7 @@ function determinerequestedstance()
     }
 
     // Namespace utility / scripts\asm\shared\utility
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x573e
     // Size: 0x12f, Type: dev
     function function_7f7e506dee7aa8c2( asmname, statename, params )
@@ -2919,7 +2920,7 @@ function determinerequestedstance()
 #/
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5875
 // Size: 0x51
 function mapangleindextonumpad( idx )
@@ -2929,7 +2930,7 @@ function mapangleindextonumpad( idx )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x58cf
 // Size: 0x8d
 function toggle_poiauto( shouldenable, yawmin, yawmax, pitchmin, pitchmax )
@@ -2954,7 +2955,7 @@ function toggle_poiauto( shouldenable, yawmin, yawmax, pitchmin, pitchmax )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5964
 // Size: 0x182
 function set_poiauto_constraints( yawmax, yawmin, pitchmin, pitchmax )
@@ -2988,7 +2989,7 @@ function set_poiauto_constraints( yawmax, yawmin, pitchmin, pitchmax )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5aee
 // Size: 0xea
 function reset_poiauto_constraints()
@@ -3004,7 +3005,7 @@ function reset_poiauto_constraints()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5be0
 // Size: 0x21a
 function toggle_poi( shouldenable, firstpoint )
@@ -3062,7 +3063,7 @@ function toggle_poi( shouldenable, firstpoint )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e02
 // Size: 0x1e
 function shouldinitiallyattackfromexposed( node )
@@ -3071,7 +3072,7 @@ function shouldinitiallyattackfromexposed( node )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5e29
 // Size: 0x1e5
 function cover_canattackfromexposed( enemyorigin, node )
@@ -3148,7 +3149,7 @@ function cover_canattackfromexposed( enemyorigin, node )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6017
 // Size: 0x33, Type: bool
 function cover_canattackfromexposedcached()
@@ -3157,7 +3158,7 @@ function cover_canattackfromexposedcached()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6053
 // Size: 0x15
 function cover_canattackfromexposedgetcache()
@@ -3166,7 +3167,7 @@ function cover_canattackfromexposedgetcache()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6071
 // Size: 0xb3
 function poiauto_init( yawmin, yawmax, pitchmin, pitchmax )
@@ -3200,7 +3201,7 @@ function poiauto_init( yawmin, yawmax, pitchmin, pitchmax )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x612c
 // Size: 0x14c
 function poiauto_think()
@@ -3258,7 +3259,7 @@ function poiauto_think()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6280
 // Size: 0x5a
 function poiauto_relativeangletopos( angles )
@@ -3271,7 +3272,7 @@ function poiauto_relativeangletopos( angles )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62e3
 // Size: 0x59
 function poiauto_glancerandom()
@@ -3285,7 +3286,7 @@ function poiauto_glancerandom()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6344
 // Size: 0x21
 function poiauto_glanceend()
@@ -3297,7 +3298,7 @@ function poiauto_glanceend()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x636d
 // Size: 0xc, Type: bool
 function poiauto_isglancing()
@@ -3306,7 +3307,7 @@ function poiauto_isglancing()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6382
 // Size: 0xf4
 function poiauto_setnewaimangle( secondaim )
@@ -3340,7 +3341,7 @@ function poiauto_setnewaimangle( secondaim )
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x647e
 // Size: 0x36
 function function_2285421dfc79c4d5()
@@ -3360,7 +3361,7 @@ function function_2285421dfc79c4d5()
 }
 
 // Namespace utility / scripts\asm\shared\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64bd
 // Size: 0xc6
 function function_75996a8dac6970f2( range )

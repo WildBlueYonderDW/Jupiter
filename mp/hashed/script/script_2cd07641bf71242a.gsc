@@ -6,7 +6,7 @@
 #namespace namespace_4fecf90fd9e5c41a;
 
 // Namespace namespace_4fecf90fd9e5c41a / namespace_842bb3917a35dd62
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x271
 // Size: 0x1e
 function function_64d97cf652a4d385()
@@ -16,7 +16,7 @@ function function_64d97cf652a4d385()
 }
 
 // Namespace namespace_4fecf90fd9e5c41a / namespace_842bb3917a35dd62
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x297
 // Size: 0x294
 function teleporttraverse( asmname, statename, params )
@@ -91,7 +91,7 @@ function teleporttraverse( asmname, statename, params )
 }
 
 // Namespace namespace_4fecf90fd9e5c41a / namespace_842bb3917a35dd62
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x533
 // Size: 0x175
 function function_46b64b8f6d835b78()
@@ -140,7 +140,7 @@ function function_46b64b8f6d835b78()
 }
 
 // Namespace namespace_4fecf90fd9e5c41a / namespace_842bb3917a35dd62
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6b1
 // Size: 0x96
 function function_c4b3846ecfe9e4ec( asmname, statename, params )
@@ -460,7 +460,7 @@ function private rotatetotraversal( target_yaw )
 }
 
 // Namespace namespace_4fecf90fd9e5c41a / namespace_842bb3917a35dd62
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf91
 // Size: 0x111
 function function_37ec13c91574883c( asmname, statename, params )
@@ -486,7 +486,7 @@ function function_37ec13c91574883c( asmname, statename, params )
 }
 
 // Namespace namespace_4fecf90fd9e5c41a / namespace_842bb3917a35dd62
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x10aa
 // Size: 0x3de
 function function_a8461d8c8de86efe( asmname, statename, startnode, endpos )
@@ -520,7 +520,8 @@ function function_a8461d8c8de86efe( asmname, statename, startnode, endpos )
     debugframes = getdvarint( @"hash_507099c93f31940f", 0 );
     lastpos = self.origin;
     
-    for (i = 0; i < startnode.wall_nodes.size - 1; i++) {
+    for ( i = 0; i < startnode.wall_nodes.size - 1 ; i++ )
+    {
         startposwall = startnode.wall_nodes[ i ];
         endposwall = startnode.wall_nodes[ i + 1 ];
         var_5eb953348620e51f = endposwall - startposwall;
@@ -635,7 +636,7 @@ function private function_234a86bad9f7c8cf()
 }
 
 // Namespace namespace_4fecf90fd9e5c41a / namespace_842bb3917a35dd62
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x155f
 // Size: 0x98
 function function_4b209d7ba1366aa1( asmname, statename, params )
@@ -657,7 +658,7 @@ function function_4b209d7ba1366aa1( asmname, statename, params )
 }
 
 // Namespace namespace_4fecf90fd9e5c41a / namespace_842bb3917a35dd62
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15ff
 // Size: 0xfb
 function function_3131bcdd32390c23( asmname, statename, walk_nodes )
@@ -668,7 +669,8 @@ function function_3131bcdd32390c23( asmname, statename, walk_nodes )
     var_157e0150178595f2 = self.var_157e0150178595f2;
     self.var_157e0150178595f2 = 0;
     
-    for (i = 0; i < walk_nodes.size - 1; i++) {
+    for ( i = 0; i < walk_nodes.size - 1 ; i++ )
+    {
         startpos = walk_nodes[ i ];
         endpos = walk_nodes[ i + 1 ];
         var_93b71025e5032b3b = endpos - startpos;

@@ -4,7 +4,7 @@
 #namespace scriptable_door;
 
 // Namespace scriptable_door / scripts\engine\scriptable_door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9c
 // Size: 0x1b
 function system_init()
@@ -18,7 +18,7 @@ function system_init()
 }
 
 // Namespace scriptable_door / scripts\engine\scriptable_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbf
 // Size: 0x15
 function function_29ba88e5ce21f3fd( var_8886a1f80d549ed )
@@ -27,7 +27,7 @@ function function_29ba88e5ce21f3fd( var_8886a1f80d549ed )
 }
 
 // Namespace scriptable_door / scripts\engine\scriptable_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdc
 // Size: 0x15
 function function_e37078f3d00ef312( var_90b8bda8e925efa2 )
@@ -36,7 +36,7 @@ function function_e37078f3d00ef312( var_90b8bda8e925efa2 )
 }
 
 // Namespace scriptable_door / scripts\engine\scriptable_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf9
 // Size: 0x15
 function function_87d7be37d61cbae3( unlockedcallback )
@@ -45,7 +45,7 @@ function function_87d7be37d61cbae3( unlockedcallback )
 }
 
 // Namespace scriptable_door / scripts\engine\scriptable_door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x116
 // Size: 0x33
 function function_9f2d576809f96d2e( instance, player )
@@ -59,7 +59,7 @@ function function_9f2d576809f96d2e( instance, player )
 }
 
 // Namespace scriptable_door / scripts\engine\scriptable_door
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x152
 // Size: 0x38
 function function_47a1e5b6a230d71f( instance, player, var_85e3240d30e184e7 )
@@ -73,7 +73,7 @@ function function_47a1e5b6a230d71f( instance, player, var_85e3240d30e184e7 )
 }
 
 // Namespace scriptable_door / scripts\engine\scriptable_door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x193
 // Size: 0x2e
 function function_7e3b4de29e022cea( instance, player )

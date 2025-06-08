@@ -5,7 +5,7 @@
 #namespace compass;
 
 // Namespace compass / scripts\mp\compass
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b9
 // Size: 0x7b5
 function setupminimap( material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8 )
@@ -208,7 +208,7 @@ function setupminimap( material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8 )
 }
 
 // Namespace compass / scripts\mp\compass
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x976
 // Size: 0x25
 function vecscale( vec, scalar )
@@ -217,7 +217,7 @@ function vecscale( vec, scalar )
 }
 
 // Namespace compass / scripts\mp\compass
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9a4
 // Size: 0x114
 function getcornersfromarray( array, var_c6f1388c16a82062 )
@@ -249,7 +249,7 @@ function getcornersfromarray( array, var_c6f1388c16a82062 )
 }
 
 // Namespace compass / scripts\mp\compass
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac1
 // Size: 0x62
 function function_fb7bad834ce4b28c( floornumber )

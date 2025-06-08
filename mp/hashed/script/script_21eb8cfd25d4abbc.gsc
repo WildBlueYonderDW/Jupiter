@@ -9,7 +9,7 @@
 /#
 
     // Namespace namespace_13b520ef0ef94d22 / namespace_4121a3de9a9601c8
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xb0
     // Size: 0x11e, Type: dev
     function function_8e1e2ede444b27c7( player )
@@ -70,7 +70,7 @@
     }
 
     // Namespace namespace_13b520ef0ef94d22 / namespace_4121a3de9a9601c8
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d6
     // Size: 0x5e, Type: dev
     function function_86e14dde4a93558d()
@@ -93,7 +93,7 @@
     }
 
     // Namespace namespace_13b520ef0ef94d22 / namespace_4121a3de9a9601c8
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x23c
     // Size: 0x120, Type: dev
     function function_fe10197ad5c2b028( var_b6f7d1562dddbda1, callbackfunction, var_d0b92e2643d628e8 )
@@ -144,7 +144,7 @@
     }
 
     // Namespace namespace_13b520ef0ef94d22 / namespace_4121a3de9a9601c8
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x364
     // Size: 0x35, Type: dev
     function function_d6f7b6f9e9bc119()
@@ -160,7 +160,7 @@
     }
 
     // Namespace namespace_13b520ef0ef94d22 / namespace_4121a3de9a9601c8
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3a1
     // Size: 0x9c, Type: dev
     function function_e5ca1b100ee7f420()
@@ -176,7 +176,7 @@
     }
 
     // Namespace namespace_13b520ef0ef94d22 / namespace_4121a3de9a9601c8
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x445
     // Size: 0x10, Type: dev
     function function_8b314359ff8d79f3()
@@ -185,7 +185,7 @@
     }
 
     // Namespace namespace_13b520ef0ef94d22 / namespace_4121a3de9a9601c8
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x45d
     // Size: 0x6c, Type: dev
     function function_dc0e0ebca84023c0()
@@ -573,7 +573,8 @@
             printtoscreen2d( var_af05d149771b822 - 120, var_92f077146228dc07 + 10, "<dev string:x3eb>" + "<dev string:x3f3>", ( 0, 1, 0 ), 1.3 );
             printtoscreen2d( var_af05d149771b822 - 120, var_92f077146228dc07 + 30, "<dev string:x3fb>" + "<dev string:x405>", ( 0, 1, 0 ), 1.3 );
             
-            for (i = 0; i < level.var_3d2b55060c917ac6.size; i++) {
+            for ( i = 0; i < level.var_3d2b55060c917ac6.size ; i++ )
+            {
                 var_42487180feed4fe4 = level.var_3d2b55060c917ac6[ i ];
                 var_9013fb8d6c6bf07 = ( 0.39, 0.58, 0.93 );
                 text_scale = 1.2;
@@ -644,7 +645,7 @@
     }
 
     // Namespace namespace_13b520ef0ef94d22 / namespace_4121a3de9a9601c8
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1012
     // Size: 0x121, Type: dev
     function function_285630d626038d0a()
@@ -677,7 +678,7 @@
     }
 
     // Namespace namespace_13b520ef0ef94d22 / namespace_4121a3de9a9601c8
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x113b
     // Size: 0x2ac, Type: dev
     function function_3769d0ae67ca1ee8( player )
@@ -719,7 +720,8 @@
         currentline = "<dev string:x314>";
         var_83dbc5b05ae7eaf9 = [];
         
-        for (i = 0; i < filecontent.size; i++) {
+        for ( i = 0; i < filecontent.size ; i++ )
+        {
             if ( ( filecontent[ i ] == "<dev string:x4e5>" || i == filecontent.size - 1 ) && currentline != "<dev string:x314>" )
             {
                 var_83dbc5b05ae7eaf9[ var_83dbc5b05ae7eaf9.size ] = currentline;
@@ -737,7 +739,8 @@
             var_4332c38ecd8e8ff6 = 0;
             var_2b629acca6af7bc6 = "<dev string:x314>";
             
-            for (i = 0; i < line.size; i++) {
+            for ( i = 0; i < line.size ; i++ )
+            {
                 char = line[ i ];
                 
                 if ( char != "<dev string:x4ea>" && var_4332c38ecd8e8ff6 == 0 )

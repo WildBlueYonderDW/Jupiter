@@ -4,7 +4,7 @@
 #namespace namespace_ee1dacfbea82d21d;
 
 // Namespace namespace_ee1dacfbea82d21d / namespace_de07b9ab09edf46a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x430
 // Size: 0x3bc
 function function_7fa382ebd44ac411()
@@ -55,7 +55,7 @@ function function_7fa382ebd44ac411()
 }
 
 // Namespace namespace_ee1dacfbea82d21d / namespace_de07b9ab09edf46a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f4
 // Size: 0x58
 function function_c53f0344e549edd5()
@@ -63,7 +63,8 @@ function function_c53f0344e549edd5()
     level endon( "game_ended" );
     function_56ddff8548c968d6();
     
-    for (i = 0; i < level.var_6f626f29ffd28538.steps.size; i++) {
+    for ( i = 0; i < level.var_6f626f29ffd28538.steps.size ; i++ )
+    {
         startstep( level.var_6f626f29ffd28538.steps[ i ] );
     }
 }

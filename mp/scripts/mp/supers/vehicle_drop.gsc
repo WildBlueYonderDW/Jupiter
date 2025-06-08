@@ -20,7 +20,7 @@
 #namespace vehicle_drop;
 
 // Namespace vehicle_drop / scripts\mp\supers\vehicle_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30f
 // Size: 0xc, Type: bool
 function function_172a790b85bbc40b()
@@ -30,7 +30,7 @@ function function_172a790b85bbc40b()
 }
 
 // Namespace vehicle_drop / scripts\mp\supers\vehicle_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x324
 // Size: 0x124
 function function_369cd45b595b9c13()
@@ -74,7 +74,7 @@ function function_369cd45b595b9c13()
 }
 
 // Namespace vehicle_drop / scripts\mp\supers\vehicle_drop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x450
 // Size: 0x48
 function function_e203a65ecb5c85c4( grenade )
@@ -92,7 +92,7 @@ function function_e203a65ecb5c85c4( grenade )
 }
 
 // Namespace vehicle_drop / scripts\mp\supers\vehicle_drop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a0
 // Size: 0x21f
 function function_604ed6f2f8323ea6( grenade )
@@ -177,7 +177,7 @@ function function_604ed6f2f8323ea6( grenade )
 }
 
 // Namespace vehicle_drop / scripts\mp\supers\vehicle_drop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c8
 // Size: 0x18, Type: bool
 function function_852ea8e204596ed0( equipmentref )

@@ -8,7 +8,7 @@
 /#
 
     // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1ce
     // Size: 0x5, Type: dev
     function function_8086d05fcf37c41e()
@@ -19,7 +19,7 @@
 #/
 
 // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1db
 // Size: 0x17b
 function spawn_refractor( spawn_struct, var_cd74e8066ff626a6, var_c974765ba1e28e93 )
@@ -57,7 +57,7 @@ function spawn_refractor( spawn_struct, var_cd74e8066ff626a6, var_c974765ba1e28e
 }
 
 // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35f
 // Size: 0x2a
 function function_d5c87e3695f5b16( callback )
@@ -69,7 +69,7 @@ function function_d5c87e3695f5b16( callback )
 }
 
 // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x391
 // Size: 0x2a
 function function_d290ab656c9cd6e2( callback )
@@ -81,7 +81,7 @@ function function_d290ab656c9cd6e2( callback )
 }
 
 // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c3
 // Size: 0x2a
 function function_3c5ad201440cf164( callback )
@@ -93,7 +93,7 @@ function function_3c5ad201440cf164( callback )
 }
 
 // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f5
 // Size: 0x2a
 function function_9cdaad2239acc1fc( callback )
@@ -105,7 +105,7 @@ function function_9cdaad2239acc1fc( callback )
 }
 
 // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x427
 // Size: 0x2a
 function function_938ec5691a0782f8( callback )
@@ -119,7 +119,7 @@ function function_938ec5691a0782f8( callback )
 /#
 
     // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x459
     // Size: 0x5, Type: dev
     function function_c31851330ac22c3c()
@@ -204,7 +204,7 @@ function private function_cf139bdff2bdcaad( func )
 }
 
 // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x699
 // Size: 0x25
 function function_e23f7699eb3f384e()
@@ -220,7 +220,7 @@ function function_e23f7699eb3f384e()
 /#
 
     // Namespace ob_seismic_refractor / scripts\ob\ob_seismic_refractor
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6c6
     // Size: 0x5, Type: dev
     function function_8a76744810afe9be()

@@ -4,7 +4,7 @@
 #namespace metabone;
 
 // Namespace metabone / scripts\common\metabone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13a
 // Size: 0x48
 function function_fe9929b42e5a99e4( var_3cb9d553a26a429a )
@@ -19,14 +19,14 @@ function function_fe9929b42e5a99e4( var_3cb9d553a26a429a )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18a
-// Size: 0x6b, Type: bool
+// Size: 0x6b
 function function_cec565632b7fc419( var_c02b1f6c1721c844 )
 {
     if ( !isdefined( var_c02b1f6c1721c844 ) || !isdefined( self.metabones ) )
     {
-        return false;
+        return 0;
     }
     
     var_46a3e181e35f46ab = function_97fd256a244527b4( self.metabones.bundle_name );
@@ -37,11 +37,11 @@ function function_cec565632b7fc419( var_c02b1f6c1721c844 )
         return is_destroyed( metabone );
     }
     
-    return false;
+    return 0;
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fe
 // Size: 0x96
 function function_4b44008810022d21( var_c02b1f6c1721c844, data_type )
@@ -69,7 +69,7 @@ function function_4b44008810022d21( var_c02b1f6c1721c844, data_type )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29d
 // Size: 0xac
 function function_7380ccd6f2c49392( var_c02b1f6c1721c844, active )
@@ -89,7 +89,7 @@ function function_7380ccd6f2c49392( var_c02b1f6c1721c844, active )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x351
 // Size: 0x1e9
 function function_3d2728c0e2252a1d( var_c02b1f6c1721c844, state_name )
@@ -142,7 +142,7 @@ function function_3d2728c0e2252a1d( var_c02b1f6c1721c844, state_name )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x542
 // Size: 0xe8
 function function_4ef84a18efbb779a( var_c02b1f6c1721c844, damage, eattacker, einflictor )
@@ -174,7 +174,7 @@ function function_4ef84a18efbb779a( var_c02b1f6c1721c844, damage, eattacker, ein
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x633
 // Size: 0x6a
 function function_dfd6d030978a7650( var_c02b1f6c1721c844, damage, state_name, eattacker, einflictor )
@@ -189,7 +189,7 @@ function function_dfd6d030978a7650( var_c02b1f6c1721c844, damage, state_name, ea
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6a5
 // Size: 0x27
 function function_3d2875316eed616d( var_c02b1f6c1721c844, health, state_name )
@@ -198,7 +198,7 @@ function function_3d2875316eed616d( var_c02b1f6c1721c844, health, state_name )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6d4
 // Size: 0x26
 function function_5f2c6624e43cd8e( var_c02b1f6c1721c844, health, state_name )
@@ -207,7 +207,7 @@ function function_5f2c6624e43cd8e( var_c02b1f6c1721c844, health, state_name )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x702
 // Size: 0x162
 function function_8c1f2f897dfe5982( var_c02b1f6c1721c844, state_name )
@@ -254,7 +254,7 @@ function function_8c1f2f897dfe5982( var_c02b1f6c1721c844, state_name )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x86d
 // Size: 0x148
 function function_58b8812944c3f7e8( var_c02b1f6c1721c844, state_name )
@@ -296,7 +296,7 @@ function function_58b8812944c3f7e8( var_c02b1f6c1721c844, state_name )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9be
 // Size: 0x105
 function function_b51afbf2bd72c825( var_c02b1f6c1721c844, eattacker, einflictor )
@@ -328,7 +328,7 @@ function function_b51afbf2bd72c825( var_c02b1f6c1721c844, eattacker, einflictor 
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xacb
 // Size: 0x1c0
 function function_ae12b32b13b42c5e( hit_loc, direction )
@@ -381,7 +381,7 @@ function function_ae12b32b13b42c5e( hit_loc, direction )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc94
 // Size: 0x293
 function function_b8f2b0917b1d3c98( point, direction )
@@ -454,7 +454,7 @@ function function_b8f2b0917b1d3c98( point, direction )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf30
 // Size: 0x39
 function function_d6736c5ef5ac2990( var_601bcee5d276f46d, var_b9f4b7206d76e7ce )
@@ -464,7 +464,7 @@ function function_d6736c5ef5ac2990( var_601bcee5d276f46d, var_b9f4b7206d76e7ce )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf71
 // Size: 0x15
 function function_691c50069ed7c2f7( var_4810813762c90924 )
@@ -473,7 +473,7 @@ function function_691c50069ed7c2f7( var_4810813762c90924 )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf8e
 // Size: 0x25
 function function_e3bec440b7001e99( dmgstruct )
@@ -485,7 +485,7 @@ function function_e3bec440b7001e99( dmgstruct )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfbb
 // Size: 0xc, Type: bool
 function function_df9189c2ea1a100d()
@@ -494,7 +494,7 @@ function function_df9189c2ea1a100d()
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfd0
 // Size: 0x26d
 function function_ec6814be373eb44d( params )
@@ -540,7 +540,7 @@ function function_ec6814be373eb44d( params )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1245
 // Size: 0xe5, Type: bool
 function function_adb7b3f940cde3b5( var_c02b1f6c1721c844 )
@@ -565,7 +565,7 @@ function function_adb7b3f940cde3b5( var_c02b1f6c1721c844 )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1333
 // Size: 0xde
 function function_8ddba5bfa85f8cc9( var_c02b1f6c1721c844 )
@@ -593,7 +593,7 @@ function function_8ddba5bfa85f8cc9( var_c02b1f6c1721c844 )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1419
 // Size: 0x11d
 function function_9a6eacf7b4bcee1b( data_type )
@@ -761,7 +761,7 @@ function private function_7cf25149a71d0124( metabone_state, data_type )
 }
 
 // Namespace metabone / scripts\common\metabone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1941
 // Size: 0x59
 function function_97fd256a244527b4( var_3cb9d553a26a429a )
@@ -792,7 +792,8 @@ function private function_1349c07bc3a21602( var_3cb9d553a26a429a )
     var_46a3e181e35f46ab = getscriptbundle( "metabonelist:" + var_3cb9d553a26a429a );
     var_46a3e181e35f46ab.var_5840b90f4e873441 = [];
     
-    for (var_85b8d7e4cfc398d = 0; var_85b8d7e4cfc398d < var_46a3e181e35f46ab.metabones.size; var_85b8d7e4cfc398d++) {
+    for ( var_85b8d7e4cfc398d = 0; var_85b8d7e4cfc398d < var_46a3e181e35f46ab.metabones.size ; var_85b8d7e4cfc398d++ )
+    {
         metabone = var_46a3e181e35f46ab.metabones[ var_85b8d7e4cfc398d ];
         
         if ( !isdefined( metabone.name ) || metabone.name == "" )
@@ -809,7 +810,8 @@ function private function_1349c07bc3a21602( var_3cb9d553a26a429a )
         var_46a3e181e35f46ab.var_5840b90f4e873441[ metabone.name ] = metabone;
         metabone.var_aaf54b483d8b81 = [];
         
-        for (state_index = 0; state_index < metabone.states.size; state_index++) {
+        for ( state_index = 0; state_index < metabone.states.size ; state_index++ )
+        {
             state = metabone.states[ state_index ];
             state.index = state_index;
             

@@ -16,14 +16,15 @@
 #namespace namespace_96967e67f325d164;
 
 // Namespace namespace_96967e67f325d164 / namespace_bf7e4ac48f40185
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21e
 // Size: 0xd3
 function activate()
 {
     var_67fff5b201c4698d = 120;
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         spawnangle = var_67fff5b201c4698d * i + randomfloatrange( -15, 15 );
         spawnpos = level.player.origin + 75 * ( cos( spawnangle ), sin( spawnangle ), 0 );
         agent = scripts\mp\mp_agent::spawnnewagentaitype( "support_mp_ar_base", spawnpos, ( 0, spawnangle, 0 ), level.player.team );
@@ -35,7 +36,7 @@ function activate()
 }
 
 // Namespace namespace_96967e67f325d164 / namespace_bf7e4ac48f40185
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f9
 // Size: 0xb8
 function activate_enemy()
@@ -43,7 +44,8 @@ function activate_enemy()
     var_67fff5b201c4698d = 360;
     enemyorigin = level.player.origin + anglestoforward( level.player.angles ) * 1000;
     
-    for (i = 0; i < 1; i++) {
+    for ( i = 0; i < 1 ; i++ )
+    {
         spawnangle = var_67fff5b201c4698d * i + randomfloatrange( -15, 15 );
         spawnpos = enemyorigin + 75 * ( cos( spawnangle ), sin( spawnangle ), 0 );
         agent = scripts\mp\mp_agent::spawnnewagentaitype( "enemy_mp_ar_base", spawnpos, ( 0, spawnangle, 0 ), "team_hundred_ninety_five" );
@@ -51,7 +53,7 @@ function activate_enemy()
 }
 
 // Namespace namespace_96967e67f325d164 / namespace_bf7e4ac48f40185
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b9
 // Size: 0x288
 function function_2afd04eb035f975()
@@ -147,7 +149,7 @@ function function_2afd04eb035f975()
 }
 
 // Namespace namespace_96967e67f325d164 / namespace_bf7e4ac48f40185
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x649
 // Size: 0xe2
 function function_456ff70fc6a3b1f8()
@@ -178,7 +180,7 @@ function function_456ff70fc6a3b1f8()
 }
 
 // Namespace namespace_96967e67f325d164 / namespace_bf7e4ac48f40185
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x733
 // Size: 0x34
 function function_675553db448c2741( attacker )
@@ -195,7 +197,7 @@ function function_675553db448c2741( attacker )
 }
 
 // Namespace namespace_96967e67f325d164 / namespace_bf7e4ac48f40185
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76f
 // Size: 0x87f
 function function_92cfd582ab09b167( pickup )
@@ -535,7 +537,7 @@ function function_92cfd582ab09b167( pickup )
 }
 
 // Namespace namespace_96967e67f325d164 / namespace_bf7e4ac48f40185
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xff7
 // Size: 0x316
 function function_b95656bc9f3d0896( var_d16c481bae2b1cd3 )

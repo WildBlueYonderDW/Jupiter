@@ -10,7 +10,7 @@
 #namespace anim_mp;
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ff
 // Size: 0x133
 function init()
@@ -42,7 +42,7 @@ function init()
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x43a
 // Size: 0x23
 function play_sound_at_viewheight( aliasname, notification_string, var_a68adbd3eefe9282 )
@@ -51,7 +51,7 @@ function play_sound_at_viewheight( aliasname, notification_string, var_a68adbd3e
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x465
 // Size: 0x4, Type: bool
 function should_do_anim()
@@ -60,7 +60,7 @@ function should_do_anim()
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x472
 // Size: 0x96
 function teleport_entity( origin, angles )
@@ -95,7 +95,7 @@ function teleport_entity( origin, angles )
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x510
 // Size: 0x56
 function function_c606ca98a77e09ca()
@@ -118,7 +118,7 @@ function function_c606ca98a77e09ca()
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x56f
 // Size: 0x34, Type: bool
 function do_facial_anim( dofacialanim, var_9ac73a1996d2dae, doanimation, anime, animname, dialogue )
@@ -127,7 +127,7 @@ function do_facial_anim( dofacialanim, var_9ac73a1996d2dae, doanimation, anime, 
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x5ac
 // Size: 0x20b
 function do_animation( org, angles, animname, anime, anim_string, idleanim, scripted_node_ent )
@@ -211,7 +211,7 @@ function do_animation( org, angles, animname, anime, anim_string, idleanim, scri
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7c0
 // Size: 0x114
 function mp_anim_handle_notetrack( scr_notetrack, guy, var_966821fc90c3ca9d, tag_owner )
@@ -258,7 +258,7 @@ function mp_anim_handle_notetrack( scr_notetrack, guy, var_966821fc90c3ca9d, tag
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8dc
 // Size: 0x1f
 function mp_entity_handle_notetrack( guy, notetrack )
@@ -270,7 +270,7 @@ function mp_entity_handle_notetrack( guy, notetrack )
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x903
 // Size: 0x6d
 function anim_player_solo( player, player_rig, anime, tag, var_9e8a16d47a03007a, animname_override )
@@ -288,7 +288,7 @@ function anim_player_solo( player, player_rig, anime, tag, var_9e8a16d47a03007a,
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x978
 // Size: 0x48
 function anim_player( players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override )
@@ -302,7 +302,7 @@ function anim_player( players, player_rigs, anime, tag, var_9e8a16d47a03007a, an
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x9c8
 // Size: 0x14f
 function anim_player_internal( players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override )
@@ -344,7 +344,7 @@ function anim_player_internal( players, player_rigs, anime, tag, var_9e8a16d47a0
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb1f
 // Size: 0x90
 function play_xcam( xcamasset, origin, angles )
@@ -361,7 +361,7 @@ function play_xcam( xcamasset, origin, angles )
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbb7
 // Size: 0x41
 function function_3c8f0102ea5254f3( framecount )
@@ -378,7 +378,7 @@ function function_3c8f0102ea5254f3( framecount )
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc00
 // Size: 0x121
 function function_b9c0db166bfa05de( startorg, startangles )
@@ -413,7 +413,7 @@ function function_b9c0db166bfa05de( startorg, startangles )
 }
 
 // Namespace anim_mp / scripts\mp\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd2a
 // Size: 0xa4
 function function_4e8646c3e9f9ec0a()

@@ -9,7 +9,7 @@
 #namespace search_threat;
 
 // Namespace search_threat / namespace_f579db4f1fdf0250
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf1
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -18,7 +18,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace search_threat / namespace_f579db4f1fdf0250
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x107
 // Size: 0x1cb
 function evaluatescore( bot )
@@ -73,7 +73,7 @@ function evaluatescore( bot )
 }
 
 // Namespace search_threat / namespace_f579db4f1fdf0250
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2db
 // Size: 0xfd
 function actionprocess( bot )

@@ -97,7 +97,7 @@ function autoexec main()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1441
 // Size: 0x52
 function function_4d963287920f7456()
@@ -117,7 +117,7 @@ function function_4d963287920f7456()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x149b
 // Size: 0x66
 function function_542402e1da1b422b()
@@ -129,7 +129,7 @@ function function_542402e1da1b422b()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1509
 // Size: 0x79
 function function_4fea0f8d04cd5a9f( params )
@@ -160,7 +160,7 @@ function function_4fea0f8d04cd5a9f( params )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x158a
 // Size: 0x6b
 function function_e69695ef0a64f686( grenade )
@@ -173,7 +173,7 @@ function function_e69695ef0a64f686( grenade )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15fd
 // Size: 0x27
 function function_79cbe6d4fa8dc740()
@@ -187,7 +187,7 @@ function function_79cbe6d4fa8dc740()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x162c
 // Size: 0x29
 function function_79b2d283ccebd40d( attractor, ai )
@@ -196,7 +196,7 @@ function function_79b2d283ccebd40d( attractor, ai )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x165e
 // Size: 0x9e
 function function_fbb76db792abc436()
@@ -219,7 +219,7 @@ function function_fbb76db792abc436()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1704
 // Size: 0x2ed
 function function_99ac3b02d82812e2()
@@ -272,7 +272,7 @@ function function_99ac3b02d82812e2()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19f9
 // Size: 0x4bf
 function difficulty_ramp()
@@ -373,7 +373,7 @@ function difficulty_ramp()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ec0
 // Size: 0x15
 function function_1599a5eece9a737c()
@@ -383,12 +383,12 @@ function function_1599a5eece9a737c()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1edd
 // Size: 0x4a
 function init_spawns()
 {
-    setdvar( @"hash_365d77262b3a350e", 0 );
+    setdvar( @"scr_starsystem", 0 );
     
     while ( !isdefined( level.gametypebundle ) )
     {
@@ -402,7 +402,7 @@ function init_spawns()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f2f
 // Size: 0x45e
 function function_dbd05fba7c666ad1()
@@ -522,7 +522,7 @@ function function_dbd05fba7c666ad1()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2395
 // Size: 0x81
 function speed_increase( var_247cc03625bd32f1, var_d8c5344572cddf4c )
@@ -557,7 +557,7 @@ function speed_increase( var_247cc03625bd32f1, var_d8c5344572cddf4c )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x241e
 // Size: 0x203
 function function_40c1f0d70102699d()
@@ -568,7 +568,8 @@ function function_40c1f0d70102699d()
     {
         add_amount = level.zombie_count - level.var_cd97b8529d2084ec;
         
-        for (i = 0; i < add_amount; i++) {
+        for ( i = 0; i < add_amount ; i++ )
+        {
             level.var_ca1314ff09b650f1 = array_add( level.var_ca1314ff09b650f1, "zombie_base" );
             level.var_cd97b8529d2084ec++;
         }
@@ -578,7 +579,8 @@ function function_40c1f0d70102699d()
     {
         add_amount = level.armored_count - level.var_cfefa2ba0f234157;
         
-        for (i = 0; i < add_amount; i++) {
+        for ( i = 0; i < add_amount ; i++ )
+        {
             level.var_ca1314ff09b650f1 = array_add( level.var_ca1314ff09b650f1, "zombie_base_armored_heavy" );
             level.var_cfefa2ba0f234157++;
         }
@@ -588,7 +590,8 @@ function function_40c1f0d70102699d()
     {
         add_amount = level.hellhound_count - level.var_a43b67b5f86b3332;
         
-        for (i = 0; i < add_amount; i++) {
+        for ( i = 0; i < add_amount ; i++ )
+        {
             level.var_ca1314ff09b650f1 = array_add( level.var_ca1314ff09b650f1, "zombie_hellhound" );
             level.var_a43b67b5f86b3332++;
         }
@@ -598,7 +601,8 @@ function function_40c1f0d70102699d()
     {
         add_amount = level.var_cead06788dacad3e - level.var_64dfea01f5c51f4c;
         
-        for (i = 0; i < add_amount; i++) {
+        for ( i = 0; i < add_amount ; i++ )
+        {
             level.var_ca1314ff09b650f1 = array_add( level.var_ca1314ff09b650f1, "zombie_mimic" );
             level.var_64dfea01f5c51f4c++;
         }
@@ -608,7 +612,8 @@ function function_40c1f0d70102699d()
     {
         add_amount = level.var_7dda105d87b7b147 - level.var_be60801963958c7f;
         
-        for (i = 0; i < add_amount; i++) {
+        for ( i = 0; i < add_amount ; i++ )
+        {
             level.var_ca1314ff09b650f1 = array_add( level.var_ca1314ff09b650f1, "zombie_mangler" );
             level.var_be60801963958c7f++;
         }
@@ -616,7 +621,7 @@ function function_40c1f0d70102699d()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2629
 // Size: 0x121
 function function_ca817bf862167332( player )
@@ -649,7 +654,7 @@ function function_ca817bf862167332( player )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2753
 // Size: 0x18e
 function function_efaf11bef8c9efed( zone, min_value, max_value )
@@ -703,7 +708,7 @@ function function_efaf11bef8c9efed( zone, min_value, max_value )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28ea
 // Size: 0x277
 function function_f5cda710477f2725( zone, min_value, max_value )
@@ -776,7 +781,7 @@ function function_f5cda710477f2725( zone, min_value, max_value )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b6a
 // Size: 0x16a
 function function_12d3db51fd7f88b5( zone )
@@ -820,7 +825,7 @@ function function_12d3db51fd7f88b5( zone )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cdd
 // Size: 0xe9
 function function_915d5e6e37ca560d()
@@ -851,7 +856,7 @@ function function_915d5e6e37ca560d()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dce
 // Size: 0x209
 function function_dcfd39bb50e8f992( zombie_type )
@@ -912,7 +917,7 @@ function function_dcfd39bb50e8f992( zombie_type )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fdf
 // Size: 0x236
 function create_bone( spawn_location )
@@ -947,7 +952,7 @@ function create_bone( spawn_location )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x321d
 // Size: 0x2c2
 function create_skull( spawn_location, zombie_type )
@@ -1001,7 +1006,7 @@ function create_skull( spawn_location, zombie_type )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34e7
 // Size: 0x14a
 function function_93b7660d07191552( player )
@@ -1030,7 +1035,7 @@ function function_93b7660d07191552( player )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3639
 // Size: 0x482
 function function_ba520f4a9495a8a1( player )
@@ -1117,7 +1122,7 @@ function function_ba520f4a9495a8a1( player )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ac3
 // Size: 0x61
 function function_b216b39d9ea94e4a( drop_amount )
@@ -1135,7 +1140,7 @@ function function_b216b39d9ea94e4a( drop_amount )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b2c
 // Size: 0x61
 function function_cadce08fab348041( drop_amount )
@@ -1153,7 +1158,7 @@ function function_cadce08fab348041( drop_amount )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b95
 // Size: 0x263
 function function_96d560240ecdae0d()
@@ -1174,7 +1179,8 @@ function function_96d560240ecdae0d()
     rotation_value = randomintrange( 140, 180 );
     going_up = cointoss();
     
-    for (i = 0; i < level.var_3c58cca11f993e45; i++) {
+    for ( i = 0; i < level.var_3c58cca11f993e45 ; i++ )
+    {
         self.visuals[ 0 ] rotateby( ( 0, rotation_value, 0 ), 1 );
         
         if ( going_up )
@@ -1216,7 +1222,7 @@ function function_96d560240ecdae0d()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e00
 // Size: 0x23
 function function_b591b3abd719646c()
@@ -1228,7 +1234,7 @@ function function_b591b3abd719646c()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e2b
 // Size: 0x92
 function function_7b6ff5793cbddbca()
@@ -1245,7 +1251,7 @@ function function_7b6ff5793cbddbca()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ec5
 // Size: 0x3c
 function function_ecdae672c660149e()
@@ -1260,7 +1266,7 @@ function function_ecdae672c660149e()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f0a
 // Size: 0x19
 function function_c507569144b8d1a3( event )
@@ -1269,7 +1275,7 @@ function function_c507569144b8d1a3( event )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f2b
 // Size: 0x13a
 function init_fx()
@@ -1289,7 +1295,7 @@ function init_fx()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x406d
 // Size: 0x166
 function function_1c0957ff8e2f49df( params )
@@ -1335,7 +1341,7 @@ function function_1c0957ff8e2f49df( params )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41db
 // Size: 0x230
 function function_962ed9cc14292aa5( params )
@@ -1418,7 +1424,7 @@ function function_962ed9cc14292aa5( params )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4413
 // Size: 0x3a1
 function function_11c37750961667d4( drop_origin )
@@ -1493,7 +1499,7 @@ function function_11c37750961667d4( drop_origin )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x47bc
 // Size: 0x69
 function function_ba51ee549bec6b9c( var_c7a36896c1b990da, var_901751caeef17d3 )
@@ -1512,7 +1518,7 @@ function function_ba51ee549bec6b9c( var_c7a36896c1b990da, var_901751caeef17d3 )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x482e
 // Size: 0x3d
 function function_f50c5efa63074cf6( var_c7a36896c1b990da )
@@ -1523,14 +1529,15 @@ function function_f50c5efa63074cf6( var_c7a36896c1b990da )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4874
 // Size: 0x87
 function function_b4aef3b848dbb73a( var_c7a36896c1b990da )
 {
     self endon( "entitydeleted" );
     
-    for (i = 0; i < level.var_36a0d9736ff96a13; i++) {
+    for ( i = 0; i < level.var_36a0d9736ff96a13 ; i++ )
+    {
         if ( i < level.var_36a0d9736ff96a13 - 6 )
         {
             wait 1;
@@ -1559,7 +1566,7 @@ function function_b4aef3b848dbb73a( var_c7a36896c1b990da )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4904
 // Size: 0x94
 function init_powerups( var_751ff6b802605de7, var_931062a9b77a0c65 )
@@ -1666,7 +1673,7 @@ function private function_4d4c49885e6b2490( var_751ff6b802605de7, var_931062a9b7
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e63
 // Size: 0x19
 function function_8ca4b49ee68720bf( event )
@@ -1675,7 +1682,7 @@ function function_8ca4b49ee68720bf( event )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e84
 // Size: 0x152
 function function_e6f547b7f0a996ed()
@@ -1714,7 +1721,7 @@ function function_e6f547b7f0a996ed()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4fdf
 // Size: 0x73
 function register_powerup( str_powerup, func_grab_powerup, func_should_drop_with_regular_powerups, var_58a4e1d475eb979b )
@@ -1731,7 +1738,7 @@ function register_powerup( str_powerup, func_grab_powerup, func_should_drop_with
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x505a
 // Size: 0x9c
 function _register( str_powerup, func_grab_powerup, func_should_drop_with_regular_powerups, var_58a4e1d475eb979b )
@@ -1747,7 +1754,7 @@ function _register( str_powerup, func_grab_powerup, func_should_drop_with_regula
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x50fe
 // Size: 0xb2
 function function_854b2d27ee860e0e( str_powerup, func_grab_powerup, func_should_drop_with_regular_powerups, var_58a4e1d475eb979b )
@@ -1768,7 +1775,7 @@ function function_854b2d27ee860e0e( str_powerup, func_grab_powerup, func_should_
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x51b8
 // Size: 0x52
 function powerup_activate( str_powerup, ent_powerup )
@@ -1780,7 +1787,7 @@ function powerup_activate( str_powerup, ent_powerup )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5212
 // Size: 0x1d, Type: bool
 function function_a7f6960c623182d2( str_powerup )
@@ -1789,7 +1796,7 @@ function function_a7f6960c623182d2( str_powerup )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5238
 // Size: 0x29, Type: bool
 function function_c414330b83d2e427( str_powerup )
@@ -1798,7 +1805,7 @@ function function_c414330b83d2e427( str_powerup )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x526a
 // Size: 0x34
 function function_896f9300bcde23c2( str_powerup )
@@ -1814,7 +1821,7 @@ function function_896f9300bcde23c2( str_powerup )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x52a7
 // Size: 0x1d
 function function_519d44e54a9b8ae5( str_powerup )
@@ -1823,7 +1830,7 @@ function function_519d44e54a9b8ae5( str_powerup )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x52cd
 // Size: 0x191
 function function_a56a8b17eae57b09( str_powerup, powerup_origin )
@@ -1876,7 +1883,7 @@ function function_a56a8b17eae57b09( str_powerup, powerup_origin )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5467
 // Size: 0x117
 function function_d4be622286a198( str_powerup, v_spawn_pos, v_spawn_angles )
@@ -1904,7 +1911,7 @@ function function_d4be622286a198( str_powerup, v_spawn_pos, v_spawn_angles )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5586
 // Size: 0x4e
 function function_c38c89a662ac4f51( str_powerup, origin )
@@ -1920,7 +1927,7 @@ function function_c38c89a662ac4f51( str_powerup, origin )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x55dc
 // Size: 0x1a3
 function powerup_drop( str_powerup, v_spawn_pos, var_cfca9abfbb48775e, var_31a30ed92b3baeec )
@@ -1965,7 +1972,7 @@ function powerup_drop( str_powerup, v_spawn_pos, var_cfca9abfbb48775e, var_31a30
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5788
 // Size: 0xe7
 function function_ff48fa45d1f0c4e1( offset )
@@ -1993,7 +2000,7 @@ function function_ff48fa45d1f0c4e1( offset )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5878
 // Size: 0x53
 function function_6941afdf7d54f58c( func_callback )
@@ -2009,7 +2016,7 @@ function function_6941afdf7d54f58c( func_callback )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x58d3
 // Size: 0x7d
 function function_afb7ebfa593cc2d5( str_powerup )
@@ -2032,7 +2039,7 @@ function function_afb7ebfa593cc2d5( str_powerup )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5958
 // Size: 0x113
 function powerup_wobble( ent_model, groundent )
@@ -2078,7 +2085,7 @@ function powerup_wobble( ent_model, groundent )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a73
 // Size: 0xe2
 function powerup_timeout( n_lifetime )
@@ -2109,7 +2116,7 @@ function powerup_timeout( n_lifetime )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b5d
 // Size: 0xb2
 function powerup_hide()
@@ -2138,7 +2145,7 @@ function powerup_hide()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c17
 // Size: 0xdc
 function powerup_show( var_bce144cbc1e37b8e )
@@ -2175,7 +2182,7 @@ function powerup_show( var_bce144cbc1e37b8e )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5cfb
 // Size: 0x82
 function hide_and_show( hide_func, show_func )
@@ -2183,7 +2190,8 @@ function hide_and_show( hide_func, show_func )
     self endon( "death" );
     var_bce144cbc1e37b8e = 0;
     
-    for (i = 0; i < 40; i++) {
+    for ( i = 0; i < 40 ; i++ )
+    {
         if ( i % 2 )
         {
             self [[ show_func ]]( var_bce144cbc1e37b8e );
@@ -2212,7 +2220,7 @@ function hide_and_show( hide_func, show_func )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d85
 // Size: 0x76
 function powerup_delete()
@@ -2237,7 +2245,7 @@ function powerup_delete()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e03
 // Size: 0x364
 function powerup_wait_for_pickup()
@@ -2318,7 +2326,7 @@ function powerup_wait_for_pickup()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x616f
 // Size: 0xbd
 function get_next_powerup()
@@ -2355,7 +2363,7 @@ function get_next_powerup()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6235
 // Size: 0x31
 function function_39a01e773f00003()
@@ -2365,7 +2373,7 @@ function function_39a01e773f00003()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x626e
 // Size: 0x4, Type: bool
 function func_should_always_drop()
@@ -2374,7 +2382,7 @@ function func_should_always_drop()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x627b
 // Size: 0x3, Type: bool
 function func_should_never_drop()
@@ -2383,7 +2391,7 @@ function func_should_never_drop()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6287
 // Size: 0x147
 function function_320c6c17c3136d0a( params )
@@ -2439,7 +2447,7 @@ function function_320c6c17c3136d0a( params )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x63d6
 // Size: 0xb8
 function function_3f65dbe307c93086()
@@ -2456,7 +2464,8 @@ function function_3f65dbe307c93086()
         }
     #/
     
-    for (n_loop = root.var_211f18c4ee5c760f.size * 2; n_loop > 0; n_loop--) {
+    for ( n_loop = root.var_211f18c4ee5c760f.size * 2; n_loop > 0 ; n_loop-- )
+    {
         str_powerup = get_next_powerup();
         powerup_info = function_519d44e54a9b8ae5( str_powerup );
         
@@ -2477,7 +2486,7 @@ function function_3f65dbe307c93086()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6497
 // Size: 0x1d
 function function_8edb8c0ed499f61e( var_b963bd568903c6d )
@@ -2502,7 +2511,7 @@ function private function_76ccbdb9c3d32f22()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x64f6
 // Size: 0x3c
 function function_5b0b83c04b92d1fa( zvar, value )
@@ -2518,7 +2527,7 @@ function function_5b0b83c04b92d1fa( zvar, value )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x653b
 // Size: 0x2a
 function function_edeba0070ca0709e( zvar )
@@ -2528,7 +2537,7 @@ function function_edeba0070ca0709e( zvar )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x656e
 // Size: 0x8a
 function powerup_hud_show( str_powerup, n_lifetime )
@@ -2543,7 +2552,7 @@ function powerup_hud_show( str_powerup, n_lifetime )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6600
 // Size: 0x199
 function function_587ecc90909a8c38( str_powerup )
@@ -2573,7 +2582,8 @@ function function_587ecc90909a8c38( str_powerup )
     powerupindex = 0;
     spotfound = 0;
     
-    for (i = 0; i < poweruplist.size; i++) {
+    for ( i = 0; i < poweruplist.size ; i++ )
+    {
         var_f8358178900f0d5f = isdefined( self.var_a0e1c0f50ca3ef0f[ i ] );
         var_8952024062b19822 = var_f8358178900f0d5f && self.var_a0e1c0f50ca3ef0f[ i ] == str_powerup;
         
@@ -2598,7 +2608,7 @@ function function_587ecc90909a8c38( str_powerup )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x67a2
 // Size: 0x263
 function function_e91cc9367bcb7f1a( hud_powerup, n_lifetime )
@@ -2646,7 +2656,7 @@ function function_e91cc9367bcb7f1a( hud_powerup, n_lifetime )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6a0d
 // Size: 0x16d
 function function_aa5cdd71af797058( hud_powerup, n_lifetime )
@@ -2683,7 +2693,7 @@ function function_aa5cdd71af797058( hud_powerup, n_lifetime )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b82
 // Size: 0xda
 function function_5bfe254c7e9aa4db( str_powerup )
@@ -2695,7 +2705,8 @@ function function_5bfe254c7e9aa4db( str_powerup )
     
     poweruplist = function_e6f547b7f0a996ed();
     
-    for (i = 0; i < self.var_a0e1c0f50ca3ef0f.size; i++) {
+    for ( i = 0; i < self.var_a0e1c0f50ca3ef0f.size ; i++ )
+    {
         self.var_a0e1c0f50ca3ef0f[ i ] = undefined;
     }
     
@@ -2712,7 +2723,7 @@ function function_5bfe254c7e9aa4db( str_powerup )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6c64
 // Size: 0x13f
 function function_52bb753b67c409bd( model_name, var_f77ed8ae404fb650 )
@@ -2746,7 +2757,7 @@ function function_52bb753b67c409bd( model_name, var_f77ed8ae404fb650 )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6dab
 // Size: 0xda
 function function_98041907892dbd80( b_play_fx )
@@ -2781,7 +2792,7 @@ function function_98041907892dbd80( b_play_fx )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e8d
 // Size: 0x3e
 function function_5b0773c04b8eb8f3( str_fx_name )
@@ -2802,7 +2813,7 @@ function function_5b0773c04b8eb8f3( str_fx_name )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ed3
 // Size: 0x2e
 function stop_vfx()
@@ -2815,7 +2826,7 @@ function stop_vfx()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f09
 // Size: 0x20
 function play_vfx( str_fx )
@@ -2824,7 +2835,7 @@ function play_vfx( str_fx )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f31
 // Size: 0x50
 function function_e419d148895ea689( powerup_name )
@@ -2879,7 +2890,7 @@ function private function_fb089abb8dac6216()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7083
 // Size: 0x1d
 function function_1652f8a8050283bd( var_a24595ceea8d9a67, var_9c82af4273cc1f01 )
@@ -2954,7 +2965,7 @@ function private reveal_timer( hud_powerup, n_lifetime )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x720c
 // Size: 0x8c
 function function_676437737684783f( powerupref, n_lifetime )
@@ -2988,7 +2999,8 @@ function private function_c0d098ef786b87f6( powerupref, n_lifetime )
     root = function_ecdae672c660149e();
     powerupid = root.var_eaf13acb539829eb[ powerupref ];
     
-    for (i = 0; i < powerupid; i++) {
+    for ( i = 0; i < powerupid ; i++ )
+    {
         waitframe();
     }
     
@@ -3180,7 +3192,7 @@ function private function_dd6c086a7d5e3b85()
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7929
 // Size: 0x39
 function on_player_death( params )
@@ -3194,7 +3206,7 @@ function on_player_death( params )
 }
 
 // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x796a
 // Size: 0x3d
 function function_a2a65ab511d8d308( timeout, string1 )
@@ -3215,7 +3227,7 @@ function function_a2a65ab511d8d308( timeout, string1 )
 /#
 
     // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x79af
     // Size: 0x22, Type: dev
     function debug_display()
@@ -3230,7 +3242,7 @@ function function_a2a65ab511d8d308( timeout, string1 )
     }
 
     // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x79d9
     // Size: 0xb7, Type: dev
     function function_ad8fdc6004c25e47()
@@ -3251,7 +3263,7 @@ function function_a2a65ab511d8d308( timeout, string1 )
     }
 
     // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7a98
     // Size: 0xc4, Type: dev
     function function_935c4742baf8caf8()
@@ -3283,7 +3295,7 @@ function function_a2a65ab511d8d308( timeout, string1 )
     }
 
     // Namespace zombie_spawner_mp / scripts\mp\horde_mode_scripts\zombie_spawner_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7b64
     // Size: 0x34, Type: dev
     function function_d2829ca2fa8d53e()

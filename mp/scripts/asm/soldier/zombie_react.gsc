@@ -8,7 +8,7 @@
 #namespace zombie_react;
 
 // Namespace zombie_react / scripts\asm\soldier\zombie_react
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc2
 // Size: 0x62, Type: bool
 function isenemyzombie( asmname, statename, tostatename, params )

@@ -18,12 +18,12 @@
 #namespace namespace_d09b27d6534a97c;
 
 // Namespace namespace_d09b27d6534a97c / namespace_d856b08ddfedc495
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x651
 // Size: 0x308
 function setupcallbacks()
 {
-    if ( getdvarint( @"hash_a8673f69d0431388", 0 ) == 0 || istrue( level.var_ec2fb549b15ad827 ) || istrue( level.var_77907d733abe8b63 ) )
+    if ( getdvarint( @"scr_scorpiontrophyevent", 0 ) == 0 || istrue( level.var_ec2fb549b15ad827 ) || istrue( level.var_77907d733abe8b63 ) )
     {
         scripts\common\callbacks::add( "player_connect", &function_66d05c31053f7c8f );
         return;
@@ -643,7 +643,8 @@ function private function_cfb0bd180308a4ba( count, from, fromplayercount, origin
     {
         var_50abd2e2174e8f51 = [];
         
-        for (i = 0; i < count; i++) {
+        for ( i = 0; i < count ; i++ )
+        {
             if ( isent( from ) )
             {
                 dropinfo = scripts\mp\gametypes\br_pickups::getitemdroporiginandangles( dropstruct, from.origin, from.angles, from, undefined, undefined, randomfloatrange( 15, 30 ) );
@@ -696,7 +697,8 @@ function private function_cfb0bd180308a4ba( count, from, fromplayercount, origin
     {
         angle = randomfloat( 360 );
         
-        for (i = 0; i < count; i++) {
+        for ( i = 0; i < count ; i++ )
+        {
             offset = ( cos( angle ), sin( angle ), 0 ) * 12;
             spawnpositions[ spawnpositions.size ] = offset + origin;
             angle += 360 / count;

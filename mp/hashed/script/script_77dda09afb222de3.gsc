@@ -8,7 +8,7 @@
 #namespace namespace_729da2159f5f554c;
 
 // Namespace namespace_729da2159f5f554c / namespace_6a47e8e8daf7b06b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x169
 // Size: 0x1a0
 function function_93a03eb03bc2c8ae( var_e2a66792e953b612 )
@@ -67,7 +67,7 @@ function function_93a03eb03bc2c8ae( var_e2a66792e953b612 )
 }
 
 // Namespace namespace_729da2159f5f554c / namespace_6a47e8e8daf7b06b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x311
 // Size: 0xdc
 function function_db690b3317074f2c( poiname )
@@ -98,7 +98,7 @@ function function_db690b3317074f2c( poiname )
 }
 
 // Namespace namespace_729da2159f5f554c / namespace_6a47e8e8daf7b06b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f5
 // Size: 0xaf
 function function_23c3fb7201561442()
@@ -125,7 +125,7 @@ function function_23c3fb7201561442()
 }
 
 // Namespace namespace_729da2159f5f554c / namespace_6a47e8e8daf7b06b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0x6f, Type: bool
 function function_bb16bd2ba27883ca( player, triggers )
@@ -142,7 +142,7 @@ function function_bb16bd2ba27883ca( player, triggers )
 }
 
 // Namespace namespace_729da2159f5f554c / namespace_6a47e8e8daf7b06b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x524
 // Size: 0x15c
 function function_3d7298d1b868205b( defaultsetting )
@@ -188,7 +188,7 @@ function function_3d7298d1b868205b( defaultsetting )
 }
 
 // Namespace namespace_729da2159f5f554c / namespace_6a47e8e8daf7b06b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x688
 // Size: 0x1b3
 function function_89ccee52f247d9a3( poiname )
@@ -251,7 +251,7 @@ function function_89ccee52f247d9a3( poiname )
 }
 
 // Namespace namespace_729da2159f5f554c / namespace_6a47e8e8daf7b06b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x843
 // Size: 0x1a8
 function function_3798fe70f2134791()
@@ -310,7 +310,7 @@ function function_3798fe70f2134791()
 }
 
 // Namespace namespace_729da2159f5f554c / namespace_6a47e8e8daf7b06b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f3
 // Size: 0x6f, Type: bool
 function function_491d53f82feb781b( ent, triggers )
@@ -327,7 +327,7 @@ function function_491d53f82feb781b( ent, triggers )
 }
 
 // Namespace namespace_729da2159f5f554c / namespace_6a47e8e8daf7b06b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa6b
 // Size: 0x45
 function function_7f12b9fec2560c48( agent )

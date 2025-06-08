@@ -18,8 +18,8 @@
 #namespace nuke;
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb9e
+// Params 0
+// Checksum 0x0, Offset: 0xba5
 // Size: 0x98
 function init()
 {
@@ -43,8 +43,8 @@ function init()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3e
+// Params 0
+// Checksum 0x0, Offset: 0xc45
 // Size: 0x34
 function function_c406cde778937505()
 {
@@ -53,8 +53,8 @@ function function_c406cde778937505()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7a
+// Params 0
+// Checksum 0x0, Offset: 0xc81
 // Size: 0x2
 function function_ae8a4b0e2c6b7396()
 {
@@ -62,8 +62,8 @@ function function_ae8a4b0e2c6b7396()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc84
+// Params 0
+// Checksum 0x0, Offset: 0xc8b
 // Size: 0x10
 function function_af7b6584a27af59f()
 {
@@ -71,9 +71,9 @@ function function_af7b6584a27af59f()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9c
-// Size: 0x46, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0xca3
+// Size: 0x46
 function tryusenuke( var_ea8ab1373211e7e6, var_66cdedd14979a988 )
 {
     nukestreak = "nuke";
@@ -88,9 +88,9 @@ function tryusenuke( var_ea8ab1373211e7e6, var_66cdedd14979a988 )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xceb
-// Size: 0x34c, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0xcf2
+// Size: 0x377, Type: bool
 function tryusenukefromstruct( streakinfo, var_66cdedd14979a988 )
 {
     level endon( "game_ended" );
@@ -141,19 +141,23 @@ function tryusenukefromstruct( streakinfo, var_66cdedd14979a988 )
         deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_doweaponfireddeploy( streakinfo, function_eeaa22f0cd1ff845( var_dd21567fdd9a3a6a ), "weapon_fired", &weapongivennuke, &weaponswitchendednuke, &weaponfirednuke );
         var_eb9cbd43baeae1c6 = scripts\cp_mp\killstreaks\airstrike::airstrike_getownerlookatpos( self );
         var_3dabfa23bef362b5 = 25;
-        otherteams = undefined;
         
-        if ( issharedfuncdefined( "game", "getOtherTeam" ) )
+        if ( !istrue( level.var_3616e3387d78c61 ) )
         {
-            otherteams = [[ getsharedfunc( "game", "getOtherTeam" ) ]]( streakinfo.owner.team );
-        }
-        
-        if ( isdefined( otherteams ) )
-        {
-            level thread nuke_warnenemiesnukeincoming( otherteams[ 0 ] );
+            otherteams = undefined;
+            
+            if ( issharedfuncdefined( "game", "getOtherTeam" ) )
+            {
+                otherteams = [[ getsharedfunc( "game", "getOtherTeam" ) ]]( streakinfo.owner.team );
+            }
+            
+            if ( isdefined( otherteams ) )
+            {
+                level thread nuke_warnenemiesnukeincoming( otherteams[ 0 ] );
+            }
         }
     }
-    else if ( !istrue( level.mercywintriggered ) )
+    else if ( !istrue( level.mercywintriggered ) && !istrue( level.var_3616e3387d78c61 ) )
     {
         if ( var_33e40859dae8ac8d )
         {
@@ -181,7 +185,7 @@ function tryusenukefromstruct( streakinfo, var_66cdedd14979a988 )
     
     if ( isdefined( level.killstreakbeginusefunc ) )
     {
-        if ( !level [[ level.killstreakbeginusefunc ]]( streakinfo ) )
+        if ( !level [[ level.killstreakbeginusefunc ]]( streakinfo ) && !istrue( level.var_3616e3387d78c61 ) )
         {
             level.nukeinfo.incoming = undefined;
             level.nukeinfo.player = undefined;
@@ -201,8 +205,8 @@ function tryusenukefromstruct( streakinfo, var_66cdedd14979a988 )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1040
+// Params 1
+// Checksum 0x0, Offset: 0x1072
 // Size: 0xd, Type: bool
 function weapongivennuke( streakinfo )
 {
@@ -210,8 +214,8 @@ function weapongivennuke( streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1056
+// Params 2
+// Checksum 0x0, Offset: 0x1088
 // Size: 0x26
 function weaponswitchendednuke( streakinfo, switchresult )
 {
@@ -222,8 +226,8 @@ function weaponswitchendednuke( streakinfo, switchresult )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1084
+// Params 3
+// Checksum 0x0, Offset: 0x10b6
 // Size: 0x6a
 function weaponfirednuke( streakinfo, var_a9dd4e8c5e5c7178, firedprojectile )
 {
@@ -243,8 +247,8 @@ function weaponfirednuke( streakinfo, var_a9dd4e8c5e5c7178, firedprojectile )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f7
+// Params 4
+// Checksum 0x0, Offset: 0x1129
 // Size: 0x5e
 function nuke_delaythread( delay, func, owner, streakinfo )
 {
@@ -262,9 +266,9 @@ function nuke_delaythread( delay, func, owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x115d
-// Size: 0x500
+// Params 7
+// Checksum 0x0, Offset: 0x118f
+// Size: 0x50d
 function nuke_start( streakinfo, allowcancel, launchposoverride, explodeposoverride, var_b87822b980d6e763, var_3dabfa23bef362b5, weaponoverride )
 {
     level endon( "nuke_cancelled" );
@@ -340,22 +344,25 @@ function nuke_start( streakinfo, allowcancel, launchposoverride, explodeposoverr
         level thread nuke_delaythread( nukeinfo.var_6ea387e8dfa3cccd + 5, &nuke_death, self, streakinfo );
     }
     
-    level callback::callback( "killstreak_finish_use", { #streakinfo:streakinfo } );
-    
-    if ( issharedfuncdefined( "nuke", "addTeamRankXPMultiplier" ) )
+    if ( !istrue( level.var_3616e3387d78c61 ) )
     {
-        [[ getsharedfunc( "nuke", "addTeamRankXPMultiplier" ) ]]( 2, level.nukeinfo.team, "nuke" );
-    }
-    
-    if ( level.nukeinfo.allowcancel )
-    {
-        level thread nuke_watchownerdisconnect( nukeinfo.player );
+        level callback::callback( "killstreak_finish_use", { #streakinfo:streakinfo } );
+        
+        if ( issharedfuncdefined( "nuke", "addTeamRankXPMultiplier" ) )
+        {
+            [[ getsharedfunc( "nuke", "addTeamRankXPMultiplier" ) ]]( 2, level.nukeinfo.team, "nuke" );
+        }
+        
+        if ( level.nukeinfo.allowcancel )
+        {
+            level thread nuke_watchownerdisconnect( nukeinfo.player );
+        }
     }
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1665
+// Params 1
+// Checksum 0x0, Offset: 0x16a4
 // Size: 0x59
 function nuke_watchownerdisconnect( owner )
 {
@@ -371,8 +378,8 @@ function nuke_watchownerdisconnect( owner )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16c6
+// Params 0
+// Checksum 0x0, Offset: 0x1705
 // Size: 0x58
 function nuke_cancel()
 {
@@ -385,9 +392,9 @@ function nuke_cancel()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1726
-// Size: 0x143
+// Params 1
+// Checksum 0x0, Offset: 0x1765
+// Size: 0x195
 function nuke_starttimer( traveltime )
 {
     level endon( "nuke_cancelled" );
@@ -406,11 +413,17 @@ function nuke_starttimer( traveltime )
         setomnvar( "ui_nuke_timer_type", 0 );
     }
     
-    setomnvar( "ui_nuke_countdown_active", 1 );
-    
-    if ( isdefined( level.nukeinfo.player ) )
+    if ( !istrue( level.var_3616e3387d78c61 ) )
     {
-        setomnvar( "ui_nuke_player_id", level.nukeinfo.player getentitynumber() );
+        setomnvar( "ui_nuke_countdown_active", 1 );
+    }
+    
+    if ( isdefined( level.nukeinfo.player ) && ( isplayer( level.nukeinfo.player ) || isagent( level.nukeinfo.player ) ) )
+    {
+        if ( !istrue( level.var_3616e3387d78c61 ) )
+        {
+            setomnvar( "ui_nuke_player_id", level.nukeinfo.player getentitynumber() );
+        }
     }
     
     level thread nuke_updateuitimers( traveltime );
@@ -444,8 +457,8 @@ function nuke_starttimer( traveltime )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1871
+// Params 0
+// Checksum 0x0, Offset: 0x1902
 // Size: 0x28
 function nuke_startmissileflightaudio()
 {
@@ -455,8 +468,8 @@ function nuke_startmissileflightaudio()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18a1
+// Params 0
+// Checksum 0x0, Offset: 0x1932
 // Size: 0xf
 function nuke_cleartimer()
 {
@@ -464,9 +477,9 @@ function nuke_cleartimer()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18b8
-// Size: 0x2e3
+// Params 2
+// Checksum 0x0, Offset: 0x1949
+// Size: 0x2f0
 function nuke_startlaunchsequence( owner, streakinfo )
 {
     nuketype = level.nukeinfo.nuketype;
@@ -492,27 +505,30 @@ function nuke_startlaunchsequence( owner, streakinfo )
     
     if ( !istrue( var_a3c021e65ff921dc ) )
     {
-        gametype = "";
-        
-        if ( issharedfuncdefined( "game", "getGameType" ) )
+        if ( !istrue( level.var_3616e3387d78c61 ) )
         {
-            gametype = [[ getsharedfunc( "game", "getGameType" ) ]]();
-        }
-        
-        timelimitdvar = undefined;
-        
-        if ( issharedfuncdefined( "nuke", "stopTheClock" ) )
-        {
-            timelimitdvar = [[ getsharedfunc( "nuke", "stopTheClock" ) ]]( gametype );
-        }
-        
-        if ( isdefined( timelimitdvar ) )
-        {
-            hashvalue = getdvarfloat( timelimitdvar, 0 );
+            gametype = "";
             
-            if ( issharedfuncdefined( "game", "setOverTimeLimitDvar" ) )
+            if ( issharedfuncdefined( "game", "getGameType" ) )
             {
-                [[ getsharedfunc( "game", "setOverTimeLimitDvar" ) ]]( hashvalue );
+                gametype = [[ getsharedfunc( "game", "getGameType" ) ]]();
+            }
+            
+            timelimitdvar = undefined;
+            
+            if ( issharedfuncdefined( "nuke", "stopTheClock" ) )
+            {
+                timelimitdvar = [[ getsharedfunc( "nuke", "stopTheClock" ) ]]( gametype );
+            }
+            
+            if ( isdefined( timelimitdvar ) )
+            {
+                hashvalue = getdvarfloat( timelimitdvar, 0 );
+                
+                if ( issharedfuncdefined( "game", "setOverTimeLimitDvar" ) )
+                {
+                    [[ getsharedfunc( "game", "setOverTimeLimitDvar" ) ]]( hashvalue );
+                }
             }
         }
         
@@ -548,14 +564,14 @@ function nuke_startlaunchsequence( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ba3
-// Size: 0xe9
+// Params 3
+// Checksum 0x0, Offset: 0x1c41
+// Size: 0xef
 function nuke_startprelaunchalarm( var_b807a7599e6f56dc, streakinfo, owner )
 {
     level endon( "game_ended" );
     
-    if ( istrue( streakinfo.var_93dbd6174ca50e88 ) )
+    if ( isdefined( streakinfo ) && istrue( streakinfo.var_93dbd6174ca50e88 ) )
     {
         return;
     }
@@ -585,8 +601,8 @@ function nuke_startprelaunchalarm( var_b807a7599e6f56dc, streakinfo, owner )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c94
+// Params 5
+// Checksum 0x0, Offset: 0x1d38
 // Size: 0xc6
 function function_74f04922f32f9f6c( var_5f4190c47572964f, baseexplosionpoint, var_81c12fe9c2d29fa7, streakinfo, owner )
 {
@@ -601,15 +617,15 @@ function function_74f04922f32f9f6c( var_5f4190c47572964f, baseexplosionpoint, va
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d62
-// Size: 0x3a7
+// Params 5
+// Checksum 0x0, Offset: 0x1e06
+// Size: 0x3b5
 function function_3eb69e3deebb567( owner, streakinfo, explodepos, traveltime, nukeweapon )
 {
     level endon( "game_ended" );
     assertex( isdefined( level.nukeinfo.drone ), "<dev string:x1c>" );
     
-    if ( isdefined( owner ) && isplayer( owner ) )
+    if ( isdefined( owner ) && isplayer( owner ) && !istrue( level.var_3616e3387d78c61 ) )
     {
         if ( issharedfuncdefined( "hud", "teamPlayerCardSplash" ) )
         {
@@ -624,7 +640,8 @@ function function_3eb69e3deebb567( owner, streakinfo, explodepos, traveltime, nu
     tracecontents = scripts\engine\trace::create_contents( 0, 1, 1, 1 );
     rightoffset = 500;
     
-    for (i = 0; i < 5; i++) {
+    for ( i = 0; i < 5 ; i++ )
+    {
         lastbomb = 0;
         nextindex = i + 1;
         
@@ -673,9 +690,9 @@ function function_3eb69e3deebb567( owner, streakinfo, explodepos, traveltime, nu
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2111
-// Size: 0x1e4
+// Params 4
+// Checksum 0x0, Offset: 0x21c3
+// Size: 0x201
 function function_610c4d047fafd311( bomb, streakinfo, traveltime, lastbomb )
 {
     if ( istrue( lastbomb ) )
@@ -707,7 +724,7 @@ function function_610c4d047fafd311( bomb, streakinfo, traveltime, lastbomb )
     killradius = 3000;
     var_d0712dbca713335f = nuke_cankilleverything();
     
-    if ( istrue( var_d0712dbca713335f ) )
+    if ( istrue( var_d0712dbca713335f ) && !istrue( level.var_3616e3387d78c61 ) )
     {
         function_44b8d70a3d3ca307( bombowner, position, killradius );
     }
@@ -720,7 +737,7 @@ function function_610c4d047fafd311( bomb, streakinfo, traveltime, lastbomb )
         level notify( "nuke_detonated" );
         thread play_loopsound_in_space( "iw9_mgb_post_fire", bomb.origin );
         
-        if ( !istrue( level.mercywintriggered ) )
+        if ( !istrue( level.mercywintriggered ) && !istrue( level.var_3616e3387d78c61 ) )
         {
             if ( isdefined( level.nukeinfo.player ) && isdefined( streakinfo ) )
             {
@@ -733,8 +750,8 @@ function function_610c4d047fafd311( bomb, streakinfo, traveltime, lastbomb )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x22fd
+// Params 2
+// Checksum 0x0, Offset: 0x23cc
 // Size: 0x5a
 function function_9e9a2fdc07dcdd72( bomb, traveltime )
 {
@@ -756,9 +773,9 @@ function function_9e9a2fdc07dcdd72( bomb, traveltime )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x235f
-// Size: 0x337
+// Params 3
+// Checksum 0x0, Offset: 0x242e
+// Size: 0x348
 function function_44b8d70a3d3ca307( owner, position, killradius )
 {
     killradiussq = killradius * killradius;
@@ -781,7 +798,7 @@ function function_44b8d70a3d3ca307( owner, position, killradius )
                 
                 if ( level.teambased )
                 {
-                    if ( isdefined( owner ) && character.team == owner.team || !isdefined( owner ) )
+                    if ( !isdefined( owner ) || isstring( owner ) && owner == "tie" || character.team == owner.team )
                     {
                         var_705cc2040029edb7 = character;
                     }
@@ -846,14 +863,14 @@ function function_44b8d70a3d3ca307( owner, position, killradius )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x269e
-// Size: 0x1ab
+// Params 6
+// Checksum 0x0, Offset: 0x277e
+// Size: 0x1b9
 function nuke_launchmissile( owner, streakinfo, launchpos, explodepos, traveltime, nukeweapon )
 {
     level endon( "game_ended" );
     
-    if ( isdefined( owner ) && isplayer( owner ) )
+    if ( isdefined( owner ) && isplayer( owner ) && !istrue( level.var_3616e3387d78c61 ) )
     {
         if ( issharedfuncdefined( "hud", "teamPlayerCardSplash" ) )
         {
@@ -884,8 +901,8 @@ function nuke_launchmissile( owner, streakinfo, launchpos, explodepos, traveltim
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2851
+// Params 3
+// Checksum 0x0, Offset: 0x293f
 // Size: 0x152
 function nuke_findunobstructedfiringinfo( nukestart, nukeend, var_cf90f734f1c34521 )
 {
@@ -919,8 +936,8 @@ function nuke_findunobstructedfiringinfo( nukestart, nukeend, var_cf90f734f1c345
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x29ac
+// Params 2
+// Checksum 0x0, Offset: 0x2a9a
 // Size: 0x25a
 function nuke_explosion( owner, streakinfo )
 {
@@ -983,8 +1000,8 @@ function nuke_explosion( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c0e
+// Params 1
+// Checksum 0x0, Offset: 0x2cfc
 // Size: 0x65
 function nuke_startexplosionaudio( explosionpos )
 {
@@ -995,8 +1012,8 @@ function nuke_startexplosionaudio( explosionpos )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c7b
+// Params 2
+// Checksum 0x0, Offset: 0x2d69
 // Size: 0x9c
 function nuke_slowmo( owner, streakinfo )
 {
@@ -1028,8 +1045,8 @@ function nuke_slowmo( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d1f
+// Params 0
+// Checksum 0x0, Offset: 0x2e0d
 // Size: 0x3a
 function setnuketimescalefactor()
 {
@@ -1041,8 +1058,8 @@ function setnuketimescalefactor()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d61
+// Params 2
+// Checksum 0x0, Offset: 0x2e4f
 // Size: 0x6f
 function nuke_dof( owner, streakinfo )
 {
@@ -1055,8 +1072,8 @@ function nuke_dof( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dd8
+// Params 0
+// Checksum 0x0, Offset: 0x2ec6
 // Size: 0x18
 function nuke_adjustexplosiondof()
 {
@@ -1065,8 +1082,8 @@ function nuke_adjustexplosiondof()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2df8
+// Params 2
+// Checksum 0x0, Offset: 0x2ee6
 // Size: 0x158
 function nuke_vision( owner, streakinfo )
 {
@@ -1111,8 +1128,8 @@ function nuke_vision( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f58
+// Params 2
+// Checksum 0x0, Offset: 0x3046
 // Size: 0x46
 function nuke_fadeflashvision( var_a327466df35c5c88, var_9d7a33ca9811c391 )
 {
@@ -1125,9 +1142,9 @@ function nuke_fadeflashvision( var_a327466df35c5c88, var_9d7a33ca9811c391 )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fa6
-// Size: 0x4a1
+// Params 2
+// Checksum 0x0, Offset: 0x3094
+// Size: 0x4b0
 function nuke_death( owner, streakinfo )
 {
     level endon( "nuke_cancelled" );
@@ -1232,7 +1249,7 @@ function nuke_death( owner, streakinfo )
             }
         }
         
-        if ( !istrue( level.mercywintriggered ) )
+        if ( !istrue( level.mercywintriggered ) && !istrue( level.var_3616e3387d78c61 ) )
         {
             if ( isdefined( level.nukeinfo.player ) && isdefined( streakinfo ) )
             {
@@ -1265,16 +1282,16 @@ function nuke_death( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x344f
-// Size: 0xc1
+// Params 2
+// Checksum 0x0, Offset: 0x354c
+// Size: 0xc8
 function function_2f5646d1ef5c8b81( owner, streakinfo )
 {
     level endon( "nuke_cancelled" );
     level endon( "game_ended" );
     level waittill( "nuke_last_bomb_launch" );
     
-    if ( !istrue( streakinfo.var_8b07383e09b74fad ) )
+    if ( !isdefined( streakinfo ) || !istrue( streakinfo.var_8b07383e09b74fad ) )
     {
         explodetime = level.nukeinfo.explosiontimer;
         visionsetfadetoblack( "nuke_global_flash", explodetime * 1.75 );
@@ -1287,8 +1304,8 @@ function function_2f5646d1ef5c8b81( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3518
+// Params 2
+// Checksum 0x0, Offset: 0x361c
 // Size: 0xf8
 function function_36fb604b46a1514a( owner, streakinfo )
 {
@@ -1321,8 +1338,8 @@ function function_36fb604b46a1514a( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3618
+// Params 2
+// Checksum 0x0, Offset: 0x371c
 // Size: 0x149
 function function_e361a03e34d52440( owner, streakinfo )
 {
@@ -1332,7 +1349,8 @@ function function_e361a03e34d52440( owner, streakinfo )
     var_d15ea961076c2a0f = explodetime / 3;
     var_895e3bf2db2f84fb = [ "far", "mid", "near" ];
     
-    for (motionindex = 0; motionindex < var_895e3bf2db2f84fb.size; motionindex++) {
+    for ( motionindex = 0; motionindex < var_895e3bf2db2f84fb.size ; motionindex++ )
+    {
         var_f4fa9d362463d738 = "player_mgb_shake_" + var_895e3bf2db2f84fb[ motionindex ] + "_mp";
         
         foreach ( player in level.players )
@@ -1364,8 +1382,8 @@ function function_e361a03e34d52440( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3769
+// Params 3
+// Checksum 0x0, Offset: 0x386d
 // Size: 0x4f
 function function_f903c3e8aabfc042( player, var_f4fa9d362463d738, triggernotify )
 {
@@ -1379,8 +1397,8 @@ function function_f903c3e8aabfc042( player, var_f4fa9d362463d738, triggernotify 
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x37c0
+// Params 2
+// Checksum 0x0, Offset: 0x38c4
 // Size: 0xfd
 function function_acb30efb36c7f230( owner, streakinfo )
 {
@@ -1417,9 +1435,9 @@ function function_acb30efb36c7f230( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x38c5
-// Size: 0x61
+// Params 4
+// Checksum 0x0, Offset: 0x39c9
+// Size: 0x6e
 function nuke_delayendgame( delaytime, winner, playbnk, var_3a4c75a01773062c )
 {
     level endon( "game_ended" );
@@ -1429,15 +1447,18 @@ function nuke_delayendgame( delaytime, winner, playbnk, var_3a4c75a01773062c )
         level thread function_54a492aef8fd981f( var_3a4c75a01773062c );
     }
     
-    if ( issharedfuncdefined( "nuke", "delayEndGame" ) )
+    if ( !istrue( level.var_3616e3387d78c61 ) )
     {
-        [[ getsharedfunc( "nuke", "delayEndGame" ) ]]( delaytime, winner );
+        if ( issharedfuncdefined( "nuke", "delayEndGame" ) )
+        {
+            [[ getsharedfunc( "nuke", "delayEndGame" ) ]]( delaytime, winner );
+        }
     }
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x392e
+// Params 1
+// Checksum 0x0, Offset: 0x3a3f
 // Size: 0xaf
 function function_54a492aef8fd981f( delaytime )
 {
@@ -1467,8 +1488,8 @@ function function_54a492aef8fd981f( delaytime )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x39e5
+// Params 2
+// Checksum 0x0, Offset: 0x3af6
 // Size: 0xfc
 function nuke_earthquake( owner, streakinfo )
 {
@@ -1494,8 +1515,8 @@ function nuke_earthquake( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ae9
+// Params 1
+// Checksum 0x0, Offset: 0x3bfa
 // Size: 0x81
 function nuke_playshockwaveearthquake( streakinfo )
 {
@@ -1518,8 +1539,8 @@ function nuke_playshockwaveearthquake( streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b72
+// Params 0
+// Checksum 0x0, Offset: 0x3c83
 // Size: 0x23
 function onplayerspawned()
 {
@@ -1530,8 +1551,8 @@ function onplayerspawned()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b9d
+// Params 2
+// Checksum 0x0, Offset: 0x3cae
 // Size: 0x52
 function nuke_setvisionforplayer( delaytime, transitiontime )
 {
@@ -1553,8 +1574,8 @@ function nuke_setvisionforplayer( delaytime, transitiontime )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bf7
+// Params 1
+// Checksum 0x0, Offset: 0x3d08
 // Size: 0x98
 function nuke_updateuitimers( traveltime )
 {
@@ -1579,8 +1600,8 @@ function nuke_updateuitimers( traveltime )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c97
+// Params 0
+// Checksum 0x0, Offset: 0x3da8
 // Size: 0x22
 function nuke_updatevisiononhostmigration()
 {
@@ -1594,8 +1615,8 @@ function nuke_updatevisiononhostmigration()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cc1
+// Params 1
+// Checksum 0x0, Offset: 0x3dd2
 // Size: 0x6e
 function nuke_setaftermathvision( transitiontime )
 {
@@ -1624,8 +1645,8 @@ function nuke_setaftermathvision( transitiontime )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d37
+// Params 0
+// Checksum 0x0, Offset: 0x3e48
 // Size: 0x94
 function function_e6e629829270e1fa()
 {
@@ -1648,8 +1669,8 @@ function function_e6e629829270e1fa()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dd3
+// Params 0
+// Checksum 0x0, Offset: 0x3ee4
 // Size: 0xc8
 function nuke_startnukedeathfx()
 {
@@ -1686,8 +1707,8 @@ function nuke_startnukedeathfx()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ea3
+// Params 0
+// Checksum 0x0, Offset: 0x3fb4
 // Size: 0x7a
 function nuke_startnukedeathfx_chooselocationversion()
 {
@@ -1708,8 +1729,8 @@ function nuke_startnukedeathfx_chooselocationversion()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f25
+// Params 1
+// Checksum 0x0, Offset: 0x4036
 // Size: 0xaf
 function nuke_playrollingdeathfx( delaytime )
 {
@@ -1733,8 +1754,8 @@ function nuke_playrollingdeathfx( delaytime )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fdc
+// Params 0
+// Checksum 0x0, Offset: 0x40ed
 // Size: 0x2c7
 function nuke_atomizebody()
 {
@@ -1770,8 +1791,8 @@ function nuke_atomizebody()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x42ab
+// Params 0
+// Checksum 0x0, Offset: 0x43bc
 // Size: 0x27
 function nuke_cankilleverything()
 {
@@ -1786,8 +1807,8 @@ function nuke_cankilleverything()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x42db
+// Params 2
+// Checksum 0x0, Offset: 0x43ec
 // Size: 0x253
 function nuke_createradiationzone( owner, streakinfo )
 {
@@ -1827,8 +1848,8 @@ function nuke_createradiationzone( owner, streakinfo )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4536
+// Params 1
+// Checksum 0x0, Offset: 0x4647
 // Size: 0x41
 function nuke_registerradzone( origin )
 {
@@ -1842,8 +1863,8 @@ function nuke_registerradzone( origin )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x457f
+// Params 1
+// Checksum 0x0, Offset: 0x4690
 // Size: 0x24
 function nuke_removeradzone( zoneent )
 {
@@ -1851,8 +1872,8 @@ function nuke_removeradzone( zoneent )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45ab
+// Params 0
+// Checksum 0x0, Offset: 0x46bc
 // Size: 0x238
 function nuke_radzones_think()
 {
@@ -1926,8 +1947,8 @@ function nuke_radzones_think()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47eb
+// Params 1
+// Checksum 0x0, Offset: 0x48fc
 // Size: 0xa8
 function nuke_warnenemiesnukeincoming( var_9464d7d05c5ca6b5 )
 {
@@ -1951,8 +1972,8 @@ function nuke_warnenemiesnukeincoming( var_9464d7d05c5ca6b5 )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x489b
+// Params 1
+// Checksum 0x0, Offset: 0x49ac
 // Size: 0x53
 function nuke_finalizelocationnuke( owner )
 {
@@ -1972,8 +1993,8 @@ function nuke_finalizelocationnuke( owner )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x48f6
+// Params 0
+// Checksum 0x0, Offset: 0x4a07
 // Size: 0x40
 function nuke_abortkillcamonspawn()
 {
@@ -1992,8 +2013,8 @@ function nuke_abortkillcamonspawn()
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x493e
+// Params 2
+// Checksum 0x0, Offset: 0x4a4f
 // Size: 0xd4
 function function_b913fa4052092442( nuketype, goalposoverride )
 {
@@ -2029,8 +2050,8 @@ function function_b913fa4052092442( nuketype, goalposoverride )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a1b
+// Params 3
+// Checksum 0x0, Offset: 0x4b2c
 // Size: 0x106
 function function_5e29f303004c9602( nuketype, goalpoint, launchposoverride )
 {
@@ -2062,14 +2083,14 @@ function function_5e29f303004c9602( nuketype, goalpoint, launchposoverride )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b2a
-// Size: 0x45
+// Params 3
+// Checksum 0x0, Offset: 0x4c3b
+// Size: 0x53
 function function_4eb440a17165aeee( nuketype, starttime, starttimeoverride )
 {
     starttimer = starttime;
     
-    if ( istrue( level.mercywintriggered ) )
+    if ( istrue( level.mercywintriggered ) || !istrue( level.var_3616e3387d78c61 ) )
     {
         starttimer = 0.7;
     }
@@ -2083,8 +2104,8 @@ function function_4eb440a17165aeee( nuketype, starttime, starttimeoverride )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b78
+// Params 3
+// Checksum 0x0, Offset: 0x4c97
 // Size: 0x31
 function function_cd3712661b44dfb( nuketype, explodetime, var_3dabfa23bef362b5 )
 {
@@ -2099,8 +2120,8 @@ function function_cd3712661b44dfb( nuketype, explodetime, var_3dabfa23bef362b5 )
 }
 
 // Namespace nuke / scripts\cp_mp\killstreaks\nuke
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bb2
+// Params 2
+// Checksum 0x0, Offset: 0x4cd1
 // Size: 0x3e
 function nuke_getweapon( nuketype, weaponoverride )
 {

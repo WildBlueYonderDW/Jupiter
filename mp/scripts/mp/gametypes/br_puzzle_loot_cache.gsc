@@ -33,7 +33,7 @@ function autoexec init()
     
     level.var_fa1aaea5978f2c8e = getdvarint( @"hash_41511be21090e24a", 0 ) == 1;
     
-    if ( getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         scripts\mp\flags::function_1240434f4201ac9d( "POIs_initialized" );
         function_28d7437a275a45c7();
@@ -45,7 +45,7 @@ function autoexec init()
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x308
 // Size: 0x4d
 function function_28d7437a275a45c7()
@@ -63,7 +63,7 @@ function function_28d7437a275a45c7()
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35d
 // Size: 0x24
 function init_dialog()
@@ -77,7 +77,7 @@ function init_dialog()
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x389
 // Size: 0x24
 function function_e6c1c35181a2870f( structname )
@@ -87,7 +87,7 @@ function function_e6c1c35181a2870f( structname )
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b6
 // Size: 0x41
 function function_88501e89a993b890( structname, cachestruct )
@@ -102,7 +102,7 @@ function function_88501e89a993b890( structname, cachestruct )
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x400
 // Size: 0x168
 function function_688349ac143a54bc( structname )
@@ -124,7 +124,8 @@ function function_688349ac143a54bc( structname )
         level.var_e901d9c7ae760bd6 = array_randomize( level.var_e901d9c7ae760bd6 );
         maxcaches = int( min( maxcaches, level.var_e901d9c7ae760bd6.size ) );
         
-        for (i = 0; i < maxcaches; i++) {
+        for ( i = 0; i < maxcaches ; i++ )
+        {
             cachestruct = level.var_e901d9c7ae760bd6[ i ];
             cache = function_13ace45be109698e( cachestruct );
             level.var_b8279fd758a757fc = array_add( level.var_b8279fd758a757fc, cache );
@@ -144,7 +145,7 @@ function function_688349ac143a54bc( structname )
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x570
 // Size: 0x61
 function function_13ace45be109698e( cachestruct )
@@ -160,7 +161,7 @@ function function_13ace45be109698e( cachestruct )
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5da
 // Size: 0x51
 function spawncachesinglebase( origin, angles )
@@ -177,7 +178,7 @@ function spawncachesinglebase( origin, angles )
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x634
 // Size: 0x12c
 function function_86eda8d9956d4976( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -204,7 +205,7 @@ function function_86eda8d9956d4976( einflictor, eattacker, instance, idamage, id
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x768
 // Size: 0xa4
 function spawncacheloot( cache, eattacker )
@@ -231,7 +232,7 @@ function spawncacheloot( cache, eattacker )
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x814
 // Size: 0x24
 function function_1dc8d7e303dba9a3( player )
@@ -240,7 +241,7 @@ function function_1dc8d7e303dba9a3( player )
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x840
 // Size: 0x7d
 function scriptablehide()
@@ -263,7 +264,7 @@ function scriptablehide()
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8c5
 // Size: 0x95
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
@@ -280,7 +281,7 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x962
 // Size: 0xa1
 function function_a20133b287aa61da( cache )
@@ -305,7 +306,7 @@ function function_a20133b287aa61da( cache )
 /#
 
     // Namespace puzzle_cache / scripts\mp\gametypes\br_puzzle_loot_cache
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa0b
     // Size: 0x29, Type: dev
     function init_debug()

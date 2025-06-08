@@ -9,7 +9,7 @@
 #namespace control_fob;
 
 // Namespace control_fob / namespace_3c545500807c3c91
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x108
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -18,7 +18,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace control_fob / namespace_3c545500807c3c91
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e
 // Size: 0x20e
 function evaluatescore( bot )
@@ -62,7 +62,7 @@ function evaluatescore( bot )
 }
 
 // Namespace control_fob / namespace_3c545500807c3c91
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x335
 // Size: 0x105
 function actionprocess( bot )

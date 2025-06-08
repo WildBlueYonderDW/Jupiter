@@ -15,7 +15,7 @@
 #namespace circle_peek;
 
 // Namespace circle_peek / scripts\mp\killstreaks\circle_peek
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cf
 // Size: 0x27
 function init()
@@ -25,7 +25,7 @@ function init()
 }
 
 // Namespace circle_peek / scripts\mp\killstreaks\circle_peek
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fe
 // Size: 0xd, Type: bool
 function weapongivenchoppergunner( streakinfo )
@@ -34,7 +34,7 @@ function weapongivenchoppergunner( streakinfo )
 }
 
 // Namespace circle_peek / scripts\mp\killstreaks\circle_peek
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x214
 // Size: 0x21
 function function_36d2eb075443f6ca()
@@ -44,7 +44,7 @@ function function_36d2eb075443f6ca()
 }
 
 // Namespace circle_peek / scripts\mp\killstreaks\circle_peek
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23e
 // Size: 0x31
 function function_7023d0a9e3e7c419()
@@ -55,7 +55,7 @@ function function_7023d0a9e3e7c419()
 }
 
 // Namespace circle_peek / scripts\mp\killstreaks\circle_peek
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x278
 // Size: 0x141
 function function_b1e60c0ec801b93b( streakinfo, directuse )
@@ -112,7 +112,7 @@ function function_b1e60c0ec801b93b( streakinfo, directuse )
 }
 
 // Namespace circle_peek / scripts\mp\killstreaks\circle_peek
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c2
 // Size: 0xed, Type: bool
 function function_f93df988a9f72f5c( streakinfo )
@@ -143,7 +143,8 @@ function function_f93df988a9f72f5c( streakinfo )
     var_2c18d9be706d7ad7 = level.teamswithcirclepeek[ self.team ] + level.br_circle.circleindex + 1;
     thread function_f062c14846f2807b();
     
-    for (i = var_2c18d9be706d7ad7; i < level.circlepeeks.size; i++) {
+    for ( i = var_2c18d9be706d7ad7; i < level.circlepeeks.size ; i++ )
+    {
         namespace_1eb3c4e0e28fac71::questrewardcirclepeek( self.team );
     }
     
@@ -151,7 +152,7 @@ function function_f93df988a9f72f5c( streakinfo )
 }
 
 // Namespace circle_peek / scripts\mp\killstreaks\circle_peek
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b8
 // Size: 0x23
 function function_f062c14846f2807b()

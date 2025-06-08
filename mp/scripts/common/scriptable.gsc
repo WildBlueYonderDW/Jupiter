@@ -3,7 +3,7 @@
 #namespace scriptable;
 
 // Namespace scriptable / scripts\common\scriptable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x90
 // Size: 0x9
 function scriptable_initialize()
@@ -12,7 +12,7 @@ function scriptable_initialize()
 }
 
 // Namespace scriptable / scripts\common\scriptable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa1
 // Size: 0x9
 function scriptable_post_initialize()
@@ -21,7 +21,7 @@ function scriptable_post_initialize()
 }
 
 // Namespace scriptable / scripts\common\scriptable
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xb2
 // Size: 0x40
 function scriptable_used( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -30,7 +30,7 @@ function scriptable_used( instance, part, state, player, var_a5b2c541413aa895, u
 }
 
 // Namespace scriptable / scripts\common\scriptable
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xfa
 // Size: 0x37
 function function_9ea56c6edd53918( instance, part, state, player, useduration )
@@ -39,7 +39,7 @@ function function_9ea56c6edd53918( instance, part, state, player, useduration )
 }
 
 // Namespace scriptable / scripts\common\scriptable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x139
 // Size: 0x1b
 function function_944d769de0e6d4cb( instance, player )
@@ -48,7 +48,7 @@ function function_944d769de0e6d4cb( instance, player )
 }
 
 // Namespace scriptable / scripts\common\scriptable
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x15d
 // Size: 0x82
 function function_4a7afd1c05864574( note, param, einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -57,7 +57,7 @@ function function_4a7afd1c05864574( note, param, einflictor, eattacker, instance
 }
 
 // Namespace scriptable / scripts\common\scriptable
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x1e7
 // Size: 0x82
 function riotshield_damaged( note, param, einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -66,7 +66,7 @@ function riotshield_damaged( note, param, einflictor, eattacker, instance, idama
 }
 
 // Namespace scriptable / scripts\common\scriptable
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x271
 // Size: 0x2e
 function scriptable_touched( instance, part, state, player )
@@ -75,7 +75,7 @@ function scriptable_touched( instance, part, state, player )
 }
 
 // Namespace scriptable / scripts\common\scriptable
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2a7
 // Size: 0x37
 function scriptable_notify_callback( instance, note, param, ent, var_535d9c3fdddab5a9 )

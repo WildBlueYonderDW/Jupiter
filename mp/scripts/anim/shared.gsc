@@ -15,7 +15,7 @@
 #namespace shared;
 
 // Namespace shared / scripts\anim\shared
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x61c
 // Size: 0x1c9
 function placeweaponon( weapon, position, activeweapon )
@@ -82,7 +82,7 @@ function placeweaponon( weapon, position, activeweapon )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ed
 // Size: 0x70
 function detachweapon( objweapon )
@@ -94,7 +94,7 @@ function detachweapon( objweapon )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x865
 // Size: 0x9e
 function attachweapon( objweapon, position )
@@ -112,7 +112,7 @@ function attachweapon( objweapon, position )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x90b
 // Size: 0x97
 function getweaponforpos( position )
@@ -139,7 +139,7 @@ function getweaponforpos( position )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ab
 // Size: 0x110
 function detachallweaponmodels()
@@ -176,7 +176,7 @@ function detachallweaponmodels()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xac3
 // Size: 0x1df
 function updateattachedweaponmodels()
@@ -241,7 +241,7 @@ function updateattachedweaponmodels()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcaa
 // Size: 0xb1
 function gettagforpos( position )
@@ -269,7 +269,7 @@ function gettagforpos( position )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd63
 // Size: 0x13b
 function dropaiweaponinternal( weapon )
@@ -321,7 +321,7 @@ function dropaiweaponinternal( weapon )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xea6
 // Size: 0xfc
 function dropaiweapon( weapon )
@@ -371,7 +371,7 @@ function dropaiweapon( weapon )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfaa
 // Size: 0x190
 function dropallaiweapons()
@@ -427,7 +427,7 @@ function dropallaiweapons()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1142
 // Size: 0x37e
 function dropweaponwrapper( weapon, position )
@@ -544,7 +544,7 @@ function dropweaponwrapper( weapon, position )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14c8
 // Size: 0x13, Type: bool
 function function_335d7d001eb868f()
@@ -558,7 +558,7 @@ function function_335d7d001eb868f()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14e4
 // Size: 0x54, Type: bool
 function canaiflingweapon( ai )
@@ -587,7 +587,7 @@ function canaiflingweapon( ai )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1541
 // Size: 0x7e
 function setdroppedweaponammo( actualdroppedweapon )
@@ -608,7 +608,7 @@ function setdroppedweaponammo( actualdroppedweapon )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15c7
 // Size: 0x1d, Type: bool
 function isvaliddroppedweapon( weapon )
@@ -622,7 +622,7 @@ function isvaliddroppedweapon( weapon )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15ed
 // Size: 0xd4
 function weapondrop_physics_callback_monitor( droppedent )
@@ -646,7 +646,7 @@ function weapondrop_physics_callback_monitor( droppedent )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c9
 // Size: 0x15
 function weapondrop_physics_timeout( time )
@@ -656,7 +656,7 @@ function weapondrop_physics_timeout( time )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e6
 // Size: 0x42
 function getaimyawtoshootentorpos()
@@ -675,7 +675,7 @@ function getaimyawtoshootentorpos()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1731
 // Size: 0x69
 function getaimpitchtoshootentorpos()
@@ -691,7 +691,7 @@ function getaimpitchtoshootentorpos()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17a3
 // Size: 0x42
 function getpitchtoshootentorpos()
@@ -710,7 +710,7 @@ function getpitchtoshootentorpos()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17ee
 // Size: 0x1a
 function ramboaim( baseyaw )
@@ -720,7 +720,7 @@ function ramboaim( baseyaw )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1810
 // Size: 0xb
 function ramboaiminternal( baseyaw )
@@ -729,7 +729,7 @@ function ramboaiminternal( baseyaw )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1823
 // Size: 0xe4
 function decidenumshotsforburst()
@@ -770,7 +770,7 @@ function decidenumshotsforburst()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1910
 // Size: 0x75
 function decidenumshotsforfull()
@@ -799,7 +799,7 @@ function decidenumshotsforfull()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x198e
 // Size: 0x29
 function hideweaponmagattachment( weaponname )
@@ -809,7 +809,7 @@ function hideweaponmagattachment( weaponname )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19bf
 // Size: 0x2a
 function showweaponmagattachment( weaponname )
@@ -819,7 +819,7 @@ function showweaponmagattachment( weaponname )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19f1
 // Size: 0x2ef
 function handledropclip( flagname )
@@ -949,7 +949,7 @@ function handledropclip( flagname )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ce8
 // Size: 0x13
 function dropclipmodel( clipmodel, tagname )
@@ -960,7 +960,7 @@ function dropclipmodel( clipmodel, tagname )
 /#
 
     // Namespace shared / scripts\anim\shared
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x1d03
     // Size: 0xd6, Type: dev
     function function_f50e9da2dab043f5( waittime, statename, clipmodel )
@@ -979,7 +979,7 @@ function dropclipmodel( clipmodel, tagname )
 #/
 
 // Namespace shared / scripts\anim\shared
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1de1
 // Size: 0x14b
 function movetonodeovertime( node, time )
@@ -1004,7 +1004,8 @@ function movetonodeovertime( node, time )
     startdist = distance( self.origin, nodeorigin );
     frames = int( time * 20 );
     
-    for (i = 0; i < frames; i++) {
+    for ( i = 0; i < frames ; i++ )
+    {
         nodeorigin = node.origin;
         var_e907009ead5acaf2 = self.origin - nodeorigin;
         var_e907009ead5acaf2 = vectornormalize( var_e907009ead5acaf2 );
@@ -1018,7 +1019,7 @@ function movetonodeovertime( node, time )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f34
 // Size: 0x4, Type: bool
 function returntrue()
@@ -1027,7 +1028,7 @@ function returntrue()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f41
 // Size: 0x94
 function playlookanimation( lookanim, looktime, var_3eda4dd47f961142 )
@@ -1037,7 +1038,8 @@ function playlookanimation( lookanim, looktime, var_3eda4dd47f961142 )
         var_3eda4dd47f961142 = &returntrue;
     }
     
-    for (i = 0; i < looktime * 10; i++) {
+    for ( i = 0; i < looktime * 10 ; i++ )
+    {
         if ( isalive( self.enemy ) )
         {
             if ( canseeenemy() && [[ var_3eda4dd47f961142 ]]() )
@@ -1057,7 +1059,7 @@ function playlookanimation( lookanim, looktime, var_3eda4dd47f961142 )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fdd
 // Size: 0x2e
 function throwdownweapon( swapanim )
@@ -1068,7 +1070,7 @@ function throwdownweapon( swapanim )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2013
 // Size: 0x6f
 function rpgplayerrepulsor()
@@ -1106,7 +1108,7 @@ function rpgplayerrepulsor()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x208a
 // Size: 0x41, Type: bool
 function function_a560b5ed33bedc96()
@@ -1125,7 +1127,7 @@ function function_a560b5ed33bedc96()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20d4
 // Size: 0x6f
 function rpgplayerrepulsor_getnummisses()
@@ -1149,7 +1151,7 @@ function rpgplayerrepulsor_getnummisses()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x214c
 // Size: 0x79
 function rpgplayerrepulsor_create( ent )
@@ -1169,7 +1171,7 @@ function rpgplayerrepulsor_create( ent )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21cd
 // Size: 0xf6
 function pickandsetforceweapon()
@@ -1204,7 +1206,7 @@ function pickandsetforceweapon()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22cb
 // Size: 0x228
 function forceuseweapon( newweapon, targetslot )
@@ -1289,7 +1291,7 @@ function forceuseweapon( newweapon, targetslot )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24fb
 // Size: 0x148
 function updateweaponarchetype( weapclass )
@@ -1334,7 +1336,7 @@ function updateweaponarchetype( weapclass )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x264b
 // Size: 0x32, Type: bool
 function everusessecondaryweapon()
@@ -1353,7 +1355,7 @@ function everusessecondaryweapon()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2686
 // Size: 0x3a9
 function default_weaponsetup( scriptedweaponassignment )
@@ -1474,7 +1476,7 @@ function default_weaponsetup( scriptedweaponassignment )
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a37
 // Size: 0x157
 function validatesidearm()
@@ -1497,7 +1499,7 @@ function validatesidearm()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b96
 // Size: 0x9d
 function initmeleecharges()
@@ -1517,7 +1519,7 @@ function initmeleecharges()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c3b
 // Size: 0x5a
 function init_squadmanager()
@@ -1536,7 +1538,7 @@ function init_squadmanager()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c9d
 // Size: 0x275
 function initanimvars()
@@ -1605,7 +1607,7 @@ function initanimvars()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f1a
 // Size: 0xa5
 function initgestures()
@@ -1629,7 +1631,7 @@ function initgestures()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fc7
 // Size: 0x8a
 function setglobalaimsettings()
@@ -1648,7 +1650,7 @@ function setglobalaimsettings()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3059
 // Size: 0x24
 function c12_getweapontypeforweapon()
@@ -1666,7 +1668,7 @@ function c12_getweapontypeforweapon()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3086
 // Size: 0x97
 function c12_weaponsetup()
@@ -1690,7 +1692,7 @@ function c12_weaponsetup()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3125
 // Size: 0xd9
 function initwindowtraverse()
@@ -1710,7 +1712,7 @@ function initwindowtraverse()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3206
 // Size: 0xad
 function setuprandomtable()
@@ -1718,11 +1720,13 @@ function setuprandomtable()
     anim.randominttablesize = 60;
     anim.randominttable = [];
     
-    for (i = 0; i < anim.randominttablesize; i++) {
+    for ( i = 0; i < anim.randominttablesize ; i++ )
+    {
         anim.randominttable[ i ] = i;
     }
     
-    for (i = 0; i < anim.randominttablesize; i++) {
+    for ( i = 0; i < anim.randominttablesize ; i++ )
+    {
         switchwith = randomint( anim.randominttablesize );
         temp = anim.randominttable[ i ];
         anim.randominttable[ i ] = anim.randominttable[ switchwith ];
@@ -1731,7 +1735,7 @@ function setuprandomtable()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32bb
 // Size: 0x5b
 function setupweapons()
@@ -1749,7 +1753,7 @@ function setupweapons()
 }
 
 // Namespace shared / scripts\anim\shared
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x331e
 // Size: 0x20a
 function setscriptammo( weaponname, inherit_from, placedub )

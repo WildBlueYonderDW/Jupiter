@@ -1,10 +1,10 @@
 #using script_2047cdbf5176ba0;
-#using script_22f1701e151b9d12;
 #using script_3351a966a784edc0;
 #using script_62a4f7a62643fe8;
 #using script_893e61d2d5b599;
 #using script_92b815b18f0ba61;
 #using scripts\common\callbacks;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\engine\utility;
 
 #namespace mp_jup_st_c_gw_ob;
@@ -19,7 +19,7 @@ function autoexec init()
 }
 
 // Namespace mp_jup_st_c_gw_ob / scripts\mp\maps\mp_jup_st_c_gw\mp_jup_st_c_gw_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14b
 // Size: 0x95
 function main()
@@ -44,7 +44,7 @@ function main()
 }
 
 // Namespace mp_jup_st_c_gw_ob / scripts\mp\maps\mp_jup_st_c_gw\mp_jup_st_c_gw_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e8
 // Size: 0x21
 function function_1aaaa2896639517e()
@@ -55,11 +55,11 @@ function function_1aaaa2896639517e()
 }
 
 // Namespace mp_jup_st_c_gw_ob / scripts\mp\maps\mp_jup_st_c_gw\mp_jup_st_c_gw_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x211
 // Size: 0x9
 function function_969adf7620768917()
 {
-    namespace_614554f86e52695c::process_create_script();
+    scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 

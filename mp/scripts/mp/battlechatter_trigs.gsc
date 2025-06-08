@@ -3,7 +3,7 @@
 #namespace battlechatter_trigs;
 
 // Namespace battlechatter_trigs / scripts\mp\battlechatter_trigs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x715
 // Size: 0x2
 function extra_location_trigger_mapping()
@@ -12,7 +12,7 @@ function extra_location_trigger_mapping()
 }
 
 // Namespace battlechatter_trigs / scripts\mp\battlechatter_trigs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x71f
 // Size: 0x1ef
 function geneva()

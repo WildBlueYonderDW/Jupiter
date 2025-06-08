@@ -16,7 +16,7 @@
 #namespace namespace_69b5676020104b55;
 
 // Namespace namespace_69b5676020104b55 / scripts\quaked\script_struct_mp_iw9_mrap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6cd
 // Size: 0x13
 function main()

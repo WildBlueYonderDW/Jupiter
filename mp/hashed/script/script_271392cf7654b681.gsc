@@ -11,7 +11,7 @@
 #namespace jup_ob_enemy_basic_specialforce_all_for_one_bodyguard;
 
 // Namespace jup_ob_enemy_basic_specialforce_all_for_one_bodyguard / namespace_ea18feff5284336f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x234
 // Size: 0x1c9
 function main()
@@ -47,7 +47,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_basic_specialforce_all_for_one_bodyguard / namespace_ea18feff5284336f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x405
 // Size: 0x57
 function setup_model()
@@ -64,7 +64,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_basic_specialforce_all_for_one_bodyguard / namespace_ea18feff5284336f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x464
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -73,7 +73,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_basic_specialforce_all_for_one_bodyguard / namespace_ea18feff5284336f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x475
 // Size: 0xcf
 function precache()
@@ -102,7 +102,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_basic_specialforce_all_for_one_bodyguard / namespace_ea18feff5284336f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54c
 // Size: 0xb2
 function setup_weapons()

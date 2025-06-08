@@ -19,7 +19,7 @@
 #namespace chopper_gunner_mp;
 
 // Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d2
 // Size: 0x6b
 function init()
@@ -32,7 +32,7 @@ function init()
 }
 
 // Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x245
 // Size: 0x1c
 function chopper_gunner_set_vehicle_hit_damage_data( ref, hitstokill )
@@ -41,7 +41,7 @@ function chopper_gunner_set_vehicle_hit_damage_data( ref, hitstokill )
 }
 
 // Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x269
 // Size: 0x1b
 function chopper_gunner_findtargetstruct( structlinkname, var_6e1e1e75fc237eb1 )
@@ -50,7 +50,7 @@ function chopper_gunner_findtargetstruct( structlinkname, var_6e1e1e75fc237eb1 )
 }
 
 // Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x11b
 function chopper_gunner_assigntargetmarkers()
@@ -80,7 +80,7 @@ function chopper_gunner_assigntargetmarkers()
 }
 
 // Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b0
 // Size: 0x20
 function function_dacd2cee9c44366f( choppergunner )

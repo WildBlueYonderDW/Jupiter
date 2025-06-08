@@ -37,7 +37,7 @@
 #namespace vehicle;
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xda9
 // Size: 0x2b4
 function vehicle_init()
@@ -137,7 +137,7 @@ function vehicle_init()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1065
 // Size: 0x5e
 function function_c0b3ddc9a6bdcc46( vehicleref, func )
@@ -163,7 +163,7 @@ function function_c0b3ddc9a6bdcc46( vehicleref, func )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10cb
 // Size: 0x25, Type: bool
 function function_38f50decb5603d7( vehicleref )
@@ -172,7 +172,7 @@ function function_38f50decb5603d7( vehicleref )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f9
 // Size: 0x61
 function vehicle_forceinit( vehicleref )
@@ -191,7 +191,7 @@ function vehicle_forceinit( vehicleref )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1162
 // Size: 0x41, Type: bool
 function function_9697379150687859( vehicleref )
@@ -200,7 +200,7 @@ function function_9697379150687859( vehicleref )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11ac
 // Size: 0xee
 function onvehiclespawned()
@@ -237,7 +237,7 @@ function onvehiclespawned()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12a2
 // Size: 0x84
 function function_466cdec791b7edfe()
@@ -260,7 +260,7 @@ function function_466cdec791b7edfe()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x132e
 // Size: 0x173
 function function_5ff2c834ca229322()
@@ -317,7 +317,7 @@ function function_5ff2c834ca229322()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14a9
 // Size: 0x13
 function vehicle_onplayerconnect( params )
@@ -326,7 +326,7 @@ function vehicle_onplayerconnect( params )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14c4
 // Size: 0x2c
 function function_973cff70a385b03()
@@ -341,7 +341,7 @@ function function_973cff70a385b03()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14f8
 // Size: 0xc, Type: bool
 function isvehicle()
@@ -350,7 +350,7 @@ function isvehicle()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x150d
 // Size: 0x67, Type: bool
 function function_794b5f886cced2d0()
@@ -369,7 +369,7 @@ function function_794b5f886cced2d0()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x157d
 // Size: 0x20, Type: bool
 function function_a164fb69837475d5()
@@ -378,7 +378,7 @@ function function_a164fb69837475d5()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x15a6
 // Size: 0x80
 function function_160ef1c877c69ab1( player, vehicle, turret, tag )
@@ -396,7 +396,7 @@ function function_160ef1c877c69ab1( player, vehicle, turret, tag )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x162e
 // Size: 0x57
 function function_4d2324450a951b2b( player, vehicle )
@@ -412,7 +412,7 @@ function function_4d2324450a951b2b( player, vehicle )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x168d
 // Size: 0x4d
 function exitexternalturret()
@@ -433,7 +433,7 @@ function exitexternalturret()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e2
 // Size: 0x20, Type: bool
 function isvehicledestroyed()
@@ -443,7 +443,7 @@ function isvehicledestroyed()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x170b
 // Size: 0x24, Type: bool
 function isbossvehicle()
@@ -452,7 +452,7 @@ function isbossvehicle()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1738
 // Size: 0x30
 function vehiclecanfly()
@@ -468,7 +468,7 @@ function vehiclecanfly()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1771
 // Size: 0xae, Type: bool
 function isfloating()
@@ -501,7 +501,7 @@ function isfloating()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1828
 // Size: 0xc, Type: bool
 function isvehiclehusk()
@@ -510,7 +510,7 @@ function isvehiclehusk()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x183d
 // Size: 0x2d, Type: bool
 function isvehicleboat()
@@ -526,7 +526,7 @@ function isvehicleboat()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1873
 // Size: 0x22, Type: bool
 function isvehiclekillstreak()
@@ -543,7 +543,7 @@ function isvehiclekillstreak()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x189e
 // Size: 0x13, Type: bool
 function isgroundvehicle()
@@ -552,7 +552,7 @@ function isgroundvehicle()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18ba
 // Size: 0x6b
 function vehicle_getleveldataforvehicle( vehicleref, create )
@@ -573,7 +573,7 @@ function vehicle_getleveldataforvehicle( vehicleref, create )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x192d
 // Size: 0xb2
 function function_8497e7e46b5e397( vehicleref, callbacks )
@@ -1199,7 +1199,7 @@ function private function_2ae5eae26e26efe9( vehicleref )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f57
 // Size: 0x32
 function function_29b4292c92443328( vehicleref )
@@ -1213,7 +1213,7 @@ function function_29b4292c92443328( vehicleref )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f91
 // Size: 0x25, Type: bool
 function function_89dc39dc11f3988c( vehicleref )
@@ -1222,7 +1222,7 @@ function function_89dc39dc11f3988c( vehicleref )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fbf
 // Size: 0x12, Type: bool
 function function_fa537f1ab52a76d1( vehicleref )
@@ -1231,7 +1231,7 @@ function function_fa537f1ab52a76d1( vehicleref )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3fda
 // Size: 0x51
 function vehicle_spawn( vehicleref, spawndata, faildata, vehicle )
@@ -1245,7 +1245,7 @@ function vehicle_spawn( vehicleref, spawndata, faildata, vehicle )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4033
 // Size: 0x24f
 function function_bba34cf920370ff4( vehicleref, spawndata, faildata, vehicle )
@@ -1343,7 +1343,7 @@ function function_bba34cf920370ff4( vehicleref, spawndata, faildata, vehicle )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x428b
 // Size: 0x2ef
 function function_fffe750fce66784( vehicleref, spawndata, faildata, fallbackvehicletype, donotwatchabandoned, mtx )
@@ -1433,7 +1433,7 @@ function function_fffe750fce66784( vehicleref, spawndata, faildata, fallbackvehi
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4583
 // Size: 0x2d
 function function_d93ec4635290febd()
@@ -1449,7 +1449,7 @@ function function_d93ec4635290febd()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45b9
 // Size: 0x1e
 function function_9005b7fc076293f8()
@@ -1461,7 +1461,7 @@ function function_9005b7fc076293f8()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x45df
 // Size: 0x40f
 function vehicle_create( vehicle, vehicleref, spawndata )
@@ -1576,7 +1576,7 @@ function vehicle_create( vehicle, vehicleref, spawndata )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x49f6
 // Size: 0x8a
 function vehicle_createlate( vehicle, spawndata )
@@ -1593,7 +1593,7 @@ function vehicle_createlate( vehicle, spawndata )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a88
 // Size: 0x7a
 function vehicle_explode( data, immediate )
@@ -1621,7 +1621,7 @@ function vehicle_explode( data, immediate )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b0a
 // Size: 0x5c
 function function_f7af4d1c91ca6e2f()
@@ -1646,7 +1646,7 @@ function function_f7af4d1c91ca6e2f()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b6e
 // Size: 0x4b
 function function_e3ff0a92ad2bf58d( data, immediate )
@@ -1663,7 +1663,7 @@ function function_e3ff0a92ad2bf58d( data, immediate )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4bc1
 // Size: 0x118
 function function_9672da471530b44a( data, immediate )
@@ -1704,7 +1704,7 @@ function function_9672da471530b44a( data, immediate )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ce1
 // Size: 0x32e
 function vehicle_death( vehicle, damagedata )
@@ -1802,7 +1802,7 @@ function vehicle_death( vehicle, damagedata )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5017
 // Size: 0x47
 function function_12f5a0e2344c10c5()
@@ -1882,7 +1882,7 @@ function private vehicle_deletenextframe( vehicle, killer )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x528f
 // Size: 0xa9
 function vehicle_deletenextframelate( vehicle )
@@ -1913,7 +1913,7 @@ function vehicle_deletenextframelate( vehicle )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5340
 // Size: 0x92
 function function_afe012d734bd72c7( data )
@@ -1932,7 +1932,7 @@ function function_afe012d734bd72c7( data )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53da
 // Size: 0x169
 function function_f9aa6f0d46bc950b()
@@ -1981,7 +1981,7 @@ function function_f9aa6f0d46bc950b()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x554b
 // Size: 0x183
 function vehicle_update( vehicle )
@@ -2043,7 +2043,7 @@ function vehicle_update( vehicle )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x56d6
 // Size: 0x19f, Type: bool
 function vehicle_checktrailvfx( vehicle, canfly )
@@ -2106,7 +2106,7 @@ function vehicle_checktrailvfx( vehicle, canfly )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x587e
 // Size: 0xe6
 function vehicle_registerturret( vehicle, entity, objweapon, isprojectile )
@@ -2154,7 +2154,7 @@ function vehicle_registerturret( vehicle, entity, objweapon, isprojectile )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x596c
 // Size: 0xae
 function vehicle_deregisterturret( vehicle, objweapon )
@@ -2193,7 +2193,7 @@ function vehicle_deregisterturret( vehicle, objweapon )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5a22
 // Size: 0x5a
 function vehicle_getturretbyweapon( vehicle, objweapon )
@@ -2218,7 +2218,7 @@ function vehicle_getturretbyweapon( vehicle, objweapon )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a85
 // Size: 0x35
 function vehicle_getturrets( vehicle )
@@ -2234,7 +2234,7 @@ function vehicle_getturrets( vehicle )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ac3
 // Size: 0x57
 function vehicle_trackturretprojectile( vehicle, entity )
@@ -2255,7 +2255,7 @@ function vehicle_trackturretprojectile( vehicle, entity )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b22
 // Size: 0xcd
 function vehicle_isfriendlytoplayer( vehicle, player )
@@ -2289,7 +2289,7 @@ function vehicle_isfriendlytoplayer( vehicle, player )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5bf7
 // Size: 0xcd
 function vehicle_isenemytoplayer( vehicle, player )
@@ -2323,7 +2323,7 @@ function vehicle_isenemytoplayer( vehicle, player )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ccc
 // Size: 0x79
 function vehicle_isneutraltoplayer( vehicle, player )
@@ -2342,7 +2342,7 @@ function vehicle_isneutraltoplayer( vehicle, player )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d4d
 // Size: 0x55
 function vehicle_isfriendlytoteam( vehicle, team )
@@ -2361,7 +2361,7 @@ function vehicle_isfriendlytoteam( vehicle, team )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5daa
 // Size: 0x55
 function vehicle_isenemytoteam( vehicle, team )
@@ -2380,7 +2380,7 @@ function vehicle_isenemytoteam( vehicle, team )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5e07
 // Size: 0x5a
 function vehicle_isneutraltoteam( vehicle, team )
@@ -2399,7 +2399,7 @@ function vehicle_isneutraltoteam( vehicle, team )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e69
 // Size: 0x52
 function vehicle_getteamfriendlyto( vehicle )
@@ -2418,7 +2418,7 @@ function vehicle_getteamfriendlyto( vehicle )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5ec3
 // Size: 0x138, Type: bool
 function vehicle_docollisiondamagetoplayer( vehicle, player, force )
@@ -2473,7 +2473,7 @@ function vehicle_docollisiondamagetoplayer( vehicle, player, force )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6004
 // Size: 0x71
 function vehicle_preventplayercollisiondamagefortimeafterexit( vehicle, player )
@@ -2489,7 +2489,7 @@ function vehicle_preventplayercollisiondamagefortimeafterexit( vehicle, player )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x607d
 // Size: 0x7d
 function vehicle_preventplayercollisiondamagefortimeafterexitinternal( player )
@@ -2506,7 +2506,7 @@ function vehicle_preventplayercollisiondamagefortimeafterexitinternal( player )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6102
 // Size: 0x1e
 function vehicle_clearpreventplayercollisiondamagefortimeafterexit( player )
@@ -2516,7 +2516,7 @@ function vehicle_clearpreventplayercollisiondamagefortimeafterexit( player )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6128
 // Size: 0x83, Type: bool
 function vehicle_playershouldignorecollisiondamage( inflictor, victim, meansofdeath, objweapon )
@@ -2545,7 +2545,7 @@ function vehicle_playershouldignorecollisiondamage( inflictor, victim, meansofde
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x61b4
 // Size: 0x240, Type: bool
 function vehicle_isrubbingagainstvehicle( inflictor, victim, smeansofdeath )
@@ -2640,7 +2640,7 @@ function vehicle_isrubbingagainstvehicle( inflictor, victim, smeansofdeath )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63fd
 // Size: 0x5b, Type: bool
 function function_4687f4da72911323( deathdata )
@@ -2659,7 +2659,7 @@ function function_4687f4da72911323( deathdata )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6461
 // Size: 0x59, Type: bool
 function function_107efd42d596b2d3( deathdata )
@@ -2668,7 +2668,7 @@ function function_107efd42d596b2d3( deathdata )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64c3
 // Size: 0x64
 function vehicle_playerkilledbycollision( deathdata )
@@ -2688,7 +2688,7 @@ function vehicle_playerkilledbycollision( deathdata )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x652f
 // Size: 0x10e
 function vehicle_playerkilledfx( victim )
@@ -2716,7 +2716,7 @@ function vehicle_playerkilledfx( victim )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6645
 // Size: 0x133
 function function_1b69321ff9937fc5()
@@ -2780,7 +2780,7 @@ function function_1b69321ff9937fc5()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6780
 // Size: 0x6c
 function function_4a387c035eb677d0( isboat )
@@ -2810,7 +2810,7 @@ function function_4a387c035eb677d0( isboat )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67f4
 // Size: 0x232
 function vehicle_watchflipped()
@@ -2927,7 +2927,7 @@ function vehicle_watchflipped()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6a2e
 // Size: 0x3e
 function vehicle_flippedendcallback( vehicle, timedout )
@@ -2940,7 +2940,7 @@ function vehicle_flippedendcallback( vehicle, timedout )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a74
 // Size: 0x60
 function vehicle_deletecollmapvehicles()
@@ -2952,14 +2952,15 @@ function vehicle_deletecollmapvehicles()
     
     if ( isdefined( vehicles ) && vehicles.size > 0 )
     {
-        for (i = vehicles.size - 1; i >= 0; i--) {
+        for ( i = vehicles.size - 1; i >= 0 ; i-- )
+        {
             vehicles[ i ] delete();
         }
     }
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6adc
 // Size: 0x13c
 function function_78fa8a2ff553f7c8( data )
@@ -3002,7 +3003,7 @@ function function_78fa8a2ff553f7c8( data )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c20
 // Size: 0xcc
 function function_b92c4e2d8733661( data )
@@ -3027,7 +3028,7 @@ function function_b92c4e2d8733661( data )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6cf4
 // Size: 0x86
 function vehicle_lockedoncallback()
@@ -3043,7 +3044,7 @@ function vehicle_lockedoncallback()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d82
 // Size: 0x7a
 function vehicle_lockedonremovedcallback()
@@ -3058,7 +3059,7 @@ function vehicle_lockedonremovedcallback()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e04
 // Size: 0xe2
 function function_a2d1400bcf46869a()
@@ -3096,7 +3097,7 @@ function function_a2d1400bcf46869a()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6eee
 // Size: 0x86
 function vehicle_incomingcallback()
@@ -3112,7 +3113,7 @@ function vehicle_incomingcallback()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f7c
 // Size: 0x7a
 function vehicle_incomingremovedcallback()
@@ -3127,7 +3128,7 @@ function vehicle_incomingremovedcallback()
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ffe
 // Size: 0xc0
 function vehicle_empstartcallback( data )
@@ -3156,7 +3157,7 @@ function vehicle_empstartcallback( data )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x70c6
 // Size: 0x92
 function vehicle_empclearcallback( fromdeath )
@@ -3184,7 +3185,7 @@ function vehicle_empclearcallback( fromdeath )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7160
 // Size: 0x128
 function function_cdee8a729cb75935( data )
@@ -3224,7 +3225,7 @@ function function_cdee8a729cb75935( data )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7290
 // Size: 0x64
 function function_200ff7f502669b34( data )
@@ -3244,7 +3245,7 @@ function function_200ff7f502669b34( data )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x72fc
 // Size: 0xc5
 function function_810dfd134e9a7a04( vehicledata )
@@ -3269,7 +3270,7 @@ function function_810dfd134e9a7a04( vehicledata )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x73c9
 // Size: 0x62
 function function_95022424d8b0dc1c( vehicleref )
@@ -3290,7 +3291,7 @@ function function_95022424d8b0dc1c( vehicleref )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7434
 // Size: 0xab
 function function_f92faaaf5c5077c6( riders, spawninvehicle, var_420ba29d9efc4756 )
@@ -3313,7 +3314,7 @@ function function_f92faaaf5c5077c6( riders, spawninvehicle, var_420ba29d9efc4756
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x74e7
 // Size: 0x378
 function function_19e0f5686d59b76f( riders, spawninvehicle, var_420ba29d9efc4756 )
@@ -3504,7 +3505,7 @@ function private function_35f4a61ce36d99bb( vehicle )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a55
 // Size: 0xe8
 function function_1cd6d75165ecbc48()
@@ -3585,7 +3586,7 @@ function private getvehicleplayerhorn( data )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7c7c
 // Size: 0x170
 function function_471cde1983a05f66( player, vehicleref )
@@ -3620,12 +3621,17 @@ function function_471cde1983a05f66( player, vehicleref )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7df5
-// Size: 0x195
+// Size: 0x1ab
 function function_4201160d49c885a7( vehicle, mtx )
 {
     if ( !isdefined( mtx ) )
+    {
+        return;
+    }
+    
+    if ( getdvarint( @"hash_c2011dc70425d4e7", 1 ) == 0 )
     {
         return;
     }
@@ -3673,7 +3679,7 @@ function function_4201160d49c885a7( vehicle, mtx )
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x7f92
+// Checksum 0x0, Offset: 0x7fa8
 // Size: 0x45
 function private function_e9c362d34ccc190b( hornstate )
 {
@@ -3691,7 +3697,7 @@ function private function_e9c362d34ccc190b( hornstate )
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x7fdf
+// Checksum 0x0, Offset: 0x7ff5
 // Size: 0x4e
 function private function_4327f95b5d3f8fb3( var_c1af5f3094ddb62d )
 {
@@ -3709,7 +3715,7 @@ function private function_4327f95b5d3f8fb3( var_c1af5f3094ddb62d )
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x8035
+// Checksum 0x0, Offset: 0x804b
 // Size: 0xba
 function private function_19d89390ee87e7c2( vehicleref, vehcamo )
 {
@@ -3737,8 +3743,8 @@ function private function_19d89390ee87e7c2( vehicleref, vehcamo )
 }
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x80f7
+// Params 2
+// Checksum 0x0, Offset: 0x810d
 // Size: 0x1c7
 function function_86f6f784630b11fb( vehicleref, options )
 {
@@ -3793,8 +3799,8 @@ function function_86f6f784630b11fb( vehicleref, options )
 /#
 
     // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x82c7
+    // Params 3
+    // Checksum 0x0, Offset: 0x82dd
     // Size: 0x18b, Type: dev
     function function_fdf45700cfcd0c05( vehcamo, hornindex, trailindex )
     {
@@ -3841,8 +3847,8 @@ function function_86f6f784630b11fb( vehicleref, options )
     }
 
     // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x845a
+    // Params 2
+    // Checksum 0x0, Offset: 0x8470
     // Size: 0x58, Type: dev
     function function_82a41d4c091810a6( data, skinindex )
     {
@@ -3860,8 +3866,8 @@ function function_86f6f784630b11fb( vehicleref, options )
     }
 
     // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x84ba
+    // Params 2
+    // Checksum 0x0, Offset: 0x84d0
     // Size: 0x57, Type: dev
     function function_cdb95758906af97e( data, hornindex )
     {
@@ -3876,8 +3882,8 @@ function function_86f6f784630b11fb( vehicleref, options )
 #/
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8519
+// Params 0
+// Checksum 0x0, Offset: 0x852f
 // Size: 0x113
 function function_1e24abef827f0807()
 {
@@ -3930,7 +3936,7 @@ function function_1e24abef827f0807()
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x8634
+// Checksum 0x0, Offset: 0x864a
 // Size: 0x288
 function private function_436b3366f1d5b495( var_add0f0b19cf87473, var_37879fc7b1cc0618, hash )
 {
@@ -4017,7 +4023,7 @@ function private function_436b3366f1d5b495( var_add0f0b19cf87473, var_37879fc7b1
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x88c4
+// Checksum 0x0, Offset: 0x88da
 // Size: 0x53
 function private givexp( event, xp )
 {
@@ -4028,7 +4034,7 @@ function private givexp( event, xp )
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x891f
+// Checksum 0x0, Offset: 0x8935
 // Size: 0x43
 function private function_45585d05c17c31aa()
 {
@@ -4044,7 +4050,7 @@ function private function_45585d05c17c31aa()
 
 // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x896a
+// Checksum 0x0, Offset: 0x8980
 // Size: 0xb0
 function private watchcombo( var_add0f0b19cf87473 )
 {
@@ -4084,8 +4090,8 @@ function private watchcombo( var_add0f0b19cf87473 )
 /#
 
     // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8a22
+    // Params 0
+    // Checksum 0x0, Offset: 0x8a38
     // Size: 0x51, Type: dev
     function function_84134697aff9fc9a()
     {
@@ -4118,8 +4124,8 @@ function private watchcombo( var_add0f0b19cf87473 )
     }
 
     // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8a7b
+    // Params 2
+    // Checksum 0x0, Offset: 0x8a91
     // Size: 0x62, Type: dev
     function function_84033ce50b8afce2( vehicleref, spawndata )
     {
@@ -4134,9 +4140,9 @@ function private watchcombo( var_add0f0b19cf87473 )
     }
 
     // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8ae5
-    // Size: 0x16a, Type: dev
+    // Params 1
+    // Checksum 0x0, Offset: 0x8afb
+    // Size: 0x19d, Type: dev
     function function_276beb60c7f60d1e( vehicleref )
     {
         if ( !function_84134697aff9fc9a() )
@@ -4146,25 +4152,31 @@ function private watchcombo( var_add0f0b19cf87473 )
         
         spawnposition = self.origin + ( 0, 0, 100 );
         spawnangles = self.angles * ( 0, 1, 0 );
+        
+        if ( vehicleref == "<dev string:x621>" || vehicleref == "<dev string:x62f>" )
+        {
+            spawnposition = self.origin + 5 * ( 0, 0, 100 );
+        }
+        
         vehicle = undefined;
         seatid = undefined;
         spawndata = spawnstruct();
         spawndata.origin = spawnposition;
         spawndata.angles = spawnangles;
-        spawndata.spawntype = "<dev string:x621>";
+        spawndata.spawntype = "<dev string:x63e>";
         [ vehicle, seatid ] = function_84033ce50b8afce2( vehicleref, spawndata );
         
-        if ( isdefined( vehicle ) && vehicleref != "<dev string:x62b>" && vehicleref != "<dev string:x63a>" && vehicleref != "<dev string:x648>" && vehicleref != "<dev string:x659>" && vehicleref != "<dev string:x675>" )
+        if ( isdefined( vehicle ) && vehicleref != "<dev string:x648>" && vehicleref != "<dev string:x657>" && vehicleref != "<dev string:x665>" && vehicleref != "<dev string:x676>" && vehicleref != "<dev string:x692>" )
         {
-            assertex( isdefined( seatid ), "<dev string:x693>" );
+            assertex( isdefined( seatid ), "<dev string:x6b0>" );
             thread scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_enter( vehicle, seatid, self, undefined, 1 );
         }
         else if ( !isdefined( vehicle ) )
         {
-            iprintln( "<dev string:x6dc>" );
+            iprintln( "<dev string:x6f9>" );
         }
         
-        if ( vehicleref == "<dev string:x63a>" || vehicleref == "<dev string:x648>" || vehicleref == "<dev string:x659>" )
+        if ( vehicleref == "<dev string:x657>" || vehicleref == "<dev string:x665>" || vehicleref == "<dev string:x676>" )
         {
             vehicle scripts\cp_mp\vehicles\vehicle_occupancy::function_a91927df280e94e4();
         }
@@ -4173,8 +4185,8 @@ function private watchcombo( var_add0f0b19cf87473 )
     }
 
     // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8c57
+    // Params 1
+    // Checksum 0x0, Offset: 0x8ca0
     // Size: 0x78, Type: dev
     function destroyvehicles( vehicleref )
     {
@@ -4190,13 +4202,13 @@ function private watchcombo( var_add0f0b19cf87473 )
     }
 
     // Namespace vehicle / scripts\cp_mp\vehicles\vehicle
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8cd7
+    // Params 0
+    // Checksum 0x0, Offset: 0x8d20
     // Size: 0x19, Type: dev
     function function_b4896044b6e0d565()
     {
         wait 1;
-        self setscriptablepartstate( "<dev string:x6f7>", "<dev string:x701>" );
+        self setscriptablepartstate( "<dev string:x714>", "<dev string:x71e>" );
     }
 
 #/

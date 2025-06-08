@@ -9,7 +9,7 @@
 #namespace perkpackage;
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ce
 // Size: 0x19
 function perkpackage_initperkpackages()
@@ -20,7 +20,7 @@ function perkpackage_initperkpackages()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ef
 // Size: 0xdf
 function perkpackage_checkifready()
@@ -71,7 +71,7 @@ function perkpackage_checkifready()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d6
 // Size: 0x431
 function perkpackage_updateifchanged()
@@ -194,7 +194,7 @@ function perkpackage_updateifchanged()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0f
 // Size: 0xff
 function function_fbff879439b14d48()
@@ -221,7 +221,7 @@ function function_fbff879439b14d48()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb16
 // Size: 0x2e, Type: bool
 function perkpackage_isreadytoupgrade()
@@ -240,7 +240,7 @@ function perkpackage_isreadytoupgrade()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb4d
 // Size: 0x2d
 function perkpackage_setstate( newstate )
@@ -250,7 +250,7 @@ function perkpackage_setstate( newstate )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb82
 // Size: 0x30
 function perkpackage_getfirstfieldupgrade()
@@ -266,7 +266,7 @@ function perkpackage_getfirstfieldupgrade()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbbb
 // Size: 0xb
 function function_3e6359bc16258b7f()
@@ -275,7 +275,7 @@ function function_3e6359bc16258b7f()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbcf
 // Size: 0x30
 function perkpackage_getsecondfieldupgrade()
@@ -291,7 +291,7 @@ function perkpackage_getsecondfieldupgrade()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc08
 // Size: 0xb
 function function_fc8f75af9004a319()
@@ -300,7 +300,7 @@ function function_fc8f75af9004a319()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc1c
 // Size: 0x13a
 function perkpackage_initpersdata()
@@ -333,7 +333,7 @@ function perkpackage_initpersdata()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd5e
 // Size: 0x7
 function perkpackage_getperkicon()
@@ -342,7 +342,7 @@ function perkpackage_getperkicon()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd6e
 // Size: 0x51
 function perkpackage_openselect()
@@ -367,7 +367,7 @@ function perkpackage_openselect()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc7
 // Size: 0x19
 function function_a33bba529da2a532()
@@ -379,7 +379,7 @@ function function_a33bba529da2a532()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xde8
 // Size: 0x103
 function perkpackagemenu_openmenu()
@@ -420,7 +420,7 @@ function perkpackagemenu_openmenu()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef3
 // Size: 0xd9
 function perkpackagemenu_menuthink()
@@ -462,7 +462,7 @@ function perkpackagemenu_menuthink()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfd5
 // Size: 0x54
 function function_8daf361258c0dc41( isdisabled )
@@ -479,7 +479,7 @@ function function_8daf361258c0dc41( isdisabled )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1031
 // Size: 0x69
 function function_a7fbaf375d6d6bfa()
@@ -505,7 +505,7 @@ function function_a7fbaf375d6d6bfa()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10a2
 // Size: 0x3d
 function perkpackagemenu_closeinputthink()
@@ -527,7 +527,7 @@ function perkpackagemenu_closeinputthink()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10e7
 // Size: 0x48, Type: bool
 function perkpackagemenu_canactivatesuper()
@@ -551,7 +551,7 @@ function perkpackagemenu_canactivatesuper()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1138
 // Size: 0x17c
 function perkpackage_awardperkpackageupgrade()
@@ -615,7 +615,7 @@ function perkpackage_awardperkpackageupgrade()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12bc
 // Size: 0x96, Type: bool
 function function_f7da7a17e16c797b( superref )
@@ -646,7 +646,7 @@ function function_f7da7a17e16c797b( superref )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x135b
 // Size: 0xc3
 function function_baaf3c3b7be8ce8d( superref )
@@ -685,7 +685,7 @@ function function_baaf3c3b7be8ce8d( superref )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1426
 // Size: 0x465
 function function_6f2fc81c6517f7f0( var_e97e441ec7933198, skipwait )
@@ -817,7 +817,7 @@ function function_6f2fc81c6517f7f0( var_e97e441ec7933198, skipwait )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1893
 // Size: 0xf3
 function function_11ce7a07b4915a2c()
@@ -845,7 +845,7 @@ function function_11ce7a07b4915a2c()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x198e
 // Size: 0x46
 function function_24ed4a94cf4e2c41()
@@ -859,7 +859,7 @@ function function_24ed4a94cf4e2c41()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19dc
 // Size: 0x108
 function function_1549f72dc5076065( superref )
@@ -904,7 +904,7 @@ function function_1549f72dc5076065( superref )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aec
 // Size: 0x152, Type: bool
 function function_3f7b66d60199a6a6()
@@ -928,7 +928,7 @@ function function_3f7b66d60199a6a6()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c47
 // Size: 0x32, Type: bool
 function function_1b9785c7d0d6fbf6( superref )
@@ -945,7 +945,7 @@ function function_1b9785c7d0d6fbf6( superref )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c82
 // Size: 0x32, Type: bool
 function function_186c487ecca6691e( superref )
@@ -962,7 +962,7 @@ function function_186c487ecca6691e( superref )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cbd
 // Size: 0x4e
 function function_7d4c7bff8926c0fd( superref )
@@ -983,7 +983,7 @@ function function_7d4c7bff8926c0fd( superref )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d14
 // Size: 0xf0
 function perkpackage_forceusesuper()
@@ -1032,7 +1032,7 @@ function perkpackage_forceusesuper()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e0d
 // Size: 0x46
 function perkpackage_waitforsuperfinish()
@@ -1044,7 +1044,7 @@ function perkpackage_waitforsuperfinish()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e5b
 // Size: 0x22
 function perkpackage_waitforsuperfinishinternal()
@@ -1056,7 +1056,7 @@ function perkpackage_waitforsuperfinishinternal()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e86
 // Size: 0xa2
 function perkpackage_waitforsupercanceled( superweapon )
@@ -1099,7 +1099,7 @@ function perkpackage_waitforsupercanceled( superweapon )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f30
 // Size: 0x52
 function perkpackagemenu_disableoffhanduse( duration )
@@ -1114,7 +1114,7 @@ function perkpackagemenu_disableoffhanduse( duration )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f8a
 // Size: 0x1e
 function perkpackage_givedebug( superref, blueprintindex )
@@ -1123,7 +1123,7 @@ function perkpackage_givedebug( superref, blueprintindex )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1fb0
 // Size: 0xdd
 function perkpackage_giveimmediate( superref, var_804a4a862146eb04, var_deb9b17bae00526e, blueprintindex, immediate )
@@ -1161,7 +1161,7 @@ function perkpackage_giveimmediate( superref, var_804a4a862146eb04, var_deb9b17b
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2095
 // Size: 0x46
 function perkpackage_giveoverridefieldupgrades( fieldupgrade1, fieldupgrade2 )
@@ -1182,7 +1182,7 @@ function perkpackage_giveoverridefieldupgrades( fieldupgrade1, fieldupgrade2 )
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20e3
 // Size: 0x16
 function perkpackage_resetoverridefieldupgrades()
@@ -1192,7 +1192,7 @@ function perkpackage_resetoverridefieldupgrades()
 }
 
 // Namespace perkpackage / scripts\mp\perks\perkpackage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2101
 // Size: 0x1f
 function perkpackage_reset()

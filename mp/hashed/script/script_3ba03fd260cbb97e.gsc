@@ -4,7 +4,7 @@
 #namespace mp_jup_st_e_ob_objectives_oldtown_zombie_control_alley_cs;
 
 // Namespace mp_jup_st_e_ob_objectives_oldtown_zombie_control_alley_cs / namespace_5f972bae27a2f74a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x347
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_e_ob_objectives_oldtown_zombie_control_alley_cs / namespace_5f972bae27a2f74a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3bc
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_e_ob_objectives_oldtown_zombie_control_alley_cs / namespace_5f972bae27a2f74a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x42b
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_objectives_oldtown_zombie_control_alley_cs / namespace_5f972bae27a2f74a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x473
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_e_ob_objectives_oldtown_zombie_control_alley_cs / namespace_5f972bae27a2f74a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47d
 // Size: 0x58
 function function_fd69cf02ba4d90a2()
@@ -84,7 +84,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_e_ob_objectives_oldtown_zombie_control_alley_cs / namespace_5f972bae27a2f74a
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4de
 // Size: 0x51
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -103,7 +103,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_objectives_oldtown_zombie_control_alley_cs / namespace_5f972bae27a2f74a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x537
 // Size: 0x4f8
 function function_2d9cbbe9c637c2a0( fe, us, cf )
@@ -146,7 +146,7 @@ function function_2d9cbbe9c637c2a0( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_objectives_oldtown_zombie_control_alley_cs / namespace_5f972bae27a2f74a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa37
 // Size: 0xb8
 function function_6da2952367672ac0()

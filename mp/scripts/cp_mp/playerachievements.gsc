@@ -23,7 +23,7 @@ function private initachievement( player, achievementid )
 }
 
 // Namespace playerachievements / scripts\cp_mp\playerachievements
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15b
 // Size: 0x50
 function getstate( player, achievementid )
@@ -40,7 +40,7 @@ function getstate( player, achievementid )
 }
 
 // Namespace playerachievements / scripts\cp_mp\playerachievements
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b3
 // Size: 0x1e
 function function_691880160b33d133( progressname )
@@ -49,7 +49,7 @@ function function_691880160b33d133( progressname )
 }
 
 // Namespace playerachievements / scripts\cp_mp\playerachievements
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1da
 // Size: 0x19
 function function_5cb795da8c8629cf( progressid )
@@ -58,7 +58,7 @@ function function_5cb795da8c8629cf( progressid )
 }
 
 // Namespace playerachievements / scripts\cp_mp\playerachievements
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1fc
 // Size: 0x40
 function function_ec4c795c2898be52( player, achievementid, progressname, defaultvalue )
@@ -68,7 +68,7 @@ function function_ec4c795c2898be52( player, achievementid, progressname, default
 }
 
 // Namespace playerachievements / scripts\cp_mp\playerachievements
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x245
 // Size: 0x72
 function function_c983c43f38eabbc( player, achievementid, progressid, defaultvalue )
@@ -85,7 +85,7 @@ function function_c983c43f38eabbc( player, achievementid, progressid, defaultval
 }
 
 // Namespace playerachievements / scripts\cp_mp\playerachievements
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c0
 // Size: 0xd0
 function challenge_progress( player, achievementid, progression )
@@ -93,7 +93,8 @@ function challenge_progress( player, achievementid, progression )
     println( "<dev string:x5e>" + player.name + "<dev string:x89>" + achievementid );
     initachievement( player, achievementid );
     
-    for (index = 0; index < progression.progress_values.size; index++) {
+    for ( index = 0; index < progression.progress_values.size ; index++ )
+    {
         progress_id = progression.progress_values[ index ].progress_id;
         progress_value = progression.progress_values[ index ].progress;
         player.achievements[ achievementid ].progressvalues[ progress_id ] = progress_value;

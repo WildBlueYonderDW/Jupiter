@@ -9,7 +9,7 @@
 #namespace jup_ob_rift_weakpoint_healthbar;
 
 // Namespace jup_ob_rift_weakpoint_healthbar / namespace_1ca41674c75865e8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15b
 // Size: 0x145
 function main()
@@ -38,7 +38,7 @@ function main()
 }
 
 // Namespace jup_ob_rift_weakpoint_healthbar / namespace_1ca41674c75865e8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a8
 // Size: 0x57
 function setup_model()
@@ -55,7 +55,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_rift_weakpoint_healthbar / namespace_1ca41674c75865e8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x307
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -64,7 +64,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_rift_weakpoint_healthbar / namespace_1ca41674c75865e8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x318
 // Size: 0xc7
 function precache()

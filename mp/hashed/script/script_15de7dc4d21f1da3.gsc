@@ -1,7 +1,7 @@
 #namespace namespace_ee5e52a75fbcf489;
 
 // Namespace namespace_ee5e52a75fbcf489 / namespace_a2c409363d7f24e7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd2
 // Size: 0x2c
 function init()
@@ -16,7 +16,7 @@ function init()
 }
 
 // Namespace namespace_ee5e52a75fbcf489 / namespace_a2c409363d7f24e7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x106
 // Size: 0x2b
 function function_5b1d60872d5f7d1f()
@@ -30,7 +30,7 @@ function function_5b1d60872d5f7d1f()
 }
 
 // Namespace namespace_ee5e52a75fbcf489 / namespace_a2c409363d7f24e7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x139
 // Size: 0x38
 function function_ba46cf958ae0cbda( callback )
@@ -44,7 +44,7 @@ function function_ba46cf958ae0cbda( callback )
 }
 
 // Namespace namespace_ee5e52a75fbcf489 / namespace_a2c409363d7f24e7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x179
 // Size: 0x78
 function function_7f4116eba8c42fa0( weapondropcallback )
@@ -63,7 +63,7 @@ function function_7f4116eba8c42fa0( weapondropcallback )
 }
 
 // Namespace namespace_ee5e52a75fbcf489 / namespace_a2c409363d7f24e7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f9
 // Size: 0x38
 function function_39027364b9c16127( callback )
@@ -77,7 +77,7 @@ function function_39027364b9c16127( callback )
 }
 
 // Namespace namespace_ee5e52a75fbcf489 / namespace_a2c409363d7f24e7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x239
 // Size: 0x78
 function function_e7aae5b770c4747b( var_2d2deddadd177b34 )
@@ -96,7 +96,7 @@ function function_e7aae5b770c4747b( var_2d2deddadd177b34 )
 }
 
 // Namespace namespace_ee5e52a75fbcf489 / namespace_a2c409363d7f24e7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b9
 // Size: 0x7b
 function function_6b1fcec8b1789d65()
@@ -115,7 +115,7 @@ function function_6b1fcec8b1789d65()
 }
 
 // Namespace namespace_ee5e52a75fbcf489 / namespace_a2c409363d7f24e7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33c
 // Size: 0x86
 function function_df97371d5dcee28c()

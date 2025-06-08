@@ -22,7 +22,7 @@
 #namespace battlechatter_mp;
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1250
 // Size: 0x494
 function init()
@@ -162,7 +162,7 @@ function private function_bc76cf7adda53de3( eventname )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x17c3
 // Size: 0x145
 function registerbcsoundtype( soundtype, var_4f632c1568af9fc0, priority, chance, timeoutpos, timeoutspeaker, var_3910458d599e5e01 )
@@ -215,7 +215,7 @@ function registerbcsoundtype( soundtype, var_4f632c1568af9fc0, priority, chance,
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1910
 // Size: 0xe0
 function onplayerspawned()
@@ -257,7 +257,7 @@ function onplayerspawned()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19f8
 // Size: 0x30
 function hurtbadlywait()
@@ -270,7 +270,7 @@ function hurtbadlywait()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a30
 // Size: 0xa0
 function validaterecentattackers()
@@ -296,7 +296,7 @@ function validaterecentattackers()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ad8
 // Size: 0x11d
 function addrecentattacker( attacker )
@@ -332,7 +332,7 @@ function addrecentattacker( attacker )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bfd
 // Size: 0xcd
 function launcherfired( missile )
@@ -364,7 +364,7 @@ function launcherfired( missile )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cd2
 // Size: 0x86
 function javelinfired( team, target )
@@ -387,7 +387,7 @@ function javelinfired( team, target )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d60
 // Size: 0x3bc
 function ongrenadeuse( grenade )
@@ -480,7 +480,7 @@ function ongrenadeuse( grenade )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2124
 // Size: 0x262
 function function_204aeba40a2aa027( superref )
@@ -545,7 +545,7 @@ function function_204aeba40a2aa027( superref )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x238e
 // Size: 0x16
 function onfieldupgradedestroy( chatterref )
@@ -554,7 +554,7 @@ function onfieldupgradedestroy( chatterref )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23ac
 // Size: 0x543
 function grenadeproximitytracking()
@@ -707,7 +707,7 @@ function grenadeproximitytracking()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28f7
 // Size: 0x121
 function equipmentdestroyed( ent )
@@ -755,7 +755,7 @@ function equipmentdestroyed( ent )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a20
 // Size: 0x37e
 function playkillstreakdeploydialog( owner, streakname )
@@ -846,7 +846,7 @@ function playkillstreakdeploydialog( owner, streakname )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2da6
 // Size: 0x79
 function getplayersinteam( team )
@@ -865,7 +865,7 @@ function getplayersinteam( team )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e28
 // Size: 0x2e8
 function killstreakdestroyed( streakname )
@@ -944,7 +944,7 @@ function killstreakdestroyed( streakname )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3118
 // Size: 0x4a
 function suppressingfiretracking()
@@ -968,7 +968,7 @@ function suppressingfiretracking()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x316a
 // Size: 0x27
 function suppresstimeout()
@@ -981,7 +981,7 @@ function suppresstimeout()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3199
 // Size: 0x19
 function waitsuppresstimeout()
@@ -992,7 +992,7 @@ function waitsuppresstimeout()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31ba
 // Size: 0x22
 function suppresswaiter()
@@ -1005,7 +1005,7 @@ function suppresswaiter()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31e4
 // Size: 0x307
 function reloadtracking()
@@ -1119,7 +1119,7 @@ function reloadtracking()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34f3
 // Size: 0x20
 function sprinttracking()
@@ -1134,7 +1134,7 @@ function sprinttracking()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x351b
 // Size: 0x34e
 function threatcallouttracking()
@@ -1253,7 +1253,7 @@ function threatcallouttracking()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3871
 // Size: 0x22d
 function dosound( soundtype, targetent, location )
@@ -1328,7 +1328,7 @@ function dosound( soundtype, targetent, location )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3aa7
 // Size: 0x20
 function timehack( soundalias, duration )
@@ -1339,7 +1339,7 @@ function timehack( soundalias, duration )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3acf
 // Size: 0xde, Type: bool
 function isspeakerinrange( player, max_dist )
@@ -1353,7 +1353,8 @@ function isspeakerinrange( player, max_dist )
     
     if ( isdefined( player ) && isdefined( player.team ) && player.team != "spectator" )
     {
-        for (index = 0; index < level.speakers[ player.team ].size; index++) {
+        for ( index = 0; index < level.speakers[ player.team ].size ; index++ )
+        {
             teammate = level.speakers[ player.team ][ index ][ "player" ];
             
             if ( teammate == player )
@@ -1377,7 +1378,7 @@ function isspeakerinrange( player, max_dist )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3bb6
 // Size: 0xf9
 function addspeaker( player, team, soundtype, priority )
@@ -1396,14 +1397,15 @@ function addspeaker( player, team, soundtype, priority )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3cb7
 // Size: 0x9a
 function removespeaker( player, team )
 {
     newspeakers = [];
     
-    for (index = 0; index < level.speakers[ team ].size; index++) {
+    for ( index = 0; index < level.speakers[ team ].size ; index++ )
+    {
         if ( isdefined( player ) && isdefined( level.speakers[ team ][ index ][ "player" ] ) && level.speakers[ team ][ index ][ "player" ] == player )
         {
             continue;
@@ -1416,7 +1418,7 @@ function removespeaker( player, team )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d59
 // Size: 0xd9
 function monitorspeakers()
@@ -1442,7 +1444,7 @@ function monitorspeakers()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e3a
 // Size: 0x19
 function disablebattlechatter( player )
@@ -1451,7 +1453,7 @@ function disablebattlechatter( player )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e5b
 // Size: 0x16
 function enablebattlechatter( player )
@@ -1460,7 +1462,7 @@ function enablebattlechatter( player )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e79
 // Size: 0xb1
 function updatechatter( soundtype )
@@ -1480,7 +1482,7 @@ function updatechatter( soundtype )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f32
 // Size: 0x122
 function cleanuplastsaytimes( soundtype, time )
@@ -1512,7 +1514,7 @@ function cleanuplastsaytimes( soundtype, time )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x405c
 // Size: 0xdc
 function getvalidlocation( speaker )
@@ -1543,7 +1545,7 @@ function getvalidlocation( speaker )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4141
 // Size: 0x8b
 function get_all_my_locations()
@@ -1564,7 +1566,7 @@ function get_all_my_locations()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41d5
 // Size: 0x33, Type: bool
 function location_called_out_ever( location )
@@ -1580,7 +1582,7 @@ function location_called_out_ever( location )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4211
 // Size: 0x4e, Type: bool
 function location_called_out_recently( location )
@@ -1603,7 +1605,7 @@ function location_called_out_recently( location )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4268
 // Size: 0x55
 function location_add_last_callout_time( location, team )
@@ -1620,7 +1622,7 @@ function location_add_last_callout_time( location, team )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42c5
 // Size: 0x27
 function location_get_last_callout_time( location )
@@ -1634,7 +1636,7 @@ function location_get_last_callout_time( location )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42f5
 // Size: 0x35
 function get_last_callout_time( team )
@@ -1648,7 +1650,7 @@ function get_last_callout_time( team )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4333
 // Size: 0x81
 function cancalloutlocation( location )
@@ -1668,7 +1670,7 @@ function cancalloutlocation( location )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43bd
 // Size: 0x73, Type: bool
 function canconcat( location )
@@ -1687,7 +1689,7 @@ function canconcat( location )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4439
 // Size: 0x9a
 function getcannedresponse( speaker )
@@ -1713,7 +1715,7 @@ function getcannedresponse( speaker )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44dc
 // Size: 0x16
 function iscallouttypereport( alias )
@@ -1722,7 +1724,7 @@ function iscallouttypereport( alias )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x44fb
 // Size: 0x3a, Type: bool
 function iscallouttypeconcat( alias, speaker )
@@ -1738,7 +1740,7 @@ function iscallouttypeconcat( alias, speaker )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x453e
 // Size: 0x50, Type: bool
 function iscallouttypeqa( alias, speaker )
@@ -1759,7 +1761,7 @@ function iscallouttypeqa( alias, speaker )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4597
 // Size: 0x45
 function getloccalloutalias( locationname )
@@ -1769,7 +1771,7 @@ function getloccalloutalias( locationname )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x45e5
 // Size: 0x32
 function getqacalloutalias( basealias, lineindex )
@@ -1780,7 +1782,7 @@ function getqacalloutalias( basealias, lineindex )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4620
 // Size: 0x46, Type: bool
 function battlechatter_canprint()
@@ -1796,7 +1798,7 @@ function battlechatter_canprint()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x466f
 // Size: 0x46, Type: bool
 function battlechatter_canprintdump()
@@ -1814,7 +1816,7 @@ function battlechatter_canprintdump()
 /#
 
     // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x46be
     // Size: 0xb1, Type: dev
     function battlechatter_print( alias, color )
@@ -1848,7 +1850,7 @@ function battlechatter_canprintdump()
     }
 
     // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x4777
     // Size: 0x21e, Type: dev
     function battlechatter_printdump( alias )
@@ -1916,7 +1918,7 @@ function battlechatter_canprintdump()
     }
 
     // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x499d
     // Size: 0x28, Type: dev
     function battlechatter_debugprint( alias, color )
@@ -1926,7 +1928,7 @@ function battlechatter_canprintdump()
     }
 
     // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x49cd
     // Size: 0x49, Type: dev
     function getaliastypefromsoundalias( alias )
@@ -1937,7 +1939,7 @@ function battlechatter_canprintdump()
     }
 
     // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4a1e
     // Size: 0x48, Type: dev
     function battlechatter_printdumpline( file, str, controlflag )
@@ -1955,7 +1957,7 @@ function battlechatter_canprintdump()
 #/
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a6e
 // Size: 0x9f, Type: bool
 function friendly_nearby( max_dist )
@@ -1979,7 +1981,7 @@ function friendly_nearby( max_dist )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b16
 // Size: 0x5d7
 function setupselfvo()
@@ -2056,7 +2058,7 @@ function setupselfvo()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x50f5
 // Size: 0x5c
 function setselfvoinfo( var_83fca5a43f291a90, timeout, priority, chance )
@@ -2067,9 +2069,9 @@ function setselfvoinfo( var_83fca5a43f291a90, timeout, priority, chance )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5159
-// Size: 0x1e3
+// Size: 0x1f3
 function saytoself( player, aliasname, fallbackname, delay )
 {
     if ( true )
@@ -2118,6 +2120,11 @@ function saytoself( player, aliasname, fallbackname, delay )
         player.queuedvo = "none";
     }
     
+    if ( !isdefined( level.selfvomap[ aliasname ] ) )
+    {
+        return;
+    }
+    
     if ( isdefined( player.selfvohistory[ level.selfvomap[ aliasname ] ] ) && player.selfvohistory[ level.selfvomap[ aliasname ] ] > 0 )
     {
         return;
@@ -2137,8 +2144,8 @@ function saytoself( player, aliasname, fallbackname, delay )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5344
+// Params 0
+// Checksum 0x0, Offset: 0x5354
 // Size: 0x7e
 function updateselfvobonuschance()
 {
@@ -2164,8 +2171,8 @@ function updateselfvobonuschance()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x53ca
+// Params 2
+// Checksum 0x0, Offset: 0x53da
 // Size: 0x177
 function trysetqueuedselfvo( aliasname, delay )
 {
@@ -2213,8 +2220,8 @@ function trysetqueuedselfvo( aliasname, delay )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5549
+// Params 1
+// Checksum 0x0, Offset: 0x5559
 // Size: 0x55
 function getprioritywaittime( aliasname )
 {
@@ -2227,8 +2234,8 @@ function getprioritywaittime( aliasname )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x55a7
+// Params 1
+// Checksum 0x0, Offset: 0x55b7
 // Size: 0x30
 function selfvodelay( delay )
 {
@@ -2240,8 +2247,8 @@ function selfvodelay( delay )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x55df
+// Params 1
+// Checksum 0x0, Offset: 0x55ef
 // Size: 0xac
 function playselfvo( aliasname )
 {
@@ -2258,8 +2265,8 @@ function playselfvo( aliasname )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5693
+// Params 1
+// Checksum 0x0, Offset: 0x56a3
 // Size: 0x29
 function playingselfvotracking( duration )
 {
@@ -2270,8 +2277,8 @@ function playingselfvotracking( duration )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x56c4
+// Params 1
+// Checksum 0x0, Offset: 0x56d4
 // Size: 0x60
 function updateselfvohistory( aliasname )
 {
@@ -2282,8 +2289,8 @@ function updateselfvohistory( aliasname )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x572c
+// Params 1
+// Checksum 0x0, Offset: 0x573c
 // Size: 0xa1
 function getintensitysuffix( player )
 {
@@ -2316,8 +2323,8 @@ function getintensitysuffix( player )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x57d5
+// Params 3
+// Checksum 0x0, Offset: 0x57e5
 // Size: 0x94
 function addtointensitybuffer( type, intensity, ignoreaftertime )
 {
@@ -2334,8 +2341,8 @@ function addtointensitybuffer( type, intensity, ignoreaftertime )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5871
+// Params 0
+// Checksum 0x0, Offset: 0x5881
 // Size: 0xbc
 function getbcintensity()
 {
@@ -2363,8 +2370,8 @@ function getbcintensity()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5936
+// Params 2
+// Checksum 0x0, Offset: 0x5946
 // Size: 0x2a6
 function testweaponfiredtolisteners( attacker, objweapon )
 {
@@ -2464,8 +2471,8 @@ function testweaponfiredtolisteners( attacker, objweapon )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5be4
+// Params 3
+// Checksum 0x0, Offset: 0x5bf4
 // Size: 0xc2
 function adddamagetaken( attacker, objweapon, idamage )
 {
@@ -2499,8 +2506,8 @@ function adddamagetaken( attacker, objweapon, idamage )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cae
+// Params 0
+// Checksum 0x0, Offset: 0x5cbe
 // Size: 0x1c4
 function onsixfriendlytracking()
 {
@@ -2570,8 +2577,8 @@ function onsixfriendlytracking()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e7a
+// Params 2
+// Checksum 0x0, Offset: 0x5e8a
 // Size: 0xf5, Type: bool
 function validatelistener( speaker, listener )
 {
@@ -2603,8 +2610,8 @@ function validatelistener( speaker, listener )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f78
+// Params 0
+// Checksum 0x0, Offset: 0x5f88
 // Size: 0xd
 function getlistenerdirection()
 {
@@ -2612,8 +2619,8 @@ function getlistenerdirection()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f8e
+// Params 10
+// Checksum 0x0, Offset: 0x5f9e
 // Size: 0x53
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
 {
@@ -2621,8 +2628,8 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fe9
+// Params 0
+// Checksum 0x0, Offset: 0x5ff9
 // Size: 0xe5
 function checkcasualty()
 {
@@ -2651,8 +2658,8 @@ function checkcasualty()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x60d6
+// Params 0
+// Checksum 0x0, Offset: 0x60e6
 // Size: 0x2
 function getsoundlength()
 {
@@ -2660,9 +2667,9 @@ function getsoundlength()
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x60e0
-// Size: 0x334
+// Params 6
+// Checksum 0x0, Offset: 0x60f0
+// Size: 0x344
 function trysaylocalsound( player, soundtype, targetent, delay, location, triggerent )
 {
     if ( !istrue( level.battlechatterenabled ) )
@@ -2680,7 +2687,7 @@ function trysaylocalsound( player, soundtype, targetent, delay, location, trigge
         return;
     }
     
-    if ( istrue( player.bcdisabled ) && soundtype != "flavor_execution" )
+    if ( istrue( player.bcdisabled ) && !( soundtype == "flavor_execution" || soundtype == #"ping_social_thanks" ) )
     {
         return;
     }
@@ -2808,8 +2815,8 @@ function trysaylocalsound( player, soundtype, targetent, delay, location, trigge
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x641d
+// Params 6
+// Checksum 0x0, Offset: 0x643d
 // Size: 0x298
 function saylocalsound( waittime, soundtype, targetent, delay, location, triggerent )
 {
@@ -2841,7 +2848,8 @@ function saylocalsound( waittime, soundtype, targetent, delay, location, trigger
         
         info = speakerinfo[ "lower" ];
         
-        for (i = 0; i < info.size; i++) {
+        for ( i = 0; i < info.size ; i++ )
+        {
             if ( isdefined( info[ i ][ "player" ] ) )
             {
                 info[ i ][ "player" ] notify( function_f28fd66285fa2c9( info[ i ][ "sound_alias" ] ) + "_interrupt" );
@@ -2902,8 +2910,8 @@ function saylocalsound( waittime, soundtype, targetent, delay, location, trigger
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x66bd
+// Params 1
+// Checksum 0x0, Offset: 0x66dd
 // Size: 0x34
 function function_eaf6dc9588364f83( entid )
 {
@@ -2919,8 +2927,8 @@ function function_eaf6dc9588364f83( entid )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x66f9
+// Params 2
+// Checksum 0x0, Offset: 0x6719
 // Size: 0x381
 function getbcwaittime( soundtype, delay )
 {
@@ -3024,8 +3032,8 @@ function getbcwaittime( soundtype, delay )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a83
+// Params 3
+// Checksum 0x0, Offset: 0x6aa3
 // Size: 0x14c
 function getspeakerinfo( player, priority, range )
 {
@@ -3040,7 +3048,8 @@ function getspeakerinfo( player, priority, range )
     
     if ( isdefined( player ) && isdefined( player.team ) && player.team != "spectator" )
     {
-        for (index = 0; index < level.speakers[ player.team ].size; index++) {
+        for ( index = 0; index < level.speakers[ player.team ].size ; index++ )
+        {
             speakerinfo = level.speakers[ player.team ][ index ];
             teammate = speakerinfo[ "player" ];
             speakerpriority = speakerinfo[ "priority" ];
@@ -3070,8 +3079,8 @@ function getspeakerinfo( player, priority, range )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6bd8
+// Params 2
+// Checksum 0x0, Offset: 0x6bf8
 // Size: 0x76
 function comparesoundpriorities( s1, s2 )
 {
@@ -3093,8 +3102,8 @@ function comparesoundpriorities( s1, s2 )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c57
+// Params 2
+// Checksum 0x0, Offset: 0x6c77
 // Size: 0x6d
 function saidtoorecently( soundtype, delay )
 {
@@ -3119,8 +3128,8 @@ function saidtoorecently( soundtype, delay )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ccc
+// Params 1
+// Checksum 0x0, Offset: 0x6cec
 // Size: 0x36
 function function_336e1f89ae06dfd4( soundtype )
 {
@@ -3128,8 +3137,8 @@ function function_336e1f89ae06dfd4( soundtype )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d0b
+// Params 1
+// Checksum 0x0, Offset: 0x6d2b
 // Size: 0x39
 function function_c02b6ba215c2dca8( soundtype )
 {
@@ -3137,8 +3146,8 @@ function function_c02b6ba215c2dca8( soundtype )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d4d
+// Params 1
+// Checksum 0x0, Offset: 0x6d6d
 // Size: 0x39
 function function_ffd3470f08fcf7a7( soundtype )
 {
@@ -3146,8 +3155,8 @@ function function_ffd3470f08fcf7a7( soundtype )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d8f
+// Params 1
+// Checksum 0x0, Offset: 0x6daf
 // Size: 0x39
 function function_a71193e9db14c926( soundtype )
 {
@@ -3155,8 +3164,8 @@ function function_a71193e9db14c926( soundtype )
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6dd1
+// Params 1
+// Checksum 0x0, Offset: 0x6df1
 // Size: 0x35
 function function_b96f48dbdcd7110( soundtype )
 {

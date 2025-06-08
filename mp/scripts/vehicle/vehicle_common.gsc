@@ -5,7 +5,7 @@
 #namespace vehicle_common;
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf6
 // Size: 0x226
 function requestentervehicle( vehicle, spawninvehicle, chosenvehicleposition, chosenvehicleanimpos )
@@ -38,7 +38,7 @@ function requestentervehicle( vehicle, spawninvehicle, chosenvehicleposition, ch
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x324
 // Size: 0x5e, Type: bool
 function waitforentervehicle()
@@ -61,7 +61,7 @@ function waitforentervehicle()
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38b
 // Size: 0x8a
 function waitforarrivedatvehicle()
@@ -76,7 +76,7 @@ function waitforarrivedatvehicle()
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x41d
 // Size: 0x34, Type: bool
 function entervehicle( vehicle, spawninvehicle, chosenvehicleposition, chosenvehicleanimpos )
@@ -86,7 +86,7 @@ function entervehicle( vehicle, spawninvehicle, chosenvehicleposition, chosenveh
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45a
 // Size: 0x2d
 function requestexitvehicle()
@@ -96,7 +96,7 @@ function requestexitvehicle()
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48f
 // Size: 0x49
 function waitforexitvehicle()
@@ -114,7 +114,7 @@ function waitforexitvehicle()
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e0
 // Size: 0x10
 function exitvehicle()
@@ -124,7 +124,7 @@ function exitvehicle()
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f8
 // Size: 0x3c, Type: bool
 function hasvehicle()
@@ -133,7 +133,7 @@ function hasvehicle()
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53d
 // Size: 0x18
 function setuprope()
@@ -142,7 +142,7 @@ function setuprope()
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55d
 // Size: 0x7f, Type: bool
 function function_b795d4c865a7bc7e()
@@ -168,7 +168,7 @@ function function_b795d4c865a7bc7e()
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e5
 // Size: 0x1f
 function cancelentervehicle()
@@ -178,7 +178,7 @@ function cancelentervehicle()
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60c
 // Size: 0xa9, Type: bool
 function function_ffd4bd7b834e69eb( var_1f37a785bba731e3 )
@@ -212,7 +212,7 @@ function function_ffd4bd7b834e69eb( var_1f37a785bba731e3 )
 }
 
 // Namespace vehicle_common / scripts\vehicle\vehicle_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6be
 // Size: 0x1eb
 function function_b2841b0708f2b5d4()
@@ -252,7 +252,7 @@ function function_b2841b0708f2b5d4()
 /#
 
     // Namespace vehicle_common / scripts\vehicle\vehicle_common
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x8b1
     // Size: 0x54, Type: dev
     function function_745ac044fcee731b( value )
@@ -269,7 +269,7 @@ function function_b2841b0708f2b5d4()
     }
 
     // Namespace vehicle_common / scripts\vehicle\vehicle_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x90d
     // Size: 0x5f6, Type: dev
     function function_9ec907df2fa3ceb7()

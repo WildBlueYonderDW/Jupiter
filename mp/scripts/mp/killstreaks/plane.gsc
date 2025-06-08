@@ -10,7 +10,7 @@
 #namespace plane;
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24e
 // Size: 0x8f
 function init()
@@ -33,7 +33,7 @@ function init()
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x2e5
 // Size: 0x11d
 function getflightpath( coord, directionvector, planehalfdistance, absoluteheight, planeflyheight, planeflyspeed, attackdistance, streakname )
@@ -62,7 +62,7 @@ function getflightpath( coord, directionvector, planehalfdistance, absoluteheigh
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x40b
 // Size: 0xb4
 function doflyby( lifeid, owner, requireddeathcount, startpoint, endpoint, attacktime, flytime, directionvector, streakname )
@@ -76,7 +76,7 @@ function doflyby( lifeid, owner, requireddeathcount, startpoint, endpoint, attac
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4c7
 // Size: 0x18c
 function planespawn( lifeid, owner, startpoint, directionvector, streakname )
@@ -119,7 +119,7 @@ function planespawn( lifeid, owner, startpoint, directionvector, streakname )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x65c
 // Size: 0xf3
 function planemove( destination, flytime, attacktime, streakname )
@@ -154,7 +154,7 @@ function planemove( destination, flytime, attacktime, streakname )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x757
 // Size: 0xb2
 function planecleanup()
@@ -183,7 +183,7 @@ function planecleanup()
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x811
 // Size: 0x56
 function handledeath()
@@ -197,7 +197,7 @@ function handledeath()
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x86f
 // Size: 0x24
 function handledamage()
@@ -207,7 +207,7 @@ function handledamage()
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x89b
 // Size: 0x99
 function modifydamage( data )
@@ -224,7 +224,7 @@ function modifydamage( data )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x93d
 // Size: 0xb3
 function handledeathdamage( data )
@@ -238,7 +238,7 @@ function handledeathdamage( data )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9f8
 // Size: 0xab
 function playplanefx()
@@ -259,7 +259,7 @@ function playplanefx()
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaab
 // Size: 0x48
 function getplaneflyheight()
@@ -277,7 +277,7 @@ function getplaneflyheight()
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xafb
 // Size: 0x11e
 function getplaneflightplan( distfromplayer )
@@ -308,7 +308,7 @@ function getplaneflightplan( distfromplayer )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc22
 // Size: 0x42
 function getexplodedistance( height )
@@ -321,7 +321,7 @@ function getexplodedistance( height )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6d
 // Size: 0x2a
 function starttrackingplane( obj )
@@ -331,7 +331,7 @@ function starttrackingplane( obj )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc9f
 // Size: 0x28
 function stoptrackingplane( obj )
@@ -341,7 +341,7 @@ function stoptrackingplane( obj )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xccf
 // Size: 0x134, Type: bool
 function selectairstrikelocation( lifeid, streakname, var_9dd357e6fee9854e )
@@ -381,7 +381,7 @@ function selectairstrikelocation( lifeid, streakname, var_9dd357e6fee9854e )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe0c
 // Size: 0x11a
 function setobjectiveicons( friendlyicon, enemyicon )
@@ -432,7 +432,7 @@ function setobjectiveicons( friendlyicon, enemyicon )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf2e
 // Size: 0x24
 function playsonicboom( soundname, delay )
@@ -443,7 +443,7 @@ function playsonicboom( soundname, delay )
 }
 
 // Namespace plane / scripts\mp\killstreaks\plane
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5a
 // Size: 0xc5
 function createkillcam( streakname )

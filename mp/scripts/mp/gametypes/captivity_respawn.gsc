@@ -1,5 +1,4 @@
 #using script_1fefb5a9d58fa8bf;
-#using script_22f1701e151b9d12;
 #using script_2d9d24f7c63ac143;
 #using script_4948cdf739393d2d;
 #using script_5bab271917698dc4;
@@ -8,6 +7,7 @@
 #using scripts\common\utility;
 #using scripts\common\values;
 #using scripts\cp_mp\agents\agent_utils;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\armor;
 #using scripts\cp_mp\weapon;
 #using scripts\engine\utility;
@@ -31,7 +31,7 @@
 #namespace captivity_respawn;
 
 // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45b
 // Size: 0x1a7
 function init()
@@ -68,7 +68,7 @@ function init()
 }
 
 // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x60a
 // Size: 0x7b
 function function_e12707853f4ca495( player, var_8bba771671148fba )
@@ -92,7 +92,7 @@ function function_e12707853f4ca495( player, var_8bba771671148fba )
 }
 
 // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68e
 // Size: 0xc1
 function function_6eeab801e8f8e95c()
@@ -121,16 +121,16 @@ function function_6eeab801e8f8e95c()
 }
 
 // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x757
-// Size: 0x59, Type: bool
+// Size: 0x59
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
 {
     return function_17ae29247a2113e6();
 }
 
 // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b9
 // Size: 0x32, Type: bool
 function function_b2a048361558cf43()
@@ -149,7 +149,7 @@ function function_b2a048361558cf43()
 }
 
 // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f4
 // Size: 0x8a, Type: bool
 function function_76336c4da8742d6c()
@@ -170,7 +170,7 @@ function function_76336c4da8742d6c()
 }
 
 // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x887
 // Size: 0x7b, Type: bool
 function function_17ae29247a2113e6()
@@ -545,7 +545,7 @@ function private function_e32dc34d871dad4e()
     if ( isdefined( self.var_f9e06ac9a9bfd0b2 ) )
     {
         function_a5daea6f3eb5d2a3( self.var_f9e06ac9a9bfd0b2 );
-        var_44fa68b2f93418ac = namespace_614554f86e52695c::function_1ceed24d075a0981( self.var_f9e06ac9a9bfd0b2.target );
+        var_44fa68b2f93418ac = scripts\cp_mp\agents\ai_spawn_director::function_1ceed24d075a0981( self.var_f9e06ac9a9bfd0b2.target );
         
         if ( var_44fa68b2f93418ac.size > 0 )
         {
@@ -553,7 +553,7 @@ function private function_e32dc34d871dad4e()
             
             if ( isdefined( var_ad46aadd4e3290d7 ) )
             {
-                namespace_614554f86e52695c::function_e4a67fe4ddca7ed5( var_ad46aadd4e3290d7, &function_48e29eadb9a298b2, self.var_f9e06ac9a9bfd0b2 );
+                scripts\cp_mp\agents\ai_spawn_director::function_e4a67fe4ddca7ed5( var_ad46aadd4e3290d7, &function_48e29eadb9a298b2, self.var_f9e06ac9a9bfd0b2 );
                 function_fc38783a3da0bc71( var_ad46aadd4e3290d7, 1 );
             }
         }
@@ -634,7 +634,7 @@ function private disableenemy( fortress, agent )
 }
 
 // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x15a6
 // Size: 0x43
 function function_48e29eadb9a298b2( requestid, fortress, agent, data )
@@ -707,7 +707,8 @@ function private function_dd26d64a365cebbd()
             level.captivity_respawn.var_c925bd5d834fc707 = self.origin;
         #/
         
-        for (i = 0; i < level.captivity_respawn.respawnnodes.size; i++) {
+        for ( i = 0; i < level.captivity_respawn.respawnnodes.size ; i++ )
+        {
             respawnnode = level.captivity_respawn.respawnnodes[ i ];
             
             if ( isdefined( respawnnode.var_5aa671823fa14c8 ) )
@@ -932,7 +933,7 @@ function private setuparena( arena )
 /#
 
     // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1f93
     // Size: 0x26f, Type: dev
     function function_74c192ce0ba9dbff()
@@ -981,7 +982,7 @@ function private setuparena( arena )
     }
 
     // Namespace captivity_respawn / scripts\mp\gametypes\captivity_respawn
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x220a
     // Size: 0x33, Type: dev
     function drawpoint( pos, size, drawduration, color )

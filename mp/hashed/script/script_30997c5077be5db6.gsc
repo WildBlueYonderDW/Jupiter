@@ -64,7 +64,7 @@ function private function_6078f3e8c682a36( params )
 }
 
 // Namespace br_damage / namespace_68973652cca2f4b4
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x698
 function function_d88acf085f34a24f( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -247,7 +247,7 @@ function private on_zombie_ai_damaged( dmg_struct )
 }
 
 // Namespace br_damage / namespace_68973652cca2f4b4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd0a
 // Size: 0xa3
 function function_743e37eebd6ba8e2( n_damage )
@@ -286,7 +286,7 @@ function private function_3c80d46239ce0a0e( dmg_struct, shitloc, var_29a8ba8c9dd
 }
 
 // Namespace br_damage / namespace_68973652cca2f4b4
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0xe07
 // Size: 0x42f
 function soldier_damage( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -442,7 +442,7 @@ function private function_e5ea18b76842725f( params )
 }
 
 // Namespace br_damage / namespace_68973652cca2f4b4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1420
 // Size: 0xef
 function function_67bb3f6dfc69c5f8( dmg_struct )

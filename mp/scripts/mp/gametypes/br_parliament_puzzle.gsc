@@ -16,7 +16,7 @@
 #namespace br_parliament_puzzle;
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x758
 // Size: 0x93
 function init()
@@ -36,7 +36,7 @@ function init()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f3
 // Size: 0x46
 function initpostmain()
@@ -61,7 +61,7 @@ function initpostmain()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x841
 // Size: 0x61
 function codecomputerscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -77,7 +77,7 @@ function codecomputerscriptableused( instance, part, state, player, var_a5b2c541
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x8aa
 // Size: 0x22d
 function _codecomputerscriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -126,7 +126,7 @@ function _codecomputerscriptableused( instance, part, state, player, var_a5b2c54
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xadf
 // Size: 0x37
 function function_9fdadb62b1bdf018( instance )
@@ -137,7 +137,7 @@ function function_9fdadb62b1bdf018( instance )
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb1e
 // Size: 0x197
 function function_7a416269c3c3336()
@@ -162,7 +162,7 @@ function function_7a416269c3c3336()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcbd
 // Size: 0x9b
 function function_62d0219553b4dec()
@@ -176,7 +176,7 @@ function function_62d0219553b4dec()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd60
 // Size: 0x3dd
 function function_1f4fe3d56a5be372()
@@ -221,7 +221,7 @@ function function_1f4fe3d56a5be372()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1145
 // Size: 0x100
 function function_a7da6dae9b8ca5ea( instance )
@@ -245,7 +245,7 @@ function function_a7da6dae9b8ca5ea( instance )
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124d
 // Size: 0xf7
 function function_fba005deace9b861()
@@ -272,7 +272,7 @@ function function_fba005deace9b861()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x134c
 // Size: 0xe2
 function function_7df49f51f4834135( instance )
@@ -292,7 +292,7 @@ function function_7df49f51f4834135( instance )
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1436
 // Size: 0x2a7
 function function_eed67c3b87d257f1()
@@ -353,7 +353,7 @@ function function_eed67c3b87d257f1()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e5
 // Size: 0xb5
 function function_a2afc477c3ec9c61()
@@ -368,7 +368,7 @@ function function_a2afc477c3ec9c61()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17a2
 // Size: 0x270
 function generatecode()
@@ -381,7 +381,8 @@ function generatecode()
     var_48cdf3767789993 = array_randomize( var_48cdf3767789993 );
     var_eb002df09b83b915 = [];
     
-    for (i = 0; i < 4; i++) {
+    for ( i = 0; i < 4 ; i++ )
+    {
         var_eb002df09b83b915[ i ] = var_48cdf3767789993[ i ];
     }
     
@@ -409,7 +410,7 @@ function generatecode()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a1a
 // Size: 0x1a7
 function function_2350e7d1796e79c8( var_eb002df09b83b915 )
@@ -436,7 +437,7 @@ function function_2350e7d1796e79c8( var_eb002df09b83b915 )
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bca
 // Size: 0x231
 function function_9fdce6fd13b04c1c()
@@ -470,7 +471,7 @@ function function_9fdce6fd13b04c1c()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e03
 // Size: 0x150
 function gasdamagetick()
@@ -517,7 +518,7 @@ function gasdamagetick()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f5b
 // Size: 0x4b
 function showdebugresult( resulttext )
@@ -536,7 +537,7 @@ function showdebugresult( resulttext )
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fae
 // Size: 0xfa
 function debug_printcode( codestruct )
@@ -572,7 +573,7 @@ function debug_printcode( codestruct )
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20b0
 // Size: 0x184
 function debug_spawnrewardstest()
@@ -605,7 +606,7 @@ function debug_spawnrewardstest()
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x223c
 // Size: 0x17b
 function computer_debugtestloop( scriptable )
@@ -652,7 +653,7 @@ function computer_debugtestloop( scriptable )
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23bf
 // Size: 0x60
 function debug_show2dvotext( text, time )
@@ -676,7 +677,7 @@ function debug_show2dvotext( text, time )
 }
 
 // Namespace br_parliament_puzzle / scripts\mp\gametypes\br_parliament_puzzle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2427
 // Size: 0x57a
 function function_ecf6f13ab4edf73e()

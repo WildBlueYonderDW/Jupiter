@@ -8,7 +8,7 @@
 #namespace heavyarmor;
 
 // Namespace heavyarmor / scripts\mp\heavyarmor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e
 // Size: 0x9e
 function addheavyarmor( value )
@@ -30,7 +30,7 @@ function addheavyarmor( value )
 }
 
 // Namespace heavyarmor / scripts\mp\heavyarmor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e4
 // Size: 0xa3
 function subtractheavyarmor( value )
@@ -55,7 +55,7 @@ function subtractheavyarmor( value )
 }
 
 // Namespace heavyarmor / scripts\mp\heavyarmor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28f
 // Size: 0x27
 function removeheavyarmor()
@@ -66,7 +66,7 @@ function removeheavyarmor()
 }
 
 // Namespace heavyarmor / scripts\mp\heavyarmor
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x2be
 // Size: 0x1da
 function heavyarmormodifydamage( victim, attacker, damage, damageadd, smeansofdeath, sweapon, impactpoint, impactdir, shitloc, inflictor, query )
@@ -121,7 +121,7 @@ function heavyarmormodifydamage( victim, attacker, damage, damageadd, smeansofde
 }
 
 // Namespace heavyarmor / scripts\mp\heavyarmor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a1
 // Size: 0x20
 function getheavyarmor()
@@ -135,7 +135,7 @@ function getheavyarmor()
 }
 
 // Namespace heavyarmor / scripts\mp\heavyarmor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ca
 // Size: 0x3d, Type: bool
 function hasheavyarmor()
@@ -144,7 +144,7 @@ function hasheavyarmor()
 }
 
 // Namespace heavyarmor / scripts\mp\heavyarmor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x510
 // Size: 0x24, Type: bool
 function hasheavyarmorinvulnerability()
@@ -153,7 +153,7 @@ function hasheavyarmorinvulnerability()
 }
 
 // Namespace heavyarmor / scripts\mp\heavyarmor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53d
 // Size: 0x40
 function heavyarmor_break()
@@ -172,7 +172,7 @@ function heavyarmor_break()
 }
 
 // Namespace heavyarmor / scripts\mp\heavyarmor
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x585
 // Size: 0x117
 function heavyarmor_getdamagemodifier( victim, attacker, damage, damageadd, smeansofdeath, sweapon, impactpoint, impactdir, shitloc, inflictor, query )

@@ -17,7 +17,7 @@
 #namespace mp_jup_vertigo;
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x441
 // Size: 0x12c
 function main()
@@ -48,7 +48,7 @@ function main()
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x575
 // Size: 0x37
 function function_97dbc0b59e3475d8()
@@ -60,7 +60,7 @@ function function_97dbc0b59e3475d8()
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b4
 // Size: 0x108
 function function_af9f5c06ea4d025c()
@@ -87,7 +87,7 @@ function function_af9f5c06ea4d025c()
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c4
 // Size: 0xc6
 function function_4be96fc89da3f107( move_array )
@@ -118,7 +118,7 @@ function function_4be96fc89da3f107( move_array )
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x792
 // Size: 0x558
 function function_1868486da804412a()
@@ -301,7 +301,7 @@ function function_1868486da804412a()
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf2
 // Size: 0x1eb
 function function_f168411d377134aa()
@@ -350,7 +350,7 @@ function function_f168411d377134aa()
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee5
 // Size: 0x162
 function function_a37ae4abb422bf4d()
@@ -393,7 +393,7 @@ function function_a37ae4abb422bf4d()
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x104f
 // Size: 0xe2
 function function_c1f6534555f55055()
@@ -424,7 +424,7 @@ function function_c1f6534555f55055()
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1139
 // Size: 0xe1
 function function_cdd7875c95ceb0ae()
@@ -455,7 +455,7 @@ function function_cdd7875c95ceb0ae()
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1222
 // Size: 0xb7
 function function_2c41c836fcf01d41( rotate_array )
@@ -483,7 +483,7 @@ function function_2c41c836fcf01d41( rotate_array )
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e1
 // Size: 0x707
 function function_b6f9bd6e24bcad6b()
@@ -705,7 +705,7 @@ function function_b6f9bd6e24bcad6b()
 }
 
 // Namespace mp_jup_vertigo / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19f0
 // Size: 0x2bc
 function function_fd04ecf8dfb4ffb2()

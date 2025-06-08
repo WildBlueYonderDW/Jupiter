@@ -13,7 +13,7 @@
 #namespace jup_spawner_zombie_mimic_s3_rr;
 
 // Namespace jup_spawner_zombie_mimic_s3_rr / namespace_99fafac53eca675d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x245
 // Size: 0x1e8
 function main()
@@ -51,7 +51,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_mimic_s3_rr / namespace_99fafac53eca675d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x435
 // Size: 0x57
 function setup_model()
@@ -68,7 +68,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_mimic_s3_rr / namespace_99fafac53eca675d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x494
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -77,7 +77,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_mimic_s3_rr / namespace_99fafac53eca675d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a5
 // Size: 0x10f
 function precache()
@@ -111,7 +111,7 @@ function precache()
 }
 
 // Namespace jup_spawner_zombie_mimic_s3_rr / namespace_99fafac53eca675d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bc
 // Size: 0xd6
 function setup_weapons()

@@ -50,8 +50,8 @@
 #namespace zombie_challenges;
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5926
+// Params 0
+// Checksum 0x0, Offset: 0x5924
 // Size: 0x9a4
 function function_ea5d8dfcc9a28411()
 {
@@ -205,8 +205,8 @@ function function_ea5d8dfcc9a28411()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x62d2
+// Params 0
+// Checksum 0x0, Offset: 0x62d0
 // Size: 0x3a
 function function_340f1f6cb09800d6()
 {
@@ -221,8 +221,8 @@ function function_340f1f6cb09800d6()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6314
+// Params 1
+// Checksum 0x0, Offset: 0x6312
 // Size: 0x5c
 function function_af4c6a6a1f2e94f7( params )
 {
@@ -236,8 +236,8 @@ function function_af4c6a6a1f2e94f7( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x6378
+// Params 5
+// Checksum 0x0, Offset: 0x6376
 // Size: 0x8e5
 function function_be1f0a84acb0ed97( victimstruct, sparams, var_d4a58a5ad5a66ed, var_494c20dbf01ad08c, var_a0aa10131c98134a )
 {
@@ -480,8 +480,8 @@ function function_be1f0a84acb0ed97( victimstruct, sparams, var_d4a58a5ad5a66ed, 
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c66
+// Params 1
+// Checksum 0x0, Offset: 0x6c64
 // Size: 0x50e
 function function_e5ea18b76842725f( sparams )
 {
@@ -608,8 +608,8 @@ function function_e5ea18b76842725f( sparams )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x717c
+// Params 4
+// Checksum 0x0, Offset: 0x717a
 // Size: 0x3fa
 function function_9de7a3128f548745( var_d4a58a5ad5a66ed, var_494c20dbf01ad08c, var_a0aa10131c98134a, sparams )
 {
@@ -717,8 +717,8 @@ function function_9de7a3128f548745( var_d4a58a5ad5a66ed, var_494c20dbf01ad08c, v
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x757f
+// Params 3
+// Checksum 0x0, Offset: 0x757d
 // Size: 0xaca
 function function_61dbb8ade69346c1( var_d4a58a5ad5a66ed, var_494c20dbf01ad08c, sparams )
 {
@@ -972,8 +972,8 @@ function function_61dbb8ade69346c1( var_d4a58a5ad5a66ed, var_494c20dbf01ad08c, s
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x8052
+// Params 5
+// Checksum 0x0, Offset: 0x8050
 // Size: 0x2b3
 function function_9966e6739036c441( var_398aced5a2239dca, sparams, enemytype, subclass, var_53525e5d094a332b )
 {
@@ -1057,8 +1057,8 @@ function function_9966e6739036c441( var_398aced5a2239dca, sparams, enemytype, su
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x830e
+// Params 5
+// Checksum 0x0, Offset: 0x830c
 // Size: 0x1d7
 function function_128985eaf12e0ed8( var_22958a4f33c2a347, sparams, enemytype, subclass, var_53525e5d094a332b )
 {
@@ -1116,8 +1116,8 @@ function function_128985eaf12e0ed8( var_22958a4f33c2a347, sparams, enemytype, su
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x84ee
+// Params 2
+// Checksum 0x0, Offset: 0x84ec
 // Size: 0x48, Type: bool
 function function_18a53d77df35c4c9( player, missionid )
 {
@@ -1130,8 +1130,8 @@ function function_18a53d77df35c4c9( player, missionid )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x853f
+// Params 1
+// Checksum 0x0, Offset: 0x853d
 // Size: 0x21e
 function function_7e993967c3cfc6c9( params )
 {
@@ -1206,8 +1206,8 @@ function function_7e993967c3cfc6c9( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8765
+// Params 1
+// Checksum 0x0, Offset: 0x8763
 // Size: 0x66
 function on_tesla_storm_stunned( params )
 {
@@ -1219,8 +1219,8 @@ function on_tesla_storm_stunned( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x87d3
+// Params 1
+// Checksum 0x0, Offset: 0x87d1
 // Size: 0x17b
 function function_de9f828fd5fb2dc3( sparams )
 {
@@ -1252,8 +1252,8 @@ function function_de9f828fd5fb2dc3( sparams )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8956
+// Params 1
+// Checksum 0x0, Offset: 0x8954
 // Size: 0x417
 function on_item_pickup( sparams )
 {
@@ -1364,8 +1364,8 @@ function on_item_pickup( sparams )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d75
+// Params 1
+// Checksum 0x0, Offset: 0x8d73
 // Size: 0xa7
 function function_56e47c52dfb878e1( raritydef )
 {
@@ -1395,8 +1395,8 @@ function function_56e47c52dfb878e1( raritydef )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e24
+// Params 1
+// Checksum 0x0, Offset: 0x8e22
 // Size: 0x182
 function function_94545a9bb0878e0e( params )
 {
@@ -1443,7 +1443,7 @@ function function_94545a9bb0878e0e( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x8fae
+// Checksum 0x0, Offset: 0x8fac
 // Size: 0x14d
 function private function_c9293fc51ab4bfeb( params )
 {
@@ -1478,8 +1478,8 @@ function private function_c9293fc51ab4bfeb( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9103
+// Params 2
+// Checksum 0x0, Offset: 0x9101
 // Size: 0x146
 function function_8f4f9e5b10af310d( var_aaff38ee691a18b0, var_88a8f75abf8b400f )
 {
@@ -1512,8 +1512,8 @@ function function_8f4f9e5b10af310d( var_aaff38ee691a18b0, var_88a8f75abf8b400f )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9251
+// Params 0
+// Checksum 0x0, Offset: 0x924f
 // Size: 0x104
 function function_d000329f6edb1510()
 {
@@ -1536,8 +1536,8 @@ function function_d000329f6edb1510()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x935d
+// Params 1
+// Checksum 0x0, Offset: 0x935b
 // Size: 0x67
 function on_player_spawned( params )
 {
@@ -1557,8 +1557,8 @@ function on_player_spawned( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x93cc
+// Params 1
+// Checksum 0x0, Offset: 0x93ca
 // Size: 0x11d
 function function_cadbe7496c7c80ee( objweapon )
 {
@@ -1582,8 +1582,8 @@ function function_cadbe7496c7c80ee( objweapon )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x94f1
+// Params 1
+// Checksum 0x0, Offset: 0x94ef
 // Size: 0x1bb
 function function_6a7cf6856f3e681( sparams )
 {
@@ -1623,8 +1623,8 @@ function function_6a7cf6856f3e681( sparams )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x96b4
+// Params 1
+// Checksum 0x0, Offset: 0x96b2
 // Size: 0x127
 function function_68052c69f0f90df8( objweapon )
 {
@@ -1653,8 +1653,8 @@ function function_68052c69f0f90df8( objweapon )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x97e3
+// Params 1
+// Checksum 0x0, Offset: 0x97e1
 // Size: 0xd0
 function on_pap_machine_purchase( params )
 {
@@ -1682,8 +1682,8 @@ function on_pap_machine_purchase( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98bb
+// Params 0
+// Checksum 0x0, Offset: 0x98b9
 // Size: 0x11e
 function function_f243f33d3935b4f8()
 {
@@ -1712,8 +1712,8 @@ function function_f243f33d3935b4f8()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x99e1
+// Params 1
+// Checksum 0x0, Offset: 0x99df
 // Size: 0x1e
 function loot_crystal_destroyed( sparams )
 {
@@ -1723,8 +1723,8 @@ function loot_crystal_destroyed( sparams )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a07
+// Params 0
+// Checksum 0x0, Offset: 0x9a05
 // Size: 0x59
 function function_9ef71ee9309e7fcb()
 {
@@ -1736,8 +1736,8 @@ function function_9ef71ee9309e7fcb()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a68
+// Params 1
+// Checksum 0x0, Offset: 0x9a66
 // Size: 0xdd
 function aether_extractor_disabled( sparams )
 {
@@ -1765,8 +1765,8 @@ function aether_extractor_disabled( sparams )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b4d
+// Params 0
+// Checksum 0x0, Offset: 0x9b4b
 // Size: 0x885
 function function_6c8b18941d0a604d()
 {
@@ -1847,8 +1847,8 @@ function function_6c8b18941d0a604d()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3db
+// Params 0
+// Checksum 0x0, Offset: 0xa3d9
 // Size: 0x265
 function function_adb26e28d3408dac()
 {
@@ -1880,8 +1880,8 @@ function function_adb26e28d3408dac()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa649
+// Params 0
+// Checksum 0x0, Offset: 0xa647
 // Size: 0x345
 function function_63663f994d4e7634()
 {
@@ -1920,8 +1920,8 @@ function function_63663f994d4e7634()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa997
+// Params 4
+// Checksum 0x0, Offset: 0xa995
 // Size: 0x32f
 function function_32126a54e0e1055c( var_398aced5a2239dca, subclass, var_53525e5d094a332b, var_aaf0465944b061ed )
 {
@@ -2008,8 +2008,8 @@ function function_32126a54e0e1055c( var_398aced5a2239dca, subclass, var_53525e5d
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaccf
+// Params 1
+// Checksum 0x0, Offset: 0xaccd
 // Size: 0x259
 function function_4030ef122da1cf5c( var_398aced5a2239dca )
 {
@@ -2081,8 +2081,8 @@ function function_4030ef122da1cf5c( var_398aced5a2239dca )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf31
+// Params 4
+// Checksum 0x0, Offset: 0xaf2f
 // Size: 0x2c1
 function function_484194ec6ace15bb( var_d29889468d853030, var_f2b106a03cdbf1, var_5670f984dc9565b5, var_828f250005b03c8e )
 {
@@ -2162,8 +2162,8 @@ function function_484194ec6ace15bb( var_d29889468d853030, var_f2b106a03cdbf1, va
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1fa
+// Params 0
+// Checksum 0x0, Offset: 0xb1f8
 // Size: 0x645
 function function_d89978ce1f60dfc()
 {
@@ -2226,8 +2226,8 @@ function function_d89978ce1f60dfc()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb848
+// Params 0
+// Checksum 0x0, Offset: 0xb846
 // Size: 0x665
 function function_cde7564c165a0bf1()
 {
@@ -2291,8 +2291,8 @@ function function_cde7564c165a0bf1()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbeb6
+// Params 0
+// Checksum 0x0, Offset: 0xbeb4
 // Size: 0x3c5
 function function_cde7554c165a09be()
 {
@@ -2335,8 +2335,8 @@ function function_cde7554c165a09be()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc284
+// Params 3
+// Checksum 0x0, Offset: 0xc282
 // Size: 0x25c
 function function_f10f600ac4ee4c09( var_e8046e3623e8effe, var_f2b106a03cdbf1, var_5670f984dc9565b5 )
 {
@@ -2405,8 +2405,8 @@ function function_f10f600ac4ee4c09( var_e8046e3623e8effe, var_f2b106a03cdbf1, va
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4e8
+// Params 0
+// Checksum 0x0, Offset: 0xc4e6
 // Size: 0x525
 function function_2647e6d2c835793e()
 {
@@ -2460,8 +2460,8 @@ function function_2647e6d2c835793e()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xca16
+// Params 0
+// Checksum 0x0, Offset: 0xca14
 // Size: 0x24
 function function_4f87d9f22ebe1197()
 {
@@ -2473,7 +2473,7 @@ function function_4f87d9f22ebe1197()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xca43
+// Checksum 0x0, Offset: 0xca41
 // Size: 0x27
 function private function_7c8dbb063c0e860c( params )
 {
@@ -2486,7 +2486,7 @@ function private function_7c8dbb063c0e860c( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xca72
+// Checksum 0x0, Offset: 0xca70
 // Size: 0x1ac
 function private function_70fef3c29291be77( params )
 {
@@ -2553,8 +2553,8 @@ function private function_70fef3c29291be77( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc26
+// Params 1
+// Checksum 0x0, Offset: 0xcc24
 // Size: 0x133
 function function_d1142b1749e61e85( var_c2004d6a416c93b9 )
 {
@@ -2588,8 +2588,8 @@ function function_d1142b1749e61e85( var_c2004d6a416c93b9 )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd61
+// Params 1
+// Checksum 0x0, Offset: 0xcd5f
 // Size: 0x236
 function function_3053004c06f9c2ed( param )
 {
@@ -2656,7 +2656,7 @@ function function_3053004c06f9c2ed( param )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xcf9f
+// Checksum 0x0, Offset: 0xcf9d
 // Size: 0x13f
 function private function_93a828d2f14b2a77( params )
 {
@@ -2708,7 +2708,7 @@ function private function_93a828d2f14b2a77( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xd0e6
+// Checksum 0x0, Offset: 0xd0e4
 // Size: 0x196
 function private function_1a63a8486a277ac8( params )
 {
@@ -2769,8 +2769,8 @@ function private function_1a63a8486a277ac8( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd284
+// Params 0
+// Checksum 0x0, Offset: 0xd282
 // Size: 0x185
 function function_569430d5aed94ffd()
 {
@@ -2795,8 +2795,8 @@ function function_569430d5aed94ffd()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd412
+// Params 1
+// Checksum 0x0, Offset: 0xd410
 // Size: 0x12b
 function function_78816b77271b0f4e( var_41acd4d450f972a5 )
 {
@@ -2825,8 +2825,8 @@ function function_78816b77271b0f4e( var_41acd4d450f972a5 )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd545
+// Params 0
+// Checksum 0x0, Offset: 0xd543
 // Size: 0x265
 function function_82d4524b2566958a()
 {
@@ -2858,8 +2858,8 @@ function function_82d4524b2566958a()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7b3
+// Params 2
+// Checksum 0x0, Offset: 0xd7b1
 // Size: 0x13a
 function function_9db4c37d4f1415f( var_5b84ea62d085c322, season )
 {
@@ -2890,7 +2890,7 @@ function function_9db4c37d4f1415f( var_5b84ea62d085c322, season )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xd8f5
+// Checksum 0x0, Offset: 0xd8f3
 // Size: 0x37
 function private function_53f4bb14857d9b44( str_id, func )
 {
@@ -2904,7 +2904,7 @@ function private function_53f4bb14857d9b44( str_id, func )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xd934
+// Checksum 0x0, Offset: 0xd932
 // Size: 0xc3
 function private on_zombie_ai_spawned( sparams )
 {
@@ -2921,7 +2921,7 @@ function private on_zombie_ai_spawned( sparams )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xd9ff
+// Checksum 0x0, Offset: 0xd9fd
 // Size: 0x3a
 function private function_147cc8860b90f396()
 {
@@ -2942,7 +2942,7 @@ function private function_147cc8860b90f396()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xda41
+// Checksum 0x0, Offset: 0xda3f
 // Size: 0x6c
 function private function_73246c2cbf5948fb( params )
 {
@@ -2962,7 +2962,7 @@ function private function_73246c2cbf5948fb( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xdab5
+// Checksum 0x0, Offset: 0xdab3
 // Size: 0x63
 function private function_648b4b8e2ec610d8()
 {
@@ -2982,7 +2982,7 @@ function private function_648b4b8e2ec610d8()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xdb20
+// Checksum 0x0, Offset: 0xdb1e
 // Size: 0x176
 function private function_5fa99f9f82669144( sparams )
 {
@@ -3021,8 +3021,8 @@ function private function_5fa99f9f82669144( sparams )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdc9e
+// Params 2
+// Checksum 0x0, Offset: 0xdc9c
 // Size: 0xb0
 function function_c537a191b851482f( item, str_item )
 {
@@ -3038,7 +3038,7 @@ function function_c537a191b851482f( item, str_item )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xdd56
+// Checksum 0x0, Offset: 0xdd54
 // Size: 0xe
 function private function_cf64989979528904()
 {
@@ -3047,7 +3047,7 @@ function private function_cf64989979528904()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xdd6c
+// Checksum 0x0, Offset: 0xdd6a
 // Size: 0xb3
 function private on_vehicle_spawned( sparams )
 {
@@ -3079,7 +3079,7 @@ function private on_vehicle_spawned( sparams )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xde27
+// Checksum 0x0, Offset: 0xde25
 // Size: 0x326
 function private function_eef88565476a2f1a( data )
 {
@@ -3143,7 +3143,7 @@ function private function_eef88565476a2f1a( data )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xe155
+// Checksum 0x0, Offset: 0xe153
 // Size: 0xc8
 function private function_c2fa6446b3ec956f( params )
 {
@@ -3167,7 +3167,7 @@ function private function_c2fa6446b3ec956f( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xe225
+// Checksum 0x0, Offset: 0xe223
 // Size: 0x7e
 function private on_vehicle_refueled( params )
 {
@@ -3182,7 +3182,7 @@ function private on_vehicle_refueled( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xe2ab
+// Checksum 0x0, Offset: 0xe2a9
 // Size: 0x17
 function private function_4b8d35d7af7fd960( params )
 {
@@ -3191,7 +3191,7 @@ function private function_4b8d35d7af7fd960( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xe2ca
+// Checksum 0x0, Offset: 0xe2c8
 // Size: 0x45
 function private on_tacmap_ping_scriptable_or_ent( params )
 {
@@ -3206,7 +3206,7 @@ function private on_tacmap_ping_scriptable_or_ent( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xe317
+// Checksum 0x0, Offset: 0xe315
 // Size: 0x7c5
 function private function_4b0eddcc1928fa56( var_b381b0883bcd4847 )
 {
@@ -3436,7 +3436,7 @@ function private function_4b0eddcc1928fa56( var_b381b0883bcd4847 )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xeae4
+// Checksum 0x0, Offset: 0xeae2
 // Size: 0xd7
 function private function_748c2bebf6e2765b( var_b381b0883bcd4847 )
 {
@@ -3465,7 +3465,7 @@ function private function_748c2bebf6e2765b( var_b381b0883bcd4847 )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xebc3
+// Checksum 0x0, Offset: 0xebc1
 // Size: 0x148
 function private function_16afc8d96fd3de0c( var_b381b0883bcd4847 )
 {
@@ -3508,7 +3508,7 @@ function private function_16afc8d96fd3de0c( var_b381b0883bcd4847 )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xed13
+// Checksum 0x0, Offset: 0xed11
 // Size: 0x63
 function private function_3b2ed72578533fe0( var_b381b0883bcd4847 )
 {
@@ -3523,7 +3523,7 @@ function private function_3b2ed72578533fe0( var_b381b0883bcd4847 )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xed7e
+// Checksum 0x0, Offset: 0xed7c
 // Size: 0x30
 function private function_22de5391f273b6bf( params )
 {
@@ -3536,7 +3536,7 @@ function private function_22de5391f273b6bf( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xedb6
+// Checksum 0x0, Offset: 0xedb4
 // Size: 0x43
 function private function_ebbb949856b57930()
 {
@@ -3556,7 +3556,7 @@ function private function_ebbb949856b57930()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xee01
+// Checksum 0x0, Offset: 0xedff
 // Size: 0xd0
 function private function_7fab27036d043e38( params )
 {
@@ -3588,7 +3588,7 @@ function private function_7fab27036d043e38( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xeed9
+// Checksum 0x0, Offset: 0xeed7
 // Size: 0x17
 function private function_625e98d18b3d55a2( params )
 {
@@ -3597,7 +3597,7 @@ function private function_625e98d18b3d55a2( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xeef8
+// Checksum 0x0, Offset: 0xeef6
 // Size: 0x84
 function private function_f6832a11ac7b3d16( var_b381b0883bcd4847 )
 {
@@ -3615,7 +3615,7 @@ function private function_f6832a11ac7b3d16( var_b381b0883bcd4847 )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xef84
+// Checksum 0x0, Offset: 0xef82
 // Size: 0x19
 function private function_948301ad97e24c18( params )
 {
@@ -3624,7 +3624,7 @@ function private function_948301ad97e24c18( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xefa5
+// Checksum 0x0, Offset: 0xefa3
 // Size: 0x19
 function private function_a7cf9a60c8407c0( params )
 {
@@ -3633,7 +3633,7 @@ function private function_a7cf9a60c8407c0( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xefc6
+// Checksum 0x0, Offset: 0xefc4
 // Size: 0x19
 function private function_28c89f81cdaa9d97( params )
 {
@@ -3642,7 +3642,7 @@ function private function_28c89f81cdaa9d97( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xefe7
+// Checksum 0x0, Offset: 0xefe5
 // Size: 0x19
 function private function_2a7867137131b412( params )
 {
@@ -3651,7 +3651,7 @@ function private function_2a7867137131b412( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf008
+// Checksum 0x0, Offset: 0xf006
 // Size: 0x19
 function private function_5f52ca88d2ee165( params )
 {
@@ -3660,7 +3660,7 @@ function private function_5f52ca88d2ee165( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf029
+// Checksum 0x0, Offset: 0xf027
 // Size: 0x19
 function private function_c3cb09ac0cc5bb8c( params )
 {
@@ -3669,7 +3669,7 @@ function private function_c3cb09ac0cc5bb8c( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf04a
+// Checksum 0x0, Offset: 0xf048
 // Size: 0x19
 function private function_5f4bea465b992020( params )
 {
@@ -3678,7 +3678,7 @@ function private function_5f4bea465b992020( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf06b
+// Checksum 0x0, Offset: 0xf069
 // Size: 0x19
 function private function_9cf351a917bdb260( params )
 {
@@ -3687,7 +3687,7 @@ function private function_9cf351a917bdb260( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf08c
+// Checksum 0x0, Offset: 0xf08a
 // Size: 0x19
 function private function_b08965cd9e357396( params )
 {
@@ -3696,7 +3696,7 @@ function private function_b08965cd9e357396( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf0ad
+// Checksum 0x0, Offset: 0xf0ab
 // Size: 0x19
 function private function_7ddbc5d5709f0565( params )
 {
@@ -3705,7 +3705,7 @@ function private function_7ddbc5d5709f0565( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf0ce
+// Checksum 0x0, Offset: 0xf0cc
 // Size: 0x19
 function private function_4dc500ccd9ff3cbc( params )
 {
@@ -3714,7 +3714,7 @@ function private function_4dc500ccd9ff3cbc( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf0ef
+// Checksum 0x0, Offset: 0xf0ed
 // Size: 0x19
 function private function_6cfc34c8585e3810( params )
 {
@@ -3723,7 +3723,7 @@ function private function_6cfc34c8585e3810( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf110
+// Checksum 0x0, Offset: 0xf10e
 // Size: 0x19
 function private function_bd6f213cdc70081( params )
 {
@@ -3732,7 +3732,7 @@ function private function_bd6f213cdc70081( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf131
+// Checksum 0x0, Offset: 0xf12f
 // Size: 0x19
 function private function_654c053523c6f5f6( params )
 {
@@ -3741,7 +3741,7 @@ function private function_654c053523c6f5f6( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf152
+// Checksum 0x0, Offset: 0xf150
 // Size: 0x82
 function private function_f0156d5e3908b93b( params )
 {
@@ -3759,7 +3759,7 @@ function private function_f0156d5e3908b93b( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf1dc
+// Checksum 0x0, Offset: 0xf1da
 // Size: 0x95
 function private function_98c3f4e720f6089c( params )
 {
@@ -3781,7 +3781,7 @@ function private function_98c3f4e720f6089c( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf279
+// Checksum 0x0, Offset: 0xf277
 // Size: 0x113
 function private function_c170c9d5fe107d4c( var_b381b0883bcd4847 )
 {
@@ -3818,7 +3818,7 @@ function private function_c170c9d5fe107d4c( var_b381b0883bcd4847 )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf394
+// Checksum 0x0, Offset: 0xf392
 // Size: 0x81
 function private function_438364b427391b60( var_b381b0883bcd4847 )
 {
@@ -3836,7 +3836,7 @@ function private function_438364b427391b60( var_b381b0883bcd4847 )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf41d
+// Checksum 0x0, Offset: 0xf41b
 // Size: 0x4a
 function private function_def7cd4658600e1a( params )
 {
@@ -3855,7 +3855,7 @@ function private function_def7cd4658600e1a( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf46f
+// Checksum 0x0, Offset: 0xf46d
 // Size: 0x56
 function private function_6e7c3cd09cadb943( params )
 {
@@ -3868,7 +3868,7 @@ function private function_6e7c3cd09cadb943( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf4cd
+// Checksum 0x0, Offset: 0xf4cb
 // Size: 0x4d
 function private function_61691a3175d3e844( params )
 {
@@ -3880,7 +3880,7 @@ function private function_61691a3175d3e844( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf522
+// Checksum 0x0, Offset: 0xf520
 // Size: 0x1c
 function private function_4f322f99eb988e83( params )
 {
@@ -3888,8 +3888,8 @@ function private function_4f322f99eb988e83( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xf546
+// Params 6
+// Checksum 0x0, Offset: 0xf544
 // Size: 0x4a
 function function_7be71446bbc4e06f( instance, part, state, player, var_a5b2c541413aa895, usestring )
 {
@@ -3898,8 +3898,8 @@ function function_7be71446bbc4e06f( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf598
+// Params 0
+// Checksum 0x0, Offset: 0xf596
 // Size: 0x37
 function function_df09572b35cbd84c()
 {
@@ -3919,8 +3919,8 @@ function function_df09572b35cbd84c()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf5d7
+// Params 1
+// Checksum 0x0, Offset: 0xf5d5
 // Size: 0x68
 function function_4ffcd177964e72b2( params )
 {
@@ -3934,8 +3934,8 @@ function function_4ffcd177964e72b2( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf647
+// Params 1
+// Checksum 0x0, Offset: 0xf645
 // Size: 0x4f
 function function_1fb60c4452a392c8( params )
 {
@@ -3951,8 +3951,8 @@ function function_1fb60c4452a392c8( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf69e
+// Params 1
+// Checksum 0x0, Offset: 0xf69c
 // Size: 0x6d
 function function_b05b488b03740449( params )
 {
@@ -3970,8 +3970,8 @@ function function_b05b488b03740449( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf713
+// Params 1
+// Checksum 0x0, Offset: 0xf711
 // Size: 0x10f
 function function_a7ea8cc17447e576( params )
 {
@@ -4006,7 +4006,7 @@ function function_a7ea8cc17447e576( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf82b
+// Checksum 0x0, Offset: 0xf829
 // Size: 0x51
 function private on_super_ready( params )
 {
@@ -4017,8 +4017,8 @@ function private on_super_ready( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf884
+// Params 1
+// Checksum 0x0, Offset: 0xf882
 // Size: 0x106
 function function_a5e16566a91e9488( params )
 {
@@ -4044,8 +4044,8 @@ function function_a5e16566a91e9488( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf992
+// Params 1
+// Checksum 0x0, Offset: 0xf990
 // Size: 0x48
 function function_3cde22ad6d42a269( params )
 {
@@ -4059,8 +4059,8 @@ function function_3cde22ad6d42a269( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9e2
+// Params 1
+// Checksum 0x0, Offset: 0xf9e0
 // Size: 0x4c
 function function_c99db6b18ad62976( params )
 {
@@ -4071,8 +4071,8 @@ function function_c99db6b18ad62976( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa36
+// Params 1
+// Checksum 0x0, Offset: 0xfa34
 // Size: 0x3f
 function on_exfil_exiting_ao( params )
 {
@@ -4089,8 +4089,8 @@ function on_exfil_exiting_ao( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa7d
+// Params 1
+// Checksum 0x0, Offset: 0xfa7b
 // Size: 0x24
 function on_outlast_start( params )
 {
@@ -4101,8 +4101,8 @@ function on_outlast_start( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfaa9
+// Params 1
+// Checksum 0x0, Offset: 0xfaa7
 // Size: 0x44
 function on_outlast_arrive( params )
 {
@@ -4119,7 +4119,7 @@ function on_outlast_arrive( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xfaf5
+// Checksum 0x0, Offset: 0xfaf3
 // Size: 0x24
 function private on_outlast_progress_degrade( params )
 {
@@ -4131,7 +4131,7 @@ function private on_outlast_progress_degrade( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xfb21
+// Checksum 0x0, Offset: 0xfb1f
 // Size: 0x24
 function private on_approach_outlast_pnd( params )
 {
@@ -4143,7 +4143,7 @@ function private on_approach_outlast_pnd( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xfb4d
+// Checksum 0x0, Offset: 0xfb4b
 // Size: 0x26
 function private on_outlast_success( params )
 {
@@ -4155,7 +4155,7 @@ function private on_outlast_success( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xfb7b
+// Checksum 0x0, Offset: 0xfb79
 // Size: 0x24
 function private on_abandon_outlast_contract( params )
 {
@@ -4166,8 +4166,8 @@ function private on_abandon_outlast_contract( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfba7
+// Params 1
+// Checksum 0x0, Offset: 0xfba5
 // Size: 0x24
 function on_approach_zm_stronghold( params )
 {
@@ -4178,8 +4178,8 @@ function on_approach_zm_stronghold( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbd3
+// Params 1
+// Checksum 0x0, Offset: 0xfbd1
 // Size: 0x24
 function function_7f2dd34d9517d2c6( params )
 {
@@ -4191,7 +4191,7 @@ function function_7f2dd34d9517d2c6( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xfbff
+// Checksum 0x0, Offset: 0xfbfd
 // Size: 0x8d, Type: bool
 function private function_e783a5b7a0b0d983()
 {
@@ -4199,7 +4199,8 @@ function private function_e783a5b7a0b0d983()
     player = self;
     backpacksize = player scripts\cp_mp\loot\common_inventory::function_1b35b10884bd8d67();
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         currentlootid = player scripts\cp_mp\loot\common_inventory::function_d870b2c45335bd88( i );
         
         if ( !isdefined( currentlootid ) || currentlootid == 0 )
@@ -4220,7 +4221,7 @@ function private function_e783a5b7a0b0d983()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xfc95
+// Checksum 0x0, Offset: 0xfc93
 // Size: 0x141, Type: bool
 function private function_d1b7b365deeebee7()
 {
@@ -4228,7 +4229,8 @@ function private function_d1b7b365deeebee7()
     player = self;
     backpacksize = player scripts\cp_mp\loot\common_inventory::function_1b35b10884bd8d67();
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         currentlootid = player scripts\cp_mp\loot\common_inventory::function_d870b2c45335bd88( i );
         
         if ( !isdefined( currentlootid ) || currentlootid == 0 )
@@ -4270,8 +4272,8 @@ function private function_d1b7b365deeebee7()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xfddf
+// Params 3
+// Checksum 0x0, Offset: 0xfddd
 // Size: 0xb2
 function function_b46c28df3a5f6156( mission_id, var_4152d19cb7e28515, b_conv )
 {
@@ -4311,8 +4313,8 @@ function function_b46c28df3a5f6156( mission_id, var_4152d19cb7e28515, b_conv )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe99
+// Params 1
+// Checksum 0x0, Offset: 0xfe97
 // Size: 0x75, Type: bool
 function function_380c0caf9e64a771( squad )
 {
@@ -4345,8 +4347,8 @@ function function_380c0caf9e64a771( squad )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xff17
+// Params 1
+// Checksum 0x0, Offset: 0xff15
 // Size: 0x17, Type: bool
 function function_35b3a590197d97a6( player )
 {
@@ -4354,8 +4356,8 @@ function function_35b3a590197d97a6( player )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xff37
+// Params 1
+// Checksum 0x0, Offset: 0xff35
 // Size: 0x3c
 function function_65ec7747ff7a397a( params )
 {
@@ -4366,8 +4368,8 @@ function function_65ec7747ff7a397a( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xff7b
+// Params 1
+// Checksum 0x0, Offset: 0xff79
 // Size: 0xe8
 function function_979b0b77c84e497f( params )
 {
@@ -4394,8 +4396,8 @@ function function_979b0b77c84e497f( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1006b
+// Params 0
+// Checksum 0x0, Offset: 0x10069
 // Size: 0x1b
 function function_bcfb5a0e96552599()
 {
@@ -4406,8 +4408,8 @@ function function_bcfb5a0e96552599()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1008e
+// Params 1
+// Checksum 0x0, Offset: 0x1008c
 // Size: 0x24
 function function_1e972a37f996a61c( params )
 {
@@ -4418,8 +4420,8 @@ function function_1e972a37f996a61c( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x100ba
+// Params 1
+// Checksum 0x0, Offset: 0x100b8
 // Size: 0x2e
 function function_ea321f874c7d825( params )
 {
@@ -4430,8 +4432,8 @@ function function_ea321f874c7d825( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x100f0
+// Params 1
+// Checksum 0x0, Offset: 0x100ee
 // Size: 0x17b
 function function_9fe3364da6f70780( params )
 {
@@ -4473,8 +4475,8 @@ function function_9fe3364da6f70780( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10273
+// Params 1
+// Checksum 0x0, Offset: 0x10271
 // Size: 0xc7
 function function_20a93cb9e4f580fe( params )
 {
@@ -4500,8 +4502,8 @@ function function_20a93cb9e4f580fe( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10342
+// Params 1
+// Checksum 0x0, Offset: 0x10340
 // Size: 0x66e
 function function_135da259745a566d( params )
 {
@@ -4656,8 +4658,8 @@ function function_135da259745a566d( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x109b8
+// Params 1
+// Checksum 0x0, Offset: 0x109b6
 // Size: 0x31
 function function_7078fecde61ab0db( params )
 {
@@ -4668,8 +4670,8 @@ function function_7078fecde61ab0db( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x109f1
+// Params 0
+// Checksum 0x0, Offset: 0x109ef
 // Size: 0xbd
 function function_6db576722ffc548d()
 {
@@ -4700,8 +4702,8 @@ function function_6db576722ffc548d()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ab6
+// Params 0
+// Checksum 0x0, Offset: 0x10ab4
 // Size: 0x8d
 function function_568866da0244ea3()
 {
@@ -4727,8 +4729,8 @@ function function_568866da0244ea3()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b4b
+// Params 1
+// Checksum 0x0, Offset: 0x10b49
 // Size: 0x13
 function function_5f169bceaf46be72( params )
 {
@@ -4736,8 +4738,8 @@ function function_5f169bceaf46be72( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b66
+// Params 0
+// Checksum 0x0, Offset: 0x10b64
 // Size: 0x8d
 function function_dc85f56a56f1d2c1()
 {
@@ -4763,8 +4765,8 @@ function function_dc85f56a56f1d2c1()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10bfb
+// Params 0
+// Checksum 0x0, Offset: 0x10bf9
 // Size: 0x8d
 function function_5e1833b74c8dc68f()
 {
@@ -4790,14 +4792,15 @@ function function_5e1833b74c8dc68f()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10c90
+// Params 1
+// Checksum 0x0, Offset: 0x10c8e
 // Size: 0x5e
 function function_db6c1cb0e91c7041( a_players )
 {
     self waittill( "escort_mission_vo" );
     
-    for (i = 0; i < a_players.size; i++) {
+    for ( i = 0; i < a_players.size ; i++ )
+    {
         if ( isalive( a_players[ i ] ) )
         {
             player = a_players[ i ];
@@ -4812,8 +4815,8 @@ function function_db6c1cb0e91c7041( a_players )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10cf6
+// Params 1
+// Checksum 0x0, Offset: 0x10cf4
 // Size: 0x3c
 function function_eb1506a06c31da2b( params )
 {
@@ -4824,8 +4827,8 @@ function function_eb1506a06c31da2b( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d3a
+// Params 1
+// Checksum 0x0, Offset: 0x10d38
 // Size: 0x39
 function function_7758c4422a68f415( params )
 {
@@ -4836,8 +4839,8 @@ function function_7758c4422a68f415( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d7b
+// Params 1
+// Checksum 0x0, Offset: 0x10d79
 // Size: 0x39
 function function_8e07c089e889784f( params )
 {
@@ -4848,8 +4851,8 @@ function function_8e07c089e889784f( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10dbc
+// Params 1
+// Checksum 0x0, Offset: 0x10dba
 // Size: 0x39
 function function_da6e19f48f3340b8( params )
 {
@@ -4860,8 +4863,8 @@ function function_da6e19f48f3340b8( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10dfd
+// Params 1
+// Checksum 0x0, Offset: 0x10dfb
 // Size: 0x24
 function function_628a2357515e077a( params )
 {
@@ -4872,8 +4875,8 @@ function function_628a2357515e077a( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e29
+// Params 1
+// Checksum 0x0, Offset: 0x10e27
 // Size: 0x39
 function function_fbab6a79ccb766d2( params )
 {
@@ -4885,7 +4888,7 @@ function function_fbab6a79ccb766d2( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x10e6a
+// Checksum 0x0, Offset: 0x10e68
 // Size: 0x100
 function private function_8b134141131f364a( params )
 {
@@ -4916,7 +4919,7 @@ function private function_8b134141131f364a( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x10f72
+// Checksum 0x0, Offset: 0x10f70
 // Size: 0x1a3
 function private function_984089fc6559a650( params )
 {
@@ -4967,7 +4970,7 @@ function private function_984089fc6559a650( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1111d
+// Checksum 0x0, Offset: 0x1111b
 // Size: 0x51
 function private on_player_damaged( params )
 {
@@ -4984,7 +4987,7 @@ function private on_player_damaged( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x11176
+// Checksum 0x0, Offset: 0x11174
 // Size: 0x299
 function private function_3cd8cd54ce47110a( sparams )
 {
@@ -5060,7 +5063,7 @@ function private function_3cd8cd54ce47110a( sparams )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x11417
+// Checksum 0x0, Offset: 0x11415
 // Size: 0x3c
 function private function_726462b7bf0052b7()
 {
@@ -5079,7 +5082,7 @@ function private function_726462b7bf0052b7()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1145b
+// Checksum 0x0, Offset: 0x11459
 // Size: 0x12f
 function private function_68feab32966b29b8()
 {
@@ -5121,8 +5124,8 @@ function private function_68feab32966b29b8()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11592
+// Params 0
+// Checksum 0x0, Offset: 0x11590
 // Size: 0x136
 function function_ce3c3c0439296754()
 {
@@ -5149,8 +5152,8 @@ function function_ce3c3c0439296754()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x116d1
+// Params 0
+// Checksum 0x0, Offset: 0x116cf
 // Size: 0x24, Type: bool
 function function_809f44597eff7229()
 {
@@ -5158,8 +5161,8 @@ function function_809f44597eff7229()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x116fe
+// Params 0
+// Checksum 0x0, Offset: 0x116fc
 // Size: 0x24, Type: bool
 function function_4a588aa51c7a9b4e()
 {
@@ -5167,8 +5170,8 @@ function function_4a588aa51c7a9b4e()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1172b
+// Params 0
+// Checksum 0x0, Offset: 0x11729
 // Size: 0x20, Type: bool
 function function_e270857762b60945()
 {
@@ -5176,8 +5179,8 @@ function function_e270857762b60945()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11754
+// Params 0
+// Checksum 0x0, Offset: 0x11752
 // Size: 0x28, Type: bool
 function function_9ccbbc7f4170babf()
 {
@@ -5185,8 +5188,8 @@ function function_9ccbbc7f4170babf()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11785
+// Params 0
+// Checksum 0x0, Offset: 0x11783
 // Size: 0x28, Type: bool
 function function_fe9986961a6c036e()
 {
@@ -5195,7 +5198,7 @@ function function_fe9986961a6c036e()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x117b6
+// Checksum 0x0, Offset: 0x117b4
 // Size: 0xd1
 function private function_2862ad8db68c4dde( params )
 {
@@ -5216,7 +5219,7 @@ function private function_2862ad8db68c4dde( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1188f
+// Checksum 0x0, Offset: 0x1188d
 // Size: 0x5c
 function private function_d88408f2a5adf639( params )
 {
@@ -5233,7 +5236,7 @@ function private function_d88408f2a5adf639( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x118f3
+// Checksum 0x0, Offset: 0x118f1
 // Size: 0x5c
 function private function_ed0bb8717f31f954( params )
 {
@@ -5250,7 +5253,7 @@ function private function_ed0bb8717f31f954( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x11957
+// Checksum 0x0, Offset: 0x11955
 // Size: 0x5e
 function private function_5470291610d91652( params )
 {
@@ -5267,7 +5270,7 @@ function private function_5470291610d91652( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x119bd
+// Checksum 0x0, Offset: 0x119bb
 // Size: 0x7f
 function private function_a9d19f968e2f15e9( params )
 {
@@ -5290,7 +5293,7 @@ function private function_a9d19f968e2f15e9( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x11a44
+// Checksum 0x0, Offset: 0x11a42
 // Size: 0x7a
 function private on_player_laststand( params )
 {
@@ -5310,8 +5313,8 @@ function private on_player_laststand( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ac6
+// Params 1
+// Checksum 0x0, Offset: 0x11ac4
 // Size: 0x85
 function function_729d94c0071a8916( structspawn )
 {
@@ -5327,8 +5330,8 @@ function function_729d94c0071a8916( structspawn )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b53
+// Params 1
+// Checksum 0x0, Offset: 0x11b51
 // Size: 0x52
 function function_ab0d44e43142e74e( trigger )
 {
@@ -5347,8 +5350,8 @@ function function_ab0d44e43142e74e( trigger )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11bad
+// Params 1
+// Checksum 0x0, Offset: 0x11bab
 // Size: 0xbf
 function on_spawn_redeploy_drone( params )
 {
@@ -5380,8 +5383,8 @@ function on_spawn_redeploy_drone( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c74
+// Params 1
+// Checksum 0x0, Offset: 0x11c72
 // Size: 0xe3
 function function_83ba63f5ccc1143e( params )
 {
@@ -5414,8 +5417,8 @@ function function_83ba63f5ccc1143e( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d5f
+// Params 0
+// Checksum 0x0, Offset: 0x11d5d
 // Size: 0xd4
 function function_1ab983924d3621aa()
 {
@@ -5447,8 +5450,8 @@ function function_1ab983924d3621aa()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e3b
+// Params 1
+// Checksum 0x0, Offset: 0x11e39
 // Size: 0x24
 function function_a14a93ab2f0b86d1( params )
 {
@@ -5459,8 +5462,8 @@ function function_a14a93ab2f0b86d1( params )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e67
+// Params 1
+// Checksum 0x0, Offset: 0x11e65
 // Size: 0x24
 function function_81747fd819153293( params )
 {
@@ -5472,7 +5475,7 @@ function function_81747fd819153293( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x11e93
+// Checksum 0x0, Offset: 0x11e91
 // Size: 0x1df, Type: bool
 function private function_da06d69b0b66e612( mission_id, var_4152d19cb7e28515, b_conv, b_solo )
 {
@@ -5561,8 +5564,8 @@ function private function_da06d69b0b66e612( mission_id, var_4152d19cb7e28515, b_
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1207b
+// Params 3
+// Checksum 0x0, Offset: 0x12079
 // Size: 0xb0
 function function_f578373042c34e16( mission_id, var_84e2ca49013808d2, players )
 {
@@ -5581,8 +5584,8 @@ function function_f578373042c34e16( mission_id, var_84e2ca49013808d2, players )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12134
+// Params 2
+// Checksum 0x0, Offset: 0x12132
 // Size: 0x9d, Type: bool
 function function_5acc35fc66331385( player, mission_id )
 {
@@ -5603,8 +5606,8 @@ function function_5acc35fc66331385( player, mission_id )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x121da
+// Params 1
+// Checksum 0x0, Offset: 0x121d8
 // Size: 0x3e, Type: bool
 function function_182aeec2e4e170de( player )
 {
@@ -5618,7 +5621,7 @@ function function_182aeec2e4e170de( player )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12221
+// Checksum 0x0, Offset: 0x1221f
 // Size: 0x13
 function private function_876eed02bb717d72( params )
 {
@@ -5627,7 +5630,7 @@ function private function_876eed02bb717d72( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1223c
+// Checksum 0x0, Offset: 0x1223a
 // Size: 0x37
 function private function_1052ebe04c0369ac()
 {
@@ -5647,7 +5650,7 @@ function private function_1052ebe04c0369ac()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1227b
+// Checksum 0x0, Offset: 0x12279
 // Size: 0x5a
 function private function_1d29b3ce33c72a69( params )
 {
@@ -5662,7 +5665,7 @@ function private function_1d29b3ce33c72a69( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x122dd
+// Checksum 0x0, Offset: 0x122db
 // Size: 0x60
 function private function_3115bc3519ac2ea1()
 {
@@ -5684,7 +5687,7 @@ function private function_3115bc3519ac2ea1()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12345
+// Checksum 0x0, Offset: 0x12343
 // Size: 0x67
 function private on_player_revived( params )
 {
@@ -5704,7 +5707,7 @@ function private on_player_revived( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x123b4
+// Checksum 0x0, Offset: 0x123b2
 // Size: 0x27
 function private function_900df0cbd73e399b( params )
 {
@@ -5716,7 +5719,7 @@ function private function_900df0cbd73e399b( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x123e3
+// Checksum 0x0, Offset: 0x123e1
 // Size: 0x37
 function private function_defeb316e4a936c( params )
 {
@@ -5728,7 +5731,7 @@ function private function_defeb316e4a936c( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12422
+// Checksum 0x0, Offset: 0x12420
 // Size: 0x3a
 function private function_735905adf14f7ebc( params )
 {
@@ -5747,7 +5750,7 @@ function private function_735905adf14f7ebc( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12464
+// Checksum 0x0, Offset: 0x12462
 // Size: 0x49
 function private on_merc_camp_recon_destroyed( params )
 {
@@ -5761,7 +5764,7 @@ function private on_merc_camp_recon_destroyed( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x124b5
+// Checksum 0x0, Offset: 0x124b3
 // Size: 0x8d
 function private function_503c8745be6d4249( params )
 {
@@ -5784,7 +5787,7 @@ function private function_503c8745be6d4249( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1254a
+// Checksum 0x0, Offset: 0x12548
 // Size: 0x49
 function private on_powerup_nuke_pickup( params )
 {
@@ -5798,7 +5801,7 @@ function private on_powerup_nuke_pickup( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1259b
+// Checksum 0x0, Offset: 0x12599
 // Size: 0x10a
 function private function_7d81180cfc146b9a( victimstruct )
 {
@@ -5835,7 +5838,7 @@ function private function_7d81180cfc146b9a( victimstruct )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x126ad
+// Checksum 0x0, Offset: 0x126ab
 // Size: 0x23
 function private function_6685ae90a5b68220( params )
 {
@@ -5851,7 +5854,7 @@ function private function_6685ae90a5b68220( params )
 
     // Namespace zombie_challenges / namespace_838b439602b3acc7
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x126d8
+    // Checksum 0x0, Offset: 0x126d6
     // Size: 0x9c, Type: dev
     function private function_a0dc56fbe58ef8c3()
     {
@@ -5867,19 +5870,21 @@ function private function_6685ae90a5b68220( params )
 
     // Namespace zombie_challenges / namespace_838b439602b3acc7
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1277c
+    // Checksum 0x0, Offset: 0x1277a
     // Size: 0xa6, Type: dev
     function private function_8da31be1c7c3ed93()
     {
         foreach ( player in level.players )
         {
-            for (i = 0; i < 50; i++) {
+            for ( i = 0; i < 50 ; i++ )
+            {
                 player function_484194ec6ace15bb( "<dev string:x227>" );
             }
             
             player function_f10f600ac4ee4c09( "<dev string:x247>", 1, 0 );
             
-            for (i = 0; i < 10; i++) {
+            for ( i = 0; i < 10 ; i++ )
+            {
                 player function_f10f600ac4ee4c09( "<dev string:x264>", 1, 0 );
             }
         }
@@ -5887,13 +5892,14 @@ function private function_6685ae90a5b68220( params )
 
     // Namespace zombie_challenges / namespace_838b439602b3acc7
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1282a
+    // Checksum 0x0, Offset: 0x12828
     // Size: 0x93, Type: dev
     function private function_5342bd4e7a1c6d83()
     {
         foreach ( player in level.players )
         {
-            for (i = 0; i < 50; i++) {
+            for ( i = 0; i < 50 ; i++ )
+            {
                 player function_484194ec6ace15bb( "<dev string:x283>" );
             }
             
@@ -5904,13 +5910,14 @@ function private function_6685ae90a5b68220( params )
 
     // Namespace zombie_challenges / namespace_838b439602b3acc7
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x128c5
+    // Checksum 0x0, Offset: 0x128c3
     // Size: 0x95, Type: dev
     function private function_12a19de3d2346cbe()
     {
         foreach ( player in level.players )
         {
-            for (i = 0; i < 50; i++) {
+            for ( i = 0; i < 50 ; i++ )
+            {
                 player function_484194ec6ace15bb( "<dev string:x2ce>", 2 );
             }
             
@@ -5921,7 +5928,7 @@ function private function_6685ae90a5b68220( params )
 
     // Namespace zombie_challenges / namespace_838b439602b3acc7
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x12962
+    // Checksum 0x0, Offset: 0x12960
     // Size: 0x6e, Type: dev
     function private function_cd70135e68209b24()
     {
@@ -5934,13 +5941,14 @@ function private function_6685ae90a5b68220( params )
 
     // Namespace zombie_challenges / namespace_838b439602b3acc7
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x129d8
+    // Checksum 0x0, Offset: 0x129d6
     // Size: 0x95, Type: dev
     function private function_44bea892ed0bc101()
     {
         foreach ( player in level.players )
         {
-            for (i = 0; i < 50; i++) {
+            for ( i = 0; i < 50 ; i++ )
+            {
                 player function_484194ec6ace15bb( "<dev string:x345>", 2 );
             }
             
@@ -5951,13 +5959,14 @@ function private function_6685ae90a5b68220( params )
 
     // Namespace zombie_challenges / namespace_838b439602b3acc7
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x12a75
+    // Checksum 0x0, Offset: 0x12a73
     // Size: 0x95, Type: dev
     function private function_5d400e584442179b()
     {
         foreach ( player in level.players )
         {
-            for (i = 0; i < 50; i++) {
+            for ( i = 0; i < 50 ; i++ )
+            {
                 player function_484194ec6ace15bb( "<dev string:x38f>", 2 );
             }
             
@@ -5970,7 +5979,7 @@ function private function_6685ae90a5b68220( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12b12
+// Checksum 0x0, Offset: 0x12b10
 // Size: 0xb
 function private on_approach_convoy( params )
 {
@@ -5979,7 +5988,7 @@ function private on_approach_convoy( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12b25
+// Checksum 0x0, Offset: 0x12b23
 // Size: 0x1b
 function private on_convoy_begin( params )
 {
@@ -5989,7 +5998,7 @@ function private on_convoy_begin( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x12b48
+// Checksum 0x0, Offset: 0x12b46
 // Size: 0xe2
 function private function_fd34dfd4299a5170()
 {
@@ -6025,7 +6034,7 @@ function private function_fd34dfd4299a5170()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x12c32
+// Checksum 0x0, Offset: 0x12c30
 // Size: 0x170
 function private function_6efeef8ea59e4541()
 {
@@ -6069,7 +6078,7 @@ function private function_6efeef8ea59e4541()
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12daa
+// Checksum 0x0, Offset: 0x12da8
 // Size: 0x24
 function private on_engage_convoy( params )
 {
@@ -6081,7 +6090,7 @@ function private on_engage_convoy( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12dd6
+// Checksum 0x0, Offset: 0x12dd4
 // Size: 0x33
 function private on_destroy_convoy( params )
 {
@@ -6093,7 +6102,7 @@ function private on_destroy_convoy( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12e11
+// Checksum 0x0, Offset: 0x12e0f
 // Size: 0x14
 function private veh_on_convoy_ended( params )
 {
@@ -6102,7 +6111,7 @@ function private veh_on_convoy_ended( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12e2d
+// Checksum 0x0, Offset: 0x12e2b
 // Size: 0x11f
 function private function_5528c46bef03fb6b( params )
 {
@@ -6139,7 +6148,7 @@ function private function_5528c46bef03fb6b( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12f54
+// Checksum 0x0, Offset: 0x12f52
 // Size: 0x9d
 function private on_approach_merc_stronghold( params )
 {
@@ -6167,7 +6176,7 @@ function private on_approach_merc_stronghold( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x12ff9
+// Checksum 0x0, Offset: 0x12ff7
 // Size: 0x3c
 function private function_816b42385497212a( params )
 {
@@ -6181,7 +6190,7 @@ function private function_816b42385497212a( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1303d
+// Checksum 0x0, Offset: 0x1303b
 // Size: 0x7d
 function private on_unlock_merc_stronghold( params )
 {
@@ -6204,7 +6213,7 @@ function private on_unlock_merc_stronghold( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x130c2
+// Checksum 0x0, Offset: 0x130c0
 // Size: 0x7d
 function private on_merc_stronghold_cleared_vo( params )
 {
@@ -6227,7 +6236,7 @@ function private on_merc_stronghold_cleared_vo( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x13147
+// Checksum 0x0, Offset: 0x13145
 // Size: 0x81
 function private on_merc_stronghold_reinforcement( params )
 {
@@ -6250,7 +6259,7 @@ function private on_merc_stronghold_reinforcement( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x131d0
+// Checksum 0x0, Offset: 0x131ce
 // Size: 0x74
 function private function_d4f961679a3612e2( params )
 {
@@ -6268,7 +6277,7 @@ function private function_d4f961679a3612e2( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1324c
+// Checksum 0x0, Offset: 0x1324a
 // Size: 0x26
 function private on_sabotage_start( params )
 {
@@ -6280,7 +6289,7 @@ function private on_sabotage_start( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1327a
+// Checksum 0x0, Offset: 0x13278
 // Size: 0x24
 function private on_abandon_sabotage_contract( params )
 {
@@ -6292,7 +6301,7 @@ function private on_abandon_sabotage_contract( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x132a6
+// Checksum 0x0, Offset: 0x132a4
 // Size: 0x26
 function private on_sabotage_failure_nocannister( params )
 {
@@ -6304,7 +6313,7 @@ function private on_sabotage_failure_nocannister( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x132d4
+// Checksum 0x0, Offset: 0x132d2
 // Size: 0x26
 function private on_sabotage_success_nocannister( params )
 {
@@ -6316,7 +6325,7 @@ function private on_sabotage_success_nocannister( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x13302
+// Checksum 0x0, Offset: 0x13300
 // Size: 0x26
 function private on_sabotage_success_withcannister( params )
 {
@@ -6328,7 +6337,7 @@ function private on_sabotage_success_withcannister( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x13330
+// Checksum 0x0, Offset: 0x1332e
 // Size: 0x24
 function private on_merc_defend_started( params )
 {
@@ -6340,7 +6349,7 @@ function private on_merc_defend_started( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1335c
+// Checksum 0x0, Offset: 0x1335a
 // Size: 0x24
 function private on_merc_defend_approach_refractor( params )
 {
@@ -6352,7 +6361,7 @@ function private on_merc_defend_approach_refractor( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x13388
+// Checksum 0x0, Offset: 0x13386
 // Size: 0x24
 function private on_merc_defend_damage_25( params )
 {
@@ -6364,7 +6373,7 @@ function private on_merc_defend_damage_25( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x133b4
+// Checksum 0x0, Offset: 0x133b2
 // Size: 0x26
 function private on_merc_defend_success( params )
 {
@@ -6376,7 +6385,7 @@ function private on_merc_defend_success( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x133e2
+// Checksum 0x0, Offset: 0x133e0
 // Size: 0x53
 function private function_2ca2263723de3b23( params )
 {
@@ -6390,7 +6399,7 @@ function private function_2ca2263723de3b23( params )
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1343d
+// Checksum 0x0, Offset: 0x1343b
 // Size: 0x64, Type: bool
 function private function_9c039c6daa449c38( player )
 {
@@ -6413,9 +6422,9 @@ function private function_9c039c6daa449c38( player )
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x134aa
-// Size: 0x1f40
+// Params 4
+// Checksum 0x0, Offset: 0x134a8
+// Size: 0x1f4c
 function assignplayerkillmodifierstrimmed( victimstruct, objweapon, meansofdeath, inflictor )
 {
     self.modifiers = [];
@@ -6490,7 +6499,7 @@ function assignplayerkillmodifierstrimmed( victimstruct, objweapon, meansofdeath
             self.modifiers[ "melee" ] = 1;
             self.modifiers[ "mask" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "mask" ], function_e2ff8f4b4e94f723( #"hash_7f94e81c1787ff7a", #"melee" ) );
             
-            if ( weapongroup != "weapon_melee" && weapongroup != "weapon_melee2" )
+            if ( weapongroup != "weapon_melee" && weapongroup != "weapon_melee2" && weapongroup != "other" )
             {
                 self.modifiers[ "gunbutt" ] = 1;
                 self.modifiers[ "mask" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "mask" ], function_e2ff8f4b4e94f723( #"hash_7f94e81c1787ff7a", #"gunbutt" ) );
@@ -6959,8 +6968,8 @@ function assignplayerkillmodifierstrimmed( victimstruct, objweapon, meansofdeath
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x153f2
+// Params 0
+// Checksum 0x0, Offset: 0x153fc
 // Size: 0x2f
 function function_670f85d113f86acb()
 {
@@ -6973,8 +6982,8 @@ function function_670f85d113f86acb()
 }
 
 // Namespace zombie_challenges / namespace_838b439602b3acc7
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x15429
+// Params 5
+// Checksum 0x0, Offset: 0x15433
 // Size: 0xab, Type: bool
 function function_fbb73b9050299404( victimstruct, objweapon, meansofdeath, curtime, weapongroup )
 {

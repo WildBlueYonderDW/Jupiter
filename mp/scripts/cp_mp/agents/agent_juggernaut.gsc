@@ -7,7 +7,7 @@
 #namespace agent_juggernaut;
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x270
 // Size: 0x34
 function function_a414fbf48ae645f4()
@@ -17,7 +17,7 @@ function function_a414fbf48ae645f4()
 }
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ac
 // Size: 0x176
 function function_93288f91f5aabd02()
@@ -47,7 +47,7 @@ function function_93288f91f5aabd02()
 }
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x42a
 // Size: 0xd7
 function function_f75bc5c067f4015( part, damage )
@@ -68,7 +68,7 @@ function function_f75bc5c067f4015( part, damage )
 }
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x509
 // Size: 0xcb
 function function_fd38d13ec4cf6449( parts, state )
@@ -106,7 +106,7 @@ function function_fd38d13ec4cf6449( parts, state )
 }
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5dc
 // Size: 0x156
 function function_1cbb19fc0caeab00( subtype )
@@ -139,7 +139,7 @@ function function_1cbb19fc0caeab00( subtype )
 }
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x73a
 // Size: 0x29e
 function function_1ab798a528080db2( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -205,7 +205,7 @@ function function_1ab798a528080db2( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9e0
 // Size: 0x96
 function function_ca2d7204b750d78b()
@@ -224,7 +224,7 @@ function function_ca2d7204b750d78b()
 }
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa7e
 // Size: 0x6d
 function function_fa4f1a412ab12028( damage, shitloc, smeansofdeath, attacker )
@@ -247,7 +247,7 @@ function function_fa4f1a412ab12028( damage, shitloc, smeansofdeath, attacker )
 }
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaf3
 // Size: 0x112
 function function_c0aa811f7b45687c( shitloc, smeansofdeath, attacker )
@@ -302,7 +302,7 @@ function function_c0aa811f7b45687c( shitloc, smeansofdeath, attacker )
 }
 
 // Namespace agent_juggernaut / scripts\cp_mp\agents\agent_juggernaut
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc0e
 // Size: 0x212
 function function_94b7ecf1273ba3c0( part, damage )

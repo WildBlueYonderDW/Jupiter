@@ -11,7 +11,7 @@
 #namespace bots_gametype_koth;
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c7
 // Size: 0x3f
 function main()
@@ -31,7 +31,7 @@ function main()
 /#
 
     // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x20e
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -42,7 +42,7 @@ function main()
 #/
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21b
 // Size: 0x6b
 function setup_callbacks()
@@ -58,7 +58,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28e
 // Size: 0x185
 function setup_bot_koth()
@@ -117,12 +117,13 @@ function setup_bot_koth()
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41b
 // Size: 0xa3
 function bot_cache_entrances_to_other_zones( zone_done )
 {
-    for (zones_left = array_remove( level.objectives, zone_done ); zones_left.size > 0; zones_left = array_remove( zones_left, zone_precaching )) {
+    for ( zones_left = array_remove( level.objectives, zone_done ); zones_left.size > 0 ; zones_left = array_remove( zones_left, zone_precaching ) )
+    {
         zone_precaching = undefined;
         current_zone = level.zone;
         
@@ -141,7 +142,7 @@ function bot_cache_entrances_to_other_zones( zone_done )
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c6
 // Size: 0x33a
 function bot_koth_think()
@@ -262,7 +263,7 @@ function bot_koth_think()
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x808
 // Size: 0x72
 function bot_should_cap_next_zone()
@@ -292,7 +293,7 @@ function bot_should_cap_next_zone()
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x882
 // Size: 0x13
 function bot_get_num_teammates_capturing_zone( zone )
@@ -301,7 +302,7 @@ function bot_get_num_teammates_capturing_zone( zone )
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x89e
 // Size: 0xb7
 function bot_get_teammates_capturing_zone( zone )
@@ -326,7 +327,7 @@ function bot_get_teammates_capturing_zone( zone )
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x95e
 // Size: 0x21, Type: bool
 function bot_is_capturing_zone( zone )
@@ -340,7 +341,7 @@ function bot_is_capturing_zone( zone )
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x988
 // Size: 0x78
 function bot_capture_koth_zone( zone )
@@ -352,7 +353,7 @@ function bot_capture_koth_zone( zone )
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa08
 // Size: 0x4c
 function should_start_cautious_approach_koth( firstcheck )

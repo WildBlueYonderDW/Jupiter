@@ -19,7 +19,7 @@
 #namespace dmz_bounty;
 
 // Namespace dmz_bounty / scripts\mp\gametypes\dmz_bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fa
 // Size: 0x35e
 function function_5ba1bb4933edc5da()
@@ -71,7 +71,7 @@ function function_5ba1bb4933edc5da()
 }
 
 // Namespace dmz_bounty / scripts\mp\gametypes\dmz_bounty
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x660
 // Size: 0x224
 function function_47ef2434c27b063c( victim, attacker, meansofdeath, overridescore )
@@ -139,7 +139,7 @@ function function_47ef2434c27b063c( victim, attacker, meansofdeath, overridescor
 }
 
 // Namespace dmz_bounty / scripts\mp\gametypes\dmz_bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x88c
 // Size: 0x1b4
 function function_625d7eecad65e25f( bountysettings )
@@ -187,7 +187,7 @@ function function_625d7eecad65e25f( bountysettings )
 }
 
 // Namespace dmz_bounty / scripts\mp\gametypes\dmz_bounty
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa48
 // Size: 0xf4
 function function_87e294701a141ce( bountysettings, player )
@@ -604,7 +604,7 @@ function private function_9d1edaafd9ae1f43( attackerid )
 }
 
 // Namespace dmz_bounty / scripts\mp\gametypes\dmz_bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bf1
 // Size: 0x5a
 function function_f59bb0593a8f98a9( player )
@@ -675,7 +675,7 @@ function private function_6029f97c06c2236( attacker, threshold )
 /#
 
     // Namespace dmz_bounty / scripts\mp\gametypes\dmz_bounty
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d3a
     // Size: 0x38c, Type: dev
     function function_49601a5b7595734c()

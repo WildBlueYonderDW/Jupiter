@@ -8,7 +8,7 @@
 #namespace matchrecording;
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb58
 // Size: 0x145
 function init()
@@ -53,7 +53,7 @@ function init()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca5
 // Size: 0x78
 function matchrecording_getrecordingtype()
@@ -78,7 +78,7 @@ function matchrecording_getrecordingtype()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd26
 // Size: 0xdc
 function matchrecording_validaterecordingtype( typeval )
@@ -120,7 +120,7 @@ function matchrecording_validaterecordingtype( typeval )
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0b
 // Size: 0x1b, Type: bool
 function matchrecording_isenabled()
@@ -129,7 +129,7 @@ function matchrecording_isenabled()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe2f
 // Size: 0x53
 function matchrecording_teammap( teamname )
@@ -151,7 +151,7 @@ function matchrecording_teammap( teamname )
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe8b
 // Size: 0x301
 function matchrecording_eventcharmap( event )
@@ -265,7 +265,7 @@ function matchrecording_eventcharmap( event )
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1195
 // Size: 0x145
 function matchrecording_getfileheaderarray()
@@ -303,7 +303,7 @@ function matchrecording_getfileheaderarray()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x12e3
 // Size: 0x1d1
 function matchrecording_logevent( var_619cf3736c12073, teamname, event, x, y, timemsec, opstateindex, var_31ef7d754ebf53f, var_baa945e8fb3ba8aa )
@@ -343,7 +343,7 @@ function matchrecording_logevent( var_619cf3736c12073, teamname, event, x, y, ti
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14bc
 // Size: 0xb3
 function matchrecording_logeventmsg( event, timemsec, var_e377539688c48f4b )
@@ -373,7 +373,7 @@ function matchrecording_logeventmsg( event, timemsec, var_e377539688c48f4b )
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1577
 // Size: 0xba
 function matchrecording_logeventplayername( ownerid, teamname, ownername )
@@ -391,7 +391,7 @@ function matchrecording_logeventplayername( ownerid, teamname, ownername )
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1639
 // Size: 0xbb
 function matchrecording_inceventlinecount()
@@ -418,7 +418,7 @@ function matchrecording_inceventlinecount()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16fc
 // Size: 0xa7
 function matchrecording_dump()
@@ -450,7 +450,7 @@ function matchrecording_dump()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17ab
 // Size: 0x90
 function matchrecording_glog_dump()
@@ -474,7 +474,7 @@ function matchrecording_glog_dump()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1843
 // Size: 0x6c
 function matchrecording_glog_addheader()
@@ -495,7 +495,7 @@ function matchrecording_glog_addheader()
 /#
 
     // Namespace matchrecording / scripts\mp\matchrecording
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x18b7
     // Size: 0x96, Type: dev
     function matchrecording_scriptdata_openfilewrite()
@@ -513,7 +513,7 @@ function matchrecording_glog_addheader()
     }
 
     // Namespace matchrecording / scripts\mp\matchrecording
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1955
     // Size: 0x63, Type: dev
     function matchrecording_scriptdata_openfileappend()
@@ -537,7 +537,7 @@ function matchrecording_glog_addheader()
 #/
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19c0
 // Size: 0x88
 function matchrecording_scriptdata_openfileaddheader( closeafter )
@@ -561,7 +561,7 @@ function matchrecording_scriptdata_openfileaddheader( closeafter )
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a50
 // Size: 0xd0
 function matchrecording_scriptdata_dump()
@@ -600,7 +600,7 @@ function matchrecording_scriptdata_dump()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b28
 // Size: 0x10b
 function matchrecording_logallplayerposthink()
@@ -634,7 +634,7 @@ function matchrecording_logallplayerposthink()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c3b
 // Size: 0x27
 function matchrecording_onplayerconnect()
@@ -647,7 +647,7 @@ function matchrecording_onplayerconnect()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c6a
 // Size: 0x1ec
 function matchrecording_loggameendstats()
@@ -695,7 +695,7 @@ function matchrecording_loggameendstats()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e5e
 // Size: 0xa9
 function matchrecording_usereventthink()
@@ -726,7 +726,7 @@ function matchrecording_usereventthink()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f0f
 // Size: 0x33
 function matchrecording_generateid()
@@ -742,7 +742,7 @@ function matchrecording_generateid()
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f4b
 // Size: 0x3b
 function matchrecording_vehiclewatcher( notifymsg, logtype )
@@ -757,7 +757,7 @@ function matchrecording_vehiclewatcher( notifymsg, logtype )
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f8e
 // Size: 0xc7
 function matchrecording_vehicletrackingthink( logtype )
@@ -789,7 +789,7 @@ function matchrecording_vehicletrackingthink( logtype )
 }
 
 // Namespace matchrecording / scripts\mp\matchrecording
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x205d
 // Size: 0x38
 function matchrecording_vehiclecleanupthink( logid, logtype )

@@ -18,7 +18,7 @@
 #namespace mp_jup_underpass;
 
 // Namespace mp_jup_underpass / scripts\mp\maps\mp_jup_underpass\mp_jup_underpass
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x353
 // Size: 0xf8
 function main()
@@ -45,7 +45,7 @@ function main()
 }
 
 // Namespace mp_jup_underpass / scripts\mp\maps\mp_jup_underpass\mp_jup_underpass
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x453
 // Size: 0x40
 function function_1682cf22619a5e55()
@@ -60,7 +60,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_jup_underpass / scripts\mp\maps\mp_jup_underpass\mp_jup_underpass
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49b
 // Size: 0x2a9
 function function_31dc060e85f4a689()

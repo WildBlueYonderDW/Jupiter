@@ -16,7 +16,7 @@ function autoexec init()
 }
 
 // Namespace ob_season6 / scripts\mp\gametypes\ob_season6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x105
 // Size: 0x2d
 function main( params )
@@ -30,7 +30,7 @@ function main( params )
 }
 
 // Namespace ob_season6 / scripts\mp\gametypes\ob_season6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13a
 // Size: 0x13
 function function_faa8aae58d956943()

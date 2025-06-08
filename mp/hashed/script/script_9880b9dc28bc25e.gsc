@@ -20,7 +20,7 @@ function autoexec init()
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20f
 // Size: 0x4d
 function function_eb4aeba58080eb81()
@@ -37,7 +37,7 @@ function function_eb4aeba58080eb81()
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x264
 // Size: 0x11c
 function add_attractor( ent_or_struct, priority, range, is_attackable, var_56842bf94d8b7ac, var_6ccde54efc53a1af, var_9c7aa233ebc6c208, override_team, force_reachable )
@@ -65,7 +65,7 @@ function add_attractor( ent_or_struct, priority, range, is_attackable, var_56842
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x389
 // Size: 0x134
 function function_c0d3ba0eab1acba0( ent_or_struct, priority, range, is_attackable, var_56842bf94d8b7ac, var_6ccde54efc53a1af, var_9c7aa233ebc6c208, override_team, force_reachable )
@@ -94,25 +94,25 @@ function function_c0d3ba0eab1acba0( ent_or_struct, priority, range, is_attackabl
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c6
-// Size: 0x13, Type: bool
+// Size: 0x13
 function remove_attractor( var_7812e428c8c01551 )
 {
     return level function_a422c7bcf32db693( var_7812e428c8c01551 );
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e2
-// Size: 0x12, Type: bool
+// Size: 0x12
 function function_6e660434fe00b495( var_7812e428c8c01551 )
 {
     return function_a422c7bcf32db693( var_7812e428c8c01551 );
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x2d2, Type: bool
 function function_101e62af9bc09262()
@@ -215,7 +215,7 @@ function function_101e62af9bc09262()
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d8
 // Size: 0x60
 function function_da9012234026c32( attractor )
@@ -234,7 +234,7 @@ function function_da9012234026c32( attractor )
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x841
 // Size: 0x19b
 function function_b0441752fb8134be()
@@ -282,7 +282,7 @@ function function_b0441752fb8134be()
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e5
 // Size: 0x3e
 function function_357609ca7ca5486e( attractor_struct, slots_array )
@@ -293,7 +293,7 @@ function function_357609ca7ca5486e( attractor_struct, slots_array )
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa2b
 // Size: 0x40
 function function_24879cc9b7867fa9( attractor_struct, attractor_angle )
@@ -304,7 +304,7 @@ function function_24879cc9b7867fa9( attractor_struct, attractor_angle )
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa73
 // Size: 0xb2
 function function_9c76a841ce54201f( attractor_struct )
@@ -327,7 +327,7 @@ function function_9c76a841ce54201f( attractor_struct )
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb2e
 // Size: 0x72
 function function_aa5b896e0db21411( attractor_struct, scriptmodel )
@@ -340,7 +340,7 @@ function function_aa5b896e0db21411( attractor_struct, scriptmodel )
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xba8
 // Size: 0x5f
 function function_c7ea973c95733604( attractor_struct, box_origin, var_5288b409a0967c3a, box_angles )
@@ -352,7 +352,7 @@ function function_c7ea973c95733604( attractor_struct, box_origin, var_5288b409a0
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xc0f
 // Size: 0x18e
 function function_29dcd907bcbec6df( attractor_struct, origin, angles, radius, num_spots )
@@ -360,7 +360,8 @@ function function_29dcd907bcbec6df( attractor_struct, origin, angles, radius, nu
     level endon( "game_ended" );
     slots = [];
     
-    for (spot_i = 0; spot_i < num_spots; spot_i++) {
+    for ( spot_i = 0; spot_i < num_spots ; spot_i++ )
+    {
         angle_i = math::remap( spot_i, 0, num_spots, 0, 360 );
         x = radius * cos( angle_i + angles[ 1 ] );
         y = radius * sin( angle_i + angles[ 1 ] );
@@ -643,7 +644,7 @@ function private function_561a075da0b0a82d( params )
 }
 
 // Namespace zombie_attractor_manager / namespace_5381a59d140f4df8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1581
 // Size: 0x1bb
 function function_490c3f1f3e5b6abe( attractor_struct )
@@ -942,7 +943,8 @@ function function_490c3f1f3e5b6abe( attractor_struct )
         var_1d29949376ad4ec9[ 2 ] = obb.origin + obb.half_size * ( -1, -1, -1 );
         var_1d29949376ad4ec9[ 3 ] = obb.origin + obb.half_size * ( -1, -1, 1 );
         
-        for (i = 0; i < 4; i++) {
+        for ( i = 0; i < 4 ; i++ )
+        {
             j = i + 1;
             
             if ( j == 4 )

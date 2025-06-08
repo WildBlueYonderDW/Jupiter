@@ -7,7 +7,7 @@
 #namespace bots_gametype_hq;
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x179
 // Size: 0x10
 function main()
@@ -19,7 +19,7 @@ function main()
 /#
 
     // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x191
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -30,7 +30,7 @@ function main()
 #/
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19e
 // Size: 0x9
 function bot_hq_start()
@@ -39,7 +39,7 @@ function bot_hq_start()
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1af
 // Size: 0x2c
 function setup_callbacks()
@@ -49,7 +49,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e3
 // Size: 0x177
 function setup_bot_hq()
@@ -107,12 +107,13 @@ function setup_bot_hq()
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x362
 // Size: 0xa0
 function bot_cache_entrances_to_other_radios( radio_done )
 {
-    for (radios_left = array_remove( level.objectives, radio_done ); radios_left.size > 0; radios_left = array_remove( radios_left, radio_precaching )) {
+    for ( radios_left = array_remove( level.objectives, radio_done ); radios_left.size > 0 ; radios_left = array_remove( radios_left, radio_precaching ) )
+    {
         radio_precaching = undefined;
         current_radio = find_current_radio();
         
@@ -131,7 +132,7 @@ function bot_cache_entrances_to_other_radios( radio_done )
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40a
 // Size: 0x1a8
 function bot_hq_think()
@@ -215,7 +216,7 @@ function bot_hq_think()
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ba
 // Size: 0x80
 function find_current_radio()
@@ -230,7 +231,7 @@ function find_current_radio()
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x642
 // Size: 0x2f, Type: bool
 function bot_is_capturing_hq_zone( zone )
@@ -244,7 +245,7 @@ function bot_is_capturing_hq_zone( zone )
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67a
 // Size: 0x2f, Type: bool
 function bot_is_protecting_hq_zone( zone )
@@ -258,7 +259,7 @@ function bot_is_protecting_hq_zone( zone )
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b2
 // Size: 0x78
 function bot_capture_hq_zone( zone )
@@ -270,7 +271,7 @@ function bot_capture_hq_zone( zone )
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x732
 // Size: 0x77
 function bot_protect_hq_zone( zone )
@@ -282,7 +283,7 @@ function bot_protect_hq_zone( zone )
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b1
 // Size: 0x1c
 function bot_clear_hq_zone()
@@ -296,7 +297,7 @@ function bot_clear_hq_zone()
 }
 
 // Namespace bots_gametype_hq / scripts\mp\bots\bots_gametype_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d5
 // Size: 0x4c
 function should_start_cautious_approach_hq( firstcheck )

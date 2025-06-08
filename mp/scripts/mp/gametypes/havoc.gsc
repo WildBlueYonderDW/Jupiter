@@ -36,7 +36,7 @@
 #namespace havoc;
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa67
 // Size: 0x1f0
 function main()
@@ -99,7 +99,7 @@ function main()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc5f
 // Size: 0x3b
 function function_c153b3be3a868971()
@@ -110,7 +110,7 @@ function function_c153b3be3a868971()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca2
 // Size: 0x9
 function initializematchrules()
@@ -119,7 +119,7 @@ function initializematchrules()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb3
 // Size: 0x171
 function onstartgametype()
@@ -181,7 +181,7 @@ function onstartgametype()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe2c
 // Size: 0xd1
 function function_b7752de07ea1870c()
@@ -200,7 +200,7 @@ function function_b7752de07ea1870c()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf05
 // Size: 0x242
 function function_8c14093fb58b4e65()
@@ -215,7 +215,8 @@ function function_8c14093fb58b4e65()
     level.var_e757fcf09fbb5ec0 = getdvarint( @"hash_c8f0ab916692bfbb", int( level.var_cfb17092bbc28b8b / level.var_dc4da78db330c5b5 ) );
     newscorethreshold = level.var_e757fcf09fbb5ec0;
     
-    for (i = 0; i < function_1cc9618aae9bbc8(); i++) {
+    for ( i = 0; i < function_1cc9618aae9bbc8() ; i++ )
+    {
         level.var_dd052853f1cd3164[ level.var_dd052853f1cd3164.size ] = newscorethreshold;
         newscorethreshold += level.var_e757fcf09fbb5ec0;
     }
@@ -230,7 +231,8 @@ function function_8c14093fb58b4e65()
     setomnvar( "ui_havoc_mod_status_5", -1 );
     numrows = tablelookupgetnumrows( "mp/havoc_mods.csv" );
     
-    for (index = 0; index < numrows; index++) {
+    for ( index = 0; index < numrows ; index++ )
+    {
         modindex = tablelookupbyrow( "mp/havoc_mods.csv", index, 0 );
         
         if ( modindex == "" )
@@ -248,7 +250,7 @@ function function_8c14093fb58b4e65()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x114f
 // Size: 0x27
 function function_c2a7ea1687dfd306()
@@ -257,7 +259,7 @@ function function_c2a7ea1687dfd306()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x117e
 // Size: 0xc8
 function function_905b2f805251e716()
@@ -266,7 +268,8 @@ function function_905b2f805251e716()
     scripts\mp\gametypes\gun::function_6b7afefdbeeeec0a();
     level.var_3de0640c640e8ee0 = [];
     
-    for (i = 0; i < 50; i++) {
+    for ( i = 0; i < 50 ; i++ )
+    {
         var_c69da2d2fff3aac5 = function_6149c1c60fce42b3();
         
         if ( var_c69da2d2fff3aac5.size <= 0 )
@@ -292,7 +295,7 @@ function function_905b2f805251e716()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124e
 // Size: 0x72
 function function_6149c1c60fce42b3()
@@ -311,7 +314,7 @@ function function_6149c1c60fce42b3()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c9
 // Size: 0x19d
 function function_eee04ff98ccc9115()
@@ -346,7 +349,7 @@ function function_eee04ff98ccc9115()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x146e
 // Size: 0x86
 function function_5bda1250fea48e36( ref, triggerfunc )
@@ -371,7 +374,7 @@ function function_5bda1250fea48e36( ref, triggerfunc )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14fc
 // Size: 0x99, Type: bool
 function function_2d4dcf9441a36ea0( modref )
@@ -395,7 +398,7 @@ function function_2d4dcf9441a36ea0( modref )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x159e
 // Size: 0x82
 function function_bff609c8046eda89( category, ref, modinfo )
@@ -421,7 +424,7 @@ function function_bff609c8046eda89( category, ref, modinfo )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1628
 // Size: 0x31
 function function_33de3bb74c6f9f68( modinfo )
@@ -435,7 +438,7 @@ function function_33de3bb74c6f9f68( modinfo )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1661
 // Size: 0x4f
 function function_813e589c3a58684c( modinfo )
@@ -449,7 +452,7 @@ function function_813e589c3a58684c( modinfo )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16b8
 // Size: 0xeb
 function function_4a3f65052dc511b2()
@@ -493,7 +496,7 @@ function function_4a3f65052dc511b2()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17ab
 // Size: 0xb
 function function_1cc9618aae9bbc8()
@@ -502,7 +505,7 @@ function function_1cc9618aae9bbc8()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17bf
 // Size: 0xb
 function function_9d7788358c73db40()
@@ -511,7 +514,7 @@ function function_9d7788358c73db40()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17d3
 // Size: 0x15
 function function_75c691ae431d4dd1()
@@ -520,7 +523,7 @@ function function_75c691ae431d4dd1()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17f1
 // Size: 0xb
 function function_1e7d37861aaa2bb8()
@@ -529,7 +532,7 @@ function function_1e7d37861aaa2bb8()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1805
 // Size: 0xb
 function function_3d4f5744f1d73929()
@@ -538,7 +541,7 @@ function function_3d4f5744f1d73929()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1819
 // Size: 0x38
 function function_b39b72eb28eae363( settodefault )
@@ -554,7 +557,7 @@ function function_b39b72eb28eae363( settodefault )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1859
 // Size: 0x2d, Type: bool
 function function_e7425d53cbe0c754( curscore )
@@ -564,7 +567,7 @@ function function_e7425d53cbe0c754( curscore )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x188f
 // Size: 0x2c
 function function_8b460428cb7e01ac( var_befa49910d2a94d6, var_58b112a46ed059ba, var_a45aedb0cb5a5ff6 )
@@ -574,7 +577,7 @@ function function_8b460428cb7e01ac( var_befa49910d2a94d6, var_58b112a46ed059ba, 
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18c3
 // Size: 0x90
 function function_dbd7cdab4ce361a3( var_befa49910d2a94d6, var_58b112a46ed059ba, var_a45aedb0cb5a5ff6 )
@@ -607,7 +610,7 @@ function function_dbd7cdab4ce361a3( var_befa49910d2a94d6, var_58b112a46ed059ba, 
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x195b
 // Size: 0x2e3
 function function_a0f58f6a04807697( modcategory, modref, var_befa49910d2a94d6, var_58b112a46ed059ba, var_a45aedb0cb5a5ff6 )
@@ -721,7 +724,7 @@ function function_a0f58f6a04807697( modcategory, modref, var_befa49910d2a94d6, v
 /#
 
     // Namespace havoc / scripts\mp\gametypes\havoc
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1c46
     // Size: 0x52, Type: dev
     function function_63703b676d8d7c5d()
@@ -743,7 +746,7 @@ function function_a0f58f6a04807697( modcategory, modref, var_befa49910d2a94d6, v
     }
 
     // Namespace havoc / scripts\mp\gametypes\havoc
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1ca0
     // Size: 0x7f, Type: dev
     function function_5beede1cf589d53e( modref )
@@ -769,7 +772,7 @@ function function_a0f58f6a04807697( modcategory, modref, var_befa49910d2a94d6, v
 #/
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d27
 // Size: 0x21
 function function_edcebba57ef459b7( callbackfunc )
@@ -778,7 +781,7 @@ function function_edcebba57ef459b7( callbackfunc )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1d50
 // Size: 0xf2
 function function_66ecf48cd956ac04( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -814,7 +817,7 @@ function function_66ecf48cd956ac04( victim, attacker, lifeid, meansofdeath, objw
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1e4a
 // Size: 0x39
 function function_bcfdc9507307ce2d( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -826,7 +829,7 @@ function function_bcfdc9507307ce2d( victim, attacker, lifeid, meansofdeath, objw
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1e8b
 // Size: 0x33
 function function_68e97386dad8427d( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -835,7 +838,7 @@ function function_68e97386dad8427d( victim, attacker, lifeid, meansofdeath, objw
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1ec6
 // Size: 0x85
 function function_a0e75971d087c74c( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -858,7 +861,7 @@ function function_a0e75971d087c74c( victim, attacker, lifeid, meansofdeath, objw
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f53
 // Size: 0x37
 function function_3456261d6a6256a6()
@@ -872,7 +875,7 @@ function function_3456261d6a6256a6()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1f92
 // Size: 0x88
 function function_b90124cf1cea34ab( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -889,7 +892,7 @@ function function_b90124cf1cea34ab( victim, attacker, lifeid, meansofdeath, objw
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2022
 // Size: 0x70
 function function_9c2e0f5f612d29b6( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -904,7 +907,7 @@ function function_9c2e0f5f612d29b6( victim, attacker, lifeid, meansofdeath, objw
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x209a
 // Size: 0xdb
 function function_f28a76fafba3e83c( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -942,7 +945,7 @@ function function_f28a76fafba3e83c( victim, attacker, lifeid, meansofdeath, objw
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x217d
 // Size: 0x31
 function function_81d2aa21bd0d79e1()
@@ -956,7 +959,7 @@ function function_81d2aa21bd0d79e1()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x21b6
 // Size: 0x4a
 function function_14816c4a16bf3c7d( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -970,7 +973,7 @@ function function_14816c4a16bf3c7d( victim, attacker, lifeid, meansofdeath, objw
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2208
 // Size: 0xf3
 function function_494c5c17d43e7e5b( attacker )
@@ -978,7 +981,8 @@ function function_494c5c17d43e7e5b( attacker )
     self endon( "disconnected" );
     level endon( "game_ended" );
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         grenadeorigin = self gettagorigin( "j_mainroot" );
         randdist = randomint( 300 );
         randangle = randomint( 360 );
@@ -993,7 +997,7 @@ function function_494c5c17d43e7e5b( attacker )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2303
 // Size: 0x9b
 function function_530be69f39d0f7d2( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -1016,7 +1020,7 @@ function function_530be69f39d0f7d2( victim, attacker, lifeid, meansofdeath, objw
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23a6
 // Size: 0x8d
 function function_26fec210a06242ee()
@@ -1042,7 +1046,7 @@ function function_26fec210a06242ee()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x243c
 // Size: 0x83
 function function_6dc42c579ee9815c( playeroverride )
@@ -1065,7 +1069,7 @@ function function_6dc42c579ee9815c( playeroverride )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24c7
 // Size: 0x77
 function function_2b7a7ddd1506153c()
@@ -1085,7 +1089,7 @@ function function_2b7a7ddd1506153c()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2546
 // Size: 0x43
 function function_f97e80320a07c84c( weaponobj )
@@ -1098,7 +1102,7 @@ function function_f97e80320a07c84c( weaponobj )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2591
 // Size: 0x57
 function function_6753e15b1aa1fd7a( crossbowweapon )
@@ -1120,7 +1124,7 @@ function function_6753e15b1aa1fd7a( crossbowweapon )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25f0
 // Size: 0x74
 function function_a08d6c53a446d62( playeroverride )
@@ -1142,7 +1146,7 @@ function function_a08d6c53a446d62( playeroverride )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x266c
 // Size: 0xc7
 function function_d7c7ab3572deb50a( playeroverride )
@@ -1153,7 +1157,7 @@ function function_d7c7ab3572deb50a( playeroverride )
         return;
     }
     
-    level.blastshieldclamp = getfloatproperty( @"hash_171bcebcaa849d95", 0.8 ) * 30;
+    level.blastshieldclamp = getfloatproperty( @"perk_blastshieldclamphp", 0.8 ) * 30;
     level.maxallowedteamkills = -1;
     function_722a88b02b9c6a83( "team", "fftype", 1 );
     function_722a88b02b9c6a83( "team", "teamkillspawndelay", 0 );
@@ -1170,7 +1174,7 @@ function function_d7c7ab3572deb50a( playeroverride )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x273b
 // Size: 0x46
 function function_666f6c8f489ca946()
@@ -1189,7 +1193,7 @@ function function_666f6c8f489ca946()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2789
 // Size: 0x9f
 function function_3317cce4d3b5f4d3( playeroverride )
@@ -1215,7 +1219,7 @@ function function_3317cce4d3b5f4d3( playeroverride )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2830
 // Size: 0x4a
 function function_997eaa1fabfc52cd()
@@ -1232,7 +1236,7 @@ function function_997eaa1fabfc52cd()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2882
 // Size: 0x42
 function function_798ebfff41139ca1()
@@ -1245,7 +1249,7 @@ function function_798ebfff41139ca1()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28cc
 // Size: 0x2
 function function_a1274da8ba78ff0f()
@@ -1254,7 +1258,7 @@ function function_a1274da8ba78ff0f()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28d6
 // Size: 0x4c
 function function_98619bddccd9a695()
@@ -1266,7 +1270,7 @@ function function_98619bddccd9a695()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x292a
 // Size: 0x15
 function function_75934eae9944efea()
@@ -1275,7 +1279,7 @@ function function_75934eae9944efea()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2947
 // Size: 0x29
 function function_a8d2d573000c15f2()
@@ -1285,7 +1289,7 @@ function function_a8d2d573000c15f2()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2978
 // Size: 0x2
 function function_8821a9b9a89a609d()
@@ -1294,7 +1298,7 @@ function function_8821a9b9a89a609d()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2982
 // Size: 0x81
 function function_3d1b533130fa8e4a( playeroverride )
@@ -1317,7 +1321,7 @@ function function_3d1b533130fa8e4a( playeroverride )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a0b
 // Size: 0x14
 function function_8cdab0c0cf731e79()
@@ -1327,21 +1331,22 @@ function function_8cdab0c0cf731e79()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a27
 // Size: 0x31
 function function_855274d0effbf75f()
 {
     level endon( "game_ended" );
     
-    for (i = 0; i < 5; i++) {
+    for ( i = 0; i < 5 ; i++ )
+    {
         wait 4;
         function_8b460428cb7e01ac( 1, 0, 0 );
     }
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2a60
 // Size: 0xdb
 function function_d7d6624794ccbded( modindex, modcategory, modref, modrestore, var_6f6fd32d3dd289e0, var_3804a6d6dbf6fddb )
@@ -1359,7 +1364,7 @@ function function_d7d6624794ccbded( modindex, modcategory, modref, modrestore, v
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b43
 // Size: 0x87
 function function_1f1afe7a22fe62f9( modcategory, modref )
@@ -1390,7 +1395,7 @@ function function_1f1afe7a22fe62f9( modcategory, modref )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bd3
 // Size: 0xd7
 function function_84ca23f2ef144201( var_35a900e065ea5a7f )
@@ -1421,7 +1426,7 @@ function function_84ca23f2ef144201( var_35a900e065ea5a7f )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cb3
 // Size: 0x49
 function function_47630ccd4c2f3fc6( var_35a900e065ea5a7f )
@@ -1441,7 +1446,7 @@ function function_47630ccd4c2f3fc6( var_35a900e065ea5a7f )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d05
 // Size: 0x2d
 function function_8318b76d2eedf2f( modcategory, modref )
@@ -1455,7 +1460,7 @@ function function_8318b76d2eedf2f( modcategory, modref )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d3b
 // Size: 0x99
 function function_18ffa8c868bf9576()
@@ -1485,7 +1490,7 @@ function function_18ffa8c868bf9576()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ddd
 // Size: 0xc4, Type: bool
 function function_88d9da83aa05b571( modcategory )
@@ -1516,7 +1521,7 @@ function function_88d9da83aa05b571( modcategory )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2eaa
 // Size: 0xf4
 function function_3c00acca6c837a62( modcategory )
@@ -1559,7 +1564,7 @@ function function_3c00acca6c837a62( modcategory )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fa7
 // Size: 0x10b
 function function_22091d6a866ea9c5( var_12f119851bca9da5 )
@@ -1592,7 +1597,7 @@ function function_22091d6a866ea9c5( var_12f119851bca9da5 )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30bb
 // Size: 0x8c
 function function_a5fa76c74c473333( var_89209396f51e191a )
@@ -1623,7 +1628,7 @@ function function_a5fa76c74c473333( var_89209396f51e191a )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3150
 // Size: 0x20, Type: bool
 function function_7469c072b8c751fc( var_653659fc71620bea )
@@ -1632,7 +1637,7 @@ function function_7469c072b8c751fc( var_653659fc71620bea )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3179
 // Size: 0x84, Type: bool
 function function_c6a1e26057464b5f( var_653659fc71620bea )
@@ -1652,7 +1657,7 @@ function function_c6a1e26057464b5f( var_653659fc71620bea )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3206
 // Size: 0x84, Type: bool
 function function_8ca343bc8bbb9bc( var_653659fc71620bea )
@@ -1672,7 +1677,7 @@ function function_8ca343bc8bbb9bc( var_653659fc71620bea )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3293
 // Size: 0x91
 function function_722a88b02b9c6a83( category, name, value, setonly )
@@ -1691,7 +1696,7 @@ function function_722a88b02b9c6a83( category, name, value, setonly )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x332c
 // Size: 0xd7
 function function_6e97354a9ca962db( var_45df8c4441e75fdd )
@@ -1711,7 +1716,7 @@ function function_6e97354a9ca962db( var_45df8c4441e75fdd )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x340b
 // Size: 0xc1
 function function_d6cafb83c2fa3bb()
@@ -1739,7 +1744,7 @@ function function_d6cafb83c2fa3bb()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34d4
 // Size: 0x12d
 function function_d367d2ad15dc84cf()
@@ -1773,7 +1778,7 @@ function function_d367d2ad15dc84cf()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3609
 // Size: 0x5e
 function function_3ed044ffe00f170a()
@@ -1790,7 +1795,7 @@ function function_3ed044ffe00f170a()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x366f
 // Size: 0x35
 function function_ad12cdc21552b243()
@@ -1801,7 +1806,7 @@ function function_ad12cdc21552b243()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36ad
 // Size: 0x147
 function function_3660568f097fa7e( var_45df8c4441e75fdd )
@@ -1839,7 +1844,7 @@ function function_3660568f097fa7e( var_45df8c4441e75fdd )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37fc
 // Size: 0x11
 function function_3c5cbe539052ea87()
@@ -1849,7 +1854,7 @@ function function_3c5cbe539052ea87()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3815
 // Size: 0x68
 function function_bad07401641fd228()
@@ -1871,7 +1876,7 @@ function function_bad07401641fd228()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3886
 // Size: 0x9
 function updategametypedvars()
@@ -1880,7 +1885,7 @@ function updategametypedvars()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3897
 // Size: 0x1f7
 function initspawns()
@@ -1933,7 +1938,7 @@ function initspawns()
 /#
 
     // Namespace havoc / scripts\mp\gametypes\havoc
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3a96
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -1949,7 +1954,7 @@ function initspawns()
 #/
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b01
 // Size: 0xaa
 function getspawnpoint()
@@ -1984,7 +1989,7 @@ function getspawnpoint()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bb4
 // Size: 0x27
 function onspawnplayer( revivespawn )
@@ -1995,7 +2000,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3be3
 // Size: 0x5c
 function function_4d6a6309eda44c4e()
@@ -2020,7 +2025,7 @@ function function_4d6a6309eda44c4e()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c47
 // Size: 0xf3
 function function_31ca71112f5442e0()
@@ -2052,7 +2057,7 @@ function function_31ca71112f5442e0()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d42
 // Size: 0x46
 function function_bed1816b8632a262( weaponobj )
@@ -2077,7 +2082,7 @@ function function_bed1816b8632a262( weaponobj )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d90
 // Size: 0x69
 function function_59a66532ce69ba0( voref )
@@ -2089,7 +2094,7 @@ function function_59a66532ce69ba0( voref )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e01
 // Size: 0x9f
 function function_6b71256e2c7b2060( event, team )
@@ -2115,7 +2120,7 @@ function function_6b71256e2c7b2060( event, team )
 /#
 
     // Namespace havoc / scripts\mp\gametypes\havoc
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x3ea9
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -2154,7 +2159,7 @@ function function_6b71256e2c7b2060( event, team )
 #/
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x402b
 // Size: 0xb1
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -2171,7 +2176,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40e4
 // Size: 0x16
 function onsuicidedeath( victim )
@@ -2180,7 +2185,7 @@ function onsuicidedeath( victim )
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4102
 // Size: 0x53
 function ontimelimit()
@@ -2200,7 +2205,7 @@ function ontimelimit()
 }
 
 // Namespace havoc / scripts\mp\gametypes\havoc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x415d
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()

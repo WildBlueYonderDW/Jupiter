@@ -48,8 +48,8 @@
 #namespace plea_for_help;
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x952
+// Params 0
+// Checksum 0x0, Offset: 0x954
 // Size: 0x2f5
 function init()
 {
@@ -96,7 +96,7 @@ function init()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc4f
+// Checksum 0x0, Offset: 0xc51
 // Size: 0x14
 function private initonplayerconnect()
 {
@@ -105,8 +105,8 @@ function private initonplayerconnect()
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6b
+// Params 0
+// Checksum 0x0, Offset: 0xc6d
 // Size: 0x3d, Type: bool
 function function_4db915a9ce0e903a()
 {
@@ -124,8 +124,8 @@ function function_4db915a9ce0e903a()
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb1
+// Params 2
+// Checksum 0x0, Offset: 0xcb3
 // Size: 0x59
 function pleaforhelp( origin, var_15ab90a8de6865aa )
 {
@@ -140,8 +140,8 @@ function pleaforhelp( origin, var_15ab90a8de6865aa )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd12
+// Params 0
+// Checksum 0x0, Offset: 0xd14
 // Size: 0x15
 function function_ad29f2cdc94aac3b()
 {
@@ -150,7 +150,7 @@ function function_ad29f2cdc94aac3b()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xd30
+// Checksum 0x0, Offset: 0xd32
 // Size: 0x4a, Type: bool
 function private function_4fb04db192fbf4da( player )
 {
@@ -158,8 +158,8 @@ function private function_4fb04db192fbf4da( player )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd83
+// Params 2
+// Checksum 0x0, Offset: 0xd85
 // Size: 0x115, Type: bool
 function function_bfdfd3c9ba0cc7cb( player, deathweapon )
 {
@@ -202,8 +202,8 @@ function function_bfdfd3c9ba0cc7cb( player, deathweapon )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xea1
+// Params 1
+// Checksum 0x0, Offset: 0xea3
 // Size: 0x1d, Type: bool
 function ispleading( player )
 {
@@ -211,8 +211,8 @@ function ispleading( player )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xec7
+// Params 1
+// Checksum 0x0, Offset: 0xec9
 // Size: 0x40
 function function_c069f41a6bc4a19a( player )
 {
@@ -232,8 +232,8 @@ function function_c069f41a6bc4a19a( player )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf10
+// Params 0
+// Checksum 0x0, Offset: 0xf12
 // Size: 0x97
 function function_31097cf0c8f08654()
 {
@@ -257,7 +257,7 @@ function function_31097cf0c8f08654()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xfaf
+// Checksum 0x0, Offset: 0xfb1
 // Size: 0x22
 function private function_ba1cbfc640da6557()
 {
@@ -267,8 +267,8 @@ function private function_ba1cbfc640da6557()
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd9
+// Params 1
+// Checksum 0x0, Offset: 0xfdb
 // Size: 0x10c
 function callforhelp( deathweapon )
 {
@@ -296,7 +296,7 @@ function callforhelp( deathweapon )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x10ed
+// Checksum 0x0, Offset: 0x10ef
 // Size: 0x10f
 function private function_52273a4095c18970( extraparams, progress, iscomplete )
 {
@@ -331,7 +331,7 @@ function private function_52273a4095c18970( extraparams, progress, iscomplete )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1204
+// Checksum 0x0, Offset: 0x1206
 // Size: 0x53
 function private function_d9ae2a812e5ee454( extraparams )
 {
@@ -347,8 +347,8 @@ function private function_d9ae2a812e5ee454( extraparams )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x125f
+// Params 2
+// Checksum 0x0, Offset: 0x1261
 // Size: 0xb0
 function function_1144dea4d6d6e575( origin, var_15ab90a8de6865aa )
 {
@@ -379,7 +379,7 @@ function function_1144dea4d6d6e575( origin, var_15ab90a8de6865aa )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1318
+// Checksum 0x0, Offset: 0x131a
 // Size: 0x52
 function private function_b03cf5a57e364af2( player )
 {
@@ -393,7 +393,7 @@ function private function_b03cf5a57e364af2( player )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1372
+// Checksum 0x0, Offset: 0x1374
 // Size: 0x85
 function private function_675d06c4a07c4178( plearequest )
 {
@@ -406,7 +406,7 @@ function private function_675d06c4a07c4178( plearequest )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x13ff
+// Checksum 0x0, Offset: 0x1401
 // Size: 0xda
 function private function_23c9a2a29579048d( origin )
 {
@@ -422,7 +422,7 @@ function private function_23c9a2a29579048d( origin )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x14e1
+// Checksum 0x0, Offset: 0x14e3
 // Size: 0xda
 function private function_7e7f8fac7f822024( origin )
 {
@@ -444,7 +444,7 @@ function private function_7e7f8fac7f822024( origin )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x15c3
+// Checksum 0x0, Offset: 0x15c5
 // Size: 0x6f
 function private watchcleanup()
 {
@@ -466,7 +466,7 @@ function private watchcleanup()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x163a
+// Checksum 0x0, Offset: 0x163c
 // Size: 0x4d
 function private function_99a48d20b7d454ef()
 {
@@ -486,7 +486,7 @@ function private function_99a48d20b7d454ef()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x168f
+// Checksum 0x0, Offset: 0x1691
 // Size: 0x4f
 function private updateplayerpleaforall( deadplayer )
 {
@@ -502,7 +502,7 @@ function private updateplayerpleaforall( deadplayer )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x16e6
+// Checksum 0x0, Offset: 0x16e8
 // Size: 0x91, Type: bool
 function private function_46eea9b19a5046cf( deadplayer, var_784c8ada1184ff89 )
 {
@@ -526,7 +526,7 @@ function private function_46eea9b19a5046cf( deadplayer, var_784c8ada1184ff89 )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1780
+// Checksum 0x0, Offset: 0x1782
 // Size: 0x147
 function private function_5cb50ec8cf0f89a5()
 {
@@ -565,7 +565,7 @@ function private function_5cb50ec8cf0f89a5()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x18cf
+// Checksum 0x0, Offset: 0x18d1
 // Size: 0x3d
 function private function_e0949addb6054291( player )
 {
@@ -576,7 +576,7 @@ function private function_e0949addb6054291( player )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1914
+// Checksum 0x0, Offset: 0x1916
 // Size: 0x2c
 function private function_9610eee898ac5a6( player )
 {
@@ -586,7 +586,7 @@ function private function_9610eee898ac5a6( player )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1948
+// Checksum 0x0, Offset: 0x194a
 // Size: 0xf0
 function private function_9a375c85268afaaa( team )
 {
@@ -622,7 +622,7 @@ function private function_9a375c85268afaaa( team )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1a40
+// Checksum 0x0, Offset: 0x1a42
 // Size: 0x72
 function private function_631c07dea1296288( team )
 {
@@ -639,7 +639,7 @@ function private function_631c07dea1296288( team )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1aba
+// Checksum 0x0, Offset: 0x1abc
 // Size: 0x6c
 function private function_4dec72501ac491a5( player )
 {
@@ -657,7 +657,7 @@ function private function_4dec72501ac491a5( player )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1b2e
+// Checksum 0x0, Offset: 0x1b30
 // Size: 0x28
 function private function_1032f89962bec545( player )
 {
@@ -669,7 +669,7 @@ function private function_1032f89962bec545( player )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1b5e
+// Checksum 0x0, Offset: 0x1b60
 // Size: 0xb6
 function private function_1b4a4affdf4c7798()
 {
@@ -695,7 +695,7 @@ function private function_1b4a4affdf4c7798()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x1c1c
+// Checksum 0x0, Offset: 0x1c1e
 // Size: 0x250
 function private function_7bbc24bc9f4693bb( instance, part, state, player, plearequest )
 {
@@ -763,7 +763,7 @@ function private function_7bbc24bc9f4693bb( instance, part, state, player, plear
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1e74
+// Checksum 0x0, Offset: 0x1e76
 // Size: 0x8d, Type: bool
 function private function_30655e044834fc14( var_e501c18e04378d20 )
 {
@@ -781,7 +781,7 @@ function private function_30655e044834fc14( var_e501c18e04378d20 )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1f0a
+// Checksum 0x0, Offset: 0x1f0c
 // Size: 0x19c, Type: bool
 function private function_fec9399c00988060( var_784c8ada1184ff89 )
 {
@@ -825,7 +825,7 @@ function private function_fec9399c00988060( var_784c8ada1184ff89 )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x20af
+// Checksum 0x0, Offset: 0x20b1
 // Size: 0x75
 function private function_7eea956b4d052875( playerswitching, var_784c8ada1184ff89 )
 {
@@ -845,7 +845,7 @@ function private function_7eea956b4d052875( playerswitching, var_784c8ada1184ff8
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x212c
+// Checksum 0x0, Offset: 0x212e
 // Size: 0xb4
 function private function_c26f981347110521( didconfirm )
 {
@@ -878,8 +878,8 @@ function private function_c26f981347110521( didconfirm )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21e8
+// Params 1
+// Checksum 0x0, Offset: 0x21ea
 // Size: 0x5d
 function function_4216d7bae9b2f46b( playerswitching )
 {
@@ -903,8 +903,8 @@ function function_4216d7bae9b2f46b( playerswitching )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x224d
+// Params 0
+// Checksum 0x0, Offset: 0x224f
 // Size: 0xaa
 function playerrespawn()
 {
@@ -933,7 +933,7 @@ function playerrespawn()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x22ff
+// Checksum 0x0, Offset: 0x2301
 // Size: 0xb1
 function private function_e163b2023ba2bfc6( deathpos )
 {
@@ -956,7 +956,7 @@ function private function_e163b2023ba2bfc6( deathpos )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x23b8
+// Checksum 0x0, Offset: 0x23ba
 // Size: 0x14a
 function private function_c3ff897e4de174f9( cameraent, deathpos )
 {
@@ -980,7 +980,7 @@ function private function_c3ff897e4de174f9( cameraent, deathpos )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x250a
+// Checksum 0x0, Offset: 0x250c
 // Size: 0x7e
 function private function_93267d1b12626524( cameraent )
 {
@@ -992,7 +992,7 @@ function private function_93267d1b12626524( cameraent )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2590
+// Checksum 0x0, Offset: 0x2592
 // Size: 0x9c
 function private function_7bc6ee82d60a23ac( cameraent )
 {
@@ -1010,7 +1010,7 @@ function private function_7bc6ee82d60a23ac( cameraent )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2634
+// Checksum 0x0, Offset: 0x2636
 // Size: 0x52
 function private function_3718dcb439a51665( cameraposition, deathpos )
 {
@@ -1021,7 +1021,7 @@ function private function_3718dcb439a51665( cameraposition, deathpos )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x268e
+// Checksum 0x0, Offset: 0x2690
 // Size: 0x96
 function private function_9b68823114a3405f()
 {
@@ -1036,7 +1036,7 @@ function private function_9b68823114a3405f()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x272c
+// Checksum 0x0, Offset: 0x272e
 // Size: 0x90
 function private function_b786b6748090b866( enteringent, trigger )
 {
@@ -1061,7 +1061,7 @@ function private function_b786b6748090b866( enteringent, trigger )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x27c4
+// Checksum 0x0, Offset: 0x27c6
 // Size: 0xfc
 function private function_78d0ae2d6462054f( player, trigger )
 {
@@ -1087,7 +1087,7 @@ function private function_78d0ae2d6462054f( player, trigger )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x28c8
+// Checksum 0x0, Offset: 0x28ca
 // Size: 0x9b
 function private function_1361f5d497e474d0( exitingent, trigger )
 {
@@ -1117,7 +1117,7 @@ function private function_1361f5d497e474d0( exitingent, trigger )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x296b
+// Checksum 0x0, Offset: 0x296d
 // Size: 0x33
 function private function_bc597aac077677c5( player, trigger )
 {
@@ -1127,7 +1127,7 @@ function private function_bc597aac077677c5( player, trigger )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x29a6
+// Checksum 0x0, Offset: 0x29a8
 // Size: 0x75
 function private function_72c2355a581a6edb( trigger )
 {
@@ -1153,7 +1153,7 @@ function private function_72c2355a581a6edb( trigger )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2a23
+// Checksum 0x0, Offset: 0x2a25
 // Size: 0xd6
 function private function_a05533b81ce8225c( trigger, var_15ab90a8de6865aa )
 {
@@ -1184,7 +1184,7 @@ function private function_a05533b81ce8225c( trigger, var_15ab90a8de6865aa )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2b02
+// Checksum 0x0, Offset: 0x2b04
 // Size: 0x4c, Type: bool
 function private function_76e95d35a6cdbe41( enteringentity, trigger )
 {
@@ -1203,8 +1203,8 @@ function private function_76e95d35a6cdbe41( enteringentity, trigger )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b57
+// Params 0
+// Checksum 0x0, Offset: 0x2b59
 // Size: 0x10a
 function function_b5341d976f6c944d()
 {
@@ -1241,8 +1241,8 @@ function function_b5341d976f6c944d()
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c69
+// Params 1
+// Checksum 0x0, Offset: 0x2c6b
 // Size: 0x91
 function deletepleasfromteam( team )
 {
@@ -1265,7 +1265,7 @@ function deletepleasfromteam( team )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2d02
+// Checksum 0x0, Offset: 0x2d04
 // Size: 0x44
 function private function_58e61608aab59511( player )
 {
@@ -1284,8 +1284,8 @@ function private function_58e61608aab59511( player )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d4e
+// Params 1
+// Checksum 0x0, Offset: 0x2d50
 // Size: 0x10a
 function function_c9e6fcd7831f36af( origin )
 {
@@ -1313,7 +1313,7 @@ function function_c9e6fcd7831f36af( origin )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2e60
+// Checksum 0x0, Offset: 0x2e62
 // Size: 0x13
 function private onplayerdisconnect( player )
 {
@@ -1322,7 +1322,7 @@ function private onplayerdisconnect( player )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2e7b
+// Checksum 0x0, Offset: 0x2e7d
 // Size: 0xa
 function private onplayerrespawn()
 {
@@ -1331,7 +1331,7 @@ function private onplayerrespawn()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2e8d
+// Checksum 0x0, Offset: 0x2e8f
 // Size: 0x2b
 function private function_6bdc6f56944dc3aa( player, oldteam, newteam )
 {
@@ -1341,7 +1341,7 @@ function private function_6bdc6f56944dc3aa( player, oldteam, newteam )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 6, eflags: 0x4
-// Checksum 0x0, Offset: 0x2ec0
+// Checksum 0x0, Offset: 0x2ec2
 // Size: 0x4a
 function private function_4e60ea7d6c5ab305( instance, part, state, player, var_a5b2c541413aa895, usestring )
 {
@@ -1350,7 +1350,7 @@ function private function_4e60ea7d6c5ab305( instance, part, state, player, var_a
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f12
+// Checksum 0x0, Offset: 0x2f14
 // Size: 0x25
 function private function_5cccb32072a43854( newstatus )
 {
@@ -1360,7 +1360,7 @@ function private function_5cccb32072a43854( newstatus )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f3f
+// Checksum 0x0, Offset: 0x2f41
 // Size: 0x1c
 function private function_f3b1f4580ffb7524( var_511a034ba346f623 )
 {
@@ -1369,7 +1369,7 @@ function private function_f3b1f4580ffb7524( var_511a034ba346f623 )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f63
+// Checksum 0x0, Offset: 0x2f65
 // Size: 0x3b
 function private function_b7102c003905c9b1( splashname, var_9052970ff4bce526 )
 {
@@ -1381,7 +1381,7 @@ function private function_b7102c003905c9b1( splashname, var_9052970ff4bce526 )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2fa6
+// Checksum 0x0, Offset: 0x2fa8
 // Size: 0x57
 function private function_f4468dd443922b9e( playerswitching, var_784c8ada1184ff89, hidemessage )
 {
@@ -1400,7 +1400,7 @@ function private function_f4468dd443922b9e( playerswitching, var_784c8ada1184ff8
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3006
+// Checksum 0x0, Offset: 0x3008
 // Size: 0x33
 function private canteamassimilate( team )
 {
@@ -1414,7 +1414,7 @@ function private canteamassimilate( team )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3042
+// Checksum 0x0, Offset: 0x3044
 // Size: 0x29
 function private shouldautoacceptteamswitch()
 {
@@ -1428,7 +1428,7 @@ function private shouldautoacceptteamswitch()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3074
+// Checksum 0x0, Offset: 0x3076
 // Size: 0x13
 function private function_2e673b4c90cd35fb()
 {
@@ -1437,7 +1437,7 @@ function private function_2e673b4c90cd35fb()
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x308f
+// Checksum 0x0, Offset: 0x3091
 // Size: 0xf5
 function private function_3ee28c2ef70bb7d3( players )
 {
@@ -1469,28 +1469,28 @@ function private function_3ee28c2ef70bb7d3( players )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x318c
-// Size: 0x42, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0x318e
+// Size: 0x42
 function function_6d3365e999c489ac( squadmembers )
 {
     if ( !isdefined( squadmembers ) || !function_4db915a9ce0e903a() || !getdvarint( @"hash_a5bfce6c742aa583", 1 ) && squadmembers.size == 1 )
     {
-        return false;
+        return 0;
     }
     
     return function_9495edea61941f81( squadmembers );
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31d7
-// Size: 0x6b, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0x31d9
+// Size: 0x6b
 function function_1714ffea633dcfed( team )
 {
     if ( team == "all" || !function_4db915a9ce0e903a() || !getdvarint( @"hash_a5bfce6c742aa583", 1 ) )
     {
-        return false;
+        return 0;
     }
     
     if ( getsubgametype() == "dmz" )
@@ -1504,7 +1504,7 @@ function function_1714ffea633dcfed( team )
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x324b
+// Checksum 0x0, Offset: 0x324d
 // Size: 0xb5, Type: bool
 function private function_9495edea61941f81( players )
 {
@@ -1537,8 +1537,8 @@ function private function_9495edea61941f81( players )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3309
+// Params 0
+// Checksum 0x0, Offset: 0x330b
 // Size: 0x8f
 function function_4253eec492c87aa()
 {
@@ -1569,8 +1569,8 @@ function function_4253eec492c87aa()
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33a0
+// Params 1
+// Checksum 0x0, Offset: 0x33a2
 // Size: 0x5a
 function function_d8b32f106816afc1( player )
 {
@@ -1600,8 +1600,8 @@ function function_d8b32f106816afc1( player )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3402
+// Params 2
+// Checksum 0x0, Offset: 0x3404
 // Size: 0x14e
 function function_5df318837f8d78a2( player, squadmembers )
 {
@@ -1641,8 +1641,8 @@ function function_5df318837f8d78a2( player, squadmembers )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3558
+// Params 2
+// Checksum 0x0, Offset: 0x355a
 // Size: 0x84
 function function_c2349bc095414f22( player, squadmembers )
 {
@@ -1659,8 +1659,8 @@ function function_c2349bc095414f22( player, squadmembers )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x35e4
+// Params 2
+// Checksum 0x0, Offset: 0x35e6
 // Size: 0x46
 function function_65a09992948e3276( player, squadmembers )
 {
@@ -1674,8 +1674,8 @@ function function_65a09992948e3276( player, squadmembers )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3632
+// Params 1
+// Checksum 0x0, Offset: 0x3634
 // Size: 0x6b
 function function_6e816e7323725b59( squadmembers )
 {
@@ -1696,8 +1696,8 @@ function function_6e816e7323725b59( squadmembers )
 }
 
 // Namespace plea_for_help / scripts\mp\plea_for_help
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x36a5
+// Params 2
+// Checksum 0x0, Offset: 0x36a7
 // Size: 0x110
 function function_816b58482c18b840( pingowner, pingindex )
 {
@@ -1727,7 +1727,7 @@ function function_816b58482c18b840( pingowner, pingindex )
 
     // Namespace plea_for_help / scripts\mp\plea_for_help
     // Params 2, eflags: 0x4
-    // Checksum 0x0, Offset: 0x37bd
+    // Checksum 0x0, Offset: 0x37bf
     // Size: 0x81, Type: dev
     function private function_92a21f649c882681( players, excludeself )
     {
@@ -1749,7 +1749,7 @@ function function_816b58482c18b840( pingowner, pingindex )
 
     // Namespace plea_for_help / scripts\mp\plea_for_help
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3846
+    // Checksum 0x0, Offset: 0x3848
     // Size: 0x2a, Type: dev
     function private function_7042dba41fa6caa7()
     {
@@ -1759,7 +1759,7 @@ function function_816b58482c18b840( pingowner, pingindex )
 
     // Namespace plea_for_help / scripts\mp\plea_for_help
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3878
+    // Checksum 0x0, Offset: 0x387a
     // Size: 0x2c, Type: dev
     function private function_48837726773365a3()
     {
@@ -1769,7 +1769,7 @@ function function_816b58482c18b840( pingowner, pingindex )
 
     // Namespace plea_for_help / scripts\mp\plea_for_help
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x38ac
+    // Checksum 0x0, Offset: 0x38ae
     // Size: 0x60, Type: dev
     function private function_18e2c1e35d898fd4( players )
     {
@@ -1786,7 +1786,7 @@ function function_816b58482c18b840( pingowner, pingindex )
 
     // Namespace plea_for_help / scripts\mp\plea_for_help
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3914
+    // Checksum 0x0, Offset: 0x3916
     // Size: 0x29, Type: dev
     function private function_2d8d6f7a961651a()
     {
@@ -1796,7 +1796,7 @@ function function_816b58482c18b840( pingowner, pingindex )
 
     // Namespace plea_for_help / scripts\mp\plea_for_help
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3945
+    // Checksum 0x0, Offset: 0x3947
     // Size: 0x29, Type: dev
     function private function_7d0bc76589236066()
     {
@@ -1806,7 +1806,7 @@ function function_816b58482c18b840( pingowner, pingindex )
 
     // Namespace plea_for_help / scripts\mp\plea_for_help
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3976
+    // Checksum 0x0, Offset: 0x3978
     // Size: 0x3c, Type: dev
     function private function_ae60e43aa67248ec()
     {
@@ -1821,8 +1821,8 @@ function function_816b58482c18b840( pingowner, pingindex )
     }
 
     // Namespace plea_for_help / scripts\mp\plea_for_help
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x39ba
+    // Params 1
+    // Checksum 0x0, Offset: 0x39bc
     // Size: 0x8c8, Type: dev
     function runcommand( command )
     {
@@ -2095,8 +2095,8 @@ function function_816b58482c18b840( pingowner, pingindex )
     }
 
     // Namespace plea_for_help / scripts\mp\plea_for_help
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x428a
+    // Params 1
+    // Checksum 0x0, Offset: 0x428c
     // Size: 0x88, Type: dev
     function function_23338d1c114a5c21( squadmates )
     {

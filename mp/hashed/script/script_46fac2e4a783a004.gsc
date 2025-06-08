@@ -6,7 +6,7 @@
 #namespace namespace_818db91055f1f65e;
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22c
 // Size: 0x25
 function main()
@@ -18,7 +18,7 @@ function main()
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x259
 // Size: 0xfe
 function function_b7281bfb9645666( h, s, v )
@@ -64,7 +64,7 @@ function function_b7281bfb9645666( h, s, v )
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x360
 // Size: 0xbf
 function function_c0331162f149609c( duration )
@@ -95,7 +95,7 @@ function function_c0331162f149609c( duration )
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x427
 // Size: 0x8a
 function function_ead09275bb875c19()
@@ -110,7 +110,7 @@ function function_ead09275bb875c19()
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b9
 // Size: 0xd7
 function bink_display_lights()
@@ -141,7 +141,7 @@ function bink_display_lights()
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x598
 // Size: 0x27f
 function bink_display_lights_single_shot()
@@ -197,7 +197,7 @@ function bink_display_lights_single_shot()
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x81f
 // Size: 0xf8
 function function_9070eca46954f112( col1, col2, duration, speed, changeintensity, var_b153a77942d79d3b )
@@ -212,7 +212,8 @@ function function_9070eca46954f112( col1, col2, duration, speed, changeintensity
     
     steps = floor( duration * 20 );
     
-    for (i = 0; i < steps; i++) {
+    for ( i = 0; i < steps ; i++ )
+    {
         t1 = pulse_function( i * speed );
         blend_col = vectorlerp( col1, col2, t1 );
         self setlightcolor( blend_col );
@@ -229,7 +230,7 @@ function function_9070eca46954f112( col1, col2, duration, speed, changeintensity
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x91f
 // Size: 0x9b
 function lerp_light_color_to( col, duration )
@@ -239,7 +240,8 @@ function lerp_light_color_to( col, duration )
     curr_col = self getlightcolor();
     steps = floor( duration * 20 );
     
-    for (i = 0; i < steps; i++) {
+    for ( i = 0; i < steps ; i++ )
+    {
         t = float( ( i + 1 ) / steps );
         t = t * t * t;
         blend_col = vectorlerp( curr_col, col, t );
@@ -249,7 +251,7 @@ function lerp_light_color_to( col, duration )
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9c2
 // Size: 0x95
 function lerp_light_color_from_to( from_col, to_col, duration )
@@ -259,7 +261,8 @@ function lerp_light_color_from_to( from_col, to_col, duration )
     self setlightcolor( from_col );
     steps = floor( duration * 20 );
     
-    for (i = 0; i < steps; i++) {
+    for ( i = 0; i < steps ; i++ )
+    {
         t = float( ( i + 1 ) / steps );
         blend_col = vectorlerp( from_col, to_col, t );
         self setlightcolor( blend_col );
@@ -268,7 +271,7 @@ function lerp_light_color_from_to( from_col, to_col, duration )
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa5f
 // Size: 0x4c
 function pulse_function( x )
@@ -278,7 +281,7 @@ function pulse_function( x )
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xab4
 // Size: 0xd0
 function lerp_rgb_wheel( duration, var_7c6637a253602501, var_46be16725eefeedd )
@@ -299,7 +302,8 @@ function lerp_rgb_wheel( duration, var_7c6637a253602501, var_46be16725eefeedd )
     self setlightcolor( function_b7281bfb9645666( var_7c6637a253602501, var_46be16725eefeedd, 1 ) );
     steps = floor( duration * 20 );
     
-    for (i = 0; i < steps; i++) {
+    for ( i = 0; i < steps ; i++ )
+    {
         t = float( i / steps );
         self setlightcolor( function_b7281bfb9645666( 360 * t + var_7c6637a253602501, var_46be16725eefeedd, 1 ) );
         wait 0.05;
@@ -309,7 +313,7 @@ function lerp_rgb_wheel( duration, var_7c6637a253602501, var_46be16725eefeedd )
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb8c
 // Size: 0x14f
 function function_569aec3f2378f201()
@@ -335,7 +339,7 @@ function function_569aec3f2378f201()
 }
 
 // Namespace namespace_818db91055f1f65e / namespace_1e316f64ce872d7a
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xce3
 // Size: 0xe2
 function grandprix_fire_flicker( lower, higher, full, min_time, max_time )
@@ -350,12 +354,14 @@ function grandprix_fire_flicker( lower, higher, full, min_time, max_time )
         return;
     }
     
-    for (old_intensity = full; ; old_intensity = intensity) {
+    for ( old_intensity = full;  ; old_intensity = intensity )
+    {
         intensity = randomfloatrange( full * lower, full * higher );
         timer = randomfloatrange( min_time, max_time );
         timer *= 20;
         
-        for (i = 0; i < timer; i++) {
+        for ( i = 0; i < timer ; i++ )
+        {
             new_intensity = intensity * i / timer + old_intensity * ( timer - i ) / timer;
             self setlightintensity( new_intensity );
             wait 0.05;

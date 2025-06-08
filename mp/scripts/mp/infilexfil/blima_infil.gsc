@@ -16,7 +16,7 @@
 #namespace blima_infil;
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xacb
 // Size: 0x64
 function function_6cb969a7647dc10f( subtype )
@@ -33,7 +33,7 @@ function function_6cb969a7647dc10f( subtype )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb37
 // Size: 0xfd
 function function_41496c26b8d3660c( team, target, subtype, originalsubtype )
@@ -58,7 +58,7 @@ function function_41496c26b8d3660c( team, target, subtype, originalsubtype )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc3d
 // Size: 0x281
 function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubtype )
@@ -136,7 +136,7 @@ function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubty
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec6
 // Size: 0x32
 function function_807b3e73f0750918( subtype )
@@ -146,7 +146,7 @@ function function_807b3e73f0750918( subtype )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf01
 // Size: 0x298
 function function_807c8f0e4f5ad6( infil, spot_index )
@@ -222,7 +222,7 @@ function function_807c8f0e4f5ad6( infil, spot_index )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11a1
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -240,7 +240,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11e5
 // Size: 0x46
 function player_infil_end()
@@ -255,7 +255,7 @@ function player_infil_end()
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1233
 // Size: 0xd2
 function infil_radio_idle( infil )
@@ -290,7 +290,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x130d
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -306,7 +306,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1343
 // Size: 0x4c
 function player_disconnect()
@@ -325,7 +325,7 @@ function player_disconnect()
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1397
 // Size: 0xf1
 function spawnactors( team, scene_name, extra_crew )
@@ -345,7 +345,7 @@ function spawnactors( team, scene_name, extra_crew )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1490
 // Size: 0x140
 function infilthink( team, scene_name )
@@ -377,7 +377,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15d8
 // Size: 0x1b1
 function ropethink( scene_name )
@@ -396,7 +396,7 @@ function ropethink( scene_name )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1791
 // Size: 0x29f
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -450,7 +450,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a38
 // Size: 0xcb
 function function_d3637718a981e89b( animlength, scene_name )
@@ -475,7 +475,7 @@ function function_d3637718a981e89b( animlength, scene_name )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1b0b
 // Size: 0x109
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -499,7 +499,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1c1c
 // Size: 0x245
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -597,7 +597,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e6a
 // Size: 0x74d
 function initanims( subtype, team, originalsubtype )
@@ -679,7 +679,7 @@ function initanims( subtype, team, originalsubtype )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25bf
 // Size: 0x2ed
 function script_model_alpha_anims( subtype )
@@ -715,7 +715,7 @@ function script_model_alpha_anims( subtype )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28b4
 // Size: 0xc5
 function vehicles_alpha_anims( subtype, team, originalsubtype )
@@ -735,7 +735,7 @@ function vehicles_alpha_anims( subtype, team, originalsubtype )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2981
 // Size: 0x166
 function spawninfilvehicle( scene_node, team, scene_name )
@@ -785,7 +785,7 @@ function spawninfilvehicle( scene_node, team, scene_name )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2af0
 // Size: 0x3f
 function getcommanderassets( team )
@@ -797,7 +797,7 @@ function getcommanderassets( team )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b38
 // Size: 0x45
 function customground( guy )
@@ -819,7 +819,7 @@ function customground( guy )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b85
 // Size: 0x2f
 function resetfov()
@@ -835,7 +835,7 @@ function resetfov()
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bbc
 // Size: 0xee
 function function_8c1c6f0a556c30e9( subtype )
@@ -866,7 +866,7 @@ function function_8c1c6f0a556c30e9( subtype )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cb3
 // Size: 0xca
 function function_7e05c22e552b8eed( var_addd3217bc59a7b8 )
@@ -891,7 +891,7 @@ function function_7e05c22e552b8eed( var_addd3217bc59a7b8 )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d85
 // Size: 0x9a
 function function_89a2405953b84136( var_addd3217bc59a7b8, override_og )
@@ -915,7 +915,7 @@ function function_89a2405953b84136( var_addd3217bc59a7b8, override_og )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2e27
 // Size: 0x109
 function modifyscenenode( infil, team, subtype )
@@ -954,7 +954,7 @@ function modifyscenenode( infil, team, subtype )
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f38
 // Size: 0x3d
 function function_f764364c2ac0250d()
@@ -973,7 +973,7 @@ function function_f764364c2ac0250d()
 }
 
 // Namespace blima_infil / scripts\mp\infilexfil\blima_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f7d
 // Size: 0x21
 function function_6158ef142e9bd640()

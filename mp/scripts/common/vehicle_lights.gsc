@@ -5,7 +5,7 @@
 #namespace vehicle_lights;
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11e
 // Size: 0x38
 function lights_on( group, classname )
@@ -15,7 +15,7 @@ function lights_on( group, classname )
 }
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15e
 // Size: 0x198
 function group_light( model, name, group )
@@ -47,7 +47,7 @@ function group_light( model, name, group )
 }
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fe
 // Size: 0x73
 function lights_delayfxforframe()
@@ -72,7 +72,7 @@ function lights_delayfxforframe()
 }
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x379
 // Size: 0x22f
 function lights_off_internal( group, model, classname )
@@ -149,7 +149,7 @@ function lights_off_internal( group, model, classname )
 }
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0x2e9
 function lights_on_internal( group, model )
@@ -251,7 +251,7 @@ function lights_on_internal( group, model )
 }
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8a1
 // Size: 0x42
 function lights_off( group, model, classname )

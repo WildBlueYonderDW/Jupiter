@@ -24,8 +24,8 @@
 #namespace br_rewards;
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f3
+// Params 0
+// Checksum 0x0, Offset: 0x4f2
 // Size: 0x4a
 function init_br_rewards()
 {
@@ -38,8 +38,8 @@ function init_br_rewards()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x545
+// Params 4
+// Checksum 0x0, Offset: 0x544
 // Size: 0xa9
 function runmissionrewarddelivery( var_96fb3d33fbd543f9, creditplayer, streakname, streaktier )
 {
@@ -75,8 +75,8 @@ function runmissionrewarddelivery( var_96fb3d33fbd543f9, creditplayer, streaknam
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f6
+// Params 3
+// Checksum 0x0, Offset: 0x5f5
 // Size: 0x490
 function runkillstreakreward( location, creditplayer, streakname )
 {
@@ -182,8 +182,8 @@ function runkillstreakreward( location, creditplayer, streakname )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8e
+// Params 3
+// Checksum 0x0, Offset: 0xa8d
 // Size: 0x47
 function dropcrate( killstreakname, droplocation, team )
 {
@@ -192,8 +192,8 @@ function dropcrate( killstreakname, droplocation, team )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xade
+// Params 3
+// Checksum 0x0, Offset: 0xadd
 // Size: 0x132
 function docratedropsmoke( crate, droplocation, duration )
 {
@@ -220,8 +220,8 @@ function docratedropsmoke( crate, droplocation, duration )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc18
+// Params 1
+// Checksum 0x0, Offset: 0xc17
 // Size: 0x49
 function getkillstreak( tier )
 {
@@ -235,8 +235,8 @@ function getkillstreak( tier )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6a
+// Params 0
+// Checksum 0x0, Offset: 0xc69
 // Size: 0x26a
 function br_getrandomkillstreakreward()
 {
@@ -350,8 +350,8 @@ function br_getrandomkillstreakreward()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xedc
+// Params 0
+// Checksum 0x0, Offset: 0xedb
 // Size: 0xa6
 function processkillstreaksintotiers()
 {
@@ -363,8 +363,8 @@ function processkillstreaksintotiers()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8a
+// Params 1
+// Checksum 0x0, Offset: 0xf89
 // Size: 0x52
 function br_getrewardicon( streakname )
 {
@@ -379,8 +379,8 @@ function br_getrewardicon( streakname )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe5
+// Params 1
+// Checksum 0x0, Offset: 0xfe4
 // Size: 0x6f
 function dropweaponcarepackage( position )
 {
@@ -400,8 +400,8 @@ function dropweaponcarepackage( position )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x105d
+// Params 0
+// Checksum 0x0, Offset: 0x105c
 // Size: 0x18f
 function initdropbagsystem()
 {
@@ -437,8 +437,8 @@ function initdropbagsystem()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f4
+// Params 0
+// Checksum 0x0, Offset: 0x11f3
 // Size: 0x15
 function initdropbagvo()
 {
@@ -446,8 +446,8 @@ function initdropbagvo()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1211
+// Params 1
+// Checksum 0x0, Offset: 0x1210
 // Size: 0x5b1
 function precomputedropbagpositions( var_d0de15f793f14825 )
 {
@@ -529,8 +529,8 @@ function precomputedropbagpositions( var_d0de15f793f14825 )
         var_342822c35fba7025 = level.dropbagstruct.clusters[ 0 ].droplocations.size;
     }
     
-    var_2827e1b47ae2ab6e = getdvarfloat( @"hash_ccc87b710135b98b", 3000 );
-    var_deeef4b8cb10cae0 = getdvarfloat( @"hash_2c7210432530f899", 7000 );
+    var_2827e1b47ae2ab6e = getdvarfloat( @"scr_dropbag_mindist", 3000 );
+    var_deeef4b8cb10cae0 = getdvarfloat( @"scr_dropbag_maxdist", 7000 );
     defaultpos = spawnstruct();
     defaultpos.origin = ( 0, 0, 0 );
     positions = [ defaultpos ];
@@ -552,7 +552,8 @@ function precomputedropbagpositions( var_d0de15f793f14825 )
     {
         assert( positions.size == playerlist.size );
         
-        for (i = 0; i < positions.size; i++) {
+        for ( i = 0; i < positions.size ; i++ )
+        {
             player = playerlist[ i ];
             
             if ( isdefined( positions[ i ].node ) )
@@ -578,8 +579,8 @@ function precomputedropbagpositions( var_d0de15f793f14825 )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ca
+// Params 0
+// Checksum 0x0, Offset: 0x17c9
 // Size: 0x154
 function managedropbags()
 {
@@ -629,8 +630,8 @@ function managedropbags()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1926
+// Params 3
+// Checksum 0x0, Offset: 0x1925
 // Size: 0xca
 function function_b90101a9db963bd1( dangercircleorigin, dangercircleradius, thresholdradius )
 {
@@ -654,8 +655,8 @@ function function_b90101a9db963bd1( dangercircleorigin, dangercircleradius, thre
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19f8
+// Params 3
+// Checksum 0x0, Offset: 0x19f7
 // Size: 0xcb
 function function_26a4c7cf6da4e2c0( dangercircleorigin, dangercircleradius, thresholdradius )
 {
@@ -677,8 +678,8 @@ function function_26a4c7cf6da4e2c0( dangercircleorigin, dangercircleradius, thre
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1acb
+// Params 2
+// Checksum 0x0, Offset: 0x1aca
 // Size: 0xed
 function cleanupallbutxcratesforteam( team, cratecount )
 {
@@ -701,15 +702,16 @@ function cleanupallbutxcratesforteam( team, cratecount )
         return;
     }
     
-    for (index = var_6e95fa22aad7c8a5 - 1; index >= 0; index--) {
+    for ( index = var_6e95fa22aad7c8a5 - 1; index >= 0 ; index-- )
+    {
         var_4f7ec11230295c92 = var_52190e94ba536878[ index ];
         var_4f7ec11230295c92 thread scripts\cp_mp\killstreaks\airdrop::destroycrate();
     }
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bc0
+// Params 1
+// Checksum 0x0, Offset: 0x1bbf
 // Size: 0xcf, Type: bool
 function function_b4255b6f102b056d( var_26784414a3b75d58 )
 {
@@ -734,8 +736,8 @@ function function_b4255b6f102b056d( var_26784414a3b75d58 )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c98
+// Params 2
+// Checksum 0x0, Offset: 0x1c97
 // Size: 0x29a
 function spawndropbagatposition( pos, dropbagspawntypeenum )
 {
@@ -809,8 +811,8 @@ function spawndropbagatposition( pos, dropbagspawntypeenum )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f3a
+// Params 0
+// Checksum 0x0, Offset: 0x1f39
 // Size: 0x21
 function function_164a7aa37ea0f8dd()
 {
@@ -820,8 +822,8 @@ function function_164a7aa37ea0f8dd()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f63
+// Params 1
+// Checksum 0x0, Offset: 0x1f62
 // Size: 0x1d7
 function spawndropbagsovertime( playerlist )
 {
@@ -899,8 +901,8 @@ function spawndropbagsovertime( playerlist )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2142
+// Params 0
+// Checksum 0x0, Offset: 0x2141
 // Size: 0x96
 function spawndropbagonlanding()
 {
@@ -909,8 +911,8 @@ function spawndropbagonlanding()
     
     if ( !isdefined( choosenlocation ) )
     {
-        var_2827e1b47ae2ab6e = getdvarfloat( @"hash_ccc87b710135b98b", 3000 );
-        var_deeef4b8cb10cae0 = getdvarfloat( @"hash_2c7210432530f899", 7000 );
+        var_2827e1b47ae2ab6e = getdvarfloat( @"scr_dropbag_mindist", 3000 );
+        var_deeef4b8cb10cae0 = getdvarfloat( @"scr_dropbag_maxdist", 7000 );
         choosenlocation = calculatedroplocationnearlocation( self, var_2827e1b47ae2ab6e, var_deeef4b8cb10cae0 );
     }
     
@@ -923,14 +925,14 @@ function spawndropbagonlanding()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21e0
+// Params 1
+// Checksum 0x0, Offset: 0x21df
 // Size: 0x1d4
 function findunuseddropbaglocation( player )
 {
     var_16add9d62303e2d6 = [];
-    var_2827e1b47ae2ab6e = getdvarfloat( @"hash_ccc87b710135b98b", 3000 );
-    var_deeef4b8cb10cae0 = getdvarfloat( @"hash_2c7210432530f899", 7000 );
+    var_2827e1b47ae2ab6e = getdvarfloat( @"scr_dropbag_mindist", 3000 );
+    var_deeef4b8cb10cae0 = getdvarfloat( @"scr_dropbag_maxdist", 7000 );
     mindistsq = var_2827e1b47ae2ab6e * var_2827e1b47ae2ab6e;
     maxdistsq = var_deeef4b8cb10cae0 * var_deeef4b8cb10cae0;
     
@@ -970,8 +972,8 @@ function findunuseddropbaglocation( player )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23bd
+// Params 2
+// Checksum 0x0, Offset: 0x23bc
 // Size: 0x55
 function enabledropbagobjective( crate, spawntypeenum )
 {
@@ -990,8 +992,8 @@ function enabledropbagobjective( crate, spawntypeenum )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x241a
+// Params 1
+// Checksum 0x0, Offset: 0x2419
 // Size: 0x4f
 function function_4587a2683d863277( crate )
 {
@@ -1008,8 +1010,8 @@ function function_4587a2683d863277( crate )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2471
+// Params 1
+// Checksum 0x0, Offset: 0x2470
 // Size: 0x29
 function disabledropbagobjective( crate )
 {
@@ -1018,8 +1020,8 @@ function disabledropbagobjective( crate )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24a2
+// Params 1
+// Checksum 0x0, Offset: 0x24a1
 // Size: 0x24
 function choosedropbagmodel( crate )
 {
@@ -1028,8 +1030,8 @@ function choosedropbagmodel( crate )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24ce
+// Params 1
+// Checksum 0x0, Offset: 0x24cd
 // Size: 0x81
 function delaydropbags( var_70bcbf0ad5028219 )
 {
@@ -1051,8 +1053,8 @@ function delaydropbags( var_70bcbf0ad5028219 )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2557
+// Params 0
+// Checksum 0x0, Offset: 0x2556
 // Size: 0x16f
 function allowreuseofalldropbags()
 {
@@ -1074,7 +1076,8 @@ function allowreuseofalldropbags()
         {
             crate.playerscaptured[ self getentitynumber() ] = undefined;
             
-            for (index = 0; index < crate.playersused.size; index++) {
+            for ( index = 0; index < crate.playersused.size ; index++ )
+            {
                 if ( isdefined( crate.playersused[ index ] ) && crate.playersused[ index ] == self )
                 {
                     crate.playersused[ index ] = undefined;
@@ -1093,8 +1096,8 @@ function allowreuseofalldropbags()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26ce
+// Params 0
+// Checksum 0x0, Offset: 0x26cd
 // Size: 0x9
 function onplayerrespawn()
 {
@@ -1102,8 +1105,8 @@ function onplayerrespawn()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x26df
+// Params 6
+// Checksum 0x0, Offset: 0x26de
 // Size: 0x8e
 function getdropbagspawntypeenum( var_dbe2a1d0a7766cfc, var_ef7a6a300ebf9493, isfromgrenade, var_283b7b1c42ab77de, var_fc0b9eab91a21b10, var_56f78457d5bfbac6 )
 {
@@ -1146,8 +1149,8 @@ function getdropbagspawntypeenum( var_dbe2a1d0a7766cfc, var_ef7a6a300ebf9493, is
 /#
 
     // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2776
+    // Params 0
+    // Checksum 0x0, Offset: 0x2775
     // Size: 0x85, Type: dev
     function function_efb496dab102df58()
     {
@@ -1171,8 +1174,8 @@ function getdropbagspawntypeenum( var_dbe2a1d0a7766cfc, var_ef7a6a300ebf9493, is
 #/
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2803
+// Params 0
+// Checksum 0x0, Offset: 0x2802
 // Size: 0x22
 function testmissionrewards()
 {
@@ -1180,8 +1183,8 @@ function testmissionrewards()
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x282d
+// Params 1
+// Checksum 0x0, Offset: 0x282c
 // Size: 0xf6
 function findclosestdroplocation( startlocation )
 {
@@ -1205,8 +1208,8 @@ function findclosestdroplocation( startlocation )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x292c
+// Params 2
+// Checksum 0x0, Offset: 0x292b
 // Size: 0x46, Type: bool
 function sortlocationsbydistance( location1, location2 )
 {
@@ -1214,8 +1217,8 @@ function sortlocationsbydistance( location1, location2 )
 }
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x297b
+// Params 3
+// Checksum 0x0, Offset: 0x297a
 // Size: 0x246
 function calculatedroplocationnearlocation( location, mindist, maxdist )
 {
@@ -1286,8 +1289,8 @@ function calculatedroplocationnearlocation( location, mindist, maxdist )
 /#
 
     // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2bca
+    // Params 1
+    // Checksum 0x0, Offset: 0x2bc9
     // Size: 0x28, Type: dev
     function debugsphereonlocation( origin )
     {
@@ -1297,8 +1300,8 @@ function calculatedroplocationnearlocation( location, mindist, maxdist )
 #/
 
 // Namespace br_rewards / scripts\mp\gametypes\br_rewards
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bfa
+// Params 2
+// Checksum 0x0, Offset: 0x2bf9
 // Size: 0xb2
 function maskobjectivetoplayerssquad( objective, var_9c34764b7d5ac247 )
 {

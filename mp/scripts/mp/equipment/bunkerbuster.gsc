@@ -1,4 +1,5 @@
 #using scripts\cp_mp\utility\equipment_utility;
+#using scripts\cp_mp\utility\game_utility;
 #using scripts\cp_mp\utility\player_utility;
 #using scripts\cp_mp\utility\weapon_utility;
 #using scripts\cp_mp\vehicles\vehicle;
@@ -14,8 +15,8 @@
 #namespace bunkerbuster;
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c7
+// Params 2
+// Checksum 0x0, Offset: 0x5fc
 // Size: 0x265
 function function_d5fe78860931c577( glgrenade, objweapon )
 {
@@ -85,8 +86,8 @@ function function_d5fe78860931c577( glgrenade, objweapon )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x834
+// Params 1
+// Checksum 0x0, Offset: 0x869
 // Size: 0x21f
 function function_6678508c238dd0ff( glgrenade )
 {
@@ -153,8 +154,8 @@ function function_6678508c238dd0ff( glgrenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5b
+// Params 1
+// Checksum 0x0, Offset: 0xa90
 // Size: 0x3a3
 function function_dbfdf0162b929b01( grenade )
 {
@@ -183,8 +184,8 @@ function function_dbfdf0162b929b01( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe06
+// Params 1
+// Checksum 0x0, Offset: 0xe3b
 // Size: 0xa6
 function function_3d78dd516c25ef77( grenade )
 {
@@ -213,9 +214,9 @@ function function_3d78dd516c25ef77( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb4
-// Size: 0x193
+// Params 2
+// Checksum 0x0, Offset: 0xee9
+// Size: 0x1c2
 function function_2d7c3d3cba3b7824( grenade, stuckdata )
 {
     level endon( "game_ended" );
@@ -253,7 +254,14 @@ function function_2d7c3d3cba3b7824( grenade, stuckdata )
         }
         else if ( stuckto.classname == "script_vehicle" )
         {
-            function_6e25a608eafbc362( grenade, stuckto );
+            if ( scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5() == "limbo" && stuckto.targetname == "veh_jup_space_shipment_transport" )
+            {
+                function_1a7e2803d7ddf81a( grenade );
+            }
+            else
+            {
+                function_6e25a608eafbc362( grenade, stuckto );
+            }
         }
         else
         {
@@ -267,8 +275,8 @@ function function_2d7c3d3cba3b7824( grenade, stuckdata )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x104f
+// Params 1
+// Checksum 0x0, Offset: 0x10b3
 // Size: 0x36
 function function_ad251ef4525bded7( grenade )
 {
@@ -279,8 +287,8 @@ function function_ad251ef4525bded7( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x108d
+// Params 1
+// Checksum 0x0, Offset: 0x10f1
 // Size: 0x36
 function function_1a7e2803d7ddf81a( grenade )
 {
@@ -291,8 +299,8 @@ function function_1a7e2803d7ddf81a( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10cb
+// Params 3
+// Checksum 0x0, Offset: 0x112f
 // Size: 0x34
 function function_34d256476dec6ee7( grenade, stuckto, hasriotshield )
 {
@@ -306,8 +314,8 @@ function function_34d256476dec6ee7( grenade, stuckto, hasriotshield )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1107
+// Params 2
+// Checksum 0x0, Offset: 0x116b
 // Size: 0xde
 function function_649e631c4395e0c( grenade, stuckto )
 {
@@ -325,8 +333,8 @@ function function_649e631c4395e0c( grenade, stuckto )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ed
+// Params 2
+// Checksum 0x0, Offset: 0x1251
 // Size: 0x91
 function function_e0f1675a8fe53d0( grenade, stuckto )
 {
@@ -347,8 +355,8 @@ function function_e0f1675a8fe53d0( grenade, stuckto )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1286
+// Params 1
+// Checksum 0x0, Offset: 0x12ea
 // Size: 0xdd
 function function_7685538105c42e44( grenade )
 {
@@ -358,15 +366,16 @@ function function_7685538105c42e44( grenade )
     starttime = gettime();
     self playlocalsound( "eqp_bunkerbuster_drill_npc" );
     
-    for (curticks = 0; curticks < numticks; curticks++) {
+    for ( curticks = 0; curticks < numticks ; curticks++ )
+    {
         self dodamage( var_e601acf6ad00af27, grenade.origin, grenade.owner, grenade, "MOD_RIFLE_BULLET", grenade.weapon_object, "torso_upper" );
         wait maxtime / numticks;
     }
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x136b
+// Params 1
+// Checksum 0x0, Offset: 0x13cf
 // Size: 0x29a
 function function_9c1241b88a86e763( grenade )
 {
@@ -436,8 +445,8 @@ function function_9c1241b88a86e763( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x160d
+// Params 5
+// Checksum 0x0, Offset: 0x1671
 // Size: 0x198
 function function_c8fd05bf21971a04( grenade, digstate, spawnoffset, referencevec, var_417c6cdaf53e0dce )
 {
@@ -484,8 +493,8 @@ function function_c8fd05bf21971a04( grenade, digstate, spawnoffset, referencevec
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ad
+// Params 2
+// Checksum 0x0, Offset: 0x1811
 // Size: 0xaa
 function function_2c9ec2084ca01277( grenade, grenadestate )
 {
@@ -510,8 +519,8 @@ function function_2c9ec2084ca01277( grenade, grenadestate )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x185f
+// Params 2
+// Checksum 0x0, Offset: 0x18c3
 // Size: 0x5c
 function function_6e25a608eafbc362( grenade, vehicle )
 {
@@ -524,8 +533,8 @@ function function_6e25a608eafbc362( grenade, vehicle )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x18c3
+// Params 3
+// Checksum 0x0, Offset: 0x1927
 // Size: 0x187
 function function_5f9b222ef93f265e( grenade, spawnoffset, surfacenormal )
 {
@@ -555,8 +564,8 @@ function function_5f9b222ef93f265e( grenade, spawnoffset, surfacenormal )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a52
+// Params 1
+// Checksum 0x0, Offset: 0x1ab6
 // Size: 0xbe
 function function_3a35103112044e22( grenade )
 {
@@ -570,8 +579,8 @@ function function_3a35103112044e22( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b18
+// Params 2
+// Checksum 0x0, Offset: 0x1b7c
 // Size: 0xbc
 function function_88831f8be20721fe( grenade, spawnpoint )
 {
@@ -585,8 +594,8 @@ function function_88831f8be20721fe( grenade, spawnpoint )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bdc
+// Params 3
+// Checksum 0x0, Offset: 0x1c40
 // Size: 0x7b
 function function_8f7774e4e68d2a43( grenade, var_cb3a5854c8269a89, surfacevec )
 {
@@ -604,8 +613,8 @@ function function_8f7774e4e68d2a43( grenade, var_cb3a5854c8269a89, surfacevec )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c5f
+// Params 2
+// Checksum 0x0, Offset: 0x1cc3
 // Size: 0x446
 function function_500b28a55f3ecc0e( grenade, grenadestate )
 {
@@ -699,8 +708,8 @@ function function_500b28a55f3ecc0e( grenade, grenadestate )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20ad
+// Params 1
+// Checksum 0x0, Offset: 0x2111
 // Size: 0x5e
 function function_1cdf454e2f856a7f( grenade )
 {
@@ -719,8 +728,8 @@ function function_1cdf454e2f856a7f( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2113
+// Params 0
+// Checksum 0x0, Offset: 0x2177
 // Size: 0x69
 function function_239a8ac31714b354()
 {
@@ -746,8 +755,8 @@ function function_239a8ac31714b354()
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2185
+// Params 2
+// Checksum 0x0, Offset: 0x21e9
 // Size: 0x1b1
 function function_e5be7a1f18a659fb( grenade, vehicle )
 {
@@ -792,8 +801,8 @@ function function_e5be7a1f18a659fb( grenade, vehicle )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x233e
+// Params 2
+// Checksum 0x0, Offset: 0x23a2
 // Size: 0x56
 function function_e41a24ef376dbf52( grenade, player )
 {
@@ -807,8 +816,8 @@ function function_e41a24ef376dbf52( grenade, player )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x239c
+// Params 0
+// Checksum 0x0, Offset: 0x2400
 // Size: 0x37
 function function_be84a39b52576d18()
 {
@@ -819,8 +828,8 @@ function function_be84a39b52576d18()
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23db
+// Params 2
+// Checksum 0x0, Offset: 0x243f
 // Size: 0x94
 function function_a5a20b852c325190( immediate, var_5996067fa75e09d4 )
 {
@@ -852,8 +861,8 @@ function function_a5a20b852c325190( immediate, var_5996067fa75e09d4 )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2477
+// Params 0
+// Checksum 0x0, Offset: 0x24db
 // Size: 0x18
 function function_f0acd469ce8642b9()
 {
@@ -863,8 +872,8 @@ function function_f0acd469ce8642b9()
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2497
+// Params 0
+// Checksum 0x0, Offset: 0x24fb
 // Size: 0x1f
 function function_e241396812ed67b2()
 {
@@ -875,8 +884,8 @@ function function_e241396812ed67b2()
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24be
+// Params 0
+// Checksum 0x0, Offset: 0x2522
 // Size: 0x6e
 function function_7f69923dc06f01d7()
 {
@@ -897,8 +906,8 @@ function function_7f69923dc06f01d7()
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2534
+// Params 1
+// Checksum 0x0, Offset: 0x2598
 // Size: 0x8f
 function function_66629d921c921905( data )
 {
@@ -920,8 +929,8 @@ function function_66629d921c921905( data )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25cb
+// Params 1
+// Checksum 0x0, Offset: 0x262f
 // Size: 0x8f
 function function_c4ea262b1d9b9791( data )
 {
@@ -943,8 +952,8 @@ function function_c4ea262b1d9b9791( data )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2662
+// Params 1
+// Checksum 0x0, Offset: 0x26c6
 // Size: 0x1e
 function function_b628a9f30e4b39c7( grenade )
 {
@@ -957,8 +966,8 @@ function function_b628a9f30e4b39c7( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2688
+// Params 1
+// Checksum 0x0, Offset: 0x26ec
 // Size: 0x3a
 function function_c38d0c6d56a3d8bc( grenade )
 {
@@ -971,8 +980,8 @@ function function_c38d0c6d56a3d8bc( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26ca
+// Params 1
+// Checksum 0x0, Offset: 0x272e
 // Size: 0x24
 function function_5c205dc5e843711c( grenade )
 {
@@ -985,8 +994,8 @@ function function_5c205dc5e843711c( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26f6
+// Params 1
+// Checksum 0x0, Offset: 0x275a
 // Size: 0x5d
 function function_85123e3a93096cb( grenade )
 {
@@ -1013,8 +1022,8 @@ function function_85123e3a93096cb( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x275b
+// Params 1
+// Checksum 0x0, Offset: 0x27bf
 // Size: 0x5d
 function function_4bdb5fce70a89130( grenade )
 {
@@ -1041,8 +1050,8 @@ function function_4bdb5fce70a89130( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27c0
+// Params 1
+// Checksum 0x0, Offset: 0x2824
 // Size: 0x5d
 function function_802e4fe81feb0dc6( grenade )
 {
@@ -1069,8 +1078,8 @@ function function_802e4fe81feb0dc6( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2825
+// Params 1
+// Checksum 0x0, Offset: 0x2889
 // Size: 0x17, Type: bool
 function function_805fe3e45f3bcbe0( grenade )
 {
@@ -1078,8 +1087,8 @@ function function_805fe3e45f3bcbe0( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2845
+// Params 1
+// Checksum 0x0, Offset: 0x28a9
 // Size: 0x62, Type: bool
 function function_943b92015d44ae1( grenade )
 {
@@ -1087,8 +1096,8 @@ function function_943b92015d44ae1( grenade )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x28b0
+// Params 2
+// Checksum 0x0, Offset: 0x2914
 // Size: 0x3b
 function function_9c3216631600c8a9( glgrenade, stuckdata )
 {
@@ -1098,8 +1107,8 @@ function function_9c3216631600c8a9( glgrenade, stuckdata )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x28f3
+// Params 2
+// Checksum 0x0, Offset: 0x2957
 // Size: 0x30
 function function_2db5f44dbf46ae26( glgrenade, stuckdata )
 {
@@ -1109,8 +1118,8 @@ function function_2db5f44dbf46ae26( glgrenade, stuckdata )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x292b
+// Params 0
+// Checksum 0x0, Offset: 0x298f
 // Size: 0x2f
 function function_ad336c2696abfcc5()
 {
@@ -1126,8 +1135,8 @@ function function_ad336c2696abfcc5()
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2962
+// Params 1
+// Checksum 0x0, Offset: 0x29c6
 // Size: 0x31
 function function_50975e0bbd033649( stuckto )
 {
@@ -1144,8 +1153,8 @@ function function_50975e0bbd033649( stuckto )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x299b
+// Params 0
+// Checksum 0x0, Offset: 0x29ff
 // Size: 0xd7
 function function_f74ede2695719f2f()
 {
@@ -1179,8 +1188,8 @@ function function_f74ede2695719f2f()
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a7a
+// Params 2
+// Checksum 0x0, Offset: 0x2ade
 // Size: 0x41, Type: bool
 function shouldlink( stuckto, stuckpart )
 {
@@ -1193,8 +1202,8 @@ function shouldlink( stuckto, stuckpart )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ac4
+// Params 1
+// Checksum 0x0, Offset: 0x2b28
 // Size: 0x77
 function function_eae0802093a7e5f5( weapon )
 {
@@ -1216,8 +1225,8 @@ function function_eae0802093a7e5f5( weapon )
 }
 
 // Namespace bunkerbuster / scripts\mp\equipment\bunkerbuster
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b43
+// Params 2
+// Checksum 0x0, Offset: 0x2ba7
 // Size: 0x67
 function function_aaa1f16521b1a40e( isdeploy, var_4e80d1a7264b4b0f )
 {

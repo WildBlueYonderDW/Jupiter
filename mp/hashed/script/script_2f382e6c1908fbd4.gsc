@@ -12,8 +12,8 @@
 #namespace warrior_hunt;
 
 // Namespace warrior_hunt / namespace_a3d0d452337405e0
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x246
+// Params 0
+// Checksum 0x0, Offset: 0x247
 // Size: 0x1f
 function function_32ab7b20f72916ba()
 {
@@ -23,8 +23,8 @@ function function_32ab7b20f72916ba()
 }
 
 // Namespace warrior_hunt / namespace_a3d0d452337405e0
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26d
+// Params 0
+// Checksum 0x0, Offset: 0x26e
 // Size: 0x10
 function function_a4018333bf6dabce()
 {
@@ -32,8 +32,8 @@ function function_a4018333bf6dabce()
 }
 
 // Namespace warrior_hunt / namespace_a3d0d452337405e0
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x285
+// Params 0
+// Checksum 0x0, Offset: 0x286
 // Size: 0x61
 function onplayerspawned()
 {
@@ -52,8 +52,8 @@ function onplayerspawned()
 }
 
 // Namespace warrior_hunt / namespace_a3d0d452337405e0
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ee
+// Params 0
+// Checksum 0x0, Offset: 0x2ef
 // Size: 0xcb
 function function_93753111ae4c3c24()
 {
@@ -81,14 +81,14 @@ function function_93753111ae4c3c24()
 }
 
 // Namespace warrior_hunt / namespace_a3d0d452337405e0
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c1
-// Size: 0x72
+// Params 0
+// Checksum 0x0, Offset: 0x3c2
+// Size: 0x80
 function function_e03e8cb5b6e2a744()
 {
     level waittill( "warrior_hunt_teams_assigned" );
     
-    if ( self.team == level.var_6298f362ec23d83.hunterteam )
+    if ( isdefined( self.team ) && self.team == level.var_6298f362ec23d83.hunterteam )
     {
         self setscriptablepartstate( "slam_aura", "on", 0 );
         scripts\cp_mp\equipment::giveequipment( "equip_throwing_knife", "primary" );
@@ -101,8 +101,8 @@ function function_e03e8cb5b6e2a744()
 }
 
 // Namespace warrior_hunt / namespace_a3d0d452337405e0
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x43b
+// Params 0
+// Checksum 0x0, Offset: 0x44a
 // Size: 0x31
 function waittill_grenade_fire()
 {
@@ -117,8 +117,8 @@ function waittill_grenade_fire()
 }
 
 // Namespace warrior_hunt / namespace_a3d0d452337405e0
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x474
+// Params 3
+// Checksum 0x0, Offset: 0x483
 // Size: 0xf7
 function function_317ba71811b1e7a6( winner, endreasontext, nukedetonated )
 {
@@ -146,8 +146,8 @@ function function_317ba71811b1e7a6( winner, endreasontext, nukedetonated )
 }
 
 // Namespace warrior_hunt / namespace_a3d0d452337405e0
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x574
+// Params 10
+// Checksum 0x0, Offset: 0x583
 // Size: 0xb2
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
 {
@@ -161,8 +161,8 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace warrior_hunt / namespace_a3d0d452337405e0
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x62e
+// Params 5
+// Checksum 0x0, Offset: 0x63d
 // Size: 0x95
 function teamoutcomenotify( winner, isround, endreasontext, endreasontextloss, roundendextramessage )
 {

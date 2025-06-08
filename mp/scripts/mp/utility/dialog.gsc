@@ -14,7 +14,7 @@
 #namespace dialog;
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x366
 // Size: 0x14c
 function leaderdialog( dialog, team, group, excludelist, location, time )
@@ -42,7 +42,8 @@ function leaderdialog( dialog, team, group, excludelist, location, time )
         }
     }
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         player = players[ i ];
         
         if ( isdefined( excludelist ) && array_contains( excludelist, player ) )
@@ -66,7 +67,7 @@ function leaderdialog( dialog, team, group, excludelist, location, time )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ba
 // Size: 0x61
 function initstatusdialog()
@@ -78,7 +79,7 @@ function initstatusdialog()
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x523
 // Size: 0xc4
 function statusdialog( dialog, team, group, excludelist, location, time )
@@ -112,7 +113,7 @@ function statusdialog( dialog, team, group, excludelist, location, time )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x5ef
 // Size: 0x54
 function delayedleaderdialog( sound, team, group, excludelist, location, time )
@@ -124,7 +125,7 @@ function delayedleaderdialog( sound, team, group, excludelist, location, time )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x64b
 // Size: 0x74
 function leaderdialogonplayers( dialog, players, group, location )
@@ -136,7 +137,7 @@ function leaderdialogonplayers( dialog, players, group, location )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x6c7
 // Size: 0x5b
 function leaderdialogonplayer( dialog, group, groupoverride, location, time )
@@ -151,7 +152,7 @@ function leaderdialogonplayer( dialog, group, groupoverride, location, time )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x72a
 // Size: 0x4bb
 function leaderdialogonplayer_internal( dialog, group, groupoverride, location, time )
@@ -309,7 +310,7 @@ function leaderdialogonplayer_internal( dialog, group, groupoverride, location, 
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbed
 // Size: 0x16
 function function_ee82db162f3b07a8( dialog )
@@ -318,7 +319,7 @@ function function_ee82db162f3b07a8( dialog )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc0c
 // Size: 0x3f, Type: bool
 function function_99fd33719db79d3f( dialog )
@@ -327,7 +328,7 @@ function function_99fd33719db79d3f( dialog )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc54
 // Size: 0x5e
 function function_1b7524a0e081ab71( dialog )
@@ -353,7 +354,7 @@ function function_1b7524a0e081ab71( dialog )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcba
 // Size: 0x3b
 function isslamannouncerline( dialog )
@@ -367,7 +368,7 @@ function isslamannouncerline( dialog )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcfe
 // Size: 0x49, Type: bool
 function function_1937c4131d39b030( dialog )
@@ -376,7 +377,7 @@ function function_1937c4131d39b030( dialog )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd50
 // Size: 0x22
 function function_26fb379f4ba5caa2( team )
@@ -385,7 +386,7 @@ function function_26fb379f4ba5caa2( team )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd7b
 // Size: 0x3a
 function function_6b1af1c789523d89( dialog )
@@ -401,7 +402,7 @@ function function_6b1af1c789523d89( dialog )
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdbe
 // Size: 0x28
 function initstatusdialogonplayer()
@@ -411,7 +412,7 @@ function initstatusdialogonplayer()
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xdee
 // Size: 0x104
 function sitrepdialogonplayer( dialog, group, groupoverride, location, announceroverride )
@@ -444,7 +445,7 @@ function sitrepdialogonplayer( dialog, group, groupoverride, location, announcer
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xefa
 // Size: 0x1a
 function getdialoguedebouncetime()
@@ -458,7 +459,7 @@ function getdialoguedebouncetime()
 }
 
 // Namespace dialog / scripts\mp\utility\dialog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf1c
 // Size: 0x76
 function function_7991789fbdef687e()

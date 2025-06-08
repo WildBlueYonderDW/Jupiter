@@ -1,7 +1,7 @@
 #namespace civilian_me_male_body_3_hostage;
 
 // Namespace civilian_me_male_body_3_hostage / xmodelalias\civilian_me_male_body_3_hostage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe2
 // Size: 0x2a
 function main()

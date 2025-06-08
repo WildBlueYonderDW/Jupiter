@@ -19,7 +19,7 @@
 #namespace vehicle_mp;
 
 // Namespace vehicle_mp / scripts\mp\vehicles\vehicle_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ce
 // Size: 0x190
 function vehicle_mp_init()
@@ -50,7 +50,7 @@ function vehicle_mp_init()
 }
 
 // Namespace vehicle_mp / scripts\mp\vehicles\vehicle_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x466
 // Size: 0x5e
 function vehicle_mp_create( vehicle, spawndata )
@@ -63,7 +63,7 @@ function vehicle_mp_create( vehicle, spawndata )
 }
 
 // Namespace vehicle_mp / scripts\mp\vehicles\vehicle_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4cc
 // Size: 0x13
 function vehicle_mp_createlate( vehicle, spawndata )
@@ -72,7 +72,7 @@ function vehicle_mp_createlate( vehicle, spawndata )
 }
 
 // Namespace vehicle_mp / scripts\mp\vehicles\vehicle_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e7
 // Size: 0x15
 function vehicle_mp_deletenextframe( vehicle )
@@ -81,7 +81,7 @@ function vehicle_mp_deletenextframe( vehicle )
 }
 
 // Namespace vehicle_mp / scripts\mp\vehicles\vehicle_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x504
 // Size: 0xb
 function vehicle_mp_deletenextframelate( vehicle )
@@ -90,7 +90,7 @@ function vehicle_mp_deletenextframelate( vehicle )
 }
 
 // Namespace vehicle_mp / scripts\mp\vehicles\vehicle_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x517
 // Size: 0x77
 function function_dd9423aa2b333df5( vehicle )
@@ -115,7 +115,7 @@ function function_dd9423aa2b333df5( vehicle )
 /#
 
     // Namespace vehicle_mp / scripts\mp\vehicles\vehicle_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x596
     // Size: 0xd, Type: dev
     function function_e36283a0d7dc082c()
@@ -124,7 +124,7 @@ function function_dd9423aa2b333df5( vehicle )
     }
 
     // Namespace vehicle_mp / scripts\mp\vehicles\vehicle_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5ab
     // Size: 0x32, Type: dev
     function function_8154c406e557eba0()
@@ -141,7 +141,7 @@ function function_dd9423aa2b333df5( vehicle )
     }
 
     // Namespace vehicle_mp / scripts\mp\vehicles\vehicle_mp
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5e5
     // Size: 0x104, Type: dev
     function function_a6a8c67dda2a3121()

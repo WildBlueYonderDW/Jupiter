@@ -5,7 +5,7 @@
 #namespace createfxmenu;
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x63c
 // Size: 0x59f
 function init_menu()
@@ -93,7 +93,7 @@ function init_menu()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbe3
 // Size: 0x16, Type: bool
 function menu( name )
@@ -102,7 +102,7 @@ function menu( name )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc02
 // Size: 0x15
 function setmenu( name )
@@ -111,7 +111,7 @@ function setmenu( name )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc1f
 // Size: 0x5e
 function create_fx_menu()
@@ -129,7 +129,7 @@ function create_fx_menu()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc85
 // Size: 0x144
 function menu_create_select()
@@ -170,7 +170,7 @@ function menu_create_select()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdd1
 // Size: 0x15
 function buttonpress_create_oneshot()
@@ -180,7 +180,7 @@ function buttonpress_create_oneshot()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdee
 // Size: 0x15
 function buttonpress_create_loopfx()
@@ -190,7 +190,7 @@ function buttonpress_create_loopfx()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0b
 // Size: 0x28
 function buttonpress_create_loopsound()
@@ -201,7 +201,7 @@ function buttonpress_create_loopsound()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe3b
 // Size: 0x28
 function buttonpress_create_exploder()
@@ -212,7 +212,7 @@ function buttonpress_create_exploder()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe6b
 // Size: 0x28
 function buttonpress_create_interval_sound()
@@ -223,7 +223,7 @@ function buttonpress_create_interval_sound()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe9b
 // Size: 0x1c
 function buttonpress_create_reactiveent()
@@ -233,7 +233,7 @@ function buttonpress_create_reactiveent()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xebf
 // Size: 0x3a
 function menu_create()
@@ -253,7 +253,7 @@ function menu_create()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf01
 // Size: 0x96
 function menu_none()
@@ -288,7 +288,7 @@ function menu_none()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf9f
 // Size: 0x3c
 function menu_add_options()
@@ -309,7 +309,7 @@ function menu_add_options()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfe3
 // Size: 0x44
 function menu_select_by_name()
@@ -329,7 +329,7 @@ function menu_select_by_name()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x102f
 // Size: 0xd
 function next_button()
@@ -338,7 +338,7 @@ function next_button()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1045
 // Size: 0xd
 function previous_button()
@@ -347,7 +347,7 @@ function previous_button()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x105b
 // Size: 0x23
 function exit_menu()
@@ -359,7 +359,7 @@ function exit_menu()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1086
 // Size: 0x114
 function menu_fx_creation()
@@ -368,7 +368,8 @@ function menu_fx_creation()
     picked_fx = undefined;
     keys = func_get_level_fx();
     
-    for (i = level.effect_list_offset; i < keys.size; i++) {
+    for ( i = level.effect_list_offset; i < keys.size ; i++ )
+    {
         count += 1;
         var_7356ab609cfad76c = count;
         
@@ -419,7 +420,7 @@ function menu_fx_creation()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11a2
 // Size: 0xfe
 function finish_creating_entity( ent )
@@ -441,7 +442,7 @@ function finish_creating_entity( ent )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12a8
 // Size: 0x18, Type: bool
 function entities_are_selected()
@@ -450,7 +451,7 @@ function entities_are_selected()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c9
 // Size: 0x10b
 function menu_change_selected_fx()
@@ -464,7 +465,8 @@ function menu_change_selected_fx()
     drawncount = 0;
     ent = get_last_selected_ent();
     
-    for (i = 0; i < level._createfx.options.size; i++) {
+    for ( i = 0; i < level._createfx.options.size ; i++ )
+    {
         option = level._createfx.options[ i ];
         
         if ( !isdefined( ent.v[ option[ "name" ] ] ) )
@@ -502,7 +504,7 @@ function menu_change_selected_fx()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13dc
 // Size: 0xcd
 function prepare_option_for_change( option, drawncount )
@@ -531,7 +533,7 @@ function prepare_option_for_change( option, drawncount )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14b1
 // Size: 0xdf
 function menu_fx_option_set()
@@ -577,12 +579,13 @@ function menu_fx_option_set()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1598
 // Size: 0xac
 function apply_option_to_selected_fx( option, setting )
 {
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         ent = level._createfx.selected_fx_ents[ i ];
         
         if ( mask( option[ "mask" ], ent.v[ "type" ] ) )
@@ -597,12 +600,13 @@ function apply_option_to_selected_fx( option, setting )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x164c
 // Size: 0x70
 function set_option_index( name )
 {
-    for (i = 0; i < level._createfx.options.size; i++) {
+    for ( i = 0; i < level._createfx.options.size ; i++ )
+    {
         if ( level._createfx.options[ i ][ "name" ] != name )
         {
             continue;
@@ -614,7 +618,7 @@ function set_option_index( name )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c4
 // Size: 0x29
 function get_selected_option()
@@ -623,7 +627,7 @@ function get_selected_option()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16f6
 // Size: 0x21, Type: bool
 function mask( type, name )
@@ -632,7 +636,7 @@ function mask( type, name )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1720
 // Size: 0xa6
 function addoption( type, name, description, defaultsetting, mask, input_func )
@@ -653,12 +657,13 @@ function addoption( type, name, description, defaultsetting, mask, input_func )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17ce
 // Size: 0x6d
 function get_option( name )
 {
-    for (i = 0; i < level._createfx.options.size; i++) {
+    for ( i = 0; i < level._createfx.options.size ; i++ )
+    {
         if ( level._createfx.options[ i ][ "name" ] == name )
         {
             return level._createfx.options[ i ];
@@ -667,7 +672,7 @@ function get_option( name )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1843
 // Size: 0x186
 function input_reactive_radius( menu_index )
@@ -715,7 +720,7 @@ function input_reactive_radius( menu_index )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19d1
 // Size: 0x225
 function display_fx_add_options( ent )
@@ -736,7 +741,8 @@ function display_fx_add_options( ent )
         level.effect_list_offset = 0;
     }
     
-    for (i = 0; i < level._createfx.options.size; i++) {
+    for ( i = 0; i < level._createfx.options.size ; i++ )
+    {
         option = level._createfx.options[ i ];
         
         if ( isdefined( ent.v[ option[ "name" ] ] ) )
@@ -789,14 +795,15 @@ function display_fx_add_options( ent )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bfe
 // Size: 0x9d
 function add_option_to_selected_entities( option )
 {
     setting = undefined;
     
-    for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
+    for ( i = 0; i < level._createfx.selected_fx_ents.size ; i++ )
+    {
         ent = level._createfx.selected_fx_ents[ i ];
         
         if ( mask( option[ "mask" ], ent.v[ "type" ] ) )
@@ -807,7 +814,7 @@ function add_option_to_selected_entities( option )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ca3
 // Size: 0x1f
 function menunone()
@@ -818,7 +825,7 @@ function menunone()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cca
 // Size: 0x258
 function display_fx_info( ent )
@@ -840,7 +847,8 @@ function display_fx_info( ent )
         drawncount = 0;
         more = 0;
         
-        for (i = 0; i < level._createfx.options.size; i++) {
+        for ( i = 0; i < level._createfx.options.size ; i++ )
+        {
             option = level._createfx.options[ i ];
             
             if ( !isdefined( ent.v[ option[ "name" ] ] ) )
@@ -878,7 +886,8 @@ function display_fx_info( ent )
     count = 0;
     more = 0;
     
-    for (i = 0; i < level._createfx.options.size; i++) {
+    for ( i = 0; i < level._createfx.options.size ; i++ )
+    {
         option = level._createfx.options[ i ];
         
         if ( !isdefined( ent.v[ option[ "name" ] ] ) )
@@ -897,7 +906,7 @@ function display_fx_info( ent )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f2a
 // Size: 0xe1
 function draw_effects_list( title )
@@ -914,7 +923,8 @@ function draw_effects_list( title )
     
     set_fx_hudelement( title + " [" + level.effect_list_offset + " - " + keys.size + "]:" );
     
-    for (i = level.effect_list_offset; i < keys.size; i++) {
+    for ( i = level.effect_list_offset; i < keys.size ; i++ )
+    {
         count += 1;
         set_fx_hudelement( count + ". " + keys[ i ] );
         
@@ -933,7 +943,7 @@ function draw_effects_list( title )
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2013
 // Size: 0x56
 function increment_list_offset()
@@ -950,7 +960,7 @@ function increment_list_offset()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2071
 // Size: 0x53
 function decrement_list_offset()
@@ -965,7 +975,7 @@ function decrement_list_offset()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20cc
 // Size: 0x12b
 function select_by_name()
@@ -974,7 +984,8 @@ function select_by_name()
     picked_fx = undefined;
     keys = func_get_level_fx();
     
-    for (i = level.effect_list_offset; i < keys.size; i++) {
+    for ( i = level.effect_list_offset; i < keys.size ; i++ )
+    {
         count += 1;
         var_7356ab609cfad76c = count;
         
@@ -1016,7 +1027,7 @@ function select_by_name()
 }
 
 // Namespace createfxmenu / scripts\common\createfxmenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21ff
 // Size: 0x2d
 function get_last_selected_ent()

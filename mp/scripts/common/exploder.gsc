@@ -5,7 +5,7 @@
 #namespace exploder;
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x377
 // Size: 0xd1
 function setup_individual_exploder( ent )
@@ -54,7 +54,7 @@ function setup_individual_exploder( ent )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x450
 // Size: 0xef
 function addinitexploders( potentialexploders )
@@ -88,7 +88,7 @@ function addinitexploders( potentialexploders )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x547
 // Size: 0x84a
 function setupexploders()
@@ -260,7 +260,7 @@ function setupexploders()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd99
 // Size: 0xc9
 function exploder_flag_wait( msg, exploderarray )
@@ -282,7 +282,7 @@ function exploder_flag_wait( msg, exploderarray )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe6a
 // Size: 0x2c, Type: bool
 function exploder_is_damaged_model( ent )
@@ -291,7 +291,7 @@ function exploder_is_damaged_model( ent )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe9f
 // Size: 0x42, Type: bool
 function exploder_starts_hidden( ent )
@@ -300,7 +300,7 @@ function exploder_starts_hidden( ent )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeea
 // Size: 0x2c, Type: bool
 function exploder_is_chunk( ent )
@@ -309,7 +309,7 @@ function exploder_is_chunk( ent )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf1f
 // Size: 0xf3
 function show_exploder_models_proc( num )
@@ -340,7 +340,7 @@ function show_exploder_models_proc( num )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x101a
 // Size: 0xae
 function get_exploders( str )
@@ -368,7 +368,7 @@ function get_exploders( str )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10d1
 // Size: 0xd9
 function get_createfx_exploders( str )
@@ -411,7 +411,7 @@ function get_createfx_exploders( str )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11b2
 // Size: 0x107
 function stop_exploder_proc( num, players, bkill )
@@ -447,7 +447,7 @@ function stop_exploder_proc( num, players, bkill )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12c1
 // Size: 0x69
 function stop_clientside_exploder( explodername, players, bkill )
@@ -469,7 +469,7 @@ function stop_clientside_exploder( explodername, players, bkill )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1332
 // Size: 0x3b
 function get_exploder_array_proc( msg )
@@ -487,7 +487,7 @@ function get_exploder_array_proc( msg )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1376
 // Size: 0xa4
 function hide_exploder_models_proc( num )
@@ -513,7 +513,7 @@ function hide_exploder_models_proc( num )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1422
 // Size: 0xae
 function delete_exploder_proc( num )
@@ -541,7 +541,7 @@ function delete_exploder_proc( num )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d8
 // Size: 0x115
 function exploder_damage()
@@ -590,7 +590,7 @@ function exploder_damage()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15f5
 // Size: 0x174
 function activate_individual_exploder_proc()
@@ -645,7 +645,7 @@ function activate_individual_exploder_proc()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1771
 // Size: 0x175
 function brush_delete()
@@ -706,7 +706,7 @@ function brush_delete()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18ee
 // Size: 0x28a
 function brush_throw()
@@ -794,7 +794,7 @@ function brush_throw()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b80
 // Size: 0x1fe
 function brush_show()
@@ -863,7 +863,7 @@ function brush_show()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d86
 // Size: 0x31
 function exploder_rumble()
@@ -878,7 +878,7 @@ function exploder_rumble()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1dbf
 // Size: 0xb6
 function exploder_delay()
@@ -908,7 +908,7 @@ function exploder_delay()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e7d
 // Size: 0x79
 function effect_loopsound()
@@ -926,7 +926,7 @@ function effect_loopsound()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1efe
 // Size: 0x9
 function sound_effect()
@@ -935,7 +935,7 @@ function sound_effect()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f0f
 // Size: 0x46
 function effect_soundalias()
@@ -947,7 +947,7 @@ function effect_soundalias()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f5d
 // Size: 0x2e
 function exploder_earthquake()
@@ -957,7 +957,7 @@ function exploder_earthquake()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f93
 // Size: 0x55
 function exploder_playsound()
@@ -971,7 +971,7 @@ function exploder_playsound()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ff0
 // Size: 0x120
 function fire_effect()
@@ -1007,7 +1007,7 @@ function fire_effect()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2118
 // Size: 0x121
 function cannon_effect()
@@ -1016,7 +1016,8 @@ function cannon_effect()
     {
         thread exploder_playsound();
         
-        for (i = 0; i < self.v[ "repeat" ]; i++) {
+        for ( i = 0; i < self.v[ "repeat" ] ; i++ )
+        {
             playfx( level._effect[ self.v[ "fxid" ] ], self.v[ "origin" ], self.v[ "forward" ], self.v[ "up" ] );
             exploder_delay();
         }
@@ -1039,7 +1040,7 @@ function cannon_effect()
 /#
 
     // Namespace exploder / scripts\common\exploder
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2241
     // Size: 0x190, Type: dev
     function function_6538f332fa49ccda()
@@ -1078,7 +1079,7 @@ function cannon_effect()
 #/
 
 // Namespace exploder / scripts\common\exploder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x23d9
 // Size: 0xc6
 function activate_exploder( num, players, starttime )
@@ -1104,7 +1105,7 @@ function activate_exploder( num, players, starttime )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x24a7
 // Size: 0x69
 function activate_clientside_exploder( explodername, players, starttime )
@@ -1126,7 +1127,7 @@ function activate_clientside_exploder( explodername, players, starttime )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2518
 // Size: 0x46, Type: bool
 function is_valid_clientside_exploder_name( explodername )
@@ -1152,7 +1153,7 @@ function is_valid_clientside_exploder_name( explodername )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2567
 // Size: 0x52
 function shouldrunserversideeffects()
@@ -1176,7 +1177,7 @@ function shouldrunserversideeffects()
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25c1
 // Size: 0x27
 function exploder_before_load( num, players, starttime )
@@ -1187,7 +1188,7 @@ function exploder_before_load( num, players, starttime )
 }
 
 // Namespace exploder / scripts\common\exploder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25f0
 // Size: 0x25
 function exploder_after_load( num, players, starttime )

@@ -7,7 +7,7 @@
 #namespace namespace_a1fa5fb7614c23b6;
 
 // Namespace namespace_a1fa5fb7614c23b6 / namespace_cd617f6a69dde8f5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18b
 // Size: 0x61
 function function_8dd9dcec6a76bffa( var_d3f89f07fe3fa0ab )
@@ -16,7 +16,7 @@ function function_8dd9dcec6a76bffa( var_d3f89f07fe3fa0ab )
 }
 
 // Namespace namespace_a1fa5fb7614c23b6 / namespace_cd617f6a69dde8f5
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1f4
 // Size: 0x1b5
 function activitynexuslog( logtext, associateddvar, var_d29cf130d2798a76, var_8e1b151809066835, loglevel )
@@ -84,7 +84,7 @@ function activitynexuslog( logtext, associateddvar, var_d29cf130d2798a76, var_8e
 }
 
 // Namespace namespace_a1fa5fb7614c23b6 / namespace_cd617f6a69dde8f5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b1
 // Size: 0x59
 function function_68e0a0bea0dd792c( activityinstance )
@@ -93,7 +93,7 @@ function function_68e0a0bea0dd792c( activityinstance )
 }
 
 // Namespace namespace_a1fa5fb7614c23b6 / namespace_cd617f6a69dde8f5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x413
 // Size: 0x2a, Type: bool
 function function_2a1e9879f71ab677( var_aee74cee3c1dc918 )

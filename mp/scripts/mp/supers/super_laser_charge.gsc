@@ -26,7 +26,7 @@
 #namespace super_laser_charge;
 
 // Namespace super_laser_charge / scripts\mp\supers\super_laser_charge
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x653
 // Size: 0x1c2
 function function_38a4f67440cf220e()
@@ -38,7 +38,7 @@ function function_38a4f67440cf220e()
 }
 
 // Namespace super_laser_charge / scripts\mp\supers\super_laser_charge
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x81d
 // Size: 0x1e, Type: bool
 function function_37ddcde87b74cc48()
@@ -447,7 +447,7 @@ function private function_2fd73aeab5c5946d( impactent, killstreakbundle )
 }
 
 // Namespace super_laser_charge / scripts\mp\supers\super_laser_charge
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1258
 // Size: 0x4c
 function function_701f65bff172b328( impactent )
@@ -469,7 +469,7 @@ function function_701f65bff172b328( impactent )
 }
 
 // Namespace super_laser_charge / scripts\mp\supers\super_laser_charge
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12ac
 // Size: 0x48, Type: bool
 function function_4595a2e368e64b18( fromdeath )
@@ -485,7 +485,7 @@ function function_4595a2e368e64b18( fromdeath )
 }
 
 // Namespace super_laser_charge / scripts\mp\supers\super_laser_charge
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12fd
 // Size: 0x6e
 function function_be41fd9988f890d9()

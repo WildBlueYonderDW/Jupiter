@@ -19,8 +19,8 @@
 #namespace sentry_gun_mp;
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x461
+// Params 0
+// Checksum 0x0, Offset: 0x462
 // Size: 0xdb
 function init()
 {
@@ -37,8 +37,8 @@ function init()
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x544
+// Params 2
+// Checksum 0x0, Offset: 0x545
 // Size: 0x2f
 function sentryturret_gettargetmarker( streakinfo, ignorecancel )
 {
@@ -47,8 +47,8 @@ function sentryturret_gettargetmarker( streakinfo, ignorecancel )
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x57c
+// Params 11
+// Checksum 0x0, Offset: 0x57d
 // Size: 0x71
 function sentryturret_createhintobject( hintpos, hinttype, hinticon, hintstring, priority, duration, onobstruction, hintdist, hintfov, usedist, usefov )
 {
@@ -56,8 +56,8 @@ function sentryturret_createhintobject( hintpos, hinttype, hinticon, hintstring,
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f6
+// Params 1
+// Checksum 0x0, Offset: 0x5f7
 // Size: 0x44
 function sentryturret_monitordamage( turret )
 {
@@ -66,9 +66,9 @@ function sentryturret_monitordamage( turret )
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x642
-// Size: 0x131
+// Params 1
+// Checksum 0x0, Offset: 0x643
+// Size: 0x13b
 function sentryturret_handledeathdamage( data )
 {
     attacker = data.attacker;
@@ -77,11 +77,15 @@ function sentryturret_handledeathdamage( data )
     damage = data.damage;
     idflags = data.idflags;
     config = level.sentrysettings[ self.turrettype ];
-    notifyattacker = scripts\mp\damage::onkillstreakkilled( config.streakname, attacker, objweapon, type, damage, config.scorepopup, config.vodestroyed, config.destroyedsplash );
     
-    if ( notifyattacker )
+    if ( isplayer( attacker ) )
     {
-        attacker notify( "destroyed_equipment" );
+        notifyattacker = scripts\mp\damage::onkillstreakkilled( config.streakname, attacker, objweapon, type, damage, config.scorepopup, config.vodestroyed, config.destroyedsplash );
+        
+        if ( notifyattacker )
+        {
+            attacker notify( "destroyed_equipment" );
+        }
     }
     
     self notify( "enemy_destroyed_equipment", attacker );
@@ -96,8 +100,8 @@ function sentryturret_handledeathdamage( data )
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x77b
+// Params 1
+// Checksum 0x0, Offset: 0x786
 // Size: 0x194
 function sentryturret_modifydamage( data )
 {
@@ -141,8 +145,8 @@ function sentryturret_modifydamage( data )
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x918
+// Params 0
+// Checksum 0x0, Offset: 0x923
 // Size: 0x4ff
 function sentryturret_initsentrysettings()
 {
@@ -194,8 +198,8 @@ function sentryturret_initsentrysettings()
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1f
+// Params 0
+// Checksum 0x0, Offset: 0xe2a
 // Size: 0x6c, Type: bool
 function sentryturret_canpickup()
 {
@@ -235,8 +239,8 @@ function sentryturret_canpickup()
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe94
+// Params 0
+// Checksum 0x0, Offset: 0xe9f
 // Size: 0x14
 function sentryturret_empstarted()
 {
@@ -244,8 +248,8 @@ function sentryturret_empstarted()
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb0
+// Params 0
+// Checksum 0x0, Offset: 0xebb
 // Size: 0x14
 function sentryturret_empcleared()
 {
@@ -253,8 +257,8 @@ function sentryturret_empcleared()
 }
 
 // Namespace sentry_gun_mp / scripts\mp\killstreaks\sentry_gun_mp
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xecc
+// Params 1
+// Checksum 0x0, Offset: 0xed7
 // Size: 0x20
 function function_21ed6c77fb27d039( turret )
 {

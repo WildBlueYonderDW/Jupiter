@@ -10,7 +10,7 @@
 #namespace jup_ob_ally_fletcher_base;
 
 // Namespace jup_ob_ally_fletcher_base / namespace_ee3ef446b2bbd3b2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x236
 // Size: 0x1e0
 function main()
@@ -47,7 +47,7 @@ function main()
 }
 
 // Namespace jup_ob_ally_fletcher_base / namespace_ee3ef446b2bbd3b2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41e
 // Size: 0x57
 function setup_model()
@@ -64,7 +64,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_ally_fletcher_base / namespace_ee3ef446b2bbd3b2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47d
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -73,7 +73,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_ally_fletcher_base / namespace_ee3ef446b2bbd3b2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48e
 // Size: 0xcf
 function precache()
@@ -102,7 +102,7 @@ function precache()
 }
 
 // Namespace jup_ob_ally_fletcher_base / namespace_ee3ef446b2bbd3b2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x565
 // Size: 0x14c
 function setup_weapons()

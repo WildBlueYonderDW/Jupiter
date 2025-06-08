@@ -41,7 +41,7 @@
 #namespace bots;
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd1
 // Size: 0xbb
 function main()
@@ -88,7 +88,7 @@ function main()
 /#
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xd94
     // Size: 0x9a, Type: dev
     function function_dc85300e25bf3deb()
@@ -118,7 +118,7 @@ function main()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0xe36
     // Size: 0x1ac, Type: dev
     function draw_box( pos, color, angles, size, alpha, depthtest )
@@ -155,7 +155,8 @@ function main()
         points[ points.size ] = points[ points.size - 1 ] + forward * size;
         offset = size * up;
         
-        for (i = 0; i < points.size; i++) {
+        for ( i = 0; i < points.size ; i++ )
+        {
             line( points[ i ], points[ i ] + offset, color, alpha, depthtest );
             
             if ( i == points.size - 1 )
@@ -171,7 +172,7 @@ function main()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0xfea
     // Size: 0x56, Type: dev
     function drawtraversalbox( pos, color, angles, size, alpha, depthtest )
@@ -181,7 +182,7 @@ function main()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1048
     // Size: 0x201, Type: dev
     function function_bcc5e2c3e16c7934( var_65aa68f5910e096 )
@@ -238,7 +239,7 @@ function main()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1251
     // Size: 0xde, Type: dev
     function function_d59ab5740c283ae3( origin )
@@ -253,7 +254,8 @@ function main()
         
         nodecount = getnodecount();
         
-        for (i = 0; i < nodecount; i++) {
+        for ( i = 0; i < nodecount ; i++ )
+        {
             node = getnodebyindex( i );
             
             if ( !isdefined( node ) )
@@ -283,7 +285,7 @@ function main()
 #/
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1337
 // Size: 0x32a
 function setup_callbacks()
@@ -331,7 +333,7 @@ function setup_callbacks()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1669
 // Size: 0x49
 function codecallback_leaderdialog( dialog, location )
@@ -343,7 +345,7 @@ function codecallback_leaderdialog( dialog, location )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16ba
 // Size: 0x8c
 function init()
@@ -376,7 +378,7 @@ function init()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x174e
 // Size: 0xc9
 function initbotlevelvariables()
@@ -404,7 +406,7 @@ function initbotlevelvariables()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x181f
 // Size: 0x22a
 function initbotmapextents()
@@ -428,7 +430,8 @@ function initbotmapextents()
             level.bot_map_min_z = all_nodes[ 0 ].origin[ 2 ];
             level.bot_map_max_z = all_nodes[ 0 ].origin[ 2 ];
             
-            for (i = 1; i < all_nodes.size; i++) {
+            for ( i = 1; i < all_nodes.size ; i++ )
+            {
                 node_origin = all_nodes[ i ].origin;
                 
                 if ( node_origin[ 0 ] < level.bot_map_min_x )
@@ -468,7 +471,7 @@ function initbotmapextents()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a51
 // Size: 0x28
 function bot_post_teleport()
@@ -480,7 +483,7 @@ function bot_post_teleport()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a81
 // Size: 0x4, Type: bool
 function shouldspawnbots()
@@ -489,7 +492,7 @@ function shouldspawnbots()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a8e
 // Size: 0xad
 function refresh_existing_bots()
@@ -514,7 +517,7 @@ function refresh_existing_bots()
 /#
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1b43
     // Size: 0xe2, Type: dev
     function function_cfe352958059570a()
@@ -544,7 +547,7 @@ function refresh_existing_bots()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1c2d
     // Size: 0x2a5, Type: dev
     function function_13012f2ebb78e1ab()
@@ -571,7 +574,7 @@ function refresh_existing_bots()
                 }
                 
                 var_53f4c70f8f3cb47a = getdvarint( @"hash_f7fec3f23eed8a03" ) - bots.size;
-                setdvar( @"hash_3afcd248bf1a9cc1", var_53f4c70f8f3cb47a );
+                setdvar( @"scr_testclients", var_53f4c70f8f3cb47a );
                 var_b318e813255366ef = getdvarfloat( @"hash_c45117ed6fbd7c31" );
                 
                 if ( var_b318e813255366ef < 6 )
@@ -616,7 +619,8 @@ function refresh_existing_bots()
                     var_64a2360a43f43d71 = randomint( bots.size );
                 }
                 
-                for (i = 0; i <= var_64a2360a43f43d71; i++) {
+                for ( i = 0; i <= var_64a2360a43f43d71 ; i++ )
+                {
                     bots[ i ] thread bot_drop();
                 }
                 
@@ -629,7 +633,7 @@ function refresh_existing_bots()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1eda
     // Size: 0x1b3, Type: dev
     function function_fbc3db3d21bb0677()
@@ -643,7 +647,8 @@ function refresh_existing_bots()
         
         level.var_3d7b4a188d5de49e = [];
         
-        for (i = 0; i < 10; i++) {
+        for ( i = 0; i < 10 ; i++ )
+        {
             level.var_3d7b4a188d5de49e[ level.var_3d7b4a188d5de49e.size ] = spawnstruct();
         }
         
@@ -699,12 +704,13 @@ function refresh_existing_bots()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2095
     // Size: 0x85, Type: dev
     function function_3b9730a04944204()
     {
-        for (i = 0; i < level.var_d65b83156825b08c; i++) {
+        for ( i = 0; i < level.var_d65b83156825b08c ; i++ )
+        {
             struct = level.var_3d7b4a188d5de49e[ i ];
             
             if ( isdefined( struct.defense_trigger ) && struct.defense_trigger.classname != "<dev string:xdb>" )
@@ -717,7 +723,7 @@ function refresh_existing_bots()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2122
     // Size: 0x7c0, Type: dev
     function function_16dc1bd6b6c0bc76()
@@ -735,7 +741,8 @@ function refresh_existing_bots()
             {
                 var_c54a6a4164e65b87 = undefined;
                 
-                for (i = 0; i < level.var_d65b83156825b08c; i++) {
+                for ( i = 0; i < level.var_d65b83156825b08c ; i++ )
+                {
                     struct = level.var_3d7b4a188d5de49e[ i ];
                     var_92f6621ac1937d99 = struct.defense_type == player.bot_defending_type;
                     var_c88166399eb8890f = isdefined( struct.defense_radius ) && isdefined( player.bot_defending_radius ) && struct.defense_radius == player.bot_defending_radius;
@@ -787,7 +794,8 @@ function refresh_existing_bots()
         
         var_f41212488bbec5cd = [];
         
-        for (i = 0; i < level.var_d65b83156825b08c; i++) {
+        for ( i = 0; i < level.var_d65b83156825b08c ; i++ )
+        {
             struct = level.var_3d7b4a188d5de49e[ i ];
             
             if ( isdefined( struct.defense_nodes ) )
@@ -876,7 +884,7 @@ function refresh_existing_bots()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x28ea
     // Size: 0x371, Type: dev
     function function_7403595c45dccd77()
@@ -934,7 +942,7 @@ function refresh_existing_bots()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2c63
     // Size: 0x2bf, Type: dev
     function function_cabafea737e3a024( var_2f4e4b921733b189 )
@@ -954,7 +962,8 @@ function refresh_existing_bots()
         var_39f2bf7b185b408f = var_af1aede5178be415;
         node_height = 13;
         
-        for (i = 0; i < level.entrance_indices.size; i++) {
+        for ( i = 0; i < level.entrance_indices.size ; i++ )
+        {
             if ( level.entrance_indices.size > 5 )
             {
                 color_shift = i % 5 * 50 / 256;
@@ -964,7 +973,8 @@ function refresh_existing_bots()
             
             entrance_collection = level.entrance_points[ level.entrance_indices[ i ] ];
             
-            for (j = 0; j < entrance_collection.size; j++) {
+            for ( j = 0; j < entrance_collection.size ; j++ )
+            {
                 bot_draw_cylinder( entrance_collection[ j ].origin + node_offset, 10, node_height, 0.05, undefined, color_visible, 1, 4 );
                 line( level.entrance_origin_points[ i ] + standing_offset, entrance_collection[ j ].origin + node_offset + ( 0, 0, node_height / 2 ), color_visible, 1, 1, 1 );
                 
@@ -994,7 +1004,7 @@ function refresh_existing_bots()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2f2a
     // Size: 0x36e, Type: dev
     function function_d862b7eae98dfc13()
@@ -1016,7 +1026,8 @@ function refresh_existing_bots()
         
         if ( gettime() > level.var_c5e41ba5e2338276 )
         {
-            for (var_6d53aae606df92e6 = 1; var_6d53aae606df92e6; var_6d53aae606df92e6 = !isdefined( level.precalculated_paths[ level.entrance_indices[ level.var_6ef6870b0f3a0309 ] ][ level.entrance_indices[ level.var_931a3a0c7c522adf ] ] )) {
+            for ( var_6d53aae606df92e6 = 1; var_6d53aae606df92e6 ; var_6d53aae606df92e6 = !isdefined( level.precalculated_paths[ level.entrance_indices[ level.var_6ef6870b0f3a0309 ] ][ level.entrance_indices[ level.var_931a3a0c7c522adf ] ] ) )
+            {
                 if ( level.var_931a3a0c7c522adf == level.entrance_indices.size - 1 )
                 {
                     if ( level.var_6ef6870b0f3a0309 == level.entrance_indices.size - 2 )
@@ -1053,7 +1064,7 @@ function refresh_existing_bots()
 #/
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32a0
 // Size: 0x4d
 function bot_player_spawned()
@@ -1072,7 +1083,7 @@ function bot_player_spawned()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32f5
 // Size: 0xde
 function bot_set_loadout_class()
@@ -1115,7 +1126,7 @@ function bot_set_loadout_class()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33db
 // Size: 0x6c
 function watch_players_connecting()
@@ -1135,7 +1146,7 @@ function watch_players_connecting()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x344f
 // Size: 0x36
 function bots_notify_on_spawn( player )
@@ -1151,7 +1162,7 @@ function bots_notify_on_spawn( player )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x348d
 // Size: 0x22
 function bots_notify_on_disconnect( player )
@@ -1162,7 +1173,7 @@ function bots_notify_on_disconnect( player )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34b7
 // Size: 0x36
 function bots_remove_from_array_on_notify( player )
@@ -1172,7 +1183,7 @@ function bots_remove_from_array_on_notify( player )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34f5
 // Size: 0x49
 function monitor_pause_spawning()
@@ -1196,7 +1207,7 @@ function monitor_pause_spawning()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3546
 // Size: 0x34, Type: bool
 function bot_can_join_team( team )
@@ -1220,7 +1231,7 @@ function bot_can_join_team( team )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3583
 // Size: 0x3c, Type: bool
 function bot_allowed_to_switch_teams()
@@ -1239,7 +1250,7 @@ function bot_allowed_to_switch_teams()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35c8
 // Size: 0x2ab
 function bot_connect_monitor()
@@ -1278,7 +1289,8 @@ function bot_connect_monitor()
         namespace_c50b30148766aa59::function_cde96c5b28cc69f6();
         new_bots = function_2ce39e65a48d5ec0( var_29e1cb7568f77e66 );
         
-        for (i = 0; i < new_bots.size; i++) {
+        for ( i = 0; i < new_bots.size ; i++ )
+        {
             if ( new_bots[ i ].team == "free" )
             {
                 new_bots[ i ].bot.bot_team = "autoassign";
@@ -1323,7 +1335,7 @@ function bot_connect_monitor()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x387b
 // Size: 0x93
 function function_81c6c4218188e7d8()
@@ -1343,7 +1355,7 @@ function function_81c6c4218188e7d8()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3916
 // Size: 0x144
 function bot_monitor_team_limits()
@@ -1384,7 +1396,7 @@ function bot_monitor_team_limits()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a62
 // Size: 0xd2
 function update_max_players_from_team_agents()
@@ -1402,7 +1414,7 @@ function update_max_players_from_team_agents()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b3c
 // Size: 0x3d
 function bot_get_player_team()
@@ -1421,7 +1433,7 @@ function bot_get_player_team()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b82
 // Size: 0x6f
 function bot_get_host_team()
@@ -1438,7 +1450,7 @@ function bot_get_host_team()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bfa
 // Size: 0xab, Type: bool
 function bot_get_human_picked_team()
@@ -1472,7 +1484,7 @@ function bot_get_human_picked_team()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3cae
 // Size: 0x85, Type: bool
 function player_picked_team( player )
@@ -1496,7 +1508,7 @@ function player_picked_team( player )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d3c
 // Size: 0xb0, Type: bool
 function bot_get_human_picked_class()
@@ -1530,14 +1542,15 @@ function bot_get_human_picked_class()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3df5
 // Size: 0xd8
 function bot_client_counts()
 {
     clientcounts = [];
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         player = level.players[ i ];
         
         if ( isdefined( player ) && isdefined( player.team ) )
@@ -1561,7 +1574,7 @@ function bot_client_counts()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ed6
 // Size: 0x32
 function cat_array_add( arraycounts, category )
@@ -1581,7 +1594,7 @@ function cat_array_add( arraycounts, category )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f11
 // Size: 0x26
 function cat_array_get( arraycounts, category )
@@ -1600,7 +1613,7 @@ function cat_array_get( arraycounts, category )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3f40
 // Size: 0x118
 function move_bots_from_team_to_team( count, teamfrom, teamto, difficulty )
@@ -1637,7 +1650,7 @@ function move_bots_from_team_to_team( count, teamfrom, teamto, difficulty )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4060
 // Size: 0xbe
 function bots_update_difficulty( team, difficulty )
@@ -1660,7 +1673,7 @@ function bots_update_difficulty( team, difficulty )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4126
 // Size: 0x3d
 function bot_drop()
@@ -1672,7 +1685,7 @@ function bot_drop()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x416b
 // Size: 0x134
 function drop_bots( count, team )
@@ -1687,7 +1700,8 @@ function drop_bots( count, team )
         }
     }
     
-    for (i = bots.size - 1; i >= 0; i--) {
+    for ( i = bots.size - 1; i >= 0 ; i-- )
+    {
         if ( count <= 0 )
         {
             break;
@@ -1701,7 +1715,8 @@ function drop_bots( count, team )
         }
     }
     
-    for (i = bots.size - 1; i >= 0; i--) {
+    for ( i = bots.size - 1; i >= 0 ; i-- )
+    {
         if ( count <= 0 )
         {
             break;
@@ -1713,7 +1728,7 @@ function drop_bots( count, team )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42a7
 // Size: 0x48
 function bot_lui_convert_team_to_int( team_name )
@@ -1737,7 +1752,7 @@ function bot_lui_convert_team_to_int( team_name )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x42f7
 // Size: 0x161
 function spawn_bot_latent( team, botcallback, connecting )
@@ -1796,7 +1811,7 @@ function spawn_bot_latent( team, botcallback, connecting )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x4460
 // Size: 0x304
 function spawn_bots( num_bots, team, botcallback, var_a018df45312ba50f, var_dfc67eaaf62bc0, difficulty, fixedspawndata )
@@ -1805,7 +1820,8 @@ function spawn_bots( num_bots, team, botcallback, var_a018df45312ba50f, var_dfc6
     var_f1b03ffe289c1025 = gettime() + 15000;
     var_821516dc10ec00f0 = [];
     
-    for (squad_index = var_821516dc10ec00f0.size; level.players.size < bot_get_client_limit() && var_821516dc10ec00f0.size < num_bots && gettime() < var_f1b03ffe289c1025; squad_index++) {
+    for ( squad_index = var_821516dc10ec00f0.size; level.players.size < bot_get_client_limit() && var_821516dc10ec00f0.size < num_bots && gettime() < var_f1b03ffe289c1025 ; squad_index++ )
+    {
         scripts\mp\hostmigration::waitlongdurationwithhostmigrationpause( 0.05 );
         bot = undefined;
         
@@ -1911,7 +1927,7 @@ function spawn_bots( num_bots, team, botcallback, var_a018df45312ba50f, var_dfc6
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x476c
 // Size: 0x58, Type: bool
 function bot_gametype_chooses_team()
@@ -1933,7 +1949,7 @@ function bot_gametype_chooses_team()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47cd
 // Size: 0xc, Type: bool
 function bot_gametype_chooses_class()
@@ -1942,7 +1958,7 @@ function bot_gametype_chooses_class()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47e2
 // Size: 0x1c, Type: bool
 function bot_is_ready_to_spawn()
@@ -1959,12 +1975,12 @@ function bot_is_ready_to_spawn()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4807
 // Size: 0xa1
 function forcebotpos( bot, botteam )
 {
-    var_a4b90ad02e7922ad = getdvarvector( @"hash_70d05793de60eab8" );
+    var_a4b90ad02e7922ad = getdvarvector( @"forcedbotspawnvec3" );
     verticalbuffer = 12;
     botspacing = 40;
     
@@ -1982,7 +1998,7 @@ function forcebotpos( bot, botteam )
 /#
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x48b0
     // Size: 0x141, Type: dev
     function function_84fead845cc1c1ff( var_c9176bb4dce2c995 )
@@ -2024,7 +2040,7 @@ function forcebotpos( bot, botteam )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x49f9
     // Size: 0x89d, Type: dev
     function function_214bc4c1c6c204d2( var_c9176bb4dce2c995 )
@@ -2261,7 +2277,7 @@ function forcebotpos( bot, botteam )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x529e
     // Size: 0x5, Type: dev
     function function_6a932d3bcaaa7623()
@@ -2270,7 +2286,7 @@ function forcebotpos( bot, botteam )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x52ab
     // Size: 0xa0, Type: dev
     function function_9a9702fa32785f74( bot )
@@ -2290,7 +2306,7 @@ function forcebotpos( bot, botteam )
 #/
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5353
 // Size: 0x4a1
 function bot_think()
@@ -2425,7 +2441,7 @@ function bot_think()
             firstspawn = 0;
             self.var_5ce930ab383b8a15 = 1;
             
-            if ( getdvarint( @"hash_ab7104a863537e0a" ) > 0 )
+            if ( getdvarint( @"scr_botphalanx" ) > 0 )
             {
                 if ( team == "axis" )
                 {
@@ -2439,7 +2455,7 @@ function bot_think()
                 }
             }
             
-            if ( !istrue( gameflag( "prematch_done" ) ) && getdvarint( @"hash_565e6fa77cc5f394" ) > 0 )
+            if ( !istrue( gameflag( "prematch_done" ) ) && getdvarint( @"scr_forcedposbotspawn" ) > 0 )
             {
                 level waittill( "prematch_over" );
                 forcebotpos( self, team );
@@ -2470,7 +2486,7 @@ function bot_think()
         respawn_watcher();
         self waittill( "spawned_player" );
         
-        if ( getdvarint( @"hash_565e6fa77cc5f394" ) > 0 )
+        if ( getdvarint( @"scr_forcedposbotspawn" ) > 0 )
         {
             forcebotpos( self, team );
             
@@ -2492,7 +2508,7 @@ function bot_think()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57fc
 // Size: 0x23
 function bot_modify_behavior_from_tweakables()
@@ -2506,7 +2522,7 @@ function bot_modify_behavior_from_tweakables()
 /#
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5827
     // Size: 0x36, Type: dev
     function function_70008d3ab47d171d()
@@ -2522,7 +2538,7 @@ function bot_modify_behavior_from_tweakables()
 #/
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5865
 // Size: 0x87
 function respawn_watcher()
@@ -2552,7 +2568,7 @@ function respawn_watcher()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x58f4
 // Size: 0xd0
 function bot_get_rank_xp()
@@ -2576,7 +2592,7 @@ function bot_get_rank_xp()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59cd
 // Size: 0x14
 function bot_3d_sighting_model( associatedent )
@@ -2585,7 +2601,7 @@ function bot_3d_sighting_model( associatedent )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59e9
 // Size: 0x9c
 function bot_3d_sighting_model_thread( associatedent )
@@ -2614,7 +2630,7 @@ function bot_3d_sighting_model_thread( associatedent )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a8d
 // Size: 0x279
 function bot_random_ranks_for_difficulty( difficulty )
@@ -2664,7 +2680,7 @@ function bot_random_ranks_for_difficulty( difficulty )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d0f
 // Size: 0xd, Type: bool
 function function_9bd84cede4fe8f24( crate )
@@ -2673,7 +2689,7 @@ function function_9bd84cede4fe8f24( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d25
 // Size: 0x34, Type: bool
 function crate_can_use_always( crate )
@@ -2692,7 +2708,7 @@ function crate_can_use_always( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d62
 // Size: 0x9d
 function get_human_player()
@@ -2702,7 +2718,8 @@ function get_human_player()
     
     if ( isdefined( players ) )
     {
-        for (index = 0; index < players.size; index++) {
+        for ( index = 0; index < players.size ; index++ )
+        {
             if ( isdefined( players[ index ] ) && isdefined( players[ index ].connected ) && players[ index ].connected && !isai( players[ index ] ) && ( !isdefined( result ) || result.team == "spectator" ) )
             {
                 result = players[ index ];
@@ -2716,7 +2733,7 @@ function get_human_player()
 /#
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5e08
     // Size: 0x80, Type: dev
     function function_35d942f93b6a3cfe()
@@ -2735,7 +2752,7 @@ function get_human_player()
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5e90
     // Size: 0x80, Type: dev
     function function_9ea1b3409311f518()
@@ -2757,7 +2774,7 @@ function get_human_player()
 #/
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x5f18
 // Size: 0x159
 function bot_damage_callback( eattacker, idamage, smeansofdeath, sweapon, einflictor, shitloc, vpoint, var_1da1a66b5c6a06a7 )
@@ -2826,7 +2843,7 @@ function bot_damage_callback( eattacker, idamage, smeansofdeath, sweapon, einfli
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x6079
 // Size: 0x15f
 function on_bot_killed( einflictor, attacker, idamage, smeansofdeath, sweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -2856,7 +2873,7 @@ function on_bot_killed( einflictor, attacker, idamage, smeansofdeath, sweapon, v
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61e0
 // Size: 0x11b, Type: bool
 function bot_should_do_killcam()
@@ -2909,7 +2926,7 @@ function bot_should_do_killcam()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6304
 // Size: 0x4, Type: bool
 function bot_should_pickup_weapons()
@@ -2918,7 +2935,7 @@ function bot_should_pickup_weapons()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6311
 // Size: 0xb1
 function bot_restart_think_threads()
@@ -2949,7 +2966,7 @@ function bot_restart_think_threads()
 /#
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x63ca
     // Size: 0xd2, Type: dev
     function function_85449d9e699cd4cd()
@@ -2995,7 +3012,7 @@ function bot_restart_think_threads()
 #/
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x64a4
 // Size: 0x46, Type: bool
 function sortdoorsbydistance( door1, door2 )
@@ -3004,7 +3021,7 @@ function sortdoorsbydistance( door1, door2 )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64f3
 // Size: 0xcf
 function bot_think_dynamic_doors()
@@ -3044,7 +3061,7 @@ function bot_think_dynamic_doors()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x65ca
 // Size: 0x193
 function bot_think_nvg()
@@ -3107,7 +3124,7 @@ function bot_think_nvg()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6765
 // Size: 0x9d
 function bot_think_watch_enemy( bendondeath )
@@ -3148,7 +3165,7 @@ function bot_think_watch_enemy( bendondeath )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x680a
 // Size: 0x26b
 function bot_think_seek_dropped_weapons()
@@ -3243,7 +3260,7 @@ function bot_think_seek_dropped_weapons()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a7d
 // Size: 0x12d
 function bot_seek_dropped_weapon( dropped_weapon )
@@ -3281,7 +3298,7 @@ function bot_seek_dropped_weapon( dropped_weapon )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6bb2
 // Size: 0x1c
 function bot_pickup_weapon( goal )
@@ -3291,7 +3308,7 @@ function bot_pickup_weapon( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6bd6
 // Size: 0x7f, Type: bool
 function should_stop_seeking_weapon( goal )
@@ -3321,7 +3338,7 @@ function should_stop_seeking_weapon( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c5e
 // Size: 0x52, Type: bool
 function crate_in_range( crate )
@@ -3338,7 +3355,7 @@ function crate_in_range( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6cb9
 // Size: 0x1ee, Type: bool
 function bot_crate_valid( crate )
@@ -3414,7 +3431,7 @@ function bot_crate_valid( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6eb0
 // Size: 0xc, Type: bool
 function bot_has_streak_in_crate( crate )
@@ -3423,7 +3440,7 @@ function bot_has_streak_in_crate( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ec5
 // Size: 0x3b, Type: bool
 function crate_landed_and_on_path_grid( crate )
@@ -3446,7 +3463,7 @@ function crate_landed_and_on_path_grid( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f09
 // Size: 0x82, Type: bool
 function crate_has_landed( crate )
@@ -3477,7 +3494,7 @@ function crate_has_landed( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f94
 // Size: 0x43, Type: bool
 function crate_is_on_path_grid( crate )
@@ -3493,7 +3510,7 @@ function crate_is_on_path_grid( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6fe0
 // Size: 0xff
 function node_within_use_radius_of_crate( node, crate )
@@ -3509,7 +3526,7 @@ function node_within_use_radius_of_crate( node, crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x70e7
 // Size: 0x23c
 function crate_calculate_on_path_grid( crate )
@@ -3585,14 +3602,15 @@ function crate_calculate_on_path_grid( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x732b
 // Size: 0x249
 function crate_get_nearest_valid_nodes( crate )
 {
     nodes = getnodesinradiussorted( crate.origin, 256, 0 );
     
-    for (i = nodes.size; i > 0; i--) {
+    for ( i = nodes.size; i > 0 ; i-- )
+    {
         nodes[ i ] = nodes[ i - 1 ];
     }
     
@@ -3612,7 +3630,8 @@ function crate_get_nearest_valid_nodes( crate )
         var_6ae00cccc4c48924 = 2;
     }
     
-    for (i = 0; i < nodes.size; i++) {
+    for ( i = 0; i < nodes.size ; i++ )
+    {
         node = nodes[ i ];
         
         if ( !isdefined( node ) || !isdefined( crate ) )
@@ -3703,7 +3722,7 @@ function crate_get_nearest_valid_nodes( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x757d
 // Size: 0xbe
 function crate_get_bot_target( crate )
@@ -3730,7 +3749,7 @@ function crate_get_bot_target( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7643
 // Size: 0x62
 function crate_get_bot_target_check_distance( crate, use_radius )
@@ -3749,7 +3768,7 @@ function crate_get_bot_target_check_distance( crate, use_radius )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x76ad
 // Size: 0x790
 function bot_think_crate()
@@ -3983,7 +4002,7 @@ function bot_think_crate()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7e45
 // Size: 0xd, Type: bool
 function bot_should_use_ballistic_vest_crate( crate )
@@ -3992,7 +4011,7 @@ function bot_should_use_ballistic_vest_crate( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e5b
 // Size: 0x4, Type: bool
 function crate_should_claim()
@@ -4001,7 +4020,7 @@ function crate_should_claim()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e68
 // Size: 0x3, Type: bool
 function crate_low_ammo_check()
@@ -4010,7 +4029,7 @@ function crate_low_ammo_check()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7e74
 // Size: 0x3d, Type: bool
 function bot_should_use_ammo_crate( crate )
@@ -4024,7 +4043,7 @@ function bot_should_use_ammo_crate( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7eba
 // Size: 0x21
 function bot_pre_use_ammo_crate( crate )
@@ -4034,7 +4053,7 @@ function bot_pre_use_ammo_crate( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ee3
 // Size: 0x26
 function bot_post_use_ammo_crate( crate )
@@ -4044,7 +4063,7 @@ function bot_post_use_ammo_crate( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f11
 // Size: 0x97, Type: bool
 function bot_should_use_scavenger_bag( crate )
@@ -4069,7 +4088,7 @@ function bot_should_use_scavenger_bag( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7fb1
 // Size: 0x6f, Type: bool
 function bot_should_use_grenade_crate( crate )
@@ -4088,7 +4107,7 @@ function bot_should_use_grenade_crate( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8029
 // Size: 0xd, Type: bool
 function bot_should_use_juicebox_crate( crate )
@@ -4097,7 +4116,7 @@ function bot_should_use_juicebox_crate( crate )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x803f
 // Size: 0x79
 function crate_monitor_position()
@@ -4127,7 +4146,7 @@ function crate_monitor_position()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x80c0
 // Size: 0x8
 function crate_wait_use()
@@ -4136,7 +4155,7 @@ function crate_wait_use()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x80d0
 // Size: 0x1e, Type: bool
 function crate_picked_up( goal )
@@ -4150,7 +4169,7 @@ function crate_picked_up( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x80f7
 // Size: 0x1aa
 function use_crate( goal )
@@ -4208,7 +4227,7 @@ function use_crate( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x82a9
 // Size: 0x16b
 function use_box( goal )
@@ -4254,7 +4273,7 @@ function use_box( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x841c
 // Size: 0x1e
 function watch_bot_died_during_crate( goal )
@@ -4263,7 +4282,7 @@ function watch_bot_died_during_crate( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8442
 // Size: 0x3b
 function stop_using_crate( goal )
@@ -4275,7 +4294,7 @@ function stop_using_crate( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8485
 // Size: 0x51
 function bot_watch_for_death( object )
@@ -4293,7 +4312,7 @@ function bot_watch_for_death( object )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84de
 // Size: 0x16b
 function bot_think_crate_blocking_path()
@@ -4329,7 +4348,8 @@ function bot_think_crate_blocking_path()
         
         crates = level.carepackages;
         
-        for (i = 0; i < crates.size; i++) {
+        for ( i = 0; i < crates.size ; i++ )
+        {
             crate = crates[ i ];
             
             if ( !isdefined( crate ) )
@@ -4362,7 +4382,7 @@ function bot_think_crate_blocking_path()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8651
 // Size: 0xb5
 function bot_think_usable_objects()
@@ -4408,7 +4428,7 @@ function bot_think_usable_objects()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x870e
 // Size: 0x444
 function bot_think_revive()
@@ -4472,7 +4492,8 @@ function bot_think_revive()
             
             if ( isdefined( self.owner ) )
             {
-                for (i = 0; i < revive_triggers.size; i++) {
+                for ( i = 0; i < revive_triggers.size ; i++ )
+                {
                     if ( revive_triggers[ i ].owner != self.owner )
                     {
                         continue;
@@ -4566,7 +4587,7 @@ function bot_think_revive()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8b5a
 // Size: 0x31
 function watch_bot_died_during_revive( goal )
@@ -4578,7 +4599,7 @@ function watch_bot_died_during_revive( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8b93
 // Size: 0x4f
 function stop_reviving( goal )
@@ -4590,7 +4611,7 @@ function stop_reviving( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8bea
 // Size: 0xe0, Type: bool
 function player_revived_or_dead( goal )
@@ -4616,7 +4637,7 @@ function player_revived_or_dead( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8cd3
 // Size: 0x21b
 function revive_player( goal )
@@ -4685,7 +4706,7 @@ function revive_player( goal )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ef6
 // Size: 0xf1, Type: bool
 function bot_can_revive()
@@ -4742,7 +4763,7 @@ function bot_can_revive()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ff0
 // Size: 0x3a
 function revive_watch_for_finished( player )
@@ -4755,7 +4776,7 @@ function revive_watch_for_finished( player )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9032
 // Size: 0x134
 function bot_know_enemies_on_start()
@@ -4776,7 +4797,8 @@ function bot_know_enemies_on_start()
     var_5ff5b48fd903f4f5 = undefined;
     var_ea273c648ae678dc = undefined;
     
-    for (enemyidx = 0; enemyidx < level.players.size; enemyidx++) {
+    for ( enemyidx = 0; enemyidx < level.players.size ; enemyidx++ )
+    {
         otherplayer = level.players[ enemyidx ];
         
         if ( isdefined( otherplayer ) && isdefined( self.team ) && isdefined( otherplayer.team ) && !isalliedsentient( self, otherplayer ) )
@@ -4809,7 +4831,7 @@ function bot_know_enemies_on_start()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x916e
 // Size: 0x5d
 function bot_think_gametype()
@@ -4834,7 +4856,7 @@ function bot_think_gametype()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91d3
 // Size: 0x2
 function default_gametype_think()
@@ -4843,7 +4865,7 @@ function default_gametype_think()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91dd
 // Size: 0x85
 function monitor_smoke_grenades()
@@ -4868,7 +4890,7 @@ function monitor_smoke_grenades()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x926a
 // Size: 0x2e
 function handle_smoke()
@@ -4880,7 +4902,7 @@ function handle_smoke()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x92a0
 // Size: 0x6b
 function create_smoke_occluder( origin, overrideduration )
@@ -4902,7 +4924,7 @@ function create_smoke_occluder( origin, overrideduration )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9313
 // Size: 0x1a
 function smoke_grenade_late_death()
@@ -4914,7 +4936,7 @@ function smoke_grenade_late_death()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9335
 // Size: 0x139
 function bot_add_scavenger_bag( dropbag )
@@ -4953,7 +4975,7 @@ function bot_add_scavenger_bag( dropbag )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9476
 // Size: 0xa5
 function bot_triggers()
@@ -4973,7 +4995,7 @@ function bot_triggers()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9523
 // Size: 0x56
 function bot_flag_trigger( flag_name )
@@ -4994,7 +5016,7 @@ function bot_flag_trigger( flag_name )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9581
 // Size: 0x2d
 function bot_flag_trigger_clear( flag_name )
@@ -5010,7 +5032,7 @@ function bot_flag_trigger_clear( flag_name )
 /#
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x95b6
     // Size: 0x1f6, Type: dev
     function function_361fab20102e6557()
@@ -5099,7 +5121,7 @@ function bot_flag_trigger_clear( flag_name )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x97b4
     // Size: 0x16d, Type: dev
     function function_c71139dd1c600b64()
@@ -5164,7 +5186,7 @@ function bot_flag_trigger_clear( flag_name )
 #/
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9929
 // Size: 0xba
 function function_b771795f421ef637( player )
@@ -5187,7 +5209,7 @@ function function_b771795f421ef637( player )
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99ec
 // Size: 0xa6
 function function_8e439247eeca6302()
@@ -5203,7 +5225,7 @@ function function_8e439247eeca6302()
 }
 
 // Namespace bots / scripts\mp\bots\bots
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9a9a
 // Size: 0x3d
 function function_22577987c6639704( neworigin, newangles )
@@ -5215,7 +5237,7 @@ function function_22577987c6639704( neworigin, newangles )
 /#
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9adf
     // Size: 0x18a, Type: dev
     function function_8c79a04b049a7ea2()
@@ -5288,7 +5310,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9c71
     // Size: 0x16, Type: dev
     function function_8af1863f5e7ade4a()
@@ -5298,7 +5320,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x9c8f
     // Size: 0x74, Type: dev
     function function_6ff6a20ce4521fa9( origin, angles )
@@ -5310,7 +5332,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9d0b
     // Size: 0x70, Type: dev
     function function_5188aadb27d72a11()
@@ -5332,7 +5354,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 8, eflags: 0x0
+    // Params 8
     // Checksum 0x0, Offset: 0x9d83
     // Size: 0x240, Type: dev
     function function_b09b8c00320b91e( eattacker, idamage, smeansofdeath, objweapon, einflictor, shitloc, vpoint, var_1da1a66b5c6a06a7 )
@@ -5382,7 +5404,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9fcb
     // Size: 0x59, Type: dev
     function function_6e65c3faa4356411()
@@ -5403,7 +5425,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa02c
     // Size: 0x6f, Type: dev
     function function_c87dcea241ae074d()
@@ -5418,7 +5440,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa0a3
     // Size: 0x30, Type: dev
     function function_51da8c98ef44eceb()
@@ -5434,7 +5456,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xa0db
     // Size: 0xd5, Type: dev
     function function_5723f098aabd9836( host )
@@ -5471,7 +5493,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xa1b8
     // Size: 0x2f3, Type: dev
     function function_e53f5c23f0a7a78f( host )
@@ -5516,7 +5538,7 @@ function function_22577987c6639704( neworigin, newangles )
     }
 
     // Namespace bots / scripts\mp\bots\bots
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0xa4b3
     // Size: 0x124, Type: dev
     function function_829a24c34a7fda26( text, x, y, scale, alpha, sort )

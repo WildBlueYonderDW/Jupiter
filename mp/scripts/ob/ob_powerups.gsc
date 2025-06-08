@@ -11,8 +11,8 @@
 #namespace ob_powerups;
 
 // Namespace ob_powerups / scripts\ob\ob_powerups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x152
+// Params 0
+// Checksum 0x0, Offset: 0x153
 // Size: 0x58
 function function_bf1fbf65d3f8b503()
 {
@@ -25,7 +25,7 @@ function function_bf1fbf65d3f8b503()
 
 // Namespace ob_powerups / scripts\ob\ob_powerups
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1b2
+// Checksum 0x0, Offset: 0x1b3
 // Size: 0xae
 function private function_4e42a84f95b79cb0( params )
 {
@@ -58,7 +58,7 @@ function private function_4e42a84f95b79cb0( params )
 
 // Namespace ob_powerups / scripts\ob\ob_powerups
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x269
+// Checksum 0x0, Offset: 0x26a
 // Size: 0x4d, Type: bool
 function private function_bf0dace86671499b( params )
 {
@@ -77,7 +77,7 @@ function private function_bf0dace86671499b( params )
 
 // Namespace ob_powerups / scripts\ob\ob_powerups
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2bf
+// Checksum 0x0, Offset: 0x2c0
 // Size: 0xac
 function private function_c23cf1e91ae6319f()
 {
@@ -103,7 +103,7 @@ function private function_c23cf1e91ae6319f()
 
 // Namespace ob_powerups / scripts\ob\ob_powerups
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x374
+// Checksum 0x0, Offset: 0x375
 // Size: 0x8a
 function private function_25826d6baf7d0387()
 {
@@ -127,7 +127,7 @@ function private function_25826d6baf7d0387()
 
 // Namespace ob_powerups / scripts\ob\ob_powerups
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x407
+// Checksum 0x0, Offset: 0x408
 // Size: 0x1b
 function private function_2dd375b88b7390ce()
 {
@@ -136,7 +136,7 @@ function private function_2dd375b88b7390ce()
 
 // Namespace ob_powerups / scripts\ob\ob_powerups
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x42b
+// Checksum 0x0, Offset: 0x42c
 // Size: 0x94
 function private function_4cfba9113145908e()
 {
@@ -161,7 +161,7 @@ function private function_4cfba9113145908e()
 
 // Namespace ob_powerups / scripts\ob\ob_powerups
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x4c8
+// Checksum 0x0, Offset: 0x4c9
 // Size: 0x198
 function private function_16bfed565cfac7c4()
 {
@@ -201,7 +201,7 @@ function private function_16bfed565cfac7c4()
 
 // Namespace ob_powerups / scripts\ob\ob_powerups
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x669
+// Checksum 0x0, Offset: 0x66a
 // Size: 0x121
 function private function_69b4026f881d6f0b()
 {

@@ -29,7 +29,7 @@ function autoexec main()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x757
 // Size: 0xda
 function function_40e8a5a7f496a5e1()
@@ -52,7 +52,7 @@ function function_40e8a5a7f496a5e1()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x839
 // Size: 0x65
 function function_7189d58307e0232d( player )
@@ -67,7 +67,7 @@ function function_7189d58307e0232d( player )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8a6
 // Size: 0x347
 function box_used_common_setup( grenade, equipmentname, superid, headicon )
@@ -160,7 +160,7 @@ function box_used_common_setup( grenade, equipmentname, superid, headicon )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbf5
 // Size: 0x128
 function function_7c185a75f2dfdaf9( player )
@@ -199,7 +199,7 @@ function function_7c185a75f2dfdaf9( player )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd25
 // Size: 0x9e, Type: bool
 function is_train_ent( hitent )
@@ -224,7 +224,7 @@ function is_train_ent( hitent )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdcc
 // Size: 0x10f
 function medbox_used( grenade )
@@ -256,7 +256,7 @@ function medbox_used( grenade )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xee3
 // Size: 0x6c
 function function_5fac0b2ef5c1e31c( time )
@@ -272,7 +272,7 @@ function function_5fac0b2ef5c1e31c( time )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf57
 // Size: 0x9a
 function function_311a39a241b6e438()
@@ -295,7 +295,7 @@ function function_311a39a241b6e438()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xff9
 // Size: 0x19d
 function function_2850334505f6e7f7( immediate, wasdestroyed, var_d3f5ceb48370a22a )
@@ -364,7 +364,7 @@ function function_2850334505f6e7f7( immediate, wasdestroyed, var_d3f5ceb48370a22
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x119e
 // Size: 0x112
 function function_b349fbedc61f01e4( deletiondelay, wasdestroyed )
@@ -400,7 +400,7 @@ function function_b349fbedc61f01e4( deletiondelay, wasdestroyed )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12b8
 // Size: 0x8d
 function function_67340ce4394d6a9( equipmentname, hintstring )
@@ -421,7 +421,7 @@ function function_67340ce4394d6a9( equipmentname, hintstring )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x134d
 // Size: 0x7b
 function medbox_makeunusable()
@@ -441,7 +441,7 @@ function medbox_makeunusable()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13d0
 // Size: 0x45
 function function_7debe3e49eeb21cb()
@@ -463,7 +463,7 @@ function function_7debe3e49eeb21cb()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x141d
 // Size: 0x84
 function function_7ab94d4ac032f716()
@@ -486,7 +486,7 @@ function function_7ab94d4ac032f716()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14a9
 // Size: 0xb0
 function function_42d1dd4813d81681()
@@ -510,7 +510,7 @@ function function_42d1dd4813d81681()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1561
 // Size: 0x74, Type: bool
 function function_cb4fbeffb3529c7( player )
@@ -542,7 +542,7 @@ function function_cb4fbeffb3529c7( player )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15de
 // Size: 0x58
 function function_7a3ec75c9ecb32a( player )
@@ -561,7 +561,7 @@ function function_7a3ec75c9ecb32a( player )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x163f
 // Size: 0x1d
 function function_ac68a8c0957eeeeb( player )
@@ -573,7 +573,7 @@ function function_ac68a8c0957eeeeb( player )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1664
 // Size: 0x57
 function function_9dc18231b25d8653()
@@ -593,7 +593,7 @@ function function_9dc18231b25d8653()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c3
 // Size: 0x75
 function function_c5fc51cc2864328()
@@ -613,7 +613,7 @@ function function_c5fc51cc2864328()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1740
 // Size: 0x29
 function function_12b512237730ace8( data )
@@ -623,7 +623,7 @@ function function_12b512237730ace8( data )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1771
 // Size: 0x3f
 function function_320b2af6f6bd1910()
@@ -638,7 +638,7 @@ function function_320b2af6f6bd1910()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17b8
 // Size: 0x47
 function function_5ab1f822624461d( headicon )
@@ -649,7 +649,7 @@ function function_5ab1f822624461d( headicon )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1807
 // Size: 0x50
 function function_8463e9c51dc49f4c()
@@ -668,7 +668,7 @@ function function_8463e9c51dc49f4c()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x185f
 // Size: 0x112
 function function_2bdf5e5dc8f22e66( attacker, fromemp )
@@ -710,7 +710,7 @@ function function_2bdf5e5dc8f22e66( attacker, fromemp )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1979
 // Size: 0xef
 function function_e2df8d98b73b2414( player, eventname, persstat, supername )
@@ -740,7 +740,7 @@ function function_e2df8d98b73b2414( player, eventname, persstat, supername )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a70
 // Size: 0x13
 function function_65c63d1724f6b2a7( data )
@@ -749,7 +749,7 @@ function function_65c63d1724f6b2a7( data )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a8b
 // Size: 0xd9
 function function_246699c2be1e55c2( data )
@@ -783,7 +783,7 @@ function function_246699c2be1e55c2( data )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b6c
 // Size: 0xba
 function function_354b5edf045a416d( stuckto )
@@ -808,7 +808,7 @@ function function_354b5edf045a416d( stuckto )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c2e
 // Size: 0x2c
 function function_cdfda8cc0153b5d6()
@@ -823,7 +823,7 @@ function function_cdfda8cc0153b5d6()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c62
 // Size: 0x81
 function function_c13f96eaa3be2dab()
@@ -843,7 +843,7 @@ function function_c13f96eaa3be2dab()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ceb
 // Size: 0x35
 function function_91bbfcf9c145de2c( data )
@@ -854,7 +854,7 @@ function function_91bbfcf9c145de2c( data )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d28
 // Size: 0x33
 function function_396418c8b2e4fc03( data )
@@ -865,7 +865,7 @@ function function_396418c8b2e4fc03( data )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d63
 // Size: 0x5c
 function function_69873580a9e98ea()
@@ -882,7 +882,7 @@ function function_69873580a9e98ea()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dc7
 // Size: 0x10e
 function function_693a82b036cfba91( player )
@@ -941,7 +941,7 @@ function function_693a82b036cfba91( player )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1edd
 // Size: 0x10
 function function_71823b2e5023e827()
@@ -950,7 +950,7 @@ function function_71823b2e5023e827()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ef6
 // Size: 0x10
 function function_d3cc6eb39b0771f5()
@@ -959,7 +959,7 @@ function function_d3cc6eb39b0771f5()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f0f
 // Size: 0x10
 function function_4868d9728ebf387a()
@@ -968,7 +968,7 @@ function function_4868d9728ebf387a()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f28
 // Size: 0x14e
 function function_3122c424cb613711( entity, player )
@@ -1020,7 +1020,7 @@ function function_3122c424cb613711( entity, player )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x207e
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
@@ -1029,7 +1029,7 @@ function function_49197cd063a740ea( callbackfunction )
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x209b
 // Size: 0x80
 function function_58225ad9f963583d()
@@ -1054,7 +1054,7 @@ function function_58225ad9f963583d()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2123
 // Size: 0x1e
 function function_6ed51e2f80c93fa6()
@@ -1064,7 +1064,7 @@ function function_6ed51e2f80c93fa6()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2149
 // Size: 0x1f
 function function_44ec1c3e385bd14b()
@@ -1074,7 +1074,7 @@ function function_44ec1c3e385bd14b()
 }
 
 // Namespace med_box / scripts\cp_mp\supers\med_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2170
 // Size: 0xe2
 function function_708bb89e4bbfc40( grenade, player )

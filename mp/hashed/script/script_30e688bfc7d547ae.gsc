@@ -8,8 +8,8 @@
 #namespace warrior_tdm;
 
 // Namespace warrior_tdm / namespace_ae6eef0c3cb85cbc
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd
+// Params 0
+// Checksum 0x0, Offset: 0xde
 // Size: 0x35
 function function_a200bcd0732bbd1c()
 {
@@ -19,8 +19,8 @@ function function_a200bcd0732bbd1c()
 }
 
 // Namespace warrior_tdm / namespace_ae6eef0c3cb85cbc
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11a
+// Params 0
+// Checksum 0x0, Offset: 0x11b
 // Size: 0x13
 function function_9835e0c3bb7a97ab()
 {
@@ -28,8 +28,8 @@ function function_9835e0c3bb7a97ab()
 }
 
 // Namespace warrior_tdm / namespace_ae6eef0c3cb85cbc
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x135
+// Params 3
+// Checksum 0x0, Offset: 0x136
 // Size: 0x176
 function function_baf203025bafcf34( winner, endreasontext, nukedetonated )
 {
@@ -80,8 +80,8 @@ function function_baf203025bafcf34( winner, endreasontext, nukedetonated )
 }
 
 // Namespace warrior_tdm / namespace_ae6eef0c3cb85cbc
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b4
+// Params 1
+// Checksum 0x0, Offset: 0x2b5
 // Size: 0x91
 function onplayerdeath( params )
 {

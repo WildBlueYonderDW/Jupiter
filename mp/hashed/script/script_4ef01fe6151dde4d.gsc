@@ -12,7 +12,7 @@
 #namespace namespace_a8e6d792fb89051e;
 
 // Namespace namespace_a8e6d792fb89051e / namespace_2bb19978a7035533
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d6
 // Size: 0x5f
 function function_b05f987b9adfdc21( uniquename, var_cc3e7fbaface5a17, var_b76b3aee05993635, customcallbackfunction )
@@ -23,7 +23,7 @@ function function_b05f987b9adfdc21( uniquename, var_cc3e7fbaface5a17, var_b76b3a
 }
 
 // Namespace namespace_a8e6d792fb89051e / namespace_2bb19978a7035533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x23d
 // Size: 0x56
 function function_76c04b66e3485690( uniquename, var_84b03d3d5cf4dd29, customcallbackfunction )
@@ -34,7 +34,7 @@ function function_76c04b66e3485690( uniquename, var_84b03d3d5cf4dd29, customcall
 }
 
 // Namespace namespace_a8e6d792fb89051e / namespace_2bb19978a7035533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x29b
 // Size: 0x56
 function function_95f8d1b9f6685b61( uniquename, timeinseconds, customcallbackfunction )
@@ -45,7 +45,7 @@ function function_95f8d1b9f6685b61( uniquename, timeinseconds, customcallbackfun
 }
 
 // Namespace namespace_a8e6d792fb89051e / namespace_2bb19978a7035533
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f9
 // Size: 0x56
 function function_6a79e7a24a17e101( uniquename, var_ded14ae1ea8c4446, customcallbackfunction )
@@ -56,7 +56,7 @@ function function_6a79e7a24a17e101( uniquename, var_ded14ae1ea8c4446, customcall
 }
 
 // Namespace namespace_a8e6d792fb89051e / namespace_2bb19978a7035533
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x357
 // Size: 0x5f
 function function_f3a73e1c537a55ae()
@@ -71,7 +71,7 @@ function function_f3a73e1c537a55ae()
 }
 
 // Namespace namespace_a8e6d792fb89051e / namespace_2bb19978a7035533
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3be
 // Size: 0x42
 function function_b0afa182f3914d4f( uniquename )
@@ -82,7 +82,7 @@ function function_b0afa182f3914d4f( uniquename )
 }
 
 // Namespace namespace_a8e6d792fb89051e / namespace_2bb19978a7035533
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x408
 // Size: 0xb1
 function function_9ff369ea020a30a6( uniquename, pausetimer )

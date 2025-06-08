@@ -27,7 +27,7 @@
 #namespace assault;
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x789
 // Size: 0x271
 function main()
@@ -89,7 +89,7 @@ function main()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa02
 // Size: 0x19f
 function initializematchrules()
@@ -118,7 +118,7 @@ function initializematchrules()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba9
 // Size: 0x1c
 function onprecachegametype()
@@ -128,7 +128,7 @@ function onprecachegametype()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbcd
 // Size: 0x16c
 function onstartgametype()
@@ -172,7 +172,7 @@ function onstartgametype()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd41
 // Size: 0x9b
 function initspawns()
@@ -189,7 +189,7 @@ function initspawns()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde4
 // Size: 0xd7
 function initbombsitespawns( side )
@@ -212,7 +212,7 @@ function initbombsitespawns( side )
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xec3
 // Size: 0xba
 function getspawnpoint()
@@ -241,7 +241,7 @@ function getspawnpoint()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf86
 // Size: 0xea
 function onspawnplayer( revivespawn )
@@ -278,7 +278,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x1078
 // Size: 0x68
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -288,7 +288,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10e8
 // Size: 0x89
 function checkallowspectating()
@@ -315,7 +315,7 @@ function checkallowspectating()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1179
 // Size: 0xe8
 function sd_endgame( winningteam, endreasontext )
@@ -342,7 +342,7 @@ function sd_endgame( winningteam, endreasontext )
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1269
 // Size: 0x14b
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -374,7 +374,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13bc
 // Size: 0x8e
 function ontimelimit()
@@ -392,7 +392,7 @@ function ontimelimit()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1452
 // Size: 0x87
 function updategametypedvars()
@@ -406,7 +406,7 @@ function updategametypedvars()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14e1
 // Size: 0x4d
 function setspecialloadout()
@@ -418,7 +418,7 @@ function setspecialloadout()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1536
 // Size: 0x33
 function isplayeroutsideofcurbombsite( weaponname )
@@ -432,7 +432,7 @@ function isplayeroutsideofcurbombsite( weaponname )
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1572
 // Size: 0x54
 function initializeobjectives()
@@ -445,7 +445,7 @@ function initializeobjectives()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15ce
 // Size: 0x103
 function setupnextobjective( index )
@@ -490,7 +490,7 @@ function setupnextobjective( index )
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x16da
 // Size: 0x107
 function onobjectivecomplete( objectivetype, objectivelabel, creditplayer, creditteam, otherdata )
@@ -525,7 +525,7 @@ function onobjectivecomplete( objectivetype, objectivelabel, creditplayer, credi
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x17e9
 // Size: 0xac
 function ondompointobjectivecomplete( objectivelabel, creditplayer, creditteam, oldteam )
@@ -543,7 +543,7 @@ function ondompointobjectivecomplete( objectivelabel, creditplayer, creditteam, 
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x189d
 // Size: 0x56
 function onbombzoneobjectivecomplete( objectivelabel, creditplayer, creditteam, otherdata )
@@ -557,7 +557,7 @@ function onbombzoneobjectivecomplete( objectivelabel, creditplayer, creditteam, 
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18fb
 // Size: 0x2b
 function restarttimer()
@@ -568,7 +568,7 @@ function restarttimer()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x192e
 // Size: 0x25
 function setuppingwatcher()
@@ -583,7 +583,7 @@ function setuppingwatcher()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x195b
 // Size: 0x50
 function waitforplayerping()
@@ -609,7 +609,7 @@ function waitforplayerping()
 }
 
 // Namespace assault / scripts\mp\gametypes\assault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19b3
 // Size: 0x1bb
 function doping()

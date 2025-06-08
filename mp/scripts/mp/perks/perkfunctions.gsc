@@ -69,7 +69,7 @@
 #namespace perkfunctions;
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f0a
 // Size: 0xa
 function sethealer()
@@ -78,7 +78,7 @@ function sethealer()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f1c
 // Size: 0x17b
 function radialhealer()
@@ -133,7 +133,7 @@ function radialhealer()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x309f
 // Size: 0x150
 function healerperkteammatewatcher( player )
@@ -169,7 +169,7 @@ function healerperkteammatewatcher( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31f7
 // Size: 0xa5
 function healerperkteammatedestructor( player )
@@ -198,7 +198,7 @@ function healerperkteammatedestructor( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32a4
 // Size: 0xa
 function unsethealer()
@@ -207,7 +207,7 @@ function unsethealer()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32b6
 // Size: 0xe6
 function givehealedoverlay( player )
@@ -229,7 +229,7 @@ function givehealedoverlay( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x33a4
 // Size: 0x57
 function healedoverlayfade( healedoverlay, healer, final )
@@ -244,7 +244,7 @@ function healedoverlayfade( healedoverlay, healer, final )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3403
 // Size: 0x5d
 function healedoverlaydestructor( healedoverlay, healer )
@@ -261,7 +261,7 @@ function healedoverlaydestructor( healedoverlay, healer )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3468
 // Size: 0xc
 function setbreacher()
@@ -270,7 +270,7 @@ function setbreacher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x347c
 // Size: 0xb
 function unsetbreacher()
@@ -279,7 +279,7 @@ function unsetbreacher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x348f
 // Size: 0xa
 function setoffhandprovider()
@@ -288,7 +288,7 @@ function setoffhandprovider()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34a1
 // Size: 0x19c
 function offhandproviderthread()
@@ -318,11 +318,13 @@ function offhandproviderthread()
                 player.ohpequipmentrefills[ self getentitynumber() ] = 1;
                 equipmentfilled = player refillequipment();
                 
-                for (i = 0; i < equipmentfilled[ "primary" ]; i++) {
+                for ( i = 0; i < equipmentfilled[ "primary" ] ; i++ )
+                {
                     player thread ohpequipmentfillednotification( self.name, player equipment::getcurrentequipment( "primary" ) );
                 }
                 
-                for (i = 0; i < equipmentfilled[ "secondary" ]; i++) {
+                for ( i = 0; i < equipmentfilled[ "secondary" ] ; i++ )
+                {
                     player thread ohpequipmentfillednotification( self.name, player equipment::getcurrentequipment( "secondary" ) );
                 }
                 
@@ -336,7 +338,7 @@ function offhandproviderthread()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3645
 // Size: 0x4b
 function ohpallowuseonplayerdeath( player )
@@ -349,7 +351,7 @@ function ohpallowuseonplayerdeath( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3698
 // Size: 0xa
 function unsetoffhandprovider()
@@ -358,7 +360,7 @@ function unsetoffhandprovider()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36aa
 // Size: 0x3a
 function refillequipment()
@@ -370,7 +372,7 @@ function refillequipment()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36ed
 // Size: 0x8b
 function equipmentusedbyslot( slot, refill )
@@ -395,7 +397,7 @@ function equipmentusedbyslot( slot, refill )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3781
 // Size: 0x94
 function getequipmentstartammo( slot )
@@ -418,7 +420,7 @@ function getequipmentstartammo( slot )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x381e
 // Size: 0x232
 function ohpequipmentfillednotification( ohpname, equip )
@@ -433,7 +435,8 @@ function ohpequipmentfillednotification( ohpname, equip )
     
     size = self.munitionsnotifications.size;
     
-    for (i = 0; i < size; i++) {
+    for ( i = 0; i < size ; i++ )
+    {
         if ( i < 2 )
         {
             thread movenotificationup( self.munitionsnotifications[ i ] );
@@ -482,7 +485,7 @@ function ohpequipmentfillednotification( ohpname, equip )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a58
 // Size: 0x4a
 function ohpcleanupnotificationondeath( iconelem )
@@ -499,7 +502,7 @@ function ohpcleanupnotificationondeath( iconelem )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3aaa
 // Size: 0x5b
 function movenotificationup( iconelem )
@@ -518,7 +521,7 @@ function movenotificationup( iconelem )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b0d
 // Size: 0x2
 function setoverkillpro()
@@ -527,7 +530,7 @@ function setoverkillpro()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b17
 // Size: 0x2
 function unsetoverkillpro()
@@ -536,7 +539,7 @@ function unsetoverkillpro()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b21
 // Size: 0x2
 function setempimmune()
@@ -545,7 +548,7 @@ function setempimmune()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b2b
 // Size: 0x2
 function unsetempimmune()
@@ -554,7 +557,7 @@ function unsetempimmune()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b35
 // Size: 0x1a
 function setautospot()
@@ -569,7 +572,7 @@ function setautospot()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b57
 // Size: 0x26
 function autospotdeathwatcher()
@@ -582,7 +585,7 @@ function autospotdeathwatcher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b85
 // Size: 0x1b
 function unsetautospot()
@@ -597,7 +600,7 @@ function unsetautospot()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ba8
 // Size: 0x87
 function autospotadswatcher()
@@ -639,7 +642,7 @@ function autospotadswatcher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c37
 // Size: 0x2
 function setregenfaster()
@@ -648,7 +651,7 @@ function setregenfaster()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c41
 // Size: 0x2
 function unsetregenfaster()
@@ -657,7 +660,7 @@ function unsetregenfaster()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c4b
 // Size: 0x31
 function timeoutregenfaster()
@@ -669,7 +672,7 @@ function timeoutregenfaster()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c84
 // Size: 0x10
 function sethardshell()
@@ -678,7 +681,7 @@ function sethardshell()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c9c
 // Size: 0xc
 function unsethardshell()
@@ -687,7 +690,7 @@ function unsethardshell()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cb0
 // Size: 0xa
 function setsharpfocus()
@@ -696,7 +699,7 @@ function setsharpfocus()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cc2
 // Size: 0x29
 function monitorsharpfocus()
@@ -713,7 +716,7 @@ function monitorsharpfocus()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cf3
 // Size: 0x69
 function updatesharpfocus()
@@ -743,7 +746,7 @@ function updatesharpfocus()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d64
 // Size: 0x16
 function unsetsharpfocus()
@@ -753,7 +756,7 @@ function unsetsharpfocus()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d82
 // Size: 0x68
 function updatedefaultflinchreduction()
@@ -787,7 +790,7 @@ function updatedefaultflinchreduction()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3df2
 // Size: 0x17a
 function ammodisabling_run( victim, isthrowstar, additionaltime )
@@ -853,7 +856,7 @@ function ammodisabling_run( victim, isthrowstar, additionaltime )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f74
 // Size: 0x4a
 function ammodisabling_impair()
@@ -865,7 +868,7 @@ function ammodisabling_impair()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fc6
 // Size: 0xe
 function ammodisabling_impairend()
@@ -874,7 +877,7 @@ function ammodisabling_impairend()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fdc
 // Size: 0x79
 function setviewkickoverride()
@@ -887,7 +890,7 @@ function setviewkickoverride()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x405d
 // Size: 0x31
 function unsetviewkickoverride()
@@ -900,7 +903,7 @@ function unsetviewkickoverride()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4096
 // Size: 0x17
 function setaffinityspeedboost()
@@ -910,7 +913,7 @@ function setaffinityspeedboost()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40b5
 // Size: 0x13
 function unsetaffinityspeedboost()
@@ -920,7 +923,7 @@ function unsetaffinityspeedboost()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40d0
 // Size: 0x14b
 function setaffinityextralauncher()
@@ -939,7 +942,7 @@ function setaffinityextralauncher()
         self setweaponammoclip( secondary, weaponclipsize( secondary ) );
     }
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         tertiary = weapon::buildweapon( self.loadouttertiary, self.var_494870a5978b5a09, self.loadouttertiarycamo, self.loadouttertiaryreticle, self.loadouttertiaryvariantid );
         
@@ -951,7 +954,7 @@ function setaffinityextralauncher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4223
 // Size: 0xc
 function unsetaffinityextralauncher()
@@ -960,7 +963,7 @@ function unsetaffinityextralauncher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4237
 // Size: 0x119
 function setdoubleload()
@@ -1005,7 +1008,7 @@ function setdoubleload()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4358
 // Size: 0xa
 function unsetdoubleload()
@@ -1014,7 +1017,7 @@ function unsetdoubleload()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x436a
 // Size: 0xb
 function setmarksman( power )
@@ -1023,7 +1026,7 @@ function setmarksman( power )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43a7
 // Size: 0x2
 function unsetmarksman()
@@ -1032,7 +1035,7 @@ function unsetmarksman()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43c4
 // Size: 0xa
 function setfastcrouch()
@@ -1041,7 +1044,7 @@ function setfastcrouch()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43d6
 // Size: 0x89
 function watchfastcrouch()
@@ -1072,7 +1075,7 @@ function watchfastcrouch()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4467
 // Size: 0x28
 function unsetfastcrouch()
@@ -1087,7 +1090,7 @@ function unsetfastcrouch()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4497
 // Size: 0x1e
 function setrshieldradar()
@@ -1099,7 +1102,7 @@ function setrshieldradar()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44bd
 // Size: 0x1d
 function setrshieldradar_cleanup()
@@ -1114,7 +1117,7 @@ function setrshieldradar_cleanup()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44e2
 // Size: 0x11
 function unsetrshieldradar()
@@ -1124,7 +1127,7 @@ function unsetrshieldradar()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44fb
 // Size: 0x11
 function setrshieldscrambler()
@@ -1134,7 +1137,7 @@ function setrshieldscrambler()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4514
 // Size: 0x1d
 function setrshieldscrambler_cleanup()
@@ -1149,7 +1152,7 @@ function setrshieldscrambler_cleanup()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4539
 // Size: 0x11
 function unsetrshieldscrambler()
@@ -1159,7 +1162,7 @@ function unsetrshieldscrambler()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4552
 // Size: 0x3d
 function setstunresistance( power )
@@ -1181,7 +1184,7 @@ function setstunresistance( power )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4597
 // Size: 0xd
 function unsetstunresistance()
@@ -1190,7 +1193,7 @@ function unsetstunresistance()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x45ac
 // Size: 0x12e
 function applystunresistence( attacker, victim, time )
@@ -1239,7 +1242,7 @@ function applystunresistence( attacker, victim, time )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46e3
 // Size: 0x21
 function setweaponlaser()
@@ -1255,7 +1258,7 @@ function setweaponlaser()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x470c
 // Size: 0x3f
 function unsetweaponlaser()
@@ -1272,12 +1275,13 @@ function unsetweaponlaser()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4753
 // Size: 0x5a
 function setweaponlaser_waitforlaserweapon( weapon )
 {
-    for (weapon = getweaponbasename( weapon ); true; weapon = objweapon.basename) {
+    for ( weapon = getweaponbasename( weapon ); true ; weapon = objweapon.basename )
+    {
         if ( isdefined( weapon ) && ( weapon == "iw6_kac_mp" || weapon == "iw6_arx160_mp" ) )
         {
             break;
@@ -1288,7 +1292,7 @@ function setweaponlaser_waitforlaserweapon( weapon )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47b5
 // Size: 0xa3
 function setweaponlaser_internal()
@@ -1322,7 +1326,7 @@ function setweaponlaser_internal()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4860
 // Size: 0x2b
 function setweaponlaser_monitorweaponswitchstart( offtime )
@@ -1337,7 +1341,7 @@ function setweaponlaser_monitorweaponswitchstart( offtime )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4893
 // Size: 0x81
 function setweaponlaser_onweaponswitchstart( offtime )
@@ -1363,7 +1367,7 @@ function setweaponlaser_onweaponswitchstart( offtime )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x491c
 // Size: 0x81
 function setweaponlaser_monitorads()
@@ -1394,7 +1398,7 @@ function setweaponlaser_monitorads()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49a5
 // Size: 0xe
 function setsteadyaimpro()
@@ -1403,7 +1407,7 @@ function setsteadyaimpro()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49bb
 // Size: 0x16
 function unsetsteadyaimpro()
@@ -1413,7 +1417,7 @@ function unsetsteadyaimpro()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49d9
 // Size: 0x1b
 function perkusedeathtracker()
@@ -1424,7 +1428,7 @@ function perkusedeathtracker()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49fc
 // Size: 0x7c
 function setendgame()
@@ -1444,7 +1448,7 @@ function setendgame()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a80
 // Size: 0x4b
 function unsetendgame()
@@ -1463,7 +1467,7 @@ function unsetendgame()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ad3
 // Size: 0x33
 function endgamedeath( duration )
@@ -1477,7 +1481,7 @@ function endgamedeath( duration )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b0e
 // Size: 0x10
 function setsaboteur()
@@ -1486,7 +1490,7 @@ function setsaboteur()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b26
 // Size: 0xd
 function unsetsaboteur()
@@ -1495,7 +1499,7 @@ function unsetsaboteur()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b3b
 // Size: 0xa5
 function setcombatspeed()
@@ -1531,7 +1535,7 @@ function setcombatspeed()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4be8
 // Size: 0x31
 function endofspeedwatcher()
@@ -1545,7 +1549,7 @@ function endofspeedwatcher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c21
 // Size: 0x5d
 function setcombatspeedscalar()
@@ -1567,7 +1571,7 @@ function setcombatspeedscalar()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c86
 // Size: 0x14
 function unsetcombatspeedscalar()
@@ -1577,7 +1581,7 @@ function unsetcombatspeedscalar()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ca2
 // Size: 0x11
 function unsetcombatspeed()
@@ -1587,7 +1591,7 @@ function unsetcombatspeed()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cbb
 // Size: 0x2
 function setblackbox()
@@ -1596,7 +1600,7 @@ function setblackbox()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cc5
 // Size: 0x2
 function unsetblackbox()
@@ -1605,7 +1609,7 @@ function unsetblackbox()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ccf
 // Size: 0x1a
 function setsteelnerves()
@@ -1615,7 +1619,7 @@ function setsteelnerves()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cf1
 // Size: 0x1a
 function unsetsteelnerves()
@@ -1625,7 +1629,7 @@ function unsetsteelnerves()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d13
 // Size: 0x33
 function setdelaymine()
@@ -1639,7 +1643,7 @@ function setdelaymine()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d4e
 // Size: 0x29
 function unsetdelaymine()
@@ -1653,7 +1657,7 @@ function unsetdelaymine()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d7f
 // Size: 0x12
 function setlocaljammer()
@@ -1665,7 +1669,7 @@ function setlocaljammer()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d99
 // Size: 0x9
 function unsetlocaljammer()
@@ -1674,7 +1678,7 @@ function unsetlocaljammer()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4daa
 // Size: 0x9
 function setthermal()
@@ -1683,7 +1687,7 @@ function setthermal()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4dbb
 // Size: 0x9
 function unsetthermal()
@@ -1692,7 +1696,7 @@ function unsetthermal()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4dcc
 // Size: 0xa
 function setonemanarmy()
@@ -1701,7 +1705,7 @@ function setonemanarmy()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4dde
 // Size: 0xa
 function unsetonemanarmy()
@@ -1710,7 +1714,7 @@ function unsetonemanarmy()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4df0
 // Size: 0x4d
 function onemanarmyweaponchangetracker()
@@ -1733,7 +1737,7 @@ function onemanarmyweaponchangetracker()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e45
 // Size: 0x51, Type: bool
 function isonemanarmymenu( menu )
@@ -1757,7 +1761,7 @@ function isonemanarmymenu( menu )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e9f
 // Size: 0x11c
 function selectonemanarmyclass()
@@ -1792,7 +1796,7 @@ function selectonemanarmyclass()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4fc3
 // Size: 0x2b
 function closeomamenuondeath()
@@ -1805,7 +1809,7 @@ function closeomamenuondeath()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ff6
 // Size: 0x105
 function giveonemanarmyclass( classname )
@@ -1843,7 +1847,7 @@ function giveonemanarmyclass( classname )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5103
 // Size: 0x97
 function omausebar( duration )
@@ -1866,7 +1870,7 @@ function omausebar( duration )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51a2
 // Size: 0x36
 function setafterburner()
@@ -1876,7 +1880,7 @@ function setafterburner()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51e0
 // Size: 0x18
 function unsetafterburner()
@@ -1886,7 +1890,7 @@ function unsetafterburner()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5200
 // Size: 0x2
 function setfreefall()
@@ -1895,7 +1899,7 @@ function setfreefall()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x520a
 // Size: 0x2
 function unsetfreefall()
@@ -1904,7 +1908,7 @@ function unsetfreefall()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5214
 // Size: 0x13
 function settacticalinsertion()
@@ -1913,7 +1917,7 @@ function settacticalinsertion()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x522f
 // Size: 0x2
 function unsettacticalinsertion()
@@ -1922,7 +1926,7 @@ function unsettacticalinsertion()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5239
 // Size: 0x7d
 function setpainted( attacker )
@@ -1942,7 +1946,7 @@ function setpainted( attacker )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x52be
 // Size: 0x58
 function watchpainted( id, timeout )
@@ -1958,7 +1962,7 @@ function watchpainted( id, timeout )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x531e
 // Size: 0x33
 function watchpaintedagain( id )
@@ -1970,7 +1974,7 @@ function watchpaintedagain( id )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5359
 // Size: 0x19, Type: bool
 function ispainted()
@@ -1979,7 +1983,7 @@ function ispainted()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x537b
 // Size: 0x2
 function setassists()
@@ -1988,7 +1992,7 @@ function setassists()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5385
 // Size: 0x2
 function unsetassists()
@@ -1997,7 +2001,7 @@ function unsetassists()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x538f
 // Size: 0x3c
 function setrefillgrenades()
@@ -2014,7 +2018,7 @@ function setrefillgrenades()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53d3
 // Size: 0x2
 function unsetrefillgrenades()
@@ -2023,7 +2027,7 @@ function unsetrefillgrenades()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53dd
 // Size: 0x3c
 function setrefillammo()
@@ -2040,7 +2044,7 @@ function setrefillammo()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5421
 // Size: 0x2
 function unsetrefillammo()
@@ -2049,7 +2053,7 @@ function unsetrefillammo()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x542b
 // Size: 0x2
 function setcomexp()
@@ -2058,7 +2062,7 @@ function setcomexp()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5435
 // Size: 0x2
 function unsetcomexp()
@@ -2067,7 +2071,7 @@ function unsetcomexp()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x543f
 // Size: 0xa
 function settagger()
@@ -2076,7 +2080,7 @@ function settagger()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5451
 // Size: 0x103
 function settaggerinternal()
@@ -2116,7 +2120,7 @@ function settaggerinternal()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x555c
 // Size: 0xab
 function outlinewatcher( victim )
@@ -2150,7 +2154,7 @@ function outlinewatcher( victim )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x560f
 // Size: 0xa
 function unsettagger()
@@ -2159,7 +2163,7 @@ function unsettagger()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5621
 // Size: 0xa
 function setpitcher()
@@ -2168,7 +2172,7 @@ function setpitcher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5633
 // Size: 0x8c
 function setpitcherinternal()
@@ -2193,7 +2197,7 @@ function setpitcherinternal()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56c7
 // Size: 0x1c
 function unsetpitcher()
@@ -2204,7 +2208,7 @@ function unsetpitcher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56eb
 // Size: 0x2
 function setboom()
@@ -2213,7 +2217,7 @@ function setboom()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x56f5
 // Size: 0x50
 function setboominternal( attacker )
@@ -2228,7 +2232,7 @@ function setboominternal( attacker )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x574d
 // Size: 0x98
 function boomtrackplayers( targetpos, victim )
@@ -2249,7 +2253,7 @@ function boomtrackplayers( targetpos, victim )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x57ed
 // Size: 0x7a
 function boomtrackplayerdeath( attacker, id )
@@ -2269,7 +2273,7 @@ function boomtrackplayerdeath( attacker, id )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x586f
 // Size: 0xa
 function unsetboom()
@@ -2278,7 +2282,7 @@ function unsetboom()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5881
 // Size: 0xd0
 function customjuiced( waittime )
@@ -2310,7 +2314,7 @@ function customjuiced( waittime )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5959
 // Size: 0xb5
 function unsetcustomjuiced( death )
@@ -2344,7 +2348,7 @@ function unsetcustomjuiced( death )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a16
 // Size: 0x2d
 function unsetcustomjuicedonride()
@@ -2365,7 +2369,7 @@ function unsetcustomjuicedonride()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a4b
 // Size: 0x2b
 function unsetcustomjuicedondeath()
@@ -2377,7 +2381,7 @@ function unsetcustomjuicedondeath()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a7e
 // Size: 0x2a
 function unsetcustomjuicedonmatchend()
@@ -2389,7 +2393,7 @@ function unsetcustomjuicedonmatchend()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ab0
 // Size: 0x2
 function settriggerhappy()
@@ -2398,7 +2402,7 @@ function settriggerhappy()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5aba
 // Size: 0xcb
 function settriggerhappyinternal()
@@ -2428,7 +2432,7 @@ function settriggerhappyinternal()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b8d
 // Size: 0x17
 function unsettriggerhappy()
@@ -2438,7 +2442,7 @@ function unsettriggerhappy()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bac
 // Size: 0x2
 function setincog()
@@ -2447,7 +2451,7 @@ function setincog()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bb6
 // Size: 0x2
 function unsetincog()
@@ -2456,7 +2460,7 @@ function unsetincog()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bc0
 // Size: 0x2
 function setblindeye()
@@ -2465,7 +2469,7 @@ function setblindeye()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bca
 // Size: 0x2
 function unsetblindeye()
@@ -2474,7 +2478,7 @@ function unsetblindeye()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bd4
 // Size: 0x2
 function setquickswap()
@@ -2483,7 +2487,7 @@ function setquickswap()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bde
 // Size: 0x2
 function unsetquickswap()
@@ -2492,7 +2496,7 @@ function unsetquickswap()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5be8
 // Size: 0x96
 function setextraammo()
@@ -2518,7 +2522,7 @@ function setextraammo()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c86
 // Size: 0xa
 function unsetextraammo()
@@ -2527,7 +2531,7 @@ function unsetextraammo()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c98
 // Size: 0xc2
 function setextradeadly()
@@ -2570,7 +2574,7 @@ function setextradeadly()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d62
 // Size: 0xa
 function unsetextradeadly()
@@ -2579,7 +2583,7 @@ function unsetextradeadly()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d74
 // Size: 0x2
 function setbattleslide()
@@ -2588,7 +2592,7 @@ function setbattleslide()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d7e
 // Size: 0x2
 function unsetbattleslide()
@@ -2597,7 +2601,7 @@ function unsetbattleslide()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d88
 // Size: 0x2
 function setoverkill()
@@ -2606,7 +2610,7 @@ function setoverkill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d92
 // Size: 0x2
 function unsetoverkill()
@@ -2615,7 +2619,7 @@ function unsetoverkill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d9c
 // Size: 0x2
 function setactivereload()
@@ -2624,7 +2628,7 @@ function setactivereload()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5da6
 // Size: 0x2
 function unsetactivereload()
@@ -2633,7 +2637,7 @@ function unsetactivereload()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5db0
 // Size: 0x2c
 function setlifepack()
@@ -2647,7 +2651,7 @@ function setlifepack()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5de4
 // Size: 0x190
 function watchlifepackkills()
@@ -2683,7 +2687,7 @@ function watchlifepackkills()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5f7c
 // Size: 0x87
 function activatelifepackboost( owner, duration, disableondeath )
@@ -2708,7 +2712,7 @@ function activatelifepackboost( owner, duration, disableondeath )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x600b
 // Size: 0x28
 function watchlifepackboostlifetime( duration )
@@ -2723,7 +2727,7 @@ function watchlifepackboostlifetime( duration )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x603b
 // Size: 0x60
 function disablelifepackboost()
@@ -2740,7 +2744,7 @@ function disablelifepackboost()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60a3
 // Size: 0x63
 function setlifepackvisualforplayer( player )
@@ -2757,7 +2761,7 @@ function setlifepackvisualforplayer( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x610e
 // Size: 0x14e
 function setlifepackoutlinestate( player )
@@ -2792,7 +2796,7 @@ function setlifepackoutlinestate( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6264
 // Size: 0x34
 function watchlifepackoutlinestate( player )
@@ -2807,7 +2811,7 @@ function watchlifepackoutlinestate( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62a0
 // Size: 0x69
 function hoverlifepack()
@@ -2826,7 +2830,7 @@ function hoverlifepack()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6311
 // Size: 0x14a
 function watchlifepackuse( lifepack )
@@ -2878,7 +2882,7 @@ function watchlifepackuse( lifepack )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6463
 // Size: 0x26
 function watchlifepackdeath( lifepack )
@@ -2893,7 +2897,7 @@ function watchlifepackdeath( lifepack )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6491
 // Size: 0x2a
 function watchlifepacklifetime( lifetime, var_4529d94a150d03f6 )
@@ -2905,7 +2909,7 @@ function watchlifepacklifetime( lifetime, var_4529d94a150d03f6 )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64c3
 // Size: 0x25
 function watchlifepackowner()
@@ -2920,7 +2924,7 @@ function watchlifepackowner()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64f0
 // Size: 0x18
 function watchlifepackuserdeath()
@@ -2931,7 +2935,7 @@ function watchlifepackuserdeath()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6510
 // Size: 0x11
 function unsetlifepack()
@@ -2941,7 +2945,7 @@ function unsetlifepack()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6529
 // Size: 0x4b
 function settoughenup()
@@ -2959,7 +2963,7 @@ function settoughenup()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x657c
 // Size: 0x29b
 function watchtoughenup()
@@ -3021,7 +3025,7 @@ function watchtoughenup()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x681f
 // Size: 0xd2
 function attachtoughenuparmor( tag, model, originoverride, angleoverride, teamversion )
@@ -3050,7 +3054,7 @@ function attachtoughenuparmor( tag, model, originoverride, angleoverride, teamve
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x68fa
 // Size: 0x109
 function settoughenupmodel( var_28476f7cd7b8999, shieldoffset, shieldnumber, teamversion )
@@ -3075,7 +3079,7 @@ function settoughenupmodel( var_28476f7cd7b8999, shieldoffset, shieldnumber, tea
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a0b
 // Size: 0x11
 function watchtoughenuplightarmorend()
@@ -3085,7 +3089,7 @@ function watchtoughenuplightarmorend()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a24
 // Size: 0x4e
 function watchtoughenupplayerend( owner )
@@ -3106,7 +3110,7 @@ function watchtoughenupplayerend( owner )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a7a
 // Size: 0x1d
 function watchtoughenupgameend()
@@ -3121,7 +3125,7 @@ function watchtoughenupgameend()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a9f
 // Size: 0x33
 function watchtoughenuplifetime( lifetime )
@@ -3139,7 +3143,7 @@ function watchtoughenuplifetime( lifetime )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ada
 // Size: 0x8d
 function settoughenupvisiblestate( teamversion, owner )
@@ -3166,7 +3170,7 @@ function settoughenupvisiblestate( teamversion, owner )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6b6f
 // Size: 0x53
 function watchtoughenupplayerbegin( player, teamversion )
@@ -3188,7 +3192,7 @@ function watchtoughenupplayerbegin( player, teamversion )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6bca
 // Size: 0x6c
 function canshowtoughenupshield( player, teamversion )
@@ -3204,7 +3208,7 @@ function canshowtoughenupshield( player, teamversion )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c3f
 // Size: 0x18
 function unsettoughenup()
@@ -3215,7 +3219,7 @@ function unsettoughenup()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c5f
 // Size: 0xa
 function setscoutping()
@@ -3224,7 +3228,7 @@ function setscoutping()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c71
 // Size: 0xaf
 function updatescoutping()
@@ -3262,7 +3266,7 @@ function updatescoutping()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d28
 // Size: 0x12d
 function updatescoutpingvalues( momentumstage )
@@ -3312,7 +3316,7 @@ function updatescoutpingvalues( momentumstage )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e5d
 // Size: 0x32
 function unsetscoutping()
@@ -3325,7 +3329,7 @@ function unsetscoutping()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e97
 // Size: 0x12
 function setphasespeed()
@@ -3335,7 +3339,7 @@ function setphasespeed()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6eb1
 // Size: 0x2e
 function watchphasespeedshift()
@@ -3351,7 +3355,7 @@ function watchphasespeedshift()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ee7
 // Size: 0x2a
 function watchphasespeedendshift()
@@ -3367,7 +3371,7 @@ function watchphasespeedendshift()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f19
 // Size: 0xc
 function unsetphasespeed()
@@ -3376,7 +3380,7 @@ function unsetphasespeed()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f2d
 // Size: 0xb
 function setdodge()
@@ -3385,7 +3389,7 @@ function setdodge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f40
 // Size: 0xa
 function unsetdodge()
@@ -3394,7 +3398,7 @@ function unsetdodge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f52
 // Size: 0x18
 function setextradodge()
@@ -3404,7 +3408,7 @@ function setextradodge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f72
 // Size: 0x18
 function unsetextradodge()
@@ -3414,7 +3418,7 @@ function unsetextradodge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f92
 // Size: 0x15e, Type: bool
 function sixthsense_shouldwarnaboutotherplayer( otherplayer )
@@ -3487,7 +3491,7 @@ function sixthsense_shouldwarnaboutotherplayer( otherplayer )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x70f9
 // Size: 0xad, Type: bool
 function sixthsense_inotherplayertargetcone( otherplayer, playerpos, otherplayerpos, var_ed6e173aa5e562a5 )
@@ -3515,7 +3519,7 @@ function sixthsense_inotherplayertargetcone( otherplayer, playerpos, otherplayer
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x71af
 // Size: 0x4e, Type: bool
 function sixthsense_playerseesotherplayer( playeraim, playerpos, otherplayerpos )
@@ -3532,7 +3536,7 @@ function sixthsense_playerseesotherplayer( playeraim, playerpos, otherplayerpos 
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7206
 // Size: 0x507
 function sixthsense_think_internal()
@@ -3723,7 +3727,7 @@ function sixthsense_think_internal()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7715
 // Size: 0x1c
 function sixthsense_think()
@@ -3738,7 +3742,7 @@ function sixthsense_think()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7739
 // Size: 0x53
 function setsixthsense()
@@ -3756,7 +3760,7 @@ function setsixthsense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7794
 // Size: 0xa
 function unsetsixthsense()
@@ -3765,7 +3769,7 @@ function unsetsixthsense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77a6
 // Size: 0x55
 function clearsixthsense()
@@ -3782,7 +3786,7 @@ function clearsixthsense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7803
 // Size: 0x2
 function setenhancedsixthsense()
@@ -3791,7 +3795,7 @@ function setenhancedsixthsense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x780d
 // Size: 0x2
 function unsetenhancedsixthsense()
@@ -3800,7 +3804,7 @@ function unsetenhancedsixthsense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7817
 // Size: 0x18
 function updatesixthsensevfx( sightmask )
@@ -3809,7 +3813,7 @@ function updatesixthsensevfx( sightmask )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7837
 // Size: 0x13a
 function getsixthsensedirection( enemy )
@@ -3846,7 +3850,7 @@ function getsixthsensedirection( enemy )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7979
 // Size: 0x69
 function markassixthsensesource( otherplayer )
@@ -3862,7 +3866,7 @@ function markassixthsensesource( otherplayer )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79ea
 // Size: 0x1a3
 function setcamoelite()
@@ -3934,7 +3938,7 @@ function setcamoelite()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b95
 // Size: 0xb
 function updatecamoeliteoverlay( visible )
@@ -3943,7 +3947,7 @@ function updatecamoeliteoverlay( visible )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ba8
 // Size: 0x2
 function unsetcamoelite()
@@ -3952,7 +3956,7 @@ function unsetcamoelite()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bb2
 // Size: 0x11
 function setcarepackage()
@@ -3961,7 +3965,7 @@ function setcarepackage()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bcb
 // Size: 0x2
 function unsetcarepackage()
@@ -3970,7 +3974,7 @@ function unsetcarepackage()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bd5
 // Size: 0x11
 function setuav()
@@ -3979,7 +3983,7 @@ function setuav()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bee
 // Size: 0x2
 function unsetuav()
@@ -3988,7 +3992,7 @@ function unsetuav()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7bf8
 // Size: 0xd9
 function setjuiced( waittime )
@@ -4026,7 +4030,7 @@ function setjuiced( waittime )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7cd9
 // Size: 0xc4
 function unsetjuiced( death )
@@ -4061,7 +4065,7 @@ function unsetjuiced( death )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7da5
 // Size: 0x2d
 function unsetjuicedonride()
@@ -4082,7 +4086,7 @@ function unsetjuicedonride()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7dda
 // Size: 0x2b
 function unsetjuicedondeath()
@@ -4094,7 +4098,7 @@ function unsetjuicedondeath()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e0d
 // Size: 0x2a
 function unsetjuicedonmatchend()
@@ -4106,7 +4110,7 @@ function unsetjuicedonmatchend()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e3f
 // Size: 0xc, Type: bool
 function hasjuiced()
@@ -4115,7 +4119,7 @@ function hasjuiced()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e54
 // Size: 0x3c8
 function setcombathigh()
@@ -4189,7 +4193,7 @@ function setcombathigh()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8224
 // Size: 0x25
 function unsetcombathighondeath()
@@ -4201,7 +4205,7 @@ function unsetcombathighondeath()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8251
 // Size: 0x2d
 function unsetcombathighonride()
@@ -4222,7 +4226,7 @@ function unsetcombathighonride()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8286
 // Size: 0x37
 function unsetcombathigh()
@@ -4234,7 +4238,7 @@ function unsetcombathigh()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x82c5
 // Size: 0xc
 function setlightarmor()
@@ -4243,7 +4247,7 @@ function setlightarmor()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x82d9
 // Size: 0xa
 function unsetlightarmor()
@@ -4252,7 +4256,7 @@ function unsetlightarmor()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x82eb
 // Size: 0x170
 function setrevenge()
@@ -4292,7 +4296,7 @@ function setrevenge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8463
 // Size: 0x8d
 function watchrevengedeath()
@@ -4309,7 +4313,7 @@ function watchrevengedeath()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84f8
 // Size: 0x19
 function watchrevengekill()
@@ -4320,7 +4324,7 @@ function watchrevengekill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8519
 // Size: 0x21
 function watchrevengedisconnected()
@@ -4331,7 +4335,7 @@ function watchrevengedisconnected()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8542
 // Size: 0x80
 function watchstoprevenge()
@@ -4356,7 +4360,7 @@ function watchstoprevenge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x85ca
 // Size: 0xa8
 function watchrevengevictimdisconnected()
@@ -4385,7 +4389,7 @@ function watchrevengevictimdisconnected()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x867a
 // Size: 0xa
 function unsetrevenge()
@@ -4394,7 +4398,7 @@ function unsetrevenge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x868c
 // Size: 0xd
 function setphaseslide()
@@ -4403,7 +4407,7 @@ function setphaseslide()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x86a1
 // Size: 0xc
 function unsetphaseslide()
@@ -4412,7 +4416,7 @@ function unsetphaseslide()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x86b5
 // Size: 0xd
 function setteleslide()
@@ -4421,7 +4425,7 @@ function setteleslide()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x86ca
 // Size: 0xc
 function unsetteleslide()
@@ -4430,7 +4434,7 @@ function unsetteleslide()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x86de
 // Size: 0xd
 function setphaseslashrephase()
@@ -4439,7 +4443,7 @@ function setphaseslashrephase()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x86f3
 // Size: 0xc
 function unsetphaseslashrephase()
@@ -4448,7 +4452,7 @@ function unsetphaseslashrephase()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8707
 // Size: 0x2
 function setphasefall()
@@ -4457,7 +4461,7 @@ function setphasefall()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8711
 // Size: 0x2
 function unsetphasefall()
@@ -4466,7 +4470,7 @@ function unsetphasefall()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x871b
 // Size: 0x2
 function setextenddodge()
@@ -4475,7 +4479,7 @@ function setextenddodge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8725
 // Size: 0x2
 function unsetextenddodge()
@@ -4484,7 +4488,7 @@ function unsetextenddodge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x872f
 // Size: 0x9
 function setauraquickswap()
@@ -4493,7 +4497,7 @@ function setauraquickswap()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8740
 // Size: 0x2
 function unsetauraquickswap()
@@ -4502,7 +4506,7 @@ function unsetauraquickswap()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x874a
 // Size: 0x2
 function setauraspeed()
@@ -4511,7 +4515,7 @@ function setauraspeed()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8754
 // Size: 0x2
 function unsetauraspeed()
@@ -4520,7 +4524,7 @@ function unsetauraspeed()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x875e
 // Size: 0x9
 function setmarktargets()
@@ -4529,7 +4533,7 @@ function setmarktargets()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x876f
 // Size: 0x2
 function unsetmarktargets()
@@ -4538,7 +4542,7 @@ function unsetmarktargets()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8779
 // Size: 0x2
 function setbatterypack()
@@ -4547,7 +4551,7 @@ function setbatterypack()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8783
 // Size: 0x2
 function unsetbatterypack()
@@ -4556,7 +4560,7 @@ function unsetbatterypack()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x878d
 // Size: 0x2
 function setcamoclone()
@@ -4565,7 +4569,7 @@ function setcamoclone()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8797
 // Size: 0x2
 function unsetcamoclone()
@@ -4574,7 +4578,7 @@ function unsetcamoclone()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87a1
 // Size: 0x15
 function setblockhealthregen()
@@ -4584,7 +4588,7 @@ function setblockhealthregen()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87be
 // Size: 0x14
 function unsetblockhealthregen()
@@ -4594,7 +4598,7 @@ function unsetblockhealthregen()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87da
 // Size: 0x2
 function setscorestreakpack()
@@ -4603,7 +4607,7 @@ function setscorestreakpack()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87e4
 // Size: 0x2
 function unsetscorestreakpack()
@@ -4612,7 +4616,7 @@ function unsetscorestreakpack()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87ee
 // Size: 0x2
 function setsuperpack()
@@ -4621,7 +4625,7 @@ function setsuperpack()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87f8
 // Size: 0x2
 function unsetsuperpack()
@@ -4630,7 +4634,7 @@ function unsetsuperpack()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8802
 // Size: 0x2
 function setspawncloak()
@@ -4639,7 +4643,7 @@ function setspawncloak()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x880c
 // Size: 0x2
 function unsetspawncloak()
@@ -4648,7 +4652,7 @@ function unsetspawncloak()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8816
 // Size: 0x19
 function setdodgedefense()
@@ -4657,7 +4661,7 @@ function setdodgedefense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8837
 // Size: 0xf
 function unsetdodgedefense()
@@ -4666,7 +4670,7 @@ function unsetdodgedefense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x884e
 // Size: 0x6d, Type: bool
 function dodgedefenseignorefunc( inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc )
@@ -4680,7 +4684,7 @@ function dodgedefenseignorefunc( inflictor, attacker, victim, damage, meansofdea
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88c4
 // Size: 0x2
 function setdodgewave()
@@ -4689,7 +4693,7 @@ function setdodgewave()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88ce
 // Size: 0x2
 function unsetdodgewave()
@@ -4698,7 +4702,7 @@ function unsetdodgewave()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88d8
 // Size: 0x2
 function setgroundpound()
@@ -4707,7 +4711,7 @@ function setgroundpound()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88e2
 // Size: 0x2
 function unsetgroundpound()
@@ -4716,7 +4720,7 @@ function unsetgroundpound()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88ec
 // Size: 0xda
 function setmeleekill()
@@ -4744,7 +4748,7 @@ function setmeleekill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x89ce
 // Size: 0x69
 function unsetmeleekill()
@@ -4765,7 +4769,7 @@ function unsetmeleekill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a3f
 // Size: 0x2
 function setpowercell()
@@ -4774,7 +4778,7 @@ function setpowercell()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a49
 // Size: 0x2
 function unsetpowercell()
@@ -4783,7 +4787,7 @@ function unsetpowercell()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a53
 // Size: 0x3f
 function sethardline()
@@ -4797,7 +4801,7 @@ function sethardline()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a9a
 // Size: 0x10
 function watchhardlineassists()
@@ -4807,7 +4811,7 @@ function watchhardlineassists()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ab2
 // Size: 0x14
 function unsethardline()
@@ -4817,7 +4821,7 @@ function unsethardline()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ace
 // Size: 0x2
 function setoverclock()
@@ -4826,7 +4830,7 @@ function setoverclock()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ad8
 // Size: 0x2
 function unsetoverclock()
@@ -4835,7 +4839,7 @@ function unsetoverclock()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ae2
 // Size: 0x10
 function setovercharge()
@@ -4844,7 +4848,7 @@ function setovercharge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8afa
 // Size: 0xf
 function unsetovercharge()
@@ -4853,7 +4857,7 @@ function unsetovercharge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b11
 // Size: 0xa
 function setsupersprintenhanced()
@@ -4862,7 +4866,7 @@ function setsupersprintenhanced()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b23
 // Size: 0xa
 function unsetsupersprintenhanced()
@@ -4871,7 +4875,7 @@ function unsetsupersprintenhanced()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b35
 // Size: 0x5b
 function watchforsupersprintenhancedused()
@@ -4895,7 +4899,7 @@ function watchforsupersprintenhancedused()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b98
 // Size: 0x2
 function settracker()
@@ -4904,7 +4908,7 @@ function settracker()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ba2
 // Size: 0x2
 function unsettracker()
@@ -4913,7 +4917,7 @@ function unsettracker()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bac
 // Size: 0x2
 function setpersonaltrophy()
@@ -4922,7 +4926,7 @@ function setpersonaltrophy()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bb6
 // Size: 0x2
 function unsetpersonaltrophy()
@@ -4931,7 +4935,7 @@ function unsetpersonaltrophy()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bc0
 // Size: 0x2
 function setdisruptorpunch()
@@ -4940,7 +4944,7 @@ function setdisruptorpunch()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bca
 // Size: 0x2
 function unsetdisruptorpunch()
@@ -4949,7 +4953,7 @@ function unsetdisruptorpunch()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bd4
 // Size: 0x16
 function setequipmentping()
@@ -4961,7 +4965,7 @@ function setequipmentping()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bf2
 // Size: 0x2
 function unsetequipmentping()
@@ -4970,7 +4974,7 @@ function unsetequipmentping()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bfc
 // Size: 0x2
 function setmanatarms()
@@ -4979,7 +4983,7 @@ function setmanatarms()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c06
 // Size: 0x2
 function unsetmanatarms()
@@ -4988,7 +4992,7 @@ function unsetmanatarms()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c10
 // Size: 0xa
 function setoutlinekillstreaks()
@@ -4997,7 +5001,7 @@ function setoutlinekillstreaks()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c22
 // Size: 0xa8
 function outlinekillstreaks_enablemarksafterprematch()
@@ -5028,7 +5032,7 @@ function outlinekillstreaks_enablemarksafterprematch()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8cd2
 // Size: 0x41
 function unsetoutlinekillstreaks()
@@ -5045,7 +5049,7 @@ function unsetoutlinekillstreaks()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d1b
 // Size: 0xa
 function setengineer()
@@ -5054,7 +5058,7 @@ function setengineer()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d2d
 // Size: 0x58
 function engineer_enablemarksafterprematch()
@@ -5077,7 +5081,7 @@ function engineer_enablemarksafterprematch()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d8d
 // Size: 0x2d
 function unsetengineer()
@@ -5092,7 +5096,7 @@ function unsetengineer()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8dc2
 // Size: 0xc8
 function function_a20970a318808f61()
@@ -5123,7 +5127,7 @@ function function_a20970a318808f61()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e92
 // Size: 0xb
 function function_71fce3d1d414f5f9()
@@ -5132,7 +5136,7 @@ function function_71fce3d1d414f5f9()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ea5
 // Size: 0xb
 function function_96fb684092d79102()
@@ -5141,7 +5145,7 @@ function function_96fb684092d79102()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8eb8
 // Size: 0xd5
 function function_e381f9fcd740f0bd( player )
@@ -5169,7 +5173,7 @@ function function_e381f9fcd740f0bd( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f95
 // Size: 0x83
 function function_349ab9d8e2296ef6( player )
@@ -5188,7 +5192,7 @@ function function_349ab9d8e2296ef6( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9020
 // Size: 0x4b
 function setnoscopeoutline()
@@ -5205,7 +5209,7 @@ function setnoscopeoutline()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9073
 // Size: 0x18
 function unsetnoscopeoutline()
@@ -5214,7 +5218,7 @@ function unsetnoscopeoutline()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9093
 // Size: 0x76
 function processnoscopeoutlinesetnotifs()
@@ -5244,7 +5248,7 @@ function processnoscopeoutlinesetnotifs()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9111
 // Size: 0x76
 function processnoscopeoutlineunsetnotifs()
@@ -5274,7 +5278,7 @@ function processnoscopeoutlineunsetnotifs()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x918f
 // Size: 0x2
 function setcloak()
@@ -5283,7 +5287,7 @@ function setcloak()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9199
 // Size: 0x2
 function unsetcloak()
@@ -5292,7 +5296,7 @@ function unsetcloak()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91a3
 // Size: 0x2
 function setwalllock()
@@ -5301,7 +5305,7 @@ function setwalllock()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91ad
 // Size: 0x2
 function unsetwalllock()
@@ -5310,7 +5314,7 @@ function unsetwalllock()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91b7
 // Size: 0x2
 function setrush()
@@ -5319,7 +5323,7 @@ function setrush()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91c1
 // Size: 0x14
 function unsetrush()
@@ -5329,7 +5333,7 @@ function unsetrush()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91dd
 // Size: 0xa
 function sethover()
@@ -5338,7 +5342,7 @@ function sethover()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91ef
 // Size: 0x2
 function unsethover()
@@ -5347,7 +5351,7 @@ function unsethover()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91f9
 // Size: 0x17
 function setmomentum()
@@ -5357,7 +5361,7 @@ function setmomentum()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9218
 // Size: 0x13
 function unsetmomentum()
@@ -5367,7 +5371,7 @@ function unsetmomentum()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9233
 // Size: 0x2
 function setscavengereqp()
@@ -5376,7 +5380,7 @@ function setscavengereqp()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x923d
 // Size: 0x2
 function unsetscavengereqp()
@@ -5385,7 +5389,7 @@ function unsetscavengereqp()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9247
 // Size: 0x2
 function setspawnview()
@@ -5394,7 +5398,7 @@ function setspawnview()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9251
 // Size: 0x56
 function unsetspawnview()
@@ -5406,7 +5410,7 @@ function unsetspawnview()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x92af
 // Size: 0xb
 function setheadgear( power )
@@ -5415,7 +5419,7 @@ function setheadgear( power )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92c2
 // Size: 0x2
 function unsetheadgear()
@@ -5424,7 +5428,7 @@ function unsetheadgear()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92cc
 // Size: 0x2
 function setftlslide()
@@ -5433,7 +5437,7 @@ function setftlslide()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92d6
 // Size: 0x2
 function unsetftlslide()
@@ -5442,7 +5446,7 @@ function unsetftlslide()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92e0
 // Size: 0x2
 function setimprovedprone()
@@ -5451,7 +5455,7 @@ function setimprovedprone()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92ea
 // Size: 0x2
 function unsetimprovedprone()
@@ -5460,7 +5464,7 @@ function unsetimprovedprone()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92f4
 // Size: 0x14
 function setghost()
@@ -5470,7 +5474,7 @@ function setghost()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9310
 // Size: 0x14
 function unsetghost()
@@ -5480,7 +5484,7 @@ function unsetghost()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x932c
 // Size: 0x15
 function function_46a8a30fa0be5b5c()
@@ -5490,7 +5494,7 @@ function function_46a8a30fa0be5b5c()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9349
 // Size: 0x14
 function function_3dddddc711e8ab99()
@@ -5500,7 +5504,7 @@ function function_3dddddc711e8ab99()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9365
 // Size: 0x94
 function setsupportkillstreaks()
@@ -5518,7 +5522,7 @@ function setsupportkillstreaks()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9401
 // Size: 0xa
 function unsetsupportkillstreaks()
@@ -5527,7 +5531,7 @@ function unsetsupportkillstreaks()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9413
 // Size: 0x17
 function setoverrideweaponspeed()
@@ -5537,7 +5541,7 @@ function setoverrideweaponspeed()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9432
 // Size: 0xc
 function unsetoverrideweaponspeed()
@@ -5546,7 +5550,7 @@ function unsetoverrideweaponspeed()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9446
 // Size: 0x2
 function setcloakaerial()
@@ -5555,7 +5559,7 @@ function setcloakaerial()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9450
 // Size: 0x2
 function unsetcloakaerial()
@@ -5564,7 +5568,7 @@ function unsetcloakaerial()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x945a
 // Size: 0xd
 function setspawnradar()
@@ -5573,7 +5577,7 @@ function setspawnradar()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x946f
 // Size: 0xd
 function unsetspawnradar()
@@ -5582,7 +5586,7 @@ function unsetspawnradar()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9484
 // Size: 0x2
 function setimprovedmelee()
@@ -5591,7 +5595,7 @@ function setimprovedmelee()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x948e
 // Size: 0x2
 function unsetimprovedmelee()
@@ -5600,7 +5604,7 @@ function unsetimprovedmelee()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9498
 // Size: 0x2
 function setthief()
@@ -5609,7 +5613,7 @@ function setthief()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94a2
 // Size: 0x2
 function unsetthief()
@@ -5618,7 +5622,7 @@ function unsetthief()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94ac
 // Size: 0x1b
 function setadsawareness()
@@ -5628,7 +5632,7 @@ function setadsawareness()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94cf
 // Size: 0x141
 function runadsawareness()
@@ -5672,7 +5676,7 @@ function runadsawareness()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9618
 // Size: 0x83
 function playincomingwarning( target )
@@ -5699,7 +5703,7 @@ function playincomingwarning( target )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x96a3
 // Size: 0xbd
 function awarenessmonitorstance()
@@ -5732,7 +5736,7 @@ function awarenessmonitorstance()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9768
 // Size: 0x40
 function awarenessaudiopulse()
@@ -5748,7 +5752,7 @@ function awarenessaudiopulse()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97b0
 // Size: 0x1b
 function unsetadsawareness()
@@ -5758,7 +5762,7 @@ function unsetadsawareness()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97d3
 // Size: 0x2
 function setrearguard()
@@ -5767,7 +5771,7 @@ function setrearguard()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97dd
 // Size: 0xc
 function unsetrearguard()
@@ -5776,7 +5780,7 @@ function unsetrearguard()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97f1
 // Size: 0xd
 function setsolobuddyboost()
@@ -5785,7 +5789,7 @@ function setsolobuddyboost()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9806
 // Size: 0xc
 function unsetsolobuddyboost()
@@ -5794,7 +5798,7 @@ function unsetsolobuddyboost()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x981a
 // Size: 0x46
 function setthrowingknifemelee()
@@ -5814,7 +5818,7 @@ function setthrowingknifemelee()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9868
 // Size: 0x3a
 function unsetthrowingknifemelee()
@@ -5828,7 +5832,7 @@ function unsetthrowingknifemelee()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98aa
 // Size: 0x6a
 function watchthrowingkifefireswipe()
@@ -5850,7 +5854,7 @@ function watchthrowingkifefireswipe()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x991c
 // Size: 0x13
 function killthrowingknifefire()
@@ -5859,7 +5863,7 @@ function killthrowingknifefire()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9937
 // Size: 0x6a
 function function_a722bb83c625e6c0()
@@ -5881,7 +5885,7 @@ function function_a722bb83c625e6c0()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99a9
 // Size: 0x13
 function function_6b1e598a80ac49()
@@ -5890,7 +5894,7 @@ function function_6b1e598a80ac49()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99c4
 // Size: 0xb2
 function watchthrowingknifescavenge()
@@ -5926,7 +5930,7 @@ function watchthrowingknifescavenge()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a7e
 // Size: 0x86
 function setbulletoutline()
@@ -5941,7 +5945,7 @@ function setbulletoutline()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b0c
 // Size: 0x14
 function unsetbulletoutline()
@@ -5951,7 +5955,7 @@ function unsetbulletoutline()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b28
 // Size: 0xd1
 function watchbulletoutline()
@@ -5988,7 +5992,7 @@ function watchbulletoutline()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9c01
 // Size: 0x76
 function watchbulletoutlinecleanup()
@@ -6005,7 +6009,7 @@ function watchbulletoutlinecleanup()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9c7f
 // Size: 0xac
 function bulletoutlineaddenemy( enemy, duration, offensive )
@@ -6026,7 +6030,7 @@ function bulletoutlineaddenemy( enemy, duration, offensive )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9d33
 // Size: 0x6a
 function bulletoutlineremoveenemy( enemy, index )
@@ -6050,7 +6054,7 @@ function bulletoutlineremoveenemy( enemy, index )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9da5
 // Size: 0x164
 function bulletoutlinecheck( attacker, victim, weapon, meansofdeath )
@@ -6106,7 +6110,7 @@ function bulletoutlinecheck( attacker, victim, weapon, meansofdeath )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f11
 // Size: 0x94
 function markempsignatures( target, id )
@@ -6128,7 +6132,7 @@ function markempsignatures( target, id )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9fad
 // Size: 0x6c
 function empvfx( target, id )
@@ -6138,7 +6142,7 @@ function empvfx( target, id )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa021
 // Size: 0x14d
 function startgpsjammer()
@@ -6195,7 +6199,7 @@ function startgpsjammer()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa176
 // Size: 0xdc
 function function_799abf543f79895a()
@@ -6240,7 +6244,7 @@ function function_799abf543f79895a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa25a
 // Size: 0x3e
 function function_a587d6e4331b6211( killstreaktimer )
@@ -6259,7 +6263,7 @@ function function_a587d6e4331b6211( killstreaktimer )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2a0
 // Size: 0x81
 function doghostweaponfired()
@@ -6281,7 +6285,7 @@ function doghostweaponfired()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa329
 // Size: 0x35
 function checkforghostweaponfire()
@@ -6298,7 +6302,7 @@ function checkforghostweaponfire()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa366
 // Size: 0x208
 function ghostadvanceduavwatcher()
@@ -6367,9 +6371,9 @@ function ghostadvanceduavwatcher()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa576
-// Size: 0x9a
+// Size: 0xae
 function function_d32c8e85d6e01e4b( minspeed )
 {
     self endon( "death_or_disconnect" );
@@ -6386,9 +6390,14 @@ function function_d32c8e85d6e01e4b( minspeed )
             self.canghost = 1;
         }
         
+        if ( !game_utility::isbrstylegametype() && function_a13d64596c10eeca() )
+        {
+            self.canghost = 0;
+        }
+        
         if ( laststatus != self.canghost )
         {
-            self setplayerghost( self.canghost && !function_a13d64596c10eeca() );
+            self setplayerghost( self.canghost );
         }
         
         waitframe();
@@ -6396,8 +6405,8 @@ function function_d32c8e85d6e01e4b( minspeed )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa618
+// Params 0
+// Checksum 0x0, Offset: 0xa62c
 // Size: 0x58, Type: bool
 function function_a13d64596c10eeca()
 {
@@ -6407,8 +6416,8 @@ function function_a13d64596c10eeca()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa679
+// Params 1
+// Checksum 0x0, Offset: 0xa68d
 // Size: 0xe3, Type: bool
 function function_c1e6eda48a5eca42( minspeed )
 {
@@ -6455,8 +6464,8 @@ function function_c1e6eda48a5eca42( minspeed )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa765
+// Params 0
+// Checksum 0x0, Offset: 0xa779
 // Size: 0x1a
 function removegpsjammer()
 {
@@ -6466,8 +6475,8 @@ function removegpsjammer()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa787
+// Params 0
+// Checksum 0x0, Offset: 0xa79b
 // Size: 0x1c
 function setgroundpoundshield()
 {
@@ -6475,8 +6484,8 @@ function setgroundpoundshield()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7ab
+// Params 0
+// Checksum 0x0, Offset: 0xa7bf
 // Size: 0xa
 function unsetgroundpoundshield()
 {
@@ -6484,8 +6493,8 @@ function unsetgroundpoundshield()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7bd
+// Params 1
+// Checksum 0x0, Offset: 0xa7d1
 // Size: 0x13
 function groundpoundshield_onimpact( var_af29b63bc110dcf1 )
 {
@@ -6493,8 +6502,8 @@ function groundpoundshield_onimpact( var_af29b63bc110dcf1 )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7d8
+// Params 0
+// Checksum 0x0, Offset: 0xa7ec
 // Size: 0x24
 function groundpoundshield_raiseondelay()
 {
@@ -6506,8 +6515,8 @@ function groundpoundshield_raiseondelay()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa804
+// Params 0
+// Checksum 0x0, Offset: 0xa818
 // Size: 0x26c
 function groundpoundshield_raise()
 {
@@ -6565,8 +6574,8 @@ function groundpoundshield_raise()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa79
+// Params 1
+// Checksum 0x0, Offset: 0xaa8d
 // Size: 0x2a
 function groundpoundshield_lower( xmodel )
 {
@@ -6582,8 +6591,8 @@ function groundpoundshield_lower( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaaab
+// Params 1
+// Checksum 0x0, Offset: 0xaabf
 // Size: 0x2a
 function groundpoundshield_break( xmodel )
 {
@@ -6599,8 +6608,8 @@ function groundpoundshield_break( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaadd
+// Params 1
+// Checksum 0x0, Offset: 0xaaf1
 // Size: 0x1b9
 function groundpoundshield_monitorhealth( xmodel )
 {
@@ -6648,8 +6657,8 @@ function groundpoundshield_monitorhealth( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac9e
+// Params 1
+// Checksum 0x0, Offset: 0xacb2
 // Size: 0x6c
 function groundpoundshield_loweronjump( xmodel )
 {
@@ -6676,8 +6685,8 @@ function groundpoundshield_loweronjump( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xad12
+// Params 2
+// Checksum 0x0, Offset: 0xad26
 // Size: 0x3a
 function groundpoundshield_lowerontime( xmodel, time )
 {
@@ -6690,8 +6699,8 @@ function groundpoundshield_lowerontime( xmodel, time )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xad54
+// Params 1
+// Checksum 0x0, Offset: 0xad68
 // Size: 0x5b
 function groundpoundshield_loweronleavearea( xmodel )
 {
@@ -6713,8 +6722,8 @@ function groundpoundshield_loweronleavearea( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xadb7
+// Params 1
+// Checksum 0x0, Offset: 0xadcb
 // Size: 0x2c
 function groundpoundshield_deleteondisconnect( xmodel )
 {
@@ -6724,8 +6733,8 @@ function groundpoundshield_deleteondisconnect( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xadeb
+// Params 1
+// Checksum 0x0, Offset: 0xadff
 // Size: 0xb
 function groundpoundshield_monitorjoinedteam( xmodel )
 {
@@ -6733,8 +6742,8 @@ function groundpoundshield_monitorjoinedteam( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xadfe
+// Params 1
+// Checksum 0x0, Offset: 0xae12
 // Size: 0x8a
 function groundpoundshield_deleteshield( xmodel )
 {
@@ -6747,8 +6756,8 @@ function groundpoundshield_deleteshield( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xae90
+// Params 0
+// Checksum 0x0, Offset: 0xaea4
 // Size: 0x1e
 function groundpound_raisefx()
 {
@@ -6759,8 +6768,8 @@ function groundpound_raisefx()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaeb6
+// Params 0
+// Checksum 0x0, Offset: 0xaeca
 // Size: 0x1e
 function groundpoundshield_lowerfx()
 {
@@ -6771,8 +6780,8 @@ function groundpoundshield_lowerfx()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xaedc
+// Params 3
+// Checksum 0x0, Offset: 0xaef0
 // Size: 0x66
 function groundpoundshield_damagedfx( attacker, point, direction_vec )
 {
@@ -6786,8 +6795,8 @@ function groundpoundshield_damagedfx( attacker, point, direction_vec )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf4a
+// Params 0
+// Checksum 0x0, Offset: 0xaf5e
 // Size: 0x1e
 function groundpoundshield_breakfx()
 {
@@ -6798,8 +6807,8 @@ function groundpoundshield_breakfx()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf70
+// Params 0
+// Checksum 0x0, Offset: 0xaf84
 // Size: 0x36
 function setgroundpoundshock()
 {
@@ -6808,8 +6817,8 @@ function setgroundpoundshock()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xafae
+// Params 0
+// Checksum 0x0, Offset: 0xafc2
 // Size: 0xa
 function unsetgroundpoundshock()
 {
@@ -6817,8 +6826,8 @@ function unsetgroundpoundshock()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xafc0
+// Params 1
+// Checksum 0x0, Offset: 0xafd4
 // Size: 0x1a7
 function groundpoundshock_onimpact( var_af29b63bc110dcf1 )
 {
@@ -6878,8 +6887,8 @@ function groundpoundshock_onimpact( var_af29b63bc110dcf1 )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb16f
+// Params 1
+// Checksum 0x0, Offset: 0xb183
 // Size: 0x36
 function groundpoundshock_empplayer( victim )
 {
@@ -6894,8 +6903,8 @@ function groundpoundshock_empplayer( victim )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1ad
+// Params 2
+// Checksum 0x0, Offset: 0xb1c1
 // Size: 0x3e
 function groundpoundshock_onimpactfx( radius, effectid )
 {
@@ -6903,8 +6912,8 @@ function groundpoundshock_onimpactfx( radius, effectid )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1f3
+// Params 0
+// Checksum 0x0, Offset: 0xb207
 // Size: 0x2
 function setgroundpoundboost()
 {
@@ -6912,8 +6921,8 @@ function setgroundpoundboost()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1fd
+// Params 0
+// Checksum 0x0, Offset: 0xb211
 // Size: 0xa
 function unsetgroundpoundboost()
 {
@@ -6921,8 +6930,8 @@ function unsetgroundpoundboost()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb20f
+// Params 1
+// Checksum 0x0, Offset: 0xb223
 // Size: 0x19
 function groundpoundboost_onimpact( var_af29b63bc110dcf1 )
 {
@@ -6930,8 +6939,8 @@ function groundpoundboost_onimpact( var_af29b63bc110dcf1 )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb230
+// Params 0
+// Checksum 0x0, Offset: 0xb244
 // Size: 0x24
 function setbattleslideshield()
 {
@@ -6940,8 +6949,8 @@ function setbattleslideshield()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb25c
+// Params 0
+// Checksum 0x0, Offset: 0xb270
 // Size: 0xa
 function unsetbattleslideshield()
 {
@@ -6949,8 +6958,8 @@ function unsetbattleslideshield()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb26e
+// Params 0
+// Checksum 0x0, Offset: 0xb282
 // Size: 0x37
 function battleslideshield_monitor()
 {
@@ -6967,8 +6976,8 @@ function battleslideshield_monitor()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2ad
+// Params 1
+// Checksum 0x0, Offset: 0xb2c1
 // Size: 0x11f
 function battleslideshield_monitorhealth( xmodel )
 {
@@ -7005,8 +7014,8 @@ function battleslideshield_monitorhealth( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3d4
+// Params 0
+// Checksum 0x0, Offset: 0xb3e8
 // Size: 0xcd
 function battleslideshield_raise()
 {
@@ -7033,8 +7042,8 @@ function battleslideshield_raise()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4aa
+// Params 1
+// Checksum 0x0, Offset: 0xb4be
 // Size: 0x29
 function battleslideshield_lower( xmodel )
 {
@@ -7050,8 +7059,8 @@ function battleslideshield_lower( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4db
+// Params 1
+// Checksum 0x0, Offset: 0xb4ef
 // Size: 0x2a
 function battleslideshield_killondeathdisconnectunset( xmodel )
 {
@@ -7061,8 +7070,8 @@ function battleslideshield_killondeathdisconnectunset( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb50d
+// Params 1
+// Checksum 0x0, Offset: 0xb521
 // Size: 0x50
 function battleslideshield_killonjumpfall( xmodel )
 {
@@ -7086,8 +7095,8 @@ function battleslideshield_killonjumpfall( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb565
+// Params 1
+// Checksum 0x0, Offset: 0xb579
 // Size: 0x45
 function battleslideshield_killonsprint( xmodel )
 {
@@ -7102,8 +7111,8 @@ function battleslideshield_killonsprint( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5b2
+// Params 1
+// Checksum 0x0, Offset: 0xb5c6
 // Size: 0x5b
 function battleslideshield_loweronleavearea( xmodel )
 {
@@ -7125,8 +7134,8 @@ function battleslideshield_loweronleavearea( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb615
+// Params 1
+// Checksum 0x0, Offset: 0xb629
 // Size: 0x36
 function battleslideshield_lowerontime( xmodel )
 {
@@ -7139,8 +7148,8 @@ function battleslideshield_lowerontime( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb653
+// Params 1
+// Checksum 0x0, Offset: 0xb667
 // Size: 0x3a
 function battleslideshield_unlink( xmodel )
 {
@@ -7157,8 +7166,8 @@ function battleslideshield_unlink( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb695
+// Params 1
+// Checksum 0x0, Offset: 0xb6a9
 // Size: 0x4b
 function battleslideshield_killontime( xmodel )
 {
@@ -7174,8 +7183,8 @@ function battleslideshield_killontime( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6e8
+// Params 1
+// Checksum 0x0, Offset: 0xb6fc
 // Size: 0x5a
 function battleslideshield_unlinkonstop( xmodel )
 {
@@ -7199,8 +7208,8 @@ function battleslideshield_unlinkonstop( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb74a
+// Params 1
+// Checksum 0x0, Offset: 0xb75e
 // Size: 0x22
 function battleslideshield_break( xmodel )
 {
@@ -7214,8 +7223,8 @@ function battleslideshield_break( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb774
+// Params 1
+// Checksum 0x0, Offset: 0xb788
 // Size: 0x20
 function battleslideshield_raisefx( xmodel )
 {
@@ -7225,8 +7234,8 @@ function battleslideshield_raisefx( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb79c
+// Params 1
+// Checksum 0x0, Offset: 0xb7b0
 // Size: 0x20
 function battleslideshield_lowerfx( xmodel )
 {
@@ -7236,8 +7245,8 @@ function battleslideshield_lowerfx( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb7c4
+// Params 4
+// Checksum 0x0, Offset: 0xb7d8
 // Size: 0x67
 function battleslideshield_damagedfx( xmodel, attacker, point, direction_vec )
 {
@@ -7250,8 +7259,8 @@ function battleslideshield_damagedfx( xmodel, attacker, point, direction_vec )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb833
+// Params 1
+// Checksum 0x0, Offset: 0xb847
 // Size: 0xb
 function battleslideshield_breakfx( xmodel )
 {
@@ -7259,8 +7268,8 @@ function battleslideshield_breakfx( xmodel )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb846
+// Params 0
+// Checksum 0x0, Offset: 0xb85a
 // Size: 0x2
 function setbattleslideoffense()
 {
@@ -7268,8 +7277,8 @@ function setbattleslideoffense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb850
+// Params 0
+// Checksum 0x0, Offset: 0xb864
 // Size: 0x2
 function unsetbattleslideoffense()
 {
@@ -7277,8 +7286,8 @@ function unsetbattleslideoffense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb85a
+// Params 0
+// Checksum 0x0, Offset: 0xb86e
 // Size: 0x4
 function getbattleslideoffensedamage()
 {
@@ -7286,8 +7295,8 @@ function getbattleslideoffensedamage()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb867
+// Params 0
+// Checksum 0x0, Offset: 0xb87b
 // Size: 0x3d
 function setthruster()
 {
@@ -7297,8 +7306,8 @@ function setthruster()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8ac
+// Params 0
+// Checksum 0x0, Offset: 0xb8c0
 // Size: 0x26
 function unsetthruster()
 {
@@ -7311,8 +7320,8 @@ function unsetthruster()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8da
+// Params 0
+// Checksum 0x0, Offset: 0xb8ee
 // Size: 0x37
 function thrusterwatchdoublejump()
 {
@@ -7329,8 +7338,8 @@ function thrusterwatchdoublejump()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb919
+// Params 0
+// Checksum 0x0, Offset: 0xb92d
 // Size: 0x138
 function thrusterloop()
 {
@@ -7365,8 +7374,8 @@ function thrusterloop()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xba59
+// Params 0
+// Checksum 0x0, Offset: 0xba6d
 // Size: 0x52
 function thrusterdamageloop()
 {
@@ -7383,8 +7392,8 @@ function thrusterdamageloop()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbab3
+// Params 0
+// Checksum 0x0, Offset: 0xbac7
 // Size: 0x22
 function thrusterstopfx()
 {
@@ -7395,8 +7404,8 @@ function thrusterstopfx()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbadd
+// Params 0
+// Checksum 0x0, Offset: 0xbaf1
 // Size: 0x69
 function runhover()
 {
@@ -7419,8 +7428,8 @@ function runhover()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb4e
+// Params 0
+// Checksum 0x0, Offset: 0xbb62
 // Size: 0x39
 function watchhoverend()
 {
@@ -7438,8 +7447,8 @@ function watchhoverend()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb8f
+// Params 0
+// Checksum 0x0, Offset: 0xbba3
 // Size: 0x61
 function executehover()
 {
@@ -7456,8 +7465,8 @@ function executehover()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbf8
+// Params 1
+// Checksum 0x0, Offset: 0xbc0c
 // Size: 0x5d
 function managetimeout( org )
 {
@@ -7473,8 +7482,8 @@ function managetimeout( org )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc5d
+// Params 0
+// Checksum 0x0, Offset: 0xbc71
 // Size: 0x46
 function endhover()
 {
@@ -7489,8 +7498,8 @@ function endhover()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbcab
+// Params 0
+// Checksum 0x0, Offset: 0xbcbf
 // Size: 0x2
 function setadsmarktarget()
 {
@@ -7498,8 +7507,8 @@ function setadsmarktarget()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbcb5
+// Params 0
+// Checksum 0x0, Offset: 0xbcc9
 // Size: 0x115
 function perk_adsmarktarget_think()
 {
@@ -7552,8 +7561,8 @@ function perk_adsmarktarget_think()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbdd2
+// Params 1
+// Checksum 0x0, Offset: 0xbde6
 // Size: 0x18c, Type: bool
 function perk_adsmarktarget_check( target )
 {
@@ -7596,8 +7605,8 @@ function perk_adsmarktarget_check( target )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf67
+// Params 1
+// Checksum 0x0, Offset: 0xbf7b
 // Size: 0x138
 function perk_adsmarktarget_confirmtargetandmark( target )
 {
@@ -7635,8 +7644,8 @@ function perk_adsmarktarget_confirmtargetandmark( target )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0a7
+// Params 4
+// Checksum 0x0, Offset: 0xc0bb
 // Size: 0xbe
 function perk_trackadsmarktargetoutline( markicon, markedent, outlineid, markedplayer )
 {
@@ -7670,8 +7679,8 @@ function perk_trackadsmarktargetoutline( markicon, markedent, outlineid, markedp
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc16d
+// Params 1
+// Checksum 0x0, Offset: 0xc181
 // Size: 0x96
 function getlivingplayers_team( team )
 {
@@ -7694,8 +7703,8 @@ function getlivingplayers_team( team )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc20c
+// Params 1
+// Checksum 0x0, Offset: 0xc220
 // Size: 0x2e
 function perk_adstargetmark_disconnectcleanupthink( target )
 {
@@ -7708,8 +7717,8 @@ function perk_adstargetmark_disconnectcleanupthink( target )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc242
+// Params 0
+// Checksum 0x0, Offset: 0xc256
 // Size: 0xa
 function unsetadsmarktarget()
 {
@@ -7717,8 +7726,8 @@ function unsetadsmarktarget()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc254
+// Params 0
+// Checksum 0x0, Offset: 0xc268
 // Size: 0x2
 function sethelmet()
 {
@@ -7726,8 +7735,8 @@ function sethelmet()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc25e
+// Params 0
+// Checksum 0x0, Offset: 0xc272
 // Size: 0x2
 function unsethelmet()
 {
@@ -7735,8 +7744,8 @@ function unsethelmet()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc268
+// Params 0
+// Checksum 0x0, Offset: 0xc27c
 // Size: 0xc
 function setarmorvest()
 {
@@ -7744,8 +7753,8 @@ function setarmorvest()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc27c
+// Params 0
+// Checksum 0x0, Offset: 0xc290
 // Size: 0x2
 function unsetarmorvest()
 {
@@ -7753,8 +7762,8 @@ function unsetarmorvest()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc286
+// Params 0
+// Checksum 0x0, Offset: 0xc29a
 // Size: 0x14
 function setdoorbreach()
 {
@@ -7763,8 +7772,8 @@ function setdoorbreach()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc2a2
+// Params 0
+// Checksum 0x0, Offset: 0xc2b6
 // Size: 0xa
 function unsetdoorbreach()
 {
@@ -7772,8 +7781,8 @@ function unsetdoorbreach()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc2b4
+// Params 0
+// Checksum 0x0, Offset: 0xc2c8
 // Size: 0x32
 function setdoorsense()
 {
@@ -7787,8 +7796,8 @@ function setdoorsense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc2ee
+// Params 0
+// Checksum 0x0, Offset: 0xc302
 // Size: 0x17
 function unsetdoorsense()
 {
@@ -7796,8 +7805,8 @@ function unsetdoorsense()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc30d
+// Params 0
+// Checksum 0x0, Offset: 0xc321
 // Size: 0x9
 function setworsenedgunkick()
 {
@@ -7805,8 +7814,8 @@ function setworsenedgunkick()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc31e
+// Params 0
+// Checksum 0x0, Offset: 0xc332
 // Size: 0xb
 function unsetworsenedgunkick()
 {
@@ -7814,8 +7823,8 @@ function unsetworsenedgunkick()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc331
+// Params 1
+// Checksum 0x0, Offset: 0xc345
 // Size: 0xcb
 function updateweaponkick( var_d32e25e546898f0f )
 {
@@ -7855,8 +7864,8 @@ function updateweaponkick( var_d32e25e546898f0f )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc404
+// Params 0
+// Checksum 0x0, Offset: 0xc418
 // Size: 0xb2
 function setkillstreaktoscorestreak()
 {
@@ -7885,8 +7894,8 @@ function setkillstreaktoscorestreak()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4be
+// Params 0
+// Checksum 0x0, Offset: 0xc4d2
 // Size: 0x7f
 function unsetkillstreaktoscorestreak()
 {
@@ -7905,8 +7914,8 @@ function unsetkillstreaktoscorestreak()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc545
+// Params 1
+// Checksum 0x0, Offset: 0xc559
 // Size: 0xf
 function killstreaktoscorestreak_killtoscore( streakpoints )
 {
@@ -7914,8 +7923,8 @@ function killstreaktoscorestreak_killtoscore( streakpoints )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc55d
+// Params 1
+// Checksum 0x0, Offset: 0xc571
 // Size: 0x14
 function killstreaktoscorestreak_scoretokill( streakpoints )
 {
@@ -7923,8 +7932,8 @@ function killstreaktoscorestreak_scoretokill( streakpoints )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc57a
+// Params 0
+// Checksum 0x0, Offset: 0xc58e
 // Size: 0x22
 function setchainkillstreaks()
 {
@@ -7935,8 +7944,8 @@ function setchainkillstreaks()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5a4
+// Params 0
+// Checksum 0x0, Offset: 0xc5b8
 // Size: 0x1e
 function unsetchainkillstreaks()
 {
@@ -7947,8 +7956,8 @@ function unsetchainkillstreaks()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5ca
+// Params 0
+// Checksum 0x0, Offset: 0xc5de
 // Size: 0x24
 function setscrapweapons()
 {
@@ -7959,8 +7968,8 @@ function setscrapweapons()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5f6
+// Params 0
+// Checksum 0x0, Offset: 0xc60a
 // Size: 0xf
 function unsetscrapweapons()
 {
@@ -7968,8 +7977,8 @@ function unsetscrapweapons()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc60d
+// Params 0
+// Checksum 0x0, Offset: 0xc621
 // Size: 0x16
 function setdooralarm()
 {
@@ -7978,8 +7987,8 @@ function setdooralarm()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc62b
+// Params 0
+// Checksum 0x0, Offset: 0xc63f
 // Size: 0x6a
 function unsetdooralarm()
 {
@@ -7993,8 +8002,8 @@ function unsetdooralarm()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc69d
+// Params 0
+// Checksum 0x0, Offset: 0xc6b1
 // Size: 0xa
 function setreviveuseweapon()
 {
@@ -8002,8 +8011,8 @@ function setreviveuseweapon()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6af
+// Params 0
+// Checksum 0x0, Offset: 0xc6c3
 // Size: 0x390
 function proximityrevivethink()
 {
@@ -8087,8 +8096,8 @@ function proximityrevivethink()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xca47
+// Params 3
+// Checksum 0x0, Offset: 0xca5b
 // Size: 0x1f1
 function proximityrevive( player, fauxtrigger, reviveent )
 {
@@ -8148,8 +8157,8 @@ function proximityrevive( player, fauxtrigger, reviveent )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc40
+// Params 3
+// Checksum 0x0, Offset: 0xcc54
 // Size: 0x13b
 function watchproximityrevivefail( player, fauxtrigger, reviveent )
 {
@@ -8191,8 +8200,8 @@ function watchproximityrevivefail( player, fauxtrigger, reviveent )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd83
+// Params 0
+// Checksum 0x0, Offset: 0xcd97
 // Size: 0x86
 function unsetreviveuseweapon()
 {
@@ -8210,8 +8219,8 @@ function unsetreviveuseweapon()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce11
+// Params 0
+// Checksum 0x0, Offset: 0xce25
 // Size: 0x2
 function setlocationmarking()
 {
@@ -8219,8 +8228,8 @@ function setlocationmarking()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce1b
+// Params 0
+// Checksum 0x0, Offset: 0xce2f
 // Size: 0x2
 function unsetlocationmarking()
 {
@@ -8228,8 +8237,8 @@ function unsetlocationmarking()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce25
+// Params 0
+// Checksum 0x0, Offset: 0xce39
 // Size: 0x2
 function setremotedefuse()
 {
@@ -8237,8 +8246,8 @@ function setremotedefuse()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce2f
+// Params 0
+// Checksum 0x0, Offset: 0xce43
 // Size: 0x2
 function unsetremotedefuse()
 {
@@ -8246,8 +8255,8 @@ function unsetremotedefuse()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce39
+// Params 0
+// Checksum 0x0, Offset: 0xce4d
 // Size: 0x9
 function setalwaysminimap()
 {
@@ -8255,8 +8264,8 @@ function setalwaysminimap()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce4a
+// Params 0
+// Checksum 0x0, Offset: 0xce5e
 // Size: 0x9
 function unsetalwaysminimap()
 {
@@ -8264,8 +8273,8 @@ function unsetalwaysminimap()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce5b
+// Params 0
+// Checksum 0x0, Offset: 0xce6f
 // Size: 0x36
 function supersprintkillrefresh_init()
 {
@@ -8274,8 +8283,8 @@ function supersprintkillrefresh_init()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce99
+// Params 0
+// Checksum 0x0, Offset: 0xcead
 // Size: 0x31
 function supersprintkillrefresh_onkill()
 {
@@ -8289,8 +8298,8 @@ function supersprintkillrefresh_onkill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xced2
+// Params 0
+// Checksum 0x0, Offset: 0xcee6
 // Size: 0x13
 function setgasgrenaderesist()
 {
@@ -8303,8 +8312,8 @@ function setgasgrenaderesist()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xceed
+// Params 0
+// Checksum 0x0, Offset: 0xcf01
 // Size: 0x13
 function unsetgasgrenaderesist()
 {
@@ -8317,8 +8326,8 @@ function unsetgasgrenaderesist()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf08
+// Params 0
+// Checksum 0x0, Offset: 0xcf1c
 // Size: 0x2
 function setfastreloadlaunchers()
 {
@@ -8326,8 +8335,8 @@ function setfastreloadlaunchers()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf12
+// Params 0
+// Checksum 0x0, Offset: 0xcf26
 // Size: 0x25
 function unsetfastreloadlaunchers()
 {
@@ -8339,8 +8348,8 @@ function unsetfastreloadlaunchers()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf3f
+// Params 0
+// Checksum 0x0, Offset: 0xcf53
 // Size: 0x13
 function setreduceregendelay()
 {
@@ -8348,8 +8357,8 @@ function setreduceregendelay()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf5a
+// Params 0
+// Checksum 0x0, Offset: 0xcf6e
 // Size: 0xe
 function unsetreduceregendelay()
 {
@@ -8357,8 +8366,8 @@ function unsetreduceregendelay()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf70
+// Params 0
+// Checksum 0x0, Offset: 0xcf84
 // Size: 0xa9
 function regendelayreduce_onkill()
 {
@@ -8384,8 +8393,8 @@ function regendelayreduce_onkill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd021
+// Params 0
+// Checksum 0x0, Offset: 0xd035
 // Size: 0x2c
 function regenonkill()
 {
@@ -8398,8 +8407,8 @@ function regenonkill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd055
+// Params 0
+// Checksum 0x0, Offset: 0xd069
 // Size: 0x32
 function regendelayreduce_delayedregen()
 {
@@ -8411,8 +8420,8 @@ function regendelayreduce_delayedregen()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd08f
+// Params 0
+// Checksum 0x0, Offset: 0xd0a3
 // Size: 0x79
 function setregenonobjectivecapture()
 {
@@ -8435,8 +8444,8 @@ function setregenonobjectivecapture()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd110
+// Params 0
+// Checksum 0x0, Offset: 0xd124
 // Size: 0xa
 function unsetregenonobjectivecapture()
 {
@@ -8444,8 +8453,8 @@ function unsetregenonobjectivecapture()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd122
+// Params 0
+// Checksum 0x0, Offset: 0xd136
 // Size: 0x29
 function setreduceregendelayonkill()
 {
@@ -8456,8 +8465,8 @@ function setreduceregendelayonkill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd153
+// Params 0
+// Checksum 0x0, Offset: 0xd167
 // Size: 0x2
 function unsetreduceregendelayonkill()
 {
@@ -8465,8 +8474,8 @@ function unsetreduceregendelayonkill()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd15d
+// Params 0
+// Checksum 0x0, Offset: 0xd171
 // Size: 0x11
 function setreduceregendelayonobjective()
 {
@@ -8475,8 +8484,8 @@ function setreduceregendelayonobjective()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd176
+// Params 0
+// Checksum 0x0, Offset: 0xd18a
 // Size: 0x13
 function unsetreduceregendelayonobjective()
 {
@@ -8485,8 +8494,8 @@ function unsetreduceregendelayonobjective()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd191
+// Params 0
+// Checksum 0x0, Offset: 0xd1a5
 // Size: 0x2c
 function monitorreduceregendelayonobjective()
 {
@@ -8502,8 +8511,8 @@ function monitorreduceregendelayonobjective()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd1c5
+// Params 1
+// Checksum 0x0, Offset: 0xd1d9
 // Size: 0x16f
 function updatereduceregendelayonobjective( forceoff )
 {
@@ -8538,8 +8547,8 @@ function updatereduceregendelayonobjective( forceoff )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd33c
+// Params 0
+// Checksum 0x0, Offset: 0xd350
 // Size: 0x31
 function setrechargeequipment()
 {
@@ -8553,8 +8562,8 @@ function setrechargeequipment()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd375
+// Params 0
+// Checksum 0x0, Offset: 0xd389
 // Size: 0x32
 function unsetrechargeequipment()
 {
@@ -8568,8 +8577,8 @@ function unsetrechargeequipment()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd3af
+// Params 0
+// Checksum 0x0, Offset: 0xd3c3
 // Size: 0xf7
 function rechargeequipmentthink_init()
 {
@@ -8581,8 +8590,10 @@ function rechargeequipmentthink_init()
         var_b8009f31b1522792 = level.perkrechargeequipmentplayers;
         var_e9a4c83bb773349 = int( ceil( var_b8009f31b1522792.size / var_bb293d0be6d94bb ) );
         
-        for (frameindex = 0; frameindex < var_bb293d0be6d94bb; frameindex++) {
-            for (playerindex = 0; playerindex < var_e9a4c83bb773349; playerindex++) {
+        for ( frameindex = 0; frameindex < var_bb293d0be6d94bb ; frameindex++ )
+        {
+            for ( playerindex = 0; playerindex < var_e9a4c83bb773349 ; playerindex++ )
+            {
                 globalplayerindex = frameindex * var_e9a4c83bb773349 + playerindex;
                 
                 if ( globalplayerindex > var_b8009f31b1522792.size )
@@ -8611,8 +8622,8 @@ function rechargeequipmentthink_init()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd4ae
+// Params 1
+// Checksum 0x0, Offset: 0xd4c2
 // Size: 0xe7
 function rechargeequipment_updatestate( player )
 {
@@ -8647,8 +8658,8 @@ function rechargeequipment_updatestate( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd59d
+// Params 2
+// Checksum 0x0, Offset: 0xd5b1
 // Size: 0x306
 function rechargeequipment_updateslot( player, slot )
 {
@@ -8759,8 +8770,8 @@ function rechargeequipment_updateslot( player, slot )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8ab
+// Params 1
+// Checksum 0x0, Offset: 0xd8bf
 // Size: 0x2d
 function rechargeequipment_clearplayer( player )
 {
@@ -8772,8 +8783,8 @@ function rechargeequipment_clearplayer( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8e0
+// Params 1
+// Checksum 0x0, Offset: 0xd8f4
 // Size: 0x21d
 function rechargeequipment_updateui( player )
 {
@@ -8841,8 +8852,8 @@ function rechargeequipment_updateui( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb05
+// Params 0
+// Checksum 0x0, Offset: 0xdb19
 // Size: 0x130
 function markequipment_monitorlook()
 {
@@ -8877,8 +8888,8 @@ function markequipment_monitorlook()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdc3d
+// Params 0
+// Checksum 0x0, Offset: 0xdc51
 // Size: 0x51a
 function markequipment_updatestate()
 {
@@ -9003,8 +9014,8 @@ function markequipment_updatestate()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe15f
+// Params 1
+// Checksum 0x0, Offset: 0xe173
 // Size: 0x5d
 function unmarkafterduration( markedent )
 {
@@ -9018,8 +9029,8 @@ function unmarkafterduration( markedent )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1c4
+// Params 1
+// Checksum 0x0, Offset: 0xe1d8
 // Size: 0xf3
 function unmarkent( markedent )
 {
@@ -9048,8 +9059,8 @@ function unmarkent( markedent )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe2bf
+// Params 0
+// Checksum 0x0, Offset: 0xe2d3
 // Size: 0x1e
 function setmarkequipment()
 {
@@ -9063,8 +9074,8 @@ function setmarkequipment()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe2e5
+// Params 0
+// Checksum 0x0, Offset: 0xe2f9
 // Size: 0x98
 function unsetmarkequipment()
 {
@@ -9090,8 +9101,8 @@ function unsetmarkequipment()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe385
+// Params 1
+// Checksum 0x0, Offset: 0xe399
 // Size: 0x33
 function getchildoutlineents( ent )
 {
@@ -9109,8 +9120,8 @@ function getchildoutlineents( ent )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe3c1
+// Params 2
+// Checksum 0x0, Offset: 0xe3d5
 // Size: 0x1c
 function outlinehelper_getallplayers( ent, outlinedata )
 {
@@ -9118,8 +9129,8 @@ function outlinehelper_getallplayers( ent, outlinedata )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe3e6
+// Params 1
+// Checksum 0x0, Offset: 0xe3fa
 // Size: 0xd, Type: bool
 function outlinehelper_validplayer( player )
 {
@@ -9127,8 +9138,8 @@ function outlinehelper_validplayer( player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe3fc
+// Params 1
+// Checksum 0x0, Offset: 0xe410
 // Size: 0xb6
 function outlinehelper_verifydata( outlinedata )
 {
@@ -9161,8 +9172,8 @@ function outlinehelper_verifydata( outlinedata )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe4ba
+// Params 1
+// Checksum 0x0, Offset: 0xe4ce
 // Size: 0x32
 function outlinehelper_updateentityoutline( ent )
 {
@@ -9175,8 +9186,8 @@ function outlinehelper_updateentityoutline( ent )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe4f4
+// Params 1
+// Checksum 0x0, Offset: 0xe508
 // Size: 0x302
 function outlinehelper_enableentityoutline( ent )
 {
@@ -9288,8 +9299,8 @@ function outlinehelper_enableentityoutline( ent )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe7fe
+// Params 1
+// Checksum 0x0, Offset: 0xe812
 // Size: 0xa0
 function outlinehelper_disableentityoutline( entnum )
 {
@@ -9310,8 +9321,8 @@ function outlinehelper_disableentityoutline( entnum )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8a6
+// Params 2
+// Checksum 0x0, Offset: 0xe8ba
 // Size: 0x8d
 function markedentities_removeentsbyindex( entarray, var_223829bbefc81935 )
 {
@@ -9336,8 +9347,8 @@ function markedentities_removeentsbyindex( entarray, var_223829bbefc81935 )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe93c
+// Params 0
+// Checksum 0x0, Offset: 0xe950
 // Size: 0x1cd
 function markedentities_think()
 {
@@ -9386,8 +9397,8 @@ function markedentities_think()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb11
+// Params 0
+// Checksum 0x0, Offset: 0xeb25
 // Size: 0x2
 function setbettermissionrewards()
 {
@@ -9395,8 +9406,8 @@ function setbettermissionrewards()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb1b
+// Params 0
+// Checksum 0x0, Offset: 0xeb2f
 // Size: 0x2
 function unsetbettermissionrewards()
 {
@@ -9404,8 +9415,8 @@ function unsetbettermissionrewards()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb25
+// Params 0
+// Checksum 0x0, Offset: 0xeb39
 // Size: 0x19
 function setspecialistbonus()
 {
@@ -9416,8 +9427,8 @@ function setspecialistbonus()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb46
+// Params 0
+// Checksum 0x0, Offset: 0xeb5a
 // Size: 0x18
 function unsetspecialistbonus()
 {
@@ -9428,8 +9439,8 @@ function unsetspecialistbonus()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb66
+// Params 0
+// Checksum 0x0, Offset: 0xeb7a
 // Size: 0x14
 function setthirdpersonmode()
 {
@@ -9438,8 +9449,8 @@ function setthirdpersonmode()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb82
+// Params 0
+// Checksum 0x0, Offset: 0xeb96
 // Size: 0x20
 function function_fbd953549be66251()
 {
@@ -9452,8 +9463,8 @@ function function_fbd953549be66251()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xebaa
+// Params 0
+// Checksum 0x0, Offset: 0xebbe
 // Size: 0x15
 function function_d31614685fb778e1()
 {
@@ -9462,8 +9473,8 @@ function function_d31614685fb778e1()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xebc7
+// Params 0
+// Checksum 0x0, Offset: 0xebdb
 // Size: 0x14
 function function_62e54942c53b9bda()
 {
@@ -9472,8 +9483,8 @@ function function_62e54942c53b9bda()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xebe3
+// Params 0
+// Checksum 0x0, Offset: 0xebf7
 // Size: 0x10
 function function_7cfa6000210cbd68()
 {
@@ -9481,8 +9492,8 @@ function function_7cfa6000210cbd68()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xebfb
+// Params 0
+// Checksum 0x0, Offset: 0xec0f
 // Size: 0xf
 function function_f1a813fe1b8a2275()
 {
@@ -9490,8 +9501,8 @@ function function_f1a813fe1b8a2275()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xec12
+// Params 0
+// Checksum 0x0, Offset: 0xec26
 // Size: 0xa
 function function_6faff35e3a38ba5f()
 {
@@ -9499,8 +9510,8 @@ function function_6faff35e3a38ba5f()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xec24
+// Params 0
+// Checksum 0x0, Offset: 0xec38
 // Size: 0x2
 function function_d02ed6d205e7eb64()
 {
@@ -9508,8 +9519,8 @@ function function_d02ed6d205e7eb64()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xec2e
+// Params 0
+// Checksum 0x0, Offset: 0xec42
 // Size: 0x2
 function setsurvivor()
 {
@@ -9517,8 +9528,8 @@ function setsurvivor()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xec38
+// Params 0
+// Checksum 0x0, Offset: 0xec4c
 // Size: 0x2
 function unsetsurvivor()
 {
@@ -9526,8 +9537,8 @@ function unsetsurvivor()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xec42
+// Params 0
+// Checksum 0x0, Offset: 0xec56
 // Size: 0xe1
 function function_17f9b8d5579b7e98()
 {
@@ -9565,8 +9576,8 @@ function function_17f9b8d5579b7e98()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xed2b
+// Params 0
+// Checksum 0x0, Offset: 0xed3f
 // Size: 0x80, Type: bool
 function function_66f0cbd5ff8458fe()
 {
@@ -9597,8 +9608,8 @@ function function_66f0cbd5ff8458fe()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xedb4
+// Params 0
+// Checksum 0x0, Offset: 0xedc8
 // Size: 0xd2
 function function_448448ac4206d715()
 {
@@ -9644,8 +9655,8 @@ function function_448448ac4206d715()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xee8e
+// Params 0
+// Checksum 0x0, Offset: 0xeea2
 // Size: 0x92
 function function_e382d4a17c2fd280()
 {
@@ -9677,8 +9688,8 @@ function function_e382d4a17c2fd280()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xef28
+// Params 0
+// Checksum 0x0, Offset: 0xef3c
 // Size: 0x15
 function function_28c65ef144ef09ed()
 {
@@ -9688,8 +9699,8 @@ function function_28c65ef144ef09ed()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xef45
+// Params 1
+// Checksum 0x0, Offset: 0xef59
 // Size: 0x4e
 function function_6964a0e0e8d00b09( perk )
 {
@@ -9710,8 +9721,8 @@ function function_6964a0e0e8d00b09( perk )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xef9b
+// Params 0
+// Checksum 0x0, Offset: 0xefaf
 // Size: 0x5a, Type: bool
 function function_f1aded34ad0d8d15()
 {
@@ -9741,8 +9752,8 @@ function function_f1aded34ad0d8d15()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeffe
+// Params 0
+// Checksum 0x0, Offset: 0xf012
 // Size: 0xa8
 function function_c0480a308e322f5e()
 {
@@ -9766,8 +9777,8 @@ function function_c0480a308e322f5e()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0ae
+// Params 0
+// Checksum 0x0, Offset: 0xf0c2
 // Size: 0x18
 function function_deaae24be7f66b43()
 {
@@ -9775,8 +9786,8 @@ function function_deaae24be7f66b43()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0ce
+// Params 0
+// Checksum 0x0, Offset: 0xf0e2
 // Size: 0x26
 function function_5574429fa21b6a4b()
 {
@@ -9785,8 +9796,8 @@ function function_5574429fa21b6a4b()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0fc
+// Params 0
+// Checksum 0x0, Offset: 0xf110
 // Size: 0x5e
 function function_de2e2e90e60ab20b()
 {
@@ -9799,8 +9810,8 @@ function function_de2e2e90e60ab20b()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf162
+// Params 0
+// Checksum 0x0, Offset: 0xf176
 // Size: 0x13
 function function_649944f83a9270f1()
 {
@@ -9808,8 +9819,8 @@ function function_649944f83a9270f1()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf17d
+// Params 0
+// Checksum 0x0, Offset: 0xf191
 // Size: 0xa6
 function function_9569d64cd3471640()
 {
@@ -9833,8 +9844,8 @@ function function_9569d64cd3471640()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf22b
+// Params 0
+// Checksum 0x0, Offset: 0xf23f
 // Size: 0x2b
 function function_2afcfd10baa613f4()
 {
@@ -9845,8 +9856,8 @@ function function_2afcfd10baa613f4()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf25e
+// Params 0
+// Checksum 0x0, Offset: 0xf272
 // Size: 0xae
 function setanteup()
 {
@@ -9871,8 +9882,8 @@ function setanteup()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf314
+// Params 0
+// Checksum 0x0, Offset: 0xf328
 // Size: 0x70
 function function_22483f0bf514320b()
 {
@@ -9887,8 +9898,8 @@ function function_22483f0bf514320b()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf38c
+// Params 0
+// Checksum 0x0, Offset: 0xf3a0
 // Size: 0xa
 function function_f20745ab641c4bb7()
 {
@@ -9896,8 +9907,8 @@ function function_f20745ab641c4bb7()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf39e
+// Params 0
+// Checksum 0x0, Offset: 0xf3b2
 // Size: 0x82
 function function_6df29935c2b4318c()
 {
@@ -9916,8 +9927,8 @@ function function_6df29935c2b4318c()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf428
+// Params 0
+// Checksum 0x0, Offset: 0xf43c
 // Size: 0x3e6
 function function_72c65d09b47dfda1()
 {
@@ -10062,8 +10073,8 @@ function function_72c65d09b47dfda1()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf816
+// Params 0
+// Checksum 0x0, Offset: 0xf82a
 // Size: 0x7d
 function function_312d166c148ae59()
 {
@@ -10083,8 +10094,8 @@ function function_312d166c148ae59()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf89b
+// Params 1
+// Checksum 0x0, Offset: 0xf8af
 // Size: 0x158
 function function_f0acc19bc9f58105( equipment )
 {
@@ -10120,8 +10131,8 @@ function function_f0acc19bc9f58105( equipment )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9fb
+// Params 1
+// Checksum 0x0, Offset: 0xfa0f
 // Size: 0x170
 function function_6cf221eaa466443b( equipment )
 {
@@ -10162,8 +10173,8 @@ function function_6cf221eaa466443b( equipment )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb73
+// Params 1
+// Checksum 0x0, Offset: 0xfb87
 // Size: 0x14b
 function function_d3a88fbbd1592a94( var_d1a37ff59732b305 )
 {
@@ -10195,8 +10206,8 @@ function function_d3a88fbbd1592a94( var_d1a37ff59732b305 )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfcc6
+// Params 1
+// Checksum 0x0, Offset: 0xfcda
 // Size: 0x27d
 function function_14887aa48f755651( fromdeath )
 {
@@ -10276,8 +10287,8 @@ function function_14887aa48f755651( fromdeath )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xff4b
+// Params 1
+// Checksum 0x0, Offset: 0xff5f
 // Size: 0x2a0
 function function_771a3235fe378b71( sourceplayer )
 {
@@ -10395,8 +10406,8 @@ function function_771a3235fe378b71( sourceplayer )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x101f3
+// Params 0
+// Checksum 0x0, Offset: 0x10207
 // Size: 0x65
 function function_eed479acba7fe853()
 {
@@ -10415,8 +10426,8 @@ function function_eed479acba7fe853()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10260
+// Params 0
+// Checksum 0x0, Offset: 0x10274
 // Size: 0xa
 function function_98c1ad957058c942()
 {
@@ -10424,8 +10435,8 @@ function function_98c1ad957058c942()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10272
+// Params 0
+// Checksum 0x0, Offset: 0x10286
 // Size: 0x71
 function function_e41537546ebf302a()
 {
@@ -10444,8 +10455,8 @@ function function_e41537546ebf302a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x102eb
+// Params 0
+// Checksum 0x0, Offset: 0x102ff
 // Size: 0x37
 function function_83091d5e2028334f()
 {
@@ -10456,8 +10467,8 @@ function function_83091d5e2028334f()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1032a
+// Params 0
+// Checksum 0x0, Offset: 0x1033e
 // Size: 0x27
 function function_1e8369c15351446a()
 {
@@ -10467,8 +10478,8 @@ function function_1e8369c15351446a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10359
+// Params 0
+// Checksum 0x0, Offset: 0x1036d
 // Size: 0x32
 function function_76e4f570efdfa175()
 {
@@ -10482,8 +10493,8 @@ function function_76e4f570efdfa175()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10393
+// Params 0
+// Checksum 0x0, Offset: 0x103a7
 // Size: 0x41
 function function_9a193d97b9a9b860()
 {
@@ -10502,8 +10513,8 @@ function function_9a193d97b9a9b860()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x103dc
+// Params 0
+// Checksum 0x0, Offset: 0x103f0
 // Size: 0xa
 function function_7051260539f7f5cf()
 {
@@ -10511,8 +10522,8 @@ function function_7051260539f7f5cf()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x103ee
+// Params 0
+// Checksum 0x0, Offset: 0x10402
 // Size: 0xa
 function function_d98540c03eb44f92()
 {
@@ -10520,8 +10531,8 @@ function function_d98540c03eb44f92()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x10400
+// Params 4
+// Checksum 0x0, Offset: 0x10414
 // Size: 0x17a
 function function_de6e36b06bd630c4( pickupent, fromkiosk, var_db943473454f6ea6, backpackequip )
 {
@@ -10573,8 +10584,8 @@ function function_de6e36b06bd630c4( pickupent, fromkiosk, var_db943473454f6ea6, 
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10582
+// Params 1
+// Checksum 0x0, Offset: 0x10596
 // Size: 0xbe, Type: bool
 function function_c5d5909e07c87005( armor )
 {
@@ -10614,8 +10625,8 @@ function function_c5d5909e07c87005( armor )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10649
+// Params 0
+// Checksum 0x0, Offset: 0x1065d
 // Size: 0x58
 function setdurability()
 {
@@ -10625,8 +10636,8 @@ function setdurability()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x106a9
+// Params 0
+// Checksum 0x0, Offset: 0x106bd
 // Size: 0x1b
 function unsetdurability()
 {
@@ -10634,8 +10645,8 @@ function unsetdurability()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x106cc
+// Params 0
+// Checksum 0x0, Offset: 0x106e0
 // Size: 0x44
 function function_a85e18c43231438d()
 {
@@ -10646,8 +10657,8 @@ function function_a85e18c43231438d()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10718
+// Params 0
+// Checksum 0x0, Offset: 0x1072c
 // Size: 0x25
 function function_b9186877a86e12f0()
 {
@@ -10657,8 +10668,8 @@ function function_b9186877a86e12f0()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10745
+// Params 0
+// Checksum 0x0, Offset: 0x10759
 // Size: 0xa1
 function setoperative()
 {
@@ -10690,8 +10701,8 @@ function setoperative()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x107ee
+// Params 0
+// Checksum 0x0, Offset: 0x10802
 // Size: 0x2a
 function function_b2219a25a144067()
 {
@@ -10703,8 +10714,8 @@ function function_b2219a25a144067()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10820
+// Params 0
+// Checksum 0x0, Offset: 0x10834
 // Size: 0xac
 function setoperativeoutlines()
 {
@@ -10732,8 +10743,8 @@ function setoperativeoutlines()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x108d4
+// Params 1
+// Checksum 0x0, Offset: 0x108e8
 // Size: 0xcb
 function function_4030b0cbd934f9c( delaytime )
 {
@@ -10773,8 +10784,8 @@ function function_4030b0cbd934f9c( delaytime )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x109a7
+// Params 0
+// Checksum 0x0, Offset: 0x109bb
 // Size: 0xa
 function unsetoperative()
 {
@@ -10782,8 +10793,8 @@ function unsetoperative()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x109b9
+// Params 0
+// Checksum 0x0, Offset: 0x109cd
 // Size: 0xd
 function setoverwatch()
 {
@@ -10791,8 +10802,8 @@ function setoverwatch()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x109ce
+// Params 0
+// Checksum 0x0, Offset: 0x109e2
 // Size: 0x4b
 function unsetoverwatch()
 {
@@ -10805,8 +10816,8 @@ function unsetoverwatch()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10a21
+// Params 0
+// Checksum 0x0, Offset: 0x10a35
 // Size: 0x1b
 function function_af3d35751dfd4e79()
 {
@@ -10819,8 +10830,8 @@ function function_af3d35751dfd4e79()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10a44
+// Params 0
+// Checksum 0x0, Offset: 0x10a58
 // Size: 0xe
 function function_81f0718f6c5ab1d7()
 {
@@ -10828,8 +10839,8 @@ function function_81f0718f6c5ab1d7()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10a5a
+// Params 0
+// Checksum 0x0, Offset: 0x10a6e
 // Size: 0xb
 function function_2bba0e9e144c276c()
 {
@@ -10837,8 +10848,8 @@ function function_2bba0e9e144c276c()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10a6d
+// Params 0
+// Checksum 0x0, Offset: 0x10a81
 // Size: 0x59
 function function_e2df669ada6f810c()
 {
@@ -10852,8 +10863,8 @@ function function_e2df669ada6f810c()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ace
+// Params 0
+// Checksum 0x0, Offset: 0x10ae2
 // Size: 0xd8
 function function_76826219412c80ce()
 {
@@ -10883,8 +10894,8 @@ function function_76826219412c80ce()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10bae
+// Params 0
+// Checksum 0x0, Offset: 0x10bc2
 // Size: 0x31
 function function_2a071b7e5d0351d3()
 {
@@ -10896,8 +10907,8 @@ function function_2a071b7e5d0351d3()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10be7
+// Params 0
+// Checksum 0x0, Offset: 0x10bfb
 // Size: 0x10
 function initflakjacket()
 {
@@ -10905,8 +10916,8 @@ function initflakjacket()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10bff
+// Params 1
+// Checksum 0x0, Offset: 0x10c13
 // Size: 0x68
 function function_21ec07ce4e600c3a( amount )
 {
@@ -10922,8 +10933,8 @@ function function_21ec07ce4e600c3a( amount )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10c6f
+// Params 0
+// Checksum 0x0, Offset: 0x10c83
 // Size: 0x38
 function function_576ff7cb2b682b18()
 {
@@ -10935,8 +10946,8 @@ function function_576ff7cb2b682b18()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10caf
+// Params 0
+// Checksum 0x0, Offset: 0x10cc3
 // Size: 0x17
 function function_8a6140b305c1b22b()
 {
@@ -10945,8 +10956,8 @@ function function_8a6140b305c1b22b()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10cce
+// Params 0
+// Checksum 0x0, Offset: 0x10ce2
 // Size: 0x44
 function function_46990aae5ce032ad()
 {
@@ -10961,8 +10972,8 @@ function function_46990aae5ce032ad()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d1a
+// Params 0
+// Checksum 0x0, Offset: 0x10d2e
 // Size: 0x4d
 function function_df1f464b16738e76()
 {
@@ -10982,8 +10993,8 @@ function function_df1f464b16738e76()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d6f
+// Params 0
+// Checksum 0x0, Offset: 0x10d83
 // Size: 0xc
 function function_9a3330b21e0ad027()
 {
@@ -10991,8 +11002,8 @@ function function_9a3330b21e0ad027()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d83
+// Params 0
+// Checksum 0x0, Offset: 0x10d97
 // Size: 0x10
 function breakflakjacket()
 {
@@ -11001,8 +11012,8 @@ function breakflakjacket()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d9b
+// Params 0
+// Checksum 0x0, Offset: 0x10daf
 // Size: 0x1a
 function function_bbfb43eded941446()
 {
@@ -11011,8 +11022,8 @@ function function_bbfb43eded941446()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10dbd
+// Params 0
+// Checksum 0x0, Offset: 0x10dd1
 // Size: 0x2
 function function_c834f1eacbb06d09()
 {
@@ -11020,8 +11031,8 @@ function function_c834f1eacbb06d09()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10dc7
+// Params 0
+// Checksum 0x0, Offset: 0x10ddb
 // Size: 0x2
 function function_b35c8cf5dd0e38a2()
 {
@@ -11029,8 +11040,8 @@ function function_b35c8cf5dd0e38a2()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10dd1
+// Params 0
+// Checksum 0x0, Offset: 0x10de5
 // Size: 0x26
 function function_57fa0386e81eaf33()
 {
@@ -11043,8 +11054,8 @@ function function_57fa0386e81eaf33()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10dff
+// Params 0
+// Checksum 0x0, Offset: 0x10e13
 // Size: 0x78
 function function_4173e65571fbfd44()
 {
@@ -11067,8 +11078,8 @@ function function_4173e65571fbfd44()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e7f
+// Params 0
+// Checksum 0x0, Offset: 0x10e93
 // Size: 0x1a
 function function_4ca1864c4b501d86()
 {
@@ -11076,8 +11087,8 @@ function function_4ca1864c4b501d86()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ea2
+// Params 0
+// Checksum 0x0, Offset: 0x10eb6
 // Size: 0x24
 function function_f307e70927a22f9e()
 {
@@ -11087,8 +11098,8 @@ function function_f307e70927a22f9e()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ece
+// Params 0
+// Checksum 0x0, Offset: 0x10ee2
 // Size: 0x1f
 function function_618d9ea3d5fd1a77()
 {
@@ -11098,8 +11109,8 @@ function function_618d9ea3d5fd1a77()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ef5
+// Params 0
+// Checksum 0x0, Offset: 0x10f09
 // Size: 0xd
 function function_7603aadd14da7ec6()
 {
@@ -11107,8 +11118,8 @@ function function_7603aadd14da7ec6()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f0a
+// Params 0
+// Checksum 0x0, Offset: 0x10f1e
 // Size: 0xc
 function function_6af20073381a18d3()
 {
@@ -11116,8 +11127,8 @@ function function_6af20073381a18d3()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f1e
+// Params 0
+// Checksum 0x0, Offset: 0x10f32
 // Size: 0xa
 function function_da3d9f34d24ac85a()
 {
@@ -11125,8 +11136,8 @@ function function_da3d9f34d24ac85a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f30
+// Params 0
+// Checksum 0x0, Offset: 0x10f44
 // Size: 0x21
 function function_96f59fefd781e47()
 {
@@ -11139,8 +11150,8 @@ function function_96f59fefd781e47()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f59
+// Params 0
+// Checksum 0x0, Offset: 0x10f6d
 // Size: 0x21
 function function_96f5afefd78207a()
 {
@@ -11153,8 +11164,8 @@ function function_96f5afefd78207a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f82
+// Params 0
+// Checksum 0x0, Offset: 0x10f96
 // Size: 0x21
 function function_96f5bfefd7822ad()
 {
@@ -11167,8 +11178,8 @@ function function_96f5bfefd7822ad()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10fab
+// Params 0
+// Checksum 0x0, Offset: 0x10fbf
 // Size: 0x21
 function function_96f54fefd781348()
 {
@@ -11181,8 +11192,8 @@ function function_96f54fefd781348()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10fd4
+// Params 0
+// Checksum 0x0, Offset: 0x10fe8
 // Size: 0xf
 function function_fc6e0b02abb995cb()
 {
@@ -11190,8 +11201,8 @@ function function_fc6e0b02abb995cb()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10feb
+// Params 0
+// Checksum 0x0, Offset: 0x10fff
 // Size: 0xf
 function function_73e4ae4f932e9f30()
 {
@@ -11199,8 +11210,8 @@ function function_73e4ae4f932e9f30()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11002
+// Params 0
+// Checksum 0x0, Offset: 0x11016
 // Size: 0xc0
 function function_53e56fe3fd9ad3e1()
 {
@@ -11228,8 +11239,8 @@ function function_53e56fe3fd9ad3e1()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x110ca
+// Params 0
+// Checksum 0x0, Offset: 0x110de
 // Size: 0x68
 function function_d23fd2ceae84da28()
 {
@@ -11248,8 +11259,8 @@ function function_d23fd2ceae84da28()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1113a
+// Params 0
+// Checksum 0x0, Offset: 0x1114e
 // Size: 0xe2
 function function_1564f9bd3b0b6974()
 {
@@ -11288,8 +11299,8 @@ function function_1564f9bd3b0b6974()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11225
+// Params 0
+// Checksum 0x0, Offset: 0x11239
 // Size: 0x85
 function function_4a6d4f51c86333c8()
 {
@@ -11321,8 +11332,8 @@ function function_4a6d4f51c86333c8()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x112b2
+// Params 0
+// Checksum 0x0, Offset: 0x112c6
 // Size: 0x14b
 function function_5de0156e74e1a721()
 {
@@ -11387,8 +11398,8 @@ function function_5de0156e74e1a721()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11405
+// Params 0
+// Checksum 0x0, Offset: 0x11419
 // Size: 0x62
 function function_4c1282555bf1a747()
 {
@@ -11405,8 +11416,8 @@ function function_4c1282555bf1a747()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1146f
+// Params 2
+// Checksum 0x0, Offset: 0x11483
 // Size: 0x84
 function function_a13126ffa1e84c59( delay, var_b34a1ff2f59f1fe7 )
 {
@@ -11433,8 +11444,8 @@ function function_a13126ffa1e84c59( delay, var_b34a1ff2f59f1fe7 )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x114fb
+// Params 0
+// Checksum 0x0, Offset: 0x1150f
 // Size: 0x71
 function function_187253ccc9a3b3d3()
 {
@@ -11462,8 +11473,8 @@ function function_187253ccc9a3b3d3()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11574
+// Params 1
+// Checksum 0x0, Offset: 0x11588
 // Size: 0xbe
 function function_f45b32f9e7bc9d8d( enabled )
 {
@@ -11501,8 +11512,8 @@ function function_f45b32f9e7bc9d8d( enabled )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1163a
+// Params 0
+// Checksum 0x0, Offset: 0x1164e
 // Size: 0xd5
 function function_b9ae2029e2c1f6fb()
 {
@@ -11543,8 +11554,8 @@ function function_b9ae2029e2c1f6fb()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11718
+// Params 0
+// Checksum 0x0, Offset: 0x1172c
 // Size: 0xd5
 function function_f88841fc0718438()
 {
@@ -11585,8 +11596,8 @@ function function_f88841fc0718438()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x117f6
+// Params 1
+// Checksum 0x0, Offset: 0x1180a
 // Size: 0x1db
 function function_a2668409a49bdef4( animdelay )
 {
@@ -11662,8 +11673,8 @@ function function_a2668409a49bdef4( animdelay )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x119d9
+// Params 1
+// Checksum 0x0, Offset: 0x119ed
 // Size: 0xbc
 function function_c5f054586f38e212( animdelay )
 {
@@ -11693,8 +11704,8 @@ function function_c5f054586f38e212( animdelay )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11a9d
+// Params 3
+// Checksum 0x0, Offset: 0x11ab1
 // Size: 0xa1
 function function_4d3b1a8f38c4d448( damage, attacker, victim )
 {
@@ -11711,8 +11722,8 @@ function function_4d3b1a8f38c4d448( damage, attacker, victim )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b47
+// Params 6
+// Checksum 0x0, Offset: 0x11b5b
 // Size: 0x97, Type: bool
 function function_3c677364a897306( attacker, victim, objweapon, smeansofdeath, inflictor, hitloc )
 {
@@ -11742,8 +11753,8 @@ function function_3c677364a897306( attacker, victim, objweapon, smeansofdeath, i
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11be7
+// Params 2
+// Checksum 0x0, Offset: 0x11bfb
 // Size: 0x6a
 function function_bd9883d12fef0b36( objweapon, hitloc )
 {
@@ -11769,8 +11780,8 @@ function function_bd9883d12fef0b36( objweapon, hitloc )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c59
+// Params 0
+// Checksum 0x0, Offset: 0x11c6d
 // Size: 0xa
 function settaccom()
 {
@@ -11778,8 +11789,8 @@ function settaccom()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c6b
+// Params 0
+// Checksum 0x0, Offset: 0x11c7f
 // Size: 0xa
 function unsettaccom()
 {
@@ -11787,8 +11798,8 @@ function unsettaccom()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c7d
+// Params 0
+// Checksum 0x0, Offset: 0x11c91
 // Size: 0x2b0
 function function_2ecdf54199c3435d()
 {
@@ -11860,9 +11871,9 @@ function function_2ecdf54199c3435d()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f35
-// Size: 0x173
+// Params 2
+// Checksum 0x0, Offset: 0x11f49
+// Size: 0x196
 function function_f660aecf9c2aeec6( bundle, var_34aba8d62374a55b )
 {
     selfpos = self getvieworigin();
@@ -11882,7 +11893,9 @@ function function_f660aecf9c2aeec6( bundle, var_34aba8d62374a55b )
             continue;
         }
         
-        if ( !isdefined( player getviewmodel() ) )
+        playermodel = player getviewmodel();
+        
+        if ( !isdefined( playermodel ) || !function_fed3925eb5331836( playermodel, "j_spinelower" ) )
         {
             continue;
         }
@@ -11928,8 +11941,8 @@ function function_f660aecf9c2aeec6( bundle, var_34aba8d62374a55b )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x120b1
+// Params 5
+// Checksum 0x0, Offset: 0x120e8
 // Size: 0xd7
 function function_acd8e1bf3a604aea( player, enemypos, playerpos, playeraim, bundle )
 {
@@ -11961,8 +11974,8 @@ function function_acd8e1bf3a604aea( player, enemypos, playerpos, playeraim, bund
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12190
+// Params 2
+// Checksum 0x0, Offset: 0x121c7
 // Size: 0x66, Type: bool
 function function_fe136c3b362a577e( playerpos, enemypos )
 {
@@ -11972,8 +11985,8 @@ function function_fe136c3b362a577e( playerpos, enemypos )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x121ff
+// Params 0
+// Checksum 0x0, Offset: 0x12236
 // Size: 0x10
 function function_cc2cf1db71343d8f()
 {
@@ -11981,8 +11994,8 @@ function function_cc2cf1db71343d8f()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12217
+// Params 0
+// Checksum 0x0, Offset: 0x1224e
 // Size: 0xc
 function function_5ab8f9c4d813c44a()
 {
@@ -11990,8 +12003,8 @@ function function_5ab8f9c4d813c44a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1222b
+// Params 0
+// Checksum 0x0, Offset: 0x12262
 // Size: 0xe
 function function_5790c8111baf94d3()
 {
@@ -11999,8 +12012,8 @@ function function_5790c8111baf94d3()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12241
+// Params 0
+// Checksum 0x0, Offset: 0x12278
 // Size: 0xe
 function function_e906d1c066af953a()
 {
@@ -12008,8 +12021,8 @@ function function_e906d1c066af953a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12257
+// Params 0
+// Checksum 0x0, Offset: 0x1228e
 // Size: 0xb
 function function_488e69b3f2811165()
 {
@@ -12017,8 +12030,8 @@ function function_488e69b3f2811165()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1226a
+// Params 0
+// Checksum 0x0, Offset: 0x122a1
 // Size: 0xd6
 function function_3e285d679cd4ac57()
 {
@@ -12032,7 +12045,8 @@ function function_3e285d679cd4ac57()
     var_dc9b09da91621b2c = bundle.var_673e66d59cd548eb;
     level.var_39c3f3e4abe0da33 = [];
     
-    for (i = 0; i < var_dc9b09da91621b2c.size; i++) {
+    for ( i = 0; i < var_dc9b09da91621b2c.size ; i++ )
+    {
         streakbundle = var_dc9b09da91621b2c[ i ];
         overridesstruct = spawnstruct();
         overridesstruct.values = [];
@@ -12042,8 +12056,8 @@ function function_3e285d679cd4ac57()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12348
+// Params 0
+// Checksum 0x0, Offset: 0x1237f
 // Size: 0xe2
 function function_37de052fb8326c6f()
 {
@@ -12074,8 +12088,8 @@ function function_37de052fb8326c6f()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12432
+// Params 0
+// Checksum 0x0, Offset: 0x12469
 // Size: 0xd0
 function function_191ab60d4588d0c8()
 {
@@ -12104,8 +12118,8 @@ function function_191ab60d4588d0c8()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1250a
+// Params 0
+// Checksum 0x0, Offset: 0x12541
 // Size: 0x20
 function function_9735e382a48bd594()
 {
@@ -12115,8 +12129,8 @@ function function_9735e382a48bd594()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12532
+// Params 0
+// Checksum 0x0, Offset: 0x12569
 // Size: 0x26
 function function_a01c9e1d5b2abc3a()
 {
@@ -12131,8 +12145,8 @@ function function_a01c9e1d5b2abc3a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12560
+// Params 0
+// Checksum 0x0, Offset: 0x12597
 // Size: 0x2cd
 function function_4730863c5f3d4d76()
 {
@@ -12195,8 +12209,8 @@ function function_4730863c5f3d4d76()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12835
+// Params 0
+// Checksum 0x0, Offset: 0x1286c
 // Size: 0x23
 function function_8d63cc03c22e972()
 {
@@ -12211,9 +12225,9 @@ function function_8d63cc03c22e972()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12860
-// Size: 0x58d
+// Params 0
+// Checksum 0x0, Offset: 0x12897
+// Size: 0x5a2
 function function_7cbf935d70716bce()
 {
     tracecontents = trace::create_default_contents( 1 );
@@ -12237,7 +12251,7 @@ function function_7cbf935d70716bce()
         if ( !isdefined( player ) )
         {
             level.var_52ec346520cb321c[ num ] = undefined;
-            break;
+            continue;
         }
         
         var_24f9b94a171cca52 = player gettagorigin( "j_spinelower" );
@@ -12402,6 +12416,12 @@ function function_7cbf935d70716bce()
             }
         }
         
+        if ( !isdefined( player ) )
+        {
+            level.var_52ec346520cb321c[ num ] = undefined;
+            continue;
+        }
+        
         var_2f3b228d8493de0e = player function_377b7c0c8c274789( var_2f3b228d8493de0e );
         player.var_5dcd6d4ac51be6d5 = var_2f3b228d8493de0e;
         
@@ -12437,9 +12457,9 @@ function function_7cbf935d70716bce()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12df5
-// Size: 0x24c
+// Params 1
+// Checksum 0x0, Offset: 0x12e41
+// Size: 0x255
 function function_377b7c0c8c274789( var_2f3b228d8493de0e )
 {
     if ( !isdefined( 750 ) || false )
@@ -12450,6 +12470,11 @@ function function_377b7c0c8c274789( var_2f3b228d8493de0e )
     if ( !isdefined( self.var_df81db1ae87349f2 ) )
     {
         self.var_df81db1ae87349f2 = [];
+    }
+    
+    if ( !isdefined( var_2f3b228d8493de0e ) )
+    {
+        var_2f3b228d8493de0e = [];
     }
     
     foreach ( ent in self.var_5dcd6d4ac51be6d5 )
@@ -12465,7 +12490,8 @@ function function_377b7c0c8c274789( var_2f3b228d8493de0e )
         
         if ( self.var_df81db1ae87349f2.size > 0 )
         {
-            for (index = 0; index < self.var_df81db1ae87349f2.size; index++) {
+            for ( index = 0; index < self.var_df81db1ae87349f2.size ; index++ )
+            {
                 if ( self.var_df81db1ae87349f2[ index ].ent == ent )
                 {
                     var_7e04d11079ba5e66 = index;
@@ -12492,7 +12518,8 @@ function function_377b7c0c8c274789( var_2f3b228d8493de0e )
     
     removedelay = getdvarint( @"hash_1418e2a60694ce70", 750 );
     
-    for (index = self.var_df81db1ae87349f2.size - 1; index >= 0; index--) {
+    for ( index = self.var_df81db1ae87349f2.size - 1; index >= 0 ; index-- )
+    {
         ent = self.var_df81db1ae87349f2[ index ];
         
         if ( !isdefined( ent ) )
@@ -12521,8 +12548,8 @@ function function_377b7c0c8c274789( var_2f3b228d8493de0e )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1304a
+// Params 3
+// Checksum 0x0, Offset: 0x1309f
 // Size: 0xe0
 function function_bc9281d925b86c7e( var_96f404f41dcf0af0, var_6d7eba8a96f9541, var_2d8cf2fc75fdaece )
 {
@@ -12570,8 +12597,8 @@ function function_bc9281d925b86c7e( var_96f404f41dcf0af0, var_6d7eba8a96f9541, v
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13132
+// Params 2
+// Checksum 0x0, Offset: 0x13187
 // Size: 0x185, Type: bool
 function function_151d6bf67d113b1e( targetobj, player )
 {
@@ -12626,8 +12653,8 @@ function function_151d6bf67d113b1e( targetobj, player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x132c0
+// Params 2
+// Checksum 0x0, Offset: 0x13315
 // Size: 0x15e, Type: bool
 function function_6dbc5df69e5134a0( killstreak, player )
 {
@@ -12673,8 +12700,8 @@ function function_6dbc5df69e5134a0( killstreak, player )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13427
+// Params 1
+// Checksum 0x0, Offset: 0x1347c
 // Size: 0x14a, Type: bool
 function function_3b9f02152a634ee9( otherplayer )
 {
@@ -12746,8 +12773,8 @@ function function_3b9f02152a634ee9( otherplayer )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1357a
+// Params 1
+// Checksum 0x0, Offset: 0x135cf
 // Size: 0x20b, Type: bool
 function function_3a930ec69b2ea052( otherplayer )
 {
@@ -12823,8 +12850,8 @@ function function_3a930ec69b2ea052( otherplayer )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1378e
+// Params 2
+// Checksum 0x0, Offset: 0x137e3
 // Size: 0x115
 function function_54a4fb429eda8e2( otherplayer, var_24f9b94a171cca52 )
 {
@@ -12868,8 +12895,8 @@ function function_54a4fb429eda8e2( otherplayer, var_24f9b94a171cca52 )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x138ab
+// Params 5
+// Checksum 0x0, Offset: 0x13900
 // Size: 0xc2, Type: bool
 function function_33662f36c6e2421a( otherplayer, playerpos, otherplayerpos, var_ed6e173aa5e562a5, var_bbc7488043a90e4b )
 {
@@ -12905,8 +12932,8 @@ function function_33662f36c6e2421a( otherplayer, playerpos, otherplayerpos, var_
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x13976
+// Params 3
+// Checksum 0x0, Offset: 0x139cb
 // Size: 0x41
 function function_f8ae6ea503ee187a( playeraim, playerpos, otherplayerpos )
 {
@@ -12916,8 +12943,8 @@ function function_f8ae6ea503ee187a( playeraim, playerpos, otherplayerpos )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x139c0
+// Params 1
+// Checksum 0x0, Offset: 0x13a15
 // Size: 0x78
 function function_1d114ca0c1f73008( vfxvalue )
 {
@@ -12942,8 +12969,8 @@ function function_1d114ca0c1f73008( vfxvalue )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a40
+// Params 0
+// Checksum 0x0, Offset: 0x13a95
 // Size: 0x34
 function function_76607a90fc659cd7()
 {
@@ -12955,8 +12982,8 @@ function function_76607a90fc659cd7()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a7c
+// Params 1
+// Checksum 0x0, Offset: 0x13ad1
 // Size: 0x1e
 function function_b287c9114a845cee( var_6d7eba8a96f9541 )
 {
@@ -12967,8 +12994,8 @@ function function_b287c9114a845cee( var_6d7eba8a96f9541 )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13aa2
+// Params 2
+// Checksum 0x0, Offset: 0x13af7
 // Size: 0x84
 function function_3f33157318043ac2( var_3f532f304395a854, fromentity )
 {
@@ -12992,8 +13019,8 @@ function function_3f33157318043ac2( var_3f532f304395a854, fromentity )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13b2e
+// Params 0
+// Checksum 0x0, Offset: 0x13b83
 // Size: 0x4ad
 function settacmask()
 {
@@ -13143,8 +13170,8 @@ function settacmask()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13fe3
+// Params 0
+// Checksum 0x0, Offset: 0x14038
 // Size: 0x78
 function unsettacmask()
 {
@@ -13165,8 +13192,8 @@ function unsettacmask()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14063
+// Params 0
+// Checksum 0x0, Offset: 0x140b8
 // Size: 0x3c
 function function_9ab9afce9ddf23d3()
 {
@@ -13182,8 +13209,8 @@ function function_9ab9afce9ddf23d3()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x140a7
+// Params 0
+// Checksum 0x0, Offset: 0x140fc
 // Size: 0x3c
 function function_f4981401b60aff4e()
 {
@@ -13199,8 +13226,8 @@ function function_f4981401b60aff4e()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x140eb
+// Params 0
+// Checksum 0x0, Offset: 0x14140
 // Size: 0x83
 function function_e77e0f080cbde77a()
 {
@@ -13230,8 +13257,8 @@ function function_e77e0f080cbde77a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14176
+// Params 0
+// Checksum 0x0, Offset: 0x141cb
 // Size: 0x3a
 function function_91c59fd71ce44c87()
 {
@@ -13247,8 +13274,8 @@ function function_91c59fd71ce44c87()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x141b8
+// Params 0
+// Checksum 0x0, Offset: 0x1420d
 // Size: 0x6b
 function setoutlander()
 {
@@ -13269,8 +13296,8 @@ function setoutlander()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1422b
+// Params 0
+// Checksum 0x0, Offset: 0x14280
 // Size: 0x41
 function unsetoutlander()
 {
@@ -13281,8 +13308,8 @@ function unsetoutlander()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14274
+// Params 0
+// Checksum 0x0, Offset: 0x142c9
 // Size: 0xc6
 function function_2a32431b16c54b0d()
 {
@@ -13307,8 +13334,8 @@ function function_2a32431b16c54b0d()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14342
+// Params 0
+// Checksum 0x0, Offset: 0x14397
 // Size: 0x37
 function function_b58456eeca76b311()
 {
@@ -13324,8 +13351,8 @@ function function_b58456eeca76b311()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14381
+// Params 0
+// Checksum 0x0, Offset: 0x143d6
 // Size: 0x1e
 function function_198adc5136f6a4b3()
 {
@@ -13333,8 +13360,8 @@ function function_198adc5136f6a4b3()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x143a7
+// Params 0
+// Checksum 0x0, Offset: 0x143fc
 // Size: 0xc
 function function_a4142d5fdfc879b4()
 {
@@ -13342,8 +13369,8 @@ function function_a4142d5fdfc879b4()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x143bb
+// Params 0
+// Checksum 0x0, Offset: 0x14410
 // Size: 0x17
 function function_7c927ee710825162()
 {
@@ -13352,8 +13379,8 @@ function function_7c927ee710825162()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x143da
+// Params 0
+// Checksum 0x0, Offset: 0x1442f
 // Size: 0x13
 function function_33f65bc5db503a11()
 {
@@ -13362,8 +13389,8 @@ function function_33f65bc5db503a11()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x143f5
+// Params 0
+// Checksum 0x0, Offset: 0x1444a
 // Size: 0x1e
 function function_b128334187ed23fb()
 {
@@ -13371,8 +13398,8 @@ function function_b128334187ed23fb()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1441b
+// Params 0
+// Checksum 0x0, Offset: 0x14470
 // Size: 0xc
 function function_26088d91835eae50()
 {
@@ -13380,8 +13407,8 @@ function function_26088d91835eae50()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1442f
+// Params 0
+// Checksum 0x0, Offset: 0x14484
 // Size: 0x1e
 function function_763531f5f7839ab6()
 {
@@ -13389,8 +13416,8 @@ function function_763531f5f7839ab6()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14455
+// Params 0
+// Checksum 0x0, Offset: 0x144aa
 // Size: 0xc
 function function_d5d1e40fc4911309()
 {
@@ -13398,8 +13425,8 @@ function function_d5d1e40fc4911309()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14469
+// Params 0
+// Checksum 0x0, Offset: 0x144be
 // Size: 0x1e
 function function_91d30d6bd5c9987e()
 {
@@ -13407,8 +13434,8 @@ function function_91d30d6bd5c9987e()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1448f
+// Params 0
+// Checksum 0x0, Offset: 0x144e4
 // Size: 0xc
 function function_67f057d98cc8b147()
 {
@@ -13416,8 +13443,8 @@ function function_67f057d98cc8b147()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x144a3
+// Params 0
+// Checksum 0x0, Offset: 0x144f8
 // Size: 0x1f
 function function_416b659a8c183f5()
 {
@@ -13427,8 +13454,8 @@ function function_416b659a8c183f5()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x144ca
+// Params 0
+// Checksum 0x0, Offset: 0x1451f
 // Size: 0xc
 function function_61f59f06b860e9de()
 {
@@ -13436,8 +13463,8 @@ function function_61f59f06b860e9de()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x144de
+// Params 0
+// Checksum 0x0, Offset: 0x14533
 // Size: 0x1f2
 function function_a107792339aa634a()
 {
@@ -13513,8 +13540,8 @@ function function_a107792339aa634a()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x146d8
+// Params 1
+// Checksum 0x0, Offset: 0x1472d
 // Size: 0x9b
 function function_332887b37621cafe( source )
 {
@@ -13543,8 +13570,8 @@ function function_332887b37621cafe( source )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1477b
+// Params 1
+// Checksum 0x0, Offset: 0x147d0
 // Size: 0xbe
 function function_dc6425bc8ea85ac0( source )
 {
@@ -13580,8 +13607,8 @@ function function_dc6425bc8ea85ac0( source )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14841
+// Params 2
+// Checksum 0x0, Offset: 0x14896
 // Size: 0x66, Type: bool
 function function_bd90db337f1ae0d4( victim, attacker )
 {
@@ -13589,8 +13616,8 @@ function function_bd90db337f1ae0d4( victim, attacker )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x148b0
+// Params 2
+// Checksum 0x0, Offset: 0x14905
 // Size: 0x5b
 function function_675990374e11b0f7( victim, attacker )
 {
@@ -13607,7 +13634,7 @@ function function_675990374e11b0f7( victim, attacker )
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x14913
+// Checksum 0x0, Offset: 0x14968
 // Size: 0x21
 function private function_2348d57e12fccb7c()
 {
@@ -13617,8 +13644,8 @@ function private function_2348d57e12fccb7c()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1493c
+// Params 0
+// Checksum 0x0, Offset: 0x14991
 // Size: 0x24
 function setblastshield()
 {
@@ -13629,8 +13656,8 @@ function setblastshield()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14968
+// Params 0
+// Checksum 0x0, Offset: 0x149bd
 // Size: 0x15
 function unsetblastshield()
 {
@@ -13641,8 +13668,8 @@ function unsetblastshield()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14985
+// Params 0
+// Checksum 0x0, Offset: 0x149da
 // Size: 0x21
 function function_2cfe8d3390ebf739()
 {
@@ -13650,8 +13677,8 @@ function function_2cfe8d3390ebf739()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x149ae
+// Params 0
+// Checksum 0x0, Offset: 0x14a03
 // Size: 0xe
 function function_2aa14f9e313a7ba0()
 {
@@ -13659,8 +13686,8 @@ function function_2aa14f9e313a7ba0()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x149c4
+// Params 0
+// Checksum 0x0, Offset: 0x14a19
 // Size: 0x9
 function function_30aea63c9309d877()
 {
@@ -13668,8 +13695,8 @@ function function_30aea63c9309d877()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x149d5
+// Params 0
+// Checksum 0x0, Offset: 0x14a2a
 // Size: 0x9
 function function_9fc353061d5d9106()
 {
@@ -13677,8 +13704,8 @@ function function_9fc353061d5d9106()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x149e6
+// Params 0
+// Checksum 0x0, Offset: 0x14a3b
 // Size: 0x97
 function function_dfd6f3f52d42539e()
 {
@@ -13701,8 +13728,8 @@ function function_dfd6f3f52d42539e()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14a85
+// Params 1
+// Checksum 0x0, Offset: 0x14ada
 // Size: 0x18
 function function_2188834b8d5fe9e( mod )
 {
@@ -13710,8 +13737,8 @@ function function_2188834b8d5fe9e( mod )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14aa5
+// Params 0
+// Checksum 0x0, Offset: 0x14afa
 // Size: 0xd
 function function_63e67108575e2dd7()
 {
@@ -13719,8 +13746,8 @@ function function_63e67108575e2dd7()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14aba
+// Params 0
+// Checksum 0x0, Offset: 0x14b0f
 // Size: 0xc
 function function_e750c905a0033fc0()
 {
@@ -13728,8 +13755,8 @@ function function_e750c905a0033fc0()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ace
+// Params 0
+// Checksum 0x0, Offset: 0x14b23
 // Size: 0x1b
 function function_a0bbf85d80bdaabe()
 {
@@ -13737,8 +13764,8 @@ function function_a0bbf85d80bdaabe()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14af1
+// Params 0
+// Checksum 0x0, Offset: 0x14b46
 // Size: 0xc
 function function_78abdd07d9b93295()
 {
@@ -13746,8 +13773,8 @@ function function_78abdd07d9b93295()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b05
+// Params 1
+// Checksum 0x0, Offset: 0x14b5a
 // Size: 0x141
 function function_dd4a053345e159c2( victim )
 {
@@ -13790,8 +13817,8 @@ function function_dd4a053345e159c2( victim )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c4e
+// Params 0
+// Checksum 0x0, Offset: 0x14ca3
 // Size: 0x1c
 function setscavenger()
 {
@@ -13802,8 +13829,8 @@ function setscavenger()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c72
+// Params 0
+// Checksum 0x0, Offset: 0x14cc7
 // Size: 0x1c
 function unsetscavenger()
 {
@@ -13814,8 +13841,8 @@ function unsetscavenger()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c96
+// Params 0
+// Checksum 0x0, Offset: 0x14ceb
 // Size: 0x1b
 function function_3922f41cdbeb95b9()
 {
@@ -13823,8 +13850,8 @@ function function_3922f41cdbeb95b9()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14cb9
+// Params 0
+// Checksum 0x0, Offset: 0x14d0e
 // Size: 0xc
 function function_de875074da5476ca()
 {
@@ -13832,8 +13859,8 @@ function function_de875074da5476ca()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ccd
+// Params 0
+// Checksum 0x0, Offset: 0x14d22
 // Size: 0x1e
 function function_a8f9bfbe4bdf794()
 {
@@ -13841,8 +13868,8 @@ function function_a8f9bfbe4bdf794()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14cf3
+// Params 0
+// Checksum 0x0, Offset: 0x14d48
 // Size: 0xc
 function function_5ad4b969c3cf8f77()
 {
@@ -13850,8 +13877,8 @@ function function_5ad4b969c3cf8f77()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d07
+// Params 0
+// Checksum 0x0, Offset: 0x14d5c
 // Size: 0x1e
 function function_5ba973385ec4be3()
 {
@@ -13859,8 +13886,8 @@ function function_5ba973385ec4be3()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d2d
+// Params 0
+// Checksum 0x0, Offset: 0x14d82
 // Size: 0xc
 function function_1021beef855460ac()
 {
@@ -13868,8 +13895,8 @@ function function_1021beef855460ac()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d41
+// Params 0
+// Checksum 0x0, Offset: 0x14d96
 // Size: 0x1e
 function function_3a2773d17b85afb2()
 {
@@ -13877,8 +13904,8 @@ function function_3a2773d17b85afb2()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d67
+// Params 0
+// Checksum 0x0, Offset: 0x14dbc
 // Size: 0xc
 function function_90ff5254f7e28f7()
 {
@@ -13886,8 +13913,8 @@ function function_90ff5254f7e28f7()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d7b
+// Params 2
+// Checksum 0x0, Offset: 0x14dd0
 // Size: 0x21d
 function function_1665d49ac1a4f08e( mindistoverride, maxdistoverride )
 {
@@ -13907,7 +13934,8 @@ function function_1665d49ac1a4f08e( mindistoverride, maxdistoverride )
         maxdist = getdvarfloat( @"hash_cb9da631139b0a77", 24 );
     }
     
-    for (landed = self isonground() || self isswimming(); !landed; landed = self isonground() || self isswimming()) {
+    for ( landed = self isonground() || self isswimming(); !landed ; landed = self isonground() || self isswimming() )
+    {
         waitframe();
     }
     
@@ -13946,8 +13974,8 @@ function function_1665d49ac1a4f08e( mindistoverride, maxdistoverride )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14fa0
+// Params 0
+// Checksum 0x0, Offset: 0x14ff5
 // Size: 0xf0
 function function_2b0cefc5ad5021df()
 {
@@ -13976,8 +14004,8 @@ function function_2b0cefc5ad5021df()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15098
+// Params 0
+// Checksum 0x0, Offset: 0x150ed
 // Size: 0x3e
 function function_442f053b6dc8c9f7()
 {
@@ -13994,8 +14022,8 @@ function function_442f053b6dc8c9f7()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x150de
+// Params 0
+// Checksum 0x0, Offset: 0x15133
 // Size: 0x14
 function function_fb5a950aee49424()
 {
@@ -14004,8 +14032,8 @@ function function_fb5a950aee49424()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x150fa
+// Params 2
+// Checksum 0x0, Offset: 0x1514f
 // Size: 0x1a0
 function function_388eaeb897276caa( event, objweapon )
 {
@@ -14049,8 +14077,8 @@ function function_388eaeb897276caa( event, objweapon )
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x152a2
+// Params 0
+// Checksum 0x0, Offset: 0x152f7
 // Size: 0x13
 function setmutationmodeperk01()
 {
@@ -14058,8 +14086,8 @@ function setmutationmodeperk01()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x152bd
+// Params 0
+// Checksum 0x0, Offset: 0x15312
 // Size: 0x13
 function setmutationmodeperk02()
 {
@@ -14067,8 +14095,8 @@ function setmutationmodeperk02()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x152d8
+// Params 0
+// Checksum 0x0, Offset: 0x1532d
 // Size: 0x13
 function setmutationmodeperk03()
 {
@@ -14076,8 +14104,8 @@ function setmutationmodeperk03()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x152f3
+// Params 0
+// Checksum 0x0, Offset: 0x15348
 // Size: 0x13
 function setmutationmodeperk04()
 {
@@ -14085,8 +14113,8 @@ function setmutationmodeperk04()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1530e
+// Params 0
+// Checksum 0x0, Offset: 0x15363
 // Size: 0x13
 function setmutationmodeperk05()
 {
@@ -14094,8 +14122,8 @@ function setmutationmodeperk05()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15329
+// Params 0
+// Checksum 0x0, Offset: 0x1537e
 // Size: 0x13
 function unsetmutationmodeperk01()
 {
@@ -14103,8 +14131,8 @@ function unsetmutationmodeperk01()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15344
+// Params 0
+// Checksum 0x0, Offset: 0x15399
 // Size: 0x13
 function unsetmutationmodeperk02()
 {
@@ -14112,8 +14140,8 @@ function unsetmutationmodeperk02()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1535f
+// Params 0
+// Checksum 0x0, Offset: 0x153b4
 // Size: 0x13
 function unsetmutationmodeperk03()
 {
@@ -14121,8 +14149,8 @@ function unsetmutationmodeperk03()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1537a
+// Params 0
+// Checksum 0x0, Offset: 0x153cf
 // Size: 0x13
 function unsetmutationmodeperk04()
 {
@@ -14130,8 +14158,8 @@ function unsetmutationmodeperk04()
 }
 
 // Namespace perkfunctions / scripts\mp\perks\perkfunctions
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15395
+// Params 0
+// Checksum 0x0, Offset: 0x153ea
 // Size: 0x13
 function unsetmutationmodeperk05()
 {

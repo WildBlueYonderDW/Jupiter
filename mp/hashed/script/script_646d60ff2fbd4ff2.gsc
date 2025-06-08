@@ -4,7 +4,7 @@
 #namespace namespace_43fa28e17601014d;
 
 // Namespace namespace_43fa28e17601014d / namespace_fd5db9939c683aa4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1be
 // Size: 0xd4
 function function_6aa2e7131056a6a2( pos )
@@ -22,7 +22,7 @@ function function_6aa2e7131056a6a2( pos )
 }
 
 // Namespace namespace_43fa28e17601014d / namespace_fd5db9939c683aa4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29b
 // Size: 0xe3
 function function_5ba2582ce376900c( tag )
@@ -43,7 +43,7 @@ function function_5ba2582ce376900c( tag )
 }
 
 // Namespace namespace_43fa28e17601014d / namespace_fd5db9939c683aa4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x387
 // Size: 0xaa
 function function_2da0e1059066956f( target )
@@ -73,14 +73,15 @@ function function_2da0e1059066956f( target )
 }
 
 // Namespace namespace_43fa28e17601014d / namespace_fd5db9939c683aa4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x439
 // Size: 0x9a
 function function_f1400b978167ad73( target )
 {
     wait 1;
     
-    for (i = 0; i < self.var_abeda157c03de022; i++) {
+    for ( i = 0; i < self.var_abeda157c03de022 ; i++ )
+    {
         self.turrets[ i % 2 ].angles = self.turrets[ i % 2 ].originalangles + ( randomint( 10 ) - 5, randomint( 10 ) - 5, randomint( 10 ) - 5 );
         self.turrets[ i % 2 ] shootturret();
         wait 0.02;
@@ -88,7 +89,7 @@ function function_f1400b978167ad73( target )
 }
 
 // Namespace namespace_43fa28e17601014d / namespace_fd5db9939c683aa4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4db
 // Size: 0xc7
 function function_eb5fec1420a757c2( target )
@@ -96,7 +97,8 @@ function function_eb5fec1420a757c2( target )
     missiletags = [ "tag_rocket_right", "tag_rocket_left" ];
     wait 1;
     
-    for (i = 0; i < self.missilecount; i++) {
+    for ( i = 0; i < self.missilecount ; i++ )
+    {
         missilestart = self gettagorigin( missiletags[ i % 2 ] ) + anglestoforward( self.angles ) * 200;
         missileend = self gettagorigin( missiletags[ i % 2 ] ) + anglestoforward( self.angles ) * 1000;
         missile = scripts\cp_mp\utility\weapon_utility::_magicbullet( self.missileweapon, missilestart, missileend, self.owner );

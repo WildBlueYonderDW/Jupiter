@@ -13,7 +13,7 @@
 #namespace namespace_f721fc7d0d2d0f47;
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d6
 // Size: 0x2bd
 function function_5ea39cb95dd79f58()
@@ -79,7 +79,7 @@ function private function_c7a617d45c2c8e42()
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x689
 // Size: 0xaa
 function function_4a4fab5fd0b06d7b( difficulty )
@@ -103,7 +103,7 @@ function function_4a4fab5fd0b06d7b( difficulty )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x73b
 // Size: 0xf2
 function function_d5dd3911f7be9b07( base_difficulty, relative_level )
@@ -141,7 +141,7 @@ function function_d5dd3911f7be9b07( base_difficulty, relative_level )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x836
 // Size: 0x30
 function get_difficulties()
@@ -150,7 +150,7 @@ function get_difficulties()
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x86f
 // Size: 0x1f
 function get_regions()
@@ -164,7 +164,7 @@ function get_regions()
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x897
 // Size: 0x3a
 function function_cf8b9cfdad89cbec( region )
@@ -178,7 +178,7 @@ function function_cf8b9cfdad89cbec( region )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8da
 // Size: 0x335
 function function_d590d31d431a15c1( region_name, region_difficulty )
@@ -246,7 +246,8 @@ function function_d590d31d431a15c1( region_name, region_difficulty )
         aabb_min = [];
         aabb_max = [];
         
-        for (i = 0; i < 3; i++) {
+        for ( i = 0; i < 3 ; i++ )
+        {
             aabb_min[ i ] = min( difficulty_struct.aabb[ "min" ][ i ], region_aabb[ "min" ][ i ] );
             aabb_max[ i ] = max( difficulty_struct.aabb[ "max" ][ i ], region_aabb[ "max" ][ i ] );
         }
@@ -269,7 +270,8 @@ function private get_aabb( region )
     bounds[ "max" ] = region getboundshalfsize();
     bounds[ "min" ] = bounds[ "max" ] * -1;
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         aabb[ "min" ][ i ] = bounds[ "min" ][ i ] + region.origin[ i ];
         aabb[ "max" ][ i ] = bounds[ "max" ][ i ] + region.origin[ i ];
     }
@@ -282,7 +284,7 @@ function private get_aabb( region )
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0xd1c
-// Size: 0x33, Type: bool
+// Size: 0x33
 function private function_19f295362e8953a1( point, aabb )
 {
     assert( isdefined( aabb ) );
@@ -318,7 +320,7 @@ function private function_b8e5fa33b447a342( point, forcequery )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeb2
 // Size: 0x3d
 function function_a57380b7273e431a( point )
@@ -338,7 +340,7 @@ function function_a57380b7273e431a( point )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xef7
 // Size: 0x2f
 function get_region( point )
@@ -352,7 +354,7 @@ function get_region( point )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf2e
 // Size: 0xa4
 function function_4d8bb2d866771a10( point )
@@ -378,7 +380,7 @@ function function_4d8bb2d866771a10( point )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfdb
 // Size: 0x42
 function function_68a33f72cf283fdd( params )
@@ -389,7 +391,7 @@ function function_68a33f72cf283fdd( params )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1025
 // Size: 0x323
 function function_4fd50faaf7767e65( ai, difficulty, round_number )
@@ -494,7 +496,7 @@ function function_4fd50faaf7767e65( ai, difficulty, round_number )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1350
 // Size: 0x231
 function function_39502ad669adfb0a()
@@ -556,7 +558,7 @@ function function_39502ad669adfb0a()
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1589
 // Size: 0x20
 function function_300a6f8c556edf34( difficulty )
@@ -565,7 +567,7 @@ function function_300a6f8c556edf34( difficulty )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15b2
 // Size: 0x8c
 function function_815f837ba5d6ad2a( round_number )
@@ -586,7 +588,7 @@ function function_815f837ba5d6ad2a( round_number )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1647
 // Size: 0xbb
 function function_f83939ddb2573de8( params )
@@ -613,7 +615,7 @@ function function_f83939ddb2573de8( params )
 }
 
 // Namespace namespace_f721fc7d0d2d0f47 / namespace_4df2ab39b0e96ec7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x170a
 // Size: 0x1b8
 function function_161e408eddab0865( relevantparameters )

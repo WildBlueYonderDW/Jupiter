@@ -17,7 +17,7 @@
 #namespace mp_jup_st_c_gw_wz;
 
 // Namespace mp_jup_st_c_gw_wz / scripts\mp\maps\mp_jup_st_c_gw_wz\mp_jup_st_c_gw_wz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e1
 // Size: 0x1f2
 function main()
@@ -76,6 +76,6 @@ function main()
     game[ "defenders" ] = "axis";
     game[ "allies_outfit" ] = "urban";
     game[ "axis_outfit" ] = "woodland";
-    setdvar( @"hash_be80c9650d91b8ac", 3500 );
+    setdvar( @"fd_helicopter_altitude_limiter", 3500 );
 }
 

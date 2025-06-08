@@ -9,7 +9,7 @@
 /#
 
     // Namespace namespace_1cb5f1cc1f98b618 / namespace_7386a088c3551598
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xaf
     // Size: 0x390, Type: dev
     function function_79f6b9ffeb872713()
@@ -58,7 +58,7 @@
     }
 
     // Namespace namespace_1cb5f1cc1f98b618 / namespace_7386a088c3551598
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x447
     // Size: 0xc7, Type: dev
     function function_c5fe5d9ce72fa0bc( activityclass, activitytypename )
@@ -162,7 +162,8 @@
         var_1d86cbaeb48162b0 = [[ level.var_2d70874069468dab.var_aa4bf0d23a33bd92 ]]( @"hash_176090f07a9fa6df", activityinstance.class, 1800 );
         var_2f347303bf358337 = ( 0.3, 0.3, 1 );
         
-        for (index = 0; index < activityinstance.origins.size; index++) {
+        for ( index = 0; index < activityinstance.origins.size ; index++ )
+        {
             origin = activityinstance.origins[ index ];
             radius = activityinstance.radii[ index ];
             print3d( origin + ( 0, 0, 50 ), "<dev string:x8e9>" + activityinstance.type + "<dev string:x8f2>" + activityinstance.name, ( 1, 1, 1 ), 1, 1, duration, 1 );
@@ -187,7 +188,8 @@
             cylinder( origin, origin + ( 0, 0, 10 ), radius + var_1d86cbaeb48162b0, var_34beb429638ce846, 0, duration );
         }
         
-        for (index = 1; index < activityinstance.origins.size; index++) {
+        for ( index = 1; index < activityinstance.origins.size ; index++ )
+        {
             prevorigin = activityinstance.origins[ index - 1 ];
             origin = activityinstance.origins[ index ];
             line( prevorigin, origin, ( 0.8, 0.8, 1 ), 1, 0, duration );

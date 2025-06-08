@@ -16,7 +16,7 @@
 #namespace namespace_22ae363c8e287c38;
 
 // Namespace namespace_22ae363c8e287c38 / namespace_797ee4f931e4dbb8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x135
 // Size: 0x1a1
 function function_c56624984c6cfe44( relevantparameters )
@@ -63,7 +63,7 @@ function function_c56624984c6cfe44( relevantparameters )
 }
 
 // Namespace namespace_22ae363c8e287c38 / namespace_797ee4f931e4dbb8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2de
 // Size: 0x7d, Type: bool
 function function_a0e2a0be2e23fef( activityinstance, params )
@@ -77,7 +77,7 @@ function function_a0e2a0be2e23fef( activityinstance, params )
 }
 
 // Namespace namespace_22ae363c8e287c38 / namespace_797ee4f931e4dbb8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x364
 // Size: 0x2d, Type: bool
 function function_17b1321ab95e72c1( player, params )
@@ -87,7 +87,7 @@ function function_17b1321ab95e72c1( player, params )
 }
 
 // Namespace namespace_22ae363c8e287c38 / namespace_797ee4f931e4dbb8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x39a
 // Size: 0x87, Type: bool
 function function_30006181a99fb008( player, params )

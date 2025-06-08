@@ -15,7 +15,7 @@
 #namespace equipment_interact;
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x310
 // Size: 0x3b
 function equipmentinteract_init()
@@ -27,7 +27,7 @@ function equipmentinteract_init()
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x353
 // Size: 0x56
 function equipmentscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -37,7 +37,7 @@ function equipmentscriptableused( instance, part, state, player, var_a5b2c541413
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b1
 // Size: 0x84
 function equipmentuse( instance, player )
@@ -56,7 +56,7 @@ function equipmentuse( instance, player )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43d
 // Size: 0x18c
 function _updateuseobjs()
@@ -100,7 +100,7 @@ function _updateuseobjs()
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5d1
 // Size: 0x29
 function remoteinteractsetup( var_3012ab4936b3fdec, allowdefuse, allowhack )
@@ -112,7 +112,7 @@ function remoteinteractsetup( var_3012ab4936b3fdec, allowdefuse, allowhack )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x602
 // Size: 0x96
 function _hacksetup( remotedefusecallback )
@@ -128,7 +128,7 @@ function _hacksetup( remotedefusecallback )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a0
 // Size: 0x96, Type: bool
 function _processusethink( equipment )
@@ -160,7 +160,7 @@ function _processusethink( equipment )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x73f
 // Size: 0xc9
 function _startusethink( equipment, streakinfo )
@@ -210,7 +210,7 @@ function _startusethink( equipment, streakinfo )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x810
 // Size: 0x97
 function function_be0c3a067da1e72d( equipment )
@@ -236,7 +236,7 @@ function function_be0c3a067da1e72d( equipment )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8b0
 // Size: 0xac
 function deployhacktablet( index, equipment, streakinfo )
@@ -264,7 +264,7 @@ function deployhacktablet( index, equipment, streakinfo )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x964
 // Size: 0x33
 function function_60fbd6e6fc195e7b( equipment )
@@ -276,7 +276,7 @@ function function_60fbd6e6fc195e7b( equipment )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x99f
 // Size: 0x65
 function function_c9ada01dc3eac7f3( hackindex )
@@ -293,7 +293,7 @@ function function_c9ada01dc3eac7f3( hackindex )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0c
 // Size: 0xef
 function _updatehackprogressomnvar()
@@ -323,7 +323,7 @@ function _updatehackprogressomnvar()
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb03
 // Size: 0x26, Type: bool
 function _ontabletgiven( streakinfo, switchresult )
@@ -334,7 +334,7 @@ function _ontabletgiven( streakinfo, switchresult )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb32
 // Size: 0x3d
 function _cancelputawayonuseend( streakinfo )
@@ -357,7 +357,7 @@ function _cancelputawayonuseend( streakinfo )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb77
 // Size: 0x13
 function _ontabletputaway( streakinfo )
@@ -366,7 +366,7 @@ function _ontabletputaway( streakinfo )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb92
 // Size: 0x6b
 function _waituntilinteractfinished( streakinfo )
@@ -390,7 +390,7 @@ function _waituntilinteractfinished( streakinfo )
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc05
 // Size: 0x2e
 function _cleanuptabletallows()
@@ -402,7 +402,7 @@ function _cleanuptabletallows()
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc3b
 // Size: 0xa0
 function _toggletabletallows( var_da3010af8f6be463 )

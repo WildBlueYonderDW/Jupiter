@@ -3,7 +3,7 @@
 #namespace callback_group;
 
 // Namespace callback_group / scripts\cp_mp\utility\callback_group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x90
 // Size: 0x21
 function callback_create()
@@ -14,7 +14,7 @@ function callback_create()
 }
 
 // Namespace callback_group / scripts\cp_mp\utility\callback_group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xba
 // Size: 0x127
 function callback_subscribe( callback, target )
@@ -46,7 +46,7 @@ function callback_subscribe( callback, target )
 }
 
 // Namespace callback_group / scripts\cp_mp\utility\callback_group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e9
 // Size: 0xcc
 function callback_unsubscribe( callback, target )
@@ -71,7 +71,7 @@ function callback_unsubscribe( callback, target )
 }
 
 // Namespace callback_group / scripts\cp_mp\utility\callback_group
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2bd
 // Size: 0x279
 function callback_trigger( param1, param2, param3, param4 )
@@ -135,7 +135,7 @@ function callback_trigger( param1, param2, param3, param4 )
 /#
 
     // Namespace callback_group / scripts\cp_mp\utility\callback_group
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x53e
     // Size: 0x21, Type: dev
     function callback_test()
@@ -147,7 +147,7 @@ function callback_trigger( param1, param2, param3, param4 )
     }
 
     // Namespace callback_group / scripts\cp_mp\utility\callback_group
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x567
     // Size: 0xab, Type: dev
     function function_9c4673bb50e9f9af()
@@ -165,7 +165,7 @@ function callback_trigger( param1, param2, param3, param4 )
     }
 
     // Namespace callback_group / scripts\cp_mp\utility\callback_group
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x61a
     // Size: 0x67, Type: dev
     function function_63620b8d0b5c4b58()
@@ -179,7 +179,7 @@ function callback_trigger( param1, param2, param3, param4 )
     }
 
     // Namespace callback_group / scripts\cp_mp\utility\callback_group
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x689
     // Size: 0x16d, Type: dev
     function function_c1ab3afb487441e9()
@@ -209,7 +209,7 @@ function callback_trigger( param1, param2, param3, param4 )
     }
 
     // Namespace callback_group / scripts\cp_mp\utility\callback_group
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7fe
     // Size: 0x84, Type: dev
     function function_9523fb0936127d3b()
@@ -225,7 +225,7 @@ function callback_trigger( param1, param2, param3, param4 )
     }
 
     // Namespace callback_group / scripts\cp_mp\utility\callback_group
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x88a
     // Size: 0x22, Type: dev
     function function_d343abc5b21ce372( increment )
@@ -234,7 +234,7 @@ function callback_trigger( param1, param2, param3, param4 )
     }
 
     // Namespace callback_group / scripts\cp_mp\utility\callback_group
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x8b4
     // Size: 0x22, Type: dev
     function function_94a324eb8b53ec6d( increment )

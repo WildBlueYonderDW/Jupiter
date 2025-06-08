@@ -22,7 +22,7 @@ function autoexec main()
 }
 
 // Namespace full_armor / scripts\cp_mp\powerups\full_armor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x122
 // Size: 0x5f
 function function_d5fc5da2613d29dd()
@@ -38,7 +38,7 @@ function function_d5fc5da2613d29dd()
 }
 
 // Namespace full_armor / scripts\cp_mp\powerups\full_armor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x189
 // Size: 0x81
 function function_589539e3a6b1386f()
@@ -60,7 +60,7 @@ function function_589539e3a6b1386f()
 }
 
 // Namespace full_armor / scripts\cp_mp\powerups\full_armor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x213
 // Size: 0x3a
 function function_58a4e1d475eb979b( chance, context )
@@ -74,7 +74,7 @@ function function_58a4e1d475eb979b( chance, context )
 }
 
 // Namespace full_armor / scripts\cp_mp\powerups\full_armor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x256
 // Size: 0xcd
 function function_89fc1f6a39554ce9( str_powerup, ent_powerup )

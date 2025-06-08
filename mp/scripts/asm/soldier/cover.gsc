@@ -10,7 +10,7 @@
 #namespace cover;
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x255
 // Size: 0x2a, Type: bool
 function shouldcoverexpose()
@@ -19,7 +19,7 @@ function shouldcoverexpose()
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x288
 // Size: 0x45
 function shouldcoverexposedreload( asmname, statename, tostatename, params )
@@ -33,7 +33,7 @@ function shouldcoverexposedreload( asmname, statename, tostatename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2d6
 // Size: 0x55
 function calcanimstartpos( stoppos, stopangle, animdelta, var_f73bea4534a3831f )
@@ -45,7 +45,7 @@ function calcanimstartpos( stoppos, stopangle, animdelta, var_f73bea4534a3831f )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x334
 // Size: 0x25, Type: bool
 function ishighnode( node )
@@ -64,7 +64,7 @@ function ishighnode( node )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x362
 // Size: 0x55
 function start_conceal_add( statename, anime, waittime )
@@ -77,7 +77,7 @@ function start_conceal_add( statename, anime, waittime )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bf
 // Size: 0x4b, Type: bool
 function transitionedfromrun( asmname )
@@ -100,7 +100,7 @@ function transitionedfromrun( asmname )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x413
 // Size: 0x18d
 function playcoveranimloop3d( asmname, statename, params )
@@ -109,7 +109,8 @@ function playcoveranimloop3d( asmname, statename, params )
     {
         var_9f34b86d9ac843f4 = [ scripts\asm\asm_bb::bb_getcovernode(), self.node ];
         
-        for (i = 0; !isdefined( self.asm.lastcovernode ) && i < var_9f34b86d9ac843f4.size; i++) {
+        for ( i = 0; !isdefined( self.asm.lastcovernode ) && i < var_9f34b86d9ac843f4.size ; i++ )
+        {
             if ( isdefined( var_9f34b86d9ac843f4[ i ] ) && distancesquared( self.origin, var_9f34b86d9ac843f4[ i ].origin ) < 256 )
             {
                 self.asm.lastcovernode = var_9f34b86d9ac843f4[ i ];
@@ -135,7 +136,7 @@ function playcoveranimloop3d( asmname, statename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5a8
 // Size: 0x156
 function playcoveranimloop( asmname, statename, params )
@@ -186,7 +187,7 @@ function playcoveranimloop( asmname, statename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x706
 // Size: 0x89
 function conceal_add_cleanup( statename )
@@ -209,7 +210,7 @@ function conceal_add_cleanup( statename )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x797
 // Size: 0x9c
 function lerpto( covernode, var_2f841227a5cdde35, endonstr )
@@ -235,7 +236,7 @@ function lerpto( covernode, var_2f841227a5cdde35, endonstr )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x83b
 // Size: 0x3d
 function terminatecoverreload( asmname, statename, params )
@@ -246,7 +247,7 @@ function terminatecoverreload( asmname, statename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x880
 // Size: 0x7c
 function playcoveranim_droprpg( asmname, statename, params )
@@ -261,7 +262,7 @@ function playcoveranim_droprpg( asmname, statename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x904
 // Size: 0x144
 function playshuffleloop( asmname, statename, params )
@@ -300,7 +301,7 @@ function playshuffleloop( asmname, statename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa50
 // Size: 0xc4, Type: bool
 function shouldplayshuffleenter( asmname, statename, tostatename, params )
@@ -315,7 +316,7 @@ function shouldplayshuffleenter( asmname, statename, tostatename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb1d
 // Size: 0x2e
 function abortshufflecleanup( asmname, statename, params )
@@ -324,7 +325,7 @@ function abortshufflecleanup( asmname, statename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb53
 // Size: 0x2a2, Type: bool
 function shouldbeginshuffleexit( asmname, statename, tostatename, params )
@@ -386,7 +387,7 @@ function shouldbeginshuffleexit( asmname, statename, tostatename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xdfe
 // Size: 0x1ae
 function playshuffleanim_arrival( asmname, statename, params )
@@ -430,7 +431,7 @@ function playshuffleanim_arrival( asmname, statename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfb4
 // Size: 0x48
 function playshuffleanim_terminate( asmname, statename, params )
@@ -441,7 +442,7 @@ function playshuffleanim_terminate( asmname, statename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1004
 // Size: 0x14
 function coverreloadnotetrackhandler( note )
@@ -451,7 +452,7 @@ function coverreloadnotetrackhandler( note )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1021
 // Size: 0x1df, Type: bool
 function cover3dpickexposedir( asmname, statename, tostatename, params )
@@ -490,7 +491,7 @@ function cover3dpickexposedir( asmname, statename, tostatename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1209
 // Size: 0x55, Type: bool
 function cover3dcanexposedir( asmname, statename, tostatename, params )
@@ -500,7 +501,7 @@ function cover3dcanexposedir( asmname, statename, tostatename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1267
 // Size: 0xda, Type: bool
 function checkcovermultichangerequest( asmname, statename, tostatename, params )
@@ -527,7 +528,7 @@ function checkcovermultichangerequest( asmname, statename, tostatename, params )
 }
 
 // Namespace cover / scripts\asm\soldier\cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x134a
 // Size: 0x9f
 function finishcovermultichangerequest( asmname, statename, params )

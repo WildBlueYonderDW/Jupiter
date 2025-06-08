@@ -3,7 +3,7 @@
 #namespace callback;
 
 // Namespace callback / scripts\common\callbacks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x90
 // Size: 0xb0
 function callback( event, params )
@@ -31,7 +31,7 @@ function callback( event, params )
 }
 
 // Namespace callback / scripts\common\callbacks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x148
 // Size: 0x71
 function function_1ad95d714a56c8fa( event, params )
@@ -45,7 +45,7 @@ function function_1ad95d714a56c8fa( event, params )
 }
 
 // Namespace callback / scripts\common\callbacks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c1
 // Size: 0x80
 function function_ca1462b402444dd6( event, params )
@@ -74,7 +74,8 @@ function private function_f3847410a67a3098( ent, event, params )
     
     if ( isdefined( callbacks ) )
     {
-        for (i = 0; i < callbacks.size; i++) {
+        for ( i = 0; i < callbacks.size ; i++ )
+        {
             callback_fields = callbacks[ i ];
             
             if ( !isarray( callback_fields ) )
@@ -115,7 +116,7 @@ function private function_f3847410a67a3098( ent, event, params )
 }
 
 // Namespace callback / scripts\common\callbacks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x143
 function add( event, func, var_732ad454c46f92fd )
@@ -151,7 +152,7 @@ function add( event, func, var_732ad454c46f92fd )
 }
 
 // Namespace callback / scripts\common\callbacks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4ec
 // Size: 0x17a
 function remove( event, func, instant )
@@ -203,7 +204,7 @@ function remove( event, func, instant )
 }
 
 // Namespace callback / scripts\common\callbacks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66e
 // Size: 0x4d
 function function_e7fddda1f0b46b5e( var_fdf147e36d51ad1b )
@@ -222,7 +223,7 @@ function function_e7fddda1f0b46b5e( var_fdf147e36d51ad1b )
 }
 
 // Namespace callback / scripts\common\callbacks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c4
 // Size: 0x5d
 function function_d4f1fdfa332469ec( var_fdf147e36d51ad1b )
@@ -237,7 +238,7 @@ function function_d4f1fdfa332469ec( var_fdf147e36d51ad1b )
 }
 
 // Namespace callback / scripts\common\callbacks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x729
 // Size: 0x6b, Type: bool
 function function_75a459cce09d9f29( var_fdf147e36d51ad1b )

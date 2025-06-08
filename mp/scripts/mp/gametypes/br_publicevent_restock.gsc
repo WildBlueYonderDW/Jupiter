@@ -9,7 +9,7 @@
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x1e1
+// Checksum 0x0, Offset: 0x20a
 // Size: 0x17
 function autoexec main()
 {
@@ -17,8 +17,8 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x200
+// Params 1
+// Checksum 0x0, Offset: 0x229
 // Size: 0x60
 function init( eventinfo )
 {
@@ -30,8 +30,8 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x268
+// Params 0
+// Checksum 0x0, Offset: 0x291
 // Size: 0x33
 function postinitfunc()
 {
@@ -42,8 +42,8 @@ function postinitfunc()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a3
+// Params 0
+// Checksum 0x0, Offset: 0x2cc
 // Size: 0x4, Type: bool
 function validatefunc()
 {
@@ -51,8 +51,8 @@ function validatefunc()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b0
+// Params 0
+// Checksum 0x0, Offset: 0x2d9
 // Size: 0x10
 function waitfunc()
 {
@@ -61,8 +61,8 @@ function waitfunc()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c8
+// Params 0
+// Checksum 0x0, Offset: 0x2f1
 // Size: 0xb8
 function activatefunc()
 {
@@ -89,8 +89,8 @@ function activatefunc()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x388
+// Params 0
+// Checksum 0x0, Offset: 0x3b1
 // Size: 0x2
 function deactivatefunc()
 {
@@ -98,9 +98,9 @@ function deactivatefunc()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x392
-// Size: 0xbe
+// Params 0
+// Checksum 0x0, Offset: 0x3bb
+// Size: 0xca
 function function_f929dbb719836091()
 {
     level endon( "game_ended" );
@@ -112,6 +112,7 @@ function function_f929dbb719836091()
             function_8cd3ae6cb0d422dc();
             break;
         case #"hash_19ba8d41970911ad":
+        case #"hash_d1616a5975b7a941":
             function_c7076b566f348b22();
             break;
         case #"hash_4ca1dc2e1b0de0d3":
@@ -133,8 +134,8 @@ function function_f929dbb719836091()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x458
+// Params 0
+// Checksum 0x0, Offset: 0x48d
 // Size: 0x59
 function function_8cd3ae6cb0d422dc()
 {
@@ -149,8 +150,8 @@ function function_8cd3ae6cb0d422dc()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b9
+// Params 0
+// Checksum 0x0, Offset: 0x4ee
 // Size: 0x59
 function function_c7076b566f348b22()
 {
@@ -165,8 +166,8 @@ function function_c7076b566f348b22()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x51a
+// Params 0
+// Checksum 0x0, Offset: 0x54f
 // Size: 0x22
 function function_ec86e04eb404ce02()
 {
@@ -179,8 +180,8 @@ function function_ec86e04eb404ce02()
 }
 
 // Namespace br_publicevent_restock / scripts\mp\gametypes\br_publicevent_restock
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x544
+// Params 0
+// Checksum 0x0, Offset: 0x579
 // Size: 0x2d, Type: bool
 function function_a5cbf2004ced4597()
 {

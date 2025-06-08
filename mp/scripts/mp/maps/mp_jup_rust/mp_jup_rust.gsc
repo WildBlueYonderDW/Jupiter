@@ -17,7 +17,7 @@
 #namespace mp_jup_rust;
 
 // Namespace mp_jup_rust / scripts\mp\maps\mp_jup_rust\mp_jup_rust
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x358
 // Size: 0xe7
 function main()
@@ -47,7 +47,7 @@ function main()
 }
 
 // Namespace mp_jup_rust / scripts\mp\maps\mp_jup_rust\mp_jup_rust
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x447
 // Size: 0x40
 function function_1682cf22619a5e55()
@@ -62,7 +62,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_jup_rust / scripts\mp\maps\mp_jup_rust\mp_jup_rust
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48f
 // Size: 0x413
 function function_31dc060e85f4a689()

@@ -19,8 +19,8 @@
 #namespace game_utility;
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15b5
+// Params 1
+// Checksum 0x0, Offset: 0x1603
 // Size: 0x12
 function getotherteam( team )
 {
@@ -28,8 +28,8 @@ function getotherteam( team )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d0
+// Params 0
+// Checksum 0x0, Offset: 0x161e
 // Size: 0x20
 function getroundlength()
 {
@@ -42,8 +42,8 @@ function getroundlength()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f9
+// Params 0
+// Checksum 0x0, Offset: 0x1647
 // Size: 0x1d
 function getgamelength()
 {
@@ -56,8 +56,8 @@ function getgamelength()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x161f
+// Params 0
+// Checksum 0x0, Offset: 0x166d
 // Size: 0x30
 function gettimepassedpercentage()
 {
@@ -72,8 +72,8 @@ function gettimepassedpercentage()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1658
+// Params 0
+// Checksum 0x0, Offset: 0x16a6
 // Size: 0xc
 function getsecondspassed()
 {
@@ -81,8 +81,8 @@ function getsecondspassed()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x166d
+// Params 0
+// Checksum 0x0, Offset: 0x16bb
 // Size: 0xb
 function getminutespassed()
 {
@@ -90,8 +90,8 @@ function getminutespassed()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1681
+// Params 2
+// Checksum 0x0, Offset: 0x16cf
 // Size: 0x90
 function setuipostgamefade( fadetoblack, delay )
 {
@@ -127,8 +127,8 @@ function setuipostgamefade( fadetoblack, delay )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1719
+// Params 4
+// Checksum 0x0, Offset: 0x1767
 // Size: 0xa7
 function registerroundswitchdvar( dvarstring, defaultvalue, minvalue, maxvalue )
 {
@@ -152,8 +152,8 @@ function registerroundswitchdvar( dvarstring, defaultvalue, minvalue, maxvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17c8
+// Params 2
+// Checksum 0x0, Offset: 0x1816
 // Size: 0x20
 function registerroundlimitdvar( dvarstring, defaultvalue )
 {
@@ -161,8 +161,8 @@ function registerroundlimitdvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17f0
+// Params 2
+// Checksum 0x0, Offset: 0x183e
 // Size: 0x20
 function registernumteamsdvar( dvarstring, defaultvalue )
 {
@@ -170,8 +170,8 @@ function registernumteamsdvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1818
+// Params 2
+// Checksum 0x0, Offset: 0x1866
 // Size: 0x20
 function registerwinlimitdvar( dvarstring, defaultvalue )
 {
@@ -179,8 +179,8 @@ function registerwinlimitdvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1840
+// Params 2
+// Checksum 0x0, Offset: 0x188e
 // Size: 0x20
 function registerwinbytwoenableddvar( dvarstring, defaultvalue )
 {
@@ -188,8 +188,8 @@ function registerwinbytwoenableddvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1868
+// Params 2
+// Checksum 0x0, Offset: 0x18b6
 // Size: 0x20
 function registerwinbytwomaxroundsdvar( dvarstring, defaultvalue )
 {
@@ -197,8 +197,8 @@ function registerwinbytwomaxroundsdvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1890
+// Params 2
+// Checksum 0x0, Offset: 0x18de
 // Size: 0x20
 function registerdogtagsenableddvar( dvarstring, defaultvalue )
 {
@@ -206,8 +206,8 @@ function registerdogtagsenableddvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18b8
+// Params 2
+// Checksum 0x0, Offset: 0x1906
 // Size: 0x20
 function registerscorelimitdvar( dvarstring, defaultvalue )
 {
@@ -215,8 +215,8 @@ function registerscorelimitdvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e0
+// Params 2
+// Checksum 0x0, Offset: 0x192e
 // Size: 0x35
 function registertimelimitdvar( dvarstring, defaultvalue )
 {
@@ -225,8 +225,8 @@ function registertimelimitdvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x191d
+// Params 2
+// Checksum 0x0, Offset: 0x196b
 // Size: 0x35
 function registerhalftimedvar( dvarstring, defaultvalue )
 {
@@ -235,8 +235,8 @@ function registerhalftimedvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x195a
+// Params 2
+// Checksum 0x0, Offset: 0x19a8
 // Size: 0x20
 function registernumlivesdvar( dvarstring, defaultvalue )
 {
@@ -244,8 +244,8 @@ function registernumlivesdvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1982
+// Params 2
+// Checksum 0x0, Offset: 0x19d0
 // Size: 0x20
 function registernumrevivesdvar( dvarstring, defaultvalue )
 {
@@ -253,8 +253,8 @@ function registernumrevivesdvar( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19aa
+// Params 2
+// Checksum 0x0, Offset: 0x19f8
 // Size: 0x20
 function function_704789086c9ad943( dvarstring, defaultvalue )
 {
@@ -262,8 +262,8 @@ function function_704789086c9ad943( dvarstring, defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19d2
+// Params 1
+// Checksum 0x0, Offset: 0x1a20
 // Size: 0x1b
 function setovertimelimitdvar( value )
 {
@@ -271,8 +271,8 @@ function setovertimelimitdvar( value )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19f5
+// Params 1
+// Checksum 0x0, Offset: 0x1a43
 // Size: 0x18
 function registerlaststandhealthdvar( defaultvalue )
 {
@@ -280,8 +280,8 @@ function registerlaststandhealthdvar( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a15
+// Params 1
+// Checksum 0x0, Offset: 0x1a63
 // Size: 0x18
 function registerlaststandrevivehealthdvar( defaultvalue )
 {
@@ -289,8 +289,8 @@ function registerlaststandrevivehealthdvar( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a35
+// Params 1
+// Checksum 0x0, Offset: 0x1a83
 // Size: 0x18
 function registerlaststandtimerdvar( defaultvalue )
 {
@@ -298,8 +298,8 @@ function registerlaststandtimerdvar( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a55
+// Params 1
+// Checksum 0x0, Offset: 0x1aa3
 // Size: 0x18
 function registerlaststandrevivetimerdvar( defaultvalue )
 {
@@ -307,8 +307,8 @@ function registerlaststandrevivetimerdvar( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a75
+// Params 1
+// Checksum 0x0, Offset: 0x1ac3
 // Size: 0x18
 function registerlaststandweapondvar( defaultvalue )
 {
@@ -316,8 +316,8 @@ function registerlaststandweapondvar( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a95
+// Params 1
+// Checksum 0x0, Offset: 0x1ae3
 // Size: 0x18
 function registerlaststandweapondelaydvar( defaultvalue )
 {
@@ -325,8 +325,8 @@ function registerlaststandweapondelaydvar( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab5
+// Params 1
+// Checksum 0x0, Offset: 0x1b03
 // Size: 0x18
 function registerlaststandsuicidetimerdvar( defaultvalue )
 {
@@ -334,8 +334,8 @@ function registerlaststandsuicidetimerdvar( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad5
+// Params 1
+// Checksum 0x0, Offset: 0x1b23
 // Size: 0x18
 function registerlaststandinvulntimerdvar( defaultvalue )
 {
@@ -343,8 +343,8 @@ function registerlaststandinvulntimerdvar( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1af5
+// Params 1
+// Checksum 0x0, Offset: 0x1b43
 // Size: 0x18
 function registerlaststandrevivedecayscaledvar( defaultvalue )
 {
@@ -352,8 +352,8 @@ function registerlaststandrevivedecayscaledvar( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b15
+// Params 1
+// Checksum 0x0, Offset: 0x1b63
 // Size: 0x18
 function function_65c4cae95d0c833b( defaultvalue )
 {
@@ -361,8 +361,8 @@ function function_65c4cae95d0c833b( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b35
+// Params 1
+// Checksum 0x0, Offset: 0x1b83
 // Size: 0x18
 function function_c2bd90ff953a0ce4( defaultvalue )
 {
@@ -370,8 +370,8 @@ function function_c2bd90ff953a0ce4( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b55
+// Params 1
+// Checksum 0x0, Offset: 0x1ba3
 // Size: 0x18
 function function_2597b9cd72447cb6( defaultvalue )
 {
@@ -379,8 +379,8 @@ function function_2597b9cd72447cb6( defaultvalue )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b75
+// Params 0
+// Checksum 0x0, Offset: 0x1bc3
 // Size: 0xa5, Type: bool
 function isroundbased()
 {
@@ -403,8 +403,8 @@ function isroundbased()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c23
+// Params 0
+// Checksum 0x0, Offset: 0x1c71
 // Size: 0x21, Type: bool
 function isfirstround()
 {
@@ -422,8 +422,8 @@ function isfirstround()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c4d
+// Params 0
+// Checksum 0x0, Offset: 0x1c9b
 // Size: 0x183, Type: bool
 function nextroundisfinalround()
 {
@@ -492,8 +492,8 @@ function nextroundisfinalround()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dd9
+// Params 0
+// Checksum 0x0, Offset: 0x1e27
 // Size: 0x164, Type: bool
 function nextroundismatchpoint()
 {
@@ -552,8 +552,8 @@ function nextroundismatchpoint()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f46
+// Params 0
+// Checksum 0x0, Offset: 0x1f94
 // Size: 0x5d, Type: bool
 function wasonlyround()
 {
@@ -586,8 +586,8 @@ function wasonlyround()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fac
+// Params 0
+// Checksum 0x0, Offset: 0x1ffa
 // Size: 0x106, Type: bool
 function waslastround()
 {
@@ -653,8 +653,8 @@ function waslastround()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20bb
+// Params 0
+// Checksum 0x0, Offset: 0x2109
 // Size: 0x70, Type: bool
 function iswinbytworulegametype()
 {
@@ -672,8 +672,8 @@ function iswinbytworulegametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2134
+// Params 0
+// Checksum 0x0, Offset: 0x2182
 // Size: 0x29
 function getmaxwinbytworounds()
 {
@@ -681,8 +681,8 @@ function getmaxwinbytworounds()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2166
+// Params 0
+// Checksum 0x0, Offset: 0x21b4
 // Size: 0x59, Type: bool
 function shouldplaywinbytwo()
 {
@@ -692,8 +692,8 @@ function shouldplaywinbytwo()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21c8
+// Params 0
+// Checksum 0x0, Offset: 0x2216
 // Size: 0x1d, Type: bool
 function islastwinbytwo()
 {
@@ -701,8 +701,8 @@ function islastwinbytwo()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21ee
+// Params 0
+// Checksum 0x0, Offset: 0x223c
 // Size: 0x3d, Type: bool
 function function_2f1b2a4a64257bea()
 {
@@ -712,8 +712,8 @@ function function_2f1b2a4a64257bea()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2234
+// Params 0
+// Checksum 0x0, Offset: 0x2282
 // Size: 0x38, Type: bool
 function istimetobeatrulegametype()
 {
@@ -729,8 +729,8 @@ function istimetobeatrulegametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2275
+// Params 0
+// Checksum 0x0, Offset: 0x22c3
 // Size: 0x1b, Type: bool
 function intimetobeat()
 {
@@ -738,8 +738,8 @@ function intimetobeat()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2299
+// Params 1
+// Checksum 0x0, Offset: 0x22e7
 // Size: 0xa8, Type: bool
 function settimetobeat( team )
 {
@@ -768,8 +768,8 @@ function settimetobeat( team )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x234a
+// Params 0
+// Checksum 0x0, Offset: 0x2398
 // Size: 0xb, Type: bool
 function istimetobeatvalid()
 {
@@ -777,8 +777,8 @@ function istimetobeatvalid()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x235e
+// Params 0
+// Checksum 0x0, Offset: 0x23ac
 // Size: 0x16, Type: bool
 function shouldplaytimetobeatot()
 {
@@ -786,8 +786,8 @@ function shouldplaytimetobeatot()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x237d
+// Params 0
+// Checksum 0x0, Offset: 0x23cb
 // Size: 0x20, Type: bool
 function isscoretobeatrulegametype()
 {
@@ -801,8 +801,8 @@ function isscoretobeatrulegametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23a6
+// Params 2
+// Checksum 0x0, Offset: 0x23f4
 // Size: 0x153
 function setscoretobeat( team, score )
 {
@@ -839,8 +839,8 @@ function setscoretobeat( team, score )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2501
+// Params 0
+// Checksum 0x0, Offset: 0x254f
 // Size: 0x16, Type: bool
 function shouldplayscoretobeatot()
 {
@@ -848,8 +848,8 @@ function shouldplayscoretobeatot()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2520
+// Params 0
+// Checksum 0x0, Offset: 0x256e
 // Size: 0xcf, Type: bool
 function isovertimesupportedgametype()
 {
@@ -878,8 +878,8 @@ function isovertimesupportedgametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x25f8
+// Params 0
+// Checksum 0x0, Offset: 0x2646
 // Size: 0xea
 function getmaxovertimeroundsbygametype()
 {
@@ -916,8 +916,8 @@ function getmaxovertimeroundsbygametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26eb
+// Params 0
+// Checksum 0x0, Offset: 0x2739
 // Size: 0x55
 function getwingamebytype()
 {
@@ -937,22 +937,22 @@ function getwingamebytype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2749
+// Params 0
+// Checksum 0x0, Offset: 0x2797
 // Size: 0x32
 function issimultaneouskillenabled()
 {
     if ( !isdefined( level.simultaneouskillenabled ) )
     {
-        level.simultaneouskillenabled = getdvarint( @"hash_aa96b1e9c9809b8", 0 ) == 0;
+        level.simultaneouskillenabled = getdvarint( @"killswitch_simultaneous_deaths", 0 ) == 0;
     }
     
     return level.simultaneouskillenabled;
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2784
+// Params 0
+// Checksum 0x0, Offset: 0x27d2
 // Size: 0x8d
 function cantiebysimultaneouskill()
 {
@@ -981,8 +981,8 @@ function cantiebysimultaneouskill()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x281a
+// Params 0
+// Checksum 0x0, Offset: 0x2868
 // Size: 0xb8, Type: bool
 function shouldplayovertime()
 {
@@ -1011,8 +1011,8 @@ function shouldplayovertime()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28db
+// Params 0
+// Checksum 0x0, Offset: 0x2929
 // Size: 0x57
 function resetscoreonroundstart()
 {
@@ -1025,8 +1025,8 @@ function resetscoreonroundstart()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x293b
+// Params 0
+// Checksum 0x0, Offset: 0x2989
 // Size: 0x198
 function canplayhalfwayvo()
 {
@@ -1078,8 +1078,8 @@ function canplayhalfwayvo()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2adb
+// Params 0
+// Checksum 0x0, Offset: 0x2b29
 // Size: 0x30, Type: bool
 function hittimelimit()
 {
@@ -1099,8 +1099,8 @@ function hittimelimit()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b14
+// Params 0
+// Checksum 0x0, Offset: 0x2b62
 // Size: 0x23, Type: bool
 function hitroundlimit()
 {
@@ -1113,8 +1113,8 @@ function hitroundlimit()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b40
+// Params 0
+// Checksum 0x0, Offset: 0x2b8e
 // Size: 0xf2, Type: bool
 function hitscorelimit()
 {
@@ -1140,7 +1140,8 @@ function hitscorelimit()
     }
     else
     {
-        for (i = 0; i < level.players.size; i++) {
+        for ( i = 0; i < level.players.size ; i++ )
+        {
             player = level.players[ i ];
             
             if ( isdefined( player.score ) && player.score >= level.roundscorelimit )
@@ -1154,8 +1155,8 @@ function hitscorelimit()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c3b
+// Params 0
+// Checksum 0x0, Offset: 0x2c89
 // Size: 0x85, Type: bool
 function hitwinlimit()
 {
@@ -1181,8 +1182,8 @@ function hitwinlimit()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cc9
+// Params 0
+// Checksum 0x0, Offset: 0x2d17
 // Size: 0x3b
 function getscorelimit()
 {
@@ -1204,8 +1205,8 @@ function getscorelimit()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d0c
+// Params 1
+// Checksum 0x0, Offset: 0x2d5a
 // Size: 0x14
 function getroundswon( team )
 {
@@ -1213,8 +1214,8 @@ function getroundswon( team )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d29
+// Params 0
+// Checksum 0x0, Offset: 0x2d77
 // Size: 0x86, Type: bool
 function allteamstied()
 {
@@ -1239,8 +1240,8 @@ function allteamstied()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2db8
+// Params 0
+// Checksum 0x0, Offset: 0x2e06
 // Size: 0xb
 function isobjectivebased()
 {
@@ -1248,8 +1249,8 @@ function isobjectivebased()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dcc
+// Params 0
+// Checksum 0x0, Offset: 0x2e1a
 // Size: 0xae
 function gettimelimit()
 {
@@ -1285,8 +1286,8 @@ function gettimelimit()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e82
+// Params 0
+// Checksum 0x0, Offset: 0x2ed0
 // Size: 0x37
 function gethalftime()
 {
@@ -1304,8 +1305,8 @@ function gethalftime()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ec1
+// Params 0
+// Checksum 0x0, Offset: 0x2f0f
 // Size: 0x1b, Type: bool
 function inovertime()
 {
@@ -1313,8 +1314,8 @@ function inovertime()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ee5
+// Params 0
+// Checksum 0x0, Offset: 0x2f33
 // Size: 0x91
 function gamehasstarted()
 {
@@ -1340,8 +1341,8 @@ function gamehasstarted()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f7f
+// Params 1
+// Checksum 0x0, Offset: 0x2fcd
 // Size: 0xa6
 function getlivingplayers( team )
 {
@@ -1371,8 +1372,8 @@ function getlivingplayers( team )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x302e
+// Params 0
+// Checksum 0x0, Offset: 0x307c
 // Size: 0x23, Type: bool
 function rankingenabled()
 {
@@ -1385,8 +1386,8 @@ function rankingenabled()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x305a
+// Params 0
+// Checksum 0x0, Offset: 0x30a8
 // Size: 0x23, Type: bool
 function onlinestatsenabled()
 {
@@ -1399,8 +1400,8 @@ function onlinestatsenabled()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3086
+// Params 0
+// Checksum 0x0, Offset: 0x30d4
 // Size: 0x1d, Type: bool
 function privatematch()
 {
@@ -1408,8 +1409,8 @@ function privatematch()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30ac
+// Params 0
+// Checksum 0x0, Offset: 0x30fa
 // Size: 0x31, Type: bool
 function lobbyteamselectenabled()
 {
@@ -1417,8 +1418,8 @@ function lobbyteamselectenabled()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30e6
+// Params 0
+// Checksum 0x0, Offset: 0x3134
 // Size: 0xb
 function matchmakinggame()
 {
@@ -1426,8 +1427,8 @@ function matchmakinggame()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30fa
+// Params 0
+// Checksum 0x0, Offset: 0x3148
 // Size: 0xd
 function getgametypenumlives()
 {
@@ -1435,8 +1436,8 @@ function getgametypenumlives()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3110
+// Params 0
+// Checksum 0x0, Offset: 0x315e
 // Size: 0x27
 function islifelimited()
 {
@@ -1449,8 +1450,8 @@ function islifelimited()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3140
+// Params 1
+// Checksum 0x0, Offset: 0x318e
 // Size: 0xca
 function getlastlivingplayer( team )
 {
@@ -1481,8 +1482,8 @@ function getlastlivingplayer( team )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3213
+// Params 0
+// Checksum 0x0, Offset: 0x3261
 // Size: 0xa4
 function trygetlastpotentiallivingplayer()
 {
@@ -1520,8 +1521,8 @@ function trygetlastpotentiallivingplayer()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32bf
+// Params 0
+// Checksum 0x0, Offset: 0x330d
 // Size: 0x92
 function getpotentiallivingplayers()
 {
@@ -1549,8 +1550,8 @@ function getpotentiallivingplayers()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x335a
+// Params 0
+// Checksum 0x0, Offset: 0x33a8
 // Size: 0x48, Type: bool
 function denysystemicteamchoice()
 {
@@ -1576,8 +1577,8 @@ function denysystemicteamchoice()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33ab
+// Params 0
+// Checksum 0x0, Offset: 0x33f9
 // Size: 0x28
 function allowteamassignment()
 {
@@ -1591,8 +1592,8 @@ function allowteamassignment()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33dc
+// Params 0
+// Checksum 0x0, Offset: 0x342a
 // Size: 0x78, Type: bool
 function doesmodesupportplayerteamchoice()
 {
@@ -1612,8 +1613,8 @@ function doesmodesupportplayerteamchoice()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x345d
+// Params 0
+// Checksum 0x0, Offset: 0x34ab
 // Size: 0xdf
 function allowclasschoice()
 {
@@ -1658,8 +1659,8 @@ function allowclasschoice()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3545
+// Params 0
+// Checksum 0x0, Offset: 0x3593
 // Size: 0x3, Type: bool
 function showfakeloadout()
 {
@@ -1667,8 +1668,8 @@ function showfakeloadout()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3551
+// Params 2
+// Checksum 0x0, Offset: 0x359f
 // Size: 0x8c
 function setfakeloadoutweaponslot( sweapon, var_7ebc888be394a18e )
 {
@@ -1680,7 +1681,8 @@ function setfakeloadoutweaponslot( sweapon, var_7ebc888be394a18e )
         attachments = getweaponattachments( sweapon );
     }
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         var_b519f801a23677bf = -1;
         
         if ( isdefined( attachments[ i ] ) )
@@ -1694,16 +1696,24 @@ function setfakeloadoutweaponslot( sweapon, var_7ebc888be394a18e )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35e5
-// Size: 0x10a0
+// Params 1
+// Checksum 0x0, Offset: 0x3633
+// Size: 0x10e5
 function setcommonrulesfrommatchrulesdata( skipfriendlyfire )
 {
     teamcount = getmatchrulesdata( "commonOption", "teamCount" );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_teamcount" ), teamcount );
     teamsize = scripts\cp_mp\utility\game_utility::function_4fb37368ae3585bb();
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_teamsize" ), teamsize );
-    timelimit = getmatchrulesdata( "commonOption", "timeLimit" );
+    
+    if ( isdefined( level.var_d5afb09cfde5ee65 ) && ( getgametype() == "defuse" || getgametype() == "hc_defuse" ) )
+    {
+        timelimit = level.var_d5afb09cfde5ee65;
+    }
+    else
+    {
+        timelimit = getmatchrulesdata( "commonOption", "timeLimit" );
+    }
     
     if ( getdvarint( @"hash_7dfc9d99d9c1ff2f", 0 ) == 1 )
     {
@@ -1754,17 +1764,17 @@ function setcommonrulesfrommatchrulesdata( skipfriendlyfire )
     numrevives = getmatchrulesdata( "commonOption", "numRevives" );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_numRevives" ), numrevives );
     registernumrevivesdvar( getgametype(), numrevives );
-    setdynamicdvar( @"hash_b1d561f9a9241e09", getmatchrulesdata( "commonOption", "maxHealth" ) );
-    setdynamicdvar( @"hash_2922210021914dd7", getmatchrulesdata( "commonOption", "healthRegen" ) );
+    setdynamicdvar( @"scr_player_maxhealth", getmatchrulesdata( "commonOption", "maxHealth" ) );
+    setdynamicdvar( @"scr_player_healthregentime", getmatchrulesdata( "commonOption", "healthRegen" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_healthregentime" ), getmatchrulesdata( "commonOption", "healthRegen" ) );
-    setdynamicdvar( @"hash_a4d532f42d919827", getmatchrulesdata( "commonOption", "allowArmor" ) );
-    setdynamicdvar( @"hash_d75d5638785f3b09", getmatchrulesdata( "commonOption", "spawnArmor" ) );
+    setdynamicdvar( @"scr_player_allowarmor", getmatchrulesdata( "commonOption", "allowArmor" ) );
+    setdynamicdvar( @"scr_player_spawnarmor", getmatchrulesdata( "commonOption", "spawnArmor" ) );
     setdynamicdvar( @"hash_a6a3fd965485d4bc", getmatchrulesdata( "commonOption", "spawnArmorPlates" ) );
     setdynamicdvar( @"hash_8ad1ab9436bccca", getmatchrulesdata( "commonOption", "dropArmorOnDeath" ) );
     setdynamicdvar( @"hash_28d450f7f28644b7", getmatchrulesdata( "commonOption", "armorDropAmount" ) );
-    setdynamicdvar( @"hash_dfc97948abf22f64", getmatchrulesdata( "commonOption", "disableSuperSprint" ) );
+    setdynamicdvar( @"scr_player_disablesupersprint", getmatchrulesdata( "commonOption", "disableSuperSprint" ) );
     setdynamicdvar( @"hash_215eb9aef94dd47e", getmatchrulesdata( "commonOption", "disableMount" ) );
-    setdynamicdvar( @"hash_e723cc761de7b161", getmatchrulesdata( "commonOption", "lastStand" ) );
+    setdynamicdvar( @"scr_player_laststand", getmatchrulesdata( "commonOption", "lastStand" ) );
     setdynamicdvar( @"hash_e4f93d764d11874d", getmatchrulesdata( "commonOption", "deathsDoorEnterPct" ) );
     setdynamicdvar( @"hash_b84edc242cc61abf", getmatchrulesdata( "commonOption", "deathsDoorExitPct" ) );
     laststandhealth = getmatchrulesdata( "commonOption", "lastStandHealth" );
@@ -1785,16 +1795,16 @@ function setcommonrulesfrommatchrulesdata( skipfriendlyfire )
     setdynamicdvar( @"hash_df1ae5a11f519ab5", getmatchrulesdata( "commonOption", "reviveUseWeapon" ) );
     level.matchrules_damagemultiplier = 0;
     setdynamicdvar( @"hash_b5e336c86438398c", getmatchrulesdata( "commonOption", "vampirism" ) );
-    setdynamicdvar( @"hash_df992051d6fe8149", getmatchrulesdata( "commonOption", "spectateModeAllowed" ) );
-    setdynamicdvar( @"hash_399f13d1217738fe", getmatchrulesdata( "commonOption", "showKillcam" ) );
+    setdynamicdvar( @"scr_game_spectatetype", getmatchrulesdata( "commonOption", "spectateModeAllowed" ) );
+    setdynamicdvar( @"scr_game_allowkillcam", getmatchrulesdata( "commonOption", "showKillcam" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_killcamType" ), getmatchrulesdata( "commonOption", "killcamType" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_allow3rdspectate" ), getmatchrulesdata( "commonOption", "spectate3rdAllowed" ) );
-    setdynamicdvar( @"hash_2a4effcaf5954d38", getmatchrulesdata( "commonOption", "enableMinimap" ) );
-    setdynamicdvar( @"hash_f16ba8db72f34fc3", getmatchrulesdata( "commonOption", "radarAlwaysOn" ) );
-    setdynamicdvar( @"hash_36d4f05a3801af7b", getmatchrulesdata( "commonOption", "radarHideShots" ) );
-    setdynamicdvar( @"hash_cc12cd6acff9b720", getmatchrulesdata( "commonOption", "compassHideEnemy" ) );
-    setdynamicdvar( @"hash_9498c88902801ed5", getmatchrulesdata( "commonOption", "compassHidePings" ) );
-    setdynamicdvar( @"hash_5fc696f5bbb3ca62", getmatchrulesdata( "commonOption", "disableSpawnCamera" ) );
+    setdynamicdvar( @"scr_game_enableminimap", getmatchrulesdata( "commonOption", "enableMinimap" ) );
+    setdynamicdvar( @"scr_game_forceuav", getmatchrulesdata( "commonOption", "radarAlwaysOn" ) );
+    setdynamicdvar( @"scr_game_radarhidepings", getmatchrulesdata( "commonOption", "radarHideShots" ) );
+    setdynamicdvar( @"scr_game_navbarhideenemy", getmatchrulesdata( "commonOption", "compassHideEnemy" ) );
+    setdynamicdvar( @"scr_game_navbarhidepings", getmatchrulesdata( "commonOption", "compassHidePings" ) );
+    setdynamicdvar( @"scr_game_disablespawncamera", getmatchrulesdata( "commonOption", "disableSpawnCamera" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_playerrespawndelay" ), getmatchrulesdata( "commonOption", "respawnDelay" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_suicidespawndelay" ), getmatchrulesdata( "commonOption", "suicideSpawnDelay" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_waverespawndelay" ), getmatchrulesdata( "commonOption", "waveRespawnDelay" ) );
@@ -1819,12 +1829,12 @@ function setcommonrulesfrommatchrulesdata( skipfriendlyfire )
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_roundRetainStreaks" ), getmatchrulesdata( "commonOption", "roundRetainStreaks" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_roundRetainStreakProg" ), getmatchrulesdata( "commonOption", "roundRetainStreakProg" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_deathRetainStreaks" ), getmatchrulesdata( "commonOption", "deathRetainStreaks" ) );
-    setdynamicdvar( @"hash_a69e3d30bf0c5ff6", getmatchrulesdata( "commonOption", "casualScoreStreaks" ) );
-    setdynamicdvar( @"hash_614165a37ac2db61", getmatchrulesdata( "commonOption", "wrapKillstreaks" ) );
-    setdynamicdvar( @"hash_7d44bfc04e9b62b9", getmatchrulesdata( "commonOption", "superFastChargeRate" ) );
-    setdynamicdvar( @"hash_913a338c84e2f2f6", getmatchrulesdata( "commonOption", "superPointsMod" ) );
+    setdynamicdvar( @"scr_game_casualscorestreaks", getmatchrulesdata( "commonOption", "casualScoreStreaks" ) );
+    setdynamicdvar( @"scr_game_wrapkillstreaks", getmatchrulesdata( "commonOption", "wrapKillstreaks" ) );
+    setdynamicdvar( @"scr_game_superfastchargerate", getmatchrulesdata( "commonOption", "superFastChargeRate" ) );
+    setdynamicdvar( @"scr_game_superpointsmod", getmatchrulesdata( "commonOption", "superPointsMod" ) );
     setdynamicdvar( @"hash_fbc77dbb0cf44cc7", getmatchrulesdata( "commonOption", "spawnProtectionTimer" ) );
-    setdynamicdvar( @"hash_c85a7135dce00903", getmatchrulesdata( "commonOption", "equipmentDelay" ) );
+    setdynamicdvar( @"scr_game_lethaldelay", getmatchrulesdata( "commonOption", "equipmentDelay" ) );
     setdynamicdvar( @"hash_9072002890a9a121", getmatchrulesdata( "commonOption", "equipmentMSProtect" ) );
     setdynamicdvar( @"hash_b8a0aa5681c2aa39", getmatchrulesdata( "commonOption", "disableBattleChatter" ) );
     setdynamicdvar( @"hash_94af58bec500b3b9", getmatchrulesdata( "commonOption", "disableAnnouncer" ) );
@@ -1832,7 +1842,7 @@ function setcommonrulesfrommatchrulesdata( skipfriendlyfire )
     var_c84f9319fe9e602f = 0;
     
     /#
-        if ( !istrue( level.onlinegame ) && getdvarint( @"hash_c55dc89ef275cdaa", 0 ) )
+        if ( !istrue( level.onlinegame ) && getdvarint( @"scr_skip_infils", 0 ) )
         {
             var_c84f9319fe9e602f = 1;
         }
@@ -1843,13 +1853,13 @@ function setcommonrulesfrommatchrulesdata( skipfriendlyfire )
         }
     #/
     
-    if ( var_c84f9319fe9e602f || ismutationgamemode() || function_4ef12b6ed882dc9b() )
+    if ( var_c84f9319fe9e602f || ismutationgamemode() || function_4ef12b6ed882dc9b() || function_4db593966758d557() )
     {
-        setdynamicdvar( @"hash_7194076ab4888f2b", 1 );
+        setdynamicdvar( @"scr_game_infilskip", 1 );
     }
     else
     {
-        setdynamicdvar( @"hash_7194076ab4888f2b", getmatchrulesdata( "commonOption", "infilSkip" ) );
+        setdynamicdvar( @"scr_game_infilskip", getmatchrulesdata( "commonOption", "infilSkip" ) );
     }
     
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_practiceRound" ), getmatchrulesdata( "commonOption", "practiceRound" ) );
@@ -1860,17 +1870,17 @@ function setcommonrulesfrommatchrulesdata( skipfriendlyfire )
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_crankedBombTimer" ), level.crankedbombtimer );
     scripts\mp\cranked::registercrankedtimerdvar( getgametype(), level.crankedbombtimer );
     setdynamicdvar( @"hash_72fe29aa713ea21e", getmatchrulesdata( "commonOption", "classTableOverride" ) );
-    setdynamicdvar( @"hash_fbde2817a4a94998", getmatchrulesdata( "commonOption", "magCount" ) );
+    setdynamicdvar( @"scr_game_magcount", getmatchrulesdata( "commonOption", "magCount" ) );
     setdynamicdvar( @"hash_127490a7577f169f", getmatchrulesdata( "commonOption", "tier1ModeEnabled" ) );
     setdynamicdvar( @"hash_a2c2c2007177185e", getmatchrulesdata( "commonOption", "hardcoreModeOn" ) );
     setdynamicdvar( @"hash_a54edeed7c5b587f", getmatchrulesdata( "commonOption", "headshotsOnly" ) );
     
     if ( !isdefined( skipfriendlyfire ) )
     {
-        setdynamicdvar( @"hash_e5a33d679c26221f", getmatchrulesdata( "commonOption", "friendlyFire" ) );
+        setdynamicdvar( @"scr_team_fftype", getmatchrulesdata( "commonOption", "friendlyFire" ) );
     }
     
-    setdvar( @"hash_8ed4dff39f3251f5", getdvarint( @"hash_f16ba8db72f34fc3" ) == 1 );
+    setdvar( @"hash_8ed4dff39f3251f5", getdvarint( @"scr_game_forceuav" ) == 1 );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_pointsPerKill" ), getmatchrulesdata( "commonOption", "pointsPerKill" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_pointsPerDeath" ), getmatchrulesdata( "commonOption", "pointsPerDeath" ) );
     setdynamicdvar( hashcat( @"scr_", getgametype(), "_pointsHeadshotBonus" ), getmatchrulesdata( "commonOption", "pointsHeadshotBonus" ) );
@@ -1880,7 +1890,7 @@ function setcommonrulesfrommatchrulesdata( skipfriendlyfire )
     
     if ( privatematch() || level.systemlink || isanymlgmatch() )
     {
-        setdynamicdvar( @"hash_704afe6f6c582ee0", getmatchrulesdata( "commonOption", "matchStartTime" ) );
+        setdynamicdvar( @"scr_game_matchstarttime", getmatchrulesdata( "commonOption", "matchStartTime" ) );
         setdynamicdvar( @"hash_da33635b62d4e5b3", getmatchrulesdata( "commonOption", "roundStartTime" ) );
     }
     
@@ -1893,8 +1903,8 @@ function setcommonrulesfrommatchrulesdata( skipfriendlyfire )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x468d
+// Params 0
+// Checksum 0x0, Offset: 0x4720
 // Size: 0x58
 function reinitializematchrulesonmigration()
 {
@@ -1914,8 +1924,8 @@ function reinitializematchrulesonmigration()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46ed
+// Params 1
+// Checksum 0x0, Offset: 0x4780
 // Size: 0x4c
 function reinitializethermal( ent )
 {
@@ -1938,8 +1948,8 @@ function reinitializethermal( ent )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4741
+// Params 2
+// Checksum 0x0, Offset: 0x47d4
 // Size: 0x216
 function getmatchrulesspecialclass( team, index )
 {
@@ -1966,8 +1976,8 @@ function getmatchrulesspecialclass( team, index )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4960
+// Params 1
+// Checksum 0x0, Offset: 0x49f3
 // Size: 0x7c, Type: bool
 function isplayeroutsideofanybombsite( objweapon )
 {
@@ -1986,8 +1996,8 @@ function isplayeroutsideofanybombsite( objweapon )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49e5
+// Params 1
+// Checksum 0x0, Offset: 0x4a78
 // Size: 0x3d
 function gamehasneutralcrateowner( gametype )
 {
@@ -2002,8 +2012,8 @@ function gamehasneutralcrateowner( gametype )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a2a
+// Params 0
+// Checksum 0x0, Offset: 0x4abd
 // Size: 0x3f
 function isanymlgmatch()
 {
@@ -2015,16 +2025,16 @@ function isanymlgmatch()
         }
     }
     
-    return getdvarint( @"hash_9cc8c81329e0bdbf" );
+    return getdvarint( @"xblive_competitionmatch" );
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a72
+// Params 0
+// Checksum 0x0, Offset: 0x4b05
 // Size: 0x24, Type: bool
 function ismlgsystemlink()
 {
-    if ( level.systemlink && getdvarint( @"hash_9cc8c81329e0bdbf" ) )
+    if ( level.systemlink && getdvarint( @"xblive_competitionmatch" ) )
     {
         return true;
     }
@@ -2033,12 +2043,12 @@ function ismlgsystemlink()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a9f
+// Params 0
+// Checksum 0x0, Offset: 0x4b32
 // Size: 0x21, Type: bool
 function ismlgprivatematch()
 {
-    if ( privatematch() && getdvarint( @"hash_9cc8c81329e0bdbf" ) )
+    if ( privatematch() && getdvarint( @"xblive_competitionmatch" ) )
     {
         return true;
     }
@@ -2047,8 +2057,8 @@ function ismlgprivatematch()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ac9
+// Params 0
+// Checksum 0x0, Offset: 0x4b5c
 // Size: 0x19, Type: bool
 function ismlgmatch()
 {
@@ -2061,8 +2071,8 @@ function ismlgmatch()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4aeb
+// Params 0
+// Checksum 0x0, Offset: 0x4b7e
 // Size: 0x75, Type: bool
 function ismoddedroundgame()
 {
@@ -2075,8 +2085,8 @@ function ismoddedroundgame()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b69
+// Params 2
+// Checksum 0x0, Offset: 0x4bfc
 // Size: 0x8a
 function isusingdefaultclass( team, index )
 {
@@ -2091,7 +2101,8 @@ function isusingdefaultclass( team, index )
     }
     else
     {
-        for (index = 0; index < 6; index++) {
+        for ( index = 0; index < 6 ; index++ )
+        {
             if ( isusingmatchrulesdata() && getmatchrulesdatawithteamandindex( "defaultClasses", team, index, "class", "inUse" ) )
             {
                 usingdefaultclass = 1;
@@ -2104,8 +2115,8 @@ function isusingdefaultclass( team, index )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bfc
+// Params 7
+// Checksum 0x0, Offset: 0x4c8f
 // Size: 0x7f
 function getmatchrulesdatawithteamandindex( category, team, index, field, arg1, arg2, arg3 )
 {
@@ -2128,8 +2139,8 @@ function getmatchrulesdatawithteamandindex( category, team, index, field, arg1, 
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c83
+// Params 0
+// Checksum 0x0, Offset: 0x4d16
 // Size: 0x50, Type: bool
 function isspawnprotected()
 {
@@ -2137,8 +2148,8 @@ function isspawnprotected()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cdc
+// Params 0
+// Checksum 0x0, Offset: 0x4d6f
 // Size: 0xd
 function clearspawnprotection()
 {
@@ -2146,8 +2157,8 @@ function clearspawnprotection()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cf1
+// Params 0
+// Checksum 0x0, Offset: 0x4d84
 // Size: 0x29, Type: bool
 function ismatchstartprotected()
 {
@@ -2155,8 +2166,8 @@ function ismatchstartprotected()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d23
+// Params 0
+// Checksum 0x0, Offset: 0x4db6
 // Size: 0x8
 function getgametype()
 {
@@ -2164,8 +2175,8 @@ function getgametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d34
+// Params 0
+// Checksum 0x0, Offset: 0x4dc7
 // Size: 0x8
 function getbasegametype()
 {
@@ -2173,8 +2184,8 @@ function getbasegametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d45
+// Params 0
+// Checksum 0x0, Offset: 0x4dd8
 // Size: 0x19
 function function_f6bad1d33ad22078()
 {
@@ -2187,8 +2198,8 @@ function function_f6bad1d33ad22078()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d67
+// Params 0
+// Checksum 0x0, Offset: 0x4dfa
 // Size: 0x8
 function getsubgametype()
 {
@@ -2196,8 +2207,8 @@ function getsubgametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d78
+// Params 0
+// Checksum 0x0, Offset: 0x4e0b
 // Size: 0x27, Type: bool
 function issubgametype()
 {
@@ -2207,8 +2218,8 @@ function issubgametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4da8
+// Params 0
+// Checksum 0x0, Offset: 0x4e3b
 // Size: 0x38, Type: bool
 function isteamplacementsbmmmode()
 {
@@ -2224,8 +2235,8 @@ function isteamplacementsbmmmode()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4de9
+// Params 0
+// Checksum 0x0, Offset: 0x4e7c
 // Size: 0x38, Type: bool
 function isjuggermoshgamemode()
 {
@@ -2241,17 +2252,22 @@ function isjuggermoshgamemode()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e2a
-// Size: 0x11
+// Params 0
+// Checksum 0x0, Offset: 0x4ebd
+// Size: 0x1b
 function function_4ef12b6ed882dc9b()
 {
+    if ( !isusingmatchrulesdata() )
+    {
+        return 0;
+    }
+    
     return getmatchrulesdata( "commonOption", "paintballModeEnabled" );
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e44
+// Params 0
+// Checksum 0x0, Offset: 0x4ee1
 // Size: 0x11
 function function_7dc15b2c8dcd2ee7()
 {
@@ -2259,8 +2275,8 @@ function function_7dc15b2c8dcd2ee7()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e5e
+// Params 0
+// Checksum 0x0, Offset: 0x4efb
 // Size: 0x11
 function ismutationgamemode()
 {
@@ -2268,8 +2284,8 @@ function ismutationgamemode()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e78
+// Params 0
+// Checksum 0x0, Offset: 0x4f15
 // Size: 0x25, Type: bool
 function ismutationgamemodezombie()
 {
@@ -2277,8 +2293,44 @@ function ismutationgamemodezombie()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ea6
+// Params 0
+// Checksum 0x0, Offset: 0x4f43
+// Size: 0x1c, Type: bool
+function function_7586e7f1e96dc16d()
+{
+    return function_d75b73c443421047() && isdefined( self ) && isdefined( self.var_e5520effcbe8bd30 );
+}
+
+// Namespace game_utility / scripts\mp\utility\game
+// Params 0
+// Checksum 0x0, Offset: 0x4f68
+// Size: 0x51, Type: bool
+function function_4db593966758d557()
+{
+    if ( getbasegametype() == "cyber" )
+    {
+        if ( level.mapname == "mp_jup_skidrow" )
+        {
+            return true;
+        }
+        
+        if ( level.mapname == "mp_jup_skidrow_alt" )
+        {
+            return true;
+        }
+        
+        if ( level.mapname == "mp_jup_dubai" )
+        {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+// Namespace game_utility / scripts\mp\utility\game
+// Params 0
+// Checksum 0x0, Offset: 0x4fc2
 // Size: 0x2c, Type: bool
 function function_f24e99a2f548d0b8()
 {
@@ -2293,8 +2345,8 @@ function function_f24e99a2f548d0b8()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4edb
+// Params 0
+// Checksum 0x0, Offset: 0x4ff7
 // Size: 0x1b, Type: bool
 function function_d75b73c443421047()
 {
@@ -2302,11 +2354,16 @@ function function_d75b73c443421047()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eff
-// Size: 0x3a
+// Params 0
+// Checksum 0x0, Offset: 0x501b
+// Size: 0x44
 function function_966592fd716d49c7()
 {
+    if ( !isusingmatchrulesdata() )
+    {
+        return 0;
+    }
+    
     if ( isdefined( level.trickrtreatenabled ) )
     {
         return level.trickrtreatenabled;
@@ -2317,8 +2374,8 @@ function function_966592fd716d49c7()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f42
+// Params 0
+// Checksum 0x0, Offset: 0x5068
 // Size: 0x80, Type: bool
 function lpcfeaturegated()
 {
@@ -2344,8 +2401,8 @@ function lpcfeaturegated()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fcb
+// Params 0
+// Checksum 0x0, Offset: 0x50f1
 // Size: 0x36, Type: bool
 function runleanthreadmode()
 {
@@ -2363,8 +2420,8 @@ function runleanthreadmode()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x500a
+// Params 0
+// Checksum 0x0, Offset: 0x5130
 // Size: 0x8d
 function gamehasinfil()
 {
@@ -2388,8 +2445,8 @@ function gamehasinfil()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x50a0
+// Params 1
+// Checksum 0x0, Offset: 0x51c6
 // Size: 0x2d, Type: bool
 function teamhasinfil( team )
 {
@@ -2397,8 +2454,8 @@ function teamhasinfil( team )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50d6
+// Params 0
+// Checksum 0x0, Offset: 0x51fc
 // Size: 0x12, Type: bool
 function iskillstreakdenied()
 {
@@ -2406,8 +2463,8 @@ function iskillstreakdenied()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50f1
+// Params 0
+// Checksum 0x0, Offset: 0x5217
 // Size: 0x17, Type: bool
 function isairdenied()
 {
@@ -2420,20 +2477,20 @@ function isairdenied()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5111
+// Params 0
+// Checksum 0x0, Offset: 0x5237
 // Size: 0x67
 function getmaxoutofboundstime()
 {
     /#
-        return max( 0, getdvarfloat( @"hash_b773758221a0c100", 3 ) );
+        return max( 0, getdvarfloat( @"scr_outofboundstime", 3 ) );
     #/
     
     outofboundstime = level.outofboundstime;
     
     if ( !isdefined( outofboundstime ) )
     {
-        outofboundstime = max( 0, ter_op( matchmakinggame(), getdvarfloat( @"hash_b773758221a0c100", 3 ), 3 ) );
+        outofboundstime = max( 0, ter_op( matchmakinggame(), getdvarfloat( @"scr_outofboundstime", 3 ), 3 ) );
         level.outofboundstime = outofboundstime;
     }
     
@@ -2441,8 +2498,8 @@ function getmaxoutofboundstime()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5181
+// Params 0
+// Checksum 0x0, Offset: 0x52a7
 // Size: 0x15
 function function_a01d18a56c6cc1aa()
 {
@@ -2450,8 +2507,8 @@ function function_a01d18a56c6cc1aa()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x519f
+// Params 0
+// Checksum 0x0, Offset: 0x52c5
 // Size: 0x59
 function getmaxoutofboundscooldown()
 {
@@ -2471,8 +2528,8 @@ function getmaxoutofboundscooldown()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5201
+// Params 0
+// Checksum 0x0, Offset: 0x5327
 // Size: 0x59
 function getmaxoutofboundsminefieldtime()
 {
@@ -2492,8 +2549,8 @@ function getmaxoutofboundsminefieldtime()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5263
+// Params 0
+// Checksum 0x0, Offset: 0x5389
 // Size: 0x16
 function getmaxoutofboundsrestrictedtime()
 {
@@ -2502,12 +2559,12 @@ function getmaxoutofboundsrestrictedtime()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5282
+// Params 0
+// Checksum 0x0, Offset: 0x53a8
 // Size: 0x45
 function getmaxoutofboundsbrtime()
 {
-    var_61d3a4299744033e = getdvarfloat( @"hash_b773758221a0c100", 10 );
+    var_61d3a4299744033e = getdvarfloat( @"scr_outofboundstime", 10 );
     
     if ( var_61d3a4299744033e > 0 )
     {
@@ -2522,8 +2579,8 @@ function getmaxoutofboundsbrtime()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x52d0
+// Params 0
+// Checksum 0x0, Offset: 0x53f6
 // Size: 0x104
 function updateobjectivetext()
 {
@@ -2557,8 +2614,8 @@ function updateobjectivetext()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x53dc
+// Params 2
+// Checksum 0x0, Offset: 0x5502
 // Size: 0x24
 function setobjectivetext( team, text )
 {
@@ -2566,8 +2623,8 @@ function setobjectivetext( team, text )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5408
+// Params 2
+// Checksum 0x0, Offset: 0x552e
 // Size: 0x24
 function setobjectivescoretext( team, text )
 {
@@ -2575,8 +2632,8 @@ function setobjectivescoretext( team, text )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5434
+// Params 2
+// Checksum 0x0, Offset: 0x555a
 // Size: 0x24
 function setobjectivehinttext( team, text )
 {
@@ -2584,8 +2641,8 @@ function setobjectivehinttext( team, text )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5460
+// Params 1
+// Checksum 0x0, Offset: 0x5586
 // Size: 0x1a
 function getobjectivetext( team )
 {
@@ -2593,8 +2650,8 @@ function getobjectivetext( team )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5483
+// Params 1
+// Checksum 0x0, Offset: 0x55a9
 // Size: 0x1a
 function getobjectivescoretext( team )
 {
@@ -2602,8 +2659,8 @@ function getobjectivescoretext( team )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54a6
+// Params 1
+// Checksum 0x0, Offset: 0x55cc
 // Size: 0x1a
 function getobjectivehinttext( team )
 {
@@ -2611,8 +2668,8 @@ function getobjectivehinttext( team )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54c9
+// Params 2
+// Checksum 0x0, Offset: 0x55ef
 // Size: 0x3e
 function testgamemodestringlist( stringlist, gamemode )
 {
@@ -2625,8 +2682,8 @@ function testgamemodestringlist( stringlist, gamemode )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5510
+// Params 0
+// Checksum 0x0, Offset: 0x5636
 // Size: 0x3a, Type: bool
 function islaststandenabled()
 {
@@ -2634,8 +2691,8 @@ function islaststandenabled()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5553
+// Params 0
+// Checksum 0x0, Offset: 0x5679
 // Size: 0x2c, Type: bool
 function isteamreviveenabled()
 {
@@ -2643,8 +2700,8 @@ function isteamreviveenabled()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5588
+// Params 1
+// Checksum 0x0, Offset: 0x56ae
 // Size: 0x518
 function isdefending( victim )
 {
@@ -2763,8 +2820,8 @@ function isdefending( victim )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5aa9
+// Params 1
+// Checksum 0x0, Offset: 0x5bcf
 // Size: 0x518
 function isassaulting( victim )
 {
@@ -2887,8 +2944,8 @@ function isassaulting( victim )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fca
+// Params 0
+// Checksum 0x0, Offset: 0x60f0
 // Size: 0xe0
 function gametypesupportsbasejumping()
 {
@@ -2925,8 +2982,8 @@ function gametypesupportsbasejumping()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x60b2
+// Params 0
+// Checksum 0x0, Offset: 0x61d8
 // Size: 0x109
 function mapsupportsbasejumping()
 {
@@ -2971,8 +3028,8 @@ function mapsupportsbasejumping()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x61c3
+// Params 5
+// Checksum 0x0, Offset: 0x62e9
 // Size: 0x38a
 function logannouncement( player, contester, message, zoneorigin, extrainfo )
 {
@@ -3032,8 +3089,8 @@ function logannouncement( player, contester, message, zoneorigin, extrainfo )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6555
+// Params 0
+// Checksum 0x0, Offset: 0x667b
 // Size: 0xc, Type: bool
 function isprophuntgametype()
 {
@@ -3041,8 +3098,8 @@ function isprophuntgametype()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x656a
+// Params 0
+// Checksum 0x0, Offset: 0x6690
 // Size: 0x36, Type: bool
 function isgroundwarcoremode()
 {
@@ -3050,8 +3107,8 @@ function isgroundwarcoremode()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x65a9
+// Params 0
+// Checksum 0x0, Offset: 0x66cf
 // Size: 0xb1
 function function_a7caa13ebe4c4ba5()
 {
@@ -3076,8 +3133,8 @@ function function_a7caa13ebe4c4ba5()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6662
+// Params 0
+// Checksum 0x0, Offset: 0x6788
 // Size: 0x81
 function isverdansksubmap()
 {
@@ -3098,8 +3155,8 @@ function isverdansksubmap()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x66eb
+// Params 0
+// Checksum 0x0, Offset: 0x6811
 // Size: 0x48, Type: bool
 function function_e417d8ef1c70cbcb()
 {
@@ -3124,8 +3181,8 @@ function function_e417d8ef1c70cbcb()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x673c
+// Params 1
+// Checksum 0x0, Offset: 0x6862
 // Size: 0x119
 function canparachutebecut( player )
 {
@@ -3165,8 +3222,8 @@ function canparachutebecut( player )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x685d
+// Params 0
+// Checksum 0x0, Offset: 0x6983
 // Size: 0x1d, Type: bool
 function function_1e098780c33853f2()
 {
@@ -3174,8 +3231,8 @@ function function_1e098780c33853f2()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6883
+// Params 0
+// Checksum 0x0, Offset: 0x69a9
 // Size: 0x1e, Type: bool
 function function_ac09124b4e7535a6()
 {
@@ -3183,8 +3240,8 @@ function function_ac09124b4e7535a6()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x68aa
+// Params 0
+// Checksum 0x0, Offset: 0x69d0
 // Size: 0x1b, Type: bool
 function function_b7d052e4bf41ee9b()
 {
@@ -3202,8 +3259,8 @@ function function_b7d052e4bf41ee9b()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x68ce
+// Params 0
+// Checksum 0x0, Offset: 0x69f4
 // Size: 0x31, Type: bool
 function function_eb3158a25aee673a()
 {
@@ -3217,17 +3274,17 @@ function function_eb3158a25aee673a()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6908
+// Params 0
+// Checksum 0x0, Offset: 0x6a2e
 // Size: 0x10
 function function_d7ec918e29c0b2f4()
 {
-    return getdvarint( @"hash_819016fcba31a2c2" );
+    return getdvarint( @"online_allowteamchange" );
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6921
+// Params 0
+// Checksum 0x0, Offset: 0x6a47
 // Size: 0xc, Type: bool
 function function_f698bfd3efa33302()
 {
@@ -3235,8 +3292,8 @@ function function_f698bfd3efa33302()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6936
+// Params 1
+// Checksum 0x0, Offset: 0x6a5c
 // Size: 0x1d, Type: bool
 function function_e9f3a160bbefe208( player )
 {
@@ -3244,8 +3301,8 @@ function function_e9f3a160bbefe208( player )
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x695c
+// Params 0
+// Checksum 0x0, Offset: 0x6a82
 // Size: 0x5a
 function get_linked_vehicle_nodes()
 {
@@ -3269,8 +3326,8 @@ function get_linked_vehicle_nodes()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x69bf
+// Params 0
+// Checksum 0x0, Offset: 0x6ae5
 // Size: 0x40
 function function_af945a8525e5b3bb()
 {
@@ -3283,8 +3340,8 @@ function function_af945a8525e5b3bb()
 }
 
 // Namespace game_utility / scripts\mp\utility\game
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a08
+// Params 0
+// Checksum 0x0, Offset: 0x6b2e
 // Size: 0xaa
 function function_9a59855eebf296b6()
 {

@@ -12,7 +12,7 @@
 #namespace bots_gametype_cmd;
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21a
 // Size: 0x10
 function main()
@@ -24,7 +24,7 @@ function main()
 /#
 
     // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x232
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -35,7 +35,7 @@ function main()
 #/
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x35
 function setup_hardpoint()
@@ -48,7 +48,7 @@ function setup_hardpoint()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27c
 // Size: 0x17
 function setup_callbacks()
@@ -57,7 +57,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29b
 // Size: 0x216
 function initialize_role()
@@ -134,7 +134,7 @@ function initialize_role()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b9
 // Size: 0x278
 function bot_hardpoint_think()
@@ -153,7 +153,8 @@ function bot_hardpoint_think()
     self botsetflag( "separation", 0 );
     current_patrol_zone = undefined;
     
-    for (current_defend_zone = undefined; true; current_defend_zone = level.currentobjective.trigger) {
+    for ( current_defend_zone = undefined; true ; current_defend_zone = level.currentobjective.trigger )
+    {
         wait 0.05;
         
         if ( !isdefined( level.currentobjective ) )
@@ -239,7 +240,7 @@ function bot_hardpoint_think()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x739
 // Size: 0x39
 function bot_attacker_limit_for_team( team )
@@ -249,7 +250,7 @@ function bot_attacker_limit_for_team( team )
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x77b
 // Size: 0x35
 function bot_defender_limit_for_team( team )
@@ -259,7 +260,7 @@ function bot_defender_limit_for_team( team )
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b9
 // Size: 0x91
 function get_num_players_on_team( team )
@@ -278,7 +279,7 @@ function get_num_players_on_team( team )
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x853
 // Size: 0xd6
 function get_allied_attackers_for_team( team )
@@ -303,7 +304,7 @@ function get_allied_attackers_for_team( team )
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x932
 // Size: 0xd6
 function get_allied_defenders_for_team( team )
@@ -328,7 +329,7 @@ function get_allied_defenders_for_team( team )
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa11
 // Size: 0xc9
 function get_players_by_role( role, team )
@@ -352,7 +353,7 @@ function get_players_by_role( role, team )
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae3
 // Size: 0x23
 function bot_set_role( new_role )
@@ -363,7 +364,7 @@ function bot_set_role( new_role )
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb0e
 // Size: 0x119, Type: bool
 function is_b_better_defender( a, b )
@@ -406,7 +407,7 @@ function is_b_better_defender( a, b )
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc30
 // Size: 0x4ec
 function bot_hardpoint_ai_director_update()
@@ -485,11 +486,13 @@ function bot_hardpoint_ai_director_update()
                 
                 defender_limit = int( defender_limit );
                 
-                for (i = 0; i < defender_limit; i++) {
+                for ( i = 0; i < defender_limit ; i++ )
+                {
                     var_2857a3996fb3fa53[ i ] bot_set_role( "defender" );
                 }
                 
-                for (i = defender_limit; i < var_2857a3996fb3fa53.size; i++) {
+                for ( i = defender_limit; i < var_2857a3996fb3fa53.size ; i++ )
+                {
                     var_2857a3996fb3fa53[ i ] bot_set_role( "attacker" );
                 }
                 
@@ -566,7 +569,7 @@ function bot_hardpoint_ai_director_update()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1124
 // Size: 0x43, Type: bool
 function crate_can_use( crate )
@@ -585,7 +588,7 @@ function crate_can_use( crate )
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1170
 // Size: 0xa4
 function setup_bot_koth()
@@ -609,7 +612,7 @@ function setup_bot_koth()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x121c
 // Size: 0x1bc
 function bot_headquarters_think()
@@ -705,7 +708,7 @@ function bot_headquarters_think()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13e0
 // Size: 0x72
 function find_current_radio()
@@ -720,7 +723,7 @@ function find_current_radio()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x145a
 // Size: 0x8
 function is_capturing_current_headquarters()
@@ -729,7 +732,7 @@ function is_capturing_current_headquarters()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x146b
 // Size: 0x9b
 function get_num_ai_capturing_headquarters()
@@ -748,7 +751,7 @@ function get_num_ai_capturing_headquarters()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x150f
 // Size: 0x54
 function capture_current_headquarters()
@@ -759,7 +762,7 @@ function capture_current_headquarters()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x156b
 // Size: 0x8
 function is_protecting_current_headquarters()
@@ -768,7 +771,7 @@ function is_protecting_current_headquarters()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x157c
 // Size: 0x57
 function protect_current_headquarters()
@@ -780,7 +783,7 @@ function protect_current_headquarters()
 }
 
 // Namespace bots_gametype_cmd / scripts\mp\bots\bots_gametype_cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15db
 // Size: 0x90
 function init_bot_game_headquarters()

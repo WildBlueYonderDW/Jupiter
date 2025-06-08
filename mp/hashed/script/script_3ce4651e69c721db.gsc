@@ -8,7 +8,7 @@
 #namespace ob_intel;
 
 // Namespace ob_intel / namespace_287c594b1c56aa67
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2de
 // Size: 0x109
 function function_d84b63f3cd2befe()
@@ -49,7 +49,7 @@ function private function_bcd3ff1413e1f37a()
 }
 
 // Namespace ob_intel / namespace_287c594b1c56aa67
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48f
 // Size: 0x278
 function handle_intel()
@@ -106,7 +106,7 @@ function handle_intel()
 /#
 
     // Namespace ob_intel / namespace_287c594b1c56aa67
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x70f
     // Size: 0x50, Type: dev
     function function_6e50624e2c06832b()
@@ -123,7 +123,7 @@ function handle_intel()
     }
 
     // Namespace ob_intel / namespace_287c594b1c56aa67
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x767
     // Size: 0x50, Type: dev
     function function_b3212476aba49bc()
@@ -142,7 +142,7 @@ function handle_intel()
 #/
 
 // Namespace ob_intel / namespace_287c594b1c56aa67
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x7bf
 // Size: 0x110
 function function_d49b531543df8201( instance, part, state, player, var_a5b2c541413aa895, usestring )

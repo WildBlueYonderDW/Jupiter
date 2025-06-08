@@ -11,7 +11,7 @@
 #namespace mp_jup_incline;
 
 // Namespace mp_jup_incline / scripts\mp\maps\mp_jup_incline\mp_jup_incline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c
 // Size: 0x8e
 function main()

@@ -17,7 +17,7 @@
 #namespace spawnfactor;
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ba
 // Size: 0x38c
 function init_spawn_factors()
@@ -75,7 +75,7 @@ function init_spawn_factors()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb4e
 // Size: 0x6e
 function function_28565316737536aa()
@@ -92,7 +92,7 @@ function function_28565316737536aa()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xbc4
 // Size: 0xbc
 function registerfactor( factorname, factorfunction, isscriptonly, paramreflist )
@@ -111,7 +111,7 @@ function registerfactor( factorname, factorfunction, isscriptonly, paramreflist 
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc88
 // Size: 0x6d
 function function_9c933a291dda6e8e( factorname )
@@ -126,7 +126,7 @@ function function_9c933a291dda6e8e( factorname )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcfd
 // Size: 0x21, Type: bool
 function isfactorregistered( factorname )
@@ -135,7 +135,7 @@ function isfactorregistered( factorname )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd27
 // Size: 0x21, Type: bool
 function function_c0ba4b08188a6d33( factorname )
@@ -144,7 +144,7 @@ function function_c0ba4b08188a6d33( factorname )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd51
 // Size: 0x47
 function isfactorscriptonly( factorname )
@@ -154,7 +154,7 @@ function isfactorscriptonly( factorname )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda1
 // Size: 0x47
 function getfactorfunction( factorname )
@@ -164,7 +164,7 @@ function getfactorfunction( factorname )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdf1
 // Size: 0x47
 function getfactorparamreflist( factorname )
@@ -174,7 +174,7 @@ function getfactorparamreflist( factorname )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe41
 // Size: 0x215
 function calculatefactorscore( spawnpoint, factorname, weight )
@@ -230,7 +230,7 @@ function calculatefactorscore( spawnpoint, factorname, weight )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x105f
 // Size: 0x5b
 function critical_factor( var_e2cadc5bf4175e47, spawnpoint )
@@ -249,7 +249,7 @@ function critical_factor( var_e2cadc5bf4175e47, spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10c3
 // Size: 0x85
 function avoidcarepackages( spawnpoint )
@@ -271,7 +271,7 @@ function avoidcarepackages( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1151
 // Size: 0x110
 function avoidbradleys( spawnpoint )
@@ -299,7 +299,7 @@ function avoidbradleys( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x126a
 // Size: 0xa4
 function function_5fdeed44e6029789( spawnpoint )
@@ -321,7 +321,7 @@ function function_5fdeed44e6029789( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1317
 // Size: 0xde
 function function_63d3482ba43b656c( spawnpoint )
@@ -350,7 +350,7 @@ function function_63d3482ba43b656c( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13fe
 // Size: 0x94
 function isexplosivedangeroustoplayer( player )
@@ -381,7 +381,7 @@ function isexplosivedangeroustoplayer( player )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x149a
 // Size: 0x67
 function function_5e47ef2aeed10cf1( spawnpoint )
@@ -404,7 +404,7 @@ function function_5e47ef2aeed10cf1( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x150a
 // Size: 0x67
 function function_22b490a6df990a49( spawnpoint )
@@ -427,7 +427,7 @@ function function_22b490a6df990a49( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x157a
 // Size: 0x126
 function function_4546108b3957a698( spawnpoint )
@@ -472,7 +472,7 @@ function function_4546108b3957a698( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16a9
 // Size: 0xd
 function avoidtelefrag( spawnpoint )
@@ -481,7 +481,7 @@ function avoidtelefrag( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16bf
 // Size: 0x2b
 function avoidsamespawn_legacy( spawnpoint )
@@ -495,7 +495,7 @@ function avoidsamespawn_legacy( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16f3
 // Size: 0x78
 function function_bcea4ae71a95bddd( spawnpoint )
@@ -514,7 +514,7 @@ function function_bcea4ae71a95bddd( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1774
 // Size: 0xaa
 function function_442824d1095bc118( spawnpoint )
@@ -538,7 +538,7 @@ function function_442824d1095bc118( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1827
 // Size: 0x68
 function function_45dd31709c43b20a( spawnpoint )
@@ -560,7 +560,7 @@ function function_45dd31709c43b20a( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1898
 // Size: 0x4
 function function_11609ea550ebe0fa()
@@ -569,7 +569,7 @@ function function_11609ea550ebe0fa()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18a5
 // Size: 0x62
 function function_97e260aa456c2f73( spawnpoint )
@@ -591,7 +591,7 @@ function function_97e260aa456c2f73( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1910
 // Size: 0x9a
 function function_679bed421f1818e4( spawnpoint )
@@ -618,14 +618,14 @@ function function_679bed421f1818e4( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19b3
 // Size: 0x3f0
 function initfrontline()
 {
     frontlineinfo = getglobalfrontlineinfo();
     
-    if ( getdvarint( @"hash_8f796eb7d29945d9", 0 ) == 1 )
+    if ( getdvarint( @"scr_ignore_frontline_anchor", 0 ) == 1 )
     {
         return;
     }
@@ -737,7 +737,7 @@ function initfrontline()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dab
 // Size: 0x24
 function updatefrontline( team )
@@ -752,7 +752,7 @@ function updatefrontline( team )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1dd7
 // Size: 0x3e2, Type: bool
 function updatefrontlineposition()
@@ -848,7 +848,7 @@ function updatefrontlineposition()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21c2
 // Size: 0x241
 function updatefrontlinedebug()
@@ -889,7 +889,7 @@ function updatefrontlinedebug()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x240b
 // Size: 0xd7
 function logfrontlinetomatchrecording( midpoint, direction, var_f3c3c5c8db76b4f0, var_dbbd5b5e90b7c2eb )
@@ -920,7 +920,7 @@ function logfrontlinetomatchrecording( midpoint, direction, var_f3c3c5c8db76b4f0
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24ea
 // Size: 0xba
 function getfrontlineteamcenter( team )
@@ -960,7 +960,7 @@ function getfrontlineteamcenter( team )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25ad
 // Size: 0x1be
 function runfrontlinespawntrapchecks( team )
@@ -1023,7 +1023,7 @@ function runfrontlinespawntrapchecks( team )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2773
 // Size: 0x2a, Type: bool
 function currentspawnlogicsupportsfrontline()
@@ -1032,7 +1032,7 @@ function currentspawnlogicsupportsfrontline()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27a6
 // Size: 0xcd
 function getglobalfrontlineinfo()
@@ -1053,7 +1053,7 @@ function getglobalfrontlineinfo()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x287c
 // Size: 0x14
 function function_553abfcde517c264()
@@ -1063,7 +1063,7 @@ function function_553abfcde517c264()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2898
 // Size: 0x108
 function function_967517826971b87f( position, radius, type )
@@ -1096,7 +1096,7 @@ function function_967517826971b87f( position, radius, type )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29a9
 // Size: 0x69
 function function_6328cd243fe96f6c()
@@ -1118,7 +1118,7 @@ function function_6328cd243fe96f6c()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a1a
 // Size: 0xae
 function function_847f7e218feb35bb( spawnpoint )
@@ -1138,7 +1138,7 @@ function function_847f7e218feb35bb( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ad1
 // Size: 0x62
 function function_e308442afd51b334( spawnpoint )
@@ -1150,7 +1150,7 @@ function function_e308442afd51b334( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b3c
 // Size: 0x1e1
 function function_e495981bf91ab716( spawnpoint )
@@ -1208,7 +1208,7 @@ function function_e495981bf91ab716( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d26
 // Size: 0x73
 function function_255be0a9b59dfc89( spawnpoint )
@@ -1234,7 +1234,7 @@ function function_255be0a9b59dfc89( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2da2
 // Size: 0x171
 function function_2d8badc9970dc4bf( spawnpoint )
@@ -1285,7 +1285,7 @@ function function_2d8badc9970dc4bf( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f1c
 // Size: 0x12b
 function avoidclosestenemybydistance( spawnpoint )
@@ -1321,7 +1321,7 @@ function avoidclosestenemybydistance( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3050
 // Size: 0x33
 function function_5647d0dca50a2d4d( var_a72a53d107c0b04c, var_1e5e6e5f60f12427 )
@@ -1333,7 +1333,7 @@ function function_5647d0dca50a2d4d( var_a72a53d107c0b04c, var_1e5e6e5f60f12427 )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x308c
 // Size: 0xb8
 function preferdompoints( spawnpoint )
@@ -1358,7 +1358,7 @@ function preferdompoints( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x314d
 // Size: 0x86
 function preferclosepoints( spawnpoint )
@@ -1377,7 +1377,7 @@ function preferclosepoints( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31dc
 // Size: 0x37
 function function_c7a9633168e5110( spawnpoint, team )
@@ -1391,7 +1391,7 @@ function function_c7a9633168e5110( spawnpoint, team )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x321c
 // Size: 0xba
 function function_dc410c59b390813b( spawnpoint )
@@ -1419,7 +1419,7 @@ function function_dc410c59b390813b( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32de
 // Size: 0x93
 function function_ce101e91e4df4ca9( spawnpoint )
@@ -1438,7 +1438,7 @@ function function_ce101e91e4df4ca9( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x337a
 // Size: 0x93
 function function_52c5a5db586622c5( spawnpoint )
@@ -1457,7 +1457,7 @@ function function_52c5a5db586622c5( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3416
 // Size: 0x90
 function function_1bd88f01ef678809( spawnpoint )
@@ -1482,7 +1482,7 @@ function function_1bd88f01ef678809( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34ae
 // Size: 0x3e
 function randomspawnscore( spawnpoint )
@@ -1492,7 +1492,7 @@ function randomspawnscore( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34f5
 // Size: 0x10
 function maxplayerspawninfluencedistsquared( spawnpoint )
@@ -1501,7 +1501,7 @@ function maxplayerspawninfluencedistsquared( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x350e
 // Size: 0x65
 function function_75c03ed937b75b22( entitynum, var_38331ab92460d731, deadzonedistsq, closestenemyinfluencedistsq )
@@ -1515,7 +1515,7 @@ function function_75c03ed937b75b22( entitynum, var_38331ab92460d731, deadzonedis
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x357c
 // Size: 0xa2
 function prefershortestdisttozone( spawnpoint )
@@ -1529,7 +1529,7 @@ function prefershortestdisttozone( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3627
 // Size: 0x95
 function avoidclosetozone( spawnpoint )
@@ -1542,7 +1542,7 @@ function avoidclosetozone( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36c5
 // Size: 0x8f
 function function_82fb03c7e6eddf4f( spawnpoint )
@@ -1561,7 +1561,7 @@ function function_82fb03c7e6eddf4f( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x375d
 // Size: 0x164
 function function_1c2a13eb67207b15( spawnpoint )
@@ -1602,7 +1602,7 @@ function function_1c2a13eb67207b15( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38ca
 // Size: 0xc6
 function function_f450413956d6d6c4( spawnpoint )
@@ -1632,7 +1632,7 @@ function function_f450413956d6d6c4( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3998
 // Size: 0x112
 function function_d20f88ca67f03009( spawnpoint )
@@ -1666,7 +1666,7 @@ function function_d20f88ca67f03009( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ab2
 // Size: 0xc, Type: bool
 function scriptonlytest( spawnpoint )
@@ -1675,7 +1675,7 @@ function scriptonlytest( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ac7
 // Size: 0xfe
 function prefernearsinglepoint( spawnpoint )
@@ -1703,7 +1703,7 @@ function prefernearsinglepoint( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bce
 // Size: 0x5f
 function avoidcurrentspawntraps( spawnpoint )
@@ -1715,7 +1715,7 @@ function avoidcurrentspawntraps( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c36
 // Size: 0x22
 function function_32368b70c6aa5729( spawnpoint )
@@ -1724,7 +1724,7 @@ function function_32368b70c6aa5729( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3c60
 // Size: 0xa6
 function function_158cc75a8c974987( player, callbackparams, attacker )
@@ -1752,9 +1752,9 @@ function function_158cc75a8c974987( player, callbackparams, attacker )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3d0e
-// Size: 0x113
+// Size: 0x121
 function function_fac896d21fc67e84( spawnpoint, team )
 {
     currenttimems = gettime();
@@ -1762,6 +1762,11 @@ function function_fac896d21fc67e84( spawnpoint, team )
     if ( !istrue( level.teambased ) )
     {
         team = "none";
+    }
+    
+    if ( istrue( level.var_393b1c3af005496e ) )
+    {
+        return;
     }
     
     scriptdata = level.spawnglobals.spawnpointscriptdata[ spawnpoint.index ];
@@ -1791,8 +1796,8 @@ function function_fac896d21fc67e84( spawnpoint, team )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e29
+// Params 2
+// Checksum 0x0, Offset: 0x3e37
 // Size: 0xa8
 function function_b9e20b2afd68e3c1( spawnpoint, team )
 {
@@ -1818,8 +1823,8 @@ function function_b9e20b2afd68e3c1( spawnpoint, team )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3eda
+// Params 0
+// Checksum 0x0, Offset: 0x3ee8
 // Size: 0x3c
 function function_a0a31e5b8e6a394d()
 {
@@ -1835,8 +1840,8 @@ function function_a0a31e5b8e6a394d()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f1f
+// Params 0
+// Checksum 0x0, Offset: 0x3f2d
 // Size: 0x3c
 function function_513d4a1188d51465()
 {
@@ -1852,8 +1857,8 @@ function function_513d4a1188d51465()
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f64
+// Params 1
+// Checksum 0x0, Offset: 0x3f72
 // Size: 0xa0
 function avoidrugbyoffsides( spawnpoint )
 {
@@ -1872,8 +1877,8 @@ function avoidrugbyoffsides( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x400d
+// Params 1
+// Checksum 0x0, Offset: 0x401b
 // Size: 0x39
 function oneusespawns( spawnpoint )
 {
@@ -1888,8 +1893,8 @@ function oneusespawns( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x404e
+// Params 2
+// Checksum 0x0, Offset: 0x405c
 // Size: 0x99
 function avoidclosetodefenderflag( spawnpoint, paramlist )
 {
@@ -1917,8 +1922,8 @@ function avoidclosetodefenderflag( spawnpoint, paramlist )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x40ef
+// Params 2
+// Checksum 0x0, Offset: 0x40fd
 // Size: 0x51
 function avoidclosetodefenderflagspawn( spawnpoint, paramlist )
 {
@@ -1928,8 +1933,8 @@ function avoidclosetodefenderflagspawn( spawnpoint, paramlist )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4149
+// Params 1
+// Checksum 0x0, Offset: 0x4157
 // Size: 0xb8
 function avoidfrontlineoffsides( spawnpoint )
 {
@@ -1954,8 +1959,8 @@ function avoidfrontlineoffsides( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x420a
+// Params 1
+// Checksum 0x0, Offset: 0x4218
 // Size: 0xb0
 function preferoptimalfrontlinedist( spawnpoint )
 {
@@ -1973,8 +1978,8 @@ function preferoptimalfrontlinedist( spawnpoint )
 }
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42c3
+// Params 1
+// Checksum 0x0, Offset: 0x42d1
 // Size: 0x85
 function preferunoccupiedlanes( spawnpoint )
 {
@@ -1987,7 +1992,7 @@ function preferunoccupiedlanes( spawnpoint )
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4351
+// Checksum 0x0, Offset: 0x435f
 // Size: 0x15
 function private on_player_spawned( params )
 {
@@ -1996,7 +2001,7 @@ function private on_player_spawned( params )
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x436e
+// Checksum 0x0, Offset: 0x437c
 // Size: 0x1f
 function private on_player_death( params )
 {
@@ -2005,7 +2010,7 @@ function private on_player_death( params )
 
 // Namespace spawnfactor / scripts\mp\spawnfactor
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4395
+// Checksum 0x0, Offset: 0x43a3
 // Size: 0x1f
 function private on_player_damaged( params )
 {

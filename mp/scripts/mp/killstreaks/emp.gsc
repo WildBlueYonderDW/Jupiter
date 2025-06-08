@@ -12,7 +12,7 @@
 #namespace emp;
 
 // Namespace emp / scripts\mp\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c9
 // Size: 0x13
 function init()
@@ -21,9 +21,9 @@ function init()
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e4
-// Size: 0x21, Type: bool
+// Size: 0x21
 function tryuseemp()
 {
     streakinfo = createstreakinfo( "emp", self );
@@ -31,7 +31,7 @@ function tryuseemp()
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20e
 // Size: 0xa5, Type: bool
 function tryuseempfromstruct( streakinfo )
@@ -68,7 +68,7 @@ function tryuseempfromstruct( streakinfo )
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bc
 // Size: 0x158
 function startemp()
@@ -105,7 +105,7 @@ function startemp()
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41c
 // Size: 0x58
 function applyempshellshock()
@@ -120,7 +120,7 @@ function applyempshellshock()
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47c
 // Size: 0x2f
 function applyempshellshockvisionset()
@@ -132,7 +132,7 @@ function applyempshellshockvisionset()
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0xf1
 function destroyactiveobjects( team, owner )

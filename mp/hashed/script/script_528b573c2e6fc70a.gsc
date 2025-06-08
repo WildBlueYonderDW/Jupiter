@@ -19,7 +19,7 @@
 #namespace agent_claymore;
 
 // Namespace agent_claymore / namespace_d4389b4b98ee0dc0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x191
 // Size: 0x13
 function function_af4eb22319ad376( grenade )
@@ -28,7 +28,7 @@ function function_af4eb22319ad376( grenade )
 }
 
 // Namespace agent_claymore / namespace_d4389b4b98ee0dc0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ac
 // Size: 0x1a8
 function function_4a6f3ce45560d2a4()

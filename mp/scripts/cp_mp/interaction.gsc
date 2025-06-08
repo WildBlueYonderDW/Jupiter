@@ -7,7 +7,7 @@
 #namespace interaction;
 
 // Namespace interaction / scripts\cp_mp\interaction
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19b
 // Size: 0x3b
 function init_interaction()
@@ -23,7 +23,7 @@ function init_interaction()
 }
 
 // Namespace interaction / scripts\cp_mp\interaction
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1de
 // Size: 0xe7
 function function_32645103f7520635( scriptable, on_use_function, var_81adce70ad13cf33, var_f3bf6e6da951239b )
@@ -53,7 +53,7 @@ function function_32645103f7520635( scriptable, on_use_function, var_81adce70ad1
 }
 
 // Namespace interaction / scripts\cp_mp\interaction
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2ce
 // Size: 0x159
 function register_interact( org_or_ent, radius, use_callback, hint_string, var_9555688dd3098f5b, var_746458e71e0663eb )
@@ -113,7 +113,7 @@ function register_interact( org_or_ent, radius, use_callback, hint_string, var_9
 }
 
 // Namespace interaction / scripts\cp_mp\interaction
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x430
 // Size: 0x36
 function function_e6c63f16f2258b80( hint_callback )
@@ -129,7 +129,7 @@ function function_e6c63f16f2258b80( hint_callback )
 }
 
 // Namespace interaction / scripts\cp_mp\interaction
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46e
 // Size: 0x36
 function function_98fc2e3f04194a50( var_c6681d6b0c54e37e )
@@ -145,7 +145,7 @@ function function_98fc2e3f04194a50( var_c6681d6b0c54e37e )
 }
 
 // Namespace interaction / scripts\cp_mp\interaction
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0x40
 function function_c2efffe46a3f99d2( hint_string, var_9555688dd3098f5b, var_746458e71e0663eb )
@@ -161,7 +161,7 @@ function function_c2efffe46a3f99d2( hint_string, var_9555688dd3098f5b, var_74645
 }
 
 // Namespace interaction / scripts\cp_mp\interaction
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f4
 // Size: 0x31
 function function_f62a6ba54b34e2bc( radius )
@@ -176,7 +176,7 @@ function function_f62a6ba54b34e2bc( radius )
 }
 
 // Namespace interaction / scripts\cp_mp\interaction
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52d
 // Size: 0xd
 function function_9a0883b5a0999dac()

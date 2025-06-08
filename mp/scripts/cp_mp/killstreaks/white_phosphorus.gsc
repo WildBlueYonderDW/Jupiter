@@ -13,7 +13,7 @@
 #namespace white_phosphorus;
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x90f
 // Size: 0x98
 function init()
@@ -36,7 +36,7 @@ function init()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9af
 // Size: 0x77, Type: bool
 function weapongivenwp( streakinfo )
@@ -60,9 +60,9 @@ function weapongivenwp( streakinfo )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2f
-// Size: 0x21, Type: bool
+// Size: 0x21
 function tryusewp()
 {
     streakinfo = createstreakinfo( "white_phosphorus", self );
@@ -70,7 +70,7 @@ function tryusewp()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa59
 // Size: 0x17d, Type: bool
 function tryusewpfromstruct( streakinfo )
@@ -134,7 +134,7 @@ function tryusewpfromstruct( streakinfo )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbdf
 // Size: 0xa9
 function wp_getmapselectioninfo( streakinfo, numselection, directionalselection )
@@ -161,7 +161,7 @@ function wp_getmapselectioninfo( streakinfo, numselection, directionalselection 
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc91
 // Size: 0x102
 function wp_startdeploy( mappointinfo, streakinfo )
@@ -195,7 +195,7 @@ function wp_startdeploy( mappointinfo, streakinfo )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd9b
 // Size: 0x96
 function wp_finishdeployment( droplocation, dropdirection, streakinfo )
@@ -219,7 +219,7 @@ function wp_finishdeployment( droplocation, dropdirection, streakinfo )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe39
 // Size: 0x211
 function wp_createplane( droppointorigin, planedirectionyaw, streakinfo )
@@ -281,7 +281,7 @@ function wp_createplane( droppointorigin, planedirectionyaw, streakinfo )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1053
 // Size: 0x37
 function wp_watchdisownaction( action, deployplane )
@@ -294,7 +294,7 @@ function wp_watchdisownaction( action, deployplane )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1092
 // Size: 0x19
 function wp_watchplanedisowned()
@@ -305,7 +305,7 @@ function wp_watchplanedisowned()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10b3
 // Size: 0x67
 function wp_watchforsmokedisowned()
@@ -335,7 +335,7 @@ function wp_watchforsmokedisowned()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1122
 // Size: 0x94
 function wp_watchforflaredisowned( effecttype )
@@ -370,7 +370,7 @@ function wp_watchforflaredisowned( effecttype )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11be
 // Size: 0x221
 function wp_deliverpayloads( streakinfo )
@@ -424,7 +424,7 @@ function wp_deliverpayloads( streakinfo )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13e7
 // Size: 0x40
 function wp_watchend( streakinfo, payloadlifetime )
@@ -438,7 +438,7 @@ function wp_watchend( streakinfo, payloadlifetime )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x142f
 // Size: 0x30
 function wp_watchgameend( streakinfo )
@@ -451,7 +451,7 @@ function wp_watchgameend( streakinfo )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1467
 // Size: 0x1d
 function wp_enterpayloadaudio()
@@ -463,7 +463,7 @@ function wp_enterpayloadaudio()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x148c
 // Size: 0x35
 function wp_exitpayloadaudio( flightgoal, flighttime )
@@ -475,7 +475,7 @@ function wp_exitpayloadaudio( flightgoal, flighttime )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14c9
 // Size: 0x44
 function wp_watchunsuccessfulzones( var_eb34677262fed134 )
@@ -483,7 +483,8 @@ function wp_watchunsuccessfulzones( var_eb34677262fed134 )
     level endon( "wp_zone_succeeded" );
     level endon( "game_ended" );
     
-    for (var_cf6d87d10fa26355 = 0; var_cf6d87d10fa26355 < var_eb34677262fed134; var_cf6d87d10fa26355++) {
+    for ( var_cf6d87d10fa26355 = 0; var_cf6d87d10fa26355 < var_eb34677262fed134 ; var_cf6d87d10fa26355++ )
+    {
         level waittill( "wp_zone_failed" );
     }
     
@@ -491,7 +492,7 @@ function wp_watchunsuccessfulzones( var_eb34677262fed134 )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x1515
 // Size: 0x1b1
 function wp_handlepayloadtyperelease( var_fab341cde0f5a8a4, var_3e69f8d86497745d, var_ec975df40affb201, var_985ed30dff21f18c, payloadlifetime, var_624c6f581e3a3784, var_f5c59be7baf53b36, var_3c6798c87677a9c3 )
@@ -518,7 +519,8 @@ function wp_handlepayloadtyperelease( var_fab341cde0f5a8a4, var_3e69f8d86497745d
     var_6622bf241e83cb33 = var_ec975df40affb201;
     var_b75ca07ccc1468b5 = 0;
     
-    for (i = 0; i < var_bebe0d78a71db256; i++) {
+    for ( i = 0; i < var_bebe0d78a71db256 ; i++ )
+    {
         var_b540fedd1d9812f4 = length( var_3e69f8d86497745d - var_6622bf241e83cb33 ) / self.speed;
         
         if ( i < var_d0bb190b577957f4 )
@@ -555,7 +557,7 @@ function wp_handlepayloadtyperelease( var_fab341cde0f5a8a4, var_3e69f8d86497745d
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x16ce
 // Size: 0x76
 function wp_movekillcam( movetime, endpos, killcamforward, payloadlifetime )
@@ -571,7 +573,7 @@ function wp_movekillcam( movetime, endpos, killcamforward, payloadlifetime )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x174c
 // Size: 0xa3
 function wp_testpayloads( testpos, testangles, testdelaytime )
@@ -591,7 +593,7 @@ function wp_testpayloads( testpos, testangles, testdelaytime )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17f7
 // Size: 0xcf
 function wp_fireairburst( var_2d7a2733c414e4df, var_db855e6ae67f1a7f, var_854bddfcc12bbc97 )
@@ -618,7 +620,7 @@ function wp_fireairburst( var_2d7a2733c414e4df, var_db855e6ae67f1a7f, var_854bdd
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x18ce
 // Size: 0x3a0
 function wp_firesmoke( smokelaunchpos, var_29c782c334f31ff1, smokedelaytime, smokezoneindex )
@@ -739,7 +741,7 @@ function wp_firesmoke( smokelaunchpos, var_29c782c334f31ff1, smokedelaytime, smo
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1c76
 // Size: 0x2e9
 function wp_fireflaregroup( flarelaunchpos, var_47aae5e47f9b546c, flaredelaytime, killcament )
@@ -809,7 +811,7 @@ function wp_fireflaregroup( flarelaunchpos, var_47aae5e47f9b546c, flaredelaytime
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1f67
 // Size: 0x1c4
 function wp_getflarepositions( launchpos, impactcenterpos, numpoints, var_fcdcc201ce6e652e )
@@ -823,7 +825,8 @@ function wp_getflarepositions( launchpos, impactcenterpos, numpoints, var_fcdcc2
     var_7ba409015d76660f = -2000;
     var_bca221bd88841350 = 0;
     
-    for (i = 0; i < numpoints; i++) {
+    for ( i = 0; i < numpoints ; i++ )
+    {
         shotoffset = planeforward * var_7ba409015d76660f + planeright * var_bca221bd88841350;
         var_11c8174cf2c79029 = impactcenterpos + planeforward * var_7ba409015d76660f;
         var_a18d8b24190a4ad7 = impactcenterpos + shotoffset;
@@ -842,7 +845,7 @@ function wp_getflarepositions( launchpos, impactcenterpos, numpoints, var_fcdcc2
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2134
 // Size: 0x237
 function wp_projwatchimpact( payloadlifetime, effecttype, shotsurface )
@@ -917,7 +920,7 @@ function wp_projwatchimpact( payloadlifetime, effecttype, shotsurface )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2373
 // Size: 0x5e
 function wp_delayzonedelete( timedelay )
@@ -943,7 +946,7 @@ function wp_delayzonedelete( timedelay )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x23d9
 // Size: 0x196
 function wp_watchdisorienteffect( disorientradius, var_73798c47bd1e4e64, var_1f86b15faeb68186 )
@@ -999,7 +1002,7 @@ function wp_watchdisorienteffect( disorientradius, var_73798c47bd1e4e64, var_1f8
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2577
 // Size: 0x89
 function wp_getplayerswithinrange( var_fe16f116477f0084, range )
@@ -1018,7 +1021,7 @@ function wp_getplayerswithinrange( var_fe16f116477f0084, range )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2609
 // Size: 0xd8
 function wp_delaydisorientplayersinrange( delaytime, range, initialtargetarray )
@@ -1054,7 +1057,7 @@ function wp_delaydisorientplayersinrange( delaytime, range, initialtargetarray )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26e9
 // Size: 0x119
 function wp_watchburneffect( burnradius )
@@ -1093,7 +1096,7 @@ function wp_watchburneffect( burnradius )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x280a
 // Size: 0x10f
 function wp_watchblindeffect( blindradius )
@@ -1132,7 +1135,7 @@ function wp_watchblindeffect( blindradius )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2921
 // Size: 0x4c
 function wp_addtoactivewplist( type, var_fa00ab9d021cd558 )
@@ -1147,7 +1150,7 @@ function wp_addtoactivewplist( type, var_fa00ab9d021cd558 )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2975
 // Size: 0xd7
 function wp_isactivewpzone( type, var_d0edab7a45b12083 )
@@ -1181,7 +1184,7 @@ function wp_isactivewpzone( type, var_d0edab7a45b12083 )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a55
 // Size: 0x271
 function wp_removefromactivewplist( type, var_e259cf0d8dcfa751, subeffecttype, dontdelete )
@@ -1276,7 +1279,7 @@ function wp_removefromactivewplist( type, var_e259cf0d8dcfa751, subeffecttype, d
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2cce
 // Size: 0xe5
 function wp_isinanywpzone( type, var_c4b81997f0120a97 )
@@ -1310,7 +1313,7 @@ function wp_isinanywpzone( type, var_c4b81997f0120a97 )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2dbc
 // Size: 0xb1
 function wp_isinwpzone( type, var_c4b81997f0120a97, wpzone )
@@ -1343,7 +1346,7 @@ function wp_isinwpzone( type, var_c4b81997f0120a97, wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e76
 // Size: 0x4c
 function wp_addplayertostatusradiuslist( type, playertoadd )
@@ -1358,7 +1361,7 @@ function wp_addplayertostatusradiuslist( type, playertoadd )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2eca
 // Size: 0xf1
 function wp_removeplayerfromstatusradiuslist( type, var_9d90c26327e3eacd )
@@ -1397,7 +1400,7 @@ function wp_removeplayerfromstatusradiuslist( type, var_9d90c26327e3eacd )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2fc3
 // Size: 0xdf
 function wp_removeplayerfromallstatusradiuslists( type, var_9d90c26327e3eacd )
@@ -1425,7 +1428,7 @@ function wp_removeplayerfromallstatusradiuslists( type, var_9d90c26327e3eacd )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30aa
 // Size: 0x4c
 function wp_startdisorientplayeronspawn( wpzone )
@@ -1443,7 +1446,7 @@ function wp_startdisorientplayeronspawn( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30fe
 // Size: 0x15d
 function wp_startdisorientplayer( wpzone )
@@ -1502,7 +1505,7 @@ function wp_startdisorientplayer( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3263
 // Size: 0x8c
 function wp_degenhealth( var_c3770dc539016800, wpzone )
@@ -1526,7 +1529,7 @@ function wp_degenhealth( var_c3770dc539016800, wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32f7
 // Size: 0x3a
 function wp_startdofshiftforplayer( wpzone )
@@ -1542,7 +1545,7 @@ function wp_startdofshiftforplayer( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3339
 // Size: 0x32
 function wp_stopdisorientonplayerdeath( wpzone )
@@ -1555,7 +1558,7 @@ function wp_stopdisorientonplayerdeath( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3373
 // Size: 0xec
 function wp_stopdisorientplayer( wpzone, var_fb8011c41299d291 )
@@ -1601,7 +1604,7 @@ function wp_stopdisorientplayer( wpzone, var_fb8011c41299d291 )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3467
 // Size: 0x18a
 function wp_startburnplayer( wpzone, attacker )
@@ -1667,7 +1670,7 @@ function wp_startburnplayer( wpzone, attacker )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35f9
 // Size: 0x37
 function wp_stopburnplayer( wpzone )
@@ -1682,7 +1685,7 @@ function wp_stopburnplayer( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3638
 // Size: 0xa8
 function wp_startblindplayer( wpzone )
@@ -1713,7 +1716,7 @@ function wp_startblindplayer( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36e8
 // Size: 0x2f
 function wp_stopblindplayer( wpzone )
@@ -1727,7 +1730,7 @@ function wp_stopblindplayer( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x371f
 // Size: 0x31
 function wp_stopstatuseffectondeath( wpzone )
@@ -1740,7 +1743,7 @@ function wp_stopstatuseffectondeath( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3758
 // Size: 0xdd
 function wp_resetstatuseffect( var_2e501fc7d257ce57 )
@@ -1784,7 +1787,7 @@ function wp_resetstatuseffect( var_2e501fc7d257ce57 )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x383d
 // Size: 0x6d
 function wp_removeplane( plane )
@@ -1805,7 +1808,7 @@ function wp_removeplane( plane )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38b2
 // Size: 0x3a
 function wp_getsmokevisionset()
@@ -1823,7 +1826,7 @@ function wp_getsmokevisionset()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38f5
 // Size: 0x7b
 function wp_monitorsmokevisionset( wpzone )
@@ -1853,7 +1856,7 @@ function wp_monitorsmokevisionset( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3978
 // Size: 0x52
 function wp_gethealthdebuffamount()
@@ -1877,7 +1880,7 @@ function wp_gethealthdebuffamount()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39d3
 // Size: 0x1d
 function wp_playcorpsetableburningfx( corpsetable )
@@ -1886,7 +1889,7 @@ function wp_playcorpsetableburningfx( corpsetable )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39f8
 // Size: 0x20, Type: bool
 function wp_hasresistperk()
@@ -1895,7 +1898,7 @@ function wp_hasresistperk()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a21
 // Size: 0x44
 function enableloopingcoughaudio( wpzone )
@@ -1914,7 +1917,7 @@ function enableloopingcoughaudio( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a6d
 // Size: 0x53
 function disableloopingcoughaudio()
@@ -1935,7 +1938,7 @@ function disableloopingcoughaudio()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ac8
 // Size: 0x304
 function startloopingcoughaudio( wpzone )
@@ -2048,7 +2051,7 @@ function startloopingcoughaudio( wpzone )
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dd4
 // Size: 0xa
 function stoploopingcoughaudio()
@@ -2057,7 +2060,7 @@ function stoploopingcoughaudio()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3de6
 // Size: 0x23
 function enableloopingcoughaudiosupression()
@@ -2071,7 +2074,7 @@ function enableloopingcoughaudiosupression()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e11
 // Size: 0x33
 function disableloopingcoughaudiosupression()
@@ -2086,7 +2089,7 @@ function disableloopingcoughaudiosupression()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e4c
 // Size: 0x1b, Type: bool
 function loopingcoughaudioissupressed()
@@ -2095,7 +2098,7 @@ function loopingcoughaudioissupressed()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e70
 // Size: 0x1e
 function clearloopingcoughaudio()
@@ -2106,7 +2109,7 @@ function clearloopingcoughaudio()
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e96
 // Size: 0x30
 function wp_playimpactsound( var_6b5d366f98ba252b )

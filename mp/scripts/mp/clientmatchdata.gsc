@@ -5,12 +5,12 @@
 #namespace clientmatchdata;
 
 // Namespace clientmatchdata / scripts\mp\clientmatchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe7
 // Size: 0x5d
 function init()
 {
-    if ( getdvarint( @"hash_1bc373211683e0b6" ) != 0 && !isdefined( game[ "clientMatchDataDef" ] ) )
+    if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) != 0 && !isdefined( game[ "clientMatchDataDef" ] ) )
     {
         game[ "clientMatchDataDef" ] = "ddl/mp/clientmatchdata.ddl";
         setclientmatchdatadef( game[ "clientMatchDataDef" ] );
@@ -21,7 +21,7 @@ function init()
 }
 
 // Namespace clientmatchdata / scripts\mp\clientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14c
 // Size: 0x4b, Type: bool
 function canlogclient( client )
@@ -36,7 +36,7 @@ function canlogclient( client )
 }
 
 // Namespace clientmatchdata / scripts\mp\clientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a0
 // Size: 0x10, Type: bool
 function canlogdeath( deathid )
@@ -45,12 +45,12 @@ function canlogdeath( deathid )
 }
 
 // Namespace clientmatchdata / scripts\mp\clientmatchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b9
 // Size: 0x93
 function logplayerdeath( attacker )
 {
-    if ( getdvarint( @"hash_1bc373211683e0b6" ) == 0 )
+    if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) == 0 )
     {
         return;
     }

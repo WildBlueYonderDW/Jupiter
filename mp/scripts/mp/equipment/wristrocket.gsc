@@ -8,7 +8,7 @@
 #namespace wristrocket;
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x353
 // Size: 0x36
 function wristrocketinit()
@@ -18,7 +18,7 @@ function wristrocketinit()
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x391
 // Size: 0xa
 function wristrocket_set()
@@ -27,7 +27,7 @@ function wristrocket_set()
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a3
 // Size: 0xa
 function wristrocket_unset()
@@ -36,7 +36,7 @@ function wristrocket_unset()
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b5
 // Size: 0xb0
 function wristrocketused( grenade )
@@ -59,7 +59,7 @@ function wristrocketused( grenade )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46d
 // Size: 0x3a
 function wristrocket_watchfuse( fusetime )
@@ -73,7 +73,7 @@ function wristrocket_watchfuse( fusetime )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4af
 // Size: 0x8f
 function wristrocket_watchstuck()
@@ -95,7 +95,7 @@ function wristrocket_watchstuck()
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x546
 // Size: 0x40
 function wristrocket_explode()
@@ -107,7 +107,7 @@ function wristrocket_explode()
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x58e
 // Size: 0x22
 function wristrocket_delete()
@@ -119,7 +119,7 @@ function wristrocket_delete()
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b8
 // Size: 0xa9
 function wristrocket_createrocket( grenade )
@@ -136,7 +136,7 @@ function wristrocket_createrocket( grenade )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66a
 // Size: 0x185
 function wristrocket_watcheffects()
@@ -208,7 +208,7 @@ function wristrocket_watcheffects()
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f7
 // Size: 0x5b
 function wristrocket_watcheffectsracegrenadepullback( raceresult )
@@ -230,7 +230,7 @@ function wristrocket_watcheffectsracegrenadepullback( raceresult )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x85a
 // Size: 0x65
 function wristrocket_watcheffectsracegrenadefired( raceresult )
@@ -252,7 +252,7 @@ function wristrocket_watcheffectsracegrenadefired( raceresult )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c7
 // Size: 0x30
 function wristrocket_watcheffectsracesuperstarted( raceresult )
@@ -264,7 +264,7 @@ function wristrocket_watcheffectsracesuperstarted( raceresult )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ff
 // Size: 0x30
 function wristrocket_watcheffectsracedeath( raceresult )
@@ -276,7 +276,7 @@ function wristrocket_watcheffectsracedeath( raceresult )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x937
 // Size: 0x30
 function wristrocket_watcheffectsraceunset( raceresult )
@@ -288,7 +288,7 @@ function wristrocket_watcheffectsraceunset( raceresult )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x96f
 // Size: 0x4e
 function wristrocket_watcheffectsraceheldoffhandbreak( raceresult )
@@ -307,7 +307,7 @@ function wristrocket_watcheffectsraceheldoffhandbreak( raceresult )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9c5
 // Size: 0x42
 function wristrocket_begineffects()
@@ -321,7 +321,7 @@ function wristrocket_begineffects()
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0f
 // Size: 0x1c
 function wristrocket_endeffects()
@@ -331,7 +331,7 @@ function wristrocket_endeffects()
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xa33
 // Size: 0xb5
 function wristrocketcooksuicideexplodecheck( inflictor, attacker, victim, meansofdeath, objweapon )
@@ -363,7 +363,7 @@ function wristrocketcooksuicideexplodecheck( inflictor, attacker, victim, meanso
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaf0
 // Size: 0x44
 function wristrocket_cleanuponparentdeath( parent, delay )
@@ -386,7 +386,7 @@ function wristrocket_cleanuponparentdeath( parent, delay )
 }
 
 // Namespace wristrocket / scripts\mp\equipment\wristrocket
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb3c
 // Size: 0x26
 function wristrocket_cleanuponownerdisconnect( owner )

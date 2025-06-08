@@ -6,7 +6,7 @@
 #namespace fx;
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c6
 // Size: 0x4f
 function initfx()
@@ -29,7 +29,7 @@ function initfx()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31d
 // Size: 0x359
 function init_fx_thread()
@@ -134,7 +134,7 @@ function init_fx_thread()
 /#
 
     // Namespace fx / scripts\common\fx
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x67e
     // Size: 0x137, Type: dev
     function remove_dupes()
@@ -146,11 +146,13 @@ function init_fx_thread()
         
         new_ents = [];
         
-        for (i = 0; i < level.createfxent.size; i++) {
+        for ( i = 0; i < level.createfxent.size ; i++ )
+        {
             add_ent = 1;
             i_ent = level.createfxent[ i ];
             
-            for (j = i + 1; j < level.createfxent.size; j++) {
+            for ( j = i + 1; j < level.createfxent.size ; j++ )
+            {
                 j_ent = level.createfxent[ j ];
                 
                 if ( j_ent.v[ "<dev string:x1c>" ] == i_ent.v[ "<dev string:x1c>" ] )
@@ -173,7 +175,7 @@ function init_fx_thread()
     }
 
     // Namespace fx / scripts\common\fx
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7bd
     // Size: 0x114, Type: dev
     function offset_fix()
@@ -206,7 +208,7 @@ function init_fx_thread()
 #/
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d9
 // Size: 0xcc
 function check_createfx_limit()
@@ -244,7 +246,7 @@ function check_createfx_limit()
 /#
 
     // Namespace fx / scripts\common\fx
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x9ad
     // Size: 0x6a, Type: dev
     function check_limit_type( type, count )
@@ -269,7 +271,7 @@ function check_createfx_limit()
 #/
 
 // Namespace fx / scripts\common\fx
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa1f
 // Size: 0xcd
 function print_org( fxcommand, fxid, fxpos, waittime )
@@ -290,7 +292,7 @@ function print_org( fxcommand, fxid, fxpos, waittime )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xaf4
 // Size: 0xc3
 function loopfx( fxid, fxpos, waittime, fxpos2, fxstart, fxstop, timeout )
@@ -309,7 +311,7 @@ function loopfx( fxid, fxpos, waittime, fxpos2, fxstart, fxstop, timeout )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbbf
 // Size: 0x6d
 function create_looper()
@@ -319,7 +321,7 @@ function create_looper()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc34
 // Size: 0x161
 function create_loopsound()
@@ -380,7 +382,7 @@ function create_loopsound()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd9d
 // Size: 0x11c
 function create_interval_sound()
@@ -424,7 +426,7 @@ function create_interval_sound()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xec1
 // Size: 0xb1
 function loopfxthread()
@@ -470,7 +472,7 @@ function loopfxthread()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf7a
 // Size: 0x23
 function loopfxstop( timeout )
@@ -481,7 +483,7 @@ function loopfxstop( timeout )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xfa5
 // Size: 0x55
 function gunfireloopfx( fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shotdelaymax, betweensetsmin, betweensetsmax )
@@ -490,7 +492,7 @@ function gunfireloopfx( fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shotdelay
 }
 
 // Namespace fx / scripts\common\fx
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x1002
 // Size: 0x15a
 function gunfireloopfxthread( fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shotdelaymax, betweensetsmin, betweensetsmax )
@@ -538,7 +540,8 @@ function gunfireloopfxthread( fxid, fxpos, shotsmin, shotsmax, shotdelaymin, sho
     {
         shotnum = shotsbase + randomint( shotsrange );
         
-        for (i = 0; i < shotnum; i++) {
+        for ( i = 0; i < shotnum ; i++ )
+        {
             triggerfx( fxent );
             wait shotdelaybase + randomfloat( shotdelayrange );
         }
@@ -548,7 +551,7 @@ function gunfireloopfxthread( fxid, fxpos, shotsmin, shotsmax, shotdelaymin, sho
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1164
 // Size: 0xaf
 function create_triggerfx()
@@ -570,7 +573,7 @@ function create_triggerfx()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x121b
 // Size: 0x58, Type: bool
 function verify_effects_assignment( effectid )
@@ -591,7 +594,7 @@ function verify_effects_assignment( effectid )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x127c
 // Size: 0xb6
 function verify_effects_assignment_print( effectid )
@@ -617,7 +620,7 @@ function verify_effects_assignment_print( effectid )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x133a
 // Size: 0x39
 function oneshotfxthread()
@@ -633,7 +636,7 @@ function oneshotfxthread()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x137b
 // Size: 0xbd
 function add_reactive_fx()
@@ -659,7 +662,7 @@ function add_reactive_fx()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1440
 // Size: 0xed
 function reactive_fx_thread()
@@ -688,7 +691,7 @@ function reactive_fx_thread()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1535
 // Size: 0x14
 function vector2d( vec )
@@ -697,7 +700,7 @@ function vector2d( vec )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1552
 // Size: 0x286
 function sort_reactive_ents( point, explosion_radius )
@@ -730,8 +733,10 @@ function sort_reactive_ents( point, explosion_radius )
         ent.dot = vectordot( vec1, vec2 );
     }
     
-    for (i = 0; i < closest.size - 1; i++) {
-        for (j = i + 1; j < closest.size; j++) {
+    for ( i = 0; i < closest.size - 1 ; i++ )
+    {
+        for ( j = i + 1; j < closest.size ; j++ )
+        {
             if ( closest[ i ].dot > closest[ j ].dot )
             {
                 temp = closest[ i ];
@@ -747,7 +752,8 @@ function sort_reactive_ents( point, explosion_radius )
         ent.dot = undefined;
     }
     
-    for (i = 4; i < closest.size; i++) {
+    for ( i = 4; i < closest.size ; i++ )
+    {
         closest[ i ] = undefined;
     }
     
@@ -755,7 +761,7 @@ function sort_reactive_ents( point, explosion_radius )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17e1
 // Size: 0x1ce
 function play_reactive_fx( num, delay )
@@ -814,7 +820,7 @@ function play_reactive_fx( num, delay )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19b7
 // Size: 0xd5
 function get_reactive_sound_ent()
@@ -839,7 +845,7 @@ function get_reactive_sound_ent()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a95
 // Size: 0x2d
 function playfxnophase( fx, location, forwarddir, updir )
@@ -848,7 +854,7 @@ function playfxnophase( fx, location, forwarddir, updir )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aca
 // Size: 0x89
 function script_struct_fx_init()
@@ -865,7 +871,7 @@ function script_struct_fx_init()
 }
 
 // Namespace fx / scripts\common\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b5b
 // Size: 0x21d
 function play_struct_fx( struct )
@@ -910,7 +916,7 @@ function play_struct_fx( struct )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d80
 // Size: 0x3c
 function stop_struct_fx( struct )
@@ -924,7 +930,7 @@ function stop_struct_fx( struct )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dc4
 // Size: 0x17, Type: bool
 function struct_fx_active( struct )
@@ -933,7 +939,7 @@ function struct_fx_active( struct )
 }
 
 // Namespace fx / scripts\common\fx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1de4
 // Size: 0x18, Type: bool
 function struct_fx_inactive( struct )

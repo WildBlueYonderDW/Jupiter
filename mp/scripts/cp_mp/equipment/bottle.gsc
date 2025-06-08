@@ -6,7 +6,7 @@
 #namespace bottle;
 
 // Namespace bottle / scripts\cp_mp\equipment\bottle
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a
 // Size: 0xcc
 function bottle_init()
@@ -34,7 +34,7 @@ function bottle_init()
 }
 
 // Namespace bottle / scripts\cp_mp\equipment\bottle
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26e
 // Size: 0x45
 function function_946f58c7e13e4fde( equipmentref, equipmentslot, variantid )
@@ -46,7 +46,7 @@ function function_946f58c7e13e4fde( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace bottle / scripts\cp_mp\equipment\bottle
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2bb
 // Size: 0x3c
 function function_6c5ffe7c9b0c2fdc( equipmentref, equipmentslot )
@@ -58,7 +58,7 @@ function function_6c5ffe7c9b0c2fdc( equipmentref, equipmentslot )
 }
 
 // Namespace bottle / scripts\cp_mp\equipment\bottle
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ff
 // Size: 0x157
 function bottle_used( grenade )
@@ -102,7 +102,7 @@ function bottle_used( grenade )
 }
 
 // Namespace bottle / scripts\cp_mp\equipment\bottle
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x45e
 // Size: 0x70
 function function_a32bb7bb61372225( ai, position, hitpart, hitvelocity )
@@ -123,7 +123,7 @@ function function_a32bb7bb61372225( ai, position, hitpart, hitvelocity )
 /#
 
     // Namespace bottle / scripts\cp_mp\equipment\bottle
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4d6
     // Size: 0x14, Type: dev
     function function_402e63d965a03b3c()

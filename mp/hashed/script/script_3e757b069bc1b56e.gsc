@@ -3,7 +3,7 @@
 #namespace minimapborder;
 
 // Namespace minimapborder / namespace_16737232ffac2ff4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0
 // Size: 0x16
 function register()
@@ -12,7 +12,7 @@ function register()
 }
 
 // Namespace minimapborder / namespace_16737232ffac2ff4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbf
 // Size: 0x1c
 function open( player, flags )
@@ -21,7 +21,7 @@ function open( player, flags )
 }
 
 // Namespace minimapborder / namespace_16737232ffac2ff4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe3
 // Size: 0x13
 function close( player )
@@ -30,7 +30,7 @@ function close( player )
 }
 
 // Namespace minimapborder / namespace_16737232ffac2ff4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfe
 // Size: 0x12
 function is_open( player )

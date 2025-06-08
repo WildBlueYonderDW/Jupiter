@@ -50,7 +50,7 @@
 #namespace mp_jup_bigmap;
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0x61f
 function main()
@@ -218,7 +218,7 @@ function main()
 }
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd7
 // Size: 0x18e
 function function_f7000b82b2f33765()
@@ -250,7 +250,7 @@ function function_f7000b82b2f33765()
 }
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd6d
 // Size: 0x52
 function function_35b6cb2bac93917e( origin, angles )
@@ -261,7 +261,7 @@ function function_35b6cb2bac93917e( origin, angles )
 }
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc7
 // Size: 0x5a
 function initvehicles()
@@ -283,7 +283,7 @@ function initvehicles()
 /#
 
     // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe29
     // Size: 0x162, Type: dev
     function function_691203aeee9e9cf2()
@@ -308,7 +308,7 @@ function initvehicles()
     }
 
     // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xf93
     // Size: 0x28, Type: dev
     function function_ae5f5802b8c421c2( param )
@@ -319,7 +319,7 @@ function initvehicles()
 #/
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfc3
 // Size: 0xb3c
 function brinit()
@@ -328,7 +328,7 @@ function brinit()
     level.onlowpopstart = &function_865dd7703c23c87;
     level.br_level = spawnstruct();
     c130height = 16000;
-    var_47c567a3b8b1e5e0 = getdvarint( @"hash_512a3982cfb227fa", -1 );
+    var_47c567a3b8b1e5e0 = getdvarint( @"scr_game_c130heightoverride", -1 );
     
     if ( var_47c567a3b8b1e5e0 != -1 )
     {
@@ -336,7 +336,7 @@ function brinit()
     }
     
     scripts\mp\gametypes\br_c130::setc130heightoverrides( c130height );
-    boundsscale = getdvarfloat( @"hash_575da0cef7432907", 0.8 );
+    boundsscale = getdvarfloat( @"scr_bounds_scale_mp_saba", 0.8 );
     minx = level.mapcorners[ 0 ].origin[ 0 ] * boundsscale;
     maxx = level.mapcorners[ 1 ].origin[ 0 ] * boundsscale;
     miny = level.mapcorners[ 1 ].origin[ 1 ] * boundsscale;
@@ -433,7 +433,7 @@ function brinit()
 }
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b07
 // Size: 0x209
 function function_865dd7703c23c87()
@@ -468,7 +468,7 @@ function function_865dd7703c23c87()
 }
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d18
 // Size: 0x162
 function function_ef079ee3d6b651ad()
@@ -501,7 +501,7 @@ function function_ef079ee3d6b651ad()
 }
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e82
 // Size: 0x4f
 function function_fd2dbeae371f9614( scriptablestate, loc, fwd_ang )
@@ -516,7 +516,7 @@ function function_fd2dbeae371f9614( scriptablestate, loc, fwd_ang )
 }
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1ed9
 // Size: 0x8c
 function function_6482feb0b7568914( scriptablestate, loc, fwd_ang, scriptablepart )
@@ -531,7 +531,7 @@ function function_6482feb0b7568914( scriptablestate, loc, fwd_ang, scriptablepar
 }
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f6d
 // Size: 0x7f
 function function_5adc69197de334c3()
@@ -553,7 +553,7 @@ function function_5adc69197de334c3()
 }
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ff4
 // Size: 0xd7
 function function_6a0decc2d8ffcaae()
@@ -567,14 +567,16 @@ function function_6a0decc2d8ffcaae()
     {
         player_list = level.players;
         
-        for (i = 0; i < player_list.size; i++) {
+        for ( i = 0; i < player_list.size ; i++ )
+        {
             test_player = player_list[ i ];
             
             if ( isdefined( test_player ) && isalive( test_player ) )
             {
                 if ( isdefined( test_player.vehicle ) )
                 {
-                    for (j = 0; j < level.name_fx.size; j++) {
+                    for ( j = 0; j < level.name_fx.size ; j++ )
+                    {
                         level.name_fx[ j ] hidefromplayer( test_player );
                     }
                 }
@@ -593,7 +595,7 @@ function function_6a0decc2d8ffcaae()
 /#
 
     // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x20d3
     // Size: 0x8c, Type: dev
     function function_6eda5db03e992d7b( var_1a12730b9392225 )
@@ -620,7 +622,7 @@ function function_6a0decc2d8ffcaae()
 #/
 
 // Namespace mp_jup_bigmap / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2167
 // Size: 0x356
 function function_3574f80a3eb07f0d()

@@ -20,7 +20,7 @@
 #namespace aon;
 
 // Namespace aon / scripts\mp\gametypes\aon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x828
 // Size: 0x1e0
 function main()
@@ -71,7 +71,7 @@ function main()
 }
 
 // Namespace aon / scripts\mp\gametypes\aon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa10
 // Size: 0x127
 function initializematchrules()
@@ -91,7 +91,7 @@ function initializematchrules()
 }
 
 // Namespace aon / scripts\mp\gametypes\aon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb3f
 // Size: 0x1dd
 function onstartgametype()
@@ -141,7 +141,7 @@ function onstartgametype()
 }
 
 // Namespace aon / scripts\mp\gametypes\aon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd24
 // Size: 0x163
 function updategametypedvars()
@@ -159,7 +159,7 @@ function updategametypedvars()
 }
 
 // Namespace aon / scripts\mp\gametypes\aon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8f
 // Size: 0xb9
 function getspawnpoint()
@@ -201,7 +201,7 @@ function getspawnpoint()
 /#
 
     // Namespace aon / scripts\mp\gametypes\aon
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xf51
     // Size: 0x17a, Type: dev
     function comparespawns( spawnpoint )
@@ -240,7 +240,7 @@ function getspawnpoint()
 #/
 
 // Namespace aon / scripts\mp\gametypes\aon
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x10d3
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -249,7 +249,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace aon / scripts\mp\gametypes\aon
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x111b
 // Size: 0x1bb
 function onplayerscore( event, player, originalpoints, victim, eventinfo )
@@ -287,7 +287,7 @@ function onplayerscore( event, player, originalpoints, victim, eventinfo )
 }
 
 // Namespace aon / scripts\mp\gametypes\aon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12df
 // Size: 0x86
 function onplayerconnect( player )

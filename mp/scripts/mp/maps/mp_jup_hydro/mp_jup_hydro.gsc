@@ -7,7 +7,7 @@
 #namespace mp_jup_hydro;
 
 // Namespace mp_jup_hydro / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c
 // Size: 0x5b
 function main()

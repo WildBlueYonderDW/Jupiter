@@ -9,7 +9,7 @@
 #namespace bots_sentry;
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x291
 // Size: 0xf8, Type: bool
 function bot_killstreak_sentry( killstreak_info, killstreaks_array, can_use, targettype )
@@ -52,7 +52,7 @@ function bot_killstreak_sentry( killstreak_info, killstreaks_array, can_use, tar
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x392
 // Size: 0x106
 function bot_sentry_add_goal( killstreak_info, targetorigin, targettype, killstreaks_array )
@@ -76,7 +76,7 @@ function bot_sentry_add_goal( killstreak_info, targetorigin, targettype, killstr
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a0
 // Size: 0x68, Type: bool
 function bot_sentry_should_abort( tactical_goal )
@@ -94,7 +94,7 @@ function bot_sentry_should_abort( tactical_goal )
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x511
 // Size: 0x6d
 function bot_sentry_cancel_failsafe()
@@ -116,7 +116,7 @@ function bot_sentry_cancel_failsafe()
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x586
 // Size: 0x14
 function bot_sentry_path_start( tactical_goal )
@@ -125,7 +125,7 @@ function bot_sentry_path_start( tactical_goal )
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a2
 // Size: 0xfc
 function bot_sentry_path_thread( tactical_goal )
@@ -152,7 +152,7 @@ function bot_sentry_path_thread( tactical_goal )
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a6
 // Size: 0xef
 function bot_sentry_choose_target( targettype )
@@ -200,7 +200,7 @@ function bot_sentry_choose_target( targettype )
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x79d
 // Size: 0x193
 function bot_sentry_choose_placement( killstreak_info, targetorigin, targettype, killstreaks_array )
@@ -261,7 +261,7 @@ function bot_sentry_choose_placement( killstreak_info, targetorigin, targettype,
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x939
 // Size: 0x47
 function bot_sentry_carried_obj()
@@ -283,7 +283,7 @@ function bot_sentry_carried_obj()
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x988
 // Size: 0x28e
 function bot_sentry_activate( tactical_goal )
@@ -352,7 +352,7 @@ function bot_sentry_activate( tactical_goal )
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc1f
 // Size: 0x1a
 function bot_send_place_notify()
@@ -363,7 +363,7 @@ function bot_send_place_notify()
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc41
 // Size: 0x34
 function bot_send_cancel_notify()
@@ -377,7 +377,7 @@ function bot_send_cancel_notify()
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc7d
 // Size: 0x21
 function bot_sentry_cancel( tactical_goal )
@@ -388,7 +388,7 @@ function bot_sentry_cancel( tactical_goal )
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca6
 // Size: 0x9a
 function bot_sentry_ensure_exit()
@@ -422,7 +422,7 @@ function bot_sentry_ensure_exit()
 }
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd48
 // Size: 0x7e
 function bot_sentry_force_cancel()

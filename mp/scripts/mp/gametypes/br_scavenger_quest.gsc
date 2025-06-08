@@ -24,7 +24,7 @@
 #namespace br_scavenger_quest;
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x699
 // Size: 0x3a2
 function getcontractdata( data )
@@ -66,9 +66,9 @@ function getcontractdata( data )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa43
-// Size: 0x18, Type: bool
+// Size: 0x18
 function function_591e6ab6447b07be()
 {
     if ( !isdefined( self.cachedata ) )
@@ -76,11 +76,11 @@ function function_591e6ab6447b07be()
         return function_549ab791fa91c7ac();
     }
     
-    return true;
+    return 1;
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa64
 // Size: 0x74
 function function_876794c543d6e89d()
@@ -94,7 +94,7 @@ function function_876794c543d6e89d()
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xae0
 // Size: 0x107, Type: bool
 function function_549ab791fa91c7ac()
@@ -116,7 +116,8 @@ function function_549ab791fa91c7ac()
         return false;
     }
     
-    for (i = 0; i < level.var_cf05afb32024800a.cachespawncount; i++) {
+    for ( i = 0; i < level.var_cf05afb32024800a.cachespawncount ; i++ )
+    {
         self.cachedata[ i ] = spawnstruct();
         self.cachedata[ i ].cachenode = bestcaches[ i ];
         self.cachedata[ i ].collected = 0;
@@ -135,7 +136,7 @@ function function_549ab791fa91c7ac()
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbf0
 // Size: 0x189
 function function_f6f80c11d5d8eaf5()
@@ -166,7 +167,8 @@ function function_f6f80c11d5d8eaf5()
     }
     else
     {
-        for (i = 0; i < level.var_cf05afb32024800a.cachespawncount; i++) {
+        for ( i = 0; i < level.var_cf05afb32024800a.cachespawncount ; i++ )
+        {
             function_41c2372f16c0e03d( i );
         }
     }
@@ -178,7 +180,7 @@ function function_f6f80c11d5d8eaf5()
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd81
 // Size: 0x17d
 function function_a33bd2c069408596( dangercircleorigin, var_52d59c928eb97c81 )
@@ -215,7 +217,7 @@ function function_a33bd2c069408596( dangercircleorigin, var_52d59c928eb97c81 )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf06
 // Size: 0x82
 function function_411e5816b27e0099()
@@ -229,7 +231,8 @@ function function_411e5816b27e0099()
         level waittill( "spawn_brStrongholdSpawn" );
     }
     
-    for (i = 0; i < level.var_cf05afb32024800a.cachespawncount; i++) {
+    for ( i = 0; i < level.var_cf05afb32024800a.cachespawncount ; i++ )
+    {
         if ( namespace_bd614c3c2275579a::function_20a22133815385f8( self.cachedata[ i ].cachenode.origin ) )
         {
             self.cachedata = undefined;
@@ -239,7 +242,7 @@ function function_411e5816b27e0099()
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf90
 // Size: 0x1b
 function quest_onplayerkilled( attacker, victim )
@@ -248,7 +251,7 @@ function quest_onplayerkilled( attacker, victim )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb3
 // Size: 0x13
 function function_4f702ea532a7ca6e( victim )
@@ -257,7 +260,7 @@ function function_4f702ea532a7ca6e( victim )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfce
 // Size: 0x13
 function quest_onplayerdisconnect( player )
@@ -266,7 +269,7 @@ function quest_onplayerdisconnect( player )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfe9
 // Size: 0x1d
 function function_ca07a6ca5c3c8af5( player )
@@ -278,7 +281,7 @@ function function_ca07a6ca5c3c8af5( player )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x100e
 // Size: 0x1d
 function function_f6755bd234f8e261( player )
@@ -290,7 +293,7 @@ function function_f6755bd234f8e261( player )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1033
 // Size: 0x6e
 function function_32caac4295e6cf28( player )
@@ -307,7 +310,7 @@ function function_32caac4295e6cf28( player )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10a9
 // Size: 0xba
 function function_f9ca547e3935949d( player, oldteam, newteam )
@@ -330,7 +333,7 @@ function function_f9ca547e3935949d( player, oldteam, newteam )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x116b
 // Size: 0xc5
 function function_24684569878c3021( player, oldteam, newteam )
@@ -354,7 +357,7 @@ function function_24684569878c3021( player, oldteam, newteam )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1238
 // Size: 0x37
 function function_942d13e23c7f1d0e( team )
@@ -367,7 +370,7 @@ function function_942d13e23c7f1d0e( team )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1277
 // Size: 0x60
 function function_810bbeded8d1a801( success, results, endstate )
@@ -381,7 +384,7 @@ function function_810bbeded8d1a801( success, results, endstate )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12df
 // Size: 0x131
 function function_8ed931d61f597107()
@@ -407,7 +410,7 @@ function function_8ed931d61f597107()
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1418
 // Size: 0x90
 function function_2eba816489c231f4()
@@ -430,7 +433,7 @@ function function_2eba816489c231f4()
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14b0
 // Size: 0x7e
 function function_899aaa6ac2489b43()
@@ -444,7 +447,7 @@ function function_899aaa6ac2489b43()
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1536
 // Size: 0xd9
 function function_41c2372f16c0e03d( cacheindex )
@@ -460,7 +463,7 @@ function function_41c2372f16c0e03d( cacheindex )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1617
 // Size: 0x3cc
 function function_4c7a7dd83180de41( nodearr, numnodes, searchorigin, minrange, maxrange, idealminrange, idealmaxrange )
@@ -516,7 +519,8 @@ function function_4c7a7dd83180de41( nodearr, numnodes, searchorigin, minrange, m
     var_dd557c73e4c85bc3 = function_f469a8dcf7ffd6a8( searchorigin, bestnode.origin, numnodes );
     var_5d384c5f9eb5fc55 = [];
     
-    for (i = 0; i < numnodes - 1; i++) {
+    for ( i = 0; i < numnodes - 1 ; i++ )
+    {
         index = i + 1;
         var_5d384c5f9eb5fc55[ i ] = spawnstruct();
         var_5d384c5f9eb5fc55[ i ].index = index;
@@ -566,7 +570,7 @@ function function_4c7a7dd83180de41( nodearr, numnodes, searchorigin, minrange, m
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19ec
 // Size: 0x334
 function function_352ccdc4f9c2b9d1( var_e7577bf01fc2c5c4 )
@@ -587,7 +591,8 @@ function function_352ccdc4f9c2b9d1( var_e7577bf01fc2c5c4 )
         var_fdc6ee1b91ebb7bf = scripts\mp\gametypes\br_circle_util::function_7d8550b9a2c52852( var_527a7b84d978e792 );
     }
     
-    for (i = 0; i < level.var_cf05afb32024800a.cachespawncount; i++) {
+    for ( i = 0; i < level.var_cf05afb32024800a.cachespawncount ; i++ )
+    {
         bestcache = undefined;
         var_33164bb5dd838f17 = level.var_cf05afb32024800a.var_76fbb523b032ed22;
         
@@ -690,7 +695,7 @@ function function_352ccdc4f9c2b9d1( var_e7577bf01fc2c5c4 )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1d29
 // Size: 0x120, Type: bool
 function function_a067541e078900a5( node, origin, dist, minrange, maxrange, var_fdc6ee1b91ebb7bf )
@@ -752,7 +757,7 @@ function function_a067541e078900a5( node, origin, dist, minrange, maxrange, var_
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e52
 // Size: 0x82, Type: bool
 function function_c096a9a3d859cfce( v_origin )
@@ -772,7 +777,7 @@ function function_c096a9a3d859cfce( v_origin )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1edd
 // Size: 0x11e
 function function_f469a8dcf7ffd6a8( originpoint, point1, numpoints )
@@ -784,7 +789,8 @@ function function_f469a8dcf7ffd6a8( originpoint, point1, numpoints )
     var_423b19ada56f4ad = [];
     var_423b19ada56f4ad[ 0 ] = ( point1[ 0 ] - originpoint[ 0 ], point1[ 1 ] - originpoint[ 1 ], 0 );
     
-    for (i = 1; i < numpoints; i++) {
+    for ( i = 1; i < numpoints ; i++ )
+    {
         cpoint = points[ i - 1 ];
         xtemp = cpoint[ 0 ] - originpoint[ 0 ];
         ytemp = cpoint[ 1 ] - originpoint[ 1 ];
@@ -800,7 +806,7 @@ function function_f469a8dcf7ffd6a8( originpoint, point1, numpoints )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2004
 // Size: 0x105
 function function_9f225e14bff0629f()
@@ -821,7 +827,7 @@ function function_9f225e14bff0629f()
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2111
 // Size: 0x7c
 function function_17e600057c2cf45( player )
@@ -838,7 +844,7 @@ function function_17e600057c2cf45( player )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2195
 // Size: 0x77
 function hidescavengerhudfromplayer( player )
@@ -855,7 +861,7 @@ function hidescavengerhudfromplayer( player )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2214
 // Size: 0xc4
 function deletescavengerhud()
@@ -875,7 +881,7 @@ function deletescavengerhud()
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22e0
 // Size: 0x40
 function function_f46a4deefd8ceaf4( volume )
@@ -892,7 +898,7 @@ function function_f46a4deefd8ceaf4( volume )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2328
 // Size: 0x42
 function function_12b3eb979ce7c6e5( volumes )
@@ -909,7 +915,7 @@ function function_12b3eb979ce7c6e5( volumes )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2372
 // Size: 0x6b
 function spawnscavengerlootcache( inorigin, var_5b9c864b21207ff6 )
@@ -924,7 +930,7 @@ function spawnscavengerlootcache( inorigin, var_5b9c864b21207ff6 )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23e6
 // Size: 0x13b
 function function_94a078c4cae0d6a4( cacheentity )
@@ -965,7 +971,7 @@ function function_94a078c4cae0d6a4( cacheentity )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2529
 // Size: 0x774
 function scavengerlootcacheused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -1118,7 +1124,7 @@ function scavengerlootcacheused( instance, part, state, player, var_a5b2c541413a
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ca5
 // Size: 0xa9
 function function_a93228cdda5c958c( contract, instance, team )
@@ -1138,7 +1144,7 @@ function function_a93228cdda5c958c( contract, instance, team )
 }
 
 // Namespace br_scavenger_quest / scripts\mp\gametypes\br_scavenger_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d56
 // Size: 0x51
 function function_e9cfab9c8a63533c( dialog, team, prefixoverride )

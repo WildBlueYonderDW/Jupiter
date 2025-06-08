@@ -32,7 +32,7 @@
 #namespace namespace_59b4686a745dd963;
 
 // Namespace namespace_59b4686a745dd963 / namespace_ade096b4b575e46c
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20a
 // Size: 0x253
 function function_7b988e1bb56ca747( grenade )

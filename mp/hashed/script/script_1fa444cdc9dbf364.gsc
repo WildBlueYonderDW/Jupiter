@@ -16,7 +16,7 @@
 #namespace agent_equipment;
 
 // Namespace agent_equipment / namespace_437d750db8e68984
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1be
 // Size: 0x17c
 function function_f04c619138baafd8()
@@ -32,7 +32,8 @@ function function_f04c619138baafd8()
     var_ccd66fb268ce4ca7 = [ claymorenodes, var_e2176a2d7c0e42a4, var_535166b783f2c94d ];
     equipstrings = [ "claymore", "at_mine", "sound_veil" ];
     
-    for (i = 0; i < var_ccd66fb268ce4ca7.size; i++) {
+    for ( i = 0; i < var_ccd66fb268ce4ca7.size ; i++ )
+    {
         if ( !isdefined( var_ccd66fb268ce4ca7[ i ] ) )
         {
             continue;
@@ -50,7 +51,7 @@ function function_f04c619138baafd8()
 }
 
 // Namespace agent_equipment / namespace_437d750db8e68984
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x342
 // Size: 0x158
 function function_ac625f4c2bf0906b( equipmentref )
@@ -81,7 +82,7 @@ function function_ac625f4c2bf0906b( equipmentref )
 }
 
 // Namespace agent_equipment / namespace_437d750db8e68984
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a2
 // Size: 0x19a
 function function_fd5966a3a1fdf6b8( deploystruct, agentteam )

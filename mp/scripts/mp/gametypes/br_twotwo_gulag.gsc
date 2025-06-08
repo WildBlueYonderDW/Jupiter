@@ -31,7 +31,7 @@
 #namespace br_twotwo_gulag;
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1295
 // Size: 0x460
 function function_b7a198c3929006d7()
@@ -111,7 +111,7 @@ function function_b7a198c3929006d7()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16fd
 // Size: 0x3b
 function function_ed63c88560ad9ba9()
@@ -122,7 +122,7 @@ function function_ed63c88560ad9ba9()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1740
 // Size: 0x51
 function function_3b5e4d861cd09132( var_b1e6fbabce1a26ba, var_41503cd028efb569 )
@@ -138,7 +138,7 @@ function function_3b5e4d861cd09132( var_b1e6fbabce1a26ba, var_41503cd028efb569 )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1799
 // Size: 0x7bd
 function function_ecf124f447ced0aa()
@@ -310,7 +310,7 @@ function function_ecf124f447ced0aa()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f5e
 // Size: 0xad
 function function_889d1ac5ae186841( arenastruct )
@@ -327,7 +327,7 @@ function function_889d1ac5ae186841( arenastruct )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2013
 // Size: 0x229
 function function_9fb89c3e5e88656c( arenastruct, arena )
@@ -363,7 +363,7 @@ function function_9fb89c3e5e88656c( arenastruct, arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2244
 // Size: 0x30c
 function function_f4ac4c4f63924776( arena )
@@ -450,7 +450,7 @@ function function_f4ac4c4f63924776( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2558
 // Size: 0x16
 function function_731898ba8fc76e0f( arena )
@@ -460,7 +460,7 @@ function function_731898ba8fc76e0f( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2576
 // Size: 0x3f3
 function function_8739234ffe5b08f5( arena )
@@ -584,7 +584,7 @@ function function_8739234ffe5b08f5( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2971
 // Size: 0x97
 function function_9a77e3aaa6da41c2( arena, var_6e5fdafe4800cd7d )
@@ -606,7 +606,7 @@ function function_9a77e3aaa6da41c2( arena, var_6e5fdafe4800cd7d )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a10
 // Size: 0x15
 function function_ccad0db0adae4784()
@@ -615,7 +615,7 @@ function function_ccad0db0adae4784()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a2e
 // Size: 0xa4
 function function_4e8443eb7352ffd4( nextmatch, arena )
@@ -644,7 +644,7 @@ function function_4e8443eb7352ffd4( nextmatch, arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ada
 // Size: 0xdd
 function function_53b2531fd0bb8f26( match )
@@ -684,7 +684,7 @@ function function_53b2531fd0bb8f26( match )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bc0
 // Size: 0x1fe
 function function_413a363a7b6e1bf4()
@@ -710,10 +710,12 @@ function function_413a363a7b6e1bf4()
     
     var_e234adf4af953b2f = level.var_f684d37d5503eeba.var_399b78e251f76cb8.var_9678564e7abf373b.size;
     
-    for (currentcircleindex = 0; currentcircleindex < gulagclosedcircleindex; currentcircleindex++) {
+    for ( currentcircleindex = 0; currentcircleindex < gulagclosedcircleindex ; currentcircleindex++ )
+    {
         var_c606fb1446310a0d = [];
         
-        for (i = 0; i < var_e234adf4af953b2f; i++) {
+        for ( i = 0; i < var_e234adf4af953b2f ; i++ )
+        {
             if ( level.var_f684d37d5503eeba.var_399b78e251f76cb8.var_9678564e7abf373b[ i ].loadouttable == "" )
             {
                 continue;
@@ -740,7 +742,7 @@ function function_413a363a7b6e1bf4()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dc6
 // Size: 0x5f
 function function_564cf344e6433ffc( index )
@@ -755,7 +757,7 @@ function function_564cf344e6433ffc( index )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e2d
 // Size: 0x88
 function function_aca4803ab9e602fb()
@@ -771,7 +773,7 @@ function function_aca4803ab9e602fb()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ebd
 // Size: 0x1e
 function function_f0e6f4161c97d369( arena )
@@ -780,16 +782,16 @@ function function_f0e6f4161c97d369( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ee4
 // Size: 0x46
 function function_50019571d7c08658( offset )
 {
-    return level.br_level.br_circledelaytimes.size - 1 - getdvarint( @"hash_1141fea0c6ef428f", level.gulag.circledisable ) - offset;
+    return level.br_level.br_circledelaytimes.size - 1 - getdvarint( @"scr_br_fc_circle_disable", level.gulag.circledisable ) - offset;
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f33
 // Size: 0x15
 function function_f592babbd034685b()
@@ -798,7 +800,7 @@ function function_f592babbd034685b()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f51
 // Size: 0x12
 function function_f12807f1bed9e2cb()
@@ -807,7 +809,7 @@ function function_f12807f1bed9e2cb()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f6c
 // Size: 0x3, Type: bool
 function function_86be51018a07870c()
@@ -816,7 +818,7 @@ function function_86be51018a07870c()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f78
 // Size: 0x15
 function function_11b53584ec3dbc7b()
@@ -825,7 +827,7 @@ function function_11b53584ec3dbc7b()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f96
 // Size: 0x15
 function function_b628764ab30b26ce()
@@ -834,7 +836,7 @@ function function_b628764ab30b26ce()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fb4
 // Size: 0x15
 function function_dbee0792574758d3()
@@ -843,7 +845,7 @@ function function_dbee0792574758d3()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fd2
 // Size: 0x15
 function function_4925efb18ecce08d()
@@ -852,7 +854,7 @@ function function_4925efb18ecce08d()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ff0
 // Size: 0x20
 function function_9b2d3873cc90a014()
@@ -862,7 +864,7 @@ function function_9b2d3873cc90a014()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3018
 // Size: 0x37
 function function_e552fdbccca8f866()
@@ -873,7 +875,7 @@ function function_e552fdbccca8f866()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3057
 // Size: 0x19
 function function_7f7b72ed922a1c24( arena )
@@ -882,7 +884,7 @@ function function_7f7b72ed922a1c24( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3078
 // Size: 0x25
 function function_df994a817536ae7b( arena )
@@ -894,7 +896,7 @@ function function_df994a817536ae7b( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30a5
 // Size: 0x22
 function function_cf70188e00c433c4( arena )
@@ -908,7 +910,7 @@ function function_cf70188e00c433c4( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30cf
 // Size: 0x41b
 function function_90b1506ebceed929()
@@ -960,7 +962,7 @@ function function_90b1506ebceed929()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34f2
 // Size: 0xbd
 function function_4fa43f06faeee96c( arena )
@@ -989,7 +991,7 @@ function function_4fa43f06faeee96c( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35b7
 // Size: 0x101
 function function_35f647c6340ceb22( arenateamplayers, arena )
@@ -1020,7 +1022,7 @@ function function_35f647c6340ceb22( arenateamplayers, arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36c0
 // Size: 0xca
 function function_ef6ce7fd02518720( arenateamplayers, arena )
@@ -1060,7 +1062,7 @@ function function_ef6ce7fd02518720( arenateamplayers, arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3793
 // Size: 0x30a
 function function_556e62498ec825c5( fightover, arena )
@@ -1182,7 +1184,7 @@ function function_556e62498ec825c5( fightover, arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3aa5
 // Size: 0x2a, Type: bool
 function function_e4549da9da5cb20( left, right )
@@ -1191,7 +1193,7 @@ function function_e4549da9da5cb20( left, right )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ad8
 // Size: 0x14c
 function function_cfcc53a5d95fd20a()
@@ -1244,7 +1246,7 @@ function function_cfcc53a5d95fd20a()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c2c
 // Size: 0xad
 function function_f8cbcfc051af262b( match )
@@ -1294,7 +1296,7 @@ function function_f8cbcfc051af262b( match )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ce1
 // Size: 0x57
 function function_796bad56de4895fa( player, var_40d8983fc5e5c7a5 )
@@ -1314,7 +1316,7 @@ function function_796bad56de4895fa( player, var_40d8983fc5e5c7a5 )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d40
 // Size: 0x7
 function function_cea3949e01c439c6()
@@ -1323,7 +1325,7 @@ function function_cea3949e01c439c6()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d50
 // Size: 0x62
 function function_f1b80997f5c5a401()
@@ -1340,14 +1342,15 @@ function function_f1b80997f5c5a401()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3dba
 // Size: 0x59
 function function_e7940d6d0cd7148a( match )
 {
     player = self;
     
-    for (i = 0; i < match.size; i++) {
+    for ( i = 0; i < match.size ; i++ )
+    {
         if ( player == match[ i ] )
         {
             continue;
@@ -1361,7 +1364,7 @@ function function_e7940d6d0cd7148a( match )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e1b
 // Size: 0xa2
 function function_3682f0cc9e284d5b( playerindex, teammateindex )
@@ -1391,7 +1394,7 @@ function function_3682f0cc9e284d5b( playerindex, teammateindex )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ec5
 // Size: 0x2a4
 function function_b5ec51ac542c7638()
@@ -1468,7 +1471,7 @@ function function_b5ec51ac542c7638()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4171
 // Size: 0x8f
 function function_a7ec5e159ce62c68()
@@ -1484,7 +1487,7 @@ function function_a7ec5e159ce62c68()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4208
 // Size: 0x5b
 function function_e6c0858f7a0aac96( headicon, var_ca5a607c4f7a315 )
@@ -1503,7 +1506,7 @@ function function_e6c0858f7a0aac96( headicon, var_ca5a607c4f7a315 )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x426b
 // Size: 0x56
 function function_5a150f2908a378cb( headicon, playershowto )
@@ -1516,7 +1519,7 @@ function function_5a150f2908a378cb( headicon, playershowto )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42c9
 // Size: 0xb3
 function function_1a16ae715c7d1d44()
@@ -1559,7 +1562,7 @@ function function_1a16ae715c7d1d44()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4384
 // Size: 0x214
 function function_618bf5253a72136f()
@@ -1626,7 +1629,7 @@ function function_618bf5253a72136f()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45a0
 // Size: 0x80
 function function_b9418a161c3b9ebd( arena )
@@ -1651,7 +1654,7 @@ function function_b9418a161c3b9ebd( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4628
 // Size: 0x83
 function gulagtwotwo_trackplayerbullets()
@@ -1677,7 +1680,7 @@ function gulagtwotwo_trackplayerbullets()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x46b3
 // Size: 0xe7
 function function_9b688cc3fce07e4f( eattacker, var_19ef223648735f8f )
@@ -1714,7 +1717,7 @@ function function_9b688cc3fce07e4f( eattacker, var_19ef223648735f8f )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47a2
 // Size: 0x80
 function function_d8668dbedd47d5de()
@@ -1740,7 +1743,7 @@ function function_d8668dbedd47d5de()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x482a
 // Size: 0x85
 function function_740fbc412dff7c67( arena )
@@ -1763,7 +1766,7 @@ function function_740fbc412dff7c67( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x48b7
 // Size: 0xe1
 function function_15ae52c5e218380a( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -1793,7 +1796,7 @@ function function_15ae52c5e218380a( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49a0
 // Size: 0x1a1
 function function_bca70e305fb00f25( arena )
@@ -1850,7 +1853,7 @@ function function_bca70e305fb00f25( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b49
 // Size: 0x41
 function function_67d92d9a720e2307( escapestruct )
@@ -1867,7 +1870,7 @@ function function_67d92d9a720e2307( escapestruct )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b92
 // Size: 0xa1
 function function_77dc965bed28a081( arena )
@@ -1886,7 +1889,7 @@ function function_77dc965bed28a081( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c3b
 // Size: 0x1ac
 function function_7c296b84f3f04cb5( arena )
@@ -1959,7 +1962,7 @@ function function_7c296b84f3f04cb5( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4def
 // Size: 0xbd
 function function_dc0a56e258889cb( arena, var_b6acf0c07c4311e6 )
@@ -1998,7 +2001,7 @@ function function_dc0a56e258889cb( arena, var_b6acf0c07c4311e6 )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4eb4
 // Size: 0x15a
 function function_669067932a658a0b( arena, var_b6acf0c07c4311e6 )
@@ -2044,7 +2047,7 @@ function function_669067932a658a0b( arena, var_b6acf0c07c4311e6 )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5016
 // Size: 0x64
 function function_fe66ad4ed04f807f()
@@ -2058,7 +2061,7 @@ function function_fe66ad4ed04f807f()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5082
 // Size: 0x67
 function function_7aaf75a824252d97( arena, var_40d8983fc5e5c7a5 )
@@ -2080,7 +2083,7 @@ function function_7aaf75a824252d97( arena, var_40d8983fc5e5c7a5 )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x50f1
 // Size: 0x181
 function function_8fe77205a38f1c50( arena, var_40d8983fc5e5c7a5 )
@@ -2137,7 +2140,7 @@ function function_8fe77205a38f1c50( arena, var_40d8983fc5e5c7a5 )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x527a
 // Size: 0xe2
 function function_50fc80e21e19d442()
@@ -2175,7 +2178,7 @@ function function_50fc80e21e19d442()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5364
 // Size: 0x31
 function function_defee99c5c401b40()
@@ -2192,7 +2195,7 @@ function function_defee99c5c401b40()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x539d
 // Size: 0xd6
 function function_4f4c7829487b8220( arena )
@@ -2218,7 +2221,7 @@ function function_4f4c7829487b8220( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x547b
 // Size: 0x118
 function function_3dc19fbe8b98e015()
@@ -2244,7 +2247,7 @@ function function_3dc19fbe8b98e015()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x559b
 // Size: 0xb7
 function function_c3d75fb801e462f9( arena )
@@ -2275,7 +2278,7 @@ function function_c3d75fb801e462f9( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x565b
 // Size: 0x14d
 function function_9b9255a993b0fa1c( currentcircleindex )
@@ -2306,7 +2309,7 @@ function function_9b9255a993b0fa1c( currentcircleindex )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x57b1
 // Size: 0xbe
 function function_91b7c321b7e78443( index )
@@ -2314,11 +2317,13 @@ function function_91b7c321b7e78443( index )
     var_35e87b647e77e13b = [];
     var_e234adf4af953b2f = level.var_f684d37d5503eeba.var_399b78e251f76cb8.var_9678564e7abf373b.size;
     
-    for (i = 0; i < var_e234adf4af953b2f; i++) {
+    for ( i = 0; i < var_e234adf4af953b2f ; i++ )
+    {
         tablename = function_564cf344e6433ffc( i );
         numloadouts = scripts\mp\class::function_df2933f96d726d71( tablename );
         
-        for (k = 0; k < numloadouts; k++) {
+        for ( k = 0; k < numloadouts ; k++ )
+        {
             temploadout = scripts\mp\gametypes\br::initstandardloadout( tablename, k );
             var_35e87b647e77e13b[ var_35e87b647e77e13b.size ] = temploadout;
         }
@@ -2333,7 +2338,7 @@ function function_91b7c321b7e78443( index )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5878
 // Size: 0xa5
 function function_3cbf68ef6c5ca981( arena )
@@ -2363,7 +2368,7 @@ function function_3cbf68ef6c5ca981( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5926
 // Size: 0x4d
 function function_1fc65ff42afbb7fc( arena, player )
@@ -2377,7 +2382,7 @@ function function_1fc65ff42afbb7fc( arena, player )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x597b
 // Size: 0x66
 function function_1b2e2fd7f80fdd0b( arena )
@@ -2388,7 +2393,7 @@ function function_1b2e2fd7f80fdd0b( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59e9
 // Size: 0xc6
 function function_33c93a39c558a492( arena )
@@ -2408,7 +2413,7 @@ function function_33c93a39c558a492( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ab7
 // Size: 0x262
 function function_c525d1df15d88a84( agent, killer )
@@ -2505,7 +2510,7 @@ function function_c525d1df15d88a84( agent, killer )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5d21
 // Size: 0xbc
 function function_9135ada02e07bf10( arena, victorycause, var_bd8ebd50121f174e )
@@ -2539,7 +2544,7 @@ function function_9135ada02e07bf10( arena, victorycause, var_bd8ebd50121f174e )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5de5
 // Size: 0x4b
 function function_ed93a4074bbf2e51( attacker )
@@ -2558,7 +2563,7 @@ function function_ed93a4074bbf2e51( attacker )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e38
 // Size: 0xa9
 function function_a4c35fe489cc7da5()
@@ -2583,7 +2588,7 @@ function function_a4c35fe489cc7da5()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5ee9
 // Size: 0x25
 function function_720ef3a3e6616ab7( value )
@@ -2593,7 +2598,7 @@ function function_720ef3a3e6616ab7( value )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f16
 // Size: 0xd1
 function function_cc5468bb6e866411( arena )
@@ -2622,7 +2627,7 @@ function function_cc5468bb6e866411( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5fef
 // Size: 0xe8
 function function_6d217ba4de4b166b( arena )
@@ -2637,7 +2642,8 @@ function function_6d217ba4de4b166b( arena )
         var_77fa43fc5f58845d = 2;
     }
     
-    for (i = 0; i < var_77fa43fc5f58845d; i++) {
+    for ( i = 0; i < var_77fa43fc5f58845d ; i++ )
+    {
         p = arena.arenaplayers[ i ];
         
         if ( !isdefined( p ) || !p scripts\mp\gametypes\br_public::isplayerinorgoingtogulag() )
@@ -2659,7 +2665,7 @@ function function_6d217ba4de4b166b( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60df
 // Size: 0xd2
 function function_fb51bdaa21d694e5( arena )
@@ -2674,7 +2680,8 @@ function function_fb51bdaa21d694e5( arena )
         var_77fa43fc5f58845d = 2;
     }
     
-    for (i = 0; i < var_77fa43fc5f58845d; i++) {
+    for ( i = 0; i < var_77fa43fc5f58845d ; i++ )
+    {
         p = arena.arenaplayers[ i ];
         playerstate = function_a3404116e7794c47( player, p, arena );
         var_62b5521602cbb385 = 8 - 1;
@@ -2687,7 +2694,7 @@ function function_fb51bdaa21d694e5( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x61b9
 // Size: 0xf8
 function function_a3404116e7794c47( player, gulagplayer, arena )
@@ -2744,7 +2751,7 @@ function function_a3404116e7794c47( player, gulagplayer, arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x62b9
 // Size: 0x134
 function function_861c9ec1a22d6aa4( player )
@@ -2754,7 +2761,8 @@ function function_861c9ec1a22d6aa4( player )
         return;
     }
     
-    for (i = 0; i < level.gulag.arenas.size; i++) {
+    for ( i = 0; i < level.gulag.arenas.size ; i++ )
+    {
         var_f40e6deec30ee209 = level.gulag.arenas[ i ];
         
         if ( isdefined( var_f40e6deec30ee209.var_801cdcfadc4d465c ) )
@@ -2784,7 +2792,7 @@ function function_861c9ec1a22d6aa4( player )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63f6
 // Size: 0x7d
 function function_1bd32287885bb933( player )
@@ -2816,7 +2824,7 @@ function function_1bd32287885bb933( player )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x647c
 // Size: 0x144
 function function_488428f4237c7e87( player )
@@ -2826,7 +2834,8 @@ function function_488428f4237c7e87( player )
         return;
     }
     
-    for (i = 0; i < level.gulag.arenas.size; i++) {
+    for ( i = 0; i < level.gulag.arenas.size ; i++ )
+    {
         var_f40e6deec30ee209 = level.gulag.arenas[ i ];
         
         if ( isdefined( var_f40e6deec30ee209.var_801cdcfadc4d465c ) )
@@ -2866,12 +2875,13 @@ function function_488428f4237c7e87( player )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65c9
 // Size: 0xcb
 function function_66ba5f24fbb13a23( player )
 {
-    for (i = 0; i < level.gulag.arenas.size; i++) {
+    for ( i = 0; i < level.gulag.arenas.size ; i++ )
+    {
         var_f40e6deec30ee209 = level.gulag.arenas[ i ];
         
         foreach ( jailedplayers in var_f40e6deec30ee209.jailedplayers )
@@ -2888,7 +2898,7 @@ function function_66ba5f24fbb13a23( player )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x669d
 // Size: 0x30, Type: bool
 function function_6e3541fd8fab45bc()
@@ -2902,7 +2912,7 @@ function function_6e3541fd8fab45bc()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66d6
 // Size: 0xe3
 function function_ccf74b81f01f0bf1( arena )
@@ -2943,7 +2953,7 @@ function function_ccf74b81f01f0bf1( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67c1
 // Size: 0x2b, Type: bool
 function function_bb22cae6dd0b7899()
@@ -2957,7 +2967,7 @@ function function_bb22cae6dd0b7899()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67f5
 // Size: 0x45, Type: bool
 function function_452ab051852e4df1()
@@ -2973,7 +2983,7 @@ function function_452ab051852e4df1()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6843
 // Size: 0x3a4
 function function_7873119d67c51a6d()
@@ -3059,7 +3069,7 @@ function function_7873119d67c51a6d()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6bef
 // Size: 0x51
 function function_8cd391e5244b5670( arena )
@@ -3079,7 +3089,7 @@ function function_8cd391e5244b5670( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c48
 // Size: 0x1b
 function function_9b254813c229a51c()
@@ -3089,7 +3099,7 @@ function function_9b254813c229a51c()
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c6b
 // Size: 0x1e
 function function_3aee652da47a2a39( arena )
@@ -3101,7 +3111,7 @@ function function_3aee652da47a2a39( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6c91
 // Size: 0x110
 function function_d1f5aaddab74bd10( arena, aispawn )
@@ -3135,7 +3145,7 @@ function function_d1f5aaddab74bd10( arena, aispawn )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6da9
 // Size: 0x22
 function function_9119de486a6fa5cd( arena )
@@ -3147,7 +3157,7 @@ function function_9119de486a6fa5cd( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6dd3
 // Size: 0xd9
 function function_82eee32bb4c490d8( arena )
@@ -3176,7 +3186,7 @@ function function_82eee32bb4c490d8( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6eb4
 // Size: 0xfe
 function function_3aad61cbc63b74c8( arena )
@@ -3219,7 +3229,7 @@ function function_3aad61cbc63b74c8( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fba
 // Size: 0x108
 function function_dbd4cba5d524eba9( arena )
@@ -3258,7 +3268,7 @@ function function_dbd4cba5d524eba9( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x70ca
 // Size: 0x12a
 function function_d6b701f1cb759bd5( arena )
@@ -3292,40 +3302,43 @@ function function_d6b701f1cb759bd5( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71fc
 // Size: 0x4d
 function function_12801693c8c241bb( arena )
 {
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         arena.var_2a7e62879a75ffe[ arena.var_2a7e62879a75ffe.size ] = getscriptcachecontents( level.var_42706f92b61ab857, i );
     }
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7251
 // Size: 0x4d
 function function_144fc7f54908932f( arena )
 {
-    for (i = 0; i < 5; i++) {
+    for ( i = 0; i < 5 ; i++ )
+    {
         arena.var_49e6d5114201a22b[ arena.var_49e6d5114201a22b.size ] = getscriptcachecontents( level.var_1d446b9562cad6cb, i );
     }
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x72a6
 // Size: 0x4d
 function function_687cfa994c08bada( arena )
 {
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         arena.var_c8ada8b232d73a0a[ arena.var_c8ada8b232d73a0a.size ] = getscriptcachecontents( level.var_8aa2fc86861fc20c, i );
     }
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x72fb
 // Size: 0x1d8
 function function_b2d8f9adee070020( arena )
@@ -3377,7 +3390,7 @@ function function_b2d8f9adee070020( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x74db
 // Size: 0x197
 function function_fcc8620f60ca604c( arena )
@@ -3419,7 +3432,7 @@ function function_fcc8620f60ca604c( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x767a
 // Size: 0x211
 function function_d674739c4e4039b( arena, eventref, scriptablename )
@@ -3483,12 +3496,13 @@ function function_d674739c4e4039b( arena, eventref, scriptablename )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7893
 // Size: 0xd9
 function function_7f32923c29bcf243( itemlist, var_a29ac4899acd2c08, scriptablename, var_39ce9039c3660d76, pickupcount )
 {
-    for (checkednodes = 0; checkednodes < var_a29ac4899acd2c08.size; checkednodes++) {
+    for ( checkednodes = 0; checkednodes < var_a29ac4899acd2c08.size ; checkednodes++ )
+    {
         if ( var_a29ac4899acd2c08[ checkednodes ].script_noteworthy == var_39ce9039c3660d76 )
         {
             dropinfo = spawnstruct();
@@ -3506,7 +3520,7 @@ function function_7f32923c29bcf243( itemlist, var_a29ac4899acd2c08, scriptablena
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7975
 // Size: 0x9d
 function function_ab674fc3132afe8( arena )
@@ -3523,7 +3537,7 @@ function function_ab674fc3132afe8( arena )
 }
 
 // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a1a
 // Size: 0x140
 function function_5eaf324209d1c3f0()
@@ -3563,7 +3577,7 @@ function function_5eaf324209d1c3f0()
 /#
 
     // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7b62
     // Size: 0x425, Type: dev
     function function_14d03f62839087b0()
@@ -3723,7 +3737,7 @@ function function_5eaf324209d1c3f0()
     }
 
     // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7f8f
     // Size: 0x6c, Type: dev
     function function_526dfbe9997544a0()
@@ -3746,7 +3760,7 @@ function function_5eaf324209d1c3f0()
     }
 
     // Namespace br_twotwo_gulag / scripts\mp\gametypes\br_twotwo_gulag
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x8003
     // Size: 0x62, Type: dev
     function function_1d5e2e0d6af328f7( waittime )

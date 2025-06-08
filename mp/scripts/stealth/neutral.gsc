@@ -12,7 +12,7 @@
 #namespace neutral;
 
 // Namespace neutral / scripts\stealth\neutral
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xed
 // Size: 0xb2
 function main()

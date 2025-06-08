@@ -19,7 +19,7 @@ function autoexec function_657dc7e018dcfce9()
 }
 
 // Namespace zombie_health_bar / namespace_a56834c83a5b0f07
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x302
 // Size: 0xa2
 function function_84c0e1e271bafa7b( var_7f99bc1f14808866, var_b15088d5cc05c0f9 )
@@ -41,7 +41,7 @@ function function_84c0e1e271bafa7b( var_7f99bc1f14808866, var_b15088d5cc05c0f9 )
 }
 
 // Namespace zombie_health_bar / namespace_a56834c83a5b0f07
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ac
 // Size: 0x13
 function function_3894840410c9bf11( params )
@@ -50,7 +50,7 @@ function function_3894840410c9bf11( params )
 }
 
 // Namespace zombie_health_bar / namespace_a56834c83a5b0f07
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3c7
 // Size: 0xfe
 function update_target_health_variable( var_e9d476a3809cb3f1, value, var_2be1ff56b5ef7757, var_79720293f809096b )
@@ -78,7 +78,7 @@ function update_target_health_variable( var_e9d476a3809cb3f1, value, var_2be1ff5
 }
 
 // Namespace zombie_health_bar / namespace_a56834c83a5b0f07
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cd
 // Size: 0x7ee
 function watch_target_health()
@@ -315,7 +315,7 @@ function watch_target_health()
 }
 
 // Namespace zombie_health_bar / namespace_a56834c83a5b0f07
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcc3
 // Size: 0xb2
 function function_cb0c83ad449f616( hitentity )

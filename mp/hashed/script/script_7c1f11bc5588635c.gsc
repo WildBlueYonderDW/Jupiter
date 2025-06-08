@@ -9,7 +9,7 @@
 #namespace perk_deadshot;
 
 // Namespace perk_deadshot / namespace_5a0b98fe4ff33cb6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd6
 // Size: 0x45
 function function_d87a1d30e15f1c8b( str_currency, var_fe59c44529c721a0 )
@@ -19,7 +19,7 @@ function function_d87a1d30e15f1c8b( str_currency, var_fe59c44529c721a0 )
 }
 
 // Namespace perk_deadshot / namespace_5a0b98fe4ff33cb6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x123
 // Size: 0x42
 function give_deadshot_perk()
@@ -34,7 +34,7 @@ function give_deadshot_perk()
 }
 
 // Namespace perk_deadshot / namespace_5a0b98fe4ff33cb6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x16d
 // Size: 0x34
 function take_deadshot_perk( b_pause, str_perk, str_result, n_slot )
@@ -44,7 +44,7 @@ function take_deadshot_perk( b_pause, str_perk, str_result, n_slot )
 }
 
 // Namespace perk_deadshot / namespace_5a0b98fe4ff33cb6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a9
 // Size: 0xe
 function function_888a7004c6bd50e9()

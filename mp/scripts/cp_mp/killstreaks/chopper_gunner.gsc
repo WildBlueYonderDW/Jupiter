@@ -23,7 +23,7 @@
 #namespace chopper_gunner;
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1462
 // Size: 0xbd
 function init()
@@ -51,7 +51,7 @@ function init()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1527
 // Size: 0xec
 function function_b380d510fa08cdec()
@@ -80,7 +80,7 @@ function function_b380d510fa08cdec()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x161b
 // Size: 0x60
 function function_402d391c1c0e8ca()
@@ -89,7 +89,7 @@ function function_402d391c1c0e8ca()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1683
 // Size: 0x12
 function function_e4d2385d5eee2c51()
@@ -99,7 +99,7 @@ function function_e4d2385d5eee2c51()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x169d
 // Size: 0x1f2
 function function_5d9a912bab9622da()
@@ -123,7 +123,7 @@ function function_5d9a912bab9622da()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1897
 // Size: 0x1c
 function function_5de17c2babe4b71b()
@@ -132,7 +132,7 @@ function function_5de17c2babe4b71b()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18bb
 // Size: 0x48
 function function_76bacdfa4c4a7bdc()
@@ -153,7 +153,7 @@ function function_76bacdfa4c4a7bdc()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x190b
 // Size: 0x71
 function choppergunner_pilotanims()
@@ -165,7 +165,7 @@ function choppergunner_pilotanims()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1984
 // Size: 0x33
 function choppergunner_vehicleanims()
@@ -175,7 +175,7 @@ function choppergunner_vehicleanims()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19bf
 // Size: 0xd, Type: bool
 function weapongivenchoppergunner( streakinfo )
@@ -184,9 +184,9 @@ function weapongivenchoppergunner( streakinfo )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19d5
-// Size: 0x21, Type: bool
+// Size: 0x21
 function tryusechoppergunner()
 {
     streakinfo = createstreakinfo( "chopper_gunner", self );
@@ -194,7 +194,7 @@ function tryusechoppergunner()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19ff
 // Size: 0x291, Type: bool
 function tryusechoppergunnerfromstruct( streakinfo )
@@ -301,7 +301,7 @@ function tryusechoppergunnerfromstruct( streakinfo )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c99
 // Size: 0x82
 function function_98c857a1612a19d()
@@ -324,7 +324,7 @@ function function_98c857a1612a19d()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d23
 // Size: 0x258, Type: bool
 function function_b96cc2f80fa02ac2( streakinfo )
@@ -406,7 +406,7 @@ function function_b96cc2f80fa02ac2( streakinfo )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f84
 // Size: 0x8d, Type: bool
 function function_e708b248bc646ecb( streakinfo )
@@ -442,7 +442,7 @@ function function_e708b248bc646ecb( streakinfo )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x201a
 // Size: 0xe3b
 function startchoppergunnerintro( owner, streakinfo, thirdperson )
@@ -749,7 +749,7 @@ function startchoppergunnerintro( owner, streakinfo, thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e5e
 // Size: 0xfe
 function function_8de91f51bc626d93( streakname )
@@ -771,7 +771,7 @@ function function_8de91f51bc626d93( streakname )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f64
 // Size: 0x34
 function function_c668cff4b2ddaed0( streakname )
@@ -783,7 +783,7 @@ function function_c668cff4b2ddaed0( streakname )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fa0
 // Size: 0x109
 function function_42807e45e47344c( streakname )
@@ -826,7 +826,7 @@ function function_42807e45e47344c( streakname )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30b1
 // Size: 0x117
 function choppergunner_watchintrodisown( exitaction, streakinfo )
@@ -868,7 +868,7 @@ function choppergunner_watchintrodisown( exitaction, streakinfo )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31d0
 // Size: 0x2a, Type: bool
 function choppergunner_waitintroanimtime( time )
@@ -881,7 +881,7 @@ function choppergunner_waitintroanimtime( time )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3203
 // Size: 0x7d
 function choppergunner_playdofintroeffects()
@@ -898,7 +898,7 @@ function choppergunner_playdofintroeffects()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3288
 // Size: 0x6e
 function choppergunner_camerashake( choppergunner )
@@ -919,7 +919,7 @@ function choppergunner_camerashake( choppergunner )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32fe
 // Size: 0x490
 function function_fc02c5717861131a( gunner, thirdperson )
@@ -1066,7 +1066,7 @@ function function_fc02c5717861131a( gunner, thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3796
 // Size: 0xdf
 function function_dfc7af47240a8c18()
@@ -1097,7 +1097,7 @@ function function_dfc7af47240a8c18()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x387e
 // Size: 0x82
 function function_2b1f56257b43a133( var_bad97bf0dd8846f4 )
@@ -1120,7 +1120,7 @@ function function_2b1f56257b43a133( var_bad97bf0dd8846f4 )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3909
 // Size: 0x3a
 function choppergunner_lockedoncallback()
@@ -1130,7 +1130,7 @@ function choppergunner_lockedoncallback()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x394b
 // Size: 0x1c
 function choppergunner_lockedonremovedcallback()
@@ -1139,7 +1139,7 @@ function choppergunner_lockedonremovedcallback()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x396f
 // Size: 0x96
 function choppergunner_updatetargetmarkergroups( togglestate )
@@ -1173,7 +1173,7 @@ function choppergunner_updatetargetmarkergroups( togglestate )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a0d
 // Size: 0x32
 function choppergunner_watchendstrobefx( choppergunner )
@@ -1185,7 +1185,7 @@ function choppergunner_watchendstrobefx( choppergunner )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3a47
 // Size: 0x6c
 function choppergunner_startfadetransition( timedelay, thirdperson, var_1e1134ff29f6168c )
@@ -1210,7 +1210,7 @@ function choppergunner_startfadetransition( timedelay, thirdperson, var_1e1134ff
 /#
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3abb
     // Size: 0xbe, Type: dev
     function function_f67cf34c214a0189()
@@ -1241,7 +1241,7 @@ function choppergunner_startfadetransition( timedelay, thirdperson, var_1e1134ff
     }
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3b81
     // Size: 0xce, Type: dev
     function function_38b07fa35df09c85()
@@ -1270,7 +1270,7 @@ function choppergunner_startfadetransition( timedelay, thirdperson, var_1e1134ff
     }
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x3c57
     // Size: 0x192, Type: dev
     function function_c31fd561d72092a5( var_a95a67a21665324a, weaponname )
@@ -1324,7 +1324,7 @@ function choppergunner_startfadetransition( timedelay, thirdperson, var_1e1134ff
     }
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3df1
     // Size: 0xd2, Type: dev
     function function_fe8987efca006a06()
@@ -1360,7 +1360,7 @@ function choppergunner_startfadetransition( timedelay, thirdperson, var_1e1134ff
     }
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3ecb
     // Size: 0x99, Type: dev
     function function_19ead4526ebc7004( var_a95a67a21665324a )
@@ -1390,7 +1390,7 @@ function choppergunner_startfadetransition( timedelay, thirdperson, var_1e1134ff
 #/
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f6c
 // Size: 0x18d
 function choppergunner_handledangerzone( thirdperson )
@@ -1434,7 +1434,7 @@ function choppergunner_handledangerzone( thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4101
 // Size: 0x42
 function choppergunner_handlethermalswitch( thirdperson )
@@ -1453,7 +1453,7 @@ function choppergunner_handlethermalswitch( thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x414b
 // Size: 0x1af
 function choppergunner_handlethermalswitchinternal()
@@ -1482,7 +1482,8 @@ function choppergunner_handlethermalswitchinternal()
         thermaltoggle = 1;
     }
     
-    for (thermalstate = 1; true; thermalstate = 0) {
+    for ( thermalstate = 1; true ; thermalstate = 0 )
+    {
         var_a95a67a21665324a setclientomnvar( "ui_killstreak_thermal_mode", thermalstate );
         var_a95a67a21665324a killstreak_setmainvision( self.currentvisionset );
         var_a95a67a21665324a waittill( "switch_thermal_mode" );
@@ -1516,7 +1517,7 @@ function choppergunner_handlethermalswitchinternal()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4302
 // Size: 0x4e3
 function choppergunner_handlemissilefire( thirdperson )
@@ -1636,7 +1637,7 @@ function choppergunner_handlemissilefire( thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47ed
 // Size: 0x6e
 function choppergunner_refillmissiles()
@@ -1650,7 +1651,7 @@ function choppergunner_refillmissiles()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4863
 // Size: 0x16b
 function choppergunner_watchturretfire( thirdperson )
@@ -1696,7 +1697,7 @@ function choppergunner_watchturretfire( thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49d6
 // Size: 0x44
 function choppergunner_firemissilefx( missileindex )
@@ -1709,7 +1710,7 @@ function choppergunner_firemissilefx( missileindex )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a22
 // Size: 0x2b
 function choppergunner_watchmissilestate( missiletargetpos )
@@ -1724,7 +1725,7 @@ function choppergunner_watchmissilestate( missiletargetpos )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a55
 // Size: 0x73
 function choppergunner_watchlifetime( thirdperson )
@@ -1741,7 +1742,7 @@ function choppergunner_watchlifetime( thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ad0
 // Size: 0x75
 function choppergunner_watchgameendleave( thirdperson )
@@ -1758,7 +1759,7 @@ function choppergunner_watchgameendleave( thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b4d
 // Size: 0x14d
 function function_c7c48aed42b53d29( thirdperson )
@@ -1826,7 +1827,7 @@ function function_c7c48aed42b53d29( thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ca2
 // Size: 0x61
 function choppergunner_watchownerexitaction( exitaction )
@@ -1849,7 +1850,7 @@ function choppergunner_watchownerexitaction( exitaction )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d0b
 // Size: 0x1e2
 function choppergunner_watchtargets()
@@ -1914,7 +1915,7 @@ function choppergunner_watchtargets()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ef5
 // Size: 0xc8
 function choppergunner_getnearbytargets( maintarget )
@@ -1941,7 +1942,7 @@ function choppergunner_getnearbytargets( maintarget )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4fc6
 // Size: 0x140
 function function_f6a755e207671291()
@@ -1986,7 +1987,7 @@ function function_f6a755e207671291()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x510e
 // Size: 0x49
 function choppergunner_watchkills()
@@ -2004,7 +2005,7 @@ function choppergunner_watchkills()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x515f
 // Size: 0x49
 function function_708f19cf8e854691()
@@ -2022,7 +2023,7 @@ function function_708f19cf8e854691()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51b0
 // Size: 0x23e
 function choppergunner_leave( thirdperson )
@@ -2098,7 +2099,7 @@ function choppergunner_leave( thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53f6
 // Size: 0x5e
 function choppergunner_getpathend()
@@ -2112,7 +2113,7 @@ function choppergunner_getpathend()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x545d
 // Size: 0x39, Type: bool
 function function_623713927a33cb76( data )
@@ -2123,7 +2124,7 @@ function function_623713927a33cb76( data )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x549f
 // Size: 0x195, Type: bool
 function function_ade353d9afc0d191( data )
@@ -2162,7 +2163,7 @@ function function_ade353d9afc0d191( data )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x563d
 // Size: 0x3a
 function function_30e33dc1b5a3d096()
@@ -2172,7 +2173,7 @@ function function_30e33dc1b5a3d096()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x567f
 // Size: 0x3a
 function function_9a86620d2c95b213()
@@ -2182,7 +2183,7 @@ function function_9a86620d2c95b213()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56c1
 // Size: 0x3a
 function function_5df4204110a49163()
@@ -2192,7 +2193,7 @@ function function_5df4204110a49163()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5703
 // Size: 0x3f, Type: bool
 function choppergunner_handledeathdamage( data )
@@ -2203,7 +2204,7 @@ function choppergunner_handledeathdamage( data )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x574b
 // Size: 0xce
 function function_2b17aa319c193951( attacker, killedbyweapon )
@@ -2234,7 +2235,7 @@ function function_2b17aa319c193951( attacker, killedbyweapon )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5821
 // Size: 0x184
 function choppergunner_crash( speed, weaponkilledby, var_c5adb13be635c61a )
@@ -2286,7 +2287,7 @@ function choppergunner_crash( speed, weaponkilledby, var_c5adb13be635c61a )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59ad
 // Size: 0x4c
 function choppergunner_spinout( speed )
@@ -2302,7 +2303,7 @@ function choppergunner_spinout( speed )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a01
 // Size: 0x1be
 function choppergunner_findcrashposition( crashdist )
@@ -2387,7 +2388,7 @@ function choppergunner_findcrashposition( crashdist )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bc8
 // Size: 0x8e
 function choppergunner_explode()
@@ -2412,7 +2413,7 @@ function choppergunner_explode()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c5e
 // Size: 0x180
 function choppergunner_delete( wasdestroyed )
@@ -2472,7 +2473,7 @@ function choppergunner_delete( wasdestroyed )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5de6
 // Size: 0x287
 function choppergunner_returnplayer( crashing, thirdperson )
@@ -2565,7 +2566,7 @@ function choppergunner_returnplayer( crashing, thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6075
 // Size: 0xc2
 function function_70ff764379be5089( owner, crashing, thirdperson, streakinfo )
@@ -2602,7 +2603,7 @@ function function_70ff764379be5089( owner, crashing, thirdperson, streakinfo )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x613f
 // Size: 0x5e
 function choppergunner_watchearlyexit( thirdperson )
@@ -2621,7 +2622,7 @@ function choppergunner_watchearlyexit( thirdperson )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x61a5
 // Size: 0x15f
 function choppergunner_handlemissiledetection( player, missileteam, missiletarget, fxtagoverride )
@@ -2673,7 +2674,7 @@ function choppergunner_handlemissiledetection( player, missileteam, missiletarge
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x630c
 // Size: 0xc, Type: bool
 function isusingchoppergunner()
@@ -2682,7 +2683,7 @@ function isusingchoppergunner()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6321
 // Size: 0x86
 function choppergunner_watchexplosioninfluencepoint( owner, lifetime, radius, height )
@@ -2699,7 +2700,7 @@ function choppergunner_watchexplosioninfluencepoint( owner, lifetime, radius, he
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63af
 // Size: 0x18
 function function_20b002475b7af53b( data )
@@ -2711,7 +2712,7 @@ function function_20b002475b7af53b( data )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63cf
 // Size: 0xa5
 function function_c77d8b1c3a992f19( var_5e0676140eecdf2d )
@@ -2740,7 +2741,7 @@ function function_c77d8b1c3a992f19( var_5e0676140eecdf2d )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x647d
 // Size: 0x64
 function function_546c923a292bab24( lighting_info )
@@ -2758,7 +2759,7 @@ function function_546c923a292bab24( lighting_info )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64e9
 // Size: 0x92
 function function_38101db6ed950f17( lighting_info )
@@ -2778,7 +2779,7 @@ function function_38101db6ed950f17( lighting_info )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6583
 // Size: 0x64
 function function_2926a76719559d56()
@@ -2795,7 +2796,7 @@ function function_2926a76719559d56()
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65f0
 // Size: 0x268
 function function_d33b650337c6008b( data )
@@ -2871,7 +2872,7 @@ function function_d33b650337c6008b( data )
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6860
 // Size: 0x177
 function function_5d7ccdfe51a3807()
@@ -2906,7 +2907,7 @@ function function_5d7ccdfe51a3807()
 /#
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x69df
     // Size: 0x4a, Type: dev
     function function_750ac5d7f30cbbf8( choppergunner )
@@ -2923,7 +2924,7 @@ function function_5d7ccdfe51a3807()
     }
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6a31
     // Size: 0xa8, Type: dev
     function function_dc4cb73de48ec3d6()
@@ -2959,7 +2960,7 @@ function function_5d7ccdfe51a3807()
     }
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6ae1
     // Size: 0x55, Type: dev
     function function_8ad708731e47d367()

@@ -5,7 +5,7 @@
 #namespace purchasemenu;
 
 // Namespace purchasemenu / scripts\cp_mp\purchasemenu
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0
 // Size: 0x163
 function init()
@@ -41,7 +41,7 @@ function init()
 }
 
 // Namespace purchasemenu / scripts\cp_mp\purchasemenu
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20b
 // Size: 0x193
 function function_904f24ea774b8f6f( menuref, itemindex )
@@ -88,7 +88,7 @@ function function_904f24ea774b8f6f( menuref, itemindex )
 }
 
 // Namespace purchasemenu / scripts\cp_mp\purchasemenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a6
 // Size: 0x2e0
 function function_61a76cc038f69d62( menubundlename )
@@ -155,7 +155,7 @@ function function_61a76cc038f69d62( menubundlename )
 }
 
 // Namespace purchasemenu / scripts\cp_mp\purchasemenu
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x68f
 // Size: 0x1c
 function function_cfd0e1fb13d7e080( ref )
@@ -167,7 +167,7 @@ function function_cfd0e1fb13d7e080( ref )
 }
 
 // Namespace purchasemenu / scripts\cp_mp\purchasemenu
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6b3
 // Size: 0x46
 function function_fcb72b7f642e750e( ref, index )
@@ -179,7 +179,7 @@ function function_fcb72b7f642e750e( ref, index )
 }
 
 // Namespace purchasemenu / scripts\cp_mp\purchasemenu
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x701
 // Size: 0x41, Type: bool
 function function_5c9b6f1c3c67dd97( menuref, channel )

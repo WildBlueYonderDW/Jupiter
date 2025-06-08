@@ -12,7 +12,7 @@
 #namespace jup_ob_enemy_specialist_rusher;
 
 // Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cd
 // Size: 0x212
 function main()
@@ -59,7 +59,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e7
 // Size: 0x57
 function setup_model()
@@ -76,7 +76,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x546
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -85,7 +85,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x557
 // Size: 0xcf
 function precache()
@@ -114,7 +114,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62e
 // Size: 0x104
 function setup_weapons()

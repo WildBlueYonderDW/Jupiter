@@ -36,7 +36,7 @@
 #namespace juggernaut;
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0c
 // Size: 0xcf
 function init()
@@ -54,7 +54,7 @@ function init()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xae3
 // Size: 0xb5b, Type: bool
 function jugg_makejuggernaut( juggconfig, streakinfo, bundle )
@@ -81,7 +81,7 @@ function jugg_makejuggernaut( juggconfig, streakinfo, bundle )
         return false;
     }
     
-    var_8a867002df857d70 = validstance != self getstance();
+    needtochangestance = validstance != self getstance();
     self.isjuggernaut = 1;
     scripts\mp\battlechatter_mp::disablebattlechatter( self );
     scripts\mp\equipment\gas_grenade::gas_updateplayereffects();
@@ -298,7 +298,7 @@ function jugg_makejuggernaut( juggconfig, streakinfo, bundle )
     {
         self setstance( "stand" );
     }
-    else if ( var_8a867002df857d70 )
+    else if ( needtochangestance )
     {
         self setstance( validstance );
     }
@@ -320,7 +320,7 @@ function jugg_makejuggernaut( juggconfig, streakinfo, bundle )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1647
 // Size: 0x2f8
 function jugg_removejuggernaut( is_death )
@@ -419,7 +419,7 @@ function jugg_removejuggernaut( is_death )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1947
 // Size: 0x293
 function jugg_createconfig( skipallows, additionalallows )
@@ -468,7 +468,7 @@ function jugg_createconfig( skipallows, additionalallows )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1be3
 // Size: 0xb9
 function jugg_toggleallows( allows, allowed )
@@ -499,7 +499,7 @@ function jugg_toggleallows( allows, allowed )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ca4
 // Size: 0x48
 function jugg_getdefaultclassstruct()
@@ -512,7 +512,7 @@ function jugg_getdefaultclassstruct()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cf5
 // Size: 0x2ad
 function jugg_watchmusictoggle( streakname )
@@ -627,7 +627,7 @@ function jugg_watchmusictoggle( streakname )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1faa
 // Size: 0x2f
 function jugg_watchfordeath()
@@ -643,7 +643,7 @@ function jugg_watchfordeath()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fe1
 // Size: 0x6f
 function jugg_watchforgameend()
@@ -659,7 +659,7 @@ function jugg_watchforgameend()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2058
 // Size: 0x53
 function jugg_watchfordisconnect()
@@ -676,7 +676,7 @@ function jugg_watchfordisconnect()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20b3
 // Size: 0x52
 function jugg_watchforfire()
@@ -695,7 +695,7 @@ function jugg_watchforfire()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x210d
 // Size: 0xaf
 function jugg_getjuggmodels( juggconfig )
@@ -733,7 +733,7 @@ function jugg_getjuggmodels( juggconfig )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21c5
 // Size: 0x97
 function jugg_setmodel( juggconfig )
@@ -755,7 +755,7 @@ function jugg_setmodel( juggconfig )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2264
 // Size: 0x59
 function jugg_restoremodel( juggcontext )
@@ -768,7 +768,7 @@ function jugg_restoremodel( juggcontext )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22c5
 // Size: 0x1af
 function function_a5af0a72ac912a3d( juggconfig )
@@ -840,7 +840,7 @@ function function_a5af0a72ac912a3d( juggconfig )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x247d
 // Size: 0x56
 function function_e7282c5ce62c103d()
@@ -860,7 +860,7 @@ function function_e7282c5ce62c103d()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24db
 // Size: 0x19b
 function jugg_watchoverlaydamagestates( juggcontext )
@@ -925,7 +925,7 @@ function jugg_watchoverlaydamagestates( juggcontext )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x267e
 // Size: 0x8e
 function jugg_watchforoverlayexecutiontoggle()
@@ -1133,7 +1133,7 @@ function private jugg_disableoverlay( juggcontext, retainstate )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b0e
 // Size: 0x7
 function jugg_getmovespeedscalar()
@@ -1142,7 +1142,7 @@ function jugg_getmovespeedscalar()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b1e
 // Size: 0x50
 function jugg_getminigunweapon()
@@ -1153,7 +1153,7 @@ function jugg_getminigunweapon()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b77
 // Size: 0x34, Type: bool
 function jugg_canreload()
@@ -1163,7 +1163,7 @@ function jugg_canreload()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bb4
 // Size: 0x34, Type: bool
 function jugg_canuseweaponpickups()
@@ -1173,7 +1173,7 @@ function jugg_canuseweaponpickups()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bf1
 // Size: 0x59
 function jugg_managestockammo( weapon )
@@ -1192,7 +1192,7 @@ function jugg_managestockammo( weapon )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c52
 // Size: 0x5b
 function jugg_watchmanualreload( weapon, startingstockammo )
@@ -1218,7 +1218,7 @@ function jugg_watchmanualreload( weapon, startingstockammo )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2cb5
 // Size: 0x69
 function jugg_watchammo( weapon, startingstockammo )
@@ -1246,7 +1246,7 @@ function jugg_watchammo( weapon, startingstockammo )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d26
 // Size: 0x37
 function jugg_addtoactivejugglist()
@@ -1261,7 +1261,7 @@ function jugg_addtoactivejugglist()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d65
 // Size: 0x2a
 function jugg_watchforremovejugg()
@@ -1272,7 +1272,7 @@ function jugg_watchforremovejugg()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d97
 // Size: 0x3b
 function jugg_removefromactivejugglist()
@@ -1287,7 +1287,7 @@ function jugg_removefromactivejugglist()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dda
 // Size: 0x138
 function jugg_watchherodrop()
@@ -1326,7 +1326,7 @@ function jugg_watchherodrop()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f1a
 // Size: 0x10f
 function function_12928f267a4a789c( juggconfig )
@@ -1379,7 +1379,7 @@ function function_12928f267a4a789c( juggconfig )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3031
 // Size: 0x48, Type: bool
 function function_ba71f6475f1c75d9()
@@ -1418,7 +1418,7 @@ function function_ba71f6475f1c75d9()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3082
 // Size: 0x54
 function jugg_setherodropscriptable( juggconfig )
@@ -1433,7 +1433,7 @@ function jugg_setherodropscriptable( juggconfig )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30de
 // Size: 0x1b, Type: bool
 function jugg_modifyfalldamage()
@@ -1448,7 +1448,7 @@ function jugg_modifyfalldamage()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3102
 // Size: 0xbb
 function jugg_modifyvehicletoplayerdamage( originaldamage, meansofdeath )
@@ -1471,7 +1471,7 @@ function jugg_modifyvehicletoplayerdamage( originaldamage, meansofdeath )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31c6
 // Size: 0x14
 function jugg_modifyherodroptoplayerdamage( originaldamage )
@@ -1480,7 +1480,7 @@ function jugg_modifyherodroptoplayerdamage( originaldamage )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31e3
 // Size: 0x6a
 function jugg_canparachute()
@@ -1501,7 +1501,7 @@ function jugg_canparachute()
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3256
 // Size: 0xbd
 function function_8e6b2de818370baa( parts, state )
@@ -1534,7 +1534,7 @@ function function_8e6b2de818370baa( parts, state )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x331b
 // Size: 0x6d
 function function_4217f11ffb352425( damage, shitloc, smeansofdeath, attacker )
@@ -1557,7 +1557,7 @@ function function_4217f11ffb352425( damage, shitloc, smeansofdeath, attacker )
 }
 
 // Namespace juggernaut / scripts\mp\juggernaut
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3390
 // Size: 0x11d
 function function_c0aa811f7b45687c( shitloc, smeansofdeath, attacker )

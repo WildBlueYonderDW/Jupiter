@@ -4,7 +4,7 @@
 #namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs;
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x896
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x90b
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x97a
 // Size: 0x5785
 function createstructs( fe, us, cf )
@@ -1275,7 +1275,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6107
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -1284,7 +1284,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6111
 // Size: 0xe
 function cleanup()
@@ -1293,7 +1293,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6127
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -1308,7 +1308,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6199
 // Size: 0xe7
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -1345,7 +1345,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6288
 // Size: 0x1e6c
 function function_ada326e2c985bfe4( fe, us, cf )
@@ -1652,7 +1652,7 @@ function function_ada326e2c985bfe4( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x80fc
 // Size: 0x2440
 function function_bedab6055a027228( fe, us, cf )
@@ -2017,7 +2017,7 @@ function function_bedab6055a027228( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa544
 // Size: 0x19dd
 function function_c3b31077550e204e( fe, us, cf )
@@ -2281,7 +2281,7 @@ function function_c3b31077550e204e( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbf29
 // Size: 0x17df
 function function_c216b4230edf31ce( fe, us, cf )
@@ -2526,7 +2526,7 @@ function function_c216b4230edf31ce( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd710
 // Size: 0x17e5
 function function_c09eda9df0ca086c( fe, us, cf )
@@ -2771,7 +2771,7 @@ function function_c09eda9df0ca086c( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xeefd
 // Size: 0x1883
 function function_2af8caec7feab7b9( fe, us, cf )
@@ -3023,7 +3023,7 @@ function function_2af8caec7feab7b9( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10788
 // Size: 0x1783
 function function_4dfe952cc16fd18e( fe, us, cf )
@@ -3263,7 +3263,7 @@ function function_4dfe952cc16fd18e( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_activities_zombie_stronghold_cs / namespace_e00b5d3aad23cd50
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11f13
 // Size: 0x5d6
 function function_6da2952367672ac0()

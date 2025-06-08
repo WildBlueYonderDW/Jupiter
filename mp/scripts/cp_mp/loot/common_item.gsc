@@ -31,8 +31,8 @@
 #namespace common_item;
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f5
+// Params 0
+// Checksum 0x0, Offset: 0x5f4
 // Size: 0x369
 function items_init()
 {
@@ -45,7 +45,7 @@ function items_init()
     
     level.commonitem = spawnstruct();
     level.commonitem.itemcallbacks = [];
-    level.commonitem.var_882afeeb7cb0dbeb = getdvarint( @"hash_8466137c0cc23466", 500 );
+    level.commonitem.var_882afeeb7cb0dbeb = getdvarint( @"common_item_runtime_scriptable_limit", 500 );
     namespace_7c5bb630aad381e::function_200bd098377a8674( "common_items", level.commonitem.var_882afeeb7cb0dbeb, 10 );
     function_a621885d4088d15f();
     level utility::flag_init( "common_items_init" );
@@ -83,7 +83,7 @@ function items_init()
     level utility::flag_set( "common_items_init" );
     level.var_3e5d2a63c1d15191 = getdvarfloat( @"hash_3d0c37a1b0da97b3", 0.8 );
     level.var_1dfefe3988a59ae5 = getdvarint( @"hash_d7613094ea4ba91f", 0 );
-    level.var_cb89daf3a1d3e761 = getdvarint( @"hash_f621128b1ee62123", 1 );
+    level.var_cb89daf3a1d3e761 = getdvarint( @"scr_item_should_check_area", 1 );
     level.var_a0b1f76228d242e1 = getdvarint( @"hash_1761d693d5c4ded5", 5 );
     level.var_b08a4f5480f5801d = getdvarfloat( @"hash_e2cadd2e657c0c27", 0.5 );
     level.var_3a94e816b6c1f549 = getdvarfloat( @"hash_f877f79616e047c7", 0.85 );
@@ -91,7 +91,7 @@ function items_init()
     level.var_f4a8313dc2ced539 = getdvarint( @"hash_3ca29b429f678228", 1 );
     level.var_bb7795c61887fc81 = getdvarfloat( @"hash_b91d6bc7e0694ac", 2000 );
     level.commonitem.var_f6db2dc3ab7b9a12 = getdvarint( @"hash_c867bb7a1159d0a0", 0 );
-    level.commonitem.var_199caf9c010ecca9 = getdvarint( @"hash_2d97b2ef3d965139", 1 );
+    level.commonitem.var_199caf9c010ecca9 = getdvarint( @"sv_serverobject_partitioning_enabled", 1 );
     
     /#
         level thread function_b270e989412a5f67();
@@ -99,8 +99,8 @@ function items_init()
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x966
+// Params 0
+// Checksum 0x0, Offset: 0x965
 // Size: 0x33, Type: bool
 function items_isenabled()
 {
@@ -114,8 +114,8 @@ function items_isenabled()
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a2
+// Params 7
+// Checksum 0x0, Offset: 0x9a1
 // Size: 0xf8
 function function_900f562c61c6a5d6( itemtype, usefunc, var_381daafc5fc31b7f, canusefunc, var_df9b308efe82294a, var_bd286dd0c1f53098, dropitemfunc )
 {
@@ -138,8 +138,8 @@ function function_900f562c61c6a5d6( itemtype, usefunc, var_381daafc5fc31b7f, can
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa2
+// Params 3
+// Checksum 0x0, Offset: 0xaa1
 // Size: 0xdd
 function function_5958815b72ad58a0( itemtype, var_aa1252cceaef87a8, overridefunc )
 {
@@ -162,8 +162,8 @@ function function_5958815b72ad58a0( itemtype, var_aa1252cceaef87a8, overridefunc
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb87
+// Params 2
+// Checksum 0x0, Offset: 0xb86
 // Size: 0x67
 function function_4651d0094e0bd59d( itemtype, var_aa1252cceaef87a8 )
 {
@@ -176,8 +176,8 @@ function function_4651d0094e0bd59d( itemtype, var_aa1252cceaef87a8 )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf7
+// Params 4
+// Checksum 0x0, Offset: 0xbf6
 // Size: 0x2e8, Type: bool
 function function_576728d3d4486bd6( item, autouse, var_7819673a9bd72341, var_95484d8d503de3b8 )
 {
@@ -312,8 +312,8 @@ function function_576728d3d4486bd6( item, autouse, var_7819673a9bd72341, var_954
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xee8
+// Params 3
+// Checksum 0x0, Offset: 0xee7
 // Size: 0x2d2, Type: bool
 function function_de489fa2ffdb7f2d( item, autouse, var_95484d8d503de3b8 )
 {
@@ -406,8 +406,8 @@ function function_de489fa2ffdb7f2d( item, autouse, var_95484d8d503de3b8 )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c3
+// Params 2
+// Checksum 0x0, Offset: 0x11c2
 // Size: 0x50
 function function_1a95cb90efa117b8( itembundle, packedcount )
 {
@@ -418,8 +418,8 @@ function function_1a95cb90efa117b8( itembundle, packedcount )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x121c
+// Params 2
+// Checksum 0x0, Offset: 0x121b
 // Size: 0xc4
 function function_7f6f62ba8dfd0da0( itembundle, item )
 {
@@ -434,8 +434,8 @@ function function_7f6f62ba8dfd0da0( itembundle, item )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12e9
+// Params 2
+// Checksum 0x0, Offset: 0x12e8
 // Size: 0x94
 function function_a703a4241f091edc( item, time )
 {
@@ -461,8 +461,8 @@ function function_a703a4241f091edc( item, time )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1385
+// Params 3
+// Checksum 0x0, Offset: 0x1384
 // Size: 0x29b
 function items_dropitem( itembundle, count, dropstruct )
 {
@@ -515,8 +515,8 @@ function items_dropitem( itembundle, count, dropstruct )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1629
+// Params 3
+// Checksum 0x0, Offset: 0x1628
 // Size: 0x142
 function function_105c431a9b8cac6b( ref, count, dropstruct )
 {
@@ -551,8 +551,8 @@ function function_105c431a9b8cac6b( ref, count, dropstruct )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1774
+// Params 1
+// Checksum 0x0, Offset: 0x1773
 // Size: 0x1ae
 function function_23a72b496d4206c9( targetlootid )
 {
@@ -614,8 +614,8 @@ function function_23a72b496d4206c9( targetlootid )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x192b
+// Params 1
+// Checksum 0x0, Offset: 0x192a
 // Size: 0xb2, Type: bool
 function function_7ccc263b372af2bc( item )
 {
@@ -633,8 +633,8 @@ function function_7ccc263b372af2bc( item )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19e6
+// Params 0
+// Checksum 0x0, Offset: 0x19e5
 // Size: 0x1c
 function function_fb9af6e6b3526dc6()
 {
@@ -643,8 +643,8 @@ function function_fb9af6e6b3526dc6()
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a0a
+// Params 3
+// Checksum 0x0, Offset: 0x1a09
 // Size: 0x13e
 function function_fce713259eb405d8( itembundle, itemcount, var_c3051697735d1320 )
 {
@@ -688,8 +688,8 @@ function function_fce713259eb405d8( itembundle, itemcount, var_c3051697735d1320 
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b50
+// Params 2
+// Checksum 0x0, Offset: 0x1b4f
 // Size: 0x136
 function function_61b68d989b016af3( player, var_a0115a87500b34b )
 {
@@ -731,8 +731,8 @@ function function_61b68d989b016af3( player, var_a0115a87500b34b )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c8e
+// Params 2
+// Checksum 0x0, Offset: 0x1c8d
 // Size: 0x7c
 function function_1a5ef09ec005ebf( origin, var_faa66d6f4c6c9e1d )
 {
@@ -752,8 +752,8 @@ function function_1a5ef09ec005ebf( origin, var_faa66d6f4c6c9e1d )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d12
+// Params 2
+// Checksum 0x0, Offset: 0x1d11
 // Size: 0x2f
 function function_7ab86debeff1fefd( itemtype, itemindex )
 {
@@ -764,8 +764,8 @@ function function_7ab86debeff1fefd( itemtype, itemindex )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d49
+// Params 3
+// Checksum 0x0, Offset: 0x1d48
 // Size: 0x61
 function function_ab8cf1b73aaa14( dropstruct, itembundle, itemindex )
 {
@@ -785,8 +785,8 @@ function function_ab8cf1b73aaa14( dropstruct, itembundle, itemindex )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1db2
+// Params 1
+// Checksum 0x0, Offset: 0x1db1
 // Size: 0x24
 function function_b8bfea9514c89a77( packedcount )
 {
@@ -800,8 +800,8 @@ function function_b8bfea9514c89a77( packedcount )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ddf
+// Params 1
+// Checksum 0x0, Offset: 0x1dde
 // Size: 0x25
 function function_9f9adbfb9db3d2ab( packedcount )
 {
@@ -815,8 +815,8 @@ function function_9f9adbfb9db3d2ab( packedcount )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e0d
+// Params 1
+// Checksum 0x0, Offset: 0x1e0c
 // Size: 0x24
 function function_8fd389f931f45c66( packedcount )
 {
@@ -830,8 +830,8 @@ function function_8fd389f931f45c66( packedcount )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e3a
+// Params 4
+// Checksum 0x0, Offset: 0x1e39
 // Size: 0xd6
 function function_7209c8cd4b2e3afd( itemcount, itemcountlefthand, var_dab81ead77442a10, itemcountrarity )
 {
@@ -870,8 +870,8 @@ function function_7209c8cd4b2e3afd( itemcount, itemcountlefthand, var_dab81ead77
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f19
+// Params 6
+// Checksum 0x0, Offset: 0x1f18
 // Size: 0x109
 function function_cd45408bd44fab07( listbundlename, count, origin, angles, var_14c85b39207719b8, var_57266f5ca6feebd7 )
 {
@@ -879,7 +879,8 @@ function function_cd45408bd44fab07( listbundlename, count, origin, angles, var_1
     itemsspawned = [];
     dropstruct = function_59a2e61d79065dca( var_6f0d08c8a9f06ab5.size, undefined, undefined, undefined, undefined, undefined, 27, 13 );
     
-    for (i = 0; i < var_6f0d08c8a9f06ab5.size; i++) {
+    for ( i = 0; i < var_6f0d08c8a9f06ab5.size ; i++ )
+    {
         var_8df7f401dd287a5c = var_6f0d08c8a9f06ab5[ i ];
         
         if ( !isdefined( var_8df7f401dd287a5c ) )
@@ -903,8 +904,8 @@ function function_cd45408bd44fab07( listbundlename, count, origin, angles, var_1
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x202b
+// Params 2
+// Checksum 0x0, Offset: 0x202a
 // Size: 0x20
 function function_bc2f4857c90f5344( listbundlename, count )
 {
@@ -912,8 +913,8 @@ function function_bc2f4857c90f5344( listbundlename, count )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x2054
+// Params 7
+// Checksum 0x0, Offset: 0x2053
 // Size: 0x16d
 function function_c465d27f3f6066b4( itembundle, itemorigin, itemangles, var_14c85b39207719b8, var_57266f5ca6feebd7, payload, dropstruct )
 {
@@ -955,8 +956,8 @@ function function_c465d27f3f6066b4( itembundle, itemorigin, itemangles, var_14c8
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x21ca
+// Params 8
+// Checksum 0x0, Offset: 0x21c9
 // Size: 0x6c
 function function_119bf86e1d774c3( scriptablename, itemorigin, itemangles, itemindex, totalitemcount, var_14c85b39207719b8, var_57266f5ca6feebd7, payload )
 {
@@ -972,7 +973,7 @@ function function_119bf86e1d774c3( scriptablename, itemorigin, itemangles, itemi
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x223f
+// Checksum 0x0, Offset: 0x223e
 // Size: 0x2c
 function private function_4837e73f5e8c9129()
 {
@@ -993,8 +994,8 @@ function private function_4837e73f5e8c9129()
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x2273
+// Params 9
+// Checksum 0x0, Offset: 0x2272
 // Size: 0x17b
 function function_d59d110ccf0f5b8b( dropbundle, dropcount, droporigin, dropangles, var_14c85b39207719b8, var_57266f5ca6feebd7, payload1, payload2, overridelifetime )
 {
@@ -1041,8 +1042,8 @@ function function_d59d110ccf0f5b8b( dropbundle, dropcount, droporigin, dropangle
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23f7
+// Params 1
+// Checksum 0x0, Offset: 0x23f6
 // Size: 0x175
 function function_8908e7c9faba929a( item )
 {
@@ -1079,8 +1080,8 @@ function function_8908e7c9faba929a( item )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2574
+// Params 1
+// Checksum 0x0, Offset: 0x2573
 // Size: 0xc3
 function function_78601a7fc032bb47( var_534a10d17a7d82c5 )
 {
@@ -1105,7 +1106,7 @@ function function_78601a7fc032bb47( var_534a10d17a7d82c5 )
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x263f
+// Checksum 0x0, Offset: 0x263e
 // Size: 0x4f
 function private function_43272b9595268864( itembundle, dropposition )
 {
@@ -1124,8 +1125,8 @@ function private function_43272b9595268864( itembundle, dropposition )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2696
+// Params 0
+// Checksum 0x0, Offset: 0x2695
 // Size: 0x2c
 function function_a621885d4088d15f()
 {
@@ -1134,8 +1135,8 @@ function function_a621885d4088d15f()
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x26ca
+// Params 2
+// Checksum 0x0, Offset: 0x26c9
 // Size: 0x2a
 function function_901913fce1c734e2( scriptablename, var_702868f226e310ec )
 {
@@ -1143,8 +1144,8 @@ function function_901913fce1c734e2( scriptablename, var_702868f226e310ec )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x26fc
+// Params 2
+// Checksum 0x0, Offset: 0x26fb
 // Size: 0x2a
 function function_e88c7dbe0f396ccb( scriptablename, func )
 {
@@ -1152,8 +1153,8 @@ function function_e88c7dbe0f396ccb( scriptablename, func )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x272e
+// Params 1
+// Checksum 0x0, Offset: 0x272d
 // Size: 0x80
 function function_edbb604348696c44( scriptablename )
 {
@@ -1177,7 +1178,7 @@ function function_edbb604348696c44( scriptablename )
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x27b7
+// Checksum 0x0, Offset: 0x27b6
 // Size: 0x26f
 function private function_fd0060992e35b410()
 {
@@ -1242,7 +1243,7 @@ function private function_fd0060992e35b410()
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2a2e
+// Checksum 0x0, Offset: 0x2a2d
 // Size: 0x21c
 function private function_754c0f10a7b580ad( listbundlename )
 {
@@ -1305,7 +1306,7 @@ function private function_754c0f10a7b580ad( listbundlename )
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2c53
+// Checksum 0x0, Offset: 0x2c52
 // Size: 0x35e
 function private function_a6275c9ae7ae1bda( itembundlename )
 {
@@ -1407,8 +1408,8 @@ function private function_a6275c9ae7ae1bda( itembundlename )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fba
+// Params 1
+// Checksum 0x0, Offset: 0x2fb9
 // Size: 0x80, Type: bool
 function function_b343caad692916aa( itembundle )
 {
@@ -1431,8 +1432,8 @@ function function_b343caad692916aa( itembundle )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3043
+// Params 1
+// Checksum 0x0, Offset: 0x3042
 // Size: 0x32, Type: bool
 function function_f0c15201c9f7e1db( scriptablename )
 {
@@ -1445,8 +1446,8 @@ function function_f0c15201c9f7e1db( scriptablename )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x307e
+// Params 1
+// Checksum 0x0, Offset: 0x307d
 // Size: 0x20
 function function_cca8bbe88a39ad41( itemtype )
 {
@@ -1454,8 +1455,8 @@ function function_cca8bbe88a39ad41( itemtype )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30a7
+// Params 1
+// Checksum 0x0, Offset: 0x30a6
 // Size: 0x5c
 function function_fc925a153c7fd55c( lootid )
 {
@@ -1475,8 +1476,8 @@ function function_fc925a153c7fd55c( lootid )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x310c
+// Params 1
+// Checksum 0x0, Offset: 0x310b
 // Size: 0x34
 function function_2b10ba6fb19dccd9( lootid )
 {
@@ -1491,8 +1492,8 @@ function function_2b10ba6fb19dccd9( lootid )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3149
+// Params 1
+// Checksum 0x0, Offset: 0x3148
 // Size: 0x27
 function function_b4dd67b39cbb2f31( lootid )
 {
@@ -1504,8 +1505,8 @@ function function_b4dd67b39cbb2f31( lootid )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3179
+// Params 1
+// Checksum 0x0, Offset: 0x3178
 // Size: 0x31
 function function_2cdc55ba39d97d70( scriptablename )
 {
@@ -1518,8 +1519,8 @@ function function_2cdc55ba39d97d70( scriptablename )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31b3
+// Params 1
+// Checksum 0x0, Offset: 0x31b2
 // Size: 0x27
 function function_8daeb22f16cf4ce9( scriptablename )
 {
@@ -1531,8 +1532,8 @@ function function_8daeb22f16cf4ce9( scriptablename )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31e3
+// Params 1
+// Checksum 0x0, Offset: 0x31e2
 // Size: 0x20
 function function_61d960957fcf3ca0( ref )
 {
@@ -1540,8 +1541,8 @@ function function_61d960957fcf3ca0( ref )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x320c
+// Params 1
+// Checksum 0x0, Offset: 0x320b
 // Size: 0x101
 function function_1749413ee00b69f( scriptablename )
 {
@@ -1590,8 +1591,8 @@ function function_1749413ee00b69f( scriptablename )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3316
+// Params 1
+// Checksum 0x0, Offset: 0x3315
 // Size: 0x27
 function function_467f0c241ad05cfb( ref )
 {
@@ -1603,8 +1604,8 @@ function function_467f0c241ad05cfb( ref )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3346
+// Params 1
+// Checksum 0x0, Offset: 0x3345
 // Size: 0x77
 function function_2f759e70c6189ff0( lootid )
 {
@@ -1628,8 +1629,8 @@ function function_2f759e70c6189ff0( lootid )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33c6
+// Params 1
+// Checksum 0x0, Offset: 0x33c5
 // Size: 0x10e
 function function_f4a303d532b044a7( lootid )
 {
@@ -1669,8 +1670,8 @@ function function_f4a303d532b044a7( lootid )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34dd
+// Params 1
+// Checksum 0x0, Offset: 0x34dc
 // Size: 0x13, Type: bool
 function function_1df1b532888e29ab( itemtype )
 {
@@ -1678,8 +1679,8 @@ function function_1df1b532888e29ab( itemtype )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34f9
+// Params 2
+// Checksum 0x0, Offset: 0x34f8
 // Size: 0x72, Type: bool
 function function_1414925deba056bc( scriptablename, itemtype )
 {
@@ -1694,8 +1695,8 @@ function function_1414925deba056bc( scriptablename, itemtype )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3574
+// Params 1
+// Checksum 0x0, Offset: 0x3573
 // Size: 0x29
 function function_4ec04bdf7386d3d0( itembundle )
 {
@@ -1703,8 +1704,8 @@ function function_4ec04bdf7386d3d0( itembundle )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35a6
+// Params 1
+// Checksum 0x0, Offset: 0x35a5
 // Size: 0x5b
 function function_c7171bcea41dd66f( itembundle )
 {
@@ -1717,8 +1718,8 @@ function function_c7171bcea41dd66f( itembundle )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3609
+// Params 1
+// Checksum 0x0, Offset: 0x3608
 // Size: 0x5b
 function function_68789a2229990351( itembundle )
 {
@@ -1731,8 +1732,8 @@ function function_68789a2229990351( itembundle )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x366c
+// Params 6
+// Checksum 0x0, Offset: 0x366b
 // Size: 0x2db
 function function_ccb2889218715cb1( item, part, state, player, autouse, usestring )
 {
@@ -1816,7 +1817,7 @@ function function_ccb2889218715cb1( item, part, state, player, autouse, usestrin
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x394f
+// Checksum 0x0, Offset: 0x394e
 // Size: 0x10e
 function private function_bb2e10bb5f7e813f( item, itembundlename, itembundle )
 {
@@ -1865,7 +1866,7 @@ function private function_bb2e10bb5f7e813f( item, itembundlename, itembundle )
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3a66
+    // Checksum 0x0, Offset: 0x3a65
     // Size: 0xaf, Type: dev
     function private function_c42d7a973667ed98( lifetime )
     {
@@ -1893,8 +1894,8 @@ function private function_bb2e10bb5f7e813f( item, itembundlename, itembundle )
 #/
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b1d
+// Params 1
+// Checksum 0x0, Offset: 0x3b1c
 // Size: 0x80
 function function_33ee459f817ccf86( waitseconds )
 {
@@ -1929,8 +1930,8 @@ function function_33ee459f817ccf86( waitseconds )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ba5
+// Params 1
+// Checksum 0x0, Offset: 0x3ba4
 // Size: 0xa5
 function function_c14962ea14e58968( item )
 {
@@ -1970,8 +1971,8 @@ function function_c14962ea14e58968( item )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c52
+// Params 0
+// Checksum 0x0, Offset: 0x3c51
 // Size: 0x14f
 function function_68bb330b8e871f35()
 {
@@ -2008,8 +2009,8 @@ function function_68bb330b8e871f35()
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3da9
+// Params 6
+// Checksum 0x0, Offset: 0x3da8
 // Size: 0x20c
 function function_61e26b275dfa50e0( itembundle, itemcount, var_c3051697735d1320, stow, item, var_95484d8d503de3b8 )
 {
@@ -2060,8 +2061,8 @@ function function_61e26b275dfa50e0( itembundle, itemcount, var_c3051697735d1320,
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fbd
+// Params 2
+// Checksum 0x0, Offset: 0x3fbc
 // Size: 0x64
 function function_fbfd7096a2dbc7e7( itembundle, issuccessful )
 {
@@ -2087,8 +2088,8 @@ function function_fbfd7096a2dbc7e7( itembundle, issuccessful )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 14, eflags: 0x0
-// Checksum 0x0, Offset: 0x4029
+// Params 14
+// Checksum 0x0, Offset: 0x4028
 // Size: 0x151
 function function_59a2e61d79065dca( var_e35351de85fe342d, var_8ee5ee589d379b1, var_91170e589f9e8ff, var_82839e7264d5d15e, var_8260b07264afb13c, var_13c9c27ba11aac1a, var_808de1e892fb0269, var_6353cc9d3791853a, var_8a600b6102da9f9b, var_f71d4f78d508da69, var_6fe2ff802d5192d4, var_d8cf705570b19696, var_69f3e94ac253c6ab, var_c62a12bfca2ae58e )
 {
@@ -2112,8 +2113,8 @@ function function_59a2e61d79065dca( var_e35351de85fe342d, var_8ee5ee589d379b1, v
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4183
+// Params 0
+// Checksum 0x0, Offset: 0x4182
 // Size: 0x59
 function function_3fa6e9da3fd741f2()
 {
@@ -2126,8 +2127,8 @@ function function_3fa6e9da3fd741f2()
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x41e5
+// Params 6
+// Checksum 0x0, Offset: 0x41e4
 // Size: 0x7c5
 function function_49b86047c8a8b228( dropstruct, baseorigin, baseangles, ignoreent, var_3ace5ac9c7d6fa44, var_688e4da4cb16116d )
 {
@@ -2307,7 +2308,7 @@ function function_49b86047c8a8b228( dropstruct, baseorigin, baseangles, ignoreen
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x49b3
+// Checksum 0x0, Offset: 0x49b2
 // Size: 0x1ba
 function private function_1b451ac8cf14a6a4( dropdata, dropstruct, baseorigin )
 {
@@ -2360,7 +2361,7 @@ function private function_1b451ac8cf14a6a4( dropdata, dropstruct, baseorigin )
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 6, eflags: 0x4
-// Checksum 0x0, Offset: 0x4b75
+// Checksum 0x0, Offset: 0x4b74
 // Size: 0x182
 function private function_9b539449b8809a8( dropstruct, dropdata, baseorigin, ignoreent, tracecontents, var_551904951118b7b9 )
 {
@@ -2388,7 +2389,8 @@ function private function_9b539449b8809a8( dropstruct, dropdata, baseorigin, ign
     dropdata.outorigin -= wallgrace;
     heightchecks = level.var_f4a8313dc2ced539;
     
-    for (check = 0; check < heightchecks; check++) {
+    for ( check = 0; check < heightchecks ; check++ )
+    {
         tracestart += ( 0, 0, 10 * check );
         hightraceresults = trace::ray_trace( tracestart, traceend, ignoreent, tracecontents );
         
@@ -2403,7 +2405,7 @@ function private function_9b539449b8809a8( dropstruct, dropdata, baseorigin, ign
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 9, eflags: 0x4
-// Checksum 0x0, Offset: 0x4d00
+// Checksum 0x0, Offset: 0x4cff
 // Size: 0x353
 function private function_37e7de90990a9b95( dropstruct, dropdata, baseorigin, baseangles, ignoreent, tracecontents, retries, var_daa047868cf7a01b, var_551904951118b7b9 )
 {
@@ -2470,7 +2472,7 @@ function private function_37e7de90990a9b95( dropstruct, dropdata, baseorigin, ba
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x505b
+// Checksum 0x0, Offset: 0x505a
 // Size: 0xfb
 function private function_1bf026a5b9fdae23( dropstruct, dropdata, ignoreent, tracecontents, var_551904951118b7b9 )
 {
@@ -2499,7 +2501,7 @@ function private function_1bf026a5b9fdae23( dropstruct, dropdata, ignoreent, tra
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 7, eflags: 0x4
-// Checksum 0x0, Offset: 0x515f
+// Checksum 0x0, Offset: 0x515e
 // Size: 0x2a9
 function private function_2b84f1379888e314( dropstruct, dropdata, ignoreent, tracecontents, groundfloat, var_69f3e94ac253c6ab, var_551904951118b7b9 )
 {
@@ -2576,7 +2578,7 @@ function private function_2b84f1379888e314( dropstruct, dropdata, ignoreent, tra
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x5411
+// Checksum 0x0, Offset: 0x5410
 // Size: 0xaa
 function private function_250558a79c78739e( origin, angles, payload, groundentity )
 {
@@ -2609,8 +2611,8 @@ function private function_250558a79c78739e( origin, angles, payload, groundentit
 /#
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
-    // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0x54c4
+    // Params 5
+    // Checksum 0x0, Offset: 0x54c3
     // Size: 0x14a, Type: dev
     function function_d2d7b153b9d3889e( index, name, start, end, traceresults )
     {
@@ -2640,8 +2642,8 @@ function private function_250558a79c78739e( origin, angles, payload, groundentit
 #/
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5616
+// Params 1
+// Checksum 0x0, Offset: 0x5615
 // Size: 0x95
 function function_2c836ad05e5f634c( ref )
 {
@@ -2673,8 +2675,8 @@ function function_2c836ad05e5f634c( ref )
 }
 
 // Namespace common_item / scripts\cp_mp\loot\common_item
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x56b4
+// Params 1
+// Checksum 0x0, Offset: 0x56b3
 // Size: 0x67
 function function_6d15e119c2779a93( itembundle )
 {
@@ -2696,8 +2698,8 @@ function function_6d15e119c2779a93( itembundle )
 /#
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5724
+    // Params 0
+    // Checksum 0x0, Offset: 0x5723
     // Size: 0x88, Type: dev
     function function_b270e989412a5f67()
     {
@@ -2711,8 +2713,8 @@ function function_6d15e119c2779a93( itembundle )
     }
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x57b4
+    // Params 1
+    // Checksum 0x0, Offset: 0x57b3
     // Size: 0x11f, Type: dev
     function function_112c64fc568b602f( var_9ec97bdad14a0a5b )
     {
@@ -2746,7 +2748,7 @@ function function_6d15e119c2779a93( itembundle )
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x58db
+    // Checksum 0x0, Offset: 0x58da
     // Size: 0xc9, Type: dev
     function private draw_items()
     {
@@ -2769,7 +2771,7 @@ function function_6d15e119c2779a93( itembundle )
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x59ac
+    // Checksum 0x0, Offset: 0x59ab
     // Size: 0x38, Type: dev
     function private function_237a0fdd6c243aca()
     {
@@ -2779,7 +2781,7 @@ function function_6d15e119c2779a93( itembundle )
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
     // Params 5, eflags: 0x4
-    // Checksum 0x0, Offset: 0x59ec
+    // Checksum 0x0, Offset: 0x59eb
     // Size: 0x46, Type: dev
     function private function_4bc7f4cf12558446( origin, color, radius, depthtest, duration )
     {
@@ -2791,7 +2793,7 @@ function function_6d15e119c2779a93( itembundle )
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
     // Params 6, eflags: 0x4
-    // Checksum 0x0, Offset: 0x5a3a
+    // Checksum 0x0, Offset: 0x5a39
     // Size: 0x4f, Type: dev
     function private function_434cb1f9af023e71( start, end, color, alpha, depthtest, duration )
     {
@@ -2802,8 +2804,8 @@ function function_6d15e119c2779a93( itembundle )
     }
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5a91
+    // Params 1
+    // Checksum 0x0, Offset: 0x5a90
     // Size: 0x1b0, Type: dev
     function function_f8162124bbb6ece3( params )
     {
@@ -2850,8 +2852,8 @@ function function_6d15e119c2779a93( itembundle )
     }
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5c49
+    // Params 0
+    // Checksum 0x0, Offset: 0x5c48
     // Size: 0x83, Type: dev
     function function_963151d62c29fc95()
     {
@@ -2868,8 +2870,8 @@ function function_6d15e119c2779a93( itembundle )
     }
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5cd4
+    // Params 1
+    // Checksum 0x0, Offset: 0x5cd3
     // Size: 0x184, Type: dev
     function function_dbbe2312a3bd6d8a( params )
     {
@@ -2910,8 +2912,8 @@ function function_6d15e119c2779a93( itembundle )
     }
 
     // Namespace common_item / scripts\cp_mp\loot\common_item
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5e60
+    // Params 1
+    // Checksum 0x0, Offset: 0x5e5f
     // Size: 0x79, Type: dev
     function function_97b03590b7056070( params )
     {

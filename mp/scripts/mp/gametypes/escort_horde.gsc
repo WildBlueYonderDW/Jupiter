@@ -20,8 +20,8 @@
 #namespace escort_horde;
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x573
+// Params 0
+// Checksum 0x0, Offset: 0x572
 // Size: 0x196
 function function_3885e1d74c6f11eb()
 {
@@ -45,7 +45,7 @@ function function_3885e1d74c6f11eb()
     registersharedfunc( "escort", "isZombie", &iszombie );
     registersharedfunc( "escort", "isDogZombie", &isdogzombie );
     level.var_5622bf44905e2b1a = &function_89e10e876c0c0447;
-    setdvar( @"hash_3c4d1d9e67d42b87", 0 );
+    setdvar( @"r_identifyoldmaterial", 0 );
     setdvar( @"hash_6db0c7f59c294cb4", 20 );
     level thread spawn_zombies();
     
@@ -58,8 +58,8 @@ function function_3885e1d74c6f11eb()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x711
+// Params 0
+// Checksum 0x0, Offset: 0x710
 // Size: 0x64
 function function_89e10e876c0c0447()
 {
@@ -74,8 +74,8 @@ function function_89e10e876c0c0447()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x77d
+// Params 0
+// Checksum 0x0, Offset: 0x77c
 // Size: 0x56
 function function_f9c27bb7f1c4fedc()
 {
@@ -94,8 +94,8 @@ function function_f9c27bb7f1c4fedc()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7db
+// Params 0
+// Checksum 0x0, Offset: 0x7da
 // Size: 0xc2
 function function_7e9532b5406cfa7d()
 {
@@ -117,8 +117,8 @@ function function_7e9532b5406cfa7d()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a5
+// Params 0
+// Checksum 0x0, Offset: 0x8a4
 // Size: 0x6c
 function function_b3529ae567aafd97()
 {
@@ -138,8 +138,8 @@ function function_b3529ae567aafd97()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x919
+// Params 0
+// Checksum 0x0, Offset: 0x918
 // Size: 0x34
 function onstartgametypefinished()
 {
@@ -148,8 +148,8 @@ function onstartgametypefinished()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x955
+// Params 0
+// Checksum 0x0, Offset: 0x954
 // Size: 0x4a
 function initpostmain()
 {
@@ -169,8 +169,8 @@ function initpostmain()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a7
+// Params 1
+// Checksum 0x0, Offset: 0x9a6
 // Size: 0x21
 function function_8d9dca133b662b60( struct )
 {
@@ -183,8 +183,8 @@ function function_8d9dca133b662b60( struct )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d0
+// Params 0
+// Checksum 0x0, Offset: 0x9cf
 // Size: 0x27
 function function_f69b1a88bc3add30()
 {
@@ -197,8 +197,8 @@ function function_f69b1a88bc3add30()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ff
+// Params 1
+// Checksum 0x0, Offset: 0x9fe
 // Size: 0x19
 function function_587548933872d0b6( revived )
 {
@@ -207,8 +207,8 @@ function function_587548933872d0b6( revived )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa20
+// Params 1
+// Checksum 0x0, Offset: 0xa1f
 // Size: 0x2a
 function onplayerconnect( params )
 {
@@ -218,8 +218,8 @@ function onplayerconnect( params )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa52
+// Params 1
+// Checksum 0x0, Offset: 0xa51
 // Size: 0x8a
 function onplayerdeath( params )
 {
@@ -243,8 +243,8 @@ function onplayerdeath( params )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xae4
+// Params 1
+// Checksum 0x0, Offset: 0xae3
 // Size: 0x13
 function onjoinedteam( player )
 {
@@ -252,8 +252,8 @@ function onjoinedteam( player )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaff
+// Params 1
+// Checksum 0x0, Offset: 0xafe
 // Size: 0x54
 function function_4f64cc518d710ee1( halftime )
 {
@@ -275,8 +275,8 @@ function function_4f64cc518d710ee1( halftime )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5b
+// Params 1
+// Checksum 0x0, Offset: 0xb5a
 // Size: 0x3a
 function onspawnplayer( params )
 {
@@ -291,8 +291,8 @@ function onspawnplayer( params )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb9d
+// Params 0
+// Checksum 0x0, Offset: 0xb9c
 // Size: 0x48
 function onspawnfinished()
 {
@@ -309,8 +309,8 @@ function onspawnfinished()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbed
+// Params 0
+// Checksum 0x0, Offset: 0xbec
 // Size: 0x3f
 function function_3cd7aabb0e5dd22f()
 {
@@ -329,8 +329,8 @@ function function_3cd7aabb0e5dd22f()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc34
+// Params 0
+// Checksum 0x0, Offset: 0xc33
 // Size: 0xa0
 function onmaprestart()
 {
@@ -347,8 +347,8 @@ function onmaprestart()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcdc
+// Params 1
+// Checksum 0x0, Offset: 0xcdb
 // Size: 0xb
 function ononeleftevent( team )
 {
@@ -356,8 +356,8 @@ function ononeleftevent( team )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcef
+// Params 1
+// Checksum 0x0, Offset: 0xcee
 // Size: 0x29, Type: bool
 function function_61c226745cc230bd( player )
 {
@@ -375,8 +375,8 @@ function function_61c226745cc230bd( player )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd21
+// Params 1
+// Checksum 0x0, Offset: 0xd20
 // Size: 0x4e
 function function_39a600444016629e( params )
 {
@@ -394,8 +394,8 @@ function function_39a600444016629e( params )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd77
+// Params 0
+// Checksum 0x0, Offset: 0xd76
 // Size: 0x1f4
 function function_4c09404e1f472457()
 {
@@ -480,8 +480,8 @@ function function_4c09404e1f472457()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf73
+// Params 2
+// Checksum 0x0, Offset: 0xf72
 // Size: 0x37
 function function_5e5f1db1c49f9fa( class, func )
 {
@@ -494,8 +494,8 @@ function function_5e5f1db1c49f9fa( class, func )
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb2
+// Params 0
+// Checksum 0x0, Offset: 0xfb1
 // Size: 0x2d
 function function_7042d138b3d8a4f4()
 {
@@ -511,8 +511,8 @@ function function_7042d138b3d8a4f4()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe7
+// Params 0
+// Checksum 0x0, Offset: 0xfe6
 // Size: 0x2d, Type: bool
 function allowclasschoicefunc()
 {
@@ -531,8 +531,8 @@ function allowclasschoicefunc()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x101d
+// Params 0
+// Checksum 0x0, Offset: 0x101c
 // Size: 0x1be
 function spawn_zombies()
 {
@@ -592,8 +592,8 @@ function spawn_zombies()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e3
+// Params 0
+// Checksum 0x0, Offset: 0x11e2
 // Size: 0x7c
 function function_ca3bbb75a4e56ba2()
 {
@@ -606,8 +606,8 @@ function function_ca3bbb75a4e56ba2()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1268
+// Params 0
+// Checksum 0x0, Offset: 0x1267
 // Size: 0x20, Type: bool
 function isdogzombie()
 {
@@ -615,8 +615,8 @@ function isdogzombie()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1291
+// Params 0
+// Checksum 0x0, Offset: 0x1290
 // Size: 0x5f
 function iszombie()
 {
@@ -641,8 +641,8 @@ function iszombie()
 }
 
 // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f9
+// Params 1
+// Checksum 0x0, Offset: 0x12f8
 // Size: 0x1bc
 function function_ca5d00ef2a435d1f( struct )
 {
@@ -688,8 +688,8 @@ function function_ca5d00ef2a435d1f( struct )
 /#
 
     // Namespace escort_horde / scripts\mp\gametypes\escort_horde
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14bd
+    // Params 0
+    // Checksum 0x0, Offset: 0x14bc
     // Size: 0x96, Type: dev
     function function_a3942567e9f08fb2()
     {

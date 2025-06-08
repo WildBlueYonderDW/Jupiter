@@ -26,7 +26,7 @@
 #namespace exfil;
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x862
 // Size: 0x1c
 function exfilinit()
@@ -35,7 +35,7 @@ function exfilinit()
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x886
 // Size: 0x147
 function onexfilstart( winner, getexfilloccallback, var_7c52b433f53d39ee, onexfilkilled )
@@ -69,7 +69,7 @@ function onexfilstart( winner, getexfilloccallback, var_7c52b433f53d39ee, onexfi
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d5
 // Size: 0xa0
 function removeallobjids()
@@ -89,7 +89,7 @@ function removeallobjids()
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa7d
 // Size: 0x82
 function runexfil( winner, onhelikilled )
@@ -105,7 +105,7 @@ function runexfil( winner, onhelikilled )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb07
 // Size: 0x72
 function spawnexfilplayers( winner )
@@ -118,7 +118,7 @@ function spawnexfilplayers( winner )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb81
 // Size: 0x8e
 function skipkillcamandspawn()
@@ -135,7 +135,7 @@ function skipkillcamandspawn()
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc17
 // Size: 0x456
 function spawnexfilzone( winner )
@@ -149,7 +149,8 @@ function spawnexfilzone( winner )
         primaryflags = getentarray( "flag_primary", "targetname" );
         triggers = [];
         
-        for (index = 0; index < primaryflags.size; index++) {
+        for ( index = 0; index < primaryflags.size ; index++ )
+        {
             triggers[ triggers.size ] = primaryflags[ index ];
         }
         
@@ -225,7 +226,7 @@ function spawnexfilzone( winner )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1075
 // Size: 0x77
 function goaltriggerwatcher( player )
@@ -247,7 +248,7 @@ function goaltriggerwatcher( player )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f4
 // Size: 0x72
 function watchforexfilactive( winner )
@@ -263,7 +264,7 @@ function watchforexfilactive( winner )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x116e
 // Size: 0xfb
 function runexfilnotactivefill( winner )
@@ -295,7 +296,7 @@ function runexfilnotactivefill( winner )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1271
 // Size: 0x101
 function runexfilwaitactiveunfill( winner )
@@ -324,7 +325,7 @@ function runexfilwaitactiveunfill( winner )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x137a
 // Size: 0xc4
 function switchtoexfilweapons( winner, exfilweapon )
@@ -348,7 +349,7 @@ function switchtoexfilweapons( winner, exfilweapon )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1446
 // Size: 0x2b
 function switchtoexfilweapon( exfilweapon )
@@ -363,7 +364,7 @@ function switchtoexfilweapon( exfilweapon )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1479
 // Size: 0x20
 function onexfiltimelimit()
@@ -377,7 +378,7 @@ function onexfiltimelimit()
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14a1
 // Size: 0x115
 function onexfilsuccess( player )
@@ -403,7 +404,7 @@ function onexfilsuccess( player )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15be
 // Size: 0x17
 function stopunfillthread( time )
@@ -413,7 +414,7 @@ function stopunfillthread( time )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15dd
 // Size: 0x251
 function assignhelitoexfilpoint( onhelikilled, timeoffsetnum, team )
@@ -457,7 +458,7 @@ function assignhelitoexfilpoint( onhelikilled, timeoffsetnum, team )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1836
 // Size: 0x24
 function createextractvfx()
@@ -467,7 +468,7 @@ function createextractvfx()
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1862
 // Size: 0x8b
 function exfilpilotactorthink( team, scene_node, scene_name, extra_crew )
@@ -488,7 +489,7 @@ function exfilpilotactorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x18f5
 // Size: 0x4a
 function exfilactorthinkpath( team, scene_node, scene_name, extra_crew )
@@ -498,7 +499,7 @@ function exfilactorthinkpath( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1947
 // Size: 0x25
 function exfilactorloopthink( actor )
@@ -508,7 +509,7 @@ function exfilactorloopthink( actor )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1974
 // Size: 0x2c
 function exfilactorloop( actor )
@@ -522,7 +523,7 @@ function exfilactorloop( actor )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x19a8
 // Size: 0xc1
 function exfilactorthinkanim( team, scene_node, scene_name, extra_crew )
@@ -540,7 +541,7 @@ function exfilactorthinkanim( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a71
 // Size: 0xac
 function spawnexfilpilotactors( team, scene_name, extra_crew )
@@ -558,7 +559,7 @@ function spawnexfilpilotactors( team, scene_name, extra_crew )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1b26
 // Size: 0x178
 function exfil_spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -597,7 +598,7 @@ function exfil_spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ca7
 // Size: 0x54
 function bugoutontimeout( heli )
@@ -609,7 +610,7 @@ function bugoutontimeout( heli )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d03
 // Size: 0x98
 function forcelinkgoaltriggerwatcher( heli )
@@ -636,7 +637,7 @@ function forcelinkgoaltriggerwatcher( heli )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1da3
 // Size: 0x97
 function exfilusetriggerused( player, seatnum, var_7838d4d4a6f522d6 )
@@ -659,7 +660,7 @@ function exfilusetriggerused( player, seatnum, var_7838d4d4a6f522d6 )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e42
 // Size: 0xab
 function waitforsquadthenleave( player )
@@ -682,7 +683,7 @@ function waitforsquadthenleave( player )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ef5
 // Size: 0x80
 function disableotherseats( player, usedseat, var_7838d4d4a6f522d6 )
@@ -699,7 +700,7 @@ function disableotherseats( player, usedseat, var_7838d4d4a6f522d6 )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f7d
 // Size: 0xbd
 function enableexitprompt( usedseat, vehicle, var_7838d4d4a6f522d6 )
@@ -720,7 +721,7 @@ function enableexitprompt( usedseat, vehicle, var_7838d4d4a6f522d6 )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2042
 // Size: 0xfb
 function exfil_hopoff_think( vehicle, player, usedseat, var_7838d4d4a6f522d6 )
@@ -748,7 +749,7 @@ function exfil_hopoff_think( vehicle, player, usedseat, var_7838d4d4a6f522d6 )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2145
 // Size: 0x8c
 function playerlinktochopper( player, heli, linktotag )
@@ -769,7 +770,7 @@ function playerlinktochopper( player, heli, linktotag )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21d9
 // Size: 0x1f8
 function playeranimlinktochopper( exfil, spot_index )
@@ -781,7 +782,8 @@ function playeranimlinktochopper( exfil, spot_index )
     
     if ( !isdefined( spot_index ) )
     {
-        for (i = 0; i < exfil.passengers.size; i++) {
+        for ( i = 0; i < exfil.passengers.size ; i++ )
+        {
             if ( exfil.passengers[ i ] == exfil.extractzone )
             {
                 exfil.passengers[ i ] = self;
@@ -824,7 +826,7 @@ function playeranimlinktochopper( exfil, spot_index )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23d9
 // Size: 0x52
 function rideloop( exfil )
@@ -842,7 +844,7 @@ function rideloop( exfil )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2433
 // Size: 0x86
 function exfilleavesequence( nukeposition, endgame )
@@ -868,7 +870,7 @@ function exfilleavesequence( nukeposition, endgame )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24c1
 // Size: 0x24
 function waitthenendgame( winningteam )
@@ -878,14 +880,15 @@ function waitthenendgame( winningteam )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24ed
 // Size: 0x57
 function doexfilsplashforpassengers()
 {
     wait 1;
     
-    for (i = 0; i < self.passengers.size; i++) {
+    for ( i = 0; i < self.passengers.size ; i++ )
+    {
         if ( self.passengers[ i ] != self.extractzone )
         {
             self.passengers[ i ] thread scripts\mp\hud_message::showsplash( "callout_exfil_success" );
@@ -894,7 +897,7 @@ function doexfilsplashforpassengers()
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x254c
 // Size: 0xfa
 function init_useprompt_interactions( player )
@@ -915,7 +918,7 @@ function init_useprompt_interactions( player )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x264e
 // Size: 0xc0
 function create_exfil_interaction( loc, hintstring, seatnum, player )
@@ -936,7 +939,7 @@ function create_exfil_interaction( loc, hintstring, seatnum, player )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2716
 // Size: 0x61
 function exfil_use_think( vehicle, seatnum, player )
@@ -959,7 +962,7 @@ function exfil_use_think( vehicle, seatnum, player )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x277f
 // Size: 0x1b
 function makechopperseatteamusable( team )
@@ -969,7 +972,7 @@ function makechopperseatteamusable( team )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27a2
 // Size: 0x1b
 function makechopperseatplayerusable( player )
@@ -979,7 +982,7 @@ function makechopperseatplayerusable( player )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27c5
 // Size: 0x9c
 function _updatechopperseatteamusable( team )
@@ -1006,7 +1009,7 @@ function _updatechopperseatteamusable( team )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2869
 // Size: 0x92
 function _updatechopperseatplayerusable( useplayer )
@@ -1033,7 +1036,7 @@ function _updatechopperseatplayerusable( useplayer )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2903
 // Size: 0xc5
 function playannouncerbattlechatter( team, soundname, suffix )
@@ -1055,7 +1058,7 @@ function playannouncerbattlechatter( team, soundname, suffix )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29d0
 // Size: 0x26
 function votimeendingsoon()
@@ -1066,7 +1069,7 @@ function votimeendingsoon()
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x29fe
 // Size: 0x7a
 function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -1078,7 +1081,7 @@ function commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
 }
 
 // Namespace exfil / scripts\mp\gametypes\exfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a80
 // Size: 0x2
 function script_model_exfil_anims()

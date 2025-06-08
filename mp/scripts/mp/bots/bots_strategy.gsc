@@ -8,7 +8,7 @@
 #namespace bots_strategy;
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7af
 // Size: 0x3d
 function bot_defend_get_random_entrance_point_for_current_area()
@@ -24,7 +24,7 @@ function bot_defend_get_random_entrance_point_for_current_area()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f5
 // Size: 0x33
 function bot_defend_get_precalc_entrances_for_current_area( stance, var_fecd5903478d0482 )
@@ -38,13 +38,13 @@ function bot_defend_get_precalc_entrances_for_current_area( stance, var_fecd5903
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x831
 // Size: 0x213
 function bot_get_ambush_trap_item( var_d5160e708615340, var_d5163e7086159d9, var_d5162e7086157a6 )
 {
     /#
-        if ( getdvarint( @"hash_6ce01b6572751b18" ) == 1 )
+        if ( getdvarint( @"bot_disableattack" ) == 1 )
         {
             return undefined;
         }
@@ -118,7 +118,7 @@ function bot_get_ambush_trap_item( var_d5160e708615340, var_d5163e7086159d9, var
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xa4c
 // Size: 0x4c9, Type: bool
 function bot_set_ambush_trap( trap_item, ambush_entrances, ambush_node, ambush_yaw, trap_node )
@@ -270,7 +270,7 @@ function bot_set_ambush_trap( trap_item, ambush_entrances, ambush_node, ambush_y
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf1e
 // Size: 0x28
 function bot_try_use_ambush_item( button )
@@ -285,7 +285,7 @@ function bot_try_use_ambush_item( button )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf4e
 // Size: 0x41
 function bot_set_ambush_trap_wait_fire( waitingfor )
@@ -299,7 +299,7 @@ function bot_set_ambush_trap_wait_fire( waitingfor )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf97
 // Size: 0xbc
 function bot_watch_manual_detonate( grenade, range )
@@ -329,7 +329,7 @@ function bot_watch_manual_detonate( grenade, range )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x105b
 // Size: 0x2b
 function bot_capture_point( point, radius, optional_params )
@@ -338,7 +338,7 @@ function bot_capture_point( point, radius, optional_params )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x108e
 // Size: 0x72
 function bot_capture_zone( point, nodes, capture_trigger, optional_params )
@@ -358,7 +358,7 @@ function bot_capture_zone( point, nodes, capture_trigger, optional_params )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1108
 // Size: 0x63
 function bot_protect_point( point, radius, optional_params )
@@ -377,7 +377,7 @@ function bot_protect_point( point, radius, optional_params )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1173
 // Size: 0x90
 function bot_protect_zone( nodes, defend_point, uniqueid, optional_params )
@@ -402,7 +402,7 @@ function bot_protect_zone( nodes, defend_point, uniqueid, optional_params )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x120b
 // Size: 0x69
 function bot_patrol_area( point, radius, optional_params )
@@ -421,7 +421,7 @@ function bot_patrol_area( point, radius, optional_params )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x127c
 // Size: 0x63
 function bot_guard_player( player, radius, optional_params )
@@ -440,7 +440,7 @@ function bot_guard_player( player, radius, optional_params )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12e7
 // Size: 0x19, Type: bool
 function bot_defend_requires_center( defense_type )
@@ -454,7 +454,7 @@ function bot_defend_requires_center( defense_type )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1309
 // Size: 0xb59
 function bot_defend_think( defendcenter, defendradius, defense_type, optional_params )
@@ -630,7 +630,8 @@ function bot_defend_think( defendcenter, defendradius, defense_type, optional_pa
             defend_center = defend_valid_center();
             nodes = getnodesinradiussorted( defend_center, 256, 0 );
             
-            for (i = 0; i < nodes.size; i++) {
+            for ( i = 0; i < nodes.size ; i++ )
+            {
                 var_594f44744fb80561 = vectornormalize( nodes[ i ].origin - defend_center );
                 trace_start = defend_center + var_594f44744fb80561 * 15;
                 
@@ -855,7 +856,7 @@ function bot_defend_think( defendcenter, defendradius, defense_type, optional_pa
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e6a
 // Size: 0x166
 function calculate_defend_stance( var_81a934c1f7d7e976, var_97df6ee9f2fe6188 )
@@ -922,7 +923,7 @@ function calculate_defend_stance( var_81a934c1f7d7e976, var_97df6ee9f2fe6188 )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fd9
 // Size: 0xe1
 function should_start_cautious_approach_default( firstcheck )
@@ -955,7 +956,7 @@ function should_start_cautious_approach_default( firstcheck )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20c2
 // Size: 0x8d
 function setup_investigate_location( node, optional_location )
@@ -978,7 +979,7 @@ function setup_investigate_location( node, optional_location )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2158
 // Size: 0x6f8
 function defense_cautious_approach()
@@ -1071,15 +1072,15 @@ function defense_cautious_approach()
     }
     
     self.locations_to_investigate = [];
-    var_e83c82adfbdaafb4 = 1000;
+    radius_around_point = 1000;
     
     if ( isdefined( level.protect_radius ) )
     {
-        var_e83c82adfbdaafb4 = level.protect_radius;
+        radius_around_point = level.protect_radius;
     }
     
-    var_51ca426712b96df5 = var_e83c82adfbdaafb4 * var_e83c82adfbdaafb4;
-    var_b3464eeebef71679 = getnodesinradius( self.bot_defending_center, var_e83c82adfbdaafb4, 0, 500 );
+    var_51ca426712b96df5 = radius_around_point * radius_around_point;
+    var_b3464eeebef71679 = getnodesinradius( self.bot_defending_center, radius_around_point, 0, 500 );
     
     if ( var_b3464eeebef71679.size <= 0 )
     {
@@ -1090,7 +1091,8 @@ function defense_cautious_approach()
     var_f570f5d5d761c173 = int( min( var_8529e9f32cf6579c, var_b3464eeebef71679.size ) );
     var_b784196cf6d9c696 = self botnodepickmultiple( var_b3464eeebef71679, 15, var_f570f5d5d761c173, "node_protect", defend_valid_center(), "ignore_occupancy" );
     
-    for (i = 0; i < var_b784196cf6d9c696.size; i++) {
+    for ( i = 0; i < var_b784196cf6d9c696.size ; i++ )
+    {
         new_location = setup_investigate_location( var_b784196cf6d9c696[ i ] );
         self.locations_to_investigate = array_add( self.locations_to_investigate, new_location );
     }
@@ -1115,7 +1117,8 @@ function defense_cautious_approach()
     {
         var_77eeca99c75956f8 = bot_get_entrances_for_stance_and_index( "stand", self.defend_entrance_index );
         
-        for (i = 0; i < var_77eeca99c75956f8.size; i++) {
+        for ( i = 0; i < var_77eeca99c75956f8.size ; i++ )
+        {
             new_location = setup_investigate_location( var_77eeca99c75956f8[ i ] );
             self.locations_to_investigate = array_add( self.locations_to_investigate, new_location );
         }
@@ -1132,7 +1135,8 @@ function defense_cautious_approach()
     var_1da81e91aab37a9b = self botgetscriptgoalyaw();
     wait 0.05;
     
-    for (var_f51c48051ffca680 = 1; var_f51c48051ffca680 < var_55d2448dd14fbb1e.size - 2; var_f51c48051ffca680++) {
+    for ( var_f51c48051ffca680 = 1; var_f51c48051ffca680 < var_55d2448dd14fbb1e.size - 2 ; var_f51c48051ffca680++ )
+    {
         bot_waittill_out_of_combat_or_time();
         var_906d6b682a625fdc = getlinkednodes( var_55d2448dd14fbb1e[ var_f51c48051ffca680 ] );
         
@@ -1143,13 +1147,15 @@ function defense_cautious_approach()
         
         var_8594aeb2834c5d66 = [];
         
-        for (i = 0; i < var_906d6b682a625fdc.size; i++) {
+        for ( i = 0; i < var_906d6b682a625fdc.size ; i++ )
+        {
             if ( !within_fov( self.origin, self getplayerangles(), var_906d6b682a625fdc[ i ].origin, 0 ) )
             {
                 continue;
             }
             
-            for (j = 0; j < self.locations_to_investigate.size; j++) {
+            for ( j = 0; j < self.locations_to_investigate.size ; j++ )
+            {
                 location = self.locations_to_investigate[ j ];
                 
                 if ( nodesvisible( location.node, var_906d6b682a625fdc[ i ], 1 ) )
@@ -1171,7 +1177,8 @@ function defense_cautious_approach()
         {
             var_724c1907987840a4 = [];
             
-            for (i = 0; i < self.locations_to_investigate.size; i++) {
+            for ( i = 0; i < self.locations_to_investigate.size ; i++ )
+            {
                 if ( nodesvisible( self.locations_to_investigate[ i ].node, hide_node, 1 ) )
                 {
                     if ( distance2dsquared( self.locations_to_investigate[ i ].origin, hide_node.origin ) > 3600 )
@@ -1194,7 +1201,8 @@ function defense_cautious_approach()
             
             if ( result == "goal" )
             {
-                for (i = 0; i < var_724c1907987840a4.size; i++) {
+                for ( i = 0; i < var_724c1907987840a4.size ; i++ )
+                {
                     if ( distance2dsquared( self.origin, var_724c1907987840a4[ i ].origin ) < 1600 )
                     {
                         continue;
@@ -1228,7 +1236,7 @@ function defense_cautious_approach()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2858
 // Size: 0x9c
 function monitor_cautious_approach_early_out()
@@ -1261,7 +1269,7 @@ function monitor_cautious_approach_early_out()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28fc
 // Size: 0x1a3
 function monitor_cautious_approach_dangerous_locations()
@@ -1277,7 +1285,8 @@ function monitor_cautious_approach_dangerous_locations()
         {
             bot_fov = self botgetfovdot();
             
-            for (i = 0; i < self.locations_to_investigate.size; i++) {
+            for ( i = 0; i < self.locations_to_investigate.size ; i++ )
+            {
                 if ( nodesvisible( var_f6cbde8cc73449c9, self.locations_to_investigate[ i ].node, 1 ) )
                 {
                     node_within_fov = within_fov( self.origin, self getplayerangles(), self.locations_to_investigate[ i ].origin, bot_fov );
@@ -1309,7 +1318,7 @@ function monitor_cautious_approach_dangerous_locations()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aa7
 // Size: 0x28b
 function protect_watch_allies()
@@ -1319,17 +1328,17 @@ function protect_watch_allies()
     var_cf1dc37d165e2f3 = [];
     minimap_radius = 1050;
     var_f5b7c9d0d13192e4 = minimap_radius * minimap_radius;
-    var_e83c82adfbdaafb4 = 900;
+    radius_around_point = 900;
     
     if ( isdefined( level.protect_radius ) )
     {
-        var_e83c82adfbdaafb4 = level.protect_radius;
+        radius_around_point = level.protect_radius;
     }
     
     while ( true )
     {
         cur_time = gettime();
-        var_a2fde156132cad23 = bot_get_teammates_in_radius( self.bot_defending_center, var_e83c82adfbdaafb4 );
+        var_a2fde156132cad23 = bot_get_teammates_in_radius( self.bot_defending_center, radius_around_point );
         
         foreach ( teammate in var_a2fde156132cad23 )
         {
@@ -1381,7 +1390,7 @@ function protect_watch_allies()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d3a
 // Size: 0xb3
 function defense_get_initial_entrances()
@@ -1412,7 +1421,7 @@ function defense_get_initial_entrances()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2df5
 // Size: 0x1a4
 function defense_watch_entrances_at_goal()
@@ -1480,7 +1489,7 @@ function defense_watch_entrances_at_goal()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fa1
 // Size: 0x268
 function bot_monitor_watch_entrances_at_goal()
@@ -1550,7 +1559,7 @@ function bot_monitor_watch_entrances_at_goal()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3211
 // Size: 0x1ea
 function bot_monitor_watch_entrances_bodyguard()
@@ -1573,9 +1582,9 @@ function bot_monitor_watch_entrances_bodyguard()
         foreach ( node in self.watch_nodes )
         {
             node.watch_node_chance[ self.entity_number ] = node.watch_node_base_chance[ self.entity_number ];
-            var_5ab345e9f27e0dfd = node.origin - self.bot_defend_player_guarding.origin;
-            var_5ab345e9f27e0dfd = vectornormalize( var_5ab345e9f27e0dfd );
-            var_a1cd126b61eabd2 = vectordot( var_fe3d6fb608e9eed8, var_5ab345e9f27e0dfd );
+            player_to_node = node.origin - self.bot_defend_player_guarding.origin;
+            player_to_node = vectornormalize( player_to_node );
+            var_a1cd126b61eabd2 = vectordot( var_fe3d6fb608e9eed8, player_to_node );
             
             if ( var_a1cd126b61eabd2 > 0.6 )
             {
@@ -1597,7 +1606,7 @@ function bot_monitor_watch_entrances_bodyguard()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3403
 // Size: 0xc9, Type: bool
 function entrance_to_enemy_zone( entrance )
@@ -1605,7 +1614,8 @@ function entrance_to_enemy_zone( entrance )
     var_405daa810191cba9 = getnodezone( entrance );
     var_f2ed0b797104fa5 = vectornormalize( entrance.origin - self.origin );
     
-    for (z = 0; z < level.zonecount; z++) {
+    for ( z = 0; z < level.zonecount ; z++ )
+    {
         if ( botzonegetcount( z, self.team, "enemy_predict" ) > 0 )
         {
             if ( isdefined( var_405daa810191cba9 ) && z == var_405daa810191cba9 )
@@ -1627,7 +1637,7 @@ function entrance_to_enemy_zone( entrance )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34d5
 // Size: 0x188
 function prioritize_watch_nodes_toward_enemies( scalar )
@@ -1641,7 +1651,8 @@ function prioritize_watch_nodes_toward_enemies( scalar )
     
     nodes_testing = self.watch_nodes;
     
-    for (z = 0; z < level.zonecount; z++) {
+    for ( z = 0; z < level.zonecount ; z++ )
+    {
         if ( botzonegetcount( z, self.team, "enemy_predict" ) <= 0 )
         {
             continue;
@@ -1654,7 +1665,8 @@ function prioritize_watch_nodes_toward_enemies( scalar )
         
         var_4aa6951b8641043d = vectornormalize( getzoneorigin( z ) - self.origin );
         
-        for (i = 0; i < nodes_testing.size; i++) {
+        for ( i = 0; i < nodes_testing.size ; i++ )
+        {
             var_e5dcbeec9029ae9f = getnodezone( nodes_testing[ i ] );
             var_a296921504813986 = 0;
             
@@ -1685,7 +1697,7 @@ function prioritize_watch_nodes_toward_enemies( scalar )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3665
 // Size: 0x9d, Type: bool
 function entrance_watched_by_ally( entrance )
@@ -1711,14 +1723,14 @@ function entrance_watched_by_ally( entrance )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x370b
 // Size: 0x6f, Type: bool
 function entrance_watched_by_player( player, entrance )
 {
     player_forward = anglestoforward( player getplayerangles() );
-    var_5ab345e9f27e0dfd = vectornormalize( entrance.origin - player.origin );
-    var_a1cd126b61eabd2 = vectordot( player_forward, var_5ab345e9f27e0dfd );
+    player_to_node = vectornormalize( entrance.origin - player.origin );
+    var_a1cd126b61eabd2 = vectordot( player_forward, player_to_node );
     
     if ( var_a1cd126b61eabd2 > 0.6 )
     {
@@ -1729,7 +1741,7 @@ function entrance_watched_by_player( player, entrance )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3783
 // Size: 0xa7
 function bot_get_teammates_currently_defending_zone( zoneid )
@@ -1749,25 +1761,25 @@ function bot_get_teammates_currently_defending_zone( zoneid )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3833
 // Size: 0xbc
-function bot_get_teammates_currently_defending_point( point, var_e83c82adfbdaafb4 )
+function bot_get_teammates_currently_defending_point( point, radius_around_point )
 {
-    if ( !isdefined( var_e83c82adfbdaafb4 ) )
+    if ( !isdefined( radius_around_point ) )
     {
         if ( isdefined( level.protect_radius ) )
         {
-            var_e83c82adfbdaafb4 = level.protect_radius;
+            radius_around_point = level.protect_radius;
         }
         else
         {
-            var_e83c82adfbdaafb4 = 900;
+            radius_around_point = 900;
         }
     }
     
     var_33de4b46d339a890 = [];
-    teammates_in_radius = bot_get_teammates_in_radius( point, var_e83c82adfbdaafb4 );
+    teammates_in_radius = bot_get_teammates_in_radius( point, radius_around_point );
     
     foreach ( teammate in teammates_in_radius )
     {
@@ -1781,15 +1793,16 @@ function bot_get_teammates_currently_defending_point( point, var_e83c82adfbdaafb
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x38f8
 // Size: 0xbd
-function bot_get_teammates_in_radius( point, var_e83c82adfbdaafb4 )
+function bot_get_teammates_in_radius( point, radius_around_point )
 {
-    var_51ca426712b96df5 = var_e83c82adfbdaafb4 * var_e83c82adfbdaafb4;
+    var_51ca426712b96df5 = radius_around_point * radius_around_point;
     teammates_in_radius = [];
     
-    for (i = 0; i < level.participants.size; i++) {
+    for ( i = 0; i < level.participants.size ; i++ )
+    {
         other_player = level.participants[ i ];
         
         if ( other_player != self && isdefined( other_player.team ) && other_player.team == self.team && isteamparticipant( other_player ) )
@@ -1805,7 +1818,7 @@ function bot_get_teammates_in_radius( point, var_e83c82adfbdaafb4 )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39be
 // Size: 0x33
 function defense_death_monitor()
@@ -1823,7 +1836,7 @@ function defense_death_monitor()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39f9
 // Size: 0xe5
 function bot_defend_stop()
@@ -1854,7 +1867,7 @@ function bot_defend_stop()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ae6
 // Size: 0x101
 function defend_get_ally_bots_at_zone_for_stance( stance )
@@ -1881,7 +1894,7 @@ function defend_get_ally_bots_at_zone_for_stance( stance )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bf0
 // Size: 0x266
 function monitor_defend_player()
@@ -1969,7 +1982,7 @@ function monitor_defend_player()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e5e
 // Size: 0xc8
 function find_defend_node_capture()
@@ -2004,7 +2017,7 @@ function find_defend_node_capture()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f2e
 // Size: 0xc2
 function find_defend_node_capture_zone()
@@ -2039,7 +2052,7 @@ function find_defend_node_capture_zone()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ff8
 // Size: 0x73
 function find_defend_node_protect()
@@ -2058,7 +2071,7 @@ function find_defend_node_protect()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4073
 // Size: 0x43
 function find_defend_node_protect_zone()
@@ -2075,7 +2088,7 @@ function find_defend_node_protect_zone()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40be
 // Size: 0x69
 function find_defend_node_bodyguard()
@@ -2100,7 +2113,7 @@ function find_defend_node_bodyguard()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x412f
 // Size: 0x74
 function find_defend_node_patrol()
@@ -2123,7 +2136,7 @@ function find_defend_node_patrol()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41ab
 // Size: 0x124
 function bot_handle_no_valid_defense_node( var_b76b361d985e9efe, var_1dc58f0a2b0494cd )
@@ -2160,7 +2173,7 @@ function bot_handle_no_valid_defense_node( var_b76b361d985e9efe, var_1dc58f0a2b0
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42d7
 // Size: 0x1f, Type: bool
 function bot_can_use_point_in_defend( point )
@@ -2174,12 +2187,13 @@ function bot_can_use_point_in_defend( point )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x42ff
 // Size: 0x106, Type: bool
 function bot_check_team_is_using_position( position, var_a7581d21ffa324d2, var_393caa83813956ee, var_2ad2d07831a9acd )
 {
-    for (i = 0; i < level.participants.size; i++) {
+    for ( i = 0; i < level.participants.size ; i++ )
+    {
         other_player = level.participants[ i ];
         
         if ( isdefined( other_player.team ) && other_player.team == self.team && other_player != self )
@@ -2221,7 +2235,7 @@ function bot_check_team_is_using_position( position, var_a7581d21ffa324d2, var_3
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x440e
 // Size: 0x93
 function bot_capture_zone_get_furthest_distance()
@@ -2241,7 +2255,7 @@ function bot_capture_zone_get_furthest_distance()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44aa
 // Size: 0x1f9
 function bot_think_tactical_goals()
@@ -2323,7 +2337,7 @@ function bot_think_tactical_goals()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46ab
 // Size: 0x67
 function watch_goal_aborted( goal )
@@ -2344,7 +2358,7 @@ function watch_goal_aborted( goal )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x471a
 // Size: 0x253
 function bot_new_tactical_goal( type, goal_position, priority, extra_params )
@@ -2382,14 +2396,16 @@ function bot_new_tactical_goal( type, goal_position, priority, extra_params )
     new_goal.optional_params = extra_params.optional_params;
     new_goal.clear_prev_goal = extra_params.clear_prev_goal;
     
-    for (var_b5f8bf1c8eb1626e = 0; var_b5f8bf1c8eb1626e < self.tactical_goals.size; var_b5f8bf1c8eb1626e++) {
+    for ( var_b5f8bf1c8eb1626e = 0; var_b5f8bf1c8eb1626e < self.tactical_goals.size ; var_b5f8bf1c8eb1626e++ )
+    {
         if ( new_goal.priority > self.tactical_goals[ var_b5f8bf1c8eb1626e ].priority )
         {
             break;
         }
     }
     
-    for (i = self.tactical_goals.size - 1; i >= var_b5f8bf1c8eb1626e; i--) {
+    for ( i = self.tactical_goals.size - 1; i >= var_b5f8bf1c8eb1626e ; i-- )
+    {
         self.tactical_goals[ i + 1 ] = self.tactical_goals[ i ];
     }
     
@@ -2397,7 +2413,7 @@ function bot_new_tactical_goal( type, goal_position, priority, extra_params )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4975
 // Size: 0xbe
 function bot_has_tactical_goal( goal_type, object )
@@ -2429,7 +2445,7 @@ function bot_has_tactical_goal( goal_type, object )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a3b
 // Size: 0x97
 function bot_get_active_tactical_goals_of_type( goal_type )
@@ -2451,7 +2467,7 @@ function bot_get_active_tactical_goals_of_type( goal_type )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4adb
 // Size: 0xcc
 function bot_abort_tactical_goal( goal_type, object )
@@ -2483,7 +2499,7 @@ function bot_abort_tactical_goal( goal_type, object )
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4baf
 // Size: 0x81
 function bot_disable_tactical_goals()
@@ -2500,7 +2516,7 @@ function bot_disable_tactical_goals()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c38
 // Size: 0xc
 function bot_enable_tactical_goals()
@@ -2509,7 +2525,7 @@ function bot_enable_tactical_goals()
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c4c
 // Size: 0x11f, Type: bool
 function bot_melee_tactical_insertion_check()

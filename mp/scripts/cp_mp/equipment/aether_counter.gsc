@@ -3,8 +3,8 @@
 
 #namespace aether_counter;
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0x283
 // Size: 0xb0
 function function_af629bfd2cc31d67()
@@ -23,8 +23,8 @@ function function_af629bfd2cc31d67()
     registersharedfunc( "equip_aethercounter", "onTake", &function_3bf23e1e0eccb4a7 );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 2, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 2
 // Checksum 0x0, Offset: 0x33b
 // Size: 0x52
 function function_2ee478f031f97735( equipmentref, equipmentslot )
@@ -41,8 +41,8 @@ function function_2ee478f031f97735( equipmentref, equipmentslot )
     function_b725c6b75eac64a( -1 );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 2, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 2
 // Checksum 0x0, Offset: 0x395
 // Size: 0x43
 function function_3bf23e1e0eccb4a7( equipmentref, equipmentslot )
@@ -57,8 +57,8 @@ function function_3bf23e1e0eccb4a7( equipmentref, equipmentslot )
     function_b725c6b75eac64a( -1 );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0x3e0
 // Size: 0x27
 function function_88108e9a7fefa45c( grenade )
@@ -74,8 +74,8 @@ function function_88108e9a7fefa45c( grenade )
     function_b914dca03eb66c0d();
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0x40f
 // Size: 0x185
 function aethercounter_watchfordevicepullout()
@@ -142,8 +142,8 @@ function aethercounter_watchfordevicepullout()
     }
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0x59c
 // Size: 0x91, Type: bool
 function function_92d0e5b2f76e0fe5()
@@ -165,8 +165,8 @@ function function_92d0e5b2f76e0fe5()
     return true;
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0x636
 // Size: 0x148
 function function_8031a35aa804e254( dist )
@@ -196,8 +196,8 @@ function function_8031a35aa804e254( dist )
     function_b725c6b75eac64a( -0.25 );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0x786
 // Size: 0x1a, Type: bool
 function function_5a5133a5c98f4851()
@@ -210,8 +210,8 @@ function function_5a5133a5c98f4851()
     return false;
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0x7a9
 // Size: 0x30
 function function_f7c4dd82fc32c7b9( raceresult )
@@ -222,8 +222,8 @@ function function_f7c4dd82fc32c7b9( raceresult )
     self notify( "aethercounter_watchRaceStart" );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0x7e1
 // Size: 0x30
 function function_9df43daca6fc5bc2( raceresult )
@@ -234,8 +234,8 @@ function function_9df43daca6fc5bc2( raceresult )
     self notify( "aethercounter_watchRaceStart" );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0x819
 // Size: 0x5b
 function function_5aab43e8311b7e7f( raceresult )
@@ -255,8 +255,8 @@ function function_5aab43e8311b7e7f( raceresult )
     self notify( "aethercounter_watchRaceStart" );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0x87c
 // Size: 0x47
 function function_824860a3ff9ea883( raceresult )
@@ -275,8 +275,8 @@ function function_824860a3ff9ea883( raceresult )
     self notify( "aethercounter_watchRaceEnd" );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0x8cb
 // Size: 0x42
 function function_b914dca03eb66c0d()
@@ -292,8 +292,8 @@ function function_b914dca03eb66c0d()
     }
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0x915
 // Size: 0x24, Type: bool
 function function_1cfcd2b63bc91c2d()
@@ -301,8 +301,8 @@ function function_1cfcd2b63bc91c2d()
     return isdefined( self.var_b38bd8b30b329ecd ) && istrue( self.var_b38bd8b30b329ecd.pulledout );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0x942
 // Size: 0xf
 function function_7812e187185aef80()
@@ -310,8 +310,8 @@ function function_7812e187185aef80()
     self setclientomnvar( "ui_geigercounter_meter", 0 );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0x959
 // Size: 0x18
 function function_90f4a7cf8aae35c5( data )
@@ -319,8 +319,8 @@ function function_90f4a7cf8aae35c5( data )
     self setclientomnvar( "ui_geigercounter_meter", data );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0x979
 // Size: 0xe
 function function_8f4759d455d12f06()
@@ -328,8 +328,8 @@ function function_8f4759d455d12f06()
     self playlocalsound( "iw9_geiger_counter_tick" );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0x98f
 // Size: 0xe
 function function_e9db195fe373a520()
@@ -337,8 +337,8 @@ function function_e9db195fe373a520()
     self stoplocalsound( "iw9_geiger_counter_tick" );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0x9a5
 // Size: 0x35
 function function_b725c6b75eac64a( overridevalue )
@@ -352,8 +352,8 @@ function function_b725c6b75eac64a( overridevalue )
     function_90f4a7cf8aae35c5( self.var_b38bd8b30b329ecd.var_f458338f4188859e );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0x9e2
 // Size: 0x26
 function function_81e4d8ae8de025ab( object )
@@ -361,8 +361,8 @@ function function_81e4d8ae8de025ab( object )
     level.var_b38bd8b30b329ecd.partition function_24bbefb4beda630d( object );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0xa10
 // Size: 0x26
 function function_2e0a6a72e3e7388d( object )
@@ -370,8 +370,8 @@ function function_2e0a6a72e3e7388d( object )
     level.var_b38bd8b30b329ecd.partition function_9cd3f5f067afea37( object );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0xa3e
 // Size: 0x24
 function function_c621b72b61c253ef()
@@ -379,8 +379,8 @@ function function_c621b72b61c253ef()
     return level.var_b38bd8b30b329ecd.partition function_60dbe20f8385f1b0( self.origin );
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 1, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 1
 // Checksum 0x0, Offset: 0xa6b
 // Size: 0x3c
 function function_2588ffec6fe5bd6d( var_476ba0cad41d3b92 )
@@ -390,8 +390,8 @@ function function_2588ffec6fe5bd6d( var_476ba0cad41d3b92 )
     return var_1e331291fa3bd60;
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 3, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 3
 // Checksum 0x0, Offset: 0xab0
 // Size: 0x36, Type: bool
 function function_2d56da6c95356759( player, var_1e331291fa3bd60, var_98a5e37618751295 )
@@ -400,8 +400,8 @@ function function_2d56da6c95356759( player, var_1e331291fa3bd60, var_98a5e376187
     return var_1e331291fa3bd60 < detectionradius * detectionradius;
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 2, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 2
 // Checksum 0x0, Offset: 0xaef
 // Size: 0x2a3
 function _aethercounter_calculateaethercounterpulserate( var_1e331291fa3bd60, object )
@@ -461,8 +461,8 @@ function _aethercounter_calculateaethercounterpulserate( var_1e331291fa3bd60, ob
     return waittime;
 }
 
-// Namespace aether_counter / namespace_4a644dfa913c019
-// Params 0, eflags: 0x0
+// Namespace aether_counter / scripts\cp_mp\equipment\aether_counter
+// Params 0
 // Checksum 0x0, Offset: 0xd9b
 // Size: 0x3a
 function function_f2aa833e16733c5e()

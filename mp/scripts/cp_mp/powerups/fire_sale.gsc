@@ -16,7 +16,7 @@ function autoexec main()
 }
 
 // Namespace fire_sale / scripts\cp_mp\powerups\fire_sale
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11f
 // Size: 0x5a
 function function_3eca05f9ae1998ea()
@@ -32,7 +32,7 @@ function function_3eca05f9ae1998ea()
 }
 
 // Namespace fire_sale / scripts\cp_mp\powerups\fire_sale
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x181
 // Size: 0x33, Type: bool
 function function_c68bab44a377354f()
@@ -46,7 +46,7 @@ function function_c68bab44a377354f()
 }
 
 // Namespace fire_sale / scripts\cp_mp\powerups\fire_sale
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1bd
 // Size: 0x1b
 function grab_fire_sale( str_powerup, ent_powerup )
@@ -55,7 +55,7 @@ function grab_fire_sale( str_powerup, ent_powerup )
 }
 
 // Namespace fire_sale / scripts\cp_mp\powerups\fire_sale
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e0
 // Size: 0xf9
 function run_fire_sale()

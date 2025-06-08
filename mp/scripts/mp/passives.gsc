@@ -4,7 +4,7 @@
 #namespace passives;
 
 // Namespace passives / scripts\mp\passives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd
 // Size: 0x13
 function init()
@@ -14,7 +14,7 @@ function init()
 }
 
 // Namespace passives / scripts\mp\passives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd8
 // Size: 0x21d
 function passiveparsetable()
@@ -24,7 +24,8 @@ function passiveparsetable()
         level.passivemap = [];
     }
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         id = tablelookupbyrow( "mp/passivetable.csv", row, 0 );
         
         if ( id == "" )
@@ -76,7 +77,7 @@ function passiveparsetable()
 }
 
 // Namespace passives / scripts\mp\passives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fd
 // Size: 0x34
 function getpassivestruct( passive )
@@ -91,7 +92,7 @@ function getpassivestruct( passive )
 }
 
 // Namespace passives / scripts\mp\passives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33a
 // Size: 0x41
 function getpassiveattachment( passive )
@@ -107,7 +108,7 @@ function getpassiveattachment( passive )
 }
 
 // Namespace passives / scripts\mp\passives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x384
 // Size: 0x41
 function getpassiveperk( passive )
@@ -123,7 +124,7 @@ function getpassiveperk( passive )
 }
 
 // Namespace passives / scripts\mp\passives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ce
 // Size: 0x41
 function getpassivemessage( passive )
@@ -139,7 +140,7 @@ function getpassivemessage( passive )
 }
 
 // Namespace passives / scripts\mp\passives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x418
 // Size: 0x78
 function getweapontypepassives()
@@ -158,7 +159,7 @@ function getweapontypepassives()
 }
 
 // Namespace passives / scripts\mp\passives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x499
 // Size: 0x78
 function getkillstreaktypepassives()
@@ -177,7 +178,7 @@ function getkillstreaktypepassives()
 }
 
 // Namespace passives / scripts\mp\passives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51a
 // Size: 0x78
 function getlethaltypepassives()
@@ -196,7 +197,7 @@ function getlethaltypepassives()
 }
 
 // Namespace passives / scripts\mp\passives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59b
 // Size: 0x78
 function gettacticaltypepassives()

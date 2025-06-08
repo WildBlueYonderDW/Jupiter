@@ -4,7 +4,7 @@
 #namespace mp_jup_st_b_ob_contracts_sabotage_cs;
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b6
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x22b
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x29a
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e2
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ec
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x302
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x374
 // Size: 0x83
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -119,7 +119,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3ff
 // Size: 0x96
 function function_73fc663089fd7d37( fe, us, cf )
@@ -131,7 +131,7 @@ function function_73fc663089fd7d37( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x49d
 // Size: 0x96
 function function_ffc052da5e7877( fe, us, cf )
@@ -143,7 +143,7 @@ function function_ffc052da5e7877( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x53b
 // Size: 0x96
 function function_86c4c4fe212491d0( fe, us, cf )
@@ -155,7 +155,7 @@ function function_86c4c4fe212491d0( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_sabotage_cs / namespace_37a028e556671e85
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d9
 // Size: 0x52b
 function function_6da2952367672ac0()

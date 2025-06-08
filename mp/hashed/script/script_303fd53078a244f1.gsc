@@ -9,7 +9,7 @@
 #namespace namespace_4982e25cac00f32a;
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fc
 // Size: 0xb7
 function init()
@@ -24,7 +24,7 @@ function init()
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bb
 // Size: 0x95
 function gethighestscoringteam()
@@ -48,7 +48,7 @@ function gethighestscoringteam()
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x459
 // Size: 0x39
 function _getteamscore( team )
@@ -58,7 +58,7 @@ function _getteamscore( team )
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49b
 // Size: 0x37
 function getplayerscore( player )
@@ -72,7 +72,7 @@ function getplayerscore( player )
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4db
 // Size: 0x196
 function updateteamscoreplacements()
@@ -122,7 +122,7 @@ function updateteamscoreplacements()
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x679
 // Size: 0x2d
 function setplayerscore( player, score )
@@ -132,7 +132,7 @@ function setplayerscore( player, score )
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ae
 // Size: 0xff
 function _setteamscore( team, score )
@@ -157,7 +157,7 @@ function _setteamscore( team, score )
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b5
 // Size: 0x1a0
 function function_8f3c16bf2d2412cb( eventref )
@@ -215,7 +215,7 @@ function function_8f3c16bf2d2412cb( eventref )
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x95d
 // Size: 0xb7
 function function_3ced6a64b51063f9()
@@ -239,7 +239,7 @@ function function_3ced6a64b51063f9()
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa1c
 // Size: 0x27
 function function_c9a0784e88fcf18d( channel, val )
@@ -251,7 +251,7 @@ function function_c9a0784e88fcf18d( channel, val )
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa4b
 // Size: 0x1c2
 function function_adb2f998089074a2( event, score )
@@ -302,7 +302,7 @@ function function_adb2f998089074a2( event, score )
 }
 
 // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc15
 // Size: 0x1e7
 function doscoreevent( event )
@@ -365,7 +365,7 @@ function doscoreevent( event )
 /#
 
     // Namespace namespace_4982e25cac00f32a / namespace_a5b4009d7c2e0b3d
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe04
     // Size: 0x28, Type: dev
     function addscore()

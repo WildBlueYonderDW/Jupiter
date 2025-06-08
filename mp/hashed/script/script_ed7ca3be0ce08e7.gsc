@@ -24,7 +24,7 @@ function autoexec main()
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d2
 // Size: 0x29
 function function_deee3b97bf9c0945()
@@ -45,12 +45,12 @@ function function_deee3b97bf9c0945()
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x503
 // Size: 0x22
 function init()
 {
-    if ( !getdvarint( @"hash_eb0811ead28c4f53", 0 ) )
+    if ( !getdvarint( @"redeploy_ascenders_enabled", 0 ) )
     {
         namespace_2c2703f78fc59600::initvariables();
     }
@@ -59,7 +59,7 @@ function init()
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52d
 // Size: 0xd3
 function drone_spawn()
@@ -83,7 +83,7 @@ function drone_spawn()
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x608
 // Size: 0x211
 function drone_movement()
@@ -149,7 +149,7 @@ function drone_movement()
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x821
 // Size: 0xf8
 function drone_despawn()
@@ -178,7 +178,7 @@ function drone_despawn()
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x921
 // Size: 0x238
 function function_f9e2637633ed4523()
@@ -230,7 +230,7 @@ function function_f9e2637633ed4523()
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb61
 // Size: 0x1d2
 function drone_destroyed( eattacker )
@@ -275,7 +275,7 @@ function drone_destroyed( eattacker )
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd3b
 // Size: 0xeb
 function function_5ad7013749e24080( v_pos )
@@ -310,14 +310,15 @@ function function_5ad7013749e24080( v_pos )
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe2e
 // Size: 0x1c9
 function function_3cfcb01c0c46b6c1( player, v_pos )
 {
     i_yield = getdvarint( @"hash_78afb5674fadd4e", 3 );
     
-    for (i = 0; i < i_yield; i++) {
+    for ( i = 0; i < i_yield ; i++ )
+    {
         dropinfo = scripts\mp\gametypes\br_pickups::getitemdropinfo( scripts\mp\gametypes\br_public::droptogroundmultitrace( v_pos + anglestoforward( ( 0, randomint( 360 ), 0 ) ) * ( i + 1 ) * 30, 0, -500 ), ( 0, randomint( 360 ), 0 ) );
         
         if ( scripts\engine\utility::cointoss() )
@@ -360,7 +361,7 @@ function function_3cfcb01c0c46b6c1( player, v_pos )
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfff
 // Size: 0x160
 function function_f6825931489dc8a9( eattacker, str_icon )
@@ -414,7 +415,7 @@ function function_f6825931489dc8a9( eattacker, str_icon )
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1167
 // Size: 0x2b
 function function_c4648fa62189eba( scriptable, objid )
@@ -429,7 +430,7 @@ function function_c4648fa62189eba( scriptable, objid )
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x119a
 // Size: 0x66
 function function_9fe88329eea942f5()
@@ -452,7 +453,7 @@ function function_9fe88329eea942f5()
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1208
 // Size: 0xfc
 function drone_respawn()

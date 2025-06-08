@@ -14,7 +14,7 @@
 #namespace mp_jup_quarry;
 
 // Namespace mp_jup_quarry / scripts\mp\maps\mp_jup_quarry\mp_jup_quarry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x353
 // Size: 0xc1
 function main()
@@ -40,7 +40,7 @@ function main()
 }
 
 // Namespace mp_jup_quarry / scripts\mp\maps\mp_jup_quarry\mp_jup_quarry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41c
 // Size: 0x99
 function function_8d4dae6254d91044()
@@ -61,7 +61,7 @@ function function_8d4dae6254d91044()
 }
 
 // Namespace mp_jup_quarry / scripts\mp\maps\mp_jup_quarry\mp_jup_quarry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4bd
 // Size: 0x21
 function init_audio()
@@ -72,7 +72,7 @@ function init_audio()
 }
 
 // Namespace mp_jup_quarry / scripts\mp\maps\mp_jup_quarry\mp_jup_quarry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e6
 // Size: 0x238
 function function_31dc060e85f4a689()

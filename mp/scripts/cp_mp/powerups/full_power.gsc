@@ -10,7 +10,7 @@
 
 // Namespace full_power / scripts\cp_mp\powerups\full_power
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x124
+// Checksum 0x0, Offset: 0x125
 // Size: 0x9
 function autoexec main()
 {
@@ -18,8 +18,8 @@ function autoexec main()
 }
 
 // Namespace full_power / scripts\cp_mp\powerups\full_power
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x135
+// Params 0
+// Checksum 0x0, Offset: 0x136
 // Size: 0x5a
 function function_e7a47b85d23dfd4f()
 {
@@ -34,8 +34,8 @@ function function_e7a47b85d23dfd4f()
 }
 
 // Namespace full_power / scripts\cp_mp\powerups\full_power
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x197
+// Params 0
+// Checksum 0x0, Offset: 0x198
 // Size: 0x13, Type: bool
 function function_986227ff88aed0d1()
 {
@@ -48,8 +48,8 @@ function function_986227ff88aed0d1()
 }
 
 // Namespace full_power / scripts\cp_mp\powerups\full_power
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b3
+// Params 2
+// Checksum 0x0, Offset: 0x1b4
 // Size: 0x82
 function function_96a1ada875ea9db3( str_powerup, ent_powerup )
 {
@@ -65,8 +65,8 @@ function function_96a1ada875ea9db3( str_powerup, ent_powerup )
 }
 
 // Namespace full_power / scripts\cp_mp\powerups\full_power
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x23d
+// Params 0
+// Checksum 0x0, Offset: 0x23e
 // Size: 0xd0
 function give_power()
 {
@@ -111,7 +111,7 @@ function give_power()
 
 // Namespace full_power / scripts\cp_mp\powerups\full_power
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x315
+// Checksum 0x0, Offset: 0x316
 // Size: 0x2c
 function private on_super_use_finished( params )
 {

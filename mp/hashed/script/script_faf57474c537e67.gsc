@@ -11,7 +11,7 @@
 #namespace jup_ob_enemy_specialist_rocketeer_fortressguard;
 
 // Namespace jup_ob_enemy_specialist_rocketeer_fortressguard / namespace_77dada0dc71cfeb9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25c
 // Size: 0x1d7
 function main()
@@ -48,7 +48,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_specialist_rocketeer_fortressguard / namespace_77dada0dc71cfeb9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43b
 // Size: 0x57
 function setup_model()
@@ -65,7 +65,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_specialist_rocketeer_fortressguard / namespace_77dada0dc71cfeb9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49a
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -74,7 +74,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_specialist_rocketeer_fortressguard / namespace_77dada0dc71cfeb9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ab
 // Size: 0xcf
 function precache()
@@ -103,7 +103,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_specialist_rocketeer_fortressguard / namespace_77dada0dc71cfeb9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x582
 // Size: 0x118
 function setup_weapons()

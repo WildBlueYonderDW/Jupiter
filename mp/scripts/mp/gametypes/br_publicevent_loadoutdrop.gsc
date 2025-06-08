@@ -9,7 +9,7 @@
 
 // Namespace br_publicevent_loadoutdrop / scripts\mp\gametypes\br_publicevent_loadoutdrop
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0xb7
+// Checksum 0x0, Offset: 0xb8
 // Size: 0x21
 function autoexec main()
 {
@@ -21,8 +21,8 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_loadoutdrop / scripts\mp\gametypes\br_publicevent_loadoutdrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0
+// Params 1
+// Checksum 0x0, Offset: 0xe1
 // Size: 0x3e
 function init( eventinfo )
 {
@@ -32,8 +32,8 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_loadoutdrop / scripts\mp\gametypes\br_publicevent_loadoutdrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x126
+// Params 0
+// Checksum 0x0, Offset: 0x127
 // Size: 0x3a
 function activatefunc()
 {
@@ -44,8 +44,8 @@ function activatefunc()
 }
 
 // Namespace br_publicevent_loadoutdrop / scripts\mp\gametypes\br_publicevent_loadoutdrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x168
+// Params 0
+// Checksum 0x0, Offset: 0x169
 // Size: 0x4, Type: bool
 function validatefunc()
 {
@@ -53,8 +53,8 @@ function validatefunc()
 }
 
 // Namespace br_publicevent_loadoutdrop / scripts\mp\gametypes\br_publicevent_loadoutdrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x175
+// Params 0
+// Checksum 0x0, Offset: 0x176
 // Size: 0x2
 function postinitfunc()
 {
@@ -64,8 +64,8 @@ function postinitfunc()
 /#
 
     // Namespace br_publicevent_loadoutdrop / scripts\mp\gametypes\br_publicevent_loadoutdrop
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x17f
+    // Params 0
+    // Checksum 0x0, Offset: 0x180
     // Size: 0x5, Type: dev
     function __debug()
     {
@@ -73,8 +73,8 @@ function postinitfunc()
     }
 
     // Namespace br_publicevent_loadoutdrop / scripts\mp\gametypes\br_publicevent_loadoutdrop
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18c
+    // Params 0
+    // Checksum 0x0, Offset: 0x18d
     // Size: 0x2e, Type: dev
     function debug_init()
     {
@@ -84,8 +84,8 @@ function postinitfunc()
     }
 
     // Namespace br_publicevent_loadoutdrop / scripts\mp\gametypes\br_publicevent_loadoutdrop
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c2
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c3
     // Size: 0x17, Type: dev
     function function_db70bae7732f5204()
     {

@@ -24,7 +24,7 @@
 #namespace flash_grenade;
 
 // Namespace flash_grenade / scripts\mp\equipment\flash_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x41
 function onfired( equipmentref, slot, objweapon )
@@ -33,7 +33,7 @@ function onfired( equipmentref, slot, objweapon )
 }
 
 // Namespace flash_grenade / scripts\mp\equipment\flash_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x296
 // Size: 0x6cf
 function onplayerdamaged( data )
@@ -233,7 +233,7 @@ function onplayerdamaged( data )
 }
 
 // Namespace flash_grenade / scripts\mp\equipment\flash_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x96e
 // Size: 0x187
 function applyflash( attacker, duration )
@@ -294,7 +294,7 @@ function applyflash( attacker, duration )
 }
 
 // Namespace flash_grenade / scripts\mp\equipment\flash_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xafd
 // Size: 0x3f
 function clearflash( fromdeath )
@@ -316,7 +316,7 @@ function clearflash( fromdeath )
 }
 
 // Namespace flash_grenade / scripts\mp\equipment\flash_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb44
 // Size: 0x1c
 function calculateinterruptdelay( duration )

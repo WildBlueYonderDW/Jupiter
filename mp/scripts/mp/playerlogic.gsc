@@ -89,8 +89,8 @@
 #namespace playerlogic;
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2259
+// Params 0
+// Checksum 0x0, Offset: 0x225a
 // Size: 0xf
 function init()
 {
@@ -98,8 +98,8 @@ function init()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2270
+// Params 1
+// Checksum 0x0, Offset: 0x2271
 // Size: 0x10e
 function timeuntilwavespawn( minimumwait )
 {
@@ -134,8 +134,8 @@ function timeuntilwavespawn( minimumwait )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2387
+// Params 0
+// Checksum 0x0, Offset: 0x2388
 // Size: 0x84
 function teamkilldelay()
 {
@@ -157,8 +157,8 @@ function teamkilldelay()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2413
+// Params 1
+// Checksum 0x0, Offset: 0x2414
 // Size: 0x1ed
 function timeuntilspawn( includeteamkilldelay )
 {
@@ -236,8 +236,8 @@ function timeuntilspawn( includeteamkilldelay )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2609
+// Params 0
+// Checksum 0x0, Offset: 0x260a
 // Size: 0x189, Type: bool
 function mayspawn()
 {
@@ -314,8 +314,8 @@ function mayspawn()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x279b
+// Params 1
+// Checksum 0x0, Offset: 0x279c
 // Size: 0x4f0
 function spawnclient( revivespawn )
 {
@@ -477,8 +477,8 @@ function spawnclient( revivespawn )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c93
+// Params 1
+// Checksum 0x0, Offset: 0x2c94
 // Size: 0x94
 function waittillcanspawnclient( revivespawn )
 {
@@ -510,8 +510,8 @@ function waittillcanspawnclient( revivespawn )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d2f
+// Params 1
+// Checksum 0x0, Offset: 0x2d30
 // Size: 0x8b7
 function waitandspawnclient( revivespawn )
 {
@@ -793,8 +793,8 @@ function waitandspawnclient( revivespawn )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35ee
+// Params 1
+// Checksum 0x0, Offset: 0x35ef
 // Size: 0x11d
 function function_ae6fb03b95fca93e( mintime )
 {
@@ -839,8 +839,8 @@ function function_ae6fb03b95fca93e( mintime )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3713
+// Params 0
+// Checksum 0x0, Offset: 0x3714
 // Size: 0x56
 function waitforremoteend()
 {
@@ -861,8 +861,8 @@ function waitforremoteend()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3771
+// Params 0
+// Checksum 0x0, Offset: 0x3772
 // Size: 0x3, Type: bool
 function shouldwaitforsquadspawn()
 {
@@ -870,8 +870,8 @@ function shouldwaitforsquadspawn()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x377d
+// Params 0
+// Checksum 0x0, Offset: 0x377e
 // Size: 0x5c
 function queueclientforsquadspawn()
 {
@@ -882,8 +882,8 @@ function queueclientforsquadspawn()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37e1
+// Params 0
+// Checksum 0x0, Offset: 0x37e2
 // Size: 0x13
 function waitclassselected()
 {
@@ -894,8 +894,8 @@ function waitclassselected()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37fc
+// Params 0
+// Checksum 0x0, Offset: 0x37fd
 // Size: 0xa3, Type: bool
 function needsbuttontorespawn()
 {
@@ -940,8 +940,8 @@ function needsbuttontorespawn()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38a8
+// Params 0
+// Checksum 0x0, Offset: 0x38a9
 // Size: 0x2a
 function waitrespawnbutton()
 {
@@ -960,8 +960,8 @@ function waitrespawnbutton()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38da
+// Params 0
+// Checksum 0x0, Offset: 0x38db
 // Size: 0x23, Type: bool
 function function_98811c91e3781166()
 {
@@ -974,8 +974,8 @@ function function_98811c91e3781166()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3906
+// Params 0
+// Checksum 0x0, Offset: 0x3907
 // Size: 0x20
 function function_5ecf910ea9dfdb41()
 {
@@ -985,8 +985,8 @@ function function_5ecf910ea9dfdb41()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x392e
+// Params 0
+// Checksum 0x0, Offset: 0x392f
 // Size: 0x48
 function function_e02011baf71d84ac()
 {
@@ -1004,8 +1004,8 @@ function function_e02011baf71d84ac()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x397e
+// Params 1
+// Checksum 0x0, Offset: 0x397f
 // Size: 0x2f
 function removespawnmessageshortly( delay )
 {
@@ -1018,8 +1018,8 @@ function removespawnmessageshortly( delay )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39b5
+// Params 0
+// Checksum 0x0, Offset: 0x39b6
 // Size: 0x337, Type: bool
 function tivalidationcheck()
 {
@@ -1103,8 +1103,8 @@ function tivalidationcheck()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cf5
+// Params 0
+// Checksum 0x0, Offset: 0x3cf6
 // Size: 0x204
 function revivespawnvalidationcheck()
 {
@@ -1169,8 +1169,8 @@ function revivespawnvalidationcheck()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f02
+// Params 0
+// Checksum 0x0, Offset: 0x3f03
 // Size: 0x1c
 function spawningclientthisframereset()
 {
@@ -1181,8 +1181,8 @@ function spawningclientthisframereset()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f26
+// Params 1
+// Checksum 0x0, Offset: 0x3f27
 // Size: 0xdf
 function getplayerassets( classstruct )
 {
@@ -1214,8 +1214,8 @@ function getplayerassets( classstruct )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x400e
+// Params 3
+// Checksum 0x0, Offset: 0x400f
 // Size: 0xdc
 function loadplayerassets( var_424ddd9840da9529, highpriority, var_8c3977c9c8dc729b )
 {
@@ -1246,8 +1246,8 @@ function loadplayerassets( var_424ddd9840da9529, highpriority, var_8c3977c9c8dc7
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x40f2
+// Params 1
+// Checksum 0x0, Offset: 0x40f3
 // Size: 0x7a, Type: bool
 function allplayershaveassetsloaded( assets )
 {
@@ -1277,8 +1277,8 @@ function allplayershaveassetsloaded( assets )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4175
+// Params 0
+// Checksum 0x0, Offset: 0x4176
 // Size: 0x7b0
 function getspawnpoint()
 {
@@ -1489,9 +1489,9 @@ function getspawnpoint()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x492e
-// Size: 0x14fb
+// Params 2
+// Checksum 0x0, Offset: 0x492f
+// Size: 0x1514
 function spawnplayer( fauxspawn, revivespawn )
 {
     self endon( "disconnect" );
@@ -1543,7 +1543,7 @@ function spawnplayer( fauxspawn, revivespawn )
     self.cratemantle = undefined;
     self.var_4a2f2f50a9020e2e = undefined;
     
-    if ( getdvarint( @"hash_f16ba8db72f34fc3", 0 ) != 0 )
+    if ( getdvarint( @"scr_game_forceuav", 0 ) != 0 )
     {
         level thread scripts\cp_mp\killstreaks\uav::function_c11936b9c6c3a076( self );
     }
@@ -1734,10 +1734,12 @@ function spawnplayer( fauxspawn, revivespawn )
             }
         }
         
-        if ( !istrue( self.gulag ) && !istrue( self.respawningfromtoken ) && !istrue( self.respawningbr ) )
+        if ( !istrue( self.gulag ) && ( !istrue( self.respawningfromtoken ) || istrue( self.var_a8a69818c7e933a9 ) ) && !istrue( self.respawningbr ) )
         {
             scripts\mp\playerlogic::addtoalivecount( "spawnPlayer" );
         }
+        
+        self.var_a8a69818c7e933a9 = undefined;
         
         if ( !hadspawned || gamehasstarted() || gamehasstarted() && level.ingraceperiod && self.hasdonecombat )
         {
@@ -1949,7 +1951,7 @@ function spawnplayer( fauxspawn, revivespawn )
         
         self.lastmatchdatakillstreakindex = -1;
         
-        if ( getdvarint( @"hash_4ba1427c86b79dc5" ) != 0 )
+        if ( getdvarint( @"online_matchdata_enabled" ) != 0 )
         {
             setmatchdata( "lifeCount", game[ "life_count" ] );
         }
@@ -2171,8 +2173,8 @@ function spawnplayer( fauxspawn, revivespawn )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e31
+// Params 0
+// Checksum 0x0, Offset: 0x5e4b
 // Size: 0x38
 function validatespawn()
 {
@@ -2186,8 +2188,8 @@ function validatespawn()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e71
+// Params 0
+// Checksum 0x0, Offset: 0x5e8b
 // Size: 0xa
 function enableoutline()
 {
@@ -2195,8 +2197,8 @@ function enableoutline()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e83
+// Params 0
+// Checksum 0x0, Offset: 0x5e9d
 // Size: 0x406
 function function_9055412313c726ad()
 {
@@ -2311,8 +2313,8 @@ function function_9055412313c726ad()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6291
+// Params 0
+// Checksum 0x0, Offset: 0x62ab
 // Size: 0xab
 function isvehicledriver()
 {
@@ -2344,8 +2346,8 @@ function isvehicledriver()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6344
+// Params 1
+// Checksum 0x0, Offset: 0x635e
 // Size: 0x67
 function function_1610dbc40254209c( localenemy )
 {
@@ -2358,8 +2360,8 @@ function function_1610dbc40254209c( localenemy )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63b3
+// Params 1
+// Checksum 0x0, Offset: 0x63cd
 // Size: 0xf4
 function function_a9d32c0b976412da( var_68a6cd6d3cb58e79 )
 {
@@ -2376,8 +2378,8 @@ function function_a9d32c0b976412da( var_68a6cd6d3cb58e79 )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64af
+// Params 1
+// Checksum 0x0, Offset: 0x64c9
 // Size: 0x79
 function logloadoutcopy( killer )
 {
@@ -2388,8 +2390,8 @@ function logloadoutcopy( killer )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6530
+// Params 0
+// Checksum 0x0, Offset: 0x654a
 // Size: 0x9c
 function logstartingloadout()
 {
@@ -2422,8 +2424,8 @@ function logstartingloadout()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x65d4
+// Params 0
+// Checksum 0x0, Offset: 0x65ee
 // Size: 0x1a
 function notifyreviveregen()
 {
@@ -2434,8 +2436,8 @@ function notifyreviveregen()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x65f6
+// Params 0
+// Checksum 0x0, Offset: 0x6610
 // Size: 0x1b
 function setspawnnotifyomnvar()
 {
@@ -2445,8 +2447,8 @@ function setspawnnotifyomnvar()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6619
+// Params 1
+// Checksum 0x0, Offset: 0x6633
 // Size: 0x12e
 function playerprematchallow( allow )
 {
@@ -2482,8 +2484,8 @@ function playerprematchallow( allow )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x674f
+// Params 1
+// Checksum 0x0, Offset: 0x6769
 // Size: 0x27
 function allowprematchlook( player )
 {
@@ -2492,8 +2494,8 @@ function allowprematchlook( player )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x677e
+// Params 1
+// Checksum 0x0, Offset: 0x6798
 // Size: 0x41
 function clearprematchlook( player )
 {
@@ -2505,8 +2507,8 @@ function clearprematchlook( player )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x67c7
+// Params 0
+// Checksum 0x0, Offset: 0x67e1
 // Size: 0x43
 function waitforversusmenudone()
 {
@@ -2525,8 +2527,8 @@ function waitforversusmenudone()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6812
+// Params 0
+// Checksum 0x0, Offset: 0x682c
 // Size: 0xdc
 function function_b18bcc805b8800e()
 {
@@ -2555,8 +2557,8 @@ function function_b18bcc805b8800e()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x68f6
+// Params 1
+// Checksum 0x0, Offset: 0x6910
 // Size: 0x80
 function function_1354d352db863672( player )
 {
@@ -2582,8 +2584,8 @@ function function_1354d352db863672( player )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x697e
+// Params 0
+// Checksum 0x0, Offset: 0x6998
 // Size: 0x463
 function function_38d8271a5b966538()
 {
@@ -2664,8 +2666,8 @@ function function_38d8271a5b966538()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6dea
+// Params 1
+// Checksum 0x0, Offset: 0x6e04
 // Size: 0xdbc
 function spawnspectatormapcam( cameraoverride )
 {
@@ -3073,8 +3075,8 @@ function spawnspectatormapcam( cameraoverride )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bae
+// Params 3
+// Checksum 0x0, Offset: 0x7bc8
 // Size: 0xcf
 function spawnspectator( origin, angles, gameended )
 {
@@ -3101,8 +3103,8 @@ function spawnspectator( origin, angles, gameended )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c85
+// Params 2
+// Checksum 0x0, Offset: 0x7c9f
 // Size: 0x69
 function respawn_asspectator( origin, angles )
 {
@@ -3124,8 +3126,8 @@ function respawn_asspectator( origin, angles )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cf6
+// Params 3
+// Checksum 0x0, Offset: 0x7d10
 // Size: 0xd7
 function in_spawnspectator( origin, angles, gameended )
 {
@@ -3152,8 +3154,8 @@ function in_spawnspectator( origin, angles, gameended )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7dd5
+// Params 1
+// Checksum 0x0, Offset: 0x7def
 // Size: 0x57
 function getplayerfromclientnum( clientnum )
 {
@@ -3162,7 +3164,8 @@ function getplayerfromclientnum( clientnum )
         return undefined;
     }
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         if ( level.players[ i ] getentitynumber() == clientnum )
         {
             return level.players[ i ];
@@ -3173,8 +3176,8 @@ function getplayerfromclientnum( clientnum )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e35
+// Params 3
+// Checksum 0x0, Offset: 0x7e4f
 // Size: 0x2e5
 function onspawnspectator( origin, angles, gameended )
 {
@@ -3212,7 +3215,8 @@ function onspawnspectator( origin, angles, gameended )
     
     if ( isdefined( level.camerapos ) && level.camerapos.size )
     {
-        for (i = 0; i < level.camerahighestindex + 1 && i < var_4816b1172f8e226b; i++) {
+        for ( i = 0; i < level.camerahighestindex + 1 && i < var_4816b1172f8e226b ; i++ )
+        {
             if ( !isdefined( level.camerapos[ i ] ) || !isdefined( level.cameraang[ i ] ) )
             {
                 continue;
@@ -3227,7 +3231,8 @@ function onspawnspectator( origin, angles, gameended )
     }
     else
     {
-        for (i = 0; i < var_4816b1172f8e226b; i++) {
+        for ( i = 0; i < var_4816b1172f8e226b ; i++ )
+        {
             self setmlgcameradefaults( i, spawnpoint.origin, spawnpoint.angles );
         }
     }
@@ -3250,8 +3255,8 @@ function onspawnspectator( origin, angles, gameended )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8122
+// Params 0
+// Checksum 0x0, Offset: 0x813c
 // Size: 0x2e5
 function getspectatepoint()
 {
@@ -3335,8 +3340,8 @@ function getspectatepoint()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8410
+// Params 3
+// Checksum 0x0, Offset: 0x842a
 // Size: 0x1fe
 function spawnintermission( spawnpoint, sessionstate, everyonehearseveryone )
 {
@@ -3423,8 +3428,8 @@ function spawnintermission( spawnpoint, sessionstate, everyonehearseveryone )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8616
+// Params 0
+// Checksum 0x0, Offset: 0x8630
 // Size: 0x81
 function spawnendofgame()
 {
@@ -3454,8 +3459,8 @@ function spawnendofgame()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x869f
+// Params 0
+// Checksum 0x0, Offset: 0x86b9
 // Size: 0x1f
 function setspawnvariables()
 {
@@ -3465,8 +3470,8 @@ function setspawnvariables()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x86c6
+// Params 1
+// Checksum 0x0, Offset: 0x86e0
 // Size: 0x1cb
 function function_358a3ae71b7d1935( player )
 {
@@ -3510,8 +3515,8 @@ function function_358a3ae71b7d1935( player )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x889a
+// Params 1
+// Checksum 0x0, Offset: 0x88b4
 // Size: 0x5ab
 function callback_playerdisconnect( reason )
 {
@@ -3524,7 +3529,7 @@ function callback_playerdisconnect( reason )
     playerstats = function_358a3ae71b7d1935( self );
     self function_fe84f716b4611373( playerstats );
     
-    if ( getdvarint( @"hash_4ba1427c86b79dc5" ) != 0 )
+    if ( getdvarint( @"online_matchdata_enabled" ) != 0 )
     {
         playercountleft = getmatchdata( "commonMatchData", "player_count_left" );
         playercountleft++;
@@ -3685,8 +3690,8 @@ function callback_playerdisconnect( reason )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e4d
+// Params 0
+// Checksum 0x0, Offset: 0x8e67
 // Size: 0xb7
 function endemptygamewatcher()
 {
@@ -3711,14 +3716,15 @@ function endemptygamewatcher()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f0c
+// Params 0
+// Checksum 0x0, Offset: 0x8f26
 // Size: 0xb3
 function removeplayerondisconnect()
 {
     found = 0;
     
-    for (entry = 0; entry < level.players.size; entry++) {
+    for ( entry = 0; entry < level.players.size ; entry++ )
+    {
         if ( level.players[ entry ] == self )
         {
             found = 1;
@@ -3740,8 +3746,8 @@ function removeplayerondisconnect()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fc7
+// Params 0
+// Checksum 0x0, Offset: 0x8fe1
 // Size: 0x55
 function initclientdvarssplitscreenspecific()
 {
@@ -3756,8 +3762,8 @@ function initclientdvarssplitscreenspecific()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9024
+// Params 0
+// Checksum 0x0, Offset: 0x903e
 // Size: 0x1fe
 function initclientdvars()
 {
@@ -3809,7 +3815,8 @@ function initclientdvars()
     
     if ( getdvarint( @"hash_8662c4d785d46fd6" ) )
     {
-        for (i = 0; i < 6; i++) {
+        for ( i = 0; i < 6 ; i++ )
+        {
             self setclientdvar( hashcat( @"hash_3dd1dde9508849d5", string( i ) ), "" );
         }
         
@@ -3818,8 +3825,8 @@ function initclientdvars()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x922a
+// Params 0
+// Checksum 0x0, Offset: 0x9244
 // Size: 0xda
 function connect_validateplayerteam()
 {
@@ -3828,7 +3835,7 @@ function connect_validateplayerteam()
         return;
     }
     
-    forceteam = getdvar( @"hash_aea3ac32a07685ba", "" );
+    forceteam = getdvar( @"scr_force_team", "" );
     
     if ( self.sessionteam == "none" && matchmakinggame() && level.teambased && !isbot( self ) && !istestclient( self ) && !self iscodcaster() && !scripts\cp_mp\utility\game_utility::isinfectedgametype() && !isgameplayteam( forceteam ) )
     {
@@ -3840,8 +3847,8 @@ function connect_validateplayerteam()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x930c
+// Params 0
+// Checksum 0x0, Offset: 0x9326
 // Size: 0x9b
 function queueconnectednotify()
 {
@@ -3858,7 +3865,8 @@ function queueconnectednotify()
     
     for ( ;; )
     {
-        for (i = 0; i < level.players_waiting_for_callback.size; i++) {
+        for ( i = 0; i < level.players_waiting_for_callback.size ; i++ )
+        {
             player = level.players_waiting_for_callback[ i ];
             
             if ( isdefined( player ) )
@@ -3877,8 +3885,8 @@ function queueconnectednotify()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x93af
+// Params 2
+// Checksum 0x0, Offset: 0x93c9
 // Size: 0x29
 function onversusdone( channel, splashindex )
 {
@@ -3891,8 +3899,8 @@ function onversusdone( channel, splashindex )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x93e0
+// Params 0
+// Checksum 0x0, Offset: 0x93fa
 // Size: 0x38
 function initsegmentstats()
 {
@@ -3907,8 +3915,8 @@ function initsegmentstats()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9420
+// Params 0
+// Checksum 0x0, Offset: 0x943a
 // Size: 0xd5
 function recordplayersegmentdata()
 {
@@ -3956,8 +3964,8 @@ function recordplayersegmentdata()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x94fd
+// Params 1
+// Checksum 0x0, Offset: 0x9517
 // Size: 0xce
 function createplayersegmentstats( player )
 {
@@ -3985,8 +3993,8 @@ function createplayersegmentstats( player )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x95d3
+// Params 0
+// Checksum 0x0, Offset: 0x95ed
 // Size: 0x49
 function function_81556b07c7a4bf27()
 {
@@ -3998,8 +4006,8 @@ function function_81556b07c7a4bf27()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9624
+// Params 0
+// Checksum 0x0, Offset: 0x963e
 // Size: 0x74
 function function_6507acd84aa694f8()
 {
@@ -4016,8 +4024,8 @@ function function_6507acd84aa694f8()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x96a0
+// Params 0
+// Checksum 0x0, Offset: 0x96ba
 // Size: 0x110
 function updateplayersegmentdata()
 {
@@ -4054,12 +4062,12 @@ function updateplayersegmentdata()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x97b8
+// Params 1
+// Checksum 0x0, Offset: 0x97d2
 // Size: 0x61, Type: bool
 function shouldshowwidemapshot( normalizedtimepassed )
 {
-    if ( istrue( level.var_a6954a050d77d75c ) || getdvarint( @"hash_fabb903693771c08", 1 ) )
+    if ( istrue( level.var_a6954a050d77d75c ) || getdvarint( @"scr_shoulddisablemapflyin", 1 ) )
     {
         return false;
     }
@@ -4068,8 +4076,8 @@ function shouldshowwidemapshot( normalizedtimepassed )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9822
+// Params 0
+// Checksum 0x0, Offset: 0x983c
 // Size: 0x32
 function function_9fac5c57173a9bb9()
 {
@@ -4080,8 +4088,8 @@ function function_9fac5c57173a9bb9()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x985c
+// Params 3
+// Checksum 0x0, Offset: 0x9876
 // Size: 0x106
 function setuipregamefadeup( waitmsg, messagelistener, keepui )
 {
@@ -4133,8 +4141,8 @@ function setuipregamefadeup( waitmsg, messagelistener, keepui )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x996a
+// Params 1
+// Checksum 0x0, Offset: 0x9984
 // Size: 0x124
 function function_af273a2e9abf2489( keepui )
 {
@@ -4183,8 +4191,8 @@ function function_af273a2e9abf2489( keepui )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a96
+// Params 0
+// Checksum 0x0, Offset: 0x9ab0
 // Size: 0x7b
 function callback_playeractive()
 {
@@ -4203,8 +4211,8 @@ function callback_playeractive()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b19
+// Params 0
+// Checksum 0x0, Offset: 0x9b33
 // Size: 0x14
 function getmaxnumplayerslogging()
 {
@@ -4217,8 +4225,8 @@ function getmaxnumplayerslogging()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b35
+// Params 2
+// Checksum 0x0, Offset: 0x9b4f
 // Size: 0x74
 function function_2724805d492e905d( origin, angles )
 {
@@ -4232,9 +4240,9 @@ function function_2724805d492e905d( origin, angles )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bb1
-// Size: 0x1567
+// Params 0
+// Checksum 0x0, Offset: 0x9bcb
+// Size: 0x1572
 function callback_playerconnect()
 {
     self.versusdone = 0;
@@ -4422,23 +4430,26 @@ function callback_playerconnect()
         self.pers[ "scoreAtLastDeath" ] = 0;
         self.pers[ "weaponStats" ] = [];
         
-        if ( scripts\cp_mp\utility\game_utility::isbrstylegametype() )
+        if ( scripts\mp\utility\game::function_d75b73c443421047() == 0 )
         {
-            var_b9c95d2f33c0d8b = function_ce68631570796a41();
-            
-            if ( isdefined( var_b9c95d2f33c0d8b ) )
+            if ( scripts\cp_mp\utility\game_utility::isbrstylegametype() )
             {
-                thread function_408b1b8364d0e722( var_b9c95d2f33c0d8b );
-                scripts\cp_mp\playerachievements::getstate( self, var_b9c95d2f33c0d8b );
+                var_b9c95d2f33c0d8b = function_ce68631570796a41();
+                
+                if ( isdefined( var_b9c95d2f33c0d8b ) )
+                {
+                    thread function_408b1b8364d0e722( var_b9c95d2f33c0d8b );
+                    scripts\cp_mp\playerachievements::getstate( self, var_b9c95d2f33c0d8b );
+                }
             }
-        }
-        
-        var_8ca33da989ab6666 = getdvarint( @"hash_ed901443dea302d4", 26871 );
-        
-        if ( var_8ca33da989ab6666 > 0 )
-        {
-            thread function_fd6c077d98fa4be9( var_8ca33da989ab6666 );
-            scripts\cp_mp\playerachievements::getstate( self, var_8ca33da989ab6666 );
+            
+            var_8ca33da989ab6666 = getdvarint( @"hash_ed901443dea302d4", 26871 );
+            
+            if ( var_8ca33da989ab6666 > 0 )
+            {
+                thread function_fd6c077d98fa4be9( var_8ca33da989ab6666 );
+                scripts\cp_mp\playerachievements::getstate( self, var_8ca33da989ab6666 );
+            }
         }
     }
     
@@ -4484,7 +4495,7 @@ function callback_playerconnect()
     
     self logstatmatchguid();
     
-    if ( getdvarint( @"hash_4ba1427c86b79dc5" ) != 0 )
+    if ( getdvarint( @"online_matchdata_enabled" ) != 0 )
     {
         playercount = getmatchdata( "commonMatchData", "player_count" );
         
@@ -4693,7 +4704,7 @@ function callback_playerconnect()
             
             brgametype = scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5();
             
-            if ( ( brgametype == "dmz" || brgametype == "exgm" || brgametype == "plunder" || brgametype == "risk" ) && getdvarint( @"hash_825151346ad147f2", 0 ) == 1 )
+            if ( ( brgametype == "dmz" || brgametype == "exgm" || brgametype == "plunder" || brgametype == "risk" ) && getdvarint( @"scr_br_manual_team_assignment", 0 ) == 1 )
             {
                 thread scripts\mp\teams::persistantgametypeteamassign();
             }
@@ -4808,7 +4819,7 @@ function callback_playerconnect()
         {
             self.pers[ "secondHalfInitialConnect" ] = 0;
             playerteam = getotherteam( playerteam )[ 0 ];
-            setdvar( @"hash_819016fcba31a2c2", 1 );
+            setdvar( @"online_allowteamchange", 1 );
             var_aa4c1ed9107c16e0 = 1;
         }
         
@@ -4817,7 +4828,7 @@ function callback_playerconnect()
         
         if ( var_aa4c1ed9107c16e0 )
         {
-            setdvar( @"hash_819016fcba31a2c2", 0 );
+            setdvar( @"online_allowteamchange", 0 );
         }
         
         if ( self iscodcaster() )
@@ -4856,8 +4867,8 @@ function callback_playerconnect()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb120
+// Params 0
+// Checksum 0x0, Offset: 0xb145
 // Size: 0xe7
 function function_2c0b975a7130601e()
 {
@@ -4902,8 +4913,8 @@ function function_2c0b975a7130601e()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb20f
+// Params 0
+// Checksum 0x0, Offset: 0xb234
 // Size: 0xef
 function function_8eed5edfb3ce6f1a()
 {
@@ -4940,8 +4951,8 @@ function function_8eed5edfb3ce6f1a()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb306
+// Params 0
+// Checksum 0x0, Offset: 0xb32b
 // Size: 0x10d
 function callback_playermigrated()
 {
@@ -4980,8 +4991,8 @@ function callback_playermigrated()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb41b
+// Params 0
+// Checksum 0x0, Offset: 0xb440
 // Size: 0x45
 function function_556228e50ff920d9()
 {
@@ -4990,8 +5001,8 @@ function function_556228e50ff920d9()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb468
+// Params 1
+// Checksum 0x0, Offset: 0xb48d
 // Size: 0x76
 function function_5c9544ef10cb9e0c( reason )
 {
@@ -5007,8 +5018,8 @@ function function_5c9544ef10cb9e0c( reason )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4e6
+// Params 2
+// Checksum 0x0, Offset: 0xb50b
 // Size: 0x67
 function function_2a643088582c8be3( achievementid, progressdata )
 {
@@ -5021,8 +5032,8 @@ function function_2a643088582c8be3( achievementid, progressdata )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb555
+// Params 2
+// Checksum 0x0, Offset: 0xb57a
 // Size: 0xd1
 function addlevelstoexperience( experience, levels )
 {
@@ -5054,8 +5065,8 @@ function addlevelstoexperience( experience, levels )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb62f
+// Params 0
+// Checksum 0x0, Offset: 0xb654
 // Size: 0xa2
 function forcespawn()
 {
@@ -5083,12 +5094,12 @@ function forcespawn()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6d9
+// Params 0
+// Checksum 0x0, Offset: 0xb6fe
 // Size: 0x149
 function kickifdontspawn()
 {
-    if ( getdvarint( @"hash_b66208719c6bae6a", 0 ) == 1 )
+    if ( getdvarint( @"debug_stopafkcheck", 0 ) == 1 )
     {
         return;
     }
@@ -5137,8 +5148,8 @@ function kickifdontspawn()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb82a
+// Params 1
+// Checksum 0x0, Offset: 0xb84f
 // Size: 0x1a
 function kickwait( waittime )
 {
@@ -5147,8 +5158,8 @@ function kickwait( waittime )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb84c
+// Params 0
+// Checksum 0x0, Offset: 0xb871
 // Size: 0x4f
 function monitorvotekick()
 {
@@ -5166,8 +5177,8 @@ function monitorvotekick()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8a3
+// Params 0
+// Checksum 0x0, Offset: 0xb8c8
 // Size: 0x2c
 function fakevote()
 {
@@ -5180,8 +5191,8 @@ function fakevote()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8d7
+// Params 0
+// Checksum 0x0, Offset: 0xb8fc
 // Size: 0x82
 function function_147b2c2604c54839()
 {
@@ -5203,8 +5214,8 @@ function function_147b2c2604c54839()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb962
+// Params 1
+// Checksum 0x0, Offset: 0xb987
 // Size: 0x4ac
 function totaldisttracking( spawnorigin )
 {
@@ -5385,8 +5396,8 @@ function totaldisttracking( spawnorigin )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe16
+// Params 0
+// Checksum 0x0, Offset: 0xbe3b
 // Size: 0x45
 function playerhasmoved()
 {
@@ -5397,8 +5408,8 @@ function playerhasmoved()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe63
+// Params 0
+// Checksum 0x0, Offset: 0xbe88
 // Size: 0xf5
 function initleanplayerstats()
 {
@@ -5431,8 +5442,8 @@ function initleanplayerstats()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf60
+// Params 0
+// Checksum 0x0, Offset: 0xbf85
 // Size: 0x8a0
 function initplayerstats()
 {
@@ -5705,8 +5716,8 @@ function initplayerstats()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc808
+// Params 1
+// Checksum 0x0, Offset: 0xc82d
 // Size: 0x87
 function addtoteamcount( addlives )
 {
@@ -5719,8 +5730,8 @@ function addtoteamcount( addlives )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc897
+// Params 0
+// Checksum 0x0, Offset: 0xc8bc
 // Size: 0x70
 function removefromteamcount()
 {
@@ -5732,8 +5743,8 @@ function removefromteamcount()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc90f
+// Params 1
+// Checksum 0x0, Offset: 0xc934
 // Size: 0xe9
 function addtoalivecount( context )
 {
@@ -5761,8 +5772,8 @@ function addtoalivecount( context )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xca00
+// Params 3
+// Checksum 0x0, Offset: 0xca25
 // Size: 0x32
 function incrementalivecount( var_da533fd7eba790e5, var_28335de6505d7e0c, context )
 {
@@ -5771,8 +5782,8 @@ function incrementalivecount( var_da533fd7eba790e5, var_28335de6505d7e0c, contex
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xca3a
+// Params 2
+// Checksum 0x0, Offset: 0xca5f
 // Size: 0x156
 function removefromalivecount( disconnected, context )
 {
@@ -5808,8 +5819,8 @@ function removefromalivecount( disconnected, context )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb98
+// Params 3
+// Checksum 0x0, Offset: 0xcbbd
 // Size: 0x32
 function decrementalivecount( var_f559615fec1d7733, var_28335de6505d7e0c, context )
 {
@@ -5818,8 +5829,8 @@ function decrementalivecount( var_f559615fec1d7733, var_28335de6505d7e0c, contex
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcbd2
+// Params 0
+// Checksum 0x0, Offset: 0xcbf7
 // Size: 0x31
 function addtolivescount()
 {
@@ -5828,8 +5839,8 @@ function addtolivescount()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc0b
+// Params 0
+// Checksum 0x0, Offset: 0xcc30
 // Size: 0x48
 function removefromlivescount()
 {
@@ -5838,8 +5849,8 @@ function removefromlivescount()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc5b
+// Params 0
+// Checksum 0x0, Offset: 0xcc80
 // Size: 0x51
 function removeallfromlivescount()
 {
@@ -5848,8 +5859,8 @@ function removeallfromlivescount()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xccb4
+// Params 0
+// Checksum 0x0, Offset: 0xccd9
 // Size: 0x6a
 function resetuiomnvarscommon()
 {
@@ -5867,8 +5878,8 @@ function resetuiomnvarscommon()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd26
+// Params 0
+// Checksum 0x0, Offset: 0xcd4b
 // Size: 0x5f
 function resetuidvarsonconnect()
 {
@@ -5887,8 +5898,8 @@ function resetuidvarsonconnect()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd8d
+// Params 0
+// Checksum 0x0, Offset: 0xcdb2
 // Size: 0x1a
 function resetuidvarsonspectate()
 {
@@ -5897,8 +5908,8 @@ function resetuidvarsonspectate()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcdaf
+// Params 0
+// Checksum 0x0, Offset: 0xcdd4
 // Size: 0x10e
 function clearpinnedobjectives()
 {
@@ -5931,8 +5942,8 @@ function clearpinnedobjectives()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcec5
+// Params 0
+// Checksum 0x0, Offset: 0xceea
 // Size: 0x138
 function watchtargethealth()
 {
@@ -5975,8 +5986,8 @@ function watchtargethealth()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd005
+// Params 2
+// Checksum 0x0, Offset: 0xd02a
 // Size: 0x57
 function updatetargethealthvariable( var_e9d476a3809cb3f1, value )
 {
@@ -6000,8 +6011,8 @@ function updatetargethealthvariable( var_e9d476a3809cb3f1, value )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd064
+// Params 0
+// Checksum 0x0, Offset: 0xd089
 // Size: 0xc5
 function showgamemodeobjectivetext()
 {
@@ -6053,8 +6064,8 @@ function showgamemodeobjectivetext()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd131
+// Params 0
+// Checksum 0x0, Offset: 0xd156
 // Size: 0x16
 function function_155c4aaa1dae57e6()
 {
@@ -6063,8 +6074,8 @@ function function_155c4aaa1dae57e6()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd14f
+// Params 0
+// Checksum 0x0, Offset: 0xd174
 // Size: 0x31
 function function_ebd3a9ccfbeb79c3()
 {
@@ -6079,8 +6090,8 @@ function function_ebd3a9ccfbeb79c3()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd188
+// Params 0
+// Checksum 0x0, Offset: 0xd1ad
 // Size: 0x57, Type: bool
 function showmatchhint()
 {
@@ -6103,8 +6114,8 @@ function showmatchhint()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd1e8
+// Params 0
+// Checksum 0x0, Offset: 0xd20d
 // Size: 0x5f
 function trydisableminimap()
 {
@@ -6131,8 +6142,8 @@ function trydisableminimap()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd24f
+// Params 0
+// Checksum 0x0, Offset: 0xd274
 // Size: 0x11
 function initinputtypewatcher()
 {
@@ -6140,8 +6151,8 @@ function initinputtypewatcher()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd268
+// Params 2
+// Checksum 0x0, Offset: 0xd28d
 // Size: 0x1c0
 function managerespawnfade( var_ad4dd16f29e24b77, var_dfab0807d83a77fe )
 {
@@ -6240,8 +6251,8 @@ function managerespawnfade( var_ad4dd16f29e24b77, var_dfab0807d83a77fe )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd430
+// Params 0
+// Checksum 0x0, Offset: 0xd455
 // Size: 0x1d
 function function_48c5a587383a90e7()
 {
@@ -6255,7 +6266,7 @@ function function_48c5a587383a90e7()
 
 // Namespace playerlogic / scripts\mp\playerlogic
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xd456
+// Checksum 0x0, Offset: 0xd47b
 // Size: 0x45
 function private function_ce68631570796a41()
 {
@@ -6271,7 +6282,7 @@ function private function_ce68631570796a41()
 
 // Namespace playerlogic / scripts\mp\playerlogic
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xd4a3
+// Checksum 0x0, Offset: 0xd4c8
 // Size: 0x67
 function private function_408b1b8364d0e722( var_b9c95d2f33c0d8b )
 {
@@ -6290,7 +6301,7 @@ function private function_408b1b8364d0e722( var_b9c95d2f33c0d8b )
 
 // Namespace playerlogic / scripts\mp\playerlogic
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xd512
+// Checksum 0x0, Offset: 0xd537
 // Size: 0xeb
 function private function_fd6c077d98fa4be9( var_8ca33da989ab6666 )
 {
@@ -6324,8 +6335,8 @@ function private function_fd6c077d98fa4be9( var_8ca33da989ab6666 )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd605
+// Params 0
+// Checksum 0x0, Offset: 0xd62a
 // Size: 0x1a
 function function_35b4c67f5f658332()
 {
@@ -6333,8 +6344,8 @@ function function_35b4c67f5f658332()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd628
+// Params 0
+// Checksum 0x0, Offset: 0xd64d
 // Size: 0x45
 function function_1761d46d3de136b9()
 {
@@ -6352,8 +6363,8 @@ function function_1761d46d3de136b9()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd676
+// Params 0
+// Checksum 0x0, Offset: 0xd69b
 // Size: 0xc4
 function function_5c5f27d13e5eb129()
 {
@@ -6403,8 +6414,8 @@ function function_5c5f27d13e5eb129()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd742
+// Params 1
+// Checksum 0x0, Offset: 0xd767
 // Size: 0x81
 function removespectateblackonspectatecycle( playertospectate )
 {
@@ -6428,8 +6439,8 @@ function removespectateblackonspectatecycle( playertospectate )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7cb
+// Params 0
+// Checksum 0x0, Offset: 0xd7f0
 // Size: 0x6a
 function watchforcurrentspectateclientdeathordisconnect()
 {
@@ -6446,8 +6457,8 @@ function watchforcurrentspectateclientdeathordisconnect()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd83d
+// Params 1
+// Checksum 0x0, Offset: 0xd862
 // Size: 0x55
 function function_cb60f35d0e8977eb( instant )
 {
@@ -6459,8 +6470,8 @@ function function_cb60f35d0e8977eb( instant )
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd89a
+// Params 0
+// Checksum 0x0, Offset: 0xd8bf
 // Size: 0x37
 function removespectateblackonspawn()
 {
@@ -6473,8 +6484,8 @@ function removespectateblackonspawn()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8d9
+// Params 0
+// Checksum 0x0, Offset: 0xd8fe
 // Size: 0x21
 function function_a385f81e49ecdf52()
 {
@@ -6484,12 +6495,12 @@ function function_a385f81e49ecdf52()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd902
+// Params 0
+// Checksum 0x0, Offset: 0xd927
 // Size: 0x3d
 function function_556c01754f79330f()
 {
-    if ( getdvarint( @"hash_af2d0a3d6fa51ebb", 0 ) == 1 )
+    if ( getdvarint( @"scr_globalautopilot", 0 ) == 1 )
     {
         level callback::add( "player_spawned", &function_68242cdc52332123 );
         
@@ -6501,8 +6512,8 @@ function function_556c01754f79330f()
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd947
+// Params 1
+// Checksum 0x0, Offset: 0xd96c
 // Size: 0x1c
 function function_68242cdc52332123( params )
 {
@@ -6515,8 +6526,8 @@ function function_68242cdc52332123( params )
 /#
 
     // Namespace playerlogic / scripts\mp\playerlogic
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd96b
+    // Params 0
+    // Checksum 0x0, Offset: 0xd990
     // Size: 0x90, Type: dev
     function debugcommands()
     {

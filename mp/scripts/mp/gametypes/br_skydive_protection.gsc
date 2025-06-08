@@ -8,7 +8,7 @@
 #namespace br_skydive_protection;
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x177
 // Size: 0x192
 function init()
@@ -20,15 +20,15 @@ function init()
     {
         level.modifyplayerdamage = &function_b18f9e23b7bbbc7f;
         level.var_3ff7c73209fcf59d = getdvarint( @"hash_8dcdf86e1a8c0268", 1 ) == 1;
-        level.var_c701c6304d25847b = getdvarint( @"hash_fe4e43d689d53652", 1 );
-        level.var_62b412340037b5f2 = getdvarfloat( @"hash_b8697b26628bf8f9", 2.5 );
+        level.var_c701c6304d25847b = getdvarint( @"scr_skydivespawnprotectiontimeoutenabled", 1 );
+        level.var_62b412340037b5f2 = getdvarfloat( @"scr_skydivespawnprotectiontimeoutduration", 2.5 );
         level.var_762e79833c568872 = getdvarfloat( @"hash_9b573a0d1aa67773", 0.2 );
         level.var_a616020822a64869 = getdvarfloat( @"hash_2d766a7032695e80", 0.1 );
-        level.var_f56012f3862e7747 = getdvarint( @"hash_75a6778b7afbe4ae", 2500 );
-        level.var_6c3525c5c767be2f = getdvarint( @"hash_135e4a643e2d5610", 750 );
+        level.var_f56012f3862e7747 = getdvarint( @"scr_skydivespawnprotectionscaleheighttop", 2500 );
+        level.var_6c3525c5c767be2f = getdvarint( @"scr_skydivespawnprotectionscaleheightbottom", 750 );
         level.var_99f79c82a10bb035 = getdvarfloat( @"hash_14eaf6cedd5cb4a", 0.25 );
         level.var_94ce8b45176db281 = getdvarfloat( @"hash_7f2806a81cfae7bc", 0.25 );
-        level.var_d5af0d323eade962 = getdvarfloat( @"hash_eefed2a5ab0f62f7", 750 );
+        level.var_d5af0d323eade962 = getdvarfloat( @"scr_skydivespawnprotectionsafetydistance", 750 );
         level.var_b1fa8d290ef1d796 = level.var_d5af0d323eade962 * level.var_d5af0d323eade962;
         
         /#
@@ -38,7 +38,7 @@ function init()
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x311
 // Size: 0x5b
 function initprotection()
@@ -67,7 +67,7 @@ function initprotection()
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x374
 // Size: 0x75
 function function_54559c834e6c17aa()
@@ -99,7 +99,7 @@ function function_54559c834e6c17aa()
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f1
 // Size: 0x112, Type: bool
 function function_f0f8107cb455be5c()
@@ -139,7 +139,7 @@ function function_f0f8107cb455be5c()
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x50c
 // Size: 0x67
 function function_21f0a8ee3f038d39()
@@ -170,7 +170,7 @@ function function_21f0a8ee3f038d39()
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57b
 // Size: 0x5a
 function function_211969a23699f797()
@@ -193,7 +193,7 @@ function function_211969a23699f797()
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5dd
 // Size: 0x41
 function function_6f97457196b089bd()
@@ -208,7 +208,7 @@ function function_6f97457196b089bd()
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x626
 // Size: 0xe3
 function function_cf9f51cc2da4f3bd()
@@ -246,7 +246,7 @@ function function_cf9f51cc2da4f3bd()
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x711
 // Size: 0x22, Type: bool
 function function_cfce6a9d8f6de32f( objweapon )
@@ -255,7 +255,7 @@ function function_cfce6a9d8f6de32f( objweapon )
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x73c
 // Size: 0x223
 function function_b18f9e23b7bbbc7f( einflictor, victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, idflags, var_be4285b26ed99ab1 )
@@ -303,7 +303,7 @@ function function_b18f9e23b7bbbc7f( einflictor, victim, eattacker, idamage, smea
 }
 
 // Namespace br_skydive_protection / scripts\mp\gametypes\br_skydive_protection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x968
 // Size: 0x60
 function function_2ccadd23ce09858e()

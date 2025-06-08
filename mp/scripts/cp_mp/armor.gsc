@@ -20,12 +20,13 @@
 #using scripts\cp_mp\utility\weapon_utility;
 #using scripts\cp_mp\weapon;
 #using scripts\engine\utility;
+#using scripts\mp\utility\game;
 
 #namespace armor;
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1270
+// Params 0
+// Checksum 0x0, Offset: 0x12a1
 // Size: 0x1db
 function init()
 {
@@ -33,7 +34,7 @@ function init()
         level function_a123482f01487930();
     #/
     
-    level.allowarmor = getdvarint( @"hash_a4d532f42d919827", 1 ) == 1;
+    level.allowarmor = getdvarint( @"scr_player_allowarmor", 1 ) == 1;
     level.var_1f9a4d8f7e4586bb = getdvarint( @"hash_cce2d04880fe5113", 0 );
     level.var_4b78859bacc88808 = getdvarint( @"hash_ea4fd87f53ec4456", 50 );
     
@@ -42,7 +43,7 @@ function init()
         level.var_fb2b3c3db6061df5 = getmatchrulesdata( "commonOption", "plateCarrierEnabled" );
     }
     
-    level.spawnarmor = getdvarint( @"hash_d75d5638785f3b09", 0 );
+    level.spawnarmor = getdvarint( @"scr_player_spawnarmor", 0 );
     level.spawnarmorplates = getdvarint( @"hash_a6a3fd965485d4bc", 0 );
     level.var_23500029f84b30d0 = getdvarint( @"hash_a729499d07bcd90a", 1 ) == 1;
     level.droparmorondeath = getdvarint( @"hash_8ad1ab9436bccca", 0 );
@@ -51,7 +52,7 @@ function init()
     level.var_6835a3d279520dc9 = getdvarint( @"hash_2bcfbe19dac56dd7", 3 );
     level.var_699bb1fcae5b2eee = getdvarint( @"hash_be3a8d807c217559", 1 );
     level.var_23960e36343a87a6 = getdvarint( @"hash_571f1ab18fcf566c", 1 );
-    level.var_1fe86bfc07eaa587 = getdvarint( @"hash_8b7eed58460969a6", 0 );
+    level.var_1fe86bfc07eaa587 = getdvarint( @"scr_br_platesactivatequickfix", 0 );
     level.var_27720c0c325958c1 = getdvarint( @"hash_d2591f329d2ec7d4", 1 ) > 0;
     function_abfcdee8fda20a4();
     
@@ -66,8 +67,8 @@ function init()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1453
+// Params 0
+// Checksum 0x0, Offset: 0x1484
 // Size: 0xf4
 function function_a123482f01487930()
 {
@@ -79,7 +80,7 @@ function function_a123482f01487930()
     
     if ( allowarmor >= 0 )
     {
-        setdvar( @"hash_a4d532f42d919827", allowarmor );
+        setdvar( @"scr_player_allowarmor", allowarmor );
     }
     
     if ( spawnarmorplates >= 0 )
@@ -89,7 +90,7 @@ function function_a123482f01487930()
     
     if ( spawnarmor >= 0 )
     {
-        setdvar( @"hash_d75d5638785f3b09", spawnarmor );
+        setdvar( @"scr_player_spawnarmor", spawnarmor );
     }
     
     if ( droparmorondeath >= 0 )
@@ -104,8 +105,8 @@ function function_a123482f01487930()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x154f
+// Params 2
+// Checksum 0x0, Offset: 0x1580
 // Size: 0x93
 function function_13caa305c839a278( notification, slotindex )
 {
@@ -130,8 +131,8 @@ function function_13caa305c839a278( notification, slotindex )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ea
+// Params 1
+// Checksum 0x0, Offset: 0x161b
 // Size: 0x40d
 function initarmor( var_b5c8bc15f7117b19 )
 {
@@ -212,7 +213,7 @@ function initarmor( var_b5c8bc15f7117b19 )
                 
                 if ( isbot( self ) )
                 {
-                    var_2e1d1af8afe39ba8 = getdvarint( @"hash_734001c752ad4a12", 2 );
+                    var_2e1d1af8afe39ba8 = getdvarint( @"scr_br_plate_carrier_br_start_level", 2 );
                 }
                 else
                 {
@@ -275,8 +276,8 @@ function initarmor( var_b5c8bc15f7117b19 )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19ff
+// Params 3
+// Checksum 0x0, Offset: 0x1a30
 // Size: 0x28c
 function givestartingarmor( armorvalue, var_10fd8ed3fed0e0ae, reserveplates )
 {
@@ -398,8 +399,8 @@ function givestartingarmor( armorvalue, var_10fd8ed3fed0e0ae, reserveplates )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c93
+// Params 0
+// Checksum 0x0, Offset: 0x1cc4
 // Size: 0x18
 function function_be5c0cdfa0202544()
 {
@@ -408,8 +409,8 @@ function function_be5c0cdfa0202544()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cb3
+// Params 0
+// Checksum 0x0, Offset: 0x1ce4
 // Size: 0x6c
 function function_46cd39650beb293f()
 {
@@ -427,8 +428,8 @@ function function_46cd39650beb293f()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d28
+// Params 0
+// Checksum 0x0, Offset: 0x1d59
 // Size: 0x1b, Type: bool
 function hasarmor()
 {
@@ -436,8 +437,8 @@ function hasarmor()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d4c
+// Params 0
+// Checksum 0x0, Offset: 0x1d7d
 // Size: 0x56
 function function_9bca5c1d23a3e0b3()
 {
@@ -455,8 +456,8 @@ function function_9bca5c1d23a3e0b3()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1daa
+// Params 0
+// Checksum 0x0, Offset: 0x1ddb
 // Size: 0x25
 function function_ac266fc218266d08()
 {
@@ -474,8 +475,8 @@ function function_ac266fc218266d08()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dd8
+// Params 1
+// Checksum 0x0, Offset: 0x1e09
 // Size: 0x37
 function function_11ae05e08cc74847( var_1c07ef7bc0e3723a )
 {
@@ -489,8 +490,8 @@ function function_11ae05e08cc74847( var_1c07ef7bc0e3723a )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e17
+// Params 2
+// Checksum 0x0, Offset: 0x1e48
 // Size: 0x7c
 function setarmorhealth( value, var_5fb98290d356d5dd )
 {
@@ -514,8 +515,8 @@ function setarmorhealth( value, var_5fb98290d356d5dd )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e9b
+// Params 0
+// Checksum 0x0, Offset: 0x1ecc
 // Size: 0x2a
 function function_20b8437058079297()
 {
@@ -530,8 +531,8 @@ function function_20b8437058079297()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ece
+// Params 1
+// Checksum 0x0, Offset: 0x1eff
 // Size: 0x47
 function function_77b7145c92102847( armorhealth )
 {
@@ -545,8 +546,8 @@ function function_77b7145c92102847( armorhealth )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f1e
+// Params 1
+// Checksum 0x0, Offset: 0x1f4f
 // Size: 0x30
 function function_9c6e9a6643b6c9a6( var_7bd6e41ea1e31283 )
 {
@@ -560,8 +561,8 @@ function function_9c6e9a6643b6c9a6( var_7bd6e41ea1e31283 )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f56
+// Params 0
+// Checksum 0x0, Offset: 0x1f87
 // Size: 0xa8
 function function_47320a25b8ee003()
 {
@@ -587,8 +588,8 @@ function function_47320a25b8ee003()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2007
+// Params 0
+// Checksum 0x0, Offset: 0x2038
 // Size: 0x4
 function function_1348b97715104fe2()
 {
@@ -596,8 +597,8 @@ function function_1348b97715104fe2()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2014
+// Params 0
+// Checksum 0x0, Offset: 0x2045
 // Size: 0x27, Type: bool
 function function_79e0ab2aa0304a2c()
 {
@@ -607,11 +608,26 @@ function function_79e0ab2aa0304a2c()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2044
-// Size: 0x204
+// Params 5
+// Checksum 0x0, Offset: 0x2075
+// Size: 0x276
 function damagearmor( damage, var_3773b3d5cce15dce, attacker, smeansofdeath, var_5fb98290d356d5dd )
 {
+    if ( scripts\mp\utility\game::function_d75b73c443421047() && ( isdefined( attacker ) && istrue( attacker.var_fa9f4c933e6df36d ) || isdefined( self ) && istrue( self.var_fa9f4c933e6df36d ) ) )
+    {
+        var_69f6b6b4f7e1e9cf = 1;
+        
+        if ( istrue( self.inlaststand ) && is_equal( smeansofdeath, "MOD_TRIGGER_HURT" ) )
+        {
+            var_69f6b6b4f7e1e9cf = 0;
+        }
+        
+        if ( var_69f6b6b4f7e1e9cf )
+        {
+            return 0;
+        }
+    }
+    
     if ( !hasarmor() )
     {
         return damage;
@@ -673,8 +689,8 @@ function damagearmor( damage, var_3773b3d5cce15dce, attacker, smeansofdeath, var
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2251
+// Params 1
+// Checksum 0x0, Offset: 0x22f4
 // Size: 0x72
 function function_8832743697109f0d( attacker )
 {
@@ -697,8 +713,8 @@ function function_8832743697109f0d( attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22cb
+// Params 0
+// Checksum 0x0, Offset: 0x236e
 // Size: 0x14
 function breakarmor()
 {
@@ -706,8 +722,8 @@ function breakarmor()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22e7
+// Params 0
+// Checksum 0x0, Offset: 0x238a
 // Size: 0x25
 function function_3f8a6f9da782d418()
 {
@@ -720,8 +736,8 @@ function function_3f8a6f9da782d418()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2315
+// Params 0
+// Checksum 0x0, Offset: 0x23b8
 // Size: 0x83
 function function_55811fc89cf705b5()
 {
@@ -730,7 +746,8 @@ function function_55811fc89cf705b5()
     var_f0c90b3263cc3702 = function_3f8a6f9da782d418();
     var_e9efe053d24b91d3 = 0;
     
-    for (i = 0; i < var_16da20e6451d7744.size; i++) {
+    for ( i = 0; i < var_16da20e6451d7744.size ; i++ )
+    {
         if ( var_424327452369b290 > var_16da20e6451d7744[ i ] && var_f0c90b3263cc3702 <= var_16da20e6451d7744[ i ] )
         {
             var_e9efe053d24b91d3++;
@@ -741,8 +758,8 @@ function function_55811fc89cf705b5()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23a1
+// Params 1
+// Checksum 0x0, Offset: 0x2444
 // Size: 0x23e
 function setarmoromnvars( var_5fb98290d356d5dd )
 {
@@ -808,8 +825,8 @@ function setarmoromnvars( var_5fb98290d356d5dd )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x25e7
+// Params 0
+// Checksum 0x0, Offset: 0x268a
 // Size: 0x81
 function function_dfac14bd66442dca()
 {
@@ -836,8 +853,8 @@ function function_dfac14bd66442dca()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2670
+// Params 0
+// Checksum 0x0, Offset: 0x2713
 // Size: 0x12, Type: bool
 function haslowarmor()
 {
@@ -845,8 +862,8 @@ function haslowarmor()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x268b
+// Params 0
+// Checksum 0x0, Offset: 0x272e
 // Size: 0x11
 function lowarmorthreshold()
 {
@@ -854,8 +871,8 @@ function lowarmorthreshold()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26a5
+// Params 0
+// Checksum 0x0, Offset: 0x2748
 // Size: 0x2b1
 function function_1b593d5e688a409c()
 {
@@ -947,8 +964,8 @@ function function_1b593d5e688a409c()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x295e
+// Params 0
+// Checksum 0x0, Offset: 0x2a01
 // Size: 0x18
 function function_70edce5f0482fde7()
 {
@@ -956,8 +973,8 @@ function function_70edce5f0482fde7()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x297f
+// Params 0
+// Checksum 0x0, Offset: 0x2a22
 // Size: 0x1f
 function function_829e435158d419cf()
 {
@@ -965,8 +982,8 @@ function function_829e435158d419cf()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29a7
+// Params 1
+// Checksum 0x0, Offset: 0x2a4a
 // Size: 0x13
 function function_774133dc8df0ccd5( var_10fd8ed3fed0e0ae )
 {
@@ -975,7 +992,7 @@ function function_774133dc8df0ccd5( var_10fd8ed3fed0e0ae )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x29c2
+// Checksum 0x0, Offset: 0x2a65
 // Size: 0x23e
 function private function_7293fbe4c07e316f( var_10fd8ed3fed0e0ae )
 {
@@ -1047,8 +1064,8 @@ function private function_7293fbe4c07e316f( var_10fd8ed3fed0e0ae )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c08
+// Params 0
+// Checksum 0x0, Offset: 0x2cab
 // Size: 0xf
 function function_50deea7508dbf174()
 {
@@ -1056,8 +1073,8 @@ function function_50deea7508dbf174()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c1f
+// Params 1
+// Checksum 0x0, Offset: 0x2cc2
 // Size: 0x76
 function function_ef6d8b8c2ed89e8a( count )
 {
@@ -1089,8 +1106,8 @@ function function_ef6d8b8c2ed89e8a( count )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c9d
+// Params 1
+// Checksum 0x0, Offset: 0x2d40
 // Size: 0x109
 function function_9f1608bd570dd94c( var_c84cdf4dbd2b7b98 )
 {
@@ -1148,8 +1165,8 @@ function function_9f1608bd570dd94c( var_c84cdf4dbd2b7b98 )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dae
+// Params 1
+// Checksum 0x0, Offset: 0x2e51
 // Size: 0xf4
 function function_2be3084f26829eac( var_d2a5ddc13d5ced30 )
 {
@@ -1172,7 +1189,7 @@ function function_2be3084f26829eac( var_d2a5ddc13d5ced30 )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2eaa
+// Checksum 0x0, Offset: 0x2f4d
 // Size: 0xd7
 function private function_7cb27dc2ce16cb4f()
 {
@@ -1196,7 +1213,7 @@ function private function_7cb27dc2ce16cb4f()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f89
+// Checksum 0x0, Offset: 0x302c
 // Size: 0x12
 function private on_player_spawn( sparams )
 {
@@ -1205,7 +1222,7 @@ function private on_player_spawn( sparams )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2fa3
+// Checksum 0x0, Offset: 0x3046
 // Size: 0x12
 function private function_5a97c5b79aaf7a5b( sparams )
 {
@@ -1214,7 +1231,7 @@ function private function_5a97c5b79aaf7a5b( sparams )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2fbd
+// Checksum 0x0, Offset: 0x3060
 // Size: 0x3dd
 function private function_f2a4a5aed60e552d()
 {
@@ -1333,8 +1350,8 @@ function private function_f2a4a5aed60e552d()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33a2
+// Params 0
+// Checksum 0x0, Offset: 0x3445
 // Size: 0x203
 function function_55c8966f39db409()
 {
@@ -1398,8 +1415,8 @@ function function_55c8966f39db409()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x35ad
+// Params 3
+// Checksum 0x0, Offset: 0x3650
 // Size: 0x1b
 function function_df0c4be0709e8116( equipmentref, slot, objweapon )
 {
@@ -1407,8 +1424,8 @@ function function_df0c4be0709e8116( equipmentref, slot, objweapon )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x35d0
+// Params 2
+// Checksum 0x0, Offset: 0x3673
 // Size: 0x13
 function function_dd4193b50e36fb2c( equipmentref, equipmentslot )
 {
@@ -1417,7 +1434,7 @@ function function_dd4193b50e36fb2c( equipmentref, equipmentslot )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x35eb
+// Checksum 0x0, Offset: 0x368e
 // Size: 0x237
 function private usearmorplate()
 {
@@ -1489,7 +1506,7 @@ function private usearmorplate()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x382a
+// Checksum 0x0, Offset: 0x38cd
 // Size: 0x32
 function private function_7f2cfc2ced509047()
 {
@@ -1501,8 +1518,8 @@ function private function_7f2cfc2ced509047()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3864
+// Params 0
+// Checksum 0x0, Offset: 0x3907
 // Size: 0x21
 function function_763f5fb36de6d3df()
 {
@@ -1510,8 +1527,8 @@ function function_763f5fb36de6d3df()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x388e
+// Params 0
+// Checksum 0x0, Offset: 0x3931
 // Size: 0x9f
 function function_85e373bb15921966()
 {
@@ -1532,7 +1549,7 @@ function function_85e373bb15921966()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3936
+// Checksum 0x0, Offset: 0x39d9
 // Size: 0x11c
 function private function_1240021a9c87bcdb()
 {
@@ -1581,7 +1598,7 @@ function private function_1240021a9c87bcdb()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3a5a
+// Checksum 0x0, Offset: 0x3afd
 // Size: 0x3a
 function private watchgameend( streakinfo )
 {
@@ -1594,7 +1611,7 @@ function private watchgameend( streakinfo )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3a9c
+// Checksum 0x0, Offset: 0x3b3f
 // Size: 0x3a
 function private function_a5e267fd4b705fd6()
 {
@@ -1606,7 +1623,7 @@ function private function_a5e267fd4b705fd6()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3ade
+// Checksum 0x0, Offset: 0x3b81
 // Size: 0xd5
 function private function_d9c269fb5751937b()
 {
@@ -1638,7 +1655,7 @@ function private function_d9c269fb5751937b()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3bbb
+// Checksum 0x0, Offset: 0x3c5e
 // Size: 0x2b
 function private function_ebbb01a971edd5b3()
 {
@@ -1649,7 +1666,7 @@ function private function_ebbb01a971edd5b3()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3bee
+// Checksum 0x0, Offset: 0x3c91
 // Size: 0x42
 function private function_8a7d870c4615a027()
 {
@@ -1660,7 +1677,7 @@ function private function_8a7d870c4615a027()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x3c38
+// Checksum 0x0, Offset: 0x3cdb
 // Size: 0x58
 function private function_9cda8706bc1d6a7d( mainreason, specificreason )
 {
@@ -1673,7 +1690,7 @@ function private function_9cda8706bc1d6a7d( mainreason, specificreason )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3c98
+// Checksum 0x0, Offset: 0x3d3b
 // Size: 0x9, Type: bool
 function private canqueuearmorbydefault()
 {
@@ -1682,7 +1699,7 @@ function private canqueuearmorbydefault()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3caa
+// Checksum 0x0, Offset: 0x3d4d
 // Size: 0x134
 function private function_43d4382b6cea4df9( var_e12d78c11d85d9c2 )
 {
@@ -1723,7 +1740,7 @@ function private function_43d4382b6cea4df9( var_e12d78c11d85d9c2 )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3de6
+// Checksum 0x0, Offset: 0x3e89
 // Size: 0x1c6
 function private insertarmor( streakinfo )
 {
@@ -1795,7 +1812,7 @@ function private insertarmor( streakinfo )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3fb4
+// Checksum 0x0, Offset: 0x4057
 // Size: 0xd4
 function private insertarmorcomplete()
 {
@@ -1821,8 +1838,8 @@ function private insertarmorcomplete()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4090
+// Params 0
+// Checksum 0x0, Offset: 0x4133
 // Size: 0x137, Type: bool
 function function_cf37789d18fbcc1b()
 {
@@ -1862,8 +1879,8 @@ function function_cf37789d18fbcc1b()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41d0
+// Params 1
+// Checksum 0x0, Offset: 0x4273
 // Size: 0xf2, Type: bool
 function function_9719a1e79de2989f( supername )
 {
@@ -1898,7 +1915,7 @@ function function_9719a1e79de2989f( supername )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x42cb
+// Checksum 0x0, Offset: 0x436e
 // Size: 0x52, Type: bool
 function private function_4e03f222ed8b54a1()
 {
@@ -1914,7 +1931,7 @@ function private function_4e03f222ed8b54a1()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x4326
+// Checksum 0x0, Offset: 0x43c9
 // Size: 0xb5
 function private function_451b277f45c6174f()
 {
@@ -1936,7 +1953,7 @@ function private function_451b277f45c6174f()
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x43e3
+// Checksum 0x0, Offset: 0x4486
 // Size: 0xb5
 function private function_25aae4d93a36c291()
 {
@@ -1957,8 +1974,8 @@ function private function_25aae4d93a36c291()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44a0
+// Params 0
+// Checksum 0x0, Offset: 0x4543
 // Size: 0xc, Type: bool
 function hashelmet()
 {
@@ -1966,8 +1983,8 @@ function hashelmet()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44b5
+// Params 0
+// Checksum 0x0, Offset: 0x4558
 // Size: 0x1b, Type: bool
 function hashelmet_agent()
 {
@@ -1975,8 +1992,8 @@ function hashelmet_agent()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44d9
+// Params 1
+// Checksum 0x0, Offset: 0x457c
 // Size: 0x4b
 function helmetitemtypeforlevel( helmetlevel )
 {
@@ -1994,8 +2011,8 @@ function helmetitemtypeforlevel( helmetlevel )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x452d
+// Params 2
+// Checksum 0x0, Offset: 0x45d0
 // Size: 0x48
 function takehelmet( helmetitem, helmetlevel )
 {
@@ -2004,8 +2021,8 @@ function takehelmet( helmetitem, helmetlevel )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x457d
+// Params 1
+// Checksum 0x0, Offset: 0x4620
 // Size: 0x6f, Type: bool
 function function_cd4a78b4a236ddc8( armorname )
 {
@@ -2036,8 +2053,8 @@ function function_cd4a78b4a236ddc8( armorname )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x45f5
+// Params 3
+// Checksum 0x0, Offset: 0x4698
 // Size: 0x158
 function function_e71f062243ea8827( damage, var_3773b3d5cce15dce, attacker )
 {
@@ -2093,8 +2110,8 @@ function function_e71f062243ea8827( damage, var_3773b3d5cce15dce, attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4756
+// Params 1
+// Checksum 0x0, Offset: 0x47f9
 // Size: 0x64
 function function_908110bdfb8e8ba( attacker )
 {
@@ -2114,8 +2131,8 @@ function function_908110bdfb8e8ba( attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47c2
+// Params 1
+// Checksum 0x0, Offset: 0x4865
 // Size: 0x64
 function function_1d16645547af7d5b( attacker )
 {
@@ -2135,8 +2152,8 @@ function function_1d16645547af7d5b( attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x482e
+// Params 3
+// Checksum 0x0, Offset: 0x48d1
 // Size: 0xbe
 function damagehelmet( damage, snipershot, impactdir )
 {
@@ -2175,7 +2192,7 @@ function damagehelmet( damage, snipershot, impactdir )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x48f5
+// Checksum 0x0, Offset: 0x4998
 // Size: 0x1ab
 function private popoffhelmet( impactdir, playerangles, playerorigin )
 {
@@ -2200,7 +2217,8 @@ function private popoffhelmet( impactdir, playerangles, playerorigin )
     var_29511a1c049e1067 *= 1 / var_f246e6dc812fbcfe;
     previousorigin = helmet.origin;
     
-    for (i = 0; i < var_29511a1c049e1067; i++) {
+    for ( i = 0; i < var_29511a1c049e1067 ; i++ )
+    {
         wait var_f246e6dc812fbcfe;
         compareorigin = previousorigin - helmet.origin;
         
@@ -2217,7 +2235,7 @@ function private popoffhelmet( impactdir, playerangles, playerorigin )
 
 // Namespace armor / scripts\cp_mp\armor
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x4aa8
+// Checksum 0x0, Offset: 0x4b4b
 // Size: 0x42
 function private onhelmetsniped( victim, impactdir )
 {
@@ -2230,8 +2248,8 @@ function private onhelmetsniped( victim, impactdir )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4af2
+// Params 0
+// Checksum 0x0, Offset: 0x4b95
 // Size: 0x4f, Type: bool
 function function_92fec40b905c5112()
 {
@@ -2248,8 +2266,8 @@ function function_92fec40b905c5112()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b4a
+// Params 0
+// Checksum 0x0, Offset: 0x4bed
 // Size: 0x75
 function function_4f88731347251184()
 {
@@ -2268,8 +2286,8 @@ function function_4f88731347251184()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bc7
+// Params 11
+// Checksum 0x0, Offset: 0x4c6a
 // Size: 0x7f8
 function function_90ce8eb3ddaa4943( attacker, inflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, unmodifieddamage, partname )
 {
@@ -2502,8 +2520,8 @@ function function_90ce8eb3ddaa4943( attacker, inflictor, victim, idamage, objwea
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x53c8
+// Params 4
+// Checksum 0x0, Offset: 0x546b
 // Size: 0x5d
 function function_acb600e2132f092e( attacker, healthdamage, objweapon, smeansofdeath )
 {
@@ -2516,8 +2534,8 @@ function function_acb600e2132f092e( attacker, healthdamage, objweapon, smeansofd
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x542e
+// Params 0
+// Checksum 0x0, Offset: 0x54d1
 // Size: 0x21
 function function_3768b225bd3bcf44()
 {
@@ -2530,8 +2548,8 @@ function function_3768b225bd3bcf44()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5457
+// Params 0
+// Checksum 0x0, Offset: 0x54fa
 // Size: 0x21
 function function_f42bf3137eb74656()
 {
@@ -2544,8 +2562,8 @@ function function_f42bf3137eb74656()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5480
+// Params 1
+// Checksum 0x0, Offset: 0x5523
 // Size: 0x32, Type: bool
 function isgrenadeweapon( objweapon )
 {
@@ -2553,8 +2571,8 @@ function isgrenadeweapon( objweapon )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54bb
+// Params 1
+// Checksum 0x0, Offset: 0x555e
 // Size: 0x32, Type: bool
 function isoffhandweapon( objweapon )
 {
@@ -2562,8 +2580,8 @@ function isoffhandweapon( objweapon )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x54f6
+// Params 4
+// Checksum 0x0, Offset: 0x5599
 // Size: 0x65
 function function_f2ec69546b32a636( idamage, scaleddamage, excessdamage, armordamage )
 {
@@ -2589,8 +2607,8 @@ function function_f2ec69546b32a636( idamage, scaleddamage, excessdamage, armorda
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x5564
+// Params 5
+// Checksum 0x0, Offset: 0x5607
 // Size: 0x74
 function function_6e4490a9f0f4006b( idamage, scaleddamage, eattacker, victim, idflags )
 {
@@ -2613,8 +2631,8 @@ function function_6e4490a9f0f4006b( idamage, scaleddamage, eattacker, victim, id
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x55e1
+// Params 6
+// Checksum 0x0, Offset: 0x5684
 // Size: 0x69
 function function_22b15671bbf7a54e( attacker, victim, idflags, scaleddamage, actualdamagedealt, objweapon )
 {
@@ -2632,8 +2650,8 @@ function function_22b15671bbf7a54e( attacker, victim, idflags, scaleddamage, act
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x5652
+// Params 10
+// Checksum 0x0, Offset: 0x56f5
 // Size: 0x153
 function modifyhelmetdamage( attacker, inflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, skipclamp )
 {
@@ -2661,8 +2679,8 @@ function modifyhelmetdamage( attacker, inflictor, victim, idamage, objweapon, sm
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x57ae
+// Params 1
+// Checksum 0x0, Offset: 0x5851
 // Size: 0x15, Type: bool
 function isbulletpenetration( idflags )
 {
@@ -2670,8 +2688,8 @@ function isbulletpenetration( idflags )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x57cc
+// Params 7
+// Checksum 0x0, Offset: 0x586f
 // Size: 0x8b
 function function_bdb257c83ae70586( attacker, victim, idflags, idamage, objweapon, smeansofdeath, unmodifieddamage )
 {
@@ -2692,8 +2710,8 @@ function function_bdb257c83ae70586( attacker, victim, idflags, idamage, objweapo
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x5860
+// Params 5
+// Checksum 0x0, Offset: 0x5903
 // Size: 0x83
 function function_e5e4ad050998e4c1( attacker, objweapon, smeansofdeath, idamage, var_be4285b26ed99ab1 )
 {
@@ -2711,8 +2729,8 @@ function function_e5e4ad050998e4c1( attacker, objweapon, smeansofdeath, idamage,
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x58ec
+// Params 6
+// Checksum 0x0, Offset: 0x598f
 // Size: 0x98
 function function_72638ae79d782126( attacker, victim, idflags, idamage, objweapon, unmodifieddamage )
 {
@@ -2746,8 +2764,8 @@ function function_72638ae79d782126( attacker, victim, idflags, idamage, objweapo
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x598d
+// Params 3
+// Checksum 0x0, Offset: 0x5a30
 // Size: 0x73
 function function_5a1b7cfa5ac58688( idamage, objweapon, unmodifieddamage )
 {
@@ -2768,8 +2786,8 @@ function function_5a1b7cfa5ac58688( idamage, objweapon, unmodifieddamage )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a09
+// Params 2
+// Checksum 0x0, Offset: 0x5aac
 // Size: 0x14
 function function_b8f067334016ac40( objweapon, idamage )
 {
@@ -2777,8 +2795,8 @@ function function_b8f067334016ac40( objweapon, idamage )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a26
+// Params 2
+// Checksum 0x0, Offset: 0x5ac9
 // Size: 0x64
 function function_48870325db7e028( idamage, number )
 {
@@ -2797,8 +2815,8 @@ function function_48870325db7e028( idamage, number )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a93
+// Params 9
+// Checksum 0x0, Offset: 0x5b36
 // Size: 0x79
 function function_5145949f900334f0( attacker, idflags, weapontype, weaponrootname, shitloc, var_be4285b26ed99ab1, idamage, objweapon, smeansofdeath )
 {
@@ -2811,8 +2829,8 @@ function function_5145949f900334f0( attacker, idflags, weapontype, weaponrootnam
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b15
+// Params 4
+// Checksum 0x0, Offset: 0x5bb8
 // Size: 0xba
 function clampstepdamage( var_be4285b26ed99ab1, weapon, stepclamp, idflags )
 {
@@ -2859,8 +2877,8 @@ function clampstepdamage( var_be4285b26ed99ab1, weapon, stepclamp, idflags )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bd7
+// Params 2
+// Checksum 0x0, Offset: 0x5c7a
 // Size: 0xa9, Type: bool
 function function_343613187bdf786f( objweapon, smeansofdeath )
 {
@@ -2905,8 +2923,8 @@ function function_343613187bdf786f( objweapon, smeansofdeath )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c89
+// Params 1
+// Checksum 0x0, Offset: 0x5d2c
 // Size: 0x2c, Type: bool
 function armorvest_washit( attacker )
 {
@@ -2914,8 +2932,8 @@ function armorvest_washit( attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cbe
+// Params 1
+// Checksum 0x0, Offset: 0x5d61
 // Size: 0x1c
 function armorvest_sethit( attacker )
 {
@@ -2923,8 +2941,8 @@ function armorvest_sethit( attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ce2
+// Params 1
+// Checksum 0x0, Offset: 0x5d85
 // Size: 0x16
 function armorvest_clearhit( attacker )
 {
@@ -2932,8 +2950,8 @@ function armorvest_clearhit( attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d00
+// Params 1
+// Checksum 0x0, Offset: 0x5da3
 // Size: 0x2c, Type: bool
 function armorvest_wasbroke( attacker )
 {
@@ -2941,8 +2959,8 @@ function armorvest_wasbroke( attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d35
+// Params 1
+// Checksum 0x0, Offset: 0x5dd8
 // Size: 0x1c
 function armorvest_setbroke( attacker )
 {
@@ -2950,8 +2968,8 @@ function armorvest_setbroke( attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d59
+// Params 1
+// Checksum 0x0, Offset: 0x5dfc
 // Size: 0x16
 function armorvest_clearbroke( attacker )
 {
@@ -2959,8 +2977,8 @@ function armorvest_clearbroke( attacker )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d77
+// Params 0
+// Checksum 0x0, Offset: 0x5e1a
 // Size: 0xc, Type: bool
 function function_49765aa03d634cab()
 {
@@ -2968,8 +2986,8 @@ function function_49765aa03d634cab()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d8c
+// Params 0
+// Checksum 0x0, Offset: 0x5e2f
 // Size: 0x1b, Type: bool
 function function_a024d9111228a85e()
 {
@@ -2977,8 +2995,8 @@ function function_a024d9111228a85e()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5db0
+// Params 0
+// Checksum 0x0, Offset: 0x5e53
 // Size: 0x1c, Type: bool
 function function_e47b13babb51a365()
 {
@@ -2991,8 +3009,8 @@ function function_e47b13babb51a365()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dd5
+// Params 1
+// Checksum 0x0, Offset: 0x5e78
 // Size: 0x2a
 function repair_armor( amountrepair )
 {
@@ -3001,8 +3019,8 @@ function repair_armor( amountrepair )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e07
+// Params 4
+// Checksum 0x0, Offset: 0x5eaa
 // Size: 0x8c
 function function_43702519a3dc0854( smeansofdeath, objweapon, weaponrootname, victim )
 {
@@ -3023,9 +3041,9 @@ function function_43702519a3dc0854( smeansofdeath, objweapon, weaponrootname, vi
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e9b
-// Size: 0xf8
+// Params 3
+// Checksum 0x0, Offset: 0x5f3e
+// Size: 0x105
 function function_ae24f0c0c8c6de2a( objweapon, weaponrootname, weapontype )
 {
     if ( isdefined( level.gametypebundle.namekey ) && ( level.gametypebundle.namekey == "br_ranked" || level.gametypebundle.namekey == "resranked_escape" || level.gametypebundle.namekey == "resranked_fk" ) )
@@ -3063,12 +3081,17 @@ function function_ae24f0c0c8c6de2a( objweapon, weaponrootname, weapontype )
         return 1;
     }
     
+    if ( weaponrootname == "jup_jp23_me_spear" )
+    {
+        return 1;
+    }
+    
     return 0;
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f9b
+// Params 2
+// Checksum 0x0, Offset: 0x604b
 // Size: 0xf0
 function crossbowdamagemod( scaleddamage, objweapon )
 {
@@ -3102,8 +3125,8 @@ function crossbowdamagemod( scaleddamage, objweapon )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6094
+// Params 0
+// Checksum 0x0, Offset: 0x6144
 // Size: 0x94
 function function_c49eb6797b9eec64()
 {
@@ -3136,8 +3159,8 @@ function function_c49eb6797b9eec64()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6130
+// Params 0
+// Checksum 0x0, Offset: 0x61e0
 // Size: 0xb5
 function function_8820428e84e96143()
 {
@@ -3163,8 +3186,8 @@ function function_8820428e84e96143()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x61ed
+// Params 2
+// Checksum 0x0, Offset: 0x629d
 // Size: 0xe8
 function equipmentdamagemod( scaleddamage, weaponrootname )
 {
@@ -3202,8 +3225,8 @@ function equipmentdamagemod( scaleddamage, weaponrootname )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x62dd
+// Params 2
+// Checksum 0x0, Offset: 0x638d
 // Size: 0xaf
 function launcherdamagemod( damage, weaponrootname )
 {
@@ -3233,8 +3256,8 @@ function launcherdamagemod( damage, weaponrootname )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6395
+// Params 1
+// Checksum 0x0, Offset: 0x6445
 // Size: 0x46, Type: bool
 function function_6aa482957b62905c( weapon )
 {
@@ -3258,8 +3281,8 @@ function function_6aa482957b62905c( weapon )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x63e4
+// Params 2
+// Checksum 0x0, Offset: 0x6494
 // Size: 0x2a, Type: bool
 function function_ad6472280450c778( attacker, victim )
 {
@@ -3272,8 +3295,8 @@ function function_ad6472280450c778( attacker, victim )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6417
+// Params 1
+// Checksum 0x0, Offset: 0x64c7
 // Size: 0xcc
 function function_8775d4e6734630c0( player )
 {
@@ -3312,8 +3335,8 @@ function function_8775d4e6734630c0( player )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64ec
+// Params 1
+// Checksum 0x0, Offset: 0x659c
 // Size: 0x28, Type: bool
 function function_55c156d63be9eba2( objweapon )
 {
@@ -3321,8 +3344,8 @@ function function_55c156d63be9eba2( objweapon )
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x651d
+// Params 0
+// Checksum 0x0, Offset: 0x65cd
 // Size: 0xb
 function function_ca2fbba0b1f55bbd()
 {
@@ -3330,8 +3353,8 @@ function function_ca2fbba0b1f55bbd()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6531
+// Params 0
+// Checksum 0x0, Offset: 0x65e1
 // Size: 0x3c
 function function_6a84ae8b37bed447()
 {
@@ -3346,8 +3369,8 @@ function function_6a84ae8b37bed447()
 }
 
 // Namespace armor / scripts\cp_mp\armor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6576
+// Params 0
+// Checksum 0x0, Offset: 0x6626
 // Size: 0xd
 function function_eeac688cedb92729()
 {

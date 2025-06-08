@@ -32,9 +32,9 @@
 #namespace sd;
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf38
-// Size: 0x51e
+// Params 0
+// Checksum 0x0, Offset: 0xfb8
+// Size: 0x81a
 function main()
 {
     if ( getdvar( @"g_mapname" ) == "mp_background" )
@@ -62,13 +62,45 @@ function main()
     {
         allowed[ 0 ] = "sd";
         
-        if ( cointoss() )
+        if ( !isdefined( game[ "defusePreviouslyActiveBombsite" ] ) )
         {
-            level.active_bombsite = "_a";
+            if ( cointoss() )
+            {
+                level.active_bombsite = "_a";
+                game[ "defusePreviouslyActiveBombsite" ] = "_a";
+            }
+            else
+            {
+                level.active_bombsite = "_b";
+                game[ "defusePreviouslyActiveBombsite" ] = "_b";
+            }
         }
-        else
+        else if ( game[ "defusePreviouslyActiveBombsite" ] == "_a" )
         {
             level.active_bombsite = "_b";
+            game[ "defusePreviouslyActiveBombsite" ] = "_b";
+        }
+        else if ( game[ "defusePreviouslyActiveBombsite" ] == "_b" )
+        {
+            level.active_bombsite = "_a";
+            game[ "defusePreviouslyActiveBombsite" ] = "_a";
+        }
+        
+        if ( isdefined( level.mapname ) )
+        {
+            if ( level.mapname == "mp_jup_highrise" )
+            {
+                level.var_d5afb09cfde5ee65 = 70;
+            }
+            else if ( level.mapname == "mp_jup_estate" )
+            {
+                level.var_d5afb09cfde5ee65 = 75;
+            }
+        }
+        
+        if ( !isdefined( level.var_d5afb09cfde5ee65 ) )
+        {
+            level.var_d5afb09cfde5ee65 = 60;
         }
     }
     
@@ -116,40 +148,73 @@ function main()
     level.aplanted = 0;
     level.bplanted = 0;
     
-    if ( scripts\cp_mp\utility\game_utility::function_21322da268e71c19() )
+    if ( getgametype() == "defuse" || getgametype() == "hc_defuse" )
     {
-        game[ "dialog" ][ "gametype" ] = "dx_mp_sadh_mode_t141_name";
+        game[ "dialog" ][ "gametype" ] = "null";
+        game[ "dialog" ][ "offense_obj" ] = "dx_mp_grnt_mode_mili_sdbd";
+        game[ "dialog" ][ "defense_obj" ] = "dx_mp_grnt_mode_opfo_bmpe";
+        game[ "dialog" ][ "bomb_achieve" ] = "null";
+        game[ "dialog" ][ "bomb_pickup" ] = "null";
+        game[ "dialog" ][ "bomb_pickup_first" ] = "null";
+        game[ "dialog" ][ "bomb_taken" ] = "null";
+        game[ "dialog" ][ "bomb_lost" ] = "null";
+        game[ "dialog" ][ "bomb_defused" ] = "dx_mp_sede_game_uktl_bmdf";
+        game[ "dialog" ][ "bomb_planting" ] = "null";
+        game[ "dialog" ][ "bomb_planting_a" ] = "null";
+        game[ "dialog" ][ "bomb_planting_b" ] = "null";
+        game[ "dialog" ][ "bomb_planted" ] = "null";
+        game[ "dialog" ][ "enemy_bomb_a" ] = "null";
+        game[ "dialog" ][ "enemy_bomb_b" ] = "null";
+        game[ "dialog" ][ "enemy_bomb_defused" ] = "dx_mp_sede_game_uktl_bmde";
+        game[ "dialog" ][ "enemy_bomb_planted" ] = "null";
+        game[ "dialog" ][ "lead_lost" ] = "null";
+        game[ "dialog" ][ "lead_tied" ] = "null";
+        game[ "dialog" ][ "lead_taken" ] = "null";
+        game[ "dialog" ][ "attacking_bombgoesoff" ] = "null";
+        game[ "dialog" ][ "attacking_bombgoesoff_alldead" ] = "null";
+        game[ "dialog" ][ "defending_bombgoesoff" ] = "null";
+        game[ "dialog" ][ "defend_enemydead_bomb" ] = "null";
+        game[ "dialog" ][ "defend_enemydead_nobomb" ] = "null";
+        game[ "dialog" ][ "planting_enemy_dead" ] = "null";
     }
     else
     {
-        game[ "dialog" ][ "gametype" ] = "dx_mp_sede_game_uktl_name";
+        if ( scripts\cp_mp\utility\game_utility::function_21322da268e71c19() )
+        {
+            game[ "dialog" ][ "gametype" ] = "dx_mp_sadh_mode_t141_name";
+        }
+        else
+        {
+            game[ "dialog" ][ "gametype" ] = "dx_mp_sede_game_uktl_name";
+        }
+        
+        game[ "dialog" ][ "offense_obj" ] = "dx_mp_sede_game_uktl_sdbo";
+        game[ "dialog" ][ "defense_obj" ] = "dx_mp_sede_game_uktl_sdbd";
+        game[ "dialog" ][ "bomb_achieve" ] = "dx_mp_sede_game_uktl_sdba";
+        game[ "dialog" ][ "bomb_pickup" ] = "dx_mp_sede_game_uktl_sdbu";
+        game[ "dialog" ][ "bomb_pickup_first" ] = "dx_mp_sede_game_uktl_sdb1";
+        game[ "dialog" ][ "bomb_taken" ] = "dx_mp_sede_game_uktl_sdbt";
+        game[ "dialog" ][ "bomb_lost" ] = "dx_mp_sede_game_uktl_sdbl";
+        game[ "dialog" ][ "bomb_defused" ] = "dx_mp_sede_game_uktl_bmdf";
+        game[ "dialog" ][ "bomb_planting" ] = "dx_mp_sede_game_uktl_bmpl";
+        game[ "dialog" ][ "bomb_planting_a" ] = "dx_mp_sede_game_uktl_bmpa";
+        game[ "dialog" ][ "bomb_planting_b" ] = "dx_mp_sede_game_uktl_bmpb";
+        game[ "dialog" ][ "bomb_planted" ] = "dx_mp_sede_game_uktl_bmbp";
+        game[ "dialog" ][ "enemy_bomb_a" ] = "dx_mp_sede_game_uktl_bmea";
+        game[ "dialog" ][ "enemy_bomb_b" ] = "dx_mp_sede_game_uktl_bmeb";
+        game[ "dialog" ][ "enemy_bomb_defused" ] = "dx_mp_sede_game_uktl_bmde";
+        game[ "dialog" ][ "enemy_bomb_planted" ] = "dx_mp_sede_game_uktl_bmpe";
+        game[ "dialog" ][ "lead_lost" ] = "null";
+        game[ "dialog" ][ "lead_tied" ] = "null";
+        game[ "dialog" ][ "lead_taken" ] = "null";
+        game[ "dialog" ][ "attacking_bombgoesoff" ] = "dx_mp_sede_game_mili_abgo";
+        game[ "dialog" ][ "attacking_bombgoesoff_alldead" ] = "dx_mp_sede_game_mili_abod";
+        game[ "dialog" ][ "defending_bombgoesoff" ] = "dx_mp_sede_game_uktl_dbgo";
+        game[ "dialog" ][ "defend_enemydead_bomb" ] = "dx_mp_sede_game_uktl_dedb";
+        game[ "dialog" ][ "defend_enemydead_nobomb" ] = "dx_mp_sede_game_uktl_dedn";
+        game[ "dialog" ][ "planting_enemy_dead" ] = "dx_mp_sede_game_uktl_pled";
     }
     
-    game[ "dialog" ][ "offense_obj" ] = "dx_mp_sede_game_uktl_sdbo";
-    game[ "dialog" ][ "defense_obj" ] = "dx_mp_sede_game_uktl_sdbd";
-    game[ "dialog" ][ "bomb_achieve" ] = "dx_mp_sede_game_uktl_sdba";
-    game[ "dialog" ][ "bomb_pickup" ] = "dx_mp_sede_game_uktl_sdbu";
-    game[ "dialog" ][ "bomb_pickup_first" ] = "dx_mp_sede_game_uktl_sdb1";
-    game[ "dialog" ][ "bomb_taken" ] = "dx_mp_sede_game_uktl_sdbt";
-    game[ "dialog" ][ "bomb_lost" ] = "dx_mp_sede_game_uktl_sdbl";
-    game[ "dialog" ][ "bomb_defused" ] = "dx_mp_sede_game_uktl_bmdf";
-    game[ "dialog" ][ "bomb_planting" ] = "dx_mp_sede_game_uktl_bmpl";
-    game[ "dialog" ][ "bomb_planting_a" ] = "dx_mp_sede_game_uktl_bmpa";
-    game[ "dialog" ][ "bomb_planting_b" ] = "dx_mp_sede_game_uktl_bmpb";
-    game[ "dialog" ][ "bomb_planted" ] = "dx_mp_sede_game_uktl_bmbp";
-    game[ "dialog" ][ "enemy_bomb_a" ] = "dx_mp_sede_game_uktl_bmea";
-    game[ "dialog" ][ "enemy_bomb_b" ] = "dx_mp_sede_game_uktl_bmeb";
-    game[ "dialog" ][ "enemy_bomb_defused" ] = "dx_mp_sede_game_uktl_bmde";
-    game[ "dialog" ][ "enemy_bomb_planted" ] = "dx_mp_sede_game_uktl_bmpe";
-    game[ "dialog" ][ "lead_lost" ] = "null";
-    game[ "dialog" ][ "lead_tied" ] = "null";
-    game[ "dialog" ][ "lead_taken" ] = "null";
-    game[ "dialog" ][ "attacking_bombgoesoff" ] = "dx_mp_sede_game_mili_abgo";
-    game[ "dialog" ][ "attacking_bombgoesoff_alldead" ] = "dx_mp_sede_game_mili_abod";
-    game[ "dialog" ][ "defending_bombgoesoff" ] = "dx_mp_sede_game_uktl_dbgo";
-    game[ "dialog" ][ "defend_enemydead_bomb" ] = "dx_mp_sede_game_uktl_dedb";
-    game[ "dialog" ][ "defend_enemydead_nobomb" ] = "dx_mp_sede_game_uktl_dedn";
-    game[ "dialog" ][ "planting_enemy_dead" ] = "dx_mp_sede_game_uktl_pled";
     setomnvar( "ui_bomb_timer_endtime_a", 0 );
     setomnvar( "ui_bomb_timer_endtime_b", 0 );
     setomnvar( "ui_bomb_planted_a", 0 );
@@ -165,13 +230,22 @@ function main()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x145e
-// Size: 0x176
+// Params 0
+// Checksum 0x0, Offset: 0x17da
+// Size: 0x1c0
 function initializematchrules()
 {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar( function_3514ae5d09f47ed2( "bombTimer" ), getmatchrulesdata( "bombData", "bombTimer" ) );
+    
+    if ( isdefined( level.var_d5afb09cfde5ee65 ) && ( getgametype() == "defuse" || getgametype() == "hc_defuse" ) )
+    {
+        setdynamicdvar( function_3514ae5d09f47ed2( "bombTimer" ), level.var_d5afb09cfde5ee65 );
+    }
+    else
+    {
+        setdynamicdvar( function_3514ae5d09f47ed2( "bombTimer" ), getmatchrulesdata( "bombData", "bombTimer" ) );
+    }
+    
     setdynamicdvar( function_3514ae5d09f47ed2( "plantTime" ), getmatchrulesdata( "bombData", "plantTime" ) );
     setdynamicdvar( function_3514ae5d09f47ed2( "defuseTime" ), getmatchrulesdata( "bombData", "defuseTime" ) );
     setdynamicdvar( function_3514ae5d09f47ed2( "multiBomb" ), getmatchrulesdata( "bombData", "multiBomb" ) );
@@ -187,8 +261,8 @@ function initializematchrules()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15dc
+// Params 0
+// Checksum 0x0, Offset: 0x19a2
 // Size: 0x3f
 function waittooverridegraceperiod()
 {
@@ -202,8 +276,8 @@ function waittooverridegraceperiod()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1623
+// Params 0
+// Checksum 0x0, Offset: 0x19e9
 // Size: 0x1c
 function onprecachegametype()
 {
@@ -212,8 +286,8 @@ function onprecachegametype()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1647
+// Params 0
+// Checksum 0x0, Offset: 0x1a0d
 // Size: 0x38c
 function onstartgametype()
 {
@@ -341,8 +415,8 @@ function onstartgametype()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19db
+// Params 0
+// Checksum 0x0, Offset: 0x1da1
 // Size: 0x1e3
 function initspawns()
 {
@@ -390,8 +464,8 @@ function initspawns()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bc6
+// Params 0
+// Checksum 0x0, Offset: 0x1f8c
 // Size: 0x4a
 function getspawnpoint()
 {
@@ -408,9 +482,9 @@ function getspawnpoint()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c19
-// Size: 0x16f
+// Params 1
+// Checksum 0x0, Offset: 0x1fdf
+// Size: 0x1a7
 function onspawnplayer( revivespawn )
 {
     scripts\mp\hud_message::function_f004ef4606b9efdc( "hide_match_hint" );
@@ -437,18 +511,25 @@ function onspawnplayer( revivespawn )
         }
     }
     
-    setextrascore0( 0 );
-    
-    if ( isdefined( self.pers[ "plants" ] ) )
+    if ( getgametype() == "defuse" || getgametype() == "hc_defuse" )
     {
-        setextrascore0( self.pers[ "plants" ] );
+        setextrascore0( self.pers[ "defuses" ] );
     }
-    
-    setextrascore1( 0 );
-    
-    if ( isdefined( self.pers[ "defuses" ] ) )
+    else
     {
-        setextrascore1( self.pers[ "defuses" ] );
+        setextrascore0( 0 );
+        
+        if ( isdefined( self.pers[ "plants" ] ) )
+        {
+            setextrascore0( self.pers[ "plants" ] );
+        }
+        
+        setextrascore1( 0 );
+        
+        if ( isdefined( self.pers[ "defuses" ] ) )
+        {
+            setextrascore1( self.pers[ "defuses" ] );
+        }
     }
     
     level notify( "spawned_player" );
@@ -461,8 +542,8 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d90
+// Params 0
+// Checksum 0x0, Offset: 0x218e
 // Size: 0x30
 function function_b9835ca0700d6618()
 {
@@ -472,8 +553,8 @@ function function_b9835ca0700d6618()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc8
+// Params 0
+// Checksum 0x0, Offset: 0x21c6
 // Size: 0x87
 function function_274ea96f8c5f0f2()
 {
@@ -488,8 +569,8 @@ function function_274ea96f8c5f0f2()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e57
+// Params 10
+// Checksum 0x0, Offset: 0x2255
 // Size: 0xf6
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
 {
@@ -516,8 +597,8 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f55
+// Params 0
+// Checksum 0x0, Offset: 0x2353
 // Size: 0x89
 function checkallowspectating()
 {
@@ -543,8 +624,8 @@ function checkallowspectating()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fe6
+// Params 2
+// Checksum 0x0, Offset: 0x23e4
 // Size: 0x4b
 function sd_endgame( winningteam, endreasontext )
 {
@@ -560,8 +641,8 @@ function sd_endgame( winningteam, endreasontext )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2039
+// Params 0
+// Checksum 0x0, Offset: 0x2437
 // Size: 0x83
 function interruptbombplanting()
 {
@@ -576,8 +657,8 @@ function interruptbombplanting()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20c4
+// Params 1
+// Checksum 0x0, Offset: 0x24c2
 // Size: 0x169
 function ondeadevent( team )
 {
@@ -626,8 +707,8 @@ function ondeadevent( team )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2235
+// Params 1
+// Checksum 0x0, Offset: 0x2633
 // Size: 0x51
 function ononeleftevent( team )
 {
@@ -642,8 +723,8 @@ function ononeleftevent( team )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x228e
+// Params 6
+// Checksum 0x0, Offset: 0x268c
 // Size: 0x398
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
 {
@@ -712,8 +793,8 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x262e
+// Params 0
+// Checksum 0x0, Offset: 0x2a2c
 // Size: 0x9e
 function givelastonteamwarning()
 {
@@ -729,8 +810,8 @@ function givelastonteamwarning()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26d4
+// Params 0
+// Checksum 0x0, Offset: 0x2ad2
 // Size: 0xad
 function ontimelimit()
 {
@@ -753,8 +834,8 @@ function ontimelimit()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2789
+// Params 0
+// Checksum 0x0, Offset: 0x2b87
 // Size: 0xe5
 function updategametypedvars()
 {
@@ -771,8 +852,8 @@ function updategametypedvars()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2876
+// Params 1
+// Checksum 0x0, Offset: 0x2c74
 // Size: 0x1ff
 function removebombzonec( bombzones )
 {
@@ -812,8 +893,8 @@ function removebombzonec( bombzones )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a7e
+// Params 0
+// Checksum 0x0, Offset: 0x2e7c
 // Size: 0xef
 function function_1ba24a5f29969bae()
 {
@@ -835,8 +916,8 @@ function function_1ba24a5f29969bae()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b75
+// Params 0
+// Checksum 0x0, Offset: 0x2f73
 // Size: 0x600
 function bombs()
 {
@@ -969,7 +1050,7 @@ function bombs()
     
     if ( getdvarint( @"hash_94706b5dc31f719b" ) != 0 )
     {
-        level.sdbomb scripts\mp\gameobjects::function_316d9da870e12a03( [ level.sdbomb.visuals[ 0 ] ], level.sdbomb.trigger, 1, 80, 0, &function_745c1786b3409d7a );
+        level.sdbomb scripts\mp\gameobjects::create_manual_drop_data_struct( [ level.sdbomb.visuals[ 0 ] ], level.sdbomb.trigger, 1, 80, 0, &function_745c1786b3409d7a );
     }
     
     if ( !scripts\mp\flags::gameflag( "prematch_done" ) )
@@ -987,8 +1068,8 @@ function bombs()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x317d
+// Params 1
+// Checksum 0x0, Offset: 0x357b
 // Size: 0xba
 function onbeginuse( player )
 {
@@ -1012,8 +1093,8 @@ function onbeginuse( player )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x323f
+// Params 3
+// Checksum 0x0, Offset: 0x363d
 // Size: 0xd7
 function onenduse( team, player, result )
 {
@@ -1037,8 +1118,8 @@ function onenduse( team, player, result )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x331e
+// Params 1
+// Checksum 0x0, Offset: 0x371c
 // Size: 0xab
 function onuseplantobject( player )
 {
@@ -1061,8 +1142,8 @@ function onuseplantobject( player )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33d1
+// Params 0
+// Checksum 0x0, Offset: 0x37cf
 // Size: 0x4d
 function setspecialloadout()
 {
@@ -1073,8 +1154,8 @@ function setspecialloadout()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3426
+// Params 5
+// Checksum 0x0, Offset: 0x3824
 // Size: 0xc7
 function onbombexploded( objectivetype, bomblabel, player, team, extradata )
 {
@@ -1101,8 +1182,8 @@ function onbombexploded( objectivetype, bomblabel, player, team, extradata )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34f5
+// Params 0
+// Checksum 0x0, Offset: 0x38f3
 // Size: 0x111
 function updatematchstatushintonspawn()
 {
@@ -1156,8 +1237,8 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x360e
+// Params 1
+// Checksum 0x0, Offset: 0x3a0c
 // Size: 0x61, Type: bool
 function function_aaa2901a47b8bea9( point )
 {
@@ -1180,8 +1261,8 @@ function function_aaa2901a47b8bea9( point )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3678
+// Params 0
+// Checksum 0x0, Offset: 0x3a76
 // Size: 0x13
 function onmaprestart()
 {
@@ -1190,8 +1271,8 @@ function onmaprestart()
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3693
+// Params 2
+// Checksum 0x0, Offset: 0x3a91
 // Size: 0x6b
 function function_2a7eac0b867af187( team, increment )
 {
@@ -1215,8 +1296,8 @@ function function_2a7eac0b867af187( team, increment )
 }
 
 // Namespace sd / scripts\mp\gametypes\sd
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3706
+// Params 1
+// Checksum 0x0, Offset: 0x3b04
 // Size: 0x18
 function function_745c1786b3409d7a( player )
 {

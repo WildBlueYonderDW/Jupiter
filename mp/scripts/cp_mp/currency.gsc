@@ -6,7 +6,7 @@
 #namespace currency;
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x206
 // Size: 0x12
 function init_currency()
@@ -16,7 +16,7 @@ function init_currency()
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x220
 // Size: 0x3
 function function_c1674a2bf8fcb89a()
@@ -25,7 +25,7 @@ function function_c1674a2bf8fcb89a()
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22b
 // Size: 0x265
 function function_68a07bf45b0ba30a()
@@ -58,7 +58,7 @@ function function_68a07bf45b0ba30a()
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x498
 // Size: 0xb
 function function_2e815a7b6d0bbcf6()
@@ -67,7 +67,7 @@ function function_2e815a7b6d0bbcf6()
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0x20
 function function_7714028270738890( var_147708c583186e71 )
@@ -76,7 +76,7 @@ function function_7714028270738890( var_147708c583186e71 )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d5
 // Size: 0xd7
 function function_7dfe1b812431019f( str_currency )
@@ -94,7 +94,7 @@ function function_7dfe1b812431019f( str_currency )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b4
 // Size: 0x20
 function function_3321003104b9507e( var_3719061529ddd848 )
@@ -103,7 +103,7 @@ function function_3321003104b9507e( var_3719061529ddd848 )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5dd
 // Size: 0x2f
 function get_perk_machine_cost( str_perk )
@@ -119,7 +119,7 @@ function get_perk_machine_cost( str_perk )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x615
 // Size: 0x9d
 function function_bc4d94fa05ac7078( str_perk )
@@ -163,7 +163,7 @@ function private function_ea6ad508534fc509( str_perk )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x78d
 // Size: 0x65
 function function_51ff679cabccfcd0()
@@ -179,7 +179,7 @@ function function_51ff679cabccfcd0()
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7fb
 // Size: 0x65
 function function_fd307a39427b77da()
@@ -195,7 +195,7 @@ function function_fd307a39427b77da()
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x869
 // Size: 0x90
 function function_86ff2975af8e08be()
@@ -237,7 +237,7 @@ function private function_a6b6cc77c4485d21( var_545dc2e67db04095 )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9c2
 // Size: 0x2f
 function function_93cabb608eabdb7c( var_545dc2e67db04095 )
@@ -253,7 +253,7 @@ function function_93cabb608eabdb7c( var_545dc2e67db04095 )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9fa
 // Size: 0x2f
 function function_57e6c79279b89596( var_545dc2e67db04095 )
@@ -269,7 +269,7 @@ function function_57e6c79279b89596( var_545dc2e67db04095 )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa32
 // Size: 0x90
 function function_98aedb8cf660c612( var_545dc2e67db04095 )
@@ -287,7 +287,7 @@ function function_98aedb8cf660c612( var_545dc2e67db04095 )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xacb
 // Size: 0x164
 function function_cca1bcebd7aa11cf( currencytype, getfunc, setfunc, addfunc, subfunc, buysound, denysound )
@@ -318,7 +318,7 @@ function function_cca1bcebd7aa11cf( currencytype, getfunc, setfunc, addfunc, sub
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc37
 // Size: 0x61
 function function_adc47eed1b02ec05( currencytype, var_978799e2da3eab39 )
@@ -343,7 +343,7 @@ function function_adc47eed1b02ec05( currencytype, var_978799e2da3eab39 )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xca0
 // Size: 0xb7
 function function_3036cef61495210f( currencytype, amount, reason )
@@ -368,7 +368,7 @@ function function_3036cef61495210f( currencytype, amount, reason )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd5f
 // Size: 0x59
 function function_8301d03eb828b5a5( amount, currencytype )
@@ -390,7 +390,7 @@ function function_8301d03eb828b5a5( amount, currencytype )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xdc0
 // Size: 0xcc
 function function_a06aa3b8c98e131e( currencytype, amount, reason, info )
@@ -416,7 +416,7 @@ function function_a06aa3b8c98e131e( currencytype, amount, reason, info )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe94
 // Size: 0x59
 function function_76906efe4e7c93fc( amount, currencytype )
@@ -438,7 +438,7 @@ function function_76906efe4e7c93fc( amount, currencytype )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xef5
 // Size: 0xcd
 function function_d0948454b7f94d18( currencytype, amount, reason )
@@ -466,7 +466,7 @@ function function_d0948454b7f94d18( currencytype, amount, reason )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfca
 // Size: 0x20
 function function_c6f24e4d5f1dcba( amount, currencytype )
@@ -475,7 +475,7 @@ function function_c6f24e4d5f1dcba( amount, currencytype )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xff2
 // Size: 0x47
 function function_15975e20bbd2c824( currencytype )
@@ -489,7 +489,7 @@ function function_15975e20bbd2c824( currencytype )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1041
 // Size: 0x16
 function function_65e84417bc4c405e( currencytype )
@@ -498,7 +498,7 @@ function function_65e84417bc4c405e( currencytype )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1060
 // Size: 0x3c
 function function_bcc79745d547a99c( currencytype, cost )
@@ -515,7 +515,7 @@ function function_bcc79745d547a99c( currencytype, cost )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x10a5
 // Size: 0x111
 function attempt_purchase( currencytype, cost, var_92f8f0879c089e9, var_b138a0b1e1a62a04, reason, info )
@@ -550,7 +550,7 @@ function attempt_purchase( currencytype, cost, var_92f8f0879c089e9, var_b138a0b1
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11be
 // Size: 0x2a
 function function_fc06aafd52e1707b( currencytype, namestring )
@@ -559,7 +559,7 @@ function function_fc06aafd52e1707b( currencytype, namestring )
 }
 
 // Namespace currency / scripts\cp_mp\currency
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11f0
 // Size: 0x230
 function function_d67d3f6e87682c71( var_f246314e1dbaefea, currencytype )
@@ -615,7 +615,7 @@ function function_d67d3f6e87682c71( var_f246314e1dbaefea, currencytype )
 /#
 
     // Namespace currency / scripts\cp_mp\currency
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1428
     // Size: 0x3c, Type: dev
     function function_2e0cc380e14c340b( currency_type )
@@ -626,7 +626,7 @@ function function_d67d3f6e87682c71( var_f246314e1dbaefea, currencytype )
     }
 
     // Namespace currency / scripts\cp_mp\currency
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x146c
     // Size: 0x92, Type: dev
     function function_382bfcbb2e043576( params )

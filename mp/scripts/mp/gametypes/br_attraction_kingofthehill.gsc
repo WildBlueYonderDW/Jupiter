@@ -15,7 +15,7 @@
 #namespace br_attraction_kingofthehill;
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x358
 // Size: 0x39
 function init()
@@ -26,7 +26,7 @@ function init()
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x399
 // Size: 0x14d
 function registerlocations()
@@ -52,7 +52,7 @@ function registerlocations()
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4ee
 // Size: 0x1fe
 function registerlocation( origin, captureradius, captureheight, var_ccb00530d7a24ee3, groundoffsetz )
@@ -79,7 +79,7 @@ function registerlocation( origin, captureradius, captureheight, var_ccb00530d7a
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f4
 // Size: 0x1b
 function getkothlocations()
@@ -88,7 +88,7 @@ function getkothlocations()
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x718
 // Size: 0x14d
 function playerlocationtriggerenter( player, trigger )
@@ -132,7 +132,7 @@ function playerlocationtriggerenter( player, trigger )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x86d
 // Size: 0xef
 function playerlocationtriggerexit( player, trigger )
@@ -171,7 +171,7 @@ function playerlocationtriggerexit( player, trigger )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x964
 // Size: 0x18
 function waittillplayerlanded( player )
@@ -183,7 +183,7 @@ function waittillplayerlanded( player )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x984
 // Size: 0x89
 function playerstoptimerdelete()
@@ -210,7 +210,7 @@ function playerstoptimerdelete()
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa15
 // Size: 0x27, Type: bool
 function validplayer( player )
@@ -219,7 +219,7 @@ function validplayer( player )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa45
 // Size: 0x192
 function locationtriggerupdate()
@@ -279,7 +279,7 @@ function locationtriggerupdate()
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbdf
 // Size: 0xf2
 function locationtriggersetpaused( ispaused )
@@ -324,7 +324,7 @@ function locationtriggersetpaused( ispaused )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcd9
 // Size: 0x134
 function awardcapturepoints( location, trigger )
@@ -337,7 +337,8 @@ function awardcapturepoints( location, trigger )
     
     while ( !level.gameended )
     {
-        for (waittime = 0; waittime < seconds && !level.gameended; waittime = 0) {
+        for ( waittime = 0; waittime < seconds && !level.gameended ; waittime = 0 )
+        {
             wait level.framedurationseconds;
             waittime += level.framedurationseconds;
             
@@ -367,7 +368,7 @@ function awardcapturepoints( location, trigger )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe15
 // Size: 0x86
 function playertimestart( location )
@@ -388,7 +389,7 @@ function playertimestart( location )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xea3
 // Size: 0x4b
 function playerstarttimetracking( location )
@@ -407,7 +408,7 @@ function playerstarttimetracking( location )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef6
 // Size: 0x76
 function playertimestamp()
@@ -426,7 +427,7 @@ function playertimestamp()
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf74
 // Size: 0x57
 function playergettotaltime()
@@ -447,7 +448,7 @@ function playergettotaltime()
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfd4
 // Size: 0x10a
 function onplayerdisconnect( player )
@@ -473,7 +474,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10e6
 // Size: 0x6a
 function playerattractiontriggerenter( player, trigger )
@@ -485,7 +486,7 @@ function playerattractiontriggerenter( player, trigger )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1158
 // Size: 0x53
 function playerattractiontriggerexit( player, trigger )
@@ -502,7 +503,7 @@ function playerattractiontriggerexit( player, trigger )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11b3
 // Size: 0x49, Type: bool
 function isbestplayertime( location, time, player )
@@ -511,7 +512,7 @@ function isbestplayertime( location, time, player )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1205
 // Size: 0x4b
 function updatelocationbesttime( location, time, player )
@@ -524,7 +525,7 @@ function updatelocationbesttime( location, time, player )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1258
 // Size: 0x91
 function updatelocationbesttimehud( location )
@@ -540,7 +541,7 @@ function updatelocationbesttimehud( location )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12f1
 // Size: 0xe2
 function playerupdatebesttimehud( location )
@@ -573,7 +574,7 @@ function playerupdatebesttimehud( location )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13db
 // Size: 0xa5
 function playerstartbesttimetracking( location )
@@ -603,7 +604,7 @@ function playerstartbesttimetracking( location )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1488
 // Size: 0x12f
 function playerupdatehudstate( location )
@@ -662,7 +663,7 @@ function playerupdatehudstate( location )
 }
 
 // Namespace br_attraction_kingofthehill / scripts\mp\gametypes\br_attraction_kingofthehill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15bf
 // Size: 0x60
 function playerstartbesttimeupdate( location )

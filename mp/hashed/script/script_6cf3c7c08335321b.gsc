@@ -7,7 +7,7 @@
 #namespace loadout_locker;
 
 // Namespace loadout_locker / namespace_ef3e1105afde5f69
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f8
 // Size: 0xc
 function function_907a472bb2ab01e()
@@ -16,7 +16,7 @@ function function_907a472bb2ab01e()
 }
 
 // Namespace loadout_locker / namespace_ef3e1105afde5f69
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30c
 // Size: 0x7a
 function function_aea2aa66a0043475()
@@ -35,14 +35,15 @@ function function_aea2aa66a0043475()
 }
 
 // Namespace loadout_locker / namespace_ef3e1105afde5f69
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38e
 // Size: 0x113
 function function_fd0efa5a567ad260( playerentnum )
 {
     level.var_c1154388bad688d8[ playerentnum ].weapons = [];
     
-    for (weaponid = 0; weaponid < self.primaryweapons.size; weaponid++) {
+    for ( weaponid = 0; weaponid < self.primaryweapons.size ; weaponid++ )
+    {
         level.var_c1154388bad688d8[ playerentnum ].weapons[ weaponid ] = spawnstruct();
         level.var_c1154388bad688d8[ playerentnum ].weapons[ weaponid ].weapon = self.primaryweapons[ weaponid ];
         level.var_c1154388bad688d8[ playerentnum ].weapons[ weaponid ].ammostock = self getweaponammostock( self.primaryweapons[ weaponid ] );
@@ -53,7 +54,7 @@ function function_fd0efa5a567ad260( playerentnum )
 }
 
 // Namespace loadout_locker / namespace_ef3e1105afde5f69
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a9
 // Size: 0x16a
 function function_870ae5df493cb4ad( playerentnum )
@@ -76,7 +77,7 @@ function function_870ae5df493cb4ad( playerentnum )
 }
 
 // Namespace loadout_locker / namespace_ef3e1105afde5f69
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61b
 // Size: 0xa7
 function restoreplayerloadout()
@@ -100,7 +101,7 @@ function restoreplayerloadout()
 }
 
 // Namespace loadout_locker / namespace_ef3e1105afde5f69
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ca
 // Size: 0xe6
 function function_b1aab57e7ea64c45( playerentnum )
@@ -123,7 +124,7 @@ function function_b1aab57e7ea64c45( playerentnum )
 }
 
 // Namespace loadout_locker / namespace_ef3e1105afde5f69
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b8
 // Size: 0xc8
 function function_6ef8e341d1ca3ef8( playerentnum )
@@ -147,7 +148,7 @@ function function_6ef8e341d1ca3ef8( playerentnum )
 }
 
 // Namespace loadout_locker / namespace_ef3e1105afde5f69
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x888
 // Size: 0xa8
 function function_76e32a123417cd84( newloadout )
@@ -168,7 +169,7 @@ function function_76e32a123417cd84( newloadout )
 }
 
 // Namespace loadout_locker / namespace_ef3e1105afde5f69
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x938
 // Size: 0x2a6
 function function_32d0db3e4198e55d( scriptbundleloadout )

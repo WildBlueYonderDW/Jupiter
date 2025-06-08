@@ -21,7 +21,7 @@
 #namespace namespace_a204188ec750e835;
 
 // Namespace namespace_a204188ec750e835 / namespace_e6f83f35d32d1a60
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7e
 // Size: 0x13
 function main()

@@ -11,7 +11,7 @@
 #namespace scripted_melee;
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc36
 // Size: 0x1d8
 function main()
@@ -72,12 +72,12 @@ function main()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe16
 // Size: 0x149
 function precache()
 {
-    level.scripted_melee.var_dc0788366a9acb40 = "tag_player";
+    level.scripted_melee.player_link_bone = "tag_player";
     level._effect[ "vfx_scriptedmelee_stab" ] = loadfx( "vfx/iw8/weap/_knife/vfx_contextmele_neckstab_med_ch2.vfx" );
     level._effect[ "vfx_wnd_throat_stab" ] = loadfx( "vfx/iw9/level/wounded/vfx_wnd_throat_stab" );
     level._effect[ "vfx_vm_sp_undershoulder_stab" ] = loadfx( "vfx/iw9/level/wounded/vfx_vm_sp_undershoulder_stab" );
@@ -408,7 +408,8 @@ function private function_56e9e1d5fdd332d8( victim, direction )
     
     var_5abf35eba9e29a41 = [];
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         if ( rules_process( array[ i ][ "rules" ], victim ) )
         {
             var_5abf35eba9e29a41 = array_add( var_5abf35eba9e29a41, array[ i ][ "animScene" ] );
@@ -434,7 +435,8 @@ function private function_56e9e1d5fdd332d8( victim, direction )
         }
         
         /#
-            for (i = 0; i < var_fabf3a6fdd01a7b2.size; i++) {
+            for ( i = 0; i < var_fabf3a6fdd01a7b2.size ; i++ )
+            {
                 debug_print3d( victim.origin, "<dev string:x3d>" + var_fabf3a6fdd01a7b2[ i ].script_key, ( 0, 1, 0 ), 1, 0.1, 1, "<dev string:x4c>" + i + 2 );
             }
         #/
@@ -701,9 +703,9 @@ function private function_497214b31d3bc138( attacker, animscene )
             {
                 collision_info = attacker getcollision( "<dev string:x54>" );
                 attacker.scripted_melee_player_rig thread function_4e0638157c0b38d1();
-                debug_print3d( attacker.scripted_melee_player_rig gettagorigin( level.scripted_melee.var_dc0788366a9acb40 ), "<dev string:x5d>" + gettime(), ( 1, 0, 0 ), 1, 0.1, 1000 );
-                debug_line( attacker.scripted_melee_player_rig gettagorigin( level.scripted_melee.var_dc0788366a9acb40 ), attacker.scripted_melee_player_rig.origin + anglestoforward( attacker.scripted_melee_player_rig.angles ) * 100, ( 1, 0, 0 ), 1, 0, 1000 );
-                debug_circle( attacker.scripted_melee_player_rig gettagorigin( level.scripted_melee.var_dc0788366a9acb40 ), collision_info.capsule_radius, ( 1, 0, 0 ), 1, 1, 1000 );
+                debug_print3d( attacker.scripted_melee_player_rig gettagorigin( level.scripted_melee.player_link_bone ), "<dev string:x5d>" + gettime(), ( 1, 0, 0 ), 1, 0.1, 1000 );
+                debug_line( attacker.scripted_melee_player_rig gettagorigin( level.scripted_melee.player_link_bone ), attacker.scripted_melee_player_rig.origin + anglestoforward( attacker.scripted_melee_player_rig.angles ) * 100, ( 1, 0, 0 ), 1, 0, 1000 );
+                debug_circle( attacker.scripted_melee_player_rig gettagorigin( level.scripted_melee.player_link_bone ), collision_info.capsule_radius, ( 1, 0, 0 ), 1, 1, 1000 );
             }
         #/
         
@@ -860,7 +862,7 @@ function private function_8cff6477a8994cc0( meleeweapon, startstance, endstance 
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2919
 // Size: 0x63, Type: bool
 function rules_process( rules, victim )
@@ -877,7 +879,7 @@ function rules_process( rules, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2985
 // Size: 0x7c
 function rules_default()
@@ -887,7 +889,7 @@ function rules_default()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a0a
 // Size: 0x1f
 function function_b767805ca0e381e()
@@ -897,7 +899,7 @@ function function_b767805ca0e381e()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a32
 // Size: 0x28
 function function_a3356321f4375b10()
@@ -907,7 +909,7 @@ function function_a3356321f4375b10()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a63
 // Size: 0x1f
 function function_279a32b2cdce2b2b()
@@ -917,7 +919,7 @@ function function_279a32b2cdce2b2b()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a8b
 // Size: 0x28
 function function_65931e2cbca86748()
@@ -927,7 +929,7 @@ function function_65931e2cbca86748()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2abc
 // Size: 0x1f
 function function_fa7cc1ad28b01833()
@@ -937,7 +939,7 @@ function function_fa7cc1ad28b01833()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ae4
 // Size: 0x1f
 function function_9d501e35f4127f85()
@@ -947,7 +949,7 @@ function function_9d501e35f4127f85()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b0c
 // Size: 0x1f
 function function_7e355057c5e32c56()
@@ -957,7 +959,7 @@ function function_7e355057c5e32c56()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b34
 // Size: 0x28
 function function_199c2718c1a3385f()
@@ -967,7 +969,7 @@ function function_199c2718c1a3385f()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b65
 // Size: 0x1f
 function function_fdfbaa517a1c4018()
@@ -977,7 +979,7 @@ function function_fdfbaa517a1c4018()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b8d
 // Size: 0x2c, Type: bool
 function function_c0b5a507e4d35634( player, victim )
@@ -992,7 +994,7 @@ function function_c0b5a507e4d35634( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2bc2
 // Size: 0x2c, Type: bool
 function function_ba9cf1dce2684e06( player, victim )
@@ -1007,7 +1009,7 @@ function function_ba9cf1dce2684e06( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2bf7
 // Size: 0x2c, Type: bool
 function rule_isalive( player, victim )
@@ -1022,7 +1024,7 @@ function rule_isalive( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c2c
 // Size: 0x2d, Type: bool
 function function_1b73b9dda428e8ec( player, victim )
@@ -1037,7 +1039,7 @@ function function_1b73b9dda428e8ec( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c62
 // Size: 0x41, Type: bool
 function function_f9be8d51b4d903a7( player, victim )
@@ -1052,7 +1054,7 @@ function function_f9be8d51b4d903a7( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2cac
 // Size: 0x38, Type: bool
 function function_185b2e98556d16d7( player, victim )
@@ -1071,7 +1073,7 @@ function function_185b2e98556d16d7( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ced
 // Size: 0x53, Type: bool
 function function_8afeadea083eab3b( player, victim )
@@ -1091,7 +1093,7 @@ function function_8afeadea083eab3b( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d49
 // Size: 0x69, Type: bool
 function function_1905df1811ca29ec( player, victim )
@@ -1112,7 +1114,7 @@ function function_1905df1811ca29ec( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2dbb
 // Size: 0x13
 function function_bb4d4e9eef766c87( player, victim )
@@ -1121,7 +1123,7 @@ function function_bb4d4e9eef766c87( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2dd6
 // Size: 0x13
 function function_76d0cdc4bd023d56( player, victim )
@@ -1130,7 +1132,7 @@ function function_76d0cdc4bd023d56( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2df1
 // Size: 0x53, Type: bool
 function function_5e854e2a4da4f3ff( player, victim )
@@ -1151,7 +1153,7 @@ function function_5e854e2a4da4f3ff( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e4d
 // Size: 0x28, Type: bool
 function function_12baf7c107264c30( player, victim )
@@ -1161,7 +1163,7 @@ function function_12baf7c107264c30( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e7e
 // Size: 0x167, Type: bool
 function function_d3c20c23028ba3ea( player, victim )
@@ -1193,7 +1195,7 @@ function function_d3c20c23028ba3ea( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2fee
 // Size: 0x2d, Type: bool
 function function_71a6ec3371d375d( player, victim )
@@ -1212,7 +1214,7 @@ function function_71a6ec3371d375d( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3024
 // Size: 0x2d, Type: bool
 function function_652f03ce87e99355( player, victim )
@@ -1231,7 +1233,7 @@ function function_652f03ce87e99355( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x305a
 // Size: 0xbc, Type: bool
 function function_dc5bfb7ce71c284( player, victim )
@@ -1264,7 +1266,7 @@ function function_dc5bfb7ce71c284( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x311f
 // Size: 0x129, Type: bool
 function function_8205eef398b56d03( weapon )
@@ -1309,7 +1311,7 @@ function function_8205eef398b56d03( weapon )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3251
 // Size: 0x4c, Type: bool
 function rule_heightdiff( player, victim )
@@ -1325,7 +1327,7 @@ function rule_heightdiff( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32a6
 // Size: 0x26, Type: bool
 function function_7383baaf0f1f2a19( player, victim )
@@ -1339,7 +1341,7 @@ function function_7383baaf0f1f2a19( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32d5
 // Size: 0x26, Type: bool
 function function_1213c4af15671c7b( player, victim )
@@ -1353,7 +1355,7 @@ function function_1213c4af15671c7b( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3304
 // Size: 0x26, Type: bool
 function function_3f33052faf524462( player, victim )
@@ -1367,7 +1369,7 @@ function function_3f33052faf524462( player, victim )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3333
 // Size: 0x26, Type: bool
 function function_c592df6ec4469c4c( player, victim )
@@ -1427,7 +1429,7 @@ function private anim_stopanimscripted()
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x340c
 // Size: 0x1aa
 function set_scripted_node_angles( attacker, scripted_node )
@@ -1472,7 +1474,7 @@ function private death_safety( guy )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3604
 // Size: 0x1ac
 function function_d8f48ab0dfd5ef51( guy )
@@ -1534,7 +1536,7 @@ function function_d8f48ab0dfd5ef51( guy )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37b8
 // Size: 0xb
 function function_497a27b31d43d6af( guy )
@@ -1543,7 +1545,7 @@ function function_497a27b31d43d6af( guy )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37cb
 // Size: 0xc8
 function function_ebea6b350af8fb8d( guy )
@@ -1610,16 +1612,16 @@ function private function_1c96db6d76c91865( victim, scripted_node, animscene, st
     rot_ent = victim spawn_tag_origin();
     victim linktoblendtotag( rot_ent, "tag_origin" );
     rot_ent rotateto( var_d58d17e0a32ce60b, blend_time, 0.1 );
-    self.scripted_melee_player_rig aligntag( level.scripted_melee.var_dc0788366a9acb40, self.origin, self.angles );
+    self.scripted_melee_player_rig aligntag( level.scripted_melee.player_link_bone, self.origin, self.angles );
     marina_hack = marina_hack( animscene, victim );
     
     if ( istrue( marina_hack ) )
     {
-        self playerlinktoblend( self.scripted_melee_player_rig, level.scripted_melee.var_dc0788366a9acb40, 0.35, 0.15, 0, 1, 1 );
+        self playerlinktoblend( self.scripted_melee_player_rig, level.scripted_melee.player_link_bone, 0.35, 0.15, 0, 1, 1 );
     }
     else
     {
-        self playerlinktoblend( self.scripted_melee_player_rig, level.scripted_melee.var_dc0788366a9acb40, 0.35, 0.15, 0, 0, 1 );
+        self playerlinktoblend( self.scripted_melee_player_rig, level.scripted_melee.player_link_bone, 0.35, 0.15, 0, 0, 1 );
     }
     
     self [[ level.scripted_melee.playerlinkeduselinkedvelocity ]]( 1 );
@@ -1700,7 +1702,8 @@ function private victim_lives( animscene, victim )
         {
             array = level.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "victimLives" ];
@@ -1715,7 +1718,8 @@ function private victim_lives( animscene, victim )
         {
             array = self.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "victimLives" ];
@@ -1728,7 +1732,8 @@ function private victim_lives( animscene, victim )
     {
         array = level.scripted_melee.anims[ key ];
         
-        for (i = 0; i < array.size; i++) {
+        for ( i = 0; i < array.size ; i++ )
+        {
             if ( array[ i ][ "animScene" ] == animscene )
             {
                 return array[ i ][ "victimLives" ];
@@ -1742,7 +1747,8 @@ function private victim_lives( animscene, victim )
         {
             array = victim.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "victimLives" ];
@@ -1766,7 +1772,8 @@ function private start_stance( animscene, victim )
         {
             array = level.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "startStance" ];
@@ -1779,7 +1786,8 @@ function private start_stance( animscene, victim )
     {
         array = level.scripted_melee.anims[ key ];
         
-        for (i = 0; i < array.size; i++) {
+        for ( i = 0; i < array.size ; i++ )
+        {
             if ( array[ i ][ "animScene" ] == animscene )
             {
                 return array[ i ][ "startStance" ];
@@ -1793,7 +1801,8 @@ function private start_stance( animscene, victim )
         {
             array = victim.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "startStance" ];
@@ -1817,7 +1826,8 @@ function private end_stance( animscene, victim )
         {
             array = level.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "endStance" ];
@@ -1830,7 +1840,8 @@ function private end_stance( animscene, victim )
     {
         array = level.scripted_melee.anims[ key ];
         
-        for (i = 0; i < array.size; i++) {
+        for ( i = 0; i < array.size ; i++ )
+        {
             if ( array[ i ][ "animScene" ] == animscene )
             {
                 return array[ i ][ "endStance" ];
@@ -1844,7 +1855,8 @@ function private end_stance( animscene, victim )
         {
             array = victim.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "endStance" ];
@@ -1868,7 +1880,8 @@ function private use_pistol( animscene, victim )
         {
             array = level.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "usePistol" ];
@@ -1881,7 +1894,8 @@ function private use_pistol( animscene, victim )
     {
         array = level.scripted_melee.anims[ key ];
         
-        for (i = 0; i < array.size; i++) {
+        for ( i = 0; i < array.size ; i++ )
+        {
             if ( array[ i ][ "animScene" ] == animscene )
             {
                 return array[ i ][ "usePistol" ];
@@ -1895,7 +1909,8 @@ function private use_pistol( animscene, victim )
         {
             array = victim.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "usePistol" ];
@@ -1919,7 +1934,8 @@ function private bone_override( animscene, victim )
         {
             array = level.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "boneOverride" ];
@@ -1932,7 +1948,8 @@ function private bone_override( animscene, victim )
     {
         array = level.scripted_melee.anims[ key ];
         
-        for (i = 0; i < array.size; i++) {
+        for ( i = 0; i < array.size ; i++ )
+        {
             if ( array[ i ][ "animScene" ] == animscene )
             {
                 return array[ i ][ "boneOverride" ];
@@ -1946,7 +1963,8 @@ function private bone_override( animscene, victim )
         {
             array = victim.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "boneOverride" ];
@@ -1970,7 +1988,8 @@ function private marina_hack( animscene, victim )
         {
             array = level.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "marina_hack" ];
@@ -1983,7 +2002,8 @@ function private marina_hack( animscene, victim )
     {
         array = level.scripted_melee.anims[ key ];
         
-        for (i = 0; i < array.size; i++) {
+        for ( i = 0; i < array.size ; i++ )
+        {
             if ( array[ i ][ "animScene" ] == animscene )
             {
                 return array[ i ][ "marina_hack" ];
@@ -1997,7 +2017,8 @@ function private marina_hack( animscene, victim )
         {
             array = victim.scripted_melee.anims_override[ key ];
             
-            for (i = 0; i < array.size; i++) {
+            for ( i = 0; i < array.size ; i++ )
+            {
                 if ( array[ i ][ "animScene" ] == animscene )
                 {
                     return array[ i ][ "marina_hack" ];
@@ -2012,7 +2033,7 @@ function private marina_hack( animscene, victim )
 /#
 
     // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x4bae
     // Size: 0x7b, Type: dev
     function function_7eaecc1fbfd9ad25( player )
@@ -2048,7 +2069,7 @@ function private debug_line( start, end, color, alpha, depthtest, duration )
 }
 
 // Namespace scripted_melee / namespace_db6d5eb4a31b23a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c8c
 // Size: 0x26
 function debug_print( text )

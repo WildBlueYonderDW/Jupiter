@@ -20,7 +20,7 @@
 #namespace wm_utility;
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x53d
 // Size: 0x91
 function function_31325dbf3212f5ec( gestureweaponname, outtime )
@@ -51,7 +51,7 @@ function function_31325dbf3212f5ec( gestureweaponname, outtime )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d6
 // Size: 0x88
 function function_dac4b69b3dfb574e()
@@ -82,7 +82,7 @@ function function_dac4b69b3dfb574e()
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x666
 // Size: 0x24, Type: bool
 function function_de1a3f69eddee923( gestureweaponname )
@@ -96,7 +96,7 @@ function function_de1a3f69eddee923( gestureweaponname )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x693
 // Size: 0x37
 function function_7fbb162293aff03( delaytime )
@@ -115,7 +115,7 @@ function function_7fbb162293aff03( delaytime )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d2
 // Size: 0x1c0
 function function_a73751aa083ea6f8( groupname )
@@ -143,7 +143,7 @@ function function_a73751aa083ea6f8( groupname )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x89b
 // Size: 0x1f
 function function_e3cd4f9e858ab6ee( player, groupname )
@@ -152,7 +152,7 @@ function function_e3cd4f9e858ab6ee( player, groupname )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8c2
 // Size: 0x1e
 function function_3b593f41f5abb32b( player, groupname )
@@ -161,7 +161,7 @@ function function_3b593f41f5abb32b( player, groupname )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8e8
 // Size: 0x107
 function function_c1374c6a7773817a( player, groupname, var_5ce63c3cab218ff )
@@ -205,7 +205,7 @@ function function_c1374c6a7773817a( player, groupname, var_5ce63c3cab218ff )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f7
 // Size: 0x20
 function function_c470fe81662c7d70( player )
@@ -215,7 +215,7 @@ function function_c470fe81662c7d70( player )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xa1f
 // Size: 0xec
 function function_58adcd73bec6efe9( zone, eventname, var_c99f96abc50e7cd6, delaytime, context, customtrigger, endonstr )
@@ -238,7 +238,7 @@ function function_58adcd73bec6efe9( zone, eventname, var_c99f96abc50e7cd6, delay
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb13
 // Size: 0x74
 function function_d2957f8c3bb2978( objectivestr )
@@ -267,7 +267,7 @@ function function_d2957f8c3bb2978( objectivestr )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb8f
 // Size: 0xd0
 function function_b3f327a076ec28fc()
@@ -290,7 +290,7 @@ function function_b3f327a076ec28fc()
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc67
 // Size: 0x1c8
 function function_df6579cb4cbfbcfd( animstruct )
@@ -333,7 +333,7 @@ function function_df6579cb4cbfbcfd( animstruct )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe37
 // Size: 0x7b
 function function_9a2fc80f0c0ef3b0()
@@ -357,7 +357,7 @@ function function_9a2fc80f0c0ef3b0()
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeba
 // Size: 0x78
 function function_e31fc10a143fc19()
@@ -375,7 +375,7 @@ function function_e31fc10a143fc19()
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xf3b
 // Size: 0x15b
 function function_204ff26efb937261( showhint, origin, team, displayrange, fov, hintstring )
@@ -422,7 +422,7 @@ function function_204ff26efb937261( showhint, origin, team, displayrange, fov, h
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x109e
 // Size: 0x5c
 function function_6b73db5099aa7a56()
@@ -434,7 +434,7 @@ function function_6b73db5099aa7a56()
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1102
 // Size: 0x5b
 function function_798f8bdeee7f862f()
@@ -446,7 +446,7 @@ function function_798f8bdeee7f862f()
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1165
 // Size: 0x7c
 function function_134331ffde3c261a()
@@ -466,7 +466,7 @@ function function_134331ffde3c261a()
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e9
 // Size: 0xf3
 function function_d533cf8b8c42e0e8( switchimmediate )
@@ -509,7 +509,7 @@ function function_d533cf8b8c42e0e8( switchimmediate )
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e4
 // Size: 0x111
 function function_7e72b60d5d515d3a()
@@ -551,7 +551,7 @@ function function_7e72b60d5d515d3a()
 }
 
 // Namespace wm_utility / scripts\mp\gametypes\wm_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13fd
 // Size: 0x127
 function function_51039de6a7a95d10( ents )

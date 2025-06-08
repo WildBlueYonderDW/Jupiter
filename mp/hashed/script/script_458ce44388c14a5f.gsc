@@ -3,7 +3,7 @@
 #namespace ftue_inventory;
 
 // Namespace ftue_inventory / namespace_80da074a96524381
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x116
 // Size: 0x14
 function function_59ded31f4834f8de( callback )
@@ -12,7 +12,7 @@ function function_59ded31f4834f8de( callback )
 }
 
 // Namespace ftue_inventory / namespace_80da074a96524381
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x132
 // Size: 0x15
 function function_7d664ce89c1009ca( callback )
@@ -21,7 +21,7 @@ function function_7d664ce89c1009ca( callback )
 }
 
 // Namespace ftue_inventory / namespace_80da074a96524381
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14f
 // Size: 0x1c
 function function_85ddcac5eded3985( itemindex, callback )
@@ -30,7 +30,7 @@ function function_85ddcac5eded3985( itemindex, callback )
 }
 
 // Namespace ftue_inventory / namespace_80da074a96524381
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x173
 // Size: 0x1c
 function function_bd09b7d6832880c4( callback, itemtype )

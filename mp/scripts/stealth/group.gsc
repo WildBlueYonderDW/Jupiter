@@ -8,7 +8,7 @@
 #namespace group;
 
 // Namespace group / scripts\stealth\group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30e
 // Size: 0x3, Type: bool
 function function_4e29112ac7171ec8()
@@ -17,7 +17,7 @@ function function_4e29112ac7171ec8()
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31a
 // Size: 0xbf
 function initgroup( groupname )
@@ -46,7 +46,7 @@ function initgroup( groupname )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e1
 // Size: 0xb6
 function addtogroup( groupname, guy )
@@ -62,7 +62,7 @@ function addtogroup( groupname, guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49f
 // Size: 0x39
 function group_waitfordeath( guy )
@@ -78,7 +78,7 @@ function group_waitfordeath( guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e0
 // Size: 0x11f
 function clearallgroups()
@@ -110,7 +110,7 @@ function clearallgroups()
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x607
 // Size: 0x81
 function getgroup( groupname )
@@ -122,7 +122,7 @@ function getgroup( groupname )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x691
 // Size: 0x3d
 function makenewpod( groupname, state, origin )
@@ -133,7 +133,7 @@ function makenewpod( groupname, state, origin )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6d7
 // Size: 0x25
 function addtopod( pod, guy )
@@ -142,7 +142,7 @@ function addtopod( pod, guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x704
 // Size: 0x7a
 function group_trytojoinexistingpod( currentpod, podstate, guy, investigatepos )
@@ -167,7 +167,7 @@ function group_trytojoinexistingpod( currentpod, podstate, guy, investigatepos )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x786
 // Size: 0x116, Type: bool
 function group_assigntoinvestigatepod( guy, investigatepos )
@@ -210,7 +210,7 @@ function group_assigntoinvestigatepod( guy, investigatepos )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8a5
 // Size: 0x94
 function group_removefrompod( guy )
@@ -239,7 +239,7 @@ function group_removefrompod( guy )
 /#
 
     // Namespace group / scripts\stealth\group
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x941
     // Size: 0x93, Type: dev
     function drawcross( origin )
@@ -255,7 +255,7 @@ function group_removefrompod( guy )
     }
 
     // Namespace group / scripts\stealth\group
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9dc
     // Size: 0x25d, Type: dev
     function pod_debug( pod )
@@ -298,7 +298,8 @@ function group_removefrompod( guy )
                 numlanes = pod.members.size;
                 lanewidth = 360 / numlanes;
                 
-                for (ilane = 0; ilane < numlanes + 1; ilane++) {
+                for ( ilane = 0; ilane < numlanes + 1 ; ilane++ )
+                {
                     angle = ilane * lanewidth;
                     line( pod.origin, pod.origin + 128 * ( cos( angle - lanewidth ), sin( angle - lanewidth ), 0 ), ( 0, 1, 0 ), 1, 0, 1 );
                 }
@@ -311,7 +312,7 @@ function group_removefrompod( guy )
 #/
 
 // Namespace group / scripts\stealth\group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc41
 // Size: 0x215
 function group_findsomeotherguytoinvestigate( pos, var_32a96bf508fbd2f )
@@ -371,7 +372,7 @@ function group_findsomeotherguytoinvestigate( pos, var_32a96bf508fbd2f )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe5f
 // Size: 0xc2, Type: bool
 function group_checkrequestbackupoutsideofvolume( e )
@@ -408,7 +409,7 @@ function group_checkrequestbackupoutsideofvolume( e )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf2a
 // Size: 0x3f
 function group_eventinvestigate( guy, e )
@@ -422,7 +423,7 @@ function group_eventinvestigate( guy, e )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf71
 // Size: 0xfa
 function group_investigate_seekbackup( e )
@@ -451,7 +452,8 @@ function group_investigate_seekbackup( e )
     {
         nummembers = group.members.size;
         
-        for (imember = 0; imember < nummembers; imember++) {
+        for ( imember = 0; imember < nummembers ; imember++ )
+        {
             otherguy = group.members[ imember ];
             
             if ( otherguy.var_fe5ebefa740c7106 == 0 && distancesquared( otherguy.origin, self.origin ) < 10000 )
@@ -463,7 +465,7 @@ function group_investigate_seekbackup( e )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1073
 // Size: 0xaa
 function group_findpod( groupdata, guy )
@@ -475,11 +477,13 @@ function group_findpod( groupdata, guy )
     
     numpods = groupdata.pods.size;
     
-    for (ipod = 0; ipod < numpods; ipod++) {
+    for ( ipod = 0; ipod < numpods ; ipod++ )
+    {
         pod = groupdata.pods[ ipod ];
         nummembers = pod.members.size;
         
-        for (imember = 0; imember < nummembers; imember++) {
+        for ( imember = 0; imember < nummembers ; imember++ )
+        {
             if ( pod.members[ imember ] == guy )
             {
                 return pod;
@@ -489,7 +493,7 @@ function group_findpod( groupdata, guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1125
 // Size: 0x6d
 function group_eventcoverblown( groupname, guy, e )
@@ -513,7 +517,7 @@ function group_eventcoverblown( groupname, guy, e )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x119a
 // Size: 0x28
 function group_delayedcoverblownpropagation( guy )
@@ -527,7 +531,7 @@ function group_delayedcoverblownpropagation( guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11ca
 // Size: 0x171
 function group_coverblown_seekbackup( groupdata, e )
@@ -547,7 +551,8 @@ function group_coverblown_seekbackup( groupdata, e )
     {
         nummembers = groupdata.members.size;
         
-        for (imember = 0; imember < nummembers; imember++) {
+        for ( imember = 0; imember < nummembers ; imember++ )
+        {
             otherguy = groupdata.members[ imember ];
             
             if ( otherguy != self && otherguy.var_fe5ebefa740c7106 == 0 && distancesquared( otherguy.origin, self.origin ) < 10000 )
@@ -574,7 +579,7 @@ function group_coverblown_seekbackup( groupdata, e )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1343
 // Size: 0x40
 function pod_updateinvestigateorigin( guy, pos )
@@ -585,7 +590,7 @@ function pod_updateinvestigateorigin( guy, pos )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x138b
 // Size: 0x13
 function group_updatepodhuntorigin( guy, var_f31054cb5cab2166 )
@@ -594,7 +599,7 @@ function group_updatepodhuntorigin( guy, var_f31054cb5cab2166 )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13a6
 // Size: 0x32
 function pod_hunt_update( squadid )
@@ -605,7 +610,7 @@ function pod_hunt_update( squadid )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e0
 // Size: 0xb7, Type: bool
 function function_561073db8e56e510( guy )
@@ -642,7 +647,7 @@ function function_561073db8e56e510( guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14a0
 // Size: 0x3b4
 function function_9919694707b210df()
@@ -670,7 +675,8 @@ function function_9919694707b210df()
             return;
         }
         
-        for (i = 0; i < members.size; i++) {
+        for ( i = 0; i < members.size ; i++ )
+        {
             guy = members[ i ];
             
             if ( is_dead_or_dying( guy ) || !function_561073db8e56e510( guy ) )
@@ -681,7 +687,8 @@ function function_9919694707b210df()
             entnum = guy getentitynumber();
             guylookaheaddir = guy.lookaheaddir;
             
-            for (j = i + 1; j < members.size; j++) {
+            for ( j = i + 1; j < members.size ; j++ )
+            {
                 otherguy = members[ j ];
                 
                 if ( !isdefined( otherguy ) || !isalive( otherguy ) )
@@ -760,7 +767,7 @@ function function_9919694707b210df()
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x185c
 // Size: 0x32
 function function_87601e94f761af22( job )
@@ -771,7 +778,7 @@ function function_87601e94f761af22( job )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1896
 // Size: 0x385
 function function_67386b112e199533( job )
@@ -878,7 +885,7 @@ function function_67386b112e199533( job )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c23
 // Size: 0x5a
 function function_c5bfef99b23e74be( flag )
@@ -900,7 +907,7 @@ function function_c5bfef99b23e74be( flag )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c85
 // Size: 0x15
 function function_1e36bd48fc41811e( t )
@@ -910,7 +917,7 @@ function function_1e36bd48fc41811e( t )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ca2
 // Size: 0x29
 function function_75087b386454d072( guy )
@@ -924,7 +931,7 @@ function function_75087b386454d072( guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cd4
 // Size: 0x29
 function function_b121dde73e7da661( guy )
@@ -938,7 +945,7 @@ function function_b121dde73e7da661( guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d05
 // Size: 0x38d
 function function_92f7df07df367143( guy )
@@ -971,7 +978,8 @@ function function_92f7df07df367143( guy )
     var_9dad3f5a14a525a3 = [];
     largestpod = groupdata.pods[ 0 ];
     
-    for (i = 1; i < groupdata.pods.size; i++) {
+    for ( i = 1; i < groupdata.pods.size ; i++ )
+    {
         if ( largestpod.members.size < groupdata.pods[ i ].members.size )
         {
             largestpod = groupdata.pods[ i ];
@@ -1058,7 +1066,7 @@ function function_92f7df07df367143( guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x209a
 // Size: 0x7e
 function function_500fe4721adccab3( array )
@@ -1077,7 +1085,7 @@ function function_500fe4721adccab3( array )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2121
 // Size: 0x345
 function pod_hunt_vo()
@@ -1193,7 +1201,7 @@ function pod_hunt_vo()
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x246e
 // Size: 0x7f, Type: bool
 function group_anyoneincombat( groupname )
@@ -1212,7 +1220,7 @@ function group_anyoneincombat( groupname )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24f6
 // Size: 0x7f, Type: bool
 function function_624f57a99242f017( groupname )
@@ -1231,7 +1239,7 @@ function function_624f57a99242f017( groupname )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x257e
 // Size: 0x2
 function groups_combat_checklosttarget()
@@ -1240,7 +1248,7 @@ function groups_combat_checklosttarget()
 }
 
 // Namespace group / scripts\stealth\group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2588
 // Size: 0xd0
 function pod_combat_update_checklosttarget()
@@ -1272,7 +1280,7 @@ function pod_combat_update_checklosttarget()
 }
 
 // Namespace group / scripts\stealth\group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2660
 // Size: 0x282, Type: bool
 function pod_haslostenemy()
@@ -1357,7 +1365,7 @@ function pod_haslostenemy()
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28eb
 // Size: 0x126
 function pod_settohunt( var_d384e7929fbdb26c )
@@ -1395,7 +1403,7 @@ function pod_settohunt( var_d384e7929fbdb26c )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a19
 // Size: 0x28
 function function_b32f74bb1f7e968e( delaytime )
@@ -1407,7 +1415,7 @@ function function_b32f74bb1f7e968e( delaytime )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a49
 // Size: 0x66
 function pod_settoidle()
@@ -1419,7 +1427,7 @@ function pod_settoidle()
 }
 
 // Namespace group / scripts\stealth\group
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ab7
 // Size: 0x4a, Type: bool
 function pod_isleader( guy )
@@ -1436,7 +1444,7 @@ function pod_isleader( guy )
 }
 
 // Namespace group / scripts\stealth\group
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b0a
 // Size: 0x2e
 function pod_delete()

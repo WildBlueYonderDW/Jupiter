@@ -14,7 +14,7 @@
 #namespace perk_machines;
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c1
 // Size: 0x7f
 function function_c349718d60cc262b()
@@ -40,7 +40,7 @@ function function_c349718d60cc262b()
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x648
 // Size: 0x11
 function function_ecf921d010c33dea()
@@ -49,7 +49,7 @@ function function_ecf921d010c33dea()
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x662
 // Size: 0x94
 function setup_wunderfizz()
@@ -61,7 +61,7 @@ function setup_wunderfizz()
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fe
 // Size: 0x87
 function function_7af59e607ac4bb14( params )
@@ -78,7 +78,7 @@ function function_7af59e607ac4bb14( params )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x78d
 // Size: 0x150
 function function_b6cefb59989d14c( destination, str_currency )
@@ -109,7 +109,7 @@ function function_b6cefb59989d14c( destination, str_currency )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e5
 // Size: 0x244
 function function_948391d32c2e5823( instance )
@@ -159,7 +159,7 @@ function private function_203543d2ee9dcaf3( instance )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbac
 // Size: 0x33f
 function function_c224859356dbfd3d()
@@ -336,7 +336,7 @@ function private function_b92f7075e8fd3081( usable, player )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11a8
 // Size: 0x1be
 function function_544d06d1d36ed577( player )
@@ -391,7 +391,7 @@ function function_544d06d1d36ed577( player )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x136e
 // Size: 0x162
 function perk_machine_think( str_key, interact )
@@ -448,7 +448,7 @@ function perk_machine_think( str_key, interact )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14d8
 // Size: 0x3c, Type: bool
 function get_perk_machine_start_state( perk )
@@ -467,7 +467,7 @@ function get_perk_machine_start_state( perk )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x151d
 // Size: 0x24
 function function_4c7967371b16c7f3( interact )
@@ -477,7 +477,7 @@ function function_4c7967371b16c7f3( interact )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1549
 // Size: 0x2d
 function function_b7b11dcefd51d18f( str_key, interact )
@@ -487,7 +487,7 @@ function function_b7b11dcefd51d18f( str_key, interact )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x157e
 // Size: 0x2d
 function function_c882eef34c5e389b( interact )
@@ -498,7 +498,7 @@ function function_c882eef34c5e389b( interact )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15b3
 // Size: 0x37
 function function_af4a04f18b0a937( str_key, interact )
@@ -509,7 +509,7 @@ function function_af4a04f18b0a937( str_key, interact )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15f2
 // Size: 0x113
 function function_359eb1acd4585386( usable, player )
@@ -535,7 +535,7 @@ function function_359eb1acd4585386( usable, player )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x170e
 // Size: 0x5e
 function spare_change()
@@ -547,7 +547,7 @@ function spare_change()
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1774
 // Size: 0xe6
 function check_for_change()
@@ -585,7 +585,7 @@ function check_for_change()
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1862
 // Size: 0xd4
 function function_b9232d78e96ab157( var_8686b40485143989, var_95427d8098dd59a1 )
@@ -627,7 +627,7 @@ function function_b9232d78e96ab157( var_8686b40485143989, var_95427d8098dd59a1 )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x193e
 // Size: 0x47
 function function_578601bd71a362c8( var_8686b40485143989 )
@@ -644,7 +644,7 @@ function function_578601bd71a362c8( var_8686b40485143989 )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x198d
 // Size: 0x25f
 function function_584ef0be51af00df( instance )
@@ -691,7 +691,7 @@ function function_584ef0be51af00df( instance )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bf4
 // Size: 0x17a
 function function_d24f7f1b9f196edc( interact )
@@ -750,7 +750,7 @@ function function_d24f7f1b9f196edc( interact )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d76
 // Size: 0x5d
 function function_bc46233a2d861c6f( player )
@@ -766,7 +766,7 @@ function function_bc46233a2d861c6f( player )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ddb
 // Size: 0x249
 function perk_choice_purchase( channel, menuitemindex )
@@ -839,7 +839,7 @@ function perk_choice_purchase( channel, menuitemindex )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x202c
 // Size: 0x89
 function function_6b2b78660b18dad9( menuitemindex, player )
@@ -858,7 +858,7 @@ function function_6b2b78660b18dad9( menuitemindex, player )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20be
 // Size: 0x84
 function open_perk_choice_menu( var_a2738a1d42906829 )
@@ -880,7 +880,7 @@ function open_perk_choice_menu( var_a2738a1d42906829 )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x214a
 // Size: 0x161
 function function_a9620a0e00513b98( var_a2738a1d42906829 )
@@ -922,7 +922,7 @@ function function_a9620a0e00513b98( var_a2738a1d42906829 )
 }
 
 // Namespace perk_machines / scripts\cp_mp\perk_machines
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22b3
 // Size: 0x83
 function function_86ea6001c8038726( var_a2738a1d42906829 )

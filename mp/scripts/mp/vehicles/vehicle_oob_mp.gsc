@@ -7,7 +7,7 @@
 #namespace vehicle_oob_mp;
 
 // Namespace vehicle_oob_mp / scripts\mp\vehicles\vehicle_oob_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd9
 // Size: 0x34
 function vehicle_oob_mp_registeroutoftimecallback( vehiclename, callback )
@@ -17,7 +17,7 @@ function vehicle_oob_mp_registeroutoftimecallback( vehiclename, callback )
 }
 
 // Namespace vehicle_oob_mp / scripts\mp\vehicles\vehicle_oob_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x115
 // Size: 0x92
 function vehicle_oob_mp_init()
@@ -32,7 +32,7 @@ function vehicle_oob_mp_init()
 }
 
 // Namespace vehicle_oob_mp / scripts\mp\vehicles\vehicle_oob_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1af
 // Size: 0x4f
 function vehicle_oob_mp_getleveldata()
@@ -43,7 +43,7 @@ function vehicle_oob_mp_getleveldata()
 }
 
 // Namespace vehicle_oob_mp / scripts\mp\vehicles\vehicle_oob_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x207
 // Size: 0x64
 function vehicle_oob_mp_outoftimecallback( timeoutendnotify, clearnotify )
@@ -56,7 +56,7 @@ function vehicle_oob_mp_outoftimecallback( timeoutendnotify, clearnotify )
 }
 
 // Namespace vehicle_oob_mp / scripts\mp\vehicles\vehicle_oob_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x273
 // Size: 0x64
 function vehicle_oob_mp_clearcallback()

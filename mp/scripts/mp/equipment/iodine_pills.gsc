@@ -15,7 +15,7 @@
 #namespace iodine_pills;
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x256
 // Size: 0x4e
 function function_80b2d6867c192094()
@@ -24,7 +24,7 @@ function function_80b2d6867c192094()
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ac
 // Size: 0x26
 function function_43fe8ccc8b4e6146( equipmentref, equipmentslot, variantid )
@@ -36,7 +36,7 @@ function function_43fe8ccc8b4e6146( equipmentref, equipmentslot, variantid )
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2da
 // Size: 0x1e
 function function_d41fe283435e26c4( equipmentref, equipmentslot )
@@ -48,7 +48,7 @@ function function_d41fe283435e26c4( equipmentref, equipmentslot )
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x300
 // Size: 0x39
 function function_7430b01f931d7e4e( grenade, lootpickup )
@@ -68,7 +68,7 @@ function function_7430b01f931d7e4e( grenade, lootpickup )
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x341
 // Size: 0xcd
 function function_9c89631481683dd2( equipuse, lootpickup )
@@ -110,7 +110,7 @@ function function_9c89631481683dd2( equipuse, lootpickup )
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x416
 // Size: 0xad, Type: bool
 function function_bef9c19cb3be47ef()
@@ -159,7 +159,7 @@ function function_bef9c19cb3be47ef()
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cc
 // Size: 0x3d
 function function_bbfe4eae6d4cdb6f()
@@ -171,7 +171,7 @@ function function_bbfe4eae6d4cdb6f()
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x511
 // Size: 0x17
 function function_7214173379da1591( grenade )
@@ -183,7 +183,7 @@ function function_7214173379da1591( grenade )
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x530
 // Size: 0xf6
 function function_bc28931a036b205( var_8a7b4dc1a58fc045 )
@@ -231,7 +231,7 @@ function function_bc28931a036b205( var_8a7b4dc1a58fc045 )
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x62e
 // Size: 0xcb
 function function_ac74ff0686d2886e( damage )
@@ -268,7 +268,7 @@ function function_ac74ff0686d2886e( damage )
 }
 
 // Namespace iodine_pills / scripts\mp\equipment\iodine_pills
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x701
 // Size: 0x17, Type: bool
 function function_3abd8504e2419fce( player )

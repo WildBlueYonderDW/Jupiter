@@ -14,7 +14,7 @@
 #namespace vehicle_omnvar_utility;
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ad
 // Size: 0x70
 function vehomn_init()
@@ -27,7 +27,7 @@ function vehomn_init()
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x525
 // Size: 0xda
 function vehomn_setvehicle( vehicleref, clients )
@@ -59,7 +59,7 @@ function vehomn_setvehicle( vehicleref, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x607
 // Size: 0xb9
 function vehomn_setcurrentseat( vehicle, seatref, client )
@@ -94,7 +94,7 @@ function vehomn_setcurrentseat( vehicle, seatref, client )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6c8
 // Size: 0x81
 function vehomn_setnextseat( vehicleref, seatref, client )
@@ -117,7 +117,7 @@ function vehomn_setnextseat( vehicleref, seatref, client )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x751
 // Size: 0x1de
 function vehomn_setseatentity( vehicleref, seatref, seatentity, clients )
@@ -193,7 +193,7 @@ function vehomn_setseatentity( vehicleref, seatref, seatentity, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x937
 // Size: 0x26
 function vehomn_clearseatentity( vehicleref, seatref, clients )
@@ -202,7 +202,7 @@ function vehomn_clearseatentity( vehicleref, seatref, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x965
 // Size: 0xac
 function vehomn_sethealthpercent( var_52616aae7b55d981, clients )
@@ -235,7 +235,7 @@ function vehomn_sethealthpercent( var_52616aae7b55d981, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa19
 // Size: 0x14
 function vehomn_clearhealthpercent( clients )
@@ -244,7 +244,7 @@ function vehomn_clearhealthpercent( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa35
 // Size: 0x94
 function vehomn_showhealth( clients )
@@ -272,7 +272,7 @@ function vehomn_showhealth( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad1
 // Size: 0x92
 function vehomn_hidehealth( clients )
@@ -300,7 +300,7 @@ function vehomn_hidehealth( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb6b
 // Size: 0x22
 function vehomn_clearshowhealth( clients )
@@ -315,7 +315,7 @@ function vehomn_clearshowhealth( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb95
 // Size: 0xac
 function vehomn_settimepercent( var_3b0524215d2eae6, clients )
@@ -348,7 +348,7 @@ function vehomn_settimepercent( var_3b0524215d2eae6, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc49
 // Size: 0x14
 function vehomn_cleartimepercent( clients )
@@ -357,7 +357,7 @@ function vehomn_cleartimepercent( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc65
 // Size: 0x94
 function vehomn_showtime( clients )
@@ -385,7 +385,7 @@ function vehomn_showtime( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd01
 // Size: 0x92
 function vehomn_hidetime( clients )
@@ -413,7 +413,7 @@ function vehomn_hidetime( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd9b
 // Size: 0x22
 function vehomn_clearshowtime( clients )
@@ -428,7 +428,7 @@ function vehomn_clearshowtime( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdc5
 // Size: 0x41
 function function_9da76b0be4b2a2d4( currentfuel, maxfuel )
@@ -439,7 +439,7 @@ function function_9da76b0be4b2a2d4( currentfuel, maxfuel )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe0e
 // Size: 0x38
 function function_272f4112182763bd( player, currentfuel, maxfuel )
@@ -474,7 +474,7 @@ function private function_f1c6c7fa7cc97826( currentfuel, maxfuel )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xec0
 // Size: 0xad
 function vehomn_setfuelpercent( var_15174a10eca23d37, clients )
@@ -507,7 +507,7 @@ function vehomn_setfuelpercent( var_15174a10eca23d37, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf75
 // Size: 0xb
 function vehomn_clearfuelpercent( clients )
@@ -516,7 +516,7 @@ function vehomn_clearfuelpercent( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf88
 // Size: 0x94
 function vehomn_showfuel( clients )
@@ -544,7 +544,7 @@ function vehomn_showfuel( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1024
 // Size: 0xb
 function vehomn_hidefuel( clients )
@@ -553,7 +553,7 @@ function vehomn_hidefuel( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1037
 // Size: 0xb
 function vehomn_clearshowfuel( clients )
@@ -562,7 +562,7 @@ function vehomn_clearshowfuel( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x104a
 // Size: 0x182
 function vehomn_setammo( vehicleref, ammoref, ammovalue, clients )
@@ -619,7 +619,7 @@ function vehomn_setammo( vehicleref, ammoref, ammovalue, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11d4
 // Size: 0x26
 function vehomn_clearammo( vehicleref, ammoref, clients )
@@ -628,7 +628,7 @@ function vehomn_clearammo( vehicleref, ammoref, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1202
 // Size: 0x53
 function vehomn_showammo( vehicleref, ammoref, ammovalue, clients )
@@ -638,7 +638,7 @@ function vehomn_showammo( vehicleref, ammoref, ammovalue, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x125d
 // Size: 0x27
 function vehomn_hideammo( vehicleref, ammoref, clients )
@@ -647,7 +647,7 @@ function vehomn_hideammo( vehicleref, ammoref, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x128c
 // Size: 0x13f
 function vehomn_showwarning( warningref, clients, vehicleref )
@@ -691,7 +691,7 @@ function vehomn_showwarning( warningref, clients, vehicleref )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13d3
 // Size: 0x13d
 function vehomn_hidewarning( warningref, clients, vehicleref )
@@ -735,7 +735,7 @@ function vehomn_hidewarning( warningref, clients, vehicleref )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1518
 // Size: 0x186
 function vehomn_clearwarnings( clients, vehicleref )
@@ -794,7 +794,7 @@ function vehomn_clearwarnings( clients, vehicleref )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16a6
 // Size: 0xa1
 function function_6f848816a946e419( client )
@@ -831,7 +831,7 @@ function function_6f848816a946e419( client )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x174f
 // Size: 0x181
 function vehomn_setrotation( vehicleref, rotationref, rotationvalue, clients )
@@ -892,7 +892,7 @@ function vehomn_setrotation( vehicleref, rotationref, rotationvalue, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18d8
 // Size: 0x26
 function vehomn_clearrotation( vehicleref, rotationref, clients )
@@ -901,7 +901,7 @@ function vehomn_clearrotation( vehicleref, rotationref, clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1906
 // Size: 0xc6
 function vehomn_showcontrols( clients )
@@ -933,7 +933,7 @@ function vehomn_showcontrols( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19d4
 // Size: 0xc4
 function vehomn_hidecontrols( clients )
@@ -965,7 +965,7 @@ function vehomn_hidecontrols( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1aa0
 // Size: 0x8a
 function vehomn_fadeoutcontrols( clients )
@@ -993,7 +993,7 @@ function vehomn_fadeoutcontrols( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b32
 // Size: 0x7e
 function vehomn_fadeoutcontrolsforclient( client )
@@ -1011,7 +1011,7 @@ function vehomn_fadeoutcontrolsforclient( client )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bb8
 // Size: 0xa8
 function vehomn_clearcontrols( clients )
@@ -1041,7 +1041,7 @@ function vehomn_clearcontrols( clients )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c68
 // Size: 0x42, Type: bool
 function vehomn_controlsarefadedoutorhidden( client )
@@ -1050,7 +1050,7 @@ function vehomn_controlsarefadedoutorhidden( client )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cb3
 // Size: 0x4f
 function vehomn_getleveldata()
@@ -1061,7 +1061,7 @@ function vehomn_getleveldata()
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d0b
 // Size: 0x2b9
 function vehomn_getleveldataforvehicle( vehicleref, create, var_6ecb77fd1f27c667 )
@@ -1112,7 +1112,7 @@ function vehomn_getleveldataforvehicle( vehicleref, create, var_6ecb77fd1f27c667
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fcc
 // Size: 0x9c
 function vehomn_clearleveldataforvehicle( vehicleref, create, var_6ecb77fd1f27c667 )
@@ -1135,7 +1135,7 @@ function vehomn_clearleveldataforvehicle( vehicleref, create, var_6ecb77fd1f27c6
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2071
 // Size: 0x75
 function vehomn_clearall( clients, vehicleref )
@@ -1187,7 +1187,7 @@ function private vehomn_clearallinternal( client, vehicleref )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x223a
 // Size: 0x45d
 function vehomn_updateomnvarsonseatenter( vehicle, var_fc7c7a874b43a31a, var_7558f98f3236963d, player )
@@ -1315,7 +1315,7 @@ function vehomn_updateomnvarsonseatenter( vehicle, var_fc7c7a874b43a31a, var_755
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x269f
 // Size: 0x3c5
 function function_d2d9c09551d91164( vehicle, player )
@@ -1431,7 +1431,7 @@ function function_d2d9c09551d91164( vehicle, player )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a6c
 // Size: 0x74
 function vehomn_updateomnvarsonseatexit( vehicle, var_fc7c7a874b43a31a, var_7558f98f3236963d, player )
@@ -1453,7 +1453,7 @@ function vehomn_updateomnvarsonseatexit( vehicle, var_fc7c7a874b43a31a, var_7558
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ae8
 // Size: 0x26
 function function_5211953231a09ed5( vehicle, player )
@@ -1462,7 +1462,7 @@ function function_5211953231a09ed5( vehicle, player )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b16
 // Size: 0xa6
 function vehomn_updateomnvarsondamage( vehicle, data )
@@ -1483,7 +1483,7 @@ function vehomn_updateomnvarsondamage( vehicle, data )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2bc4
 // Size: 0xd1
 function vehomn_updateomnvarsperframe( vehicle, data )
@@ -1512,7 +1512,7 @@ function vehomn_updateomnvarsperframe( vehicle, data )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2c9d
 // Size: 0x75
 function veh_updateomnvarsperframeforclient( vehicle, client, seatid, data )
@@ -1531,7 +1531,7 @@ function veh_updateomnvarsperframeforclient( vehicle, client, seatid, data )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d1a
 // Size: 0x87
 function vehomn_updatenextseatomnvars( vehicle )
@@ -1546,7 +1546,7 @@ function vehomn_updatenextseatomnvars( vehicle )
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2da9
 // Size: 0x1d3
 function vehomn_updaterotationomnvarsperframeforclient( vehicle, client, seatid, data )
@@ -1556,7 +1556,7 @@ function vehomn_updaterotationomnvarsperframeforclient( vehicle, client, seatid,
     if ( leveldataforvehicle.rotationrefsbyseatandweapon.size > 0 && isdefined( leveldataforvehicle.rotationrefsbyseatandweapon[ seatid ] ) )
     {
         usingcamera = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_isdriverseat( vehicle, seatid );
-        var_c50b485a43752fd = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforseat( vehicle.vehiclename, seatid );
+        leveldataforseat = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforseat( vehicle.vehiclename, seatid );
         
         if ( usingcamera )
         {
@@ -1594,7 +1594,7 @@ function vehomn_updaterotationomnvarsperframeforclient( vehicle, client, seatid,
 }
 
 // Namespace vehicle_omnvar_utility / scripts\cp_mp\utility\vehicle_omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f84
 // Size: 0x132
 function vehomn_getrotationentangles( vehicle, data )

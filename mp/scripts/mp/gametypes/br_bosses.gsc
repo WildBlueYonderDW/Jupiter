@@ -9,7 +9,7 @@
 #namespace br_bosses;
 
 // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xff
 // Size: 0x1dd
 function initbosses()
@@ -69,7 +69,7 @@ function initbosses()
 }
 
 // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e4
 // Size: 0x3e
 function function_874978ae364dd63( funcpointer )
@@ -88,7 +88,7 @@ function function_874978ae364dd63( funcpointer )
 }
 
 // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32a
 // Size: 0x22
 function registerboss( detailsstruct )
@@ -97,7 +97,7 @@ function registerboss( detailsstruct )
 }
 
 // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x354
 // Size: 0x2b
 function spawnboss( name, node )
@@ -106,7 +106,7 @@ function spawnboss( name, node )
 }
 
 // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x388
 // Size: 0x121
 function function_c0d4fda4400b5a08( name )
@@ -143,7 +143,7 @@ function function_c0d4fda4400b5a08( name )
 }
 
 // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b1
 // Size: 0x65
 function function_720c3b7abf4baac8( name, var_b700d8d067b3eedb )
@@ -160,7 +160,7 @@ function function_720c3b7abf4baac8( name, var_b700d8d067b3eedb )
 }
 
 // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51e
 // Size: 0x26
 function function_2676819f01ae14ed( name )
@@ -172,7 +172,7 @@ function function_2676819f01ae14ed( name )
 /#
 
     // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x54c
     // Size: 0x12e, Type: dev
     function function_3d2ccd7ee2e32ebc()
@@ -199,7 +199,7 @@ function function_2676819f01ae14ed( name )
     }
 
     // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x682
     // Size: 0x172, Type: dev
     function function_565fbc2a83508f2d( name, node )
@@ -222,7 +222,7 @@ function function_2676819f01ae14ed( name )
     }
 
     // Namespace br_bosses / scripts\mp\gametypes\br_bosses
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x7fc
     // Size: 0x125, Type: dev
     function function_41684af1362b3f50( boss )

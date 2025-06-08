@@ -3,7 +3,7 @@
 #namespace namespace_a131188218d8b5c3;
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba
 // Size: 0x67
 function function_766b80da1f882fc3()
@@ -15,7 +15,7 @@ function function_766b80da1f882fc3()
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12a
 // Size: 0x2e
 function getrankbundle( rankbundlename )
@@ -26,7 +26,7 @@ function getrankbundle( rankbundlename )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x161
 // Size: 0x55
 function function_f44d7988af879414( rankid )
@@ -37,7 +37,7 @@ function function_f44d7988af879414( rankid )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bf
 // Size: 0x1c
 function function_cd47cbfaa2de3623( rankid )
@@ -46,7 +46,7 @@ function function_cd47cbfaa2de3623( rankid )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e4
 // Size: 0x6d
 function getrankinfoicon( rankid, prestigeid )
@@ -62,7 +62,7 @@ function getrankinfoicon( rankid, prestigeid )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x259
 // Size: 0x1c
 function getrankinfolevel( rankid )
@@ -71,7 +71,7 @@ function getrankinfolevel( rankid )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27e
 // Size: 0x1d
 function getrankinfominxp( rankid )
@@ -80,7 +80,7 @@ function getrankinfominxp( rankid )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a4
 // Size: 0x1e
 function getrankinfoxpamt( rankid )
@@ -89,7 +89,7 @@ function getrankinfoxpamt( rankid )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cb
 // Size: 0x1e
 function getrankinfomaxxp( rankid )
@@ -98,7 +98,7 @@ function getrankinfomaxxp( rankid )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f2
 // Size: 0x1c
 function function_997e0cd870844c1b( rankid )
@@ -107,7 +107,7 @@ function function_997e0cd870844c1b( rankid )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x317
 // Size: 0x63
 function getrank()
@@ -124,7 +124,7 @@ function getrank()
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x382
 // Size: 0xc8
 function getrankforxp( xpval )
@@ -174,7 +174,7 @@ function getrankforxp( xpval )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x453
 // Size: 0x67
 function function_b1e11b17e1fbded3()
@@ -186,7 +186,7 @@ function function_b1e11b17e1fbded3()
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c3
 // Size: 0x2e
 function function_91ce54da71d1008d( rankbundlename )
@@ -197,7 +197,7 @@ function function_91ce54da71d1008d( rankbundlename )
 }
 
 // Namespace namespace_a131188218d8b5c3 / namespace_d26d07590ff1b1d2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4fa
 // Size: 0x55
 function function_6bb67ea6b4f510ed( rankid )

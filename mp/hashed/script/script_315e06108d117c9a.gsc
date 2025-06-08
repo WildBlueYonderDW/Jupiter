@@ -8,8 +8,8 @@
 #namespace namespace_53e6020c2a0a0ef5;
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x278
+// Params 0
+// Checksum 0x0, Offset: 0x27c
 // Size: 0xcf
 function function_7ede0aa8434bebd1()
 {
@@ -36,8 +36,8 @@ function function_7ede0aa8434bebd1()
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34f
+// Params 0
+// Checksum 0x0, Offset: 0x353
 // Size: 0x44
 function function_8121c27ec4fdb19d()
 {
@@ -48,8 +48,8 @@ function function_8121c27ec4fdb19d()
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39b
+// Params 0
+// Checksum 0x0, Offset: 0x39f
 // Size: 0x44
 function function_852acf50e7345bc8()
 {
@@ -60,8 +60,8 @@ function function_852acf50e7345bc8()
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e7
+// Params 0
+// Checksum 0x0, Offset: 0x3eb
 // Size: 0x44
 function function_1824541ee1333b93()
 {
@@ -72,8 +72,8 @@ function function_1824541ee1333b93()
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x433
+// Params 2
+// Checksum 0x0, Offset: 0x437
 // Size: 0x64
 function function_6f25d396bb48b073( body, head )
 {
@@ -86,13 +86,18 @@ function function_6f25d396bb48b073( body, head )
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x49f
-// Size: 0x49
+// Params 0
+// Checksum 0x0, Offset: 0x4a3
+// Size: 0x56
 function function_1200ea6976e7bc44()
 {
     self setcamerathirdperson( 0 );
-    scripts\mp\utility\player::_setsuit( self.defaultsuit );
+    
+    if ( isdefined( self.defaultsuit ) )
+    {
+        scripts\mp\utility\player::_setsuit( self.defaultsuit );
+    }
+    
     self.nocorpse = undefined;
     self disableweaponpickup();
     function_6181d87f215c5e16( 1 );
@@ -107,8 +112,8 @@ function function_1200ea6976e7bc44()
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f0
+// Params 0
+// Checksum 0x0, Offset: 0x501
 // Size: 0xb9
 function function_b7d6db4ac5457a99()
 {
@@ -123,7 +128,7 @@ function function_b7d6db4ac5457a99()
     }
     else
     {
-        var_e3438b8cb9c2c515 = makeweapon( "iw9_me_fists_mp_zmb" );
+        var_e3438b8cb9c2c515 = makeweapon( "iw9_me_fists_mp_mutant" );
     }
     
     scripts\cp_mp\utility\inventory_utility::_giveweapon( var_e3438b8cb9c2c515, undefined, undefined, 1 );
@@ -137,8 +142,8 @@ function function_b7d6db4ac5457a99()
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b1
+// Params 0
+// Checksum 0x0, Offset: 0x5c2
 // Size: 0x2
 function function_57cad676a5cbb536()
 {
@@ -146,8 +151,8 @@ function function_57cad676a5cbb536()
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bb
+// Params 0
+// Checksum 0x0, Offset: 0x5cc
 // Size: 0x1f
 function function_e7762eb89190b46c()
 {
@@ -158,8 +163,8 @@ function function_e7762eb89190b46c()
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e2
+// Params 0
+// Checksum 0x0, Offset: 0x5f3
 // Size: 0x3b
 function function_702b1da0c13a5636()
 {
@@ -173,8 +178,8 @@ function function_702b1da0c13a5636()
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x625
+// Params 1
+// Checksum 0x0, Offset: 0x636
 // Size: 0x1f
 function function_44f1e42eec9eace1( health )
 {
@@ -183,8 +188,8 @@ function function_44f1e42eec9eace1( health )
 }
 
 // Namespace namespace_53e6020c2a0a0ef5 / namespace_62dabdb9dfdcde8
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64c
+// Params 1
+// Checksum 0x0, Offset: 0x65d
 // Size: 0xb8
 function function_6181d87f215c5e16( bool )
 {

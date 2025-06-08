@@ -7,7 +7,7 @@
 /#
 
     // Namespace namespace_729ad542a73c44b6 / namespace_6c0bcb025e487cb4
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0xa0
     // Size: 0x1f6, Type: dev
     function function_f178ffb3b7e8f054( player, var_feded019f08c32a5, var_d2ff858534fd3a20, var_250b0757cdf3763f )
@@ -47,7 +47,8 @@
         level.var_388f77678ded6b04 = undefined;
         level.var_818b7d434b3f9bb1 = undefined;
         
-        for (i = 0; i < 3; i++) {
+        for ( i = 0; i < 3 ; i++ )
+        {
             text = newhudelem();
             text.alignx = "<dev string:x119>";
             text.aligny = "<dev string:x121>";
@@ -86,7 +87,7 @@
     }
 
     // Namespace namespace_729ad542a73c44b6 / namespace_6c0bcb025e487cb4
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x29e
     // Size: 0x11c, Type: dev
     function function_106c2d7eba0aa9d0( var_a19ab69b16e26496 )
@@ -135,7 +136,7 @@
     }
 
     // Namespace namespace_729ad542a73c44b6 / namespace_6c0bcb025e487cb4
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3c2
     // Size: 0x1b, Type: dev
     function function_ac8025446d4ac9d8()
@@ -144,7 +145,7 @@
     }
 
     // Namespace namespace_729ad542a73c44b6 / namespace_6c0bcb025e487cb4
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3e5
     // Size: 0x10, Type: dev
     function function_1e886a86efe8cab6()
@@ -533,7 +534,8 @@
         currentline = "<dev string:x5a3>";
         var_83dbc5b05ae7eaf9 = [];
         
-        for (i = 0; i < filecontent.size; i++) {
+        for ( i = 0; i < filecontent.size ; i++ )
+        {
             if ( ( filecontent[ i ] == "<dev string:x5a7>" || i == filecontent.size - 1 ) && currentline != "<dev string:x5a3>" )
             {
                 var_83dbc5b05ae7eaf9[ var_83dbc5b05ae7eaf9.size ] = currentline;
@@ -551,8 +553,10 @@
         tempstring = "<dev string:x5a3>";
         var_432a7c3e01871183 = 0;
         
-        for (i = 0; i < var_83dbc5b05ae7eaf9.size; i++) {
-            for (j = 0; j < var_83dbc5b05ae7eaf9[ i ].size; j++) {
+        for ( i = 0; i < var_83dbc5b05ae7eaf9.size ; i++ )
+        {
+            for ( j = 0; j < var_83dbc5b05ae7eaf9[ i ].size ; j++ )
+            {
                 if ( var_83dbc5b05ae7eaf9[ i ][ j ] == "<dev string:x5ac>" )
                 {
                     var_432a7c3e01871183 = 1;

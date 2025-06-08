@@ -7,7 +7,7 @@
 #namespace namespace_bac291bbcfb102fc;
 
 // Namespace namespace_bac291bbcfb102fc / namespace_42d2620e5c90a424
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b2
 // Size: 0xa3
 function function_5688f09df31647c()
@@ -119,7 +119,8 @@ function private function_bc551c20e35ce094( position, radius, var_9b3d64d7164bb5
         navpoints = [ position ];
     }
     
-    for (vehicleindex = 0; vehicleindex < var_9b3d64d7164bb5bc; vehicleindex++) {
+    for ( vehicleindex = 0; vehicleindex < var_9b3d64d7164bb5bc ; vehicleindex++ )
+    {
         var_aec07bbc0287654b[ vehicleindex ] thread testbotvehicles_movetoposition( navpoints[ randomint( navpoints.size ) ], var_afb49cc35a7dbe58 );
     }
 }
@@ -136,7 +137,8 @@ function private testbotvehicles_movetoposition( position, var_afb49cc35a7dbe58,
     self endon( "near_goal" );
     function_7f0c1e61a13ca16e( self );
     
-    for (var_4a492273c7f70ccc = 0; var_4a492273c7f70ccc < var_afb49cc35a7dbe58; var_4a492273c7f70ccc++) {
+    for ( var_4a492273c7f70ccc = 0; var_4a492273c7f70ccc < var_afb49cc35a7dbe58 ; var_4a492273c7f70ccc++ )
+    {
         var_34bb55fbc59c2e1d = isnavmeshloaded( "vehicle_large" );
         var_a8c9b5fffa6387d = isnavmeshloaded( "zombie_large" );
         navmeshlayer = ter_op( var_34bb55fbc59c2e1d, "vehicle_large", ter_op( var_a8c9b5fffa6387d, "zombie_large", undefined ) );

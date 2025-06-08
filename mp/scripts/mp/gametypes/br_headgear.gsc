@@ -5,7 +5,7 @@
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x1a1
+// Checksum 0x0, Offset: 0x1a0
 // Size: 0x43
 function autoexec headgear_init()
 {
@@ -16,8 +16,8 @@ function autoexec headgear_init()
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ec
+// Params 2
+// Checksum 0x0, Offset: 0x1eb
 // Size: 0x44
 function registerheadgear( headgeartype, headgeardata )
 {
@@ -30,8 +30,8 @@ function registerheadgear( headgeartype, headgeardata )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x238
+// Params 1
+// Checksum 0x0, Offset: 0x237
 // Size: 0x28, Type: bool
 function function_27c9f3cd0731b4c0( headgeartype )
 {
@@ -44,8 +44,8 @@ function function_27c9f3cd0731b4c0( headgeartype )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x269
+// Params 5
+// Checksum 0x0, Offset: 0x268
 // Size: 0x63
 function function_a34e6737707000de( headgeartype, player, var_d13c72f4128a8c16, var_fcb952f595aa03ed, var_3ca4e0ab626847bc )
 {
@@ -58,8 +58,8 @@ function function_a34e6737707000de( headgeartype, player, var_d13c72f4128a8c16, 
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d4
+// Params 1
+// Checksum 0x0, Offset: 0x2d3
 // Size: 0x85
 function function_bfc15242950e692b( player )
 {
@@ -79,8 +79,8 @@ function function_bfc15242950e692b( player )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x362
+// Params 1
+// Checksum 0x0, Offset: 0x361
 // Size: 0x85
 function function_48c7a8ee781fbf56( player )
 {
@@ -100,8 +100,8 @@ function function_48c7a8ee781fbf56( player )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f0
+// Params 2
+// Checksum 0x0, Offset: 0x3ef
 // Size: 0x50
 function hasheadgear( headgeartype, player )
 {
@@ -121,8 +121,8 @@ function hasheadgear( headgeartype, player )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x449
+// Params 2
+// Checksum 0x0, Offset: 0x448
 // Size: 0x49
 function function_3e330e6a55dd4b3d( headgeartype, player )
 {
@@ -137,8 +137,8 @@ function function_3e330e6a55dd4b3d( headgeartype, player )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49b
+// Params 1
+// Checksum 0x0, Offset: 0x49a
 // Size: 0x41
 function function_c210b50cd31a3bc2( headgeartype )
 {
@@ -153,8 +153,8 @@ function function_c210b50cd31a3bc2( headgeartype )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e5
+// Params 2
+// Checksum 0x0, Offset: 0x4e4
 // Size: 0x49
 function function_5ecd6df2572a5899( headgeartype, player )
 {
@@ -169,8 +169,8 @@ function function_5ecd6df2572a5899( headgeartype, player )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x537
+// Params 2
+// Checksum 0x0, Offset: 0x536
 // Size: 0x49
 function function_5109f3947b0c7dfb( headgeartype, player )
 {
@@ -185,8 +185,8 @@ function function_5109f3947b0c7dfb( headgeartype, player )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x589
+// Params 3
+// Checksum 0x0, Offset: 0x588
 // Size: 0x52
 function function_d036366985435d3( headgeartype, player, pickup )
 {
@@ -201,8 +201,8 @@ function function_d036366985435d3( headgeartype, player, pickup )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e4
+// Params 2
+// Checksum 0x0, Offset: 0x5e3
 // Size: 0x48
 function function_b606f6e492722fdb( headgeartype, player )
 {
@@ -215,8 +215,8 @@ function function_b606f6e492722fdb( headgeartype, player )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x634
+// Params 2
+// Checksum 0x0, Offset: 0x633
 // Size: 0x48
 function function_72935b93ba0bbe17( headgeartype, player )
 {
@@ -229,8 +229,8 @@ function function_72935b93ba0bbe17( headgeartype, player )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x684
+// Params 1
+// Checksum 0x0, Offset: 0x683
 // Size: 0x15, Type: bool
 function function_2bf7865c5a1937b3( player )
 {
@@ -238,8 +238,8 @@ function function_2bf7865c5a1937b3( player )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a2
+// Params 2
+// Checksum 0x0, Offset: 0x6a1
 // Size: 0x51
 function function_3ee77b6233481af9( headgeartype, request )
 {
@@ -258,8 +258,8 @@ function function_3ee77b6233481af9( headgeartype, request )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fb
+// Params 2
+// Checksum 0x0, Offset: 0x6fa
 // Size: 0x4e
 function function_9f52e7f6c7bae335( headgeartype, request )
 {
@@ -278,8 +278,8 @@ function function_9f52e7f6c7bae335( headgeartype, request )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x751
+// Params 1
+// Checksum 0x0, Offset: 0x750
 // Size: 0x139
 function function_1c4dbcfeb264cd9c( headgeartype )
 {
@@ -330,8 +330,8 @@ function function_1c4dbcfeb264cd9c( headgeartype )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x892
+// Params 1
+// Checksum 0x0, Offset: 0x891
 // Size: 0x97
 function function_7973b038d9f306f6( headgeartype )
 {
@@ -356,8 +356,8 @@ function function_7973b038d9f306f6( headgeartype )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x931
+// Params 1
+// Checksum 0x0, Offset: 0x930
 // Size: 0x79
 function removeheadgear( headgeartype )
 {
@@ -376,8 +376,8 @@ function removeheadgear( headgeartype )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b2
+// Params 3
+// Checksum 0x0, Offset: 0x9b1
 // Size: 0x72
 function function_46a4f41002ccc37d( player, headgeartype, request )
 {
@@ -392,8 +392,8 @@ function function_46a4f41002ccc37d( player, headgeartype, request )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2c
+// Params 2
+// Checksum 0x0, Offset: 0xa2b
 // Size: 0x69
 function breakheadgear( headgeartype, attacker )
 {
@@ -408,8 +408,8 @@ function breakheadgear( headgeartype, attacker )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9d
+// Params 0
+// Checksum 0x0, Offset: 0xa9c
 // Size: 0x48
 function function_f4361ea8ce0fbca4()
 {
@@ -428,8 +428,8 @@ function function_f4361ea8ce0fbca4()
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaed
+// Params 1
+// Checksum 0x0, Offset: 0xaec
 // Size: 0x3c
 function delayedattach( delaytime )
 {
@@ -445,8 +445,8 @@ function delayedattach( delaytime )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb31
+// Params 1
+// Checksum 0x0, Offset: 0xb30
 // Size: 0x52
 function delayeddetach( delaytime )
 {
@@ -466,19 +466,19 @@ function delayeddetach( delaytime )
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8b
-// Size: 0xd
+// Params 0
+// Checksum 0x0, Offset: 0xb8a
+// Size: 0x1b
 function function_ca27f3fd3dad0c1f()
 {
-    self.var_ca27f3fd3dad0c1f = 1;
+    self.var_ca27f3fd3dad0c1f = getdvarint( @"hash_eb228474021f803", 1 );
 }
 
 // Namespace br_headgear / scripts\mp\gametypes\br_headgear
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xba0
-// Size: 0x15
-function resetgasmaskremovaldelay( var_266329c25058d09a )
+// Params 0
+// Checksum 0x0, Offset: 0xbad
+// Size: 0xc
+function resetgasmaskremovaldelay()
 {
     self.var_ca27f3fd3dad0c1f = undefined;
 }

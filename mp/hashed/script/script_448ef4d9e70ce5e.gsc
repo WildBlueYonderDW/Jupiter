@@ -7,7 +7,7 @@
 #namespace namespace_b6acd36531d49c27;
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x283
 // Size: 0x82
 function main()
@@ -25,7 +25,7 @@ function main()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30d
 // Size: 0xa
 function function_9ac5625caf26591e()
@@ -34,7 +34,7 @@ function function_9ac5625caf26591e()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31f
 // Size: 0xd1
 function function_3e689374a8c8c3a2( breathnormal, breathsprint )
@@ -63,7 +63,7 @@ function function_3e689374a8c8c3a2( breathnormal, breathsprint )
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f8
 // Size: 0xb1
 function function_4da231b2893604c()
@@ -96,7 +96,7 @@ function function_4da231b2893604c()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b2
 // Size: 0x1a
 function function_de1545c98ed439f8()
@@ -110,7 +110,7 @@ function function_de1545c98ed439f8()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d4
 // Size: 0x7
 function function_a62d0f50f690359()
@@ -119,7 +119,7 @@ function function_a62d0f50f690359()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e4
 // Size: 0xbf
 function surfacefunc()
@@ -149,7 +149,7 @@ function surfacefunc()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ab
 // Size: 0x90
 function descendfunc()
@@ -172,7 +172,7 @@ function descendfunc()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x643
 // Size: 0x2e
 function enterfunc()
@@ -184,7 +184,7 @@ function enterfunc()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x679
 // Size: 0x2
 function exitfunc()
@@ -193,7 +193,7 @@ function exitfunc()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x683
 // Size: 0x3b
 function playsoundfunc( firstpersonalias, thirdpersonalias, soundsource )
@@ -212,7 +212,7 @@ function playsoundfunc( firstpersonalias, thirdpersonalias, soundsource )
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c6
 // Size: 0x7a
 function drownfunc()
@@ -235,7 +235,7 @@ function drownfunc()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x749
 // Size: 0x1c
 function visionsetfunc( visionset, transitiontime )
@@ -244,7 +244,7 @@ function visionsetfunc( visionset, transitiontime )
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76d
 // Size: 0x32, Type: bool
 function function_afb40a34c99dc4e4( objweapon )
@@ -253,7 +253,7 @@ function function_afb40a34c99dc4e4( objweapon )
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a8
 // Size: 0x8
 function function_6fed0ef13f84a258()
@@ -262,12 +262,13 @@ function function_6fed0ef13f84a258()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b9
 // Size: 0xb8
 function function_a76b0a124a6a8f46()
 {
-    for (currentid = 1; currentid <= 4; currentid++) {
+    for ( currentid = 1; currentid <= 4 ; currentid++ )
+    {
         currenttriggers = getentarray( "trigger_multiple_mp_proto_current_" + currentid, "classname" );
         
         foreach ( currenttrigger in currenttriggers )
@@ -283,7 +284,7 @@ function function_a76b0a124a6a8f46()
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x879
 // Size: 0x31
 function function_46c5edf87b46fc60( player, trigger )
@@ -297,7 +298,7 @@ function function_46c5edf87b46fc60( player, trigger )
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8b2
 // Size: 0x30
 function function_d1ec9743b2c9ea9e( player, trigger )
@@ -311,7 +312,7 @@ function function_d1ec9743b2c9ea9e( player, trigger )
 }
 
 // Namespace namespace_b6acd36531d49c27 / namespace_bed52b18307bf1e0
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8ea
 // Size: 0xd4
 function function_673ece83b6eb66c4( vfx, notify_kill, timeout )

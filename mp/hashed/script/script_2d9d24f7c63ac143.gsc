@@ -39,7 +39,7 @@
 #namespace namespace_e50e624d9af51c8c;
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x816
 // Size: 0xf4
 function function_e0948a1e98e82ae1()
@@ -65,7 +65,7 @@ function function_e0948a1e98e82ae1()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x912
 // Size: 0xc4
 function function_5baaa0ce73d6fe84( player, ammotype )
@@ -97,7 +97,7 @@ function function_5baaa0ce73d6fe84( player, ammotype )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9de
 // Size: 0x4c
 function function_e35a7cb7e7c8c17e( player, weapon, var_f51bbb191526dfa4, metadata, var_223785486725cd51 )
@@ -112,7 +112,7 @@ function function_e35a7cb7e7c8c17e( player, weapon, var_f51bbb191526dfa4, metada
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa32
 // Size: 0x36
 function function_705889b7586cf34e( player, weapon, weaponslot )
@@ -126,7 +126,7 @@ function function_705889b7586cf34e( player, weapon, weaponslot )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa70
 // Size: 0x67
 function function_ee4ccdff22e510fd( player, var_72e90f48e0fd0e1c, sticker )
@@ -141,7 +141,7 @@ function function_ee4ccdff22e510fd( player, var_72e90f48e0fd0e1c, sticker )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xadf
 // Size: 0x3b9
 function function_8107fe0feec27866( player, weapon, var_223785486725cd51 )
@@ -176,7 +176,8 @@ function function_8107fe0feec27866( player, weapon, var_223785486725cd51 )
     var_428a6c7cd65625c0 = 0;
     attachmenttoidmap = weapon.attachmentvarindices;
     
-    for (attachmentindex = 0; attachmentindex < attachments.size && var_428a6c7cd65625c0 < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < attachments.size && var_428a6c7cd65625c0 < 7 ; attachmentindex++ )
+    {
         if ( scripts\mp\utility\weapon::attachmentisselectable( weapon, attachments[ attachmentindex ] ) )
         {
             player setplayerdata( level.var_5d69837cf4db0407, "dmzWeapon", "attachmentSetup", var_428a6c7cd65625c0, "attachment", attachments[ attachmentindex ] );
@@ -185,7 +186,8 @@ function function_8107fe0feec27866( player, weapon, var_223785486725cd51 )
         }
     }
     
-    for (attachmentindex = var_428a6c7cd65625c0; var_428a6c7cd65625c0 < 7; attachmentindex++) {
+    for ( attachmentindex = var_428a6c7cd65625c0; var_428a6c7cd65625c0 < 7 ; attachmentindex++ )
+    {
         player setplayerdata( level.var_5d69837cf4db0407, "dmzWeapon", "attachmentSetup", var_428a6c7cd65625c0, "attachment", "none" );
         player setplayerdata( level.var_5d69837cf4db0407, "dmzWeapon", "attachmentSetup", var_428a6c7cd65625c0, "variantID", 0 );
         var_428a6c7cd65625c0++;
@@ -238,7 +240,7 @@ function function_8107fe0feec27866( player, weapon, var_223785486725cd51 )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xea0
 // Size: 0x2e
 function function_3e89085d4a19a802( player, weapon )
@@ -252,7 +254,7 @@ function function_3e89085d4a19a802( player, weapon )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed6
 // Size: 0x16
 function function_2985254128b1c262( player )
@@ -261,7 +263,7 @@ function function_2985254128b1c262( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xef5
 // Size: 0x1e0
 function function_f2849dae62f7444e( player, statsgroup, weaponkey )
@@ -282,7 +284,8 @@ function function_f2849dae62f7444e( player, statsgroup, weaponkey )
     attachmentids = [];
     var_eae5a591e200672 = [];
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         attachments[ attachmentindex ] = player getplayerdata( statsgroup, weaponkey, "attachmentSetup", attachmentindex, "attachment" );
         attachmentids[ attachmentindex ] = player getplayerdata( statsgroup, weaponkey, "attachmentSetup", attachmentindex, "variantID" );
         slider1 = player getplayerdata( statsgroup, weaponkey, "attachmentSetup", attachmentindex, "customTune", 0 );
@@ -300,7 +303,8 @@ function function_f2849dae62f7444e( player, statsgroup, weaponkey )
     cosmeticattachment = player getplayerdata( statsgroup, weaponkey, "cosmeticAttachment" );
     stickers = [];
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+    {
         stickers[ var_36d2abbdcbcb186c ] = player getplayerdata( statsgroup, weaponkey, "sticker", var_36d2abbdcbcb186c );
     }
     
@@ -308,7 +312,7 @@ function function_f2849dae62f7444e( player, statsgroup, weaponkey )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10de
 // Size: 0x94
 function function_efab78b72d131d76( player )
@@ -325,7 +329,7 @@ function function_efab78b72d131d76( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x117b
 // Size: 0x24
 function function_d9b1550011525161( player )
@@ -334,7 +338,7 @@ function function_d9b1550011525161( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11a8
 // Size: 0x16a
 function function_f5a1a13f0181bb66( player, weaponstowed, backpackequip )
@@ -367,7 +371,7 @@ function function_f5a1a13f0181bb66( player, weaponstowed, backpackequip )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x131a
 // Size: 0x24
 function function_954372d604277278( player )
@@ -381,7 +385,7 @@ function function_954372d604277278( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1346
 // Size: 0x128
 function function_6a77670d14b0d08c( player, statsgroup, weaponkey )
@@ -404,18 +408,20 @@ function function_6a77670d14b0d08c( player, statsgroup, weaponkey )
     player setplayerdata( statsgroup, weaponkey, "variantID", 0 );
     player setplayerdata( statsgroup, weaponkey, "blueprintName", "" );
     
-    for (attachindex = 0; attachindex < 5; attachindex++) {
+    for ( attachindex = 0; attachindex < 5 ; attachindex++ )
+    {
         player setplayerdata( statsgroup, weaponkey, "attachmentSetup", attachindex, "attachment", "none" );
         player setplayerdata( statsgroup, weaponkey, "attachmentSetup", attachindex, "variantID", 0 );
     }
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4 ; var_36d2abbdcbcb186c++ )
+    {
         player setplayerdata( statsgroup, weaponkey, "sticker", var_36d2abbdcbcb186c, "none" );
     }
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1476
 // Size: 0x30
 function function_51f991fdaf031388( player, statsgroup, weaponkey )
@@ -425,7 +431,7 @@ function function_51f991fdaf031388( player, statsgroup, weaponkey )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14ae
 // Size: 0x4d
 function function_590202daf6a1d4d7( player, weaponkey )
@@ -438,7 +444,7 @@ function function_590202daf6a1d4d7( player, weaponkey )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1503
 // Size: 0x4c
 function function_106b52ed8f680043( lootid )
@@ -448,7 +454,8 @@ function function_106b52ed8f680043( lootid )
         return undefined;
     }
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         currentlootid = getlootidatbackpackindex( i );
         
         if ( lootid == currentlootid )
@@ -461,7 +468,7 @@ function function_106b52ed8f680043( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1558
 // Size: 0x6d
 function function_aeb6f176059d98f5( lootid )
@@ -473,7 +480,8 @@ function function_aeb6f176059d98f5( lootid )
     
     indexes = [];
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         currentlootid = getlootidatbackpackindex( i );
         
         if ( lootid == currentlootid )
@@ -487,7 +495,7 @@ function function_aeb6f176059d98f5( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15ce
 // Size: 0x63
 function function_ed8f025d796c038( lootid, sorted )
@@ -499,7 +507,8 @@ function function_ed8f025d796c038( lootid, sorted )
     
     indexes = [];
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         currentlootid = getlootidatbackpackindex( i );
         
         if ( lootid == currentlootid )
@@ -512,7 +521,7 @@ function function_ed8f025d796c038( lootid, sorted )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x163a
 // Size: 0x7f, Type: bool
 function function_e37ca8120dc19c6a()
@@ -529,7 +538,7 @@ function function_e37ca8120dc19c6a()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c2
 // Size: 0xb2
 function getinventoryweapons( player )
@@ -551,14 +560,15 @@ function getinventoryweapons( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x177d
 // Size: 0x124
 function snapshotbackpack()
 {
     items = [];
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         [ lootid, quantity ] = function_6738846da50730f1( i );
         
         if ( lootid != 0 )
@@ -592,7 +602,7 @@ function snapshotbackpack()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18aa
 // Size: 0x50
 function function_6738846da50730f1( index )
@@ -604,7 +614,7 @@ function function_6738846da50730f1( index )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1903
 // Size: 0x63
 function function_84772ebf836af5db( index, amount )
@@ -621,7 +631,7 @@ function function_84772ebf836af5db( index, amount )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x196e
 // Size: 0xa3
 function function_3b2bf3060f2efdf3( player, index, lootid, quantity, loadoutslot )
@@ -638,7 +648,7 @@ function function_3b2bf3060f2efdf3( player, index, lootid, quantity, loadoutslot
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1a19
 // Size: 0x5f
 function function_3c3ee4c5700e0e32( player, index, lootid, quantity, loadoutlocation, loadoutslot, lootedquantity )
@@ -649,7 +659,7 @@ function function_3c3ee4c5700e0e32( player, index, lootid, quantity, loadoutloca
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1a80
 // Size: 0xc3
 function function_11f48ae5b87b4525( player, index, lootid, quantity, lootedquantity, var_ca04d98d53412adf )
@@ -667,7 +677,7 @@ function function_11f48ae5b87b4525( player, index, lootid, quantity, lootedquant
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b4b
 // Size: 0x30
 function function_b4e3d555d6d737bb( player, index, loadoutslot )
@@ -677,7 +687,7 @@ function function_b4e3d555d6d737bb( player, index, loadoutslot )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b83
 // Size: 0x1c
 function function_ad05407157b7d86d( player, index )
@@ -686,7 +696,7 @@ function function_ad05407157b7d86d( player, index )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ba7
 // Size: 0x1c
 function function_c6306ea9715dd8f1( player, slot )
@@ -695,7 +705,7 @@ function function_c6306ea9715dd8f1( player, slot )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1bcb
 // Size: 0x43
 function function_e900e7e66383ad97( player, index, quantity, var_f3990d8529de3a54 )
@@ -705,7 +715,7 @@ function function_e900e7e66383ad97( player, index, quantity, var_f3990d8529de3a5
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1c16
 // Size: 0x38
 function function_a0ccc23064473a05( player, index, lootid, quantity, lootedquantity )
@@ -772,7 +782,7 @@ function private function_d87a9518235b9682( index, lootid, quantity, var_f3990d8
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ebc
 // Size: 0x6e
 function function_e7ec9888699dd8cf()
@@ -787,18 +797,19 @@ function function_e7ec9888699dd8cf()
         return;
     }
     
-    var_2e1d1af8afe39ba8 = getdvarint( @"hash_fde1113ce9981d91", 3 );
+    var_2e1d1af8afe39ba8 = getdvarint( @"scr_br_plate_carrier_start_level", 3 );
     var_347aa4935f42810 = scripts\mp\gametypes\br_public::function_c2f2bb9e0ae9a454( var_2e1d1af8afe39ba8 );
     scripts\mp\gametypes\br_pickups::function_e98a5a4e0e001ac3( self, var_347aa4935f42810 );
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f32
 // Size: 0x4b
 function clearbackpack( var_f3990d8529de3a54 )
 {
-    for (packitemindex = 0; packitemindex < getplayerbackpacksize( self ); packitemindex++) {
+    for ( packitemindex = 0; packitemindex < getplayerbackpacksize( self ) ; packitemindex++ )
+    {
         function_db1dd76061352e5b( packitemindex, undefined, var_f3990d8529de3a54 );
     }
     
@@ -811,12 +822,13 @@ function clearbackpack( var_f3990d8529de3a54 )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f85
 // Size: 0xaf
 function function_bab1a10b3fdaae51()
 {
-    for (packitemindex = 0; packitemindex < getplayerbackpacksize( self ); packitemindex++) {
+    for ( packitemindex = 0; packitemindex < getplayerbackpacksize( self ) ; packitemindex++ )
+    {
         if ( level.var_1833d54921da2cc6 )
         {
             self setplayerdata( level.var_5d69837cf4db0407, level.backpackdata, packitemindex, "lootID", 1 );
@@ -829,7 +841,7 @@ function function_bab1a10b3fdaae51()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x203c
 // Size: 0x127
 function canitemfitinbackpack( lootid, quantity )
@@ -859,7 +871,8 @@ function canitemfitinbackpack( lootid, quantity )
         }
     }
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         currentlootid = getlootidatbackpackindex( i );
         
         if ( currentlootid == 0 && currentlootid != lootid )
@@ -889,7 +902,7 @@ function canitemfitinbackpack( lootid, quantity )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x216c
 // Size: 0xd7
 function function_e05897f5d860188e( lootid, quantity, drop )
@@ -913,7 +926,8 @@ function function_e05897f5d860188e( lootid, quantity, drop )
         maxcount = level.br_pickups.maxcounts[ lootname ];
     }
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         currentlootid = getlootidatbackpackindex( i );
         
         if ( currentlootid == lootid )
@@ -936,7 +950,7 @@ function function_e05897f5d860188e( lootid, quantity, drop )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x224c
 // Size: 0x29
 function getlootidatbackpackindex( index )
@@ -945,7 +959,7 @@ function getlootidatbackpackindex( index )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x227e
 // Size: 0x29
 function function_897b29adb37f06a7( index )
@@ -954,7 +968,7 @@ function function_897b29adb37f06a7( index )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22b0
 // Size: 0x29
 function function_eee597a59b37c10e( index )
@@ -963,12 +977,13 @@ function function_eee597a59b37c10e( index )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22e2
 // Size: 0x3b
 function getavailabledmzbackpackindex()
 {
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         currentlootid = getlootidatbackpackindex( i );
         
         if ( currentlootid == 0 )
@@ -981,7 +996,7 @@ function getavailabledmzbackpackindex()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2326
 // Size: 0xf6
 function function_9e76c59021bbf021( ammotype )
@@ -1001,7 +1016,8 @@ function function_9e76c59021bbf021( ammotype )
         maxcount = level.br_pickups.maxcounts[ ammotype ];
     }
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         currentlootid = getlootidatbackpackindex( i );
         
         if ( currentlootid == lootid )
@@ -1016,7 +1032,7 @@ function function_9e76c59021bbf021( ammotype )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2425
 // Size: 0x5d, Type: bool
 function function_f6f8c1fc9549eaf6( lootid )
@@ -1026,7 +1042,7 @@ function function_f6f8c1fc9549eaf6( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x248b
 // Size: 0x2b, Type: bool
 function function_8e61ef2a2f9137e7( lootid )
@@ -1036,7 +1052,7 @@ function function_8e61ef2a2f9137e7( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24bf
 // Size: 0x2b, Type: bool
 function function_b4893066110f4d10( lootid )
@@ -1046,7 +1062,7 @@ function function_b4893066110f4d10( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24f3
 // Size: 0x16, Type: bool
 function function_2d86ba79a58bb62( lootid )
@@ -1055,7 +1071,7 @@ function function_2d86ba79a58bb62( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2512
 // Size: 0x36
 function function_8a160d9935d47f5e( ref, type, quantity )
@@ -1065,7 +1081,7 @@ function function_8a160d9935d47f5e( ref, type, quantity )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2551
 // Size: 0x70
 function function_e01d9736b2d100ac( lootid, quantity )
@@ -1093,14 +1109,15 @@ function function_e01d9736b2d100ac( lootid, quantity )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25ca
 // Size: 0x58
 function gettotalitemcountinbag( lootid )
 {
     total = 0;
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         slotlootid = getlootidatbackpackindex( i );
         
         if ( slotlootid == lootid )
@@ -1113,14 +1130,15 @@ function gettotalitemcountinbag( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x262b
 // Size: 0x52
 function function_6fe7e7891d125c48( player )
 {
     total = 0;
     
-    for (i = 0; i < getplayerbackpacksize( player ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( player ) ; i++ )
+    {
         slotlootid = player getlootidatbackpackindex( i );
         
         if ( slotlootid )
@@ -1133,12 +1151,13 @@ function function_6fe7e7891d125c48( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2686
 // Size: 0x44, Type: bool
 function function_474484ee8653086f( player )
 {
-    for (i = 0; i < getplayerbackpacksize( player ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( player ) ; i++ )
+    {
         slotlootid = player getlootidatbackpackindex( i );
         
         if ( slotlootid )
@@ -1151,7 +1170,7 @@ function function_474484ee8653086f( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26d3
 // Size: 0x5d
 function function_5915bdbc5f6302b6( var_60452e1fc245c1 )
@@ -1160,7 +1179,8 @@ function function_5915bdbc5f6302b6( var_60452e1fc245c1 )
     
     if ( isdefined( var_60452e1fc245c1 ) )
     {
-        for (i = 0; i < getplayerbackpacksize( self ); i++) {
+        for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+        {
             slotlootid = getlootidatbackpackindex( i );
             
             if ( scripts\engine\utility::array_contains( var_60452e1fc245c1, slotlootid ) )
@@ -1174,14 +1194,15 @@ function function_5915bdbc5f6302b6( var_60452e1fc245c1 )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2739
 // Size: 0x72
 function function_a1ef7227cd878384()
 {
     matchingitems = [];
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         slotlootid = getlootidatbackpackindex( i );
         ref = function_793e8a72cedb8ef3( slotlootid );
         
@@ -1195,14 +1216,15 @@ function function_a1ef7227cd878384()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27b4
 // Size: 0x98
 function function_69f1f154cb91d491()
 {
     matchingitems = [];
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         slotlootid = getlootidatbackpackindex( i );
         ref = function_793e8a72cedb8ef3( slotlootid );
         
@@ -1221,7 +1243,7 @@ function function_69f1f154cb91d491()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2855
 // Size: 0x48
 function function_91a0bab850d7db10( index, lootid, maxcount, pickupquantity, slotquantity )
@@ -1259,7 +1281,8 @@ function private setbackpackitem( lootid, pickup )
     
     if ( scripts\mp\gametypes\br_pickups::function_f5082b4fc43ef59b( ref ) )
     {
-        for (i = 0; i < getplayerbackpacksize( self ); i++) {
+        for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+        {
             currentlootid = getlootidatbackpackindex( i );
             
             if ( currentlootid == lootid )
@@ -1284,7 +1307,8 @@ function private setbackpackitem( lootid, pickup )
         }
     }
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         currentlootid = getlootidatbackpackindex( i );
         
         if ( currentlootid == 0 && currentlootid != lootid )
@@ -1311,7 +1335,7 @@ function private setbackpackitem( lootid, pickup )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a51
 // Size: 0x65
 function additemtobackpackbyref( ref, type, quantity )
@@ -1324,7 +1348,7 @@ function additemtobackpackbyref( ref, type, quantity )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2abf
 // Size: 0x68d
 function additemtobackpack( lootid, pickup, var_70e660487c2924ec, var_c751296a033cdb3c, fromkiosk )
@@ -1496,7 +1520,7 @@ function additemtobackpack( lootid, pickup, var_70e660487c2924ec, var_c751296a03
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3155
 // Size: 0x115
 function function_db1dd76061352e5b( index, var_74806f0c4caa7e55, var_f3990d8529de3a54 )
@@ -1535,7 +1559,7 @@ function function_db1dd76061352e5b( index, var_74806f0c4caa7e55, var_f3990d8529d
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3273
 // Size: 0x2e, Type: bool
 function function_d63a7299c6203bf9( lootid )
@@ -1550,7 +1574,7 @@ function function_d63a7299c6203bf9( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32aa
 // Size: 0x6a
 function function_6f39f9916649ac48( lootid, quantity )
@@ -1580,7 +1604,7 @@ function function_6f39f9916649ac48( lootid, quantity )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x331d
 // Size: 0x71
 function function_43f9da47b5084ce0( scriptablename )
@@ -1593,7 +1617,8 @@ function function_43f9da47b5084ce0( scriptablename )
     lootid = scripts\cp_mp\utility\loot::function_fae5e1d3de32d3f7( scriptablename );
     removedcount = 0;
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         if ( getlootidatbackpackindex( i ) == lootid )
         {
             removedcount += function_897b29adb37f06a7( i );
@@ -1605,7 +1630,7 @@ function function_43f9da47b5084ce0( scriptablename )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3397
 // Size: 0x117
 function removesmallestitemstackbackpack( scriptablename, amountremoved )
@@ -1620,7 +1645,8 @@ function removesmallestitemstackbackpack( scriptablename, amountremoved )
     
     var_750fcc188317845a = [];
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         if ( getlootidatbackpackindex( i ) == lootid )
         {
             var_750fcc188317845a[ i ] = function_897b29adb37f06a7( i );
@@ -1652,7 +1678,7 @@ function removesmallestitemstackbackpack( scriptablename, amountremoved )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34b7
 // Size: 0xc3
 function function_280230feed0c006( scriptablename )
@@ -1667,7 +1693,8 @@ function function_280230feed0c006( scriptablename )
     largeststack = -1;
     largestindex = undefined;
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         [ tmplootid, quantity, _ ] = function_6738846da50730f1( i );
         
         if ( lootid == tmplootid && quantity > largeststack )
@@ -1681,7 +1708,7 @@ function function_280230feed0c006( scriptablename )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3583
 // Size: 0xaf, Type: bool
 function function_49a39674c4a064e3( scriptablename )
@@ -1695,7 +1722,8 @@ function function_49a39674c4a064e3( scriptablename )
     lootid = scripts\cp_mp\utility\loot::function_fae5e1d3de32d3f7( scriptablename );
     backpacksize = getplayerbackpacksize( self );
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         [ tmplootid, quantity, _ ] = function_6738846da50730f1( i );
         
         if ( lootid == tmplootid && quantity >= maxcount )
@@ -1708,7 +1736,7 @@ function function_49a39674c4a064e3( scriptablename )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x363b
 // Size: 0x5a
 function function_e02526fc6db8443f( scriptablename )
@@ -1722,7 +1750,7 @@ function function_e02526fc6db8443f( scriptablename )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x369e
 // Size: 0x5a
 function function_c578cff4de96af82( scriptablename )
@@ -1736,7 +1764,7 @@ function function_c578cff4de96af82( scriptablename )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3701
 // Size: 0xad
 function function_d9749a7ab0c838d3( scriptablename )
@@ -1752,7 +1780,8 @@ function function_d9749a7ab0c838d3( scriptablename )
     var_50dcba8ba0e8511e = undefined;
     var_8fc76cf32bb0e10d = undefined;
     
-    for (i = 0; i < getplayerbackpacksize( self ); i++) {
+    for ( i = 0; i < getplayerbackpacksize( self ) ; i++ )
+    {
         if ( getlootidatbackpackindex( i ) == lootid )
         {
             quantity = function_897b29adb37f06a7( i );
@@ -1770,7 +1799,7 @@ function function_d9749a7ab0c838d3( scriptablename )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37b7
 // Size: 0xb7
 function function_93f02514431a1f5d( lootid )
@@ -1785,7 +1814,8 @@ function function_93f02514431a1f5d( lootid )
     
     backpacksize = getplayerbackpacksize( self );
     
-    for (i = index; i < backpacksize; i++) {
+    for ( i = index; i < backpacksize ; i++ )
+    {
         [ tmplootid, _, _ ] = function_6738846da50730f1( i );
         
         if ( lootid == tmplootid )
@@ -1804,7 +1834,7 @@ function function_93f02514431a1f5d( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3877
 // Size: 0xc1
 function function_ef5c7ec55e0e20ee( lootid )
@@ -1834,7 +1864,7 @@ function function_ef5c7ec55e0e20ee( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3941
 // Size: 0x110
 function function_71e56bb092fd2574( lootid )
@@ -1871,7 +1901,7 @@ function function_71e56bb092fd2574( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a5a
 // Size: 0x122
 function function_6355a9db4ea7ab55( lootid )
@@ -1915,7 +1945,7 @@ function function_6355a9db4ea7ab55( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b85
 // Size: 0x13, Type: bool
 function function_36b1968bfe78916b( lootid )
@@ -1924,7 +1954,7 @@ function function_36b1968bfe78916b( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ba1
 // Size: 0x75, Type: bool
 function function_3ab0a87eeaa203bf()
@@ -1946,7 +1976,7 @@ function function_3ab0a87eeaa203bf()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c1f
 // Size: 0x31, Type: bool
 function function_5e7049647595ab97()
@@ -1960,7 +1990,7 @@ function function_5e7049647595ab97()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c59
 // Size: 0x5a, Type: bool
 function function_d674d32c2d3ba5ed( player )
@@ -1974,7 +2004,7 @@ function function_d674d32c2d3ba5ed( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3cbc
 // Size: 0x1a
 function function_5bf048439a846222( oldequipment )
@@ -1983,7 +2013,7 @@ function function_5bf048439a846222( oldequipment )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3cdf
 // Size: 0x208, Type: bool
 function function_8237b4eeab275f08( player, slot, oldequipment )
@@ -2008,7 +2038,8 @@ function function_8237b4eeab275f08( player, slot, oldequipment )
     var_3b04a55bcba2273a = 0;
     var_28d82fb085befa70 = 0;
     
-    for (packitemindex = 0; packitemindex < getplayerbackpacksize( player ); packitemindex++) {
+    for ( packitemindex = 0; packitemindex < getplayerbackpacksize( player ) ; packitemindex++ )
+    {
         quantity = player function_897b29adb37f06a7( packitemindex );
         lootid = player getlootidatbackpackindex( packitemindex );
         
@@ -2072,12 +2103,13 @@ function function_8237b4eeab275f08( player, slot, oldequipment )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ef0
 // Size: 0x218
 function function_2c226f050114f4b2( dropstruct, victim )
 {
-    for (packitemindex = 0; packitemindex < getplayerbackpacksize( victim ); packitemindex++) {
+    for ( packitemindex = 0; packitemindex < getplayerbackpacksize( victim ) ; packitemindex++ )
+    {
         quantity = victim function_897b29adb37f06a7( packitemindex );
         lootid = victim getlootidatbackpackindex( packitemindex );
         
@@ -2128,7 +2160,7 @@ function function_2c226f050114f4b2( dropstruct, victim )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4110
 // Size: 0x1d8
 function function_5814f4f8710e57f7( victim, dropstruct )
@@ -2137,7 +2169,8 @@ function function_5814f4f8710e57f7( victim, dropstruct )
     var_badde91d16301be4 = 0;
     hasweaponcase = 0;
     
-    for (packitemindex = 0; packitemindex < getplayerbackpacksize( victim ); packitemindex++) {
+    for ( packitemindex = 0; packitemindex < getplayerbackpacksize( victim ) ; packitemindex++ )
+    {
         quantity = victim function_897b29adb37f06a7( packitemindex );
         lootid = victim getlootidatbackpackindex( packitemindex );
         
@@ -2207,7 +2240,7 @@ function function_5814f4f8710e57f7( victim, dropstruct )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x42f1
 // Size: 0x284
 function function_45013dfe9531841f( victim, dogtag )
@@ -2303,7 +2336,7 @@ function function_45013dfe9531841f( victim, dogtag )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x457e
 // Size: 0x71c
 function function_c6b3799b231916bb( victim, dropstruct )
@@ -2491,7 +2524,7 @@ function function_c6b3799b231916bb( victim, dropstruct )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ca2
 // Size: 0x49
 function function_a87df010e38d988e( item )
@@ -2510,7 +2543,7 @@ function function_a87df010e38d988e( item )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4cf3
 // Size: 0x70a
 function function_8121cbee12383790( victim, dropstruct )
@@ -2519,7 +2552,8 @@ function function_8121cbee12383790( victim, dropstruct )
     var_badde91d16301be4 = 0;
     hasweaponcase = 0;
     
-    for (packitemindex = 0; packitemindex < getplayerbackpacksize( victim ); packitemindex++) {
+    for ( packitemindex = 0; packitemindex < getplayerbackpacksize( victim ) ; packitemindex++ )
+    {
         quantity = victim function_897b29adb37f06a7( packitemindex );
         lootid = victim getlootidatbackpackindex( packitemindex );
         
@@ -2692,7 +2726,7 @@ function function_8121cbee12383790( victim, dropstruct )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5405
 // Size: 0x2db
 function function_ae287e5eb2024104( victim, dropstruct )
@@ -2792,7 +2826,7 @@ function function_ae287e5eb2024104( victim, dropstruct )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x56e8
 // Size: 0x14e
 function function_1db038329eb56917( player, lootid, quantity, indexlength )
@@ -2807,7 +2841,8 @@ function function_1db038329eb56917( player, lootid, quantity, indexlength )
     {
         backpackcontents = [];
         
-        for (var_f45699551971765c = 0; var_f45699551971765c < indexlength; var_f45699551971765c++) {
+        for ( var_f45699551971765c = 0; var_f45699551971765c < indexlength ; var_f45699551971765c++ )
+        {
             backpackcontents[ var_f45699551971765c ] = [];
             backpackcontents[ var_f45699551971765c ][ "lootID" ] = lootid;
             backpackcontents[ var_f45699551971765c ][ "quantity" ] = quantity;
@@ -2821,7 +2856,7 @@ function function_1db038329eb56917( player, lootid, quantity, indexlength )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x583e
 // Size: 0x78
 function function_432475069c798ddc( xmodelname )
@@ -2847,7 +2882,7 @@ function function_432475069c798ddc( xmodelname )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x58bf
 // Size: 0x117
 function function_565cbea3437267d9( player )
@@ -2895,7 +2930,7 @@ function function_565cbea3437267d9( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59df
 // Size: 0x69
 function function_3188d9c94b3d56c2( lootname )
@@ -2923,7 +2958,7 @@ function function_3188d9c94b3d56c2( lootname )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a51
 // Size: 0x67
 function function_cb9faea721c36499( size )
@@ -2947,7 +2982,7 @@ function function_cb9faea721c36499( size )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5ac1
 // Size: 0x80
 function function_2c4cee072c4426c4( lootid )
@@ -2982,7 +3017,7 @@ function function_2c4cee072c4426c4( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b4a
 // Size: 0x6d, Type: bool
 function function_41b6bff9497a60d9( lootid )
@@ -3014,9 +3049,9 @@ function function_41b6bff9497a60d9( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5bc0
-// Size: 0x4d, Type: bool
+// Size: 0x4d
 function function_c4f1bd7a01a307fa( player )
 {
     if ( istrue( player.extracted ) )
@@ -3028,7 +3063,7 @@ function function_c4f1bd7a01a307fa( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c16
 // Size: 0x45, Type: bool
 function function_f41d7258200e1d08( player )
@@ -3051,7 +3086,7 @@ function function_f41d7258200e1d08( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c64
 // Size: 0x27
 function function_102abd6883c5f9bf( player )
@@ -3065,7 +3100,7 @@ function function_102abd6883c5f9bf( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c94
 // Size: 0x2d
 function function_91c1be871300a518( lootid )
@@ -3081,7 +3116,7 @@ function function_91c1be871300a518( lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cca
 // Size: 0x17
 function function_a40546ed395d06c8( ammoarray )
@@ -3090,7 +3125,7 @@ function function_a40546ed395d06c8( ammoarray )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5cea
 // Size: 0x16, Type: bool
 function function_6f3fb8a752376eb2( a, b )
@@ -3099,7 +3134,7 @@ function function_6f3fb8a752376eb2( a, b )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d09
 // Size: 0x2c, Type: bool
 function isbackpackinventoryenabled()
@@ -3123,7 +3158,7 @@ function isbackpackinventoryenabled()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d3e
 // Size: 0x3f
 function function_7e103028c464ab9a( itemname )
@@ -3139,12 +3174,13 @@ function function_7e103028c464ab9a( itemname )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d86
 // Size: 0x71, Type: bool
 function function_9ac2038430604b09( player )
 {
-    for (weaponindex = 0; weaponindex < 3; weaponindex++) {
+    for ( weaponindex = 0; weaponindex < 3 ; weaponindex++ )
+    {
         var_2b3e04e32a6a0c4c = scripts\mp\gametypes\br_pickups::function_13ecf3644442a3e7( player, weaponindex );
         
         if ( isdefined( var_2b3e04e32a6a0c4c ) && !scripts\mp\utility\weapon::isfistsonly( var_2b3e04e32a6a0c4c ) && !scripts\mp\utility\weapon::isgunlessweapon( var_2b3e04e32a6a0c4c ) )
@@ -3162,7 +3198,7 @@ function function_9ac2038430604b09( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5e00
 // Size: 0x623
 function function_cf1bef64e94f2d1a( itemtype, itemindex, var_a548a6c15ceb9e8c, var_616ab931ecba446b, getsingle )
@@ -3413,7 +3449,7 @@ function function_cf1bef64e94f2d1a( itemtype, itemindex, var_a548a6c15ceb9e8c, v
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x642b
 // Size: 0x2a
 function getplayerbackpacksize( player )
@@ -3429,7 +3465,7 @@ function getplayerbackpacksize( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x645d
 // Size: 0x58
 function function_684ef6e1c75b5518( player )
@@ -3448,7 +3484,7 @@ function function_684ef6e1c75b5518( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x64be
 // Size: 0xc2
 function function_d28f52da6ede0191( player, size, var_cb6cd39e3733b463, backpackid )
@@ -3475,14 +3511,15 @@ function function_d28f52da6ede0191( player, size, var_cb6cd39e3733b463, backpack
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6588
 // Size: 0xd3
 function function_6491bd812bb47efb( player, currentsize, backpackname )
 {
     dropstruct = scripts\mp\gametypes\br_pickups::function_7b9f3966a7a42003();
     
-    for (i = currentsize; i < 11; i++) {
+    for ( i = currentsize; i < 11 ; i++ )
+    {
         [ lootid, quantity, _ ] = function_6738846da50730f1( i );
         
         if ( !isdefined( lootid ) || !isdefined( quantity ) )
@@ -3505,7 +3542,7 @@ function function_6491bd812bb47efb( player, currentsize, backpackname )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6663
 // Size: 0x5f, Type: bool
 function function_18e2d7a6912b1d07( backpackname )
@@ -3531,7 +3568,7 @@ function function_18e2d7a6912b1d07( backpackname )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66cb
 // Size: 0x7d, Type: bool
 function function_69a380e3f9c37cc7( player )
@@ -3553,7 +3590,7 @@ function function_69a380e3f9c37cc7( player )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6751
 // Size: 0xaa
 function function_631fd0855c653a68( player, onconnect )
@@ -3580,7 +3617,7 @@ function function_631fd0855c653a68( player, onconnect )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6803
 // Size: 0x10b
 function function_88a168912191ec3e( doublebackpack, var_a548a6c15ceb9e8c, var_616ab931ecba446b )
@@ -3617,7 +3654,7 @@ function function_88a168912191ec3e( doublebackpack, var_a548a6c15ceb9e8c, var_61
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6917
 // Size: 0x6c
 function function_b4f4561fdb86fa25( player )
@@ -3635,12 +3672,13 @@ function function_b4f4561fdb86fa25( player )
 /#
 
     // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x698b
     // Size: 0x9d, Type: dev
     function printinventory()
     {
-        for (i = 0; i < 50; i++) {
+        for ( i = 0; i < 50 ; i++ )
+        {
             lootid = self getplayerdata( level.var_5d69837cf4db0407, "<dev string:x290>", i, "<dev string:x2a0>" );
             quantity = self getplayerdata( level.var_5d69837cf4db0407, "<dev string:x290>", i, "<dev string:x2aa>" );
             ref = scripts\cp_mp\utility\loot::function_793e8a72cedb8ef3( lootid );
@@ -3651,7 +3689,7 @@ function function_b4f4561fdb86fa25( player )
 #/
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a30
 // Size: 0x30
 function function_720d227d0e55a960()
@@ -3665,7 +3703,7 @@ function function_720d227d0e55a960()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a69
 // Size: 0x82
 function function_5323bef1ad6244b9( damagetick )
@@ -3680,7 +3718,7 @@ function function_5323bef1ad6244b9( damagetick )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6af3
 // Size: 0x52, Type: bool
 function function_e25e584cac984a5d( itemtype )
@@ -3695,7 +3733,7 @@ function function_e25e584cac984a5d( itemtype )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b4e
 // Size: 0x6c
 function function_f4fc5c80c4d45c10( backpack )
@@ -3712,7 +3750,7 @@ function function_f4fc5c80c4d45c10( backpack )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6bc2
 // Size: 0x9c
 function backpack_empty_watcher()
@@ -3729,7 +3767,8 @@ function backpack_empty_watcher()
     {
         b_empty = 1;
         
-        for (i = 0; i < self.loadoutcontents.size - 1; i++) {
+        for ( i = 0; i < self.loadoutcontents.size - 1 ; i++ )
+        {
             if ( self.loadoutcontents[ i ][ "quantity" ] )
             {
                 b_empty = 0;
@@ -3747,7 +3786,7 @@ function backpack_empty_watcher()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6c66
 // Size: 0x15c
 function function_68bca2c2e9f0a1d3( firstindex, secondindex )
@@ -3786,7 +3825,7 @@ function function_68bca2c2e9f0a1d3( firstindex, secondindex )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6dca
 // Size: 0x1f0
 function function_ce92a41b8f3b666f( backpackindex, containerindex )
@@ -3840,7 +3879,7 @@ function function_ce92a41b8f3b666f( backpackindex, containerindex )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6fc2
 // Size: 0x17f
 function function_1d982e57487b7efe()
@@ -3891,7 +3930,7 @@ function function_1d982e57487b7efe()
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7149
 // Size: 0x18f
 function function_51301c83420d42b4( inventoryindex, containerindex )
@@ -3931,7 +3970,7 @@ function function_51301c83420d42b4( inventoryindex, containerindex )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x72e0
 // Size: 0x1e9
 function function_9f1f9042105e4240( itemtype, itemindex, backpackindex )
@@ -3987,7 +4026,7 @@ function function_9f1f9042105e4240( itemtype, itemindex, backpackindex )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x74d1
 // Size: 0x58b
 function function_a763f6f503206771( player, scriptable, lootid )
@@ -4125,7 +4164,7 @@ function function_a763f6f503206771( player, scriptable, lootid )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7a64
 // Size: 0xde
 function function_c2f16e2bbb4e38c0( itemsonspawn, quantity )
@@ -4155,7 +4194,7 @@ function function_c2f16e2bbb4e38c0( itemsonspawn, quantity )
 }
 
 // Namespace namespace_e50e624d9af51c8c / namespace_aead94004cf4c147
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b4a
 // Size: 0x51
 function function_dee7316da051a630( lootname )

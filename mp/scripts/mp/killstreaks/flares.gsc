@@ -5,7 +5,7 @@
 #namespace flares;
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21c
 // Size: 0x27
 function flares_monitor( flarecount )
@@ -16,7 +16,7 @@ function flares_monitor( flarecount )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24b
 // Size: 0x5d
 function flares_playfx( fxoverride, fxtagoverride )
@@ -38,7 +38,7 @@ function flares_playfx( fxoverride, fxtagoverride )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b0
 // Size: 0x88
 function flares_deploy()
@@ -52,7 +52,7 @@ function flares_deploy()
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x341
 // Size: 0x71
 function flares_deleteaftertime( delaydelete, var_66f0721fc5bc2eb5, vehicle )
@@ -75,7 +75,7 @@ function flares_deleteaftertime( delaydelete, var_66f0721fc5bc2eb5, vehicle )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ba
 // Size: 0x16
 function flares_getnumleft( vehicle )
@@ -84,7 +84,7 @@ function flares_getnumleft( vehicle )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d9
 // Size: 0x32, Type: bool
 function flares_areavailable( vehicle )
@@ -94,7 +94,7 @@ function flares_areavailable( vehicle )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x414
 // Size: 0x4b
 function flares_getflarereserve( vehicle )
@@ -107,7 +107,7 @@ function flares_getflarereserve( vehicle )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x468
 // Size: 0x28
 function flares_cleanflareslivearray( vehicle )
@@ -116,7 +116,7 @@ function flares_cleanflareslivearray( vehicle )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x498
 // Size: 0x4f
 function flares_getflarelive( vehicle )
@@ -133,7 +133,7 @@ function flares_getflarelive( vehicle )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f0
 // Size: 0xdd
 function ks_laserguidedmissile_handleincoming()
@@ -169,7 +169,7 @@ function ks_laserguidedmissile_handleincoming()
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5d5
 // Size: 0xc2
 function ks_laserguidedmissile_monitorproximity( missile, player, team, target )
@@ -207,7 +207,7 @@ function ks_laserguidedmissile_monitorproximity( missile, player, team, target )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69f
 // Size: 0x9c
 function flares_handleincomingsam( functionoverride )
@@ -238,7 +238,7 @@ function flares_handleincomingsam( functionoverride )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x743
 // Size: 0x127
 function flares_watchsamproximity( player, missileteam, missiletarget, missilegroup )
@@ -251,14 +251,16 @@ function flares_watchsamproximity( player, missileteam, missiletarget, missilegr
         center = missiletarget getpointinbounds( 0, 0, 0 );
         curdist = [];
         
-        for (i = 0; i < missilegroup.size; i++) {
+        for ( i = 0; i < missilegroup.size ; i++ )
+        {
             if ( isdefined( missilegroup[ i ] ) )
             {
                 curdist[ i ] = distance( missilegroup[ i ].origin, center );
             }
         }
         
-        for (i = 0; i < curdist.size; i++) {
+        for ( i = 0; i < curdist.size ; i++ )
+        {
             if ( isdefined( curdist[ i ] ) )
             {
                 if ( curdist[ i ] < 4000 && missiletarget.flaresreservecount > 0 )
@@ -267,7 +269,8 @@ function flares_watchsamproximity( player, missileteam, missiletarget, missilegr
                     missiletarget thread flares_playfx();
                     newtarget = missiletarget flares_deploy();
                     
-                    for (j = 0; j < missilegroup.size; j++) {
+                    for ( j = 0; j < missilegroup.size ; j++ )
+                    {
                         if ( isdefined( missilegroup[ j ] ) )
                         {
                             clearprojectilelockedon( missilegroup[ j ] );
@@ -286,7 +289,7 @@ function flares_watchsamproximity( player, missileteam, missiletarget, missilegr
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x872
 // Size: 0xbb
 function flares_handleincomingstinger( functionoverride, fxlocoverride )
@@ -322,7 +325,7 @@ function flares_handleincomingstinger( functionoverride, fxlocoverride )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x935
 // Size: 0xbf
 function flares_watchstingerproximity( player, missileteam, missiletarget, fxtagoverride )
@@ -355,7 +358,7 @@ function flares_watchstingerproximity( player, missileteam, missiletarget, fxtag
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9fc
 // Size: 0x47
 function flares_reducereserves( flaresholder )
@@ -369,7 +372,7 @@ function flares_reducereserves( flaresholder )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa4b
 // Size: 0x60
 function ks_setup_manual_flares( num_flares, button_action, var_b1b8f942e50d3620, var_1ec886f1b7540ead )
@@ -387,7 +390,7 @@ function ks_setup_manual_flares( num_flares, button_action, var_b1b8f942e50d3620
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xab3
 // Size: 0xe1
 function ks_manualflares_watchuse( button_action, var_c10415b6394096cc )
@@ -421,7 +424,7 @@ function ks_manualflares_watchuse( button_action, var_c10415b6394096cc )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb9c
 // Size: 0x154
 function ks_manualflares_handleincoming( var_c10415b6394096cc )
@@ -473,7 +476,7 @@ function ks_manualflares_handleincoming( var_c10415b6394096cc )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcf8
 // Size: 0xa9
 function ks_manualflares_monitorproximity( missile )
@@ -509,7 +512,7 @@ function ks_manualflares_monitorproximity( missile )
 }
 
 // Namespace flares / scripts\mp\killstreaks\flares
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xda9
 // Size: 0x2a
 function ks_watch_death_stop_sound( vehicle, sound )

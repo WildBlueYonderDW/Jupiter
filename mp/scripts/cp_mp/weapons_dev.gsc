@@ -8,14 +8,19 @@
 
 #namespace weapons_dev;
 
-/#
-
-    // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc0
-    // Size: 0x96, Type: dev
-    function function_b8a2a2faf79dc08e()
+// Namespace weapons_dev / scripts\cp_mp\weapons_dev
+// Params 0
+// Checksum 0x0, Offset: 0xed
+// Size: 0xac
+function function_b8a2a2faf79dc08e()
+{
+    if ( getbuildversion() != "SHIP" )
     {
+        thread function_480ec2fed0d414f7();
+        setdvar( @"hash_588557f97f081a7e", "" );
+    }
+    
+    /#
         if ( !isdefined( level.weapdev ) )
         {
             level.weapdev = spawnstruct();
@@ -27,13 +32,105 @@
         level callback::add( "<dev string:x1c>", &function_c7979dea29932f4e );
         level callback::add( "<dev string:x2e>", &function_7973fcc15a7b9d52 );
         level callback::add( "<dev string:x43>", &function_51eab65eec69 );
-        setdevdvar( @"hash_588557f97f081a7e", "<dev string:x5b>" );
         setdevdvarifuninitialized( @"hash_94cfa401914bb582", "<dev string:x5b>" );
+    #/
+}
+
+// Namespace weapons_dev / scripts\cp_mp\weapons_dev
+// Params 0
+// Checksum 0x0, Offset: 0x1a1
+// Size: 0x33
+function function_480ec2fed0d414f7()
+{
+    if ( getbuildversion() != "SHIP" )
+    {
+        for ( ;; )
+        {
+            if ( getdvar( @"hash_588557f97f081a7e" ) != "" )
+            {
+                thread function_416220a2493c9ec();
+            }
+            
+            waitframe();
+        }
     }
+}
+
+// Namespace weapons_dev / scripts\cp_mp\weapons_dev
+// Params 0
+// Checksum 0x0, Offset: 0x1dc
+// Size: 0x23e
+function function_416220a2493c9ec()
+{
+    if ( getbuildversion() != "SHIP" )
+    {
+        variantid = 0;
+        blueprintname = getdvar( @"hash_588557f97f081a7e" );
+        weapon = getweaponrootname( blueprintname );
+        weaponasset = undefined;
+        
+        if ( isdefined( level.weaponmapdata[ weapon ] ) )
+        {
+            weaponasset = level.weaponmapdata[ weapon ].assetname;
+        }
+        
+        weaponblueprint = function_40fd49171fad19d3( blueprintname );
+        
+        if ( isdefined( weaponasset ) )
+        {
+            weaponvariants = getweaponblueprintnames( weaponasset );
+            
+            foreach ( variant, id in weaponvariants )
+            {
+                if ( weaponblueprint == variant )
+                {
+                    foreach ( player in level.players )
+                    {
+                        variantid = id;
+                        hasnvg = istrue( level.nightmap );
+                        var_c88b10f789adf8eb = scripts\cp_mp\weapon::buildweapon_blueprint( weapon, undefined, undefined, variantid, undefined, undefined, hasnvg );
+                        currentweapon = player.currentweapon;
+                        player.droppeddeathweapon = undefined;
+                        
+                        if ( issharedfuncdefined( "weapons", "dropWeaponForDeath" ) )
+                        {
+                            player thread [[ getsharedfunc( "weapons", "dropWeaponForDeath" ) ]]( undefined, "" );
+                        }
+                        
+                        player.droppeddeathweapon = undefined;
+                        
+                        if ( player hasweapon( var_c88b10f789adf8eb ) )
+                        {
+                            player _takeweapon( var_c88b10f789adf8eb );
+                        }
+                        
+                        if ( scripts\common\utility::iscp() )
+                        {
+                            player scripts\cp_mp\utility\inventory_utility::_takeweapon( currentweapon );
+                        }
+                        
+                        var_c88b10f789adf8eb = var_c88b10f789adf8eb function_7e483d6e6b4b5688( id );
+                        player giveweapon( var_c88b10f789adf8eb );
+                        player setweaponammoclip( var_c88b10f789adf8eb, weaponclipsize( var_c88b10f789adf8eb ) );
+                        player setweaponammostock( var_c88b10f789adf8eb, weaponmaxammo( var_c88b10f789adf8eb ) );
+                        player _switchtoweaponimmediate( var_c88b10f789adf8eb );
+                        scripts\cp_mp\weapon::fixupplayerweapons( player, weapon );
+                    }
+                    
+                    break;
+                }
+            }
+        }
+        
+        setdvar( @"hash_588557f97f081a7e", "" );
+    }
+}
+
+/#
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x15e
+    // Params 1
+    // Checksum 0x0, Offset: 0x422
     // Size: 0x130, Type: dev
     function function_71d0871062111cb8( group )
     {
@@ -86,8 +183,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x296
+    // Params 0
+    // Checksum 0x0, Offset: 0x55a
     // Size: 0x103, Type: dev
     function function_355de3fc37e0bd45()
     {
@@ -95,7 +192,8 @@
         key_weapons = getarraykeys( level.weaponmapdata );
         sorted_weapons = scripts\engine\utility::array_sort_with_func( key_weapons, &function_86b38dd39a0aea86 );
         
-        for (i = 0; i < sorted_weapons.size; i++) {
+        for ( i = 0; i < sorted_weapons.size ; i++ )
+        {
             data = level.weaponmapdata[ sorted_weapons[ i ] ];
             weaponclass = function_71d0871062111cb8( data.group );
             
@@ -113,8 +211,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3a1
+    // Params 2
+    // Checksum 0x0, Offset: 0x665
     // Size: 0x2f, Type: dev
     function function_86b38dd39a0aea86( a, b )
     {
@@ -132,8 +230,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3d8
+    // Params 5
+    // Checksum 0x0, Offset: 0x69c
     // Size: 0xd5, Type: dev
     function function_7aa60ff4574743( dvar, defaultvalue, func, isthreaded, unarchived )
     {
@@ -162,8 +260,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4b5
+    // Params 0
+    // Checksum 0x0, Offset: 0x779
     // Size: 0x107, Type: dev
     function function_56f3108c7ef4ae1d()
     {
@@ -214,8 +312,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5c4
+    // Params 0
+    // Checksum 0x0, Offset: 0x888
     // Size: 0xb5, Type: dev
     function function_4770632c00748149()
     {
@@ -229,8 +327,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x681
+    // Params 1
+    // Checksum 0x0, Offset: 0x945
     // Size: 0x10f, Type: dev
     function function_9a2bcf3ce7449979( weaponname )
     {
@@ -260,8 +358,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x798
+    // Params 1
+    // Checksum 0x0, Offset: 0xa5c
     // Size: 0x160, Type: dev
     function function_dd9d05980fc62610( val )
     {
@@ -315,8 +413,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x900
+    // Params 2
+    // Checksum 0x0, Offset: 0xbc4
     // Size: 0x2b7, Type: dev
     function function_f3cafbcac7b5f838( weaponobj, attachmentname )
     {
@@ -399,8 +497,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0xbbf
+    // Params 3
+    // Checksum 0x0, Offset: 0xe83
     // Size: 0x7f, Type: dev
     function function_71bd21b34346c599( currentweapon, var_c88b10f789adf8eb, giveammo )
     {
@@ -425,8 +523,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc46
+    // Params 1
+    // Checksum 0x0, Offset: 0xf0a
     // Size: 0x44, Type: dev
     function function_c8daabfa780ac4c6( entnum )
     {
@@ -442,8 +540,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc92
+    // Params 1
+    // Checksum 0x0, Offset: 0xf56
     // Size: 0xc5, Type: dev
     function function_fbfe774dd8a2b0a6( entnum )
     {
@@ -462,8 +560,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd5f
+    // Params 1
+    // Checksum 0x0, Offset: 0x1023
     // Size: 0x77, Type: dev
     function function_333a596bee56937d( entnum )
     {
@@ -474,8 +572,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xdde
+    // Params 1
+    // Checksum 0x0, Offset: 0x10a2
     // Size: 0x2c, Type: dev
     function function_d214bc8897a77197( dummy )
     {
@@ -484,8 +582,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe12
+    // Params 0
+    // Checksum 0x0, Offset: 0x10d6
     // Size: 0x14e, Type: dev
     function function_2d7fd129a52dd44b()
     {
@@ -512,8 +610,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf68
+    // Params 0
+    // Checksum 0x0, Offset: 0x122c
     // Size: 0x77, Type: dev
     function function_3b6bb4498000be82()
     {
@@ -532,8 +630,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xfe7
+    // Params 0
+    // Checksum 0x0, Offset: 0x12ab
     // Size: 0xb0, Type: dev
     function function_ba794adeb36ca952()
     {
@@ -555,8 +653,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x109f
+    // Params 1
+    // Checksum 0x0, Offset: 0x1363
     // Size: 0xe, Type: dev
     function function_c7979dea29932f4e( params )
     {
@@ -564,8 +662,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10b5
+    // Params 1
+    // Checksum 0x0, Offset: 0x1379
     // Size: 0x28, Type: dev
     function function_7973fcc15a7b9d52( params )
     {
@@ -574,8 +672,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10e5
+    // Params 1
+    // Checksum 0x0, Offset: 0x13a9
     // Size: 0x28, Type: dev
     function function_51eab65eec69( params )
     {
@@ -584,8 +682,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1115
+    // Params 0
+    // Checksum 0x0, Offset: 0x13d9
     // Size: 0x31, Type: dev
     function function_68e5f0be62d590ef()
     {
@@ -596,8 +694,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x114e
+    // Params 1
+    // Checksum 0x0, Offset: 0x1412
     // Size: 0x3ba, Type: dev
     function function_61f7f6b3f6c5c082( entnum )
     {
@@ -688,8 +786,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1510
+    // Params 2
+    // Checksum 0x0, Offset: 0x17d4
     // Size: 0xae, Type: dev
     function function_92cc0e279ea9f719( weaponobj, attachmentname )
     {
@@ -713,8 +811,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x15c6
+    // Params 1
+    // Checksum 0x0, Offset: 0x188a
     // Size: 0x6a, Type: dev
     function function_b263d5c9745dc016( entnum )
     {
@@ -732,18 +830,14 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1638
-    // Size: 0x4a, Type: dev
+    // Params 0
+    // Checksum 0x0, Offset: 0x18fc
+    // Size: 0x28, Type: dev
     function function_17cdeb7626afb432()
     {
         for ( ;; )
         {
-            if ( getdvar( @"hash_588557f97f081a7e" ) != "<dev string:x5b>" )
-            {
-                thread function_416220a2493c9ec();
-            }
-            else if ( getdvar( @"hash_94cfa401914bb582" ) != "<dev string:x5b>" )
+            if ( getdvar( @"hash_94cfa401914bb582" ) != "<dev string:x5b>" )
             {
                 thread function_72bdcbf68a00d590();
             }
@@ -753,75 +847,8 @@
     }
 
     // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x168a
-    // Size: 0x233, Type: dev
-    function function_416220a2493c9ec()
-    {
-        variantid = 0;
-        blueprintname = getdvar( @"hash_588557f97f081a7e" );
-        weapon = getweaponrootname( blueprintname );
-        weaponasset = undefined;
-        
-        if ( isdefined( level.weaponmapdata[ weapon ] ) )
-        {
-            weaponasset = level.weaponmapdata[ weapon ].assetname;
-        }
-        
-        weaponblueprint = function_40fd49171fad19d3( blueprintname );
-        
-        if ( isdefined( weaponasset ) )
-        {
-            weaponvariants = getweaponblueprintnames( weaponasset );
-            
-            foreach ( variant, id in weaponvariants )
-            {
-                if ( weaponblueprint == variant )
-                {
-                    foreach ( player in level.players )
-                    {
-                        variantid = id;
-                        hasnvg = istrue( level.nightmap );
-                        var_c88b10f789adf8eb = scripts\cp_mp\weapon::buildweapon_blueprint( weapon, undefined, undefined, variantid, undefined, undefined, hasnvg );
-                        currentweapon = player.currentweapon;
-                        player.droppeddeathweapon = undefined;
-                        
-                        if ( issharedfuncdefined( "<dev string:x46d>", "<dev string:x478>" ) )
-                        {
-                            player thread [[ getsharedfunc( "<dev string:x46d>", "<dev string:x478>" ) ]]( undefined, "<dev string:x5b>" );
-                        }
-                        
-                        player.droppeddeathweapon = undefined;
-                        
-                        if ( player hasweapon( var_c88b10f789adf8eb ) )
-                        {
-                            player _takeweapon( var_c88b10f789adf8eb );
-                        }
-                        
-                        if ( scripts\common\utility::iscp() )
-                        {
-                            player scripts\cp_mp\utility\inventory_utility::_takeweapon( currentweapon );
-                        }
-                        
-                        var_c88b10f789adf8eb = var_c88b10f789adf8eb function_7e483d6e6b4b5688( id );
-                        player giveweapon( var_c88b10f789adf8eb );
-                        player setweaponammoclip( var_c88b10f789adf8eb, weaponclipsize( var_c88b10f789adf8eb ) );
-                        player setweaponammostock( var_c88b10f789adf8eb, weaponmaxammo( var_c88b10f789adf8eb ) );
-                        player _switchtoweaponimmediate( var_c88b10f789adf8eb );
-                        scripts\cp_mp\weapon::fixupplayerweapons( player, weapon );
-                    }
-                    
-                    break;
-                }
-            }
-        }
-        
-        setdevdvar( @"hash_588557f97f081a7e", "<dev string:x5b>" );
-    }
-
-    // Namespace weapons_dev / scripts\cp_mp\weapons_dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18c5
+    // Params 0
+    // Checksum 0x0, Offset: 0x192c
     // Size: 0x180, Type: dev
     function function_72bdcbf68a00d590()
     {
@@ -835,8 +862,9 @@
             
             if ( camoindex != 0 )
             {
-                for (rowindex = 0; tablelookupbyrow( "<dev string:x48e>", rowindex, 1 ) != "<dev string:x5b>"; rowindex++) {
-                    camolist[ camolist.size ] = tablelookupbyrow( "<dev string:x48e>", rowindex, 1 );
+                for ( rowindex = 0; tablelookupbyrow( "<dev string:x46d>", rowindex, 1 ) != "<dev string:x5b>" ; rowindex++ )
+                {
+                    camolist[ camolist.size ] = tablelookupbyrow( "<dev string:x46d>", rowindex, 1 );
                 }
                 
                 if ( camoindex < camolist.size )

@@ -52,7 +52,7 @@ function autoexec init()
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x539
 // Size: 0xba
 function function_94b502046c767cd1()
@@ -84,7 +84,7 @@ function function_94b502046c767cd1()
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5fc
 // Size: 0x6c
 function function_1bafb1f579534ef6( dropinfo, player, scriptablename )
@@ -106,7 +106,7 @@ function function_1bafb1f579534ef6( dropinfo, player, scriptablename )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x670
 // Size: 0xc2
 function function_3e7ee85cb0d3504c( scriptable, instance )
@@ -135,7 +135,7 @@ function function_3e7ee85cb0d3504c( scriptable, instance )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x73a
 // Size: 0xaf
 function function_f9ec88c3d71324cd( scriptablename )
@@ -191,7 +191,7 @@ function private function_fbaa37f0a39a0d07()
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x937
 // Size: 0x6e
 function spawnweaponcase( player, dropstruct )
@@ -413,7 +413,7 @@ function private function_803a95e4e6cd2538( scriptable, player )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e9
 // Size: 0x38, Type: bool
 function isweaponcase( lootid )
@@ -428,7 +428,7 @@ function isweaponcase( lootid )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x122a
 // Size: 0x39
 function function_c320904c58171311()
@@ -440,7 +440,7 @@ function function_c320904c58171311()
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x126b
 // Size: 0x64
 function dropweaponcase()
@@ -478,7 +478,7 @@ function private function_31a079a1fe9caa2( var_480f8576be141bb4 )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x136e
 // Size: 0x7f
 function function_5704ab2a9381630f( player )
@@ -493,7 +493,7 @@ function function_5704ab2a9381630f( player )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13f5
 // Size: 0x2f, Type: bool
 function function_5a7168b0b511bec3( player )
@@ -502,7 +502,7 @@ function function_5a7168b0b511bec3( player )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x142d
 // Size: 0x188
 function function_25a4b6a2083e2ab( players )
@@ -549,7 +549,7 @@ function function_25a4b6a2083e2ab( players )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15bd
 // Size: 0xb2
 function function_baf5e17d7033a223( player )
@@ -578,7 +578,7 @@ function function_baf5e17d7033a223( player )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1678
 // Size: 0x12b
 function function_8f6753648e94e7ec( player )
@@ -618,7 +618,7 @@ function function_8f6753648e94e7ec( player )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17ac
 // Size: 0xc, Type: bool
 function function_fc1ce25282bcba83()
@@ -627,7 +627,7 @@ function function_fc1ce25282bcba83()
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17c1
 // Size: 0x13, Type: bool
 function hasweaponcase( player )
@@ -636,7 +636,7 @@ function hasweaponcase( player )
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17dd
 // Size: 0x40
 function function_84d052fbd32e9c5b( player )
@@ -760,7 +760,7 @@ function private function_3de46c194ccd92d8()
 }
 
 // Namespace namespace_f3c34c81dcc60eda / namespace_a8b2b88699fc40fb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bea
 // Size: 0x30
 function function_95d2129bcec4692( origin )

@@ -8,7 +8,7 @@
 #namespace namespace_999fea027e3a72c0;
 
 // Namespace namespace_999fea027e3a72c0 / namespace_554911766d728444
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc3
 // Size: 0xe
 function function_668f4c9fbe0b7df()
@@ -17,7 +17,7 @@ function function_668f4c9fbe0b7df()
 }
 
 // Namespace namespace_999fea027e3a72c0 / namespace_554911766d728444
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd9
 // Size: 0x29
 function function_62f23ce5adb71f28( asmname, statename, tostatename, params )

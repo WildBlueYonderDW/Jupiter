@@ -14,8 +14,8 @@
 #namespace ob_achievements;
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b0
+// Params 0
+// Checksum 0x0, Offset: 0x3b1
 // Size: 0x125
 function init()
 {
@@ -48,7 +48,7 @@ function init()
 
     // Namespace ob_achievements / namespace_15c1ca6387c6a341
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x4dd
+    // Checksum 0x0, Offset: 0x4de
     // Size: 0x1a8, Type: dev
     function private function_c9e6fc61ad0c665f()
     {
@@ -90,7 +90,7 @@ function init()
 
     // Namespace ob_achievements / namespace_15c1ca6387c6a341
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x68d
+    // Checksum 0x0, Offset: 0x68e
     // Size: 0x61, Type: dev
     function private function_e07c698369eb6f3e( params )
     {
@@ -106,7 +106,7 @@ function init()
 
     // Namespace ob_achievements / namespace_15c1ca6387c6a341
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x6f6
+    // Checksum 0x0, Offset: 0x6f7
     // Size: 0x72, Type: dev
     function private function_f497beeb72b05f82( params )
     {
@@ -131,7 +131,7 @@ function init()
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x770
+// Checksum 0x0, Offset: 0x771
 // Size: 0xd9
 function private function_a08380cd8b1316e5( var_45191fa57864b212 )
 {
@@ -168,7 +168,7 @@ function private function_a08380cd8b1316e5( var_45191fa57864b212 )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x851
+// Checksum 0x0, Offset: 0x852
 // Size: 0x4e
 function private ob_act3_completed( params )
 {
@@ -183,7 +183,7 @@ function private ob_act3_completed( params )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x8a7
+// Checksum 0x0, Offset: 0x8a8
 // Size: 0x11c
 function private function_618308f7a88d3d10( params )
 {
@@ -217,7 +217,7 @@ function private function_618308f7a88d3d10( params )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9cb
+// Checksum 0x0, Offset: 0x9cc
 // Size: 0x6d
 function private function_386de0e32b56c00d( var_45191fa57864b212 )
 {
@@ -242,7 +242,7 @@ function private function_386de0e32b56c00d( var_45191fa57864b212 )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa40
+// Checksum 0x0, Offset: 0xa41
 // Size: 0x9f
 function private on_player_connect( params )
 {
@@ -266,7 +266,7 @@ function private on_player_connect( params )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xae7
+// Checksum 0x0, Offset: 0xae8
 // Size: 0x17
 function private on_hellhound_petted( params )
 {
@@ -275,7 +275,7 @@ function private on_hellhound_petted( params )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xb06
+// Checksum 0x0, Offset: 0xb07
 // Size: 0x6b
 function private on_player_revived( params )
 {
@@ -294,7 +294,7 @@ function private on_player_revived( params )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xb79
+// Checksum 0x0, Offset: 0xb7a
 // Size: 0x17
 function private on_tombstone_used_cache( params )
 {
@@ -303,7 +303,7 @@ function private on_tombstone_used_cache( params )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xb98
+// Checksum 0x0, Offset: 0xb99
 // Size: 0x27
 function private function_d46f3d95c0a6c68e( params )
 {
@@ -315,7 +315,7 @@ function private function_d46f3d95c0a6c68e( params )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xbc7
+// Checksum 0x0, Offset: 0xbc8
 // Size: 0x17
 function private ob_exfil_success( params )
 {
@@ -324,7 +324,7 @@ function private ob_exfil_success( params )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xbe6
+// Checksum 0x0, Offset: 0xbe7
 // Size: 0x27f
 function private on_ai_killed( params )
 {
@@ -407,7 +407,7 @@ function private on_ai_killed( params )
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xe6d
+// Checksum 0x0, Offset: 0xe6e
 // Size: 0x38
 function private function_82b80153d3189adc( var_45191fa57864b212, var_f9da27eee32186cd, n_increment, n_required )
 {
@@ -421,7 +421,7 @@ function private function_82b80153d3189adc( var_45191fa57864b212, var_f9da27eee3
 
 // Namespace ob_achievements / namespace_15c1ca6387c6a341
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xead
+// Checksum 0x0, Offset: 0xeae
 // Size: 0x147
 function private function_cd2135758f3d9f79( var_45191fa57864b212, var_f9da27eee32186cd, n_increment, n_required )
 {

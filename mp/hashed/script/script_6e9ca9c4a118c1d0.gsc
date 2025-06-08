@@ -21,7 +21,7 @@
 #namespace namespace_5730b7412a25c1b1;
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x800
 // Size: 0x21
 function function_80766cad49b7127f()
@@ -174,7 +174,7 @@ function private function_ac531909f44e822e()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc95
 // Size: 0x65
 function function_ae56df9d51b68c4c( player, trigger )
@@ -195,7 +195,7 @@ function function_ae56df9d51b68c4c( player, trigger )
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd02
 // Size: 0x1d
 function function_78fca00ea9feac52( player, trigger )
@@ -207,7 +207,7 @@ function function_78fca00ea9feac52( player, trigger )
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd27
 // Size: 0x5f
 function function_3710286101f0ad65( interact, player )
@@ -221,7 +221,7 @@ function function_3710286101f0ad65( interact, player )
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd8e
 // Size: 0x154
 function function_2a5c422870861dd9( player )
@@ -272,7 +272,7 @@ function private function_da51dfe0d3ba963a()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf3e
 // Size: 0x3, Type: bool
 function function_a8c9248308033e4e()
@@ -281,7 +281,7 @@ function function_a8c9248308033e4e()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf4a
 // Size: 0x3, Type: bool
 function function_57128172ecf78387()
@@ -290,7 +290,7 @@ function function_57128172ecf78387()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf56
 // Size: 0x3, Type: bool
 function function_c2cec6c21b6ed690()
@@ -299,7 +299,7 @@ function function_c2cec6c21b6ed690()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf62
 // Size: 0x3, Type: bool
 function function_245283ba6b8fc()
@@ -308,7 +308,7 @@ function function_245283ba6b8fc()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf6e
 // Size: 0x3, Type: bool
 function function_55dafced1c7f2392()
@@ -317,7 +317,7 @@ function function_55dafced1c7f2392()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf7a
 // Size: 0x3, Type: bool
 function function_2a7521c0cd2cc849()
@@ -448,7 +448,8 @@ function private function_14d9017001c6253c( player )
         return;
     }
     
-    for (numplayers = 0; numplayers < level.var_8fb4179536e9502e; numplayers++) {
+    for ( numplayers = 0; numplayers < level.var_8fb4179536e9502e ; numplayers++ )
+    {
         if ( numplayers == 0 || numplayers == 4 )
         {
             var_f1dedcca27836ad7 = scripts\mp\mp_agent::spawnnewagentaitype( "jup_spawner_zombie_base_armored_light", level.tombstone.origin + ( 100, 0, 100 ), ( 0, 0, 0 ), "team_two_hundred" );
@@ -635,7 +636,7 @@ function private function_e0c79901d85d2388( dmgstruct )
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fb3
 // Size: 0x111
 function function_6eca18484fcc4e39()
@@ -909,7 +910,7 @@ function private function_c183907e5f0b9d23()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x290f
 // Size: 0x30
 function function_8d12ae12911e4bbd( interact, player )
@@ -918,7 +919,7 @@ function function_8d12ae12911e4bbd( interact, player )
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2948
 // Size: 0x3d
 function function_3698ca59b6cea149( player )
@@ -961,7 +962,7 @@ function private function_21a7d56b7ecb4370()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ace
 // Size: 0x30
 function function_154680f1e2915748( interact, player )
@@ -970,7 +971,7 @@ function function_154680f1e2915748( interact, player )
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b07
 // Size: 0x2e
 function function_c86175c92df1ca46( player )
@@ -1010,7 +1011,7 @@ function private function_ce56fb2e795cd388()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c7e
 // Size: 0x30
 function function_f3830fa88cd247ac( interact, player )
@@ -1019,7 +1020,7 @@ function function_f3830fa88cd247ac( interact, player )
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cb7
 // Size: 0x2e
 function function_6e0aecd9b78368fe( player )
@@ -1059,7 +1060,7 @@ function private function_61707196a47fd340()
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e2e
 // Size: 0x30
 function function_f29e02f4668c82c6( interact, player )
@@ -1068,7 +1069,7 @@ function function_f29e02f4668c82c6( interact, player )
 }
 
 // Namespace namespace_5730b7412a25c1b1 / namespace_35d8eb846e248f4a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e67
 // Size: 0x2e
 function function_3dcc79a1e03c4ed6( player )

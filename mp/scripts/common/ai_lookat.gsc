@@ -4,7 +4,7 @@
 #namespace ai_lookat;
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xde
 // Size: 0x2b
 function enablelookatplayer( enabletime, percent )
@@ -13,7 +13,7 @@ function enablelookatplayer( enabletime, percent )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x111
 // Size: 0x12
 function disablelookatplayer()
@@ -22,7 +22,7 @@ function disablelookatplayer()
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x12b
 // Size: 0xc1
 function enablelookatentity( ent, speed, percent, offset )
@@ -68,7 +68,7 @@ function enablelookatentity( ent, speed, percent, offset )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f4
 // Size: 0x133
 function disablelookatentity( ent )
@@ -118,7 +118,7 @@ function disablelookatentity( ent )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32f
 // Size: 0x11
 function islookingatplayer()
@@ -127,7 +127,7 @@ function islookingatplayer()
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x349
 // Size: 0x18
 function islookingatentity( ent )
@@ -136,7 +136,7 @@ function islookingatentity( ent )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36a
 // Size: 0x2f
 function getlookatentity()
@@ -150,7 +150,7 @@ function getlookatentity()
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x3a2
 // Size: 0x94c
 function function_11e84eac72368d4e( var_47a2d19079a1a2b, var_f53e74a2c8fc7b96, var_9324afcbaa32c0b5, var_4a3993c83b6c63e4, innerradius, outerradius, var_d67ae0707347001, var_412a2db1704efae0, percentclose, percentfar, fovcos, var_1ff7cb08338acf70 )
@@ -562,7 +562,7 @@ function function_11e84eac72368d4e( var_47a2d19079a1a2b, var_f53e74a2c8fc7b96, v
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xcf6
 // Size: 0x3cc
 function function_51c52cb24acd5706( ontime, offtime, radius, enabletime, percent, fovcos, var_1ff7cb08338acf70 )
@@ -710,7 +710,7 @@ function function_51c52cb24acd5706( ontime, offtime, radius, enabletime, percent
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10ca
 // Size: 0x3f
 function function_a72247099f0414e7( enable, playerradius, airadius )
@@ -727,7 +727,7 @@ function function_a72247099f0414e7( enable, playerradius, airadius )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1111
 // Size: 0xd7
 function function_347c218f281719e4( playerradius, airadius )
@@ -766,7 +766,7 @@ function function_347c218f281719e4( playerradius, airadius )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11f0
 // Size: 0x4e
 function function_51a6f1734f850aec( ai, maxdist, maxtargets )
@@ -780,7 +780,7 @@ function function_51a6f1734f850aec( ai, maxdist, maxtargets )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1246
 // Size: 0x93
 function function_1961ba599803679a( guys, maxdist, maxtargets )
@@ -814,7 +814,7 @@ function function_1961ba599803679a( guys, maxdist, maxtargets )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12e1
 // Size: 0x29
 function function_80a9352cf824e995( enable )
@@ -829,7 +829,7 @@ function function_80a9352cf824e995( enable )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1312
 // Size: 0x118
 function function_2c49add797a42aab( guys, maxdist )
@@ -884,7 +884,7 @@ function function_2c49add797a42aab( guys, maxdist )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1432
 // Size: 0x15e
 function function_ff0bb38cfb102c11( guys, maxdist, maxtargets )
@@ -902,7 +902,8 @@ function function_ff0bb38cfb102c11( guys, maxdist, maxtargets )
         self.lookatstate = "<dev string:x109>";
     #/
     
-    for (var_f005387b5006ade6 = 0; var_f005387b5006ade6 < guys.size; var_f005387b5006ade6++) {
+    for ( var_f005387b5006ade6 = 0; var_f005387b5006ade6 < guys.size ; var_f005387b5006ade6++ )
+    {
         guy = guys[ var_f005387b5006ade6 ];
         
         if ( !isdefined( self.var_c15ac68fc63fc9a8 ) || !self.var_c15ac68fc63fc9a8 )
@@ -954,7 +955,7 @@ function function_ff0bb38cfb102c11( guys, maxdist, maxtargets )
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1598
 // Size: 0x57
 function function_c38d71f632b89906()
@@ -977,7 +978,7 @@ function function_c38d71f632b89906()
 }
 
 // Namespace ai_lookat / scripts\common\ai_lookat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15f7
 // Size: 0x94
 function stare( other )
@@ -1008,7 +1009,7 @@ function stare( other )
 /#
 
     // Namespace ai_lookat / scripts\common\ai_lookat
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1693
     // Size: 0x92, Type: dev
     function function_ca76b97da22f081b()

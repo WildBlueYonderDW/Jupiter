@@ -10,7 +10,7 @@
 #namespace potg;
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ab
 // Size: 0x37e
 function init()
@@ -89,7 +89,7 @@ function init()
     setdvarifuninitialized( @"hash_1354f825daa8fdd3", 1000 );
     
     /#
-        setdevdvarifuninitialized( @"hash_ffd4a481b33d985a", 0 );
+        setdevdvarifuninitialized( @"potg_debug_print", 0 );
         setdevdvarifuninitialized( @"hash_a8d6f0b654204b81", 0 );
         setdevdvarifuninitialized( @"hash_1fd181ebeebe83bf", 0 );
         setdevdvarifuninitialized( @"hash_ba2d7c5976a9ec58", 0 );
@@ -103,7 +103,7 @@ function init()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x931
 // Size: 0x2f
 function getminimumscorerequired()
@@ -117,7 +117,7 @@ function getminimumscorerequired()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x968
 // Size: 0x2f
 function getactionscenedurationmax()
@@ -131,7 +131,7 @@ function getactionscenedurationmax()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99f
 // Size: 0x2f
 function getactionscenedurationmin()
@@ -145,7 +145,7 @@ function getactionscenedurationmin()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d6
 // Size: 0x2f
 function getscenebufferduration()
@@ -159,7 +159,7 @@ function getscenebufferduration()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0d
 // Size: 0x2f
 function function_c32dbde9550fc4d5()
@@ -173,7 +173,7 @@ function function_c32dbde9550fc4d5()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa44
 // Size: 0x12
 function getwholescenedurationmin()
@@ -182,7 +182,7 @@ function getwholescenedurationmin()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa5f
 // Size: 0x12
 function getwholescenedurationmax()
@@ -191,7 +191,7 @@ function getwholescenedurationmax()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7a
 // Size: 0x10
 function getminimumscorerequirednvidiahighlights()
@@ -200,7 +200,7 @@ function getminimumscorerequirednvidiahighlights()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa93
 // Size: 0xd3
 function loadeventtable()
@@ -212,7 +212,8 @@ function loadeventtable()
     
     globals = level.potgglobals;
     
-    for (rowindex = 0; true; rowindex++) {
+    for ( rowindex = 0; true ; rowindex++ )
+    {
         eventref = tablelookupbyrow( "mp/potg_event_table.csv", rowindex, 0 );
         
         if ( !isdefined( eventref ) || eventref == "" )
@@ -229,7 +230,7 @@ function loadeventtable()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb6e
 // Size: 0x4b
 function onplayerconnect()
@@ -252,7 +253,7 @@ function onplayerconnect()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc1
 // Size: 0x4b
 function updateplayerrecording()
@@ -276,7 +277,7 @@ function updateplayerrecording()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc14
 // Size: 0x13
 function onplayerdisconnect( player )
@@ -285,7 +286,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc2f
 // Size: 0x2a
 function onroundended( winner )
@@ -301,7 +302,7 @@ function onroundended( winner )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc61
 // Size: 0x20
 function waitforrecordingandfinalize()
@@ -316,7 +317,7 @@ function waitforrecordingandfinalize()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc89
 // Size: 0x42
 function shouldskippotg()
@@ -332,7 +333,7 @@ function shouldskippotg()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd3
 // Size: 0x6e
 function finalizepotgsystem()
@@ -361,7 +362,7 @@ function finalizepotgsystem()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd49
 // Size: 0x15
 function issystemfinalized()
@@ -370,7 +371,7 @@ function issystemfinalized()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd67
 // Size: 0x60, Type: bool
 function function_acab8b716476b589()
@@ -401,7 +402,7 @@ function function_acab8b716476b589()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdd0
 // Size: 0x4b
 function function_6ccc879a30fe522c()
@@ -415,7 +416,7 @@ function function_6ccc879a30fe522c()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe23
 // Size: 0xcb
 function registerpotgentity( entity )
@@ -442,7 +443,7 @@ function registerpotgentity( entity )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xef6
 // Size: 0x63
 function deregisterpotgentity( entity )
@@ -463,7 +464,7 @@ function deregisterpotgentity( entity )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf61
 // Size: 0x33
 function getentitypotgdata( entity )
@@ -473,7 +474,7 @@ function getentitypotgdata( entity )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf9d
 // Size: 0x43
 function getentityid( entity )
@@ -488,7 +489,7 @@ function getentityid( entity )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfe9
 // Size: 0x80
 function startrecording()
@@ -520,7 +521,7 @@ function startrecording()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1071
 // Size: 0x1c
 function onrecordingstarted( entdata )
@@ -529,7 +530,7 @@ function onrecordingstarted( entdata )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1095
 // Size: 0x86
 function stoprecording()
@@ -560,7 +561,7 @@ function stoprecording()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1123
 // Size: 0x45
 function forcestoprecording( entdata )
@@ -574,7 +575,7 @@ function forcestoprecording( entdata )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1170
 // Size: 0x41
 function onrecordingstopped( entdata )
@@ -586,7 +587,7 @@ function onrecordingstopped( entdata )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11b9
 // Size: 0x4a, Type: bool
 function isrecordingenabled( entdata )
@@ -611,7 +612,7 @@ function isrecordingenabled( entdata )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120c
 // Size: 0x75
 function finalizeallrecordings()
@@ -629,7 +630,7 @@ function finalizeallrecordings()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1289
 // Size: 0x292
 function processevent( eventref, starttime, endtime, psoffsettime, scoreoverride, scoremultiplier )
@@ -732,7 +733,7 @@ function processevent( eventref, starttime, endtime, psoffsettime, scoreoverride
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1523
 // Size: 0xb4
 function waitandnominatepotg( entdata )
@@ -764,7 +765,7 @@ function waitandnominatepotg( entdata )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15df
 // Size: 0x86
 function removeoldevents( entdata )
@@ -781,7 +782,7 @@ function removeoldevents( entdata )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x166d
 // Size: 0x18
 function removeallevents( entdata )
@@ -790,7 +791,7 @@ function removeallevents( entdata )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x168d
 // Size: 0x28a
 function createscenefromnewevent( entdata, totalscore )
@@ -842,7 +843,7 @@ function createscenefromnewevent( entdata, totalscore )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1920
 // Size: 0x19, Type: bool
 function doesscenehaveenoughtotalrecordingtime( scene )
@@ -851,7 +852,7 @@ function doesscenehaveenoughtotalrecordingtime( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1942
 // Size: 0x5e, Type: bool
 function doesscenehaveenoughbufferrecordingtime( scene )
@@ -862,7 +863,7 @@ function doesscenehaveenoughbufferrecordingtime( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19a9
 // Size: 0x63
 function getmaxsceneduration( scene )
@@ -874,7 +875,7 @@ function getmaxsceneduration( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a15
 // Size: 0x1f6
 function waitformorerecordingtimeforscene( scene )
@@ -947,7 +948,7 @@ function waitformorerecordingtimeforscene( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c13
 // Size: 0x28
 function watchpendingscenetimeout( endtime )
@@ -963,7 +964,7 @@ function watchpendingscenetimeout( endtime )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c43
 // Size: 0xae
 function calculatepotgscore( events )
@@ -991,7 +992,7 @@ function calculatepotgscore( events )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cfa
 // Size: 0x7b
 function setcurpotgscene( scene )
@@ -1008,7 +1009,7 @@ function setcurpotgscene( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d7d
 // Size: 0x23
 function getcurpotgscene()
@@ -1022,7 +1023,7 @@ function getcurpotgscene()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1da9
 // Size: 0x4d
 function getbestpotgscore()
@@ -1043,7 +1044,7 @@ function getbestpotgscore()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1dff
 // Size: 0xe
 function getcurwindowstarttime()
@@ -1052,7 +1053,7 @@ function getcurwindowstarttime()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e16
 // Size: 0x94
 function eventtable_getscore( eventref, player )
@@ -1078,7 +1079,7 @@ function eventtable_getscore( eventref, player )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1eb2
 // Size: 0x46
 function function_972555778bce6766( eventref, player )
@@ -1091,7 +1092,7 @@ function function_972555778bce6766( eventref, player )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f01
 // Size: 0xcf
 function function_f6c9a415f86697af( eventref )
@@ -1128,7 +1129,7 @@ function function_f6c9a415f86697af( eventref )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fd9
 // Size: 0x7b
 function function_c488370b61042846( player )
@@ -1157,7 +1158,7 @@ function function_c488370b61042846( player )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x205d
 // Size: 0xe5
 function function_4ed25b1ffc14d7a8( player )
@@ -1180,7 +1181,8 @@ function function_4ed25b1ffc14d7a8( player )
         return 1;
     }
     
-    for (i = var_1498673d1311049b.size - 1; i >= 0; i--) {
+    for ( i = var_1498673d1311049b.size - 1; i >= 0 ; i-- )
+    {
         if ( var_b04380ede90495aa >= var_1498673d1311049b[ i ].roundssincelastpotg )
         {
             return var_1498673d1311049b[ i ].modifier;
@@ -1191,7 +1193,7 @@ function function_4ed25b1ffc14d7a8( player )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x214b
 // Size: 0xfe
 function function_fa47d8c13e83a98c()
@@ -1218,7 +1220,7 @@ function function_fa47d8c13e83a98c()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2251
 // Size: 0x2a, Type: bool
 function function_8f4e175dca760a87( var_9f57e1a03621e9d9, var_749e109bf218507a )
@@ -1227,7 +1229,7 @@ function function_8f4e175dca760a87( var_9f57e1a03621e9d9, var_749e109bf218507a )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2284
 // Size: 0x35
 function eventtable_isaddonevent( eventref )
@@ -1241,7 +1243,7 @@ function eventtable_isaddonevent( eventref )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22c1
 // Size: 0x68
 function eventtable_isevent( eventref )
@@ -1265,7 +1267,7 @@ function eventtable_isevent( eventref )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2331
 // Size: 0xef
 function function_e14b5f1aa08d9caa()
@@ -1276,7 +1278,8 @@ function function_e14b5f1aa08d9caa()
     prevround = currround - 1;
     cooldownrounds = level.gametypebundle.var_e9789a14091683e1;
     
-    for (round = 1; round < currround; round++) {
+    for ( round = 1; round < currround ; round++ )
+    {
         var_a520dc4735b5b315 = game[ "potg" ].recipients[ round ];
         var_a16a87f3dde73d18 = level.potgglobals.entities[ var_a520dc4735b5b315 ].entity;
         
@@ -1298,7 +1301,7 @@ function function_e14b5f1aa08d9caa()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2428
 // Size: 0xd1
 function finalizescene( scene )
@@ -1324,7 +1327,7 @@ function finalizescene( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2501
 // Size: 0xa2
 function resetscorefeedcontrolomnvar()
@@ -1341,7 +1344,7 @@ function resetscorefeedcontrolomnvar()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25ab
 // Size: 0x176
 function calcsceneplaybacktimes( scene )
@@ -1363,7 +1366,7 @@ function calcsceneplaybacktimes( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2729
 // Size: 0x12c
 function calcscenepsoffset( scene )
@@ -1396,7 +1399,7 @@ function calcscenepsoffset( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x285d
 // Size: 0xe4
 function getfinalpotginfo()
@@ -1421,7 +1424,7 @@ function getfinalpotginfo()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x294a
 // Size: 0x1e
 function requestarchive( starttime, endtime )
@@ -1430,7 +1433,7 @@ function requestarchive( starttime, endtime )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2970
 // Size: 0xdf
 function archiverequesthelper( starttime, endtime )
@@ -1456,7 +1459,7 @@ function archiverequesthelper( starttime, endtime )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a57
 // Size: 0xba
 function archivecurrentgamestate()
@@ -1480,7 +1483,7 @@ function archivecurrentgamestate()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b19
 // Size: 0xf
 function getrapidarchivewarningrate()
@@ -1489,7 +1492,7 @@ function getrapidarchivewarningrate()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b31
 // Size: 0x5f, Type: bool
 function doesscenefitincurrentarchive( scene )
@@ -1506,7 +1509,7 @@ function doesscenefitincurrentarchive( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b99
 // Size: 0x132
 function screenprint_newpotgchosen( newscene, oldscene )
@@ -1546,7 +1549,7 @@ function screenprint_newpotgchosen( newscene, oldscene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cd3
 // Size: 0x10b
 function screenprint_dosceneprintplayback()
@@ -1580,7 +1583,7 @@ function screenprint_dosceneprintplayback()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2de6
 // Size: 0x32
 function datalog_getlogversion()
@@ -1599,7 +1602,7 @@ function datalog_getlogversion()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e21
 // Size: 0x12, Type: bool
 function datalog_isloggingenabled()
@@ -1608,7 +1611,7 @@ function datalog_isloggingenabled()
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e3c
 // Size: 0x1c1
 function datalog_scenefinalized( scene )
@@ -1628,7 +1631,7 @@ function datalog_scenefinalized( scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3005
 // Size: 0xc6
 function datalog_newevent( event, id, entity )
@@ -1642,7 +1645,7 @@ function datalog_newevent( event, id, entity )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x30d3
 // Size: 0x105
 function datalog_archivesaved( requesttime, archivestarttime, archiveduration, desiredscenestarttime, desiredsceneendtime )
@@ -1657,7 +1660,7 @@ function datalog_archivesaved( requesttime, archivestarttime, archiveduration, d
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31e0
 // Size: 0x39
 function debug_watcharchivesize( prevstarttime, scene )
@@ -1668,7 +1671,7 @@ function debug_watcharchivesize( prevstarttime, scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3221
 // Size: 0x7a
 function debug_watcharchivefinished( requesttime, prevstarttime, scene )
@@ -1697,7 +1700,7 @@ function debug_watcharchivefinished( requesttime, prevstarttime, scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32a3
 // Size: 0x2c
 function debug_watcharchiveinterrupted( requesttime, scene )
@@ -1708,7 +1711,7 @@ function debug_watcharchiveinterrupted( requesttime, scene )
 }
 
 // Namespace potg / scripts\mp\potg
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x32d7
 // Size: 0x13e
 function debug_logarchiveresult( result, scene, requesttime, finalstarttime, finalduration )
@@ -1740,12 +1743,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
 /#
 
     // Namespace potg / scripts\mp\potg
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x341d
     // Size: 0x6b, Type: dev
     function debug_print( text, entity )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1761,7 +1764,7 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3490
     // Size: 0x63, Type: dev
     function function_b5fc4169a40984f4( entity )
@@ -1786,12 +1789,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x34fb
     // Size: 0x39, Type: dev
     function function_931a8f6e47923a14( entity, registered )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1800,12 +1803,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x353c
     // Size: 0x6a, Type: dev
     function function_4f8540de8b6894db( entity, changetype )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1821,12 +1824,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x35ae
     // Size: 0x25, Type: dev
     function function_58af25849b7e7eee()
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1835,12 +1838,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x35db
     // Size: 0xb1, Type: dev
     function function_89e809869ae732cc( entity, eventref, eventscore, starttime, endtime )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1861,12 +1864,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x3694
     // Size: 0xa2, Type: dev
     function function_db2034a316b2f949( entity, score, eventcount )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1885,12 +1888,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x373e
     // Size: 0xf1, Type: dev
     function function_2f99c1774457a61a( entity, scene, reason )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1912,12 +1915,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x3837
     // Size: 0x90, Type: dev
     function function_6d136a77e61ca284( scene, text )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1933,12 +1936,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x38cf
     // Size: 0x92, Type: dev
     function function_eab0b74dcbef7e9c( scene )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1951,12 +1954,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3969
     // Size: 0x92, Type: dev
     function function_434562c57a231693( scene )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -1969,7 +1972,7 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3a03
     // Size: 0x122, Type: dev
     function function_81d753db205136b6( scene )
@@ -1986,7 +1989,7 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3b2d
     // Size: 0x81, Type: dev
     function function_14c0539b7a4ff13a( scene )
@@ -2002,7 +2005,7 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3bb6
     // Size: 0x11f, Type: dev
     function function_b4ccc30f6252a635( events )
@@ -2032,12 +2035,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3cdd
     // Size: 0x36, Type: dev
     function function_6e0f018a9e890127( waittime )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -2046,12 +2049,12 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3d1b
     // Size: 0x3c, Type: dev
     function function_1483fe96ec345b56( timesincelastarchive )
     {
-        if ( getdvarint( @"hash_ffd4a481b33d985a" ) == 0 )
+        if ( getdvarint( @"potg_debug_print" ) == 0 )
         {
             return;
         }
@@ -2060,7 +2063,7 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3d5f
     // Size: 0x175, Type: dev
     function function_a7465123c4bb2ec5()
@@ -2097,7 +2100,8 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
                     endid = int( max( 0, startid - displaycount - 1 ) );
                     texty = 400;
                     
-                    for (id = startid; id >= endid; id--) {
+                    for ( id = startid; id >= endid ; id-- )
+                    {
                         printtoscreen2d( 100, texty, self.var_2790de63f699069b[ id ], ( 1, 0.5, 0.7 ), 1.5 );
                         texty += 20;
                     }
@@ -2109,7 +2113,7 @@ function debug_logarchiveresult( result, scene, requesttime, finalstarttime, fin
     }
 
     // Namespace potg / scripts\mp\potg
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3edc
     // Size: 0x90, Type: dev
     function function_7fe17c62b2ba41a2( eventref )

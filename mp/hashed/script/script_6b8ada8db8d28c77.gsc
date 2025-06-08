@@ -12,7 +12,7 @@
 #namespace namespace_2b6fc7c256cafc0;
 
 // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1da
 // Size: 0x79
 function init()
@@ -299,7 +299,7 @@ function private setupprop( subnode )
 }
 
 // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8f1
 // Size: 0x12d
 function function_95faa2e34b9a63a9( subnode, var_9b044ef6110bc60f )
@@ -379,7 +379,7 @@ function private function_88d3ebef9894c114()
 }
 
 // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaef
 // Size: 0x3b
 function function_504f19b32802cb8d( scriptable, player, var_85e3240d30e184e7 )
@@ -393,7 +393,7 @@ function function_504f19b32802cb8d( scriptable, player, var_85e3240d30e184e7 )
 }
 
 // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb33
 // Size: 0x36
 function function_6416fb9a24d278b4( scriptable, player )
@@ -452,7 +452,7 @@ function private function_77b38d54acb385f2( door, player )
 /#
 
     // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xc6f
     // Size: 0xad, Type: dev
     function debug_doors()
@@ -488,7 +488,7 @@ function private function_77b38d54acb385f2( door, player )
     }
 
     // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xd24
     // Size: 0x166, Type: dev
     function function_b314668b145fe144()
@@ -525,7 +525,7 @@ function private function_77b38d54acb385f2( door, player )
     }
 
     // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe92
     // Size: 0x144, Type: dev
     function function_5808f7179c6a8a9d()
@@ -546,7 +546,7 @@ function private function_77b38d54acb385f2( door, player )
     }
 
     // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xfde
     // Size: 0x5a, Type: dev
     function function_656d643079457017( mainnodes )
@@ -558,7 +558,7 @@ function private function_77b38d54acb385f2( door, player )
     }
 
     // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1040
     // Size: 0x9b, Type: dev
     function function_7c1bf24c78f1b6db( mainnode )
@@ -582,7 +582,7 @@ function private function_77b38d54acb385f2( door, player )
     }
 
     // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x10e3
     // Size: 0xce, Type: dev
     function function_8e69a7b58eeff341()
@@ -607,7 +607,7 @@ function private function_77b38d54acb385f2( door, player )
     }
 
     // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x11b9
     // Size: 0xb7, Type: dev
     function function_bd85f751464c186d()
@@ -631,7 +631,7 @@ function private function_77b38d54acb385f2( door, player )
     }
 
     // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x1278
     // Size: 0x190, Type: dev
     function function_d4e7dd0e52999f80( mainnode, var_d785d83def2cb406, var_17b0e0732d31c8fb )
@@ -669,7 +669,7 @@ function private function_77b38d54acb385f2( door, player )
     }
 
     // Namespace namespace_2b6fc7c256cafc0 / namespace_74c5cf8e20fcae83
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x1410
     // Size: 0x2dc, Type: dev
     function function_203964a4bdac9656( node, nodename, mainnode, debugcolor, var_5f7a6434de19ecb, var_51a809d1653be858 )

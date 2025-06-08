@@ -21,14 +21,14 @@
 #namespace calloutmarkerping;
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x270a
+// Params 0
+// Checksum 0x0, Offset: 0x2716
 // Size: 0x70
 function calloutmarkerping_initcommon()
 {
     if ( !isdefined( level.brloottablename ) )
     {
-        level.brloottablename = getdvar( @"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv" );
+        level.brloottablename = getdvar( @"loot_table_name", "mp/loot/br/default/loot_item_defs.csv" );
         
         if ( level.brloottablename == "" )
         {
@@ -45,8 +45,8 @@ function calloutmarkerping_initcommon()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2782
+// Params 2
+// Checksum 0x0, Offset: 0x278e
 // Size: 0xa2
 function calloutmarkerping_enemytodangerdecaycreate( pingindex, targetingenemy )
 {
@@ -66,8 +66,8 @@ function calloutmarkerping_enemytodangerdecaycreate( pingindex, targetingenemy )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x282c
+// Params 1
+// Checksum 0x0, Offset: 0x2838
 // Size: 0x39
 function _calloutmarkerping_predicted_log( message )
 {
@@ -80,8 +80,8 @@ function _calloutmarkerping_predicted_log( message )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x286d
+// Params 1
+// Checksum 0x0, Offset: 0x2879
 // Size: 0x17, Type: bool
 function function_c648f0fd527e089a( pingtype )
 {
@@ -89,8 +89,8 @@ function function_c648f0fd527e089a( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x288d
+// Params 1
+// Checksum 0x0, Offset: 0x2899
 // Size: 0xf, Type: bool
 function function_810652bcec49286c( pingtype )
 {
@@ -98,8 +98,8 @@ function function_810652bcec49286c( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28a5
+// Params 1
+// Checksum 0x0, Offset: 0x28b1
 // Size: 0xf, Type: bool
 function function_5dacc89a40a58737( pingtype )
 {
@@ -107,8 +107,8 @@ function function_5dacc89a40a58737( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28bd
+// Params 1
+// Checksum 0x0, Offset: 0x28c9
 // Size: 0x17, Type: bool
 function function_476d89b12dfe07a1( pingtype )
 {
@@ -116,8 +116,8 @@ function function_476d89b12dfe07a1( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28dd
+// Params 1
+// Checksum 0x0, Offset: 0x28e9
 // Size: 0xf, Type: bool
 function function_caef0e7e004e5475( pingtype )
 {
@@ -125,8 +125,8 @@ function function_caef0e7e004e5475( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28f5
+// Params 1
+// Checksum 0x0, Offset: 0x2901
 // Size: 0x17, Type: bool
 function function_d3789a9a4be5df2e( pingtype )
 {
@@ -134,8 +134,8 @@ function function_d3789a9a4be5df2e( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2915
+// Params 1
+// Checksum 0x0, Offset: 0x2921
 // Size: 0xf, Type: bool
 function function_74ec310d8f99b6e2( pingtype )
 {
@@ -143,8 +143,8 @@ function function_74ec310d8f99b6e2( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x292d
+// Params 1
+// Checksum 0x0, Offset: 0x2939
 // Size: 0xf, Type: bool
 function function_2a301a38103bd61e( pingtype )
 {
@@ -152,8 +152,8 @@ function function_2a301a38103bd61e( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2945
+// Params 1
+// Checksum 0x0, Offset: 0x2951
 // Size: 0x17, Type: bool
 function function_666d78f715b8321f( pingtype )
 {
@@ -161,8 +161,8 @@ function function_666d78f715b8321f( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2965
+// Params 1
+// Checksum 0x0, Offset: 0x2971
 // Size: 0x17, Type: bool
 function function_87df78670540e9b2( pingtype )
 {
@@ -170,8 +170,8 @@ function function_87df78670540e9b2( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2985
+// Params 3
+// Checksum 0x0, Offset: 0x2991
 // Size: 0x320
 function function_d0006d07465a279c( pingindex, pingtype, scriptable )
 {
@@ -283,8 +283,8 @@ function function_d0006d07465a279c( pingindex, pingtype, scriptable )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cae
+// Params 1
+// Checksum 0x0, Offset: 0x2cba
 // Size: 0x5a
 function function_76ecf74c7d722b52( pingtype )
 {
@@ -292,7 +292,8 @@ function function_76ecf74c7d722b52( pingtype )
     
     if ( isdefined( player ) )
     {
-        for (pingindex = 0; pingindex < 10; pingindex++) {
+        for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+        {
             isowner = player function_1e008bf9d31b2b01( pingindex );
             
             if ( isowner && pingtype == player calloutmarkerping_gettype( pingindex ) )
@@ -304,8 +305,8 @@ function function_76ecf74c7d722b52( pingtype )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d10
+// Params 1
+// Checksum 0x0, Offset: 0x2d1c
 // Size: 0x5a
 function function_4e740f30357c2c3a( pingcategory )
 {
@@ -313,7 +314,8 @@ function function_4e740f30357c2c3a( pingcategory )
     
     if ( isdefined( player ) )
     {
-        for (pingindex = 0; pingindex < 10; pingindex++) {
+        for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+        {
             isowner = player function_1e008bf9d31b2b01( pingindex );
             
             if ( isowner && pingcategory == player function_dbea4c5599dd67de( pingindex ) )
@@ -325,8 +327,8 @@ function function_4e740f30357c2c3a( pingcategory )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d72
+// Params 1
+// Checksum 0x0, Offset: 0x2d7e
 // Size: 0x53c
 function _calloutmarkerping_predicted_timeout( pingindex )
 {
@@ -362,7 +364,7 @@ function _calloutmarkerping_predicted_timeout( pingindex )
                 }
                 else
                 {
-                    waittime = getdvarfloat( @"hash_eac22abe7a18c2d3", 3 );
+                    waittime = getdvarfloat( @"scr_calloutmarkerping_track_player_time", 3 );
                 }
                 
                 targetingenemy = ent;
@@ -506,14 +508,15 @@ function _calloutmarkerping_predicted_timeout( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32b6
+// Params 0
+// Checksum 0x0, Offset: 0x32c2
 // Size: 0x4c, Type: bool
 function _calloutmarkerping_predicted_isanypingactive()
 {
     player = self;
     
-    for (pingindex = 0; pingindex < 10; pingindex++) {
+    for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+    {
         isowner = player function_1e008bf9d31b2b01( pingindex );
         
         if ( isowner && player calloutmarkerping_getactive( pingindex ) )
@@ -527,7 +530,7 @@ function _calloutmarkerping_predicted_isanypingactive()
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x330b
+// Checksum 0x0, Offset: 0x3317
 // Size: 0x65
 function private function_5a0bc132b2dd3f65()
 {
@@ -549,8 +552,8 @@ function private function_5a0bc132b2dd3f65()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3378
+// Params 3
+// Checksum 0x0, Offset: 0x3384
 // Size: 0x202
 function function_a1d53ca27932b96d( notification, pingindex, optionalarg )
 {
@@ -622,8 +625,8 @@ function function_a1d53ca27932b96d( notification, pingindex, optionalarg )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3582
+// Params 0
+// Checksum 0x0, Offset: 0x358e
 // Size: 0x50
 function calloutmarkerping_initplayer()
 {
@@ -643,8 +646,8 @@ function calloutmarkerping_initplayer()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35da
+// Params 1
+// Checksum 0x0, Offset: 0x35e6
 // Size: 0x18
 function _calloutmarkerping_scriptableisusable( scriptableinstance )
 {
@@ -657,8 +660,8 @@ function _calloutmarkerping_scriptableisusable( scriptableinstance )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35fb
+// Params 1
+// Checksum 0x0, Offset: 0x3607
 // Size: 0x57, Type: bool
 function function_cb9269a1545ad6e4( ent )
 {
@@ -686,8 +689,8 @@ function function_cb9269a1545ad6e4( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x365b
+// Params 2
+// Checksum 0x0, Offset: 0x3667
 // Size: 0x83, Type: bool
 function _calloutmarkerping_isenemy( ent, player )
 {
@@ -715,8 +718,8 @@ function _calloutmarkerping_isenemy( ent, player )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e7
+// Params 2
+// Checksum 0x0, Offset: 0x36f3
 // Size: 0x4d, Type: bool
 function function_c48b4d371d6f08eb( ent, player )
 {
@@ -739,8 +742,8 @@ function function_c48b4d371d6f08eb( ent, player )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x373d
+// Params 2
+// Checksum 0x0, Offset: 0x3749
 // Size: 0x54
 function function_46c27491e08fed4e( ent, player )
 {
@@ -758,8 +761,8 @@ function function_46c27491e08fed4e( ent, player )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3799
+// Params 1
+// Checksum 0x0, Offset: 0x37a5
 // Size: 0x6c, Type: bool
 function _calloutmarkerping_isplunderextract( ent )
 {
@@ -782,8 +785,8 @@ function _calloutmarkerping_isplunderextract( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x380e
+// Params 1
+// Checksum 0x0, Offset: 0x381a
 // Size: 0xcf, Type: bool
 function _calloutmarkerping_isdropcrate( ent )
 {
@@ -811,8 +814,8 @@ function _calloutmarkerping_isdropcrate( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38e6
+// Params 1
+// Checksum 0x0, Offset: 0x38f2
 // Size: 0x41, Type: bool
 function calloutmarkerping_ismunitionsbox( ent )
 {
@@ -820,8 +823,8 @@ function calloutmarkerping_ismunitionsbox( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3930
+// Params 1
+// Checksum 0x0, Offset: 0x393c
 // Size: 0x2c, Type: bool
 function function_3c11e6303c59cb37( ent )
 {
@@ -829,8 +832,8 @@ function function_3c11e6303c59cb37( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3965
+// Params 1
+// Checksum 0x0, Offset: 0x3971
 // Size: 0x2c, Type: bool
 function function_ab2631f444db868( ent )
 {
@@ -838,8 +841,8 @@ function function_ab2631f444db868( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x399a
+// Params 1
+// Checksum 0x0, Offset: 0x39a6
 // Size: 0x2c, Type: bool
 function function_23c0a0bd88667b79( ent )
 {
@@ -847,8 +850,8 @@ function function_23c0a0bd88667b79( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x39cf
+// Params 1
+// Checksum 0x0, Offset: 0x39db
 // Size: 0x2c, Type: bool
 function function_faba04054d6e029a( ent )
 {
@@ -856,8 +859,8 @@ function function_faba04054d6e029a( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a04
+// Params 1
+// Checksum 0x0, Offset: 0x3a10
 // Size: 0x2c, Type: bool
 function function_3f392603242529ba( ent )
 {
@@ -865,8 +868,8 @@ function function_3f392603242529ba( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a39
+// Params 1
+// Checksum 0x0, Offset: 0x3a45
 // Size: 0x70
 function function_565809e0860e599b( ent )
 {
@@ -888,8 +891,8 @@ function function_565809e0860e599b( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ab1
+// Params 1
+// Checksum 0x0, Offset: 0x3abd
 // Size: 0x2c, Type: bool
 function function_2cb339fa2e8b1cfe( ent )
 {
@@ -897,8 +900,8 @@ function function_2cb339fa2e8b1cfe( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ae6
+// Params 1
+// Checksum 0x0, Offset: 0x3af2
 // Size: 0x31, Type: bool
 function function_32bfb4f432f417f( ent )
 {
@@ -906,8 +909,8 @@ function function_32bfb4f432f417f( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b20
+// Params 1
+// Checksum 0x0, Offset: 0x3b2c
 // Size: 0x31, Type: bool
 function function_a1b34a5b82e7a92e( ent )
 {
@@ -915,8 +918,8 @@ function function_a1b34a5b82e7a92e( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b5a
+// Params 1
+// Checksum 0x0, Offset: 0x3b66
 // Size: 0x35, Type: bool
 function _calloutmarkerping_iskiosk( ent )
 {
@@ -939,8 +942,8 @@ function _calloutmarkerping_iskiosk( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b98
+// Params 1
+// Checksum 0x0, Offset: 0x3ba4
 // Size: 0x88, Type: bool
 function function_abff9f14e6d75a76( ent )
 {
@@ -963,8 +966,8 @@ function function_abff9f14e6d75a76( ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c29
+// Params 2
+// Checksum 0x0, Offset: 0x3c35
 // Size: 0x58, Type: bool
 function calloutmarkerping_canplayerping( player, var_f1c1336c7bbe5fe0 )
 {
@@ -992,8 +995,8 @@ function calloutmarkerping_canplayerping( player, var_f1c1336c7bbe5fe0 )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c8a
+// Params 1
+// Checksum 0x0, Offset: 0x3c96
 // Size: 0xba
 function function_3087d1219984f7f1( lootid )
 {
@@ -1018,8 +1021,8 @@ function function_3087d1219984f7f1( lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d4d
+// Params 1
+// Checksum 0x0, Offset: 0x3d59
 // Size: 0x1ab
 function function_442948452e540d3e( lootid )
 {
@@ -1082,8 +1085,8 @@ function function_442948452e540d3e( lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f00
+// Params 1
+// Checksum 0x0, Offset: 0x3f0c
 // Size: 0x282
 function function_d1c8c0f877165808( lootid )
 {
@@ -1166,8 +1169,8 @@ function function_d1c8c0f877165808( lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x418a
+// Params 1
+// Checksum 0x0, Offset: 0x4196
 // Size: 0x23d
 function function_40a8426c1f049004( lootid )
 {
@@ -1241,8 +1244,8 @@ function function_40a8426c1f049004( lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43cf
+// Params 1
+// Checksum 0x0, Offset: 0x43db
 // Size: 0x3a0
 function function_f4293e5a97e51d76( lootid )
 {
@@ -1347,8 +1350,8 @@ function function_f4293e5a97e51d76( lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4777
+// Params 2
+// Checksum 0x0, Offset: 0x4783
 // Size: 0x98
 function function_2f7ac61ee301ea30( assetid, lootid )
 {
@@ -1370,8 +1373,8 @@ function function_2f7ac61ee301ea30( assetid, lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4817
+// Params 1
+// Checksum 0x0, Offset: 0x4823
 // Size: 0x203
 function function_1e8231aee9e6076b( var_41a4a181b6606b16 )
 {
@@ -1422,7 +1425,7 @@ function function_1e8231aee9e6076b( var_41a4a181b6606b16 )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x4a23
+// Checksum 0x0, Offset: 0x4a2f
 // Size: 0xc9
 function private function_b2c7cf2679976cc2( var_41a4a181b6606b16, object )
 {
@@ -1450,8 +1453,8 @@ function private function_b2c7cf2679976cc2( var_41a4a181b6606b16, object )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4af4
+// Params 3
+// Checksum 0x0, Offset: 0x4b00
 // Size: 0x81
 function function_22a98596c2f7f9ef( object, player, lootid )
 {
@@ -1482,8 +1485,8 @@ function function_22a98596c2f7f9ef( object, player, lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b7e
+// Params 3
+// Checksum 0x0, Offset: 0x4b8a
 // Size: 0xc8
 function function_6a4a22b07cd4a96f( object, team, lootid )
 {
@@ -1503,8 +1506,8 @@ function function_6a4a22b07cd4a96f( object, team, lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c4f
+// Params 0
+// Checksum 0x0, Offset: 0x4c5b
 // Size: 0xec
 function function_faa3cbec7243fe72()
 {
@@ -1535,8 +1538,8 @@ function function_faa3cbec7243fe72()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d43
+// Params 1
+// Checksum 0x0, Offset: 0x4d4f
 // Size: 0xa2
 function function_6c9b8f9429b7fdca( team )
 {
@@ -1551,8 +1554,8 @@ function function_6c9b8f9429b7fdca( team )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ded
+// Params 3
+// Checksum 0x0, Offset: 0x4df9
 // Size: 0x143, Type: bool
 function function_a3cb3fa19d3d1d11( pingobject, var_41a4a181b6606b16, pinglootid )
 {
@@ -1588,8 +1591,8 @@ function function_a3cb3fa19d3d1d11( pingobject, var_41a4a181b6606b16, pinglootid
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f39
+// Params 2
+// Checksum 0x0, Offset: 0x4f45
 // Size: 0x1e8
 function function_1ced737a22161a49( var_41a4a181b6606b16, lootid )
 {
@@ -1641,8 +1644,8 @@ function function_1ced737a22161a49( var_41a4a181b6606b16, lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5129
+// Params 2
+// Checksum 0x0, Offset: 0x5135
 // Size: 0x73
 function function_6b813a30256c8bc7( var_41a4a181b6606b16, lootid )
 {
@@ -1662,8 +1665,8 @@ function function_6b813a30256c8bc7( var_41a4a181b6606b16, lootid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x51a4
+// Params 1
+// Checksum 0x0, Offset: 0x51b0
 // Size: 0x62
 function _calloutmarkerping_checkforbuybackrequest( pingindex )
 {
@@ -1692,8 +1695,8 @@ function _calloutmarkerping_checkforbuybackrequest( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x520e
+// Params 2
+// Checksum 0x0, Offset: 0x521a
 // Size: 0x5c
 function function_2ecdd6eb53bbd808( pingtype, pingindex )
 {
@@ -1710,8 +1713,8 @@ function function_2ecdd6eb53bbd808( pingtype, pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5272
+// Params 1
+// Checksum 0x0, Offset: 0x527e
 // Size: 0x238
 function calloutmarkerpingvo_createcalloutbattlechatter( pingindex )
 {
@@ -1804,8 +1807,8 @@ function calloutmarkerpingvo_createcalloutbattlechatter( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54b2
+// Params 1
+// Checksum 0x0, Offset: 0x54be
 // Size: 0x175
 function _calloutmarkerping_onpingchallenge( pingindex )
 {
@@ -1867,8 +1870,8 @@ function _calloutmarkerping_onpingchallenge( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x562f
+// Params 1
+// Checksum 0x0, Offset: 0x563b
 // Size: 0xb17
 function calloutmarkerpingvo_getcalloutaliasstringentity( var_7a5b847ea66815f )
 {
@@ -2291,8 +2294,8 @@ function calloutmarkerpingvo_getcalloutaliasstringentity( var_7a5b847ea66815f )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x614f
+// Params 2
+// Checksum 0x0, Offset: 0x615b
 // Size: 0x743
 function function_f9aa0f44521459d7( pingindex, var_c1074ab6cac2169f )
 {
@@ -2468,8 +2471,8 @@ function function_f9aa0f44521459d7( pingindex, var_c1074ab6cac2169f )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x689b
+// Params 1
+// Checksum 0x0, Offset: 0x68a7
 // Size: 0x2ea
 function calloutmarkerpingvo_getcalloutaliasstringvehicle( var_7a5b847ea66815f )
 {
@@ -2586,8 +2589,8 @@ function calloutmarkerpingvo_getcalloutaliasstringvehicle( var_7a5b847ea66815f )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b8d
+// Params 2
+// Checksum 0x0, Offset: 0x6b99
 // Size: 0x676
 function function_e57c4849c7935da( ent, player )
 {
@@ -2826,8 +2829,8 @@ function function_e57c4849c7935da( ent, player )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x720c
+// Params 1
+// Checksum 0x0, Offset: 0x7218
 // Size: 0x625
 function calloutmarkerpingvo_getcalloutaliasstringworld( pingindex )
 {
@@ -2999,8 +3002,8 @@ function calloutmarkerpingvo_getcalloutaliasstringworld( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x783a
+// Params 1
+// Checksum 0x0, Offset: 0x7846
 // Size: 0x76
 function function_d7fb39f0e6e8f752( scriptablename )
 {
@@ -3019,8 +3022,8 @@ function function_d7fb39f0e6e8f752( scriptablename )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x78b9
+// Params 2
+// Checksum 0x0, Offset: 0x78c5
 // Size: 0x2e5
 function calloutmarkerpingvo_getcalloutaliasstringloot( pingindex, var_394382528911801d )
 {
@@ -3130,8 +3133,8 @@ function calloutmarkerpingvo_getcalloutaliasstringloot( pingindex, var_394382528
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ba7
+// Params 3
+// Checksum 0x0, Offset: 0x7bb3
 // Size: 0x26c
 function function_abc85f8465a92be8( var_869d699197f920a2, var_394382528911801d, player )
 {
@@ -3224,8 +3227,8 @@ function function_abc85f8465a92be8( var_869d699197f920a2, var_394382528911801d, 
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e1c
+// Params 1
+// Checksum 0x0, Offset: 0x7e28
 // Size: 0x2dc
 function function_8d17e607a79fd65f( weaponname )
 {
@@ -3306,8 +3309,8 @@ function function_8d17e607a79fd65f( weaponname )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8100
+// Params 1
+// Checksum 0x0, Offset: 0x810c
 // Size: 0x91
 function function_9bb1120b45cfa775( pingindex )
 {
@@ -3343,8 +3346,8 @@ function function_9bb1120b45cfa775( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x819a
+// Params 1
+// Checksum 0x0, Offset: 0x81a6
 // Size: 0x13d
 function function_befa2cbd9d478179( pingindex )
 {
@@ -3395,8 +3398,8 @@ function function_befa2cbd9d478179( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x82e0
+// Params 3
+// Checksum 0x0, Offset: 0x82ec
 // Size: 0x403
 function calloutmarkerpingvo_getaffirmaliasstringloot( pingindex, var_394382528911801d, var_dfb9f3c233e2b8f3 )
 {
@@ -3521,8 +3524,8 @@ function calloutmarkerpingvo_getaffirmaliasstringloot( pingindex, var_3943825289
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x86ec
+// Params 4
+// Checksum 0x0, Offset: 0x86f8
 // Size: 0xda
 function calloutmarkerping_createcallout( pingtype, pingorigin, objectid, lootid )
 {
@@ -3558,8 +3561,8 @@ function calloutmarkerping_createcallout( pingtype, pingorigin, objectid, lootid
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x87ce
+// Params 1
+// Checksum 0x0, Offset: 0x87da
 // Size: 0xd6
 function calloutmarkerping_removecallout( pingindex )
 {
@@ -3603,8 +3606,8 @@ function calloutmarkerping_removecallout( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x88ac
+// Params 5
+// Checksum 0x0, Offset: 0x88b8
 // Size: 0xd5
 function function_9a7200f5142066ba( player, pingindex, endonnotifies, waittillnotifies, waittilltimeout )
 {
@@ -3642,8 +3645,8 @@ function function_9a7200f5142066ba( player, pingindex, endonnotifies, waittillno
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8989
+// Params 3
+// Checksum 0x0, Offset: 0x8995
 // Size: 0xd4
 function function_6bc4f6b579285f79( player, var_8c7d921795d81e3, var_2229564b4895f551 )
 {
@@ -3673,8 +3676,8 @@ function function_6bc4f6b579285f79( player, var_8c7d921795d81e3, var_2229564b489
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a65
+// Params 1
+// Checksum 0x0, Offset: 0x8a71
 // Size: 0x9b
 function function_cd96f73dbca496b8( objid )
 {
@@ -3695,8 +3698,8 @@ function function_cd96f73dbca496b8( objid )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b08
+// Params 2
+// Checksum 0x0, Offset: 0x8b14
 // Size: 0x92
 function calloutmarkerping_watchwhenobjectivestartsprogress( pingindex, gscobjectiveid )
 {
@@ -3719,8 +3722,8 @@ function calloutmarkerping_watchwhenobjectivestartsprogress( pingindex, gscobjec
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ba2
+// Params 2
+// Checksum 0x0, Offset: 0x8bae
 // Size: 0x86
 function calloutmarkerping_watchwhenobjectivedeleted( pingindex, gscobjectiveid )
 {
@@ -3743,9 +3746,9 @@ function calloutmarkerping_watchwhenobjectivedeleted( pingindex, gscobjectiveid 
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c30
-// Size: 0x171
+// Params 2
+// Checksum 0x0, Offset: 0x8c3c
+// Size: 0x176
 function function_632cc7f8cbf11ae1( pingindex, ent )
 {
     assertex( isplayer( self ), "<dev string:x48>" + "<dev string:x510>" );
@@ -3766,7 +3769,7 @@ function function_632cc7f8cbf11ae1( pingindex, ent )
     
     if ( isplayer( ent ) )
     {
-        val = ent waittill_any_return_2( "death", "disconnect" );
+        val = ent waittill_any_return_3( "death", "faux_dead", "disconnect" );
         
         if ( isdefined( level.gamemodebundle ) && !istrue( level.gamemodebundle.var_dd7fbece86363b3f ) || val == "disconnect" )
         {
@@ -3805,8 +3808,8 @@ function function_632cc7f8cbf11ae1( pingindex, ent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8da9
+// Params 1
+// Checksum 0x0, Offset: 0x8dba
 // Size: 0x1c7
 function calloutmarkerping_watchplayerdeathordisconnect( pingindex )
 {
@@ -3866,8 +3869,8 @@ function calloutmarkerping_watchplayerdeathordisconnect( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f78
+// Params 1
+// Checksum 0x0, Offset: 0x8f89
 // Size: 0x59
 function function_1efe712c746d3ca1( pingindex )
 {
@@ -3880,8 +3883,8 @@ function function_1efe712c746d3ca1( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fd9
+// Params 2
+// Checksum 0x0, Offset: 0x8fea
 // Size: 0x1ba
 function calloutmarkerping_watchscriptabledeath( pingindex, scriptableinstance )
 {
@@ -3928,8 +3931,8 @@ function calloutmarkerping_watchscriptabledeath( pingindex, scriptableinstance )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x919b
+// Params 1
+// Checksum 0x0, Offset: 0x91ac
 // Size: 0x19
 function calloutmarkerping_onplayerdisconnect( player )
 {
@@ -3942,8 +3945,8 @@ function calloutmarkerping_onplayerdisconnect( player )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91bc
+// Params 0
+// Checksum 0x0, Offset: 0x91cd
 // Size: 0x4b
 function calloutmarkerping_removeallcalloutsforplayer()
 {
@@ -3951,7 +3954,8 @@ function calloutmarkerping_removeallcalloutsforplayer()
     
     if ( isdefined( player ) )
     {
-        for (pingindex = 0; pingindex < 10; pingindex++) {
+        for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+        {
             isowner = player function_1e008bf9d31b2b01( pingindex );
             
             if ( isowner )
@@ -3963,8 +3967,8 @@ function calloutmarkerping_removeallcalloutsforplayer()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x920f
+// Params 0
+// Checksum 0x0, Offset: 0x9220
 // Size: 0x6b
 function function_2824a97eea0ae1f2()
 {
@@ -3979,8 +3983,8 @@ function function_2824a97eea0ae1f2()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9282
+// Params 1
+// Checksum 0x0, Offset: 0x9293
 // Size: 0x7c
 function calloutmarkerping_removeallcalloutsforallplayers( var_884a98392ce1109b )
 {
@@ -4003,8 +4007,8 @@ function calloutmarkerping_removeallcalloutsforallplayers( var_884a98392ce1109b 
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9306
+// Params 2
+// Checksum 0x0, Offset: 0x9317
 // Size: 0xd6
 function calloutmarkerpingvo_calculatesounddebouncelength( pingtype, var_e64b7437e7151a62 )
 {
@@ -4045,8 +4049,8 @@ function calloutmarkerpingvo_calculatesounddebouncelength( pingtype, var_e64b743
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x93e4
+// Params 1
+// Checksum 0x0, Offset: 0x93f5
 // Size: 0x51, Type: bool
 function function_bb7fe8982d035c10( var_9090af2a5c319a58 )
 {
@@ -4063,8 +4067,8 @@ function function_bb7fe8982d035c10( var_9090af2a5c319a58 )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x943e
+// Params 4
+// Checksum 0x0, Offset: 0x944f
 // Size: 0x10b, Type: bool
 function calloutmarkerpingvo_handleraddnewelement( pingtype, currtime, var_9090af2a5c319a58, var_e64b7437e7151a62 )
 {
@@ -4093,8 +4097,8 @@ function calloutmarkerpingvo_handleraddnewelement( pingtype, currtime, var_9090a
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9552
+// Params 3
+// Checksum 0x0, Offset: 0x9563
 // Size: 0x173
 function calloutmarkerpingvo_canplaywithspamavoidance( pingtype, voalias, var_e64b7437e7151a62 )
 {
@@ -4150,8 +4154,8 @@ function calloutmarkerpingvo_canplaywithspamavoidance( pingtype, voalias, var_e6
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x96cd
+// Params 0
+// Checksum 0x0, Offset: 0x96de
 // Size: 0x116
 function calloutmarkerpingvo_debouncegarbagecollector()
 {
@@ -4163,7 +4167,8 @@ function calloutmarkerpingvo_debouncegarbagecollector()
         wait 10;
         currenttime = gettime();
         
-        for (currentplayerindex = 0; currentplayerindex < level.players.size; currentplayerindex++) {
+        for ( currentplayerindex = 0; currentplayerindex < level.players.size ; currentplayerindex++ )
+        {
             player = level.players[ currentplayerindex ];
             
             if ( !isdefined( player ) || !isdefined( player.calloutmarkerpingvohandlerpool ) )
@@ -4187,8 +4192,8 @@ function calloutmarkerpingvo_debouncegarbagecollector()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x97eb
+// Params 4
+// Checksum 0x0, Offset: 0x97fc
 // Size: 0x67
 function calloutmarkerpingvo_getmaxsoundaliaslength( var_c197335aad9f5e31, alias2d, var_c1934d5aad9ba188, alias3d )
 {
@@ -4218,8 +4223,8 @@ function calloutmarkerpingvo_getmaxsoundaliaslength( var_c197335aad9f5e31, alias
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x985b
+// Params 2
+// Checksum 0x0, Offset: 0x986c
 // Size: 0x20c
 function calloutmarkerping_playteamsoundfx( alias, pingindex )
 {
@@ -4293,8 +4298,8 @@ function calloutmarkerping_playteamsoundfx( alias, pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a6f
+// Params 1
+// Checksum 0x0, Offset: 0x9a80
 // Size: 0x85
 function calloutmarkerpingvo_getfulloperatorvoaliasfromsimplealias2d( var_5bb586139a747c1c )
 {
@@ -4311,8 +4316,8 @@ function calloutmarkerpingvo_getfulloperatorvoaliasfromsimplealias2d( var_5bb586
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9afd
+// Params 1
+// Checksum 0x0, Offset: 0x9b0e
 // Size: 0x85
 function calloutmarkerpingvo_getfulloperatorvoaliasfromsimplealias3d( var_5bb586139a747c1c )
 {
@@ -4329,8 +4334,8 @@ function calloutmarkerpingvo_getfulloperatorvoaliasfromsimplealias3d( var_5bb586
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b8b
+// Params 3
+// Checksum 0x0, Offset: 0x9b9c
 // Size: 0x1d1
 function calloutmarkerpingvo_play( voalias, pingtype, targetent )
 {
@@ -4391,8 +4396,8 @@ function calloutmarkerpingvo_play( voalias, pingtype, targetent )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d64
+// Params 1
+// Checksum 0x0, Offset: 0x9d75
 // Size: 0x205
 function calloutmarkerping_navigationcancelproximity( pingindex )
 {
@@ -4452,8 +4457,8 @@ function calloutmarkerping_navigationcancelproximity( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f71
+// Params 3
+// Checksum 0x0, Offset: 0x9f82
 // Size: 0x8e
 function calloutmarkerpingvo_playpredictivepingcleared( pingindex, pingtype, var_dfb9f3c233e2b8f3 )
 {
@@ -4476,8 +4481,8 @@ function calloutmarkerpingvo_playpredictivepingcleared( pingindex, pingtype, var
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa007
+// Params 2
+// Checksum 0x0, Offset: 0xa018
 // Size: 0x3c
 function calloutmarkerpingvo_playpredictivepingacknowledgedcancel( pingindex, var_dfb9f3c233e2b8f3 )
 {
@@ -4487,8 +4492,8 @@ function calloutmarkerpingvo_playpredictivepingacknowledgedcancel( pingindex, va
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa04b
+// Params 2
+// Checksum 0x0, Offset: 0xa05c
 // Size: 0x2a8
 function calloutmarkerpingvo_playpredictivepingacknowledged( pingindex, var_dfb9f3c233e2b8f3 )
 {
@@ -4593,8 +4598,8 @@ function calloutmarkerpingvo_playpredictivepingacknowledged( pingindex, var_dfb9
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2fb
+// Params 1
+// Checksum 0x0, Offset: 0xa30c
 // Size: 0x59
 function calloutmarkerpingvo_playpredictivepingadded( pingindex )
 {
@@ -4612,8 +4617,8 @@ function calloutmarkerpingvo_playpredictivepingadded( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa35c
+// Params 2
+// Checksum 0x0, Offset: 0xa36d
 // Size: 0x186
 function calloutmarkerping_removevehiclecalloutonspecialconditions( pingindex, calloutvehicleentity )
 {
@@ -4677,8 +4682,8 @@ function calloutmarkerping_removevehiclecalloutonspecialconditions( pingindex, c
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4ea
+// Params 2
+// Checksum 0x0, Offset: 0xa4fb
 // Size: 0x58
 function function_3462378d38b69cc8( timeout, string1 )
 {
@@ -4696,8 +4701,8 @@ function function_3462378d38b69cc8( timeout, string1 )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa54b
+// Params 3
+// Checksum 0x0, Offset: 0xa55c
 // Size: 0xd4, Type: bool
 function _calloutmarkerping_shouldremovecalloutifwholesquadinvehicle( pingindex, calloutvehicleentity, pingownerteam )
 {
@@ -4723,8 +4728,8 @@ function _calloutmarkerping_shouldremovecalloutifwholesquadinvehicle( pingindex,
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa628
+// Params 2
+// Checksum 0x0, Offset: 0xa639
 // Size: 0xa1, Type: bool
 function _calloutmarkerping_isvehicleoccupiedbyenemy( calloutvehicleentity, pingownerteam )
 {
@@ -4740,8 +4745,8 @@ function _calloutmarkerping_isvehicleoccupiedbyenemy( calloutvehicleentity, ping
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6d2
+// Params 4
+// Checksum 0x0, Offset: 0xa6e3
 // Size: 0x251
 function function_6a9d273f570c2d97( pingindex, var_3fbb10d80249baac, cancelreason, var_f713679ecb32c725 )
 {
@@ -4819,8 +4824,8 @@ function function_6a9d273f570c2d97( pingindex, var_3fbb10d80249baac, cancelreaso
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa92b
+// Params 1
+// Checksum 0x0, Offset: 0xa93c
 // Size: 0x118
 function function_a74e2d6a089bd337( pingindex )
 {
@@ -4862,8 +4867,8 @@ function function_a74e2d6a089bd337( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa4b
+// Params 0
+// Checksum 0x0, Offset: 0xaa5c
 // Size: 0x5e
 function function_a366e9660606bff8()
 {
@@ -4871,7 +4876,8 @@ function function_a366e9660606bff8()
     
     if ( isdefined( pingowner ) )
     {
-        for (pingindex = 0; pingindex < 10; pingindex++) {
+        for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+        {
             isowner = pingowner function_1e008bf9d31b2b01( pingindex );
             
             if ( isowner && pingowner calloutmarkerping_getactive( pingindex ) )
@@ -4883,8 +4889,8 @@ function function_a366e9660606bff8()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaab1
+// Params 0
+// Checksum 0x0, Offset: 0xaac2
 // Size: 0xf6
 function function_84d886d05e080f81()
 {
@@ -4899,7 +4905,8 @@ function function_84d886d05e080f81()
         {
             if ( pingowner != player )
             {
-                for (pingindex = 0; pingindex < 10; pingindex++) {
+                for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+                {
                     isowner = pingowner function_1e008bf9d31b2b01( pingindex );
                     
                     if ( isowner && pingowner calloutmarkerping_getactive( pingindex ) )
@@ -4913,8 +4920,8 @@ function function_84d886d05e080f81()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xabaf
+// Params 2
+// Checksum 0x0, Offset: 0xabc0
 // Size: 0x12d
 function function_317d089ea4ed0a21( pingtype, reason )
 {
@@ -4946,8 +4953,8 @@ function function_317d089ea4ed0a21( pingtype, reason )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xace4
+// Params 1
+// Checksum 0x0, Offset: 0xacf5
 // Size: 0x43, Type: bool
 function function_1e008bf9d31b2b01( pingindex )
 {
@@ -4965,7 +4972,7 @@ function function_1e008bf9d31b2b01( pingindex )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0xad30
+// Checksum 0x0, Offset: 0xad41
 // Size: 0x73
 function private function_49dc8767adf81886( pingindex, pingtype, issilent )
 {
@@ -4984,7 +4991,7 @@ function private function_49dc8767adf81886( pingindex, pingtype, issilent )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xadab
+// Checksum 0x0, Offset: 0xadbc
 // Size: 0xce
 function private function_45be7f9c916948b6( pingindex, var_60fdfb1cfd734d00 )
 {
@@ -5008,7 +5015,7 @@ function private function_45be7f9c916948b6( pingindex, var_60fdfb1cfd734d00 )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xae81
+// Checksum 0x0, Offset: 0xae92
 // Size: 0x58
 function private function_85bd27e859eec16c( pingindex, var_60fdfb1cfd734d00 )
 {
@@ -5021,7 +5028,7 @@ function private function_85bd27e859eec16c( pingindex, var_60fdfb1cfd734d00 )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xaee1
+// Checksum 0x0, Offset: 0xaef2
 // Size: 0x30
 function private function_86767e1fccad74f1()
 {
@@ -5035,7 +5042,7 @@ function private function_86767e1fccad74f1()
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xaf1a
+// Checksum 0x0, Offset: 0xaf2b
 // Size: 0xeb
 function private function_2a664ee5c40e868c( pingindex )
 {
@@ -5077,8 +5084,8 @@ function private function_2a664ee5c40e868c( pingindex )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb00d
+// Params 1
+// Checksum 0x0, Offset: 0xb01e
 // Size: 0x13
 function function_5991bc039b1244ec( player )
 {
@@ -5087,7 +5094,7 @@ function function_5991bc039b1244ec( player )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xb028
+// Checksum 0x0, Offset: 0xb039
 // Size: 0xba
 function private function_f9a23942c0cd9461( pingowner, pingtype )
 {
@@ -5114,7 +5121,7 @@ function private function_f9a23942c0cd9461( pingowner, pingtype )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xb0ea
+// Checksum 0x0, Offset: 0xb0fb
 // Size: 0x69
 function private function_5d665c2bc1e250fa( pingindex )
 {
@@ -5128,7 +5135,7 @@ function private function_5d665c2bc1e250fa( pingindex )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xb15b
+// Checksum 0x0, Offset: 0xb16c
 // Size: 0x48
 function private function_99811a65af9a351()
 {
@@ -5147,7 +5154,7 @@ function private function_99811a65af9a351()
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xb1ab
+// Checksum 0x0, Offset: 0xb1bc
 // Size: 0x1f
 function private function_8a6d3325d2046682()
 {
@@ -5157,8 +5164,8 @@ function private function_8a6d3325d2046682()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1d2
+// Params 1
+// Checksum 0x0, Offset: 0xb1e3
 // Size: 0x77
 function function_7a87e3b6a7645c79( var_9b55b6a174c841ef )
 {
@@ -5180,7 +5187,7 @@ function function_7a87e3b6a7645c79( var_9b55b6a174c841ef )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xb252
+// Checksum 0x0, Offset: 0xb263
 // Size: 0x163
 function private function_5418b333a8e1cf76( var_9b55b6a174c841ef )
 {
@@ -5233,8 +5240,8 @@ function private function_5418b333a8e1cf76( var_9b55b6a174c841ef )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3bd
+// Params 1
+// Checksum 0x0, Offset: 0xb3ce
 // Size: 0x25
 function function_6b9641d0060c3a2c( target )
 {
@@ -5243,8 +5250,8 @@ function function_6b9641d0060c3a2c( target )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3ea
+// Params 5
+// Checksum 0x0, Offset: 0xb3fb
 // Size: 0x17d
 function function_ffd6eed18c767472( oldtarget, newtarget, var_7b11fc99302d2789, var_7b24d2e62b387965, var_c313310ef3c37a7e )
 {
@@ -5297,8 +5304,8 @@ function function_ffd6eed18c767472( oldtarget, newtarget, var_7b11fc99302d2789, 
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb56f
+// Params 1
+// Checksum 0x0, Offset: 0xb580
 // Size: 0x2c
 function function_c068efdf0abd5258( target )
 {
@@ -5308,8 +5315,8 @@ function function_c068efdf0abd5258( target )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5a3
+// Params 2
+// Checksum 0x0, Offset: 0xb5b4
 // Size: 0x52a
 function function_1062f2af5c7d843e( scriptablename, weaponobj )
 {
@@ -5468,8 +5475,8 @@ function function_1062f2af5c7d843e( scriptablename, weaponobj )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xbad5
+// Params 2
+// Checksum 0x0, Offset: 0xbae6
 // Size: 0xaf
 function function_47990577bda08bb4( player, var_24cf8955fecf23ac )
 {
@@ -5482,7 +5489,8 @@ function function_47990577bda08bb4( player, var_24cf8955fecf23ac )
     {
         if ( pingowner != player )
         {
-            for (pingindex = 0; pingindex < 10; pingindex++) {
+            for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+            {
                 isowner = pingowner function_1e008bf9d31b2b01( pingindex );
                 
                 if ( isowner && pingowner calloutmarkerping_getactive( pingindex ) )
@@ -5495,8 +5503,8 @@ function function_47990577bda08bb4( player, var_24cf8955fecf23ac )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb8c
+// Params 2
+// Checksum 0x0, Offset: 0xbb9d
 // Size: 0xaf
 function function_3d92221d673d555c( player, var_7a36c6d035ca56e5 )
 {
@@ -5509,7 +5517,8 @@ function function_3d92221d673d555c( player, var_7a36c6d035ca56e5 )
     {
         if ( pingowner != player )
         {
-            for (pingindex = 0; pingindex < 10; pingindex++) {
+            for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+            {
                 isowner = pingowner function_1e008bf9d31b2b01( pingindex );
                 
                 if ( isowner && pingowner calloutmarkerping_getactive( pingindex ) )
@@ -5523,7 +5532,7 @@ function function_3d92221d673d555c( player, var_7a36c6d035ca56e5 )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xbc43
+// Checksum 0x0, Offset: 0xbc54
 // Size: 0x3d, Type: bool
 function private function_f956b46f8e151d30( pingowner, pingindex )
 {
@@ -5539,7 +5548,7 @@ function private function_f956b46f8e151d30( pingowner, pingindex )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0xbc89
+// Checksum 0x0, Offset: 0xbc9a
 // Size: 0x86, Type: bool
 function private function_49cdea45f60452c8( pingowner, pingindex, oldtarget )
 {
@@ -5555,7 +5564,7 @@ function private function_49cdea45f60452c8( pingowner, pingindex, oldtarget )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xbd18
+// Checksum 0x0, Offset: 0xbd29
 // Size: 0x9f
 function private function_caadd21a226bf96( pingowner, pingindex )
 {
@@ -5576,11 +5585,12 @@ function private function_caadd21a226bf96( pingowner, pingindex )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xbdbf
+// Checksum 0x0, Offset: 0xbdd0
 // Size: 0x4f
 function private function_8c4b1d9591dc12ab( pingowner )
 {
-    for (pingindex = 0; pingindex < 10; pingindex++) {
+    for ( pingindex = 0; pingindex < 10 ; pingindex++ )
+    {
         isowner = pingowner function_1e008bf9d31b2b01( pingindex );
         
         if ( isowner && pingowner calloutmarkerping_getactive( pingindex ) )
@@ -5592,7 +5602,7 @@ function private function_8c4b1d9591dc12ab( pingowner )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xbe16
+// Checksum 0x0, Offset: 0xbe27
 // Size: 0x94
 function private function_ec3fedcb7195cfd7( pingowner, pingindex )
 {
@@ -5613,7 +5623,7 @@ function private function_ec3fedcb7195cfd7( pingowner, pingindex )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xbeb2
+// Checksum 0x0, Offset: 0xbec3
 // Size: 0x9c
 function private function_b6cb97b6f81f0fd2( pingowner, pingindex )
 {
@@ -5638,7 +5648,7 @@ function private function_b6cb97b6f81f0fd2( pingowner, pingindex )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xbf57
+// Checksum 0x0, Offset: 0xbf68
 // Size: 0xfa, Type: bool
 function private function_53ebc25dcfe48d00( player, objid )
 {
@@ -5673,7 +5683,7 @@ function private function_53ebc25dcfe48d00( player, objid )
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc05a
+// Checksum 0x0, Offset: 0xc06b
 // Size: 0x90, Type: bool
 function private function_a23877559a8e22e8()
 {
@@ -5688,7 +5698,7 @@ function private function_a23877559a8e22e8()
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc0f3
+// Checksum 0x0, Offset: 0xc104
 // Size: 0xe, Type: bool
 function private function_6641a5b759148e1b()
 {
@@ -5696,8 +5706,8 @@ function private function_6641a5b759148e1b()
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc10a
+// Params 3
+// Checksum 0x0, Offset: 0xc11b
 // Size: 0x28f
 function function_ce5c3314571d6a29( pingindex, pingtype, scriptable )
 {
@@ -5769,8 +5779,8 @@ function function_ce5c3314571d6a29( pingindex, pingtype, scriptable )
 }
 
 // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3a2
+// Params 1
+// Checksum 0x0, Offset: 0xc3b3
 // Size: 0x45
 function function_3bc031ab2f635f8c( lootid )
 {
@@ -5793,8 +5803,8 @@ function function_3bc031ab2f635f8c( lootid )
 /#
 
     // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc3f0
+    // Params 0
+    // Checksum 0x0, Offset: 0xc401
     // Size: 0x36, Type: dev
     function function_c35cbd50adbcd4fd()
     {
@@ -5807,7 +5817,7 @@ function function_3bc031ab2f635f8c( lootid )
 
     // Namespace calloutmarkerping / scripts\cp_mp\calloutmarkerping
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0xc42e
+    // Checksum 0x0, Offset: 0xc43f
     // Size: 0xa1, Type: dev
     function private function_36b4f023a49e3ff3()
     {

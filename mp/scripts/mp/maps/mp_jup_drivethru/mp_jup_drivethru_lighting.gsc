@@ -6,7 +6,7 @@
 #namespace mp_jup_drivethru_lighting;
 
 // Namespace mp_jup_drivethru_lighting / scripts\mp\maps\mp_jup_drivethru\mp_jup_drivethru_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x125
 // Size: 0x3a
 function main()

@@ -8,7 +8,7 @@
 #namespace script_funcs;
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3d7
 // Size: 0x1cb
 function civilian_init( asmname, statename, params )
@@ -58,7 +58,7 @@ function civilian_init( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5aa
 // Size: 0x27
 function initscriptable()
@@ -69,7 +69,7 @@ function initscriptable()
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d9
 // Size: 0xff
 function initanimspeedthresholds_civilian( animsetname )
@@ -112,7 +112,7 @@ function initanimspeedthresholds_civilian( animsetname )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6e0
 // Size: 0xa1
 function chooseciviliantransitiontoidleanim( asmname, statename, params )
@@ -135,7 +135,7 @@ function chooseciviliantransitiontoidleanim( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x789
 // Size: 0x113
 function choosecivilianreactidleanim( asmname, statename, params )
@@ -170,7 +170,7 @@ function choosecivilianreactidleanim( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8a4
 // Size: 0x6d
 function civilian_playexposedloop( asmname, statename, params )
@@ -187,7 +187,7 @@ function civilian_playexposedloop( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x919
 // Size: 0x3a
 function civilian_exit_cleanup( asmname, statename, params )
@@ -197,7 +197,7 @@ function civilian_exit_cleanup( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x95b
 // Size: 0x2e
 function civilian_playmoveloop( asmname, statename, params )
@@ -207,7 +207,7 @@ function civilian_playmoveloop( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x991
 // Size: 0xb5
 function function_f2343b622bbbac5c()
@@ -246,7 +246,7 @@ function function_f2343b622bbbac5c()
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa4e
 // Size: 0x79
 function function_d87b251f84ebc50d( asmname, statename, params )
@@ -269,7 +269,7 @@ function function_d87b251f84ebc50d( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xad0
 // Size: 0xe3
 function civilian_playmoveloopblendspace( asmname, statename, param )
@@ -300,7 +300,7 @@ function civilian_playmoveloopblendspace( asmname, statename, param )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbbb
 // Size: 0xc5
 function civilian_watchspeed( statename )
@@ -329,7 +329,7 @@ function civilian_watchspeed( statename )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc88
 // Size: 0x12a
 function civilian_playsharpturnanim( asmname, statename, params )
@@ -362,7 +362,7 @@ function civilian_playsharpturnanim( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdba
 // Size: 0xc3
 function function_f350cd100563acaf( turnxanim, turnrate )
@@ -388,7 +388,7 @@ function function_f350cd100563acaf( turnxanim, turnrate )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe85
 // Size: 0x1ad
 function function_acfe95f0c8655298( note, params )
@@ -447,7 +447,7 @@ function function_acfe95f0c8655298( note, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x103a
 // Size: 0x22
 function civilian_move_cleanup( asmname, statename, params )
@@ -456,7 +456,7 @@ function civilian_move_cleanup( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1064
 // Size: 0x29
 function iswhizbydetected( asmname, statename, tostatename, params )
@@ -465,7 +465,7 @@ function iswhizbydetected( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1096
 // Size: 0x2d, Type: bool
 function function_49eab317ab73356( asmname, statename, tostatename, params )
@@ -474,7 +474,7 @@ function function_49eab317ab73356( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x10cc
 // Size: 0x8a, Type: bool
 function shoulddirectlytransition( asmname, statename, tostatename, params )
@@ -493,7 +493,7 @@ function shoulddirectlytransition( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x115f
 // Size: 0x80, Type: bool
 function shouldcustomtransition( asmname, statename, tostatename, params )
@@ -512,7 +512,7 @@ function shouldcustomtransition( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11e8
 // Size: 0x2e
 function cleanupcivilianreactionalias( asmname, statename, params )
@@ -521,7 +521,7 @@ function cleanupcivilianreactionalias( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x121e
 // Size: 0x8b
 function shouldsnaptocover( asmname, statename, tostatename, params )
@@ -555,7 +555,7 @@ function shouldsnaptocover( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12b2
 // Size: 0x89
 function enableciviliantargetfocus( ent, direction )
@@ -582,7 +582,7 @@ function enableciviliantargetfocus( ent, direction )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1343
 // Size: 0x2b
 function disableciviliantargetfocus()
@@ -592,7 +592,7 @@ function disableciviliantargetfocus()
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1376
 // Size: 0x66
 function civilianfocusstartthread()
@@ -609,7 +609,7 @@ function civilianfocusstartthread()
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13e4
 // Size: 0x6a
 function civilianfocuscomputeyawtotarget()
@@ -621,7 +621,7 @@ function civilianfocuscomputeyawtotarget()
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1457
 // Size: 0x12a, Type: bool
 function civilianfocusupdatecurrentfocus( targetvalue )
@@ -648,7 +648,7 @@ function civilianfocusupdatecurrentfocus( targetvalue )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x158a
 // Size: 0x51, Type: bool
 function civilianfocusapproachingarrival()
@@ -668,7 +668,7 @@ function civilianfocusapproachingarrival()
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15e4
 // Size: 0x13
 function civilianfocusupdateanimparameter( paramvalue )
@@ -677,7 +677,7 @@ function civilianfocusupdateanimparameter( paramvalue )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15ff
 // Size: 0x4b1
 function civilianfocusupdatethread()
@@ -828,7 +828,7 @@ function civilianfocusupdatethread()
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1ab8
 // Size: 0x41, Type: bool
 function civmoverequested( asmname, statename, tostatename, params )
@@ -837,7 +837,7 @@ function civmoverequested( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b02
 // Size: 0x41
 function civilian_chooseanim_demeanor( asmname, statename, params )
@@ -851,7 +851,7 @@ function civilian_chooseanim_demeanor( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b4b
 // Size: 0xae
 function civilian_chooseanim_playerpushed( asmname, statename, params )
@@ -867,7 +867,7 @@ function civilian_chooseanim_playerpushed( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1c02
 // Size: 0x3e, Type: bool
 function function_b1bbe0dc316f2efa( asmname, statename, tostatename, params )
@@ -881,7 +881,7 @@ function function_b1bbe0dc316f2efa( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1c49
 // Size: 0xef, Type: bool
 function function_c41de664204e9824( asmname, statename, tostatename, params )
@@ -914,7 +914,7 @@ function function_c41de664204e9824( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d41
 // Size: 0x187, Type: bool
 function function_7bd81efb0abdbc44( asmname, statename, tostatename, params )
@@ -932,7 +932,8 @@ function function_7bd81efb0abdbc44( asmname, statename, tostatename, params )
     bestai = undefined;
     distsq = var_db51c3e732a073b4 * var_db51c3e732a073b4;
     
-    for (i = 0; i < closeai.size; i++) {
+    for ( i = 0; i < closeai.size ; i++ )
+    {
         if ( self == closeai[ i ] )
         {
             continue;
@@ -979,7 +980,7 @@ function function_7bd81efb0abdbc44( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1ed1
 // Size: 0xd7
 function function_e481d310d5cb87c( asmname, statename, tostatename, params )
@@ -1001,7 +1002,7 @@ function function_e481d310d5cb87c( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fb1
 // Size: 0x64
 function function_ae83a6295a6675c8( asmname, statename, params )
@@ -1020,7 +1021,7 @@ function function_ae83a6295a6675c8( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x201e
 // Size: 0xd3
 function function_d13115c5f7b949e6( asmname, statename, params )
@@ -1050,7 +1051,7 @@ function function_d13115c5f7b949e6( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x20fa
 // Size: 0x11f
 function function_d98f49aeb63edce4( asmname, statename, params )
@@ -1084,7 +1085,7 @@ function function_d98f49aeb63edce4( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2222
 // Size: 0x25
 function function_c4d5a733f656507f( asmname, statename, params )
@@ -1093,7 +1094,7 @@ function function_c4d5a733f656507f( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x224f
 // Size: 0x2d, Type: bool
 function function_7490810d9786cc51( asmname, statename, tostatename, params )
@@ -1102,7 +1103,7 @@ function function_7490810d9786cc51( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2285
 // Size: 0x156
 function function_28d7e9d4c9615969( asmname, statename, tostatename, params )
@@ -1141,7 +1142,7 @@ function function_28d7e9d4c9615969( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23e3
 // Size: 0x20f
 function function_44224a1150c6d2c9( turnxanim, statename )
@@ -1198,7 +1199,7 @@ function function_44224a1150c6d2c9( turnxanim, statename )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25fa
 // Size: 0x202
 function function_8582e56563261e62( asmname, statename, params )
@@ -1247,7 +1248,7 @@ function function_8582e56563261e62( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2805
 // Size: 0x4e, Type: bool
 function function_4be295e4306dc70c( asmname, statename, tostatename, params )
@@ -1257,7 +1258,7 @@ function function_4be295e4306dc70c( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x285c
 // Size: 0x24
 function function_89007ae298fb4b15( asmname, statename, params )
@@ -1266,7 +1267,7 @@ function function_89007ae298fb4b15( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2888
 // Size: 0x24
 function function_e7fc2fe7dda8fc2c( asmname, statename, params )
@@ -1275,7 +1276,7 @@ function function_e7fc2fe7dda8fc2c( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28b4
 // Size: 0x24
 function function_94ec448629b086c8( asmname, statename, params )
@@ -1284,7 +1285,7 @@ function function_94ec448629b086c8( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28e0
 // Size: 0x24
 function function_d45457463f7a8eab( asmname, statename, params )
@@ -1293,7 +1294,7 @@ function function_d45457463f7a8eab( asmname, statename, params )
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x290c
 // Size: 0x55
 function function_92c056ec351f2f6e( asmname, statename, param )

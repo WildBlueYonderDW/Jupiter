@@ -31,7 +31,7 @@
 #namespace mp_jup_gw_fallout;
 
 // Namespace mp_jup_gw_fallout / scripts\mp\maps\mp_jup_gw_fallout\mp_jup_gw_fallout
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ba
 // Size: 0x17c
 function main()
@@ -79,7 +79,7 @@ function main()
 }
 
 // Namespace mp_jup_gw_fallout / scripts\mp\maps\mp_jup_gw_fallout\mp_jup_gw_fallout
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43e
 // Size: 0x68
 function initvehicles()

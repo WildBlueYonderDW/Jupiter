@@ -5,7 +5,7 @@
 #namespace namespace_cbc0dc8b9328d67d;
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x112
 // Size: 0x170
 function overrideweapons( loadout )
@@ -47,7 +47,7 @@ function overrideweapons( loadout )
 }
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28b
 // Size: 0x43
 function overrideprimaryweapon( loadout )
@@ -59,7 +59,7 @@ function overrideprimaryweapon( loadout )
 }
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d7
 // Size: 0x44
 function overridesecondaryweapon( loadout )
@@ -71,21 +71,23 @@ function overridesecondaryweapon( loadout )
 }
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x324
 // Size: 0xac
 function function_754c5fbcd73cf12d( loadout )
 {
     msg = "Overriding FLC Perks. ";
     
-    for (i = 0; i < loadout.loadoutperks.size; i++) {
+    for ( i = 0; i < loadout.loadoutperks.size ; i++ )
+    {
         msg += "Perk " + i + ": " + loadout.loadoutperks[ i ];
     }
     
     /#
         assertmsg( msg );
         
-        for (perkindex = 0; perkindex < loadout.loadoutperks.size; perkindex++) {
+        for ( perkindex = 0; perkindex < loadout.loadoutperks.size ; perkindex++ )
+        {
             loadout.loadoutperks[ perkindex ] = scripts\mp\class::function_f8e92e6cd8007d6b( level.classtablename, 0, perkindex );
         }
     #/
@@ -94,7 +96,7 @@ function function_754c5fbcd73cf12d( loadout )
 }
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d9
 // Size: 0x44
 function function_625a1bdd25647c6b( loadout )
@@ -105,7 +107,7 @@ function function_625a1bdd25647c6b( loadout )
 }
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x426
 // Size: 0x44
 function function_1ccfa7dccda7da0f( loadout )
@@ -116,7 +118,7 @@ function function_1ccfa7dccda7da0f( loadout )
 }
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x473
 // Size: 0x29
 function overridesuper( loadout )
@@ -126,7 +128,7 @@ function overridesuper( loadout )
 }
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a5
 // Size: 0x42
 function function_2981e0130f5d0598( loadout )
@@ -141,7 +143,7 @@ function function_2981e0130f5d0598( loadout )
 }
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f0
 // Size: 0x9f
 function function_ec995ec88ab7fb6c( loadout )
@@ -163,7 +165,7 @@ function function_ec995ec88ab7fb6c( loadout )
 }
 
 // Namespace namespace_cbc0dc8b9328d67d / namespace_89e4915e27d8b4fc
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x598
 // Size: 0x165
 function function_8cdbad2a3681247e( perk, vestperk )

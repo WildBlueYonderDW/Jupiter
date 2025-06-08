@@ -5,7 +5,7 @@
 #namespace vehicle_dlog;
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21c
 // Size: 0xf7
 function vehicle_dlog_spawnevent( vehicle, spawntype, vehicletype )
@@ -36,7 +36,7 @@ function vehicle_dlog_spawnevent( vehicle, spawntype, vehicletype )
 }
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x31b
 // Size: 0xf6
 function vehicle_dlog_exitevent( vehicle, player, seatid, exittype )
@@ -67,7 +67,7 @@ function vehicle_dlog_exitevent( vehicle, player, seatid, exittype )
 }
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x419
 // Size: 0xf6
 function vehicle_dlog_enterevent( vehicle, player, seatid, entertype )
@@ -98,7 +98,7 @@ function vehicle_dlog_enterevent( vehicle, player, seatid, entertype )
 }
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x517
 // Size: 0x70
 function vehicle_dlog_init()
@@ -111,7 +111,7 @@ function vehicle_dlog_init()
 }
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x58f
 // Size: 0x37
 function vehicle_dlog_getleveldata()
@@ -121,7 +121,7 @@ function vehicle_dlog_getleveldata()
 }
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5cf
 // Size: 0x7e
 function vehicle_dlog_getinstancedata( vehicle, create )
@@ -141,7 +141,7 @@ function vehicle_dlog_getinstancedata( vehicle, create )
 }
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x656
 // Size: 0x16
 function vehicle_dlog_getuniqueid( vehicle )

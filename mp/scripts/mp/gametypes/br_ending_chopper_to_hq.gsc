@@ -16,7 +16,7 @@
 #namespace br_ending_chopper_to_hq;
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe11
 // Size: 0x84
 function chopperhqexfil_init()
@@ -35,7 +35,7 @@ function chopperhqexfil_init()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe9d
 // Size: 0x37
 function function_5bd3dfcb7c6dcce3( accolade, startfunc )
@@ -49,7 +49,7 @@ function function_5bd3dfcb7c6dcce3( accolade, startfunc )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xedc
 // Size: 0x1d
 function function_776f66e2e3d58aa7( winnerplayers, var_f7b694a4edf7dc9a )
@@ -70,7 +70,7 @@ function private function_9ade01856c32e00c( winners, var_cbfc3ba10cefc8ce, movet
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf56
 // Size: 0x666
 function function_c0c06942d2085413( var_cbfc3ba10cefc8ce )
@@ -137,7 +137,8 @@ function function_c0c06942d2085413( var_cbfc3ba10cefc8ce )
         loadinfiltransient( self.transientname );
         level thread function_3681a4700f5bb7c1( 2, 1.2, "exfil_fadeEnd" );
         
-        for (var_24b79087f3897e94 = 0; !var_24b79087f3897e94; var_24b79087f3897e94 = function_2030cc4ad67d1634( self.transientname )) {
+        for ( var_24b79087f3897e94 = 0; !var_24b79087f3897e94 ; var_24b79087f3897e94 = function_2030cc4ad67d1634( self.transientname ) )
+        {
             waitframe();
         }
     }
@@ -210,7 +211,7 @@ function function_c0c06942d2085413( var_cbfc3ba10cefc8ce )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15c4
 // Size: 0x9
 function function_78a0aed888196a36()
@@ -239,7 +240,8 @@ function private function_fd28a78c72cc942b()
         rope hide();
     }
     
-    for (playeridx = 0; playeridx < max( 1, level.var_285f57f09913c9e6 ); playeridx++) {
+    for ( playeridx = 0; playeridx < max( 1, level.var_285f57f09913c9e6 ) ; playeridx++ )
+    {
         if ( isdefined( var_fb94e5adda302b97[ playeridx ] ) )
         {
             var_fb94e5adda302b97[ playeridx ] show();
@@ -260,7 +262,8 @@ function private function_26beb46813cf3ccb( sceneroot )
 {
     var_fb94e5adda302b97 = [];
     
-    for (i = 1; i <= 6; i++) {
+    for ( i = 1; i <= 6 ; i++ )
+    {
         var_76c1f43057b9102c = "Harness 0" + i;
         var_fb94e5adda302b97[ var_fb94e5adda302b97.size ] = sceneroot scene::get_entity( var_76c1f43057b9102c );
     }
@@ -276,7 +279,8 @@ function private function_c3ceff8ef7715628( sceneroot )
 {
     ropes = [];
     
-    for (i = 1; i <= 6; i++) {
+    for ( i = 1; i <= 6 ; i++ )
+    {
         ropename = "Rope 0" + i;
         ropes[ ropes.size ] = sceneroot scene::get_entity( ropename );
     }
@@ -341,7 +345,7 @@ function private function_93b66df7957f429( var_acd6e67641545f5a )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x198b
 // Size: 0xb4
 function function_488ede35fad91068()
@@ -359,7 +363,7 @@ function function_488ede35fad91068()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a47
 // Size: 0x72
 function function_a85a080d6669ac2f()
@@ -374,7 +378,7 @@ function function_a85a080d6669ac2f()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ac1
 // Size: 0x64
 function function_e4e5c7788f122acc()
@@ -391,7 +395,7 @@ function function_e4e5c7788f122acc()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b2d
 // Size: 0x70
 function function_7524f2eb69c7509d()
@@ -406,7 +410,7 @@ function function_7524f2eb69c7509d()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ba5
 // Size: 0x70
 function function_fec0e84f57eef429()
@@ -421,7 +425,7 @@ function function_fec0e84f57eef429()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c1d
 // Size: 0x89
 function function_5396a4248f68364()
@@ -689,7 +693,7 @@ function private function_795c64584625d13b()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x246d
 // Size: 0x102
 function function_2551574cc8e210ee( winners )
@@ -716,7 +720,7 @@ function function_2551574cc8e210ee( winners )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2577
 // Size: 0xbf
 function function_b4a1bd54c864d01e()
@@ -736,7 +740,7 @@ function function_b4a1bd54c864d01e()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x263e
 // Size: 0x85
 function function_72abe688101ab2a7()
@@ -750,7 +754,7 @@ function function_72abe688101ab2a7()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26cb
 // Size: 0x96
 function function_e395443832372863( var_782d6f9d9f6342d )
@@ -772,7 +776,7 @@ function function_e395443832372863( var_782d6f9d9f6342d )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2769
 // Size: 0xc0
 function function_42f6e3ede94bfa29( var_86ef029e00d906fe )
@@ -794,7 +798,7 @@ function function_42f6e3ede94bfa29( var_86ef029e00d906fe )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2831
 // Size: 0xaf
 function function_4d471b771b1ff7e8()
@@ -822,7 +826,7 @@ function function_4d471b771b1ff7e8()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28e8
 // Size: 0x13
 function function_c63452ae16fa9df1( val )
@@ -831,7 +835,7 @@ function function_c63452ae16fa9df1( val )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2903
 // Size: 0x40
 function outrofunc()
@@ -847,7 +851,7 @@ function outrofunc()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x294b
 // Size: 0x10f
 function function_2d3425695113e32b()
@@ -878,7 +882,7 @@ function function_2d3425695113e32b()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a62
 // Size: 0x48
 function function_c4ebe940e6d84d42()
@@ -895,7 +899,7 @@ function function_c4ebe940e6d84d42()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ab2
 // Size: 0x233
 function function_d32f459ab9f5e7af()
@@ -936,7 +940,7 @@ function function_d32f459ab9f5e7af()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ced
 // Size: 0x66
 function function_2023eb5589c72085()
@@ -957,7 +961,7 @@ function function_2023eb5589c72085()
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d5c
 // Size: 0x3d
 function function_dfdae612c1b74e7d( var_16a81c74ce61860e )
@@ -967,7 +971,7 @@ function function_dfdae612c1b74e7d( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2da1
 // Size: 0x3d
 function function_5e896530bebc3e6e( var_16a81c74ce61860e )
@@ -977,7 +981,7 @@ function function_5e896530bebc3e6e( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2de6
 // Size: 0x3d
 function function_a10a208251957df( var_16a81c74ce61860e )
@@ -987,7 +991,7 @@ function function_a10a208251957df( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e2b
 // Size: 0x3d
 function function_36faf3d5c9fbebe6( var_16a81c74ce61860e )
@@ -997,7 +1001,7 @@ function function_36faf3d5c9fbebe6( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e70
 // Size: 0x3d
 function function_899d5e24a4b9301e( var_16a81c74ce61860e )
@@ -1007,7 +1011,7 @@ function function_899d5e24a4b9301e( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2eb5
 // Size: 0x3d
 function function_ece133611317bd82( var_16a81c74ce61860e )
@@ -1017,7 +1021,7 @@ function function_ece133611317bd82( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2efa
 // Size: 0x3d
 function function_8ccb94b37d6fe8c1( var_16a81c74ce61860e )
@@ -1027,7 +1031,7 @@ function function_8ccb94b37d6fe8c1( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f3f
 // Size: 0x3d
 function function_3e55bcf9ca7328a3( var_16a81c74ce61860e )
@@ -1037,7 +1041,7 @@ function function_3e55bcf9ca7328a3( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f84
 // Size: 0x3d
 function function_b0eda2cf30fc9f14( var_16a81c74ce61860e )
@@ -1047,7 +1051,7 @@ function function_b0eda2cf30fc9f14( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fc9
 // Size: 0x3d
 function function_724c8ab1fac0e71b( var_16a81c74ce61860e )
@@ -1057,7 +1061,7 @@ function function_724c8ab1fac0e71b( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x300e
 // Size: 0x3d
 function function_a557921894e6c5dd( var_16a81c74ce61860e )
@@ -1067,7 +1071,7 @@ function function_a557921894e6c5dd( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3053
 // Size: 0x3d
 function function_67017685dd320c5e( var_16a81c74ce61860e )
@@ -1077,7 +1081,7 @@ function function_67017685dd320c5e( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3098
 // Size: 0x3d
 function function_94299e7e4ca6d8d3( var_16a81c74ce61860e )
@@ -1087,7 +1091,7 @@ function function_94299e7e4ca6d8d3( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30dd
 // Size: 0x3d
 function function_4bd40ca7e3ca4514( var_16a81c74ce61860e )
@@ -1097,7 +1101,7 @@ function function_4bd40ca7e3ca4514( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3122
 // Size: 0x3d
 function function_c8bcfd7749815dda( var_16a81c74ce61860e )
@@ -1107,7 +1111,7 @@ function function_c8bcfd7749815dda( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3167
 // Size: 0x3d
 function function_86f5a2ce998d8295( var_16a81c74ce61860e )
@@ -1117,7 +1121,7 @@ function function_86f5a2ce998d8295( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31ac
 // Size: 0x3d
 function function_f73a279a135b21e2( var_16a81c74ce61860e )
@@ -1127,7 +1131,7 @@ function function_f73a279a135b21e2( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31f1
 // Size: 0x3d
 function function_48333192d309fec5( var_16a81c74ce61860e )
@@ -1137,7 +1141,7 @@ function function_48333192d309fec5( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3236
 // Size: 0x3d
 function function_5cf4647b98e8f7b8( var_16a81c74ce61860e )
@@ -1147,7 +1151,7 @@ function function_5cf4647b98e8f7b8( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x327b
 // Size: 0x3d
 function function_3db025ace93c7d35( var_16a81c74ce61860e )
@@ -1157,7 +1161,7 @@ function function_3db025ace93c7d35( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32c0
 // Size: 0x3d
 function function_bfeb55dd644c2525( var_16a81c74ce61860e )
@@ -1167,7 +1171,7 @@ function function_bfeb55dd644c2525( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3305
 // Size: 0x3d
 function function_fcda569d8f93b5f4( var_16a81c74ce61860e )
@@ -1177,7 +1181,7 @@ function function_fcda569d8f93b5f4( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x334a
 // Size: 0x3d
 function function_8e9cf76d9c196732( var_16a81c74ce61860e )
@@ -1187,7 +1191,7 @@ function function_8e9cf76d9c196732( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x338f
 // Size: 0x3d
 function function_ef2a4a9117f93ef4( var_16a81c74ce61860e )
@@ -1197,7 +1201,7 @@ function function_ef2a4a9117f93ef4( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33d4
 // Size: 0x3d
 function function_fc64dfcb9fc83a3f( var_16a81c74ce61860e )
@@ -1207,7 +1211,7 @@ function function_fc64dfcb9fc83a3f( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3419
 // Size: 0x3d
 function function_847f2cd68ddcb2f0( var_16a81c74ce61860e )
@@ -1217,7 +1221,7 @@ function function_847f2cd68ddcb2f0( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x345e
 // Size: 0x3d
 function function_39d31dc79c2c3236( var_16a81c74ce61860e )
@@ -1227,7 +1231,7 @@ function function_39d31dc79c2c3236( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34a3
 // Size: 0x3d
 function function_41b707de8e8441b5( var_16a81c74ce61860e )
@@ -1237,7 +1241,7 @@ function function_41b707de8e8441b5( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34e8
 // Size: 0x3d
 function function_ee2ea98cac37a0b8( var_16a81c74ce61860e )
@@ -1247,7 +1251,7 @@ function function_ee2ea98cac37a0b8( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x352d
 // Size: 0x3d
 function function_904baa6156cb1880( var_16a81c74ce61860e )
@@ -1257,7 +1261,7 @@ function function_904baa6156cb1880( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3572
 // Size: 0x3d
 function function_511de7706207469b( var_16a81c74ce61860e )
@@ -1267,7 +1271,7 @@ function function_511de7706207469b( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35b7
 // Size: 0x3d
 function function_92a6c88a671ffa1a( var_16a81c74ce61860e )
@@ -1277,7 +1281,7 @@ function function_92a6c88a671ffa1a( var_16a81c74ce61860e )
 }
 
 // Namespace br_ending_chopper_to_hq / scripts\mp\gametypes\br_ending_chopper_to_hq
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35fc
 // Size: 0x3d
 function function_299389de1323fa26( var_16a81c74ce61860e )

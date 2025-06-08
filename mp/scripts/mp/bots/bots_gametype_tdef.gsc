@@ -12,7 +12,7 @@
 #namespace bots_gametype_tdef;
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a8
 // Size: 0x18
 function main()
@@ -25,7 +25,7 @@ function main()
 /#
 
     // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1c8
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -36,7 +36,7 @@ function main()
 #/
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d5
 // Size: 0x17
 function setup_callbacks()
@@ -45,7 +45,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f4
 // Size: 0x36
 function setup_bot_flag()
@@ -58,7 +58,7 @@ function setup_bot_flag()
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x232
 // Size: 0xb
 function bot_get_tdef_flag()
@@ -67,7 +67,7 @@ function bot_get_tdef_flag()
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x246
 // Size: 0x2e
 function bot_get_flag_carrier()
@@ -81,7 +81,7 @@ function bot_get_flag_carrier()
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27d
 // Size: 0x1f
 function bot_get_enemy_team()
@@ -95,7 +95,7 @@ function bot_get_enemy_team()
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a5
 // Size: 0x2d2
 function bot_tdef_think()
@@ -234,7 +234,7 @@ function bot_tdef_think()
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57f
 // Size: 0x216
 function initialize_flag_role()
@@ -311,7 +311,7 @@ function initialize_flag_role()
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79d
 // Size: 0x311
 function bot_flag_ai_director_update()
@@ -413,7 +413,7 @@ function bot_flag_ai_director_update()
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xab6
 // Size: 0x1f
 function flag_bot_attacker_limit_for_team( team )
@@ -423,7 +423,7 @@ function flag_bot_attacker_limit_for_team( team )
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xade
 // Size: 0xc, Type: bool
 function flag_bot_defender_limit_for_team( team )
@@ -432,7 +432,7 @@ function flag_bot_defender_limit_for_team( team )
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf3
 // Size: 0x91
 function flag_num_players_on_team( team )
@@ -451,7 +451,7 @@ function flag_num_players_on_team( team )
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb8d
 // Size: 0x11a
 function pick_flagcarrier( team, var_cb042fafee68e950 )
@@ -504,7 +504,7 @@ function pick_flagcarrier( team, var_cb042fafee68e950 )
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcb0
 // Size: 0x24
 function get_allied_attackers_for_team( team )
@@ -514,7 +514,7 @@ function get_allied_attackers_for_team( team )
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcdd
 // Size: 0x24
 function get_allied_defenders_for_team( team )
@@ -524,7 +524,7 @@ function get_allied_defenders_for_team( team )
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd0a
 // Size: 0x23
 function flag_set_role( new_role )
@@ -535,7 +535,7 @@ function flag_set_role( new_role )
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd35
 // Size: 0xc9
 function get_players_by_role( role, team )
@@ -559,7 +559,7 @@ function get_players_by_role( role, team )
 }
 
 // Namespace bots_gametype_tdef / scripts\mp\bots\bots_gametype_tdef
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe07
 // Size: 0x94
 function monitor_flag_carrier()

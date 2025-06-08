@@ -13,7 +13,7 @@
 #namespace nvg;
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x479
 // Size: 0xb0
 function runnvg()
@@ -46,7 +46,7 @@ function runnvg()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x531
 // Size: 0x30
 function allownvgsatmatchstart()
@@ -59,7 +59,7 @@ function allownvgsatmatchstart()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x569
 // Size: 0x3b
 function clearnvg( clearmodel )
@@ -76,7 +76,7 @@ function clearnvg( clearmodel )
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ac
 // Size: 0x4b
 function savenvgstate()
@@ -94,7 +94,7 @@ function savenvgstate()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ff
 // Size: 0xa8
 function nvg_monitor()
@@ -130,7 +130,7 @@ function nvg_monitor()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6af
 // Size: 0x95
 function function_4ca8e54d359cf04a( isenabled )
@@ -151,7 +151,7 @@ function function_4ca8e54d359cf04a( isenabled )
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x74c
 // Size: 0x82
 function function_ca7eb80548414e31()
@@ -182,7 +182,7 @@ function function_ca7eb80548414e31()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d6
 // Size: 0x25
 function function_b229e871fddf36d0()
@@ -198,7 +198,7 @@ function function_b229e871fddf36d0()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x803
 // Size: 0x37
 function function_57a8aa1600b3e550( isenabled )
@@ -208,7 +208,7 @@ function function_57a8aa1600b3e550( isenabled )
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x842
 // Size: 0xae
 function function_389f3670051fb40d()
@@ -243,7 +243,7 @@ function function_389f3670051fb40d()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f8
 // Size: 0x2b
 function function_d8e93127577a3812( waittillstring )
@@ -254,7 +254,7 @@ function function_d8e93127577a3812( waittillstring )
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92b
 // Size: 0x19
 function function_7b70c15687fd673c()
@@ -264,7 +264,7 @@ function function_7b70c15687fd673c()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x94d
 // Size: 0x27
 function function_18d34f9bb2010a02( cantoggle )
@@ -279,7 +279,7 @@ function function_18d34f9bb2010a02( cantoggle )
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x97c
 // Size: 0x88
 function function_add04ed347410264( weapon )
@@ -304,7 +304,7 @@ function function_add04ed347410264( weapon )
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0c
 // Size: 0x3d
 function function_dffe59707d84c40f()
@@ -322,7 +322,7 @@ function function_dffe59707d84c40f()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa51
 // Size: 0x30
 function function_b8159504f369a68d( isallowed )
@@ -337,7 +337,7 @@ function function_b8159504f369a68d( isallowed )
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa89
 // Size: 0x101
 function nvg_get3rdpersonupmodel()
@@ -390,7 +390,7 @@ function nvg_get3rdpersonupmodel()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb93
 // Size: 0xf2
 function nvg_get3rdpersondownmodel()
@@ -439,7 +439,7 @@ function nvg_get3rdpersondownmodel()
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc8e
 // Size: 0xbe
 function nvg_update3rdperson( enabled )
@@ -478,7 +478,7 @@ function nvg_update3rdperson( enabled )
 }
 
 // Namespace nvg / scripts\mp\equipment\nvg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd54
 // Size: 0x20, Type: bool
 function function_258c5e445c8b7f80()

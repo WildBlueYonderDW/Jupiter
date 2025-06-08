@@ -23,7 +23,7 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x459
 // Size: 0x4f
 function init( eventinfo )
@@ -35,7 +35,7 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b0
 // Size: 0x74
 function postinitfunc()
@@ -49,7 +49,7 @@ function postinitfunc()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52c
 // Size: 0x34, Type: bool
 function validatefunc()
@@ -60,7 +60,7 @@ function validatefunc()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x569
 // Size: 0x24
 function waitfunc()
@@ -72,7 +72,7 @@ function waitfunc()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x595
 // Size: 0x144
 function activatefunc()
@@ -93,7 +93,8 @@ function activatefunc()
     {
         wait eventduration - 5;
         
-        for (i = 0; i < 5; i++) {
+        for ( i = 0; i < 5 ; i++ )
+        {
             clockobject playsound( "ui_mp_fire_sale_timer" );
             wait 1;
         }
@@ -112,7 +113,7 @@ function activatefunc()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e1
 // Size: 0x77
 function forcestopwaitforgulagtoempty()
@@ -136,13 +137,13 @@ function forcestopwaitforgulagtoempty()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x760
 // Size: 0x51
 function calculateeventstarttime()
 {
-    minstarttime = getdvarfloat( @"hash_5ad075411172856e", 795 );
-    maxstarttime = getdvarfloat( @"hash_5aad6741114c1eec", 1110 );
+    minstarttime = getdvarfloat( @"scr_br_pe_jailbreak_starttime_min", 795 );
+    maxstarttime = getdvarfloat( @"scr_br_pe_jailbreak_starttime_max", 1110 );
     
     if ( maxstarttime > minstarttime )
     {
@@ -153,7 +154,7 @@ function calculateeventstarttime()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b9
 // Size: 0x13
 function pauseallgulagfights( var_1fd0410e54d2ffd8 )
@@ -162,7 +163,7 @@ function pauseallgulagfights( var_1fd0410e54d2ffd8 )
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d4
 // Size: 0x24
 function waitforgulagfightstocomplete()
@@ -182,7 +183,7 @@ function waitforgulagfightstocomplete()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x800
 // Size: 0x93
 function waitforgulagtoempty( playerlist )
@@ -215,7 +216,7 @@ function waitforgulagtoempty( playerlist )
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x89b
 // Size: 0x189
 function buildrespawnlist( var_827c53020f6f228f )
@@ -267,7 +268,7 @@ function buildrespawnlist( var_827c53020f6f228f )
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2d
 // Size: 0x203
 function respawnplayer()
@@ -337,7 +338,7 @@ function respawnplayer()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc38
 // Size: 0x8a
 function respawnplayers()
@@ -360,7 +361,7 @@ function respawnplayers()
 }
 
 // Namespace br_publicevent_jailbreak / scripts\mp\gametypes\br_publicevent_jailbreak
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xccb
 // Size: 0x255
 function playjailbreakvo( aliasname )

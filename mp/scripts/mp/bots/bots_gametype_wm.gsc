@@ -12,7 +12,7 @@
 #namespace bots_gametype_wm;
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cf
 // Size: 0xd8
 function main()
@@ -38,7 +38,7 @@ function main()
 /#
 
     // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3af
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -49,7 +49,7 @@ function main()
 #/
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bc
 // Size: 0x17
 function setup_callbacks()
@@ -58,7 +58,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3db
 // Size: 0x2
 function function_a8c5e56892775215()
@@ -67,7 +67,7 @@ function function_a8c5e56892775215()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e5
 // Size: 0x109
 function bot_wm_think()
@@ -118,7 +118,7 @@ function bot_wm_think()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f6
 // Size: 0x243, Type: bool
 function function_b72835f420d36cab()
@@ -153,7 +153,8 @@ function function_b72835f420d36cab()
     {
         if ( isdefined( self.vehicle_target.var_6bb0ab1fe092bd5d ) && self.vehicle_target.var_6bb0ab1fe092bd5d <= 1 )
         {
-            for (nodeid = self.vehicle_target.var_6bb0ab1fe092bd5d; nodeid < self.vehicle_target.pathnodes.size; nodeid++) {
+            for ( nodeid = self.vehicle_target.var_6bb0ab1fe092bd5d; nodeid < self.vehicle_target.pathnodes.size ; nodeid++ )
+            {
                 nodepos = self.vehicle_target.pathnodes[ nodeid ];
                 var_4baf4f8316b6450a = getrandomnavpoint( nodepos.origin, var_144da732d85f9cb9 );
                 
@@ -196,14 +197,14 @@ function function_b72835f420d36cab()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x742
-// Size: 0x1ba, Type: bool
+// Size: 0x1ba
 function function_d4299bd3cefff9f2()
 {
     if ( !isdefined( level.var_261c48ef4ff3d77a ) )
     {
-        return false;
+        return 0;
     }
     
     var_4dac0fb6eca3c18f = [];
@@ -222,7 +223,7 @@ function function_d4299bd3cefff9f2()
     
     if ( !isdefined( var_e6065833510c1c0c ) )
     {
-        return false;
+        return 0;
     }
     
     if ( !isdefined( var_e6065833510c1c0c.nodes ) )
@@ -244,14 +245,14 @@ function function_d4299bd3cefff9f2()
     {
         if ( !self botsetscriptgoal( ( -24616.4, 42112.4, -160 ), 256, "critical" ) )
         {
-            return false;
+            return 0;
         }
         
         result = bot_waittill_goal_or_fail();
         
         if ( result != "goal" )
         {
-            return false;
+            return 0;
         }
     }
     
@@ -259,25 +260,25 @@ function function_d4299bd3cefff9f2()
     
     if ( !self botsetscriptgoal( node.origin, 16, "critical" ) )
     {
-        return false;
+        return 0;
     }
     
     result = bot_waittill_goal_or_fail();
     
     if ( result != "goal" )
     {
-        return false;
+        return 0;
     }
     else
     {
         self botclearscriptgoal();
     }
     
-    return true;
+    return 1;
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x905
 // Size: 0x6d, Type: bool
 function function_1631df751543c615( var_e6065833510c1c0c )
@@ -304,7 +305,7 @@ function function_1631df751543c615( var_e6065833510c1c0c )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97b
 // Size: 0x134, Type: bool
 function function_2023c59812a1896a()
@@ -350,7 +351,7 @@ function function_2023c59812a1896a()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab8
 // Size: 0x19b, Type: bool
 function function_bebf9ca11875f590()
@@ -411,7 +412,7 @@ function function_bebf9ca11875f590()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc5c
 // Size: 0xb2
 function bot_get_valid_nodes_in_trigger( trigger )
@@ -431,7 +432,7 @@ function bot_get_valid_nodes_in_trigger( trigger )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd17
 // Size: 0x12a, Type: bool
 function function_80669a2cc4016fb3()
@@ -478,7 +479,7 @@ function function_80669a2cc4016fb3()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe4a
 // Size: 0x423, Type: bool
 function function_9ec814ba389bdf89()
@@ -637,7 +638,7 @@ function function_9ec814ba389bdf89()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1276
 // Size: 0x2c6
 function function_4473b5af345c0b75( startheight )
@@ -707,7 +708,7 @@ function function_4473b5af345c0b75( startheight )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1544
 // Size: 0x44
 function function_82dc476c43087820()
@@ -724,7 +725,7 @@ function function_82dc476c43087820()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1591
 // Size: 0xc1
 function function_762c429d94276c0( goal )
@@ -751,7 +752,7 @@ function function_762c429d94276c0( goal )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x165a
 // Size: 0x532, Type: bool
 function function_a329958947b1be20()
@@ -943,7 +944,7 @@ function function_a329958947b1be20()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b95
 // Size: 0x30d, Type: bool
 function function_47f50aa0634c3b02()
@@ -1055,7 +1056,7 @@ function function_47f50aa0634c3b02()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1eab
 // Size: 0x42d
 function function_c62f2faf741f9a21()
@@ -1210,7 +1211,7 @@ function function_c62f2faf741f9a21()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x22e0
 // Size: 0x7c
 function function_864ee9f5b187fb0a( origin, radius_min, radius_max )
@@ -1224,7 +1225,7 @@ function function_864ee9f5b187fb0a( origin, radius_min, radius_max )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2365
 // Size: 0x37
 function function_96811b18496ea942( objectivetype, func )
@@ -1238,7 +1239,7 @@ function function_96811b18496ea942( objectivetype, func )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23a4
 // Size: 0xc, Type: bool
 function function_7eeb6264cce0f89f()
@@ -1247,7 +1248,7 @@ function function_7eeb6264cce0f89f()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23b9
 // Size: 0x12
 function clear_defend()
@@ -1259,7 +1260,7 @@ function clear_defend()
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23d3
 // Size: 0x21, Type: bool
 function bot_is_capturing_zone( zone )
@@ -1273,7 +1274,7 @@ function bot_is_capturing_zone( zone )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23fd
 // Size: 0x78
 function bot_capture_koth_zone( zone )
@@ -1285,7 +1286,7 @@ function bot_capture_koth_zone( zone )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x247d
 // Size: 0x6f
 function function_83f5124a532560e( origin, radius )
@@ -1303,7 +1304,7 @@ function function_83f5124a532560e( origin, radius )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24f5
 // Size: 0xe7, Type: bool
 function function_286ec19da44b5f3( target, team )
@@ -1339,7 +1340,7 @@ function function_286ec19da44b5f3( target, team )
 }
 
 // Namespace bots_gametype_wm / scripts\mp\bots\bots_gametype_wm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25e5
 // Size: 0xf3
 function function_e17e6ea4a9ca9f04( var_2d990af941dea69b )

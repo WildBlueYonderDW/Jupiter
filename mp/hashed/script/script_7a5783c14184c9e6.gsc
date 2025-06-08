@@ -9,7 +9,7 @@
 #namespace namespace_562c09f7cd8fb4f5;
 
 // Namespace namespace_562c09f7cd8fb4f5 / namespace_a84d4bd796b357d8
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x287
 // Size: 0x17f
 function function_78422799f477b8e6( spawndata, team, weaponname, modelname, aitype )
@@ -56,7 +56,7 @@ function function_78422799f477b8e6( spawndata, team, weaponname, modelname, aity
 }
 
 // Namespace namespace_562c09f7cd8fb4f5 / namespace_a84d4bd796b357d8
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x40f
 // Size: 0x29a
 function function_3cd75d5bf0fc9989( spawndata, team, aitype, weaponname, modelname )
@@ -144,7 +144,7 @@ function function_3cd75d5bf0fc9989( spawndata, team, aitype, weaponname, modelna
 }
 
 // Namespace namespace_562c09f7cd8fb4f5 / namespace_a84d4bd796b357d8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b1
 // Size: 0x1c4
 function function_69c4dd9b2bc55b1b()
@@ -210,7 +210,7 @@ function function_69c4dd9b2bc55b1b()
 }
 
 // Namespace namespace_562c09f7cd8fb4f5 / namespace_a84d4bd796b357d8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87d
 // Size: 0x57
 function function_86880084e476db84()
@@ -231,7 +231,7 @@ function function_86880084e476db84()
 }
 
 // Namespace namespace_562c09f7cd8fb4f5 / namespace_a84d4bd796b357d8
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8dc
 // Size: 0x2a2
 function function_597e32613762e969( target, aimpos, burst )
@@ -253,7 +253,8 @@ function function_597e32613762e969( target, aimpos, burst )
     
     wait 0.2;
     
-    for (i = 0; i < burst; i++) {
+    for ( i = 0; i < burst ; i++ )
+    {
         if ( !istrue( function_a233031a44bbbb0d( turret, turret.owner ) ) )
         {
             return;
@@ -312,7 +313,7 @@ function function_597e32613762e969( target, aimpos, burst )
 /#
 
     // Namespace namespace_562c09f7cd8fb4f5 / namespace_a84d4bd796b357d8
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xb86
     // Size: 0x2a, Type: dev
     function function_6b6a08026758fca9( aimpos )
@@ -327,7 +328,7 @@ function function_597e32613762e969( target, aimpos, burst )
 #/
 
 // Namespace namespace_562c09f7cd8fb4f5 / namespace_a84d4bd796b357d8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbb8
 // Size: 0x6c, Type: bool
 function function_a233031a44bbbb0d( turret, owner )
@@ -351,7 +352,7 @@ function function_a233031a44bbbb0d( turret, owner )
 }
 
 // Namespace namespace_562c09f7cd8fb4f5 / namespace_a84d4bd796b357d8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc2d
 // Size: 0x228
 function function_bd80506147960d00()

@@ -4,7 +4,7 @@
 #namespace mp_jup_sira_ob_interactions_essence_cs;
 
 // Namespace mp_jup_sira_ob_interactions_essence_cs / namespace_5f5dcf804b7dd2bc
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x116
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_sira_ob_interactions_essence_cs / namespace_5f5dcf804b7dd2bc
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18b
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_sira_ob_interactions_essence_cs / namespace_5f5dcf804b7dd2bc
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x78c
 function createstructs( fe, us, cf )
@@ -161,7 +161,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_sira_ob_interactions_essence_cs / namespace_5f5dcf804b7dd2bc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98e
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -170,7 +170,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_sira_ob_interactions_essence_cs / namespace_5f5dcf804b7dd2bc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x998
 // Size: 0xe
 function cleanup()

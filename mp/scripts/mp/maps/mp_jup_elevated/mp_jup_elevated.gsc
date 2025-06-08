@@ -11,7 +11,7 @@
 #namespace mp_jup_elevated;
 
 // Namespace mp_jup_elevated / scripts\mp\maps\mp_jup_elevated\mp_jup_elevated
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x184
 // Size: 0xa6
 function main()

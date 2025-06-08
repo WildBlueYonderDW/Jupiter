@@ -20,7 +20,7 @@
 #namespace br_functional_poi;
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d7
 // Size: 0x84
 function init()
@@ -60,7 +60,7 @@ function private function_3e699a442af97058()
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38c
 // Size: 0x13
 function initplayer( revivespawn )
@@ -71,7 +71,7 @@ function initplayer( revivespawn )
 /#
 
     // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3a7
     // Size: 0x2e, Type: dev
     function initdebug()
@@ -84,7 +84,7 @@ function initplayer( revivespawn )
 #/
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dd
 // Size: 0x52
 function onprematchdone()
@@ -102,7 +102,7 @@ function onprematchdone()
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x437
 // Size: 0x7
 function getinteractiveoutlineasset()
@@ -111,7 +111,7 @@ function getinteractiveoutlineasset()
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x447
 // Size: 0x42a
 function _spawnpois()
@@ -133,7 +133,7 @@ function _spawnpois()
         level thread setupmapquadrantcornersandgrid();
     }
     
-    if ( !getdvarint( @"hash_28df7f89e6eab57c", 0 ) || !getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( !getdvarint( @"hash_28df7f89e6eab57c", 0 ) || !getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         level.minplunderextractions = getdvarint( @"hash_eaacc4689dd5d721", var_aaf40e524177e096 );
         level.maxplunderextractions = getdvarint( @"hash_23f4eae3aeebefd3", var_ee39b6fa3a924128 );
@@ -144,7 +144,7 @@ function _spawnpois()
         }
     }
     
-    if ( ( !getdvarint( @"hash_be0526203e262092", 0 ) || !getdvarint( @"hash_89be1a979c1ec008", 0 ) ) && ( !isdefined( level.br_armory_kiosk_enabled ) || istrue( level.br_armory_kiosk_enabled ) ) )
+    if ( ( !getdvarint( @"scr_ssc_use_buy_station", 0 ) || !getdvarint( @"scr_ssc_enabled", 0 ) ) && ( !isdefined( level.br_armory_kiosk_enabled ) || istrue( level.br_armory_kiosk_enabled ) ) )
     {
         if ( istrue( level.var_8dea6607b3189a60 ) )
         {
@@ -152,7 +152,7 @@ function _spawnpois()
         }
         else
         {
-            var_9d5a5091f02c88bd = getdvarint( @"hash_4aea002979a25696", var_ebe0ecfba3880c6a );
+            var_9d5a5091f02c88bd = getdvarint( @"br_max_armory_kiosk", var_ebe0ecfba3880c6a );
             kioskinstances = scripts\mp\gametypes\br_armory_kiosk::getallspawninstances();
             
             if ( isdefined( kioskinstances ) && kioskinstances.size > 0 )
@@ -172,7 +172,7 @@ function _spawnpois()
         scripts\mp\gametypes\br_armory_kiosk::function_86f5339f1334e16( "buy_station" );
     }
     
-    if ( !getdvarint( @"hash_28df7f89e6eab57c", 0 ) || !getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( !getdvarint( @"hash_28df7f89e6eab57c", 0 ) || !getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         var_eb398f94f1b5b0f2 = br_plunder::getallextractspawninstances();
         
@@ -189,7 +189,8 @@ function _spawnpois()
     
     var_aa43b883cba2c7fd = utility::getstructarray( "br_respawn_station", "targetname" );
     
-    for (i = 0; i < var_aa43b883cba2c7fd.size; i++) {
+    for ( i = 0; i < var_aa43b883cba2c7fd.size ; i++ )
+    {
         wait var_4b52cea8cfcf246e;
         br_respawn::spawnambulance( var_aa43b883cba2c7fd[ i ] );
     }
@@ -201,7 +202,8 @@ function _spawnpois()
     {
         var_909064f7bd37eb5 = _getrandomlocations( mobileinstances, var_3eaafd9e0db44ba4 );
         
-        for (i = 0; i < var_909064f7bd37eb5.size; i++) {
+        for ( i = 0; i < var_909064f7bd37eb5.size ; i++ )
+        {
             wait var_4b52cea8cfcf246e;
             br_mobile_armory::spawnmobilearmory( var_909064f7bd37eb5[ i ] );
         }
@@ -214,7 +216,8 @@ function _spawnpois()
     {
         var_bbeceb885d5618b5 = _getrandomlocations( truckinstances, var_11d1cc3ed3670979 );
         
-        for (i = 0; i < var_bbeceb885d5618b5.size; i++) {
+        for ( i = 0; i < var_bbeceb885d5618b5.size ; i++ )
+        {
             wait var_4b52cea8cfcf246e;
             br_satellite_truck::spawnsatellitetruck( var_bbeceb885d5618b5[ i ] );
         }
@@ -225,7 +228,7 @@ function _spawnpois()
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x879
 // Size: 0x1b9
 function _getlocationscircleinfluencedwithnoise( allspawninstances, maxinstancecount, var_395f0c06f7abdcc1 )
@@ -254,7 +257,8 @@ function _getlocationscircleinfluencedwithnoise( allspawninstances, maxinstancec
     numcircles = level.br_level.br_circlecenters.size - 1;
     noisemax = int( max( 1, numcircles * getdvarfloat( @"hash_5455e317c3719308", 1 ) ) );
     
-    for (i = 0; i < allspawninstances.size; i++) {
+    for ( i = 0; i < allspawninstances.size ; i++ )
+    {
         instance = allspawninstances[ i ];
         noise = randomintrange( -1 * noisemax, noisemax + 1 );
         instance.score = br_circle::getcircleindexforpoint( instance.origin ) + noise;
@@ -263,7 +267,8 @@ function _getlocationscircleinfluencedwithnoise( allspawninstances, maxinstancec
     instancessorted = utility::array_sort_with_func( allspawninstances, &comparescore );
     var_fdcac90056ed9215 = [];
     
-    for (i = 0; i < maxinstancecount; i++) {
+    for ( i = 0; i < maxinstancecount ; i++ )
+    {
         var_fdcac90056ed9215[ i ] = instancessorted[ i ];
     }
     
@@ -271,7 +276,7 @@ function _getlocationscircleinfluencedwithnoise( allspawninstances, maxinstancec
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa3b
 // Size: 0x2a, Type: bool
 function comparescore( left, right )
@@ -280,7 +285,7 @@ function comparescore( left, right )
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa6e
 // Size: 0x76
 function _getrandomlocations( var_532388c61e12b9df, maxlocations )
@@ -297,7 +302,8 @@ function _getrandomlocations( var_532388c61e12b9df, maxlocations )
         var_532388c61e12b9df = utility::array_randomize( var_532388c61e12b9df );
         newarraysize = int( min( maxlocations, var_532388c61e12b9df.size ) );
         
-        for (i = 0; i < newarraysize; i++) {
+        for ( i = 0; i < newarraysize ; i++ )
+        {
             spawnstructs[ spawnstructs.size ] = var_532388c61e12b9df[ i ];
         }
     }
@@ -306,7 +312,7 @@ function _getrandomlocations( var_532388c61e12b9df, maxlocations )
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xaed
 // Size: 0x10f
 function showmiscmessagetoteam( team, messageref, var_e951f1cf3374883d, var_8796ba8bdf940ab2 )
@@ -339,7 +345,7 @@ function showmiscmessagetoteam( team, messageref, var_e951f1cf3374883d, var_8796
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc04
 // Size: 0x45
 function initstatemachineforpoitype( poitype )
@@ -354,7 +360,7 @@ function initstatemachineforpoitype( poitype )
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xc51
 // Size: 0xb6
 function registerstatecallbacksforpoitype( poitype, stateid, onentercallback, var_bafefcb94d8333ae, onexitcallback )
@@ -368,7 +374,7 @@ function registerstatecallbacksforpoitype( poitype, stateid, onentercallback, va
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd0f
 // Size: 0xea
 function gotopoistate( poitype, newstate )
@@ -404,7 +410,7 @@ function gotopoistate( poitype, newstate )
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe01
 // Size: 0x43
 function gotopoistateontimer( poitype, newstate, var_ddb222c7faf5ab50 )
@@ -417,7 +423,7 @@ function gotopoistateontimer( poitype, newstate, var_ddb222c7faf5ab50 )
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe4c
 // Size: 0x1a
 function getcurrentpoistate()
@@ -427,7 +433,7 @@ function getcurrentpoistate()
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe6f
 // Size: 0x4e
 function _poistateupdate( var_bafefcb94d8333ae )
@@ -444,7 +450,7 @@ function _poistateupdate( var_bafefcb94d8333ae )
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xec5
 // Size: 0xe14
 function setupmapquadrantcornersandgrid()
@@ -695,12 +701,12 @@ function setupmapquadrantcornersandgrid()
 }
 
 // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ce1
 // Size: 0x25e
 function function_360198969036bd2a( allspawninstances )
 {
-    if ( getdvarint( @"hash_a54b73257618e553", 0 ) == 0 )
+    if ( getdvarint( @"scr_br_kiosk_distribute", 0 ) == 0 )
     {
         return allspawninstances;
     }
@@ -732,7 +738,8 @@ function function_360198969036bd2a( allspawninstances )
         var_1ee3788af637048e = int( ceil( kiosks.size / var_e0a3fb2a899ec453 ) );
         numfound = 1;
         
-        for (i = 1; i < kiosks.size && numfound < var_1ee3788af637048e; i++) {
+        for ( i = 1; i < kiosks.size && numfound < var_1ee3788af637048e ; i++ )
+        {
             nextkiosk = kiosks[ i ];
             valid = 1;
             
@@ -762,7 +769,7 @@ function function_360198969036bd2a( allspawninstances )
 /#
 
     // Namespace br_functional_poi / scripts\mp\gametypes\br_functional_poi
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1f48
     // Size: 0x14c, Type: dev
     function rerollkiosks()
@@ -773,7 +780,7 @@ function function_360198969036bd2a( allspawninstances )
             armorykiosk.visible = undefined;
         }
         
-        var_9d5a5091f02c88bd = getdvarint( @"hash_4aea002979a25696", 65 );
+        var_9d5a5091f02c88bd = getdvarint( @"br_max_armory_kiosk", 65 );
         kioskinstances = br_armory_kiosk::getallspawninstances();
         
         if ( isdefined( kioskinstances ) && kioskinstances.size > 0 )

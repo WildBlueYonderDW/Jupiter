@@ -10,7 +10,7 @@
 #namespace agent_init;
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x196
 // Size: 0x6f
 function agent_init()
@@ -36,7 +36,7 @@ function agent_init()
 }
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20d
 // Size: 0x2c
 function setupgrenades()
@@ -46,7 +46,7 @@ function setupgrenades()
 }
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x241
 // Size: 0x2e
 function initanimcallbacks()
@@ -60,7 +60,7 @@ function initanimcallbacks()
 }
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x277
 // Size: 0x70
 function function_5fa77e68e934eda2()
@@ -82,7 +82,7 @@ function private function_2df8a33395b87f()
 }
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ff
 // Size: 0x47
 function play_sound_at_viewheightmp( aliasname, notification_string, var_a68adbd3eefe9282 )
@@ -107,7 +107,7 @@ function play_sound_at_viewheightmp( aliasname, notification_string, var_a68adbd
 }
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34e
 // Size: 0x10
 function initstealthfuncsmp()
@@ -116,7 +116,7 @@ function initstealthfuncsmp()
 }
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x366
 // Size: 0x3
 function getcorpsearraymp()
@@ -125,7 +125,7 @@ function getcorpsearraymp()
 }
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x372
 // Size: 0x2
 function setcorpseremovetimerfuncmp()
@@ -134,7 +134,7 @@ function setcorpseremovetimerfuncmp()
 }
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37c
 // Size: 0x1e
 function initstealthmp()

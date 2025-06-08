@@ -51,7 +51,7 @@ function private init()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9af
 // Size: 0x6f
 function function_bef8cd415537722d()
@@ -66,7 +66,7 @@ function function_bef8cd415537722d()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa26
 // Size: 0x7e
 function function_f127f9d5fb83d16f()
@@ -78,7 +78,7 @@ function function_f127f9d5fb83d16f()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaac
 // Size: 0x128
 function function_ffabcdb2f67fa01()
@@ -103,7 +103,7 @@ function function_ffabcdb2f67fa01()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbdc
 // Size: 0x39, Type: bool
 function function_383626d0aa423226( streakinfo )
@@ -117,9 +117,9 @@ function function_383626d0aa423226( streakinfo )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc1e
-// Size: 0x25, Type: bool
+// Size: 0x25
 function function_10fd15ea1cbf20d7( streakinfo )
 {
     if ( !isdefined( streakinfo ) )
@@ -131,7 +131,7 @@ function function_10fd15ea1cbf20d7( streakinfo )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc4c
 // Size: 0x171, Type: bool
 function function_6f3c393ac15fff72( streakinfo )
@@ -193,7 +193,7 @@ function function_6f3c393ac15fff72( streakinfo )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdc6
 // Size: 0x302, Type: bool
 function function_84453b5bca0b00e2( streakinfo )
@@ -302,7 +302,7 @@ function function_84453b5bca0b00e2( streakinfo )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10d1
 // Size: 0x586
 function function_4db4fc3b03545fc2( streakinfo, mappointinfo )
@@ -428,7 +428,7 @@ function function_4db4fc3b03545fc2( streakinfo, mappointinfo )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1660
 // Size: 0x55
 function function_43297bd0e3598dc5()
@@ -441,7 +441,7 @@ function function_43297bd0e3598dc5()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16bd
 // Size: 0x181
 function function_a6e6d62bd87beaae()
@@ -488,7 +488,7 @@ function function_a6e6d62bd87beaae()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1846
 // Size: 0x144
 function function_1694bb799481d4d9( centerpos, startpos, flyvelocity )
@@ -528,7 +528,7 @@ function function_1694bb799481d4d9( centerpos, startpos, flyvelocity )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1992
 // Size: 0x195
 function function_9cf03ad1c46c99ba()
@@ -575,7 +575,7 @@ function function_9cf03ad1c46c99ba()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b2f
 // Size: 0x86
 function function_9b0f13da4e5d2aa2( ai_params )
@@ -599,7 +599,7 @@ function function_9b0f13da4e5d2aa2( ai_params )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bbd
 // Size: 0x18d
 function function_4ffdf897638f08bd()
@@ -646,7 +646,7 @@ function function_4ffdf897638f08bd()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d52
 // Size: 0x2c7
 function function_e603f6eeea780ef2()
@@ -716,7 +716,7 @@ function function_e603f6eeea780ef2()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2022
 // Size: 0x1d0
 function function_9b1ccbca322b8707( targetlocation )
@@ -771,11 +771,13 @@ function function_9b1ccbca322b8707( targetlocation )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21fa
-// Size: 0x21f
+// Size: 0x239
 function function_b17ae5fa4c850521( delaytime, targetoverride, ai_params )
 {
+    self endon( "death" );
+    level endon( "game_ended" );
     bundle = level.streakglobals.streakbundles[ "loitering_munition" ];
     var_942eea14d031c96a = bundle.var_be180dad16337504;
     var_de379aee30fead15 = bundle.var_e62e108574ec8584;
@@ -785,6 +787,11 @@ function function_b17ae5fa4c850521( delaytime, targetoverride, ai_params )
     if ( isdefined( delaytime ) )
     {
         wait delaytime;
+    }
+    
+    if ( !isdefined( self ) )
+    {
+        return;
     }
     
     if ( isdefined( self.owner ) && !isplayer( self.owner ) )
@@ -806,12 +813,19 @@ function function_b17ae5fa4c850521( delaytime, targetoverride, ai_params )
     thread function_c7ee8ae86699fdf1( radiusbuffer, var_dbb85cb998808bd5 - radiusbuffer, 0, 360, targetoverride );
     scripts\cp_mp\hostmigration::hostmigration_waitlongdurationwithpause( var_de379aee30fead15 );
     
-    for (var_e27f175749f1e185 = 1; var_e27f175749f1e185 < var_bf137eb6a362469; var_e27f175749f1e185++) {
+    for ( var_e27f175749f1e185 = 1; var_e27f175749f1e185 < var_bf137eb6a362469 ; var_e27f175749f1e185++ )
+    {
+        if ( !isdefined( self ) )
+        {
+            return;
+        }
+        
         var_976e58552e422f88 = var_e27f175749f1e185 * var_dbb85cb998808bd5 + radiusbuffer;
         var_716c81cf71cd941d = var_976e58552e422f88 + var_dbb85cb998808bd5 - radiusbuffer;
         var_fa80af920013741e = min( var_9052e244d25ee16c, var_942eea14d031c96a - 1 - ( var_e27f175749f1e185 - 1 ) * var_9052e244d25ee16c );
         
-        for (var_4e33f5f3a5777266 = 0; var_4e33f5f3a5777266 < var_fa80af920013741e; var_4e33f5f3a5777266++) {
+        for ( var_4e33f5f3a5777266 = 0; var_4e33f5f3a5777266 < var_fa80af920013741e ; var_4e33f5f3a5777266++ )
+        {
             startangle = var_4e33f5f3a5777266 * var_cebc3efa503855f5 + anglebuffer;
             endangle = ( var_4e33f5f3a5777266 + 1 ) * var_cebc3efa503855f5 - anglebuffer;
             thread function_c7ee8ae86699fdf1( var_976e58552e422f88, var_716c81cf71cd941d, startangle, endangle, targetoverride, var_4e33f5f3a5777266 );
@@ -821,8 +835,8 @@ function function_b17ae5fa4c850521( delaytime, targetoverride, ai_params )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x2421
+// Params 6
+// Checksum 0x0, Offset: 0x243b
 // Size: 0x191
 function function_c7ee8ae86699fdf1( startradius, endradius, startangle, endangle, targetoverride, missilenum )
 {
@@ -873,8 +887,8 @@ function function_c7ee8ae86699fdf1( startradius, endradius, startangle, endangle
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25ba
+// Params 1
+// Checksum 0x0, Offset: 0x25d4
 // Size: 0x1b0
 function function_d922267e4ad96226( targetlocation )
 {
@@ -904,8 +918,8 @@ function function_d922267e4ad96226( targetlocation )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2772
+// Params 1
+// Checksum 0x0, Offset: 0x278c
 // Size: 0x2b
 function function_769e917ac9e39efa( missiletargetpos )
 {
@@ -919,8 +933,8 @@ function function_769e917ac9e39efa( missiletargetpos )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x27a5
+// Params 4
+// Checksum 0x0, Offset: 0x27bf
 // Size: 0x86
 function function_9e19665e571e16ad( owner, lifetime, radius, height )
 {
@@ -936,8 +950,8 @@ function function_9e19665e571e16ad( owner, lifetime, radius, height )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2833
+// Params 2
+// Checksum 0x0, Offset: 0x284d
 // Size: 0x4f
 function function_82b1fd06b2e37252( impactlocation, missileangles )
 {
@@ -950,8 +964,8 @@ function function_82b1fd06b2e37252( impactlocation, missileangles )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x288a
+// Params 1
+// Checksum 0x0, Offset: 0x28a4
 // Size: 0x4d
 function function_66e849b2e19dcfbf( missileindex )
 {
@@ -963,8 +977,8 @@ function function_66e849b2e19dcfbf( missileindex )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x28df
+// Params 4
+// Checksum 0x0, Offset: 0x28f9
 // Size: 0x16a
 function function_7828ae21b80db901( player, missileteam, missiletarget, fxtagoverride )
 {
@@ -1017,8 +1031,8 @@ function function_7828ae21b80db901( player, missileteam, missiletarget, fxtagove
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a51
+// Params 0
+// Checksum 0x0, Offset: 0x2a6b
 // Size: 0xde
 function function_c43bc3874ebb495c()
 {
@@ -1056,8 +1070,8 @@ function function_c43bc3874ebb495c()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b37
+// Params 1
+// Checksum 0x0, Offset: 0x2b51
 // Size: 0x117
 function function_17ff76d29019fb07( targetpos )
 {
@@ -1080,8 +1094,8 @@ function function_17ff76d29019fb07( targetpos )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c56
+// Params 1
+// Checksum 0x0, Offset: 0x2c70
 // Size: 0x51
 function function_b36b89b7443ed55c( lifetime )
 {
@@ -1095,8 +1109,8 @@ function function_b36b89b7443ed55c( lifetime )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2caf
+// Params 0
+// Checksum 0x0, Offset: 0x2cc9
 // Size: 0x35
 function function_deb2ff6757e3f032()
 {
@@ -1107,8 +1121,8 @@ function function_deb2ff6757e3f032()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cec
+// Params 0
+// Checksum 0x0, Offset: 0x2d06
 // Size: 0x38
 function function_deb2b377a055cca2()
 {
@@ -1121,8 +1135,8 @@ function function_deb2b377a055cca2()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d2c
+// Params 1
+// Checksum 0x0, Offset: 0x2d46
 // Size: 0x3c
 function function_72fe13a5b1035c50( notifymsg )
 {
@@ -1135,8 +1149,8 @@ function function_72fe13a5b1035c50( notifymsg )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d70
+// Params 1
+// Checksum 0x0, Offset: 0x2d8a
 // Size: 0xf2
 function function_6ba72911f4a2d09b( hastriggered )
 {
@@ -1160,8 +1174,8 @@ function function_6ba72911f4a2d09b( hastriggered )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e6a
+// Params 0
+// Checksum 0x0, Offset: 0x2e84
 // Size: 0x38
 function function_8ccbdcb7c4391a3e()
 {
@@ -1174,8 +1188,8 @@ function function_8ccbdcb7c4391a3e()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eaa
+// Params 1
+// Checksum 0x0, Offset: 0x2ec4
 // Size: 0xe5
 function function_9190a53712ac6557( data )
 {
@@ -1198,8 +1212,8 @@ function function_9190a53712ac6557( data )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f98
+// Params 0
+// Checksum 0x0, Offset: 0x2fb2
 // Size: 0x13
 function function_6e2ef534469c7d9a()
 {
@@ -1207,8 +1221,8 @@ function function_6e2ef534469c7d9a()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fb3
+// Params 0
+// Checksum 0x0, Offset: 0x2fcd
 // Size: 0x13
 function function_20bc864cde4580cf()
 {
@@ -1216,8 +1230,8 @@ function function_20bc864cde4580cf()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fce
+// Params 0
+// Checksum 0x0, Offset: 0x2fe8
 // Size: 0x13
 function function_4e8f651c045cd5bf()
 {
@@ -1225,8 +1239,8 @@ function function_4e8f651c045cd5bf()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fe9
+// Params 0
+// Checksum 0x0, Offset: 0x3003
 // Size: 0x56
 function function_7df983371cd48d23()
 {
@@ -1242,8 +1256,8 @@ function function_7df983371cd48d23()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3047
+// Params 0
+// Checksum 0x0, Offset: 0x3061
 // Size: 0x2c
 function function_ab26c91383cb6029()
 {
@@ -1254,8 +1268,8 @@ function function_ab26c91383cb6029()
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x307b
+// Params 1
+// Checksum 0x0, Offset: 0x3095
 // Size: 0x113
 function function_fe6411544dd4c6f8( wasdestroyed )
 {
@@ -1295,8 +1309,8 @@ function function_fe6411544dd4c6f8( wasdestroyed )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3196
+// Params 1
+// Checksum 0x0, Offset: 0x31b0
 // Size: 0x18
 function function_de63e0c45173a927( data )
 {
@@ -1307,8 +1321,8 @@ function function_de63e0c45173a927( data )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31b6
+// Params 1
+// Checksum 0x0, Offset: 0x31d0
 // Size: 0x15c
 function loiteringmunition_dronegunempapplied( data )
 {
@@ -1352,8 +1366,8 @@ function loiteringmunition_dronegunempapplied( data )
 }
 
 // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x331a
+// Params 0
+// Checksum 0x0, Offset: 0x3334
 // Size: 0x43
 function function_e4fc57397c1b18d0()
 {
@@ -1369,8 +1383,8 @@ function function_e4fc57397c1b18d0()
 /#
 
     // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3365
+    // Params 3
+    // Checksum 0x0, Offset: 0x337f
     // Size: 0x96, Type: dev
     function function_90a556e6f70ba1e5( raycaststart, raycastend, radius )
     {
@@ -1384,8 +1398,8 @@ function function_e4fc57397c1b18d0()
     }
 
     // Namespace loitering_munition / scripts\killstreaks\loitering_munition
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3403
+    // Params 3
+    // Checksum 0x0, Offset: 0x341d
     // Size: 0x148, Type: dev
     function function_c50a1e52a02c0164( aabbmin, aabbmax, duration )
     {

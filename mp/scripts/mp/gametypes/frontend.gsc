@@ -1,7 +1,7 @@
 #namespace frontend;
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88
 // Size: 0xc6
 function main()
@@ -23,7 +23,7 @@ function main()
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x156
 // Size: 0x2
 function callback_frontendstartgametype()
@@ -32,7 +32,7 @@ function callback_frontendstartgametype()
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x160
 // Size: 0x2
 function callback_frontendplayeractive()
@@ -41,7 +41,7 @@ function callback_frontendplayeractive()
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16a
 // Size: 0x2
 function callback_frontendplayerconnect()
@@ -50,7 +50,7 @@ function callback_frontendplayerconnect()
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x174
 // Size: 0xb
 function callback_frontendplayerdisconnect( reason )
@@ -59,7 +59,7 @@ function callback_frontendplayerdisconnect( reason )
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0x187
 // Size: 0x7b
 function callback_frontendplayerdamage( einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1 )
@@ -68,7 +68,7 @@ function callback_frontendplayerdamage( einflictor, eattacker, idamage, idflags,
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x20a
 // Size: 0x53
 function callback_frontendplayerimpaled( eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34, var_d3564b2364cb59e6, var_a4d8eb0a63f60f6b )
@@ -77,7 +77,7 @@ function callback_frontendplayerimpaled( eattacker, objweapon, vpointclient, vpo
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x265
 // Size: 0x2b
 function callback_frontendplayerlaunched( eattacker, objweapon, vdir, magnitude, shitloc )
@@ -86,7 +86,7 @@ function callback_frontendplayerlaunched( eattacker, objweapon, vdir, magnitude,
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x298
 // Size: 0x53
 function callback_frontendplayerkilled( einflictor, attacker, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration )
@@ -95,7 +95,7 @@ function callback_frontendplayerkilled( einflictor, attacker, idamage, idflags, 
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x2f3
 // Size: 0x53
 function callback_frontendplayerlaststand( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_318ade4970c8f647 )
@@ -104,7 +104,7 @@ function callback_frontendplayerlaststand( einflictor, attacker, idamage, smeans
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34e
 // Size: 0x10
 function callback_frontendplayermigrated()
@@ -113,7 +113,7 @@ function callback_frontendplayermigrated()
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x366
 // Size: 0x10
 function callback_frontendhostmigration()
@@ -122,7 +122,7 @@ function callback_frontendhostmigration()
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37e
 // Size: 0x2
 function function_bfb9c6b70fc8f235()
@@ -131,7 +131,7 @@ function function_bfb9c6b70fc8f235()
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x388
 // Size: 0xb
 function function_8901ca5831ce6438( reason )
@@ -140,7 +140,7 @@ function function_8901ca5831ce6438( reason )
 }
 
 // Namespace frontend / scripts\mp\gametypes\frontend
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x39b
 // Size: 0x13
 function function_2a643088582c8be3( achievementid, progressdata )

@@ -10,7 +10,7 @@
 #namespace revive_teammate;
 
 // Namespace revive_teammate / namespace_503872f9ebd8a16f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14f
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -19,7 +19,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace revive_teammate / namespace_503872f9ebd8a16f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x165
 // Size: 0x123
 function evaluatescore( bot )
@@ -43,7 +43,7 @@ function evaluatescore( bot )
 }
 
 // Namespace revive_teammate / namespace_503872f9ebd8a16f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x291
 // Size: 0x72
 function function_e7b671a6a101c0df()
@@ -62,7 +62,7 @@ function function_e7b671a6a101c0df()
 }
 
 // Namespace revive_teammate / namespace_503872f9ebd8a16f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30c
 // Size: 0xfa
 function actionprocess( bot )
@@ -99,7 +99,7 @@ function actionprocess( bot )
 }
 
 // Namespace revive_teammate / namespace_503872f9ebd8a16f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x40e
 // Size: 0x5e
 function revivevictim( reviver, victim )
@@ -118,7 +118,7 @@ function revivevictim( reviver, victim )
 }
 
 // Namespace revive_teammate / namespace_503872f9ebd8a16f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x474
 // Size: 0x4e, Type: bool
 function isvalidvictim( victim, reviver )
@@ -127,7 +127,7 @@ function isvalidvictim( victim, reviver )
 }
 
 // Namespace revive_teammate / namespace_503872f9ebd8a16f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4cb
 // Size: 0x21
 function function_f4caae7e8af9d32c( action )

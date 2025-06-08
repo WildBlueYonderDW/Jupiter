@@ -17,7 +17,7 @@
 #namespace ob_music;
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x566
 // Size: 0x18c
 function function_59637079f05a9d7d()
@@ -57,7 +57,7 @@ function function_59637079f05a9d7d()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6fa
 // Size: 0x69
 function function_5751d00ce46557da( b_success, var_4647b8772d63e40d )
@@ -82,7 +82,7 @@ function function_5751d00ce46557da( b_success, var_4647b8772d63e40d )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76b
 // Size: 0xc6
 function on_player_connect( sparams )
@@ -105,7 +105,7 @@ function on_player_connect( sparams )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x839
 // Size: 0x2c
 function on_player_spawn( sparams )
@@ -114,7 +114,7 @@ function on_player_spawn( sparams )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x86d
 // Size: 0x33
 function on_player_death( sparams )
@@ -126,7 +126,7 @@ function on_player_death( sparams )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8a8
 // Size: 0x36
 function function_43983d74c830fa72( var_8e6988e5e46aad6e )
@@ -140,7 +140,7 @@ function function_43983d74c830fa72( var_8e6988e5e46aad6e )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e6
 // Size: 0x1c
 function function_1b4c60d1baa7885f( var_8e6988e5e46aad6e )
@@ -149,7 +149,7 @@ function function_1b4c60d1baa7885f( var_8e6988e5e46aad6e )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x90a
 // Size: 0x15e
 function function_a11d9698b773d4d( var_5759d113728d63fd )
@@ -205,7 +205,7 @@ function function_a11d9698b773d4d( var_5759d113728d63fd )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa71
 // Size: 0x1b8
 function function_115bd456be8e071d( players, var_9adc1bcdce9cf8b0, var_c342527a25f10cc5 )
@@ -287,7 +287,7 @@ function function_115bd456be8e071d( players, var_9adc1bcdce9cf8b0, var_c342527a2
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc31
 // Size: 0x19
 function function_aadc1c81b3fd1dd2( players )
@@ -296,7 +296,7 @@ function function_aadc1c81b3fd1dd2( players )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc52
 // Size: 0x31
 function function_e73a92bbeb2ae323()
@@ -314,7 +314,7 @@ function function_e73a92bbeb2ae323()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc8b
 // Size: 0xa4
 function function_6c107904f41fa075( var_cf0d23c983c65b3f )
@@ -345,7 +345,7 @@ function function_6c107904f41fa075( var_cf0d23c983c65b3f )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd37
 // Size: 0x170
 function function_be5acb731f2fef4a()
@@ -410,7 +410,7 @@ function function_be5acb731f2fef4a()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeaf
 // Size: 0x99
 function function_68692864a2e0769b()
@@ -438,7 +438,7 @@ function function_68692864a2e0769b()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf50
 // Size: 0x23
 function function_63f210bddc839fd1( var_b381b0883bcd4847 )
@@ -452,7 +452,7 @@ function function_63f210bddc839fd1( var_b381b0883bcd4847 )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf7b
 // Size: 0xe0
 function function_946170834c0bd1b8( var_b381b0883bcd4847 )
@@ -487,7 +487,7 @@ function function_946170834c0bd1b8( var_b381b0883bcd4847 )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1063
 // Size: 0xc5
 function function_ea04142a3f9551e( var_b381b0883bcd4847 )
@@ -518,7 +518,7 @@ function function_ea04142a3f9551e( var_b381b0883bcd4847 )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1130
 // Size: 0xaf
 function function_f838009e5997e512( var_b381b0883bcd4847 )
@@ -550,7 +550,7 @@ function function_f838009e5997e512( var_b381b0883bcd4847 )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e7
 // Size: 0x13c
 function function_b1008f8393393a( var_b381b0883bcd4847 )
@@ -591,7 +591,7 @@ function function_b1008f8393393a( var_b381b0883bcd4847 )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x132b
 // Size: 0x2e
 function function_7e87e5c680243a20( var_b381b0883bcd4847 )
@@ -606,7 +606,7 @@ function function_7e87e5c680243a20( var_b381b0883bcd4847 )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1361
 // Size: 0x2e
 function function_9be10b0ca4ac15a1( var_b381b0883bcd4847 )
@@ -621,7 +621,7 @@ function function_9be10b0ca4ac15a1( var_b381b0883bcd4847 )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1397
 // Size: 0xe0
 function function_64ad2696cde68985( params )
@@ -645,7 +645,7 @@ function function_64ad2696cde68985( params )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x147f
 // Size: 0xc3, Type: bool
 function function_b25d8d2c8ab3cfb2( player )
@@ -686,7 +686,7 @@ function function_b25d8d2c8ab3cfb2( player )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x154b
 // Size: 0x30
 function function_6127318053465edf( s_exfil )
@@ -697,7 +697,7 @@ function function_6127318053465edf( s_exfil )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1583
 // Size: 0x24
 function on_exfil_board_vehicle( s_exfil )
@@ -707,7 +707,7 @@ function on_exfil_board_vehicle( s_exfil )
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15af
 // Size: 0x15
 function function_96d44c396a608858()
@@ -716,7 +716,7 @@ function function_96d44c396a608858()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15cc
 // Size: 0x14
 function function_f08b1692d7b6db4c()
@@ -725,7 +725,7 @@ function function_f08b1692d7b6db4c()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15e8
 // Size: 0x14
 function function_2cee203ae5c44e3b()
@@ -734,7 +734,7 @@ function function_2cee203ae5c44e3b()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1604
 // Size: 0x13
 function function_fb7e3db05e3a3c0d()
@@ -743,7 +743,7 @@ function function_fb7e3db05e3a3c0d()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x161f
 // Size: 0x15
 function function_24f7bf25b01b1d1f()
@@ -752,7 +752,7 @@ function function_24f7bf25b01b1d1f()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x163c
 // Size: 0x14
 function function_2431d3e1b4e70519()
@@ -761,7 +761,7 @@ function function_2431d3e1b4e70519()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1658
 // Size: 0x14
 function function_1be14e4687ebc5fc()
@@ -770,7 +770,7 @@ function function_1be14e4687ebc5fc()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1674
 // Size: 0x13
 function function_78c9f1435281a248()
@@ -779,7 +779,7 @@ function function_78c9f1435281a248()
 }
 
 // Namespace ob_music / namespace_b3f32c8cb80b8124
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x168f
 // Size: 0x3a, Type: bool
 function function_bcede9a9fce0a303()

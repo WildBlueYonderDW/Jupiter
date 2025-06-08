@@ -4,7 +4,7 @@
 #namespace threat_sight;
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x187
 // Size: 0x161
 function threat_sight_set_enabled( enabled )
@@ -47,7 +47,7 @@ function threat_sight_set_enabled( enabled )
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f0
 // Size: 0x33
 function threat_sight_set_dvar( enabled )
@@ -62,7 +62,7 @@ function threat_sight_set_dvar( enabled )
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32b
 // Size: 0x56
 function threat_sight_set_dvar_display( enabled )
@@ -84,7 +84,7 @@ function threat_sight_set_dvar_display( enabled )
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x389
 // Size: 0x38
 function threat_sight_enabled()
@@ -103,7 +103,7 @@ function threat_sight_enabled()
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ca
 // Size: 0x9e
 function threat_sight_player_entity_state_set( ai, statename )
@@ -132,7 +132,7 @@ function threat_sight_player_entity_state_set( ai, statename )
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x470
 // Size: 0x13c
 function threat_sight_force_visible( othersentient, durationseconds )
@@ -161,7 +161,7 @@ function threat_sight_force_visible( othersentient, durationseconds )
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b4
 // Size: 0x21c
 function threat_sight_force_visible_thread()
@@ -212,7 +212,7 @@ function threat_sight_force_visible_thread()
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d8
 // Size: 0xf4
 function function_468da1365698eabf()
@@ -250,7 +250,7 @@ function function_468da1365698eabf()
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d4
 // Size: 0xf4
 function function_3e245e55717e286a()
@@ -288,7 +288,7 @@ function function_3e245e55717e286a()
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9d0
 // Size: 0xac
 function threat_sight_fake( origin, amount )
@@ -311,7 +311,7 @@ function threat_sight_fake( origin, amount )
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa84
 // Size: 0x5b
 function threat_sight_player_sight_audio( anycansee, maxthreat, var_67e8151f4dfc690b )
@@ -323,7 +323,7 @@ function threat_sight_player_sight_audio( anycansee, maxthreat, var_67e8151f4dfc
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xae7
 // Size: 0x3f
 function function_9b25540da1b89219()
@@ -335,7 +335,7 @@ function function_9b25540da1b89219()
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb2e
 // Size: 0x52
 function function_82079fb63bda0995( anycansee, maxthreat )
@@ -347,7 +347,7 @@ function function_82079fb63bda0995( anycansee, maxthreat )
 }
 
 // Namespace threat_sight / scripts\stealth\threat_sight
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb88
 // Size: 0x3f
 function function_e4eaeef9e706471e()

@@ -15,7 +15,7 @@ function autoexec main()
 }
 
 // Namespace bonus_points_team / scripts\cp_mp\powerups\bonus_points_team
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x123
 // Size: 0x55
 function function_e3322035230ef1d7()
@@ -31,7 +31,7 @@ function function_e3322035230ef1d7()
 }
 
 // Namespace bonus_points_team / scripts\cp_mp\powerups\bonus_points_team
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x180
 // Size: 0x82
 function function_24cd8348480a55d3( str_powerup, ent_powerup )
@@ -48,7 +48,7 @@ function function_24cd8348480a55d3( str_powerup, ent_powerup )
 }
 
 // Namespace bonus_points_team / scripts\cp_mp\powerups\bonus_points_team
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20a
 // Size: 0x30
 function give_points()

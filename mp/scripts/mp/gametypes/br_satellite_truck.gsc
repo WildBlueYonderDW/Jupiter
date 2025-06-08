@@ -10,7 +10,7 @@
 #namespace br_satellite_truck;
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fc
 // Size: 0x110
 function init()
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x514
 // Size: 0x1c6
 function spawnsatellitetruck( struct )
@@ -90,7 +90,7 @@ function spawnsatellitetruck( struct )
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e3
 // Size: 0x5c
 function onprematchdone()
@@ -102,7 +102,7 @@ function onprematchdone()
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x747
 // Size: 0x173
 function _satellitetruckmanageminimapicon()
@@ -145,7 +145,7 @@ function _satellitetruckmanageminimapicon()
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c2
 // Size: 0x19c
 function _satellitetruckstartsound()
@@ -209,7 +209,7 @@ function _satellitetruckstartsound()
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa66
 // Size: 0x17
 function _satellitetruckendusethink()
@@ -219,7 +219,7 @@ function _satellitetruckendusethink()
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa85
 // Size: 0x123
 function _satellitetruckusethink()
@@ -269,7 +269,7 @@ function _satellitetruckusethink()
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb0
 // Size: 0xf2
 function _satellitetruckactivate()
@@ -294,7 +294,7 @@ function _satellitetruckactivate()
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcaa
 // Size: 0x81
 function _onenterdefaultstate( satellitetruck )
@@ -309,7 +309,7 @@ function _onenterdefaultstate( satellitetruck )
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd33
 // Size: 0x59
 function _onexitdefaultstate( satellitetruck )
@@ -322,7 +322,7 @@ function _onexitdefaultstate( satellitetruck )
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd94
 // Size: 0x7c
 function _onenterchargingstate( satellitetruck )
@@ -335,7 +335,7 @@ function _onenterchargingstate( satellitetruck )
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe18
 // Size: 0x2f
 function _onexitchargingstate( satellitetruck )
@@ -345,7 +345,7 @@ function _onexitchargingstate( satellitetruck )
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe4f
 // Size: 0x5f
 function _onenteractivestate( satellitetruck )
@@ -358,7 +358,7 @@ function _onenteractivestate( satellitetruck )
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeb6
 // Size: 0x35
 function _onexitactivestate( satellitetruck )
@@ -369,7 +369,7 @@ function _onexitactivestate( satellitetruck )
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xef3
 // Size: 0x14
 function _onenterscanningstate( satellitetruck )
@@ -378,7 +378,7 @@ function _onenterscanningstate( satellitetruck )
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf0f
 // Size: 0x16
 function _onexitscanningstate( satellitetruck )
@@ -387,7 +387,7 @@ function _onexitscanningstate( satellitetruck )
 }
 
 // Namespace br_satellite_truck / scripts\mp\gametypes\br_satellite_truck
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf2d
 // Size: 0x37
 function _onentercooldownstate( satellitetruck )

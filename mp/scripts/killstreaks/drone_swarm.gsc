@@ -22,7 +22,7 @@ function autoexec main()
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62d
 // Size: 0x56
 function function_72d7a59680238265()
@@ -38,7 +38,7 @@ function function_72d7a59680238265()
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68b
 // Size: 0xe8
 function function_6bdbb403f0bf174d()
@@ -62,7 +62,7 @@ function function_6bdbb403f0bf174d()
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77b
 // Size: 0x1b
 function function_a0e89e425d7647e9()
@@ -71,7 +71,7 @@ function function_a0e89e425d7647e9()
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x79e
 // Size: 0x167
 function tryusedroneswarm( streakinfo )
@@ -133,7 +133,7 @@ function tryusedroneswarm( streakinfo )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x90e
 // Size: 0x1e2
 function function_79f28198cedcecf6( streakinfo )
@@ -186,7 +186,7 @@ function function_79f28198cedcecf6( streakinfo )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf8
 // Size: 0x8e
 function function_9b447df727cd449b()
@@ -207,7 +207,7 @@ function function_9b447df727cd449b()
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb8e
 // Size: 0x8e
 function function_f288b429af4c56e6()
@@ -228,7 +228,7 @@ function function_f288b429af4c56e6()
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc24
 // Size: 0xd6
 function function_d498c292dc37474b( location )
@@ -253,7 +253,7 @@ function function_d498c292dc37474b( location )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd02
 // Size: 0x2b4
 function function_21865cb353bbaf24( streakinfo )
@@ -312,7 +312,7 @@ function function_21865cb353bbaf24( streakinfo )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfbf
 // Size: 0x624
 function function_2f27caaab9a759fa()
@@ -459,7 +459,7 @@ function function_2f27caaab9a759fa()
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15eb
 // Size: 0x15d
 function function_325d5b0c9d974e2f()
@@ -499,7 +499,7 @@ function function_325d5b0c9d974e2f()
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1751
 // Size: 0x478
 function function_15b8e0948c99ed81( streakinfo, var_4659ac69102900ff, location )
@@ -590,7 +590,7 @@ function function_15b8e0948c99ed81( streakinfo, var_4659ac69102900ff, location )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1bd2
 // Size: 0x67
 function function_e09e108f69c7faf7( vector1, vector2 )
@@ -608,7 +608,7 @@ function function_e09e108f69c7faf7( vector1, vector2 )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1c41
 // Size: 0xc1
 function function_bbc8f1a45f899378( deploytime, deployvector, exitvector, exitloc, exittime )
@@ -642,7 +642,7 @@ function function_bbc8f1a45f899378( deploytime, deployvector, exitvector, exitlo
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d0a
 // Size: 0x12d
 function function_3b5d077ae996be94( spawnlocation, targetlocation, streakinfo )
@@ -678,7 +678,7 @@ function function_3b5d077ae996be94( spawnlocation, targetlocation, streakinfo )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e3f
 // Size: 0x38a
 function function_9dd4990a96e47972( location, streakinfo )
@@ -749,7 +749,7 @@ function function_9dd4990a96e47972( location, streakinfo )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21d2
 // Size: 0x36
 function function_7cf8dc7e5c4441d4( streakinfo )
@@ -760,7 +760,7 @@ function function_7cf8dc7e5c4441d4( streakinfo )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2210
 // Size: 0x1e0
 function function_5de4ac1e8f7a7cc1( callbackparams, additionalparams )
@@ -813,7 +813,7 @@ function function_5de4ac1e8f7a7cc1( callbackparams, additionalparams )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23f8
 // Size: 0xc8
 function function_7d2bf0fc063e5cdb()
@@ -849,7 +849,7 @@ function function_7d2bf0fc063e5cdb()
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24c8
 // Size: 0x104
 function function_32fa416db2a928d9( streakinfo )
@@ -881,7 +881,7 @@ function function_32fa416db2a928d9( streakinfo )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x25d4
 // Size: 0x3e3
 function function_16595897697aa8f6( location, offsetx, offsety, offsetz )
@@ -982,7 +982,7 @@ function function_16595897697aa8f6( location, offsetx, offsety, offsetz )
 }
 
 // Namespace drone_swarm / scripts\killstreaks\drone_swarm
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29c0
 // Size: 0x77
 function function_111b87bbd927f6a3( minrate, maxrate )

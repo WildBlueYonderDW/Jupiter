@@ -23,7 +23,7 @@
 #namespace dd;
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf2c
 // Size: 0x40f
 function main()
@@ -133,7 +133,7 @@ function main()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x139e
 // Size: 0xea
 function initializematchrules()
@@ -151,7 +151,7 @@ function initializematchrules()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1490
 // Size: 0x1c
 function onprecachegametype()
@@ -161,7 +161,7 @@ function onprecachegametype()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14b4
 // Size: 0x220
 function onstartgametype()
@@ -235,7 +235,7 @@ function onstartgametype()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16dc
 // Size: 0x44a
 function initspawns()
@@ -306,7 +306,7 @@ function initspawns()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b2e
 // Size: 0x4d
 function getspawnpointdist( spawnpoint, goalpos )
@@ -322,7 +322,7 @@ function getspawnpointdist( spawnpoint, goalpos )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b84
 // Size: 0x28
 function waittoprocess()
@@ -343,7 +343,7 @@ function waittoprocess()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bb4
 // Size: 0x254
 function getspawnpoint()
@@ -448,7 +448,7 @@ function getspawnpoint()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e11
 // Size: 0xf9
 function onspawnplayer( revivespawn )
@@ -491,7 +491,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f12
 // Size: 0x47
 function getbombteam()
@@ -514,7 +514,7 @@ function getbombteam()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f62
 // Size: 0x33
 function hidecarryiconongameend()
@@ -529,7 +529,7 @@ function hidecarryiconongameend()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f9d
 // Size: 0x29
 function dd_endgame( winningteam, endreasontext )
@@ -539,7 +539,7 @@ function dd_endgame( winningteam, endreasontext )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fce
 // Size: 0x117
 function ondeadevent( team )
@@ -581,7 +581,7 @@ function ondeadevent( team )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x20ed
 // Size: 0x113
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -606,7 +606,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2208
 // Size: 0x42
 function ontimelimit()
@@ -621,7 +621,7 @@ function ontimelimit()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2252
 // Size: 0xca
 function updategametypedvars()
@@ -638,7 +638,7 @@ function updategametypedvars()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2324
 // Size: 0x13e
 function verifybombzones( bombzones )
@@ -694,7 +694,7 @@ function verifybombzones( bombzones )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x246a
 // Size: 0x1d6
 function bombs()
@@ -753,7 +753,7 @@ function bombs()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2648
 // Size: 0x13
 function onbeginuse( player )
@@ -762,7 +762,7 @@ function onbeginuse( player )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2663
 // Size: 0x25
 function onenduse( team, player, result )
@@ -771,7 +771,7 @@ function onenduse( team, player, result )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2690
 // Size: 0x79
 function onuseplantobject( player )
@@ -789,7 +789,7 @@ function onuseplantobject( player )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2711
 // Size: 0x100
 function setupkillcament()
@@ -813,7 +813,7 @@ function setupkillcament()
 /#
 
     // Namespace dd / scripts\mp\gametypes\dd
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2819
     // Size: 0x1d0, Type: dev
     function debugkillcament( visual )
@@ -842,7 +842,7 @@ function setupkillcament()
 #/
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29f1
 // Size: 0xad
 function resetbombzone( player )
@@ -868,7 +868,7 @@ function resetbombzone( player )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aa6
 // Size: 0x43
 function setupfordefusing()
@@ -881,7 +881,7 @@ function setupfordefusing()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2af1
 // Size: 0x17
 function oncantuse( player )
@@ -890,7 +890,7 @@ function oncantuse( player )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b10
 // Size: 0x2
 function onreset()
@@ -899,7 +899,7 @@ function onreset()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b1a
 // Size: 0x15b
 function bombplanted( destroyedobj, player )
@@ -940,7 +940,7 @@ function bombplanted( destroyedobj, player )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c7d
 // Size: 0x1db
 function bombhandler( player, desttype, playerteam )
@@ -1008,7 +1008,7 @@ function bombhandler( player, desttype, playerteam )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e60
 // Size: 0x102
 function dropbombmodel( player, site )
@@ -1024,7 +1024,7 @@ function dropbombmodel( player, site )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f6a
 // Size: 0x65
 function restarttimer()
@@ -1050,7 +1050,7 @@ function restarttimer()
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fd7
 // Size: 0x9e
 function bombtimerwait( siteloc )
@@ -1083,7 +1083,7 @@ function bombtimerwait( siteloc )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x307d
 // Size: 0xc0
 function update_ui_timers( siteloc )
@@ -1104,7 +1104,7 @@ function update_ui_timers( siteloc )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3145
 // Size: 0x3d
 function bombdefused( sitedefused )
@@ -1115,7 +1115,7 @@ function bombdefused( sitedefused )
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x318a
 // Size: 0x107
 function setupobjectiveicons()

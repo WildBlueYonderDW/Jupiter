@@ -3,7 +3,7 @@
 #namespace flags;
 
 // Namespace flags / scripts\engine\flags
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa9
 // Size: 0x52
 function init_flags()
@@ -21,7 +21,7 @@ function init_flags()
 }
 
 // Namespace flags / scripts\engine\flags
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x103
 // Size: 0x24
 function assign_unique_id()

@@ -20,8 +20,8 @@
 /#
 
     // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6ac
+    // Params 1
+    // Checksum 0x0, Offset: 0x6ae
     // Size: 0x17, Type: dev
     function function_ccb525d44a15f2b9( params )
     {
@@ -31,8 +31,8 @@
 #/
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cb
+// Params 0
+// Checksum 0x0, Offset: 0x6cd
 // Size: 0x141
 function function_d526daad5a463daf()
 {
@@ -61,8 +61,8 @@ function function_d526daad5a463daf()
 }
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x814
+// Params 0
+// Checksum 0x0, Offset: 0x816
 // Size: 0x4c
 function function_2723759398817801()
 {
@@ -78,8 +78,8 @@ function function_2723759398817801()
 }
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x868
+// Params 3
+// Checksum 0x0, Offset: 0x86a
 // Size: 0x13a
 function startunderground( asmname, statename, params )
 {
@@ -122,8 +122,8 @@ function startunderground( asmname, statename, params )
 }
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9aa
+// Params 4
+// Checksum 0x0, Offset: 0x9ac
 // Size: 0x35, Type: bool
 function shouldemerge( asmname, statename, tostatename, params )
 {
@@ -136,8 +136,8 @@ function shouldemerge( asmname, statename, tostatename, params )
 }
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e8
+// Params 4
+// Checksum 0x0, Offset: 0x9ea
 // Size: 0x35, Type: bool
 function function_4d2b6d209876339b( asmname, statename, tostatename, params )
 {
@@ -150,8 +150,8 @@ function function_4d2b6d209876339b( asmname, statename, tostatename, params )
 }
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa26
+// Params 4
+// Checksum 0x0, Offset: 0xa28
 // Size: 0x44, Type: bool
 function function_c3360a05244c8c0a( asmname, statename, tostatename, params )
 {
@@ -164,8 +164,8 @@ function function_c3360a05244c8c0a( asmname, statename, tostatename, params )
 }
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa73
+// Params 3
+// Checksum 0x0, Offset: 0xa75
 // Size: 0x156
 function startemerge( asmname, statename, params )
 {
@@ -199,8 +199,8 @@ function startemerge( asmname, statename, params )
 }
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd1
+// Params 3
+// Checksum 0x0, Offset: 0xbd3
 // Size: 0x107
 function leaveunderground( asmname, statename, params )
 {
@@ -230,7 +230,7 @@ function leaveunderground( asmname, statename, params )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xce0
+// Checksum 0x0, Offset: 0xce2
 // Size: 0x182
 function private function_c1ce555e3408ec71()
 {
@@ -272,7 +272,7 @@ function private function_c1ce555e3408ec71()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xe6a
+// Checksum 0x0, Offset: 0xe6c
 // Size: 0xe0
 function private function_432128e123e154c5()
 {
@@ -302,8 +302,8 @@ function private function_432128e123e154c5()
 }
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf52
+// Params 0
+// Checksum 0x0, Offset: 0xf54
 // Size: 0x2b9
 function function_814d919be8390cd3()
 {
@@ -388,7 +388,7 @@ function function_814d919be8390cd3()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1213
+// Checksum 0x0, Offset: 0x1215
 // Size: 0x12
 function private on_death( params )
 {
@@ -397,7 +397,7 @@ function private on_death( params )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x122d
+// Checksum 0x0, Offset: 0x122f
 // Size: 0x13
 function private function_84a8667ab38fe6cd()
 {
@@ -408,7 +408,7 @@ function private function_84a8667ab38fe6cd()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1248
+// Checksum 0x0, Offset: 0x124a
 // Size: 0x2c1
 function private function_a6371e9770dd7912()
 {
@@ -489,7 +489,7 @@ function private function_a6371e9770dd7912()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1511
+// Checksum 0x0, Offset: 0x1513
 // Size: 0x10a
 function private function_bd315b0ebd63273c( var_59bd8f4656f0af80 )
 {
@@ -529,7 +529,7 @@ function private function_bd315b0ebd63273c( var_59bd8f4656f0af80 )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1624
+// Checksum 0x0, Offset: 0x1626
 // Size: 0x166
 function private function_ce14c9b1ee64525f()
 {
@@ -557,7 +557,7 @@ function private function_ce14c9b1ee64525f()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1792
+// Checksum 0x0, Offset: 0x1794
 // Size: 0x3c1
 function private liftoff_ent( worm )
 {
@@ -638,7 +638,7 @@ function private liftoff_ent( worm )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1b5b
+// Checksum 0x0, Offset: 0x1b5d
 // Size: 0x8b
 function private function_aa778d0321cf512f( worm, liftoff_ent )
 {
@@ -659,8 +659,8 @@ function private function_aa778d0321cf512f( worm, liftoff_ent )
 }
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bee
+// Params 3
+// Checksum 0x0, Offset: 0x1bf0
 // Size: 0x211
 function function_bea202648c100e56( target, head_pos, damage )
 {
@@ -730,7 +730,7 @@ function function_bea202648c100e56( target, head_pos, damage )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1e08
+// Checksum 0x0, Offset: 0x1e0a
 // Size: 0x51
 function private function_b68e275f34628faf( worm )
 {
@@ -743,7 +743,7 @@ function private function_b68e275f34628faf( worm )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1e61
+// Checksum 0x0, Offset: 0x1e63
 // Size: 0x10c
 function private function_18b9e51f238bd95a( player, worm )
 {
@@ -783,7 +783,7 @@ function private function_18b9e51f238bd95a( player, worm )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1f75
+// Checksum 0x0, Offset: 0x1f77
 // Size: 0x52
 function private function_624b4095d6b9aa67( player, is_longer )
 {
@@ -793,7 +793,7 @@ function private function_624b4095d6b9aa67( player, is_longer )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1fcf
+// Checksum 0x0, Offset: 0x1fd1
 // Size: 0x11d
 function private function_7f9eb46a76d2fa8b( is_enabled )
 {
@@ -834,7 +834,7 @@ function private function_7f9eb46a76d2fa8b( is_enabled )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x20f4
+// Checksum 0x0, Offset: 0x20f6
 // Size: 0x215
 function private function_80b969fbbf253b0()
 {
@@ -909,7 +909,7 @@ function private function_80b969fbbf253b0()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2312
+// Checksum 0x0, Offset: 0x2314
 // Size: 0x36b
 function private function_945018c01016d9ce()
 {
@@ -1033,7 +1033,7 @@ function private function_945018c01016d9ce()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2685
+// Checksum 0x0, Offset: 0x2687
 // Size: 0xe6
 function private function_11afde23727cd866( pos )
 {
@@ -1082,7 +1082,7 @@ function private function_11afde23727cd866( pos )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2774
+// Checksum 0x0, Offset: 0x2776
 // Size: 0x29b
 function private function_1cdd35ae61fe41d3( tacpoint, var_12b128467439a5b6 )
 {
@@ -1178,7 +1178,7 @@ function private function_1cdd35ae61fe41d3( tacpoint, var_12b128467439a5b6 )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2a18
+// Checksum 0x0, Offset: 0x2a1a
 // Size: 0x10d
 function private function_370709234f11708d( ent, var_bf32f518568f490d, target_pos )
 {
@@ -1209,7 +1209,7 @@ function private function_370709234f11708d( ent, var_bf32f518568f490d, target_po
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2b2d
+// Checksum 0x0, Offset: 0x2b2f
 // Size: 0x3c
 function private function_8789d22720f0612( pos )
 {
@@ -1220,7 +1220,7 @@ function private function_8789d22720f0612( pos )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2b71
+// Checksum 0x0, Offset: 0x2b73
 // Size: 0x9a
 function private function_ce10f8b3e9257046( player, damage_point )
 {
@@ -1234,7 +1234,7 @@ function private function_ce10f8b3e9257046( player, damage_point )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2c13
+// Checksum 0x0, Offset: 0x2c15
 // Size: 0x3a
 function private function_fb98b0b95868ad35()
 {
@@ -1246,7 +1246,7 @@ function private function_fb98b0b95868ad35()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2c55
+// Checksum 0x0, Offset: 0x2c57
 // Size: 0x79
 function private function_49df9cf9b86f53cd( underground_ent )
 {
@@ -1265,7 +1265,7 @@ function private function_49df9cf9b86f53cd( underground_ent )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2cd6
+// Checksum 0x0, Offset: 0x2cd8
 // Size: 0x8d1
 function private function_e35cf2862b8a6c( underground_ent )
 {
@@ -1506,7 +1506,7 @@ function private function_e35cf2862b8a6c( underground_ent )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x35af
+// Checksum 0x0, Offset: 0x35b1
 // Size: 0x38
 function private function_69ded3e9c71cefdf( state )
 {
@@ -1523,7 +1523,7 @@ function private function_69ded3e9c71cefdf( state )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x35ef
+// Checksum 0x0, Offset: 0x35f1
 // Size: 0x356
 function private function_4b0fbbaee39f7489( underground_ent )
 {
@@ -1595,7 +1595,7 @@ function private function_4b0fbbaee39f7489( underground_ent )
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x394d
+// Checksum 0x0, Offset: 0x394f
 // Size: 0x7e, Type: bool
 function private should_heal()
 {
@@ -1623,7 +1623,7 @@ function private should_heal()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x39d4
+// Checksum 0x0, Offset: 0x39d6
 // Size: 0x195
 function private heal_update()
 {
@@ -1661,7 +1661,7 @@ function private heal_update()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3b71
+// Checksum 0x0, Offset: 0x3b73
 // Size: 0x25, Type: bool
 function private function_70a65bfe53197f0d()
 {
@@ -1680,7 +1680,7 @@ function private function_70a65bfe53197f0d()
 
 // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3b9f
+// Checksum 0x0, Offset: 0x3ba1
 // Size: 0x26
 function private stop_healing()
 {
@@ -1692,8 +1692,8 @@ function private stop_healing()
 /#
 
     // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3bcd
+    // Params 0
+    // Checksum 0x0, Offset: 0x3bcf
     // Size: 0xa4, Type: dev
     function function_affdcaeb23533028()
     {
@@ -1710,7 +1710,7 @@ function private stop_healing()
 
     // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3c79
+    // Checksum 0x0, Offset: 0x3c7b
     // Size: 0x46, Type: dev
     function private function_63b466a9d511f482()
     {
@@ -1726,7 +1726,7 @@ function private stop_healing()
 
     // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3cc7
+    // Checksum 0x0, Offset: 0x3cc9
     // Size: 0x17, Type: dev
     function private function_1ec53e871d501656()
     {
@@ -1735,7 +1735,7 @@ function private stop_healing()
 
     // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3ce6
+    // Checksum 0x0, Offset: 0x3ce8
     // Size: 0xde, Type: dev
     function private function_4516e2377c60aa32( params )
     {
@@ -1771,7 +1771,7 @@ function private stop_healing()
 
     // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3dcc
+    // Checksum 0x0, Offset: 0x3dce
     // Size: 0x1a, Type: dev
     function private function_dfb388f8dab8c071()
     {
@@ -1780,7 +1780,7 @@ function private stop_healing()
 
     // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
     // Params 2, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3dee
+    // Checksum 0x0, Offset: 0x3df0
     // Size: 0x6d, Type: dev
     function private function_8acdeae54b5a9492( text, pos )
     {
@@ -1798,7 +1798,7 @@ function private stop_healing()
 
     // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3e63
+    // Checksum 0x0, Offset: 0x3e65
     // Size: 0xa6, Type: dev
     function private draw_underground()
     {
@@ -1827,7 +1827,7 @@ function private stop_healing()
 
     // Namespace zombie_deathworm / namespace_eacfeb05dca5f969
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3f11
+    // Checksum 0x0, Offset: 0x3f13
     // Size: 0x294, Type: dev
     function private function_ab3d258d6bf6aaa7()
     {

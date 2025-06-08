@@ -41,7 +41,7 @@
 #namespace siege;
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd06
 // Size: 0x6cd
 function main()
@@ -56,11 +56,11 @@ function main()
     
     if ( matchmakingmatch )
     {
-        level.isgroundwarsiege = getdvarint( @"hash_f2d9a572db1504f1", 0 );
+        level.isgroundwarsiege = getdvarint( @"scr_siege_groundwarsiege", 0 );
     }
     
     /#
-        level.isgroundwarsiege = getdvarint( @"hash_f2d9a572db1504f1", 0 );
+        level.isgroundwarsiege = getdvarint( @"scr_siege_groundwarsiege", 0 );
     #/
     
     level.allowmodestructs = [];
@@ -224,7 +224,7 @@ function main()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13db
 // Size: 0xf8
 function initializematchrules()
@@ -242,7 +242,7 @@ function initializematchrules()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14db
 // Size: 0x64
 function seticonnames()
@@ -257,7 +257,7 @@ function seticonnames()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1547
 // Size: 0x1e2
 function onstartgametype()
@@ -333,7 +333,7 @@ function onstartgametype()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1731
 // Size: 0x6a
 function vehiclespawn_getspawndata( loc )
@@ -347,7 +347,7 @@ function vehiclespawn_getspawndata( loc )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17a4
 // Size: 0x7e
 function registervehicletype( refname, spawnvehiclecallback )
@@ -362,7 +362,7 @@ function registervehicletype( refname, spawnvehiclecallback )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x182a
 // Size: 0x358
 function initvehicles()
@@ -421,13 +421,15 @@ function initvehicles()
     
     if ( false )
     {
-        for (i = 0; i < numtospawn; i++) {
+        for ( i = 0; i < numtospawn ; i++ )
+        {
             loc = level.vehiclespawnlocs[ i ];
             thread drawline( loc.origin + ( 0, 0, 1500 ), loc.origin + ( 0, 0, 2500 ), 1000, ( 0, 1, 0 ) );
         }
     }
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         loc = level.vehiclespawnlocs[ i ];
         
         if ( isdefined( loc ) )
@@ -439,7 +441,7 @@ function initvehicles()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b8a
 // Size: 0x148a
 function getvehiclespawns( vehicleref, vehicletype )
@@ -759,7 +761,8 @@ function getvehiclespawns( vehicleref, vehicletype )
     
     if ( vehicleref == "atv" )
     {
-        for (i = 0; i < atvoriginsarray.size; i++) {
+        for ( i = 0; i < atvoriginsarray.size ; i++ )
+        {
             if ( i <= atvoriginsarray.size - 1 )
             {
                 atvorigin = atvoriginsarray[ i ];
@@ -775,7 +778,8 @@ function getvehiclespawns( vehicleref, vehicletype )
     }
     else if ( vehicleref == "tac_rover" )
     {
-        for (i = 0; i < var_380b98510b5d0765.size; i++) {
+        for ( i = 0; i < var_380b98510b5d0765.size ; i++ )
+        {
             if ( i <= var_380b98510b5d0765.size - 1 )
             {
                 var_d82a9436eee389cb = var_380b98510b5d0765[ i ];
@@ -792,7 +796,8 @@ function getvehiclespawns( vehicleref, vehicletype )
     
     dvarstring = hashcat( @"hash_ad95d7262a11119e", vehicleref );
     
-    for (index = 0; true; index++) {
+    for ( index = 0; true ; index++ )
+    {
         origindvarstring = hashcat( dvarstring, "_origin_", index );
         angledvarstring = hashcat( dvarstring, "_angles_", index );
         defaultorigin = ( 0, 0, 0 );
@@ -816,7 +821,7 @@ function getvehiclespawns( vehicleref, vehicletype )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x301d
 // Size: 0x59
 function vehiclespawn_littlebird( loc, faildata )
@@ -831,7 +836,7 @@ function vehiclespawn_littlebird( loc, faildata )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x307f
 // Size: 0x59
 function vehiclespawn_atv( loc, faildata )
@@ -846,7 +851,7 @@ function vehiclespawn_atv( loc, faildata )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30e1
 // Size: 0x59
 function vehiclespawn_tacrover( loc, faildata )
@@ -861,7 +866,7 @@ function vehiclespawn_tacrover( loc, faildata )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3143
 // Size: 0xde
 function filtervehiclespawnstructs( structs )
@@ -885,7 +890,7 @@ function filtervehiclespawnstructs( structs )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x322a
 // Size: 0xc5
 function updategametypedvars()
@@ -901,7 +906,7 @@ function updategametypedvars()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32f7
 // Size: 0x13
 function adjustroundendtimer()
@@ -911,7 +916,7 @@ function adjustroundendtimer()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3312
 // Size: 0x25
 function waittooverridegraceperiod()
@@ -925,7 +930,7 @@ function waittooverridegraceperiod()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x333f
 // Size: 0x10b
 function initspawns()
@@ -947,7 +952,7 @@ function initspawns()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3452
 // Size: 0x2a9
 function getspawnpoint()
@@ -1038,7 +1043,7 @@ function getspawnpoint()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3703
 // Size: 0x79
 function getteamdompoints( team )
@@ -1057,7 +1062,7 @@ function getteamdompoints( team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3785
 // Size: 0x1c
 function gettimesincedompointcapture( dompoint )
@@ -1066,7 +1071,7 @@ function gettimesincedompointcapture( dompoint )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37aa
 // Size: 0x75
 function onplayerconnect( player )
@@ -1084,7 +1089,7 @@ function onplayerconnect( player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3827
 // Size: 0x70
 function onplayerdisconnect( player )
@@ -1104,7 +1109,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x389f
 // Size: 0x7b
 function onplayerspawned()
@@ -1131,7 +1136,7 @@ function onplayerspawned()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3922
 // Size: 0x22
 function onplayerjointeam( player )
@@ -1143,7 +1148,7 @@ function onplayerjointeam( player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x394c
 // Size: 0x1b
 function onspawnplayer( revivespawn )
@@ -1153,7 +1158,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x396f
 // Size: 0x53
 function checkallowspectating()
@@ -1171,7 +1176,7 @@ function checkallowspectating()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39ca
 // Size: 0x733
 function domflags()
@@ -1190,7 +1195,8 @@ function domflags()
     currentmap = getmapname();
     searchcol = 1;
     
-    for (returncol = 2; returncol < 11; returncol++) {
+    for ( returncol = 2; returncol < 11 ; returncol++ )
+    {
         returnvalue = tablelookup( filename, searchcol, currentmap, returncol );
         
         if ( returnvalue != "" )
@@ -1201,11 +1207,13 @@ function domflags()
     
     triggers = [];
     
-    for (index = 0; index < primaryflags.size; index++) {
+    for ( index = 0; index < primaryflags.size ; index++ )
+    {
         triggers[ triggers.size ] = primaryflags[ index ];
     }
     
-    for (index = 0; index < secondaryflags.size; index++) {
+    for ( index = 0; index < secondaryflags.size ; index++ )
+    {
         triggers[ triggers.size ] = secondaryflags[ index ];
     }
     
@@ -1222,7 +1230,8 @@ function domflags()
     
     level.objectives = [];
     
-    for (index = 0; index < triggers.size; index++) {
+    for ( index = 0; index < triggers.size ; index++ )
+    {
         trigger = triggers[ index ];
         
         if ( level.numsiegeflags == 3 )
@@ -1331,7 +1340,7 @@ function domflags()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4105
 // Size: 0x1f
 function setneutral()
@@ -1343,7 +1352,7 @@ function setneutral()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x412c
 // Size: 0xfd
 function setflagpositions( col, posvalue )
@@ -1381,7 +1390,7 @@ function setflagpositions( col, posvalue )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4231
 // Size: 0x110
 function getflagpos( flaglabel, flagorigin )
@@ -1411,7 +1420,7 @@ function getflagpos( flaglabel, flagorigin )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x434a
 // Size: 0xe0
 function watchflagtimerpause()
@@ -1445,7 +1454,7 @@ function watchflagtimerpause()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4432
 // Size: 0x52
 function iswinningteam( team )
@@ -1469,7 +1478,7 @@ function iswinningteam( team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x448d
 // Size: 0xa2
 function flagownersalive( team )
@@ -1489,7 +1498,7 @@ function flagownersalive( team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4538
 // Size: 0x65
 function pausecountdowntimer()
@@ -1511,7 +1520,7 @@ function pausecountdowntimer()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45a5
 // Size: 0xc2
 function resumecountdowntimer( pause )
@@ -1547,7 +1556,7 @@ function resumecountdowntimer( pause )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x466f
 // Size: 0x300
 function watchflagenduse( team )
@@ -1640,7 +1649,7 @@ function watchflagenduse( team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4977
 // Size: 0x5b
 function watchgameinactive()
@@ -1664,7 +1673,7 @@ function watchgameinactive()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49da
 // Size: 0x2d
 function watchgamestart()
@@ -1681,7 +1690,7 @@ function watchgamestart()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a0f
 // Size: 0x7a, Type: bool
 function havespawnedplayers()
@@ -1703,7 +1712,7 @@ function havespawnedplayers()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a92
 // Size: 0x9c
 function watchgametimer( gametime )
@@ -1736,7 +1745,7 @@ function watchgametimer( gametime )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b36
 // Size: 0x84
 function getflagcount( team )
@@ -1755,7 +1764,7 @@ function getflagcount( team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4bc3
 // Size: 0x8b
 function isbeingcaptured( flag )
@@ -1780,7 +1789,7 @@ function isbeingcaptured( flag )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4c57
 // Size: 0xb2
 function setwinner( team, reason, lossreason )
@@ -1803,7 +1812,7 @@ function setwinner( team, reason, lossreason )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d11
 // Size: 0x87
 function onbeginuse( player )
@@ -1821,7 +1830,7 @@ function onbeginuse( player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4da0
 // Size: 0x299
 function onuse( credit_player )
@@ -1891,7 +1900,7 @@ function onuse( credit_player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5041
 // Size: 0x123
 function onuseupdate( team, progress, change, capplayer )
@@ -1929,7 +1938,7 @@ function onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x516c
 // Size: 0x5e
 function checkshouldplaymusic( team )
@@ -1956,7 +1965,7 @@ function checkshouldplaymusic( team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x51d2
 // Size: 0x8f
 function play_dom_capture_sfx( progress, team )
@@ -1977,7 +1986,7 @@ function play_dom_capture_sfx( progress, team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5269
 // Size: 0x101
 function onenduse( team, player, success )
@@ -2021,7 +2030,7 @@ function onenduse( team, player, success )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5372
 // Size: 0xa
 function waitthencheckendgame()
@@ -2031,7 +2040,7 @@ function waitthencheckendgame()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5384
 // Size: 0x86
 function oncontested()
@@ -2052,7 +2061,7 @@ function oncontested()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5412
 // Size: 0x137
 function onuncontested( lastclaimteam )
@@ -2099,7 +2108,7 @@ function onuncontested( lastclaimteam )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5551
 // Size: 0x7d
 function onunoccupied()
@@ -2119,7 +2128,7 @@ function onunoccupied()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55d6
 // Size: 0x5a
 function onpinnedstate( player )
@@ -2131,7 +2140,7 @@ function onpinnedstate( player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5638
 // Size: 0xc0
 function onunpinnedstate( player )
@@ -2154,7 +2163,7 @@ function onunpinnedstate( player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5700
 // Size: 0x92
 function onstompeenemyprogressupdate( team )
@@ -2178,7 +2187,7 @@ function onstompeenemyprogressupdate( team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x579a
 // Size: 0x48
 function stompprogressreward( player )
@@ -2189,7 +2198,7 @@ function stompprogressreward( player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x57ea
 // Size: 0xbd
 function ondeadevent( team )
@@ -2226,7 +2235,7 @@ function ondeadevent( team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x58af
 // Size: 0x27
 function ononeleftevent( team )
@@ -2236,7 +2245,7 @@ function ononeleftevent( team )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x58de
 // Size: 0x564
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -2413,7 +2422,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5e4a
 // Size: 0xbd
 function distsquaredcheck( trigger, attackerpos, victimpos )
@@ -2443,7 +2452,7 @@ function distsquaredcheck( trigger, attackerpos, victimpos )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f0f
 // Size: 0x86
 function givelastonteamwarning()
@@ -2459,7 +2468,7 @@ function givelastonteamwarning()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f9d
 // Size: 0xb3
 function ontimelimit()
@@ -2490,7 +2499,7 @@ function ontimelimit()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6058
 // Size: 0x1bb
 function teamrespawn( team, credit_player )
@@ -2533,7 +2542,7 @@ function teamrespawn( team, credit_player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x621b
 // Size: 0x72
 function notifyplayers( notifystring )
@@ -2548,7 +2557,7 @@ function notifyplayers( notifystring )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6295
 // Size: 0x29b
 function giveflagcapturexp( touchlist, oldteam, credit_player )
@@ -2575,7 +2584,8 @@ function giveflagcapturexp( touchlist, oldteam, credit_player )
     
     players_touching = getarraykeys( touchlist );
     
-    for (index = 0; index < players_touching.size; index++) {
+    for ( index = 0; index < players_touching.size ; index++ )
+    {
         player = touchlist[ players_touching[ index ] ].player;
         
         if ( isdefined( player.owner ) )
@@ -2626,7 +2636,7 @@ function giveflagcapturexp( touchlist, oldteam, credit_player )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6538
 // Size: 0x1d
 function getcapxpscale()
@@ -2640,7 +2650,7 @@ function getcapxpscale()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x655d
 // Size: 0x53
 function updatecpm()
@@ -2662,7 +2672,7 @@ function updatecpm()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x65b8
 // Size: 0x79
 function checkendgame()
@@ -2683,7 +2693,7 @@ function checkendgame()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6639
 // Size: 0x92b
 function runobjectives( numobjs )
@@ -2830,7 +2840,7 @@ function runobjectives( numobjs )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f6c
 // Size: 0xf1
 function objective_manageobjectivesintrovisibility()
@@ -2854,7 +2864,7 @@ function objective_manageobjectivesintrovisibility()
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7065
 // Size: 0x854
 function remapobjkeysandscriptlabels( objective )
@@ -3028,7 +3038,7 @@ function remapobjkeysandscriptlabels( objective )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x78c1
 // Size: 0xc8
 function runobjflag( objective, startingteam )
@@ -3057,7 +3067,7 @@ function runobjflag( objective, startingteam )
 }
 
 // Namespace siege / scripts\mp\gametypes\siege
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7992
 // Size: 0x44
 function manageprematchfade( delay_time, var_c82eabb722c361a7 )
@@ -3071,7 +3081,7 @@ function manageprematchfade( delay_time, var_c82eabb722c361a7 )
 /#
 
     // Namespace siege / scripts\mp\gametypes\siege
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x79de
     // Size: 0xe5, Type: dev
     function function_7fd73dbe340f511d()
@@ -3104,7 +3114,7 @@ function manageprematchfade( delay_time, var_c82eabb722c361a7 )
     }
 
     // Namespace siege / scripts\mp\gametypes\siege
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7acb
     // Size: 0x2a6, Type: dev
     function removedompoint()
@@ -3174,7 +3184,7 @@ function manageprematchfade( delay_time, var_c82eabb722c361a7 )
     }
 
     // Namespace siege / scripts\mp\gametypes\siege
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7d79
     // Size: 0x4ea, Type: dev
     function placedompoint()
@@ -3261,7 +3271,7 @@ function manageprematchfade( delay_time, var_c82eabb722c361a7 )
     }
 
     // Namespace siege / scripts\mp\gametypes\siege
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x826b
     // Size: 0x5ec, Type: dev
     function domdebug()
@@ -3340,7 +3350,8 @@ function manageprematchfade( delay_time, var_c82eabb722c361a7 )
                             color = colors[ spawnpoint.scriptdata.domflagassignments ];
                             line( spawnpoint.origin + heightoffsetlines, spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ][ 0 ] + heightoffsetlines, color );
                             
-                            for (i = 0; i < spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ].size - 1; i++) {
+                            for ( i = 0; i < spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ].size - 1 ; i++ )
+                            {
                                 line( spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ][ i ] + heightoffsetlines, spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ][ i + 1 ] + heightoffsetlines, color );
                             }
                         }

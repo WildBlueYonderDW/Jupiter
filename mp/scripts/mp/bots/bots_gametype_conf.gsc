@@ -9,7 +9,7 @@
 #namespace bots_gametype_conf;
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c0
 // Size: 0x10
 function main()
@@ -21,7 +21,7 @@ function main()
 /#
 
     // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d8
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -32,7 +32,7 @@ function main()
 #/
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e5
 // Size: 0x43
 function setup_callbacks()
@@ -47,7 +47,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x230
 // Size: 0x23
 function setup_bot_conf()
@@ -63,7 +63,7 @@ function setup_bot_conf()
 /#
 
     // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x25b
     // Size: 0x3f9, Type: dev
     function function_1303b6877c472535()
@@ -150,7 +150,7 @@ function setup_bot_conf()
 #/
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x65c
 // Size: 0x481
 function bot_conf_think()
@@ -301,7 +301,7 @@ function bot_conf_think()
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae5
 // Size: 0x12
 function bot_can_tag_interact_with( team )
@@ -310,7 +310,7 @@ function bot_can_tag_interact_with( team )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb00
 // Size: 0xeb, Type: bool
 function bot_check_tag_above_head( tag )
@@ -351,7 +351,7 @@ function bot_check_tag_above_head( tag )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbf4
 // Size: 0x39
 function bot_jump_for_tag()
@@ -365,7 +365,7 @@ function bot_jump_for_tag()
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc35
 // Size: 0x29
 function bot_watch_new_tags()
@@ -378,7 +378,7 @@ function bot_watch_new_tags()
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc66
 // Size: 0x40, Type: bool
 function function_50335c9c24555a07( tag_testing )
@@ -402,7 +402,7 @@ function function_50335c9c24555a07( tag_testing )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcaf
 // Size: 0xf0
 function function_3cfdf1926a55423( bot, newtag )
@@ -432,7 +432,7 @@ function function_3cfdf1926a55423( bot, newtag )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xda7
 // Size: 0x105
 function bot_combine_tag_seen_arrays( var_e4246e2d10d3e0f6, var_6e63b48e5d296bcf )
@@ -462,7 +462,7 @@ function bot_combine_tag_seen_arrays( var_e4246e2d10d3e0f6, var_6e63b48e5d296bcf
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xeb5
 // Size: 0x122, Type: bool
 function bot_is_tag_visible( tag, var_6006b119331919f9, fov_self )
@@ -510,7 +510,7 @@ function bot_is_tag_visible( tag, var_6006b119331919f9, fov_self )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfe0
 // Size: 0x1ac
 function bot_find_visible_tags( require_los, var_900c3a9d222406b8, var_3c558339662942bc )
@@ -576,7 +576,7 @@ function bot_find_visible_tags( require_los, var_900c3a9d222406b8, var_3c5583396
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1195
 // Size: 0xa2
 function calculate_tag_on_path_grid( tag )
@@ -599,7 +599,7 @@ function calculate_tag_on_path_grid( tag )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x123f
 // Size: 0x23
 function waittill_tag_calculated_on_path_grid( tag )
@@ -611,7 +611,7 @@ function waittill_tag_calculated_on_path_grid( tag )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x126a
 // Size: 0xec
 function bot_find_best_tag_from_array( tag_array, var_fcb9461bb8ed3b2a )
@@ -643,7 +643,7 @@ function bot_find_best_tag_from_array( tag_array, var_fcb9461bb8ed3b2a )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x135f
 // Size: 0xdc
 function bot_remove_invalid_tags( tags )
@@ -670,7 +670,7 @@ function bot_remove_invalid_tags( tags )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1444
 // Size: 0xea
 function get_num_allies_getting_tag( tag )
@@ -707,7 +707,7 @@ function get_num_allies_getting_tag( tag )
 }
 
 // Namespace bots_gametype_conf / scripts\mp\bots\bots_gametype_conf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1537
 // Size: 0xb4
 function bot_camp_tag( tag, goal_type, optional_endon )

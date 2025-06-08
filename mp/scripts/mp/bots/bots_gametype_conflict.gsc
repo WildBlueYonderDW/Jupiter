@@ -7,7 +7,7 @@
 #namespace bots_gametype_conflict;
 
 // Namespace bots_gametype_conflict / scripts\mp\bots\bots_gametype_conflict
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbe
 // Size: 0x9
 function main()
@@ -18,7 +18,7 @@ function main()
 /#
 
     // Namespace bots_gametype_conflict / scripts\mp\bots\bots_gametype_conflict
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xcf
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -29,7 +29,7 @@ function main()
 #/
 
 // Namespace bots_gametype_conflict / scripts\mp\bots\bots_gametype_conflict
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc
 // Size: 0xe
 function setup_callbacks()

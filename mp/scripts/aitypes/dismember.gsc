@@ -5,7 +5,7 @@
 #namespace dismember;
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x138
 // Size: 0x90
 function initscriptablepart( part )
@@ -23,7 +23,7 @@ function initscriptablepart( part )
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d0
 // Size: 0xfd
 function set_scriptablepartinfo( part, state )
@@ -46,7 +46,7 @@ function set_scriptablepartinfo( part, state )
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d5
 // Size: 0xbd
 function set_scriptablepartstate( part, state, waittime )
@@ -81,7 +81,7 @@ function set_scriptablepartstate( part, state, waittime )
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39a
 // Size: 0xac
 function setdismemberstatefx( part )
@@ -113,14 +113,15 @@ function setdismemberstatefx( part )
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x44e
 // Size: 0x98, Type: bool
 function usedismemberfxlite( type )
 {
     newarray = [];
     
-    for (i = 0; i < anim.dismemberheavyfx[ type ].size; i++) {
+    for ( i = 0; i < anim.dismemberheavyfx[ type ].size ; i++ )
+    {
         if ( gettime() - anim.dismemberheavyfx[ type ][ i ] > 1000 )
         {
             continue;
@@ -141,7 +142,7 @@ function usedismemberfxlite( type )
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ef
 // Size: 0x66
 function get_scriptablepartinfo( part )
@@ -160,7 +161,7 @@ function get_scriptablepartinfo( part )
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55e
 // Size: 0x2f, Type: bool
 function anylegdismembered()
@@ -174,7 +175,7 @@ function anylegdismembered()
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x596
 // Size: 0x2f, Type: bool
 function bothlegsdismembered()
@@ -188,7 +189,7 @@ function bothlegsdismembered()
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ce
 // Size: 0x2f, Type: bool
 function anyarmdismembered()
@@ -202,7 +203,7 @@ function anyarmdismembered()
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x606
 // Size: 0x1a, Type: bool
 function rightarmdismembered()
@@ -216,7 +217,7 @@ function rightarmdismembered()
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x629
 // Size: 0x1a, Type: bool
 function leftarmdismembered()
@@ -230,7 +231,7 @@ function leftarmdismembered()
 }
 
 // Namespace dismember / scripts\aitypes\dismember
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64c
 // Size: 0x2f, Type: bool
 function botharmsdismembered()

@@ -11,7 +11,7 @@
 #namespace persistence;
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5cd
 // Size: 0x30
 function init()
@@ -24,7 +24,7 @@ function init()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x605
 // Size: 0x47c
 function initbufferedstats()
@@ -84,7 +84,7 @@ function initbufferedstats()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa89
 // Size: 0x7d
 function initbestscorestatstable()
@@ -93,7 +93,8 @@ function initbestscorestatstable()
     self.bestscorestats = [];
     self.bufferedbestscorestats = [];
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         statname = tablelookupbyrow( table, row, 0 );
         
         if ( statname == "" )
@@ -106,7 +107,7 @@ function initbestscorestatstable()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb0e
 // Size: 0x40
 function statgetchild( parent, child )
@@ -120,7 +121,7 @@ function statgetchild( parent, child )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb56
 // Size: 0x81
 function statsetchild( parent, child, value, ignorekdrstats )
@@ -151,7 +152,7 @@ function statsetchild( parent, child, value, ignorekdrstats )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbdf
 // Size: 0x6e
 function stataddchild( parent, child, value )
@@ -167,7 +168,7 @@ function stataddchild( parent, child, value )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc55
 // Size: 0x51
 function statgetchildbuffered( parent, child, force )
@@ -182,7 +183,7 @@ function statgetchildbuffered( parent, child, force )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xcaf
 // Size: 0x5a
 function statsetchildbuffered( parent, child, value, force )
@@ -197,7 +198,7 @@ function statsetchildbuffered( parent, child, value, force )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd11
 // Size: 0x6d
 function stataddchildbuffered( parent, child, value, force )
@@ -213,7 +214,7 @@ function stataddchildbuffered( parent, child, value, force )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd86
 // Size: 0x7d
 function stataddchildbufferedwithmax( parent, child, value, max )
@@ -240,7 +241,7 @@ function stataddchildbufferedwithmax( parent, child, value, max )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0b
 // Size: 0x79
 function updatebufferedstats()
@@ -269,7 +270,7 @@ function updatebufferedstats()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8c
 // Size: 0x78
 function updatebufferedstatsatgameend()
@@ -287,7 +288,7 @@ function updatebufferedstatsatgameend()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf0c
 // Size: 0x64
 function setbestscore( statname, newvalue )
@@ -307,7 +308,7 @@ function setbestscore( statname, newvalue )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf78
 // Size: 0xc1
 function writebestscores()
@@ -325,7 +326,7 @@ function writebestscores()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1041
 // Size: 0x190
 function writebufferedstats()
@@ -368,7 +369,7 @@ function writebufferedstats()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11d9
 // Size: 0x157
 function writekdhistorystats()
@@ -406,7 +407,7 @@ function writekdhistorystats()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1338
 // Size: 0x1f1
 function incrementrankedreservedhistory( kills, deaths, headshots, accuracy, damage )
@@ -416,7 +417,8 @@ function incrementrankedreservedhistory( kills, deaths, headshots, accuracy, dam
         return;
     }
     
-    for (i = 0; i < 4; i++) {
+    for ( i = 0; i < 4 ; i++ )
+    {
         prev = self getplayerdata( level.var_5d69837cf4db0407, "kdHistoryK", i + 1 );
         self setplayerdata( level.var_5d69837cf4db0407, "kdHistoryK", i, prev );
         prev = self getplayerdata( level.var_5d69837cf4db0407, "kdHistoryD", i + 1 );
@@ -437,7 +439,7 @@ function incrementrankedreservedhistory( kills, deaths, headshots, accuracy, dam
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1531
 // Size: 0x171
 function incrementweaponstat( weaponname, stat, incvalue )
@@ -480,7 +482,7 @@ function incrementweaponstat( weaponname, stat, incvalue )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x16aa
 // Size: 0x46
 function incrementattachmentstat( attachmentname, stat, incvalue, weapon )
@@ -501,7 +503,7 @@ function incrementattachmentstat( attachmentname, stat, incvalue, weapon )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16f8
 // Size: 0x1f2
 function updateweaponbufferedstats()
@@ -584,7 +586,7 @@ function updateweaponbufferedstats()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18f2
 // Size: 0xba
 function persclear_stats()
@@ -610,7 +612,7 @@ function persclear_stats()
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19b4
 // Size: 0x10d
 function persincrement_weaponstats( weaponname, variantid )
@@ -642,7 +644,7 @@ function persincrement_weaponstats( weaponname, variantid )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ac9
 // Size: 0x78b
 function perslog_weaponstats( weaponname, fullweaponname, variantid )
@@ -821,7 +823,7 @@ function perslog_weaponstats( weaponname, fullweaponname, variantid )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x225c
 // Size: 0x1dd
 function perslog_attachmentstats( attachname, weapon )
@@ -868,7 +870,7 @@ function perslog_attachmentstats( attachname, weapon )
 }
 
 // Namespace persistence / scripts\mp\persistence
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2441
 // Size: 0x231
 function uploadglobalstatcounters()

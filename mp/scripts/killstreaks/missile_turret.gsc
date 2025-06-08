@@ -23,7 +23,7 @@
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0xc16
+// Checksum 0x0, Offset: 0xc15
 // Size: 0x18
 function autoexec main()
 {
@@ -32,7 +32,7 @@ function autoexec main()
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc36
+// Checksum 0x0, Offset: 0xc35
 // Size: 0xd7
 function private init()
 {
@@ -55,8 +55,8 @@ function private init()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd15
+// Params 0
+// Checksum 0x0, Offset: 0xd14
 // Size: 0x36
 function function_f93272c662d381d2()
 {
@@ -68,8 +68,8 @@ function function_f93272c662d381d2()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd53
+// Params 3
+// Checksum 0x0, Offset: 0xd52
 // Size: 0x28
 function function_b750543c3bf3d80f( streakinfo, switchresult, weaponobj )
 {
@@ -80,9 +80,9 @@ function function_b750543c3bf3d80f( streakinfo, switchresult, weaponobj )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd83
-// Size: 0x26, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0xd82
+// Size: 0x26
 function function_463f566c8cfddea5( streakname )
 {
     streakinfo = createstreakinfo( streakname, self );
@@ -90,8 +90,8 @@ function function_463f566c8cfddea5( streakname )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb2
+// Params 1
+// Checksum 0x0, Offset: 0xdb1
 // Size: 0x63e, Type: bool
 function function_7b0acdb995efbcd0( streakinfo )
 {
@@ -310,8 +310,8 @@ function function_7b0acdb995efbcd0( streakinfo )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f9
+// Params 1
+// Checksum 0x0, Offset: 0x13f8
 // Size: 0x9e
 function function_6e48da87d4a6706( bundle )
 {
@@ -327,8 +327,8 @@ function function_6e48da87d4a6706( bundle )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x149f
+// Params 4
+// Checksum 0x0, Offset: 0x149e
 // Size: 0x139
 function function_159a8e5fa750161c( turret, streakinfo, ignorecancel, var_290b1442271ab369 )
 {
@@ -375,8 +375,8 @@ function function_159a8e5fa750161c( turret, streakinfo, ignorecancel, var_290b14
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15e1
+// Params 1
+// Checksum 0x0, Offset: 0x15e0
 // Size: 0x50
 function function_3133daa58b56fb69( delaytime )
 {
@@ -390,8 +390,8 @@ function function_3133daa58b56fb69( delaytime )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1639
+// Params 2
+// Checksum 0x0, Offset: 0x1638
 // Size: 0x445
 function function_993008ef9f603aa6( turrettype, streakinfo )
 {
@@ -480,8 +480,8 @@ function function_993008ef9f603aa6( turrettype, streakinfo )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a87
+// Params 2
+// Checksum 0x0, Offset: 0x1a86
 // Size: 0x680
 function function_56d5f8c1988c64eb( turret, marker )
 {
@@ -629,8 +629,8 @@ function function_56d5f8c1988c64eb( turret, marker )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x210f
+// Params 1
+// Checksum 0x0, Offset: 0x210e
 // Size: 0x547
 function function_a3afddcd4aa1ebf8( turret )
 {
@@ -765,8 +765,8 @@ function function_a3afddcd4aa1ebf8( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x265e
+// Params 1
+// Checksum 0x0, Offset: 0x265d
 // Size: 0x1b3
 function function_163e8e495678ee10( targetcategory )
 {
@@ -829,8 +829,8 @@ function function_163e8e495678ee10( targetcategory )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x281a
+// Params 2
+// Checksum 0x0, Offset: 0x2819
 // Size: 0x1a2
 function function_3bed722fed1cd528( turret, ent )
 {
@@ -868,8 +868,8 @@ function function_3bed722fed1cd528( turret, ent )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x29c5
+// Params 2
+// Checksum 0x0, Offset: 0x29c4
 // Size: 0x2f5
 function function_74ce833622f356f8( turret, player )
 {
@@ -928,8 +928,8 @@ function function_74ce833622f356f8( turret, player )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cc3
+// Params 1
+// Checksum 0x0, Offset: 0x2cc2
 // Size: 0x3a9
 function function_ad3bcd8ec77ba7a0( turret )
 {
@@ -1034,8 +1034,8 @@ function function_ad3bcd8ec77ba7a0( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3074
+// Params 1
+// Checksum 0x0, Offset: 0x3073
 // Size: 0x6a
 function function_6b113bca399df0c9( immediateswitch )
 {
@@ -1053,8 +1053,8 @@ function function_6b113bca399df0c9( immediateswitch )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30e6
+// Params 1
+// Checksum 0x0, Offset: 0x30e5
 // Size: 0x5d
 function function_2239198274531067( turret )
 {
@@ -1065,8 +1065,8 @@ function function_2239198274531067( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x314b
+// Params 2
+// Checksum 0x0, Offset: 0x314a
 // Size: 0x47
 function function_755aebb2552f8720( turret, marker )
 {
@@ -1081,8 +1081,8 @@ function function_755aebb2552f8720( turret, marker )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x319a
+// Params 2
+// Checksum 0x0, Offset: 0x3199
 // Size: 0x58
 function function_c118279c97ae457f( turret, useobj )
 {
@@ -1103,8 +1103,8 @@ function function_c118279c97ae457f( turret, useobj )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31fa
+// Params 1
+// Checksum 0x0, Offset: 0x31f9
 // Size: 0x11b
 function function_d02d69714fbaffc1( turret )
 {
@@ -1146,8 +1146,8 @@ function function_d02d69714fbaffc1( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x331d
+// Params 1
+// Checksum 0x0, Offset: 0x331c
 // Size: 0x5d
 function function_cd59a28cbd743b74( turret )
 {
@@ -1165,8 +1165,8 @@ function function_cd59a28cbd743b74( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3382
+// Params 1
+// Checksum 0x0, Offset: 0x3381
 // Size: 0xd9
 function function_919c2cb7cf831eb8( turret )
 {
@@ -1203,8 +1203,8 @@ function function_919c2cb7cf831eb8( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3463
+// Params 0
+// Checksum 0x0, Offset: 0x3462
 // Size: 0xd
 function function_a54ce5cd1b4406a6()
 {
@@ -1212,8 +1212,8 @@ function function_a54ce5cd1b4406a6()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3478
+// Params 1
+// Checksum 0x0, Offset: 0x3477
 // Size: 0x2f
 function function_389ebc5025c28934( turret )
 {
@@ -1225,8 +1225,8 @@ function function_389ebc5025c28934( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34af
+// Params 1
+// Checksum 0x0, Offset: 0x34ae
 // Size: 0x72
 function function_b78b342431eef863( turret )
 {
@@ -1252,7 +1252,7 @@ function function_b78b342431eef863( turret )
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3529
+// Checksum 0x0, Offset: 0x3528
 // Size: 0x3a
 function private function_eb7530e3d6daf2d( data )
 {
@@ -1264,8 +1264,8 @@ function private function_eb7530e3d6daf2d( data )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x356b
+// Params 1
+// Checksum 0x0, Offset: 0x356a
 // Size: 0x72
 function function_bfdcec13005413a5( data )
 {
@@ -1280,8 +1280,8 @@ function function_bfdcec13005413a5( data )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35e5
+// Params 1
+// Checksum 0x0, Offset: 0x35e4
 // Size: 0x18
 function function_4d4513e6afb21e9c( isdeath )
 {
@@ -1294,8 +1294,8 @@ function function_4d4513e6afb21e9c( isdeath )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3605
+// Params 1
+// Checksum 0x0, Offset: 0x3604
 // Size: 0x36
 function function_97f5e7cad79b5ad2( data )
 {
@@ -1304,8 +1304,8 @@ function function_97f5e7cad79b5ad2( data )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3643
+// Params 1
+// Checksum 0x0, Offset: 0x3642
 // Size: 0xb0
 function function_e0abe4175b72981c( turret )
 {
@@ -1324,8 +1324,8 @@ function function_e0abe4175b72981c( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x36fb
+// Params 1
+// Checksum 0x0, Offset: 0x36fa
 // Size: 0x6a
 function function_1a2bbdf7944594d6( data )
 {
@@ -1347,8 +1347,8 @@ function function_1a2bbdf7944594d6( data )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x376d
+// Params 1
+// Checksum 0x0, Offset: 0x376c
 // Size: 0x1d
 function function_9b7dfb6fd0cb0bb7( data )
 {
@@ -1357,8 +1357,8 @@ function function_9b7dfb6fd0cb0bb7( data )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3792
+// Params 2
+// Checksum 0x0, Offset: 0x3791
 // Size: 0x3a8
 function missileturret_hack( newowner, oldowner )
 {
@@ -1448,8 +1448,8 @@ function missileturret_hack( newowner, oldowner )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b42
+// Params 1
+// Checksum 0x0, Offset: 0x3b41
 // Size: 0x28e
 function function_14aa40ae092fe7b1( turret )
 {
@@ -1531,8 +1531,8 @@ function function_14aa40ae092fe7b1( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dd8
+// Params 1
+// Checksum 0x0, Offset: 0x3dd7
 // Size: 0x111
 function function_7f22f5f0ae012bd4( turret )
 {
@@ -1562,8 +1562,8 @@ function function_7f22f5f0ae012bd4( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ef1
+// Params 1
+// Checksum 0x0, Offset: 0x3ef0
 // Size: 0x39
 function function_35a05b3758e712cd( turret )
 {
@@ -1574,8 +1574,8 @@ function function_35a05b3758e712cd( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f32
+// Params 1
+// Checksum 0x0, Offset: 0x3f31
 // Size: 0x2b
 function function_abae0285afe8aa60( turret )
 {
@@ -1586,8 +1586,8 @@ function function_abae0285afe8aa60( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f65
+// Params 1
+// Checksum 0x0, Offset: 0x3f64
 // Size: 0x7b
 function function_70c8684c2c29bf59( type )
 {
@@ -1607,8 +1607,8 @@ function function_70c8684c2c29bf59( type )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fe8
+// Params 2
+// Checksum 0x0, Offset: 0x3fe7
 // Size: 0x87
 function function_973e8bbeddc12392( var_630af5192659dd3b, player )
 {
@@ -1641,8 +1641,8 @@ function function_973e8bbeddc12392( var_630af5192659dd3b, player )
 /#
 
     // Namespace missile_turret / scripts\killstreaks\missile_turret
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4077
+    // Params 1
+    // Checksum 0x0, Offset: 0x4076
     // Size: 0x25f, Type: dev
     function function_9ca3664d52343397( var_630af5192659dd3b )
     {
@@ -1728,8 +1728,8 @@ function function_973e8bbeddc12392( var_630af5192659dd3b, player )
     }
 
     // Namespace missile_turret / scripts\killstreaks\missile_turret
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x42de
+    // Params 1
+    // Checksum 0x0, Offset: 0x42dd
     // Size: 0x1a4, Type: dev
     function function_295d25dc7b9680be( firepos )
     {
@@ -1769,8 +1769,8 @@ function function_973e8bbeddc12392( var_630af5192659dd3b, player )
     }
 
     // Namespace missile_turret / scripts\killstreaks\missile_turret
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x448a
+    // Params 0
+    // Checksum 0x0, Offset: 0x4489
     // Size: 0x40, Type: dev
     function function_12e1880e082f372a()
     {
@@ -1782,8 +1782,8 @@ function function_973e8bbeddc12392( var_630af5192659dd3b, player )
     }
 
     // Namespace missile_turret / scripts\killstreaks\missile_turret
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x44d2
+    // Params 1
+    // Checksum 0x0, Offset: 0x44d1
     // Size: 0x61, Type: dev
     function function_f77183de0101e64( turret )
     {
@@ -1804,8 +1804,8 @@ function function_973e8bbeddc12392( var_630af5192659dd3b, player )
     }
 
     // Namespace missile_turret / scripts\killstreaks\missile_turret
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x453b
+    // Params 1
+    // Checksum 0x0, Offset: 0x453a
     // Size: 0x39, Type: dev
     function function_150429e3a1a34f4c( turret )
     {
@@ -1820,8 +1820,8 @@ function function_973e8bbeddc12392( var_630af5192659dd3b, player )
 #/
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x457c
+// Params 0
+// Checksum 0x0, Offset: 0x457b
 // Size: 0x1a
 function function_d60ffc368c740a5()
 {
@@ -1830,8 +1830,8 @@ function function_d60ffc368c740a5()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x459e
+// Params 1
+// Checksum 0x0, Offset: 0x459d
 // Size: 0x4c
 function missile_spinup( var_630af5192659dd3b )
 {
@@ -1845,8 +1845,8 @@ function missile_spinup( var_630af5192659dd3b )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45f2
+// Params 0
+// Checksum 0x0, Offset: 0x45f1
 // Size: 0x1d
 function function_bb2747086c8be5e4()
 {
@@ -1855,8 +1855,8 @@ function function_bb2747086c8be5e4()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4617
+// Params 2
+// Checksum 0x0, Offset: 0x4616
 // Size: 0x165
 function function_d335a0d787014372( var_630af5192659dd3b, player )
 {
@@ -1910,8 +1910,8 @@ function function_d335a0d787014372( var_630af5192659dd3b, player )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4784
+// Params 0
+// Checksum 0x0, Offset: 0x4783
 // Size: 0x14
 function function_471af36224e1ceb2()
 {
@@ -1920,8 +1920,8 @@ function function_471af36224e1ceb2()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x47a0
+// Params 0
+// Checksum 0x0, Offset: 0x479f
 // Size: 0xa0
 function turret_heatmonitor()
 {
@@ -1954,8 +1954,8 @@ function turret_heatmonitor()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4848
+// Params 0
+// Checksum 0x0, Offset: 0x4847
 // Size: 0x63
 function playheatfx()
 {
@@ -1973,8 +1973,8 @@ function playheatfx()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x48b3
+// Params 0
+// Checksum 0x0, Offset: 0x48b2
 // Size: 0x92
 function turret_coolmonitor()
 {
@@ -2005,8 +2005,8 @@ function turret_coolmonitor()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x494d
+// Params 0
+// Checksum 0x0, Offset: 0x494c
 // Size: 0x61
 function function_c27484ca7994b7d0()
 {
@@ -2032,8 +2032,8 @@ function function_c27484ca7994b7d0()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x49b6
+// Params 2
+// Checksum 0x0, Offset: 0x49b5
 // Size: 0x50
 function function_98c72b3604b1124d( streakinfo, ignorecancel )
 {
@@ -2046,8 +2046,8 @@ function function_98c72b3604b1124d( streakinfo, ignorecancel )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a0f
+// Params 11
+// Checksum 0x0, Offset: 0x4a0e
 // Size: 0x91
 function function_f43b6a78213dbae8( hintpos, hinttype, hinticon, hintstring, priority, duration, onobstruction, hintdist, hintfov, usedist, usefov )
 {
@@ -2058,8 +2058,8 @@ function function_f43b6a78213dbae8( hintpos, hinttype, hinticon, hintstring, pri
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4aa8
+// Params 1
+// Checksum 0x0, Offset: 0x4aa7
 // Size: 0x63
 function function_3073d3141c30bbe5( turret )
 {
@@ -2072,8 +2072,8 @@ function function_3073d3141c30bbe5( turret )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b13
+// Params 1
+// Checksum 0x0, Offset: 0x4b12
 // Size: 0x154
 function function_242ded3cfe2e5d3b( data )
 {
@@ -2107,8 +2107,8 @@ function function_242ded3cfe2e5d3b( data )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c6f
+// Params 1
+// Checksum 0x0, Offset: 0x4c6e
 // Size: 0x117
 function function_6886c78f9664c089( data )
 {
@@ -2133,8 +2133,8 @@ function function_6886c78f9664c089( data )
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d8f
+// Params 0
+// Checksum 0x0, Offset: 0x4d8e
 // Size: 0x60c
 function function_a0a5114bb65fcecd()
 {
@@ -2205,8 +2205,8 @@ function function_a0a5114bb65fcecd()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x53a3
+// Params 0
+// Checksum 0x0, Offset: 0x53a2
 // Size: 0x1a8
 function function_f42f083e1874b55a()
 {
@@ -2235,8 +2235,8 @@ function function_f42f083e1874b55a()
 }
 
 // Namespace missile_turret / scripts\killstreaks\missile_turret
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5553
+// Params 0
+// Checksum 0x0, Offset: 0x5552
 // Size: 0x20, Type: bool
 function function_aabcea95d6584154()
 {
@@ -2256,8 +2256,8 @@ function function_aabcea95d6584154()
 /#
 
     // Namespace missile_turret / scripts\killstreaks\missile_turret
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x557c
+    // Params 3
+    // Checksum 0x0, Offset: 0x557b
     // Size: 0x96, Type: dev
     function function_6269f6a8c1c151dc( raycaststart, raycastend, radius )
     {

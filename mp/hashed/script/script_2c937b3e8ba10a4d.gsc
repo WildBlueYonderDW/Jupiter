@@ -4,7 +4,7 @@
 #namespace namespace_6cc1c526f45bd479;
 
 // Namespace namespace_6cc1c526f45bd479 / namespace_e80b54f8474f3ef9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xab
 // Size: 0x18
 function function_628ac163573e544e()
@@ -13,7 +13,7 @@ function function_628ac163573e544e()
 }
 
 // Namespace namespace_6cc1c526f45bd479 / namespace_e80b54f8474f3ef9
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xcb
 // Size: 0xb8, Type: bool
 function function_67d2e1159a24893( item_def, item, auto_pickup, var_d3c1dfe8dea4ec26 )
@@ -35,7 +35,7 @@ function function_67d2e1159a24893( item_def, item, auto_pickup, var_d3c1dfe8dea4
 }
 
 // Namespace namespace_6cc1c526f45bd479 / namespace_e80b54f8474f3ef9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18c
 // Size: 0xf6, Type: bool
 function use_ammo( item_def, item )

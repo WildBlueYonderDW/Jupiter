@@ -6,7 +6,7 @@
 #namespace namespace_5b218477be05886c;
 
 // Namespace namespace_5b218477be05886c / namespace_2b394cef24a1daec
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf3
 // Size: 0x2a
 function function_845878bc3f891199()
@@ -20,7 +20,7 @@ function function_845878bc3f891199()
 }
 
 // Namespace namespace_5b218477be05886c / namespace_2b394cef24a1daec
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x125
 // Size: 0x94
 function function_6d507460d23bd8b2( region_name, var_8943bcdf726f10bf )

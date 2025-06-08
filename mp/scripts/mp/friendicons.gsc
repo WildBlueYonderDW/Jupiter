@@ -6,7 +6,7 @@
 #namespace friendicons;
 
 // Namespace friendicons / scripts\mp\friendicons
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x153
 // Size: 0x5f
 function init()
@@ -26,7 +26,7 @@ function init()
 }
 
 // Namespace friendicons / scripts\mp\friendicons
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ba
 // Size: 0x2c
 function onplayerconnect()
@@ -44,7 +44,7 @@ function onplayerconnect()
 }
 
 // Namespace friendicons / scripts\mp\friendicons
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ee
 // Size: 0x14
 function onplayerspawned()
@@ -58,7 +58,7 @@ function onplayerspawned()
 }
 
 // Namespace friendicons / scripts\mp\friendicons
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20a
 // Size: 0x22
 function onplayerkilled()
@@ -73,7 +73,7 @@ function onplayerkilled()
 }
 
 // Namespace friendicons / scripts\mp\friendicons
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x234
 // Size: 0x65
 function showfriendicon()
@@ -93,7 +93,7 @@ function showfriendicon()
 }
 
 // Namespace friendicons / scripts\mp\friendicons
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a1
 // Size: 0x41
 function updatefriendiconsettings()
@@ -108,14 +108,15 @@ function updatefriendiconsettings()
 }
 
 // Namespace friendicons / scripts\mp\friendicons
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ea
 // Size: 0x16b
 function updatefriendicons()
 {
     players = level.players;
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         player = players[ i ];
         
         if ( isdefined( player.pers[ "team" ] ) && player.pers[ "team" ] != "spectator" && player.sessionstate == "playing" )
@@ -138,7 +139,8 @@ function updatefriendicons()
             
             players = level.players;
             
-            for (i = 0; i < players.size; i++) {
+            for ( i = 0; i < players.size ; i++ )
+            {
                 player = players[ i ];
                 
                 if ( isdefined( player.pers[ "team" ] ) && player.pers[ "team" ] != "spectator" && player.sessionstate == "playing" )

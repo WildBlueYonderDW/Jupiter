@@ -11,7 +11,7 @@
 #namespace namespace_58c6a84f987ee8e1;
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc33
 // Size: 0x167
 function init()
@@ -33,14 +33,14 @@ function init()
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda2
 // Size: 0x1410
 function function_55f2480b4b819aea( movingchopper )
 {
     animstruct = spawnstruct();
     movingchopper.animstruct = animstruct;
-    animstruct.origin = getdvarvector( @"hash_223915c6339dbc10", ( 4319, 0, -28644 ) );
+    animstruct.origin = getdvarvector( @"br_infil_anim_pos", ( 4319, 0, -28644 ) );
     animstruct.angles = ( 0, 0, 0 );
     animstruct.movingchopper = movingchopper;
     animstruct.cleanupfunc = &function_a5668882499fb369;
@@ -140,7 +140,8 @@ function function_55f2480b4b819aea( movingchopper )
     var_d4e512c7842a8a5d = 9;
     animstruct.armadachoppers = [];
     
-    for (i = 0; i < var_d4e512c7842a8a5d; i++) {
+    for ( i = 0; i < var_d4e512c7842a8a5d ; i++ )
+    {
         newchopper = animstruct.chopper spawn_script_model( "veh8_mil_air_mindia8_infil_flight", "newChopper" + i );
         newchopper linkto( animstruct.armadarig, "j_prop_" + i + 2, ( 0, 0, 0 ), ( 0, 0, 0 ) );
         newchopper forcenetfieldhighlod( 1 );
@@ -221,7 +222,7 @@ function function_55f2480b4b819aea( movingchopper )
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21bb
 // Size: 0x196
 function function_f3ae4b41df047ba0()
@@ -265,7 +266,7 @@ function function_f3ae4b41df047ba0()
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2359
 // Size: 0x1a3
 function function_1d609f282b615eb7( array )
@@ -309,7 +310,7 @@ function function_1d609f282b615eb7( array )
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2504
 // Size: 0x14a
 function function_447159ec37003898( player, array )
@@ -340,7 +341,7 @@ function function_447159ec37003898( player, array )
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2656
 // Size: 0xb8
 function function_347d499c7fd9af39( hudelem )
@@ -359,7 +360,7 @@ function function_347d499c7fd9af39( hudelem )
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2716
 // Size: 0x1b7
 function function_5ff576fc264728a6( array )
@@ -400,7 +401,7 @@ function function_5ff576fc264728a6( array )
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28d5
 // Size: 0x11
 function function_a5668882499fb369()
@@ -485,7 +486,7 @@ function private function_fd00edc34074bb24( c130 )
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b0f
 // Size: 0x60
 function chopper_door()
@@ -668,7 +669,7 @@ function private transitionfunc( c130 )
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3371
 // Size: 0x1f
 function function_9441cfee5f114846()
@@ -691,18 +692,18 @@ function private infil_light_dvars()
     var_c3ed855fe7c983e3 = getdvarfloat( @"hash_8667c0bb90c5bfc3" );
     var_1800e53d66415e2d = getdvarint( @"hash_63eb1893f96ac98d" );
     var_5506432d2291c178 = getdvarint( @"hash_1dde331a8e0153d8" );
-    var_488f9b9fe1ead0a6 = getdvarfloat( @"hash_9ab6a766fc4e0c06" );
+    var_488f9b9fe1ead0a6 = getdvarfloat( @"sm_sunsamplesizenear" );
     var_64224ecf1e2975d9 = getdvarint( @"hash_e6ac75ab2927895b" );
     setdvar( @"hash_8667c0bb90c5bfc3", 1000 );
     setdvar( @"hash_63eb1893f96ac98d", 8 );
     setdvar( @"hash_1dde331a8e0153d8", 8 );
-    setdvar( @"hash_9ab6a766fc4e0c06", 0.25 );
+    setdvar( @"sm_sunsamplesizenear", 0.25 );
     setdvar( @"hash_e6ac75ab2927895b", 0 );
     waittill_either( "infil_reset_light_dvars", "stopScene" );
     setdvar( @"hash_8667c0bb90c5bfc3", var_c3ed855fe7c983e3 );
     setdvar( @"hash_63eb1893f96ac98d", var_1800e53d66415e2d );
     setdvar( @"hash_1dde331a8e0153d8", var_5506432d2291c178 );
-    setdvar( @"hash_9ab6a766fc4e0c06", var_488f9b9fe1ead0a6 );
+    setdvar( @"sm_sunsamplesizenear", var_488f9b9fe1ead0a6 );
     setdvar( @"hash_e6ac75ab2927895b", var_64224ecf1e2975d9 );
 }
 
@@ -771,7 +772,7 @@ function private stopstreamtomovingplane()
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36c9
 // Size: 0xbe
 function function_5901cd0be722f86a()
@@ -794,7 +795,7 @@ function function_5901cd0be722f86a()
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x378f
 // Size: 0xb
 function function_39c2cf6576478d41()
@@ -828,7 +829,7 @@ function private setsoundsubmixfadetoblackamb( players )
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3855
 // Size: 0x1f8
 function function_ad4a7a73c7d7d9e0()
@@ -872,7 +873,7 @@ function function_ad4a7a73c7d7d9e0()
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a55
 // Size: 0xad
 function function_b766175a1f0eeb13( movedestination, movetime )

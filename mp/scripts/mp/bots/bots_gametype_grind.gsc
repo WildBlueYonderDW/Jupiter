@@ -10,7 +10,7 @@
 #namespace bots_gametype_grind;
 
 // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c1
 // Size: 0x10
 function main()
@@ -22,7 +22,7 @@ function main()
 /#
 
     // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d9
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -33,7 +33,7 @@ function main()
 #/
 
 // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e6
 // Size: 0x17
 function setup_callbacks()
@@ -42,7 +42,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x205
 // Size: 0x6a
 function bot_grind_think()
@@ -65,7 +65,7 @@ function bot_grind_think()
 }
 
 // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x277
 // Size: 0x12
 function function_3ec615a6536f891f( team )
@@ -74,7 +74,7 @@ function function_3ec615a6536f891f( team )
 }
 
 // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x292
 // Size: 0xc1, Type: bool
 function function_eb22fb5239067420()
@@ -102,7 +102,7 @@ function function_eb22fb5239067420()
 }
 
 // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35c
 // Size: 0x423, Type: bool
 function bot_grind_extra_think()
@@ -253,7 +253,7 @@ function bot_grind_extra_think()
 }
 
 // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x788
 // Size: 0x99
 function bot_goto_zone( zone, goal_type )
@@ -272,7 +272,7 @@ function bot_goto_zone( zone, goal_type )
 }
 
 // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x829
 // Size: 0xd8
 function bot_camp_zone( zone, goal_type )
@@ -301,7 +301,7 @@ function bot_camp_zone( zone, goal_type )
 }
 
 // Namespace bots_gametype_grind / scripts\mp\bots\bots_gametype_grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x909
 // Size: 0x10d
 function enemy_watcher()

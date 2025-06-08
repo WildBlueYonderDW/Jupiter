@@ -27,7 +27,7 @@
 #namespace obj_dom;
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x798
 // Size: 0x76f
 function setupobjective( trigger, team, var_5ddbc1faed2c56e6, skipobjid, showoncompass )
@@ -219,7 +219,7 @@ function setupobjective( trigger, team, var_5ddbc1faed2c56e6, skipobjid, showonc
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf10
 // Size: 0x53
 function removeobjective( domflag )
@@ -238,7 +238,7 @@ function removeobjective( domflag )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf6b
 // Size: 0x5d
 function getreservedobjid( objectivekey )
@@ -268,7 +268,7 @@ function getreservedobjid( objectivekey )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd1
 // Size: 0x43
 function getcapturetype()
@@ -288,7 +288,7 @@ function getcapturetype()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x101d
 // Size: 0x65
 function checkmapflagangles( domflag )
@@ -308,7 +308,7 @@ function checkmapflagangles( domflag )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x108b
 // Size: 0x10e
 function checkmapoffsets( domflag )
@@ -357,7 +357,7 @@ function checkmapoffsets( domflag )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11a2
 // Size: 0x12a
 function checkmapfxangles( domflag, upangles )
@@ -413,7 +413,7 @@ function checkmapfxangles( domflag, upangles )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12d5
 // Size: 0x1a0
 function initializematchrecording()
@@ -472,7 +472,7 @@ function initializematchrecording()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x147d
 // Size: 0x10f
 function domflag_setneutral( keeppulse )
@@ -497,7 +497,7 @@ function domflag_setneutral( keeppulse )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1594
 // Size: 0x33e
 function dompoint_setcaptured( team, credit_player )
@@ -575,7 +575,7 @@ function dompoint_setcaptured( team, credit_player )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18da
 // Size: 0x32d
 function dompoint_onuse( credit_player, team )
@@ -699,7 +699,7 @@ function dompoint_onuse( credit_player, team )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c0f
 // Size: 0x216
 function dompoint_onusebegin( player )
@@ -779,7 +779,7 @@ function dompoint_onusebegin( player )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1e2d
 // Size: 0x44d
 function dompoint_onuseupdate( team, progress, change, capplayer )
@@ -796,7 +796,8 @@ function dompoint_onuseupdate( team, progress, change, capplayer )
     {
         var_4a021f1ede7e0c69 = 0;
         
-        for (i = 0; i < level.capturesegments; i++) {
+        for ( i = 0; i < level.capturesegments ; i++ )
+        {
             if ( !isdefined( self.segmentupdate ) )
             {
                 self.segmentupdate = 0;
@@ -890,7 +891,7 @@ function dompoint_onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2282
 // Size: 0xb1
 function dompoint_onuseend( team, player, success )
@@ -925,7 +926,7 @@ function dompoint_onuseend( team, player, success )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x233b
 // Size: 0x76
 function dompoint_oncontested()
@@ -939,7 +940,7 @@ function dompoint_oncontested()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23b9
 // Size: 0x221
 function dompoint_onuncontested( lastclaimteam )
@@ -999,7 +1000,7 @@ function dompoint_onuncontested( lastclaimteam )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25e2
 // Size: 0x8f
 function play_dom_capture_sfx( progress, team )
@@ -1020,7 +1021,7 @@ function play_dom_capture_sfx( progress, team )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2679
 // Size: 0x69
 function dompoint_onunoccupied()
@@ -1041,7 +1042,7 @@ function dompoint_onunoccupied()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26ea
 // Size: 0x13c
 function dompoint_onpinnedstate( player )
@@ -1071,7 +1072,7 @@ function dompoint_onpinnedstate( player )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x282e
 // Size: 0x82
 function dompoint_onunpinnedstate( player )
@@ -1086,7 +1087,7 @@ function dompoint_onunpinnedstate( player )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28b8
 // Size: 0x59
 function function_3dc46df97466e4d3( team )
@@ -1102,7 +1103,7 @@ function function_3dc46df97466e4d3( team )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2919
 // Size: 0xad
 function dompoint_stompprogressreward( player )
@@ -1123,7 +1124,7 @@ function dompoint_stompprogressreward( player )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x29ce
 // Size: 0x4b
 function setcrankedtimerdomflag( player )
@@ -1135,7 +1136,7 @@ function setcrankedtimerdomflag( player )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a21
 // Size: 0x35b
 function function_5261f4479b04f834()
@@ -1204,7 +1205,7 @@ function function_5261f4479b04f834()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d84
 // Size: 0x1e
 function dompoint_setupflagmodels()
@@ -1214,7 +1215,7 @@ function dompoint_setupflagmodels()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2daa
 // Size: 0x1fd
 function updateflagstate( state, keeppulse, ownerteam )
@@ -1295,7 +1296,7 @@ function updateflagstate( state, keeppulse, ownerteam )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2faf
 // Size: 0x63
 function setdomscriptablepartstate( part, state, statemod )
@@ -1322,7 +1323,7 @@ function setdomscriptablepartstate( part, state, statemod )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x301a
 // Size: 0x7b
 function updateflagcapturestate( state )
@@ -1342,7 +1343,7 @@ function updateflagcapturestate( state )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x309d
 // Size: 0xb8
 function ondisconnect()
@@ -1367,7 +1368,7 @@ function ondisconnect()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x315d
 // Size: 0x150
 function giveflagassistedcapturepoints( touchlist )
@@ -1375,7 +1376,8 @@ function giveflagassistedcapturepoints( touchlist )
     level endon( "game_ended" );
     players_touching = getarraykeys( touchlist );
     
-    for (index = 0; index < players_touching.size; index++) {
+    for ( index = 0; index < players_touching.size ; index++ )
+    {
         player = touchlist[ players_touching[ index ] ].player;
         var_1ae6a1bf1853354a = touchlist[ players_touching[ index ] ].player;
         
@@ -1429,7 +1431,7 @@ function giveflagassistedcapturepoints( touchlist )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x32b5
 // Size: 0x2f3
 function function_365a810f08434cab( touchlist, credit_player, team )
@@ -1476,7 +1478,8 @@ function function_365a810f08434cab( touchlist, credit_player, team )
     {
         players_touching = getarraykeys( touchlist );
         
-        for (index = 0; index < players_touching.size; index++) {
+        for ( index = 0; index < players_touching.size ; index++ )
+        {
             player = touchlist[ players_touching[ index ] ].player;
             var_8a11b26acefd3594 = 0;
             
@@ -1529,7 +1532,7 @@ function function_365a810f08434cab( touchlist, credit_player, team )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35b0
 // Size: 0xfa
 function giveflagcaptureassistxp( team, isneutral )
@@ -1539,7 +1542,8 @@ function giveflagcaptureassistxp( team, isneutral )
     
     if ( var_9eb80458ef362367.size > 0 )
     {
-        for (index = 0; index < var_9eb80458ef362367.size; index++) {
+        for ( index = 0; index < var_9eb80458ef362367.size ; index++ )
+        {
             var_6c7881393d098340 = self.assisttouchlist[ team ][ var_9eb80458ef362367[ index ] ];
             var_8a11b26acefd3594 = var_6c7881393d098340.var_d96989d14549fd76;
             
@@ -1573,7 +1577,7 @@ function giveflagcaptureassistxp( team, isneutral )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x36b2
 // Size: 0x2f5
 function givecaptureawards( player, isneutral, isassist, var_9cb84269bb4959b6 )
@@ -1690,7 +1694,7 @@ function givecaptureawards( player, isneutral, isassist, var_9cb84269bb4959b6 )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39af
 // Size: 0x68
 function setcapturestats()
@@ -1709,7 +1713,7 @@ function setcapturestats()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a1f
 // Size: 0xf5
 function precap( var_dc617b1666471f3 )
@@ -1736,7 +1740,7 @@ function precap( var_dc617b1666471f3 )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b1c
 // Size: 0xa3
 function storecenterflag( var_dc617b1666471f3 )
@@ -1761,7 +1765,7 @@ function storecenterflag( var_dc617b1666471f3 )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3bc7
 // Size: 0x151
 function setflagcaptured( team, oldteam, credit_player, var_230445c943c9459a )
@@ -1818,7 +1822,7 @@ function setflagcaptured( team, oldteam, credit_player, var_230445c943c9459a )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3d20
 // Size: 0xc9
 function getteamflagcount( team, var_ea084d6bb059d6b )
@@ -1845,7 +1849,7 @@ function getteamflagcount( team, var_ea084d6bb059d6b )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3df2
 // Size: 0x86
 function isflagexcluded( var_4ddc8d75e113b606, excludeflag )
@@ -1872,7 +1876,7 @@ function isflagexcluded( var_4ddc8d75e113b606, excludeflag )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e81
 // Size: 0x104
 function getunownedflagneareststart( team, excludeflag )
@@ -1912,7 +1916,7 @@ function getunownedflagneareststart( team, excludeflag )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x3f8e
 // Size: 0x4da
 function awardgenericmedals( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -2044,7 +2048,7 @@ function awardgenericmedals( einflictor, attacker, idamage, smeansofdeath, objwe
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4470
 // Size: 0x106
 function distsquaredcheck( trigger, attackerpos, victimpos )
@@ -2076,7 +2080,7 @@ function distsquaredcheck( trigger, attackerpos, victimpos )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x457e
 // Size: 0x4f
 function getdomneutralizeomnvarvalue()
@@ -2095,7 +2099,7 @@ function getdomneutralizeomnvarvalue()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45d5
 // Size: 0x7f
 function getobjectiveflag()
@@ -2118,7 +2122,7 @@ function getobjectiveflag()
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x465c
 // Size: 0x4b
 function function_da1f3979f22bb288( posorigin, alias, timer )
@@ -2136,7 +2140,7 @@ function function_da1f3979f22bb288( posorigin, alias, timer )
 }
 
 // Namespace obj_dom / scripts\mp\gametypes\obj_dom
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x46af
 // Size: 0x4b
 function function_82b6a3e1bcda539b( posorigin, alias, timer )

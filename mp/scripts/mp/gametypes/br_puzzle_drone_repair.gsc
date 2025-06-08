@@ -46,7 +46,7 @@ function autoexec init()
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e6
 // Size: 0x4d
 function function_28d7437a275a45c7()
@@ -64,7 +64,7 @@ function function_28d7437a275a45c7()
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53b
 // Size: 0x24
 function init_dialog()
@@ -78,12 +78,13 @@ function init_dialog()
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x567
 // Size: 0xe9
 function function_2beebfae871aed04( player )
 {
-    for (i = 0; i < level.var_6c42f1942be0314.size; i++) {
+    for ( i = 0; i < level.var_6c42f1942be0314.size ; i++ )
+    {
         partfound = player getplayerdata( level.var_5d69837cf4db0407, "dronePartsFound", i );
         player setclientomnvar( level.var_6c42f1942be0314[ i ], partfound );
     }
@@ -113,7 +114,7 @@ function function_2beebfae871aed04( player )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x658
 // Size: 0x2d
 function watchplayerconnect()
@@ -142,7 +143,7 @@ function private function_a7a80e8ba88920c8( player )
 /#
 
     // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6c6
     // Size: 0x7e, Type: dev
     function init_debug()
@@ -160,7 +161,7 @@ function private function_a7a80e8ba88920c8( player )
 #/
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x74c
 // Size: 0x9d
 function function_a20133b287aa61da( item )
@@ -183,7 +184,7 @@ function function_a20133b287aa61da( item )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f1
 // Size: 0x24
 function function_e6c1c35181a2870f( structname )
@@ -193,7 +194,7 @@ function function_e6c1c35181a2870f( structname )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x81e
 // Size: 0x41
 function function_b4b48707a625a324( structname, posstruct )
@@ -208,7 +209,7 @@ function function_b4b48707a625a324( structname, posstruct )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x868
 // Size: 0xf8
 function function_4e6039b32b329a2d( posstruct, partnameindex )
@@ -240,7 +241,7 @@ function function_4e6039b32b329a2d( posstruct, partnameindex )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x969
 // Size: 0x6f
 function function_ec3e14f05c136a35( structname )
@@ -254,13 +255,14 @@ function function_ec3e14f05c136a35( structname )
         return;
     }
     
-    for (i = 0; i < level.var_13ed53cdcd563f93.size; i++) {
+    for ( i = 0; i < level.var_13ed53cdcd563f93.size ; i++ )
+    {
         function_4e6039b32b329a2d( level.var_13ed53cdcd563f93[ i ], i );
     }
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e0
 // Size: 0x122
 function setdronepartfound( pickup, player )
@@ -298,7 +300,7 @@ function setdronepartfound( pickup, player )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb0a
 // Size: 0x52
 function ondronepartdropped( scriptablename, player )
@@ -312,7 +314,7 @@ function ondronepartdropped( scriptablename, player )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb64
 // Size: 0x44
 function devsetupbrokendrone( origin, angles )
@@ -323,7 +325,7 @@ function devsetupbrokendrone( origin, angles )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb0
 // Size: 0xe2
 function setupbrokendrone()
@@ -366,7 +368,7 @@ function setupbrokendrone()
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc9a
 // Size: 0x7b
 function function_f1d36faeb630ecea( var_5c5b88ce7ae1228e )
@@ -381,7 +383,7 @@ function function_f1d36faeb630ecea( var_5c5b88ce7ae1228e )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xd1d
 // Size: 0x1d4
 function function_10a0469fe6e9e108( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -447,7 +449,7 @@ function private launchdrone( player )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xfc1
 // Size: 0xe7
 function function_9a8d68db097f6be8( player, startpos, startang, helperdronetype, streakinfo )
@@ -472,7 +474,7 @@ function function_9a8d68db097f6be8( player, startpos, startang, helperdronetype,
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10b0
 // Size: 0xff
 function function_3c03c4c1859f38e1( player, var_5c5b88ce7ae1228e )
@@ -507,7 +509,7 @@ function function_3c03c4c1859f38e1( player, var_5c5b88ce7ae1228e )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11b7
 // Size: 0x49
 function watchplayerdeath( player, var_5c5b88ce7ae1228e )
@@ -520,7 +522,7 @@ function watchplayerdeath( player, var_5c5b88ce7ae1228e )
 }
 
 // Namespace drone_repair / scripts\mp\gametypes\br_puzzle_drone_repair
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1208
 // Size: 0x5e
 function function_78033a976b978c7( player, team, streakinfo )
@@ -614,7 +616,8 @@ function private function_cba9562cfa638fe8( player )
 // Size: 0x6d
 function private function_3c73da53109dcc01( player )
 {
-    for (i = 0; i < level.var_6c42f1942be0314.size; i++) {
+    for ( i = 0; i < level.var_6c42f1942be0314.size ; i++ )
+    {
         player setclientomnvar( level.var_6c42f1942be0314[ i ], 0 );
         player setplayerdata( level.var_5d69837cf4db0407, "dronePartsFound", i, 0 );
     }

@@ -1,7 +1,6 @@
 #using script_100adcc1cc11d2fa;
 #using script_15ecde6c46a131b0;
 #using script_2047cdbf5176ba0;
-#using script_22f1701e151b9d12;
 #using script_231b61569cad7b2;
 #using script_25d8bf4d117350f3;
 #using script_387aedcdc1d5f902;
@@ -14,6 +13,7 @@
 #using script_7e681eb8fbdc4f5e;
 #using script_92b815b18f0ba61;
 #using scripts\common\callbacks;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\engine\scriptable;
 #using scripts\engine\utility;
 #using scripts\mp\flags;
@@ -31,7 +31,7 @@ function autoexec init()
 }
 
 // Namespace mp_jup_sira_ob / scripts\mp\maps\mp_jup_sira\mp_jup_sira_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x446
 // Size: 0x1ef
 function main()
@@ -87,7 +87,7 @@ function main()
 }
 
 // Namespace mp_jup_sira_ob / scripts\mp\maps\mp_jup_sira\mp_jup_sira_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x63d
 // Size: 0x1a
 function disable_announcer()
@@ -97,7 +97,7 @@ function disable_announcer()
 }
 
 // Namespace mp_jup_sira_ob / scripts\mp\maps\mp_jup_sira\mp_jup_sira_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65f
 // Size: 0x21
 function function_c154e3abec6b5381( sparams )
@@ -106,7 +106,7 @@ function function_c154e3abec6b5381( sparams )
 }
 
 // Namespace mp_jup_sira_ob / scripts\mp\maps\mp_jup_sira\mp_jup_sira_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x688
 // Size: 0x134
 function function_b93fb821b8d8035e()
@@ -147,17 +147,17 @@ function function_b93fb821b8d8035e()
 }
 
 // Namespace mp_jup_sira_ob / scripts\mp\maps\mp_jup_sira\mp_jup_sira_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c4
 // Size: 0x16
 function function_135c08561081b6cf()
 {
     level flag_wait( "ai_spawn_director_initialized" );
-    namespace_614554f86e52695c::process_create_script();
+    scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 
 // Namespace mp_jup_sira_ob / scripts\mp\maps\mp_jup_sira\mp_jup_sira_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e2
 // Size: 0x9f
 function function_46d73bb45da26012()
@@ -238,7 +238,7 @@ function private function_868dda939525d6dd()
 }
 
 // Namespace mp_jup_sira_ob / scripts\mp\maps\mp_jup_sira\mp_jup_sira_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa43
 // Size: 0x9a
 function function_f3e573baf0974858()
@@ -254,7 +254,7 @@ function function_f3e573baf0974858()
 }
 
 // Namespace mp_jup_sira_ob / scripts\mp\maps\mp_jup_sira\mp_jup_sira_ob
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xae5
 // Size: 0xb6
 function function_f19f21e5a0b646dc( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -277,7 +277,7 @@ function function_f19f21e5a0b646dc( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace mp_jup_sira_ob / scripts\mp\maps\mp_jup_sira\mp_jup_sira_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba3
 // Size: 0x62
 function function_3106d895f0955848()

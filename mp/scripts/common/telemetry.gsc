@@ -1,7 +1,7 @@
 #namespace telemetry;
 
 // Namespace telemetry / scripts\common\telemetry
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x95
 // Size: 0xa8
 function init()

@@ -48,7 +48,7 @@
 #namespace br_quest_util;
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef6
 // Size: 0x55a
 function init_quest_util()
@@ -161,12 +161,13 @@ function init_quest_util()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1458
 // Size: 0x11f
 function loadtables()
 {
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         unlockableindex = tablelookupbyrow( "mp/brmission_unlockables.csv", row, 0 );
         
         if ( !isdefined( unlockableindex ) || unlockableindex == "" )
@@ -191,7 +192,7 @@ function loadtables()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x157f
 // Size: 0x83e
 function inittablets()
@@ -247,7 +248,8 @@ function inittablets()
                 }
             }
             
-            for (i = tablets.size - 1; i >= 0 && numdisabled; i--) {
+            for ( i = tablets.size - 1; i >= 0 && numdisabled ; i-- )
+            {
                 if ( istrue( tablets[ i ].startdisabled ) )
                 {
                     tablets[ i ] = tablets[ tablets.size - 1 ];
@@ -262,7 +264,8 @@ function inittablets()
             var_984f974fa5f11f8 = getdvarfloat( @"hash_cc6bb1e27a91186f", 0.8 );
             var_4038cde6712b9f81 = int( min( tablets.size, tablets.size * ( 1 - var_984f974fa5f11f8 ) + 0.5 ) );
             
-            for (i = 0; i < var_4038cde6712b9f81; i++) {
+            for ( i = 0; i < var_4038cde6712b9f81 ; i++ )
+            {
                 randindex = randomintrange( 0, tablets.size );
                 tablets[ randindex ].startdisabled = 1;
                 tablets[ randindex ] = tablets[ tablets.size - 1 ];
@@ -270,7 +273,8 @@ function inittablets()
             }
         }
         
-        for (i = tablets.size - 1; i >= 0; i--) {
+        for ( i = tablets.size - 1; i >= 0 ; i-- )
+        {
             tablet = tablets[ i ];
             tablet tabletinit( type );
             
@@ -296,7 +300,8 @@ function inittablets()
             var_5731f7181809474a++;
         }
         
-        for (i = 0; i < var_5731f7181809474a; i++) {
+        for ( i = 0; i < var_5731f7181809474a ; i++ )
+        {
             randindex = randomintrange( 0, tablets.size );
             tablet = tablets[ randindex ];
             tablets[ randindex ].startdisabled = 1;
@@ -375,7 +380,8 @@ function inittablets()
     {
         hiddentablets = array_randomize( hiddentablets );
         
-        for (i = 0; i < hiddentablets.size; i++) {
+        for ( i = 0; i < hiddentablets.size ; i++ )
+        {
             tablet = hiddentablets[ i ];
             tabletzone = scripts\mp\gametypes\br_callouts::getlocationnameforpoint( tablet.origin );
             
@@ -417,7 +423,7 @@ function inittablets()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dc5
 // Size: 0x46
 function setobjectivetypesomvarbit( type )
@@ -428,7 +434,7 @@ function setobjectivetypesomvarbit( type )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e13
 // Size: 0xc4
 function tabletreplace( hiddentablets )
@@ -443,7 +449,8 @@ function tabletreplace( hiddentablets )
     var_fb4145cf6a25541e = 0;
     var_40fb495a4451d505 = level.tabletreplacefrequency;
     
-    for (i = 0; i < hiddentablets.size; i++) {
+    for ( i = 0; i < hiddentablets.size ; i++ )
+    {
         tablet = hiddentablets[ i ];
         level waittill( "quest_started" );
         
@@ -466,7 +473,7 @@ function tabletreplace( hiddentablets )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1edf
 // Size: 0x22b
 function delayedshowtablets( hiddentablets )
@@ -481,7 +488,8 @@ function delayedshowtablets( hiddentablets )
     scripts\mp\flags::gameflagwait( "prematch_done" );
     validtablets = [];
     
-    for (i = 0; i < hiddentablets.size; i++) {
+    for ( i = 0; i < hiddentablets.size ; i++ )
+    {
         tablet = hiddentablets[ i ];
         tablet.circleindex = scripts\mp\gametypes\br_circle::getcircleindexforpoint( tablet.origin );
         
@@ -505,7 +513,8 @@ function delayedshowtablets( hiddentablets )
         
         validtablets = [];
         
-        for (i = 0; i < hiddentablets.size; i++) {
+        for ( i = 0; i < hiddentablets.size ; i++ )
+        {
             tablet = hiddentablets[ i ];
             
             if ( tablet.circleindex >= level.br_circle.circleindex )
@@ -518,14 +527,16 @@ function delayedshowtablets( hiddentablets )
         var_cf6dc40ca9d1b393 = int( max( 0, getdvarint( @"hash_6cd10c5d6e2a6220", 100 ) - level.questinfo.activetablets.size ) );
         showcount = int( min( showcount, var_cf6dc40ca9d1b393 ) );
         
-        for (i = 0; i < showcount; i++) {
+        for ( i = 0; i < showcount ; i++ )
+        {
             tablet = validtablets[ i ];
             tablet tabletshow();
         }
         
         hiddentablets = [];
         
-        for (i = showcount; i < validtablets.size; i++) {
+        for ( i = showcount; i < validtablets.size ; i++ )
+        {
             hiddentablets[ hiddentablets.size ] = validtablets[ i ];
         }
         
@@ -539,7 +550,7 @@ function delayedshowtablets( hiddentablets )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2112
 // Size: 0xc7
 function disablealltablets()
@@ -559,7 +570,7 @@ function disablealltablets()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21e1
 // Size: 0xa
 function tablethide()
@@ -568,7 +579,7 @@ function tablethide()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21f3
 // Size: 0x1d
 function _tablethide()
@@ -579,7 +590,7 @@ function _tablethide()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2218
 // Size: 0xbf
 function tabletshow()
@@ -598,7 +609,7 @@ function tabletshow()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22df
 // Size: 0x85
 function tabletinit( type )
@@ -624,7 +635,7 @@ function tabletinit( type )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x236c
 // Size: 0x86
 function onquesttablethide( instance )
@@ -640,7 +651,7 @@ function onquesttablethide( instance )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23fa
 // Size: 0x5f
 function activatetablet( instance )
@@ -653,7 +664,7 @@ function activatetablet( instance )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2461
 // Size: 0x41
 function getlootname( category )
@@ -669,7 +680,7 @@ function getlootname( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24ab
 // Size: 0xa8
 function registerteamonquest( team, player )
@@ -691,7 +702,7 @@ function registerteamonquest( team, player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x255b
 // Size: 0x450
 function releaseteamonquest( team )
@@ -795,7 +806,7 @@ function releaseteamonquest( team )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x29b3
 // Size: 0x9c
 function startteamcontractchallenge( category, var_a705a5a5884ebf9c, team )
@@ -813,7 +824,7 @@ function startteamcontractchallenge( category, var_a705a5a5884ebf9c, team )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a57
 // Size: 0xd2
 function takequesttablet( instance )
@@ -848,7 +859,7 @@ function takequesttablet( instance )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b31
 // Size: 0x1af
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
@@ -886,7 +897,7 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2ce8
 // Size: 0xa6
 function createquestinstance( category, instanceid, missionid, rewardscriptable )
@@ -908,7 +919,7 @@ function createquestinstance( category, instanceid, missionid, rewardscriptable 
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d97
 // Size: 0xe6
 function addquestinstance( category, instanceinfo )
@@ -937,7 +948,7 @@ function addquestinstance( category, instanceinfo )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e85
 // Size: 0xdc
 function removequestinstance()
@@ -976,7 +987,7 @@ function removequestinstance()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f69
 // Size: 0x17, Type: bool
 function isquestinstancealocale( instance )
@@ -985,7 +996,7 @@ function isquestinstancealocale( instance )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f89
 // Size: 0x18
 function _initmanagerquestthread()
@@ -994,7 +1005,7 @@ function _initmanagerquestthread()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fa9
 // Size: 0x1f
 function _removemanagerquestthread()
@@ -1004,7 +1015,7 @@ function _removemanagerquestthread()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fd0
 // Size: 0x11f
 function _questmanagerthread()
@@ -1036,7 +1047,7 @@ function _questmanagerthread()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30f7
 // Size: 0xcf
 function _runquestthinkfunctions( questid )
@@ -1045,7 +1056,8 @@ function _runquestthinkfunctions( questid )
         function_132b6261e829fa9c();
     #/
     
-    for (index = 0; index < level.questinfo.quests[ questid ].numthinkfuncs; index++) {
+    for ( index = 0; index < level.questinfo.quests[ questid ].numthinkfuncs ; index++ )
+    {
         if ( ( level.questinfo.thinkindex - self.thinkoffset + self.firstthink ) % level.questinfo.quests[ questid ].thinkrates[ index ] == 0 )
         {
             funclabel = "questThink" + index;
@@ -1055,7 +1067,7 @@ function _runquestthinkfunctions( questid )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31ce
 // Size: 0x84
 function _assignthinkoffset()
@@ -1075,7 +1087,7 @@ function _assignthinkoffset()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x325a
 // Size: 0x6d
 function _registerquestfunc( category, func, funclabel )
@@ -1085,7 +1097,7 @@ function _registerquestfunc( category, func, funclabel )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32cf
 // Size: 0x35, Type: bool
 function _checkforregister( category, funclabel )
@@ -1094,7 +1106,7 @@ function _checkforregister( category, funclabel )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x330d
 // Size: 0x8d, Type: bool
 function registerquestcategory( category, var_4c43a06a2d630dfd )
@@ -1120,7 +1132,7 @@ function registerquestcategory( category, var_4c43a06a2d630dfd )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33a3
 // Size: 0x13
 function registerquestlocale( category )
@@ -1129,7 +1141,7 @@ function registerquestlocale( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33be
 // Size: 0xed
 function _registerquestcategory( category )
@@ -1147,7 +1159,7 @@ function _registerquestcategory( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34b3
 // Size: 0x6d
 function registerquestcategorytablevalues( category )
@@ -1158,7 +1170,7 @@ function registerquestcategorytablevalues( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3528
 // Size: 0x43
 function registerinitquestvars( category, func )
@@ -1168,7 +1180,7 @@ function registerinitquestvars( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3573
 // Size: 0x181
 function registerquestthink( category, func, thinkrate )
@@ -1190,7 +1202,7 @@ function registerquestthink( category, func, thinkrate )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36fc
 // Size: 0x21
 function registerquestcircletick( category, func )
@@ -1199,7 +1211,7 @@ function registerquestcircletick( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3725
 // Size: 0x21
 function registerremovequestinstance( category, func )
@@ -1208,7 +1220,7 @@ function registerremovequestinstance( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x374e
 // Size: 0x21
 function registerclearquestvars( category, func )
@@ -1217,7 +1229,7 @@ function registerclearquestvars( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3777
 // Size: 0x168
 function registerplayerfilter( category, var_9e41235ac60933d8, filterindex )
@@ -1242,7 +1254,7 @@ function registerplayerfilter( category, var_9e41235ac60933d8, filterindex )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x38e7
 // Size: 0x21
 function registeronplayerkilled( category, func )
@@ -1251,7 +1263,7 @@ function registeronplayerkilled( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3910
 // Size: 0x21
 function registeronplayerdisconnect( category, func )
@@ -1260,7 +1272,7 @@ function registeronplayerdisconnect( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3939
 // Size: 0x21
 function registeronentergulag( category, func )
@@ -1269,7 +1281,7 @@ function registeronentergulag( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3962
 // Size: 0x21
 function registeronrespawn( category, func )
@@ -1278,7 +1290,7 @@ function registeronrespawn( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x398b
 // Size: 0x21
 function registerontimerupdate( category, func )
@@ -1287,7 +1299,7 @@ function registerontimerupdate( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x39b4
 // Size: 0x21
 function registerontimerexpired( category, func )
@@ -1296,7 +1308,7 @@ function registerontimerexpired( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x39dd
 // Size: 0x21
 function registertabletinit( category, func )
@@ -1305,7 +1317,7 @@ function registertabletinit( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a06
 // Size: 0x18
 function _clearregisters( category )
@@ -1314,7 +1326,7 @@ function _clearregisters( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a26
 // Size: 0xf1
 function onplayerkilled( attacker, victim )
@@ -1337,7 +1349,7 @@ function onplayerkilled( attacker, victim )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b1f
 // Size: 0x4d
 function onplayerconnect( player )
@@ -1351,7 +1363,7 @@ function onplayerconnect( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b74
 // Size: 0xe7
 function onplayerdisconnect( player )
@@ -1374,7 +1386,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c63
 // Size: 0xe7
 function onplayerentergulag()
@@ -1401,7 +1413,7 @@ function onplayerentergulag()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d52
 // Size: 0xf8
 function onplayerrespawn()
@@ -1430,7 +1442,7 @@ function onplayerrespawn()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e52
 // Size: 0x33
 function _runinitquestvars( category )
@@ -1439,7 +1451,7 @@ function _runinitquestvars( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e8d
 // Size: 0x105
 function _runaddquestthread( category )
@@ -1447,7 +1459,8 @@ function _runaddquestthread( category )
     if ( !_isquestthreaded( category ) )
     {
         /#
-            for (index = 0; index < level.questinfo.quests[ category ].numthinkfuncs; index++) {
+            for ( index = 0; index < level.questinfo.quests[ category ].numthinkfuncs ; index++ )
+            {
                 assertex( isdefined( level.questinfo.quests[ category ].funcs[ "<dev string:x22f>" + index ] ), "<dev string:x11f>" + category + "<dev string:x23d>" + index + "<dev string:x255>" );
             }
         #/
@@ -1462,7 +1475,7 @@ function _runaddquestthread( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f9a
 // Size: 0x40
 function _runaddquestinstance( category, instanceinfo )
@@ -1471,7 +1484,7 @@ function _runaddquestinstance( category, instanceinfo )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fe2
 // Size: 0x65
 function _runremovequestinstance( category )
@@ -1482,7 +1495,7 @@ function _runremovequestinstance( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x404f
 // Size: 0x82
 function _runclearquestvars( category )
@@ -1493,7 +1506,7 @@ function _runclearquestvars( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40d9
 // Size: 0x2c, Type: bool
 function _isquestthreaded( category )
@@ -1507,7 +1520,7 @@ function _isquestthreaded( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x410e
 // Size: 0x50
 function _questinstancesactive( category )
@@ -1521,7 +1534,7 @@ function _questinstancesactive( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4167
 // Size: 0x2f
 function _questthreadsactive()
@@ -1535,7 +1548,7 @@ function _questthreadsactive()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x419f
 // Size: 0x76
 function createlocaleinstance( category, linkedcategory, instanceid )
@@ -1553,7 +1566,7 @@ function createlocaleinstance( category, linkedcategory, instanceid )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x421e
 // Size: 0x21
 function registercreatequestlocale( category, func )
@@ -1562,7 +1575,7 @@ function registercreatequestlocale( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4247
 // Size: 0x21
 function registermovequestlocale( category, func )
@@ -1571,7 +1584,7 @@ function registermovequestlocale( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4270
 // Size: 0x21
 function registercheckiflocaleisavailable( category, func )
@@ -1580,7 +1593,7 @@ function registercheckiflocaleisavailable( category, func )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4299
 // Size: 0x231
 function _determinelocationarray( search_params )
@@ -1637,7 +1650,7 @@ function _determinelocationarray( search_params )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x44d2
 // Size: 0x32e
 function _findnewlocaleplacement( location_array, search_params )
@@ -1795,7 +1808,7 @@ function _findnewlocaleplacement( location_array, search_params )
 /#
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x4809
     // Size: 0x5e, Type: dev
     function function_f42fbf313ebaec27( location_array, bestlocindex, search_params, debuginfo )
@@ -1812,7 +1825,7 @@ function _findnewlocaleplacement( location_array, search_params )
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x486f
     // Size: 0x140, Type: dev
     function function_3c30c102ba44ec57( location_array, bestlocindex, search_params, debuginfo, failindex )
@@ -1850,7 +1863,7 @@ function _findnewlocaleplacement( location_array, search_params )
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x49b7
     // Size: 0x4a2, Type: dev
     function function_a3db3d7f49e8c9( dvar, dvarvalue, location_array, bestlocindex, search_params, debuginfo )
@@ -1991,7 +2004,7 @@ function _findnewlocaleplacement( location_array, search_params )
 #/
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e61
 // Size: 0xaa
 function _runcreatequestlocale( category, params )
@@ -2014,7 +2027,7 @@ function _runcreatequestlocale( category, params )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f14
 // Size: 0x78
 function _runmovequestlocale( category, params )
@@ -2033,7 +2046,7 @@ function _runmovequestlocale( category, params )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f94
 // Size: 0x33
 function _runcheckiflocaleisavailable( category )
@@ -2042,7 +2055,7 @@ function _runcheckiflocaleisavailable( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4fd0
 // Size: 0xf8
 function _findexisitingquestlocale( category, search_params )
@@ -2078,7 +2091,7 @@ function _findexisitingquestlocale( category, search_params )
 /#
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x50d1
     // Size: 0x96, Type: dev
     function function_58f2ed57b8b8a4a5( category, search_params )
@@ -2092,7 +2105,7 @@ function _findexisitingquestlocale( category, search_params )
 #/
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x516f
 // Size: 0x64
 function findquestplacement( category, search_params )
@@ -2115,7 +2128,7 @@ function findquestplacement( category, search_params )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x51dc
 // Size: 0x7a
 function requestquestlocale( category, search_params, ignoreexisting )
@@ -2143,7 +2156,7 @@ function requestquestlocale( category, search_params, ignoreexisting )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x525f
 // Size: 0x3d
 function subscribetoquestlocale( locale )
@@ -2157,7 +2170,7 @@ function subscribetoquestlocale( locale )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x52a4
 // Size: 0x3a
 function movequestlocale( category, search_params )
@@ -2171,7 +2184,7 @@ function movequestlocale( category, search_params )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52e6
 // Size: 0x7b
 function leavequestlocale()
@@ -2191,7 +2204,7 @@ function leavequestlocale()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5369
 // Size: 0x48
 function getquestdata( category )
@@ -2205,7 +2218,7 @@ function getquestdata( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x53ba
 // Size: 0x34
 function getquestinstancedata( category, instancekey )
@@ -2214,7 +2227,7 @@ function getquestinstancedata( category, instancekey )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x53f7
 // Size: 0x6b
 function getquestinstancedatasafe( category, instancekey )
@@ -2230,7 +2243,7 @@ function getquestinstancedatasafe( category, instancekey )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x546b
 // Size: 0x3c, Type: bool
 function checkforinstance( category, instanceid )
@@ -2244,7 +2257,7 @@ function checkforinstance( category, instanceid )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x54b0
 // Size: 0x113
 function _validateplayerfilter( filterkey )
@@ -2283,7 +2296,7 @@ function _validateplayerfilter( filterkey )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x55cb
 // Size: 0x62, Type: bool
 function _validateplayer( player, filter )
@@ -2300,7 +2313,7 @@ function _validateplayer( player, filter )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5636
 // Size: 0x2e, Type: bool
 function isplayervalid( player, filterkey )
@@ -2310,7 +2323,7 @@ function isplayervalid( player, filterkey )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x566d
 // Size: 0x82, Type: bool
 function isteamvalid( team, filterkey )
@@ -2329,7 +2342,7 @@ function isteamvalid( team, filterkey )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x56f8
 // Size: 0x82, Type: bool
 function isentireteamvalid( team, filterkey )
@@ -2348,7 +2361,7 @@ function isentireteamvalid( team, filterkey )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5783
 // Size: 0x91
 function getvalidplayersinteam( team, filterkey )
@@ -2368,7 +2381,7 @@ function getvalidplayersinteam( team, filterkey )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x581d
 // Size: 0x86
 function getvalidplayersinarray( group, filterkey )
@@ -2388,7 +2401,7 @@ function getvalidplayersinarray( group, filterkey )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x58ac
 // Size: 0xb9
 function sortvalidplayersinarray( group, filterkey )
@@ -2413,7 +2426,7 @@ function sortvalidplayersinarray( group, filterkey )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x596e
 // Size: 0xa0
 function getteamcenter( team, filter )
@@ -2436,7 +2449,7 @@ function getteamcenter( team, filter )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a17
 // Size: 0x18, Type: bool
 function filtercondition_isdead( player )
@@ -2450,7 +2463,7 @@ function filtercondition_isdead( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a38
 // Size: 0x1e, Type: bool
 function filtercondition_isdowned( player )
@@ -2464,7 +2477,7 @@ function filtercondition_isdowned( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a5f
 // Size: 0x19, Type: bool
 function filtercondition_ingulag( player )
@@ -2478,7 +2491,7 @@ function filtercondition_ingulag( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a81
 // Size: 0x1e, Type: bool
 function filtercondition_hasbeeningulag( player )
@@ -2492,7 +2505,7 @@ function filtercondition_hasbeeningulag( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5aa8
 // Size: 0xa9
 function packsplashparambits( missionid, rewardtier, rewardindex, unlockableindex )
@@ -2519,7 +2532,7 @@ function packsplashparambits( missionid, rewardtier, rewardindex, unlockableinde
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5b5a
 // Size: 0x4f
 function displayteamsplash( team, splash_key, params )
@@ -2530,7 +2543,7 @@ function displayteamsplash( team, splash_key, params )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5bb1
 // Size: 0xc8
 function displaysplashtoplayers( players, splash_key, params )
@@ -2565,7 +2578,7 @@ function displaysplashtoplayers( players, splash_key, params )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5c81
 // Size: 0xab
 function displayplayersplash( player, splash_key, params )
@@ -2593,7 +2606,7 @@ function displayplayersplash( player, splash_key, params )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5d34
 // Size: 0x176
 function displaysplashtoplayersinradius( splash_key, origin, radius, player_filter, params )
@@ -2638,7 +2651,7 @@ function displaysplashtoplayersinradius( splash_key, origin, radius, player_filt
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5eb2
 // Size: 0x6a
 function displaysquadmessagetoplayer( player_ref, state, missionid )
@@ -2666,7 +2679,7 @@ function displaysquadmessagetoplayer( player_ref, state, missionid )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5f24
 // Size: 0x7e
 function displaysquadmessagetoteam( team, player_ref, state, missionid )
@@ -2678,7 +2691,7 @@ function displaysquadmessagetoteam( team, player_ref, state, missionid )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5faa
 // Size: 0x1d
 function giveplayerpoints( player, ref )
@@ -2687,7 +2700,7 @@ function giveplayerpoints( player, ref )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5fcf
 // Size: 0x7c
 function giveteampoints( team, ref )
@@ -2704,7 +2717,7 @@ function giveteampoints( team, ref )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6053
 // Size: 0x3e
 function calldropbag( player, location )
@@ -2715,7 +2728,7 @@ function calldropbag( player, location )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6099
 // Size: 0x130
 function giveteamplunderflat( team, amount, var_6463a610d995bab9 )
@@ -2749,7 +2762,7 @@ function giveteamplunderflat( team, amount, var_6463a610d995bab9 )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x61d1
 // Size: 0xe5
 function giveteamplunderdistributive( players, amount )
@@ -2772,7 +2785,7 @@ function giveteamplunderdistributive( players, amount )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x62be
 // Size: 0x306
 function dropplunder( amount, var_5b7bf3433d244cdf, var_76212928fed46301, var_41271de03a84a690 )
@@ -2790,14 +2803,16 @@ function dropplunder( amount, var_5b7bf3433d244cdf, var_76212928fed46301, var_41
     var_82c3fc1e774a5a35[ 2 ] = [ "brloot_plunder_cash_uncommon_1", level.br_plunder.quantitycommon, getdvarfloat( @"hash_30bf1dd438567db0", 0.5 ) ];
     totalpercent = 0;
     
-    for (i = 0; i < var_82c3fc1e774a5a35.size; i++) {
+    for ( i = 0; i < var_82c3fc1e774a5a35.size ; i++ )
+    {
         info = var_82c3fc1e774a5a35[ i ];
         totalpercent += info[ info_percent ];
     }
     
     plundertotal = 0;
     
-    for (i = 0; i < var_82c3fc1e774a5a35.size; i++) {
+    for ( i = 0; i < var_82c3fc1e774a5a35.size ; i++ )
+    {
         info = var_82c3fc1e774a5a35[ i ];
         info[ info_percent ] /= totalpercent;
         plundertotal += info[ info_scale ] * info[ info_percent ];
@@ -2807,7 +2822,8 @@ function dropplunder( amount, var_5b7bf3433d244cdf, var_76212928fed46301, var_41
     rewardremaining = amount;
     plunderdrops = [];
     
-    for (i = 0; i < var_82c3fc1e774a5a35.size; i++) {
+    for ( i = 0; i < var_82c3fc1e774a5a35.size ; i++ )
+    {
         info = var_82c3fc1e774a5a35[ i ];
         plunderdrops[ i ] = int( numdrops * info[ info_percent ] );
         rewardremaining -= plunderdrops[ i ] * info[ info_scale ];
@@ -2815,7 +2831,8 @@ function dropplunder( amount, var_5b7bf3433d244cdf, var_76212928fed46301, var_41
     
     if ( rewardremaining > 0 )
     {
-        for (i = 0; i < var_82c3fc1e774a5a35.size; i++) {
+        for ( i = 0; i < var_82c3fc1e774a5a35.size ; i++ )
+        {
             info = var_82c3fc1e774a5a35[ i ];
             extra = int( rewardremaining / info[ info_scale ] );
             plunderdrops[ i ] += extra;
@@ -2825,8 +2842,10 @@ function dropplunder( amount, var_5b7bf3433d244cdf, var_76212928fed46301, var_41
     
     droptypes = [];
     
-    for (i = 0; i < plunderdrops.size; i++) {
-        for (j = 0; j < plunderdrops[ i ]; j++) {
+    for ( i = 0; i < plunderdrops.size ; i++ )
+    {
+        for ( j = 0; j < plunderdrops[ i ] ; j++ )
+        {
             droptypes[ droptypes.size ] = i;
         }
     }
@@ -2834,7 +2853,8 @@ function dropplunder( amount, var_5b7bf3433d244cdf, var_76212928fed46301, var_41
     droptypes = array_randomize( droptypes );
     dropstruct = scripts\mp\gametypes\br_pickups::function_7b9f3966a7a42003();
     
-    for (i = 0; i < droptypes.size; i++) {
+    for ( i = 0; i < droptypes.size ; i++ )
+    {
         dropinfo = scripts\mp\gametypes\br_pickups::getitemdroporiginandangles( dropstruct, var_5b7bf3433d244cdf, var_76212928fed46301, var_41271de03a84a690 );
         scripts\mp\gametypes\br_pickups::spawnpickup( var_82c3fc1e774a5a35[ droptypes[ i ] ][ info_name ], dropinfo, var_82c3fc1e774a5a35[ droptypes[ i ] ][ info_scale ], 1 );
     }
@@ -2844,7 +2864,7 @@ function dropplunder( amount, var_5b7bf3433d244cdf, var_76212928fed46301, var_41
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65cc
 // Size: 0x2a
 function getquestindex( ref )
@@ -2853,7 +2873,7 @@ function getquestindex( ref )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65ff
 // Size: 0x2b
 function getquesttableindex( ref )
@@ -2863,7 +2883,7 @@ function getquesttableindex( ref )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6633
 // Size: 0x35
 function uiobjectiveshow( ref )
@@ -2874,7 +2894,7 @@ function uiobjectiveshow( ref )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6670
 // Size: 0x6b
 function uiobjectiveshowtoteam( ref, team )
@@ -2886,7 +2906,7 @@ function uiobjectiveshowtoteam( ref, team )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66e3
 // Size: 0x19
 function uiobjectivehide()
@@ -2896,7 +2916,7 @@ function uiobjectivehide()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6704
 // Size: 0x62
 function uiobjectivehidefromteam( team )
@@ -2908,7 +2928,7 @@ function uiobjectivehidefromteam( team )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x676e
 // Size: 0x27
 function uiobjectivesetparameter( value )
@@ -2918,7 +2938,7 @@ function uiobjectivesetparameter( value )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x679d
 // Size: 0x27
 function uiobjectivesetlootid( value )
@@ -2928,7 +2948,7 @@ function uiobjectivesetlootid( value )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67cc
 // Size: 0xe8
 function function_fd4c76c90a1a0333( player )
@@ -2957,7 +2977,7 @@ function function_fd4c76c90a1a0333( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x68bd
 // Size: 0xcd
 function createquestobjicon( iconref, state, var_38116998df9814d4 )
@@ -2989,7 +3009,7 @@ function createquestobjicon( iconref, state, var_38116998df9814d4 )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6992
 // Size: 0x1c
 function movequestobjicon( neworigin )
@@ -2998,7 +3018,7 @@ function movequestobjicon( neworigin )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69b6
 // Size: 0x1b
 function showquestobjicontoplayer( player )
@@ -3007,7 +3027,7 @@ function showquestobjicontoplayer( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69d9
 // Size: 0x12
 function showquestobjicontoall( objid )
@@ -3016,7 +3036,7 @@ function showquestobjicontoall( objid )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69f3
 // Size: 0x1b
 function hidequestobjiconfromplayer( player )
@@ -3025,7 +3045,7 @@ function hidequestobjiconfromplayer( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a16
 // Size: 0xc, Type: bool
 function checkforactiveobjicon()
@@ -3034,7 +3054,7 @@ function checkforactiveobjicon()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a2b
 // Size: 0x22
 function deletequestobjicon()
@@ -3044,7 +3064,7 @@ function deletequestobjicon()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6a55
 // Size: 0xf5
 function utilflare_shootflare( spawn_origin, flaretype )
@@ -3075,7 +3095,7 @@ function utilflare_shootflare( spawn_origin, flaretype )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b52
 // Size: 0x53
 function _utilflare_lerpflare( flaretype )
@@ -3089,7 +3109,7 @@ function _utilflare_lerpflare( flaretype )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6bad
 // Size: 0x73
 function _utilflare_flareexplode( flaretype )
@@ -3113,7 +3133,7 @@ function _utilflare_flareexplode( flaretype )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c28
 // Size: 0x46
 function _utilflare_isvalidflaretype( flaretype )
@@ -3135,7 +3155,7 @@ function _utilflare_isvalidflaretype( flaretype )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c77
 // Size: 0x71
 function sfx_br_flare_phosphorus()
@@ -3154,7 +3174,7 @@ function sfx_br_flare_phosphorus()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6cf0
 // Size: 0x5f
 function questpointgetradius( point )
@@ -3178,7 +3198,7 @@ function questpointgetradius( point )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6d58
 // Size: 0x4c
 function questtimerinit( category, var_3e871b4b1ef67d52 )
@@ -3188,7 +3208,7 @@ function questtimerinit( category, var_3e871b4b1ef67d52 )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6dac
 // Size: 0x77
 function questtimerset( time, animbuffer )
@@ -3215,7 +3235,7 @@ function questtimerset( time, animbuffer )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e2b
 // Size: 0x5e
 function questtimeradd( time )
@@ -3236,7 +3256,7 @@ function questtimeradd( time )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e91
 // Size: 0xbd
 function questtimerupdate()
@@ -3262,7 +3282,7 @@ function questtimerupdate()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f56
 // Size: 0x9d
 function _questtimerwait()
@@ -3290,7 +3310,7 @@ function _questtimerwait()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ffb
 // Size: 0x4b
 function registercontributingplayers( player )
@@ -3307,7 +3327,7 @@ function registercontributingplayers( player )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x704e
 // Size: 0x2b
 function function_8acf00b423dca1e6()
@@ -3321,7 +3341,7 @@ function function_8acf00b423dca1e6()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7081
 // Size: 0xf1
 function givequestrewardsinstance( team, rewardorigin, rewardangles, rewardscriptable, players )
@@ -3358,7 +3378,7 @@ function givequestrewardsinstance( team, rewardorigin, rewardangles, rewardscrip
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x717b
 // Size: 0x67
 function givequestrewards( category, rewardmod, questmod, team, rewardorigin, rewardangles, rewardscriptable, players )
@@ -3368,7 +3388,7 @@ function givequestrewards( category, rewardmod, questmod, team, rewardorigin, re
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x71eb
 // Size: 0x155
 function givequestrewardgroup( group, team, rewardorigin, rewardangles, rewardscriptable, players )
@@ -3414,7 +3434,7 @@ function givequestrewardgroup( group, team, rewardorigin, rewardangles, rewardsc
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x7349
 // Size: 0xc7
 function givequestrewardref( rewardref, scalerref, team, rewardorigin, rewardangles, rewardscriptable, players )
@@ -3439,7 +3459,7 @@ function givequestrewardref( rewardref, scalerref, team, rewardorigin, rewardang
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x7419
 // Size: 0x538
 function givequestreward( type, value, team, rewardorigin, rewardangles, rewardscriptable, players )
@@ -3598,7 +3618,7 @@ function givequestreward( type, value, team, rewardorigin, rewardangles, rewards
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x795a
 // Size: 0xd3
 function getclosestplayerforreward( team, players, rewardorigin )
@@ -3630,7 +3650,7 @@ function getclosestplayerforreward( team, players, rewardorigin )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a36
 // Size: 0x105
 function setupcirclepeek()
@@ -3644,7 +3664,8 @@ function setupcirclepeek()
     level.circlepeeks = [];
     level.teamswithcirclepeek = [];
     
-    for (index = 1; index < level.br_level.br_circleradii.size; index++) {
+    for ( index = 1; index < level.br_level.br_circleradii.size ; index++ )
+    {
         circleradius = level.br_level.br_circleradii[ index ];
         circleorigin = level.br_level.br_circlecenters[ index ];
         level.circlepeeks[ index ] = spawnstruct();
@@ -3656,7 +3677,7 @@ function setupcirclepeek()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b43
 // Size: 0xc1
 function circlepeekcleanup()
@@ -3682,7 +3703,7 @@ function circlepeekcleanup()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7c0c
 // Size: 0x158
 function questrewardcirclepeek( team )
@@ -3724,7 +3745,7 @@ function questrewardcirclepeek( team )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d6c
 // Size: 0x6e
 function getquesttablerewardgroup( category )
@@ -3742,7 +3763,7 @@ function getquesttablerewardgroup( category )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7de3
 // Size: 0xfd
 function getquestrewardgroupstablerewards( group, team )
@@ -3784,7 +3805,7 @@ function getquestrewardgroupstablerewards( group, team )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ee9
 // Size: 0x8f
 function getquestrewardstabletype( reward )
@@ -3809,7 +3830,7 @@ function getquestrewardstabletype( reward )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f81
 // Size: 0x15b
 function getquestrewardstablevalue( rewardref, team )
@@ -3847,7 +3868,7 @@ function getquestrewardstablevalue( rewardref, team )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x80e5
 // Size: 0x8b
 function getquestrewardstablevaluecolumnindex()
@@ -3876,7 +3897,7 @@ function getquestrewardstablevaluecolumnindex()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8178
 // Size: 0xdd
 function getquestrewardscalerstablescaleinfo( ref )
@@ -3913,7 +3934,7 @@ function getquestrewardscalerstablescaleinfo( ref )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x825e
 // Size: 0x2d
 function getquestplunderrewardinstance( tier )
@@ -3922,7 +3943,7 @@ function getquestplunderrewardinstance( tier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8294
 // Size: 0x2d
 function getquestxprewardinstance( tier )
@@ -3931,7 +3952,7 @@ function getquestxprewardinstance( tier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x82ca
 // Size: 0x2d
 function getquestweaponxprewardinstance( tier )
@@ -3940,7 +3961,7 @@ function getquestweaponxprewardinstance( tier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8300
 // Size: 0x40
 function getquestplunderreward( category, tier, questmodifier, rewardmodifier )
@@ -3954,7 +3975,7 @@ function getquestplunderreward( category, tier, questmodifier, rewardmodifier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8349
 // Size: 0x32
 function getquestxpreward( category, tier, questmodifier, rewardmodifier )
@@ -3963,7 +3984,7 @@ function getquestxpreward( category, tier, questmodifier, rewardmodifier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8384
 // Size: 0x32
 function getquestweaponxpreward( category, tier, questmodifier, rewardmodifier )
@@ -3972,7 +3993,7 @@ function getquestweaponxpreward( category, tier, questmodifier, rewardmodifier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x83bf
 // Size: 0xfe
 function getquestscaledvalue( category, tier, type, questmodifier, rewardmodifier )
@@ -3999,7 +4020,7 @@ function getquestscaledvalue( category, tier, type, questmodifier, rewardmodifie
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x84c6
 // Size: 0x6e
 function getquestscalervalue( scalerref, tier )
@@ -4008,7 +4029,8 @@ function getquestscalervalue( scalerref, tier )
     info = getquestrewardscalerstablescaleinfo( scalerref );
     add = 0;
     
-    for (i = 1; i <= tier; i++) {
+    for ( i = 1; i <= tier ; i++ )
+    {
         if ( isdefined( info[ i ] ) )
         {
             add = info[ i ];
@@ -4021,7 +4043,7 @@ function getquestscalervalue( scalerref, tier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x853d
 // Size: 0xe1
 function getquestperkbonus( team, newquest )
@@ -4050,7 +4072,7 @@ function getquestperkbonus( team, newquest )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x8627
 // Size: 0x13a
 function questrewarddropitems( team, items, origin, angles, fromcache, distoverride, yawoverride )
@@ -4085,7 +4107,7 @@ function questrewarddropitems( team, items, origin, angles, fromcache, distoverr
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8769
 // Size: 0x68
 function questrewarduav( uavtype )
@@ -4103,7 +4125,7 @@ function questrewarduav( uavtype )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x87d9
 // Size: 0x73
 function getquestrewardbuildgroupref( category, rewardmod, questmod )
@@ -4142,7 +4164,7 @@ function getquestrewardbuildgroupref( category, rewardmod, questmod )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8855
 // Size: 0x37, Type: bool
 function questrewardgroupexist( groupref )
@@ -4153,7 +4175,7 @@ function questrewardgroupexist( groupref )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8895
 // Size: 0xed
 function getrewardvaluetype( rewardtype )
@@ -4183,7 +4205,7 @@ function getrewardvaluetype( rewardtype )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x898a
 // Size: 0x9b
 function castrewardvalue( rewardtype, value )
@@ -4210,7 +4232,7 @@ function castrewardvalue( rewardtype, value )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a2e
 // Size: 0x36
 function getquestrewardsgrouptable()
@@ -4226,14 +4248,14 @@ function getquestrewardsgrouptable()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a6d
 // Size: 0x63
 function function_29c4f14ee8c99d3f()
 {
     if ( getdvarint( @"hash_82bde055b11e6698", 0 ) )
     {
-        rewardstable = getdvar( @"hash_f29fa998fb70c4d5", "mp/brmission_rewards.csv" );
+        rewardstable = getdvar( @"br_mission_reward_filename", "mp/brmission_rewards.csv" );
         return rewardstable;
     }
     
@@ -4248,7 +4270,7 @@ function function_29c4f14ee8c99d3f()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ad8
 // Size: 0x2c
 function getquestrewardgroupindex( group )
@@ -4258,7 +4280,7 @@ function getquestrewardgroupindex( group )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8b0d
 // Size: 0x143
 function function_4f93b5d0c1953( team, players, rewardorigin )
@@ -4298,7 +4320,7 @@ function function_4f93b5d0c1953( team, players, rewardorigin )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8c59
 // Size: 0x97
 function function_62471111ae6a1489( team, players, rewardorigin )
@@ -4320,7 +4342,7 @@ function function_62471111ae6a1489( team, players, rewardorigin )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8cf8
 // Size: 0x3e
 function getquestrewardtier( team )
@@ -4337,7 +4359,7 @@ function getquestrewardtier( team )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8d3f
 // Size: 0x3d
 function setquestrewardtier( team, tier )
@@ -4348,7 +4370,7 @@ function setquestrewardtier( team, tier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8d84
 // Size: 0x24
 function addquestrewardtier( team, value )
@@ -4357,7 +4379,7 @@ function addquestrewardtier( team, value )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8db0
 // Size: 0x25
 function addquestrewardtierframeend( team, value )
@@ -4367,7 +4389,7 @@ function addquestrewardtierframeend( team, value )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8ddd
 // Size: 0x6b
 function setquestindexteamomnvar( team, questindex )
@@ -4379,7 +4401,7 @@ function setquestindexteamomnvar( team, questindex )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e50
 // Size: 0x22
 function setquestindexomnvar( questindex )
@@ -4392,7 +4414,7 @@ function setquestindexomnvar( questindex )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8e7a
 // Size: 0x6b
 function setquestrewardtierteamomnvar( team, tier )
@@ -4404,7 +4426,7 @@ function setquestrewardtierteamomnvar( team, tier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8eed
 // Size: 0x22
 function setquestrewardtieromnvar( tier )
@@ -4417,7 +4439,7 @@ function setquestrewardtieromnvar( tier )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8f17
 // Size: 0xbd
 function cancelallmissions()
@@ -4433,7 +4455,7 @@ function cancelallmissions()
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8fdc
 // Size: 0x368
 function getallactivequestsforteam( team )
@@ -4516,7 +4538,7 @@ function getallactivequestsforteam( team )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x934d
 // Size: 0x60
 function getquestunlockableindexfromlootid( lootid )
@@ -4533,7 +4555,7 @@ function getquestunlockableindexfromlootid( lootid )
 }
 
 // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x93b6
 // Size: 0x12a
 function getrandomextractunlockablelootid()
@@ -4565,7 +4587,7 @@ function getrandomextractunlockablelootid()
 /#
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x94e9
     // Size: 0x11, Type: dev
     function function_d2caa40694d469ab()
@@ -4574,7 +4596,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9502
     // Size: 0x11, Type: dev
     function function_8b0829a8ce24f0aa()
@@ -4583,7 +4605,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x951b
     // Size: 0x50, Type: dev
     function function_8ff83bdd5420ae28( type )
@@ -4599,7 +4621,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9573
     // Size: 0x16, Type: dev
     function function_132b6261e829fa9c()
@@ -4608,7 +4630,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x9591
     // Size: 0x67, Type: dev
     function function_6736e9c4965502d1( type_a, type_b )
@@ -4624,7 +4646,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9600
     // Size: 0x19, Type: dev
     function function_fe3b51cfbf0f97c5()
@@ -4633,7 +4655,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9621
     // Size: 0x30, Type: dev
     function function_edc6b2561f8041e0()
@@ -4642,7 +4664,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x9659
     // Size: 0x24, Type: dev
     function function_cfea05fa19edb13b( category, func )
@@ -4651,7 +4673,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9685
     // Size: 0x21, Type: dev
     function function_f14edc2973202386()
@@ -4662,7 +4684,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x96ae
     // Size: 0xbc, Type: dev
     function function_a70d9040958e91c3( command, args )
@@ -4693,7 +4715,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9772
     // Size: 0xfb, Type: dev
     function function_bfaa2e162911a568()
@@ -4719,7 +4741,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9875
     // Size: 0x9a, Type: dev
     function function_279b2ae4a95c269b( category )
@@ -4742,7 +4764,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9917
     // Size: 0x1b, Type: dev
     function function_3e68e198ba016b00()
@@ -4753,7 +4775,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x993a
     // Size: 0x194, Type: dev
     function function_5bb84e6bdcae8b0a( args )
@@ -4816,7 +4838,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9ad6
     // Size: 0x97, Type: dev
     function function_756366dbe90f369c( queststring )
@@ -4833,7 +4855,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9b75
     // Size: 0xa0, Type: dev
     function function_31342031c93cfdc0( i )
@@ -4857,7 +4879,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9c1d
     // Size: 0x3a, Type: dev
     function function_a608630338efae56( args )
@@ -4874,7 +4896,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9c5f
     // Size: 0x168, Type: dev
     function function_ee8fbb46302dee4a( type )
@@ -4911,7 +4933,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9dcf
     // Size: 0x28, Type: dev
     function function_be813b7757b99ae0( args )
@@ -4920,7 +4942,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9dff
     // Size: 0x1b5, Type: dev
     function function_d91326e8ffd1cb7( enabled )
@@ -4955,7 +4977,8 @@ function getrandomextractunlockablelootid()
                             continue;
                         }
                         
-                        for (i = 1; i < count; i++) {
+                        for ( i = 1; i < count ; i++ )
+                        {
                             placement = tablet.reservedplacement[ i ];
                             function_5d34afc069a50cba( placement, tablet.reservedplacement[ i - 1 ] );
                         }
@@ -4977,7 +5000,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x9fbc
     // Size: 0xf8, Type: dev
     function function_5d34afc069a50cba( placement, from )
@@ -5008,7 +5031,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0xa0bc
     // Size: 0x80, Type: dev
     function function_aed58a503d8e32c3( numerator, denominator, showdenominator, showpercent )
@@ -5039,7 +5062,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xa144
     // Size: 0x47, Type: dev
     function function_fc84b7b73e9130bc( frac, decimalplaces )
@@ -5053,7 +5076,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa193
     // Size: 0x5bc, Type: dev
     function function_58c7e92065fbb263()
@@ -5166,7 +5189,8 @@ function getrandomextractunlockablelootid()
                 count = 0;
                 anychange = 0;
                 
-                for (i = 0; i < hudstrings.size; i++) {
+                for ( i = 0; i < hudstrings.size ; i++ )
+                {
                     str = hudstrings[ i ];
                     
                     if ( !isdefined( hudelems[ i ] ) )
@@ -5189,7 +5213,8 @@ function getrandomextractunlockablelootid()
                 {
                     hudheader clearalltextafterhudelem();
                     
-                    for (i = 0; i < count; i++) {
+                    for ( i = 0; i < count ; i++ )
+                    {
                         hudelems[ i ] setdevtext( hudstrings[ i ] );
                         hudelems[ i ].currenttext = hudstrings[ i ];
                     }
@@ -5197,7 +5222,8 @@ function getrandomextractunlockablelootid()
                 
                 if ( count < hudelems.size )
                 {
-                    for (i = hudelems.size - 1; i >= count; i--) {
+                    for ( i = hudelems.size - 1; i >= count ; i-- )
+                    {
                         hudelems[ i ] destroy();
                         hudelems[ i ] = undefined;
                     }
@@ -5216,7 +5242,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa757
     // Size: 0x138, Type: dev
     function function_5d895ce7d9060182()
@@ -5248,7 +5274,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa897
     // Size: 0x237, Type: dev
     function quest_devgui()
@@ -5278,7 +5304,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0xaad6
     // Size: 0x50, Type: dev
     function function_8f449f8c11c8ea84( submenu, dvarname, values, defaultvalue )
@@ -5288,7 +5314,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xab2e
     // Size: 0xb9, Type: dev
     function function_89a2139a95fab230( cmd, args )
@@ -5309,7 +5335,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0xabef
     // Size: 0x115, Type: dev
     function function_f23e7e2f6a51b5be( devguipath, dvarname, values, defaultvalue )
@@ -5335,7 +5361,8 @@ function getrandomextractunlockablelootid()
         
         var_a606a5995982f6b3 = devguipath + dvarname + "<dev string:x9af>";
         
-        for (i = 0; i < values.size; i++) {
+        for ( i = 0; i < values.size ; i++ )
+        {
             value = values[ i ];
             isdefault = isdefined( defaultvalue ) && value == defaultvalue;
             thread adddebugcommanddelayed( var_a606a5995982f6b3 + value + ter_op( isdefault, "<dev string:xbab>", "<dev string:xbba>" ) + i + "<dev string:xbbf>" + dvarname + "<dev string:xba0>" + value + "<dev string:xba5>" );
@@ -5343,7 +5370,7 @@ function getrandomextractunlockablelootid()
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xad0c
     // Size: 0x89, Type: dev
     function adddebugcommanddelayed( cmd )

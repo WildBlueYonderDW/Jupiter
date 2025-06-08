@@ -4,7 +4,7 @@
 #namespace ob_quest_s0_story0_create_script;
 
 // Namespace ob_quest_s0_story0_create_script / namespace_ac2dc66acdf98ed8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb89
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace ob_quest_s0_story0_create_script / namespace_ac2dc66acdf98ed8
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbfe
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace ob_quest_s0_story0_create_script / namespace_ac2dc66acdf98ed8
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc6d
 // Size: 0x2431
 function createstructs( fe, us, cf )
@@ -425,7 +425,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace ob_quest_s0_story0_create_script / namespace_ac2dc66acdf98ed8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30a6
 // Size: 0x2
 function function_7af6d59eef91a7dd()

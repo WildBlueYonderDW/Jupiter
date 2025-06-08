@@ -1,18 +1,20 @@
 #using scripts\common\utility;
 #using scripts\engine\utility;
+#using scripts\mp\utility\game;
 
 #namespace dialog_utility;
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d3
+// Params 0
+// Checksum 0x0, Offset: 0x5ec
 // Size: 0x243
 function function_39dc350193dd4bc4()
 {
     level.dialogmap = [];
     var_d4ee35db6dbb7975 = tablelookupgetnumrows( "sound/tables/s6/dialog/gamedef_ref_table.csv" );
     
-    for (rownum = 0; rownum < var_d4ee35db6dbb7975; rownum++) {
+    for ( rownum = 0; rownum < var_d4ee35db6dbb7975 ; rownum++ )
+    {
         deftype = tablelookupbyrow( "sound/tables/s6/dialog/gamedef_ref_table.csv", rownum, 0 );
         
         if ( !function_7b8ed176d07a4820( deftype ) )
@@ -63,7 +65,8 @@ function function_39dc350193dd4bc4()
     level.var_bb06a7f803299c8c = [];
     var_d4ee35db6dbb7975 = tablelookupgetnumrows( "sound/tables/iw9/dialog/gamedef_ref_table.csv" );
     
-    for (rownum = 0; rownum < var_d4ee35db6dbb7975; rownum++) {
+    for ( rownum = 0; rownum < var_d4ee35db6dbb7975 ; rownum++ )
+    {
         deftype = tablelookupbyrow( "sound/tables/iw9/dialog/gamedef_ref_table.csv", rownum, 0 );
         
         if ( !function_7b8ed176d07a4820( deftype ) )
@@ -100,7 +103,7 @@ function function_39dc350193dd4bc4()
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x81e
+// Checksum 0x0, Offset: 0x837
 // Size: 0xcd, Type: bool
 function private function_6b50082c54e1a0d3( deftype, longname )
 {
@@ -123,8 +126,8 @@ function private function_6b50082c54e1a0d3( deftype, longname )
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f4
+// Params 1
+// Checksum 0x0, Offset: 0x90d
 // Size: 0xb7, Type: bool
 function function_5b0451cdda5803e8( longname )
 {
@@ -140,7 +143,7 @@ function function_5b0451cdda5803e8( longname )
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9b4
+// Checksum 0x0, Offset: 0x9cd
 // Size: 0x5b, Type: bool
 function private function_7b8ed176d07a4820( deftype )
 {
@@ -164,8 +167,8 @@ function private function_7b8ed176d07a4820( deftype )
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xa18
-// Size: 0x60, Type: bool
+// Checksum 0x0, Offset: 0xa31
+// Size: 0x81, Type: bool
 function private function_1d467e88533267f6( parentref, deftype )
 {
     if ( !isdefined( parentref ) || parentref == "" && deftype != "Character" )
@@ -180,13 +183,18 @@ function private function_1d467e88533267f6( parentref, deftype )
         return true;
     }
     
+    if ( tokens.size > 0 && scripts\mp\utility\game::function_d75b73c443421047() && tokens[ 0 ] == "br" )
+    {
+        return true;
+    }
+    
     return false;
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0xa81
-// Size: 0x1f7, Type: bool
+// Checksum 0x0, Offset: 0xabb
+// Size: 0x257, Type: bool
 function private function_13bccd41285b29fc( longname, deftype, parentref )
 {
     if ( !isdefined( longname ) || longname == "" )
@@ -204,11 +212,21 @@ function private function_13bccd41285b29fc( longname, deftype, parentref )
                 return true;
             }
             
+            if ( scripts\mp\utility\game::function_d75b73c443421047() && tokens.size > 1 && tokens[ 0 ] == "br" && tokens[ 1 ] == "cashews" )
+            {
+                return true;
+            }
+            
             break;
         case #"hash_c75355ed41b5bc53":
             tokens = strtok( longname, "_" );
             
             if ( isdefined( tokens[ 0 ] ) && tokens[ 0 ] == "announcer" && parentref == "mp_core" )
+            {
+                return true;
+            }
+            
+            if ( scripts\mp\utility\game::function_d75b73c443421047() && tokens.size > 1 && tokens[ 0 ] == "br" && tokens[ 1 ] == "cashews" )
             {
                 return true;
             }
@@ -252,8 +270,8 @@ function private function_13bccd41285b29fc( longname, deftype, parentref )
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc81
+// Params 1
+// Checksum 0x0, Offset: 0xd1b
 // Size: 0xcd
 function function_3f64deb57a4966b2( ref )
 {
@@ -280,8 +298,8 @@ function function_3f64deb57a4966b2( ref )
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd56
+// Params 3
+// Checksum 0x0, Offset: 0xdf0
 // Size: 0xeb
 function function_309f1876dda94360( typeref, var_f8853606de474ae1, parentref )
 {
@@ -320,8 +338,8 @@ function function_309f1876dda94360( typeref, var_f8853606de474ae1, parentref )
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe4a
+// Params 3
+// Checksum 0x0, Offset: 0xee4
 // Size: 0xeb
 function function_c23431e49ed43c57( typeref, var_f8853606de474ae1, parentref )
 {
@@ -360,8 +378,8 @@ function function_c23431e49ed43c57( typeref, var_f8853606de474ae1, parentref )
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3e
+// Params 5
+// Checksum 0x0, Offset: 0xfd8
 // Size: 0x209
 function createdialogalias( moderef, mapref, sceneref, characterref, eventref )
 {
@@ -453,8 +471,8 @@ function createdialogalias( moderef, mapref, sceneref, characterref, eventref )
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1150
+// Params 5
+// Checksum 0x0, Offset: 0x11ea
 // Size: 0x107
 function function_cb073025f309906a( moderef, mapref, sceneref, characterref, eventref )
 {
@@ -495,8 +513,8 @@ function function_cb073025f309906a( moderef, mapref, sceneref, characterref, eve
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1260
+// Params 1
+// Checksum 0x0, Offset: 0x12fa
 // Size: 0x25
 function function_d3c62d251d2af8e6( team )
 {
@@ -511,8 +529,8 @@ function function_d3c62d251d2af8e6( team )
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x128e
+// Params 1
+// Checksum 0x0, Offset: 0x1328
 // Size: 0x1a0
 function function_592c1f6b3e44ac25( team )
 {
@@ -580,8 +598,8 @@ function function_592c1f6b3e44ac25( team )
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1437
+// Params 5
+// Checksum 0x0, Offset: 0x14d1
 // Size: 0xab
 function function_13c4ff9b1a423445( dialog, group, excludelist, var_61acbeb6cccd6bd, forceplay )
 {
@@ -598,8 +616,8 @@ function function_13c4ff9b1a423445( dialog, group, excludelist, var_61acbeb6cccd
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ea
+// Params 6
+// Checksum 0x0, Offset: 0x1584
 // Size: 0x138
 function function_3b08be23bf113fcf( dialog, team, group, excludelist, var_61acbeb6cccd6bd, forceplay )
 {
@@ -645,8 +663,8 @@ function function_3b08be23bf113fcf( dialog, team, group, excludelist, var_61acbe
 }
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x162a
+// Params 5
+// Checksum 0x0, Offset: 0x16c4
 // Size: 0x17b
 function function_e71772de3d54144f( dialog, player, group, var_61acbeb6cccd6bd, forceplay )
 {

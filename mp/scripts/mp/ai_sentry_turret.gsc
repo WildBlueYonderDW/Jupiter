@@ -13,7 +13,7 @@
 #namespace ai_sentry_turret;
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x445
 // Size: 0x3ef
 function init()
@@ -64,7 +64,7 @@ function init()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x83c
 // Size: 0x29b
 function function_2d24ee630d6c37e2()
@@ -142,7 +142,7 @@ function function_2d24ee630d6c37e2()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xadf
 // Size: 0x77
 function function_2dd8dd0ebc078f25()
@@ -160,7 +160,7 @@ function function_2dd8dd0ebc078f25()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb5e
 // Size: 0x3dc
 function turret_spawn( turretstruct, team )
@@ -236,7 +236,7 @@ function turret_spawn( turretstruct, team )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf43
 // Size: 0x16a
 function turret_handledeathdamage( data )
@@ -273,7 +273,7 @@ function turret_handledeathdamage( data )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10b5
 // Size: 0x77
 function turret_modifydamage( data )
@@ -287,7 +287,7 @@ function turret_modifydamage( data )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1135
 // Size: 0xee
 function function_f9dcbe0ab7aac5f6()
@@ -330,7 +330,7 @@ function function_f9dcbe0ab7aac5f6()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x122b
 // Size: 0xac
 function function_eb48fdf891a4e9ee( besttarget )
@@ -357,7 +357,7 @@ function function_eb48fdf891a4e9ee( besttarget )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12df
 // Size: 0x134
 function turret_getbesttarget()
@@ -396,7 +396,7 @@ function turret_getbesttarget()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x141c
 // Size: 0x8c, Type: bool
 function function_10f997ed68f4fcef( potentialtarget )
@@ -438,7 +438,7 @@ function function_10f997ed68f4fcef( potentialtarget )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14b1
 // Size: 0x7b, Type: bool
 function function_c5754fdac13fc2a5( besttarget )
@@ -460,7 +460,7 @@ function function_c5754fdac13fc2a5( besttarget )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1535
 // Size: 0x52, Type: bool
 function function_bc0708b3cc5719c9( potentialtarget )
@@ -471,7 +471,7 @@ function function_bc0708b3cc5719c9( potentialtarget )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1590
 // Size: 0xc4
 function turret_canseetarget( potentialtarget )
@@ -494,7 +494,7 @@ function turret_canseetarget( potentialtarget )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x165d
 // Size: 0x12b
 function turret_watchdeath( turret )
@@ -536,7 +536,7 @@ function turret_watchdeath( turret )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1790
 // Size: 0x84
 function function_92fa86c7825c72e1( origin, angles, leftarc, rightarc, var_68faa79e3e6058fb )
@@ -551,7 +551,7 @@ function function_92fa86c7825c72e1( origin, angles, leftarc, rightarc, var_68faa
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x181c
 // Size: 0x59
 function turret_setturretmodel( type )
@@ -568,7 +568,7 @@ function turret_setturretmodel( type )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x187d
 // Size: 0x2c
 function function_9e099b94cb9fc336()
@@ -584,7 +584,7 @@ function function_9e099b94cb9fc336()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18b1
 // Size: 0x3c
 function function_1279fb3b42ff8e1()
@@ -599,7 +599,7 @@ function function_1279fb3b42ff8e1()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18f5
 // Size: 0x1f1
 function function_ba7df6eeacb835f6( maxbursttime, potentialtarget )
@@ -614,10 +614,12 @@ function function_ba7df6eeacb835f6( maxbursttime, potentialtarget )
     lockstrength = config.lockstrength;
     currenttime = 0;
     
-    for (var_1b951c4e47ba5c35 = 1; istrue( self.turreton ) && !istrue( self.stopfiring ) && currenttime < maxbursttime && var_1b951c4e47ba5c35; var_1b951c4e47ba5c35 = [[ getsharedfunc( "player", "isReallyAlive" ) ]]( potentialtarget )) {
+    for ( var_1b951c4e47ba5c35 = 1; istrue( self.turreton ) && !istrue( self.stopfiring ) && currenttime < maxbursttime && var_1b951c4e47ba5c35 ; var_1b951c4e47ba5c35 = [[ getsharedfunc( "player", "isReallyAlive" ) ]]( potentialtarget ) )
+    {
         numshots = randomintrange( minshots, maxshots + 1 );
         
-        for (i = 0; i < numshots && !self.overheated; i++) {
+        for ( i = 0; i < numshots && !self.overheated ; i++ )
+        {
             if ( !istrue( self.turreton ) || istrue( self.stopfiring ) )
             {
                 break;
@@ -653,7 +655,7 @@ function function_ba7df6eeacb835f6( maxbursttime, potentialtarget )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aee
 // Size: 0x9
 function function_afe3c3af7cb5e39e()
@@ -662,7 +664,7 @@ function function_afe3c3af7cb5e39e()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aff
 // Size: 0x70
 function turret_spinup()
@@ -678,7 +680,7 @@ function turret_spinup()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b77
 // Size: 0xc
 function function_e711849fbc474180()
@@ -687,7 +689,7 @@ function function_e711849fbc474180()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b8b
 // Size: 0x3f
 function function_352e4c58083275a4()
@@ -710,7 +712,7 @@ function function_352e4c58083275a4()
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bd2
 // Size: 0xd4
 function function_704307eb2f1581ac( turrettrigger )
@@ -743,7 +745,7 @@ function function_704307eb2f1581ac( turrettrigger )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cae
 // Size: 0x7f
 function function_76189206d67bd21c( data )
@@ -765,7 +767,7 @@ function function_76189206d67bd21c( data )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d35
 // Size: 0x3e
 function function_1ef2976b1357c651( isdeath )
@@ -784,7 +786,7 @@ function function_1ef2976b1357c651( isdeath )
 }
 
 // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d7b
 // Size: 0x7f
 function function_e3217606f8218ae()
@@ -808,7 +810,7 @@ function function_e3217606f8218ae()
 /#
 
     // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1e02
     // Size: 0x163, Type: dev
     function function_fc46b0f912ca62f()
@@ -844,7 +846,7 @@ function function_e3217606f8218ae()
     }
 
     // Namespace ai_sentry_turret / scripts\mp\ai_sentry_turret
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1f6d
     // Size: 0x58, Type: dev
     function debug_text( text, time )

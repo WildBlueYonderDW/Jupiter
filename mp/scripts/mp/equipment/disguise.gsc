@@ -16,7 +16,7 @@
 #namespace disguise;
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54d
 // Size: 0xb5
 function function_83599506981c29cd()
@@ -36,7 +36,7 @@ function function_83599506981c29cd()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x60a
 // Size: 0xb8
 function function_38cf81cf267278dc()
@@ -58,7 +58,7 @@ function function_38cf81cf267278dc()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ca
 // Size: 0x44
 function function_eb1fe3a0083b03df( factionname )
@@ -68,7 +68,7 @@ function function_eb1fe3a0083b03df( factionname )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x717
 // Size: 0x4e
 function function_291a4b6e765bfcc6( factionname )
@@ -78,7 +78,7 @@ function function_291a4b6e765bfcc6( factionname )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76e
 // Size: 0x4e
 function function_4d2ad5e5595384f0( factionname )
@@ -88,7 +88,7 @@ function function_4d2ad5e5595384f0( factionname )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7c5
 // Size: 0x4e
 function function_aba28cc8c36eeaf7( factionname )
@@ -98,7 +98,7 @@ function function_aba28cc8c36eeaf7( factionname )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x81c
 // Size: 0x9d
 function function_4981209c2c509828( key, body, head, vmarms, cloth, gear )
@@ -113,7 +113,7 @@ function function_4981209c2c509828( key, body, head, vmarms, cloth, gear )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c1
 // Size: 0x5c
 function function_310843b56a04e24c()
@@ -130,7 +130,7 @@ function function_310843b56a04e24c()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x926
 // Size: 0x9f
 function function_466e5ad92c500882( nationality )
@@ -157,7 +157,7 @@ function function_466e5ad92c500882( nationality )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9cd
 // Size: 0xf1
 function function_67d03e329e13f612( itemslotindex, quantity )
@@ -196,7 +196,7 @@ function function_67d03e329e13f612( itemslotindex, quantity )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xac6
 // Size: 0xb0
 function function_a8cb3b8e739c633e( itemslotindex, quantity )
@@ -217,7 +217,7 @@ function function_a8cb3b8e739c633e( itemslotindex, quantity )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb7e
 // Size: 0x31
 function function_9ee717001acd63a0( newindex )
@@ -233,7 +233,7 @@ function function_9ee717001acd63a0( newindex )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbb7
 // Size: 0x47, Type: bool
 function function_8e1f9b3b6c83372d( index )
@@ -259,7 +259,7 @@ function function_8e1f9b3b6c83372d( index )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc07
 // Size: 0xc
 function function_81475bb5a5a5c48f()
@@ -268,7 +268,7 @@ function function_81475bb5a5a5c48f()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc1b
 // Size: 0x23
 function function_3275d6441a8e838a()
@@ -278,7 +278,7 @@ function function_3275d6441a8e838a()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc47
 // Size: 0x4c
 function function_7e30d4841d0abe41( istransitioning )
@@ -296,7 +296,7 @@ function function_7e30d4841d0abe41( istransitioning )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc9b
 // Size: 0xc, Type: bool
 function function_65a78266ead29817()
@@ -305,7 +305,7 @@ function function_65a78266ead29817()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcb0
 // Size: 0x4f
 function function_c2afddb38bd47f6f( itemslotindex, quantity )
@@ -325,7 +325,7 @@ function function_c2afddb38bd47f6f( itemslotindex, quantity )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd07
 // Size: 0x165
 function function_9292cbe2dec7d826( delay, ison )
@@ -363,7 +363,7 @@ function function_9292cbe2dec7d826( delay, ison )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe74
 // Size: 0x36
 function function_8dd1c5e3042447b8( ison )
@@ -373,7 +373,7 @@ function function_8dd1c5e3042447b8( ison )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb2
 // Size: 0x17
 function function_d3b190ee881c5ca7()
@@ -387,7 +387,7 @@ function function_d3b190ee881c5ca7()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed1
 // Size: 0x3d
 function function_3ede6b66136c0f93( var_8a127de2ec4f8b49 )
@@ -404,7 +404,7 @@ function function_3ede6b66136c0f93( var_8a127de2ec4f8b49 )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf16
 // Size: 0x21f
 function function_da46be98ff60908d( var_575bccb498ed7f9e )
@@ -474,7 +474,7 @@ function function_da46be98ff60908d( var_575bccb498ed7f9e )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x113d
 // Size: 0x7b
 function function_b02057aaa6d29ba1( ison, delay )
@@ -502,7 +502,7 @@ function function_b02057aaa6d29ba1( ison, delay )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11c0
 // Size: 0x11b
 function function_a1650ef824a7be56( var_74fa01bd3626f0b7 )
@@ -533,7 +533,7 @@ function function_a1650ef824a7be56( var_74fa01bd3626f0b7 )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e3
 // Size: 0x37
 function function_d8d7a08a9fd9a9f()
@@ -554,7 +554,7 @@ function function_d8d7a08a9fd9a9f()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1322
 // Size: 0x6c
 function function_bc96cf8a43c99435()
@@ -576,7 +576,7 @@ function function_bc96cf8a43c99435()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1397
 // Size: 0x193
 function function_d293a200fe5d81c1()
@@ -640,7 +640,7 @@ function function_d293a200fe5d81c1()
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1532
 // Size: 0x3b
 function function_7e44e1aadd3ddf3a( agent )
@@ -674,7 +674,7 @@ function function_7e44e1aadd3ddf3a( agent )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1576
 // Size: 0x108
 function function_8cd5129459f5cd9c( agent )
@@ -707,7 +707,7 @@ function function_8cd5129459f5cd9c( agent )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1686
 // Size: 0x18
 function function_443abc2e017f4e40( sightmask )
@@ -716,7 +716,7 @@ function function_443abc2e017f4e40( sightmask )
 }
 
 // Namespace disguise / scripts\mp\equipment\disguise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16a6
 // Size: 0x5f
 function function_890834271f0a6fc5()

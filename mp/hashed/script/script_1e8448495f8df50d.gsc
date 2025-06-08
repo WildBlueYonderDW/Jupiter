@@ -66,7 +66,7 @@ function autoexec main()
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x67f
 // Size: 0x16d
 function initevent( index, bundle )
@@ -85,7 +85,7 @@ function initevent( index, bundle )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f4
 // Size: 0x98
 function initvo()
@@ -101,7 +101,7 @@ function initvo()
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x894
 // Size: 0x255
 function function_d671283750fee8fb( arena )
@@ -179,7 +179,7 @@ function function_d671283750fee8fb( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf1
 // Size: 0x23b
 function function_2a154368a1c88e2c( eventindex )
@@ -243,7 +243,7 @@ function function_2a154368a1c88e2c( eventindex )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd34
 // Size: 0x3e
 function function_f84e3f723cf1aa0c( eventindex )
@@ -263,7 +263,7 @@ function function_f84e3f723cf1aa0c( eventindex )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd7a
 // Size: 0x3b
 function function_9edca95997ab5b26( var_5380d19f084b018f )
@@ -277,7 +277,7 @@ function function_9edca95997ab5b26( var_5380d19f084b018f )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdbe
 // Size: 0x1c
 function function_6ff97369fec9e915( arena )
@@ -286,7 +286,7 @@ function function_6ff97369fec9e915( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde3
 // Size: 0xf8, Type: bool
 function showstartsplash( arena )
@@ -320,7 +320,7 @@ function showstartsplash( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xee4
 // Size: 0xd5, Type: bool
 function function_c28154179ba75e54( arena )
@@ -351,7 +351,7 @@ function function_c28154179ba75e54( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfc2
 // Size: 0x54, Type: bool
 function function_62fed662c974c355( arena )
@@ -373,7 +373,7 @@ function function_62fed662c974c355( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x101f
 // Size: 0x56, Type: bool
 function function_7ef30310d689330f( arena )
@@ -395,7 +395,7 @@ function function_7ef30310d689330f( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x107e
 // Size: 0x74
 function prelootspawn( arena )
@@ -419,7 +419,7 @@ function prelootspawn( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10fa
 // Size: 0x3b, Type: bool
 function shouldgivemaxammoprimary( arena )
@@ -435,7 +435,7 @@ function shouldgivemaxammoprimary( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x113e
 // Size: 0x3b, Type: bool
 function shouldgivemaxammosecondary( arena )
@@ -451,7 +451,7 @@ function shouldgivemaxammosecondary( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1182
 // Size: 0xb5
 function gulagplayerlost( arena )
@@ -488,7 +488,7 @@ function gulagplayerlost( arena )
 }
 
 // Namespace namespace_d59138129b936866 / namespace_3107e8fff428a643
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x123f
 // Size: 0x40
 function function_9c63aeac756ca994()

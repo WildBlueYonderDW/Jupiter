@@ -15,7 +15,7 @@
 
 // Namespace br_weapon_case / scripts\mp\gametypes\br_weapon_case
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x169
+// Checksum 0x0, Offset: 0x16a
 // Size: 0x4e
 function autoexec init()
 {
@@ -38,8 +38,8 @@ function autoexec init()
 /#
 
     // Namespace br_weapon_case / scripts\mp\gametypes\br_weapon_case
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1bf
+    // Params 2
+    // Checksum 0x0, Offset: 0x1c0
     // Size: 0x4c, Type: dev
     function handledevcommand( command, args )
     {
@@ -56,7 +56,7 @@ function autoexec init()
 
     // Namespace br_weapon_case / scripts\mp\gametypes\br_weapon_case
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x213
+    // Checksum 0x0, Offset: 0x214
     // Size: 0x8c, Type: dev
     function private function_cb7c4514a72932eb()
     {
@@ -71,7 +71,7 @@ function autoexec init()
 
     // Namespace br_weapon_case / scripts\mp\gametypes\br_weapon_case
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2a7
+    // Checksum 0x0, Offset: 0x2a8
     // Size: 0x255, Type: dev
     function private function_7e20c3b647ab66af( args )
     {
@@ -155,8 +155,8 @@ function autoexec init()
 #/
 
 // Namespace br_weapon_case / scripts\mp\gametypes\br_weapon_case
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x504
+// Params 0
+// Checksum 0x0, Offset: 0x505
 // Size: 0x291
 function function_48f199019893233()
 {
@@ -188,7 +188,8 @@ function function_48f199019893233()
         
         if ( var_3dac1af17f6649c2.size > 0 )
         {
-            for (i = 0; i < hiddencontainers.size; i++) {
+            for ( i = 0; i < hiddencontainers.size ; i++ )
+            {
                 origin = hiddencontainers[ i ].origin;
                 
                 if ( !isdefined( origin ) )
@@ -204,7 +205,8 @@ function function_48f199019893233()
             }
         }
         
-        for (i = 0; i < hiddencontainers.size; i++) {
+        for ( i = 0; i < hiddencontainers.size ; i++ )
+        {
             state = hiddencontainers[ i ] getscriptablepartstate( "body" );
             
             if ( state != "closed_usable" )
@@ -235,8 +237,8 @@ function function_48f199019893233()
 }
 
 // Namespace br_weapon_case / scripts\mp\gametypes\br_weapon_case
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x79d
+// Params 1
+// Checksum 0x0, Offset: 0x79e
 // Size: 0x18d
 function function_aa629573b9b452b7( var_e384a29fa99c895c )
 {

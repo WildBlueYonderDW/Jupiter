@@ -14,7 +14,7 @@
 #namespace mp_jup_shipment_xmas;
 
 // Namespace mp_jup_shipment_xmas / scripts\mp\maps\mp_jup_shipment_xmas\mp_jup_shipment_xmas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ff
 // Size: 0xb5
 function main()
@@ -37,7 +37,7 @@ function main()
 }
 
 // Namespace mp_jup_shipment_xmas / scripts\mp\maps\mp_jup_shipment_xmas\mp_jup_shipment_xmas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bc
 // Size: 0xaed
 function function_31dc060e85f4a689()

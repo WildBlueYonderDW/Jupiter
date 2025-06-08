@@ -27,7 +27,7 @@
 #namespace jup_ob_enemy_basic_grunt;
 
 // Namespace jup_ob_enemy_basic_grunt / namespace_be1f12aa953a539a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x274
 // Size: 0x1b1
 function main()
@@ -62,7 +62,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_basic_grunt / namespace_be1f12aa953a539a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42d
 // Size: 0x6d
 function setup_model()
@@ -82,7 +82,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_basic_grunt / namespace_be1f12aa953a539a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a2
 // Size: 0x149
 function function_9ac26a51c94ccf52()
@@ -121,7 +121,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_basic_grunt / namespace_be1f12aa953a539a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f3
 // Size: 0x83
 function function_efa2a2a09745fbd()
@@ -142,7 +142,7 @@ function function_efa2a2a09745fbd()
 }
 
 // Namespace jup_ob_enemy_basic_grunt / namespace_be1f12aa953a539a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67e
 // Size: 0x13f
 function precache()
@@ -187,7 +187,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_basic_grunt / namespace_be1f12aa953a539a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c5
 // Size: 0xa2
 function setup_weapons()

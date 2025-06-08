@@ -14,7 +14,7 @@
 #namespace awards;
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x210
 // Size: 0x27
 function init()
@@ -26,7 +26,7 @@ function init()
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x34
 function onplayerconnect()
@@ -40,7 +40,7 @@ function onplayerconnect()
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27b
 // Size: 0xc
 function onplayerspawned()
@@ -49,7 +49,7 @@ function onplayerspawned()
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28f
 // Size: 0x9
 function initawards()
@@ -58,7 +58,7 @@ function initawards()
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a0
 // Size: 0x64
 function function_6df0786b01ec7028( ref )
@@ -74,7 +74,7 @@ function function_6df0786b01ec7028( ref )
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30c
 // Size: 0x13
 function initmidmatchaward( ref )
@@ -83,12 +83,13 @@ function initmidmatchaward( ref )
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x327
 // Size: 0x69
 function initmidmatchawards()
 {
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         ref = tablelookupbyrow( "mp/awardtable.csv", row, 0 );
         
         if ( !isdefined( ref ) || ref == "" )
@@ -107,7 +108,7 @@ function initmidmatchawards()
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x398
 // Size: 0x3e
 function incplayerrecord( ref )
@@ -117,7 +118,7 @@ function incplayerrecord( ref )
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x3de
 // Size: 0x17c
 function giveaward( ref, objweapon, pointsoverride, xpoverride, immediate, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, eventinfo )
@@ -181,7 +182,7 @@ function giveaward( ref, objweapon, pointsoverride, xpoverride, immediate, victi
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x562
 // Size: 0x12d
 function queuemidmatchaward( ref, objweapon, pointsoverride, xpoverride, var_51bdae03b05bc75e, dontwait, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, eventinfo )
@@ -203,7 +204,7 @@ function queuemidmatchaward( ref, objweapon, pointsoverride, xpoverride, var_51b
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x697
 // Size: 0xff
 function flushmidmatchawardqueue()
@@ -225,7 +226,7 @@ function flushmidmatchawardqueue()
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79e
 // Size: 0x35
 function flushmidmatchawardqueuewhenable()
@@ -248,7 +249,7 @@ function flushmidmatchawardqueuewhenable()
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7db
 // Size: 0xb1, Type: bool
 function shouldqueuemidmatchaward( var_3cda0e0b6a2d1f97 )
@@ -292,7 +293,7 @@ function shouldqueuemidmatchaward( var_3cda0e0b6a2d1f97 )
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x895
 // Size: 0x167
 function givemidmatchaward( ref, objweapon, pointsoverride, xpoverride, var_51bdae03b05bc75e, dontwait, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, eventinfo )
@@ -359,7 +360,7 @@ function givemidmatchaward( ref, objweapon, pointsoverride, xpoverride, var_51bd
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa04
 // Size: 0x1d6
 function createnvidiavideo( ref )
@@ -461,7 +462,7 @@ function createnvidiavideo( ref )
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbe2
 // Size: 0x337
 function addawardtoaarlist( ref )
@@ -471,7 +472,8 @@ function addawardtoaarlist( ref )
         self.aarawards = [];
         self.aarawardcount = 0;
         
-        for (awardindex = 0; awardindex < 10; awardindex++) {
+        for ( awardindex = 0; awardindex < 10 ; awardindex++ )
+        {
             struct = spawnstruct();
             self.aarawards[ awardindex ] = struct;
             struct.ref = "none";
@@ -491,7 +493,8 @@ function addawardtoaarlist( ref )
     
     newpriority = default_to( level.var_6d808d6c553c2d9a[ ref ], 0 );
     
-    for (insertindex = 0; insertindex < self.aarawards.size; insertindex++) {
+    for ( insertindex = 0; insertindex < self.aarawards.size ; insertindex++ )
+    {
         awardinfo = self.aarawards[ insertindex ];
         
         if ( awardinfo.ref == "none" )
@@ -512,7 +515,8 @@ function addawardtoaarlist( ref )
         return;
     }
     
-    for (listindex = self.aarawards.size - 2; listindex >= insertindex; listindex--) {
+    for ( listindex = self.aarawards.size - 2; listindex >= insertindex ; listindex-- )
+    {
         newindex = listindex + 1;
         self.aarawards[ newindex ] = self.aarawards[ listindex ];
         awardinfo = self.aarawards[ newindex ];
@@ -544,7 +548,7 @@ function addawardtoaarlist( ref )
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf21
 // Size: 0xaf
 function initaarawardlist()
@@ -559,14 +563,15 @@ function initaarawardlist()
     
     self setplayerdata( "common", "round", "awardCount", 0 );
     
-    for (awardindex = 0; awardindex < 10; awardindex++) {
+    for ( awardindex = 0; awardindex < 10 ; awardindex++ )
+    {
         self setplayerdata( "common", "round", "awards", awardindex, "award", "none" );
         self setplayerdata( "common", "round", "awards", awardindex, "value", 0 );
     }
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd8
 // Size: 0x6d
 function saveaarawardsonroundswitch()
@@ -583,7 +588,7 @@ function saveaarawardsonroundswitch()
 }
 
 // Namespace awards / scripts\mp\awards
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x104d
 // Size: 0x3f
 function saveaarawards()
@@ -596,12 +601,13 @@ function saveaarawards()
 /#
 
     // Namespace awards / scripts\mp\awards
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1094
     // Size: 0xe6, Type: dev
     function function_c346fd8caa61c2ed()
     {
-        for (awardindex = 0; awardindex < self.aarawards.size; awardindex++) {
+        for ( awardindex = 0; awardindex < self.aarawards.size ; awardindex++ )
+        {
             awardinfo = self.aarawards[ awardindex ];
             pdref = self getplayerdata( "<dev string:xde>", "<dev string:xe8>", "<dev string:xf1>", awardindex, "<dev string:xfb>" );
             pdcount = self getplayerdata( "<dev string:xde>", "<dev string:xe8>", "<dev string:xf1>", awardindex, "<dev string:x104>" );

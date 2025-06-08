@@ -10,7 +10,7 @@
 #namespace spawnbeacon;
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20b
 // Size: 0x1c
 function init()
@@ -19,7 +19,7 @@ function init()
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22f
 // Size: 0x10, Type: bool
 function beginuse()
@@ -29,7 +29,7 @@ function beginuse()
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x248
 // Size: 0x159
 function thrown( grenade )
@@ -60,7 +60,7 @@ function thrown( grenade )
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a9
 // Size: 0x168
 function damagemonitor()
@@ -106,7 +106,7 @@ function damagemonitor()
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x519
 // Size: 0x24
 function dovisualdeath()
@@ -116,7 +116,7 @@ function dovisualdeath()
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x545
 // Size: 0x2f
 function deathmonitor()
@@ -128,7 +128,7 @@ function deathmonitor()
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57c
 // Size: 0x36
 function ownermonitor()
@@ -140,7 +140,7 @@ function ownermonitor()
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ba
 // Size: 0x10
 function addtotacopsmap()
@@ -149,7 +149,7 @@ function addtotacopsmap()
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d2
 // Size: 0x2
 function removefromtacopsmap()
@@ -158,7 +158,7 @@ function removefromtacopsmap()
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5dc
 // Size: 0x48
 function getspawninfo( grenade, player )
@@ -170,7 +170,7 @@ function getspawninfo( grenade, player )
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x62d
 // Size: 0x63
 function determinespawnorigin( grenade, spawningplayer )
@@ -186,7 +186,7 @@ function determinespawnorigin( grenade, spawningplayer )
 }
 
 // Namespace spawnbeacon / scripts\mp\supers\spawnbeacon
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x699
 // Size: 0x164
 function determinespawnangles( spawnpos, grenade, spawningplayer )

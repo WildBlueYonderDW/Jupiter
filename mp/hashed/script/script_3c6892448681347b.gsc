@@ -6,7 +6,7 @@
 #namespace dodge;
 
 // Namespace dodge / namespace_447031647c18249
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc2
 // Size: 0xbc
 function function_a16975ad999570bf( asmname, statename, params )

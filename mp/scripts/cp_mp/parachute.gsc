@@ -11,7 +11,7 @@
 #namespace parachute;
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48c
 // Size: 0x3d2
 function initparachutedvars()
@@ -86,7 +86,7 @@ function initparachutedvars()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x866
 // Size: 0x251
 function startfreefall( falltime, popinstant, var_32dcb143b4eb723a, startingvelocity, isgulagrespawn, takeweapons )
@@ -202,7 +202,7 @@ function startfreefall( falltime, popinstant, var_32dcb143b4eb723a, startingvelo
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xabf
 // Size: 0x1be
 function infilparachutevfx( endonground )
@@ -259,7 +259,7 @@ function infilparachutevfx( endonground )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc85
 // Size: 0x93
 function riotshield_attach_parachute( onarm, modelshield )
@@ -284,7 +284,7 @@ function riotshield_attach_parachute( onarm, modelshield )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd20
 // Size: 0x7
 function riotshield_getmodel_parachute()
@@ -293,7 +293,7 @@ function riotshield_getmodel_parachute()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd30
 // Size: 0x73
 function riotshield_hasweapon_parachute()
@@ -314,7 +314,7 @@ function riotshield_hasweapon_parachute()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdac
 // Size: 0x42, Type: bool
 function isriotshield_parachute( weapon )
@@ -333,7 +333,7 @@ function isriotshield_parachute( weapon )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdf7
 // Size: 0x11b, Type: bool
 function isparachutegametype()
@@ -352,7 +352,7 @@ function isparachutegametype()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf1b
 // Size: 0x3e
 function getc130height()
@@ -366,7 +366,7 @@ function getc130height()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf62
 // Size: 0x1c
 function getc130airdropheight()
@@ -380,7 +380,7 @@ function getc130airdropheight()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf87
 // Size: 0x3e
 function getc130sealevel()
@@ -394,7 +394,7 @@ function getc130sealevel()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfce
 // Size: 0x6f
 function steerfalling( var_d051bb0593db1e4 )
@@ -409,7 +409,7 @@ function steerfalling( var_d051bb0593db1e4 )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1045
 // Size: 0x38a
 function steerfallinginternal( controlentity, var_d051bb0593db1e4 )
@@ -480,7 +480,7 @@ function steerfallinginternal( controlentity, var_d051bb0593db1e4 )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13d7
 // Size: 0x1f
 function veltomph( v )
@@ -490,7 +490,7 @@ function veltomph( v )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13ff
 // Size: 0x6f
 function steerparachuting( var_d051bb0593db1e4 )
@@ -505,7 +505,7 @@ function steerparachuting( var_d051bb0593db1e4 )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1476
 // Size: 0x4af
 function steerparachutinginternal( controlentity, var_d051bb0593db1e4 )
@@ -597,7 +597,7 @@ function steerparachutinginternal( controlentity, var_d051bb0593db1e4 )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x192d
 // Size: 0x2c, Type: bool
 function isskydivestatedisabled()
@@ -606,7 +606,7 @@ function isskydivestatedisabled()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1962
 // Size: 0x66
 function enablemanualpullchute( waitsec )
@@ -638,7 +638,7 @@ function enablemanualpullchute( waitsec )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19d0
 // Size: 0x7d
 function pullchute( var_32dcb143b4eb723a, popinstant, autoopen )
@@ -663,7 +663,7 @@ function pullchute( var_32dcb143b4eb723a, popinstant, autoopen )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a55
 // Size: 0x11b
 function parachutedamagemonitor( parachute )
@@ -702,7 +702,7 @@ function parachutedamagemonitor( parachute )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b78
 // Size: 0xd1
 function startparachute()
@@ -747,7 +747,7 @@ function startparachute()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c51
 // Size: 0x27
 function parachutemidairdeathwatcher()
@@ -762,7 +762,7 @@ function parachutemidairdeathwatcher()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c80
 // Size: 0x9
 function freefallstartdefault()
@@ -771,7 +771,7 @@ function freefallstartdefault()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c91
 // Size: 0x2
 function parachuteopendefault()
@@ -780,7 +780,7 @@ function parachuteopendefault()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c9b
 // Size: 0x2d
 function parachutecompletedefault()
@@ -796,7 +796,7 @@ function parachutecompletedefault()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cd0
 // Size: 0x7
 function getautodeploynorm()
@@ -805,7 +805,7 @@ function getautodeploynorm()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ce0
 // Size: 0xe
 function spawnorbitcamera()
@@ -814,7 +814,7 @@ function spawnorbitcamera()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cf6
 // Size: 0x9
 function removeorbitcamera()
@@ -823,7 +823,7 @@ function removeorbitcamera()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d07
 // Size: 0x2
 function leaveweaponsdefaultfunc()
@@ -832,7 +832,7 @@ function leaveweaponsdefaultfunc()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d11
 // Size: 0x2
 function norestoreweaponsdefaultfunc()
@@ -841,7 +841,7 @@ function norestoreweaponsdefaultfunc()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d1b
 // Size: 0x137
 function takeweaponsdefaultfunc()
@@ -868,7 +868,8 @@ function takeweaponsdefaultfunc()
         scripts\cp_mp\utility\inventory_utility::_giveweapon( gunless, undefined, undefined, 1 );
     }
     
-    for (i = 0; i < self.weaponlist.size; i++) {
+    for ( i = 0; i < self.weaponlist.size ; i++ )
+    {
         weapon = self.weaponlist[ i ];
         
         if ( isdefined( weapon ) && !issameweapon( gunless, weapon ) && !issameweapon( weapnone, weapon ) )
@@ -881,7 +882,7 @@ function takeweaponsdefaultfunc()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e5a
 // Size: 0x16e
 function restoreweaponsdefaultfunc()
@@ -930,7 +931,7 @@ function restoreweaponsdefaultfunc()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fd0
 // Size: 0x1e7
 function playerwatchforredeploy()
@@ -1023,7 +1024,7 @@ function playerwatchforredeploy()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21bf
 // Size: 0xec
 function watchfordoublejump()
@@ -1097,7 +1098,7 @@ function watchfordoublejump()
 /#
 
     // Namespace parachute / scripts\cp_mp\parachute
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x22b3
     // Size: 0xdd, Type: dev
     function function_3c9c50a97447b483()
@@ -1120,7 +1121,7 @@ function watchfordoublejump()
 #/
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2398
 // Size: 0x84
 function parachuteprelaststandfunction()
@@ -1146,7 +1147,7 @@ function parachuteprelaststandfunction()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2424
 // Size: 0x1f2
 function updateparachutestreamhint()
@@ -1181,7 +1182,7 @@ function updateparachutestreamhint()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x261e
 // Size: 0x35c
 function freefallfromplanestatemachine( falltime, popinstant, var_32dcb143b4eb723a, startingvelocity, isgulagrespawn, takeweapons )
@@ -1275,7 +1276,7 @@ function freefallfromplanestatemachine( falltime, popinstant, var_32dcb143b4eb72
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2982
 // Size: 0x17e
 function ffsm_introsetup( falltime, popinstant, var_32dcb143b4eb723a, startingvelocity, takeweapons )
@@ -1350,7 +1351,7 @@ function ffsm_introsetup( falltime, popinstant, var_32dcb143b4eb723a, startingve
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b08
 // Size: 0x84
 function ffsm_skydive_stateenter()
@@ -1373,7 +1374,7 @@ function ffsm_skydive_stateenter()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b94
 // Size: 0x93
 function ffsm_parachuteopen_stateenter()
@@ -1401,7 +1402,7 @@ function ffsm_parachuteopen_stateenter()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c2f
 // Size: 0xc0
 function ffsm_landed_stateenter( var_83e33c8931d52d73 )
@@ -1438,7 +1439,7 @@ function ffsm_landed_stateenter( var_83e33c8931d52d73 )
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cf7
 // Size: 0x73
 function ffsm_onground_stateenter()
@@ -1464,7 +1465,7 @@ function ffsm_onground_stateenter()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d72
 // Size: 0x51
 function playlandingbreath()
@@ -1483,7 +1484,7 @@ function playlandingbreath()
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dcb
 // Size: 0x36
 function parachutecleanup()

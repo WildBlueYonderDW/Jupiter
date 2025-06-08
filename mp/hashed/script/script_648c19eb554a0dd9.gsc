@@ -7,7 +7,7 @@
 #namespace namespace_707f4e559a586342;
 
 // Namespace namespace_707f4e559a586342 / namespace_2c9cb80adc9e5a31
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x142
 // Size: 0x1e
 function init()
@@ -21,7 +21,7 @@ function init()
 }
 
 // Namespace namespace_707f4e559a586342 / namespace_2c9cb80adc9e5a31
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x168
 // Size: 0xae
 function movementinit()
@@ -43,7 +43,7 @@ function movementinit()
 }
 
 // Namespace namespace_707f4e559a586342 / namespace_2c9cb80adc9e5a31
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21e
 // Size: 0x3b
 function function_776e0185df41fb73()
@@ -62,7 +62,7 @@ function function_776e0185df41fb73()
 }
 
 // Namespace namespace_707f4e559a586342 / namespace_2c9cb80adc9e5a31
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x261
 // Size: 0x102
 function startalarm()

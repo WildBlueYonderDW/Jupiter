@@ -13,7 +13,7 @@
 #namespace namespace_e40ee8b394ce404;
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2a7
 // Size: 0x9f
 function function_cf1b1f86951a9209( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -36,7 +36,7 @@ function function_cf1b1f86951a9209( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34e
 // Size: 0x1db
 function function_8f75065bda6ee24a( opener, container )
@@ -59,7 +59,8 @@ function function_8f75065bda6ee24a( opener, container )
         }
     #/
     
-    for (itemindex = 0; itemindex < containersize; itemindex++) {
+    for ( itemindex = 0; itemindex < containersize ; itemindex++ )
+    {
         if ( itemindex <= lastvalidindex )
         {
             common_cache::function_446c7ad7bcc70992( opener, itemindex, items[ itemindex ].lootid, items[ itemindex ].quantity, items[ itemindex ].weapondata );
@@ -81,7 +82,7 @@ function function_8f75065bda6ee24a( opener, container )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x531
 // Size: 0x91
 function function_6207d6f728cee51d( players, container, lootid, quantity, weaponobj, noextract, force )
@@ -93,7 +94,7 @@ function function_6207d6f728cee51d( players, container, lootid, quantity, weapon
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ca
 // Size: 0xec
 function function_9cd7df4997aea4bf( player, container )
@@ -123,7 +124,7 @@ function function_9cd7df4997aea4bf( player, container )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x6be
 // Size: 0x3e7
 function function_4df3c8d739c4b460( player, container, lootid, quantity, weaponobj, noextract, force )
@@ -133,7 +134,8 @@ function function_4df3c8d739c4b460( player, container, lootid, quantity, weapono
     container.contents = items;
     containersize = function_54d1e54b22f3f1f6( container.containertype );
     
-    for (i = lastvalidindex + 1; i < containersize; i++) {
+    for ( i = lastvalidindex + 1; i < containersize ; i++ )
+    {
         container.contents[ i ] = undefined;
     }
     
@@ -233,7 +235,7 @@ function function_4df3c8d739c4b460( player, container, lootid, quantity, weapono
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaad
 // Size: 0xe0
 function function_7de9a54614a594c3( container, index, removeall )
@@ -262,7 +264,7 @@ function function_7de9a54614a594c3( container, index, removeall )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb95
 // Size: 0x457
 function function_80bada2833945a7a( itemtype, itemindex, noextract, dropall )
@@ -276,7 +278,8 @@ function function_80bada2833945a7a( itemtype, itemindex, noextract, dropall )
     self.var_2fa5b49969def47.contents = items;
     containersize = function_54d1e54b22f3f1f6( self.var_2fa5b49969def47.containertype );
     
-    for (i = lastvalidindex + 1; i < containersize; i++) {
+    for ( i = lastvalidindex + 1; i < containersize ; i++ )
+    {
         self.var_2fa5b49969def47.contents[ i ] = undefined;
     }
     
@@ -379,7 +382,7 @@ function function_80bada2833945a7a( itemtype, itemindex, noextract, dropall )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xff4
 // Size: 0x4b, Type: bool
 function function_daa9df3be019b879( lootid )
@@ -390,7 +393,7 @@ function function_daa9df3be019b879( lootid )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1048
 // Size: 0x104
 function function_ce9b69fc041571d2( opener, container )
@@ -406,11 +409,13 @@ function function_ce9b69fc041571d2( opener, container )
         }
     #/
     
-    for (itemindex = 0; itemindex < containersize; itemindex++) {
+    for ( itemindex = 0; itemindex < containersize ; itemindex++ )
+    {
         common_cache::function_c7294f5b9b5006d5( opener, itemindex );
     }
     
-    for (itemindex = 0; itemindex < containersize; itemindex++) {
+    for ( itemindex = 0; itemindex < containersize ; itemindex++ )
+    {
         if ( itemindex <= lastvalidindex )
         {
             common_cache::function_446c7ad7bcc70992( opener, itemindex, items[ itemindex ].lootid, items[ itemindex ].quantity, items[ itemindex ].weapondata );
@@ -419,7 +424,7 @@ function function_ce9b69fc041571d2( opener, container )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1154
 // Size: 0x14d
 function function_438749eb7a7b738( items, opener, container )
@@ -451,7 +456,7 @@ function function_438749eb7a7b738( items, opener, container )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12aa
 // Size: 0xca
 function function_b2ff0af91e5df8f4( scriptablename )
@@ -492,7 +497,7 @@ function function_b2ff0af91e5df8f4( scriptablename )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x137d
 // Size: 0x104
 function function_54d1e54b22f3f1f6( containertype )
@@ -515,7 +520,7 @@ function function_54d1e54b22f3f1f6( containertype )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1489
 // Size: 0x458
 function function_4b1ea8143efb9dd( itemtype, itemindex, dropall )
@@ -654,7 +659,7 @@ function function_4b1ea8143efb9dd( itemtype, itemindex, dropall )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18e9
 // Size: 0xc, Type: bool
 function isgasmask( scriptablename )
@@ -663,7 +668,7 @@ function isgasmask( scriptablename )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18fe
 // Size: 0xc5
 function function_5711a00587f71794( player )
@@ -701,7 +706,7 @@ function function_5711a00587f71794( player )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19cb
 // Size: 0xad
 function function_c44440af852c483( player )
@@ -737,7 +742,7 @@ function function_c44440af852c483( player )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a80
 // Size: 0xbe
 function function_1225f23a18664f4c( player )
@@ -773,7 +778,7 @@ function function_1225f23a18664f4c( player )
 }
 
 // Namespace namespace_e40ee8b394ce404 / namespace_c151592cef3b7123
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b46
 // Size: 0xd7
 function function_564c579ae581a82d( contents )

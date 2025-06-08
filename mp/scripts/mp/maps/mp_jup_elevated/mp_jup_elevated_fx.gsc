@@ -1,7 +1,7 @@
 #namespace mp_jup_elevated_fx;
 
 // Namespace mp_jup_elevated_fx / scripts\mp\maps\mp_jup_elevated\mp_jup_elevated_fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc
 // Size: 0x36
 function main()

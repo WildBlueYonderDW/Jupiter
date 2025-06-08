@@ -9,7 +9,7 @@
 #namespace cap_civ_react;
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x60
 function function_12889d5fe2ea906e( asmname, statename, params )
@@ -24,7 +24,7 @@ function function_12889d5fe2ea906e( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2f5
 // Size: 0x6d, Type: bool
 function function_86880dd17dc8bc39( asmname, statename, tostatename, params )
@@ -40,7 +40,7 @@ function function_86880dd17dc8bc39( asmname, statename, tostatename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x36b
 // Size: 0x10f
 function function_d8ca3630d10c6e62( asmname, statename, params )
@@ -68,7 +68,7 @@ function function_d8ca3630d10c6e62( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x483
 // Size: 0x230
 function initcivreactcommon( asmname, statename, params )
@@ -88,7 +88,7 @@ function initcivreactcommon( asmname, statename, params )
     self.reactdata.var_2141f7cb7ff397a6 = 0;
     self.sightdata = spawnstruct();
     self.sightdata.var_21965e18b854f978 = 0;
-    self.sightdata.var_56d6f93840cb5f45 = 0;
+    self.sightdata.sight_trace_passed = 0;
     
     if ( isai( self ) )
     {
@@ -124,7 +124,7 @@ function initcivreactcommon( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6bb
 // Size: 0x18c
 function proximity_bump()
@@ -183,7 +183,7 @@ function proximity_bump()
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84f
 // Size: 0x71
 function function_8410016cf6ab1371()
@@ -205,7 +205,7 @@ function function_8410016cf6ab1371()
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c8
 // Size: 0x1b
 function capcivreact( asmname )
@@ -215,7 +215,7 @@ function capcivreact( asmname )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8eb
 // Size: 0xe2
 function capcivreact_handlebulletfired( originator )
@@ -238,7 +238,7 @@ function capcivreact_handlebulletfired( originator )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d5
 // Size: 0x45
 function function_d338069f6a281787()
@@ -257,7 +257,7 @@ function function_d338069f6a281787()
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa22
 // Size: 0x22
 function function_b92973cdb6dc3f38()
@@ -267,7 +267,7 @@ function function_b92973cdb6dc3f38()
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa4d
 // Size: 0x248
 function function_20efa2e633463448( asmname, statename, params )
@@ -279,7 +279,8 @@ function function_20efa2e633463448( asmname, statename, params )
         capgroup = level.capgroups[ self.capgroup ];
         index = 0;
         
-        for (capindex = 0; capindex < capgroup.size; capindex++) {
+        for ( capindex = 0; capindex < capgroup.size ; capindex++ )
+        {
             if ( isalive( capgroup[ capindex ] ) )
             {
                 selfent = capgroup[ capindex ];
@@ -336,7 +337,7 @@ function function_20efa2e633463448( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc9e
 // Size: 0x19e, Type: bool
 function function_14d651e2254bb00d( asmname, fromstate, tostate, params )
@@ -386,7 +387,7 @@ function function_14d651e2254bb00d( asmname, fromstate, tostate, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe45
 // Size: 0x65
 function function_6e1cbd20dcaecf31( asmname, statename, params )
@@ -400,7 +401,7 @@ function function_6e1cbd20dcaecf31( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xeb2
 // Size: 0x163
 function function_99f3112f53606865( asmname, statename, params )
@@ -451,7 +452,7 @@ function function_99f3112f53606865( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x101d
 // Size: 0x94
 function function_5c8ff3350d31ccf2( turnxanim, statename )
@@ -462,14 +463,15 @@ function function_5c8ff3350d31ccf2( turnxanim, statename )
     interval = animlength / totaltraces;
     contents = scripts\engine\trace::create_solid_ai_contents( 1 );
     
-    for (trace = 0; trace < totaltraces; trace++) {
+    for ( trace = 0; trace < totaltraces ; trace++ )
+    {
         wait interval;
         self.origin = scripts\engine\utility::drop_to_ground( self.origin, 30, -30, undefined, contents );
     }
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10b9
 // Size: 0x228
 function function_737c17a2f5f59183( turnxanim, statename )
@@ -534,7 +536,7 @@ function function_737c17a2f5f59183( turnxanim, statename )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12e9
 // Size: 0x25
 function playturnanim_cleanup( asmname, statename, params )
@@ -543,7 +545,7 @@ function playturnanim_cleanup( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1316
 // Size: 0x89, Type: bool
 function function_25d4ebb35db59893( asmname, statename, tostatename, params )
@@ -567,7 +569,7 @@ function function_25d4ebb35db59893( asmname, statename, tostatename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13a8
 // Size: 0x57
 function function_94ea0ca02f4d957( asmname, statename, params )
@@ -581,7 +583,7 @@ function function_94ea0ca02f4d957( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1407
 // Size: 0x2e
 function function_8c45fec62914f2e3( asmname, statename, params )
@@ -590,7 +592,7 @@ function function_8c45fec62914f2e3( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x143d
 // Size: 0x4a
 function function_c8421bb477a45b8a( note )
@@ -613,7 +615,7 @@ function function_c8421bb477a45b8a( note )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x148f
 // Size: 0x57
 function function_15330ee53a46289d( asmname, fromstatename, tostatename, params )
@@ -624,7 +626,7 @@ function function_15330ee53a46289d( asmname, fromstatename, tostatename, params 
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14ef
 // Size: 0x73
 function function_fbbcd3a4d551644c( asmname, statename, params )
@@ -640,7 +642,7 @@ function function_fbbcd3a4d551644c( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x156a
 // Size: 0x7f
 function function_10e9a7601aef9c43( asmname, statename, params )
@@ -659,7 +661,7 @@ function function_10e9a7601aef9c43( asmname, statename, params )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x15f2
 // Size: 0xbd
 function function_f914d9aba63ded76( asmname, fromstatename, tostatename, params )
@@ -689,7 +691,7 @@ function function_f914d9aba63ded76( asmname, fromstatename, tostatename, params 
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x16b8
 // Size: 0x2d, Type: bool
 function function_d609e4ea4f9848a4( asmname, fromstatename, tostatename, params )
@@ -698,7 +700,7 @@ function function_d609e4ea4f9848a4( asmname, fromstatename, tostatename, params 
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x16ee
 // Size: 0x42, Type: bool
 function withingoaldist( asmname, statename, tostatename, param )
@@ -714,7 +716,7 @@ function withingoaldist( asmname, statename, tostatename, param )
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1739
 // Size: 0x44, Type: bool
 function function_1bb354204eb3d271( asmname, statename, tostatename, param )

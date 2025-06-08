@@ -29,7 +29,7 @@
 #namespace gamescore;
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fc
 // Size: 0xb6
 function gethighestscoringteam()
@@ -65,7 +65,7 @@ function gethighestscoringteam()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ba
 // Size: 0xb7
 function gethighestscore( ignoreteam )
@@ -93,7 +93,7 @@ function gethighestscore( ignoreteam )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77a
 // Size: 0xb9
 function updateteamscoreplacements()
@@ -120,7 +120,7 @@ function updateteamscoreplacements()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x83b
 // Size: 0x9
 function getteamscoreplacements()
@@ -129,7 +129,7 @@ function getteamscoreplacements()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x84d
 // Size: 0x2a, Type: bool
 function compareteamscores( left, right )
@@ -138,7 +138,7 @@ function compareteamscores( left, right )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x880
 // Size: 0x33
 function gethighestscoringplayer()
@@ -154,7 +154,7 @@ function gethighestscoringplayer()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bb
 // Size: 0x62, Type: bool
 function ishighestscoringplayertied()
@@ -170,7 +170,7 @@ function ishighestscoringplayertied()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x926
 // Size: 0x91
 function getlosingplayers()
@@ -193,7 +193,7 @@ function getlosingplayers()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9c0
 // Size: 0x3c8
 function giveplayerscore( event, points, victim, eventinfo )
@@ -328,7 +328,7 @@ function giveplayerscore( event, points, victim, eventinfo )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd90
 // Size: 0x55
 function _setplayerscore( player, score )
@@ -349,7 +349,7 @@ function _setplayerscore( player, score )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xded
 // Size: 0x1f
 function _getplayerscore( player )
@@ -363,7 +363,7 @@ function _getplayerscore( player )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe15
 // Size: 0x7a
 function function_6e6350a3296633f4( team )
@@ -386,7 +386,7 @@ function function_6e6350a3296633f4( team )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe98
 // Size: 0x22, Type: bool
 function sortbyscore( lhs, rhs )
@@ -395,7 +395,7 @@ function sortbyscore( lhs, rhs )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xec3
 // Size: 0x6d
 function checkffascorejip()
@@ -423,7 +423,7 @@ function checkffascorejip()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xf38
 // Size: 0x28d
 function giveteamscoreforobjective( team, score, allowtie, scoreevent, skipdialog, var_c6544e2c82d62dfb )
@@ -528,7 +528,7 @@ function giveteamscoreforobjective( team, score, allowtie, scoreevent, skipdialo
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11cd
 // Size: 0x12a
 function playscorestatusdialog( winningteam, allowtie, waswinning )
@@ -562,7 +562,7 @@ function playscorestatusdialog( winningteam, allowtie, waswinning )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12ff
 // Size: 0x12a
 function playleadtakendialog( allowtie )
@@ -593,7 +593,7 @@ function playleadtakendialog( allowtie )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1431
 // Size: 0x139
 function calculatewinningteam( allowtie )
@@ -643,7 +643,7 @@ function calculatewinningteam( allowtie )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1573
 // Size: 0x5d
 function _setteamscore( team, teamscore, allowtie )
@@ -668,7 +668,7 @@ function _setteamscore( team, teamscore, allowtie )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15d8
 // Size: 0x75
 function updateteamscore( team )
@@ -690,7 +690,7 @@ function updateteamscore( team )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1655
 // Size: 0x153
 function updatetotalteamscore( team )
@@ -732,7 +732,7 @@ function updatetotalteamscore( team )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17b0
 // Size: 0x2c2
 function updateovertimescore()
@@ -794,7 +794,7 @@ function updateovertimescore()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a7a
 // Size: 0x19
 function _getteamscore( team )
@@ -803,7 +803,7 @@ function _getteamscore( team )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a9c
 // Size: 0x1d5
 function removedisconnectedplayerfromplacement()
@@ -824,7 +824,8 @@ function removedisconnectedplayerfromplacement()
     numplayers = level.placement[ "all" ].size;
     found = 0;
     
-    for (i = 0; i < numplayers; i++) {
+    for ( i = 0; i < numplayers ; i++ )
+    {
         if ( level.placement[ "all" ][ i ] == self )
         {
             found = 1;
@@ -871,7 +872,7 @@ function removedisconnectedplayerfromplacement()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c79
 // Size: 0x1fb
 function updateplacement()
@@ -943,7 +944,7 @@ function updateplacement()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e7c
 // Size: 0xf6
 function updateteamplacement()
@@ -968,7 +969,7 @@ function updateteamplacement()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f7a
 // Size: 0x33
 function processassist( killedplayer, objweapon, bonusmagnitude )
@@ -982,7 +983,7 @@ function processassist( killedplayer, objweapon, bonusmagnitude )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fb5
 // Size: 0x3c6
 function processassist_regularmp( killedplayer, objweapon, bonusmagnitude )
@@ -1116,7 +1117,7 @@ function processassist_regularmp( killedplayer, objweapon, bonusmagnitude )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2383
 // Size: 0xb7
 function function_5a48de6e3fb64115()
@@ -1137,7 +1138,7 @@ function function_5a48de6e3fb64115()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2442
 // Size: 0x21
 function processshieldassist( killedplayer )
@@ -1151,7 +1152,7 @@ function processshieldassist( killedplayer )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x246b
 // Size: 0x117
 function processshieldassist_regularmp( killedplayer )
@@ -1194,7 +1195,7 @@ function processshieldassist_regularmp( killedplayer )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x258a
 // Size: 0x1e
 function initassisttrackers()
@@ -1205,7 +1206,7 @@ function initassisttrackers()
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25b0
 // Size: 0xa2
 function trackdebuffassist( attacker, victim, weapon )
@@ -1231,7 +1232,7 @@ function trackdebuffassist( attacker, victim, weapon )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x265a
 // Size: 0x14b
 function untrackdebuffassist( attacker, victim, weapon )
@@ -1273,7 +1274,7 @@ function untrackdebuffassist( attacker, victim, weapon )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x27ad
 // Size: 0x5f
 function trackdebuffassistfortime( attacker, victim, weapon, duration )
@@ -1293,7 +1294,7 @@ function trackdebuffassistfortime( attacker, victim, weapon, duration )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2814
 // Size: 0xb8, Type: bool
 function isdebuffedbyweapon( victim, weapon )
@@ -1327,7 +1328,7 @@ function isdebuffedbyweapon( victim, weapon )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28d5
 // Size: 0x8a, Type: bool
 function isdebuffedbyweaponandplayer( attacker, victim, weapon )
@@ -1358,7 +1359,7 @@ function isdebuffedbyweaponandplayer( attacker, victim, weapon )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2968
 // Size: 0xd9
 function getdebuffattackersbyweapon( victim, weapon )
@@ -1396,7 +1397,7 @@ function getdebuffattackersbyweapon( victim, weapon )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a4a
 // Size: 0xa8
 function trackbuffassist( player, teammate, weapon )
@@ -1425,7 +1426,7 @@ function trackbuffassist( player, teammate, weapon )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2afa
 // Size: 0xce
 function untrackbuffassist( player, teammate, weapon )
@@ -1451,7 +1452,7 @@ function untrackbuffassist( player, teammate, weapon )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2bd0
 // Size: 0x5f
 function trackbuffassistfortime( player, teammate, weapon, duration )
@@ -1471,7 +1472,7 @@ function trackbuffassistfortime( player, teammate, weapon, duration )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c37
 // Size: 0x2d1
 function awardbuffdebuffassists( attacker, victim )
@@ -1542,9 +1543,9 @@ function awardbuffdebuffassists( attacker, victim )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f10
-// Size: 0x1d0
+// Size: 0x1e6
 function function_6251f7723be2f90c( victim, var_10f37e0e73fd3a4c )
 {
     attacker = self;
@@ -1577,11 +1578,14 @@ function function_6251f7723be2f90c( victim, var_10f37e0e73fd3a4c )
                 
                 foreach ( var_f43e7c1fdaeb88f7 in var_10f37e0e73fd3a4c )
                 {
-                    attackerdata = victim.attackerdata[ var_f43e7c1fdaeb88f7.guid ];
-                    
-                    if ( istrue( attackerdata.var_2c151652ca2c1756 ) )
+                    if ( isdefined( var_f43e7c1fdaeb88f7 ) && isdefined( var_f43e7c1fdaeb88f7.guid ) )
                     {
-                        var_a0b5666a0cdebb0b[ var_a0b5666a0cdebb0b.size ] = var_f43e7c1fdaeb88f7;
+                        attackerdata = victim.attackerdata[ var_f43e7c1fdaeb88f7.guid ];
+                        
+                        if ( istrue( attackerdata.var_2c151652ca2c1756 ) )
+                        {
+                            var_a0b5666a0cdebb0b[ var_a0b5666a0cdebb0b.size ] = var_f43e7c1fdaeb88f7;
+                        }
                     }
                 }
                 
@@ -1602,8 +1606,8 @@ function function_6251f7723be2f90c( victim, var_10f37e0e73fd3a4c )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x30e8
+// Params 3
+// Checksum 0x0, Offset: 0x30fe
 // Size: 0x71
 function function_5a687b65c904b197( attacker, victim, team )
 {
@@ -1626,8 +1630,8 @@ function function_5a687b65c904b197( attacker, victim, team )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3161
+// Params 1
+// Checksum 0x0, Offset: 0x3177
 // Size: 0x1d, Type: bool
 function gamemodeusesdeathmatchscoring( mode )
 {
@@ -1635,8 +1639,8 @@ function gamemodeusesdeathmatchscoring( mode )
 }
 
 // Namespace gamescore / scripts\mp\gamescore
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3187
+// Params 0
+// Checksum 0x0, Offset: 0x319d
 // Size: 0x93
 function loggamescore()
 {

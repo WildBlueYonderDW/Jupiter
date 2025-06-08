@@ -3,7 +3,7 @@
 #namespace namespace_39a53563bf72cee5;
 
 // Namespace namespace_39a53563bf72cee5 / namespace_ece84bc21c1cad6c
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc7
 // Size: 0x26
 function function_1efd3ef097bc71ef( player, checkads, ondamagedcallback )

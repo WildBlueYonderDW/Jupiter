@@ -12,7 +12,7 @@
 #namespace namespace_f3c963e429e76c8d;
 
 // Namespace namespace_f3c963e429e76c8d / namespace_8d9453d94dd4f401
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x139
 // Size: 0x9
 function function_fa326688eafcb0e5()
@@ -21,7 +21,7 @@ function function_fa326688eafcb0e5()
 }
 
 // Namespace namespace_f3c963e429e76c8d / namespace_8d9453d94dd4f401
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14a
 // Size: 0x22
 function function_a8c998f28b4865b4( circle_origin, circle_radius, threshold_radius )
@@ -30,7 +30,7 @@ function function_a8c998f28b4865b4( circle_origin, circle_radius, threshold_radi
 }
 
 // Namespace namespace_f3c963e429e76c8d / namespace_8d9453d94dd4f401
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x174
 // Size: 0x157
 function function_5efe196c4c230159()
@@ -73,7 +73,7 @@ function function_5efe196c4c230159()
 }
 
 // Namespace namespace_f3c963e429e76c8d / namespace_8d9453d94dd4f401
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x4e
 function function_b146e2b40516b668( category )
@@ -88,7 +88,7 @@ function function_b146e2b40516b668( category )
 }
 
 // Namespace namespace_f3c963e429e76c8d / namespace_8d9453d94dd4f401
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x329
 // Size: 0x32
 function function_91eeda4f6ea1daf( category )
@@ -102,7 +102,7 @@ function function_91eeda4f6ea1daf( category )
 }
 
 // Namespace namespace_f3c963e429e76c8d / namespace_8d9453d94dd4f401
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x363
 // Size: 0x328
 function spawn_reinforcements( location, requests, var_461b8c89eb0f0715, params )
@@ -204,7 +204,7 @@ function spawn_reinforcements( location, requests, var_461b8c89eb0f0715, params 
 }
 
 // Namespace namespace_f3c963e429e76c8d / namespace_8d9453d94dd4f401
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x694
 // Size: 0x166
 function function_3c4b94287bc8e5f9( location, requests, poi_name, group_name, params )
@@ -237,7 +237,7 @@ function function_3c4b94287bc8e5f9( location, requests, poi_name, group_name, pa
 }
 
 // Namespace namespace_f3c963e429e76c8d / namespace_8d9453d94dd4f401
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x803
 // Size: 0x149
 function function_f94be34470ee3bad( location, spawn_count, spawn_distance, spawn_radius, squad_size )
@@ -255,7 +255,8 @@ function function_f94be34470ee3bad( location, spawn_count, spawn_distance, spawn
         spawn_radius = 500;
     }
     
-    for (i = 0; i < 15; i++) {
+    for ( i = 0; i < 15 ; i++ )
+    {
         searchpoint = location + vectornormalize( function_6174330574a2a273() ) * spawn_distance;
         spawnpoints = getrandomnavpoints( getclosestpointonnavmesh( searchpoint ), spawn_radius, squad_size );
         

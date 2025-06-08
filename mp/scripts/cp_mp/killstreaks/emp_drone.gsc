@@ -18,7 +18,7 @@
 #namespace emp_drone;
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x680
 // Size: 0x28
 function init()
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b0
 // Size: 0x2c, Type: bool
 function empdrone_beginsuper()
@@ -49,7 +49,7 @@ function empdrone_beginsuper()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e5
 // Size: 0xc3
 function empdrone_superusethink()
@@ -86,7 +86,7 @@ function empdrone_superusethink()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b0
 // Size: 0x73, Type: bool
 function empdrone_tryuse( streakinfo )
@@ -119,7 +119,7 @@ function empdrone_tryuse( streakinfo )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x82c
 // Size: 0x9d
 function empdrone_equipment_wrapper( ref, slot, objweapon )
@@ -142,7 +142,7 @@ function empdrone_equipment_wrapper( ref, slot, objweapon )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d1
 // Size: 0xd, Type: bool
 function empdrone_weapongiven( streakinfo )
@@ -151,7 +151,7 @@ function empdrone_weapongiven( streakinfo )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e7
 // Size: 0x11a
 function empdrone_rundrone( streakinfo )
@@ -177,7 +177,7 @@ function empdrone_rundrone( streakinfo )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa09
 // Size: 0x2bb
 function empdrone_createdrone( streakinfo )
@@ -250,7 +250,7 @@ function empdrone_createdrone( streakinfo )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xccd
 // Size: 0xc6
 function empdrone_findstartposition()
@@ -275,7 +275,7 @@ function empdrone_findstartposition()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd9c
 // Size: 0x77
 function empdrone_timeoutthink()
@@ -296,7 +296,7 @@ function empdrone_timeoutthink()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe1b
 // Size: 0x8a
 function empdrone_collidethink()
@@ -310,7 +310,7 @@ function empdrone_collidethink()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xead
 // Size: 0x3e
 function empdrone_watchdetonate()
@@ -324,7 +324,7 @@ function empdrone_watchdetonate()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef3
 // Size: 0x73
 function empdrone_watchearlyexit()
@@ -346,7 +346,7 @@ function empdrone_watchearlyexit()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf6e
 // Size: 0x31
 function empdrone_handledeathdamage( data )
@@ -357,7 +357,7 @@ function empdrone_handledeathdamage( data )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfa7
 // Size: 0x55
 function empdrone_explode()
@@ -370,7 +370,7 @@ function empdrone_explode()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1004
 // Size: 0x4e
 function empdrone_destroy()
@@ -382,7 +382,7 @@ function empdrone_destroy()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x105a
 // Size: 0x13
 function empdrone_exit()
@@ -391,7 +391,7 @@ function empdrone_exit()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1075
 // Size: 0x73
 function empdrone_delete()
@@ -409,7 +409,7 @@ function empdrone_delete()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f0
 // Size: 0xaf
 function empdrone_returnplayer( drone )
@@ -434,7 +434,7 @@ function empdrone_returnplayer( drone )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11a7
 // Size: 0xf
 function empdrone_clearomnvars()
@@ -443,7 +443,7 @@ function empdrone_clearomnvars()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11be
 // Size: 0x31
 function empdrone_empapplied( data )
@@ -454,7 +454,7 @@ function empdrone_empapplied( data )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11f7
 // Size: 0x54
 function empdrone_givepointsfordeath( attacker )
@@ -471,7 +471,7 @@ function empdrone_givepointsfordeath( attacker )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1253
 // Size: 0x2c6
 function empdrone_explodeemp()
@@ -534,7 +534,7 @@ function empdrone_explodeemp()
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1521
 // Size: 0x1ac
 function empdrone_applyemp( data )
@@ -580,7 +580,7 @@ function empdrone_applyemp( data )
 }
 
 // Namespace emp_drone / scripts\cp_mp\killstreaks\emp_drone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16d5
 // Size: 0x5b
 function empdrone_empendearly( data, duration )

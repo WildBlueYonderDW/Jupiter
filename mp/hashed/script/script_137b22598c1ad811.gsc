@@ -4,7 +4,7 @@
 #namespace mp_jup_st_f_gas_stations;
 
 // Namespace mp_jup_st_f_gas_stations / namespace_e999d8dfe317a9c1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x104
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_f_gas_stations / namespace_e999d8dfe317a9c1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x179
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_f_gas_stations / namespace_e999d8dfe317a9c1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e8
 // Size: 0xd6
 function createstructs( fe, us, cf )
@@ -67,7 +67,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_gas_stations / namespace_e999d8dfe317a9c1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c6
 // Size: 0x2
 function function_7af6d59eef91a7dd()

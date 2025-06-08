@@ -5,7 +5,7 @@
 #namespace autopilot;
 
 // Namespace autopilot / scripts\mp\autopilot
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x149
 // Size: 0x11f
 function initialize( var_fa2678ae217f88a4, var_2b06ab98d2dce887, var_9f5fb5ed74cbf3c9 )

@@ -5,7 +5,7 @@
 #namespace vehicle_compass;
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x106
 // Size: 0x39
 function vehicle_compass_registerinstance( vehicle )
@@ -16,7 +16,7 @@ function vehicle_compass_registerinstance( vehicle )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x147
 // Size: 0x2f
 function vehicle_compass_deregisterinstance( vehicle )
@@ -26,7 +26,7 @@ function vehicle_compass_deregisterinstance( vehicle )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17e
 // Size: 0x48, Type: bool
 function vehicle_compass_instanceisregistered( vehicle )
@@ -36,7 +36,7 @@ function vehicle_compass_instanceisregistered( vehicle )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cf
 // Size: 0x81
 function vehicle_compass_updatevisibilityforplayer( vehicle, player, var_6ecb77fd1f27c667 )
@@ -73,7 +73,7 @@ function vehicle_compass_updatevisibilityforplayer( vehicle, player, var_6ecb77f
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x258
 // Size: 0xa5
 function vehicle_compass_updatevisibilityforallplayers( vehicle, var_6ecb77fd1f27c667 )
@@ -102,7 +102,7 @@ function vehicle_compass_updatevisibilityforallplayers( vehicle, var_6ecb77fd1f2
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x305
 // Size: 0x82
 function vehicle_compass_updateallvisibilityforplayer( player )
@@ -121,7 +121,7 @@ function vehicle_compass_updateallvisibilityforplayer( player )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x38f
 // Size: 0x4f
 function vehicle_compass_shouldbevisibletoplayer( vehicle, player )
@@ -140,7 +140,7 @@ function vehicle_compass_shouldbevisibletoplayer( vehicle, player )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e7
 // Size: 0x81
 function vehicle_compass_show( vehicle )
@@ -168,7 +168,7 @@ function vehicle_compass_show( vehicle )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x470
 // Size: 0x45
 function vehicle_compass_hide( vehicle )
@@ -183,7 +183,7 @@ function vehicle_compass_hide( vehicle )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4bd
 // Size: 0xb8
 function vehicle_compass_setteamfriendlyto( vehicle, team )
@@ -206,7 +206,7 @@ function vehicle_compass_setteamfriendlyto( vehicle, team )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x57d
 // Size: 0x1b
 function vehicle_compass_setplayerfriendlyto( vehicle, player )
@@ -215,7 +215,7 @@ function vehicle_compass_setplayerfriendlyto( vehicle, player )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a0
 // Size: 0xeb
 function vehicle_compass_init()
@@ -241,7 +241,7 @@ function vehicle_compass_init()
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x693
 // Size: 0x37
 function vehicle_compass_getleveldata()
@@ -251,7 +251,7 @@ function vehicle_compass_getleveldata()
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6d3
 // Size: 0x90
 function vehicle_compass_friendlystatuschangedcallback( vehicle, var_965ea26e6eb230b9, var_52312180ef1940be )
@@ -277,7 +277,7 @@ function vehicle_compass_friendlystatuschangedcallback( vehicle, var_965ea26e6eb
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76b
 // Size: 0x20
 function vehicle_compass_playerjoinedteamcallback( player )
@@ -291,7 +291,7 @@ function vehicle_compass_playerjoinedteamcallback( player )
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x793
 // Size: 0xa
 function vehicle_compass_playerspawnedcallback()

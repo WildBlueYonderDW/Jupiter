@@ -13,7 +13,7 @@
 #namespace scoreboard;
 
 // Namespace scoreboard / scripts\mp\scoreboard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d8
 // Size: 0x5d
 function processlobbyscoreboards()
@@ -27,7 +27,7 @@ function processlobbyscoreboards()
 }
 
 // Namespace scoreboard / scripts\mp\scoreboard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53d
 // Size: 0x57b
 function processmatchscoreboardinfo()
@@ -45,7 +45,7 @@ function processmatchscoreboardinfo()
         axisscore = getteamscore( "axis" );
         team3score = getteamscore( "team_three" );
         
-        if ( getdvarint( @"hash_1bc373211683e0b6" ) != 0 )
+        if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) != 0 )
         {
             setclientmatchdata( "alliesScore", alliesscore );
             setclientmatchdata( "axisScore", axisscore );
@@ -82,7 +82,7 @@ function processmatchscoreboardinfo()
             {
                 if ( game[ "timeToBeatTeam" ] == "none" )
                 {
-                    if ( getdvarint( @"hash_1bc373211683e0b6" ) != 0 )
+                    if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) != 0 )
                     {
                         setclientmatchdata( "alliesTTB", 0 );
                         setclientmatchdata( "axisTTB", 0 );
@@ -101,7 +101,7 @@ function processmatchscoreboardinfo()
                         axisscore++;
                     }
                     
-                    if ( getdvarint( @"hash_1bc373211683e0b6" ) != 0 )
+                    if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) != 0 )
                     {
                         setclientmatchdata( "alliesTTB", ter_op( "allies" == game[ "timeToBeatTeam" ], game[ "timeToBeat" ], game[ "timeToBeatOld" ] ) );
                         setclientmatchdata( "axisTTB", ter_op( "axis" == game[ "timeToBeatTeam" ], game[ "timeToBeat" ], game[ "timeToBeatOld" ] ) );
@@ -127,7 +127,7 @@ function processmatchscoreboardinfo()
             winner = "axis";
         }
         
-        if ( getdvarint( @"hash_1bc373211683e0b6" ) != 0 )
+        if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) != 0 )
         {
             setclientmatchdata( "alliesScore", alliesscore );
             setclientmatchdata( "axisScore", axisscore );
@@ -179,7 +179,7 @@ function processmatchscoreboardinfo()
         player setplayerdata( "common", "round", "scoreboardType", "neutral" );
     }
     
-    if ( getdvarint( @"hash_1bc373211683e0b6" ) != 0 )
+    if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) != 0 )
     {
         setclientmatchdata( "alliesScore", -1 );
         setclientmatchdata( "axisScore", -1 );
@@ -190,7 +190,7 @@ function processmatchscoreboardinfo()
 }
 
 // Namespace scoreboard / scripts\mp\scoreboard
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac0
 // Size: 0x1d5
 function processcommonplayerdataforplayer( player )
@@ -222,12 +222,12 @@ function processcommonplayerdataforplayer( player )
 }
 
 // Namespace scoreboard / scripts\mp\scoreboard
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc9d
 // Size: 0xb42
 function setplayerscoreboardinfo()
 {
-    if ( getdvarint( @"hash_1bc373211683e0b6" ) == 0 )
+    if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) == 0 )
     {
         return;
     }
@@ -326,7 +326,8 @@ function setplayerscoreboardinfo()
             var_7746ca3b56c9afd3 = scripts\mp\gametypes\br::calculateclientmatchdataextrainfopayload( self );
             assert( var_7746ca3b56c9afd3.size < 5 );
             
-            for (i = 0; i < var_7746ca3b56c9afd3.size; i++) {
+            for ( i = 0; i < var_7746ca3b56c9afd3.size ; i++ )
+            {
                 var_1abc650bb92e6e04 = "extrascore" + i;
                 setclientmatchdata( "players", self.clientmatchdataid, var_1abc650bb92e6e04, var_7746ca3b56c9afd3[ i ] );
                 println( "<dev string:x1c>" + self.name + "<dev string:x2d>" + self.clientmatchdataid + "<dev string:xf7>" + var_1abc650bb92e6e04 + "<dev string:xfe>" + var_7746ca3b56c9afd3[ i ] );
@@ -442,7 +443,7 @@ function setplayerscoreboardinfo()
 }
 
 // Namespace scoreboard / scripts\mp\scoreboard
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17e7
 // Size: 0x61
 function computescoreboardslot( team, index )
@@ -476,12 +477,12 @@ function computescoreboardslot( team, index )
 }
 
 // Namespace scoreboard / scripts\mp\scoreboard
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1851
 // Size: 0x3d8
 function buildscoreboardtype( team )
 {
-    if ( getdvarint( @"hash_1bc373211683e0b6" ) == 0 )
+    if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) == 0 )
     {
         return;
     }

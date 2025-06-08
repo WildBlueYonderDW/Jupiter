@@ -5,12 +5,12 @@
 #namespace structspawnconfig;
 
 // Namespace structspawnconfig / scripts\cp_mp\structspawnconfig
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x860
 // Size: 0x9e, Type: bool
 function init()
 {
-    if ( !getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( !getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         return false;
     }
@@ -99,7 +99,7 @@ function private function_4993c0868a42f933()
 }
 
 // Namespace structspawnconfig / scripts\cp_mp\structspawnconfig
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xac0
 // Size: 0x51
 function function_4f7660cfd85cd517( structname, var_7f5fc69251d6a8da )
@@ -113,7 +113,7 @@ function function_4f7660cfd85cd517( structname, var_7f5fc69251d6a8da )
 }
 
 // Namespace structspawnconfig / scripts\cp_mp\structspawnconfig
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb19
 // Size: 0x51
 function function_412f527ef0863f0e( structname, var_efc8ac1d0c1c9aec )
@@ -127,7 +127,7 @@ function function_412f527ef0863f0e( structname, var_efc8ac1d0c1c9aec )
 }
 
 // Namespace structspawnconfig / scripts\cp_mp\structspawnconfig
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb72
 // Size: 0x51
 function function_f0492c3bdbb3fd52( structname, var_7661235a91a2811 )
@@ -141,7 +141,7 @@ function function_f0492c3bdbb3fd52( structname, var_7661235a91a2811 )
 }
 
 // Namespace structspawnconfig / scripts\cp_mp\structspawnconfig
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbcb
 // Size: 0x51
 function function_eded5b87f8f7bdfd( structname, var_f7a132d39a92cd3c )
@@ -155,7 +155,7 @@ function function_eded5b87f8f7bdfd( structname, var_f7a132d39a92cd3c )
 }
 
 // Namespace structspawnconfig / scripts\cp_mp\structspawnconfig
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc24
 // Size: 0x7d
 function ssc_config( listref, spawntype )
@@ -182,7 +182,7 @@ function ssc_config( listref, spawntype )
 }
 
 // Namespace structspawnconfig / scripts\cp_mp\structspawnconfig
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcaa
 // Size: 0x82
 function function_be39ee9f759d6210( var_ca2c833762e5466c, spawntype )
@@ -241,7 +241,7 @@ function private function_f8c6adde7a4c2116( listref )
 function private function_9b826ec5596b4b1d()
 {
     configlist = self;
-    var_852ab1ce7e39362d = strtok( getdvar( @"hash_7f18cc33e088e923", "" ), " " );
+    var_852ab1ce7e39362d = strtok( getdvar( @"scr_ssc_config_overrides", "" ), " " );
     
     if ( var_852ab1ce7e39362d.size == 0 )
     {
@@ -253,7 +253,7 @@ function private function_9b826ec5596b4b1d()
         configlist = function_7dbb2f79e1942e4d( configlist, var_ca2c833762e5466c, "structspawnconfig:" );
     }
     
-    debug_print( "Config overrides loaded: " + getdvar( @"hash_7f18cc33e088e923", "" ) );
+    debug_print( "Config overrides loaded: " + getdvar( @"scr_ssc_config_overrides", "" ) );
     return configlist;
 }
 
@@ -268,7 +268,7 @@ function private function_7f0c7ed9520a18f0()
 }
 
 // Namespace structspawnconfig / scripts\cp_mp\structspawnconfig
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe80
 // Size: 0x3f, Type: bool
 function function_8bdb3e2a8e7218da( left, right )
@@ -326,7 +326,8 @@ function private function_705ab1040a64a8fa()
     configlist = self;
     var_45ffc2a32427f2a9 = "";
     
-    for (i = 0; i < configlist.size; i++) {
+    for ( i = 0; i < configlist.size ; i++ )
+    {
         var_45ffc2a32427f2a9 += configlist[ i ].script_struct + " ";
     }
     
@@ -342,7 +343,8 @@ function private function_975552b793ff8e27( spawntype )
     configlist = self;
     results = [];
     
-    for (i = 0; i < configlist.size; i++) {
+    for ( i = 0; i < configlist.size ; i++ )
+    {
         index = configlist[ i ].script_struct;
         results[ index ] = configlist[ i ] function_b4f718bb8f4f3f6e( spawntype );
     }
@@ -401,7 +403,8 @@ function private function_8d6027e6daa80c1d( spawnconfig, spawntype )
     structlocations = function_4784966d3ce7dba9( spawnconfig.script_struct );
     function_8de891d666db43b1( "Struct " + spawnconfig.script_struct + " found " + structlocations.size + " locations to select from" );
     
-    for (i = 0; i < structlocations.size; i++) {
+    for ( i = 0; i < structlocations.size ; i++ )
+    {
         struct = structlocations[ i ];
         thisindex = function_400ac4c375b471a1( struct.script_index );
         level.ssc.indexes[ thisindex ] = thisindex;
@@ -1414,7 +1417,8 @@ function private function_23e7aca8646231f4( removearray, goodspawns, mincount )
         {
             var_dc25bf936986be4d = [];
             
-            for (i = 0; i < mincount - var_b706f618361c154a; i++) {
+            for ( i = 0; i < mincount - var_b706f618361c154a ; i++ )
+            {
                 randomspawn = function_b2cd26ac28946ea7( removearray );
                 
                 if ( isdefined( randomspawn ) )
@@ -1865,7 +1869,8 @@ function private function_400ac4c375b471a1( scriptindex )
 // Size: 0x27
 function private function_4e39e2d66e2d1948( var_d57a27cd0f4ec676 )
 {
-    for (i = 1; isdefined( var_d57a27cd0f4ec676[ i ] ); i++) {
+    for ( i = 1; isdefined( var_d57a27cd0f4ec676[ i ] ) ; i++ )
+    {
     }
     
     return i;
@@ -2070,7 +2075,8 @@ function private function_3267104534037a6f( possiblespawns, count )
     possiblespawns = function_288718db33265376( possiblespawns, level.ssc.exclude );
     newspawns = [];
     
-    for (i = 0; i < count; i++) {
+    for ( i = 0; i < count ; i++ )
+    {
         if ( possiblespawns.size == 0 )
         {
             break;
@@ -2104,7 +2110,8 @@ function private function_16059c8d75a938c4( spawns, count )
 {
     removedspawns = [];
     
-    for (i = 0; i < count; i++) {
+    for ( i = 0; i < count ; i++ )
+    {
         if ( spawns.size == 0 )
         {
             return spawns;
@@ -2310,7 +2317,8 @@ function private function_56b91bfbefdc7456( array )
         var_6c46abea90157067 = function_5f4abcf527639ec2( array );
         arraystring = "<dev string:x17c>";
         
-        for (i = 0; i < var_6c46abea90157067.size; i++) {
+        for ( i = 0; i < var_6c46abea90157067.size ; i++ )
+        {
             arraystring += var_6c46abea90157067[ i ] + "<dev string:x1c>";
         }
         
@@ -2336,7 +2344,7 @@ function private function_5f4abcf527639ec2( var_e9df1a60f3b537c2 )
 }
 
 // Namespace structspawnconfig / scripts\cp_mp\structspawnconfig
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b71
 // Size: 0x16, Type: bool
 function function_c0b52f72ada4834c( left, right )
@@ -2566,7 +2574,8 @@ function function_c0b52f72ada4834c( left, right )
     // Size: 0x46, Type: dev
     function private function_34ae4f6043bcb29a( debugstate )
     {
-        for (i = function_f60985255e4b2819(); i <= level.ssc.drawcount; i++) {
+        for ( i = function_f60985255e4b2819(); i <= level.ssc.drawcount ; i++ )
+        {
             debug_cleanup( i );
         }
     }
@@ -2581,7 +2590,8 @@ function function_c0b52f72ada4834c( left, right )
         numtimes = getdvarint( @"hash_a7edcbf40456f8b5", 10 );
         debug_print( "<dev string:x5aa>" + var_ca2c833762e5466c + "<dev string:x1c>" + numtimes + "<dev string:x5c5>" );
         
-        for (i = 0; i < numtimes; i++) {
+        for ( i = 0; i < numtimes ; i++ )
+        {
             debug_print( "<dev string:x5d0>" + i + 1 + "<dev string:x5e9>" + var_ca2c833762e5466c );
             results = function_39432dc2e39e328a( var_ca2c833762e5466c, 3 );
             println( results.size );

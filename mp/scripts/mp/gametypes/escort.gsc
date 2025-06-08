@@ -37,7 +37,7 @@
 #namespace escort;
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19e1
 // Size: 0x2ac
 function main()
@@ -108,7 +108,7 @@ function main()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c95
 // Size: 0x158
 function initdialog()
@@ -134,7 +134,7 @@ function initdialog()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1df5
 // Size: 0xbe
 function initializematchrules()
@@ -153,7 +153,7 @@ function initializematchrules()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ebb
 // Size: 0xdc
 function updategametypedvars()
@@ -171,7 +171,7 @@ function updategametypedvars()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f9f
 // Size: 0x1b9
 function onstartgametype()
@@ -236,7 +236,7 @@ function onstartgametype()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2160
 // Size: 0xa7
 function function_5134feee4679d224( player )
@@ -259,7 +259,7 @@ function function_5134feee4679d224( player )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x220f
 // Size: 0x209
 function function_64ea0c4f3f0f33a8()
@@ -343,7 +343,7 @@ function function_64ea0c4f3f0f33a8()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2420
 // Size: 0x273
 function function_d5f9bdff33942a5e()
@@ -405,7 +405,7 @@ function function_d5f9bdff33942a5e()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x269b
 // Size: 0x208
 function function_a1dde56f66dafa59( trig, objid, nodename )
@@ -448,7 +448,7 @@ function function_a1dde56f66dafa59( trig, objid, nodename )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28ac
 // Size: 0x42
 function function_95c08ab3ede6e069()
@@ -464,7 +464,7 @@ function function_95c08ab3ede6e069()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28f6
 // Size: 0x2b6
 function function_df305a7a25129b95()
@@ -523,7 +523,7 @@ function function_df305a7a25129b95()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bb4
 // Size: 0x262
 function spawnescortvehicle( startnode )
@@ -568,7 +568,7 @@ function spawnescortvehicle( startnode )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e1f
 // Size: 0x3ec
 function function_7706e4552129710c( startnode )
@@ -610,7 +610,8 @@ function function_7706e4552129710c( startnode )
     
     pathnodes = [];
     
-    for (nextnode = startnode; isdefined( nextnode ); nextnode = undefined) {
+    for ( nextnode = startnode; isdefined( nextnode ) ; nextnode = undefined )
+    {
         pathnodes[ pathnodes.size ] = nextnode;
         
         if ( isdefined( nextnode.target ) )
@@ -644,7 +645,8 @@ function function_7706e4552129710c( startnode )
     totaldistance = 0;
     vehicle.pathnodes[ 0 ].var_1d7ebd1bcc23a4e1 = 0;
     
-    for (i = 0; i < vehicle.pathnodes.size - 1; i++) {
+    for ( i = 0; i < vehicle.pathnodes.size - 1 ; i++ )
+    {
         currentnode = vehicle.pathnodes[ i ];
         nextnode = vehicle.pathnodes[ i + 1 ];
         totaldistance += distance2d( currentnode.origin, nextnode.origin );
@@ -669,7 +671,7 @@ function function_7706e4552129710c( startnode )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3213
 // Size: 0xd8
 function function_602c658374655858( vehicle )
@@ -677,7 +679,8 @@ function function_602c658374655858( vehicle )
     var_5beb550b14979da6 = 3;
     var_2946f1f5b9485f68 = [];
     
-    for (i = 0; i <= var_5beb550b14979da6; i++) {
+    for ( i = 0; i <= var_5beb550b14979da6 ; i++ )
+    {
         name = "hack_point_" + i + 1;
         var_a1cf1ca2c44eca8b = getvehiclenode( name, "script_noteworthy" );
         
@@ -703,7 +706,7 @@ function function_602c658374655858( vehicle )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32f4
 // Size: 0x368
 function function_eb31d2457d09576( var_e21fdc330521a449 )
@@ -790,7 +793,7 @@ function function_eb31d2457d09576( var_e21fdc330521a449 )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3664
 // Size: 0xda
 function function_367f87c96dccaf2()
@@ -827,7 +830,7 @@ function function_367f87c96dccaf2()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3746
 // Size: 0x70e
 function function_7d5057db2f8ddb6f( tank, objidnum )
@@ -1038,7 +1041,7 @@ function function_7d5057db2f8ddb6f( tank, objidnum )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e5c
 // Size: 0xab
 function function_221a50fb1dadfc46( speed )
@@ -1076,7 +1079,7 @@ function function_221a50fb1dadfc46( speed )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f0f
 // Size: 0x2f
 function function_796a1097d8a12f6a()
@@ -1090,7 +1093,7 @@ function function_796a1097d8a12f6a()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f46
 // Size: 0x178
 function function_2fd30b01784b1b6b()
@@ -1150,7 +1153,7 @@ function function_2fd30b01784b1b6b()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40c6
 // Size: 0x43
 function function_28518f0349b4e5cb()
@@ -1167,7 +1170,7 @@ function function_28518f0349b4e5cb()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4111
 // Size: 0x2d7
 function function_650429986b10b325()
@@ -1216,7 +1219,7 @@ function function_650429986b10b325()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43f0
 // Size: 0x11c
 function function_b65a584330084e94()
@@ -1244,7 +1247,7 @@ function function_b65a584330084e94()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4514
 // Size: 0x108
 function function_60bf30ad3151f226( player )
@@ -1261,7 +1264,7 @@ function function_60bf30ad3151f226( player )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4624
 // Size: 0x84
 function function_e6f69f5a001df1ae( team, player, success )
@@ -1274,7 +1277,7 @@ function function_e6f69f5a001df1ae( team, player, success )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46b0
 // Size: 0xc9
 function function_1259100ca5b22bfd( player )
@@ -1302,7 +1305,7 @@ function function_1259100ca5b22bfd( player )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4782
 // Size: 0x217
 function function_742b82afd4cb766c( team, progress, change, capplayer )
@@ -1368,7 +1371,7 @@ function function_742b82afd4cb766c( team, progress, change, capplayer )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49a1
 // Size: 0x80
 function function_5abeacef073d11e6( team )
@@ -1387,7 +1390,7 @@ function function_5abeacef073d11e6( team )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a29
 // Size: 0xe4
 function function_9ace184d65c28ecd( vehicle, capturezone )
@@ -1422,7 +1425,7 @@ function function_9ace184d65c28ecd( vehicle, capturezone )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b15
 // Size: 0xd2
 function function_4b18165476fd992a( vehicle, var_3452ca9608f63439 )
@@ -1449,7 +1452,7 @@ function function_4b18165476fd992a( vehicle, var_3452ca9608f63439 )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4bef
 // Size: 0x4c0
 function function_b63c307e88f55d86( vehicle, objidnum )
@@ -1571,7 +1574,7 @@ function function_b63c307e88f55d86( vehicle, objidnum )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50b7
 // Size: 0x6e
 function function_21f4ea5eb7868cbd( vehicle )
@@ -1588,7 +1591,7 @@ function function_21f4ea5eb7868cbd( vehicle )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x512d
 // Size: 0x22a
 function function_50b1e7d653deac05( team )
@@ -1641,7 +1644,7 @@ function function_50b1e7d653deac05( team )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5360
 // Size: 0x4d9
 function function_7318c4542deb6762( var_3abf844425ac7c00 )
@@ -1653,7 +1656,8 @@ function function_7318c4542deb6762( var_3abf844425ac7c00 )
     stopdistancesq = 1600;
     flagdistancesq = 1600;
     
-    for (i = 0; i < var_3abf844425ac7c00.capture_zones.size; i++) {
+    for ( i = 0; i < var_3abf844425ac7c00.capture_zones.size ; i++ )
+    {
         capturezone = var_3abf844425ac7c00.capture_zones[ i ];
         self.var_bd58ba3741947988 = capturezone;
         capturezone.active = 1;
@@ -1759,7 +1763,7 @@ function function_7318c4542deb6762( var_3abf844425ac7c00 )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5841
 // Size: 0x3d
 function function_cc40376968f08b19( trigger, distsquared )
@@ -1776,7 +1780,7 @@ function function_cc40376968f08b19( trigger, distsquared )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5886
 // Size: 0x196
 function function_868663203dc57531( trigger )
@@ -1819,7 +1823,7 @@ function function_868663203dc57531( trigger )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a24
 // Size: 0x16c
 function function_3129b5cf1b77c634( vehicle )
@@ -1864,7 +1868,7 @@ function function_3129b5cf1b77c634( vehicle )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b98
 // Size: 0x180
 function function_c1bc249b0499979e()
@@ -1922,7 +1926,7 @@ function function_c1bc249b0499979e()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d20
 // Size: 0xfa
 function function_3cd19573df126b43( objidnum, tank )
@@ -1967,7 +1971,7 @@ function function_3cd19573df126b43( objidnum, tank )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5e22
 // Size: 0x7f
 function function_e9ecbc39979febfd( objidnum, var_974cca039ded252e, text, var_d2f33cb2882e714d )
@@ -1994,7 +1998,7 @@ function function_e9ecbc39979febfd( objidnum, var_974cca039ded252e, text, var_d2
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ea9
 // Size: 0x76
 function function_b8bd193977a27782()
@@ -2013,7 +2017,7 @@ function function_b8bd193977a27782()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5f28
 // Size: 0x15e
 function function_56a6df7bc15c1d56( tank, objidnum )
@@ -2064,7 +2068,7 @@ function function_56a6df7bc15c1d56( tank, objidnum )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x608e
 // Size: 0x13f
 function tankscoreevent()
@@ -2113,7 +2117,7 @@ function tankscoreevent()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x61d5
 // Size: 0x5a
 function function_8db3128fbc6e494( event, var_9cb84269bb4959b6, var_44a9227c42d73c7d )
@@ -2132,7 +2136,7 @@ function function_8db3128fbc6e494( event, var_9cb84269bb4959b6, var_44a9227c42d7
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6237
 // Size: 0xc
 function function_180943832c190cc0( isinovertime )
@@ -2141,7 +2145,7 @@ function function_180943832c190cc0( isinovertime )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x624c
 // Size: 0x523
 function initspawns()
@@ -2246,7 +2250,7 @@ function initspawns()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6777
 // Size: 0x19f
 function getspawnpoint()
@@ -2296,7 +2300,7 @@ function getspawnpoint()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x691f
 // Size: 0x40
 function getrespawndelay()
@@ -2319,7 +2323,7 @@ function getrespawndelay()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6967
 // Size: 0x5
 function function_fc0cbba05d78875()
@@ -2328,7 +2332,7 @@ function function_fc0cbba05d78875()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6975
 // Size: 0x79
 function onplayerconnect( player )
@@ -2349,7 +2353,7 @@ function onplayerconnect( player )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69f6
 // Size: 0x17
 function onspawnplayer( revivespawn )
@@ -2358,7 +2362,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x6a15
 // Size: 0x1f9
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -2408,7 +2412,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c16
 // Size: 0x4d
 function ontimelimit()
@@ -2423,7 +2427,7 @@ function ontimelimit()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c6b
 // Size: 0x1f9
 function determinewinner( vehicle )
@@ -2501,7 +2505,7 @@ function determinewinner( vehicle )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e6d
 // Size: 0xac
 function function_906f30bd3a53a4fe()
@@ -2524,7 +2528,7 @@ function function_906f30bd3a53a4fe()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f22
 // Size: 0xcb
 function function_8298599a4183cd44()
@@ -2558,7 +2562,7 @@ function function_8298599a4183cd44()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ff5
 // Size: 0x66
 function function_28c9bb84699d73b2()
@@ -2577,7 +2581,7 @@ function function_28c9bb84699d73b2()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7063
 // Size: 0xc9
 function function_a622792cc81eaea2()
@@ -2595,7 +2599,7 @@ function function_a622792cc81eaea2()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7134
 // Size: 0x412
 function function_51311df691f23540()
@@ -2674,7 +2678,7 @@ function function_51311df691f23540()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x754e
 // Size: 0x31
 function function_2cd909ef45d6629a( player, buildable )
@@ -2684,7 +2688,7 @@ function function_2cd909ef45d6629a( player, buildable )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7587
 // Size: 0x197
 function function_3f4db4dc27eadcb0( player )
@@ -2715,7 +2719,7 @@ function function_3f4db4dc27eadcb0( player )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7726
 // Size: 0x58
 function function_736d94f76d0d49a( player, buildable )
@@ -2728,7 +2732,7 @@ function function_736d94f76d0d49a( player, buildable )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7786
 // Size: 0x239
 function function_8da7f2ee4b0a5572( player, buildable )
@@ -2752,7 +2756,7 @@ function function_8da7f2ee4b0a5572( player, buildable )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x79c7
 // Size: 0x296
 function function_acb62a89095ed874( player )
@@ -2794,7 +2798,7 @@ function function_acb62a89095ed874( player )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c65
 // Size: 0x13e
 function function_380b6579f5fa4cd()
@@ -2830,7 +2834,7 @@ function function_380b6579f5fa4cd()
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7dab
 // Size: 0x22f
 function function_819c53825b132b02( zoneinfo )
@@ -2883,7 +2887,7 @@ function function_819c53825b132b02( zoneinfo )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7fe2
 // Size: 0x1cc
 function function_9017bcad2eca0813( zoneinfo )
@@ -2931,7 +2935,7 @@ function function_9017bcad2eca0813( zoneinfo )
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x81b6
 // Size: 0x32, Type: bool
 function function_a8fd08ad364df689( var_56df20c41f5b3159, trapprogress, tankprogress )
@@ -2940,7 +2944,7 @@ function function_a8fd08ad364df689( var_56df20c41f5b3159, trapprogress, tankprog
 }
 
 // Namespace escort / scripts\mp\gametypes\escort
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x81f1
 // Size: 0x15
 function registerescortcollisioncallback( callback )
@@ -2951,7 +2955,7 @@ function registerescortcollisioncallback( callback )
 /#
 
     // Namespace escort / scripts\mp\gametypes\escort
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x820e
     // Size: 0xf7, Type: dev
     function function_9d7b6a4d62e449fb()
@@ -2996,7 +3000,7 @@ function registerescortcollisioncallback( callback )
     }
 
     // Namespace escort / scripts\mp\gametypes\escort
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x830d
     // Size: 0x41, Type: dev
     function function_86bddcb4c5e824e9()
@@ -3015,7 +3019,7 @@ function registerescortcollisioncallback( callback )
     }
 
     // Namespace escort / scripts\mp\gametypes\escort
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x8356
     // Size: 0x158, Type: dev
     function function_a1f12ca71aa45e6c( vehicle, pathnodes )
@@ -3027,7 +3031,8 @@ function registerescortcollisioncallback( callback )
         {
             if ( getdvarint( @"hash_de98b06a57eb27f0", 0 ) == 1 )
             {
-                for (i = 0; i < pathnodes.size; i++) {
+                for ( i = 0; i < pathnodes.size ; i++ )
+                {
                     if ( array_contains( level.escortroute, pathnodes[ i ] ) )
                     {
                         box( pathnodes[ i ].origin, pathnodes[ i ].angles[ 1 ], ( 1, 0, 0 ), 0, 1 );

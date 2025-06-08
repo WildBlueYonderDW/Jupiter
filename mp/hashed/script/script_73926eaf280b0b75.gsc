@@ -6,7 +6,7 @@
 #namespace effect_burn;
 
 // Namespace effect_burn / namespace_50366cf657bc4995
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x16f
 // Size: 0xfe
 function burn( durations, damage_percent, damage_cooldowns, attacker, unique_id, var_aaf0465944b061ed, inflictor, incendiary_rounds, idamage )

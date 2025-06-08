@@ -10,7 +10,7 @@
 #namespace manager;
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22c
 // Size: 0xde
 function main()
@@ -37,7 +37,7 @@ function main()
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x312
 // Size: 0x29
 function function_4fa3c4eb77c24130()
@@ -49,7 +49,7 @@ function function_4fa3c4eb77c24130()
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x343
 // Size: 0x33
 function function_d3110770982eea0e( bspotted )
@@ -61,7 +61,7 @@ function function_d3110770982eea0e( bspotted )
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x37e
 // Size: 0x53
 function empty( param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10 )
@@ -70,7 +70,7 @@ function empty( param_1, param_2, param_3, param_4, param_5, param_6, param_7, p
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d9
 // Size: 0x2
 function set_detect_ranges()
@@ -79,7 +79,7 @@ function set_detect_ranges()
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e3
 // Size: 0x34
 function set_corpse_detect_ranges()
@@ -91,7 +91,7 @@ function set_corpse_detect_ranges()
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41f
 // Size: 0x34b
 function function_7e4ce548f5795c03()
@@ -156,7 +156,7 @@ function function_7e4ce548f5795c03()
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x772
 // Size: 0x72
 function manager_thread()
@@ -186,7 +186,7 @@ function manager_thread()
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ec
 // Size: 0x29
 function threat_sight_set_dvar( enabled )
@@ -200,7 +200,7 @@ function threat_sight_set_dvar( enabled )
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x81d
 // Size: 0x1da
 function update_stealth_spotted_thread()
@@ -269,7 +269,7 @@ function update_stealth_spotted_thread()
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ff
 // Size: 0xb2
 function get_corpse_array()
@@ -291,7 +291,7 @@ function get_corpse_array()
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaba
 // Size: 0x1c9
 function monitor_death_thread( rangeauto, rangesight )
@@ -354,7 +354,7 @@ function monitor_death_thread( rangeauto, rangesight )
 }
 
 // Namespace manager / scripts\cp_mp\stealth\manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc8b
 // Size: 0x42
 function get_player_drone( player )

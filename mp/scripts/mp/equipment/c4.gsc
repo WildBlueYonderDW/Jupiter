@@ -25,7 +25,7 @@
 #namespace c4;
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x46f
 // Size: 0x75
 function c4_set( equipmentref, slot, variantid )
@@ -41,7 +41,7 @@ function c4_set( equipmentref, slot, variantid )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ec
 // Size: 0x35d
 function c4_used( grenade )
@@ -129,7 +129,7 @@ function c4_used( grenade )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x851
 // Size: 0x9c
 function c4_updatedangerzone()
@@ -149,7 +149,7 @@ function c4_updatedangerzone()
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f5
 // Size: 0x99
 function c4_detonate( attacker )
@@ -177,7 +177,7 @@ function c4_detonate( attacker )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x996
 // Size: 0x291
 function c4_explode( attacker )
@@ -252,7 +252,7 @@ function c4_explode( attacker )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc2f
 // Size: 0xa
 function sweepc4()
@@ -261,7 +261,7 @@ function sweepc4()
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc41
 // Size: 0x39
 function c4_destroy( attacker )
@@ -272,7 +272,7 @@ function c4_destroy( attacker )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc82
 // Size: 0x15f
 function c4_delete( deletiondelay )
@@ -330,7 +330,7 @@ function c4_delete( deletiondelay )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xde9
 // Size: 0x4b
 function c4_resetscriptableonunlink()
@@ -357,7 +357,7 @@ function c4_resetscriptableonunlink()
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe3c
 // Size: 0x51
 function c4_explodeonnotify()
@@ -377,7 +377,7 @@ function c4_explodeonnotify()
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe95
 // Size: 0xc1
 function c4_empapplied( data )
@@ -414,7 +414,7 @@ function c4_empapplied( data )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5e
 // Size: 0x84
 function function_3f54618ac84aa89f( data )
@@ -443,7 +443,7 @@ function function_3f54618ac84aa89f( data )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfea
 // Size: 0x7a
 function c4_disable( attacker )
@@ -462,7 +462,7 @@ function c4_disable( attacker )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x106c
 // Size: 0x27
 function function_f8ffbf95c0890c91( data )
@@ -472,7 +472,7 @@ function function_f8ffbf95c0890c91( data )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x109b
 // Size: 0x23
 function c4_destroyongameend()
@@ -483,7 +483,7 @@ function c4_destroyongameend()
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10c6
 // Size: 0x3b, Type: bool
 function c4_validdetonationstate()
@@ -507,7 +507,7 @@ function c4_validdetonationstate()
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x110a
 // Size: 0x9b, Type: bool
 function c4_candetonate()
@@ -529,7 +529,7 @@ function c4_candetonate()
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11ae
 // Size: 0x145
 function c4_watchfordetonation( bundle )
@@ -566,7 +566,7 @@ function c4_watchfordetonation( bundle )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12fb
 // Size: 0x14a
 function c4_watchforaltdetonation( bundle )
@@ -591,7 +591,7 @@ function c4_watchforaltdetonation( bundle )
     
     level endon( "game_ended" );
     
-    if ( !getdvarint( @"hash_78d40bc744ba9f00", 0 ) )
+    if ( !getdvarint( @"scr_altdetonationenabled", 0 ) )
     {
         return;
     }
@@ -649,7 +649,7 @@ function c4_watchforaltdetonation( bundle )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x144d
 // Size: 0x4e
 function c4_animdetonate( bundle )
@@ -661,7 +661,7 @@ function c4_animdetonate( bundle )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14a3
 // Size: 0x68
 function c4_animdetonatecleanup( bundle )
@@ -680,7 +680,7 @@ function c4_animdetonatecleanup( bundle )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1513
 // Size: 0x6e
 function c4_detonateall()
@@ -698,7 +698,7 @@ function c4_detonateall()
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1589
 // Size: 0x71
 function c4_onownerchanged( oldowner )
@@ -716,7 +716,7 @@ function c4_onownerchanged( oldowner )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1602
 // Size: 0x22
 function c4_resetaltdetonpickup( bundle )
@@ -728,7 +728,7 @@ function c4_resetaltdetonpickup( bundle )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x162c
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
@@ -737,7 +737,7 @@ function function_49197cd063a740ea( callbackfunction )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1649
 // Size: 0x64
 function c4_addtoarray( owner, grenade )
@@ -754,7 +754,7 @@ function c4_addtoarray( owner, grenade )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x16b5
 // Size: 0xa6
 function c4_removefromarray( owner, grenade, entnum )
@@ -781,7 +781,7 @@ function c4_removefromarray( owner, grenade, entnum )
 }
 
 // Namespace c4 / scripts\mp\equipment\c4
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1763
 // Size: 0x3c
 function c4_removefromarrayondeath( owner, grenade, entnum )

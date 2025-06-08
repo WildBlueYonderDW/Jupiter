@@ -15,7 +15,7 @@
 #namespace agent_utils;
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc92
 // Size: 0x16f
 function overridetier1( agent )
@@ -67,7 +67,7 @@ function overridetier1( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe09
 // Size: 0x12b
 function function_198f5137d137e72f( agent, var_80f4bde7090a4773 )
@@ -119,7 +119,7 @@ function function_198f5137d137e72f( agent, var_80f4bde7090a4773 )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf3c
 // Size: 0x36
 function function_ad06babcffc3a43b( tbgroup )
@@ -132,7 +132,7 @@ function function_ad06babcffc3a43b( tbgroup )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf7a
 // Size: 0x176
 function overridetier2( agent )
@@ -177,7 +177,7 @@ function overridetier2( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10f8
 // Size: 0x1b7
 function overridetier3( agent, noweaponchange )
@@ -227,7 +227,7 @@ function overridetier3( agent, noweaponchange )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12b7
 // Size: 0x375
 function function_1828f1e20e52b418( agent, var_84ecaeab58167d39 )
@@ -338,7 +338,7 @@ function function_1828f1e20e52b418( agent, var_84ecaeab58167d39 )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1634
 // Size: 0x113
 function function_5ca105062ad7729( agenttype, var_84ecaeab58167d39 )
@@ -364,7 +364,7 @@ function function_5ca105062ad7729( agenttype, var_84ecaeab58167d39 )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1750
 // Size: 0x229
 function function_e43f4000cac35ba2( agent, weapon )
@@ -440,7 +440,7 @@ function function_e43f4000cac35ba2( agent, weapon )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1981
 // Size: 0xa7
 function overrideriotshield( agent )
@@ -468,7 +468,7 @@ function overrideriotshield( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a30
 // Size: 0x11e
 function function_77ffe273ea3ec3a3( agent, noweaponchange )
@@ -497,7 +497,7 @@ function function_77ffe273ea3ec3a3( agent, noweaponchange )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b56
 // Size: 0xde
 function function_852d353c00b3d5a1( agent, noweaponchange )
@@ -525,7 +525,7 @@ function function_852d353c00b3d5a1( agent, noweaponchange )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c3c
 // Size: 0x2e3
 function overridespecial( agent, weaponstyle )
@@ -584,7 +584,7 @@ function overridespecial( agent, weaponstyle )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x1f27
 // Size: 0x2ed
 function function_c37c4f9d687074ff( body, head, weapon, grenade_type, grenadeammo, armor, helmet, blockexecution )
@@ -695,7 +695,7 @@ function function_c37c4f9d687074ff( body, head, weapon, grenade_type, grenadeamm
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x221c
 // Size: 0x89
 function function_b535fe740f1cf507()
@@ -717,7 +717,7 @@ function function_b535fe740f1cf507()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22ad
 // Size: 0x45
 function function_1c3709e864d4e8d5( bool )
@@ -734,7 +734,7 @@ function function_1c3709e864d4e8d5( bool )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22fa
 // Size: 0x165
 function function_1920867ddf76810c( agent, armor )
@@ -779,7 +779,7 @@ function function_1920867ddf76810c( agent, armor )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2467
 // Size: 0x84
 function function_c00e1d676844f7ae( agent )
@@ -803,7 +803,7 @@ function function_c00e1d676844f7ae( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24f3
 // Size: 0x4c
 function function_ea83c1b372e16f6d( agent, var_80f4bde7090a4773 )
@@ -821,7 +821,7 @@ function function_ea83c1b372e16f6d( agent, var_80f4bde7090a4773 )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2547
 // Size: 0x8f
 function function_ba0801276542946b( var_7e1ff9afa225e8a1 )
@@ -840,7 +840,7 @@ function function_ba0801276542946b( var_7e1ff9afa225e8a1 )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25df
 // Size: 0x7d
 function function_f5d160902133558()
@@ -855,7 +855,7 @@ function function_f5d160902133558()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2664
 // Size: 0x25
 function function_d0563dc9eeac7ff0( agent )
@@ -869,7 +869,7 @@ function function_d0563dc9eeac7ff0( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2692
 // Size: 0x43
 function agentpers_setagentpersdata( agent, key, value )
@@ -883,7 +883,7 @@ function agentpers_setagentpersdata( agent, key, value )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x26dd
 // Size: 0x39
 function agentpers_getagentpersdata( agent, key )
@@ -897,7 +897,7 @@ function agentpers_getagentpersdata( agent, key )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x271f
 // Size: 0x32, Type: bool
 function function_b894b8689a6055f3( agent )
@@ -911,7 +911,7 @@ function function_b894b8689a6055f3( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x275a
 // Size: 0x31
 function function_51de6da7b0dcf26f( agent )
@@ -925,7 +925,7 @@ function function_51de6da7b0dcf26f( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2793
 // Size: 0x48
 function function_3bdeb9edd6c6f0a()
@@ -937,7 +937,7 @@ function function_3bdeb9edd6c6f0a()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x27e3
 // Size: 0x2e5
 function function_c26ef480e88413bf( agent, aitype )
@@ -1011,7 +1011,7 @@ function function_c26ef480e88413bf( agent, aitype )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ad0
 // Size: 0x290
 function function_36613ffb5ebe56( agent )
@@ -1093,7 +1093,7 @@ function function_36613ffb5ebe56( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d68
 // Size: 0x13a
 function function_d3f59232689f12a0( agent )
@@ -1122,7 +1122,7 @@ function function_d3f59232689f12a0( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2eaa
 // Size: 0x4a4
 function function_9ca698cdffe22968( agent, var_37d7c6423323a19e )
@@ -1254,7 +1254,7 @@ function function_9ca698cdffe22968( agent, var_37d7c6423323a19e )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3356
 // Size: 0x21
 function turnonlaser()
@@ -1271,7 +1271,7 @@ function turnonlaser()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x337f
 // Size: 0x173
 function function_ae99616202575e39( targetorigin, grenadetype, offsetdist, var_98f696231283e8b6 )
@@ -1311,7 +1311,7 @@ function function_ae99616202575e39( targetorigin, grenadetype, offsetdist, var_9
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34fa
 // Size: 0x9c
 function function_4cb4bb1cff15b987()
@@ -1339,7 +1339,7 @@ function function_4cb4bb1cff15b987()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x359e
 // Size: 0x24
 function function_d34200a799950385( t, notifyname, endonname )
@@ -1365,7 +1365,7 @@ function private function_e4e4fefd625a2580( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x363a
 // Size: 0xb5
 function function_a615009e6466353a( thrower, targetorigin, grenadetype, var_55fba01075efacdb )
@@ -1387,7 +1387,7 @@ function function_a615009e6466353a( thrower, targetorigin, grenadetype, var_55fb
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36f8
 // Size: 0x13
 function function_ee72700f22a0e304( thrower, grenadetype )
@@ -1424,7 +1424,7 @@ function private function_1bc68105415d304( grenade_type, distancetotarget )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x37af
 // Size: 0x83
 function function_cf56c061947ef668( sourceorigin, targetorigin )
@@ -1440,7 +1440,7 @@ function function_cf56c061947ef668( sourceorigin, targetorigin )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x383a
 // Size: 0x137
 function function_36398e8700c62090( sourceorigin, targetorigin, stance )
@@ -1483,7 +1483,7 @@ function function_36398e8700c62090( sourceorigin, targetorigin, stance )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3979
 // Size: 0x9d
 function function_f56559d00da52270( sourceorigin, targetorigin, stance )
@@ -1511,7 +1511,7 @@ function function_f56559d00da52270( sourceorigin, targetorigin, stance )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3a1e
 // Size: 0x296
 function function_13812f40f38587c4( agenttype, origin, dormancyid )
@@ -1571,7 +1571,7 @@ function function_13812f40f38587c4( agenttype, origin, dormancyid )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3cbc
 // Size: 0x2dd
 function function_9fa011b7807309a8( agent, dormancyid )
@@ -1628,7 +1628,7 @@ function function_9fa011b7807309a8( agent, dormancyid )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fa1
 // Size: 0x94
 function function_b6131256ee347e8d( priority )
@@ -1656,7 +1656,7 @@ function function_b6131256ee347e8d( priority )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x403d
 // Size: 0x80
 function function_72d6808216b4d44( importance )
@@ -1679,7 +1679,7 @@ function function_72d6808216b4d44( importance )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x40c5
 // Size: 0xd0
 function function_e2fa9b378bbf03a6( aitype, origin, angles, priority, category, subcategory, groupname, team, destination, poiname, skipstealth, behaviorpackage, threatbiasgroup )
@@ -1693,7 +1693,7 @@ function function_e2fa9b378bbf03a6( aitype, origin, angles, priority, category, 
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x419e
 // Size: 0x63
 function function_b04c0433e8107615()
@@ -1707,7 +1707,7 @@ function function_b04c0433e8107615()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 16, eflags: 0x0
+// Params 16
 // Checksum 0x0, Offset: 0x4209
 // Size: 0x176
 function function_e83d1f023a2609ff( aitype, origin, angles, priority, category, subcategory, groupname, team, destination, poiname, skipstealth, behaviorpackage, var_80f4bde7090a4773, spawnfunctions, agentstruct, threatbiasgroup )
@@ -1733,7 +1733,7 @@ function function_e83d1f023a2609ff( aitype, origin, angles, priority, category, 
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4388
 // Size: 0x20
 function function_7a9172605e0228df( dormancyid, infopackage )
@@ -1742,7 +1742,7 @@ function function_7a9172605e0228df( dormancyid, infopackage )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43b0
 // Size: 0x16
 function function_2b0e82156fa6075b( dormancyid )
@@ -1751,7 +1751,7 @@ function function_2b0e82156fa6075b( dormancyid )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43cf
 // Size: 0x1f
 function function_b27fe8a834c5edda()
@@ -1761,7 +1761,7 @@ function function_b27fe8a834c5edda()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43f7
 // Size: 0x34
 function function_3b45c895d8d984ee()
@@ -1775,7 +1775,7 @@ function function_3b45c895d8d984ee()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4434
 // Size: 0xee
 function function_4e065f1747aadd51( dormancyid, category )
@@ -1804,7 +1804,7 @@ function function_4e065f1747aadd51( dormancyid, category )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x452a
 // Size: 0xbb
 function function_760792071513b00d( dormancyid, category )
@@ -1830,7 +1830,7 @@ function function_760792071513b00d( dormancyid, category )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45ed
 // Size: 0x82
 function function_e662189d61d1874e( agent )
@@ -1842,7 +1842,8 @@ function function_e662189d61d1874e( agent )
     
     if ( isdefined( agent.functionsonspawn ) )
     {
-        for (i = 0; i < 24; i++) {
+        for ( i = 0; i < 24 ; i++ )
+        {
             var_964917a4edc12525 = 1 << i;
             
             if ( var_964917a4edc12525 > agent.functionsonspawn )
@@ -1859,7 +1860,7 @@ function function_e662189d61d1874e( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4677
 // Size: 0x120
 function function_58aab2edaec2599f( agent, functionstring, function )
@@ -1894,7 +1895,7 @@ function function_58aab2edaec2599f( agent, functionstring, function )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x479f
 // Size: 0x138
 function function_97fbd14bbcf19d9c( agent, functionstring, function )
@@ -1966,7 +1967,7 @@ function private function_a1acc0cc2a3cfeaa( functionstring, function )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x49cf
 // Size: 0xd6
 function function_f3d88b5d7353a90( array, agent )
@@ -1997,7 +1998,7 @@ function function_f3d88b5d7353a90( array, agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4aae
 // Size: 0x1f
 function agent_sethealth( health )
@@ -2007,7 +2008,7 @@ function agent_sethealth( health )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ad5
 // Size: 0x68
 function function_3ea1225bf6192343( agent, struct )
@@ -2031,7 +2032,7 @@ function function_3ea1225bf6192343( agent, struct )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b45
 // Size: 0x4c
 function function_12ee2283db699727( agent )
@@ -2049,7 +2050,7 @@ function function_12ee2283db699727( agent )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b99
 // Size: 0x314
 function function_a09756b37f2e0681()
@@ -2092,7 +2093,7 @@ function function_a09756b37f2e0681()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4eb5
 // Size: 0xb2
 function function_77b8b5af85f319d8( valuearray )
@@ -2124,18 +2125,19 @@ function function_77b8b5af85f319d8( valuearray )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f6f
 // Size: 0x36
 function function_223455a2aefd83e4()
 {
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         self getenemyinfo( level.players[ i ] );
     }
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4fad
 // Size: 0x67
 function gethealthmax( aitype )
@@ -2162,7 +2164,7 @@ function gethealthmax( aitype )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x501d
 // Size: 0x440
 function function_6f88796d2f078da4( aigroup, aileaders, squadleaderfunc )
@@ -2335,7 +2337,7 @@ function function_6f88796d2f078da4( aigroup, aileaders, squadleaderfunc )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5465
 // Size: 0x5d
 function function_e942bea168527f6( trigger )
@@ -2354,7 +2356,7 @@ function function_e942bea168527f6( trigger )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x54ca
 // Size: 0xfa
 function function_3739410667dca712( soldier, trigger )
@@ -2395,7 +2397,7 @@ function function_3739410667dca712( soldier, trigger )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x55cc
 // Size: 0xfb
 function function_9643c9b25f0e0c84( soldier, trigger )
@@ -2436,7 +2438,7 @@ function function_9643c9b25f0e0c84( soldier, trigger )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x56cf
 // Size: 0x4a, Type: bool
 function function_f0cb3329588d4015( soldier )
@@ -2459,7 +2461,7 @@ function function_f0cb3329588d4015( soldier )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5722
 // Size: 0x12f
 function function_30a0d7ca3fae40cc( nationality, agent_type )
@@ -2515,7 +2517,7 @@ function function_30a0d7ca3fae40cc( nationality, agent_type )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5859
 // Size: 0x3b
 function function_9a024cd909d6e0a3( func )
@@ -2529,7 +2531,7 @@ function function_9a024cd909d6e0a3( func )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x589c
 // Size: 0xba
 function function_8ca4e221673e423c()
@@ -2550,7 +2552,7 @@ function function_8ca4e221673e423c()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x595f
 // Size: 0x12b
 function function_3290e192ac188e2d( subclass )
@@ -2587,7 +2589,7 @@ function function_3290e192ac188e2d( subclass )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a93
 // Size: 0xee
 function function_7056963336f2bbec( bnocorpse )
@@ -2626,7 +2628,7 @@ function function_7056963336f2bbec( bnocorpse )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b89
 // Size: 0xb
 function despawnagent()
@@ -2635,7 +2637,7 @@ function despawnagent()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b9c
 // Size: 0xcb
 function getaverageorigin( ent_array )
@@ -2660,7 +2662,7 @@ function getaverageorigin( ent_array )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c70
 // Size: 0x36
 function function_9ec5f9cfc835208e()
@@ -2675,7 +2677,7 @@ function function_9ec5f9cfc835208e()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5cae
 // Size: 0x162
 function function_b54b8baa376d3dbb()
@@ -2709,7 +2711,7 @@ function function_b54b8baa376d3dbb()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e18
 // Size: 0x5e
 function function_255e967912274247()
@@ -2723,7 +2725,7 @@ function function_255e967912274247()
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e7e
 // Size: 0x12
 function function_841f001ae930b5e4( group )
@@ -2732,7 +2734,7 @@ function function_841f001ae930b5e4( group )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5e98
 // Size: 0x81
 function function_58203c3739d2d0c6( agent, group, var_33d9708e7f06d603 )
@@ -2764,7 +2766,7 @@ function function_58203c3739d2d0c6( agent, group, var_33d9708e7f06d603 )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5f21
 // Size: 0x21
 function function_ca2adce5c7865c20( player, group )
@@ -2778,7 +2780,7 @@ function function_ca2adce5c7865c20( player, group )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5f4a
 // Size: 0x37
 function function_b5ff3bfb184d0d01( groupa, groupb, bias )
@@ -2797,7 +2799,7 @@ function function_b5ff3bfb184d0d01( groupa, groupb, bias )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5f89
 // Size: 0x28
 function function_3acce87fed325c8f( var_b3962262ba71d0ad, var_32a96bf508fbd2f )
@@ -2811,7 +2813,7 @@ function function_3acce87fed325c8f( var_b3962262ba71d0ad, var_32a96bf508fbd2f )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5fb9
 // Size: 0x20
 function function_46c0de7595d8cab2( player, group )
@@ -2820,7 +2822,7 @@ function function_46c0de7595d8cab2( player, group )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5fe2
 // Size: 0x2a
 function function_ab491b16f8423c8e( player, group, status )
@@ -2829,7 +2831,7 @@ function function_ab491b16f8423c8e( player, group, status )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6014
 // Size: 0x7b
 function function_ed5140c225d4f337( player )
@@ -2845,7 +2847,7 @@ function function_ed5140c225d4f337( player )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6098
 // Size: 0x8e
 function function_3a458af8ab69f4e( player )
@@ -2862,7 +2864,7 @@ function function_3a458af8ab69f4e( player )
 }
 
 // Namespace agent_utils / scripts\cp_mp\agents\agent_utils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x612e
 // Size: 0x26
 function function_1bca33010b895b0b( nationality )

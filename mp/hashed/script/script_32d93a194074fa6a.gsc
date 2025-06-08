@@ -5,7 +5,7 @@
 #namespace ftue_tip;
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x195
 // Size: 0x33
 function function_a6ca80cf4f22e262( var_8dceeda8be90dd95 )
@@ -22,7 +22,7 @@ function function_a6ca80cf4f22e262( var_8dceeda8be90dd95 )
 }
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d0
 // Size: 0x18
 function function_5135b05917b91c1b()
@@ -59,7 +59,7 @@ function private function_495a84d8124ff118( list_bundle )
 }
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2db
 // Size: 0x1b, Type: bool
 function function_e4d0f9efe9c2bca1()
@@ -69,7 +69,7 @@ function function_e4d0f9efe9c2bca1()
 }
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ff
 // Size: 0xa7
 function function_9e0151baa208fe9e( ref, params )
@@ -131,7 +131,7 @@ function private function_34d38a99558eb2a2( ref, callback, duration )
 }
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x441
 // Size: 0x112
 function function_f339c5c73d11ea20( ref, issucceed, params )
@@ -184,7 +184,7 @@ function function_f339c5c73d11ea20( ref, issucceed, params )
 }
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x55b
 // Size: 0x52
 function function_6fba31415caeee6e( issucceeded, params )
@@ -202,7 +202,7 @@ function function_6fba31415caeee6e( issucceeded, params )
 }
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b5
 // Size: 0x3f
 function function_508d3de0ee3046dd( ref, issucceed )
@@ -254,7 +254,7 @@ function private function_63e0c93eb50543f( issucceed )
 }
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65f
 // Size: 0x27
 function function_7fd621b8ba80e652( overridewaittime )
@@ -284,7 +284,7 @@ function private function_d9f9951c566c97e1( defaultwaittime, overridewaittime )
 }
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6c6
 // Size: 0x19
 function function_36939d27ae6df257( callback )
@@ -354,7 +354,7 @@ function private function_388a7f4b869568cc( tip_ref )
 }
 
 // Namespace ftue_tip / namespace_b1d233abf1e31488
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d5
 // Size: 0x2d
 function function_7052cffee37e6327( tip_ref )

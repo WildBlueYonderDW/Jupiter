@@ -32,7 +32,7 @@
 #namespace rugby;
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfa1
 // Size: 0x2f1
 function main()
@@ -104,7 +104,7 @@ function main()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x129a
 // Size: 0xbd
 function initrules()
@@ -132,7 +132,7 @@ function initrules()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x135f
 // Size: 0x9
 function updategametypedvars()
@@ -141,7 +141,7 @@ function updategametypedvars()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1370
 // Size: 0x101
 function initializematchrules()
@@ -162,7 +162,7 @@ function initializematchrules()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1479
 // Size: 0x10
 function getjuggmaxhealth()
@@ -171,7 +171,7 @@ function getjuggmaxhealth()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1492
 // Size: 0x6f
 function getjuggspeedscalar( helperplayers )
@@ -183,7 +183,7 @@ function getjuggspeedscalar( helperplayers )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x150a
 // Size: 0x10
 function getjuggtimeout()
@@ -192,7 +192,7 @@ function getjuggtimeout()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1523
 // Size: 0x10
 function function_cca61180d8fdf0ea()
@@ -201,7 +201,7 @@ function function_cca61180d8fdf0ea()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x153c
 // Size: 0x12
 function function_d973247bb17fe16()
@@ -210,7 +210,7 @@ function function_d973247bb17fe16()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1557
 // Size: 0xa6
 function onstartgametype()
@@ -236,7 +236,7 @@ function onstartgametype()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1605
 // Size: 0x29
 function function_e2e13253ff7a00b1()
@@ -247,7 +247,7 @@ function function_e2e13253ff7a00b1()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1636
 // Size: 0x43
 function initrugbyents()
@@ -258,7 +258,7 @@ function initrugbyents()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1681
 // Size: 0xad
 function initendzoneents()
@@ -274,7 +274,7 @@ function initendzoneents()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1736
 // Size: 0x241
 function initendzoneent( endzone )
@@ -325,7 +325,7 @@ function initendzoneent( endzone )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x197f
 // Size: 0xc8
 function function_bede361fc24cbfe1( endzone )
@@ -356,7 +356,7 @@ function function_bede361fc24cbfe1( endzone )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a4f
 // Size: 0xa0
 function initjuggcratesetupents()
@@ -374,7 +374,7 @@ function initjuggcratesetupents()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1af7
 // Size: 0x77
 function function_10f430e91c6c8be3( juggcratesetup )
@@ -396,7 +396,7 @@ function function_10f430e91c6c8be3( juggcratesetup )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b77
 // Size: 0xa8
 function initoverheadcameras()
@@ -413,7 +413,7 @@ function initoverheadcameras()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c27
 // Size: 0xd3
 function initjugg()
@@ -433,7 +433,7 @@ function initjugg()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d02
 // Size: 0x3e9
 function initspawns()
@@ -505,7 +505,7 @@ function initspawns()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20f3
 // Size: 0x17b
 function getspawnpoint()
@@ -542,7 +542,7 @@ function getspawnpoint()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2277
 // Size: 0x4c
 function modeonteamchangedeath( player )
@@ -554,7 +554,7 @@ function modeonteamchangedeath( player )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22cb
 // Size: 0x82
 function onplayerconnect( player )
@@ -577,7 +577,7 @@ function onplayerconnect( player )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2355
 // Size: 0x7c
 function onplayerspawned( player )
@@ -591,7 +591,7 @@ function onplayerspawned( player )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x23d9
 // Size: 0xd7
 function onplayerdamaged( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, var_fcdf19e3cdd29669, vpoint, vdir, shitloc, psoffsettime, modelindex, partname )
@@ -609,7 +609,7 @@ function onplayerdamaged( einflictor, eattacker, victim, idamage, idflags, smean
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x24b8
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -618,7 +618,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x2500
 // Size: 0x97
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -634,7 +634,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x259f
 // Size: 0x2dd
 function awardgenericmedals( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -701,7 +701,7 @@ function awardgenericmedals( einflictor, attacker, idamage, smeansofdeath, objwe
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2884
 // Size: 0x29
 function ontimelimit()
@@ -715,7 +715,7 @@ function ontimelimit()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28b5
 // Size: 0x9e
 function ontimelimitot()
@@ -739,7 +739,7 @@ function ontimelimitot()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x295b
 // Size: 0x48
 function function_aecdd5e4b8140008()
@@ -760,7 +760,7 @@ function function_aecdd5e4b8140008()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29ab
 // Size: 0x48
 function function_da84ed466ccfc207()
@@ -773,7 +773,7 @@ function function_da84ed466ccfc207()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29fc
 // Size: 0x22
 function function_1d7e98e21e22f61a()
@@ -784,7 +784,7 @@ function function_1d7e98e21e22f61a()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a26
 // Size: 0x115
 function getjuggorcratepos()
@@ -816,7 +816,7 @@ function getjuggorcratepos()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b44
 // Size: 0x91, Type: bool
 function doesteamhaveactivejugg( team )
@@ -838,7 +838,7 @@ function doesteamhaveactivejugg( team )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bde
 // Size: 0x102
 function onjuggproximityscore( juggplayer )
@@ -860,7 +860,7 @@ function onjuggproximityscore( juggplayer )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ce8
 // Size: 0x65
 function setupinitialstate()
@@ -884,9 +884,9 @@ function setupinitialstate()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d55
-// Size: 0x98, Type: bool
+// Size: 0x98
 function activatenewjuggcrate()
 {
     setupindex = randomint( level.rugby.juggcratesetups.size );
@@ -895,14 +895,14 @@ function activatenewjuggcrate()
     if ( !isdefined( var_a851cc05483290a7 ) )
     {
         assertmsg( "<dev string:x152>" );
-        return false;
+        return 0;
     }
     
     return activatejuggcrate( var_a851cc05483290a7.origin, ter_op( isdefined( var_a851cc05483290a7.angles ), var_a851cc05483290a7.angles, ( 0, 0, 0 ) ), 1 );
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2df6
 // Size: 0xa9, Type: bool
 function activateendzone( endzoneent, team )
@@ -931,7 +931,7 @@ function activateendzone( endzoneent, team )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ea8
 // Size: 0x13
 function deactivateendzone( endzone )
@@ -940,7 +940,7 @@ function deactivateendzone( endzone )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ec3
 // Size: 0x145
 function function_7c63d60ba6168aea( endzone )
@@ -981,7 +981,7 @@ function function_7c63d60ba6168aea( endzone )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3010
 // Size: 0x135
 function function_8fa98f8a53842866( target, label )
@@ -1022,7 +1022,7 @@ function function_8fa98f8a53842866( target, label )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x314d
 // Size: 0xa7
 function updatechevrons( state )
@@ -1037,14 +1037,15 @@ function updatechevrons( state )
     
     foreach ( chevron in self.chevrons )
     {
-        for (i = 0; i < chevron.numchevrons; i++) {
+        for ( i = 0; i < chevron.numchevrons ; i++ )
+        {
             chevron setscriptablepartstate( "chevron_" + i, state );
         }
     }
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31fc
 // Size: 0x1e7
 function function_182e902215d205b5( othervisuals, label )
@@ -1090,7 +1091,7 @@ function function_182e902215d205b5( othervisuals, label )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x33ec
 // Size: 0x8c8
 function function_d94e76f45911efa5( othervisuals, label )
@@ -1188,7 +1189,7 @@ function function_d94e76f45911efa5( othervisuals, label )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3cbd
 // Size: 0x36
 function createvisualsinfo( scriptable, origin, angles )
@@ -1199,7 +1200,7 @@ function createvisualsinfo( scriptable, origin, angles )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3cfc
 // Size: 0xa4
 function setupgoalvisualsforjugg( juggplayer )
@@ -1215,7 +1216,7 @@ function setupgoalvisualsforjugg( juggplayer )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3da8
 // Size: 0x66
 function watchforjuggproximityscore( team )
@@ -1236,7 +1237,7 @@ function watchforjuggproximityscore( team )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e16
 // Size: 0x217, Type: bool
 function activatenewjuggernaut( juggplayer )
@@ -1296,7 +1297,7 @@ function activatenewjuggernaut( juggplayer )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4036
 // Size: 0x30
 function function_64357cc14d714493( juggteam, otherteam )
@@ -1307,7 +1308,7 @@ function function_64357cc14d714493( juggteam, otherteam )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x406e
 // Size: 0x1a2
 function deactivatejuggernaut( player )
@@ -1351,7 +1352,7 @@ function deactivatejuggernaut( player )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4218
 // Size: 0x9f
 function startjugghud( juggplayer )
@@ -1366,7 +1367,7 @@ function startjugghud( juggplayer )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42bf
 // Size: 0x68
 function clearjugghud()
@@ -1380,7 +1381,7 @@ function clearjugghud()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x432f
 // Size: 0x3e
 function watchjugghealth()
@@ -1396,7 +1397,7 @@ function watchjugghealth()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4375
 // Size: 0xba
 function watchforjuggdeathdisconnect()
@@ -1429,7 +1430,7 @@ function watchforjuggdeathdisconnect()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4437
 // Size: 0x264
 function watchjuggprogress()
@@ -1488,7 +1489,7 @@ function watchjuggprogress()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x46a3
 // Size: 0x178
 function function_5fbdad9f043bc253( progress, juggteam, defendingteam )
@@ -1519,7 +1520,7 @@ function function_5fbdad9f043bc253( progress, juggteam, defendingteam )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4823
 // Size: 0xc8, Type: bool
 function setupplayerasjugg( player )
@@ -1544,7 +1545,7 @@ function setupplayerasjugg( player )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48f4
 // Size: 0xd3
 function watchteammatesnearjugg()
@@ -1576,7 +1577,7 @@ function watchteammatesnearjugg()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49cf
 // Size: 0x4e
 function watchjuggtimeout()
@@ -1593,7 +1594,7 @@ function watchjuggtimeout()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a25
 // Size: 0x73
 function function_56bdeedc04731234( jugg )
@@ -1612,7 +1613,7 @@ function function_56bdeedc04731234( jugg )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4aa0
 // Size: 0xff
 function handlejuggjumpspam()
@@ -1661,7 +1662,7 @@ function handlejuggjumpspam()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ba7
 // Size: 0x38
 function function_d6e8f4ec9a310d75()
@@ -1672,7 +1673,7 @@ function function_d6e8f4ec9a310d75()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4be7
 // Size: 0x7d
 function createobjectiveiconsforactivejugg( juggplayer, jugginfo )
@@ -1686,7 +1687,7 @@ function createobjectiveiconsforactivejugg( juggplayer, jugginfo )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c6c
 // Size: 0x32
 function cleanupobjectiveiconsforjugg( juggplayer, jugginfo )
@@ -1696,7 +1697,7 @@ function cleanupobjectiveiconsforjugg( juggplayer, jugginfo )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4ca6
 // Size: 0xa1
 function createjuggobjective( juggplayer, jugginfo )
@@ -1715,7 +1716,7 @@ function createjuggobjective( juggplayer, jugginfo )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4d4f
 // Size: 0x93
 function createendzoneobjective( endzone, defendingteam, jugginfo )
@@ -1732,7 +1733,7 @@ function createendzoneobjective( endzone, defendingteam, jugginfo )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4dea
 // Size: 0x8d, Type: bool
 function activatejuggcrate( droppos, angles, firstspawn )
@@ -1752,7 +1753,7 @@ function activatejuggcrate( droppos, angles, firstspawn )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e80
 // Size: 0x74
 function isvaliddroppoint( droppos )
@@ -1772,7 +1773,7 @@ function isvaliddroppoint( droppos )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4efd
 // Size: 0x1a4
 function createjuggcrate( droppos, angles, firstspawn )
@@ -1806,7 +1807,7 @@ function createjuggcrate( droppos, angles, firstspawn )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x50aa
 // Size: 0x98
 function gunkillerhackthread()
@@ -1831,7 +1832,7 @@ function gunkillerhackthread()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x514a
 // Size: 0x548
 function juggcratemanageuse( crate )
@@ -1902,7 +1903,7 @@ function juggcratemanageuse( crate )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x569a
 // Size: 0x4e
 function function_25a22a5801e9c215( player )
@@ -1913,7 +1914,7 @@ function function_25a22a5801e9c215( player )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x56f0
 // Size: 0xf4
 function function_60506c80cb5907f0( player )
@@ -1949,7 +1950,7 @@ function function_60506c80cb5907f0( player )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x57ec
 // Size: 0xbc
 function function_d06091706a0b3695( team, player, result )
@@ -1974,7 +1975,7 @@ function function_d06091706a0b3695( team, player, result )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x58b0
 // Size: 0xb
 function function_d3025f84aa90109d( player )
@@ -1983,7 +1984,7 @@ function function_d3025f84aa90109d( player )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x58c3
 // Size: 0x12
 function juggcratecleanup()
@@ -1992,7 +1993,7 @@ function juggcratecleanup()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x58dd
 // Size: 0xa8
 function createjuggcrateobjective( crate )
@@ -2011,7 +2012,7 @@ function createjuggcrateobjective( crate )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x598d
 // Size: 0x74
 function updatejuggcrateobjectivestate( crate )
@@ -2031,7 +2032,7 @@ function updatejuggcrateobjectivestate( crate )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a09
 // Size: 0x70, Type: bool
 function function_75d33aa666ba0a2e( player )
@@ -2056,7 +2057,7 @@ function function_75d33aa666ba0a2e( player )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a82
 // Size: 0x226
 function updateoverheadcamerapos( initialsetupteam )
@@ -2124,7 +2125,7 @@ function updateoverheadcamerapos( initialsetupteam )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5cb0
 // Size: 0x118
 function startspectatorview()
@@ -2158,7 +2159,7 @@ function startspectatorview()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5dd0
 // Size: 0x17
 function dohalfwayflash()
@@ -2169,7 +2170,7 @@ function dohalfwayflash()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5def
 // Size: 0x26
 function endspectatorview()
@@ -2185,7 +2186,7 @@ function endspectatorview()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e1d
 // Size: 0x15
 function applythermal()
@@ -2195,7 +2196,7 @@ function applythermal()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e3a
 // Size: 0x9
 function removethermal()
@@ -2204,7 +2205,7 @@ function removethermal()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5e4b
 // Size: 0x102
 function movecameratomappos( player, var_9813182985677b23, finalangles )
@@ -2228,7 +2229,7 @@ function movecameratomappos( player, var_9813182985677b23, finalangles )
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f55
 // Size: 0xed
 function runslamzoomonspawn()
@@ -2253,7 +2254,7 @@ function runslamzoomonspawn()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x604a
 // Size: 0xd8
 function playslamzoomflash()
@@ -2276,7 +2277,7 @@ function playslamzoomflash()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x612a
 // Size: 0xb5
 function enableplayeroutlinesforoverheadcam()
@@ -2297,7 +2298,7 @@ function enableplayeroutlinesforoverheadcam()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61e7
 // Size: 0x6e
 function removeplayeroutlinesforoverheadcam()
@@ -2314,7 +2315,7 @@ function removeplayeroutlinesforoverheadcam()
 }
 
 // Namespace rugby / scripts\mp\gametypes\rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x625d
 // Size: 0xcf
 function setupwaypointicons()
@@ -2331,7 +2332,7 @@ function setupwaypointicons()
 /#
 
     // Namespace rugby / scripts\mp\gametypes\rugby
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6334
     // Size: 0x10f, Type: dev
     function function_a9f58f4a75680c3a()

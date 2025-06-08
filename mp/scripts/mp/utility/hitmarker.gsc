@@ -3,7 +3,7 @@
 #namespace hitmarker;
 
 // Namespace hitmarker / scripts\mp\utility\hitmarker
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x161
 // Size: 0xa6
 function frontend_hitmarker( var_f182d284b07a828e, isdeath, iscivilian, isbody )
@@ -42,7 +42,7 @@ function frontend_hitmarker( var_f182d284b07a828e, isdeath, iscivilian, isbody )
 }
 
 // Namespace hitmarker / scripts\mp\utility\hitmarker
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x20f
 // Size: 0x156
 function function_2a968ddf3c277ce( markertype, killingblow, headshot, nonplayer, icontype )
@@ -114,7 +114,7 @@ function function_2a968ddf3c277ce( markertype, killingblow, headshot, nonplayer,
 }
 
 // Namespace hitmarker / scripts\mp\utility\hitmarker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36d
 // Size: 0x27
 function function_e133bfd0c1ab18c9( hitmarkertype )

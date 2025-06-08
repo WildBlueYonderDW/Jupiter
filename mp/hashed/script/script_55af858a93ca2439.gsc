@@ -9,7 +9,7 @@
 #namespace warrior_fragged;
 
 // Namespace warrior_fragged / namespace_36f22ae5d548509b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x160
 // Size: 0x17
 function function_46e09220a05bae5f()
@@ -19,7 +19,7 @@ function function_46e09220a05bae5f()
 }
 
 // Namespace warrior_fragged / namespace_36f22ae5d548509b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17f
 // Size: 0x9d
 function onplayerspawned()
@@ -47,7 +47,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_fragged / namespace_36f22ae5d548509b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x224
 // Size: 0x31
 function waittill_grenade_fire()
@@ -63,7 +63,7 @@ function waittill_grenade_fire()
 }
 
 // Namespace warrior_fragged / namespace_36f22ae5d548509b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25d
 // Size: 0x6a
 function function_afa6a2ae298ee59f()

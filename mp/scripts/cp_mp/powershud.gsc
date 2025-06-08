@@ -4,7 +4,7 @@
 #namespace powershud;
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x238
 // Size: 0x1a6
 function powershud_init()
@@ -29,7 +29,7 @@ function powershud_init()
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3e6
 // Size: 0x90
 function powershud_assignpower( slot, power_id, fill_meter, charges )
@@ -53,7 +53,7 @@ function powershud_assignpower( slot, power_id, fill_meter, charges )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47e
 // Size: 0x5c
 function powershud_clearpower( slot )
@@ -70,7 +70,7 @@ function powershud_clearpower( slot )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e2
 // Size: 0x28
 function powershud_updatepowercharges( slot, charges )
@@ -79,7 +79,7 @@ function powershud_updatepowercharges( slot, charges )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x512
 // Size: 0x29
 function powershud_updatepowermaxcharges( slot, maxcharges )
@@ -88,7 +88,7 @@ function powershud_updatepowermaxcharges( slot, maxcharges )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x543
 // Size: 0x24
 function powershud_updatepowerdrain( slot, var_bc08c87c9773ae0 )
@@ -97,7 +97,7 @@ function powershud_updatepowerdrain( slot, var_bc08c87c9773ae0 )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x56f
 // Size: 0x29
 function powershud_updatepowermeter( slot, meter_value )
@@ -106,7 +106,7 @@ function powershud_updatepowermeter( slot, meter_value )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5a0
 // Size: 0x24
 function powershud_updatepowerdisabled( slot, disabled )
@@ -115,7 +115,7 @@ function powershud_updatepowerdisabled( slot, disabled )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5cc
 // Size: 0x3a
 function powershud_updatepoweroffcooldown( slot, oncooldown )
@@ -125,7 +125,7 @@ function powershud_updatepoweroffcooldown( slot, oncooldown )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x60e
 // Size: 0x24
 function powershud_updatepowerstate( slot, state )
@@ -134,7 +134,7 @@ function powershud_updatepowerstate( slot, state )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63a
 // Size: 0x15
 function powershud_beginpowerdrain( slot )
@@ -143,7 +143,7 @@ function powershud_beginpowerdrain( slot )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x657
 // Size: 0x14
 function powershud_endpowerdrain( slot )
@@ -152,7 +152,7 @@ function powershud_endpowerdrain( slot )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x673
 // Size: 0x3a
 function powershud_beginpowercooldown( slot, var_df05da7990d6888f )
@@ -168,7 +168,7 @@ function powershud_beginpowercooldown( slot, var_df05da7990d6888f )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6b5
 // Size: 0x5f
 function powershud_finishpowercooldown( slot, var_df05da7990d6888f )
@@ -193,7 +193,7 @@ function powershud_finishpowercooldown( slot, var_df05da7990d6888f )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x71c
 // Size: 0x20
 function powershud_updatepowercooldown( slot, percent )
@@ -202,7 +202,7 @@ function powershud_updatepowercooldown( slot, percent )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x744
 // Size: 0x20
 function powershud_updatepowerdrainprogress( slot, percent )
@@ -211,7 +211,7 @@ function powershud_updatepowerdrainprogress( slot, percent )
 }
 
 // Namespace powershud / scripts\cp_mp\powershud
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x76c
 // Size: 0x84
 function powershud_getslotomnvar( slot, var_b09f732395c5d400 )

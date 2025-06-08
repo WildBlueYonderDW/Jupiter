@@ -7,8 +7,8 @@
 #namespace namespace_2bf4cd4dfd211422;
 
 // Namespace namespace_2bf4cd4dfd211422 / namespace_c3e26060241fb8a2
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf4
+// Params 0
+// Checksum 0x0, Offset: 0xf5
 // Size: 0x39
 function function_2c48f8f076e75751()
 {
@@ -17,14 +17,15 @@ function function_2c48f8f076e75751()
 }
 
 // Namespace namespace_2bf4cd4dfd211422 / namespace_c3e26060241fb8a2
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x135
+// Params 1
+// Checksum 0x0, Offset: 0x136
 // Size: 0xe4
 function on_revived( params )
 {
     if ( isdefined( params.reviver ) && self == params.reviver && inventory_isenabled() )
     {
-        for (backpackindex = 0; backpackindex < function_1b35b10884bd8d67(); backpackindex++) {
+        for ( backpackindex = 0; backpackindex < function_1b35b10884bd8d67() ; backpackindex++ )
+        {
             lootid = function_d870b2c45335bd88( backpackindex );
             quantity = function_5ce7fe3dca9c1a22( backpackindex );
             
@@ -35,7 +36,8 @@ function on_revived( params )
                 
                 if ( itembundle.type == "revive" )
                 {
-                    for (i = 0; i < quantity; i++) {
+                    for ( i = 0; i < quantity ; i++ )
+                    {
                         if ( scripts\cp_mp\laststand::function_85bcfa7d00b8bb6b() )
                         {
                             function_777092be5abab355( backpackindex );
@@ -48,8 +50,8 @@ function on_revived( params )
 }
 
 // Namespace namespace_2bf4cd4dfd211422 / namespace_c3e26060241fb8a2
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x221
+// Params 4
+// Checksum 0x0, Offset: 0x222
 // Size: 0x30, Type: bool
 function function_1e669ec449acd66c( itembundle, item, autouse, allowswap )
 {
@@ -62,14 +64,15 @@ function function_1e669ec449acd66c( itembundle, item, autouse, allowswap )
 }
 
 // Namespace namespace_2bf4cd4dfd211422 / namespace_c3e26060241fb8a2
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25a
+// Params 3
+// Checksum 0x0, Offset: 0x25b
 // Size: 0x7b
 function use_revive( itembundle, item, auto_use )
 {
     var_21db2712e6d4ecc7 = item.count;
     
-    for (i = 0; i < item.count; i++) {
+    for ( i = 0; i < item.count ; i++ )
+    {
         if ( scripts\cp_mp\laststand::function_546201bb34cf36ce() < level.gametypebundle.var_4f29dbd56f01de57 )
         {
             scripts\cp_mp\laststand::function_7eba90a4d2ef6d6f();
@@ -81,8 +84,8 @@ function use_revive( itembundle, item, auto_use )
 }
 
 // Namespace namespace_2bf4cd4dfd211422 / namespace_c3e26060241fb8a2
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2de
+// Params 0
+// Checksum 0x0, Offset: 0x2df
 // Size: 0x55
 function function_42d4f1d48695f537()
 {
@@ -100,8 +103,8 @@ function function_42d4f1d48695f537()
 }
 
 // Namespace namespace_2bf4cd4dfd211422 / namespace_c3e26060241fb8a2
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33c
+// Params 0
+// Checksum 0x0, Offset: 0x33d
 // Size: 0x9
 function function_13eca89b22129fbd()
 {

@@ -19,7 +19,7 @@
 #namespace br_attraction_racetrack;
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c0a
 // Size: 0x91a
 function init()
@@ -135,7 +135,7 @@ function init()
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x352c
 // Size: 0x66
 function init_map_data()
@@ -156,7 +156,7 @@ function init_map_data()
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x359a
 // Size: 0xf52
 function init_structs_mp_br_mechanics()
@@ -298,7 +298,7 @@ function init_structs_mp_br_mechanics()
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44f4
 // Size: 0x4edf
 function init_structs_mp_don3()
@@ -1000,7 +1000,7 @@ function init_structs_mp_don3()
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x93db
 // Size: 0x5c
 function add_struct( targetname, target, script_noteworthy )
@@ -1014,7 +1014,7 @@ function add_struct( targetname, target, script_noteworthy )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9440
 // Size: 0x39
 function struct_set_fields( origin, angles, script_parameters )
@@ -1025,7 +1025,7 @@ function struct_set_fields( origin, angles, script_parameters )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9481
 // Size: 0x5c
 function init_track_settings( name, parent )
@@ -1038,7 +1038,7 @@ function init_track_settings( name, parent )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94e6
 // Size: 0x81
 function init_tracks()
@@ -1053,7 +1053,7 @@ function init_tracks()
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x956f
 // Size: 0x368
 function init_track( track )
@@ -1137,7 +1137,7 @@ function init_track( track )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x98df
 // Size: 0x57
 function get_track_star_times( track )
@@ -1156,7 +1156,7 @@ function get_track_star_times( track )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x993f
 // Size: 0x4f
 function get_track_star_time_from_col( track, col )
@@ -1172,7 +1172,7 @@ function get_track_star_time_from_col( track, col )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9997
 // Size: 0x4f
 function get_track_location_index( track )
@@ -1192,7 +1192,7 @@ function get_track_location_index( track )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x99ef
 // Size: 0x42
 function get_next_track_index()
@@ -1203,7 +1203,7 @@ function get_next_track_index()
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9a3a
 // Size: 0x5b
 function delete_track( track )
@@ -1215,7 +1215,7 @@ function delete_track( track )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9a9d
 // Size: 0xa6
 function get_track_setting( track, setting_name )
@@ -1246,7 +1246,7 @@ function get_track_setting( track, setting_name )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9b4c
 // Size: 0x65
 function apply_track_settings( track, settings_group )
@@ -1267,7 +1267,7 @@ function apply_track_settings( track, settings_group )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9bb9
 // Size: 0xe6
 function init_track_point( track )
@@ -1302,14 +1302,15 @@ function init_track_point( track )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ca7
 // Size: 0x137
 function caclulate_track_distance( track )
 {
     track.dist_miles = 0;
     
-    for (i = 0; i < track.points.size - 1; i++) {
+    for ( i = 0; i < track.points.size - 1 ; i++ )
+    {
         track.dist_miles += distance( track.points[ i ].origin, track.points[ i + 1 ].origin );
     }
     
@@ -1323,7 +1324,7 @@ function caclulate_track_distance( track )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9de6
 // Size: 0x8b
 function add_track_points( track, start )
@@ -1355,7 +1356,7 @@ function add_track_points( track, start )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e79
 // Size: 0x35
 function icon_trigger_enter( player, trigger )
@@ -1365,7 +1366,7 @@ function icon_trigger_enter( player, trigger )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9eb6
 // Size: 0x39
 function icon_trigger_exit( player, trigger )
@@ -1375,7 +1376,7 @@ function icon_trigger_exit( player, trigger )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9ef7
 // Size: 0x157
 function create_race( track, player )
@@ -1409,7 +1410,7 @@ function create_race( track, player )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa056
 // Size: 0xb5
 function start_area_fx( race )
@@ -1427,7 +1428,7 @@ function start_area_fx( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa113
 // Size: 0x2b
 function start_area_fx_end( race )
@@ -1439,7 +1440,7 @@ function start_area_fx_end( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa146
 // Size: 0x14f
 function checkpoint_fx_set( race, fx_name )
@@ -1468,7 +1469,7 @@ function checkpoint_fx_set( race, fx_name )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa29d
 // Size: 0x1c
 function checkpoint_fx_play( race )
@@ -1477,7 +1478,7 @@ function checkpoint_fx_play( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa2c1
 // Size: 0x151
 function checkpoint_next_fx_set( race, fx_name )
@@ -1506,7 +1507,7 @@ function checkpoint_next_fx_set( race, fx_name )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa41a
 // Size: 0x1c
 function checkpoint_next_fx_play( race )
@@ -1515,7 +1516,7 @@ function checkpoint_next_fx_play( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa43e
 // Size: 0x10f
 function checkpoint_objective( race )
@@ -1537,7 +1538,7 @@ function checkpoint_objective( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa555
 // Size: 0x23
 function pre_race_needs_vehicle( race )
@@ -1551,7 +1552,7 @@ function pre_race_needs_vehicle( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa580
 // Size: 0x741
 function pre_race( race )
@@ -1608,7 +1609,8 @@ function pre_race( race )
                         
                         time_remaining = var_d72464acae98ec62 - gettime();
                         
-                        for (i = 0; i <= 3; i++) {
+                        for ( i = 0; i <= 3 ; i++ )
+                        {
                             if ( time_remaining <= i * 1000 )
                             {
                                 if ( time_remaining + level.frameduration > i * 1000 )
@@ -1767,7 +1769,7 @@ function pre_race( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xacc9
 // Size: 0x5a
 function track_get_teleport_target( track )
@@ -1779,7 +1781,7 @@ function track_get_teleport_target( track )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad2c
 // Size: 0x4e
 function track_get_teleport_velocity( track )
@@ -1791,7 +1793,7 @@ function track_get_teleport_velocity( track )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad83
 // Size: 0x5a
 function track_get_launch_target( track )
@@ -1803,7 +1805,7 @@ function track_get_launch_target( track )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xade6
 // Size: 0x4e
 function track_get_launch_velocity( track, start, time )
@@ -1814,7 +1816,7 @@ function track_get_launch_velocity( track, start, time )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xae3d
 // Size: 0x88
 function race_countdown_update( race, countdown_length )
@@ -1833,7 +1835,7 @@ function race_countdown_update( race, countdown_length )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaecd
 // Size: 0x6f
 function race_timer_update( race )
@@ -1853,7 +1855,7 @@ function race_timer_update( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf44
 // Size: 0x25d
 function race_ui_show_record( race )
@@ -1902,7 +1904,7 @@ function race_ui_show_record( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb1a9
 // Size: 0x20
 function race_ui_show_record_end( race )
@@ -1912,7 +1914,7 @@ function race_ui_show_record_end( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb1d1
 // Size: 0x111
 function race( race )
@@ -1950,7 +1952,7 @@ function race( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb2ea
 // Size: 0x8d
 function race_update_stars( race )
@@ -1959,7 +1961,8 @@ function race_update_stars( race )
     race endon( "post_race" );
     prev_time = 0;
     
-    for (stars = 3; stars >= 2; stars--) {
+    for ( stars = 3; stars >= 2 ; stars-- )
+    {
         race.player scripts\mp\gametypes\br_attractions::playersetattractionextradata( stars );
         rewardtime = track_get_reward_time( race.track, stars ) - prev_time;
         wait rewardtime;
@@ -1970,7 +1973,7 @@ function race_update_stars( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb37f
 // Size: 0x2d
 function race_set_player_safe( race )
@@ -1984,7 +1987,7 @@ function race_set_player_safe( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb3b4
 // Size: 0x33
 function race_monitor_vehicle( race )
@@ -1996,7 +1999,7 @@ function race_monitor_vehicle( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb3ef
 // Size: 0x32
 function race_is_player_driving_vehicle( race )
@@ -2010,7 +2013,7 @@ function race_is_player_driving_vehicle( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb42a
 // Size: 0x97
 function race_monitor_out_of_vehicle( race )
@@ -2047,7 +2050,7 @@ function race_monitor_out_of_vehicle( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb4c9
 // Size: 0x193
 function race_monitor_oob( race )
@@ -2105,7 +2108,7 @@ function race_monitor_oob( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb664
 // Size: 0x12e
 function race_ui_add_critical_message( race, type )
@@ -2143,7 +2146,7 @@ function race_ui_add_critical_message( race, type )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb79a
 // Size: 0x28
 function race_ui_remove_critical_message( race, type )
@@ -2153,7 +2156,7 @@ function race_ui_remove_critical_message( race, type )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb7ca
 // Size: 0x13d
 function race_ui_critical_message_update( race )
@@ -2195,7 +2198,7 @@ function race_ui_critical_message_update( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb90f
 // Size: 0x10e
 function race_ui_critical_message_timer( race, timeremaining, message )
@@ -2230,7 +2233,7 @@ function race_ui_critical_message_timer( race, timeremaining, message )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba25
 // Size: 0x1e8
 function race_ui_checkpoint( race )
@@ -2290,7 +2293,7 @@ function race_ui_checkpoint( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbc15
 // Size: 0x10e
 function race_ui_lap( race )
@@ -2334,7 +2337,7 @@ function race_ui_lap( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbd2b
 // Size: 0x3ed
 function post_race( race )
@@ -2426,7 +2429,7 @@ function post_race( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc120
 // Size: 0x8c
 function track_get_reward_time( track, stars )
@@ -2453,7 +2456,7 @@ function track_get_reward_time( track, stars )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc1b5
 // Size: 0x43
 function track_get_reward_time_string( track, stars )
@@ -2469,7 +2472,7 @@ function track_get_reward_time_string( track, stars )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc200
 // Size: 0x77
 function race_calculate_stars( race, var_bdc35abb6749f2f9 )
@@ -2477,7 +2480,8 @@ function race_calculate_stars( race, var_bdc35abb6749f2f9 )
     stars = 0;
     racetimesec = var_bdc35abb6749f2f9 / 1000;
     
-    for (i = 3; i > 0; i--) {
+    for ( i = 3; i > 0 ; i-- )
+    {
         rewardtime = track_get_reward_time( race.track, i );
         
         if ( !isdefined( rewardtime ) || racetimesec <= rewardtime )
@@ -2491,7 +2495,7 @@ function race_calculate_stars( race, var_bdc35abb6749f2f9 )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc280
 // Size: 0x16
 function race_get_current_checkpoint( race )
@@ -2500,7 +2504,7 @@ function race_get_current_checkpoint( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc29f
 // Size: 0xc6
 function race_get_next_checkpoint( race )
@@ -2542,7 +2546,7 @@ function race_get_next_checkpoint( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc36d
 // Size: 0x6a, Type: bool
 function race_set_next_checkpoint( race )
@@ -2568,7 +2572,7 @@ function race_set_next_checkpoint( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc3e0
 // Size: 0x209
 function race_set_checkpoint( race, checkpoint_index )
@@ -2619,7 +2623,7 @@ function race_set_checkpoint( race, checkpoint_index )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc5f1
 // Size: 0x4b
 function race_wait_for_current_checkpoint( race )
@@ -2638,7 +2642,7 @@ function race_wait_for_current_checkpoint( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc644
 // Size: 0x44
 function delete_on_exit_icon_trigger_pre_race( race )
@@ -2650,7 +2654,7 @@ function delete_on_exit_icon_trigger_pre_race( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc690
 // Size: 0x2c
 function delete_on_death_or_dissconnect( race )
@@ -2661,7 +2665,7 @@ function delete_on_death_or_dissconnect( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6c4
 // Size: 0x2c
 function delete_on_track_delete( race )
@@ -2672,7 +2676,7 @@ function delete_on_track_delete( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6f8
 // Size: 0xef
 function delete_race( race )
@@ -2714,7 +2718,7 @@ function delete_race( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc7ef
 // Size: 0x21
 function race_requires_vehicle( race )
@@ -2723,7 +2727,7 @@ function race_requires_vehicle( race )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc819
 // Size: 0x158
 function giverewards( track, player, stars )
@@ -2745,7 +2749,7 @@ function giverewards( track, player, stars )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc979
 // Size: 0x3a
 function project( v, u )
@@ -2755,7 +2759,7 @@ function project( v, u )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc9bc
 // Size: 0x5a
 function project_to_line( point, start, stop )
@@ -2767,7 +2771,7 @@ function project_to_line( point, start, stop )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xca1f
 // Size: 0x53
 function dist_to_line( point, start, stop )
@@ -2777,7 +2781,7 @@ function dist_to_line( point, start, stop )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xca7b
 // Size: 0x6c
 function project_to_line_seg( point, start, stop )
@@ -2797,7 +2801,7 @@ function project_to_line_seg( point, start, stop )
 }
 
 // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcaf0
 // Size: 0x53
 function dist_to_line_seg( point, start, stop )
@@ -2809,7 +2813,7 @@ function dist_to_line_seg( point, start, stop )
 /#
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xcb4c
     // Size: 0xb0, Type: dev
     function function_d4a68f6a9703161c( command, args )
@@ -2837,7 +2841,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xcc04
     // Size: 0xba, Type: dev
     function function_1d97ac4a5afd1642()
@@ -2868,7 +2872,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xccc6
     // Size: 0x5ec, Type: dev
     function function_2a28c6ef9173079f( track )
@@ -2918,7 +2922,8 @@ function dist_to_line_seg( point, start, stop )
                 vel = track_get_launch_velocity( track, track.start_loc.origin, launch_sec );
                 last = start;
                 
-                for (i = 0; i < 20; i++) {
+                for ( i = 0; i < 20 ; i++ )
+                {
                     t = launch_sec * ( i + 1 ) / 20;
                     next = ( start[ 0 ] + vel[ 0 ] * t, start[ 1 ] + vel[ 1 ] * t, 0.5 * gravity * t * t + vel[ 2 ] * t + start[ 2 ] );
                     line( last, next, ( 1, 0, 0 ), 1, 0, 1 );
@@ -2943,7 +2948,8 @@ function dist_to_line_seg( point, start, stop )
         line( start, start + ( 0, 0, 2000 ), ( 0, 1, 0 ), 1, 0, 1 );
         line( end, end + ( 0, 0, 1536 ), ( 1, 0, 0 ), 1, 0, 1 );
         
-        for (i = 0; i < track.points.size; i++) {
+        for ( i = 0; i < track.points.size ; i++ )
+        {
             point = track.points[ i ];
             dir = anglestoright( point.angles );
             radius = get_track_setting( track, "<dev string:x148>" );
@@ -2952,7 +2958,8 @@ function dist_to_line_seg( point, start, stop )
             line( right, left, ( 0, 0, 1 ), 1, 0, 1 );
         }
         
-        for (i = 0; i < track.points.size - 1; i++) {
+        for ( i = 0; i < track.points.size - 1 ; i++ )
+        {
             color = get_track_setting( track, "<dev string:x15d>" );
             line( track.points[ i ].origin, track.points[ i + 1 ].origin, color, 1, 0, 1 );
         }
@@ -2964,7 +2971,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xd2ba
     // Size: 0x4e, Type: dev
     function function_d08fe5f270307ab8( index )
@@ -2978,7 +2985,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xd310
     // Size: 0x71, Type: dev
     function function_7a092a5fc6e9c24b( index )
@@ -2996,7 +3003,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xd389
     // Size: 0x77, Type: dev
     function function_8bc70c14d65e3417( args )
@@ -3019,7 +3026,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xd408
     // Size: 0xd4, Type: dev
     function function_33949707efb4fbb4( args )
@@ -3030,7 +3037,8 @@ function dist_to_line_seg( point, start, stop )
         {
             str = track.name;
             
-            for (i = 1; i <= 3; i++) {
+            for ( i = 1; i <= 3 ; i++ )
+            {
                 time = track_get_reward_time( track, i );
                 
                 if ( !isdefined( time ) )
@@ -3046,7 +3054,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xd4e4
     // Size: 0x620, Type: dev
     function function_53ca8617fcc31a47()
@@ -3246,7 +3254,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xdb0c
     // Size: 0x33, Type: dev
     function function_5ec615ca5f0e291b()
@@ -3257,7 +3265,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xdb47
     // Size: 0x16d, Type: dev
     function function_28c49f6d47613d0e( track, file )
@@ -3300,7 +3308,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xdcbc
     // Size: 0x1ce, Type: dev
     function function_ba2c486db215737b( track, file )
@@ -3345,7 +3353,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 9, eflags: 0x0
+    // Params 9
     // Checksum 0x0, Offset: 0xde92
     // Size: 0xf1, Type: dev
     function function_e2f6c761ac225375( file, entnum, classname, origin, angles, targetname, target, script_noteworthy, script_parameters )
@@ -3363,7 +3371,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0xdf8b
     // Size: 0x41, Type: dev
     function function_3c4abd61ee73ba4f( key, value, file )
@@ -3377,7 +3385,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xdfd4
     // Size: 0x2f, Type: dev
     function function_b5e5e49b1002b1ab( xyz )
@@ -3391,7 +3399,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xe00b
     // Size: 0x2d, Type: dev
     function function_8e9fc5e1a129b0d9( ln, file )
@@ -3406,7 +3414,7 @@ function dist_to_line_seg( point, start, stop )
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xe040
     // Size: 0x88, Type: dev
     function function_533d2f624478039f( auto_cmd )

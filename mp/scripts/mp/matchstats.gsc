@@ -5,7 +5,7 @@
 #namespace matchstats;
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x109
 // Size: 0x5f
 function init()
@@ -24,7 +24,7 @@ function init()
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x170
 // Size: 0xce
 function loadgamemodestatmap()
@@ -42,7 +42,8 @@ function loadgamemodestatmap()
     var_fb34a58676a70b9c.modestatsenabled = 1;
     var_fb34a58676a70b9c.modestatmap = [];
     
-    for (columnindex = 1; columnindex < 7; columnindex++) {
+    for ( columnindex = 1; columnindex < 7 ; columnindex++ )
+    {
         statname = tablelookupbyrow( "mp/gameModeMatchStats.csv", row, columnindex );
         
         if ( !isdefined( statname ) || statname == "" )
@@ -55,7 +56,7 @@ function loadgamemodestatmap()
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x246
 // Size: 0x33
 function watchplayerconnect()
@@ -74,7 +75,7 @@ function watchplayerconnect()
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x281
 // Size: 0x7d
 function initplayer()
@@ -92,7 +93,7 @@ function initplayer()
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x306
 // Size: 0x8c
 function watchgameend()
@@ -115,7 +116,7 @@ function watchgameend()
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39a
 // Size: 0x19c
 function writeplayerinfo()
@@ -155,14 +156,15 @@ function writeplayerinfo()
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x53e
 // Size: 0x49
 function getmatchstatpathkey( patharray )
 {
     pathstring = "";
     
-    for (i = 0; i < patharray.size; i++) {
+    for ( i = 0; i < patharray.size ; i++ )
+    {
         if ( isdefined( patharray[ i ] ) )
         {
             pathstring += patharray[ i ] + ".";
@@ -173,7 +175,7 @@ function getmatchstatpathkey( patharray )
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x590
 // Size: 0xde
 function setmatchstat( value, path1, path2, path3, path4, path5 )
@@ -212,7 +214,7 @@ function setmatchstat( value, path1, path2, path3, path4, path5 )
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x676
 // Size: 0x132
 function addtomatchstat( var_930290d7f474a0ae, path1, path2, path3, path4, path5 )
@@ -264,7 +266,7 @@ function addtomatchstat( var_930290d7f474a0ae, path1, path2, path3, path4, path5
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7b0
 // Size: 0x9e
 function getmatchstat( path1, path2, path3, path4, path5 )
@@ -286,7 +288,7 @@ function getmatchstat( path1, path2, path3, path4, path5 )
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x857
 // Size: 0x3e
 function getmodestatindex( statname )
@@ -302,7 +304,7 @@ function getmodestatindex( statname )
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x89e
 // Size: 0x5a
 function setgamemodestat( statname, newvalue )
@@ -324,7 +326,7 @@ function setgamemodestat( statname, newvalue )
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x900
 // Size: 0x5a
 function addtogamemodestat( statname, var_930290d7f474a0ae )
@@ -346,7 +348,7 @@ function addtogamemodestat( statname, var_930290d7f474a0ae )
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x962
 // Size: 0x50
 function getgamemodestat( statname )
@@ -368,7 +370,7 @@ function getgamemodestat( statname )
 }
 
 // Namespace matchstats / scripts\mp\matchstats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9bb
 // Size: 0x24, Type: bool
 function arematchstatsenabled()

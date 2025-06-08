@@ -10,7 +10,7 @@
 #namespace mp_jup_das_haus_alien;
 
 // Namespace mp_jup_das_haus_alien / scripts\mp\maps\mp_jup_das_haus_alien\mp_jup_das_haus_alien
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x181
 // Size: 0x9f
 function main()

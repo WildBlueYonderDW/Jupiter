@@ -7,7 +7,7 @@
 #namespace mp_jup_tower;
 
 // Namespace mp_jup_tower / scripts\mp\maps\mp_jup_tower\mp_jup_tower
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12d
 // Size: 0x5b
 function main()

@@ -100,14 +100,19 @@
 
 #namespace dev;
 
-/#
-
-    // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5c6
-    // Size: 0x1f51, Type: dev
-    function init()
+// Namespace dev / scripts\mp\dev
+// Params 0
+// Checksum 0x0, Offset: 0x5fd
+// Size: 0x1f67
+function init()
+{
+    if ( getbuildversion() != "SHIP" )
     {
+        thread function_b9a86799eae7ad41();
+        setdvar( @"scr_giveweapon", "" );
+    }
+    
+    /#
         scripts\common\dev::init();
         precacheitem( "<dev string:x1c>" );
         precachemodel( "<dev string:x30>" );
@@ -297,7 +302,7 @@
         setdevdvarifuninitialized( @"hash_58d027ad37e05b46", "<dev string:xca>" );
         setdevdvarifuninitialized( @"hash_e7f0e98d75752c9", "<dev string:xc5>" );
         setdevdvarifuninitialized( @"hash_c9f6917530383799", "<dev string:xca>" );
-        setdevdvarifuninitialized( @"hash_b1f216df6049c46a", "<dev string:xce>" );
+        setdevdvarifuninitialized( @"scr_devchangetimelimit", "<dev string:xce>" );
         setdevdvarifuninitialized( @"hash_18cc90e3fd22526a", "<dev string:xc5>" );
         setdevdvarifuninitialized( @"hash_e5b307d1608c2011", "<dev string:xc5>" );
         setdevdvarifuninitialized( @"hash_a468c3040709501b", "<dev string:xc5>" );
@@ -323,8 +328,8 @@
         setdevdvarifuninitialized( @"hash_a18e65eb2a8dfec6", "<dev string:xca>" );
         setdevdvarifuninitialized( @"hash_92522ef77482b74f", 0 );
         setdevdvarifuninitialized( @"hash_a20811cf18dac458", "<dev string:xca>" );
-        setdevdvarifuninitialized( @"hash_53f9e61fbb5d9c84", 0 );
-        setdevdvarifuninitialized( @"hash_783f25d038fa2819", 0 );
+        setdevdvarifuninitialized( @"scr_devminimap_visible", 0 );
+        setdevdvarifuninitialized( @"scr_disable_forfeit", 0 );
         setdevdvarifuninitialized( @"hash_f5cc472e41be9c66", "<dev string:xca>" );
         setdevdvarifuninitialized( @"hash_ede820e2482b470", 0 );
         setdevdvarifuninitialized( @"hash_d657640801ffcf07", 0 );
@@ -347,16 +352,16 @@
         setdevdvarifuninitialized( @"hash_1deddbedb2075add", 0 );
         setdevdvarifuninitialized( @"hash_c9ec8ca2b7a146c4", 0 );
         setdevdvarifuninitialized( @"hash_6711d09c824e3cc9", 0 );
-        setdevdvarifuninitialized( @"hash_c85a7135dce00903", 0 );
+        setdevdvarifuninitialized( @"scr_game_lethaldelay", 0 );
         setdevdvarifuninitialized( @"hash_6d6e240a9ede976e", 0 );
-        setdevdvarifuninitialized( @"hash_2748b78a2910ca11", 0 );
+        setdevdvarifuninitialized( @"scr_superdelay", 0 );
         setdevdvarifuninitialized( @"hash_be71443f47c8632f", 0 );
         setdevdvarifuninitialized( @"hash_86a6152b9a0381fc", "<dev string:xc5>" );
         setdevdvarifuninitialized( @"hash_cd901aea9e9e7eeb", "<dev string:xc5>" );
         setdevdvarifuninitialized( @"hash_95efa6aea863b082", "<dev string:xc5>" );
         setdevdvarifuninitialized( @"hash_1e72609fde690bbc", 0 );
-        setdevdvarifuninitialized( @"hash_c6492f4edd9202d3", 0 );
-        setdevdvarifuninitialized( @"hash_68cba91a675a2f76", 0 );
+        setdevdvarifuninitialized( @"scr_eom_combat", 0 );
+        setdevdvarifuninitialized( @"scr_eom_slowmo", 0 );
         setdevdvarifuninitialized( @"hash_7a5e31b62cb508b0", 0 );
         setdevdvarifuninitialized( @"hash_914bb3dc853c47c4", 0 );
         setdevdvarifuninitialized( @"hash_b34a0bfcf1e59832", 0 );
@@ -466,7 +471,7 @@
         setdevdvarifuninitialized( @"hash_8b814398a3af5d7f", 180 );
         setdevdvarifuninitialized( @"hash_2fd14545a1a6803c", 0 );
         setdevdvarifuninitialized( @"hash_20d07e52d0c613fb", 0 );
-        setdevdvarifuninitialized( @"hash_7194076ab4888f2b", 0 );
+        setdevdvarifuninitialized( @"scr_game_infilskip", 0 );
         setdevdvarifuninitialized( @"hash_68874851dce750fe", 0 );
         setdevdvarifuninitialized( @"hash_cccba423c010c957", 0 );
         setdevdvarifuninitialized( @"hash_45dd70c0ac1afda2", 0 );
@@ -480,7 +485,7 @@
         setdevdvarifuninitialized( @"hash_3c6c485214ca7673", 0 );
         setdevdvarifuninitialized( @"hash_827901421ad0679", 1 );
         setdevdvarifuninitialized( @"hash_be65e45de358ca06", "<dev string:xc5>" );
-        setdevdvarifuninitialized( @"hash_715685dae50de688", 0 );
+        setdevdvarifuninitialized( @"scr_runlean_playerthread_count", 0 );
         setdevdvarifuninitialized( @"hash_fecec194bb60af48", 1 );
         setdevdvarifuninitialized( @"hash_cf0fa0390ef7a109", 0 );
         setdevdvarifuninitialized( @"hash_99ed34bc5a345aff", 0 );
@@ -524,7 +529,6 @@
         setdevdvar( @"hash_b679b1eead8733a3", "<dev string:xca>" );
         setdevdvar( @"hash_61f1432615a0514b", "<dev string:xca>" );
         setdevdvar( @"hash_ae04ade2c8e72fdc", "<dev string:xca>" );
-        setdevdvar( @"scr_giveweapon", "<dev string:xca>" );
         setdevdvar( @"hash_9bf239cb990aca4b", "<dev string:xca>" );
         setdevdvar( @"scr_spawnweapon", "<dev string:xca>" );
         setdevdvar( @"hash_6f67d3ada4d28ec5", "<dev string:xca>" );
@@ -638,11 +642,114 @@
             wait 0.05;
             updatedevsettings();
         }
+    #/
+}
+
+// Namespace dev / scripts\mp\dev
+// Params 0
+// Checksum 0x0, Offset: 0x256c
+// Size: 0x33
+function function_b9a86799eae7ad41()
+{
+    if ( getbuildversion() != "SHIP" )
+    {
+        for ( ;; )
+        {
+            if ( getdvar( @"scr_giveweapon" ) != "" )
+            {
+                thread gui_giveweapon();
+            }
+            
+            waitframe();
+        }
     }
+}
+
+// Namespace dev / scripts\mp\dev
+// Params 0
+// Checksum 0x0, Offset: 0x25a7
+// Size: 0x1dc
+function gui_giveweapon()
+{
+    if ( getbuildversion() != "SHIP" )
+    {
+        var_b23392514364503b = getdvar( @"scr_giveweapon" );
+        variant = -1;
+        toks = strtok( var_b23392514364503b, "-" );
+        
+        if ( toks.size > 1 )
+        {
+            var_b23392514364503b = toks[ 0 ];
+            variant = int( toks[ 1 ] );
+        }
+        
+        if ( isdefined( var_b23392514364503b ) )
+        {
+            weapnew = getweaponrootname( var_b23392514364503b );
+            
+            if ( !function_89497fa763d431c0( weapnew ) )
+            {
+                level.weaponmapdata[ weapnew ] = spawnstruct();
+                level.weaponmapdata[ weapnew ].assetname = var_b23392514364503b;
+                level.weaponmapdata[ weapnew ].group = "weapon_assault";
+            }
+            
+            playerarray = function_13e3c70659983189();
+            
+            foreach ( player in playerarray )
+            {
+                hasnvg = scripts\cp_mp\utility\game_utility::function_d2d2b803a7b741a4();
+                var_c88b10f789adf8eb = scripts\cp_mp\weapon::buildweapon_blueprint( weapnew, undefined, undefined, variant, undefined, undefined, hasnvg );
+                currentweapon = player.currentweapon;
+                player.droppeddeathweapon = undefined;
+                player scripts\mp\weapons::dropweaponfordeath( undefined, "" );
+                player.droppeddeathweapon = undefined;
+                
+                if ( player hasweapon( var_c88b10f789adf8eb ) )
+                {
+                    player _takeweapon( var_c88b10f789adf8eb );
+                }
+                
+                if ( isbot( player ) )
+                {
+                    player botsetflag( "ignore_script_weapon", 0 );
+                }
+                
+                player giveweapon( var_c88b10f789adf8eb );
+                player _switchtoweaponimmediate( var_c88b10f789adf8eb );
+                scripts\cp_mp\weapon::fixupplayerweapons( player, weapnew );
+            }
+        }
+        
+        setdvar( @"scr_giveweapon", "" );
+    }
+}
+
+// Namespace dev / scripts\mp\dev
+// Params 0
+// Checksum 0x0, Offset: 0x278b
+// Size: 0x5f
+function function_13e3c70659983189()
+{
+    playerarray = [];
+    
+    if ( isdefined( level.var_3b3b12cc96932083 ) && isdefined( level.var_3b3b12cc96932083.ent ) )
+    {
+        playerarray = array_add( playerarray, level.var_3b3b12cc96932083.ent );
+    }
+    else
+    {
+        playerarray = level.players;
+    }
+    
+    return playerarray;
+}
+
+/#
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x251f
+    // Params 0
+    // Checksum 0x0, Offset: 0x27f3
     // Size: 0x93, Type: dev
     function function_f4fd99d8e2a39c29()
     {
@@ -665,8 +772,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x25ba
+    // Params 0
+    // Checksum 0x0, Offset: 0x288e
     // Size: 0x57b, Type: dev
     function function_53fc6eae3ece8bee()
     {
@@ -733,7 +840,8 @@
             
             foreach ( player in level.players )
             {
-                for (i = 1; i < var_f45203a97ff98b4f + 1 || i >= 100; i++) {
+                for ( i = 1; i < var_f45203a97ff98b4f + 1 || i >= 100 ; i++ )
+                {
                     if ( isai( player ) )
                     {
                         break;
@@ -762,7 +870,8 @@
                     player setorigin( getgroundposition( navmeshpos, 32, 100, 1000 ) );
                     wait var_3d50beec8a905f93;
                     
-                    for (j = 0; j < var_12929aa2289a5b08 || j >= 500; j++) {
+                    for ( j = 0; j < var_12929aa2289a5b08 || j >= 500 ; j++ )
+                    {
                         if ( getdvarint( @"hash_5de19f2fe36e6bb8" ) == 0 )
                         {
                             break;
@@ -775,7 +884,8 @@
                         wait var_3d50beec8a905f93;
                     }
                     
-                    for (k = 0; k < var_12929aa2289a5b08; k++) {
+                    for ( k = 0; k < var_12929aa2289a5b08 ; k++ )
+                    {
                         if ( getdvarint( @"hash_5de19f2fe36e6bb8" ) == 0 )
                         {
                             break;
@@ -817,8 +927,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2b3d
+    // Params 0
+    // Checksum 0x0, Offset: 0x2e11
     // Size: 0x97, Type: dev
     function function_3cdf34f5e49d2b02()
     {
@@ -844,8 +954,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2bdc
+    // Params 0
+    // Checksum 0x0, Offset: 0x2eb0
     // Size: 0x43e, Type: dev
     function function_9a0fa9b6ca2660ad()
     {
@@ -977,8 +1087,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3022
+    // Params 0
+    // Checksum 0x0, Offset: 0x32f6
     // Size: 0x54c, Type: dev
     function function_7da799237721b52d()
     {
@@ -1082,8 +1192,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3576
+    // Params 6
+    // Checksum 0x0, Offset: 0x384a
     // Size: 0x444, Type: dev
     function drawspawnpoint( spawnpoint, classname, color, var_ac5a6ba06050a17a, var_a90e409d285175b4, var_f7fc2d16b59644f1 )
     {
@@ -1144,8 +1254,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x39c2
+    // Params 0
+    // Checksum 0x0, Offset: 0x3c96
     // Size: 0x1fb, Type: dev
     function function_5c8e814605d74ddf()
     {
@@ -1206,8 +1316,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3bc5
+    // Params 0
+    // Checksum 0x0, Offset: 0x3e99
     // Size: 0xf0, Type: dev
     function function_41ea880c5af1f486()
     {
@@ -1231,8 +1341,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3cbd
+    // Params 0
+    // Checksum 0x0, Offset: 0x3f91
     // Size: 0x3f7, Type: dev
     function function_85ba65ae7004a192()
     {
@@ -1354,8 +1464,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x40bc
+    // Params 3
+    // Checksum 0x0, Offset: 0x4390
     // Size: 0x243, Type: dev
     function function_1eb5ea876c3c58d4( player, playernode, spawnnode )
     {
@@ -1398,8 +1508,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4307
+    // Params 2
+    // Checksum 0x0, Offset: 0x45db
     // Size: 0x123, Type: dev
     function function_1ae49ecbf9d67abe( player, targetnode )
     {
@@ -1424,8 +1534,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4432
+    // Params 2
+    // Checksum 0x0, Offset: 0x4706
     // Size: 0x19a, Type: dev
     function function_7346ecd3666450e3( pathnode, ttlos )
     {
@@ -1449,8 +1559,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x45d4
+    // Params 3
+    // Checksum 0x0, Offset: 0x48a8
     // Size: 0xb5, Type: dev
     function function_847de9fd3b2ff0da( var_970d2f3032ff7a19, fallbackspawnset, var_6c6e28a61d9a7957 )
     {
@@ -1467,8 +1577,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4691
+    // Params 1
+    // Checksum 0x0, Offset: 0x4965
     // Size: 0xdf, Type: dev
     function function_75d2477e56b1aea8( spawningplayer )
     {
@@ -1492,8 +1602,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4778
+    // Params 0
+    // Checksum 0x0, Offset: 0x4a4c
     // Size: 0x447, Type: dev
     function function_7dd78553c3cb9d38()
     {
@@ -1566,8 +1676,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4bc7
+    // Params 2
+    // Checksum 0x0, Offset: 0x4e9b
     // Size: 0x37, Type: dev
     function function_fe598e0c02fe84ec( player, result )
     {
@@ -1580,8 +1690,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4c06
+    // Params 1
+    // Checksum 0x0, Offset: 0x4eda
     // Size: 0x44, Type: dev
     function function_b1972efe5a8d2a37( spawnpoints )
     {
@@ -1595,8 +1705,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4c52
+    // Params 2
+    // Checksum 0x0, Offset: 0x4f26
     // Size: 0x3d, Type: dev
     function function_55db94df92c1a7c4( buddy, pathnodes )
     {
@@ -1614,8 +1724,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4c97
+    // Params 2
+    // Checksum 0x0, Offset: 0x4f6b
     // Size: 0x3d, Type: dev
     function function_c06e014cedb53155( buddy, pathnode )
     {
@@ -1633,8 +1743,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4cdc
+    // Params 2
+    // Checksum 0x0, Offset: 0x4fb0
     // Size: 0x37, Type: dev
     function function_41fd2e38468e1538( spawnpoint, reason )
     {
@@ -1647,8 +1757,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4d1b
+    // Params 0
+    // Checksum 0x0, Offset: 0x4fef
     // Size: 0x7c8, Type: dev
     function function_3d748a0bd7fd42bf()
     {
@@ -1822,8 +1932,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x54eb
+    // Params 2
+    // Checksum 0x0, Offset: 0x57bf
     // Size: 0x3e, Type: dev
     function function_3bee1ba99f936020( key, vec )
     {
@@ -1831,8 +1941,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5531
+    // Params 1
+    // Checksum 0x0, Offset: 0x5805
     // Size: 0x40, Type: dev
     function displaymsg( msg )
     {
@@ -1841,8 +1951,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5579
+    // Params 0
+    // Checksum 0x0, Offset: 0x584d
     // Size: 0x69, Type: dev
     function updatemsg()
     {
@@ -1853,8 +1963,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x55ea
+    // Params 0
+    // Checksum 0x0, Offset: 0x58be
     // Size: 0x3fb6, Type: dev
     function updatedevsettings()
     {
@@ -1908,7 +2018,8 @@
         {
             setdevdvar( @"hash_5846fb2081840ca1", "<dev string:xca>" );
             
-            for (rid = 0; rid <= level.maxrank; rid++) {
+            for ( rid = 0; rid <= level.maxrank ; rid++ )
+            {
                 rankname = function_cd47cbfaa2de3623( rid );
                 iprintln( "<dev string:x406>" + rid + 1 );
                 iprintln( "<dev string:x42c>", rankname, "<dev string:x450>" + rid + 1 + "<dev string:x458>" );
@@ -1935,7 +2046,8 @@
             blueprintindexes = scripts\engine\utility::string_split( var_967387626350eb82, "<dev string:x45d>" );
             var_11b0ced15240d43f = streaknames.size > 1;
             
-            for (i = 0; i < streaknames.size; i++) {
+            for ( i = 0; i < streaknames.size ; i++ )
+            {
                 streakname = streaknames[ i ];
                 blueprintindex = int( default_to( blueprintindexes[ i ], "<dev string:xc5>" ) );
                 streaksetupinfo = scripts\mp\killstreaks\killstreaks::getkillstreaksetupinfo( streakname );
@@ -2288,7 +2400,8 @@
         {
             perk = getdvar( @"scr_giveperk" );
             
-            for (i = 0; i < level.players.size; i++) {
+            for ( i = 0; i < level.players.size ; i++ )
+            {
                 level.players[ i ] thread giveperk( perk );
             }
             
@@ -2299,7 +2412,8 @@
         {
             perk = getdvar( @"scr_takeperk" );
             
-            for (i = 0; i < level.players.size; i++) {
+            for ( i = 0; i < level.players.size ; i++ )
+            {
                 level.players[ i ] thread removeperk( perk );
             }
             
@@ -2405,7 +2519,8 @@
             
             lastxp = 0;
             
-            for (index = 0; index <= newrank; index++) {
+            for ( index = 0; index <= newrank ; index++ )
+            {
                 newxp = rank::getrankinfominxp( index );
                 level.players[ 0 ] thread scripts\mp\rank::giverankxp( #"kill", newxp - lastxp );
                 lastxp = newxp;
@@ -2487,7 +2602,8 @@
             level.entcounts = [];
             level.entgroups = [];
             
-            for (index = 0; index < ents.size; index++) {
+            for ( index = 0; index < ents.size ; index++ )
+            {
                 classname = ents[ index ].classname;
                 
                 if ( !issubstr( classname, "<dev string:x73d>" ) )
@@ -3283,7 +3399,8 @@
                 {
                     dist = data.spawn.clearancecheckradius * 2 * 1.1;
                     
-                    for (i = 0; i < data.mtx.size; i++) {
+                    for ( i = 0; i < data.mtx.size ; i++ )
+                    {
                         spawndata = spawnstruct();
                         spawndata.origin = player.origin + ( 0, 0, 100 ) + forward * dist * i;
                         spawndata.angles = player.angles * ( 0, 1, 0 );
@@ -3659,8 +3776,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x95a8
+    // Params 1
+    // Checksum 0x0, Offset: 0x987c
     // Size: 0x15f, Type: dev
     function function_f4dcab3497d5fbd1( layout_name )
     {
@@ -3689,8 +3806,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x970f
+    // Params 2
+    // Checksum 0x0, Offset: 0x99e3
     // Size: 0x11c, Type: dev
     function function_101e32b07ba7ff43( modset, visible )
     {
@@ -3729,8 +3846,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9833
+    // Params 1
+    // Checksum 0x0, Offset: 0x9b07
     // Size: 0x5f, Type: dev
     function function_466d9bc3fa346c45( camtype )
     {
@@ -3751,8 +3868,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x989a
+    // Params 0
+    // Checksum 0x0, Offset: 0x9b6e
     // Size: 0xca, Type: dev
     function function_6735a961ca823ef1()
     {
@@ -3784,8 +3901,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x996c
+    // Params 1
+    // Checksum 0x0, Offset: 0x9c40
     // Size: 0x324, Type: dev
     function replaycam( camtype )
     {
@@ -3844,8 +3961,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9c98
+    // Params 1
+    // Checksum 0x0, Offset: 0x9f6c
     // Size: 0x30a, Type: dev
     function function_e32c159574bfdf6c( camtype )
     {
@@ -3915,8 +4032,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9faa
+    // Params 0
+    // Checksum 0x0, Offset: 0xa27e
     // Size: 0xf0, Type: dev
     function givegoproattachments()
     {
@@ -3948,8 +4065,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa0a2
+    // Params 0
+    // Checksum 0x0, Offset: 0xa376
     // Size: 0xef, Type: dev
     function takegoproattachments()
     {
@@ -3981,8 +4098,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa199
+    // Params 1
+    // Checksum 0x0, Offset: 0xa46d
     // Size: 0x44, Type: dev
     function function_8c05b3051b75cdcd( weapon )
     {
@@ -4002,8 +4119,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa1e5
+    // Params 1
+    // Checksum 0x0, Offset: 0xa4b9
     // Size: 0x80, Type: dev
     function switchtoweaponwithbasename( weapontocheck )
     {
@@ -4020,8 +4137,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa26d
+    // Params 1
+    // Checksum 0x0, Offset: 0xa541
     // Size: 0xb2, Type: dev
     function function_5cf5d79beb35b900( type )
     {
@@ -4037,8 +4154,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa327
+    // Params 5
+    // Checksum 0x0, Offset: 0xa5fb
     // Size: 0x94, Type: dev
     function function_3372dc7d09c3e10d( player, asset, repeat, timeon, timeoff )
     {
@@ -4067,8 +4184,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa3c3
+    // Params 0
+    // Checksum 0x0, Offset: 0xa697
     // Size: 0xd7, Type: dev
     function function_6be41bc42b9c8a6()
     {
@@ -4095,8 +4212,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa4a2
+    // Params 0
+    // Checksum 0x0, Offset: 0xa776
     // Size: 0x103, Type: dev
     function function_effde03597f46af1()
     {
@@ -4117,8 +4234,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa5ad
+    // Params 0
+    // Checksum 0x0, Offset: 0xa881
     // Size: 0x87, Type: dev
     function function_f9632fde127cf240()
     {
@@ -4134,8 +4251,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa63c
+    // Params 0
+    // Checksum 0x0, Offset: 0xa910
     // Size: 0x87, Type: dev
     function function_62b01d9b57e88095()
     {
@@ -4151,8 +4268,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa6cb
+    // Params 0
+    // Checksum 0x0, Offset: 0xa99f
     // Size: 0xaf, Type: dev
     function function_c11279198c9b98c5()
     {
@@ -4169,8 +4286,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa782
+    // Params 0
+    // Checksum 0x0, Offset: 0xaa56
     // Size: 0xa3, Type: dev
     function function_cbf57c53946ec8f0()
     {
@@ -4187,8 +4304,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa82d
+    // Params 0
+    // Checksum 0x0, Offset: 0xab01
     // Size: 0xe3, Type: dev
     function function_21fde2ca3d2cd943()
     {
@@ -4215,8 +4332,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa918
+    // Params 0
+    // Checksum 0x0, Offset: 0xabec
     // Size: 0xcb, Type: dev
     function function_eda8506c5ffb6a1a()
     {
@@ -4248,8 +4365,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa9eb
+    // Params 0
+    // Checksum 0x0, Offset: 0xacbf
     // Size: 0xac, Type: dev
     function function_338cf67a663c004c()
     {
@@ -4296,8 +4413,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xaa9f
+    // Params 0
+    // Checksum 0x0, Offset: 0xad73
     // Size: 0x171, Type: dev
     function function_a56437c4fc85184d()
     {
@@ -4313,7 +4430,8 @@
         host notifyonplayercommand( "<dev string:xdd6>", "<dev string:xdff>" );
         host notifyonplayercommand( "<dev string:xdd6>", "<dev string:xe19>" );
         
-        for (selectedentity = undefined; true; selectedentity = undefined) {
+        for ( selectedentity = undefined; true ; selectedentity = undefined )
+        {
             host waittill( "<dev string:xdd6>" );
             var_aeb968e718b92e1c = getdvarint( @"hash_a4e3922cf017e056", 0 );
             
@@ -4352,32 +4470,34 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xac18
+    // Params 2
+    // Checksum 0x0, Offset: 0xaeec
     // Size: 0x40, Type: dev
     function unlocksplash( increments, delay )
     {
-        for (i = 0; i < increments; i++) {
+        for ( i = 0; i < increments ; i++ )
+        {
             thread scripts\mp\hud_message::showsplash( "<dev string:xe2d>", undefined, self );
             wait delay;
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xac60
+    // Params 2
+    // Checksum 0x0, Offset: 0xaf34
     // Size: 0x40, Type: dev
     function killstreaksplash( increments, delay )
     {
-        for (i = 0; i < increments; i++) {
+        for ( i = 0; i < increments ; i++ )
+        {
             thread scripts\mp\hud_message::showsplash( "<dev string:xe3e>", undefined, self );
             wait delay;
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xaca8
+    // Params 0
+    // Checksum 0x0, Offset: 0xaf7c
     // Size: 0x1a, Type: dev
     function notifyaftertime()
     {
@@ -4386,31 +4506,33 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xacca
+    // Params 2
+    // Checksum 0x0, Offset: 0xaf9e
     // Size: 0x39, Type: dev
     function ranksplash( increments, delay )
     {
-        for (i = 0; i < increments; i++) {
+        for ( i = 0; i < increments ; i++ )
+        {
             thread scripts\mp\rank::updaterankannouncehud();
             wait delay;
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xad0b
+    // Params 2
+    // Checksum 0x0, Offset: 0xafdf
     // Size: 0x31, Type: dev
     function weaponranksplash( increments, delay )
     {
-        for (i = 0; i < increments; i++) {
+        for ( i = 0; i < increments ; i++ )
+        {
             wait delay;
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xad44
+    // Params 1
+    // Checksum 0x0, Offset: 0xb018
     // Size: 0xa7, Type: dev
     function testendgameupdate( promotion )
     {
@@ -4426,8 +4548,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xadf3
+    // Params 0
+    // Checksum 0x0, Offset: 0xb0c7
     // Size: 0x1c, Type: dev
     function function_7fbc04196f29a18b()
     {
@@ -4437,8 +4559,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xae17
+    // Params 0
+    // Checksum 0x0, Offset: 0xb0eb
     // Size: 0x55, Type: dev
     function testlowermessage()
     {
@@ -4452,8 +4574,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xae74
+    // Params 0
+    // Checksum 0x0, Offset: 0xb148
     // Size: 0x4f, Type: dev
     function giveextraperks()
     {
@@ -4464,21 +4586,23 @@
         
         perks = getarraykeys( self.extraperks );
         
-        for (i = 0; i < perks.size; i++) {
+        for ( i = 0; i < perks.size ; i++ )
+        {
             giveperk( perks[ i ] );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xaecb
+    // Params 2
+    // Checksum 0x0, Offset: 0xb19f
     // Size: 0xf2, Type: dev
     function xkillsy( attackername, victimname )
     {
         attacker = undefined;
         victim = undefined;
         
-        for (index = 0; index < level.players.size; index++) {
+        for ( index = 0; index < level.players.size ; index++ )
+        {
             if ( level.players[ index ].name == attackername )
             {
                 attacker = level.players[ index ];
@@ -4500,8 +4624,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xafc5
+    // Params 0
+    // Checksum 0x0, Offset: 0xb299
     // Size: 0x51d, Type: dev
     function updateminimapsetting()
     {
@@ -4654,8 +4778,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb4ea
+    // Params 2
+    // Checksum 0x0, Offset: 0xb7be
     // Size: 0x29, Type: dev
     function vecscale( vec, scalar )
     {
@@ -4663,8 +4787,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb51b
+    // Params 3
+    // Checksum 0x0, Offset: 0xb7ef
     // Size: 0x213, Type: dev
     function drawminimapbounds( viewpos, mincorner, maxcorner )
     {
@@ -4701,8 +4825,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb736
+    // Params 2
+    // Checksum 0x0, Offset: 0xba0a
     // Size: 0xf1, Type: dev
     function inittestclientlatent( team, connecting )
     {
@@ -4762,8 +4886,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb82f
+    // Params 1
+    // Checksum 0x0, Offset: 0xbb03
     // Size: 0x117, Type: dev
     function spawn_test_clients( testclients )
     {
@@ -4808,8 +4932,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb94e
+    // Params 0
+    // Checksum 0x0, Offset: 0xbc22
     // Size: 0x514, Type: dev
     function function_e8bf4d412ec40f95()
     {
@@ -4946,8 +5070,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xbe6a
+    // Params 0
+    // Checksum 0x0, Offset: 0xc13e
     // Size: 0x68, Type: dev
     function function_496659f14ebed3ff()
     {
@@ -4963,8 +5087,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xbeda
+    // Params 1
+    // Checksum 0x0, Offset: 0xc1ae
     // Size: 0x411, Type: dev
     function function_4fa739bfec196a56( cmd )
     {
@@ -5043,7 +5167,8 @@
                 
                 lastpoint = points[ 0 ];
                 
-                for (i = 1; i < points.size; i++) {
+                for ( i = 1; i < points.size ; i++ )
+                {
                     var_2a04ae9968adcc79 = points[ i ] + heightoffset + right * barlength;
                     var_2a04ab9968adc5e0 = points[ i ] + heightoffset + left * barlength;
                     line( lastpoint + heightoffset, points[ i ] + heightoffset, colors[ i - 1 ], 1, 0, 1 );
@@ -5057,8 +5182,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc2f3
+    // Params 0
+    // Checksum 0x0, Offset: 0xc5c7
     // Size: 0x2b, Type: dev
     function function_c3c06fb268e321ea()
     {
@@ -5073,8 +5198,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc326
+    // Params 0
+    // Checksum 0x0, Offset: 0xc5fa
     // Size: 0x26, Type: dev
     function function_1d4145a2086a065b()
     {
@@ -5088,8 +5213,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc354
+    // Params 0
+    // Checksum 0x0, Offset: 0xc628
     // Size: 0xb0, Type: dev
     function function_b5cf3fa4ccae275f()
     {
@@ -5128,8 +5253,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc40c
+    // Params 1
+    // Checksum 0x0, Offset: 0xc6e0
     // Size: 0xb2, Type: dev
     function function_447a488c5aa7ac36( stance )
     {
@@ -5152,8 +5277,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc4c6
+    // Params 0
+    // Checksum 0x0, Offset: 0xc79a
     // Size: 0x17f, Type: dev
     function function_c4100098a22c250b()
     {
@@ -5187,8 +5312,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc64d
+    // Params 0
+    // Checksum 0x0, Offset: 0xc921
     // Size: 0x3c, Type: dev
     function function_f2054471c141450c()
     {
@@ -5203,8 +5328,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc691
+    // Params 1
+    // Checksum 0x0, Offset: 0xc965
     // Size: 0x135, Type: dev
     function function_d3ca4f2f302e8de7( playerorg )
     {
@@ -5250,8 +5375,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc7ce
+    // Params 0
+    // Checksum 0x0, Offset: 0xcaa2
     // Size: 0xa6, Type: dev
     function function_689eec6bde3c18d9()
     {
@@ -5279,8 +5404,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc87c
+    // Params 0
+    // Checksum 0x0, Offset: 0xcb50
     // Size: 0x18d, Type: dev
     function function_67ae0f36ccdc36d6()
     {
@@ -5338,8 +5463,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xca11
+    // Params 1
+    // Checksum 0x0, Offset: 0xcce5
     // Size: 0x115, Type: dev
     function botusekillstreak( killstreak )
     {
@@ -5391,8 +5516,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xcb2e
+    // Params 0
+    // Checksum 0x0, Offset: 0xce02
     // Size: 0xad, Type: dev
     function function_4d94248caa9df84()
     {
@@ -5421,8 +5546,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xcbe3
+    // Params 0
+    // Checksum 0x0, Offset: 0xceb7
     // Size: 0x9a, Type: dev
     function function_69aa890d8277ddd5()
     {
@@ -5453,8 +5578,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xcc85
+    // Params 0
+    // Checksum 0x0, Offset: 0xcf59
     // Size: 0x9a, Type: dev
     function function_240f0116344cd1b3()
     {
@@ -5485,8 +5610,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xcd27
+    // Params 0
+    // Checksum 0x0, Offset: 0xcffb
     // Size: 0x80, Type: dev
     function function_731eebf12019c961()
     {
@@ -5501,8 +5626,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xcdaf
+    // Params 0
+    // Checksum 0x0, Offset: 0xd083
     // Size: 0x77, Type: dev
     function function_8a263305b061f543()
     {
@@ -5516,8 +5641,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xce2e
+    // Params 0
+    // Checksum 0x0, Offset: 0xd102
     // Size: 0x47, Type: dev
     function function_b7e6fc2c99a2fa66()
     {
@@ -5536,8 +5661,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xce7d
+    // Params 0
+    // Checksum 0x0, Offset: 0xd151
     // Size: 0x20, Type: dev
     function function_95c542c3d23e8ed5()
     {
@@ -5548,8 +5673,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xcea5
+    // Params 0
+    // Checksum 0x0, Offset: 0xd179
     // Size: 0x9a, Type: dev
     function function_6a769435cb4b49de()
     {
@@ -5571,8 +5696,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xcf47
+    // Params 0
+    // Checksum 0x0, Offset: 0xd21b
     // Size: 0x63, Type: dev
     function function_78cb449e68ad3a33()
     {
@@ -5586,8 +5711,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xcfb2
+    // Params 0
+    // Checksum 0x0, Offset: 0xd286
     // Size: 0x62, Type: dev
     function function_3a192b1ca3dd6a6d()
     {
@@ -5601,8 +5726,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd01c
+    // Params 0
+    // Checksum 0x0, Offset: 0xd2f0
     // Size: 0x3a, Type: dev
     function function_9bfd57a46a0b8120()
     {
@@ -5620,8 +5745,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd05e
+    // Params 0
+    // Checksum 0x0, Offset: 0xd332
     // Size: 0x2f, Type: dev
     function function_c110bb7b83fba1fc()
     {
@@ -5636,8 +5761,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd095
+    // Params 1
+    // Checksum 0x0, Offset: 0xd369
     // Size: 0xbd, Type: dev
     function function_d701da79246ffd5c( delay )
     {
@@ -5666,8 +5791,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd15a
+    // Params 0
+    // Checksum 0x0, Offset: 0xd42e
     // Size: 0x21, Type: dev
     function function_26f66601b72597e0()
     {
@@ -5676,8 +5801,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd183
+    // Params 3
+    // Checksum 0x0, Offset: 0xd457
     // Size: 0x28, Type: dev
     function function_55bbe0a4afb01226( waittime, dvarname, dvarvalue )
     {
@@ -5686,8 +5811,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd1b3
+    // Params 0
+    // Checksum 0x0, Offset: 0xd487
     // Size: 0xd1, Type: dev
     function function_e9dca57ef4039df1()
     {
@@ -5717,8 +5842,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd28c
+    // Params 0
+    // Checksum 0x0, Offset: 0xd560
     // Size: 0x2af, Type: dev
     function addtestclientspawnpoint()
     {
@@ -5809,8 +5934,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd543
+    // Params 0
+    // Checksum 0x0, Offset: 0xd817
     // Size: 0x27, Type: dev
     function showfx()
     {
@@ -5820,8 +5945,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd572
+    // Params 0
+    // Checksum 0x0, Offset: 0xd846
     // Size: 0x20a, Type: dev
     function warpenemies()
     {
@@ -5889,7 +6014,8 @@
                 }
                 else
                 {
-                    for (i = 0; i < warpplayers.size; i++) {
+                    for ( i = 0; i < warpplayers.size ; i++ )
+                    {
                         warp( notbot, warpplayers[ i ], i );
                     }
                 }
@@ -5909,8 +6035,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd784
+    // Params 0
+    // Checksum 0x0, Offset: 0xda58
     // Size: 0x1a0, Type: dev
     function function_444dddd830151a09()
     {
@@ -5984,7 +6110,8 @@
         }
         else
         {
-            for (i = 0; i < warpplayers.size; i++) {
+            for ( i = 0; i < warpplayers.size ; i++ )
+            {
                 warp( notbot, warpplayers[ i ], i );
             }
         }
@@ -5994,8 +6121,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd92c
+    // Params 3
+    // Checksum 0x0, Offset: 0xdc00
     // Size: 0xdc, Type: dev
     function function_a9f60102f1faf3e8( character, offsetfwd, offsetlft )
     {
@@ -6019,8 +6146,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0xda10
+    // Params 3
+    // Checksum 0x0, Offset: 0xdce4
     // Size: 0xcf, Type: dev
     function warp( caller, warpee, idx )
     {
@@ -6041,8 +6168,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xdae7
+    // Params 0
+    // Checksum 0x0, Offset: 0xddbb
     // Size: 0x1f7, Type: dev
     function warpfriendlies()
     {
@@ -6110,7 +6237,8 @@
                 }
                 else
                 {
-                    for (i = 0; i < warpplayers.size; i++) {
+                    for ( i = 0; i < warpplayers.size ; i++ )
+                    {
                         warp( notbot, warpplayers[ i ], i );
                     }
                 }
@@ -6125,8 +6253,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xdce6
+    // Params 0
+    // Checksum 0x0, Offset: 0xdfba
     // Size: 0x12e, Type: dev
     function function_1d7da97245fef737()
     {
@@ -6156,7 +6284,8 @@
         
         spawnpos = function_a9f60102f1faf3e8( notbot );
         
-        for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+        for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+        {
             characterindex = level.var_b15737b9e81b1b62 % level.characters.size;
             character = level.characters[ characterindex ];
             level.var_b15737b9e81b1b62++;
@@ -6183,8 +6312,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xde1c
+    // Params 0
+    // Checksum 0x0, Offset: 0xe0f0
     // Size: 0x131, Type: dev
     function function_87862ab67c8f77de()
     {
@@ -6214,7 +6343,8 @@
         
         spawnpos = function_a9f60102f1faf3e8( notbot );
         
-        for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+        for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+        {
             characterindex = level.var_1224a488fbe3e153 % level.characters.size;
             character = level.characters[ characterindex ];
             level.var_1224a488fbe3e153++;
@@ -6241,9 +6371,9 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xdf55
-    // Size: 0x609, Type: dev
+    // Params 0
+    // Checksum 0x0, Offset: 0xe229
+    // Size: 0x5e7, Type: dev
     function function_17cdeb7626afb432()
     {
         for ( ;; )
@@ -6279,10 +6409,6 @@
             else if ( getdvar( @"hash_ae04ade2c8e72fdc" ) != "<dev string:xca>" )
             {
                 thread function_6dfe999747a36cb2();
-            }
-            else if ( getdvar( @"scr_giveweapon" ) != "<dev string:xca>" )
-            {
-                thread gui_giveweapon();
             }
             else if ( getdvarint( @"hash_4aa285a21e3a2ebe" ) != 0 )
             {
@@ -6442,8 +6568,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe566
+    // Params 0
+    // Checksum 0x0, Offset: 0xe818
     // Size: 0x37a, Type: dev
     function function_74738c3819abb360()
     {
@@ -6540,8 +6666,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe8e8
+    // Params 0
+    // Checksum 0x0, Offset: 0xeb9a
     // Size: 0x11d, Type: dev
     function function_1c7d46262629d29d()
     {
@@ -6576,8 +6702,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xea0d
+    // Params 0
+    // Checksum 0x0, Offset: 0xecbf
     // Size: 0xde, Type: dev
     function function_ce3fb44e346e757a()
     {
@@ -6610,8 +6736,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xeaf3
+    // Params 0
+    // Checksum 0x0, Offset: 0xeda5
     // Size: 0xa7, Type: dev
     function function_6b13277c62c054f6()
     {
@@ -6636,8 +6762,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xeba2
+    // Params 0
+    // Checksum 0x0, Offset: 0xee54
     // Size: 0xca, Type: dev
     function function_b3bb97f140498db5()
     {
@@ -6663,8 +6789,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xec74
+    // Params 0
+    // Checksum 0x0, Offset: 0xef26
     // Size: 0x54, Type: dev
     function function_b39eda08d7912835()
     {
@@ -6683,8 +6809,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xecd0
+    // Params 0
+    // Checksum 0x0, Offset: 0xef82
     // Size: 0xef, Type: dev
     function dbgbullets()
     {
@@ -6722,8 +6848,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xedc7
+    // Params 0
+    // Checksum 0x0, Offset: 0xf079
     // Size: 0x71, Type: dev
     function function_6dfe999747a36cb2()
     {
@@ -6742,65 +6868,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xee40
-    // Size: 0x1d1, Type: dev
-    function gui_giveweapon()
-    {
-        var_b23392514364503b = getdvar( @"scr_giveweapon" );
-        variant = -1;
-        toks = strtok( var_b23392514364503b, "<dev string:x1873>" );
-        
-        if ( toks.size > 1 )
-        {
-            var_b23392514364503b = toks[ 0 ];
-            variant = int( toks[ 1 ] );
-        }
-        
-        if ( isdefined( var_b23392514364503b ) )
-        {
-            weapnew = getweaponrootname( var_b23392514364503b );
-            
-            if ( !function_89497fa763d431c0( weapnew ) )
-            {
-                level.weaponmapdata[ weapnew ] = spawnstruct();
-                level.weaponmapdata[ weapnew ].assetname = var_b23392514364503b;
-                level.weaponmapdata[ weapnew ].group = "<dev string:x1878>";
-            }
-            
-            playerarray = function_13e3c70659983189();
-            
-            foreach ( player in playerarray )
-            {
-                hasnvg = scripts\cp_mp\utility\game_utility::function_d2d2b803a7b741a4();
-                var_c88b10f789adf8eb = scripts\cp_mp\weapon::buildweapon_blueprint( weapnew, undefined, undefined, variant, undefined, undefined, hasnvg );
-                currentweapon = player.currentweapon;
-                player.droppeddeathweapon = undefined;
-                player scripts\mp\weapons::dropweaponfordeath( undefined, "<dev string:xca>" );
-                player.droppeddeathweapon = undefined;
-                
-                if ( player hasweapon( var_c88b10f789adf8eb ) )
-                {
-                    player _takeweapon( var_c88b10f789adf8eb );
-                }
-                
-                if ( isbot( player ) )
-                {
-                    player botsetflag( "<dev string:x188a>", 0 );
-                }
-                
-                player giveweapon( var_c88b10f789adf8eb );
-                player _switchtoweaponimmediate( var_c88b10f789adf8eb );
-                scripts\cp_mp\weapon::fixupplayerweapons( player, weapnew );
-            }
-        }
-        
-        setdevdvar( @"scr_giveweapon", "<dev string:xca>" );
-    }
-
-    // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf019
+    // Params 0
+    // Checksum 0x0, Offset: 0xf0f2
     // Size: 0x3a, Type: dev
     function function_72e55f6d23ab9c08()
     {
@@ -6817,8 +6886,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf05b
+    // Params 0
+    // Checksum 0x0, Offset: 0xf134
     // Size: 0x202, Type: dev
     function gui_spawnweapon()
     {
@@ -6855,7 +6924,7 @@
                 
                 if ( isdefined( centerofmass ) )
                 {
-                    centerofmass = centerofmass[ "<dev string:x18a2>" ];
+                    centerofmass = centerofmass[ "<dev string:x1878>" ];
                 }
                 else
                 {
@@ -6871,20 +6940,20 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf265
+    // Params 0
+    // Checksum 0x0, Offset: 0xf33e
     // Size: 0x5d, Type: dev
     function function_d6a83cf324a42777()
     {
         tuning = float( getdvar( @"hash_6f67d3ada4d28ec5" ) );
         intvalue = function_f3c863dd3265167( tuning );
-        iprintln( "<dev string:x18ae>" + tuning + "<dev string:x18be>" + intvalue );
+        iprintln( "<dev string:x1884>" + tuning + "<dev string:x1894>" + intvalue );
         setdevdvar( @"hash_6f67d3ada4d28ec5", "<dev string:xca>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf2ca
+    // Params 0
+    // Checksum 0x0, Offset: 0xf3a3
     // Size: 0x198, Type: dev
     function function_5bec6fc6eda8f898()
     {
@@ -6925,8 +6994,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf46a
+    // Params 0
+    // Checksum 0x0, Offset: 0xf543
     // Size: 0x164, Type: dev
     function function_9304864c4018f425()
     {
@@ -6964,8 +7033,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf5d6
+    // Params 0
+    // Checksum 0x0, Offset: 0xf6af
     // Size: 0xdf, Type: dev
     function function_51be8168158324f7()
     {
@@ -6994,13 +7063,13 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf6bd
+    // Params 0
+    // Checksum 0x0, Offset: 0xf796
     // Size: 0xa4, Type: dev
     function function_74438b2c9e6463()
     {
         var_607e557985cff3dd = getdvar( @"hash_2e71bdd72d9c9509" );
-        charm = "<dev string:x18cd>" + var_607e557985cff3dd;
+        charm = "<dev string:x18a3>" + var_607e557985cff3dd;
         
         if ( isdefined( charm ) )
         {
@@ -7016,8 +7085,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf769
+    // Params 0
+    // Checksum 0x0, Offset: 0xf842
     // Size: 0x93, Type: dev
     function gui_giveattachment()
     {
@@ -7037,8 +7106,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf804
+    // Params 2
+    // Checksum 0x0, Offset: 0xf8dd
     // Size: 0xa2, Type: dev
     function gui_giveattachment_internal( player, var_effb4ae1788a8b10 )
     {
@@ -7052,7 +7121,7 @@
             
             if ( !isbot( player ) )
             {
-                player iprintlnbold( "<dev string:x18d9>" + var_effb4ae1788a8b10 );
+                player iprintlnbold( "<dev string:x18af>" + var_effb4ae1788a8b10 );
             }
             
             return;
@@ -7066,8 +7135,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf8ae
+    // Params 0
+    // Checksum 0x0, Offset: 0xf987
     // Size: 0x331, Type: dev
     function function_377f1acfb3774426()
     {
@@ -7081,11 +7150,11 @@
         
         if ( categoryindex == 0 )
         {
-            iprintlnbold( "<dev string:x190e>" + modelindex );
+            iprintlnbold( "<dev string:x18e4>" + modelindex );
             
             if ( !isdefined( newweapon.receiver ) )
             {
-                iprintln( "<dev string:x191b>" );
+                iprintln( "<dev string:x18f1>" );
                 return;
             }
             
@@ -7095,11 +7164,11 @@
         }
         else if ( categoryindex == 1 )
         {
-            iprintlnbold( "<dev string:x1948>" + modelindex );
+            iprintlnbold( "<dev string:x191e>" + modelindex );
             
             if ( !isdefined( newweapon.frontpiece ) )
             {
-                iprintln( "<dev string:x1957>" );
+                iprintln( "<dev string:x192d>" );
                 return;
             }
             
@@ -7109,11 +7178,11 @@
         }
         else if ( categoryindex == 2 )
         {
-            iprintlnbold( "<dev string:x1986>" + modelindex );
+            iprintlnbold( "<dev string:x195c>" + modelindex );
             
             if ( !isdefined( newweapon.backpiece ) )
             {
-                iprintln( "<dev string:x1994>" );
+                iprintln( "<dev string:x196a>" );
                 return;
             }
             
@@ -7123,11 +7192,11 @@
         }
         else if ( categoryindex == 3 )
         {
-            iprintlnbold( "<dev string:x19c2>" + modelindex );
+            iprintlnbold( "<dev string:x1998>" + modelindex );
             
             if ( !isdefined( newweapon.magazine ) )
             {
-                iprintln( "<dev string:x19cf>" );
+                iprintln( "<dev string:x19a5>" );
                 return;
             }
             
@@ -7137,11 +7206,11 @@
         }
         else if ( categoryindex == 4 )
         {
-            iprintlnbold( "<dev string:x19fc>" + modelindex );
+            iprintlnbold( "<dev string:x19d2>" + modelindex );
             
             if ( !isdefined( newweapon.scope ) )
             {
-                iprintln( "<dev string:x1a06>" );
+                iprintln( "<dev string:x19dc>" );
                 return;
             }
             
@@ -7151,11 +7220,11 @@
         }
         else if ( categoryindex == 5 )
         {
-            iprintlnbold( "<dev string:x1a30>" + modelindex );
+            iprintlnbold( "<dev string:x1a06>" + modelindex );
             
             if ( !isdefined( newweapon.underbarrel ) )
             {
-                iprintln( "<dev string:x1a40>" );
+                iprintln( "<dev string:x1a16>" );
                 return;
             }
             
@@ -7165,11 +7234,11 @@
         }
         else if ( categoryindex == 6 )
         {
-            iprintlnbold( "<dev string:x1a70>" + modelindex );
+            iprintlnbold( "<dev string:x1a46>" + modelindex );
             
             if ( !isdefined( newweapon.others ) || newweapon.others.size < 1 )
             {
-                iprintln( "<dev string:x1a7b>" );
+                iprintln( "<dev string:x1a51>" );
                 return;
             }
             
@@ -7187,13 +7256,13 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xfbe7
+    // Params 0
+    // Checksum 0x0, Offset: 0xfcc0
     // Size: 0x21d, Type: dev
     function function_1da70102eeb10c0b()
     {
         dvarstring = getdvar( @"hash_5e62b8f4b2dd7d6e" );
-        args = strtok( dvarstring, "<dev string:x1aa5>" );
+        args = strtok( dvarstring, "<dev string:x1a7b>" );
         setdevdvar( @"hash_5e62b8f4b2dd7d6e", "<dev string:xca>" );
         attachmentname = args[ 0 ];
         modelindex = int( args[ 1 ] );
@@ -7231,7 +7300,7 @@
         attachments = scripts\cp_mp\weapon::weaponattachremoveextraattachments( attachments );
         newweapon = scripts\cp_mp\weapon::buildweapon( getweaponrootname( newweapon ), attachments, undefined, "<dev string:xf0>", undefined, var_7809ad191e44fe6a, undefined, undefined, undefined );
         newweapon = newweapon withattachment( attachmentname, modelindex );
-        iprintlnbold( "<dev string:x1aaa>" + attachmentname + "<dev string:x1ac0>" + modelindex );
+        iprintlnbold( "<dev string:x1a80>" + attachmentname + "<dev string:x1a96>" + modelindex );
         player dropitem( oldweapon );
         player giveweapon( newweapon );
         player setweaponammoclip( newweapon, weaponclipsize( newweapon ) );
@@ -7241,8 +7310,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xfe0c
+    // Params 0
+    // Checksum 0x0, Offset: 0xfee5
     // Size: 0x180, Type: dev
     function function_72bdcbf68a00d590()
     {
@@ -7256,8 +7325,9 @@
             
             if ( camoindex != 0 )
             {
-                for (rowindex = 0; tablelookupbyrow( "<dev string:x1add>", rowindex, 1 ) != "<dev string:xca>"; rowindex++) {
-                    camolist[ camolist.size ] = tablelookupbyrow( "<dev string:x1add>", rowindex, 1 );
+                for ( rowindex = 0; tablelookupbyrow( "<dev string:x1ab3>", rowindex, 1 ) != "<dev string:xca>" ; rowindex++ )
+                {
+                    camolist[ camolist.size ] = tablelookupbyrow( "<dev string:x1ab3>", rowindex, 1 );
                 }
                 
                 if ( camoindex < camolist.size )
@@ -7296,8 +7366,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xff94
+    // Params 0
+    // Checksum 0x0, Offset: 0x1006d
     // Size: 0xf8, Type: dev
     function function_cc74ebbb668e7700()
     {
@@ -7324,8 +7394,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10094
+    // Params 0
+    // Checksum 0x0, Offset: 0x1016d
     // Size: 0xaf, Type: dev
     function function_82525648d7c500ed()
     {
@@ -7343,8 +7413,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1014b
+    // Params 2
+    // Checksum 0x0, Offset: 0x10224
     // Size: 0x94, Type: dev
     function function_8555679b81ea1cbe( slotindex, material )
     {
@@ -7361,68 +7431,68 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x101e7
+    // Params 0
+    // Checksum 0x0, Offset: 0x102c0
     // Size: 0x62, Type: dev
     function function_24ef69feb5dcce7d()
     {
         material = getdvar( @"hash_8de4ac9450b61777" );
         setdevdvar( @"hash_8de4ac9450b61777", "<dev string:xca>" );
         newweapon = function_8555679b81ea1cbe( 0, material );
-        iprintlnbold( "<dev string:x1af1>" + newweapon.stickerslot0 + "<dev string:x1b18>" );
+        iprintlnbold( "<dev string:x1ac7>" + newweapon.stickerslot0 + "<dev string:x1aee>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10251
+    // Params 0
+    // Checksum 0x0, Offset: 0x1032a
     // Size: 0x63, Type: dev
     function function_24ef66feb5dcc7e4()
     {
         material = getdvar( @"hash_8de4ad9450b619aa" );
         setdevdvar( @"hash_8de4ad9450b619aa", "<dev string:xca>" );
         newweapon = function_8555679b81ea1cbe( 1, material );
-        iprintlnbold( "<dev string:x1b1d>" + newweapon.stickerslot1 + "<dev string:x1b18>" );
+        iprintlnbold( "<dev string:x1af3>" + newweapon.stickerslot1 + "<dev string:x1aee>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x102bc
+    // Params 0
+    // Checksum 0x0, Offset: 0x10395
     // Size: 0x63, Type: dev
     function function_24ef67feb5dcca17()
     {
         material = getdvar( @"hash_8de4ae9450b61bdd" );
         setdevdvar( @"hash_8de4ae9450b61bdd", "<dev string:xca>" );
         newweapon = function_8555679b81ea1cbe( 2, material );
-        iprintlnbold( "<dev string:x1b44>" + newweapon.stickerslot2 + "<dev string:x1b18>" );
+        iprintlnbold( "<dev string:x1b1a>" + newweapon.stickerslot2 + "<dev string:x1aee>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10327
+    // Params 0
+    // Checksum 0x0, Offset: 0x10400
     // Size: 0x63, Type: dev
     function function_24ef64feb5dcc37e()
     {
         material = getdvar( @"hash_8de4a79450b60c78" );
         setdevdvar( @"hash_8de4a79450b60c78", "<dev string:xca>" );
         newweapon = function_8555679b81ea1cbe( 3, material );
-        iprintlnbold( "<dev string:x1b6b>" + newweapon.stickerslot3 + "<dev string:x1b18>" );
+        iprintlnbold( "<dev string:x1b41>" + newweapon.stickerslot3 + "<dev string:x1aee>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10392
+    // Params 0
+    // Checksum 0x0, Offset: 0x1046b
     // Size: 0x63, Type: dev
     function function_24ef65feb5dcc5b1()
     {
         material = getdvar( @"hash_8de4a89450b60eab" );
         setdevdvar( @"hash_8de4a89450b60eab", "<dev string:xca>" );
         newweapon = function_8555679b81ea1cbe( 4, material );
-        iprintlnbold( "<dev string:x1b92>" + newweapon.var_b39ac546cc8621f8 + "<dev string:x1b18>" );
+        iprintlnbold( "<dev string:x1b68>" + newweapon.var_b39ac546cc8621f8 + "<dev string:x1aee>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x103fd
+    // Params 0
+    // Checksum 0x0, Offset: 0x104d6
     // Size: 0x6f, Type: dev
     function function_e1c83dde130fe5c7()
     {
@@ -7430,13 +7500,13 @@
         
         foreach ( index, player in level.players )
         {
-            player iprintlnbold( "<dev string:x1bb9>" + index );
+            player iprintlnbold( "<dev string:x1b8f>" + index );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10474
+    // Params 0
+    // Checksum 0x0, Offset: 0x1054d
     // Size: 0x30a, Type: dev
     function function_5d6535026d8a0ba8()
     {
@@ -7470,7 +7540,7 @@
                 }
             }
             
-            assertex( isdefined( level.hostplayer ), "<dev string:x1bcb>" );
+            assertex( isdefined( level.hostplayer ), "<dev string:x1ba1>" );
             targetplayer = level.hostplayer;
             
             switch ( var_1cbb266d488421af )
@@ -7534,20 +7604,20 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10786
+    // Params 2
+    // Checksum 0x0, Offset: 0x1085f
     // Size: 0x87, Type: dev
     function function_a64aaa2a58a91089( player, reactive )
     {
         player _setsuit( player.operatorcustomization.suit );
         player.operatorcustomization.var_3291e2cbec055766 = reactive;
         player function_602b3de054f2a81( player.operatorcustomization.var_3291e2cbec055766 );
-        println( "<dev string:x1c0b>" + player.operatorcustomization.var_3291e2cbec055766 );
+        println( "<dev string:x1be1>" + player.operatorcustomization.var_3291e2cbec055766 );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10815
+    // Params 0
+    // Checksum 0x0, Offset: 0x108ee
     // Size: 0xe2, Type: dev
     function function_96c18d9ffd1d401a()
     {
@@ -7567,12 +7637,12 @@
         player function_9cd675a7411b6362( "<dev string:xca>" );
         player function_9cd675a7411b6362( parachute );
         player.operatorcustomization.parachute = parachute;
-        println( "<dev string:x1c26>" + player.operatorcustomization.parachute );
+        println( "<dev string:x1bfc>" + player.operatorcustomization.parachute );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x108ff
+    // Params 0
+    // Checksum 0x0, Offset: 0x109d8
     // Size: 0xce, Type: dev
     function function_b07cec8c9e70afe3()
     {
@@ -7590,12 +7660,12 @@
         }
         
         player.operatorcustomization.brinfilsmokesuffix = contrail;
-        println( "<dev string:x1c42>" + player.operatorcustomization.brinfilsmokesuffix );
+        println( "<dev string:x1c18>" + player.operatorcustomization.brinfilsmokesuffix );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x109d5
+    // Params 0
+    // Checksum 0x0, Offset: 0x10aae
     // Size: 0x30a, Type: dev
     function function_af63b6f9d83af7fe()
     {
@@ -7629,7 +7699,7 @@
                 }
             }
             
-            assertex( isdefined( level.hostplayer ), "<dev string:x1bcb>" );
+            assertex( isdefined( level.hostplayer ), "<dev string:x1ba1>" );
             targetplayer = level.hostplayer;
             
             switch ( var_1cbb266d488421af )
@@ -7693,12 +7763,12 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10ce7
+    // Params 2
+    // Checksum 0x0, Offset: 0x10dc0
     // Size: 0x69f, Type: dev
     function function_c24ed5c1c6a1f2d3( player, skin )
     {
-        assertex( skin != "<dev string:xc5>" && int( skin ) == 0, "<dev string:x1c5d>" );
+        assertex( skin != "<dev string:xc5>" && int( skin ) == 0, "<dev string:x1c33>" );
         player.operatorcustomization.skinref = skin;
         body = scripts\cp_mp\operator::function_8eba78e65f4be793( skin );
         head = scripts\cp_mp\operator::function_223061772e2a61b9( skin );
@@ -7729,35 +7799,35 @@
         }
         
         player scripts\mp\teams::setcharactermodels( bodymodelname, headmodelname, viewmodelname );
-        player notify( "<dev string:x1c98>" );
+        player notify( "<dev string:x1c6e>" );
         
-        if ( isdefined( gender ) && gender == "<dev string:x1ca8>" )
+        if ( isdefined( gender ) && gender == "<dev string:x1c7e>" )
         {
-            player function_555e2d32e2756625( "<dev string:x1ca8>" );
-            player.operatorcustomization.gender = "<dev string:x1ca8>";
+            player function_555e2d32e2756625( "<dev string:x1c7e>" );
+            player.operatorcustomization.gender = "<dev string:x1c7e>";
         }
         else
         {
             player function_555e2d32e2756625( "<dev string:xca>" );
-            player.operatorcustomization.gender = "<dev string:x1cb2>";
+            player.operatorcustomization.gender = "<dev string:x1c88>";
         }
         
-        if ( isdefined( player.operatorcustomization.skinref ) && player.operatorcustomization.skinref == "<dev string:x1cba>" )
+        if ( isdefined( player.operatorcustomization.skinref ) && player.operatorcustomization.skinref == "<dev string:x1c90>" )
         {
-            player setentitysoundcontext( "<dev string:x1cd4>", "<dev string:x1cde>" );
-            player.operatorcustomization.gender = "<dev string:x1ca8>";
+            player setentitysoundcontext( "<dev string:x1caa>", "<dev string:x1cb4>" );
+            player.operatorcustomization.gender = "<dev string:x1c7e>";
         }
         
-        if ( isdefined( player.operatorcustomization.skinref ) && player.operatorcustomization.skinref == "<dev string:x1cf0>" )
+        if ( isdefined( player.operatorcustomization.skinref ) && player.operatorcustomization.skinref == "<dev string:x1cc6>" )
         {
-            player setentitysoundcontext( "<dev string:x1cd4>", "<dev string:x1d0c>" );
-            player.operatorcustomization.gender = "<dev string:x1cb2>";
+            player setentitysoundcontext( "<dev string:x1caa>", "<dev string:x1ce2>" );
+            player.operatorcustomization.gender = "<dev string:x1c88>";
         }
         
-        if ( isdefined( player.operatorcustomization.skinref ) && player.operatorcustomization.skinref == "<dev string:x1d1d>" )
+        if ( isdefined( player.operatorcustomization.skinref ) && player.operatorcustomization.skinref == "<dev string:x1cf3>" )
         {
-            player setentitysoundcontext( "<dev string:x1cd4>", "<dev string:x1d0c>" );
-            player.operatorcustomization.gender = "<dev string:x1cb2>";
+            player setentitysoundcontext( "<dev string:x1caa>", "<dev string:x1ce2>" );
+            player.operatorcustomization.gender = "<dev string:x1c88>";
         }
         
         if ( isdefined( clothtype ) && clothtype != "<dev string:xca>" )
@@ -7830,8 +7900,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1138e
+    // Params 0
+    // Checksum 0x0, Offset: 0x11467
     // Size: 0x188, Type: dev
     function function_5a137678f1239061()
     {
@@ -7868,8 +7938,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1151e
+    // Params 0
+    // Checksum 0x0, Offset: 0x115f7
     // Size: 0x188, Type: dev
     function function_c2b8b450a3cba9c0()
     {
@@ -7906,8 +7976,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x116ae
+    // Params 0
+    // Checksum 0x0, Offset: 0x11787
     // Size: 0x188, Type: dev
     function function_69716a0655c2632f()
     {
@@ -7944,48 +8014,48 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1183e
+    // Params 0
+    // Checksum 0x0, Offset: 0x11917
     // Size: 0x1d, Type: dev
     function function_532fd73f8db5615b()
     {
-        level notify( "<dev string:x1d35>" );
+        level notify( "<dev string:x1d0b>" );
         setdevdvar( @"hash_efa2254b31f42841", 0 );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x11863
+    // Params 0
+    // Checksum 0x0, Offset: 0x1193c
     // Size: 0x1d, Type: dev
     function function_ebaa726e097207e2()
     {
-        level notify( "<dev string:x1d40>" );
+        level notify( "<dev string:x1d16>" );
         setdevdvar( @"hash_ac65f9192e2efd0", 0 );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x11888
+    // Params 0
+    // Checksum 0x0, Offset: 0x11961
     // Size: 0x1d, Type: dev
     function function_daa34434b1f85095()
     {
-        level notify( "<dev string:x1d56>" );
+        level notify( "<dev string:x1d2c>" );
         setdevdvar( @"hash_f8168febda35ecc7", 0 );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x118ad
+    // Params 0
+    // Checksum 0x0, Offset: 0x11986
     // Size: 0x1d, Type: dev
     function function_a0067dff1df866ca()
     {
-        level notify( "<dev string:x1d68>" );
+        level notify( "<dev string:x1d3e>" );
         setdevdvar( @"hash_c70eda82dc2d8ce0", 0 );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x118d2
+    // Params 0
+    // Checksum 0x0, Offset: 0x119ab
     // Size: 0x21a, Type: dev
     function function_6aeecf11ea7f6981()
     {
@@ -8029,7 +8099,7 @@
                 continue;
             }
             
-            print( "<dev string:x1d86>" + assetname + "<dev string:x1dbc>" );
+            print( "<dev string:x1d5c>" + assetname + "<dev string:x1d92>" );
             group = getweapongroup( assetname );
             attachments = getallselectableattachments( assetname );
             
@@ -8037,17 +8107,17 @@
             {
                 if ( !array_contains( attachments, a ) )
                 {
-                    print( "<dev string:x1dd6>" + a + "<dev string:x12ff>" );
+                    print( "<dev string:x1dac>" + a + "<dev string:x12ff>" );
                 }
             }
             
-            print( "<dev string:x1e02>" );
+            print( "<dev string:x1dd8>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x11af4
+    // Params 0
+    // Checksum 0x0, Offset: 0x11bcd
     // Size: 0x1bd, Type: dev
     function function_29eb5f1263c8fb82()
     {
@@ -8057,15 +8127,15 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 7, eflags: 0x0
-    // Checksum 0x0, Offset: 0x11cb9
+    // Params 7
+    // Checksum 0x0, Offset: 0x11d92
     // Size: 0x1f9, Type: dev
     function createweaponstruct( rarity, weaponroot, var_de230719cecf1c95, weaponname, var_c6afd69be9317fc8, locdesc, icon )
     {
         struct = spawnstruct();
-        struct.item = "<dev string:x1e4a>";
+        struct.item = "<dev string:x1e20>";
         struct.blank_0 = "<dev string:xca>";
-        struct.type = "<dev string:x1e52>";
+        struct.type = "<dev string:x1e28>";
         struct.rarity = string( rarity );
         struct.blank_1 = "<dev string:xca>";
         struct.blank_2 = "<dev string:xca>";
@@ -8086,7 +8156,7 @@
             
             if ( int( aid ) > 0 )
             {
-                struct.attachments += "<dev string:x1aa5>" + aid;
+                struct.attachments += "<dev string:x1a7b>" + aid;
             }
         }
         
@@ -8098,8 +8168,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x11eba
+    // Params 1
+    // Checksum 0x0, Offset: 0x11f93
     // Size: 0x116, Type: dev
     function function_bcd4202f4c57f735( s )
     {
@@ -8107,13 +8177,13 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x11fd8
+    // Params 1
+    // Checksum 0x0, Offset: 0x120b1
     // Size: 0x99, Type: dev
     function function_5fb76aeed704755( lines )
     {
-        filepath = "<dev string:x1e5c>";
-        fileid = openfile( filepath, "<dev string:x1e88>" );
+        filepath = "<dev string:x1e32>";
+        fileid = openfile( filepath, "<dev string:x1e5e>" );
         
         foreach ( l in lines )
         {
@@ -8121,12 +8191,12 @@
         }
         
         fileid = closefile( fileid );
-        iprintlnbold( "<dev string:x1e91>" + filepath + "<dev string:x12ff>" );
+        iprintlnbold( "<dev string:x1e67>" + filepath + "<dev string:x12ff>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12079
+    // Params 1
+    // Checksum 0x0, Offset: 0x12152
     // Size: 0x195, Type: dev
     function function_e5640fb672e8a8c2( lootids )
     {
@@ -8154,8 +8224,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12216
+    // Params 0
+    // Checksum 0x0, Offset: 0x122ef
     // Size: 0xc7, Type: dev
     function function_a4ec750e2bc80eee()
     {
@@ -8184,8 +8254,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x122e5
+    // Params 0
+    // Checksum 0x0, Offset: 0x123be
     // Size: 0xd8, Type: dev
     function function_58d040b31ffcfd8b()
     {
@@ -8197,7 +8267,7 @@
             {
                 if ( player ishost() )
                 {
-                    iprintlnbold( "<dev string:x1ea7>" + gesture );
+                    iprintlnbold( "<dev string:x1e7d>" + gesture );
                     
                     if ( !isdefined( player.selectedgesture ) )
                     {
@@ -8215,8 +8285,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x123c5
+    // Params 0
+    // Checksum 0x0, Offset: 0x1249e
     // Size: 0x144, Type: dev
     function function_3487ac5f6da16476()
     {
@@ -8232,7 +8302,7 @@
                     
                     foreach ( weapon in player.equippedweapons )
                     {
-                        if ( issubstr( weapon.basename, "<dev string:x1ebd>" ) )
+                        if ( issubstr( weapon.basename, "<dev string:x1e93>" ) )
                         {
                             player takeweapon( weapon );
                         }
@@ -8240,7 +8310,7 @@
                     
                     player scripts\cp_mp\execution::_giveexecution( execution );
                     player.operatorcustomization.execution = player.executionref;
-                    iprintlnbold( "<dev string:x1ecf>" + execution );
+                    iprintlnbold( "<dev string:x1ea5>" + execution );
                 }
             }
         }
@@ -8249,8 +8319,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12511
+    // Params 0
+    // Checksum 0x0, Offset: 0x125ea
     // Size: 0x17c, Type: dev
     function function_2bfcc7409565e78f()
     {
@@ -8266,7 +8336,7 @@
                     
                     foreach ( weapon in player.equippedweapons )
                     {
-                        if ( issubstr( weapon.basename, "<dev string:x1ee6>" ) || issubstr( weapon.basename, "<dev string:x1ebd>" ) )
+                        if ( issubstr( weapon.basename, "<dev string:x1ebc>" ) || issubstr( weapon.basename, "<dev string:x1e93>" ) )
                         {
                             player takeweapon( weapon );
                         }
@@ -8283,7 +8353,7 @@
                     player giveexecution( scripts\cp_mp\execution::execution_getexecutionbyref( player.executionref ) );
                 }
                 
-                iprintlnbold( "<dev string:x1ef8>" + debugweapon );
+                iprintlnbold( "<dev string:x1ece>" + debugweapon );
                 player thread scripts\cp_mp\execution::watchinexecution();
             }
         }
@@ -8292,8 +8362,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12695
+    // Params 0
+    // Checksum 0x0, Offset: 0x1276e
     // Size: 0x1f7, Type: dev
     function gui_dropweapon()
     {
@@ -8305,7 +8375,7 @@
         
         if ( var_d7998a1681d92243 > 0 )
         {
-            csvfilename = "<dev string:x1f16>" + getsubstr( getweaponrootname( weaponbasename ), 4 ) + "<dev string:x1f26>";
+            csvfilename = "<dev string:x1eec>" + getsubstr( getweaponrootname( weaponbasename ), 4 ) + "<dev string:x1efc>";
             row = -1;
             
             while ( true )
@@ -8318,7 +8388,7 @@
                     break;
                 }
                 
-                if ( isdefined( attachdictionary[ category ] ) || category == "<dev string:x1f3a>" )
+                if ( isdefined( attachdictionary[ category ] ) || category == "<dev string:x1f10>" )
                 {
                     continue;
                 }
@@ -8352,8 +8422,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12894
+    // Params 0
+    // Checksum 0x0, Offset: 0x1296d
     // Size: 0x13c, Type: dev
     function gui_dropammo()
     {
@@ -8405,8 +8475,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x129d8
+    // Params 0
+    // Checksum 0x0, Offset: 0x12ab1
     // Size: 0x42, Type: dev
     function function_cc23c85e2cfce0b6()
     {
@@ -8415,7 +8485,7 @@
         
         while ( true )
         {
-            if ( self buttonpressed( "<dev string:x1f42>" ) )
+            if ( self buttonpressed( "<dev string:x1f18>" ) )
             {
                 self giveandfireoffhand( self.selectedgesture );
                 wait 1;
@@ -8426,8 +8496,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12a22
+    // Params 0
+    // Checksum 0x0, Offset: 0x12afb
     // Size: 0x40, Type: dev
     function function_8e08e2e46ce4aaab()
     {
@@ -8444,67 +8514,68 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12a6a
+    // Params 1
+    // Checksum 0x0, Offset: 0x12b43
     // Size: 0x4d, Type: dev
     function function_81fbd229afdc1593( weaponname )
     {
         if ( !isdefined( level.baseweaponlist[ weaponname ] ) )
         {
-            self iprintlnbold( "<dev string:x1f4d>" + weaponname );
+            self iprintlnbold( "<dev string:x1f23>" + weaponname );
             return;
         }
         
-        self notify( "<dev string:x1f61>" );
+        self notify( "<dev string:x1f37>" );
         self.baseweapon = weaponname;
         thread function_7e660ea4358a031();
         function_aecaa1451c1f3a98();
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12abf
+    // Params 0
+    // Checksum 0x0, Offset: 0x12b98
     // Size: 0xc3, Type: dev
     function thirdpersontoggle()
     {
         self endon( "<dev string:xb69>" );
-        self notifyonplayercommand( "<dev string:x1f74>", "<dev string:xbb9>" );
-        thirdpersonelem = createfontstring( "<dev string:x1f81>", 1.5 );
-        thirdpersonelem setpoint( "<dev string:x1f8c>", "<dev string:x1f8c>", 0, 332 );
-        thirdpersonelem settext( "<dev string:x1f98>" + getdvarint( @"camera_thirdperson" ) + "<dev string:x1fa8>" );
+        self notifyonplayercommand( "<dev string:x1f4a>", "<dev string:xbb9>" );
+        thirdpersonelem = createfontstring( "<dev string:x1f57>", 1.5 );
+        thirdpersonelem setpoint( "<dev string:x1f62>", "<dev string:x1f62>", 0, 332 );
+        thirdpersonelem settext( "<dev string:x1f6e>" + getdvarint( @"camera_thirdperson" ) + "<dev string:x1f7e>" );
         thread destroyondeath( thirdpersonelem );
         
         for ( ;; )
         {
-            self waittill( "<dev string:x1f74>" );
+            self waittill( "<dev string:x1f4a>" );
             setdvar( @"camera_thirdperson", !getdvarint( @"camera_thirdperson" ) );
-            thirdpersonelem settext( "<dev string:x1f98>" + getdvarint( @"camera_thirdperson" ) + "<dev string:x1fa8>" );
+            thirdpersonelem settext( "<dev string:x1f6e>" + getdvarint( @"camera_thirdperson" ) + "<dev string:x1f7e>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12b8a
+    // Params 0
+    // Checksum 0x0, Offset: 0x12c63
     // Size: 0x130, Type: dev
     function function_269edab67ec4e271()
     {
         self endon( "<dev string:xb69>" );
-        self notifyonplayercommand( "<dev string:x1f42>", "<dev string:xb95>" );
+        self notifyonplayercommand( "<dev string:x1f18>", "<dev string:xb95>" );
         camolist = [];
         
-        for (rowindex = 0; tablelookupbyrow( "<dev string:x1add>", rowindex, 1 ) != "<dev string:xca>"; rowindex++) {
-            camolist[ camolist.size ] = tablelookupbyrow( "<dev string:x1add>", rowindex, 1 );
+        for ( rowindex = 0; tablelookupbyrow( "<dev string:x1ab3>", rowindex, 1 ) != "<dev string:xca>" ; rowindex++ )
+        {
+            camolist[ camolist.size ] = tablelookupbyrow( "<dev string:x1ab3>", rowindex, 1 );
         }
         
         self.camoindex = 0;
-        camoelem = createfontstring( "<dev string:x1f81>", 1.5 );
-        camoelem setpoint( "<dev string:x1f8c>", "<dev string:x1f8c>", 0, 312 );
-        camoelem settext( "<dev string:x1fbf>" + tablelookup( "<dev string:x1add>", 0, self.camoindex, 1 ) + "<dev string:x1fc9>" );
+        camoelem = createfontstring( "<dev string:x1f57>", 1.5 );
+        camoelem setpoint( "<dev string:x1f62>", "<dev string:x1f62>", 0, 312 );
+        camoelem settext( "<dev string:x1f95>" + tablelookup( "<dev string:x1ab3>", 0, self.camoindex, 1 ) + "<dev string:x1f9f>" );
         thread destroyondeath( camoelem );
         
         for ( ;; )
         {
-            self waittill( "<dev string:x1f42>" );
+            self waittill( "<dev string:x1f18>" );
             self.camoindex++;
             
             if ( self.camoindex > camolist.size - 1 )
@@ -8512,34 +8583,34 @@
                 self.camoindex = 0;
             }
             
-            camoelem settext( "<dev string:x1fbf>" + tablelookup( "<dev string:x1add>", 0, self.camoindex, 1 ) + "<dev string:x1fc9>" );
+            camoelem settext( "<dev string:x1f95>" + tablelookup( "<dev string:x1ab3>", 0, self.camoindex, 1 ) + "<dev string:x1f9f>" );
             function_aecaa1451c1f3a98();
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12cc2
+    // Params 0
+    // Checksum 0x0, Offset: 0x12d9b
     // Size: 0x15b, Type: dev
     function function_7e660ea4358a031()
     {
         self endon( "<dev string:xb69>" );
-        self endon( "<dev string:x1f61>" );
-        self notifyonplayercommand( "<dev string:x1fe0>", "<dev string:x1fef>" );
+        self endon( "<dev string:x1f37>" );
+        self notifyonplayercommand( "<dev string:x1fb6>", "<dev string:x1fc5>" );
         
         if ( !isdefined( self.weaponelem ) )
         {
-            self.weaponelem = createfontstring( "<dev string:x1f81>", 1.5 );
-            self.weaponelem setpoint( "<dev string:x1f8c>", "<dev string:x1f8c>", 0, 292 );
+            self.weaponelem = createfontstring( "<dev string:x1f57>", 1.5 );
+            self.weaponelem setpoint( "<dev string:x1f62>", "<dev string:x1f62>", 0, 292 );
             thread destroyondeath( self.weaponelem );
         }
         
         self.variantindex = 0;
-        self.weaponelem settext( "<dev string:x1ffc>" + level.baseweaponlist[ self.baseweapon ].variants[ self.variantindex ] + "<dev string:x2008>" );
+        self.weaponelem settext( "<dev string:x1fd2>" + level.baseweaponlist[ self.baseweapon ].variants[ self.variantindex ] + "<dev string:x1fde>" );
         
         for ( ;; )
         {
-            self waittill( "<dev string:x1fe0>" );
+            self waittill( "<dev string:x1fb6>" );
             self.variantindex++;
             
             if ( self.variantindex > level.baseweaponlist[ self.baseweapon ].variants.size - 1 )
@@ -8547,14 +8618,14 @@
                 self.variantindex = 0;
             }
             
-            self.weaponelem settext( "<dev string:x1ffc>" + level.baseweaponlist[ self.baseweapon ].variants[ self.variantindex ] + "<dev string:x2008>" );
+            self.weaponelem settext( "<dev string:x1fd2>" + level.baseweaponlist[ self.baseweapon ].variants[ self.variantindex ] + "<dev string:x1fde>" );
             function_aecaa1451c1f3a98();
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12e25
+    // Params 1
+    // Checksum 0x0, Offset: 0x12efe
     // Size: 0x1d, Type: dev
     function destroyondeath( hudelem )
     {
@@ -8563,8 +8634,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12e4a
+    // Params 0
+    // Checksum 0x0, Offset: 0x12f23
     // Size: 0x66, Type: dev
     function function_aecaa1451c1f3a98()
     {
@@ -8577,8 +8648,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12eb8
+    // Params 0
+    // Checksum 0x0, Offset: 0x12f91
     // Size: 0x6b, Type: dev
     function watchnoclip()
     {
@@ -8591,8 +8662,8 @@
         
         if ( !isbot( player ) && !istestclient( player ) )
         {
-            player notifyonplayercommand( "<dev string:x201a>", "<dev string:x202c>" );
-            player notifyonplayercommand( "<dev string:x203e>", "<dev string:xbb9>" );
+            player notifyonplayercommand( "<dev string:x1ff0>", "<dev string:x2002>" );
+            player notifyonplayercommand( "<dev string:x2014>", "<dev string:xbb9>" );
             player thread playernoclip();
         }
         
@@ -8600,13 +8671,13 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12f2b
+    // Params 0
+    // Checksum 0x0, Offset: 0x13004
     // Size: 0x81, Type: dev
     function playernoclip()
     {
         self endon( "<dev string:x14db>" );
-        self endon( "<dev string:x2052>" );
+        self endon( "<dev string:x2028>" );
         self.var_6c475bd1264d67bc = 0;
         self.var_4fc792011a904560 = 0;
         
@@ -8631,17 +8702,17 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12fb4
+    // Params 0
+    // Checksum 0x0, Offset: 0x1308d
     // Size: 0x3e, Type: dev
     function function_8362ef67970902e0()
     {
         self endon( "<dev string:x14db>" );
-        self endon( "<dev string:x2052>" );
+        self endon( "<dev string:x2028>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x201a>" );
+            self waittill( "<dev string:x1ff0>" );
             self.var_6c475bd1264d67bc = 1;
             wait 0.2;
             self.var_6c475bd1264d67bc = 0;
@@ -8649,17 +8720,17 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12ffa
+    // Params 0
+    // Checksum 0x0, Offset: 0x130d3
     // Size: 0x3e, Type: dev
     function function_d84fbbb6b1926fec()
     {
         self endon( "<dev string:x14db>" );
-        self endon( "<dev string:x2052>" );
+        self endon( "<dev string:x2028>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x203e>" );
+            self waittill( "<dev string:x2014>" );
             self.var_4fc792011a904560 = 1;
             wait 0.2;
             self.var_4fc792011a904560 = 0;
@@ -8667,8 +8738,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13040
+    // Params 0
+    // Checksum 0x0, Offset: 0x13119
     // Size: 0x88, Type: dev
     function watchufo()
     {
@@ -8676,10 +8747,10 @@
         
         if ( isdefined( player ) && !isbot( player ) && !istestclient( player ) )
         {
-            player notifyonplayercommand( "<dev string:x2060>", "<dev string:x202c>" );
-            player notifyonplayercommand( "<dev string:x206f>", "<dev string:xb95>" );
-            player notifyonplayercommand( "<dev string:x207e>", "<dev string:xbfb>" );
-            player notifyonplayercommand( "<dev string:x2088>", "<dev string:x2092>" );
+            player notifyonplayercommand( "<dev string:x2036>", "<dev string:x2002>" );
+            player notifyonplayercommand( "<dev string:x2045>", "<dev string:xb95>" );
+            player notifyonplayercommand( "<dev string:x2054>", "<dev string:xbfb>" );
+            player notifyonplayercommand( "<dev string:x205e>", "<dev string:x2068>" );
             player thread playerufo();
         }
         
@@ -8687,17 +8758,17 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x130d0
+    // Params 0
+    // Checksum 0x0, Offset: 0x131a9
     // Size: 0xf6, Type: dev
     function function_bbd4b5c8add9f273()
     {
         self endon( "<dev string:x14db>" );
-        self endon( "<dev string:x2052>" );
+        self endon( "<dev string:x2028>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x207e>" );
+            self waittill( "<dev string:x2054>" );
             
             if ( getdvarint( @"scr_ufo" ) > 0 )
             {
@@ -8719,17 +8790,17 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x131ce
+    // Params 0
+    // Checksum 0x0, Offset: 0x132a7
     // Size: 0x67, Type: dev
     function function_c2744ae5dcea21ad()
     {
         self endon( "<dev string:x14db>" );
-        self endon( "<dev string:x2052>" );
+        self endon( "<dev string:x2028>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x2088>" );
+            self waittill( "<dev string:x205e>" );
             
             if ( getdvarint( @"scr_ufo" ) > 0 )
             {
@@ -8740,13 +8811,13 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1323d
+    // Params 0
+    // Checksum 0x0, Offset: 0x13316
     // Size: 0x92, Type: dev
     function playerufo()
     {
         self endon( "<dev string:x14db>" );
-        self endon( "<dev string:x2052>" );
+        self endon( "<dev string:x2028>" );
         
         if ( lpcfeaturegated() )
         {
@@ -8775,17 +8846,17 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x132d7
+    // Params 0
+    // Checksum 0x0, Offset: 0x133b0
     // Size: 0x3e, Type: dev
     function function_eca8d9e76233ce9d()
     {
         self endon( "<dev string:x14db>" );
-        self endon( "<dev string:x2052>" );
+        self endon( "<dev string:x2028>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x2060>" );
+            self waittill( "<dev string:x2036>" );
             self.var_f78ebfaa82781031 = 1;
             wait 0.2;
             self.var_f78ebfaa82781031 = 0;
@@ -8793,17 +8864,17 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1331d
+    // Params 0
+    // Checksum 0x0, Offset: 0x133f6
     // Size: 0x3e, Type: dev
     function function_e8a05aada0294d89()
     {
         self endon( "<dev string:x14db>" );
-        self endon( "<dev string:x2052>" );
+        self endon( "<dev string:x2028>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x206f>" );
+            self waittill( "<dev string:x2045>" );
             self.var_55caa385951974a5 = 1;
             wait 0.2;
             self.var_55caa385951974a5 = 0;
@@ -8811,8 +8882,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13363
+    // Params 0
+    // Checksum 0x0, Offset: 0x1343c
     // Size: 0xd3, Type: dev
     function printperks()
     {
@@ -8841,37 +8912,37 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1343e
+    // Params 0
+    // Checksum 0x0, Offset: 0x13517
     // Size: 0x139, Type: dev
     function function_8f1bc9ff072e55f3()
     {
         count = function_8140890dcf1d2c83();
-        println( "<dev string:x209e>" + self.name + "<dev string:x20b7>" + count + "<dev string:x20c4>" );
+        println( "<dev string:x2074>" + self.name + "<dev string:x208d>" + count + "<dev string:x209a>" );
         
         foreach ( perk, value in self.perks )
         {
             sval = ter_op( value < 10, "<dev string:xc5>", "<dev string:xca>" ) + value;
-            println( sval + "<dev string:x20cc>" + perk );
+            println( sval + "<dev string:x20a2>" + perk );
         }
         
         if ( self.perksblocked.size > 0 )
         {
-            println( "<dev string:x20d3>" );
+            println( "<dev string:x20a9>" );
             
             foreach ( perk, value in self.perksblocked )
             {
                 sval = ter_op( value < 10, "<dev string:xc5>", "<dev string:xca>" ) + value;
-                println( sval + "<dev string:x20cc>" + perk );
+                println( sval + "<dev string:x20a2>" + perk );
             }
         }
         
-        println( "<dev string:x20e7>" );
+        println( "<dev string:x20bd>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1357f
+    // Params 0
+    // Checksum 0x0, Offset: 0x13658
     // Size: 0x8a, Type: dev
     function function_b0211c9e3a276f99()
     {
@@ -8888,13 +8959,13 @@
         if ( !isdefined( level.var_123ab3758e7ca34d ) )
         {
             level.var_123ab3758e7ca34d = 1;
-            iprintlnbold( "<dev string:x20f2>" );
+            iprintlnbold( "<dev string:x20c8>" );
             level thread function_d9ccd984ecda554();
         }
         else
         {
-            iprintlnbold( "<dev string:x210b>" );
-            level notify( "<dev string:x2125>" );
+            iprintlnbold( "<dev string:x20e1>" );
+            level notify( "<dev string:x20fb>" );
             level.var_123ab3758e7ca34d = undefined;
         }
         
@@ -8903,38 +8974,38 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13611
+    // Params 0
+    // Checksum 0x0, Offset: 0x136ea
     // Size: 0x24, Type: dev
     function function_d9ccd984ecda554()
     {
-        level endon( "<dev string:x2125>" );
+        level endon( "<dev string:x20fb>" );
         
         while ( true )
         {
             function_fae2bd7fe8ffb6e8();
-            level waittill( "<dev string:x213e>" );
+            level waittill( "<dev string:x2114>" );
             waittillframeend();
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1363d
+    // Params 0
+    // Checksum 0x0, Offset: 0x13716
     // Size: 0x78, Type: dev
     function function_fae2bd7fe8ffb6e8()
     {
         foreach ( player in level.players )
         {
             count = player function_8140890dcf1d2c83();
-            player iprintlnbold( "<dev string:x2153>" + count );
+            player iprintlnbold( "<dev string:x2129>" + count );
             player function_8f1bc9ff072e55f3();
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x136bd
+    // Params 0
+    // Checksum 0x0, Offset: 0x13796
     // Size: 0x63, Type: dev
     function function_8140890dcf1d2c83()
     {
@@ -8949,8 +9020,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13728
+    // Params 0
+    // Checksum 0x0, Offset: 0x13801
     // Size: 0xc4, Type: dev
     function devgiveperks()
     {
@@ -8978,8 +9049,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x137f4
+    // Params 0
+    // Checksum 0x0, Offset: 0x138cd
     // Size: 0x93, Type: dev
     function devclearperks()
     {
@@ -9004,8 +9075,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1388f
+    // Params 0
+    // Checksum 0x0, Offset: 0x13968
     // Size: 0x51, Type: dev
     function function_eaf8d13254082879()
     {
@@ -9019,14 +9090,14 @@
             wait 1;
         }
         
-        game[ "<dev string:x2163>" ] = 2400;
+        game[ "<dev string:x2139>" ] = 2400;
         setdevdvar( @"hash_f0b8c004a14db0a2", "<dev string:xca>" );
         thread function_eaf8d13254082879();
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x138e8
+    // Params 0
+    // Checksum 0x0, Offset: 0x139c1
     // Size: 0xa8, Type: dev
     function function_80ababd8270dc6fd()
     {
@@ -9050,8 +9121,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13998
+    // Params 0
+    // Checksum 0x0, Offset: 0x13a71
     // Size: 0xd3, Type: dev
     function devhideviewmodel()
     {
@@ -9071,12 +9142,12 @@
         {
             foreach ( player in level.players )
             {
-                player setviewmodel( "<dev string:x2183>" );
+                player setviewmodel( "<dev string:x2159>" );
             }
         }
         else
         {
-            setdevdvar( @"hash_435b27b2358cbe5", "<dev string:x219b>" );
+            setdevdvar( @"hash_435b27b2358cbe5", "<dev string:x2171>" );
         }
         
         setdevdvar( @"hash_104f4546b7c78762", "<dev string:xca>" );
@@ -9084,8 +9155,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13a73
+    // Params 0
+    // Checksum 0x0, Offset: 0x13b4c
     // Size: 0x51, Type: dev
     function function_eaf8d03254082646()
     {
@@ -9099,14 +9170,14 @@
             wait 1;
         }
         
-        game[ "<dev string:x2163>" ] = 4800;
+        game[ "<dev string:x2139>" ] = 4800;
         setdevdvar( @"hash_f0b8c104a14db2d5", "<dev string:xca>" );
         thread function_eaf8d03254082646();
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13acc
+    // Params 0
+    // Checksum 0x0, Offset: 0x13ba5
     // Size: 0x93, Type: dev
     function function_2b05a1bb91e36782()
     {
@@ -9131,8 +9202,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13b67
+    // Params 0
+    // Checksum 0x0, Offset: 0x13c40
     // Size: 0xd6, Type: dev
     function function_53a0f5e4d6bbc7a4()
     {
@@ -9166,8 +9237,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13c45
+    // Params 0
+    // Checksum 0x0, Offset: 0x13d1e
     // Size: 0x5e, Type: dev
     function function_179953844e4b32a3()
     {
@@ -9188,8 +9259,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13cab
+    // Params 0
+    // Checksum 0x0, Offset: 0x13d84
     // Size: 0x26c, Type: dev
     function function_d274538e2f24b500()
     {
@@ -9232,7 +9303,7 @@
             }
             
             wait 0.1;
-            _magicbullet( makeweapon( "<dev string:x21fe>" ), bot.origin + ( 0, 0, 35 ), notbot.origin + ( 0, 0, 35 ), bot );
+            _magicbullet( makeweapon( "<dev string:x21d4>" ), bot.origin + ( 0, 0, 35 ), notbot.origin + ( 0, 0, 35 ), bot );
         }
         
         setdevdvar( @"hash_58d027ad37e05b46", "<dev string:xca>" );
@@ -9240,8 +9311,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13f1f
+    // Params 0
+    // Checksum 0x0, Offset: 0x13ff8
     // Size: 0xbf, Type: dev
     function function_575159fea0eac66b()
     {
@@ -9268,8 +9339,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13fe6
+    // Params 2
+    // Checksum 0x0, Offset: 0x140bf
     // Size: 0x224, Type: dev
     function getbot( notbot, var_fc019006dbdc298b )
     {
@@ -9358,8 +9429,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14212
+    // Params 0
+    // Checksum 0x0, Offset: 0x142eb
     // Size: 0x7c, Type: dev
     function function_69dffe7a5cb1b4b9()
     {
@@ -9375,8 +9446,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14296
+    // Params 0
+    // Checksum 0x0, Offset: 0x1436f
     // Size: 0xed, Type: dev
     function function_5cc7bbf54f71fa3()
     {
@@ -9392,13 +9463,13 @@
         
         if ( isdefined( level.ingraceperiod ) && level.ingraceperiod )
         {
-            level notify( "<dev string:x220d>" );
-            level notify( "<dev string:x2220>" );
+            level notify( "<dev string:x21e3>" );
+            level notify( "<dev string:x21f6>" );
             
             foreach ( p in level.players )
             {
-                p setclientomnvar( "<dev string:x2238>", 0 );
-                p setclientomnvar( "<dev string:x2254>", 1 );
+                p setclientomnvar( "<dev string:x220e>", 0 );
+                p setclientomnvar( "<dev string:x222a>", 1 );
                 scripts\mp\playerlogic::clearprematchlook( p );
                 p _freezecontrols( 0, 1 );
             }
@@ -9409,8 +9480,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1438b
+    // Params 0
+    // Checksum 0x0, Offset: 0x14464
     // Size: 0x42, Type: dev
     function function_f4f9fc0c0543a738()
     {
@@ -9418,7 +9489,7 @@
         
         if ( timelimit_maprestart >= 0 )
         {
-            setdevdvar( @"hash_b1f216df6049c46a", timelimit_maprestart );
+            setdevdvar( @"scr_devchangetimelimit", timelimit_maprestart );
         }
         
         function_2384873117c9fee0();
@@ -9426,32 +9497,32 @@
 
     // Namespace dev / scripts\mp\dev
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x143d5
+    // Checksum 0x0, Offset: 0x144ae
     // Size: 0x110, Type: dev
     function private function_2384873117c9fee0()
     {
         while ( true )
         {
-            if ( getdvarfloat( @"hash_b1f216df6049c46a", -1 ) >= 0 )
+            if ( getdvarfloat( @"scr_devchangetimelimit", -1 ) >= 0 )
             {
                 break;
             }
             
-            if ( getdvarfloat( @"hash_b1f216df6049c46a", -1 ) == -2 )
+            if ( getdvarfloat( @"scr_devchangetimelimit", -1 ) == -2 )
             {
                 timelimit = scripts\mp\utility\game::gettimelimit();
-                setdevdvar( @"hash_b1f216df6049c46a", int( timelimit / 2 ) );
+                setdevdvar( @"scr_devchangetimelimit", int( timelimit / 2 ) );
                 break;
             }
             
             wait 1;
         }
         
-        timelimit = getdvarfloat( @"hash_b1f216df6049c46a" );
+        timelimit = getdvarfloat( @"scr_devchangetimelimit" );
         setdevdvar( @"hash_9303077b6b67dda6", timelimit );
-        setdevdvar( @"hash_b1f216df6049c46a", -1 );
+        setdevdvar( @"scr_devchangetimelimit", -1 );
         level.starttime = gettime();
-        gamemode = hashcat( @"scr_", getgametype(), "<dev string:x226c>" );
+        gamemode = hashcat( @"scr_", getgametype(), "<dev string:x2242>" );
         level.watchdvars[ gamemode ].value = timelimit;
         level.overridewatchdvars[ gamemode ] = timelimit;
         setdevdvar( gamemode, timelimit );
@@ -9460,17 +9531,17 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x144ed
+    // Params 0
+    // Checksum 0x0, Offset: 0x145c6
     // Size: 0x44, Type: dev
     function disableforfeit()
     {
         while ( true )
         {
-            if ( getdvarfloat( @"hash_783f25d038fa2819" ) == 1 )
+            if ( getdvarfloat( @"scr_disable_forfeit" ) == 1 )
             {
                 level.disableforfeit = 1;
-                level notify( "<dev string:x227a>" );
+                level notify( "<dev string:x2250>" );
             }
             else
             {
@@ -9482,8 +9553,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14539
+    // Params 0
+    // Checksum 0x0, Offset: 0x14612
     // Size: 0x153, Type: dev
     function function_b35d4a9546104424()
     {
@@ -9504,7 +9575,7 @@
         switch ( getdvarint( @"hash_18cc90e3fd22526a" ) )
         {
             case 0:
-                notbot notify( "<dev string:x228b>" );
+                notbot notify( "<dev string:x2261>" );
                 
                 if ( isdefined( notbot.var_4c012b00b670c7c1 ) )
                 {
@@ -9520,8 +9591,8 @@
             case 1:
                 notbot.var_4c012b00b670c7c1 = notbot createprimaryprogressbar( 200, 250 );
                 notbot.var_a3616d148441d592 = notbot createprimaryprogressbartext( 200, 250 );
-                notbot.var_a3616d148441d592 setpoint( "<dev string:x229e>", undefined, level.primaryprogressbartextx - 150, level.primaryprogressbartexty + 250 );
-                notbot.var_a3616d148441d592 settext( "<dev string:x22a7>" );
+                notbot.var_a3616d148441d592 setpoint( "<dev string:x2274>", undefined, level.primaryprogressbartextx - 150, level.primaryprogressbartexty + 250 );
+                notbot.var_a3616d148441d592 settext( "<dev string:x227d>" );
                 notbot thread function_fd92cd457ce53d53();
                 break;
         }
@@ -9530,18 +9601,18 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14694
+    // Params 0
+    // Checksum 0x0, Offset: 0x1476d
     // Size: 0x13, Type: dev
     function function_fd92cd457ce53d53()
     {
         level endon( "<dev string:x101>" );
-        self endon( "<dev string:x228b>" );
+        self endon( "<dev string:x2261>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x146af
+    // Params 0
+    // Checksum 0x0, Offset: 0x14788
     // Size: 0x123, Type: dev
     function function_b4a1b56a2c46ae2d()
     {
@@ -9562,7 +9633,7 @@
         switch ( getdvarint( @"hash_a468c3040709501b" ) )
         {
             case 0:
-                notbot notify( "<dev string:x22b4>" );
+                notbot notify( "<dev string:x228a>" );
                 
                 if ( isdefined( notbot.var_450ee4f468089512 ) )
                 {
@@ -9578,7 +9649,7 @@
             case 1:
                 notbot.var_450ee4f468089512 = notbot createprimaryprogressbar( 200, 200 );
                 notbot.var_44cdc709e589d8b9 = notbot createprimaryprogressbartext( 200, 200 );
-                notbot.var_44cdc709e589d8b9 settext( "<dev string:x22c7>" );
+                notbot.var_44cdc709e589d8b9 settext( "<dev string:x229d>" );
                 notbot thread function_c932c71bd99a784a();
                 break;
         }
@@ -9587,13 +9658,13 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x147da
+    // Params 0
+    // Checksum 0x0, Offset: 0x148b3
     // Size: 0xd5, Type: dev
     function function_c932c71bd99a784a()
     {
         level endon( "<dev string:x101>" );
-        self endon( "<dev string:x22b4>" );
+        self endon( "<dev string:x228a>" );
         prevxp = getrankxp();
         
         while ( true )
@@ -9614,7 +9685,7 @@
                 
                 self.var_450ee4f468089512 updatebar( barfrac, 0 );
                 prevxp = currxp;
-                self.var_44cdc709e589d8b9 settext( "<dev string:x22d4>" + currxp + "<dev string:x22e2>" + nextxp + "<dev string:x22f2>" + rank + 1 );
+                self.var_44cdc709e589d8b9 settext( "<dev string:x22aa>" + currxp + "<dev string:x22b8>" + nextxp + "<dev string:x22c8>" + rank + 1 );
             }
             
             waitframe();
@@ -9622,8 +9693,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x148b7
+    // Params 0
+    // Checksum 0x0, Offset: 0x14990
     // Size: 0x287, Type: dev
     function devhelipathdebugdraw()
     {
@@ -9637,7 +9708,7 @@
         maxdrawtime = 10;
         drawtime = maxdrawtime;
         origintextoffset = ( 0, 0, -30 );
-        endonmsg = "<dev string:x22fc>";
+        endonmsg = "<dev string:x22d2>";
         
         while ( true )
         {
@@ -9711,8 +9782,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14b46
+    // Params 0
+    // Checksum 0x0, Offset: 0x14c1f
     // Size: 0x245, Type: dev
     function function_c3c888333a91da1()
     {
@@ -9726,13 +9797,13 @@
         maxdrawtime = 10;
         drawtime = maxdrawtime;
         origintextoffset = ( 0, 0, -30 );
-        endonmsg = "<dev string:x235c>";
+        endonmsg = "<dev string:x2332>";
         
         while ( true )
         {
             if ( getdvarint( @"hash_b048e9c4cba3bb37" ) > 0 )
             {
-                script_structs = getstructarray( "<dev string:x237b>", "<dev string:x239a>" );
+                script_structs = getstructarray( "<dev string:x2351>", "<dev string:x2370>" );
                 
                 foreach ( ent in script_structs )
                 {
@@ -9748,7 +9819,7 @@
                     
                     if ( isdefined( ent.radius ) )
                     {
-                        print3d( ent.origin + origintextoffset * 2, "<dev string:x23af>" + ent.radius );
+                        print3d( ent.origin + origintextoffset * 2, "<dev string:x2385>" + ent.radius );
                     }
                 }
             }
@@ -9758,8 +9829,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14d93
+    // Params 0
+    // Checksum 0x0, Offset: 0x14e6c
     // Size: 0xcd, Type: dev
     function draworiginlines()
     {
@@ -9772,8 +9843,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14e68
+    // Params 4
+    // Checksum 0x0, Offset: 0x14f41
     // Size: 0x57, Type: dev
     function drawtargetnametext( textcolor, textalpha, textscale, textoffset )
     {
@@ -9786,8 +9857,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14ec7
+    // Params 4
+    // Checksum 0x0, Offset: 0x14fa0
     // Size: 0x98, Type: dev
     function draworigintext( textcolor, textalpha, textscale, textoffset )
     {
@@ -9796,30 +9867,30 @@
             textoffset = ( 0, 0, 0 );
         }
         
-        originstring = "<dev string:x23bb>" + self.origin[ 0 ] + "<dev string:x3e9>" + self.origin[ 1 ] + "<dev string:x3e9>" + self.origin[ 2 ] + "<dev string:x458>";
+        originstring = "<dev string:x2391>" + self.origin[ 0 ] + "<dev string:x3e9>" + self.origin[ 1 ] + "<dev string:x3e9>" + self.origin[ 2 ] + "<dev string:x458>";
         print3d( self.origin + textoffset, originstring, textcolor, textalpha, textscale );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x14f67
+    // Params 4
+    // Checksum 0x0, Offset: 0x15040
     // Size: 0x98, Type: dev
     function drawspeedacceltext( textcolor, textalpha, textscale, textoffset )
     {
         if ( isdefined( self.script_airspeed ) )
         {
-            print3d( self.origin + ( 0, 0, textoffset[ 2 ] * 2 ), "<dev string:x23c0>" + self.script_airspeed, textcolor, textalpha, textscale );
+            print3d( self.origin + ( 0, 0, textoffset[ 2 ] * 2 ), "<dev string:x2396>" + self.script_airspeed, textcolor, textalpha, textscale );
         }
         
         if ( isdefined( self.script_accel ) )
         {
-            print3d( self.origin + ( 0, 0, textoffset[ 2 ] * 3 ), "<dev string:x23d4>" + self.script_accel, textcolor, textalpha, textscale );
+            print3d( self.origin + ( 0, 0, textoffset[ 2 ] * 3 ), "<dev string:x23aa>" + self.script_accel, textcolor, textalpha, textscale );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 7, eflags: 0x0
-    // Checksum 0x0, Offset: 0x15007
+    // Params 7
+    // Checksum 0x0, Offset: 0x150e0
     // Size: 0xe9, Type: dev
     function drawpath( linecolor, textcolor, textalpha, textscale, textoffset, drawtime, endonmsg )
     {
@@ -9832,7 +9903,7 @@
             enttarget = getent( ent.target, "<dev string:xfbc>" );
             ent thread drawpathsegment( enttarget, linecolor, textcolor, textalpha, textscale, textoffset, drawtime, endonmsg );
             
-            if ( ent.targetname == "<dev string:x2327>" )
+            if ( ent.targetname == "<dev string:x22fd>" )
             {
                 entfirsttarget = ent.target;
             }
@@ -9847,8 +9918,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 8, eflags: 0x0
-    // Checksum 0x0, Offset: 0x150f8
+    // Params 8
+    // Checksum 0x0, Offset: 0x151d1
     // Size: 0x88, Type: dev
     function drawpathsegment( enttarget, linecolor, textcolor, textalpha, textscale, textoffset, drawtime, endonmsg )
     {
@@ -9864,8 +9935,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x15188
+    // Params 0
+    // Checksum 0x0, Offset: 0x15261
     // Size: 0x1bf, Type: dev
     function function_eb556484559de206()
     {
@@ -9879,13 +9950,13 @@
         maxdrawtime = 10;
         drawtime = maxdrawtime;
         origintextoffset = ( 0, 0, -30 );
-        endonmsg = "<dev string:x23e5>";
+        endonmsg = "<dev string:x23bb>";
         
         while ( true )
         {
             if ( getdvarint( @"hash_af596796ae351a3c" ) > 0 )
             {
-                script_origins = getentarray( "<dev string:x2408>", "<dev string:xfbc>" );
+                script_origins = getentarray( "<dev string:x23de>", "<dev string:xfbc>" );
                 
                 foreach ( ent in script_origins )
                 {
@@ -9922,8 +9993,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1534f
+    // Params 0
+    // Checksum 0x0, Offset: 0x15428
     // Size: 0x1c5, Type: dev
     function function_cf49861d75a5ec29()
     {
@@ -9944,30 +10015,30 @@
                 continue;
             }
             
-            if ( getdvar( @"hash_f901de8bb079b09b" ) == "<dev string:x241e>" )
+            if ( getdvar( @"hash_f901de8bb079b09b" ) == "<dev string:x23f4>" )
             {
                 println( player.name );
                 
                 foreach ( challenge, value in player.challengedata )
                 {
-                    if ( issubstr( challenge, "<dev string:x2427>" ) && value )
+                    if ( issubstr( challenge, "<dev string:x23fd>" ) && value )
                     {
-                        println( "<dev string:x2431>" + challenge );
+                        println( "<dev string:x2407>" + challenge );
                     }
                 }
                 
                 continue;
             }
             
-            if ( getdvar( @"hash_f901de8bb079b09b" ) == "<dev string:x243c>" )
+            if ( getdvar( @"hash_f901de8bb079b09b" ) == "<dev string:x2412>" )
             {
                 println( player.name );
                 
                 foreach ( challenge, value in player.challengedata )
                 {
-                    if ( issubstr( challenge, "<dev string:x2446>" ) && value )
+                    if ( issubstr( challenge, "<dev string:x241c>" ) && value )
                     {
-                        println( "<dev string:x2451>" + challenge );
+                        println( "<dev string:x2427>" + challenge );
                     }
                 }
             }
@@ -9978,15 +10049,15 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1551c
+    // Params 0
+    // Checksum 0x0, Offset: 0x155f5
     // Size: 0x17f, Type: dev
     function reflectionprobe_hide_hp()
     {
-        neutralpoint = getentarray( "<dev string:x245d>", "<dev string:xfbc>" );
-        enemypoint = getentarray( "<dev string:x2476>", "<dev string:xfbc>" );
-        friendpoint = getentarray( "<dev string:x2495>", "<dev string:xfbc>" );
-        contestpoint = getentarray( "<dev string:x24b5>", "<dev string:xfbc>" );
+        neutralpoint = getentarray( "<dev string:x2433>", "<dev string:xfbc>" );
+        enemypoint = getentarray( "<dev string:x244c>", "<dev string:xfbc>" );
+        friendpoint = getentarray( "<dev string:x246b>", "<dev string:xfbc>" );
+        contestpoint = getentarray( "<dev string:x248b>", "<dev string:xfbc>" );
         
         foreach ( zone in neutralpoint )
         {
@@ -10010,47 +10081,47 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x156a3
+    // Params 0
+    // Checksum 0x0, Offset: 0x1577c
     // Size: 0xe5, Type: dev
     function reflectionprobe_hide_front()
     {
-        var_a5d9ff994b1d7ab6 = getent( "<dev string:x24d6>", "<dev string:xfbc>" );
+        var_a5d9ff994b1d7ab6 = getent( "<dev string:x24ac>", "<dev string:xfbc>" );
         
         if ( isdefined( var_a5d9ff994b1d7ab6 ) )
         {
             var_a5d9ff994b1d7ab6 hide();
         }
         
-        var_a5d9fe994b1d7883 = getent( "<dev string:x24f9>", "<dev string:xfbc>" );
+        var_a5d9fe994b1d7883 = getent( "<dev string:x24cf>", "<dev string:xfbc>" );
         
         if ( isdefined( var_a5d9fe994b1d7883 ) )
         {
             var_a5d9fe994b1d7883 hide();
         }
         
-        var_a5da04994b1d85b5 = getent( "<dev string:x251b>", "<dev string:xfbc>" );
+        var_a5da04994b1d85b5 = getent( "<dev string:x24f1>", "<dev string:xfbc>" );
         
         if ( isdefined( var_a5da04994b1d85b5 ) )
         {
             var_a5da04994b1d85b5 hide();
         }
         
-        var_a57411994aac8dfb = getent( "<dev string:x253f>", "<dev string:xfbc>" );
+        var_a57411994aac8dfb = getent( "<dev string:x2515>", "<dev string:xfbc>" );
         
         if ( isdefined( var_a57411994aac8dfb ) )
         {
             var_a57411994aac8dfb hide();
         }
         
-        var_a57412994aac902e = getent( "<dev string:x2560>", "<dev string:xfbc>" );
+        var_a57412994aac902e = getent( "<dev string:x2536>", "<dev string:xfbc>" );
         
         if ( isdefined( var_a57412994aac902e ) )
         {
             var_a57412994aac902e hide();
         }
         
-        var_a57414994aac9494 = getent( "<dev string:x2580>", "<dev string:xfbc>" );
+        var_a57414994aac9494 = getent( "<dev string:x2556>", "<dev string:xfbc>" );
         
         if ( isdefined( var_a57414994aac9494 ) )
         {
@@ -10059,8 +10130,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x15790
+    // Params 0
+    // Checksum 0x0, Offset: 0x15869
     // Size: 0x170, Type: dev
     function gotonextspawn()
     {
@@ -10094,8 +10165,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x15908
+    // Params 0
+    // Checksum 0x0, Offset: 0x159e1
     // Size: 0x17c, Type: dev
     function gotoprevspawn()
     {
@@ -10129,8 +10200,8 @@
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x15a8c
+    // Params 0
+    // Checksum 0x0, Offset: 0x15b65
     // Size: 0xac, Type: dev
     function devaliengiveplayersmoney()
     {
@@ -10158,14 +10229,15 @@
 #/
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15b40
+// Params 0
+// Checksum 0x0, Offset: 0x15c19
 // Size: 0x9d
 function spam_points_popup()
 {
     scoreevents = [ #"headshot", #"avenger", #"longshot", #"posthumous", #"double", #"triple", #"multi" ];
     
-    for (i = 0; i < scoreevents.size; i++) {
+    for ( i = 0; i < scoreevents.size ; i++ )
+    {
         thread scripts\mp\rank::scorepointspopup( 100 );
         thread scripts\mp\rank::scoreeventpopup( scoreevents[ i ] );
         wait 2;
@@ -10175,8 +10247,8 @@ function spam_points_popup()
 /#
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x15be5
+    // Params 0
+    // Checksum 0x0, Offset: 0x15cbe
     // Size: 0xc9, Type: dev
     function function_7ce9934f6628c684()
     {
@@ -10217,8 +10289,8 @@ function spam_points_popup()
 #/
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15cb6
+// Params 0
+// Checksum 0x0, Offset: 0x15d8f
 // Size: 0xd7
 function devlistinventory()
 {
@@ -10263,15 +10335,15 @@ function devlistinventory()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d95
+// Params 3
+// Checksum 0x0, Offset: 0x15e6e
 // Size: 0x138
 function devprintweaponlist( list, msg, printbold )
 {
     /#
-        println( "<dev string:x25a2>" );
-        println( "<dev string:x25cf>" + msg );
-        println( "<dev string:x25a2>" );
+        println( "<dev string:x2578>" );
+        println( "<dev string:x25a5>" + msg );
+        println( "<dev string:x2578>" );
         
         if ( isdefined( list ) && list.size > 0 )
         {
@@ -10280,12 +10352,12 @@ function devprintweaponlist( list, msg, printbold )
                 clipammo = self getweaponammoclip( weapon );
                 stockammo = self getweaponammostock( weapon );
                 var_239ede92ef726510 = getcompleteweaponname( weapon );
-                weapmsg = "<dev string:x25e3>" + var_239ede92ef726510 + "<dev string:x31a>" + clipammo + "<dev string:x1634>" + stockammo;
+                weapmsg = "<dev string:x25b9>" + var_239ede92ef726510 + "<dev string:x31a>" + clipammo + "<dev string:x1634>" + stockammo;
                 weapclass = weaponclass( var_239ede92ef726510 );
                 
                 if ( isdefined( weapclass ) )
                 {
-                    weapmsg = weapmsg + "<dev string:x25e9>" + weapclass;
+                    weapmsg = weapmsg + "<dev string:x25bf>" + weapclass;
                 }
                 
                 println( weapmsg );
@@ -10298,16 +10370,16 @@ function devprintweaponlist( list, msg, printbold )
         }
         else
         {
-            println( "<dev string:x25f4>" );
+            println( "<dev string:x25ca>" );
         }
         
-        println( "<dev string:x25a2>" );
+        println( "<dev string:x2578>" );
     #/
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ed5
+// Params 0
+// Checksum 0x0, Offset: 0x15fae
 // Size: 0xd9
 function function_4e64ae8b36808971()
 {
@@ -10332,8 +10404,8 @@ function function_4e64ae8b36808971()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15fb6
+// Params 0
+// Checksum 0x0, Offset: 0x1608f
 // Size: 0x151
 function devgivesuperthink()
 {
@@ -10380,8 +10452,8 @@ function devgivesuperthink()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1610f
+// Params 0
+// Checksum 0x0, Offset: 0x161e8
 // Size: 0x97
 function function_41316fca284326ce()
 {
@@ -10416,8 +10488,8 @@ function function_41316fca284326ce()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x161ae
+// Params 0
+// Checksum 0x0, Offset: 0x16287
 // Size: 0x89
 function function_48721e21935095f2()
 {
@@ -10451,8 +10523,8 @@ function function_48721e21935095f2()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1623f
+// Params 0
+// Checksum 0x0, Offset: 0x16318
 // Size: 0x84
 function function_1c94018ff6ba8037()
 {
@@ -10481,8 +10553,8 @@ function function_1c94018ff6ba8037()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x162cb
+// Params 0
+// Checksum 0x0, Offset: 0x163a4
 // Size: 0x36e
 function function_40a388aa7e058d29()
 {
@@ -10513,7 +10585,8 @@ function function_40a388aa7e058d29()
                 continue;
             }
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 entindex = level.var_fa1da5a5e42cd276 % level.characters.size;
                 ent = level.characters[ entindex ];
                 level.var_fa1da5a5e42cd276++;
@@ -10602,8 +10675,8 @@ function function_40a388aa7e058d29()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16641
+// Params 0
+// Checksum 0x0, Offset: 0x1671a
 // Size: 0x36e
 function function_7fcfffcf734d504e()
 {
@@ -10634,7 +10707,8 @@ function function_7fcfffcf734d504e()
                 continue;
             }
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 entindex = level.var_86cdb737b05fc7c3 % level.characters.size;
                 ent = level.characters[ entindex ];
                 level.var_86cdb737b05fc7c3++;
@@ -10723,8 +10797,8 @@ function function_7fcfffcf734d504e()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x169b7
+// Params 1
+// Checksum 0x0, Offset: 0x16a90
 // Size: 0xb7
 function function_9997704ec04498( streakname )
 {
@@ -10751,8 +10825,8 @@ function function_9997704ec04498( streakname )
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16a76
+// Params 1
+// Checksum 0x0, Offset: 0x16b4f
 // Size: 0x85
 function function_dd2c7b73d401a990( streakname )
 {
@@ -10773,8 +10847,8 @@ function function_dd2c7b73d401a990( streakname )
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b03
+// Params 0
+// Checksum 0x0, Offset: 0x16bdc
 // Size: 0x5e
 function function_8ab3c5933d589588()
 {
@@ -10796,8 +10870,8 @@ function function_8ab3c5933d589588()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b69
+// Params 0
+// Checksum 0x0, Offset: 0x16c42
 // Size: 0xe0
 function devgivefieldupgradethink()
 {
@@ -10832,8 +10906,8 @@ function devgivefieldupgradethink()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16c51
+// Params 0
+// Checksum 0x0, Offset: 0x16d2a
 // Size: 0x155
 function function_5ab0cae02a1a189()
 {
@@ -10882,8 +10956,8 @@ function function_5ab0cae02a1a189()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16dae
+// Params 0
+// Checksum 0x0, Offset: 0x16e87
 // Size: 0x1e1
 function function_39e64f7e9eb964a3()
 {
@@ -10919,7 +10993,8 @@ function function_39e64f7e9eb964a3()
             
             superweapon = makeweapon( superweaponname );
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 entindex = level.var_31f015b75096086c % level.characters.size;
                 ent = level.characters[ entindex ];
                 level.var_31f015b75096086c++;
@@ -10950,8 +11025,8 @@ function function_39e64f7e9eb964a3()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16f97
+// Params 0
+// Checksum 0x0, Offset: 0x17070
 // Size: 0x19f
 function function_287927c59ec7edc8()
 {
@@ -10980,7 +11055,8 @@ function function_287927c59ec7edc8()
             
             superweapon = makeweapon( superweaponname );
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 entindex = level.var_97e88aefcade05 % level.characters.size;
                 ent = level.characters[ entindex ];
                 level.var_97e88aefcade05++;
@@ -11010,8 +11086,8 @@ function function_287927c59ec7edc8()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1713e
+// Params 0
+// Checksum 0x0, Offset: 0x17217
 // Size: 0x10d
 function function_9a2083c197d32f9e()
 {
@@ -11048,8 +11124,8 @@ function function_9a2083c197d32f9e()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17253
+// Params 0
+// Checksum 0x0, Offset: 0x1732c
 // Size: 0xcf
 function function_d5f799537d36bf4e()
 {
@@ -11079,8 +11155,8 @@ function function_d5f799537d36bf4e()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1732a
+// Params 0
+// Checksum 0x0, Offset: 0x17403
 // Size: 0x172
 function function_7d9b8ef37ebddb09()
 {
@@ -11113,7 +11189,8 @@ function function_7d9b8ef37ebddb09()
                 continue;
             }
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 characterindex = level.var_3fcc58693862a700 % level.characters.size;
                 character = level.characters[ characterindex ];
                 level.var_3fcc58693862a700++;
@@ -11132,8 +11209,8 @@ function function_7d9b8ef37ebddb09()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x174a4
+// Params 0
+// Checksum 0x0, Offset: 0x1757d
 // Size: 0x172
 function function_15ca34dc96d59650()
 {
@@ -11166,7 +11243,8 @@ function function_15ca34dc96d59650()
                 continue;
             }
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 characterindex = level.var_523ee9a874d0430b % level.characters.size;
                 character = level.characters[ characterindex ];
                 level.var_523ee9a874d0430b++;
@@ -11185,8 +11263,8 @@ function function_15ca34dc96d59650()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1761e
+// Params 0
+// Checksum 0x0, Offset: 0x176f7
 // Size: 0x12f
 function function_b8ff61b0eed9e1db()
 {
@@ -11212,7 +11290,8 @@ function function_b8ff61b0eed9e1db()
                 level.var_6b3f8a4ff44a6070 = 0;
             }
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 characterindex = level.var_6b3f8a4ff44a6070 % level.characters.size;
                 character = level.characters[ characterindex ];
                 level.var_6b3f8a4ff44a6070++;
@@ -11230,8 +11309,8 @@ function function_b8ff61b0eed9e1db()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17755
+// Params 0
+// Checksum 0x0, Offset: 0x1782e
 // Size: 0x12f
 function function_ff4d7a373beb6344()
 {
@@ -11257,7 +11336,8 @@ function function_ff4d7a373beb6344()
                 level.var_5415cc0e0e574fa1 = 0;
             }
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 characterindex = level.var_5415cc0e0e574fa1 % level.characters.size;
                 character = level.characters[ characterindex ];
                 level.var_5415cc0e0e574fa1++;
@@ -11275,8 +11355,8 @@ function function_ff4d7a373beb6344()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1788c
+// Params 0
+// Checksum 0x0, Offset: 0x17965
 // Size: 0x18b
 function function_8c8836efc7900575()
 {
@@ -11309,7 +11389,8 @@ function function_8c8836efc7900575()
                 level.var_15f6880d938e8a28 = 0;
             }
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 characterindex = level.var_15f6880d938e8a28 % level.characters.size;
                 character = level.characters[ characterindex ];
                 level.var_15f6880d938e8a28++;
@@ -11335,8 +11416,8 @@ function function_8c8836efc7900575()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17a1f
+// Params 0
+// Checksum 0x0, Offset: 0x17af8
 // Size: 0x18b
 function function_c908e940d73342cc()
 {
@@ -11369,7 +11450,8 @@ function function_c908e940d73342cc()
                 level.var_541bddafd54ec7cf = 0;
             }
             
-            for (var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size; var_3b7bea3004fd87b7++) {
+            for ( var_3b7bea3004fd87b7 = 0; var_3b7bea3004fd87b7 < level.characters.size ; var_3b7bea3004fd87b7++ )
+            {
                 characterindex = level.var_541bddafd54ec7cf % level.characters.size;
                 character = level.characters[ characterindex ];
                 level.var_541bddafd54ec7cf++;
@@ -11395,8 +11477,8 @@ function function_c908e940d73342cc()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17bb2
+// Params 0
+// Checksum 0x0, Offset: 0x17c8b
 // Size: 0x79
 function function_50dec82e76fa3cb6()
 {
@@ -11412,8 +11494,8 @@ function function_50dec82e76fa3cb6()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17c33
+// Params 0
+// Checksum 0x0, Offset: 0x17d0c
 // Size: 0x11b
 function function_25df3bae5ec9502c()
 {
@@ -11453,8 +11535,8 @@ function function_25df3bae5ec9502c()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17d56
+// Params 0
+// Checksum 0x0, Offset: 0x17e2f
 // Size: 0x69
 function devfindhost()
 {
@@ -11473,8 +11555,8 @@ function devfindhost()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17dc8
+// Params 0
+// Checksum 0x0, Offset: 0x17ea1
 // Size: 0x2a
 function watchlethaldelaycancel()
 {
@@ -11491,8 +11573,8 @@ function watchlethaldelaycancel()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17dfa
+// Params 0
+// Checksum 0x0, Offset: 0x17ed3
 // Size: 0x2a
 function watchsuperdelaycancel()
 {
@@ -11509,8 +11591,8 @@ function watchsuperdelaycancel()
 }
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e2c
+// Params 0
+// Checksum 0x0, Offset: 0x17f05
 // Size: 0x6d
 function watchslowmo()
 {
@@ -11537,8 +11619,8 @@ function watchslowmo()
 /#
 
     // Namespace dev / scripts\mp\dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x17ea1
+    // Params 3
+    // Checksum 0x0, Offset: 0x17f7a
     // Size: 0x4d, Type: dev
     function function_3b9d5c6466052e2e( ent, radius, color )
     {
@@ -11552,8 +11634,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x17ef6
+    // Params 0
+    // Checksum 0x0, Offset: 0x17fcf
     // Size: 0x74, Type: dev
     function function_5a05e17142c56074()
     {
@@ -11572,8 +11654,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x17f72
+    // Params 0
+    // Checksum 0x0, Offset: 0x1804b
     // Size: 0x51, Type: dev
     function function_5b1cb8baef2fdc56()
     {
@@ -11591,8 +11673,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x17fcb
+    // Params 0
+    // Checksum 0x0, Offset: 0x180a4
     // Size: 0x267, Type: dev
     function function_ff1ea3e0d41c1878()
     {
@@ -11642,8 +11724,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1823a
+    // Params 0
+    // Checksum 0x0, Offset: 0x18313
     // Size: 0x70, Type: dev
     function function_5b12f5872c82005c()
     {
@@ -11658,8 +11740,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x182b2
+    // Params 0
+    // Checksum 0x0, Offset: 0x1838b
     // Size: 0x3d, Type: dev
     function function_cc940c3c7c1a71da()
     {
@@ -11673,8 +11755,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x182f7
+    // Params 0
+    // Checksum 0x0, Offset: 0x183d0
     // Size: 0x130, Type: dev
     function function_ab139aa828ef1bfc()
     {
@@ -11700,7 +11782,7 @@ function watchslowmo()
                 }
             }
             
-            currentoffhand = self getcurrentoffhand( "<dev string:x2600>" );
+            currentoffhand = self getcurrentoffhand( "<dev string:x25d6>" );
             
             if ( !isnullweapon( currentoffhand ) )
             {
@@ -11708,7 +11790,7 @@ function watchslowmo()
                 self setweaponammoclip( currentoffhand, currentammo + 1 );
             }
             
-            currentoffhand = self getcurrentoffhand( "<dev string:x2612>" );
+            currentoffhand = self getcurrentoffhand( "<dev string:x25e8>" );
             
             if ( !isnullweapon( currentoffhand ) )
             {
@@ -11721,64 +11803,64 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1842f
+    // Params 0
+    // Checksum 0x0, Offset: 0x18508
     // Size: 0x2a1, Type: dev
     function function_ec09f2eb328e9346()
     {
         setdevdvarifuninitialized( @"scr_testshock", 0 );
         setdevdvarifuninitialized( @"hash_bae3e845f30eef22", "<dev string:xca>" );
         setdevdvarifuninitialized( @"hash_f72d0a271da2c57", 0 );
-        level.var_2e493ef4d1e81b8 = "<dev string:x2626>";
+        level.var_2e493ef4d1e81b8 = "<dev string:x25fc>";
         level.var_2a171f9e88af7947 = [];
         level.var_4b0847dcbc8d8d5 = [];
         level.var_f96621d32c3c0c82 = [];
         level.var_da36f9d75dc3ea3c = [];
-        shockid = "<dev string:x2626>";
-        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x2635>";
-        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x2649>";
+        shockid = "<dev string:x25fc>";
+        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x260b>";
+        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x261f>";
         level.var_f96621d32c3c0c82[ shockid ] = 4;
         level.var_da36f9d75dc3ea3c[ shockid ] = undefined;
-        shockid = "<dev string:x2652>";
-        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x2635>";
-        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x2649>";
+        shockid = "<dev string:x2628>";
+        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x260b>";
+        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x261f>";
         level.var_f96621d32c3c0c82[ shockid ] = 6;
         level.var_da36f9d75dc3ea3c[ shockid ] = undefined;
-        shockid = "<dev string:x2661>";
-        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x2675>";
-        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x268e>";
+        shockid = "<dev string:x2637>";
+        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x264b>";
+        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x2664>";
         level.var_f96621d32c3c0c82[ shockid ] = 3;
         level.var_da36f9d75dc3ea3c[ shockid ] = undefined;
-        shockid = "<dev string:x2696>";
-        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x2675>";
-        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x268e>";
+        shockid = "<dev string:x266c>";
+        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x264b>";
+        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x2664>";
         level.var_f96621d32c3c0c82[ shockid ] = 6;
         level.var_da36f9d75dc3ea3c[ shockid ] = undefined;
-        shockid = "<dev string:x26aa>";
-        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x26b7>";
-        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x26cf>";
+        shockid = "<dev string:x2680>";
+        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x268d>";
+        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x26a5>";
         level.var_f96621d32c3c0c82[ shockid ] = 0.5;
         level.var_da36f9d75dc3ea3c[ shockid ] = undefined;
-        shockid = "<dev string:x26d6>";
-        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x26e3>";
-        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x26cf>";
+        shockid = "<dev string:x26ac>";
+        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x26b9>";
+        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x26a5>";
         level.var_f96621d32c3c0c82[ shockid ] = 0.5;
         level.var_da36f9d75dc3ea3c[ shockid ] = undefined;
-        shockid = "<dev string:x26fb>";
-        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x2708>";
-        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x26fb>";
+        shockid = "<dev string:x26d1>";
+        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x26de>";
+        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x26d1>";
         level.var_f96621d32c3c0c82[ shockid ] = 0.5;
         level.var_da36f9d75dc3ea3c[ shockid ] = undefined;
-        shockid = "<dev string:x271b>";
-        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x2725>";
-        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x271b>";
+        shockid = "<dev string:x26f1>";
+        level.var_2a171f9e88af7947[ shockid ] = "<dev string:x26fb>";
+        level.var_4b0847dcbc8d8d5[ shockid ] = "<dev string:x26f1>";
         level.var_f96621d32c3c0c82[ shockid ] = 0.5;
         level.var_da36f9d75dc3ea3c[ shockid ] = undefined;
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x186d8
+    // Params 1
+    // Checksum 0x0, Offset: 0x187b1
     // Size: 0xe2, Type: dev
     function shellshocktest( shockid )
     {
@@ -11787,8 +11869,8 @@ function watchslowmo()
             shockid = level.var_2e493ef4d1e81b8;
         }
         
-        assertex( isdefined( level.var_2a171f9e88af7947 ), "<dev string:x2738>" );
-        assertex( array_contains( getarraykeys( level.var_2a171f9e88af7947 ), shockid ), "<dev string:x276f>" );
+        assertex( isdefined( level.var_2a171f9e88af7947 ), "<dev string:x270e>" );
+        assertex( array_contains( getarraykeys( level.var_2a171f9e88af7947 ), shockid ), "<dev string:x2745>" );
         player = scripts\mp\gamelogic::gethostplayer();
         
         if ( !isdefined( player ) )
@@ -11809,8 +11891,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x187c2
+    // Params 0
+    // Checksum 0x0, Offset: 0x1889b
     // Size: 0x30, Type: dev
     function function_68eba26864084001()
     {
@@ -11830,8 +11912,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x187fa
+    // Params 1
+    // Checksum 0x0, Offset: 0x188d3
     // Size: 0x4b, Type: dev
     function function_6a39ebc23dfaa593( player )
     {
@@ -11859,8 +11941,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1884d
+    // Params 1
+    // Checksum 0x0, Offset: 0x18926
     // Size: 0x31, Type: dev
     function function_d0fe65eec3480b8a( vehicletype )
     {
@@ -11873,8 +11955,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18886
+    // Params 1
+    // Checksum 0x0, Offset: 0x1895f
     // Size: 0x31, Type: dev
     function function_5359ebb35b7ca1b5( vehicletype )
     {
@@ -11887,8 +11969,8 @@ function watchslowmo()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x188bf
+    // Params 0
+    // Checksum 0x0, Offset: 0x18998
     // Size: 0x97, Type: dev
     function function_3ee37b5813de0a8a()
     {
@@ -11912,8 +11994,8 @@ function watchslowmo()
 #/
 
 // Namespace dev / scripts\mp\dev
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1895e
+// Params 0
+// Checksum 0x0, Offset: 0x18a37
 // Size: 0xa
 function rangefinder()
 {
@@ -11923,8 +12005,8 @@ function rangefinder()
 /#
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18970
+    // Params 0
+    // Checksum 0x0, Offset: 0x18a49
     // Size: 0xf8, Type: dev
     function function_5b7df3134bc981cd()
     {
@@ -11941,8 +12023,8 @@ function rangefinder()
                 
                 if ( var_c5e7955047c7609f == 0 )
                 {
-                    attacker notify( "<dev string:x27a2>" );
-                    iprintlnbold( "<dev string:x27b4>" );
+                    attacker notify( "<dev string:x2778>" );
+                    iprintlnbold( "<dev string:x278a>" );
                 }
                 else
                 {
@@ -11954,7 +12036,7 @@ function rangefinder()
                     attacker thread function_6f68d17492fbeb7b();
                     attacker thread function_dc411c6c35f320f0();
                     attacker thread function_9bbf0d7d080c4266();
-                    iprintlnbold( "<dev string:x27d1>" );
+                    iprintlnbold( "<dev string:x27a7>" );
                 }
             }
             
@@ -11963,12 +12045,12 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18a70
+    // Params 0
+    // Checksum 0x0, Offset: 0x18b49
     // Size: 0x13f, Type: dev
     function function_9bbf0d7d080c4266()
     {
-        self endon( "<dev string:x27a2>" );
+        self endon( "<dev string:x2778>" );
         var_ec82d4e95d4ce45a = 0;
         var_c2113f639fe7bc2c = 0;
         numkills = 0;
@@ -11993,24 +12075,24 @@ function rangefinder()
                 }
             }
             
-            printtoscreen2d( 500, 170, "<dev string:x27ed>" + string( var_ec82d4e95d4ce45a ), ( 1, 1, 1 ), 2 );
-            printtoscreen2d( 500, 200, "<dev string:x27fc>" + string( var_c2113f639fe7bc2c ), ( 1, 1, 1 ), 2 );
-            printtoscreen2d( 500, 230, "<dev string:x2813>" + string( numkills ), ( 1, 1, 1 ), 2 );
+            printtoscreen2d( 500, 170, "<dev string:x27c3>" + string( var_ec82d4e95d4ce45a ), ( 1, 1, 1 ), 2 );
+            printtoscreen2d( 500, 200, "<dev string:x27d2>" + string( var_c2113f639fe7bc2c ), ( 1, 1, 1 ), 2 );
+            printtoscreen2d( 500, 230, "<dev string:x27e9>" + string( numkills ), ( 1, 1, 1 ), 2 );
             waitframe();
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18bb7
+    // Params 0
+    // Checksum 0x0, Offset: 0x18c90
     // Size: 0x170, Type: dev
     function function_9321ed5022d179fc()
     {
-        self endon( "<dev string:x27a2>" );
+        self endon( "<dev string:x2778>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x2828>", victim, inflictor, damage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc );
+            self waittill( "<dev string:x27fe>", victim, inflictor, damage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc );
             
             if ( !isdefined( victim.var_4c6da5bcea4fd1ce ) )
             {
@@ -12023,24 +12105,24 @@ function rangefinder()
             {
                 ttk = float( gettime() - victim.var_4c6da5bcea4fd1ce.time ) / 1000;
                 level.var_4c6da5bcea4fd1ce.var_ec82d4e95d4ce45a = ttk;
-                print3d( victim.origin + ( 0, 0, 14 ), "<dev string:x283a>" + string( ttk ) + "<dev string:x2843>", ( 1, 0.843, 0 ), 1, 0.5, 400, 1 );
-                level notify( "<dev string:x2848>" );
+                print3d( victim.origin + ( 0, 0, 14 ), "<dev string:x2810>" + string( ttk ) + "<dev string:x2819>", ( 1, 0.843, 0 ), 1, 0.5, 400, 1 );
+                level notify( "<dev string:x281e>" );
                 victim.var_4c6da5bcea4fd1ce = undefined;
             }
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18d2f
+    // Params 0
+    // Checksum 0x0, Offset: 0x18e08
     // Size: 0x6e, Type: dev
     function function_6f68d17492fbeb7b()
     {
-        self endon( "<dev string:x27a2>" );
+        self endon( "<dev string:x2778>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x2859>", victim, inflictor );
+            self waittill( "<dev string:x282f>", victim, inflictor );
             
             if ( !isdefined( victim.var_4c6da5bcea4fd1ce ) )
             {
@@ -12052,12 +12134,12 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18da5
+    // Params 0
+    // Checksum 0x0, Offset: 0x18e7e
     // Size: 0xc4, Type: dev
     function function_dc411c6c35f320f0()
     {
-        self endon( "<dev string:x27a2>" );
+        self endon( "<dev string:x2778>" );
         var_165c80293172d9af = 0;
         var_3cd3c0a57e9a1d79 = 0;
         var_b81fd881e830b135 = 1;
@@ -12066,7 +12148,7 @@ function rangefinder()
         {
             if ( var_b81fd881e830b135 )
             {
-                level notify( "<dev string:x2871>" );
+                level notify( "<dev string:x2847>" );
                 level.player thread function_6935c6ac9f722579();
                 var_b81fd881e830b135 = 0;
             }
@@ -12096,27 +12178,27 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18e71
+    // Params 0
+    // Checksum 0x0, Offset: 0x18f4a
     // Size: 0xbe, Type: dev
     function function_6935c6ac9f722579()
     {
-        self endon( "<dev string:x27a2>" );
-        level endon( "<dev string:x2871>" );
+        self endon( "<dev string:x2778>" );
+        level endon( "<dev string:x2847>" );
         level.var_4c6da5bcea4fd1ce.var_c2113f639fe7bc2c = 0;
         level.var_4c6da5bcea4fd1ce.var_a8017c8c3aa1f71c = [];
         
         while ( true )
         {
-            level waittill( "<dev string:x2848>" );
+            level waittill( "<dev string:x281e>" );
             level.var_4c6da5bcea4fd1ce.var_a8017c8c3aa1f71c[ level.var_4c6da5bcea4fd1ce.var_a8017c8c3aa1f71c.size ] = level.var_4c6da5bcea4fd1ce.var_ec82d4e95d4ce45a;
             level.var_4c6da5bcea4fd1ce.var_c2113f639fe7bc2c = limitdecimalplaces( array_average( level.var_4c6da5bcea4fd1ce.var_a8017c8c3aa1f71c ), 3 );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18f37
+    // Params 0
+    // Checksum 0x0, Offset: 0x19010
     // Size: 0xa1, Type: dev
     function watchdam()
     {
@@ -12133,8 +12215,8 @@ function rangefinder()
                 
                 if ( var_dfc1ff4f9fcc5c60 == 0 )
                 {
-                    attacker notify( "<dev string:x2882>" );
-                    iprintlnbold( "<dev string:x2894>" );
+                    attacker notify( "<dev string:x2858>" );
+                    iprintlnbold( "<dev string:x286a>" );
                 }
                 else
                 {
@@ -12142,7 +12224,7 @@ function rangefinder()
                     attacker thread function_7dad5750cfa24677();
                     attacker thread function_6e116b48adc0bbe();
                     attacker thread function_ec6f7076f4834d47();
-                    iprintlnbold( "<dev string:x28b2>" );
+                    iprintlnbold( "<dev string:x2888>" );
                 }
             }
             
@@ -12151,12 +12233,12 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18fe0
+    // Params 0
+    // Checksum 0x0, Offset: 0x190b9
     // Size: 0x192, Type: dev
     function function_ec6f7076f4834d47()
     {
-        self endon( "<dev string:x2882>" );
+        self endon( "<dev string:x2858>" );
         dam = 0;
         totaldam = 0;
         btk = 0;
@@ -12181,46 +12263,46 @@ function rangefinder()
                 }
             }
             
-            printtoscreen2d( 900, 170, "<dev string:x28cf>" + string( dam ), ( 1, 0, 1 ), 2 );
-            printtoscreen2d( 900, 200, "<dev string:x28d8>" + string( totaldam ), ( 1, 0.843, 0 ), 2 );
-            printtoscreen2d( 900, 230, "<dev string:x28e7>" + string( btk ), ( 1, 0.843, 0 ), 2 );
+            printtoscreen2d( 900, 170, "<dev string:x28a5>" + string( dam ), ( 1, 0, 1 ), 2 );
+            printtoscreen2d( 900, 200, "<dev string:x28ae>" + string( totaldam ), ( 1, 0.843, 0 ), 2 );
+            printtoscreen2d( 900, 230, "<dev string:x28bd>" + string( btk ), ( 1, 0.843, 0 ), 2 );
             waitframe();
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1917a
+    // Params 0
+    // Checksum 0x0, Offset: 0x19253
     // Size: 0x83, Type: dev
     function function_7dad5750cfa24677()
     {
-        self endon( "<dev string:x2882>" );
+        self endon( "<dev string:x2858>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x2828>", victim, inflictor, damage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc );
+            self waittill( "<dev string:x27fe>", victim, inflictor, damage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc );
             function_5c3b4e1eb3b441e3( victim, damage );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19205
+    // Params 0
+    // Checksum 0x0, Offset: 0x192de
     // Size: 0x45, Type: dev
     function function_6e116b48adc0bbe()
     {
-        self endon( "<dev string:x2882>" );
+        self endon( "<dev string:x2858>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x2859>", victim, inflictor, damage );
+            self waittill( "<dev string:x282f>", victim, inflictor, damage );
             function_5c3b4e1eb3b441e3( victim, damage );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19252
+    // Params 2
+    // Checksum 0x0, Offset: 0x1932b
     // Size: 0x141, Type: dev
     function function_5c3b4e1eb3b441e3( victim, damage )
     {
@@ -12247,8 +12329,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1939b
+    // Params 0
+    // Checksum 0x0, Offset: 0x19474
     // Size: 0xe4, Type: dev
     function function_acb7b4db275ee5f6()
     {
@@ -12259,9 +12341,9 @@ function rangefinder()
                 vel = level.player getvelocity();
                 speed = length( vel );
                 speedmph = ips_to_mph( speed );
-                printtoscreen2d( 500, 260, "<dev string:x28f6>" + string( vel ), ( 1, 1, 1 ), 2 );
-                printtoscreen2d( 500, 290, "<dev string:x291d>" + string( speed ), ( 1, 1, 1 ), 2 );
-                printtoscreen2d( 500, 320, "<dev string:x2945>" + string( speedmph ), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 260, "<dev string:x28cc>" + string( vel ), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 290, "<dev string:x28f3>" + string( speed ), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 320, "<dev string:x291b>" + string( speedmph ), ( 1, 1, 1 ), 2 );
             }
             
             waitframe();
@@ -12269,8 +12351,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19487
+    // Params 0
+    // Checksum 0x0, Offset: 0x19560
     // Size: 0xeb, Type: dev
     function function_779046ca435993c5()
     {
@@ -12308,7 +12390,7 @@ function rangefinder()
                     var_4afc631e4ece9194 = 0;
                 }
                 
-                printtoscreen2d( 500, 350, "<dev string:x296a>" + string( sprintouttime ), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 350, "<dev string:x2940>" + string( sprintouttime ), ( 1, 1, 1 ), 2 );
             }
             
             waitframe();
@@ -12316,8 +12398,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1957a
+    // Params 0
+    // Checksum 0x0, Offset: 0x19653
     // Size: 0xe0, Type: dev
     function function_d7f6ef4be35f5827()
     {
@@ -12348,7 +12430,7 @@ function rangefinder()
                     var_b7de80ac7c3f093c = 1;
                 }
                 
-                printtoscreen2d( 500, 380, "<dev string:x2985>" + string( var_9cafac4d5323915a ), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 380, "<dev string:x295b>" + string( var_9cafac4d5323915a ), ( 1, 1, 1 ), 2 );
             }
             
             waitframe();
@@ -12356,8 +12438,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19662
+    // Params 0
+    // Checksum 0x0, Offset: 0x1973b
     // Size: 0xc7, Type: dev
     function watchreloadtime()
     {
@@ -12382,7 +12464,7 @@ function rangefinder()
                     var_8e999d0af5ad231a = 0;
                 }
                 
-                printtoscreen2d( 500, 410, "<dev string:x29a0>" + string( reloadtime ), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 410, "<dev string:x2976>" + string( reloadtime ), ( 1, 1, 1 ), 2 );
             }
             
             waitframe();
@@ -12390,8 +12472,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19731
+    // Params 0
+    // Checksum 0x0, Offset: 0x1980a
     // Size: 0xd9, Type: dev
     function function_ccc79f6ad0886c32()
     {
@@ -12405,12 +12487,12 @@ function rangefinder()
             {
                 level.player thread function_432e1da02f439de6();
                 var_d1678cffa85440f5 = 1;
-                printtoscreen2d( 500, 440, "<dev string:x29b7>" + string( level.targetdistance ), ( 1, 1, 1 ), 2 );
-                printtoscreen2d( 500, 470, "<dev string:x29d3>" + string( level.var_e8ac24aee14f09cd ), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 440, "<dev string:x298d>" + string( level.targetdistance ), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 470, "<dev string:x29a9>" + string( level.var_e8ac24aee14f09cd ), ( 1, 1, 1 ), 2 );
             }
             else if ( var_d1678cffa85440f5 )
             {
-                level notify( "<dev string:x29f3>" );
+                level notify( "<dev string:x29c9>" );
                 var_d1678cffa85440f5 = 0;
             }
             
@@ -12419,17 +12501,17 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19812
+    // Params 0
+    // Checksum 0x0, Offset: 0x198eb
     // Size: 0xd7, Type: dev
     function function_432e1da02f439de6()
     {
-        level endon( "<dev string:x29f3>" );
+        level endon( "<dev string:x29c9>" );
         
         while ( true )
         {
-            self waittill( "<dev string:x2828>", victim, inflictor, damage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc );
-            iprintlnbold( "<dev string:x2a10>" );
+            self waittill( "<dev string:x27fe>", victim, inflictor, damage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc );
+            iprintlnbold( "<dev string:x29e6>" );
             playerorigin = level.player getorigin();
             targetorigin = victim getorigin();
             targetdistance = distance( playerorigin, targetorigin );
@@ -12439,8 +12521,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x198f1
+    // Params 0
+    // Checksum 0x0, Offset: 0x199ca
     // Size: 0xca, Type: dev
     function function_4a576a04af06482a()
     {
@@ -12467,8 +12549,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x199c3
+    // Params 0
+    // Checksum 0x0, Offset: 0x19a9c
     // Size: 0x80, Type: dev
     function function_ee83a7b078f9aa0c()
     {
@@ -12486,8 +12568,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19a4b
+    // Params 0
+    // Checksum 0x0, Offset: 0x19b24
     // Size: 0x114, Type: dev
     function function_ee00d21057357790()
     {
@@ -12498,14 +12580,14 @@ function rangefinder()
                 currentweapon = level.player getcurrentweapon();
                 attachments = currentweapon.attachments;
                 default_attachments = function_6527364c1ecca6c6( currentweapon );
-                printtoscreen2d( 1000, 500, "<dev string:x2a20>", ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 1000, 500, "<dev string:x29f6>", ( 1, 1, 1 ), 2 );
                 i = 0;
                 
                 foreach ( attachment in attachments )
                 {
                     if ( arraycontains( default_attachments, attachment ) )
                     {
-                        attachment += "<dev string:x2a35>";
+                        attachment += "<dev string:x2a0b>";
                     }
                     
                     printtoscreen2d( 1000, 530 + 30 * i, attachment, ( 1, 1, 1 ), 2 );
@@ -12518,8 +12600,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19b67
+    // Params 0
+    // Checksum 0x0, Offset: 0x19c40
     // Size: 0x54, Type: dev
     function function_97d547438038e8bb()
     {
@@ -12537,8 +12619,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19bc3
+    // Params 1
+    // Checksum 0x0, Offset: 0x19c9c
     // Size: 0xbf, Type: dev
     function function_59ad1d1f7e6a7771( weapon )
     {
@@ -12548,24 +12630,24 @@ function rangefinder()
         }
         
         attachments = weapon.attachments;
-        filenum = openfile( "<dev string:x2a43>", "<dev string:x1e88>" );
+        filenum = openfile( "<dev string:x2a19>", "<dev string:x1e5e>" );
         fprintln( filenum, weapon.basename );
         
         foreach ( attachment in attachments )
         {
-            fprintln( filenum, "<dev string:x2a5d>" + attachment );
+            fprintln( filenum, "<dev string:x2a33>" + attachment );
         }
         
         closefile( filenum );
         
         /#
-            iprintln( "<dev string:x2a62>" );
+            iprintln( "<dev string:x2a38>" );
         #/
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19c8a
+    // Params 0
+    // Checksum 0x0, Offset: 0x19d63
     // Size: 0x131, Type: dev
     function function_14ebebd30eb1a6df()
     {
@@ -12573,7 +12655,7 @@ function rangefinder()
         
         while ( true )
         {
-            if ( !level.var_3246cb2506b3080b && getdvarint( @"hash_53f9e61fbb5d9c84", 0 ) == 1 )
+            if ( !level.var_3246cb2506b3080b && getdvarint( @"scr_devminimap_visible", 0 ) == 1 )
             {
                 foreach ( player in level.players )
                 {
@@ -12587,7 +12669,7 @@ function rangefinder()
                 
                 level.var_3246cb2506b3080b = 1;
             }
-            else if ( level.var_3246cb2506b3080b && getdvarint( @"hash_53f9e61fbb5d9c84", 0 ) == 0 )
+            else if ( level.var_3246cb2506b3080b && getdvarint( @"scr_devminimap_visible", 0 ) == 0 )
             {
                 foreach ( player in level.players )
                 {
@@ -12607,8 +12689,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19dc3
+    // Params 3
+    // Checksum 0x0, Offset: 0x19e9c
     // Size: 0x74, Type: dev
     function function_dfb2ff04c76410f7( navpoints, color, heightoffset )
     {
@@ -12624,14 +12706,15 @@ function rangefinder()
         
         offsetvec = ( 0, 0, heightoffset );
         
-        for (i = 0; i < navpoints.size - 1; i++) {
+        for ( i = 0; i < navpoints.size - 1 ; i++ )
+        {
             line( navpoints[ i ] + offsetvec, navpoints[ i + 1 ] + offsetvec, color );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19e3f
+    // Params 0
+    // Checksum 0x0, Offset: 0x19f18
     // Size: 0xa6, Type: dev
     function function_173bf4a6910bc50e()
     {
@@ -12648,8 +12731,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19eed
+    // Params 0
+    // Checksum 0x0, Offset: 0x19fc6
     // Size: 0x6e, Type: dev
     function function_3e03b6f03515de77()
     {
@@ -12661,12 +12744,12 @@ function rangefinder()
             
             if ( stickydvar && !istrue( var_35d69a3d8ab30930 ) )
             {
-                iprintln( "<dev string:x2ab6>" );
+                iprintln( "<dev string:x2a8c>" );
                 var_35d69a3d8ab30930 = 1;
             }
             else if ( !stickydvar && istrue( var_35d69a3d8ab30930 ) )
             {
-                iprintln( "<dev string:x2aca>" );
+                iprintln( "<dev string:x2aa0>" );
                 var_35d69a3d8ab30930 = 0;
             }
             
@@ -12675,8 +12758,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19f63
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a03c
     // Size: 0x6e, Type: dev
     function function_b7a87d570052a0ba()
     {
@@ -12688,12 +12771,12 @@ function rangefinder()
             
             if ( lockondvar && !istrue( var_35d69a3d8ab30930 ) )
             {
-                iprintln( "<dev string:x2adf>" );
+                iprintln( "<dev string:x2ab5>" );
                 var_35d69a3d8ab30930 = 1;
             }
             else if ( !lockondvar && istrue( var_35d69a3d8ab30930 ) )
             {
-                iprintln( "<dev string:x2af6>" );
+                iprintln( "<dev string:x2acc>" );
                 var_35d69a3d8ab30930 = 0;
             }
             
@@ -12702,8 +12785,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19fd9
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a0b2
     // Size: 0x6e, Type: dev
     function function_90f098bb7de552ee()
     {
@@ -12715,12 +12798,12 @@ function rangefinder()
             
             if ( animtypedvar && !istrue( var_35d69a3d8ab30930 ) )
             {
-                iprintln( "<dev string:x2b0e>" );
+                iprintln( "<dev string:x2ae4>" );
                 var_35d69a3d8ab30930 = 1;
             }
             else if ( !animtypedvar && istrue( var_35d69a3d8ab30930 ) )
             {
-                iprintln( "<dev string:x2b2a>" );
+                iprintln( "<dev string:x2b00>" );
                 var_35d69a3d8ab30930 = 0;
             }
             
@@ -12729,8 +12812,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a04f
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a128
     // Size: 0x6e, Type: dev
     function function_fc3b9cb52d62febf()
     {
@@ -12742,12 +12825,12 @@ function rangefinder()
             
             if ( crashtypedvar && !istrue( var_35d69a3d8ab30930 ) )
             {
-                iprintln( "<dev string:x2b46>" );
+                iprintln( "<dev string:x2b1c>" );
                 var_35d69a3d8ab30930 = 1;
             }
             else if ( !crashtypedvar && istrue( var_35d69a3d8ab30930 ) )
             {
-                iprintln( "<dev string:x2b5d>" );
+                iprintln( "<dev string:x2b33>" );
                 var_35d69a3d8ab30930 = 0;
             }
             
@@ -12756,16 +12839,16 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a0c5
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a19e
     // Size: 0x11e, Type: dev
     function function_2d4f449ebc34bccc()
     {
         setdevdvarifuninitialized( @"hash_873b7ff40bb2a37e", 0 );
         setdevdvarifuninitialized( @"hash_5fbef6e1f0b6624c", 0 );
-        level thread function_6c3ff8a589d13e3f( @"hash_5fbef6e1f0b6624c", 0, "<dev string:x2b77>", "<dev string:x2b90>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_2c01d701bac5d9d3", 0, "<dev string:x2baa>", "<dev string:x2bca>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_920f0586653a26d4", 0, "<dev string:x2beb>", "<dev string:x2c06>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_5fbef6e1f0b6624c", 0, "<dev string:x2b4d>", "<dev string:x2b66>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_2c01d701bac5d9d3", 0, "<dev string:x2b80>", "<dev string:x2ba0>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_920f0586653a26d4", 0, "<dev string:x2bc1>", "<dev string:x2bdc>" );
         level thread function_b6744aebc11bdcb6();
         level thread function_94c9f97944d54439();
         level thread function_6ce7fcf80004a952();
@@ -12787,191 +12870,191 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a1eb
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a2c4
     // Size: 0x51, Type: dev
     function function_b6744aebc11bdcb6()
     {
         level thread function_90f098bb7de552ee();
         level thread function_fc3b9cb52d62febf();
-        level thread function_6c3ff8a589d13e3f( @"hash_9a9f1499825922aa", 0, "<dev string:x2c22>", "<dev string:x2c3d>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_cc9d9505b48bc357", 0, "<dev string:x2c59>", "<dev string:x2c73>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_9a9f1499825922aa", 0, "<dev string:x2bf8>", "<dev string:x2c13>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_cc9d9505b48bc357", 0, "<dev string:x2c2f>", "<dev string:x2c49>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a244
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a31d
     // Size: 0x5d, Type: dev
     function function_94c9f97944d54439()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_35e0e06e57d92306", 0, "<dev string:x2c8d>", "<dev string:x2c9e>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_aff3efc76e4dfeb2", 1, "<dev string:x2cb0>", "<dev string:x2cc4>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_7943c6ec7e44f87c", 0, "<dev string:x2cd9>", "<dev string:x2cfd>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_35e0e06e57d92306", 0, "<dev string:x2c63>", "<dev string:x2c74>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_aff3efc76e4dfeb2", 1, "<dev string:x2c86>", "<dev string:x2c9a>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_7943c6ec7e44f87c", 0, "<dev string:x2caf>", "<dev string:x2cd3>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a2a9
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a382
     // Size: 0x27, Type: dev
     function function_6ce7fcf80004a952()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_ac7f6a636682c52f", 0, "<dev string:x2d1e>", "<dev string:x2d34>", "<dev string:x2d4b>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_ac7f6a636682c52f", 0, "<dev string:x2cf4>", "<dev string:x2d0a>", "<dev string:x2d21>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a2d8
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a3b1
     // Size: 0x3f, Type: dev
     function function_97d7c7dc0e0c5869()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_91f047e0dec87b64", 0, "<dev string:x2d59>", "<dev string:x2d6e>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_fd16625ce7800c7e", 0, "<dev string:x2d84>", "<dev string:x2d97>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_91f047e0dec87b64", 0, "<dev string:x2d2f>", "<dev string:x2d44>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_fd16625ce7800c7e", 0, "<dev string:x2d5a>", "<dev string:x2d6d>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a31f
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a3f8
     // Size: 0x4d, Type: dev
     function function_aabbe914f9b10b07()
     {
         level thread function_3e03b6f03515de77();
-        level thread function_6c3ff8a589d13e3f( @"hash_7acaaf8f4063ab02", 0, "<dev string:x2dab>", "<dev string:x2dc0>", "<dev string:x2dd5>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_a62fccdf77b23d67", 0, "<dev string:x2ded>", "<dev string:x2dfe>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_7acaaf8f4063ab02", 0, "<dev string:x2d81>", "<dev string:x2d96>", "<dev string:x2dab>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_a62fccdf77b23d67", 0, "<dev string:x2dc3>", "<dev string:x2dd4>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a374
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a44d
     // Size: 0x3f, Type: dev
     function function_947590e525e1f678()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_b72a0bb47130fb8e", 0, "<dev string:x2e10>", "<dev string:x2e27>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_51c63714caa01867", 0, "<dev string:x2e3f>", "<dev string:x2e58>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_b72a0bb47130fb8e", 0, "<dev string:x2de6>", "<dev string:x2dfd>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_51c63714caa01867", 0, "<dev string:x2e15>", "<dev string:x2e2e>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a3bb
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a494
     // Size: 0x5c, Type: dev
     function function_2f38117f9f0a3fdd()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_48714771f0d0b941", 0, "<dev string:x2e72>", "<dev string:x2e8f>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_de4ffc2e910521a1", 0, "<dev string:x2ead>", "<dev string:x2ece>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_125a1951df8627f5", 0, "<dev string:x2ef0>", "<dev string:x2f0b>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_48714771f0d0b941", 0, "<dev string:x2e48>", "<dev string:x2e65>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_de4ffc2e910521a1", 0, "<dev string:x2e83>", "<dev string:x2ea4>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_125a1951df8627f5", 0, "<dev string:x2ec6>", "<dev string:x2ee1>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a41f
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a4f8
     // Size: 0x48, Type: dev
     function function_9dd2352219023ba2()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_3f1bd355bf340abb", 0, "<dev string:x2f27>", "<dev string:x2f44>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_4f7da19a233d6916", 0, "<dev string:x2f62>", "<dev string:x2f8a>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_3f1bd355bf340abb", 0, "<dev string:x2efd>", "<dev string:x2f1a>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_4f7da19a233d6916", 0, "<dev string:x2f38>", "<dev string:x2f60>" );
         level thread function_ffaafbb33f34f115();
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a46f
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a548
     // Size: 0x3f, Type: dev
     function function_d3160ff8e89b90fc()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_7ea8f7418e6bf019", 0, "<dev string:x2fb3>", "<dev string:x2fd7>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_9564fda23c9d6dbd", 0, "<dev string:x2ff7>", "<dev string:x300f>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_7ea8f7418e6bf019", 0, "<dev string:x2f89>", "<dev string:x2fad>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_9564fda23c9d6dbd", 0, "<dev string:x2fcd>", "<dev string:x2fe5>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a4b6
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a58f
     // Size: 0x3f, Type: dev
     function function_fb68070162b65898()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_f91acea7f6a68742", 0, "<dev string:x3028>", "<dev string:x303e>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_189e3806377f69dc", 0, "<dev string:x3055>", "<dev string:x3069>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_f91acea7f6a68742", 0, "<dev string:x2ffe>", "<dev string:x3014>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_189e3806377f69dc", 0, "<dev string:x302b>", "<dev string:x303f>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a4fd
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a5d6
     // Size: 0x5c, Type: dev
     function function_c4cf61b73e0e7f4b()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_b23e7bb60bbe76a6", 0, "<dev string:x307e>", "<dev string:x3094>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_7d1382405485d79f", 0, "<dev string:x30ab>", "<dev string:x30c1>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_4ec1877ac00842c0", 0, "<dev string:x30d8>", "<dev string:x30fd>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_b23e7bb60bbe76a6", 0, "<dev string:x3054>", "<dev string:x306a>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_7d1382405485d79f", 0, "<dev string:x3081>", "<dev string:x3097>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_4ec1877ac00842c0", 0, "<dev string:x30ae>", "<dev string:x30d3>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a561
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a63a
     // Size: 0x3f, Type: dev
     function function_a422e4b84d2a008a()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_c9bd691ce96079ac", 0, "<dev string:x3123>", "<dev string:x313e>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_e19e5d308effeda3", 0, "<dev string:x315a>", "<dev string:x316e>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_c9bd691ce96079ac", 0, "<dev string:x30f9>", "<dev string:x3114>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_e19e5d308effeda3", 0, "<dev string:x3130>", "<dev string:x3144>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a5a8
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a681
     // Size: 0x22, Type: dev
     function function_63036f1c49e5239a()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_30dee5c8d013379b", 0, "<dev string:x3182>", "<dev string:x3199>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_30dee5c8d013379b", 0, "<dev string:x3158>", "<dev string:x316f>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a5d2
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a6ab
     // Size: 0x5c, Type: dev
     function function_45f8a3d0ce450808()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_f8c88d9bcfa63da3", 0, "<dev string:x31b1>", "<dev string:x31ca>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_e9159b47fbb642af", 0, "<dev string:x31e4>", "<dev string:x3200>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_94edbe8b5c5b8dd0", 0, "<dev string:x321d>", "<dev string:x3237>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_f8c88d9bcfa63da3", 0, "<dev string:x3187>", "<dev string:x31a0>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_e9159b47fbb642af", 0, "<dev string:x31ba>", "<dev string:x31d6>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_94edbe8b5c5b8dd0", 0, "<dev string:x31f3>", "<dev string:x320d>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a636
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a70f
     // Size: 0x3f, Type: dev
     function function_dcd7126d6585b53c()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_b1fa07a51b801b6b", 0, "<dev string:x3252>", "<dev string:x3268>" );
-        level thread function_6c3ff8a589d13e3f( @"hash_8a48b9267ed26d75", 0, "<dev string:x327f>", "<dev string:x3299>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_b1fa07a51b801b6b", 0, "<dev string:x3228>", "<dev string:x323e>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_8a48b9267ed26d75", 0, "<dev string:x3255>", "<dev string:x326f>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a67d
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a756
     // Size: 0x22, Type: dev
     function function_38a3bff9ddb7ebfc()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_604652367665c1e0", 0, "<dev string:x32b3>", "<dev string:x32c7>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_604652367665c1e0", 0, "<dev string:x3289>", "<dev string:x329d>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a6a7
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a780
     // Size: 0x22, Type: dev
     function function_2d780f27da8e6d91()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_a34a2f5a7d33e3bb", 0, "<dev string:x32dc>", "<dev string:x32f5>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_a34a2f5a7d33e3bb", 0, "<dev string:x32b2>", "<dev string:x32cb>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a6d1
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a7aa
     // Size: 0x22, Type: dev
     function function_1f739dbb5568c8dc()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_7a4ebc4260fba96c", 0, "<dev string:x330f>", "<dev string:x331c>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_7a4ebc4260fba96c", 0, "<dev string:x32e5>", "<dev string:x32f2>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a6fb
+    // Params 5
+    // Checksum 0x0, Offset: 0x1a7d4
     // Size: 0xa3, Type: dev
     function function_6c3ff8a589d13e3f( scriptdvar, var_cc7522b1729707a5, var_7bf3ab514d551fb5, var_418a825a972eb223, optionalnotify )
     {
@@ -13008,8 +13091,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a7a6
+    // Params 0
+    // Checksum 0x0, Offset: 0x1a87f
     // Size: 0x230, Type: dev
     function function_ffaafbb33f34f115()
     {
@@ -13034,10 +13117,10 @@ function rangefinder()
                 }
                 
                 setdvar( @"hash_12d23346fbacee91", 1 );
-                setdvar( @"hash_6ce01b6572751b18", 1 );
+                setdvar( @"bot_disableattack", 1 );
                 setdvar( @"bot_notarget", 1 );
-                level thread [[ level.bot_funcs[ "<dev string:x3329>" ] ]]( numbots, team );
-                println( "<dev string:x3337>" );
+                level thread [[ level.bot_funcs[ "<dev string:x32ff>" ] ]]( numbots, team );
+                println( "<dev string:x330d>" );
                 level waittill( "<dev string:xdc4>" );
                 setdvar( @"hash_1c423b4190c17fda", 1 );
                 setdvar( @"hash_57d9d82755a3e076", 1 );
@@ -13069,8 +13152,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a9de
+    // Params 0
+    // Checksum 0x0, Offset: 0x1aab7
     // Size: 0x46b, Type: dev
     function function_15039377169d3bc()
     {
@@ -13090,14 +13173,14 @@ function rangefinder()
                 level.exfilactivetimer = getdvarint( @"hash_e448cfb79f133678" );
                 level.exfilextracttimer = getdvarint( @"hash_68d66133a48deb9b" );
                 level.var_7a17738a1a272721 = [];
-                goal = spawn( "<dev string:x335e>", host.origin, 0, 120, 128 );
+                goal = spawn( "<dev string:x3334>", host.origin, 0, 120, 128 );
                 level.var_7a17738a1a272721[ level.var_7a17738a1a272721.size ] = goal;
                 team = host.team;
                 goal.team = team;
                 exfilgoalent = spawn( "<dev string:x19e>", goal.origin );
                 exfilgoalent.angles = ( 0, 270, 0 );
                 exfilgoalent.team = team;
-                exfilgoalent.visibleteam = "<dev string:x3370>";
+                exfilgoalent.visibleteam = "<dev string:x3346>";
                 exfilgoalent.ownerteam = team;
                 exfilgoalent.type = "<dev string:xca>";
                 droppoint = exfilgoalent.origin;
@@ -13115,12 +13198,12 @@ function rangefinder()
                     tempangle = randomfloat( 360 );
                     droporigin = trace[ "<dev string:x1ae>" ];
                     forward = ( cos( tempangle ), sin( tempangle ), 0 );
-                    forward = vectornormalize( forward - trace[ "<dev string:x3377>" ] * vectordot( forward, trace[ "<dev string:x3377>" ] ) );
+                    forward = vectornormalize( forward - trace[ "<dev string:x334d>" ] * vectordot( forward, trace[ "<dev string:x334d>" ] ) );
                     dropangles = vectortoangles( forward );
                     exfilgoalent.origin = droporigin;
-                    exfilgoalent setmodel( "<dev string:x3381>" );
-                    exfilgoalent setscriptablepartstate( "<dev string:x339a>", "<dev string:x33a4>" );
-                    exfilgoalent playloopsound( "<dev string:x33ab>" );
+                    exfilgoalent setmodel( "<dev string:x3357>" );
+                    exfilgoalent setscriptablepartstate( "<dev string:x3370>", "<dev string:x337a>" );
+                    exfilgoalent playloopsound( "<dev string:x3381>" );
                 }
                 
                 goal.exfilgoalent = exfilgoalent;
@@ -13128,7 +13211,7 @@ function rangefinder()
                 
                 if ( goal.exfilgoalent.exfilobjid != -1 )
                 {
-                    objectivestate = "<dev string:x33bf>";
+                    objectivestate = "<dev string:x3395>";
                     scripts\mp\objidpoolmanager::objective_add_objective( goal.exfilgoalent.exfilobjid, objectivestate, goal.origin + ( 0, 0, 60 ) );
                     scripts\mp\objidpoolmanager::objective_set_play_intro( goal.exfilgoalent.exfilobjid, 1 );
                     scripts\mp\objidpoolmanager::objective_set_play_outro( goal.exfilgoalent.exfilobjid, 1 );
@@ -13136,15 +13219,15 @@ function rangefinder()
                     self.showworldicon = 1;
                 }
                 
-                goal.exfilgoalent scripts\mp\gameobjects::setobjectivestatusicons( "<dev string:x33ca>", "<dev string:x33e9>", goal.exfilgoalent.exfilobjid );
+                goal.exfilgoalent scripts\mp\gameobjects::setobjectivestatusicons( "<dev string:x33a0>", "<dev string:x33bf>", goal.exfilgoalent.exfilobjid );
                 objective_sethot( goal.exfilgoalent.exfilobjid, 1 );
                 waitframe();
                 playfxontag( level.var_3c8617e34ae080b5[ "<dev string:x83>" ], goal.exfilgoalent, "<dev string:xa6a>" );
                 exfilactivetime = level.exfilactivetimer;
                 wait exfilactivetime;
                 goal.exfilnotactive = 0;
-                goal notify( "<dev string:x3408>" );
-                goal.exfilgoalent scripts\mp\gameobjects::setobjectivestatusicons( "<dev string:x3422>", "<dev string:x33e9>", goal.exfilgoalent.exfilobjid );
+                goal notify( "<dev string:x33de>" );
+                goal.exfilgoalent scripts\mp\gameobjects::setobjectivestatusicons( "<dev string:x33f8>", "<dev string:x33bf>", goal.exfilgoalent.exfilobjid );
                 setdevdvar( @"hash_aa6b4147be329989", 0 );
             }
             
@@ -13153,20 +13236,20 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1ae51
+    // Params 0
+    // Checksum 0x0, Offset: 0x1af2a
     // Size: 0x59, Type: dev
     function function_912799e4f03d89cb()
     {
         foreach ( player in level.players )
         {
-            player notify( "<dev string:x3440>" );
+            player notify( "<dev string:x3416>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1aeb2
+    // Params 0
+    // Checksum 0x0, Offset: 0x1af8b
     // Size: 0x107, Type: dev
     function function_e89032807455937f()
     {
@@ -13179,10 +13262,10 @@ function rangefinder()
                     continue;
                 }
                 
-                printtoscreen2d( 500, 500, "<dev string:x3456>" + level.players[ 0 ] getleftstickx(), ( 1, 1, 1 ), 2 );
-                printtoscreen2d( 500, 550, "<dev string:x3463>" + level.players[ 0 ] getleftsticky(), ( 1, 1, 1 ), 2 );
-                printtoscreen2d( 1000, 500, "<dev string:x3470>" + level.players[ 0 ] getrightstickx(), ( 1, 1, 1 ), 2 );
-                printtoscreen2d( 1000, 550, "<dev string:x347d>" + level.players[ 0 ] getrightsticky(), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 500, "<dev string:x342c>" + level.players[ 0 ] getleftstickx(), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 500, 550, "<dev string:x3439>" + level.players[ 0 ] getleftsticky(), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 1000, 500, "<dev string:x3446>" + level.players[ 0 ] getrightstickx(), ( 1, 1, 1 ), 2 );
+                printtoscreen2d( 1000, 550, "<dev string:x3453>" + level.players[ 0 ] getrightsticky(), ( 1, 1, 1 ), 2 );
             }
             
             waitframe();
@@ -13190,8 +13273,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1afc1
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b09a
     // Size: 0x34, Type: dev
     function watchgunsmithdebugui()
     {
@@ -13202,14 +13285,14 @@ function rangefinder()
         
         while ( true )
         {
-            level waittill( "<dev string:x348a>", player );
+            level waittill( "<dev string:x3460>", player );
             player thread watchplayergunsmithdebugui();
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1affd
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b0d6
     // Size: 0x56, Type: dev
     function watchplayergunsmithdebugui()
     {
@@ -13219,7 +13302,7 @@ function rangefinder()
         {
             self waittill( "<dev string:xe4b>", message, lootid );
             
-            if ( message == "<dev string:x3497>" )
+            if ( message == "<dev string:x346d>" )
             {
                 ref = scripts\cp_mp\utility\loot::function_793e8a72cedb8ef3( lootid );
                 gui_giveattachment_internal( self, ref );
@@ -13228,8 +13311,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b05b
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b134
     // Size: 0x101, Type: dev
     function function_abe647f24253f963()
     {
@@ -13272,8 +13355,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b164
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b23d
     // Size: 0xac, Type: dev
     function function_62ce7a6edc4c6ad3()
     {
@@ -13283,9 +13366,9 @@ function rangefinder()
         {
             if ( getdvarint( @"hash_7a5e31b62cb508b0" ) != 0 )
             {
-                level.teamtweaks[ "<dev string:x34ae>" ].value = 1;
-                level.teamtweaks[ "<dev string:x34ae>" ].lastvalue = 1;
-                level.teamtweaks[ "<dev string:x34ae>" ].dvar = 1;
+                level.teamtweaks[ "<dev string:x3484>" ].value = 1;
+                level.teamtweaks[ "<dev string:x3484>" ].lastvalue = 1;
+                level.teamtweaks[ "<dev string:x3484>" ].dvar = 1;
                 level.maxallowedteamkills = -1;
                 level.friendlyfire = 1;
             }
@@ -13298,12 +13381,12 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b218
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b2f1
     // Size: 0xfa, Type: dev
     function function_363044d134c760aa()
     {
-        println( "<dev string:x34b8>" );
+        println( "<dev string:x348e>" );
         
         foreach ( root, struct in level.weaponmapdata )
         {
@@ -13316,35 +13399,36 @@ function rangefinder()
                 
                 if ( !isdefined( newweaponobj ) )
                 {
-                    println( "<dev string:x34e7>" + root + "<dev string:x31a>" + attachment );
+                    println( "<dev string:x34bd>" + root + "<dev string:x31a>" + attachment );
                 }
             }
             
             waitframe();
         }
         
-        println( "<dev string:x34f3>" );
+        println( "<dev string:x34c9>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b31a
+    // Params 3
+    // Checksum 0x0, Offset: 0x1b3f3
     // Size: 0x3f, Type: dev
     function function_43fe9f589d82275d( entry, groupa, groupb )
     {
-        return entry == "<dev string:xca>" || entry == "<dev string:x3523>" || entry == groupa || entry == groupb;
+        return entry == "<dev string:xca>" || entry == "<dev string:x34f9>" || entry == groupa || entry == groupb;
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b361
+    // Params 1
+    // Checksum 0x0, Offset: 0x1b43a
     // Size: 0x5b, Type: dev
     function function_2c8878dd66a5fc0c( tablename )
     {
         var_e68f00a90c25941e = [];
         idxcol = 1;
         
-        for (attachtitle = tablelookupbyrow( tablename, 0, idxcol ); attachtitle != "<dev string:xca>"; attachtitle = tablelookupbyrow( tablename, 0, idxcol )) {
+        for ( attachtitle = tablelookupbyrow( tablename, 0, idxcol ); attachtitle != "<dev string:xca>" ; attachtitle = tablelookupbyrow( tablename, 0, idxcol ) )
+        {
             var_e68f00a90c25941e[ attachtitle ] = 1;
             idxcol++;
         }
@@ -13353,8 +13437,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b3c4
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b49d
     // Size: 0x63, Type: dev
     function function_6da8d8348378d8a2()
     {
@@ -13365,7 +13449,7 @@ function rangefinder()
         
         while ( true )
         {
-            level waittill( "<dev string:x348a>", player );
+            level waittill( "<dev string:x3460>", player );
             
             if ( !isdefined( player.devguiadded ) )
             {
@@ -13376,8 +13460,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b42f
+    // Params 1
+    // Checksum 0x0, Offset: 0x1b508
     // Size: 0x45, Type: dev
     function function_c612857f342fb8a3( player )
     {
@@ -13391,8 +13475,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b47c
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b555
     // Size: 0x56, Type: dev
     function function_f08f7e7ef0ba1885()
     {
@@ -13401,26 +13485,26 @@ function rangefinder()
             level.var_3b3b12cc96932083.ent = undefined;
             level.var_3b3b12cc96932083.name = undefined;
             level.var_3b3b12cc96932083.entnum = undefined;
-            iprintln( "<dev string:x3529>" );
+            iprintln( "<dev string:x34ff>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b4da
+    // Params 1
+    // Checksum 0x0, Offset: 0x1b5b3
     // Size: 0x3d, Type: dev
     function function_cb179ef63de05005( slotnumber )
     {
         if ( isdefined( level.var_3b3b12cc96932083 ) )
         {
             level.var_3b3b12cc96932083.killstreakslot = slotnumber;
-            iprintln( "<dev string:x3543>" + slotnumber );
+            iprintln( "<dev string:x3519>" + slotnumber );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b51f
+    // Params 1
+    // Checksum 0x0, Offset: 0x1b5f8
     // Size: 0x59, Type: dev
     function function_68069128fc606a7a( slotnumber )
     {
@@ -13431,8 +13515,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b580
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b659
     // Size: 0x36, Type: dev
     function function_c7bcca7a18e6103c()
     {
@@ -13443,29 +13527,30 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b5be
+    // Params 1
+    // Checksum 0x0, Offset: 0x1b697
     // Size: 0x34, Type: dev
     function function_eb32cbc9ab60a822( slotnumber )
     {
-        for (i = 0; i <= slotnumber; i++) {
+        for ( i = 0; i <= slotnumber ; i++ )
+        {
             scripts\mp\killstreaks\killstreaks::makekillstreakavailable( i, "<dev string:x4a4>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b5fa
+    // Params 2
+    // Checksum 0x0, Offset: 0x1b6d3
     // Size: 0x3f, Type: dev
     function setupdevguientries( name, num )
     {
-        cmd = "<dev string:x3558>" + name + "<dev string:x3583>" + num + "<dev string:x35a2>";
+        cmd = "<dev string:x352e>" + name + "<dev string:x3559>" + num + "<dev string:x3578>";
         addentrytodevgui( cmd );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b641
+    // Params 1
+    // Checksum 0x0, Offset: 0x1b71a
     // Size: 0x85, Type: dev
     function function_cd9a040b668ec554( num )
     {
@@ -13476,13 +13561,13 @@ function rangefinder()
             level.var_3b3b12cc96932083.ent = player;
             level.var_3b3b12cc96932083.name = player.name;
             level.var_3b3b12cc96932083.entnum = num;
-            iprintln( "<dev string:x35a9>" + player.name );
+            iprintln( "<dev string:x357f>" + player.name );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b6ce
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b7a7
     // Size: 0x3b, Type: dev
     function function_a130b73465e9ce5d()
     {
@@ -13498,8 +13583,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b711
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b7ea
     // Size: 0xaa, Type: dev
     function function_3f3a0a6721d16a7d()
     {
@@ -13515,28 +13600,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b7c3
-    // Size: 0x63, Type: dev
-    function function_13e3c70659983189()
-    {
-        playerarray = [];
-        
-        if ( isdefined( level.var_3b3b12cc96932083 ) && isdefined( level.var_3b3b12cc96932083.ent ) )
-        {
-            playerarray = array_add( playerarray, level.var_3b3b12cc96932083.ent );
-        }
-        else
-        {
-            playerarray = level.players;
-        }
-        
-        return playerarray;
-    }
-
-    // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b82e
+    // Params 1
+    // Checksum 0x0, Offset: 0x1b89c
     // Size: 0x18, Type: dev
     function addentrytodevgui( command )
     {
@@ -13544,21 +13609,21 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b84e
+    // Params 1
+    // Checksum 0x0, Offset: 0x1b8bc
     // Size: 0x176, Type: dev
     function addentrytodevgui_internal( command )
     {
         level endon( "<dev string:x101>" );
         
-        if ( flag_exist( "<dev string:x35bc>" ) )
+        if ( flag_exist( "<dev string:x3592>" ) )
         {
-            flag_wait( "<dev string:x35bc>" );
+            flag_wait( "<dev string:x3592>" );
         }
         
-        if ( flag_exist( "<dev string:x35d0>" ) )
+        if ( flag_exist( "<dev string:x35a6>" ) )
         {
-            flag_wait( "<dev string:x35d0>" );
+            flag_wait( "<dev string:x35a6>" );
         }
         
         final_command = "<dev string:xca>";
@@ -13598,8 +13663,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b9cc
+    // Params 0
+    // Checksum 0x0, Offset: 0x1ba3a
     // Size: 0xd2, Type: dev
     function function_db271c6d734c887c()
     {
@@ -13629,26 +13694,26 @@ function rangefinder()
         if ( getdvarint( @"hash_14dd8475d8aea762", 0 ) == 0 )
         {
             level.var_439cf6979013d8fc = 0;
-            level notify( "<dev string:x35e4>" );
+            level notify( "<dev string:x35ba>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1baa6
+    // Params 0
+    // Checksum 0x0, Offset: 0x1bb14
     // Size: 0x29, Type: dev
     function setplayeronfire()
     {
         self endon( "<dev string:xb69>" );
         self endon( "<dev string:x273>" );
         scripts\mp\weapons::enableburnfx();
-        level waittill( "<dev string:x35e4>" );
+        level waittill( "<dev string:x35ba>" );
         scripts\mp\weapons::disableburnfx();
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1bad7
+    // Params 0
+    // Checksum 0x0, Offset: 0x1bb45
     // Size: 0xef, Type: dev
     function outofboundsimmune()
     {
@@ -13686,7 +13751,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1bbce
+    // Checksum 0x0, Offset: 0x1bc3c
     // Size: 0xeb, Type: dev
     function private function_598312940d23c1fc()
     {
@@ -13721,11 +13786,11 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1bcc1
+    // Checksum 0x0, Offset: 0x1bd2f
     // Size: 0xb3, Type: dev
     function private function_93df794342c60a43()
     {
-        self endon( "<dev string:x35ff>" );
+        self endon( "<dev string:x35d5>" );
         
         if ( !isdefined( self.debugsprintmeter ) )
         {
@@ -13750,13 +13815,13 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1bd7c
+    // Params 0
+    // Checksum 0x0, Offset: 0x1bdea
     // Size: 0x57, Type: dev
     function function_1e8b61342e55a0ba()
     {
         hud = self.debugsprintmeter;
-        waittill_any_2( "<dev string:x35ff>", "<dev string:x273>" );
+        waittill_any_2( "<dev string:x35d5>", "<dev string:x273>" );
         
         if ( isdefined( hud ) )
         {
@@ -13771,16 +13836,16 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1bddb
+    // Checksum 0x0, Offset: 0x1be49
     // Size: 0xd, Type: dev
     function private function_6788cfb9818e0635()
     {
-        self notify( "<dev string:x35ff>" );
+        self notify( "<dev string:x35d5>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1bdf0
+    // Params 1
+    // Checksum 0x0, Offset: 0x1be5e
     // Size: 0x2c, Type: dev
     function function_6bc9137bb455bd1d( player )
     {
@@ -13789,8 +13854,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1be24
+    // Params 0
+    // Checksum 0x0, Offset: 0x1be92
     // Size: 0x72, Type: dev
     function function_42b151a494105e10()
     {
@@ -13804,8 +13869,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1be9e
+    // Params 0
+    // Checksum 0x0, Offset: 0x1bf0c
     // Size: 0xc5, Type: dev
     function function_9c425b22f7d1a9b9()
     {
@@ -13844,8 +13909,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1bf6b
+    // Params 0
+    // Checksum 0x0, Offset: 0x1bfd9
     // Size: 0xc5, Type: dev
     function function_e00acf9a4feba92e()
     {
@@ -13884,8 +13949,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c038
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c0a6
     // Size: 0x94, Type: dev
     function function_59c2e0ed656c6e01()
     {
@@ -13915,8 +13980,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c0d4
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c142
     // Size: 0xd4, Type: dev
     function function_dda4edd64aefb222()
     {
@@ -13944,8 +14009,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c1b0
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c21e
     // Size: 0x9f, Type: dev
     function function_61ffbb60b6cc59e0()
     {
@@ -13973,14 +14038,15 @@ function rangefinder()
             return;
         }
         
-        for (i = 0; i < warpplayers.size; i++) {
+        for ( i = 0; i < warpplayers.size ; i++ )
+        {
             warp( realclient, warpplayers[ i ], i );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c257
+    // Params 1
+    // Checksum 0x0, Offset: 0x1c2c5
     // Size: 0x89, Type: dev
     function function_f56b2e8615f905ed( benable )
     {
@@ -13990,17 +14056,17 @@ function rangefinder()
         {
             if ( !benable )
             {
-                player val::set( "<dev string:x3619>", "<dev string:x3629>", 0 );
+                player val::set( "<dev string:x35ef>", "<dev string:x35ff>", 0 );
                 continue;
             }
             
-            player val::reset_all( "<dev string:x3619>" );
+            player val::reset_all( "<dev string:x35ef>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c2e8
+    // Params 1
+    // Checksum 0x0, Offset: 0x1c356
     // Size: 0x89, Type: dev
     function function_6dda0c3edae9407c( benable )
     {
@@ -14010,17 +14076,17 @@ function rangefinder()
         {
             if ( !benable )
             {
-                player val::set( "<dev string:x363b>", "<dev string:x364d>", 0 );
+                player val::set( "<dev string:x3611>", "<dev string:x3623>", 0 );
                 continue;
             }
             
-            player val::reset_all( "<dev string:x363b>" );
+            player val::reset_all( "<dev string:x3611>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c379
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c3e7
     // Size: 0x146, Type: dev
     function function_833e05046b8e38ff()
     {
@@ -14043,13 +14109,13 @@ function rangefinder()
         
         host = devfindhost();
         
-        if ( isreallyalive( host ) && getgametype() == "<dev string:x3655>" )
+        if ( isreallyalive( host ) && getgametype() == "<dev string:x362b>" )
         {
-            spawnclassname = "<dev string:x365c>";
+            spawnclassname = "<dev string:x3632>";
             
             if ( addfallback )
             {
-                spawnclassname = "<dev string:x366c>";
+                spawnclassname = "<dev string:x3642>";
             }
             
             spawns = [];
@@ -14063,9 +14129,9 @@ function rangefinder()
                 [[ level.reinitspawns ]]();
             }
         }
-        else if ( getgametype() != "<dev string:x3655>" )
+        else if ( getgametype() != "<dev string:x362b>" )
         {
-            iprintlnbold( 0, "<dev string:x3686>" );
+            iprintlnbold( 0, "<dev string:x365c>" );
         }
         
         setdevdvar( @"hash_603986725ce8d7c3", 0 );
@@ -14073,8 +14139,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c4c7
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c535
     // Size: 0x103, Type: dev
     function function_19f8ce259f92c621()
     {
@@ -14127,8 +14193,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c5d2
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c640
     // Size: 0xad, Type: dev
     function recordposition()
     {
@@ -14142,7 +14208,7 @@ function rangefinder()
         if ( isdefined( level.var_3b3b12cc96932083.ent ) )
         {
             p = level.var_3b3b12cc96932083.ent;
-            file = openfile( "<dev string:x36b7>", "<dev string:x36d1>" );
+            file = openfile( "<dev string:x368d>", "<dev string:x36a7>" );
             originstring = "<dev string:xca>" + p.origin;
             fprintln( file, originstring );
             closefile( file );
@@ -14150,8 +14216,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c687
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c6f5
     // Size: 0xba, Type: dev
     function function_c2edf5eae934b748()
     {
@@ -14164,7 +14230,7 @@ function rangefinder()
                 if ( isdefined( player.vehiclecustomization ) )
                 {
                     player.vehiclecustomization scripts\cp_mp\vehicles\vehicle::function_fdf45700cfcd0c05( undefined, vehhorn );
-                    println( "<dev string:x36db>" + vehhorn );
+                    println( "<dev string:x36b1>" + vehhorn );
                 }
                 
                 break;
@@ -14175,14 +14241,14 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c749
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c7b7
     // Size: 0xc7, Type: dev
     function function_5415edb8c8843131()
     {
         vehcamo = getdvar( @"hash_d51834b4d1b89a35", 0 );
         
-        if ( !issubstr( vehcamo, "<dev string:x36f1>" ) )
+        if ( !issubstr( vehcamo, "<dev string:x36c7>" ) )
         {
             vehcamo = int( vehcamo ) - 1;
         }
@@ -14197,13 +14263,13 @@ function rangefinder()
             player.vehiclecustomization = scripts\cp_mp\vehicles\vehicle::function_fdf45700cfcd0c05( vehcamo, undefined );
         }
         
-        println( "<dev string:x36f6>" + vehcamo );
+        println( "<dev string:x36cc>" + vehcamo );
         setdevdvar( @"hash_d51834b4d1b89a35", "<dev string:xca>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c818
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c886
     // Size: 0xd8, Type: dev
     function function_cc5f552a2f702a89()
     {
@@ -14212,11 +14278,12 @@ function rangefinder()
             return;
         }
         
-        path = "<dev string:x370c>";
+        path = "<dev string:x36e2>";
         rows = tablelookupgetnumrows( path );
         spawnlocs = [];
         
-        for (i = 0; i < rows; i++) {
+        for ( i = 0; i < rows ; i++ )
+        {
             veh = tablelookupbyrow( i, 0 );
             pos = ( float( tablelookupbyrow( path, i, 1 ) ), float( tablelookupbyrow( path, i, 2 ) ), float( tablelookupbyrow( path, i, 3 ) ) );
             angle = ( float( tablelookupbyrow( path, i, 4 ) ), float( tablelookupbyrow( path, i, 5 ) ), float( tablelookupbyrow( path, i, 6 ) ) );
@@ -14224,8 +14291,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c8f8
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c966
     // Size: 0x24, Type: dev
     function function_4b80a57530d92a82()
     {
@@ -14241,8 +14308,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c924
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c992
     // Size: 0xd, Type: dev
     function function_789d76613635c972()
     {
@@ -14250,8 +14317,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c939
+    // Params 0
+    // Checksum 0x0, Offset: 0x1c9a7
     // Size: 0x75, Type: dev
     function function_1f097ebf7869c487()
     {
@@ -14274,17 +14341,17 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c9b6
+    // Params 0
+    // Checksum 0x0, Offset: 0x1ca24
     // Size: 0x22, Type: dev
     function function_e488dea1c20a5a96()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_ed5df81b887a95e2", 0, "<dev string:x3739>", "<dev string:x374e>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_ed5df81b887a95e2", 0, "<dev string:x370f>", "<dev string:x3724>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c9e0
+    // Params 0
+    // Checksum 0x0, Offset: 0x1ca4e
     // Size: 0xcf, Type: dev
     function function_a46032e38e5f4fd2()
     {
@@ -14298,9 +14365,9 @@ function rangefinder()
                 
                 if ( isdefined( host ) )
                 {
-                    host setsoundsubmix( "<dev string:x3764>", 1, 1 );
-                    setglobalsoundcontext( "<dev string:x3782>", "<dev string:x3790>" );
-                    host setclienttriggeraudiozone( "<dev string:x3790>", 1 );
+                    host setsoundsubmix( "<dev string:x373a>", 1, 1 );
+                    setglobalsoundcontext( "<dev string:x3758>", "<dev string:x3766>" );
+                    host setclienttriggeraudiozone( "<dev string:x3766>", 1 );
                 }
                 
                 i = 1;
@@ -14311,8 +14378,8 @@ function rangefinder()
                 
                 if ( isdefined( host ) )
                 {
-                    host clearsoundsubmix( "<dev string:x3764>", 2.2 );
-                    setglobalsoundcontext( "<dev string:x3782>", "<dev string:xca>" );
+                    host clearsoundsubmix( "<dev string:x373a>", 2.2 );
+                    setglobalsoundcontext( "<dev string:x3758>", "<dev string:xca>" );
                     host clearclienttriggeraudiozone( 1 );
                 }
                 
@@ -14324,8 +14391,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1cab7
+    // Params 1
+    // Checksum 0x0, Offset: 0x1cb25
     // Size: 0x23, Type: dev
     function function_e47c81fb62e6b28f( targetent )
     {
@@ -14333,8 +14400,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1cae2
+    // Params 0
+    // Checksum 0x0, Offset: 0x1cb50
     // Size: 0x5c, Type: dev
     function function_4a24cf99b1a11166()
     {
@@ -14342,19 +14409,19 @@ function rangefinder()
         
         if ( getdvarint( @"scr_god", 0 ) == 1 )
         {
-            adddebugcommand( "<dev string:x379e>" );
+            adddebugcommand( "<dev string:x3774>" );
             return;
         }
         
         if ( getdvarint( @"hash_23c3e7fdfb7fdd84", 0 ) == 1 )
         {
-            adddebugcommand( "<dev string:x37a6>" );
+            adddebugcommand( "<dev string:x377c>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1cb46
+    // Params 0
+    // Checksum 0x0, Offset: 0x1cbb4
     // Size: 0x100, Type: dev
     function flipvehicle()
     {
@@ -14378,8 +14445,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1cc4e
+    // Params 0
+    // Checksum 0x0, Offset: 0x1ccbc
     // Size: 0x2db, Type: dev
     function explodevehicle()
     {
@@ -14439,7 +14506,7 @@ function rangefinder()
                         vehicle function_b0af0dd0f9b4fddf( 0 );
                     }
                     
-                    vehicle function_e4fe23e19f4bf900( "<dev string:x37b2>" );
+                    vehicle function_e4fe23e19f4bf900( "<dev string:x3788>" );
                 }
                 else if ( getdvarint( @"hash_1fafe63a31eaf451", 0 ) != 0 )
                 {
@@ -14463,8 +14530,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1cf31
+    // Params 0
+    // Checksum 0x0, Offset: 0x1cf9f
     // Size: 0x220, Type: dev
     function function_af8ffb35e1fba50b()
     {
@@ -14487,46 +14554,46 @@ function rangefinder()
                 {
                     model = instance scripts\common\vehicle_code::function_d0e99a4f0c29166e();
                     
-                    if ( issubstr( model, "<dev string:x37d8>" ) )
+                    if ( issubstr( model, "<dev string:x37ae>" ) )
                     {
                         continue;
                     }
                     
-                    instance hidepart( "<dev string:x37e2>" );
-                    instance hidepart( "<dev string:x3801>" );
-                    instance hidepart( "<dev string:x3821>" );
-                    instance hidepart( "<dev string:x383f>" );
-                    instance hidepart( "<dev string:x385e>" );
-                    instance hidepart( "<dev string:x3882>" );
-                    instance hidepart( "<dev string:x38a7>" );
-                    instance hidepart( "<dev string:x38ca>" );
+                    instance hidepart( "<dev string:x37b8>" );
+                    instance hidepart( "<dev string:x37d7>" );
+                    instance hidepart( "<dev string:x37f7>" );
+                    instance hidepart( "<dev string:x3815>" );
+                    instance hidepart( "<dev string:x3834>" );
+                    instance hidepart( "<dev string:x3858>" );
+                    instance hidepart( "<dev string:x387d>" );
+                    instance hidepart( "<dev string:x38a0>" );
                     
-                    if ( issubstr( model, "<dev string:x38ee>" ) )
+                    if ( issubstr( model, "<dev string:x38c4>" ) )
                     {
-                        instance hidepart( "<dev string:x38fd>" );
-                        instance hidepart( "<dev string:x391d>" );
-                        instance hidepart( "<dev string:x393e>" );
-                        instance hidepart( "<dev string:x3963>" );
+                        instance hidepart( "<dev string:x38d3>" );
+                        instance hidepart( "<dev string:x38f3>" );
+                        instance hidepart( "<dev string:x3914>" );
+                        instance hidepart( "<dev string:x3939>" );
                     }
                     
-                    if ( issubstr( model, "<dev string:x3989>" ) )
+                    if ( issubstr( model, "<dev string:x395f>" ) )
                     {
-                        instance hidepart( "<dev string:x3990>" );
-                        instance hidepart( "<dev string:x39b1>" );
-                        instance hidepart( "<dev string:x39d3>" );
-                        instance hidepart( "<dev string:x39f4>" );
-                        instance hidepart( "<dev string:x3a16>" );
-                        instance hidepart( "<dev string:x3a3c>" );
-                        instance hidepart( "<dev string:x3a63>" );
-                        instance hidepart( "<dev string:x3a89>" );
+                        instance hidepart( "<dev string:x3966>" );
+                        instance hidepart( "<dev string:x3987>" );
+                        instance hidepart( "<dev string:x39a9>" );
+                        instance hidepart( "<dev string:x39ca>" );
+                        instance hidepart( "<dev string:x39ec>" );
+                        instance hidepart( "<dev string:x3a12>" );
+                        instance hidepart( "<dev string:x3a39>" );
+                        instance hidepart( "<dev string:x3a5f>" );
                     }
                     
-                    if ( issubstr( model, "<dev string:x3ab0>" ) )
+                    if ( issubstr( model, "<dev string:x3a86>" ) )
                     {
-                        instance hidepart( "<dev string:x3ac2>" );
-                        instance hidepart( "<dev string:x3adb>" );
-                        instance hidepart( "<dev string:x3af5>" );
-                        instance hidepart( "<dev string:x3b0d>" );
+                        instance hidepart( "<dev string:x3a98>" );
+                        instance hidepart( "<dev string:x3ab1>" );
+                        instance hidepart( "<dev string:x3acb>" );
+                        instance hidepart( "<dev string:x3ae3>" );
                     }
                 }
             }
@@ -14536,8 +14603,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d159
+    // Params 0
+    // Checksum 0x0, Offset: 0x1d1c7
     // Size: 0x6b, Type: dev
     function function_eec7cf6eeba7b18e()
     {
@@ -14564,8 +14631,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d1cc
+    // Params 0
+    // Checksum 0x0, Offset: 0x1d23a
     // Size: 0x130, Type: dev
     function function_991360818ecedb4b()
     {
@@ -14599,8 +14666,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d304
+    // Params 0
+    // Checksum 0x0, Offset: 0x1d372
     // Size: 0x1a1, Type: dev
     function function_df723c75aa9439cc()
     {
@@ -14623,13 +14690,13 @@ function rangefinder()
             dist = distance( host.origin, bot.origin );
             headpos = bot gettagorigin( "<dev string:xa83>" );
             scale = dist / 1000;
-            print3d( headpos, "<dev string:x3b26>" + dist, ( 1, 1, 1 ), 1, 1 + scale );
+            print3d( headpos, "<dev string:x3afc>" + dist, ( 1, 1, 1 ), 1, 1 + scale );
             
             if ( !getdvarint( @"hash_eac0c331e6c7a19", 0 ) )
             {
                 if ( !isdefined( bot.outlineid ) )
                 {
-                    outlineid = scripts\mp\utility\outline::outlineenableforall( bot, "<dev string:x11c8>", "<dev string:x3b34>" );
+                    outlineid = scripts\mp\utility\outline::outlineenableforall( bot, "<dev string:x11c8>", "<dev string:x3b0a>" );
                     bot.outlineid = outlineid;
                 }
                 else
@@ -14648,8 +14715,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d4ad
+    // Params 0
+    // Checksum 0x0, Offset: 0x1d51b
     // Size: 0x80, Type: dev
     function function_7b6b4827ac39b941()
     {
@@ -14672,8 +14739,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d535
+    // Params 2
+    // Checksum 0x0, Offset: 0x1d5a3
     // Size: 0xe1, Type: dev
     function function_7fa1d33727888ed3( dist, bots )
     {
@@ -14690,8 +14757,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d61e
+    // Params 0
+    // Checksum 0x0, Offset: 0x1d68c
     // Size: 0xad, Type: dev
     function function_64c38aaa56b64048()
     {
@@ -14716,8 +14783,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d6d3
+    // Params 2
+    // Checksum 0x0, Offset: 0x1d741
     // Size: 0x105, Type: dev
     function function_289339b65c8d45c0( movedist, bots )
     {
@@ -14734,8 +14801,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d7e0
+    // Params 0
+    // Checksum 0x0, Offset: 0x1d84e
     // Size: 0x283, Type: dev
     function function_cb7d245329d3458a()
     {
@@ -14777,7 +14844,7 @@ function rangefinder()
                     closestpoint = getclosestpointonnavmesh( bot.origin + forward * 1000 );
                     bot botclearscriptgoal();
                     waitframe();
-                    bot botsetscriptgoal( closestpoint, 1, "<dev string:x3b41>", undefined, undefined );
+                    bot botsetscriptgoal( closestpoint, 1, "<dev string:x3b17>", undefined, undefined );
                 }
             }
             
@@ -14791,7 +14858,7 @@ function rangefinder()
                     closestpoint = getclosestpointonnavmesh( host.origin );
                     bot botclearscriptgoal();
                     waitframe();
-                    bot botsetscriptgoal( closestpoint, 20, "<dev string:x3b41>", undefined, undefined );
+                    bot botsetscriptgoal( closestpoint, 20, "<dev string:x3b17>", undefined, undefined );
                 }
             }
             
@@ -14809,8 +14876,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1da6b
+    // Params 0
+    // Checksum 0x0, Offset: 0x1dad9
     // Size: 0xea, Type: dev
     function function_69de277cc8fb7d38()
     {
@@ -14853,8 +14920,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1db5d
+    // Params 0
+    // Checksum 0x0, Offset: 0x1dbcb
     // Size: 0x3a7, Type: dev
     function function_d2f5e543e4d6d558()
     {
@@ -14886,19 +14953,19 @@ function rangefinder()
                     switch ( consoledvar )
                     {
                         case 1:
-                            volume = "<dev string:x3b4d>";
+                            volume = "<dev string:x3b23>";
                             break;
                         case 2:
-                            volume = "<dev string:x3b55>";
+                            volume = "<dev string:x3b2b>";
                             break;
                         case 3:
-                            volume = "<dev string:x3b5e>";
+                            volume = "<dev string:x3b34>";
                             break;
                         case 4:
-                            volume = "<dev string:x3b68>";
+                            volume = "<dev string:x3b3e>";
                             break;
                         default:
-                            volume = "<dev string:x3b74>";
+                            volume = "<dev string:x3b4a>";
                             break;
                     }
                     
@@ -14907,16 +14974,16 @@ function rangefinder()
                     switch ( var_4fa67b773f078750 )
                     {
                         case 1:
-                            type = "<dev string:x3b7e>";
+                            type = "<dev string:x3b54>";
                             break;
                         case 2:
-                            type = "<dev string:x3b8b>";
+                            type = "<dev string:x3b61>";
                             break;
                         case 3:
-                            type = "<dev string:x3b96>";
+                            type = "<dev string:x3b6c>";
                             break;
                         case 4:
-                            type = "<dev string:x3ba1>";
+                            type = "<dev string:x3b77>";
                             break;
                         default:
                             type = "<dev string:x1f8>";
@@ -14924,13 +14991,13 @@ function rangefinder()
                     }
                     
                     dist = distance( host.origin, bot.origin );
-                    println( "<dev string:x3bac>" );
-                    println( "<dev string:x3bce>" + type );
-                    println( "<dev string:x3bde>" + volume );
-                    println( "<dev string:x3bf0>" + bot getentitynumber() );
-                    println( "<dev string:x3c00>" + dist );
-                    println( "<dev string:x3c12>" + bot.primaryweapon );
-                    println( "<dev string:x3c22>" );
+                    println( "<dev string:x3b82>" );
+                    println( "<dev string:x3ba4>" + type );
+                    println( "<dev string:x3bb4>" + volume );
+                    println( "<dev string:x3bc6>" + bot getentitynumber() );
+                    println( "<dev string:x3bd6>" + dist );
+                    println( "<dev string:x3be8>" + bot.primaryweapon );
+                    println( "<dev string:x3bf8>" );
                 }
             }
         }
@@ -14947,37 +15014,37 @@ function rangefinder()
             switch ( consoledvar )
             {
                 case 1:
-                    volume = "<dev string:x3b4d>";
+                    volume = "<dev string:x3b23>";
                     break;
                 case 2:
-                    volume = "<dev string:x3b55>";
+                    volume = "<dev string:x3b2b>";
                     break;
                 case 3:
-                    volume = "<dev string:x3b5e>";
+                    volume = "<dev string:x3b34>";
                     break;
                 case 4:
-                    volume = "<dev string:x3b68>";
+                    volume = "<dev string:x3b3e>";
                     break;
                 default:
-                    volume = "<dev string:x3b74>";
+                    volume = "<dev string:x3b4a>";
                     break;
             }
             
             dist = distance( host.origin, vehicle.origin );
-            println( "<dev string:x3bac>" );
-            println( "<dev string:x3c42>" );
-            println( "<dev string:x3bde>" + volume );
-            println( "<dev string:x3c59>" + vehicle.vehiclename );
-            println( "<dev string:x3c6b>" + dist );
-            println( "<dev string:x3c22>" );
+            println( "<dev string:x3b82>" );
+            println( "<dev string:x3c18>" );
+            println( "<dev string:x3bb4>" + volume );
+            println( "<dev string:x3c2f>" + vehicle.vehiclename );
+            println( "<dev string:x3c41>" + dist );
+            println( "<dev string:x3bf8>" );
         }
         
         setdevdvar( @"hash_7593dee806228a1a", 0 );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1df0c
+    // Params 0
+    // Checksum 0x0, Offset: 0x1df7a
     // Size: 0xdd, Type: dev
     function function_a04e86ada26fed1b()
     {
@@ -15015,8 +15082,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1dff1
+    // Params 0
+    // Checksum 0x0, Offset: 0x1e05f
     // Size: 0x54b, Type: dev
     function function_4d6e7ec55fd3917d()
     {
@@ -15042,13 +15109,13 @@ function rangefinder()
             spawndata.angles = spawnangles;
             spawndata.spawntype = "<dev string:x975>";
             [ vehicle, seatid ] = scripts\cp_mp\vehicles\vehicle::function_84033ce50b8afce2( vehicleref, spawndata );
-            vehicle addcomponent( "<dev string:x3c81>" );
-            vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3c88>", 1 );
-            vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3c97>", 1 );
-            vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3cae>", 300 );
-            vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3cbf>", 1 );
-            vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3cd5>", 0.5 );
-            vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3ce9>", 4 );
+            vehicle addcomponent( "<dev string:x3c57>" );
+            vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3c5e>", 1 );
+            vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3c6d>", 1 );
+            vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3c84>", 300 );
+            vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3c95>", 1 );
+            vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3cab>", 0.5 );
+            vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3cbf>", 4 );
             vehicle vehicle_turnengineon();
             
             if ( !isdefined( level.devvehicles ) )
@@ -15072,7 +15139,7 @@ function rangefinder()
                 switch ( drivedvar )
                 {
                     case 2:
-                        if ( vehicle.vehiclename == "<dev string:x3cff>" || vehicle.vehiclename == "<dev string:x3d0e>" )
+                        if ( vehicle.vehiclename == "<dev string:x3cd5>" || vehicle.vehiclename == "<dev string:x3ce4>" )
                         {
                             break;
                         }
@@ -15082,7 +15149,7 @@ function rangefinder()
                         vehicle thread namespace_9246f10206f50768::function_8f40a2c8678f8304( vehicle.origin, endpoint, 300 );
                         break;
                     case 1:
-                        if ( vehicle.vehiclename == "<dev string:x3cff>" || vehicle.vehiclename == "<dev string:x3d0e>" )
+                        if ( vehicle.vehiclename == "<dev string:x3cd5>" || vehicle.vehiclename == "<dev string:x3ce4>" )
                         {
                             break;
                         }
@@ -15092,10 +15159,10 @@ function rangefinder()
                         vehicle thread namespace_9246f10206f50768::function_8f40a2c8678f8304( vehicle.origin, endpoint, 300 );
                         break;
                     case 3:
-                        vehicle notify( "<dev string:x3d20>" );
-                        vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3d30>", 0 );
-                        vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3c88>", 1 );
-                        vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3d3f>", vehicle.origin );
+                        vehicle notify( "<dev string:x3cf6>" );
+                        vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3d06>", 0 );
+                        vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3c5e>", 1 );
+                        vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3d15>", vehicle.origin );
                         vehicle stoppath();
                         vehicle vehicle_setspeedimmediate( 0, 1, 1 );
                         vehicle vehicle_cleardrivingstate();
@@ -15117,10 +15184,10 @@ function rangefinder()
                 if ( vehicle.vehiclename == destroydvar )
                 {
                     level.devvehicles[ index ] = undefined;
-                    vehicle notify( "<dev string:x3d20>" );
-                    vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3d30>", 0 );
-                    vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3c88>", 1 );
-                    vehicle function_77320e794d35465a( "<dev string:x3c81>", "<dev string:x3d3f>", vehicle.origin );
+                    vehicle notify( "<dev string:x3cf6>" );
+                    vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3d06>", 0 );
+                    vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3c5e>", 1 );
+                    vehicle function_77320e794d35465a( "<dev string:x3c57>", "<dev string:x3d15>", vehicle.origin );
                     vehicle stoppath();
                     vehicle vehicle_setspeedimmediate( 0, 1, 1 );
                     vehicle vehicle_cleardrivingstate();
@@ -15133,8 +15200,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1e544
+    // Params 0
+    // Checksum 0x0, Offset: 0x1e5b2
     // Size: 0x1cc, Type: dev
     function debugvehicles()
     {
@@ -15165,13 +15232,13 @@ function rangefinder()
             
             dist = distance( host.origin, vehicle.origin );
             scale = dist / 1000;
-            print3d( vehicle.origin + ( 0, 0, 50 ), "<dev string:x3b26>" + dist, ( 1, 1, 1 ), 1, 1 + scale );
+            print3d( vehicle.origin + ( 0, 0, 50 ), "<dev string:x3afc>" + dist, ( 1, 1, 1 ), 1, 1 + scale );
             
             if ( !getdvarint( @"hash_eac0c331e6c7a19", 0 ) )
             {
                 if ( !isdefined( vehicle.outlineid ) )
                 {
-                    outlineid = scripts\mp\utility\outline::outlineenableforall( vehicle, "<dev string:x11c8>", "<dev string:x3b34>" );
+                    outlineid = scripts\mp\utility\outline::outlineenableforall( vehicle, "<dev string:x11c8>", "<dev string:x3b0a>" );
                     vehicle.outlineid = outlineid;
                 }
                 else
@@ -15190,8 +15257,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1e718
+    // Params 0
+    // Checksum 0x0, Offset: 0x1e786
     // Size: 0x69, Type: dev
     function function_1b6f9f83855a61ce()
     {
@@ -15214,8 +15281,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1e789
+    // Params 0
+    // Checksum 0x0, Offset: 0x1e7f7
     // Size: 0x10d, Type: dev
     function function_344c138dc3ceab1d()
     {
@@ -15243,7 +15310,7 @@ function rangefinder()
                     level.players[ 0 ] thread [[ level.var_36827f5d10328424 ]]();
                 }
                 
-                level.players[ 0 ] notify( "<dev string:x3d4c>" );
+                level.players[ 0 ] notify( "<dev string:x3d22>" );
             }
             
             wait 1;
@@ -15251,8 +15318,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1e89e
+    // Params 0
+    // Checksum 0x0, Offset: 0x1e90c
     // Size: 0x4d, Type: dev
     function function_ba9b45053e961b3b()
     {
@@ -15262,7 +15329,7 @@ function rangefinder()
         {
             if ( getdvarint( @"hash_f45a5fd7bc382158", 0 ) == 1 )
             {
-                level.players[ 0 ] scripts\mp\gametypes\br_gametype_dmz::attachbag( "<dev string:x3d5c>" );
+                level.players[ 0 ] scripts\mp\gametypes\br_gametype_dmz::attachbag( "<dev string:x3d32>" );
                 return;
             }
             
@@ -15271,8 +15338,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1e8f3
+    // Params 0
+    // Checksum 0x0, Offset: 0x1e961
     // Size: 0x5a, Type: dev
     function function_cdab8b6c45b3889f()
     {
@@ -15296,8 +15363,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1e955
+    // Params 0
+    // Checksum 0x0, Offset: 0x1e9c3
     // Size: 0x202, Type: dev
     function function_21b1037a002c9aaa()
     {
@@ -15328,7 +15395,8 @@ function rangefinder()
                     
                     if ( isalive( player ) )
                     {
-                        for (i = 0; i < namespace_aead94004cf4c147::getplayerbackpacksize( player ); i++) {
+                        for ( i = 0; i < namespace_aead94004cf4c147::getplayerbackpacksize( player ) ; i++ )
+                        {
                             if ( var_479111fcc1c69c65 && isbot( player ) && i == 0 )
                             {
                                 var_479111fcc1c69c65 = 0;
@@ -15358,8 +15426,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1eb5f
+    // Params 0
+    // Checksum 0x0, Offset: 0x1ebcd
     // Size: 0x2d4, Type: dev
     function function_c561877ea8d01d6c()
     {
@@ -15388,36 +15456,36 @@ function rangefinder()
                     if ( isalive( player ) )
                     {
                         var_78f26565a3bb0026 = spawnstruct();
-                        var_78f26565a3bb0026.scriptablename = "<dev string:x3d7e>";
+                        var_78f26565a3bb0026.scriptablename = "<dev string:x3d54>";
                         var_78f26565a3bb0026.count = 800;
                         player scripts\mp\gametypes\br_plunder::takeplunderpickup( var_78f26565a3bb0026 );
                         var_a88b57639e11d229 = spawnstruct();
-                        var_a88b57639e11d229.scriptablename = "<dev string:x3da0>";
+                        var_a88b57639e11d229.scriptablename = "<dev string:x3d76>";
                         var_a88b57639e11d229.count = 220;
                         player scripts\mp\gametypes\br_pickups::takegasmask( var_a88b57639e11d229 );
                         var_8a2b11e1f8c1b4e6 = spawnstruct();
-                        var_8a2b11e1f8c1b4e6.scriptablename = "<dev string:x3dc0>";
+                        var_8a2b11e1f8c1b4e6.scriptablename = "<dev string:x3d96>";
                         var_8a2b11e1f8c1b4e6.count = 1;
                         player scripts\mp\gametypes\br_pickups::takekillstreakpickup( var_8a2b11e1f8c1b4e6 );
                         player scripts\mp\gametypes\br_pickups::takerevivepickup();
                         var_e6ab079a55858647 = spawnstruct();
-                        var_e6ab079a55858647.scriptablename = "<dev string:x3de9>";
+                        var_e6ab079a55858647.scriptablename = "<dev string:x3dbf>";
                         var_e6ab079a55858647.count = 1;
                         player scripts\mp\gametypes\br_pickups::takeequipmentpickup( var_e6ab079a55858647 );
                         var_fb6789db24cdd53e = spawnstruct();
-                        var_fb6789db24cdd53e.scriptablename = "<dev string:x3dff>";
+                        var_fb6789db24cdd53e.scriptablename = "<dev string:x3dd5>";
                         var_fb6789db24cdd53e.count = 1;
                         player scripts\mp\gametypes\br_pickups::takeequipmentpickup( var_fb6789db24cdd53e );
                         var_b340b487e7d78d4d = spawnstruct();
-                        var_b340b487e7d78d4d.scriptablename = "<dev string:x3e16>";
+                        var_b340b487e7d78d4d.scriptablename = "<dev string:x3dec>";
                         var_b340b487e7d78d4d.count = 1;
                         player scripts\mp\gametypes\br_pickups::takeequipmentpickup( var_b340b487e7d78d4d );
                         var_637c68e35ac57e73 = spawnstruct();
-                        var_637c68e35ac57e73.scriptablename = "<dev string:x3e2e>";
+                        var_637c68e35ac57e73.scriptablename = "<dev string:x3e04>";
                         var_637c68e35ac57e73.count = 1;
                         player scripts\mp\gametypes\br_pickups::takesuperpickup( var_637c68e35ac57e73 );
                         var_1641c4955131ce58 = spawnstruct();
-                        var_1641c4955131ce58.scriptablename = "<dev string:x3e4b>";
+                        var_1641c4955131ce58.scriptablename = "<dev string:x3e21>";
                         var_1641c4955131ce58.origin = player.origin;
                         var_1641c4955131ce58.count = 0;
                         var_1641c4955131ce58.countlefthand = 0;
@@ -15431,8 +15499,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1ee3b
+    // Params 0
+    // Checksum 0x0, Offset: 0x1eea9
     // Size: 0x18f, Type: dev
     function function_eab2f1dc0cb5d29a()
     {
@@ -15458,7 +15526,7 @@ function rangefinder()
                 
                 if ( isdefined( centerofmass ) )
                 {
-                    centerofmass = centerofmass[ "<dev string:x18a2>" ];
+                    centerofmass = centerofmass[ "<dev string:x1878>" ];
                 }
                 else
                 {
@@ -15475,8 +15543,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1efd2
+    // Params 0
+    // Checksum 0x0, Offset: 0x1f040
     // Size: 0x112, Type: dev
     function function_ea1435d097a761b3()
     {
@@ -15497,7 +15565,7 @@ function rangefinder()
                 {
                     dropstruct = scripts\mp\gametypes\br_pickups::function_7b9f3966a7a42003();
                     dropinfo = scripts\mp\gametypes\br_pickups::getitemdroporiginandangles( dropstruct, player.origin, player.angles, player );
-                    agentradio = scripts\mp\gametypes\br_pickups::spawnpickup( "<dev string:x3e6b>", dropinfo );
+                    agentradio = scripts\mp\gametypes\br_pickups::spawnpickup( "<dev string:x3e41>", dropinfo );
                     agentradio.entitynumber = player getentitynumber();
                     agentradio.poi = player.closestpoi;
                     thread scripts\mp\overseer::function_fc9a15646315764c( agentradio );
@@ -15509,8 +15577,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f0ec
+    // Params 0
+    // Checksum 0x0, Offset: 0x1f15a
     // Size: 0x65, Type: dev
     function function_3f8d230bc182470()
     {
@@ -15535,8 +15603,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f159
+    // Params 1
+    // Checksum 0x0, Offset: 0x1f1c7
     // Size: 0x12e, Type: dev
     function function_1e7522498073119f( player )
     {
@@ -15545,7 +15613,7 @@ function rangefinder()
         var_e76c084d206cfb7f = scripts\engine\trace::create_itemclip_contents();
         deploytrace = scripts\engine\trace::ray_trace( targetpos + ( 0, 0, 1024 ), targetpos, undefined, var_e76c084d206cfb7f, 0, 0, 1 );
         
-        if ( deploytrace[ "<dev string:x154>" ] != "<dev string:x3e86>" )
+        if ( deploytrace[ "<dev string:x154>" ] != "<dev string:x3e5c>" )
         {
             deploypos = deploytrace[ "<dev string:x1ae>" ];
         }
@@ -15555,7 +15623,7 @@ function rangefinder()
         }
         
         aitype = scripts\mp\ai_mp_controller::function_7f1a2e2ebe0c1693( "<dev string:x12e0>", 1 );
-        agent = scripts\mp\ai_mp_controller::ai_mp_requestspawnagent( aitype, deploypos, player.angles, "<dev string:x3e96>", "<dev string:x3ea2>" );
+        agent = scripts\mp\ai_mp_controller::ai_mp_requestspawnagent( aitype, deploypos, player.angles, "<dev string:x3e6c>", "<dev string:x3e78>" );
         
         if ( !isdefined( agent ) )
         {
@@ -15573,8 +15641,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f28f
+    // Params 0
+    // Checksum 0x0, Offset: 0x1f2fd
     // Size: 0x19b, Type: dev
     function function_d091089932ce27a1()
     {
@@ -15602,7 +15670,7 @@ function rangefinder()
             
             if ( !isdefined( bot ) )
             {
-                iprintlnbold( "<dev string:x3eaf>" );
+                iprintlnbold( "<dev string:x3e85>" );
                 continue;
             }
             
@@ -15626,13 +15694,13 @@ function rangefinder()
                 continue;
             }
             
-            iprintlnbold( "<dev string:x3efe>" );
+            iprintlnbold( "<dev string:x3ed4>" );
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f432
+    // Params 0
+    // Checksum 0x0, Offset: 0x1f4a0
     // Size: 0xfa, Type: dev
     function function_da9bb330ce4c2309()
     {
@@ -15659,21 +15727,21 @@ function rangefinder()
             
             if ( !isdefined( bot ) )
             {
-                iprintlnbold( "<dev string:x3f50>" );
+                iprintlnbold( "<dev string:x3f26>" );
                 continue;
             }
             
-            iprintlnbold( "<dev string:x3f69>" );
+            iprintlnbold( "<dev string:x3f3f>" );
             bot thread scripts\mp\teamrevive::function_c86cf00d5859ce10( ( 0, 0, 0 ) );
             wait 10;
-            iprintlnbold( "<dev string:x3f88>" );
+            iprintlnbold( "<dev string:x3f5e>" );
             bot scripts\mp\teamrevive::function_a3ffe1d08888c2();
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f534
+    // Params 0
+    // Checksum 0x0, Offset: 0x1f5a2
     // Size: 0x146, Type: dev
     function function_e512f821db52c11()
     {
@@ -15708,7 +15776,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1f682
+    // Checksum 0x0, Offset: 0x1f6f0
     // Size: 0x1cf, Type: dev
     function private function_2f3ae3af12426b6d()
     {
@@ -15747,15 +15815,15 @@ function rangefinder()
         fixedspawndata.origin = spawnorigin;
         fixedspawndata.angles = spawnangles;
         setdvar( @"hash_c2de8ca6dc8512c1", 1 );
-        level [[ level.bot_funcs[ "<dev string:x3329>" ] ]]( var_cc3e8bc1bf3118b9, hostteam, undefined, undefined, "<dev string:x3f9b>", undefined, fixedspawndata );
-        level waittill_any_timeout_1( 5, "<dev string:x3f9b>" );
-        level [[ level.bot_funcs[ "<dev string:x3329>" ] ]]( var_cc3e8bc1bf3118b9, hostenemyteam, undefined, undefined, "<dev string:x3fb7>", undefined, fixedspawndata );
-        level waittill_any_timeout_1( 5, "<dev string:x3fb7>" );
+        level [[ level.bot_funcs[ "<dev string:x32ff>" ] ]]( var_cc3e8bc1bf3118b9, hostteam, undefined, undefined, "<dev string:x3f71>", undefined, fixedspawndata );
+        level waittill_any_timeout_1( 5, "<dev string:x3f71>" );
+        level [[ level.bot_funcs[ "<dev string:x32ff>" ] ]]( var_cc3e8bc1bf3118b9, hostenemyteam, undefined, undefined, "<dev string:x3f8d>", undefined, fixedspawndata );
+        level waittill_any_timeout_1( 5, "<dev string:x3f8d>" );
     }
 
     // Namespace dev / scripts\mp\dev
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1f859
+    // Checksum 0x0, Offset: 0x1f8c7
     // Size: 0x116, Type: dev
     function private function_77ea3fd6a35c844c()
     {
@@ -15774,7 +15842,8 @@ function rangefinder()
         forward = anglestoforward( self.angles );
         up = anglestoup( self.angles );
         
-        for (i = 0; i < rotationsteps; i++) {
+        for ( i = 0; i < rotationsteps ; i++ )
+        {
             degrees = 0 + 30 * i;
             rot = rotatepointaroundvector( up, forward, degrees );
             rot = vectornormalize( rot ) * dist;
@@ -15785,7 +15854,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1f977
+    // Checksum 0x0, Offset: 0x1f9e5
     // Size: 0x215, Type: dev
     function private function_3153fcf9b8215d83( var_79cd16628cd9582 )
     {
@@ -15834,7 +15903,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1fb94
+    // Checksum 0x0, Offset: 0x1fc02
     // Size: 0x516, Type: dev
     function private function_e2d36d595bb206ce( var_79cd16628cd9582 )
     {
@@ -15854,7 +15923,7 @@ function rangefinder()
                 continue;
             }
             
-            if ( ent.id != "<dev string:x3fd9>" )
+            if ( ent.id != "<dev string:x3faf>" )
             {
                 continue;
             }
@@ -15943,7 +16012,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x200b2
+    // Checksum 0x0, Offset: 0x20120
     // Size: 0x9c, Type: dev
     function private function_95907c91ea217d77( var_79cd16628cd9582 )
     {
@@ -15962,7 +16031,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x20156
+    // Checksum 0x0, Offset: 0x201c4
     // Size: 0xee, Type: dev
     function private function_e519d591d680cf06( var_79cd16628cd9582 )
     {
@@ -15971,13 +16040,13 @@ function rangefinder()
         
         if ( !isdefined( testdata.participants.revivee ) )
         {
-            iprintlnbold( "<dev string:x3fee>" );
+            iprintlnbold( "<dev string:x3fc4>" );
             return 0;
         }
         
         if ( !isdefined( testdata.participants.reviver ) )
         {
-            iprintlnbold( "<dev string:x4029>" );
+            iprintlnbold( "<dev string:x3fff>" );
             return 0;
         }
         
@@ -15993,13 +16062,13 @@ function rangefinder()
             return;
         }
         
-        iprintlnbold( "<dev string:x3efe>" );
+        iprintlnbold( "<dev string:x3ed4>" );
         return 0;
     }
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2024c
+    // Checksum 0x0, Offset: 0x202ba
     // Size: 0x117, Type: dev
     function private function_6c3a2274c9d28e55( testdata )
     {
@@ -16007,17 +16076,17 @@ function rangefinder()
         entref = getentbynum( testdata.participants.reviver getentitynumber() );
         entref.var_7f59448717b5aa63 = 1;
         wait 0.25;
-        testdata.reviveents.laststandreviveent notify( "<dev string:x4064>", testdata.participants.reviver );
+        testdata.reviveents.laststandreviveent notify( "<dev string:x403a>", testdata.participants.reviver );
         
         if ( istrue( testdata.var_b34ec33a70953a71 ) )
         {
             var_a841eb961373d83e = [];
-            var_a841eb961373d83e[ 0 ] = "<dev string:x406f>";
-            var_a841eb961373d83e[ 1 ] = "<dev string:x3440>";
-            var_a841eb961373d83e[ 2 ] = "<dev string:x408a>";
+            var_a841eb961373d83e[ 0 ] = "<dev string:x4045>";
+            var_a841eb961373d83e[ 1 ] = "<dev string:x3416>";
+            var_a841eb961373d83e[ 2 ] = "<dev string:x4060>";
             var_a841eb961373d83e[ 3 ] = "<dev string:x14db>";
-            var_a841eb961373d83e[ 4 ] = "<dev string:x40a1>";
-            var_a841eb961373d83e[ 5 ] = "<dev string:x40bb>";
+            var_a841eb961373d83e[ 4 ] = "<dev string:x4077>";
+            var_a841eb961373d83e[ 5 ] = "<dev string:x4091>";
             msg = testdata.participants.revivee waittill_any_in_array_or_timeout_no_endon_death( var_a841eb961373d83e, 20 );
             return msg;
         }
@@ -16027,7 +16096,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2036b
+    // Checksum 0x0, Offset: 0x203d9
     // Size: 0x55, Type: dev
     function private function_ed9583c799dfe4b8( testdata )
     {
@@ -16036,7 +16105,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x203c8
+    // Checksum 0x0, Offset: 0x20436
     // Size: 0xe, Type: dev
     function private function_f55b03035f71d721( testdata )
     {
@@ -16045,7 +16114,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x203de
+    // Checksum 0x0, Offset: 0x2044c
     // Size: 0x55, Type: dev
     function private function_8f48082d56ac4fac( testdata )
     {
@@ -16054,7 +16123,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2043b
+    // Checksum 0x0, Offset: 0x204a9
     // Size: 0xc0, Type: dev
     function private function_bfca4a5f93d1b4be( var_79cd16628cd9582 )
     {
@@ -16075,14 +16144,14 @@ function rangefinder()
                 
                 break;
             default:
-                assertmsg( "<dev string:x40e7>" );
+                assertmsg( "<dev string:x40bd>" );
                 break;
         }
     }
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x20503
+    // Checksum 0x0, Offset: 0x20571
     // Size: 0x1ad, Type: dev
     function private function_b0a79a4ae69d6961( var_79cd16628cd9582 )
     {
@@ -16099,7 +16168,7 @@ function rangefinder()
         }
         
         stringarray = [];
-        stringarray[ 0 ] = "<dev string:x414c>";
+        stringarray[ 0 ] = "<dev string:x4122>";
         testdata.participants.revivee waittill_any_in_array_or_timeout_no_endon_death( stringarray, 10 );
         
         while ( !isinlaststand( testdata.participants.revivee ) || !isdefined( level.laststandreviveents ) )
@@ -16121,7 +16190,7 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x206b8
+    // Checksum 0x0, Offset: 0x20726
     // Size: 0x13e, Type: dev
     function private function_df9cc3c911f4f91d( var_79cd16628cd9582 )
     {
@@ -16147,12 +16216,12 @@ function rangefinder()
 
     // Namespace dev / scripts\mp\dev
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x207fe
+    // Checksum 0x0, Offset: 0x2086c
     // Size: 0x705, Type: dev
     function private function_fcfb461b887397e8( var_79cd16628cd9582 )
     {
-        level notify( "<dev string:x416a>" );
-        level endon( "<dev string:x416a>" );
+        level notify( "<dev string:x4140>" );
+        level endon( "<dev string:x4140>" );
         assert( isdefined( var_79cd16628cd9582 ) );
         testdata = var_79cd16628cd9582;
         
@@ -16163,7 +16232,7 @@ function rangefinder()
                 break;
             case 1:
                 testdata.var_b34ec33a70953a71 = 1;
-                testdata.revivetype = "<dev string:x40d1>";
+                testdata.revivetype = "<dev string:x40a7>";
                 testdata.participants.reviver = testdata.participants.host;
                 testdata.participants.revivee = testdata.participants.bot_friendly;
                 scripts\mp\dev::function_bfca4a5f93d1b4be( testdata );
@@ -16171,7 +16240,7 @@ function rangefinder()
                 testdata.reviveents = function_e2d36d595bb206ce( testdata );
                 break;
             case 2:
-                testdata.revivetype = "<dev string:x40d1>";
+                testdata.revivetype = "<dev string:x40a7>";
                 testdata.var_b34ec33a70953a71 = 1;
                 testdata.participants.reviver = testdata.participants.bot_friendly;
                 testdata.participants.revivee = testdata.participants.host;
@@ -16182,7 +16251,7 @@ function rangefinder()
                 result = function_e519d591d680cf06( testdata );
                 break;
             case 3:
-                testdata.revivetype = "<dev string:x40d1>";
+                testdata.revivetype = "<dev string:x40a7>";
                 testdata.var_b34ec33a70953a71 = 1;
                 testdata.participants.reviver = testdata.participants.bot_friendly;
                 testdata.participants.revivee = testdata.participants.var_a11b0ce40186f569;
@@ -16193,7 +16262,7 @@ function rangefinder()
                 result = function_e519d591d680cf06( testdata );
                 break;
             case 4:
-                testdata.revivetype = "<dev string:x40d1>";
+                testdata.revivetype = "<dev string:x40a7>";
                 testdata.participants.reviver = testdata.participants.bot_friendly;
                 testdata.participants.revivee = testdata.participants.host;
                 testdata.var_805a6d3884a4fbff.var_1285c6e9e580dd71 = &function_ed9583c799dfe4b8;
@@ -16205,7 +16274,7 @@ function rangefinder()
                 break;
             case 11:
                 testdata.var_b34ec33a70953a71 = 1;
-                testdata.revivetype = "<dev string:x40de>";
+                testdata.revivetype = "<dev string:x40b4>";
                 testdata.participants.reviver = testdata.participants.host;
                 testdata.participants.revivee = testdata.participants.bot_friendly;
                 scripts\mp\dev::function_bfca4a5f93d1b4be( testdata );
@@ -16213,7 +16282,7 @@ function rangefinder()
                 testdata.reviveents = function_e2d36d595bb206ce( testdata );
                 break;
             case 12:
-                testdata.revivetype = "<dev string:x40de>";
+                testdata.revivetype = "<dev string:x40b4>";
                 testdata.var_b34ec33a70953a71 = 1;
                 testdata.participants.reviver = testdata.participants.bot_friendly;
                 testdata.participants.revivee = testdata.participants.host;
@@ -16224,7 +16293,7 @@ function rangefinder()
                 result = function_e519d591d680cf06( testdata );
                 break;
             case 13:
-                testdata.revivetype = "<dev string:x40de>";
+                testdata.revivetype = "<dev string:x40b4>";
                 testdata.var_b34ec33a70953a71 = 1;
                 testdata.participants.reviver = testdata.participants.bot_friendly;
                 testdata.participants.revivee = testdata.participants.var_a11b0ce40186f569;
@@ -16235,7 +16304,7 @@ function rangefinder()
                 result = function_e519d591d680cf06( testdata );
                 break;
             case 14:
-                testdata.revivetype = "<dev string:x40de>";
+                testdata.revivetype = "<dev string:x40b4>";
                 testdata.participants.reviver = testdata.participants.bot_friendly;
                 testdata.participants.revivee = testdata.participants.host;
                 testdata.var_805a6d3884a4fbff.var_adf31b8e1380965c = &function_8f48082d56ac4fac;
@@ -16266,8 +16335,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x20f0b
+    // Params 0
+    // Checksum 0x0, Offset: 0x20f79
     // Size: 0x8f, Type: dev
     function function_670cf911ded0b7ec()
     {
@@ -16284,7 +16353,7 @@ function rangefinder()
             }
             
             host = level.players[ 0 ];
-            host waittill( "<dev string:x4189>" );
+            host waittill( "<dev string:x415f>" );
             wait dvarval;
             host kill();
             setdvar( @"hash_f613b218fa0c3df6", 0 );
@@ -16293,8 +16362,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x20fa2
+    // Params 0
+    // Checksum 0x0, Offset: 0x21010
     // Size: 0x9e, Type: dev
     function function_3fa005bf200dc41b()
     {
@@ -16317,17 +16386,17 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21048
+    // Params 0
+    // Checksum 0x0, Offset: 0x210b6
     // Size: 0x22, Type: dev
     function function_7f4bd5933ddab8b9()
     {
-        level thread function_6c3ff8a589d13e3f( @"hash_62a47106347dc9c3", 0, "<dev string:x41a7>", "<dev string:x41bd>" );
+        level thread function_6c3ff8a589d13e3f( @"hash_62a47106347dc9c3", 0, "<dev string:x417d>", "<dev string:x4193>" );
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21072
+    // Params 0
+    // Checksum 0x0, Offset: 0x210e0
     // Size: 0x123, Type: dev
     function function_520075c1f7b910ab()
     {
@@ -16345,7 +16414,7 @@ function rangefinder()
             spawndata.origin = level.players[ 0 ].origin + ( 0, 0, 300 );
             spawndata.initai = 1;
             ground = drop_to_ground( spawndata.origin );
-            littlebird = scripts\cp_mp\vehicles\vehicle::vehicle_spawn( "<dev string:x3cff>", spawndata );
+            littlebird = scripts\cp_mp\vehicles\vehicle::vehicle_spawn( "<dev string:x3cd5>", spawndata );
             hoverheight = undefined;
             
             while ( isdefined( littlebird ) )
@@ -16364,8 +16433,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2119d
+    // Params 0
+    // Checksum 0x0, Offset: 0x2120b
     // Size: 0xaa, Type: dev
     function function_a9b2f9316ff36912()
     {
@@ -16396,24 +16465,24 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2124f
+    // Params 0
+    // Checksum 0x0, Offset: 0x212bd
     // Size: 0x334, Type: dev
     function function_ca0580bf0f9d51e()
     {
         self.wassquadspawned = 0;
         vehicleent = undefined;
         
-        if ( isdefined( level.vehicle.instances ) && isdefined( level.vehicle.instances[ "<dev string:x41d4>" ] ) )
+        if ( isdefined( level.vehicle.instances ) && isdefined( level.vehicle.instances[ "<dev string:x41aa>" ] ) )
         {
-            foreach ( vehicle in level.vehicle.instances[ "<dev string:x41d4>" ] )
+            foreach ( vehicle in level.vehicle.instances[ "<dev string:x41aa>" ] )
             {
                 vehicleent = vehicle;
                 break;
             }
         }
         
-        spawnpoint = scripts\mp\spawnlogic::getspawnpoint( self, self.team, undefined, undefined, "<dev string:x41e2>" );
+        spawnpoint = scripts\mp\spawnlogic::getspawnpoint( self, self.team, undefined, undefined, "<dev string:x41b8>" );
         
         if ( !isdefined( vehicleent ) )
         {
@@ -16426,7 +16495,7 @@ function rangefinder()
         spawnpoint.angles = ( 0, vehicleent.angles[ 1 ], 0 );
         seat = scripts\cp_mp\vehicles\vehicle_occupancy::function_d3d95972f58ad2bc( vehicleent );
         
-        if ( isdefined( seat ) && istrue( scripts\cp_mp\vehicles\vehicle_interact::vehicle_interact_vehiclecanbeused( vehicleent ) ) && ( istrue( scripts\cp_mp\vehicles\vehicle_spawn::vehicle_spawn_getleveldataforvehicle( vehicleent scripts\cp_mp\vehicles\vehicle::function_d93ec4635290febd() ).var_1ad50a59da38c8f5 ) || seat == "<dev string:x41e9>" ) )
+        if ( isdefined( seat ) && istrue( scripts\cp_mp\vehicles\vehicle_interact::vehicle_interact_vehiclecanbeused( vehicleent ) ) && ( istrue( scripts\cp_mp\vehicles\vehicle_spawn::vehicle_spawn_getleveldataforvehicle( vehicleent scripts\cp_mp\vehicles\vehicle::function_d93ec4635290febd() ).var_1ad50a59da38c8f5 ) || seat == "<dev string:x41bf>" ) )
         {
             data = spawnstruct();
             data.useonspawn = 1;
@@ -16441,7 +16510,7 @@ function rangefinder()
             
             foreach ( ref, direction in var_b8e7e41430673dd2.exitdirections )
             {
-                if ( direction == "<dev string:x41f3>" || direction == "<dev string:x41fa>" )
+                if ( direction == "<dev string:x41c9>" || direction == "<dev string:x41d0>" )
                 {
                     position = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getexitposition( vehicleent, self, ref, exitboundinginfo, 1 );
                     
@@ -16471,8 +16540,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2158b
+    // Params 0
+    // Checksum 0x0, Offset: 0x215f9
     // Size: 0xbd, Type: dev
     function function_b372047bb3d279b4()
     {
@@ -16494,8 +16563,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21650
+    // Params 0
+    // Checksum 0x0, Offset: 0x216be
     // Size: 0x3e, Type: dev
     function function_5fc8d22a4231b972()
     {
@@ -16511,8 +16580,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21696
+    // Params 0
+    // Checksum 0x0, Offset: 0x21704
     // Size: 0x248, Type: dev
     function function_a14582fb2297ccbd()
     {
@@ -16520,7 +16589,7 @@ function rangefinder()
         
         if ( !isdefined( player ) )
         {
-            iprintlnbold( "<dev string:x4204>" );
+            iprintlnbold( "<dev string:x41da>" );
             return;
         }
         
@@ -16584,8 +16653,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x218e6
+    // Params 0
+    // Checksum 0x0, Offset: 0x21954
     // Size: 0x2f1, Type: dev
     function function_19068dd111569111()
     {
@@ -16594,7 +16663,7 @@ function rangefinder()
         if ( getdvarint( @"hash_eb038ca43332e718", 0 ) == 0 )
         {
             setdvar( @"hash_eb038ca43332e718", 1 );
-            iprintlnbold( "<dev string:x4225>" );
+            iprintlnbold( "<dev string:x41fb>" );
             return;
         }
         
@@ -16654,18 +16723,18 @@ function rangefinder()
                 var_f7ef71d15e0afd17 = var_387ea36d35dcafbd.origin + targetforward * ( -35, -35, 0 );
                 targetbot setorigin( var_f7ef71d15e0afd17 );
                 targetbot setplayerangles( targetangles );
-                var_addfaa239c709035 = var_387ea36d35dcafbd gettagorigin( "<dev string:x426b>" );
+                var_addfaa239c709035 = var_387ea36d35dcafbd gettagorigin( "<dev string:x4241>" );
                 targetbot botlookatpoint( var_addfaa239c709035, 3.5 );
                 wait 0.5;
                 targetbot enableexecutionattack();
-                targetbot botpressbutton( "<dev string:x427b>", 3 );
+                targetbot botpressbutton( "<dev string:x4251>", 3 );
             }
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21bdf
+    // Params 0
+    // Checksum 0x0, Offset: 0x21c4d
     // Size: 0xf1, Type: dev
     function function_59012b384deffea6()
     {
@@ -16691,14 +16760,14 @@ function rangefinder()
                 continue;
             }
             
-            player dodamage( player.maxhealth + 1, player.origin, player, player, "<dev string:x4284>", undefined, "<dev string:x14a3>" );
+            player dodamage( player.maxhealth + 1, player.origin, player, player, "<dev string:x425a>", undefined, "<dev string:x14a3>" );
             break;
         }
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21cd8
+    // Params 0
+    // Checksum 0x0, Offset: 0x21d46
     // Size: 0x3b, Type: dev
     function function_a8eab8a41bbd80f7()
     {
@@ -16715,8 +16784,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21d1b
+    // Params 0
+    // Checksum 0x0, Offset: 0x21d89
     // Size: 0x3b, Type: dev
     function function_a87badf6fb3813e3()
     {
@@ -16733,8 +16802,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21d5e
+    // Params 0
+    // Checksum 0x0, Offset: 0x21dcc
     // Size: 0x3c, Type: dev
     function function_851035ff671bdc1f()
     {
@@ -16751,8 +16820,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21da2
+    // Params 0
+    // Checksum 0x0, Offset: 0x21e10
     // Size: 0xc2, Type: dev
     function function_bbe2150913f65c2a()
     {
@@ -16763,12 +16832,12 @@ function rangefinder()
         {
             if ( !playing && getdvar( @"hash_8ad8ec07fa623e0e", "<dev string:xca>" ) != "<dev string:xca>" )
             {
-                level.players[ 0 ] setplayermusicstate( "<dev string:x4296>", [ getdvar( @"hash_8ad8ec07fa623e0e", "<dev string:xca>" ) ] );
+                level.players[ 0 ] setplayermusicstate( "<dev string:x426c>", [ getdvar( @"hash_8ad8ec07fa623e0e", "<dev string:xca>" ) ] );
                 playing = 1;
             }
             else if ( playing && getdvar( @"hash_8ad8ec07fa623e0e", "<dev string:xca>" ) == "<dev string:xca>" )
             {
-                level.players[ 0 ] stopplayermusicstate( "<dev string:x4296>" );
+                level.players[ 0 ] stopplayermusicstate( "<dev string:x426c>" );
                 playing = 0;
             }
             
@@ -16777,8 +16846,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21e6c
+    // Params 0
+    // Checksum 0x0, Offset: 0x21eda
     // Size: 0xba, Type: dev
     function splashesdevgui()
     {
@@ -16789,9 +16858,9 @@ function rangefinder()
         
         var_af386172f63848bd = getdvar( @"hash_2c0beeb4679914a5", "<dev string:xf0>" );
         
-        if ( getsubgametype() == "<dev string:x736>" || getsubgametype() == "<dev string:x42a3>" )
+        if ( getsubgametype() == "<dev string:x736>" || getsubgametype() == "<dev string:x4279>" )
         {
-            scripts\mp\gametypes\br_gametype_dmz::showdmzsplash( var_af386172f63848bd, level.players, "<dev string:x42ab>" );
+            scripts\mp\gametypes\br_gametype_dmz::showdmzsplash( var_af386172f63848bd, level.players, "<dev string:x4281>" );
         }
         else
         {
@@ -16804,8 +16873,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21f2e
+    // Params 0
+    // Checksum 0x0, Offset: 0x21f9c
     // Size: 0x52, Type: dev
     function devprint()
     {
@@ -16824,8 +16893,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21f88
+    // Params 0
+    // Checksum 0x0, Offset: 0x21ff6
     // Size: 0x1d9, Type: dev
     function function_9c32d0bcea4c4746()
     {
@@ -16855,7 +16924,7 @@ function rangefinder()
                 scripts\mp\objidpoolmanager::update_objective_setzoffset( circleobjective.objidnum, 100 );
                 scripts\mp\objidpoolmanager::update_objective_ownerteam( circleobjective.objidnum, host.team );
                 scripts\mp\objidpoolmanager::objective_playermask_showtoall( circleobjective.objidnum );
-                circleobjective scripts\cp_mp\utility\game_utility::function_6b6b6273f8180522( "<dev string:x42b3>", origin, radius, host );
+                circleobjective scripts\cp_mp\utility\game_utility::function_6b6b6273f8180522( "<dev string:x4289>", origin, radius, host );
                 circleobjective scripts\cp_mp\utility\game_utility::function_6988310081de7b45();
                 level.var_8739ee0d5a9db983[ level.var_8739ee0d5a9db983.size ] = circleobjective;
             }
@@ -16868,7 +16937,7 @@ function rangefinder()
                 
                 foreach ( circleobjective in level.var_8739ee0d5a9db983 )
                 {
-                    circleobjective notify( "<dev string:x42c1>" );
+                    circleobjective notify( "<dev string:x4297>" );
                     circleobjective scripts\mp\gameobjects::releaseid();
                     circleobjective scripts\cp_mp\utility\game_utility::function_af5604ce591768e1();
                 }
@@ -16879,8 +16948,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x22169
+    // Params 0
+    // Checksum 0x0, Offset: 0x221d7
     // Size: 0x47, Type: dev
     function function_46f83fe8ffc7244()
     {
@@ -16889,8 +16958,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x221b8
+    // Params 1
+    // Checksum 0x0, Offset: 0x22226
     // Size: 0x3c, Type: dev
     function function_6033c33f117d9dc4( bot )
     {
@@ -16899,13 +16968,13 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x221fc
+    // Params 0
+    // Checksum 0x0, Offset: 0x2226a
     // Size: 0x9f, Type: dev
     function function_ee24307f577b6886()
     {
-        bookmarkstart = "<dev string:x42d2>";
-        bookmarkend = "<dev string:x434f>";
+        bookmarkstart = "<dev string:x42a8>";
+        bookmarkend = "<dev string:x4325>";
         
         if ( !isdefined( level.debugbookmark ) )
         {
@@ -16927,14 +16996,14 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x222a3
+    // Params 0
+    // Checksum 0x0, Offset: 0x22311
     // Size: 0x288, Type: dev
     function function_4010e425c0a3a12a()
     {
         dvarstring = getdvar( @"hash_6a93ed78e507e165" );
-        filepath = "<dev string:x43cc>" + dvarstring;
-        fileid = openfile( filepath, "<dev string:x1e88>" );
+        filepath = "<dev string:x43a2>" + dvarstring;
+        fileid = openfile( filepath, "<dev string:x1e5e>" );
         axisplayers = [];
         alliesplayers = [];
         
@@ -16965,8 +17034,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x22533
+    // Params 1
+    // Checksum 0x0, Offset: 0x225a1
     // Size: 0x167, Type: dev
     function function_3096e29a61a6456d( list )
     {
@@ -17003,14 +17072,14 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x226a2
+    // Params 0
+    // Checksum 0x0, Offset: 0x22710
     // Size: 0x151, Type: dev
     function function_3bbc64340510aeab()
     {
         dvarstring = getdvar( @"hash_6a93ed78e507e165" );
-        filepath = "<dev string:x43cc>" + dvarstring;
-        fileid = openfile( filepath, "<dev string:x43db>" );
+        filepath = "<dev string:x43a2>" + dvarstring;
+        fileid = openfile( filepath, "<dev string:x43b1>" );
         filecontent = function_4b6fff8cec79433( fileid );
         filecontent = function_4b6fff8cec79433( fileid );
         contentlist = strtok( filecontent, "<dev string:x12ff>" );
@@ -17032,8 +17101,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x227fb
+    // Params 0
+    // Checksum 0x0, Offset: 0x22869
     // Size: 0x3b, Type: dev
     function spawnsnapshot()
     {
@@ -17050,8 +17119,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2283e
+    // Params 0
+    // Checksum 0x0, Offset: 0x228ac
     // Size: 0x3b, Type: dev
     function function_c501cf55f653e738()
     {
@@ -17068,8 +17137,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x22881
+    // Params 0
+    // Checksum 0x0, Offset: 0x228ef
     // Size: 0x3f, Type: dev
     function function_94d8d463937bccf1()
     {
@@ -17086,8 +17155,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x228c8
+    // Params 0
+    // Checksum 0x0, Offset: 0x22936
     // Size: 0x9d, Type: dev
     function function_9e1848a733ce0c17()
     {
@@ -17109,8 +17178,8 @@ function rangefinder()
     }
 
     // Namespace dev / scripts\mp\dev
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2296d
+    // Params 0
+    // Checksum 0x0, Offset: 0x229db
     // Size: 0x93, Type: dev
     function function_4ab8a4d4bb3168ba()
     {

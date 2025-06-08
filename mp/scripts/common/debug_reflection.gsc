@@ -6,7 +6,7 @@
 /#
 
     // Namespace debug_reflection / scripts\common\debug_reflection
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x98
     // Size: 0x19, Type: dev
     function init_reflection_probe( handleplayerconnect )
@@ -15,7 +15,7 @@
     }
 
     // Namespace debug_reflection / scripts\common\debug_reflection
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xb9
     // Size: 0x2b, Type: dev
     function spplayerconnect()
@@ -31,7 +31,7 @@
 #/
 
 // Namespace debug_reflection / scripts\common\debug_reflection
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xec
 // Size: 0x46
 function onplayerconnect()
@@ -53,7 +53,7 @@ function onplayerconnect()
 /#
 
     // Namespace debug_reflection / scripts\common\debug_reflection
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x13a
     // Size: 0x16a, Type: dev
     function debug_reflection_probes()
@@ -88,7 +88,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_reflection / scripts\common\debug_reflection
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2ac
     // Size: 0xa7, Type: dev
     function create_reflection_object()
@@ -102,7 +102,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_reflection / scripts\common\debug_reflection
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x35b
     // Size: 0x47, Type: dev
     function function_da5718b2a8be7b0b()
@@ -114,7 +114,7 @@ function onplayerconnect()
     }
 
     // Namespace debug_reflection / scripts\common\debug_reflection
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3aa
     // Size: 0xda, Type: dev
     function debug_reflection_buttons()

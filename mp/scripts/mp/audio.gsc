@@ -7,7 +7,7 @@
 #namespace audio;
 
 // Namespace audio / scripts\mp\audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x128
 // Size: 0x39
 function init_audio()
@@ -23,7 +23,7 @@ function init_audio()
 }
 
 // Namespace audio / scripts\mp\audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x169
 // Size: 0x3e
 function onplayerconnectaudioinit()
@@ -39,7 +39,7 @@ function onplayerconnectaudioinit()
 }
 
 // Namespace audio / scripts\mp\audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1af
 // Size: 0x1f
 function init_reverb()
@@ -48,7 +48,7 @@ function init_reverb()
 }
 
 // Namespace audio / scripts\mp\audio
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1d6
 // Size: 0x9c
 function add_reverb( name, type, wetlevel, drylevel, fadetime )
@@ -66,7 +66,7 @@ function add_reverb( name, type, wetlevel, drylevel, fadetime )
 }
 
 // Namespace audio / scripts\mp\audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27a
 // Size: 0x16f
 function is_roomtype_valid( type )
@@ -109,7 +109,7 @@ function is_roomtype_valid( type )
 }
 
 // Namespace audio / scripts\mp\audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f1
 // Size: 0x63
 function apply_reverb( name )

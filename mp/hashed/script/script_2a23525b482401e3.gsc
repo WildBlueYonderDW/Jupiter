@@ -5,7 +5,7 @@
 #namespace solo_interaction;
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x226
 // Size: 0xf3
 function getfunction( funcid )
@@ -42,7 +42,7 @@ function getfunction( funcid )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x322
 // Size: 0x23
 function function_3dbd361f74b442f9( interactionid )
@@ -52,7 +52,7 @@ function function_3dbd361f74b442f9( interactionid )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34d
 // Size: 0x84
 function function_a157fbbc31d9eb1a( interactionid )
@@ -73,7 +73,7 @@ function function_a157fbbc31d9eb1a( interactionid )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3d9
 // Size: 0x1c, Type: bool
 function function_b8a54ef5dc160380( receiver, info, origin )
@@ -82,7 +82,7 @@ function function_b8a54ef5dc160380( receiver, info, origin )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3fe
 // Size: 0x79
 function function_85df049e80f30a6f( statename, params )
@@ -106,7 +106,7 @@ function function_85df049e80f30a6f( statename, params )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x47f
 // Size: 0x145
 function calcstartorigin( statename, role )
@@ -138,7 +138,7 @@ function calcstartorigin( statename, role )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5cd
 // Size: 0x82
 function function_3c2bc94b2abf6fad( asmname, statename, params )
@@ -157,7 +157,7 @@ function function_3c2bc94b2abf6fad( asmname, statename, params )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x657
 // Size: 0x15, Type: bool
 function filtershouldreact( params )
@@ -166,7 +166,7 @@ function filtershouldreact( params )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x675
 // Size: 0xac
 function function_d8786f820807c4f( statename, params )
@@ -198,7 +198,7 @@ function function_d8786f820807c4f( statename, params )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x729
 // Size: 0x39, Type: bool
 function function_e28c16df7b2f92e0( statename, params )
@@ -207,7 +207,7 @@ function function_e28c16df7b2f92e0( statename, params )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x76b
 // Size: 0x18c
 function function_a8367856a2c4316f()
@@ -246,7 +246,7 @@ function function_a8367856a2c4316f()
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x900
 // Size: 0xec
 function function_e73bcb6e8160c464( asmname, statename, params )
@@ -283,7 +283,7 @@ function function_e73bcb6e8160c464( asmname, statename, params )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f4
 // Size: 0x44, Type: bool
 function function_d77b520cefcefa50( statename, params )
@@ -292,7 +292,7 @@ function function_d77b520cefcefa50( statename, params )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa41
 // Size: 0x50, Type: bool
 function function_8f98221d71dafe6e( param )
@@ -310,7 +310,7 @@ function function_8f98221d71dafe6e( param )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa9a
 // Size: 0xb1
 function function_6d173209b1c25616()
@@ -341,7 +341,7 @@ function function_6d173209b1c25616()
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb54
 // Size: 0x54
 function function_de2aa7eb339a432c( angle )
@@ -369,7 +369,7 @@ function function_de2aa7eb339a432c( angle )
 }
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xbb1
 // Size: 0x40, Type: bool
 function function_ee80e8684c598cae( asmname, statename, tostatename, params )

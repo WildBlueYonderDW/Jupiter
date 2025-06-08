@@ -12,7 +12,7 @@
 #namespace potg_events;
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b2
 // Size: 0x96
 function init()
@@ -39,7 +39,7 @@ function init()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x750
 // Size: 0x9
 function onpotgrecordingstopped()
@@ -48,7 +48,7 @@ function onpotgrecordingstopped()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x761
 // Size: 0x47
 function getentityeventdata()
@@ -69,7 +69,7 @@ function getentityeventdata()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b1
 // Size: 0x62
 function createentityeventdata()
@@ -85,7 +85,7 @@ function createentityeventdata()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x81c
 // Size: 0x32
 function onroundended( winner )
@@ -95,7 +95,7 @@ function onroundended( winner )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x856
 // Size: 0xd4
 function handlefinalkill( winner )
@@ -135,7 +135,7 @@ function handlefinalkill( winner )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x932
 // Size: 0x50
 function onplayerdamaged( attacker, victim, meansofdeath )
@@ -152,7 +152,7 @@ function onplayerdamaged( attacker, victim, meansofdeath )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x98a
 // Size: 0x54e
 function onplayerkilled( attacker, inflictor, victim, meansofdeath, objweapon, psoffsettime )
@@ -282,7 +282,7 @@ function onplayerkilled( attacker, inflictor, victim, meansofdeath, objweapon, p
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xee0
 // Size: 0x4a
 function calckillmultiplier( attacker )
@@ -303,7 +303,7 @@ function calckillmultiplier( attacker )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xf33
 // Size: 0xa8
 function handlemeleekills( attacker, inflictor, victim, meansofdeath, objweapon, scoremultiplier, psoffsettime )
@@ -328,7 +328,7 @@ function handlemeleekills( attacker, inflictor, victim, meansofdeath, objweapon,
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xfe3
 // Size: 0x114
 function handleequipmentkills( attacker, inflictor, victim, meansofdeath, objweapon, scoremultiplier )
@@ -374,7 +374,7 @@ function handleequipmentkills( attacker, inflictor, victim, meansofdeath, objwea
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x10ff
 // Size: 0x28a
 function handlekillmodifiers( attacker, meansofdeath, objweapon, victim, scoremultiplier, psoffsettime )
@@ -467,7 +467,7 @@ function handlekillmodifiers( attacker, meansofdeath, objweapon, victim, scoremu
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1391
 // Size: 0x65
 function collateral( attacker, numkills )
@@ -498,7 +498,7 @@ function collateral( attacker, numkills )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13fe
 // Size: 0x4e
 function shotguncollateral( attacker, numkills )
@@ -523,7 +523,7 @@ function shotguncollateral( attacker, numkills )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1454
 // Size: 0x41
 function quadfeed( player, starttime, endtime )
@@ -542,7 +542,7 @@ function quadfeed( player, starttime, endtime )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x149d
 // Size: 0xe0
 function processeventforwitnesses( eventpoint, maxdistsq, eventref, starttime, endtime )
@@ -574,7 +574,7 @@ function processeventforwitnesses( eventpoint, maxdistsq, eventref, starttime, e
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1585
 // Size: 0x4e
 function watchforpostkilllanding()
@@ -601,7 +601,7 @@ function watchforpostkilllanding()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15db
 // Size: 0x34
 function predatormissileimpact( impactpos )
@@ -620,7 +620,7 @@ function predatormissileimpact( impactpos )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1617
 // Size: 0x34
 function largevehicleexplosion( explosionpos )
@@ -639,7 +639,7 @@ function largevehicleexplosion( explosionpos )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1653
 // Size: 0x5e
 function vehiclekilled( damagedata )
@@ -663,7 +663,7 @@ function vehiclekilled( damagedata )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16b9
 // Size: 0x2f
 function missilewhizby( player )
@@ -682,7 +682,7 @@ function missilewhizby( player )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x16f0
 // Size: 0x67
 function bombdefused( defuser, var_8f8dc78c3242728b, enemiesnearby )
@@ -713,7 +713,7 @@ function bombdefused( defuser, var_8f8dc78c3242728b, enemiesnearby )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x175f
 // Size: 0x37
 function revivedplayer( reviver, revivee )
@@ -732,7 +732,7 @@ function revivedplayer( reviver, revivee )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x179e
 // Size: 0x68
 function playerworlddeath( attacker, meansofdeath )
@@ -756,7 +756,7 @@ function playerworlddeath( attacker, meansofdeath )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x180e
 // Size: 0x65
 function doorused( player, opening )
@@ -778,7 +778,7 @@ function doorused( player, opening )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x187b
 // Size: 0x19c
 function playerstancechanged( newstance )
@@ -836,7 +836,7 @@ function playerstancechanged( newstance )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a1f
 // Size: 0x2a
 function shothit()
@@ -851,7 +851,7 @@ function shothit()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a51
 // Size: 0x3c
 function shotmissed( totalshots, hitshots )
@@ -866,7 +866,7 @@ function shotmissed( totalshots, hitshots )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a95
 // Size: 0xbe
 function updateshotgroup( washit, totalshots, hitshots )
@@ -906,7 +906,7 @@ function updateshotgroup( washit, totalshots, hitshots )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b5b
 // Size: 0x60
 function shotgroupendwatcher()
@@ -929,7 +929,7 @@ function shotgroupendwatcher()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bc3
 // Size: 0x8b
 function clearshotgroup()
@@ -950,7 +950,7 @@ function clearshotgroup()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c56
 // Size: 0x37
 function grenadethrownevent( islethal )
@@ -970,7 +970,7 @@ function grenadethrownevent( islethal )
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c95
 // Size: 0x1b
 function crouch()
@@ -984,7 +984,7 @@ function crouch()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cb8
 // Size: 0x1b
 function jump()
@@ -998,7 +998,7 @@ function jump()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cdb
 // Size: 0x1b
 function prone()
@@ -1012,7 +1012,7 @@ function prone()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cfe
 // Size: 0x1b
 function slide()
@@ -1026,7 +1026,7 @@ function slide()
 }
 
 // Namespace potg_events / scripts\mp\potg_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d21
 // Size: 0x1b
 function mantle()
@@ -1042,7 +1042,7 @@ function mantle()
 /#
 
     // Namespace potg_events / scripts\mp\potg_events
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d44
     // Size: 0x176, Type: dev
     function function_7caeba0dbb5a997f()

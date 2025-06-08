@@ -22,7 +22,7 @@
 #namespace br_spectate;
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x720
 // Size: 0x17
 function spectate_init()
@@ -32,7 +32,7 @@ function spectate_init()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73f
 // Size: 0x9
 function initplayer()
@@ -41,7 +41,7 @@ function initplayer()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x750
 // Size: 0x2d
 function function_4f0161d2be2986cf( defaultval )
@@ -56,7 +56,7 @@ function function_4f0161d2be2986cf( defaultval )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x786
 // Size: 0x358
 function getbestspectatecandidate( victim, attacker, var_e65af3dbf45178e6, var_6c46f0e0dadeaf8a )
@@ -167,7 +167,7 @@ function getbestspectatecandidate( victim, attacker, var_e65af3dbf45178e6, var_6
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae7
 // Size: 0x8b
 function function_34c94455d9614f66( victim )
@@ -194,7 +194,7 @@ function function_34c94455d9614f66( victim )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb7b
 // Size: 0x48, Type: bool
 function function_5c0a370334d590e( player )
@@ -223,7 +223,7 @@ function function_5c0a370334d590e( player )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbcc
 // Size: 0xa7
 function getnextspectatecandidatefromchain( player )
@@ -237,7 +237,8 @@ function getnextspectatecandidatefromchain( player )
     var_c77cb8613ecbef74 = function_4f0161d2be2986cf( 1 );
     count = 0;
     
-    for (candidate = player; isdefined( candidate ) && ( var_c77cb8613ecbef74 && isbot( candidate ) || !isvalidspectatetarget( candidate ) ); candidate = candidate playergetspectatingplayer()) {
+    for ( candidate = player; isdefined( candidate ) && ( var_c77cb8613ecbef74 && isbot( candidate ) || !isvalidspectatetarget( candidate ) ) ; candidate = candidate playergetspectatingplayer() )
+    {
         count++;
         entnum = candidate getentitynumber();
         
@@ -253,7 +254,7 @@ function getnextspectatecandidatefromchain( player )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc7c
 // Size: 0x164
 function function_964fb56006392a0f( victim, players, var_6c46f0e0dadeaf8a )
@@ -308,7 +309,7 @@ function function_964fb56006392a0f( victim, players, var_6c46f0e0dadeaf8a )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde9
 // Size: 0xaf
 function isvalidspectatetarget( player )
@@ -342,7 +343,7 @@ function isvalidspectatetarget( player )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xea1
 // Size: 0xdd
 function spawnintermissionatplayer( player )
@@ -399,7 +400,7 @@ function private deletecamonleave( camera )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x100e
 // Size: 0x1a9
 function function_3c5421c26d253eb0( var_13669d61d3d44913 )
@@ -452,7 +453,7 @@ function function_3c5421c26d253eb0( var_13669d61d3d44913 )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11bf
 // Size: 0x134
 function spawnspectator( deathdata, finaldeath, skipoverlay )
@@ -516,7 +517,7 @@ function spawnspectator( deathdata, finaldeath, skipoverlay )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12fb
 // Size: 0x7f
 function function_a7f4ed43a56864ad()
@@ -549,7 +550,7 @@ function function_a7f4ed43a56864ad()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1382
 // Size: 0x157
 function triggereliminatedoverlay()
@@ -600,7 +601,7 @@ function triggereliminatedoverlay()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14e1
 // Size: 0x30
 function function_72173d4a7c4845bb()
@@ -614,7 +615,7 @@ function function_72173d4a7c4845bb()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1519
 // Size: 0x211
 function setbuybackpingmessage()
@@ -685,7 +686,7 @@ function setbuybackpingmessage()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1732
 // Size: 0x75
 function playerclearspectatekillchainsystem()
@@ -710,7 +711,7 @@ function playerclearspectatekillchainsystem()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17af
 // Size: 0x64
 function playerspawnintermissionifneeded()
@@ -732,7 +733,7 @@ function playerspawnintermissionifneeded()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x181b
 // Size: 0x433
 function forceplayerspectatetarget( playertospectate )
@@ -871,7 +872,7 @@ function forceplayerspectatetarget( playertospectate )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c56
 // Size: 0x179
 function playerforcespectatorclientwait( playertospectate )
@@ -940,7 +941,7 @@ function playerforcespectatorclientwait( playertospectate )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1dd7
 // Size: 0x55
 function function_aa1a345e6ec0499b( channel, otherclientnum )
@@ -964,7 +965,7 @@ function function_aa1a345e6ec0499b( channel, otherclientnum )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e34
 // Size: 0xe5
 function assignspectatortospectateplayer( spectator, playertospectate )
@@ -996,7 +997,7 @@ function assignspectatortospectateplayer( spectator, playertospectate )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f21
 // Size: 0x17a
 function playermonitorspectatorcycle()
@@ -1083,7 +1084,7 @@ function playermonitorspectatorcycle()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20a3
 // Size: 0x1c, Type: bool
 function playerwaittillspectatecycle( playertospectate )
@@ -1094,7 +1095,7 @@ function playerwaittillspectatecycle( playertospectate )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20c8
 // Size: 0x63
 function playergetspectatingplayer()
@@ -1120,7 +1121,7 @@ function playergetspectatingplayer()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2134
 // Size: 0x38
 function function_4a8746c1aa6bb002( timeout, finishfade )
@@ -1133,7 +1134,7 @@ function function_4a8746c1aa6bb002( timeout, finishfade )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2174
 // Size: 0xb5
 function function_6d5206bdba79e8c3()
@@ -1162,7 +1163,7 @@ function function_6d5206bdba79e8c3()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2232
 // Size: 0xaf
 function getspectatorsofplayer( targetplayer )
@@ -1203,7 +1204,7 @@ function getspectatorsofplayer( targetplayer )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x22ea
 // Size: 0x147
 function migratespectators( victim, attacker, wasdeath )
@@ -1251,7 +1252,7 @@ function migratespectators( victim, attacker, wasdeath )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2439
 // Size: 0x142
 function updateexistingspectatorsofvictim( victim, playertospectate )
@@ -1288,7 +1289,7 @@ function updateexistingspectatorsofvictim( victim, playertospectate )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2583
 // Size: 0x168
 function updateactivespectatorcounts()
@@ -1343,7 +1344,7 @@ function updateactivespectatorcounts()
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26f3
 // Size: 0x53
 function waittillspectating( player )
@@ -1365,7 +1366,7 @@ function waittillspectating( player )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x274e
 // Size: 0x32, Type: bool
 function function_393455dde05f567c( player )
@@ -1374,7 +1375,7 @@ function function_393455dde05f567c( player )
 }
 
 // Namespace br_spectate / scripts\mp\gametypes\br_spectate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2789
 // Size: 0x72
 function function_f83bf537661ec58c( winner )

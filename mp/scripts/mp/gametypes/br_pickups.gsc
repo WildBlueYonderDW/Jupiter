@@ -2,6 +2,7 @@
 #using script_15eddb0fac236a22;
 #using script_21c19cfc7139d773;
 #using script_2d9d24f7c63ac143;
+#using script_32c2f4a699e57e1e;
 #using script_3583ff375ab3a91e;
 #using script_3aacf02225ca0da5;
 #using script_3ff2458477d23489;
@@ -16,6 +17,7 @@
 #using script_744cad313ed0a87e;
 #using script_b7a9ce0a2282b79;
 #using scripts\common\ae_utility;
+#using scripts\common\callbacks;
 #using scripts\common\interactive;
 #using scripts\common\utility;
 #using scripts\common\values;
@@ -98,8 +100,8 @@
 #namespace br_pickups;
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3079
+// Params 0
+// Checksum 0x0, Offset: 0x3175
 // Size: 0x53f
 function br_pickups_init()
 {
@@ -120,7 +122,7 @@ function br_pickups_init()
     level.br_pickups.var_5bbd561a9aa69746 = getdvarint( @"hash_ec4c4df4cf064acf", 1 ) == 1;
     level.var_a9350d89a2e4d752 = getdvarint( @"hash_6d4a21dadd19744d", 0 );
     
-    if ( getdvar( @"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv" ) != "mp/loot/br/default/loot_item_defs.csv" )
+    if ( getdvar( @"loot_table_name", "mp/loot/br/default/loot_item_defs.csv" ) != "mp/loot/br/default/loot_item_defs.csv" )
     {
         level.var_a9350d89a2e4d752 = 0;
     }
@@ -166,8 +168,8 @@ function br_pickups_init()
     level.var_a3443d8ebdaf7c00 = getdvarint( @"hash_3481b39eb4c2f17a", 0 );
     level.var_7582dc4260722bf1 = getdvarint( @"hash_53d1e9738538bb23", 0 );
     level.var_bc1086a365d70b30 = getdvarint( @"hash_957bf05692b129ca", 1 );
-    level.var_e8fc7c00fd85a565 = getdvarint( @"hash_dbb95d9fb9db4e73", 1 );
-    level.var_9dd3ce936c1dec1d = getdvarint( @"hash_c108cc4c4e3a3653", 1 );
+    level.var_e8fc7c00fd85a565 = getdvarint( @"scr_br_auto_loot_plunder_container", 1 );
+    level.var_9dd3ce936c1dec1d = getdvarint( @"scr_br_auto_loot_plunder_feedback", 1 );
     utility::registersharedfunc( "pickups", "isDogTag", &isdogtag );
     utility::registersharedfunc( "pickups", "isGasMask", &isgasmask );
     level.var_66a7a8b388d5de9e = getdvarint( @"hash_a55c2df135b06dc0", 2 );
@@ -188,8 +190,8 @@ function br_pickups_init()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35c0
+// Params 0
+// Checksum 0x0, Offset: 0x36bc
 // Size: 0x184
 function function_d910e9a16fea4235()
 {
@@ -231,8 +233,8 @@ function function_d910e9a16fea4235()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x374c
+// Params 0
+// Checksum 0x0, Offset: 0x3848
 // Size: 0xad5
 function initarrays()
 {
@@ -367,9 +369,9 @@ function initarrays()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4229
-// Size: 0x11ef
+// Params 0
+// Checksum 0x0, Offset: 0x4325
+// Size: 0x1227
 function function_68c4db74396e7683()
 {
     index = 0;
@@ -543,7 +545,7 @@ function function_68c4db74396e7683()
                     camo = function_89383ba5ee5f2b5f( var_14004b68ddacb781, camo );
                 }
                 
-                if ( getdvarint( @"hash_ad67cf67992fe5f2", 0 ) )
+                if ( getdvarint( @"scr_br_alt_mode_gg", 0 ) )
                 {
                     camo = "camo_11a";
                 }
@@ -587,7 +589,7 @@ function function_68c4db74396e7683()
                     }
                 }
                 
-                if ( getdvarint( @"hash_ad67cf67992fe5f2", 0 ) )
+                if ( getdvarint( @"scr_br_alt_mode_gg", 0 ) )
                 {
                     fullweaponobj = weapon::buildweapon( baseweaponname, attachmentsarray, "camo_11a", "none", -1 );
                 }
@@ -663,7 +665,14 @@ function function_68c4db74396e7683()
         }
         else
         {
-            equipname = itemdef.baseweapon;
+            if ( isdefined( itemdef.baseweapon ) && itemdef.baseweapon == "equip_mutant_emp_ball_jup_mp" && function_d75b73c443421047() )
+            {
+                equipname = "equip_mutant_emp_ball";
+            }
+            else
+            {
+                equipname = itemdef.baseweapon;
+            }
             
             if ( isdefined( equipname ) && equipname != "" )
             {
@@ -833,8 +842,8 @@ function function_68c4db74396e7683()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5420
+// Params 0
+// Checksum 0x0, Offset: 0x5554
 // Size: 0x7fa
 function function_2d397216d0fc2167()
 {
@@ -985,8 +994,8 @@ function function_2d397216d0fc2167()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c22
+// Params 2
+// Checksum 0x0, Offset: 0x5d56
 // Size: 0x128
 function function_ec07a134a6ed91fd( rarity, var_14004b68ddacb781 )
 {
@@ -1048,12 +1057,12 @@ function function_ec07a134a6ed91fd( rarity, var_14004b68ddacb781 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d53
+// Params 0
+// Checksum 0x0, Offset: 0x5e87
 // Size: 0x152c
 function function_e5528af9b712723f()
 {
-    level.brloottablename = getdvar( @"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv" );
+    level.brloottablename = getdvar( @"loot_table_name", "mp/loot/br/default/loot_item_defs.csv" );
     
     if ( level.brloottablename == "" )
     {
@@ -1073,7 +1082,8 @@ function function_e5528af9b712723f()
     var_55dff3c24d1396c9 = "+";
     lastrow = tablelookupgetnumrows( level.brloottablename );
     
-    for (row = 0; row < lastrow; row++) {
+    for ( row = 0; row < lastrow ; row++ )
+    {
         key = tablelookupbyrow( level.brloottablename, row, 0 );
         
         if ( !isdefined( key ) )
@@ -1196,7 +1206,7 @@ function function_e5528af9b712723f()
                         camo = function_89383ba5ee5f2b5f( lootreference, camo );
                     }
                     
-                    if ( getdvarint( @"hash_ad67cf67992fe5f2", 0 ) )
+                    if ( getdvarint( @"scr_br_alt_mode_gg", 0 ) )
                     {
                         camo = "camo_11a";
                     }
@@ -1284,7 +1294,7 @@ function function_e5528af9b712723f()
                         attachmentsarray = strtok( attachmentsstring, var_55dff3c24d1396c9 );
                     }
                     
-                    if ( getdvarint( @"hash_ad67cf67992fe5f2", 0 ) )
+                    if ( getdvarint( @"scr_br_alt_mode_gg", 0 ) )
                     {
                         fullweaponobj = weapon::buildweapon( baseweaponname, attachmentsarray, "camo_11a", "none", -1 );
                     }
@@ -1482,14 +1492,16 @@ function function_e5528af9b712723f()
             {
                 if ( isdefined( level.br_lootiteminfo[ var_14004b68ddacb781 ] ) && isdefined( level.br_lootiteminfo[ var_14004b68ddacb781 ].baseweapon ) )
                 {
-                    for (i = 0; i < cratechance; i++) {
+                    for ( i = 0; i < cratechance ; i++ )
+                    {
                         level.br_pickups.br_crateguns[ level.br_pickups.br_crateguns.size ] = var_14004b68ddacb781;
                         level.br_pickups.br_allguns[ level.br_pickups.br_allguns.size ] = var_14004b68ddacb781;
                     }
                 }
                 else
                 {
-                    for (i = 0; i < cratechance; i++) {
+                    for ( i = 0; i < cratechance ; i++ )
+                    {
                         level.br_pickups.br_crateitems[ level.br_pickups.br_crateitems.size ] = var_14004b68ddacb781;
                     }
                 }
@@ -1521,8 +1533,8 @@ function function_e5528af9b712723f()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7287
+// Params 0
+// Checksum 0x0, Offset: 0x73bb
 // Size: 0x89
 function function_f8b204e807cc62ed()
 {
@@ -1530,7 +1542,8 @@ function function_f8b204e807cc62ed()
     var_3c7f6558e5171cfc = getdvar( @"hash_dd0e2df8833b28d8", "mp/automatism/weapon_class_groups_for_auto_grab.csv" );
     var_3cfaae92e4bb0d04 = tablelookupgetnumrows( var_3c7f6558e5171cfc );
     
-    for (row = 0; row < var_3cfaae92e4bb0d04; row++) {
+    for ( row = 0; row < var_3cfaae92e4bb0d04 ; row++ )
+    {
         weaponclass = tablelookupbyrow( var_3c7f6558e5171cfc, row, 0 );
         groupindex = int( tablelookupbyrow( var_3c7f6558e5171cfc, row, 1 ) );
         level.var_81369e82645391f0[ weaponclass ] = groupindex;
@@ -1538,8 +1551,8 @@ function function_f8b204e807cc62ed()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7318
+// Params 0
+// Checksum 0x0, Offset: 0x744c
 // Size: 0x57
 function function_e6cabc9f20dcbc23()
 {
@@ -1551,8 +1564,8 @@ function function_e6cabc9f20dcbc23()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7377
+// Params 0
+// Checksum 0x0, Offset: 0x74ab
 // Size: 0x120
 function function_23a8498a6613de14()
 {
@@ -1568,14 +1581,16 @@ function function_23a8498a6613de14()
         {
             rowscount = tablelookupgetnumrows( var_23182e0fd5672080 );
             
-            for (row = 0; row < rowscount; row++) {
+            for ( row = 0; row < rowscount ; row++ )
+            {
                 baseweaponname = tablelookupbyrow( var_23182e0fd5672080, row, 0 );
                 var_f070698d508b0818[ row ] = baseweaponname;
             }
             
             count = level.gulagloadouts.size;
             
-            for (index = 0; index < count; index++) {
+            for ( index = 0; index < count ; index++ )
+            {
                 var_bc095883aece1a82 = function_78ad8eb4cc92f407( level.gulagloadouts[ index ], "Primary" );
                 var_cc63cd9ec88314c2 = function_78ad8eb4cc92f407( level.gulagloadouts[ index ], "Secondary" );
                 function_5d9ef63de8747c32( var_bc095883aece1a82, var_f070698d508b0818 );
@@ -1586,8 +1601,8 @@ function function_23a8498a6613de14()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x749f
+// Params 1
+// Checksum 0x0, Offset: 0x75d3
 // Size: 0x82, Type: bool
 function function_d9da779938ebcd86( row )
 {
@@ -1605,8 +1620,8 @@ function function_d9da779938ebcd86( row )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x752a
+// Params 0
+// Checksum 0x0, Offset: 0x765e
 // Size: 0xe2
 function function_32a0394cf13c8b29()
 {
@@ -1630,15 +1645,16 @@ function function_32a0394cf13c8b29()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7614
+// Params 2
+// Checksum 0x0, Offset: 0x7748
 // Size: 0x75
 function function_5d9ef63de8747c32( weaponobj, var_f070698d508b0818 )
 {
     baseweaponname = weapon::getweaponrootname( weaponobj );
     count = var_f070698d508b0818.size;
     
-    for (index = 0; index < count; index++) {
+    for ( index = 0; index < count ; index++ )
+    {
         if ( var_f070698d508b0818[ index ] == baseweaponname && !function_2166628459c78e7a( weaponobj ) )
         {
             level.var_f67907afe56c4f82[ level.var_f67907afe56c4f82.size ] = weaponobj;
@@ -1648,15 +1664,16 @@ function function_5d9ef63de8747c32( weaponobj, var_f070698d508b0818 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7691
+// Params 1
+// Checksum 0x0, Offset: 0x77c5
 // Size: 0x5d
 function function_2166628459c78e7a( weaponobj )
 {
     hasweapon = 0;
     count = level.var_f67907afe56c4f82.size;
     
-    for (index = 0; !hasweapon && index < count; index++) {
+    for ( index = 0; !hasweapon && index < count ; index++ )
+    {
         hasweapon = issameweapon( level.var_f67907afe56c4f82[ index ], weaponobj );
     }
     
@@ -1664,8 +1681,8 @@ function function_2166628459c78e7a( weaponobj )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x76f7
+// Params 2
+// Checksum 0x0, Offset: 0x782b
 // Size: 0x108
 function function_78ad8eb4cc92f407( loadout, slotstring )
 {
@@ -1690,7 +1707,8 @@ function function_78ad8eb4cc92f407( loadout, slotstring )
     var_6c2bfd3d88f9e18c = basestring + "Attachment";
     var_6d728bae3e54774a = "";
     
-    for (attachmentindex = 0; attachmentindex < maxattachments; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < maxattachments ; attachmentindex++ )
+    {
         if ( attachmentindex != 0 )
         {
             var_6d728bae3e54774a = var_6c2bfd3d88f9e18c + attachmentindex + 1;
@@ -1711,8 +1729,8 @@ function function_78ad8eb4cc92f407( loadout, slotstring )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7808
+// Params 2
+// Checksum 0x0, Offset: 0x793c
 // Size: 0x49
 function overrideitemcount( scriptablename, itemcount )
 {
@@ -1725,8 +1743,8 @@ function overrideitemcount( scriptablename, itemcount )
 /#
 
     // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-    // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7859
+    // Params 5
+    // Checksum 0x0, Offset: 0x798d
     // Size: 0x14a, Type: dev
     function function_d2d7b153b9d3889e( index, name, start, end, traceresults )
     {
@@ -1756,8 +1774,8 @@ function overrideitemcount( scriptablename, itemcount )
 #/
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x79ab
+// Params 4
+// Checksum 0x0, Offset: 0x7adf
 // Size: 0xaa
 function getitemdropinfo( origin, angles, payload, groundentity )
 {
@@ -1788,8 +1806,8 @@ function getitemdropinfo( origin, angles, payload, groundentity )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a5e
+// Params 3
+// Checksum 0x0, Offset: 0x7b92
 // Size: 0xce, Type: bool
 function function_78ca4cfbcb159de2( baseorigin, dropdata, traceresults )
 {
@@ -1815,8 +1833,8 @@ function function_78ca4cfbcb159de2( baseorigin, dropdata, traceresults )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b35
+// Params 6
+// Checksum 0x0, Offset: 0x7c69
 // Size: 0x196
 function function_7bf5ea7dd272db77( dropstruct, dropdata, baseorigin, ignoreent, tracecontents, var_551904951118b7b9 )
 {
@@ -1844,7 +1862,8 @@ function function_7bf5ea7dd272db77( dropstruct, dropdata, baseorigin, ignoreent,
     dropdata.outorigin -= wallgrace;
     heightchecks = getdvarint( @"hash_3ca29b429f678228", 1 );
     
-    for (check = 0; check < heightchecks; check++) {
+    for ( check = 0; check < heightchecks ; check++ )
+    {
         tracestart += ( 0, 0, 10 * check );
         hightraceresults = trace::ray_trace( tracestart, traceend, ignoreent, tracecontents );
         
@@ -1858,8 +1877,8 @@ function function_7bf5ea7dd272db77( dropstruct, dropdata, baseorigin, ignoreent,
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cd4
+// Params 11
+// Checksum 0x0, Offset: 0x7e08
 // Size: 0x31c
 function function_3f0ce5cf3481f56c( dropstruct, dropdata, baseorigin, baseangles, ignoreent, tracecontents, retries, var_daa047868cf7a01b, var_551904951118b7b9, var_43ee1b505fc4c4ed, var_93a7b81154b71c0e )
 {
@@ -1879,7 +1898,8 @@ function function_3f0ce5cf3481f56c( dropstruct, dropdata, baseorigin, baseangles
     var_f4a31528787ae6bd = dropdata.outangles;
     var_9bd3420d924c5c43 = dropdata.outorigin;
     
-    for (attempts = 0; attempts < retries; attempts++) {
+    for ( attempts = 0; attempts < retries ; attempts++ )
+    {
         dropstruct.dropidx++;
         dropdata.ring = int( dropstruct.dropidx / var_a9d5ad9414f5ecb7 );
         dropdata.slot = dropstruct.dropidx - dropdata.ring * var_a9d5ad9414f5ecb7;
@@ -1908,8 +1928,8 @@ function function_3f0ce5cf3481f56c( dropstruct, dropdata, baseorigin, baseangles
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ff8
+// Params 5
+// Checksum 0x0, Offset: 0x812c
 // Size: 0xfb
 function function_28cd87cdbae45940( dropstruct, dropdata, ignoreent, tracecontents, var_551904951118b7b9 )
 {
@@ -1937,8 +1957,8 @@ function function_28cd87cdbae45940( dropstruct, dropdata, ignoreent, traceconten
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x80fc
+// Params 7
+// Checksum 0x0, Offset: 0x8230
 // Size: 0x2c8
 function function_bd56d40fa4e7a1e3( dropstruct, dropdata, ignoreent, tracecontents, groundfloat, var_29a915f667b07b0f, var_551904951118b7b9 )
 {
@@ -2014,8 +2034,8 @@ function function_bd56d40fa4e7a1e3( dropstruct, dropdata, ignoreent, traceconten
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x83cd
+// Params 11
+// Checksum 0x0, Offset: 0x8501
 // Size: 0x5c1
 function getitemdroporiginandangles( dropstruct, baseorigin, baseangles, ignoreent, var_8a600b6102da9f9b, var_f71d4f78d508da69, var_6fe2ff802d5192d4, var_3ace5ac9c7d6fa44, overrideorigin, var_29a915f667b07b0f, var_688e4da4cb16116d )
 {
@@ -2156,8 +2176,8 @@ function getitemdroporiginandangles( dropstruct, baseorigin, baseangles, ignoree
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8997
+// Params 1
+// Checksum 0x0, Offset: 0x8acb
 // Size: 0x6d
 function function_73ffc9bcd6d1e62d( fromkiosk )
 {
@@ -2173,8 +2193,8 @@ function function_73ffc9bcd6d1e62d( fromkiosk )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a0c
+// Params 1
+// Checksum 0x0, Offset: 0x8b40
 // Size: 0x51
 function getfullweaponobjforscriptablepartname( scriptablename )
 {
@@ -2187,8 +2207,8 @@ function getfullweaponobjforscriptablepartname( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a66
+// Params 1
+// Checksum 0x0, Offset: 0x8b9a
 // Size: 0x7e
 function getfullweaponobjforpickup( pickupent )
 {
@@ -2210,8 +2230,8 @@ function getfullweaponobjforpickup( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8aed
+// Params 1
+// Checksum 0x0, Offset: 0x8c21
 // Size: 0x58
 function getgulagpickupsforclass( pickupclass )
 {
@@ -2226,8 +2246,8 @@ function getgulagpickupsforclass( pickupclass )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b4e
+// Params 1
+// Checksum 0x0, Offset: 0x8c82
 // Size: 0x2a
 function loot_getitemcount( instance )
 {
@@ -2236,8 +2256,8 @@ function loot_getitemcount( instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b81
+// Params 1
+// Checksum 0x0, Offset: 0x8cb5
 // Size: 0x2b
 function loot_getitemcountlefthand( instance )
 {
@@ -2246,8 +2266,8 @@ function loot_getitemcountlefthand( instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bb5
+// Params 1
+// Checksum 0x0, Offset: 0x8ce9
 // Size: 0x2e
 function function_3a5f7703319142dd( instance )
 {
@@ -2256,8 +2276,8 @@ function function_3a5f7703319142dd( instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bec
+// Params 4
+// Checksum 0x0, Offset: 0x8d20
 // Size: 0xab
 function loot_setitemcount( instance, itemcount, itemcountlefthand, var_dab81ead77442a10 )
 {
@@ -2282,8 +2302,8 @@ function loot_setitemcount( instance, itemcount, itemcountlefthand, var_dab81ead
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c9f
+// Params 1
+// Checksum 0x0, Offset: 0x8dd3
 // Size: 0x53, Type: bool
 function lootusedignore( instance )
 {
@@ -2313,8 +2333,8 @@ function lootusedignore( instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8cfb
+// Params 1
+// Checksum 0x0, Offset: 0x8e2f
 // Size: 0x4b
 function lootgetscriptablename( instance )
 {
@@ -2339,8 +2359,8 @@ function lootgetscriptablename( instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d4f
+// Params 2
+// Checksum 0x0, Offset: 0x8e83
 // Size: 0x1fe
 function function_23d6a60ccfa90b00( instance, player )
 {
@@ -2395,8 +2415,8 @@ function function_23d6a60ccfa90b00( instance, player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f56
+// Params 6
+// Checksum 0x0, Offset: 0x908a
 // Size: 0x78
 function function_e40eec61ee9d0889( instance, part, state, player, var_a5b2c541413aa895, usestring )
 {
@@ -2409,8 +2429,8 @@ function function_e40eec61ee9d0889( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fd6
+// Params 8
+// Checksum 0x0, Offset: 0x910a
 // Size: 0x266
 function lootused( instance, part, state, player, var_a5b2c541413aa895, usestring, fromcallback, forcebackpack )
 {
@@ -2444,8 +2464,8 @@ function lootused( instance, part, state, player, var_a5b2c541413aa895, usestrin
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9245
+// Params 4
+// Checksum 0x0, Offset: 0x9379
 // Size: 0x2ca, Type: bool
 function function_60234aa487445085( pickup, player, var_a5b2c541413aa895, instance )
 {
@@ -2513,8 +2533,8 @@ function function_60234aa487445085( pickup, player, var_a5b2c541413aa895, instan
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9518
+// Params 1
+// Checksum 0x0, Offset: 0x964c
 // Size: 0x4e
 function function_dc5a935ab4958490( pickup )
 {
@@ -2531,8 +2551,8 @@ function function_dc5a935ab4958490( pickup )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x956f
+// Params 1
+// Checksum 0x0, Offset: 0x96a3
 // Size: 0x51
 function getgasmasklootid( var_bb057f32440ac1b5 )
 {
@@ -2552,8 +2572,8 @@ function getgasmasklootid( var_bb057f32440ac1b5 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x95c9
+// Params 1
+// Checksum 0x0, Offset: 0x96fd
 // Size: 0x120
 function function_b29b252cdfa9a7d6( perks )
 {
@@ -2562,7 +2582,8 @@ function function_b29b252cdfa9a7d6( perks )
     var_99d72c999b9a85fa = 0;
     mask = int( pow( 2, bit_width ) ) - 1;
     
-    for (i = 0; i < 4 && i < perks.size; i++) {
+    for ( i = 0; i < 4 && i < perks.size ; i++ )
+    {
         if ( isdefined( perks[ i ] ) )
         {
             perk = perks[ i ];
@@ -2592,8 +2613,8 @@ function function_b29b252cdfa9a7d6( perks )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x96f2
+// Params 4
+// Checksum 0x0, Offset: 0x9826
 // Size: 0x190
 function function_8f0bd51f5c6108b( pickup, player, var_a5b2c541413aa895, instance )
 {
@@ -2647,8 +2668,8 @@ function function_8f0bd51f5c6108b( pickup, player, var_a5b2c541413aa895, instanc
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x988a
+// Params 4
+// Checksum 0x0, Offset: 0x99be
 // Size: 0x110
 function function_56dd1faa25a3414f( player, pickup, var_a5b2c541413aa895, results )
 {
@@ -2677,8 +2698,8 @@ function function_56dd1faa25a3414f( player, pickup, var_a5b2c541413aa895, result
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x99a2
+// Params 2
+// Checksum 0x0, Offset: 0x9ad6
 // Size: 0xd6
 function function_2237800b816490b8( player, pickup )
 {
@@ -2716,8 +2737,8 @@ function function_2237800b816490b8( player, pickup )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a80
+// Params 2
+// Checksum 0x0, Offset: 0x9bb4
 // Size: 0x20
 function function_acddab6fa6e914a( player, origin )
 {
@@ -2725,8 +2746,8 @@ function function_acddab6fa6e914a( player, origin )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9aa8
+// Params 1
+// Checksum 0x0, Offset: 0x9bdc
 // Size: 0x7e
 function function_2e6de0100e414a86( pickup )
 {
@@ -2744,8 +2765,8 @@ function function_2e6de0100e414a86( pickup )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b2f
+// Params 3
+// Checksum 0x0, Offset: 0x9c63
 // Size: 0xc7, Type: bool
 function allowautouse( player, pickup, instance )
 {
@@ -2778,8 +2799,8 @@ function allowautouse( player, pickup, instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bff
+// Params 8
+// Checksum 0x0, Offset: 0x9d33
 // Size: 0x678
 function function_b5f5576a0017c089( pickup, state, player, var_a5b2c541413aa895, instance, fromcallback, forcebackpack, var_1e2e085b484205c3 )
 {
@@ -2974,8 +2995,8 @@ function function_b5f5576a0017c089( pickup, state, player, var_a5b2c541413aa895,
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa280
+// Params 2
+// Checksum 0x0, Offset: 0xa3b4
 // Size: 0x56
 function function_2ae5e94bd6518ab5( loot, var_ecce4aadde6676e5 )
 {
@@ -2995,8 +3016,8 @@ function function_2ae5e94bd6518ab5( loot, var_ecce4aadde6676e5 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2df
+// Params 2
+// Checksum 0x0, Offset: 0xa413
 // Size: 0xed
 function loothide( instance, part )
 {
@@ -3044,8 +3065,8 @@ function loothide( instance, part )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3d4
+// Params 8
+// Checksum 0x0, Offset: 0xa508
 // Size: 0x3dd, Type: bool
 function br_forcegivecustompickupitem( player, scriptablename, var_43fb3d97abb79854, countoverride, fromkiosk, droppurchased, options, autouse )
 {
@@ -3145,8 +3166,8 @@ function br_forcegivecustompickupitem( player, scriptablename, var_43fb3d97abb79
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7ba
+// Params 2
+// Checksum 0x0, Offset: 0xa8ee
 // Size: 0x32
 function resetplayerinventorywithdelay( delayvalue, keeploadout )
 {
@@ -3158,9 +3179,9 @@ function resetplayerinventorywithdelay( delayvalue, keeploadout )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7f4
-// Size: 0xfb
+// Params 3
+// Checksum 0x0, Offset: 0xa928
+// Size: 0x103
 function resetplayerinventory( keeploadout, var_f7e8a863407717b3, playerkilled )
 {
     iskingslayer = game_utility::getsubgametype() == "kingslayer";
@@ -3169,6 +3190,7 @@ function resetplayerinventory( keeploadout, var_f7e8a863407717b3, playerkilled )
     if ( function_d75b73c443421047() )
     {
         keeploadout = 1;
+        resetsuper( playerkilled );
     }
     
     if ( !br_gametypes::isfeaturedisabled( "armor" ) )
@@ -3212,8 +3234,8 @@ function resetplayerinventory( keeploadout, var_f7e8a863407717b3, playerkilled )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8f7
+// Params 1
+// Checksum 0x0, Offset: 0xaa33
 // Size: 0x44
 function resetsuper( playerkilled )
 {
@@ -3225,14 +3247,15 @@ function resetsuper( playerkilled )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa943
+// Params 1
+// Checksum 0x0, Offset: 0xaa7f
 // Size: 0xc0
 function resetdefaultweaponammo( magcount )
 {
     weaponslist = self getweaponslistall();
     
-    for (idx = 0; idx < weaponslist.size; idx++) {
+    for ( idx = 0; idx < weaponslist.size ; idx++ )
+    {
         weapon = weaponslist[ idx ];
         stockammo = 0;
         
@@ -3259,8 +3282,8 @@ function resetdefaultweaponammo( magcount )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa0b
+// Params 1
+// Checksum 0x0, Offset: 0xab47
 // Size: 0x24
 function initplayer( useloadout )
 {
@@ -3270,8 +3293,8 @@ function initplayer( useloadout )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa37
+// Params 1
+// Checksum 0x0, Offset: 0xab73
 // Size: 0xbb
 function function_cf83a47b811bd132( player )
 {
@@ -3307,8 +3330,8 @@ function function_cf83a47b811bd132( player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaafa
+// Params 1
+// Checksum 0x0, Offset: 0xac36
 // Size: 0x7a
 function getbagtypeforplayer( player )
 {
@@ -3336,8 +3359,8 @@ function getbagtypeforplayer( player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xab7d
+// Params 2
+// Checksum 0x0, Offset: 0xacb9
 // Size: 0x2d
 function function_8933b487e22ee213( player, bagtype )
 {
@@ -3346,8 +3369,8 @@ function function_8933b487e22ee213( player, bagtype )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xabb2
+// Params 3
+// Checksum 0x0, Offset: 0xacee
 // Size: 0x365
 function spawndebugpickupfromdevgui( scriptablename, critical, quantity )
 {
@@ -3375,7 +3398,8 @@ function spawndebugpickupfromdevgui( scriptablename, critical, quantity )
             {
                 dropinfo.customperkpayload = [ #"customperkpackage" ];
                 
-                for (i = 0; i < 4; i++) {
+                for ( i = 0; i < 4 ; i++ )
+                {
                     randperk = randomint( level.perkbundles.size );
                     perk = getarraykey( level.perkbundles, randperk );
                     perks[ perks.size ] = perk;
@@ -3427,8 +3451,8 @@ function spawndebugpickupfromdevgui( scriptablename, critical, quantity )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf1f
+// Params 1
+// Checksum 0x0, Offset: 0xb05b
 // Size: 0x110
 function function_c87696a022a2c6fc( skipweapons )
 {
@@ -3451,8 +3475,8 @@ function function_c87696a022a2c6fc( skipweapons )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb037
+// Params 0
+// Checksum 0x0, Offset: 0xb173
 // Size: 0x188
 function function_510f82785bd2c148()
 {
@@ -3485,8 +3509,8 @@ function function_510f82785bd2c148()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1c7
+// Params 1
+// Checksum 0x0, Offset: 0xb303
 // Size: 0x168
 function function_b158d838449b637e( itemsstring )
 {
@@ -3522,8 +3546,8 @@ function function_b158d838449b637e( itemsstring )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb337
+// Params 1
+// Checksum 0x0, Offset: 0xb473
 // Size: 0xe0
 function function_e2d83df8b282b199( itemsstring )
 {
@@ -3551,8 +3575,8 @@ function function_e2d83df8b282b199( itemsstring )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb41f
+// Params 1
+// Checksum 0x0, Offset: 0xb55b
 // Size: 0x44, Type: bool
 function isweaponpickup( scriptablename )
 {
@@ -3560,8 +3584,8 @@ function isweaponpickup( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb46c
+// Params 1
+// Checksum 0x0, Offset: 0xb5a8
 // Size: 0x49, Type: bool
 function isweaponpickupitem( item )
 {
@@ -3583,8 +3607,8 @@ function isweaponpickupitem( item )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4be
+// Params 1
+// Checksum 0x0, Offset: 0xb5fa
 // Size: 0x78
 function takearmorpickup( pickupent )
 {
@@ -3600,8 +3624,8 @@ function takearmorpickup( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xb53e
+// Params 5
+// Checksum 0x0, Offset: 0xb67a
 // Size: 0x3b4
 function function_4e335a6589199847( pickupent, var_a5b2c541413aa895, var_db943473454f6ea6, backpackequip, fromkiosk )
 {
@@ -3701,8 +3725,8 @@ function function_4e335a6589199847( pickupent, var_a5b2c541413aa895, var_db94347
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8fb
+// Params 4
+// Checksum 0x0, Offset: 0xba37
 // Size: 0x3c5
 function function_1df16a3922616cd8( pickupent, fromkiosk, var_db943473454f6ea6, backpackequip )
 {
@@ -3815,8 +3839,8 @@ function function_1df16a3922616cd8( pickupent, fromkiosk, var_db943473454f6ea6, 
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xbcc9
+// Params 4
+// Checksum 0x0, Offset: 0xbe05
 // Size: 0x59e
 function takeequipmentpickup( pickupent, fromkiosk, var_db943473454f6ea6, backpackequip )
 {
@@ -3971,8 +3995,8 @@ function takeequipmentpickup( pickupent, fromkiosk, var_db943473454f6ea6, backpa
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0xc270
+// Params 9
+// Checksum 0x0, Offset: 0xc3ac
 // Size: 0x41e
 function dropequipmentinslot( dropstruct, slot, fromkiosk, ammocountoverride, var_db943473454f6ea6, allowautopickup, itemtype, dropfeedback, pickup )
 {
@@ -4103,8 +4127,8 @@ function dropequipmentinslot( dropstruct, slot, fromkiosk, ammocountoverride, va
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc696
+// Params 2
+// Checksum 0x0, Offset: 0xc7d2
 // Size: 0x37, Type: bool
 function pickupissameasequipmentslot( equipname, equipmentslot )
 {
@@ -4117,8 +4141,8 @@ function pickupissameasequipmentslot( equipname, equipmentslot )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6d6
+// Params 2
+// Checksum 0x0, Offset: 0xc812
 // Size: 0x50, Type: bool
 function equipmentslothasroom( scriptablename, equipmentslot )
 {
@@ -4133,8 +4157,8 @@ function equipmentslothasroom( scriptablename, equipmentslot )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc72f
+// Params 2
+// Checksum 0x0, Offset: 0xc86b
 // Size: 0x9f, Type: bool
 function function_e52b0b5ab01dfa0c( lootname, var_257c3db6f4bfdd81 )
 {
@@ -4162,8 +4186,8 @@ function function_e52b0b5ab01dfa0c( lootname, var_257c3db6f4bfdd81 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7d7
+// Params 1
+// Checksum 0x0, Offset: 0xc913
 // Size: 0x2a, Type: bool
 function takerespawntokenpickup( pickupent )
 {
@@ -4177,8 +4201,8 @@ function takerespawntokenpickup( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc80a
+// Params 1
+// Checksum 0x0, Offset: 0xc946
 // Size: 0x59
 function addrespawntoken( skipsplash )
 {
@@ -4194,8 +4218,8 @@ function addrespawntoken( skipsplash )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc86b
+// Params 0
+// Checksum 0x0, Offset: 0xc9a7
 // Size: 0x3a
 function removerespawntoken()
 {
@@ -4206,8 +4230,8 @@ function removerespawntoken()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8ad
+// Params 1
+// Checksum 0x0, Offset: 0xc9e9
 // Size: 0x74, Type: bool
 function function_68c46fe15ed38d9b( pickupent )
 {
@@ -4231,8 +4255,8 @@ function function_68c46fe15ed38d9b( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc92a
+// Params 1
+// Checksum 0x0, Offset: 0xca66
 // Size: 0x59
 function function_127474f04c3a06b5( skipsplash )
 {
@@ -4248,8 +4272,8 @@ function function_127474f04c3a06b5( skipsplash )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc98b
+// Params 0
+// Checksum 0x0, Offset: 0xcac7
 // Size: 0x3a
 function function_17e127f2e3771058()
 {
@@ -4260,8 +4284,8 @@ function function_17e127f2e3771058()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9cd
+// Params 3
+// Checksum 0x0, Offset: 0xcb09
 // Size: 0x71, Type: bool
 function takerevivepickup( pickupent, itemslotindex, backpackequip )
 {
@@ -4276,8 +4300,8 @@ function takerevivepickup( pickupent, itemslotindex, backpackequip )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xca47
+// Params 1
+// Checksum 0x0, Offset: 0xcb83
 // Size: 0x5a, Type: bool
 function function_966d64f200872160( pickupent )
 {
@@ -4293,8 +4317,8 @@ function function_966d64f200872160( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcaaa
+// Params 1
+// Checksum 0x0, Offset: 0xcbe6
 // Size: 0x53
 function function_ebf82cde71707ec8( var_eb0a92127237346e )
 {
@@ -4305,8 +4329,8 @@ function function_ebf82cde71707ec8( var_eb0a92127237346e )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb05
+// Params 4
+// Checksum 0x0, Offset: 0xcc41
 // Size: 0x1e5
 function function_aaaa1b3dfe18885c( skipsplash, revivelootid, itemslotindex, backpackequip )
 {
@@ -4360,8 +4384,8 @@ function function_aaaa1b3dfe18885c( skipsplash, revivelootid, itemslotindex, bac
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xccf2
+// Params 4
+// Checksum 0x0, Offset: 0xce2e
 // Size: 0x54
 function addselfrevivetoken( skipsplash, revivelootid, itemslotindex, backpackequip )
 {
@@ -4376,8 +4400,8 @@ function addselfrevivetoken( skipsplash, revivelootid, itemslotindex, backpackeq
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd4e
+// Params 0
+// Checksum 0x0, Offset: 0xce8a
 // Size: 0x97
 function removeselfrevivetoken()
 {
@@ -4406,8 +4430,8 @@ function removeselfrevivetoken()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcded
+// Params 0
+// Checksum 0x0, Offset: 0xcf29
 // Size: 0xd3, Type: bool
 function respawntokendisabled()
 {
@@ -4418,8 +4442,8 @@ function respawntokendisabled()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcec9
+// Params 0
+// Checksum 0x0, Offset: 0xd005
 // Size: 0xd7
 function fillmaxarmorplate()
 {
@@ -4435,8 +4459,8 @@ function fillmaxarmorplate()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcfa8
+// Params 1
+// Checksum 0x0, Offset: 0xd0e4
 // Size: 0x95
 function takeaccesscardpickup( pickupent )
 {
@@ -4452,8 +4476,8 @@ function takeaccesscardpickup( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd045
+// Params 1
+// Checksum 0x0, Offset: 0xd181
 // Size: 0x50
 function addaccesscard( cardtype )
 {
@@ -4464,8 +4488,8 @@ function addaccesscard( cardtype )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd09d
+// Params 0
+// Checksum 0x0, Offset: 0xd1d9
 // Size: 0x49
 function removeaccesscard()
 {
@@ -4481,8 +4505,8 @@ function removeaccesscard()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd0ee
+// Params 1
+// Checksum 0x0, Offset: 0xd22a
 // Size: 0xa6
 function function_7cb3c8630787467e( item )
 {
@@ -4507,8 +4531,8 @@ function function_7cb3c8630787467e( item )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd19c
+// Params 1
+// Checksum 0x0, Offset: 0xd2d8
 // Size: 0x98
 function function_b53322f9aca1b83b( item )
 {
@@ -4528,8 +4552,8 @@ function function_b53322f9aca1b83b( item )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd23c
+// Params 1
+// Checksum 0x0, Offset: 0xd378
 // Size: 0x37, Type: bool
 function function_e351a4b1c26ec991( item )
 {
@@ -4544,8 +4568,8 @@ function function_e351a4b1c26ec991( item )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd27c
+// Params 1
+// Checksum 0x0, Offset: 0xd3b8
 // Size: 0x31
 function function_b379c8b0a6564107( pickupent )
 {
@@ -4554,8 +4578,8 @@ function function_b379c8b0a6564107( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2b5
+// Params 1
+// Checksum 0x0, Offset: 0xd3f1
 // Size: 0xb
 function takedogtag( pickupent )
 {
@@ -4563,8 +4587,8 @@ function takedogtag( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2c8
+// Params 1
+// Checksum 0x0, Offset: 0xd404
 // Size: 0x47
 function takexp( pickupent )
 {
@@ -4575,8 +4599,8 @@ function takexp( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd317
+// Params 1
+// Checksum 0x0, Offset: 0xd453
 // Size: 0xbc
 function function_ed254d7be7ff977a( pickupent )
 {
@@ -4617,8 +4641,8 @@ function function_ed254d7be7ff977a( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xd3db
+// Params 7
+// Checksum 0x0, Offset: 0xd517
 // Size: 0x1d0
 function forcegivekillstreak( killstreakref, dropcurrent, fromkiosk, droppurchased, var_db943473454f6ea6, backpackequip, pickup )
 {
@@ -4673,8 +4697,8 @@ function forcegivekillstreak( killstreakref, dropcurrent, fromkiosk, droppurchas
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd5b3
+// Params 4
+// Checksum 0x0, Offset: 0xd6ef
 // Size: 0x68
 function takekillstreakpickup( pickupent, fromkiosk, var_db943473454f6ea6, backpackequip )
 {
@@ -4684,8 +4708,8 @@ function takekillstreakpickup( pickupent, fromkiosk, var_db943473454f6ea6, backp
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd623
+// Params 0
+// Checksum 0x0, Offset: 0xd75f
 // Size: 0x5a, Type: bool
 function hasanykillstreak()
 {
@@ -4698,8 +4722,8 @@ function hasanykillstreak()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd686
+// Params 1
+// Checksum 0x0, Offset: 0xd7c2
 // Size: 0x37, Type: bool
 function haskillstreak( killstreakref )
 {
@@ -4707,8 +4731,8 @@ function haskillstreak( killstreakref )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd6c6
+// Params 1
+// Checksum 0x0, Offset: 0xd802
 // Size: 0x47, Type: bool
 function iskillstreakavailable( killstreakref )
 {
@@ -4722,8 +4746,8 @@ function iskillstreakavailable( killstreakref )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd716
+// Params 1
+// Checksum 0x0, Offset: 0xd852
 // Size: 0x42
 function function_381d14fb6e6aca9a( killstreakref )
 {
@@ -4736,8 +4760,8 @@ function function_381d14fb6e6aca9a( killstreakref )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd760
+// Params 1
+// Checksum 0x0, Offset: 0xd89c
 // Size: 0x5f
 function forceusekillstreak( killstreakref )
 {
@@ -4759,8 +4783,8 @@ function forceusekillstreak( killstreakref )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7c8
+// Params 3
+// Checksum 0x0, Offset: 0xd904
 // Size: 0xba
 function _givebrsuper( equipname, supername, supercount )
 {
@@ -4787,8 +4811,8 @@ function _givebrsuper( equipname, supername, supercount )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd88a
+// Params 1
+// Checksum 0x0, Offset: 0xd9c6
 // Size: 0x6a
 function function_9ec0d84bc12b8d15( supername )
 {
@@ -4803,8 +4827,8 @@ function function_9ec0d84bc12b8d15( supername )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8fc
+// Params 1
+// Checksum 0x0, Offset: 0xda38
 // Size: 0x4e
 function function_390eaf44f2e0f0cc( supername )
 {
@@ -4817,8 +4841,8 @@ function function_390eaf44f2e0f0cc( supername )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd952
+// Params 2
+// Checksum 0x0, Offset: 0xda8e
 // Size: 0x62
 function function_1615eaec0c470f4f( equipname, supername )
 {
@@ -4835,8 +4859,8 @@ function function_1615eaec0c470f4f( equipname, supername )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9bc
+// Params 1
+// Checksum 0x0, Offset: 0xdaf8
 // Size: 0xc8
 function function_fcde72dcbcec206b( fordrop )
 {
@@ -4866,8 +4890,8 @@ function function_fcde72dcbcec206b( fordrop )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xda8c
+// Params 0
+// Checksum 0x0, Offset: 0xdbc8
 // Size: 0x4e
 function function_add28651639056b9()
 {
@@ -4878,8 +4902,8 @@ function function_add28651639056b9()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdae2
+// Params 0
+// Checksum 0x0, Offset: 0xdc1e
 // Size: 0x32
 function function_23ac735f86c58bf4()
 {
@@ -4892,8 +4916,8 @@ function function_23ac735f86c58bf4()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb1c
+// Params 3
+// Checksum 0x0, Offset: 0xdc58
 // Size: 0x1f6
 function takesuperpickup( pickupent, fromkiosk, var_db943473454f6ea6 )
 {
@@ -4946,8 +4970,8 @@ function takesuperpickup( pickupent, fromkiosk, var_db943473454f6ea6 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd1a
+// Params 5
+// Checksum 0x0, Offset: 0xde56
 // Size: 0x342
 function forcegivesuper( targetsupername, dropcurrent, fromkiosk, droppurchased, var_db943473454f6ea6 )
 {
@@ -5048,8 +5072,8 @@ function forcegivesuper( targetsupername, dropcurrent, fromkiosk, droppurchased,
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xe064
+// Params 4
+// Checksum 0x0, Offset: 0xe1a0
 // Size: 0x65
 function takeperkpickup( scriptablename, fromkiosk, var_db943473454f6ea6, backpackequip )
 {
@@ -5060,8 +5084,8 @@ function takeperkpickup( scriptablename, fromkiosk, var_db943473454f6ea6, backpa
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0d1
+// Params 5
+// Checksum 0x0, Offset: 0xe20d
 // Size: 0xd6
 function forcegiveperk( perkref, dropcurrent, fromkiosk, var_db943473454f6ea6, backpackequip )
 {
@@ -5086,8 +5110,51 @@ function forcegiveperk( perkref, dropcurrent, fromkiosk, var_db943473454f6ea6, b
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1af
+// Params 1
+// Checksum 0x0, Offset: 0xe2eb
+// Size: 0x2f
+function on_player_death( params )
+{
+    params.victim namespace_dfe80adf32f5c14a::function_4ab14e281240f204();
+    params.victim namespace_dfe80adf32f5c14a::function_c7b1bf955226c91a();
+}
+
+// Namespace br_pickups / scripts\mp\gametypes\br_pickups
+// Params 1
+// Checksum 0x0, Offset: 0xe322
+// Size: 0xde
+function function_a26bbfa747602ee1( scriptablename )
+{
+    itemref = level.br_pickups.var_14bd11727c4b6629[ scriptablename ];
+    
+    switch ( itemref )
+    {
+        case #"hash_2c9395bfba7d8880":
+        case #"hash_3155348f209a4ee3":
+        case #"hash_57ebf8ef67187ec7":
+        case #"hash_ac736f279bf91dc5":
+            if ( !istrue( level.var_b18569a63dc2a99f ) )
+            {
+                namespace_dfe80adf32f5c14a::function_6fe662f22a144740();
+                level scripts\common\callbacks::add( "player_death", &on_player_death );
+                level.var_b18569a63dc2a99f = 1;
+            }
+            
+            thread namespace_dfe80adf32f5c14a::apply_powerup( itemref );
+            break;
+        case #"hash_560ea2939c546227":
+            if ( issharedfuncdefined( "limbo", "limbo_become_mutant" ) )
+            {
+                self thread [[ getsharedfunc( "limbo", "limbo_become_mutant" ) ]]( "mutant_sneaker_br" );
+            }
+            
+            break;
+    }
+}
+
+// Namespace br_pickups / scripts\mp\gametypes\br_pickups
+// Params 0
+// Checksum 0x0, Offset: 0xe408
 // Size: 0x123
 function function_5658dce20f11e8c4()
 {
@@ -5115,8 +5182,8 @@ function function_5658dce20f11e8c4()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xe2da
+// Params 5
+// Checksum 0x0, Offset: 0xe533
 // Size: 0x37a
 function function_9cbd64a86452a4df( headgeartype, pickupent, fromkiosk, itemslotindex, backpackequip )
 {
@@ -5224,8 +5291,8 @@ function function_9cbd64a86452a4df( headgeartype, pickupent, fromkiosk, itemslot
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe65c
+// Params 0
+// Checksum 0x0, Offset: 0xe8b5
 // Size: 0x57, Type: bool
 function function_b52a59a4c073153c()
 {
@@ -5243,8 +5310,8 @@ function function_b52a59a4c073153c()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6bc
+// Params 4
+// Checksum 0x0, Offset: 0xe915
 // Size: 0x33
 function takegasmask( pickupent, fromkiosk, itemslotindex, backpackequip )
 {
@@ -5252,8 +5319,8 @@ function takegasmask( pickupent, fromkiosk, itemslotindex, backpackequip )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6f7
+// Params 1
+// Checksum 0x0, Offset: 0xe950
 // Size: 0x18
 function function_cdf7f2f6bd3207( request )
 {
@@ -5261,8 +5328,8 @@ function function_cdf7f2f6bd3207( request )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe717
+// Params 1
+// Checksum 0x0, Offset: 0xe970
 // Size: 0x18
 function function_8206bc54a1ed73cb( request )
 {
@@ -5270,8 +5337,8 @@ function function_8206bc54a1ed73cb( request )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe737
+// Params 1
+// Checksum 0x0, Offset: 0xe990
 // Size: 0x4c
 function function_f213f06eba604bbd( player )
 {
@@ -5285,8 +5352,8 @@ function function_f213f06eba604bbd( player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe78c
+// Params 0
+// Checksum 0x0, Offset: 0xe9e5
 // Size: 0x4e, Type: bool
 function canplaygasmaskgesturebr()
 {
@@ -5301,8 +5368,8 @@ function canplaygasmaskgesturebr()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe7e3
+// Params 0
+// Checksum 0x0, Offset: 0xea3c
 // Size: 0x1c3
 function equipgasmaskbr()
 {
@@ -5357,8 +5424,8 @@ function equipgasmaskbr()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9ae
+// Params 0
+// Checksum 0x0, Offset: 0xec07
 // Size: 0x8d
 function function_d27ef4a025f725ff()
 {
@@ -5379,8 +5446,8 @@ function function_d27ef4a025f725ff()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xea43
+// Params 0
+// Checksum 0x0, Offset: 0xec9c
 // Size: 0xef
 function function_c2d0fcc8985b5209()
 {
@@ -5410,8 +5477,8 @@ function function_c2d0fcc8985b5209()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb3a
+// Params 0
+// Checksum 0x0, Offset: 0xed93
 // Size: 0x22f
 function removegasmaskbr()
 {
@@ -5482,8 +5549,8 @@ function removegasmaskbr()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xed71
+// Params 0
+// Checksum 0x0, Offset: 0xefca
 // Size: 0xae
 function function_e25fbc6849d4c2fb()
 {
@@ -5517,8 +5584,8 @@ function function_e25fbc6849d4c2fb()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xee27
+// Params 0
+// Checksum 0x0, Offset: 0xf080
 // Size: 0x13b
 function function_ace3bd9b1c5be1b5()
 {
@@ -5551,8 +5618,8 @@ function function_ace3bd9b1c5be1b5()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xef6a
+// Params 1
+// Checksum 0x0, Offset: 0xf1c3
 // Size: 0x1c4
 function breakgasmaskbr( attacker )
 {
@@ -5603,8 +5670,8 @@ function breakgasmaskbr( attacker )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf136
+// Params 2
+// Checksum 0x0, Offset: 0xf38f
 // Size: 0x30
 function function_4f2124298797aded( amount, time )
 {
@@ -5615,8 +5682,8 @@ function function_4f2124298797aded( amount, time )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf16e
+// Params 1
+// Checksum 0x0, Offset: 0xf3c7
 // Size: 0x3c
 function delayedattach( delaytime )
 {
@@ -5632,8 +5699,8 @@ function delayedattach( delaytime )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1b2
+// Params 1
+// Checksum 0x0, Offset: 0xf40b
 // Size: 0x52
 function delayeddetach( delaytime )
 {
@@ -5653,8 +5720,8 @@ function delayeddetach( delaytime )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf20c
+// Params 1
+// Checksum 0x0, Offset: 0xf465
 // Size: 0x75
 function delayeddetachbreak( delaytime )
 {
@@ -5677,8 +5744,8 @@ function delayeddetachbreak( delaytime )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf289
+// Params 0
+// Checksum 0x0, Offset: 0xf4e2
 // Size: 0x54
 function function_a1d897962a19d27e()
 {
@@ -5698,8 +5765,8 @@ function function_a1d897962a19d27e()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf2e5
+// Params 0
+// Checksum 0x0, Offset: 0xf53e
 // Size: 0x3f
 function function_8e9b00a1d2b23d72()
 {
@@ -5719,8 +5786,8 @@ function function_8e9b00a1d2b23d72()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf32c
+// Params 1
+// Checksum 0x0, Offset: 0xf585
 // Size: 0x26, Type: bool
 function canholdammobox( scriptablename )
 {
@@ -5733,8 +5800,8 @@ function canholdammobox( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf35b
+// Params 1
+// Checksum 0x0, Offset: 0xf5b4
 // Size: 0x53, Type: bool
 function isvest( scriptablename )
 {
@@ -5742,8 +5809,8 @@ function isvest( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3b7
+// Params 1
+// Checksum 0x0, Offset: 0xf610
 // Size: 0x53, Type: bool
 function isgasmask( scriptablename )
 {
@@ -5751,8 +5818,8 @@ function isgasmask( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf413
+// Params 1
+// Checksum 0x0, Offset: 0xf66c
 // Size: 0x53, Type: bool
 function ishelmet( scriptablename )
 {
@@ -5760,8 +5827,8 @@ function ishelmet( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf46f
+// Params 1
+// Checksum 0x0, Offset: 0xf6c8
 // Size: 0x53, Type: bool
 function function_9a5d18fbdad686c2( scriptablename )
 {
@@ -5769,8 +5836,8 @@ function function_9a5d18fbdad686c2( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf4cb
+// Params 1
+// Checksum 0x0, Offset: 0xf724
 // Size: 0x44, Type: bool
 function isnote( scriptablename )
 {
@@ -5778,8 +5845,8 @@ function isnote( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf518
+// Params 1
+// Checksum 0x0, Offset: 0xf771
 // Size: 0x53, Type: bool
 function function_6b5f3fb6550ae6d5( scriptablename )
 {
@@ -5787,8 +5854,8 @@ function function_6b5f3fb6550ae6d5( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf574
+// Params 1
+// Checksum 0x0, Offset: 0xf7cd
 // Size: 0x53, Type: bool
 function function_4cf229c2265183a9( scriptablename )
 {
@@ -5796,8 +5863,8 @@ function function_4cf229c2265183a9( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf5d0
+// Params 1
+// Checksum 0x0, Offset: 0xf829
 // Size: 0x53, Type: bool
 function isspecialistbonus( scriptablename )
 {
@@ -5805,8 +5872,8 @@ function isspecialistbonus( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf62c
+// Params 1
+// Checksum 0x0, Offset: 0xf885
 // Size: 0x44, Type: bool
 function isplunder( scriptablename )
 {
@@ -5814,8 +5881,8 @@ function isplunder( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf679
+// Params 1
+// Checksum 0x0, Offset: 0xf8d2
 // Size: 0x16, Type: bool
 function function_34af0f77c1668dba( lootid )
 {
@@ -5823,8 +5890,8 @@ function function_34af0f77c1668dba( lootid )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf698
+// Params 1
+// Checksum 0x0, Offset: 0xf8f1
 // Size: 0x44, Type: bool
 function isquesttablet( scriptablename )
 {
@@ -5832,8 +5899,8 @@ function isquesttablet( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf6e5
+// Params 1
+// Checksum 0x0, Offset: 0xf93e
 // Size: 0x22
 function function_c7279e910cefd2a4( scriptablename )
 {
@@ -5846,8 +5913,8 @@ function function_c7279e910cefd2a4( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf710
+// Params 1
+// Checksum 0x0, Offset: 0xf969
 // Size: 0x44, Type: bool
 function isdogtag( scriptablename )
 {
@@ -5855,8 +5922,8 @@ function isdogtag( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf75d
+// Params 1
+// Checksum 0x0, Offset: 0xf9b6
 // Size: 0x53, Type: bool
 function function_a5202e2fc8ecb076( scriptablename )
 {
@@ -5864,8 +5931,8 @@ function function_a5202e2fc8ecb076( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf7b9
+// Params 1
+// Checksum 0x0, Offset: 0xfa12
 // Size: 0x44, Type: bool
 function isweaponcase( scriptablename )
 {
@@ -5873,8 +5940,8 @@ function isweaponcase( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf806
+// Params 1
+// Checksum 0x0, Offset: 0xfa5f
 // Size: 0x44, Type: bool
 function function_f92615e29aff3602( scriptablename )
 {
@@ -5882,8 +5949,8 @@ function function_f92615e29aff3602( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf853
+// Params 1
+// Checksum 0x0, Offset: 0xfaac
 // Size: 0x44, Type: bool
 function function_e4b6260dbb04b43d( scriptablename )
 {
@@ -5891,8 +5958,8 @@ function function_e4b6260dbb04b43d( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8a0
+// Params 1
+// Checksum 0x0, Offset: 0xfaf9
 // Size: 0x2c, Type: bool
 function function_9b77601837f66e32( lootid )
 {
@@ -5907,9 +5974,9 @@ function function_9b77601837f66e32( lootid )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8d5
-// Size: 0x2c, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0xfb2e
+// Size: 0x2c
 function function_b605a733974c2ff5( lootid )
 {
     scriptablename = scripts\cp_mp\utility\loot::getscriptablefromlootid( lootid );
@@ -5919,12 +5986,12 @@ function function_b605a733974c2ff5( lootid )
         return function_43e6c697b2fdde6e( scriptablename );
     }
     
-    return false;
+    return 0;
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf90a
+// Params 1
+// Checksum 0x0, Offset: 0xfb63
 // Size: 0x44, Type: bool
 function isperkpointpickup( scriptablename )
 {
@@ -5932,8 +5999,8 @@ function isperkpointpickup( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf957
+// Params 1
+// Checksum 0x0, Offset: 0xfbb0
 // Size: 0x44, Type: bool
 function istokenpickup( scriptablename )
 {
@@ -5941,8 +6008,8 @@ function istokenpickup( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9a4
+// Params 1
+// Checksum 0x0, Offset: 0xfbfd
 // Size: 0x18, Type: bool
 function function_f8f4cf026fb2b9f8( scriptablename )
 {
@@ -5950,8 +6017,8 @@ function function_f8f4cf026fb2b9f8( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9c5
+// Params 1
+// Checksum 0x0, Offset: 0xfc1e
 // Size: 0x44, Type: bool
 function isrevivepickup( scriptablename )
 {
@@ -5959,8 +6026,8 @@ function isrevivepickup( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa12
+// Params 1
+// Checksum 0x0, Offset: 0xfc6b
 // Size: 0x44, Type: bool
 function iskillstreak( scriptablename )
 {
@@ -5968,8 +6035,8 @@ function iskillstreak( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa5f
+// Params 1
+// Checksum 0x0, Offset: 0xfcb8
 // Size: 0x44, Type: bool
 function isattachment( scriptablename )
 {
@@ -5977,8 +6044,8 @@ function isattachment( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfaac
+// Params 1
+// Checksum 0x0, Offset: 0xfd05
 // Size: 0x50, Type: bool
 function issuperpickup( scriptablename )
 {
@@ -5986,8 +6053,8 @@ function issuperpickup( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb05
+// Params 1
+// Checksum 0x0, Offset: 0xfd5e
 // Size: 0x12, Type: bool
 function function_7e548749e3b2fd89( scriptablename )
 {
@@ -5995,8 +6062,8 @@ function function_7e548749e3b2fd89( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb20
+// Params 1
+// Checksum 0x0, Offset: 0xfd79
 // Size: 0x12, Type: bool
 function function_c7832df426918c4e( scriptablename )
 {
@@ -6004,8 +6071,8 @@ function function_c7832df426918c4e( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb3b
+// Params 1
+// Checksum 0x0, Offset: 0xfd94
 // Size: 0x5c
 function function_1be34022a4acce73( scriptablename )
 {
@@ -6027,8 +6094,8 @@ function function_1be34022a4acce73( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb9f
+// Params 1
+// Checksum 0x0, Offset: 0xfdf8
 // Size: 0x44, Type: bool
 function function_1950b02c25bad779( scriptablename )
 {
@@ -6036,8 +6103,8 @@ function function_1950b02c25bad779( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbec
+// Params 1
+// Checksum 0x0, Offset: 0xfe45
 // Size: 0x12, Type: bool
 function isplunderextract( scriptablename )
 {
@@ -6045,8 +6112,8 @@ function isplunderextract( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc07
+// Params 1
+// Checksum 0x0, Offset: 0xfe60
 // Size: 0x12, Type: bool
 function function_4294e9b331377c31( scriptablename )
 {
@@ -6054,8 +6121,8 @@ function function_4294e9b331377c31( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc22
+// Params 1
+// Checksum 0x0, Offset: 0xfe7b
 // Size: 0x16
 function isaccesscard( scriptablename )
 {
@@ -6063,8 +6130,8 @@ function isaccesscard( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc41
+// Params 1
+// Checksum 0x0, Offset: 0xfe9a
 // Size: 0x16
 function function_cb8c6abfd1ce083a( scriptablename )
 {
@@ -6072,8 +6139,8 @@ function function_cb8c6abfd1ce083a( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc60
+// Params 1
+// Checksum 0x0, Offset: 0xfeb9
 // Size: 0x16
 function isxp( scriptablename )
 {
@@ -6081,8 +6148,8 @@ function isxp( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc7f
+// Params 1
+// Checksum 0x0, Offset: 0xfed8
 // Size: 0x16
 function function_f262c137ed78e6eb( scriptablename )
 {
@@ -6090,8 +6157,8 @@ function function_f262c137ed78e6eb( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc9e
+// Params 1
+// Checksum 0x0, Offset: 0xfef7
 // Size: 0x25, Type: bool
 function iskey( scriptablename )
 {
@@ -6099,8 +6166,8 @@ function iskey( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfccc
+// Params 1
+// Checksum 0x0, Offset: 0xff25
 // Size: 0x16
 function function_2d86ba79a58bb62( scriptablename )
 {
@@ -6108,8 +6175,8 @@ function function_2d86ba79a58bb62( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfceb
+// Params 1
+// Checksum 0x0, Offset: 0xff44
 // Size: 0x16
 function function_68f7f39db3bc7fa4( scriptablename )
 {
@@ -6117,8 +6184,8 @@ function function_68f7f39db3bc7fa4( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd0a
+// Params 1
+// Checksum 0x0, Offset: 0xff63
 // Size: 0x1d, Type: bool
 function isnonequippable( scriptablename )
 {
@@ -6126,8 +6193,8 @@ function isnonequippable( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd30
+// Params 1
+// Checksum 0x0, Offset: 0xff89
 // Size: 0x44, Type: bool
 function isvaluable( scriptablename )
 {
@@ -6135,8 +6202,8 @@ function isvaluable( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd7d
+// Params 1
+// Checksum 0x0, Offset: 0xffd6
 // Size: 0x44, Type: bool
 function ispersonal( scriptablename )
 {
@@ -6144,8 +6211,8 @@ function ispersonal( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfdca
+// Params 1
+// Checksum 0x0, Offset: 0x10023
 // Size: 0x44, Type: bool
 function istablet( scriptablename )
 {
@@ -6153,8 +6220,8 @@ function istablet( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe17
+// Params 1
+// Checksum 0x0, Offset: 0x10070
 // Size: 0x44, Type: bool
 function function_32125eba262380c7( scriptablename )
 {
@@ -6162,8 +6229,8 @@ function function_32125eba262380c7( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe64
+// Params 1
+// Checksum 0x0, Offset: 0x100bd
 // Size: 0x3d, Type: bool
 function function_a38e261031751c09( scriptablename )
 {
@@ -6171,8 +6238,8 @@ function function_a38e261031751c09( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfeaa
+// Params 1
+// Checksum 0x0, Offset: 0x10103
 // Size: 0x44, Type: bool
 function iscache( scriptablename )
 {
@@ -6180,8 +6247,8 @@ function iscache( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfef7
+// Params 1
+// Checksum 0x0, Offset: 0x10150
 // Size: 0x44, Type: bool
 function function_b989edd9af4f42c7( scriptablename )
 {
@@ -6189,8 +6256,8 @@ function function_b989edd9af4f42c7( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xff44
+// Params 1
+// Checksum 0x0, Offset: 0x1019d
 // Size: 0x44, Type: bool
 function function_d7c5786a0c42ef6c( scriptablename )
 {
@@ -6198,8 +6265,8 @@ function function_d7c5786a0c42ef6c( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xff91
+// Params 1
+// Checksum 0x0, Offset: 0x101ea
 // Size: 0x44, Type: bool
 function function_cb1e30930c35f2e2( scriptablename )
 {
@@ -6207,8 +6274,8 @@ function function_cb1e30930c35f2e2( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xffde
+// Params 1
+// Checksum 0x0, Offset: 0x10237
 // Size: 0x44, Type: bool
 function function_43e6c697b2fdde6e( scriptablename )
 {
@@ -6216,8 +6283,8 @@ function function_43e6c697b2fdde6e( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1002b
+// Params 1
+// Checksum 0x0, Offset: 0x10284
 // Size: 0x44, Type: bool
 function isweaponpart( scriptablename )
 {
@@ -6225,8 +6292,8 @@ function isweaponpart( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10078
+// Params 1
+// Checksum 0x0, Offset: 0x102d1
 // Size: 0x44, Type: bool
 function function_5449da9d3d0358a4( scriptablename )
 {
@@ -6234,8 +6301,8 @@ function function_5449da9d3d0358a4( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x100c5
+// Params 1
+// Checksum 0x0, Offset: 0x1031e
 // Size: 0x33, Type: bool
 function function_f96674ba1a1ec2b3( lootid )
 {
@@ -6255,8 +6322,8 @@ function function_f96674ba1a1ec2b3( lootid )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10101
+// Params 1
+// Checksum 0x0, Offset: 0x1035a
 // Size: 0x44, Type: bool
 function function_7a345d3f5a65278c( scriptablename )
 {
@@ -6264,8 +6331,8 @@ function function_7a345d3f5a65278c( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1014e
+// Params 1
+// Checksum 0x0, Offset: 0x103a7
 // Size: 0x4c
 function function_3cad96c265936df7( scriptablename )
 {
@@ -6284,8 +6351,8 @@ function function_3cad96c265936df7( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x101a2
+// Params 1
+// Checksum 0x0, Offset: 0x103fb
 // Size: 0x27
 function isgametypeitem( scriptablename )
 {
@@ -6298,8 +6365,8 @@ function isgametypeitem( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x101d2
+// Params 1
+// Checksum 0x0, Offset: 0x1042b
 // Size: 0x12, Type: bool
 function isrock( scriptablename )
 {
@@ -6307,8 +6374,8 @@ function isrock( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x101ed
+// Params 1
+// Checksum 0x0, Offset: 0x10446
 // Size: 0x12, Type: bool
 function function_e68e1669597a3f4d( scriptablename )
 {
@@ -6316,8 +6383,8 @@ function function_e68e1669597a3f4d( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10208
+// Params 1
+// Checksum 0x0, Offset: 0x10461
 // Size: 0x1b, Type: bool
 function function_4f6e89c88bb9605( scriptablename )
 {
@@ -6325,8 +6392,8 @@ function function_4f6e89c88bb9605( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1022c
+// Params 1
+// Checksum 0x0, Offset: 0x10485
 // Size: 0x33, Type: bool
 function function_b77386f2a0293169( scriptablename )
 {
@@ -6334,8 +6401,8 @@ function function_b77386f2a0293169( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10268
+// Params 1
+// Checksum 0x0, Offset: 0x104c1
 // Size: 0x12, Type: bool
 function function_c51fec498a6283b5( scriptablename )
 {
@@ -6343,8 +6410,8 @@ function function_c51fec498a6283b5( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10283
+// Params 1
+// Checksum 0x0, Offset: 0x104dc
 // Size: 0x40, Type: bool
 function function_d0bacee01bff927c( scriptablename )
 {
@@ -6352,8 +6419,17 @@ function function_d0bacee01bff927c( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x102cc
+// Params 1
+// Checksum 0x0, Offset: 0x10525
+// Size: 0x40, Type: bool
+function function_fdf9de965b5e870b( scriptablename )
+{
+    return isdefined( level.br_pickups.br_itemtype[ scriptablename ] ) && level.br_pickups.br_itemtype[ scriptablename ] == "autoconsume";
+}
+
+// Namespace br_pickups / scripts\mp\gametypes\br_pickups
+// Params 2
+// Checksum 0x0, Offset: 0x1056e
 // Size: 0x2f, Type: bool
 function function_df3f5431c93ed5a1( lootid, scriptablename )
 {
@@ -6371,8 +6447,8 @@ function function_df3f5431c93ed5a1( lootid, scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10304
+// Params 1
+// Checksum 0x0, Offset: 0x105a6
 // Size: 0x19, Type: bool
 function function_e92b6e923f4264b5( scriptablename )
 {
@@ -6385,8 +6461,8 @@ function function_e92b6e923f4264b5( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10326
+// Params 2
+// Checksum 0x0, Offset: 0x105c8
 // Size: 0xa0, Type: bool
 function function_d345eec68e01361f( lootid, scriptablename )
 {
@@ -6409,8 +6485,8 @@ function function_d345eec68e01361f( lootid, scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x103cf
+// Params 1
+// Checksum 0x0, Offset: 0x10671
 // Size: 0x44, Type: bool
 function function_16a5ebe82e3f2286( scriptablename )
 {
@@ -6418,8 +6494,8 @@ function function_16a5ebe82e3f2286( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1041c
+// Params 2
+// Checksum 0x0, Offset: 0x106be
 // Size: 0x8a, Type: bool
 function function_4d256360c9588433( contractref, player )
 {
@@ -6442,8 +6518,8 @@ function function_4d256360c9588433( contractref, player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x104af
+// Params 4
+// Checksum 0x0, Offset: 0x10751
 // Size: 0xc9
 function function_54dac56d15dd3d93( ref, lootid, quantity, var_8598d3d3bc3d9ceb )
 {
@@ -6476,8 +6552,8 @@ function function_54dac56d15dd3d93( ref, lootid, quantity, var_8598d3d3bc3d9ceb 
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10580
+// Params 2
+// Checksum 0x0, Offset: 0x10822
 // Size: 0x65
 function function_99ab09ba7022d107( pickup, isautouse )
 {
@@ -6498,8 +6574,8 @@ function function_99ab09ba7022d107( pickup, isautouse )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x105ed
+// Params 2
+// Checksum 0x0, Offset: 0x1088f
 // Size: 0x65
 function function_cbbf9bf3544dc456( pickup, isautouse )
 {
@@ -6520,8 +6596,8 @@ function function_cbbf9bf3544dc456( pickup, isautouse )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1065a
+// Params 2
+// Checksum 0x0, Offset: 0x108fc
 // Size: 0xff
 function function_f8a3ff0a73fa0c1d( pickup, var_fb40d5954b4f6792 )
 {
@@ -6551,9 +6627,9 @@ function function_f8a3ff0a73fa0c1d( pickup, var_fb40d5954b4f6792 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10762
-// Size: 0x1ae9
+// Params 2
+// Checksum 0x0, Offset: 0x10a04
+// Size: 0x1b21
 function cantakepickup( pickup, var_8e04b10487b421ce )
 {
     if ( br_gametypes::isbrgametypefuncdefined( "canTakePickup" ) )
@@ -6710,6 +6786,11 @@ function cantakepickup( pickup, var_8e04b10487b421ce )
         }
         
         return 1;
+    }
+    
+    if ( function_fdf9de965b5e870b( pickup.scriptablename ) && scripts\mp\utility\killstreak::isjuggernaut() )
+    {
+        return 16;
     }
     
     if ( br_public::isequipment( pickup.scriptablename ) )
@@ -7587,12 +7668,17 @@ function cantakepickup( pickup, var_8e04b10487b421ce )
         return 1;
     }
     
+    if ( function_fdf9de965b5e870b( pickup.scriptablename ) )
+    {
+        return 1;
+    }
+    
     return 2;
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12254
+// Params 1
+// Checksum 0x0, Offset: 0x1252e
 // Size: 0x2f, Type: bool
 function isdroppablepickup( pickupname )
 {
@@ -7605,9 +7691,9 @@ function isdroppablepickup( pickupname )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1228c
-// Size: 0x8eb
+// Params 8
+// Checksum 0x0, Offset: 0x12566
+// Size: 0x8fb
 function spawnpickup( pickupname, dropinfo, count, showtrail, weaponobj, allowautopickup, countlefthand, countalt )
 {
     if ( !isdefined( dropinfo ) )
@@ -7842,6 +7928,8 @@ function spawnpickup( pickupname, dropinfo, count, showtrail, weaponobj, allowau
         item [[ createcallback ]]();
     }
     
+    item scripts\common\callbacks::callback( "br_pickup_created", dropinfo );
+    
     /#
         if ( level.var_a3443d8ebdaf7c00 )
         {
@@ -7856,8 +7944,8 @@ function spawnpickup( pickupname, dropinfo, count, showtrail, weaponobj, allowau
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b80
+// Params 2
+// Checksum 0x0, Offset: 0x12e6a
 // Size: 0x87
 function function_bc7c01a944172176( instance, scriptablename )
 {
@@ -7879,8 +7967,8 @@ function function_bc7c01a944172176( instance, scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12c0f
+// Params 3
+// Checksum 0x0, Offset: 0x12ef9
 // Size: 0x9b
 function registerpickupcreatedcallback( var_c9c301a888170672, callback, var_1bdbdddb5bbf06c5 )
 {
@@ -7903,8 +7991,8 @@ function registerpickupcreatedcallback( var_c9c301a888170672, callback, var_1bdb
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12cb2
+// Params 1
+// Checksum 0x0, Offset: 0x12f9c
 // Size: 0x39
 function function_c3e1679f348a5e40( callback )
 {
@@ -7912,8 +8000,8 @@ function function_c3e1679f348a5e40( callback )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12cf3
+// Params 1
+// Checksum 0x0, Offset: 0x12fdd
 // Size: 0x456
 function showuseresultsfeedback( results )
 {
@@ -8006,8 +8094,8 @@ function showuseresultsfeedback( results )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13151
+// Params 2
+// Checksum 0x0, Offset: 0x1343b
 // Size: 0x58
 function _removecashstateforplayer( player, waittime )
 {
@@ -8021,8 +8109,8 @@ function _removecashstateforplayer( player, waittime )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x131b1
+// Params 2
+// Checksum 0x0, Offset: 0x1349b
 // Size: 0x4c8
 function getcashsoundaliasforplayer( player, var_3466c10973e9c476 )
 {
@@ -8168,9 +8256,9 @@ function getcashsoundaliasforplayer( player, var_3466c10973e9c476 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x13682
-// Size: 0xcef
+// Params 9
+// Checksum 0x0, Offset: 0x1396c
+// Size: 0xd1c
 function onusecompleted( pickupent, var_43fb3d97abb79854, var_a5b2c541413aa895, fromkiosk, var_db943473454f6ea6, instance, backpackequip, delayfeedback, weaponstowed )
 {
     level endon( "game_ended" );
@@ -8514,6 +8602,11 @@ function onusecompleted( pickupent, var_43fb3d97abb79854, var_a5b2c541413aa895, 
     {
         self [[ level.var_14cc24a75e8cd64d ]]( pickupent );
     }
+    else if ( function_fdf9de965b5e870b( pickupent.scriptablename ) )
+    {
+        thread function_a26bbfa747602ee1( pickupent.scriptablename );
+        pickupremains = 0;
+    }
     else
     {
         amount = 1;
@@ -8566,8 +8659,8 @@ function onusecompleted( pickupent, var_43fb3d97abb79854, var_a5b2c541413aa895, 
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1437a
+// Params 1
+// Checksum 0x0, Offset: 0x14691
 // Size: 0x250
 function onpickuptakenintobackpack( pickup )
 {
@@ -8644,8 +8737,8 @@ function onpickuptakenintobackpack( pickup )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x145d2
+// Params 1
+// Checksum 0x0, Offset: 0x148e9
 // Size: 0x7b
 function function_b96bd81b0107ad4c( pickup )
 {
@@ -8661,8 +8754,8 @@ function function_b96bd81b0107ad4c( pickup )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14655
+// Params 0
+// Checksum 0x0, Offset: 0x1496c
 // Size: 0x1c
 function function_734b7a21be53f605()
 {
@@ -8671,8 +8764,8 @@ function function_734b7a21be53f605()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14679
+// Params 1
+// Checksum 0x0, Offset: 0x14990
 // Size: 0x19b
 function updatelootsplash( pickupent )
 {
@@ -8728,8 +8821,8 @@ function updatelootsplash( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1481c
+// Params 4
+// Checksum 0x0, Offset: 0x14b33
 // Size: 0x7b
 function function_37be6e543436f3b3( lootid, origin, var_8598d3d3bc3d9ceb, quantity )
 {
@@ -8747,8 +8840,8 @@ function function_37be6e543436f3b3( lootid, origin, var_8598d3d3bc3d9ceb, quanti
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1489f
+// Params 2
+// Checksum 0x0, Offset: 0x14bb6
 // Size: 0x487
 function playpickupfeedback( pickupent, var_a5b2c541413aa895 )
 {
@@ -8766,7 +8859,7 @@ function playpickupfeedback( pickupent, var_a5b2c541413aa895 )
         {
             pickup_sfx = namespace_210d6dd43cfaf195::function_5d4530ebfa3da544( self );
         }
-        else if ( isdefined( level.br_pickups.br_pickupsfx[ pickupent.scriptablename ] ) && level.br_pickups.br_pickupsfx[ pickupent.scriptablename ] != function_1823ff50bb28148d( "" ) && !( getdvarint( @"hash_be1b706f310c8e63", 0 ) != 0 && level.br_pickups.br_pickupsfx[ pickupent.scriptablename ] == function_1823ff50bb28148d( "br_legendary_loot_pickup" ) ) )
+        else if ( isdefined( level.br_pickups.br_pickupsfx[ pickupent.scriptablename ] ) && level.br_pickups.br_pickupsfx[ pickupent.scriptablename ] != function_1823ff50bb28148d( "" ) && !( getdvarint( @"scr_br_skiplegendarypickupsound", 0 ) != 0 && level.br_pickups.br_pickupsfx[ pickupent.scriptablename ] == function_1823ff50bb28148d( "br_legendary_loot_pickup" ) ) )
         {
             if ( level.br_pickups.br_pickupsfx[ pickupent.scriptablename ] == function_1823ff50bb28148d( "br_legendary_loot_pickup" ) )
             {
@@ -8875,8 +8968,8 @@ function playpickupfeedback( pickupent, var_a5b2c541413aa895 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d2e
+// Params 1
+// Checksum 0x0, Offset: 0x15045
 // Size: 0x55
 function playerplaypickupanim( pickupent )
 {
@@ -8895,8 +8988,8 @@ function playerplaypickupanim( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d8b
+// Params 0
+// Checksum 0x0, Offset: 0x150a2
 // Size: 0x48
 function function_f4361ea8ce0fbca4()
 {
@@ -8915,8 +9008,8 @@ function function_f4361ea8ce0fbca4()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ddb
+// Params 3
+// Checksum 0x0, Offset: 0x150f2
 // Size: 0x6e
 function function_7b9f3966a7a42003( var_fb6b5e268e9a52de, var_d1e7ececee01c6d5, var_d20ad6ecee27de2b )
 {
@@ -8930,8 +9023,8 @@ function function_7b9f3966a7a42003( var_fb6b5e268e9a52de, var_d1e7ececee01c6d5, 
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e52
+// Params 1
+// Checksum 0x0, Offset: 0x15169
 // Size: 0x55d
 function droponplayerdeath( attacker )
 {
@@ -9187,8 +9280,8 @@ function droponplayerdeath( attacker )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x153b7
+// Params 0
+// Checksum 0x0, Offset: 0x156ce
 // Size: 0x59, Type: bool
 function function_d3204a974cec837b()
 {
@@ -9208,8 +9301,8 @@ function function_d3204a974cec837b()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15419
+// Params 0
+// Checksum 0x0, Offset: 0x15730
 // Size: 0x48
 function function_479558ebb71377bc()
 {
@@ -9227,8 +9320,8 @@ function function_479558ebb71377bc()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1546a
+// Params 2
+// Checksum 0x0, Offset: 0x15781
 // Size: 0x120
 function function_c15a28fc6247ad60( dropstruct, alivedrop )
 {
@@ -9282,8 +9375,8 @@ function function_c15a28fc6247ad60( dropstruct, alivedrop )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15592
+// Params 1
+// Checksum 0x0, Offset: 0x158a9
 // Size: 0xfb
 function dropbrammoboxes( dropstruct )
 {
@@ -9305,8 +9398,8 @@ function dropbrammoboxes( dropstruct )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15695
+// Params 2
+// Checksum 0x0, Offset: 0x159ac
 // Size: 0x143
 function dropbrprimaryweapons( dropstruct, var_73dc8cb1481e4a36 )
 {
@@ -9347,8 +9440,8 @@ function dropbrprimaryweapons( dropstruct, var_73dc8cb1481e4a36 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x157e0
+// Params 3
+// Checksum 0x0, Offset: 0x15af7
 // Size: 0x2c8
 function dropbrweapon( weapon, dropstruct, overrideorigin )
 {
@@ -9444,8 +9537,8 @@ function dropbrweapon( weapon, dropstruct, overrideorigin )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ab1
+// Params 0
+// Checksum 0x0, Offset: 0x15dc8
 // Size: 0x3a, Type: bool
 function function_80dd3f82ffe825f()
 {
@@ -9466,8 +9559,8 @@ function function_80dd3f82ffe825f()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15af4
+// Params 2
+// Checksum 0x0, Offset: 0x15e0b
 // Size: 0x169
 function function_55463a3679678e2f( dropstruct, arena )
 {
@@ -9500,8 +9593,8 @@ function function_55463a3679678e2f( dropstruct, arena )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15c66
+// Params 3
+// Checksum 0x0, Offset: 0x15f7d
 // Size: 0x14d
 function function_a10adec57ad9e3a4( dropstruct, arena, killer )
 {
@@ -9528,8 +9621,8 @@ function function_a10adec57ad9e3a4( dropstruct, arena, killer )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15dbc
+// Params 1
+// Checksum 0x0, Offset: 0x160d3
 // Size: 0x4c
 function getfullweaponobjfromscriptablename( var_4b71202f07149879 )
 {
@@ -9544,8 +9637,8 @@ function getfullweaponobjfromscriptablename( var_4b71202f07149879 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15e11
+// Params 2
+// Checksum 0x0, Offset: 0x16128
 // Size: 0xd0, Type: bool
 function shoulddropbrprimary( weapon, player )
 {
@@ -9585,9 +9678,9 @@ function shoulddropbrprimary( weapon, player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x15eea
-// Size: 0x31b
+// Params 5
+// Checksum 0x0, Offset: 0x16201
+// Size: 0x329
 function dropbrequipment( dropstruct, fromkiosk, droppurchased, equipmentref, var_f24fbd36a9751174 )
 {
     var_11f2059012065537 = istrue( droppurchased ) && isdefined( equipmentref );
@@ -9647,7 +9740,7 @@ function dropbrequipment( dropstruct, fromkiosk, droppurchased, equipmentref, va
             if ( isdefined( var_feb782334dd23a66 ) )
             {
                 dropinfo = getitemdroporiginandangles( dropstruct, self.origin, self.angles, self );
-                allowautopickup = isalive( self ) || getdvarint( @"hash_91f6b5dd6fa6844", 1 );
+                allowautopickup = isalive( self ) || getdvarint( @"scr_br_allow_auto_pickup_dropped_lethal_gadgets", 1 );
                 item = spawnpickup( var_feb782334dd23a66, dropinfo, ammocount, 1, undefined, allowautopickup );
                 function_2f4e0022c686dbe6( item );
             }
@@ -9656,7 +9749,7 @@ function dropbrequipment( dropstruct, fromkiosk, droppurchased, equipmentref, va
     
     secondaryequipment = self.equipment[ "secondary" ];
     
-    if ( isdefined( secondaryequipment ) )
+    if ( isdefined( secondaryequipment ) && !isdefined( self.var_e5520effcbe8bd30 ) )
     {
         if ( secondaryequipment == "equip_hb_sensor" )
         {
@@ -9674,7 +9767,7 @@ function dropbrequipment( dropstruct, fromkiosk, droppurchased, equipmentref, va
             if ( isdefined( var_feb782334dd23a66 ) )
             {
                 dropinfo = getitemdroporiginandangles( dropstruct, self.origin, self.angles, self );
-                allowautopickup = isalive( self ) || getdvarint( @"hash_f74983a33e4ce283", 1 );
+                allowautopickup = isalive( self ) || getdvarint( @"scr_br_allow_auto_pickup_dropped_tactical_gadgets", 1 );
                 item = spawnpickup( var_feb782334dd23a66, dropinfo, ammocount, 1, undefined, allowautopickup );
                 function_2f4e0022c686dbe6( item );
             }
@@ -9683,8 +9776,8 @@ function dropbrequipment( dropstruct, fromkiosk, droppurchased, equipmentref, va
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1620d
+// Params 4
+// Checksum 0x0, Offset: 0x16532
 // Size: 0x173
 function dropbrsuper( dropstruct, fromkiosk, droppurchased, superref )
 {
@@ -9727,8 +9820,8 @@ function dropbrsuper( dropstruct, fromkiosk, droppurchased, superref )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16388
+// Params 1
+// Checksum 0x0, Offset: 0x166ad
 // Size: 0x8a
 function dropbrmissiontablet( dropstruct )
 {
@@ -9742,8 +9835,8 @@ function dropbrmissiontablet( dropstruct )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1641a
+// Params 1
+// Checksum 0x0, Offset: 0x1673f
 // Size: 0x21b
 function dropbrhealthpack( dropstruct )
 {
@@ -9788,7 +9881,7 @@ function dropbrhealthpack( dropstruct )
     
     if ( itemcount > 0 && isdefined( itemname ) )
     {
-        allowautopickup = getdvarint( @"hash_654510829e5b59d7", 1 ) || isalive( self );
+        allowautopickup = getdvarint( @"scr_br_allow_auto_pickup_dropped_armor", 1 ) || isalive( self );
         
         if ( itemcount > level.br_pickups.maxcounts[ itemname ] )
         {
@@ -9804,8 +9897,8 @@ function dropbrhealthpack( dropstruct )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1663d
+// Params 3
+// Checksum 0x0, Offset: 0x16962
 // Size: 0x26
 function dropbrgasmask( dropstruct, dontspawnitem, delaydrop )
 {
@@ -9813,8 +9906,8 @@ function dropbrgasmask( dropstruct, dontspawnitem, delaydrop )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1666b
+// Params 3
+// Checksum 0x0, Offset: 0x16990
 // Size: 0x170
 function function_e374e6d9eaaa4dc5( dropstruct, dontspawnitem, delaydrop )
 {
@@ -9880,8 +9973,8 @@ function function_e374e6d9eaaa4dc5( dropstruct, dontspawnitem, delaydrop )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x167e3
+// Params 5
+// Checksum 0x0, Offset: 0x16b08
 // Size: 0x117
 function function_aa702bcdeeb2b827( dropstruct, fromkiosk, droppurchased, purchasedkillstreak, pickup )
 {
@@ -9915,8 +10008,8 @@ function function_aa702bcdeeb2b827( dropstruct, fromkiosk, droppurchased, purcha
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x16902
+// Params 5
+// Checksum 0x0, Offset: 0x16c27
 // Size: 0x2ba
 function dropbrkillstreak( dropstruct, fromkiosk, var_db943473454f6ea6, dropfeedback, pickup )
 {
@@ -9993,8 +10086,8 @@ function dropbrkillstreak( dropstruct, fromkiosk, var_db943473454f6ea6, dropfeed
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16bc4
+// Params 1
+// Checksum 0x0, Offset: 0x16ee9
 // Size: 0x6c
 function dropaccesscard( dropstruct )
 {
@@ -10008,8 +10101,8 @@ function dropaccesscard( dropstruct )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16c38
+// Params 1
+// Checksum 0x0, Offset: 0x16f5d
 // Size: 0x65
 function dropbrselfrevivetoken( dropstruct )
 {
@@ -10023,8 +10116,8 @@ function dropbrselfrevivetoken( dropstruct )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ca5
+// Params 4
+// Checksum 0x0, Offset: 0x16fca
 // Size: 0x1c5
 function dropbrcustompickupitem( scriptablename, countoverride, fromkiosk, droppurchased )
 {
@@ -10060,8 +10153,8 @@ function dropbrcustompickupitem( scriptablename, countoverride, fromkiosk, dropp
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16e72
+// Params 1
+// Checksum 0x0, Offset: 0x17197
 // Size: 0x43
 function function_b8faa69b95fe55be( dropstruct )
 {
@@ -10072,8 +10165,8 @@ function function_b8faa69b95fe55be( dropstruct )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ebd
+// Params 1
+// Checksum 0x0, Offset: 0x171e2
 // Size: 0x115
 function dropdogtag( dropstruct )
 {
@@ -10104,12 +10197,12 @@ function dropdogtag( dropstruct )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16fda
+// Params 1
+// Checksum 0x0, Offset: 0x172ff
 // Size: 0x83
 function function_5ebf3e99b419d949( dropstruct )
 {
-    if ( getdvarint( @"hash_74abb928ab13113b", 0 ) == 0 )
+    if ( getdvarint( @"scr_br_elite_broken_arrow", 0 ) == 0 )
     {
         return;
     }
@@ -10124,8 +10217,8 @@ function function_5ebf3e99b419d949( dropstruct )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17065
+// Params 3
+// Checksum 0x0, Offset: 0x1738a
 // Size: 0x88
 function function_b41950c9b54b12e0( dropstruct, itemindex, lootid )
 {
@@ -10141,8 +10234,8 @@ function function_b41950c9b54b12e0( dropstruct, itemindex, lootid )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x170f5
+// Params 1
+// Checksum 0x0, Offset: 0x1741a
 // Size: 0x32
 function function_2f4e0022c686dbe6( item )
 {
@@ -10153,8 +10246,8 @@ function function_2f4e0022c686dbe6( item )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1712f
+// Params 1
+// Checksum 0x0, Offset: 0x17454
 // Size: 0x21, Type: bool
 function ispickupstackable( scriptablename )
 {
@@ -10162,12 +10255,13 @@ function ispickupstackable( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17159
+// Params 0
+// Checksum 0x0, Offset: 0x1747e
 // Size: 0x2f, Type: bool
 function isitemslotopen()
 {
-    for (i = 0; i < 8; i++) {
+    for ( i = 0; i < 8 ; i++ )
+    {
         if ( !isdefined( self.br_inventory_slots[ i ] ) )
         {
             return true;
@@ -10178,8 +10272,8 @@ function isitemslotopen()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17191
+// Params 2
+// Checksum 0x0, Offset: 0x174b6
 // Size: 0x2c, Type: bool
 function isitemfull( item, pickupcount )
 {
@@ -10187,8 +10281,8 @@ function isitemfull( item, pickupcount )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x171c6
+// Params 2
+// Checksum 0x0, Offset: 0x174eb
 // Size: 0x8e, Type: bool
 function canstackpickup( scriptablename, pickupcount )
 {
@@ -10207,8 +10301,8 @@ function canstackpickup( scriptablename, pickupcount )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1725d
+// Params 2
+// Checksum 0x0, Offset: 0x17582
 // Size: 0x31, Type: bool
 function canslotitem( scriptablename, pickupcount )
 {
@@ -10224,12 +10318,13 @@ function canslotitem( scriptablename, pickupcount )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17297
+// Params 0
+// Checksum 0x0, Offset: 0x175bc
 // Size: 0x2f
 function getfirstopenslot()
 {
-    for (i = 0; i < 8; i++) {
+    for ( i = 0; i < 8 ; i++ )
+    {
         if ( !isdefined( self.br_inventory_slots[ i ] ) )
         {
             return i;
@@ -10240,8 +10335,8 @@ function getfirstopenslot()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x172cf
+// Params 1
+// Checksum 0x0, Offset: 0x175f4
 // Size: 0x13e
 function pickupitemintoinventory( pickup )
 {
@@ -10275,8 +10370,8 @@ function pickupitemintoinventory( pickup )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17415
+// Params 1
+// Checksum 0x0, Offset: 0x1773a
 // Size: 0x147
 function dropitemfrominventory( slot )
 {
@@ -10306,8 +10401,8 @@ function dropitemfrominventory( slot )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17564
+// Params 1
+// Checksum 0x0, Offset: 0x17889
 // Size: 0x61
 function takegenericgrenadepickup( pickupent )
 {
@@ -10327,8 +10422,8 @@ function takegenericgrenadepickup( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x175cd
+// Params 1
+// Checksum 0x0, Offset: 0x178f2
 // Size: 0x4d
 function trypickupitemfroment( pickupent )
 {
@@ -10343,8 +10438,8 @@ function trypickupitemfroment( pickupent )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17622
+// Params 2
+// Checksum 0x0, Offset: 0x17947
 // Size: 0x11e
 function trypickupitem( scriptablename, count )
 {
@@ -10371,8 +10466,8 @@ function trypickupitem( scriptablename, count )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17748
+// Params 2
+// Checksum 0x0, Offset: 0x17a6d
 // Size: 0xce
 function droparmor( itemtype, itemhealth )
 {
@@ -10397,8 +10492,8 @@ function droparmor( itemtype, itemhealth )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1781e
+// Params 1
+// Checksum 0x0, Offset: 0x17b43
 // Size: 0x53
 function trydroparmorfornewarmor( scriptablename )
 {
@@ -10417,8 +10512,8 @@ function trydroparmorfornewarmor( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17879
+// Params 2
+// Checksum 0x0, Offset: 0x17b9e
 // Size: 0x95
 function tryequiparmor( item, slot )
 {
@@ -10448,8 +10543,8 @@ function tryequiparmor( item, slot )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17916
+// Params 0
+// Checksum 0x0, Offset: 0x17c3b
 // Size: 0x13
 function initpickupusability()
 {
@@ -10457,8 +10552,8 @@ function initpickupusability()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17931
+// Params 2
+// Checksum 0x0, Offset: 0x17c56
 // Size: 0x63
 function brpickupsusecallback( entity, player )
 {
@@ -10483,8 +10578,8 @@ function brpickupsusecallback( entity, player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1799c
+// Params 2
+// Checksum 0x0, Offset: 0x17cc1
 // Size: 0x153
 function handleexplosivepickup( equipname, slot )
 {
@@ -10528,8 +10623,8 @@ function handleexplosivepickup( equipname, slot )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17af7
+// Params 1
+// Checksum 0x0, Offset: 0x17e1c
 // Size: 0x38
 function superslotcleanup( owner )
 {
@@ -10540,8 +10635,8 @@ function superslotcleanup( owner )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17b37
+// Params 0
+// Checksum 0x0, Offset: 0x17e5c
 // Size: 0x3b
 function function_75520ea44545c906()
 {
@@ -10556,8 +10651,8 @@ function function_75520ea44545c906()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17b7a
+// Params 0
+// Checksum 0x0, Offset: 0x17e9f
 // Size: 0x168
 function function_4d16b9c52efa3b8()
 {
@@ -10595,8 +10690,8 @@ function function_4d16b9c52efa3b8()
 /#
 
     // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x17cea
+    // Params 0
+    // Checksum 0x0, Offset: 0x1800f
     // Size: 0xf2, Type: dev
     function function_874048c58e96731()
     {
@@ -10620,8 +10715,8 @@ function function_4d16b9c52efa3b8()
     }
 
     // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x17de4
+    // Params 0
+    // Checksum 0x0, Offset: 0x18109
     // Size: 0x89, Type: dev
     function function_849640d4a4d5ae98()
     {
@@ -10640,8 +10735,8 @@ function function_4d16b9c52efa3b8()
 #/
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e75
+// Params 1
+// Checksum 0x0, Offset: 0x1819a
 // Size: 0x98
 function getquickdroparmorcount( dropall )
 {
@@ -10670,8 +10765,8 @@ function getquickdroparmorcount( dropall )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17f16
+// Params 2
+// Checksum 0x0, Offset: 0x1823b
 // Size: 0x65
 function getquickdropammocount( ammotype, dropall )
 {
@@ -10692,8 +10787,8 @@ function getquickdropammocount( ammotype, dropall )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17f84
+// Params 1
+// Checksum 0x0, Offset: 0x182a9
 // Size: 0x59
 function getquickdropplundercount( dropall )
 {
@@ -10708,8 +10803,8 @@ function getquickdropplundercount( dropall )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17fe6
+// Params 1
+// Checksum 0x0, Offset: 0x1830b
 // Size: 0x60
 function getquickdropweapon( itemindex )
 {
@@ -10722,8 +10817,8 @@ function getquickdropweapon( itemindex )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1804f
+// Params 2
+// Checksum 0x0, Offset: 0x18374
 // Size: 0xf0
 function function_13ecf3644442a3e7( player, itemindex )
 {
@@ -10772,8 +10867,8 @@ function function_13ecf3644442a3e7( player, itemindex )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18147
+// Params 2
+// Checksum 0x0, Offset: 0x1846c
 // Size: 0xb8
 function quickdropremovearmorfrominventory( itemslotindex, itemcount )
 {
@@ -10795,8 +10890,8 @@ function quickdropremovearmorfrominventory( itemslotindex, itemcount )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18207
+// Params 1
+// Checksum 0x0, Offset: 0x1852c
 // Size: 0x290
 function function_d655f2006cfe7789( var_ec22a950f210e39 )
 {
@@ -10883,9 +10978,9 @@ function function_d655f2006cfe7789( var_ec22a950f210e39 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x1849f
-// Size: 0x3b7
+// Params 9
+// Checksum 0x0, Offset: 0x187c4
+// Size: 0x417
 function quickdropweapon( player, itemtype, itemindex, itemcount, dropall, dontspawnitem, overridedist, overrideorigin, regulardrop )
 {
     var_ec22a950f210e39 = function_13ecf3644442a3e7( player, itemindex );
@@ -10996,6 +11091,19 @@ function quickdropweapon( player, itemtype, itemindex, itemcount, dropall, donts
     {
         scripts\mp\pmc_missions::function_d882e5d473c9b258( player, item, var_ec22a950f210e39 );
         item.pastteam = pastteam;
+        
+        if ( getdvarint( @"hash_52f4a8ccedf61788", 1 ) == 1 )
+        {
+            if ( isaxeweapon( weaponobj ) && item.count == 0 )
+            {
+                if ( isdefined( player.var_b4657c497095e74b ) )
+                {
+                    player.var_b4657c497095e74b deletescriptableinstance();
+                }
+                
+                player.var_b4657c497095e74b = item;
+            }
+        }
     }
     
     assert( isdefined( player.tookweaponfrom ) );
@@ -11020,8 +11128,8 @@ function quickdropweapon( player, itemtype, itemindex, itemcount, dropall, donts
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1885f
+// Params 5
+// Checksum 0x0, Offset: 0x18be4
 // Size: 0x91, Type: bool
 function function_8aab3cda02f81c09( player, itemtype, dropall, dontspawnitem, overridecount )
 {
@@ -11055,8 +11163,8 @@ function function_8aab3cda02f81c09( player, itemtype, dropall, dontspawnitem, ov
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x188f9
+// Params 1
+// Checksum 0x0, Offset: 0x18c7e
 // Size: 0x43, Type: bool
 function function_f5082b4fc43ef59b( scriptablename )
 {
@@ -11069,8 +11177,8 @@ function function_f5082b4fc43ef59b( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x18945
+// Params 5
+// Checksum 0x0, Offset: 0x18cca
 // Size: 0x40e
 function function_6f62cb4fc113349c( player, itemtype, itemindex, dropall, dontspawnitem )
 {
@@ -11204,9 +11312,9 @@ function function_6f62cb4fc113349c( player, itemtype, itemindex, dropall, dontsp
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d5b
-// Size: 0x14d, Type: bool
+// Params 5
+// Checksum 0x0, Offset: 0x190e0
+// Size: 0x169, Type: bool
 function function_b130392812b25580( player, itemindex, itemtype, dropall, dontspawnitem )
 {
     itemcount = player equipment::function_fe48baf929906883( equipment::function_4967838290cb31b9( itemindex ) );
@@ -11218,6 +11326,11 @@ function function_b130392812b25580( player, itemindex, itemtype, dropall, dontsp
     
     slot = equipment::function_4967838290cb31b9( itemindex );
     ref = equipment::getcurrentequipment( slot );
+    
+    if ( istrue( player.var_640464235432d2b6 ) && scripts\mp\equipment::isequipmentlethal( ref ) )
+    {
+        return false;
+    }
     
     if ( issharedfuncdefined( ref, "getAmmo" ) )
     {
@@ -11255,8 +11368,8 @@ function function_b130392812b25580( player, itemindex, itemtype, dropall, dontsp
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x18eb1
+// Params 3
+// Checksum 0x0, Offset: 0x19252
 // Size: 0x88, Type: bool
 function function_1503d0b5b4c9d010( player, dropall, dontspawnitem )
 {
@@ -11281,17 +11394,17 @@ function function_1503d0b5b4c9d010( player, dropall, dontspawnitem )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18f42
-// Size: 0x1b, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0x192e3
+// Size: 0x1b
 function quickdropgasmaskitem( player, dontspawnitem )
 {
     return function_3ff5a9fd0fa06974( player, dontspawnitem );
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18f66
+// Params 2
+// Checksum 0x0, Offset: 0x19307
 // Size: 0x5a, Type: bool
 function function_3ff5a9fd0fa06974( player, dontspawnitem )
 {
@@ -11304,8 +11417,8 @@ function function_3ff5a9fd0fa06974( player, dontspawnitem )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18fc9
+// Params 2
+// Checksum 0x0, Offset: 0x1936a
 // Size: 0x66, Type: bool
 function function_8f803ea058a13cbd( player, dontspawnitem )
 {
@@ -11326,8 +11439,8 @@ function function_8f803ea058a13cbd( player, dontspawnitem )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19038
+// Params 3
+// Checksum 0x0, Offset: 0x193d9
 // Size: 0x11b
 function function_b15e36b7bc247ddb( player, dropall, dontspawnitem )
 {
@@ -11373,8 +11486,8 @@ function function_b15e36b7bc247ddb( player, dropall, dontspawnitem )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1915b
+// Params 5
+// Checksum 0x0, Offset: 0x194fc
 // Size: 0xc4, Type: bool
 function quickdropammo( player, itemindex, itemtype, dropall, dontspawnitem )
 {
@@ -11412,8 +11525,8 @@ function quickdropammo( player, itemindex, itemtype, dropall, dontspawnitem )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19228
+// Params 2
+// Checksum 0x0, Offset: 0x195c9
 // Size: 0x5c
 function function_9e2cddc7551c1be4( player, dontspawnitem )
 {
@@ -11429,11 +11542,18 @@ function function_9e2cddc7551c1be4( player, dontspawnitem )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1928c
-// Size: 0x16b
+// Params 4
+// Checksum 0x0, Offset: 0x1962d
+// Size: 0x19d
 function function_f95a2789ce5b15ff( itemtype, itemindex, dropall, dontspawnitem )
 {
+    var_af23c9496d97c4e3 = itemtype == 0 || itemtype == 10 || itemtype == 5;
+    
+    if ( isdefined( self.var_e5520effcbe8bd30 ) && !var_af23c9496d97c4e3 )
+    {
+        return;
+    }
+    
     switch ( itemtype )
     {
         case 0:
@@ -11479,8 +11599,8 @@ function function_f95a2789ce5b15ff( itemtype, itemindex, dropall, dontspawnitem 
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x193ff
+// Params 0
+// Checksum 0x0, Offset: 0x197d2
 // Size: 0x39
 function quickdropcleanupcache()
 {
@@ -11494,8 +11614,8 @@ function quickdropcleanupcache()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x19440
+// Params 5
+// Checksum 0x0, Offset: 0x19813
 // Size: 0xf4
 function quickdropaddtocache( scriptablename, slot, ent, droporigin, dropangles )
 {
@@ -11526,8 +11646,8 @@ function quickdropaddtocache( scriptablename, slot, ent, droporigin, dropangles 
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1953c
+// Params 1
+// Checksum 0x0, Offset: 0x1990f
 // Size: 0x97, Type: bool
 function quickdropcachematchesplayer( cacheitem )
 {
@@ -11552,8 +11672,8 @@ function quickdropcachematchesplayer( cacheitem )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x195dc
+// Params 1
+// Checksum 0x0, Offset: 0x199af
 // Size: 0xa8
 function quickdropfinditemincache( scriptablename )
 {
@@ -11594,8 +11714,8 @@ function quickdropfinditemincache( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1968d
+// Params 0
+// Checksum 0x0, Offset: 0x19a60
 // Size: 0xff
 function quickdropcachefindslot()
 {
@@ -11646,8 +11766,8 @@ function quickdropcachefindslot()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19795
+// Params 0
+// Checksum 0x0, Offset: 0x19b68
 // Size: 0xa8
 function function_4f4d537c794b2bf5()
 {
@@ -11669,8 +11789,8 @@ function function_4f4d537c794b2bf5()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19846
+// Params 0
+// Checksum 0x0, Offset: 0x19c19
 // Size: 0xa1
 function function_1e450adba8ddc914()
 {
@@ -11695,8 +11815,8 @@ function function_1e450adba8ddc914()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x198ef
+// Params 1
+// Checksum 0x0, Offset: 0x19cc2
 // Size: 0xcb
 function function_1ce1a3739db60bfb( scriptablename )
 {
@@ -11741,8 +11861,8 @@ function function_1ce1a3739db60bfb( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x199c3
+// Params 5
+// Checksum 0x0, Offset: 0x19d96
 // Size: 0x1e1
 function quickdropplaysound( itemtype, droporigin, scriptablename, newent, weaponobj )
 {
@@ -11830,8 +11950,8 @@ function quickdropplaysound( itemtype, droporigin, scriptablename, newent, weapo
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19bac
+// Params 2
+// Checksum 0x0, Offset: 0x19f7f
 // Size: 0x122
 function function_aed7983cf10ca9e2( newent, weaponobj )
 {
@@ -11860,8 +11980,8 @@ function function_aed7983cf10ca9e2( newent, weaponobj )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x19cd6
+// Params 6
+// Checksum 0x0, Offset: 0x1a0a9
 // Size: 0x2d5, Type: bool
 function quickdropaddtoexisting( itemtype, scriptablename, itemcount, itemcountlefthand, var_dab81ead77442a10, weaponobj )
 {
@@ -11972,8 +12092,8 @@ function quickdropaddtoexisting( itemtype, scriptablename, itemcount, itemcountl
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x19fb4
+// Params 9
+// Checksum 0x0, Offset: 0x1a387
 // Size: 0x39f
 function quickdropnewitem( itemtype, scriptablename, itemcount, itemcountlefthand, var_dab81ead77442a10, weaponobj, weaponmetadata, overridedist, overrideorigin )
 {
@@ -12056,8 +12176,8 @@ function quickdropnewitem( itemtype, scriptablename, itemcount, itemcountlefthan
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a35c
+// Params 1
+// Checksum 0x0, Offset: 0x1a72f
 // Size: 0xf8
 function function_696e4b1495ad2dd3( instance )
 {
@@ -12081,8 +12201,8 @@ function function_696e4b1495ad2dd3( instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a45c
+// Params 3
+// Checksum 0x0, Offset: 0x1a82f
 // Size: 0x3b
 function quickdropitem( itemtype, itemindex, dontspawnitem )
 {
@@ -12093,8 +12213,8 @@ function quickdropitem( itemtype, itemindex, dontspawnitem )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a49f
+// Params 3
+// Checksum 0x0, Offset: 0x1a872
 // Size: 0x3c
 function quickdropall( itemtype, itemindex, dontspawnitem )
 {
@@ -12105,8 +12225,8 @@ function quickdropall( itemtype, itemindex, dontspawnitem )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a4e3
+// Params 2
+// Checksum 0x0, Offset: 0x1a8b6
 // Size: 0x599
 function function_f7e756154ec35632( itemtype, itemindex )
 {
@@ -12222,8 +12342,8 @@ function function_f7e756154ec35632( itemtype, itemindex )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aa84
+// Params 1
+// Checksum 0x0, Offset: 0x1ae57
 // Size: 0xa5
 function equipbackpackitem( itemslotindex )
 {
@@ -12246,8 +12366,8 @@ function equipbackpackitem( itemslotindex )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab31
+// Params 4
+// Checksum 0x0, Offset: 0x1af04
 // Size: 0x5c
 function function_27443a5346bc8120( lootid, quantity, itemref, itemslotindex )
 {
@@ -12270,8 +12390,8 @@ function function_27443a5346bc8120( lootid, quantity, itemref, itemslotindex )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab95
+// Params 0
+// Checksum 0x0, Offset: 0x1af68
 // Size: 0x31
 function function_60ea3b868e7a009b()
 {
@@ -12290,8 +12410,8 @@ function function_60ea3b868e7a009b()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1abce
+// Params 4
+// Checksum 0x0, Offset: 0x1afa1
 // Size: 0x92
 function function_bfc82c27ed3d9308( lootid, quantity, itemref, itemslotindex )
 {
@@ -12327,8 +12447,8 @@ function function_bfc82c27ed3d9308( lootid, quantity, itemref, itemslotindex )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ac68
+// Params 1
+// Checksum 0x0, Offset: 0x1b03b
 // Size: 0x54
 function function_2ea494708e46229b( lootid )
 {
@@ -12353,8 +12473,8 @@ function function_2ea494708e46229b( lootid )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1acc4
+// Params 1
+// Checksum 0x0, Offset: 0x1b097
 // Size: 0x54
 function function_5ddb83e059ee76c9( lootid )
 {
@@ -12375,8 +12495,8 @@ function function_5ddb83e059ee76c9( lootid )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad20
+// Params 1
+// Checksum 0x0, Offset: 0x1b0f3
 // Size: 0x44
 function function_282d89f7705a2d63( itemref )
 {
@@ -12396,8 +12516,8 @@ function function_282d89f7705a2d63( itemref )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad6c
+// Params 3
+// Checksum 0x0, Offset: 0x1b13f
 // Size: 0x349
 function function_f1a38d2ba0bbcb08( player, itemslotindex, sellall )
 {
@@ -12464,8 +12584,8 @@ function function_f1a38d2ba0bbcb08( player, itemslotindex, sellall )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b0bd
+// Params 1
+// Checksum 0x0, Offset: 0x1b490
 // Size: 0x95
 function function_64f0398b29cf7c3e( player )
 {
@@ -12481,8 +12601,8 @@ function function_64f0398b29cf7c3e( player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b15a
+// Params 11
+// Checksum 0x0, Offset: 0x1b52d
 // Size: 0x191, Type: bool
 function equipweapon( weaponobj, quantity, itemslotindex, countalt, backpackequip, weaponstowed, metadata, overridedist, overrideorigin, pastteam, var_8beae58a219e6d44 )
 {
@@ -12514,8 +12634,8 @@ function equipweapon( weaponobj, quantity, itemslotindex, countalt, backpackequi
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b2f4
+// Params 1
+// Checksum 0x0, Offset: 0x1b6c7
 // Size: 0xdd, Type: bool
 function function_b76f69ce63757cea( lootref )
 {
@@ -12550,8 +12670,8 @@ function function_b76f69ce63757cea( lootref )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b3da
+// Params 8
+// Checksum 0x0, Offset: 0x1b7ad
 // Size: 0x2eb
 function equipitem( lootid, quantity, itemslotindex, countalt, backpackequip, weaponstowed, overridedist, overrideorigin )
 {
@@ -12641,8 +12761,8 @@ function equipitem( lootid, quantity, itemslotindex, countalt, backpackequip, we
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b6ce
+// Params 11
+// Checksum 0x0, Offset: 0x1baa1
 // Size: 0x20e
 function lootitem( lootid, quantity, weaponref, var_8598d3d3bc3d9ceb, forcebackpack, var_c03c4ef51659ba4c, overridedist, overrideorigin, autopickup, var_4a08890fd43d6bc7, var_1e2e085b484205c3 )
 {
@@ -12693,8 +12813,8 @@ function lootitem( lootid, quantity, weaponref, var_8598d3d3bc3d9ceb, forcebackp
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b8e5
+// Params 3
+// Checksum 0x0, Offset: 0x1bcb8
 // Size: 0x218
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
 {
@@ -12707,7 +12827,8 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
     damagetick = scripts\mp\gametypes\br_circle::function_b5597479d3e5b628();
     level.br_pickups.droppedgasmasks = utility::array_removeundefined( level.br_pickups.droppedgasmasks );
     
-    for (index = level.br_pickups.droppedgasmasks.size - 1; index >= 0; index--) {
+    for ( index = level.br_pickups.droppedgasmasks.size - 1; index >= 0 ; index-- )
+    {
         gasmask = level.br_pickups.droppedgasmasks[ index ];
         
         if ( istrue( gasmask.var_1b46a808091ea19c ) )
@@ -12763,8 +12884,8 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bb05
+// Params 0
+// Checksum 0x0, Offset: 0x1bed8
 // Size: 0x1ee
 function function_1a1709943670772a()
 {
@@ -12776,7 +12897,8 @@ function function_1a1709943670772a()
     damagetick = scripts\mp\gametypes\br_circle::function_b5597479d3e5b628();
     level.br_pickups.droppedgasmasks = utility::array_removeundefined( level.br_pickups.droppedgasmasks );
     
-    for (index = level.br_pickups.droppedgasmasks.size - 1; index >= 0; index--) {
+    for ( index = level.br_pickups.droppedgasmasks.size - 1; index >= 0 ; index-- )
+    {
         gasmask = level.br_pickups.droppedgasmasks[ index ];
         
         if ( istrue( gasmask.var_1b46a808091ea19c ) )
@@ -12832,8 +12954,8 @@ function function_1a1709943670772a()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bcfb
+// Params 0
+// Checksum 0x0, Offset: 0x1c0ce
 // Size: 0x2c
 function gasmask_onpickupcreated()
 {
@@ -12841,8 +12963,8 @@ function gasmask_onpickupcreated()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bd2f
+// Params 1
+// Checksum 0x0, Offset: 0x1c102
 // Size: 0x38
 function deregistergasmaskscriptableatframeend( index )
 {
@@ -12855,8 +12977,8 @@ function deregistergasmaskscriptableatframeend( index )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bd6f
+// Params 0
+// Checksum 0x0, Offset: 0x1c142
 // Size: 0x10f
 function initscriptablemanagement()
 {
@@ -12866,12 +12988,12 @@ function initscriptablemanagement()
     leveldata.scriptables = [];
     leveldata.scriptablesstartid = 0;
     leveldata.scriptablescurid = 0;
-    leveldata.scriptablesmax = getdvarint( @"hash_3a100e962f0a003a", 750 );
+    leveldata.scriptablesmax = getdvarint( @"scr_br_pickupscriptablesmax", 750 );
     leveldata.scriptablescleanupbatchsize = getdvarint( @"hash_1e71982a0a539739", 10 );
     assertex( leveldata.scriptablescleanupbatchsize < leveldata.scriptablesmax, "<dev string:x779>" );
     
     /#
-        setdevdvarifuninitialized( @"hash_3a100e962f0a003a", leveldata.scriptablesmax );
+        setdevdvarifuninitialized( @"scr_br_pickupscriptablesmax", leveldata.scriptablesmax );
         setdevdvarifuninitialized( @"hash_1e71982a0a539739", leveldata.scriptablescleanupbatchsize );
     #/
     
@@ -12879,8 +13001,8 @@ function initscriptablemanagement()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1be86
+// Params 1
+// Checksum 0x0, Offset: 0x1c259
 // Size: 0xb7
 function registerscriptableinstance( instance )
 {
@@ -12894,8 +13016,8 @@ function registerscriptableinstance( instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bf45
+// Params 1
+// Checksum 0x0, Offset: 0x1c318
 // Size: 0x89
 function deregisterscriptableinstance( instance )
 {
@@ -12907,8 +13029,8 @@ function deregisterscriptableinstance( instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bfd6
+// Params 0
+// Checksum 0x0, Offset: 0x1c3a9
 // Size: 0x14
 function function_7b67823458cd14()
 {
@@ -12919,8 +13041,8 @@ function function_7b67823458cd14()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bff2
+// Params 0
+// Checksum 0x0, Offset: 0x1c3c5
 // Size: 0x1c6
 function clearspaceforscriptableinstance()
 {
@@ -12937,7 +13059,8 @@ function clearspaceforscriptableinstance()
     function_ff5569044925c628();
     var_406118f36ab85942 = 0;
     
-    for (i = leveldata.scriptablesstartid; i < leveldata.scriptablescurid; i++) {
+    for ( i = leveldata.scriptablesstartid; i < leveldata.scriptablescurid ; i++ )
+    {
         if ( var_406118f36ab85942 == leveldata.scriptablescleanupbatchsize )
         {
             break;
@@ -12987,8 +13110,8 @@ function clearspaceforscriptableinstance()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c1c0
+// Params 1
+// Checksum 0x0, Offset: 0x1c593
 // Size: 0x1d, Type: bool
 function function_f483aacd19d70a1( instance )
 {
@@ -12996,8 +13119,8 @@ function function_f483aacd19d70a1( instance )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c1e6
+// Params 1
+// Checksum 0x0, Offset: 0x1c5b9
 // Size: 0x4f
 function deletescriptableinstance( var_1f99273bfef8cf44 )
 {
@@ -13021,8 +13144,8 @@ function deletescriptableinstance( var_1f99273bfef8cf44 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c23d
+// Params 2
+// Checksum 0x0, Offset: 0x1c610
 // Size: 0x1d
 function deletescriptableinstanceaftertime( delaytime, var_1f99273bfef8cf44 )
 {
@@ -13030,8 +13153,8 @@ function deletescriptableinstanceaftertime( delaytime, var_1f99273bfef8cf44 )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c262
+// Params 2
+// Checksum 0x0, Offset: 0x1c635
 // Size: 0x29
 function deletescriptableinstanceaftertime_proc( delaytime, var_1f99273bfef8cf44 )
 {
@@ -13045,8 +13168,8 @@ function deletescriptableinstanceaftertime_proc( delaytime, var_1f99273bfef8cf44
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c293
+// Params 2
+// Checksum 0x0, Offset: 0x1c666
 // Size: 0x41
 function registeruniquelootcallback( var_7d740d4524ce32a9, callback )
 {
@@ -13059,8 +13182,8 @@ function registeruniquelootcallback( var_7d740d4524ce32a9, callback )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c2dc
+// Params 2
+// Checksum 0x0, Offset: 0x1c6af
 // Size: 0x41
 function processuniquelootitem( uniquelootitemid, player )
 {
@@ -13073,8 +13196,8 @@ function processuniquelootitem( uniquelootitemid, player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c325
+// Params 0
+// Checksum 0x0, Offset: 0x1c6f8
 // Size: 0x1a
 function manageminigunpickup()
 {
@@ -13084,8 +13207,8 @@ function manageminigunpickup()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c347
+// Params 0
+// Checksum 0x0, Offset: 0x1c71a
 // Size: 0x56
 function applyminigunrestrictions()
 {
@@ -13101,8 +13224,8 @@ function applyminigunrestrictions()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c3a5
+// Params 0
+// Checksum 0x0, Offset: 0x1c778
 // Size: 0x1f
 function removeminigunrestrictions()
 {
@@ -13112,8 +13235,8 @@ function removeminigunrestrictions()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c3cc
+// Params 0
+// Checksum 0x0, Offset: 0x1c79f
 // Size: 0x35
 function watchaddminigunrestrictions()
 {
@@ -13130,8 +13253,8 @@ function watchaddminigunrestrictions()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c409
+// Params 0
+// Checksum 0x0, Offset: 0x1c7dc
 // Size: 0x54
 function watchremoveminigunrestrictions()
 {
@@ -13156,8 +13279,8 @@ function watchremoveminigunrestrictions()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c465
+// Params 0
+// Checksum 0x0, Offset: 0x1c838
 // Size: 0x67
 function watchminigunweapon()
 {
@@ -13188,8 +13311,8 @@ function watchminigunweapon()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c4d4
+// Params 1
+// Checksum 0x0, Offset: 0x1c8a7
 // Size: 0xf4, Type: bool
 function doesstreakinfomatchequippedstreak( streakinfo )
 {
@@ -13224,8 +13347,8 @@ function doesstreakinfomatchequippedstreak( streakinfo )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c5d1
+// Params 1
+// Checksum 0x0, Offset: 0x1c9a4
 // Size: 0x572
 function function_e44c2d69db881894( lootname )
 {
@@ -13245,7 +13368,8 @@ function function_e44c2d69db881894( lootname )
     
     if ( maxcount > 0 && isdefined( lootid ) )
     {
-        for (i = 0; i < namespace_e50e624d9af51c8c::getplayerbackpacksize( self ); i++) {
+        for ( i = 0; i < namespace_e50e624d9af51c8c::getplayerbackpacksize( self ) ; i++ )
+        {
             currentlootid = namespace_e50e624d9af51c8c::getlootidatbackpackindex( i );
             
             if ( currentlootid == lootid )
@@ -13440,8 +13564,8 @@ function function_e44c2d69db881894( lootname )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cb4c
+// Params 1
+// Checksum 0x0, Offset: 0x1cf1f
 // Size: 0x12, Type: bool
 function function_4ebfdbfa1b8e0339( lootname )
 {
@@ -13449,8 +13573,8 @@ function function_4ebfdbfa1b8e0339( lootname )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cb67
+// Params 1
+// Checksum 0x0, Offset: 0x1cf3a
 // Size: 0x36, Type: bool
 function function_b1e944a2b3e15e9d( lootname )
 {
@@ -13458,8 +13582,8 @@ function function_b1e944a2b3e15e9d( lootname )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cba6
+// Params 1
+// Checksum 0x0, Offset: 0x1cf79
 // Size: 0x16
 function function_36de08ea672b354c( lootname )
 {
@@ -13467,8 +13591,8 @@ function function_36de08ea672b354c( lootname )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cbc5
+// Params 1
+// Checksum 0x0, Offset: 0x1cf98
 // Size: 0x16
 function function_9e686ab118ac7725( lootname )
 {
@@ -13476,8 +13600,8 @@ function function_9e686ab118ac7725( lootname )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cbe4
+// Params 1
+// Checksum 0x0, Offset: 0x1cfb7
 // Size: 0x12, Type: bool
 function function_5aa2768ce2289fe7( lootname )
 {
@@ -13485,8 +13609,8 @@ function function_5aa2768ce2289fe7( lootname )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cbff
+// Params 0
+// Checksum 0x0, Offset: 0x1cfd2
 // Size: 0x55d
 function function_6ff4fee4f07a3392()
 {
@@ -13715,8 +13839,8 @@ function function_6ff4fee4f07a3392()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d164
+// Params 2
+// Checksum 0x0, Offset: 0x1d537
 // Size: 0x32d
 function function_c8a5593cbb13f17c( pickup, weaponobj )
 {
@@ -13746,7 +13870,8 @@ function function_c8a5593cbb13f17c( pickup, weaponobj )
             primaryweaponscount = self.primaryweapons.size;
             var_d05470192f5f4895 = 2 > primaryweaponscount;
             
-            for (i = 0; !var_d05470192f5f4895 && i < self.primaryweapons.size; i++) {
+            for ( i = 0; !var_d05470192f5f4895 && i < self.primaryweapons.size ; i++ )
+            {
                 if ( isnullweapon( self.primaryweapons[ i ] ) || scripts\mp\weapons::isfistweapon( self.primaryweapons[ i ] ) || !function_af4aefc234671c2f( i ) && function_aaffa8afa2d9c195( self.primaryweapons[ i ] ) )
                 {
                     primaryweaponscount--;
@@ -13767,7 +13892,8 @@ function function_c8a5593cbb13f17c( pickup, weaponobj )
             var_439466f5277ef2d9 = self function_337e400ead27b7bd( var_a6fb744f02d4ffb8 );
             var_c8a5593cbb13f17c = 0;
             
-            for (i = 0; i < self.primaryweapons.size; i++) {
+            for ( i = 0; i < self.primaryweapons.size ; i++ )
+            {
                 primaryweaponobj = self.primaryweapons[ i ];
                 
                 if ( !isnullweapon( primaryweaponobj ) )
@@ -13807,7 +13933,8 @@ function function_c8a5593cbb13f17c( pickup, weaponobj )
         baseweaponname = weapon::getweaponrootname( weaponobj );
         var_862e2d88178bc2c8 = 0;
         
-        for (i = 0; !var_862e2d88178bc2c8 && i < self.primaryweapons.size; i++) {
+        for ( i = 0; !var_862e2d88178bc2c8 && i < self.primaryweapons.size ; i++ )
+        {
             var_e9094c47c8dbe268 = weapon::getweaponrootname( self.primaryweapons[ i ] );
             
             if ( var_e9094c47c8dbe268 == baseweaponname )
@@ -13825,8 +13952,8 @@ function function_c8a5593cbb13f17c( pickup, weaponobj )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d49a
+// Params 2
+// Checksum 0x0, Offset: 0x1d86d
 // Size: 0x65, Type: bool
 function function_2b4b373533156a88( pickup, weapon )
 {
@@ -13842,8 +13969,8 @@ function function_2b4b373533156a88( pickup, weapon )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d508
+// Params 1
+// Checksum 0x0, Offset: 0x1d8db
 // Size: 0xc4
 function function_aaffa8afa2d9c195( weapon )
 {
@@ -13881,8 +14008,8 @@ function function_aaffa8afa2d9c195( weapon )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d5d5
+// Params 1
+// Checksum 0x0, Offset: 0x1d9a8
 // Size: 0x89
 function getweaponpickuprarity( weaponobj )
 {
@@ -13903,21 +14030,22 @@ function getweaponpickuprarity( weaponobj )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d667
+// Params 0
+// Checksum 0x0, Offset: 0x1da3a
 // Size: 0x33
 function function_abd2865600352fcd()
 {
     self.weaponslotblocked = [];
     
-    for (i = 0; i < 2; i++) {
+    for ( i = 0; i < 2 ; i++ )
+    {
         self.weaponslotblocked[ i ] = 0;
     }
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d6a2
+// Params 1
+// Checksum 0x0, Offset: 0x1da75
 // Size: 0x54
 function function_af4aefc234671c2f( slotindex )
 {
@@ -13937,8 +14065,8 @@ function function_af4aefc234671c2f( slotindex )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d6ff
+// Params 2
+// Checksum 0x0, Offset: 0x1dad2
 // Size: 0x7f
 function function_5ef33bffaeda4fa9( weaponobj, blocked )
 {
@@ -13949,7 +14077,8 @@ function function_5ef33bffaeda4fa9( weaponobj, blocked )
     
     weaponcount = min( 2, self.primaryweapons.size );
     
-    for (i = 0; i < weaponcount; i++) {
+    for ( i = 0; i < weaponcount ; i++ )
+    {
         if ( issameweapon( self.primaryweapons[ i ], weaponobj ) )
         {
             self.weaponslotblocked[ i ] = blocked;
@@ -13959,8 +14088,8 @@ function function_5ef33bffaeda4fa9( weaponobj, blocked )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d786
+// Params 3
+// Checksum 0x0, Offset: 0x1db59
 // Size: 0x19e
 function function_e98a5a4e0e001ac3( player, scriptablename, var_f9beeb3ed076a7a1 )
 {
@@ -14018,8 +14147,8 @@ function function_e98a5a4e0e001ac3( player, scriptablename, var_f9beeb3ed076a7a1
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d92d
+// Params 2
+// Checksum 0x0, Offset: 0x1dd00
 // Size: 0x68
 function function_6523c0535fdb1f1f( player, scriptablename )
 {
@@ -14038,8 +14167,8 @@ function function_6523c0535fdb1f1f( player, scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d99d
+// Params 1
+// Checksum 0x0, Offset: 0x1dd70
 // Size: 0xad
 function function_77702c2321292aa3( scriptablename )
 {
@@ -14079,8 +14208,8 @@ function function_77702c2321292aa3( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1da53
+// Params 1
+// Checksum 0x0, Offset: 0x1de26
 // Size: 0x2f
 function function_a0877dfcb342653a( player )
 {
@@ -14091,8 +14220,8 @@ function function_a0877dfcb342653a( player )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1da8a
+// Params 1
+// Checksum 0x0, Offset: 0x1de5d
 // Size: 0xce
 function function_f792ec0c5b3b6d45( scriptablename )
 {
@@ -14129,8 +14258,8 @@ function function_f792ec0c5b3b6d45( scriptablename )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1db61
+// Params 2
+// Checksum 0x0, Offset: 0x1df34
 // Size: 0x46
 function function_89383ba5ee5f2b5f( var_14004b68ddacb781, var_46e6d47e89ce730c )
 {
@@ -14145,8 +14274,8 @@ function function_89383ba5ee5f2b5f( var_14004b68ddacb781, var_46e6d47e89ce730c )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dbb0
+// Params 1
+// Checksum 0x0, Offset: 0x1df83
 // Size: 0x187
 function function_f77406a45e988898( equipname )
 {
@@ -14201,8 +14330,8 @@ function function_f77406a45e988898( equipname )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dd3f
+// Params 0
+// Checksum 0x0, Offset: 0x1e112
 // Size: 0xcd, Type: bool
 function function_990be1aa4ad3c9d4()
 {
@@ -14222,7 +14351,7 @@ function function_990be1aa4ad3c9d4()
         return true;
     }
     
-    if ( isdefined( self.platecarrierlevel ) && getdvarint( @"hash_62882304cc93ba77", 0 ) == 1 && self.platecarrierlevel == 2 || self.platecarrierlevel == 3 && getdvarint( @"hash_86dc98a10dfe9205", 1 ) == 1 && !var_4ae930e26ecee422 )
+    if ( isdefined( self.platecarrierlevel ) && getdvarint( @"hash_62882304cc93ba77", 0 ) == 1 && self.platecarrierlevel == 2 || self.platecarrierlevel == 3 && getdvarint( @"scr_br_drop_three_carrier", 1 ) == 1 && !var_4ae930e26ecee422 )
     {
         return true;
     }
@@ -14231,8 +14360,8 @@ function function_990be1aa4ad3c9d4()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de15
+// Params 0
+// Checksum 0x0, Offset: 0x1e1e8
 // Size: 0x55, Type: bool
 function function_9035374e6d5f69db()
 {
@@ -14250,8 +14379,8 @@ function function_9035374e6d5f69db()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de73
+// Params 0
+// Checksum 0x0, Offset: 0x1e246
 // Size: 0x11
 function function_82c2dc3d57d67f52()
 {
@@ -14259,8 +14388,8 @@ function function_82c2dc3d57d67f52()
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de8d
+// Params 1
+// Checksum 0x0, Offset: 0x1e260
 // Size: 0x60
 function function_e8fc4167d33ed55d( perk )
 {
@@ -14278,8 +14407,8 @@ function function_e8fc4167d33ed55d( perk )
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1def5
+// Params 1
+// Checksum 0x0, Offset: 0x1e2c8
 // Size: 0x3d
 function function_831b0b5a495499ef( perk )
 {
@@ -14297,8 +14426,8 @@ function function_831b0b5a495499ef( perk )
 /#
 
     // Namespace br_pickups / scripts\mp\gametypes\br_pickups
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1df3a
+    // Params 0
+    // Checksum 0x0, Offset: 0x1e30d
     // Size: 0x16, Type: dev
     function function_d53595847895c537()
     {

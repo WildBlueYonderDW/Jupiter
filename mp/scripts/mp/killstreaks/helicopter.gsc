@@ -20,7 +20,7 @@
 #namespace helicopter;
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x804
 // Size: 0x48
 function init()
@@ -35,7 +35,7 @@ function init()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x854
 // Size: 0xaa
 function getaveragelowspawnpoint()
@@ -60,7 +60,7 @@ function getaveragelowspawnpoint()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x906
 // Size: 0x46
 function makehelitype( helitype, deathfx, lightfxfunc )
@@ -70,7 +70,7 @@ function makehelitype( helitype, deathfx, lightfxfunc )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x954
 // Size: 0x31
 function addairexplosion( helitype, explodefx )
@@ -79,7 +79,7 @@ function addairexplosion( helitype, explodefx )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98d
 // Size: 0x98
 function defaultlightfx()
@@ -94,16 +94,16 @@ function defaultlightfx()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa2d
-// Size: 0x1f, Type: bool
+// Size: 0x1f
 function usehelicopter( lifeid, streakname )
 {
     return tryusehelicopter( lifeid, "helicopter" );
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa55
 // Size: 0x149, Type: bool
 function tryusehelicopter( lifeid, helitype )
@@ -154,7 +154,7 @@ function tryusehelicopter( lifeid, helitype )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xba7
 // Size: 0x25
 function deleteonentnotify( ent, notifystring )
@@ -165,7 +165,7 @@ function deleteonentnotify( ent, notifystring )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbd4
 // Size: 0xab
 function starthelicopter( lifeid, helitype )
@@ -186,7 +186,7 @@ function starthelicopter( lifeid, helitype )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc87
 // Size: 0x146
 function precachehelicoptersounds()
@@ -206,7 +206,7 @@ function precachehelicoptersounds()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdd5
 // Size: 0x2b
 function heli_getteamforsoundclip()
@@ -222,7 +222,7 @@ function heli_getteamforsoundclip()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xe09
 // Size: 0xf6
 function spawn_helicopter( owner, origin, angles, vehicletype, modelname )
@@ -251,7 +251,7 @@ function spawn_helicopter( owner, origin, angles, vehicletype, modelname )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf08
 // Size: 0x8d
 function helidialog( dialoggroup )
@@ -269,7 +269,7 @@ function helidialog( dialoggroup )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf9d
 // Size: 0x2a6
 function updateareanodes( areanodes )
@@ -331,7 +331,7 @@ function updateareanodes( areanodes )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x124c
 // Size: 0x288
 function heli_think( lifeid, owner, startnode, heli_team, helitype )
@@ -400,7 +400,7 @@ function heli_think( lifeid, owner, startnode, heli_team, helitype )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14dc
 // Size: 0x10b
 function heli_existance()
@@ -435,7 +435,7 @@ function heli_existance()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15ef
 // Size: 0x106
 function heli_targeting()
@@ -465,7 +465,8 @@ function heli_targeting()
         
         if ( targets.size )
         {
-            for (targetplayer = getbestprimarytarget( targets ); !isdefined( targetplayer ); targetplayer = getbestprimarytarget( targets )) {
+            for ( targetplayer = getbestprimarytarget( targets ); !isdefined( targetplayer ) ; targetplayer = getbestprimarytarget( targets ) )
+            {
                 waitframe();
             }
             
@@ -484,7 +485,7 @@ function heli_targeting()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16fd
 // Size: 0x126
 function cantarget_turret( player )
@@ -529,7 +530,7 @@ function cantarget_turret( player )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x182c
 // Size: 0x27d
 function getbestprimarytarget( targets )
@@ -605,7 +606,7 @@ function getbestprimarytarget( targets )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ab2
 // Size: 0x122
 function update_player_threat( player )
@@ -636,7 +637,7 @@ function update_player_threat( player )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bdc
 // Size: 0x49
 function heli_reset()
@@ -651,7 +652,7 @@ function heli_reset()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c2d
 // Size: 0x40
 function addrecentdamage( damage )
@@ -663,7 +664,7 @@ function addrecentdamage( damage )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c75
 // Size: 0xfe
 function modifydamage( data )
@@ -692,7 +693,7 @@ function modifydamage( data )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d7c
 // Size: 0xf0
 function handledeathdamage( data )
@@ -717,7 +718,7 @@ function handledeathdamage( data )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1e74
 // Size: 0x6c
 function heli_damage_monitor( type, shouldrumble, var_a39ff9e13bbc6340 )
@@ -736,7 +737,7 @@ function heli_damage_monitor( type, shouldrumble, var_a39ff9e13bbc6340 )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ee8
 // Size: 0xde
 function heli_watchempdamage()
@@ -778,7 +779,7 @@ function heli_watchempdamage()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fce
 // Size: 0x1c9
 function heli_health()
@@ -826,7 +827,7 @@ function heli_health()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x219f
 // Size: 0x8d
 function heli_watchdeath()
@@ -847,7 +848,7 @@ function heli_watchdeath()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2234
 // Size: 0x92
 function heli_crash()
@@ -873,7 +874,7 @@ function heli_crash()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22ce
 // Size: 0xbb
 function heli_secondary_explosions()
@@ -894,7 +895,7 @@ function heli_secondary_explosions()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2391
 // Size: 0x74
 function heli_spin( speed )
@@ -913,7 +914,7 @@ function heli_spin( speed )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x240d
 // Size: 0x64
 function spinsoundshortly()
@@ -929,7 +930,7 @@ function spinsoundshortly()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2479
 // Size: 0x14a
 function heli_explode( altstyle )
@@ -962,7 +963,7 @@ function heli_explode( altstyle )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25cb
 // Size: 0x61, Type: bool
 function check_owner()
@@ -977,7 +978,7 @@ function check_owner()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2635
 // Size: 0x29
 function heli_leave_on_disconnect( owner )
@@ -989,7 +990,7 @@ function heli_leave_on_disconnect( owner )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2666
 // Size: 0x33
 function heli_leave_on_changeteams( owner )
@@ -1001,7 +1002,7 @@ function heli_leave_on_changeteams( owner )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26a1
 // Size: 0x29
 function heli_leave_on_spawned( owner )
@@ -1013,7 +1014,7 @@ function heli_leave_on_spawned( owner )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26d2
 // Size: 0x29
 function heli_leave_on_gameended( owner )
@@ -1025,7 +1026,7 @@ function heli_leave_on_gameended( owner )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2703
 // Size: 0x29
 function heli_leave_on_timeout( timeout )
@@ -1037,7 +1038,7 @@ function heli_leave_on_timeout( timeout )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2734
 // Size: 0x366
 function fireontarget( targetplayer )
@@ -1135,7 +1136,7 @@ function fireontarget( targetplayer )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2aa2
 // Size: 0x1e0
 function attackgroundtarget( currenttarget )
@@ -1173,7 +1174,8 @@ function attackgroundtarget( currenttarget )
     var_922819de2d68c5e7 = 0;
     loopsoundplaying = 0;
     
-    for (i = 0; i < level.heli_turretclipsize; i++) {
+    for ( i = 0; i < level.heli_turretclipsize ; i++ )
+    {
         if ( !isdefined( self ) )
         {
             break;
@@ -1239,7 +1241,7 @@ function attackgroundtarget( currenttarget )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c8a
 // Size: 0xc4
 function checkisfacing( tolerance, currenttarget )
@@ -1270,7 +1272,7 @@ function checkisfacing( tolerance, currenttarget )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d56
 // Size: 0xd9
 function isfacing( tolerance, currenttarget )
@@ -1305,7 +1307,7 @@ function isfacing( tolerance, currenttarget )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e37
 // Size: 0x35
 function waitontargetordeath( target, timeout )
@@ -1317,7 +1319,7 @@ function waitontargetordeath( target, timeout )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e74
 // Size: 0x12f
 function firemissile( missiletarget )
@@ -1328,7 +1330,8 @@ function firemissile( missiletarget )
     assert( self.health > 0 );
     var_585f84a1c35d91b1 = 2;
     
-    for (i = 0; i < var_585f84a1c35d91b1; i++) {
+    for ( i = 0; i < var_585f84a1c35d91b1 ; i++ )
+    {
         if ( !isdefined( missiletarget ) )
         {
             return;
@@ -1353,7 +1356,7 @@ function firemissile( missiletarget )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fab
 // Size: 0x103
 function dropbombs( missiletarget )
@@ -1367,7 +1370,8 @@ function dropbombs( missiletarget )
         return;
     }
     
-    for (i = 0; i < randomintrange( 2, 5 ); i++) {
+    for ( i = 0; i < randomintrange( 2, 5 ) ; i++ )
+    {
         if ( cointoss() )
         {
             missile = scripts\cp_mp\utility\weapon_utility::_magicbullet( makeweapon( "hind_bomb_mp" ), self gettagorigin( "tag_missile_left" ) - ( 0, 0, 45 ), missiletarget.origin, self.owner );
@@ -1384,7 +1388,7 @@ function dropbombs( missiletarget )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30b6
 // Size: 0x153
 function getoriginoffsets( goalnode )
@@ -1395,7 +1399,8 @@ function getoriginoffsets( goalnode )
     maxtraces = 40;
     traceoffset = ( 0, 0, -196 );
     
-    for (traceorigin = scripts\engine\trace::_bullet_trace( startorigin + traceoffset, endorigin + traceoffset, 0, self ); distancesquared( traceorigin[ "position" ], endorigin + traceoffset ) > 10 && numtraces < maxtraces; traceorigin = scripts\engine\trace::_bullet_trace( startorigin + traceoffset, endorigin + traceoffset, 0, self )) {
+    for ( traceorigin = scripts\engine\trace::_bullet_trace( startorigin + traceoffset, endorigin + traceoffset, 0, self ); distancesquared( traceorigin[ "position" ], endorigin + traceoffset ) > 10 && numtraces < maxtraces ; traceorigin = scripts\engine\trace::_bullet_trace( startorigin + traceoffset, endorigin + traceoffset, 0, self ) )
+    {
         println( "<dev string:x48>" + distancesquared( traceorigin[ "<dev string:x5a>" ], endorigin + traceoffset ) );
         
         if ( startorigin[ 2 ] < endorigin[ 2 ] )
@@ -1425,7 +1430,7 @@ function getoriginoffsets( goalnode )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3212
 // Size: 0x14a
 function traveltonode( goalnode )
@@ -1461,7 +1466,7 @@ function traveltonode( goalnode )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3364
 // Size: 0x40
 function _setvehgoalpos( goalposition, shouldstop, adheretomesh )
@@ -1483,7 +1488,7 @@ function _setvehgoalpos( goalposition, shouldstop, adheretomesh )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x33ac
 // Size: 0x251
 function _setvehgoalposadheretomesh( goalposition, shouldstop )
@@ -1545,7 +1550,7 @@ function _setvehgoalposadheretomesh( goalposition, shouldstop )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3605
 // Size: 0x1d4
 function heli_fly_simple_path( startnode )
@@ -1556,7 +1561,8 @@ function heli_fly_simple_path( startnode )
     self endon( "flying" );
     heli_reset();
     
-    for (currentnode = startnode; isdefined( currentnode.target ); currentnode = nextnode) {
+    for ( currentnode = startnode; isdefined( currentnode.target ) ; currentnode = nextnode )
+    {
         nextnode = getent( currentnode.target, "targetname" );
         assertex( isdefined( nextnode ), "<dev string:x83>" + currentnode.origin );
         
@@ -1605,7 +1611,7 @@ function heli_fly_simple_path( startnode )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37e1
 // Size: 0x236
 function heli_fly_loop_path( startnode )
@@ -1618,7 +1624,8 @@ function heli_fly_loop_path( startnode )
     heli_reset();
     thread heli_loop_speed_control( startnode );
     
-    for (currentnode = startnode; isdefined( currentnode.target ); currentnode = nextnode) {
+    for ( currentnode = startnode; isdefined( currentnode.target ) ; currentnode = nextnode )
+    {
         nextnode = getent( currentnode.target, "targetname" );
         assertex( isdefined( nextnode ), "<dev string:x83>" + currentnode.origin );
         
@@ -1667,7 +1674,7 @@ function heli_fly_loop_path( startnode )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a1f
 // Size: 0x14b
 function heli_loop_speed_control( currentnode )
@@ -1718,7 +1725,7 @@ function heli_loop_speed_control( currentnode )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b72
 // Size: 0x2a, Type: bool
 function heli_is_threatened()
@@ -1737,7 +1744,7 @@ function heli_is_threatened()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ba5
 // Size: 0x173
 function heli_fly_well( destnodes )
@@ -1794,7 +1801,7 @@ function heli_fly_well( destnodes )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d20
 // Size: 0x12
 function get_best_area_attack_node( destnodes )
@@ -1803,7 +1810,7 @@ function get_best_area_attack_node( destnodes )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d3b
 // Size: 0x14d
 function heli_leave( leavepos )
@@ -1850,7 +1857,7 @@ function heli_leave( leavepos )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e90
 // Size: 0x22
 function wait_and_delete( waittime )
@@ -1862,7 +1869,7 @@ function wait_and_delete( waittime )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3eba
 // Size: 0x58
 function debug_print3d( message, color, ent, origin_offset, frames )
@@ -1874,7 +1881,7 @@ function debug_print3d( message, color, ent, origin_offset, frames )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3f1a
 // Size: 0x7d
 function debug_print3d_simple( message, ent, offset, frames )
@@ -1892,7 +1899,7 @@ function debug_print3d_simple( message, ent, offset, frames )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3f9f
 // Size: 0x83
 function debug_line( from, to, color, frames )
@@ -1910,7 +1917,7 @@ function debug_line( from, to, color, frames )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x402a
 // Size: 0xa7
 function draw_text( msg, color, ent, offset, frames )
@@ -1929,7 +1936,8 @@ function draw_text( msg, color, ent, offset, frames )
         return;
     }
     
-    for (i = 0; i < frames; i++) {
+    for ( i = 0; i < frames ; i++ )
+    {
         if ( !isdefined( ent ) )
         {
             break;
@@ -1944,7 +1952,7 @@ function draw_text( msg, color, ent, offset, frames )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x40d9
 // Size: 0x68
 function draw_line( from, to, color, frames )
@@ -1952,7 +1960,8 @@ function draw_line( from, to, color, frames )
     /#
         if ( isdefined( frames ) )
         {
-            for (i = 0; i < frames; i++) {
+            for ( i = 0; i < frames ; i++ )
+            {
                 line( from, to, color );
                 wait 0.05;
             }
@@ -1969,7 +1978,7 @@ function draw_line( from, to, color, frames )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4149
 // Size: 0x3f
 function exceededmaxlittlebirds( streakname )
@@ -1983,7 +1992,7 @@ function exceededmaxlittlebirds( streakname )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4190
 // Size: 0x4b
 function pavelowmadeselectionvo()
@@ -1995,7 +2004,7 @@ function pavelowmadeselectionvo()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41e3
 // Size: 0x68
 function lbonkilled()
@@ -2024,7 +2033,7 @@ function lbonkilled()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4253
 // Size: 0x8a
 function lbspin( speed )
@@ -2042,7 +2051,7 @@ function lbspin( speed )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42e5
 // Size: 0x97
 function lbexplode()
@@ -2056,7 +2065,7 @@ function lbexplode()
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4384
 // Size: 0x40
 function trail_fx( trail_fx, trail_tag, stop_notify )
@@ -2073,7 +2082,7 @@ function trail_fx( trail_fx, trail_tag, stop_notify )
 }
 
 // Namespace helicopter / scripts\mp\killstreaks\helicopter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43cc
 // Size: 0x107
 function removelittlebird()

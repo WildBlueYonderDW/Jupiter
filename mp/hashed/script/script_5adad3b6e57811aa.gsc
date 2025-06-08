@@ -7,7 +7,7 @@
 #namespace combat;
 
 // Namespace combat / namespace_784dc078726182cc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb0
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -16,7 +16,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace combat / namespace_784dc078726182cc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6
 // Size: 0x212
 function evaluatescore( bot )

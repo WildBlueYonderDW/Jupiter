@@ -3,7 +3,7 @@
 #namespace unittest_switch;
 
 // Namespace unittest_switch / scripts\unittest\switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x294
 // Size: 0x6e2
 function switch_case()
@@ -170,7 +170,7 @@ function switch_case()
 }
 
 // Namespace unittest_switch / scripts\unittest\switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97e
 // Size: 0x18c
 function switch_nest()
@@ -226,16 +226,18 @@ function switch_nest()
 }
 
 // Namespace unittest_switch / scripts\unittest\switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb12
 // Size: 0x70
 function switch_loop()
 {
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         switch ( i )
         {
             case 0:
-                for (j = 0; j < 5; j++) {
+                for ( j = 0; j < 5 ; j++ )
+                {
                     if ( j > 2 )
                     {
                         break;
@@ -251,7 +253,7 @@ function switch_loop()
 }
 
 // Namespace unittest_switch / scripts\unittest\switch
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb8a
 // Size: 0x2f
 function main()

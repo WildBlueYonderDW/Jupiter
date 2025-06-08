@@ -3,7 +3,7 @@
 #namespace unittest_cond;
 
 // Namespace unittest_cond / scripts\unittest\cond
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x867
 // Size: 0x4d1
 function vars()
@@ -115,7 +115,7 @@ function vars()
 }
 
 // Namespace unittest_cond / scripts\unittest\cond
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd40
 // Size: 0x511
 function iftest()
@@ -448,7 +448,7 @@ function iftest()
 }
 
 // Namespace unittest_cond / scripts\unittest\cond
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1259
 // Size: 0x28
 function main()

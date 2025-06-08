@@ -23,7 +23,7 @@
 #/
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x142
 // Size: 0x5c
 function function_a8c2757799695a5a( ent )
@@ -40,7 +40,7 @@ function function_a8c2757799695a5a( ent )
 }
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0x4a
 function function_79bb217b25d90ffd( ball, base_speed, base_acceleration, max_speed )
@@ -51,7 +51,7 @@ function function_79bb217b25d90ffd( ball, base_speed, base_acceleration, max_spe
 }
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f8
 // Size: 0x78
 function launch_ball( launch_velocity, var_f75e4b9bea638a30, air_drag )
@@ -66,7 +66,7 @@ function launch_ball( launch_velocity, var_f75e4b9bea638a30, air_drag )
 }
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x278
 // Size: 0x4e
 function function_8a1752d6a06e7cd7( ball, target_ent )
@@ -79,7 +79,7 @@ function function_8a1752d6a06e7cd7( ball, target_ent )
 }
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ce
 // Size: 0x14
 function set_invisible( ball )
@@ -295,7 +295,7 @@ function private function_b34696cf4be98a4d()
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x99b
-// Size: 0x336
+// Size: 0x343
 function private function_f1cf0263bc538e( var_4c1e1071f143a794, target_pos )
 {
     current_angles = vectortoangles( self.momentum_dir );
@@ -351,26 +351,29 @@ function private function_f1cf0263bc538e( var_4c1e1071f143a794, target_pos )
         self.ball_velocity = forward_dir * var_b060602d728a3773;
     }
     
-    tracecontents = scripts\engine\trace::create_contents( 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 );
-    trace = ray_trace( self.origin, self.origin + self.ball_velocity, self, tracecontents );
-    
-    if ( trace[ "fraction" ] < 1 )
+    if ( !istrue( self.var_bb07689518ddece0 ) )
     {
-        self.ball_velocity = self.ball_velocity * -1 * getdvarfloat( @"hash_a02fb18b5abd33d5", 0.7 );
+        tracecontents = scripts\engine\trace::create_contents( 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 );
+        trace = ray_trace( self.origin, self.origin + self.ball_velocity, self, tracecontents );
         
-        /#
-            if ( function_64e4823b3d753975() )
-            {
-                line( self.origin, trace[ "<dev string:x53>" ], ( 1, 0, 0 ), 1 );
-                ball_print( "<dev string:x5f>", trace[ "<dev string:x53>" ] );
-            }
-        #/
+        if ( trace[ "fraction" ] < 1 )
+        {
+            self.ball_velocity = self.ball_velocity * -1 * getdvarfloat( @"hash_a02fb18b5abd33d5", 0.7 );
+            
+            /#
+                if ( function_64e4823b3d753975() )
+                {
+                    line( self.origin, trace[ "<dev string:x53>" ], ( 1, 0, 0 ), 1 );
+                    ball_print( "<dev string:x5f>", trace[ "<dev string:x53>" ] );
+                }
+            #/
+        }
     }
 }
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xcd9
+// Checksum 0x0, Offset: 0xce6
 // Size: 0xb4
 function private function_da518249c3bd9b59( is_vertical, var_1c729d9d0f7eda98 )
 {
@@ -395,7 +398,7 @@ function private function_da518249c3bd9b59( is_vertical, var_1c729d9d0f7eda98 )
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xd96
+// Checksum 0x0, Offset: 0xda3
 // Size: 0x140
 function private function_c33c9ec6d127eef2( var_12a34cc28b3fbf8c, var_1c729d9d0f7eda98 )
 {
@@ -423,7 +426,7 @@ function private function_c33c9ec6d127eef2( var_12a34cc28b3fbf8c, var_1c729d9d0f
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xedf
+// Checksum 0x0, Offset: 0xeec
 // Size: 0x12a
 function private function_f68a56043bfa8c0b( var_12a34cc28b3fbf8c, var_4c1e1071f143a794, ball_velocity, b_do_trace )
 {
@@ -463,8 +466,8 @@ function private function_f68a56043bfa8c0b( var_12a34cc28b3fbf8c, var_4c1e1071f1
 /#
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1012
+    // Params 0
+    // Checksum 0x0, Offset: 0x101f
     // Size: 0x2e, Type: dev
     function function_bda4aa7e471bfbf3()
     {
@@ -475,7 +478,7 @@ function private function_f68a56043bfa8c0b( var_12a34cc28b3fbf8c, var_4c1e1071f1
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1048
+    // Checksum 0x0, Offset: 0x1055
     // Size: 0x71, Type: dev
     function private function_abea44bf774018a9( state )
     {
@@ -496,7 +499,7 @@ function private function_f68a56043bfa8c0b( var_12a34cc28b3fbf8c, var_4c1e1071f1
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x10c1
+    // Checksum 0x0, Offset: 0x10ce
     // Size: 0xbc, Type: dev
     function private function_b088653a7495d62d()
     {
@@ -524,7 +527,7 @@ function private function_f68a56043bfa8c0b( var_12a34cc28b3fbf8c, var_4c1e1071f1
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1185
+    // Checksum 0x0, Offset: 0x1192
     // Size: 0x17, Type: dev
     function private function_64e4823b3d753975()
     {
@@ -533,7 +536,7 @@ function private function_f68a56043bfa8c0b( var_12a34cc28b3fbf8c, var_4c1e1071f1
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x11a4
+    // Checksum 0x0, Offset: 0x11b1
     // Size: 0x1a, Type: dev
     function private function_4982940c42590e46()
     {
@@ -542,7 +545,7 @@ function private function_f68a56043bfa8c0b( var_12a34cc28b3fbf8c, var_4c1e1071f1
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 2, eflags: 0x4
-    // Checksum 0x0, Offset: 0x11c6
+    // Checksum 0x0, Offset: 0x11d3
     // Size: 0x5a, Type: dev
     function private ball_print( text, pos )
     {

@@ -17,7 +17,7 @@ function private autoexec __init__system__()
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c5
 // Size: 0x40
 function post_main()
@@ -36,7 +36,7 @@ function post_main()
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20d
 // Size: 0x2a
 function initinternal()
@@ -49,7 +49,7 @@ function initinternal()
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23f
 // Size: 0xb6
 function initleveldata()
@@ -64,7 +64,7 @@ function initleveldata()
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fd
 // Size: 0x35
 function setupcallbacks()
@@ -75,7 +75,7 @@ function setupcallbacks()
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33a
 // Size: 0x1d8
 function function_b92559336d4290b3()
@@ -116,7 +116,7 @@ function function_b92559336d4290b3()
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x51a
 // Size: 0x5b
 function registerquestchain( var_aae4896d02056ac3, var_56f390f17fee5add, flags )
@@ -132,7 +132,7 @@ function registerquestchain( var_aae4896d02056ac3, var_56f390f17fee5add, flags )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x57d
 // Size: 0x1b2
 function function_8fb6c06939b794d7( var_aae4896d02056ac3, var_2d9fd7df778267bb, var_f9ef42f2b5483a4f, var_9ded4c314cb8356d, var_645d7335913d50bb, var_aba46302334934ac, var_8f125b44d04fac42 )
@@ -167,7 +167,7 @@ function function_8fb6c06939b794d7( var_aae4896d02056ac3, var_2d9fd7df778267bb, 
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x737
 // Size: 0x36
 function oncontractstart( task, team )
@@ -184,7 +184,7 @@ function oncontractstart( task, team )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x775
 // Size: 0x7f
 function oncontractend( task, team, success )
@@ -209,7 +209,7 @@ function oncontractend( task, team, success )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7fc
 // Size: 0xc2
 function function_9f181ae293d9b65f( task, team, success )
@@ -228,7 +228,7 @@ function function_9f181ae293d9b65f( task, team, success )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8c6
 // Size: 0x112
 function function_e447c95f657d5325( task, team, success )
@@ -261,7 +261,7 @@ function function_e447c95f657d5325( task, team, success )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x9e0
 // Size: 0x112
 function function_d75b66b46e0f7273( group, team, rewardorigin, rewardangles, rewardscriptable, players )
@@ -287,7 +287,7 @@ function function_d75b66b46e0f7273( group, team, rewardorigin, rewardangles, rew
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xafa
 // Size: 0x164
 function function_95241846d4382372( task, team )
@@ -325,7 +325,7 @@ function function_95241846d4382372( task, team )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc66
 // Size: 0x167
 function function_ee4cd3ba8fd7b953( task, team )
@@ -368,7 +368,7 @@ function function_ee4cd3ba8fd7b953( task, team )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xdd5
 // Size: 0x147
 function function_26f3066ca0cd1957( task, team, success )
@@ -403,7 +403,7 @@ function function_26f3066ca0cd1957( task, team, success )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf24
 // Size: 0x95
 function function_3dd1a630275d19af( team )
@@ -431,7 +431,7 @@ function function_3dd1a630275d19af( team )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfc1
 // Size: 0xa9
 function function_25b927ee0e8f37eb( var_aae4896d02056ac3 )
@@ -448,13 +448,14 @@ function function_25b927ee0e8f37eb( var_aae4896d02056ac3 )
     nexttablet = undefined;
     prevtablet = undefined;
     
-    for (i = 0; i < var_56f390f17fee5add.size; i++) {
+    for ( i = 0; i < var_56f390f17fee5add.size ; i++ )
+    {
         contractref = var_56f390f17fee5add[ i ];
     }
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1072
 // Size: 0x74
 function function_438f067da7cbe893( contractref, payload )
@@ -467,7 +468,7 @@ function function_438f067da7cbe893( contractref, payload )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10ee
 // Size: 0x21, Type: bool
 function function_73689348205a9057( team )
@@ -476,7 +477,7 @@ function function_73689348205a9057( team )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1118
 // Size: 0x17, Type: bool
 function function_15130df1ddac6787( task )
@@ -485,7 +486,7 @@ function function_15130df1ddac6787( task )
 }
 
 // Namespace quest_chain / namespace_b11d742e70949af1
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1138
 // Size: 0x20
 function function_c6ec58a3c19cd74d( team )

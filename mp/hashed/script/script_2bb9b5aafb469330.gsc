@@ -4,7 +4,7 @@
 #namespace mp_jup_st_g_ob_intel_cs_season1;
 
 // Namespace mp_jup_st_g_ob_intel_cs_season1 / namespace_a215515661f7dd6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x140
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_g_ob_intel_cs_season1 / namespace_a215515661f7dd6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_g_ob_intel_cs_season1 / namespace_a215515661f7dd6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x224
 // Size: 0xc1
 function createstructs( fe, us, cf )
@@ -67,7 +67,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_intel_cs_season1 / namespace_a215515661f7dd6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ed
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -76,7 +76,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_g_ob_intel_cs_season1 / namespace_a215515661f7dd6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f7
 // Size: 0xe
 function cleanup()

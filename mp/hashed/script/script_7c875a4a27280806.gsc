@@ -10,7 +10,7 @@
 #namespace perk_juggernaut;
 
 // Namespace perk_juggernaut / namespace_7177e11e3871c8f4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13f
 // Size: 0x49
 function function_1ddcb2ee8addbf81( str_currency, var_fe59c44529c721a0 )
@@ -21,7 +21,7 @@ function function_1ddcb2ee8addbf81( str_currency, var_fe59c44529c721a0 )
 }
 
 // Namespace perk_juggernaut / namespace_7177e11e3871c8f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x190
 // Size: 0x2
 function init_juggernaut()
@@ -30,7 +30,7 @@ function init_juggernaut()
 }
 
 // Namespace perk_juggernaut / namespace_7177e11e3871c8f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a
 // Size: 0x2
 function function_ab290f15db86a2ed()
@@ -39,7 +39,7 @@ function function_ab290f15db86a2ed()
 }
 
 // Namespace perk_juggernaut / namespace_7177e11e3871c8f4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a4
 // Size: 0xb
 function function_fab58c7ac85ad7ac( state )
@@ -48,7 +48,7 @@ function function_fab58c7ac85ad7ac( state )
 }
 
 // Namespace perk_juggernaut / namespace_7177e11e3871c8f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b7
 // Size: 0x9
 function function_7e973f95d6043eb2()
@@ -57,7 +57,7 @@ function function_7e973f95d6043eb2()
 }
 
 // Namespace perk_juggernaut / namespace_7177e11e3871c8f4
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1c8
 // Size: 0x2a
 function function_1b6b6e760a1bdd78( b_pause, str_perk, str_result, n_slot )
@@ -66,7 +66,7 @@ function function_1b6b6e760a1bdd78( b_pause, str_perk, str_result, n_slot )
 }
 
 // Namespace perk_juggernaut / namespace_7177e11e3871c8f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x58
 function function_c01376485eb8f25()
@@ -78,7 +78,7 @@ function function_c01376485eb8f25()
 }
 
 // Namespace perk_juggernaut / namespace_7177e11e3871c8f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25a
 // Size: 0x32
 function function_74553dbfe828d843()

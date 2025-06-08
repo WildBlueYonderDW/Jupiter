@@ -37,7 +37,7 @@ function private autoexec init()
 }
 
 // Namespace c_jup_mp_delta / character\c_jup_mp_delta
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x181
 // Size: 0xbb
 function main()
@@ -61,7 +61,7 @@ function main()
 }
 
 // Namespace c_jup_mp_delta / character\c_jup_mp_delta
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x244
 // Size: 0x2
 function precache()
@@ -70,7 +70,7 @@ function precache()
 }
 
 // Namespace c_jup_mp_delta / character\c_jup_mp_delta
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24e
 // Size: 0x1f
 function precache_sp()
@@ -81,7 +81,7 @@ function precache_sp()
 }
 
 // Namespace c_jup_mp_delta / character\c_jup_mp_delta
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x275
 // Size: 0x9
 function precache_cpmp()

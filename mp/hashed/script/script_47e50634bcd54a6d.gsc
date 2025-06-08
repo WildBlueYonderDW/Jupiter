@@ -5,7 +5,7 @@
 #namespace namespace_93ef1ea062af3119;
 
 // Namespace namespace_93ef1ea062af3119 / namespace_e52f2dbcddf04577
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28b
 // Size: 0xea
 function init()
@@ -243,7 +243,7 @@ function private function_df46390ffcc4d8f8( node )
 }
 
 // Namespace namespace_93ef1ea062af3119 / namespace_e52f2dbcddf04577
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xae3
 // Size: 0x137
 function testprocess()
@@ -305,7 +305,8 @@ function private taketraversal()
     
     assert( level.mit.traversal.traversals.size > 0 );
     
-    for (index = 0; index < level.mit.traversal.traversals.size; index++) {
+    for ( index = 0; index < level.mit.traversal.traversals.size ; index++ )
+    {
         current = level.mit.traversal.traversals[ index ];
         
         if ( function_25eb6fee59a46e3a( current ) )
@@ -439,7 +440,7 @@ function private onplayerkilled( deathdata )
 }
 
 // Namespace namespace_93ef1ea062af3119 / namespace_e52f2dbcddf04577
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x118d
 // Size: 0x10f
 function endhandler()
@@ -458,7 +459,7 @@ function endhandler()
 }
 
 // Namespace namespace_93ef1ea062af3119 / namespace_e52f2dbcddf04577
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12a4
 // Size: 0x22, Type: bool
 function function_3113f44ebafe71b1()
@@ -515,7 +516,8 @@ function function_3113f44ebafe71b1()
             outputstring = v.size + "<dev string:x37>" + k + "<dev string:x37>" + traversalposition[ k ] + "<dev string:x37>" + traversaltype[ k ] + "<dev string:x37>";
             outputstring += string_join( v, "<dev string:x37>" );
             
-            for (i = 0; i < 3 - v.size; i++) {
+            for ( i = 0; i < 3 - v.size ; i++ )
+            {
                 outputstring += "<dev string:x37>";
             }
             
@@ -597,7 +599,7 @@ function private function_c6794b6366f34ce2( traversal, str )
     }
 
     // Namespace namespace_93ef1ea062af3119 / namespace_e52f2dbcddf04577
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1799
     // Size: 0xa2, Type: dev
     function function_dec8f2a03738931b( traversal )

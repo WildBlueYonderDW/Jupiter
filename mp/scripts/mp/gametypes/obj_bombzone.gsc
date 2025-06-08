@@ -38,7 +38,7 @@
 #namespace obj_bombzone;
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xeed
 // Size: 0x75a
 function setupobjective( trigger, skipobjid, var_5ddbc1faed2c56e6 )
@@ -205,7 +205,8 @@ function setupobjective( trigger, skipobjid, var_5ddbc1faed2c56e6 )
     bombzone.bombexploded = undefined;
     bombzone.resetprogress = level.resetprogress;
     
-    for (i = 0; i < visuals.size; i++) {
+    for ( i = 0; i < visuals.size ; i++ )
+    {
         if ( isdefined( visuals[ i ].script_exploder ) )
         {
             bombzone.exploderindex = visuals[ i ].script_exploder;
@@ -249,7 +250,7 @@ function setupobjective( trigger, skipobjid, var_5ddbc1faed2c56e6 )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1650
 // Size: 0x67
 function function_2db76423768ca0f5( bombzone )
@@ -271,7 +272,7 @@ function function_2db76423768ca0f5( bombzone )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16bf
 // Size: 0x1c4
 function assignbombzonechevrons()
@@ -312,14 +313,15 @@ function assignbombzonechevrons()
     
     foreach ( chevron in bombzone.chevrons )
     {
-        for (i = 0; i < chevron.numchevrons; i++) {
+        for ( i = 0; i < chevron.numchevrons ; i++ )
+        {
             chevron setscriptablepartstate( "chevron_" + i, bombzone.ownerteam );
         }
     }
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x188b
 // Size: 0x2a
 function getreservedobjid( objectivekey )
@@ -337,7 +339,7 @@ function getreservedobjid( objectivekey )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18be
 // Size: 0x22e
 function setupkillcament( bombzone )
@@ -380,7 +382,7 @@ function setupkillcament( bombzone )
 /#
 
     // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1af4
     // Size: 0x1d0, Type: dev
     function debugkillcament( visual )
@@ -409,7 +411,7 @@ function setupkillcament( bombzone )
 #/
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ccc
 // Size: 0xf6
 function allowedwhileplanting( isallowed )
@@ -439,7 +441,7 @@ function allowedwhileplanting( isallowed )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dca
 // Size: 0x7f
 function setbombplantingomnvar( bombsite )
@@ -467,7 +469,7 @@ function setbombplantingomnvar( bombsite )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e51
 // Size: 0x69
 function setbombdefusingomnvar( bombsite )
@@ -494,7 +496,7 @@ function setbombdefusingomnvar( bombsite )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ec2
 // Size: 0x21d
 function bombzone_onbeginuse( player )
@@ -559,7 +561,7 @@ function bombzone_onbeginuse( player )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x20e7
 // Size: 0x264
 function bombzone_onenduse( team, player, result )
@@ -661,7 +663,7 @@ function bombzone_onenduse( team, player, result )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2353
 // Size: 0xce
 function startnpcbombusesound( weaponname, soundname )
@@ -693,7 +695,7 @@ function startnpcbombusesound( weaponname, soundname )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2429
 // Size: 0x9e, Type: bool
 function function_d3516b464bf6e8b4( player )
@@ -716,7 +718,7 @@ function function_d3516b464bf6e8b4( player )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24d0
 // Size: 0xb
 function bombzone_oncantuse( player )
@@ -725,7 +727,7 @@ function bombzone_oncantuse( player )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24e3
 // Size: 0x297
 function bombzone_onuseplantobject( player )
@@ -793,7 +795,7 @@ function bombzone_onuseplantobject( player )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2782
 // Size: 0x1bc
 function bombzone_onusedefuseobject( player )
@@ -836,15 +838,15 @@ function bombzone_onusedefuseobject( player )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2946
-// Size: 0x1243
+// Size: 0x12b0
 function bombzone_onbombplanted( destroyedobj, player, var_d413e2f3a09e8a83 )
 {
     level endon( "bombs_canceled" );
     level notify( "bomb_planted", destroyedobj );
     
-    if ( getgametype() != "defuse" )
+    if ( getgametype() != "defuse" && getgametype() != "hc_defuse" )
     {
         plantteam = player.team;
     }
@@ -910,7 +912,7 @@ function bombzone_onbombplanted( destroyedobj, player, var_d413e2f3a09e8a83 )
         level.bplanted = 1;
     }
     
-    if ( getgametype() != "defuse" )
+    if ( getgametype() != "defuse" && getgametype() != "hc_defuse" )
     {
         setbombtimeromnvars( player.team );
     }
@@ -924,7 +926,7 @@ function bombzone_onbombplanted( destroyedobj, player, var_d413e2f3a09e8a83 )
     
     if ( !level.multibomb )
     {
-        if ( getgametype() != "defuse" )
+        if ( getgametype() != "defuse" && getgametype() != "hc_defuse" )
         {
             player setclientomnvar( "ui_carrying_bomb", 0 );
             setomnvar( "ui_bomb_carrier", -1 );
@@ -1110,7 +1112,7 @@ function bombzone_onbombplanted( destroyedobj, player, var_d413e2f3a09e8a83 )
         defuseobject.useweapon = makeweapon( "briefcase_bomb_defuse_mp" );
     }
     
-    if ( getgametype() == "defuse" )
+    if ( getgametype() == "defuse" || getgametype() == "hc_defuse" )
     {
         level thread scripts\mp\hud_message::updatematchstatushintforallplayers( var_d413e2f3a09e8a83, "bomb_defend", "bomb_defuse" );
     }
@@ -1127,7 +1129,7 @@ function bombzone_onbombplanted( destroyedobj, player, var_d413e2f3a09e8a83 )
     {
         return;
     }
-    else if ( getbasegametype() == "sd" && level.bombdefused || getgametype() == "defuse" && level.bombdefused || getgametype() == "sr" && level.bombdefused )
+    else if ( getbasegametype() == "sd" && level.bombdefused || getgametype() == "defuse" && level.bombdefused || getgametype() == "hc_defuse" && level.bombdefused || getgametype() == "sr" && level.bombdefused )
     {
         defuseobject scripts\mp\gameobjects::deleteuseobject();
         return;
@@ -1212,7 +1214,7 @@ function bombzone_onbombplanted( destroyedobj, player, var_d413e2f3a09e8a83 )
     setomnvar( "ui_victory_condition_completed", 1 );
     level notify( "bomb_exploded" + destroyedobj.objectivekey );
     
-    if ( getgametype() != "defuse" )
+    if ( getgametype() != "defuse" && getgametype() != "hc_defuse" )
     {
         player thread scripts\mp\rank::scoreeventpopup( #"detonate" );
         player thread scripts\mp\utility\points::doscoreevent( #"hash_67d7d6463cae5631" );
@@ -1303,8 +1305,8 @@ function bombzone_onbombplanted( destroyedobj, player, var_d413e2f3a09e8a83 )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b91
+// Params 0
+// Checksum 0x0, Offset: 0x3bfe
 // Size: 0x30
 function function_5784fd1cddbd00d3()
 {
@@ -1318,8 +1320,8 @@ function function_5784fd1cddbd00d3()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bc9
+// Params 3
+// Checksum 0x0, Offset: 0x3c36
 // Size: 0x1ae
 function bombradialfill( plantteam, friendlyicon, enemyicon )
 {
@@ -1364,8 +1366,8 @@ function bombradialfill( plantteam, friendlyicon, enemyicon )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d7f
+// Params 1
+// Checksum 0x0, Offset: 0x3dec
 // Size: 0x18e
 function initobjectivecam( objective )
 {
@@ -1416,8 +1418,8 @@ function initobjectivecam( objective )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f15
+// Params 0
+// Checksum 0x0, Offset: 0x3f82
 // Size: 0x20f
 function runobjectivecam()
 {
@@ -1447,7 +1449,8 @@ function runobjectivecam()
         }
     }
     
-    for (i = 0; i < self.path.size; i++) {
+    for ( i = 0; i < self.path.size ; i++ )
+    {
         acceltime = 0;
         
         if ( i == 0 )
@@ -1469,8 +1472,8 @@ function runobjectivecam()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x412c
+// Params 1
+// Checksum 0x0, Offset: 0x4199
 // Size: 0x8d
 function bombtimerwait( objectivekey )
 {
@@ -1485,8 +1488,8 @@ function bombtimerwait( objectivekey )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x41c1
+// Params 4
+// Checksum 0x0, Offset: 0x422e
 // Size: 0x7f
 function updatetimerconstant( omnvar, var_4dfaa92e2bce1194, bombtimer, objectivekey )
 {
@@ -1503,8 +1506,8 @@ function updatetimerconstant( omnvar, var_4dfaa92e2bce1194, bombtimer, objective
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4248
+// Params 2
+// Checksum 0x0, Offset: 0x42b5
 // Size: 0x68
 function handlehostmigration( var_4dfaa92e2bce1194, objectivekey )
 {
@@ -1522,8 +1525,8 @@ function handlehostmigration( var_4dfaa92e2bce1194, objectivekey )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42b8
+// Params 1
+// Checksum 0x0, Offset: 0x4325
 // Size: 0xaf
 function bombdefused( sitedefused )
 {
@@ -1543,8 +1546,8 @@ function bombdefused( sitedefused )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x436f
+// Params 1
+// Checksum 0x0, Offset: 0x43dc
 // Size: 0xb1
 function updatebombplantedomnvar( plantteam )
 {
@@ -1590,8 +1593,8 @@ function updatebombplantedomnvar( plantteam )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4428
+// Params 1
+// Checksum 0x0, Offset: 0x4495
 // Size: 0x2b
 function setbombtimeromnvars( plantteam )
 {
@@ -1600,9 +1603,9 @@ function setbombtimeromnvars( plantteam )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x445b
-// Size: 0x3e2
+// Params 2
+// Checksum 0x0, Offset: 0x44c8
+// Size: 0x402
 function bombzone_setupbombcase( bombname, overrideorigin )
 {
     level.bombplanted = 0;
@@ -1671,7 +1674,7 @@ function bombzone_setupbombcase( bombname, overrideorigin )
     
     visuals[ 0 ] setnonstick( 1 );
     
-    if ( getgametype() == "defuse" )
+    if ( getgametype() == "defuse" || getgametype() == "hc_defuse" )
     {
         visuals[ 0 ].origin = trigger.origin;
     }
@@ -1691,7 +1694,7 @@ function bombzone_setupbombcase( bombname, overrideorigin )
         level.sdbomb.ondrop = &ondrop;
         level.sdbomb.firstpickup = 1;
         
-        if ( getgametype() != "defuse" )
+        if ( getgametype() != "defuse" && getgametype() != "hc_defuse" )
         {
             level thread bombsitewatcher();
         }
@@ -1708,8 +1711,8 @@ function bombzone_setupbombcase( bombname, overrideorigin )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4845
+// Params 2
+// Checksum 0x0, Offset: 0x48d2
 // Size: 0x20c
 function getadjustedfirstroundbombcaseposition( ent, istrigger )
 {
@@ -1779,8 +1782,8 @@ function getadjustedfirstroundbombcaseposition( ent, istrigger )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a5a
+// Params 2
+// Checksum 0x0, Offset: 0x4ae7
 // Size: 0x13b
 function movebombcase( newpos, newangles )
 {
@@ -1808,8 +1811,8 @@ function movebombcase( newpos, newangles )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b9d
+// Params 0
+// Checksum 0x0, Offset: 0x4c2a
 // Size: 0xbd
 function bombsitewatcher()
 {
@@ -1839,8 +1842,8 @@ function bombsitewatcher()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c62
+// Params 3
+// Checksum 0x0, Offset: 0x4cef
 // Size: 0x2b1
 function onpickup( player, playervo, defused )
 {
@@ -1916,7 +1919,7 @@ function onpickup( player, playervo, defused )
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4f1b
+// Checksum 0x0, Offset: 0x4fa8
 // Size: 0x111
 function private function_7bc240fc69ea5205( player )
 {
@@ -1968,8 +1971,8 @@ function private function_7bc240fc69ea5205( player )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5034
+// Params 1
+// Checksum 0x0, Offset: 0x50c1
 // Size: 0x121
 function ondrop( player )
 {
@@ -2012,8 +2015,8 @@ function ondrop( player )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x515d
+// Params 1
+// Checksum 0x0, Offset: 0x51ea
 // Size: 0x65
 function waitforbombreset( timelimit )
 {
@@ -2025,8 +2028,8 @@ function waitforbombreset( timelimit )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x51ca
+// Params 0
+// Checksum 0x0, Offset: 0x5257
 // Size: 0x7c
 function enablemultibombui()
 {
@@ -2040,8 +2043,8 @@ function enablemultibombui()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x524e
+// Params 0
+// Checksum 0x0, Offset: 0x52db
 // Size: 0x3b
 function respawnbombcase()
 {
@@ -2058,8 +2061,8 @@ function respawnbombcase()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5291
+// Params 0
+// Checksum 0x0, Offset: 0x531e
 // Size: 0xa3
 function advancebombcase()
 {
@@ -2078,8 +2081,8 @@ function advancebombcase()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x533c
+// Params 0
+// Checksum 0x0, Offset: 0x53c9
 // Size: 0xd1
 function applybombcarrierclass()
 {
@@ -2113,8 +2116,8 @@ function applybombcarrierclass()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5415
+// Params 0
+// Checksum 0x0, Offset: 0x54a2
 // Size: 0x99
 function removebombcarrierclass()
 {
@@ -2145,8 +2148,8 @@ function removebombcarrierclass()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54b6
+// Params 2
+// Checksum 0x0, Offset: 0x5543
 // Size: 0x236
 function bombzone_awardgenericbombzonemedals( attacker, victim )
 {
@@ -2192,8 +2195,8 @@ function bombzone_awardgenericbombzonemedals( attacker, victim )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x56f4
+// Params 3
+// Checksum 0x0, Offset: 0x5781
 // Size: 0x5c
 function distsquaredcheck( attackerpos, victimpos, checkpos )
 {
@@ -2209,8 +2212,8 @@ function distsquaredcheck( attackerpos, victimpos, checkpos )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5758
+// Params 1
+// Checksum 0x0, Offset: 0x57e5
 // Size: 0x13, Type: bool
 function function_8192fdad48c58795( player )
 {
@@ -2218,8 +2221,8 @@ function function_8192fdad48c58795( player )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5774
+// Params 2
+// Checksum 0x0, Offset: 0x5801
 // Size: 0x6c
 function playerdelayedvo( player, var_a675744864c65c1 )
 {
@@ -2248,8 +2251,8 @@ function playerdelayedvo( player, var_a675744864c65c1 )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x57e8
+// Params 2
+// Checksum 0x0, Offset: 0x5875
 // Size: 0x71
 function teamdelayedvo( team, excludelist )
 {
@@ -2277,9 +2280,9 @@ function teamdelayedvo( team, excludelist )
 /#
 
     // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5861
-    // Size: 0x33d, Type: dev
+    // Params 0
+    // Checksum 0x0, Offset: 0x58ee
+    // Size: 0x35d, Type: dev
     function function_b217c136e8889619()
     {
         level endon( "<dev string:x25>" );
@@ -2311,7 +2314,7 @@ function teamdelayedvo( team, excludelist )
                             {
                                 bombsite [[ bombsite.onuse ]]( p );
                                 
-                                if ( getgametype() != "<dev string:x104>" )
+                                if ( getgametype() != "<dev string:x104>" && getgametype() != "<dev string:x10e>" )
                                 {
                                     setdevdvar( @"hash_31674c76da07f46f", 0 );
                                 }
@@ -2329,7 +2332,7 @@ function teamdelayedvo( team, excludelist )
             {
                 foreach ( p in level.players )
                 {
-                    if ( isreallyalive( p ) && p.team == "<dev string:x10e>" )
+                    if ( isreallyalive( p ) && p.team == "<dev string:x11b>" )
                     {
                         level.sdbomb.safeorigin = level.sdbomb.trigger.origin;
                         level.sdbomb.carrier = p;
@@ -2343,7 +2346,7 @@ function teamdelayedvo( team, excludelist )
                             {
                                 bombsite [[ bombsite.onuse ]]( p );
                                 
-                                if ( getgametype() != "<dev string:x104>" )
+                                if ( getgametype() != "<dev string:x104>" && getgametype() != "<dev string:x10e>" )
                                 {
                                     setdevdvar( @"hash_c65dbfe96fb1f3c4", 0 );
                                 }
@@ -2360,19 +2363,19 @@ function teamdelayedvo( team, excludelist )
             wait 1;
         }
         
-        level waittill( "<dev string:x116>" );
+        level waittill( "<dev string:x123>" );
         thread function_b217c136e8889619();
     }
 
     // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5ba6
-    // Size: 0x1c1, Type: dev
+    // Params 0
+    // Checksum 0x0, Offset: 0x5c53
+    // Size: 0x1e1, Type: dev
     function function_bf6c5903e37dec2a()
     {
         level endon( "<dev string:x25>" );
-        self notify( "<dev string:x126>" );
-        self endon( "<dev string:x126>" );
+        self notify( "<dev string:x133>" );
+        self endon( "<dev string:x133>" );
         self endon( "<dev string:xe6>" );
         wait 5;
         
@@ -2386,7 +2389,7 @@ function teamdelayedvo( team, excludelist )
                     {
                         level.defuseobject [[ level.defuseobject.onuse ]]( p );
                         
-                        if ( getgametype() != "<dev string:x104>" )
+                        if ( getgametype() != "<dev string:x104>" && getgametype() != "<dev string:x10e>" )
                         {
                             setdevdvar( @"hash_18728111915eef48", 0 );
                         }
@@ -2400,11 +2403,11 @@ function teamdelayedvo( team, excludelist )
             {
                 foreach ( p in level.players )
                 {
-                    if ( isreallyalive( p ) && p.team == "<dev string:x10e>" )
+                    if ( isreallyalive( p ) && p.team == "<dev string:x11b>" )
                     {
                         level.defuseobject [[ level.defuseobject.onuse ]]( p );
                         
-                        if ( getgametype() != "<dev string:x104>" )
+                        if ( getgametype() != "<dev string:x104>" && getgametype() != "<dev string:x10e>" )
                         {
                             setdevdvar( @"hash_af011dbf40cf4773", 0 );
                         }
@@ -2417,15 +2420,15 @@ function teamdelayedvo( team, excludelist )
             wait 1;
         }
         
-        level waittill( "<dev string:x138>" );
+        level waittill( "<dev string:x145>" );
         thread function_bf6c5903e37dec2a();
     }
 
 #/
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d6f
+// Params 0
+// Checksum 0x0, Offset: 0x5e3c
 // Size: 0xad
 function function_6ce00dcd19d4f8dd()
 {
@@ -2442,8 +2445,8 @@ function function_6ce00dcd19d4f8dd()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e24
+// Params 2
+// Checksum 0x0, Offset: 0x5ef1
 // Size: 0x166
 function function_5faaf80e767da9ce( bombzone, raycastdistance )
 {
@@ -2496,8 +2499,8 @@ function function_5faaf80e767da9ce( bombzone, raycastdistance )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f93
+// Params 0
+// Checksum 0x0, Offset: 0x6060
 // Size: 0xf
 function resetuiomnvargamemode()
 {
@@ -2505,8 +2508,8 @@ function resetuiomnvargamemode()
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5faa
+// Params 1
+// Checksum 0x0, Offset: 0x6077
 // Size: 0x3f
 function setteaminhuddatafromteamname( teamname )
 {
@@ -2526,8 +2529,8 @@ function setteaminhuddatafromteamname( teamname )
 }
 
 // Namespace obj_bombzone / scripts\mp\gametypes\obj_bombzone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ff1
+// Params 1
+// Checksum 0x0, Offset: 0x60be
 // Size: 0x61
 function function_f1ce924cd6279917( bombzone )
 {

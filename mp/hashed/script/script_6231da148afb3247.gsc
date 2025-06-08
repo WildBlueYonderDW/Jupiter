@@ -12,7 +12,7 @@
 #namespace warrior_beatupthecar;
 
 // Namespace warrior_beatupthecar / namespace_dc52e0a4898a4de7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ef
 // Size: 0x53
 function function_1622b20751666c1d()
@@ -25,7 +25,7 @@ function function_1622b20751666c1d()
 }
 
 // Namespace warrior_beatupthecar / namespace_dc52e0a4898a4de7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24a
 // Size: 0x65
 function function_8c0bfe15c3fac89()
@@ -39,7 +39,7 @@ function function_8c0bfe15c3fac89()
 }
 
 // Namespace warrior_beatupthecar / namespace_dc52e0a4898a4de7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b7
 // Size: 0x73
 function onplayerspawned()
@@ -60,7 +60,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_beatupthecar / namespace_dc52e0a4898a4de7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x332
 // Size: 0x11f
 function function_f560b74b0bdcaed6()
@@ -91,7 +91,7 @@ function function_f560b74b0bdcaed6()
 }
 
 // Namespace warrior_beatupthecar / namespace_dc52e0a4898a4de7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x459
 // Size: 0xc8
 function function_f644d0ca00a39fac( team )
@@ -118,20 +118,20 @@ function function_f644d0ca00a39fac( team )
 }
 
 // Namespace warrior_beatupthecar / namespace_dc52e0a4898a4de7
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x529
-// Size: 0x37
+// Size: 0x38
 function function_790fe4a541aaf2e9( team )
 {
     level endon( "warrior_beatupthecar_complete" );
     self waittill( "death" );
-    scripts\mp\gamelogic::endgame( team, game[ "end_reason" ][ "objective_completed" ] );
+    thread scripts\mp\gamelogic::endgame( team, game[ "end_reason" ][ "objective_completed" ] );
     level notify( "warrior_beatupthecar_complete" );
 }
 
 // Namespace warrior_beatupthecar / namespace_dc52e0a4898a4de7
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x568
+// Params 3
+// Checksum 0x0, Offset: 0x569
 // Size: 0x43
 function function_1d85758902f3471( winner, endreasontext, nukedetonated )
 {
@@ -148,7 +148,7 @@ function function_1d85758902f3471( winner, endreasontext, nukedetonated )
 
 // Namespace warrior_beatupthecar / namespace_dc52e0a4898a4de7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5b4
+// Checksum 0x0, Offset: 0x5b5
 // Size: 0xd, Type: bool
 function private modeallowmeleevehicledamage( data )
 {
@@ -156,8 +156,8 @@ function private modeallowmeleevehicledamage( data )
 }
 
 // Namespace warrior_beatupthecar / namespace_dc52e0a4898a4de7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ca
+// Params 0
+// Checksum 0x0, Offset: 0x5cb
 // Size: 0x115
 function function_aa09fe28d9f1adc0()
 {

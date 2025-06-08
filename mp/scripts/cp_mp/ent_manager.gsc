@@ -4,7 +4,7 @@
 #namespace ent_manager;
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98
 // Size: 0x2f
 function init()
@@ -15,7 +15,7 @@ function init()
 }
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcf
 // Size: 0x30
 function registerspawncount( entcount )
@@ -26,7 +26,7 @@ function registerspawncount( entcount )
 }
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107
 // Size: 0xa4
 function deregisterspawn()
@@ -52,7 +52,7 @@ function deregisterspawn()
 }
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b3
 // Size: 0x5e
 function registerspawn( entcount, deletefunc )
@@ -70,7 +70,7 @@ function registerspawn( entcount, deletefunc )
 }
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x219
 // Size: 0x94
 function updatebudget()
@@ -94,7 +94,7 @@ function updatebudget()
 /#
 
     // Namespace ent_manager / scripts\cp_mp\ent_manager
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2b5
     // Size: 0x7c, Type: dev
     function function_a5aa9e07f21b879e()

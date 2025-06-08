@@ -9,7 +9,7 @@
 #namespace perk_death_perception;
 
 // Namespace perk_death_perception / namespace_41c66c2a436d7e54
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d1
 // Size: 0x47
 function function_3898a008fcd449e9( str_currency, var_fe59c44529c721a0 )
@@ -19,7 +19,7 @@ function function_3898a008fcd449e9( str_currency, var_fe59c44529c721a0 )
 }
 
 // Namespace perk_death_perception / namespace_41c66c2a436d7e54
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x220
 // Size: 0x39
 function function_b082d082ea19d61e()
@@ -35,7 +35,7 @@ function function_b082d082ea19d61e()
 }
 
 // Namespace perk_death_perception / namespace_41c66c2a436d7e54
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x261
 // Size: 0x232
 function function_a3cd1789cdd98eb4()
@@ -109,7 +109,7 @@ function function_a3cd1789cdd98eb4()
 }
 
 // Namespace perk_death_perception / namespace_41c66c2a436d7e54
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49b
 // Size: 0x16e
 function function_236b011a322933f()
@@ -164,7 +164,7 @@ function function_236b011a322933f()
 }
 
 // Namespace perk_death_perception / namespace_41c66c2a436d7e54
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x611
 // Size: 0x14, Type: bool
 function function_86eebb20520a5e5d()
@@ -173,7 +173,7 @@ function function_86eebb20520a5e5d()
 }
 
 // Namespace perk_death_perception / namespace_41c66c2a436d7e54
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x62e
 // Size: 0x150
 function function_548af41a7d702704( b_pause, str_perk, str_result, n_slot )

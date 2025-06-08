@@ -10,7 +10,7 @@
 #namespace deadwire;
 
 // Namespace deadwire / namespace_1796345de585c9dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x286
 // Size: 0x213
 function init_deadwire()
@@ -45,7 +45,7 @@ function init_deadwire()
 }
 
 // Namespace deadwire / namespace_1796345de585c9dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a1
 // Size: 0x21
 function function_ca3453d66c7654b5( func )
@@ -54,7 +54,7 @@ function function_ca3453d66c7654b5( func )
 }
 
 // Namespace deadwire / namespace_1796345de585c9dd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ca
 // Size: 0x21
 function function_48c02397f0acdf83( func )
@@ -63,7 +63,7 @@ function function_48c02397f0acdf83( func )
 }
 
 // Namespace deadwire / namespace_1796345de585c9dd
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x4f3
 // Size: 0x18f
 function function_9f332972d199fdda( death, attacker, mod, sweapon, vpoint, shitloc, modelindex )
@@ -96,7 +96,7 @@ function function_9f332972d199fdda( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace deadwire / namespace_1796345de585c9dd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68a
 // Size: 0xab, Type: bool
 function function_34506c532bfbda54()
@@ -128,7 +128,7 @@ function function_34506c532bfbda54()
 }
 
 // Namespace deadwire / namespace_1796345de585c9dd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x73e
 // Size: 0x6f
 function function_dc3f0e5b8db53339( damage, attacker, weapon )
@@ -142,7 +142,7 @@ function function_dc3f0e5b8db53339( damage, attacker, weapon )
 }
 
 // Namespace deadwire / namespace_1796345de585c9dd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7b5
 // Size: 0xac
 function wait_till_stun_end( attacker, weapon )
@@ -166,7 +166,7 @@ function wait_till_stun_end( attacker, weapon )
 }
 
 // Namespace deadwire / namespace_1796345de585c9dd
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x869
 // Size: 0x5e0
 function deadwire_timer( death, attacker, mod, sweapon, vpoint, shitloc, modelindex )
@@ -307,7 +307,7 @@ function deadwire_timer( death, attacker, mod, sweapon, vpoint, shitloc, modelin
 /#
 
     // Namespace deadwire / namespace_1796345de585c9dd
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xe51
     // Size: 0x7b, Type: dev
     function function_9a617a4a862078ca()
@@ -321,7 +321,7 @@ function deadwire_timer( death, attacker, mod, sweapon, vpoint, shitloc, modelin
     }
 
     // Namespace deadwire / namespace_1796345de585c9dd
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xed4
     // Size: 0x2f, Type: dev
     function function_6c46532ee1ae7b03()

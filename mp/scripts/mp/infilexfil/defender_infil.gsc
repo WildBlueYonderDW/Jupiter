@@ -15,7 +15,7 @@
 #namespace defender_infil;
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x798
 // Size: 0x9d
 function defender_init( subtype )
@@ -36,7 +36,7 @@ function defender_init( subtype )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x83d
 // Size: 0x8a
 function defender_spawn( team, target, subtype, originalsubtype )
@@ -50,7 +50,7 @@ function defender_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d0
 // Size: 0x32
 function function_f17139f61f2df6f2( subtype )
@@ -60,7 +60,7 @@ function function_f17139f61f2df6f2( subtype )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x90b
 // Size: 0x27f
 function function_5a3e8cbaff52f088( infil, spot_index )
@@ -125,7 +125,7 @@ function function_5a3e8cbaff52f088( infil, spot_index )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb92
 // Size: 0x2c
 function resetfov()
@@ -141,7 +141,7 @@ function resetfov()
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc6
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -159,7 +159,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc0a
 // Size: 0x48
 function player_infil_end()
@@ -174,7 +174,7 @@ function player_infil_end()
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc5a
 // Size: 0x4c
 function player_disconnect()
@@ -193,7 +193,7 @@ function player_disconnect()
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcae
 // Size: 0xda
 function infilthink( team, scene_name )
@@ -220,7 +220,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd90
 // Size: 0xb0
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -241,7 +241,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe48
 // Size: 0x360
 function initanims( subtype )
@@ -282,7 +282,7 @@ function initanims( subtype )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11b0
 // Size: 0x404
 function function_487431cf3b99e0b8( subtype )
@@ -335,7 +335,7 @@ function function_487431cf3b99e0b8( subtype )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15bc
 // Size: 0x82
 function function_7b7d0c2db72b128( subtype )
@@ -354,7 +354,7 @@ function function_7b7d0c2db72b128( subtype )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1646
 // Size: 0xea
 function function_90a059c97e2970b7( scene_node, team, scene_name )
@@ -380,7 +380,7 @@ function function_90a059c97e2970b7( scene_node, team, scene_name )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1739
 // Size: 0x34
 function scn_infil_defender_npc1( guy )
@@ -394,7 +394,7 @@ function scn_infil_defender_npc1( guy )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1775
 // Size: 0x34
 function scn_infil_defender_npc2( guy )
@@ -408,7 +408,7 @@ function scn_infil_defender_npc2( guy )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17b1
 // Size: 0x34
 function scn_infil_defender_npc3( guy )
@@ -422,7 +422,7 @@ function scn_infil_defender_npc3( guy )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17ed
 // Size: 0x34
 function scn_infil_defender_npc4( guy )
@@ -436,7 +436,7 @@ function scn_infil_defender_npc4( guy )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1829
 // Size: 0x34
 function scn_infil_defender_npc5( guy )
@@ -450,7 +450,7 @@ function scn_infil_defender_npc5( guy )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1865
 // Size: 0x34
 function scn_infil_defender_npc6( guy )
@@ -464,7 +464,7 @@ function scn_infil_defender_npc6( guy )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18a1
 // Size: 0x34
 function scn_infil_defender_door( guy )
@@ -478,7 +478,7 @@ function scn_infil_defender_door( guy )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18dd
 // Size: 0xd2
 function infil_radio_idle( infil )
@@ -513,7 +513,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19b7
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -529,7 +529,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19ed
 // Size: 0x19
 function function_ede4acbf2fe2651b()
@@ -540,7 +540,7 @@ function function_ede4acbf2fe2651b()
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a0e
 // Size: 0x5b
 function function_5f4d9490ce6f6f25()
@@ -562,7 +562,7 @@ function function_5f4d9490ce6f6f25()
 }
 
 // Namespace defender_infil / scripts\mp\infilexfil\defender_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a72
 // Size: 0x13
 function function_6158ef142e9bd640()

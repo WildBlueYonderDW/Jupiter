@@ -48,7 +48,7 @@
 #namespace ko;
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1095
 // Size: 0x81b
 function main()
@@ -118,7 +118,8 @@ function main()
         }
     }
     
-    for (i = 0; i < level.var_82bd227d5fb7e96f.size; i++) {
+    for ( i = 0; i < level.var_82bd227d5fb7e96f.size ; i++ )
+    {
         level.var_82bd227d5fb7e96f[ i ] = scripts\mp\gametypes\ko::function_593bf7ddbfe1739f( level.var_82bd227d5fb7e96f[ i ] );
     }
     
@@ -267,7 +268,7 @@ function main()
     /#
         if ( getgametypenumlives() == 1 )
         {
-            setdvar( @"hash_e723cc761de7b161", 2 );
+            setdvar( @"scr_player_laststand", 2 );
         }
     #/
     
@@ -277,7 +278,7 @@ function main()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18b8
 // Size: 0x109
 function initializematchrules()
@@ -326,7 +327,7 @@ function private function_593bf7ddbfe1739f( position )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a91
 // Size: 0x17d
 function onstartgametype()
@@ -395,7 +396,7 @@ function onstartgametype()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c16
 // Size: 0x4c
 function function_4963c847ffc21a21( objective, waittime )
@@ -408,7 +409,7 @@ function function_4963c847ffc21a21( objective, waittime )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c6a
 // Size: 0x13
 function adjustroundendtimer()
@@ -418,7 +419,7 @@ function adjustroundendtimer()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c85
 // Size: 0x25
 function waittooverridegraceperiod()
@@ -432,7 +433,7 @@ function waittooverridegraceperiod()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cb2
 // Size: 0xb5
 function updategametypedvars()
@@ -448,7 +449,7 @@ function updategametypedvars()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d6f
 // Size: 0x4a
 function function_423b7147b1256abd()
@@ -466,7 +467,7 @@ function function_423b7147b1256abd()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1dc1
 // Size: 0x3ba
 function initspawns()
@@ -557,7 +558,7 @@ function initspawns()
 /#
 
     // Namespace ko / scripts\mp\gametypes\ko
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2183
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -573,7 +574,7 @@ function initspawns()
 #/
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21ee
 // Size: 0x23f
 function getspawnpoint()
@@ -665,7 +666,7 @@ function getspawnpoint()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2435
 // Size: 0x126
 function function_e4cc1e6807cb2252()
@@ -691,7 +692,7 @@ function function_e4cc1e6807cb2252()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2563
 // Size: 0xf8
 function setupwaypointicons()
@@ -707,7 +708,7 @@ function setupwaypointicons()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2663
 // Size: 0x224
 function createflagstart()
@@ -770,7 +771,7 @@ function createflagstart()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x288f
 // Size: 0x261
 function flaglockedtimer()
@@ -811,7 +812,7 @@ function flaglockedtimer()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2af8
 // Size: 0x4a8
 function function_e9d3abcf077fb817( team )
@@ -846,7 +847,7 @@ function function_e9d3abcf077fb817( team )
     
     if ( getdvarint( @"hash_25905f240af754f6" ) != 0 )
     {
-        teamflag scripts\mp\gameobjects::function_316d9da870e12a03( [ visuals[ 0 ] ], trigger, 1, 80, 0 );
+        teamflag scripts\mp\gameobjects::create_manual_drop_data_struct( [ visuals[ 0 ] ], trigger, 1, 80, 0 );
     }
     
     if ( isdefined( level.showenemycarrier ) )
@@ -911,7 +912,7 @@ function function_e9d3abcf077fb817( team )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2fa9
 // Size: 0x12b
 function createteamdefenderflagbase( team, teamflag )
@@ -938,7 +939,7 @@ function createteamdefenderflagbase( team, teamflag )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30dd
 // Size: 0x3f
 function setteaminhuddatafromteamname( teamname )
@@ -959,7 +960,7 @@ function setteaminhuddatafromteamname( teamname )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3124
 // Size: 0x13, Type: bool
 function flagpickupchecks( player )
@@ -968,7 +969,7 @@ function flagpickupchecks( player )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3140
 // Size: 0xb
 function onpickupfailed( player )
@@ -977,7 +978,7 @@ function onpickupfailed( player )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3154
 // Size: 0x3ce
 function onpickup( player, playervo, defused )
@@ -1124,7 +1125,7 @@ function private function_7bc240fc69ea5205( player )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x362b
 // Size: 0x1f
 function returnflag()
@@ -1134,7 +1135,7 @@ function returnflag()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3652
 // Size: 0x25d
 function ondrop( player )
@@ -1256,7 +1257,7 @@ function private function_8d6269bb8e0916de( player )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x399e
 // Size: 0xa9
 function returnaftertime()
@@ -1283,7 +1284,7 @@ function returnaftertime()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a4f
 // Size: 0x1de
 function onreset()
@@ -1338,7 +1339,7 @@ function onreset()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c35
 // Size: 0xa1
 function attachflag()
@@ -1360,7 +1361,7 @@ function attachflag()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cde
 // Size: 0x54
 function detachflag()
@@ -1395,7 +1396,7 @@ function private function_f6b7b661e990152( player )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d6a
 // Size: 0x89
 function awardobjtimeforcarrier( team )
@@ -1419,7 +1420,7 @@ function awardobjtimeforcarrier( team )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3dfb
 // Size: 0x151
 function function_9962a01f46dd3b58( team )
@@ -1468,7 +1469,7 @@ function function_9962a01f46dd3b58( team )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f54
 // Size: 0x7b
 function function_731aff3c7fe66e9f( flagholdtimer )
@@ -1488,7 +1489,7 @@ function function_731aff3c7fe66e9f( flagholdtimer )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fd7
 // Size: 0x51
 function function_8028646f3cc80ac4()
@@ -1500,7 +1501,7 @@ function function_8028646f3cc80ac4()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4030
 // Size: 0x49
 function function_20c16ddef8ce58e()
@@ -1512,7 +1513,7 @@ function function_20c16ddef8ce58e()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4081
 // Size: 0x1c, Type: bool
 function function_a64d63a207acdfe7()
@@ -1521,7 +1522,7 @@ function function_a64d63a207acdfe7()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40a6
 // Size: 0x1d, Type: bool
 function function_4d9dbf9e2aa4c0a6()
@@ -1530,7 +1531,7 @@ function function_4d9dbf9e2aa4c0a6()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x40cc
 // Size: 0x1f4
 function teamrespawn( team, credit_player )
@@ -1581,7 +1582,7 @@ function teamrespawn( team, credit_player )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42c8
 // Size: 0x47
 function function_cf40f9e06e5439ee( team )
@@ -1595,7 +1596,7 @@ function function_cf40f9e06e5439ee( team )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4317
 // Size: 0x69
 function function_e132900ca2c350be()
@@ -1613,7 +1614,7 @@ function function_e132900ca2c350be()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4388
 // Size: 0x90
 function function_983348e55e3f3e5( objectivetype )
@@ -1639,7 +1640,7 @@ function function_983348e55e3f3e5( objectivetype )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4420
 // Size: 0x72
 function onspawnplayer( revivespawn )
@@ -1659,7 +1660,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x449a
 // Size: 0x6d
 function updatematchstatushintonspawn()
@@ -1682,7 +1683,7 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x450f
 // Size: 0xb
 function onplayerconnect( player )
@@ -1691,7 +1692,7 @@ function onplayerconnect( player )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4522
 // Size: 0x96
 function ondeadevent( team )
@@ -1712,7 +1713,7 @@ function ondeadevent( team )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45c0
 // Size: 0x3a
 function ononeleftevent( team )
@@ -1727,7 +1728,7 @@ function ononeleftevent( team )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x4602
 // Size: 0x391
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1825,7 +1826,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x499b
 // Size: 0x5c
 function distsquaredcheck( attackerpos, victimpos, checkpos )
@@ -1842,7 +1843,7 @@ function distsquaredcheck( attackerpos, victimpos, checkpos )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x49ff
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -1851,7 +1852,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a47
 // Size: 0x86
 function givelastonteamwarning()
@@ -1867,7 +1868,7 @@ function givelastonteamwarning()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ad5
 // Size: 0x68
 function ontimelimit()
@@ -1916,7 +1917,7 @@ function private function_ef6c12412261af73( winner, endreasontext, endreasontext
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4be3
 // Size: 0x13c, Type: bool
 function breaktie()
@@ -1957,7 +1958,7 @@ function breaktie()
 /#
 
     // Namespace ko / scripts\mp\gametypes\ko
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4d28
     // Size: 0x1ee, Type: dev
     function function_bf2918399f1800b1()
@@ -1993,7 +1994,7 @@ function breaktie()
     }
 
     // Namespace ko / scripts\mp\gametypes\ko
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x4f1e
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -2032,7 +2033,7 @@ function breaktie()
 #/
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50a0
 // Size: 0x6a
 function vehiclespawn_getspawndata( loc )
@@ -2046,7 +2047,7 @@ function vehiclespawn_getspawndata( loc )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5113
 // Size: 0x7e
 function registervehicletype( refname, spawnvehiclecallback )
@@ -2061,7 +2062,7 @@ function registervehicletype( refname, spawnvehiclecallback )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5199
 // Size: 0x358
 function initvehicles()
@@ -2120,13 +2121,15 @@ function initvehicles()
     
     if ( false )
     {
-        for (i = 0; i < numtospawn; i++) {
+        for ( i = 0; i < numtospawn ; i++ )
+        {
             loc = level.vehiclespawnlocs[ i ];
             thread drawline( loc.origin + ( 0, 0, 1500 ), loc.origin + ( 0, 0, 2500 ), 1000, ( 0, 1, 0 ) );
         }
     }
     
-    for (i = 0; i < numtospawn; i++) {
+    for ( i = 0; i < numtospawn ; i++ )
+    {
         loc = level.vehiclespawnlocs[ i ];
         
         if ( isdefined( loc ) )
@@ -2138,7 +2141,7 @@ function initvehicles()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x54f9
 // Size: 0x148a
 function getvehiclespawns( vehicleref, vehicletype )
@@ -2458,7 +2461,8 @@ function getvehiclespawns( vehicleref, vehicletype )
     
     if ( vehicleref == "atv" )
     {
-        for (i = 0; i < atvoriginsarray.size; i++) {
+        for ( i = 0; i < atvoriginsarray.size ; i++ )
+        {
             if ( i <= atvoriginsarray.size - 1 )
             {
                 atvorigin = atvoriginsarray[ i ];
@@ -2474,7 +2478,8 @@ function getvehiclespawns( vehicleref, vehicletype )
     }
     else if ( vehicleref == "tac_rover" )
     {
-        for (i = 0; i < var_380b98510b5d0765.size; i++) {
+        for ( i = 0; i < var_380b98510b5d0765.size ; i++ )
+        {
             if ( i <= var_380b98510b5d0765.size - 1 )
             {
                 var_d82a9436eee389cb = var_380b98510b5d0765[ i ];
@@ -2491,7 +2496,8 @@ function getvehiclespawns( vehicleref, vehicletype )
     
     dvarstring = hashcat( @"hash_ad95d7262a11119e", vehicleref );
     
-    for (index = 0; true; index++) {
+    for ( index = 0; true ; index++ )
+    {
         origindvarstring = hashcat( dvarstring, "_origin_", index );
         angledvarstring = hashcat( dvarstring, "_angles_", index );
         defaultorigin = ( 0, 0, 0 );
@@ -2515,7 +2521,7 @@ function getvehiclespawns( vehicleref, vehicletype )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x698c
 // Size: 0x59
 function vehiclespawn_littlebird( loc, faildata )
@@ -2530,7 +2536,7 @@ function vehiclespawn_littlebird( loc, faildata )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x69ee
 // Size: 0x59
 function vehiclespawn_atv( loc, faildata )
@@ -2545,7 +2551,7 @@ function vehiclespawn_atv( loc, faildata )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6a50
 // Size: 0x59
 function vehiclespawn_tacrover( loc, faildata )
@@ -2560,7 +2566,7 @@ function vehiclespawn_tacrover( loc, faildata )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ab2
 // Size: 0xde
 function filtervehiclespawnstructs( structs )
@@ -2584,7 +2590,7 @@ function filtervehiclespawnstructs( structs )
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b99
 // Size: 0x9
 function function_ba7699d705fb8850()
@@ -2593,7 +2599,7 @@ function function_ba7699d705fb8850()
 }
 
 // Namespace ko / scripts\mp\gametypes\ko
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6baa
 // Size: 0x61, Type: bool
 function function_bd59438ee37ccc48( point )

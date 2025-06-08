@@ -1,7 +1,7 @@
 #namespace face;
 
 // Namespace face / scripts\anim\face
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21d
 // Size: 0x438
 function saygenericdialogue( typestring )
@@ -142,7 +142,7 @@ function saygenericdialogue( typestring )
 }
 
 // Namespace face / scripts\anim\face
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x65d
 // Size: 0x1d
 function sayspecificdialogue( soundalias, notifystring )
@@ -151,7 +151,7 @@ function sayspecificdialogue( soundalias, notifystring )
 }
 
 // Namespace face / scripts\anim\face
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x682
 // Size: 0x42
 function playfacethread( soundalias, notifystring )
@@ -171,7 +171,7 @@ function playfacethread( soundalias, notifystring )
 }
 
 // Namespace face / scripts\anim\face
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6cc
 // Size: 0x6e
 function playfacesound( alias, notification, var_9a0afe8ff3d2508f )
@@ -198,7 +198,7 @@ function playfacesound( alias, notification, var_9a0afe8ff3d2508f )
 }
 
 // Namespace face / scripts\anim\face
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x742
 // Size: 0x20
 function waitforfacesound( msg )
@@ -209,7 +209,7 @@ function waitforfacesound( msg )
 }
 
 // Namespace face / scripts\anim\face
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x76a
 // Size: 0x2a
 function initlevelface()
@@ -221,7 +221,7 @@ function initlevelface()
 }
 
 // Namespace face / scripts\anim\face
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79c
 // Size: 0xc
 function initfacialanims()
@@ -230,7 +230,7 @@ function initfacialanims()
 }
 
 // Namespace face / scripts\anim\face
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b0
 // Size: 0x16
 function animhasfacialoverride( a_anim )
@@ -239,7 +239,7 @@ function animhasfacialoverride( a_anim )
 }
 
 // Namespace face / scripts\anim\face
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7cf
 // Size: 0xf5
 function playfacialanim( a_anim, a_state, a_idx )

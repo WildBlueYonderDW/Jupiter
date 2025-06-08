@@ -5,7 +5,7 @@
 #namespace gameskill;
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfa
 // Size: 0x2f
 function get_skill_from_index( index )
@@ -19,7 +19,7 @@ function get_skill_from_index( index )
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x132
 // Size: 0x55
 function apply_difficulty_settings_shared( current_frac )
@@ -31,7 +31,7 @@ function apply_difficulty_settings_shared( current_frac )
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18f
 // Size: 0x1c
 function get_difficultysetting_frac( setting, frac )
@@ -40,7 +40,7 @@ function get_difficultysetting_frac( setting, frac )
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b4
 // Size: 0x36
 function get_difficultysetting( setting, gameskill )
@@ -54,7 +54,7 @@ function get_difficultysetting( setting, gameskill )
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f3
 // Size: 0x26
 function get_difficultysetting_global( setting )
@@ -63,7 +63,7 @@ function get_difficultysetting_global( setting )
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x222
 // Size: 0x3, Type: bool
 function always_pain()
@@ -72,7 +72,7 @@ function always_pain()
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22e
 // Size: 0x17, Type: bool
 function pain_protection()
@@ -86,7 +86,7 @@ function pain_protection()
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24e
 // Size: 0xa3, Type: bool
 function pain_protection_check()
@@ -122,7 +122,7 @@ function pain_protection_check()
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fa
 // Size: 0xa3
 function set_accuracy_based_on_situation()
@@ -153,7 +153,7 @@ function set_accuracy_based_on_situation()
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a5
 // Size: 0xc
 function didsomethingotherthanshooting()
@@ -162,7 +162,7 @@ function didsomethingotherthanshooting()
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b9
 // Size: 0x14
 function resetmissdebouncetime()
@@ -171,7 +171,7 @@ function resetmissdebouncetime()
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d5
 // Size: 0x59
 function default_door_node_flashbang_frequency()
@@ -194,7 +194,7 @@ function default_door_node_flashbang_frequency()
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x436
 // Size: 0x53
 function grenadeawareness()
@@ -214,7 +214,7 @@ function grenadeawareness()
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x491
 // Size: 0x4c
 function map_is_early_in_the_game()
@@ -237,7 +237,7 @@ function map_is_early_in_the_game()
 }
 
 // Namespace gameskill / scripts\common\gameskill
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e6
 // Size: 0xc
 function set_early_level()

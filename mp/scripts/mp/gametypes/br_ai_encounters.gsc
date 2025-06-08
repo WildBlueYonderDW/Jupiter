@@ -20,7 +20,7 @@
 #namespace br_ai_encounters;
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe15
 // Size: 0x94
 function init()
@@ -51,7 +51,7 @@ function init()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xeb1
 // Size: 0x21
 function add_encounter_start_condition( func, params )
@@ -60,7 +60,7 @@ function add_encounter_start_condition( func, params )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xeda
 // Size: 0x21
 function add_location_start_condition( func, params )
@@ -69,7 +69,7 @@ function add_location_start_condition( func, params )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf03
 // Size: 0x87
 function add_condition( category, func, params )
@@ -87,7 +87,7 @@ function add_condition( category, func, params )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf92
 // Size: 0x33
 function add_encounter_start_function( func )
@@ -101,7 +101,7 @@ function add_encounter_start_function( func )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfcd
 // Size: 0x319
 function init_encounters()
@@ -160,7 +160,7 @@ function init_encounters()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12ee
 // Size: 0xef
 function init_encounter( name, parent )
@@ -193,7 +193,7 @@ function init_encounter( name, parent )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13e6
 // Size: 0x86
 function init_locations()
@@ -213,7 +213,7 @@ function init_locations()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1474
 // Size: 0x116
 function init_location( location )
@@ -244,7 +244,7 @@ function init_location( location )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1592
 // Size: 0x64
 function encounter_manager()
@@ -269,7 +269,7 @@ function encounter_manager()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15fe
 // Size: 0xde
 function update_conditions( encounters )
@@ -296,9 +296,9 @@ function update_conditions( encounters )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e4
-// Size: 0x19, Type: bool
+// Size: 0x19
 function check_encounter_start_conditions()
 {
     /#
@@ -309,9 +309,9 @@ function check_encounter_start_conditions()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1706
-// Size: 0x22, Type: bool
+// Size: 0x22
 function check_location_start_conditions()
 {
     /#
@@ -322,7 +322,7 @@ function check_location_start_conditions()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1731
 // Size: 0xf6, Type: bool
 function check_start_conditions( encounter, conditiontype, var_dd61ff0f315b80ed )
@@ -340,7 +340,8 @@ function check_start_conditions( encounter, conditiontype, var_dd61ff0f315b80ed 
         return true;
     }
     
-    for (i = 0; i < encounter.startconditions[ conditiontype ].size; i++) {
+    for ( i = 0; i < encounter.startconditions[ conditiontype ].size ; i++ )
+    {
         condition = encounter.startconditions[ conditiontype ][ i ];
         
         if ( isdefined( condition.params ) )
@@ -369,7 +370,7 @@ function check_start_conditions( encounter, conditiontype, var_dd61ff0f315b80ed 
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1830
 // Size: 0x58
 function encounter_start( location )
@@ -386,7 +387,7 @@ function encounter_start( location )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1890
 // Size: 0x1e
 function encounter_location_start_functions( location )
@@ -395,7 +396,7 @@ function encounter_location_start_functions( location )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18b6
 // Size: 0x54
 function encounter_start_functions( encounter )
@@ -416,7 +417,7 @@ function encounter_start_functions( encounter )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1912
 // Size: 0x121
 function encounter_end( success, successteam )
@@ -456,7 +457,7 @@ function encounter_end( success, successteam )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a3b
 // Size: 0x25, Type: bool
 function condition_disabled( encounter )
@@ -473,7 +474,7 @@ function condition_disabled( encounter )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a69
 // Size: 0x54, Type: bool
 function condition_stateis( state )
@@ -495,7 +496,7 @@ function condition_stateis( state )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ac6
 // Size: 0xc0, Type: bool
 function condition_anyplayerinsideradius( radius )
@@ -507,7 +508,8 @@ function condition_anyplayerinsideradius( radius )
     radiussqr = radius * radius;
     sortedplayers = sortbydistance( level.players, self.origin );
     
-    for (i = 0; i < sortedplayers.size; i++) {
+    for ( i = 0; i < sortedplayers.size ; i++ )
+    {
         player = sortedplayers[ i ];
         
         if ( !isalive( player ) )
@@ -533,7 +535,7 @@ function condition_anyplayerinsideradius( radius )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b8f
 // Size: 0xd2, Type: bool
 function condition_allplayersoutsideradius( radius )
@@ -545,7 +547,8 @@ function condition_allplayersoutsideradius( radius )
     radiussqr = radius * radius;
     sortedplayers = sortbydistance( level.players, self.origin );
     
-    for (i = 0; i < sortedplayers.size; i++) {
+    for ( i = 0; i < sortedplayers.size ; i++ )
+    {
         player = sortedplayers[ i ];
         
         if ( !isalive( player ) )
@@ -571,7 +574,7 @@ function condition_allplayersoutsideradius( radius )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c6a
 // Size: 0xa9, Type: bool
 function condition_insafecircle()
@@ -611,7 +614,7 @@ function condition_insafecircle()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d1c
 // Size: 0x95, Type: bool
 function condition_circlecount( mincircles )
@@ -649,7 +652,7 @@ function condition_circlecount( mincircles )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dba
 // Size: 0xc0, Type: bool
 function condition_circlesremaining( mincircles )
@@ -688,7 +691,7 @@ function condition_circlesremaining( mincircles )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e83
 // Size: 0xbe, Type: bool
 function condition_maxaliveplayers( maxaliveplayers )
@@ -726,7 +729,7 @@ function condition_maxaliveplayers( maxaliveplayers )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f4a
 // Size: 0x49, Type: bool
 function condition_maxactivelocations( maxactive )
@@ -748,7 +751,7 @@ function condition_maxactivelocations( maxactive )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f9c
 // Size: 0x4f, Type: bool
 function condition_mintimepassed( timesec )
@@ -772,7 +775,7 @@ function condition_mintimepassed( timesec )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ff4
 // Size: 0x8a, Type: bool
 function condition_lastencounterstarttime( timesec )
@@ -801,7 +804,7 @@ function condition_lastencounterstarttime( timesec )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2087
 // Size: 0x4f, Type: bool
 function condition_prematchdone()
@@ -832,7 +835,7 @@ function condition_prematchdone()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20df
 // Size: 0x35, Type: bool
 function condition_debugpaused()
@@ -854,7 +857,7 @@ function condition_debugpaused()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x211d
 // Size: 0x39
 function successcondition_enemykills( numkills )
@@ -873,7 +876,7 @@ function successcondition_enemykills( numkills )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x215e
 // Size: 0x82
 function failcondition_noplayersinengagedradius( timesec )
@@ -912,7 +915,7 @@ function failcondition_noplayersinengagedradius( timesec )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21e8
 // Size: 0xe0
 function failcondition_outsidedangercircle()
@@ -959,7 +962,7 @@ function failcondition_outsidedangercircle()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22d0
 // Size: 0xa9
 function targetstart_spawner( target )
@@ -994,7 +997,7 @@ function targetstart_spawner( target )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2382
 // Size: 0x115
 function targetstart_spawner_init( spawner )
@@ -1029,7 +1032,7 @@ function targetstart_spawner_init( spawner )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x249f
 // Size: 0x49
 function targetstart_spawner_node( spawner, node )
@@ -1043,7 +1046,7 @@ function targetstart_spawner_node( spawner, node )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x24f0
 // Size: 0x5e
 function targetstart_spawner_volume( spawner, volume, auto )
@@ -1058,7 +1061,7 @@ function targetstart_spawner_volume( spawner, volume, auto )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2556
 // Size: 0x82
 function targetstart_icon( iconstruct )
@@ -1075,7 +1078,7 @@ function targetstart_icon( iconstruct )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25e0
 // Size: 0x199
 function targetstart_reward( rewardstruct )
@@ -1146,7 +1149,7 @@ function targetstart_reward( rewardstruct )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2781
 // Size: 0xa3
 function targetstart_reward_prespawn( rewardstruct )
@@ -1176,7 +1179,7 @@ function targetstart_reward_prespawn( rewardstruct )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x282c
 // Size: 0xd4
 function rewardspawn( rewardstruct, modifier )
@@ -1211,7 +1214,7 @@ function rewardspawn( rewardstruct, modifier )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2909
 // Size: 0xf2
 function rewardobjectlock( rewardobject, unlockedplayers, lockedplayers )
@@ -1235,7 +1238,7 @@ function rewardobjectlock( rewardobject, unlockedplayers, lockedplayers )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a03
 // Size: 0x52
 function rewardobjectlockthink( lock, rewardobject )
@@ -1247,7 +1250,7 @@ function rewardobjectlockthink( lock, rewardobject )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a5d
 // Size: 0x23
 function rewardobjectusewatch( rewardobject )
@@ -1263,7 +1266,7 @@ function rewardobjectusewatch( rewardobject )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a88
 // Size: 0x32
 function rewardobjectcleanup( rewardobject )
@@ -1283,7 +1286,7 @@ function rewardobjectcleanup( rewardobject )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ac2
 // Size: 0x67
 function rewardobjectsetusable( rewardobject, var_9509c12edf4f2c41 )
@@ -1297,7 +1300,7 @@ function rewardobjectsetusable( rewardobject, var_9509c12edf4f2c41 )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b31
 // Size: 0x8f
 function rewardicon( rewardobject, iconshader, showtoplayers )
@@ -1321,7 +1324,7 @@ function rewardicon( rewardobject, iconshader, showtoplayers )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2bc8
 // Size: 0x8d
 function createrewardicon( rewardobject, iconshader )
@@ -1342,7 +1345,7 @@ function createrewardicon( rewardobject, iconshader )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c5e
 // Size: 0x1b
 function rewardiconcleanup( id )
@@ -1352,7 +1355,7 @@ function rewardiconcleanup( id )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c81
 // Size: 0x9e
 function icon_update_visibility( objid )
@@ -1379,7 +1382,7 @@ function icon_update_visibility( objid )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d27
 // Size: 0x1ae
 function spawn_agent( infostruct )
@@ -1418,7 +1421,7 @@ function spawn_agent( infostruct )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ede
 // Size: 0x3e
 function watch_agent_death( agent )
@@ -1430,7 +1433,7 @@ function watch_agent_death( agent )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f24
 // Size: 0x91
 function targetstart_spawntrigger( trigger )
@@ -1456,7 +1459,7 @@ function targetstart_spawntrigger( trigger )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fbd
 // Size: 0x2f
 function root_ecounterstart()
@@ -1475,7 +1478,7 @@ function root_ecounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ff4
 // Size: 0x16
 function root_getspawneraitype( spawner )
@@ -1484,7 +1487,7 @@ function root_getspawneraitype( spawner )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3013
 // Size: 0x112
 function root_inittargets()
@@ -1526,7 +1529,7 @@ function root_inittargets()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x312d
 // Size: 0x2fd
 function root_monitorplayers()
@@ -1550,7 +1553,8 @@ function root_monitorplayers()
         notifylistchanged = 0;
         engagedlistchanged = 0;
         
-        for (i = 0; i < level.players.size; i++) {
+        for ( i = 0; i < level.players.size ; i++ )
+        {
             player = level.players[ i ];
             
             if ( !isdefined( player ) )
@@ -1643,7 +1647,7 @@ function root_monitorplayers()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3432
 // Size: 0x27
 function root_failconditions()
@@ -1655,7 +1659,7 @@ function root_failconditions()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3461
 // Size: 0x2f
 function rootai_ecounterstart()
@@ -1667,7 +1671,7 @@ function rootai_ecounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3498
 // Size: 0x33d
 function bank_ecounterstart()
@@ -1742,7 +1746,7 @@ function bank_ecounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37dd
 // Size: 0x11
 function vault_door_open_wait()
@@ -1752,7 +1756,7 @@ function vault_door_open_wait()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37f6
 // Size: 0x7a
 function vault_door_init( door )
@@ -1770,7 +1774,7 @@ function vault_door_init( door )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3878
 // Size: 0x4b
 function vault_door_think()
@@ -1783,14 +1787,15 @@ function vault_door_think()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38cb
 // Size: 0x66
 function jug_behavior()
 {
     players = sortbydistance( level.players, self.origin );
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         player = players[ i ];
         
         if ( isalive( player ) )
@@ -1803,7 +1808,7 @@ function jug_behavior()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3939
 // Size: 0x6b
 function alarm_sound_on()
@@ -1817,7 +1822,7 @@ function alarm_sound_on()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39ac
 // Size: 0x6b
 function alarm_sound_off()
@@ -1831,7 +1836,7 @@ function alarm_sound_off()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a1f
 // Size: 0x96
 function vault_door_sound()
@@ -1851,7 +1856,7 @@ function vault_door_sound()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3abd
 // Size: 0x59
 function waittill_trigger_or_dead( trigger, guys, num, timeoutlength )
@@ -1864,7 +1869,7 @@ function waittill_trigger_or_dead( trigger, guys, num, timeoutlength )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3b1e
 // Size: 0x2d
 function _waittill_dead_notify_done( guys, num, timeoutlength )
@@ -1874,7 +1879,7 @@ function _waittill_dead_notify_done( guys, num, timeoutlength )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b53
 // Size: 0x3e
 function _waittill_trigger( trigger )
@@ -1895,7 +1900,7 @@ function _waittill_trigger( trigger )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b99
 // Size: 0x11
 function alarm_sound_off_encounter_end()
@@ -1905,7 +1910,7 @@ function alarm_sound_off_encounter_end()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bb2
 // Size: 0x53
 function bank_getspawneraitype( spawner )
@@ -1925,7 +1930,7 @@ function bank_getspawneraitype( spawner )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c0e
 // Size: 0x24e
 function airport_ecounterstart()
@@ -1960,7 +1965,7 @@ function airport_ecounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e64
 // Size: 0x2f
 function airport_enemy_setup()
@@ -1972,7 +1977,7 @@ function airport_enemy_setup()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e9b
 // Size: 0x23f
 function truck_encounterstart()
@@ -2053,7 +2058,7 @@ function truck_encounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40e2
 // Size: 0xec
 function truck_roll_door_init( door )
@@ -2080,7 +2085,7 @@ function truck_roll_door_init( door )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41d6
 // Size: 0x26
 function truck_roll_door_open( roll_door )
@@ -2093,7 +2098,7 @@ function truck_roll_door_open( roll_door )
 /#
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x4204
     // Size: 0x35, Type: dev
     function function_90d5fe589f383968( roll_door )
@@ -2110,7 +2115,7 @@ function truck_roll_door_open( roll_door )
 #/
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4241
 // Size: 0xa1
 function truck_roll_door_sound( door )
@@ -2130,7 +2135,7 @@ function truck_roll_door_sound( door )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42ea
 // Size: 0x10
 function truck_getspawneraitype( spawner )
@@ -2139,7 +2144,7 @@ function truck_getspawneraitype( spawner )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4303
 // Size: 0x21d
 function crateguard_encounterstart()
@@ -2213,7 +2218,7 @@ function crateguard_encounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4528
 // Size: 0x5d
 function crateguard_bosssetup( boss, guards )
@@ -2230,7 +2235,7 @@ function crateguard_bosssetup( boss, guards )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x458d
 // Size: 0x3a
 function crateguard_getspawneraitype( spawner )
@@ -2244,7 +2249,7 @@ function crateguard_getspawneraitype( spawner )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45d0
 // Size: 0x4c
 function smoking()
@@ -2258,7 +2263,7 @@ function smoking()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4624
 // Size: 0x4e
 function smoking_idle( animalias )
@@ -2276,7 +2281,7 @@ function smoking_idle( animalias )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x467a
 // Size: 0x21
 function smoking_idle_start( animalias )
@@ -2287,7 +2292,7 @@ function smoking_idle_start( animalias )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46a3
 // Size: 0x21
 function smoking_idle_end( animalias )
@@ -2298,7 +2303,7 @@ function smoking_idle_end( animalias )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46cc
 // Size: 0x9a
 function smoking_react( react_alias )
@@ -2321,7 +2326,7 @@ function smoking_react( react_alias )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x476e
 // Size: 0x21
 function smoking_death( sanim )
@@ -2332,7 +2337,7 @@ function smoking_death( sanim )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4797
 // Size: 0x120
 function ai_notehandler_smoking( note )
@@ -2357,7 +2362,7 @@ function ai_notehandler_smoking( note )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48bf
 // Size: 0x7e
 function ai_smoking_blowsmoke()
@@ -2377,7 +2382,7 @@ function ai_smoking_blowsmoke()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4945
 // Size: 0x5e
 function ai_smoking_cleanup()
@@ -2393,7 +2398,7 @@ function ai_smoking_cleanup()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49ab
 // Size: 0x6e
 function standing_cellphone( var_ff75b4157a7aa48a )
@@ -2418,7 +2423,7 @@ function standing_cellphone( var_ff75b4157a7aa48a )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a21
 // Size: 0x21
 function standing_cellphone_anim( animalias )
@@ -2429,7 +2434,7 @@ function standing_cellphone_anim( animalias )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a4a
 // Size: 0x2a
 function standing_cellphone_loop( animalias, loops )
@@ -2440,7 +2445,7 @@ function standing_cellphone_loop( animalias, loops )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a7c
 // Size: 0x82
 function ai_notehandler_cellphone( note )
@@ -2466,7 +2471,7 @@ function ai_notehandler_cellphone( note )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b06
 // Size: 0xd
 function setup_anim_guy()
@@ -2475,7 +2480,7 @@ function setup_anim_guy()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b1b
 // Size: 0x95
 function reset_guy( guy )
@@ -2497,7 +2502,7 @@ function reset_guy( guy )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4bb8
 // Size: 0xed
 function ai_notetrack_loop( skit )
@@ -2541,7 +2546,7 @@ function ai_notetrack_loop( skit )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cad
 // Size: 0xc
 function test_ecounterstart()
@@ -2552,7 +2557,7 @@ function test_ecounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cc1
 // Size: 0xc
 function rootnonai_ecounterstart()
@@ -2561,7 +2566,7 @@ function rootnonai_ecounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cd5
 // Size: 0x214
 function dom_encounterstart()
@@ -2626,7 +2631,7 @@ function dom_encounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ef1
 // Size: 0xeb
 function encounterdeletedomgameobjectonend( domflag )
@@ -2660,7 +2665,7 @@ function encounterdeletedomgameobjectonend( domflag )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4fe4
 // Size: 0xf
 function gameobjectreleaseid_delayed()
@@ -2670,7 +2675,7 @@ function gameobjectreleaseid_delayed()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ffb
 // Size: 0x17b
 function domencounter_icons()
@@ -2697,7 +2702,7 @@ function domencounter_icons()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x517e
 // Size: 0x68
 function _setdomencountericoninfo( name, colors, string, pulses )
@@ -2710,7 +2715,7 @@ function _setdomencountericoninfo( name, colors, string, pulses )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x51ee
 // Size: 0x4a
 function domencounter_onuseupdate( team, progress, change, capplayer )
@@ -2722,7 +2727,7 @@ function domencounter_onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5240
 // Size: 0x28
 function domencounter_onuse( credit_player )
@@ -2731,7 +2736,7 @@ function domencounter_onuse( credit_player )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5270
 // Size: 0x25
 function domencounter_onenduse( team, player, success )
@@ -2740,7 +2745,7 @@ function domencounter_onenduse( team, player, success )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x529d
 // Size: 0x9a
 function domencounter_setdomscriptablepartstate( part, state, statemod )
@@ -2771,7 +2776,7 @@ function domencounter_setdomscriptablepartstate( part, state, statemod )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x533f
 // Size: 0xc
 function bombplant_encounterstart()
@@ -2782,7 +2787,7 @@ function bombplant_encounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5353
 // Size: 0xdc
 function extraction_encounterstart()
@@ -2823,7 +2828,7 @@ function extraction_encounterstart()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5437
 // Size: 0x67
 function targetstart_extractiongoal( goalstruct )
@@ -2840,7 +2845,7 @@ function targetstart_extractiongoal( goalstruct )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x54a6
 // Size: 0xe5
 function extraction_createescort( target )
@@ -2866,7 +2871,7 @@ function extraction_createescort( target )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5593
 // Size: 0x58
 function extraction_escortthink()
@@ -2889,7 +2894,7 @@ function extraction_escortthink()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x55f3
 // Size: 0xec
 function extraction_playerpickupbody( useent, team )
@@ -2917,7 +2922,7 @@ function extraction_playerpickupbody( useent, team )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x56e7
 // Size: 0x13d
 function extraction_dropbody( useent, playerholding, holdingbodyhud, team )
@@ -2969,7 +2974,7 @@ function extraction_dropbody( useent, playerholding, holdingbodyhud, team )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x582c
 // Size: 0x52
 function extraction_checkescortradius( player )
@@ -2985,7 +2990,7 @@ function extraction_checkescortradius( player )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5886
 // Size: 0x41
 function extraction_changeescortusefunction()
@@ -2999,7 +3004,7 @@ function extraction_changeescortusefunction()
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x58cf
 // Size: 0x4b
 function extraction_attachfultonballoontoescort( player )
@@ -3014,7 +3019,7 @@ function extraction_attachfultonballoontoescort( player )
 }
 
 // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5922
 // Size: 0xc2
 function destruction_encounterstart()
@@ -3049,7 +3054,7 @@ function destruction_encounterstart()
 /#
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x59ec
     // Size: 0x11, Type: dev
     function function_674facc5e1cb84c()
@@ -3058,7 +3063,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5a05
     // Size: 0x11, Type: dev
     function function_1535016662214ec5()
@@ -3067,7 +3072,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5a1e
     // Size: 0x11, Type: dev
     function function_2f6185a84b023517()
@@ -3076,7 +3081,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5a37
     // Size: 0x50, Type: dev
     function function_8ff83bdd5420ae28( type )
@@ -3092,7 +3097,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5a8f
     // Size: 0x18, Type: dev
     function function_5bb507603ca9de76( reason )
@@ -3101,7 +3106,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5aaf
     // Size: 0x4d, Type: dev
     function init_debug()
@@ -3116,7 +3121,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5b04
     // Size: 0xcf, Type: dev
     function function_e0b65595a00c4889()
@@ -3152,7 +3157,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x5bdb
     // Size: 0xcc, Type: dev
     function function_20b9ab28a71f8361( dvarname, dvardefault, success )
@@ -3188,7 +3193,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5caf
     // Size: 0x1a, Type: dev
     function function_ab390a4e188862f0()
@@ -3197,7 +3202,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5cd1
     // Size: 0x19, Type: dev
     function function_5ca1479bb38ceccd()
@@ -3206,7 +3211,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x5cf2
     // Size: 0xd0, Type: dev
     function compare_locations( left, right )
@@ -3226,7 +3231,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5dca
     // Size: 0x48b, Type: dev
     function encounter_hud()
@@ -3262,7 +3267,8 @@ function destruction_encounterstart()
                 sortedlocations = scripts\mp\utility\script::quicksort( self.alllocations, &compare_locations );
                 hudstrings = [];
                 
-                for (i = 0; i < sortedlocations.size && i < maxprints; i++) {
+                for ( i = 0; i < sortedlocations.size && i < maxprints ; i++ )
+                {
                     loc = sortedlocations[ i ];
                     str = "<dev string:x500>" + loc.debugindex + "<dev string:x504>" + loc.name + "<dev string:x50a>" + function_5443af46fa933222( loc.state );
                     
@@ -3314,7 +3320,8 @@ function destruction_encounterstart()
                 count = 0;
                 anychange = 0;
                 
-                for (i = 0; i < hudstrings.size; i++) {
+                for ( i = 0; i < hudstrings.size ; i++ )
+                {
                     str = hudstrings[ i ];
                     
                     if ( !isdefined( hudelems[ i ] ) )
@@ -3337,7 +3344,8 @@ function destruction_encounterstart()
                 {
                     hudheader clearalltextafterhudelem();
                     
-                    for (i = 0; i < count; i++) {
+                    for ( i = 0; i < count ; i++ )
+                    {
                         hudelems[ i ] setdevtext( hudstrings[ i ] );
                         hudelems[ i ].currenttext = hudstrings[ i ];
                     }
@@ -3345,7 +3353,8 @@ function destruction_encounterstart()
                 
                 if ( count < hudelems.size )
                 {
-                    for (i = hudelems.size - 1; i >= count; i--) {
+                    for ( i = hudelems.size - 1; i >= count ; i-- )
+                    {
                         hudelems[ i ] destroy();
                         hudelems[ i ] = undefined;
                     }
@@ -3364,7 +3373,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x625d
     // Size: 0x53, Type: dev
     function function_6a540d657d267069( location )
@@ -3385,7 +3394,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x62b8
     // Size: 0x4d, Type: dev
     function function_67ab032b2db3d203( encounter )
@@ -3404,7 +3413,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x630d
     // Size: 0x138, Type: dev
     function function_ecd35236fb86f2d3()
@@ -3436,7 +3445,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x644d
     // Size: 0x71, Type: dev
     function function_5443af46fa933222( state )
@@ -3457,7 +3466,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x64c6
     // Size: 0x195, Type: dev
     function encounter_devgui()
@@ -3482,7 +3491,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x6663
     // Size: 0x9a, Type: dev
     function _addlocation( encountersname, index )
@@ -3493,7 +3502,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x6705
     // Size: 0x89, Type: dev
     function adddebugcommanddelayed( cmd )
@@ -3524,7 +3533,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6796
     // Size: 0x9e, Type: dev
     function function_a7b476bcb852aa88()
@@ -3557,7 +3566,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x683c
     // Size: 0x2de, Type: dev
     function function_8ddc84f18c877946( agent, debug )
@@ -3628,7 +3637,7 @@ function destruction_encounterstart()
     }
 
     // Namespace br_ai_encounters / scripts\mp\gametypes\br_ai_encounters
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6b22
     // Size: 0xea, Type: dev
     function function_ca0d43a35b898ad4()

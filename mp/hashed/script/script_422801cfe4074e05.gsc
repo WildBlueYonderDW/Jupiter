@@ -6,7 +6,7 @@
 #namespace analytics;
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120
 // Size: 0x3f
 function init()
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x167
 // Size: 0x3d
 function function_90ab35efc8f0fb46( info, var_80ed4d4a2aaf5d44 )
@@ -47,7 +47,7 @@ function function_90ab35efc8f0fb46( info, var_80ed4d4a2aaf5d44 )
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ac
 // Size: 0x14
 function geteventtimestamp()
@@ -57,7 +57,7 @@ function geteventtimestamp()
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1c9
 // Size: 0xac
 function function_b8b443d92560ecf4( type, origin, state, time, data, entnum )
@@ -79,7 +79,7 @@ function function_b8b443d92560ecf4( type, origin, state, time, data, entnum )
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x27d
 // Size: 0x9a
 function addevent( type, origin, state, data, ent )
@@ -116,7 +116,7 @@ function addevent( type, origin, state, data, ent )
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31f
 // Size: 0x33
 function function_e18f9b7e01cd916f( type, ent )
@@ -130,7 +130,7 @@ function function_e18f9b7e01cd916f( type, ent )
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x35a
 // Size: 0x3f
 function function_a569c60476357392( type, ent, state, data )
@@ -144,7 +144,7 @@ function function_a569c60476357392( type, ent, state, data )
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x108
 function addeventdelayed( type, origin, ent, data )
@@ -176,7 +176,7 @@ function addeventdelayed( type, origin, ent, data )
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4b1
 // Size: 0xc4
 function seteventdelayedstate( type, ent, state )
@@ -198,7 +198,7 @@ function seteventdelayedstate( type, ent, state )
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57d
 // Size: 0xe3
 function onendgame()
@@ -220,7 +220,7 @@ function onendgame()
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x668
 // Size: 0x1b, Type: bool
 function function_3eb0a74e7ece96f9()
@@ -239,7 +239,7 @@ function function_3eb0a74e7ece96f9()
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68c
 // Size: 0x12a
 function function_5c0639c941555983()
@@ -296,7 +296,7 @@ function function_5c0639c941555983()
 }
 
 // Namespace analytics / namespace_11c0583894ef486f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7be
 // Size: 0x41
 function updatebreadcrumb( time )

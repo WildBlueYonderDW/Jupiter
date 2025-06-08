@@ -13,7 +13,7 @@
 #namespace death;
 
 // Namespace death / scripts\asm\shared\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x205
 // Size: 0x5f3
 function function_7f42b3806988f8db( asmname, statename, params )
@@ -270,7 +270,7 @@ function function_7f42b3806988f8db( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\shared\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x800
 // Size: 0x13
 function deathnotetracks( note )
@@ -279,7 +279,7 @@ function deathnotetracks( note )
 }
 
 // Namespace death / scripts\asm\shared\death
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x81b
 // Size: 0x10a
 function function_ea379d7359bd10ae( asmname, statename, params )
@@ -307,7 +307,7 @@ function function_ea379d7359bd10ae( asmname, statename, params )
 }
 
 // Namespace death / scripts\asm\shared\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92e
 // Size: 0x29
 function stop_sounds()
@@ -319,7 +319,7 @@ function stop_sounds()
 }
 
 // Namespace death / scripts\asm\shared\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x95f
 // Size: 0x6a
 function deathcleanup()
@@ -349,7 +349,7 @@ function deathcleanup()
 }
 
 // Namespace death / scripts\asm\shared\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9d1
 // Size: 0x1db
 function doimmediateragdolldeath()
@@ -433,7 +433,7 @@ function doimmediateragdolldeath()
 }
 
 // Namespace death / scripts\asm\shared\death
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbb4
 // Size: 0x6b
 function waitforragdoll( time )
@@ -467,7 +467,7 @@ function waitforragdoll( time )
 }
 
 // Namespace death / scripts\asm\shared\death
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc27
 // Size: 0x5a
 function startragdollwithoutwait()

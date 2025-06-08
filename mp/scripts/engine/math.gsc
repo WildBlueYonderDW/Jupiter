@@ -4,7 +4,7 @@
 #namespace math;
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xde
 // Size: 0x36
 function anglebetweenvectors( vector1, vector2 )
@@ -13,7 +13,7 @@ function anglebetweenvectors( vector1, vector2 )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11d
 // Size: 0x1f
 function anglebetweenvectorsunit( v1, v2 )
@@ -22,7 +22,7 @@ function anglebetweenvectorsunit( v1, v2 )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x145
 // Size: 0x81
 function anglebetweenvectorssigned( vector1, vector2, reference_norm )
@@ -41,7 +41,7 @@ function anglebetweenvectorssigned( vector1, vector2, reference_norm )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cf
 // Size: 0x22
 function lerp( from, to, frac )
@@ -50,7 +50,7 @@ function lerp( from, to, frac )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x22
 function lerp_fraction( from, to, n )
@@ -59,7 +59,7 @@ function lerp_fraction( from, to, n )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x225
 // Size: 0x47
 function fake_slerp( from, to, fraction )
@@ -68,7 +68,7 @@ function fake_slerp( from, to, fraction )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x275
 // Size: 0x2c
 function angle_lerp( from, to, fraction )
@@ -77,7 +77,7 @@ function angle_lerp( from, to, fraction )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2aa
 // Size: 0x51
 function get_dot( start_origin, start_angles, end_origin )
@@ -89,7 +89,7 @@ function get_dot( start_origin, start_angles, end_origin )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x304
 // Size: 0x2a
 function vector_project_onto_plane( vector, normal )
@@ -98,7 +98,7 @@ function vector_project_onto_plane( vector, normal )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x337
 // Size: 0x61
 function vector_project_endpoint( origin, angles, len )
@@ -113,7 +113,7 @@ function vector_project_endpoint( origin, angles, len )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x25
 function vector_reflect( vector, normal )
@@ -122,7 +122,7 @@ function vector_reflect( vector, normal )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3cf
 // Size: 0x71
 function vector_area_parallelogram( v, a, b )
@@ -134,7 +134,7 @@ function vector_area_parallelogram( v, a, b )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x449
 // Size: 0x1f
 function scalar_projection( veca, vecb )
@@ -143,7 +143,7 @@ function scalar_projection( veca, vecb )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x471
 // Size: 0x7e
 function get_point_on_parabola( start, end, height, t )
@@ -157,7 +157,7 @@ function get_point_on_parabola( start, end, height, t )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f8
 // Size: 0x3f
 function get_mid_point( point_1, point_2 )
@@ -166,7 +166,7 @@ function get_mid_point( point_1, point_2 )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x540
 // Size: 0xd6
 function round_float( value, precision, down )
@@ -184,7 +184,8 @@ function round_float( value, precision, down )
     
     decimal_offset = 1;
     
-    for (i = 1; i <= precision; i++) {
+    for ( i = 1; i <= precision ; i++ )
+    {
         decimal_offset *= 10;
     }
     
@@ -204,7 +205,7 @@ function round_float( value, precision, down )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x61f
 // Size: 0x44
 function round_millisec_on_sec( value, precision, down )
@@ -216,7 +217,7 @@ function round_millisec_on_sec( value, precision, down )
 }
 
 // Namespace math / scripts\engine\math
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x66c
 // Size: 0x38
 function remap( value, min1, max1, min2, max2 )
@@ -225,7 +226,7 @@ function remap( value, min1, max1, min2, max2 )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6ad
 // Size: 0x7d
 function normalize_value( clamp_a, clamp_b, var_a8fe33ce005d9c1e )
@@ -254,7 +255,7 @@ function normalize_value( clamp_a, clamp_b, var_a8fe33ce005d9c1e )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x733
 // Size: 0x27
 function normalized_to_growth_clamps( min, max, value )
@@ -263,7 +264,7 @@ function normalized_to_growth_clamps( min, max, value )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x763
 // Size: 0x27
 function normalized_to_decay_clamps( min, max, value )
@@ -272,7 +273,7 @@ function normalized_to_decay_clamps( min, max, value )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x793
 // Size: 0x1d
 function normalized_parabola( x )
@@ -281,7 +282,7 @@ function normalized_parabola( x )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b9
 // Size: 0x3f
 function normalized_sin_wave( x )
@@ -292,7 +293,7 @@ function normalized_sin_wave( x )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x801
 // Size: 0x39
 function normalized_cos_wave( x )
@@ -303,7 +304,7 @@ function normalized_cos_wave( x )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x843
 // Size: 0x32
 function normalized_offset( value, offsetamount )
@@ -324,7 +325,7 @@ function normalized_offset( value, offsetamount )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x87e
 // Size: 0x12
 function radians_to_degrees( radians )
@@ -333,7 +334,7 @@ function radians_to_degrees( radians )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x899
 // Size: 0x12
 function degrees_to_radians( degrees )
@@ -342,7 +343,7 @@ function degrees_to_radians( degrees )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8b4
 // Size: 0x25
 function factor_value( min_val, max_val, factor_val )
@@ -351,7 +352,7 @@ function factor_value( min_val, max_val, factor_val )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e2
 // Size: 0x55
 function function_889bef0ad1600791( num )
@@ -373,7 +374,7 @@ function function_889bef0ad1600791( num )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x940
 // Size: 0xe
 function normalized_float_smooth_in( num )
@@ -382,7 +383,7 @@ function normalized_float_smooth_in( num )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x957
 // Size: 0x1d
 function normalized_float_smooth_out( num )
@@ -394,7 +395,7 @@ function normalized_float_smooth_out( num )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x97d
 // Size: 0x86
 function line_to_plane_intersection( var_d747962793d54b7d, var_d747932793d544e4, plane_point, plane_normal )
@@ -414,7 +415,7 @@ function line_to_plane_intersection( var_d747962793d54b7d, var_d747932793d544e4,
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa0c
 // Size: 0x61, Type: bool
 function function_d3daf615a9f61ea6( point, aabb_min, aabb_max )
@@ -423,7 +424,7 @@ function function_d3daf615a9f61ea6( point, aabb_min, aabb_max )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa76
 // Size: 0x34
 function ray_to_plane_intersection_distance( rayorigin, raydirection, var_d74074ad5396e58a, planenormal )
@@ -432,7 +433,7 @@ function ray_to_plane_intersection_distance( rayorigin, raydirection, var_d74074
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xab3
 // Size: 0x8e, Type: bool
 function function_b2858ff2d7212ba7( point, start, end )
@@ -447,7 +448,7 @@ function function_b2858ff2d7212ba7( point, start, end )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb4a
 // Size: 0x1f5
 function function_d2c0d8330ab7ad7f( start, end, circlecenter, circleradius )
@@ -488,7 +489,7 @@ function function_d2c0d8330ab7ad7f( start, end, circlecenter, circleradius )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd47
 // Size: 0xfb
 function function_cc2ad02dcf5030d8( start, end, circleorigin, circleradius )
@@ -540,7 +541,7 @@ function function_cc2ad02dcf5030d8( start, end, circleorigin, circleradius )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe4a
 // Size: 0x60
 function function_3932a34161ac799( point, firstsegment, secondsegment )
@@ -557,7 +558,7 @@ function function_3932a34161ac799( point, firstsegment, secondsegment )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xeb3
 // Size: 0x89, Type: bool
 function segmentvssphere( pointa, pointb, spherecenter, sphereradius )
@@ -575,7 +576,7 @@ function segmentvssphere( pointa, pointb, spherecenter, sphereradius )
 }
 
 // Namespace math / scripts\engine\math
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xf45
 // Size: 0xad, Type: bool
 function pointvscone( point, coneorigin, coneforward, coneup, conelen, var_da2ce43c649b224a, coneang, conehalfheight )
@@ -611,7 +612,7 @@ function pointvscone( point, coneorigin, coneforward, coneup, conelen, var_da2ce
 }
 
 // Namespace math / scripts\engine\math
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xffb
 // Size: 0x7d, Type: bool
 function pointvscylinder( point, radiussqr, height, origin, up )
@@ -636,7 +637,7 @@ function pointvscylinder( point, radiussqr, height, origin, up )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1081
 // Size: 0x45
 function point_side_of_line2d( v, a, b )
@@ -652,7 +653,7 @@ function point_side_of_line2d( v, a, b )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10cf
 // Size: 0x4d
 function wrap( min, max, value )
@@ -668,7 +669,7 @@ function wrap( min, max, value )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1125
 // Size: 0x9b
 function point_in_fov( origin, fov, checkpitch )
@@ -698,7 +699,7 @@ function point_in_fov( origin, fov, checkpitch )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x11c9
 // Size: 0x66, Type: bool
 function within_fov_2d( start_origin, start_angles, end_origin, fov )
@@ -709,7 +710,7 @@ function within_fov_2d( start_origin, start_angles, end_origin, fov )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1238
 // Size: 0x89, Type: bool
 function is_point_in_front( point )
@@ -733,7 +734,7 @@ function is_point_in_front( point )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12ca
 // Size: 0x7f, Type: bool
 function is_point_on_right( point )
@@ -757,7 +758,7 @@ function is_point_on_right( point )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1352
 // Size: 0x56, Type: bool
 function function_1c46b3e291eff242( dir, forward_vec, up_vec )
@@ -773,7 +774,7 @@ function function_1c46b3e291eff242( dir, forward_vec, up_vec )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x13b1
 // Size: 0xc3
 function function_6c1e6433c5e5cf79( point, center, half_size, forward_angles )
@@ -783,7 +784,8 @@ function function_6c1e6433c5e5cf79( point, center, half_size, forward_angles )
     axis_array = anglestoaxis( forward_angles );
     axis_vecs = [ axis_array[ "forward" ], axis_array[ "right" ], axis_array[ "up" ] ];
     
-    for (i = 0; i <= 2; i++) {
+    for ( i = 0; i <= 2 ; i++ )
+    {
         dist = vectordot( axis_vecs[ i ], var_9b91a9e577670535 );
         dist = clamp( dist, -1 * half_size[ i ], half_size[ i ] );
         result += dist * axis_vecs[ i ];
@@ -793,7 +795,7 @@ function function_6c1e6433c5e5cf79( point, center, half_size, forward_angles )
 }
 
 // Namespace math / scripts\engine\math
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x147d
 // Size: 0x28
 function random_vector_2d()
@@ -803,7 +805,7 @@ function random_vector_2d()
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14ae
 // Size: 0x58
 function set_matrix_from_up( new_up )
@@ -815,7 +817,7 @@ function set_matrix_from_up( new_up )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x150e
 // Size: 0x34
 function set_matrix_from_up_and_angles( new_up, var_8583b7021ec2367 )
@@ -829,7 +831,7 @@ function set_matrix_from_up_and_angles( new_up, var_8583b7021ec2367 )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x154a
 // Size: 0x6a
 function build_matrix_from_up_and_angles( new_up, var_8583b7021ec2367 )
@@ -842,7 +844,7 @@ function build_matrix_from_up_and_angles( new_up, var_8583b7021ec2367 )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15bd
 // Size: 0x26
 function critically_damped_move_to( target_pos, spring_factor, start_speed )
@@ -851,7 +853,7 @@ function critically_damped_move_to( target_pos, spring_factor, start_speed )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15eb
 // Size: 0xa5
 function critically_damped_move_to_thread( target_pos, spring_factor, start_speed )
@@ -877,7 +879,7 @@ function critically_damped_move_to_thread( target_pos, spring_factor, start_spee
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1698
 // Size: 0x26
 function critically_damped_move_and_rotate_to( target_pos, spring_factor, start_speed )
@@ -886,7 +888,7 @@ function critically_damped_move_and_rotate_to( target_pos, spring_factor, start_
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x16c6
 // Size: 0xba
 function critically_damped_move_and_rotate_to_thread( target_pos, spring_factor, start_speed )
@@ -913,7 +915,7 @@ function critically_damped_move_and_rotate_to_thread( target_pos, spring_factor,
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1788
 // Size: 0x85
 function function_c5b0d1646ebc8eb3( start_point, target_point, yaw_limit, start_yaw )
@@ -936,7 +938,7 @@ function function_c5b0d1646ebc8eb3( start_point, target_point, yaw_limit, start_
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1816
 // Size: 0x59
 function function_804deea7a479c83b( start_angle, target_angle, limit )
@@ -957,7 +959,7 @@ function function_804deea7a479c83b( start_angle, target_angle, limit )
 }
 
 // Namespace math / scripts\engine\math
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1878
 // Size: 0xaf
 function function_e70fb12ac4e8f91b( center, outer_radius, inner_radius, begin_yaw, end_yaw )
@@ -986,7 +988,7 @@ function function_e70fb12ac4e8f91b( center, outer_radius, inner_radius, begin_ya
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1930
 // Size: 0x2f
 function over_damped_move_to( target_pos, spring_factor, spring_drag, start_speed )
@@ -995,7 +997,7 @@ function over_damped_move_to( target_pos, spring_factor, spring_drag, start_spee
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1967
 // Size: 0xae
 function over_damped_move_to_thread( target_pos, spring_factor, spring_drag, start_speed )
@@ -1021,7 +1023,7 @@ function over_damped_move_to_thread( target_pos, spring_factor, spring_drag, sta
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a1d
 // Size: 0x2f
 function under_damped_move_to( target_pos, freq, damp, start_speed )
@@ -1030,7 +1032,7 @@ function under_damped_move_to( target_pos, freq, damp, start_speed )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a54
 // Size: 0xc9
 function under_damped_move_to_thread( target_pos, freq, damp, start_speed )
@@ -1056,7 +1058,7 @@ function under_damped_move_to_thread( target_pos, freq, damp, start_speed )
 }
 
 // Namespace math / scripts\engine\math
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b25
 // Size: 0xd3
 function spring_make_critically_damped( spring_factor, start_pos, start_vel )
@@ -1074,7 +1076,7 @@ function spring_make_critically_damped( spring_factor, start_pos, start_vel )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1c01
 // Size: 0x1af
 function spring_make_over_damped( spring_factor, spring_drag, start_pos, start_vel )
@@ -1100,7 +1102,7 @@ function spring_make_over_damped( spring_factor, spring_drag, start_pos, start_v
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1db9
 // Size: 0x164
 function spring_make_under_damped( freq, damp, start_pos, start_vel )
@@ -1125,7 +1127,7 @@ function spring_make_under_damped( freq, damp, start_pos, start_vel )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1f26
 // Size: 0x14d
 function spring_update( spring_index, target_pos, overwrite_pos, overwrite_vel )
@@ -1149,7 +1151,7 @@ function spring_update( spring_index, target_pos, overwrite_pos, overwrite_vel )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x207c
 // Size: 0x16
 function spring_delete( spring_index )
@@ -1158,7 +1160,7 @@ function spring_delete( spring_index )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x209a
 // Size: 0x20
 function spring_get_pos( spring_index )
@@ -1167,7 +1169,7 @@ function spring_get_pos( spring_index )
 }
 
 // Namespace math / scripts\engine\math
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20c3
 // Size: 0x20
 function spring_get_vel( spring_index )
@@ -1176,7 +1178,7 @@ function spring_get_vel( spring_index )
 }
 
 // Namespace math / scripts\engine\math
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20ec
 // Size: 0x23
 function spring_init()
@@ -1189,7 +1191,7 @@ function spring_init()
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2117
 // Size: 0xd5
 function spring_add( start_pos, start_vel )
@@ -1208,7 +1210,7 @@ function spring_add( start_pos, start_vel )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21f5
 // Size: 0x2a
 function spring_set_pos( spring_index, pos )
@@ -1217,7 +1219,7 @@ function spring_set_pos( spring_index, pos )
 }
 
 // Namespace math / scripts\engine\math
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2227
 // Size: 0x2a
 function spring_set_vel( spring_index, vel )
@@ -1226,7 +1228,7 @@ function spring_set_vel( spring_index, vel )
 }
 
 // Namespace math / scripts\engine\math
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2259
 // Size: 0xd2
 function random_normal_distribution( mean, std_deviation, lower_bound, upper_bound )

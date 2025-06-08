@@ -17,7 +17,7 @@
 #namespace mp_jup_skidrow;
 
 // Namespace mp_jup_skidrow / scripts\mp\maps\mp_jup_skidrow\mp_jup_skidrow
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f7
 // Size: 0xc4
 function main()
@@ -40,7 +40,7 @@ function main()
 }
 
 // Namespace mp_jup_skidrow / scripts\mp\maps\mp_jup_skidrow\mp_jup_skidrow
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c3
 // Size: 0xb51
 function function_31dc060e85f4a689()

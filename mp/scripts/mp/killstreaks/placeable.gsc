@@ -16,7 +16,7 @@
 #namespace placeable;
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32e
 // Size: 0x19
 function init()
@@ -28,7 +28,7 @@ function init()
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34f
 // Size: 0x79, Type: bool
 function giveplaceable( streakname, var_41dbe7a9c2a55dab )
@@ -51,7 +51,7 @@ function giveplaceable( streakname, var_41dbe7a9c2a55dab )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d1
 // Size: 0x10f
 function createplaceable( streakname )
@@ -84,7 +84,7 @@ function createplaceable( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e9
 // Size: 0x86
 function handleuse( streakname )
@@ -113,7 +113,7 @@ function handleuse( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x577
 // Size: 0x1ae
 function onbegincarrying( streakname, placeable, allowcancel, var_41dbe7a9c2a55dab )
@@ -172,7 +172,7 @@ function onbegincarrying( streakname, placeable, allowcancel, var_41dbe7a9c2a55d
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x72d
 // Size: 0xe3
 function oncancel( streakname, var_ddd5b75d0cd367c5 )
@@ -212,7 +212,7 @@ function oncancel( streakname, var_ddd5b75d0cd367c5 )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x818
 // Size: 0x26b
 function onplaced( streakname )
@@ -281,7 +281,7 @@ function onplaced( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa8b
 // Size: 0xd0
 function oncarried( streakname, carrier )
@@ -307,7 +307,7 @@ function oncarried( streakname, carrier )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb63
 // Size: 0x1e9
 function updateplacement( streakname, carrier )
@@ -365,7 +365,7 @@ function updateplacement( streakname, carrier )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd54
 // Size: 0x4f
 function deactivate( streakname )
@@ -381,7 +381,7 @@ function deactivate( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdab
 // Size: 0x12
 function hideheadicons()
@@ -390,7 +390,7 @@ function hideheadicons()
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdc5
 // Size: 0x52
 function handledamage( streakname )
@@ -401,7 +401,7 @@ function handledamage( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe1f
 // Size: 0x12c
 function modifydamage( data )
@@ -437,7 +437,7 @@ function modifydamage( data )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf54
 // Size: 0xde
 function handledeathdamage( data )
@@ -456,7 +456,7 @@ function handledeathdamage( data )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x103a
 // Size: 0x85
 function handledeath( streakname )
@@ -484,7 +484,7 @@ function handledeath( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10c7
 // Size: 0x50
 function oncarrierdeath( streakname, carrier )
@@ -504,7 +504,7 @@ function oncarrierdeath( streakname, carrier )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x111f
 // Size: 0x43
 function onkillstreakdisowned( streakname )
@@ -517,7 +517,7 @@ function onkillstreakdisowned( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x116a
 // Size: 0x27
 function watchownerstatus( notifymsg, streakname )
@@ -527,7 +527,7 @@ function watchownerstatus( notifymsg, streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1199
 // Size: 0x22
 function ongameended( streakname )
@@ -538,7 +538,7 @@ function ongameended( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11c3
 // Size: 0x2b
 function cleanup( streakname )
@@ -553,7 +553,7 @@ function cleanup( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11f6
 // Size: 0x2e
 function watchplayerconnected()
@@ -568,7 +568,7 @@ function watchplayerconnected()
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x122c
 // Size: 0x29
 function onplayerconnected( owner )
@@ -580,7 +580,7 @@ function onplayerconnected( owner )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x125d
 // Size: 0xb6
 function timeout( streakname )
@@ -610,7 +610,7 @@ function timeout( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x131b
 // Size: 0x2a
 function removeweapons()
@@ -623,7 +623,7 @@ function removeweapons()
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x134d
 // Size: 0x2a
 function removeperks()
@@ -636,7 +636,7 @@ function removeperks()
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x137f
 // Size: 0x29
 function restoreweapons()
@@ -649,7 +649,7 @@ function restoreweapons()
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13b0
 // Size: 0x29
 function restoreperks()
@@ -662,7 +662,7 @@ function restoreperks()
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e1
 // Size: 0x36
 function showplacedmodel( streakname )
@@ -677,7 +677,7 @@ function showplacedmodel( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x141f
 // Size: 0x2e
 function hideplacedmodel( streakname )
@@ -691,7 +691,7 @@ function hideplacedmodel( streakname )
 }
 
 // Namespace placeable / scripts\mp\killstreaks\placeable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1455
 // Size: 0xf4
 function createcarriedobject( streakname )

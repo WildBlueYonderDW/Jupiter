@@ -24,7 +24,7 @@ function private function_f49a30f92555b827()
 }
 
 // Namespace namespace_d94cac041d4a3fb0 / namespace_47165a56c84fbe8f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14e
 // Size: 0xd9
 function function_e3e1894798c371bf( asmname, statename, params )

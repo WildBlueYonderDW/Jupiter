@@ -9,7 +9,7 @@
 #namespace sniper_combat;
 
 // Namespace sniper_combat / namespace_82adac1fd015a505
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd
 // Size: 0xd
 function function_eda57308516bfc5f()
@@ -18,7 +18,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace sniper_combat / namespace_82adac1fd015a505
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x113
 // Size: 0x9a
 function evaluatescore( bot )
@@ -37,7 +37,7 @@ function evaluatescore( bot )
 }
 
 // Namespace sniper_combat / namespace_82adac1fd015a505
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b6
 // Size: 0x2b0
 function function_1613f016af44e830( bot )
@@ -111,7 +111,7 @@ function function_1613f016af44e830( bot )
 }
 
 // Namespace sniper_combat / namespace_82adac1fd015a505
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46f
 // Size: 0x95
 function actionprocess( bot )
@@ -135,7 +135,7 @@ function actionprocess( bot )
 }
 
 // Namespace sniper_combat / namespace_82adac1fd015a505
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50c
 // Size: 0x29
 function function_f4caae7e8af9d32c( action )

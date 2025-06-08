@@ -11,7 +11,7 @@
 #namespace bots_killstreaks;
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f6
 // Size: 0xbc
 function bot_killstreak_setup()
@@ -58,7 +58,7 @@ function bot_killstreak_setup()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3ba
 // Size: 0x90
 function bot_register_killstreak_func( name, func, can_use, optionalparam )
@@ -78,7 +78,7 @@ function bot_register_killstreak_func( name, func, can_use, optionalparam )
 /#
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x452
     // Size: 0x2e, Type: dev
     function function_41a8ca2dae1a1343( streak )
@@ -90,7 +90,7 @@ function bot_register_killstreak_func( name, func, can_use, optionalparam )
     }
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x488
     // Size: 0x49, Type: dev
     function function_26244da889a0235a( streak, bot )
@@ -102,7 +102,7 @@ function bot_register_killstreak_func( name, func, can_use, optionalparam )
     }
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4d9
     // Size: 0xfc, Type: dev
     function function_227b3e3c529f9d0()
@@ -137,7 +137,7 @@ function bot_register_killstreak_func( name, func, can_use, optionalparam )
     }
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5dd
     // Size: 0x1b, Type: dev
     function function_c8ae136cc2c20507( streakname )
@@ -146,7 +146,7 @@ function bot_register_killstreak_func( name, func, can_use, optionalparam )
     }
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x600
     // Size: 0x1b, Type: dev
     function function_d66de7b5a877b42c( streakname )
@@ -155,7 +155,7 @@ function bot_register_killstreak_func( name, func, can_use, optionalparam )
     }
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x623
     // Size: 0x24, Type: dev
     function function_49c1e963fb43ee47( streakname, bot )
@@ -166,7 +166,7 @@ function bot_register_killstreak_func( name, func, can_use, optionalparam )
 #/
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x64f
 // Size: 0x55, Type: bool
 function bot_killstreak_valid_for_specific_streaktype( streakname, streaktype, assertit )
@@ -184,7 +184,7 @@ function bot_killstreak_valid_for_specific_streaktype( streakname, streaktype, a
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6ad
 // Size: 0xb5, Type: bool
 function bot_killstreak_is_valid_internal( streakname, var_ca854a77f264bed6, optional_bot, var_1c9ca7dbe4790741 )
@@ -235,7 +235,7 @@ function bot_killstreak_is_valid_internal( streakname, var_ca854a77f264bed6, opt
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x76b
 // Size: 0x60
 function bot_killstreak_is_valid_single( streakname, var_ca854a77f264bed6 )
@@ -253,7 +253,7 @@ function bot_killstreak_is_valid_single( streakname, var_ca854a77f264bed6 )
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d3
 // Size: 0x3b
 function bot_watch_for_killstreak_use()
@@ -271,7 +271,7 @@ function bot_watch_for_killstreak_use()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x816
 // Size: 0x25, Type: bool
 function bot_is_killstreak_supported( name )
@@ -290,7 +290,7 @@ function bot_is_killstreak_supported( name )
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x844
 // Size: 0x3a, Type: bool
 function bot_can_use_killstreak( name )
@@ -311,7 +311,7 @@ function bot_can_use_killstreak( name )
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x887
 // Size: 0x2
 function bot_think_killstreak()
@@ -320,7 +320,7 @@ function bot_think_killstreak()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x891
 // Size: 0x3, Type: bool
 function bot_can_use_aa_launcher()
@@ -329,7 +329,7 @@ function bot_can_use_aa_launcher()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x89d
 // Size: 0x2
 function bot_start_aa_launcher_tracking()
@@ -340,7 +340,7 @@ function bot_start_aa_launcher_tracking()
 /#
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x8a7
     // Size: 0x10, Type: dev
     function bot_killstreak_never_use()
@@ -351,7 +351,7 @@ function bot_start_aa_launcher_tracking()
 #/
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bf
 // Size: 0x3, Type: bool
 function bot_can_use_air_superiority()
@@ -360,7 +360,7 @@ function bot_can_use_air_superiority()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8cb
 // Size: 0x1a, Type: bool
 function aerial_vehicle_allowed()
@@ -379,7 +379,7 @@ function aerial_vehicle_allowed()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ee
 // Size: 0x26, Type: bool
 function vehicle_would_exceed_limit()
@@ -388,7 +388,7 @@ function vehicle_would_exceed_limit()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91d
 // Size: 0x99, Type: bool
 function bot_can_use_emp()
@@ -412,7 +412,7 @@ function bot_can_use_emp()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9bf
 // Size: 0x3, Type: bool
 function bot_can_use_ball_drone()
@@ -421,7 +421,7 @@ function bot_can_use_ball_drone()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9cb
 // Size: 0x6c, Type: bool
 function bot_killstreak_simple_use( killstreak_info, killstreaks_array, canusefunc, optional_param )
@@ -445,7 +445,7 @@ function bot_killstreak_simple_use( killstreak_info, killstreaks_array, canusefu
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa40
 // Size: 0x33
 function bot_killstreak_drop_anywhere( killstreak_info, killstreaks_array, canusefunc, optional_param )
@@ -454,7 +454,7 @@ function bot_killstreak_drop_anywhere( killstreak_info, killstreaks_array, canus
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa7b
 // Size: 0x33
 function bot_killstreak_drop_outside( killstreak_info, killstreaks_array, canusefunc, optional_param )
@@ -463,7 +463,7 @@ function bot_killstreak_drop_outside( killstreak_info, killstreaks_array, canuse
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xab6
 // Size: 0x33
 function bot_killstreak_drop_hidden( killstreak_info, killstreaks_array, canusefunc, optional_param )
@@ -472,7 +472,7 @@ function bot_killstreak_drop_hidden( killstreak_info, killstreaks_array, canusef
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xaf1
 // Size: 0x337, Type: bool
 function bot_killstreak_drop( killstreak_info, killstreaks_array, canusefunc, optional_param, drop_where )
@@ -514,9 +514,9 @@ function bot_killstreak_drop( killstreak_info, killstreaks_array, canusefunc, op
     if ( drop_where == "outside" )
     {
         outside_nodes = [];
-        var_6f3d9ec6437c14f2 = bot_get_nodes_in_cone( 0, 750, 0.6, 1 );
+        nodes_in_cone = bot_get_nodes_in_cone( 0, 750, 0.6, 1 );
         
-        foreach ( node in var_6f3d9ec6437c14f2 )
+        foreach ( node in nodes_in_cone )
         {
             if ( nodeexposedtosky( node ) )
             {
@@ -524,7 +524,7 @@ function bot_killstreak_drop( killstreak_info, killstreaks_array, canusefunc, op
             }
         }
         
-        if ( var_6f3d9ec6437c14f2.size > 5 && outside_nodes.size > var_6f3d9ec6437c14f2.size * 0.6 )
+        if ( nodes_in_cone.size > 5 && outside_nodes.size > nodes_in_cone.size * 0.6 )
         {
             var_3465221989e8dfce = get_array_of_closest( self.origin, outside_nodes, undefined, undefined, undefined, 150 );
             
@@ -580,7 +580,7 @@ function bot_killstreak_drop( killstreak_info, killstreaks_array, canusefunc, op
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe31
 // Size: 0x24
 function bot_switch_to_killstreak_weapon( killstreak_info, killstreaks_array, weapon_name )
@@ -589,7 +589,7 @@ function bot_switch_to_killstreak_weapon( killstreak_info, killstreaks_array, we
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe5d
 // Size: 0xa2
 function bot_notify_streak_used( killstreak_info, killstreaks_array )
@@ -600,7 +600,8 @@ function bot_notify_streak_used( killstreak_info, killstreaks_array )
         return;
     }
     
-    for (index = 1; index < 4; index++) {
+    for ( index = 1; index < 4 ; index++ )
+    {
         if ( isdefined( killstreaks_array[ index ] ) )
         {
             if ( isdefined( killstreaks_array[ index ].streakname ) )
@@ -617,7 +618,7 @@ function bot_notify_streak_used( killstreak_info, killstreaks_array )
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf07
 // Size: 0x1db
 function bot_killstreak_choose_loc_enemies( killstreak_info, killstreaks_array, canusefunc, optional_param )
@@ -645,7 +646,8 @@ function bot_killstreak_choose_loc_enemies( killstreak_info, killstreaks_array, 
     possible_fallback_zones = [];
     var_a04286db27fdd0d4 = randomfloat( 100 ) > 50;
     
-    for (z = 0; z < zone_count; z++) {
+    for ( z = 0; z < zone_count ; z++ )
+    {
         if ( var_a04286db27fdd0d4 )
         {
             zone = zone_count - 1 - z;
@@ -689,7 +691,7 @@ function bot_killstreak_choose_loc_enemies( killstreak_info, killstreaks_array, 
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10ea
 // Size: 0x2d7
 function bot_think_watch_aerial_killstreak()
@@ -796,7 +798,7 @@ function bot_think_watch_aerial_killstreak()
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13c9
 // Size: 0x87
 function try_place_global_badplace( var_205d69eb70594bb7, var_c5a29305adbe9b8b )
@@ -814,7 +816,7 @@ function try_place_global_badplace( var_205d69eb70594bb7, var_c5a29305adbe9b8b )
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1458
 // Size: 0x8b
 function monitor_enemy_dangerous_killstreak( my_team, var_205d69eb70594bb7, var_c5a29305adbe9b8b )
@@ -836,7 +838,7 @@ function monitor_enemy_dangerous_killstreak( my_team, var_205d69eb70594bb7, var_
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14eb
 // Size: 0x37, Type: bool
 function enemy_mortar_strike_exists( my_team )
@@ -853,7 +855,7 @@ function enemy_mortar_strike_exists( my_team )
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x152b
 // Size: 0x9d, Type: bool
 function enemy_switchblade_exists( my_team )
@@ -873,7 +875,7 @@ function enemy_switchblade_exists( my_team )
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15d1
 // Size: 0xda, Type: bool
 function enemy_odin_assault_exists( my_team )
@@ -893,7 +895,7 @@ function enemy_odin_assault_exists( my_team )
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16b4
 // Size: 0xbf
 function get_enemy_vanguard()

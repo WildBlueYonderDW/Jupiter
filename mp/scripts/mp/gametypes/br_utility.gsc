@@ -16,7 +16,7 @@
 #namespace br_utility;
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x495
 // Size: 0xfa
 function rankedquittimer( var_3c0c203df6f6b6c5 )
@@ -56,7 +56,7 @@ function rankedquittimer( var_3c0c203df6f6b6c5 )
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x597
 // Size: 0x5
 function function_b5b049c4b47cf929()
@@ -65,7 +65,7 @@ function function_b5b049c4b47cf929()
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5a5
 // Size: 0xfb
 function markplayeraseliminated( player, context )
@@ -105,7 +105,7 @@ function markplayeraseliminated( player, context )
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6a8
 // Size: 0x88
 function unmarkplayeraseliminated( player, context )
@@ -123,7 +123,7 @@ function unmarkplayeraseliminated( player, context )
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x738
 // Size: 0x4b9
 function updateplayereliminatedomnvar( context )
@@ -251,7 +251,7 @@ function updateplayereliminatedomnvar( context )
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xbf9
 // Size: 0x19a
 function function_8311407ea8b66f9a( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -296,7 +296,7 @@ function function_8311407ea8b66f9a( einflictor, attacker, idamage, smeansofdeath
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd9b
 // Size: 0x95
 function function_b6371a65209a055f( waseliminated, context )
@@ -311,7 +311,7 @@ function function_b6371a65209a055f( waseliminated, context )
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe38
 // Size: 0xa5
 function function_b5483af58ee9f2c3( var_ad8aec47e1a86534, team, context )
@@ -326,7 +326,7 @@ function function_b5483af58ee9f2c3( var_ad8aec47e1a86534, team, context )
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xee5
 // Size: 0x53
 function printteameliminated( team )
@@ -339,7 +339,7 @@ function printteameliminated( team )
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf40
 // Size: 0xaa
 function function_22a0e95dd4174c81()
@@ -362,7 +362,7 @@ function function_22a0e95dd4174c81()
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xff3
 // Size: 0x30
 function function_fd357ca89e5e29d9()
@@ -376,7 +376,7 @@ function function_fd357ca89e5e29d9()
 }
 
 // Namespace br_utility / scripts\mp\gametypes\br_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x102b
 // Size: 0x130
 function function_6fefb971fa5338b8()

@@ -16,7 +16,7 @@
 #namespace mp_jup_security_area;
 
 // Namespace mp_jup_security_area / scripts\mp\maps\mp_jup_security_area\mp_jup_security_area
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b1
 // Size: 0xa6
 function main()

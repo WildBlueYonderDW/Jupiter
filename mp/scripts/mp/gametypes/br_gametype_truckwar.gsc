@@ -59,7 +59,7 @@
 #namespace br_gametype_truckwar;
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2128
 // Size: 0x17
 function main()
@@ -69,7 +69,7 @@ function main()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2147
 // Size: 0x476
 function init()
@@ -159,7 +159,7 @@ function init()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25c5
 // Size: 0x77
 function brtruck_initfeatures()
@@ -179,7 +179,7 @@ function brtruck_initfeatures()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2644
 // Size: 0x24f
 function brtruck_initpostmain()
@@ -231,7 +231,7 @@ function brtruck_initpostmain()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x289b
 // Size: 0x26
 function function_a5e20d193142774d()
@@ -242,7 +242,7 @@ function function_a5e20d193142774d()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28c9
 // Size: 0x123
 function function_70da934903ac5a5d( table )
@@ -256,7 +256,8 @@ function function_70da934903ac5a5d( table )
     var_7d958726e11b327 = scripts\mp\class::function_df2933f96d726d71( table );
     level.var_c04b5edf3f9ea340[ newloadoutindex ] = [];
     
-    for (classindex = 0; classindex < var_7d958726e11b327; classindex++) {
+    for ( classindex = 0; classindex < var_7d958726e11b327 ; classindex++ )
+    {
         level.var_c04b5edf3f9ea340[ newloadoutindex ][ level.var_c04b5edf3f9ea340[ newloadoutindex ].size ] = function_a89b0ef8d36b3436( classindex, table );
     }
     
@@ -272,7 +273,7 @@ function function_70da934903ac5a5d( table )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29f4
 // Size: 0x34a
 function function_a89b0ef8d36b3436( classindex, table )
@@ -310,7 +311,7 @@ function function_a89b0ef8d36b3436( classindex, table )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d47
 // Size: 0x139
 function brtruck_initdialog()
@@ -335,7 +336,7 @@ function brtruck_initdialog()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e88
 // Size: 0x3d
 function brtruck_cleanupents()
@@ -347,7 +348,7 @@ function brtruck_cleanupents()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ecd
 // Size: 0x1c
 function brtruck_initexternalfeatures()
@@ -356,7 +357,7 @@ function brtruck_initexternalfeatures()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ef1
 // Size: 0x24
 function onstartgametype()
@@ -368,7 +369,7 @@ function onstartgametype()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f1d
 // Size: 0xd3
 function brtruck_playerwelcomesplashes( data )
@@ -399,7 +400,7 @@ function brtruck_playerwelcomesplashes( data )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ff8
 // Size: 0x24
 function brtruck_ontimelimit()
@@ -413,7 +414,7 @@ function brtruck_ontimelimit()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3024
 // Size: 0xd, Type: bool
 function mayconsiderplayerdead( player )
@@ -422,7 +423,7 @@ function mayconsiderplayerdead( player )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x303a
 // Size: 0x4, Type: bool
 function markplayeraseliminatedonkilled()
@@ -431,7 +432,7 @@ function markplayeraseliminatedonkilled()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3047
 // Size: 0x6a
 function vehiclespawn_getspawndata( loc )
@@ -445,7 +446,7 @@ function vehiclespawn_getspawndata( loc )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30ba
 // Size: 0x7e
 function registervehicletype( refname, spawnvehiclecallback )
@@ -460,7 +461,7 @@ function registervehicletype( refname, spawnvehiclecallback )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3140
 // Size: 0xad
 function function_5c3211a52b3b56f9( loc, faildata )
@@ -481,7 +482,7 @@ function function_5c3211a52b3b56f9( loc, faildata )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31f6
 // Size: 0x59
 function vehiclespawn_littlebird( loc, faildata )
@@ -496,7 +497,7 @@ function vehiclespawn_littlebird( loc, faildata )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3258
 // Size: 0x59
 function vehiclespawn_atv( loc, faildata )
@@ -511,7 +512,7 @@ function vehiclespawn_atv( loc, faildata )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x32ba
 // Size: 0x59
 function vehiclespawn_tacrover( loc, faildata )
@@ -526,7 +527,7 @@ function vehiclespawn_tacrover( loc, faildata )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x331c
 // Size: 0x59
 function function_c43c5200d882b134( loc, faildata )
@@ -541,7 +542,7 @@ function function_c43c5200d882b134( loc, faildata )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x337e
 // Size: 0x59
 function function_c6436c7f3e995d85( loc, faildata )
@@ -556,7 +557,7 @@ function function_c6436c7f3e995d85( loc, faildata )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x33e0
 // Size: 0x59
 function function_9d7d93def34d9958( loc, faildata )
@@ -571,7 +572,7 @@ function function_9d7d93def34d9958( loc, faildata )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3442
 // Size: 0x59
 function function_292bae242d3583b7( loc, faildata )
@@ -586,7 +587,7 @@ function function_292bae242d3583b7( loc, faildata )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34a4
 // Size: 0x1bb
 function initvehicles()
@@ -645,7 +646,7 @@ function initvehicles()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3667
 // Size: 0x383
 function function_9e97f797dc8e211c()
@@ -688,7 +689,8 @@ function function_9e97f797dc8e211c()
     
     if ( false )
     {
-        for (i = 0; i < level.vehiclespawnlocs.size; i++) {
+        for ( i = 0; i < level.vehiclespawnlocs.size ; i++ )
+        {
             loc = level.vehiclespawnlocs[ i ];
             
             if ( loc.refname != "veh9_mil_lnd_mrap" )
@@ -732,7 +734,7 @@ function function_9e97f797dc8e211c()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39f2
 // Size: 0x145
 function spawnvehicles()
@@ -750,7 +752,8 @@ function spawnvehicles()
     maxvehiclecount = getdvarint( @"hash_58c9645bc2b9d636", 120 );
     remainingspawncount = maxvehiclecount - vehicles.size;
     
-    for (index = 0; index < level.vehiclespawnlocs.size && remainingspawncount > 0; index++) {
+    for ( index = 0; index < level.vehiclespawnlocs.size && remainingspawncount > 0 ; index++ )
+    {
         loc = level.vehiclespawnlocs[ index ];
         
         if ( isdefined( loc ) )
@@ -766,7 +769,7 @@ function spawnvehicles()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b3f
 // Size: 0xb8
 function assignvehiclestoteams()
@@ -791,7 +794,7 @@ function assignvehiclestoteams()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3bff
 // Size: 0x1a0
 function function_20b77fbf1af1a5d( vehicle, team, revive )
@@ -834,7 +837,7 @@ function function_20b77fbf1af1a5d( vehicle, team, revive )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3da7
 // Size: 0x437
 function watchvehicleingas( vehicle, team )
@@ -935,7 +938,7 @@ function watchvehicleingas( vehicle, team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41e6
 // Size: 0x88
 function function_6c35d65fc1f38eb8()
@@ -960,7 +963,7 @@ function function_6c35d65fc1f38eb8()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4276
 // Size: 0x1f2
 function function_66e49bf742fccb61( vehicle, team )
@@ -1019,7 +1022,7 @@ function function_66e49bf742fccb61( vehicle, team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4470
 // Size: 0x1ee
 function function_3e5a0635a240ede5( vehicle, team )
@@ -1060,7 +1063,7 @@ function function_3e5a0635a240ede5( vehicle, team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4666
 // Size: 0x67
 function blockhealing( team )
@@ -1077,7 +1080,7 @@ function blockhealing( team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x46d5
 // Size: 0x13b
 function function_46ed8b0b237087f8( vehicle, team )
@@ -1128,7 +1131,7 @@ function private function_ad382245d8d861f3( vehicle, team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48ac
 // Size: 0xb6
 function function_e50c00059892a159( message )
@@ -1157,7 +1160,7 @@ function function_e50c00059892a159( message )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x496a
 // Size: 0x17b
 function notifyteamonvehicledeath( vehicle, team )
@@ -1191,7 +1194,7 @@ function notifyteamonvehicledeath( vehicle, team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4aed
 // Size: 0x62
 function function_bc2cb59695039e19( team )
@@ -1213,7 +1216,7 @@ function function_bc2cb59695039e19( team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b57
 // Size: 0x231
 function gettruckspawns( vehicleref )
@@ -1257,7 +1260,8 @@ function gettruckspawns( vehicleref )
     tracecontents = scripts\engine\trace::create_default_contents( 1 );
     spawns = [];
     
-    for (i = 0; i < numvehicles; i++) {
+    for ( i = 0; i < numvehicles ; i++ )
+    {
         angles = i * anglestep;
         forward = anglestoforward( ( 0, angles, 0 ) );
         origin = circlecenter + forward * var_73562bf0ddc8b02d;
@@ -1275,7 +1279,7 @@ function gettruckspawns( vehicleref )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d91
 // Size: 0x199
 function getpresettruckspawns( vehicleref )
@@ -1309,7 +1313,8 @@ function getpresettruckspawns( vehicleref )
     spawns = [];
     numvehicles = spawnorigins.size;
     
-    for (i = 0; i < numvehicles; i++) {
+    for ( i = 0; i < numvehicles ; i++ )
+    {
         vehicle = spawnstruct();
         vehicle.origin = spawnorigins[ i ].origin;
         vehicle.angles = spawnorigins[ i ].angles;
@@ -1321,7 +1326,7 @@ function getpresettruckspawns( vehicleref )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f33
 // Size: 0x101
 function gethelispawns( vehicleref )
@@ -1332,7 +1337,8 @@ function gethelispawns( vehicleref )
     circlecenter = ( 0, 0, 100 );
     var_73562bf0ddc8b02d = 1000;
     
-    for (i = 0; i < numvehicles; i++) {
+    for ( i = 0; i < numvehicles ; i++ )
+    {
         angles = i * anglestep;
         forward = anglestoforward( ( 0, angles, 0 ) );
         origin = circlecenter + forward * var_73562bf0ddc8b02d;
@@ -1348,7 +1354,7 @@ function gethelispawns( vehicleref )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x503d
 // Size: 0x47, Type: bool
 function isteameliminated( team )
@@ -1362,7 +1368,7 @@ function isteameliminated( team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x508d
 // Size: 0x50, Type: bool
 function playerkilledspawn( deathdata, finaldeath )
@@ -1378,7 +1384,7 @@ function playerkilledspawn( deathdata, finaldeath )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x50e6
 // Size: 0x484
 function playerrespawn( fastrespawn, deathdata, finaldeath )
@@ -1482,7 +1488,7 @@ function playerrespawn( fastrespawn, deathdata, finaldeath )
     streamorigin = namespace_8bfdb6eb5a3df67a::playerprestreamrespawnorigin( spawnpoint );
     flareorigin = level.teamvehicles[ self.team ].origin;
     
-    if ( getdvarint( @"hash_df02345c60008647", 1 ) == 0 )
+    if ( getdvarint( @"scr_skip_respawn_gate", 1 ) == 0 )
     {
         scripts\mp\gametypes\br_public::playerwaittillstreamhintcomplete();
     }
@@ -1655,7 +1661,8 @@ function private function_6e7b6151aba26dc2()
     
     foreach ( var_53a4a1c920def4bd in level.brgametype.var_34af112c77c2c381 )
     {
-        for (i = 0; i < endcircle; i++) {
+        for ( i = 0; i < endcircle ; i++ )
+        {
             overridedelay = getdvarint( hashcat( @"hash_fd72eab87b422f51", i + 1, var_53a4a1c920def4bd ), -1 );
             
             if ( overridedelay >= 0 )
@@ -1673,7 +1680,8 @@ function private function_6e7b6151aba26dc2()
     
     waittime = 0;
     
-    for (i = 0; i < endcircle; i++) {
+    for ( i = 0; i < endcircle ; i++ )
+    {
         waittime += level.br_level.br_circleclosetimes[ i ] + level.br_level.br_circledelaytimes[ i ];
     }
     
@@ -1798,7 +1806,7 @@ function private onplayerdisconnectcallback( player )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60e8
 // Size: 0x160
 function fadetogearingup( waittime )
@@ -1846,7 +1854,7 @@ function fadetogearingup( waittime )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6250
 // Size: 0x6c
 function fadeoutin()
@@ -1869,7 +1877,7 @@ function fadeoutin()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62c4
 // Size: 0xd5
 function updateprestreamrespawn()
@@ -1905,7 +1913,7 @@ function updateprestreamrespawn()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x63a1
 // Size: 0x1c
 function initspawns()
@@ -1914,7 +1922,7 @@ function initspawns()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63c5
 // Size: 0x28e
 function getspawnpoint( isplanejump )
@@ -1971,7 +1979,7 @@ function getspawnpoint( isplanejump )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x665c
 // Size: 0x350
 function generatespawnpoint( isplanejump )
@@ -2034,7 +2042,7 @@ function generatespawnpoint( isplanejump )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x69b5
 // Size: 0xa2
 function watchspawninput()
@@ -2067,7 +2075,7 @@ function watchspawninput()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a5f
 // Size: 0xb5
 function addspawnlocation()
@@ -2092,7 +2100,7 @@ function addspawnlocation()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b1c
 // Size: 0xdf
 function init_airdrop_anims()
@@ -2128,7 +2136,7 @@ function private function_a614e0fee13eca53()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c8c
 // Size: 0x52
 function init_airrop_vehicle_anims()
@@ -2139,7 +2147,7 @@ function init_airrop_vehicle_anims()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6ce6
 // Size: 0x2d4
 function truck_airdrop( vehicle, position, angles, showc130 )
@@ -2204,7 +2212,7 @@ function truck_airdrop( vehicle, position, angles, showc130 )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fc3
 // Size: 0x242
 function truck_airdropinternal( animation )
@@ -2277,7 +2285,7 @@ function truck_airdropinternal( animation )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x720d
 // Size: 0x2a
 function truck_detachvehiclefromairdropsequence( vehicle )
@@ -2292,7 +2300,7 @@ function truck_detachvehiclefromairdropsequence( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x723f
 // Size: 0xdd
 function function_f004d4b200aa4c84()
@@ -2335,7 +2343,7 @@ function function_f004d4b200aa4c84()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7324
 // Size: 0x79
 function truck_land( position, angles )
@@ -2350,7 +2358,7 @@ function truck_land( position, angles )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x73a5
 // Size: 0xb
 function parachute_detach_sfx( parachute )
@@ -2359,7 +2367,7 @@ function parachute_detach_sfx( parachute )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x73b8
 // Size: 0x2c
 function showsplashtoteam( team, splashname )
@@ -2368,7 +2376,7 @@ function showsplashtoteam( team, splashname )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x73ec
 // Size: 0x4d
 function function_9f5606e3bd1c508d( ref, players, delay )
@@ -2381,7 +2389,7 @@ function function_9f5606e3bd1c508d( ref, players, delay )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7441
 // Size: 0x2b6
 function function_73bdf8b18e29b13f( players )
@@ -2464,7 +2472,7 @@ function function_73bdf8b18e29b13f( players )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76ff
 // Size: 0xb
 function function_664ea636b19a418f( players )
@@ -2473,7 +2481,7 @@ function function_664ea636b19a418f( players )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7712
 // Size: 0x6a
 function function_8aa3182c50a3094()
@@ -2485,7 +2493,7 @@ function function_8aa3182c50a3094()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7784
 // Size: 0x1a1
 function function_927a1c74689ce55a()
@@ -2534,7 +2542,7 @@ function function_927a1c74689ce55a()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x792d
 // Size: 0x2c4
 function function_e3327f035a47191b()
@@ -2592,7 +2600,7 @@ function function_e3327f035a47191b()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x7bf9
 // Size: 0x74
 function _setdomflagiconinfo( name, bgtype, colors, string, image, pulses )
@@ -2605,7 +2613,7 @@ function _setdomflagiconinfo( name, bgtype, colors, string, image, pulses )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7c75
 // Size: 0x106
 function function_204a1f1178f8ca87( origin, radius )
@@ -2634,7 +2642,7 @@ function function_204a1f1178f8ca87( origin, radius )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d84
 // Size: 0x190
 function function_da77fee0cba3f65a()
@@ -2674,7 +2682,7 @@ function function_da77fee0cba3f65a()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f1d
 // Size: 0x241
 function function_d1ecd71915270559()
@@ -2722,7 +2730,7 @@ function function_d1ecd71915270559()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8167
 // Size: 0x145
 function function_b680f9a0df0c0507()
@@ -2756,7 +2764,7 @@ function function_b680f9a0df0c0507()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x82b5
 // Size: 0xb5
 function function_40a9065852fc3b1()
@@ -2782,7 +2790,7 @@ function function_40a9065852fc3b1()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8373
 // Size: 0x36d
 function function_4ec88c05d0625ca0()
@@ -2878,7 +2886,7 @@ function function_4ec88c05d0625ca0()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x86e8
 // Size: 0x4e
 function markinuse()
@@ -2896,7 +2904,7 @@ function markinuse()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x873e
 // Size: 0x4d
 function markidle()
@@ -2930,7 +2938,7 @@ function private function_e501cce5c715caf()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87f0
 // Size: 0x117
 function function_8d947898c35b8068()
@@ -2941,7 +2949,8 @@ function function_8d947898c35b8068()
     var_5cb3866995416341 = function_e501cce5c715caf();
     var_2948ca54731de34f = 0;
     
-    for (i = 0; i < var_5cb3866995416341 - 1; i++) {
+    for ( i = 0; i < var_5cb3866995416341 - 1 ; i++ )
+    {
         var_2948ca54731de34f += level.br_level.br_circleclosetimes[ i ];
         var_2948ca54731de34f += level.br_level.br_circledelaytimes[ i ];
     }
@@ -2967,7 +2976,7 @@ function function_8d947898c35b8068()
 /#
 
     // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x890f
     // Size: 0xd0, Type: dev
     function function_6de134dad6c879cf()
@@ -3009,7 +3018,7 @@ function function_8d947898c35b8068()
 #/
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x89e7
 // Size: 0x372
 function alternatebrcircle()
@@ -3042,7 +3051,8 @@ function alternatebrcircle()
     closetimer = level.var_e182232b582aa5d6;
     delaytimer = level.var_f28e1ed7f6adf52d;
     
-    for (i = 1; i < level.var_944b40a215902330; i++) {
+    for ( i = 1; i < level.var_944b40a215902330 ; i++ )
+    {
         if ( level.var_e12122c5431959b5 )
         {
             size = ter_op( i + 1 < tempradii.size - 1, tempradii[ i ], tempradii[ tempradii.size - 2 ] );
@@ -3084,7 +3094,7 @@ function alternatebrcircle()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d61
 // Size: 0x111
 function function_d4864f0577158363()
@@ -3098,7 +3108,8 @@ function function_d4864f0577158363()
     
     if ( getdvarint( @"hash_869eba038d752c6e", 1 ) == 1 )
     {
-        for (i = 2; i < level.br_level.br_circlecenters.size - 1; i++) {
+        for ( i = 2; i < level.br_level.br_circlecenters.size - 1 ; i++ )
+        {
             function_a7efa595a4c994c( i );
         }
         
@@ -3113,7 +3124,7 @@ function function_d4864f0577158363()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8e7a
 // Size: 0x1df
 function function_a7efa595a4c994c( index )
@@ -3143,7 +3154,8 @@ function function_a7efa595a4c994c( index )
     tocenter = vectornormalize( level.br_level.br_mapcenter - newcenter );
     contents = physics_createcontents( [ "physicscontents_trigger" ] );
     
-    for (trace = scripts\engine\trace::ray_trace_ents( var_d303e81057b8a554, newcenter, level.outofboundstriggers, contents ); !scripts\mp\gametypes\br_circle::isvalidpointinbounds( newcenter, 1 ) || trace[ "fraction" ] < 1; trace = scripts\engine\trace::ray_trace_ents( var_d303e81057b8a554, newcenter, level.outofboundstriggers, contents )) {
+    for ( trace = scripts\engine\trace::ray_trace_ents( var_d303e81057b8a554, newcenter, level.outofboundstriggers, contents ); !scripts\mp\gametypes\br_circle::isvalidpointinbounds( newcenter, 1 ) || trace[ "fraction" ] < 1 ; trace = scripts\engine\trace::ray_trace_ents( var_d303e81057b8a554, newcenter, level.outofboundstriggers, contents ) )
+    {
         newcenter += tocenter * searchdistance;
     }
     
@@ -3151,7 +3163,7 @@ function function_a7efa595a4c994c( index )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9061
 // Size: 0x86
 function function_1e7c5cadd2c12a32( pt )
@@ -3163,7 +3175,7 @@ function function_1e7c5cadd2c12a32( pt )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x90f0
 // Size: 0x1b9
 function checkdangerradius( point, time )
@@ -3203,7 +3215,7 @@ function checkdangerradius( point, time )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x92b2
 // Size: 0xef
 function function_c1bfb96a5e39a0a7( vehicle )
@@ -3245,7 +3257,7 @@ function function_c1bfb96a5e39a0a7( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x93a9
 // Size: 0x52
 function function_22f556fab80598eb( vehicle )
@@ -3257,7 +3269,7 @@ function function_22f556fab80598eb( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9403
 // Size: 0x2b5
 function function_e9b1e17b0d0ba3( vehicle )
@@ -3271,7 +3283,7 @@ function function_e9b1e17b0d0ba3( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x96c0
 // Size: 0x86
 function function_35f2ff0427594776( vehicle )
@@ -3287,7 +3299,7 @@ function function_35f2ff0427594776( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x974e
 // Size: 0xab
 function function_852abb774ff2a90e( vehicle )
@@ -3309,7 +3321,7 @@ function function_852abb774ff2a90e( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9801
 // Size: 0x33
 function function_8f4da0f65951c0b( vehicle )
@@ -3320,7 +3332,7 @@ function function_8f4da0f65951c0b( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x983c
 // Size: 0x4, Type: bool
 function function_9f13cc66529c6e8f()
@@ -3329,7 +3341,7 @@ function function_9f13cc66529c6e8f()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9849
 // Size: 0xfd
 function trophy_protectionsuccessful( trophytarget )
@@ -3363,7 +3375,7 @@ function trophy_protectionsuccessful( trophytarget )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x994e
 // Size: 0x21
 function function_2b6f04cb613a01e8( vehicle )
@@ -3373,7 +3385,7 @@ function function_2b6f04cb613a01e8( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9977
 // Size: 0x76
 function function_8f5f2701e3cb8e9c()
@@ -3391,7 +3403,7 @@ function function_8f5f2701e3cb8e9c()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x99f5
 // Size: 0x64
 function function_60fde27c0dd8510( vehicle )
@@ -3403,7 +3415,7 @@ function function_60fde27c0dd8510( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9a61
 // Size: 0xc7
 function function_e8779dce7e960d56( vehicle )
@@ -3430,7 +3442,7 @@ function function_e8779dce7e960d56( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9b30
 // Size: 0x33
 function function_3cf1ac037cdbc2a5( vehicle )
@@ -3441,7 +3453,7 @@ function function_3cf1ac037cdbc2a5( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9b6b
 // Size: 0x32
 function function_ab77860b63be6da6( vehicle )
@@ -3452,7 +3464,7 @@ function function_ab77860b63be6da6( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ba5
 // Size: 0x2d
 function function_5b776e8c62234d00()
@@ -3467,7 +3479,7 @@ function function_5b776e8c62234d00()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9bda
 // Size: 0x88
 function function_5fd118f91ae96e57( vehicle )
@@ -3483,7 +3495,7 @@ function function_5fd118f91ae96e57( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x9c6a
 // Size: 0xa3
 function function_fe081d074870c23d( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -3495,7 +3507,7 @@ function function_fe081d074870c23d( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9d15
 // Size: 0x32
 function function_2d381b790dc27f9f( vehicle )
@@ -3510,7 +3522,7 @@ function function_2d381b790dc27f9f( vehicle )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9d4f
 // Size: 0x2d9
 function function_256806bcfdf38c83( team, player )
@@ -3616,7 +3628,7 @@ function function_256806bcfdf38c83( team, player )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa030
 // Size: 0x137
 function function_de1ac98379235d8b( itemname, var_1de514083a2fbc8d )
@@ -3681,7 +3693,7 @@ function function_de1ac98379235d8b( itemname, var_1de514083a2fbc8d )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa16f
 // Size: 0x12
 function function_59566a4ce3c2c3e2()
@@ -3690,7 +3702,7 @@ function function_59566a4ce3c2c3e2()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa18a
 // Size: 0x7b
 function function_60d5992f51286201( team )
@@ -3717,7 +3729,7 @@ function function_60d5992f51286201( team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa20d
 // Size: 0x4c, Type: bool
 function function_81c029669130c0d4( team )
@@ -3741,7 +3753,7 @@ function function_81c029669130c0d4( team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa262
 // Size: 0x25
 function function_d5d633c35998ebe7( team )
@@ -3756,7 +3768,7 @@ function function_d5d633c35998ebe7( team )
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa28f
 // Size: 0x5d
 function function_7106da00352cd1e0()
@@ -3777,7 +3789,7 @@ function function_7106da00352cd1e0()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2f4
 // Size: 0x58, Type: bool
 function function_8d45ff943de1cfc4()
@@ -3795,7 +3807,7 @@ function function_8d45ff943de1cfc4()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa355
 // Size: 0xa9
 function function_93e3d45fc14694a2()
@@ -3822,7 +3834,7 @@ function function_93e3d45fc14694a2()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa407
 // Size: 0x6a
 function function_9577fcf1998c53b7()
@@ -3844,7 +3856,7 @@ function function_9577fcf1998c53b7()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa47a
 // Size: 0x4b
 function function_81124b7b16101f8b()
@@ -3875,7 +3887,7 @@ function function_81124b7b16101f8b()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa4ce
 // Size: 0x102, Type: bool
 function function_6e4f7e117d4651c3()
@@ -3915,7 +3927,7 @@ function function_6e4f7e117d4651c3()
 }
 
 // Namespace br_gametype_truckwar / scripts\mp\gametypes\br_gametype_truckwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa5d9
 // Size: 0x36, Type: bool
 function function_d48c5142f8271c18()

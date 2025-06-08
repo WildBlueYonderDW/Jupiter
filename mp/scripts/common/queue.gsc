@@ -3,7 +3,7 @@
 #namespace queue;
 
 // Namespace queue / scripts\common\queue
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xef
 // Size: 0xf9
 function function_e6d5d1b10a962759( queue, ref, init_func, break_func, interrupt_func, finish_func, func_params, priority, duration, break_notify )
@@ -22,7 +22,7 @@ function function_e6d5d1b10a962759( queue, ref, init_func, break_func, interrupt
 }
 
 // Namespace queue / scripts\common\queue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f0
 // Size: 0x295
 function function_ffbf82197897dac9( queue, item )
@@ -84,14 +84,15 @@ function function_ffbf82197897dac9( queue, item )
 }
 
 // Namespace queue / scripts\common\queue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x48d
 // Size: 0xc9
 function function_46d80f020560ce6( queue, ref )
 {
     if ( isdefined( self.var_fd776bf3ffd9d44e ) && isdefined( self.var_fd776bf3ffd9d44e[ queue ] ) )
     {
-        for (i = self.var_fd776bf3ffd9d44e[ queue ].items.size - 1; i >= 0; i--) {
+        for ( i = self.var_fd776bf3ffd9d44e[ queue ].items.size - 1; i >= 0 ; i-- )
+        {
             if ( self.var_fd776bf3ffd9d44e[ queue ].items[ i ].ref == ref )
             {
                 self.var_fd776bf3ffd9d44e[ queue ].items = array_remove_index( self.var_fd776bf3ffd9d44e[ queue ].items, i );
@@ -106,7 +107,7 @@ function function_46d80f020560ce6( queue, ref )
 }
 
 // Namespace queue / scripts\common\queue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55e
 // Size: 0x58
 function function_5bf3778b0956a0ab( queue )

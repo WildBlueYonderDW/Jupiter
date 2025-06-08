@@ -23,7 +23,7 @@ function autoexec main()
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x276
 // Size: 0x76
 function function_ba4f176b24eb2f54( grenade )
@@ -40,7 +40,7 @@ function function_ba4f176b24eb2f54( grenade )
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f4
 // Size: 0xf
 function function_4e66f81e9876bea5()
@@ -49,7 +49,7 @@ function function_4e66f81e9876bea5()
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30b
 // Size: 0x21
 function function_3a92f9c9d2238aaa( deletiondelay )
@@ -64,7 +64,7 @@ function function_3a92f9c9d2238aaa( deletiondelay )
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x334
 // Size: 0x473
 function function_9aeb6df65448c679( spycam )
@@ -164,7 +164,8 @@ function function_9aeb6df65448c679( spycam )
                 maxdistanceindex = 0;
                 marktarget = 0;
                 
-                for (i = 0; i < targets.size; i++) {
+                for ( i = 0; i < targets.size ; i++ )
+                {
                     if ( targets[ i ].dist > maxdistance )
                     {
                         maxdistance = targets[ i ].dist;
@@ -200,7 +201,7 @@ function function_9aeb6df65448c679( spycam )
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7af
 // Size: 0x198
 function function_a71f7b8d9c21d2ae( targets )
@@ -231,7 +232,7 @@ function function_a71f7b8d9c21d2ae( targets )
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x94f
 // Size: 0x85
 function function_86a974a0b589e89( outlineduration, targets )
@@ -248,7 +249,7 @@ function function_86a974a0b589e89( outlineduration, targets )
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9dc
 // Size: 0x53
 function function_9d4d2d7da0db21f3( var_f7f98e87323ea94f )
@@ -268,7 +269,7 @@ function function_9d4d2d7da0db21f3( var_f7f98e87323ea94f )
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa37
 // Size: 0x56
 function function_2eb2d3583b7c4407( duration, owner )
@@ -287,7 +288,7 @@ function function_2eb2d3583b7c4407( duration, owner )
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa95
 // Size: 0x4e
 function function_ecb52768dc9c454()
@@ -305,7 +306,7 @@ function function_ecb52768dc9c454()
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaeb
 // Size: 0x7f
 function function_2a37dbf39464630c( duration, owner )
@@ -323,7 +324,7 @@ function function_2a37dbf39464630c( duration, owner )
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb72
 // Size: 0x197, Type: bool
 function function_bea67d26e9b43209( target, var_dd44977fb56bb74d )
@@ -368,7 +369,8 @@ function function_bea67d26e9b43209( target, var_dd44977fb56bb74d )
         ignorelist[ ignorelist.size ] = target.colmodel;
     }
     
-    for (i = 0; i < tracepoints.size; i++) {
+    for ( i = 0; i < tracepoints.size ; i++ )
+    {
         if ( !scripts\engine\trace::ray_trace_passed( playerhead, tracepoints[ i ], ignorelist, tracecontents ) )
         {
             return false;
@@ -386,7 +388,7 @@ function function_bea67d26e9b43209( target, var_dd44977fb56bb74d )
 }
 
 // Namespace spycam / scripts\mp\equipment\spycam
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd12
 // Size: 0x122, Type: bool
 function function_2495d714d2a215ad( scantarget, scanfov, var_5e43b44751d01b1a )

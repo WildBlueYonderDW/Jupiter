@@ -14,7 +14,7 @@
 #namespace recon_drone_mp;
 
 // Namespace recon_drone_mp / scripts\mp\killstreaks\recon_drone_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19b
 // Size: 0x29
 function recondrone_init()
@@ -24,7 +24,7 @@ function recondrone_init()
 }
 
 // Namespace recon_drone_mp / scripts\mp\killstreaks\recon_drone_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cc
 // Size: 0x49
 function function_4beb6ea484d2db90()
@@ -38,7 +38,7 @@ function function_4beb6ea484d2db90()
 }
 
 // Namespace recon_drone_mp / scripts\mp\killstreaks\recon_drone_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21d
 // Size: 0x22
 function function_52d2de9ad62cae12()
@@ -50,7 +50,7 @@ function function_52d2de9ad62cae12()
 }
 
 // Namespace recon_drone_mp / scripts\mp\killstreaks\recon_drone_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x247
 // Size: 0x4b
 function function_5a031333c402a6ce()

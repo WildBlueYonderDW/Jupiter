@@ -6,7 +6,7 @@
 #namespace namespace_4095f42a23b0a059;
 
 // Namespace namespace_4095f42a23b0a059 / namespace_577f6919a96a7b63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b0
 // Size: 0x80f
 function init()
@@ -60,8 +60,10 @@ function init()
         
         triangles = var_db01c5bde88a365a;
         
-        for (i = 0; i < var_93fef0dca6a47f2.size - 1; i++) {
-            for (j = i + 1; j < var_93fef0dca6a47f2.size; j++) {
+        for ( i = 0; i < var_93fef0dca6a47f2.size - 1 ; i++ )
+        {
+            for ( j = i + 1; j < var_93fef0dca6a47f2.size ; j++ )
+            {
                 if ( sameedge( var_93fef0dca6a47f2[ i ], var_93fef0dca6a47f2[ j ] ) )
                 {
                     var_93fef0dca6a47f2[ i ].isbad = 1;
@@ -244,7 +246,7 @@ function private function_3c42e495fb530329( triangle, pos )
 }
 
 // Namespace namespace_4095f42a23b0a059 / namespace_577f6919a96a7b63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe5e
 // Size: 0x24b
 function testprocess()
@@ -305,7 +307,7 @@ function testprocess()
 }
 
 // Namespace namespace_4095f42a23b0a059 / namespace_577f6919a96a7b63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10b1
 // Size: 0x27
 function endhandler()
@@ -318,7 +320,7 @@ function endhandler()
 }
 
 // Namespace namespace_4095f42a23b0a059 / namespace_577f6919a96a7b63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10e0
 // Size: 0x30, Type: bool
 function function_3113f44ebafe71b1()
@@ -366,7 +368,8 @@ function private report( situation, bot, start, target, path, comment )
     {
         pathstr = "path: ";
         
-        for (i = 0; i < path.size; i++) {
+        for ( i = 0; i < path.size ; i++ )
+        {
             pathstr += path[ i ];
         }
         

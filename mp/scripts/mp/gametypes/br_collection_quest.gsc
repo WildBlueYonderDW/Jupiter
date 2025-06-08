@@ -14,7 +14,7 @@
 #namespace br_collection_quest;
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a6
 // Size: 0xda
 function init()
@@ -39,7 +39,7 @@ function init()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x388
 // Size: 0xb3
 function col_removequestinstance()
@@ -57,7 +57,7 @@ function col_removequestinstance()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x443
 // Size: 0x23d
 function takequestitem( pickupent )
@@ -98,7 +98,7 @@ function takequestitem( pickupent )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x688
 // Size: 0xd5
 function updatelocaleplayerlist()
@@ -124,7 +124,7 @@ function updatelocaleplayerlist()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x765
 // Size: 0x56
 function updateusablestateall()
@@ -136,7 +136,7 @@ function updateusablestateall()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7c3
 // Size: 0x85
 function updateusablestate( item )
@@ -155,7 +155,7 @@ function updateusablestate( item )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x850
 // Size: 0x75
 function showuielements( instance )
@@ -168,7 +168,7 @@ function showuielements( instance )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8cd
 // Size: 0x6d
 function updatecollectionui( instance )
@@ -180,7 +180,7 @@ function updatecollectionui( instance )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x942
 // Size: 0x35
 function updatecollectionuiforplayer( instance, player )
@@ -190,7 +190,7 @@ function updatecollectionuiforplayer( instance, player )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97f
 // Size: 0x91
 function determineobjectiveiconvisibility()
@@ -208,7 +208,7 @@ function determineobjectiveiconvisibility()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa18
 // Size: 0x74
 function hideuielements( instance )
@@ -221,7 +221,7 @@ function hideuielements( instance )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa94
 // Size: 0xe8
 function findpoint()
@@ -258,7 +258,7 @@ function findpoint()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb84
 // Size: 0x83
 function forcespawnitem()
@@ -270,7 +270,8 @@ function forcespawnitem()
         return;
     }
     
-    for (index = 0; index < 30; index++) {
+    for ( index = 0; index < 30 ; index++ )
+    {
         point = findpoint();
         
         if ( !isdefined( point ) )
@@ -281,7 +282,7 @@ function forcespawnitem()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc0f
 // Size: 0xb1
 function spawnitem( point )
@@ -303,7 +304,7 @@ function spawnitem( point )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcc8
 // Size: 0x35
 function stashthink()
@@ -319,7 +320,7 @@ function stashthink()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd05
 // Size: 0x130
 function usestash( player )
@@ -354,7 +355,7 @@ function usestash( player )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe3d
 // Size: 0xfb
 function completecollectionquest( stash )
@@ -378,7 +379,7 @@ function completecollectionquest( stash )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf40
 // Size: 0x2c
 function failcollectionquest()
@@ -389,7 +390,7 @@ function failcollectionquest()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf74
 // Size: 0x1a
 function col_checkiflocaleisavailable()
@@ -403,7 +404,7 @@ function col_checkiflocaleisavailable()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf96
 // Size: 0xb5
 function col_createquestlocale( placement )
@@ -420,7 +421,7 @@ function col_createquestlocale( placement )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1054
 // Size: 0xa7
 function col_createcircleobjectiveicon()
@@ -441,7 +442,7 @@ function col_createcircleobjectiveicon()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1103
 // Size: 0x8e
 function col_localethink_itemspawn()
@@ -472,7 +473,7 @@ function col_localethink_itemspawn()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1199
 // Size: 0x25
 function col_localethink_objectivevisibility()
@@ -486,7 +487,7 @@ function col_localethink_objectivevisibility()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11c6
 // Size: 0xbb
 function col_removelocaleinstance()
@@ -508,7 +509,7 @@ function col_removelocaleinstance()
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1289
 // Size: 0xd2
 function col_circletick( dangercircleorigin, dangercircleradius )
@@ -538,7 +539,7 @@ function col_circletick( dangercircleorigin, dangercircleradius )
 }
 
 // Namespace br_collection_quest / scripts\mp\gametypes\br_collection_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1363
 // Size: 0x1c
 function checkpoint( point )

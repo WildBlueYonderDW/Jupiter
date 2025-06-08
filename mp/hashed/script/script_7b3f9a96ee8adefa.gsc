@@ -20,7 +20,7 @@ function autoexec main()
 }
 
 // Namespace namespace_2a464bfce46d86a5 / namespace_223933319bd04bc8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x135
 // Size: 0x44
 function init()
@@ -31,7 +31,7 @@ function init()
 }
 
 // Namespace namespace_2a464bfce46d86a5 / namespace_223933319bd04bc8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x181
 // Size: 0x4, Type: bool
 function should_drop()
@@ -40,7 +40,7 @@ function should_drop()
 }
 
 // Namespace namespace_2a464bfce46d86a5 / namespace_223933319bd04bc8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18e
 // Size: 0x13d
 function modify_drop_chance( chance, context )
@@ -89,7 +89,7 @@ function modify_drop_chance( chance, context )
 }
 
 // Namespace namespace_2a464bfce46d86a5 / namespace_223933319bd04bc8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x9
 function give_ammo()

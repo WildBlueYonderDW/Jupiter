@@ -12,8 +12,8 @@
 #namespace namespace_36031e382978bc8d;
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x214
+// Params 0
+// Checksum 0x0, Offset: 0x213
 // Size: 0x5d
 function function_304c63cbb536c526()
 {
@@ -24,8 +24,8 @@ function function_304c63cbb536c526()
 }
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x279
+// Params 0
+// Checksum 0x0, Offset: 0x278
 // Size: 0x62
 function function_e666bc1f7f826ea2()
 {
@@ -35,8 +35,8 @@ function function_e666bc1f7f826ea2()
 }
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e3
+// Params 0
+// Checksum 0x0, Offset: 0x2e2
 // Size: 0x53
 function function_ac7db7e26eb6926c()
 {
@@ -51,7 +51,7 @@ function function_ac7db7e26eb6926c()
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x33e
+// Checksum 0x0, Offset: 0x33d
 // Size: 0x5d
 function private function_36985b9cd291d92( params )
 {
@@ -68,7 +68,7 @@ function private function_36985b9cd291d92( params )
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3a3
+// Checksum 0x0, Offset: 0x3a2
 // Size: 0x2a
 function private function_8776345ecd2673e5( move_type )
 {
@@ -79,7 +79,7 @@ function private function_8776345ecd2673e5( move_type )
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3d6
+// Checksum 0x0, Offset: 0x3d5
 // Size: 0x5f
 function private function_eee30195769f679e( struct )
 {
@@ -100,7 +100,7 @@ function private function_eee30195769f679e( struct )
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x43e
+// Checksum 0x0, Offset: 0x43d
 // Size: 0x44
 function private function_3efc6f398dd71d26( alias )
 {
@@ -114,7 +114,7 @@ function private function_3efc6f398dd71d26( alias )
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x48a
+// Checksum 0x0, Offset: 0x489
 // Size: 0x87
 function private wander_listener()
 {
@@ -136,7 +136,7 @@ function private wander_listener()
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x519
+// Checksum 0x0, Offset: 0x518
 // Size: 0x5d
 function private function_fd1cffcbaac9dd4f( params )
 {
@@ -151,7 +151,7 @@ function private function_fd1cffcbaac9dd4f( params )
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x57e
+// Checksum 0x0, Offset: 0x57d
 // Size: 0x104
 function private function_138dc2e6ae3e968b()
 {
@@ -188,7 +188,7 @@ function private function_138dc2e6ae3e968b()
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x68a
+// Checksum 0x0, Offset: 0x689
 // Size: 0xe6
 function private function_7df646d888a5ca2d()
 {
@@ -212,7 +212,7 @@ function private function_7df646d888a5ca2d()
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x779
+// Checksum 0x0, Offset: 0x778
 // Size: 0x22
 function private function_385b704af023d89a( params )
 {
@@ -224,7 +224,7 @@ function private function_385b704af023d89a( params )
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x7a3
+// Checksum 0x0, Offset: 0x7a2
 // Size: 0x6f
 function private function_3cb62239fb4bdf95()
 {
@@ -249,7 +249,7 @@ function private function_3cb62239fb4bdf95()
 
 // Namespace namespace_36031e382978bc8d / namespace_23e577195401fd11
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x81a
+// Checksum 0x0, Offset: 0x819
 // Size: 0x26d
 function private function_25ddc7410cd116ca()
 {
@@ -264,7 +264,8 @@ function private function_25ddc7410cd116ca()
     
     minmovespeed = var_c717f64420bcaf54[ 0 ].speedthreshold;
     
-    for (i = 1; i < var_c717f64420bcaf54.size; i++) {
+    for ( i = 1; i < var_c717f64420bcaf54.size ; i++ )
+    {
         minmovespeed = min( minmovespeed, var_c717f64420bcaf54[ i ].speedthreshold );
     }
     

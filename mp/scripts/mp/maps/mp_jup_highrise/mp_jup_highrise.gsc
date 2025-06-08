@@ -13,7 +13,7 @@
 #namespace mp_jup_highrise;
 
 // Namespace mp_jup_highrise / scripts\mp\maps\mp_jup_highrise\mp_jup_highrise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x332
 // Size: 0xb6
 function main()
@@ -36,7 +36,7 @@ function main()
 }
 
 // Namespace mp_jup_highrise / scripts\mp\maps\mp_jup_highrise\mp_jup_highrise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f0
 // Size: 0x80
 function function_86eda34bb6bbe9fb()
@@ -50,7 +50,7 @@ function function_86eda34bb6bbe9fb()
 }
 
 // Namespace mp_jup_highrise / scripts\mp\maps\mp_jup_highrise\mp_jup_highrise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x478
 // Size: 0x20
 function function_4f48f01701f9e22b()
@@ -65,7 +65,7 @@ function function_4f48f01701f9e22b()
 }
 
 // Namespace mp_jup_highrise / scripts\mp\maps\mp_jup_highrise\mp_jup_highrise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a0
 // Size: 0x5f
 function function_a1f774c728610421()
@@ -82,7 +82,7 @@ function function_a1f774c728610421()
 }
 
 // Namespace mp_jup_highrise / scripts\mp\maps\mp_jup_highrise\mp_jup_highrise
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x507
 // Size: 0x152
 function function_359d426bc2dca387()

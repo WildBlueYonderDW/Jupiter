@@ -26,8 +26,8 @@
 #namespace globallogic;
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x226
+// Params 0
+// Checksum 0x0, Offset: 0x22f
 // Size: 0x3f3
 function init()
 {
@@ -47,12 +47,12 @@ function init()
         scripts\mp\gamestaterestore::setupcallbacks();
     }
     
-    level.leanthread = getdvarint( @"hash_715685dae50de688", 0 ) == 1;
+    level.leanthread = getdvarint( @"scr_runlean_playerthread_count", 0 ) == 1;
     level.script = tolower( getdvar( @"g_mapname" ) );
     level.gametype = scripts\cp_mp\utility\game_utility::getgametype();
     level.systemlink = getdvarint( @"systemlink", 0 ) == 1;
     level.codcasterenabled = function_4e3caadf7e0c8a7a();
-    level.playermaxhealth = getdvarint( @"hash_b1d561f9a9241e09" );
+    level.playermaxhealth = getdvarint( @"scr_player_maxhealth" );
     level.splitscreen = issplitscreen();
     level.onlinegame = getdvarint( @"onlinegame" );
     level.forcerankxp = getdvarint( @"hash_9c2d59c1962cac50", 0 ) == 1;
@@ -63,8 +63,8 @@ function init()
     level.challengesallowed = level.playerxpenabled || getdvarint( @"force_challenges" );
     level.enforceantiboosting = level.playerxpenabled || level.weaponxpenabled || level.challengesallowed;
     level.onlinestatsenabled = level.rankedmatch;
-    level.var_ec2fb549b15ad827 = level.rankedmatch && getdvarint( @"hash_5dbec0fb7158c834" );
-    level.var_77907d733abe8b63 = level.rankedmatch && getdvarint( @"hash_beaac6d270585321" );
+    level.var_ec2fb549b15ad827 = level.rankedmatch && getdvarint( @"online_matchmaking_is_league_play" );
+    level.var_77907d733abe8b63 = level.rankedmatch && getdvarint( @"online_matchmaking_is_league_play_br" );
     level.var_5ac73e9eb9eea898 = level.var_77907d733abe8b63 && getsubgametype() == "resurgence";
     level.starttimeutcseconds = getsystemtime();
     setplayerdatagroups();
@@ -90,7 +90,7 @@ function init()
         }
     #/
     
-    level.var_9e090a159cb48220 = getdvarint( @"hash_6fb113e82b497409", 0 ) > 0;
+    level.tertiaryweaponslotenabled = getdvarint( @"tertiaryweaponslotenabled", 0 ) > 0;
     level scripts\cp_mp\interaction::init_interaction();
     level thread namespace_1676ee684fdab294::function_d63760cb7c36587();
     level thread namespace_5e6f7358ff645809::init();
@@ -105,8 +105,8 @@ function init()
 }
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x621
+// Params 0
+// Checksum 0x0, Offset: 0x62a
 // Size: 0x3a
 function function_32bf85f7059300d9()
 {
@@ -117,8 +117,8 @@ function function_32bf85f7059300d9()
 }
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x663
+// Params 0
+// Checksum 0x0, Offset: 0x66c
 // Size: 0x59
 function endmatchonhostdisconnect()
 {
@@ -142,8 +142,8 @@ function endmatchonhostdisconnect()
 /#
 
     // Namespace globallogic / scripts\mp\globallogic
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6c4
+    // Params 0
+    // Checksum 0x0, Offset: 0x6cd
     // Size: 0x35, Type: dev
     function function_6cea2a5189661c1e()
     {
@@ -162,8 +162,8 @@ function endmatchonhostdisconnect()
 #/
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x701
+// Params 0
+// Checksum 0x0, Offset: 0x70a
 // Size: 0x116
 function registerdvars()
 {
@@ -197,8 +197,8 @@ function registerdvars()
 }
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81f
+// Params 0
+// Checksum 0x0, Offset: 0x828
 // Size: 0x1c1
 function registerfalldamagedvars()
 {
@@ -239,18 +239,18 @@ function registerfalldamagedvars()
 }
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e8
+// Params 0
+// Checksum 0x0, Offset: 0x9f1
 // Size: 0x24
 function function_d62a31437e2d4568()
 {
-    setdvar( @"hash_a1ebe22197cb5cc0", 1 );
-    setdvar( @"hash_569c1f8e8857b817", 1 );
+    setdvar( @"lui_show_turret_overheat", 1 );
+    setdvar( @"bg_turretoverheatreset", 1 );
 }
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa14
+// Params 0
+// Checksum 0x0, Offset: 0xa1d
 // Size: 0x26
 function function_32e2d220ebf5a876()
 {
@@ -261,9 +261,9 @@ function function_32e2d220ebf5a876()
 }
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa42
-// Size: 0x16c
+// Params 0
+// Checksum 0x0, Offset: 0xa4b
+// Size: 0x177
 function setupcallbacks()
 {
     setdefaultcallbacks();
@@ -296,17 +296,18 @@ function setupcallbacks()
     level.updategameevents = &scripts\mp\gamelogic::updategameevents;
     level.spawnintermission = &scripts\mp\gamelogic::spawnintermission_default;
     
-    /#
+    if ( getbuildversion() != "SHIP" )
+    {
         level.devinit = &scripts\mp\dev::init;
-    #/
+    }
     
     scripts\mp\mp_agent_damage::register_ai_damage_callbacks();
     namespace_d856b08ddfedc495::setupcallbacks();
 }
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb6
+// Params 0
+// Checksum 0x0, Offset: 0xbca
 // Size: 0xfe
 function setdefaultcallbacks()
 {
@@ -331,8 +332,8 @@ function setdefaultcallbacks()
 }
 
 // Namespace globallogic / scripts\mp\globallogic
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0xcbc
+// Params 10
+// Checksum 0x0, Offset: 0xcd0
 // Size: 0x53
 function blank( arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 )
 {
@@ -342,12 +343,13 @@ function blank( arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 )
 /#
 
     // Namespace globallogic / scripts\mp\globallogic
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd17
+    // Params 2
+    // Checksum 0x0, Offset: 0xd2b
     // Size: 0x3e, Type: dev
     function debugline( start, end )
     {
-        for (i = 0; i < 50; i++) {
+        for ( i = 0; i < 50 ; i++ )
+        {
             line( start, end );
             wait 0.05;
         }

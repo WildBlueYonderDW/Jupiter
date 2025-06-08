@@ -9,7 +9,7 @@
 #namespace napalmburst;
 
 // Namespace napalmburst / namespace_c45a18a82a9bca6b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x143
 // Size: 0x1dc
 function init_napalmburst()
@@ -42,7 +42,7 @@ function init_napalmburst()
 }
 
 // Namespace napalmburst / namespace_c45a18a82a9bca6b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x327
 // Size: 0x21
 function function_8d25decb6d23f001( func )
@@ -51,7 +51,7 @@ function function_8d25decb6d23f001( func )
 }
 
 // Namespace napalmburst / namespace_c45a18a82a9bca6b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x350
 // Size: 0x21
 function function_7d46ac68b0d2524f( func )
@@ -60,7 +60,7 @@ function function_7d46ac68b0d2524f( func )
 }
 
 // Namespace napalmburst / namespace_c45a18a82a9bca6b
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x379
 // Size: 0xbb
 function function_a428cc7d938fa416( death, attacker, mod, sweapon, vpoint, shitloc, modelindex )
@@ -79,7 +79,7 @@ function function_a428cc7d938fa416( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace napalmburst / namespace_c45a18a82a9bca6b
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x43c
 // Size: 0x12b
 function function_9f7e53b0c8a95ee( death, attacker, mod, sweapon, vpoint, shitloc, modelindex )
@@ -111,7 +111,7 @@ function function_9f7e53b0c8a95ee( death, attacker, mod, sweapon, vpoint, shitlo
 }
 
 // Namespace napalmburst / namespace_c45a18a82a9bca6b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56f
 // Size: 0xab, Type: bool
 function function_af75491a8a4c3790()
@@ -145,7 +145,7 @@ function function_af75491a8a4c3790()
 /#
 
     // Namespace napalmburst / namespace_c45a18a82a9bca6b
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x623
     // Size: 0x7b, Type: dev
     function function_746dda921942d946()
@@ -159,7 +159,7 @@ function function_af75491a8a4c3790()
     }
 
     // Namespace napalmburst / namespace_c45a18a82a9bca6b
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6a6
     // Size: 0x2f, Type: dev
     function function_439421327ad70eb()

@@ -4,7 +4,7 @@
 #namespace arcwire;
 
 // Namespace arcwire / namespace_5164ffa8760b72a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d4
 // Size: 0x145
 function function_a81f1843c5401c15()
@@ -79,7 +79,7 @@ function private function_30ea5b1748470b7e( func_activate )
 }
 
 // Namespace arcwire / namespace_5164ffa8760b72a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x432
 // Size: 0x9b
 function drawbridge_activate( var_27fcc9ef03f34d03 )
@@ -105,7 +105,7 @@ function drawbridge_activate( var_27fcc9ef03f34d03 )
 }
 
 // Namespace arcwire / namespace_5164ffa8760b72a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d5
 // Size: 0xa0
 function function_e3330e3785c50653( var_27fcc9ef03f34d03 )

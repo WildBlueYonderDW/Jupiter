@@ -8,7 +8,7 @@
 #namespace utility;
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7b1
 // Size: 0xb6
 function noself_func( func, parm1, parm2, parm3, parm4 )
@@ -51,7 +51,7 @@ function noself_func( func, parm1, parm2, parm3, parm4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x86f
 // Size: 0xb3
 function noself_func_return( func, parm1, parm2, parm3, parm4 )
@@ -90,7 +90,7 @@ function noself_func_return( func, parm1, parm2, parm3, parm4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x92b
 // Size: 0xca
 function self_func( func, parm1, parm2, parm3, parm4, var_77895a5b8a625552 )
@@ -129,7 +129,7 @@ function self_func( func, parm1, parm2, parm3, parm4, var_77895a5b8a625552 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9fe
 // Size: 0xb0
 function script_func( func, parm1, parm2, parm3, parm4 )
@@ -163,7 +163,7 @@ function script_func( func, parm1, parm2, parm3, parm4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xab6
 // Size: 0x36
 function randomvector( num )
@@ -172,7 +172,7 @@ function randomvector( num )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaf5
 // Size: 0x98
 function randomvectorrange( num_min, num_max )
@@ -204,7 +204,7 @@ function randomvectorrange( num_min, num_max )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb96
 // Size: 0x16
 function sign( x )
@@ -218,7 +218,7 @@ function sign( x )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbb5
 // Size: 0x29
 function vectorsign( vec )
@@ -227,7 +227,7 @@ function vectorsign( vec )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbe7
 // Size: 0x69
 function randomonunitsphere()
@@ -241,7 +241,7 @@ function randomonunitsphere()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc59
 // Size: 0x4f
 function function_6174330574a2a273()
@@ -254,7 +254,7 @@ function function_6174330574a2a273()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb1
 // Size: 0x44
 function function_d553466cf817a4da()
@@ -272,7 +272,7 @@ function function_d553466cf817a4da()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcfd
 // Size: 0x3a
 function mod( dividend, divisor )
@@ -288,7 +288,7 @@ function mod( dividend, divisor )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd40
 // Size: 0x4a
 function get_enemy_team( team )
@@ -301,7 +301,7 @@ function get_enemy_team( team )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd93
 // Size: 0x35
 function clear_exception( type )
@@ -311,7 +311,7 @@ function clear_exception( type )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdd0
 // Size: 0xc, Type: bool
 function cointoss()
@@ -320,7 +320,7 @@ function cointoss()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde5
 // Size: 0x24, Type: bool
 function percent_chance( probability )
@@ -330,7 +330,7 @@ function percent_chance( probability )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe12
 // Size: 0x60
 function choose_from_weighted_array( values, weights )
@@ -338,7 +338,8 @@ function choose_from_weighted_array( values, weights )
     assert( values.size == weights.size );
     randomval = randomint( weights[ weights.size - 1 ] + 1 );
     
-    for (i = 0; i < weights.size; i++) {
+    for ( i = 0; i < weights.size ; i++ )
+    {
         if ( randomval <= weights[ i ] )
         {
             return values[ i ];
@@ -347,7 +348,7 @@ function choose_from_weighted_array( values, weights )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe7a
 // Size: 0x38
 function waittill_string( msg, ent )
@@ -363,7 +364,7 @@ function waittill_string( msg, ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xeba
 // Size: 0x43
 function waittillmatch_string( anim_name, msg, ent )
@@ -379,7 +380,7 @@ function waittillmatch_string( anim_name, msg, ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf05
 // Size: 0x27
 function waittill_string_no_endon_death( msg, ent )
@@ -390,7 +391,7 @@ function waittill_string_no_endon_death( msg, ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf34
 // Size: 0x33
 function function_67e5ee8add8aafae( string, ent )
@@ -401,7 +402,7 @@ function function_67e5ee8add8aafae( string, ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xf6f
 // Size: 0x118
 function waittill_multiple( string1, string2, string3, string4, string5 )
@@ -451,7 +452,7 @@ function waittill_multiple( string1, string2, string3, string4, string5 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x108f
 // Size: 0x9b
 function waittill_2( string1, string2 )
@@ -482,7 +483,7 @@ function waittill_2( string1, string2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1132
 // Size: 0x2d
 function waittillmatch_notify( anim_name, match_msg, notify_str )
@@ -493,7 +494,7 @@ function waittillmatch_notify( anim_name, match_msg, notify_str )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1167
 // Size: 0x5e
 function waittill_any_return_1( string1 )
@@ -516,7 +517,7 @@ function waittill_any_return_1( string1 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11ce
 // Size: 0x87
 function waittill_any_return_2( string1, string2 )
@@ -544,7 +545,7 @@ function waittill_any_return_2( string1, string2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x125e
 // Size: 0xb0
 function waittill_any_return_3( string1, string2, string3 )
@@ -577,7 +578,7 @@ function waittill_any_return_3( string1, string2, string3 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1317
 // Size: 0xd9
 function waittill_any_return_4( string1, string2, string3, string4 )
@@ -615,7 +616,7 @@ function waittill_any_return_4( string1, string2, string3, string4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x13f9
 // Size: 0x106
 function waittill_any_return_5( string1, string2, string3, string4, string5 )
@@ -658,7 +659,7 @@ function waittill_any_return_5( string1, string2, string3, string4, string5 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1508
 // Size: 0x133
 function waittill_any_return_6( string1, string2, string3, string4, string5, string6 )
@@ -706,7 +707,7 @@ function waittill_any_return_6( string1, string2, string3, string4, string5, str
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1644
 // Size: 0x160
 function waittill_any_return_7( string1, string2, string3, string4, string5, string6, string7 )
@@ -759,7 +760,7 @@ function waittill_any_return_7( string1, string2, string3, string4, string5, str
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x17ad
 // Size: 0x1a1
 function waittill_any_return( string1, string2, string3, string4, string5, string6, string7, string8 )
@@ -819,7 +820,7 @@ function waittill_any_return( string1, string2, string3, string4, string5, strin
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1957
 // Size: 0x147
 function waittillmatch_any_return( animstring, string1, string2, string3, string4, string5, string6 )
@@ -867,7 +868,7 @@ function waittillmatch_any_return( animstring, string1, string2, string3, string
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1aa7
 // Size: 0x46
 function waittill_any_return_no_endon_death_1( string1 )
@@ -885,7 +886,7 @@ function waittill_any_return_no_endon_death_1( string1 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1af6
 // Size: 0x5d
 function waittill_any_return_no_endon_death_2( string1, string2 )
@@ -908,7 +909,7 @@ function waittill_any_return_no_endon_death_2( string1, string2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b5c
 // Size: 0x74
 function waittill_any_return_no_endon_death_3( string1, string2, string3 )
@@ -936,7 +937,7 @@ function waittill_any_return_no_endon_death_3( string1, string2, string3 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1bd9
 // Size: 0x8b
 function waittill_any_return_no_endon_death_4( string1, string2, string3, string4 )
@@ -969,7 +970,7 @@ function waittill_any_return_no_endon_death_4( string1, string2, string3, string
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1c6d
 // Size: 0xa4
 function waittill_any_return_no_endon_death_5( string1, string2, string3, string4, string5 )
@@ -1007,7 +1008,7 @@ function waittill_any_return_no_endon_death_5( string1, string2, string3, string
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1d1a
 // Size: 0xbd
 function waittill_any_return_no_endon_death_6( string1, string2, string3, string4, string5, string6 )
@@ -1050,7 +1051,7 @@ function waittill_any_return_no_endon_death_6( string1, string2, string3, string
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x1de0
 // Size: 0xd6
 function function_efe4706df8361219( string1, string2, string3, string4, string5, string6, string7 )
@@ -1098,7 +1099,7 @@ function function_efe4706df8361219( string1, string2, string3, string4, string5,
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1ebf
 // Size: 0xd1
 function waittill_any_return_no_endon_death( string1, string2, string3, string4, string5, string6 )
@@ -1142,14 +1143,15 @@ function waittill_any_return_no_endon_death( string1, string2, string3, string4,
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f99
 // Size: 0x49
 function function_5adca43f839a3cce( string_array )
 {
     assertex( string_array.size > 0, "<dev string:x141>" );
     
-    for (i = 0; i < string_array.size - 1; i++) {
+    for ( i = 0; i < string_array.size - 1 ; i++ )
+    {
         self endon( string_array[ i ] );
     }
     
@@ -1157,7 +1159,7 @@ function function_5adca43f839a3cce( string_array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fea
 // Size: 0xa8
 function waittill_any_in_array_return( string_array )
@@ -1186,7 +1188,7 @@ function waittill_any_in_array_return( string_array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x209b
 // Size: 0x83
 function waittill_any_in_array_return_no_endon_death( string_array )
@@ -1204,7 +1206,7 @@ function waittill_any_in_array_return_no_endon_death( string_array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2127
 // Size: 0xbb
 function waittill_any_in_array_or_timeout( string_array, timeout )
@@ -1234,7 +1236,7 @@ function waittill_any_in_array_or_timeout( string_array, timeout )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21eb
 // Size: 0x96
 function waittill_any_in_array_or_timeout_no_endon_death( string_array, timeout )
@@ -1253,7 +1255,7 @@ function waittill_any_in_array_or_timeout_no_endon_death( string_array, timeout 
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x228a
 // Size: 0x4a
 function waittill_all_in_array( string_array )
@@ -1269,7 +1271,7 @@ function waittill_all_in_array( string_array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22dc
 // Size: 0x70
 function waittill_any_timeout_1( timeout, string1 )
@@ -1293,7 +1295,7 @@ function waittill_any_timeout_1( timeout, string1 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2355
 // Size: 0x99
 function waittill_any_timeout_2( timeout, string1, string2 )
@@ -1322,7 +1324,7 @@ function waittill_any_timeout_2( timeout, string1, string2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x23f7
 // Size: 0xc2
 function waittill_any_timeout_3( timeout, string1, string2, string3 )
@@ -1356,7 +1358,7 @@ function waittill_any_timeout_3( timeout, string1, string2, string3 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x24c2
 // Size: 0xec
 function waittill_any_timeout_4( timeout, string1, string2, string3, string4 )
@@ -1395,7 +1397,7 @@ function waittill_any_timeout_4( timeout, string1, string2, string3, string4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x25b7
 // Size: 0x119
 function waittill_any_timeout_5( timeout, string1, string2, string3, string4, string5 )
@@ -1439,7 +1441,7 @@ function waittill_any_timeout_5( timeout, string1, string2, string3, string4, st
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x26d9
 // Size: 0x146
 function waittill_any_timeout_6( timeout, string1, string2, string3, string4, string5, string6 )
@@ -1488,7 +1490,7 @@ function waittill_any_timeout_6( timeout, string1, string2, string3, string4, st
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x2828
 // Size: 0x15a
 function waittill_any_timeout( timeout, string1, string2, string3, string4, string5, string6 )
@@ -1539,7 +1541,7 @@ function waittill_any_timeout( timeout, string1, string2, string3, string4, stri
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x298b
 // Size: 0x21
 function timeout_struct( delay )
@@ -1550,7 +1552,7 @@ function timeout_struct( delay )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29b4
 // Size: 0x58
 function waittill_any_timeout_no_endon_death_1( timeout, string1 )
@@ -1569,7 +1571,7 @@ function waittill_any_timeout_no_endon_death_1( timeout, string1 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a15
 // Size: 0x6f
 function waittill_any_timeout_no_endon_death_2( timeout, string1, string2 )
@@ -1593,7 +1595,7 @@ function waittill_any_timeout_no_endon_death_2( timeout, string1, string2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a8d
 // Size: 0x86
 function waittill_any_timeout_no_endon_death_3( timeout, string1, string2, string3 )
@@ -1622,7 +1624,7 @@ function waittill_any_timeout_no_endon_death_3( timeout, string1, string2, strin
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2b1c
 // Size: 0x9e
 function waittill_any_timeout_no_endon_death_4( timeout, string1, string2, string3, string4 )
@@ -1656,7 +1658,7 @@ function waittill_any_timeout_no_endon_death_4( timeout, string1, string2, strin
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2bc3
 // Size: 0xb7
 function waittill_any_timeout_no_endon_death_5( timeout, string1, string2, string3, string4, string5 )
@@ -1695,7 +1697,7 @@ function waittill_any_timeout_no_endon_death_5( timeout, string1, string2, strin
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2c83
 // Size: 0xcb
 function waittill_any_timeout_no_endon_death( timeout, string1, string2, string3, string4, string5 )
@@ -1735,7 +1737,7 @@ function waittill_any_timeout_no_endon_death( timeout, string1, string2, string3
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d57
 // Size: 0x2a
 function waittill_any_2( string1, string2 )
@@ -1751,7 +1753,7 @@ function waittill_any_2( string1, string2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d89
 // Size: 0x3a
 function waittill_any_3( string1, string2, string3 )
@@ -1772,7 +1774,7 @@ function waittill_any_3( string1, string2, string3 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2dcb
 // Size: 0x4a
 function waittill_any_4( string1, string2, string3, string4 )
@@ -1798,7 +1800,7 @@ function waittill_any_4( string1, string2, string3, string4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2e1d
 // Size: 0x5a
 function waittill_any_5( string1, string2, string3, string4, string5 )
@@ -1829,7 +1831,7 @@ function waittill_any_5( string1, string2, string3, string4, string5 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2e7f
 // Size: 0x6a
 function waittill_any_6( string1, string2, string3, string4, string5, string6 )
@@ -1865,7 +1867,7 @@ function waittill_any_6( string1, string2, string3, string4, string5, string6 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x2ef1
 // Size: 0x7c
 function waittill_any_7( string1, string2, string3, string4, string5, string6, string7 )
@@ -1906,7 +1908,7 @@ function waittill_any_7( string1, string2, string3, string4, string5, string6, s
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x2f75
 // Size: 0x8e
 function waittill_any_8( string1, string2, string3, string4, string5, string6, string7, string8 )
@@ -1952,7 +1954,7 @@ function waittill_any_8( string1, string2, string3, string4, string5, string6, s
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x300b
 // Size: 0xa2
 function waittill_any( string1, string2, string3, string4, string5, string6, string7, string8 )
@@ -1999,7 +2001,7 @@ function waittill_any( string1, string2, string3, string4, string5, string6, str
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x30b5
 // Size: 0xf1
 function waittill_any_ents( ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7 )
@@ -2041,7 +2043,7 @@ function waittill_any_ents( ent1, string1, ent2, string2, ent3, string3, ent4, s
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0x31ae
 // Size: 0x107
 function function_cf308f348d516c65( delay, ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7 )
@@ -2085,7 +2087,7 @@ function function_cf308f348d516c65( delay, ent1, string1, ent2, string2, ent3, s
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x32bd
 // Size: 0x15f
 function waittill_any_ents_return( ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7 )
@@ -2132,7 +2134,7 @@ function waittill_any_ents_return( ent1, string1, ent2, string2, ent3, string3, 
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x3425
 // Size: 0x15f
 function function_7b9e0e7ca4b3b940( ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7 )
@@ -2179,7 +2181,7 @@ function function_7b9e0e7ca4b3b940( ent1, string1, ent2, string2, ent3, string3,
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x358d
 // Size: 0xab
 function function_e6583be4abd3e438( ents, string )
@@ -2200,7 +2202,7 @@ function function_e6583be4abd3e438( ents, string )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x3641
 // Size: 0x106
 function waittill_any_ents_array( ents, string1, string2, string3, string4, string5, string6, string7 )
@@ -2252,7 +2254,7 @@ function waittill_any_ents_array( ents, string1, string2, string3, string4, stri
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x374f
 // Size: 0x2c
 function wait_time_in_ms( waittimems )
@@ -2266,7 +2268,7 @@ function wait_time_in_ms( waittimems )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3783
 // Size: 0x56, Type: bool
 function script_delay()
@@ -2286,7 +2288,7 @@ function script_delay()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37e2
 // Size: 0xd5
 function script_wait()
@@ -2317,7 +2319,7 @@ function script_wait()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38c0
 // Size: 0x34
 function ispointinwater( point )
@@ -2327,7 +2329,7 @@ function ispointinwater( point )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38fd
 // Size: 0x20, Type: bool
 function isflashed()
@@ -2341,7 +2343,7 @@ function isflashed()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3926
 // Size: 0x20, Type: bool
 function isstunned()
@@ -2355,7 +2357,7 @@ function isstunned()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x394f
 // Size: 0x26, Type: bool
 function flag_exist( message )
@@ -2369,7 +2371,7 @@ function flag_exist( message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x397e
 // Size: 0x31, Type: bool
 function flag( message )
@@ -2379,7 +2381,7 @@ function flag( message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39b8
 // Size: 0x8c
 function flag_init( message )
@@ -2406,7 +2408,7 @@ function flag_init( message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a4c
 // Size: 0xb
 function empty_init_func( empty )
@@ -2415,7 +2417,7 @@ function empty_init_func( empty )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a5f
 // Size: 0x4c
 function flag_set( message, setter )
@@ -2438,7 +2440,7 @@ function flag_set( message, setter )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ab3
 // Size: 0x35
 function flag_wait( msg )
@@ -2458,7 +2460,7 @@ function flag_wait( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3af0
 // Size: 0x2f
 function flag_clear( message )
@@ -2474,7 +2476,7 @@ function flag_clear( message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b27
 // Size: 0x1c
 function flag_waitopen( msg )
@@ -2486,7 +2488,7 @@ function flag_waitopen( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b4b
 // Size: 0x80
 function function_ef5098111fa4ae2c( flags )
@@ -2513,7 +2515,7 @@ function function_ef5098111fa4ae2c( flags )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x3bd3
 // Size: 0x83
 function function_254e355bdfc30d6c( flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8 )
@@ -2523,7 +2525,7 @@ function function_254e355bdfc30d6c( flag1, flag2, flag3, flag4, flag5, flag6, fl
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3c5e
 // Size: 0x3c
 function flag_waitopen_either( flag1, flag2 )
@@ -2540,7 +2542,7 @@ function flag_waitopen_either( flag1, flag2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ca2
 // Size: 0x1b
 function waittill_either( msg1, msg2 )
@@ -2551,7 +2553,7 @@ function waittill_either( msg1, msg2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3cc6
 // Size: 0x48
 function trigger_on( name, type )
@@ -2567,7 +2569,7 @@ function trigger_on( name, type )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d16
 // Size: 0x13
 function trigger_on_proc()
@@ -2577,7 +2579,7 @@ function trigger_on_proc()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3d31
 // Size: 0x48
 function trigger_off( name, type )
@@ -2593,7 +2595,7 @@ function trigger_off( name, type )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d81
 // Size: 0x32
 function trigger_off_proc()
@@ -2608,7 +2610,7 @@ function trigger_off_proc()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3dbb
 // Size: 0x4d
 function set_trigger_flag_permissions( msg )
@@ -2623,7 +2625,7 @@ function set_trigger_flag_permissions( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e10
 // Size: 0x116
 function update_trigger_based_on_flags()
@@ -2665,14 +2667,15 @@ function update_trigger_based_on_flags()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f2e
 // Size: 0x56
 function create_flags_and_return_tokens( flags )
 {
     tokens = strtok( flags, " " );
     
-    for (i = 0; i < tokens.size; i++) {
+    for ( i = 0; i < tokens.size ; i++ )
+    {
         if ( !isdefined( level.flag[ tokens[ i ] ] ) )
         {
             flag_init( tokens[ i ] );
@@ -2683,7 +2686,7 @@ function create_flags_and_return_tokens( flags )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f8d
 // Size: 0x43
 function init_trigger_flags()
@@ -2699,7 +2702,7 @@ function init_trigger_flags()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fd8
 // Size: 0x2d5
 function addstruct( struct )
@@ -2763,7 +2766,7 @@ function addstruct( struct )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x42b5
 // Size: 0x119
 function getstruct( name, type )
@@ -2805,7 +2808,7 @@ function getstruct( name, type )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x43d7
 // Size: 0x69
 function getstructarray( name, type )
@@ -2832,7 +2835,7 @@ function getstructarray( name, type )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4449
 // Size: 0x22b
 function function_e89fc5f3b8084c2b( struct )
@@ -2890,7 +2893,7 @@ function function_e89fc5f3b8084c2b( struct )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x467c
 // Size: 0xa7
 function add_smartobject_point( struct )
@@ -2922,7 +2925,7 @@ function add_smartobject_point( struct )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x472b
 // Size: 0x111
 function store_linked_smartobjects()
@@ -2962,7 +2965,7 @@ function store_linked_smartobjects()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4844
 // Size: 0x27e
 function init_struct_class()
@@ -3045,7 +3048,7 @@ function init_struct_class()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4aca
 // Size: 0x38
 function deletestructarray( value, key, delay )
@@ -3055,7 +3058,7 @@ function deletestructarray( value, key, delay )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b0a
 // Size: 0x35c
 function deletestruct_ref( struct )
@@ -3139,7 +3142,7 @@ function deletestruct_ref( struct )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e6e
 // Size: 0xe3
 function deletestructarray_ref( structs, delay )
@@ -3170,7 +3173,7 @@ function deletestructarray_ref( structs, delay )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4f59
 // Size: 0x39
 function getstructarray_delete( value, key, delay )
@@ -3181,7 +3184,7 @@ function getstructarray_delete( value, key, delay )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4f9b
 // Size: 0x55
 function function_a5079b5837467402( name, key, ignore_spawners )
@@ -3197,7 +3200,7 @@ function function_a5079b5837467402( name, key, ignore_spawners )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4ff9
 // Size: 0x45
 function getent_or_struct( name, key, ignore_spawners )
@@ -3215,7 +3218,7 @@ function getent_or_struct( name, key, ignore_spawners )
 /#
 
     // Namespace utility / scripts\engine\utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5047
     // Size: 0x3a, Type: dev
     function fileprint_start( file )
@@ -3227,7 +3230,7 @@ function getent_or_struct( name, key, ignore_spawners )
     }
 
     // Namespace utility / scripts\engine\utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5089
     // Size: 0x18, Type: dev
     function fileprint_map_start()
@@ -3239,7 +3242,7 @@ function getent_or_struct( name, key, ignore_spawners )
 #/
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50a9
 // Size: 0x5e
 function fileprint_map_header( binclude_blank_worldspawn )
@@ -3268,7 +3271,7 @@ function fileprint_map_header( binclude_blank_worldspawn )
 /#
 
     // Namespace utility / scripts\engine\utility
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x510f
     // Size: 0x32, Type: dev
     function fileprint_map_keypairprint( key1, key2 )
@@ -3277,7 +3280,7 @@ function fileprint_map_header( binclude_blank_worldspawn )
     }
 
     // Namespace utility / scripts\engine\utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5149
     // Size: 0x68, Type: dev
     function fileprint_map_entity_start()
@@ -3291,7 +3294,7 @@ function fileprint_map_header( binclude_blank_worldspawn )
     }
 
     // Namespace utility / scripts\engine\utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x51b9
     // Size: 0x1b, Type: dev
     function fileprint_map_entity_end()
@@ -3301,7 +3304,7 @@ function fileprint_map_header( binclude_blank_worldspawn )
     }
 
     // Namespace utility / scripts\engine\utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x51dc
     // Size: 0x41, Type: dev
     function fileprint_radiant_vec( vector )
@@ -3313,7 +3316,7 @@ function fileprint_map_header( binclude_blank_worldspawn )
 #/
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5225
 // Size: 0x2f
 function call_on_notify_no_endon_death( notifystring, method, param1, param2 )
@@ -3322,7 +3325,7 @@ function call_on_notify_no_endon_death( notifystring, method, param1, param2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x525c
 // Size: 0x3f
 function call_on_notify( notifystring, method, param1, param2, param3 )
@@ -3332,7 +3335,7 @@ function call_on_notify( notifystring, method, param1, param2, param3 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x52a3
 // Size: 0x65
 function call_on_notify_proc( notifystring, method, param1, param2, param3 )
@@ -3361,7 +3364,7 @@ function call_on_notify_proc( notifystring, method, param1, param2, param3 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5310
 // Size: 0x38
 function thread_on_notify_no_endon_death( notifystring, function, param1, param2, ent )
@@ -3370,7 +3373,7 @@ function thread_on_notify_no_endon_death( notifystring, function, param1, param2
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x5350
 // Size: 0x112
 function thread_on_notify( notifystring, function, param1, param2, ent, endonentities, var_f63c23b8ec55b127 )
@@ -3402,7 +3405,7 @@ function thread_on_notify( notifystring, function, param1, param2, ent, endonent
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x546a
 // Size: 0x5c
 function thread_on_notify_proc( notifystring, function, param1, param2, ent )
@@ -3430,7 +3433,7 @@ function thread_on_notify_proc( notifystring, function, param1, param2, ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x54ce
 // Size: 0x108
 function function_fb7b452e8dd1dddc( notifystring, function, params, ent, endonentities, var_f63c23b8ec55b127 )
@@ -3462,7 +3465,7 @@ function function_fb7b452e8dd1dddc( notifystring, function, params, ent, endonen
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x55de
 // Size: 0x17b
 function function_399a710b148277ad( notifystring, function, params, ent )
@@ -3512,7 +3515,7 @@ function function_399a710b148277ad( notifystring, function, params, ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x5761
 // Size: 0x92
 function delaycall( timer, func, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12 )
@@ -3521,7 +3524,7 @@ function delaycall( timer, func, param1, param2, param3, param4, param5, param6,
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0x57fb
 // Size: 0x9b
 function function_ad9433aab9fcdf04( timer, endonevent, func, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12 )
@@ -3530,7 +3533,7 @@ function function_ad9433aab9fcdf04( timer, endonevent, func, param1, param2, par
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0x589e
 // Size: 0x25a
 function delaycall_proc( func, endonevent, timer, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12 )
@@ -3632,7 +3635,7 @@ function delaycall_proc( func, endonevent, timer, param1, param2, param3, param4
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b00
 // Size: 0x1a
 function string_starts_with( string, start )
@@ -3641,7 +3644,7 @@ function string_starts_with( string, start )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b23
 // Size: 0x82
 function string_join( str_array, separator )
@@ -3651,7 +3654,8 @@ function string_join( str_array, separator )
     separator = default_to( separator, "" );
     str = "";
     
-    for (i = 0; i < str_array.size - 1; i++) {
+    for ( i = 0; i < str_array.size - 1 ; i++ )
+    {
         str += str_array[ i ] + separator;
     }
     
@@ -3659,7 +3663,7 @@ function string_join( str_array, separator )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5bae
 // Size: 0x9e
 function string_split( str, separator )
@@ -3675,7 +3679,8 @@ function string_split( str, separator )
     array = [];
     start_index = 0;
     
-    for (i = 0; i < str.size; i++) {
+    for ( i = 0; i < str.size ; i++ )
+    {
         if ( str[ i ] == separator )
         {
             array = array_add( array, getsubstr( str, start_index, i ) );
@@ -3688,7 +3693,7 @@ function string_split( str, separator )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5c55
 // Size: 0x90
 function plot_points( plotpoints, r, g, b, timer )
@@ -3715,14 +3720,15 @@ function plot_points( plotpoints, r, g, b, timer )
         timer = 0.05;
     }
     
-    for (i = 1; i < plotpoints.size; i++) {
+    for ( i = 1; i < plotpoints.size ; i++ )
+    {
         thread draw_line_for_time( lastpoint, plotpoints[ i ], r, g, b, timer );
         lastpoint = plotpoints[ i ];
     }
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x5ced
 // Size: 0x75
 function draw_line_for_time( org1, org2, r, g, b, timer, endonevent )
@@ -3745,7 +3751,7 @@ function draw_line_for_time( org1, org2, r, g, b, timer, endonevent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x5d6a
 // Size: 0x13c
 function draw_circle( center, radius, color, alpha, depthtest, duration )
@@ -3754,7 +3760,8 @@ function draw_circle( center, radius, color, alpha, depthtest, duration )
     anglefrac = 360 / circle_sides;
     circlepoints = [];
     
-    for (i = 0; i < circle_sides; i++) {
+    for ( i = 0; i < circle_sides ; i++ )
+    {
         angle = anglefrac * i;
         xadd = cos( angle ) * radius;
         yadd = sin( angle ) * radius;
@@ -3764,7 +3771,8 @@ function draw_circle( center, radius, color, alpha, depthtest, duration )
         circlepoints[ circlepoints.size ] = ( x, y, z );
     }
     
-    for (i = 0; i < circlepoints.size; i++) {
+    for ( i = 0; i < circlepoints.size ; i++ )
+    {
         start = circlepoints[ i ];
         
         if ( i + 1 >= circlepoints.size )
@@ -3783,7 +3791,7 @@ function draw_circle( center, radius, color, alpha, depthtest, duration )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5eae
 // Size: 0x1a
 function array_add( array, object )
@@ -3793,7 +3801,7 @@ function array_add( array, object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ed1
 // Size: 0x2e
 function array_add_safe( array, object )
@@ -3816,7 +3824,7 @@ function array_add_safe( array, object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5f08
 // Size: 0x2e
 function function_6d6af8144a5131f1( array, object )
@@ -3832,7 +3840,7 @@ function function_6d6af8144a5131f1( array, object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f3f
 // Size: 0x5b
 function array_delete( array )
@@ -3847,7 +3855,7 @@ function array_delete( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5fa2
 // Size: 0x76
 function array_insert( array, object, index )
@@ -3862,7 +3870,8 @@ function array_insert( array, object, index )
     temp = [];
     offset = 0;
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         if ( i == index )
         {
             temp[ i ] = object;
@@ -3876,17 +3885,19 @@ function array_insert( array, object, index )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6021
 // Size: 0x85
 function function_ef4b3df86351aa00( array1, array2, index )
 {
     assertex( index >= 0, "<dev string:x553>" );
     
-    for (i = array1.size + array2.size - 1; true; i--) {
+    for ( i = array1.size + array2.size - 1; true ; i-- )
+    {
         if ( i < index + array2.size )
         {
-            for (j = array2.size - 1; j >= 0; j--) {
+            for ( j = array2.size - 1; j >= 0 ; j-- )
+            {
                 array1[ i ] = array2[ j ];
                 i--;
             }
@@ -3899,7 +3910,7 @@ function function_ef4b3df86351aa00( array1, array2, index )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x60ae
 // Size: 0x1af
 function array_combine( array1, array2, array3, array4, array5 )
@@ -3950,7 +3961,7 @@ function array_combine( array1, array2, array3, array4, array5 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6266
 // Size: 0xa6
 function array_combine_multiple( arr2d )
@@ -3969,7 +3980,7 @@ function array_combine_multiple( arr2d )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6315
 // Size: 0xb8
 function array_combine_unique( array1, array2 )
@@ -3995,7 +4006,7 @@ function array_combine_unique( array1, array2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x63d6
 // Size: 0x64
 function array_combine_unique_keys( array1, array2 )
@@ -4012,7 +4023,7 @@ function array_combine_unique_keys( array1, array2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6443
 // Size: 0xbc
 function array_combine_non_integer_indices( array1, array2 )
@@ -4035,7 +4046,7 @@ function array_combine_non_integer_indices( array1, array2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6508
 // Size: 0x73
 function array_intersection( array1, array2 )
@@ -4054,7 +4065,7 @@ function array_intersection( array1, array2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6584
 // Size: 0x73
 function array_difference( array1, array2 )
@@ -4073,7 +4084,7 @@ function array_difference( array1, array2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6600
 // Size: 0x61
 function array_convert_keys_to_ints( array )
@@ -4089,7 +4100,7 @@ function array_convert_keys_to_ints( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x666a
 // Size: 0x2a
 function array_random( array )
@@ -4104,12 +4115,13 @@ function array_random( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x669d
 // Size: 0x54
 function array_randomize( array )
 {
-    for (i = 0; i < array.size - 1; i++) {
+    for ( i = 0; i < array.size - 1 ; i++ )
+    {
         j = randomintrange( i, array.size );
         temp = array[ i ];
         array[ i ] = array[ j ];
@@ -4120,7 +4132,7 @@ function array_randomize( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x66fa
 // Size: 0xd3
 function function_1bb9ae4b5f3e2ab( array, seed, a, c, m )
@@ -4136,7 +4148,8 @@ function function_1bb9ae4b5f3e2ab( array, seed, a, c, m )
     c = default_to( c, 19 );
     m = default_to( m, int( max( array.size, 41 ) ) );
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         x = ( x * a + c ) % m;
         randval = x % array.size;
         tmp = array[ i ];
@@ -4148,14 +4161,15 @@ function function_1bb9ae4b5f3e2ab( array, seed, a, c, m )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67d6
 // Size: 0xd3
 function array_randomize_objects( array )
 {
     randomarray = [];
     
-    for (temparray = array; temparray.size > 0; temparray = newarray) {
+    for ( temparray = array; temparray.size > 0 ; temparray = newarray )
+    {
         randomindex = randomintrange( 0, temparray.size );
         newarray = [];
         arraycount = 0;
@@ -4179,14 +4193,15 @@ function array_randomize_objects( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x68b2
 // Size: 0x3c
 function array_reverse( array )
 {
     array2 = [];
     
-    for (i = array.size - 1; i >= 0; i--) {
+    for ( i = array.size - 1; i >= 0 ; i-- )
+    {
         array2[ array2.size ] = array[ i ];
     }
     
@@ -4194,7 +4209,7 @@ function array_reverse( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x68f7
 // Size: 0x93
 function array_slice( array, startindex, endindex )
@@ -4219,7 +4234,8 @@ function array_slice( array, startindex, endindex )
     
     var_a8763f33264c3988 = [];
     
-    for (index = startindex; index < endindex; index++) {
+    for ( index = startindex; index < endindex ; index++ )
+    {
         var_a8763f33264c3988[ var_a8763f33264c3988.size ] = array[ index ];
     }
     
@@ -4227,7 +4243,7 @@ function array_slice( array, startindex, endindex )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6993
 // Size: 0x1a
 function array_contains( array, compare )
@@ -4236,7 +4252,7 @@ function array_contains( array, compare )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x69b6
 // Size: 0x3b, Type: bool
 function array_contains_key( array, key )
@@ -4247,7 +4263,7 @@ function array_contains_key( array, key )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x69fa
 // Size: 0x60
 function array_find( array, item )
@@ -4264,7 +4280,7 @@ function array_find( array, item )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6a63
 // Size: 0x1a
 function array_remove( ents, remover )
@@ -4273,14 +4289,15 @@ function array_remove( ents, remover )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6a86
 // Size: 0x51
 function array_exclude( array, arrayexclude )
 {
     newarray = array;
     
-    for (i = 0; i < arrayexclude.size; i++) {
+    for ( i = 0; i < arrayexclude.size ; i++ )
+    {
         if ( arraycontains( array, arrayexclude[ i ] ) )
         {
             newarray = array_remove( newarray, arrayexclude[ i ] );
@@ -4291,7 +4308,7 @@ function array_exclude( array, arrayexclude )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ae0
 // Size: 0x62
 function array_remove_array( ents, remover_array )
@@ -4305,7 +4322,7 @@ function array_remove_array( ents, remover_array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6b4b
 // Size: 0x92
 function array_remove_index( array, index, var_ca8b90cd9c832fd9 )
@@ -4335,7 +4352,7 @@ function array_remove_index( array, index, var_ca8b90cd9c832fd9 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6be6
 // Size: 0x87
 function array_removeundefined( array, keepkeys )
@@ -4363,7 +4380,7 @@ function array_removeundefined( array, keepkeys )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6c76
 // Size: 0x92
 function function_fdc9d5557c53078e( array, keepkeys )
@@ -4391,7 +4408,7 @@ function function_fdc9d5557c53078e( array, keepkeys )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6d11
 // Size: 0x8b
 function array_removedead( array, keepkeys )
@@ -4419,7 +4436,7 @@ function array_removedead( array, keepkeys )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6da5
 // Size: 0x71
 function array_remove_key( array, var_b3e77f92460be011 )
@@ -4440,7 +4457,7 @@ function array_remove_key( array, var_b3e77f92460be011 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e1f
 // Size: 0x76
 function array_remove_duplicates( array )
@@ -4466,7 +4483,7 @@ function array_remove_duplicates( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e9e
 // Size: 0x52
 function array_get_first_item( array )
@@ -4480,7 +4497,7 @@ function array_get_first_item( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ef9
 // Size: 0x5e
 function function_350e192b13bea45c( array )
@@ -4496,7 +4513,7 @@ function function_350e192b13bea45c( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6f60
 // Size: 0x94
 function function_57091b2d67654a14( array, remover )
@@ -4519,7 +4536,7 @@ function function_57091b2d67654a14( array, remover )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x6ffd
 // Size: 0x162
 function array_levelthread( array, process, var1, var2, var3 )
@@ -4561,7 +4578,7 @@ function array_levelthread( array, process, var1, var2, var3 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7167
 // Size: 0x162
 function array_levelcall( array, process, var1, var2, var3 )
@@ -4603,7 +4620,7 @@ function array_levelcall( array, process, var1, var2, var3 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x72d1
 // Size: 0x93
 function array_sort_with_func( array, compare_func )
@@ -4611,10 +4628,12 @@ function array_sort_with_func( array, compare_func )
     assertex( isdefined( array ), "<dev string:x61e>" );
     assertex( isdefined( compare_func ), "<dev string:x634>" );
     
-    for (j = 1; j < array.size; j++) {
+    for ( j = 1; j < array.size ; j++ )
+    {
         key = array[ j ];
         
-        for (i = j - 1; i >= 0 && ![[ compare_func ]]( array[ i ], key ); i--) {
+        for ( i = j - 1; i >= 0 && ![[ compare_func ]]( array[ i ], key ) ; i-- )
+        {
             array[ i + 1 ] = array[ i ];
         }
         
@@ -4625,14 +4644,15 @@ function array_sort_with_func( array, compare_func )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x736d
 // Size: 0xb1
 function array_sort_by_script_index( array )
 {
     sortedarray = [];
     
-    for (index = 0; index < array.size; index++) {
+    for ( index = 0; index < array.size ; index++ )
+    {
         foreach ( item in array )
         {
             if ( is_equal( item.script_index, index ) )
@@ -4648,7 +4668,7 @@ function array_sort_by_script_index( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7427
 // Size: 0x15
 function array_average( array )
@@ -4657,7 +4677,7 @@ function array_average( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7445
 // Size: 0x60
 function array_sum( array )
@@ -4673,7 +4693,7 @@ function array_sum( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x74ae
 // Size: 0xf3
 function function_427c36d659d2f67( array, var_d1f4456463c5272d, shouldthread )
@@ -4703,7 +4723,7 @@ function function_427c36d659d2f67( array, var_d1f4456463c5272d, shouldthread )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x75a9
 // Size: 0x20b
 function function_ec65095e6f342856( array, var_d1f4456463c5272d, var_818871783e92735e, var_6fd8f67384dda4d0, var_8faa885b79ec7917, shouldthread )
@@ -4791,7 +4811,7 @@ function function_ec65095e6f342856( array, var_d1f4456463c5272d, var_818871783e9
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x77bc
 // Size: 0xa9
 function function_e81fabd6ea651c21( array, var_d1f4456463c5272d, shouldthread )
@@ -4806,7 +4826,8 @@ function function_e81fabd6ea651c21( array, var_d1f4456463c5272d, shouldthread )
     
     if ( istrue( shouldthread ) )
     {
-        for (index = 0; index < array.size; index++) {
+        for ( index = 0; index < array.size ; index++ )
+        {
             arrayobject = array[ index ];
             self thread [[ var_d1f4456463c5272d ]]( arrayobject );
         }
@@ -4814,19 +4835,21 @@ function function_e81fabd6ea651c21( array, var_d1f4456463c5272d, shouldthread )
         return;
     }
     
-    for (index = 0; index < array.size; index++) {
+    for ( index = 0; index < array.size ; index++ )
+    {
         arrayobject = array[ index ];
         self [[ var_d1f4456463c5272d ]]( arrayobject );
     }
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x786d
 // Size: 0x37
 function array_divide( array, divisor )
 {
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         array[ i ] /= divisor;
     }
     
@@ -4834,7 +4857,7 @@ function array_divide( array, divisor )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x78ad
 // Size: 0x65, Type: bool
 function function_fcd0e0af8e1d238d( a_ents, e_volume )
@@ -4851,7 +4874,7 @@ function function_fcd0e0af8e1d238d( a_ents, e_volume )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x791b
 // Size: 0x17, Type: bool
 function function_ef2b4cd10b36a1ae( object )
@@ -4860,7 +4883,7 @@ function function_ef2b4cd10b36a1ae( object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x793b
 // Size: 0x1c, Type: bool
 function function_5a522719a7ec12b8( object )
@@ -4869,7 +4892,7 @@ function function_5a522719a7ec12b8( object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7960
 // Size: 0x102
 function create_deck( item_array, autoshuffle, var_85dd38782ccc953e, prevent_redraw )
@@ -4903,7 +4926,7 @@ function create_deck( item_array, autoshuffle, var_85dd38782ccc953e, prevent_red
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a6b
 // Size: 0xc1
 function deck_draw()
@@ -4934,7 +4957,7 @@ function deck_draw()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b35
 // Size: 0x192
 function deck_shuffle()
@@ -4960,7 +4983,8 @@ function deck_shuffle()
     deck.items[ 0 ] = deck.items[ j ];
     deck.items[ j ] = temp;
     
-    for (i = 1; i < deck.items.size - 1; i++) {
+    for ( i = 1; i < deck.items.size - 1 ; i++ )
+    {
         j = randomintrange( i, deck.items.size );
         temp = deck.items[ i ];
         deck.items[ i ] = deck.items[ j ];
@@ -4971,7 +4995,7 @@ function deck_shuffle()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ccf
 // Size: 0x70
 function random( array )
@@ -4992,7 +5016,7 @@ function random( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d48
 // Size: 0x24
 function random_key( array )
@@ -5002,7 +5026,7 @@ function random_key( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7d75
 // Size: 0xf9
 function random_weighted( array, weights )
@@ -5038,7 +5062,7 @@ function random_weighted( array, weights )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7e77
 // Size: 0xf3
 function function_a656c6dfb7dcb33a( struct_array )
@@ -5074,7 +5098,7 @@ function function_a656c6dfb7dcb33a( struct_array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f73
 // Size: 0x8e
 function random_weight_sorted( array )
@@ -5096,7 +5120,7 @@ function random_weight_sorted( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x800a
 // Size: 0xa3
 function alphabetize( array )
@@ -5108,11 +5132,13 @@ function alphabetize( array )
     
     count = 0;
     
-    for (asize = array.size - 1; asize >= 1; asize--) {
+    for ( asize = array.size - 1; asize >= 1 ; asize-- )
+    {
         largest = array[ asize ];
         largestindex = asize;
         
-        for (i = 0; i < asize; i++) {
+        for ( i = 0; i < asize ; i++ )
+        {
             string1 = array[ i ];
             
             if ( stricmp( string1, largest ) > 0 )
@@ -5133,7 +5159,7 @@ function alphabetize( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x80b6
 // Size: 0x7d
 function array_thread_amortized( entities, process, var_b2f6e3841e5273bf, var1, var2, var3, var4, var5, var6, var7, var8, var9 )
@@ -5142,7 +5168,7 @@ function array_thread_amortized( entities, process, var_b2f6e3841e5273bf, var1, 
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x813b
 // Size: 0x4f8
 function function_d049f2bd4e2b0918( entities, process, var_b2f6e3841e5273bf, var1, var2, var3, var4, var5, var6, var7, var8, var9 )
@@ -5304,7 +5330,7 @@ function function_d049f2bd4e2b0918( entities, process, var_b2f6e3841e5273bf, var
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x863c
 // Size: 0x39c
 function array_thread( entities, process, var1, var2, var3, var4, var5, var6, var7, var8, var9 )
@@ -5406,7 +5432,7 @@ function array_thread( entities, process, var1, var2, var3, var4, var5, var6, va
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x89e0
 // Size: 0x39c
 function function_9b971e1bc95bc1df( entities, process, var1, var2, var3, var4, var5, var6, var7, var8, var9 )
@@ -5508,7 +5534,7 @@ function function_9b971e1bc95bc1df( entities, process, var1, var2, var3, var4, v
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x8d84
 // Size: 0x338
 function array_call( entities, process, var1, var2, var3, var4, var5, var6, var7, var8 )
@@ -5600,7 +5626,7 @@ function array_call( entities, process, var1, var2, var3, var4, var5, var6, var7
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x90c4
 // Size: 0xb2
 function function_1f9d89277519b570( job_funcs, arg_array )
@@ -5611,7 +5637,8 @@ function function_1f9d89277519b570( job_funcs, arg_array )
     jobpool.alldonenotify = "all_workers_done";
     jobpool.pendingcount = job_funcs.size;
     
-    for (i = 0; i < job_funcs.size; i++) {
+    for ( i = 0; i < job_funcs.size ; i++ )
+    {
         assert( isfunction( job_funcs[ i ] ) );
         jobpool childthread function_917573e92ca19878( self, job_funcs[ i ], arg_array );
     }
@@ -5640,7 +5667,7 @@ function private function_917573e92ca19878( ent, func, arg_array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x91da
 // Size: 0x1f
 function flat_angle( angle )
@@ -5650,7 +5677,7 @@ function flat_angle( angle )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9202
 // Size: 0x21
 function flat_origin( org )
@@ -5660,7 +5687,7 @@ function flat_origin( org )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x922c
 // Size: 0x44
 function flatten_vector( var_cc24231b0f3f7333, up_vector )
@@ -5675,7 +5702,7 @@ function flatten_vector( var_cc24231b0f3f7333, up_vector )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9279
 // Size: 0x17f
 function draw_arrow_time( start, end, color, duration, endonevent )
@@ -5710,7 +5737,7 @@ function draw_arrow_time( start, end, color, duration, endonevent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9400
 // Size: 0x118
 function draw_arrow( start, end, color )
@@ -5728,7 +5755,8 @@ function draw_arrow( start, end, color )
     arrow[ 2 ] = end;
     arrow[ 3 ] = start + right * dist * -1 * range + forward * dist * -0.2;
     
-    for (p = 0; p < 4; p++) {
+    for ( p = 0; p < 4 ; p++ )
+    {
         nextpoint = p + 1;
         
         if ( nextpoint >= 4 )
@@ -5743,7 +5771,7 @@ function draw_arrow( start, end, color )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x9520
 // Size: 0x1c7
 function draw_capsule( pos, radius, height, angles, color, depthtest, duration )
@@ -5789,7 +5817,7 @@ function draw_capsule( pos, radius, height, angles, color, depthtest, duration )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x96ef
 // Size: 0x57
 function draw_character_capsule( color, depthtest, duration )
@@ -5799,7 +5827,7 @@ function draw_character_capsule( color, depthtest, duration )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x974e
 // Size: 0x54
 function draw_player_capsule( color, depthtest, duration )
@@ -5809,7 +5837,7 @@ function draw_player_capsule( color, depthtest, duration )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x97aa
 // Size: 0x58
 function draw_ent_bone_forever( bone_name, origin_color )
@@ -5827,7 +5855,7 @@ function draw_ent_bone_forever( bone_name, origin_color )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x980a
 // Size: 0x34
 function draw_ent_axis_forever( origin_color, scale )
@@ -5843,7 +5871,7 @@ function draw_ent_axis_forever( origin_color, scale )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9846
 // Size: 0x3d
 function draw_tag_axis_forever( tag, origin_color, scale )
@@ -5859,7 +5887,7 @@ function draw_tag_axis_forever( tag, origin_color, scale )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x988b
 // Size: 0x64
 function draw_ent_axis( origin_color, duration, scale )
@@ -5879,7 +5907,7 @@ function draw_ent_axis( origin_color, duration, scale )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x98f7
 // Size: 0x54
 function draw_tag_axis( tag, origin_color, duration, scale )
@@ -5891,7 +5919,7 @@ function draw_tag_axis( tag, origin_color, duration, scale )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9953
 // Size: 0x12d
 function draw_angles( angles, origin, origin_color, duration, scale )
@@ -5928,7 +5956,7 @@ function draw_angles( angles, origin, origin_color, duration, scale )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9a88
 // Size: 0x1fc
 function draw_entity_bounds( ent, time_sec, color, dynamic, var_d88c48911f4bf6a0 )
@@ -5977,7 +6005,8 @@ function draw_entity_bounds( ent, time_sec, color, dynamic, var_d88c48911f4bf6a0
         var_1d29949376ad4ec9[ 3 ] = ent getpointinbounds( -1, -1, 1 );
         
         /#
-            for (i = 0; i < 4; i++) {
+            for ( i = 0; i < 4 ; i++ )
+            {
                 j = i + 1;
                 
                 if ( j == 4 )
@@ -6002,7 +6031,7 @@ function draw_entity_bounds( ent, time_sec, color, dynamic, var_d88c48911f4bf6a0
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9c8c
 // Size: 0x38
 function getfx( fx )
@@ -6012,7 +6041,7 @@ function getfx( fx )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ccd
 // Size: 0x17, Type: bool
 function fxexists( fx )
@@ -6023,7 +6052,7 @@ function fxexists( fx )
 /#
 
     // Namespace utility / scripts\engine\utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9ced
     // Size: 0xf1, Type: dev
     function playerunlimitedammothread()
@@ -6077,7 +6106,7 @@ function fxexists( fx )
 #/
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9de6
 // Size: 0xa5
 function spawn_tag_origin( org, ang )
@@ -6109,7 +6138,7 @@ function spawn_tag_origin( org, ang )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e94
 // Size: 0x18
 function waittill_notify_or_timeout( msg, timer )
@@ -6119,7 +6148,7 @@ function waittill_notify_or_timeout( msg, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9eb4
 // Size: 0x4b
 function waittill_notify_or_timeout_return( notifymessage, timer )
@@ -6132,7 +6161,7 @@ function waittill_notify_or_timeout_return( notifymessage, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f08
 // Size: 0x27
 function waittill_notify_proc( notifystruct, notifymessage )
@@ -6143,7 +6172,7 @@ function waittill_notify_proc( notifystruct, notifymessage )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f37
 // Size: 0x29
 function waittill_timeout_proc( notifystruct, timeout )
@@ -6154,7 +6183,7 @@ function waittill_timeout_proc( notifystruct, timeout )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9f68
 // Size: 0x5f
 function waittill_notify_and_time( msg, time )
@@ -6172,7 +6201,7 @@ function waittill_notify_and_time( msg, time )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9fcf
 // Size: 0xba
 function array_wait( array, message, timeout )
@@ -6190,7 +6219,8 @@ function array_wait( array, message, timeout )
         thread array_wait_proc( notifystruct, element, message );
     }
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         notifystruct waittill( "array_wait_proc" );
     }
     
@@ -6198,7 +6228,7 @@ function array_wait( array, message, timeout )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa091
 // Size: 0x38
 function array_wait_proc( notifystruct, element, message )
@@ -6209,7 +6239,7 @@ function array_wait_proc( notifystruct, element, message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa0d1
 // Size: 0x24
 function array_wait_timeout_proc( notifystruct, timeout )
@@ -6220,7 +6250,7 @@ function array_wait_timeout_proc( notifystruct, timeout )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa0fd
 // Size: 0x85
 function array_any_wait( array, message )
@@ -6237,7 +6267,7 @@ function array_any_wait( array, message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa18b
 // Size: 0x98
 function array_any_wait_timeout( array, message, timeout )
@@ -6255,7 +6285,7 @@ function array_any_wait_timeout( array, message, timeout )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa22c
 // Size: 0x3d
 function array_any_wait_proc( notifystruct, element, message )
@@ -6265,7 +6295,7 @@ function array_any_wait_proc( notifystruct, element, message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa271
 // Size: 0x29
 function array_any_wait_timeout_proc( notifystruct, timeout )
@@ -6276,7 +6306,7 @@ function array_any_wait_timeout_proc( notifystruct, timeout )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa2a2
 // Size: 0x7c
 function array_any_wait_return( array, message )
@@ -6293,7 +6323,7 @@ function array_any_wait_return( array, message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa327
 // Size: 0x3d
 function array_any_wait_return_proc( notifystruct, element, message )
@@ -6303,7 +6333,7 @@ function array_any_wait_return_proc( notifystruct, element, message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa36c
 // Size: 0x3c
 function fileprint_launcher_start_file()
@@ -6315,7 +6345,7 @@ function fileprint_launcher_start_file()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa3b0
 // Size: 0x57
 function fileprint_launcher( string )
@@ -6333,7 +6363,7 @@ function fileprint_launcher( string )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa40f
 // Size: 0x18f, Type: bool
 function fileprint_launcher_end_file( var_82996f577af7f7f3, var_91a1926479dd5e50 )
@@ -6401,7 +6431,7 @@ function fileprint_launcher_end_file( var_82996f577af7f7f3, var_91a1926479dd5e50
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa5a7
 // Size: 0x23
 function launcher_write_clipboard( str )
@@ -6411,7 +6441,7 @@ function launcher_write_clipboard( str )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa5d2
 // Size: 0x9
 function activate_individual_exploder()
@@ -6420,7 +6450,7 @@ function activate_individual_exploder()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa5e3
 // Size: 0xcd
 function get_target_ent( target )
@@ -6473,7 +6503,7 @@ function get_target_ent( target )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa6b8
 // Size: 0x15
 function get_links()
@@ -6482,7 +6512,7 @@ function get_links()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa6d6
 // Size: 0x5a
 function get_linked_ents()
@@ -6507,7 +6537,7 @@ function get_linked_ents()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa739
 // Size: 0x32
 function get_linked_ent()
@@ -6519,7 +6549,7 @@ function get_linked_ent()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa774
 // Size: 0x4f
 function get_linked_nodes()
@@ -6542,7 +6572,7 @@ function get_linked_nodes()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa7cc
 // Size: 0x78
 function do_earthquake( name, origin )
@@ -6557,7 +6587,7 @@ function do_earthquake( name, origin )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa84c
 // Size: 0x5c
 function play_loopsound_in_space( alias, origin )
@@ -6575,7 +6605,7 @@ function play_loopsound_in_space( alias, origin )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa8b1
 // Size: 0xcb
 function play_sound_in_space_with_angles( alias, origin, angles, parent )
@@ -6616,7 +6646,7 @@ function play_sound_in_space_with_angles( alias, origin, angles, parent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa984
 // Size: 0x32
 function play_sound_in_space( alias, origin, parent )
@@ -6625,7 +6655,7 @@ function play_sound_in_space( alias, origin, parent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xa9be
 // Size: 0x133
 function play_loop_sound_on_tag( alias, tag, bstopsoundondeath, var_627c155c7ac80247, release_sound )
@@ -6681,7 +6711,7 @@ function play_loop_sound_on_tag( alias, tag, bstopsoundondeath, var_627c155c7ac8
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaaf9
 // Size: 0x2c
 function delete_on_removed( ent )
@@ -6700,7 +6730,7 @@ function delete_on_removed( ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xab2d
 // Size: 0x44
 function loop_fx_sound( alias, origin, culled, ender, createfx_ent )
@@ -6709,7 +6739,7 @@ function loop_fx_sound( alias, origin, culled, ender, createfx_ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xab79
 // Size: 0x132
 function loop_fx_sound_with_angles( alias, origin, angles, culled, ender, createfx_ent, shape )
@@ -6760,7 +6790,7 @@ function loop_fx_sound_with_angles( alias, origin, angles, culled, ender, create
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xacb3
 // Size: 0x4d
 function loop_fx_sound_interval( alias, origin, ender, timeout, delay_min, delay_max )
@@ -6769,7 +6799,7 @@ function loop_fx_sound_interval( alias, origin, ender, timeout, delay_min, delay
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xad08
 // Size: 0x10b
 function loop_fx_sound_interval_with_angles( alias, origin, angles, ender, timeout, delay_min, delay_max )
@@ -6816,7 +6846,7 @@ function loop_fx_sound_interval_with_angles( alias, origin, angles, ender, timeo
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xae1b
 // Size: 0x25
 function loop_sound_delete( ender, ent )
@@ -6827,7 +6857,7 @@ function loop_sound_delete( ender, ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae48
 // Size: 0x3c
 function createloopeffect( fxid )
@@ -6838,7 +6868,7 @@ function createloopeffect( fxid )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae8d
 // Size: 0x3c
 function createoneshoteffect( fxid )
@@ -6849,7 +6879,7 @@ function createoneshoteffect( fxid )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaed2
 // Size: 0x5c
 function createexploder( fxid, islevelexploder )
@@ -6861,7 +6891,7 @@ function createexploder( fxid, islevelexploder )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaf37
 // Size: 0xd5
 function play_loop_sound_on_entity( alias, offset )
@@ -6890,7 +6920,7 @@ function play_loop_sound_on_entity( alias, offset )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb014
 // Size: 0x15
 function stop_loop_sound_on_entity( alias )
@@ -6899,7 +6929,7 @@ function stop_loop_sound_on_entity( alias )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb031
 // Size: 0x26
 function delete_on_death( ent )
@@ -6914,7 +6944,7 @@ function delete_on_death( ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb05f
 // Size: 0x11
 function delete_on_sounddone()
@@ -6924,7 +6954,7 @@ function delete_on_sounddone()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb078
 // Size: 0x16
 function delete_on_notify( msg )
@@ -6934,7 +6964,7 @@ function delete_on_notify( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb096
 // Size: 0x23
 function function_5ee1730c2e122134( ent, msg )
@@ -6948,7 +6978,7 @@ function function_5ee1730c2e122134( ent, msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb0c1
 // Size: 0x19
 function function_b4b04de87729a6f3( delay )
@@ -6964,7 +6994,7 @@ function function_b4b04de87729a6f3( delay )
 /#
 
     // Namespace utility / scripts\engine\utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xb0e2
     // Size: 0x41, Type: dev
     function error( msg )
@@ -6980,7 +7010,7 @@ function function_b4b04de87729a6f3( delay )
 #/
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb12b
 // Size: 0x34
 function exploder( num, players, starttime )
@@ -6989,7 +7019,7 @@ function exploder( num, players, starttime )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb167
 // Size: 0x13
 function delete_exploder( num )
@@ -6998,7 +7028,7 @@ function delete_exploder( num )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb182
 // Size: 0x13
 function hide_exploder_models( num )
@@ -7007,7 +7037,7 @@ function hide_exploder_models( num )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb19d
 // Size: 0x13
 function show_exploder_models( num )
@@ -7016,7 +7046,7 @@ function show_exploder_models( num )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb1b8
 // Size: 0x1d
 function stop_exploder( num, players )
@@ -7025,7 +7055,7 @@ function stop_exploder( num, players )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb1dd
 // Size: 0x1e
 function kill_exploder( num, players )
@@ -7034,7 +7064,7 @@ function kill_exploder( num, players )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb203
 // Size: 0x12
 function get_exploder_array( msg )
@@ -7043,7 +7073,7 @@ function get_exploder_array( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb21e
 // Size: 0x22
 function ter_op( var_9cb951de1a571d32, true_value, false_value )
@@ -7057,7 +7087,7 @@ function ter_op( var_9cb951de1a571d32, true_value, false_value )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb249
 // Size: 0x1b
 function default_to( value, default_value )
@@ -7071,7 +7101,7 @@ function default_to( value, default_value )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb26d
 // Size: 0x32
 function function_ce51e08dcc037220( value, default_value, err_msg )
@@ -7090,7 +7120,7 @@ function function_ce51e08dcc037220( value, default_value, err_msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb2a8
 // Size: 0x76
 function create_lock( msg, count )
@@ -7114,7 +7144,7 @@ function create_lock( msg, count )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb326
 // Size: 0x7b
 function lock( msg )
@@ -7132,7 +7162,7 @@ function lock( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb3a9
 // Size: 0x14
 function unlock( msg )
@@ -7141,7 +7171,7 @@ function unlock( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb3c5
 // Size: 0x7a
 function unlock_thread( msg )
@@ -7156,7 +7186,7 @@ function unlock_thread( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb447
 // Size: 0x1a
 function unlock_wait( msg )
@@ -7166,7 +7196,7 @@ function unlock_wait( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb469
 // Size: 0x2f
 function is_player_gamepad_enabled()
@@ -7187,7 +7217,7 @@ function is_player_gamepad_enabled()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb4a0
 // Size: 0x3c
 function player_prestream_camera( position, duration, altposition )
@@ -7249,7 +7279,7 @@ function private function_d4192e0c7c79be61( position, duration, altposition )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb58b
 // Size: 0xab
 function player_prestream_entities( entities, distances, duration )
@@ -7318,7 +7348,7 @@ function private function_28548c8e56c0b115( entities, distances, duration )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb70f
 // Size: 0x1b
 function distance_2d_squared( a, b )
@@ -7327,7 +7357,7 @@ function distance_2d_squared( a, b )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xb733
 // Size: 0x56
 function get_array_of_farthest( org, array, excluders, max, maxdist, mindist )
@@ -7338,7 +7368,7 @@ function get_array_of_farthest( org, array, excluders, max, maxdist, mindist )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xb792
 // Size: 0x1d7
 function get_array_of_closest( org, array, excluders, max, maxdist, mindist )
@@ -7416,7 +7446,8 @@ function get_array_of_closest( org, array, excluders, max, maxdist, mindist )
     
     finalarray = [];
     
-    for (i = 0; i < max; i++) {
+    for ( i = 0; i < max ; i++ )
+    {
         finalarray[ i ] = newarray[ i ];
     }
     
@@ -7424,7 +7455,7 @@ function get_array_of_closest( org, array, excluders, max, maxdist, mindist )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb972
 // Size: 0x96
 function function_f7a98d43838654af( org, array, maxdist )
@@ -7444,7 +7475,7 @@ function function_f7a98d43838654af( org, array, maxdist )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xba11
 // Size: 0x9a
 function drop_to_ground( pos, updist, downdist, upvector, contents )
@@ -7475,7 +7506,7 @@ function drop_to_ground( pos, updist, downdist, upvector, contents )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xbab3
 // Size: 0x91
 function player_drop_to_ground( pos, radius, updist, downdist, upvector )
@@ -7501,7 +7532,7 @@ function player_drop_to_ground( pos, radius, updist, downdist, upvector )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xbb4c
 // Size: 0xab
 function function_114e5c055b13dacf( pos, up_dist, down_dist, z_tolerance )
@@ -7526,7 +7557,7 @@ function function_114e5c055b13dacf( pos, up_dist, down_dist, z_tolerance )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xbc00
 // Size: 0x5c, Type: bool
 function within_fov( start_origin, start_angles, end_origin, fov )
@@ -7538,7 +7569,7 @@ function within_fov( start_origin, start_angles, end_origin, fov )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbc65
 // Size: 0x4f
 function ai_3d_sighting_model( associatedent )
@@ -7552,7 +7583,7 @@ function ai_3d_sighting_model( associatedent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbcbc
 // Size: 0x5d
 function getclosest( org, array, maxdist )
@@ -7573,7 +7604,7 @@ function getclosest( org, array, maxdist )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbd22
 // Size: 0xc3
 function function_4d046f33253e46e0( org, array, maxdist )
@@ -7601,7 +7632,7 @@ function function_4d046f33253e46e0( org, array, maxdist )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xbdee
 // Size: 0x87
 function missile_settargetandflightmode( target, mode, offset )
@@ -7623,7 +7654,7 @@ function missile_settargetandflightmode( target, mode, offset )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbe7d
 // Size: 0x52
 function add_fx( fx_id, fx_path )
@@ -7639,7 +7670,7 @@ function add_fx( fx_id, fx_path )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbed7
 // Size: 0x37
 function create_func_ref( name, func )
@@ -7653,7 +7684,7 @@ function create_func_ref( name, func )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbf16
 // Size: 0x3e
 function create_empty_func_ref( name )
@@ -7670,7 +7701,7 @@ function create_empty_func_ref( name )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbf5c
 // Size: 0x25, Type: bool
 function func_ref_exist( name )
@@ -7679,7 +7710,7 @@ function func_ref_exist( name )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbf8a
 // Size: 0x4a, Type: bool
 function add_init_script( name, init_function )
@@ -7699,7 +7730,7 @@ function add_init_script( name, init_function )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbfdd
 // Size: 0x48
 function add_frame_event( event )
@@ -7715,7 +7746,7 @@ function add_frame_event( event )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc02d
 // Size: 0x65
 function process_frame_events()
@@ -7737,7 +7768,7 @@ function process_frame_events()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0xc09a
 // Size: 0x60
 function delaythread( timer, func, param1, param2, param3, param4, param5, param6, param7 )
@@ -7746,7 +7777,7 @@ function delaythread( timer, func, param1, param2, param3, param4, param5, param
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xc102
 // Size: 0x69
 function function_f9a207358d70923c( timer, endonevent, func, param1, param2, param3, param4, param5, param6, param7 )
@@ -7755,7 +7786,7 @@ function function_f9a207358d70923c( timer, endonevent, func, param1, param2, par
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xc173
 // Size: 0x18f
 function delaythread_proc( func, endonevent, timer, param1, param2, param3, param4, param5, param6, param7 )
@@ -7835,7 +7866,7 @@ function delaythread_proc( func, endonevent, timer, param1, param2, param3, para
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0xc30a
 // Size: 0x1a8
 function damagelocationisany( a, b, c, d, e, f, g, h, i, j, k, ovr )
@@ -7959,7 +7990,7 @@ function damagelocationisany( a, b, c, d, e, f, g, h, i, j, k, ovr )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0xc4bb
 // Size: 0x193, Type: bool
 function damagesubpartlocationisany( a, b, c, d, e, f, g, h, i, j, k, ovr )
@@ -8084,7 +8115,7 @@ function damagesubpartlocationisany( a, b, c, d, e, f, g, h, i, j, k, ovr )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc657
 // Size: 0x61
 function isbulletdamage( meansofdeath )
@@ -8107,7 +8138,7 @@ function isbulletdamage( meansofdeath )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6c0
 // Size: 0x2a, Type: bool
 function isfiredamage( meansofdeath )
@@ -8122,7 +8153,7 @@ function isfiredamage( meansofdeath )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc6f3
 // Size: 0x2a, Type: bool
 function isimpactdamage( meansofdeath )
@@ -8137,7 +8168,7 @@ function isimpactdamage( meansofdeath )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc726
 // Size: 0x2a, Type: bool
 function ismeleedamage( meansofdeath )
@@ -8152,7 +8183,7 @@ function ismeleedamage( meansofdeath )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc759
 // Size: 0x32, Type: bool
 function isvehiclecrushdamage( inflictor, meansofdeath )
@@ -8166,7 +8197,7 @@ function isvehiclecrushdamage( inflictor, meansofdeath )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc794
 // Size: 0x74, Type: bool
 function isvalidpeekoutdir( dir )
@@ -8186,7 +8217,7 @@ function isvalidpeekoutdir( dir )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc811
 // Size: 0x1f6
 function getbestcovermultinodetype( node )
@@ -8262,7 +8293,7 @@ function getbestcovermultinodetype( node )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca10
 // Size: 0x37, Type: bool
 function isnodecoverleft( node )
@@ -8272,7 +8303,7 @@ function isnodecoverleft( node )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xca50
 // Size: 0x37, Type: bool
 function isnodecoverright( node )
@@ -8282,7 +8313,7 @@ function isnodecoverright( node )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xca90
 // Size: 0x61, Type: bool
 function isnodecovercrouchtype( node, type )
@@ -8298,7 +8329,7 @@ function isnodecovercrouchtype( node, type )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcafa
 // Size: 0x1d, Type: bool
 function isnode3d( node )
@@ -8307,7 +8338,7 @@ function isnode3d( node )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcb20
 // Size: 0x4c, Type: bool
 function isnodecover3d( node )
@@ -8317,7 +8348,7 @@ function isnodecover3d( node )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcb75
 // Size: 0x4c, Type: bool
 function isnodeexposed3d( node )
@@ -8327,7 +8358,7 @@ function isnodeexposed3d( node )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcbca
 // Size: 0x61, Type: bool
 function isnodecovercrouch( node )
@@ -8337,7 +8368,7 @@ function isnodecovercrouch( node )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcc34
 // Size: 0x5f
 function getaimyawtopoint( point )
@@ -8356,7 +8387,7 @@ function getaimyawtopoint( point )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcc9c
 // Size: 0x8c
 function getyawtospot( spot )
@@ -8374,7 +8405,7 @@ function getyawtospot( spot )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd31
 // Size: 0x1b
 function getyaw( org )
@@ -8383,7 +8414,7 @@ function getyaw( org )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcd55
 // Size: 0x5f
 function getaimyawtopoint3d( point )
@@ -8402,7 +8433,7 @@ function getaimyawtopoint3d( point )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcdbd
 // Size: 0x5c
 function getyawtospot3d( spot )
@@ -8415,7 +8446,7 @@ function getyawtospot3d( spot )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce22
 // Size: 0x5f
 function getaimpitchtopoint3d( point )
@@ -8434,7 +8465,7 @@ function getaimpitchtopoint3d( point )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce8a
 // Size: 0x5c
 function getpitchtospot3d( spot )
@@ -8447,7 +8478,7 @@ function getpitchtospot3d( spot )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xceef
 // Size: 0x48
 function getplayerpitch( player )
@@ -8459,7 +8490,7 @@ function getplayerpitch( player )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcf40
 // Size: 0x4a
 function getplayeryaw( player )
@@ -8471,7 +8502,7 @@ function getplayeryaw( player )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf93
 // Size: 0xc, Type: bool
 function actor_isspace()
@@ -8480,7 +8511,7 @@ function actor_isspace()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcfa8
 // Size: 0x8, Type: bool
 function actor_is3d()
@@ -8489,7 +8520,7 @@ function actor_is3d()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcfb9
 // Size: 0x92
 function getpredictedaimyawtoshootentorpos( time, shootent, shootpos )
@@ -8520,7 +8551,7 @@ function getpredictedaimyawtoshootentorpos( time, shootent, shootpos )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd054
 // Size: 0x92
 function getpredictedaimyawtoshootentorpos3d( time, shootent, shootpos )
@@ -8551,7 +8582,7 @@ function getpredictedaimyawtoshootentorpos3d( time, shootent, shootpos )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd0ef
 // Size: 0x92
 function getpredictedaimpitchtoshootentorpos3d( time, shootent, shootpos )
@@ -8582,7 +8613,7 @@ function getpredictedaimpitchtoshootentorpos3d( time, shootent, shootpos )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd18a
 // Size: 0x22, Type: bool
 function is_equal( arga, argb )
@@ -8591,7 +8622,7 @@ function is_equal( arga, argb )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd1b5
 // Size: 0x82, Type: bool
 function function_5b7e9a4c946f3a13( arg, argarray )
@@ -8615,7 +8646,7 @@ function function_5b7e9a4c946f3a13( arg, argarray )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd240
 // Size: 0x3, Type: bool
 function player_is_in_jackal()
@@ -8624,7 +8655,7 @@ function player_is_in_jackal()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd24c
 // Size: 0x2c
 function set_createfx_enabled()
@@ -8636,7 +8667,7 @@ function set_createfx_enabled()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd280
 // Size: 0x26
 function flag_set_delayed( message, delay, setter )
@@ -8646,7 +8677,7 @@ function flag_set_delayed( message, delay, setter )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xd2ae
 // Size: 0x162
 function noself_array_call( entities, process, var2, var3, var4 )
@@ -8690,7 +8721,7 @@ function noself_array_call( entities, process, var2, var3, var4 )
 /#
 
     // Namespace utility / scripts\engine\utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xd418
     // Size: 0x29, Type: dev
     function flag_assert( msg )
@@ -8701,7 +8732,7 @@ function noself_array_call( entities, process, var2, var3, var4 )
 #/
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd449
 // Size: 0x36
 function flag_wait_either( flag1, flag2 )
@@ -8723,7 +8754,7 @@ function flag_wait_either( flag1, flag2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd487
 // Size: 0x41
 function flag_wait_either_return( flag1, flag2 )
@@ -8743,7 +8774,7 @@ function flag_wait_either_return( flag1, flag2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd4d4
 // Size: 0x5e
 function function_665d474ff040b446( flags )
@@ -8753,7 +8784,8 @@ function function_665d474ff040b446( flags )
     
     for ( ;; )
     {
-        for (i = 0; i < flags.size; i++) {
+        for ( i = 0; i < flags.size ; i++ )
+        {
             if ( flag( flags[ i ] ) )
             {
                 return flags[ i ];
@@ -8765,7 +8797,7 @@ function function_665d474ff040b446( flags )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd53a
 // Size: 0x12
 function function_51ffc85dd7ebde09( flags )
@@ -8774,7 +8806,7 @@ function function_51ffc85dd7ebde09( flags )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xd555
 // Size: 0x130
 function flag_wait_any( flag1, flag2, flag3, flag4, flag5, flag6 )
@@ -8824,7 +8856,8 @@ function flag_wait_any( flag1, flag2, flag3, flag4, flag5, flag6 )
     
     for ( ;; )
     {
-        for (i = 0; i < array.size; i++) {
+        for ( i = 0; i < array.size ; i++ )
+        {
             if ( flag( array[ i ] ) )
             {
                 return;
@@ -8836,7 +8869,7 @@ function flag_wait_any( flag1, flag2, flag3, flag4, flag5, flag6 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xd68d
 // Size: 0x1f3
 function flag_wait_any_timeout( timer, flag1, flag2, flag3, flag4, flag5, flag6 )
@@ -8911,7 +8944,7 @@ function flag_wait_any_timeout( timer, flag1, flag2, flag3, flag4, flag5, flag6 
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd888
 // Size: 0x5c
 function internal_wait_for_any_flag_or_time_elapses( flag_arr, timer )
@@ -8925,7 +8958,7 @@ function internal_wait_for_any_flag_or_time_elapses( flag_arr, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xd8ec
 // Size: 0x105
 function flag_wait_any_return( flag1, flag2, flag3, flag4, flag5 )
@@ -8964,7 +8997,8 @@ function flag_wait_any_return( flag1, flag2, flag3, flag4, flag5 )
         return;
     }
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         if ( flag( array[ i ] ) )
         {
             return array[ i ];
@@ -8976,7 +9010,7 @@ function flag_wait_any_return( flag1, flag2, flag3, flag4, flag5 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd9fd
 // Size: 0x57
 function flag_wait_all( flag1, flag2, flag3, flag4 )
@@ -9003,7 +9037,7 @@ function flag_wait_all( flag1, flag2, flag3, flag4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda5c
 // Size: 0xc3
 function function_7a252abaaa15fcd7( flags )
@@ -9035,7 +9069,7 @@ function function_7a252abaaa15fcd7( flags )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdb27
 // Size: 0xc3
 function flag_waitopen_all_array( flags )
@@ -9067,7 +9101,7 @@ function flag_waitopen_all_array( flags )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdbf2
 // Size: 0x7d
 function flag_wait_or_timeout( flagname, timer )
@@ -9094,7 +9128,7 @@ function flag_wait_or_timeout( flagname, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdc77
 // Size: 0x50
 function flag_waitopen_or_timeout( flagname, timer )
@@ -9118,7 +9152,7 @@ function flag_waitopen_or_timeout( flagname, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdccf
 // Size: 0x18
 function wait_for_flag_or_time_elapses( flagname, timer )
@@ -9128,7 +9162,7 @@ function wait_for_flag_or_time_elapses( flagname, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xdcef
 // Size: 0x69
 function noself_delaycall( timer, func, param1, param2, param3, param4, param5, param6, param7, param8 )
@@ -9137,7 +9171,7 @@ function noself_delaycall( timer, func, param1, param2, param3, param4, param5, 
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xdd60
 // Size: 0x101
 function noself_delaycall_proc( func, timer, param1, param2, param3, param4, param5, param6, param7, param8 )
@@ -9196,7 +9230,7 @@ function noself_delaycall_proc( func, timer, param1, param2, param3, param4, par
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde69
 // Size: 0xc1
 function get_target_array( target )
@@ -9245,7 +9279,7 @@ function get_target_array( target )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdf32
 // Size: 0x9
 function pauseeffect()
@@ -9254,7 +9288,7 @@ function pauseeffect()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdf43
 // Size: 0x92
 function spawn_script_origin( org, ang )
@@ -9284,7 +9318,7 @@ function spawn_script_origin( org, ang )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdfde
 // Size: 0xb1
 function get_noteworthy_array( noteworthy )
@@ -9328,7 +9362,7 @@ function get_noteworthy_array( noteworthy )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe097
 // Size: 0x48
 function get_cumulative_weights( weights )
@@ -9336,7 +9370,8 @@ function get_cumulative_weights( weights )
     cumulative_weights = [];
     sum = 0;
     
-    for (i = 0; i < weights.size; i++) {
+    for ( i = 0; i < weights.size ; i++ )
+    {
         sum += weights[ i ];
         cumulative_weights[ i ] = sum;
     }
@@ -9345,7 +9380,7 @@ function get_cumulative_weights( weights )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0e8
 // Size: 0x2
 function void()
@@ -9354,7 +9389,7 @@ function void()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe0f2
 // Size: 0x5c
 function getanim( anime )
@@ -9365,7 +9400,7 @@ function getanim( anime )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe157
 // Size: 0x39, Type: bool
 function hasanim( anime )
@@ -9375,7 +9410,7 @@ function hasanim( anime )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe199
 // Size: 0x4c
 function getanim_from_animname( anime, animname )
@@ -9386,7 +9421,7 @@ function getanim_from_animname( anime, animname )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe1ee
 // Size: 0x3c
 function getanim_generic( anime )
@@ -9396,7 +9431,7 @@ function getanim_generic( anime )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe233
 // Size: 0x1d, Type: bool
 function hasanim_generic( anime )
@@ -9405,7 +9440,7 @@ function hasanim_generic( anime )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe259
 // Size: 0xd9
 function function_6d41ac1c3d718a62( anime, ent )
@@ -9431,7 +9466,7 @@ function function_6d41ac1c3d718a62( anime, ent )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe33b
 // Size: 0x4d
 function waittill_match_or_timeout( msg, match, timer )
@@ -9443,7 +9478,7 @@ function waittill_match_or_timeout( msg, match, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe390
 // Size: 0x25
 function function_ee012c2dd711a8ce( msg, match, endonmsg )
@@ -9453,7 +9488,7 @@ function function_ee012c2dd711a8ce( msg, match, endonmsg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe3bd
 // Size: 0x4d
 function waittill_match_or_timeout_return( msg, match, timer )
@@ -9466,7 +9501,7 @@ function waittill_match_or_timeout_return( msg, match, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe413
 // Size: 0x24
 function send_notify( msg, optional_param )
@@ -9481,7 +9516,7 @@ function send_notify( msg, optional_param )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe43f
 // Size: 0x3b
 function get_notetrack_time( animation, notetrack )
@@ -9492,7 +9527,7 @@ function get_notetrack_time( animation, notetrack )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe483
 // Size: 0x12
 function mph_to_ips( mph )
@@ -9501,7 +9536,7 @@ function mph_to_ips( mph )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe49e
 // Size: 0x2c
 function mph_travel_time( speed, dist )
@@ -9512,7 +9547,7 @@ function mph_travel_time( speed, dist )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe4d3
 // Size: 0x12
 function ips_to_mph( ips )
@@ -9521,7 +9556,7 @@ function ips_to_mph( ips )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe4ee
 // Size: 0x12
 function function_dd1c9564bbdda261( knots )
@@ -9530,7 +9565,7 @@ function function_dd1c9564bbdda261( knots )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe509
 // Size: 0x12
 function function_de54c0137bbb0d7f( ips )
@@ -9539,7 +9574,7 @@ function function_de54c0137bbb0d7f( ips )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe524
 // Size: 0xe5
 function wrap_text( text, line_limit )
@@ -9578,7 +9613,7 @@ function wrap_text( text, line_limit )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe612
 // Size: 0x21e
 function closestdistancebetweenlines( p1, p2, p3, p4 )
@@ -9620,7 +9655,7 @@ function closestdistancebetweenlines( p1, p2, p3, p4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe839
 // Size: 0x262
 function closestdistancebetweensegments( p1, p2, p3, p4 )
@@ -9721,7 +9756,7 @@ function closestdistancebetweensegments( p1, p2, p3, p4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeaa4
 // Size: 0x12, Type: bool
 function is_dead_sentient()
@@ -9730,7 +9765,7 @@ function is_dead_sentient()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xeabf
 // Size: 0xd5
 function hastag( model, tag )
@@ -9756,7 +9791,8 @@ function hastag( model, tag )
     
     if ( partcount > 0 )
     {
-        for (i = 0; i < partcount; i++) {
+        for ( i = 0; i < partcount ; i++ )
+        {
             partname = getpartname( model, i );
             
             if ( partname == tolower( tag ) )
@@ -9773,7 +9809,7 @@ function hastag( model, tag )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb9d
 // Size: 0x4a
 function flashbanggettimeleftsec()
@@ -9791,7 +9827,7 @@ function flashbanggettimeleftsec()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xebf0
 // Size: 0xa, Type: bool
 function flashbangisactive()
@@ -9800,7 +9836,7 @@ function flashbangisactive()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec03
 // Size: 0x12
 function string( num )
@@ -9809,7 +9845,7 @@ function string( num )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xec1e
 // Size: 0x4f
 function playsoundontag( alias, tag, ends_on_death, var_b426f32755673ba6, radio_dialog )
@@ -9819,7 +9855,7 @@ function playsoundontag( alias, tag, ends_on_death, var_b426f32755673ba6, radio_
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xec75
 // Size: 0x34
 function playsoundonentity( alias, var_b426f32755673ba6 )
@@ -9829,7 +9865,7 @@ function playsoundonentity( alias, var_b426f32755673ba6 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xecb1
 // Size: 0x28
 function set_movement_speed( desiredspeed )
@@ -9839,7 +9875,7 @@ function set_movement_speed( desiredspeed )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xece1
 // Size: 0x15
 function set_cautious_navigation( enabled )
@@ -9848,7 +9884,7 @@ function set_cautious_navigation( enabled )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xecfe
 // Size: 0x1b, Type: bool
 function doinglongdeath()
@@ -9858,7 +9894,7 @@ function doinglongdeath()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed22
 // Size: 0x44, Type: bool
 function is_dead_or_dying( guy )
@@ -9881,7 +9917,7 @@ function is_dead_or_dying( guy )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xed6f
 // Size: 0xca
 function motionwarpwithnotetracks( anime, targetpos, targetangles, notetrackstart, notetrackend, duration, updateanimrate )
@@ -9920,7 +9956,7 @@ function motionwarpwithnotetracks( anime, targetpos, targetangles, notetrackstar
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xee41
 // Size: 0x15b
 function motionwarpwithtimes( anime, targetpos, targetangles, animstartfrac, var_47b4bdc915cff70d, duration, updateanimrate )
@@ -9962,7 +9998,7 @@ function motionwarpwithtimes( anime, targetpos, targetangles, animstartfrac, var
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0xefa5
 // Size: 0x2ad
 function function_df956d52bae0b61d( anime, parentent, tag, localtargetpos, var_b6c5de4898b7f63b, animstartfrac, var_47b4bdc915cff70d, duration, updateanimrate )
@@ -10030,7 +10066,7 @@ function function_df956d52bae0b61d( anime, parentent, tag, localtargetpos, var_b
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0xf25a
 // Size: 0x17e
 function waittill_any_ents_or_timeout_return( timeout, ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7 )
@@ -10079,7 +10115,7 @@ function waittill_any_ents_or_timeout_return( timeout, ent1, string1, ent2, stri
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf3e1
 // Size: 0x27, Type: bool
 function time_has_passed( timestamp, seconds )
@@ -10093,7 +10129,7 @@ function time_has_passed( timestamp, seconds )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf411
 // Size: 0x23
 function reacttolightifpossible( lightorigin )
@@ -10103,7 +10139,7 @@ function reacttolightifpossible( lightorigin )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf43c
 // Size: 0x74
 function setcovercrouchtype( covertype )
@@ -10124,7 +10160,7 @@ function setcovercrouchtype( covertype )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf4b8
 // Size: 0x16
 function setcornerstepoutsdisabled( disabled )
@@ -10133,7 +10169,7 @@ function setcornerstepoutsdisabled( disabled )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf4d6
 // Size: 0xc, Type: bool
 function getcornerstepoutsdisabled()
@@ -10142,7 +10178,7 @@ function getcornerstepoutsdisabled()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf4eb
 // Size: 0x89
 function can_trace_to_ai( start, ai, ignoreentarray, contentoverride )
@@ -10166,7 +10202,7 @@ function can_trace_to_ai( start, ai, ignoreentarray, contentoverride )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf57d
 // Size: 0x9a
 function array_removedead_or_dying( array, var_5c3b6418c0ad64ae )
@@ -10197,7 +10233,7 @@ function array_removedead_or_dying( array, var_5c3b6418c0ad64ae )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf620
 // Size: 0x36
 function disable_pain()
@@ -10208,7 +10244,7 @@ function disable_pain()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf65e
 // Size: 0x36
 function enable_pain()
@@ -10219,7 +10255,7 @@ function enable_pain()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf69c
 // Size: 0x1f
 function get_ai_number()
@@ -10233,7 +10269,7 @@ function get_ai_number()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf6c4
 // Size: 0x3b
 function set_ai_number()
@@ -10248,7 +10284,7 @@ function set_ai_number()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf707
 // Size: 0x1c
 function function_82581894f5a1c71c()
@@ -10258,7 +10294,7 @@ function function_82581894f5a1c71c()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf72b
 // Size: 0x47
 function ent_flag_wait( msg )
@@ -10272,7 +10308,7 @@ function ent_flag_wait( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf77a
 // Size: 0xae
 function array_ent_flag_wait( entities, flag )
@@ -10289,13 +10325,14 @@ function array_ent_flag_wait( entities, flag )
     
     array_thread( entities, &array_ent_flag_wait_proc, notifystruct, flag );
     
-    for (i = 0; i < entities.size; i++) {
+    for ( i = 0; i < entities.size ; i++ )
+    {
         notifystruct waittill( "notify" );
     }
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf830
 // Size: 0x23
 function array_ent_flag_wait_proc( notifystruct, flag )
@@ -10305,7 +10342,7 @@ function array_ent_flag_wait_proc( notifystruct, flag )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf85b
 // Size: 0x32
 function ent_flag_wait_vehicle_node( msg )
@@ -10319,7 +10356,7 @@ function ent_flag_wait_vehicle_node( msg )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf895
 // Size: 0x5f
 function ent_flag_wait_either( flag1, flag2 )
@@ -10343,7 +10380,7 @@ function ent_flag_wait_either( flag1, flag2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf8fc
 // Size: 0xc3
 function function_243c46ee6332c45d( flags )
@@ -10375,7 +10412,7 @@ function function_243c46ee6332c45d( flags )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf9c7
 // Size: 0xc3
 function function_cba0984334ba3279( flags )
@@ -10407,7 +10444,7 @@ function function_cba0984334ba3279( flags )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfa92
 // Size: 0x98
 function function_e205428b44d1a83c( flags )
@@ -10430,7 +10467,7 @@ function function_e205428b44d1a83c( flags )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfb32
 // Size: 0x7a
 function ent_flag_wait_or_timeout( flagname, timer )
@@ -10455,7 +10492,7 @@ function ent_flag_wait_or_timeout( flagname, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfbb4
 // Size: 0x18
 function ent_wait_for_flag_or_time_elapses( flagname, timer )
@@ -10465,7 +10502,7 @@ function ent_wait_for_flag_or_time_elapses( flagname, timer )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfbd4
 // Size: 0x47
 function ent_flag_waitopen( msg )
@@ -10481,7 +10518,7 @@ function ent_flag_waitopen( msg )
 /#
 
     // Namespace utility / scripts\engine\utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xfc23
     // Size: 0x29, Type: dev
     function ent_flag_assert( msg )
@@ -10492,7 +10529,7 @@ function ent_flag_waitopen( msg )
 #/
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfc54
 // Size: 0x5f
 function ent_flag_waitopen_either( flag1, flag2 )
@@ -10516,7 +10553,7 @@ function ent_flag_waitopen_either( flag1, flag2 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfcbb
 // Size: 0x87
 function ent_flag_init( message )
@@ -10542,7 +10579,7 @@ function ent_flag_init( message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfd4a
 // Size: 0x2c, Type: bool
 function ent_flag_exist( message )
@@ -10556,7 +10593,7 @@ function ent_flag_exist( message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfd7f
 // Size: 0x24
 function ent_flag_set_delayed( message, delay )
@@ -10567,7 +10604,7 @@ function ent_flag_set_delayed( message, delay )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfdab
 // Size: 0x80
 function ent_flag_set( message )
@@ -10590,7 +10627,7 @@ function ent_flag_set( message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfe33
 // Size: 0xa1
 function ent_flag_clear( message, remove )
@@ -10623,7 +10660,7 @@ function ent_flag_clear( message, remove )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfedc
 // Size: 0x22
 function ent_flag_clear_delayed( message, delay )
@@ -10637,7 +10674,7 @@ function ent_flag_clear_delayed( message, delay )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xff06
 // Size: 0x31, Type: bool
 function ent_flag( message )
@@ -10647,7 +10684,7 @@ function ent_flag( message )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xff40
 // Size: 0x6e
 function get_linked_structs()
@@ -10658,7 +10695,8 @@ function get_linked_structs()
     {
         linknames = get_links();
         
-        for (i = 0; i < linknames.size; i++) {
+        for ( i = 0; i < linknames.size ; i++ )
+        {
             structs = getstructarray( linknames[ i ], "script_linkname" );
             
             if ( structs.size > 0 )
@@ -10672,7 +10710,7 @@ function get_linked_structs()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xffb7
 // Size: 0x71, Type: bool
 function ispointinsidecircle( point, circlecenter, circleradius )
@@ -10690,7 +10728,7 @@ function ispointinsidecircle( point, circlecenter, circleradius )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10031
 // Size: 0x53
 function requestgamerprofile( var_d40db77fec61d6a4 )
@@ -10711,7 +10749,7 @@ function requestgamerprofile( var_d40db77fec61d6a4 )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1008c
 // Size: 0x44, Type: bool
 function ismountconfigenabled()
@@ -10732,7 +10770,7 @@ function ismountconfigenabled()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x100d9
 // Size: 0x44, Type: bool
 function function_4319aef954ddbee5()
@@ -10753,7 +10791,7 @@ function function_4319aef954ddbee5()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10126
 // Size: 0x53, Type: bool
 function function_9ec2f480552af944( player )
@@ -10774,7 +10812,7 @@ function function_9ec2f480552af944( player )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10182
 // Size: 0x20
 function getintorzero( value )
@@ -10788,7 +10826,7 @@ function getintorzero( value )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x101aa
 // Size: 0x5f
 function stringtovec3( input )
@@ -10805,7 +10843,7 @@ function stringtovec3( input )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10212
 // Size: 0x52
 function queue_create( capacity )
@@ -10819,7 +10857,7 @@ function queue_create( capacity )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1026d
 // Size: 0xae
 function function_6cf786a6cf335cb9( queue, object )
@@ -10844,7 +10882,7 @@ function function_6cf786a6cf335cb9( queue, object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10324
 // Size: 0xbc
 function function_93def91a50927481( queue )
@@ -10876,7 +10914,7 @@ function function_93def91a50927481( queue )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x103e9
 // Size: 0x44
 function queue_peek( queue )
@@ -10891,7 +10929,7 @@ function queue_peek( queue )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10436
 // Size: 0x17
 function queue_size( queue )
@@ -10900,7 +10938,7 @@ function queue_size( queue )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10456
 // Size: 0x3f
 function queue_clear( queue )
@@ -10912,7 +10950,7 @@ function queue_clear( queue )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1049e
 // Size: 0x19, Type: bool
 function function_45fad871d0bee0f2( queue )
@@ -10921,7 +10959,7 @@ function function_45fad871d0bee0f2( queue )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x104c0
 // Size: 0xa0, Type: bool
 function function_a6025442a4e1c649( queue, object )
@@ -10963,7 +11001,7 @@ function function_a6025442a4e1c649( queue, object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10569
 // Size: 0x12
 function function_c89ed1840c8d0f0f( milliseconds )
@@ -10972,7 +11010,7 @@ function function_c89ed1840c8d0f0f( milliseconds )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10584
 // Size: 0x12
 function function_a5b14435e3229bed( seconds )
@@ -10981,7 +11019,7 @@ function function_a5b14435e3229bed( seconds )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1059f
 // Size: 0x27
 function single_thread_argarray( entity, func, a_vars )
@@ -10990,7 +11028,7 @@ function single_thread_argarray( entity, func, a_vars )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x105ce
 // Size: 0x2f
 function function_8a68123e2bbb5ba4( entity, func, arg1, a_vars )
@@ -10999,7 +11037,7 @@ function function_8a68123e2bbb5ba4( entity, func, arg1, a_vars )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x10605
 // Size: 0x37
 function function_8a68133e2bbb5dd7( entity, func, arg1, arg2, a_vars )
@@ -11135,7 +11173,7 @@ function private single_thread( entity, func, arg1, arg2, a_vars )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10aff
 // Size: 0x24
 function single_func_argarray( entity, func, a_vars )
@@ -11266,7 +11304,8 @@ function private function_d13634fdb31beeaf( a_vars )
 {
     var_d9d0128c23712f95 = -1;
     
-    for (i = a_vars.size - 1; i >= 0; i--) {
+    for ( i = a_vars.size - 1; i >= 0 ; i-- )
+    {
         if ( !isdefined( a_vars[ i ] ) )
         {
             var_d9d0128c23712f95 = i;
@@ -11283,7 +11322,8 @@ function private function_d13634fdb31beeaf( a_vars )
     
     var_4c1b085372d0c223 = [];
     
-    for (i = 0; i < var_d9d0128c23712f95; i++) {
+    for ( i = 0; i < var_d9d0128c23712f95 ; i++ )
+    {
         var_4c1b085372d0c223[ i ] = a_vars[ i ];
     }
     
@@ -11291,7 +11331,7 @@ function private function_d13634fdb31beeaf( a_vars )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e24
 // Size: 0x3f
 function vtos( vector )
@@ -11300,7 +11340,7 @@ function vtos( vector )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e6c
 // Size: 0x1b
 function absolutevalue( inputvalue )
@@ -11314,7 +11354,7 @@ function absolutevalue( inputvalue )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10e8f
 // Size: 0xf7
 function function_21a6a1c613b50a28( array, cell_size )
@@ -11337,7 +11377,7 @@ function function_21a6a1c613b50a28( array, cell_size )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f8f
 // Size: 0x2e, Type: bool
 function function_a291b92e71292628()
@@ -11346,7 +11386,7 @@ function function_a291b92e71292628()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10fc6
 // Size: 0xf2
 function function_24bbefb4beda630d( object )
@@ -11379,7 +11419,7 @@ function function_24bbefb4beda630d( object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x110c0
 // Size: 0xb5
 function function_5b83b054e7f1c193( vector )
@@ -11407,7 +11447,7 @@ function function_5b83b054e7f1c193( vector )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1117e
 // Size: 0xf8
 function function_9cd3f5f067afea37( object )
@@ -11435,7 +11475,7 @@ function function_9cd3f5f067afea37( object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1127e
 // Size: 0xa1
 function function_99b7cb4906b8cb4f( vector )
@@ -11460,7 +11500,7 @@ function function_99b7cb4906b8cb4f( vector )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11328
 // Size: 0x11b
 function function_df633f460888a47( vector )
@@ -11471,7 +11511,8 @@ function function_df633f460888a47( vector )
     [ x, y ] = function_5b83b054e7f1c193( vector );
     adjacent_arrays = [];
     
-    for (x_offset = -1; x_offset <= 1; x_offset++) {
+    for ( x_offset = -1; x_offset <= 1 ; x_offset++ )
+    {
         x_test = x + x_offset;
         
         if ( x_test < 0 )
@@ -11486,7 +11527,8 @@ function function_df633f460888a47( vector )
             continue;
         }
         
-        for (y_offset = -1; y_offset <= 1; y_offset++) {
+        for ( y_offset = -1; y_offset <= 1 ; y_offset++ )
+        {
             y_test = y + y_offset;
             
             if ( y_test < 0 )
@@ -11509,7 +11551,7 @@ function function_df633f460888a47( vector )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1144c
 // Size: 0x1b2
 function function_60dbe20f8385f1b0( vector )
@@ -11521,7 +11563,8 @@ function function_60dbe20f8385f1b0( vector )
     closest_object = undefined;
     var_84d7de0b98e2e704 = undefined;
     
-    for (x_offset = -1; x_offset <= 1; x_offset++) {
+    for ( x_offset = -1; x_offset <= 1 ; x_offset++ )
+    {
         x_test = x + x_offset;
         
         if ( x_test < 0 )
@@ -11536,7 +11579,8 @@ function function_60dbe20f8385f1b0( vector )
             continue;
         }
         
-        for (y_offset = -1; y_offset <= 1; y_offset++) {
+        for ( y_offset = -1; y_offset <= 1 ; y_offset++ )
+        {
             y_test = y + y_offset;
             
             if ( y_test < 0 )
@@ -11573,7 +11617,7 @@ function function_60dbe20f8385f1b0( vector )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x11607
 // Size: 0x7d
 function registersharedfunc( category, funcname, function, nooverride )
@@ -11597,7 +11641,7 @@ function registersharedfunc( category, funcname, function, nooverride )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1168c
 // Size: 0x87
 function function_3bd171ed299fd530( category, funcname, function, forceremove )
@@ -11615,7 +11659,7 @@ function function_3bd171ed299fd530( category, funcname, function, forceremove )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1171b
 // Size: 0x3e
 function function_7ae9075c73180af7( category )
@@ -11632,7 +11676,7 @@ function function_7ae9075c73180af7( category )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11761
 // Size: 0x75, Type: bool
 function issharedfuncdefined( category, funcname, shouldassert )
@@ -11663,7 +11707,7 @@ function issharedfuncdefined( category, funcname, shouldassert )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x117df
 // Size: 0x31
 function function_6a11999c562cf4ab( category, funcname )
@@ -11677,7 +11721,7 @@ function function_6a11999c562cf4ab( category, funcname )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11819
 // Size: 0x20
 function getsharedfunc( category, funcname )
@@ -11686,7 +11730,7 @@ function getsharedfunc( category, funcname )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x11842
 // Size: 0x86
 function function_f3bb4f4911a1beb2( category, funcname, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11 )
@@ -11695,7 +11739,7 @@ function function_f3bb4f4911a1beb2( category, funcname, param1, param2, param3, 
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x118d1
 // Size: 0x87
 function function_6d1f056f62ed082a( category, funcname, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11 )
@@ -12017,7 +12061,7 @@ function private function_a97bcc1cab7d91ee( func, param1, param2, param3, param4
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x12265
 // Size: 0x90
 function function_a655374a990831d8( ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7 )
@@ -12026,7 +12070,7 @@ function function_a655374a990831d8( ent1, string1, ent2, string2, ent3, string3,
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 15, eflags: 0x0
+// Params 15
 // Checksum 0x0, Offset: 0x122fe
 // Size: 0x24b
 function function_ac1863f0deb8a63e( timeout, ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7 )
@@ -12081,7 +12125,7 @@ function function_ac1863f0deb8a63e( timeout, ent1, string1, ent2, string2, ent3,
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12552
 // Size: 0x4a
 function function_24b0694682c6934a( entity, message, context )
@@ -12096,7 +12140,7 @@ function function_24b0694682c6934a( entity, message, context )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x125a4
 // Size: 0x47
 function function_54258b3847b3bbca( entity, context )
@@ -12112,7 +12156,7 @@ function function_54258b3847b3bbca( entity, context )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x125f3
 // Size: 0x18d
 function function_28551e899093b138( string1, string2, string3, string4, string5, string6, string7, string8 )
@@ -12170,7 +12214,7 @@ function function_28551e899093b138( string1, string2, string3, string4, string5,
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x12789
 // Size: 0x1cf
 function function_b90de82e759099dc( timeout, string1, string2, string3, string4, string5, string6, string7, string8 )
@@ -12240,7 +12284,7 @@ function function_b90de82e759099dc( timeout, string1, string2, string3, string4,
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 16, eflags: 0x0
+// Params 16
 // Checksum 0x0, Offset: 0x12961
 // Size: 0x2a0
 function function_3c010dc06eabfe5f( ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7, ent8, string8 )
@@ -12263,7 +12307,8 @@ function function_3c010dc06eabfe5f( ent1, string1, ent2, string2, ent3, string3,
         params[ 14 ] = ent8;
         params[ 15 ] = string8;
         
-        for (i = 0; i < params.size; i++) {
+        for ( i = 0; i < params.size ; i++ )
+        {
             if ( i % 2 == 0 && isdefined( params[ i ] ) && !isent( params[ i ] ) && !isstruct( params[ i ] ) )
             {
                 assertmsg( "<dev string:x1655>" + i + 1 + "<dev string:x168d>" + i / 2 + 1 + "<dev string:x1696>" );
@@ -12324,7 +12369,7 @@ function function_3c010dc06eabfe5f( ent1, string1, ent2, string2, ent3, string3,
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 17, eflags: 0x0
+// Params 17
 // Checksum 0x0, Offset: 0x12c0a
 // Size: 0x377
 function function_ebad8f70ed282931( timeout, ent1, string1, ent2, string2, ent3, string3, ent4, string4, ent5, string5, ent6, string6, ent7, string7, ent8, string8 )
@@ -12352,7 +12397,8 @@ function function_ebad8f70ed282931( timeout, ent1, string1, ent2, string2, ent3,
             assertmsg( "<dev string:x1601>" );
         }
         
-        for (i = 1; i < params.size; i++) {
+        for ( i = 1; i < params.size ; i++ )
+        {
             if ( i % 2 == 1 && isdefined( params[ i ] ) && !isent( params[ i ] ) )
             {
                 assertmsg( "<dev string:x1655>" + i + 1 + "<dev string:x168d>" + ( i + 1 ) / 2 + "<dev string:x1730>" );
@@ -12507,7 +12553,7 @@ function private function_acb8d1f52b2223cb( msg, struct )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1311c
 // Size: 0x7c
 function string_to_bool( the_string )
@@ -12533,7 +12579,7 @@ function string_to_bool( the_string )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x131a1
 // Size: 0x18
 function get_int_or_0( value )
@@ -12547,7 +12593,7 @@ function get_int_or_0( value )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x131c2
 // Size: 0x101
 function function_5e9baece4185ee1e( bundlename )
@@ -12585,7 +12631,7 @@ function function_5e9baece4185ee1e( bundlename )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x132cc
 // Size: 0x99
 function function_680ff86fdba6e483( bundlestruct )
@@ -12617,7 +12663,7 @@ function function_680ff86fdba6e483( bundlestruct )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1336d
 // Size: 0x84
 function function_eadd787ef68ba356( object )
@@ -12638,7 +12684,7 @@ function function_eadd787ef68ba356( object )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x133f9
 // Size: 0x83
 function function_beed97b4da27070e()
@@ -12665,7 +12711,7 @@ function function_beed97b4da27070e()
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13485
 // Size: 0x16b
 function function_4676b0931a17998a( array )
@@ -12711,7 +12757,7 @@ function function_4676b0931a17998a( array )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x135f9
 // Size: 0x23
 function function_fe32d769b4bbd6a1( object, string )
@@ -12725,7 +12771,7 @@ function function_fe32d769b4bbd6a1( object, string )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13624
 // Size: 0x4c
 function function_2bf8ec790b5a10f8( dvar, func, args )
@@ -12747,7 +12793,7 @@ function function_2bf8ec790b5a10f8( dvar, func, args )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13678
 // Size: 0x57
 function function_faefc2306b38a0b2( dvar, func, args )
@@ -12769,7 +12815,7 @@ function function_faefc2306b38a0b2( dvar, func, args )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x136d7
 // Size: 0x8f
 function function_c306c2fab085ed0e( dvar, value, func, args )
@@ -12813,7 +12859,7 @@ function function_c306c2fab085ed0e( dvar, value, func, args )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1376e
 // Size: 0x60
 function function_c71faf21f94673a3( dvar, value, func, args )
@@ -12835,7 +12881,7 @@ function function_c71faf21f94673a3( dvar, value, func, args )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x137d6
 // Size: 0x60
 function function_2bf5388598cc6836( dvar, value, func, args )
@@ -12857,7 +12903,7 @@ function function_2bf5388598cc6836( dvar, value, func, args )
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1383e
 // Size: 0x2a
 function function_ee26a62ef3d1372d( dvar_name, default_value, var_5e073b266eeb0520 )
@@ -12866,7 +12912,7 @@ function function_ee26a62ef3d1372d( dvar_name, default_value, var_5e073b266eeb05
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13871
 // Size: 0x2a
 function function_370c5539313daf66( dvar_name, default_value, var_5e073b266eeb0520 )
@@ -12875,7 +12921,7 @@ function function_370c5539313daf66( dvar_name, default_value, var_5e073b266eeb05
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x138a4
 // Size: 0x2a
 function function_680811466c2e6053( dvar_name, default_value, var_5e073b266eeb0520 )
@@ -12884,7 +12930,7 @@ function function_680811466c2e6053( dvar_name, default_value, var_5e073b266eeb05
 }
 
 // Namespace utility / scripts\engine\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x138d7
 // Size: 0x2a
 function function_ba70ea4e80f22895( dvar_name, default_value, var_5e073b266eeb0520 )

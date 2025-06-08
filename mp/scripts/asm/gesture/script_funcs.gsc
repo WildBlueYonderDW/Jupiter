@@ -8,7 +8,7 @@
 #namespace script_funcs;
 
 // Namespace script_funcs / scripts\asm\gesture\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb7
 // Size: 0x37, Type: bool
 function ai_gesture_requested( asmname, statename, tostatename, params )
@@ -17,7 +17,7 @@ function ai_gesture_requested( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\gesture\script_funcs
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf7
 // Size: 0x37, Type: bool
 function ai_point_gesture_requested( asmname, statename, tostatename, params )
@@ -26,7 +26,7 @@ function ai_point_gesture_requested( asmname, statename, tostatename, params )
 }
 
 // Namespace script_funcs / scripts\asm\gesture\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x137
 // Size: 0xd
 function ai_lookat_hold()
@@ -35,7 +35,7 @@ function ai_lookat_hold()
 }
 
 // Namespace script_funcs / scripts\asm\gesture\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14c
 // Size: 0xc
 function ai_lookat_release()
@@ -44,7 +44,7 @@ function ai_lookat_release()
 }
 
 // Namespace script_funcs / scripts\asm\gesture\script_funcs
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x160
 // Size: 0x17
 function ai_can_lookat()
@@ -58,7 +58,7 @@ function ai_can_lookat()
 }
 
 // Namespace script_funcs / scripts\asm\gesture\script_funcs
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x17f
 // Size: 0x38
 function float_remap( value, from1, to1, from2, to2 )
@@ -67,7 +67,7 @@ function float_remap( value, from1, to1, from2, to2 )
 }
 
 // Namespace script_funcs / scripts\asm\gesture\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c0
 // Size: 0x22
 function lerp_float( from, to, delta )
@@ -76,7 +76,7 @@ function lerp_float( from, to, delta )
 }
 
 // Namespace script_funcs / scripts\asm\gesture\script_funcs
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1eb
 // Size: 0x3e
 function smoothstep( start, end, delta )

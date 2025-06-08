@@ -69,7 +69,7 @@ function private function_2845c7aff5b6d7b6( type )
 /#
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2b9
     // Size: 0x154, Type: dev
     function function_38b44913b9bec05f( players )
@@ -106,7 +106,8 @@ function private function_2845c7aff5b6d7b6( type )
             {
                 players = [];
                 
-                for (i = 1; i < level.players.size; i++) {
+                for ( i = 1; i < level.players.size ; i++ )
+                {
                     players[ players.size ] = level.players[ i ];
                 }
             }
@@ -117,7 +118,8 @@ function private function_2845c7aff5b6d7b6( type )
                 
                 if ( diff > 0 )
                 {
-                    for (i = 0; i < diff; i++) {
+                    for ( i = 0; i < diff ; i++ )
+                    {
                         players[ players.size ] = level.players[ i + size ];
                     }
                 }
@@ -128,7 +130,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x415
     // Size: 0x29b, Type: dev
     function function_181c965102053e79( fauxspawn, revivespawn )
@@ -190,7 +192,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6b8
     // Size: 0x65, Type: dev
     function function_117a90f752406598()
@@ -207,7 +209,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x725
     // Size: 0x3da, Type: dev
     function function_9dd3d565e1ba2f03()
@@ -275,7 +277,8 @@ function private function_2845c7aff5b6d7b6( type )
                 transientname = function_2845c7aff5b6d7b6( var_a6b3fae0395f75c3 );
                 loadinfiltransient( transientname );
                 
-                for (var_24b79087f3897e94 = 0; !var_24b79087f3897e94; var_24b79087f3897e94 = function_2030cc4ad67d1634( transientname )) {
+                for ( var_24b79087f3897e94 = 0; !var_24b79087f3897e94 ; var_24b79087f3897e94 = function_2030cc4ad67d1634( transientname ) )
+                {
                     waitframe();
                 }
                 
@@ -323,7 +326,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xb07
     // Size: 0x7d0, Type: dev
     function function_facc80fe01aef30()
@@ -346,7 +349,8 @@ function private function_2845c7aff5b6d7b6( type )
         transientname = function_2845c7aff5b6d7b6( var_a6b3fae0395f75c3 );
         loadinfiltransient( transientname );
         
-        for (var_24b79087f3897e94 = 0; !var_24b79087f3897e94; var_24b79087f3897e94 = function_2030cc4ad67d1634( transientname )) {
+        for ( var_24b79087f3897e94 = 0; !var_24b79087f3897e94 ; var_24b79087f3897e94 = function_2030cc4ad67d1634( transientname ) )
+        {
             waitframe();
         }
         
@@ -537,7 +541,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x12df
     // Size: 0x204, Type: dev
     function function_b1e9104bb425eed6( var_a6b3fae0395f75c3 )
@@ -585,7 +589,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x14eb
     // Size: 0x63, Type: dev
     function adjust_bar( percent )
@@ -596,7 +600,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1556
     // Size: 0x17, Type: dev
     function function_e71304c34e3c6962( argstruct )
@@ -605,7 +609,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1575
     // Size: 0x17, Type: dev
     function function_9cb7084e67f532c9( argstruct )
@@ -614,7 +618,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1594
     // Size: 0x30, Type: dev
     function function_55ed5b4967f1130d( argstruct )
@@ -629,7 +633,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x15cc
     // Size: 0x2e9, Type: dev
     function function_efc9d79fca4c313d( argstruct )
@@ -651,7 +655,8 @@ function private function_2845c7aff5b6d7b6( type )
             fracdiff = 1 / argstruct.numsegments;
             struct.path = [];
             
-            for (i = 0; i < argstruct.numsegments; i++) {
+            for ( i = 0; i < argstruct.numsegments ; i++ )
+            {
                 model setanimtime( argstruct.animref, fracdiff * i );
                 wait 0.1;
                 
@@ -694,7 +699,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x18bd
     // Size: 0x163, Type: dev
     function function_54b03fa89c164504()
@@ -704,7 +709,8 @@ function private function_2845c7aff5b6d7b6( type )
         println( "<dev string:x62f>" );
         println( "<dev string:x466>" );
         
-        for (i = 0; i < structs.size; i++) {
+        for ( i = 0; i < structs.size ; i++ )
+        {
             if ( isdefined( structs[ i ].var_fcb6c737b5ecef23 ) )
             {
                 println( "<dev string:x68b>" + i + "<dev string:x698>" + structs[ i ].origin + "<dev string:x6b0>" + structs[ i ].angles + "<dev string:x6b6>" );
@@ -722,7 +728,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1a28
     // Size: 0x1d3, Type: dev
     function function_83f63b509c56f86c()
@@ -769,7 +775,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1c03
     // Size: 0x3c, Type: dev
     function function_f5c4b4c2a4e8e220( removestruct )
@@ -778,7 +784,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1c47
     // Size: 0x105, Type: dev
     function function_ce2d34095221c720( structoverride )
@@ -805,7 +811,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d54
     // Size: 0x165, Type: dev
     function function_980d0b7c0096bb37()
@@ -836,7 +842,8 @@ function private function_2845c7aff5b6d7b6( type )
         player = level.players[ 0 ];
         player_rigs = [];
         
-        for (i = 0; i < players.size; i++) {
+        for ( i = 0; i < players.size ; i++ )
+        {
             if ( !isdefined( players[ i ] ) )
             {
                 continue;
@@ -859,7 +866,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1ec1
     // Size: 0x109, Type: dev
     function function_788c4eeeeb69900f()
@@ -898,7 +905,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x1fd2
     // Size: 0x37, Type: dev
     function function_6c67cb42fa6c83d2( players, player_rigs, play_once )
@@ -912,7 +919,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x2011
     // Size: 0x49f, Type: dev
     function function_1c6d73d1832aefd6( players, player_rigs )
@@ -1028,7 +1035,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x24b8
     // Size: 0x11a, Type: dev
     function function_9b6ad484e6bfa268()
@@ -1065,7 +1072,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x25da
     // Size: 0x430, Type: dev
     function cursor_think()
@@ -1144,7 +1151,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x2a12
     // Size: 0x125, Type: dev
     function function_7835c2cb25c033c9( origin, alpha, size, color, serverduration, text )
@@ -1185,7 +1192,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2b3f
     // Size: 0x25f, Type: dev
     function function_75f7d0af300ea72a()
@@ -1232,7 +1239,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2da6
     // Size: 0x466, Type: dev
     function function_c1296c6ad87a8500()
@@ -1266,7 +1273,8 @@ function private function_2845c7aff5b6d7b6( type )
             
             if ( isdefined( test.argstruct.numsegments ) )
             {
-                for (i = 0; i < test.path.size - 1; i++) {
+                for ( i = 0; i < test.path.size - 1 ; i++ )
+                {
                     origin = level.var_59d3ce664628caf4.cursor_pos + rotatevector( test.path[ i ], level.var_59d3ce664628caf4.cursor_ang );
                     origin2 = level.var_59d3ce664628caf4.cursor_pos + rotatevector( test.path[ i + 1 ], level.var_59d3ce664628caf4.cursor_ang );
                     line( origin, origin2, ( 1, 1, 1 ), 1, 1 );
@@ -1316,7 +1324,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3214
     // Size: 0x93, Type: dev
     function update_cursor()
@@ -1335,7 +1343,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x32af
     // Size: 0x2ed, Type: dev
     function function_652652964c77da84()
@@ -1414,7 +1422,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x35a4
     // Size: 0x8e, Type: dev
     function function_ad0f628e841bd876( point )
@@ -1433,7 +1441,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x363a
     // Size: 0xc6, Type: dev
     function draw_node( pos, angles, color, size, alpha, depthtest )
@@ -1467,7 +1475,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x3708
     // Size: 0x12c, Type: dev
     function draw_small_arrow( start, end, color, alpha, depthtest )
@@ -1498,7 +1506,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x383c
     // Size: 0x1f1, Type: dev
     function draw_box( pos, color, angles, size, alpha, depthtest )
@@ -1547,7 +1555,8 @@ function private function_2845c7aff5b6d7b6( type )
         points[ points.size ] = points[ points.size - 1 ] + forward * width;
         offset = height * up;
         
-        for (i = 0; i < points.size; i++) {
+        for ( i = 0; i < points.size ; i++ )
+        {
             line( points[ i ], points[ i ] + offset, color, alpha, depthtest );
             
             if ( i == points.size - 1 )
@@ -1563,7 +1572,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3a35
     // Size: 0x6ab, Type: dev
     function function_1ee78b6d0f6f10f7()
@@ -1651,7 +1660,8 @@ function private function_2845c7aff5b6d7b6( type )
             return;
         }
         
-        for (i = 0; i < players.size; i++) {
+        for ( i = 0; i < players.size ; i++ )
+        {
             if ( !isdefined( players[ i ] ) )
             {
                 continue;
@@ -1766,7 +1776,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x40e8
     // Size: 0x52, Type: dev
     function function_ab9fd11ef489ccf3()
@@ -1782,7 +1792,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x4142
     // Size: 0xb5, Type: dev
     function function_75ef2dd1a0eee7bc( animstruct )
@@ -1811,7 +1821,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x41ff
     // Size: 0x131, Type: dev
     function function_2fc595ab59dafc25( text, time )
@@ -1843,7 +1853,7 @@ function private function_2845c7aff5b6d7b6( type )
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4338
     // Size: 0x232, Type: dev
     function function_53e397de3c413997()

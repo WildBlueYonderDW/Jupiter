@@ -11,7 +11,7 @@
 #namespace br_maphints;
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2da
 // Size: 0xb1
 function init()
@@ -50,7 +50,7 @@ function init()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x393
 // Size: 0x36a
 function initlocs_keypads()
@@ -86,7 +86,7 @@ function initlocs_keypads()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x705
 // Size: 0x96
 function initlocs_phones()
@@ -100,7 +100,7 @@ function initlocs_phones()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a3
 // Size: 0x262
 function initlocs_computer()
@@ -128,7 +128,7 @@ function initlocs_computer()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0d
 // Size: 0x118
 function initlocs_radio()
@@ -146,7 +146,7 @@ function initlocs_radio()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb2d
 // Size: 0x49
 function maphint_keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -156,7 +156,7 @@ function maphint_keypadscriptableused( instance, part, state, player, var_a5b2c5
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb7e
 // Size: 0x70
 function _maphint_keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -171,7 +171,7 @@ function _maphint_keypadscriptableused( instance, part, state, player, var_a5b2c
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xbf6
 // Size: 0x49
 function maphint_phonescriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -181,7 +181,7 @@ function maphint_phonescriptableused( instance, part, state, player, var_a5b2c54
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xc47
 // Size: 0x70
 function _maphint_phonescriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -196,7 +196,7 @@ function _maphint_phonescriptableused( instance, part, state, player, var_a5b2c5
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xcbf
 // Size: 0x51
 function maphint_computerscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -206,7 +206,7 @@ function maphint_computerscriptableused( instance, part, state, player, var_a5b2
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xd18
 // Size: 0x70
 function _maphint_computerscriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -221,7 +221,7 @@ function _maphint_computerscriptableused( instance, part, state, player, var_a5b
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd90
 // Size: 0x2ed
 function initlocs_test()
@@ -262,7 +262,7 @@ function initlocs_test()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1085
 // Size: 0x1d3
 function maphint_debugthink()
@@ -306,7 +306,7 @@ function maphint_debugthink()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1260
 // Size: 0x548
 function init_season3_intel_challenges()
@@ -315,7 +315,8 @@ function init_season3_intel_challenges()
     gameflaginit( "intel_challenges_setup_complete", 0 );
     currentweek = getdvarint( @"hash_67078a9b140dd8a0", 0 );
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         ref = tablelookupbyrow( "mp/intel_challenges.csv", row, 0 );
         
         if ( !isdefined( ref ) || ref == "" )
@@ -413,7 +414,7 @@ function init_season3_intel_challenges()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17b0
 // Size: 0xd2
 function assignscriptablemodels()
@@ -437,7 +438,7 @@ function assignscriptablemodels()
 /#
 
     // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x188a
     // Size: 0x1be, Type: dev
     function function_49a09152c5d422b()
@@ -477,7 +478,7 @@ function assignscriptablemodels()
 #/
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a50
 // Size: 0x73
 function showintelscriptablestoplayer( player, key )
@@ -489,7 +490,7 @@ function showintelscriptablestoplayer( player, key )
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1acb
 // Size: 0x73
 function hideintelscriptablesfromplayer( player, key )
@@ -501,7 +502,7 @@ function hideintelscriptablesfromplayer( player, key )
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b46
 // Size: 0x27
 function onplayerconnect()
@@ -514,7 +515,7 @@ function onplayerconnect()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b75
 // Size: 0x25d
 function assignintelchallenges()
@@ -599,7 +600,7 @@ function assignintelchallenges()
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1dda
 // Size: 0x1e9
 function intelused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -653,7 +654,7 @@ function intelused( instance, part, state, player, var_a5b2c541413aa895, usestri
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fcb
 // Size: 0x35, Type: bool
 function isplayeronintelchallenge( player, ref )
@@ -662,7 +663,7 @@ function isplayeronintelchallenge( player, ref )
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2009
 // Size: 0x9d
 function markintelwithrecondrone( droneowner, ent )
@@ -679,7 +680,7 @@ function markintelwithrecondrone( droneowner, ent )
 }
 
 // Namespace br_maphints / scripts\mp\gametypes\br_maphints
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20ae
 // Size: 0xa9
 function function_511e2c2a5399f0d9()

@@ -16,7 +16,7 @@
 #namespace adrenaline;
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ac
 // Size: 0xda
 function function_22fd49689920fdb1()
@@ -48,7 +48,7 @@ function function_22fd49689920fdb1()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38e
 // Size: 0x1fc, Type: bool
 function useadrenaline( equipmentref )
@@ -122,7 +122,7 @@ function useadrenaline( equipmentref )
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x593
 // Size: 0x21
 function removeadrenaline()
@@ -135,7 +135,7 @@ function removeadrenaline()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5bc
 // Size: 0x1e5
 function adrenalinerecharge( rechargetime )
@@ -197,7 +197,7 @@ function adrenalinerecharge( rechargetime )
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a9
 // Size: 0x112
 function function_1a1fd182d2636f1f()
@@ -232,7 +232,7 @@ function function_1a1fd182d2636f1f()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8c3
 // Size: 0x1a
 function onequipmenttaken( equipmentref, slot )
@@ -241,7 +241,7 @@ function onequipmenttaken( equipmentref, slot )
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8e5
 // Size: 0x6d
 function onequipmentfired( equipmentref, slot, objweapon )
@@ -262,7 +262,7 @@ function onequipmentfired( equipmentref, slot, objweapon )
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x95a
 // Size: 0xb
 function gethealthpersec()
@@ -271,7 +271,7 @@ function gethealthpersec()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x96e
 // Size: 0x1b
 function adrenaline_removeonplayernotifies()
@@ -281,7 +281,7 @@ function adrenaline_removeonplayernotifies()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x991
 // Size: 0xa3
 function adrenaline_removeondamage()
@@ -301,7 +301,7 @@ function adrenaline_removeondamage()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa3c
 // Size: 0x23
 function adrenaline_removeongameend()
@@ -316,7 +316,7 @@ function adrenaline_removeongameend()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa67
 // Size: 0x2b
 function adrenaline_missiononuse()
@@ -329,7 +329,7 @@ function adrenaline_missiononuse()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa9a
 // Size: 0x31
 function adrenaline_missionondeaththink()
@@ -343,7 +343,7 @@ function adrenaline_missionondeaththink()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xad3
 // Size: 0x21
 function removeadrenalinespeed()
@@ -356,7 +356,7 @@ function removeadrenalinespeed()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xafc
 // Size: 0x12
 function function_72775122d66e19f4()
@@ -366,7 +366,7 @@ function function_72775122d66e19f4()
 }
 
 // Namespace adrenaline / scripts\mp\equipment\adrenaline
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb16
 // Size: 0xd3
 function function_46920ff2cd83de61()
@@ -377,7 +377,8 @@ function function_46920ff2cd83de61()
     self lerpfovbypreset( "zombiedefault" );
     self setclientomnvar( "ui_speedboost_overlay", 0 );
     
-    for (i = 0; i < 5; i++) {
+    for ( i = 0; i < 5 ; i++ )
+    {
         self.adrenalinespeed += level.var_289e4697f2efe65d;
         scripts\mp\weapons::updatemovespeedscale();
         wait 0.2;
@@ -387,7 +388,8 @@ function function_46920ff2cd83de61()
     self lerpfovbypreset( "default_2seconds" );
     thread scripts\mp\supers\super_deadsilence::superdeadsilence_endhudsequence();
     
-    for (i = 0; i < 5; i++) {
+    for ( i = 0; i < 5 ; i++ )
+    {
         self.adrenalinespeed -= level.var_289e4697f2efe65d;
         scripts\mp\weapons::updatemovespeedscale();
         wait 0.2;

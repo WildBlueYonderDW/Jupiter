@@ -5,7 +5,7 @@
 #namespace namespace_3dfa6eb6c5741630;
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cd
 // Size: 0x9
 function init_gameskill()
@@ -14,7 +14,7 @@ function init_gameskill()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4de
 // Size: 0x1b
 function set_gameskill()
@@ -23,7 +23,7 @@ function set_gameskill()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x501
 // Size: 0xb
 function get_gameskill()
@@ -32,7 +32,7 @@ function get_gameskill()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x515
 // Size: 0xc8d
 function setskill( reset )
@@ -178,7 +178,7 @@ function setskill( reset )
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11aa
 // Size: 0x9
 function updatealldifficulty()
@@ -187,7 +187,7 @@ function updatealldifficulty()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11bb
 // Size: 0x296
 function init_mgturretsettings()
@@ -220,7 +220,7 @@ function init_mgturretsettings()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1459
 // Size: 0x2b
 function setdifficulty()
@@ -231,7 +231,7 @@ function setdifficulty()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x148c
 // Size: 0x6d
 function setglobaldifficulty()
@@ -244,7 +244,7 @@ function setglobaldifficulty()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1501
 // Size: 0x3b
 function updategameskill()
@@ -263,7 +263,7 @@ function updategameskill()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1545
 // Size: 0x402
 function apply_difficulty_settings( current_frac )
@@ -319,7 +319,7 @@ function apply_difficulty_settings( current_frac )
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x194f
 // Size: 0x14
 function set_difficulty_from_locked_settings()
@@ -329,7 +329,7 @@ function set_difficulty_from_locked_settings()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x196b
 // Size: 0xc
 function resetskill()
@@ -339,7 +339,7 @@ function resetskill()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x197f
 // Size: 0x247
 function wave_difficulty_update( difficulty )
@@ -372,7 +372,7 @@ function wave_difficulty_update( difficulty )
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bce
 // Size: 0x69
 function update_player_attacker_accuracy()
@@ -392,7 +392,7 @@ function update_player_attacker_accuracy()
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c3f
 // Size: 0xb
 function get_player_gameskill()

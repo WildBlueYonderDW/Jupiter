@@ -19,8 +19,8 @@
 #namespace get_high;
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf3
+// Params 0
+// Checksum 0x0, Offset: 0xaf4
 // Size: 0x43
 function init()
 {
@@ -36,8 +36,8 @@ function init()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3e
+// Params 0
+// Checksum 0x0, Offset: 0xb3f
 // Size: 0xb2
 function onstartgametype()
 {
@@ -62,8 +62,8 @@ function onstartgametype()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf8
+// Params 1
+// Checksum 0x0, Offset: 0xbf9
 // Size: 0x36
 function function_b18b47e5d7e369cc( var_c429c0a3bbcac7b6 )
 {
@@ -72,8 +72,8 @@ function function_b18b47e5d7e369cc( var_c429c0a3bbcac7b6 )
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc36
+// Params 0
+// Checksum 0x0, Offset: 0xc37
 // Size: 0x56
 function function_ccf85d7e826d2c58()
 {
@@ -83,8 +83,8 @@ function function_ccf85d7e826d2c58()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc94
+// Params 0
+// Checksum 0x0, Offset: 0xc95
 // Size: 0x71
 function run_targets()
 {
@@ -98,8 +98,8 @@ function run_targets()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd0d
+// Params 0
+// Checksum 0x0, Offset: 0xd0e
 // Size: 0x82
 function function_8e90986ed52da36c()
 {
@@ -122,8 +122,8 @@ function function_8e90986ed52da36c()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd97
+// Params 1
+// Checksum 0x0, Offset: 0xd98
 // Size: 0x74
 function onplayerconnect( player )
 {
@@ -138,8 +138,8 @@ function onplayerconnect( player )
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe13
+// Params 0
+// Checksum 0x0, Offset: 0xe14
 // Size: 0x4c
 function function_596dea770999caf1()
 {
@@ -157,8 +157,8 @@ function function_596dea770999caf1()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe67
+// Params 1
+// Checksum 0x0, Offset: 0xe68
 // Size: 0x96
 function onspawnplayer( revivespawn )
 {
@@ -190,8 +190,8 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf05
+// Params 0
+// Checksum 0x0, Offset: 0xf06
 // Size: 0x5c
 function function_36011f47d98d4491()
 {
@@ -211,8 +211,8 @@ function function_36011f47d98d4491()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf69
+// Params 0
+// Checksum 0x0, Offset: 0xf6a
 // Size: 0x71
 function function_3e765f10c850e98e()
 {
@@ -226,8 +226,8 @@ function function_3e765f10c850e98e()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe2
+// Params 0
+// Checksum 0x0, Offset: 0xfe3
 // Size: 0x52
 function modedisableexecution()
 {
@@ -244,8 +244,8 @@ function modedisableexecution()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x103c
+// Params 0
+// Checksum 0x0, Offset: 0x103d
 // Size: 0x3c
 function function_c6df49cca235d926()
 {
@@ -261,8 +261,8 @@ function function_c6df49cca235d926()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1080
+// Params 0
+// Checksum 0x0, Offset: 0x1081
 // Size: 0x13
 function delete_rock()
 {
@@ -272,8 +272,8 @@ function delete_rock()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x109b
+// Params 2
+// Checksum 0x0, Offset: 0x109c
 // Size: 0x50
 function function_6f304eb7784e15( equipmentref, slot )
 {
@@ -289,8 +289,8 @@ function function_6f304eb7784e15( equipmentref, slot )
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f3
+// Params 5
+// Checksum 0x0, Offset: 0x10f4
 // Size: 0x3c
 function onplayerscore( event, player, originalpoints, victim, eventinfo )
 {
@@ -303,8 +303,8 @@ function onplayerscore( event, player, originalpoints, victim, eventinfo )
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1138
+// Params 0
+// Checksum 0x0, Offset: 0x1139
 // Size: 0xa2
 function init_spawns()
 {
@@ -320,8 +320,8 @@ function init_spawns()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e2
+// Params 0
+// Checksum 0x0, Offset: 0x11e3
 // Size: 0xb0
 function getspawnpoint()
 {
@@ -355,8 +355,8 @@ function getspawnpoint()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x129b
+// Params 2
+// Checksum 0x0, Offset: 0x129c
 // Size: 0xa9
 function function_e756e197bf6cade6( player, var_a12200f94a14a411 )
 {
@@ -377,8 +377,8 @@ function function_e756e197bf6cade6( player, var_a12200f94a14a411 )
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x134c
+// Params 0
+// Checksum 0x0, Offset: 0x134d
 // Size: 0x218
 function height_manager()
 {
@@ -445,8 +445,8 @@ function height_manager()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x156c
+// Params 0
+// Checksum 0x0, Offset: 0x156d
 // Size: 0x2ac
 function setspecialloadouts()
 {
@@ -477,8 +477,8 @@ function setspecialloadouts()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1820
+// Params 0
+// Checksum 0x0, Offset: 0x1821
 // Size: 0x26d
 function function_8b645c00ced7e3aa()
 {
@@ -539,8 +539,8 @@ function function_8b645c00ced7e3aa()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a95
+// Params 1
+// Checksum 0x0, Offset: 0x1a96
 // Size: 0x12f
 function function_4a4297c755f57569( var_392af30b501461af )
 {
@@ -574,8 +574,8 @@ function function_4a4297c755f57569( var_392af30b501461af )
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bcc
+// Params 0
+// Checksum 0x0, Offset: 0x1bcd
 // Size: 0xca
 function function_845ec03de28d7564()
 {
@@ -606,8 +606,8 @@ function function_845ec03de28d7564()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c9e
+// Params 0
+// Checksum 0x0, Offset: 0x1c9f
 // Size: 0x12b
 function function_cc72ca834f01c961()
 {
@@ -644,8 +644,8 @@ function function_cc72ca834f01c961()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dd1
+// Params 0
+// Checksum 0x0, Offset: 0x1dd2
 // Size: 0x118
 function function_e41460cac0fd6c8b()
 {
@@ -679,8 +679,8 @@ function function_e41460cac0fd6c8b()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ef1
+// Params 0
+// Checksum 0x0, Offset: 0x1ef2
 // Size: 0x8c
 function function_ad91532168dbf0be()
 {
@@ -700,8 +700,8 @@ function function_ad91532168dbf0be()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f85
+// Params 0
+// Checksum 0x0, Offset: 0x1f86
 // Size: 0x11a
 function function_6d475315fcd75b0c()
 {
@@ -721,7 +721,8 @@ function function_6d475315fcd75b0c()
         
         if ( istrue( self.var_c9553196cf9c8f6d ) )
         {
-            for (i = 0; i < level.checkpoints.size; i++) {
+            for ( i = 0; i < level.checkpoints.size ; i++ )
+            {
                 var_45e4b845100be02a = level.checkpoints[ i ];
                 
                 if ( is_equal( self, var_45e4b845100be02a ) )
@@ -744,8 +745,8 @@ function function_6d475315fcd75b0c()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20a7
+// Params 0
+// Checksum 0x0, Offset: 0x20a8
 // Size: 0x223
 function function_10f5dfb0f5993398()
 {
@@ -764,7 +765,8 @@ function function_10f5dfb0f5993398()
         
         if ( !istrue( self isonground() || self isswimming() || self ishanging() || self ismantling() || self isonladder() || level.gameended ) && !istrue( self.var_63f4e0a906dd9e53 ) )
         {
-            for (i = 0; i < 15; i++) {
+            for ( i = 0; i < 15 ; i++ )
+            {
                 if ( istrue( self isonground() || self isswimming() || self ishanging() || self ismantling() || self isonladder() ) || !isalive( self ) )
                 {
                     break;
@@ -806,8 +808,8 @@ function function_10f5dfb0f5993398()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22d2
+// Params 0
+// Checksum 0x0, Offset: 0x22d3
 // Size: 0x2a
 function function_1ca18f8f2c81e020()
 {
@@ -821,8 +823,8 @@ function function_1ca18f8f2c81e020()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2304
+// Params 0
+// Checksum 0x0, Offset: 0x2305
 // Size: 0x2f
 function function_feadf98b662bb889()
 {
@@ -830,8 +832,8 @@ function function_feadf98b662bb889()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x233c
+// Params 0
+// Checksum 0x0, Offset: 0x233d
 // Size: 0xac
 function rock_pickups()
 {
@@ -848,8 +850,8 @@ function rock_pickups()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x23f0
+// Params 0
+// Checksum 0x0, Offset: 0x23f1
 // Size: 0xd4
 function function_9839e892f48728cb()
 {
@@ -878,8 +880,8 @@ function function_9839e892f48728cb()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24cc
+// Params 0
+// Checksum 0x0, Offset: 0x24cd
 // Size: 0x24
 function function_4cd8f5379d59a1dc()
 {
@@ -889,8 +891,8 @@ function function_4cd8f5379d59a1dc()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24f8
+// Params 0
+// Checksum 0x0, Offset: 0x24f9
 // Size: 0x12
 function function_c9257c7ca72092d2()
 {
@@ -898,8 +900,8 @@ function function_c9257c7ca72092d2()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2513
+// Params 0
+// Checksum 0x0, Offset: 0x2514
 // Size: 0x1cc
 function function_4158ab699b721127()
 {
@@ -945,8 +947,8 @@ function function_4158ab699b721127()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26e7
+// Params 0
+// Checksum 0x0, Offset: 0x26e8
 // Size: 0x28
 function function_16542e7fc8964c99()
 {
@@ -960,8 +962,8 @@ function function_16542e7fc8964c99()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2717
+// Params 0
+// Checksum 0x0, Offset: 0x2718
 // Size: 0xed
 function function_ce4ab753ee817fa5()
 {
@@ -990,8 +992,8 @@ function function_ce4ab753ee817fa5()
 }
 
 // Namespace get_high / scripts\mp\gametypes\get_high
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x280c
+// Params 0
+// Checksum 0x0, Offset: 0x280d
 // Size: 0x50
 function function_fe6ace91263f2d12()
 {
@@ -1005,8 +1007,8 @@ function function_fe6ace91263f2d12()
 /#
 
     // Namespace get_high / scripts\mp\gametypes\get_high
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2864
+    // Params 0
+    // Checksum 0x0, Offset: 0x2865
     // Size: 0x140, Type: dev
     function function_c12ed49f3a38bd86()
     {

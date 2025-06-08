@@ -5,7 +5,7 @@
 #namespace archassault;
 
 // Namespace archassault / scripts\mp\archetypes\archassault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17e
 // Size: 0x9
 function applyarchetype()
@@ -14,7 +14,7 @@ function applyarchetype()
 }
 
 // Namespace archassault / scripts\mp\archetypes\archassault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18f
 // Size: 0x2
 function equipextras()
@@ -23,7 +23,7 @@ function equipextras()
 }
 
 // Namespace archassault / scripts\mp\archetypes\archassault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x199
 // Size: 0x2
 function removearchetype()
@@ -32,7 +32,7 @@ function removearchetype()
 }
 
 // Namespace archassault / scripts\mp\archetypes\archassault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a3
 // Size: 0xb2
 function auraquickswap_run()
@@ -59,7 +59,7 @@ function auraquickswap_run()
 }
 
 // Namespace archassault / scripts\mp\archetypes\archassault
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25d
 // Size: 0x96
 function auraquickswap_bestowaura( player )
@@ -85,7 +85,7 @@ function auraquickswap_bestowaura( player )
 }
 
 // Namespace archassault / scripts\mp\archetypes\archassault
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fb
 // Size: 0x25
 function cleanupafterplayerdeath()

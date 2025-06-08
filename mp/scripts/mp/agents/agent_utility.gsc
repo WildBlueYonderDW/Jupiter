@@ -10,7 +10,7 @@
 #namespace agent_utility;
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c3
 // Size: 0xde
 function agentfunc( func_name )
@@ -30,7 +30,7 @@ function agentfunc( func_name )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2aa
 // Size: 0x52
 function set_agent_team( team, optional_owner )
@@ -44,7 +44,7 @@ function set_agent_team( team, optional_owner )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x304
 // Size: 0x9c
 function initagentscriptvariables()
@@ -66,7 +66,7 @@ function initagentscriptvariables()
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a8
 // Size: 0x17e
 function initplayerscriptvariables( asplayer )
@@ -112,33 +112,33 @@ function initplayerscriptvariables( asplayer )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x52e
 // Size: 0x4c
 function getfreeagent( agent_type )
 {
-    var_7818398cdd97fe84 = undefined;
+    freeagent = undefined;
     
     if ( isdefined( level.agentarray ) )
     {
-        var_7818398cdd97fe84 = function_76b285b4bae7356c();
+        freeagent = function_76b285b4bae7356c();
         
-        if ( isdefined( var_7818398cdd97fe84 ) )
+        if ( isdefined( freeagent ) )
         {
-            var_7818398cdd97fe84 initagentscriptvariables();
+            freeagent initagentscriptvariables();
             
             if ( isdefined( agent_type ) )
             {
-                var_7818398cdd97fe84.agent_type = agent_type;
+                freeagent.agent_type = agent_type;
             }
         }
     }
     
-    return var_7818398cdd97fe84;
+    return freeagent;
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x583
 // Size: 0x39
 function activateagent()
@@ -154,7 +154,7 @@ function activateagent()
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c4
 // Size: 0xa
 function deactivateagent()
@@ -163,7 +163,7 @@ function deactivateagent()
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d6
 // Size: 0x140
 function deactivateagentdelayed()
@@ -207,7 +207,7 @@ function deactivateagentdelayed()
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71e
 // Size: 0x2c
 function getnumactiveagents( type )
@@ -222,7 +222,7 @@ function getnumactiveagents( type )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x753
 // Size: 0xbc
 function getactiveagentsoftype( type )
@@ -250,7 +250,7 @@ function getactiveagentsoftype( type )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x818
 // Size: 0x17
 function getnumownedactiveagents( player )
@@ -259,7 +259,7 @@ function getnumownedactiveagents( player )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x838
 // Size: 0xf6
 function getnumownedactiveagentsbytype( player, type )
@@ -290,7 +290,7 @@ function getnumownedactiveagentsbytype( player, type )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x937
 // Size: 0xfc
 function getnumownedagentsonteambytype( team, type )
@@ -321,7 +321,7 @@ function getnumownedagentsonteambytype( team, type )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa3c
 // Size: 0x34b
 function getvalidspawnpathnodenearplayer( var_17bb852304a6478e, var_dd84cf0c92913cb9 )
@@ -376,10 +376,12 @@ function getvalidspawnpathnodenearplayer( var_17bb852304a6478e, var_dd84cf0c9291
         var_644ab9fda129b92b = vectornormalize( pathnode.origin - self.origin );
         dot = vectordot( playerdirection, var_644ab9fda129b92b );
         
-        for (i = 0; i < var_4236cf84c1c222b3.size; i++) {
+        for ( i = 0; i < var_4236cf84c1c222b3.size ; i++ )
+        {
             if ( dot > var_4236cf84c1c222b3[ i ] )
             {
-                for (j = var_4236cf84c1c222b3.size; j > i; j--) {
+                for ( j = var_4236cf84c1c222b3.size; j > i ; j-- )
+                {
                     var_4236cf84c1c222b3[ j ] = var_4236cf84c1c222b3[ j - 1 ];
                     var_154744dc373ef9[ j ] = var_154744dc373ef9[ j - 1 ];
                 }
@@ -392,7 +394,8 @@ function getvalidspawnpathnodenearplayer( var_17bb852304a6478e, var_dd84cf0c9291
         var_4236cf84c1c222b3[ i ] = dot;
     }
     
-    for (i = 0; i < var_154744dc373ef9.size; i++) {
+    for ( i = 0; i < var_154744dc373ef9.size ; i++ )
+    {
         pathnode = var_154744dc373ef9[ i ];
         tracestart = self.origin + zoffset;
         traceend = pathnode.origin + zoffset;
@@ -442,7 +445,7 @@ function getvalidspawnpathnodenearplayer( var_17bb852304a6478e, var_dd84cf0c9291
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd8f
 // Size: 0x8e
 function function_b071e509c0fb69b0()
@@ -464,7 +467,7 @@ function function_b071e509c0fb69b0()
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe26
 // Size: 0x7c
 function function_2e1b23386b967c10()
@@ -486,7 +489,7 @@ function function_2e1b23386b967c10()
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeab
 // Size: 0x2e
 function killagent( agent )
@@ -495,7 +498,7 @@ function killagent( agent )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee1
 // Size: 0x4a
 function killdog()
@@ -504,7 +507,7 @@ function killdog()
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf33
 // Size: 0x24, Type: bool
 function isspecifiedunittype( unittype )
@@ -513,7 +516,7 @@ function isspecifiedunittype( unittype )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf60
 // Size: 0x2f, Type: bool
 function iscivilian( agent )
@@ -523,7 +526,7 @@ function iscivilian( agent )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf98
 // Size: 0x38
 function function_86df29145c484d9c( agent )
@@ -537,7 +540,7 @@ function function_86df29145c484d9c( agent )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfd9
 // Size: 0x38
 function function_17b2ecdae3a795f6( agent )
@@ -551,7 +554,7 @@ function function_17b2ecdae3a795f6( agent )
 }
 
 // Namespace agent_utility / scripts\mp\agents\agent_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x101a
 // Size: 0x38
 function istier3( agent )

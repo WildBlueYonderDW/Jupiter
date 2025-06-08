@@ -8,7 +8,7 @@
 #namespace powerups;
 
 // Namespace powerups / scripts\cp_mp\powerups\powerups
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d9
 // Size: 0xb4
 function init( var_cc680f1d779ccc51, var_40708f9ae5a8070e, var_42ae0bca056bb628 )
@@ -146,7 +146,7 @@ function private reveal_timer( hud_powerup, n_lifetime )
 }
 
 // Namespace powerups / scripts\cp_mp\powerups\powerups
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5e7
 // Size: 0xc6
 function function_676437737684783f( powerupref, n_lifetime )
@@ -193,7 +193,8 @@ function private function_c0d098ef786b87f6( powerupref, n_lifetime )
     root = function_ecdae672c660149e();
     powerupid = root.var_eaf13acb539829eb[ powerupref ];
     
-    for (i = 0; i < powerupid; i++) {
+    for ( i = 0; i < powerupid ; i++ )
+    {
         waitframe();
     }
     
@@ -406,7 +407,7 @@ function private function_23cb67253c852e2a( params )
 }
 
 // Namespace powerups / scripts\cp_mp\powerups\powerups
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdd3
 // Size: 0x115, Type: bool
 function function_96e1cf53bdd43f1c( params )

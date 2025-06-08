@@ -8,7 +8,7 @@
 #namespace combat_utility;
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17a
 // Size: 0x2
 function shootuntilshootbehaviorchange()
@@ -17,7 +17,7 @@ function shootuntilshootbehaviorchange()
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x184
 // Size: 0x2
 function initgrenadethrowanims()
@@ -26,14 +26,15 @@ function initgrenadethrowanims()
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18e
 // Size: 0xbf
 function throwgrenadeatplayerasap_combat_utility()
 {
     assert( self isbadguy() );
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         if ( level.players[ i ] function_4c108309dc0d7fd2() == 0 )
         {
             function_b4ebe6632d7e8efe( level.players[ i ], "lethal", 0 );
@@ -52,7 +53,8 @@ function throwgrenadeatplayerasap_combat_utility()
         
         var_20d57e479df6089c = 0;
         
-        for (i = 0; i < enemies.size; i++) {
+        for ( i = 0; i < enemies.size ; i++ )
+        {
             if ( enemies[ i ].grenadeammo > 0 )
             {
                 return;
@@ -66,14 +68,15 @@ function throwgrenadeatplayerasap_combat_utility()
 /#
 
     // Namespace combat_utility / scripts\anim\combat_utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x255
     // Size: 0xa1, Type: dev
     function function_96d556dea441d1dc( grenadetimer )
     {
         if ( grenadetimer.isplayertimer )
         {
-            for (i = 0; i < level.players.size; i++) {
+            for ( i = 0; i < level.players.size ; i++ )
+            {
                 if ( level.players[ i ] == grenadetimer.player )
                 {
                     break;
@@ -89,7 +92,7 @@ function throwgrenadeatplayerasap_combat_utility()
 #/
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x2fe
 // Size: 0x3b
 function trygrenadethrow( throwingat, destination, optionalanimation, armoffset, fastthrow, withbounce, var_973c51e9fd66d178 )
@@ -98,7 +101,7 @@ function trygrenadethrow( throwingat, destination, optionalanimation, armoffset,
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x341
 // Size: 0x95
 function getgrenadedropvelocity()
@@ -115,7 +118,7 @@ function getgrenadedropvelocity()
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3df
 // Size: 0x42
 function dropgrenade()
@@ -131,7 +134,7 @@ function dropgrenade()
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x429
 // Size: 0x46
 function getpitchtoshootspot( spot )
@@ -148,7 +151,7 @@ function getpitchtoshootspot( spot )
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x478
 // Size: 0x5e
 function watchreloading()
@@ -168,7 +171,7 @@ function watchreloading()
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4de
 // Size: 0x68
 function waittillreloadfinished()
@@ -197,7 +200,7 @@ function waittillreloadfinished()
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x54e
 // Size: 0x1c
 function timednotify( time, msg )
@@ -208,7 +211,7 @@ function timednotify( time, msg )
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x572
 // Size: 0x178
 function monitorflash()
@@ -289,7 +292,7 @@ function monitorflash()
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f2
 // Size: 0xed
 function flashbangstart( duration )
@@ -337,7 +340,7 @@ function flashbangstart( duration )
 }
 
 // Namespace combat_utility / scripts\anim\combat_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e7
 // Size: 0x7
 function fasteranimspeed()
@@ -348,7 +351,7 @@ function fasteranimspeed()
 /#
 
     // Namespace combat_utility / scripts\anim\combat_utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7f7
     // Size: 0x18d, Type: dev
     function showgrenadetimers()
@@ -403,7 +406,7 @@ function fasteranimspeed()
     }
 
     // Namespace combat_utility / scripts\anim\combat_utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x98c
     // Size: 0x182, Type: dev
     function function_96de23075e92ba2()
@@ -442,7 +445,7 @@ function fasteranimspeed()
     }
 
     // Namespace combat_utility / scripts\anim\combat_utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xb16
     // Size: 0x5f, Type: dev
     function function_c0d677eae75ed3ea( huds )

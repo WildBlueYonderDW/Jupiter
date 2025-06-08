@@ -11,7 +11,7 @@
 #namespace jup_spawner_zombie_deathworm_boss;
 
 // Namespace jup_spawner_zombie_deathworm_boss / namespace_3f03323beafc97cf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b3
 // Size: 0x173
 function main()
@@ -43,7 +43,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_deathworm_boss / namespace_3f03323beafc97cf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32e
 // Size: 0x57
 function setup_model()
@@ -60,7 +60,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_deathworm_boss / namespace_3f03323beafc97cf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38d
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -69,7 +69,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_deathworm_boss / namespace_3f03323beafc97cf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39e
 // Size: 0x100
 function precache()

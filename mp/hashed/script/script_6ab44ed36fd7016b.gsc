@@ -19,7 +19,7 @@
 /#
 
     // Namespace namespace_9e48e5655d984ef0 / namespace_bcc754285d90ffd9
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x100
     // Size: 0x2e5, Type: dev
     function function_b6f69d3336218238()
@@ -507,7 +507,8 @@
                 }
             }
             
-            for (count = 0; count <= var_fd5a08e385a75f6c; count++) {
+            for ( count = 0; count <= var_fd5a08e385a75f6c ; count++ )
+            {
                 waitframe();
             }
         }

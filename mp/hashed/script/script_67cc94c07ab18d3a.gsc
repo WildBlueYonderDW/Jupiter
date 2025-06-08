@@ -21,7 +21,7 @@
 #namespace namespace_52ebf044fee9e4cd;
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0x34
 function init()
@@ -38,7 +38,7 @@ function init()
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4ef
 // Size: 0x166
 function function_302e021a6ff37aa6( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -136,7 +136,7 @@ function private function_7bdd79f0c203d370( player, kiosk )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x73d
 // Size: 0x7d
 function function_5036fe27dedbe1d3( player )
@@ -154,7 +154,7 @@ function function_5036fe27dedbe1d3( player )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7c2
 // Size: 0x106
 function function_ad115d1d75ad46f8( channel, value )
@@ -189,7 +189,7 @@ function function_ad115d1d75ad46f8( channel, value )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d0
 // Size: 0x30
 function function_19598c1ea1487b84()
@@ -203,7 +203,7 @@ function function_19598c1ea1487b84()
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x909
 // Size: 0x65
 function function_e4e89a1c489c6fe1( player )
@@ -236,7 +236,7 @@ function private function_ec72aaffd5629e92( value )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9b3
 // Size: 0x1d2
 function function_373d9e3e41486ae1( player, var_85166da84e55de25 )
@@ -245,12 +245,14 @@ function function_373d9e3e41486ae1( player, var_85166da84e55de25 )
     oldattachments = [];
     var_6db9df5a6da9f3f7 = [];
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         oldattachments[ attachmentindex ] = player getplayerdata( level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "attachmentSetup", attachmentindex, "attachment" );
         var_6db9df5a6da9f3f7[ attachmentindex ] = player getplayerdata( level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "attachmentSetup", attachmentindex, "variantID" );
     }
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         var_460bd2a877684086 = player getplayerdata( level.loadoutsgroup, "upgradeWeapon", "attachmentSetup", attachmentindex, "attachment" );
         var_f23b046d49b6fa9b = player getplayerdata( level.loadoutsgroup, "upgradeWeapon", "attachmentSetup", attachmentindex, "variantID" );
         player setplayerdata( level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "attachmentSetup", attachmentindex, "attachment", var_460bd2a877684086 );
@@ -266,7 +268,7 @@ function function_373d9e3e41486ae1( player, var_85166da84e55de25 )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb8d
 // Size: 0x4f
 function function_15b07f33eb2e0625( weaponobj, attachment )
@@ -288,7 +290,7 @@ function function_15b07f33eb2e0625( weaponobj, attachment )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbe5
 // Size: 0x97, Type: bool
 function function_bd931ea5f74143d9( player, newweapon )
@@ -315,7 +317,7 @@ function function_bd931ea5f74143d9( player, newweapon )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc85
 // Size: 0x404
 function upgradeweapon( player, value )
@@ -437,7 +439,7 @@ function upgradeweapon( player, value )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1091
 // Size: 0x12a
 function function_cb50685ebdaf0908( player, var_b10efa89df98704c, upgradeweapon )
@@ -468,7 +470,7 @@ function function_cb50685ebdaf0908( player, var_b10efa89df98704c, upgradeweapon 
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11c3
 // Size: 0x85
 function function_44de440e5b812021( player )
@@ -483,7 +485,7 @@ function function_44de440e5b812021( player )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1250
 // Size: 0x132
 function function_f4fc78c8b588b517( player, attachment, attachmentcost )
@@ -510,7 +512,7 @@ function function_f4fc78c8b588b517( player, attachment, attachmentcost )
 }
 
 // Namespace namespace_52ebf044fee9e4cd / namespace_dbfbff3eb10fab94
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x138a
 // Size: 0x5a8
 function function_82b0b33a03dfe81b( player )

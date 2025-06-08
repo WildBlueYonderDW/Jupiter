@@ -36,7 +36,7 @@ function autoexec main()
 }
 
 // Namespace namespace_6f311b9f78e8e82 / namespace_e829e38302f8f85d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x92
 function function_eb14f1e1637f1482( vehicle_ref, spawndata )

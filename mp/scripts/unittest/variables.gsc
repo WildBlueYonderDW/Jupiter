@@ -3,7 +3,7 @@
 #namespace unittest_variables;
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x863
 // Size: 0x29e
 function local()
@@ -47,7 +47,7 @@ function local()
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb09
 // Size: 0xa2
 function defines()
@@ -61,7 +61,7 @@ function defines()
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb3
 // Size: 0x3ca
 function local_array()
@@ -119,7 +119,7 @@ function local_array()
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf85
 // Size: 0x330
 function level_array()
@@ -162,7 +162,7 @@ function level_array()
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12bd
 // Size: 0x4f3
 function local_object()
@@ -222,7 +222,7 @@ function local_object()
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17b8
 // Size: 0x680
 function level_object()
@@ -280,7 +280,7 @@ function level_object()
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e40
 // Size: 0x220
 function local_combo()
@@ -304,7 +304,7 @@ function local_combo()
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2068
 // Size: 0x2c6
 function level_combo()
@@ -328,7 +328,7 @@ function level_combo()
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2336
 // Size: 0x57
 function is_true_print( val, name )
@@ -345,7 +345,7 @@ function is_true_print( val, name )
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2395
 // Size: 0x85
 function is_true()
@@ -363,7 +363,7 @@ function is_true()
 }
 
 // Namespace unittest_variables / scripts\unittest\variables
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2422
 // Size: 0x59
 function main()

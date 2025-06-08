@@ -5,7 +5,7 @@
 #namespace rangefinder;
 
 // Namespace rangefinder / scripts\mp\rangefinder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e
 // Size: 0x94
 function runmprangefinder()
@@ -36,7 +36,7 @@ function runmprangefinder()
 }
 
 // Namespace rangefinder / scripts\mp\rangefinder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20a
 // Size: 0x40
 function createcamnode()
@@ -48,7 +48,7 @@ function createcamnode()
 }
 
 // Namespace rangefinder / scripts\mp\rangefinder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x253
 // Size: 0xa5
 function monitorplacement()
@@ -78,7 +78,7 @@ function monitorplacement()
 }
 
 // Namespace rangefinder / scripts\mp\rangefinder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x300
 // Size: 0x6b
 function managelink()
@@ -106,7 +106,7 @@ function managelink()
 }
 
 // Namespace rangefinder / scripts\mp\rangefinder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x373
 // Size: 0x98
 function softlink()
@@ -124,7 +124,7 @@ function softlink()
 }
 
 // Namespace rangefinder / scripts\mp\rangefinder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x413
 // Size: 0x60
 function addmodeltoplayer( node )
@@ -137,7 +137,7 @@ function addmodeltoplayer( node )
 }
 
 // Namespace rangefinder / scripts\mp\rangefinder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47b
 // Size: 0x11
 function watchrangefinderend()

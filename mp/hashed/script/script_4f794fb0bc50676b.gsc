@@ -13,7 +13,7 @@
 #namespace namespace_f50b7a445cd149bc;
 
 // Namespace namespace_f50b7a445cd149bc / namespace_9839c571b9b98e7d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68c
 // Size: 0x121
 function init()
@@ -22,7 +22,8 @@ function init()
     level._effect[ "plasmagun_trail" ] = [];
     level._effect[ "plasmagun_trail_pap" ] = [];
     
-    for (i = 0; i < 6; i++) {
+    for ( i = 0; i < 6 ; i++ )
+    {
         level._effect[ "plasmagun_trail" ][ i ] = loadfx( "vfx/jup/ob/gameplay/zm_weapons/vfx_zmb_dark_aether_plasma_hit_lvl" + i + ".vfx" );
         level._effect[ "plasmagun_trail_pap" ][ i ] = loadfx( "vfx/jup/ob/gameplay/zm_weapons/vfx_zmb_dark_aether_plasma_hit_pap_lvl" + i + ".vfx" );
     }
@@ -36,7 +37,7 @@ function init()
 }
 
 // Namespace namespace_f50b7a445cd149bc / namespace_9839c571b9b98e7d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b5
 // Size: 0x101
 function function_7bd275ed660d3b32( params )
@@ -518,7 +519,7 @@ function private function_5fb77a929eee804c( objweapon )
 }
 
 // Namespace namespace_f50b7a445cd149bc / namespace_9839c571b9b98e7d
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x1443
 // Size: 0xfd
 function function_85eca118ca41d759( objweapon, var_f464ee4235e6e103, var_800f2adb5f8efb28, start_point, end_point, mid_point, plasma_length, plasma_radius, plasma_direction )
@@ -541,7 +542,7 @@ function function_85eca118ca41d759( objweapon, var_f464ee4235e6e103, var_800f2ad
 }
 
 // Namespace namespace_f50b7a445cd149bc / namespace_9839c571b9b98e7d
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1548
 // Size: 0x53
 function function_140dea1474dc3f28( plasma_damage, player, objweapon )
@@ -552,7 +553,7 @@ function function_140dea1474dc3f28( plasma_damage, player, objweapon )
 }
 
 // Namespace namespace_f50b7a445cd149bc / namespace_9839c571b9b98e7d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15a3
 // Size: 0x6d
 function function_1be0050857965aa8( var_3032a1d2003305a6 )
@@ -573,7 +574,7 @@ function function_1be0050857965aa8( var_3032a1d2003305a6 )
 }
 
 // Namespace namespace_f50b7a445cd149bc / namespace_9839c571b9b98e7d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1618
 // Size: 0x7a
 function function_1e42f5373983de9f( viewpoint, player_angles )
@@ -586,7 +587,7 @@ function function_1e42f5373983de9f( viewpoint, player_angles )
 }
 
 // Namespace namespace_f50b7a445cd149bc / namespace_9839c571b9b98e7d
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x169b
 // Size: 0xb3
 function function_172fff96f149cb86( end_point, charge_level, fly_time, pap_level )
@@ -612,7 +613,7 @@ function function_172fff96f149cb86( end_point, charge_level, fly_time, pap_level
 }
 
 // Namespace namespace_f50b7a445cd149bc / namespace_9839c571b9b98e7d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1756
 // Size: 0x57
 function function_9aa347a76fa69e30( charge_level, fx_time )
@@ -627,7 +628,7 @@ function function_9aa347a76fa69e30( charge_level, fx_time )
 }
 
 // Namespace namespace_f50b7a445cd149bc / namespace_9839c571b9b98e7d
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x17b5
 // Size: 0x198
 function function_b42e7cb6787cfbef( start_point, end_point, mid_point, plasma_length, plasma_radius, plasma_direction )

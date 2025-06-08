@@ -3,7 +3,7 @@
 #namespace namespace_d81cc0392628bc6d;
 
 // Namespace namespace_d81cc0392628bc6d / namespace_991e5edd79e81a10
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xac
 // Size: 0x42
 function function_683c095e6767c4c8( lookatposition, delta, var_70e8a85177297c1 )
@@ -23,16 +23,16 @@ function function_683c095e6767c4c8( lookatposition, delta, var_70e8a85177297c1 )
 }
 
 // Namespace namespace_d81cc0392628bc6d / namespace_991e5edd79e81a10
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf6
-// Size: 0x2e, Type: bool
+// Size: 0x2e
 function function_ed838558ef4e4e91( entity, delta, mindistance )
 {
     return function_b69898678ed4466d( entity.origin, delta, mindistance );
 }
 
 // Namespace namespace_d81cc0392628bc6d / namespace_991e5edd79e81a10
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12d
 // Size: 0x70, Type: bool
 function function_b69898678ed4466d( position, delta, mindistance )

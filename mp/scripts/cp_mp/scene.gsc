@@ -1561,7 +1561,8 @@ function private function_22f6fca8362a92b()
     
     var_6e050937039896b9 = 0;
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( var_214d924f4e137244 object_get_type() == "Types_Player" )
@@ -1598,7 +1599,8 @@ function private function_22f6fca8362a92b()
         waittillframeend();
         playerindex = 0;
         
-        for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+        for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+        {
             var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
             
             if ( var_214d924f4e137244 object_get_type() == "Types_Player" )
@@ -1776,7 +1778,8 @@ function private function_a8bfee1f6abe8209()
     scenedata = sceneplay.sceneroot.scenedata;
     playerindex = 0;
     
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
+    for ( var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size ; var_56f4af8746a2d458++ )
+    {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[ var_56f4af8746a2d458 ];
         
         if ( var_214d924f4e137244 object_get_type() == "Types_Player" )
@@ -1842,7 +1845,7 @@ function private function_fe495eb5e40771ec( scenedata )
 }
 
 // Namespace scene / scripts\cp_mp\scene
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4131
 // Size: 0x4, Type: bool
 function function_720d21706a7ff164()
@@ -1851,7 +1854,7 @@ function function_720d21706a7ff164()
 }
 
 // Namespace scene / scripts\cp_mp\scene
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x413e
 // Size: 0x31
 function function_f66b22351778fe49( enabled )
@@ -1862,7 +1865,7 @@ function function_f66b22351778fe49( enabled )
 }
 
 // Namespace scene / scripts\cp_mp\scene
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4177
 // Size: 0xd8, Type: bool
 function function_d18c2d3d2819c322( entity, var_214d924f4e137244 )

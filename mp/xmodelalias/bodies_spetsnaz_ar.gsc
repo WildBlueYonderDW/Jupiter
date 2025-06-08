@@ -1,7 +1,7 @@
 #namespace bodies_spetsnaz_ar;
 
 // Namespace bodies_spetsnaz_ar / xmodelalias\bodies_spetsnaz_ar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcc
 // Size: 0x2a
 function main()

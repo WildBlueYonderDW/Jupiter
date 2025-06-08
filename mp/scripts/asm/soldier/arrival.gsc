@@ -10,7 +10,7 @@
 #namespace arrival;
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x30b
 // Size: 0x2d, Type: bool
 function notshouldstartarrival( asmname, statename, tostatename, params )
@@ -19,7 +19,7 @@ function notshouldstartarrival( asmname, statename, tostatename, params )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x341
 // Size: 0x10
 function getmaxarrivaldistfornodetype( nodetype )
@@ -28,7 +28,7 @@ function getmaxarrivaldistfornodetype( nodetype )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x35a
 // Size: 0x210, Type: bool
 function shouldstartarrival( asmname, statename, tostatename, params )
@@ -126,21 +126,21 @@ function shouldstartarrival( asmname, statename, tostatename, params )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x573
-// Size: 0x3e, Type: bool
+// Size: 0x3e
 function shouldstartcasualarrivalaftercodemove( asmname, statename, tostatename, params )
 {
     if ( !asm_eventfired( asmname, "code_move" ) )
     {
-        return false;
+        return 0;
     }
     
     return shouldstartcasualarrival( asmname, statename, tostatename, params );
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5ba
 // Size: 0x51, Type: bool
 function shouldstartcasualarrival( asmname, statename, tostatename, params )
@@ -156,21 +156,21 @@ function shouldstartcasualarrival( asmname, statename, tostatename, params )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x614
-// Size: 0x3e, Type: bool
+// Size: 0x3e
 function shouldstartcasualarrivalwithgunaftercodemove( asmname, statename, tostatename, params )
 {
     if ( !asm_eventfired( asmname, "code_move" ) )
     {
-        return false;
+        return 0;
     }
     
     return shouldstartcasualarrivalwithgun( asmname, statename, tostatename, params );
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x65b
 // Size: 0x51, Type: bool
 function shouldstartcasualarrivalwithgun( asmname, statename, tostatename, params )
@@ -186,7 +186,7 @@ function shouldstartcasualarrivalwithgun( asmname, statename, tostatename, param
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6b5
 // Size: 0x4b
 function chooseanim_arrival( asmname, statename, params )
@@ -196,7 +196,7 @@ function chooseanim_arrival( asmname, statename, params )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x709
 // Size: 0x249
 function function_cf21d79464e005d2( node )
@@ -253,7 +253,7 @@ function function_cf21d79464e005d2( node )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x95b
 // Size: 0x40d
 function calculatestopdata( asmname, statename, tostatename, nodetype, var_5217df91f13c7c48, var_6164202739d4a0fb, optionalprefix, var_a9d2a260c9698ff4, var_4795faf7dae203d5, startnotetrack, endnotetrack, speedstring )
@@ -392,7 +392,7 @@ function calculatestopdata( asmname, statename, tostatename, nodetype, var_5217d
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd71
 // Size: 0x38
 function playanim_waitforpathset( asmname, statename )
@@ -404,7 +404,7 @@ function playanim_waitforpathset( asmname, statename )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdb1
 // Size: 0x4e
 function playanim_waitforpathclear( asmname, statename )
@@ -426,7 +426,7 @@ function playanim_waitforpathclear( asmname, statename )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe07
 // Size: 0x44
 function arrivalterminatewait( statename )
@@ -438,7 +438,7 @@ function arrivalterminatewait( statename )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe53
 // Size: 0xfa
 function playanim_arrival_handlestandevent( asmname, statename, xanim, finalrate )
@@ -473,7 +473,7 @@ function playanim_arrival_handlestandevent( asmname, statename, xanim, finalrate
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf55
 // Size: 0x18
 function returnoncorner( note )
@@ -485,7 +485,7 @@ function returnoncorner( note )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf75
 // Size: 0x18
 function returnonwarpstart( note )
@@ -497,7 +497,7 @@ function returnonwarpstart( note )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf95
 // Size: 0x67
 function calculateadjustedspeedforshortpath( desiredspeed, pathdist )
@@ -516,7 +516,7 @@ function calculateadjustedspeedforshortpath( desiredspeed, pathdist )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1005
 // Size: 0x7d3
 function playanim_arrival( asmname, statename, params )
@@ -722,7 +722,7 @@ function playanim_arrival( asmname, statename, params )
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17e0
 // Size: 0x1a
 function getcustomarrivalangles()
@@ -736,7 +736,7 @@ function getcustomarrivalangles()
 }
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1803
 // Size: 0xf4
 function getstopanims( asmname, statename, approachtype, var_5217df91f13c7c48, optionalprefix )
@@ -759,7 +759,7 @@ function getstopanims( asmname, statename, approachtype, var_5217df91f13c7c48, o
 /#
 
     // Namespace arrival / scripts\asm\soldier\arrival
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x1900
     // Size: 0xa6, Type: dev
     function function_a6a36944d51a88a0( var_8e5cf88282523d3f, tracestartpos, finalpos, fraction, color, frames )
@@ -776,7 +776,7 @@ function getstopanims( asmname, statename, approachtype, var_5217df91f13c7c48, o
     }
 
     // Namespace arrival / scripts\asm\soldier\arrival
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x19ae
     // Size: 0x7b, Type: dev
     function function_51eac561da90b300( goal_origin, arrival_angles )
@@ -792,7 +792,7 @@ function getstopanims( asmname, statename, approachtype, var_5217df91f13c7c48, o
 #/
 
 // Namespace arrival / scripts\asm\soldier\arrival
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a31
 // Size: 0x32, Type: bool
 function shouldstartarrivalpassthrough( asmname, statename, tostatename, params )

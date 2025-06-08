@@ -6,7 +6,7 @@
 /#
 
     // Namespace scene_sequence / scripts\common\scene_sequence
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x11b
     // Size: 0x5, Type: dev
     function function_e514286a93d143da()
@@ -17,7 +17,7 @@
 #/
 
 // Namespace scene_sequence / scripts\common\scene_sequence
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x128
 // Size: 0x391
 function function_7227ec8ef6d85118( existingentities, sequencename, defaultscenename )
@@ -81,7 +81,8 @@ function function_7227ec8ef6d85118( existingentities, sequencename, defaultscene
         
         if ( isdefined( level.var_f99b1d319e65854c ) )
         {
-            for (i = 0; i < level.var_f99b1d319e65854c.size; i++) {
+            for ( i = 0; i < level.var_f99b1d319e65854c.size ; i++ )
+            {
                 if ( level.var_f99b1d319e65854c[ i ] == scenename )
                 {
                     var_bc084584b46923e7 = i;
@@ -246,7 +247,7 @@ function private finish_node( currentnode, exitcondition )
 }
 
 // Namespace scene_sequence / scripts\common\scene_sequence
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa67
 // Size: 0x9f
 function function_d2345fa03215e539( note )
@@ -264,7 +265,7 @@ function function_d2345fa03215e539( note )
 }
 
 // Namespace scene_sequence / scripts\common\scene_sequence
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb0e
 // Size: 0xbd
 function function_2af98a24e1bf3199( notifytarget, note, objectname, repeat )
@@ -281,7 +282,7 @@ function function_2af98a24e1bf3199( notifytarget, note, objectname, repeat )
 }
 
 // Namespace scene_sequence / scripts\common\scene_sequence
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbd3
 // Size: 0x1c
 function function_12b58037eff0f736( conditionname )
@@ -293,7 +294,7 @@ function function_12b58037eff0f736( conditionname )
 }
 
 // Namespace scene_sequence / scripts\common\scene_sequence
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbf7
 // Size: 0x1e
 function function_919ec256b1627543( conditionname )
@@ -305,7 +306,7 @@ function function_919ec256b1627543( conditionname )
 }
 
 // Namespace scene_sequence / scripts\common\scene_sequence
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xc1d
 // Size: 0x207
 function function_d57898e86f3bb52f( scene, shotname, func, param1, param2, param3, param4 )

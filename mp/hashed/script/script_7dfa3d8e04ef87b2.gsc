@@ -12,7 +12,7 @@
 #namespace jup_ob_enemy_specialist_rook;
 
 // Namespace jup_ob_enemy_specialist_rook / namespace_b45b2629889680ea
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x317
 // Size: 0x21f
 function main()
@@ -60,7 +60,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_specialist_rook / namespace_b45b2629889680ea
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53e
 // Size: 0x57
 function setup_model()
@@ -77,7 +77,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_specialist_rook / namespace_b45b2629889680ea
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59d
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -86,7 +86,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_specialist_rook / namespace_b45b2629889680ea
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ae
 // Size: 0xcf
 function precache()
@@ -115,7 +115,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_specialist_rook / namespace_b45b2629889680ea
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x685
 // Size: 0x146
 function setup_weapons()

@@ -8,8 +8,8 @@
 #namespace weapon;
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0e
+// Params 9
+// Checksum 0x0, Offset: 0xe31
 // Size: 0x281
 function buildweapon_blueprintwithcustomattachments( rootname, attachments, camo, reticle, variantid, attachmentids, cosmeticattachment, stickers, hasnvg )
 {
@@ -82,8 +82,8 @@ function buildweapon_blueprintwithcustomattachments( rootname, attachments, camo
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x1098
+// Params 7
+// Checksum 0x0, Offset: 0x10bb
 // Size: 0xd5
 function buildweapon_blueprint( rootname, camo, reticle, variantid, cosmeticattachment, stickers, hasnvg )
 {
@@ -109,8 +109,8 @@ function buildweapon_blueprint( rootname, camo, reticle, variantid, cosmeticatta
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1176
+// Params 8
+// Checksum 0x0, Offset: 0x1199
 // Size: 0xbf
 function buildweapon_attachmentidmap( rootname, attachmenttoidmap, camo, reticle, variantid, cosmeticattachment, stickers, hasnvg )
 {
@@ -127,8 +127,8 @@ function buildweapon_attachmentidmap( rootname, attachmenttoidmap, camo, reticle
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x123e
+// Params 10
+// Checksum 0x0, Offset: 0x1261
 // Size: 0x3f6
 function buildweapon( rootname, attachments, camo, reticle, variantid, attachmentids, cosmeticattachment, stickers, hasnvg, attachmenttuning )
 {
@@ -230,7 +230,8 @@ function buildweapon( rootname, attachments, camo, reticle, variantid, attachmen
     
     if ( isdefined( stickers ) )
     {
-        for (i = 0; i < stickers.size; i++) {
+        for ( i = 0; i < stickers.size ; i++ )
+        {
             var_223521c35ae8a753 = stickers[ i ];
             
             if ( var_223521c35ae8a753 == "none" )
@@ -269,8 +270,8 @@ function buildweapon( rootname, attachments, camo, reticle, variantid, attachmen
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x163d
+// Params 5
+// Checksum 0x0, Offset: 0x1660
 // Size: 0x48b
 function function_c7cb2ebf3712dc6c( rootname, attachmenttoidmap, variantid, weaponassetname, attachments )
 {
@@ -421,8 +422,8 @@ function function_c7cb2ebf3712dc6c( rootname, attachmenttoidmap, variantid, weap
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad1
+// Params 5
+// Checksum 0x0, Offset: 0x1af4
 // Size: 0x3f4
 function filterattachmenttoidmap( attachmenttoidmap, weaponname, weaponassetname, var_3e66176ed86556b4, attachments )
 {
@@ -484,14 +485,16 @@ function filterattachmenttoidmap( attachmenttoidmap, weaponname, weaponassetname
     assertex( isdefined( attachmentkey ), "<dev string:x1d9>" );
     attachments[ 0 ] = attachmentkey;
     
-    for (attachmentindex = 0; attachmentindex < attachments.size; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < attachments.size ; attachmentindex++ )
+    {
         attachment = attachments[ attachmentindex ];
         
         if ( attachment != "none" )
         {
             add = 1;
             
-            for (filteredindex = 0; filteredindex < filtered.size; filteredindex++) {
+            for ( filteredindex = 0; filteredindex < filtered.size ; filteredindex++ )
+            {
                 filtereditem = filtered[ filteredindex ];
                 
                 if ( filtereditem == "" )
@@ -520,7 +523,8 @@ function filterattachmenttoidmap( attachmenttoidmap, weaponname, weaponassetname
                     conflictresults = [];
                     conflictresults = strtok( conflictstring, " " );
                     
-                    for (conflictidx = 0; conflictidx < conflictresults.size; conflictidx++) {
+                    for ( conflictidx = 0; conflictidx < conflictresults.size ; conflictidx++ )
+                    {
                         attachments[ attachments.size ] = conflictresults[ conflictidx ];
                     }
                     
@@ -548,7 +552,8 @@ function filterattachmenttoidmap( attachmenttoidmap, weaponname, weaponassetname
     
     var_1168362b7eea93a9 = [];
     
-    for (attachmentindex = 0; attachmentindex < filtered.size; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < filtered.size ; attachmentindex++ )
+    {
         attachment = filtered[ attachmentindex ];
         
         if ( attachment != "" )
@@ -562,8 +567,8 @@ function filterattachmenttoidmap( attachmenttoidmap, weaponname, weaponassetname
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ece
+// Params 3
+// Checksum 0x0, Offset: 0x1ef1
 // Size: 0x285
 function function_89579d7ba0194e4a( attachmenttoidmap, weaponname, weaponassetname )
 {
@@ -589,14 +594,16 @@ function function_89579d7ba0194e4a( attachmenttoidmap, weaponname, weaponassetna
         weaponasset = weaponassetnamemap( rootname );
     }
     
-    for (attachmentindex = 0; attachmentindex < attachments.size; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < attachments.size ; attachmentindex++ )
+    {
         attachment = attachments[ attachmentindex ];
         
         if ( attachment != "none" )
         {
             add = 1;
             
-            for (filteredindex = 0; filteredindex < filtered.size; filteredindex++) {
+            for ( filteredindex = 0; filteredindex < filtered.size ; filteredindex++ )
+            {
                 filtereditem = filtered[ filteredindex ];
                 
                 if ( filtereditem == "" )
@@ -640,7 +647,8 @@ function function_89579d7ba0194e4a( attachmenttoidmap, weaponname, weaponassetna
                     conflictresults = [];
                     conflictresults = strtok( conflictstring, " " );
                     
-                    for (conflictidx = 0; conflictidx < conflictresults.size; conflictidx++) {
+                    for ( conflictidx = 0; conflictidx < conflictresults.size ; conflictidx++ )
+                    {
                         attachments[ attachments.size ] = conflictresults[ conflictidx ];
                     }
                     
@@ -669,7 +677,8 @@ function function_89579d7ba0194e4a( attachmenttoidmap, weaponname, weaponassetna
     level.extraattachments = undefined;
     var_1168362b7eea93a9 = [];
     
-    for (attachmentindex = 0; attachmentindex < filtered.size; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < filtered.size ; attachmentindex++ )
+    {
         attachment = filtered[ attachmentindex ];
         
         if ( attachment != "" )
@@ -683,8 +692,8 @@ function function_89579d7ba0194e4a( attachmenttoidmap, weaponname, weaponassetna
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x215c
+// Params 2
+// Checksum 0x0, Offset: 0x217f
 // Size: 0x4af
 function function_73948793bdd465e3( attachmenttoidmap, weaponassetname )
 {
@@ -698,7 +707,8 @@ function function_73948793bdd465e3( attachmenttoidmap, weaponassetname )
     var_7002135dc405cb0 = [];
     var_d5d1e39edb18d983 = 0;
     
-    for (attachmentindex = 0; attachmentindex < attachments.size; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < attachments.size ; attachmentindex++ )
+    {
         attachment = attachments[ attachmentindex ];
         tempbasename = function_c7f2f8cd775a57f8( weaponassetname, attachments[ attachmentindex ] );
         
@@ -735,7 +745,8 @@ function function_73948793bdd465e3( attachmenttoidmap, weaponassetname )
     
     foreach ( id, a in attachments )
     {
-        for (counter = attachments.size; counter > id + 1; counter--) {
+        for ( counter = attachments.size; counter > id + 1 ; counter-- )
+        {
             conflictstring = attachmentsconflict( a, attachments[ counter - 1 ], weaponassetname, undefined, weaponasset );
             
             if ( conflictstring == attachments[ counter - 1 ] )
@@ -812,7 +823,8 @@ function function_73948793bdd465e3( attachmenttoidmap, weaponassetname )
     
     var_1168362b7eea93a9 = [];
     
-    for (attachmentindex = 0; attachmentindex < attachments.size; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < attachments.size ; attachmentindex++ )
+    {
         var_74903b21bc06dfd7 = 0;
         attachment = attachments[ attachmentindex ];
         
@@ -859,9 +871,9 @@ function function_73948793bdd465e3( attachmenttoidmap, weaponassetname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2614
-// Size: 0x167
+// Params 5
+// Checksum 0x0, Offset: 0x2637
+// Size: 0x1a5
 function attachmentsconflict( attachment1, attachment2, weapon, slotschecked, weaponasset )
 {
     assertex( isdefined( weapon ), "<dev string:x222>" );
@@ -911,6 +923,13 @@ function attachmentsconflict( attachment1, attachment2, weapon, slotschecked, we
     
     if ( var_27ccfb6c99bba30d && var_b7b0b0d582725413 )
     {
+        var_175102348a216a1 = getscriptbundle( hashcat( %"hash_3c2c9813bb16552f", attachment2 ) );
+        
+        if ( isdefined( var_175102348a216a1 ) && var_175102348a216a1.category == "CONVERSIONKIT" )
+        {
+            return attachment2;
+        }
+        
         return attachment1;
     }
     else if ( var_27ccfb6c99bba30d )
@@ -926,8 +945,8 @@ function attachmentsconflict( attachment1, attachment2, weapon, slotschecked, we
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2784
+// Params 4
+// Checksum 0x0, Offset: 0x27e5
 // Size: 0xd4
 function function_b9f9c92ef7f1922b( attachment1, attachment2, weapon, weaponasset )
 {
@@ -962,7 +981,7 @@ function function_b9f9c92ef7f1922b( attachment1, attachment2, weapon, weaponasse
 
 // Namespace weapon / scripts\cp_mp\weapon
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2861
+// Checksum 0x0, Offset: 0x28c2
 // Size: 0x18f, Type: bool
 function private _attachmentblocks( weaponasset, attachment1, attachment2 )
 {
@@ -1008,8 +1027,8 @@ function private _attachmentblocks( weaponasset, attachment1, attachment2 )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29f9
+// Params 1
+// Checksum 0x0, Offset: 0x2a5a
 // Size: 0x16
 function function_975e31b63f01fbcc( attachment )
 {
@@ -1017,8 +1036,8 @@ function function_975e31b63f01fbcc( attachment )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a18
+// Params 1
+// Checksum 0x0, Offset: 0x2a79
 // Size: 0x25, Type: bool
 function function_de04e13ab01e1a10( attachment )
 {
@@ -1026,8 +1045,8 @@ function function_de04e13ab01e1a10( attachment )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a46
+// Params 1
+// Checksum 0x0, Offset: 0x2aa7
 // Size: 0x3f
 function attachmentmap_tocategory( attachmentname )
 {
@@ -1042,8 +1061,8 @@ function attachmentmap_tocategory( attachmentname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a8e
+// Params 1
+// Checksum 0x0, Offset: 0x2aef
 // Size: 0xde
 function attachmentmap_toextra( attachmentname )
 {
@@ -1071,8 +1090,8 @@ function attachmentmap_toextra( attachmentname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b74
+// Params 2
+// Checksum 0x0, Offset: 0x2bd5
 // Size: 0x2e
 function attachmentperkmap( weapon, attachmentname )
 {
@@ -1087,8 +1106,8 @@ function attachmentperkmap( weapon, attachmentname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bab
+// Params 0
+// Checksum 0x0, Offset: 0x2c0c
 // Size: 0x2d6
 function buildattachmentmaps()
 {
@@ -1160,8 +1179,8 @@ function buildattachmentmaps()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e89
+// Params 1
+// Checksum 0x0, Offset: 0x2eea
 // Size: 0x186
 function weaponattachremoveextraattachments( attachments )
 {
@@ -1206,8 +1225,8 @@ function weaponattachremoveextraattachments( attachments )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3018
+// Params 2
+// Checksum 0x0, Offset: 0x3079
 // Size: 0x35
 function function_693e108cb61ceeb5( weaponname, attachref )
 {
@@ -1220,8 +1239,8 @@ function function_693e108cb61ceeb5( weaponname, attachref )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3056
+// Params 0
+// Checksum 0x0, Offset: 0x30b7
 // Size: 0xa1
 function buildweaponrootlist()
 {
@@ -1249,8 +1268,8 @@ function buildweaponrootlist()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3100
+// Params 2
+// Checksum 0x0, Offset: 0x3161
 // Size: 0xfa
 function weaponattachcustomtoidmap( weaponroot, variantid )
 {
@@ -1278,8 +1297,8 @@ function weaponattachcustomtoidmap( weaponroot, variantid )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3203
+// Params 3
+// Checksum 0x0, Offset: 0x3264
 // Size: 0xa6
 function weaponattachdefaulttoidmap( weaponroot, variantid, attachments )
 {
@@ -1306,8 +1325,8 @@ function weaponattachdefaulttoidmap( weaponroot, variantid, attachments )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x32b2
+// Params 3
+// Checksum 0x0, Offset: 0x3313
 // Size: 0xb6
 function function_a9ead06bcb3c0be4( weaponroot, attachmentref, attachmentvariantid )
 {
@@ -1316,7 +1335,8 @@ function function_a9ead06bcb3c0be4( weaponroot, attachmentref, attachmentvariant
         variantid = 0;
         var_928c1cac31ea99e5 = weaponroot + "|" + variantid;
         
-        for (var_478c4326fd03725e = level.weaponlootmapdata[ var_928c1cac31ea99e5 ]; isdefined( var_478c4326fd03725e ); var_478c4326fd03725e = level.weaponlootmapdata[ var_928c1cac31ea99e5 ]) {
+        for ( var_478c4326fd03725e = level.weaponlootmapdata[ var_928c1cac31ea99e5 ]; isdefined( var_478c4326fd03725e ) ; var_478c4326fd03725e = level.weaponlootmapdata[ var_928c1cac31ea99e5 ] )
+        {
             var_baf2384ff9b11421 = var_478c4326fd03725e.attachdefaulttoidmap;
             
             if ( isdefined( var_baf2384ff9b11421 ) && isdefined( var_baf2384ff9b11421[ attachmentref ] ) && var_baf2384ff9b11421[ attachmentref ] == attachmentvariantid )
@@ -1333,8 +1353,8 @@ function function_a9ead06bcb3c0be4( weaponroot, attachmentref, attachmentvariant
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3371
+// Params 2
+// Checksum 0x0, Offset: 0x33d2
 // Size: 0xc8
 function weaponassetnamemap( weaponroot, variantid )
 {
@@ -1363,8 +1383,8 @@ function weaponassetnamemap( weaponroot, variantid )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3442
+// Params 1
+// Checksum 0x0, Offset: 0x34a3
 // Size: 0x49
 function weapongroupmap( weaponroot )
 {
@@ -1379,8 +1399,8 @@ function weapongroupmap( weaponroot )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3494
+// Params 1
+// Checksum 0x0, Offset: 0x34f5
 // Size: 0x2f, Type: bool
 function function_89497fa763d431c0( weaponroot )
 {
@@ -1389,8 +1409,8 @@ function function_89497fa763d431c0( weaponroot )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x34cc
+// Params 3
+// Checksum 0x0, Offset: 0x352d
 // Size: 0x9e
 function attachmentmap_extratovariantid( attachment, weaponroot, weaponvariantid )
 {
@@ -1406,8 +1426,8 @@ function attachmentmap_extratovariantid( attachment, weaponroot, weaponvariantid
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3573
+// Params 0
+// Checksum 0x0, Offset: 0x35d4
 // Size: 0x6c8
 function buildweaponmap()
 {
@@ -1547,8 +1567,8 @@ function buildweaponmap()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c43
+// Params 0
+// Checksum 0x0, Offset: 0x3ca4
 // Size: 0x27f
 function function_ee4a536a155313b7()
 {
@@ -1604,8 +1624,8 @@ function function_ee4a536a155313b7()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3eca
+// Params 1
+// Checksum 0x0, Offset: 0x3f2b
 // Size: 0x61
 function getweaponvarianttablename( weaponrootname )
 {
@@ -1618,8 +1638,8 @@ function getweaponvarianttablename( weaponrootname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f34
+// Params 2
+// Checksum 0x0, Offset: 0x3f95
 // Size: 0x7e
 function function_d7f1989d63343007( weaponassetname, attachments )
 {
@@ -1627,7 +1647,8 @@ function function_d7f1989d63343007( weaponassetname, attachments )
     {
         sortedattachments = alphabetize( attachments );
         
-        for (attachmentindex = 0; attachmentindex < sortedattachments.size; attachmentindex++) {
+        for ( attachmentindex = 0; attachmentindex < sortedattachments.size ; attachmentindex++ )
+        {
             attachment = sortedattachments[ attachmentindex ];
             
             if ( attachment != "none" && ( attachmentindex == 0 || attachment != sortedattachments[ attachmentindex - 1 ] ) )
@@ -1641,8 +1662,8 @@ function function_d7f1989d63343007( weaponassetname, attachments )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fbb
+// Params 2
+// Checksum 0x0, Offset: 0x401c
 // Size: 0xa5
 function function_792bacb194f6f862( weapon, attachments )
 {
@@ -1671,8 +1692,8 @@ function function_792bacb194f6f862( weapon, attachments )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4069
+// Params 1
+// Checksum 0x0, Offset: 0x40ca
 // Size: 0xb4
 function parseattachdefaulttoidmap( attachmentdefaults )
 {
@@ -1701,8 +1722,8 @@ function parseattachdefaulttoidmap( attachmentdefaults )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4126
+// Params 1
+// Checksum 0x0, Offset: 0x4187
 // Size: 0x4b
 function getweaponassetname( rootname )
 {
@@ -1715,8 +1736,8 @@ function getweaponassetname( rootname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x417a
+// Params 1
+// Checksum 0x0, Offset: 0x41db
 // Size: 0x392
 function getweaponrootname( weapon )
 {
@@ -1807,7 +1828,8 @@ function getweaponrootname( weapon )
                     tmptokens = array_add( tmptokens, "iw9" );
                 }
                 
-                for (i = var_60760fc3bed3938a; i < tokens.size; i++) {
+                for ( i = var_60760fc3bed3938a; i < tokens.size ; i++ )
+                {
                     tmptokens = array_add( tmptokens, tokens[ i ] );
                 }
                 
@@ -1841,8 +1863,8 @@ function getweaponrootname( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4515
+// Params 1
+// Checksum 0x0, Offset: 0x4576
 // Size: 0x133
 function getweaponclasstoken( weaponname )
 {
@@ -1879,8 +1901,8 @@ function getweaponclasstoken( weaponname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4651
+// Params 1
+// Checksum 0x0, Offset: 0x46b2
 // Size: 0x1c, Type: bool
 function attachmentiscosmetic( attachment )
 {
@@ -1888,8 +1910,8 @@ function attachmentiscosmetic( attachment )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4676
+// Params 2
+// Checksum 0x0, Offset: 0x46d7
 // Size: 0x1a
 function issilencerattach( weapon, attachment )
 {
@@ -1897,8 +1919,8 @@ function issilencerattach( weapon, attachment )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4699
+// Params 2
+// Checksum 0x0, Offset: 0x46fa
 // Size: 0xae
 function combinedefaultandcustomattachmentidmaps( var_3f065af353909441, attachmenttoidmap )
 {
@@ -1923,8 +1945,8 @@ function combinedefaultandcustomattachmentidmaps( var_3f065af353909441, attachme
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4750
+// Params 3
+// Checksum 0x0, Offset: 0x47b1
 // Size: 0x1d9
 function filterinvalidattachmentsfromidmap( var_f44f790efdadeea0, weaponassetname, weaponobj )
 {
@@ -1962,8 +1984,8 @@ function filterinvalidattachmentsfromidmap( var_f44f790efdadeea0, weaponassetnam
 /#
 
     // Namespace weapon / scripts\cp_mp\weapon
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4932
+    // Params 2
+    // Checksum 0x0, Offset: 0x4993
     // Size: 0x7d, Type: dev
     function invalidattachmentwarning( attachment, weaponassetname )
     {
@@ -1988,8 +2010,8 @@ function filterinvalidattachmentsfromidmap( var_f44f790efdadeea0, weaponassetnam
 #/
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x49b7
+// Params 2
+// Checksum 0x0, Offset: 0x4a18
 // Size: 0xff, Type: bool
 function weaponsupportslaserir( weaponbasename, weaponobj )
 {
@@ -2020,8 +2042,8 @@ function weaponsupportslaserir( weaponbasename, weaponobj )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4abf
+// Params 1
+// Checksum 0x0, Offset: 0x4b20
 // Size: 0x75
 function iskillstreakplayerweapon( weapon )
 {
@@ -2054,8 +2076,8 @@ function iskillstreakplayerweapon( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b3d
+// Params 1
+// Checksum 0x0, Offset: 0x4b9e
 // Size: 0x7f, Type: bool
 function issuperuseweapon( weapon )
 {
@@ -2086,8 +2108,8 @@ function issuperuseweapon( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bc5
+// Params 1
+// Checksum 0x0, Offset: 0x4c26
 // Size: 0xa0, Type: bool
 function issupergestureweapon( weapon )
 {
@@ -2127,8 +2149,8 @@ function issupergestureweapon( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c6e
+// Params 1
+// Checksum 0x0, Offset: 0x4ccf
 // Size: 0x72, Type: bool
 function function_3de73a849ecea0d( weapon )
 {
@@ -2163,8 +2185,8 @@ function function_3de73a849ecea0d( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ce9
+// Params 1
+// Checksum 0x0, Offset: 0x4d4a
 // Size: 0x9e, Type: bool
 function isminigunweapon( weapon )
 {
@@ -2199,9 +2221,9 @@ function isminigunweapon( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d90
-// Size: 0x78, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0x4df1
+// Size: 0x93, Type: bool
 function iskillstreakweapon( weapon )
 {
     if ( !isdefined( weapon ) )
@@ -2231,12 +2253,17 @@ function iskillstreakweapon( weapon )
         return true;
     }
     
+    if ( weaponname == "jup_jp09_sh_oromeo12_mp" && istrue( self.isjuggernautrecon ) )
+    {
+        return true;
+    }
+    
     return false;
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e11
+// Params 2
+// Checksum 0x0, Offset: 0x4e8d
 // Size: 0x37
 function function_f30b8f5ee8f3e7f8( streakname, var_d8a64ed9bcdf7185 )
 {
@@ -2249,8 +2276,8 @@ function function_f30b8f5ee8f3e7f8( streakname, var_d8a64ed9bcdf7185 )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e50
+// Params 0
+// Checksum 0x0, Offset: 0x4ecc
 // Size: 0x4c6
 function function_b4b623b6321cd521()
 {
@@ -2319,8 +2346,8 @@ function function_b4b623b6321cd521()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x531e
+// Params 1
+// Checksum 0x0, Offset: 0x539a
 // Size: 0xa5, Type: bool
 function function_1a9394eb58e66a9b( weapon )
 {
@@ -2361,8 +2388,8 @@ function function_1a9394eb58e66a9b( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x53cc
+// Params 2
+// Checksum 0x0, Offset: 0x5448
 // Size: 0x37
 function function_eac07882d12979d8( baseweaponname, subweaponname )
 {
@@ -2375,8 +2402,8 @@ function function_eac07882d12979d8( baseweaponname, subweaponname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x540b
+// Params 1
+// Checksum 0x0, Offset: 0x5487
 // Size: 0x25
 function function_23defc57f8da7fbc( subweaponname )
 {
@@ -2389,8 +2416,8 @@ function function_23defc57f8da7fbc( subweaponname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5439
+// Params 2
+// Checksum 0x0, Offset: 0x54b5
 // Size: 0x5a
 function function_aea26b825f926e9c( weapon, attachmentname )
 {
@@ -2414,8 +2441,8 @@ function function_aea26b825f926e9c( weapon, attachmentname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x549c
+// Params 2
+// Checksum 0x0, Offset: 0x5518
 // Size: 0x64
 function function_6e7bc1b23afa0ea8( weapon, var_10dc579c373a93dd )
 {
@@ -2431,8 +2458,8 @@ function function_6e7bc1b23afa0ea8( weapon, var_10dc579c373a93dd )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5508
+// Params 2
+// Checksum 0x0, Offset: 0x5584
 // Size: 0x90
 function buildweaponattachmentidmap( attachments, attachmentids )
 {
@@ -2461,8 +2488,8 @@ function buildweaponattachmentidmap( attachments, attachmentids )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x55a1
+// Params 1
+// Checksum 0x0, Offset: 0x561d
 // Size: 0x86
 function getweaponnvgattachment( weaponobj )
 {
@@ -2482,8 +2509,8 @@ function getweaponnvgattachment( weaponobj )
 /#
 
     // Namespace weapon / scripts\cp_mp\weapon
-    // Params 10, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5630
+    // Params 10
+    // Checksum 0x0, Offset: 0x56ac
     // Size: 0x119, Type: dev
     function function_13aeabbe4210eadc( itemname, rarity, lootid, baseweapon, attachments, fullweaponname, titlestring, descstring, icon, pickupsound )
     {
@@ -2509,15 +2536,16 @@ function getweaponnvgattachment( weaponobj )
 #/
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5751
+// Params 0
+// Checksum 0x0, Offset: 0x57cd
 // Size: 0x79
 function function_623af97ae297f796()
 {
     attachmentlist = [];
     numrows = tablelookupgetnumrows( "mp/attachmenttable.csv" );
     
-    for (index = 0; index < numrows; index++) {
+    for ( index = 0; index < numrows ; index++ )
+    {
         attachmentname = tablelookupbyrow( "mp/attachmenttable.csv", index, 4 );
         
         if ( attachmentname == "" )
@@ -2533,8 +2561,8 @@ function function_623af97ae297f796()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x57d3
+// Params 1
+// Checksum 0x0, Offset: 0x584f
 // Size: 0x42
 function getreticleindex( reticleref )
 {
@@ -2554,8 +2582,8 @@ function getreticleindex( reticleref )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x581e
+// Params 0
+// Checksum 0x0, Offset: 0x589a
 // Size: 0x41
 function getweapontable()
 {
@@ -2571,8 +2599,8 @@ function getweapontable()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5868
+// Params 0
+// Checksum 0x0, Offset: 0x58e4
 // Size: 0x108
 function function_a221d76594ef4e8b()
 {
@@ -2605,8 +2633,8 @@ function function_a221d76594ef4e8b()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5978
+// Params 1
+// Checksum 0x0, Offset: 0x59f4
 // Size: 0x114
 function function_c7901c1f857aa1a0( weapon )
 {
@@ -2637,8 +2665,8 @@ function function_c7901c1f857aa1a0( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a95
+// Params 2
+// Checksum 0x0, Offset: 0x5b11
 // Size: 0x28
 function function_8477d8595e0364a7( weapon, keys )
 {
@@ -2646,8 +2674,8 @@ function function_8477d8595e0364a7( weapon, keys )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ac6
+// Params 2
+// Checksum 0x0, Offset: 0x5b42
 // Size: 0x28
 function function_a622d54bb517923a( attachment, keys )
 {
@@ -2655,8 +2683,8 @@ function function_a622d54bb517923a( attachment, keys )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5af7
+// Params 3
+// Checksum 0x0, Offset: 0x5b73
 // Size: 0x44
 function function_b8811a0fc04e4b9d( weapon, key, def )
 {
@@ -2671,8 +2699,8 @@ function function_b8811a0fc04e4b9d( weapon, key, def )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b44
+// Params 0
+// Checksum 0x0, Offset: 0x5bc0
 // Size: 0x174
 function function_c471a035d22df5eb()
 {
@@ -2698,8 +2726,8 @@ function function_c471a035d22df5eb()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cc1
+// Params 1
+// Checksum 0x0, Offset: 0x5d3d
 // Size: 0x5d
 function function_5419ac7173288fc1( weapon )
 {
@@ -2724,8 +2752,8 @@ function function_5419ac7173288fc1( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d27
+// Params 1
+// Checksum 0x0, Offset: 0x5da3
 // Size: 0x5d
 function isdeploytablet( weapon )
 {
@@ -2750,8 +2778,8 @@ function isdeploytablet( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d8d
+// Params 1
+// Checksum 0x0, Offset: 0x5e09
 // Size: 0x30, Type: bool
 function function_aa8b0f148ca930aa( weapon )
 {
@@ -2766,8 +2794,8 @@ function function_aa8b0f148ca930aa( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dc6
+// Params 2
+// Checksum 0x0, Offset: 0x5e42
 // Size: 0x68
 function function_79d6e6c22245687a( rootname, variantid )
 {
@@ -2782,8 +2810,8 @@ function function_79d6e6c22245687a( rootname, variantid )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e37
+// Params 2
+// Checksum 0x0, Offset: 0x5eb3
 // Size: 0x70
 function function_115404a4dbd59830( rootname, variantid )
 {
@@ -2803,8 +2831,8 @@ function function_115404a4dbd59830( rootname, variantid )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5eb0
+// Params 1
+// Checksum 0x0, Offset: 0x5f2c
 // Size: 0x4d
 function getweaponlootid( weapon )
 {
@@ -2820,8 +2848,8 @@ function getweaponlootid( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f06
+// Params 1
+// Checksum 0x0, Offset: 0x5f82
 // Size: 0x30
 function function_b0d37b9be0027733( customweaponname )
 {
@@ -2831,8 +2859,8 @@ function function_b0d37b9be0027733( customweaponname )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f3f
+// Params 1
+// Checksum 0x0, Offset: 0x5fbb
 // Size: 0xa5
 function function_98bac17512f9c622( weapon )
 {
@@ -2863,8 +2891,8 @@ function function_98bac17512f9c622( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fed
+// Params 1
+// Checksum 0x0, Offset: 0x6069
 // Size: 0x8d
 function function_89a83ae9a4c4142a( weapon )
 {
@@ -2899,8 +2927,8 @@ function function_89a83ae9a4c4142a( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6083
+// Params 1
+// Checksum 0x0, Offset: 0x60ff
 // Size: 0xb3
 function function_c2bc8497963042d5( weapon )
 {
@@ -2936,8 +2964,8 @@ function function_c2bc8497963042d5( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x613f
+// Params 0
+// Checksum 0x0, Offset: 0x61bb
 // Size: 0x3d
 function getgrenadeinpullback()
 {
@@ -2952,8 +2980,8 @@ function getgrenadeinpullback()
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6185
+// Params 1
+// Checksum 0x0, Offset: 0x6201
 // Size: 0x1d, Type: bool
 function isweaponequipment( weapon )
 {
@@ -2961,8 +2989,8 @@ function isweaponequipment( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61ab
+// Params 1
+// Checksum 0x0, Offset: 0x6227
 // Size: 0x19, Type: bool
 function isequipmentaddon( weapon )
 {
@@ -2975,17 +3003,17 @@ function isequipmentaddon( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61cd
-// Size: 0x16
+// Params 1
+// Checksum 0x0, Offset: 0x6249
+// Size: 0x1c, Type: bool
 function isakimbo( weapon )
 {
-    return getweaponhasperk( weapon, "specialty_akimbo" );
+    return isdefined( weapon ) && getweaponhasperk( weapon, "specialty_akimbo" );
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61ec
+// Params 1
+// Checksum 0x0, Offset: 0x626e
 // Size: 0x33
 function function_309bcc0c19de2d18( weapon )
 {
@@ -2994,8 +3022,8 @@ function function_309bcc0c19de2d18( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6228
+// Params 2
+// Checksum 0x0, Offset: 0x62aa
 // Size: 0x78, Type: bool
 function function_8a96b90526c40df6( weapon, attachments )
 {
@@ -3011,8 +3039,8 @@ function function_8a96b90526c40df6( weapon, attachments )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x62a9
+// Params 1
+// Checksum 0x0, Offset: 0x632b
 // Size: 0x28, Type: bool
 function isspreadweapon( objweapon )
 {
@@ -3020,8 +3048,8 @@ function isspreadweapon( objweapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x62da
+// Params 1
+// Checksum 0x0, Offset: 0x635c
 // Size: 0x87
 function iswonderweapon( weapon )
 {
@@ -3054,23 +3082,24 @@ function iswonderweapon( weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x636a
-// Size: 0x21
+// Params 0
+// Checksum 0x0, Offset: 0x63ec
+// Size: 0x2c
 function function_5238382582ce39fa()
 {
     buildweaponmap();
     buildattachmentmaps();
     function_ee4a536a155313b7();
     
-    /#
+    if ( getbuildversion() != "SHIP" )
+    {
         scripts\cp_mp\weapons_dev::function_b8a2a2faf79dc08e();
-    #/
+    }
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6393
+// Params 2
+// Checksum 0x0, Offset: 0x6420
 // Size: 0x13e, Type: bool
 function fixupplayerweapons( player, weapon )
 {
@@ -3117,8 +3146,8 @@ function fixupplayerweapons( player, weapon )
 }
 
 // Namespace weapon / scripts\cp_mp\weapon
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64da
+// Params 1
+// Checksum 0x0, Offset: 0x6567
 // Size: 0x7a, Type: bool
 function isbackuppistol( weapon )
 {

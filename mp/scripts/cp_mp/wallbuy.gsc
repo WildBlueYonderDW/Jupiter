@@ -13,7 +13,7 @@
 #namespace wallbuy;
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x600
 // Size: 0x140
 function init_wallbuy( var_9280820d730cbb33 )
@@ -47,7 +47,7 @@ function init_wallbuy( var_9280820d730cbb33 )
 /#
 
     // Namespace wallbuy / scripts\cp_mp\wallbuy
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x748
     // Size: 0x2f, Type: dev
     function function_3b908ba6fc40daf4()
@@ -60,7 +60,7 @@ function init_wallbuy( var_9280820d730cbb33 )
 #/
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77f
 // Size: 0x9d
 function function_fc548d70e78f7672()
@@ -83,7 +83,7 @@ function function_fc548d70e78f7672()
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x824
 // Size: 0xcd
 function function_ebf02b0dd91b2553( destination )
@@ -103,7 +103,7 @@ function function_ebf02b0dd91b2553( destination )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f9
 // Size: 0x159
 function function_817c8799aa3c100b( sparams )
@@ -136,7 +136,7 @@ function function_817c8799aa3c100b( sparams )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa5a
 // Size: 0x9b
 function function_d7cd77868ae1e1cf( struct )
@@ -160,7 +160,7 @@ function function_d7cd77868ae1e1cf( struct )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xafd
 // Size: 0xa5
 function function_e2b981c1ea3f16bb( var_9280820d730cbb33 )
@@ -189,7 +189,7 @@ function function_e2b981c1ea3f16bb( var_9280820d730cbb33 )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbaa
 // Size: 0x186
 function function_81deca73d6175a9f( point, forcedregion )
@@ -248,7 +248,7 @@ function function_81deca73d6175a9f( point, forcedregion )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd39
 // Size: 0xbf
 function function_17f886f2f83d4aee( structspawn, weapon_name )
@@ -271,7 +271,7 @@ function function_17f886f2f83d4aee( structspawn, weapon_name )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe01
 // Size: 0x61
 function function_8bcac17d9bd3492b( structspawn, weapon_name )
@@ -290,7 +290,7 @@ function function_8bcac17d9bd3492b( structspawn, weapon_name )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe6b
 // Size: 0x239
 function function_502812469b62f7e9( structspawn, forcedrarity )
@@ -356,7 +356,7 @@ function function_502812469b62f7e9( structspawn, forcedrarity )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10ac
 // Size: 0x3f6
 function function_46baa6f0b88523d2( usable, player )
@@ -420,7 +420,7 @@ function function_46baa6f0b88523d2( usable, player )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14ab
 // Size: 0x3e
 function function_832a1fa43c4f3c7a()
@@ -435,7 +435,7 @@ function function_832a1fa43c4f3c7a()
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14f2
 // Size: 0x50
 function function_3683d3c5ee60fb1e( weapon_name )
@@ -447,7 +447,7 @@ function function_3683d3c5ee60fb1e( weapon_name )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x154a
 // Size: 0x50
 function function_ad4352ac1dfd7c59( weapon_name )
@@ -459,7 +459,7 @@ function function_ad4352ac1dfd7c59( weapon_name )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15a2
 // Size: 0x80
 function function_5075f6a4731236e6( weapon_name )
@@ -478,7 +478,7 @@ function function_5075f6a4731236e6( weapon_name )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x162a
 // Size: 0x262
 function function_86989ab07942c980( var_88260bb1ed608124, rarity )
@@ -577,7 +577,7 @@ function function_86989ab07942c980( var_88260bb1ed608124, rarity )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1895
 // Size: 0x43d
 function function_6a2e5e2579f83b94( player )
@@ -687,7 +687,7 @@ function function_6a2e5e2579f83b94( player )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cda
 // Size: 0x81
 function function_7fa5860a8e414317( rarity )
@@ -719,7 +719,7 @@ function function_7fa5860a8e414317( rarity )
 /#
 
     // Namespace wallbuy / scripts\cp_mp\wallbuy
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d64
     // Size: 0x180, Type: dev
     function function_b5a3a7840d51404a()
@@ -764,7 +764,7 @@ function function_7fa5860a8e414317( rarity )
 #/
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1eec
 // Size: 0x2b5
 function function_e898734a6a951c57( structspawn, rarity )
@@ -807,7 +807,7 @@ function function_e898734a6a951c57( structspawn, rarity )
 }
 
 // Namespace wallbuy / scripts\cp_mp\wallbuy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21a9
 // Size: 0x762
 function on_round_end( params )

@@ -1,7 +1,7 @@
 #namespace c_jup_zmb_zombie_base_male_shortsleeves_body_gz;
 
 // Namespace c_jup_zmb_zombie_base_male_shortsleeves_body_gz / xmodelalias\c_jup_zmb_zombie_base_male_shortsleeves_body_gz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf0
 // Size: 0x20
 function main()

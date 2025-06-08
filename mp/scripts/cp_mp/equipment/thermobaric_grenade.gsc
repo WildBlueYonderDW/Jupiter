@@ -24,7 +24,7 @@ function autoexec main()
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x429
 // Size: 0x82
 function thermobaric_grenade_init()
@@ -41,7 +41,7 @@ function thermobaric_grenade_init()
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0x45d
 function function_a4cf6140ad44312c( grenade, bundle )
@@ -73,7 +73,7 @@ function function_a4cf6140ad44312c( grenade, bundle )
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x918
 // Size: 0x146
 function thermobaric_grenade_used( grenade )
@@ -107,7 +107,7 @@ function thermobaric_grenade_used( grenade )
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xa66
 // Size: 0x1a4
 function function_90a9e9f5e4922a2a( position, gunforward, var_f901cb7707ef1b2c, forceteam, bundle, blueprintindex, objweapon )
@@ -138,7 +138,7 @@ function function_90a9e9f5e4922a2a( position, gunforward, var_f901cb7707ef1b2c, 
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc12
 // Size: 0x48
 function function_8bc975f46b0dca4( istouchingground, position, bundle, blueprintindex )
@@ -153,7 +153,7 @@ function function_8bc975f46b0dca4( istouchingground, position, bundle, blueprint
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc62
 // Size: 0xfe
 function thermobaric_fire( gunforward, groundposition, var_810c15bb2f4abd89, objweapon )
@@ -170,7 +170,7 @@ function thermobaric_fire( gunforward, groundposition, var_810c15bb2f4abd89, obj
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd68
 // Size: 0x268
 function function_13665242ac5e0b29( angles, position, var_810c15bb2f4abd89, objweapon )
@@ -198,7 +198,7 @@ function function_13665242ac5e0b29( angles, position, var_810c15bb2f4abd89, objw
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfd9
 // Size: 0x205, Type: bool
 function onplayerdamaged( data )
@@ -268,7 +268,7 @@ function onplayerdamaged( data )
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x11e7
 // Size: 0x107
 function function_ad3ba4982eef1921( attacker, explosionpos, explosionradius )
@@ -290,7 +290,7 @@ function function_ad3ba4982eef1921( attacker, explosionpos, explosionradius )
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x12f6
 // Size: 0x158
 function function_2cccb72d594d9345( einflictor, eattacker, explosionradius, var_8907f741f3a7b3f7 )
@@ -333,7 +333,7 @@ function function_2cccb72d594d9345( einflictor, eattacker, explosionradius, var_
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1456
 // Size: 0xc9
 function function_4499c828c334b707( var_71e0be188d8b0eba )
@@ -355,7 +355,7 @@ function function_4499c828c334b707( var_71e0be188d8b0eba )
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1527
 // Size: 0x29
 function function_f8694111713a4874( waittime )
@@ -366,7 +366,7 @@ function function_f8694111713a4874( waittime )
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1558
 // Size: 0x11c
 function thermobaric_additional_explosive_damage( victim, attacker, damage )
@@ -391,7 +391,7 @@ function thermobaric_additional_explosive_damage( victim, attacker, damage )
 }
 
 // Namespace thermobaric_grenade / scripts\cp_mp\equipment\thermobaric_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x167d
 // Size: 0x25
 function thermobaric_shellshock_interrupt_delay( duration )

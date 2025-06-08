@@ -23,7 +23,7 @@ function autoexec main()
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e6
 // Size: 0x94
 function init()
@@ -48,7 +48,7 @@ function init()
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x682
 // Size: 0x16
 function function_f49ef51573779a58()
@@ -59,7 +59,7 @@ function function_f49ef51573779a58()
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a0
 // Size: 0x7a
 function function_8b0517e29ba99749()
@@ -85,7 +85,7 @@ function function_8b0517e29ba99749()
 /#
 
     // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x722
     // Size: 0xb9, Type: dev
     function function_9611765a6973a30a( dvar, config, isprimary )
@@ -122,7 +122,7 @@ function function_8b0517e29ba99749()
 #/
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e3
 // Size: 0xeb
 function function_138468dd32aae3fe()
@@ -159,7 +159,7 @@ function function_138468dd32aae3fe()
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d6
 // Size: 0x21
 function function_11f8f0876fc973de()
@@ -168,7 +168,7 @@ function function_11f8f0876fc973de()
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8ff
 // Size: 0x41
 function function_b960491329678b4( activateimmediate, var_ca56839b2e00edce )
@@ -179,7 +179,7 @@ function function_b960491329678b4( activateimmediate, var_ca56839b2e00edce )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x948
 // Size: 0x18a, Type: bool
 function function_2e34ff8caa82d72d( streakinfo, activateimmediate )
@@ -244,7 +244,7 @@ function function_2e34ff8caa82d72d( streakinfo, activateimmediate )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xadb
 // Size: 0xa0
 function markerthrown( streakinfo, weaponobj, projectile )
@@ -267,7 +267,7 @@ function markerthrown( streakinfo, weaponobj, projectile )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb84
 // Size: 0x1cd
 function function_20037b6d61f6913a( streakinfo )
@@ -327,7 +327,7 @@ function function_20037b6d61f6913a( streakinfo )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd59
 // Size: 0x22
 function function_546bfb8d4d00c31( firstactivation )
@@ -339,7 +339,7 @@ function function_546bfb8d4d00c31( firstactivation )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd83
 // Size: 0xae
 function function_c13dca1515447b28( player )
@@ -366,7 +366,7 @@ function function_c13dca1515447b28( player )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe39
 // Size: 0x38
 function function_bbd5edacfcb74661( immediate )
@@ -376,7 +376,7 @@ function function_bbd5edacfcb74661( immediate )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe79
 // Size: 0x279
 function function_8bac95417054dcbf( streakinfo )
@@ -465,7 +465,7 @@ function function_8bac95417054dcbf( streakinfo )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10fa
 // Size: 0x1ca
 function function_e3caef85dfedc944()
@@ -523,7 +523,7 @@ function function_e3caef85dfedc944()
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12cc
 // Size: 0x1e, Type: bool
 function function_7d7531f974260d91()
@@ -542,7 +542,7 @@ function function_7d7531f974260d91()
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12f3
 // Size: 0x173
 function function_44d4db462cec2873( bundle, radarradius, var_2ff0b7294cde30f8 )
@@ -554,7 +554,8 @@ function function_44d4db462cec2873( bundle, radarradius, var_2ff0b7294cde30f8 )
         checkinterval = var_2ff0b7294cde30f8 / bundle.var_9bf9f003feb68ed8;
         characterschecked = [];
         
-        for (i = 1; i <= bundle.var_9bf9f003feb68ed8; i++) {
+        for ( i = 1; i <= bundle.var_9bf9f003feb68ed8 ; i++ )
+        {
             wait checkinterval;
             var_ad00034aa6fc55c9 = i / bundle.var_9bf9f003feb68ed8 * radarradius;
             
@@ -589,7 +590,7 @@ function function_44d4db462cec2873( bundle, radarradius, var_2ff0b7294cde30f8 )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146e
 // Size: 0x9c
 function function_b3ac6739913f71ab( juggernautplayer )
@@ -614,7 +615,7 @@ function function_b3ac6739913f71ab( juggernautplayer )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1512
 // Size: 0x34
 function function_ad3e24a2d0896537( streakinfo )
@@ -630,7 +631,7 @@ function function_ad3e24a2d0896537( streakinfo )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x154e
 // Size: 0xac
 function function_a8ed613077c9e07( streakinfo )
@@ -657,7 +658,7 @@ function function_a8ed613077c9e07( streakinfo )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1602
 // Size: 0x52
 function function_d6e3424025c35356( streakinfo, juggcontext )
@@ -673,7 +674,7 @@ function function_d6e3424025c35356( streakinfo, juggcontext )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x165c
 // Size: 0x3e
 function function_ca2a1fd81a921292( streakinfo )
@@ -686,7 +687,7 @@ function function_ca2a1fd81a921292( streakinfo )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16a2
 // Size: 0x1f7
 function function_68e45178659d4dfd( var_cbcc20cc563590c7 )
@@ -741,7 +742,7 @@ function function_68e45178659d4dfd( var_cbcc20cc563590c7 )
 }
 
 // Namespace juggernaut_recon / scripts\killstreaks\juggernaut_recon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18a1
 // Size: 0x70
 function function_2bb8ec2d315b7cb1( juggcontext, var_cbcc20cc563590c7 )

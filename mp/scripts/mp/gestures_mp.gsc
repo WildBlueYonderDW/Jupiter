@@ -8,7 +8,7 @@
 #namespace gestures_mp;
 
 // Namespace gestures_mp / scripts\mp\gestures_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb8
 // Size: 0x15
 function init_mp()

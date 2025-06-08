@@ -13,7 +13,7 @@
 #namespace whizby;
 
 // Namespace whizby / scripts\mp\whizby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x155
 // Size: 0x25
 function init()
@@ -24,7 +24,7 @@ function init()
 }
 
 // Namespace whizby / scripts\mp\whizby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x182
 // Size: 0xa
 function onplayerspawned()
@@ -33,7 +33,7 @@ function onplayerspawned()
 }
 
 // Namespace whizby / scripts\mp\whizby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x194
 // Size: 0x70
 function whizbythink()
@@ -52,9 +52,9 @@ function whizbythink()
 }
 
 // Namespace whizby / scripts\mp\whizby
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x20c
-// Size: 0x9a
+// Size: 0x9b
 function dowhizby( attacker, distance, position, forward, effecttime )
 {
     currenttime = gettime();
@@ -68,7 +68,7 @@ function dowhizby( attacker, distance, position, forward, effecttime )
     
     if ( isdefined( weapon ) && weaponclass( weapon ) == "sniper" )
     {
-        scripts\mp\battlechatter_mp::trysaylocalsound( self, #"bc_flavor_player_surprise", undefined, 0.2 );
+        thread scripts\mp\battlechatter_mp::trysaylocalsound( self, #"bc_flavor_player_surprise", undefined, 0.2 );
     }
     
     thread scripts\mp\battlechatter_mp::addrecentattacker( attacker );
@@ -76,8 +76,8 @@ function dowhizby( attacker, distance, position, forward, effecttime )
 }
 
 // Namespace whizby / scripts\mp\whizby
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2af
+// Params 1
+// Checksum 0x0, Offset: 0x2b0
 // Size: 0x7c
 function dosuppression( attacker )
 {

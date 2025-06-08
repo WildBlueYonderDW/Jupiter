@@ -16,12 +16,12 @@
 #namespace namespace_3f34405c51e49637;
 
 // Namespace namespace_3f34405c51e49637 / namespace_76ebb832f1cbeaa
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1ac
 // Size: 0x172
 function init( var_224bf1253364b30a, var_487aa685c1c31808, var_3b24d8dc30ca944b, spawnitemsratio )
 {
-    if ( getdvarint( @"hash_2bd08bfff808053a", 1 ) && getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( getdvarint( @"hash_2bd08bfff808053a", 1 ) && getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         var_85fc2214cea298e4 = function_8385f4c035230abe();
         
@@ -77,7 +77,7 @@ function init( var_224bf1253364b30a, var_487aa685c1c31808, var_3b24d8dc30ca944b,
 }
 
 // Namespace namespace_3f34405c51e49637 / namespace_76ebb832f1cbeaa
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x326
 // Size: 0x1a8
 function function_83f276ef36c2e4ab( var_428c9aad17e4e279, spawnratio )
@@ -114,7 +114,8 @@ function function_83f276ef36c2e4ab( var_428c9aad17e4e279, spawnratio )
     
     spawnlist = array_randomize( spawnlist );
     
-    for (i = priorityspawns; i < totalspawns; i++) {
+    for ( i = priorityspawns; i < totalspawns ; i++ )
+    {
         spawnitem = undefined;
         weighttarget = randomfloat( spawnlistweight );
         
@@ -136,7 +137,7 @@ function function_83f276ef36c2e4ab( var_428c9aad17e4e279, spawnratio )
 }
 
 // Namespace namespace_3f34405c51e49637 / namespace_76ebb832f1cbeaa
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d6
 // Size: 0x118
 function function_77708fbf186d74d6( stageditem )
@@ -178,7 +179,7 @@ function function_77708fbf186d74d6( stageditem )
 }
 
 // Namespace namespace_3f34405c51e49637 / namespace_76ebb832f1cbeaa
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f6
 // Size: 0x4e
 function function_57718c5233376cf1( vector )
@@ -415,7 +416,7 @@ function private function_79691f9f27624735( structname )
 /#
 
     // Namespace namespace_3f34405c51e49637 / namespace_76ebb832f1cbeaa
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xc27
     // Size: 0x6d, Type: dev
     function init_debug( var_224bf1253364b30a, var_487aa685c1c31808 )
@@ -433,7 +434,7 @@ function private function_79691f9f27624735( structname )
     }
 
     // Namespace namespace_3f34405c51e49637 / namespace_76ebb832f1cbeaa
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xc9c
     // Size: 0x130, Type: dev
     function function_d0fe7707ad955a32()

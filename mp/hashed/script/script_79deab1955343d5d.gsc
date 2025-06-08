@@ -4,7 +4,7 @@
 #namespace activity_scoring;
 
 // Namespace activity_scoring / namespace_6a4776a9657ff96b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x98
 // Size: 0x77
 function function_4d4bdc081df1c06b( player, varianttag )
@@ -21,7 +21,7 @@ function function_4d4bdc081df1c06b( player, varianttag )
 }
 
 // Namespace activity_scoring / namespace_6a4776a9657ff96b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x117
 // Size: 0x4b
 function updatescore( scorechange )
@@ -35,7 +35,7 @@ function updatescore( scorechange )
 }
 
 // Namespace activity_scoring / namespace_6a4776a9657ff96b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16a
 // Size: 0x62, Type: bool
 function function_580d48267e3509af( player )
@@ -53,7 +53,7 @@ function function_580d48267e3509af( player )
 }
 
 // Namespace activity_scoring / namespace_6a4776a9657ff96b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d5
 // Size: 0xc
 function resetscore()
@@ -62,7 +62,7 @@ function resetscore()
 }
 
 // Namespace activity_scoring / namespace_6a4776a9657ff96b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e9
 // Size: 0xb
 function getscore()
@@ -71,7 +71,7 @@ function getscore()
 }
 
 // Namespace activity_scoring / namespace_6a4776a9657ff96b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fd
 // Size: 0x2a
 function getplayerhighscore( player, varianttag )
@@ -82,7 +82,7 @@ function getplayerhighscore( player, varianttag )
 /#
 
     // Namespace activity_scoring / namespace_6a4776a9657ff96b
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x230
     // Size: 0x18, Type: dev
     function setscore( score )
@@ -91,7 +91,7 @@ function getplayerhighscore( player, varianttag )
     }
 
     // Namespace activity_scoring / namespace_6a4776a9657ff96b
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x250
     // Size: 0x23, Type: dev
     function broadcastscore( varianttag )

@@ -17,7 +17,7 @@
 #namespace cruise_predator;
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa49
 // Size: 0x58
 function init()
@@ -36,7 +36,7 @@ function init()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaa9
 // Size: 0x28
 function function_eb11a8dfbd2505a0()
@@ -46,7 +46,7 @@ function function_eb11a8dfbd2505a0()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xad9
 // Size: 0x60
 function function_10865a43b7b1243e()
@@ -55,7 +55,7 @@ function function_10865a43b7b1243e()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb41
 // Size: 0x2
 function function_ce236b9143b76125()
@@ -64,7 +64,7 @@ function function_ce236b9143b76125()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb4b
 // Size: 0x28
 function function_f0b48909aba12866()
@@ -76,7 +76,7 @@ function function_f0b48909aba12866()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb7b
 // Size: 0x1c
 function function_f06e9c09ab54c2bf()
@@ -85,7 +85,7 @@ function function_f06e9c09ab54c2bf()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb9f
 // Size: 0x59
 function function_328fd4c30cafcce0()
@@ -102,7 +102,7 @@ function function_328fd4c30cafcce0()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc00
 // Size: 0xd, Type: bool
 function weapongivencruisepredator( streakinfo )
@@ -111,9 +111,9 @@ function weapongivencruisepredator( streakinfo )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc16
-// Size: 0x21, Type: bool
+// Size: 0x21
 function tryusecruisepredator()
 {
     streakinfo = createstreakinfo( "cruise_predator", self );
@@ -121,7 +121,7 @@ function tryusecruisepredator()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc40
 // Size: 0x134, Type: bool
 function tryusecruisepredatorfromstruct( streakinfo )
@@ -196,7 +196,7 @@ function tryusecruisepredatorfromstruct( streakinfo )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd7d
 // Size: 0x512
 function runcruisepredator( streakname, streakinfo, thirdperson )
@@ -322,7 +322,7 @@ function runcruisepredator( streakname, streakinfo, thirdperson )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1298
 // Size: 0x47
 function cruisepredator_watchintropoddisown( streakinfo, enemytargetmarkergroup, friendlytargetmarkergroup )
@@ -339,7 +339,7 @@ function cruisepredator_watchintropoddisown( streakinfo, enemytargetmarkergroup,
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x12e7
 // Size: 0xd8
 function cruisepredator_detachplayerfromintro( streakinfo, enemytargetmarkergroup, friendlytargetmarkergroup )
@@ -375,7 +375,7 @@ function cruisepredator_detachplayerfromintro( streakinfo, enemytargetmarkergrou
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x13c7
 // Size: 0x421, Type: bool
 function cruisepredator_followmissilepod( pod, breakpos, thirdperson, streakinfo, bundle )
@@ -498,7 +498,7 @@ function cruisepredator_followmissilepod( pod, breakpos, thirdperson, streakinfo
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17f1
 // Size: 0x7c
 function cruisepredator_playdofsequence( var_c21a2b0040f7613c )
@@ -514,7 +514,7 @@ function cruisepredator_playdofsequence( var_c21a2b0040f7613c )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1875
 // Size: 0x704
 function cruisepredator_takecontrol( pod, streakinfo, thirdperson, enemytargetmarkergroup, friendlytargetmarkergroup, bundle )
@@ -678,7 +678,7 @@ function cruisepredator_takecontrol( pod, streakinfo, thirdperson, enemytargetma
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f81
 // Size: 0x5b
 function cruisepredator_watchkillborder()
@@ -708,7 +708,7 @@ function cruisepredator_watchkillborder()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fe4
 // Size: 0x6c
 function cruisepredator_istouchingkillborder( triggerlist )
@@ -728,7 +728,7 @@ function cruisepredator_istouchingkillborder( triggerlist )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2059
 // Size: 0x39
 function cruisepredator_delaymissilecollision()
@@ -742,7 +742,7 @@ function cruisepredator_delaymissilecollision()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x209a
 // Size: 0x198
 function function_50f690a71c5fae2( missile, thirdperson, streakinfo )
@@ -800,7 +800,7 @@ function function_50f690a71c5fae2( missile, thirdperson, streakinfo )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x223a
 // Size: 0x19a
 function cruisepredator_watchgameend( missile, thirdperson, streakinfo )
@@ -861,7 +861,7 @@ function cruisepredator_watchgameend( missile, thirdperson, streakinfo )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23dc
 // Size: 0x43
 function cruisepredator_watchmissileinfo( missile )
@@ -877,9 +877,9 @@ function cruisepredator_watchmissileinfo( missile )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x2427
-// Size: 0x5b1
+// Size: 0x5ac
 function cruisepredator_watchmissileexplosion( missile, rider, killcament, thirdperson, enemytargetmarkergroup, friendlytargetmarkergroup, bundle )
 {
     missile endon( "cruise_missile_force_eject" );
@@ -891,7 +891,7 @@ function cruisepredator_watchmissileexplosion( missile, rider, killcament, third
     
     while ( true )
     {
-        explodeinfo = missile function_51afe751c1e36723( "collision", "explode", "death", "disowned", "emp_defused", "trophy_blocked" );
+        explodeinfo = missile function_675ba1ee79efdc70( "collision", "explode", "disowned", "emp_defused", "trophy_blocked" );
         
         if ( isdefined( explodeinfo.msg ) && explodeinfo.msg == "collision" )
         {
@@ -1061,8 +1061,8 @@ function cruisepredator_watchmissileexplosion( missile, rider, killcament, third
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29e0
+// Params 0
+// Checksum 0x0, Offset: 0x29db
 // Size: 0x7f
 function function_1a20d385b2f41e0e()
 {
@@ -1083,8 +1083,8 @@ function function_1a20d385b2f41e0e()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a67
+// Params 2
+// Checksum 0x0, Offset: 0x2a62
 // Size: 0x42
 function cruisepredator_cameramove( targetpos, startpos )
 {
@@ -1094,8 +1094,8 @@ function cruisepredator_cameramove( targetpos, startpos )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ab1
+// Params 2
+// Checksum 0x0, Offset: 0x2aac
 // Size: 0xde
 function cruisepredator_returnplayer( streakinfo, exploded )
 {
@@ -1131,8 +1131,8 @@ function cruisepredator_returnplayer( streakinfo, exploded )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b97
+// Params 2
+// Checksum 0x0, Offset: 0x2b92
 // Size: 0x33
 function cruisepredator_watchtimer( rider, lifetime )
 {
@@ -1142,8 +1142,8 @@ function cruisepredator_watchtimer( rider, lifetime )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bd2
+// Params 1
+// Checksum 0x0, Offset: 0x2bcd
 // Size: 0x41
 function cruisepredator_watchownerdisownaction( action )
 {
@@ -1156,8 +1156,8 @@ function cruisepredator_watchownerdisownaction( action )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c1b
+// Params 0
+// Checksum 0x0, Offset: 0x2c16
 // Size: 0x20
 function cruisepredator_startexplodecamtransition()
 {
@@ -1167,8 +1167,8 @@ function cruisepredator_startexplodecamtransition()
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c43
+// Params 4
+// Checksum 0x0, Offset: 0x2c3e
 // Size: 0x87
 function cruisepredator_startfadecamtransition( fadeintime, fadedelay, fadeouttime, var_2007ede6118d6b9f )
 {
@@ -1203,8 +1203,8 @@ function cruisepredator_startfadecamtransition( fadeintime, fadedelay, fadeoutti
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cd2
+// Params 1
+// Checksum 0x0, Offset: 0x2ccd
 // Size: 0x4c
 function cruisepredator_shakerider( shaketime )
 {
@@ -1220,8 +1220,8 @@ function cruisepredator_shakerider( shaketime )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d26
+// Params 1
+// Checksum 0x0, Offset: 0x2d21
 // Size: 0x127
 function cruisepredator_handlevfxstates( explodeinfo )
 {
@@ -1254,8 +1254,8 @@ function cruisepredator_handlevfxstates( explodeinfo )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e55
+// Params 1
+// Checksum 0x0, Offset: 0x2e50
 // Size: 0x72
 function cruisepredator_watchkills( explodeinfo )
 {
@@ -1275,8 +1275,8 @@ function cruisepredator_watchkills( explodeinfo )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ecf
+// Params 3
+// Checksum 0x0, Offset: 0x2eca
 // Size: 0x65
 function cruisepredator_delayplayslamzoom( pod, delaytime, thirdperson )
 {
@@ -1294,8 +1294,8 @@ function cruisepredator_delayplayslamzoom( pod, delaytime, thirdperson )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f3c
+// Params 1
+// Checksum 0x0, Offset: 0x2f37
 // Size: 0x18
 function cruisepredator_empapplied( data )
 {
@@ -1306,8 +1306,8 @@ function cruisepredator_empapplied( data )
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f5c
+// Params 0
+// Checksum 0x0, Offset: 0x2f57
 // Size: 0x1b, Type: bool
 function function_ecc973ad47944e1e()
 {

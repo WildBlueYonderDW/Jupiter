@@ -8,7 +8,7 @@
 #namespace focus;
 
 // Namespace focus / scripts\mp\focus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x141
 // Size: 0xe
 function init()
@@ -17,7 +17,7 @@ function init()
 }
 
 // Namespace focus / scripts\mp\focus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x157
 // Size: 0x22
 function onplayerspawned()
@@ -28,7 +28,7 @@ function onplayerspawned()
 }
 
 // Namespace focus / scripts\mp\focus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x181
 // Size: 0x34
 function managefocus()
@@ -49,7 +49,7 @@ function managefocus()
 }
 
 // Namespace focus / scripts\mp\focus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bd
 // Size: 0x5e
 function dofocus()
@@ -77,7 +77,7 @@ function dofocus()
 }
 
 // Namespace focus / scripts\mp\focus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x223
 // Size: 0x1f
 function watchforfire()
@@ -88,7 +88,7 @@ function watchforfire()
 }
 
 // Namespace focus / scripts\mp\focus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24a
 // Size: 0xa1
 function function_bd0d33f283ede2f8()
@@ -112,7 +112,7 @@ function function_bd0d33f283ede2f8()
 }
 
 // Namespace focus / scripts\mp\focus
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f3
 // Size: 0x13
 function focusvision()

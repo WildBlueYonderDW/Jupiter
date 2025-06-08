@@ -1,7 +1,7 @@
 #namespace dvars;
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd2
 // Size: 0x90
 function dvarintvalue( dvar, defval, minval, maxval )
@@ -34,7 +34,7 @@ function dvarintvalue( dvar, defval, minval, maxval )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x16b
 // Size: 0x90
 function dvarfloatvalue( dvar, defval, minval, maxval )
@@ -67,7 +67,7 @@ function dvarfloatvalue( dvar, defval, minval, maxval )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x204
 // Size: 0xb8
 function registerwatchdvarint( namestring, defaultvalue )
@@ -86,7 +86,7 @@ function registerwatchdvarint( namestring, defaultvalue )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c4
 // Size: 0xb8
 function registerwatchdvarfloat( namestring, defaultvalue )
@@ -105,7 +105,7 @@ function registerwatchdvarfloat( namestring, defaultvalue )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x384
 // Size: 0xbe
 function registerwatchdvar( namestring, defaultvalue )
@@ -124,7 +124,7 @@ function registerwatchdvar( namestring, defaultvalue )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x44a
 // Size: 0x49
 function setoverridewatchdvar( dvarstring, value )
@@ -134,7 +134,7 @@ function setoverridewatchdvar( dvarstring, value )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49b
 // Size: 0x9c
 function getwatcheddvar( dvarstring )
@@ -155,7 +155,7 @@ function getwatcheddvar( dvarstring )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x53f
 // Size: 0x28
 function function_3514ae5d09f47ed2( dvarstring )
@@ -164,7 +164,7 @@ function function_3514ae5d09f47ed2( dvarstring )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x570
 // Size: 0x14c
 function updatewatcheddvarsexecute()
@@ -195,7 +195,7 @@ function updatewatcheddvarsexecute()
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c4
 // Size: 0x22
 function updatewatcheddvars()
@@ -208,7 +208,7 @@ function updatewatcheddvars()
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ee
 // Size: 0x35
 function getproperty( dvar, defvalue )
@@ -224,7 +224,7 @@ function getproperty( dvar, defvalue )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x72c
 // Size: 0x35
 function getintproperty( dvar, defvalue )
@@ -240,7 +240,7 @@ function getintproperty( dvar, defvalue )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x76a
 // Size: 0x35
 function getfloatproperty( dvar, defvalue )
@@ -256,7 +256,7 @@ function getfloatproperty( dvar, defvalue )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7a8
 // Size: 0x1f
 function getoverridedvarintexceptmatchrulesvalues( override, fallback )
@@ -265,7 +265,7 @@ function getoverridedvarintexceptmatchrulesvalues( override, fallback )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7d0
 // Size: 0x1f
 function getoverridedvarfloatexceptmatchrulesvalues( override, fallback )
@@ -274,7 +274,7 @@ function getoverridedvarfloatexceptmatchrulesvalues( override, fallback )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f8
 // Size: 0x1f
 function getoverridedvarexceptmatchrulesvalues( override, fallback )
@@ -283,7 +283,7 @@ function getoverridedvarexceptmatchrulesvalues( override, fallback )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x820
 // Size: 0x81
 function function_18581799c48cc262( class, member )
@@ -299,7 +299,7 @@ function function_18581799c48cc262( class, member )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8a9
 // Size: 0x43
 function function_29227adb79acc568( member, defvalue )
@@ -309,7 +309,7 @@ function function_29227adb79acc568( member, defvalue )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8f5
 // Size: 0x43
 function function_ef4d323f56385843( member, defvalue )
@@ -319,7 +319,7 @@ function function_ef4d323f56385843( member, defvalue )
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x941
 // Size: 0x43
 function function_36fd7e50e2a25847( member, defvalue )
@@ -331,7 +331,7 @@ function function_36fd7e50e2a25847( member, defvalue )
 /#
 
     // Namespace dvars / scripts\mp\utility\dvars
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x98d
     // Size: 0x9a, Type: dev
     function function_a972e013c8f2f2d4()
@@ -345,7 +345,7 @@ function function_36fd7e50e2a25847( member, defvalue )
             setdevdvarifuninitialized( @"hash_7ae9abc841dc9c4b", 15 );
             setdevdvarifuninitialized( @"hash_fe0a46289ab091e1", level.radarviewtime );
             setdevdvarifuninitialized( @"hash_5bded6d7c75e5248", "<dev string:x57>" );
-            setdevdvarifuninitialized( @"hash_b1f216df6049c46a", -1 );
+            setdevdvarifuninitialized( @"scr_devchangetimelimit", -1 );
             setdevdvarifuninitialized( @"hash_681596f27a5e0f7a", 30 );
             setdevdvarifuninitialized( @"hash_9d27a693c0c7d81b", 60 );
         }

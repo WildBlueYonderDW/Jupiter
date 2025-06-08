@@ -5,7 +5,7 @@
 #namespace namespace_7ee9a03c8b80c102;
 
 // Namespace namespace_7ee9a03c8b80c102 / namespace_fd4c3f1f30da37b4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6dd
 // Size: 0xbe
 function spawn_computer( location_struct, max_health )
@@ -22,7 +22,7 @@ function spawn_computer( location_struct, max_health )
 }
 
 // Namespace namespace_7ee9a03c8b80c102 / namespace_fd4c3f1f30da37b4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7a4
 // Size: 0x108
 function activate_computer( player )
@@ -43,7 +43,7 @@ function activate_computer( player )
 }
 
 // Namespace namespace_7ee9a03c8b80c102 / namespace_fd4c3f1f30da37b4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b4
 // Size: 0xef
 function cleanup_computer()
@@ -68,7 +68,7 @@ function cleanup_computer()
 }
 
 // Namespace namespace_7ee9a03c8b80c102 / namespace_fd4c3f1f30da37b4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ab
 // Size: 0x1c
 function function_38df7cd1dc2f5bc9( computer )
@@ -77,7 +77,7 @@ function function_38df7cd1dc2f5bc9( computer )
 }
 
 // Namespace namespace_7ee9a03c8b80c102 / namespace_fd4c3f1f30da37b4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9d0
 // Size: 0x2e
 function function_1b71094fb5bf7c52( computer )
@@ -86,7 +86,7 @@ function function_1b71094fb5bf7c52( computer )
 }
 
 // Namespace namespace_7ee9a03c8b80c102 / namespace_fd4c3f1f30da37b4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa07
 // Size: 0x2f
 function start_threads()
@@ -175,7 +175,7 @@ function private damage_watcher()
 }
 
 // Namespace namespace_7ee9a03c8b80c102 / namespace_fd4c3f1f30da37b4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd4e
 // Size: 0x96
 function function_9e4fe40b486284c8( totalhealth, objweapon )
@@ -204,7 +204,7 @@ function function_9e4fe40b486284c8( totalhealth, objweapon )
 }
 
 // Namespace namespace_7ee9a03c8b80c102 / namespace_fd4c3f1f30da37b4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xded
 // Size: 0xad
 function function_fbfb3bfa5318ab1()

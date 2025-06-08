@@ -4,7 +4,7 @@
 #namespace namespace_cd1f26d31e0fc552;
 
 // Namespace namespace_cd1f26d31e0fc552 / namespace_e3ef90d32ac66277
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb7
 // Size: 0x92
 function createevent( radius, duration )
@@ -19,7 +19,7 @@ function createevent( radius, duration )
 }
 
 // Namespace namespace_cd1f26d31e0fc552 / namespace_e3ef90d32ac66277
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x151
 // Size: 0x29c
 function getevent()
@@ -95,7 +95,7 @@ function getevent()
 }
 
 // Namespace namespace_cd1f26d31e0fc552 / namespace_e3ef90d32ac66277
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f6
 // Size: 0x36
 function getduration()
@@ -105,7 +105,7 @@ function getduration()
 }
 
 // Namespace namespace_cd1f26d31e0fc552 / namespace_e3ef90d32ac66277
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x435
 // Size: 0x5d
 function invalidateentry( entitynumber )
@@ -120,7 +120,7 @@ function invalidateentry( entitynumber )
 }
 
 // Namespace namespace_cd1f26d31e0fc552 / namespace_e3ef90d32ac66277
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x49a
 // Size: 0x72, Type: bool
 function isexpired( time, position )

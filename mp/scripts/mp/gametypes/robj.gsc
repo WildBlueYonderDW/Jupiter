@@ -39,7 +39,7 @@
 #namespace robj;
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15d0
 // Size: 0x33a
 function main()
@@ -115,7 +115,7 @@ function main()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1912
 // Size: 0x66
 function onplayerconnect( player )
@@ -132,7 +132,7 @@ function onplayerconnect( player )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x1980
 // Size: 0x22d
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -184,7 +184,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bb5
 // Size: 0x98, Type: bool
 function isonobjective()
@@ -201,7 +201,7 @@ function isonobjective()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c56
 // Size: 0x44
 function function_8974f2acabebbc99()
@@ -212,7 +212,7 @@ function function_8974f2acabebbc99()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ca2
 // Size: 0xc9
 function ontimelimit()
@@ -241,7 +241,7 @@ function ontimelimit()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d73
 // Size: 0x17
 function function_9e1ae8ace1cb41e2()
@@ -253,7 +253,7 @@ function function_9e1ae8ace1cb41e2()
 /#
 
     // Namespace robj / scripts\mp\gametypes\robj
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d93
     // Size: 0x2e, Type: dev
     function function_c6311773113bd9d9()
@@ -270,7 +270,7 @@ function function_9e1ae8ace1cb41e2()
     }
 
     // Namespace robj / scripts\mp\gametypes\robj
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1dc9
     // Size: 0x2d3, Type: dev
     function function_428317dcdbacd650()
@@ -307,7 +307,7 @@ function function_9e1ae8ace1cb41e2()
     }
 
     // Namespace robj / scripts\mp\gametypes\robj
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x20a4
     // Size: 0x264, Type: dev
     function function_36108d670d10409a()
@@ -338,7 +338,8 @@ function function_9e1ae8ace1cb41e2()
                     {
                         color = ( 1, 0, 0 );
                         
-                        for (i = 0; i < array.size; i++) {
+                        for ( i = 0; i < array.size ; i++ )
+                        {
                             if ( isdefined( array[ i + 1 ] ) )
                             {
                                 line( array[ i ].curorigin, array[ i + 1 ].curorigin, ( 1, 0, 0 ), 1, 0, 1 );
@@ -358,7 +359,7 @@ function function_9e1ae8ace1cb41e2()
     }
 
     // Namespace robj / scripts\mp\gametypes\robj
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2310
     // Size: 0x101, Type: dev
     function function_9846df05d91ac5da()
@@ -368,7 +369,7 @@ function function_9e1ae8ace1cb41e2()
         if ( value && isdefined( level.objectives ) )
         {
             setdvar( @"hash_e0fb8d4f2cc4a40c", 0 );
-            setdvar( @"hash_6ce01b6572751b18", 1 );
+            setdvar( @"bot_disableattack", 1 );
             
             if ( level.players.size <= 1 )
             {
@@ -391,7 +392,7 @@ function function_9e1ae8ace1cb41e2()
 #/
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2419
 // Size: 0x18
 function function_c80e5eaa70aba7d7()
@@ -401,7 +402,7 @@ function function_c80e5eaa70aba7d7()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2439
 // Size: 0xf7
 function function_169f34c107ca9253()
@@ -442,7 +443,7 @@ function function_169f34c107ca9253()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2538
 // Size: 0xc1
 function questcircle_run_vo_hint_when_close( player )
@@ -474,7 +475,7 @@ function questcircle_run_vo_hint_when_close( player )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2601
 // Size: 0x156
 function function_1faae1bb72f526fb( scriptable, event )
@@ -560,7 +561,7 @@ function function_1faae1bb72f526fb( scriptable, event )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2760
 // Size: 0xa6, Type: bool
 function function_31d8fdff7106eaba( player )
@@ -582,7 +583,7 @@ function function_31d8fdff7106eaba( player )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x280f
 // Size: 0x26, Type: bool
 function function_149c978226839fe2( objective )
@@ -591,7 +592,7 @@ function function_149c978226839fe2( objective )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x283e
 // Size: 0x893
 function function_52edd4d6e6b699f2()
@@ -809,7 +810,7 @@ function function_52edd4d6e6b699f2()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x30d9
 // Size: 0x235
 function robj_do_helicopter_sequence( bombzone, scriptable )
@@ -847,7 +848,7 @@ function robj_do_helicopter_sequence( bombzone, scriptable )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3316
 // Size: 0x59
 function followhelicopter( vehicle )
@@ -864,7 +865,7 @@ function followhelicopter( vehicle )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3377
 // Size: 0x66
 function function_74d188f8cd1044f8()
@@ -876,7 +877,7 @@ function function_74d188f8cd1044f8()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33e5
 // Size: 0x126
 function function_6268e5fd6df4c426( struct )
@@ -918,7 +919,7 @@ function function_6268e5fd6df4c426( struct )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3513
 // Size: 0x25
 function function_12f94ddad72e1143( scriptable )
@@ -944,7 +945,7 @@ function private function_2a9783de5ed53f56( pos, prevstruct, speed, angleoverrid
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35e5
 // Size: 0x143
 function function_d23c7c1add9fb181( origin, exclude )
@@ -980,7 +981,7 @@ function function_d23c7c1add9fb181( origin, exclude )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3731
 // Size: 0x46, Type: bool
 function function_ce8bbfe1d4422f48( obj1, obj2 )
@@ -989,7 +990,7 @@ function function_ce8bbfe1d4422f48( obj1, obj2 )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3780
 // Size: 0xf2
 function run_player_interact_logic()
@@ -1031,7 +1032,7 @@ function run_player_interact_logic()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x387a
 // Size: 0x1f5
 function function_8ab4263516ea015f( currentobjective, var_b2be2b0ad85ea48 )
@@ -1101,7 +1102,7 @@ function function_8ab4263516ea015f( currentobjective, var_b2be2b0ad85ea48 )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a78
 // Size: 0x2b
 function function_af110ad9ae3128a1( struct )
@@ -1110,7 +1111,7 @@ function function_af110ad9ae3128a1( struct )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3aac
 // Size: 0x9c
 function function_2d1f2d138f937e6a( type, origin, size )
@@ -1129,7 +1130,7 @@ function function_2d1f2d138f937e6a( type, origin, size )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b50
 // Size: 0x9
 function initializematchrules()
@@ -1138,7 +1139,7 @@ function initializematchrules()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b61
 // Size: 0x54
 function onstartgametype()
@@ -1156,7 +1157,7 @@ function onstartgametype()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bbd
 // Size: 0x1fd
 function script_model_anims()
@@ -1182,7 +1183,7 @@ function script_model_anims()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dc2
 // Size: 0xa9
 function initobjectives()
@@ -1205,7 +1206,7 @@ function initobjectives()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e73
 // Size: 0x4c
 function function_a9a2bef3ba198a85( scriptable )
@@ -1220,7 +1221,7 @@ function function_a9a2bef3ba198a85( scriptable )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ec7
 // Size: 0x5d
 function function_59e0c0a902e8778c( scriptable )
@@ -1236,7 +1237,7 @@ function function_59e0c0a902e8778c( scriptable )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f2c
 // Size: 0xbf
 function updateobjectivelights( state, script_noteworthy )
@@ -1263,7 +1264,7 @@ function updateobjectivelights( state, script_noteworthy )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ff3
 // Size: 0x51
 function function_33c8d0807c72cb68( state )
@@ -1281,7 +1282,7 @@ function function_33c8d0807c72cb68( state )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x404c
 // Size: 0x32f
 function setupobjective( trigger, skipobjid, var_5ddbc1faed2c56e6 )
@@ -1345,7 +1346,7 @@ function setupobjective( trigger, skipobjid, var_5ddbc1faed2c56e6 )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4384
 // Size: 0x6a
 function function_bea6c5f32629f766()
@@ -1366,7 +1367,7 @@ function function_bea6c5f32629f766()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43f6
 // Size: 0x3b
 function getreservedobjid( objectivekey )
@@ -1388,7 +1389,7 @@ function getreservedobjid( objectivekey )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x443a
 // Size: 0x5d5
 function initspawns()
@@ -1518,7 +1519,7 @@ function initspawns()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4a17
 // Size: 0x8d, Type: bool
 function function_8e6da67bd91a7b85( zone, spawnpoint, overridedistance )
@@ -1546,7 +1547,7 @@ function function_8e6da67bd91a7b85( zone, spawnpoint, overridedistance )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4aad
 // Size: 0x190
 function getspawnpoint()
@@ -1580,7 +1581,7 @@ function getspawnpoint()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4c46
 // Size: 0xe9
 function function_22cb880502395ae( zone, var_ba0a9fd614a3f6ee, spawnteam )
@@ -1621,7 +1622,7 @@ function function_22cb880502395ae( zone, var_ba0a9fd614a3f6ee, spawnteam )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4d38
 // Size: 0x9b
 function function_c7a7b61fcc8647dc( zone, var_ba0a9fd614a3f6ee, spawnteam )
@@ -1649,7 +1650,7 @@ function function_c7a7b61fcc8647dc( zone, var_ba0a9fd614a3f6ee, spawnteam )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ddc
 // Size: 0x28
 function waittoprocess()
@@ -1670,7 +1671,7 @@ function waittoprocess()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e0c
 // Size: 0x12d
 function updategametypedvars()
@@ -1691,7 +1692,7 @@ function updategametypedvars()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f41
 // Size: 0x21
 function nextobjective()
@@ -1704,7 +1705,7 @@ function nextobjective()
 /#
 
     // Namespace robj / scripts\mp\gametypes\robj
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4f6a
     // Size: 0x3b, Type: dev
     function debugloc()
@@ -1723,7 +1724,7 @@ function nextobjective()
 #/
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4fad
 // Size: 0x100
 function onbeginuse( player )
@@ -1759,7 +1760,7 @@ function onbeginuse( player )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x50b5
 // Size: 0x13f
 function function_283fdcc6a567a598( player, struct, var_a051ed1b3dc4708c )
@@ -1802,7 +1803,7 @@ function function_283fdcc6a567a598( player, struct, var_a051ed1b3dc4708c )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x51fc
 // Size: 0x26
 function function_22b3d802b1a8bec5( time, part, state )
@@ -1812,7 +1813,7 @@ function function_22b3d802b1a8bec5( time, part, state )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x522a
 // Size: 0x19f
 function onenduse( team, player, result, forcecall, var_930163bad6941f10 )
@@ -1880,7 +1881,7 @@ function onenduse( team, player, result, forcecall, var_930163bad6941f10 )
 /#
 
     // Namespace robj / scripts\mp\gametypes\robj
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x53d1
     // Size: 0x15, Type: dev
     function function_ec2935d47ad1f5ce()
@@ -1891,7 +1892,7 @@ function onenduse( team, player, result, forcecall, var_930163bad6941f10 )
 #/
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x53ee
 // Size: 0x39e
 function run_progress_event( team )
@@ -1909,7 +1910,8 @@ function run_progress_event( team )
     
     level scripts\mp\gamelogic::pausetimer();
     
-    for (i = 0; i < level.bombtimer; i++) {
+    for ( i = 0; i < level.bombtimer ; i++ )
+    {
         if ( istrue( self.var_ec7886a87e5a6866 ) )
         {
             function_820ffa8e77528791( team );
@@ -1995,7 +1997,7 @@ function run_progress_event( team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x5794
 // Size: 0xee
 function give_capture_credit( touchlist, capturetime, capture_team, lastcaptureteam, credit_player, gameobject )
@@ -2013,7 +2015,7 @@ function give_capture_credit( touchlist, capturetime, capture_team, lastcapturet
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x588a
 // Size: 0x3f
 function function_820ffa8e77528791( team )
@@ -2027,7 +2029,7 @@ function function_820ffa8e77528791( team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x58d1
 // Size: 0x2d6
 function function_3dd5a18eafa343cc( bombzone )
@@ -2109,7 +2111,7 @@ function function_3dd5a18eafa343cc( bombzone )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5baf
 // Size: 0x29
 function function_935068d9c3667c49()
@@ -2124,7 +2126,7 @@ function function_935068d9c3667c49()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5be0
 // Size: 0x21, Type: bool
 function getobjectivestatus( objective )
@@ -2133,7 +2135,7 @@ function getobjectivestatus( objective )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c0a
 // Size: 0x5c, Type: bool
 function function_750464d23674c53c()
@@ -2150,7 +2152,7 @@ function function_750464d23674c53c()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c6f
 // Size: 0xff
 function function_bd8563c34b78c85b( player )
@@ -2198,7 +2200,7 @@ function function_bd8563c34b78c85b( player )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d76
 // Size: 0x66
 function function_b66f9aef33ae7f2d( durationseconds )
@@ -2218,7 +2220,7 @@ function function_b66f9aef33ae7f2d( durationseconds )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5de4
 // Size: 0xff
 function function_667fd79f2b5d6436( player, capturetime )
@@ -2254,7 +2256,7 @@ function function_667fd79f2b5d6436( player, capturetime )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5eeb
 // Size: 0x2e4
 function typinganimstart( player )
@@ -2316,7 +2318,7 @@ function typinganimstart( player )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x61d7
 // Size: 0x17, Type: bool
 function function_a04947052b0aba76( bombzone )
@@ -2325,7 +2327,7 @@ function function_a04947052b0aba76( bombzone )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61f7
 // Size: 0x5
 function function_75043e7e3c552318()
@@ -2334,7 +2336,7 @@ function function_75043e7e3c552318()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6205
 // Size: 0x5
 function function_72c78e10b4cdbdae()
@@ -2343,7 +2345,7 @@ function function_72c78e10b4cdbdae()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6213
 // Size: 0x3e
 function function_ed5fa482a1aa09c8()
@@ -2359,7 +2361,7 @@ function function_ed5fa482a1aa09c8()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6259
 // Size: 0xb
 function onuseplantobject( player )
@@ -2368,7 +2370,7 @@ function onuseplantobject( player )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x626c
 // Size: 0x17
 function oncantuse( player )
@@ -2377,7 +2379,7 @@ function oncantuse( player )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x628b
 // Size: 0x2
 function onreset()
@@ -2386,7 +2388,7 @@ function onreset()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6295
 // Size: 0x107
 function setupobjectiveicons()
@@ -2403,7 +2405,7 @@ function setupobjectiveicons()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63a4
 // Size: 0x64
 function setupnewcapturebot( capturebot )
@@ -2421,7 +2423,7 @@ function setupnewcapturebot( capturebot )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6410
 // Size: 0x1e0
 function function_e6fb1b719f5866f4()
@@ -2466,7 +2468,7 @@ function function_e6fb1b719f5866f4()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65f8
 // Size: 0x27d
 function function_5b561a0406f5e84d( capturebot )
@@ -2521,7 +2523,7 @@ function function_5b561a0406f5e84d( capturebot )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x687d
 // Size: 0xa3
 function removeexistingcapturebot( capturebot )
@@ -2551,7 +2553,7 @@ function removeexistingcapturebot( capturebot )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6928
 // Size: 0x5f
 function function_a04638eb5da83e60()
@@ -2574,7 +2576,7 @@ function function_a04638eb5da83e60()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x698f
 // Size: 0x82
 function identifyobjtypforcapturebot( objective )
@@ -2595,7 +2597,7 @@ function identifyobjtypforcapturebot( objective )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a19
 // Size: 0x22
 function function_3bfb09893720ad8b( team )
@@ -2604,7 +2606,7 @@ function function_3bfb09893720ad8b( team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a44
 // Size: 0x27
 function function_c3393659916e4f86()
@@ -2613,7 +2615,7 @@ function function_c3393659916e4f86()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a74
 // Size: 0x27
 function function_303cdf76d8d58324()
@@ -2622,7 +2624,7 @@ function function_303cdf76d8d58324()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6aa4
 // Size: 0x42
 function function_ef6d70570f9a1124()
@@ -2638,7 +2640,7 @@ function function_ef6d70570f9a1124()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6aee
 // Size: 0xa4
 function function_9897b5b4ecf74ef3( type, team )
@@ -2666,7 +2668,7 @@ function function_9897b5b4ecf74ef3( type, team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6b9a
 // Size: 0xec
 function function_6bc9adca4cc3c138( type, team )
@@ -2699,7 +2701,7 @@ function function_6bc9adca4cc3c138( type, team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6c8e
 // Size: 0xe5
 function function_235af39abd42037d( type, team )
@@ -2731,7 +2733,7 @@ function function_235af39abd42037d( type, team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6d7b
 // Size: 0xca
 function function_4353012f233eec7c( type, team )
@@ -2760,7 +2762,7 @@ function function_4353012f233eec7c( type, team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6e4d
 // Size: 0xd9
 function function_bc5112a335cb0a76( type, team )
@@ -2791,7 +2793,7 @@ function function_bc5112a335cb0a76( type, team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f2e
 // Size: 0x1f
 function function_a7bc23440006ca37()
@@ -2802,7 +2804,7 @@ function function_a7bc23440006ca37()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f55
 // Size: 0x3d
 function function_94f9e76230eb3b4d()
@@ -2819,7 +2821,7 @@ function function_94f9e76230eb3b4d()
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f9a
 // Size: 0x2b
 function function_fb13c62b0312196a( team )
@@ -2829,7 +2831,7 @@ function function_fb13c62b0312196a( team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fcd
 // Size: 0x34
 function function_a28df8967ffc5d66( team )
@@ -2840,7 +2842,7 @@ function function_a28df8967ffc5d66( team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7009
 // Size: 0x68
 function function_552d1571bb578587( team )
@@ -2857,7 +2859,7 @@ function function_552d1571bb578587( team )
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7079
 // Size: 0x2b
 function function_69128861a4095049( team )

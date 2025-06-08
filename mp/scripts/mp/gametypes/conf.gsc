@@ -26,7 +26,7 @@
 #namespace conf;
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x758
 // Size: 0x285
 function main()
@@ -112,22 +112,22 @@ function main()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9e5
 // Size: 0x90
 function initializematchrules()
 {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar( @"hash_1e36286c8a32c90", getmatchrulesdata( "confData", "pointsPerConfirm" ) );
+    setdynamicdvar( @"scr_conf_pointsperconfirm", getmatchrulesdata( "confData", "pointsPerConfirm" ) );
     setdynamicdvar( @"hash_2db4a6681a9b932", getmatchrulesdata( "confData", "pointsPerDeny" ) );
-    setdynamicdvar( @"hash_bf39ade48cf2d6c1", getmatchrulesdata( "confData", "killstreakConfirmed" ) );
+    setdynamicdvar( @"scr_conf_killstreakconfirmed", getmatchrulesdata( "confData", "killstreakConfirmed" ) );
     setdynamicdvar( @"hash_8412d62137fbce7a", 0 );
     registerhalftimedvar( "conf", 0 );
     setdynamicdvar( @"hash_1952d99344f2932a", 0 );
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7d
 // Size: 0x196
 function onstartgametype()
@@ -195,7 +195,7 @@ function private function_952bd6e10104d8a()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc42
 // Size: 0x1ca
 function initspawns()
@@ -236,7 +236,7 @@ function initspawns()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe14
 // Size: 0x52
 function updategametypedvars()
@@ -248,7 +248,7 @@ function updategametypedvars()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe6e
 // Size: 0x91
 function getspawnpoint()
@@ -277,7 +277,7 @@ function getspawnpoint()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xf08
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -286,7 +286,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf50
 // Size: 0x4b
 function onspawnplayer( revivespawn )
@@ -308,7 +308,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfa3
 // Size: 0x22
 function onplayerdisconnect( disconnectedplayer )
@@ -322,7 +322,7 @@ function onplayerdisconnect( disconnectedplayer )
 /#
 
     // Namespace conf / scripts\mp\gametypes\conf
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xfcd
     // Size: 0xa4, Type: dev
     function function_c878e93998246855()
@@ -353,7 +353,7 @@ function onplayerdisconnect( disconnectedplayer )
 #/
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1079
 // Size: 0x74
 function dogtagallyonusecb( player )
@@ -374,7 +374,7 @@ function dogtagallyonusecb( player )
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f5
 // Size: 0x15d
 function dogtagenemyonusecb( player )
@@ -423,7 +423,7 @@ function dogtagenemyonusecb( player )
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x125a
 // Size: 0x9
 function givesuper()
@@ -432,7 +432,7 @@ function givesuper()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x126b
 // Size: 0x1d3
 function function_5ed2699b0bd6cd0a()
@@ -487,7 +487,7 @@ function function_5ed2699b0bd6cd0a()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1446
 // Size: 0x85
 function function_23b30982847d4558()
@@ -515,7 +515,7 @@ function function_23b30982847d4558()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d3
 // Size: 0x42
 function function_40332f3e05619ec4()
@@ -529,7 +529,7 @@ function function_40332f3e05619ec4()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x151d
 // Size: 0x1d
 function function_9625dcbe330dbad8()
@@ -539,7 +539,7 @@ function function_9625dcbe330dbad8()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1542
 // Size: 0x1e
 function function_5cad57aaebc86449()
@@ -549,7 +549,7 @@ function function_5cad57aaebc86449()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x1568
 // Size: 0x6a
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -562,7 +562,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15da
 // Size: 0x1b, Type: bool
 function function_75eb145bbb9d4d95()
@@ -571,7 +571,7 @@ function function_75eb145bbb9d4d95()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15fe
 // Size: 0x1b, Type: bool
 function function_acfcdd7f0c4401ca()
@@ -580,7 +580,7 @@ function function_acfcdd7f0c4401ca()
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1622
 // Size: 0x27
 function function_2a5a687f57c9caa6( team, score )

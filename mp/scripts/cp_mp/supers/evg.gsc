@@ -24,7 +24,7 @@ function autoexec main()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x669
 // Size: 0x2
 function function_69aaff334f8191de()
@@ -33,7 +33,7 @@ function function_69aaff334f8191de()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x673
 // Size: 0x23, Type: bool
 function evg_used( grenade )
@@ -44,7 +44,7 @@ function evg_used( grenade )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x69f
 // Size: 0xaa
 function function_c13e791e9af862d9( objweapon )
@@ -70,7 +70,7 @@ function function_c13e791e9af862d9( objweapon )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x751
 // Size: 0x9b
 function function_5e0605fb98c65415()
@@ -107,7 +107,7 @@ function function_5e0605fb98c65415()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f4
 // Size: 0x1fa
 function function_cc4ae8e506326196( objweapon )
@@ -165,7 +165,7 @@ function function_cc4ae8e506326196( objweapon )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9f6
 // Size: 0x34e
 function function_65d533faebb8fd7d()
@@ -279,7 +279,7 @@ function function_65d533faebb8fd7d()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd4c
 // Size: 0x62
 function function_6cbb5644d0b51e2d()
@@ -297,7 +297,7 @@ function function_6cbb5644d0b51e2d()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdb6
 // Size: 0x7e
 function function_8ef049fddedb272f()
@@ -319,7 +319,7 @@ function function_8ef049fddedb272f()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe3c
 // Size: 0xbe
 function function_53710fd0ad26ee61( enabled )
@@ -358,7 +358,7 @@ function function_53710fd0ad26ee61( enabled )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf02
 // Size: 0xd5
 function function_248a3eaffa9c3dff()
@@ -400,7 +400,7 @@ function function_248a3eaffa9c3dff()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfe0
 // Size: 0xd5
 function function_289ea0fdb50f3084()
@@ -442,7 +442,7 @@ function function_289ea0fdb50f3084()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10be
 // Size: 0x239
 function function_268e214f18447610( animdelay )
@@ -462,7 +462,8 @@ function function_268e214f18447610( animdelay )
     var_5b27571147e34abd = getdvarint( @"hash_20b810a0c1bd5e81", 1 );
     outlineasset = undefined;
     
-    for (newspawns = undefined; true; newspawns = []) {
+    for ( newspawns = undefined; true ; newspawns = [] )
+    {
         entlist = array_combine( getaiarray(), level.players );
         
         foreach ( player in entlist )
@@ -533,7 +534,7 @@ function function_268e214f18447610( animdelay )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12ff
 // Size: 0x93
 function function_e97683bcf5f6586e( owner )
@@ -562,7 +563,7 @@ function function_e97683bcf5f6586e( owner )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x139a
 // Size: 0x10d
 function function_ab4442abb750dff6( animdelay )
@@ -609,7 +610,7 @@ function function_ab4442abb750dff6( animdelay )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14af
 // Size: 0x13
 function function_bbf3a083d978a6d3( isjammed )
@@ -618,7 +619,7 @@ function function_bbf3a083d978a6d3( isjammed )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14ca
 // Size: 0x5a
 function function_d8743ede8ca118c6( equipmentref, slot )
@@ -636,7 +637,7 @@ function function_d8743ede8ca118c6( equipmentref, slot )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x152c
 // Size: 0x20
 function function_cb9565a90e01f30()
@@ -648,7 +649,7 @@ function function_cb9565a90e01f30()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1554
 // Size: 0x22
 function function_816b4cfd02dde591()
@@ -659,7 +660,7 @@ function function_816b4cfd02dde591()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x157e
 // Size: 0x196
 function function_438ddb00054b12a9()
@@ -723,7 +724,7 @@ function function_438ddb00054b12a9()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x171c
 // Size: 0x10
 function function_af4d8022b3e0453b()
@@ -732,7 +733,7 @@ function function_af4d8022b3e0453b()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1734
 // Size: 0x9e
 function function_2ac5b3d09529dd5b()
@@ -757,7 +758,7 @@ function function_2ac5b3d09529dd5b()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17da
 // Size: 0x1c0
 function function_dcfd36b8508e118e()
@@ -830,7 +831,7 @@ function function_dcfd36b8508e118e()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a2
 // Size: 0x76
 function function_1ce7392d73fb7b4f()
@@ -851,7 +852,7 @@ function function_1ce7392d73fb7b4f()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a20
 // Size: 0x83
 function function_566f0857dabdcf7d()
@@ -881,7 +882,7 @@ function function_566f0857dabdcf7d()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1aab
 // Size: 0x1ce
 function function_afd32ce1f3abe610( shouldrefundsuper, var_d0e59be609065b4f )
@@ -939,7 +940,7 @@ function function_afd32ce1f3abe610( shouldrefundsuper, var_d0e59be609065b4f )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c81
 // Size: 0x65
 function function_52c31471752bee6f( data )
@@ -955,7 +956,7 @@ function function_52c31471752bee6f( data )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cee
 // Size: 0x65
 function function_a2f9ff9de49bc0b6( data )
@@ -971,7 +972,7 @@ function function_a2f9ff9de49bc0b6( data )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d5b
 // Size: 0x65
 function function_381e4571957a1940( data )
@@ -987,7 +988,7 @@ function function_381e4571957a1940( data )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dc8
 // Size: 0x6b
 function function_570ac3b064bbb1a9( data )
@@ -1003,7 +1004,7 @@ function function_570ac3b064bbb1a9( data )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e3b
 // Size: 0x168
 function evg_handlekillcam( attacker )
@@ -1037,7 +1038,7 @@ function evg_handlekillcam( attacker )
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fab
 // Size: 0x52
 function function_3cb36de1b99ab71()
@@ -1057,7 +1058,7 @@ function function_3cb36de1b99ab71()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2005
 // Size: 0xe7
 function function_7dc67e564fe860c0()
@@ -1098,7 +1099,7 @@ function function_7dc67e564fe860c0()
 }
 
 // Namespace evg / scripts\cp_mp\supers\evg
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20f4
 // Size: 0x60
 function function_eac06f5aa18f117()

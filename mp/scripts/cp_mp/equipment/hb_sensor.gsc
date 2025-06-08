@@ -7,7 +7,7 @@
 #namespace hb_sensor;
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x202
 // Size: 0x14e
 function hb_sensor_used( grenade )
@@ -63,7 +63,7 @@ function hb_sensor_used( grenade )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x358
 // Size: 0x158
 function function_78ce4bfda3e762b3( equipmentref, slot, variantid )
@@ -118,7 +118,7 @@ function function_78ce4bfda3e762b3( equipmentref, slot, variantid )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b8
 // Size: 0x22
 function function_7f948b7f43448ea9( equipmentref, slot )
@@ -128,7 +128,7 @@ function function_7f948b7f43448ea9( equipmentref, slot )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e2
 // Size: 0x1f
 function function_323286bf3aa11fbb()
@@ -140,7 +140,7 @@ function function_323286bf3aa11fbb()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x509
 // Size: 0x8d
 function function_db61876aca4e4cd3()
@@ -169,7 +169,7 @@ function function_db61876aca4e4cd3()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x59f
 // Size: 0x89, Type: bool
 function function_30cd943d877dc29f( quantity )
@@ -194,7 +194,7 @@ function function_30cd943d877dc29f( quantity )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x631
 // Size: 0x42
 function function_3f703abc99c1bb80()
@@ -208,7 +208,7 @@ function function_3f703abc99c1bb80()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67b
 // Size: 0x13e
 function function_fc7e5d7d7f99703a()
@@ -268,7 +268,7 @@ function function_fc7e5d7d7f99703a()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c1
 // Size: 0xa8
 function function_83ef0926b5392999()
@@ -301,7 +301,7 @@ function function_83ef0926b5392999()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x871
 // Size: 0x106
 function function_83ed70de721aee0f()
@@ -343,7 +343,7 @@ function function_83ed70de721aee0f()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97f
 // Size: 0x43, Type: bool
 function function_8803b12c07518865()
@@ -360,7 +360,7 @@ function function_8803b12c07518865()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9cb
 // Size: 0x1f
 function function_e27c4d2340d9d56b()
@@ -373,7 +373,7 @@ function function_e27c4d2340d9d56b()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f2
 // Size: 0x34
 function checkperk( perk )
@@ -387,7 +387,7 @@ function checkperk( perk )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\equipment\hb_sensor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa2f
 // Size: 0x1c
 function function_3efd622905908041( ref, currammo )

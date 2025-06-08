@@ -7,7 +7,7 @@
 #namespace namespace_ed1cfb3c9d4fe39f;
 
 // Namespace namespace_ed1cfb3c9d4fe39f / namespace_e9cc5762e80bb016
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe1
 // Size: 0x35
 function init()

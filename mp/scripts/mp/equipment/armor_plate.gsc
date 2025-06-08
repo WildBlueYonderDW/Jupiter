@@ -16,7 +16,7 @@
 #namespace armor_plate;
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x355
 // Size: 0x115
 function br_armor_plate_used()
@@ -42,7 +42,7 @@ function br_armor_plate_used()
     
     var_830009cefce35a66 = self.br_armorhealth + 5;
     var_1c07ef7bc0e3723a = clamp( var_830009cefce35a66, 0, self.br_maxarmorhealth );
-    var_43167c86311c997e = max( 1, getdvarint( @"hash_5cea4fc8adfef297", 50 ) );
+    var_43167c86311c997e = max( 1, getdvarint( @"scr_br_armor_heal_amount", 50 ) );
     var_1c07ef7bc0e3723a = int( var_1c07ef7bc0e3723a / var_43167c86311c997e ) * var_43167c86311c997e + var_43167c86311c997e;
     self.br_armorhealth = clamp( var_1c07ef7bc0e3723a, 0, self.br_maxarmorhealth );
     br_armor_plate_amount_equipped_set( self.br_armorhealth );
@@ -52,14 +52,14 @@ function br_armor_plate_used()
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x472
 // Size: 0xa7
 function br_armor_plate_broken_remove()
 {
     var_830009cefce35a66 = self.br_armorhealth + 5;
     var_1c07ef7bc0e3723a = clamp( var_830009cefce35a66, 0, self.br_maxarmorhealth );
-    var_43167c86311c997e = max( 1, getdvarint( @"hash_5cea4fc8adfef297", 50 ) );
+    var_43167c86311c997e = max( 1, getdvarint( @"scr_br_armor_heal_amount", 50 ) );
     var_1c07ef7bc0e3723a = int( var_1c07ef7bc0e3723a / var_43167c86311c997e ) * var_43167c86311c997e;
     armorafter = clamp( var_1c07ef7bc0e3723a, 0, self.br_maxarmorhealth );
     
@@ -76,7 +76,7 @@ function br_armor_plate_broken_remove()
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x521
 // Size: 0x142
 function br_armor_plate_amount_equipped_set( armorvalue )
@@ -104,7 +104,7 @@ function br_armor_plate_amount_equipped_set( armorvalue )
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x66b
 // Size: 0xaf
 function br_use_armor_plate( item, itemcount )
@@ -138,7 +138,7 @@ function br_use_armor_plate( item, itemcount )
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x722
 // Size: 0x6e
 function br_watch_armor_cancel_notifys()
@@ -155,7 +155,7 @@ function br_watch_armor_cancel_notifys()
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x798
 // Size: 0xc6
 function br_watch_armor_weapon()
@@ -187,7 +187,7 @@ function br_watch_armor_weapon()
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x866
 // Size: 0xa6
 function br_toggle_armor_allows( var_e12d78c11d85d9c2 )
@@ -211,7 +211,7 @@ function br_toggle_armor_allows( var_e12d78c11d85d9c2 )
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x914
 // Size: 0x1b1
 function br_insert_armor( streakinfo )
@@ -277,7 +277,7 @@ function br_insert_armor( streakinfo )
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xacd
 // Size: 0xea, Type: bool
 function br_is_allowed_armor_insert()
@@ -310,7 +310,7 @@ function br_is_allowed_armor_insert()
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc0
 // Size: 0x47, Type: bool
 function br_should_continue_adding_armor()
@@ -321,7 +321,7 @@ function br_should_continue_adding_armor()
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc10
 // Size: 0x68
 function br_add_player_commands()
@@ -335,7 +335,7 @@ function br_add_player_commands()
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc80
 // Size: 0x68
 function br_remove_player_commands()
@@ -349,7 +349,7 @@ function br_remove_player_commands()
 }
 
 // Namespace armor_plate / scripts\mp\equipment\armor_plate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf0
 // Size: 0x7e
 function br_armor_repair_end()

@@ -6,7 +6,7 @@
 #namespace visibility_mode;
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a6
 // Size: 0x15
 function main( funcsarray )
@@ -93,7 +93,8 @@ function private function_9d4b2121c099b285()
             continue;
         }
         
-        for (index = 0; index < level.visibilitymode.activeclients.size; index++) {
+        for ( index = 0; index < level.visibilitymode.activeclients.size ; index++ )
+        {
             if ( isdefined( level.visibilitymode.activeclients[ index ] ) && !isdefined( level.visibilitymode.activeclients[ index ].var_ada3f21a8212c26f ) )
             {
                 level thread function_c3ae50f84a8329ac( level.visibilitymode.activeclients[ index ] );
@@ -175,7 +176,8 @@ function private function_c3ae50f84a8329ac( client )
         active_targets = [[ level.visibilitymode.funcs[ "getTargetArray" ] ]]( client );
         active_targets = array_combine( active_targets, level.visibilitymode.forced_ents );
         
-        for (i = 0; i < active_targets.size; i++) {
+        for ( i = 0; i < active_targets.size ; i++ )
+        {
             if ( active_targets[ i ] == client )
             {
                 continue;
@@ -330,7 +332,8 @@ function private visibilitymode_disableoutlineoncallback( client )
     self endon( "visibilityMode_disableOutlineOnCallback_" + clientnum );
     oldvalue = client.visibilitymodeval;
     
-    for (var_26d30630ea0383c3 = client.var_5615f87228f360c8; true; var_26d30630ea0383c3 = client.var_5615f87228f360c8) {
+    for ( var_26d30630ea0383c3 = client.var_5615f87228f360c8; true ; var_26d30630ea0383c3 = client.var_5615f87228f360c8 )
+    {
         client waittill( "visibilityModeVal", val, outlineval );
         
         if ( isdefined( val ) && val == 0 )
@@ -463,7 +466,7 @@ function private function_3359e7308038233e( client )
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1070
 // Size: 0x10b
 function function_8c2e8285c9915b12( invalue, outlinevalue )
@@ -811,7 +814,8 @@ function private function_b8618b0d8d7ff3e3()
     returndata.entity = undefined;
     returndata.type = "middle";
     
-    for (i = 0; i < 15; i++) {
+    for ( i = 0; i < 15 ; i++ )
+    {
         if ( i == 1 )
         {
             traceoffset = rotatevector( ( 0, var_9ccff25b22cb483b * -1, 0 ), playerangles );
@@ -1056,7 +1060,8 @@ function private function_5c04dcd5e95fbb53()
     
     active_players = sortbydistance( active_players, self.origin );
     
-    for (i = 0; i < active_players.size; i++) {
+    for ( i = 0; i < active_players.size ; i++ )
+    {
         if ( active_players[ i ] == self )
         {
             continue;
@@ -1115,7 +1120,8 @@ function private function_dc7453c8550c512c()
     clientenemies = sortbydistance( clientenemies, self.origin );
     var_72013161599ed91b = min( 5, clientenemies.size );
     
-    for (i = 0; i < var_72013161599ed91b; i++) {
+    for ( i = 0; i < var_72013161599ed91b ; i++ )
+    {
         if ( !function_8eee51af38988db6( self, clientenemies[ i ] ) )
         {
             continue;
@@ -1157,7 +1163,8 @@ function private function_49afc10334084167()
     flag_wait( "objectives_registered" );
     var_4267b02eda9e961 = [];
     
-    for (i = 0; i < level.worldobjidpool.active.size; i++) {
+    for ( i = 0; i < level.worldobjidpool.active.size ; i++ )
+    {
         if ( isdefined( level.worldobjidpool.active[ i ].identifier ) && level.worldobjidpool.active[ i ].identifier == "nonobj_marker" )
         {
             continue;
@@ -1171,7 +1178,8 @@ function private function_49afc10334084167()
     
     var_4267b02eda9e961 = sortbydistance( var_4267b02eda9e961, self.origin );
     
-    for (i = 0; i < var_4267b02eda9e961.size; i++) {
+    for ( i = 0; i < var_4267b02eda9e961.size ; i++ )
+    {
         var_8137caff89efd99 = function_bd41d880db5c1bad( var_4267b02eda9e961[ i ].objinfo.identifier );
         
         if ( isdefined( var_8137caff89efd99 ) )
@@ -1231,7 +1239,7 @@ function private function_bd41d880db5c1bad( var_bc23a0a6125c16f4 )
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x253c
 // Size: 0x7e
 function function_7068f93aacf2ef59( var_bc23a0a6125c16f4, soundalias )
@@ -1255,7 +1263,7 @@ function function_7068f93aacf2ef59( var_bc23a0a6125c16f4, soundalias )
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25c2
 // Size: 0xd9, Type: bool
 function function_8eee51af38988db6( player, target )
@@ -1300,7 +1308,7 @@ function function_8eee51af38988db6( player, target )
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26a4
 // Size: 0x1c, Type: bool
 function function_5f46cf1503a0541a()
@@ -1314,7 +1322,7 @@ function function_5f46cf1503a0541a()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26c9
 // Size: 0x4e
 function function_ea4e39208c784a4a()
@@ -1330,7 +1338,7 @@ function function_ea4e39208c784a4a()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2720
 // Size: 0x4e
 function function_4448756918b98e87()
@@ -1346,7 +1354,7 @@ function function_4448756918b98e87()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2777
 // Size: 0x4e
 function function_63a1833b6a352cd7()
@@ -1362,7 +1370,7 @@ function function_63a1833b6a352cd7()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27ce
 // Size: 0x4e
 function function_266da5d877397673()
@@ -1378,7 +1386,7 @@ function function_266da5d877397673()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2825
 // Size: 0x4a
 function function_787341d4cc18bba()
@@ -1394,7 +1402,7 @@ function function_787341d4cc18bba()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2878
 // Size: 0x8a
 function function_88ec96d66632c2b9()
@@ -1403,7 +1411,8 @@ function function_88ec96d66632c2b9()
     returnguys = [];
     playernum = self getentitynumber();
     
-    for (i = 0; i < active_targets.size; i++) {
+    for ( i = 0; i < active_targets.size ; i++ )
+    {
         if ( isdefined( active_targets[ i ].var_79a7c8a11ed7c0e3 ) )
         {
             if ( isdefined( active_targets[ i ].var_79a7c8a11ed7c0e3[ playernum ] ) )
@@ -1417,7 +1426,7 @@ function function_88ec96d66632c2b9()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x290b
 // Size: 0x4d
 function function_90ce2459298d263()
@@ -1425,7 +1434,8 @@ function function_90ce2459298d263()
     all_targets = function_88ec96d66632c2b9();
     return_targets = [];
     
-    for (i = 0; i < all_targets.size; i++) {
+    for ( i = 0; i < all_targets.size ; i++ )
+    {
         if ( function_afe539c207a6b2fb( all_targets[ i ], self ) )
         {
             return_targets[ return_targets.size ] = all_targets[ i ];
@@ -1436,7 +1446,7 @@ function function_90ce2459298d263()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2961
 // Size: 0x4d
 function function_e3c04f03881b4dc7()
@@ -1444,7 +1454,8 @@ function function_e3c04f03881b4dc7()
     all_targets = function_88ec96d66632c2b9();
     return_targets = [];
     
-    for (i = 0; i < all_targets.size; i++) {
+    for ( i = 0; i < all_targets.size ; i++ )
+    {
         if ( !function_afe539c207a6b2fb( all_targets[ i ], self ) )
         {
             return_targets[ return_targets.size ] = all_targets[ i ];
@@ -1455,7 +1466,7 @@ function function_e3c04f03881b4dc7()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29b7
 // Size: 0x87
 function function_c1d9fd48eb09c8c9()
@@ -1464,7 +1475,8 @@ function function_c1d9fd48eb09c8c9()
     {
         activeplayers = [];
         
-        for (i = 0; i < level.players.size; i++) {
+        for ( i = 0; i < level.players.size ; i++ )
+        {
             if ( level.players[ i ] function_5f46cf1503a0541a() )
             {
                 activeplayers[ activeplayers.size ] = level.players[ i ];
@@ -1483,7 +1495,7 @@ function function_c1d9fd48eb09c8c9()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a46
 // Size: 0x12f
 function function_924634e910fbfc75()
@@ -1530,7 +1542,7 @@ function function_924634e910fbfc75()
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b7d
 // Size: 0xa7
 function function_8ba05ef17e2b7d10( entity, team )
@@ -1552,7 +1564,7 @@ function function_8ba05ef17e2b7d10( entity, team )
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c2c
 // Size: 0x73
 function function_b6e23e71bb7ad50f( entity )
@@ -1570,7 +1582,7 @@ function function_b6e23e71bb7ad50f( entity )
 }
 
 // Namespace visibility_mode / scripts\common\visibility_mode
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ca7
 // Size: 0x107
 function function_d5f76e611c78509a()

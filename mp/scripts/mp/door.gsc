@@ -27,7 +27,7 @@
 #namespace door;
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda6
 // Size: 0x95
 function door_dynamic_setup( starthidden )
@@ -52,7 +52,7 @@ function door_dynamic_setup( starthidden )
 }
 
 // Namespace door / scripts\mp\door
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe43
 // Size: 0x727
 function door_dynamic_setup_adapter( enttargetname, lean, starthidden )
@@ -177,7 +177,7 @@ function door_dynamic_setup_adapter( enttargetname, lean, starthidden )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1572
 // Size: 0x92
 function door_dynamic_setup_post_init()
@@ -195,7 +195,7 @@ function door_dynamic_setup_post_init()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x160c
 // Size: 0x21b
 function triggerlisten( door )
@@ -268,7 +268,7 @@ function triggerlisten( door )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x182f
 // Size: 0x1a0
 function door_dynamic_parse_parameters( parameters )
@@ -323,7 +323,7 @@ function door_dynamic_parse_parameters( parameters )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19d7
 // Size: 0xd2
 function door_system_init( triggername )
@@ -347,7 +347,7 @@ function door_system_init( triggername )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ab1
 // Size: 0x4bd
 function door_setup()
@@ -469,7 +469,7 @@ function door_setup()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f76
 // Size: 0xea
 function door_think()
@@ -502,7 +502,7 @@ function door_think()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2068
 // Size: 0x9b
 function door_state_next( state )
@@ -540,7 +540,7 @@ function door_state_next( state )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x210c
 // Size: 0xb36
 function door_state_update( nosound )
@@ -809,7 +809,7 @@ function door_state_update( nosound )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c4a
 // Size: 0x26b
 function door_state_update_sound()
@@ -885,7 +885,7 @@ function door_state_update_sound()
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ebd
 // Size: 0x6f
 function door_state_change( state, nosound )
@@ -903,7 +903,7 @@ function door_state_change( state, nosound )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f34
 // Size: 0x18c
 function door_state_exit( state )
@@ -955,7 +955,7 @@ function door_state_exit( state )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30c8
 // Size: 0x140
 function door_state_on_interrupt()
@@ -1003,7 +1003,7 @@ function door_state_on_interrupt()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3210
 // Size: 0x77
 function waittill_any_triggered_return_triggerer( triggers )
@@ -1020,7 +1020,7 @@ function waittill_any_triggered_return_triggerer( triggers )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3290
 // Size: 0x102
 function return_triggerer( trigger )
@@ -1065,7 +1065,7 @@ function return_triggerer( trigger )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x339a
 // Size: 0x17d
 function button_parse_parameters( parameters )
@@ -1116,7 +1116,7 @@ function button_parse_parameters( parameters )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x351f
 // Size: 0x21e
 function door_parse_parameters( parameters )
@@ -1182,7 +1182,7 @@ function door_parse_parameters( parameters )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3745
 // Size: 0x153
 function trigger_parse_parameters( parameters )
@@ -1229,7 +1229,7 @@ function trigger_parse_parameters( parameters )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38a0
 // Size: 0x127
 function bashmonitor()
@@ -1268,7 +1268,7 @@ function bashmonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39cf
 // Size: 0x40, Type: bool
 function bashproxcheck( player )
@@ -1279,7 +1279,7 @@ function bashproxcheck( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a18
 // Size: 0x1af, Type: bool
 function shouldbashopen( player )
@@ -1324,7 +1324,7 @@ function shouldbashopen( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3bd0
 // Size: 0x3fc
 function bashopen( player, pos )
@@ -1472,7 +1472,7 @@ function bashopen( player, pos )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fd4
 // Size: 0x35
 function bashpresentation( player )
@@ -1482,7 +1482,7 @@ function bashpresentation( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4011
 // Size: 0x231
 function monitordamage()
@@ -1543,7 +1543,7 @@ function monitordamage()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x424a
 // Size: 0x194
 function openmonitor()
@@ -1629,7 +1629,7 @@ function openmonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43e6
 // Size: 0x2ac
 function cheapopen( player )
@@ -1681,7 +1681,7 @@ function cheapopen( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x469a
 // Size: 0x1eb
 function ajar( player )
@@ -1727,7 +1727,7 @@ function ajar( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x488d
 // Size: 0xeb
 function pushmonitor()
@@ -1769,7 +1769,7 @@ function pushmonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4980
 // Size: 0xdc, Type: bool
 function pushproxcheck( player )
@@ -1787,7 +1787,7 @@ function pushproxcheck( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a65
 // Size: 0x272
 function push( player )
@@ -1840,7 +1840,7 @@ function push( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4cdf
 // Size: 0xa9
 function autoclosemonitor()
@@ -1875,7 +1875,7 @@ function autoclosemonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d90
 // Size: 0x2a9
 function changestate( newstate )
@@ -1979,7 +1979,7 @@ function changestate( newstate )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5041
 // Size: 0x9a
 function updatestate()
@@ -2008,7 +2008,7 @@ function updatestate()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x50e3
 // Size: 0xfa
 function closemonitor()
@@ -2064,7 +2064,7 @@ function closemonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51e5
 // Size: 0x1e9
 function closedoor( var_c81f097ebbbed511 )
@@ -2125,7 +2125,7 @@ function closedoor( var_c81f097ebbbed511 )
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x53d6
 // Size: 0x26
 function angle_diff( value1, value2 )
@@ -2134,7 +2134,7 @@ function angle_diff( value1, value2 )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5405
 // Size: 0x25d
 function amortizeyawtraces()
@@ -2189,7 +2189,7 @@ function amortizeyawtraces()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x566a
 // Size: 0x15
 function get_max_yaws()
@@ -2199,7 +2199,7 @@ function get_max_yaws()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5687
 // Size: 0xf8
 function get_max_yaw( left )
@@ -2257,7 +2257,7 @@ function get_max_yaw( left )
 }
 
 // Namespace door / scripts\mp\door
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5787
 // Size: 0x1a7
 function get_max_yaw_internal( test_yaw, increment, left )
@@ -2344,7 +2344,7 @@ function get_max_yaw_internal( test_yaw, increment, left )
 }
 
 // Namespace door / scripts\mp\door
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5937
 // Size: 0x1ef, Type: bool
 function yaw_collision_check( yaw, increment, left )
@@ -2392,7 +2392,7 @@ function yaw_collision_check( yaw, increment, left )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b2f
 // Size: 0x117
 function perk_doorsensethink()
@@ -2434,7 +2434,7 @@ function perk_doorsensethink()
 }
 
 // Namespace door / scripts\mp\door
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5c4e
 // Size: 0x110
 function perk_doorsense_outlinedoor( var_dadbe427bdd6c4d, var_b0aeb7fba823276f, door )
@@ -2465,7 +2465,7 @@ function perk_doorsense_outlinedoor( var_dadbe427bdd6c4d, var_b0aeb7fba823276f, 
 }
 
 // Namespace door / scripts\mp\door
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5d66
 // Size: 0x10e
 function perk_doorsense_outlineenemies( var_dadbe427bdd6c4d, var_b0aeb7fba823276f, door )
@@ -2496,7 +2496,7 @@ function perk_doorsense_outlineenemies( var_dadbe427bdd6c4d, var_b0aeb7fba823276
 }
 
 // Namespace door / scripts\mp\door
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5e7c
 // Size: 0xc9, Type: bool
 function perk_doorsense_othersideofdoorcheck( player1, player2, door )
@@ -2516,7 +2516,7 @@ function perk_doorsense_othersideofdoorcheck( player1, player2, door )
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5f4e
 // Size: 0x22
 function perk_doorsense_trackoutlinedisable( outlineid, player )
@@ -2526,7 +2526,7 @@ function perk_doorsense_trackoutlinedisable( outlineid, player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f78
 // Size: 0x56
 function onplayerspawned()
@@ -2538,7 +2538,7 @@ function onplayerspawned()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fd6
 // Size: 0x9e
 function updatelockpromptvisibility()
@@ -2561,7 +2561,7 @@ function updatelockpromptvisibility()
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x607c
 // Size: 0x69
 function updatealldoorslockvisibilityforplayer( player, var_66ee62bfcef7c9e5 )
@@ -2573,7 +2573,7 @@ function updatealldoorslockvisibilityforplayer( player, var_66ee62bfcef7c9e5 )
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x60ed
 // Size: 0x108
 function updatelockpromptvisibilityforplayer( player, visibility )
@@ -2611,7 +2611,7 @@ function updatelockpromptvisibilityforplayer( player, visibility )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61fd
 // Size: 0xd9
 function lockmonitor()
@@ -2659,7 +2659,7 @@ function lockmonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62de
 // Size: 0x2c
 function lockdoor()
@@ -2673,7 +2673,7 @@ function lockdoor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6312
 // Size: 0x88
 function updatealarmpromptvisibility()
@@ -2696,7 +2696,7 @@ function updatealarmpromptvisibility()
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x63a2
 // Size: 0x69
 function updatealldoorsalarmvisibilityforplayer( player, var_1e635a556969499b )
@@ -2708,7 +2708,7 @@ function updatealldoorsalarmvisibilityforplayer( player, var_1e635a556969499b )
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6413
 // Size: 0x128
 function updatealarmpromptsvisibilityforplayer( player, canseeprompt )
@@ -2740,7 +2740,7 @@ function updatealarmpromptsvisibilityforplayer( player, canseeprompt )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6543
 // Size: 0xff
 function alarmmonitor()
@@ -2775,7 +2775,7 @@ function alarmmonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x664a
 // Size: 0x6f
 function _alarmmonitorinternal( alarmprompt )
@@ -2811,7 +2811,7 @@ function _alarmmonitorinternal( alarmprompt )
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x66c1
 // Size: 0x18a
 function alarmdoor( alarmowner, alarmprompt )
@@ -2844,7 +2844,7 @@ function alarmdoor( alarmowner, alarmprompt )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6853
 // Size: 0x132
 function removealarmmonitor()
@@ -2899,7 +2899,7 @@ function removealarmmonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x698d
 // Size: 0x99
 function disownalarmmonitor()
@@ -2933,7 +2933,7 @@ function disownalarmmonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a2e
 // Size: 0xb3
 function removealarmdoor( playsound )
@@ -2960,7 +2960,7 @@ function removealarmdoor( playsound )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ae9
 // Size: 0x18d
 function checktriggeralarm( victim )
@@ -3012,7 +3012,7 @@ function checktriggeralarm( victim )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c7e
 // Size: 0x69
 function ajarmonitor()
@@ -3044,7 +3044,7 @@ function ajarmonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6cef
 // Size: 0x122
 function breachmonitor()
@@ -3096,7 +3096,7 @@ function breachmonitor()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e19
 // Size: 0x14
 function breachdoor( player )
@@ -3105,7 +3105,7 @@ function breachdoor( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e35
 // Size: 0x2a9
 function monitorbreachmelee()
@@ -3171,7 +3171,7 @@ function monitorbreachmelee()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x70e6
 // Size: 0x3d3
 function plantbreach( player )
@@ -3273,7 +3273,7 @@ function plantbreach( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x74c2
 // Size: 0x34a
 function bomb_planted_think( player, openleft )
@@ -3352,7 +3352,7 @@ function bomb_planted_think( player, openleft )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7814
 // Size: 0x18d
 function bomb_fuse_think( team )
@@ -3410,7 +3410,7 @@ function bomb_fuse_think( team )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x79a9
 // Size: 0x74
 function watchplayerdeath( player )
@@ -3438,7 +3438,7 @@ function watchplayerdeath( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a25
 // Size: 0x2
 function script_model_anims()
@@ -3447,7 +3447,7 @@ function script_model_anims()
 }
 
 // Namespace door / scripts\mp\door
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7a2f
 // Size: 0xe8
 function create_player_rig( player, animname, rig_model )
@@ -3475,7 +3475,7 @@ function create_player_rig( player, animname, rig_model )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b1f
 // Size: 0x92
 function remove_player_rig( player )
@@ -3502,7 +3502,7 @@ function remove_player_rig( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7bb9
 // Size: 0x1c
 function watch_remove_rig( struct )
@@ -3511,7 +3511,7 @@ function watch_remove_rig( struct )
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7bdd
 // Size: 0x46
 function givebreachscore( player )
@@ -3523,7 +3523,7 @@ function givebreachscore( player )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c2b
 // Size: 0x94
 function givegunless()
@@ -3550,7 +3550,7 @@ function givegunless()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7cc8
 // Size: 0xa8
 function takegunless()
@@ -3585,7 +3585,7 @@ function takegunless()
 }
 
 // Namespace door / scripts\mp\door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d78
 // Size: 0x57
 function updatelocklight( state )
@@ -3607,7 +3607,7 @@ function updatelocklight( state )
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7dd7
 // Size: 0x375
 function linkdoubledoors()
@@ -3671,7 +3671,7 @@ function linkdoubledoors()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8154
 // Size: 0x35
 function door_createnavobstacle()
@@ -3690,7 +3690,7 @@ function door_createnavobstacle()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8191
 // Size: 0x29
 function door_destroynavobstacle()
@@ -3705,7 +3705,7 @@ function door_destroynavobstacle()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x81c2
 // Size: 0x20
 function door_enableaudioportal()
@@ -3717,7 +3717,7 @@ function door_enableaudioportal()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x81ea
 // Size: 0x7a
 function door_disableaudioportal()
@@ -3734,7 +3734,7 @@ function door_disableaudioportal()
 }
 
 // Namespace door / scripts\mp\door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x826c
 // Size: 0x1d, Type: bool
 function door_can_open_check()

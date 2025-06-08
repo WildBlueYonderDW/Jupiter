@@ -16,7 +16,7 @@
 #namespace mp_jup_resort_gw;
 
 // Namespace mp_jup_resort_gw / scripts\mp\maps\mp_jup_resort_gw\mp_jup_resort_gw
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x180
 function main()
@@ -60,7 +60,7 @@ function main()
     game[ "defenders" ] = "axis";
     game[ "allies_outfit" ] = "urban";
     game[ "axis_outfit" ] = "woodland";
-    setdvar( @"hash_be80c9650d91b8ac", 4500 );
+    setdvar( @"fd_helicopter_altitude_limiter", 4500 );
     level.var_56bcdc219d432f80[ "axis" ] = 15;
     level.var_56bcdc219d432f80[ "allies" ] = 15;
     

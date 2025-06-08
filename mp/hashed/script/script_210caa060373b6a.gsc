@@ -10,7 +10,7 @@
 #namespace setup;
 
 // Namespace setup / namespace_bbb55abdbe98026a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf7
 // Size: 0x144
 function setupagent( taskid )
@@ -53,7 +53,7 @@ function setupagent( taskid )
 }
 
 // Namespace setup / namespace_bbb55abdbe98026a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x244
 // Size: 0x2b
 function function_40150623eb9f4ea2( taskid )
@@ -64,7 +64,7 @@ function function_40150623eb9f4ea2( taskid )
 }
 
 // Namespace setup / namespace_bbb55abdbe98026a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x277
 // Size: 0x18
 function handledeathcleanup()

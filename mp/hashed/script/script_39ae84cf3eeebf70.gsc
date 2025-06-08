@@ -13,8 +13,8 @@
 #namespace namespace_f46cce884171ed03;
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x51f
+// Params 0
+// Checksum 0x0, Offset: 0x580
 // Size: 0x97
 function function_51e961150661d4b4()
 {
@@ -24,8 +24,8 @@ function function_51e961150661d4b4()
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5be
+// Params 0
+// Checksum 0x0, Offset: 0x61f
 // Size: 0x97
 function function_58b5b82e9532c92b()
 {
@@ -35,8 +35,8 @@ function function_58b5b82e9532c92b()
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x65d
+// Params 2
+// Checksum 0x0, Offset: 0x6be
 // Size: 0x381
 function playerzombiejump( powerstruct, powerref )
 {
@@ -143,8 +143,8 @@ function playerzombiejump( powerstruct, powerref )
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e6
+// Params 3
+// Checksum 0x0, Offset: 0xa47
 // Size: 0x4d
 function playerzombiejumpcleanup( powerstruct, powerref, docooldown )
 {
@@ -160,16 +160,27 @@ function playerzombiejumpcleanup( powerstruct, powerref, docooldown )
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3b
-// Size: 0xa5, Type: bool
+// Params 0
+// Checksum 0x0, Offset: 0xa9c
+// Size: 0x111, Type: bool
 function function_77bab0532bc12f0e()
 {
     zombie = self;
     
-    if ( !isdefined( zombie ) || !zombie scripts\mp\utility\game::ismutationgamemodezombie() )
+    if ( scripts\mp\utility\game::function_d75b73c443421047() )
     {
-        return true;
+        if ( !isdefined( zombie ) || !scripts\mp\utility\game::function_7586e7f1e96dc16d() )
+        {
+            return true;
+        }
+    }
+    
+    if ( scripts\mp\utility\game::ismutationgamemode() )
+    {
+        if ( !isdefined( zombie ) || !zombie scripts\mp\utility\game::ismutationgamemodezombie() )
+        {
+            return true;
+        }
     }
     
     if ( zombie meleebuttonpressed() || zombie attackbuttonpressed() )
@@ -196,12 +207,29 @@ function function_77bab0532bc12f0e()
         return true;
     }
     
+    if ( zombie isparachuting() )
+    {
+        zombie.var_ee75699e65f68166 = "MP_BR_INGAME/ZMB_CHARGED_JUMP_ERROR_PARACHUTING";
+        return true;
+    }
+    
+    if ( zombie isonladder() )
+    {
+        zombie.var_ee75699e65f68166 = "MP_BR_INGAME/ZMB_CHARGED_JUMP_ERROR_LADDER";
+        return true;
+    }
+    
+    if ( zombie isinvehicle() )
+    {
+        return true;
+    }
+    
     return false;
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xae9
+// Params 0
+// Checksum 0x0, Offset: 0xbb6
 // Size: 0x107, Type: bool
 function function_d4e7d5bfedb0b977()
 {
@@ -235,8 +263,8 @@ function function_d4e7d5bfedb0b977()
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf9
+// Params 0
+// Checksum 0x0, Offset: 0xcc6
 // Size: 0x45
 function superjumpfov()
 {
@@ -250,8 +278,8 @@ function superjumpfov()
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc46
+// Params 2
+// Checksum 0x0, Offset: 0xd13
 // Size: 0xfc
 function playerzombiejumpmaxholdwarning( powerref, time )
 {
@@ -269,7 +297,8 @@ function playerzombiejumpmaxholdwarning( powerref, time )
     waittimes = scripts\mp\gametypes\br_circle::array_init_distribute( time, int( time * 5 ), 1 );
     color = 1;
     
-    for (i = 0; i < waittimes.size; i++) {
+    for ( i = 0; i < waittimes.size ; i++ )
+    {
         if ( color )
         {
             self.powershud[ powerref ].barelem.bar.color = ( 1, 0, 0 );
@@ -285,8 +314,8 @@ function playerzombiejumpmaxholdwarning( powerref, time )
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd4a
+// Params 1
+// Checksum 0x0, Offset: 0xe17
 // Size: 0x1eb
 function function_a3335da8620d547c( var_dd967d0c568c7873 )
 {
@@ -345,8 +374,8 @@ function function_a3335da8620d547c( var_dd967d0c568c7873 )
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3d
+// Params 0
+// Checksum 0x0, Offset: 0x100a
 // Size: 0x16a
 function function_58a7c3eb64d82c49()
 {
@@ -386,8 +415,8 @@ function function_58a7c3eb64d82c49()
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10af
+// Params 0
+// Checksum 0x0, Offset: 0x117c
 // Size: 0x3c
 function function_a0810cb7bb46ccdb()
 {
@@ -403,8 +432,8 @@ function function_a0810cb7bb46ccdb()
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f3
+// Params 0
+// Checksum 0x0, Offset: 0x11c0
 // Size: 0x136
 function function_dd8a4b0712217000()
 {
@@ -450,18 +479,18 @@ function function_dd8a4b0712217000()
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1231
-// Size: 0x26, Type: bool
+// Params 0
+// Checksum 0x0, Offset: 0x12fe
+// Size: 0x30, Type: bool
 function function_bd2a29feef8f2889()
 {
-    return self isonground() || self isonladder() || self ismantling() || self isswimming();
+    return self isonground() || self isonladder() || self ismantling() || self isswimming() || isinvehicle();
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1260
-// Size: 0x2c3
+// Params 4
+// Checksum 0x0, Offset: 0x1337
+// Size: 0x33e
 function playerapplyjumpvelocity( angledir, maxjumpvelocity, fraction, startoffset )
 {
     var_355760d151d56e05 = 1;
@@ -519,6 +548,20 @@ function playerapplyjumpvelocity( angledir, maxjumpvelocity, fraction, startoffs
     dir = anglestoforward( player_angles );
     velocity = dir * fraction * maxjumpvelocity;
     velocity = ( velocity[ 0 ], velocity[ 1 ], 450 );
+    var_53f40d8cc4675af8 = getdvarint( @"hash_ba9532dc6da18eb8", 1 );
+    var_b9afb0cd7767d692 = getdvarint( @"hash_439104b2c59c3927", 350 );
+    var_3bd94d9437370541 = getdvarint( @"hash_601ddb2b970335e6", 1.3 );
+    
+    if ( var_53f40d8cc4675af8 )
+    {
+        player_pitch = self getplayerangles()[ 0 ];
+        
+        if ( player_pitch > 5 )
+        {
+            velocity = ( velocity[ 0 ] * var_3bd94d9437370541, velocity[ 1 ] * var_3bd94d9437370541, var_b9afb0cd7767d692 );
+        }
+    }
+    
     startorg = self.origin + startoffset;
     self setorigin( startorg, 0 );
     self setvelocity( velocity );
@@ -529,8 +572,8 @@ function playerapplyjumpvelocity( angledir, maxjumpvelocity, fraction, startoffs
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x152b
+// Params 2
+// Checksum 0x0, Offset: 0x167d
 // Size: 0x26b
 function get_ground_normal( traceignore, debug )
 {
@@ -620,8 +663,8 @@ function get_ground_normal( traceignore, debug )
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x179e
+// Params 2
+// Checksum 0x0, Offset: 0x18f0
 // Size: 0x47
 function playerzombiejumpstop( powerstruct, powerref )
 {
@@ -639,9 +682,9 @@ function playerzombiejumpstop( powerstruct, powerref )
 }
 
 // Namespace namespace_f46cce884171ed03 / namespace_e9836a64147a29e8
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ed
-// Size: 0x22d
+// Params 2
+// Checksum 0x0, Offset: 0x193f
+// Size: 0x237
 function function_a1b195bc24dae315( powerstruct, powerref )
 {
     self stopgestureviewmodel( "ges_zombie_superjumpcharge" );
@@ -651,7 +694,7 @@ function function_a1b195bc24dae315( powerstruct, powerref )
     var_e5482b00771c4909 = getdvarint( @"hash_2a5201ccbcd3b1a1", 1 );
     var_b13a0e71ef0de57c = 1;
     
-    if ( self.var_17c60a92aea65107 >= var_eec1ca5327266614 && !function_77bab0532bc12f0e() && function_d4e7d5bfedb0b977() && !self ismantling() )
+    if ( self.var_17c60a92aea65107 >= var_eec1ca5327266614 && !function_77bab0532bc12f0e() && function_d4e7d5bfedb0b977() && !self ismantling() && !isinvehicle() )
     {
         self playsoundtoplayer( "zxp_superjump_vo", self, self );
         self playsoundonmovingent( "zxp_superjump_sfx_npc" );

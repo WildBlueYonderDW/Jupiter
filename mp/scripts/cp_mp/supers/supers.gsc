@@ -8,7 +8,7 @@
 #namespace supers;
 
 // Namespace supers / scripts\cp_mp\supers\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf8
 // Size: 0xa2
 function function_f0327aead8f016e2( globals )
@@ -27,14 +27,15 @@ function function_f0327aead8f016e2( globals )
 }
 
 // Namespace supers / scripts\cp_mp\supers\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a2
 // Size: 0x775
 function function_e3234be372f6209d( supertable )
 {
     var_5d7589bf09bdf4d8 = getscriptbundle( supertable );
     
-    for (i = 0; i < var_5d7589bf09bdf4d8.super_list.size; i++) {
+    for ( i = 0; i < var_5d7589bf09bdf4d8.super_list.size ; i++ )
+    {
         superref = var_5d7589bf09bdf4d8.super_list[ i ].ref;
         superbundlename = var_5d7589bf09bdf4d8.super_list[ i ].bundle;
         
@@ -214,7 +215,7 @@ function private initializesuper( var_511f1c7eaf0d2df7 )
 }
 
 // Namespace supers / scripts\cp_mp\supers\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x962
 // Size: 0x7d
 function getsuperid( superref )
@@ -228,7 +229,7 @@ function getsuperid( superref )
 }
 
 // Namespace supers / scripts\cp_mp\supers\supers
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9e8
 // Size: 0x3e
 function function_bf9c7e9dd30180e3( superref )
@@ -244,7 +245,7 @@ function function_bf9c7e9dd30180e3( superref )
 }
 
 // Namespace supers / scripts\cp_mp\supers\supers
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa2f
 // Size: 0x147
 function buildsuper( weaponname, blueprintindex )

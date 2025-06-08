@@ -6,7 +6,7 @@
 #namespace mp_jup_derail_lighting;
 
 // Namespace mp_jup_derail_lighting / scripts\mp\maps\mp_jup_derail\mp_jup_derail_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa8
 // Size: 0xd7
 function main()
@@ -18,7 +18,7 @@ function main()
     setdvar( @"hash_633e1a62bb5ceeb2", 1 );
     setdvar( @"hash_1fc47d6f68e1faf", 1 );
     setdvar( @"hash_5b1b5bd738a5436f", 0 );
-    setdvar( @"hash_9ab6a766fc4e0c06", 0.45 );
+    setdvar( @"sm_sunsamplesizenear", 0.45 );
     setdvar( @"hash_4c14e16355aa5cb0", 2 );
     setdvar( @"hash_4c14e46355aa6349", 3 );
     setdvar( @"hash_924d46a5bf2c1f5d", 1.2 );

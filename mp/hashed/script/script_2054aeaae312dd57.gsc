@@ -10,7 +10,7 @@
 /#
 
     // Namespace namespace_260e96ab038c8919 / namespace_9fa112241a70b32b
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xb7
     // Size: 0x12c, Type: dev
     function function_66c502dfb1c607b2()
@@ -38,7 +38,7 @@
     }
 
     // Namespace namespace_260e96ab038c8919 / namespace_9fa112241a70b32b
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1eb
     // Size: 0x29, Type: dev
     function function_caa3566cb86d5538( command, arglist )
@@ -47,7 +47,7 @@
     }
 
     // Namespace namespace_260e96ab038c8919 / namespace_9fa112241a70b32b
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x21c
     // Size: 0x29, Type: dev
     function function_4166f565abe2876a( command, arglist )
@@ -56,7 +56,7 @@
     }
 
     // Namespace namespace_260e96ab038c8919 / namespace_9fa112241a70b32b
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x24d
     // Size: 0x29, Type: dev
     function function_13c592c4aa8f479f( command, arglist )
@@ -92,7 +92,7 @@
     }
 
     // Namespace namespace_260e96ab038c8919 / namespace_9fa112241a70b32b
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x38b
     // Size: 0x1d7, Type: dev
     function function_96aa55e08b9d714f( startpos, targetpos )
@@ -144,7 +144,7 @@
     }
 
     // Namespace namespace_260e96ab038c8919 / namespace_9fa112241a70b32b
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x56a
     // Size: 0x110, Type: dev
     function function_caedac3a0de734d()
@@ -177,7 +177,7 @@
     }
 
     // Namespace namespace_260e96ab038c8919 / namespace_9fa112241a70b32b
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x682
     // Size: 0x53, Type: dev
     function function_e1745dae8cdd8388()
@@ -186,7 +186,7 @@
     }
 
     // Namespace namespace_260e96ab038c8919 / namespace_9fa112241a70b32b
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x6dd
     // Size: 0xc5, Type: dev
     function function_78bb9ce9a224428f( command, args )
@@ -238,7 +238,8 @@
             startindex = 0;
         }
         
-        for (i = startindex; i < str.size; i++) {
+        for ( i = startindex; i < str.size ; i++ )
+        {
             if ( str[ i ] == chr )
             {
                 return i;
@@ -308,7 +309,8 @@
                 sphere( point, 4, ( 0, 1, 0 ), 0, level.var_e117330e38c95d0b );
             }
             
-            for (i = 0; i < pathpositions.size - 1; i++) {
+            for ( i = 0; i < pathpositions.size - 1 ; i++ )
+            {
                 line( pathpositions[ i ], pathpositions[ i + 1 ], ( 1, 0.5, 0 ), 1, 0, level.var_e117330e38c95d0b );
             }
             

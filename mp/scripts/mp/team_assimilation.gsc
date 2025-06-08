@@ -23,7 +23,7 @@
 #namespace team_assimilation;
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x827
 // Size: 0x183
 function init()
@@ -56,7 +56,7 @@ function init()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9b2
 // Size: 0x38
 function registerteamassimilatecallback( callback )
@@ -70,7 +70,7 @@ function registerteamassimilatecallback( callback )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9f2
 // Size: 0xef
 function function_80139212a4c66a94( player, oldteam, newteam, oldsquadindex, newsquadindex )
@@ -95,7 +95,7 @@ function function_80139212a4c66a94( player, oldteam, newteam, oldsquadindex, new
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xae9
 // Size: 0x88
 function function_6934349b7823d888()
@@ -104,11 +104,11 @@ function function_6934349b7823d888()
     {
         if ( isdefined( level.gametypebundle ) && isdefined( level.gametypebundle.var_1685d95f041d2a96 ) )
         {
-            level.var_cc0d5a1e8a904e5c = level.gametypebundle.var_1685d95f041d2a96 && getdvarint( @"hash_af509ac21ec3bd6a", 1 );
+            level.var_cc0d5a1e8a904e5c = level.gametypebundle.var_1685d95f041d2a96 && getdvarint( @"scr_team_assimilation_enabled", 1 );
         }
         else
         {
-            level.var_cc0d5a1e8a904e5c = getdvarint( @"hash_af509ac21ec3bd6a", 0 );
+            level.var_cc0d5a1e8a904e5c = getdvarint( @"scr_team_assimilation_enabled", 0 );
         }
     }
     
@@ -116,7 +116,7 @@ function function_6934349b7823d888()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb7a
 // Size: 0x30
 function function_9f3b05f2ea701548()
@@ -130,7 +130,7 @@ function function_9f3b05f2ea701548()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb3
 // Size: 0x8a
 function getmaxassimilationteamsize()
@@ -151,7 +151,7 @@ function getmaxassimilationteamsize()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc46
 // Size: 0x31
 function function_82aca4b8517cf46a()
@@ -165,7 +165,7 @@ function function_82aca4b8517cf46a()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc80
 // Size: 0x31
 function function_47e8570f3b3f9f83()
@@ -179,7 +179,7 @@ function function_47e8570f3b3f9f83()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcba
 // Size: 0x31
 function function_ef81e6fd30058e1b()
@@ -193,7 +193,7 @@ function function_ef81e6fd30058e1b()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf4
 // Size: 0x31
 function function_75a3d83d6f553a46()
@@ -207,7 +207,7 @@ function function_75a3d83d6f553a46()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd2e
 // Size: 0x32
 function function_f258ca1fd3c63122()
@@ -221,7 +221,7 @@ function function_f258ca1fd3c63122()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd69
 // Size: 0x42, Type: bool
 function canteamassimilate( team )
@@ -237,7 +237,7 @@ function canteamassimilate( team )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdb4
 // Size: 0x61, Type: bool
 function function_2a6e88019515e213( team, squadid )
@@ -256,7 +256,7 @@ function function_2a6e88019515e213( team, squadid )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe1e
 // Size: 0xe6, Type: bool
 function canassimilate( playerswitching, var_784c8ada1184ff89, var_e80f1eb2c1910ad4, hidemessage )
@@ -299,7 +299,7 @@ function canassimilate( playerswitching, var_784c8ada1184ff89, var_e80f1eb2c1910
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf0d
 // Size: 0x17, Type: bool
 function iswaitingforassimresponse( player )
@@ -368,7 +368,7 @@ function private function_4aaeca4295a600d( var_784c8ada1184ff89, playerswitching
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1062
 // Size: 0x7a
 function function_bb4125d6847af349( player, request )
@@ -389,7 +389,7 @@ function function_bb4125d6847af349( player, request )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10e4
 // Size: 0x77
 function function_59cf08630dd70540( player, request )
@@ -410,7 +410,7 @@ function function_59cf08630dd70540( player, request )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1163
 // Size: 0x35, Type: bool
 function isplayersassimdisabled( player )
@@ -419,7 +419,7 @@ function isplayersassimdisabled( player )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11a1
 // Size: 0x74
 function permanentlydisableassim()
@@ -438,7 +438,7 @@ function permanentlydisableassim()
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x121d
 // Size: 0x3a
 function function_a84bf6c8ff064511( targetplayer )
@@ -450,7 +450,7 @@ function function_a84bf6c8ff064511( targetplayer )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x125f
 // Size: 0x6c, Type: bool
 function function_e81936c3b6775f2b( player )
@@ -478,7 +478,7 @@ function function_e81936c3b6775f2b( player )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12d4
 // Size: 0x3c
 function function_b530aa511cac761( player )
@@ -492,7 +492,7 @@ function function_b530aa511cac761( player )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1318
 // Size: 0x4d
 function function_e5dbb2b054d0cabd( player, blockedteam )
@@ -506,7 +506,7 @@ function function_e5dbb2b054d0cabd( player, blockedteam )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x136d
 // Size: 0x282
 function requestleaveteam( player )
@@ -579,7 +579,7 @@ function requestleaveteam( player )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15f7
 // Size: 0x252
 function requestnearbyteamchange( player, var_99bcf6bdf31a0e49 )
@@ -651,7 +651,7 @@ function requestnearbyteamchange( player, var_99bcf6bdf31a0e49 )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1851
 // Size: 0x199
 function resolveassimrequest( player, var_e3f7965361b1e757 )
@@ -691,7 +691,7 @@ function resolveassimrequest( player, var_e3f7965361b1e757 )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19f2
 // Size: 0xfd
 function function_9ad90f0a744225a8( team )
@@ -728,7 +728,7 @@ function function_9ad90f0a744225a8( team )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1af7
 // Size: 0x503
 function assimilateplayer( playerswitching, var_784c8ada1184ff89, torespawn )
@@ -850,7 +850,7 @@ function assimilateplayer( playerswitching, var_784c8ada1184ff89, torespawn )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2002
 // Size: 0x264, Type: bool
 function senddirectassimrequest( var_e65d25126ef3331b, targetplayer, var_99bcf6bdf31a0e49, var_e4fc35b9446269cf )
@@ -915,7 +915,7 @@ function senddirectassimrequest( var_e65d25126ef3331b, targetplayer, var_99bcf6b
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x226f
 // Size: 0x158
 function function_6401ee62bfbff899( oldteam, newteam )
@@ -975,7 +975,7 @@ function function_6401ee62bfbff899( oldteam, newteam )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x23cf
 // Size: 0x79
 function function_810613fb0e83165e( team, squadindex, player )
@@ -995,7 +995,7 @@ function function_810613fb0e83165e( team, squadindex, player )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2450
 // Size: 0x56
 function function_8902607e87bb6d89( team, player )
@@ -1015,7 +1015,7 @@ function function_8902607e87bb6d89( team, player )
 }
 
 // Namespace team_assimilation / scripts\mp\team_assimilation
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24ae
 // Size: 0x14
 function function_2a1e4811621fdcde( player )
@@ -1039,7 +1039,7 @@ function private function_351ea84f3d394eea( player )
 /#
 
     // Namespace team_assimilation / scripts\mp\team_assimilation
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2508
     // Size: 0x75, Type: dev
     function function_ec7c2b6761cd9ab3()

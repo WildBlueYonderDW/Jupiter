@@ -12,7 +12,7 @@
 #namespace battlechatter;
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1144
 // Size: 0x7b5
 function init_battlechatter()
@@ -274,7 +274,7 @@ function private function_5430999882251a0c()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b10
 // Size: 0x1b6
 function function_78405469b3060fa()
@@ -328,7 +328,7 @@ function function_78405469b3060fa()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cce
 // Size: 0x5f7
 function function_6c731b5fab9c2494( data )
@@ -471,7 +471,7 @@ function function_6c731b5fab9c2494( data )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32ce
 // Size: 0xed, Type: bool
 function function_955ca8d297928838( data )
@@ -499,7 +499,7 @@ function function_955ca8d297928838( data )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33c4
 // Size: 0x129
 function bcs_statechange( data )
@@ -565,7 +565,7 @@ function bcs_statechange( data )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34f5
 // Size: 0x2e
 function function_45a69522dd934d18( dist )
@@ -575,7 +575,7 @@ function function_45a69522dd934d18( dist )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x352b
 // Size: 0x15
 function function_33bdd4ad6aa14edc( overrides )
@@ -584,7 +584,7 @@ function function_33bdd4ad6aa14edc( overrides )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3548
 // Size: 0xa2
 function function_2f7fd2639db2a57b()
@@ -603,7 +603,7 @@ function function_2f7fd2639db2a57b()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35f2
 // Size: 0x25
 function init_squadbattlechatter()
@@ -614,7 +614,7 @@ function init_squadbattlechatter()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x361f
 // Size: 0xc, Type: bool
 function bcsenabled()
@@ -623,7 +623,7 @@ function bcsenabled()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3634
 // Size: 0xdb
 function bcs_setup_voice( voice, countryid, var_46119ee4018a3e10, var_790e7a69f5c40b30, var_4189af81d34b8804, var_10e927a072c477b )
@@ -635,7 +635,8 @@ function bcs_setup_voice( voice, countryid, var_46119ee4018a3e10, var_790e7a69f5
     
     anim.usedids[ voice ] = [];
     
-    for (i = 0; i < var_46119ee4018a3e10; i++) {
+    for ( i = 0; i < var_46119ee4018a3e10 ; i++ )
+    {
         anim.usedids[ voice ][ i ] = spawnstruct();
         anim.usedids[ voice ][ i ].count = 0;
         anim.usedids[ voice ][ i ].npcid = "" + i + 1;
@@ -647,7 +648,7 @@ function bcs_setup_voice( voice, countryid, var_46119ee4018a3e10, var_790e7a69f5
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3717
 // Size: 0xfd
 function function_2faee9e4cf862d61()
@@ -676,7 +677,7 @@ function function_2faee9e4cf862d61()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x381c
 // Size: 0x14
 function shutdown_battlechatter()
@@ -686,7 +687,7 @@ function shutdown_battlechatter()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3838
 // Size: 0xc3
 function function_1ea9d53684d11626()
@@ -704,7 +705,8 @@ function function_1ea9d53684d11626()
             players = level.players;
             players_processed = 0;
             
-            for (p = 0; p < players.size; p++) {
+            for ( p = 0; p < players.size ; p++ )
+            {
                 player = players[ p ];
                 
                 if ( !isdefined( player ) || !isalive( player ) || !isdefined( player.origin ) )
@@ -733,7 +735,7 @@ function function_1ea9d53684d11626()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3903
 // Size: 0x2b6
 function function_f46983dffe232870()
@@ -751,7 +753,8 @@ function function_f46983dffe232870()
     nearby_ai = sortbydistance( nearby_ai, self.origin );
     count = min( nearby_ai.size, 10 );
     
-    for (i = 0; i < count; i++) {
+    for ( i = 0; i < count ; i++ )
+    {
         waitframe();
         count_ratio = ( i + 1 ) / count;
         
@@ -830,7 +833,7 @@ function function_f46983dffe232870()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bc1
 // Size: 0x35, Type: bool
 function function_8f8de1d6f307f960( var_a434cd7944a162af )
@@ -839,7 +842,7 @@ function function_8f8de1d6f307f960( var_a434cd7944a162af )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bff
 // Size: 0x30
 function bcs_initplayer()
@@ -853,7 +856,7 @@ function bcs_initplayer()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c37
 // Size: 0x3d
 function function_1d7ef730acb50079()
@@ -869,7 +872,7 @@ function function_1d7ef730acb50079()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c7c
 // Size: 0x78
 function function_c3307723c588c6e5()
@@ -896,7 +899,7 @@ function function_c3307723c588c6e5()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cfc
 // Size: 0x4c
 function function_c47965a0917525b3()
@@ -916,7 +919,7 @@ function function_c47965a0917525b3()
 /#
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3d50
     // Size: 0xb9, Type: dev
     function function_8d7aee019b12c98f()
@@ -936,7 +939,7 @@ function function_c47965a0917525b3()
 #/
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e11
 // Size: 0xbd
 function function_af3a6677d4327aae( seconds, var_492d858d989a382 )
@@ -958,7 +961,7 @@ function function_af3a6677d4327aae( seconds, var_492d858d989a382 )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ed6
 // Size: 0x83
 function function_b145367392d5843d( seconds, var_492d858d989a382 )
@@ -986,7 +989,7 @@ function function_b145367392d5843d( seconds, var_492d858d989a382 )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3f61
 // Size: 0x75
 function function_3769e5550bed355b( state, min_delay, max_delay )
@@ -998,7 +1001,7 @@ function function_3769e5550bed355b( state, min_delay, max_delay )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fde
 // Size: 0x5c
 function function_42a6e01190025613( state )
@@ -1014,7 +1017,7 @@ function function_42a6e01190025613( state )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4043
 // Size: 0x55
 function function_90826d80aa1736cb( state, func )
@@ -1029,7 +1032,7 @@ function function_90826d80aa1736cb( state, func )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40a0
 // Size: 0x9c
 function function_4f4f4b31f8a95d9f( state )
@@ -1056,7 +1059,7 @@ function function_4f4f4b31f8a95d9f( state )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4145
 // Size: 0x10c
 function addevent( event_name, sequence, priority, timeout, cooldown, endons )
@@ -1077,7 +1080,7 @@ function addevent( event_name, sequence, priority, timeout, cooldown, endons )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4259
 // Size: 0x97
 function addeventfunc( event_name, func )
@@ -1092,7 +1095,7 @@ function addeventfunc( event_name, func )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x42f8
 // Size: 0x126
 function removeevent( event_name, var_d93390a0d7e03633 )
@@ -1128,7 +1131,7 @@ function removeevent( event_name, var_d93390a0d7e03633 )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4426
 // Size: 0xcc, Type: bool
 function executeevent( event_name, params )
@@ -1163,7 +1166,7 @@ function executeevent( event_name, params )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44fb
 // Size: 0x27
 function function_4d19743dba541be4()
@@ -1172,7 +1175,7 @@ function function_4d19743dba541be4()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x452b
 // Size: 0x1e
 function function_cda75fb378a679eb()
@@ -1181,7 +1184,7 @@ function function_cda75fb378a679eb()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4552
 // Size: 0x15
 function getenemyteams()
@@ -1190,7 +1193,7 @@ function getenemyteams()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4570
 // Size: 0x15
 function function_2b3a4945ae9faf96()
@@ -1199,7 +1202,7 @@ function function_2b3a4945ae9faf96()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x458e
 // Size: 0x53
 function function_d54e84a9513b0e45( var_c5dc0e000c5b1c69, sequence, priority, timeout, cooldown, endons )
@@ -1209,7 +1212,7 @@ function function_d54e84a9513b0e45( var_c5dc0e000c5b1c69, sequence, priority, ti
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x45ea
 // Size: 0x89
 function function_93b4f17e4a3474b( var_c5dc0e000c5b1c69, sequence, var_7e4b3bd714b23bc7, endons )
@@ -1304,7 +1307,7 @@ function private playchatter( chatter )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4898
 // Size: 0x53
 function function_b9cc4ff760926456( name, sequence, priority, timeout, cooldown, endons )
@@ -1314,7 +1317,7 @@ function function_b9cc4ff760926456( name, sequence, priority, timeout, cooldown,
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48f4
 // Size: 0x1b
 function function_f6e959db9fb34ff3( chatter )
@@ -1324,7 +1327,7 @@ function function_f6e959db9fb34ff3( chatter )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4917
 // Size: 0x4e
 function waitchatter( chatter )
@@ -1346,7 +1349,7 @@ function waitchatter( chatter )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x496d
 // Size: 0x3b6
 function function_ac907769b9d391cb()
@@ -1426,7 +1429,7 @@ function function_ac907769b9d391cb()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d2b
 // Size: 0x95f
 function function_a9c351ded2cf6ce4()
@@ -1697,7 +1700,7 @@ function function_a9c351ded2cf6ce4()
 /#
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x5693
     // Size: 0x38, Type: dev
     function function_51c8ea07cf76cbd7( text, var_73a14d94e40a8d15 )
@@ -1713,7 +1716,7 @@ function function_a9c351ded2cf6ce4()
     }
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x56d3
     // Size: 0x6ee, Type: dev
     function function_a8c755adb8698257()
@@ -1740,7 +1743,8 @@ function function_a9c351ded2cf6ce4()
                 base_scale = getdvarfloat( @"hash_4fd3148b1459a83" ) * var_3f109f5aaf427a;
                 ln_height = 0;
                 
-                for (k = 0; k < level.vo_active.size; k++) {
+                for ( k = 0; k < level.vo_active.size ; k++ )
+                {
                     if ( !istrue( level.vo_active[ k ].ischatter ) )
                     {
                         continue;
@@ -1799,7 +1803,8 @@ function function_a9c351ded2cf6ce4()
                         ln_height += 30 * base_scale;
                     }
                     
-                    for (i = 0; i < sequence.size; i++) {
+                    for ( i = 0; i < sequence.size ; i++ )
+                    {
                         display_ln = undefined;
                         segment = sequence[ i ];
                         
@@ -1918,7 +1923,7 @@ function private createchatter( name, sequence, priority, timeout, cooldown, end
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f8a
 // Size: 0x7b
 function function_a4ba1099ac49c74( sequence )
@@ -1943,7 +1948,7 @@ function function_a4ba1099ac49c74( sequence )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x600d
 // Size: 0x7b
 function function_c2aafbdbd7ff7b82( sequence )
@@ -1968,7 +1973,7 @@ function function_c2aafbdbd7ff7b82( sequence )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6090
 // Size: 0x2cd
 function function_5b9db2cb162b207a( event_string )
@@ -2058,7 +2063,7 @@ function function_5b9db2cb162b207a( event_string )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6365
 // Size: 0x63
 function lookupchatter( event_string )
@@ -2077,7 +2082,7 @@ function lookupchatter( event_string )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x63d0
 // Size: 0x17
 function function_fa9c799417080957()
@@ -2086,7 +2091,7 @@ function function_fa9c799417080957()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63ef
 // Size: 0xf5
 function function_8af9f89d6344a3df( speaker )
@@ -2119,7 +2124,7 @@ function function_8af9f89d6344a3df( speaker )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64ed
 // Size: 0xa6
 function function_c5f095386a46f1e8( type )
@@ -2140,7 +2145,7 @@ function function_c5f095386a46f1e8( type )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x659b
 // Size: 0xc7
 function getgamemode()
@@ -2177,7 +2182,7 @@ function getgamemode()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x666b
 // Size: 0xeb
 function getlocation()
@@ -2212,7 +2217,7 @@ function getlocation()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x675f
 // Size: 0x1cd, Type: bool
 function chatterallowed( guy, do_debug, var_5499de48ce486044 )
@@ -2274,7 +2279,7 @@ function chatterallowed( guy, do_debug, var_5499de48ce486044 )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6935
 // Size: 0x3a
 function function_73eca19eaeb08e4d()
@@ -2296,7 +2301,7 @@ function function_73eca19eaeb08e4d()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6978
 // Size: 0x205, Type: bool
 function canchatter( requiredstate, sighttarget, var_73a14d94e40a8d15, var_4acfa36a6dd8b797 )
@@ -2397,7 +2402,7 @@ function canchatter( requiredstate, sighttarget, var_73a14d94e40a8d15, var_4acfa
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b86
 // Size: 0x26
 function bc_prefix( type )
@@ -2422,7 +2427,7 @@ function private function_ea8354c6061a8b67( chatter_name )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6bff
 // Size: 0x10a, Type: bool
 function check_cooldown( name, players )
@@ -2463,7 +2468,7 @@ function check_cooldown( name, players )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6d12
 // Size: 0x3d, Type: bool
 function function_161bd3732c0afbce( name, duration, players )
@@ -2480,7 +2485,7 @@ function function_161bd3732c0afbce( name, duration, players )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6d58
 // Size: 0x169
 function set_cooldown( name, duration, players )
@@ -2526,7 +2531,7 @@ function set_cooldown( name, duration, players )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ec9
 // Size: 0xf0
 function clear_cooldown( name )
@@ -2564,7 +2569,7 @@ function clear_cooldown( name )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fc1
 // Size: 0x12b
 function switchspeaker( new_speaker )
@@ -2601,7 +2606,7 @@ function switchspeaker( new_speaker )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x70f4
 // Size: 0x25
 function function_132875639c660348()
@@ -2617,7 +2622,7 @@ function function_132875639c660348()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7122
 // Size: 0x25
 function function_12014207b3e66976()
@@ -2633,7 +2638,7 @@ function function_12014207b3e66976()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7150
 // Size: 0x25
 function function_2a9c2c2765055f10()
@@ -2649,7 +2654,7 @@ function function_2a9c2c2765055f10()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x717e
 // Size: 0x25
 function function_ce07522e02781160()
@@ -2665,7 +2670,7 @@ function function_ce07522e02781160()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x71ac
 // Size: 0x25
 function function_afd322664ba54fa7()
@@ -2681,7 +2686,7 @@ function function_afd322664ba54fa7()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x71da
 // Size: 0xaf
 function function_78a4669238a942e8()
@@ -2714,7 +2719,7 @@ function function_78a4669238a942e8()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7292
 // Size: 0xaf
 function function_78be0fae168f6d5()
@@ -2747,7 +2752,7 @@ function function_78be0fae168f6d5()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x734a
 // Size: 0x34
 function function_401ec0642c92d2eb()
@@ -2756,7 +2761,7 @@ function function_401ec0642c92d2eb()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7387
 // Size: 0x68
 function function_6e80d82709faefd()
@@ -2779,7 +2784,7 @@ function function_6e80d82709faefd()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73f8
 // Size: 0x68
 function function_a271b08319ea86ae()
@@ -2802,7 +2807,7 @@ function function_a271b08319ea86ae()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7469
 // Size: 0x5f
 function function_6b500fae7c3e61da()
@@ -2825,7 +2830,7 @@ function function_6b500fae7c3e61da()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x74d1
 // Size: 0x5f
 function function_e5e9db75fe72e36f()
@@ -2848,7 +2853,7 @@ function function_e5e9db75fe72e36f()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7539
 // Size: 0xd1
 function getclosestfriendlyspeaker( team, requiredstate, requiresight, maxdist )
@@ -2877,7 +2882,7 @@ function getclosestfriendlyspeaker( team, requiredstate, requiresight, maxdist )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7613
 // Size: 0x9b
 function function_64bb0212d4b3e7fb( team, requiredstate, requiresight, maxdist )
@@ -2893,7 +2898,7 @@ function function_64bb0212d4b3e7fb( team, requiredstate, requiresight, maxdist )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x76b7
 // Size: 0x90
 function function_d8c3c539bc71c7af( team, requiredstate, requiresight, maxdist )
@@ -2911,7 +2916,7 @@ function function_d8c3c539bc71c7af( team, requiredstate, requiresight, maxdist )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7750
 // Size: 0x9b
 function function_8db2aa6f0377958( team, requiredstate, requiresight, maxdist, var_4acfa36a6dd8b797 )
@@ -2927,7 +2932,7 @@ function function_8db2aa6f0377958( team, requiredstate, requiresight, maxdist, v
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x77f4
 // Size: 0x147
 function function_248a7374a1a0605a( origin, possible_speakers, excludeid, requiredstate, requiresight )
@@ -2971,7 +2976,7 @@ function function_248a7374a1a0605a( origin, possible_speakers, excludeid, requir
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7944
 // Size: 0x16c
 function function_b1ab02cfbfd12e43( possible_speakers, excludeid, requiredstate, requiresight, var_4acfa36a6dd8b797 )
@@ -3023,7 +3028,7 @@ function function_b1ab02cfbfd12e43( possible_speakers, excludeid, requiredstate,
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ab9
 // Size: 0x82
 function getspeakers( team )
@@ -3043,7 +3048,7 @@ function getspeakers( team )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7b44
 // Size: 0x7c
 function getplayersinrange( origin, radius )
@@ -3064,7 +3069,7 @@ function getplayersinrange( origin, radius )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7bc9
 // Size: 0x4c
 function function_fd9e4cb348a5f283( origin, radius, team )
@@ -3083,7 +3088,7 @@ function function_fd9e4cb348a5f283( origin, radius, team )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7c1e
 // Size: 0xf8
 function getenemiesinrange( radius )
@@ -3106,7 +3111,7 @@ function getenemiesinrange( radius )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7d1f
 // Size: 0xd8
 function function_74b5af7f20c85724( origin, radius, my_team )
@@ -3141,7 +3146,7 @@ function function_74b5af7f20c85724( origin, radius, my_team )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7e00
 // Size: 0x33, Type: bool
 function isnear( target, radius )
@@ -3150,7 +3155,7 @@ function isnear( target, radius )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7e3c
 // Size: 0x2d
 function function_cd250b4591e6bc01( var_595b006b359c3dde, var_3ab040f5cfcefbbb )
@@ -3164,7 +3169,7 @@ function function_cd250b4591e6bc01( var_595b006b359c3dde, var_3ab040f5cfcefbbb )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7e72
 // Size: 0x7e
 function function_1609ef297b7a32cf( enemy, var_646a5cd9726e8b01, var_8b254bbef9b6b110, enemies )
@@ -3188,7 +3193,7 @@ function function_1609ef297b7a32cf( enemy, var_646a5cd9726e8b01, var_8b254bbef9b
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ef9
 // Size: 0x4d
 function set_target( target )
@@ -3205,7 +3210,7 @@ function set_target( target )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f4e
 // Size: 0xa
 function clear_target()
@@ -3214,7 +3219,7 @@ function clear_target()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f60
 // Size: 0xd5
 function function_11bcc851afaf707( target )
@@ -3239,7 +3244,7 @@ function function_11bcc851afaf707( target )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x803d
 // Size: 0x13
 function function_d6731c6d074dc7d0( params )
@@ -3248,7 +3253,7 @@ function function_d6731c6d074dc7d0( params )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8058
 // Size: 0x21f
 function function_87ee4a2ecd6546fc()
@@ -3313,7 +3318,7 @@ function function_87ee4a2ecd6546fc()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x827f
 // Size: 0x14
 function select_random( array )
@@ -3322,7 +3327,7 @@ function select_random( array )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x829c
 // Size: 0x95
 function random_variation( base, count )
@@ -3331,7 +3336,8 @@ function random_variation( base, count )
     {
         array = [];
         
-        for (i = 0; i < count; i++) {
+        for ( i = 0; i < count ; i++ )
+        {
             array[ i ] = base + i;
         }
         
@@ -3342,7 +3348,7 @@ function random_variation( base, count )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x833a
 // Size: 0x98
 function getrankvalue()
@@ -3374,7 +3380,7 @@ function getrankvalue()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x83da
 // Size: 0xe6
 function function_b6b75579e4dbc957()
@@ -3404,7 +3410,7 @@ function function_b6b75579e4dbc957()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x84c8
 // Size: 0x94
 function addeventplaybcs( type, name, modifier, delay, stealthevent, force )
@@ -3434,7 +3440,7 @@ function addeventplaybcs( type, name, modifier, delay, stealthevent, force )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8564
 // Size: 0x4a
 function function_2a14e530337dedc3()
@@ -3446,7 +3452,7 @@ function function_2a14e530337dedc3()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x85b7
 // Size: 0x310
 function function_573b9ff9ed152518( guy, isleader )
@@ -3521,7 +3527,7 @@ function function_573b9ff9ed152518( guy, isleader )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x88d0
 // Size: 0x14
 function function_592f13f1a0e078ff( guy )
@@ -3530,7 +3536,7 @@ function function_592f13f1a0e078ff( guy )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88ed
 // Size: 0x105
 function getname()
@@ -3559,7 +3565,7 @@ function getname()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x89fb
 // Size: 0x47
 function getclosestplayer( origin )
@@ -3577,7 +3583,7 @@ function getclosestplayer( origin )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8a4b
 // Size: 0xa3
 function function_b98b7a9053d0bcb6( origin )
@@ -3601,7 +3607,7 @@ function function_b98b7a9053d0bcb6( origin )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8af7
 // Size: 0x126
 function getcombatstate()
@@ -3655,7 +3661,7 @@ function getcombatstate()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8c25
 // Size: 0x1b
 function addcustombc( array, states, random )
@@ -3664,7 +3670,7 @@ function addcustombc( array, states, random )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8c48
 // Size: 0x1b
 function setcurrentcustombcevent( event, states, looping )
@@ -3673,7 +3679,7 @@ function setcurrentcustombcevent( event, states, looping )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c6b
 // Size: 0x57, Type: bool
 function function_5eef3c6f7b003167( state )
@@ -3687,7 +3693,7 @@ function function_5eef3c6f7b003167( state )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ccb
 // Size: 0xa5
 function function_37569a0bddd31694( state )
@@ -3706,7 +3712,7 @@ function function_37569a0bddd31694( state )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8d79
 // Size: 0x14f
 function function_ac31838f9edde417( array, states, random )
@@ -3737,7 +3743,7 @@ function function_ac31838f9edde417( array, states, random )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8ed0
 // Size: 0x59
 function getrelativeangles( ent )
@@ -3757,7 +3763,7 @@ function getrelativeangles( ent )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f32
 // Size: 0x1d, Type: bool
 function sideisleftright( side )
@@ -3766,7 +3772,7 @@ function sideisleftright( side )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8f58
 // Size: 0xb2
 function getdirectionfacingflank( vorigin, vpoint, vfacing )
@@ -3798,7 +3804,7 @@ function getdirectionfacingflank( vorigin, vpoint, vfacing )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9013
 // Size: 0x11b
 function normalizecompassdirection( direction )
@@ -3845,7 +3851,7 @@ function normalizecompassdirection( direction )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9137
 // Size: 0x123
 function getdirectioncompass( vorigin, vpoint )
@@ -3905,7 +3911,7 @@ function getdirectioncompass( vorigin, vpoint )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9263
 // Size: 0x38
 function getdistancemeters( source, target )
@@ -3916,7 +3922,7 @@ function getdistancemeters( source, target )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x92a4
 // Size: 0xe7
 function getdistancemetersnormalized( source, target )
@@ -3977,7 +3983,7 @@ function getdistancemetersnormalized( source, target )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9393
 // Size: 0x38
 function getdistancemiles( source, target )
@@ -3988,7 +3994,7 @@ function getdistancemiles( source, target )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x93d4
 // Size: 0x79
 function getdistancemilesnormalized( source, target )
@@ -4019,7 +4025,7 @@ function getdistancemilesnormalized( source, target )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9455
 // Size: 0x73
 function getfrontarcclockdirection( direction )
@@ -4044,7 +4050,7 @@ function getfrontarcclockdirection( direction )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x94d1
 // Size: 0x15e
 function getdirectionfacingclock( var_c99a285cabf7ec7b, var_88daf353e30acf25, targetorigin )
@@ -4110,7 +4116,7 @@ function getdirectionfacingclock( var_c99a285cabf7ec7b, var_88daf353e30acf25, ta
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9638
 // Size: 0x9d
 function getdegreeselevation( var_88daf353e30acf25, targetorigin )
@@ -4151,7 +4157,7 @@ function getdegreeselevation( var_88daf353e30acf25, targetorigin )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x96dd
 // Size: 0x19
 function getvectorrightangle( vdir )
@@ -4160,14 +4166,15 @@ function getvectorrightangle( vdir )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x96ff
 // Size: 0x58
 function getvectorarrayaverage( avangles )
 {
     var_3ba2a35d76e9b9e0 = ( 0, 0, 0 );
     
-    for (i = 0; i < avangles.size; i++) {
+    for ( i = 0; i < avangles.size ; i++ )
+    {
         var_3ba2a35d76e9b9e0 += avangles[ i ];
     }
     
@@ -4175,7 +4182,7 @@ function getvectorarrayaverage( avangles )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9760
 // Size: 0x25, Type: bool
 function function_a07abd440b7a33fe( otherent )
@@ -4194,7 +4201,7 @@ function function_a07abd440b7a33fe( otherent )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x978e
 // Size: 0xb
 function get_text( segment )
@@ -4203,7 +4210,7 @@ function get_text( segment )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x97a1
 // Size: 0x27
 function set_battlechatter_variable( team, val )
@@ -4213,7 +4220,7 @@ function set_battlechatter_variable( team, val )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97d0
 // Size: 0x1c7
 function update_battlechatter_hud()
@@ -4281,7 +4288,7 @@ function update_battlechatter_hud()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x999f
 // Size: 0x150
 function bcprint_info()
@@ -4327,7 +4334,7 @@ function bcprint_info()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9af7
 // Size: 0x3c, Type: bool
 function battlechatter_canprint()
@@ -4343,7 +4350,7 @@ function battlechatter_canprint()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b3c
 // Size: 0x3c, Type: bool
 function battlechatter_canprintdump()
@@ -4361,7 +4368,7 @@ function battlechatter_canprintdump()
 /#
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x9b81
     // Size: 0xb1, Type: dev
     function battlechatter_print( alias, color )
@@ -4395,7 +4402,7 @@ function battlechatter_canprintdump()
     }
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9c3a
     // Size: 0x1d2, Type: dev
     function battlechatter_printdump( alias )
@@ -4460,7 +4467,7 @@ function battlechatter_canprintdump()
     }
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x9e14
     // Size: 0x28, Type: dev
     function battlechatter_debugprint( alias, color )
@@ -4470,7 +4477,7 @@ function battlechatter_canprintdump()
     }
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x9e44
     // Size: 0x48, Type: dev
     function battlechatter_printdumpline( file, str, controlflag )
@@ -4488,7 +4495,7 @@ function battlechatter_canprintdump()
 #/
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9e94
 // Size: 0xc6
 function getaliastypefromsoundalias( alias )
@@ -4520,7 +4527,7 @@ function getaliastypefromsoundalias( alias )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f63
 // Size: 0x37
 function function_2b9bf190120a5233( seconds )
@@ -4532,7 +4539,7 @@ function function_2b9bf190120a5233( seconds )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9fa2
 // Size: 0xbd, Type: bool
 function function_8f59caa9212fcc56()
@@ -4571,7 +4578,7 @@ function function_8f59caa9212fcc56()
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa068
 // Size: 0xc6, Type: bool
 function function_45f570789ff9a0fd( timeseconds, requiresight )
@@ -4607,7 +4614,7 @@ function function_45f570789ff9a0fd( timeseconds, requiresight )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa137
 // Size: 0x2a, Type: bool
 function shotrecently( timeseconds )
@@ -4616,7 +4623,7 @@ function shotrecently( timeseconds )
 }
 
 // Namespace battlechatter / scripts\anim\battlechatter
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa16a
 // Size: 0x72
 function function_ab7df904aa60d433( array, maxsize )
@@ -4637,7 +4644,7 @@ function function_ab7df904aa60d433( array, maxsize )
 /#
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa1e4
     // Size: 0x2e, Type: dev
     function function_ecf957dba5b9cc50()
@@ -4655,7 +4662,7 @@ function function_ab7df904aa60d433( array, maxsize )
     }
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xa21a
     // Size: 0x145, Type: dev
     function function_c3b1c38b7230b341( var_9712576966b33c8b )
@@ -4702,7 +4709,7 @@ function function_ab7df904aa60d433( array, maxsize )
     }
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xa367
     // Size: 0x121, Type: dev
     function function_fdb8454d071bcf5b( data, executed )
@@ -4738,7 +4745,7 @@ function function_ab7df904aa60d433( array, maxsize )
     }
 
     // Namespace battlechatter / scripts\anim\battlechatter
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xa490
     // Size: 0x52, Type: dev
     function function_55f43964ccdb5b95( var_d58ba359bfb14d3e )

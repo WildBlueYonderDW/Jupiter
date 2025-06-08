@@ -5,7 +5,7 @@
 #namespace use_armor_plate_solo;
 
 // Namespace use_armor_plate_solo / namespace_6930af0ec0bf4a3f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c9
 // Size: 0x7e
 function getfunction( funcid )
@@ -28,7 +28,7 @@ function getfunction( funcid )
 }
 
 // Namespace use_armor_plate_solo / namespace_6930af0ec0bf4a3f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24f
 // Size: 0xb
 function function_3dbd361f74b442f9( interactionid )
@@ -37,7 +37,7 @@ function function_3dbd361f74b442f9( interactionid )
 }
 
 // Namespace use_armor_plate_solo / namespace_6930af0ec0bf4a3f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x262
 // Size: 0xa1
 function function_a157fbbc31d9eb1a( interactionid )
@@ -66,7 +66,7 @@ function function_a157fbbc31d9eb1a( interactionid )
 }
 
 // Namespace use_armor_plate_solo / namespace_6930af0ec0bf4a3f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x30b
 // Size: 0x65, Type: bool
 function oneventreceived( receiver, info, origin )
@@ -89,7 +89,7 @@ function oneventreceived( receiver, info, origin )
 }
 
 // Namespace use_armor_plate_solo / namespace_6930af0ec0bf4a3f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x379
 // Size: 0x28
 function setstationary( statename, params )
@@ -99,7 +99,7 @@ function setstationary( statename, params )
 }
 
 // Namespace use_armor_plate_solo / namespace_6930af0ec0bf4a3f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a9
 // Size: 0x72
 function usearmorplate( statename, params )
@@ -119,7 +119,7 @@ function usearmorplate( statename, params )
 }
 
 // Namespace use_armor_plate_solo / namespace_6930af0ec0bf4a3f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x423
 // Size: 0x64
 function function_30b70873a0937989( var_22e9090a351646e9 )

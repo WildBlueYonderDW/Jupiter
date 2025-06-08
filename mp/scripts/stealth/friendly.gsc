@@ -8,7 +8,7 @@
 #namespace friendly;
 
 // Namespace friendly / scripts\stealth\friendly
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14f
 // Size: 0x56
 function main()
@@ -30,7 +30,7 @@ function main()
 }
 
 // Namespace friendly / scripts\stealth\friendly
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad
 // Size: 0x7f
 function init_settings()
@@ -47,7 +47,7 @@ function init_settings()
 }
 
 // Namespace friendly / scripts\stealth\friendly
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x234
 // Size: 0x94
 function spotted_thread()
@@ -80,7 +80,7 @@ function spotted_thread()
 }
 
 // Namespace friendly / scripts\stealth\friendly
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d0
 // Size: 0x7b
 function state_hidden()
@@ -99,7 +99,7 @@ function state_hidden()
 }
 
 // Namespace friendly / scripts\stealth\friendly
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x353
 // Size: 0xa2
 function state_spotted()
@@ -127,7 +127,7 @@ function state_spotted()
 }
 
 // Namespace friendly / scripts\stealth\friendly
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fd
 // Size: 0x9
 function getup_from_prone()
@@ -136,7 +136,7 @@ function getup_from_prone()
 }
 
 // Namespace friendly / scripts\stealth\friendly
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40e
 // Size: 0x50
 function visibility_thread()
@@ -158,7 +158,7 @@ function visibility_thread()
 }
 
 // Namespace friendly / scripts\stealth\friendly
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x466
 // Size: 0x87
 function get_detect_range()

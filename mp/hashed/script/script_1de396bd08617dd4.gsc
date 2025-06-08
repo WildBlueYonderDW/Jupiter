@@ -4,7 +4,7 @@
 #namespace namespace_f9e8a327d793c098;
 
 // Namespace namespace_f9e8a327d793c098 / namespace_3bb9f9a385df1918
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb2
 // Size: 0x39
 function function_b60c68caa2f279ab()
@@ -19,7 +19,7 @@ function function_b60c68caa2f279ab()
 }
 
 // Namespace namespace_f9e8a327d793c098 / namespace_3bb9f9a385df1918
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf3
 // Size: 0x25, Type: bool
 function function_794ffcdb7828ea7a( itembundle, item, auto_use, var_18fc734ec7194ede )
@@ -28,7 +28,7 @@ function function_794ffcdb7828ea7a( itembundle, item, auto_use, var_18fc734ec719
 }
 
 // Namespace namespace_f9e8a327d793c098 / namespace_3bb9f9a385df1918
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x121
 // Size: 0xc0, Type: bool
 function use_currency( itembundle, item, auto_use )

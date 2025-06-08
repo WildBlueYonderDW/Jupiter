@@ -24,7 +24,7 @@
 #namespace rush;
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e1
 // Size: 0x1e1
 function main()
@@ -79,7 +79,7 @@ function main()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ca
 // Size: 0x63
 function initializematchrules()
@@ -91,7 +91,7 @@ function initializematchrules()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x935
 // Size: 0x64
 function seticonnames()
@@ -106,7 +106,7 @@ function seticonnames()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a1
 // Size: 0x1d9
 function onstartgametype()
@@ -166,7 +166,7 @@ function onstartgametype()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb82
 // Size: 0x55
 function updategametypedvars()
@@ -178,7 +178,7 @@ function updategametypedvars()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbdf
 // Size: 0x2c9
 function setupobjectives()
@@ -193,7 +193,8 @@ function setupobjectives()
     
     triggers = [];
     
-    for (index = 0; index < primaryflags.size; index++) {
+    for ( index = 0; index < primaryflags.size ; index++ )
+    {
         triggers[ triggers.size ] = primaryflags[ index ];
     }
     
@@ -248,7 +249,7 @@ function setupobjectives()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb0
 // Size: 0x55
 function startgame()
@@ -263,7 +264,7 @@ function startgame()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf0d
 // Size: 0x59
 function manageovertimestate()
@@ -286,7 +287,7 @@ function manageovertimestate()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf6e
 // Size: 0x1b8
 function updatecurrentobjective( newindex )
@@ -343,7 +344,7 @@ function updatecurrentobjective( newindex )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112e
 // Size: 0x343
 function initspawns()
@@ -409,7 +410,7 @@ function initspawns()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1479
 // Size: 0x96
 function getspawnpoint()
@@ -436,7 +437,7 @@ function getspawnpoint()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x1518
 // Size: 0xa8
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -455,7 +456,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15c8
 // Size: 0x14
 function onplayerconnect( player )
@@ -464,7 +465,7 @@ function onplayerconnect( player )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15e4
 // Size: 0x84
 function onplayerspawned( player )
@@ -491,7 +492,7 @@ function onplayerspawned( player )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1670
 // Size: 0x19
 function mapobjectiveicon( index )
@@ -500,7 +501,7 @@ function mapobjectiveicon( index )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1691
 // Size: 0x10
 function disabledomflagscriptable()
@@ -509,7 +510,7 @@ function disabledomflagscriptable()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16a9
 // Size: 0x116
 function awardcapturepoints()
@@ -522,7 +523,8 @@ function awardcapturepoints()
     
     while ( !level.gameended )
     {
-        for (waittime = 0; waittime < seconds; waittime = 0) {
+        for ( waittime = 0; waittime < seconds ; waittime = 0 )
+        {
             waitframe();
             scripts\mp\hostmigration::waittillhostmigrationdone();
             waittime += level.framedurationseconds;
@@ -550,7 +552,7 @@ function awardcapturepoints()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17c7
 // Size: 0x1e
 function dompoint_onbeginuse( player )
@@ -560,7 +562,7 @@ function dompoint_onbeginuse( player )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x17ed
 // Size: 0xc3
 function dompoint_onuseupdate( team, progress, change, capplayer )
@@ -586,7 +588,7 @@ function dompoint_onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18b8
 // Size: 0x176
 function dompoint_onuse( credit_player )
@@ -637,7 +639,7 @@ function dompoint_onuse( credit_player )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a36
 // Size: 0x34
 function dompoint_onenduse( team, player, success )
@@ -651,7 +653,7 @@ function dompoint_onenduse( team, player, success )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a72
 // Size: 0x18
 function dompoint_oncontested()
@@ -665,7 +667,7 @@ function dompoint_oncontested()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a92
 // Size: 0x64
 function dompoint_onuncontested( lastclaimteam )
@@ -683,7 +685,7 @@ function dompoint_onuncontested( lastclaimteam )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1afe
 // Size: 0x3c
 function dompoint_ondisableobjective()
@@ -697,7 +699,7 @@ function dompoint_ondisableobjective()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b42
 // Size: 0x88
 function dompoint_onenableobjective()
@@ -720,7 +722,7 @@ function dompoint_onenableobjective()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bd2
 // Size: 0x5d
 function dompoint_onactivateobjective()
@@ -734,7 +736,7 @@ function dompoint_onactivateobjective()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c37
 // Size: 0x13d
 function initspecatatorcameras()
@@ -764,7 +766,7 @@ function initspecatatorcameras()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d7c
 // Size: 0x46
 function setteammapposition( var_ca2c833762e5466c, team, posinfo )
@@ -778,7 +780,7 @@ function setteammapposition( var_ca2c833762e5466c, team, posinfo )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1dca
 // Size: 0x111
 function startspectatorview()
@@ -810,7 +812,7 @@ function startspectatorview()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ee3
 // Size: 0x17
 function dohalfwayflash()
@@ -821,7 +823,7 @@ function dohalfwayflash()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f02
 // Size: 0x1f
 function endspectatorview()
@@ -836,7 +838,7 @@ function endspectatorview()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f29
 // Size: 0x104
 function updatespectatorcamera( var_ca2c833762e5466c )
@@ -862,7 +864,7 @@ function updatespectatorcamera( var_ca2c833762e5466c )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2035
 // Size: 0x10b
 function movecameratomappos( player, var_9813182985677b23, finalangles )
@@ -887,7 +889,7 @@ function movecameratomappos( player, var_9813182985677b23, finalangles )
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2148
 // Size: 0xe7
 function runslamzoomonspawn()
@@ -911,7 +913,7 @@ function runslamzoomonspawn()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2237
 // Size: 0xd8
 function playslamzoomflash()
@@ -934,7 +936,7 @@ function playslamzoomflash()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2317
 // Size: 0x17
 function startoperatorsound()
@@ -945,7 +947,7 @@ function startoperatorsound()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2336
 // Size: 0x15
 function applythermal()
@@ -955,7 +957,7 @@ function applythermal()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2353
 // Size: 0x9
 function removethermal()
@@ -964,7 +966,7 @@ function removethermal()
 }
 
 // Namespace rush / scripts\mp\gametypes\rush
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2364
 // Size: 0xda
 function loopspectatorlocations()

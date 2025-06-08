@@ -12,8 +12,8 @@
 #namespace playerhealth;
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x281
+// Params 0
+// Checksum 0x0, Offset: 0x282
 // Size: 0x2d
 function init_playerhealth()
 {
@@ -28,8 +28,8 @@ function init_playerhealth()
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b6
+// Params 0
+// Checksum 0x0, Offset: 0x2b7
 // Size: 0x73
 function manageplayerregen()
 {
@@ -51,7 +51,7 @@ function manageplayerregen()
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x331
+// Checksum 0x0, Offset: 0x332
 // Size: 0xb2
 function private function_c12e5fda7dc648ce()
 {
@@ -80,7 +80,7 @@ function private function_c12e5fda7dc648ce()
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3eb
+// Checksum 0x0, Offset: 0x3ec
 // Size: 0xe6
 function private naturalhealthregen( smeansofdeath )
 {
@@ -124,7 +124,7 @@ function private naturalhealthregen( smeansofdeath )
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x4d9
+// Checksum 0x0, Offset: 0x4da
 // Size: 0x83
 function private function_fb3404dca14b5916()
 {
@@ -151,7 +151,7 @@ function private function_fb3404dca14b5916()
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x564
+// Checksum 0x0, Offset: 0x565
 // Size: 0x196
 function private waitforhealthregendelay()
 {
@@ -211,7 +211,7 @@ function private waitforhealthregendelay()
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x702
+// Checksum 0x0, Offset: 0x703
 // Size: 0x21e
 function private healovertime()
 {
@@ -286,7 +286,7 @@ function private healovertime()
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x928
+// Checksum 0x0, Offset: 0x929
 // Size: 0xda, Type: bool
 function private function_79429693a2f7755d( var_22b5b902570c2d6, var_33a536d1dbc55784 )
 {
@@ -323,8 +323,8 @@ function private function_79429693a2f7755d( var_22b5b902570c2d6, var_33a536d1dbc
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0b
+// Params 3
+// Checksum 0x0, Offset: 0xa0c
 // Size: 0x33
 function function_5457f0107a845374( var_22b5b902570c2d6, var_33a536d1dbc55784, var_5b1d349f3d7879ee )
 {
@@ -338,7 +338,7 @@ function function_5457f0107a845374( var_22b5b902570c2d6, var_33a536d1dbc55784, v
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xa46
+// Checksum 0x0, Offset: 0xa47
 // Size: 0x46
 function private regenmodifiertimeoutthread( var_22b5b902570c2d6, var_3669ac207c224e12 )
 {
@@ -350,8 +350,8 @@ function private regenmodifiertimeoutthread( var_22b5b902570c2d6, var_3669ac207c
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa94
+// Params 1
+// Checksum 0x0, Offset: 0xa95
 // Size: 0xc3, Type: bool
 function function_4f8b5efd1816f6c3( var_22b5b902570c2d6 )
 {
@@ -383,8 +383,8 @@ function function_4f8b5efd1816f6c3( var_22b5b902570c2d6 )
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb60
+// Params 0
+// Checksum 0x0, Offset: 0xb61
 // Size: 0x24
 function function_7e8e4a9f891d5806()
 {
@@ -397,8 +397,8 @@ function function_7e8e4a9f891d5806()
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8c
+// Params 1
+// Checksum 0x0, Offset: 0xb8d
 // Size: 0x25f
 function function_5c0987ada94437df( var_136d4cb8aa835cfb )
 {
@@ -454,9 +454,9 @@ function function_5c0987ada94437df( var_136d4cb8aa835cfb )
             var_3d45dcb5c34b2867 = ceil( 5000 * regenscalar );
         }
         
-        if ( getdvarint( @"hash_a3ebe91e8c1fc085", -1 ) > 0 )
+        if ( getdvarint( @"scr_override_health_regen_delay_ms", -1 ) > 0 )
         {
-            regendelayoverride = getdvarint( @"hash_a3ebe91e8c1fc085", -1 );
+            regendelayoverride = getdvarint( @"scr_override_health_regen_delay_ms", -1 );
             var_3d45dcb5c34b2867 = ceil( regendelayoverride * regenscalar );
         }
     }
@@ -482,7 +482,7 @@ function function_5c0987ada94437df( var_136d4cb8aa835cfb )
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xdf4
+// Checksum 0x0, Offset: 0xdf5
 // Size: 0xd1
 function private function_71005b327450d873()
 {
@@ -510,8 +510,8 @@ function private function_71005b327450d873()
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xece
+// Params 1
+// Checksum 0x0, Offset: 0xecf
 // Size: 0x30
 function function_ffa24fdcb2f2f661( naturalheal )
 {
@@ -525,7 +525,7 @@ function function_ffa24fdcb2f2f661( naturalheal )
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xf06
+// Checksum 0x0, Offset: 0xf07
 // Size: 0x5b
 function private function_326da60065b28039()
 {
@@ -541,8 +541,8 @@ function private function_326da60065b28039()
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf69
+// Params 0
+// Checksum 0x0, Offset: 0xf6a
 // Size: 0x1f0
 function gethealthperframe()
 {
@@ -557,9 +557,9 @@ function gethealthperframe()
     
     healthperframe = level.var_be39d6b46044f344 * 0.05 * var_881fb15f4d296741;
     
-    if ( getdvarint( @"hash_b3d928c9f115218a", 0 ) > 0 )
+    if ( getdvarint( @"scr_override_health_regen_per_sec", 0 ) > 0 )
     {
-        var_fbb0e274527f2097 = getdvarint( @"hash_b3d928c9f115218a", 0 );
+        var_fbb0e274527f2097 = getdvarint( @"scr_override_health_regen_per_sec", 0 );
         healthperframe = var_fbb0e274527f2097 * 0.05 * var_881fb15f4d296741;
     }
     
@@ -608,7 +608,7 @@ function gethealthperframe()
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1162
+// Checksum 0x0, Offset: 0x1163
 // Size: 0x1c
 function private function_25bcb1f5ecb2c04e()
 {
@@ -620,7 +620,7 @@ function private function_25bcb1f5ecb2c04e()
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x1186
+// Checksum 0x0, Offset: 0x1187
 // Size: 0x14c
 function private onfullhealth( starthealth, var_823ca369fafd4a36, var_7f86cf029bef696d )
 {
@@ -671,7 +671,7 @@ function private onfullhealth( starthealth, var_823ca369fafd4a36, var_7f86cf029b
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x12da
+// Checksum 0x0, Offset: 0x12db
 // Size: 0x1c
 function private function_9ef4f53d298067a2()
 {
@@ -682,8 +682,8 @@ function private function_9ef4f53d298067a2()
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12fe
+// Params 0
+// Checksum 0x0, Offset: 0x12ff
 // Size: 0x82
 function function_19b9bb9cef6a2d3()
 {
@@ -701,8 +701,8 @@ function function_19b9bb9cef6a2d3()
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1388
+// Params 1
+// Checksum 0x0, Offset: 0x1389
 // Size: 0x4d
 function function_93cd34979e0adbdd( var_c79a45c6dcb67386 )
 {
@@ -712,8 +712,8 @@ function function_93cd34979e0adbdd( var_c79a45c6dcb67386 )
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13dd
+// Params 1
+// Checksum 0x0, Offset: 0x13de
 // Size: 0x9f
 function function_5f963b9b662284bc( var_c79a45c6dcb67386 )
 {
@@ -732,8 +732,8 @@ function function_5f963b9b662284bc( var_c79a45c6dcb67386 )
 /#
 
     // Namespace playerhealth / scripts\cp_mp\playerhealth
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1484
+    // Params 0
+    // Checksum 0x0, Offset: 0x1485
     // Size: 0x164, Type: dev
     function function_31a13be1530a809b()
     {
@@ -768,8 +768,8 @@ function function_5f963b9b662284bc( var_c79a45c6dcb67386 )
     }
 
     // Namespace playerhealth / scripts\cp_mp\playerhealth
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x15f0
+    // Params 0
+    // Checksum 0x0, Offset: 0x15f1
     // Size: 0x207, Type: dev
     function function_cdac508141881a7c()
     {
@@ -825,8 +825,8 @@ function function_5f963b9b662284bc( var_c79a45c6dcb67386 )
     }
 
     // Namespace playerhealth / scripts\cp_mp\playerhealth
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x17ff
+    // Params 1
+    // Checksum 0x0, Offset: 0x1800
     // Size: 0xfa, Type: dev
     function function_6840973f983f0bae( id )
     {
@@ -849,8 +849,8 @@ function function_5f963b9b662284bc( var_c79a45c6dcb67386 )
 #/
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1901
+// Params 0
+// Checksum 0x0, Offset: 0x1902
 // Size: 0x15
 function getdeathsdoorduration()
 {
@@ -858,8 +858,8 @@ function getdeathsdoorduration()
 }
 
 // Namespace playerhealth / scripts\cp_mp\playerhealth
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x191f
+// Params 0
+// Checksum 0x0, Offset: 0x1920
 // Size: 0x29
 function getdeathsshieldduration()
 {

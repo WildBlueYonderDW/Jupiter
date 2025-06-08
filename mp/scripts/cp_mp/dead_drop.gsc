@@ -11,7 +11,7 @@
 #namespace dead_drop;
 
 // Namespace dead_drop / scripts\cp_mp\dead_drop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cb
 // Size: 0x10e
 function init_dead_drop()
@@ -39,7 +39,7 @@ function init_dead_drop()
 }
 
 // Namespace dead_drop / scripts\cp_mp\dead_drop
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2e1
 // Size: 0x8b
 function function_2463f61a8c4d7772( container, player, lootid, quantity, itemtype, itemindex )
@@ -67,7 +67,7 @@ function function_2463f61a8c4d7772( container, player, lootid, quantity, itemtyp
 }
 
 // Namespace dead_drop / scripts\cp_mp\dead_drop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x375
 // Size: 0x31c
 function function_a1cbb02f01a33768( params )
@@ -142,7 +142,7 @@ function function_a1cbb02f01a33768( params )
 }
 
 // Namespace dead_drop / scripts\cp_mp\dead_drop
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x699
 // Size: 0x1b
 function function_160a29300ce1e14( totalcash, player, reductionmodifier )
@@ -153,7 +153,7 @@ function function_160a29300ce1e14( totalcash, player, reductionmodifier )
 /#
 
     // Namespace dead_drop / scripts\cp_mp\dead_drop
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6bc
     // Size: 0xf1, Type: dev
     function function_dd5b2fd6714dfcc5()
@@ -181,7 +181,7 @@ function function_160a29300ce1e14( totalcash, player, reductionmodifier )
     }
 
     // Namespace dead_drop / scripts\cp_mp\dead_drop
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x7b5
     // Size: 0x12f, Type: dev
     function function_81caaaceb9608436()

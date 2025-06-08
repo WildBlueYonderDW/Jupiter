@@ -4,7 +4,7 @@
 #namespace mp_jup_st_c_ob_activities_merc_stronghold_cs;
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x67b
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6f0
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x75f
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a7
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b1
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c7
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x839
 // Size: 0xb5
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -125,7 +125,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8f6
 // Size: 0x18d
 function function_6e541aab8d090a15( fe, us, cf )
@@ -146,7 +146,7 @@ function function_6e541aab8d090a15( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa8b
 // Size: 0x18d
 function function_5070fba3d459b57f( fe, us, cf )
@@ -167,7 +167,7 @@ function function_5070fba3d459b57f( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc20
 // Size: 0x18d
 function function_50be2f4e50e673da( fe, us, cf )
@@ -188,7 +188,7 @@ function function_50be2f4e50e673da( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xdb5
 // Size: 0x18d
 function function_b8da58bef8cc444( fe, us, cf )
@@ -209,7 +209,7 @@ function function_b8da58bef8cc444( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf4a
 // Size: 0x18d
 function function_f9857e65858ed485( fe, us, cf )
@@ -230,7 +230,7 @@ function function_f9857e65858ed485( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_merc_stronghold_cs / namespace_8bdc94c286ca8f7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10df
 // Size: 0xeb4
 function function_6da2952367672ac0()

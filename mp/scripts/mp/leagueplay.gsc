@@ -13,7 +13,7 @@
 #namespace leagueplay;
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x330
 // Size: 0x19e
 function init()
@@ -61,7 +61,7 @@ function init()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d6
 // Size: 0xa8
 function onconnect()
@@ -95,7 +95,7 @@ function onconnect()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x586
 // Size: 0x29a
 function function_adcdfd1b1a3efa51( player )
@@ -144,7 +144,7 @@ function function_adcdfd1b1a3efa51( player )
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x828
 // Size: 0x590
 function ondisconnect( player, aeeventname )
@@ -251,7 +251,7 @@ function ondisconnect( player, aeeventname )
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc0
 // Size: 0xb8
 function ongameplaying()
@@ -280,7 +280,7 @@ function ongameplaying()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe80
 // Size: 0x82
 function match_cancelling()
@@ -309,7 +309,7 @@ function match_cancelling()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf0a
 // Size: 0x21, Type: bool
 function function_ecb13c8e7b38facd()
@@ -323,7 +323,7 @@ function function_ecb13c8e7b38facd()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf34
 // Size: 0x50, Type: bool
 function function_630ec6e211cd26d1()
@@ -333,7 +333,7 @@ function function_630ec6e211cd26d1()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf8d
 // Size: 0x21
 function function_5ea9c8005581107f()
@@ -344,7 +344,7 @@ function function_5ea9c8005581107f()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb6
 // Size: 0x36, Type: bool
 function function_4707c41ed8bae2d2( player )
@@ -358,7 +358,7 @@ function function_4707c41ed8bae2d2( player )
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xff5
 // Size: 0x1c4
 function function_6c42f05b6c82b35e()
@@ -398,7 +398,7 @@ function function_6c42f05b6c82b35e()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11c1
 // Size: 0x15
 function forfeit_match( forfeitteamname )
@@ -407,7 +407,7 @@ function forfeit_match( forfeitteamname )
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11de
 // Size: 0xf3
 function cancel_match()
@@ -415,7 +415,7 @@ function cancel_match()
     level.leagueplaymatchcancelled = 1;
     level.var_7ebde40af908fcf8 = 0;
     
-    if ( getdvarint( @"hash_1bc373211683e0b6" ) != 0 )
+    if ( getdvarint( @"online_mp_clientmatchdata_enabled" ) != 0 )
     {
         foreach ( player in level.players )
         {
@@ -444,7 +444,7 @@ function cancel_match()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12d9
 // Size: 0x2a
 function function_78fcc96be9d69371()
@@ -458,7 +458,7 @@ function function_78fcc96be9d69371()
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x130c
 // Size: 0x79
 function function_883f3d0fdef74fbf( winner )
@@ -496,7 +496,7 @@ function function_883f3d0fdef74fbf( winner )
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x138e
 // Size: 0x7e
 function function_5231a8b9bc35b470( ladderpointsbonuspoolstep )
@@ -515,7 +515,7 @@ function function_5231a8b9bc35b470( ladderpointsbonuspoolstep )
 }
 
 // Namespace leagueplay / scripts\mp\leagueplay
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1415
 // Size: 0x7b6
 function match_end( winner )
@@ -623,7 +623,8 @@ function match_end( winner )
         }
     }
     
-    for (i = 0; i < level.teamnamelist.size; i++) {
+    for ( i = 0; i < level.teamnamelist.size ; i++ )
+    {
         teamscore = 0;
         
         if ( !matchcancelled )

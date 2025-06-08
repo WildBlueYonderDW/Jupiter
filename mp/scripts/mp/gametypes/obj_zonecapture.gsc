@@ -22,7 +22,7 @@
 #namespace obj_zonecapture;
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x700
 // Size: 0x270
 function setupobjective( trigger, visuals, var_5ddbc1faed2c56e6, skipobjid )
@@ -53,7 +53,8 @@ function setupobjective( trigger, visuals, var_5ddbc1faed2c56e6, skipobjid )
     }
     else if ( var_c8f4c582625f492d == #"koth" || var_c8f4c582625f492d == #"landgrab" )
     {
-        for (index = 0; index < zone.visuals.size; index++) {
+        for ( index = 0; index < zone.visuals.size ; index++ )
+        {
             zone.visuals[ index ] hide();
         }
     }
@@ -95,7 +96,7 @@ function setupobjective( trigger, visuals, var_5ddbc1faed2c56e6, skipobjid )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x979
 // Size: 0x25
 function function_e4c3058ef8c3819e( zone )
@@ -107,7 +108,7 @@ function function_e4c3058ef8c3819e( zone )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9a6
 // Size: 0x14e
 function assignchevrons( target, label )
@@ -150,7 +151,7 @@ function assignchevrons( target, label )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xafc
 // Size: 0x11f
 function updatechevrons( state )
@@ -173,7 +174,8 @@ function updatechevrons( state )
     
     foreach ( chevron in zone.chevrons )
     {
-        for (i = 0; i < chevron.numchevrons; i++) {
+        for ( i = 0; i < chevron.numchevrons ; i++ )
+        {
             chevron setscriptablepartstate( "chevron_" + i, state );
         }
     }
@@ -182,7 +184,7 @@ function updatechevrons( state )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc23
 // Size: 0xf2
 function function_684d05448781a1f4()
@@ -219,7 +221,7 @@ function function_684d05448781a1f4()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd1d
 // Size: 0x2a5
 function activatezone( objid, skipobjid )
@@ -293,7 +295,7 @@ function activatezone( objid, skipobjid )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfca
 // Size: 0x1ef
 function deactivatezone()
@@ -339,7 +341,7 @@ function deactivatezone()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11c1
 // Size: 0x7d
 function zonetimerwait()
@@ -358,7 +360,7 @@ function zonetimerwait()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1246
 // Size: 0x1ba
 function hp_move_soon( timer )
@@ -410,7 +412,7 @@ function hp_move_soon( timer )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1408
 // Size: 0x8d
 function handlehostmigration( var_ff049ff4093f7a4e )
@@ -434,7 +436,7 @@ function handlehostmigration( var_ff049ff4093f7a4e )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x149d
 // Size: 0x39
 function hardpoint_setneutral()
@@ -447,7 +449,7 @@ function hardpoint_setneutral()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14de
 // Size: 0xa5
 function trackgametypevips()
@@ -475,7 +477,7 @@ function trackgametypevips()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x158b
 // Size: 0x68
 function cleanupgametypevips()
@@ -489,7 +491,7 @@ function cleanupgametypevips()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15fb
 // Size: 0x65d
 function zone_onuse( credit_player )
@@ -507,7 +509,8 @@ function zone_onuse( credit_player )
     touchlist = [];
     touchkeys = getarraykeys( zone.touchlist[ capture_team ] );
     
-    for (i = 0; i < touchkeys.size; i++) {
+    for ( i = 0; i < touchkeys.size ; i++ )
+    {
         touchlist[ touchkeys[ i ] ] = zone.touchlist[ capture_team ][ touchkeys[ i ] ];
     }
     
@@ -658,7 +661,7 @@ function zone_onuse( credit_player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c60
 // Size: 0x1d
 function waitthensetvisibleteam()
@@ -669,7 +672,7 @@ function waitthensetvisibleteam()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c85
 // Size: 0x1a2
 function zone_onusebegin( player )
@@ -726,7 +729,7 @@ function zone_onusebegin( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1e2f
 // Size: 0x241
 function zone_onuseupdate( team, progress, change, capplayer )
@@ -793,7 +796,7 @@ function zone_onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2078
 // Size: 0x35
 function delaydialogstatustoavoidcaptureoverlap( capture_team, otherteam )
@@ -804,7 +807,7 @@ function delaydialogstatustoavoidcaptureoverlap( capture_team, otherteam )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20b5
 // Size: 0xa6
 function playcapturesound( progress, team )
@@ -827,7 +830,7 @@ function playcapturesound( progress, team )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2163
 // Size: 0x1a0
 function zone_onuseend( team, player, success )
@@ -887,7 +890,7 @@ function zone_onuseend( team, player, success )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x230b
 // Size: 0x1aa
 function zone_onunoccupied()
@@ -933,7 +936,7 @@ function zone_onunoccupied()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24bd
 // Size: 0x2e7
 function zone_oncontested()
@@ -959,7 +962,8 @@ function zone_oncontested()
             touchlist = zone.touchlist[ team ];
             players_touching = getarraykeys( touchlist );
             
-            for (index = 0; index < players_touching.size; index++) {
+            for ( index = 0; index < players_touching.size ; index++ )
+            {
                 player = touchlist[ players_touching[ index ] ].player;
                 
                 if ( isplayer( player ) )
@@ -1008,7 +1012,7 @@ function zone_oncontested()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27ac
 // Size: 0x331
 function zone_onuncontested( lastclaimteam )
@@ -1084,7 +1088,7 @@ function zone_onuncontested( lastclaimteam )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ae5
 // Size: 0x13
 function zone_stompeenemyprogressupdate( team )
@@ -1093,7 +1097,7 @@ function zone_stompeenemyprogressupdate( team )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b00
 // Size: 0x56
 function zone_stompprogressreward( player )
@@ -1105,7 +1109,7 @@ function zone_stompprogressreward( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b5e
 // Size: 0x96
 function function_dcbc745e92f98a9f( friendlyicon, enemyicon )
@@ -1128,7 +1132,7 @@ function function_dcbc745e92f98a9f( friendlyicon, enemyicon )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bfc
 // Size: 0xbb
 function zone_onpinnedstate( player )
@@ -1147,7 +1151,7 @@ function zone_onpinnedstate( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cbf
 // Size: 0xa2
 function zone_onunpinnedstate( player )
@@ -1166,7 +1170,7 @@ function zone_onunpinnedstate( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d69
 // Size: 0x86
 function adjustmatchtimerpausedstatefromscore( team, var_ac8cfc833c6f6e23 )
@@ -1203,7 +1207,7 @@ function adjustmatchtimerpausedstatefromscore( team, var_ac8cfc833c6f6e23 )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2df7
 // Size: 0x4b
 function setcrankedtimerzonecap( player )
@@ -1215,7 +1219,7 @@ function setcrankedtimerzonecap( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e4a
 // Size: 0x63
 function playhardpointneutralfx()
@@ -1230,7 +1234,7 @@ function playhardpointneutralfx()
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2eb5
 // Size: 0xad
 function showcapturedhardpointeffecttoplayer( capture_team, player )
@@ -1270,7 +1274,7 @@ function showcapturedhardpointeffecttoplayer( capture_team, player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f6a
 // Size: 0x60
 function showzoneneutralbrush( player )
@@ -1283,7 +1287,7 @@ function showzoneneutralbrush( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fd2
 // Size: 0x60
 function showzonefriendlybrush( player )
@@ -1296,7 +1300,7 @@ function showzonefriendlybrush( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x303a
 // Size: 0x60
 function showzoneenemybrush( player )
@@ -1309,7 +1313,7 @@ function showzoneenemybrush( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30a2
 // Size: 0x60
 function showzonecontestedbrush( player )
@@ -1322,7 +1326,7 @@ function showzonecontestedbrush( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x310a
 // Size: 0x60
 function hideplayerspecificbrushes( player )
@@ -1335,7 +1339,7 @@ function hideplayerspecificbrushes( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3172
 // Size: 0x55
 function onplayerjoinedteam( player )
@@ -1349,7 +1353,7 @@ function onplayerjoinedteam( player )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31cf
 // Size: 0x25b
 function removechevronsfromarray( othervisuals, label )
@@ -1401,7 +1405,7 @@ function removechevronsfromarray( othervisuals, label )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3433
 // Size: 0xbe
 function postshipmodifychevrons( othervisuals, label )
@@ -1425,7 +1429,7 @@ function postshipmodifychevrons( othervisuals, label )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x34fa
 // Size: 0x36
 function createvisualsinfo( scriptable, origin, angles )
@@ -1436,7 +1440,7 @@ function createvisualsinfo( scriptable, origin, angles )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3539
 // Size: 0x4b
 function function_da1f3979f22bb288( posorigin, alias, timer )
@@ -1454,7 +1458,7 @@ function function_da1f3979f22bb288( posorigin, alias, timer )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x358c
 // Size: 0x4b
 function function_82b6a3e1bcda539b( posorigin, alias, timer )
@@ -1472,7 +1476,7 @@ function function_82b6a3e1bcda539b( posorigin, alias, timer )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35df
 // Size: 0x10e
 function calculatespawndisttozones( spawnpoint, maxdistance )
@@ -1507,7 +1511,7 @@ function calculatespawndisttozones( spawnpoint, maxdistance )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x36f5
 // Size: 0x12c
 function function_492958e372181db0( spawnpoint, zones, maxdistance )
@@ -1542,7 +1546,7 @@ function function_492958e372181db0( spawnpoint, zones, maxdistance )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3829
 // Size: 0x1e2
 function function_abdea33c2ac7149b( spawntype, spawnset )
@@ -1593,7 +1597,7 @@ function function_abdea33c2ac7149b( spawntype, spawnset )
 }
 
 // Namespace obj_zonecapture / scripts\mp\gametypes\obj_zonecapture
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3a13
 // Size: 0x26c
 function function_4265173fd3869f34( spawntype, spawnset, spawnkey )

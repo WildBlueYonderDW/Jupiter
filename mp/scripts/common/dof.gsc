@@ -6,7 +6,7 @@
 #namespace dof;
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28a
 // Size: 0x230
 function function_9030ff462f3daa1a()
@@ -173,7 +173,7 @@ function private function_cb47153207fc68d2( num )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x695
 // Size: 0x5a
 function function_c7a153413fa65e8d( fstop, focusspeed, aperturespeed )
@@ -184,7 +184,7 @@ function function_c7a153413fa65e8d( fstop, focusspeed, aperturespeed )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6f7
 // Size: 0x21b
 function function_c1f42ed707642a04( fstop, focusspeed, aperturespeed )
@@ -253,7 +253,7 @@ function function_c1f42ed707642a04( fstop, focusspeed, aperturespeed )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91a
 // Size: 0x87
 function function_4a2ce820849a53f7()
@@ -269,7 +269,7 @@ function function_4a2ce820849a53f7()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9aa
 // Size: 0x54
 function function_121b9c1e3a5664af()
@@ -279,7 +279,7 @@ function function_121b9c1e3a5664af()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa07
 // Size: 0x4b
 function function_e7a3f680f309a5a()
@@ -289,7 +289,7 @@ function function_e7a3f680f309a5a()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa5b
 // Size: 0x313
 function function_91d67d689e8a5ac5()
@@ -368,7 +368,7 @@ function function_91d67d689e8a5ac5()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd76
 // Size: 0x189
 function function_ddd1e6b7bd85c6d1()
@@ -419,7 +419,7 @@ function function_ddd1e6b7bd85c6d1()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf07
 // Size: 0x293
 function function_8ec129ee5a53f0bc()
@@ -443,8 +443,10 @@ function function_8ec129ee5a53f0bc()
     minvalue = 12000;
     maxvalue = 0;
     
-    for (x = 0; x < var_c57c437404405a37 + 1; x++) {
-        for (y = 0; y < var_4c1dec663db42f82 + 1; y++) {
+    for ( x = 0; x < var_c57c437404405a37 + 1 ; x++ )
+    {
+        for ( y = 0; y < var_4c1dec663db42f82 + 1 ; y++ )
+        {
             struct = spawnstruct();
             struct.addangles = ( y * angle + var_6b84c5404b57e175, x * angle + var_801c42d2e14b7c0c, 0 );
             anglesarray[ x ][ y ] = struct;
@@ -478,7 +480,7 @@ function function_8ec129ee5a53f0bc()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11a2
 // Size: 0x4d8
 function function_b23eb6ebe631ccdc( playereyeorigin, playerviewangles )
@@ -590,7 +592,7 @@ function function_b23eb6ebe631ccdc( playereyeorigin, playerviewangles )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1683
 // Size: 0x8c
 function function_50c7801fc0abbd3a()
@@ -604,7 +606,7 @@ function function_50c7801fc0abbd3a()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1717
 // Size: 0xa6f
 function function_ac3ec9d38fd2434( playereyepos, playerangles )
@@ -870,7 +872,7 @@ function function_ac3ec9d38fd2434( playereyepos, playerangles )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x218f
 // Size: 0xe4
 function function_41ae85dd67830a98( ent, playereyepos, playerforward )
@@ -897,7 +899,7 @@ function function_41ae85dd67830a98( ent, playereyepos, playerforward )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x227c
 // Size: 0x36
 function function_ce15d73cabdc73a4( targetorigin, sourcepos, sourceforward )
@@ -907,7 +909,7 @@ function function_ce15d73cabdc73a4( targetorigin, sourcepos, sourceforward )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x22bb
 // Size: 0xb9
 function function_77d9a6389a3305ee( playereyeorigin, playerangles, addangles, pos )
@@ -934,7 +936,7 @@ function function_77d9a6389a3305ee( playereyeorigin, playerangles, addangles, po
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x237d
 // Size: 0xc5
 function function_7641c664cf37b604()
@@ -966,7 +968,7 @@ function function_7641c664cf37b604()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x244b
 // Size: 0x2b6
 function function_abfbc195c3aac94c( playereyeorigin, highestgroup )
@@ -1026,7 +1028,7 @@ function function_abfbc195c3aac94c( playereyeorigin, highestgroup )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2709
 // Size: 0x7a
 function function_28ac1e5f07cc8ea8( pos, color )
@@ -1046,7 +1048,7 @@ function function_28ac1e5f07cc8ea8( pos, color )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x278b
 // Size: 0x155, Type: bool
 function function_7d02f8d29555766e( start, end, actorpos )
@@ -1086,7 +1088,7 @@ function function_7d02f8d29555766e( start, end, actorpos )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x28e9
 // Size: 0x256
 function dyndof( fstop, targetentity, focusspeed, aperturespeed, angles, var_387062334ab0e50e, ignorelist, ignorecollision, var_4a0992ce3ff1d7ea )
@@ -1167,7 +1169,7 @@ function dyndof( fstop, targetentity, focusspeed, aperturespeed, angles, var_387
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b47
 // Size: 0x2e
 function dyndof_disable()
@@ -1196,7 +1198,7 @@ function private function_a0bbe9bbf0848458()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bd4
 // Size: 0x1e2
 function dyndof_thread( targetentity )
@@ -1245,7 +1247,7 @@ function dyndof_thread( targetentity )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dbe
 // Size: 0x865
 function dyndof_distance( targetentity )
@@ -1280,7 +1282,8 @@ function dyndof_distance( targetentity )
                 {
                     num_parts = getnumparts( targetentity.headmodel );
                     
-                    for (i = 0; i < num_parts; i++) {
+                    for ( i = 0; i < num_parts ; i++ )
+                    {
                         if ( getpartname( targetentity.headmodel, i ) == bone )
                         {
                             player.dyndof.bone = bone;
@@ -1298,7 +1301,8 @@ function dyndof_distance( targetentity )
                     {
                         num_parts = getnumparts( targetentity.attachedweaponmodels[ n ] );
                         
-                        for (i = 0; i < num_parts; i++) {
+                        for ( i = 0; i < num_parts ; i++ )
+                        {
                             if ( getpartname( targetentity.attachedweaponmodels[ n ], i ) == bone )
                             {
                                 player.dyndof.bone = bone;
@@ -1313,7 +1317,8 @@ function dyndof_distance( targetentity )
                 
                 num_parts = getnumparts( targetentity.model );
                 
-                for (i = 0; i < num_parts; i++) {
+                for ( i = 0; i < num_parts ; i++ )
+                {
                     if ( getpartname( targetentity.model, i ) == bone )
                     {
                         player.dyndof.bone = bone;
@@ -1450,7 +1455,8 @@ function dyndof_distance( targetentity )
     index = 0;
     closesttrace = traces[ index ];
     
-    for (i = 1; i < traces.size; i++) {
+    for ( i = 1; i < traces.size ; i++ )
+    {
         if ( traces[ i ][ "fraction" ] < closesttrace[ "fraction" ] )
         {
             closesttrace = traces[ i ];
@@ -1465,7 +1471,7 @@ function dyndof_distance( targetentity )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x362c
 // Size: 0x12f
 function dyndof_trace_internal( angles, pos )
@@ -1505,7 +1511,7 @@ function dyndof_trace_internal( angles, pos )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3764
 // Size: 0x1ca, Type: bool
 function dyndof_trace_target( pos )
@@ -1564,7 +1570,7 @@ function dyndof_trace_target( pos )
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3937
 // Size: 0xd2
 function dyndof_getplayerorigin()
@@ -1604,7 +1610,7 @@ function dyndof_getplayerorigin()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a12
 // Size: 0x3d
 function dyndof_getplayerangles()
@@ -1615,7 +1621,7 @@ function dyndof_getplayerangles()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a58
 // Size: 0x75
 function create_dyndof()
@@ -1630,7 +1636,7 @@ function create_dyndof()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ad6
 // Size: 0x1a
 function destroy_dyndof()
@@ -1644,7 +1650,7 @@ function destroy_dyndof()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3af8
 // Size: 0x4b
 function get_dyndof_contents()
@@ -1654,7 +1660,7 @@ function get_dyndof_contents()
 }
 
 // Namespace dof / scripts\common\dof
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b4c
 // Size: 0x226
 function dyndof_debug( traces, closesttrace )

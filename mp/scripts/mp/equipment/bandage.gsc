@@ -12,7 +12,7 @@
 #namespace bandage;
 
 // Namespace bandage / scripts\mp\equipment\bandage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x174
 // Size: 0x7
 function getbandagehealfractionbr()
@@ -21,7 +21,7 @@ function getbandagehealfractionbr()
 }
 
 // Namespace bandage / scripts\mp\equipment\bandage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x184
 // Size: 0x4
 function getbandagehealtimebr()
@@ -30,7 +30,7 @@ function getbandagehealtimebr()
 }
 
 // Namespace bandage / scripts\mp\equipment\bandage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x191
 // Size: 0x4
 function getfirstaidhealtimebr()
@@ -39,7 +39,7 @@ function getfirstaidhealtimebr()
 }
 
 // Namespace bandage / scripts\mp\equipment\bandage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19e
 // Size: 0x5c
 function getbandagetime( itemname )
@@ -65,7 +65,7 @@ function getbandagetime( itemname )
 }
 
 // Namespace bandage / scripts\mp\equipment\bandage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x203
 // Size: 0xec
 function usebandage( itemname, var_1156b7a3b9b6aa08 )
@@ -109,7 +109,7 @@ function usebandage( itemname, var_1156b7a3b9b6aa08 )
 }
 
 // Namespace bandage / scripts\mp\equipment\bandage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f7
 // Size: 0x38
 function bandageheal( itemname )

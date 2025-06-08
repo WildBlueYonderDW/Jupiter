@@ -37,7 +37,7 @@
 #namespace grnd;
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc5b
 // Size: 0x25b
 function main()
@@ -104,7 +104,7 @@ function main()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xebe
 // Size: 0x144
 function initializematchrules()
@@ -125,7 +125,7 @@ function initializematchrules()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x100a
 // Size: 0xea
 function onstartgametype()
@@ -168,7 +168,7 @@ function onstartgametype()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10fc
 // Size: 0x11f
 function updategametypedvars()
@@ -191,7 +191,7 @@ function updategametypedvars()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1223
 // Size: 0x88
 function adjustzoneactivationdelayforlargemaps()
@@ -212,7 +212,7 @@ function adjustzoneactivationdelayforlargemaps()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12b3
 // Size: 0x36
 function setmapsizespawnconsts()
@@ -224,7 +224,7 @@ function setmapsizespawnconsts()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12f1
 // Size: 0x67f
 function initspawns()
@@ -360,7 +360,7 @@ function initspawns()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1978
 // Size: 0xdd, Type: bool
 function comparezoneindexes( zone_a, zone_b )
@@ -395,7 +395,7 @@ function comparezoneindexes( zone_a, zone_b )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a5e
 // Size: 0x106
 function getzonearray( targetname )
@@ -414,10 +414,12 @@ function getzonearray( targetname )
     
     swapped = 1;
     
-    for (n = zones.size; swapped; n--) {
+    for ( n = zones.size; swapped ; n-- )
+    {
         swapped = 0;
         
-        for (i = 0; i < n - 1; i++) {
+        for ( i = 0; i < n - 1 ; i++ )
+        {
             if ( comparezoneindexes( zones[ i ], zones[ i + 1 ] ) )
             {
                 temp = zones[ i ];
@@ -432,7 +434,7 @@ function getzonearray( targetname )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b6d
 // Size: 0xa12
 function setupzones()
@@ -641,12 +643,14 @@ function setupzones()
     visuals = [];
     level.objectives = [];
     
-    for (i = 0; i < flares.size; i++) {
+    for ( i = 0; i < flares.size ; i++ )
+    {
         errored = 0;
         flare = flares[ i ];
         trig = undefined;
         
-        for (j = 0; j < trigs.size; j++) {
+        for ( j = 0; j < trigs.size ; j++ )
+        {
             if ( flare.scriptable istouching( trigs[ j ] ) )
             {
                 if ( isdefined( trig ) )
@@ -684,7 +688,8 @@ function setupzones()
         /#
             println( "<dev string:x103>" );
             
-            for (i = 0; i < maperrors.size; i++) {
+            for ( i = 0; i < maperrors.size ; i++ )
+            {
                 println( maperrors[ i ] );
             }
             
@@ -699,7 +704,7 @@ function setupzones()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2588
 // Size: 0x41e
 function dzmainloop()
@@ -804,7 +809,7 @@ function dzmainloop()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29ae
 // Size: 0x5a
 function getfirstzone()
@@ -824,7 +829,7 @@ function getfirstzone()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a11
 // Size: 0x419
 function getnextzone()
@@ -925,7 +930,7 @@ function getnextzone()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e33
 // Size: 0x159
 function spawn_next_zone()
@@ -957,7 +962,7 @@ function spawn_next_zone()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f94
 // Size: 0x264
 function hqactivatenextzone( var_570ba02607c0425c, firstzone )
@@ -1015,7 +1020,7 @@ function hqactivatenextzone( var_570ba02607c0425c, firstzone )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3200
 // Size: 0x47
 function locktimeruntilcap()
@@ -1031,7 +1036,7 @@ function locktimeruntilcap()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x324f
 // Size: 0x16a
 function hpcaptureloop()
@@ -1079,7 +1084,7 @@ function hpcaptureloop()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33c1
 // Size: 0x26a
 function awardcapturepoints()
@@ -1094,7 +1099,8 @@ function awardcapturepoints()
     
     while ( !level.gameended )
     {
-        for (waittime = 0; waittime < seconds; waittime = 0) {
+        for ( waittime = 0; waittime < seconds ; waittime = 0 )
+        {
             waitframe();
             scripts\mp\hostmigration::waittillhostmigrationdone();
             waittime += level.framedurationseconds;
@@ -1142,7 +1148,7 @@ function awardcapturepoints()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3633
 // Size: 0x65
 function movezoneaftertime( time )
@@ -1161,7 +1167,7 @@ function movezoneaftertime( time )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x36a0
 // Size: 0x1ed
 function give_capture_credit( touchlist, capturetime, capture_team, lastcaptureteam, credit_player )
@@ -1203,7 +1209,8 @@ function give_capture_credit( touchlist, capturetime, capture_team, lastcapturet
     
     players = getarraykeys( touchlist );
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         player = touchlist[ players[ i ] ].player;
         player updatecapsperminute( lastcaptureteam );
         
@@ -1224,7 +1231,7 @@ function give_capture_credit( touchlist, capturetime, capture_team, lastcapturet
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3895
 // Size: 0x32f
 function randomdrops()
@@ -1302,7 +1309,7 @@ function randomdrops()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bcc
 // Size: 0x2d6, Type: bool
 function shoulddonodedrop( cratetype )
@@ -1370,7 +1377,7 @@ function shoulddonodedrop( cratetype )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3eab
 // Size: 0x1c8
 function getdropposition()
@@ -1404,7 +1411,7 @@ function getdropposition()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x407c
 // Size: 0xc7
 function getbestplayer()
@@ -1431,7 +1438,7 @@ function getbestplayer()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x414c
 // Size: 0x1a4
 function getspawnpoint()
@@ -1478,7 +1485,7 @@ function getspawnpoint()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42f9
 // Size: 0xb
 function getobjzonedeadzonedist()
@@ -1487,7 +1494,7 @@ function getobjzonedeadzonedist()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x430d
 // Size: 0x8c
 function removespawnsinactivedz( spawnpoints )
@@ -1509,7 +1516,7 @@ function removespawnsinactivedz( spawnpoints )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43a2
 // Size: 0xa0
 function onplayerconnect( player )
@@ -1533,7 +1540,7 @@ function onplayerconnect( player )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x444a
 // Size: 0x1b
 function onplayerspawned( player )
@@ -1545,7 +1552,7 @@ function onplayerspawned( player )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x446d
 // Size: 0x2a
 function onspawnplayer( revivespawn )
@@ -1556,7 +1563,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x449f
 // Size: 0x3b
 function gethqownerteamvalue( ownerteam )
@@ -1578,7 +1585,7 @@ function gethqownerteamvalue( ownerteam )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x44e3
 // Size: 0x9b
 function updateservericons( state, contested )
@@ -1615,7 +1622,7 @@ function updateservericons( state, contested )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4586
 // Size: 0x79
 function getownerteamplayer( ownerteam )
@@ -1635,7 +1642,7 @@ function getownerteamplayer( ownerteam )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4608
 // Size: 0x99
 function updaterespawntimer()
@@ -1665,7 +1672,7 @@ function updaterespawntimer()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46a9
 // Size: 0x72
 function seticonnames()
@@ -1681,7 +1688,7 @@ function seticonnames()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4723
 // Size: 0xeb
 function initwaypointicons()
@@ -1697,7 +1704,7 @@ function initwaypointicons()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4816
 // Size: 0xcb
 function updatecapsperminute( lastownerteam )
@@ -1730,7 +1737,7 @@ function updatecapsperminute( lastownerteam )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48e9
 // Size: 0x29, Type: bool
 function isscoreboosting( player )
@@ -1739,7 +1746,7 @@ function isscoreboosting( player )
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x491b
 // Size: 0x4d
 function writecurrentrotationteamscore()
@@ -1752,7 +1759,7 @@ function writecurrentrotationteamscore()
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4970
 // Size: 0x31
 function updatematchstatushintonspawn()

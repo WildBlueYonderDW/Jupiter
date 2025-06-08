@@ -6,7 +6,7 @@
 #namespace mp_jup_slaughterhouse_oct_lighting;
 
 // Namespace mp_jup_slaughterhouse_oct_lighting / scripts\mp\maps\mp_jup_slaughterhouse_oct\mp_jup_slaughterhouse_oct_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcc
 // Size: 0x48
 function main()

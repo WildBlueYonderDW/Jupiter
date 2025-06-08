@@ -5,7 +5,7 @@
 #namespace content_manager;
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x199
 // Size: 0x34
 function function_9218617331ba59ff( instance, string )
@@ -17,7 +17,7 @@ function function_9218617331ba59ff( instance, string )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d5
 // Size: 0x41
 function function_223d2522d69e265d( instance, string )
@@ -33,7 +33,7 @@ function function_223d2522d69e265d( instance, string )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21f
 // Size: 0x81
 function function_3e419ffd7ff0650d()
@@ -53,7 +53,7 @@ function function_3e419ffd7ff0650d()
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a8
 // Size: 0x1c
 function function_25d8f4a67b2f6fa6()
@@ -67,7 +67,7 @@ function function_25d8f4a67b2f6fa6()
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cc
 // Size: 0xbf
 function register_script( scriptname, spawncallback, var_76c7d77c9c5c25cb )
@@ -89,7 +89,7 @@ function register_script( scriptname, spawncallback, var_76c7d77c9c5c25cb )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x394
 // Size: 0x2f
 function get_script( scriptname )
@@ -99,7 +99,7 @@ function get_script( scriptname )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3cc
 // Size: 0xec
 function function_2643181f53446ac4( key, value )
@@ -126,14 +126,15 @@ function function_2643181f53446ac4( key, value )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c1
 // Size: 0x149
 function function_1d0ccd8d315db185( destination, content_category )
 {
     locations = array_randomize( get_children( destination ) );
     
-    for (i = 0; i < locations.size; i++) {
+    for ( i = 0; i < locations.size ; i++ )
+    {
         if ( isdefined( locations[ i ].variantname ) && locations[ i ].variantname != "content_location" )
         {
             array_remove_index( locations, i, 1 );
@@ -157,7 +158,7 @@ function function_1d0ccd8d315db185( destination, content_category )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x612
 // Size: 0x1e9
 function setup_destinations()
@@ -197,7 +198,7 @@ function setup_destinations()
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x803
 // Size: 0xd4
 function setup_adjacencies( str_destination, var_29d15208128f7711 )
@@ -215,7 +216,7 @@ function setup_adjacencies( str_destination, var_29d15208128f7711 )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8df
 // Size: 0x63
 function function_38c2d8befceaca58( location )
@@ -227,7 +228,7 @@ function function_38c2d8befceaca58( location )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x94b
 // Size: 0x2f5
 function setup_locations()
@@ -284,7 +285,7 @@ function setup_locations()
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc48
 // Size: 0xc1
 function spawn_instance( instance )
@@ -305,7 +306,7 @@ function spawn_instance( instance )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd11
 // Size: 0x78, Type: bool
 function function_200f782ea3757585( instance )
@@ -318,7 +319,7 @@ function function_200f782ea3757585( instance )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd92
 // Size: 0x100
 function function_83373446144cfe7d( instance )
@@ -333,7 +334,7 @@ function function_83373446144cfe7d( instance )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe9a
 // Size: 0x91
 function spawn_interact( struct, var_91839babd32261f4, usecallback, offset )
@@ -348,7 +349,7 @@ function spawn_interact( struct, var_91839babd32261f4, usecallback, offset )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf34
 // Size: 0x34
 function interact_show( b_show )
@@ -364,7 +365,7 @@ function interact_show( b_show )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf70
 // Size: 0x13
 function function_1ab52e17fab56634()
@@ -373,7 +374,7 @@ function function_1ab52e17fab56634()
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xf8b
 // Size: 0x54
 function interact_used( interact, part, state, player, auto_use, use_string )
@@ -387,7 +388,7 @@ function interact_used( interact, part, state, player, auto_use, use_string )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xfe7
 // Size: 0xa4
 function function_a6df741f1a9b67b1( contentstructs, modelname, var_4056e5ccaf62d67d, pingable )
@@ -406,7 +407,7 @@ function function_a6df741f1a9b67b1( contentstructs, modelname, var_4056e5ccaf62d
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1094
 // Size: 0x1ee
 function spawn_script_model( struct, modelname, var_4056e5ccaf62d67d, pingable, var_194ed46ea3828b33 )
@@ -475,7 +476,7 @@ function spawn_script_model( struct, modelname, var_4056e5ccaf62d67d, pingable, 
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x128b
 // Size: 0xfa
 function spawn_zbarrier( struct, zbarrier_classname, var_52bec72bdd3b32dd )
@@ -515,7 +516,7 @@ function spawn_zbarrier( struct, zbarrier_classname, var_52bec72bdd3b32dd )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x138e
 // Size: 0x29b
 function cleanup_spawned_instances()
@@ -589,7 +590,7 @@ function cleanup_spawned_instances()
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1631
 // Size: 0xbb
 function function_dcb921c0f1ffc7a2( parent )
@@ -611,7 +612,7 @@ function function_dcb921c0f1ffc7a2( parent )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16f4
 // Size: 0xc3
 function function_8133fcadd8a74b66( children )
@@ -633,7 +634,7 @@ function function_8133fcadd8a74b66( children )
 }
 
 // Namespace content_manager / scripts\cp_mp\content_manager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17c0
 // Size: 0x32
 function get_children( parent )
@@ -649,7 +650,7 @@ function get_children( parent )
 /#
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x17fb
     // Size: 0x369, Type: dev
     function init_devgui()
@@ -695,7 +696,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x1b6c
     // Size: 0x54, Type: dev
     function devgui_path( name, pos, str )
@@ -712,7 +713,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1bc8
     // Size: 0x3f, Type: dev
     function add_devgui( menu_path, commands )
@@ -722,7 +723,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1c0f
     // Size: 0x18, Type: dev
     function addentrytodevgui( command )
@@ -731,7 +732,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1c2f
     // Size: 0x162, Type: dev
     function addentrytodevgui_internal( command )
@@ -785,7 +786,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d99
     // Size: 0x12c, Type: dev
     function function_35cf2e81c8407bf7()
@@ -838,7 +839,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1ecd
     // Size: 0xf9, Type: dev
     function debug_draw()
@@ -866,7 +867,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1fce
     // Size: 0x2f, Type: dev
     function draw_destination( destination )
@@ -875,7 +876,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x2005
     // Size: 0xdd, Type: dev
     function draw_location( location, destination )
@@ -892,7 +893,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x20ea
     // Size: 0x34, Type: dev
     function draw_instance( instance, location )
@@ -902,7 +903,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2126
     // Size: 0xd0, Type: dev
     function function_151de086961dc5d6( node )
@@ -921,7 +922,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x21fe
     // Size: 0xc1, Type: dev
     function draw_struct( struct, color, parent, extrastr )
@@ -942,7 +943,7 @@ function get_children( parent )
     }
 
     // Namespace content_manager / scripts\cp_mp\content_manager
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x22c7
     // Size: 0x31, Type: dev
     function function_8d3f50d17aeb1eae( str, append )

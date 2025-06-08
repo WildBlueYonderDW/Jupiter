@@ -9,7 +9,7 @@
 #namespace dragonsbreath;
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x3f
 function function_df4e9a1e313ea352()
@@ -22,7 +22,7 @@ function function_df4e9a1e313ea352()
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3e9
 // Size: 0x86
 function function_6dc8c5de229e86ff( newhitlocs, attacker, objweapon )
@@ -44,7 +44,7 @@ function function_6dc8c5de229e86ff( newhitlocs, attacker, objweapon )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x477
 // Size: 0x4b
 function function_56a694363da738ac( objweapon )
@@ -61,7 +61,7 @@ function function_56a694363da738ac( objweapon )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ca
 // Size: 0x19
 function function_9fd9dc9d9d3a0bc4()
@@ -71,7 +71,7 @@ function function_9fd9dc9d9d3a0bc4()
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4eb
 // Size: 0x2b4
 function function_a0888e06aa555932( newburningparts, attacker, objweapon )
@@ -138,7 +138,7 @@ function function_a0888e06aa555932( newburningparts, attacker, objweapon )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7a7
 // Size: 0xec
 function function_8b5ae6ab700339f8( attacker, objweapon )
@@ -171,7 +171,7 @@ function function_8b5ae6ab700339f8( attacker, objweapon )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x89b
 // Size: 0xad
 function function_a1b485fd94771e09( objweapon )
@@ -193,7 +193,7 @@ function function_a1b485fd94771e09( objweapon )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x950
 // Size: 0x3bf
 function function_f21bfcf42e2f3e8b()
@@ -308,7 +308,7 @@ function function_f21bfcf42e2f3e8b()
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd17
 // Size: 0x146
 function function_3d9255af28a82f08( hitloc )
@@ -353,7 +353,7 @@ function function_3d9255af28a82f08( hitloc )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe65
 // Size: 0x51, Type: bool
 function isdragonsbreathweapon( objweapon )
@@ -379,7 +379,7 @@ function isdragonsbreathweapon( objweapon )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xebf
 // Size: 0x32, Type: bool
 function function_cfd2e1e48edaf93( objweapon )
@@ -396,7 +396,7 @@ function function_cfd2e1e48edaf93( objweapon )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xefa
 // Size: 0x1d
 function isshield( hitloc )
@@ -410,7 +410,7 @@ function isshield( hitloc )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf1f
 // Size: 0x140
 function function_c206c109a26f598( idamage, attacker, objweapon, hitloc )
@@ -440,7 +440,7 @@ function function_c206c109a26f598( idamage, attacker, objweapon, hitloc )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1067
 // Size: 0x1dc
 function function_1a50056b16521c9e( attacker, var_60d435c6357875ea )
@@ -463,7 +463,8 @@ function function_1a50056b16521c9e( attacker, var_60d435c6357875ea )
             wait var_60d435c6357875ea;
             damage = 0;
             
-            for (i = 0; i < self.var_7e2abe421347dd30.size; i++) {
+            for ( i = 0; i < self.var_7e2abe421347dd30.size ; i++ )
+            {
                 attacker = self.var_7e2abe421347dd30[ i ].attacker;
                 objweapon = self.var_7e2abe421347dd30[ i ].objweapon;
                 hitloc = self.var_7e2abe421347dd30[ i ].hitloc;
@@ -488,7 +489,7 @@ function function_1a50056b16521c9e( attacker, var_60d435c6357875ea )
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124b
 // Size: 0x11
 function function_22d1fced237d6878()
@@ -498,7 +499,7 @@ function function_22d1fced237d6878()
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1264
 // Size: 0x16
 function function_d36940aa00b20558()
@@ -508,7 +509,7 @@ function function_d36940aa00b20558()
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1282
 // Size: 0x124
 function function_5a05899bb304a6d4( hitloc, burningtime )

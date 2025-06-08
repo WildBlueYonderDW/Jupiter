@@ -10,7 +10,7 @@
 #namespace namespace_29148a860fd5d5e1;
 
 // Namespace namespace_29148a860fd5d5e1 / namespace_53bcac5ffbd6efd0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d6
 // Size: 0xec
 function init()
@@ -29,7 +29,7 @@ function init()
 }
 
 // Namespace namespace_29148a860fd5d5e1 / namespace_53bcac5ffbd6efd0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ca
 // Size: 0x52
 function SetDvars()
@@ -41,7 +41,7 @@ function SetDvars()
 }
 
 // Namespace namespace_29148a860fd5d5e1 / namespace_53bcac5ffbd6efd0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x424
 // Size: 0x7
 function function_d04b4a9729479cad()
@@ -50,7 +50,7 @@ function function_d04b4a9729479cad()
 }
 
 // Namespace namespace_29148a860fd5d5e1 / namespace_53bcac5ffbd6efd0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x434
 // Size: 0x8d
 function get_reward()
@@ -62,7 +62,7 @@ function get_reward()
 }
 
 // Namespace namespace_29148a860fd5d5e1 / namespace_53bcac5ffbd6efd0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ca
 // Size: 0x2f7
 function on_use( player )
@@ -148,7 +148,7 @@ function on_use( player )
 }
 
 // Namespace namespace_29148a860fd5d5e1 / namespace_53bcac5ffbd6efd0
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7c9
 // Size: 0x85
 function function_c80fb54710c9e5aa( reward )
@@ -180,7 +180,7 @@ function function_c80fb54710c9e5aa( reward )
 }
 
 // Namespace namespace_29148a860fd5d5e1 / namespace_53bcac5ffbd6efd0
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x856
 // Size: 0x397
 function function_d70ec56158c8530b( reward, var_401241f67709b018 )

@@ -7,7 +7,7 @@
 #namespace namespace_ce6c437f7a6dedb6;
 
 // Namespace namespace_ce6c437f7a6dedb6 / namespace_e8d5850900a5d8dc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x129
 // Size: 0x7a
 function function_306feec3952fc2ef()

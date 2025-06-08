@@ -10,8 +10,8 @@
 #namespace namespace_876949a26c07c757;
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x394
+// Params 0
+// Checksum 0x0, Offset: 0x376
 // Size: 0xec
 function init()
 {
@@ -29,8 +29,8 @@ function init()
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x488
+// Params 0
+// Checksum 0x0, Offset: 0x46a
 // Size: 0x96
 function SetDvars()
 {
@@ -45,8 +45,8 @@ function SetDvars()
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x526
+// Params 0
+// Checksum 0x0, Offset: 0x508
 // Size: 0xe0
 function function_cb76a70c61b52b33()
 {
@@ -87,8 +87,8 @@ function function_cb76a70c61b52b33()
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x60f
+// Params 4
+// Checksum 0x0, Offset: 0x5f1
 // Size: 0x396
 function function_7502f58e600e74a2( victim, attacker, victimnotification, meansofdeath )
 {
@@ -168,8 +168,8 @@ function function_7502f58e600e74a2( victim, attacker, victimnotification, meanso
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ad
+// Params 0
+// Checksum 0x0, Offset: 0x98f
 // Size: 0x30
 function function_db8b5d2d6301c494()
 {
@@ -181,9 +181,9 @@ function function_db8b5d2d6301c494()
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e5
-// Size: 0xe9
+// Params 1
+// Checksum 0x0, Offset: 0x9c7
+// Size: 0xa8
 function function_2db3d5c614236fa9( attacker )
 {
     if ( isdefined( self.switching_teams ) )
@@ -197,11 +197,6 @@ function function_2db3d5c614236fa9( attacker )
     }
     
     if ( level.teambased && isdefined( attacker ) && isdefined( attacker.team ) && attacker.team == self.team )
-    {
-        return 0;
-    }
-    
-    if ( isdefined( attacker ) && !isdefined( attacker.team ) && ( attacker.classname == "trigger_hurt" || attacker.classname == "worldspawn" ) )
     {
         return 0;
     }
@@ -223,8 +218,8 @@ function function_2db3d5c614236fa9( attacker )
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xad6
+// Params 1
+// Checksum 0x0, Offset: 0xa77
 // Size: 0x20a
 function function_c7d4beb7bb6ef442( var_401241f67709b018 )
 {
@@ -283,8 +278,8 @@ function function_c7d4beb7bb6ef442( var_401241f67709b018 )
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce9
+// Params 0
+// Checksum 0x0, Offset: 0xc8a
 // Size: 0xf
 function function_bc3c5e354753e249()
 {
@@ -292,8 +287,8 @@ function function_bc3c5e354753e249()
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd01
+// Params 0
+// Checksum 0x0, Offset: 0xca2
 // Size: 0xa5
 function function_22bd898a1e929cf2()
 {
@@ -307,8 +302,8 @@ function function_22bd898a1e929cf2()
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdae
+// Params 1
+// Checksum 0x0, Offset: 0xd4f
 // Size: 0x22b
 function onuse( player )
 {
@@ -365,8 +360,8 @@ function onuse( player )
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe1
+// Params 0
+// Checksum 0x0, Offset: 0xf82
 // Size: 0xdf
 function function_4ebd84f3e771db5()
 {
@@ -388,7 +383,8 @@ function function_4ebd84f3e771db5()
     
     self notify( "death" );
     
-    for (i = 0; i < self.visuals.size; i++) {
+    for ( i = 0; i < self.visuals.size ; i++ )
+    {
         if ( isdefined( self.visuals[ i ] ) )
         {
             self.visuals[ i ] freescriptable();
@@ -407,8 +403,8 @@ function function_4ebd84f3e771db5()
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10c8
+// Params 0
+// Checksum 0x0, Offset: 0x1069
 // Size: 0x7
 function function_d04b4a9729479cad()
 {
@@ -416,8 +412,8 @@ function function_d04b4a9729479cad()
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d8
+// Params 1
+// Checksum 0x0, Offset: 0x1079
 // Size: 0x85
 function function_c80fb54710c9e5aa( reward )
 {
@@ -448,8 +444,8 @@ function function_c80fb54710c9e5aa( reward )
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1165
+// Params 0
+// Checksum 0x0, Offset: 0x1106
 // Size: 0x8d
 function get_reward()
 {
@@ -460,22 +456,24 @@ function get_reward()
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11fb
+// Params 2
+// Checksum 0x0, Offset: 0x119c
 // Size: 0x89
 function weighted_array_randomize( array, weights )
 {
     assert( array.size == weights.size );
     cumulative_weight = 0;
     
-    for (i = 0; i < weights.size; i++) {
+    for ( i = 0; i < weights.size ; i++ )
+    {
         cumulative_weight += weights[ i ];
     }
     
     random_weight = randomfloat( cumulative_weight );
     running_total = 0;
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         running_total += weights[ i ];
         
         if ( running_total >= random_weight )
@@ -486,8 +484,8 @@ function weighted_array_randomize( array, weights )
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x128c
+// Params 2
+// Checksum 0x0, Offset: 0x122d
 // Size: 0x2a3
 function function_d70ec56158c8530b( reward, var_401241f67709b018 )
 {
@@ -562,8 +560,8 @@ function function_d70ec56158c8530b( reward, var_401241f67709b018 )
 }
 
 // Namespace namespace_876949a26c07c757 / namespace_bc22b8386eb4de80
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1537
+// Params 2
+// Checksum 0x0, Offset: 0x14d8
 // Size: 0x158
 function function_77f5f08a39a2d9f8( reward, amount )
 {

@@ -1,6 +1,5 @@
 #using script_16ea1b94f0f381b3;
 #using script_22856b83897eaad8;
-#using script_22f1701e151b9d12;
 #using script_443d99fe707f1d9f;
 #using script_62a4f7a62643fe8;
 #using script_6df6604a74a7a9c7;
@@ -9,6 +8,7 @@
 #using scripts\common\devgui;
 #using scripts\common\utility;
 #using scripts\common\values;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\armor;
 #using scripts\cp_mp\currency;
 #using scripts\cp_mp\interaction;
@@ -25,8 +25,8 @@
 #namespace namespace_71b655df1f1b6d7d;
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa1e
+// Params 0
+// Checksum 0x0, Offset: 0xa1d
 // Size: 0xb
 function init()
 {
@@ -36,8 +36,8 @@ function init()
 /#
 
     // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa31
+    // Params 0
+    // Checksum 0x0, Offset: 0xa30
     // Size: 0x5, Type: dev
     function function_1f22bdc2d41856b2()
     {
@@ -48,7 +48,7 @@ function init()
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xa3e
+// Checksum 0x0, Offset: 0xa3d
 // Size: 0x54
 function private function_8ca944706acb991e( player, power_level )
 {
@@ -60,7 +60,7 @@ function private function_8ca944706acb991e( player, power_level )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa9b
+// Checksum 0x0, Offset: 0xa9a
 // Size: 0x3a
 function private function_23834c47d25128fc( player )
 {
@@ -77,7 +77,7 @@ function private function_23834c47d25128fc( player )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xadd
+// Checksum 0x0, Offset: 0xadc
 // Size: 0x68
 function private function_372b03587b1b4a47( player )
 {
@@ -106,8 +106,8 @@ function private function_372b03587b1b4a47( player )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xb4d
-// Size: 0x979
+// Checksum 0x0, Offset: 0xb4c
+// Size: 0x9f0
 function private function_5be6f854fd9386d8()
 {
     cached_lvl = 0;
@@ -365,6 +365,19 @@ function private function_5be6f854fd9386d8()
             }
         }
         
+        if ( getdvarint( @"hash_73cb4ab372e0194a", 0 ) )
+        {
+            setdvar( @"hash_73cb4ab372e0194a", 0 );
+            
+            foreach ( player in level.players )
+            {
+                if ( !isbot( player ) )
+                {
+                    function_cead5cc6874e2f37( player );
+                }
+            }
+        }
+        
         if ( getdvarint( @"hash_259a050a7f354c6", 0 ) > 0 )
         {
             var_d2ed7438fd2e5e39 = getdvarint( @"hash_259a050a7f354c6", 0 );
@@ -385,7 +398,7 @@ function private function_5be6f854fd9386d8()
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x14ce
+// Checksum 0x0, Offset: 0x1544
 // Size: 0xb8
 function private function_b54b90237acc6e52( radius )
 {
@@ -398,7 +411,7 @@ function private function_b54b90237acc6e52( radius )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x158e
+// Checksum 0x0, Offset: 0x1604
 // Size: 0xa2
 function private function_1208466b550e2cdd( player, lvl, wait_time )
 {
@@ -439,7 +452,7 @@ function private function_1208466b550e2cdd( player, lvl, wait_time )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1638
+// Checksum 0x0, Offset: 0x16ae
 // Size: 0xc9
 function private function_80105532df7fb53f( player )
 {
@@ -461,7 +474,7 @@ function private function_80105532df7fb53f( player )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1709
+// Checksum 0x0, Offset: 0x177f
 // Size: 0x135
 function private function_4a8b7b0534a25c3( player )
 {
@@ -486,7 +499,32 @@ function private function_4a8b7b0534a25c3( player )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1846
+// Checksum 0x0, Offset: 0x18bc
+// Size: 0xcc
+function private function_cead5cc6874e2f37( player )
+{
+    a_items = [ "ob_jup_item_ammomod_napalmburst", "ob_jup_item_ammomod_deadwire", "ob_jup_item_ammomod_cryofreeze", "ob_jup_item_ammomod_brainrot", "ob_jup_item_ammomod_shatterblast" ];
+    
+    foreach ( item in a_items )
+    {
+        itembundle = getscriptbundle( "itemspawnentry:" + item );
+        
+        if ( isdefined( itembundle ) )
+        {
+            scripts\cp_mp\loot\common_item::function_c465d27f3f6066b4( itembundle, player.origin );
+        }
+        else
+        {
+            assertmsg( "<dev string:xb3>" + item );
+        }
+        
+        waitframe();
+    }
+}
+
+// Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
+// Params 1, eflags: 0x4
+// Checksum 0x0, Offset: 0x1990
 // Size: 0x11b
 function private function_99bd868e2b6e5c7c( player )
 {
@@ -503,7 +541,7 @@ function private function_99bd868e2b6e5c7c( player )
         }
         else
         {
-            assertmsg( "<dev string:xb3>" + item );
+            assertmsg( "<dev string:x14a>" + item );
         }
         
         waitframe();
@@ -512,7 +550,7 @@ function private function_99bd868e2b6e5c7c( player )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1969
+// Checksum 0x0, Offset: 0x1ab3
 // Size: 0x346
 function private function_376cc7d8d36560b7( player, lvl )
 {
@@ -546,7 +584,7 @@ function private function_376cc7d8d36560b7( player, lvl )
         }
         else
         {
-            assertmsg( "<dev string:x148>" + item );
+            assertmsg( "<dev string:xb3>" + item );
         }
         
         waitframe();
@@ -555,7 +593,7 @@ function private function_376cc7d8d36560b7( player, lvl )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1cb7
+// Checksum 0x0, Offset: 0x1e01
 // Size: 0x68
 function private function_321aa1e84b5fd453( player, lvl )
 {
@@ -572,7 +610,7 @@ function private function_321aa1e84b5fd453( player, lvl )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1d27
+// Checksum 0x0, Offset: 0x1e71
 // Size: 0xc2
 function private function_3f8595344f40b9c9( player, lvl )
 {
@@ -594,7 +632,7 @@ function private function_3f8595344f40b9c9( player, lvl )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1df1
+// Checksum 0x0, Offset: 0x1f3b
 // Size: 0x7b
 function private function_30590af066390cb( player, lvl )
 {
@@ -611,7 +649,7 @@ function private function_30590af066390cb( player, lvl )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1e74
+// Checksum 0x0, Offset: 0x1fbe
 // Size: 0x11a
 function private cheat_giveperks( player, cached_lvl )
 {
@@ -643,7 +681,7 @@ function private cheat_giveperks( player, cached_lvl )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x1f96
+// Checksum 0x0, Offset: 0x20e0
 // Size: 0x85
 function private function_5db5161c26cbc7f5( player, weaponname, weaponref )
 {
@@ -657,7 +695,7 @@ function private function_5db5161c26cbc7f5( player, weaponname, weaponref )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2023
+// Checksum 0x0, Offset: 0x216d
 // Size: 0x5a
 function private function_bb443142fce62d83( player, item )
 {
@@ -677,7 +715,7 @@ function private function_bb443142fce62d83( player, item )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2085
+// Checksum 0x0, Offset: 0x21cf
 // Size: 0xe9
 function private function_418ea3263145bfeb( player, item )
 {
@@ -709,7 +747,7 @@ function private function_418ea3263145bfeb( player, item )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2176
+// Checksum 0x0, Offset: 0x22c0
 // Size: 0x34
 function private cheat_giveperk( player, perk_name )
 {
@@ -728,7 +766,7 @@ function private cheat_giveperk( player, perk_name )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x21b2
+// Checksum 0x0, Offset: 0x22fc
 // Size: 0x7c
 function private function_ab1878d670d738d9( player )
 {
@@ -743,7 +781,7 @@ function private function_ab1878d670d738d9( player )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2236
+// Checksum 0x0, Offset: 0x2380
 // Size: 0x21
 function private function_bb25bcf1cd97e7e6( player, amount )
 {
@@ -752,7 +790,7 @@ function private function_bb25bcf1cd97e7e6( player, amount )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x225f
+// Checksum 0x0, Offset: 0x23a9
 // Size: 0xf4
 function private cheat_spawnvehicle( player, vehicle_ref )
 {
@@ -771,7 +809,7 @@ function private cheat_spawnvehicle( player, vehicle_ref )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x235b
+// Checksum 0x0, Offset: 0x24a5
 // Size: 0x113
 function private function_e52113d9e4cd99f5( player, ai_type )
 {
@@ -787,7 +825,7 @@ function private function_e52113d9e4cd99f5( player, ai_type )
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2476
+// Checksum 0x0, Offset: 0x25c0
 // Size: 0xb7
 function private function_2d15fb31fc1f1590( player, difficulty )
 {
@@ -798,14 +836,14 @@ function private function_2d15fb31fc1f1590( player, difficulty )
         encounter = "ai_encounter:enc_ob_large_ambush_escort_bigmap";
         location = player.origin + anglestoforward( player.angles ) * 600;
         location = getclosestpointonnavmesh( location );
-        request_id = namespace_614554f86e52695c::spawn_request( encounter, location, 400, 1, 1, 0 );
+        request_id = scripts\cp_mp\agents\ai_spawn_director::spawn_request( encounter, location, 400, 1, 1, 0 );
         request_id = function_d37068aac7785c04( request_id, difficulty, 1 );
     }
 }
 
 // Namespace namespace_71b655df1f1b6d7d / namespace_946ba58a8d1e7bfd
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2535
+// Checksum 0x0, Offset: 0x267f
 // Size: 0x52
 function private function_36c67c8305fdfa8( player, itemname )
 {

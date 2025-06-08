@@ -6,7 +6,7 @@
 #namespace effect_slow;
 
 // Namespace effect_slow / namespace_5e5b12854e72824d
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xb0
 // Size: 0x117
 function slow( var_3f84102752151e7c, var_561c4006f65fb505, n_durations, var_d4739501723a457c, endcallback, var_9142743ed938c8bb )
@@ -124,7 +124,7 @@ function private function_3d9c0570527484dd( var_41e050c00dbd88ee )
 }
 
 // Namespace effect_slow / namespace_5e5b12854e72824d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x430
 // Size: 0x9f
 function stop_slow( var_3f84102752151e7c )
@@ -141,7 +141,7 @@ function stop_slow( var_3f84102752151e7c )
 }
 
 // Namespace effect_slow / namespace_5e5b12854e72824d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d7
 // Size: 0x62
 function function_778c51b997394ed8()
@@ -153,7 +153,7 @@ function function_778c51b997394ed8()
 }
 
 // Namespace effect_slow / namespace_5e5b12854e72824d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x541
 // Size: 0xd
 function is_slowed()
@@ -162,7 +162,7 @@ function is_slowed()
 }
 
 // Namespace effect_slow / namespace_5e5b12854e72824d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x557
 // Size: 0xa5, Type: bool
 function has_slow( var_3f84102752151e7c )
@@ -186,7 +186,7 @@ function has_slow( var_3f84102752151e7c )
 }
 
 // Namespace effect_slow / namespace_5e5b12854e72824d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x605
 // Size: 0xd8, Type: bool
 function function_47062c0baf4e14bf( player, var_3f84102752151e7c )

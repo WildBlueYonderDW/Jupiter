@@ -18,7 +18,7 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_firesale / scripts\mp\gametypes\br_publicevent_firesale
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x4f
 function init( eventinfo )
@@ -30,7 +30,7 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_firesale / scripts\mp\gametypes\br_publicevent_firesale
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a4
 // Size: 0x28
 function postinitfunc()
@@ -40,7 +40,7 @@ function postinitfunc()
 }
 
 // Namespace br_publicevent_firesale / scripts\mp\gametypes\br_publicevent_firesale
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d4
 // Size: 0x5a, Type: bool
 function function_b22310d8fb6c98fa()
@@ -55,7 +55,7 @@ function function_b22310d8fb6c98fa()
 }
 
 // Namespace br_publicevent_firesale / scripts\mp\gametypes\br_publicevent_firesale
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x337
 // Size: 0x24
 function waitfunc()
@@ -67,7 +67,7 @@ function waitfunc()
 }
 
 // Namespace br_publicevent_firesale / scripts\mp\gametypes\br_publicevent_firesale
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x363
 // Size: 0x179
 function activatefunc()
@@ -100,7 +100,8 @@ function activatefunc()
         var_49978e5850a50d57 = int( eventduration );
     }
     
-    for (i = 0; i < var_49978e5850a50d57; i++) {
+    for ( i = 0; i < var_49978e5850a50d57 ; i++ )
+    {
         clockobject playsound( "ui_mp_fire_sale_timer" );
         wait 1;
     }
@@ -120,7 +121,7 @@ function activatefunc()
 }
 
 // Namespace br_publicevent_firesale / scripts\mp\gametypes\br_publicevent_firesale
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e4
 // Size: 0xef
 function getduration()
@@ -147,13 +148,13 @@ function getduration()
 }
 
 // Namespace br_publicevent_firesale / scripts\mp\gametypes\br_publicevent_firesale
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5dc
 // Size: 0x51
 function calculateeventstarttime()
 {
-    minstarttime = getdvarfloat( @"hash_3549564826254716", 795 );
-    maxstarttime = getdvarfloat( @"hash_356d4848264da304", 1110 );
+    minstarttime = getdvarfloat( @"scr_br_pe_firesale_starttime_min", 795 );
+    maxstarttime = getdvarfloat( @"scr_br_pe_firesale_starttime_max", 1110 );
     
     if ( maxstarttime > minstarttime )
     {

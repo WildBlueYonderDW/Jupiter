@@ -5,7 +5,7 @@
 #namespace wander;
 
 // Namespace wander / namespace_37deded6c75bc7e5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x113
 // Size: 0x12
 function function_eda57308516bfc5f()
@@ -14,7 +14,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace wander / namespace_37deded6c75bc7e5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12e
 // Size: 0x1e
 function evaluatescore( bot )
@@ -23,7 +23,7 @@ function evaluatescore( bot )
 }
 
 // Namespace wander / namespace_37deded6c75bc7e5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x155
 // Size: 0x27
 function createaction( bot )
@@ -32,7 +32,7 @@ function createaction( bot )
 }
 
 // Namespace wander / namespace_37deded6c75bc7e5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x185
 // Size: 0xa5
 function actionprocess( bot )

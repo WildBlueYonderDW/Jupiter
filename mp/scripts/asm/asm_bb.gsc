@@ -7,7 +7,7 @@
 #namespace asm_bb;
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15d
 // Size: 0xc
 function bb_getprefixstring( category )
@@ -16,7 +16,7 @@ function bb_getprefixstring( category )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x172
 // Size: 0x5f
 function bb_wantstostrafe()
@@ -35,7 +35,7 @@ function bb_wantstostrafe()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1da
 // Size: 0x20
 function bb_requeststance( stance )
@@ -44,7 +44,7 @@ function bb_requeststance( stance )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x202
 // Size: 0x15
 function bb_getrequestedstance()
@@ -53,7 +53,7 @@ function bb_getrequestedstance()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x220
 // Size: 0x38, Type: bool
 function bb_isrequestedstance_refresh( asmname, statename, tostatename, params )
@@ -63,7 +63,7 @@ function bb_isrequestedstance_refresh( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x261
 // Size: 0x5d, Type: bool
 function bb_isrequestedstanceanddemeanor( asmname, statename, tostatename, params )
@@ -73,7 +73,7 @@ function bb_isrequestedstanceanddemeanor( asmname, statename, tostatename, param
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c7
 // Size: 0x1c
 function bb_setisincombat( bincombat )
@@ -82,7 +82,7 @@ function bb_setisincombat( bincombat )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2eb
 // Size: 0xb
 function bb_isincombat()
@@ -91,7 +91,7 @@ function bb_isincombat()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2ff
 // Size: 0x33, Type: bool
 function bb_isweaponclass( asmname, statename, tostatename, params )
@@ -100,7 +100,7 @@ function bb_isweaponclass( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x33b
 // Size: 0x5c, Type: bool
 function bb_shoulddroprocketlauncher( asmname, statename, tostatename, params )
@@ -121,7 +121,7 @@ function bb_shoulddroprocketlauncher( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a0
 // Size: 0x2
 function bb_requestmove()
@@ -130,7 +130,7 @@ function bb_requestmove()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3aa
 // Size: 0x2
 function bb_clearmoverequest()
@@ -139,7 +139,7 @@ function bb_clearmoverequest()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b4
 // Size: 0x8
 function bb_moverequested()
@@ -148,7 +148,7 @@ function bb_moverequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c5
 // Size: 0x20, Type: bool
 function bb_movetyperequested( movetype )
@@ -157,7 +157,7 @@ function bb_movetyperequested( movetype )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ee
 // Size: 0x20
 function bb_requestmovetype( movetype )
@@ -166,7 +166,7 @@ function bb_requestmovetype( movetype )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x416
 // Size: 0x20
 function bb_requestweapon( weapon )
@@ -175,7 +175,7 @@ function bb_requestweapon( weapon )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43e
 // Size: 0x1b
 function bb_clearweaponrequest()
@@ -184,7 +184,7 @@ function bb_clearweaponrequest()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x461
 // Size: 0x4b
 function bb_getrequestedweapon()
@@ -198,7 +198,7 @@ function bb_getrequestedweapon()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b5
 // Size: 0x3e
 function bb_requestreload( breload )
@@ -213,7 +213,7 @@ function bb_requestreload( breload )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4fb
 // Size: 0x15
 function bb_reloadrequested()
@@ -222,7 +222,7 @@ function bb_reloadrequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x519
 // Size: 0x46, Type: bool
 function bb_throwgrenaderequested()
@@ -236,7 +236,7 @@ function bb_throwgrenaderequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x568
 // Size: 0x15
 function bb_getthrowgrenadetarget()
@@ -245,7 +245,7 @@ function bb_getthrowgrenadetarget()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x586
 // Size: 0x3e
 function bb_requestfire( bfire )
@@ -260,7 +260,7 @@ function bb_requestfire( bfire )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5cc
 // Size: 0x16, Type: bool
 function bb_firerequested()
@@ -269,7 +269,7 @@ function bb_firerequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5eb
 // Size: 0x20
 function bb_claimshootparams( taskid )
@@ -278,7 +278,7 @@ function bb_claimshootparams( taskid )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x613
 // Size: 0x5b, Type: bool
 function bb_shootparams_idsmatch()
@@ -297,7 +297,7 @@ function bb_shootparams_idsmatch()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x677
 // Size: 0x3d
 function bb_updateshootparams_pos( pos )
@@ -307,7 +307,7 @@ function bb_updateshootparams_pos( pos )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6bc
 // Size: 0x2a
 function bb_clearshootparams()
@@ -319,7 +319,7 @@ function bb_clearshootparams()
 /#
 
     // Namespace asm_bb / scripts\asm\asm_bb
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x6ee
     // Size: 0x21, Type: dev
     function bb_setshootparams( shootparams, target )
@@ -330,7 +330,7 @@ function bb_clearshootparams()
 #/
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x717
 // Size: 0x1c
 function bb_requestcoverstate( state, var_55b1b4a8c2ba7aa2 )
@@ -339,7 +339,7 @@ function bb_requestcoverstate( state, var_55b1b4a8c2ba7aa2 )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73b
 // Size: 0x32
 function bb_getrequestedcoverstate()
@@ -353,16 +353,16 @@ function bb_getrequestedcoverstate()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x776
 // Size: 0x20
-function bb_requestcoverexposetype( var_270393d6fb596021 )
+function bb_requestcoverexposetype( exposetype )
 {
-    self._blackboard.coverexposetype = var_270393d6fb596021;
+    self._blackboard.coverexposetype = exposetype;
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79e
 // Size: 0x15
 function bb_getrequestedcoverexposetype()
@@ -371,7 +371,7 @@ function bb_getrequestedcoverexposetype()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7bc
 // Size: 0x20
 function bb_requestcoverblindfire( var_690e06db214b7bec )
@@ -380,7 +380,7 @@ function bb_requestcoverblindfire( var_690e06db214b7bec )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7e4
 // Size: 0x15
 function bb_setcovernode( node )
@@ -389,7 +389,7 @@ function bb_setcovernode( node )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x801
 // Size: 0x2d, Type: bool
 function bb_hadcovernode( asmname, statename, tostatename, params )
@@ -398,7 +398,7 @@ function bb_hadcovernode( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x837
 // Size: 0xb
 function bb_getcovernode()
@@ -407,7 +407,7 @@ function bb_getcovernode()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84b
 // Size: 0x2e
 function bb_getrequestedturret()
@@ -421,7 +421,7 @@ function bb_getrequestedturret()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x882
 // Size: 0x66
 function bb_requestturret( turret )
@@ -440,7 +440,7 @@ function bb_requestturret( turret )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8f0
 // Size: 0x58
 function bb_requestturretpose( pose )
@@ -450,7 +450,7 @@ function bb_requestturretpose( pose )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x950
 // Size: 0x8e, Type: bool
 function bb_hasshufflenode( asmname, statename, tostatename, params )
@@ -459,7 +459,7 @@ function bb_hasshufflenode( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9e7
 // Size: 0x18
 function bb_setanimscripted()
@@ -468,7 +468,7 @@ function bb_setanimscripted()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa07
 // Size: 0x17
 function bb_clearanimscripted()
@@ -477,7 +477,7 @@ function bb_clearanimscripted()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa26
 // Size: 0x4b, Type: bool
 function bb_isanimscripted()
@@ -494,7 +494,7 @@ function bb_isanimscripted()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7a
 // Size: 0x4b
 function bb_requestmelee( target )
@@ -505,7 +505,7 @@ function bb_requestmelee( target )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xacd
 // Size: 0x2d
 function bb_getmeleetarget()
@@ -519,7 +519,7 @@ function bb_getmeleetarget()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb03
 // Size: 0x2a
 function bb_clearmeleerequest()
@@ -529,7 +529,7 @@ function bb_clearmeleerequest()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb35
 // Size: 0x15
 function bb_clearmeleerequestcomplete()
@@ -538,7 +538,7 @@ function bb_clearmeleerequestcomplete()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb52
 // Size: 0x37, Type: bool
 function bb_meleeinprogress( asmname, statename, tostatename, params )
@@ -547,7 +547,7 @@ function bb_meleeinprogress( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb92
 // Size: 0x4e, Type: bool
 function bb_meleecomplete( asmname, statename, tostatename, params )
@@ -556,7 +556,7 @@ function bb_meleecomplete( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbe9
 // Size: 0x15
 function bb_meleerequested()
@@ -565,7 +565,7 @@ function bb_meleerequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xc07
 // Size: 0x43, Type: bool
 function bb_meleerequestinvalid( asmname, statename, tostatename, params )
@@ -584,7 +584,7 @@ function bb_meleerequestinvalid( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc53
 // Size: 0x5e
 function bb_requestmeleecharge( target, targetpos )
@@ -596,7 +596,7 @@ function bb_requestmeleecharge( target, targetpos )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcb9
 // Size: 0x3d
 function bb_clearmeleechargerequest()
@@ -607,7 +607,7 @@ function bb_clearmeleechargerequest()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcfe
 // Size: 0x3b, Type: bool
 function bb_meleechargerequested()
@@ -616,7 +616,7 @@ function bb_meleechargerequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xd42
 // Size: 0x30, Type: bool
 function bb_meleechargeaborted( asmname, statename, tostatename, params )
@@ -630,7 +630,7 @@ function bb_meleechargeaborted( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd7b
 // Size: 0x46
 function bb_getmeleechargetarget()
@@ -644,7 +644,7 @@ function bb_getmeleechargetarget()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdca
 // Size: 0x49
 function bb_getmeleechargetargetpos()
@@ -654,7 +654,7 @@ function bb_getmeleechargetargetpos()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe1c
 // Size: 0x20
 function bb_requestgrenadereturnthrow( bthrow )
@@ -663,7 +663,7 @@ function bb_requestgrenadereturnthrow( bthrow )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe44
 // Size: 0x16, Type: bool
 function bb_iswhizbyrequested()
@@ -672,7 +672,7 @@ function bb_iswhizbyrequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe63
 // Size: 0x78, Type: bool
 function bb_isfrantic()
@@ -689,7 +689,7 @@ function bb_isfrantic()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee4
 // Size: 0x1d, Type: bool
 function bb_ismissingaleg()
@@ -705,7 +705,7 @@ function bb_ismissingaleg()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf0a
 // Size: 0x90
 function bb_getmissingleg()
@@ -739,7 +739,7 @@ function bb_getmissingleg()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfa3
 // Size: 0xa1, Type: bool
 function ispartdismembered( part )
@@ -768,7 +768,7 @@ function ispartdismembered( part )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x104d
 // Size: 0x2a, Type: bool
 function bb_ispartdismembered( asmname, statename, tostatename, params )
@@ -777,7 +777,7 @@ function bb_ispartdismembered( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1080
 // Size: 0xdc, Type: bool
 function waspartjustdismembered( part )
@@ -811,7 +811,7 @@ function waspartjustdismembered( part )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1165
 // Size: 0x2a, Type: bool
 function bb_waspartjustdismembered( asmname, statename, tostatename, params )
@@ -820,7 +820,7 @@ function bb_waspartjustdismembered( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1198
 // Size: 0x3a, Type: bool
 function bb_werepartsdismemberedinorder( asm, statename, tostatename, params )
@@ -829,7 +829,7 @@ function bb_werepartsdismemberedinorder( asm, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11db
 // Size: 0x26
 function bb_dismemberedpart( part )
@@ -838,7 +838,7 @@ function bb_dismemberedpart( part )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1209
 // Size: 0x20
 function bb_setselfdestruct( val )
@@ -847,7 +847,7 @@ function bb_setselfdestruct( val )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1231
 // Size: 0x77, Type: bool
 function bb_isselfdestruct()
@@ -864,7 +864,7 @@ function bb_isselfdestruct()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12b1
 // Size: 0x18
 function bb_selfdestructnow()
@@ -873,7 +873,7 @@ function bb_selfdestructnow()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12d1
 // Size: 0x16, Type: bool
 function bb_shouldselfdestructnow()
@@ -882,7 +882,7 @@ function bb_shouldselfdestructnow()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12f0
 // Size: 0x20
 function bb_setheadless( val )
@@ -891,7 +891,7 @@ function bb_setheadless( val )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1318
 // Size: 0x2f, Type: bool
 function bb_isheadless()
@@ -905,7 +905,7 @@ function bb_isheadless()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1350
 // Size: 0xb1
 function bb_setcanrodeo( side, var_e7096ce45cda4606 )
@@ -933,7 +933,7 @@ function bb_setcanrodeo( side, var_e7096ce45cda4606 )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1409
 // Size: 0x5b, Type: bool
 function bb_canrodeo( side )
@@ -957,7 +957,7 @@ function bb_canrodeo( side )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146d
 // Size: 0x20
 function bb_setrodeorequest( val )
@@ -966,7 +966,7 @@ function bb_setrodeorequest( val )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1495
 // Size: 0x1e
 function bb_clearrodeorequest( val )
@@ -975,7 +975,7 @@ function bb_clearrodeorequest( val )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x14bb
 // Size: 0x3e, Type: bool
 function bb_isrodeorequested( asmname, statename, tostatename, params )
@@ -989,7 +989,7 @@ function bb_isrodeorequested( asmname, statename, tostatename, params )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1502
 // Size: 0x9
 function bb_clearmeleetarget()
@@ -998,7 +998,7 @@ function bb_clearmeleetarget()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1513
 // Size: 0x20
 function bb_setcrawlmelee( val )
@@ -1007,7 +1007,7 @@ function bb_setcrawlmelee( val )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x153b
 // Size: 0x16, Type: bool
 function bb_iscrawlmelee()
@@ -1016,7 +1016,7 @@ function bb_iscrawlmelee()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x155a
 // Size: 0x20
 function bb_sethaywire( val )
@@ -1025,7 +1025,7 @@ function bb_sethaywire( val )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1582
 // Size: 0x16, Type: bool
 function bb_ishaywire()
@@ -1034,7 +1034,7 @@ function bb_ishaywire()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15a1
 // Size: 0x15
 function bb_gethaywire()
@@ -1043,7 +1043,7 @@ function bb_gethaywire()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15bf
 // Size: 0x20
 function bb_setisinbadcrouchspot( bbadcrouchspot )
@@ -1052,7 +1052,7 @@ function bb_setisinbadcrouchspot( bbadcrouchspot )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15e7
 // Size: 0x16, Type: bool
 function bb_isinbadcrouchspot()
@@ -1061,7 +1061,7 @@ function bb_isinbadcrouchspot()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1606
 // Size: 0xb
 function bb_setcivilianstate( state )
@@ -1070,7 +1070,7 @@ function bb_setcivilianstate( state )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1619
 // Size: 0x7
 function bb_getcivilianstate()
@@ -1079,7 +1079,7 @@ function bb_getcivilianstate()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1629
 // Size: 0x15
 function bb_getcivilianstatetime()
@@ -1088,7 +1088,7 @@ function bb_getcivilianstatetime()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1647
 // Size: 0x13
 function bb_civilianrequestspeed( speed )
@@ -1097,7 +1097,7 @@ function bb_civilianrequestspeed( speed )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1662
 // Size: 0x16, Type: bool
 function bb_isshort()
@@ -1106,7 +1106,7 @@ function bb_isshort()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1681
 // Size: 0x20
 function bb_setshort( value )
@@ -1115,7 +1115,7 @@ function bb_setshort( value )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16a9
 // Size: 0x16, Type: bool
 function bb_smartobjectrequested()
@@ -1124,7 +1124,7 @@ function bb_smartobjectrequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c8
 // Size: 0xa0
 function bb_requestsmartobject( value )
@@ -1139,7 +1139,7 @@ function bb_requestsmartobject( value )
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1770
 // Size: 0x15
 function bb_getrequestedsmartobject()
@@ -1148,7 +1148,7 @@ function bb_getrequestedsmartobject()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x178e
 // Size: 0x31
 function bb_clearsmartobject()
@@ -1159,7 +1159,7 @@ function bb_clearsmartobject()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17c7
 // Size: 0x35
 function bb_requestplaysmartobject()
@@ -1169,7 +1169,7 @@ function bb_requestplaysmartobject()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1804
 // Size: 0x17
 function bb_clearplaysmartobject()
@@ -1178,7 +1178,7 @@ function bb_clearplaysmartobject()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1823
 // Size: 0x16, Type: bool
 function bb_playsmartobjectrequested()
@@ -1187,7 +1187,7 @@ function bb_playsmartobjectrequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1842
 // Size: 0x32
 function bb_getrequestedcovermultiswitchnodetype()
@@ -1197,7 +1197,7 @@ function bb_getrequestedcovermultiswitchnodetype()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x187d
 // Size: 0x16, Type: bool
 function bb_iscovermultiswitchrequested()
@@ -1206,7 +1206,7 @@ function bb_iscovermultiswitchrequested()
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x189c
 // Size: 0xe9, Type: bool
 function bb_canplaygesture( asmname, statename, tostatename, gesture )

@@ -4,7 +4,7 @@
 #namespace namespace_3cd8443b4650c886;
 
 // Namespace namespace_3cd8443b4650c886 / namespace_2a48aafa587c77be
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa3
 // Size: 0x24
 function function_6c5371915054a3f9( state_name )
@@ -14,7 +14,7 @@ function function_6c5371915054a3f9( state_name )
 }
 
 // Namespace namespace_3cd8443b4650c886 / namespace_2a48aafa587c77be
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf
 // Size: 0x36
 function function_3ce3c307b88d4237()

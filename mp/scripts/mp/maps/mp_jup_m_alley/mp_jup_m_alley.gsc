@@ -3,7 +3,7 @@
 #namespace mp_jup_m_alley;
 
 // Namespace mp_jup_m_alley / scripts\mp\maps\mp_jup_m_alley\mp_jup_m_alley
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8f
 // Size: 0x9
 function main()

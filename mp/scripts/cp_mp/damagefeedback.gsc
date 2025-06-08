@@ -4,7 +4,7 @@
 #namespace damagefeedback;
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x974
 // Size: 0xff
 function damagefeedback_init()
@@ -31,7 +31,7 @@ function damagefeedback_init()
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa7b
 // Size: 0x20
 function function_7bc7c3983cef0956( marker, priority )
@@ -40,7 +40,7 @@ function function_7bc7c3983cef0956( marker, priority )
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0xaa3
 // Size: 0x396
 function updatedamagefeedback( icontype, killingblow, headshot, hitmarkertype, suppressaudio, nonplayer, targetentnum, armorplatecount, var_203066c6662e1f2d )
@@ -140,7 +140,7 @@ function updatedamagefeedback( icontype, killingblow, headshot, hitmarkertype, s
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xe41
 // Size: 0x5c6
 function updatehitmarker( markertype, killingblow, headshot, nonplayer, icontype, targetentnum, armorplatecount, var_203066c6662e1f2d )
@@ -383,7 +383,7 @@ function updatehitmarker( markertype, killingblow, headshot, nonplayer, icontype
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x140f
 // Size: 0x27
 function gethitmarkerpriority( hitmarkertype )
@@ -397,7 +397,7 @@ function gethitmarkerpriority( hitmarkertype )
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x143f
 // Size: 0x309
 function hudicontype( typehit )
@@ -497,7 +497,7 @@ function hudicontype( typehit )
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1750
 // Size: 0x2a
 function function_7a129dca534be5f9()
@@ -510,7 +510,7 @@ function function_7a129dca534be5f9()
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1782
 // Size: 0x24, Type: bool
 function function_fa167eb35ec0eeea()
@@ -526,7 +526,7 @@ function function_fa167eb35ec0eeea()
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17af
 // Size: 0x248
 function function_6a07ef2910dea0e5()
@@ -598,7 +598,7 @@ function function_6a07ef2910dea0e5()
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19ff
 // Size: 0x62
 function function_697d593ebcb428dd( var_e9d476a3809cb3f1, flag )
@@ -614,7 +614,7 @@ function function_697d593ebcb428dd( var_e9d476a3809cb3f1, flag )
 }
 
 // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a69
 // Size: 0x68
 function function_25f98f1b652f57ec()
@@ -630,7 +630,7 @@ function function_25f98f1b652f57ec()
 /#
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1ad9
     // Size: 0x29d, Type: dev
     function function_a76226d272200c64()
@@ -671,7 +671,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d7e
     // Size: 0x72, Type: dev
     function function_f4137b4aff2d357f()
@@ -686,7 +686,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1df8
     // Size: 0x7b, Type: dev
     function function_244f7ed1bde7a922()
@@ -702,7 +702,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1e7b
     // Size: 0x7b, Type: dev
     function function_9b3b346bf41b42ec()
@@ -718,7 +718,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1efe
     // Size: 0x84, Type: dev
     function function_dedbab246909a68b()
@@ -735,7 +735,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1f8a
     // Size: 0x7b, Type: dev
     function function_e9943edf01fae246()
@@ -751,7 +751,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x200d
     // Size: 0x84, Type: dev
     function function_12f0988382364fc5()
@@ -768,7 +768,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2099
     // Size: 0x7b, Type: dev
     function function_aad4b8e06fba7712()
@@ -784,7 +784,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x211c
     // Size: 0x7b, Type: dev
     function function_5ccbb72c64ed64b0()
@@ -800,7 +800,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x219f
     // Size: 0x7b, Type: dev
     function function_a481845bd08b83ea()
@@ -816,7 +816,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2222
     // Size: 0x72, Type: dev
     function function_3cef16eb6c7ab7f5()
@@ -831,7 +831,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x229c
     // Size: 0x7b, Type: dev
     function function_4a73df03aaeb1f40()
@@ -847,7 +847,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x231f
     // Size: 0x7b, Type: dev
     function function_4b5b7c47cb916820()
@@ -863,7 +863,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x23a2
     // Size: 0x84, Type: dev
     function function_7d67bfa0977275ef()
@@ -880,7 +880,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x242e
     // Size: 0x72, Type: dev
     function function_5ba699d40ad475b5()
@@ -895,7 +895,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x24a8
     // Size: 0x7b, Type: dev
     function function_847c3a90c31506da()
@@ -911,7 +911,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x252b
     // Size: 0x13, Type: dev
     function function_ff8a5baefaf2044()
@@ -921,7 +921,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2546
     // Size: 0x13, Type: dev
     function function_f1c42880c41252b3()
@@ -931,7 +931,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2561
     // Size: 0x13, Type: dev
     function function_c98bce4a7d0771f5()
@@ -941,7 +941,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x257c
     // Size: 0x13, Type: dev
     function function_21d0791f2931f95()
@@ -951,7 +951,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2597
     // Size: 0x13, Type: dev
     function function_a319100f1b453a35()
@@ -961,7 +961,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x25b2
     // Size: 0x13, Type: dev
     function function_fc755361ba8bc81()
@@ -971,7 +971,7 @@ function function_25f98f1b652f57ec()
     }
 
     // Namespace damagefeedback / scripts\cp_mp\damagefeedback
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x25cd
     // Size: 0x13, Type: dev
     function function_fb89825e361fc1f0()

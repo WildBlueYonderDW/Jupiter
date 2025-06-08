@@ -10,7 +10,7 @@
 #namespace mp_jup_paris;
 
 // Namespace mp_jup_paris / scripts\mp\maps\mp_jup_paris\mp_jup_paris
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x161
 // Size: 0x87
 function main()

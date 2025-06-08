@@ -6,7 +6,7 @@
 #namespace br_metal_detector;
 
 // Namespace br_metal_detector / scripts\mp\br_metal_detector
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x167
 // Size: 0x1e
 function init()
@@ -20,7 +20,7 @@ function init()
 }
 
 // Namespace br_metal_detector / scripts\mp\br_metal_detector
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18d
 // Size: 0xaa
 function metalinit()
@@ -42,7 +42,7 @@ function metalinit()
 }
 
 // Namespace br_metal_detector / scripts\mp\br_metal_detector
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x76
 function function_776e0185df41fb73()
@@ -58,7 +58,7 @@ function function_776e0185df41fb73()
 }
 
 // Namespace br_metal_detector / scripts\mp\br_metal_detector
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bd
 // Size: 0x30
 function function_ab3653d48df5ed28( targetname )
@@ -68,7 +68,7 @@ function function_ab3653d48df5ed28( targetname )
 }
 
 // Namespace br_metal_detector / scripts\mp\br_metal_detector
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f6
 // Size: 0x53
 function startalarm()

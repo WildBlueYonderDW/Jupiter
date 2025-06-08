@@ -11,7 +11,7 @@
 #namespace jup_ob_warlord_rainmaker;
 
 // Namespace jup_ob_warlord_rainmaker / namespace_84e63a2f1a9edb96
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ca
 // Size: 0x1e5
 function main()
@@ -49,7 +49,7 @@ function main()
 }
 
 // Namespace jup_ob_warlord_rainmaker / namespace_84e63a2f1a9edb96
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b7
 // Size: 0x57
 function setup_model()
@@ -66,7 +66,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_warlord_rainmaker / namespace_84e63a2f1a9edb96
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x516
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -75,7 +75,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_warlord_rainmaker / namespace_84e63a2f1a9edb96
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x527
 // Size: 0xcf
 function precache()
@@ -104,7 +104,7 @@ function precache()
 }
 
 // Namespace jup_ob_warlord_rainmaker / namespace_84e63a2f1a9edb96
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fe
 // Size: 0xfd
 function setup_weapons()

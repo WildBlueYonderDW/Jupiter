@@ -15,7 +15,7 @@
 #namespace namespace_4d7ae30b2e476428;
 
 // Namespace namespace_4d7ae30b2e476428 / namespace_8624e3257d13b029
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfc
 // Size: 0x13
 function main()

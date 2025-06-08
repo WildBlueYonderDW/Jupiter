@@ -12,7 +12,7 @@
 #namespace namespace_f8ca021ce77f892f;
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e9
 // Size: 0x1a5
 function init()
@@ -42,13 +42,13 @@ function init()
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x996
 // Size: 0x9a7
 function function_3158c3418412e97f( movingc130 )
 {
     animstruct = spawnstruct();
-    animstruct.origin = getdvarvector( @"hash_223915c6339dbc10", ( 0, 0, 0 ) );
+    animstruct.origin = getdvarvector( @"br_infil_anim_pos", ( 0, 0, 0 ) );
     animstruct.angles = ( 0, 0, 0 );
     animstruct.cleanupfunc = &infilcleanup;
     animstruct.var_ab8494260b910b51 = &function_52bedae2ced8e191;
@@ -112,7 +112,7 @@ function function_3158c3418412e97f( movingc130 )
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1346
 // Size: 0x33a
 function function_f3ae4b41df047ba0( array )
@@ -168,7 +168,8 @@ function function_f3ae4b41df047ba0( array )
             proxy hide();
         }
         
-        for (idx = 0; idx < var_1ff908a48d4dc0d3; idx++) {
+        for ( idx = 0; idx < var_1ff908a48d4dc0d3 ; idx++ )
+        {
             foreach ( player in players )
             {
                 self.parachutes[ idx ] showtoplayer( player );
@@ -188,7 +189,7 @@ function function_f3ae4b41df047ba0( array )
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1688
 // Size: 0x1a
 function function_6f33464b9145231b( array )
@@ -198,7 +199,7 @@ function function_6f33464b9145231b( array )
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16aa
 // Size: 0x24
 function function_8f7e8b26075a5371()
@@ -209,7 +210,7 @@ function function_8f7e8b26075a5371()
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16d6
 // Size: 0xf3
 function teleporttomovingplane()
@@ -242,7 +243,7 @@ function teleporttomovingplane()
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17d1
 // Size: 0xf
 function function_708e8449a90a636f()
@@ -252,7 +253,7 @@ function function_708e8449a90a636f()
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17e8
 // Size: 0x1b
 function function_16f307c48e420065()
@@ -261,7 +262,7 @@ function function_16f307c48e420065()
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x180b
 // Size: 0x204
 function function_ad4a7a73c7d7d9e0()
@@ -306,7 +307,7 @@ function function_ad4a7a73c7d7d9e0()
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a17
 // Size: 0x37
 function jumpfunc()
@@ -319,7 +320,7 @@ function jumpfunc()
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a56
 // Size: 0x85
 function function_dc0bc83a31193177()
@@ -376,7 +377,7 @@ function private function_8d050f78fe1d180f()
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b4f
 // Size: 0x1c
 function infilcleanup()
@@ -387,7 +388,7 @@ function infilcleanup()
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b73
 // Size: 0x5a
 function function_52bedae2ced8e191()
@@ -451,7 +452,7 @@ function private function_66b13900c5013de5( var_c26fc18bda607b7 )
 }
 
 // Namespace namespace_f8ca021ce77f892f / namespace_d8d4c267054a30a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ce9
 // Size: 0xa
 function function_8cb390c64468017()

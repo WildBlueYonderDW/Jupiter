@@ -8,7 +8,7 @@
 #namespace namespace_a58b72ccaa110b13;
 
 // Namespace namespace_a58b72ccaa110b13 / namespace_bc4759f7a32ebd96
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14b
 // Size: 0x58
 function init( var_5179c48492d1d2c2 )

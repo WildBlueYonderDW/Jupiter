@@ -20,7 +20,7 @@
 #namespace helicopter_pilot;
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57a
 // Size: 0x1ea
 function init()
@@ -61,7 +61,7 @@ function init()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x76c
 // Size: 0xfb
 function tryusehelipilot( lifeid, streakname )
@@ -105,7 +105,7 @@ function tryusehelipilot( lifeid, streakname )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x870
 // Size: 0x63
 function exceededmaxhelipilots( team )
@@ -133,7 +133,7 @@ function exceededmaxhelipilots( team )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8db
 // Size: 0x39
 function watchhostmigrationfinishedinit( player )
@@ -150,7 +150,7 @@ function watchhostmigrationfinishedinit( player )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x91c
 // Size: 0x2d2
 function createhelipilot( helipilottype )
@@ -202,7 +202,7 @@ function createhelipilot( helipilottype )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbf7
 // Size: 0x98
 function helipilot_lightfx()
@@ -217,7 +217,7 @@ function helipilot_lightfx()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc97
 // Size: 0x28b, Type: bool
 function starthelipilot( heli )
@@ -272,7 +272,7 @@ function starthelipilot( heli )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf2b
 // Size: 0x37
 function heligotostartposition( targetnode )
@@ -286,7 +286,7 @@ function heligotostartposition( targetnode )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf6a
 // Size: 0x12e
 function watchintrocleared( heli )
@@ -326,7 +326,7 @@ function watchintrocleared( heli )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10a0
 // Size: 0x5a
 function watchforperkremoval( heli )
@@ -340,7 +340,7 @@ function watchforperkremoval( heli )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1102
 // Size: 0x5e
 function watchplayersspawning()
@@ -360,7 +360,7 @@ function watchplayersspawning()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1168
 // Size: 0x27
 function removeoutline( id, heli )
@@ -370,7 +370,7 @@ function removeoutline( id, heli )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1197
 // Size: 0x75
 function heliremoveoutline( id, heli )
@@ -391,7 +391,7 @@ function heliremoveoutline( id, heli )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1214
 // Size: 0x66
 function playerremoveoutline( id, heli )
@@ -408,7 +408,7 @@ function playerremoveoutline( id, heli )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1282
 // Size: 0x5a
 function helipilot_watchdeath()
@@ -431,7 +431,7 @@ function helipilot_watchdeath()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e4
 // Size: 0x6b
 function helipilot_watchobjectivecam()
@@ -451,7 +451,7 @@ function helipilot_watchobjectivecam()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1357
 // Size: 0x89
 function helipilot_watchtimeout()
@@ -472,7 +472,7 @@ function helipilot_watchtimeout()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13e8
 // Size: 0x3e
 function helipilot_watchownerloss()
@@ -485,7 +485,7 @@ function helipilot_watchownerloss()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x142e
 // Size: 0x57
 function helipilot_watchroundend()
@@ -500,7 +500,7 @@ function helipilot_watchroundend()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x148d
 // Size: 0xdd
 function helipilot_leave()
@@ -534,7 +534,7 @@ function helipilot_leave()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1572
 // Size: 0x22
 function wait_and_delete( waittime )
@@ -546,7 +546,7 @@ function wait_and_delete( waittime )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x159c
 // Size: 0x6f
 function helipilot_endride( heli )
@@ -573,7 +573,7 @@ function helipilot_endride( heli )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1613
 // Size: 0x33
 function helipilot_freezebuffer()
@@ -586,7 +586,7 @@ function helipilot_freezebuffer()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x164e
 // Size: 0x8e
 function helipilot_watchads()
@@ -620,7 +620,7 @@ function helipilot_watchads()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16e4
 // Size: 0x1b
 function helipilot_setairstartnodes()
@@ -629,7 +629,7 @@ function helipilot_setairstartnodes()
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1707
 // Size: 0x65
 function helipilot_getlinkedstruct( struct )
@@ -638,7 +638,8 @@ function helipilot_getlinkedstruct( struct )
     {
         linknames = struct get_links();
         
-        for (i = 0; i < linknames.size; i++) {
+        for ( i = 0; i < linknames.size ; i++ )
+        {
             ent = getstruct( linknames[ i ], "script_linkname" );
             
             if ( isdefined( ent ) )
@@ -652,7 +653,7 @@ function helipilot_getlinkedstruct( struct )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1775
 // Size: 0x9a
 function helipilot_getcloseststartnode( pos )
@@ -675,7 +676,7 @@ function helipilot_getcloseststartnode( pos )
 }
 
 // Namespace helicopter_pilot / scripts\mp\killstreaks\helicopter_pilot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1818
 // Size: 0x3a
 function watchearlyexit( heli )

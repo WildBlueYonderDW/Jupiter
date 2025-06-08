@@ -9,7 +9,7 @@
 #namespace bots_gametype_war;
 
 // Namespace bots_gametype_war / scripts\mp\bots\bots_gametype_war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x120
 // Size: 0x5b
 function main()
@@ -33,7 +33,7 @@ function main()
 /#
 
     // Namespace bots_gametype_war / scripts\mp\bots\bots_gametype_war
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x183
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -44,7 +44,7 @@ function main()
 #/
 
 // Namespace bots_gametype_war / scripts\mp\bots\bots_gametype_war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x190
 // Size: 0x17
 function setup_callbacks()
@@ -53,7 +53,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_war / scripts\mp\bots\bots_gametype_war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1af
 // Size: 0x2
 function setup_bot_war()
@@ -62,7 +62,7 @@ function setup_bot_war()
 }
 
 // Namespace bots_gametype_war / scripts\mp\bots\bots_gametype_war
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b9
 // Size: 0x57
 function bot_war_think()

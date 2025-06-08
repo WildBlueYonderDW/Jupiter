@@ -10,7 +10,7 @@
 #namespace traverse;
 
 // Namespace traverse / scripts\asm\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x404
 // Size: 0x360
 function playtraversearrivalanim( asmname, statename, params )
@@ -111,7 +111,7 @@ function playtraversearrivalanim( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x76c
 // Size: 0x25
 function function_e9cc41df0c7dfd7b( asmname, statename, params )
@@ -120,7 +120,7 @@ function function_e9cc41df0c7dfd7b( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x799
 // Size: 0xa7
 function function_eadd4123f9b2da38( asmname, statename, params )
@@ -133,7 +133,7 @@ function function_eadd4123f9b2da38( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x849
 // Size: 0xae0
 function playtraverseanim_scaled( asmname, statename, params )
@@ -429,7 +429,7 @@ function playtraverseanim_scaled( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1331
 // Size: 0x74
 function terminatetraverse( asmname, statename )
@@ -447,7 +447,7 @@ function terminatetraverse( asmname, statename )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13ad
 // Size: 0xa8
 function handletraversealignment()
@@ -472,7 +472,7 @@ function handletraversealignment()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x145d
 // Size: 0x44
 function handletraverselegacynotetracks( note )
@@ -494,7 +494,7 @@ function handletraverselegacynotetracks( note )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14a9
 // Size: 0x30d
 function handletraversedrop()
@@ -562,7 +562,7 @@ function handletraversedrop()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17be
 // Size: 0x46
 function finishtraversedrop( finalz )
@@ -584,7 +584,7 @@ function finishtraversedrop( finalz )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x180c
 // Size: 0x69
 function teleportthread( verticaloffset )
@@ -595,14 +595,15 @@ function teleportthread( verticaloffset )
     reps = 5;
     offset = ( 0, 0, verticaloffset / reps );
     
-    for (i = 0; i < reps; i++) {
+    for ( i = 0; i < reps ; i++ )
+    {
         self forceteleport( self.origin + offset );
         waitframe();
     }
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x187d
 // Size: 0xd8
 function teleportthreadex( verticaloffset, delay, frames, animrate )
@@ -629,7 +630,8 @@ function teleportthreadex( verticaloffset, delay, frames, animrate )
         self aisetanimrate( self.traversexanim, animrate );
     }
     
-    for (i = 0; i < frames; i++) {
+    for ( i = 0; i < frames ; i++ )
+    {
         self forceteleport( self.origin + offset );
         waitframe();
     }
@@ -641,7 +643,7 @@ function teleportthreadex( verticaloffset, delay, frames, animrate )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x195d
 // Size: 0xea, Type: bool
 function shouldusewarpnotetracks( traversexanim )
@@ -686,7 +688,7 @@ function shouldusewarpnotetracks( traversexanim )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a50
 // Size: 0x31, Type: bool
 function shouldusewarparrival( traversexanim )
@@ -701,7 +703,7 @@ function shouldusewarparrival( traversexanim )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a8a
 // Size: 0xdd, Type: bool
 function function_bff8ca6cd5006152( asmname, statename, tostatename, params )
@@ -738,7 +740,7 @@ function function_bff8ca6cd5006152( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1b70
 // Size: 0x35, Type: bool
 function shoulddotraditionaltraverse( asmname, statename, tostatename, params )
@@ -752,7 +754,7 @@ function shoulddotraditionaltraverse( asmname, statename, tostatename, params )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1bae
 // Size: 0x33
 function traverse_cleanup( asmname, statename, params )
@@ -765,7 +767,7 @@ function traverse_cleanup( asmname, statename, params )
 /#
 
     // Namespace traverse / scripts\asm\traverse
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x1be9
     // Size: 0x512, Type: dev
     function function_ceba701c6c68b2ee( featurearray, alias, var_9beb646264506c87, translationstartfrac )
@@ -877,7 +879,7 @@ function traverse_cleanup( asmname, statename, params )
 #/
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2103
 // Size: 0xee
 function function_3bb347b40346528a()
@@ -904,7 +906,7 @@ function function_3bb347b40346528a()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21fa
 // Size: 0xd2e
 function calctraversetype( asmname, statename, params )
@@ -1204,7 +1206,7 @@ function calctraversetype( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f30
 // Size: 0x159
 function traversechooseanim( asmname, statename, params )
@@ -1244,7 +1246,7 @@ function traversechooseanim( asmname, statename, params )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3092
 // Size: 0x1c
 function handletraversearrivalwarpnotetracks( note )
@@ -1256,7 +1258,7 @@ function handletraversearrivalwarpnotetracks( note )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30b6
 // Size: 0x9a
 function handletraversewarpnotetracks( note )
@@ -1298,7 +1300,7 @@ function handletraversewarpnotetracks( note )
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3158
 // Size: 0x48
 function handletraversedeathnotetrack()
@@ -1312,7 +1314,7 @@ function handletraversedeathnotetrack()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31a8
 // Size: 0x110
 function handlewarparrivalnotetrack()
@@ -1346,7 +1348,7 @@ function handlewarparrivalnotetrack()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32c0
 // Size: 0x297
 function handlewarpupnotetrack()
@@ -1395,7 +1397,7 @@ function handlewarpupnotetrack()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x355f
 // Size: 0x28c
 function handlewarpacrossnotetrack()
@@ -1457,7 +1459,7 @@ function handlewarpacrossnotetrack()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37f3
 // Size: 0x4b8
 function handlewarpdownstartnotetrack()
@@ -1581,7 +1583,7 @@ function handlewarpdownstartnotetrack()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cb3
 // Size: 0x29
 function handlewarpdownendnotetrack()
@@ -1595,7 +1597,7 @@ function handlewarpdownendnotetrack()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ce4
 // Size: 0x176
 function function_beef4a855ca0ca3c()
@@ -1660,7 +1662,7 @@ function function_beef4a855ca0ca3c()
 }
 
 // Namespace traverse / scripts\asm\traverse
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e62
 // Size: 0x22e
 function checktraverse( statename )

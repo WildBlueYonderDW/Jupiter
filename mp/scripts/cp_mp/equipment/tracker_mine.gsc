@@ -26,9 +26,9 @@ function autoexec main()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51b
-// Size: 0x142
+// Size: 0x14e
 function tracker_mine_used( grenade )
 {
     grenade scripts\cp_mp\ent_manager::registerspawn( 1, &function_94d121fb31a78605 );
@@ -36,9 +36,13 @@ function tracker_mine_used( grenade )
     thread function_f3bb4f4911a1beb2( "weapons", "monitorDisownedGrenade", self, grenade );
     result = grenade waittill_any_timeout_1( 20, "missile_stuck" );
     
-    if ( result == "timeout" )
+    if ( !isdefined( result ) || result == "timeout" )
     {
-        grenade delete();
+        if ( isdefined( grenade ) )
+        {
+            grenade delete();
+        }
+        
         return;
     }
     
@@ -63,8 +67,8 @@ function tracker_mine_used( grenade )
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x665
+// Params 0
+// Checksum 0x0, Offset: 0x671
 // Size: 0x129
 function function_21c1cf07d4287694()
 {
@@ -88,8 +92,8 @@ function function_21c1cf07d4287694()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x796
+// Params 0
+// Checksum 0x0, Offset: 0x7a2
 // Size: 0x1b
 function function_8bdd230c4ff3a6cb()
 {
@@ -98,8 +102,8 @@ function function_8bdd230c4ff3a6cb()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b9
+// Params 0
+// Checksum 0x0, Offset: 0x7c5
 // Size: 0x23c
 function function_c7ab3c1622f5161()
 {
@@ -153,8 +157,8 @@ function function_c7ab3c1622f5161()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fd
+// Params 2
+// Checksum 0x0, Offset: 0xa09
 // Size: 0x59, Type: bool
 function function_a3f22e9cffa1ee57( targetent, startpos )
 {
@@ -164,8 +168,8 @@ function function_a3f22e9cffa1ee57( targetent, startpos )
 /#
 
     // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-    // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa5f
+    // Params 4
+    // Checksum 0x0, Offset: 0xa6b
     // Size: 0x4e, Type: dev
     function function_f9310df4c660fa53( radius, startpos, endpos, color )
     {
@@ -183,8 +187,8 @@ function function_a3f22e9cffa1ee57( targetent, startpos )
 #/
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xab5
+// Params 1
+// Checksum 0x0, Offset: 0xac1
 // Size: 0x98
 function function_c8350e9ea22ae8e9( victim )
 {
@@ -199,8 +203,8 @@ function function_c8350e9ea22ae8e9( victim )
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb55
+// Params 0
+// Checksum 0x0, Offset: 0xb61
 // Size: 0x1b
 function tracker_mine_disable()
 {
@@ -209,8 +213,8 @@ function tracker_mine_disable()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb78
+// Params 0
+// Checksum 0x0, Offset: 0xb84
 // Size: 0xe
 function function_94d121fb31a78605()
 {
@@ -218,8 +222,8 @@ function function_94d121fb31a78605()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8e
+// Params 1
+// Checksum 0x0, Offset: 0xb9a
 // Size: 0x2e
 function function_9fb09350ae81bbf5( params )
 {
@@ -230,8 +234,8 @@ function function_9fb09350ae81bbf5( params )
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc5
+// Params 0
+// Checksum 0x0, Offset: 0xbd1
 // Size: 0x97
 function function_2f7f87f09716e22e()
 {
@@ -261,8 +265,8 @@ function function_2f7f87f09716e22e()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc64
+// Params 0
+// Checksum 0x0, Offset: 0xc70
 // Size: 0x29
 function function_89439c68f99b17d5()
 {
@@ -274,8 +278,8 @@ function function_89439c68f99b17d5()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc95
+// Params 1
+// Checksum 0x0, Offset: 0xca1
 // Size: 0x15c, Type: bool
 function function_ab670147f0d58a96( grenade )
 {
@@ -321,8 +325,8 @@ function function_ab670147f0d58a96( grenade )
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdfa
+// Params 0
+// Checksum 0x0, Offset: 0xe06
 // Size: 0x92
 function function_84b0895c8cebc968()
 {
@@ -343,8 +347,8 @@ function function_84b0895c8cebc968()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe94
+// Params 0
+// Checksum 0x0, Offset: 0xea0
 // Size: 0x51
 function function_94c5d34d6f54f5fd()
 {
@@ -357,8 +361,8 @@ function function_94c5d34d6f54f5fd()
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xeed
+// Params 1
+// Checksum 0x0, Offset: 0xef9
 // Size: 0x44
 function function_21ca9d2c8fc54d2( data )
 {
@@ -368,8 +372,8 @@ function function_21ca9d2c8fc54d2( data )
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf39
+// Params 1
+// Checksum 0x0, Offset: 0xf45
 // Size: 0x23
 function function_523562e8b7ff6a39( data )
 {
@@ -378,8 +382,8 @@ function function_523562e8b7ff6a39( data )
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf64
+// Params 1
+// Checksum 0x0, Offset: 0xf70
 // Size: 0x7f
 function function_c1b85fa145e2a6d3( data )
 {
@@ -392,8 +396,8 @@ function function_c1b85fa145e2a6d3( data )
 }
 
 // Namespace tracker_mine / scripts\cp_mp\equipment\tracker_mine
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfeb
+// Params 1
+// Checksum 0x0, Offset: 0xff7
 // Size: 0x61
 function tracker_mine_onownerchanged( oldowner )
 {

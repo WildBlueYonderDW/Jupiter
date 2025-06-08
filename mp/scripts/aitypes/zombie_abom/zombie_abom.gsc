@@ -40,7 +40,7 @@ function private function_f49a30f92555b827( params )
 }
 
 // Namespace zombie_abom / scripts\aitypes\zombie_abom\zombie_abom
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x424
 // Size: 0x150
 function function_7c45a7e2b8990bee( taskid )
@@ -77,7 +77,7 @@ function function_7c45a7e2b8990bee( taskid )
 }
 
 // Namespace zombie_abom / scripts\aitypes\zombie_abom\zombie_abom
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57d
 // Size: 0x41
 function initscriptable()

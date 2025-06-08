@@ -51,7 +51,7 @@
 #namespace mp_jup_launchfacility;
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d77
 // Size: 0x26a
 function main()
@@ -109,7 +109,7 @@ function main()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fe9
 // Size: 0x91
 function function_bdccfc7ecc6306c1()
@@ -130,7 +130,7 @@ function function_bdccfc7ecc6306c1()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2082
 // Size: 0x130
 function function_f24db6a5246641cb()
@@ -156,7 +156,7 @@ function function_f24db6a5246641cb()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21ba
 // Size: 0x75
 function function_fdc304e86fdedba( label )
@@ -177,7 +177,7 @@ function function_fdc304e86fdedba( label )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2237
 // Size: 0xc8
 function function_1c74e9d49ba96bc8( label )
@@ -192,7 +192,7 @@ function function_1c74e9d49ba96bc8( label )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2307
 // Size: 0x1c
 function initai()
@@ -203,7 +203,7 @@ function initai()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x232b
 // Size: 0x221
 function function_d4b2873d01de6c04( index )
@@ -248,7 +248,7 @@ function function_d4b2873d01de6c04( index )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2555
 // Size: 0x3da
 function function_d69acc92a86dd80b()
@@ -317,7 +317,7 @@ function function_d69acc92a86dd80b()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2938
 // Size: 0x301
 function function_d5f16f7e888c59d3()
@@ -364,7 +364,7 @@ function function_d5f16f7e888c59d3()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c42
 // Size: 0x38
 function function_64c61d28f575a7a9( var_9cc46de2a314708c, tank )
@@ -377,7 +377,7 @@ function function_64c61d28f575a7a9( var_9cc46de2a314708c, tank )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c82
 // Size: 0x6b
 function function_f6a779553c406a5e()
@@ -392,7 +392,7 @@ function function_f6a779553c406a5e()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cf5
 // Size: 0x1cf
 function function_df6579cb4cbfbcfd( animstruct )
@@ -436,7 +436,7 @@ function function_df6579cb4cbfbcfd( animstruct )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ecc
 // Size: 0x8e
 function spawnactor( targetname, model, animname )
@@ -457,7 +457,7 @@ function spawnactor( targetname, model, animname )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f63
 // Size: 0x1b0
 function function_26f23107e6cd179f()
@@ -491,7 +491,7 @@ function function_26f23107e6cd179f()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x311b
 // Size: 0x324
 function function_e2344ec3f70a089c()
@@ -548,7 +548,7 @@ function function_e2344ec3f70a089c()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3447
 // Size: 0x32
 function function_96c8e55e70edd512( animname )
@@ -562,7 +562,7 @@ function function_96c8e55e70edd512( animname )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3482
 // Size: 0x429
 function function_714ca74c07bcc71c()
@@ -625,7 +625,7 @@ function function_714ca74c07bcc71c()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x38b3
 // Size: 0x10b
 function function_927b512a6d2c5d6d( player, buildable, buildphase )
@@ -647,7 +647,7 @@ function function_927b512a6d2c5d6d( player, buildable, buildphase )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39c6
 // Size: 0xbd
 function function_aee75e15f0b3ace2()
@@ -667,7 +667,7 @@ function function_aee75e15f0b3ace2()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a8b
 // Size: 0x284
 function function_2e4f60aab0b9caa1( player, buildable )
@@ -700,7 +700,7 @@ function function_2e4f60aab0b9caa1( player, buildable )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d17
 // Size: 0x2ac
 function function_1e4edfddaf68a61f( player )
@@ -731,7 +731,7 @@ function function_1e4edfddaf68a61f( player )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fcb
 // Size: 0x35d
 function function_259b94f62f15b4be()
@@ -793,7 +793,7 @@ function function_259b94f62f15b4be()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4330
 // Size: 0x1b0
 function function_eeb5fae661444ab6( player, buildable )
@@ -821,7 +821,7 @@ function function_eeb5fae661444ab6( player, buildable )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x44e8
 // Size: 0x8e
 function function_219488eeb71cf8ce( player, buildable )
@@ -838,7 +838,7 @@ function function_219488eeb71cf8ce( player, buildable )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x457e
 // Size: 0x16a
 function function_f7d3423c552f1596( player, buildable )
@@ -874,7 +874,7 @@ function function_f7d3423c552f1596( player, buildable )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46f0
 // Size: 0x2ac
 function function_503244ee309d918d()
@@ -922,7 +922,7 @@ function function_503244ee309d918d()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x49a4
 // Size: 0x1c
 function function_14557abb4173c907( player, buildable )
@@ -931,7 +931,7 @@ function function_14557abb4173c907( player, buildable )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49c8
 // Size: 0xa4
 function pushingplayer()
@@ -952,7 +952,7 @@ function pushingplayer()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a74
 // Size: 0x50
 function function_e6e4ec899d114c59( player, buildable )
@@ -964,7 +964,7 @@ function function_e6e4ec899d114c59( player, buildable )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4acc
 // Size: 0x176
 function function_18b4ff54f4110b21( player, buildable )
@@ -985,7 +985,7 @@ function function_18b4ff54f4110b21( player, buildable )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c4a
 // Size: 0x1ad
 function function_44bc02179cd2ed83( player )
@@ -1019,7 +1019,7 @@ function function_44bc02179cd2ed83( player )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4dff
 // Size: 0xd0
 function function_82913d07328e5537()
@@ -1043,7 +1043,7 @@ function function_82913d07328e5537()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ed7
 // Size: 0xcc
 function function_4538f9d8dc0b9007( vehicle )
@@ -1052,7 +1052,8 @@ function function_4538f9d8dc0b9007( vehicle )
     var_5beb550b14979da6 = 5;
     var_2946f1f5b9485f68 = [];
     
-    for (i = 0; i < var_5beb550b14979da6; i++) {
+    for ( i = 0; i < var_5beb550b14979da6 ; i++ )
+    {
         name = "check_point_" + i;
         var_a1cf1ca2c44eca8b = getvehiclenode( name, "script_noteworthy" );
         
@@ -1074,7 +1075,7 @@ function function_4538f9d8dc0b9007( vehicle )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4fac
 // Size: 0x186
 function function_8ac0af786a238752()
@@ -1108,7 +1109,7 @@ function function_8ac0af786a238752()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x513a
 // Size: 0xd5
 function function_9aa340020fc22929()
@@ -1141,7 +1142,7 @@ function function_9aa340020fc22929()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5217
 // Size: 0x26
 function function_632813fe12ee1849()
@@ -1152,7 +1153,7 @@ function function_632813fe12ee1849()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5245
 // Size: 0x9e
 function function_e7d2bd03a0c17f96( boundary, volumes, var_c90367cdfa30c3d3 )
@@ -1176,7 +1177,7 @@ function function_e7d2bd03a0c17f96( boundary, volumes, var_c90367cdfa30c3d3 )
 /#
 
     // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x52eb
     // Size: 0x13d, Type: dev
     function function_54a398090e73e4fe()
@@ -1206,7 +1207,7 @@ function function_e7d2bd03a0c17f96( boundary, volumes, var_c90367cdfa30c3d3 )
 #/
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5430
 // Size: 0xb4
 function function_d48d53fecaf25074( spawningplayer, spawnteam, spawnpointset, fallbackspawnset, var_a22bad5fe6fbf86d )
@@ -1236,7 +1237,7 @@ function function_d48d53fecaf25074( spawningplayer, spawnteam, spawnpointset, fa
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x54ed
 // Size: 0x58
 function function_3c8a7af329c87d2d( player )
@@ -1251,7 +1252,7 @@ function function_3c8a7af329c87d2d( player )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x554d
 // Size: 0x9c
 function function_bd4520ab6628ed1e()
@@ -1282,10 +1283,10 @@ function function_bd4520ab6628ed1e()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x55f1
 // Size: 0x76
-function function_447ef1228e11749c( pointref, var_1f4cf79f66927511, vehicle, player )
+function function_447ef1228e11749c( pointref, instancedataforpoint, vehicle, player )
 {
     seatid = "gunner";
     thread scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_enter( vehicle, seatid, player );
@@ -1294,22 +1295,22 @@ function function_447ef1228e11749c( pointref, var_1f4cf79f66927511, vehicle, pla
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x566f
 // Size: 0x5f
-function function_920fe39fda388722( pointref, var_1f4cf79f66927511, vehicle, unusedtwo )
+function function_920fe39fda388722( pointref, instancedataforpoint, vehicle, unusedtwo )
 {
     if ( scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_seatisavailable( vehicle, "gunner" ) )
     {
         availableseatid = "gunner";
     }
     
-    var_1f4cf79f66927511.disabled = !isdefined( availableseatid );
-    var_1f4cf79f66927511.availableseatid = availableseatid;
+    instancedataforpoint.disabled = !isdefined( availableseatid );
+    instancedataforpoint.availableseatid = availableseatid;
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56d6
 // Size: 0x165
 function function_27b5aad89735bcf9()
@@ -1335,7 +1336,7 @@ function function_27b5aad89735bcf9()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x5843
 // Size: 0xde
 function function_28260c713871bcd7( zone, packagename, var_1950ca16bf35a8dd, var_18d20d89a8667ce0, var_5b60c9669c3ae11b, var_874c3e372961f20e )
@@ -1359,7 +1360,7 @@ function function_28260c713871bcd7( zone, packagename, var_1950ca16bf35a8dd, var
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5929
 // Size: 0x134
 function function_445dbcc7a86a8125()
@@ -1392,7 +1393,7 @@ function function_445dbcc7a86a8125()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5a65
 // Size: 0x70
 function function_a021bde59ed03a3( params, zone )
@@ -1410,7 +1411,7 @@ function function_a021bde59ed03a3( params, zone )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ade
 // Size: 0x59
 function function_990d76825f5da2ed( params, zone )
@@ -1421,7 +1422,7 @@ function function_990d76825f5da2ed( params, zone )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b40
 // Size: 0x96
 function function_1e8ab9080586c6b3( params, zone )
@@ -1444,7 +1445,7 @@ function function_1e8ab9080586c6b3( params, zone )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5bdf
 // Size: 0x43
 function function_3743a0dbb1ec5523()
@@ -1456,7 +1457,7 @@ function function_3743a0dbb1ec5523()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5c2a
 // Size: 0xc9
 function function_ebcf745913dfa4f7( vehicle, otherent )
@@ -1484,7 +1485,7 @@ function function_ebcf745913dfa4f7( vehicle, otherent )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cfb
 // Size: 0x3c6
 function function_4e41bf0f45af388d( zone )
@@ -1515,7 +1516,7 @@ function function_4e41bf0f45af388d( zone )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60c9
 // Size: 0x113
 function function_41fe0ce4b07a5ce7( zone )
@@ -1535,7 +1536,7 @@ function function_41fe0ce4b07a5ce7( zone )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x61e4
 // Size: 0x116
 function function_a9229844e65e7b50()
@@ -1567,7 +1568,7 @@ function function_a9229844e65e7b50()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6302
 // Size: 0x156
 function function_4c3317636403651()
@@ -1601,7 +1602,7 @@ function function_4c3317636403651()
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6460
 // Size: 0x1e7
 function function_59be3ae75b0410b3( var_d3c3ee3b2c62604f )
@@ -1640,7 +1641,7 @@ function function_59be3ae75b0410b3( var_d3c3ee3b2c62604f )
 }
 
 // Namespace mp_jup_launchfacility / scripts\mp\maps\mp_jup_launchfacility\mp_jup_launchfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x664f
 // Size: 0x24a
 function function_4b0074ef058e72e9()

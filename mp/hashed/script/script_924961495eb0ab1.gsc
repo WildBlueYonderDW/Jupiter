@@ -8,7 +8,7 @@
 #namespace warrior_miniguns;
 
 // Namespace warrior_miniguns / namespace_97af351e5c3d498d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11a
 // Size: 0x4a
 function function_d8ab130aa8874e6b()
@@ -20,7 +20,7 @@ function function_d8ab130aa8874e6b()
 }
 
 // Namespace warrior_miniguns / namespace_97af351e5c3d498d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c
 // Size: 0x50
 function function_eb881ddfad8bc7eb()
@@ -35,7 +35,7 @@ function function_eb881ddfad8bc7eb()
 }
 
 // Namespace warrior_miniguns / namespace_97af351e5c3d498d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c4
 // Size: 0x59
 function onplayerspawned()

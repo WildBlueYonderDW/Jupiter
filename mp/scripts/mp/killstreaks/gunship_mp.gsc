@@ -25,7 +25,7 @@
 #namespace gunship_mp;
 
 // Namespace gunship_mp / scripts\mp\killstreaks\gunship_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30f
 // Size: 0x147
 function init()
@@ -48,7 +48,7 @@ function init()
 }
 
 // Namespace gunship_mp / scripts\mp\killstreaks\gunship_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x45e
 // Size: 0x1b
 function gunship_findboxcenter( mins, maxs )
@@ -57,7 +57,7 @@ function gunship_findboxcenter( mins, maxs )
 }
 
 // Namespace gunship_mp / scripts\mp\killstreaks\gunship_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x482
 // Size: 0x32
 function gunship_getbombingpoint( centerpoint, var_a0edd3f59d938fb1 )
@@ -67,7 +67,7 @@ function gunship_getbombingpoint( centerpoint, var_a0edd3f59d938fb1 )
 }
 
 // Namespace gunship_mp / scripts\mp\killstreaks\gunship_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4bd
 // Size: 0x119
 function gunship_assigntargetmarkers( gunner )
@@ -96,7 +96,7 @@ function gunship_assigntargetmarkers( gunner )
 }
 
 // Namespace gunship_mp / scripts\mp\killstreaks\gunship_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5de
 // Size: 0x20
 function function_719b6cb36fd371a2( gunship )

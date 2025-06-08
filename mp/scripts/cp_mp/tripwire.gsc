@@ -8,7 +8,7 @@
 #namespace tripwire;
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x971
 // Size: 0x1f0
 function init()
@@ -61,7 +61,7 @@ function init()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb69
 // Size: 0x91
 function tripwiremodelprecache()
@@ -82,7 +82,7 @@ function tripwiremodelprecache()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc02
 // Size: 0x5c
 function spawntripwirelevelstruct()
@@ -97,7 +97,7 @@ function spawntripwirelevelstruct()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc66
 // Size: 0x13
 function precache( type, model )
@@ -106,7 +106,7 @@ function precache( type, model )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc81
 // Size: 0xfe
 function precachetrap( type, model, candisarm )
@@ -133,7 +133,7 @@ function precachetrap( type, model, candisarm )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd87
 // Size: 0xe7
 function buildtripwire( startstruct, endstruct, parenttripwire )
@@ -160,7 +160,7 @@ function buildtripwire( startstruct, endstruct, parenttripwire )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe77
 // Size: 0x152
 function processtripwiretarget( endstruct )
@@ -202,7 +202,7 @@ function processtripwiretarget( endstruct )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd1
 // Size: 0x27
 function shouldfindnavmodifier()
@@ -216,7 +216,7 @@ function shouldfindnavmodifier()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1000
 // Size: 0x34
 function istripwirestruct()
@@ -230,7 +230,7 @@ function istripwirestruct()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x103c
 // Size: 0x38
 function istripwiretrapstruct()
@@ -244,7 +244,7 @@ function istripwiretrapstruct()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107c
 // Size: 0x80, Type: bool
 function hastripwirechild()
@@ -261,7 +261,7 @@ function hastripwirechild()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1105
 // Size: 0x2c0
 function spawntripwire( startstruct, endstruct )
@@ -313,7 +313,7 @@ function spawntripwire( startstruct, endstruct )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13ce
 // Size: 0xf0
 function inittripwireanims( animname )
@@ -343,7 +343,7 @@ function inittripwireanims( animname )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14c6
 // Size: 0x2e
 function inittripwirestaticmodel( animname )
@@ -357,7 +357,7 @@ function inittripwirestaticmodel( animname )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14fc
 // Size: 0x30
 function gettripwiretriggersound( firsttriggered )
@@ -376,7 +376,7 @@ function gettripwiretriggersound( firsttriggered )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1534
 // Size: 0x70
 function tripwirethink()
@@ -399,7 +399,7 @@ function tripwirethink()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15ac
 // Size: 0xb1
 function tripwireshouldtrigger( who )
@@ -436,7 +436,7 @@ function tripwireshouldtrigger( who )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1665
 // Size: 0x2af
 function buildtripwiretrap( struct, parenttripwire )
@@ -479,7 +479,7 @@ function buildtripwiretrap( struct, parenttripwire )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x191d
 // Size: 0x351
 function function_3aebddc8d6a5a470( length_factor )
@@ -553,7 +553,7 @@ function function_3aebddc8d6a5a470( length_factor )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c76
 // Size: 0x47
 function function_8f1b1ef7b8a59eb7()
@@ -565,7 +565,7 @@ function function_8f1b1ef7b8a59eb7()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cc6
 // Size: 0x16
 function getnormtripwirelength()
@@ -574,7 +574,7 @@ function getnormtripwirelength()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ce5
 // Size: 0x36
 function function_83ecc93f05088653( durationseconds )
@@ -590,7 +590,7 @@ function function_83ecc93f05088653( durationseconds )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d23
 // Size: 0x71, Type: bool
 function tripwirehastraps()
@@ -607,7 +607,7 @@ function tripwirehastraps()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d9d
 // Size: 0x82
 function triggertripwirefuncthink( triggerfunc )
@@ -638,7 +638,7 @@ function triggertripwirefuncthink( triggerfunc )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e27
 // Size: 0xb6
 function triggertrapfuncthink( triggerfunc )
@@ -670,7 +670,7 @@ function triggertrapfuncthink( triggerfunc )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ee5
 // Size: 0x6c
 function gettriggerfunc( type )
@@ -690,7 +690,7 @@ function gettriggerfunc( type )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f59
 // Size: 0xfb
 function gettripwiretriggeranim( animname )
@@ -728,7 +728,7 @@ function gettripwiretriggeranim( animname )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x205c
 // Size: 0x92
 function gettripwirestaticmodel( animname )
@@ -766,7 +766,7 @@ function gettripwirestaticmodel( animname )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20f6
 // Size: 0x56
 function gettripwirestretchanim( animname )
@@ -783,7 +783,7 @@ function gettripwirestretchanim( animname )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2154
 // Size: 0x75
 function gettripwiremodel( animname )
@@ -810,7 +810,7 @@ function gettripwiremodel( animname )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21d1
 // Size: 0x1e, Type: bool
 function shouldusewallsize1()
@@ -819,7 +819,7 @@ function shouldusewallsize1()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21f8
 // Size: 0x1e, Type: bool
 function shouldusewallsize2()
@@ -828,7 +828,7 @@ function shouldusewallsize2()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x221f
 // Size: 0x1e, Type: bool
 function shouldusewallsize3()
@@ -837,7 +837,7 @@ function shouldusewallsize3()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2246
 // Size: 0x1e, Type: bool
 function shouldusewallsize4()
@@ -846,7 +846,7 @@ function shouldusewallsize4()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x226d
 // Size: 0x170
 function triggerfunctripwire( who, triggertraps, firsttriggered )
@@ -892,7 +892,7 @@ function triggerfunctripwire( who, triggertraps, firsttriggered )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23e5
 // Size: 0x24
 function rotatetofinalangles()
@@ -903,7 +903,7 @@ function rotatetofinalangles()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2411
 // Size: 0x35
 function swaptostaticmodel()
@@ -915,7 +915,7 @@ function swaptostaticmodel()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x244e
 // Size: 0x6a
 function delete_trapfunc()
@@ -930,7 +930,7 @@ function delete_trapfunc()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24c0
 // Size: 0x10a
 function triggerfuncsemtex( who )
@@ -959,7 +959,7 @@ function triggerfuncsemtex( who )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25d2
 // Size: 0x142
 function triggerfuncfrag( who )
@@ -998,7 +998,7 @@ function triggerfuncfrag( who )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x271c
 // Size: 0x16c
 function triggerfuncc4( who )
@@ -1037,7 +1037,7 @@ function triggerfuncc4( who )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2890
 // Size: 0x245
 function damagetrapfuncthink( damagefunc, struct )
@@ -1096,7 +1096,7 @@ function damagetrapfuncthink( damagefunc, struct )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2add
 // Size: 0x4d, Type: bool
 function cantriptrap( attacker, type, damage )
@@ -1115,7 +1115,7 @@ function cantriptrap( attacker, type, damage )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b33
 // Size: 0x1d0
 function disarmfuncthink( disarmfunc, struct )
@@ -1167,7 +1167,7 @@ function disarmfuncthink( disarmfunc, struct )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d0b
 // Size: 0x5a
 function getdisarmfunc( type )
@@ -1185,7 +1185,7 @@ function getdisarmfunc( type )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d6d
 // Size: 0x36
 function disarmfuncsemtex( who )
@@ -1195,7 +1195,7 @@ function disarmfuncsemtex( who )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dab
 // Size: 0x36
 function disarmfuncfrag( who )
@@ -1205,7 +1205,7 @@ function disarmfuncfrag( who )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2de9
 // Size: 0x5c
 function disarmgiveweapon( weapon, lootname, grenade_origin, grenade_angles )
@@ -1218,7 +1218,7 @@ function disarmgiveweapon( weapon, lootname, grenade_origin, grenade_angles )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e4d
 // Size: 0x97
 function function_391d956c772fb03f()
@@ -1244,7 +1244,7 @@ function function_391d956c772fb03f()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2eec
 // Size: 0xe1
 function function_41e381609b6ab0( var_ffcaa31c31962d79 )
@@ -1267,7 +1267,7 @@ function function_41e381609b6ab0( var_ffcaa31c31962d79 )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2fd5
 // Size: 0x66
 function tripwire_enable( tripwire, ownerteam, tripwiretargets )
@@ -1279,7 +1279,7 @@ function tripwire_enable( tripwire, ownerteam, tripwiretargets )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3043
 // Size: 0x12c
 function tripwire_disable( tripwire )
@@ -1314,7 +1314,7 @@ function tripwire_disable( tripwire )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3177
 // Size: 0x4b8
 function function_e532c2521845ce4a( var_8eca5bdf48ccf8e6, targets )
@@ -1421,7 +1421,7 @@ function function_e532c2521845ce4a( var_8eca5bdf48ccf8e6, targets )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3637
 // Size: 0x3b
 function function_4d63a162b2fb4275()
@@ -1433,7 +1433,7 @@ function function_4d63a162b2fb4275()
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x367a
 // Size: 0x205
 function function_fb4b4fa0cee578bd( var_2d9552508615d396, tripwire )
@@ -1494,7 +1494,7 @@ function function_fb4b4fa0cee578bd( var_2d9552508615d396, tripwire )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3887
 // Size: 0x95
 function function_5edfa6cc73a7922d( tripwire )
@@ -1505,7 +1505,7 @@ function function_5edfa6cc73a7922d( tripwire )
 }
 
 // Namespace tripwire / scripts\cp_mp\tripwire
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3924
 // Size: 0x227
 function function_6cae226462403bcc( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -1562,7 +1562,7 @@ function function_6cae226462403bcc( instance, part, state, player, var_a5b2c5414
 /#
 
     // Namespace tripwire / scripts\cp_mp\tripwire
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3b53
     // Size: 0x2cf, Type: dev
     function function_b96a88fafd4943c5()

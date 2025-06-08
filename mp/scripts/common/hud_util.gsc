@@ -5,7 +5,7 @@
 #namespace hud_util;
 
 // Namespace hud_util / scripts\common\hud_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc6
 // Size: 0xd2
 function create_client_overlay( shader_name, start_alpha, player )
@@ -33,7 +33,7 @@ function create_client_overlay( shader_name, start_alpha, player )
 }
 
 // Namespace hud_util / scripts\common\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a1
 // Size: 0x63
 function fade_in( time, shader )
@@ -64,7 +64,7 @@ function fade_in( time, shader )
 }
 
 // Namespace hud_util / scripts\common\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20c
 // Size: 0x1e
 function get_optional_overlay( shader )
@@ -78,7 +78,7 @@ function get_optional_overlay( shader )
 }
 
 // Namespace hud_util / scripts\common\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x233
 // Size: 0x56
 function fade_out( time, shader )
@@ -104,7 +104,7 @@ function fade_out( time, shader )
 }
 
 // Namespace hud_util / scripts\common\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x291
 // Size: 0xb3
 function get_overlay( shader )

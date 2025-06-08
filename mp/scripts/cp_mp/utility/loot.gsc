@@ -6,14 +6,15 @@
 #namespace loot;
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x769
 // Size: 0xae
 function init()
 {
     level.lootmaster = [];
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         typename = tablelookupbyrow( "loot/loot_types.csv", row, 0 );
         
         if ( !isdefined( typename ) || typename == "" )
@@ -33,7 +34,7 @@ function init()
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x81f
 // Size: 0x135
 function function_f6b6d73054e210b1()
@@ -66,7 +67,7 @@ function function_f6b6d73054e210b1()
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x95c
 // Size: 0x15b
 function function_7d267b05c8f10c00()
@@ -90,7 +91,8 @@ function function_7d267b05c8f10c00()
     
     consumablelist = var_ffa92a8d5e47d362.consumablelist;
     
-    for (i = 0; i < consumablelist.size; i++) {
+    for ( i = 0; i < consumablelist.size ; i++ )
+    {
         if ( !isdefined( consumablelist[ i ].bundle ) )
         {
             continue;
@@ -111,7 +113,7 @@ function function_7d267b05c8f10c00()
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xabf
 // Size: 0x42
 function function_43b02b62387ec23e( consumableref )
@@ -128,7 +130,7 @@ function function_43b02b62387ec23e( consumableref )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb0a
 // Size: 0x81
 function function_b481a180dac1c1cc( lootid )
@@ -148,7 +150,7 @@ function function_b481a180dac1c1cc( lootid )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb94
 // Size: 0x74
 function function_6fb104d58e745d61( typevalue )
@@ -165,7 +167,7 @@ function function_6fb104d58e745d61( typevalue )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc11
 // Size: 0x74
 function function_8662a0aef570ff4b( typename )
@@ -182,7 +184,7 @@ function function_8662a0aef570ff4b( typename )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc8e
 // Size: 0x5e
 function function_282cf83c9eeda744( lootid )
@@ -210,7 +212,7 @@ function function_282cf83c9eeda744( lootid )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcf5
 // Size: 0x1fa
 function function_2f80e9272a2074d( lootid, weaponrootname )
@@ -262,7 +264,7 @@ function function_2f80e9272a2074d( lootid, weaponrootname )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xef8
 // Size: 0x133
 function function_793e8a72cedb8ef3( lootid )
@@ -292,7 +294,7 @@ function function_793e8a72cedb8ef3( lootid )
     
     if ( !isdefined( itemref ) )
     {
-        if ( getdvarint( @"hash_6d4a21dadd19744d", 0 ) == 1 && getdvar( @"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv" ) == "mp/loot/br/default/loot_item_defs.csv" )
+        if ( getdvarint( @"hash_6d4a21dadd19744d", 0 ) == 1 && getdvar( @"loot_table_name", "mp/loot/br/default/loot_item_defs.csv" ) == "mp/loot/br/default/loot_item_defs.csv" )
         {
             itemref = "";
             
@@ -316,7 +318,7 @@ function function_793e8a72cedb8ef3( lootid )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1034
 // Size: 0x91
 function getlootidfromref( ref )
@@ -349,7 +351,7 @@ function getlootidfromref( ref )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10ce
 // Size: 0x184
 function function_c2c9fb447c203cb2( type )
@@ -401,7 +403,7 @@ function function_c2c9fb447c203cb2( type )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x125b
 // Size: 0xbc
 function function_b88cfb4893ceedac( ref )
@@ -438,7 +440,7 @@ function function_b88cfb4893ceedac( ref )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x131f
 // Size: 0x7e
 function getscriptablefromlootid( lootid )
@@ -460,7 +462,7 @@ function getscriptablefromlootid( lootid )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13a5
 // Size: 0x12a
 function function_fae5e1d3de32d3f7( ref )
@@ -498,7 +500,7 @@ function function_fae5e1d3de32d3f7( ref )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14d7
 // Size: 0x29
 function function_afa71c22d9dcfdc5( lootid )
@@ -508,23 +510,23 @@ function function_afa71c22d9dcfdc5( lootid )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1509
-// Size: 0x2c, Type: bool
+// Size: 0x2c
 function function_4068c937ebaa0ebd( scriptablename )
 {
     lootid = function_fae5e1d3de32d3f7( scriptablename );
     
     if ( !isdefined( lootid ) )
     {
-        return false;
+        return 0;
     }
     
     return function_c02e0fb782d242f2( lootid );
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x153e
 // Size: 0x3b, Type: bool
 function function_c02e0fb782d242f2( lootid )
@@ -545,7 +547,7 @@ function function_c02e0fb782d242f2( lootid )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1582
 // Size: 0x48, Type: bool
 function isitemfiltered( var_25978461c6e4f61b )
@@ -555,11 +557,11 @@ function isitemfiltered( var_25978461c6e4f61b )
         return false;
     }
     
-    return issubstr( getdvar( @"hash_90b976de573aecf2", "" ), var_25978461c6e4f61b ) || issubstr( getdvar( @"hash_ac347c5a6346b8ac", "" ), var_25978461c6e4f61b );
+    return issubstr( getdvar( @"loot_table_filter", "" ), var_25978461c6e4f61b ) || issubstr( getdvar( @"hash_ac347c5a6346b8ac", "" ), var_25978461c6e4f61b );
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15d3
 // Size: 0x2c, Type: bool
 function function_5d47301f7bb7a6ba( lootid )
@@ -574,7 +576,7 @@ function function_5d47301f7bb7a6ba( lootid )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1608
 // Size: 0x37
 function function_54b046aa3ba2678a( var_9023cea8f03e72d2 )
@@ -590,7 +592,7 @@ function function_54b046aa3ba2678a( var_9023cea8f03e72d2 )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1648
 // Size: 0x1f0
 function function_151b82e1257f4cde( ref )
@@ -660,7 +662,7 @@ function function_151b82e1257f4cde( ref )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1841
 // Size: 0x18
 function function_2ce015d8f99a66e0( lootid )
@@ -669,7 +671,7 @@ function function_2ce015d8f99a66e0( lootid )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1862
 // Size: 0x5b
 function function_e025bb823276187( scriptablename )
@@ -688,7 +690,7 @@ function function_e025bb823276187( scriptablename )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18c6
 // Size: 0x2f
 function function_20be2251dd0a8076( lootid )
@@ -702,7 +704,7 @@ function function_20be2251dd0a8076( lootid )
 }
 
 // Namespace loot / scripts\cp_mp\utility\loot
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18fe
 // Size: 0x4b
 function function_8c610908c0e9c6e4( ref )

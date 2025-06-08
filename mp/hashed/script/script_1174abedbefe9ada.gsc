@@ -26,7 +26,7 @@
 #namespace namespace_e47cc086b3a2ff1d;
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x565
 // Size: 0x44f
 function radiation_init()
@@ -65,7 +65,7 @@ function radiation_init()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9bc
 // Size: 0x86
 function radiation_spawn()
@@ -186,7 +186,8 @@ function private function_dbf56756677d1ae1()
     }
     else
     {
-        for (i = 0; i < 40; i++) {
+        for ( i = 0; i < 40 ; i++ )
+        {
             angle = randomfloatrange( 0, 360 );
             raworigin = ( cos( angle ) * level.radiation.distancevalues[ "angles" ][ 0 ], sin( angle ) * level.radiation.distancevalues[ "angles" ][ 1 ], 0 ) + averagestart;
             raworigin += ( randomfloat( level.radiation.distancevalues[ "origin" ][ 0 ] ) - level.radiation.distancevalues[ "spread" ], randomfloat( level.radiation.distancevalues[ "origin" ][ 1 ] ) - level.radiation.distancevalues[ "spread" ], 0 );
@@ -232,7 +233,7 @@ function private function_dbf56756677d1ae1()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x106d
 // Size: 0x22
 function function_e32a9ba4aa8f9fa8()
@@ -246,7 +247,7 @@ function function_e32a9ba4aa8f9fa8()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1097
 // Size: 0x1a0
 function radiation_startspread()
@@ -287,7 +288,7 @@ function radiation_startspread()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x123f
 // Size: 0xb1
 function function_4c74b6fe35dadc38()
@@ -321,7 +322,7 @@ function function_4c74b6fe35dadc38()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12f8
 // Size: 0xa9
 function function_4576ae886852cbfe()
@@ -351,7 +352,7 @@ function function_4576ae886852cbfe()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13a9
 // Size: 0x24, Type: bool
 function function_28f7a303238284ee()
@@ -396,7 +397,7 @@ function private function_68d3d5b73680c590()
 // Size: 0x33
 function private function_3cb6790904a3c7d1()
 {
-    wait max( 180, getdvarint( @"hash_e022fd0199a95f84", 1800 ) - 180 );
+    wait max( 180, getdvarint( @"scr_br_timelimit", 1800 ) - 180 );
     scripts\cp_mp\overlord::playevent( "radiation_winds_picking_up", level.players );
 }
 
@@ -452,7 +453,8 @@ function private function_94224cf552a24537()
             {
                 var_87feaef653a8c7da = array_randomize( level.agentarray );
                 
-                for (i = 0; i < var_87feaef653a8c7da.size; i++) {
+                for ( i = 0; i < var_87feaef653a8c7da.size ; i++ )
+                {
                     if ( i % 3 == 0 )
                     {
                         waitframe();
@@ -526,7 +528,7 @@ function private function_6f9619adb55e091e()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x179d
 // Size: 0xbc
 function function_c4a3072ce7b3f1fd( player, damage, var_a9d135071a6dc843 )
@@ -576,7 +578,7 @@ function private function_d00e59cfb504da1a()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18ae
 // Size: 0x6f
 function function_9bc063861b9330f1( damage )
@@ -622,7 +624,7 @@ function private function_378499db9e139e34()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19de
 // Size: 0xdf
 function function_ea5fb9090223b855( goalorigin, goalradius, var_2fb858d06d406750 )
@@ -637,7 +639,7 @@ function function_ea5fb9090223b855( goalorigin, goalradius, var_2fb858d06d406750
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ac5
 // Size: 0x84
 function function_770129186512680c( pos )
@@ -648,7 +650,7 @@ function function_770129186512680c( pos )
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b52
 // Size: 0x4f
 function radiation_getspeed()
@@ -696,7 +698,8 @@ function private function_131e36da68551999()
         {
             var_9f14e5ad8cac3258 = array_randomize( level.agentarray );
             
-            for (i = 0; i < var_9f14e5ad8cac3258.size; i++) {
+            for ( i = 0; i < var_9f14e5ad8cac3258.size ; i++ )
+            {
                 if ( i % 3 == 0 )
                 {
                     waitframe();
@@ -768,7 +771,7 @@ function private function_2f4c37edb355cfcc()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f81
 // Size: 0x4b
 function function_1509b788f4410b94( player )
@@ -880,7 +883,7 @@ function private function_ef14a88ba5763880( origin, nodes )
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21e8
 // Size: 0x1f
 function radiation_getorigin()
@@ -892,7 +895,7 @@ function radiation_getorigin()
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x220f
 // Size: 0x1f
 function function_5ce400665ee103f9()
@@ -943,7 +946,7 @@ function private function_a47ed2d2b0485893( testorigin )
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24a0
 // Size: 0x30, Type: bool
 function radiation_isinradiation( testorigin )
@@ -979,7 +982,7 @@ function private function_1aa28ad2c858d3d7( testorigin )
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2566
 // Size: 0x39
 function function_cdcab1374db7f007( testorigin )
@@ -993,7 +996,7 @@ function function_cdcab1374db7f007( testorigin )
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25a7
 // Size: 0x24
 function function_485b5a399def53d0( testorigin )
@@ -1002,7 +1005,7 @@ function function_485b5a399def53d0( testorigin )
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25d4
 // Size: 0x38
 function radiation_signeddistancefromradiationcircle( origin )
@@ -1057,7 +1060,7 @@ function private function_5b97e85e94d918a6( points )
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x277d
 // Size: 0x27
 function function_76ef3c8b8171d2d( origin )
@@ -1071,7 +1074,7 @@ function function_76ef3c8b8171d2d( origin )
 }
 
 // Namespace namespace_e47cc086b3a2ff1d / namespace_7789f919216d38a2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27ac
 // Size: 0x24, Type: bool
 function radiation_isinit()

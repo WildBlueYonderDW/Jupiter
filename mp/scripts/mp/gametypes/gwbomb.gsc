@@ -55,7 +55,7 @@
 #namespace gwbomb;
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f4d
 // Size: 0xe63
 function main()
@@ -88,8 +88,8 @@ function main()
     }
     
     setdvar( @"hash_405e7e20d91344cc", 0 );
-    setdvar( @"hash_42eece3f15e35b3d", 1 );
-    setdvar( @"hash_a22f98e2c5b506ce", 30 );
+    setdvar( @"scr_allow_technicals", 1 );
+    setdvar( @"scr_runlean_max_technicals", 30 );
     setdvar( @"hash_cbc195ec2129279", 0 );
     setomnvar( "ui_num_dom_flags", 6 );
     enablegroundwarspawnlogic( 400, 1200 );
@@ -230,7 +230,7 @@ function main()
     level.var_3ce1055115edcbbb = &function_3ce1055115edcbbb;
     level.var_efbc646224fda4fa = &function_efbc646224fda4fa;
     level.dropbrloot = getdvarint( @"hash_1d196605f8a290e3", 0 );
-    level.br_plunder_enabled = getdvarint( @"hash_a6a9b41b654afd1d", 0 );
+    level.br_plunder_enabled = getdvarint( @"scr_game_cash", 0 );
     
     if ( level.br_plunder_enabled )
     {
@@ -248,13 +248,13 @@ function main()
     
     level.spawnselectionshowenemy = getdvarint( @"hash_3f0db83ea7503667", 0 );
     level.spawnselectionshowfriendly = getdvarint( @"hash_4134532f274e5dfa", 0 );
-    level.forcetopickafob = getdvarint( @"hash_4a4c22866751f8e", 0 );
-    level.maxhqtanks = getdvarint( @"hash_9dd6b3477d4b53c6", 2 );
+    level.forcetopickafob = getdvarint( @"scr_arm_forcespawning", 0 );
+    level.maxhqtanks = getdvarint( @"scr_arm_maxhqtanks", 2 );
     level.tankrespawntime = getdvarint( @"hash_b624863894a18f21", 120 );
     level.apcrespawntime = getdvarint( @"hash_ba2474692378b203", 120 );
     level.longdialoguecooldown = getdvarint( @"hash_e01953fcf34a5d51", 1 );
     level.mercymatchending_nuke = getdvarint( @"hash_647cfd0a848d6ed6", 1 );
-    level.mercymatchending_time = getdvarint( @"hash_7106e5f59987983a", 30 );
+    level.mercymatchending_time = getdvarint( @"scr_arm_mercyendingtime", 30 );
     level.numnonrallyvehicles = getdvarint( @"scr_arm_numnonrallyvehicles", 25 );
     level.disablepersonalnuke = getdvarint( @"hash_f271257bddc28c95", 0 );
     level.personalnukecostoverride = getdvarint( @"hash_d9455f252fccdb97", 30 );
@@ -272,15 +272,15 @@ function main()
     
     if ( level.useobjectives || level.userallypointvehicles || level.usesquadspawnselection )
     {
-        setdvar( @"hash_6e73595f4ce7501e", 1 );
-        setdvar( @"hash_5fc696f5bbb3ca62", 0 );
-        setdvar( @"hash_5fc696f5bbb3ca62", 0 );
+        setdvar( @"scr_game_usespawnselection", 1 );
+        setdvar( @"scr_game_disablespawncamera", 0 );
+        setdvar( @"scr_game_disablespawncamera", 0 );
         setdvar( @"hash_1a2c3b67392b6657", 1 );
     }
     else
     {
-        setdvar( @"hash_6e73595f4ce7501e", 0 );
-        setdvar( @"hash_5fc696f5bbb3ca62", 1 );
+        setdvar( @"scr_game_usespawnselection", 0 );
+        setdvar( @"scr_game_disablespawncamera", 1 );
         setdvar( @"hash_1a2c3b67392b6657", 1 );
     }
     
@@ -307,7 +307,7 @@ function main()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2db8
 // Size: 0xe8
 function initializematchrules()
@@ -324,7 +324,7 @@ function initializematchrules()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ea8
 // Size: 0x345
 function onstartgametype()
@@ -397,7 +397,7 @@ function onstartgametype()
     emergency_cleanupents();
     scripts\cp_mp\parachute::initparachutedvars();
     
-    if ( getdvarint( @"hash_880384e6dfe250ba", 0 ) == 1 )
+    if ( getdvarint( @"scr_br_armory_kiosk", 0 ) == 1 )
     {
         level thread namespace_885300a47c2b51e6::function_ca39a413ace3c168();
         level thread scripts\mp\ai_heli_reinforce::function_d0ffcd08e0870cf2();
@@ -412,7 +412,7 @@ function onstartgametype()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31f5
 // Size: 0x1e5
 function updategametypedvars()
@@ -440,7 +440,7 @@ function updategametypedvars()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33e2
 // Size: 0x2
 function seticonnames()
@@ -449,7 +449,7 @@ function seticonnames()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33ec
 // Size: 0x30a
 function emergency_cleanupents()
@@ -519,7 +519,7 @@ function emergency_cleanupents()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36fe
 // Size: 0x132
 function removepatchablecollision_delayed()
@@ -555,7 +555,7 @@ function removepatchablecollision_delayed()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3838
 // Size: 0x13
 function onjoinedteam( player )
@@ -564,7 +564,7 @@ function onjoinedteam( player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3853
 // Size: 0x8a
 function debug_setupmatchdata()
@@ -578,7 +578,7 @@ function debug_setupmatchdata()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38e5
 // Size: 0x11e
 function setupwaypointicons()
@@ -603,7 +603,7 @@ function setupwaypointicons()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a0b
 // Size: 0xf4
 function setuphqs()
@@ -627,7 +627,7 @@ function setuphqs()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b07
 // Size: 0x381
 function setupobjectives()
@@ -701,7 +701,7 @@ function setupobjectives()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e90
 // Size: 0x207
 function updatedomscores()
@@ -730,11 +730,13 @@ function updatedomscores()
         
         if ( domflags.size )
         {
-            for (i = 1; i < domflags.size; i++) {
+            for ( i = 1; i < domflags.size ; i++ )
+            {
                 domflag = domflags[ i ];
                 flagscore = gettime() - domflag.capturetime;
                 
-                for (j = i - 1; j >= 0 && flagscore > gettime() - domflags[ j ].capturetime; j--) {
+                for ( j = i - 1; j >= 0 && flagscore > gettime() - domflags[ j ].capturetime ; j-- )
+                {
                     domflags[ j + 1 ] = domflags[ j ];
                 }
                 
@@ -760,7 +762,7 @@ function updatedomscores()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x409f
 // Size: 0x15a
 function updatescores()
@@ -801,7 +803,7 @@ function updatescores()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4201
 // Size: 0xa52
 function runobjectives( numobjs )
@@ -962,7 +964,7 @@ function runobjectives( numobjs )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c5b
 // Size: 0xa1
 function allowobjectiveuseaftermatchstart()
@@ -981,7 +983,7 @@ function allowobjectiveuseaftermatchstart()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d04
 // Size: 0x377
 function objective_manageobjectivesintrovisibility()
@@ -1037,7 +1039,7 @@ function objective_manageobjectivesintrovisibility()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5083
 // Size: 0x175
 function hackfixcameras()
@@ -1081,7 +1083,7 @@ function hackfixcameras()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5200
 // Size: 0x2d6
 function updatefobspawnselection()
@@ -1132,7 +1134,7 @@ function updatefobspawnselection()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54de
 // Size: 0x4fb
 function sethqmarkerobjective()
@@ -1190,7 +1192,7 @@ function sethqmarkerobjective()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59e1
 // Size: 0x28
 function objective_oncontested()
@@ -1205,7 +1207,7 @@ function objective_oncontested()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a11
 // Size: 0x31
 function objective_onuncontested( lastclaimteam )
@@ -1220,7 +1222,7 @@ function objective_onuncontested( lastclaimteam )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a4a
 // Size: 0x1a
 function objective_onusebegin( player )
@@ -1230,7 +1232,7 @@ function objective_onusebegin( player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5a6c
 // Size: 0x2c
 function objective_onuseend( team, player, success )
@@ -1240,7 +1242,7 @@ function objective_onuseend( team, player, success )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5aa0
 // Size: 0x74
 function objective_onuse( claim_player )
@@ -1254,7 +1256,7 @@ function objective_onuse( claim_player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b1c
 // Size: 0x1a
 function objective_onpinnedstate( player )
@@ -1264,7 +1266,7 @@ function objective_onpinnedstate( player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b3e
 // Size: 0x1a
 function objective_onunpinnedstate( player )
@@ -1274,7 +1276,7 @@ function objective_onunpinnedstate( player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b60
 // Size: 0xda
 function runobjflag( objective, startingteam )
@@ -1309,7 +1311,7 @@ function runobjflag( objective, startingteam )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5c43
 // Size: 0xb6
 function function_a3d78465df2753f3( objective, ownerteam )
@@ -1338,7 +1340,7 @@ function function_a3d78465df2753f3( objective, ownerteam )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d02
 // Size: 0x13
 function onbeginuse( player )
@@ -1347,7 +1349,7 @@ function onbeginuse( player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5d1d
 // Size: 0x25
 function onenduse( team, player, result )
@@ -1356,7 +1358,7 @@ function onenduse( team, player, result )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d4a
 // Size: 0xd8
 function onuseplantobject( player )
@@ -1378,7 +1380,7 @@ function onuseplantobject( player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e2a
 // Size: 0xd5
 function function_c0e928deb12cfa4f( bombzone )
@@ -1400,7 +1402,7 @@ function function_c0e928deb12cfa4f( bombzone )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x5f07
 // Size: 0x473
 function onobjectivecomplete( objectivetype, objectivekey, credit_player, team, oldteam, obj )
@@ -1498,7 +1500,7 @@ function onobjectivecomplete( objectivetype, objectivekey, credit_player, team, 
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6382
 // Size: 0x3e
 function function_570695099cdccb10( ownerteam, otherteam )
@@ -1510,7 +1512,7 @@ function function_570695099cdccb10( ownerteam, otherteam )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x63c8
 // Size: 0x47
 function dropcrate( killstreakname, droplocation, team )
@@ -1520,7 +1522,7 @@ function dropcrate( killstreakname, droplocation, team )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6418
 // Size: 0x132
 function docratedropsmoke( crate, droplocation, duration )
@@ -1548,7 +1550,7 @@ function docratedropsmoke( crate, droplocation, duration )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6552
 // Size: 0x165
 function registervaliddroplocations()
@@ -1585,7 +1587,7 @@ function registervaliddroplocations()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66bf
 // Size: 0x14
 function debug_testcratedroplocationpicker()
@@ -1598,7 +1600,7 @@ function debug_testcratedroplocationpicker()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x66db
 // Size: 0x3f
 function checkkillstreakcratedrop( team )
@@ -1611,7 +1613,7 @@ function checkkillstreakcratedrop( team )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6722
 // Size: 0xaa
 function dropkillstreakcrates( var_fd2fee325481dc7f )
@@ -1627,7 +1629,8 @@ function dropkillstreakcrates( var_fd2fee325481dc7f )
         }
     }
     
-    for (i = 0; i < var_fd2fee325481dc7f; i++) {
+    for ( i = 0; i < var_fd2fee325481dc7f ; i++ )
+    {
         location = choosecratelocation();
         thread runkillstreakreward( location, owningplayer, getkillstreak( 1 ) );
         wait 5;
@@ -1635,7 +1638,7 @@ function dropkillstreakcrates( var_fd2fee325481dc7f )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67d4
 // Size: 0x173
 function choosecratelocation()
@@ -1661,7 +1664,7 @@ function choosecratelocation()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6950
 // Size: 0x11e
 function findclosestdroplocation( origin )
@@ -1693,7 +1696,7 @@ function findclosestdroplocation( origin )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a77
 // Size: 0x104
 function choosenukecratelocation()
@@ -1716,7 +1719,7 @@ function choosenukecratelocation()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6b84
 // Size: 0x243
 function runkillstreakreward( location, creditplayer, streakname )
@@ -1760,7 +1763,7 @@ function runkillstreakreward( location, creditplayer, streakname )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6dcf
 // Size: 0x49
 function getkillstreak( tier )
@@ -1775,7 +1778,7 @@ function getkillstreak( tier )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e21
 // Size: 0xa6
 function processkillstreaksintotiers()
@@ -1788,7 +1791,7 @@ function processkillstreaksintotiers()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ecf
 // Size: 0x34
 function br_getrewardicon( streakname )
@@ -1797,7 +1800,7 @@ function br_getrewardicon( streakname )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f0c
 // Size: 0x24
 function nuke_mercyending_init()
@@ -1811,7 +1814,7 @@ function nuke_mercyending_init()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f38
 // Size: 0x6a
 function nuke_mercyending_think()
@@ -1835,7 +1838,7 @@ function nuke_mercyending_think()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6faa
 // Size: 0xfb
 function nuke_startmercycountdown( team )
@@ -1867,7 +1870,7 @@ function nuke_startmercycountdown( team )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x70ad
 // Size: 0x1be
 function nuke_triggermercywin( team )
@@ -1909,7 +1912,7 @@ function nuke_triggermercywin( team )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7273
 // Size: 0x88
 function nukeselectgimmewatcher( killer )
@@ -1928,7 +1931,7 @@ function nukeselectgimmewatcher( killer )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7303
 // Size: 0x2c0
 function initspawns( var_4c3936c2c179fab3 )
@@ -2006,7 +2009,7 @@ function initspawns( var_4c3936c2c179fab3 )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x75cb
 // Size: 0x114
 function getspawnpoint()
@@ -2046,7 +2049,7 @@ function getspawnpoint()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76e8
 // Size: 0x73
 function onspawnplayer( revivespawn )
@@ -2066,7 +2069,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7763
 // Size: 0x31
 function updatematchstatushintonspawn()
@@ -2083,7 +2086,7 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x779c
 // Size: 0x158
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -2122,7 +2125,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x78fc
 // Size: 0x205
 function managedroppedents( droppedents )
@@ -2134,7 +2137,8 @@ function managedroppedents( droppedents )
     
     if ( level.br_droppedloot.size > 64 )
     {
-        for (i = 0; i < 16; i++) {
+        for ( i = 0; i < 16 ; i++ )
+        {
             if ( isdefined( level.br_droppedloot[ i ] ) )
             {
                 level.br_droppedloot[ i ] delete();
@@ -2144,7 +2148,8 @@ function managedroppedents( droppedents )
         
         temparray = [];
         
-        for (i = 16; i < level.br_droppedloot.size; i++) {
+        for ( i = 16; i < level.br_droppedloot.size ; i++ )
+        {
             temparray[ i - 16 ] = level.br_droppedloot[ i ];
         }
         
@@ -2163,7 +2168,8 @@ function managedroppedents( droppedents )
     
     if ( level.br_pickups.droppeditems.size > 64 )
     {
-        for (i = 0; i < 16; i++) {
+        for ( i = 0; i < 16 ; i++ )
+        {
             if ( isdefined( level.br_pickups.droppeditems[ i ] ) )
             {
                 level.br_pickups.droppeditems[ i ] delete();
@@ -2173,7 +2179,8 @@ function managedroppedents( droppedents )
         
         temparray = [];
         
-        for (i = 16; i < level.br_pickups.droppeditems.size; i++) {
+        for ( i = 16; i < level.br_pickups.droppeditems.size ; i++ )
+        {
             temparray[ i - 16 ] = level.br_pickups.droppeditems[ i ];
         }
         
@@ -2182,7 +2189,7 @@ function managedroppedents( droppedents )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b09
 // Size: 0x2d
 function onplayerconnect( player )
@@ -2196,7 +2203,7 @@ function onplayerconnect( player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b3e
 // Size: 0xb
 function onplayerdisconnect( player )
@@ -2205,7 +2212,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7b51
 // Size: 0x79
 function updategamemodespawncamera()
@@ -2222,7 +2229,7 @@ function updategamemodespawncamera()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bd2
 // Size: 0x119
 function debugdrawtocameras()
@@ -2248,7 +2255,7 @@ function debugdrawtocameras()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7cf3
 // Size: 0x1b
 function onplayerspawned( player )
@@ -2260,7 +2267,7 @@ function onplayerspawned( player )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d16
 // Size: 0x79
 function getownerteamplayer( ownerteam )
@@ -2280,7 +2287,7 @@ function getownerteamplayer( ownerteam )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d98
 // Size: 0xd
 function getrespawndelay()
@@ -2290,7 +2297,7 @@ function getrespawndelay()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x7dae
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -2299,7 +2306,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7df6
 // Size: 0x13d
 function initspecatatorcameras()
@@ -2329,7 +2336,7 @@ function initspecatatorcameras()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7f3b
 // Size: 0x46
 function setteammapposition( var_ca2c833762e5466c, team, posinfo )
@@ -2343,7 +2350,7 @@ function setteammapposition( var_ca2c833762e5466c, team, posinfo )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f89
 // Size: 0x15
 function applythermal()
@@ -2353,7 +2360,7 @@ function applythermal()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7fa6
 // Size: 0x9
 function removethermal()
@@ -2362,7 +2369,7 @@ function removethermal()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7fb7
 // Size: 0x12f
 function startspectatorview()
@@ -2402,7 +2409,7 @@ function startspectatorview()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x80ee
 // Size: 0x17
 function dohalfwayflash()
@@ -2413,7 +2420,7 @@ function dohalfwayflash()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x810d
 // Size: 0x1f
 function endspectatorview()
@@ -2428,7 +2435,7 @@ function endspectatorview()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8134
 // Size: 0x102
 function movecameratomappos( player, var_9813182985677b23, finalangles )
@@ -2452,7 +2459,7 @@ function movecameratomappos( player, var_9813182985677b23, finalangles )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x823e
 // Size: 0xed
 function runslamzoomonspawn()
@@ -2482,7 +2489,7 @@ function runslamzoomonspawn()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8333
 // Size: 0xd8
 function playslamzoomflash()
@@ -2505,7 +2512,7 @@ function playslamzoomflash()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8413
 // Size: 0x104
 function arm_playstatusdialog( soundname, team )
@@ -2535,7 +2542,7 @@ function arm_playstatusdialog( soundname, team )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x851f
 // Size: 0x2f
 function arm_playstatusdialogonplayer( soundname )
@@ -2546,7 +2553,7 @@ function arm_playstatusdialogonplayer( soundname )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8556
 // Size: 0x99
 function arm_leaderdialogonplayer_internal( soundalias, dialog )
@@ -2571,7 +2578,7 @@ function arm_leaderdialogonplayer_internal( soundalias, dialog )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x85f7
 // Size: 0xc7
 function arm_initoutofbounds()
@@ -2594,7 +2601,7 @@ function arm_initoutofbounds()
 /#
 
     // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x86c6
     // Size: 0x19, Type: dev
     function debugprint( text )
@@ -2608,7 +2615,7 @@ function arm_initoutofbounds()
 #/
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x86e7
 // Size: 0x5e
 function isobjectivecontested( gameobject )
@@ -2625,7 +2632,7 @@ function isobjectivecontested( gameobject )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x874d
 // Size: 0x76
 function calculateobjectivesheld( team )
@@ -2644,7 +2651,7 @@ function calculateobjectivesheld( team )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x87cc
 // Size: 0x1b7
 function createhintobject( org, type, icon, hintstring, priority, duration, onobstruction, hintdist, hintfov, usedist, usefov, useent )
@@ -2759,7 +2766,7 @@ function createhintobject( org, type, icon, hintstring, priority, duration, onob
 /#
 
     // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x898b
     // Size: 0x409, Type: dev
     function function_9c513c5e546a4f52()
@@ -2833,7 +2840,7 @@ function createhintobject( org, type, icon, hintstring, priority, duration, onob
     }
 
     // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x8d9c
     // Size: 0x67c, Type: dev
     function function_e3a2a0c2e544728e( var_a4ab3e1ca5d220c4 )
@@ -2935,7 +2942,7 @@ function createhintobject( org, type, icon, hintstring, priority, duration, onob
 #/
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9420
 // Size: 0x46, Type: bool
 function sortlocationsbydistance( location1, location2 )
@@ -2944,7 +2951,7 @@ function sortlocationsbydistance( location1, location2 )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x946f
 // Size: 0x20d
 function calculatedroplocationnearlocation( location, mindist, maxdist )
@@ -3002,7 +3009,7 @@ function calculatedroplocationnearlocation( location, mindist, maxdist )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9685
 // Size: 0x981
 function getmissedinfilcamerapositions( team )
@@ -3196,7 +3203,7 @@ function getmissedinfilcamerapositions( team )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa00f
 // Size: 0xeb
 function calculatehqmidpoint()
@@ -3208,7 +3215,7 @@ function calculatehqmidpoint()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa102
 // Size: 0x24f
 function calculatecameraoffset( team, objectiveorigin )
@@ -3278,7 +3285,7 @@ function calculatecameraoffset( team, objectiveorigin )
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa359
 // Size: 0x2a, Type: bool
 function spawnprotectionexception()
@@ -3292,7 +3299,7 @@ function spawnprotectionexception()
 }
 
 // Namespace gwbomb / scripts\mp\gametypes\gwbomb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa38c
 // Size: 0x11
 function function_658c8f668d2cd83c()

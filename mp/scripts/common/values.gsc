@@ -19,7 +19,7 @@ function private autoexec __init__system__()
 }
 
 // Namespace val / scripts\common\values
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb2a
 // Size: 0xed6
 function pre_main()
@@ -173,7 +173,7 @@ function pre_main()
 }
 
 // Namespace val / scripts\common\values
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1a08
 // Size: 0xe4
 function register( str_name, default_value, var_8f2a3de49e1f0527, call_on, func, args )
@@ -207,7 +207,7 @@ function register( str_name, default_value, var_8f2a3de49e1f0527, call_on, func,
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1af4
 // Size: 0x23
 function unregister( str_name )
@@ -219,7 +219,7 @@ function unregister( str_name )
 }
 
 // Namespace val / scripts\common\values
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b1f
 // Size: 0x43
 function group_register( group_name, value_names )
@@ -255,7 +255,7 @@ function group_register( group_name, value_names )
 #/
 
 // Namespace val / scripts\common\values
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1bcd
 // Size: 0x5f
 function group_set( group_name, value )
@@ -266,7 +266,7 @@ function group_set( group_name, value )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c34
 // Size: 0x26
 function group_reset( group_name )
@@ -293,7 +293,7 @@ function private assert_registered( str_name )
 }
 
 // Namespace val / scripts\common\values
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1ca2
 // Size: 0x8a
 function default_func( str_name, call_on, value, args )
@@ -318,7 +318,7 @@ function default_func( str_name, call_on, value, args )
 }
 
 // Namespace val / scripts\common\values
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d34
 // Size: 0x94
 function link( str_name, var_4d81048fd967e05, func )
@@ -349,7 +349,7 @@ function private simple_link( b_value )
 }
 
 // Namespace val / scripts\common\values
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1de5
 // Size: 0xea
 function set( str_id, str_name, value )
@@ -375,7 +375,7 @@ function set( str_id, str_name, value )
 }
 
 // Namespace val / scripts\common\values
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ed7
 // Size: 0x69
 function set_array( str_id, var_d1450ef5ee023044, value )
@@ -387,7 +387,7 @@ function set_array( str_id, var_d1450ef5ee023044, value )
 }
 
 // Namespace val / scripts\common\values
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f48
 // Size: 0x60
 function reset_array( str_id, var_d1450ef5ee023044 )
@@ -399,7 +399,7 @@ function reset_array( str_id, var_d1450ef5ee023044 )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fb0
 // Size: 0x8f
 function get( str_name )
@@ -421,7 +421,7 @@ function get( str_name )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2047
 // Size: 0x7a
 function get_last( str_name )
@@ -443,7 +443,7 @@ function get_last( str_name )
 }
 
 // Namespace val / scripts\common\values
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20c9
 // Size: 0x21
 function set_radiant( str_name, value )
@@ -452,7 +452,7 @@ function set_radiant( str_name, value )
 }
 
 // Namespace val / scripts\common\values
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x20f2
 // Size: 0x3f
 function set_for_time( n_time, str_id, str_name, value )
@@ -464,7 +464,7 @@ function set_for_time( n_time, str_id, str_name, value )
 }
 
 // Namespace val / scripts\common\values
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2139
 // Size: 0x10a
 function reset( str_id, str_name )
@@ -493,7 +493,7 @@ function reset( str_id, str_name )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x224b
 // Size: 0xe3
 function reset_all( str_id )
@@ -518,7 +518,7 @@ function reset_all( str_id )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2336
 // Size: 0x18
 function reset_radiant( str_name )
@@ -527,7 +527,7 @@ function reset_radiant( str_name )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2356
 // Size: 0x20
 function nuke( str_name )
@@ -537,7 +537,7 @@ function nuke( str_name )
 }
 
 // Namespace val / scripts\common\values
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x237e
 // Size: 0xaf
 function nuke_all()
@@ -600,7 +600,8 @@ function private remove_value( str_id, str_name )
     
     if ( isdefined( self.values ) && isdefined( self.values[ str_name ] ) )
     {
-        for (n_index = self.values[ str_name ].size - 1; n_index >= 0; n_index--) {
+        for ( n_index = self.values[ str_name ].size - 1; n_index >= 0 ; n_index-- )
+        {
             if ( self.values[ str_name ][ n_index ].str_id == str_id )
             {
                 self.values[ str_name ] = utility::array_remove_index( self.values[ str_name ], n_index );
@@ -2674,7 +2675,7 @@ function private function_3718505d535c6113( b_value )
 }
 
 // Namespace val / scripts\common\values
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4386
 // Size: 0xde
 function function_bee64cea73f1992b( str_id, value )
@@ -2701,7 +2702,7 @@ function function_bee64cea73f1992b( str_id, value )
 }
 
 // Namespace val / scripts\common\values
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x446c
 // Size: 0xa6
 function function_91558560b423d58e( str_id, value )
@@ -2882,7 +2883,7 @@ function private function_69bc203e1b8c4e63( var_ce1774b1e0c60661 )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x472d
 // Size: 0x1e
 function function_13da7718a3ccfc98( value )
@@ -2896,7 +2897,7 @@ function function_13da7718a3ccfc98( value )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4753
 // Size: 0x2a
 function function_fd241a7be9d82fa5( eventlist )
@@ -2911,7 +2912,7 @@ function function_fd241a7be9d82fa5( eventlist )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4785
 // Size: 0x12
 function function_f185596cc8242d28( val )
@@ -2920,7 +2921,7 @@ function function_f185596cc8242d28( val )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x479f
 // Size: 0x12
 function function_4ef8b4df5173b05a( val )
@@ -2929,7 +2930,7 @@ function function_4ef8b4df5173b05a( val )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47b9
 // Size: 0x12
 function function_f1e27a27436441b4( val )
@@ -2938,7 +2939,7 @@ function function_f1e27a27436441b4( val )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47d3
 // Size: 0x12
 function function_48cd47326fc3f73b( val )
@@ -2947,7 +2948,7 @@ function function_48cd47326fc3f73b( val )
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47ed
 // Size: 0x12
 function function_dbb2149dbfbea743( val )

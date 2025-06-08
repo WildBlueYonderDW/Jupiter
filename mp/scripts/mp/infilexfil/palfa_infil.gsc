@@ -16,7 +16,7 @@
 #namespace palfa_infil;
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf3f
 // Size: 0x113
 function function_3ef5f926204cbd9e( subtype )
@@ -43,7 +43,7 @@ function function_3ef5f926204cbd9e( subtype )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x105a
 // Size: 0x13c
 function palfa_spawn( team, target, subtype, originalsubtype )
@@ -59,7 +59,8 @@ function palfa_spawn( team, target, subtype, originalsubtype )
     {
         var_8539adbf8f73e390 = 0;
         
-        for (i = 0; i < 19; i++) {
+        for ( i = 0; i < 19 ; i++ )
+        {
             dur = getanimlength( level.scr_anim[ "slot_" + i ][ "palfa_infil_intro" ] );
             
             if ( dur > var_8539adbf8f73e390 )
@@ -79,7 +80,7 @@ function palfa_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x119f
 // Size: 0xb3
 function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubtype )
@@ -105,7 +106,7 @@ function postlaunchscenenodecorrection( scene_node, team, subtype, originalsubty
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x125a
 // Size: 0x4d
 function function_97bbcb5e314a57d5( subtype )
@@ -115,7 +116,7 @@ function function_97bbcb5e314a57d5( subtype )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12b0
 // Size: 0x236
 function function_8154362d8a73c991( infil, spot_index )
@@ -164,7 +165,7 @@ function function_8154362d8a73c991( infil, spot_index )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14ee
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -182,7 +183,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1532
 // Size: 0x38
 function player_infil_end()
@@ -196,7 +197,7 @@ function player_infil_end()
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1572
 // Size: 0xd2
 function infil_radio_idle( infil )
@@ -231,7 +232,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x164c
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -247,7 +248,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1682
 // Size: 0x4c
 function player_disconnect()
@@ -266,7 +267,7 @@ function player_disconnect()
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x16d6
 // Size: 0x1ca
 function spawnactors( team, scene_name, extra_crew )
@@ -299,7 +300,7 @@ function spawnactors( team, scene_name, extra_crew )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18a8
 // Size: 0x140
 function infilthink( team, scene_name )
@@ -331,7 +332,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19f0
 // Size: 0x308
 function ropethink( scene_name )
@@ -366,7 +367,7 @@ function ropethink( scene_name )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d00
 // Size: 0x211
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -414,7 +415,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1f19
 // Size: 0x109
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -438,7 +439,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x202a
 // Size: 0x245
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -536,7 +537,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2278
 // Size: 0x555
 function initanims( subtype, team, originalsubtype )
@@ -606,7 +607,7 @@ function initanims( subtype, team, originalsubtype )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27d5
 // Size: 0xcd7
 function script_model_alpha_anims( subtype )
@@ -731,7 +732,7 @@ function script_model_alpha_anims( subtype )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x34b4
 // Size: 0x3a
 function vehicles_anims( subtype, team, originalsubtype )
@@ -740,7 +741,7 @@ function vehicles_anims( subtype, team, originalsubtype )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x34f6
 // Size: 0x15f
 function spawninfilvehicle( scene_node, team, scene_name )
@@ -785,7 +786,7 @@ function spawninfilvehicle( scene_node, team, scene_name )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x365e
 // Size: 0xe4
 function function_7d7e095d01f0873c( subtype )
@@ -818,7 +819,7 @@ function function_7d7e095d01f0873c( subtype )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x374b
 // Size: 0x53
 function function_66a58c7e02607034( var_addd3217bc59a7b8 )
@@ -833,7 +834,7 @@ function function_66a58c7e02607034( var_addd3217bc59a7b8 )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x37a6
 // Size: 0x2a
 function function_89a2405953b84136( var_addd3217bc59a7b8, override_og )
@@ -847,7 +848,7 @@ function function_89a2405953b84136( var_addd3217bc59a7b8, override_og )
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37d8
 // Size: 0x19
 function function_393cbd8435fcb5c0()
@@ -858,7 +859,7 @@ function function_393cbd8435fcb5c0()
 }
 
 // Namespace palfa_infil / scripts\mp\infilexfil\palfa_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37f9
 // Size: 0x13
 function function_6158ef142e9bd640()

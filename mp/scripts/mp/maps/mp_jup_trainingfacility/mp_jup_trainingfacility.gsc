@@ -11,7 +11,7 @@
 #namespace mp_jup_trainingfacility;
 
 // Namespace mp_jup_trainingfacility / scripts\mp\maps\mp_jup_trainingfacility\mp_jup_trainingfacility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x174
 // Size: 0x8e
 function main()

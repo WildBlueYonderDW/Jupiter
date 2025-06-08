@@ -8,7 +8,7 @@
 #namespace namespace_d3a2045314c6410;
 
 // Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x11f
 // Size: 0x30, Type: bool
 function function_d0bf32b41b280147( asmname, statename, tostatename, params )
@@ -22,7 +22,7 @@ function function_d0bf32b41b280147( asmname, statename, tostatename, params )
 }
 
 // Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x158
 // Size: 0xfb
 function choosestandingdeathanim( asmname, statename, params, bmoving )
@@ -59,7 +59,7 @@ function choosestandingdeathanim( asmname, statename, params, bmoving )
 }
 
 // Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25c
 // Size: 0x3c
 function playdeathanim( asmname, statename, params )
@@ -70,7 +70,7 @@ function playdeathanim( asmname, statename, params )
 }
 
 // Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a0
 // Size: 0x7b
 function playdeathanim_melee_ragdolldelayed( asmname, statename, params )
@@ -105,7 +105,7 @@ function playdeathanim_melee_ragdolldelayed( asmname, statename, params )
 }
 
 // Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x323
 // Size: 0x26
 function choosemovingdeathanim( asmname, statename, params )
@@ -114,7 +114,7 @@ function choosemovingdeathanim( asmname, statename, params )
 }
 
 // Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x352
 // Size: 0x6b
 function getdamagetaken()

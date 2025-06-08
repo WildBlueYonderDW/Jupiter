@@ -16,7 +16,7 @@
 #namespace common_cache;
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x444
 // Size: 0x105
 function init_cache()
@@ -41,7 +41,7 @@ function init_cache()
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x551
 // Size: 0x183
 function function_ba99ee1ab267e97f( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -101,14 +101,20 @@ function function_ba99ee1ab267e97f( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6dc
-// Size: 0x37c
+// Size: 0x39a
 function function_30f5ea60517f9e06( container, opener )
 {
     if ( isdefined( container.containertype ) && container.containertype == 13 )
     {
         container.contents = opener.ballooncontents.contents;
+    }
+    
+    if ( !isdefined( container.contents ) )
+    {
+        assertmsg( "<dev string:x67>" );
+        return;
     }
     
     function_87ad4454c9d2b995( opener, container );
@@ -144,11 +150,12 @@ function function_30f5ea60517f9e06( container, opener )
     /#
         if ( items.size > 10 )
         {
-            println( "<dev string:x67>" + items.size + "<dev string:x9e>" + 10 + "<dev string:xba>" );
+            println( "<dev string:xa2>" + items.size + "<dev string:xd9>" + 10 + "<dev string:xf5>" );
         }
     #/
     
-    for (itemindex = 0; itemindex < 10; itemindex++) {
+    for ( itemindex = 0; itemindex < 10 ; itemindex++ )
+    {
         if ( function_a5aedf9af5af1c7f( opener, container, itemindex ) )
         {
             function_446c7ad7bcc70992( opener, itemindex, items[ itemindex ].lootid, function_b8bfea9514c89a77( items[ itemindex ].quantity ), items[ itemindex ].weapondata );
@@ -188,21 +195,22 @@ function function_30f5ea60517f9e06( container, opener )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa60
+// Params 2
+// Checksum 0x0, Offset: 0xa7e
 // Size: 0x13e
 function function_87ad4454c9d2b995( opener, container )
 {
     nextweaponindex = 0;
     
-    for (itemindex = 0; itemindex < container.contents.size; itemindex++) {
+    for ( itemindex = 0; itemindex < container.contents.size ; itemindex++ )
+    {
         if ( function_a5aedf9af5af1c7f( opener, container, itemindex ) )
         {
             itembundlename = function_fc925a153c7fd55c( container.contents[ itemindex ].lootid );
             
             if ( !isdefined( itembundlename ) )
             {
-                assertmsg( "<dev string:xbf>" + container.contents[ itemindex ].lootid + "<dev string:xf5>" );
+                assertmsg( "<dev string:xfa>" + container.contents[ itemindex ].lootid + "<dev string:x130>" );
                 continue;
             }
             
@@ -230,12 +238,13 @@ function function_87ad4454c9d2b995( opener, container )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xba6
+// Params 2
+// Checksum 0x0, Offset: 0xbc4
 // Size: 0x194
 function function_6830225d0b087bec( opener, container )
 {
-    for (itemindex = 0; itemindex < container.contents.size; itemindex++) {
+    for ( itemindex = 0; itemindex < container.contents.size ; itemindex++ )
+    {
         if ( !function_a5aedf9af5af1c7f( opener, container, itemindex ) )
         {
             continue;
@@ -246,7 +255,7 @@ function function_6830225d0b087bec( opener, container )
         
         if ( !isdefined( itembundlename ) )
         {
-            assertmsg( "<dev string:xbf>" + item.lootid + "<dev string:xf5>" );
+            assertmsg( "<dev string:xfa>" + item.lootid + "<dev string:x130>" );
             continue;
         }
         
@@ -283,23 +292,23 @@ function function_6830225d0b087bec( opener, container )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd42
+// Params 2
+// Checksum 0x0, Offset: 0xd60
 // Size: 0x1eb
 function closelootablecontainer( container, opener )
 {
     if ( !isdefined( container ) || !isdefined( opener ) )
     {
-        assertmsg( "<dev string:x154>" );
+        assertmsg( "<dev string:x18f>" );
         return;
     }
     
     /#
         if ( isdefined( level.var_61e6e1b83a8f3486 ) && isdefined( level.var_61e6e1b83a8f3486.var_9549d82a3fba4746 ) && container == level.var_61e6e1b83a8f3486.var_9549d82a3fba4746 )
         {
-            opener setclientomnvar( "<dev string:x188>", 0 );
+            opener setclientomnvar( "<dev string:x1c3>", 0 );
             opener.var_2fa5b49969def47 = undefined;
-            container notify( "<dev string:x19f>" );
+            container notify( "<dev string:x1da>" );
             return;
         }
     #/
@@ -332,7 +341,7 @@ function closelootablecontainer( container, opener )
             }
             else
             {
-                assert( 0, "<dev string:x1a9>" );
+                assert( 0, "<dev string:x1e4>" );
             }
         }
     }
@@ -350,8 +359,8 @@ function closelootablecontainer( container, opener )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf35
+// Params 1
+// Checksum 0x0, Offset: 0xf53
 // Size: 0x170
 function function_71a59f067d5fe986( opener )
 {
@@ -397,8 +406,8 @@ function function_71a59f067d5fe986( opener )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ad
+// Params 1
+// Checksum 0x0, Offset: 0x10cb
 // Size: 0x45
 function function_47b931d76ffd028f( opener )
 {
@@ -410,8 +419,8 @@ function function_47b931d76ffd028f( opener )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10fa
+// Params 1
+// Checksum 0x0, Offset: 0x1118
 // Size: 0x2f3
 function function_7f6dc80424e55d7b( opener )
 {
@@ -422,13 +431,14 @@ function function_7f6dc80424e55d7b( opener )
     
     if ( !isdefined( self.contents ) )
     {
-        assertmsg( "<dev string:x218>" );
+        assertmsg( "<dev string:x253>" );
         return;
     }
     
     contents = self.contents;
     
-    for (i = 0; i < contents.size; i++) {
+    for ( i = 0; i < contents.size ; i++ )
+    {
         if ( !isdefined( contents[ i ] ) )
         {
             continue;
@@ -442,7 +452,7 @@ function function_7f6dc80424e55d7b( opener )
         {
             if ( quantity > 0 )
             {
-                assertmsg( "<dev string:x270>" + lootid + "<dev string:x2b1>" );
+                assertmsg( "<dev string:x2ab>" + lootid + "<dev string:x2ec>" );
             }
             
             continue;
@@ -473,7 +483,8 @@ function function_7f6dc80424e55d7b( opener )
                     {
                         deleteping = 1;
                         
-                        for (index = 0; index < contents.size; index++) {
+                        for ( index = 0; index < contents.size ; index++ )
+                        {
                             if ( index != i && isdefined( contents[ index ] ) && isdefined( contents[ index ].lootid ) && contents[ index ].lootid == lootid )
                             {
                                 deleteping = 0;
@@ -509,8 +520,8 @@ function function_7f6dc80424e55d7b( opener )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f5
+// Params 0
+// Checksum 0x0, Offset: 0x1413
 // Size: 0x44
 function function_d3e618521013c7eb()
 {
@@ -528,8 +539,8 @@ function function_d3e618521013c7eb()
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1441
+// Params 5
+// Checksum 0x0, Offset: 0x145f
 // Size: 0x213
 function function_446c7ad7bcc70992( player, index, lootid, quantity, weapondata )
 {
@@ -545,7 +556,7 @@ function function_446c7ad7bcc70992( player, index, lootid, quantity, weapondata 
     
     if ( !isdefined( typename ) )
     {
-        assertmsg( "<dev string:x2ee>" + lootid + "<dev string:x324>" );
+        assertmsg( "<dev string:x329>" + lootid + "<dev string:x35f>" );
         return;
     }
     
@@ -553,7 +564,7 @@ function function_446c7ad7bcc70992( player, index, lootid, quantity, weapondata 
     
     if ( !isdefined( typedata ) )
     {
-        assertmsg( "<dev string:x32a>" + typename + "<dev string:x324>" );
+        assertmsg( "<dev string:x365>" + typename + "<dev string:x35f>" );
         return;
     }
     
@@ -591,8 +602,8 @@ function function_446c7ad7bcc70992( player, index, lootid, quantity, weapondata 
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x165c
+// Params 2
+// Checksum 0x0, Offset: 0x167a
 // Size: 0x40
 function function_c7294f5b9b5006d5( player, index )
 {
@@ -602,8 +613,8 @@ function function_c7294f5b9b5006d5( player, index )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16a4
+// Params 2
+// Checksum 0x0, Offset: 0x16c2
 // Size: 0x50, Type: bool
 function function_35a189c66e8d51f0( opener, var_ec64eecddf1178af )
 {
@@ -617,8 +628,8 @@ function function_35a189c66e8d51f0( opener, var_ec64eecddf1178af )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16fd
+// Params 1
+// Checksum 0x0, Offset: 0x171b
 // Size: 0xe4, Type: bool
 function iscontainerempty( container )
 {
@@ -654,8 +665,8 @@ function iscontainerempty( container )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ea
+// Params 3
+// Checksum 0x0, Offset: 0x1808
 // Size: 0xfc, Type: bool
 function function_139b3fe10930a6a5( container, opener, framesstill )
 {
@@ -689,8 +700,8 @@ function function_139b3fe10930a6a5( container, opener, framesstill )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ef
+// Params 3
+// Checksum 0x0, Offset: 0x190d
 // Size: 0x94, Type: bool
 function function_a5aedf9af5af1c7f( opener, container, itemindex )
 {
@@ -712,8 +723,8 @@ function function_a5aedf9af5af1c7f( opener, container, itemindex )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x198c
+// Params 2
+// Checksum 0x0, Offset: 0x19aa
 // Size: 0x3f0
 function function_f87690347a82844d( notification, slotindex )
 {
@@ -819,8 +830,8 @@ function function_f87690347a82844d( notification, slotindex )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d84
+// Params 0
+// Checksum 0x0, Offset: 0x1da2
 // Size: 0xf, Type: bool
 function function_d6041f45fee8083d()
 {
@@ -828,14 +839,14 @@ function function_d6041f45fee8083d()
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d9c
+// Params 5
+// Checksum 0x0, Offset: 0x1dba
 // Size: 0x50a
 function function_f4fda26d9ae6dbe0( player, index, obtaintype, var_a1803fc19dffd729, cache )
 {
     if ( !isdefined( cache ) || !isdefined( cache.contents ) || !isdefined( cache.contents[ index ] ) )
     {
-        assertmsg( "<dev string:x368>" + index + "<dev string:x324>" );
+        assertmsg( "<dev string:x3a3>" + index + "<dev string:x35f>" );
         return 0;
     }
     
@@ -846,7 +857,7 @@ function function_f4fda26d9ae6dbe0( player, index, obtaintype, var_a1803fc19dffd
     
     if ( !isdefined( lootid ) || lootid == 0 || !isdefined( cachequantity ) || cachequantity == 0 )
     {
-        assertmsg( "<dev string:x39f>" + index + "<dev string:x324>" );
+        assertmsg( "<dev string:x3da>" + index + "<dev string:x35f>" );
         return 0;
     }
     
@@ -858,7 +869,7 @@ function function_f4fda26d9ae6dbe0( player, index, obtaintype, var_a1803fc19dffd
     if ( var_a1803fc19dffd729 > cachequantity )
     {
         var_a1803fc19dffd729 = cachequantity;
-        assertmsg( "<dev string:x3f6>" );
+        assertmsg( "<dev string:x431>" );
     }
     
     itembundlename = undefined;
@@ -868,7 +879,7 @@ function function_f4fda26d9ae6dbe0( player, index, obtaintype, var_a1803fc19dffd
     {
         itembundlename = namespace_736197e4d378b91b::function_46423e80a0fa8f2( weapondata.baseweapon, 0, weapondata.variantid );
         itembundle = getscriptbundle( "itemspawnentry:" + itembundlename );
-        assert( isdefined( itembundle ), "<dev string:x447>" + itembundlename + "<dev string:x488>" );
+        assert( isdefined( itembundle ), "<dev string:x482>" + itembundlename + "<dev string:x4c3>" );
     }
     else
     {
@@ -911,7 +922,8 @@ function function_f4fda26d9ae6dbe0( player, index, obtaintype, var_a1803fc19dffd
             {
                 deleteping = 1;
                 
-                for (i = 0; i < cache.contents.size; i++) {
+                for ( i = 0; i < cache.contents.size ; i++ )
+                {
                     if ( i != index && isdefined( cache.contents[ i ] ) && isdefined( cache.contents[ i ].lootid ) && cache.contents[ i ].lootid == lootid )
                     {
                         deleteping = 0;
@@ -959,8 +971,8 @@ function function_f4fda26d9ae6dbe0( player, index, obtaintype, var_a1803fc19dffd
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x22af
+// Params 3
+// Checksum 0x0, Offset: 0x22cd
 // Size: 0x11c
 function function_d1703475e83c17fb( container, lootid, player )
 {
@@ -969,11 +981,11 @@ function function_d1703475e83c17fb( container, lootid, player )
         /#
             if ( !isdefined( container ) || !isdefined( container.contents ) )
             {
-                assertmsg( "<dev string:x48d>" );
+                assertmsg( "<dev string:x4c8>" );
             }
             else if ( !isdefined( lootid ) || !isint( lootid ) )
             {
-                assertmsg( "<dev string:x4e1>" );
+                assertmsg( "<dev string:x51c>" );
             }
         #/
         
@@ -996,8 +1008,8 @@ function function_d1703475e83c17fb( container, lootid, player )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23d4
+// Params 2
+// Checksum 0x0, Offset: 0x23f2
 // Size: 0x48
 function getlootidatcontainerindex( player, index )
 {
@@ -1007,8 +1019,8 @@ function getlootidatcontainerindex( player, index )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2425
+// Params 2
+// Checksum 0x0, Offset: 0x2443
 // Size: 0x20
 function function_8e5978971b5dcd16( player, index )
 {
@@ -1016,8 +1028,8 @@ function function_8e5978971b5dcd16( player, index )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x244e
+// Params 5
+// Checksum 0x0, Offset: 0x246c
 // Size: 0xbe
 function function_eff2aed88a59ccfd( player, index, newlootid, newquantity, newweapondata )
 {
@@ -1038,8 +1050,8 @@ function function_eff2aed88a59ccfd( player, index, newlootid, newquantity, newwe
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2514
+// Params 2
+// Checksum 0x0, Offset: 0x2532
 // Size: 0x3c
 function function_56b776a926446950( player, lootid )
 {
@@ -1050,8 +1062,8 @@ function function_56b776a926446950( player, lootid )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2558
+// Params 2
+// Checksum 0x0, Offset: 0x2576
 // Size: 0xa5
 function function_bcb843e937613416( instance, itemnames )
 {
@@ -1081,8 +1093,8 @@ function function_bcb843e937613416( instance, itemnames )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2605
+// Params 3
+// Checksum 0x0, Offset: 0x2623
 // Size: 0xb9
 function function_6eee0ede493b44e8( instance, quantity, lootid )
 {
@@ -1101,7 +1113,7 @@ function function_6eee0ede493b44e8( instance, quantity, lootid )
     
     if ( !isdefined( itembundlename ) )
     {
-        assertmsg( "<dev string:x536>" + lootid + "<dev string:x57d>" );
+        assertmsg( "<dev string:x571>" + lootid + "<dev string:x5b8>" );
         return;
     }
     
@@ -1109,14 +1121,14 @@ function function_6eee0ede493b44e8( instance, quantity, lootid )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26c6
+// Params 3
+// Checksum 0x0, Offset: 0x26e4
 // Size: 0x286
 function function_ff5a53c1d3232e2f( instance, quantity, itembundlename )
 {
     if ( !isdefined( itembundlename ) )
     {
-        assertmsg( "<dev string:x58e>" );
+        assertmsg( "<dev string:x5c9>" );
         return;
     }
     
@@ -1135,7 +1147,7 @@ function function_ff5a53c1d3232e2f( instance, quantity, itembundlename )
     
     if ( !isdefined( var_b91e11f33e2a122d ) )
     {
-        assertmsg( "<dev string:x447>" + itembundlename + "<dev string:x488>" );
+        assertmsg( "<dev string:x482>" + itembundlename + "<dev string:x4c3>" );
         return;
     }
     
@@ -1144,7 +1156,7 @@ function function_ff5a53c1d3232e2f( instance, quantity, itembundlename )
     
     if ( !isdefined( item.lootid ) )
     {
-        assertmsg( "<dev string:x5d2>" + itembundlename + "<dev string:x602>" );
+        assertmsg( "<dev string:x60d>" + itembundlename + "<dev string:x63d>" );
         return;
     }
     
@@ -1185,8 +1197,8 @@ function function_ff5a53c1d3232e2f( instance, quantity, itembundlename )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2954
+// Params 3
+// Checksum 0x0, Offset: 0x2972
 // Size: 0x38
 function function_d71a41afca697376( instance, listbundlename, count )
 {
@@ -1195,8 +1207,8 @@ function function_d71a41afca697376( instance, listbundlename, count )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2994
+// Params 4
+// Checksum 0x0, Offset: 0x29b2
 // Size: 0x19e
 function cache_spawncache( scriptkey, origin, angles, forcedstate )
 {
@@ -1204,7 +1216,7 @@ function cache_spawncache( scriptkey, origin, angles, forcedstate )
     
     if ( !isdefined( var_e62511cd09a9b71f ) )
     {
-        assertmsg( "<dev string:x62a>" + function_3c8848a3a11b2553( scriptkey ) + "<dev string:x66b>" + origin + "<dev string:x67c>" );
+        assertmsg( "<dev string:x665>" + function_3c8848a3a11b2553( scriptkey ) + "<dev string:x6a6>" + origin + "<dev string:x6b7>" );
         return;
     }
     
@@ -1217,7 +1229,7 @@ function cache_spawncache( scriptkey, origin, angles, forcedstate )
             
             if ( !isdefined( var_42b0b62a5ff326bc ) )
             {
-                assertmsg( "<dev string:x62a>" + function_3c8848a3a11b2553( scriptkey ) + "<dev string:x66b>" + origin + "<dev string:x6ac>" + cachebundlename + "<dev string:x488>" );
+                assertmsg( "<dev string:x665>" + function_3c8848a3a11b2553( scriptkey ) + "<dev string:x6a6>" + origin + "<dev string:x6e7>" + cachebundlename + "<dev string:x4c3>" );
                 return;
             }
             
@@ -1237,8 +1249,8 @@ function cache_spawncache( scriptkey, origin, angles, forcedstate )
 }
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b3a
+// Params 2
+// Checksum 0x0, Offset: 0x2b58
 // Size: 0x6a
 function function_fd95ef820bb2b980( items, cache )
 {
@@ -1255,7 +1267,7 @@ function function_fd95ef820bb2b980( items, cache )
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2bac
+// Checksum 0x0, Offset: 0x2bca
 // Size: 0x84
 function private function_3c67455f0dcec331( player, weaponobj )
 {
@@ -1283,7 +1295,7 @@ function private function_3c67455f0dcec331( player, weaponobj )
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2c39
+// Checksum 0x0, Offset: 0x2c57
 // Size: 0x7d
 function private function_d53393379858d253( player )
 {
@@ -1302,7 +1314,7 @@ function private function_d53393379858d253( player )
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2cbe
+// Checksum 0x0, Offset: 0x2cdc
 // Size: 0x8b
 function private function_5b832267ff976432( lootid, extrapayload )
 {
@@ -1310,7 +1322,7 @@ function private function_5b832267ff976432( lootid, extrapayload )
     
     if ( bitsused > 31 )
     {
-        assertmsg( "<dev string:x6ea>" );
+        assertmsg( "<dev string:x725>" );
         return 0;
     }
     
@@ -1335,7 +1347,7 @@ function private function_5b832267ff976432( lootid, extrapayload )
 
 // Namespace common_cache / scripts\cp_mp\loot\common_cache
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2d52
+// Checksum 0x0, Offset: 0x2d70
 // Size: 0x98
 function private function_217ab517f98c6fab( var_8db5472153ea4811 )
 {
@@ -1343,7 +1355,7 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
     
     if ( bitsused > 31 )
     {
-        assertmsg( "<dev string:x6ea>" );
+        assertmsg( "<dev string:x725>" );
         return undefined;
     }
     
@@ -1362,7 +1374,7 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
 
     // Namespace common_cache / scripts\cp_mp\loot\common_cache
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2df3
+    // Checksum 0x0, Offset: 0x2e11
     // Size: 0x4d3, Type: dev
     function private setup_devgui()
     {
@@ -1371,7 +1383,7 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
             return;
         }
         
-        zonelist = getscriptbundle( "<dev string:x743>" + level.gametypebundle.var_328f56c2f24c4831 );
+        zonelist = getscriptbundle( "<dev string:x77e>" + level.gametypebundle.var_328f56c2f24c4831 );
         
         if ( !isdefined( zonelist ) )
         {
@@ -1384,24 +1396,24 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
         {
             if ( isdefined( var_8bfddc20fd955e32.zonedef ) && !isdefined( var_2db9da2642048a13[ var_8bfddc20fd955e32.zonedef ] ) )
             {
-                var_2db9da2642048a13[ var_8bfddc20fd955e32.zonedef ] = getscriptbundle( "<dev string:x759>" + var_8bfddc20fd955e32.zonedef );
+                var_2db9da2642048a13[ var_8bfddc20fd955e32.zonedef ] = getscriptbundle( "<dev string:x794>" + var_8bfddc20fd955e32.zonedef );
             }
         }
         
-        devgui::function_6e7290c8ee4f558b( "<dev string:x76e>" );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x790>", "<dev string:x795>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x7ae>", "<dev string:x7b3>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x7cc>", "<dev string:x7d1>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x7ea>", "<dev string:x7ef>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x808>", "<dev string:x80d>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x826>", "<dev string:x82b>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x844>", "<dev string:x849>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x862>", "<dev string:x867>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x880>", "<dev string:x885>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x89e>", "<dev string:x8a4>", &function_fda80ec40b57c4cf );
-        devgui::function_b23a59dfb4ca49a1( "<dev string:x8be>", "<dev string:x8c4>", &function_fda80ec40b57c4cf );
+        devgui::function_6e7290c8ee4f558b( "<dev string:x7a9>" );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x7cb>", "<dev string:x7d0>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x7e9>", "<dev string:x7ee>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x807>", "<dev string:x80c>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x825>", "<dev string:x82a>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x843>", "<dev string:x848>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x861>", "<dev string:x866>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x87f>", "<dev string:x884>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x89d>", "<dev string:x8a2>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x8bb>", "<dev string:x8c0>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x8d9>", "<dev string:x8df>", &function_fda80ec40b57c4cf );
+        devgui::function_b23a59dfb4ca49a1( "<dev string:x8f9>", "<dev string:x8ff>", &function_fda80ec40b57c4cf );
         devgui::function_fe953f000498048f();
-        devgui::function_6e7290c8ee4f558b( "<dev string:x8de>" );
+        devgui::function_6e7290c8ee4f558b( "<dev string:x919>" );
         
         foreach ( var_e20693215273eb59, var_a91353c4805838d2 in var_2db9da2642048a13 )
         {
@@ -1409,7 +1421,7 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
             {
                 if ( isdefined( entry.var_b312af7d766b0713 ) && isdefined( entry.cacheitemspawnlist ) && isdefined( entry.var_afbb6e9b90b03af ) )
                 {
-                    devgui::function_b23a59dfb4ca49a1( var_e20693215273eb59 + "<dev string:x901>" + entry.var_afbb6e9b90b03af, "<dev string:x90e>" + entry.var_afbb6e9b90b03af + "<dev string:x922>" + entry.cacheitemspawnlist + "<dev string:x922>" + entry.var_b312af7d766b0713, &function_35b40f5e98dc4ee4, 0 );
+                    devgui::function_b23a59dfb4ca49a1( var_e20693215273eb59 + "<dev string:x93c>" + entry.var_afbb6e9b90b03af, "<dev string:x949>" + entry.var_afbb6e9b90b03af + "<dev string:x95d>" + entry.cacheitemspawnlist + "<dev string:x95d>" + entry.var_b312af7d766b0713, &function_35b40f5e98dc4ee4, 0 );
                 }
             }
             
@@ -1417,7 +1429,7 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
             {
                 if ( isdefined( entry.var_b312af7d766b0713 ) && isdefined( entry.cacheitemspawnlist ) && isdefined( entry.var_afbb6e9b90b03af ) )
                 {
-                    devgui::function_b23a59dfb4ca49a1( var_e20693215273eb59 + "<dev string:x927>" + entry.var_afbb6e9b90b03af, "<dev string:x90e>" + entry.var_afbb6e9b90b03af + "<dev string:x922>" + entry.cacheitemspawnlist + "<dev string:x922>" + entry.var_b312af7d766b0713, &function_35b40f5e98dc4ee4, 0 );
+                    devgui::function_b23a59dfb4ca49a1( var_e20693215273eb59 + "<dev string:x962>" + entry.var_afbb6e9b90b03af, "<dev string:x949>" + entry.var_afbb6e9b90b03af + "<dev string:x95d>" + entry.cacheitemspawnlist + "<dev string:x95d>" + entry.var_b312af7d766b0713, &function_35b40f5e98dc4ee4, 0 );
                 }
             }
             
@@ -1425,7 +1437,7 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
             {
                 if ( isdefined( entry.scriptkey ) && isdefined( entry.var_b312af7d766b0713 ) && isdefined( entry.cacheitemspawnlist ) && isdefined( entry.var_afbb6e9b90b03af ) )
                 {
-                    devgui::function_b23a59dfb4ca49a1( var_e20693215273eb59 + "<dev string:x932>" + function_3c8848a3a11b2553( entry.scriptkey ), "<dev string:x90e>" + entry.var_afbb6e9b90b03af + "<dev string:x922>" + entry.cacheitemspawnlist + "<dev string:x922>" + entry.var_b312af7d766b0713, &function_35b40f5e98dc4ee4, 0 );
+                    devgui::function_b23a59dfb4ca49a1( var_e20693215273eb59 + "<dev string:x96d>" + function_3c8848a3a11b2553( entry.scriptkey ), "<dev string:x949>" + entry.var_afbb6e9b90b03af + "<dev string:x95d>" + entry.cacheitemspawnlist + "<dev string:x95d>" + entry.var_b312af7d766b0713, &function_35b40f5e98dc4ee4, 0 );
                 }
             }
         }
@@ -1434,8 +1446,8 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
     }
 
     // Namespace common_cache / scripts\cp_mp\loot\common_cache
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x32ce
+    // Params 1
+    // Checksum 0x0, Offset: 0x32ec
     // Size: 0x1f, Type: dev
     function function_fda80ec40b57c4cf( params )
     {
@@ -1443,8 +1455,8 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
     }
 
     // Namespace common_cache / scripts\cp_mp\loot\common_cache
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x32f5
+    // Params 1
+    // Checksum 0x0, Offset: 0x3313
     // Size: 0xbb, Type: dev
     function function_7029bab8ebd74e1d( contents )
     {
@@ -1456,7 +1468,7 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
         if ( !isdefined( level.var_61e6e1b83a8f3486.var_9549d82a3fba4746 ) )
         {
             level.var_61e6e1b83a8f3486.var_9549d82a3fba4746 = spawnstruct();
-            level.var_61e6e1b83a8f3486.var_9549d82a3fba4746.type = "<dev string:x93e>";
+            level.var_61e6e1b83a8f3486.var_9549d82a3fba4746.type = "<dev string:x979>";
             level.var_61e6e1b83a8f3486.var_9549d82a3fba4746.var_1498604de9cf5016 = 1;
         }
         
@@ -1464,8 +1476,8 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
     }
 
     // Namespace common_cache / scripts\cp_mp\loot\common_cache
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x33b8
+    // Params 0
+    // Checksum 0x0, Offset: 0x33d6
     // Size: 0xd4, Type: dev
     function function_803e6cfa13174264()
     {
@@ -1482,8 +1494,8 @@ function private function_217ab517f98c6fab( var_8db5472153ea4811 )
     }
 
     // Namespace common_cache / scripts\cp_mp\loot\common_cache
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3494
+    // Params 1
+    // Checksum 0x0, Offset: 0x34b2
     // Size: 0x69, Type: dev
     function function_35b40f5e98dc4ee4( params )
     {

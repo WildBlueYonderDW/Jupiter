@@ -7,7 +7,7 @@
 #namespace vehicle_build;
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x30e
 // Size: 0xa5
 function build_radiusdamage( offset, range, maxdamage, mindamage )
@@ -26,7 +26,7 @@ function build_radiusdamage( offset, range, maxdamage, mindamage )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3bb
 // Size: 0xd5
 function build_rumble( rumble, scale, duration, radius, basetime, randomaditionaltime )
@@ -44,7 +44,7 @@ function build_rumble( rumble, scale, duration, radius, basetime, randomaditiona
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x498
 // Size: 0x99
 function build_deathquake( scale, duration, radius )
@@ -60,7 +60,7 @@ function build_deathquake( scale, duration, radius )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x539
 // Size: 0x88
 function build_quake( scale, duration, radius, basetime, randomaditionaltime )
@@ -84,7 +84,7 @@ function build_quake( scale, duration, radius, basetime, randomaditionaltime )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x5ca
 // Size: 0x139
 function build_fx( effect, tag, sound, beffectlooping, delay, bsoundlooping, waitdelay, stayontag, notifystring, selfdeletedelay, remove_deathfx_entity_delay, attacker_velocity_lerp )
@@ -121,7 +121,7 @@ function build_fx( effect, tag, sound, beffectlooping, delay, bsoundlooping, wai
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x70c
 // Size: 0x127
 function build_deathfx( effect, tag, sound, beffectlooping, delay, bsoundlooping, waitdelay, stayontag, notifystring, var_5b457edcff6fa295, remove_deathfx_entity_delay, attacker_velocity_lerp )
@@ -138,7 +138,7 @@ function build_deathfx( effect, tag, sound, beffectlooping, delay, bsoundlooping
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x83b
 // Size: 0x11d
 function build_rocket_deathfx( effect, tag, sound, beffectlooping, delay, bsoundlooping, waitdelay, stayontag, notifystring, var_5b457edcff6fa295, remove_deathfx_entity_delay )
@@ -155,7 +155,7 @@ function build_rocket_deathfx( effect, tag, sound, beffectlooping, delay, bsound
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x960
 // Size: 0x180
 function build_deathanimations( forwardanimation, rightanimation, backwardanimation, leftanimation )
@@ -178,7 +178,7 @@ function build_deathanimations( forwardanimation, rightanimation, backwardanimat
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae8
 // Size: 0x4e
 function build_landanims( landthread )
@@ -189,7 +189,7 @@ function build_landanims( landthread )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0xb3e
 // Size: 0x104
 function build_turret( info, tag, model, defaultonmode, defaultdroppitch, defaultdropyaw, offset_tag, referencename, mainturretchild )
@@ -206,7 +206,7 @@ function build_turret( info, tag, model, defaultonmode, defaultdroppitch, defaul
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xc4a
 // Size: 0xc6
 function build_mainturret( info, tag, model, defaultonmode, defaultdroppitch, defaultdropyaw, offset_tag, referencename )
@@ -223,7 +223,7 @@ function build_mainturret( info, tag, model, defaultonmode, defaultdroppitch, de
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0xd18
 // Size: 0xfa
 function build_turret_struct( info, tag, model, defaultonmode, defaultdroppitch, defaultdropyaw, offset_tag, referencename, mainturretchild )
@@ -257,7 +257,7 @@ function build_turret_struct( info, tag, model, defaultonmode, defaultdroppitch,
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xe1b
 // Size: 0x171
 function build_light( classname, name, tag, effect, group, delay )
@@ -292,7 +292,7 @@ function build_light( classname, name, tag, effect, group, delay )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xf94
 // Size: 0x17a
 function function_2cf37d073c6bde84( classname, name, part, group, delay, var_22ed434f33b345af )
@@ -331,7 +331,7 @@ function function_2cf37d073c6bde84( classname, name, part, group, delay, var_22e
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1116
 // Size: 0x8a
 function build_hideparts( classname, parts_array )
@@ -348,7 +348,7 @@ function build_hideparts( classname, parts_array )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11a8
 // Size: 0x59
 function build_deathmodel( model, deathmodel )
@@ -369,7 +369,7 @@ function build_deathmodel( model, deathmodel )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1209
 // Size: 0xcc
 function build_husk( model, huskmodel, type, var_cb3cc2d75d941670 )
@@ -395,7 +395,7 @@ function build_husk( model, huskmodel, type, var_cb3cc2d75d941670 )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12dd
 // Size: 0xf1
 function build_idle( animation )
@@ -414,7 +414,7 @@ function build_idle( animation )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x13d6
 // Size: 0xda
 function build_drive( forward, reverse, normalspeed, rate )
@@ -440,7 +440,7 @@ function build_drive( forward, reverse, normalspeed, rate )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x14b8
 // Size: 0x498
 function build_template( class, model, type, classname )
@@ -522,7 +522,7 @@ function build_template( class, model, type, classname )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1958
 // Size: 0x73f, Type: bool
 function function_40778829123b7952( vehicleref, vehicleclass )
@@ -687,7 +687,7 @@ function function_40778829123b7952( vehicleref, vehicleclass )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20a0
 // Size: 0x39
 function build_exhaust( effect )
@@ -696,7 +696,7 @@ function build_exhaust( effect )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x20e1
 // Size: 0x14b
 function build_enginefx( effect, effect_tag, max_effect, max_effort, med_effect, med_effort, min_effect, min_effort )
@@ -737,7 +737,7 @@ function build_enginefx( effect, effect_tag, max_effect, max_effort, med_effect,
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2234
 // Size: 0x79
 function build_treadfx( classname, type, fx, do_wash )
@@ -765,7 +765,7 @@ function build_treadfx( classname, type, fx, do_wash )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22b5
 // Size: 0x70
 function build_all_treadfx( classname, fx )
@@ -779,7 +779,7 @@ function build_all_treadfx( classname, fx )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x232d
 // Size: 0x10c
 function set_vehicle_effect( classname, material, fx, suffix )
@@ -808,7 +808,7 @@ function set_vehicle_effect( classname, material, fx, suffix )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2441
 // Size: 0x11a
 function get_surface_types()
@@ -817,7 +817,7 @@ function get_surface_types()
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2564
 // Size: 0x34
 function build_team( team )
@@ -826,7 +826,7 @@ function build_team( team )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25a0
 // Size: 0x3f
 function build_bulletshield( bshield )
@@ -836,7 +836,7 @@ function build_bulletshield( bshield )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25e7
 // Size: 0x3f
 function build_grenadeshield( bshield )
@@ -846,7 +846,7 @@ function build_grenadeshield( bshield )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x262e
 // Size: 0x3f
 function function_d82e00bef8433948( weaponarray )
@@ -856,7 +856,7 @@ function function_d82e00bef8433948( weaponarray )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2675
 // Size: 0x3f
 function function_ceeb72985b41bfb1( bshield )
@@ -866,7 +866,7 @@ function function_ceeb72985b41bfb1( bshield )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26bc
 // Size: 0x118
 function build_aianims( aithread, vehiclethread, vehicleanimalias )
@@ -887,7 +887,7 @@ function build_aianims( aithread, vehiclethread, vehicleanimalias )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x27dc
 // Size: 0xc4
 function function_a82f8a25ad7e6b3f( var_fdd5ab14ab76741a, vehicleanimalias )
@@ -902,7 +902,7 @@ function function_a82f8a25ad7e6b3f( var_fdd5ab14ab76741a, vehicleanimalias )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28a8
 // Size: 0x36
 function build_attach_models( modelsthread )
@@ -911,7 +911,7 @@ function build_attach_models( modelsthread )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28e6
 // Size: 0x34
 function function_423e10816a23372f( attachmodels )
@@ -920,7 +920,7 @@ function function_423e10816a23372f( attachmodels )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2922
 // Size: 0x36
 function build_unload_groups( unloadgroupsthread )
@@ -929,7 +929,7 @@ function build_unload_groups( unloadgroupsthread )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2960
 // Size: 0x34
 function function_ab7252da140c8fe7( unloadgroups )
@@ -938,7 +938,7 @@ function function_ab7252da140c8fe7( unloadgroups )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x299c
 // Size: 0x93
 function build_life( health, minhealth, maxhealth )
@@ -952,7 +952,7 @@ function build_life( health, minhealth, maxhealth )
 /#
 
     // Namespace vehicle_build / scripts\common\vehicle_build
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x2a37
     // Size: 0x21, Type: dev
     function build_destructible( model, destructible )
@@ -963,7 +963,7 @@ function build_life( health, minhealth, maxhealth )
 #/
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a60
 // Size: 0x2f
 function build_localinit( init_thread )
@@ -972,7 +972,7 @@ function build_localinit( init_thread )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a97
 // Size: 0x71
 function build_atmo_types( atmo_type, space_type )
@@ -982,7 +982,7 @@ function build_atmo_types( atmo_type, space_type )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b10
 // Size: 0x34
 function build_ace( is_ace )
@@ -991,7 +991,7 @@ function build_ace( is_ace )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b4c
 // Size: 0x34
 function build_semiace( var_cdf39af1c6b4f363 )
@@ -1000,7 +1000,7 @@ function build_semiace( var_cdf39af1c6b4f363 )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b88
 // Size: 0x6e
 function build_playercontrolled_model( playercontrolledmodel, worldmodel )
@@ -1013,7 +1013,7 @@ function build_playercontrolled_model( playercontrolledmodel, worldmodel )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bfe
 // Size: 0x82
 function build_is_helicopter( vehicle_type )
@@ -1032,7 +1032,7 @@ function build_is_helicopter( vehicle_type )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c88
 // Size: 0x82
 function function_3a186b889337bd1b( vehicle_type )
@@ -1051,7 +1051,7 @@ function function_3a186b889337bd1b( vehicle_type )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d12
 // Size: 0x82
 function build_is_airplane( vehicle_type )
@@ -1070,7 +1070,7 @@ function build_is_airplane( vehicle_type )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d9c
 // Size: 0x82
 function function_5a73d7723fce9849( vehicle_type )
@@ -1089,7 +1089,7 @@ function function_5a73d7723fce9849( vehicle_type )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e26
 // Size: 0x82
 function build_single_tread( vehicle_type )
@@ -1108,7 +1108,7 @@ function build_single_tread( vehicle_type )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2eb0
 // Size: 0x74
 function build_rider_death_func( func )
@@ -1122,7 +1122,7 @@ function build_rider_death_func( func )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f2c
 // Size: 0x50
 function function_d97dafaf227ed144( classname, vehicletype, init_thread )
@@ -1132,7 +1132,7 @@ function function_d97dafaf227ed144( classname, vehicletype, init_thread )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f84
 // Size: 0x34
 function build_hud( classname, index )
@@ -1141,7 +1141,7 @@ function build_hud( classname, index )
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2fc0
 // Size: 0x8f
 function function_2660787ca33cf457( classname, parentbone, childbones )

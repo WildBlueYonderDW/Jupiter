@@ -4,7 +4,7 @@
 #namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs;
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3d5
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x44a
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4b9
 // Size: 0x8e
 function createstructs( fe, us, cf )
@@ -64,7 +64,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54f
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -73,7 +73,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x559
 // Size: 0xe
 function cleanup()
@@ -82,7 +82,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56f
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -97,7 +97,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5e1
 // Size: 0xb5
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -128,7 +128,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x69e
 // Size: 0x18b
 function function_3e3f1c09b0fa92c( fe, us, cf )
@@ -149,7 +149,7 @@ function function_3e3f1c09b0fa92c( fe, us, cf )
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x831
 // Size: 0x18b
 function function_5e52aa8695e7efc5( fe, us, cf )
@@ -170,7 +170,7 @@ function function_5e52aa8695e7efc5( fe, us, cf )
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9c4
 // Size: 0x18b
 function function_714a531480eb471f( fe, us, cf )
@@ -191,7 +191,7 @@ function function_714a531480eb471f( fe, us, cf )
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb57
 // Size: 0x18b
 function function_cc3655d0587ab820( fe, us, cf )
@@ -212,7 +212,7 @@ function function_cc3655d0587ab820( fe, us, cf )
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcea
 // Size: 0x18b
 function function_880d469321de8968( fe, us, cf )
@@ -233,7 +233,7 @@ function function_880d469321de8968( fe, us, cf )
 }
 
 // Namespace mp_jup_st_i_ob_activities_unstable_rift_obelisk_cs / namespace_38b331194dcaff5f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe7d
 // Size: 0x432
 function function_6da2952367672ac0()

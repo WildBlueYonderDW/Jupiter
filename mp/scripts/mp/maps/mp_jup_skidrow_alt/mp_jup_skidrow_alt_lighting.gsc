@@ -7,7 +7,7 @@
 #namespace mp_jup_skidrow_alt_lighting;
 
 // Namespace mp_jup_skidrow_alt_lighting / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d1
 // Size: 0x74
 function main()
@@ -24,7 +24,7 @@ function main()
 }
 
 // Namespace mp_jup_skidrow_alt_lighting / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x8
 function lighting_dvars()
@@ -33,7 +33,7 @@ function lighting_dvars()
 }
 
 // Namespace mp_jup_skidrow_alt_lighting / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25d
 // Size: 0x6c
 function neon_hide()
@@ -48,7 +48,7 @@ function neon_hide()
 }
 
 // Namespace mp_jup_skidrow_alt_lighting / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d1
 // Size: 0x74
 function open_doors()

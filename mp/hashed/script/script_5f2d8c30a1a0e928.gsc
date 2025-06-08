@@ -4,7 +4,7 @@
 #namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs;
 
 // Namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs / namespace_24aadd73c1e4a3fc
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18a
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs / namespace_24aadd73c1e4a3fc
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ff
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs / namespace_24aadd73c1e4a3fc
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26e
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs / namespace_24aadd73c1e4a3fc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b6
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs / namespace_24aadd73c1e4a3fc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c0
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs / namespace_24aadd73c1e4a3fc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d6
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs / namespace_24aadd73c1e4a3fc
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x348
 // Size: 0x51
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -113,7 +113,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs / namespace_24aadd73c1e4a3fc
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x10d
 function function_d9329c1d2983a24b( fe, us, cf )
@@ -129,7 +129,7 @@ function function_d9329c1d2983a24b( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_pvpve_team_hunt_cs / namespace_24aadd73c1e4a3fc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b6
 // Size: 0xb0
 function function_6da2952367672ac0()

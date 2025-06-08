@@ -6,7 +6,7 @@
 #namespace namespace_1fce23c232dc778e;
 
 // Namespace namespace_1fce23c232dc778e / scripts\quaked\script_struct_mp_iw9_dirt_bike
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc2
 // Size: 0x13
 function main()

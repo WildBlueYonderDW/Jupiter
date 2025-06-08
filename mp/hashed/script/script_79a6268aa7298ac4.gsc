@@ -5,7 +5,7 @@
 #namespace namespace_a6c9c44798b37fa6;
 
 // Namespace namespace_a6c9c44798b37fa6 / namespace_4fc54f74105650c0
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x142
 // Size: 0x49e
 function function_14f6e531ffd2958d()
@@ -22,12 +22,14 @@ function function_14f6e531ffd2958d()
     var_97168cfe753f1c25 = [];
     var_c3daefaff1082323 = function_528c7588ba48da94();
     
-    for (lastindex = var_c3daefaff1082323.size - 1; lastindex >= 1; lastindex--) {
+    for ( lastindex = var_c3daefaff1082323.size - 1; lastindex >= 1 ; lastindex-- )
+    {
         var_cb42ce070ff82453 = var_c3daefaff1082323[ lastindex ];
         var_d93ac0e132165264 = var_cb42ce070ff82453.centerposition;
         var_657be1df9e18e72b = var_cb42ce070ff82453.orientation;
         
-        for (index = 0; index < lastindex; index++) {
+        for ( index = 0; index < lastindex ; index++ )
+        {
             var_fef716c724980e99 = var_c3daefaff1082323[ index ];
             var_577ad0355b2f1a06 = var_fef716c724980e99.centerposition;
             var_f5fb1a229968f9fd = var_fef716c724980e99.orientation;
@@ -98,7 +100,8 @@ function function_14f6e531ffd2958d()
     typestrings[ var_18ff7658e43bce3b ] = "perpendicular";
     outputlog( "AdjacentDoubleDoorsInfo", "#time; #type; #positions; #distance" );
     
-    for (index = 0; index < var_97168cfe753f1c25.size; index++) {
+    for ( index = 0; index < var_97168cfe753f1c25.size ; index++ )
+    {
         var_15f7a0a2c8478034 = var_97168cfe753f1c25[ index ];
         typestring = typestrings[ var_15f7a0a2c8478034.type ];
         dist = var_15f7a0a2c8478034.distance;
@@ -127,7 +130,8 @@ function private function_528c7588ba48da94()
         targetindex = undefined;
         mindistsq = undefined;
         
-        for (index = 0; index < lastindex; index++) {
+        for ( index = 0; index < lastindex ; index++ )
+        {
             doorpos = doubledoors[ index ] function_d90515f5e17dbc6f();
             distsq = distancesquared( doorpos, var_80105f354ee4398b );
             
@@ -192,7 +196,8 @@ function private function_c630903df040bc01( lhs, rhs )
     
     assert( lhs.scores.size == rhs.scores.size );
     
-    for (i = 0; i < lhs.scores.size; i++) {
+    for ( i = 0; i < lhs.scores.size ; i++ )
+    {
         if ( lhs.scores[ i ] != rhs.scores[ i ] )
         {
             return ( lhs.scores[ i ] > rhs.scores[ i ] );

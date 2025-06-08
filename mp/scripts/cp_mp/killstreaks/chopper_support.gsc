@@ -17,7 +17,7 @@
 #namespace chopper_support;
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa6c
 // Size: 0xa9
 function init()
@@ -43,7 +43,7 @@ function init()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb1d
 // Size: 0x87
 function init_chopper_support_vo()
@@ -58,7 +58,7 @@ function init_chopper_support_vo()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbac
 // Size: 0x26
 function tryusechoppersupport( streakname )
@@ -68,7 +68,7 @@ function tryusechoppersupport( streakname )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbdb
 // Size: 0x24d
 function tryusechoppersupportfromstruct( streakinfo )
@@ -162,7 +162,7 @@ function tryusechoppersupportfromstruct( streakinfo )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe31
 // Size: 0x89, Type: bool
 function usechoppersupport( player, streakinfo )
@@ -186,7 +186,7 @@ function usechoppersupport( player, streakinfo )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xec3
 // Size: 0xae8
 function spawnchopper( owner, streakinfo )
@@ -377,7 +377,7 @@ function spawnchopper( owner, streakinfo )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19b4
 // Size: 0x118
 function startchopper( player, streakinfo )
@@ -414,7 +414,7 @@ function startchopper( player, streakinfo )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad4
 // Size: 0x6a
 function choppersupport_monitorowner()
@@ -433,7 +433,7 @@ function choppersupport_monitorowner()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b46
 // Size: 0x9a
 function choppersupport_neargoalsettings()
@@ -456,7 +456,7 @@ function choppersupport_neargoalsettings()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1be8
 // Size: 0x16f
 function choppersupport_handlemissiledetection( player, missileteam, missiletarget, fxtagoverride )
@@ -512,7 +512,7 @@ function choppersupport_handlemissiledetection( player, missileteam, missiletarg
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d5f
 // Size: 0xae
 function choppersupport_engageturrettarget( turret )
@@ -550,7 +550,7 @@ function choppersupport_engageturrettarget( turret )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e15
 // Size: 0xcd
 function choppersupport_acquireturrettarget( turret, targets )
@@ -587,7 +587,7 @@ function choppersupport_acquireturrettarget( turret, targets )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1eeb
 // Size: 0x59
 function choppersupport_setcurrenttarget( turret, target )
@@ -603,7 +603,7 @@ function choppersupport_setcurrenttarget( turret, target )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f4c
 // Size: 0xb2
 function choppersupport_clearcurrenttarget( turret )
@@ -635,7 +635,7 @@ function choppersupport_clearcurrenttarget( turret )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2006
 // Size: 0x303
 function choppersupport_fireonturrettarget( turret, turrettarget, turretvehicletarget, playdialog, var_7d1f0f4095d78597 )
@@ -762,7 +762,7 @@ function choppersupport_fireonturrettarget( turret, turrettarget, turretvehiclet
 /#
 
     // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2311
     // Size: 0x5c, Type: dev
     function function_189edc0c3e4cce61( turret )
@@ -780,7 +780,7 @@ function choppersupport_fireonturrettarget( turret, turrettarget, turretvehiclet
 #/
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2375
 // Size: 0x4d, Type: bool
 function choppersupport_canattackactivetarget( turret, turrettarget )
@@ -789,7 +789,7 @@ function choppersupport_canattackactivetarget( turret, turrettarget )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x23cb
 // Size: 0x111
 function choppersupport_setattackpoint( turret, turrettarget, centerpoint, attackradius )
@@ -816,7 +816,7 @@ function choppersupport_setattackpoint( turret, turrettarget, centerpoint, attac
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24e4
 // Size: 0x81, Type: bool
 function choppersupport_turretlookingattarget()
@@ -835,7 +835,7 @@ function choppersupport_turretlookingattarget()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x256e
 // Size: 0x5f
 function choppersupport_watchforlosttarget( turret )
@@ -849,7 +849,7 @@ function choppersupport_watchforlosttarget( turret )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25d5
 // Size: 0x66
 function choppersupport_watchforlosttargetaction( turret, action )
@@ -871,7 +871,7 @@ function choppersupport_watchforlosttargetaction( turret, action )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2643
 // Size: 0x99
 function choppersupport_watchleashrange( turret )
@@ -909,7 +909,7 @@ function choppersupport_watchleashrange( turret )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26e4
 // Size: 0x88
 function choppersupport_watchtargetrange( turret )
@@ -938,7 +938,7 @@ function choppersupport_watchtargetrange( turret )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2774
 // Size: 0x140
 function choppersupport_watchtargetlos( turret, vehicletarget )
@@ -992,7 +992,7 @@ function choppersupport_watchtargetlos( turret, vehicletarget )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28bc
 // Size: 0x38
 function choppersupport_watchtargettimeout( turret )
@@ -1006,7 +1006,7 @@ function choppersupport_watchtargettimeout( turret )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28fc
 // Size: 0x64
 function choppersupport_watchforlaststand( turret )
@@ -1029,7 +1029,7 @@ function choppersupport_watchforlaststand( turret )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2968
 // Size: 0x94
 function choppersupport_isactivetarget( target )
@@ -1061,7 +1061,7 @@ function choppersupport_isactivetarget( target )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a05
 // Size: 0x3c, Type: bool
 function choppersupport_checkifactivetargets()
@@ -1070,7 +1070,7 @@ function choppersupport_checkifactivetargets()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a4a
 // Size: 0x7c
 function choppersupport_getactivetargets()
@@ -1091,7 +1091,7 @@ function choppersupport_getactivetargets()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2acf
 // Size: 0x2f2
 function choppersupport_patrolfield( initialpatrol )
@@ -1216,7 +1216,7 @@ function choppersupport_patrolfield( initialpatrol )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dc9
 // Size: 0x105
 function choppersupport_findclosestpatrolstruct()
@@ -1252,7 +1252,7 @@ function choppersupport_findclosestpatrolstruct()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ed7
 // Size: 0xa3
 function choppersupport_canseeenemy( enemy )
@@ -1261,7 +1261,8 @@ function choppersupport_canseeenemy( enemy )
     contents = scripts\engine\trace::create_contents( 0, 1, 0, 1, 1, 0 );
     tracepoints = [ enemy gettagorigin( "j_head" ), enemy gettagorigin( "j_mainroot" ), enemy gettagorigin( "tag_origin" ) ];
     
-    for (i = 0; i < tracepoints.size; i++) {
+    for ( i = 0; i < tracepoints.size ; i++ )
+    {
         if ( !scripts\engine\trace::ray_trace_passed( self.origin, tracepoints[ i ], self, contents ) )
         {
             continue;
@@ -1275,7 +1276,7 @@ function choppersupport_canseeenemy( enemy )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2f83
 // Size: 0x1ec
 function choppersupport_movetolocation( target, forcestopatgoal )
@@ -1344,7 +1345,7 @@ function choppersupport_movetolocation( target, forcestopatgoal )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3177
 // Size: 0xeb
 function choppersupport_leave()
@@ -1371,7 +1372,7 @@ function choppersupport_leave()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x326a
 // Size: 0x184
 function choppersupport_cleanup( wasdestroyed )
@@ -1427,7 +1428,7 @@ function choppersupport_cleanup( wasdestroyed )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33f6
 // Size: 0x28
 function choppersupport_watchlifetime()
@@ -1439,7 +1440,7 @@ function choppersupport_watchlifetime()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3426
 // Size: 0x74
 function choppersupport_watchgameendleave()
@@ -1464,7 +1465,7 @@ function choppersupport_watchgameendleave()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34a2
 // Size: 0xea
 function choppersupport_watchleash()
@@ -1515,7 +1516,7 @@ function choppersupport_watchleash()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3594
 // Size: 0x21c
 function choppersupport_gettargets( turret, rangeoverride, var_f8c5d9ba90c73623, var_f537b27c366f06c9 )
@@ -1565,7 +1566,8 @@ function choppersupport_gettargets( turret, rangeoverride, var_f8c5d9ba90c73623,
         players = array_combine( level.players, agents );
     }
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         potentialtarget = players[ i ];
         [ isvalidtarget, var_4631fdfcabb28e61, invehicle ] = choppersupport_istarget( turret, potentialtarget, var_f8c5d9ba90c73623, var_f537b27c366f06c9 );
         
@@ -1589,7 +1591,7 @@ function choppersupport_gettargets( turret, rangeoverride, var_f8c5d9ba90c73623,
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x37b9
 // Size: 0x418
 function choppersupport_istarget( turret, potentialtarget, var_f8c5d9ba90c73623, var_f537b27c366f06c9 )
@@ -1739,7 +1741,7 @@ function choppersupport_istarget( turret, potentialtarget, var_f8c5d9ba90c73623,
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bda
 // Size: 0x3c, Type: bool
 function choppersupport_isplayeractive( player )
@@ -1748,7 +1750,7 @@ function choppersupport_isplayeractive( player )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3c1f
 // Size: 0x234
 function choppersupport_getbesttarget( turret, targets )
@@ -1818,7 +1820,7 @@ function choppersupport_getbesttarget( turret, targets )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3e5c
 // Size: 0x67
 function getcorrectheight( x, y, randheightoffset, var_1d3a4b020ae79012 )
@@ -1831,7 +1833,7 @@ function getcorrectheight( x, y, randheightoffset, var_1d3a4b020ae79012 )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ecc
 // Size: 0x83
 function choppersupport_watchdestroyed()
@@ -1860,7 +1862,7 @@ function choppersupport_watchdestroyed()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f57
 // Size: 0x7f
 function choppersupport_explode()
@@ -1884,7 +1886,7 @@ function choppersupport_explode()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3fde
 // Size: 0x11e
 function choppersupport_crash( speed )
@@ -1927,7 +1929,7 @@ function choppersupport_crash( speed )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4104
 // Size: 0x1be
 function choppersupport_findcrashposition( crashdist, var_6c56ff5ecc704c48, var_6c7af55ecc98b102 )
@@ -2006,7 +2008,7 @@ function choppersupport_findcrashposition( crashdist, var_6c56ff5ecc704c48, var_
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42cb
 // Size: 0x4c
 function choppersupport_spinout( speed )
@@ -2022,7 +2024,7 @@ function choppersupport_spinout( speed )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x431f
 // Size: 0x7e
 function tracenewpoint( x, y, z )
@@ -2043,7 +2045,7 @@ function tracenewpoint( x, y, z )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x43a6
 // Size: 0x143
 function tracegroundpoint( x, y, var_1d3a4b020ae79012 )
@@ -2086,7 +2088,7 @@ function tracegroundpoint( x, y, var_1d3a4b020ae79012 )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44f2
 // Size: 0x53
 function beginevasivemaneuvers()
@@ -2104,7 +2106,7 @@ function beginevasivemaneuvers()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x454d
 // Size: 0x64
 function getcorrectheightescort( x, y, rand, minheight )
@@ -2123,7 +2125,7 @@ function getcorrectheightescort( x, y, rand, minheight )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45ba
 // Size: 0xfe
 function function_f60fc20e14bd9b6f( streakname )
@@ -2145,7 +2147,7 @@ function function_f60fc20e14bd9b6f( streakname )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46c0
 // Size: 0x34
 function function_635f6112bf87d114( streakname )
@@ -2157,7 +2159,7 @@ function function_635f6112bf87d114( streakname )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46fc
 // Size: 0x109
 function function_6561cd64026004d8( streakname )
@@ -2200,7 +2202,7 @@ function function_6561cd64026004d8( streakname )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x480d
 // Size: 0x39, Type: bool
 function function_cb514462a6399faa( data )
@@ -2211,7 +2213,7 @@ function function_cb514462a6399faa( data )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x484f
 // Size: 0x9c, Type: bool
 function function_400022dabdb64055( data )
@@ -2227,7 +2229,7 @@ function function_400022dabdb64055( data )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48f4
 // Size: 0x3b
 function function_7d38d0927292ed9a()
@@ -2237,7 +2239,7 @@ function function_7d38d0927292ed9a()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4937
 // Size: 0x3b
 function function_29d9f6678d3dd0cf()
@@ -2247,7 +2249,7 @@ function function_29d9f6678d3dd0cf()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x497a
 // Size: 0x3b
 function function_5d99407a305345bf()
@@ -2257,7 +2259,7 @@ function function_5d99407a305345bf()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49bd
 // Size: 0x4b, Type: bool
 function choppersupport_handledeathdamage( data )
@@ -2268,7 +2270,7 @@ function choppersupport_handledeathdamage( data )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a11
 // Size: 0x86
 function choppersipport_randommovement()
@@ -2285,7 +2287,7 @@ function choppersipport_randommovement()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a9f
 // Size: 0x1c7
 function getrandompoint( pos )
@@ -2325,7 +2327,7 @@ function getrandompoint( pos )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c6e
 // Size: 0x1c5
 function getnewpoint( pos, targ )
@@ -2384,7 +2386,7 @@ function getnewpoint( pos, targ )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e3c
 // Size: 0x7c
 function getpathstart( coord )
@@ -2399,7 +2401,7 @@ function getpathstart( coord )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ec1
 // Size: 0x5e
 function getpathend()
@@ -2413,7 +2415,7 @@ function getpathend()
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f28
 // Size: 0x79
 function choppersupport_findtargetstruct( structlinkname, var_6e1e1e75fc237eb1 )
@@ -2433,7 +2435,7 @@ function choppersupport_findtargetstruct( structlinkname, var_6e1e1e75fc237eb1 )
 }
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4faa
 // Size: 0x40
 function choppersupport_issmallpatrolmap()
@@ -2454,7 +2456,7 @@ function choppersupport_issmallpatrolmap()
 /#
 
     // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x4ff3
     // Size: 0x17e, Type: dev
     function function_9480f8b8d48d0f59( owner )

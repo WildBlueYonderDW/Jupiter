@@ -12,7 +12,7 @@
 #namespace mp_jup_home_01_alt_toon;
 
 // Namespace mp_jup_home_01_alt_toon / scripts\mp\maps\mp_jup_home_01_alt_toon\mp_jup_home_01_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x245
 // Size: 0xf2
 function main()
@@ -44,7 +44,7 @@ function main()
 }
 
 // Namespace mp_jup_home_01_alt_toon / scripts\mp\maps\mp_jup_home_01_alt_toon\mp_jup_home_01_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33f
 // Size: 0x9a
 function function_476e26432f5d3edd()
@@ -62,7 +62,7 @@ function function_476e26432f5d3edd()
 }
 
 // Namespace mp_jup_home_01_alt_toon / scripts\mp\maps\mp_jup_home_01_alt_toon\mp_jup_home_01_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e1
 // Size: 0x2b
 function function_77b5930f3eb27a50()
@@ -72,7 +72,7 @@ function function_77b5930f3eb27a50()
 }
 
 // Namespace mp_jup_home_01_alt_toon / scripts\mp\maps\mp_jup_home_01_alt_toon\mp_jup_home_01_alt_toon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x414
 // Size: 0x1b4
 function function_261c472c0f5a1633()

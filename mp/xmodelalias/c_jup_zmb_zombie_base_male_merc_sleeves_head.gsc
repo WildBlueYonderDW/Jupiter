@@ -1,7 +1,7 @@
 #namespace c_jup_zmb_zombie_base_male_merc_sleeves_head;
 
 // Namespace c_jup_zmb_zombie_base_male_merc_sleeves_head / xmodelalias\c_jup_zmb_zombie_base_male_merc_sleeves_head
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe3
 // Size: 0x20
 function main()

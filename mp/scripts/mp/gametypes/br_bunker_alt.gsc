@@ -13,16 +13,16 @@
 #namespace br_bunker_alt;
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dd
 // Size: 0x12
 function isbunkeraltenabled()
 {
-    return getdvarint( @"hash_79e97ec7bbd29877", 1 );
+    return getdvarint( @"scr_br_bunker_alt_enabled", 1 );
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f8
 // Size: 0xd6
 function initnonbunkerdoors()
@@ -40,7 +40,7 @@ function initnonbunkerdoors()
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d6
 // Size: 0x154
 function init()
@@ -63,7 +63,7 @@ function init()
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x532
 // Size: 0x12
 function initnonbr()
@@ -73,7 +73,7 @@ function initnonbr()
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54c
 // Size: 0x2c
 function initbrmechanics()
@@ -85,7 +85,7 @@ function initbrmechanics()
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x580
 // Size: 0x112
 function initpostmain()
@@ -97,7 +97,7 @@ function initpostmain()
     level thread scripts\mp\gametypes\br_bunker_utility::initbunkerdoor( level.br_bunker_alt.bunkervaults.doors[ 3 ], openable, ignorelightfx );
     level thread scripts\mp\gametypes\br_bunker_utility::initbunkerdoor( level.br_bunker_alt.bunkervaults.doors[ 10 ], openable, ignorelightfx );
     
-    if ( getdvarint( @"hash_310ccfc727d89074", 0 ) )
+    if ( getdvarint( @"scr_br_bunker_alt_keypad_enable", 0 ) )
     {
         forwardfacing = 1;
         altbunker = 1;
@@ -106,7 +106,7 @@ function initpostmain()
         level scripts\mp\gametypes\br_bunker_loot_vaults::initlootvaultkeypad( openable, 10, forwardfacing, altbunker );
     }
     
-    if ( getdvarint( @"hash_310ccfc727d89074", 0 ) )
+    if ( getdvarint( @"scr_br_bunker_alt_keypad_enable", 0 ) )
     {
         level initnonbunkerdoorkeypad();
     }
@@ -115,7 +115,7 @@ function initpostmain()
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x69a
 // Size: 0xc0
 function locknonbunkerdoors()
@@ -133,12 +133,12 @@ function locknonbunkerdoors()
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x762
 // Size: 0x1bc
 function initnonbunkerdoorkeypad()
 {
-    if ( !getdvarint( @"hash_310ccfc727d89074", 0 ) )
+    if ( !getdvarint( @"scr_br_bunker_alt_keypad_enable", 0 ) )
     {
         return;
     }
@@ -192,7 +192,7 @@ function initnonbunkerdoorkeypad()
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x926
 // Size: 0x28, Type: bool
 function isaltbunkerscriptable( keypadscriptableinstance )
@@ -208,7 +208,7 @@ function isaltbunkerscriptable( keypadscriptableinstance )
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x957
 // Size: 0x47
 function getaltbunkerkeypadindexforscriptable( keypadscriptableinstance )
@@ -230,7 +230,7 @@ function getaltbunkerkeypadindexforscriptable( keypadscriptableinstance )
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9a7
 // Size: 0x82
 function getbunkernamefromkeypadscriptableinstance( keypadscriptableinstance )
@@ -251,7 +251,7 @@ function getbunkernamefromkeypadscriptableinstance( keypadscriptableinstance )
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xa32
 // Size: 0x5a
 function keypadscriptableused_altbunker( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -268,7 +268,7 @@ function keypadscriptableused_altbunker( instance, part, state, player, var_a5b2
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xa94
 // Size: 0x172
 function _keypadscriptableused_bunkeralt( instance, part, state, player, var_a5b2c541413aa895 )
@@ -336,7 +336,7 @@ function _keypadscriptableused_bunkeralt( instance, part, state, player, var_a5b
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc0e
 // Size: 0x123
 function bunkeralt_playerinteractwithkeypadloop( var_5f8d7d12c2c0f0fd, instance )
@@ -356,7 +356,7 @@ function bunkeralt_playerinteractwithkeypadloop( var_5f8d7d12c2c0f0fd, instance 
         {
             if ( message == "submit_br_keypad" )
             {
-                if ( getdvarint( @"hash_88c0a775180e459c", 0 ) )
+                if ( getdvarint( @"scr_br_bunker_alt_refresh_idle_timer_on_try", 0 ) )
                 {
                     thread bunkeralt_playeridlewatch();
                 }
@@ -395,7 +395,7 @@ function bunkeralt_playerinteractwithkeypadloop( var_5f8d7d12c2c0f0fd, instance 
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd39
 // Size: 0x2e
 function bunkeralt_damagedeathdisconnectwatch()
@@ -407,7 +407,7 @@ function bunkeralt_damagedeathdisconnectwatch()
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd6f
 // Size: 0x31
 function bunkeralt_playeridlewatch()
@@ -420,7 +420,7 @@ function bunkeralt_playeridlewatch()
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda8
 // Size: 0x3a
 function waittoopenaltbunker( var_9ddc5b150db39159 )
@@ -432,7 +432,7 @@ function waittoopenaltbunker( var_9ddc5b150db39159 )
 }
 
 // Namespace br_bunker_alt / scripts\mp\gametypes\br_bunker_alt
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdea
 // Size: 0xec
 function openaltbunker( var_9ddc5b150db39159 )

@@ -6,7 +6,7 @@
 #namespace namespace_ba19537f431c9855;
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb7
 // Size: 0x51
 function create_animpack( anime )
@@ -20,7 +20,7 @@ function create_animpack( anime )
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x111
 // Size: 0x15
 function function_2d4c340dd3908b2d( fov )
@@ -29,7 +29,7 @@ function function_2d4c340dd3908b2d( fov )
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x12e
 // Size: 0x5d
 function function_b8f86028bcc64f84( fstop, focusdist, focusspeed, aperturespeed, var_c06551440b16249c )
@@ -42,7 +42,7 @@ function function_b8f86028bcc64f84( fstop, focusdist, focusspeed, aperturespeed,
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x193
 // Size: 0x4a
 function add_pack_modelanim( ent, animation )
@@ -52,7 +52,7 @@ function add_pack_modelanim( ent, animation )
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e5
 // Size: 0x21
 function function_a44bdab6357b7210( ent )
@@ -61,7 +61,7 @@ function function_a44bdab6357b7210( ent )
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20e
 // Size: 0x27
 function add_pack_startfunc( paramarray, func )
@@ -71,7 +71,7 @@ function add_pack_startfunc( paramarray, func )
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23d
 // Size: 0x27
 function function_decf1e23d78d0944( paramarray, func )
@@ -81,7 +81,7 @@ function function_decf1e23d78d0944( paramarray, func )
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26c
 // Size: 0x39
 function add_pack_fx( fxid, origin, angles )
@@ -92,7 +92,7 @@ function add_pack_fx( fxid, origin, angles )
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2ad
 // Size: 0xe6
 function function_d4561ab1ba4f5de9( ent, tag, animation, xcamasset )
@@ -189,7 +189,7 @@ function private function_347d56feb29d7f74()
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5ab
 // Size: 0x117
 function spawn_script_model( modelname, animname, extramodels )
@@ -221,7 +221,7 @@ function spawn_script_model( modelname, animname, extramodels )
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x6cb
 // Size: 0xf7
 function allplayers_setphysicaldof( fstop, focusdist, focusspeed, aperturespeed, var_c06551440b16249c )
@@ -267,7 +267,7 @@ function allplayers_setphysicaldof( fstop, focusdist, focusspeed, aperturespeed,
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ca
 // Size: 0x7a
 function allplayers_setfov( fov )
@@ -280,7 +280,7 @@ function allplayers_setfov( fov )
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84c
 // Size: 0x74
 function function_cf47ab3f9defe35b()
@@ -293,7 +293,7 @@ function function_cf47ab3f9defe35b()
 }
 
 // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c8
 // Size: 0x6f
 function allplayers_clearphysicaldof()
@@ -311,7 +311,7 @@ function allplayers_clearphysicaldof()
 /#
 
     // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x93f
     // Size: 0x42, Type: dev
     function function_2289677bd4ea8866( buildfunc )
@@ -332,7 +332,7 @@ function allplayers_clearphysicaldof()
     }
 
     // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x989
     // Size: 0x17e, Type: dev
     function function_b2a63c397eb5ccdf( player, buildfunc )
@@ -367,7 +367,7 @@ function allplayers_clearphysicaldof()
     }
 
     // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0xb0f
     // Size: 0x51, Type: dev
     function function_9384c9ed097bf7b9( player, buttonstring, keystring )
@@ -384,7 +384,7 @@ function allplayers_clearphysicaldof()
     }
 
     // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xb68
     // Size: 0x196, Type: dev
     function function_710d2b779609907d( player, animstruct )
@@ -446,7 +446,7 @@ function allplayers_clearphysicaldof()
     }
 
     // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xd06
     // Size: 0x1c4, Type: dev
     function function_b51365f787d44355( player, animstruct )
@@ -517,7 +517,7 @@ function allplayers_clearphysicaldof()
     }
 
     // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xed2
     // Size: 0x36, Type: dev
     function waitandpause( timesec )
@@ -536,7 +536,7 @@ function allplayers_clearphysicaldof()
     }
 
     // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xf10
     // Size: 0x349, Type: dev
     function function_e00bf2a7852cbc6( player, animstruct )
@@ -608,7 +608,7 @@ function allplayers_clearphysicaldof()
     }
 
     // Namespace namespace_ba19537f431c9855 / namespace_479b5e8883f7ad2
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1261
     // Size: 0x188, Type: dev
     function endanimsequence( player, animstruct )

@@ -4,7 +4,7 @@
 #namespace mp_jup_skydiving_audio;
 
 // Namespace mp_jup_skydiving_audio / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ff
 // Size: 0x36
 function main()
@@ -17,7 +17,7 @@ function main()
 }
 
 // Namespace mp_jup_skydiving_audio / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73d
 // Size: 0x9e
 function function_b05e86bdd689e483()
@@ -33,7 +33,8 @@ function function_b05e86bdd689e483()
     {
         if ( var_dac1735abf86e34c.size > 0 )
         {
-            for (i = 0; i <= var_289a80160c539d65; i++) {
+            for ( i = 0; i <= var_289a80160c539d65 ; i++ )
+            {
                 if ( isdefined( var_dac1735abf86e34c[ i ] ) )
                 {
                     if ( isglassdestroyed( var_dac1735abf86e34c[ i ] ) )
@@ -54,7 +55,7 @@ function function_b05e86bdd689e483()
 }
 
 // Namespace mp_jup_skydiving_audio / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e3
 // Size: 0x8f
 function function_670a2192538db37f()
@@ -71,7 +72,7 @@ function function_670a2192538db37f()
 }
 
 // Namespace mp_jup_skydiving_audio / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87b
 // Size: 0x490
 function function_88af6b25b05851cd()
@@ -152,7 +153,7 @@ function function_88af6b25b05851cd()
 }
 
 // Namespace mp_jup_skydiving_audio / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd13
 // Size: 0x1e4
 function function_9f5546f5af9c1016()
@@ -205,7 +206,7 @@ function function_9f5546f5af9c1016()
 }
 
 // Namespace mp_jup_skydiving_audio / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf00
 // Size: 0xbb
 function function_6bec8fd8725f7e44()
@@ -236,7 +237,7 @@ function function_6bec8fd8725f7e44()
 }
 
 // Namespace mp_jup_skydiving_audio / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfc3
 // Size: 0x84
 function function_73b02e72ac12c5f0()

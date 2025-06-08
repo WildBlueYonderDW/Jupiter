@@ -15,7 +15,7 @@ function private autoexec init()
 }
 
 // Namespace namespace_b21ca9bc612fd35e / namespace_9c3c2f13c73009de
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11f
 // Size: 0x4f
 function function_4b13a4ad54f972d()
@@ -31,7 +31,7 @@ function function_4b13a4ad54f972d()
 }
 
 // Namespace namespace_b21ca9bc612fd35e / namespace_9c3c2f13c73009de
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x176
 // Size: 0x2c
 function function_99059a1ba0177ef5()
@@ -45,7 +45,7 @@ function function_99059a1ba0177ef5()
 }
 
 // Namespace namespace_b21ca9bc612fd35e / namespace_9c3c2f13c73009de
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1aa
 // Size: 0x29
 function function_11808c06b138b030()
@@ -59,7 +59,7 @@ function function_11808c06b138b030()
 }
 
 // Namespace namespace_b21ca9bc612fd35e / namespace_9c3c2f13c73009de
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1dc
 // Size: 0x5d6
 function function_6872809890fda236( type, instances, spawnfunction, spawnedinstances )
@@ -82,7 +82,8 @@ function function_6872809890fda236( type, instances, spawnfunction, spawnedinsta
     {
         if ( isdefined( spawnfunction ) )
         {
-            for (instanceindex = 0; instanceindex < instances.size; instanceindex++) {
+            for ( instanceindex = 0; instanceindex < instances.size ; instanceindex++ )
+            {
                 if ( instanceindex % var_cf43c0073346699e == 0 )
                 {
                     waitframe();
@@ -111,7 +112,8 @@ function function_6872809890fda236( type, instances, spawnfunction, spawnedinsta
     maxregions = function_db34ea8a158fdb1c( @"hash_8d38ace4e02c6254", type, 1000 );
     newregions = [];
     
-    for (regionindex = 0; regionindex < regions.size; regionindex++) {
+    for ( regionindex = 0; regionindex < regions.size ; regionindex++ )
+    {
         regiondifficulty = namespace_f721fc7d0d2d0f47::function_cf8b9cfdad89cbec( regions[ regionindex ] );
         
         if ( isdefined( var_196ff61200360658[ regiondifficulty ] ) && var_196ff61200360658[ regiondifficulty ] >= var_9dd27621c3b3f414[ regiondifficulty ] )
@@ -173,7 +175,8 @@ function function_6872809890fda236( type, instances, spawnfunction, spawnedinsta
         }
     }
     
-    for (instanceindex = 0; instanceindex < instances.size; instanceindex++) {
+    for ( instanceindex = 0; instanceindex < instances.size ; instanceindex++ )
+    {
         if ( instanceindex % var_cf43c0073346699e == 0 )
         {
             function_7f3923ed3d66f8ad();
@@ -209,7 +212,8 @@ function function_6872809890fda236( type, instances, spawnfunction, spawnedinsta
         
         var_ba32601f625413a7 = 0;
         
-        for (spawnedindex = 0; spawnedindex < spawnedinstances.size; spawnedindex++) {
+        for ( spawnedindex = 0; spawnedindex < spawnedinstances.size ; spawnedindex++ )
+        {
             if ( distance2dsquared( instance.origin, spawnedinstances[ spawnedindex ].origin ) < var_cc12d997dbc0b834 )
             {
                 var_ba32601f625413a7 = 1;

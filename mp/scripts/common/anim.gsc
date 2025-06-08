@@ -8,7 +8,7 @@
 #namespace animation;
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x764
 // Size: 0x7e
 function anim_first_frame( guys, anime, tag )
@@ -22,7 +22,7 @@ function anim_first_frame( guys, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x7ea
 // Size: 0x61
 function anim_generic_first_frame( guy, anime, tag )
@@ -34,7 +34,7 @@ function anim_generic_first_frame( guy, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x853
 // Size: 0x3d
 function anim_generic( guy, anime, tag )
@@ -45,7 +45,7 @@ function anim_generic( guy, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x898
 // Size: 0x41
 function anim_generic_run( guy, anime, tag )
@@ -56,7 +56,7 @@ function anim_generic_run( guy, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8e1
 // Size: 0x40
 function anim_single_solo_run( guy, anime, tag )
@@ -67,7 +67,7 @@ function anim_single_solo_run( guy, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x929
 // Size: 0x37
 function anim_first_frame_solo( guy, anime, tag )
@@ -78,7 +78,7 @@ function anim_first_frame_solo( guy, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x968
 // Size: 0x1fa
 function anim_first_frame_on_guy( guy, anime, org, angles, animname_override )
@@ -143,7 +143,7 @@ function anim_first_frame_on_guy( guy, anime, org, angles, animname_override )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xb6a
 // Size: 0xfc
 function set_start_pos( anime, org, angles, animname_override, anim_array, animation )
@@ -182,7 +182,7 @@ function set_start_pos( anime, org, angles, animname_override, anim_array, anima
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc6e
 // Size: 0x60
 function anim_start_pos( guyarray, anime, tag )
@@ -194,7 +194,7 @@ function anim_start_pos( guyarray, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcd6
 // Size: 0x34
 function anim_start_pos_solo( guy, anime, tag )
@@ -204,7 +204,7 @@ function anim_start_pos_solo( guy, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd12
 // Size: 0xe2
 function anim_last_frame_solo( guy, anime, tag )
@@ -223,7 +223,7 @@ function anim_last_frame_solo( guy, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xdfc
 // Size: 0x55
 function anim_single_solo( guy, anime, tag, var_9e8a16d47a03007a, animname_override )
@@ -240,7 +240,7 @@ function anim_single_solo( guy, anime, tag, var_9e8a16d47a03007a, animname_overr
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xe59
 // Size: 0x7a3
 function anim_single_internal( guys, anime, tag, var_9e8a16d47a03007a, animname_override )
@@ -479,7 +479,7 @@ function anim_single_internal( guys, anime, tag, var_9e8a16d47a03007a, animname_
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1604
 // Size: 0x5f
 function function_4a2dd4b9088bd637( animname, anime )
@@ -498,7 +498,7 @@ function function_4a2dd4b9088bd637( animname, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x166c
 // Size: 0x3f
 function anim_single( guys, anime, tag, var_9e8a16d47a03007a, animname_override )
@@ -512,7 +512,7 @@ function anim_single( guys, anime, tag, var_9e8a16d47a03007a, animname_override 
 }
 
 // Namespace animation / scripts\common\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x16b3
 // Size: 0x5f
 function anim_loop_solo( guy, anime, ender, tag, var_656e3d548572faf6, animname_override )
@@ -524,7 +524,7 @@ function anim_loop_solo( guy, anime, ender, tag, var_656e3d548572faf6, animname_
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x171a
 // Size: 0x79
 function anim_loop_solo_with_nags( guy, anime, ender, tag )
@@ -537,7 +537,7 @@ function anim_loop_solo_with_nags( guy, anime, ender, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x179b
 // Size: 0x67
 function anim_generic_loop( guy, anime, ender, tag )
@@ -551,7 +551,7 @@ function anim_generic_loop( guy, anime, ender, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x180a
 // Size: 0xc7
 function anim_loop( guys, anime, ender, tag, var_656e3d548572faf6, animname_override )
@@ -572,7 +572,7 @@ function anim_loop( guys, anime, ender, tag, var_656e3d548572faf6, animname_over
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x18d9
 // Size: 0x40
 function anim_loop_packet_solo( var_6fab270f71d41318, anime, ender, animname_override )
@@ -583,7 +583,7 @@ function anim_loop_packet_solo( var_6fab270f71d41318, anime, ender, animname_ove
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1921
 // Size: 0x98
 function pick_nag_anim( datastruct )
@@ -610,7 +610,7 @@ function pick_nag_anim( datastruct )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x19c2
 // Size: 0x8a0
 function anim_loop_packet( var_3d308e5cd595225d, anime, ender, animname_override )
@@ -721,7 +721,8 @@ function anim_loop_packet( var_3d308e5cd595225d, anime, ender, animname_override
         {
             anime = base_anime;
             
-            for (idleanim = anim_weight( base_animname, anime ); idleanim == lastidleanim && idleanim != 0; idleanim = anim_weight( base_animname, anime )) {
+            for ( idleanim = anim_weight( base_animname, anime ); idleanim == lastidleanim && idleanim != 0 ; idleanim = anim_weight( base_animname, anime ) )
+            {
             }
         }
         else if ( !isagent( baseguy ) )
@@ -891,7 +892,7 @@ function anim_loop_packet( var_3d308e5cd595225d, anime, ender, animname_override
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x226a
 // Size: 0x34, Type: bool
 function waittill_animend( guy, animstring, hasnags )
@@ -906,7 +907,7 @@ function waittill_animend( guy, animstring, hasnags )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22a7
 // Size: 0xa7
 function nag_timer( timer, guy )
@@ -932,7 +933,7 @@ function nag_timer( timer, guy )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2356
 // Size: 0x3b
 function anim_set_time_solo( guy, anime, time )
@@ -943,7 +944,7 @@ function anim_set_time_solo( guy, anime, time )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2399
 // Size: 0x2a
 function anim_set_time( guys, anime, time )
@@ -952,7 +953,7 @@ function anim_set_time( guys, anime, time )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23cb
 // Size: 0x3d
 function anim_self_set_time( anime, time )
@@ -968,7 +969,7 @@ function anim_self_set_time( anime, time )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2410
 // Size: 0x54
 function last_anim_time_check()
@@ -991,7 +992,7 @@ function last_anim_time_check()
 }
 
 // Namespace animation / scripts\common\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x246c
 // Size: 0x136
 function anim_moveto( guys, anime, tag, time, acceleration_time, var_efe93c754f5124e6 )
@@ -1017,7 +1018,7 @@ function anim_moveto( guys, anime, tag, time, acceleration_time, var_efe93c754f5
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25aa
 // Size: 0x3b
 function anim_teleport_solo( guy, anime, tag )
@@ -1028,7 +1029,7 @@ function anim_teleport_solo( guy, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25ed
 // Size: 0xfd
 function anim_teleport( guys, anime, tag )
@@ -1046,7 +1047,7 @@ function anim_teleport( guys, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26f2
 // Size: 0xac
 function anim_generic_teleport( guy, anime, tag )
@@ -1060,7 +1061,7 @@ function anim_generic_teleport( guy, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x27a6
 // Size: 0x29
 function anim_spawn_generic_model( model, anime, tag )
@@ -1069,7 +1070,7 @@ function anim_spawn_generic_model( model, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x27d8
 // Size: 0xc5
 function anim_spawn_model( model, animname, anime, tag )
@@ -1086,7 +1087,7 @@ function anim_spawn_model( model, animname, anime, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x28a6
 // Size: 0x1c
 function anim_spawn_tag_model( model, tag )
@@ -1095,7 +1096,7 @@ function anim_spawn_tag_model( model, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x28ca
 // Size: 0x67
 function anim_link_tag_model( model, tag )
@@ -1108,7 +1109,7 @@ function anim_link_tag_model( model, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x293a
 // Size: 0xea
 function removenotetrack( animname, notetrack, anime, notetype, ent )
@@ -1123,7 +1124,8 @@ function removenotetrack( animname, notetrack, anime, notetype, ent )
         return;
     }
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         if ( isdefined( array[ i ][ notetype ] ) )
         {
             if ( !isdefined( ent ) || array[ i ][ notetype ] == ent )
@@ -1152,7 +1154,7 @@ function removenotetrack( animname, notetrack, anime, notetype, ent )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a2c
 // Size: 0x9f
 function addnotetrack_flag( animname, notetrack, theflag, anime )
@@ -1174,7 +1176,7 @@ function addnotetrack_flag( animname, notetrack, theflag, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2ad3
 // Size: 0x96
 function addnotetrack_flag_clear( animname, notetrack, theflag, anime )
@@ -1193,7 +1195,7 @@ function addnotetrack_flag_clear( animname, notetrack, theflag, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2b71
 // Size: 0x75
 function addnotetrack_dialogue( animname, notetrack, anime, soundalias )
@@ -1206,7 +1208,7 @@ function addnotetrack_dialogue( animname, notetrack, anime, soundalias )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2bee
 // Size: 0x3d
 function add_notetrack_and_get_index( animname, notetrack, anime )
@@ -1217,7 +1219,7 @@ function add_notetrack_and_get_index( animname, notetrack, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c34
 // Size: 0x9a
 function add_notetrack_array( animname, notetrack, anime )
@@ -1246,7 +1248,7 @@ function add_notetrack_array( animname, notetrack, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2cd6
 // Size: 0xc7
 function addnotetrack_sound( animname, notetrack, anime, soundalias, sound_stays_death, tag )
@@ -1269,7 +1271,7 @@ function addnotetrack_sound( animname, notetrack, anime, soundalias, sound_stays
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2da5
 // Size: 0x56
 function note_track_start_sound( notetrack, soundalias, sound_stays_death, tag )
@@ -1279,7 +1281,7 @@ function note_track_start_sound( notetrack, soundalias, sound_stays_death, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2e03
 // Size: 0x75
 function addnotetrack_playersound( animname, notetrack, anime, soundalias )
@@ -1292,7 +1294,7 @@ function addnotetrack_playersound( animname, notetrack, anime, soundalias )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e80
 // Size: 0x17
 function get_generic_anime( anime )
@@ -1306,7 +1308,7 @@ function get_generic_anime( anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ea0
 // Size: 0x46
 function addonstart_animsound( animname, anime, soundalias )
@@ -1320,7 +1322,7 @@ function addonstart_animsound( animname, anime, soundalias )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2eee
 // Size: 0x75
 function addnotetrack_playerdialogue( animname, notetrack, anime, soundalias )
@@ -1333,7 +1335,7 @@ function addnotetrack_playerdialogue( animname, notetrack, anime, soundalias )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2f6b
 // Size: 0x7a
 function addnotetrack_animsound( animname, anime, notetrack, soundalias )
@@ -1348,7 +1350,7 @@ function addnotetrack_animsound( animname, anime, notetrack, soundalias )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2fed
 // Size: 0x83
 function addnotetrack_attach( animname, notetrack, model, tag, anime )
@@ -1363,7 +1365,7 @@ function addnotetrack_attach( animname, notetrack, model, tag, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3078
 // Size: 0x83
 function addnotetrack_detach( animname, notetrack, model, tag, anime )
@@ -1378,7 +1380,7 @@ function addnotetrack_detach( animname, notetrack, model, tag, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3103
 // Size: 0x8c
 function addnotetrack_detach_gun( animname, notetrack, anime, suspend )
@@ -1399,7 +1401,7 @@ function addnotetrack_detach_gun( animname, notetrack, anime, suspend )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3197
 // Size: 0x85
 function addnotetrack_attach_gun( animname, notetrack, anime, weapplacement )
@@ -1422,7 +1424,7 @@ function addnotetrack_attach_gun( animname, notetrack, anime, weapplacement )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3224
 // Size: 0x70
 function addnotetrack_customfunction( animname, notetrack, function, anime )
@@ -1436,7 +1438,7 @@ function addnotetrack_customfunction( animname, notetrack, function, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x329c
 // Size: 0xa4
 function addnotetrack_startfxontag( animname, notetrack, anime, effect_name, tagname, morethanthreehack )
@@ -1458,7 +1460,7 @@ function addnotetrack_startfxontag( animname, notetrack, anime, effect_name, tag
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3348
 // Size: 0x8b
 function addnotetrack_stopfxontag( animname, notetrack, anime, effect_name, tagname )
@@ -1474,7 +1476,7 @@ function addnotetrack_stopfxontag( animname, notetrack, anime, effect_name, tagn
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x33db
 // Size: 0x83
 function addnotetrack_mayhemstart( animname, notetrack, animation, anime, usehatmodel )
@@ -1489,7 +1491,7 @@ function addnotetrack_mayhemstart( animname, notetrack, animation, anime, usehat
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3466
 // Size: 0x83
 function addnotetrack_mayhemend( animname, notetrack, animation, anime, usehatmodel )
@@ -1504,7 +1506,7 @@ function addnotetrack_mayhemend( animname, notetrack, animation, anime, usehatmo
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x34f1
 // Size: 0x56
 function note_track_swap_to_efx( notetrack, effect_path, tagname )
@@ -1515,7 +1517,7 @@ function note_track_swap_to_efx( notetrack, effect_path, tagname )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x354f
 // Size: 0x56
 function note_track_stop_efx_on_tag( notetrack, effect_path, tagname )
@@ -1526,7 +1528,7 @@ function note_track_stop_efx_on_tag( notetrack, effect_path, tagname )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x35ad
 // Size: 0x8b
 function addnotetrack_swapparttoefx( animname, notetrack, anime, effect_name, tagname )
@@ -1542,7 +1544,7 @@ function addnotetrack_swapparttoefx( animname, notetrack, anime, effect_name, ta
 }
 
 // Namespace animation / scripts\common\anim
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3640
 // Size: 0xcc
 function note_track_trace_to_efx( notetrack, canceltrack, tagname, effect_path, var_56aef90205769a90, delete_depth )
@@ -1566,7 +1568,7 @@ function note_track_trace_to_efx( notetrack, canceltrack, tagname, effect_path, 
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3714
 // Size: 0xa1
 function note_track_start_fx_on_tag( notetrack, tagname, effect_path )
@@ -1584,7 +1586,7 @@ function note_track_start_fx_on_tag( notetrack, tagname, effect_path )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37bd
 // Size: 0x45
 function get_datascene()
@@ -1596,7 +1598,7 @@ function get_datascene()
 }
 
 // Namespace animation / scripts\common\anim
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x380b
 // Size: 0x105
 function addnotetrack_tracepartforefx( animname, notetrack, canceltrack, anime, tagname, effect_name, var_6c3cb0b533910c44, delete_depth )
@@ -1624,7 +1626,7 @@ function addnotetrack_tracepartforefx( animname, notetrack, canceltrack, anime, 
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3918
 // Size: 0x70
 function addnotetrack_notify( animname, notetrack, thenotify, anime )
@@ -1638,7 +1640,7 @@ function addnotetrack_notify( animname, notetrack, thenotify, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3990
 // Size: 0x28
 function setanimtree()
@@ -1648,7 +1650,7 @@ function setanimtree()
 }
 
 // Namespace animation / scripts\common\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39c1
 // Size: 0x1b7
 function initanim()
@@ -1745,7 +1747,7 @@ function initanim()
 }
 
 // Namespace animation / scripts\common\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b80
 // Size: 0xa7
 function precache_script_models_thread()
@@ -1759,10 +1761,12 @@ function precache_script_models_thread()
     
     models = getarraykeys( level.scr_model );
     
-    for (i = 0; i < models.size; i++) {
+    for ( i = 0; i < models.size ; i++ )
+    {
         if ( isarray( level.scr_model[ models[ i ] ] ) )
         {
-            for (modelindex = 0; modelindex < level.scr_model[ models[ i ] ].size; modelindex++) {
+            for ( modelindex = 0; modelindex < level.scr_model[ models[ i ] ].size ; modelindex++ )
+            {
                 precachemodel( level.scr_model[ models[ i ] ][ modelindex ] );
             }
             
@@ -1774,7 +1778,7 @@ function precache_script_models_thread()
 }
 
 // Namespace animation / scripts\common\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c2f
 // Size: 0xd6
 function precache_weapon_models_thread()
@@ -1788,7 +1792,8 @@ function precache_weapon_models_thread()
     
     weapons = getarraykeys( level.scr_weapon );
     
-    for (i = 0; i < weapons.size; i++) {
+    for ( i = 0; i < weapons.size ; i++ )
+    {
         assertex( isarray( level.scr_weapon[ weapons[ i ] ] ), weapons[ i ] + "<dev string:x3a7>" );
         attachments = [];
         
@@ -1803,7 +1808,7 @@ function precache_weapon_models_thread()
 }
 
 // Namespace animation / scripts\common\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d0d
 // Size: 0x7c
 function init_animsounds()
@@ -1812,26 +1817,29 @@ function init_animsounds()
     level.animsound_aliases = [];
     animnames = getarraykeys( level.scr_notetrack );
     
-    for (i = 0; i < animnames.size; i++) {
+    for ( i = 0; i < animnames.size ; i++ )
+    {
         init_notetracks_for_animname( animnames[ i ] );
     }
     
     animnames = getarraykeys( level.scr_animsound );
     
-    for (i = 0; i < animnames.size; i++) {
+    for ( i = 0; i < animnames.size ; i++ )
+    {
         init_animsounds_for_animname( animnames[ i ] );
     }
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d91
 // Size: 0x9e
 function init_animsounds_for_animname( animname )
 {
     animes = getarraykeys( level.scr_animsound[ animname ] );
     
-    for (i = 0; i < animes.size; i++) {
+    for ( i = 0; i < animes.size ; i++ )
+    {
         anime = animes[ i ];
         soundalias = level.scr_animsound[ animname ][ anime ];
         level.animsound_aliases[ animname ][ anime ][ "#" + anime ][ "soundalias" ] = soundalias;
@@ -1840,7 +1848,7 @@ function init_animsounds_for_animname( animname )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e37
 // Size: 0x138
 function init_notetracks_for_animname( animname )
@@ -1870,7 +1878,7 @@ function init_notetracks_for_animname( animname )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3f77
 // Size: 0xaf
 function endonremoveanimactive( endonstring, var_3d308e5cd595225d )
@@ -1894,7 +1902,7 @@ function endonremoveanimactive( endonstring, var_3d308e5cd595225d )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x402e
 // Size: 0x41
 function anim_deathnotify( guy, anime )
@@ -1911,7 +1919,7 @@ function anim_deathnotify( guy, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4077
 // Size: 0x36
 function anim_facialendnotify( guy, anime, scriptedfaceanim )
@@ -1923,7 +1931,7 @@ function anim_facialendnotify( guy, anime, scriptedfaceanim )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x40b5
 // Size: 0x22
 function anim_dialogueendnotify( guy, anime )
@@ -1934,7 +1942,7 @@ function anim_dialogueendnotify( guy, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x40df
 // Size: 0x6f
 function anim_animationendnotify( guy, anime, var_2afd32f7cad8af86, var_9e8a16d47a03007a )
@@ -1957,7 +1965,7 @@ function anim_animationendnotify( guy, anime, var_2afd32f7cad8af86, var_9e8a16d4
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4156
 // Size: 0xb6
 function anim_weight( animname, anime )
@@ -1976,7 +1984,7 @@ function anim_weight( animname, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4215
 // Size: 0xfe
 function get_weighted_anim( animname, anime, total_anims )
@@ -1988,7 +1996,8 @@ function get_weighted_anim( animname, anime, total_anims )
         weights = 0;
         anim_weight = 0;
         
-        for (i = 0; i < total_anims; i++) {
+        for ( i = 0; i < total_anims ; i++ )
+        {
             if ( isdefined( level.scr_anim[ animname ][ anime + "weight" ] ) )
             {
                 if ( isdefined( level.scr_anim[ animname ][ anime + "weight" ][ i ] ) )
@@ -2004,7 +2013,8 @@ function get_weighted_anim( animname, anime, total_anims )
             anim_play = randomfloat( anim_weight );
             anim_weight = 0;
             
-            for (i = 0; i < total_anims; i++) {
+            for ( i = 0; i < total_anims ; i++ )
+            {
                 anim_weight += level.scr_anim[ animname ][ anime + "weight" ][ i ];
                 
                 if ( anim_play < anim_weight )
@@ -2020,7 +2030,7 @@ function get_weighted_anim( animname, anime, total_anims )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x431c
 // Size: 0x68
 function play_addtive_head_anim( guy, animation )
@@ -2033,7 +2043,7 @@ function play_addtive_head_anim( guy, animation )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x438c
 // Size: 0x85
 function get_anim_position( tag )
@@ -2064,7 +2074,7 @@ function get_anim_position( tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x441a
 // Size: 0x71
 function function_d2e8597ff01310ed( xanim, tag, time, baseorigin, baseangles )
@@ -2081,7 +2091,7 @@ function function_d2e8597ff01310ed( xanim, tag, time, baseorigin, baseangles )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4494
 // Size: 0x33
 function anim_at_self( entity, tag )
@@ -2093,7 +2103,7 @@ function anim_at_self( entity, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x44d0
 // Size: 0x3c
 function anim_at_entity( entity, tag )
@@ -2106,7 +2116,7 @@ function anim_at_entity( entity, tag )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4515
 // Size: 0x337
 function assert_existance_of_anim( anime, animname, animation )
@@ -2230,7 +2240,7 @@ function assert_existance_of_anim( anime, animname, animation )
 /#
 
     // Namespace animation / scripts\common\anim
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x4854
     // Size: 0xe5, Type: dev
     function printloops( guy, anime )
@@ -2253,7 +2263,8 @@ function assert_existance_of_anim( anime, animname, animation )
         {
             println( "<dev string:x5fe>" + guy.animname + "<dev string:x612>" + guy.loops + "<dev string:x61b>" );
             
-            for (i = 0; i < guy.loopanims.size; i++) {
+            for ( i = 0; i < guy.loopanims.size ; i++ )
+            {
                 println( "<dev string:x63b>" + guy.loopanims[ i ] );
             }
             
@@ -2262,7 +2273,7 @@ function assert_existance_of_anim( anime, animname, animation )
     }
 
     // Namespace animation / scripts\common\anim
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x4941
     // Size: 0x53, Type: dev
     function function_1d3c30084bbec96a( guy, ender, anime )
@@ -2276,7 +2287,7 @@ function assert_existance_of_anim( anime, animname, animation )
 #/
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x499c
 // Size: 0x94
 function anim_single_failsafeonguy( owner, anime )
@@ -2300,7 +2311,7 @@ function anim_single_failsafeonguy( owner, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a38
 // Size: 0x62
 function anim_single_failsafe( guys, anime )
@@ -2312,7 +2323,7 @@ function anim_single_failsafe( guys, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4aa2
 // Size: 0x4b
 function anim_get_goal_time( animname, anime )
@@ -2326,7 +2337,7 @@ function anim_get_goal_time( animname, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4af5
 // Size: 0x1b
 function function_89b3eabd606fcda3( animation )
@@ -2340,7 +2351,7 @@ function function_89b3eabd606fcda3( animation )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b19
 // Size: 0x36, Type: bool
 function function_f1e7ee8ddeece062( anime )
@@ -2354,7 +2365,7 @@ function function_f1e7ee8ddeece062( anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b58
 // Size: 0xbc
 function function_1eba925251530689( guys, anime )
@@ -2375,7 +2386,7 @@ function function_1eba925251530689( guys, anime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4c1d
 // Size: 0x3e
 function function_56bd620e57a834af( anime, animname, animation )
@@ -2386,7 +2397,7 @@ function function_56bd620e57a834af( anime, animname, animation )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4c64
 // Size: 0xd8
 function function_c099f6fd9c19f5a6( anime, org, angles, animname )
@@ -2425,7 +2436,7 @@ function function_c099f6fd9c19f5a6( anime, org, angles, animname )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4d44
 // Size: 0x21f
 function function_96b3d74019cd30a( anime, org, angles, animname )
@@ -2482,7 +2493,7 @@ function function_96b3d74019cd30a( anime, org, angles, animname )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4f6c
 // Size: 0x53
 function function_1ed6444c29da9045( anime, org, angles, animname )
@@ -2494,7 +2505,7 @@ function function_1ed6444c29da9045( anime, org, angles, animname )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4fc8
 // Size: 0x30, Type: bool
 function function_84a46f10a88351cd( animname )
@@ -2508,7 +2519,7 @@ function function_84a46f10a88351cd( animname )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5001
 // Size: 0x1d
 function function_9c6a9b923786f602( animname )
@@ -2517,7 +2528,7 @@ function function_9c6a9b923786f602( animname )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5027
 // Size: 0x27
 function function_2c88f6e05af61090( animation )
@@ -2531,7 +2542,7 @@ function function_2c88f6e05af61090( animation )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5057
 // Size: 0x27
 function function_f92de130e8613662( animation )
@@ -2545,7 +2556,7 @@ function function_f92de130e8613662( animation )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5087
 // Size: 0x47
 function function_70b77e26541e095( animation )
@@ -2565,7 +2576,7 @@ function function_70b77e26541e095( animation )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50d7
 // Size: 0xef
 function function_48af09f152896047( animation )
@@ -2610,7 +2621,7 @@ function function_48af09f152896047( animation )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x51cf
 // Size: 0x201
 function function_d0fafbacba98a40f( playerpos, animstartpos, blendspeed, blendintotime, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous )
@@ -2700,7 +2711,7 @@ function function_d0fafbacba98a40f( playerpos, animstartpos, blendspeed, blendin
 }
 
 // Namespace animation / scripts\common\anim
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x53d9
 // Size: 0x222
 function function_309bb9de5db13227( playerpos, animstartpos, blendspeed, blendintotime, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous )
@@ -2798,7 +2809,7 @@ function function_309bb9de5db13227( playerpos, animstartpos, blendspeed, blendin
 }
 
 // Namespace animation / scripts\common\anim
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5604
 // Size: 0x78
 function function_dba8ec1939d3f1a( anime, animname, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous )
@@ -2816,7 +2827,7 @@ function function_dba8ec1939d3f1a( anime, animname, var_ec165a067af34f8f, var_88
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5684
 // Size: 0x1ad
 function function_1d134c1e220fb6d7( animation, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous )
@@ -2852,7 +2863,7 @@ function function_1d134c1e220fb6d7( animation, var_ec165a067af34f8f, var_8831fc7
 }
 
 // Namespace animation / scripts\common\anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5839
 // Size: 0x38
 function function_5cffe82f5e70231b( bool )
@@ -2869,7 +2880,7 @@ function function_5cffe82f5e70231b( bool )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5879
 // Size: 0x13, Type: bool
 function function_6bc36c81fc28a22e()
@@ -2883,7 +2894,7 @@ function function_6bc36c81fc28a22e()
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5895
 // Size: 0x9b
 function function_1cb661b457551a3( bool, velocityent, blendtime )
@@ -2914,7 +2925,7 @@ function function_1cb661b457551a3( bool, velocityent, blendtime )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5938
 // Size: 0x2f, Type: bool
 function function_e42b762e098c8f9e()
@@ -2928,7 +2939,7 @@ function function_e42b762e098c8f9e()
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5970
 // Size: 0xd2
 function function_52351c3338da63f4( animcategory, animindex )
@@ -2955,7 +2966,7 @@ function function_52351c3338da63f4( animcategory, animindex )
 /#
 
     // Namespace animation / scripts\common\anim
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5a4b
     // Size: 0x160, Type: dev
     function function_65e9f4b64110bb5c()
@@ -3001,7 +3012,7 @@ function function_52351c3338da63f4( animcategory, animindex )
 #/
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5bb3
 // Size: 0x2f
 function function_dca1a3a29d2ee467( guys_with_anims, var_4bc185af207d5706 )
@@ -3011,7 +3022,7 @@ function function_dca1a3a29d2ee467( guys_with_anims, var_4bc185af207d5706 )
 }
 
 // Namespace animation / scripts\common\anim
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x5bea
 // Size: 0x170
 function anim_reach_with_funcs( guys, anime, tag, animname_override, start_func, end_func, arrival_type )
@@ -3054,7 +3065,7 @@ function anim_reach_with_funcs( guys, anime, tag, animname_override, start_func,
 }
 
 // Namespace animation / scripts\common\anim
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5d62
 // Size: 0x326
 function function_9dbe1a78b03782f2( guys_with_anims, start_func, end_func, arrival_type )
@@ -3211,7 +3222,7 @@ function private begin_anim_reach( ent, startorg, startangles, start_func, end_f
 }
 
 // Namespace animation / scripts\common\anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x61fc
 // Size: 0x5e7
 function anim_reach_speed_control( guys_with_anims, var_4bc185af207d5706, var_ad86b98c8c9def3d )
@@ -3374,7 +3385,7 @@ function anim_reach_speed_control( guys_with_anims, var_4bc185af207d5706, var_ad
 }
 
 // Namespace animation / scripts\common\anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x67eb
 // Size: 0x137
 function anim_reach_speed_control_avg( var_ad86b98c8c9def3d, var_4bc185af207d5706 )

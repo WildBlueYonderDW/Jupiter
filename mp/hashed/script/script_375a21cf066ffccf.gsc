@@ -17,7 +17,7 @@ function private autoexec main()
 }
 
 // Namespace namespace_dfad913738a5e768 / namespace_55978108062c607f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bd
 // Size: 0x20
 function init()
@@ -29,7 +29,7 @@ function init()
 }
 
 // Namespace namespace_dfad913738a5e768 / namespace_55978108062c607f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e5
 // Size: 0x36
 function function_f3fde6cdcc37ae72()
@@ -41,7 +41,7 @@ function function_f3fde6cdcc37ae72()
 }
 
 // Namespace namespace_dfad913738a5e768 / namespace_55978108062c607f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x223
 // Size: 0x28
 function function_93a8cc186ef89237()

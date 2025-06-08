@@ -16,7 +16,7 @@
 #namespace mp_jup_estate;
 
 // Namespace mp_jup_estate / scripts\mp\maps\mp_jup_estate\mp_jup_estate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d5
 // Size: 0xb5
 function main()
@@ -38,7 +38,7 @@ function main()
 }
 
 // Namespace mp_jup_estate / scripts\mp\maps\mp_jup_estate\mp_jup_estate
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x392
 // Size: 0x209
 function function_8c33633d77d8244e()

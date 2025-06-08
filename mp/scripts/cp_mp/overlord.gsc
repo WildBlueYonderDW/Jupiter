@@ -9,7 +9,7 @@
 #namespace overlord;
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x288
 // Size: 0xc3
 function init()
@@ -38,7 +38,7 @@ function init()
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x353
 // Size: 0x46, Type: bool
 function function_1ad4a4e87bd92ba8()
@@ -60,7 +60,7 @@ function function_1ad4a4e87bd92ba8()
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a2
 // Size: 0x33a
 function function_2b7b925f1037e020()
@@ -68,7 +68,8 @@ function function_2b7b925f1037e020()
     csv = function_6c9808b9b419ed7e();
     scripts\mp\flags::levelflaginit( "overlord_csv_init", 0 );
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         ref = tablelookupbyrow( csv, row, 0 );
         
         if ( ref == "" )
@@ -124,7 +125,7 @@ function function_2b7b925f1037e020()
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6e4
 // Size: 0x92
 function function_6c9808b9b419ed7e()
@@ -146,7 +147,7 @@ function function_6c9808b9b419ed7e()
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77f
 // Size: 0x4a
 function function_867b48f5536f373e()
@@ -158,7 +159,7 @@ function function_867b48f5536f373e()
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d1
 // Size: 0x7c
 function testqueue()
@@ -177,7 +178,7 @@ function testqueue()
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x855
 // Size: 0xe6
 function registerevent( ref, alias, priority, cooldown, timeout, var_7ce636b3f644e502, delaybefore, delayafter )
@@ -195,7 +196,7 @@ function registerevent( ref, alias, priority, cooldown, timeout, var_7ce636b3f64
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x943
 // Size: 0xc5
 function function_9b411de07c46bddc( eventref, players, includedeadplayers, var_f84decb7822f8442 )
@@ -236,7 +237,7 @@ function function_9b411de07c46bddc( eventref, players, includedeadplayers, var_f
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xa10
 // Size: 0x495, Type: bool
 function playevent( eventref, players, delay, includedeadplayers, var_fe8102d7751b9184, var_6c81f78b4030fb5a, var_899ee4de578e34a3 )
@@ -402,7 +403,7 @@ function private function_32dc596da0d9c6ba( players )
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xfa6
 // Size: 0x6d6
 function playconversation( conversationname, players, var_7b76e64b846c00d, var_8b6798cc35c82e07, location, group, var_6c81f78b4030fb5a, var_899ee4de578e34a3 )
@@ -726,7 +727,7 @@ function private function_7fcbb3b96e848adf()
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19a8
 // Size: 0x72
 function function_9793a81bc3bc19e9( eventref, team, delay )
@@ -750,7 +751,7 @@ function function_9793a81bc3bc19e9( eventref, team, delay )
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a22
 // Size: 0x58, Type: bool
 function function_8c3011dccace47c4( eventref )
@@ -764,7 +765,7 @@ function function_8c3011dccace47c4( eventref )
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a83
 // Size: 0x136
 function function_d453707f6b8f2c6d()
@@ -800,7 +801,7 @@ function function_d453707f6b8f2c6d()
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1bc1
 // Size: 0xcd, Type: bool
 function function_50ebf0029301be3f( player, eventref )
@@ -832,7 +833,7 @@ function function_50ebf0029301be3f( player, eventref )
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c97
 // Size: 0x125, Type: bool
 function shouldinterrupt( event )
@@ -903,12 +904,12 @@ function private isvalidplayer( player )
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e95
 // Size: 0x37c
 function function_b0c21eabffce3fd4()
 {
-    proximitydistancesq = getdvarint( @"hash_57797986a6d60476", 4096 );
+    proximitydistancesq = getdvarint( @"scr_overlord_enemy_proximity_radius", 4096 );
     proximitydistancesq *= proximitydistancesq;
     ignoretime = getdvarfloat( @"hash_32244d6acf101808", 60 );
     trackedteams = [];
@@ -985,7 +986,7 @@ function function_b0c21eabffce3fd4()
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2219
 // Size: 0x30c
 function function_aea00c3815b226da( player )
@@ -995,7 +996,7 @@ function function_aea00c3815b226da( player )
     player endon( "death" );
     level endon( "game_ended" );
     player endon( "monitor_enemy_prox" );
-    proximitydistancesq = getdvarint( @"hash_57797986a6d60476", 4096 );
+    proximitydistancesq = getdvarint( @"scr_overlord_enemy_proximity_radius", 4096 );
     proximitydistancesq *= proximitydistancesq;
     ignoretime = getdvarfloat( @"hash_32244d6acf101808", 60 );
     trackedteams = [];
@@ -1049,7 +1050,7 @@ function function_aea00c3815b226da( player )
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x252d
 // Size: 0x15
 function function_60fc087bc7deaadc( val )
@@ -1058,7 +1059,7 @@ function function_60fc087bc7deaadc( val )
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x254a
 // Size: 0x6e
 function function_2c722a2ef9574e87( players, tag, priority )
@@ -1070,7 +1071,7 @@ function function_2c722a2ef9574e87( players, tag, priority )
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25c0
 // Size: 0x65
 function function_70979c1eabf04180( players, tag )
@@ -1082,7 +1083,7 @@ function function_70979c1eabf04180( players, tag )
 }
 
 // Namespace overlord / scripts\cp_mp\overlord
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x262d
 // Size: 0xc2
 function function_f240c299b9341e8f( player, testplayer, trackedteams, ignoretime )

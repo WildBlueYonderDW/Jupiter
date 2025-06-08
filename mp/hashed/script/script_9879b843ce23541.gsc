@@ -4,7 +4,7 @@
 #namespace mp_jup_st_c_ob_contracts_outlast_cs;
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31f
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x394
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x403
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44b
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x455
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46b
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4dd
 // Size: 0x83
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -119,7 +119,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x568
 // Size: 0x6bf
 function function_1488ab214a370dfc( fe, us, cf )
@@ -184,7 +184,7 @@ function function_1488ab214a370dfc( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc2f
 // Size: 0x6e0
 function function_facd10c8ca3914e1( fe, us, cf )
@@ -254,7 +254,7 @@ function function_facd10c8ca3914e1( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1317
 // Size: 0x5db
 function function_7c52b3d4d456946a( fe, us, cf )
@@ -309,7 +309,7 @@ function function_7c52b3d4d456946a( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18fa
 // Size: 0x28e
 function function_6da2952367672ac0()

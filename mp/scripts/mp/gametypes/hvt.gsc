@@ -30,8 +30,8 @@
 #namespace hvt;
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x782
+// Params 0
+// Checksum 0x0, Offset: 0x783
 // Size: 0x21b
 function main()
 {
@@ -44,8 +44,8 @@ function main()
     scripts\mp\globallogic::setupcallbacks();
     allowed[ 0 ] = getgametype();
     scripts\mp\gameobjects::main( allowed );
-    setdvar( @"hash_a4d532f42d919827", 1 );
-    setdvar( @"hash_fde1113ce9981d91", 3 );
+    setdvar( @"scr_player_allowarmor", 1 );
+    setdvar( @"scr_br_plate_carrier_start_level", 3 );
     setdvar( @"hash_f477e59410bec785", 1 );
     setdvar( @"hash_fa6cdf74e2592068", "t10_pi_p13_usugar9_mp" );
     level.armoronweaponswitchlongpress = 1;
@@ -66,7 +66,7 @@ function main()
         registerwinlimitdvar( getgametype(), 1 );
         registernumlivesdvar( getgametype(), 0 );
         registerhalftimedvar( getgametype(), 0 );
-        setdvar( @"hash_e723cc761de7b161", 1 );
+        setdvar( @"scr_player_laststand", 1 );
     }
     
     updategametypedvars();
@@ -87,8 +87,8 @@ function main()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a5
+// Params 0
+// Checksum 0x0, Offset: 0x9a6
 // Size: 0xc0
 function initdialog()
 {
@@ -105,8 +105,8 @@ function initdialog()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6d
+// Params 0
+// Checksum 0x0, Offset: 0xa6e
 // Size: 0x3f
 function initializematchrules()
 {
@@ -117,8 +117,8 @@ function initializematchrules()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xab4
+// Params 0
+// Checksum 0x0, Offset: 0xab5
 // Size: 0x55
 function updategametypedvars()
 {
@@ -129,8 +129,8 @@ function updategametypedvars()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb11
+// Params 0
+// Checksum 0x0, Offset: 0xb12
 // Size: 0x114
 function onstartgametype()
 {
@@ -172,8 +172,8 @@ function onstartgametype()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc2d
+// Params 0
+// Checksum 0x0, Offset: 0xc2e
 // Size: 0x1eb
 function initspawns()
 {
@@ -218,8 +218,8 @@ function initspawns()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe20
+// Params 0
+// Checksum 0x0, Offset: 0xe21
 // Size: 0x95
 function getspawnpoint()
 {
@@ -251,8 +251,8 @@ function getspawnpoint()
 /#
 
     // Namespace hvt / scripts\mp\gametypes\hvt
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xebe
+    // Params 2
+    // Checksum 0x0, Offset: 0xebf
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
     {
@@ -290,8 +290,8 @@ function getspawnpoint()
 #/
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x1040
+// Params 10
+// Checksum 0x0, Offset: 0x1041
 // Size: 0x170
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
 {
@@ -335,8 +335,8 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b8
+// Params 1
+// Checksum 0x0, Offset: 0x11b9
 // Size: 0x1ac
 function function_a2ec131d150b20c8( attacker )
 {
@@ -381,8 +381,8 @@ function function_a2ec131d150b20c8( attacker )
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x136c
+// Params 0
+// Checksum 0x0, Offset: 0x136d
 // Size: 0x2a
 function ontimelimit()
 {
@@ -391,8 +391,8 @@ function ontimelimit()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x139e
+// Params 0
+// Checksum 0x0, Offset: 0x139f
 // Size: 0xdc
 function onplayerspawned()
 {
@@ -419,8 +419,8 @@ function onplayerspawned()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1482
+// Params 1
+// Checksum 0x0, Offset: 0x1483
 // Size: 0x1d
 function onplayerdisconnect( player )
 {
@@ -431,8 +431,8 @@ function onplayerdisconnect( player )
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x14a7
+// Params 9
+// Checksum 0x0, Offset: 0x14a8
 // Size: 0x63, Type: bool
 function modelaststandallowed( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration )
 {
@@ -445,8 +445,8 @@ function modelaststandallowed( einflictor, attacker, idamage, smeansofdeath, obj
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1513
+// Params 0
+// Checksum 0x0, Offset: 0x1514
 // Size: 0xda
 function function_8e02eb5056d9e4d2()
 {
@@ -467,8 +467,8 @@ function function_8e02eb5056d9e4d2()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f5
+// Params 1
+// Checksum 0x0, Offset: 0x15f6
 // Size: 0x32
 function function_930d45cca276d8e2( revived )
 {
@@ -482,8 +482,8 @@ function function_930d45cca276d8e2( revived )
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x162f
+// Params 0
+// Checksum 0x0, Offset: 0x1630
 // Size: 0xb
 function function_a5b896d29f677e6b()
 {
@@ -491,8 +491,8 @@ function function_a5b896d29f677e6b()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1643
+// Params 0
+// Checksum 0x0, Offset: 0x1644
 // Size: 0xc, Type: bool
 function ishvt()
 {
@@ -500,8 +500,8 @@ function ishvt()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1658
+// Params 1
+// Checksum 0x0, Offset: 0x1659
 // Size: 0x73
 function function_aa6ad03630bbc953( team )
 {
@@ -519,8 +519,8 @@ function function_aa6ad03630bbc953( team )
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16d4
+// Params 1
+// Checksum 0x0, Offset: 0x16d5
 // Size: 0x2c, Type: bool
 function function_a0f16653bd8c0125( team )
 {
@@ -533,8 +533,8 @@ function function_a0f16653bd8c0125( team )
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1709
+// Params 0
+// Checksum 0x0, Offset: 0x170a
 // Size: 0x63
 function function_4be33b77f63f508f()
 {
@@ -544,8 +544,8 @@ function function_4be33b77f63f508f()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1774
+// Params 0
+// Checksum 0x0, Offset: 0x1775
 // Size: 0x1db
 function becomehvt()
 {
@@ -586,8 +586,8 @@ function becomehvt()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1957
+// Params 0
+// Checksum 0x0, Offset: 0x1958
 // Size: 0xa8
 function function_f7e228a53add5c40()
 {
@@ -612,8 +612,8 @@ function function_f7e228a53add5c40()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a07
+// Params 1
+// Checksum 0x0, Offset: 0x1a08
 // Size: 0x4a
 function function_f3b9baf1a4c79509( str_team )
 {
@@ -629,8 +629,8 @@ function function_f3b9baf1a4c79509( str_team )
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a59
+// Params 0
+// Checksum 0x0, Offset: 0x1a5a
 // Size: 0xb7
 function function_12d9fdaf83ab5ffb()
 {
@@ -659,8 +659,8 @@ function function_12d9fdaf83ab5ffb()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b18
+// Params 0
+// Checksum 0x0, Offset: 0x1b19
 // Size: 0x7c
 function function_1d5e82320be9da1d()
 {
@@ -687,8 +687,8 @@ function function_1d5e82320be9da1d()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b9c
+// Params 0
+// Checksum 0x0, Offset: 0x1b9d
 // Size: 0x1c6
 function function_136329cdd2983505()
 {
@@ -730,8 +730,8 @@ function function_136329cdd2983505()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d6a
+// Params 0
+// Checksum 0x0, Offset: 0x1d6b
 // Size: 0xdc
 function function_3bd91003ede3001e()
 {
@@ -766,8 +766,8 @@ function function_3bd91003ede3001e()
 }
 
 // Namespace hvt / scripts\mp\gametypes\hvt
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e4e
+// Params 0
+// Checksum 0x0, Offset: 0x1e4f
 // Size: 0x43
 function function_fb537e337319c2fe()
 {

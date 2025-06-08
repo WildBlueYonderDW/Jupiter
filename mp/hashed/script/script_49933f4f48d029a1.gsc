@@ -4,7 +4,7 @@
 #namespace namespace_b9879d94296d26c8;
 
 // Namespace namespace_b9879d94296d26c8 / namespace_7a940f32a2647673
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fe
 // Size: 0x33a8
 function function_1367788e05985a34()

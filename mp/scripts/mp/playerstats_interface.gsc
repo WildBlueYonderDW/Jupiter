@@ -5,7 +5,7 @@
 #namespace playerstats_interface;
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xcd
 // Size: 0x8e
 function setplayerstat( value, path1, path2, path3, path4, path5 )
@@ -33,7 +33,7 @@ function setplayerstat( value, path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x163
 // Size: 0xb3
 function setplayerstatbuffered( value, path1, path2, path3, path4, path5 )
@@ -66,7 +66,7 @@ function setplayerstatbuffered( value, path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x21e
 // Size: 0xb7
 function addtoplayerstat( var_930290d7f474a0ae, path1, path2, path3, path4, path5 )
@@ -104,7 +104,7 @@ function addtoplayerstat( var_930290d7f474a0ae, path1, path2, path3, path4, path
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2dd
 // Size: 0x92
 function addtoplayerstatbuffered( var_930290d7f474a0ae, path1, path2, path3, path4, path5 )
@@ -137,7 +137,7 @@ function addtoplayerstatbuffered( var_930290d7f474a0ae, path1, path2, path3, pat
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x377
 // Size: 0xcd
 function getplayerstat( path1, path2, path3, path4, path5 )
@@ -173,7 +173,7 @@ function getplayerstat( path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44d
 // Size: 0x24, Type: bool
 function areplayerstatsenabled()
@@ -182,7 +182,7 @@ function areplayerstatsenabled()
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47a
 // Size: 0x17, Type: bool
 function areplayerstatsreadonly()
@@ -191,7 +191,7 @@ function areplayerstatsreadonly()
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49a
 // Size: 0x16
 function makeallplayerstatsreadonly()
@@ -200,7 +200,7 @@ function makeallplayerstatsreadonly()
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b8
 // Size: 0x39
 function makeallplayerstatswritable()
@@ -210,7 +210,7 @@ function makeallplayerstatswritable()
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x4f9
 // Size: 0x4a
 function makeplayerstatreadonly( path1, path2, path3, path4, path5 )
@@ -220,7 +220,7 @@ function makeplayerstatreadonly( path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x54c
 // Size: 0x4b
 function makeplayerstatwritable( path1, path2, path3, path4, path5 )
@@ -230,7 +230,7 @@ function makeplayerstatwritable( path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5a0
 // Size: 0x49
 function isplayerstatwritable( path1, path2, path3, path4, path5 )
@@ -240,7 +240,7 @@ function isplayerstatwritable( path1, path2, path3, path4, path5 )
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f2
 // Size: 0x40
 function makeplayerstatgroupreadonly( statgroup )
@@ -250,7 +250,7 @@ function makeplayerstatgroupreadonly( statgroup )
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63a
 // Size: 0x41
 function makeplayerstatgroupwritable( statgroup )
@@ -260,7 +260,7 @@ function makeplayerstatgroupwritable( statgroup )
 }
 
 // Namespace playerstats_interface / scripts\mp\playerstats_interface
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x683
 // Size: 0x162
 function registerplayerstatratio( var_8c83072b0421282c, var_59381b551181653c, var_de2ad9f399ec5304 )

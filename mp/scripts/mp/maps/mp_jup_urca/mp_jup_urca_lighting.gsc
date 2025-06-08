@@ -6,7 +6,7 @@
 #namespace mp_jup_urca_lighting;
 
 // Namespace mp_jup_urca_lighting / scripts\mp\maps\mp_jup_urca\mp_jup_urca_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb
 // Size: 0x64
 function main()

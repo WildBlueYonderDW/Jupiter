@@ -10,7 +10,7 @@
 #namespace jup_ob_ally_ravenov_base;
 
 // Namespace jup_ob_ally_ravenov_base / namespace_ae97a99da56c4b2c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x223
 // Size: 0x1e0
 function main()
@@ -47,7 +47,7 @@ function main()
 }
 
 // Namespace jup_ob_ally_ravenov_base / namespace_ae97a99da56c4b2c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40b
 // Size: 0x57
 function setup_model()
@@ -64,7 +64,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_ally_ravenov_base / namespace_ae97a99da56c4b2c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46a
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -73,7 +73,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_ally_ravenov_base / namespace_ae97a99da56c4b2c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47b
 // Size: 0xcf
 function precache()
@@ -102,7 +102,7 @@ function precache()
 }
 
 // Namespace jup_ob_ally_ravenov_base / namespace_ae97a99da56c4b2c
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x552
 // Size: 0x11f
 function setup_weapons()

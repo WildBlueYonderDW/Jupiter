@@ -23,7 +23,7 @@
 #namespace br_gametype_mini;
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3be
 // Size: 0x17
 function main()
@@ -33,7 +33,7 @@ function main()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dd
 // Size: 0xe5
 function init()
@@ -57,7 +57,7 @@ function init()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ca
 // Size: 0xa7
 function brmini_initfeatures()
@@ -81,7 +81,7 @@ function brmini_initfeatures()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x579
 // Size: 0x20e
 function brmini_initpostmain()
@@ -102,7 +102,7 @@ function brmini_initpostmain()
     level.validautoassignquests[ 2 ] = "scavenger";
     level waittill( "br_circle_set", circleindex );
     level waittill( "br_circle_set", circleindex );
-    thresholdradius = getdvarfloat( @"hash_d6d1181cd67d957d", 1000 );
+    thresholdradius = getdvarfloat( @"scr_br_circle_object_cleanup_threshold", 1000 );
     dangercircleorigin = scripts\mp\gametypes\br_circle::getdangercircleorigin();
     dangercircleradius = scripts\mp\gametypes\br_circle::getdangercircleradius();
     
@@ -127,7 +127,7 @@ function brmini_initpostmain()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x78f
 // Size: 0x11
 function brmini_initdialog()
@@ -137,7 +137,7 @@ function brmini_initdialog()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a8
 // Size: 0x3d
 function brmini_cleanupents()
@@ -149,7 +149,7 @@ function brmini_cleanupents()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ed
 // Size: 0x2
 function brmini_initexternalfeatures()
@@ -158,7 +158,7 @@ function brmini_initexternalfeatures()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f7
 // Size: 0x4f
 function brmini_playerwelcomesplashes( data )
@@ -178,7 +178,7 @@ function brmini_playerwelcomesplashes( data )
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84e
 // Size: 0x24
 function brmini_ontimelimit()
@@ -192,7 +192,7 @@ function brmini_ontimelimit()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87a
 // Size: 0xbc
 function brmini_createc130pathstruct()
@@ -205,7 +205,7 @@ function brmini_createc130pathstruct()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x93f
 // Size: 0xf
 function brmini_addtoc130infil()
@@ -214,7 +214,7 @@ function brmini_addtoc130infil()
 }
 
 // Namespace br_gametype_mini / scripts\mp\gametypes\br_gametype_mini
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x956
 // Size: 0x22
 function function_b740ad755cfac3b()

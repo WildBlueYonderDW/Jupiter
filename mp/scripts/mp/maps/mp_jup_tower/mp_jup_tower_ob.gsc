@@ -1,7 +1,6 @@
 #using script_100adcc1cc11d2fa;
 #using script_16a7cb806f08d342;
 #using script_2047cdbf5176ba0;
-#using script_22f1701e151b9d12;
 #using script_26ab050f00d2d52b;
 #using script_3d91fbc054526de1;
 #using script_3eebdadae1029540;
@@ -20,6 +19,7 @@
 #using scripts\common\devgui;
 #using scripts\common\exploder;
 #using scripts\common\values;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\armor;
 #using scripts\cp_mp\laststand;
 #using scripts\cp_mp\loot\common_item;
@@ -45,7 +45,7 @@ function autoexec init()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf91
 // Size: 0x238
 function main()
@@ -112,7 +112,7 @@ function main()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11d1
 // Size: 0x18e
 function function_e9d22563e1d95d65()
@@ -148,7 +148,7 @@ function function_e9d22563e1d95d65()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1367
 // Size: 0xdb
 function function_b896c581d1a39b24( teamname, squadid )
@@ -184,7 +184,7 @@ function function_b896c581d1a39b24( teamname, squadid )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x144b
 // Size: 0x10f
 function function_82b06dfd59cced40( player )
@@ -212,7 +212,7 @@ function function_82b06dfd59cced40( player )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1562
 // Size: 0x164
 function function_219ccd13654aeca0()
@@ -253,7 +253,7 @@ function function_219ccd13654aeca0()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16ce
 // Size: 0x50
 function function_f39906ad71bd2029()
@@ -267,7 +267,7 @@ function function_f39906ad71bd2029()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1726
 // Size: 0x1a1
 function function_67d9a8af368e98a0( teamname, squadid )
@@ -320,7 +320,7 @@ function function_67d9a8af368e98a0( teamname, squadid )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18d0
 // Size: 0x297
 function function_7cec19ffa37cd482( players )
@@ -375,7 +375,7 @@ function function_7cec19ffa37cd482( players )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b6f
 // Size: 0x27
 function function_992f2393243ecd45( player )
@@ -389,7 +389,7 @@ function function_992f2393243ecd45( player )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1b9e
 // Size: 0x227
 function function_10c81ffffdb8d926( wait_time, fade_in_time, fade_out_time, starting_alpha )
@@ -440,7 +440,7 @@ function function_10c81ffffdb8d926( wait_time, fade_in_time, fade_out_time, star
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dcd
 // Size: 0x137
 function function_29fc786decbf9a1f( player )
@@ -476,7 +476,7 @@ function function_29fc786decbf9a1f( player )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f0c
 // Size: 0x1a
 function disable_announcer()
@@ -486,7 +486,7 @@ function disable_announcer()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f2e
 // Size: 0x3b
 function function_fa23f1ae81456c13( sparams )
@@ -500,7 +500,7 @@ function function_fa23f1ae81456c13( sparams )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f71
 // Size: 0x167
 function function_f881f5cb77a4ddb8()
@@ -545,17 +545,17 @@ function function_f881f5cb77a4ddb8()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20e0
 // Size: 0x16
 function function_135c08561081b6cf()
 {
     level flag_wait( "ai_spawn_director_initialized" );
-    namespace_614554f86e52695c::process_create_script();
+    scripts\cp_mp\agents\ai_spawn_director::process_create_script();
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20fe
 // Size: 0x220
 function function_632bf331b85b85ac()
@@ -618,7 +618,7 @@ function function_632bf331b85b85ac()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2326
 // Size: 0x24a
 function function_b60de1b748c7230f()
@@ -658,7 +658,8 @@ function function_b60de1b748c7230f()
     wait 0.5;
     a_weapons = self getweaponslist( "primary" );
     
-    for (i = 0; i < 2; i++) {
+    for ( i = 0; i < 2 ; i++ )
+    {
         currentweapon = a_weapons[ i ];
         
         if ( scripts\cp_mp\pack_a_punch::can_pap( currentweapon ) )
@@ -679,7 +680,7 @@ function function_b60de1b748c7230f()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2578
 // Size: 0x289
 function function_d588f8bc9eeb10dc()
@@ -693,7 +694,8 @@ function function_d588f8bc9eeb10dc()
     level.var_2050f6176cd525cd = [];
     i = 0;
     
-    for (car_model = getent( "train_car_model_" + i, "script_noteworthy" ); isdefined( car_model ); car_model = getent( "train_car_model_" + i, "script_noteworthy" )) {
+    for ( car_model = getent( "train_car_model_" + i, "script_noteworthy" ); isdefined( car_model ) ; car_model = getent( "train_car_model_" + i, "script_noteworthy" ) )
+    {
         car_model forcenetfieldhighlod( 1 );
         car_model setmoverantilagged( 1 );
         car_model function_7126c9ace48ce815( 1 );
@@ -748,7 +750,7 @@ function function_d588f8bc9eeb10dc()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2809
 // Size: 0xa17
 function function_74846464eb0633f7( objname )
@@ -1027,7 +1029,7 @@ function function_74846464eb0633f7( objname )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3228
 // Size: 0x6c
 function function_7662d42a580b8a9b()
@@ -1053,7 +1055,7 @@ function function_7662d42a580b8a9b()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x329c
 // Size: 0x19, Type: bool
 function function_52e74edcd157beb4( objname )
@@ -1067,7 +1069,7 @@ function function_52e74edcd157beb4( objname )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32be
 // Size: 0x1b1
 function function_7b2ef4b3581fd44e( train_node )
@@ -1099,7 +1101,7 @@ function function_7b2ef4b3581fd44e( train_node )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3477
 // Size: 0xcb
 function function_40255988232fd87d()
@@ -1122,7 +1124,7 @@ function function_40255988232fd87d()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x354a
 // Size: 0x101
 function function_43853dc94a133843( true_self )
@@ -1158,7 +1160,7 @@ function function_43853dc94a133843( true_self )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3653
 // Size: 0xa2
 function function_ae3ca63c76bfeb12( node )
@@ -1188,7 +1190,7 @@ function function_ae3ca63c76bfeb12( node )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x36fe
 // Size: 0x1c2
 function function_550aa1e3067dea98( var_8e6cf502c8d52254 )
@@ -1215,7 +1217,8 @@ function function_550aa1e3067dea98( var_8e6cf502c8d52254 )
     
     next_node = getstruct( var_8e6cf502c8d52254, "targetname" );
     
-    for (i = 0; i < 1; i++) {
+    for ( i = 0; i < 1 ; i++ )
+    {
         if ( !isdefined( level.var_2050f6176cd525cd[ next_node.targetname ] ) )
         {
             level.var_2050f6176cd525cd[ next_node.targetname ] = 0;
@@ -1239,7 +1242,7 @@ function function_550aa1e3067dea98( var_8e6cf502c8d52254 )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38c8
 // Size: 0xca
 function function_31e3b9daaadeeb03( var_6ba7370057392ca1 )
@@ -1252,7 +1255,8 @@ function function_31e3b9daaadeeb03( var_6ba7370057392ca1 )
     
     var_238502fd117b9ea1 = array_remove( level.var_1e22fb94d4a70d49, self );
     
-    for (i = 0; i < 3; i++) {
+    for ( i = 0; i < 3 ; i++ )
+    {
         node_ahead = getstruct( var_6ba7370057392ca1, "targetname" );
         other_train = getclosest( node_ahead.origin, var_238502fd117b9ea1, 800 );
         
@@ -1273,7 +1277,7 @@ function function_31e3b9daaadeeb03( var_6ba7370057392ca1 )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x399b
 // Size: 0x193
 function function_f57e654f7b26045( objname )
@@ -1345,7 +1349,7 @@ function function_f57e654f7b26045( objname )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b37
 // Size: 0x51, Type: bool
 function function_c9d7bb23b0d9620e( objname )
@@ -1364,7 +1368,7 @@ function function_c9d7bb23b0d9620e( objname )
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b91
 // Size: 0xfd
 function function_ddb95b9613abab35( objname )
@@ -1400,7 +1404,7 @@ function function_ddb95b9613abab35( objname )
 /#
 
     // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x3c97
     // Size: 0x91, Type: dev
     function function_c78a1c50096c178d( node_pos, node_name )
@@ -1433,7 +1437,7 @@ function function_ddb95b9613abab35( objname )
     }
 
     // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3d30
     // Size: 0xae, Type: dev
     function function_ca17670c2e892f7f( car_model )
@@ -1458,7 +1462,7 @@ function function_ddb95b9613abab35( objname )
 #/
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3de6
 // Size: 0x49
 function function_c3954aec42cc388e()
@@ -1473,7 +1477,7 @@ function function_c3954aec42cc388e()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e37
 // Size: 0x29
 function function_2e656805e9a5c512()
@@ -1487,7 +1491,7 @@ function function_2e656805e9a5c512()
 }
 
 // Namespace mp_jup_tower_ob / scripts\mp\maps\mp_jup_tower\mp_jup_tower_ob
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e68
 // Size: 0x15
 function function_5954f735dd26765c( players )

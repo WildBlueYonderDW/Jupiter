@@ -25,7 +25,7 @@ function autoexec main()
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c9
 // Size: 0x45
 function init()
@@ -43,7 +43,7 @@ function init()
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x416
 // Size: 0x28
 function initdialog()
@@ -53,7 +53,7 @@ function initdialog()
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x446
 // Size: 0x88
 function initteamdata()
@@ -61,7 +61,8 @@ function initteamdata()
     waitframe();
     scripts\mp\flags::gameflagwait( "prematch_fade_done" );
     
-    for (i = 0; i < level.teamnamelist.size; i++) {
+    for ( i = 0; i < level.teamnamelist.size ; i++ )
+    {
         level.teamdata[ level.teamnamelist[ i ] ][ "activeSupplySweeps" ] = [];
         level.teamdata[ level.teamnamelist[ i ] ][ "supplySweepEndTime" ] = 0;
         level.teamdata[ level.teamnamelist[ i ] ][ "numSupplySweepKillstreakStarted" ] = 0;
@@ -69,7 +70,7 @@ function initteamdata()
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4d6
 // Size: 0xed, Type: bool
 function function_9770267c5fb4f3b3( streakinfo )
@@ -125,7 +126,7 @@ function function_9770267c5fb4f3b3( streakinfo )
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cc
 // Size: 0x59, Type: bool
 function function_f881c4e02a77d4d7( streakinfo )
@@ -148,7 +149,7 @@ function function_f881c4e02a77d4d7( streakinfo )
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x62e
 // Size: 0x3c3
 function function_cb5055ef9503457f( owner, streakinfo, isnonkillstreak, var_e1d15925155200c8 )
@@ -245,7 +246,7 @@ function function_cb5055ef9503457f( owner, streakinfo, isnonkillstreak, var_e1d1
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9f9
 // Size: 0xc2
 function function_5ea457cbcc4810ed( owner, team, streakinfo )
@@ -271,7 +272,7 @@ function function_5ea457cbcc4810ed( owner, team, streakinfo )
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xac3
 // Size: 0xda
 function function_5541a7c0f6747c86( owner, team, streakinfo )
@@ -298,7 +299,7 @@ function function_5541a7c0f6747c86( owner, team, streakinfo )
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba5
 // Size: 0x2a, Type: bool
 function function_5a93fbbb0fd1f33e()
@@ -308,7 +309,7 @@ function function_5a93fbbb0fd1f33e()
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbd8
 // Size: 0x3f, Type: bool
 function function_8192e9b94c7be3a6( player )
@@ -324,7 +325,7 @@ function function_8192e9b94c7be3a6( player )
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc20
 // Size: 0xde
 function function_94e49d4aa7d532a2()
@@ -344,7 +345,7 @@ function function_94e49d4aa7d532a2()
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd06
 // Size: 0x85
 function function_bf750a843caf9b55( isenabled, team )
@@ -361,7 +362,7 @@ function function_bf750a843caf9b55( isenabled, team )
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd93
 // Size: 0x7c
 function function_c8f5936c729fe30e( team )
@@ -379,7 +380,7 @@ function function_c8f5936c729fe30e( team )
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe17
 // Size: 0xcc
 function function_2617455bebb5944( team, dialog )
@@ -405,7 +406,7 @@ function function_2617455bebb5944( team, dialog )
 }
 
 // Namespace supply_sweep / scripts\mp\killstreaks\supply_sweep
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xeeb
 // Size: 0xa1
 function function_4138f41eac3bb46f( soundname, dialog, player, var_a64cad1ecc519617, allowdead, delay )

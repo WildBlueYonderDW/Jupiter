@@ -28,7 +28,7 @@
 #namespace at_mine;
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x580
 // Size: 0x4d
 function at_mine_init()
@@ -43,7 +43,7 @@ function at_mine_init()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d5
 // Size: 0x28a
 function at_mine_use( grenade )
@@ -108,7 +108,7 @@ function at_mine_use( grenade )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x867
 // Size: 0x9e, Type: bool
 function is_train_ent( hitent )
@@ -133,7 +133,7 @@ function is_train_ent( hitent )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x90e
 // Size: 0x6e
 function at_mine_update_danger_zone()
@@ -152,7 +152,7 @@ function at_mine_update_danger_zone()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x984
 // Size: 0x35
 function function_427845ab37c184cd()
@@ -165,7 +165,7 @@ function function_427845ab37c184cd()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9c1
 // Size: 0x2a8
 function at_mine_plant( grenade, surfacetype )
@@ -243,7 +243,7 @@ function at_mine_plant( grenade, surfacetype )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc71
 // Size: 0xaa
 function at_mine_explode_from_player_trigger( owner )
@@ -272,7 +272,7 @@ function at_mine_explode_from_player_trigger( owner )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd23
 // Size: 0xea
 function at_mine_explode_from_vehicle_trigger( vehicle )
@@ -307,7 +307,7 @@ function at_mine_explode_from_vehicle_trigger( vehicle )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe15
 // Size: 0x7b
 function at_mine_explode_from_vehicle_trigger_internal()
@@ -328,7 +328,7 @@ function at_mine_explode_from_vehicle_trigger_internal()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe98
 // Size: 0x88
 function at_mine_explode_from_notify( attacker )
@@ -350,7 +350,7 @@ function at_mine_explode_from_notify( attacker )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf28
 // Size: 0x152
 function function_bca6c45b0429de16( explosiontype )
@@ -380,7 +380,7 @@ function function_bca6c45b0429de16( explosiontype )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1082
 // Size: 0x52
 function at_mine_destroy( attacker )
@@ -393,7 +393,7 @@ function at_mine_destroy( attacker )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10dc
 // Size: 0x19e
 function at_mine_delete( deletiondelay )
@@ -456,7 +456,7 @@ function at_mine_delete( deletiondelay )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1282
 // Size: 0x74
 function at_mine_movingplatform_update()
@@ -476,7 +476,7 @@ function at_mine_movingplatform_update()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12fe
 // Size: 0x37, Type: bool
 function is_at_mine_moving( mine )
@@ -485,7 +485,7 @@ function is_at_mine_moving( mine )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x133e
 // Size: 0x12e
 function at_mine_watch_trigger()
@@ -553,7 +553,7 @@ function at_mine_watch_trigger()
 /#
 
     // Namespace at_mine / scripts\mp\equipment\at_mine
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1474
     // Size: 0x94, Type: dev
     function function_d9f2aec6c4f8ed31()
@@ -588,7 +588,7 @@ function at_mine_watch_trigger()
 #/
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1510
 // Size: 0x7a
 function at_mine_player_trigger( ent )
@@ -606,7 +606,7 @@ function at_mine_player_trigger( ent )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1592
 // Size: 0x6c
 function function_9b1b9f121a84a4a1( var_5db09cf670b9ec64, fusetime )
@@ -619,7 +619,7 @@ function function_9b1b9f121a84a4a1( var_5db09cf670b9ec64, fusetime )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1606
 // Size: 0x76
 function at_mine_vehicle_trigger( vehicle, mine )
@@ -636,7 +636,7 @@ function at_mine_vehicle_trigger( vehicle, mine )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1684
 // Size: 0x69
 function at_mine_watch_flight_mover( flighttime )
@@ -658,7 +658,7 @@ function at_mine_watch_flight_mover( flighttime )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16f5
 // Size: 0xa
 function deletemine()
@@ -667,7 +667,7 @@ function deletemine()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1707
 // Size: 0x288
 function at_mine_watch_flight()
@@ -741,7 +741,7 @@ function at_mine_watch_flight()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1997
 // Size: 0x35
 function function_9e0f9db6ce29a5a9()
@@ -757,7 +757,7 @@ function function_9e0f9db6ce29a5a9()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19d4
 // Size: 0x69
 function at_mine_empapplied( data )
@@ -779,7 +779,7 @@ function at_mine_empapplied( data )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a45
 // Size: 0x66
 function function_83d4163604fc28e3( data )
@@ -801,7 +801,7 @@ function function_83d4163604fc28e3( data )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ab3
 // Size: 0x57
 function at_mine_watch_detonate()
@@ -825,7 +825,7 @@ function at_mine_watch_detonate()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b12
 // Size: 0x2a
 function at_mine_watch_game_end()
@@ -837,7 +837,7 @@ function at_mine_watch_game_end()
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b44
 // Size: 0x71
 function at_mine_damage_vehicle_manually( vehicle )
@@ -853,7 +853,7 @@ function at_mine_damage_vehicle_manually( vehicle )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1bbd
 // Size: 0x2bb
 function at_mine_modified_damage( victim, inflictor, objweapon, meansofdeath, damage )
@@ -951,7 +951,7 @@ function at_mine_modified_damage( victim, inflictor, objweapon, meansofdeath, da
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e81
 // Size: 0x21
 function at_mine_cleanup_danger_icon_ent( dangericonent )
@@ -962,7 +962,7 @@ function at_mine_cleanup_danger_icon_ent( dangericonent )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1eaa
 // Size: 0x87
 function at_mine_onownerchanged( oldowner )
@@ -978,7 +978,7 @@ function at_mine_onownerchanged( oldowner )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f39
 // Size: 0x7a
 function function_416f3f7ada048ff9( attacker )
@@ -997,7 +997,7 @@ function function_416f3f7ada048ff9( attacker )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fbb
 // Size: 0x27
 function function_97f28317850da77d( data )
@@ -1007,7 +1007,7 @@ function function_97f28317850da77d( data )
 }
 
 // Namespace at_mine / scripts\mp\equipment\at_mine
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fea
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )

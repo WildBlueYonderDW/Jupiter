@@ -39,8 +39,8 @@
 #namespace gun;
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdcb
+// Params 0
+// Checksum 0x0, Offset: 0xdcc
 // Size: 0x317
 function main()
 {
@@ -141,8 +141,8 @@ function main()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ea
+// Params 0
+// Checksum 0x0, Offset: 0x10eb
 // Size: 0x3d
 function waitthensetstatgroupreadonly()
 {
@@ -158,8 +158,8 @@ function waitthensetstatgroupreadonly()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x112f
+// Params 0
+// Checksum 0x0, Offset: 0x1130
 // Size: 0x14e
 function initializematchrules()
 {
@@ -185,8 +185,8 @@ function initializematchrules()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1285
+// Params 0
+// Checksum 0x0, Offset: 0x1286
 // Size: 0x2
 function onprecachegametype()
 {
@@ -194,8 +194,8 @@ function onprecachegametype()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x128f
+// Params 0
+// Checksum 0x0, Offset: 0x1290
 // Size: 0x118
 function onstartgametype()
 {
@@ -240,8 +240,8 @@ function onstartgametype()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13af
+// Params 0
+// Checksum 0x0, Offset: 0x13b0
 // Size: 0xfe
 function initspawns()
 {
@@ -268,8 +268,8 @@ function initspawns()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b5
+// Params 0
+// Checksum 0x0, Offset: 0x14b6
 // Size: 0x27f
 function function_4acafac11df3da39()
 {
@@ -329,8 +329,8 @@ function function_4acafac11df3da39()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x173c
+// Params 0
+// Checksum 0x0, Offset: 0x173d
 // Size: 0x9
 function updategametypedvars()
 {
@@ -338,8 +338,8 @@ function updategametypedvars()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x174d
+// Params 1
+// Checksum 0x0, Offset: 0x174e
 // Size: 0x8d
 function onplayerconnect( player )
 {
@@ -358,8 +358,8 @@ function onplayerconnect( player )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e2
+// Params 0
+// Checksum 0x0, Offset: 0x17e3
 // Size: 0xb1
 function keepweaponsloaded()
 {
@@ -377,8 +377,8 @@ function keepweaponsloaded()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x189b
+// Params 0
+// Checksum 0x0, Offset: 0x189c
 // Size: 0xa5
 function getspawnpoint()
 {
@@ -411,8 +411,8 @@ function getspawnpoint()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1949
+// Params 0
+// Checksum 0x0, Offset: 0x194a
 // Size: 0x199
 function function_deaacd9c07dbc9fe()
 {
@@ -461,8 +461,8 @@ function function_deaacd9c07dbc9fe()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aeb
+// Params 1
+// Checksum 0x0, Offset: 0x1aec
 // Size: 0x34
 function onspawnplayer( revivespawn )
 {
@@ -473,8 +473,8 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b27
+// Params 0
+// Checksum 0x0, Offset: 0x1b28
 // Size: 0x74
 function waitloadoutdone()
 {
@@ -497,8 +497,8 @@ function waitloadoutdone()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ba3
+// Params 10
+// Checksum 0x0, Offset: 0x1ba4
 // Size: 0x625
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, lifeid )
 {
@@ -642,8 +642,8 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x21d0
+// Params 10
+// Checksum 0x0, Offset: 0x21d1
 // Size: 0x32c
 function function_849e633648f1596f( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, lifeid )
 {
@@ -711,8 +711,8 @@ function function_849e633648f1596f( einflictor, attacker, idamage, smeansofdeath
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2504
+// Params 1
+// Checksum 0x0, Offset: 0x2505
 // Size: 0x2ea
 function givenextgun( dosetspawnweapon )
 {
@@ -814,8 +814,8 @@ function givenextgun( dosetspawnweapon )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27f6
+// Params 0
+// Checksum 0x0, Offset: 0x27f7
 // Size: 0x43
 function function_27748d0b77246b9d()
 {
@@ -823,15 +823,16 @@ function function_27748d0b77246b9d()
     self endon( "death_or_disconnect" );
     self endon( "gun_game_next" );
     
-    for (i = 1; i < 6; i++) {
+    for ( i = 1; i < 6 ; i++ )
+    {
         self playlocalsound( "jup_mode_team_gun_rank_timer_0" + i );
         wait 1;
     }
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2841
+// Params 1
+// Checksum 0x0, Offset: 0x2842
 // Size: 0x56, Type: bool
 function wait_button_pressed_or_timeout( time )
 {
@@ -845,8 +846,8 @@ function wait_button_pressed_or_timeout( time )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x28a0
+// Params 2
+// Checksum 0x0, Offset: 0x28a1
 // Size: 0x48
 function takeweaponwhensafegungame( weapon, allowswitch )
 {
@@ -871,8 +872,8 @@ function takeweaponwhensafegungame( weapon, allowswitch )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28f0
+// Params 1
+// Checksum 0x0, Offset: 0x28f1
 // Size: 0x3e
 function getnextgun( indexoverride )
 {
@@ -888,8 +889,8 @@ function getnextgun( indexoverride )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2937
+// Params 0
+// Checksum 0x0, Offset: 0x2938
 // Size: 0xbf
 function ontimelimit()
 {
@@ -917,8 +918,8 @@ function ontimelimit()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29fe
+// Params 0
+// Checksum 0x0, Offset: 0x29ff
 // Size: 0x99
 function gethighestprogressedplayers()
 {
@@ -938,9 +939,9 @@ function gethighestprogressedplayers()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2aa0
-// Size: 0x68
+// Params 0
+// Checksum 0x0, Offset: 0x2aa1
+// Size: 0x7e
 function refillammo()
 {
     level endon( "game_ended" );
@@ -950,16 +951,23 @@ function refillammo()
     {
         self waittill( "reload" );
         currentweapon = self getcurrentweapon();
+        clipsize = weaponclipsize( currentweapon );
+        
+        if ( isaxeweapon( currentweapon ) )
+        {
+            self setweaponammoclip( currentweapon, clipsize );
+            continue;
+        }
+        
         startingammo = weaponstartammo( currentweapon );
-        clipammo = weaponclipsize( currentweapon );
-        stockammo = startingammo - clipammo;
+        stockammo = startingammo - clipsize;
         self setweaponammostock( currentweapon, stockammo );
     }
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b10
+// Params 0
+// Checksum 0x0, Offset: 0x2b27
 // Size: 0x67
 function refillsinglecountammo()
 {
@@ -981,8 +989,8 @@ function refillsinglecountammo()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b7f
+// Params 0
+// Checksum 0x0, Offset: 0x2b96
 // Size: 0xaee
 function setgunladder()
 {
@@ -1117,15 +1125,16 @@ function setgunladder()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3675
+// Params 0
+// Checksum 0x0, Offset: 0x368c
 // Size: 0x17d
 function setgunsfinal()
 {
     level.selectedweapons = [];
     function_102741e35aa549ae();
     
-    for (i = 0; i < level.gun_guns.size; i++) {
+    for ( i = 0; i < level.gun_guns.size ; i++ )
+    {
         curgun = level.gun_guns[ i ];
         
         if ( string_starts_with( curgun.weaponcategory, "rand_" ) )
@@ -1165,8 +1174,8 @@ function setgunsfinal()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37fa
+// Params 0
+// Checksum 0x0, Offset: 0x3811
 // Size: 0x7
 function getrandomarchetype()
 {
@@ -1174,8 +1183,8 @@ function getrandomarchetype()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x380a
+// Params 0
+// Checksum 0x0, Offset: 0x3821
 // Size: 0x24c
 function setspecialloadout()
 {
@@ -1204,14 +1213,15 @@ function setspecialloadout()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a5e
+// Params 0
+// Checksum 0x0, Offset: 0x3a75
 // Size: 0x1b6
 function function_6b7afefdbeeeec0a()
 {
     level.weaponcategories = [];
     
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         categoryname = tablelookupbyrow( "mp/gunGameWeapons.csv", row, 0 );
         
         if ( categoryname == "" )
@@ -1259,8 +1269,8 @@ function function_6b7afefdbeeeec0a()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c1c
+// Params 0
+// Checksum 0x0, Offset: 0x3c33
 // Size: 0x1a8
 function function_102741e35aa549ae()
 {
@@ -1302,8 +1312,8 @@ function function_102741e35aa549ae()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dcc
+// Params 1
+// Checksum 0x0, Offset: 0x3de3
 // Size: 0x192
 function function_5f97f15e9ca6cb6( categoryname )
 {
@@ -1314,7 +1324,8 @@ function function_5f97f15e9ca6cb6( categoryname )
         newweapon = "";
         data = undefined;
         
-        for (loopcount = 0; true; loopcount++) {
+        for ( loopcount = 0; true ; loopcount++ )
+        {
             index = randomintrange( 0, weaponlist.size );
             data = weaponlist[ index ];
             rootname = getweaponrootname( data[ "weapon" ] );
@@ -1329,7 +1340,8 @@ function function_5f97f15e9ca6cb6( categoryname )
             {
                 level.selectedweapons[ rootname ] = 1;
                 
-                for (i = 0; i < level.weaponcategories[ categoryname ].size; i++) {
+                for ( i = 0; i < level.weaponcategories[ categoryname ].size ; i++ )
+                {
                     if ( level.weaponcategories[ categoryname ][ i ][ "weapon" ] == data[ "weapon" ] )
                     {
                         level.weaponcategories[ categoryname ] = array_remove_index( level.weaponcategories[ categoryname ], i );
@@ -1349,8 +1361,8 @@ function function_5f97f15e9ca6cb6( categoryname )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f66
+// Params 1
+// Checksum 0x0, Offset: 0x3f7d
 // Size: 0x53
 function function_96d23570114bc7b6( weapondata )
 {
@@ -1360,8 +1372,8 @@ function function_96d23570114bc7b6( weapondata )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fc2
+// Params 4
+// Checksum 0x0, Offset: 0x3fd9
 // Size: 0xc0
 function gun_createrandomweapon( rootname, numattachments, variantid, hasnvg )
 {
@@ -1388,8 +1400,8 @@ function gun_createrandomweapon( rootname, numattachments, variantid, hasnvg )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x408b
+// Params 1
+// Checksum 0x0, Offset: 0x40a2
 // Size: 0xac
 function gun_buildoverrideattachmentlist( randomweapon )
 {
@@ -1410,14 +1422,15 @@ function gun_buildoverrideattachmentlist( randomweapon )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4140
+// Params 4
+// Checksum 0x0, Offset: 0x4157
 // Size: 0x92, Type: bool
 function attachmentcheck( attachment, var_517683bad763b676, var_a71a84cdad3a4ebb, weaponname )
 {
     attachmentcategory = tablelookup( var_a71a84cdad3a4ebb, 0, attachment, 1 );
     
-    for (i = 0; i < var_517683bad763b676.size; i++) {
+    for ( i = 0; i < var_517683bad763b676.size ; i++ )
+    {
         var_e012c12f441a9c1d = tablelookup( var_a71a84cdad3a4ebb, 0, var_517683bad763b676[ i ], 1 );
         
         if ( attachment == var_517683bad763b676[ i ] || attachmentsconflict( attachment, var_517683bad763b676[ i ], weaponname ) != "" || attachmentcategory == var_e012c12f441a9c1d )
@@ -1430,8 +1443,8 @@ function attachmentcheck( attachment, var_517683bad763b676, var_a71a84cdad3a4ebb
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41db
+// Params 1
+// Checksum 0x0, Offset: 0x41f2
 // Size: 0x6d
 function giveortakethrowingknife( currentweapon )
 {
@@ -1447,8 +1460,8 @@ function giveortakethrowingknife( currentweapon )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4250
+// Params 1
+// Checksum 0x0, Offset: 0x4267
 // Size: 0x12, Type: bool
 function isvalidthrowingknifekill( killweapon )
 {
@@ -1456,8 +1469,8 @@ function isvalidthrowingknifekill( killweapon )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x426b
+// Params 5
+// Checksum 0x0, Offset: 0x4282
 // Size: 0xdd
 function onplayerscore( event, player, originalpoints, victim, eventinfo )
 {
@@ -1485,8 +1498,8 @@ function onplayerscore( event, player, originalpoints, victim, eventinfo )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4351
+// Params 0
+// Checksum 0x0, Offset: 0x4368
 // Size: 0x53
 function updateknivesperminute()
 {
@@ -1507,8 +1520,8 @@ function updateknivesperminute()
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x43ac
+// Params 4
+// Checksum 0x0, Offset: 0x43c3
 // Size: 0xa6
 function modifyunifiedpointscallback( points, event, player, objweapon )
 {
@@ -1524,8 +1537,8 @@ function modifyunifiedpointscallback( points, event, player, objweapon )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x445b
+// Params 3
+// Checksum 0x0, Offset: 0x4472
 // Size: 0xa7, Type: bool
 function canprogressingunrank( objweapon, baseprimary, isexecution )
 {
@@ -1564,8 +1577,8 @@ function canprogressingunrank( objweapon, baseprimary, isexecution )
 }
 
 // Namespace gun / scripts\mp\gametypes\gun
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x450b
+// Params 0
+// Checksum 0x0, Offset: 0x4522
 // Size: 0x19, Type: bool
 function isonlastkill()
 {
@@ -1575,8 +1588,8 @@ function isonlastkill()
 /#
 
     // Namespace gun / scripts\mp\gametypes\gun
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x452d
+    // Params 0
+    // Checksum 0x0, Offset: 0x4544
     // Size: 0x11d, Type: dev
     function function_d5a7aac125289e1d()
     {
@@ -1607,8 +1620,8 @@ function isonlastkill()
     }
 
     // Namespace gun / scripts\mp\gametypes\gun
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4652
+    // Params 0
+    // Checksum 0x0, Offset: 0x4669
     // Size: 0x27d, Type: dev
     function function_976d13e05a73c64e()
     {
@@ -1688,8 +1701,8 @@ function isonlastkill()
     }
 
     // Namespace gun / scripts\mp\gametypes\gun
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x48d7
+    // Params 0
+    // Checksum 0x0, Offset: 0x48ee
     // Size: 0x21, Type: dev
     function function_277a84f0f23bdb9b()
     {

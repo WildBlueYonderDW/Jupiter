@@ -8,7 +8,7 @@
 #namespace vault_door;
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x473
 // Size: 0x21
 function init()
@@ -19,7 +19,7 @@ function init()
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49c
 // Size: 0x9e
 function initbunkervfx()
@@ -33,7 +33,7 @@ function initbunkervfx()
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x542
 // Size: 0xc5
 function initvaultdoor( door )
@@ -54,7 +54,7 @@ function initvaultdoor( door )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x60f
 // Size: 0xbf
 function function_c3bf2f88b7bdad0f( door )
@@ -69,7 +69,7 @@ function function_c3bf2f88b7bdad0f( door )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d6
 // Size: 0x33
 function function_8ba0ae9d52f5f35f( team )
@@ -81,7 +81,7 @@ function function_8ba0ae9d52f5f35f( team )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x711
 // Size: 0x2d, Type: bool
 function function_f35b8fbc776c2211( lightscriptable )
@@ -90,7 +90,7 @@ function function_f35b8fbc776c2211( lightscriptable )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x747
 // Size: 0x3a
 function function_ea45f200ad54ab3d( door )
@@ -102,7 +102,7 @@ function function_ea45f200ad54ab3d( door )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x789
 // Size: 0x3a
 function function_78ef9be55a4536cb( door )
@@ -114,7 +114,7 @@ function function_78ef9be55a4536cb( door )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7cb
 // Size: 0x3a
 function function_a5d6387bab61ba00( door )
@@ -126,7 +126,7 @@ function function_a5d6387bab61ba00( door )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x80d
 // Size: 0x7c
 function function_702f682e2a3526df( door )
@@ -151,7 +151,7 @@ function function_702f682e2a3526df( door )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x891
 // Size: 0xd9
 function function_2fcaee708b41d832()
@@ -173,7 +173,7 @@ function function_2fcaee708b41d832()
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x972
 // Size: 0x41
 function keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -182,7 +182,7 @@ function keypadscriptableused( instance, part, state, player, var_a5b2c541413aa8
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9bb
 // Size: 0x92
 function _keypadscriptableused( instance, part, state, player, var_a5b2c541413aa895 )
@@ -209,7 +209,7 @@ function _keypadscriptableused( instance, part, state, player, var_a5b2c541413aa
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa55
 // Size: 0x312
 function keypad_playerinteractwithkeypadloop( instance )
@@ -333,7 +333,7 @@ function keypad_playerinteractwithkeypadloop( instance )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd6f
 // Size: 0x2e
 function keypad_damagedeathdisconnectwatch()
@@ -345,7 +345,7 @@ function keypad_damagedeathdisconnectwatch()
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xda5
 // Size: 0x23
 function keypad_playeridlewatch()
@@ -358,7 +358,7 @@ function keypad_playeridlewatch()
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdd0
 // Size: 0x55
 function iscodecorrect( instance, value )
@@ -379,7 +379,7 @@ function iscodecorrect( instance, value )
 }
 
 // Namespace vault_door / scripts\mp\gametypes\vault_door
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xe2e
 // Size: 0x30c
 function generatenumbercode( codelength, codestruct, var_2e698aed0de1ce13, var_d3da81df8d468200 )
@@ -409,23 +409,27 @@ function generatenumbercode( codelength, codestruct, var_2e698aed0de1ce13, var_d
     assert( var_6cb4c9e48f55503e > var_2e698aed0de1ce13 + var_d3da81df8d468200, "<dev string:x94>" );
     numbers = array_randomize( numbers );
     
-    for (i = 0; i < var_6cb4c9e48f55503e; i++) {
+    for ( i = 0; i < var_6cb4c9e48f55503e ; i++ )
+    {
         codestruct.code[ "array" ][ i ] = numbers[ i ];
     }
     
     var_91ef66919bfe4233 = codestruct.code[ "array" ];
     
-    for (i = 0; i < var_2e698aed0de1ce13; i++) {
+    for ( i = 0; i < var_2e698aed0de1ce13 ; i++ )
+    {
         var_19f414b6862a5d43 = var_91ef66919bfe4233[ i ];
         codestruct.code[ "array" ][ codestruct.code[ "array" ].size ] = var_19f414b6862a5d43;
         codestruct.code[ "doubles" ][ codestruct.code[ "doubles" ].size ] = var_19f414b6862a5d43;
         var_91ef66919bfe4233 = array_remove( var_91ef66919bfe4233, var_91ef66919bfe4233[ i ] );
     }
     
-    for (i = 0; i < var_d3da81df8d468200; i++) {
+    for ( i = 0; i < var_d3da81df8d468200 ; i++ )
+    {
         var_7e2e31fbe4946a0a = var_91ef66919bfe4233[ i ];
         
-        for (x = 0; x < 2; x++) {
+        for ( x = 0; x < 2 ; x++ )
+        {
             codestruct.code[ "array" ][ codestruct.code[ "array" ].size ] = var_7e2e31fbe4946a0a;
         }
         

@@ -35,7 +35,7 @@
 #namespace tactical_camera;
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa8b
 // Size: 0x8b
 function function_5027f03acd35a5ca()
@@ -53,7 +53,7 @@ function function_5027f03acd35a5ca()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb1e
 // Size: 0x243
 function function_c13d155ad0421754()
@@ -93,7 +93,7 @@ function function_c13d155ad0421754()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd69
 // Size: 0x95
 function tacticalcamera_set()
@@ -113,7 +113,7 @@ function tacticalcamera_set()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe06
 // Size: 0x58
 function tacticalcamera_unset()
@@ -129,7 +129,7 @@ function tacticalcamera_unset()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe66
 // Size: 0x2
 function function_60367230245c7390()
@@ -138,7 +138,7 @@ function function_60367230245c7390()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe70
 // Size: 0x1d
 function function_5ad1423b15c27c76()
@@ -149,7 +149,7 @@ function function_5ad1423b15c27c76()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe95
 // Size: 0x1c
 function function_987961464bef3a3()
@@ -159,7 +159,7 @@ function function_987961464bef3a3()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeb9
 // Size: 0x9c
 function function_dbeca4d95f44293d( grenade )
@@ -182,7 +182,7 @@ function function_dbeca4d95f44293d( grenade )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf5d
 // Size: 0x76
 function function_a1c6dc676cf5aa86()
@@ -200,7 +200,7 @@ function function_a1c6dc676cf5aa86()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfdb
 // Size: 0x1a3
 function function_f730b242ebab274b( grenade )
@@ -261,7 +261,7 @@ function function_f730b242ebab274b( grenade )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1187
 // Size: 0x2f
 function function_797384a578f0a453( grenade )
@@ -437,7 +437,7 @@ function private function_c778dfbe6301129a( grenade, superid )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x16af
 // Size: 0x3f
 function function_98d9692f988bfe4d( attacker, wasdestroyed )
@@ -449,7 +449,7 @@ function function_98d9692f988bfe4d( attacker, wasdestroyed )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x16f6
 // Size: 0xd4
 function function_fb4a392282a75942( immediate, var_1548b5d7f8624206, var_86b37b7a946b6a67 )
@@ -493,7 +493,7 @@ function private function_66b731696d3bc6b8()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17f8
 // Size: 0x158
 function function_84ab622261b746e3( var_86b37b7a946b6a67 )
@@ -545,7 +545,7 @@ function function_84ab622261b746e3( var_86b37b7a946b6a67 )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1958
 // Size: 0x11
 function function_7acc5aa2b73fe93b()
@@ -584,7 +584,7 @@ function private function_ea7d2b522e1e6e1a()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19e1
 // Size: 0x2d
 function function_c969b8d603818cfc( markdata, player )
@@ -596,7 +596,7 @@ function function_c969b8d603818cfc( markdata, player )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a16
 // Size: 0xd
 function function_a6302bc4d39a6fa()
@@ -605,7 +605,7 @@ function function_a6302bc4d39a6fa()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a2c
 // Size: 0x52
 function function_a6c751ed1df3bf48( owner )
@@ -633,7 +633,8 @@ function private function_8ed527b613b0077e( var_c380eb54a8adb38c )
     self setclientomnvar( "ui_tactical_camera_" + "can_detonate_c4", 0 );
     self setclientomnvar( "ui_tactical_camera_" + "index", 0 );
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         var_1004988ab02e2b5a = "ui_tactical_camera_" + string( i ) + "_location";
         statusomnvar = "ui_tactical_camera_" + string( i ) + "_status";
         self setclientomnvar( var_1004988ab02e2b5a, -1 );
@@ -882,7 +883,7 @@ function private function_8f6ac6112bc43b15( camera )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x20ed
 // Size: 0x1a6
 function function_daf83774b715c487( markdata, camuser, target, targettype, useheadicon, useoutline )
@@ -929,7 +930,7 @@ function function_daf83774b715c487( markdata, camuser, target, targettype, usehe
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x229b
 // Size: 0x2b
 function function_a60052d904a2d492( target )
@@ -939,7 +940,7 @@ function function_a60052d904a2d492( target )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22cf
 // Size: 0xd8
 function function_1ee10c87668846d9( target, targettype )
@@ -965,7 +966,7 @@ function function_1ee10c87668846d9( target, targettype )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23af
 // Size: 0xc2
 function function_3a942d83b1617a65( target )
@@ -1048,7 +1049,7 @@ function private function_c0d6ea536d1aa6e3()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2592
 // Size: 0x1e
 function function_1af63adb97f131a1( objweapon )
@@ -1403,7 +1404,7 @@ function private function_afaefcf7b894e66( player )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2efc
 // Size: 0x33
 function function_8b1c76d70cb37943( data )
@@ -1413,7 +1414,7 @@ function function_8b1c76d70cb37943( data )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f37
 // Size: 0x2b
 function function_1ac07ea616760440( data )
@@ -1427,7 +1428,7 @@ function function_1ac07ea616760440( data )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f6a
 // Size: 0x13
 function function_53f49fc2c8ccf0a5( data )
@@ -1436,7 +1437,7 @@ function function_53f49fc2c8ccf0a5( data )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f85
 // Size: 0x32
 function function_3888b35ba7e2f0a9( data )
@@ -1446,7 +1447,7 @@ function function_3888b35ba7e2f0a9( data )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fbf
 // Size: 0x79
 function function_27fc17900940ca2a( var_8c27391c5d49580c )
@@ -1464,7 +1465,7 @@ function function_27fc17900940ca2a( var_8c27391c5d49580c )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3040
 // Size: 0x20
 function function_c0c307fac6611f33()
@@ -1473,7 +1474,7 @@ function function_c0c307fac6611f33()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3069
 // Size: 0x59
 function function_1be0d458243b1ee1( attacker )
@@ -1487,7 +1488,7 @@ function function_1be0d458243b1ee1( attacker )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30ca
 // Size: 0xd
 function function_391f2c842bce6b0a()
@@ -1496,7 +1497,7 @@ function function_391f2c842bce6b0a()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30e0
 // Size: 0x53
 function function_816f56a680e52d71()
@@ -1512,7 +1513,7 @@ function function_816f56a680e52d71()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x313b
 // Size: 0xd0
 function function_eb2ca6da697da5d()
@@ -1530,7 +1531,8 @@ function function_eb2ca6da697da5d()
     securityareas = level.var_f2a8e4a4af870513;
     securityvolumes = level.var_29ced2d4d9a0bde;
     
-    for (i = 0; i < securityareas.size; i++) {
+    for ( i = 0; i < securityareas.size ; i++ )
+    {
         area = securityareas[ i ];
         var_56945679b4f26db9 = securityareas[ i ] == "lv3_security_storage_lab";
         triggerent = level.var_29ced2d4d9a0bde[ area ];
@@ -1553,7 +1555,7 @@ function function_eb2ca6da697da5d()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3214
 // Size: 0x20
 function function_2e7f831f8c6f4b38()
@@ -1567,7 +1569,7 @@ function function_2e7f831f8c6f4b38()
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x323c
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
@@ -1576,7 +1578,7 @@ function function_49197cd063a740ea( callbackfunction )
 }
 
 // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3259
 // Size: 0x2b
 function tacticalcamera_hack( hacker )
@@ -1593,7 +1595,7 @@ function tacticalcamera_hack( hacker )
 /#
 
     // Namespace tactical_camera / scripts\mp\equipment\tactical_camera
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x328c
     // Size: 0x22, Type: dev
     function function_ba3f7afe898c7a7f()

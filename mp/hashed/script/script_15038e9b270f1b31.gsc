@@ -7,7 +7,7 @@
 #namespace namespace_2c3a8b16eb34bd6;
 
 // Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16d
 // Size: 0xb5
 function init()
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x22a
 // Size: 0x23c
 function function_806ad317de2af4f3( aliveplayercount, activeteams )
@@ -40,7 +40,8 @@ function function_806ad317de2af4f3( aliveplayercount, activeteams )
     var_35068b9b9dc4c73f = 0;
     activeteams = [];
     
-    for (i = 0; i < totalplayers; i++) {
+    for ( i = 0; i < totalplayers ; i++ )
+    {
         player = level.players[ i ];
         
         if ( player scripts\mp\gametypes\br::function_7dbb8165d792b06c() )
@@ -106,7 +107,7 @@ function function_806ad317de2af4f3( aliveplayercount, activeteams )
 }
 
 // Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46e
 // Size: 0x22
 function function_6436c089f777048b( deathdata )
@@ -118,7 +119,7 @@ function function_6436c089f777048b( deathdata )
 }
 
 // Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x498
 // Size: 0xda
 function function_f5fd598a80445d04( player )
@@ -142,7 +143,8 @@ function function_f5fd598a80445d04( player )
     totalplayers = level.players.size;
     var_f5439adc07558e92 = level.var_8ed22c88753f7445 + totalplayers;
     
-    for (i = 0; i < var_e4762082ef346678; i++) {
+    for ( i = 0; i < var_e4762082ef346678 ; i++ )
+    {
         level.var_be6c4a2a3ea18574 = min( var_f5439adc07558e92, level.var_be6c4a2a3ea18574 + 1 );
         scripts\mp\gametypes\br::updateplayerandteamcountui();
         
@@ -156,7 +158,7 @@ function function_f5fd598a80445d04( player )
 }
 
 // Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x57a
 // Size: 0x2e
 function function_98b1fbbdd7377898( player )
@@ -171,7 +173,7 @@ function function_98b1fbbdd7377898( player )
 }
 
 // Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0x1a
 function function_397f011c8120ea71()
@@ -180,7 +182,7 @@ function function_397f011c8120ea71()
 }
 
 // Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d2
 // Size: 0x73
 function watchprematchdone()
@@ -204,7 +206,7 @@ function watchprematchdone()
 }
 
 // Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64d
 // Size: 0xa4
 function function_479d3f9aaf4e3bf0( bimmediate )
@@ -221,7 +223,8 @@ function function_479d3f9aaf4e3bf0( bimmediate )
         return;
     }
     
-    for (i = 0; i < decrementcount; i++) {
+    for ( i = 0; i < decrementcount ; i++ )
+    {
         if ( !istrue( bimmediate ) )
         {
             wait randomfloat( 5 );
@@ -238,7 +241,7 @@ function function_479d3f9aaf4e3bf0( bimmediate )
 }
 
 // Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f9
 // Size: 0x7e
 function getalivecount()
@@ -246,7 +249,8 @@ function getalivecount()
     totalplayers = level.players.size;
     aliveplayercount = 0;
     
-    for (i = 0; i < totalplayers; i++) {
+    for ( i = 0; i < totalplayers ; i++ )
+    {
         player = level.players[ i ];
         
         if ( player scripts\mp\gametypes\br::function_7dbb8165d792b06c() )

@@ -35,7 +35,7 @@
 #namespace control;
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1377
 // Size: 0x27a
 function main()
@@ -112,7 +112,7 @@ function main()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15f9
 // Size: 0x267
 function initializematchrules()
@@ -141,7 +141,7 @@ function initializematchrules()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1868
 // Size: 0x25b
 function initdialog()
@@ -187,7 +187,7 @@ function initdialog()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1acb
 // Size: 0x64
 function function_69f9599fc4c0f82e()
@@ -202,7 +202,7 @@ function function_69f9599fc4c0f82e()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b37
 // Size: 0x366
 function control_onstartgametype()
@@ -311,7 +311,7 @@ function control_onstartgametype()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ea5
 // Size: 0x20
 function function_212d9bd663252af4()
@@ -325,7 +325,7 @@ function function_212d9bd663252af4()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ecd
 // Size: 0x1da
 function update_gametype_dvars()
@@ -353,7 +353,7 @@ function update_gametype_dvars()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20af
 // Size: 0x26e
 function init_spawns()
@@ -419,7 +419,7 @@ function init_spawns()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2325
 // Size: 0x9
 function control_getspawnpoint()
@@ -428,7 +428,7 @@ function control_getspawnpoint()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2337
 // Size: 0x3a6
 function setup_control_zones()
@@ -476,7 +476,8 @@ function setup_control_zones()
     setomnvar( "ui_num_dom_flags", primaryzones.size );
     triggers = [];
     
-    for (index = 0; index < primaryzones.size; index++) {
+    for ( index = 0; index < primaryzones.size ; index++ )
+    {
         triggers[ triggers.size ] = primaryzones[ index ];
     }
     
@@ -529,7 +530,7 @@ function setup_control_zones()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x26e5
 // Size: 0x4fc
 function function_d5ddc77707c5c50e( trigger, team, var_5ddbc1faed2c56e6, skipobjid, showoncompass )
@@ -658,7 +659,7 @@ function function_d5ddc77707c5c50e( trigger, team, var_5ddbc1faed2c56e6, skipobj
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2bea
 // Size: 0xa4
 function control_onuse( credit_player, team )
@@ -676,7 +677,7 @@ function control_onuse( credit_player, team )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c96
 // Size: 0xde
 function control_onbeginuse( player )
@@ -701,7 +702,7 @@ function control_onbeginuse( player )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d7c
 // Size: 0x40
 function control_onenduse( team, player, success )
@@ -718,7 +719,7 @@ function control_onenduse( team, player, success )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dc4
 // Size: 0x1dd
 function control_oncontested()
@@ -775,7 +776,7 @@ function control_oncontested()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fa9
 // Size: 0x8a
 function control_onuncontested( lastclaimteam )
@@ -802,7 +803,7 @@ function control_onuncontested( lastclaimteam )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x303b
 // Size: 0x74
 function control_onunoccupied()
@@ -824,7 +825,7 @@ function control_onunoccupied()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30b7
 // Size: 0xda
 function function_131f0413c52bbf59( player )
@@ -850,7 +851,7 @@ function function_131f0413c52bbf59( player )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3199
 // Size: 0x12
 function function_d0dc8fa9d7252f74( player )
@@ -859,7 +860,7 @@ function function_d0dc8fa9d7252f74( player )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31b3
 // Size: 0x174
 function function_275f384d96766b39( target, label )
@@ -903,7 +904,7 @@ function function_275f384d96766b39( target, label )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x332f
 // Size: 0x32c
 function removechevronsfromarray( othervisuals, label )
@@ -958,7 +959,7 @@ function removechevronsfromarray( othervisuals, label )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3664
 // Size: 0x510
 function postshipmodifychevrons( othervisuals, label )
@@ -1015,7 +1016,7 @@ function postshipmodifychevrons( othervisuals, label )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b7d
 // Size: 0xb2
 function function_726259d42f88361( state )
@@ -1032,14 +1033,15 @@ function function_726259d42f88361( state )
     
     foreach ( chevron in self.chevrons )
     {
-        for (i = 0; i < chevron.numchevrons; i++) {
+        for ( i = 0; i < chevron.numchevrons ; i++ )
+        {
             chevron setscriptablepartstate( var_a27485475186b39d + i, state );
         }
     }
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c37
 // Size: 0x94
 function function_223fb185e0afb231()
@@ -1066,7 +1068,7 @@ function function_223fb185e0afb231()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x3cd3
 // Size: 0x2f2
 function control_onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1147,7 +1149,7 @@ function control_onplayerkilled( einflictor, attacker, idamage, smeansofdeath, o
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3fcd
 // Size: 0xdc
 function function_c6ae85c2ab29d931( player, affectedteam )
@@ -1171,7 +1173,7 @@ function function_c6ae85c2ab29d931( player, affectedteam )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40b1
 // Size: 0x27
 function control_ononeleftevent( team )
@@ -1181,7 +1183,7 @@ function control_ononeleftevent( team )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40e0
 // Size: 0x86
 function control_givelastonteamwarning()
@@ -1197,7 +1199,7 @@ function control_givelastonteamwarning()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x416e
 // Size: 0xec
 function function_df4c58d276eea572( team )
@@ -1223,7 +1225,7 @@ function function_df4c58d276eea572( team )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4262
 // Size: 0x61
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -1237,7 +1239,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42cb
 // Size: 0x8
 function getflagteam()
@@ -1246,7 +1248,7 @@ function getflagteam()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42dc
 // Size: 0xf4
 function flagsetup()
@@ -1269,7 +1271,7 @@ function flagsetup()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43d8
 // Size: 0x60
 function getflagspawnidforobjectivekey( objectivekey )
@@ -1292,7 +1294,7 @@ function getflagspawnidforobjectivekey( objectivekey )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4441
 // Size: 0xfb
 function getspawnpointflagassignment( spawnpoint )
@@ -1320,7 +1322,7 @@ function getspawnpointflagassignment( spawnpoint )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4545
 // Size: 0xdd
 function parseflagassignmentstring( stringvalue )
@@ -1355,7 +1357,7 @@ function parseflagassignmentstring( stringvalue )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x462a
 // Size: 0x1bf
 function findnearestdompoint( pos )
@@ -1406,7 +1408,7 @@ function findnearestdompoint( pos )
 /#
 
     // Namespace control / scripts\mp\gametypes\control
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x47f2
     // Size: 0x61f, Type: dev
     function function_8861fae4db7f9c2()
@@ -1492,7 +1494,8 @@ function findnearestdompoint( pos )
                             color = colors[ spawnpoint.scriptdata.domflagassignments ];
                             line( spawnpoint.origin + heightoffsetlines, spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ][ 0 ] + heightoffsetlines, color );
                             
-                            for (i = 0; i < spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ].size - 1; i++) {
+                            for ( i = 0; i < spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ].size - 1 ; i++ )
+                            {
                                 line( spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ][ i ] + heightoffsetlines, spawnpointdata.var_601117ef603f46a3[ endpoint.spawnflagid ][ i + 1 ] + heightoffsetlines, color );
                             }
                         }
@@ -1527,7 +1530,7 @@ function findnearestdompoint( pos )
 #/
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e19
 // Size: 0x65
 function control_onspawnplayer( revivespawn )
@@ -1541,7 +1544,7 @@ function control_onspawnplayer( revivespawn )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e86
 // Size: 0x52, Type: bool
 function function_d9c3e51ec6bc88be( player )
@@ -1555,7 +1558,7 @@ function function_d9c3e51ec6bc88be( player )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ee1
 // Size: 0x14
 function control_onplayerconnect( player )
@@ -1564,7 +1567,7 @@ function control_onplayerconnect( player )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4efd
 // Size: 0x28
 function control_onplayerdisconnect( player )
@@ -1576,7 +1579,7 @@ function control_onplayerdisconnect( player )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f2d
 // Size: 0x62
 function function_d620fd9b072da70d( player, currentteam )
@@ -1589,7 +1592,7 @@ function function_d620fd9b072da70d( player, currentteam )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f97
 // Size: 0x282
 function function_56c428ee980a8464()
@@ -1637,7 +1640,7 @@ function function_56c428ee980a8464()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5221
 // Size: 0xdf
 function function_1f5ab97903453ce1( team_name, var_41e4d73fabed18df )
@@ -1666,7 +1669,7 @@ function function_1f5ab97903453ce1( team_name, var_41e4d73fabed18df )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5308
 // Size: 0xa
 function function_99a2435bdaa61d08()
@@ -1675,7 +1678,7 @@ function function_99a2435bdaa61d08()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x531a
 // Size: 0x7d
 function get_lives( team, internal_count )
@@ -1702,7 +1705,7 @@ function get_lives( team, internal_count )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x53a0
 // Size: 0x8c
 function onplayerspawned( player )
@@ -1731,7 +1734,7 @@ function onplayerspawned( player )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x5434
 // Size: 0x36d
 function function_6dc36e4dd3018346( objectivetype, label, credit_player, team, oldteam, flagobj )
@@ -1828,7 +1831,7 @@ function function_6dc36e4dd3018346( objectivetype, label, credit_player, team, o
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x57a9
 // Size: 0xff
 function function_90ee8e359d6d3323( team, capplayer, segment )
@@ -1868,7 +1871,7 @@ function function_90ee8e359d6d3323( team, capplayer, segment )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x58b0
 // Size: 0x8d
 function function_fc3c787b555257ac( time, pause_game )
@@ -1897,7 +1900,7 @@ function function_fc3c787b555257ac( time, pause_game )
 /#
 
     // Namespace control / scripts\mp\gametypes\control
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5945
     // Size: 0xa6, Type: dev
     function function_95b0959344794f91()
@@ -1926,7 +1929,7 @@ function function_fc3c787b555257ac( time, pause_game )
     }
 
     // Namespace control / scripts\mp\gametypes\control
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x59f3
     // Size: 0x190, Type: dev
     function removedompoint()
@@ -1971,7 +1974,7 @@ function function_fc3c787b555257ac( time, pause_game )
     }
 
     // Namespace control / scripts\mp\gametypes\control
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5b8b
     // Size: 0x47e, Type: dev
     function placedompoint()
@@ -2053,7 +2056,7 @@ function function_fc3c787b555257ac( time, pause_game )
 #/
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6011
 // Size: 0x313, Type: bool
 function function_e5b3b788aa8a4401()
@@ -2145,7 +2148,7 @@ function function_e5b3b788aa8a4401()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x632d
 // Size: 0xab
 function function_d234db657e8b7dc5( event, player )
@@ -2181,7 +2184,7 @@ function function_d234db657e8b7dc5( event, player )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63e1
 // Size: 0x9b, Type: bool
 function function_fcb83cd8b5b5098( excludedflag )
@@ -2210,7 +2213,7 @@ function function_fcb83cd8b5b5098( excludedflag )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6485
 // Size: 0x40
 function updatematchstatushintonspawn()
@@ -2230,7 +2233,7 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64cd
 // Size: 0x15d
 function updatetriggerforcodcaster()
@@ -2276,7 +2279,7 @@ function updatetriggerforcodcaster()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6632
 // Size: 0x3e
 function control_ontimelimit()
@@ -2290,7 +2293,7 @@ function control_ontimelimit()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6678
 // Size: 0x9
 function function_63a77191349871bf()
@@ -2299,7 +2302,7 @@ function function_63a77191349871bf()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6689
 // Size: 0x4a
 function function_539f2c0c7c8e8403( team )
@@ -2316,7 +2319,7 @@ function function_539f2c0c7c8e8403( team )
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66db
 // Size: 0x13f
 function function_287623bbb15154be()
@@ -2358,7 +2361,7 @@ function function_287623bbb15154be()
 }
 
 // Namespace control / scripts\mp\gametypes\control
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6822
 // Size: 0x56
 function function_37fa3a520e86530d( player )

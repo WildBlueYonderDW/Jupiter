@@ -5,7 +5,7 @@
 #namespace namespace_72f3711d95f0e465;
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x26e
 // Size: 0x144
 function function_35669831b02dc8fa( spawnorigin, targetorigin, var_44eb7c4eafc2e56e )
@@ -36,7 +36,7 @@ function function_35669831b02dc8fa( spawnorigin, targetorigin, var_44eb7c4eafc2e
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bb
 // Size: 0x1a4
 function function_16dfd690940ae271( exitorigin )
@@ -100,7 +100,7 @@ function function_16dfd690940ae271( exitorigin )
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x567
 // Size: 0x59
 function create_paratrooper( falldelay, var_4f200828059689db )
@@ -120,7 +120,7 @@ function create_paratrooper( falldelay, var_4f200828059689db )
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c8
 // Size: 0x178
 function parachute_set_spawn_values()
@@ -164,7 +164,7 @@ function parachute_set_spawn_values()
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x748
 // Size: 0x2f5
 function parachute_get_path( var_c225e4dd6095fdcd, var_c201cedd606d52b3, var_7dc1df4ff378a6f4 )
@@ -258,7 +258,7 @@ function parachute_get_path( var_c225e4dd6095fdcd, var_c201cedd606d52b3, var_7dc
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa45
 // Size: 0xc0
 function function_f69c1c88941df67a( landing_spot )
@@ -283,7 +283,7 @@ function function_f69c1c88941df67a( landing_spot )
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb0d
 // Size: 0x166
 function parachute_skydive( falldelay )
@@ -316,7 +316,7 @@ function parachute_skydive( falldelay )
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc7b
 // Size: 0x81
 function parachute_spawn()
@@ -330,7 +330,7 @@ function parachute_spawn()
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd04
 // Size: 0x4c
 function parachute_deploy()
@@ -342,7 +342,7 @@ function parachute_deploy()
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd58
 // Size: 0x24
 function delayeventfired()
@@ -353,7 +353,7 @@ function delayeventfired()
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd84
 // Size: 0x12
 function parachute_idle()
@@ -363,7 +363,7 @@ function parachute_idle()
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd9e
 // Size: 0x23
 function parachute_idle_internal()
@@ -374,7 +374,7 @@ function parachute_idle_internal()
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc9
 // Size: 0x153
 function parachute_move()
@@ -406,7 +406,7 @@ function parachute_move()
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf24
 // Size: 0x123
 function do_landing()
@@ -446,7 +446,7 @@ function do_landing()
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x104f
 // Size: 0x2d
 function watch_for_death()
@@ -461,7 +461,7 @@ function watch_for_death()
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1084
 // Size: 0x4a
 function unlink_on_ai_death( ai )

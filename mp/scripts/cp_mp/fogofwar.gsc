@@ -6,7 +6,7 @@
 #namespace fogofwar;
 
 // Namespace fogofwar / scripts\cp_mp\fogofwar
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1da
 // Size: 0x7a
 function init()
@@ -97,7 +97,8 @@ function private setupforplayer()
     
     if ( var_c8b88cabbc197d04 >= var_40c4d898fb1eb8 )
     {
-        for (versionidx = var_40c4d898fb1eb8 - 1; versionidx < fogofwardata.versions.regions[ mapname ].size; versionidx++) {
+        for ( versionidx = var_40c4d898fb1eb8 - 1; versionidx < fogofwardata.versions.regions[ mapname ].size ; versionidx++ )
+        {
             foreach ( region in fogofwardata.versions.regions[ mapname ][ versionidx ] )
             {
                 function_ec5f5e757fecb88c( clientnum, region, -1, 2 );
@@ -366,7 +367,8 @@ function private function_471b438f401fa0c( regionscompleted )
     
     if ( regionscompleted && fogofwardata.var_e361b1130ac53e8a )
     {
-        for (regioncomplete = 0; regioncomplete < regionscompleted; regioncomplete++) {
+        for ( regioncomplete = 0; regioncomplete < regionscompleted ; regioncomplete++ )
+        {
             if ( issharedfuncdefined( "fogofwar", "giveXPWithText" ) )
             {
                 player [[ getsharedfunc( "fogofwar", "giveXPWithText" ) ]]( #"hash_6f0d3f2e6cf9cfa2" );
@@ -395,7 +397,8 @@ function private function_471b438f401fa0c( regionscompleted )
                 function_db5d832dd959272f();
             }
             
-            for (deferredframe = 0; deferredframe < fogofwardata.debugupdateinterval; deferredframe++) {
+            for ( deferredframe = 0; deferredframe < fogofwardata.debugupdateinterval ; deferredframe++ )
+            {
                 waitframe();
             }
         }

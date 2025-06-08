@@ -14,7 +14,7 @@
 #namespace gamestaterestore;
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x213
 // Size: 0x9d
 function setupcallbacks()
@@ -43,7 +43,7 @@ function setupcallbacks()
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b8
 // Size: 0x42
 function function_e366f768381eb363()
@@ -62,7 +62,7 @@ function function_e366f768381eb363()
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x302
 // Size: 0xcc
 function restorestate( player )
@@ -90,7 +90,7 @@ function restorestate( player )
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d7
 // Size: 0xba
 function function_a5d40ec6023315a0( playername )
@@ -102,7 +102,8 @@ function function_a5d40ec6023315a0( playername )
     
     println( "<dev string:xad>" );
     
-    for (i = 0; i < game[ "gameStateRestore" ].players.size; i++) {
+    for ( i = 0; i < game[ "gameStateRestore" ].players.size ; i++ )
+    {
         if ( game[ "gameStateRestore" ].players[ i ].identifier == playername )
         {
             game[ "gameStateRestore" ].players[ i ] = undefined;
@@ -117,7 +118,7 @@ function function_a5d40ec6023315a0( playername )
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x499
 // Size: 0x3d
 function function_3433ff82f51bce6d()
@@ -133,7 +134,7 @@ function function_3433ff82f51bce6d()
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4de
 // Size: 0xa0
 function getlifeid( playername )
@@ -159,7 +160,7 @@ function getlifeid( playername )
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x587
 // Size: 0xc4
 function restoreteamscores()
@@ -190,7 +191,7 @@ function restoreteamscores()
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x653
 // Size: 0x9b
 function function_cc67f138614157c4( gamestate )
@@ -204,7 +205,7 @@ function function_cc67f138614157c4( gamestate )
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f6
 // Size: 0x92
 function function_9f5611f9df9b6bee( gamestate )
@@ -223,7 +224,7 @@ function function_9f5611f9df9b6bee( gamestate )
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x790
 // Size: 0xe2
 function function_bc22a4311e741bb3( player, playerdata )
@@ -250,7 +251,7 @@ function function_bc22a4311e741bb3( player, playerdata )
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x87a
 // Size: 0x1f0
 function restorekillstreaks( player, playerdata )
@@ -277,7 +278,8 @@ function restorekillstreaks( player, playerdata )
     player.pers[ "deaths" ] = player.lifeid;
     player givestreakpoints( #"kill", var_4591b3666013f31 );
     
-    for (slotnumber = 1; slotnumber <= 3; slotnumber++) {
+    for ( slotnumber = 1; slotnumber <= 3 ; slotnumber++ )
+    {
         streak = playerdata.killstreaks[ slotnumber - 1 ];
         streakused = streak.used;
         streakearned = streak.earned;
@@ -302,7 +304,7 @@ function restorekillstreaks( player, playerdata )
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa72
 // Size: 0x6e
 function function_d0e691079192c053( player, playerdata )
@@ -314,7 +316,7 @@ function function_d0e691079192c053( player, playerdata )
 }
 
 // Namespace gamestaterestore / scripts\mp\gamestaterestore
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xae9
 // Size: 0x69
 function function_eb800ab2be810565( player, playerdata )

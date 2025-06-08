@@ -4,7 +4,7 @@
 #namespace namespace_22693044d975f365;
 
 // Namespace namespace_22693044d975f365 / namespace_be652f1ae68cdc80
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x112
 // Size: 0x58
 function function_b182ef8398a23949( delta, maxdist, callback )
@@ -29,7 +29,7 @@ function function_b182ef8398a23949( delta, maxdist, callback )
 }
 
 // Namespace namespace_22693044d975f365 / namespace_be652f1ae68cdc80
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x172
 // Size: 0x1c, Type: bool
 function function_6acecd6fbf30866( delta, maxdist )
@@ -38,7 +38,7 @@ function function_6acecd6fbf30866( delta, maxdist )
 }
 
 // Namespace namespace_22693044d975f365 / namespace_be652f1ae68cdc80
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x197
 // Size: 0x60, Type: bool
 function function_d7cbf1e3a78fcdc( params )
@@ -52,7 +52,7 @@ function function_d7cbf1e3a78fcdc( params )
 }
 
 // Namespace namespace_22693044d975f365 / namespace_be652f1ae68cdc80
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x200
 // Size: 0x10a
 function function_af8d4a24d632c42a( delta, maxdist )
@@ -78,7 +78,7 @@ function function_af8d4a24d632c42a( delta, maxdist )
 }
 
 // Namespace namespace_22693044d975f365 / namespace_be652f1ae68cdc80
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x313
 // Size: 0x60, Type: bool
 function function_49ff999b129c0c3f( params )
@@ -92,7 +92,7 @@ function function_49ff999b129c0c3f( params )
 }
 
 // Namespace namespace_22693044d975f365 / namespace_be652f1ae68cdc80
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37c
 // Size: 0x161
 function function_203032caf2ef038b( maxdist )
@@ -129,7 +129,7 @@ function function_203032caf2ef038b( maxdist )
 }
 
 // Namespace namespace_22693044d975f365 / namespace_be652f1ae68cdc80
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e6
 // Size: 0xac
 function function_f3be9fa4b21eafc2( maxdist )

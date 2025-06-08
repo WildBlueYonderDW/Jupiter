@@ -23,7 +23,7 @@
 #namespace namespace_acac8960cc6d8d64;
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9e3
 // Size: 0x21a
 function function_21672171040d6aae()
@@ -77,7 +77,7 @@ function function_21672171040d6aae()
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc05
 // Size: 0x322
 function function_e6b1206e1d6c42a3( var_28af8e747331e08d )
@@ -124,7 +124,8 @@ function function_e6b1206e1d6c42a3( var_28af8e747331e08d )
         
         self.var_a5aa6c6f1908df45 = [];
         
-        for (i = 0; i < self.maxvehicles; i++) {
+        for ( i = 0; i < self.maxvehicles ; i++ )
+        {
             riderencounter = "ai_encounter:armored_convoy_rider_enc_soldier";
             
             if ( issharedfuncdefined( "armored_convoy_activity", "GetRiderEncounterFromIndex" ) )
@@ -156,7 +157,7 @@ function function_e6b1206e1d6c42a3( var_28af8e747331e08d )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf2f
 // Size: 0x1a
 function function_c4da40d7e3056ed6()
@@ -167,7 +168,7 @@ function function_c4da40d7e3056ed6()
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf51
 // Size: 0x85
 function function_1f2529d9fe2f4432()
@@ -185,7 +186,7 @@ function function_1f2529d9fe2f4432()
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfde
 // Size: 0xc4
 function function_ee03881506b0073d()
@@ -256,7 +257,7 @@ function private function_4df7515bfada9f28()
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x115e
 // Size: 0x76
 function function_5b846516c4a7f320()
@@ -279,7 +280,7 @@ function function_5b846516c4a7f320()
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11dd
 // Size: 0x170
 function function_130f27dbf7b9d56b()
@@ -546,7 +547,7 @@ function private function_9cdfbab7600978aa( activityinstance )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a21
 // Size: 0x55a
 function function_181fd18526171d6b( var_cffe525bfe66cdca, var_59d52445d26e52ea )
@@ -566,7 +567,8 @@ function function_181fd18526171d6b( var_cffe525bfe66cdca, var_59d52445d26e52ea )
     self.vehicle_ref = default_to( var_59d52445d26e52ea, random( var_67c9742ae410b71c ) );
     self.var_1c1e93b32ed347a7 = [];
     
-    for (index = 0; index < num_vehicles; index++) {
+    for ( index = 0; index < num_vehicles ; index++ )
+    {
         var_26e8177cafb3f245 = randomfloatrange( 10, 35 );
         var_92ffab909b4632c6 = offsetstep + var_26e8177cafb3f245;
         spawndata.origin = self.var_d9a91303aea799de.origin - offsetdirection * ( index + 1 ) * var_92ffab909b4632c6 + ( 0, 0, 100 );
@@ -658,7 +660,7 @@ function function_181fd18526171d6b( var_cffe525bfe66cdca, var_59d52445d26e52ea )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f84
 // Size: 0x152
 function function_b71aa24dbd5946e1()
@@ -699,7 +701,7 @@ function function_b71aa24dbd5946e1()
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20df
 // Size: 0x84
 function function_9f8f728b60e7418c( activityinstance )
@@ -725,7 +727,7 @@ function function_9f8f728b60e7418c( activityinstance )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x216b
 // Size: 0x1e0
 function function_50c2476a67740c1e( activityinstance )
@@ -786,7 +788,7 @@ function function_50c2476a67740c1e( activityinstance )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2353
 // Size: 0x36
 function function_803602cd4c0c0edd( activityinstance )
@@ -797,7 +799,7 @@ function function_803602cd4c0c0edd( activityinstance )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2391
 // Size: 0x13f
 function function_6590c1e6e798dd19()
@@ -839,7 +841,7 @@ function function_6590c1e6e798dd19()
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24d8
 // Size: 0x2b0
 function function_1e9c7b94e0a76915( activityinstance )
@@ -910,7 +912,7 @@ function function_1e9c7b94e0a76915( activityinstance )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2790
 // Size: 0x5b
 function function_264e36ce6f3574f7( vehicle_origin )
@@ -927,7 +929,7 @@ function function_264e36ce6f3574f7( vehicle_origin )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x27f3
 // Size: 0x1e9
 function function_df8142211bdf35cf( var_5f487a4ba2d7c5a, addpath, var_784030f0b32d0f1d )
@@ -987,7 +989,7 @@ function function_df8142211bdf35cf( var_5f487a4ba2d7c5a, addpath, var_784030f0b3
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x29e4
 // Size: 0x1f4
 function function_1f7a69bd7ab10e0( activityinstance, var_1c1e93b32ed347a7, origin, vehicleindex, vehicle )
@@ -1014,7 +1016,8 @@ function function_1f7a69bd7ab10e0( activityinstance, var_1c1e93b32ed347a7, origi
         activityinstance function_ce9c21523336cdbc( var_1c1e93b32ed347a7.var_542f8d001288419d, &function_6e72efeedb40de3b, var_1c1e93b32ed347a7 );
         function_adcc96a7d541aa36( var_1c1e93b32ed347a7.var_542f8d001288419d, 0 );
         
-        for (data = function_9a39e23c3c52c2af( var_1c1e93b32ed347a7.var_542f8d001288419d ); data.status < 4; data = function_9a39e23c3c52c2af( var_1c1e93b32ed347a7.var_542f8d001288419d )) {
+        for ( data = function_9a39e23c3c52c2af( var_1c1e93b32ed347a7.var_542f8d001288419d ); data.status < 4 ; data = function_9a39e23c3c52c2af( var_1c1e93b32ed347a7.var_542f8d001288419d ) )
+        {
             waitframe();
         }
         
@@ -1028,7 +1031,7 @@ function function_1f7a69bd7ab10e0( activityinstance, var_1c1e93b32ed347a7, origi
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2be0
 // Size: 0x6c
 function function_6e72efeedb40de3b( requestid, userdata, agent, data )
@@ -1067,7 +1070,7 @@ function private checkvehiclenormalizedposition( splinenodeindex )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ce6
 // Size: 0x97
 function function_f0f07d0530132d6b( activityinstance )
@@ -1088,7 +1091,7 @@ function function_f0f07d0530132d6b( activityinstance )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d85
 // Size: 0xd2
 function function_57cb82ad7a3ea8e4( speed, var_47377dd95777e070 )
@@ -1149,7 +1152,8 @@ function private armored_convoy_vehicle_update_spacing()
             
             if ( drawdebug )
             {
-                for (index = 0; index < var_4b1a1ec87d5ac862.size; index++) {
+                for ( index = 0; index < var_4b1a1ec87d5ac862.size ; index++ )
+                {
                     print3d( var_4b1a1ec87d5ac862[ index ].origin, "<dev string:xbb>" + var_4b1a1ec87d5ac862[ index ].veh_speed + "<dev string:x190>" + self.var_269a59bcee49ce1, ( 1, 1, 1 ), 1, 1, 1, 1 );
                 }
             }
@@ -1161,7 +1165,8 @@ function private armored_convoy_vehicle_update_spacing()
         {
             if ( var_f6df7509780987e0 )
             {
-                for (index = 0; index < var_4b1a1ec87d5ac862.size; index++) {
+                for ( index = 0; index < var_4b1a1ec87d5ac862.size ; index++ )
+                {
                     if ( isdefined( var_4b1a1ec87d5ac862[ index ].var_c8ede22a39f49745 ) && var_4b1a1ec87d5ac862[ index ].var_c8ede22a39f49745 > self.var_269a59bcee49ce1 )
                     {
                         var_4b1a1ec87d5ac862[ index ] function_77320e794d35465a( "p2p", "manualSpeed", mph_to_ips( self.var_269a59bcee49ce1 ) );
@@ -1178,7 +1183,8 @@ function private armored_convoy_vehicle_update_spacing()
         offsetdistance = 640;
         projectedpositions = [];
         
-        for (index = 0; index < var_4b1a1ec87d5ac862.size; index++) {
+        for ( index = 0; index < var_4b1a1ec87d5ac862.size ; index++ )
+        {
             if ( index > 0 )
             {
                 leadorigin = var_4b1a1ec87d5ac862[ index - 1 ].origin;
@@ -1201,7 +1207,8 @@ function private armored_convoy_vehicle_update_spacing()
                 
                 if ( drawdebug )
                 {
-                    for (index = 1; index < offsetpositions.size; index++) {
+                    for ( index = 1; index < offsetpositions.size ; index++ )
+                    {
                         color = ( 1, 0.5, 0.1 );
                         line( var_4b1a1ec87d5ac862[ index - 1 ].origin, offsetpositions[ index ], color, 1, 0, 1 );
                         sphere( offsetpositions[ index ], 10, color, 0, 1 );
@@ -1209,7 +1216,8 @@ function private armored_convoy_vehicle_update_spacing()
                 }
             #/
             
-            for (index = 1; index < projectedpositions.size; index++) {
+            for ( index = 1; index < projectedpositions.size ; index++ )
+            {
                 leadforward = vectornormalize( anglestoforward( var_4b1a1ec87d5ac862[ index - 1 ].angles * ( 0, 1, 0 ) ) );
                 var_631c4aecaed3137c = vectornormalize( projectedpositions[ index ] - offsetpositions[ index ] );
                 var_9a295e6abb51c7b3 = vectordot2( var_631c4aecaed3137c, leadforward, 0 );
@@ -1279,7 +1287,7 @@ function private armored_convoy_vehicle_update_spacing()
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34b9
 // Size: 0x68
 function function_617a1b569134ba77( activityinstance )
@@ -1300,7 +1308,7 @@ function function_617a1b569134ba77( activityinstance )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3529
 // Size: 0x37
 function function_7aa120c6895b1b0( var_b381b0883bcd4847 )
@@ -1310,7 +1318,7 @@ function function_7aa120c6895b1b0( var_b381b0883bcd4847 )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3568
 // Size: 0x48
 function function_53ecaed01e5352a0( var_b381b0883bcd4847 )
@@ -1324,7 +1332,7 @@ function function_53ecaed01e5352a0( var_b381b0883bcd4847 )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35b8
 // Size: 0xb1
 function function_586d9c599add1552( var_d6bfa53c531546d6 )
@@ -1350,7 +1358,7 @@ function function_586d9c599add1552( var_d6bfa53c531546d6 )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3671
 // Size: 0x118
 function function_219e012faa65219d( var_28af8e747331e08d )
@@ -1362,7 +1370,8 @@ function function_219e012faa65219d( var_28af8e747331e08d )
         self.var_157fa22c13019614.riderencounters = [];
         self.var_157fa22c13019614.vehiclerefs = [];
         
-        for (i = 0; i < var_28af8e747331e08d.var_4b1a1ec87d5ac862.size; i++) {
+        for ( i = 0; i < var_28af8e747331e08d.var_4b1a1ec87d5ac862.size ; i++ )
+        {
             self.var_157fa22c13019614.riderencounters[ i ] = "ai_encounter:" + var_28af8e747331e08d.var_4b1a1ec87d5ac862[ i ].variant_object.riderencounter;
             self.var_157fa22c13019614.vehiclerefs[ i ] = var_28af8e747331e08d.var_4b1a1ec87d5ac862[ i ].variant_object.vehicle;
         }
@@ -1374,7 +1383,7 @@ function function_219e012faa65219d( var_28af8e747331e08d )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3791
 // Size: 0x15
 function function_c7989b2ed75d1228()
@@ -1383,7 +1392,7 @@ function function_c7989b2ed75d1228()
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37af
 // Size: 0x52
 function function_a23b8410030b26d0( vehicleposition )
@@ -1393,7 +1402,7 @@ function function_a23b8410030b26d0( vehicleposition )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x380a
 // Size: 0x52
 function function_2c9ad04639e71614( vehicleposition )
@@ -1403,7 +1412,7 @@ function function_2c9ad04639e71614( vehicleposition )
 }
 
 // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3865
 // Size: 0xb
 function function_5840644662c74a48( vehicle )
@@ -1414,7 +1423,7 @@ function function_5840644662c74a48( vehicle )
 /#
 
     // Namespace namespace_acac8960cc6d8d64 / namespace_16464fbff4c4f003
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3878
     // Size: 0xc, Type: dev
     function function_e6f128a1e529f457()
@@ -1526,7 +1535,8 @@ function function_5840644662c74a48( vehicle )
         
         if ( splinepoints.size >= 2 )
         {
-            for (index = 0; index < splinepoints.size - 1; index++) {
+            for ( index = 0; index < splinepoints.size - 1 ; index++ )
+            {
                 currentpoint = splinepoints[ index ];
                 nextpoint = splinepoints[ index + 1 ];
                 durations[ durations.size ] = function_215e10bf17f98702( currentpoint, nextpoint, var_bfe90410fad38aaa );
@@ -1648,7 +1658,8 @@ function function_5840644662c74a48( vehicle )
         scripts\common\vehicle_aianim::handle_attached_guys();
         scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_setteam( self, "<dev string:x3e3>" );
         
-        for (seatindex = numpassengers; seatindex >= 0; seatindex--) {
+        for ( seatindex = numpassengers; seatindex >= 0 ; seatindex-- )
+        {
             spawnlocation = self.origin + vehicleforward * seatindex * 100 + ( 0, 0, 200 );
             agent = scripts\mp\mp_agent::spawnnewagentaitype( "<dev string:x3fa>", spawnlocation, self.angles, "<dev string:x3e3>", "<dev string:x422>" );
             

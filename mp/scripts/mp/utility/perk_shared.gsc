@@ -1,7 +1,7 @@
 #namespace perk_shared;
 
 // Namespace perk_shared / scripts\mp\utility\perk_shared
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf4
 // Size: 0x6c, Type: bool
 function function_56ad1b98a0613f8a( perkname )

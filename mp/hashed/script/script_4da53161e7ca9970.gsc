@@ -10,7 +10,7 @@
 #namespace warrior_dronewars;
 
 // Namespace warrior_dronewars / namespace_4ade0a16752c1aea
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17e
 // Size: 0x28
 function function_fc973eaad5032286()
@@ -21,7 +21,7 @@ function function_fc973eaad5032286()
 }
 
 // Namespace warrior_dronewars / namespace_4ade0a16752c1aea
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ae
 // Size: 0x66
 function function_edbb4af03709e7ca()
@@ -35,7 +35,7 @@ function function_edbb4af03709e7ca()
 }
 
 // Namespace warrior_dronewars / namespace_4ade0a16752c1aea
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21c
 // Size: 0x6e
 function onplayerspawned()
@@ -56,7 +56,7 @@ function onplayerspawned()
 }
 
 // Namespace warrior_dronewars / namespace_4ade0a16752c1aea
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x292
 // Size: 0x3d
 function function_7f932a5ec2ace0fd()

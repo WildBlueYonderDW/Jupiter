@@ -31,7 +31,7 @@
 #namespace ammo_box;
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x580
 // Size: 0x1e7
 function ammobox_init()
@@ -78,7 +78,7 @@ function ammobox_init()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x76f
 // Size: 0xad
 function ammobox_addrandomweapon( weapongroup, hasnvg )
@@ -87,7 +87,8 @@ function ammobox_addrandomweapon( weapongroup, hasnvg )
     var_b8215055a946eebb = scripts\cp_mp\weapon::buildweapon( randomweapon, undefined, undefined, undefined, undefined, undefined, undefined, undefined, hasnvg );
     numattachments = randomintrange( 2, 8 );
     
-    for (i = 0; i < numattachments; i++) {
+    for ( i = 0; i < numattachments ; i++ )
+    {
         attachment = scripts\mp\weapons::getrandomgraverobberattachment( var_b8215055a946eebb );
         
         if ( !isdefined( attachment ) )
@@ -110,7 +111,7 @@ function ammobox_addrandomweapon( weapongroup, hasnvg )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x824
 // Size: 0x65
 function ammobox_updateheadicononjointeam( player )
@@ -125,7 +126,7 @@ function ammobox_updateheadicononjointeam( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x891
 // Size: 0x103
 function ammobox_addboxweapon( weaponobj, probability )
@@ -137,7 +138,8 @@ function ammobox_addboxweapon( weaponobj, probability )
     attachmenttoks = strtok( fullweaponname, "+" );
     var_d4ccfb9e7f269c94 = attachmenttoks[ 0 ];
     
-    for (i = 1; i < attachmenttoks.size; i++) {
+    for ( i = 1; i < attachmenttoks.size ; i++ )
+    {
         tok = attachmenttoks[ i ];
         varianttoks = strtok( tok, "|" );
         var_d4ccfb9e7f269c94 += "+" + varianttoks[ 0 ];
@@ -149,7 +151,7 @@ function ammobox_addboxweapon( weaponobj, probability )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x99c
 // Size: 0xca
 function ammobox_settled( grenade )
@@ -184,7 +186,7 @@ function ammobox_settled( grenade )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa6e
 // Size: 0xc
 function ammobox_destroy()
@@ -193,7 +195,7 @@ function ammobox_destroy()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa82
 // Size: 0x109
 function ammobox_delete( deletiondelay, wasdestroyed )
@@ -222,7 +224,7 @@ function ammobox_delete( deletiondelay, wasdestroyed )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb93
 // Size: 0x4c
 function ammobox_preloadweapons()
@@ -235,7 +237,7 @@ function ammobox_preloadweapons()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbe7
 // Size: 0xa0
 function ammobox_internalpreloadweapons( preloadtrigger )
@@ -271,7 +273,7 @@ function ammobox_internalpreloadweapons( preloadtrigger )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc8f
 // Size: 0x7c
 function ammobox_makeusable()
@@ -290,7 +292,7 @@ function ammobox_makeusable()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd13
 // Size: 0x22
 function ammobox_makeunusable()
@@ -302,7 +304,7 @@ function ammobox_makeunusable()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd3d
 // Size: 0x4c
 function ammobox_watchallplayeruse()
@@ -326,7 +328,7 @@ function ammobox_watchallplayeruse()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd91
 // Size: 0x84
 function ammobox_updateplayerusevisibility()
@@ -349,7 +351,7 @@ function ammobox_updateplayerusevisibility()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe1d
 // Size: 0x91
 function ammobox_updateplayersused()
@@ -370,7 +372,7 @@ function ammobox_updateplayersused()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeb6
 // Size: 0x55, Type: bool
 function ammobox_playercanuse( player )
@@ -399,7 +401,7 @@ function ammobox_playercanuse( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf14
 // Size: 0x16e, Type: bool
 function ammobox_onplayerholduse( player )
@@ -446,7 +448,7 @@ function ammobox_onplayerholduse( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x108b
 // Size: 0x7a
 function ammobox_getbufferedplayerdata( player )
@@ -466,7 +468,7 @@ function ammobox_getbufferedplayerdata( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x110e
 // Size: 0xbe
 function ammobox_getbufferedweapon( player )
@@ -500,7 +502,7 @@ function ammobox_getbufferedweapon( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11d5
 // Size: 0x8c
 function ammobox_getbufferedattachment( player )
@@ -540,7 +542,7 @@ function ammobox_getbufferedattachment( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x126a
 // Size: 0x31
 function ammobox_getbufferedattachmentweapon( player )
@@ -551,7 +553,7 @@ function ammobox_getbufferedattachmentweapon( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12a4
 // Size: 0x31
 function ammobox_getbufferedattachmentsourceweapon( player )
@@ -562,7 +564,7 @@ function ammobox_getbufferedattachmentsourceweapon( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12de
 // Size: 0xa3
 function ammobox_bufferedattachmentweapon( player )
@@ -591,7 +593,7 @@ function ammobox_bufferedattachmentweapon( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1389
 // Size: 0x40
 function ammobox_clearbufferedweapon( player )
@@ -602,7 +604,7 @@ function ammobox_clearbufferedweapon( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13d1
 // Size: 0x3f
 function ammobox_clearbufferedattachmentweapon( player )
@@ -614,7 +616,7 @@ function ammobox_clearbufferedattachmentweapon( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1418
 // Size: 0x84
 function ammobox_checkclearbufferedattachmentweapon( player )
@@ -649,7 +651,7 @@ function ammobox_checkclearbufferedattachmentweapon( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14a4
 // Size: 0x8b, Type: bool
 function ammobox_isvalidrandomweapon( randomweapon, lastweapon, primaries )
@@ -671,7 +673,7 @@ function ammobox_isvalidrandomweapon( randomweapon, lastweapon, primaries )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1538
 // Size: 0xac
 function ammobox_getrandomweapon()
@@ -680,7 +682,8 @@ function ammobox_getrandomweapon()
     runningtotal = 0;
     selectedweapon = undefined;
     
-    for (i = 0; i < level.ammoboxweapons.weapons.size; i++) {
+    for ( i = 0; i < level.ammoboxweapons.weapons.size ; i++ )
+    {
         runningtotal += level.ammoboxweapons.probabilities[ i ];
         
         if ( runningtotal > randomindex )
@@ -694,7 +697,7 @@ function ammobox_getrandomweapon()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15ed
 // Size: 0xd3, Type: bool
 function ammobox_onplayeruse( player )
@@ -737,7 +740,7 @@ function ammobox_onplayeruse( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16c9
 // Size: 0x45, Type: bool
 function ammobox_canweaponuserandomattachments( objweapon )
@@ -751,7 +754,7 @@ function ammobox_canweaponuserandomattachments( objweapon )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1717
 // Size: 0x7f, Type: bool
 function ammobox_canweaponacceptmoreattachments( objweapon )
@@ -773,7 +776,7 @@ function ammobox_canweaponacceptmoreattachments( objweapon )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x179f
 // Size: 0x234, Type: bool
 function ammobox_giverandomattachment( objweapon )
@@ -850,7 +853,7 @@ function ammobox_giverandomattachment( objweapon )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19dc
 // Size: 0x75
 function ammobox_showattachmentflyout( attachmentindex )
@@ -874,7 +877,7 @@ function ammobox_showattachmentflyout( attachmentindex )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a59
 // Size: 0x1c
 function ammobox_makedamageable()
@@ -883,7 +886,7 @@ function ammobox_makedamageable()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a7d
 // Size: 0xdb
 function ammobox_handledamage( data )
@@ -915,7 +918,7 @@ function ammobox_handledamage( data )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b61
 // Size: 0x25
 function ammobox_handlefataldamage( data )
@@ -925,7 +928,7 @@ function ammobox_handlefataldamage( data )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b8e
 // Size: 0x96
 function ammobox_bulletdamagetohits( data, isenemydamage )
@@ -951,7 +954,7 @@ function ammobox_bulletdamagetohits( data, isenemydamage )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c2c
 // Size: 0x58
 function ammobox_explosivedamagetohits( data, isenemydamage )
@@ -975,7 +978,7 @@ function ammobox_explosivedamagetohits( data, isenemydamage )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c8c
 // Size: 0x20
 function ammobox_removeowneroutline()
@@ -987,7 +990,7 @@ function ammobox_removeowneroutline()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cb4
 // Size: 0x42
 function ammobox_addheadicon()
@@ -998,7 +1001,7 @@ function ammobox_addheadicon()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cfe
 // Size: 0x50
 function ammobox_removeheadicon()
@@ -1017,7 +1020,7 @@ function ammobox_removeheadicon()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d56
 // Size: 0x50
 function ammobox_givepointsfordeath( attacker )
@@ -1031,7 +1034,7 @@ function ammobox_givepointsfordeath( attacker )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dae
 // Size: 0x54
 function ammobox_givexpforuse( player )
@@ -1046,7 +1049,7 @@ function ammobox_givexpforuse( player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e0a
 // Size: 0x12
 function ammobox_onmovingplatformdeath( data )
@@ -1055,7 +1058,7 @@ function ammobox_onmovingplatformdeath( data )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e24
 // Size: 0x54
 function ammobox_handlemovingplatforms( stuckto )
@@ -1068,7 +1071,7 @@ function ammobox_handlemovingplatforms( stuckto )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e80
 // Size: 0x2b
 function ammobox_watchdisownedtimeout()
@@ -1083,7 +1086,7 @@ function ammobox_watchdisownedtimeout()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1eb3
 // Size: 0x3f
 function ammobox_watchdisownedtimeoutinternal()
@@ -1096,7 +1099,7 @@ function ammobox_watchdisownedtimeoutinternal()
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1efa
 // Size: 0x13
 function ammobox_empapplied( data )
@@ -1105,7 +1108,7 @@ function ammobox_empapplied( data )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f15
 // Size: 0x1d
 function ammobox_usedcallback( entity, player )
@@ -1114,7 +1117,7 @@ function ammobox_usedcallback( entity, player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f3a
 // Size: 0x4a
 function ammobox_tryuse( entity, player )
@@ -1134,7 +1137,7 @@ function ammobox_tryuse( entity, player )
 }
 
 // Namespace ammo_box / scripts\mp\equipment\ammo_box
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f8c
 // Size: 0x149
 function ammobox_tryuseinternal( entity, player )
@@ -1200,7 +1203,7 @@ function ammobox_tryuseinternal( entity, player )
 /#
 
     // Namespace ammo_box / scripts\mp\equipment\ammo_box
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x20dd
     // Size: 0x8f, Type: dev
     function function_d78c9f174c10f8a9()

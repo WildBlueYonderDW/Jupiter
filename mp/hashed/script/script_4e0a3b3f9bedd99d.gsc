@@ -18,7 +18,7 @@
 #namespace smokebomb;
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x299
 // Size: 0x52
 function function_7e28b2b514a15cd3( statename, var_5edf43a8a1497a41, var_a4b7ac07eebb559f )
@@ -30,7 +30,7 @@ function function_7e28b2b514a15cd3( statename, var_5edf43a8a1497a41, var_a4b7ac0
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2f3
 // Size: 0x44
 function function_48c8acf993dae2cc( asmname, statename, params )
@@ -42,7 +42,7 @@ function function_48c8acf993dae2cc( asmname, statename, params )
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33f
 // Size: 0x33
 function function_1daaaf7667f1282e()
@@ -55,7 +55,7 @@ function function_1daaaf7667f1282e()
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x37a
 // Size: 0x45e
 function grenadethrow( statename, var_5edf43a8a1497a41, var_a4b7ac07eebb559f )
@@ -172,7 +172,7 @@ function grenadethrow( statename, var_5edf43a8a1497a41, var_a4b7ac07eebb559f )
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x7e0
 // Size: 0xb7
 function function_d93415244e99e763( position, angles, var_ba447df20dbbbf8a, justspawned )
@@ -205,7 +205,7 @@ function function_d93415244e99e763( position, angles, var_ba447df20dbbbf8a, just
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x89f
 // Size: 0x2d
 function function_ca247899dbbcf9a4( position )
@@ -214,7 +214,7 @@ function function_ca247899dbbcf9a4( position )
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d4
 // Size: 0x3d
 function function_9eaeff99bbe830e7( owner )
@@ -227,7 +227,7 @@ function function_9eaeff99bbe830e7( owner )
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x919
 // Size: 0x38
 function function_160d327d81ff0cce( position )
@@ -240,7 +240,7 @@ function function_160d327d81ff0cce( position )
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x959
 // Size: 0xe2
 function function_fa704b58059a64b6( position, owner, team, duration, scale )
@@ -269,7 +269,7 @@ function function_fa704b58059a64b6( position, owner, team, duration, scale )
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa43
 // Size: 0x1bf
 function gas_watchtriggerenter()
@@ -344,7 +344,7 @@ function gas_watchtriggerenter()
 }
 
 // Namespace smokebomb / namespace_abe23f4a1f05240f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc0a
 // Size: 0x4c
 function function_b4bd334ecec6c6c8( asmname, statename, params )

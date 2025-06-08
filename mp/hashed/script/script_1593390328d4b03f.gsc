@@ -6,7 +6,7 @@
 #namespace namespace_90fdb6fb49847e53;
 
 // Namespace namespace_90fdb6fb49847e53 / namespace_40f17d09cd6b145
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x141
 // Size: 0x115
 function init()
@@ -36,7 +36,7 @@ function init()
 }
 
 // Namespace namespace_90fdb6fb49847e53 / namespace_40f17d09cd6b145
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25e
 // Size: 0xb6
 function function_5d1148bbed9fc1d7()
@@ -48,7 +48,8 @@ function function_5d1148bbed9fc1d7()
     {
         loops = min( var_74510c9a259939ad, level.mit.loot.loots.size - i );
         
-        for (j = 0; j < loops; j++) {
+        for ( j = 0; j < loops ; j++ )
+        {
             checkloot( level.mit.loot.loots[ i + j ] );
         }
         

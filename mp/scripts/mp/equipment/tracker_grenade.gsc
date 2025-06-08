@@ -29,7 +29,7 @@ function autoexec main()
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25e
 // Size: 0xe9
 function function_b46c661d38c61aa2( grenade )
@@ -67,7 +67,7 @@ function private function_d81cd8f4d92b77bf()
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3a9
 // Size: 0x10f
 function function_7eb7507182cfbd94( position, owner, bundle )
@@ -114,7 +114,7 @@ function function_7eb7507182cfbd94( position, owner, bundle )
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c0
 // Size: 0x80
 function function_b43f676666043cee( victim )
@@ -131,7 +131,7 @@ function function_b43f676666043cee( victim )
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x548
 // Size: 0x16
 function function_a0444bbae34753bb()
@@ -141,7 +141,7 @@ function function_a0444bbae34753bb()
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x566
 // Size: 0x3b
 function function_1cd780b65cb4e2e0( delay )
@@ -160,7 +160,7 @@ function function_1cd780b65cb4e2e0( delay )
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a9
 // Size: 0xcd
 function function_2b0e93490c5184bb( data )
@@ -196,7 +196,7 @@ function function_2b0e93490c5184bb( data )
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67f
 // Size: 0x5f
 function function_ad19dd03519e7590( data )
@@ -213,7 +213,7 @@ function function_ad19dd03519e7590( data )
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e6
 // Size: 0x76
 function function_6572bf82bf990570( data )
@@ -240,7 +240,7 @@ function function_6572bf82bf990570( data )
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x764
 // Size: 0x1d
 function function_4a7db4c5bc06b7c1()
@@ -255,7 +255,7 @@ function function_4a7db4c5bc06b7c1()
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x789
 // Size: 0x3f
 function function_68d0712494ec6197()
@@ -272,7 +272,7 @@ function function_68d0712494ec6197()
 }
 
 // Namespace tracker_grenade / scripts\mp\equipment\tracker_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7d0
 // Size: 0x21
 function function_88b7b96152f86153( dangericon )

@@ -32,6 +32,7 @@
 #using scripts\mp\gamelogic;
 #using scripts\mp\gametypes\br_gametype_dmz;
 #using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
 #using scripts\mp\hud_util;
 #using scripts\mp\killstreaks\killstreaks;
 #using scripts\mp\loot;
@@ -48,6 +49,7 @@
 #using scripts\mp\teams;
 #using scripts\mp\utility\dvars;
 #using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
 #using scripts\mp\utility\outline;
 #using scripts\mp\utility\perk;
 #using scripts\mp\utility\player;
@@ -60,8 +62,8 @@
 #namespace class;
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2696
+// Params 0
+// Checksum 0x0, Offset: 0x26a7
 // Size: 0x4aa
 function init()
 {
@@ -74,20 +76,24 @@ function init()
         level.classmap[ "superpower" ] = 0;
     }
     
-    for (i = 0; i <= 2; i++) {
+    for ( i = 0; i <= 2 ; i++ )
+    {
         level.classmap[ "class" + i ] = 0;
     }
     
-    for (i = 1; i <= 12; i++) {
+    for ( i = 1; i <= 12 ; i++ )
+    {
         level.classmap[ "custom" + i ] = i - 1;
     }
     
-    for (i = 1; i <= 6; i++) {
+    for ( i = 1; i <= 6 ; i++ )
+    {
         level.classmap[ "axis_recipe" + i ] = i - 1;
         level.classmap[ "allies_recipe" + i ] = i - 1;
     }
     
-    for (i = 1; i <= 11; i++) {
+    for ( i = 1; i <= 11 ; i++ )
+    {
         level.classmap[ "default" + i ] = i - 1;
     }
     
@@ -152,7 +158,7 @@ function init()
     {
         level.classtablename = "classtable:" + level.gamemodebundle.classtable;
     }
-    else if ( getdvarint( @"hash_9fdeab749d8f74a1", 0 ) )
+    else if ( getdvarint( @"scr_test_loadouts", 0 ) )
     {
         level.classtablename = "classtable:" + level.gamemodebundle.var_6452bbdfe7671a5d;
     }
@@ -162,7 +168,7 @@ function init()
         level.classtablename = [[ getsharedfunc( "classtable", "getClassTableOverride" ) ]]();
     }
     
-    level.var_a0b81643aba2ec27 = getdvarint( @"hash_9e6360de60c38773", 0 ) == 1;
+    level.var_a0b81643aba2ec27 = getdvarint( @"scr_enable_classswap_postcombat", 0 ) == 1;
     assertex( isdefined( level.classtablename ), "<dev string:x1c>" );
     killstreakoverrides = getdvar( @"killstreak_overrides", "" );
     
@@ -182,8 +188,8 @@ function init()
 }
 
 // Namespace class / scripts\mp\class
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b48
+// Params 9
+// Checksum 0x0, Offset: 0x2b59
 // Size: 0x5d
 function function_e83615f8a92e4378( rootname, attachments, camo, reticle, variantid, attachmentids, cosmeticattachment, stickers, hasnvg )
 {
@@ -191,8 +197,8 @@ function function_e83615f8a92e4378( rootname, attachments, camo, reticle, varian
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bae
+// Params 1
+// Checksum 0x0, Offset: 0x2bbf
 // Size: 0x21
 function getclasschoice( response )
 {
@@ -201,8 +207,8 @@ function getclasschoice( response )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bd8
+// Params 1
+// Checksum 0x0, Offset: 0x2be9
 // Size: 0x39
 function getweaponchoice( response )
 {
@@ -217,8 +223,8 @@ function getweaponchoice( response )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c19
+// Params 2
+// Checksum 0x0, Offset: 0x2c2a
 // Size: 0x38
 function cac_getweapon( classindex, weaponindex )
 {
@@ -226,8 +232,8 @@ function cac_getweapon( classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c5a
+// Params 3
+// Checksum 0x0, Offset: 0x2c6b
 // Size: 0x6c
 function cac_getweaponattachment( classindex, weaponindex, attachmentindex )
 {
@@ -237,8 +243,8 @@ function cac_getweaponattachment( classindex, weaponindex, attachmentindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ccf
+// Params 3
+// Checksum 0x0, Offset: 0x2ce0
 // Size: 0x46
 function cac_getweaponattachmentid( classindex, weaponindex, attachmentindex )
 {
@@ -246,8 +252,8 @@ function cac_getweaponattachmentid( classindex, weaponindex, attachmentindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d1e
+// Params 3
+// Checksum 0x0, Offset: 0x2d2f
 // Size: 0xc8
 function function_a4065e820eb1f919( classindex, weaponindex, attachmentindex )
 {
@@ -258,8 +264,8 @@ function function_a4065e820eb1f919( classindex, weaponindex, attachmentindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2def
+// Params 3
+// Checksum 0x0, Offset: 0x2e00
 // Size: 0x8b
 function function_a5d1432d54033ea9( slider1, slider2, var_bf247e07a72958e )
 {
@@ -284,8 +290,8 @@ function function_a5d1432d54033ea9( slider1, slider2, var_bf247e07a72958e )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e82
+// Params 2
+// Checksum 0x0, Offset: 0x2e93
 // Size: 0x38
 function cac_getweaponlootitemid( classindex, weaponindex )
 {
@@ -293,8 +299,8 @@ function cac_getweaponlootitemid( classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ec3
+// Params 2
+// Checksum 0x0, Offset: 0x2ed4
 // Size: 0x38
 function cac_getweaponvariantid( classindex, weaponindex )
 {
@@ -302,8 +308,8 @@ function cac_getweaponvariantid( classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f04
+// Params 2
+// Checksum 0x0, Offset: 0x2f15
 // Size: 0x38
 function cac_getweaponcamo( classindex, weaponindex )
 {
@@ -311,8 +317,8 @@ function cac_getweaponcamo( classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f45
+// Params 2
+// Checksum 0x0, Offset: 0x2f56
 // Size: 0x38
 function cac_getweaponreticle( classindex, weaponindex )
 {
@@ -320,8 +326,8 @@ function cac_getweaponreticle( classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f86
+// Params 2
+// Checksum 0x0, Offset: 0x2f97
 // Size: 0x254
 function cac_getkillstreak( index, class )
 {
@@ -405,8 +411,8 @@ function cac_getkillstreak( index, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x31e3
+// Params 2
+// Checksum 0x0, Offset: 0x31f4
 // Size: 0x96
 function function_3d362af202938e22( index, class )
 {
@@ -426,8 +432,8 @@ function function_3d362af202938e22( index, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3282
+// Params 0
+// Checksum 0x0, Offset: 0x3293
 // Size: 0x28
 function cac_getcharacterarchetype()
 {
@@ -440,8 +446,8 @@ function cac_getcharacterarchetype()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32b3
+// Params 1
+// Checksum 0x0, Offset: 0x32c4
 // Size: 0x30
 function cac_getequipmentprimary( classindex )
 {
@@ -449,8 +455,8 @@ function cac_getequipmentprimary( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32ec
+// Params 1
+// Checksum 0x0, Offset: 0x32fd
 // Size: 0x30
 function function_9c883cb23c614891( classindex )
 {
@@ -458,8 +464,8 @@ function function_9c883cb23c614891( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3325
+// Params 1
+// Checksum 0x0, Offset: 0x3336
 // Size: 0x30
 function cac_getextraequipmentprimary( classindex )
 {
@@ -467,8 +473,8 @@ function cac_getextraequipmentprimary( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x335e
+// Params 1
+// Checksum 0x0, Offset: 0x336f
 // Size: 0x30
 function cac_getflcextraequipmentprimary( classindex )
 {
@@ -476,8 +482,8 @@ function cac_getflcextraequipmentprimary( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3397
+// Params 1
+// Checksum 0x0, Offset: 0x33a8
 // Size: 0x31
 function cac_getequipmentsecondary( classindex )
 {
@@ -485,8 +491,8 @@ function cac_getequipmentsecondary( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33d1
+// Params 1
+// Checksum 0x0, Offset: 0x33e2
 // Size: 0x31
 function function_d9e6d0a8cbe6b48d( classindex )
 {
@@ -494,8 +500,8 @@ function function_d9e6d0a8cbe6b48d( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x340b
+// Params 1
+// Checksum 0x0, Offset: 0x341c
 // Size: 0x31
 function cac_getextraequipmentsecondary( classindex )
 {
@@ -503,8 +509,8 @@ function cac_getextraequipmentsecondary( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3445
+// Params 1
+// Checksum 0x0, Offset: 0x3456
 // Size: 0x31
 function cac_getflcextraequipmentsecondary( classindex )
 {
@@ -512,8 +518,8 @@ function cac_getflcextraequipmentsecondary( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x347f
+// Params 2
+// Checksum 0x0, Offset: 0x3490
 // Size: 0x7a
 function cac_getfieldupgrade( classindex, superindex )
 {
@@ -533,8 +539,8 @@ function cac_getfieldupgrade( classindex, superindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3502
+// Params 2
+// Checksum 0x0, Offset: 0x3513
 // Size: 0x72
 function function_a2a7f87d758bbfb8( classindex, superindex )
 {
@@ -554,8 +560,8 @@ function function_a2a7f87d758bbfb8( classindex, superindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x357d
+// Params 2
+// Checksum 0x0, Offset: 0x358e
 // Size: 0x33
 function function_db6f12d0d1006658( classindex, superindex )
 {
@@ -563,8 +569,8 @@ function function_db6f12d0d1006658( classindex, superindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35b9
+// Params 0
+// Checksum 0x0, Offset: 0x35ca
 // Size: 0x8d
 function cac_getgesture()
 {
@@ -584,8 +590,8 @@ function cac_getgesture()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x364f
+// Params 0
+// Checksum 0x0, Offset: 0x3660
 // Size: 0x2e
 function cac_getaccessoryweapon()
 {
@@ -594,8 +600,8 @@ function cac_getaccessoryweapon()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3686
+// Params 0
+// Checksum 0x0, Offset: 0x3697
 // Size: 0x2e
 function cac_getaccessorydata()
 {
@@ -604,8 +610,8 @@ function cac_getaccessorydata()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36bd
+// Params 0
+// Checksum 0x0, Offset: 0x36ce
 // Size: 0x2e
 function cac_getaccessorylogic()
 {
@@ -614,8 +620,8 @@ function cac_getaccessorylogic()
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x36f4
+// Params 2
+// Checksum 0x0, Offset: 0x3705
 // Size: 0x33
 function cac_getloadoutperk( classindex, perkindex )
 {
@@ -623,8 +629,8 @@ function cac_getloadoutperk( classindex, perkindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3730
+// Params 1
+// Checksum 0x0, Offset: 0x3741
 // Size: 0x118
 function function_12b59a6e11ff097f( packageindex )
 {
@@ -661,8 +667,8 @@ function function_12b59a6e11ff097f( packageindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3851
+// Params 1
+// Checksum 0x0, Offset: 0x3862
 // Size: 0x1d, Type: bool
 function function_7e02bbbe3ca7ac36( perksarray )
 {
@@ -670,8 +676,8 @@ function function_7e02bbbe3ca7ac36( perksarray )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3877
+// Params 2
+// Checksum 0x0, Offset: 0x3888
 // Size: 0x45, Type: bool
 function function_ab0d3a90ebca6e74( perksarray, package )
 {
@@ -680,7 +686,8 @@ function function_ab0d3a90ebca6e74( perksarray, package )
         return false;
     }
     
-    for (i = 0; i < perksarray.size; i++) {
+    for ( i = 0; i < perksarray.size ; i++ )
+    {
         if ( package[ i ] != perksarray[ i ] )
         {
             return false;
@@ -691,8 +698,8 @@ function function_ab0d3a90ebca6e74( perksarray, package )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38c5
+// Params 1
+// Checksum 0x0, Offset: 0x38d6
 // Size: 0xb5
 function function_ed0c3acfdac0baed( perksarray )
 {
@@ -707,7 +714,8 @@ function function_ed0c3acfdac0baed( perksarray )
     {
         packagecount = packagelist.packages.size;
         
-        for (i = 0; i < packagecount; i++) {
+        for ( i = 0; i < packagecount ; i++ )
+        {
             var_5a1fb4f30c863254 = packagelist.packages[ i ].package;
             package = function_5d63ef3292dd14b9( var_5a1fb4f30c863254 );
             
@@ -727,8 +735,8 @@ function function_ed0c3acfdac0baed( perksarray )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3983
+// Params 1
+// Checksum 0x0, Offset: 0x3994
 // Size: 0x2a
 function function_3c33d2d97119a585( classindex )
 {
@@ -736,8 +744,8 @@ function function_3c33d2d97119a585( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x39b6
+// Params 2
+// Checksum 0x0, Offset: 0x39c7
 // Size: 0x33
 function cac_getloadoutextraperk( classindex, perkindex )
 {
@@ -745,8 +753,8 @@ function cac_getloadoutextraperk( classindex, perkindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x39f2
+// Params 2
+// Checksum 0x0, Offset: 0x3a03
 // Size: 0x33
 function function_e329ffc7ff0dcf96( classindex, perkindex )
 {
@@ -754,8 +762,8 @@ function function_e329ffc7ff0dcf96( classindex, perkindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a2e
+// Params 0
+// Checksum 0x0, Offset: 0x3a3f
 // Size: 0x3c
 function cac_getloadoutarchetypeperk()
 {
@@ -768,8 +776,8 @@ function cac_getloadoutarchetypeperk()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a73
+// Params 0
+// Checksum 0x0, Offset: 0x3a84
 // Size: 0x12b
 function function_3bb637a8e8d0a7c8()
 {
@@ -806,7 +814,8 @@ function function_3bb637a8e8d0a7c8()
     packagesstruct = getscriptbundle( "perkpackagelist:" + bundlename );
     packagesstruct.bundlesize = packagesstruct.packages.size;
     
-    for (i = packagesstruct.packages.size - 1; i >= 0; i--) {
+    for ( i = packagesstruct.packages.size - 1; i >= 0 ; i-- )
+    {
         if ( !isdefined( packagesstruct.packages[ i ].package ) )
         {
             packagesstruct.packages[ i ] = undefined;
@@ -825,8 +834,8 @@ function function_3bb637a8e8d0a7c8()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ba7
+// Params 1
+// Checksum 0x0, Offset: 0x3bb8
 // Size: 0x2a
 function cac_getusingspecialist( classindex )
 {
@@ -834,8 +843,8 @@ function cac_getusingspecialist( classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bda
+// Params 2
+// Checksum 0x0, Offset: 0x3beb
 // Size: 0x38
 function cac_getweaponcosmeticattachment( classindex, weaponindex )
 {
@@ -843,8 +852,8 @@ function cac_getweaponcosmeticattachment( classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c1b
+// Params 3
+// Checksum 0x0, Offset: 0x3c2c
 // Size: 0x41
 function cac_getweaponsticker( classindex, weaponindex, var_36d2abbdcbcb186c )
 {
@@ -852,8 +861,8 @@ function cac_getweaponsticker( classindex, weaponindex, var_36d2abbdcbcb186c )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c65
+// Params 3
+// Checksum 0x0, Offset: 0x3c76
 // Size: 0x38
 function recipe_getkillstreak( classteam, classindex, streakindex )
 {
@@ -861,8 +870,8 @@ function recipe_getkillstreak( classteam, classindex, streakindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ca6
+// Params 1
+// Checksum 0x0, Offset: 0x3cb7
 // Size: 0x1f
 function function_de324c78ecdc7acd( player )
 {
@@ -870,8 +879,8 @@ function function_de324c78ecdc7acd( player )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cce
+// Params 2
+// Checksum 0x0, Offset: 0x3cdf
 // Size: 0x29
 function function_cfa0343e808b7421( player, enabled )
 {
@@ -879,8 +888,8 @@ function function_cfa0343e808b7421( player, enabled )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cff
+// Params 1
+// Checksum 0x0, Offset: 0x3d10
 // Size: 0xaa
 function function_acad491093697c6c( tablename )
 {
@@ -897,8 +906,8 @@ function function_acad491093697c6c( tablename )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3db2
+// Params 2
+// Checksum 0x0, Offset: 0x3dc3
 // Size: 0x94
 function function_c7a0b640c398497( tablename, classindex )
 {
@@ -915,8 +924,8 @@ function function_c7a0b640c398497( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e4f
+// Params 1
+// Checksum 0x0, Offset: 0x3e60
 // Size: 0x34
 function function_df2933f96d726d71( tablename )
 {
@@ -925,8 +934,8 @@ function function_df2933f96d726d71( tablename )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e8c
+// Params 3
+// Checksum 0x0, Offset: 0x3e9d
 // Size: 0x2e
 function table_getaddblueprintattachments( tablename, classindex, weaponindex )
 {
@@ -934,8 +943,8 @@ function table_getaddblueprintattachments( tablename, classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ec3
+// Params 3
+// Checksum 0x0, Offset: 0x3ed4
 // Size: 0x73
 function function_aacbcd2576b3af83( tablename, classindex, weaponindex )
 {
@@ -953,8 +962,8 @@ function function_aacbcd2576b3af83( tablename, classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f3f
+// Params 3
+// Checksum 0x0, Offset: 0x3f50
 // Size: 0x2e
 function table_getweapon( tablename, classindex, weaponindex )
 {
@@ -962,8 +971,8 @@ function table_getweapon( tablename, classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f76
+// Params 4
+// Checksum 0x0, Offset: 0x3f87
 // Size: 0x2ed
 function table_getweaponattachment( tablename, classindex, weaponindex, attachmentindex )
 {
@@ -980,7 +989,7 @@ function table_getweaponattachment( tablename, classindex, weaponindex, attachme
         classstruct.secondaryweapon.attachments = [ classstruct.secondaryweapon.attachment1, classstruct.secondaryweapon.attachment2, classstruct.secondaryweapon.attachment3, classstruct.secondaryweapon.attachment4, classstruct.secondaryweapon.attachment5 ];
     }
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         if ( !isdefined( classstruct.tertiaryweapon.attachments ) )
         {
@@ -1010,8 +1019,8 @@ function table_getweaponattachment( tablename, classindex, weaponindex, attachme
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x426b
+// Params 3
+// Checksum 0x0, Offset: 0x427c
 // Size: 0x2e
 function table_getweaponcamo( tablename, classindex, weaponindex )
 {
@@ -1019,8 +1028,8 @@ function table_getweaponcamo( tablename, classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x42a2
+// Params 3
+// Checksum 0x0, Offset: 0x42b3
 // Size: 0x2e
 function table_getweaponreticle( tablename, classindex, weaponindex )
 {
@@ -1028,8 +1037,8 @@ function table_getweaponreticle( tablename, classindex, weaponindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x42d9
+// Params 5
+// Checksum 0x0, Offset: 0x42ea
 // Size: 0x53
 function table_getweaponvariantid( tablename, classindex, weaponindex, rootweapon, var_1231ae351f638561 )
 {
@@ -1038,8 +1047,8 @@ function table_getweaponvariantid( tablename, classindex, weaponindex, rootweapo
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4335
+// Params 3
+// Checksum 0x0, Offset: 0x4346
 // Size: 0x3ea
 function table_parseweaponvariantidvalue( rootweapon, value, var_1231ae351f638561 )
 {
@@ -1160,8 +1169,8 @@ function table_parseweaponvariantidvalue( rootweapon, value, var_1231ae351f63856
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4728
+// Params 3
+// Checksum 0x0, Offset: 0x4739
 // Size: 0xb0
 function table_getperk( tablename, classindex, perkindex )
 {
@@ -1177,8 +1186,8 @@ function table_getperk( tablename, classindex, perkindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x47e1
+// Params 2
+// Checksum 0x0, Offset: 0x47f2
 // Size: 0x3f
 function function_f9c715f78b428034( tablename, classindex )
 {
@@ -1193,8 +1202,8 @@ function function_f9c715f78b428034( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4829
+// Params 3
+// Checksum 0x0, Offset: 0x483a
 // Size: 0xb0
 function table_getextraperk( tablename, classindex, perkindex )
 {
@@ -1210,8 +1219,8 @@ function table_getextraperk( tablename, classindex, perkindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x48e2
+// Params 3
+// Checksum 0x0, Offset: 0x48f3
 // Size: 0x114
 function function_f8e92e6cd8007d6b( tablename, classindex, perkindex )
 {
@@ -1227,8 +1236,8 @@ function function_f8e92e6cd8007d6b( tablename, classindex, perkindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x49ff
+// Params 2
+// Checksum 0x0, Offset: 0x4a10
 // Size: 0x2f
 function table_getequipmentprimary( tablename, classindex )
 {
@@ -1236,8 +1245,8 @@ function table_getequipmentprimary( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a37
+// Params 2
+// Checksum 0x0, Offset: 0x4a48
 // Size: 0x45, Type: bool
 function table_getextraequipmentprimary( tablename, classindex )
 {
@@ -1246,8 +1255,8 @@ function table_getextraequipmentprimary( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a85
+// Params 2
+// Checksum 0x0, Offset: 0x4a96
 // Size: 0x45, Type: bool
 function table_getflcextraequipmentprimary( tablename, classindex )
 {
@@ -1256,8 +1265,8 @@ function table_getflcextraequipmentprimary( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ad3
+// Params 2
+// Checksum 0x0, Offset: 0x4ae4
 // Size: 0x2f
 function table_getequipmentsecondary( tablename, classindex )
 {
@@ -1265,8 +1274,8 @@ function table_getequipmentsecondary( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b0b
+// Params 2
+// Checksum 0x0, Offset: 0x4b1c
 // Size: 0x45, Type: bool
 function table_getextraequipmentsecondary( tablename, classindex )
 {
@@ -1275,8 +1284,8 @@ function table_getextraequipmentsecondary( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b59
+// Params 2
+// Checksum 0x0, Offset: 0x4b6a
 // Size: 0x45, Type: bool
 function table_getflcextraequipmentsecondary( tablename, classindex )
 {
@@ -1285,8 +1294,8 @@ function table_getflcextraequipmentsecondary( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ba7
+// Params 3
+// Checksum 0x0, Offset: 0x4bb8
 // Size: 0x7b
 function table_getsuper( tablename, classindex, index )
 {
@@ -1296,8 +1305,8 @@ function table_getsuper( tablename, classindex, index )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c2b
+// Params 3
+// Checksum 0x0, Offset: 0x4c3c
 // Size: 0x7b
 function function_fc81ca208ad5823f( tablename, classindex, index )
 {
@@ -1307,8 +1316,8 @@ function function_fc81ca208ad5823f( tablename, classindex, index )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4caf
+// Params 2
+// Checksum 0x0, Offset: 0x4cc0
 // Size: 0x3b, Type: bool
 function table_getspecialist( tablename, classindex )
 {
@@ -1317,8 +1326,8 @@ function table_getspecialist( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cf3
+// Params 2
+// Checksum 0x0, Offset: 0x4d04
 // Size: 0x25
 function table_getgesture( tablename, classindex )
 {
@@ -1326,8 +1335,8 @@ function table_getgesture( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d21
+// Params 2
+// Checksum 0x0, Offset: 0x4d32
 // Size: 0x25
 function table_getexecution( tablename, classindex )
 {
@@ -1335,8 +1344,8 @@ function table_getexecution( tablename, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d4f
+// Params 1
+// Checksum 0x0, Offset: 0x4d60
 // Size: 0x87
 function loadout_getplayerstreaktype( loadoutstreaktype )
 {
@@ -1363,8 +1372,8 @@ function loadout_getplayerstreaktype( loadoutstreaktype )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ddf
+// Params 1
+// Checksum 0x0, Offset: 0x4df0
 // Size: 0x9c
 function function_5d63ef3292dd14b9( bundlename )
 {
@@ -1378,8 +1387,8 @@ function function_5d63ef3292dd14b9( bundlename )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e84
+// Params 1
+// Checksum 0x0, Offset: 0x4e95
 // Size: 0x84
 function getloadoutstreaktypefromstreaktype( streaktype )
 {
@@ -1404,8 +1413,8 @@ function getloadoutstreaktypefromstreaktype( streaktype )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f10
+// Params 1
+// Checksum 0x0, Offset: 0x4f21
 // Size: 0x71
 function loadout_getclassteam( class )
 {
@@ -1429,8 +1438,8 @@ function loadout_getclassteam( class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f8a
+// Params 1
+// Checksum 0x0, Offset: 0x4f9b
 // Size: 0x84
 function loadout_clearplayer( var_bea1f8064eda3de9 )
 {
@@ -1459,8 +1468,8 @@ function loadout_clearplayer( var_bea1f8064eda3de9 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5016
+// Params 1
+// Checksum 0x0, Offset: 0x5027
 // Size: 0xdd
 function loadout_clearweapons( var_bea1f8064eda3de9 )
 {
@@ -1494,8 +1503,8 @@ function loadout_clearweapons( var_bea1f8064eda3de9 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x50fb
+// Params 1
+// Checksum 0x0, Offset: 0x510c
 // Size: 0x50
 function loadout_giveperk( perkname )
 {
@@ -1510,8 +1519,8 @@ function loadout_giveperk( perkname )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5153
+// Params 1
+// Checksum 0x0, Offset: 0x5164
 // Size: 0xab
 function loadout_removeperk( perkname )
 {
@@ -1542,7 +1551,7 @@ function loadout_removeperk( perkname )
 
 // Namespace class / scripts\mp\class
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5206
+// Checksum 0x0, Offset: 0x5217
 // Size: 0xc7
 function private function_df87366a6b9bc3a0( perkarr )
 {
@@ -1571,8 +1580,8 @@ function private function_df87366a6b9bc3a0( perkarr )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x52d5
+// Params 2
+// Checksum 0x0, Offset: 0x52e6
 // Size: 0x20d
 function loadout_clearperks( var_bea1f8064eda3de9, var_8be0f967aaa6eca6 )
 {
@@ -1639,8 +1648,8 @@ function loadout_clearperks( var_bea1f8064eda3de9, var_8be0f967aaa6eca6 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x54ea
+// Params 0
+// Checksum 0x0, Offset: 0x54fb
 // Size: 0x4eb
 function loadout_getclassstruct()
 {
@@ -1650,7 +1659,8 @@ function loadout_getclassstruct()
     struct.loadoutprimaryattachments = [];
     struct.loadoutprimaryattachmentids = [];
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         struct.loadoutprimaryattachments[ attachmentindex ] = "none";
         struct.loadoutprimaryattachmentids[ attachmentindex ] = 0;
     }
@@ -1662,7 +1672,8 @@ function loadout_getclassstruct()
     struct.loadoutprimarycosmeticattachment = "none";
     struct.loadoutprimarystickers = [];
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+    {
         struct.loadoutprimarystickers[ var_36d2abbdcbcb186c ] = "none";
     }
     
@@ -1670,7 +1681,8 @@ function loadout_getclassstruct()
     struct.loadoutsecondaryattachments = [];
     struct.loadoutsecondaryattachmentids = [];
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         struct.loadoutsecondaryattachments[ attachmentindex ] = "none";
         struct.loadoutsecondaryattachmentids[ attachmentindex ] = 0;
     }
@@ -1682,17 +1694,19 @@ function loadout_getclassstruct()
     struct.loadoutsecondarycosmeticattachment = "none";
     struct.loadoutsecondarystickers = [];
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+    {
         struct.loadoutsecondarystickers[ var_36d2abbdcbcb186c ] = "none";
     }
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         struct.loadouttertiary = "none";
         struct.var_494870a5978b5a09 = [];
         struct.var_6bfdc660c23f71ea = [];
         
-        for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+        for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+        {
             struct.var_494870a5978b5a09[ attachmentindex ] = "none";
             struct.var_6bfdc660c23f71ea[ attachmentindex ] = 0;
         }
@@ -1704,7 +1718,8 @@ function loadout_getclassstruct()
         struct.var_372f30ef6d6882ab = "none";
         struct.var_afb9de90c523d105 = [];
         
-        for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
+        for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4 ; var_36d2abbdcbcb186c++ )
+        {
             struct.var_afb9de90c523d105[ var_36d2abbdcbcb186c ] = "none";
         }
     }
@@ -1752,8 +1767,8 @@ function loadout_getclassstruct()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x59de
+// Params 1
+// Checksum 0x0, Offset: 0x59ef
 // Size: 0x58d
 function loadout_copyclassstruct( classstruct )
 {
@@ -1790,7 +1805,7 @@ function loadout_copyclassstruct( classstruct )
     copystruct.loadoutsecondarycosmeticattachment = classstruct.loadoutsecondarycosmeticattachment;
     copystruct.loadoutsecondarystickers = classstruct.loadoutsecondarystickers;
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         if ( isdefined( classstruct.loadouttertiaryaddblueprintattachments ) )
         {
@@ -1843,8 +1858,8 @@ function loadout_copyclassstruct( classstruct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f74
+// Params 3
+// Checksum 0x0, Offset: 0x5f85
 // Size: 0x471
 function loadout_updateclassteam( struct, class, classteam )
 {
@@ -1861,11 +1876,13 @@ function loadout_updateclassteam( struct, class, classteam )
     }
     else
     {
-        for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+        for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+        {
             struct.loadoutprimaryattachments[ attachmentindex ] = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 0, "attachmentSetup" );
         }
         
-        for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+        for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+        {
             struct.loadoutprimarystickers[ var_36d2abbdcbcb186c ] = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 0, "sticker" );
         }
     }
@@ -1874,26 +1891,30 @@ function loadout_updateclassteam( struct, class, classteam )
     struct.loadoutprimaryreticle = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 0, "reticle" );
     struct.loadoutsecondary = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "weapon" );
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         struct.loadoutsecondaryattachments[ attachmentindex ] = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "attachmentSetup" );
     }
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+    {
         struct.loadoutsecondarystickers[ var_36d2abbdcbcb186c ] = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "sticker" );
     }
     
     struct.loadoutsecondarycamo = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "camo" );
     struct.loadoutsecondaryreticle = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "reticle" );
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         struct.loadouttertiary = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "weapon" );
         
-        for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+        for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+        {
             struct.var_494870a5978b5a09[ attachmentindex ] = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "attachmentSetup" );
         }
         
-        for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
+        for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4 ; var_36d2abbdcbcb186c++ )
+        {
             struct.var_afb9de90c523d105[ var_36d2abbdcbcb186c ] = getmatchrulesdatawithteamandindex( "defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "sticker" );
         }
         
@@ -1916,8 +1937,8 @@ function loadout_updateclassteam( struct, class, classteam )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x63ed
+// Params 3
+// Checksum 0x0, Offset: 0x63fe
 // Size: 0x56e
 function loadout_updateclasscustom( struct, class, var_6b02e0d0b48f639a )
 {
@@ -1932,7 +1953,8 @@ function loadout_updateclasscustom( struct, class, var_6b02e0d0b48f639a )
     struct.loadoutarchetype = cac_getcharacterarchetype();
     struct.loadoutprimary = cac_getweapon( classindex, 0 );
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         attachmentname = cac_getweaponattachment( classindex, 0, attachmentindex );
         struct.loadoutprimaryattachments[ attachmentindex ] = attachmentname;
         struct.loadoutprimaryattachmentids[ attachmentindex ] = cac_getweaponattachmentid( classindex, 0, attachmentindex );
@@ -1954,13 +1976,15 @@ function loadout_updateclasscustom( struct, class, var_6b02e0d0b48f639a )
     struct.loadoutprimaryvariantid = cac_getweaponvariantid( classindex, 0 );
     struct.loadoutprimarycosmeticattachment = cac_getweaponcosmeticattachment( classindex, 0 );
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+    {
         struct.loadoutprimarystickers[ var_36d2abbdcbcb186c ] = cac_getweaponsticker( classindex, 0, var_36d2abbdcbcb186c );
     }
     
     struct.loadoutsecondary = cac_getweapon( classindex, 1 );
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         attachmentname = cac_getweaponattachment( classindex, 1, attachmentindex );
         struct.loadoutsecondaryattachments[ attachmentindex ] = attachmentname;
         struct.loadoutsecondaryattachmentids[ attachmentindex ] = cac_getweaponattachmentid( classindex, 1, attachmentindex );
@@ -1982,15 +2006,17 @@ function loadout_updateclasscustom( struct, class, var_6b02e0d0b48f639a )
     struct.loadoutsecondaryvariantid = cac_getweaponvariantid( classindex, 1 );
     struct.loadoutsecondarycosmeticattachment = cac_getweaponcosmeticattachment( classindex, 1 );
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+    {
         struct.loadoutsecondarystickers[ var_36d2abbdcbcb186c ] = cac_getweaponsticker( classindex, 1, var_36d2abbdcbcb186c );
     }
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         struct.loadouttertiary = cac_getweapon( classindex, 2 );
         
-        for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+        for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+        {
             attachmentname = cac_getweaponattachment( classindex, 2, attachmentindex );
             struct.var_494870a5978b5a09[ attachmentindex ] = attachmentname;
             struct.var_6bfdc660c23f71ea[ attachmentindex ] = cac_getweaponattachmentid( classindex, 2, attachmentindex );
@@ -2008,7 +2034,8 @@ function loadout_updateclasscustom( struct, class, var_6b02e0d0b48f639a )
         struct.loadouttertiaryvariantid = cac_getweaponvariantid( classindex, 2 );
         struct.var_372f30ef6d6882ab = cac_getweaponcosmeticattachment( classindex, 2 );
         
-        for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
+        for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4 ; var_36d2abbdcbcb186c++ )
+        {
             struct.var_afb9de90c523d105[ var_36d2abbdcbcb186c ] = cac_getweaponsticker( classindex, 2, var_36d2abbdcbcb186c );
         }
     }
@@ -2038,9 +2065,9 @@ function loadout_updateclasscustom( struct, class, var_6b02e0d0b48f639a )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6963
-// Size: 0x847
+// Params 2
+// Checksum 0x0, Offset: 0x6974
+// Size: 0x84e
 function loadout_updateclassgamemode( struct, class )
 {
     if ( !isdefined( self.pers[ "gamemodeLoadout" ] ) && isbot( self ) )
@@ -2065,7 +2092,7 @@ function loadout_updateclassgamemode( struct, class )
         }
     }
     
-    if ( !isdefined( gamemodeloadout[ "loadoutArchetype" ] ) )
+    if ( !isdefined( gamemodeloadout ) || !isdefined( gamemodeloadout[ "loadoutArchetype" ] ) )
     {
         if ( isbot( self ) )
         {
@@ -2096,7 +2123,8 @@ function loadout_updateclassgamemode( struct, class )
         struct.loadoutprimary = gamemodeloadout[ "loadoutPrimary" ];
     }
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         attachstring = getattachmentloadoutstring( attachmentindex, #"primary" );
         
         if ( isdefined( gamemodeloadout[ attachstring ] ) )
@@ -2112,7 +2140,8 @@ function loadout_updateclassgamemode( struct, class )
         }
     }
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+    {
         var_5e5774b116a39979 = getstickerloadoutstring( var_36d2abbdcbcb186c, #"primary" );
         
         if ( isdefined( gamemodeloadout[ var_5e5774b116a39979 ] ) )
@@ -2167,7 +2196,8 @@ function loadout_updateclassgamemode( struct, class )
         struct.loadoutsecondary = gamemodeloadout[ "loadoutSecondary" ];
     }
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         attachstring = getattachmentloadoutstring( attachmentindex, #"secondary" );
         
         if ( isdefined( gamemodeloadout[ attachstring ] ) )
@@ -2183,7 +2213,8 @@ function loadout_updateclassgamemode( struct, class )
         }
     }
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5 ; var_36d2abbdcbcb186c++ )
+    {
         var_5e5774b116a39979 = getstickerloadoutstring( var_36d2abbdcbcb186c, #"secondary" );
         
         if ( isdefined( gamemodeloadout[ var_5e5774b116a39979 ] ) )
@@ -2339,8 +2370,8 @@ function loadout_updateclassgamemode( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x71b2
+// Params 1
+// Checksum 0x0, Offset: 0x71ca
 // Size: 0xe5c
 function loadout_updateclasscallback( struct )
 {
@@ -2568,7 +2599,8 @@ function loadout_updateclasscallback( struct )
             struct.loadoutprimary = callbackloadout[ "loadoutPrimary" ];
         }
         
-        for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+        for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+        {
             attachstring = getattachmentloadoutstring( attachmentindex, #"primary" );
             
             if ( isdefined( callbackloadout[ attachstring ] ) )
@@ -2602,7 +2634,8 @@ function loadout_updateclasscallback( struct )
             struct.loadoutsecondary = callbackloadout[ "loadoutSecondary" ];
         }
         
-        for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+        for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+        {
             attachstring = getattachmentloadoutstring( attachmentindex, #"secondary" );
             
             if ( isdefined( callbackloadout[ attachstring ] ) )
@@ -2626,7 +2659,7 @@ function loadout_updateclasscallback( struct )
             struct.loadoutsecondaryvariantid = callbackloadout[ "loadoutSecondaryVariantID" ];
         }
         
-        if ( istrue( level.var_9e090a159cb48220 ) )
+        if ( istrue( level.tertiaryweaponslotenabled ) )
         {
             if ( isdefined( callbackloadout[ "loadoutTertiaryAddBlueprintAttachments" ] ) )
             {
@@ -2638,7 +2671,8 @@ function loadout_updateclasscallback( struct )
                 struct.loadouttertiary = callbackloadout[ "loadoutTertiary" ];
             }
             
-            for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+            for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+            {
                 attachstring = getattachmentloadoutstring( attachmentindex, #"tertiary" );
                 
                 if ( isdefined( callbackloadout[ attachstring ] ) )
@@ -2731,8 +2765,8 @@ function loadout_updateclasscallback( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8016
+// Params 2
+// Checksum 0x0, Offset: 0x802e
 // Size: 0x21a
 function loadout_updateclassdefault( struct, class )
 {
@@ -2766,14 +2800,15 @@ function loadout_updateclassdefault( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8238
+// Params 2
+// Checksum 0x0, Offset: 0x8250
 // Size: 0x257
 function loadout_updateclassdefault_weapons( struct, classindex )
 {
     struct.loadoutprimary = table_getweapon( level.classtablename, classindex, 0 );
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         struct.loadoutprimaryattachments[ attachmentindex ] = table_getweaponattachment( level.classtablename, classindex, 0, attachmentindex );
     }
     
@@ -2783,7 +2818,8 @@ function loadout_updateclassdefault_weapons( struct, classindex )
     struct.loadoutprimaryvariantid = table_getweaponvariantid( level.classtablename, classindex, 0, struct.loadoutprimary, 1 );
     struct.loadoutsecondary = table_getweapon( level.classtablename, classindex, 1 );
     
-    for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+    {
         struct.loadoutsecondaryattachments[ attachmentindex ] = table_getweaponattachment( level.classtablename, classindex, 1, attachmentindex );
     }
     
@@ -2792,11 +2828,12 @@ function loadout_updateclassdefault_weapons( struct, classindex )
     struct.loadoutsecondaryaddblueprintattachments = table_getaddblueprintattachments( level.classtablename, classindex, 1 );
     struct.loadoutsecondaryvariantid = table_getweaponvariantid( level.classtablename, classindex, 1, struct.loadoutsecondary, 1 );
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         struct.loadouttertiary = table_getweapon( level.classtablename, classindex, 2 );
         
-        for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+        for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+        {
             struct.var_494870a5978b5a09[ attachmentindex ] = table_getweaponattachment( level.classtablename, classindex, 2, attachmentindex );
         }
         
@@ -2806,8 +2843,8 @@ function loadout_updateclassdefault_weapons( struct, classindex )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8497
+// Params 1
+// Checksum 0x0, Offset: 0x84af
 // Size: 0x30a
 function loadout_updateclassdefault_weaponsheadless( struct )
 {
@@ -2854,7 +2891,7 @@ function loadout_updateclassdefault_weaponsheadless( struct )
     
     struct.loadoutsecondaryvariantid = structsecondary.variantid;
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         var_b11f66fe609e2564 = loadout_updateclassdefault_headlessgetweaponn( self.var_49f7f5b78e79b56c, 0 );
         var_cbf04d21c906f2af = var_b11f66fe609e2564[ 0 ];
@@ -2872,8 +2909,8 @@ function loadout_updateclassdefault_weaponsheadless( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x87a9
+// Params 2
+// Checksum 0x0, Offset: 0x87c1
 // Size: 0xed
 function loadout_updateclassdefault_headlessgetweaponn( index, chooseprimary )
 {
@@ -2907,8 +2944,8 @@ function loadout_updateclassdefault_headlessgetweaponn( index, chooseprimary )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x889e
+// Params 1
+// Checksum 0x0, Offset: 0x88b6
 // Size: 0x4e
 function loadout_updatestreaktype( struct )
 {
@@ -2925,8 +2962,8 @@ function loadout_updatestreaktype( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x88f4
+// Params 2
+// Checksum 0x0, Offset: 0x890c
 // Size: 0x87b
 function loadout_updateabilities( struct, class )
 {
@@ -3067,7 +3104,8 @@ function loadout_updateabilities( struct, class )
         
         if ( var_a220faf2607a348f )
         {
-            for (perkindex = 0; perkindex < 5; perkindex++) {
+            for ( perkindex = 0; perkindex < 5 ; perkindex++ )
+            {
                 perk = "specialty_null";
                 
                 if ( classteam != "none" )
@@ -3101,7 +3139,8 @@ function loadout_updateabilities( struct, class )
                 maxperks = 3;
             }
             
-            for (perkindex = 0; perkindex < maxperks; perkindex++) {
+            for ( perkindex = 0; perkindex < maxperks ; perkindex++ )
+            {
                 perk = "specialty_null";
                 
                 if ( level.var_606eb45e074ff204 )
@@ -3145,7 +3184,8 @@ function loadout_updateabilities( struct, class )
                 }
             }
             
-            for (perkindex = 0; perkindex < 3; perkindex++) {
+            for ( perkindex = 0; perkindex < 3 ; perkindex++ )
+            {
                 perk = "specialty_null";
                 
                 if ( classteam != "none" )
@@ -3219,8 +3259,8 @@ function loadout_updateabilities( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9177
+// Params 1
+// Checksum 0x0, Offset: 0x918f
 // Size: 0xc3
 function loadout_getclasstype( classname )
 {
@@ -3270,8 +3310,8 @@ function loadout_getclasstype( classname )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9242
+// Params 0
+// Checksum 0x0, Offset: 0x925a
 // Size: 0x48, Type: bool
 function function_72aa88e22948f6c5()
 {
@@ -3287,8 +3327,8 @@ function function_72aa88e22948f6c5()
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9293
+// Params 2
+// Checksum 0x0, Offset: 0x92ab
 // Size: 0x93
 function loadout_updateglobalclass( globalstruct, class )
 {
@@ -3315,8 +3355,8 @@ function loadout_updateglobalclass( globalstruct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x932f
+// Params 0
+// Checksum 0x0, Offset: 0x9347
 // Size: 0x22
 function function_7ef7699b039b00e3()
 {
@@ -3329,8 +3369,8 @@ function function_7ef7699b039b00e3()
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x935a
+// Params 2
+// Checksum 0x0, Offset: 0x9372
 // Size: 0x238
 function loadout_updateclass( struct, class )
 {
@@ -3405,15 +3445,16 @@ function loadout_updateclass( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x959b
+// Params 3
+// Checksum 0x0, Offset: 0x95b3
 // Size: 0x366
 function function_1d52554d28b51cbc( struct, classindex, table )
 {
     struct.loadoutarchetype = "archetype_assault";
     struct.loadoutprimary = function_c7a0b640c398497( table, classindex ).primaryweapon.weapon;
     
-    for (attachmentindex = 0; attachmentindex < scripts\mp\class::getmaxprimaryattachments(); attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < scripts\mp\class::getmaxprimaryattachments() ; attachmentindex++ )
+    {
         struct.loadoutprimaryattachments[ attachmentindex ] = table_getweaponattachment( table, classindex, 0, attachmentindex );
     }
     
@@ -3421,7 +3462,8 @@ function function_1d52554d28b51cbc( struct, classindex, table )
     struct.loadoutprimaryreticle = function_c7a0b640c398497( table, classindex ).primaryweapon.reticle;
     struct.loadoutsecondary = function_c7a0b640c398497( table, classindex ).secondaryweapon.weapon;
     
-    for (attachmentindex = 0; attachmentindex < scripts\mp\class::getmaxsecondaryattachments(); attachmentindex++) {
+    for ( attachmentindex = 0; attachmentindex < scripts\mp\class::getmaxsecondaryattachments() ; attachmentindex++ )
+    {
         struct.loadoutsecondaryattachment[ attachmentindex ] = table_getweaponattachment( table, classindex, 1, attachmentindex );
     }
     
@@ -3447,8 +3489,8 @@ function function_1d52554d28b51cbc( struct, classindex, table )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x990a
+// Params 1
+// Checksum 0x0, Offset: 0x9922
 // Size: 0xe6
 function loadout_updateclassfistweapons( struct )
 {
@@ -3480,8 +3522,8 @@ function loadout_updateclassfistweapons( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x99f8
+// Params 1
+// Checksum 0x0, Offset: 0x9a10
 // Size: 0x9d
 function function_2dad855d27735128( struct )
 {
@@ -3498,8 +3540,8 @@ function function_2dad855d27735128( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a9d
+// Params 1
+// Checksum 0x0, Offset: 0x9ab5
 // Size: 0x30
 function function_fb9c11aeb7909511( struct )
 {
@@ -3510,8 +3552,8 @@ function function_fb9c11aeb7909511( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ad5
+// Params 1
+// Checksum 0x0, Offset: 0x9aed
 // Size: 0x22
 function loadout_updatehasnvg( struct )
 {
@@ -3522,8 +3564,8 @@ function loadout_updatehasnvg( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9aff
+// Params 2
+// Checksum 0x0, Offset: 0x9b17
 // Size: 0xf6
 function loadout_validateclass( struct, class )
 {
@@ -3545,8 +3587,8 @@ function loadout_validateclass( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bfe
+// Params 1
+// Checksum 0x0, Offset: 0x9c16
 // Size: 0xea
 function loadout_forcearchetype( struct )
 {
@@ -3580,8 +3622,8 @@ function loadout_forcearchetype( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9cf0
+// Params 1
+// Checksum 0x0, Offset: 0x9d08
 // Size: 0x27a
 function loadout_updateplayerarchetype( struct )
 {
@@ -3671,8 +3713,8 @@ function loadout_updateplayerarchetype( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f72
+// Params 1
+// Checksum 0x0, Offset: 0x9f8a
 // Size: 0x418
 function loadout_updateclassfinalweapons( struct )
 {
@@ -3706,7 +3748,7 @@ function loadout_updateclassfinalweapons( struct )
         struct.loadoutsecondaryfullname = getcompleteweaponname( struct.loadoutsecondaryobject );
     }
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         if ( !isdefined( struct.loadouttertiary ) || struct.loadouttertiary == "none" )
         {
@@ -3735,8 +3777,8 @@ function loadout_updateclassfinalweapons( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa392
+// Params 4
+// Checksum 0x0, Offset: 0xa3aa
 // Size: 0x245
 function loadout_updateplayerweapons( struct, class, setspawnweap, skipfirstraise )
 {
@@ -3755,7 +3797,7 @@ function loadout_updateplayerweapons( struct, class, setspawnweap, skipfirstrais
     namespace_6b49ddb858f34366::function_e90bd443e0a197dd( var_3920d61392aec9d5, var_976a64288e459315 );
     var_166a71f33928f623 = undefined;
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         var_9be1ec9738546b41 = !isdefined( respawnitems ) || isdefined( respawnitems.weapons[ "tertiary" ] );
         
@@ -3822,8 +3864,8 @@ function loadout_updateplayerweapons( struct, class, setspawnweap, skipfirstrais
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5df
+// Params 0
+// Checksum 0x0, Offset: 0xa5f7
 // Size: 0xbf
 function loadout_finalizeweapons()
 {
@@ -3855,8 +3897,8 @@ function loadout_finalizeweapons()
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6a6
+// Params 3
+// Checksum 0x0, Offset: 0xa6be
 // Size: 0x119
 function loadout_giveprimaryweapon( struct, respawnitems, var_b86cf5cef6838543 )
 {
@@ -3876,8 +3918,8 @@ function loadout_giveprimaryweapon( struct, respawnitems, var_b86cf5cef6838543 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7c8
+// Params 3
+// Checksum 0x0, Offset: 0xa7e0
 // Size: 0x118
 function loadout_givesecondaryweapon( struct, respawnitems, var_b86cf5cef6838543 )
 {
@@ -3897,8 +3939,8 @@ function loadout_givesecondaryweapon( struct, respawnitems, var_b86cf5cef6838543
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8e9
+// Params 3
+// Checksum 0x0, Offset: 0xa901
 // Size: 0x136
 function function_6927b3b638f60d97( struct, respawnitems, var_b86cf5cef6838543 )
 {
@@ -3923,12 +3965,17 @@ function function_6927b3b638f60d97( struct, respawnitems, var_b86cf5cef6838543 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa28
-// Size: 0x6d
+// Params 1
+// Checksum 0x0, Offset: 0xaa40
+// Size: 0x85
 function function_4ffce833ce15363c( struct )
 {
     if ( istrue( struct.disablebackuppistol ) )
+    {
+        return;
+    }
+    
+    if ( scripts\mp\gametypes\br_public::playeriszombie() || isdefined( self.var_e5520effcbe8bd30 ) )
     {
         return;
     }
@@ -3940,8 +3987,8 @@ function function_4ffce833ce15363c( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa9d
+// Params 4
+// Checksum 0x0, Offset: 0xaacd
 // Size: 0xab
 function loadout_giveweaponobj( weaponslot, weaponobj, respawnitems, var_b86cf5cef6838543 )
 {
@@ -3975,8 +4022,8 @@ function loadout_giveweaponobj( weaponslot, weaponobj, respawnitems, var_b86cf5c
 }
 
 // Namespace class / scripts\mp\class
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xab51
+// Params 4
+// Checksum 0x0, Offset: 0xab81
 // Size: 0xa2
 function function_c6cd33220cce845a( weaponslot, weaponobj, respawnitems, var_b86cf5cef6838543 )
 {
@@ -4010,8 +4057,8 @@ function function_c6cd33220cce845a( weaponslot, weaponobj, respawnitems, var_b86
 }
 
 // Namespace class / scripts\mp\class
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xabfb
+// Params 4
+// Checksum 0x0, Offset: 0xac2b
 // Size: 0x50
 function function_d792585d22273603( primaryweaponobj, secondaryweaponobj, respawnitems, var_b86cf5cef6838543 )
 {
@@ -4021,8 +4068,8 @@ function function_d792585d22273603( primaryweaponobj, secondaryweaponobj, respaw
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac53
+// Params 1
+// Checksum 0x0, Offset: 0xac83
 // Size: 0x58
 function function_9743c56a4d2dc135( struct )
 {
@@ -4036,8 +4083,8 @@ function function_9743c56a4d2dc135( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xacb3
+// Params 1
+// Checksum 0x0, Offset: 0xace3
 // Size: 0x58
 function function_a80b77a2abaa376e( struct )
 {
@@ -4051,8 +4098,8 @@ function function_a80b77a2abaa376e( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xad13
+// Params 1
+// Checksum 0x0, Offset: 0xad43
 // Size: 0x4c
 function function_607536857fac2407( struct )
 {
@@ -4065,8 +4112,8 @@ function function_607536857fac2407( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xad67
+// Params 7
+// Checksum 0x0, Offset: 0xad97
 // Size: 0x33e
 function loadout_updateammo( struct, var_3920d61392aec9d5, var_976a64288e459315, var_166a71f33928f623, respawnitems, var_b86cf5cef6838543, var_10b09490bb78e90e )
 {
@@ -4165,8 +4212,8 @@ function loadout_updateammo( struct, var_3920d61392aec9d5, var_976a64288e459315,
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb0ad
+// Params 0
+// Checksum 0x0, Offset: 0xb0dd
 // Size: 0x9
 function loadout_updateweapondependentsettings()
 {
@@ -4174,8 +4221,8 @@ function loadout_updateweapondependentsettings()
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb0be
+// Params 2
+// Checksum 0x0, Offset: 0xb0ee
 // Size: 0x183
 function function_f94ec5ad05cc1001( classindex, isprimary )
 {
@@ -4197,12 +4244,17 @@ function function_f94ec5ad05cc1001( classindex, isprimary )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb249
-// Size: 0xf8
+// Params 1
+// Checksum 0x0, Offset: 0xb279
+// Size: 0x102
 function function_87c3b562f2b366ee( player )
 {
-    perks = [ "specialty_selectivehearing", "specialty_pistoldraw", "specialty_location_marking", "specialty_mantle_scale", "specialty_fastladderclimb", "specialty_fall_damage_scale" ];
+    perks = [ "specialty_selectivehearing", "specialty_pistoldraw", "specialty_location_marking", "specialty_mantle_scale", "specialty_fastladderclimb" ];
+    
+    if ( !scripts\cp_mp\utility\game_utility::isbrstylegametype() )
+    {
+        perks[ perks.size ] = "specialty_fall_damage_scale";
+    }
     
     if ( scripts\mp\utility\game::islaststandenabled() )
     {
@@ -4236,8 +4288,8 @@ function function_87c3b562f2b366ee( player )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb34a
+// Params 2
+// Checksum 0x0, Offset: 0xb384
 // Size: 0x512
 function loadout_updateplayerperks( struct, class )
 {
@@ -4300,7 +4352,7 @@ function loadout_updateplayerperks( struct, class )
                 scripts\mp\perks\perks::function_4613ec15f87b7cf2( var_15f3e6df722fb1cf, var_15f3e5df722faf9c );
             }
             
-            if ( getdvarint( @"hash_9fdeab749d8f74a1", 0 ) )
+            if ( getdvarint( @"scr_test_loadouts", 0 ) )
             {
                 if ( !istrue( level.var_606eb45e074ff204 ) && function_ea4c5dc15c3bbdd9() )
                 {
@@ -4375,8 +4427,8 @@ function loadout_updateplayerperks( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb864
+// Params 1
+// Checksum 0x0, Offset: 0xb89e
 // Size: 0x115
 function function_834af98b3970133b( struct )
 {
@@ -4415,8 +4467,8 @@ function function_834af98b3970133b( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb981
+// Params 1
+// Checksum 0x0, Offset: 0xb9bb
 // Size: 0x141
 function function_5d4e4fb280574542( struct )
 {
@@ -4442,8 +4494,8 @@ function function_5d4e4fb280574542( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbacb
+// Params 1
+// Checksum 0x0, Offset: 0xbb05
 // Size: 0x132
 function function_2ab1572c5a4fce7c( vestperk )
 {
@@ -4480,8 +4532,8 @@ function function_2ab1572c5a4fce7c( vestperk )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc06
+// Params 3
+// Checksum 0x0, Offset: 0xbc40
 // Size: 0x1e4, Type: bool
 function function_cd922f6a30d9f3e8( vestperk, var_756aa31d4082215, struct )
 {
@@ -4558,8 +4610,8 @@ function function_cd922f6a30d9f3e8( vestperk, var_756aa31d4082215, struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbdf3
+// Params 0
+// Checksum 0x0, Offset: 0xbe2d
 // Size: 0x1f1
 function function_dc63eafe3f6318df()
 {
@@ -4615,9 +4667,9 @@ function function_dc63eafe3f6318df()
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xbfec
-// Size: 0x1dd
+// Params 2
+// Checksum 0x0, Offset: 0xc026
+// Size: 0x1ab
 function loadout_updateplayerequipment( struct, class )
 {
     respawnitems = respawnitems_getrespawnitems();
@@ -4647,7 +4699,6 @@ function loadout_updateplayerequipment( struct, class )
         var_604669419e2560e6 = respawnitems_getequipmentref( respawnitems, "secondary" );
     }
     
-    var_203895659950911d = level.equipment.table[ self.loadoutequipmentsecondary ].weaponname;
     var_6e8f0546b97c1dd5 = struct.var_a1dfc5ce15795a3;
     scripts\mp\equipment::giveequipment( var_e7d8e765ac9243a6, "primary", class, var_6dc747a4410e0395 );
     scripts\mp\equipment::giveequipment( var_604669419e2560e6, "secondary", class, var_6e8f0546b97c1dd5 );
@@ -4685,8 +4736,8 @@ function loadout_updateplayerequipment( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1d1
+// Params 0
+// Checksum 0x0, Offset: 0xc1d9
 // Size: 0xdf
 function loadout_updateplayernvgs()
 {
@@ -4726,8 +4777,8 @@ function loadout_updateplayernvgs()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc2b8
+// Params 1
+// Checksum 0x0, Offset: 0xc2c0
 // Size: 0x161
 function loadout_updateplayersuper( struct )
 {
@@ -4776,8 +4827,8 @@ function loadout_updateplayersuper( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc421
+// Params 1
+// Checksum 0x0, Offset: 0xc429
 // Size: 0x52
 function loadout_updateplayergesture( struct )
 {
@@ -4792,8 +4843,8 @@ function loadout_updateplayergesture( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc47b
+// Params 1
+// Checksum 0x0, Offset: 0xc483
 // Size: 0x8c
 function loadout_updateplayeraccessory( struct )
 {
@@ -4809,8 +4860,8 @@ function loadout_updateplayeraccessory( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc50f
+// Params 1
+// Checksum 0x0, Offset: 0xc517
 // Size: 0xc1
 function loadout_updateplayerstreaktype( struct )
 {
@@ -4834,8 +4885,8 @@ function loadout_updateplayerstreaktype( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5d8
+// Params 2
+// Checksum 0x0, Offset: 0xc5e0
 // Size: 0x7e
 function function_3793a6c73d46459f( struct, streakname )
 {
@@ -4858,8 +4909,8 @@ function function_3793a6c73d46459f( struct, streakname )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc65f
+// Params 2
+// Checksum 0x0, Offset: 0xc667
 // Size: 0x446
 function loadout_updateplayerkillstreaks( struct, class )
 {
@@ -4952,7 +5003,8 @@ function loadout_updateplayerkillstreaks( struct, class )
                 scripts\mp\killstreaks\killstreaks::clearkillstreaks();
             }
             
-            for (streakindex = 0; streakindex < var_66383c9fdf2d18c4.size; streakindex++) {
+            for ( streakindex = 0; streakindex < var_66383c9fdf2d18c4.size ; streakindex++ )
+            {
                 streak = var_66383c9fdf2d18c4[ streakindex ];
                 
                 if ( isdefined( streak ) && streak != "none" && streak != "" )
@@ -4961,7 +5013,8 @@ function loadout_updateplayerkillstreaks( struct, class )
                 }
             }
             
-            for (structindex = var_8d31993278c0bbe1.size - 1; structindex >= 0; structindex--) {
+            for ( structindex = var_8d31993278c0bbe1.size - 1; structindex >= 0 ; structindex-- )
+            {
                 streak = var_8d31993278c0bbe1[ structindex ];
                 
                 if ( !streak.isspecialist )
@@ -4970,7 +5023,8 @@ function loadout_updateplayerkillstreaks( struct, class )
                 }
             }
             
-            for (structindex = 0; structindex < earnedkillstreaks.size; structindex++) {
+            for ( structindex = 0; structindex < earnedkillstreaks.size ; structindex++ )
+            {
                 streak = earnedkillstreaks[ structindex ];
                 
                 if ( !streak.isspecialist )
@@ -4985,15 +5039,17 @@ function loadout_updateplayerkillstreaks( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcaad
+// Params 1
+// Checksum 0x0, Offset: 0xcab5
 // Size: 0xcb
 function sortkillstreaksbycost( streaklist )
 {
-    for (i = 0; i < streaklist.size - 1; i++) {
+    for ( i = 0; i < streaklist.size - 1 ; i++ )
+    {
         if ( isdefined( streaklist[ i ] ) && streaklist[ i ] != "none" && streaklist[ i ] != "" )
         {
-            for (j = i + 1; j < streaklist.size; j++) {
+            for ( j = i + 1; j < streaklist.size ; j++ )
+            {
                 if ( isdefined( streaklist[ j ] ) && streaklist[ j ] != "none" && streaklist[ j ] != "" )
                 {
                     currentcost = scripts\mp\killstreaks\killstreaks::calcstreakcost( streaklist[ i ] );
@@ -5014,8 +5070,8 @@ function sortkillstreaksbycost( streaklist )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb81
+// Params 2
+// Checksum 0x0, Offset: 0xcb89
 // Size: 0x21
 function loadout_updateplayeractionslots( struct, class )
 {
@@ -5023,8 +5079,8 @@ function loadout_updateplayeractionslots( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcbaa
+// Params 2
+// Checksum 0x0, Offset: 0xcbb2
 // Size: 0x328
 function loadout_updatefieldupgrades( struct, class )
 {
@@ -5120,8 +5176,8 @@ function loadout_updatefieldupgrades( struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xceda
+// Params 1
+// Checksum 0x0, Offset: 0xcee2
 // Size: 0x6f
 function fixsuperforbr( superref )
 {
@@ -5141,8 +5197,8 @@ function fixsuperforbr( superref )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf51
+// Params 1
+// Checksum 0x0, Offset: 0xcf59
 // Size: 0x52
 function function_15da17f6ac6380af( var_fed7b85886638423 )
 {
@@ -5161,8 +5217,8 @@ function function_15da17f6ac6380af( var_fed7b85886638423 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xcfac
+// Params 5
+// Checksum 0x0, Offset: 0xcfb4
 // Size: 0x21e
 function loadout_updateplayer( globalstruct, struct, class, setspawnweap, skipfirstraise )
 {
@@ -5225,8 +5281,8 @@ function loadout_updateplayer( globalstruct, struct, class, setspawnweap, skipfi
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd1d2
+// Params 2
+// Checksum 0x0, Offset: 0xd1da
 // Size: 0x2e8
 function setmlgspectatorclientloadoutdata( player, struct )
 {
@@ -5275,7 +5331,8 @@ function setmlgspectatorclientloadoutdata( player, struct )
     
     if ( isai( player ) )
     {
-        for (perkindex = 0; perkindex < struct.loadoutperks.size; perkindex++) {
+        for ( perkindex = 0; perkindex < struct.loadoutperks.size ; perkindex++ )
+        {
             perk = struct.loadoutperks[ perkindex ];
             perkid = scripts\mp\perks\perks::getperkid( perk );
             player setclientloadoutinfo( perkindex + 1 + "_perk", perkid );
@@ -5288,13 +5345,15 @@ function setmlgspectatorclientloadoutdata( player, struct )
             struct.loadoutstandardperks = struct.loadoutperks;
         }
         
-        for (perkindex = 0; perkindex < self.pers[ "loadoutPerks" ].size; perkindex++) {
+        for ( perkindex = 0; perkindex < self.pers[ "loadoutPerks" ].size ; perkindex++ )
+        {
             perk = self.pers[ "loadoutPerks" ][ perkindex ];
             perkid = scripts\mp\perks\perks::getperkid( perk );
             player setclientloadoutinfo( perkindex + 1 + "_perk", perkid );
         }
         
-        for (perkindex = 0; perkindex < struct.loadoutextraperks.size; perkindex++) {
+        for ( perkindex = 0; perkindex < struct.loadoutextraperks.size ; perkindex++ )
+        {
             perk = struct.loadoutextraperks[ perkindex ];
             perkid = scripts\mp\perks\perks::getperkid( perk );
             player setclientloadoutinfo( perkindex + 1 + "_extraPerk", perkid );
@@ -5309,8 +5368,8 @@ function setmlgspectatorclientloadoutdata( player, struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd4c2
+// Params 1
+// Checksum 0x0, Offset: 0xd4ca
 // Size: 0x12e
 function shouldallowinstantclassswap( error )
 {
@@ -5369,8 +5428,8 @@ function shouldallowinstantclassswap( error )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd5f9
+// Params 0
+// Checksum 0x0, Offset: 0xd601
 // Size: 0x1df
 function swaploadout()
 {
@@ -5430,8 +5489,8 @@ function swaploadout()
 /#
 
     // Namespace class / scripts\mp\class
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd7e0
+    // Params 1
+    // Checksum 0x0, Offset: 0xd7e8
     // Size: 0x4d, Type: dev
     function function_a1c8aa2264227d22( class )
     {
@@ -5452,8 +5511,8 @@ function swaploadout()
 #/
 
 // Namespace class / scripts\mp\class
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xd835
+// Params 6
+// Checksum 0x0, Offset: 0xd83d
 // Size: 0x470
 function giveloadout( team, class, setspawnweap, var_bea1f8064eda3de9, skipfirstraise, var_f15fdb6dca506606 )
 {
@@ -5603,8 +5662,8 @@ function giveloadout( team, class, setspawnweap, var_bea1f8064eda3de9, skipfirst
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdcad
+// Params 0
+// Checksum 0x0, Offset: 0xdcb5
 // Size: 0x64
 function function_dcea859f45fd42e4()
 {
@@ -5635,8 +5694,8 @@ function function_dcea859f45fd42e4()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd19
+// Params 0
+// Checksum 0x0, Offset: 0xdd21
 // Size: 0x43
 function function_3f6e46db719fb8f2()
 {
@@ -5655,8 +5714,8 @@ function function_3f6e46db719fb8f2()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd64
+// Params 0
+// Checksum 0x0, Offset: 0xdd6c
 // Size: 0xdd
 function function_cfb799b827f505af()
 {
@@ -5689,8 +5748,8 @@ function function_cfb799b827f505af()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xde49
+// Params 1
+// Checksum 0x0, Offset: 0xde51
 // Size: 0x41
 function function_200c71e93799b32f( struct )
 {
@@ -5711,8 +5770,8 @@ function function_200c71e93799b32f( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xde92
+// Params 3
+// Checksum 0x0, Offset: 0xde9a
 // Size: 0x4af
 function loadout_lognewlygivenloadout( globalstruct, struct, class )
 {
@@ -5731,7 +5790,7 @@ function loadout_lognewlygivenloadout( globalstruct, struct, class )
         thread setmlgspectatorclientloadoutdata( self, struct );
     }
     
-    if ( getdvarint( @"hash_4ba1427c86b79dc5" ) == 0 )
+    if ( getdvarint( @"online_matchdata_enabled" ) == 0 )
     {
         return;
     }
@@ -5872,8 +5931,8 @@ function loadout_lognewlygivenloadout( globalstruct, struct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe349
+// Params 0
+// Checksum 0x0, Offset: 0xe351
 // Size: 0x35, Type: bool
 function hasvalidationinfraction()
 {
@@ -5881,8 +5940,8 @@ function hasvalidationinfraction()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe387
+// Params 0
+// Checksum 0x0, Offset: 0xe38f
 // Size: 0x45
 function recordvalidationinfraction()
 {
@@ -5893,8 +5952,8 @@ function recordvalidationinfraction()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe3d4
+// Params 1
+// Checksum 0x0, Offset: 0xe3dc
 // Size: 0x61
 function _detachall( var_be69c03caa346d6c )
 {
@@ -5923,8 +5982,8 @@ function _detachall( var_be69c03caa346d6c )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe43d
+// Params 0
+// Checksum 0x0, Offset: 0xe445
 // Size: 0x89
 function trackriotshield_ontrophystow()
 {
@@ -5956,8 +6015,8 @@ function trackriotshield_ontrophystow()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe4ce
+// Params 1
+// Checksum 0x0, Offset: 0xe4d6
 // Size: 0x78, Type: bool
 function istwohandedoffhand( grenade )
 {
@@ -5980,8 +6039,8 @@ function istwohandedoffhand( grenade )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe54f
+// Params 0
+// Checksum 0x0, Offset: 0xe557
 // Size: 0x59
 function trackriotshield_grenadepullbackforc4()
 {
@@ -5999,8 +6058,8 @@ function trackriotshield_grenadepullbackforc4()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe5b0
+// Params 0
+// Checksum 0x0, Offset: 0xe5b8
 // Size: 0x66
 function trackriotshield_updateoffhandstowignorec4()
 {
@@ -6016,8 +6075,8 @@ function trackriotshield_updateoffhandstowignorec4()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe61e
+// Params 0
+// Checksum 0x0, Offset: 0xe626
 // Size: 0x64
 function trackriotshield_watchswitchawayfromshield()
 {
@@ -6040,8 +6099,8 @@ function trackriotshield_watchswitchawayfromshield()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe68a
+// Params 0
+// Checksum 0x0, Offset: 0xe692
 // Size: 0x3d
 function trackriotshield_watchcancelswitchaway()
 {
@@ -6059,8 +6118,8 @@ function trackriotshield_watchcancelswitchaway()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6cf
+// Params 1
+// Checksum 0x0, Offset: 0xe6d7
 // Size: 0x1da
 function trackriotshield_monitorshieldattach( wasinlaststand )
 {
@@ -6156,8 +6215,8 @@ function trackriotshield_monitorshieldattach( wasinlaststand )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8b1
+// Params 0
+// Checksum 0x0, Offset: 0xe8b9
 // Size: 0x4e
 function trackriotshield_tryback()
 {
@@ -6177,8 +6236,8 @@ function trackriotshield_tryback()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe907
+// Params 0
+// Checksum 0x0, Offset: 0xe90f
 // Size: 0x4e
 function trackriotshield_tryarm()
 {
@@ -6198,8 +6257,8 @@ function trackriotshield_tryarm()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe95d
+// Params 0
+// Checksum 0x0, Offset: 0xe965
 // Size: 0x45
 function trackriotshield_trydetach()
 {
@@ -6218,16 +6277,16 @@ function trackriotshield_trydetach()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9aa
-// Size: 0x7c
+// Params 0
+// Checksum 0x0, Offset: 0xe9b2
+// Size: 0x7d
 function trackriotshield_tryreset()
 {
     if ( riotshield_hasweapon() )
     {
         holdingshield = isriotshield( self getcurrentweapon() );
         
-        if ( holdingshield )
+        if ( istrue( holdingshield ) )
         {
             trackriotshield_tryarm();
         }
@@ -6254,8 +6313,8 @@ function trackriotshield_tryreset()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xea2e
+// Params 1
+// Checksum 0x0, Offset: 0xea37
 // Size: 0x35
 function riotshieldonweaponchange( objweapon )
 {
@@ -6271,8 +6330,8 @@ function riotshieldonweaponchange( objweapon )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xea6b
+// Params 1
+// Checksum 0x0, Offset: 0xea74
 // Size: 0x56
 function riotshieldclearvars( fromdeath )
 {
@@ -6290,8 +6349,8 @@ function riotshieldclearvars( fromdeath )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xeac9
+// Params 1
+// Checksum 0x0, Offset: 0xead2
 // Size: 0x11
 function isweaponsilenced( weapon )
 {
@@ -6299,8 +6358,8 @@ function isweaponsilenced( weapon )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xeae3
+// Params 2
+// Checksum 0x0, Offset: 0xeaec
 // Size: 0x1b
 function getweaponpassives( weaponbasename, variantid )
 {
@@ -6308,8 +6367,8 @@ function getweaponpassives( weaponbasename, variantid )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb07
+// Params 3
+// Checksum 0x0, Offset: 0xeb10
 // Size: 0x8c, Type: bool
 function weaponhaspassive( weaponbasename, variantid, passive )
 {
@@ -6332,8 +6391,8 @@ function weaponhaspassive( weaponbasename, variantid, passive )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb9c
+// Params 2
+// Checksum 0x0, Offset: 0xeba5
 // Size: 0x9b
 function getweaponvariantattachments( weaponbasename, variantid )
 {
@@ -6359,8 +6418,8 @@ function getweaponvariantattachments( weaponbasename, variantid )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xec40
+// Params 0
+// Checksum 0x0, Offset: 0xec49
 // Size: 0xb2
 function replenishloadout()
 {
@@ -6368,7 +6427,8 @@ function replenishloadout()
     class = self.pers[ "class" ];
     weaponslist = self getweaponslistall();
     
-    for (idx = 0; idx < weaponslist.size; idx++) {
+    for ( idx = 0; idx < weaponslist.size ; idx++ )
+    {
         weapon = weaponslist[ idx ];
         self givemaxammo( weapon );
         self setweaponammoclip( weapon, 9999 );
@@ -6382,8 +6442,8 @@ function replenishloadout()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xecfa
+// Params 0
+// Checksum 0x0, Offset: 0xed03
 // Size: 0x103
 function onplayerconnecting()
 {
@@ -6415,8 +6475,8 @@ function onplayerconnecting()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xee05
+// Params 0
+// Checksum 0x0, Offset: 0xee0e
 // Size: 0x3a1
 function onplayerspawned()
 {
@@ -6502,8 +6562,8 @@ function onplayerspawned()
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1ae
+// Params 2
+// Checksum 0x0, Offset: 0xf1b7
 // Size: 0x27
 function fadeaway( waitdelay, fadedelay )
 {
@@ -6513,8 +6573,8 @@ function fadeaway( waitdelay, fadedelay )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1dd
+// Params 1
+// Checksum 0x0, Offset: 0xf1e6
 // Size: 0x15
 function setclass( newclass )
 {
@@ -6522,8 +6582,8 @@ function setclass( newclass )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1fa
+// Params 0
+// Checksum 0x0, Offset: 0xf203
 // Size: 0x6a, Type: bool
 function haschangedclass()
 {
@@ -6541,8 +6601,8 @@ function haschangedclass()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf26d
+// Params 0
+// Checksum 0x0, Offset: 0xf276
 // Size: 0x39, Type: bool
 function haschangedarchetype()
 {
@@ -6563,8 +6623,8 @@ function haschangedarchetype()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf2af
+// Params 0
+// Checksum 0x0, Offset: 0xf2b8
 // Size: 0x78
 function resetactionslots()
 {
@@ -6582,8 +6642,8 @@ function resetactionslots()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf32f
+// Params 0
+// Checksum 0x0, Offset: 0xf338
 // Size: 0x148
 function resetfunctionality()
 {
@@ -6640,8 +6700,8 @@ function resetfunctionality()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf47f
+// Params 0
+// Checksum 0x0, Offset: 0xf488
 // Size: 0x13
 function clearscriptable()
 {
@@ -6649,8 +6709,8 @@ function clearscriptable()
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf49a
+// Params 3
+// Checksum 0x0, Offset: 0xf4a3
 // Size: 0x134
 function changearchetype( archetype, super, trait )
 {
@@ -6689,8 +6749,8 @@ function changearchetype( archetype, super, trait )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf5d6
+// Params 2
+// Checksum 0x0, Offset: 0xf5df
 // Size: 0xa9
 function getattachmentloadoutstring( attachmentindex, slot )
 {
@@ -6715,8 +6775,8 @@ function getattachmentloadoutstring( attachmentindex, slot )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf688
+// Params 2
+// Checksum 0x0, Offset: 0xf691
 // Size: 0xa9
 function function_9f808ad55705b616( attachmentindex, slot )
 {
@@ -6741,8 +6801,8 @@ function function_9f808ad55705b616( attachmentindex, slot )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf73a
+// Params 2
+// Checksum 0x0, Offset: 0xf743
 // Size: 0xa9
 function getstickerloadoutstring( var_36d2abbdcbcb186c, slot )
 {
@@ -6767,8 +6827,8 @@ function getstickerloadoutstring( var_36d2abbdcbcb186c, slot )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf7ec
+// Params 0
+// Checksum 0x0, Offset: 0xf7f5
 // Size: 0x4
 function getmaxprimaryattachments()
 {
@@ -6776,8 +6836,8 @@ function getmaxprimaryattachments()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf7f9
+// Params 0
+// Checksum 0x0, Offset: 0xf802
 // Size: 0x4
 function getmaxsecondaryattachments()
 {
@@ -6785,8 +6845,8 @@ function getmaxsecondaryattachments()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf806
+// Params 0
+// Checksum 0x0, Offset: 0xf80f
 // Size: 0x4
 function function_ed8babbe1912171f()
 {
@@ -6794,8 +6854,8 @@ function function_ed8babbe1912171f()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf813
+// Params 0
+// Checksum 0x0, Offset: 0xf81c
 // Size: 0x4
 function function_fba1013e19eb56c3()
 {
@@ -6803,8 +6863,8 @@ function function_fba1013e19eb56c3()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf820
+// Params 0
+// Checksum 0x0, Offset: 0xf829
 // Size: 0x4
 function function_4073b3f145413cd()
 {
@@ -6812,8 +6872,8 @@ function function_4073b3f145413cd()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf82d
+// Params 1
+// Checksum 0x0, Offset: 0xf836
 // Size: 0x8a
 function getmaxattachments( weaponslot )
 {
@@ -6831,8 +6891,8 @@ function getmaxattachments( weaponslot )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8c0
+// Params 2
+// Checksum 0x0, Offset: 0xf8c9
 // Size: 0x17c
 function fillemptystreakslots( var_66383c9fdf2d18c4, struct )
 {
@@ -6884,8 +6944,8 @@ function fillemptystreakslots( var_66383c9fdf2d18c4, struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa45
+// Params 1
+// Checksum 0x0, Offset: 0xfa4e
 // Size: 0xfe
 function findfirststreakdifferentcost( var_5feb6adfd05e27f1 )
 {
@@ -6919,8 +6979,8 @@ function findfirststreakdifferentcost( var_5feb6adfd05e27f1 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb4c
+// Params 1
+// Checksum 0x0, Offset: 0xfb55
 // Size: 0x30
 function replacewithspecialistkillstreaks( struct )
 {
@@ -6928,8 +6988,8 @@ function replacewithspecialistkillstreaks( struct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb85
+// Params 0
+// Checksum 0x0, Offset: 0xfb8e
 // Size: 0x71
 function updateinstantclassswapallowed()
 {
@@ -6958,8 +7018,8 @@ function updateinstantclassswapallowed()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbfe
+// Params 0
+// Checksum 0x0, Offset: 0xfc07
 // Size: 0x69
 function updateinstantclassswapallowedinternal()
 {
@@ -6985,8 +7045,8 @@ function updateinstantclassswapallowedinternal()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc6f
+// Params 0
+// Checksum 0x0, Offset: 0xfc78
 // Size: 0x65
 function disableclassswapallowed()
 {
@@ -7008,8 +7068,8 @@ function disableclassswapallowed()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfcdc
+// Params 0
+// Checksum 0x0, Offset: 0xfce5
 // Size: 0x2e
 function function_bc75edb1c34af80e()
 {
@@ -7023,8 +7083,8 @@ function function_bc75edb1c34af80e()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd12
+// Params 1
+// Checksum 0x0, Offset: 0xfd1b
 // Size: 0x18, Type: bool
 function isvalidclass( class )
 {
@@ -7032,8 +7092,8 @@ function isvalidclass( class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd33
+// Params 1
+// Checksum 0x0, Offset: 0xfd3c
 // Size: 0x38
 function getclassindex( classname )
 {
@@ -7042,8 +7102,8 @@ function getclassindex( classname )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd74
+// Params 2
+// Checksum 0x0, Offset: 0xfd7d
 // Size: 0x30
 function preloadandqueueclass( class, var_1dce12d4eaf02799 )
 {
@@ -7053,8 +7113,8 @@ function preloadandqueueclass( class, var_1dce12d4eaf02799 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xfdad
+// Params 3
+// Checksum 0x0, Offset: 0xfdb6
 // Size: 0x47
 function preloadandqueueclassstruct( classstruct, var_1dce12d4eaf02799, var_8c3977c9c8dc729b )
 {
@@ -7064,8 +7124,8 @@ function preloadandqueueclassstruct( classstruct, var_1dce12d4eaf02799, var_8c39
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfdfc
+// Params 1
+// Checksum 0x0, Offset: 0xfe05
 // Size: 0x1a5
 function loadout_getorbuildclassstruct( classname )
 {
@@ -7125,8 +7185,8 @@ function loadout_getorbuildclassstruct( classname )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xffaa
+// Params 0
+// Checksum 0x0, Offset: 0xffb3
 // Size: 0x2b
 function loadout_getglobalclassstruct()
 {
@@ -7139,8 +7199,8 @@ function loadout_getglobalclassstruct()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xffde
+// Params 0
+// Checksum 0x0, Offset: 0xffe7
 // Size: 0xb1
 function loadout_updateglobalclassstruct()
 {
@@ -7167,8 +7227,8 @@ function loadout_updateglobalclassstruct()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10097
+// Params 0
+// Checksum 0x0, Offset: 0x100a0
 // Size: 0x66, Type: bool
 function loadout_editglobalclassstruct()
 {
@@ -7190,8 +7250,8 @@ function loadout_editglobalclassstruct()
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10106
+// Params 2
+// Checksum 0x0, Offset: 0x1010f
 // Size: 0x6f
 function loadout_updateglobalclassgamemode( globalstruct, class )
 {
@@ -7212,8 +7272,8 @@ function loadout_updateglobalclassgamemode( globalstruct, class )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1017d
+// Params 1
+// Checksum 0x0, Offset: 0x10186
 // Size: 0x81, Type: bool
 function loadout_editcachedclassstruct( classname )
 {
@@ -7238,8 +7298,8 @@ function loadout_editcachedclassstruct( classname )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10207
+// Params 2
+// Checksum 0x0, Offset: 0x10210
 // Size: 0x69
 function getcachedloadoutstruct( classname, classtype )
 {
@@ -7260,8 +7320,8 @@ function getcachedloadoutstruct( classname, classtype )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10279
+// Params 3
+// Checksum 0x0, Offset: 0x10282
 // Size: 0x54
 function trytocacheclassstruct( classstruct, classname, classtype )
 {
@@ -7276,8 +7336,8 @@ function trytocacheclassstruct( classstruct, classname, classtype )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x102d5
+// Params 2
+// Checksum 0x0, Offset: 0x102de
 // Size: 0x4c
 function addclassstructtocache( classstruct, classname )
 {
@@ -7290,8 +7350,8 @@ function addclassstructtocache( classstruct, classname )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10329
+// Params 1
+// Checksum 0x0, Offset: 0x10332
 // Size: 0x30
 function loadout_emptycacheofloadout( classname )
 {
@@ -7304,8 +7364,8 @@ function loadout_emptycacheofloadout( classname )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10361
+// Params 0
+// Checksum 0x0, Offset: 0x1036a
 // Size: 0x17
 function loadout_gamemodeloadoutchanged()
 {
@@ -7313,8 +7373,8 @@ function loadout_gamemodeloadoutchanged()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10380
+// Params 1
+// Checksum 0x0, Offset: 0x10389
 // Size: 0xa9
 function copyclassfornextlife( otherplayer )
 {
@@ -7336,8 +7396,8 @@ function copyclassfornextlife( otherplayer )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10431
+// Params 0
+// Checksum 0x0, Offset: 0x1043a
 // Size: 0x26
 function _loadout_setcopyloadoutomvnaronspawn()
 {
@@ -7348,8 +7408,8 @@ function _loadout_setcopyloadoutomvnaronspawn()
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1045f
+// Params 2
+// Checksum 0x0, Offset: 0x10468
 // Size: 0x10a
 function loadout_fixcopiedclassstruct( copiedstruct, classstruct )
 {
@@ -7368,8 +7428,8 @@ function loadout_fixcopiedclassstruct( copiedstruct, classstruct )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10571
+// Params 2
+// Checksum 0x0, Offset: 0x1057a
 // Size: 0x48
 function function_bae2a0b1db21cab9( weaponobj, skipfirstraise )
 {
@@ -7392,8 +7452,8 @@ function function_bae2a0b1db21cab9( weaponobj, skipfirstraise )
 }
 
 // Namespace class / scripts\mp\class
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x105c2
+// Params 5
+// Checksum 0x0, Offset: 0x105cb
 // Size: 0x9c
 function respawnitems_saveplayeritemstostruct( saveweapons, saveequipment, savestreaks, saveperks, savesuper )
 {
@@ -7428,8 +7488,8 @@ function respawnitems_saveplayeritemstostruct( saveweapons, saveequipment, saves
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10667
+// Params 1
+// Checksum 0x0, Offset: 0x10670
 // Size: 0x15
 function respawnitems_assignrespawnitems( respawnitems )
 {
@@ -7437,8 +7497,8 @@ function respawnitems_assignrespawnitems( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10684
+// Params 0
+// Checksum 0x0, Offset: 0x1068d
 // Size: 0xc, Type: bool
 function respawnitems_hasrespawnitems()
 {
@@ -7446,8 +7506,8 @@ function respawnitems_hasrespawnitems()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10699
+// Params 0
+// Checksum 0x0, Offset: 0x106a2
 // Size: 0x1a
 function respawnitems_getrespawnitems()
 {
@@ -7460,8 +7520,8 @@ function respawnitems_getrespawnitems()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x106bc
+// Params 0
+// Checksum 0x0, Offset: 0x106c5
 // Size: 0xc
 function respawnitems_clear()
 {
@@ -7469,9 +7529,9 @@ function respawnitems_clear()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x106d0
-// Size: 0x1f3
+// Params 1
+// Checksum 0x0, Offset: 0x106d9
+// Size: 0x20b
 function respawnitems_saveweapons( respawnitems )
 {
     cacweapons = [];
@@ -7480,6 +7540,11 @@ function respawnitems_saveweapons( respawnitems )
     
     foreach ( weapon in var_5bc770e98fe2f25e )
     {
+        if ( function_da27e3343b019fde() && isbackuppistol( weapon ) )
+        {
+            continue;
+        }
+        
         if ( iscacprimaryorsecondary( weapon ) )
         {
             cacweapons[ cacweapons.size ] = weapon;
@@ -7542,8 +7607,8 @@ function respawnitems_saveweapons( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x108cb
+// Params 3
+// Checksum 0x0, Offset: 0x108ec
 // Size: 0xce
 function respawnitems_saveweapon( weaponobj, weaponslot, respawnitems )
 {
@@ -7569,8 +7634,8 @@ function respawnitems_saveweapon( weaponobj, weaponslot, respawnitems )
 /#
 
     // Namespace class / scripts\mp\class
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x109a1
+    // Params 1
+    // Checksum 0x0, Offset: 0x109c2
     // Size: 0x115, Type: dev
     function function_58e92934b81cbc64( respawnitems )
     {
@@ -7586,8 +7651,8 @@ function respawnitems_saveweapon( weaponobj, weaponslot, respawnitems )
 #/
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10abe
+// Params 1
+// Checksum 0x0, Offset: 0x10adf
 // Size: 0x30
 function respawnitems_saveequipmentitems( respawnitems )
 {
@@ -7600,8 +7665,8 @@ function respawnitems_saveequipmentitems( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10af6
+// Params 2
+// Checksum 0x0, Offset: 0x10b17
 // Size: 0xb0
 function respawnitems_saveequipment( slot, respawnitems )
 {
@@ -7633,8 +7698,8 @@ function respawnitems_saveequipment( slot, respawnitems )
 /#
 
     // Namespace class / scripts\mp\class
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10bae
+    // Params 1
+    // Checksum 0x0, Offset: 0x10bcf
     // Size: 0xd6, Type: dev
     function function_fddb6546d1d0bc28( respawnitems )
     {
@@ -7650,8 +7715,8 @@ function respawnitems_saveequipment( slot, respawnitems )
 #/
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10c8c
+// Params 1
+// Checksum 0x0, Offset: 0x10cad
 // Size: 0x117
 function respawnitems_savestreaks( respawnitems )
 {
@@ -7700,8 +7765,8 @@ function respawnitems_savestreaks( respawnitems )
 /#
 
     // Namespace class / scripts\mp\class
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10dab
+    // Params 1
+    // Checksum 0x0, Offset: 0x10dcc
     // Size: 0x78, Type: dev
     function function_18e339bfd7cb9efa( respawnitems )
     {
@@ -7717,8 +7782,8 @@ function respawnitems_savestreaks( respawnitems )
 #/
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e2b
+// Params 1
+// Checksum 0x0, Offset: 0x10e4c
 // Size: 0x130
 function function_1a5ecf82792e6bb8( respawnitems )
 {
@@ -7743,8 +7808,8 @@ function function_1a5ecf82792e6bb8( respawnitems )
 /#
 
     // Namespace class / scripts\mp\class
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x10f63
+    // Params 1
+    // Checksum 0x0, Offset: 0x10f84
     // Size: 0x144, Type: dev
     function function_f1babd693e0a8c44( respawnitems )
     {
@@ -7775,8 +7840,8 @@ function function_1a5ecf82792e6bb8( respawnitems )
 #/
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x110af
+// Params 1
+// Checksum 0x0, Offset: 0x110d0
 // Size: 0xc3
 function respawnitems_savesuper( respawnitems )
 {
@@ -7808,8 +7873,8 @@ function respawnitems_savesuper( respawnitems )
 /#
 
     // Namespace class / scripts\mp\class
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1117a
+    // Params 1
+    // Checksum 0x0, Offset: 0x1119b
     // Size: 0xd7, Type: dev
     function function_6f401b52c8322c1b( respawnitems )
     {
@@ -7832,8 +7897,8 @@ function respawnitems_savesuper( respawnitems )
 #/
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11259
+// Params 1
+// Checksum 0x0, Offset: 0x1127a
 // Size: 0x1e, Type: bool
 function respawnitems_hasweapondata( respawnitems )
 {
@@ -7846,8 +7911,8 @@ function respawnitems_hasweapondata( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11280
+// Params 2
+// Checksum 0x0, Offset: 0x112a1
 // Size: 0x2a
 function respawnitems_getweaponobj( respawnitems, weaponslot )
 {
@@ -7855,9 +7920,9 @@ function respawnitems_getweaponobj( respawnitems, weaponslot )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x112b3
-// Size: 0xc4
+// Params 2
+// Checksum 0x0, Offset: 0x112d4
+// Size: 0xd8
 function respawnitems_giveweaponammo( respawnitems, weaponslot )
 {
     weaponinfo = respawnitems.weapons[ weaponslot ];
@@ -7868,19 +7933,23 @@ function respawnitems_giveweaponammo( respawnitems, weaponslot )
     }
     
     self setweaponammoclip( weaponinfo.weaponobj, weaponinfo.clipammo );
-    self setweaponammostock( weaponinfo.weaponobj, weaponinfo.stockammo );
     
-    if ( weaponinfo.weaponobj.hasalternate )
+    if ( !isaxeweapon( weaponinfo.weaponobj ) )
     {
-        var_6890a4ce965bba99 = weaponinfo.weaponobj getaltweapon();
-        self setweaponammoclip( var_6890a4ce965bba99, weaponinfo.altclipammo );
-        self setweaponammostock( var_6890a4ce965bba99, weaponinfo.altstockammo );
+        self setweaponammostock( weaponinfo.weaponobj, weaponinfo.stockammo );
+        
+        if ( weaponinfo.weaponobj.hasalternate )
+        {
+            var_6890a4ce965bba99 = weaponinfo.weaponobj getaltweapon();
+            self setweaponammoclip( var_6890a4ce965bba99, weaponinfo.altclipammo );
+            self setweaponammostock( var_6890a4ce965bba99, weaponinfo.altstockammo );
+        }
     }
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1137f
+// Params 1
+// Checksum 0x0, Offset: 0x113b4
 // Size: 0x1e, Type: bool
 function respawnitems_hasequipmentdata( respawnitems )
 {
@@ -7893,8 +7962,8 @@ function respawnitems_hasequipmentdata( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x113a6
+// Params 2
+// Checksum 0x0, Offset: 0x113db
 // Size: 0x2a
 function respawnitems_getequipmentref( respawnitems, slot )
 {
@@ -7902,8 +7971,8 @@ function respawnitems_getequipmentref( respawnitems, slot )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x113d9
+// Params 2
+// Checksum 0x0, Offset: 0x1140e
 // Size: 0x69
 function respawnitems_giveequipmentammo( respawnitems, slot )
 {
@@ -7925,8 +7994,8 @@ function respawnitems_giveequipmentammo( respawnitems, slot )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1144a
+// Params 1
+// Checksum 0x0, Offset: 0x1147f
 // Size: 0x1e, Type: bool
 function respawnitems_hasstreakdata( respawnitems )
 {
@@ -7939,8 +8008,8 @@ function respawnitems_hasstreakdata( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11471
+// Params 1
+// Checksum 0x0, Offset: 0x114a6
 // Size: 0x20
 function respawnitems_getstreakpoints( respawnitems )
 {
@@ -7948,8 +8017,8 @@ function respawnitems_getstreakpoints( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1149a
+// Params 1
+// Checksum 0x0, Offset: 0x114cf
 // Size: 0x20
 function respawnitems_getstreaks( respawnitems )
 {
@@ -7957,8 +8026,8 @@ function respawnitems_getstreaks( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x114c3
+// Params 1
+// Checksum 0x0, Offset: 0x114f8
 // Size: 0x1e, Type: bool
 function function_b19856925ddabd5a( respawnitems )
 {
@@ -7971,8 +8040,8 @@ function function_b19856925ddabd5a( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x114ea
+// Params 1
+// Checksum 0x0, Offset: 0x1151f
 // Size: 0x20
 function function_40a3148d5514ffa3( respawnitems )
 {
@@ -7980,8 +8049,8 @@ function function_40a3148d5514ffa3( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11513
+// Params 1
+// Checksum 0x0, Offset: 0x11548
 // Size: 0x20
 function function_dc2f8c385699a6e8( respawnitems )
 {
@@ -7989,8 +8058,8 @@ function function_dc2f8c385699a6e8( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1153c
+// Params 1
+// Checksum 0x0, Offset: 0x11571
 // Size: 0x20
 function function_dc2f8d385699a91b( respawnitems )
 {
@@ -7998,8 +8067,8 @@ function function_dc2f8d385699a91b( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11565
+// Params 1
+// Checksum 0x0, Offset: 0x1159a
 // Size: 0x20
 function function_64d9f4542fdd7b14( respawnitems )
 {
@@ -8007,8 +8076,8 @@ function function_64d9f4542fdd7b14( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1158e
+// Params 1
+// Checksum 0x0, Offset: 0x115c3
 // Size: 0x20
 function function_dc35cb143c497599( respawnitems )
 {
@@ -8016,8 +8085,8 @@ function function_dc35cb143c497599( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x115b7
+// Params 1
+// Checksum 0x0, Offset: 0x115ec
 // Size: 0x20
 function function_7f47875b5fd88f24( respawnitems )
 {
@@ -8025,8 +8094,8 @@ function function_7f47875b5fd88f24( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x115e0
+// Params 1
+// Checksum 0x0, Offset: 0x11615
 // Size: 0x20
 function function_eba2981fa45ae3bf( respawnitems )
 {
@@ -8034,8 +8103,8 @@ function function_eba2981fa45ae3bf( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11609
+// Params 1
+// Checksum 0x0, Offset: 0x1163e
 // Size: 0x20
 function function_33e44385e17eecc1( respawnitems )
 {
@@ -8043,8 +8112,8 @@ function function_33e44385e17eecc1( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11632
+// Params 1
+// Checksum 0x0, Offset: 0x11667
 // Size: 0x20
 function function_7af26fc564e26a5f( respawnitems )
 {
@@ -8052,8 +8121,8 @@ function function_7af26fc564e26a5f( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1165b
+// Params 1
+// Checksum 0x0, Offset: 0x11690
 // Size: 0x20
 function function_7d2ba1e36afe24b0( respawnitems )
 {
@@ -8061,8 +8130,8 @@ function function_7d2ba1e36afe24b0( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11684
+// Params 1
+// Checksum 0x0, Offset: 0x116b9
 // Size: 0x1e, Type: bool
 function respawnitems_hassuperdata( respawnitems )
 {
@@ -8075,8 +8144,8 @@ function respawnitems_hassuperdata( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x116ab
+// Params 1
+// Checksum 0x0, Offset: 0x116e0
 // Size: 0x20
 function respawnitems_getsuperref( respawnitems )
 {
@@ -8084,8 +8153,8 @@ function respawnitems_getsuperref( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x116d4
+// Params 1
+// Checksum 0x0, Offset: 0x11709
 // Size: 0x20
 function respawnitems_getsuperpoints( respawnitems )
 {
@@ -8093,8 +8162,8 @@ function respawnitems_getsuperpoints( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x116fd
+// Params 1
+// Checksum 0x0, Offset: 0x11732
 // Size: 0x20
 function respawnitems_getsuperextrapoints( respawnitems )
 {
@@ -8102,8 +8171,8 @@ function respawnitems_getsuperextrapoints( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11726
+// Params 1
+// Checksum 0x0, Offset: 0x1175b
 // Size: 0x64
 function function_2f17741f5c15a7d6( respawnitems )
 {
@@ -8116,8 +8185,8 @@ function function_2f17741f5c15a7d6( respawnitems )
 }
 
 // Namespace class / scripts\mp\class
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11793
+// Params 3
+// Checksum 0x0, Offset: 0x117c8
 // Size: 0x159
 function spawnammocountoverride_giveweaponammo( weaponobj, weaponslot, var_10b09490bb78e90e )
 {
@@ -8177,8 +8246,8 @@ function spawnammocountoverride_giveweaponammo( weaponobj, weaponslot, var_10b09
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x118f4
+// Params 1
+// Checksum 0x0, Offset: 0x11929
 // Size: 0x73
 function ismeleeweapon( objweapon )
 {
@@ -8187,8 +8256,8 @@ function ismeleeweapon( objweapon )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11970
+// Params 2
+// Checksum 0x0, Offset: 0x119a5
 // Size: 0x53b, Type: bool
 function compareclassstructs( classa, classb )
 {
@@ -8277,7 +8346,7 @@ function compareclassstructs( classa, classb )
         return false;
     }
     
-    if ( istrue( level.var_9e090a159cb48220 ) )
+    if ( istrue( level.tertiaryweaponslotenabled ) )
     {
         if ( !checkclassstructarray( classa.var_494870a5978b5a09, classb.var_494870a5978b5a09 ) )
         {
@@ -8424,8 +8493,8 @@ function compareclassstructs( classa, classb )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11eb4
+// Params 2
+// Checksum 0x0, Offset: 0x11ee9
 // Size: 0x76, Type: bool
 function checkclassstructarray( arraya, arrayb )
 {
@@ -8451,8 +8520,8 @@ function checkclassstructarray( arraya, arrayb )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f33
+// Params 0
+// Checksum 0x0, Offset: 0x11f68
 // Size: 0x32
 function blockclasschange()
 {
@@ -8463,8 +8532,8 @@ function blockclasschange()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f6d
+// Params 0
+// Checksum 0x0, Offset: 0x11fa2
 // Size: 0x32
 function unblockclasschange()
 {
@@ -8477,8 +8546,8 @@ function unblockclasschange()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11fa7
+// Params 0
+// Checksum 0x0, Offset: 0x11fdc
 // Size: 0xfb
 function setthirdpersonview()
 {
@@ -8523,8 +8592,8 @@ function setthirdpersonview()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x120aa
+// Params 0
+// Checksum 0x0, Offset: 0x120df
 // Size: 0x2b
 function restoregameplaythirdperson()
 {
@@ -8536,8 +8605,8 @@ function restoregameplaythirdperson()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x120dd
+// Params 0
+// Checksum 0x0, Offset: 0x12112
 // Size: 0x7
 function alwaysgamemodeclass()
 {
@@ -8545,8 +8614,8 @@ function alwaysgamemodeclass()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x120ed
+// Params 0
+// Checksum 0x0, Offset: 0x12122
 // Size: 0x81
 function function_a16868d4dcd81a4b()
 {
@@ -8563,8 +8632,8 @@ function function_a16868d4dcd81a4b()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12176
+// Params 0
+// Checksum 0x0, Offset: 0x121ab
 // Size: 0x10c
 function function_286b27e21ed2cf0c()
 {
@@ -8611,8 +8680,8 @@ function function_286b27e21ed2cf0c()
 }
 
 // Namespace class / scripts\mp\class
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1228a
+// Params 4
+// Checksum 0x0, Offset: 0x122bf
 // Size: 0x46
 function function_32397139046948fc( timedelay, _scale, _duration, _radius )
 {
@@ -8623,8 +8692,8 @@ function function_32397139046948fc( timedelay, _scale, _duration, _radius )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x122d8
+// Params 2
+// Checksum 0x0, Offset: 0x1230d
 // Size: 0x4e
 function function_222538ff1074a754( _time, _scale )
 {
@@ -8643,8 +8712,8 @@ function function_222538ff1074a754( _time, _scale )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1232e
+// Params 1
+// Checksum 0x0, Offset: 0x12363
 // Size: 0xe5
 function function_1efc9881377752ac( var_740fb89f7c4097d1 )
 {
@@ -8685,8 +8754,8 @@ function function_1efc9881377752ac( var_740fb89f7c4097d1 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1241b
+// Params 1
+// Checksum 0x0, Offset: 0x12450
 // Size: 0x12a
 function function_f3ee15ceb4922f2( enableenemyoutlines )
 {
@@ -8731,8 +8800,8 @@ function function_f3ee15ceb4922f2( enableenemyoutlines )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1254d
+// Params 0
+// Checksum 0x0, Offset: 0x12582
 // Size: 0x111
 function function_866622357ab7abae()
 {
@@ -8772,8 +8841,8 @@ function function_866622357ab7abae()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12666
+// Params 0
+// Checksum 0x0, Offset: 0x1269b
 // Size: 0x13a
 function monitorstowedriotshieldspeed()
 {
@@ -8822,8 +8891,8 @@ function monitorstowedriotshieldspeed()
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x127a8
+// Params 0
+// Checksum 0x0, Offset: 0x127dd
 // Size: 0x32, Type: bool
 function function_da27e3343b019fde()
 {
@@ -8831,8 +8900,8 @@ function function_da27e3343b019fde()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x127e3
+// Params 1
+// Checksum 0x0, Offset: 0x12818
 // Size: 0xc9
 function function_c19397c712573e87( player )
 {
@@ -8876,8 +8945,8 @@ function function_c19397c712573e87( player )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x128b4
+// Params 1
+// Checksum 0x0, Offset: 0x128e9
 // Size: 0xd7
 function function_1ca935941daaf046( weaponobj )
 {
@@ -8927,8 +8996,8 @@ function function_1ca935941daaf046( weaponobj )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12993
+// Params 1
+// Checksum 0x0, Offset: 0x129c8
 // Size: 0x88
 function function_d32d2baaa9465105( var_d792416e0edaee34 )
 {
@@ -8961,8 +9030,8 @@ function function_d32d2baaa9465105( var_d792416e0edaee34 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12a23
+// Params 1
+// Checksum 0x0, Offset: 0x12a58
 // Size: 0x1c0
 function function_6254bac9f9be9cf4( var_d792416e0edaee34 )
 {
@@ -9025,8 +9094,8 @@ function function_6254bac9f9be9cf4( var_d792416e0edaee34 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12beb
+// Params 1
+// Checksum 0x0, Offset: 0x12c20
 // Size: 0x103
 function function_415e5061f6389e8a( underwaterdata )
 {
@@ -9058,9 +9127,9 @@ function function_415e5061f6389e8a( underwaterdata )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12cf6
-// Size: 0x60, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0x12d2b
+// Size: 0x88, Type: bool
 function function_6baf1dc15666ea19( var_5996df3d783693e8, data )
 {
     if ( isdefined( self.var_631e00e0caec69db ) && self.var_631e00e0caec69db == var_5996df3d783693e8 )
@@ -9068,12 +9137,14 @@ function function_6baf1dc15666ea19( var_5996df3d783693e8, data )
         return true;
     }
     
-    return var_5996df3d783693e8 != data.backuppistol && !scripts\cp_mp\armor::function_6aa482957b62905c( var_5996df3d783693e8 ) && !scripts\mp\utility\weapon::isgunlessweapon( var_5996df3d783693e8 ) && !scripts\cp_mp\weapon::iskillstreakweapon( var_5996df3d783693e8 );
+    iskillstreakweapon = scripts\cp_mp\weapon::iskillstreakweapon( var_5996df3d783693e8 );
+    var_84444ff0b7f0f04f = !iskillstreakweapon || iskillstreakweapon && scripts\mp\utility\killstreak::isjuggernaut();
+    return var_5996df3d783693e8 != data.backuppistol && !scripts\cp_mp\armor::function_6aa482957b62905c( var_5996df3d783693e8 ) && !scripts\mp\utility\weapon::isgunlessweapon( var_5996df3d783693e8 ) && var_84444ff0b7f0f04f;
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12d5f
+// Params 1
+// Checksum 0x0, Offset: 0x12dbc
 // Size: 0x31
 function function_4b56747106ade67d( var_929540bb89d0a925 )
 {
@@ -9086,8 +9157,8 @@ function function_4b56747106ade67d( var_929540bb89d0a925 )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12d98
+// Params 1
+// Checksum 0x0, Offset: 0x12df5
 // Size: 0xa5
 function function_93d99d806146e8d7( data )
 {
@@ -9107,8 +9178,8 @@ function function_93d99d806146e8d7( data )
 }
 
 // Namespace class / scripts\mp\class
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12e45
+// Params 2
+// Checksum 0x0, Offset: 0x12ea2
 // Size: 0xd6
 function function_7d89af78724b2cb8( data, var_1da99285175ae8ae )
 {
@@ -9143,8 +9214,8 @@ function function_7d89af78724b2cb8( data, var_1da99285175ae8ae )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f23
+// Params 1
+// Checksum 0x0, Offset: 0x12f80
 // Size: 0xcf
 function function_b63353df1796c99b( data )
 {
@@ -9182,8 +9253,8 @@ function function_b63353df1796c99b( data )
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12ffa
+// Params 1
+// Checksum 0x0, Offset: 0x13057
 // Size: 0x11c
 function function_7f1c954f80ee4bb9( underwaterdata )
 {
@@ -9226,8 +9297,8 @@ function function_7f1c954f80ee4bb9( underwaterdata )
 }
 
 // Namespace class / scripts\mp\class
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1311e
+// Params 0
+// Checksum 0x0, Offset: 0x1317b
 // Size: 0x56, Type: bool
 function function_c782e5bc12dc2966()
 {
@@ -9242,8 +9313,8 @@ function function_c782e5bc12dc2966()
 }
 
 // Namespace class / scripts\mp\class
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1317d
+// Params 1
+// Checksum 0x0, Offset: 0x131da
 // Size: 0x1b5
 function function_64bffc8dc3c3f1ae( weapon )
 {

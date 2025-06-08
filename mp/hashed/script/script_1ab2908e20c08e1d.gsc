@@ -12,7 +12,7 @@
 #namespace inhibitor;
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a9
 // Size: 0x36
 function function_3670f4d8dcce3aec()
@@ -22,7 +22,7 @@ function function_3670f4d8dcce3aec()
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e7
 // Size: 0x6e
 function function_427def4c56968d9f( grenade )
@@ -40,7 +40,7 @@ function function_427def4c56968d9f( grenade )
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45d
 // Size: 0x1e9
 function function_acccb8cab20190d9( grenade )
@@ -93,7 +93,7 @@ function function_acccb8cab20190d9( grenade )
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64f
 // Size: 0x128
 function function_53b45ece303b029c( player )
@@ -132,7 +132,7 @@ function function_53b45ece303b029c( player )
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x77f
 // Size: 0x160
 function function_554cebc2d67c5e02( player )
@@ -169,7 +169,7 @@ function function_554cebc2d67c5e02( player )
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e7
 // Size: 0xca
 function function_fecb0c5ebbe74c13()
@@ -189,7 +189,7 @@ function function_fecb0c5ebbe74c13()
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b9
 // Size: 0x9f
 function function_ba64a36771329308()
@@ -207,7 +207,7 @@ function function_ba64a36771329308()
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa60
 // Size: 0x292
 function function_c2380a1826a779f3( var_ab4a81377b413b10 )
@@ -263,7 +263,7 @@ function function_c2380a1826a779f3( var_ab4a81377b413b10 )
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcfa
 // Size: 0xb4, Type: bool
 function function_f4091cdf59c6f35c( spawn_origin )
@@ -284,7 +284,7 @@ function function_f4091cdf59c6f35c( spawn_origin )
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdb7
 // Size: 0x12c
 function function_85348883faef3ae0()
@@ -323,7 +323,7 @@ function function_85348883faef3ae0()
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xeeb
 // Size: 0xab
 function function_f2a91412bc5778c2( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -342,7 +342,7 @@ function function_f2a91412bc5778c2( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf9e
 // Size: 0x14
 function function_8d6c1168a68452d6()
@@ -353,7 +353,7 @@ function function_8d6c1168a68452d6()
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfba
 // Size: 0x5f
 function function_b4ccc4be633a50ed()
@@ -376,7 +376,7 @@ function function_b4ccc4be633a50ed()
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1021
 // Size: 0x41
 function function_6b4e113e860a21e8()
@@ -394,7 +394,7 @@ function function_6b4e113e860a21e8()
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x106a
 // Size: 0x18, Type: bool
 function function_621b71c9df814ea4( scriptablename )
@@ -430,7 +430,7 @@ function private monitor_timeout( inhibitor_model )
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10cf
 // Size: 0x9e, Type: bool
 function is_train_ent( hitent )
@@ -455,7 +455,7 @@ function is_train_ent( hitent )
 }
 
 // Namespace inhibitor / namespace_47e14a842b2118bf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1176
 // Size: 0x18
 function function_36645b2e031dc50b()

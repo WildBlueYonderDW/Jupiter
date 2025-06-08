@@ -18,7 +18,7 @@
 #namespace points;
 
 // Namespace points / scripts\ob\points
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f8
 // Size: 0xd0
 function init()
@@ -37,7 +37,7 @@ function init()
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d0
 // Size: 0x5e
 function function_8b134141131f364a( params )
@@ -49,7 +49,7 @@ function function_8b134141131f364a( params )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x736
 // Size: 0x67
 function on_player_damaged( params )
@@ -62,7 +62,7 @@ function on_player_damaged( params )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7a5
 // Size: 0x47
 function on_player_connect( params )
@@ -73,7 +73,7 @@ function on_player_connect( params )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7f4
 // Size: 0x1b
 function on_safe_open( sparams )
@@ -82,7 +82,7 @@ function on_safe_open( sparams )
 }
 
 // Namespace points / scripts\ob\points
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x817
 // Size: 0x44
 function function_bd0c9022c796f049( eventstring, sweapon )
@@ -102,7 +102,7 @@ function function_bd0c9022c796f049( eventstring, sweapon )
 }
 
 // Namespace points / scripts\ob\points
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x864
 // Size: 0x55
 function function_ef5d482e9930a774( eventstring, sweapon, var_527bff0c92d4a0aa )
@@ -126,7 +126,7 @@ function function_ef5d482e9930a774( eventstring, sweapon, var_527bff0c92d4a0aa )
 }
 
 // Namespace points / scripts\ob\points
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8c2
 // Size: 0x2c
 function function_c7f9db170bb3828b( points, event, player, objweapon )
@@ -135,7 +135,7 @@ function function_c7f9db170bb3828b( points, event, player, objweapon )
 }
 
 // Namespace points / scripts\ob\points
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x8f7
 // Size: 0xc9
 function function_ddee59d6b1a2b9e( scoreevent, sweapon, var_7594386ec6f06936, reason, var_527bff0c92d4a0aa )
@@ -164,7 +164,7 @@ function function_ddee59d6b1a2b9e( scoreevent, sweapon, var_7594386ec6f06936, re
 }
 
 // Namespace points / scripts\ob\points
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9c8
 // Size: 0x73
 function function_8c80bfd5eb313b22( eventstring, points, victim )
@@ -181,7 +181,7 @@ function function_8c80bfd5eb313b22( eventstring, points, victim )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa43
 // Size: 0x63
 function function_e04a2325dbe8153c( points )
@@ -201,7 +201,7 @@ function function_e04a2325dbe8153c( points )
 }
 
 // Namespace points / scripts\ob\points
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaae
 // Size: 0x1a
 function function_5ef7bc993b154224()
@@ -211,7 +211,7 @@ function function_5ef7bc993b154224()
 }
 
 // Namespace points / scripts\ob\points
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xad0
 // Size: 0x20
 function function_d57de844b62e642b()
@@ -225,7 +225,7 @@ function function_d57de844b62e642b()
 }
 
 // Namespace points / scripts\ob\points
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf8
 // Size: 0x1e
 function function_b86115649d705017()
@@ -236,7 +236,7 @@ function function_b86115649d705017()
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb1f
 // Size: 0x33
 function function_b5b4f530f1c579aa( points )
@@ -247,7 +247,7 @@ function function_b5b4f530f1c579aa( points )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb5a
 // Size: 0x77
 function function_5fb17ad4d286b0d5( points )
@@ -265,7 +265,7 @@ function function_5fb17ad4d286b0d5( points )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbd9
 // Size: 0x29
 function function_be68f708692f876f( value )
@@ -275,7 +275,7 @@ function function_be68f708692f876f( value )
 }
 
 // Namespace points / scripts\ob\points
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc0a
 // Size: 0x33
 function function_1b86539a6f213fc3()
@@ -291,7 +291,7 @@ function function_1b86539a6f213fc3()
 }
 
 // Namespace points / scripts\ob\points
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc46
 // Size: 0xe9
 function function_818ac0c0b8f0b22( var_2267bb02be780ba4, string_add )
@@ -332,7 +332,7 @@ function function_818ac0c0b8f0b22( var_2267bb02be780ba4, string_add )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd38
 // Size: 0x78
 function function_191e620389d99b8e( weapon )
@@ -356,7 +356,7 @@ function function_191e620389d99b8e( weapon )
 }
 
 // Namespace points / scripts\ob\points
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xdb9
 // Size: 0x2e9
 function function_cf6a439e1dd8049f( victim, eattacker, einflictor, smeansofdeath, sweapon, shitloc, typestring, var_aaf0465944b061ed )
@@ -444,7 +444,7 @@ function function_cf6a439e1dd8049f( victim, eattacker, einflictor, smeansofdeath
 }
 
 // Namespace points / scripts\ob\points
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10aa
 // Size: 0xe9
 function function_97bd8649553541e9( basekillstring, sweapon, eai )
@@ -487,7 +487,7 @@ function function_97bd8649553541e9( basekillstring, sweapon, eai )
 }
 
 // Namespace points / scripts\ob\points
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x119b
 // Size: 0x5ed
 function function_b5679c2e3399669d( victim, smeansofdeath, sweapon )
@@ -616,7 +616,7 @@ function function_b5679c2e3399669d( victim, smeansofdeath, sweapon )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1790
 // Size: 0x43
 function function_ccac14f2510dd65a( sparams )
@@ -629,7 +629,7 @@ function function_ccac14f2510dd65a( sparams )
 }
 
 // Namespace points / scripts\ob\points
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17db
 // Size: 0x1b7
 function function_591305dc9c07499b( objweapon, eattacker, smeansofdeath )
@@ -704,7 +704,7 @@ function function_591305dc9c07499b( objweapon, eattacker, smeansofdeath )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x199b
 // Size: 0x84d
 function function_269657aa69da2b38( sparams )
@@ -845,7 +845,7 @@ function function_269657aa69da2b38( sparams )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21f0
 // Size: 0x66
 function function_de67925b7692fe3d( var_444cec370990f32 )
@@ -862,7 +862,7 @@ function function_de67925b7692fe3d( var_444cec370990f32 )
 }
 
 // Namespace points / scripts\ob\points
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x225e
 // Size: 0xf0
 function function_54de0dcded063f2d( var_444cec370990f32, sweapon )
@@ -888,7 +888,7 @@ function function_54de0dcded063f2d( var_444cec370990f32, sweapon )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2356
 // Size: 0x68, Type: bool
 function function_135f1d917020589a( sweapon )
@@ -897,7 +897,7 @@ function function_135f1d917020589a( sweapon )
 }
 
 // Namespace points / scripts\ob\points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23c7
 // Size: 0xe2, Type: bool
 function function_9da9c82aa52d0513( sparams )

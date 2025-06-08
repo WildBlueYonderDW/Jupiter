@@ -257,7 +257,8 @@ function private function_fe2e6cb1a454fc82()
     {
         if ( isdefined( item.lootscriptable ) && scripts\mp\gametypes\br_lootcache::canspawnitemname( item.lootscriptable ) )
         {
-            for (i = 0; i < item.maxquantity; i++) {
+            for ( i = 0; i < item.maxquantity ; i++ )
+            {
                 scripts\mp\gametypes\br_lootcache::lootspawnitem( item.lootscriptable, dropstruct, droporigin, dropangles, 0, 0 );
             }
         }
@@ -461,7 +462,8 @@ function private function_82e708bd8bcc57df( packagestruct )
     flightangles = ( 0, randomfloat( 360 ), 0 );
     planes = [];
     
-    for (i = 0; i < packagestruct.var_f7c244d4042a1545; i++) {
+    for ( i = 0; i < packagestruct.var_f7c244d4042a1545 ; i++ )
+    {
         plane = function_e7e58d93d3d79caa( packagestruct, packagestruct.var_96e9e80322851e31, flightangles, planeheight );
         plane.dropdelay = randomfloatrange( 0, plane.var_96e9e80322851e31.radius / plane.speed );
         planes[ planes.size ] = plane;
@@ -545,7 +547,7 @@ function private function_1e67232308c02026()
 }
 
 // Namespace package_airdrop / scripts\cp_mp\package_airdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ac3
 // Size: 0x78
 function function_b7e318cea4f188af( planes )
@@ -576,7 +578,8 @@ function private function_987a5e3bf9cc8431( packagestruct )
     dropwaittime = ( distance2d( var_bd34ecac3ada85b, droppoint ) - plane.var_96e9e80322851e31.radius ) / planespeed + ( isdefined( plane.dropdelay ) ? plane.dropdelay : 0 );
     cratedroptime = plane.var_96e9e80322851e31.radius * 2 / plane.var_785e6753581c6778 / planespeed;
     
-    for (i = 0; i < plane.var_785e6753581c6778 && packagestruct.var_734798c9f67545df > 0; i++) {
+    for ( i = 0; i < plane.var_785e6753581c6778 && packagestruct.var_734798c9f67545df > 0 ; i++ )
+    {
         wait dropwaittime;
         dropwaittime = cratedroptime;
         package = function_c57fe57efd284588( packagestruct, plane.origin, plane.angles );
@@ -625,7 +628,7 @@ function private function_c57fe57efd284588( packagestruct, origin, angles )
 }
 
 // Namespace package_airdrop / scripts\cp_mp\package_airdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1db0
 // Size: 0xc1
 function function_f5b281dd5f7a4aae( starttrace )
@@ -854,7 +857,7 @@ function private function_c1920a80da64cb98( packagestruct, var_96e9e80322851e31 
 /#
 
     // Namespace package_airdrop / scripts\cp_mp\package_airdrop
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x26b2
     // Size: 0x13c, Type: dev
     function debug_init()
@@ -882,7 +885,7 @@ function private function_c1920a80da64cb98( packagestruct, var_96e9e80322851e31 
     }
 
     // Namespace package_airdrop / scripts\cp_mp\package_airdrop
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x27f6
     // Size: 0x100, Type: dev
     function function_b56e024a85b1ba22( params )

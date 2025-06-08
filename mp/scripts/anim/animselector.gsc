@@ -6,7 +6,7 @@
 #namespace animselector;
 
 // Namespace animselector / scripts\anim\animselector
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x65e
 // Size: 0x2c4
 function getanimselectorfilenames()
@@ -34,7 +34,7 @@ function getanimselectorfilenames()
 }
 
 // Namespace animselector / scripts\anim\animselector
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92b
 // Size: 0x45d
 function init()
@@ -71,14 +71,16 @@ function init()
             num_aliases -= 1;
             assertex( num_aliases > 0, "<dev string:x6c>" );
             
-            for (i = 0; i < num_aliases; i++) {
+            for ( i = 0; i < num_aliases ; i++ )
+            {
                 alias = tablelookupbyrow( filename[ 1 ], i + 1, 0 );
                 anim.animselector[ statename ][ traverser ].aliases[ i ] = alias;
             }
             
             num_features = undefined;
             
-            for (i = 0; i < 50; i++) {
+            for ( i = 0; i < 50 ; i++ )
+            {
                 feature = tablelookupbyrow( filename[ 1 ], 0, i + 1 );
                 
                 if ( feature == "__END__" || feature == "" )
@@ -93,8 +95,10 @@ function init()
             assertex( isdefined( num_features ), "<dev string:xb7>" );
             assertex( num_features > 0, "<dev string:xff>" );
             
-            for (i = 0; i < num_aliases; i++) {
-                for (j = 0; j < num_features; j++) {
+            for ( i = 0; i < num_aliases ; i++ )
+            {
+                for ( j = 0; j < num_features ; j++ )
+                {
                     alias = anim.animselector[ statename ][ traverser ].aliases[ i ];
                     feature = anim.animselector[ statename ][ traverser ].features[ j ];
                     val = tablelookupbyrow( filename[ 1 ], i + 1, j + 1 );
@@ -116,7 +120,7 @@ function init()
 }
 
 // Namespace animselector / scripts\anim\animselector
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xd90
 // Size: 0xc9
 function checkfeaturevalue( val, feature, featurearray )
@@ -147,7 +151,7 @@ function checkfeaturevalue( val, feature, featurearray )
 /#
 
     // Namespace animselector / scripts\anim\animselector
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xe61
     // Size: 0xb4, Type: dev
     function function_99322e10827a8683( statename, featurearray )
@@ -166,7 +170,7 @@ function checkfeaturevalue( val, feature, featurearray )
 #/
 
 // Namespace animselector / scripts\anim\animselector
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf1d
 // Size: 0x1cc
 function selectanim( statename, featurearray, traverserindex )
@@ -217,7 +221,7 @@ function selectanim( statename, featurearray, traverserindex )
 }
 
 // Namespace animselector / scripts\anim\animselector
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f1
 // Size: 0x14e
 function gettraverserindex()

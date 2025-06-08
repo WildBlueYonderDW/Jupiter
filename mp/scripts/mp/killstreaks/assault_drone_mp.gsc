@@ -12,7 +12,7 @@
 #namespace assault_drone_mp;
 
 // Namespace assault_drone_mp / scripts\mp\killstreaks\assault_drone_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe9
 // Size: 0x13
 function function_c260cd16a5c5a2d9()

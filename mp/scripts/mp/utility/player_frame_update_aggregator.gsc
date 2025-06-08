@@ -3,7 +3,7 @@
 #namespace player_frame_update_aggregator;
 
 // Namespace player_frame_update_aggregator / scripts\mp\utility\player_frame_update_aggregator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf
 // Size: 0x15
 function init()
@@ -13,7 +13,7 @@ function init()
 }
 
 // Namespace player_frame_update_aggregator / scripts\mp\utility\player_frame_update_aggregator
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcc
 // Size: 0xb9
 function runupdates()
@@ -36,7 +36,7 @@ function runupdates()
 }
 
 // Namespace player_frame_update_aggregator / scripts\mp\utility\player_frame_update_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18d
 // Size: 0x21
 function registerplayerframeupdatecallback( callback )

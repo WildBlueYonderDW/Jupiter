@@ -11,7 +11,7 @@
 #namespace combat;
 
 // Namespace combat / namespace_9cdb9a9d76703787
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdf
 // Size: 0x11
 function function_eda57308516bfc5f()
@@ -20,7 +20,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace combat / namespace_9cdb9a9d76703787
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf9
 // Size: 0x4c8
 function evaluatescore( bot )
@@ -135,7 +135,7 @@ function evaluatescore( bot )
 }
 
 // Namespace combat / namespace_9cdb9a9d76703787
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ca
 // Size: 0xaf, Type: bool
 function function_699bb9f5414b2149( bot, player )

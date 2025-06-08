@@ -12,7 +12,7 @@
 #namespace bots_gametype_rugby;
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26b
 // Size: 0x10
 function main()
@@ -24,7 +24,7 @@ function main()
 /#
 
     // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x283
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -35,7 +35,7 @@ function main()
 #/
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x290
 // Size: 0x50
 function setup_callbacks()
@@ -47,7 +47,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e8
 // Size: 0x50
 function function_7f19d11dbf8f7c20()
@@ -64,7 +64,7 @@ function function_7f19d11dbf8f7c20()
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x340
 // Size: 0x35e
 function bot_rugby_think()
@@ -164,7 +164,7 @@ function bot_rugby_think()
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a6
 // Size: 0x4f
 function function_451fe89fc8f4f1b1( trigger )
@@ -179,7 +179,7 @@ function function_451fe89fc8f4f1b1( trigger )
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fd
 // Size: 0x1c, Type: bool
 function function_e1792f85cfa1c508( goal )
@@ -193,7 +193,7 @@ function function_e1792f85cfa1c508( goal )
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x722
 // Size: 0x43
 function function_8830ce4efdc64403( goal )
@@ -207,7 +207,7 @@ function function_8830ce4efdc64403( goal )
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x76d
 // Size: 0xe7
 function function_7ba961e259d98d3d( time, var_206bf0ac411b2257, var_5b45d81d67839650, dont_prone )
@@ -242,7 +242,7 @@ function function_7ba961e259d98d3d( time, var_206bf0ac411b2257, var_5b45d81d6783
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x85d
 // Size: 0x5d
 function waittill_usebutton_released_or_time_or_bomb_planted( time )
@@ -258,7 +258,7 @@ function waittill_usebutton_released_or_time_or_bomb_planted( time )
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c2
 // Size: 0x8
 function is_defending_bombzone()
@@ -267,7 +267,7 @@ function is_defending_bombzone()
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d3
 // Size: 0x28
 function function_9ec0e59b27b57a40()
@@ -281,7 +281,7 @@ function function_9ec0e59b27b57a40()
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x903
 // Size: 0x6b
 function function_789e1bb0f071af10()
@@ -293,7 +293,7 @@ function function_789e1bb0f071af10()
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x976
 // Size: 0x2d
 function function_9b8b9e0f9b6897e3( element )
@@ -305,7 +305,7 @@ function function_9b8b9e0f9b6897e3( element )
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ab
 // Size: 0x333
 function function_ca798b60536c6b13()
@@ -399,7 +399,7 @@ function function_ca798b60536c6b13()
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce6
 // Size: 0x1a8
 function bomber_think()
@@ -439,7 +439,7 @@ function bomber_think()
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe96
 // Size: 0x62, Type: bool
 function crate_can_use( crate )
@@ -468,7 +468,7 @@ function crate_can_use( crate )
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf01
 // Size: 0x140, Type: bool
 function function_770d1881c6adb8d0( var_d36a7e987347e24d )
@@ -513,7 +513,7 @@ function function_770d1881c6adb8d0( var_d36a7e987347e24d )
 }
 
 // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x104a
 // Size: 0xee
 function function_19b1cd86e58e30ce()
@@ -536,7 +536,7 @@ function function_19b1cd86e58e30ce()
 /#
 
     // Namespace bots_gametype_rugby / scripts\mp\bots\bots_gametype_rugby
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1140
     // Size: 0x4c, Type: dev
     function function_a3f84b78c1204ba5()

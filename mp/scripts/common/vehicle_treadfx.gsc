@@ -4,7 +4,7 @@
 #namespace vehicle_treadfx;
 
 // Namespace vehicle_treadfx / scripts\common\vehicle_treadfx
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa16
 // Size: 0x4ec
 function main( classname )
@@ -121,7 +121,7 @@ function main( classname )
 }
 
 // Namespace vehicle_treadfx / scripts\common\vehicle_treadfx
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf0a
 // Size: 0x25
 function setvehiclefx( classname, material, fx )
@@ -130,7 +130,7 @@ function setvehiclefx( classname, material, fx )
 }
 
 // Namespace vehicle_treadfx / scripts\common\vehicle_treadfx
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf37
 // Size: 0x7e
 function setallvehiclefx( classname, fx )
@@ -145,7 +145,7 @@ function setallvehiclefx( classname, fx )
 }
 
 // Namespace vehicle_treadfx / scripts\common\vehicle_treadfx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfbd
 // Size: 0x146
 function get_trace_types()

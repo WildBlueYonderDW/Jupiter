@@ -7,7 +7,7 @@
 #namespace game_utility_mp;
 
 // Namespace game_utility_mp / scripts\mp\utility\game_utility_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x117
 // Size: 0x18
 function game_utility_mp_init()
@@ -16,7 +16,7 @@ function game_utility_mp_init()
 }
 
 // Namespace game_utility_mp / scripts\mp\utility\game_utility_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x137
 // Size: 0xd
 function game_utility_mp_gettimesincegamestart()
@@ -25,7 +25,7 @@ function game_utility_mp_gettimesincegamestart()
 }
 
 // Namespace game_utility_mp / scripts\mp\utility\game_utility_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d
 // Size: 0x76, Type: bool
 function function_9a2fd0d19774edde()
@@ -48,7 +48,7 @@ function function_9a2fd0d19774edde()
 }
 
 // Namespace game_utility_mp / scripts\mp\utility\game_utility_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cc
 // Size: 0x8f, Type: bool
 function modeusesgroundwarteamoobtriggers( trigger )

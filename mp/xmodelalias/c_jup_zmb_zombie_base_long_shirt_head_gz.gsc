@@ -1,7 +1,7 @@
 #namespace c_jup_zmb_zombie_base_long_shirt_head_gz;
 
 // Namespace c_jup_zmb_zombie_base_long_shirt_head_gz / xmodelalias\c_jup_zmb_zombie_base_long_shirt_head_gz
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0
 // Size: 0x20
 function main()

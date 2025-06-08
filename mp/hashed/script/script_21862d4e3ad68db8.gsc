@@ -23,7 +23,7 @@
 #namespace ob_damage;
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ba
 // Size: 0x99
 function function_d3124a8270438a63()
@@ -42,7 +42,7 @@ function function_d3124a8270438a63()
 }
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x55b
 // Size: 0xee
 function function_d4aa7cafd713196e( einflictor, victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, idflags, var_be4285b26ed99ab1 )
@@ -75,7 +75,7 @@ function function_d4aa7cafd713196e( einflictor, victim, eattacker, idamage, smea
 }
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x652
 // Size: 0x47
 function function_a1a83a29e4afe4f1()
@@ -121,9 +121,9 @@ function private function_6078f3e8c682a36( params )
 }
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x7bf
-// Size: 0x925
+// Size: 0x8f0
 function function_d88acf085f34a24f( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
 {
     if ( !getdvarint( @"hash_721d365f6275dc03", 0 ) )
@@ -151,21 +151,7 @@ function function_d88acf085f34a24f( einflictor, eattacker, idamage, idflags, sme
     
     if ( isdefined( objweapon.basename ) && objweapon.basename == "jup_jp23_me_spear_mp" )
     {
-        paplevel = 0;
-        
-        if ( issharedfuncdefined( "zombie", "get_pap_level" ) )
-        {
-            paplevel = eattacker function_f3bb4f4911a1beb2( "zombie", "get_pap_level", objweapon );
-        }
-        
-        if ( paplevel > 0 )
-        {
-            idamage = 1090;
-        }
-        else
-        {
-            idamage = 540;
-        }
+        idamage = getdvarint( @"hash_db251ff153ac73da", 810 );
     }
     
     dmg_struct = function_34e78cbd2dfff6df( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon );
@@ -343,7 +329,7 @@ function function_d88acf085f34a24f( einflictor, eattacker, idamage, idflags, sme
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x10ed
+// Checksum 0x0, Offset: 0x10b8
 // Size: 0x85
 function private on_zombie_ai_damaged( dmg_struct )
 {
@@ -357,8 +343,8 @@ function private on_zombie_ai_damaged( dmg_struct )
 }
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x117a
+// Params 1
+// Checksum 0x0, Offset: 0x1145
 // Size: 0x2ab
 function function_344933dc7e648343( dmg_struct )
 {
@@ -468,8 +454,8 @@ function function_344933dc7e648343( dmg_struct )
 }
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x142d
+// Params 1
+// Checksum 0x0, Offset: 0x13f8
 // Size: 0xb7
 function function_743e37eebd6ba8e2( n_damage )
 {
@@ -495,7 +481,7 @@ function function_743e37eebd6ba8e2( n_damage )
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x14ec
+// Checksum 0x0, Offset: 0x14b7
 // Size: 0x49
 function private function_3c80d46239ce0a0e( dmg_struct, shitloc, var_29a8ba8c9dd43fd2 )
 {
@@ -508,9 +494,9 @@ function private function_3c80d46239ce0a0e( dmg_struct, shitloc, var_29a8ba8c9dd
 }
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
-// Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x153e
-// Size: 0x61c
+// Params 13
+// Checksum 0x0, Offset: 0x1509
+// Size: 0x628
 function soldier_damage( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
 {
     if ( istrue( self.var_f327ed481efe4857 ) )
@@ -624,7 +610,10 @@ function soldier_damage( einflictor, eattacker, idamage, idflags, smeansofdeath,
             scripts\engine\utility::function_f3bb4f4911a1beb2( "relics", "check_ai_disguise_execution", eplayer );
         }
         
-        eplayer notify( "disguise_state_change", "end_disguise" );
+        if ( !is_friendly_damage( self, eattacker ) )
+        {
+            eplayer notify( "disguise_state_change", "end_disguise" );
+        }
         
         if ( mp_agent_damage::function_9db5f6f105cde5da() )
         {
@@ -664,7 +653,7 @@ function soldier_damage( einflictor, eattacker, idamage, idflags, smeansofdeath,
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1b63
+// Checksum 0x0, Offset: 0x1b3a
 // Size: 0x169
 function private on_soldier_ai_damaged( dmg_struct )
 {
@@ -695,7 +684,7 @@ function private on_soldier_ai_damaged( dmg_struct )
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1cd4
+// Checksum 0x0, Offset: 0x1cab
 // Size: 0x83
 function private on_zombie_ai_killed( params )
 {
@@ -714,8 +703,8 @@ function private on_zombie_ai_killed( params )
 }
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d5f
+// Params 1
+// Checksum 0x0, Offset: 0x1d36
 // Size: 0x6d
 function function_56869e118720ca3b( killer )
 {
@@ -738,7 +727,7 @@ function function_56869e118720ca3b( killer )
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1dd4
+// Checksum 0x0, Offset: 0x1dab
 // Size: 0x2e
 function private function_e5ea18b76842725f( params )
 {
@@ -751,8 +740,8 @@ function private function_e5ea18b76842725f( params )
 }
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
-// Params 14, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e0a
+// Params 14
+// Checksum 0x0, Offset: 0x1de1
 // Size: 0x174
 function function_73cfe327bdf9d28f( inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, attachtagname, partname, eventid )
 {
@@ -789,7 +778,7 @@ function function_73cfe327bdf9d28f( inflictor, attacker, damage, dflags, meansof
 
 // Namespace ob_damage / namespace_99e3b18d3c0c359a
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1f86
+// Checksum 0x0, Offset: 0x1f5d
 // Size: 0x87
 function private function_6a0b029f221e0ffe( dmg_struct )
 {
@@ -811,8 +800,8 @@ function private function_6a0b029f221e0ffe( dmg_struct )
 /#
 
     // Namespace ob_damage / namespace_99e3b18d3c0c359a
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2016
+    // Params 0
+    // Checksum 0x0, Offset: 0x1fed
     // Size: 0x56, Type: dev
     function function_50dd3eeeda443cb0()
     {
@@ -829,8 +818,8 @@ function private function_6a0b029f221e0ffe( dmg_struct )
     }
 
     // Namespace ob_damage / namespace_99e3b18d3c0c359a
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2074
+    // Params 0
+    // Checksum 0x0, Offset: 0x204b
     // Size: 0x93, Type: dev
     function function_3bfa04dc5265d2be()
     {
@@ -855,8 +844,8 @@ function private function_6a0b029f221e0ffe( dmg_struct )
     }
 
     // Namespace ob_damage / namespace_99e3b18d3c0c359a
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x210f
+    // Params 0
+    // Checksum 0x0, Offset: 0x20e6
     // Size: 0x93, Type: dev
     function function_60344a654f5feab9()
     {
@@ -881,8 +870,8 @@ function private function_6a0b029f221e0ffe( dmg_struct )
     }
 
     // Namespace ob_damage / namespace_99e3b18d3c0c359a
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21aa
+    // Params 0
+    // Checksum 0x0, Offset: 0x2181
     // Size: 0x5d, Type: dev
     function function_b904029d0acf2fd1()
     {

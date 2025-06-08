@@ -5,7 +5,7 @@
 #namespace stealth_music;
 
 // Namespace stealth_music / scripts\cp_mp\stealth\stealth_music
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27a
 // Size: 0xa
 function main()
@@ -14,7 +14,7 @@ function main()
 }
 
 // Namespace stealth_music / scripts\cp_mp\stealth\stealth_music
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28c
 // Size: 0xb9
 function stealth_combat_music_init()
@@ -40,7 +40,7 @@ function stealth_combat_music_init()
 }
 
 // Namespace stealth_music / scripts\cp_mp\stealth\stealth_music
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34d
 // Size: 0x122
 function function_9ff225017ef5ce19()
@@ -74,7 +74,7 @@ function function_9ff225017ef5ce19()
 }
 
 // Namespace stealth_music / scripts\cp_mp\stealth\stealth_music
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x477
 // Size: 0x20
 function function_9d95291bb222ad5f( message, delay )
@@ -85,7 +85,7 @@ function function_9d95291bb222ad5f( message, delay )
 }
 
 // Namespace stealth_music / scripts\cp_mp\stealth\stealth_music
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49f
 // Size: 0x126
 function stealth_music_transition_cp( aliasto )
@@ -139,7 +139,7 @@ function stealth_music_transition_cp( aliasto )
 }
 
 // Namespace stealth_music / scripts\cp_mp\stealth\stealth_music
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cd
 // Size: 0xa1
 function player_music_loop( music_state )
@@ -169,7 +169,7 @@ function player_music_loop( music_state )
 }
 
 // Namespace stealth_music / scripts\cp_mp\stealth\stealth_music
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x676
 // Size: 0x7f6
 function threat_sight_player_sight_audio( anycansee, maxthreat, var_67e8151f4dfc690b )
@@ -412,7 +412,7 @@ function threat_sight_player_sight_audio( anycansee, maxthreat, var_67e8151f4dfc
 }
 
 // Namespace stealth_music / scripts\cp_mp\stealth\stealth_music
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe74
 // Size: 0x59
 function function_f17fb237c7e883b2()

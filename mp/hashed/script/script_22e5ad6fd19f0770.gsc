@@ -8,7 +8,7 @@
 #namespace namespace_4a108cfc226ec7d6;
 
 // Namespace namespace_4a108cfc226ec7d6 / namespace_8d6af00582bd6cb4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f
 // Size: 0x42
 function function_976734974e28596e()
@@ -18,7 +18,7 @@ function function_976734974e28596e()
 }
 
 // Namespace namespace_4a108cfc226ec7d6 / namespace_8d6af00582bd6cb4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x159
 // Size: 0x1a
 function init_knockdown()

@@ -5,7 +5,7 @@
 #namespace astar;
 
 // Namespace astar / namespace_c7d6e3e0686eb85
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x113
 // Size: 0x522
 function astar_get_path( grid, start_pos, end_pos, exclude, dyn_node, grid_size )
@@ -56,7 +56,8 @@ function astar_get_path( grid, start_pos, end_pos, exclude, dyn_node, grid_size 
     {
         current_node = open_list[ open_list.size - 1 ];
         
-        for (i = 0; i < open_list.size; i++) {
+        for ( i = 0; i < open_list.size ; i++ )
+        {
             if ( open_list[ i ].f < current_node.f )
             {
                 current_node = open_list[ i ];
@@ -67,7 +68,8 @@ function astar_get_path( grid, start_pos, end_pos, exclude, dyn_node, grid_size 
         {
             path = [];
             
-            for (current = current_node; isdefined( current ); current = current.parent) {
+            for ( current = current_node; isdefined( current ) ; current = current.parent )
+            {
                 path[ path.size ] = current;
                 
                 if ( !isdefined( current.parent ) )
@@ -92,7 +94,8 @@ function astar_get_path( grid, start_pos, end_pos, exclude, dyn_node, grid_size 
             continue;
         }
         
-        for (i = 0; i < current_node.children.size; i++) {
+        for ( i = 0; i < current_node.children.size ; i++ )
+        {
             current_node.children[ i ].g = current_node.g + distance( start_node.origin, current_node.children[ i ].origin );
             current_node.children[ i ].h = distance( end_node.origin, current_node.children[ i ].origin );
             current_node.children[ i ].f = current_node.children[ i ].g + current_node.children[ i ].h;
@@ -131,12 +134,13 @@ function astar_get_path( grid, start_pos, end_pos, exclude, dyn_node, grid_size 
 }
 
 // Namespace astar / namespace_c7d6e3e0686eb85
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x63d
 // Size: 0xa2
 function nodes_set_children( valid_nodes, start_node, exclude, grid_size )
 {
-    for (i = 0; i < valid_nodes.size; i++) {
+    for ( i = 0; i < valid_nodes.size ; i++ )
+    {
         valid_nodes[ i ].g = 0;
         valid_nodes[ i ].h = 0;
         valid_nodes[ i ].f = 0;
@@ -148,7 +152,7 @@ function nodes_set_children( valid_nodes, start_node, exclude, grid_size )
 }
 
 // Namespace astar / namespace_c7d6e3e0686eb85
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6e7
 // Size: 0x5b
 function node_set_children( node, all_nodes, start_node, grid_size )
@@ -159,7 +163,7 @@ function node_set_children( node, all_nodes, start_node, grid_size )
 }
 
 // Namespace astar / namespace_c7d6e3e0686eb85
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x74a
 // Size: 0x111
 function node_get_children( node, all_nodes, grid_size, excluders )
@@ -173,10 +177,12 @@ function node_get_children( node, all_nodes, grid_size, excluders )
     all_nodes = sortbydistance( all_nodes, node.origin );
     children = [];
     
-    for (i = 0; i < all_nodes.size; i++) {
+    for ( i = 0; i < all_nodes.size ; i++ )
+    {
         excluded = 0;
         
-        for (j = 0; j < excluders.size; j++) {
+        for ( j = 0; j < excluders.size ; j++ )
+        {
             if ( all_nodes[ i ] == excluders[ j ] )
             {
                 excluded = 1;
@@ -208,7 +214,7 @@ function node_get_children( node, all_nodes, grid_size, excluders )
 }
 
 // Namespace astar / namespace_c7d6e3e0686eb85
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x864
 // Size: 0x12b
 function node_cansee_child( start_node, end_node, exclude, collisioncontents )
@@ -257,7 +263,7 @@ function node_cansee_child( start_node, end_node, exclude, collisioncontents )
 }
 
 // Namespace astar / namespace_c7d6e3e0686eb85
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x998
 // Size: 0x137
 function node_is_valid( node, exclude, collisioncontents )
@@ -307,7 +313,7 @@ function node_is_valid( node, exclude, collisioncontents )
 }
 
 // Namespace astar / namespace_c7d6e3e0686eb85
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xad8
 // Size: 0x170
 function function_845fd743c0fadc39( grid, start_pos, end_pos, exclude, dyn_node, grid_size )

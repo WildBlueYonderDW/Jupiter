@@ -4,7 +4,7 @@
 #namespace mp_jup_shipment_alt;
 
 // Namespace mp_jup_shipment_alt / scripts\mp\maps\mp_jup_shipment_alt\mp_jup_shipment_alt
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc
 // Size: 0x15
 function main()

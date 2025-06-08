@@ -12,7 +12,7 @@
 #namespace analyticslog;
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x104f
 // Size: 0x92
 function init()
@@ -39,7 +39,7 @@ function init()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10e9
 // Size: 0x1b, Type: bool
 function analyticsactive()
@@ -58,7 +58,7 @@ function analyticsactive()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x110d
 // Size: 0x13, Type: bool
 function analyticslogenabled()
@@ -67,7 +67,7 @@ function analyticslogenabled()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1129
 // Size: 0x36
 function getuniqueobjectid()
@@ -78,7 +78,7 @@ function getuniqueobjectid()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1168
 // Size: 0x60
 function cacheplayeraction( actionbit )
@@ -92,7 +92,7 @@ function cacheplayeraction( actionbit )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11d0
 // Size: 0x4b
 function watchforconnectedplayers()
@@ -113,7 +113,7 @@ function watchforconnectedplayers()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1223
 // Size: 0xb6
 function watchforbasicplayerevents()
@@ -162,7 +162,7 @@ function watchforbasicplayerevents()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e1
 // Size: 0x7c
 function watchforplayermovementevents()
@@ -198,7 +198,7 @@ function watchforplayermovementevents()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1365
 // Size: 0xc1
 function watchforusermessageevents()
@@ -233,7 +233,7 @@ function watchforusermessageevents()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x142e
 // Size: 0x3d
 function checkstancestatus()
@@ -253,7 +253,7 @@ function checkstancestatus()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1473
 // Size: 0xc4
 function logallplayerposthink()
@@ -288,7 +288,7 @@ function logallplayerposthink()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x153f
 // Size: 0x24d
 function recordbreadcrumbdata()
@@ -324,7 +324,8 @@ function recordbreadcrumbdata()
             
             while ( startplayer < playercount )
             {
-                for (updateindex = 0; updateindex < var_db5e61a22ce91ab9; updateindex++) {
+                for ( updateindex = 0; updateindex < var_db5e61a22ce91ab9 ; updateindex++ )
+                {
                     playerindex = startplayer + updateindex;
                     player = level.players[ playerindex ];
                     
@@ -382,7 +383,7 @@ function recordbreadcrumbdata()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1794
 // Size: 0x4c
 function getpathactionvalue()
@@ -398,7 +399,7 @@ function getpathactionvalue()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17e9
 // Size: 0x1e
 function clearpathactionvalue()
@@ -408,7 +409,7 @@ function clearpathactionvalue()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x180f
 // Size: 0x8b
 function buildkilldeathactionvalue()
@@ -444,7 +445,7 @@ function buildkilldeathactionvalue()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18a3
 // Size: 0x7c
 function buildloadoutstring()
@@ -454,7 +455,7 @@ function buildloadoutstring()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1928
 // Size: 0x98
 function buildspawnpointstatestring( spawnpoint )
@@ -478,7 +479,7 @@ function buildspawnpointstatestring( spawnpoint )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19c9
 // Size: 0xff
 function logevent_path()
@@ -494,7 +495,7 @@ function logevent_path()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad0
 // Size: 0x15f
 function logevent_playerspawn()
@@ -510,7 +511,7 @@ function logevent_playerspawn()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c37
 // Size: 0x12d
 function logevent_playerconnected()
@@ -549,7 +550,7 @@ function logevent_playerconnected()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d6c
 // Size: 0x6a8
 function logevent_playerdeath( attacker, meansofdeath, weaponname )
@@ -655,7 +656,7 @@ function logevent_playerdeath( attacker, meansofdeath, weaponname )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x241c
 // Size: 0x18e
 function logevent_playerkill( victim, meansofdeath, weaponname )
@@ -670,7 +671,7 @@ function logevent_playerkill( victim, meansofdeath, weaponname )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x25b2
 // Size: 0xfd
 function logevent_explosion( type, center, var_e83217ed09c27313, duration, direction )
@@ -689,7 +690,7 @@ function logevent_explosion( type, center, var_e83217ed09c27313, duration, direc
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26b7
 // Size: 0x1a0
 function logevent_spawnpointupdate()
@@ -711,7 +712,7 @@ function logevent_spawnpointupdate()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x285f
 // Size: 0xd9
 function logevent_frontlineupdate( startpos, endpos, alliescenter, axiscenter, ison )
@@ -725,7 +726,7 @@ function logevent_frontlineupdate( startpos, endpos, alliescenter, axiscenter, i
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2940
 // Size: 0xb1
 function logevent_gameobject( type, uniqueid, pos, ownerid, state )
@@ -739,7 +740,7 @@ function logevent_gameobject( type, uniqueid, pos, ownerid, state )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x29f9
 // Size: 0x85
 function logevent_message( ownerid, pos, message )
@@ -753,7 +754,7 @@ function logevent_message( ownerid, pos, message )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a86
 // Size: 0x2c
 function logevent_tag( message )
@@ -767,7 +768,7 @@ function logevent_tag( message )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2aba
 // Size: 0x102
 function logevent_powerused( powername, state )
@@ -782,7 +783,7 @@ function logevent_powerused( powername, state )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bc4
 // Size: 0x6f
 function logevent_scoreupdate()
@@ -797,7 +798,7 @@ function logevent_scoreupdate()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c3b
 // Size: 0xcf
 function logevent_minimapcorners()
@@ -818,7 +819,7 @@ function logevent_minimapcorners()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d12
 // Size: 0x61
 function logevent_assist( playerid, deathid, weapon )
@@ -832,7 +833,7 @@ function logevent_assist( playerid, deathid, weapon )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d7b
 // Size: 0x1b
 function getsantizedhealth()
@@ -841,7 +842,7 @@ function getsantizedhealth()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d9f
 // Size: 0x69, Type: bool
 function shouldplayerlogevents( player )
@@ -860,7 +861,7 @@ function shouldplayerlogevents( player )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e11
 // Size: 0x88
 function logmatchtags()
@@ -891,7 +892,7 @@ function logmatchtags()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2ea1
 // Size: 0xc7
 function logevent_superended( super_name, time_to_use, num_hits, num_kills )
@@ -912,7 +913,7 @@ function logevent_superended( super_name, time_to_use, num_hits, num_kills )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f70
 // Size: 0x85
 function logevent_superearned( match_time )
@@ -933,7 +934,7 @@ function logevent_superearned( match_time )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ffd
 // Size: 0x40
 function logevent_awardgained( award_message )
@@ -952,7 +953,7 @@ function logevent_awardgained( award_message )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3045
 // Size: 0xc7
 function logevent_giveplayerxp( current_prestige, current_level, xp_gained, source )
@@ -973,7 +974,7 @@ function logevent_giveplayerxp( current_prestige, current_level, xp_gained, sour
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3114
 // Size: 0xee
 function logevent_givempweaponxp( objweapon, current_prestige, current_level, xp_gained, source )
@@ -995,7 +996,7 @@ function logevent_givempweaponxp( objweapon, current_prestige, current_level, xp
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x320a
 // Size: 0x26e
 function logevent_sendplayerindexdata()
@@ -1009,7 +1010,8 @@ function logevent_sendplayerindexdata()
     var_7866d1bb4718ac7 = [];
     playercount = 0;
     
-    for (playercount = 0; playercount < 12; playercount++) {
+    for ( playercount = 0; playercount < 12 ; playercount++ )
+    {
         var_d6228dada168a8a6[ playercount ] = 0;
         var_7866d1bb4718ac7[ playercount ] = "";
     }
@@ -1031,7 +1033,7 @@ function logevent_sendplayerindexdata()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3480
 // Size: 0x12, Type: bool
 function analyticsspawnlogenabled()
@@ -1040,7 +1042,7 @@ function analyticsspawnlogenabled()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x349b
 // Size: 0x16, Type: bool
 function is_spawnid_a_less_than_b( a, b )
@@ -1049,7 +1051,7 @@ function is_spawnid_a_less_than_b( a, b )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34ba
 // Size: 0x5e
 function analyticsstorespawndata()
@@ -1063,7 +1065,7 @@ function analyticsstorespawndata()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3520
 // Size: 0x2f, Type: bool
 function analyticsdoesspawndataexist()
@@ -1077,7 +1079,7 @@ function analyticsdoesspawndataexist()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3558
 // Size: 0x12f
 function analyticsinitspawndata()
@@ -1101,7 +1103,8 @@ function analyticsinitspawndata()
     var_f173d241cde30ed5 = scripts\mp\analyticslog::analytics_getmaxspawneventsforcurrentmode();
     var_ed9bcf1d68316223 = [];
     
-    for (var_f7b3db25022143df = 0; var_f7b3db25022143df < var_9b5e7bbe7bbe2095; var_f7b3db25022143df++) {
+    for ( var_f7b3db25022143df = 0; var_f7b3db25022143df < var_9b5e7bbe7bbe2095 ; var_f7b3db25022143df++ )
+    {
         var_47839683093fa30e = randomintrange( 20, var_f173d241cde30ed5 );
         
         if ( isdefined( var_ed9bcf1d68316223[ var_47839683093fa30e ] ) )
@@ -1118,7 +1121,7 @@ function analyticsinitspawndata()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x368f
 // Size: 0x86, Type: bool
 function analyticssend_shouldsenddata( spawnid )
@@ -1144,7 +1147,7 @@ function analyticssend_shouldsenddata( spawnid )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x371e
 // Size: 0x17b
 function analyticssend_spawntype( spawn_pos, team_name, life_index, spawnid )
@@ -1190,7 +1193,7 @@ function analyticssend_spawntype( spawn_pos, team_name, life_index, spawnid )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x38a1
 // Size: 0x1ad
 function analyticssend_spawnplayerdetails( spawnplayer, spawnorigin, spawnid )
@@ -1242,7 +1245,7 @@ function analyticssend_spawnplayerdetails( spawnplayer, spawnorigin, spawnid )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3a56
 // Size: 0x2fc
 function analyticssend_spawnfactors( spawnplayer, spawnpointlist, spawn_id, var_bac9c46b10034944 )
@@ -1311,7 +1314,7 @@ function analyticssend_spawnfactors( spawnplayer, spawnpointlist, spawn_id, var_
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d5a
 // Size: 0x172
 function analytics_getmaxspawneventsforcurrentmode()
@@ -1386,7 +1389,7 @@ function analytics_getmaxspawneventsforcurrentmode()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3ed5
 // Size: 0x118
 function logevent_nvgtoggled( game_time, player_life_index, pos, enabled, duration, disable_reason )
@@ -1407,7 +1410,7 @@ function logevent_nvgtoggled( game_time, player_life_index, pos, enabled, durati
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ff5
 // Size: 0xa3
 function getglobalfrontlineinfo()
@@ -1426,7 +1429,7 @@ function getglobalfrontlineinfo()
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x40a1
 // Size: 0x14d
 function logevent_playerhealed( player, amount, reviver )
@@ -1450,7 +1453,7 @@ function logevent_playerhealed( player, amount, reviver )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41f6
 // Size: 0xc2
 function logevent_playerregen( player, amount )
@@ -1471,7 +1474,7 @@ function logevent_playerregen( player, amount )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x42c0
 // Size: 0x116
 function logevent_fieldupgradeearned( player, refid )
@@ -1488,7 +1491,7 @@ function logevent_fieldupgradeearned( player, refid )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x43de
 // Size: 0x116
 function logevent_fieldupgradeactivated( player, refid )
@@ -1505,7 +1508,7 @@ function logevent_fieldupgradeactivated( player, refid )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x44fc
 // Size: 0x150
 function logevent_fieldupgradeexpired( player, refid, efficacy, wasdestroyed )
@@ -1533,7 +1536,7 @@ function logevent_fieldupgradeexpired( player, refid, efficacy, wasdestroyed )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4654
 // Size: 0xe5
 function logevent_killstreakavailable( player, lifeid, killstreakname, pickedup, matchtime, playerpos )
@@ -1549,7 +1552,7 @@ function logevent_killstreakavailable( player, lifeid, killstreakname, pickedup,
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4741
 // Size: 0xe5
 function logevent_killstreakactivated( player, lifeid, killstreakname, pickedup, matchtime, playerpos )
@@ -1565,7 +1568,7 @@ function logevent_killstreakactivated( player, lifeid, killstreakname, pickedup,
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x482e
 // Size: 0x1c8
 function logevent_killstreakexpired( player, lifeid, killstreakname, pickedup, var_6befa2534acb8df6, playerpos, expiredbydeath, shotsfired, var_8f52823e77aca0d3, var_f5ff9a2f5217b3ec, var_7e6dbb913989cf29 )
@@ -1592,7 +1595,7 @@ function logevent_killstreakexpired( player, lifeid, killstreakname, pickedup, v
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x49fe
 // Size: 0x10b
 function logevent_xpearned( player, playerxp, weaponname, weaponxp, type )
@@ -1609,7 +1612,7 @@ function logevent_xpearned( player, playerxp, weaponname, weaponxp, type )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b11
 // Size: 0xbc
 function logevent_spawnselectionchoice( player, selection )
@@ -1625,7 +1628,7 @@ function logevent_spawnselectionchoice( player, selection )
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4bd5
 // Size: 0x5a
 function logevent_challengeitemunlocked( player, itemunlockref, itemtype, itemid )
@@ -1634,7 +1637,7 @@ function logevent_challengeitemunlocked( player, itemunlockref, itemtype, itemid
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4c37
 // Size: 0x93
 function function_b4e1d087442647ef( var_4ec493e39340a7ce, victimid, playersquadsize, var_244d4aac201aa9d, interrogationduration, endreason )

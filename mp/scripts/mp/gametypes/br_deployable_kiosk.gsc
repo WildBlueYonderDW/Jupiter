@@ -34,7 +34,7 @@
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
 // Params 0, eflags: 0x5
-// Checksum 0x0, Offset: 0xaf1
+// Checksum 0x0, Offset: 0xaf2
 // Size: 0x19
 function private autoexec __init__system__()
 {
@@ -42,12 +42,12 @@ function private autoexec __init__system__()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb12
+// Params 0
+// Checksum 0x0, Offset: 0xb13
 // Size: 0x2e
 function post_main()
 {
-    if ( !getdvarint( @"hash_51d19a3b234da781", 1 ) )
+    if ( !getdvarint( @"scr_br_deployable_kiosk_enabled", 1 ) )
     {
         return;
     }
@@ -62,8 +62,8 @@ function post_main()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb48
+// Params 0
+// Checksum 0x0, Offset: 0xb49
 // Size: 0x467
 function function_ce60e2da53459a87()
 {
@@ -91,8 +91,8 @@ function function_ce60e2da53459a87()
     level.deployablekiosks.explosionradius = getdvarint( @"hash_422387a5d7b1948e", 512 );
     level.deployablekiosks.explosiondamage = getdvarint( @"hash_3b47b4edafa8e459", 40 );
     level.deployablekiosks.var_3d4073df2f497525 = getdvarfloat( @"hash_2ec1c01324ea0e78", 9 );
-    level.deployablekiosks.var_e90f0fe1f275a8b6 = getdvarfloat( @"hash_1f22affc058a4f7d", 1574 );
-    level.deployablekiosks.var_aeeb98b4d36b65a6 = getdvarfloat( @"hash_742372c71d3e7554", 1574 );
+    level.deployablekiosks.var_e90f0fe1f275a8b6 = getdvarfloat( @"scr_br_deployable_kiosk_distance_threshold_gas", 1574 );
+    level.deployablekiosks.var_aeeb98b4d36b65a6 = getdvarfloat( @"scr_br_deployable_kiosk_distance_threshold_gas_multi_circle", 1574 );
     level.deployablekiosks.var_1a19bd75a8860186 = getdvarint( @"hash_56748969528a88e7", 0 ) == 1;
     level.deployablekiosks.var_e134bc850cb28724 = getdvarint( @"hash_29fd03280bc10d14", 1 ) == 1;
     level.deployablekiosks.var_d455ff81de6949d = getdvarfloat( @"hash_792338b4d870020d", 80 );
@@ -106,8 +106,8 @@ function function_ce60e2da53459a87()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb7
+// Params 0
+// Checksum 0x0, Offset: 0xfb8
 // Size: 0x4c
 function function_41b95bcf009214f()
 {
@@ -118,9 +118,9 @@ function function_41b95bcf009214f()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x100b
-// Size: 0x14e
+// Params 6
+// Checksum 0x0, Offset: 0x100c
+// Size: 0x19b
 function function_208501a7029ab500( instance, part, state, player, var_a5b2c541413aa895, usestring )
 {
     if ( !scripts\mp\gametypes\br_public::isdeployablekiosk( instance.type ) )
@@ -142,6 +142,18 @@ function function_208501a7029ab500( instance, part, state, player, var_a5b2c5414
         return;
     }
     
+    if ( isdefined( player ) && isdefined( player.var_e5520effcbe8bd30 ) )
+    {
+        player playlocalsound( "br_plunder_atm_cancel" );
+        return;
+    }
+    
+    if ( isdefined( player ) && istrue( player.iszombie ) )
+    {
+        player playlocalsound( "br_plunder_atm_cancel" );
+        return;
+    }
+    
     if ( !isdefined( instance.playersusing ) )
     {
         instance.playersusing = [];
@@ -156,11 +168,12 @@ function function_208501a7029ab500( instance, part, state, player, var_a5b2c5414
     
     instance.isdeployablekiosk = 1;
     player thread scripts\mp\gametypes\br_armory_kiosk::_runpurchasemenu( instance );
+    player thread scripts\mp\gametypes\br_armory_kiosk::function_3b647c2b49a4e63e();
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1161
+// Params 3
+// Checksum 0x0, Offset: 0x11af
 // Size: 0x651
 function function_590979ef771686a8( player, location, fromevent )
 {
@@ -281,8 +294,8 @@ function function_590979ef771686a8( player, location, fromevent )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ba
+// Params 2
+// Checksum 0x0, Offset: 0x1808
 // Size: 0x3e9
 function function_b8214cb8c9e75675( player, location )
 {
@@ -379,8 +392,8 @@ function function_b8214cb8c9e75675( player, location )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bac
+// Params 1
+// Checksum 0x0, Offset: 0x1bfa
 // Size: 0x1d
 function drone_emp( data )
 {
@@ -388,8 +401,8 @@ function drone_emp( data )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bd1
+// Params 1
+// Checksum 0x0, Offset: 0x1c1f
 // Size: 0x1b
 function function_55eb87459df66db5( data )
 {
@@ -398,8 +411,8 @@ function function_55eb87459df66db5( data )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bf4
+// Params 1
+// Checksum 0x0, Offset: 0x1c42
 // Size: 0x681
 function function_88ad5bddafd52f6e( fromevent )
 {
@@ -500,8 +513,8 @@ function function_88ad5bddafd52f6e( fromevent )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x227d
+// Params 1
+// Checksum 0x0, Offset: 0x22cb
 // Size: 0x1b9
 function function_4132402c7ec5947c( eattacker )
 {
@@ -527,8 +540,8 @@ function function_4132402c7ec5947c( eattacker )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x243e
+// Params 2
+// Checksum 0x0, Offset: 0x248c
 // Size: 0xa5
 function function_dcf070d2485a90a4( goto, var_ceb89b7c7c66002a )
 {
@@ -551,8 +564,8 @@ function function_dcf070d2485a90a4( goto, var_ceb89b7c7c66002a )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x24eb
+// Params 2
+// Checksum 0x0, Offset: 0x2539
 // Size: 0x3e9
 function function_6d9358d777958a1b( var_daad7d20d7a17c02, var_ceb89b7c7c66002a )
 {
@@ -646,8 +659,8 @@ function function_6d9358d777958a1b( var_daad7d20d7a17c02, var_ceb89b7c7c66002a )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28dc
+// Params 0
+// Checksum 0x0, Offset: 0x292a
 // Size: 0x244
 function function_3313d37dfd52a977()
 {
@@ -714,8 +727,8 @@ function function_3313d37dfd52a977()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b28
+// Params 0
+// Checksum 0x0, Offset: 0x2b76
 // Size: 0x133
 function monitoraveragevelocityandupdate()
 {
@@ -778,8 +791,8 @@ function monitoraveragevelocityandupdate()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c63
+// Params 0
+// Checksum 0x0, Offset: 0x2cb1
 // Size: 0x4a
 function function_19375ce96b24aff()
 {
@@ -793,8 +806,8 @@ function function_19375ce96b24aff()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cb5
+// Params 0
+// Checksum 0x0, Offset: 0x2d03
 // Size: 0x1c0
 function function_443c7f998e6d02eb()
 {
@@ -844,8 +857,8 @@ function function_443c7f998e6d02eb()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e7d
+// Params 1
+// Checksum 0x0, Offset: 0x2ecb
 // Size: 0xa1
 function checklinktotrain( ent )
 {
@@ -872,8 +885,8 @@ function checklinktotrain( ent )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f26
+// Params 0
+// Checksum 0x0, Offset: 0x2f74
 // Size: 0x43
 function cancelchecklinktotrain()
 {
@@ -886,8 +899,8 @@ function cancelchecklinktotrain()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f71
+// Params 1
+// Checksum 0x0, Offset: 0x2fbf
 // Size: 0x22f
 function checklinktotraininternal( ent )
 {
@@ -954,8 +967,8 @@ function checklinktotraininternal( ent )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31a8
+// Params 0
+// Checksum 0x0, Offset: 0x31f6
 // Size: 0x4c
 function function_d49b71f319f0c952()
 {
@@ -974,8 +987,8 @@ function function_d49b71f319f0c952()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x31fc
+// Params 4
+// Checksum 0x0, Offset: 0x324a
 // Size: 0x8b
 function function_a23aa2d6571bd5e4( position, normal, impulse, surfacetype )
 {
@@ -1003,8 +1016,8 @@ function function_a23aa2d6571bd5e4( position, normal, impulse, surfacetype )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x328f
+// Params 0
+// Checksum 0x0, Offset: 0x32dd
 // Size: 0xb2
 function function_78966bc6b28da9b4()
 {
@@ -1021,8 +1034,8 @@ function function_78966bc6b28da9b4()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3349
+// Params 0
+// Checksum 0x0, Offset: 0x3397
 // Size: 0xe4
 function function_90fa8c1f0ea25d78()
 {
@@ -1043,8 +1056,8 @@ function function_90fa8c1f0ea25d78()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x3435
+// Params 10
+// Checksum 0x0, Offset: 0x3483
 // Size: 0x2a8
 function function_614262699fa8e2f2( idamage, eattacker, direction_vec, damagelocation, smeansofdeath, modelname, tagname, partname, dflags, objweapon )
 {
@@ -1102,8 +1115,8 @@ function function_614262699fa8e2f2( idamage, eattacker, direction_vec, damageloc
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e5
+// Params 1
+// Checksum 0x0, Offset: 0x3733
 // Size: 0x170
 function function_495982203bfc8d29( eattacker )
 {
@@ -1115,7 +1128,8 @@ function function_495982203bfc8d29( eattacker )
         drone.var_3e9b7fbc105df68b = 3;
     }
     
-    for (i = 2; i > 0; i--) {
+    for ( i = 2; i > 0 ; i-- )
+    {
         if ( drone.health < var_54a8b2d622f1a1e0 * i )
         {
             if ( drone.var_3e9b7fbc105df68b > i )
@@ -1143,8 +1157,8 @@ function function_495982203bfc8d29( eattacker )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x385d
+// Params 0
+// Checksum 0x0, Offset: 0x38ab
 // Size: 0x175
 function function_9e8c5e7b9d1572b7()
 {
@@ -1191,8 +1205,8 @@ function function_9e8c5e7b9d1572b7()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x39da
+// Params 3
+// Checksum 0x0, Offset: 0x3a28
 // Size: 0x139
 function function_1e28980b8235671e( dangercircleorigin, dangercircleradius, thresholdradius )
 {
@@ -1231,8 +1245,8 @@ function function_1e28980b8235671e( dangercircleorigin, dangercircleradius, thre
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b1b
+// Params 3
+// Checksum 0x0, Offset: 0x3b69
 // Size: 0x125
 function function_b77546749eb0c127( dangercircleorigin, dangercircleradius, thresholdradius )
 {
@@ -1274,8 +1288,8 @@ function function_b77546749eb0c127( dangercircleorigin, dangercircleradius, thre
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c49
+// Params 1
+// Checksum 0x0, Offset: 0x3c97
 // Size: 0x2a
 function function_7b0648952e816403( deployablekiosk )
 {
@@ -1284,8 +1298,8 @@ function function_7b0648952e816403( deployablekiosk )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c7b
+// Params 0
+// Checksum 0x0, Offset: 0x3cc9
 // Size: 0x87
 function function_ad1b6f540c35705d()
 {
@@ -1304,8 +1318,8 @@ function function_ad1b6f540c35705d()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d0a
+// Params 1
+// Checksum 0x0, Offset: 0x3d58
 // Size: 0x3b
 function function_313d9044d8e6f53c( deployablekiosk )
 {
@@ -1315,8 +1329,8 @@ function function_313d9044d8e6f53c( deployablekiosk )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d4d
+// Params 0
+// Checksum 0x0, Offset: 0x3d9b
 // Size: 0xd6
 function function_98913cb90ff3af87()
 {
@@ -1335,8 +1349,8 @@ function function_98913cb90ff3af87()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e2b
+// Params 0
+// Checksum 0x0, Offset: 0x3e79
 // Size: 0xc0, Type: bool
 function function_7440e01cdf6ad541()
 {
@@ -1369,8 +1383,8 @@ function function_7440e01cdf6ad541()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ef4
+// Params 0
+// Checksum 0x0, Offset: 0x3f42
 // Size: 0x109
 function function_f5a81afeb40e65cd()
 {
@@ -1395,8 +1409,8 @@ function function_f5a81afeb40e65cd()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4005
+// Params 1
+// Checksum 0x0, Offset: 0x4053
 // Size: 0x15e
 function function_aa19007a48fca6c0( eattacker )
 {
@@ -1433,8 +1447,8 @@ function function_aa19007a48fca6c0( eattacker )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x416b
+// Params 0
+// Checksum 0x0, Offset: 0x41b9
 // Size: 0xd2
 function function_1519cc09e0dbad0c()
 {
@@ -1452,8 +1466,8 @@ function function_1519cc09e0dbad0c()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4245
+// Params 1
+// Checksum 0x0, Offset: 0x4293
 // Size: 0x323
 function function_f0b074bef81e8c7b( eattacker )
 {
@@ -1523,8 +1537,8 @@ function function_f0b074bef81e8c7b( eattacker )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4570
+// Params 3
+// Checksum 0x0, Offset: 0x45be
 // Size: 0x1bc
 function function_4e70ba4ebdc8dbe9( owner, friendlyicon, enemyicon )
 {
@@ -1581,8 +1595,8 @@ function function_4e70ba4ebdc8dbe9( owner, friendlyicon, enemyicon )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4734
+// Params 0
+// Checksum 0x0, Offset: 0x4782
 // Size: 0xcc
 function function_42349f0ab9120240()
 {
@@ -1617,7 +1631,7 @@ function function_42349f0ab9120240()
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x4808
+// Checksum 0x0, Offset: 0x4856
 // Size: 0x62
 function private function_4b8f0a33e19c0310()
 {
@@ -1644,7 +1658,7 @@ function private function_4b8f0a33e19c0310()
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x4872
+// Checksum 0x0, Offset: 0x48c0
 // Size: 0x3f
 function private function_c9064aca910696fa()
 {
@@ -1660,8 +1674,8 @@ function private function_c9064aca910696fa()
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48b9
+// Params 1
+// Checksum 0x0, Offset: 0x4907
 // Size: 0xea
 function function_ff4bbeb786042d78( grenade )
 {
@@ -1699,8 +1713,8 @@ function function_ff4bbeb786042d78( grenade )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49ab
+// Params 1
+// Checksum 0x0, Offset: 0x49f9
 // Size: 0x48
 function function_58d05fe18dd1c713( grenade )
 {
@@ -1717,8 +1731,8 @@ function function_58d05fe18dd1c713( grenade )
 }
 
 // Namespace br_deployable_kiosk / scripts\mp\gametypes\br_deployable_kiosk
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49fb
+// Params 1
+// Checksum 0x0, Offset: 0x4a49
 // Size: 0x53
 function function_1e270e9c7a27bb49( position )
 {

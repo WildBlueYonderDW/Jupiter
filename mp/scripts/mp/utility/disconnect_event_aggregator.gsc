@@ -1,7 +1,7 @@
 #namespace disconnect_event_aggregator;
 
 // Namespace disconnect_event_aggregator / scripts\mp\utility\disconnect_event_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x88
 // Size: 0x75
 function rundisconnectcallbacks( player )
@@ -18,7 +18,7 @@ function rundisconnectcallbacks( player )
 }
 
 // Namespace disconnect_event_aggregator / scripts\mp\utility\disconnect_event_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x105
 // Size: 0x75
 function function_fab0966a8fb0e314( player )
@@ -35,7 +35,7 @@ function function_fab0966a8fb0e314( player )
 }
 
 // Namespace disconnect_event_aggregator / scripts\mp\utility\disconnect_event_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x182
 // Size: 0x74
 function function_7104b549684a0447( player )
@@ -52,7 +52,7 @@ function function_7104b549684a0447( player )
 }
 
 // Namespace disconnect_event_aggregator / scripts\mp\utility\disconnect_event_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fe
 // Size: 0x38
 function registerondisconnecteventcallback( callback )
@@ -66,7 +66,7 @@ function registerondisconnecteventcallback( callback )
 }
 
 // Namespace disconnect_event_aggregator / scripts\mp\utility\disconnect_event_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23e
 // Size: 0x38
 function function_18819785bafad430( callback )
@@ -80,7 +80,7 @@ function function_18819785bafad430( callback )
 }
 
 // Namespace disconnect_event_aggregator / scripts\mp\utility\disconnect_event_aggregator
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27e
 // Size: 0x38
 function function_5b91df923c38392b( callback )

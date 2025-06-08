@@ -7,7 +7,7 @@
 #namespace riotshield;
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x183
 // Size: 0x13a
 function riotshield_init_cp( taskid )
@@ -40,7 +40,7 @@ function riotshield_init_cp( taskid )
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c5
 // Size: 0x148
 function function_8cddb6d105408617( taskid )
@@ -74,7 +74,7 @@ function function_8cddb6d105408617( taskid )
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x415
 // Size: 0x130
 function riotshield_init_sp( taskid )
@@ -107,7 +107,7 @@ function riotshield_init_sp( taskid )
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54d
 // Size: 0xca, Type: bool
 function function_d4b82c6f5cae75ee()
@@ -131,7 +131,7 @@ function function_d4b82c6f5cae75ee()
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x620
 // Size: 0x200
 function riotshield_common()
@@ -184,7 +184,7 @@ function riotshield_common()
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x828
 // Size: 0xb2
 function terminateriotshield()
@@ -208,7 +208,7 @@ function terminateriotshield()
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e2
 // Size: 0x20
 function resetstuckthermite()
@@ -219,7 +219,7 @@ function resetstuckthermite()
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x90a
 // Size: 0x6b
 function removeriotshield()
@@ -242,7 +242,7 @@ function removeriotshield()
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x97d
 // Size: 0x1f
 function function_a43626a85e6614f0( taskid )
@@ -254,7 +254,7 @@ function function_a43626a85e6614f0( taskid )
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9a4
 // Size: 0x80
 function function_97dbc630c790bfb3( taskid )
@@ -271,7 +271,7 @@ function function_97dbc630c790bfb3( taskid )
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2d
 // Size: 0x2dd
 function dropshield()
@@ -344,7 +344,7 @@ function dropshield()
 }
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd12
 // Size: 0x1b
 function deleteaftertime( t )

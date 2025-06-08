@@ -146,7 +146,8 @@ function private function_51479cdb5a0fd4c7()
     {
         level.var_e01baa6e6a9eef5c.var_1966e1831c542d8e = custom_settings.var_4e1f6080aa106884;
         
-        for (i = 0; i < custom_settings.var_4e1f6080aa106884.size; i++) {
+        for ( i = 0; i < custom_settings.var_4e1f6080aa106884.size ; i++ )
+        {
             if ( isdefined( custom_settings.var_4e1f6080aa106884[ i ].var_fda0ed7e67ea625d ) )
             {
                 level._effect[ "humangun_consecutive_hit_normal_fx_" + i + 1 ] = loadfx( custom_settings.var_4e1f6080aa106884[ i ].var_fda0ed7e67ea625d );
@@ -176,7 +177,7 @@ function private function_51479cdb5a0fd4c7()
 }
 
 // Namespace namespace_773c12e74d6509f9 / namespace_bbdaab8ec2235136
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd15
 // Size: 0xbe
 function function_4405588a9af68a0a( params )
@@ -443,7 +444,8 @@ function private function_2f8e6fe2d4ed8af8( new_agent )
     self.var_f8acc27178c5ea5b = default_to( self.var_f8acc27178c5ea5b, [] );
     var_c413d6aa7dc7aba0 = [];
     
-    for (i = self.var_f8acc27178c5ea5b.size - 1; i >= 0; i--) {
+    for ( i = self.var_f8acc27178c5ea5b.size - 1; i >= 0 ; i-- )
+    {
         agent = self.var_f8acc27178c5ea5b[ i ];
         
         if ( !isalive( agent ) || isai( agent ) && agent doinglongdeath() || agent == new_agent )

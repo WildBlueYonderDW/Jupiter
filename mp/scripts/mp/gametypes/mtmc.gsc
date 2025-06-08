@@ -21,7 +21,7 @@
 #namespace mtmc;
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x522
 // Size: 0x283
 function main()
@@ -82,7 +82,7 @@ function main()
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ad
 // Size: 0xda
 function initializematchrules()
@@ -99,7 +99,7 @@ function initializematchrules()
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88f
 // Size: 0x64
 function seticonnames()
@@ -114,7 +114,7 @@ function seticonnames()
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8fb
 // Size: 0xea
 function onstartgametype()
@@ -155,7 +155,7 @@ function onstartgametype()
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ed
 // Size: 0x9a
 function startgame()
@@ -174,7 +174,7 @@ function startgame()
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa8f
 // Size: 0x9e
 function updategametypedvars()
@@ -189,7 +189,7 @@ function updategametypedvars()
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb35
 // Size: 0x308
 function initspawns()
@@ -260,7 +260,7 @@ function initspawns()
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe45
 // Size: 0x11f
 function getspawnpoint()
@@ -298,7 +298,7 @@ function getspawnpoint()
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf6d
 // Size: 0x12e
 function setupflags()
@@ -333,7 +333,7 @@ function setupflags()
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x10a3
 // Size: 0xa8
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -352,7 +352,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1153
 // Size: 0xb
 function onspawnplayer( revivespawn )
@@ -361,7 +361,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1166
 // Size: 0x14
 function onplayerconnect( player )
@@ -370,7 +370,7 @@ function onplayerconnect( player )
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1182
 // Size: 0x84
 function onplayerspawned( player )
@@ -397,7 +397,7 @@ function onplayerspawned( player )
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x120e
 // Size: 0x140
 function onflagcapture( objectivetype, label, credit_player, team, oldteam, flagobj )
@@ -433,7 +433,7 @@ function onflagcapture( objectivetype, label, credit_player, team, oldteam, flag
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1356
 // Size: 0x1c2
 function ondeadevent( team )
@@ -485,7 +485,7 @@ function ondeadevent( team )
 }
 
 // Namespace mtmc / scripts\mp\gametypes\mtmc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1520
 // Size: 0x1f5
 function setremainingteams( team )

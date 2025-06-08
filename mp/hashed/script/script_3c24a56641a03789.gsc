@@ -5,7 +5,7 @@
 #namespace namespace_963441cb55eef69e;
 
 // Namespace namespace_963441cb55eef69e / namespace_33fccacad4892a25
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107
 // Size: 0x1d
 function init()
@@ -19,7 +19,7 @@ function init()
 }
 
 // Namespace namespace_963441cb55eef69e / namespace_33fccacad4892a25
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12c
 // Size: 0x8c
 function function_38317b48d412b1d5()

@@ -9,7 +9,7 @@
 #namespace namespace_4d6911a5d970ff49;
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f2
 // Size: 0xb
 function initcrossbowusage( weapon )
@@ -18,7 +18,7 @@ function initcrossbowusage( weapon )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x305
 // Size: 0x4f
 function crossbowusageloop( weapon )
@@ -32,7 +32,7 @@ function crossbowusageloop( weapon )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35c
 // Size: 0x15
 function cleanupafterweaponswitch()
@@ -43,7 +43,7 @@ function cleanupafterweaponswitch()
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x379
 // Size: 0xd9
 function crossbowimpactwatcher( watcherweapon, ammotype, crossbowimpactfunc )
@@ -68,7 +68,7 @@ function crossbowimpactwatcher( watcherweapon, ammotype, crossbowimpactfunc )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x45a
 // Size: 0xb7
 function handleimpact( bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype, weapon, bulletdir, impactpos, crossbowimpactfunc )
@@ -94,7 +94,7 @@ function handleimpact( bolt, hitent, hitentpart, hitloc, surfacenormal, surfacet
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x519
 // Size: 0x63
 function function_8c51cd45d4f7245d( bolt, hitent, hitentpart, hitloc, surfacetype )
@@ -109,7 +109,7 @@ function function_8c51cd45d4f7245d( bolt, hitent, hitentpart, hitloc, surfacetyp
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x584
 // Size: 0x7
 function function_79a632d01cf0c669()
@@ -118,7 +118,7 @@ function function_79a632d01cf0c669()
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x594
 // Size: 0xac
 function spawncrossbowbolt( impactpos, bulletdir, ammotype, weapon )
@@ -137,7 +137,7 @@ function spawncrossbowbolt( impactpos, bulletdir, ammotype, weapon )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x649
 // Size: 0xc
 function setdeleteable()
@@ -146,7 +146,7 @@ function setdeleteable()
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x65d
 // Size: 0x10
 function getcrossbowammotype( weapon )
@@ -155,7 +155,7 @@ function getcrossbowammotype( weapon )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x676
 // Size: 0x10
 function getcrossbowimpactfunc( ammotype )
@@ -164,7 +164,7 @@ function getcrossbowimpactfunc( ammotype )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x68f
 // Size: 0x10
 function getboltmodel( ammotype )
@@ -173,7 +173,7 @@ function getboltmodel( ammotype )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a8
 // Size: 0x29
 function validateboltent()
@@ -187,7 +187,7 @@ function validateboltent()
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6d9
 // Size: 0x12f
 function shouldreflect( surfacetype, bolt, hitent, hitentpart )
@@ -250,7 +250,7 @@ function shouldreflect( surfacetype, bolt, hitent, hitentpart )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x810
 // Size: 0x73
 function reflectbolt( bolt, surfacenormal, bulletdir, impactpos )
@@ -263,7 +263,7 @@ function reflectbolt( bolt, surfacenormal, bulletdir, impactpos )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x88b
 // Size: 0x28
 function issameteamplayer( hitent )
@@ -282,7 +282,7 @@ function issameteamplayer( hitent )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8bb
 // Size: 0x42, Type: bool
 function issameteamagent( hitent )
@@ -301,7 +301,7 @@ function issameteamagent( hitent )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x906
 // Size: 0x3b
 function deletebolt( var_c4a5a9d9ae155452 )
@@ -322,7 +322,7 @@ function deletebolt( var_c4a5a9d9ae155452 )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x949
 // Size: 0x3f, Type: bool
 function shoulddeleteimmediately( hitent )
@@ -341,7 +341,7 @@ function shoulddeleteimmediately( hitent )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x991
 // Size: 0x20, Type: bool
 function is_suicidebomber()
@@ -350,7 +350,7 @@ function is_suicidebomber()
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ba
 // Size: 0x5a
 function removestuckenemyondeathordisconnect( hitent )
@@ -372,7 +372,7 @@ function removestuckenemyondeathordisconnect( hitent )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa1c
 // Size: 0x30
 function boltdeleteonnote( hitent, note )
@@ -389,7 +389,7 @@ function boltdeleteonnote( hitent, note )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa54
 // Size: 0xa
 function function_edf6a939d6f2d3af()
@@ -398,7 +398,7 @@ function function_edf6a939d6f2d3af()
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa66
 // Size: 0xdb
 function linktoent( bolt, hitent, hitentpart )
@@ -441,7 +441,7 @@ function linktoent( bolt, hitent, hitentpart )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb49
 // Size: 0x14, Type: bool
 function shouldlink( hitent )
@@ -455,7 +455,7 @@ function shouldlink( hitent )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb66
 // Size: 0x35
 function boltunlinkonnote( hitent )
@@ -472,7 +472,7 @@ function boltunlinkonnote( hitent )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba3
 // Size: 0x69
 function boltunlink( launchvec )
@@ -497,7 +497,7 @@ function boltunlink( launchvec )
 }
 
 // Namespace namespace_4d6911a5d970ff49 / namespace_d31450b702db9707
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc14
 // Size: 0xf1
 function cansticktoent( hitent )

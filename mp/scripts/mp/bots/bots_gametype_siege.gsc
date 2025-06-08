@@ -13,7 +13,7 @@
 #namespace bots_gametype_siege;
 
 // Namespace bots_gametype_siege / scripts\mp\bots\bots_gametype_siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x176
 // Size: 0x39
 function main()
@@ -37,7 +37,7 @@ function main()
 /#
 
     // Namespace bots_gametype_siege / scripts\mp\bots\bots_gametype_siege
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1b7
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -48,7 +48,7 @@ function main()
 #/
 
 // Namespace bots_gametype_siege / scripts\mp\bots\bots_gametype_siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c4
 // Size: 0x17
 function setup_callbacks()
@@ -57,7 +57,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_siege / scripts\mp\bots\bots_gametype_siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e3
 // Size: 0xd
 function setup_bot_siege()
@@ -68,7 +68,7 @@ function setup_bot_siege()
 /#
 
     // Namespace bots_gametype_siege / scripts\mp\bots\bots_gametype_siege
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1f8
     // Size: 0xf0, Type: dev
     function function_89500208d81a6b6e()
@@ -98,7 +98,7 @@ function setup_bot_siege()
 #/
 
 // Namespace bots_gametype_siege / scripts\mp\bots\bots_gametype_siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f0
 // Size: 0x253
 function bot_siege_manager_think()
@@ -177,7 +177,7 @@ function bot_siege_manager_think()
 }
 
 // Namespace bots_gametype_siege / scripts\mp\bots\bots_gametype_siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54b
 // Size: 0xce
 function bot_siege_think()
@@ -221,7 +221,7 @@ function bot_siege_think()
 }
 
 // Namespace bots_gametype_siege / scripts\mp\bots\bots_gametype_siege
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x621
 // Size: 0x110
 function bot_choose_flag()

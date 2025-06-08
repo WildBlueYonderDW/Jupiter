@@ -44,7 +44,7 @@
 #namespace init_mp;
 
 // Namespace init_mp / scripts\mp\killstreaks\init_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x384
 // Size: 0x4e9
 function init()

@@ -6,7 +6,7 @@
 #namespace headgear;
 
 // Namespace headgear / scripts\mp\perks\headgear
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e
 // Size: 0x1c
 function init()
@@ -15,7 +15,7 @@ function init()
 }
 
 // Namespace headgear / scripts\mp\perks\headgear
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x152
 // Size: 0x25
 function removeheadgear( equipmentref, slot )
@@ -25,7 +25,7 @@ function removeheadgear( equipmentref, slot )
 }
 
 // Namespace headgear / scripts\mp\perks\headgear
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17f
 // Size: 0x60
 function runheadgear( equipmentref, slot, variantid )
@@ -45,7 +45,7 @@ function runheadgear( equipmentref, slot, variantid )
 }
 
 // Namespace headgear / scripts\mp\perks\headgear
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e7
 // Size: 0x74
 function runheadgeareffects()
@@ -58,7 +58,7 @@ function runheadgeareffects()
 }
 
 // Namespace headgear / scripts\mp\perks\headgear
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x263
 // Size: 0x7
 function getdamagemod()
@@ -67,7 +67,7 @@ function getdamagemod()
 }
 
 // Namespace headgear / scripts\mp\perks\headgear
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x273
 // Size: 0x4
 function getmaxdamage()

@@ -16,12 +16,12 @@
 #namespace matchdata;
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ed
 // Size: 0x251
 function init()
 {
-    if ( getdvarint( @"hash_4ba1427c86b79dc5" ) != 0 && !isdefined( game[ "gamestarted" ] ) )
+    if ( getdvarint( @"online_matchdata_enabled" ) != 0 && !isdefined( game[ "gamestarted" ] ) )
     {
         setmatchdatadef( "ddl/mp/matchdata.ddl" );
         setmatchdata( "commonMatchData", "map", level.script );
@@ -47,7 +47,7 @@ function init()
         }
     }
     
-    if ( getdvarint( @"hash_4ba1427c86b79dc5" ) != 0 )
+    if ( getdvarint( @"online_matchdata_enabled" ) != 0 )
     {
         if ( scripts\cp_mp\utility\game_utility::isbrstylegametype() )
         {
@@ -89,7 +89,7 @@ function init()
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x746
 // Size: 0x6f
 function onroundend()
@@ -102,12 +102,12 @@ function onroundend()
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bd
 // Size: 0x2e
 function getmatchstarttimeutc()
 {
-    if ( getdvarint( @"hash_4ba1427c86b79dc5" ) == 0 )
+    if ( getdvarint( @"online_matchdata_enabled" ) == 0 )
     {
         return level.starttimeutcseconds;
     }
@@ -116,12 +116,12 @@ function getmatchstarttimeutc()
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f4
 // Size: 0x2e
 function getmatchendtimeutc()
 {
-    if ( getdvarint( @"hash_4ba1427c86b79dc5" ) == 0 )
+    if ( getdvarint( @"online_matchdata_enabled" ) == 0 )
     {
         return level.endtimeutcseconds;
     }
@@ -130,7 +130,7 @@ function getmatchendtimeutc()
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x82b
 // Size: 0x42
 function gettimefrommatchstart( basetime )
@@ -155,7 +155,7 @@ function gettimefrommatchstart( basetime )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x876
 // Size: 0x21
 function logkillstreakevent( event, position )
@@ -164,7 +164,7 @@ function logkillstreakevent( event, position )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x89f
 // Size: 0x21
 function logattackerkillevent( lifeid, eventref )
@@ -173,7 +173,7 @@ function logattackerkillevent( lifeid, eventref )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8c8
 // Size: 0x21
 function logvictimkillevent( lifeid, eventref )
@@ -182,7 +182,7 @@ function logvictimkillevent( lifeid, eventref )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8f1
 // Size: 0x21
 function logmultikill( lifeid, multikillcount )
@@ -191,7 +191,7 @@ function logmultikill( lifeid, multikillcount )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x91a
 // Size: 0x5f
 function monitorweaponfire()
@@ -210,7 +210,7 @@ function monitorweaponfire()
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x981
 // Size: 0x45
 function monitorweaponfiretime()
@@ -224,7 +224,7 @@ function monitorweaponfiretime()
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ce
 // Size: 0x11a
 function ctgs_recordmatchstats()
@@ -259,7 +259,7 @@ function ctgs_recordmatchstats()
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf0
 // Size: 0x368
 function logplayerdata( disconnectreason )
@@ -356,7 +356,7 @@ function logplayerdata( disconnectreason )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe60
 // Size: 0x1fc
 function endofgamesummarylogger()
@@ -386,7 +386,8 @@ function endofgamesummarylogger()
             player setplayerdata( "common", "round", "challengeNumCompleted", 0 );
         }
         
-        for (i = 0; i < 20; i++) {
+        for ( i = 0; i < 20 ; i++ )
+        {
             if ( isdefined( player.challengescompleted ) && isdefined( player.challengescompleted[ i ] ) && player.challengescompleted[ i ] != "ch_prestige" && !issubstr( player.challengescompleted[ i ], "_daily" ) && !issubstr( player.challengescompleted[ i ], "_weekly" ) )
             {
                 player setplayerdata( "common", "round", "challengesCompleted", i, player.challengescompleted[ i ] );
@@ -410,7 +411,7 @@ function endofgamesummarylogger()
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1064
 // Size: 0xdc
 function recordrecentlyplayeddata()
@@ -421,7 +422,8 @@ function recordrecentlyplayeddata()
         
         foreach ( player in level.players )
         {
-            for (i = 4; i > 0; i--) {
+            for ( i = 4; i > 0 ; i-- )
+            {
                 map = player getplayerdata( level.var_5d69837cf4db0407, "mapsPlayed", i - 1 );
                 player setplayerdata( level.var_5d69837cf4db0407, "mapsPlayed", i, map );
             }
@@ -432,7 +434,7 @@ function recordrecentlyplayeddata()
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1148
 // Size: 0x3d, Type: bool
 function isvalidclient( client )
@@ -459,7 +461,7 @@ function isvalidclient( client )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x118e
 // Size: 0x30
 function canlogclient( client )
@@ -473,7 +475,7 @@ function canlogclient( client )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11c6
 // Size: 0x16, Type: bool
 function canloglife( lifeid )
@@ -482,7 +484,7 @@ function canloglife( lifeid )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x11e5
 // Size: 0x3e
 function logattachmentstat( attachname, statname, incvalue, weapon )
@@ -496,7 +498,7 @@ function logattachmentstat( attachname, statname, incvalue, weapon )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x122b
 // Size: 0x21
 function logchallenge( challengename, tier )
@@ -505,7 +507,7 @@ function logchallenge( challengename, tier )
 }
 
 // Namespace matchdata / scripts\mp\matchdata
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1254
 // Size: 0x85
 function logaward( awardname )

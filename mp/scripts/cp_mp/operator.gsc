@@ -8,7 +8,7 @@
 
 // Namespace operator / scripts\cp_mp\operator
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1c8
+// Checksum 0x0, Offset: 0x1c7
 // Size: 0x38, Type: bool
 function private isbuildingmap()
 {
@@ -29,7 +29,7 @@ function private isbuildingmap()
 
 // Namespace operator / scripts\cp_mp\operator
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x209
+// Checksum 0x0, Offset: 0x208
 // Size: 0x18e
 function private function_a10148d5861bcad7()
 {
@@ -64,7 +64,8 @@ function private function_a10148d5861bcad7()
     
     operatorlist = operatorlistbundle.operatorlist;
     
-    for (i = 0; i < operatorlist.size; i++) {
+    for ( i = 0; i < operatorlist.size ; i++ )
+    {
         if ( !isdefined( operatorlist[ i ].operator ) )
         {
             continue;
@@ -91,7 +92,7 @@ function private function_a10148d5861bcad7()
 
 // Namespace operator / scripts\cp_mp\operator
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x39f
+// Checksum 0x0, Offset: 0x39e
 // Size: 0x277
 function private function_c1fb26911511dc66()
 {
@@ -167,7 +168,7 @@ function private function_c1fb26911511dc66()
 
 // Namespace operator / scripts\cp_mp\operator
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x61e
+// Checksum 0x0, Offset: 0x61d
 // Size: 0x171
 function private function_36a7c07e40354ae7()
 {
@@ -201,7 +202,8 @@ function private function_36a7c07e40354ae7()
     level.var_ea38f52d9a056cbf = [];
     numbodies = 0;
     
-    for (i = 0; i < bodylist.size; i++) {
+    for ( i = 0; i < bodylist.size ; i++ )
+    {
         bodybundlename = bodylist[ i ].operatorbody;
         
         if ( isdefined( bodybundlename ) && bodybundlename != "" )
@@ -217,7 +219,7 @@ function private function_36a7c07e40354ae7()
 
 // Namespace operator / scripts\cp_mp\operator
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x797
+// Checksum 0x0, Offset: 0x796
 // Size: 0x176
 function private function_53b243a75e43d0af()
 {
@@ -253,7 +255,8 @@ function private function_53b243a75e43d0af()
     
     executionlist = var_edd8be499278b105.var_f56937ae2076fd;
     
-    for (i = 0; i < executionlist.size; i++) {
+    for ( i = 0; i < executionlist.size ; i++ )
+    {
         if ( !isdefined( executionlist[ i ].operatorexecution ) )
         {
             continue;
@@ -277,7 +280,7 @@ function private function_53b243a75e43d0af()
 
 // Namespace operator / scripts\cp_mp\operator
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x915
+// Checksum 0x0, Offset: 0x914
 // Size: 0x6c
 function private function_a185fde559db8123( operatorref, var_faa66d6f4c6c9e1d )
 {
@@ -298,7 +301,7 @@ function private function_a185fde559db8123( operatorref, var_faa66d6f4c6c9e1d )
 
 // Namespace operator / scripts\cp_mp\operator
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x98a
+// Checksum 0x0, Offset: 0x989
 // Size: 0xde
 function private function_a2f84a43b99f877a( skinref, var_faa66d6f4c6c9e1d )
 {
@@ -331,7 +334,7 @@ function private function_a2f84a43b99f877a( skinref, var_faa66d6f4c6c9e1d )
 
 // Namespace operator / scripts\cp_mp\operator
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa71
+// Checksum 0x0, Offset: 0xa70
 // Size: 0x39
 function private function_23dac01799fd34a3( executionref )
 {
@@ -341,8 +344,8 @@ function private function_23dac01799fd34a3( executionref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xab3
+// Params 1
+// Checksum 0x0, Offset: 0xab2
 // Size: 0x18
 function function_54240a5fc41f6590( operatorref )
 {
@@ -350,8 +353,8 @@ function function_54240a5fc41f6590( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xad4
+// Params 0
+// Checksum 0x0, Offset: 0xad3
 // Size: 0x12
 function function_462ac94dd54da47d()
 {
@@ -360,8 +363,8 @@ function function_462ac94dd54da47d()
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaef
+// Params 1
+// Checksum 0x0, Offset: 0xaee
 // Size: 0x5a, Type: bool
 function getoperatorsuperfaction( operatorref )
 {
@@ -376,8 +379,8 @@ function getoperatorsuperfaction( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb52
+// Params 1
+// Checksum 0x0, Offset: 0xb51
 // Size: 0x52
 function getoperatorvoice( operatorref )
 {
@@ -392,8 +395,8 @@ function getoperatorvoice( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbad
+// Params 1
+// Checksum 0x0, Offset: 0xbac
 // Size: 0x61
 function getoperatorgender( operatorref )
 {
@@ -408,8 +411,8 @@ function getoperatorgender( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc17
+// Params 1
+// Checksum 0x0, Offset: 0xc16
 // Size: 0x36
 function function_df7d12571397a2b5( operatorref )
 {
@@ -424,8 +427,8 @@ function function_df7d12571397a2b5( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc56
+// Params 1
+// Checksum 0x0, Offset: 0xc55
 // Size: 0x52
 function function_a9722d35258230d2( operatorref )
 {
@@ -440,8 +443,8 @@ function function_a9722d35258230d2( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb1
+// Params 1
+// Checksum 0x0, Offset: 0xcb0
 // Size: 0x52
 function function_179d82270f3ce3bf( operatorref )
 {
@@ -456,8 +459,8 @@ function function_179d82270f3ce3bf( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd0c
+// Params 1
+// Checksum 0x0, Offset: 0xd0b
 // Size: 0x52
 function function_ada9a2308a4046e2( operatorref )
 {
@@ -472,8 +475,8 @@ function function_ada9a2308a4046e2( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd67
+// Params 1
+// Checksum 0x0, Offset: 0xd66
 // Size: 0x4f
 function isoperatorunlocked( operatorref )
 {
@@ -488,8 +491,8 @@ function isoperatorunlocked( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdbf
+// Params 1
+// Checksum 0x0, Offset: 0xdbe
 // Size: 0x58
 function function_119cb1191ea939ca( operatorref )
 {
@@ -513,8 +516,8 @@ function function_119cb1191ea939ca( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1f
+// Params 1
+// Checksum 0x0, Offset: 0xe1e
 // Size: 0x52
 function function_efe20cf7f3e2a003( operatorref )
 {
@@ -529,8 +532,8 @@ function function_efe20cf7f3e2a003( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe7a
+// Params 1
+// Checksum 0x0, Offset: 0xe79
 // Size: 0x4e
 function function_396b82c66e727528( operatorref )
 {
@@ -545,8 +548,8 @@ function function_396b82c66e727528( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xed1
+// Params 2
+// Checksum 0x0, Offset: 0xed0
 // Size: 0x53
 function function_c0d1f4a038f29b6b( operatorref, skinindex )
 {
@@ -566,8 +569,8 @@ function function_c0d1f4a038f29b6b( operatorref, skinindex )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf2d
+// Params 1
+// Checksum 0x0, Offset: 0xf2c
 // Size: 0x4e
 function function_29b2af59258d6501( skinref )
 {
@@ -582,8 +585,8 @@ function function_29b2af59258d6501( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf84
+// Params 1
+// Checksum 0x0, Offset: 0xf83
 // Size: 0x32
 function function_58145d3d8b15c8( operatorref )
 {
@@ -598,9 +601,9 @@ function function_58145d3d8b15c8( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbf
-// Size: 0x8d
+// Params 1
+// Checksum 0x0, Offset: 0xfbe
+// Size: 0x92
 function function_b3b2c9581b1eea75( operatorref )
 {
     skinlootid = 0;
@@ -611,7 +614,7 @@ function function_b3b2c9581b1eea75( operatorref )
         {
             skinlootid = [[ utility::getsharedfunc( "instanceInventory", "getActiveOperatorSkinLootID" ) ]]( self );
         }
-        else
+        else if ( isdefined( operatorref ) )
         {
             skinlootid = self getplayerdata( level.loadoutsgroup, "customizationSetup", "operatorCustomization", operatorref, "skin" );
         }
@@ -626,8 +629,8 @@ function function_b3b2c9581b1eea75( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1054
+// Params 2
+// Checksum 0x0, Offset: 0x1058
 // Size: 0xa3
 function function_5e2fa33279816be2( operatorref, var_8e0a26a04f19263d )
 {
@@ -663,8 +666,8 @@ function function_5e2fa33279816be2( operatorref, var_8e0a26a04f19263d )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ff
+// Params 1
+// Checksum 0x0, Offset: 0x1103
 // Size: 0x6c
 function function_ac45022bf37cddfb( operatorref )
 {
@@ -685,8 +688,8 @@ function function_ac45022bf37cddfb( operatorref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1173
+// Params 0
+// Checksum 0x0, Offset: 0x1177
 // Size: 0x12
 function function_6ab347c553a20a68()
 {
@@ -695,8 +698,8 @@ function function_6ab347c553a20a68()
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x118e
+// Params 1
+// Checksum 0x0, Offset: 0x1192
 // Size: 0x39
 function function_605079124463a67b( skinref )
 {
@@ -706,8 +709,8 @@ function function_605079124463a67b( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d0
+// Params 1
+// Checksum 0x0, Offset: 0x11d4
 // Size: 0x52
 function function_223061772e2a61b9( skinref )
 {
@@ -722,8 +725,8 @@ function function_223061772e2a61b9( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x122b
+// Params 1
+// Checksum 0x0, Offset: 0x122f
 // Size: 0x52
 function function_8eba78e65f4be793( skinref )
 {
@@ -738,8 +741,8 @@ function function_8eba78e65f4be793( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1286
+// Params 1
+// Checksum 0x0, Offset: 0x128a
 // Size: 0x52
 function function_6fa0ec9562a76f6c( skinref )
 {
@@ -754,8 +757,8 @@ function function_6fa0ec9562a76f6c( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12e1
+// Params 1
+// Checksum 0x0, Offset: 0x12e5
 // Size: 0x52
 function function_3af837eb38560aad( skinref )
 {
@@ -770,8 +773,8 @@ function function_3af837eb38560aad( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x133c
+// Params 1
+// Checksum 0x0, Offset: 0x1340
 // Size: 0x4f
 function function_9c50981a840033dc( skinref )
 {
@@ -786,8 +789,8 @@ function function_9c50981a840033dc( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1394
+// Params 1
+// Checksum 0x0, Offset: 0x1398
 // Size: 0x58
 function function_539b94879a3b6157( skinref )
 {
@@ -811,8 +814,8 @@ function function_539b94879a3b6157( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f4
+// Params 1
+// Checksum 0x0, Offset: 0x13f8
 // Size: 0x52
 function function_9e28d6dc0ac60d69( skinref )
 {
@@ -827,8 +830,8 @@ function function_9e28d6dc0ac60d69( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x144f
+// Params 1
+// Checksum 0x0, Offset: 0x1453
 // Size: 0x52
 function function_32d5918a7844bd9a( skinref )
 {
@@ -843,8 +846,8 @@ function function_32d5918a7844bd9a( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14aa
+// Params 1
+// Checksum 0x0, Offset: 0x14ae
 // Size: 0x52
 function function_112bf281c4f02cd5( skinref )
 {
@@ -859,8 +862,8 @@ function function_112bf281c4f02cd5( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1505
+// Params 1
+// Checksum 0x0, Offset: 0x1509
 // Size: 0x52
 function function_3d7626401bb1161a( skinref )
 {
@@ -875,8 +878,8 @@ function function_3d7626401bb1161a( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1560
+// Params 1
+// Checksum 0x0, Offset: 0x1564
 // Size: 0x52
 function function_c7f632b62e2da6dc( skinref )
 {
@@ -891,8 +894,8 @@ function function_c7f632b62e2da6dc( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15bb
+// Params 1
+// Checksum 0x0, Offset: 0x15bf
 // Size: 0x4e
 function function_7efecf1510ed84a1( skinref )
 {
@@ -907,8 +910,8 @@ function function_7efecf1510ed84a1( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1612
+// Params 1
+// Checksum 0x0, Offset: 0x1616
 // Size: 0xd6
 function function_f2d38198420a4368( var_ddd84cf9c2e0bb79 )
 {
@@ -934,8 +937,8 @@ function function_f2d38198420a4368( var_ddd84cf9c2e0bb79 )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16f1
+// Params 1
+// Checksum 0x0, Offset: 0x16f5
 // Size: 0x32
 function function_6a80a96a06a99d38( lootid )
 {
@@ -950,8 +953,8 @@ function function_6a80a96a06a99d38( lootid )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x172c
+// Params 0
+// Checksum 0x0, Offset: 0x1730
 // Size: 0x12
 function function_232a4826a2bd2bfd()
 {
@@ -960,8 +963,8 @@ function function_232a4826a2bd2bfd()
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1747
+// Params 1
+// Checksum 0x0, Offset: 0x174b
 // Size: 0x39
 function function_ddfc149035f1c97c( executionid )
 {
@@ -971,8 +974,8 @@ function function_ddfc149035f1c97c( executionid )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1789
+// Params 1
+// Checksum 0x0, Offset: 0x178d
 // Size: 0x41
 function function_3daf6bb451cf826e( executionref )
 {
@@ -983,8 +986,8 @@ function function_3daf6bb451cf826e( executionref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17d3
+// Params 1
+// Checksum 0x0, Offset: 0x17d7
 // Size: 0x40
 function function_bbc044f8ae9428a8( executionref )
 {
@@ -999,8 +1002,8 @@ function function_bbc044f8ae9428a8( executionref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x181c
+// Params 1
+// Checksum 0x0, Offset: 0x1820
 // Size: 0x44
 function function_75322d3c8f9c9ccb( executionref )
 {
@@ -1015,8 +1018,8 @@ function function_75322d3c8f9c9ccb( executionref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1869
+// Params 1
+// Checksum 0x0, Offset: 0x186d
 // Size: 0x44
 function function_3bd82b573b8f64f3( executionref )
 {
@@ -1031,8 +1034,8 @@ function function_3bd82b573b8f64f3( executionref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18b6
+// Params 1
+// Checksum 0x0, Offset: 0x18ba
 // Size: 0x19
 function function_834ef5d317d107fd( quipid )
 {
@@ -1040,8 +1043,8 @@ function function_834ef5d317d107fd( quipid )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d8
+// Params 1
+// Checksum 0x0, Offset: 0x18dc
 // Size: 0x1a
 function function_45a67ff0b6b4624c( quipref )
 {
@@ -1049,8 +1052,8 @@ function function_45a67ff0b6b4624c( quipref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18fb
+// Params 1
+// Checksum 0x0, Offset: 0x18ff
 // Size: 0x61
 function function_8b76557a4ddccf83( bodymodel )
 {
@@ -1067,8 +1070,8 @@ function function_8b76557a4ddccf83( bodymodel )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1965
+// Params 1
+// Checksum 0x0, Offset: 0x1969
 // Size: 0x61
 function function_bc7534da0e22321a( bodyindex )
 {
@@ -1085,8 +1088,8 @@ function function_bc7534da0e22321a( bodyindex )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19cf
+// Params 1
+// Checksum 0x0, Offset: 0x19d3
 // Size: 0x40
 function function_3cacd1cd869c0feb( bodyindex )
 {
@@ -1095,8 +1098,8 @@ function function_3cacd1cd869c0feb( bodyindex )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a18
+// Params 1
+// Checksum 0x0, Offset: 0x1a1c
 // Size: 0x40
 function function_aa32c85a2c2a2d8b( bodymodel )
 {
@@ -1105,8 +1108,8 @@ function function_aa32c85a2c2a2d8b( bodymodel )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a61
+// Params 1
+// Checksum 0x0, Offset: 0x1a65
 // Size: 0x40
 function function_6fd12f8316d3acc6( bodymodel )
 {
@@ -1115,8 +1118,8 @@ function function_6fd12f8316d3acc6( bodymodel )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aaa
+// Params 1
+// Checksum 0x0, Offset: 0x1aae
 // Size: 0x3c
 function function_9745c4739bb8fdc0( bodymodel )
 {
@@ -1125,8 +1128,8 @@ function function_9745c4739bb8fdc0( bodymodel )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aef
+// Params 1
+// Checksum 0x0, Offset: 0x1af3
 // Size: 0x40
 function function_df03c0302b44fe9f( bodymodel )
 {
@@ -1135,8 +1138,8 @@ function function_df03c0302b44fe9f( bodymodel )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b38
+// Params 1
+// Checksum 0x0, Offset: 0x1b3c
 // Size: 0x75
 function function_515a572a9271c11b( operator )
 {
@@ -1162,7 +1165,7 @@ function function_515a572a9271c11b( operator )
 
 // Namespace operator / scripts\cp_mp\operator
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1bb5
+// Checksum 0x0, Offset: 0x1bb9
 // Size: 0x1de
 function private function_1886c9c9213a60a2( operatorref, operatorbundle )
 {
@@ -1212,8 +1215,8 @@ function private function_1886c9c9213a60a2( operatorref, operatorbundle )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d9b
+// Params 1
+// Checksum 0x0, Offset: 0x1d9f
 // Size: 0x40
 function function_2dc6ef8b84dfec64( skinref )
 {
@@ -1222,8 +1225,8 @@ function function_2dc6ef8b84dfec64( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de4
+// Params 1
+// Checksum 0x0, Offset: 0x1de8
 // Size: 0x40
 function function_a317055d4d0a4605( skinref )
 {
@@ -1232,8 +1235,8 @@ function function_a317055d4d0a4605( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e2d
+// Params 1
+// Checksum 0x0, Offset: 0x1e31
 // Size: 0x40
 function function_81360519d4836bf7( skinref )
 {
@@ -1242,8 +1245,8 @@ function function_81360519d4836bf7( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e76
+// Params 1
+// Checksum 0x0, Offset: 0x1e7a
 // Size: 0x40
 function function_8d92d3fb88a9d34( skinref )
 {
@@ -1252,8 +1255,8 @@ function function_8d92d3fb88a9d34( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ebf
+// Params 1
+// Checksum 0x0, Offset: 0x1ec3
 // Size: 0x40
 function function_e0b3eff8c73f5475( skinref )
 {
@@ -1262,8 +1265,8 @@ function function_e0b3eff8c73f5475( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f08
+// Params 1
+// Checksum 0x0, Offset: 0x1f0c
 // Size: 0x40
 function function_a3195a1d60bb2d90( skinref )
 {
@@ -1272,8 +1275,8 @@ function function_a3195a1d60bb2d90( skinref )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f51
+// Params 0
+// Checksum 0x0, Offset: 0x1f55
 // Size: 0xd
 function function_71eed529fc87a7c3()
 {
@@ -1281,8 +1284,8 @@ function function_71eed529fc87a7c3()
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f67
+// Params 0
+// Checksum 0x0, Offset: 0x1f6b
 // Size: 0xe
 function function_28b97877f95c9049()
 {
@@ -1290,8 +1293,8 @@ function function_28b97877f95c9049()
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f7e
+// Params 1
+// Checksum 0x0, Offset: 0x1f82
 // Size: 0x23
 function function_9242a55834c7ead8( var_e9a5f25420e74f74 )
 {
@@ -1304,8 +1307,8 @@ function function_9242a55834c7ead8( var_e9a5f25420e74f74 )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fa9
+// Params 1
+// Checksum 0x0, Offset: 0x1fad
 // Size: 0x95
 function function_9660556edac85b3( var_e9a5f25420e74f74 )
 {
@@ -1321,8 +1324,8 @@ function function_9660556edac85b3( var_e9a5f25420e74f74 )
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2046
+// Params 0
+// Checksum 0x0, Offset: 0x204a
 // Size: 0x9
 function function_e64d40930c925cd8()
 {
@@ -1330,8 +1333,8 @@ function function_e64d40930c925cd8()
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2058
+// Params 0
+// Checksum 0x0, Offset: 0x205c
 // Size: 0xa
 function function_9b7c8b7b979d92de()
 {
@@ -1339,8 +1342,8 @@ function function_9b7c8b7b979d92de()
 }
 
 // Namespace operator / scripts\cp_mp\operator
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x206b
+// Params 0
+// Checksum 0x0, Offset: 0x206f
 // Size: 0xaa
 function function_c9a8541cdb0479bb()
 {

@@ -1,15 +1,15 @@
-#using script_22f1701e151b9d12;
 #using script_60dd6e3992c1f29;
 #using scripts\common\callbacks;
 #using scripts\common\devgui;
 #using scripts\cp_mp\agents\agent_utils;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\weapon;
 #using scripts\engine\utility;
 
 #namespace namespace_c4032dde62b27b45;
 
 // Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19d
 // Size: 0xa9
 function function_6c78c4cdcb9d493()
@@ -32,11 +32,11 @@ function function_6c78c4cdcb9d493()
     
     level callback::add( "mimic_spawned", &function_8159c23277f3afe0 );
     level callback::add( "on_entity_hidden_in_prop", &function_385451540bf346eb );
-    namespace_614554f86e52695c::function_e4a440552e4cf1f4( &function_746a157a8ec25790 );
+    scripts\cp_mp\agents\ai_spawn_director::function_e4a440552e4cf1f4( &function_746a157a8ec25790 );
 }
 
 // Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24e
 // Size: 0x2a
 function function_8159c23277f3afe0( params )
@@ -45,7 +45,7 @@ function function_8159c23277f3afe0( params )
 }
 
 // Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x280
 // Size: 0x97, Type: bool
 function function_6a4f7e54f18ede06( var_5af4453d13e66d3b )
@@ -64,7 +64,7 @@ function function_6a4f7e54f18ede06( var_5af4453d13e66d3b )
 }
 
 // Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x320
 // Size: 0x152
 function function_746a157a8ec25790( zombie, requestid, data )
@@ -100,7 +100,7 @@ function function_746a157a8ec25790( zombie, requestid, data )
 }
 
 // Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47a
 // Size: 0xdf
 function function_385451540bf346eb( params )

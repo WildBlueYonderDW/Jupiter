@@ -11,14 +11,15 @@
 #namespace namespace_7bed1bd22c5ef2;
 
 // Namespace namespace_7bed1bd22c5ef2 / namespace_5fbd72bce03d9416
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1be
 // Size: 0x73
 function function_ab8fa8a2c59b92c3()
 {
     self waittill( "orb_attack_setup_complete" );
     
-    for (i = 0; i < self.var_2810bd3ceddee8da.var_9ee6d8bf092e9f5f; i++) {
+    for ( i = 0; i < self.var_2810bd3ceddee8da.var_9ee6d8bf092e9f5f ; i++ )
+    {
         self.var_2810bd3ceddee8da.ents[ i ] callback::add( "homing_ball_hit_character", &function_bbd671e5b69771c );
     }
     
@@ -111,7 +112,8 @@ function private function_c1828c0b3ba38f2e()
     
     spawncount = 0;
     
-    for (i = 0; i < self.var_2810bd3ceddee8da.var_9ee6d8bf092e9f5f; i++) {
+    for ( i = 0; i < self.var_2810bd3ceddee8da.var_9ee6d8bf092e9f5f ; i++ )
+    {
         orb = self.var_2810bd3ceddee8da.ents[ i ];
         
         if ( istrue( orb.attack_active ) )
@@ -156,7 +158,7 @@ function private function_249b8b5638a099e8()
 // Namespace namespace_7bed1bd22c5ef2 / namespace_5fbd72bce03d9416
 // Params 5, eflags: 0x4
 // Checksum 0x0, Offset: 0x5c2
-// Size: 0x13f
+// Size: 0x14d
 function private function_35e962b66b1f3e0c( orb, velocity, airdrag, spawnpos, targetent )
 {
     orb utility::function_3ab9164ef76940fd( "spittle", "spittle_on" );
@@ -171,6 +173,7 @@ function private function_35e962b66b1f3e0c( orb, velocity, airdrag, spawnpos, ta
     
     orb setcandamage( 1 );
     orb solid();
+    orb.var_bb07689518ddece0 = 1;
     orb.scripthealth = self.var_2810bd3ceddee8da.var_847dfca7cc99d08c;
     orb.team = orb.team;
     orb.var_c1ae8e663059a05c = gettime();
@@ -184,7 +187,7 @@ function private function_35e962b66b1f3e0c( orb, velocity, airdrag, spawnpos, ta
 
 // Namespace namespace_7bed1bd22c5ef2 / namespace_5fbd72bce03d9416
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x709
+// Checksum 0x0, Offset: 0x717
 // Size: 0x191
 function private function_d59e5308c8840e22()
 {
@@ -229,7 +232,7 @@ function private function_d59e5308c8840e22()
 
 // Namespace namespace_7bed1bd22c5ef2 / namespace_5fbd72bce03d9416
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x8a2
+// Checksum 0x0, Offset: 0x8b0
 // Size: 0xda
 function private function_1e6f737ee4a06ebd()
 {
@@ -263,7 +266,7 @@ function private function_1e6f737ee4a06ebd()
 
 // Namespace namespace_7bed1bd22c5ef2 / namespace_5fbd72bce03d9416
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x984
+// Checksum 0x0, Offset: 0x992
 // Size: 0x77
 function private kill_orb()
 {
@@ -282,7 +285,7 @@ function private kill_orb()
 
 // Namespace namespace_7bed1bd22c5ef2 / namespace_5fbd72bce03d9416
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xa03
+// Checksum 0x0, Offset: 0xa11
 // Size: 0xd1
 function private function_a4438c777cf89315( shoot_fov, i, num_to_spawn, var_3f7f044e180a4e3a )
 {
@@ -302,7 +305,7 @@ function private function_a4438c777cf89315( shoot_fov, i, num_to_spawn, var_3f7f
 
 // Namespace namespace_7bed1bd22c5ef2 / namespace_5fbd72bce03d9416
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xadd
+// Checksum 0x0, Offset: 0xaeb
 // Size: 0x82
 function private function_19ca5b0f8bb3d056()
 {
@@ -310,20 +313,22 @@ function private function_19ca5b0f8bb3d056()
     var_9ee6d8bf092e9f5f = self.var_2810bd3ceddee8da.var_9ee6d8bf092e9f5f;
     self waittill( "death" );
     
-    for (i = 0; i < var_9ee6d8bf092e9f5f; i++) {
+    for ( i = 0; i < var_9ee6d8bf092e9f5f ; i++ )
+    {
         orbs[ i ] kill_orb();
     }
     
     wait 2;
     
-    for (i = 0; i < var_9ee6d8bf092e9f5f; i++) {
+    for ( i = 0; i < var_9ee6d8bf092e9f5f ; i++ )
+    {
         orbs[ i ] delete();
     }
 }
 
 // Namespace namespace_7bed1bd22c5ef2 / namespace_5fbd72bce03d9416
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xb67
+// Checksum 0x0, Offset: 0xb75
 // Size: 0xbe
 function private function_4ef64f09f447eed7()
 {
@@ -331,7 +336,8 @@ function private function_4ef64f09f447eed7()
     
     while ( true )
     {
-        for (i = 0; i < self.var_2810bd3ceddee8da.var_9ee6d8bf092e9f5f; i++) {
+        for ( i = 0; i < self.var_2810bd3ceddee8da.var_9ee6d8bf092e9f5f ; i++ )
+        {
             orb = self.var_2810bd3ceddee8da.ents[ i ];
             
             if ( isdefined( orb.scripthealth ) && orb.scripthealth > 0 )

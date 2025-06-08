@@ -4,7 +4,7 @@
 #namespace linked_list;
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98
 // Size: 0x45
 function function_e0143bb4b41a77c4()
@@ -18,7 +18,7 @@ function function_e0143bb4b41a77c4()
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe6
 // Size: 0x23, Type: bool
 function function_dd1ede0842d8e484( var_ab177af9e881324f )
@@ -27,7 +27,7 @@ function function_dd1ede0842d8e484( var_ab177af9e881324f )
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112
 // Size: 0x2a
 function function_11a80ea7fe6ea9e0()
@@ -39,7 +39,7 @@ function function_11a80ea7fe6ea9e0()
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x145
 // Size: 0x117
 function addnode( newnode, var_f3b9a2fb70be7 )
@@ -77,7 +77,7 @@ function addnode( newnode, var_f3b9a2fb70be7 )
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x264
 // Size: 0x13e
 function removenode( var_7dcdc8e8873aeb30 )
@@ -117,7 +117,7 @@ function removenode( var_7dcdc8e8873aeb30 )
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3aa
 // Size: 0xd1
 function removestartnode()
@@ -148,7 +148,7 @@ function removestartnode()
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x483
 // Size: 0xd1
 function removeendnode()
@@ -179,7 +179,7 @@ function removeendnode()
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x55c
 // Size: 0x73
 function function_7f2de7f012dc412f( var_d9e7db9b48a182d5 )
@@ -205,7 +205,7 @@ function function_7f2de7f012dc412f( var_d9e7db9b48a182d5 )
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d7
 // Size: 0x2f
 function getsize()
@@ -216,7 +216,7 @@ function getsize()
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x60f
 // Size: 0x2f
 function getstartnode()
@@ -227,7 +227,7 @@ function getstartnode()
 }
 
 // Namespace linked_list / scripts\common\linked_list
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x647
 // Size: 0x2f
 function getendnode()
@@ -240,7 +240,7 @@ function getendnode()
 /#
 
     // Namespace linked_list / scripts\common\linked_list
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x67f
     // Size: 0x5, Type: dev
     function function_d35c195d3d01e75e()
@@ -249,7 +249,7 @@ function getendnode()
     }
 
     // Namespace linked_list / scripts\common\linked_list
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x68c
     // Size: 0x2b, Type: dev
     function function_c09bf9c86f65e4ac( var_ad80ec0659e85f9e )
@@ -260,7 +260,7 @@ function getendnode()
     }
 
     // Namespace linked_list / scripts\common\linked_list
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x6bf
     // Size: 0x4b, Type: dev
     function function_3a28dcc9cc1b6ae3( var_ad80ec0659e85f9e )
@@ -272,7 +272,7 @@ function getendnode()
     }
 
     // Namespace linked_list / scripts\common\linked_list
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x712
     // Size: 0xae, Type: dev
     function function_c4e2f2dcd675c939( var_ad80ec0659e85f9e )

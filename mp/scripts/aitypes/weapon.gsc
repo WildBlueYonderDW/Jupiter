@@ -9,7 +9,7 @@
 #namespace weapon;
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdc
 // Size: 0x99
 function initweaponarray()
@@ -33,7 +33,7 @@ function initweaponarray()
 }
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17d
 // Size: 0xc4
 function choosebestweapon()
@@ -67,7 +67,7 @@ function choosebestweapon()
 }
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24a
 // Size: 0x46
 function getsidearmdist()
@@ -90,7 +90,7 @@ function getsidearmdist()
 }
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x299
 // Size: 0x81, Type: bool
 function withinswitchtopistoldist()
@@ -106,7 +106,7 @@ function withinswitchtopistoldist()
 }
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x323
 // Size: 0x16d
 function evalweaponscore( weapclass, weapon )
@@ -181,7 +181,7 @@ function evalweaponscore( weapclass, weapon )
 }
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x499
 // Size: 0x27
 function issniper( task )
@@ -195,7 +195,7 @@ function issniper( task )
 }
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c9
 // Size: 0x46
 function usingsidearm( task )
@@ -209,7 +209,7 @@ function usingsidearm( task )
 }
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x518
 // Size: 0x85
 function shouldswitchtosidearm( task )
@@ -238,7 +238,7 @@ function shouldswitchtosidearm( task )
 }
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5a6
 // Size: 0x77
 function canswitchtosidearm( task )
@@ -262,7 +262,7 @@ function canswitchtosidearm( task )
 }
 
 // Namespace weapon / scripts\aitypes\weapon
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x626
 // Size: 0x55
 function checkcoverforsidearm( task )

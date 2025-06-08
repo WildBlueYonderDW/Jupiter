@@ -18,7 +18,7 @@
 #namespace mp_jup_terminal;
 
 // Namespace mp_jup_terminal / scripts\mp\maps\mp_jup_terminal\mp_jup_terminal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d6
 // Size: 0xd9
 function main()
@@ -44,7 +44,7 @@ function main()
 }
 
 // Namespace mp_jup_terminal / scripts\mp\maps\mp_jup_terminal\mp_jup_terminal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b7
 // Size: 0xbe
 function function_92de98a3203eeb8d()
@@ -63,7 +63,7 @@ function function_92de98a3203eeb8d()
 }
 
 // Namespace mp_jup_terminal / scripts\mp\maps\mp_jup_terminal\mp_jup_terminal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57d
 // Size: 0x170
 function function_2c1e7d6df0d51540()
@@ -96,7 +96,7 @@ function function_2c1e7d6df0d51540()
 }
 
 // Namespace mp_jup_terminal / scripts\mp\maps\mp_jup_terminal\mp_jup_terminal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6f5
 // Size: 0x7f9
 function function_31dc060e85f4a689()

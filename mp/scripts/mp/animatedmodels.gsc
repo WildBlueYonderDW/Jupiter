@@ -4,7 +4,7 @@
 #namespace animatedmodels;
 
 // Namespace animatedmodels / scripts\mp\animatedmodels
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc9
 // Size: 0x127
 function main()
@@ -34,7 +34,7 @@ function main()
 }
 
 // Namespace animatedmodels / scripts\mp\animatedmodels
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f8
 // Size: 0x82
 function animatemodel()

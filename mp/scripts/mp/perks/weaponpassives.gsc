@@ -13,7 +13,7 @@
 #namespace weaponpassives;
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x144
 // Size: 0xe
 function weaponpassivesinit()
@@ -22,7 +22,7 @@ function weaponpassivesinit()
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15a
 // Size: 0xa
 function onplayerspawnedweaponpassives()
@@ -31,7 +31,7 @@ function onplayerspawnedweaponpassives()
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c
 // Size: 0x39
 function applyweaponchange()
@@ -45,7 +45,7 @@ function applyweaponchange()
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ad
 // Size: 0x29
 function watchweaponchanged()
@@ -60,7 +60,7 @@ function watchweaponchanged()
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1de
 // Size: 0x91
 function giveweaponpassives( weapon )
@@ -80,7 +80,7 @@ function giveweaponpassives( weapon )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x277
 // Size: 0x29
 function giveplayerpassive( passive )
@@ -90,7 +90,7 @@ function giveplayerpassive( passive )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a8
 // Size: 0x6d
 function clearpassives()
@@ -107,7 +107,7 @@ function clearpassives()
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31d
 // Size: 0xc
 function forgetpassives()
@@ -116,7 +116,7 @@ function forgetpassives()
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x331
 // Size: 0x42
 function definepassivevalue( link )
@@ -133,7 +133,7 @@ function definepassivevalue( link )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37b
 // Size: 0x1e
 function getpassivevalue( link )
@@ -143,7 +143,7 @@ function getpassivevalue( link )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3a2
 // Size: 0x28
 function setpassivevalue( link, value )
@@ -153,7 +153,7 @@ function setpassivevalue( link, value )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3d2
 // Size: 0x3a, Type: bool
 function teamsmatch( sourceplayer, targetplayer )
@@ -167,7 +167,7 @@ function teamsmatch( sourceplayer, targetplayer )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x415
 // Size: 0x13
 function updateweaponpassivesonuse( player, objweapon )
@@ -176,7 +176,7 @@ function updateweaponpassivesonuse( player, objweapon )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x430
 // Size: 0x53
 function updateweaponpassivesondamage( victim, attacker, damage, smeansofdeath, objweapon, impactpoint, impactdir, shitloc, inflictor, query )
@@ -185,7 +185,7 @@ function updateweaponpassivesondamage( victim, attacker, damage, smeansofdeath, 
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48b
 // Size: 0xb
 function loadoutweapongiven( objweapon )
@@ -194,7 +194,7 @@ function loadoutweapongiven( objweapon )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x49e
 // Size: 0x43
 function updateweaponpassivesonkill( einflictor, attacker, victim, idamage, smeansofdeath, objweapon, shitloc, vdir )
@@ -203,7 +203,7 @@ function updateweaponpassivesonkill( einflictor, attacker, victim, idamage, smea
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e9
 // Size: 0x83
 function testpassivemessage( passive, suffix )
@@ -235,7 +235,7 @@ function testpassivemessage( passive, suffix )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x574
 // Size: 0x68
 function checkpassivemessage( passive, suffix )
@@ -260,7 +260,7 @@ function checkpassivemessage( passive, suffix )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5e4
 // Size: 0x4b, Type: bool
 function getpassivedeathwatching( attacker, key )
@@ -284,7 +284,7 @@ function getpassivedeathwatching( attacker, key )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x638
 // Size: 0x46
 function setpassivedeathwatching( attacker, key, enabled )
@@ -298,7 +298,7 @@ function setpassivedeathwatching( attacker, key, enabled )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x686
 // Size: 0x3c
 function clearpassivedeathwatching( attacker, key )
@@ -312,7 +312,7 @@ function clearpassivedeathwatching( attacker, key )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6ca
 // Size: 0x9b
 function setstackvalues( id, stacksmax, var_4d8375d9e2e75e74, decaytime )
@@ -334,7 +334,7 @@ function setstackvalues( id, stacksmax, var_4d8375d9e2e75e74, decaytime )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76d
 // Size: 0x43
 function getstackvalues( id )
@@ -354,7 +354,7 @@ function getstackvalues( id )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b9
 // Size: 0x30
 function getstackcount( id )
@@ -370,7 +370,7 @@ function getstackcount( id )
 }
 
 // Namespace weaponpassives / scripts\mp\perks\weaponpassives
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f2
 // Size: 0x13
 function addstackcount( id, amount )

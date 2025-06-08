@@ -31,7 +31,7 @@ function private function_f49a30f92555b827()
 }
 
 // Namespace namespace_dc9c4cdd011135ef / namespace_1cf004a8aa98eafd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x27f
 // Size: 0xe7
 function function_e62bc0179274066c( asmname, statename, params )

@@ -13,7 +13,7 @@
 #namespace jup_spawner_zombie_mimic_hvt_emp;
 
 // Namespace jup_spawner_zombie_mimic_hvt_emp / namespace_1800ac27b2cd1979
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x1fa
 function main()
@@ -21,7 +21,7 @@ function main()
     self.aitypeid = function_2336488258354fbc( #"aitype", %"jup_spawner_zombie_mimic_hvt_emp" );
     self.var_534e788bc498be9f = getscriptbundle( %"hash_377e01dde82ed647" );
     self.subclass = self.var_534e788bc498be9f.name;
-    self.nameindex = randomintrange( 1, 22 );
+    self.nameindex = randomintrange( 1, 18 );
     self.health = 10000;
     self.maxhealth = 10000;
     self.behaviortreeasset = "zombie_mimic";
@@ -52,7 +52,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_mimic_hvt_emp / namespace_1800ac27b2cd1979
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x44f
 // Size: 0x57
 function setup_model()
@@ -69,7 +69,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_mimic_hvt_emp / namespace_1800ac27b2cd1979
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ae
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -78,7 +78,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_mimic_hvt_emp / namespace_1800ac27b2cd1979
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4bf
 // Size: 0x10f
 function precache()
@@ -112,7 +112,7 @@ function precache()
 }
 
 // Namespace jup_spawner_zombie_mimic_hvt_emp / namespace_1800ac27b2cd1979
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5d6
 // Size: 0xd6
 function setup_weapons()

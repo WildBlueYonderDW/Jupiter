@@ -19,12 +19,12 @@
 #namespace playerhealth;
 
 // Namespace playerhealth / scripts\mp\playerhealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1eb
 // Size: 0x11f
 function init()
 {
-    healthregendelay = scripts\mp\utility\dvars::getoverridedvarfloatexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_healthregentime" ), @"hash_2922210021914dd7" );
+    healthregendelay = scripts\mp\utility\dvars::getoverridedvarfloatexceptmatchrulesvalues( hashcat( @"scr_", getgametype(), "_healthregentime" ), @"scr_player_healthregentime" );
     scripts\mp\tweakables::settweakablevalue( "player", "healthregentime", healthregendelay );
     scripts\mp\tweakables::settweakablelastvalue( "player", "healthregentime", healthregendelay );
     level.healthregendelay = scripts\mp\tweakables::gettweakablevalue( "player", "healthregentime" );
@@ -42,7 +42,7 @@ function init()
 }
 
 // Namespace playerhealth / scripts\mp\playerhealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x312
 // Size: 0x1f
 function onplayerspawned()
@@ -53,7 +53,7 @@ function onplayerspawned()
 }
 
 // Namespace playerhealth / scripts\mp\playerhealth
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x339
 // Size: 0xb3
 function onfullhealth( starthealth, var_823ca369fafd4a36, var_7f86cf029bef696d )
@@ -84,7 +84,7 @@ function onfullhealth( starthealth, var_823ca369fafd4a36, var_7f86cf029bef696d )
 }
 
 // Namespace playerhealth / scripts\mp\playerhealth
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f4
 // Size: 0x13f
 function getgametypehealthperframe()
@@ -100,9 +100,9 @@ function getgametypehealthperframe()
     
     healthperframe = level.var_be39d6b46044f344 * 0.05 * var_881fb15f4d296741;
     
-    if ( getdvarint( @"hash_b3d928c9f115218a", 0 ) > 0 )
+    if ( getdvarint( @"scr_override_health_regen_per_sec", 0 ) > 0 )
     {
-        var_fbb0e274527f2097 = getdvarint( @"hash_b3d928c9f115218a", 0 );
+        var_fbb0e274527f2097 = getdvarint( @"scr_override_health_regen_per_sec", 0 );
         healthperframe = var_fbb0e274527f2097 * 0.05 * var_881fb15f4d296741;
     }
     

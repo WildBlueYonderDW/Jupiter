@@ -8,7 +8,7 @@
 #namespace obj_grindzone;
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x241
 // Size: 0x9
 function init()
@@ -17,7 +17,7 @@ function init()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x252
 // Size: 0x48
 function setuphudelements()
@@ -30,7 +30,7 @@ function setuphudelements()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a2
 // Size: 0x1ef
 function setupobjective( trigger, var_5ddbc1faed2c56e6, skipobjid )
@@ -91,7 +91,7 @@ function setupobjective( trigger, var_5ddbc1faed2c56e6, skipobjid )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49a
 // Size: 0xb4
 function setobjectivecallbacks()
@@ -110,7 +110,7 @@ function setobjectivecallbacks()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x556
 // Size: 0x2a
 function getreservedobjid( scriptlabel )
@@ -128,7 +128,7 @@ function getreservedobjid( scriptlabel )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x589
 // Size: 0x13c
 function setupscriptablevisuals( visorigin, zone )
@@ -150,7 +150,7 @@ function setupscriptablevisuals( visorigin, zone )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6ce
 // Size: 0x66
 function fixuptriggerorigin( trigger, objectivekey )
@@ -172,7 +172,7 @@ function fixuptriggerorigin( trigger, objectivekey )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x73d
 // Size: 0x9c
 function fixupscriptableorigin( zone )
@@ -201,7 +201,7 @@ function fixupscriptableorigin( zone )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7e2
 // Size: 0xc8
 function function_f7666b5e6cba796e( zone, upangles )
@@ -237,7 +237,7 @@ function function_f7666b5e6cba796e( zone, upangles )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b3
 // Size: 0x48
 function activatezone()
@@ -252,7 +252,7 @@ function activatezone()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x903
 // Size: 0x48
 function deactivatezone()
@@ -267,7 +267,7 @@ function deactivatezone()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x953
 // Size: 0x22
 function setneutral()
@@ -278,7 +278,7 @@ function setneutral()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x97d
 // Size: 0x28
 function zone_onusebegin( player )
@@ -288,7 +288,7 @@ function zone_onusebegin( player )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9ad
 // Size: 0x6d
 function zone_onuseupdate( team, progress, change, capplayer )
@@ -307,7 +307,7 @@ function zone_onuseupdate( team, progress, change, capplayer )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa22
 // Size: 0x5e
 function zone_onuseend( team, player, success )
@@ -326,7 +326,7 @@ function zone_onuseend( team, player, success )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa88
 // Size: 0x6c
 function zone_onuse( player )
@@ -341,7 +341,7 @@ function zone_onuse( player )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xafc
 // Size: 0x10
 function zone_onunoccupied()
@@ -351,7 +351,7 @@ function zone_onunoccupied()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb14
 // Size: 0x16
 function zone_oncontested()
@@ -361,7 +361,7 @@ function zone_oncontested()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb32
 // Size: 0x69
 function zone_onuncontested( lastclaimteam )
@@ -382,7 +382,7 @@ function zone_onuncontested( lastclaimteam )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba3
 // Size: 0x4b
 function setcrankedtimerzonecap( player )
@@ -394,7 +394,7 @@ function setcrankedtimerzonecap( player )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbf6
 // Size: 0x12
 function setneutralicons()
@@ -403,7 +403,7 @@ function setneutralicons()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc10
 // Size: 0x1b
 function setteamicons()
@@ -412,7 +412,7 @@ function setteamicons()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc33
 // Size: 0x12
 function setcontestedicons()
@@ -421,7 +421,7 @@ function setcontestedicons()
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc4d
 // Size: 0x46
 function updateflagstate( state, keeppulse )
@@ -435,7 +435,7 @@ function updateflagstate( state, keeppulse )
 }
 
 // Namespace obj_grindzone / scripts\mp\gametypes\obj_grindzone
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc9b
 // Size: 0x20
 function updateflagcapturestate( state )

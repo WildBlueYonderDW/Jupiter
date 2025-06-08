@@ -4,7 +4,7 @@
 #namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs;
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x46f
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4e4
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x553
 // Size: 0xd4
 function createstructs( fe, us, cf )
@@ -67,7 +67,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62f
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -76,7 +76,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x639
 // Size: 0xe
 function cleanup()
@@ -85,7 +85,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64f
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -100,7 +100,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6c1
 // Size: 0xce
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -134,7 +134,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x797
 // Size: 0x18b
 function function_64a702424e3070d8( fe, us, cf )
@@ -155,7 +155,7 @@ function function_64a702424e3070d8( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x92a
 // Size: 0x18b
 function function_42628b3547229438( fe, us, cf )
@@ -176,7 +176,7 @@ function function_42628b3547229438( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xabd
 // Size: 0x18b
 function function_aeeaeb4d3acd86fc( fe, us, cf )
@@ -197,7 +197,7 @@ function function_aeeaeb4d3acd86fc( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc50
 // Size: 0x18b
 function function_a5f7233772635bb4( fe, us, cf )
@@ -218,7 +218,7 @@ function function_a5f7233772635bb4( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xde3
 // Size: 0x18b
 function function_60f96c94b81dd5ea( fe, us, cf )
@@ -239,7 +239,7 @@ function function_60f96c94b81dd5ea( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf76
 // Size: 0x18b
 function function_b25b5f013dc76ada( fe, us, cf )
@@ -260,7 +260,7 @@ function function_b25b5f013dc76ada( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_activities_unstable_rift_obelisk_cs / namespace_5e97d2e611a10663
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1109
 // Size: 0x504
 function function_6da2952367672ac0()

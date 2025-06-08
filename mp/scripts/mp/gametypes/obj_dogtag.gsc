@@ -26,7 +26,7 @@
 #namespace obj_dogtag;
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a6
 // Size: 0xa2
 function init()
@@ -47,7 +47,7 @@ function init()
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x750
 // Size: 0xd2, Type: bool
 function shouldspawntags( attacker )
@@ -86,7 +86,7 @@ function shouldspawntags( attacker )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x82b
 // Size: 0xa52
 function spawndogtags( victim, attacker, victimnotification, meansofdeath )
@@ -277,7 +277,7 @@ function spawndogtags( victim, attacker, victimnotification, meansofdeath )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1285
 // Size: 0x108
 function resettags()
@@ -301,7 +301,7 @@ function resettags()
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1395
 // Size: 0x27b
 function removetags( guid, notifyattacker, collector )
@@ -351,7 +351,8 @@ function removetags( guid, notifyattacker, collector )
         {
             level.dogtags[ guid ] notify( "death" );
             
-            for (i = 0; i < level.dogtags[ guid ].visuals.size; i++) {
+            for ( i = 0; i < level.dogtags[ guid ].visuals.size ; i++ )
+            {
                 level.dogtags[ guid ].visuals[ i ] delete();
             }
             
@@ -371,7 +372,7 @@ function removetags( guid, notifyattacker, collector )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1618
 // Size: 0x1c5
 function function_c2a00a1d31f16522( dogtags, collector )
@@ -415,7 +416,7 @@ function function_c2a00a1d31f16522( dogtags, collector )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17e5
 // Size: 0x15c
 function onplayerjoinedteam( player )
@@ -456,7 +457,7 @@ function onplayerjoinedteam( player )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1949
 // Size: 0xc1
 function showtoteam( gameobject, team )
@@ -483,7 +484,7 @@ function showtoteam( gameobject, team )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a12
 // Size: 0xcb
 function function_e80ac8820c20e9bd( gameobject, teams )
@@ -510,7 +511,7 @@ function function_e80ac8820c20e9bd( gameobject, teams )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ae5
 // Size: 0xd, Type: bool
 function playercanusetags( player )
@@ -519,7 +520,7 @@ function playercanusetags( player )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1afb
 // Size: 0x29a
 function onuse( player )
@@ -603,7 +604,7 @@ function onuse( player )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d9d
 // Size: 0x74
 function watchrapidtagpickup()
@@ -632,7 +633,7 @@ function watchrapidtagpickup()
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e19
 // Size: 0x43
 function tagteamupdater( tags )
@@ -649,7 +650,7 @@ function tagteamupdater( tags )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e64
 // Size: 0x52
 function clearonvictimdisconnect( victim )
@@ -664,7 +665,7 @@ function clearonvictimdisconnect( victim )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ebe
 // Size: 0x33
 function ontagpickupevent( event )
@@ -681,7 +682,7 @@ function ontagpickupevent( event )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ef9
 // Size: 0x18e
 function lifelimitedallyonuse( player )
@@ -724,7 +725,7 @@ function lifelimitedallyonuse( player )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x208f
 // Size: 0x12b
 function lifelimitedenemyonuse( player )
@@ -761,7 +762,7 @@ function lifelimitedenemyonuse( player )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21c2
 // Size: 0x25
 function respawn()
@@ -772,7 +773,7 @@ function respawn()
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21ef
 // Size: 0x149
 function allyonuse( player )
@@ -818,7 +819,7 @@ function allyonuse( player )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2340
 // Size: 0x191
 function enemyonuse( player )
@@ -875,7 +876,7 @@ function enemyonuse( player )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24d9
 // Size: 0x39
 function playersettagcount( tagcount )
@@ -892,12 +893,12 @@ function playersettagcount( tagcount )
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x251a
 // Size: 0x7a
 function function_4b5bf3a3091d471e()
 {
-    if ( getdvarint( @"hash_669ae0558e9a0a64", 0 ) == 1 )
+    if ( getdvarint( @"scr_enable_server_halloween_content", 0 ) == 1 )
     {
         return ( 0, 0, 36 );
     }
@@ -916,12 +917,12 @@ function function_4b5bf3a3091d471e()
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x259c
 // Size: 0x22
 function function_c8a7bf223baf8a6c()
 {
-    if ( getdvarint( @"hash_669ae0558e9a0a64", 0 ) == 1 )
+    if ( getdvarint( @"scr_enable_server_halloween_content", 0 ) == 1 )
     {
         return "decor_halloween_human_skull_01_gold_no_physics";
     }
@@ -930,12 +931,12 @@ function function_c8a7bf223baf8a6c()
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25c7
 // Size: 0x22
 function function_1e4c1c053ea20dd5()
 {
-    if ( getdvarint( @"hash_669ae0558e9a0a64", 0 ) == 1 )
+    if ( getdvarint( @"scr_enable_server_halloween_content", 0 ) == 1 )
     {
         return "decor_halloween_human_skull_01_gold_no_physics";
     }
@@ -944,12 +945,12 @@ function function_1e4c1c053ea20dd5()
 }
 
 // Namespace obj_dogtag / scripts\mp\gametypes\obj_dogtag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25f2
 // Size: 0x37
 function function_f793a9fd32c1a72b( tag )
 {
-    if ( getdvarint( @"hash_669ae0558e9a0a64", 0 ) == 0 )
+    if ( getdvarint( @"scr_enable_server_halloween_content", 0 ) == 0 )
     {
         return;
     }

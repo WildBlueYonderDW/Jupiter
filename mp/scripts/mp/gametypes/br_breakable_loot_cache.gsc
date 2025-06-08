@@ -22,7 +22,7 @@ function autoexec init()
         return;
     }
     
-    if ( getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         scripts\mp\flags::function_1240434f4201ac9d( "ssc_initialized" );
         scripts\cp_mp\structspawnconfig::function_4f7660cfd85cd517( "breakable_cache", &function_e6c1c35181a2870f );
@@ -33,7 +33,7 @@ function autoexec init()
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x212
 // Size: 0x24
 function function_e6c1c35181a2870f( structname )
@@ -43,7 +43,7 @@ function function_e6c1c35181a2870f( structname )
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x41
 function function_88501e89a993b890( structname, cachestruct )
@@ -58,7 +58,7 @@ function function_88501e89a993b890( structname, cachestruct )
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x289
 // Size: 0xd8
 function function_688349ac143a54bc( structname )
@@ -86,7 +86,7 @@ function function_688349ac143a54bc( structname )
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x369
 // Size: 0x84
 function function_eb667f4637b65478()
@@ -108,7 +108,7 @@ function function_eb667f4637b65478()
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f5
 // Size: 0x61
 function function_13ace45be109698e( cachestruct )
@@ -124,7 +124,7 @@ function function_13ace45be109698e( cachestruct )
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x45f
 // Size: 0x3d
 function spawncachesinglebase( origin, angles )
@@ -135,7 +135,7 @@ function spawncachesinglebase( origin, angles )
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x4a5
 // Size: 0x9f
 function function_86eda8d9956d4976( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -151,7 +151,7 @@ function function_86eda8d9956d4976( einflictor, eattacker, instance, idamage, id
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x54c
 // Size: 0xb7
 function function_c0897471dbdb42ad( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -170,7 +170,7 @@ function function_c0897471dbdb42ad( einflictor, eattacker, instance, idamage, id
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x60b
 // Size: 0x20
 function scriptablehide()
@@ -180,7 +180,7 @@ function scriptablehide()
 }
 
 // Namespace br_breakable_loot_cache / scripts\mp\gametypes\br_breakable_loot_cache
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x633
 // Size: 0xa2
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )

@@ -4,7 +4,7 @@
 #namespace mp_jup_gw_fallout_create_script;
 
 // Namespace mp_jup_gw_fallout_create_script / scripts\mp\maps\mp_jup_gw_fallout\mp_jup_gw_fallout_create_script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x306
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_gw_fallout_create_script / scripts\mp\maps\mp_jup_gw_fallout\mp_jup_gw_fallout_create_script
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x37b
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_gw_fallout_create_script / scripts\mp\maps\mp_jup_gw_fallout\mp_jup_gw_fallout_create_script
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3ea
 // Size: 0x3e44
 function createstructs( fe, us, cf )
@@ -744,7 +744,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_gw_fallout_create_script / scripts\mp\maps\mp_jup_gw_fallout\mp_jup_gw_fallout_create_script
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4236
 // Size: 0x2
 function function_7af6d59eef91a7dd()

@@ -4,7 +4,7 @@
 #namespace screens;
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x378
 // Size: 0x160
 function init()
@@ -39,7 +39,7 @@ function init()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e0
 // Size: 0xd1
 function group_by_flag()
@@ -58,7 +58,7 @@ function group_by_flag()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b9
 // Size: 0x47
 function screens_think()
@@ -82,7 +82,7 @@ function screens_think()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x608
 // Size: 0x2b7
 function do_state( state )
@@ -171,7 +171,7 @@ function do_state( state )
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c7
 // Size: 0x69
 function screens_create()
@@ -184,7 +184,7 @@ function screens_create()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x938
 // Size: 0x3a
 function screens_damage_think()
@@ -196,7 +196,7 @@ function screens_damage_think()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97a
 // Size: 0x3b
 function screens_delete()
@@ -213,7 +213,7 @@ function screens_delete()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9bd
 // Size: 0x11f
 function screens_fixed( screen_override )
@@ -264,7 +264,7 @@ function screens_fixed( screen_override )
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xae4
 // Size: 0xa2
 function screens_static()
@@ -291,7 +291,7 @@ function screens_static()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb8e
 // Size: 0xf3
 function screens_flip()
@@ -304,8 +304,10 @@ function screens_flip()
     self endon( "stop_screens" );
     self endon( "stop_screens_flip" );
     
-    for (start_screen = randomint( self.screens_flip.size ) + 1; true; start_screen = 1) {
-        for (i = start_screen; i < self.screens_flip.size + 1; i++) {
+    for ( start_screen = randomint( self.screens_flip.size ) + 1; true ; start_screen = 1 )
+    {
+        for ( i = start_screen; i < self.screens_flip.size + 1 ; i++ )
+        {
             delay = 3;
             screen = "screen_flip" + i;
             
@@ -325,7 +327,7 @@ function screens_flip()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc89
 // Size: 0xfd
 function screens_fliprnd()
@@ -338,8 +340,10 @@ function screens_fliprnd()
     self endon( "stop_screens" );
     self endon( "stop_screens_fliprnd" );
     
-    for (start_screen = randomint( self.screens_fliprnd.size ) + 1; true; start_screen = 1) {
-        for (i = start_screen; i < self.screens_fliprnd.size + 1; i++) {
+    for ( start_screen = randomint( self.screens_fliprnd.size ) + 1; true ; start_screen = 1 )
+    {
+        for ( i = start_screen; i < self.screens_fliprnd.size + 1 ; i++ )
+        {
             delay = randomfloatrange( 1.5, 4 );
             screen = "screen_fliprnd" + i;
             
@@ -359,7 +363,7 @@ function screens_fliprnd()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd8e
 // Size: 0xa2
 function screens_bink()
@@ -386,7 +390,7 @@ function screens_bink()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe38
 // Size: 0x15e
 function screens_red()
@@ -400,8 +404,10 @@ function screens_red()
     self endon( "stop_screens_red" );
     self.reversed = 0;
     
-    for (start_screen = randomint( self.screens_red.size ) + 1; true; start_screen = 1) {
-        for (i = 1; i < self.screens_red.size + 1; i++) {
+    for ( start_screen = randomint( self.screens_red.size ) + 1; true ; start_screen = 1 )
+    {
+        for ( i = 1; i < self.screens_red.size + 1 ; i++ )
+        {
             delay = randomfloatrange( 0.25, 0.5 );
             
             if ( randomint( 6 ) == 0 && !self.reversed )
@@ -439,7 +445,7 @@ function screens_red()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf9e
 // Size: 0xef
 function screens_alertflip()
@@ -475,14 +481,15 @@ function screens_alertflip()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1095
 // Size: 0x273
 function get_screens()
 {
     parts = getnumparts( self.screen_model.model );
     
-    for (i = 0; i < parts; i++) {
+    for ( i = 0; i < parts ; i++ )
+    {
         part_name = getpartname( self.screen_model.model, i );
         
         if ( issubstr( part_name, "screen_" ) )
@@ -578,7 +585,7 @@ function get_screens()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1310
 // Size: 0xba
 function delete_screens()
@@ -625,7 +632,7 @@ function delete_screens()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13d2
 // Size: 0x16c
 function get_state()
@@ -674,7 +681,7 @@ function get_state()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1547
 // Size: 0x180
 function watch_scriptable()
@@ -714,7 +721,7 @@ function watch_scriptable()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16cf
 // Size: 0x19, Type: bool
 function debug()
@@ -728,7 +735,7 @@ function debug()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16f1
 // Size: 0x2
 function set_screens_to_red()
@@ -737,7 +744,7 @@ function set_screens_to_red()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16fb
 // Size: 0x211
 function screens_debug_counter()
@@ -789,7 +796,7 @@ function screens_debug_counter()
 }
 
 // Namespace screens / scripts\common\screens
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1914
 // Size: 0x120
 function screens_wait_for_flag( flag )

@@ -9,7 +9,7 @@
 #namespace civilian_mp_dmz_hostage;
 
 // Namespace civilian_mp_dmz_hostage / namespace_dae9192b2cae0749
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16f
 // Size: 0x120
 function main()
@@ -37,7 +37,7 @@ function main()
 }
 
 // Namespace civilian_mp_dmz_hostage / namespace_dae9192b2cae0749
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x297
 // Size: 0x57
 function setup_model()
@@ -54,7 +54,7 @@ function setup_model()
 }
 
 // Namespace civilian_mp_dmz_hostage / namespace_dae9192b2cae0749
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f6
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -63,7 +63,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace civilian_mp_dmz_hostage / namespace_dae9192b2cae0749
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x307
 // Size: 0xa7
 function precache()

@@ -21,7 +21,7 @@
 #namespace smokeairdrop;
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x514
 // Size: 0x2d
 function function_d1f6522bc93ed94e()
@@ -32,7 +32,7 @@ function function_d1f6522bc93ed94e()
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x549
 // Size: 0x90
 function function_7fcfdd32159bbacc()
@@ -45,7 +45,7 @@ function function_7fcfdd32159bbacc()
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e1
 // Size: 0x17, Type: bool
 function function_685e618d30da1588()
@@ -55,7 +55,7 @@ function function_685e618d30da1588()
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x601
 // Size: 0x1e, Type: bool
 function function_cd3021441020e8e5( superinfo )
@@ -65,7 +65,7 @@ function function_cd3021441020e8e5( superinfo )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x628
 // Size: 0xa
 function function_269055d8846e4665()
@@ -74,7 +74,7 @@ function function_269055d8846e4665()
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x63a
 // Size: 0x21
 function function_21c87ff403d1baf6()
@@ -88,7 +88,7 @@ function function_21c87ff403d1baf6()
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x663
 // Size: 0x3e, Type: bool
 function function_9815deed1e75ef69()
@@ -112,7 +112,7 @@ function function_9815deed1e75ef69()
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6aa
 // Size: 0xdc
 function function_5e73f80daa45f50c()
@@ -156,7 +156,7 @@ function function_5e73f80daa45f50c()
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x78e
 // Size: 0xc0
 function function_5ea4c63126ad14fc( streakinfo, mappointinfo )
@@ -176,7 +176,7 @@ function function_5ea4c63126ad14fc( streakinfo, mappointinfo )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x856
 // Size: 0x398
 function function_645ff6d87a68eb7e( droplocation, directionyaw, streakinfo )
@@ -198,7 +198,8 @@ function function_645ff6d87a68eb7e( droplocation, directionyaw, streakinfo )
     smokepoints = [];
     var_e767d0cb155a0e85 = [];
     
-    for (i = 0; i < var_c622144d94ae6d95; i++) {
+    for ( i = 0; i < var_c622144d94ae6d95 ; i++ )
+    {
         /#
             level thread scripts\mp\utility\debug::drawsphere( currentpoint, 10, 100, ( 1, 0, 0 ) );
         #/
@@ -241,7 +242,8 @@ function function_645ff6d87a68eb7e( droplocation, directionyaw, streakinfo )
     var_a093aaec0039f208 = 100;
     var_35efd96aa054a86f = 300;
     
-    for (j = 0; j < var_e767d0cb155a0e85.size; j++) {
+    for ( j = 0; j < var_e767d0cb155a0e85.size ; j++ )
+    {
         var_e767d0cb155a0e85[ j ].var_70cb65f6b1d7d192 = 0;
         
         if ( !var_7e544f0d6d580e78 && distancesquared( smokepoints[ j ], droplocation ) < squared( var_a093aaec0039f208 ) )
@@ -250,7 +252,8 @@ function function_645ff6d87a68eb7e( droplocation, directionyaw, streakinfo )
             var_7e544f0d6d580e78 = 1;
         }
         
-        for (p = 0; p < smokepoints.size; p++) {
+        for ( p = 0; p < smokepoints.size ; p++ )
+        {
             if ( distancesquared( smokepoints[ p ], smokepoints[ j ] ) < squared( var_35efd96aa054a86f ) && smokepoints[ j ] != smokepoints[ p ] && var_e767d0cb155a0e85[ p ].playsmokesound == 1 )
             {
                 var_e767d0cb155a0e85[ j ].playsmokesound = 0;
@@ -265,7 +268,7 @@ function function_645ff6d87a68eb7e( droplocation, directionyaw, streakinfo )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xbf6
 // Size: 0x148
 function function_495ebe31c275c3c5( smokepoint, missileorientation, var_ecb39c9eecbd70ad, index )
@@ -294,7 +297,7 @@ function function_495ebe31c275c3c5( smokepoint, missileorientation, var_ecb39c9e
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd47
 // Size: 0xba
 function function_1d7362315a15c932( data )
@@ -322,7 +325,7 @@ function function_1d7362315a15c932( data )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe09
 // Size: 0x88
 function function_14e878fafff171e9( data )
@@ -345,7 +348,7 @@ function function_14e878fafff171e9( data )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe99
 // Size: 0x64
 function function_799d835745d0b892()
@@ -371,7 +374,7 @@ function function_799d835745d0b892()
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf06
 // Size: 0x48
 function function_3f0235f3c067371d( drone )
@@ -384,7 +387,7 @@ function function_3f0235f3c067371d( drone )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf56
 // Size: 0x1fc
 function function_1ebb9b9e63a4df54( point, smokeforward )
@@ -451,7 +454,7 @@ function function_1ebb9b9e63a4df54( point, smokeforward )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x115a
 // Size: 0x7b
 function function_1f3e2f430f67a00b( smoketime, position )
@@ -469,7 +472,7 @@ function function_1f3e2f430f67a00b( smoketime, position )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11dd
 // Size: 0x5a
 function function_9353aa49397987c8( data )
@@ -490,7 +493,7 @@ function function_9353aa49397987c8( data )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x123f
 // Size: 0x25
 function function_7a3c1b282cbfd3ab( data )
@@ -500,7 +503,7 @@ function function_7a3c1b282cbfd3ab( data )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x126c
 // Size: 0x1d
 function function_6ae953c4b9e1cd89( drone )
@@ -509,7 +512,7 @@ function function_6ae953c4b9e1cd89( drone )
 }
 
 // Namespace smokeairdrop / scripts\mp\supers\smokeairdrop
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1291
 // Size: 0x1b
 function function_d0326bad3508b303( drone )

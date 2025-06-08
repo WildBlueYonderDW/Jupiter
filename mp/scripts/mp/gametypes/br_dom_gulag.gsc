@@ -27,7 +27,7 @@
 #namespace br_dom_gulag;
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbfe
 // Size: 0x3a3
 function function_53088602ea68d303()
@@ -85,7 +85,7 @@ function function_53088602ea68d303()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfa9
 // Size: 0x423
 function function_202939344423679c()
@@ -170,7 +170,7 @@ function function_202939344423679c()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13d4
 // Size: 0x515
 function function_c68da8e2dde4dfa3( arena )
@@ -299,7 +299,7 @@ function function_c68da8e2dde4dfa3( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18f1
 // Size: 0x15
 function function_ab54f9edc268063b()
@@ -308,7 +308,7 @@ function function_ab54f9edc268063b()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x190f
 // Size: 0x4
 function function_f9d544f605dde72a()
@@ -317,7 +317,7 @@ function function_f9d544f605dde72a()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x191c
 // Size: 0x15, Type: bool
 function function_a48b4bedb9bd286( nextmatch, arena )
@@ -326,16 +326,16 @@ function function_a48b4bedb9bd286( nextmatch, arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x193a
 // Size: 0x35
 function function_db27ff4a01ba7ace( offset )
 {
-    return level.br_level.br_circledelaytimes.size - 1 - getdvarint( @"hash_1141fea0c6ef428f", 4 ) - offset;
+    return level.br_level.br_circledelaytimes.size - 1 - getdvarint( @"scr_br_fc_circle_disable", 4 ) - offset;
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1978
 // Size: 0x3, Type: bool
 function function_301ed1c7ac115606()
@@ -344,7 +344,7 @@ function function_301ed1c7ac115606()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1984
 // Size: 0x7
 function function_370f0564e0b9d801()
@@ -353,7 +353,7 @@ function function_370f0564e0b9d801()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1994
 // Size: 0x7
 function function_196c3ee37902ff93()
@@ -362,7 +362,7 @@ function function_196c3ee37902ff93()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19a4
 // Size: 0x2eb
 function function_8b208c4ca074aaeb( arena )
@@ -450,7 +450,7 @@ function function_8b208c4ca074aaeb( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c97
 // Size: 0x83
 function gulagdom_trackplayerbullets()
@@ -476,7 +476,7 @@ function gulagdom_trackplayerbullets()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d22
 // Size: 0x115
 function function_8de238b2a0070a51( arena )
@@ -512,7 +512,7 @@ function function_8de238b2a0070a51( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e3f
 // Size: 0xc9
 function gulagdom_dooropened( arena )
@@ -537,7 +537,7 @@ function gulagdom_dooropened( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f10
 // Size: 0x2f
 function function_ba3f4c627dcf8f8b( arena )
@@ -548,7 +548,7 @@ function function_ba3f4c627dcf8f8b( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f47
 // Size: 0x1d7
 function function_f63efa737ca0e7c1( arena )
@@ -601,7 +601,7 @@ function function_f63efa737ca0e7c1( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2126
 // Size: 0x10c
 function function_115aa986e2c13fea( arena )
@@ -639,7 +639,7 @@ function function_115aa986e2c13fea( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x223a
 // Size: 0x95
 function function_34c2ab381e6c17cb( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -661,7 +661,7 @@ function function_34c2ab381e6c17cb( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22d7
 // Size: 0x290
 function function_37f6a694b8c6656a()
@@ -737,7 +737,7 @@ function function_37f6a694b8c6656a()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x256f
 // Size: 0x10a
 function function_c46cdee20f0bd709()
@@ -779,7 +779,7 @@ function function_c46cdee20f0bd709()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2682
 // Size: 0x5b
 function function_e8a3fb7a095c39b8( headicon, var_ca5a607c4f7a315 )
@@ -798,7 +798,7 @@ function function_e8a3fb7a095c39b8( headicon, var_ca5a607c4f7a315 )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x26e5
 // Size: 0x56
 function function_fa6fe679b2067ac9( headicon, playershowto )
@@ -811,7 +811,7 @@ function function_fa6fe679b2067ac9( headicon, playershowto )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2743
 // Size: 0xcd
 function function_12495ee9a0fa83c2( arena )
@@ -836,7 +836,7 @@ function function_12495ee9a0fa83c2( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2818
 // Size: 0x11f
 function function_3c8729cdb6a4372b()
@@ -868,7 +868,7 @@ function function_3c8729cdb6a4372b()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x293f
 // Size: 0x9a
 function function_5f0d7586dda3b8db( arena )
@@ -887,7 +887,7 @@ function function_5f0d7586dda3b8db( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29e1
 // Size: 0x8f
 function function_6e29d1220ea1a70e()
@@ -903,7 +903,7 @@ function function_6e29d1220ea1a70e()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a78
 // Size: 0x1c6
 function function_31b5a57beac56067()
@@ -952,7 +952,7 @@ function function_31b5a57beac56067()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c47
 // Size: 0xfc
 function function_3104d393dc6cc377( arena )
@@ -1006,7 +1006,7 @@ function function_3104d393dc6cc377( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d4b
 // Size: 0x185
 function function_6ec844085b807d62( agent, killer )
@@ -1068,7 +1068,7 @@ function function_6ec844085b807d62( agent, killer )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ed8
 // Size: 0xde
 function function_d22e87091afd9fb7( attacker, victim )
@@ -1110,7 +1110,7 @@ function function_d22e87091afd9fb7( attacker, victim )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fbe
 // Size: 0x25
 function function_de9ddf5a99c3e235( value )
@@ -1120,7 +1120,7 @@ function function_de9ddf5a99c3e235( value )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2feb
 // Size: 0x19b
 function function_6e49ea089039048a()
@@ -1161,12 +1161,13 @@ function function_6e49ea089039048a()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x318e
 // Size: 0xcb
 function function_19ecef885c1cec21( player )
 {
-    for (i = 0; i < level.gulag.arenas.size; i++) {
+    for ( i = 0; i < level.gulag.arenas.size ; i++ )
+    {
         var_f40e6deec30ee209 = level.gulag.arenas[ i ];
         
         foreach ( jailedplayers in var_f40e6deec30ee209.jailedplayers )
@@ -1183,7 +1184,7 @@ function function_19ecef885c1cec21( player )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3262
 // Size: 0x2b, Type: bool
 function function_9005af34e01bf8fe()
@@ -1197,7 +1198,7 @@ function function_9005af34e01bf8fe()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3296
 // Size: 0x7a, Type: bool
 function function_f79445ae166c7150( attacker, victim )
@@ -1224,7 +1225,7 @@ function function_f79445ae166c7150( attacker, victim )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3319
 // Size: 0x6b, Type: bool
 function function_db60abb28498007b()
@@ -1240,7 +1241,7 @@ function function_db60abb28498007b()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x338d
 // Size: 0xd4
 function function_cd7c7d0fc6adf4b1( eattacker, var_19ef223648735f8f )
@@ -1272,7 +1273,7 @@ function function_cd7c7d0fc6adf4b1( eattacker, var_19ef223648735f8f )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3469
 // Size: 0x51
 function function_f534043debef1e2a( arena )
@@ -1292,7 +1293,7 @@ function function_f534043debef1e2a( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34c2
 // Size: 0x24
 function function_36805f4856473b76( arena )
@@ -1302,7 +1303,7 @@ function function_36805f4856473b76( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34ee
 // Size: 0x79
 function function_9971773d776c97ab( arena )
@@ -1320,7 +1321,7 @@ function function_9971773d776c97ab( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x356f
 // Size: 0x110
 function function_7b5f223f3ea0fd5a( arena, aispawn )
@@ -1354,7 +1355,7 @@ function function_7b5f223f3ea0fd5a( arena, aispawn )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3687
 // Size: 0x88
 function function_f6147f8ae8d6deb( arena )
@@ -1378,7 +1379,7 @@ function function_f6147f8ae8d6deb( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3717
 // Size: 0xa3
 function function_65b46c19509929fe( arena )
@@ -1397,7 +1398,7 @@ function function_65b46c19509929fe( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37c2
 // Size: 0x96
 function function_6af7deb2b9a1dd06( arena )
@@ -1433,7 +1434,7 @@ function function_6af7deb2b9a1dd06( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3860
 // Size: 0x123
 function function_fb48c109b5c01f0( arena )
@@ -1467,7 +1468,7 @@ function function_fb48c109b5c01f0( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x398b
 // Size: 0x137
 function function_a4f7aa7494769dcc( arena, flaglocation )
@@ -1494,7 +1495,7 @@ function function_a4f7aa7494769dcc( arena, flaglocation )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3acb
 // Size: 0x14d
 function function_ac9e0da4d9b4494d( var_5ab435632b934364 )
@@ -1534,7 +1535,7 @@ function function_ac9e0da4d9b4494d( var_5ab435632b934364 )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c20
 // Size: 0x13e
 function gulagdom_arenaflagrestartdom( arena )
@@ -1563,7 +1564,7 @@ function gulagdom_arenaflagrestartdom( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d66
 // Size: 0x8e
 function function_f49d19b1b7acfa56( var_5ab435632b934364 )
@@ -1583,7 +1584,7 @@ function function_f49d19b1b7acfa56( var_5ab435632b934364 )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3dfc
 // Size: 0x8c
 function function_9a942fefe2c0e3b2( team, player, success )
@@ -1608,7 +1609,7 @@ function function_9a942fefe2c0e3b2( team, player, success )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e90
 // Size: 0x51
 function function_22d8a6225e699c6e( enable )
@@ -1626,7 +1627,7 @@ function function_22d8a6225e699c6e( enable )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3ee9
 // Size: 0xb9
 function gulagdom_arenaflagsetvisible( arena, enable, preview, var_ddf49b0f7bd17a0c )
@@ -1661,7 +1662,7 @@ function gulagdom_arenaflagsetvisible( arena, enable, preview, var_ddf49b0f7bd17
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3faa
 // Size: 0x88
 function function_c47b28b610fc1026( arena, preview, var_ddf49b0f7bd17a0c )
@@ -1687,7 +1688,7 @@ function function_c47b28b610fc1026( arena, preview, var_ddf49b0f7bd17a0c )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x403a
 // Size: 0x87
 function function_eec0f9596304fdbf( arena )
@@ -1703,7 +1704,7 @@ function function_eec0f9596304fdbf( arena )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40c9
 // Size: 0x39
 function function_5614184015570a1a( var_ddf49b0f7bd17a0c )
@@ -1714,7 +1715,7 @@ function function_5614184015570a1a( var_ddf49b0f7bd17a0c )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x410a
 // Size: 0x8c
 function function_b97c83e94112cc1a( arena, enable )
@@ -1741,7 +1742,7 @@ function function_b97c83e94112cc1a( arena, enable )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x419e
 // Size: 0x79
 function function_66cd97251e68435c( enable, player )
@@ -1765,7 +1766,7 @@ function function_66cd97251e68435c( enable, player )
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x421f
 // Size: 0x94
 function function_a504bd9ae48a23d8()
@@ -1792,7 +1793,7 @@ function function_a504bd9ae48a23d8()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42bb
 // Size: 0x27
 function function_63a31da956c978ee()
@@ -1805,7 +1806,7 @@ function function_63a31da956c978ee()
 }
 
 // Namespace br_dom_gulag / scripts\mp\gametypes\br_dom_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42ea
 // Size: 0x26d
 function function_f9fae1b8f601f0ea( arena )

@@ -57,7 +57,7 @@ function private init()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b1
 // Size: 0x1b
 function function_a4f524ed48312204()
@@ -66,7 +66,7 @@ function function_a4f524ed48312204()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9d4
 // Size: 0x25, Type: bool
 function tryuseemp( streakinfo )
@@ -80,7 +80,7 @@ function tryuseemp( streakinfo )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa02
 // Size: 0x1fc, Type: bool
 function tryuseempfromstruct( streakinfo )
@@ -155,7 +155,7 @@ function tryuseempfromstruct( streakinfo )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc07
 // Size: 0x2fd
 function function_3f5928ab9073266c( streakinfo )
@@ -229,7 +229,7 @@ function function_3f5928ab9073266c( streakinfo )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf0d
 // Size: 0x1b2, Type: bool
 function function_4fa820930b2857d6( pod, breakpos, streakinfo )
@@ -261,7 +261,7 @@ function function_4fa820930b2857d6( pod, breakpos, streakinfo )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10c8
 // Size: 0x230
 function function_861e303c08602058( pod, streakinfo, targetpos )
@@ -310,7 +310,7 @@ function function_861e303c08602058( pod, streakinfo, targetpos )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1300
 // Size: 0x122
 function function_ecc8ce9e6c65dae6()
@@ -347,7 +347,7 @@ function function_ecc8ce9e6c65dae6()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x142a
 // Size: 0x42
 function function_f292f763187b6ac5()
@@ -358,7 +358,7 @@ function function_f292f763187b6ac5()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1474
 // Size: 0x6e
 function function_76178b6493ecf6d7( rider, targetpos )
@@ -383,7 +383,7 @@ function function_76178b6493ecf6d7( rider, targetpos )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14ea
 // Size: 0x5d
 function function_11126110d38cf99e( missile, streakinfo )
@@ -402,7 +402,7 @@ function function_11126110d38cf99e( missile, streakinfo )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x154f
 // Size: 0x43
 function function_7750c53508718dbd( missile )
@@ -418,7 +418,7 @@ function function_7750c53508718dbd( missile )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x159a
 // Size: 0x225
 function function_9d55bde0bcef1158( missile )
@@ -491,7 +491,7 @@ function function_9d55bde0bcef1158( missile )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x17c7
 // Size: 0x1a5
 function function_db4cffecf38064e7( var_e127af0eab592c1a, var_e127ae0eab5929e7, var_e127ad0eab5927b4, var_e127ac0eab592581, var_e127ab0eab59234e, var_e127aa0eab59211b )
@@ -544,7 +544,7 @@ function function_db4cffecf38064e7( var_e127af0eab592c1a, var_e127ae0eab5929e7, 
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1975
 // Size: 0x76
 function waittill_explodestring( msg, ent )
@@ -556,7 +556,7 @@ function waittill_explodestring( msg, ent )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19f3
 // Size: 0xc
 function function_597149e92e028cc()
@@ -565,7 +565,7 @@ function function_597149e92e028cc()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a07
 // Size: 0x16d
 function function_d09b046309c9310( explodeinfo, owner, streakinfo )
@@ -603,7 +603,7 @@ function function_d09b046309c9310( explodeinfo, owner, streakinfo )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b7c
 // Size: 0x82
 function function_ef236a24af5b02ee()
@@ -618,7 +618,7 @@ function function_ef236a24af5b02ee()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c06
 // Size: 0x41
 function function_9814fc51454dfe88( action )
@@ -632,7 +632,7 @@ function function_9814fc51454dfe88( action )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c4f
 // Size: 0x31
 function function_43bec35d6ecff18b()
@@ -645,7 +645,7 @@ function function_43bec35d6ecff18b()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c88
 // Size: 0x2f
 function function_6c9d4dd877455600( rider )
@@ -656,7 +656,7 @@ function function_6c9d4dd877455600( rider )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cbf
 // Size: 0x54
 function function_43755e1816ee895b( scriptable, empcallback, reactivatefunc )
@@ -668,7 +668,7 @@ function function_43755e1816ee895b( scriptable, empcallback, reactivatefunc )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d1b
 // Size: 0x297
 function applyemp( explodelocation, streakinfo )
@@ -746,7 +746,7 @@ function applyemp( explodelocation, streakinfo )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fba
 // Size: 0x8d
 function function_429c035df406caf8( explodelocation, empduration )
@@ -760,7 +760,7 @@ function function_429c035df406caf8( explodelocation, empduration )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x204f
 // Size: 0x9f3
 function function_a488516398cf6ae3( victimteam, attacker, explodelocation, empduration, emprange )
@@ -1028,7 +1028,7 @@ function function_a488516398cf6ae3( victimteam, attacker, explodelocation, empdu
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a4b
 // Size: 0x155
 function function_dc8d8685a0b3a582( victimteam, attacker, explodelocation, empduration )
@@ -1086,7 +1086,7 @@ function function_dc8d8685a0b3a582( victimteam, attacker, explodelocation, empdu
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2ba8
 // Size: 0xf9
 function function_e0c2272bd4e5c0f( activeobjects, attacker, explodelocation, empduration )
@@ -1114,7 +1114,7 @@ function function_e0c2272bd4e5c0f( activeobjects, attacker, explodelocation, emp
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2ca9
 // Size: 0x123
 function applyempplayer( victimteam, attacker, explodelocation )
@@ -1152,7 +1152,7 @@ function applyempplayer( victimteam, attacker, explodelocation )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2dd4
 // Size: 0x52
 function function_9196f8b48901a902( owner )
@@ -1168,7 +1168,7 @@ function function_9196f8b48901a902( owner )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e2e
 // Size: 0x49
 function function_377c97bfdd963952()
@@ -1183,7 +1183,7 @@ function function_377c97bfdd963952()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e7f
 // Size: 0x84
 function function_8887420281f3ff3f()
@@ -1209,7 +1209,7 @@ function function_8887420281f3ff3f()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f0b
 // Size: 0x8b
 function watch_checkforlauncherweapons()
@@ -1237,7 +1237,7 @@ function watch_checkforlauncherweapons()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f9e
 // Size: 0x71
 function function_33b7f0d067af5e39()
@@ -1264,7 +1264,7 @@ function function_33b7f0d067af5e39()
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3017
 // Size: 0x15
 function setemp_applied_callback( applycallback )
@@ -1273,7 +1273,7 @@ function setemp_applied_callback( applycallback )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3034
 // Size: 0x15
 function setemp_cleared_callback( clearcallback )
@@ -1282,7 +1282,7 @@ function setemp_cleared_callback( clearcallback )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3051
 // Size: 0x15
 function setemp_started_callback( startcallback )
@@ -1291,7 +1291,7 @@ function setemp_started_callback( startcallback )
 }
 
 // Namespace emp / scripts\killstreaks\emp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x306e
 // Size: 0x11
 function function_56fe93fec9438968()

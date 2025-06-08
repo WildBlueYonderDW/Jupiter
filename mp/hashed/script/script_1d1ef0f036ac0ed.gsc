@@ -15,7 +15,7 @@
 #namespace namespace_619f08f8f135db64;
 
 // Namespace namespace_619f08f8f135db64 / namespace_360524ba57254f3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56e
 // Size: 0x13
 function main()

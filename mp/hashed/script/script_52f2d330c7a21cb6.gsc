@@ -19,7 +19,7 @@ function autoexec main()
 }
 
 // Namespace zombie_deathworm / namespace_f0730cef8234f036
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25f
 // Size: 0x19b
 function function_fe9929b42e5a99e4()
@@ -47,7 +47,7 @@ function function_fe9929b42e5a99e4()
 }
 
 // Namespace zombie_deathworm / namespace_f0730cef8234f036
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x402
 // Size: 0xa3
 function function_2af099045fef3cc9()
@@ -81,7 +81,8 @@ function private function_a826442ad2416fe0( dmgstruct )
         var_39033f9289f86348 = 0;
         var_25ca3721a710ca8d = -1;
         
-        for (tag_index = 0; tag_index < tag_positions.size; tag_index++) {
+        for ( tag_index = 0; tag_index < tag_positions.size ; tag_index++ )
+        {
             dist_sq = distancesquared( damage_pos, tag_positions[ tag_index ] );
             
             if ( var_25ca3721a710ca8d == -1 || dist_sq < var_25ca3721a710ca8d )
@@ -204,7 +205,7 @@ function private function_ebb83c1efeaae2c7( var_c02b1f6c1721c844 )
 }
 
 // Namespace zombie_deathworm / namespace_f0730cef8234f036
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x987
 // Size: 0x146
 function function_6671940a6e85ff8a( scriptable )

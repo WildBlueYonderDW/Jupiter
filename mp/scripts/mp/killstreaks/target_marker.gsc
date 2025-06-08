@@ -16,7 +16,7 @@
 #namespace target_marker;
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x542
 // Size: 0x60
 function init()
@@ -25,7 +25,7 @@ function init()
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5aa
 // Size: 0x5f9
 function gettargetmarker( streakinfo, var_281c85042194c88f, var_99514d9b932ce768 )
@@ -202,7 +202,7 @@ function gettargetmarker( streakinfo, var_281c85042194c88f, var_99514d9b932ce768
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbac
 // Size: 0x46, Type: bool
 function function_fcd42ee510c535fc( movingplatform )
@@ -226,7 +226,7 @@ function function_fcd42ee510c535fc( movingplatform )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbfb
 // Size: 0x6d
 function isplacementplayerobstructed( marker )
@@ -244,7 +244,7 @@ function isplacementplayerobstructed( marker )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc71
 // Size: 0x47
 function watchforinvalidweapon( weapon, streakinfo )
@@ -266,7 +266,7 @@ function watchforinvalidweapon( weapon, streakinfo )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcc0
 // Size: 0x64
 function watchforammouse( weapon, streakinfo )
@@ -288,7 +288,7 @@ function watchforammouse( weapon, streakinfo )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd2c
 // Size: 0x38
 function watchforempapply( weapon, streakinfo )
@@ -301,7 +301,7 @@ function watchforempapply( weapon, streakinfo )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd6c
 // Size: 0x49
 function function_4f304cc560c066ae( streakinfo )
@@ -324,7 +324,7 @@ function function_4f304cc560c066ae( streakinfo )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdbd
 // Size: 0x3c
 function watchforlaststand( streakinfo )
@@ -338,7 +338,7 @@ function watchforlaststand( streakinfo )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe01
 // Size: 0x49
 function function_9a5aedfd9a5ca5e6( streakinfo )
@@ -361,7 +361,7 @@ function function_9a5aedfd9a5ca5e6( streakinfo )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe52
 // Size: 0x30
 function function_46b5bec68eecb29( streakinfo )
@@ -374,7 +374,7 @@ function function_46b5bec68eecb29( streakinfo )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe8a
 // Size: 0x47
 function function_a3234162c515654f( streakinfo )
@@ -396,7 +396,7 @@ function function_a3234162c515654f( streakinfo )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xed9
 // Size: 0xe1
 function watchforplacementfirestate( streakinfo, endonnotify, weaponobj )
@@ -443,7 +443,7 @@ function watchforplacementfirestate( streakinfo, endonnotify, weaponobj )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfc2
 // Size: 0x38
 function function_502f817c790dec40( streakinfo, endonnotify )
@@ -456,7 +456,7 @@ function function_502f817c790dec40( streakinfo, endonnotify )
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1002
 // Size: 0x13a
 function waittill_succeed_fail_end( confirmstring, failstring, endstring, cancelstring, var_bd92ce9529bd1f2e )
@@ -501,7 +501,7 @@ function waittill_succeed_fail_end( confirmstring, failstring, endstring, cancel
 }
 
 // Namespace target_marker / scripts\mp\killstreaks\target_marker
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1145
 // Size: 0x66
 function waittill_return( confirmstring, ent )

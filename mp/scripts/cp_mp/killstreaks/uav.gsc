@@ -16,8 +16,8 @@
 #namespace uav;
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e7
+// Params 0
+// Checksum 0x0, Offset: 0x9e8
 // Size: 0x7e
 function init()
 {
@@ -39,8 +39,8 @@ function init()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6d
+// Params 0
+// Checksum 0x0, Offset: 0xa6e
 // Size: 0x4d
 function function_83bbd4aad5a34b6b()
 {
@@ -57,8 +57,8 @@ function function_83bbd4aad5a34b6b()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xac2
+// Params 0
+// Checksum 0x0, Offset: 0xac3
 // Size: 0x17d
 function function_ac005e67449bfdf8()
 {
@@ -70,7 +70,8 @@ function function_ac005e67449bfdf8()
     
     if ( level.teambased )
     {
-        for (i = 0; i < level.teamnamelist.size; i++) {
+        for ( i = 0; i < level.teamnamelist.size ; i++ )
+        {
             level.radarmode[ level.teamnamelist[ i ] ] = "normal_radar";
             level.activeuavs[ level.teamnamelist[ i ] ] = 0;
             level.activecounteruavs[ level.teamnamelist[ i ] ] = 0;
@@ -104,8 +105,8 @@ function function_ac005e67449bfdf8()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc47
+// Params 0
+// Checksum 0x0, Offset: 0xc48
 // Size: 0xa5
 function function_d4fc9b64ffec9e4e()
 {
@@ -119,8 +120,8 @@ function function_d4fc9b64ffec9e4e()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf4
+// Params 0
+// Checksum 0x0, Offset: 0xcf5
 // Size: 0xa0
 function onplayerconnect()
 {
@@ -138,8 +139,8 @@ function onplayerconnect()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9c
+// Params 0
+// Checksum 0x0, Offset: 0xd9d
 // Size: 0xa
 function onplayerspawned()
 {
@@ -147,8 +148,8 @@ function onplayerspawned()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdae
+// Params 0
+// Checksum 0x0, Offset: 0xdaf
 // Size: 0x8a
 function function_3166f86d25686055()
 {
@@ -163,8 +164,8 @@ function function_3166f86d25686055()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe40
+// Params 0
+// Checksum 0x0, Offset: 0xe41
 // Size: 0x38
 function uav_tracker()
 {
@@ -185,8 +186,8 @@ function uav_tracker()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe80
+// Params 1
+// Checksum 0x0, Offset: 0xe81
 // Size: 0x26
 function tryuseuav( streakname )
 {
@@ -195,15 +196,15 @@ function tryuseuav( streakname )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xeaf
+// Params 1
+// Checksum 0x0, Offset: 0xeb0
 // Size: 0x2a6
 function tryuseuavfromstruct( streakinfo )
 {
     level endon( "game_ended" );
     self endon( "disconnect" );
     
-    if ( streakinfo.streakname == "uav" && isbrstylegametype() && getdvarint( @"hash_970be8db72985238", 0 ) )
+    if ( streakinfo.streakname == "uav" && isbrstylegametype() && getdvarint( @"scr_uav_bigmap_enabled", 0 ) )
     {
         return scripts\cp_mp\killstreaks\uav_bigmap::function_e5931b9f76ed6cda( streakinfo );
     }
@@ -290,8 +291,8 @@ function tryuseuavfromstruct( streakinfo )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x115e
+// Params 2
+// Checksum 0x0, Offset: 0x115f
 // Size: 0x252, Type: bool
 function uav_use( uavtype, streakinfo )
 {
@@ -365,8 +366,8 @@ function uav_use( uavtype, streakinfo )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13b9
+// Params 1
+// Checksum 0x0, Offset: 0x13ba
 // Size: 0xbc, Type: bool
 function function_8e9a430c17ddcd55( uavtype )
 {
@@ -406,8 +407,8 @@ function function_8e9a430c17ddcd55( uavtype )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x147e
+// Params 4
+// Checksum 0x0, Offset: 0x147f
 // Size: 0x161, Type: bool
 function uav_launch( owner, uavtype, streakinfo, var_da662696203dc431 )
 {
@@ -458,9 +459,9 @@ function uav_launch( owner, uavtype, streakinfo, var_da662696203dc431 )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x15e8
-// Size: 0x863
+// Params 6
+// Checksum 0x0, Offset: 0x15e9
+// Size: 0x860
 function uav_create( launchorigin, owner, uavtype, streakinfo, var_da662696203dc431, lifetimeoverride )
 {
     uavmodel = undefined;
@@ -656,10 +657,8 @@ function uav_create( launchorigin, owner, uavtype, streakinfo, var_da662696203dc
     {
         killstreak_dangernotifyplayersinrange( owner, uavmodel.team, 15000, vostreakname );
     }
-    else
-    {
-        owner thread playkillstreakoperatordialog( vostreakname, vostreakname + "_use", 1, var_52a5be2e2f91d710 );
-    }
+    
+    owner thread playkillstreakoperatordialog( vostreakname, vostreakname + "_use", 1, var_52a5be2e2f91d710 );
     
     if ( issharedfuncdefined( "hud", "teamPlayerCardSplash" ) )
     {
@@ -672,8 +671,8 @@ function uav_create( launchorigin, owner, uavtype, streakinfo, var_da662696203dc
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e54
+// Params 1
+// Checksum 0x0, Offset: 0x1e52
 // Size: 0x4d4
 function function_fd8473db50408aa8( worldspawned )
 {
@@ -806,8 +805,8 @@ function function_fd8473db50408aa8( worldspawned )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2330
+// Params 0
+// Checksum 0x0, Offset: 0x232e
 // Size: 0x18
 function function_e2fce5a833321770()
 {
@@ -821,8 +820,8 @@ function function_e2fce5a833321770()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2350
+// Params 0
+// Checksum 0x0, Offset: 0x234e
 // Size: 0xa6
 function function_c926982ff07fdea5()
 {
@@ -848,8 +847,8 @@ function function_c926982ff07fdea5()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x23fe
+// Params 0
+// Checksum 0x0, Offset: 0x23fc
 // Size: 0x92
 function function_d45f5cf5bfce96df()
 {
@@ -872,8 +871,8 @@ function function_d45f5cf5bfce96df()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2498
+// Params 0
+// Checksum 0x0, Offset: 0x2496
 // Size: 0xf5
 function function_48e2105afd534b62()
 {
@@ -917,8 +916,8 @@ function function_48e2105afd534b62()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2595
+// Params 0
+// Checksum 0x0, Offset: 0x2593
 // Size: 0x5db
 function uav_watchdamage()
 {
@@ -1075,8 +1074,8 @@ function uav_watchdamage()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b78
+// Params 0
+// Checksum 0x0, Offset: 0x2b76
 // Size: 0x9d
 function uav_destroy()
 {
@@ -1094,8 +1093,8 @@ function uav_destroy()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c1d
+// Params 0
+// Checksum 0x0, Offset: 0x2c1b
 // Size: 0x13
 function function_1c832b851ca3a96a()
 {
@@ -1103,8 +1102,8 @@ function function_1c832b851ca3a96a()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c38
+// Params 0
+// Checksum 0x0, Offset: 0x2c36
 // Size: 0x13
 function function_4db3b85258da27bf()
 {
@@ -1112,8 +1111,8 @@ function function_4db3b85258da27bf()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c53
+// Params 0
+// Checksum 0x0, Offset: 0x2c51
 // Size: 0x13
 function function_aece0522af7087ef()
 {
@@ -1121,8 +1120,8 @@ function function_aece0522af7087ef()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c6e
+// Params 0
+// Checksum 0x0, Offset: 0x2c6c
 // Size: 0xd7
 function function_709bafcc745fa088()
 {
@@ -1151,8 +1150,8 @@ function function_709bafcc745fa088()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d4d
+// Params 1
+// Checksum 0x0, Offset: 0x2d4b
 // Size: 0x2f
 function function_dc407442aceae01e( enemyaffected )
 {
@@ -1164,12 +1163,12 @@ function function_dc407442aceae01e( enemyaffected )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d84
+// Params 1
+// Checksum 0x0, Offset: 0x2d82
 // Size: 0x82
 function function_5ec24d236512fd7a( team )
 {
-    forcedradar = getdvarint( @"hash_f16ba8db72f34fc3", 0 );
+    forcedradar = getdvarint( @"scr_game_forceuav", 0 );
     
     if ( forcedradar )
     {
@@ -1183,8 +1182,8 @@ function function_5ec24d236512fd7a( team )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e0e
+// Params 3
+// Checksum 0x0, Offset: 0x2e0c
 // Size: 0x157
 function function_933df49e9a291165( activeuavs, var_6f923ce59f2dba50, activecounteruavs )
 {
@@ -1243,8 +1242,8 @@ function function_933df49e9a291165( activeuavs, var_6f923ce59f2dba50, activecoun
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f6e
+// Params 2
+// Checksum 0x0, Offset: 0x2f6c
 // Size: 0x1c
 function function_484d86ce003c2526( team, override )
 {
@@ -1252,8 +1251,8 @@ function function_484d86ce003c2526( team, override )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f92
+// Params 2
+// Checksum 0x0, Offset: 0x2f90
 // Size: 0x12a
 function function_8abf717874ce81d4( radarstrength, var_70d48b6b51ff2964 )
 {
@@ -1285,8 +1284,8 @@ function function_8abf717874ce81d4( radarstrength, var_70d48b6b51ff2964 )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30c5
+// Params 2
+// Checksum 0x0, Offset: 0x30c3
 // Size: 0x63
 function function_ddcbf96c5ef69597( team, override )
 {
@@ -1305,8 +1304,8 @@ function function_ddcbf96c5ef69597( team, override )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3131
+// Params 2
+// Checksum 0x0, Offset: 0x312f
 // Size: 0x168
 function function_13b8682b55619852( player, radardata )
 {
@@ -1340,8 +1339,8 @@ function function_13b8682b55619852( player, radardata )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x32a1
+// Params 2
+// Checksum 0x0, Offset: 0x329f
 // Size: 0xf2
 function uav_updateteamstatus( team, override )
 {
@@ -1380,8 +1379,8 @@ function uav_updateteamstatus( team, override )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x339b
+// Params 2
+// Checksum 0x0, Offset: 0x3399
 // Size: 0xb2
 function function_1cd3cd7ad2b1a683( team, override )
 {
@@ -1400,8 +1399,8 @@ function function_1cd3cd7ad2b1a683( team, override )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3455
+// Params 2
+// Checksum 0x0, Offset: 0x3453
 // Size: 0xb2
 function function_96d4526d5886ee74( team, override )
 {
@@ -1420,8 +1419,8 @@ function function_96d4526d5886ee74( team, override )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x350f
+// Params 1
+// Checksum 0x0, Offset: 0x350d
 // Size: 0x13
 function function_b9f0ee21053d4057( data )
 {
@@ -1429,8 +1428,8 @@ function function_b9f0ee21053d4057( data )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x352a
+// Params 1
+// Checksum 0x0, Offset: 0x3528
 // Size: 0xb
 function function_669abde8621d826e( data )
 {
@@ -1438,8 +1437,8 @@ function function_669abde8621d826e( data )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x353d
+// Params 0
+// Checksum 0x0, Offset: 0x353b
 // Size: 0x2b4
 function function_f9caa46aa98b7c6b()
 {
@@ -1514,8 +1513,8 @@ function function_f9caa46aa98b7c6b()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37f9
+// Params 0
+// Checksum 0x0, Offset: 0x37f7
 // Size: 0x62
 function uav_handleincomingstinger()
 {
@@ -1537,8 +1536,8 @@ function uav_handleincomingstinger()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3863
+// Params 0
+// Checksum 0x0, Offset: 0x3861
 // Size: 0x6f
 function uav_trackvelocity()
 {
@@ -1556,8 +1555,8 @@ function uav_trackvelocity()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38da
+// Params 0
+// Checksum 0x0, Offset: 0x38d8
 // Size: 0x4b
 function function_e58c525d5d3a7482()
 {
@@ -1570,8 +1569,8 @@ function function_e58c525d5d3a7482()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x392d
+// Params 3
+// Checksum 0x0, Offset: 0x392b
 // Size: 0xb8
 function function_225e3594843d2ac( uavtype, lifetimeoverride, owner )
 {
@@ -1602,8 +1601,8 @@ function function_225e3594843d2ac( uavtype, lifetimeoverride, owner )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x39ed
+// Params 2
+// Checksum 0x0, Offset: 0x39eb
 // Size: 0xed
 function function_247294e52128e3e7( targetent, player )
 {
@@ -1650,8 +1649,8 @@ function function_247294e52128e3e7( targetent, player )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ae2
+// Params 0
+// Checksum 0x0, Offset: 0x3ae0
 // Size: 0x1e6
 function uav_addactiveuav()
 {
@@ -1700,8 +1699,8 @@ function uav_addactiveuav()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cd0
+// Params 0
+// Checksum 0x0, Offset: 0x3cce
 // Size: 0xb9
 function uav_addactivecounteruav()
 {
@@ -1728,8 +1727,8 @@ function uav_addactivecounteruav()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d91
+// Params 0
+// Checksum 0x0, Offset: 0x3d8f
 // Size: 0x188
 function uav_removeactiveuav()
 {
@@ -1773,8 +1772,8 @@ function uav_removeactiveuav()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f21
+// Params 0
+// Checksum 0x0, Offset: 0x3f1f
 // Size: 0x5a
 function uav_removeactivecounteruav()
 {
@@ -1791,8 +1790,8 @@ function uav_removeactivecounteruav()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f83
+// Params 0
+// Checksum 0x0, Offset: 0x3f81
 // Size: 0x65, Type: bool
 function function_456cd43a5602eaab()
 {
@@ -1811,8 +1810,8 @@ function function_456cd43a5602eaab()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ff1
+// Params 2
+// Checksum 0x0, Offset: 0x3fef
 // Size: 0x1c7
 function function_972967e0c0a0fa8( uavtype, launchorigin )
 {
@@ -1873,8 +1872,8 @@ function function_972967e0c0a0fa8( uavtype, launchorigin )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41c1
+// Params 1
+// Checksum 0x0, Offset: 0x41bf
 // Size: 0x27
 function uav_rotaterig( rotatetime )
 {
@@ -1888,8 +1887,8 @@ function uav_rotaterig( rotatetime )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41f0
+// Params 1
+// Checksum 0x0, Offset: 0x41ee
 // Size: 0x49
 function function_f30469aca36707f( ent )
 {
@@ -1900,8 +1899,8 @@ function function_f30469aca36707f( ent )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4241
+// Params 0
+// Checksum 0x0, Offset: 0x423f
 // Size: 0x31
 function function_6d00913d6f8c862e()
 {
@@ -1912,8 +1911,8 @@ function function_6d00913d6f8c862e()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x427a
+// Params 0
+// Checksum 0x0, Offset: 0x4278
 // Size: 0x1bf
 function function_f54b6539dc6a4a1c()
 {
@@ -1955,7 +1954,8 @@ function function_f54b6539dc6a4a1c()
     {
         playercount = level.players.size;
         
-        for (i = 0; i < 10; i++) {
+        for ( i = 0; i < 10 ; i++ )
+        {
             if ( var_67c48e4d4e56afec >= level.players.size )
             {
                 var_67c48e4d4e56afec = 0;
@@ -1989,8 +1989,8 @@ function function_f54b6539dc6a4a1c()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4441
+// Params 1
+// Checksum 0x0, Offset: 0x443f
 // Size: 0x157
 function function_172c4412dde1696( reveal )
 {
@@ -2046,8 +2046,8 @@ function function_172c4412dde1696( reveal )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45a0
+// Params 0
+// Checksum 0x0, Offset: 0x459e
 // Size: 0xd8
 function function_e9a20f47c6b49bd7()
 {
@@ -2090,8 +2090,8 @@ function function_e9a20f47c6b49bd7()
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4680
+// Params 2
+// Checksum 0x0, Offset: 0x467e
 // Size: 0x1e8
 function function_c11936b9c6c3a076( player, waittime )
 {
@@ -2100,7 +2100,7 @@ function function_c11936b9c6c3a076( player, waittime )
         wait waittime;
     }
     
-    forceradarstrength = getdvarint( @"hash_f16ba8db72f34fc3" );
+    forceradarstrength = getdvarint( @"scr_game_forceuav" );
     radartype = "normal_radar";
     activeuav = 1;
     activeadvanceduavs = 0;
@@ -2149,8 +2149,8 @@ function function_c11936b9c6c3a076( player, waittime )
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4870
+// Params 1
+// Checksum 0x0, Offset: 0x486e
 // Size: 0x7c
 function function_6394127938ed8257( sweeptime )
 {
@@ -2173,8 +2173,8 @@ function function_6394127938ed8257( sweeptime )
 /#
 
     // Namespace uav / scripts\cp_mp\killstreaks\uav
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x48f4
+    // Params 0
+    // Checksum 0x0, Offset: 0x48f2
     // Size: 0x24e, Type: dev
     function function_6467f4a6c5a005d4()
     {
@@ -2196,8 +2196,8 @@ function function_6394127938ed8257( sweeptime )
     }
 
     // Namespace uav / scripts\cp_mp\killstreaks\uav
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4b4a
+    // Params 0
+    // Checksum 0x0, Offset: 0x4b48
     // Size: 0x70, Type: dev
     function function_e6d0ffaec6506528()
     {

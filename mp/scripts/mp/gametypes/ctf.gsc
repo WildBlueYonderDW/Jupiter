@@ -32,7 +32,7 @@
 #namespace ctf;
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xefe
 // Size: 0x2d1
 function main()
@@ -110,7 +110,7 @@ function main()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11d7
 // Size: 0xf8
 function initializematchrules()
@@ -128,7 +128,7 @@ function initializematchrules()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12d7
 // Size: 0x12
 function onspawnplayer( revivespawn )
@@ -137,7 +137,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12f1
 // Size: 0x25e
 function onstartgametype()
@@ -226,7 +226,7 @@ function onstartgametype()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1557
 // Size: 0x9c
 function updategametypedvars()
@@ -241,7 +241,7 @@ function updategametypedvars()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15fb
 // Size: 0x1cd
 function createflagsandhud()
@@ -270,7 +270,7 @@ function createflagsandhud()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17d0
 // Size: 0x2
 function flag_setupvfx()
@@ -279,7 +279,7 @@ function flag_setupvfx()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17da
 // Size: 0x20b
 function initspawns()
@@ -328,7 +328,7 @@ function initspawns()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19ed
 // Size: 0x456
 function assignteamspawns( var_8719ff6e31a3d80b, spawnkey, spawnvalue )
@@ -424,7 +424,7 @@ function assignteamspawns( var_8719ff6e31a3d80b, spawnkey, spawnvalue )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e4b
 // Size: 0x100
 function getnearestflagteam( spawnpoint )
@@ -458,7 +458,7 @@ function getnearestflagteam( spawnpoint )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f54
 // Size: 0x56
 function getspawnpoint()
@@ -478,7 +478,7 @@ function getspawnpoint()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fb3
 // Size: 0x10b
 function flag_default_origins()
@@ -511,7 +511,7 @@ function flag_default_origins()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20c6
 // Size: 0x97
 function flag_create_team_goal( team )
@@ -533,7 +533,7 @@ function flag_create_team_goal( team )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2166
 // Size: 0xb2, Type: bool
 function flag_find_ground( z_offset )
@@ -548,7 +548,7 @@ function flag_find_ground( z_offset )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2221
 // Size: 0x114
 function showflagradiuseffecttoplayers( team, player, position )
@@ -587,7 +587,7 @@ function showflagradiuseffecttoplayers( team, player, position )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x233d
 // Size: 0x110
 function showbaseeffecttoplayer( team, player )
@@ -626,7 +626,7 @@ function showbaseeffecttoplayer( team, player )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2455
 // Size: 0x8c
 function removeflagpickupradiuseffect( flagteam )
@@ -648,7 +648,7 @@ function removeflagpickupradiuseffect( flagteam )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24e9
 // Size: 0x3f
 function setteaminhuddatafromteamname( teamname )
@@ -669,7 +669,7 @@ function setteaminhuddatafromteamname( teamname )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2530
 // Size: 0x8c
 function player_delete_flag_goal_fx( flagteam )
@@ -691,7 +691,7 @@ function player_delete_flag_goal_fx( flagteam )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25c4
 // Size: 0x4e
 function getflagpos( team )
@@ -702,7 +702,7 @@ function getflagpos( team )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x261b
 // Size: 0x6e7
 function createteamflag( team, entityteam )
@@ -773,7 +773,7 @@ function createteamflag( team, entityteam )
     
     if ( getdvarint( @"hash_82f42dfd88cbacad" ) != 0 )
     {
-        teamflag scripts\mp\gameobjects::function_316d9da870e12a03( [ visuals[ 0 ] ], trigger, 1, 80, 0 );
+        teamflag scripts\mp\gameobjects::create_manual_drop_data_struct( [ visuals[ 0 ] ], trigger, 1, 80, 0 );
     }
     
     if ( isdefined( level.showenemycarrier ) )
@@ -847,7 +847,7 @@ function createteamflag( team, entityteam )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d0b
 // Size: 0x13, Type: bool
 function flagpickupchecks( player )
@@ -856,7 +856,7 @@ function flagpickupchecks( player )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d27
 // Size: 0xc0
 function createteamflagbase( team, teamflag )
@@ -874,7 +874,7 @@ function createteamflagbase( team, teamflag )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2df0
 // Size: 0x265
 function createcapzone( team, entityteam )
@@ -914,7 +914,7 @@ function createcapzone( team, entityteam )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x305e
 // Size: 0x6a
 function onbeginuse( player )
@@ -931,7 +931,7 @@ function onbeginuse( player )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x30d0
 // Size: 0x38
 function onenduse( player, team, success )
@@ -940,7 +940,7 @@ function onenduse( player, team, success )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3110
 // Size: 0x556
 function onpickup( player, playervo, defused )
@@ -1091,7 +1091,7 @@ function onpickup( player, playervo, defused )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x366e
 // Size: 0xb
 function onpickupfailed( player )
@@ -1100,7 +1100,7 @@ function onpickupfailed( player )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3682
 // Size: 0x9
 function returnflag()
@@ -1109,7 +1109,7 @@ function returnflag()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3693
 // Size: 0x28d
 function ondrop( player )
@@ -1202,7 +1202,7 @@ function ondrop( player )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3928
 // Size: 0xa3
 function returnaftertime()
@@ -1228,7 +1228,7 @@ function returnaftertime()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39d3
 // Size: 0x113
 function onreset()
@@ -1261,7 +1261,7 @@ function onreset()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3aee
 // Size: 0x28a
 function onuse( player )
@@ -1334,7 +1334,7 @@ function onuse( player )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3d80
 // Size: 0x2e
 function onplayerconnect( player )
@@ -1345,7 +1345,7 @@ function onplayerconnect( player )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3db6
 // Size: 0x88
 function onplayerspawned()
@@ -1373,7 +1373,7 @@ function onplayerspawned()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e46
 // Size: 0xd9
 function applyflagcarrierclass()
@@ -1409,7 +1409,7 @@ function applyflagcarrierclass()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f27
 // Size: 0xe9
 function superabilitywatcher()
@@ -1446,7 +1446,7 @@ function superabilitywatcher()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4018
 // Size: 0x1f
 function waitattachflag()
@@ -1458,7 +1458,7 @@ function waitattachflag()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x403f
 // Size: 0x99
 function removeflagcarrierclass()
@@ -1490,7 +1490,7 @@ function removeflagcarrierclass()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40e0
 // Size: 0xb
 function oncantuse( player )
@@ -1499,7 +1499,7 @@ function oncantuse( player )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x40f3
 // Size: 0x3b5
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1591,7 +1591,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x44b0
 // Size: 0x5c
 function distsquaredcheck( attackerpos, victimpos, checkpos )
@@ -1608,7 +1608,7 @@ function distsquaredcheck( attackerpos, victimpos, checkpos )
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4514
 // Size: 0x59
 function attachflag()
@@ -1620,7 +1620,7 @@ function attachflag()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4575
 // Size: 0x21
 function detachflag()
@@ -1630,7 +1630,7 @@ function detachflag()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x459e
 // Size: 0x8a
 function setspecialloadouts()
@@ -1647,7 +1647,7 @@ function setspecialloadouts()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4630
 // Size: 0x253
 function removeflag()
@@ -1717,7 +1717,7 @@ function removeflag()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x488b
 // Size: 0x62a
 function placeflag()
@@ -1865,7 +1865,7 @@ function placeflag()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ebd
 // Size: 0xc1, Type: bool
 function dev_flag_find_ground()
@@ -1880,7 +1880,7 @@ function dev_flag_find_ground()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f87
 // Size: 0xdd
 function setupwaypointicons()
@@ -1895,7 +1895,7 @@ function setupwaypointicons()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x506c
 // Size: 0xe
 function updatematchstatushintonnoflag()
@@ -1904,7 +1904,7 @@ function updatematchstatushintonnoflag()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5082
 // Size: 0xe
 function updatematchstatushintonhasflag()
@@ -1915,7 +1915,7 @@ function updatematchstatushintonhasflag()
 /#
 
     // Namespace ctf / scripts\mp\gametypes\ctf
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5098
     // Size: 0xa4, Type: dev
     function function_2f8e8b92f965d936()
@@ -1946,7 +1946,7 @@ function updatematchstatushintonhasflag()
 #/
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5144
 // Size: 0x9
 function function_9136c8e96ae14d11()
@@ -1955,7 +1955,7 @@ function function_9136c8e96ae14d11()
 }
 
 // Namespace ctf / scripts\mp\gametypes\ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5155
 // Size: 0x1d, Type: bool
 function function_3f98ea23e8fa1954( isinovertime )

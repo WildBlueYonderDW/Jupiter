@@ -11,7 +11,7 @@
 #namespace zm_quest;
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x254
 // Size: 0x35c
 function register_quest_step( name, step_path, setup_func, cleanup_func, var_6484f2dfb4447680, var_2157e2d0d4c8d28 )
@@ -40,7 +40,8 @@ function register_quest_step( name, step_path, setup_func, cleanup_func, var_648
     parent_step = quest;
     var_b09501f0b31dbd97 = "";
     
-    for (tree_depth = 0; tree_depth < step_tree.size; tree_depth++) {
+    for ( tree_depth = 0; tree_depth < step_tree.size ; tree_depth++ )
+    {
         child_name = step_tree[ tree_depth ];
         var_b09501f0b31dbd97 += child_name;
         parent_exists = 0;
@@ -94,7 +95,7 @@ function register_quest_step( name, step_path, setup_func, cleanup_func, var_648
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b8
 // Size: 0x8f
 function function_130bebe39cfc66c2( str_flag )
@@ -109,7 +110,7 @@ function function_130bebe39cfc66c2( str_flag )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64f
 // Size: 0x76
 function function_428c84c854f1154b( str_flag )
@@ -123,7 +124,7 @@ function function_428c84c854f1154b( str_flag )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6cd
 // Size: 0xa0, Type: bool
 function function_607fa935bb0f4dab( var_ce232ccaa493471 )
@@ -147,7 +148,7 @@ function function_607fa935bb0f4dab( var_ce232ccaa493471 )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x776
 // Size: 0x80
 function start_quest( name )
@@ -165,7 +166,7 @@ function start_quest( name )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7fe
 // Size: 0xa6
 function quit_quest( name )
@@ -298,7 +299,7 @@ function private function_525a39957e80f27( quest, step )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0xded
 // Size: 0x116
 function function_9fc5bb2a36b13c08( objective_name, priority, icon, iconsize, state, v_position, offset, str_label, str_desc, var_1d3465cc8293e5e6, var_a02f6121cced0715 )
@@ -345,7 +346,7 @@ function function_9fc5bb2a36b13c08( objective_name, priority, icon, iconsize, st
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0xf0c
 // Size: 0x116
 function function_e61527dad992fbac( objective_name, priority, icon, iconsize, state, entity, offset, str_label, str_desc, var_1d3465cc8293e5e6, var_a02f6121cced0715 )
@@ -392,7 +393,7 @@ function function_e61527dad992fbac( objective_name, priority, icon, iconsize, st
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x102b
 // Size: 0xaf
 function function_9c08bd32f79490f7( str_desc )
@@ -412,7 +413,7 @@ function function_9c08bd32f79490f7( str_desc )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10e3
 // Size: 0x8f
 function function_9659756622ccdb3d( var_2a115c3a0a3af326 )
@@ -438,7 +439,7 @@ function function_9659756622ccdb3d( var_2a115c3a0a3af326 )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x117a
 // Size: 0x71
 function function_86a17f877dcf5dc2( ents, remover )
@@ -459,7 +460,7 @@ function function_86a17f877dcf5dc2( ents, remover )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11f4
 // Size: 0xb1
 function fake_physicslaunch( target_pos, power )
@@ -476,7 +477,7 @@ function fake_physicslaunch( target_pos, power )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12ae
 // Size: 0xa3
 function force_zombie_goal( ent_or_struct, var_951cee2f1067e474 )
@@ -505,7 +506,7 @@ function force_zombie_goal( ent_or_struct, var_951cee2f1067e474 )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1359
 // Size: 0x7ea
 function function_dfbb96391a405a3e()
@@ -605,7 +606,7 @@ function function_dfbb96391a405a3e()
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b4b
 // Size: 0x72
 function function_a81f0ea12cf9df1()
@@ -617,7 +618,7 @@ function function_a81f0ea12cf9df1()
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bc5
 // Size: 0x1cd
 function function_9e4a31c05a510f21()
@@ -652,7 +653,7 @@ function function_9e4a31c05a510f21()
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d9a
 // Size: 0x394
 function function_c3fbfc68d7fc5d85( quest_ref, phase_index, player )
@@ -700,7 +701,8 @@ function function_c3fbfc68d7fc5d85( quest_ref, phase_index, player )
     packedval = int( phase_index ) & var_e4724382dee6a68e;
     totalbits = 3;
     
-    for (i = 0; i < 6; i++) {
+    for ( i = 0; i < 6 ; i++ )
+    {
         phasedata[ i ] = default_to( phasedata[ i ], spawnstruct() );
         phasedata[ i ].visibility = default_to( phasedata[ i ].visibility, 0 );
         phasedata[ i ].current_stage = default_to( phasedata[ i ].current_stage, 0 );
@@ -725,7 +727,7 @@ function function_c3fbfc68d7fc5d85( quest_ref, phase_index, player )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2136
 // Size: 0x1de, Type: bool
 function function_1750f4dbf7b7b182( quest_ref, phase_index, item_ref, stage_index, amount, player )
@@ -751,7 +753,7 @@ function function_1750f4dbf7b7b182( quest_ref, phase_index, item_ref, stage_inde
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x231d
 // Size: 0xd3
 function function_8b7626df555da362( quest_ref, player_id )
@@ -770,7 +772,7 @@ function function_8b7626df555da362( quest_ref, player_id )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x23f8
 // Size: 0x109
 function function_3de41abb6f8a3eca( quest_ref, phase_index, item_ref, player )
@@ -789,7 +791,7 @@ function function_3de41abb6f8a3eca( quest_ref, phase_index, item_ref, player )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2509
 // Size: 0xf4
 function function_d5e1ada16e44edf1( quest_ref, phase_index, player )
@@ -815,7 +817,7 @@ function function_d5e1ada16e44edf1( quest_ref, phase_index, player )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2605
 // Size: 0x134
 function function_c7e1fddd2ee0ec13( quest_ref, phase_index, item_ref, stage_index, player )
@@ -841,7 +843,7 @@ function function_c7e1fddd2ee0ec13( quest_ref, phase_index, item_ref, stage_inde
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2741
 // Size: 0x140
 function function_c7d35ac79fe48f73( quest_ref, phase_index, item_ref, hide_item, player )
@@ -869,7 +871,7 @@ function function_c7d35ac79fe48f73( quest_ref, phase_index, item_ref, hide_item,
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2889
 // Size: 0x5f
 function function_c8360ddd2f3de638( quest_ref, phase_index, item_ref, stage_index, hide_item, player )
@@ -881,7 +883,7 @@ function function_c8360ddd2f3de638( quest_ref, phase_index, item_ref, stage_inde
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28f0
 // Size: 0x1bd
 function function_d800ca3e7ecc789e()
@@ -894,7 +896,8 @@ function function_d800ca3e7ecc789e()
         var_d459347b437882b2 = [];
         var_d459347b437882b2 = array_combine( level.var_af44283616b35663.var_3af726873b4b5c1.var_924f3a860ed29a58, level.var_af44283616b35663.var_87b6de1c807e9b2b[ player_id ].var_924f3a860ed29a58 );
         
-        for (i = 0; i < 6; i++) {
+        for ( i = 0; i < 6 ; i++ )
+        {
             quest_ref = var_d459347b437882b2[ i ];
             
             if ( isdefined( quest_ref ) )
@@ -917,7 +920,7 @@ function function_d800ca3e7ecc789e()
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ab5
 // Size: 0x31
 function function_9e46c00ee4ab8e9c( var_f99283c7341869d3 )
@@ -935,7 +938,7 @@ function function_9e46c00ee4ab8e9c( var_f99283c7341869d3 )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aee
 // Size: 0x3a
 function function_5d64ef7baf8eadd7()
@@ -948,7 +951,7 @@ function function_5d64ef7baf8eadd7()
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b30
 // Size: 0x73
 function function_a653d4c834e05d8b()
@@ -963,7 +966,7 @@ function function_a653d4c834e05d8b()
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bab
 // Size: 0x73
 function function_259dd78f8597c080()
@@ -978,7 +981,7 @@ function function_259dd78f8597c080()
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c26
 // Size: 0x75
 function function_f69999652028f571( events, players, var_7b76e64b846c00d )
@@ -992,7 +995,7 @@ function function_f69999652028f571( events, players, var_7b76e64b846c00d )
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2ca3
 // Size: 0x6a
 function function_453227a53255a104( conversations, players, var_7b76e64b846c00d, var_8b6798cc35c82e07 )
@@ -1005,7 +1008,7 @@ function function_453227a53255a104( conversations, players, var_7b76e64b846c00d,
 }
 
 // Namespace zm_quest / scripts\zm\systems\zm_quest
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d15
 // Size: 0xdb
 function function_d424a7b864a53e8b( var_49e0726f42025d89 )
@@ -1052,7 +1055,8 @@ function function_d424a7b864a53e8b( var_49e0726f42025d89 )
         step_tree = strtok( step.path, "<dev string:x8c>" );
         parent_step = level._quest[ quest_name ];
         
-        for (tree_depth = 0; tree_depth < step_tree.size; tree_depth++) {
+        for ( tree_depth = 0; tree_depth < step_tree.size ; tree_depth++ )
+        {
             child_step = undefined;
             
             foreach ( child in parent_step.steps )
@@ -1076,7 +1080,7 @@ function function_d424a7b864a53e8b( var_49e0726f42025d89 )
     }
 
     // Namespace zm_quest / scripts\zm\systems\zm_quest
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x2fd8
     // Size: 0x129, Type: dev
     function function_4d1eb7b9a161037f( quest_name, step_path )
@@ -1085,7 +1089,8 @@ function function_d424a7b864a53e8b( var_49e0726f42025d89 )
         step_tree = strtok( step_path, "<dev string:x8c>" );
         parent_step = level._quest[ quest_name ];
         
-        for (tree_depth = 0; tree_depth < step_tree.size; tree_depth++) {
+        for ( tree_depth = 0; tree_depth < step_tree.size ; tree_depth++ )
+        {
             child_step = undefined;
             
             foreach ( child in parent_step.steps )
@@ -1106,7 +1111,7 @@ function function_d424a7b864a53e8b( var_49e0726f42025d89 )
     }
 
     // Namespace zm_quest / scripts\zm\systems\zm_quest
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x3109
     // Size: 0xc, Type: dev
     function function_108497a077aaee6b()
@@ -1115,7 +1120,7 @@ function function_d424a7b864a53e8b( var_49e0726f42025d89 )
     }
 
     // Namespace zm_quest / scripts\zm\systems\zm_quest
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x311d
     // Size: 0xb6, Type: dev
     function complete_step( step )
@@ -1129,13 +1134,14 @@ function function_d424a7b864a53e8b( var_49e0726f42025d89 )
         step.completed = 1;
         step.quest.owner notify( step.quest.name + "<dev string:x8c>" + step.path + "<dev string:x1f8>" );
         
-        for (i = 0; i < step.steps.size; i++) {
+        for ( i = 0; i < step.steps.size ; i++ )
+        {
             complete_step( step.steps[ i ] );
         }
     }
 
     // Namespace zm_quest / scripts\zm\systems\zm_quest
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x31db
     // Size: 0x27d, Type: dev
     function function_acdda71fab4ed5bc( params )
@@ -1156,7 +1162,8 @@ function function_d424a7b864a53e8b( var_49e0726f42025d89 )
         parent_step = quest;
         target_step = undefined;
         
-        for (tree_depth = 0; tree_depth < step_tree.size; tree_depth++) {
+        for ( tree_depth = 0; tree_depth < step_tree.size ; tree_depth++ )
+        {
             child_step = undefined;
             
             foreach ( child in parent_step.steps )
@@ -1222,7 +1229,7 @@ function function_d424a7b864a53e8b( var_49e0726f42025d89 )
     }
 
     // Namespace zm_quest / scripts\zm\systems\zm_quest
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3460
     // Size: 0x12b, Type: dev
     function function_962580ef2ed6fd8c( params )
@@ -1241,7 +1248,8 @@ function function_d424a7b864a53e8b( var_49e0726f42025d89 )
         step_tree = strtok( step_path, "<dev string:x8c>" );
         root_step = undefined;
         
-        for (step_index = 0; step_index < quest.steps.size; step_index++) {
+        for ( step_index = 0; step_index < quest.steps.size ; step_index++ )
+        {
             step = quest.steps[ step_index ];
             
             if ( step.name == step_tree[ 0 ] )

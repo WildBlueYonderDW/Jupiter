@@ -5,7 +5,7 @@
 #namespace namespace_6c6964e55ab1bec8;
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb2
 // Size: 0x32
 function get_linked_struct()
@@ -17,7 +17,7 @@ function get_linked_struct()
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xed
 // Size: 0x32
 function get_linked_vehicle_node()
@@ -29,7 +29,7 @@ function get_linked_vehicle_node()
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x128
 // Size: 0x59
 function function_98123b667b8f7daa( value, key )
@@ -47,7 +47,7 @@ function function_98123b667b8f7daa( value, key )
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18a
 // Size: 0x45
 function function_90f7f7052df0614b( value, key )
@@ -59,7 +59,7 @@ function function_90f7f7052df0614b( value, key )
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d8
 // Size: 0xa5
 function function_954eb52ab4cdeb46( value, key )
@@ -71,7 +71,8 @@ function function_954eb52ab4cdeb46( value, key )
     {
         linknames = get_links();
         
-        for (i = 0; i < linknames.size; i++) {
+        for ( i = 0; i < linknames.size ; i++ )
+        {
             linked_structs = getstructarray( linknames[ i ], "script_linkname" );
             structs = array_intersection( linked_structs, filtered_structs );
             
@@ -86,7 +87,7 @@ function function_954eb52ab4cdeb46( value, key )
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x286
 // Size: 0x37
 function function_98edf48d14333f3f( value, key )
@@ -102,7 +103,7 @@ function function_98edf48d14333f3f( value, key )
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2c5
 // Size: 0xa3
 function function_2ccdcbc0a0056226( value, key )
@@ -114,7 +115,8 @@ function function_2ccdcbc0a0056226( value, key )
     {
         linknames = get_links();
         
-        for (i = 0; i < linknames.size; i++) {
+        for ( i = 0; i < linknames.size ; i++ )
+        {
             linked_ents = getentarray( linknames[ i ], "script_linkname" );
             ents = array_intersection( linked_ents, filtered_ents );
             
@@ -129,7 +131,7 @@ function function_2ccdcbc0a0056226( value, key )
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x371
 // Size: 0x45
 function function_45c24888c616581f( value, key )
@@ -141,7 +143,7 @@ function function_45c24888c616581f( value, key )
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3bf
 // Size: 0x45
 function function_53b040ee753f26b1( value, key )
@@ -153,7 +155,7 @@ function function_53b040ee753f26b1( value, key )
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x40d
 // Size: 0xea
 function function_50b5e4fcc500bb90( value, key )
@@ -168,7 +170,8 @@ function function_50b5e4fcc500bb90( value, key )
     {
         linknames = get_links();
         
-        for (i = 0; i < linknames.size; i++) {
+        for ( i = 0; i < linknames.size ; i++ )
+        {
             var_3a6b6499601b4cfb = [];
             var_a2e2c8edb4508f35 = getscriptablearray( linknames[ i ], "script_linkname" );
             var_7815a6f6f10f4cd4 = getentitylessscriptablearray( linknames[ i ], "script_linkname" );
@@ -186,7 +189,7 @@ function function_50b5e4fcc500bb90( value, key )
 }
 
 // Namespace namespace_6c6964e55ab1bec8 / namespace_8297ef197f3d67e1
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x500
 // Size: 0xa5
 function function_a230870ff680af93( value, key )
@@ -198,8 +201,10 @@ function function_a230870ff680af93( value, key )
     {
         linknames = get_links();
         
-        for (i = 0; i < linknames.size; i++) {
-            for (j = 0; j < filtered_volumes.size; j++) {
+        for ( i = 0; i < linknames.size ; i++ )
+        {
+            for ( j = 0; j < filtered_volumes.size ; j++ )
+            {
                 if ( is_equal( linknames[ i ], filtered_volumes[ j ].script_linkname ) )
                 {
                     array = array_add( array, filtered_volumes[ j ] );

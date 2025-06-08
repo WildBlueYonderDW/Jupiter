@@ -4,7 +4,7 @@
 #namespace namespace_960978fc5a7ce390;
 
 // Namespace namespace_960978fc5a7ce390 / namespace_43e89ac0d1f8fd7a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc1
 // Size: 0x22
 function function_a8d762b7f47cf728()
@@ -13,7 +13,7 @@ function function_a8d762b7f47cf728()
 }
 
 // Namespace namespace_960978fc5a7ce390 / namespace_43e89ac0d1f8fd7a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb
 // Size: 0x22
 function init_traverse()

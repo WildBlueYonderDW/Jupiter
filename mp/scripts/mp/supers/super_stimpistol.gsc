@@ -19,7 +19,7 @@
 #namespace super_stimpistol;
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b5
 // Size: 0x64
 function function_c916427f116f1206()
@@ -31,7 +31,7 @@ function function_c916427f116f1206()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x321
 // Size: 0x23, Type: bool
 function function_76ca0b3d8b2555ca( weaponobj )
@@ -45,7 +45,7 @@ function function_76ca0b3d8b2555ca( weaponobj )
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34d
 // Size: 0x2
 function function_a377d33613e0c83()
@@ -54,7 +54,7 @@ function function_a377d33613e0c83()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x357
 // Size: 0x18, Type: bool
 function function_c61ee6d60763e771()
@@ -63,7 +63,7 @@ function function_c61ee6d60763e771()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x378
 // Size: 0x5a
 function function_31afe9d7b373900f()
@@ -78,7 +78,7 @@ function function_31afe9d7b373900f()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3da
 // Size: 0x30
 function function_807b3b0a3b4128f9()
@@ -95,7 +95,7 @@ function function_807b3b0a3b4128f9()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x412
 // Size: 0x5f, Type: bool
 function function_a35fff2ff233592a()
@@ -229,7 +229,7 @@ function private function_b66f1712709e29e1( hittarget, typeint )
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c5
 // Size: 0xc, Type: bool
 function function_f0d1c9c39359efff()
@@ -238,7 +238,7 @@ function function_f0d1c9c39359efff()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6da
 // Size: 0xa1
 function function_4bdcd177675c91ba( revivee )
@@ -254,7 +254,7 @@ function function_4bdcd177675c91ba( revivee )
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x784
 // Size: 0x3e
 function function_22044a9973aa399c( shootingplayer, shotplayer )
@@ -337,7 +337,7 @@ function private function_8a99cebbc265563e( hitent, impactpos, weapon )
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x97d
 // Size: 0xf2
 function function_466eb9801a8f5a59( var_de6d964ca3fb3603 )
@@ -362,7 +362,7 @@ function function_466eb9801a8f5a59( var_de6d964ca3fb3603 )
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa77
 // Size: 0x120
 function function_ada94a4d4deecf34( var_de6d964ca3fb3603 )
@@ -440,7 +440,7 @@ function private function_44c1a12f54ec6a4f()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcca
 // Size: 0x38, Type: bool
 function function_321c7891711e583f()
@@ -452,7 +452,7 @@ function function_321c7891711e583f()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd0b
 // Size: 0x26
 function function_f5037ba4a5399b63( fromdeath )
@@ -463,7 +463,7 @@ function function_f5037ba4a5399b63( fromdeath )
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd39
 // Size: 0xe
 function function_9db6a100a4046d0c()
@@ -472,7 +472,7 @@ function function_9db6a100a4046d0c()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd4f
 // Size: 0x22
 function function_3f29f7ceb8c0ec6d()
@@ -483,7 +483,7 @@ function function_3f29f7ceb8c0ec6d()
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd79
 // Size: 0x28
 function function_ad32396bd89936bb( b_value )
@@ -503,7 +503,7 @@ function function_ad32396bd89936bb( b_value )
 }
 
 // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xda9
 // Size: 0x1e
 function function_d44b1fe27ee0494f()
@@ -515,7 +515,7 @@ function function_d44b1fe27ee0494f()
 /#
 
     // Namespace super_stimpistol / scripts\mp\supers\super_stimpistol
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xdcf
     // Size: 0x56, Type: dev
     function function_b13d8e46564cdfda( triggerint )

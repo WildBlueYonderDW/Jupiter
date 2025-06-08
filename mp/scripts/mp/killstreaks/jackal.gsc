@@ -23,7 +23,7 @@
 #namespace jackal;
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x8c3
 // Size: 0x37f
 function beginjackal( lifeid, startpoint, pos, streakinfo, tacopslz )
@@ -128,7 +128,7 @@ function beginjackal( lifeid, startpoint, pos, streakinfo, tacopslz )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xc4b
 // Size: 0x71c
 function spawnksjackal( lifeid, owner, pathstart, pathgoal, streakinfo, tacopslz )
@@ -252,7 +252,7 @@ function spawnksjackal( lifeid, owner, pathstart, pathgoal, streakinfo, tacopslz
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1370
 // Size: 0xeb
 function getnumownedjackals( owner )
@@ -288,7 +288,7 @@ function getnumownedjackals( owner )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1464
 // Size: 0x12
 function delay_jackal_arrive_sfx()
@@ -298,7 +298,7 @@ function delay_jackal_arrive_sfx()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x147e
 // Size: 0x2a
 function delayjackalloopsfx( delaytime, alias )
@@ -309,7 +309,7 @@ function delayjackalloopsfx( delaytime, alias )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14b0
 // Size: 0x247
 function defendlocation( jackal, marker )
@@ -369,7 +369,7 @@ function defendlocation( jackal, marker )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16ff
 // Size: 0xa6
 function engageprimarytarget()
@@ -407,7 +407,7 @@ function engageprimarytarget()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17ad
 // Size: 0x81
 function engagesecondarytarget()
@@ -437,7 +437,7 @@ function engagesecondarytarget()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1836
 // Size: 0x181
 function followplayer()
@@ -482,7 +482,7 @@ function followplayer()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19bf
 // Size: 0x1ab
 function guardposition( position )
@@ -527,7 +527,7 @@ function guardposition( position )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b72
 // Size: 0x17b
 function patrolfield()
@@ -578,7 +578,7 @@ function patrolfield()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cf5
 // Size: 0x152
 function jackalfindfirstopenpoint()
@@ -631,7 +631,7 @@ function jackalfindfirstopenpoint()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e50
 // Size: 0x58
 function jackalcanseelocation( jackal, loc )
@@ -648,7 +648,7 @@ function jackalcanseelocation( jackal, loc )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1eb1
 // Size: 0xa3
 function jackalcanseeenemy( target )
@@ -657,7 +657,8 @@ function jackalcanseeenemy( target )
     contents = scripts\engine\trace::create_contents( 0, 1, 0, 1, 1, 0 );
     tracepoints = [ target gettagorigin( "j_head" ), target gettagorigin( "j_mainroot" ), target gettagorigin( "tag_origin" ) ];
     
-    for (i = 0; i < tracepoints.size; i++) {
+    for ( i = 0; i < tracepoints.size ; i++ )
+    {
         if ( !scripts\engine\trace::ray_trace_passed( self.origin, tracepoints[ i ], self, contents ) )
         {
             continue;
@@ -671,7 +672,7 @@ function jackalcanseeenemy( target )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f5d
 // Size: 0x1cf
 function jackalmovetoenemy( target )
@@ -721,7 +722,7 @@ function jackalmovetoenemy( target )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2134
 // Size: 0x133
 function jackalfindclosestenemy()
@@ -775,7 +776,7 @@ function jackalfindclosestenemy()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2270
 // Size: 0x58
 function isjackalenemyindoors()
@@ -792,7 +793,7 @@ function isjackalenemyindoors()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22d1
 // Size: 0x52
 function watchpatroltarget()
@@ -806,7 +807,7 @@ function watchpatroltarget()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x232b
 // Size: 0xed
 function jackalmovetolocation( location )
@@ -845,7 +846,7 @@ function jackalmovetolocation( location )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2420
 // Size: 0x189
 function jackalleave( speedoverride, acceloverride )
@@ -896,7 +897,7 @@ function jackalleave( speedoverride, acceloverride )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25b1
 // Size: 0xc9
 function jackaldelete()
@@ -927,7 +928,7 @@ function jackaldelete()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2682
 // Size: 0x2f
 function jackaltimer()
@@ -940,7 +941,7 @@ function jackaltimer()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26b9
 // Size: 0x20
 function watchgameendleave()
@@ -952,7 +953,7 @@ function watchgameendleave()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26e1
 // Size: 0x95
 function randomjackalmovement()
@@ -971,7 +972,7 @@ function randomjackalmovement()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x277e
 // Size: 0x1c7
 function getrandompoint( pos )
@@ -1011,7 +1012,7 @@ function getrandompoint( pos )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x294d
 // Size: 0x1c5
 function getnewpoint( pos, targ )
@@ -1070,7 +1071,7 @@ function getnewpoint( pos, targ )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b1b
 // Size: 0x7c
 function getpathstart( coord )
@@ -1085,7 +1086,7 @@ function getpathstart( coord )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ba0
 // Size: 0x5e
 function getpathend()
@@ -1099,7 +1100,7 @@ function getpathend()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c07
 // Size: 0x193
 function fireonturrettarget( playdialog )
@@ -1131,7 +1132,7 @@ function fireonturrettarget( playdialog )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2da2
 // Size: 0x117
 function fireoncannontarget( playdialog )
@@ -1155,7 +1156,7 @@ function fireoncannontarget( playdialog )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ec1
 // Size: 0x32
 function watchmissilelaunch()
@@ -1166,7 +1167,7 @@ function watchmissilelaunch()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2efb
 // Size: 0x7a
 function setmissilekillcament()
@@ -1181,7 +1182,7 @@ function setmissilekillcament()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2f7d
 // Size: 0xb0
 function watchforlosttarget( turret, besttarget, timeoutnotify, cooldowntime )
@@ -1212,7 +1213,7 @@ function watchforlosttarget( turret, besttarget, timeoutnotify, cooldowntime )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3035
 // Size: 0xc4
 function isreadytofire( tolerance )
@@ -1243,7 +1244,7 @@ function isreadytofire( tolerance )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3101
 // Size: 0xd0
 function acquireturrettarget( targets )
@@ -1277,7 +1278,7 @@ function acquireturrettarget( targets )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31d9
 // Size: 0x57
 function acquirecannontarget( targets )
@@ -1294,7 +1295,7 @@ function acquirecannontarget( targets )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3238
 // Size: 0x7b
 function jackalgettargets()
@@ -1304,7 +1305,8 @@ function jackalgettargets()
     targets = [];
     players = level.players;
     
-    for (i = 0; i < players.size; i++) {
+    for ( i = 0; i < players.size ; i++ )
+    {
         potentialtarget = players[ i ];
         
         if ( istarget( potentialtarget ) )
@@ -1326,7 +1328,7 @@ function jackalgettargets()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32bc
 // Size: 0x18b, Type: bool
 function istarget( potentialtarget )
@@ -1387,7 +1389,7 @@ function istarget( potentialtarget )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3450
 // Size: 0x1b7
 function getbesttarget( targets )
@@ -1441,7 +1443,7 @@ function getbesttarget( targets )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3610
 // Size: 0x112
 function handledestroydamage()
@@ -1461,7 +1463,7 @@ function handledestroydamage()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x372a
 // Size: 0x1fc
 function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, partname )
@@ -1506,7 +1508,7 @@ function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdea
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x392e
 // Size: 0x54
 function getcorrectheight( x, y, rand )
@@ -1519,7 +1521,7 @@ function getcorrectheight( x, y, rand )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x398b
 // Size: 0xde
 function playdamageefx()
@@ -1538,7 +1540,7 @@ function playdamageefx()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a71
 // Size: 0xd1
 function jackaldestroyed()
@@ -1575,7 +1577,7 @@ function jackaldestroyed()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b4a
 // Size: 0x5f
 function jackalexplode()
@@ -1594,7 +1596,7 @@ function jackalexplode()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bb1
 // Size: 0x72
 function jackalcrash( speed )
@@ -1609,7 +1611,7 @@ function jackalcrash( speed )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3c2b
 // Size: 0x7e
 function tracenewpoint( x, y, z )
@@ -1630,7 +1632,7 @@ function tracenewpoint( x, y, z )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3cb2
 // Size: 0x124
 function tracegroundpoint( x, y )
@@ -1666,7 +1668,7 @@ function tracegroundpoint( x, y )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ddf
 // Size: 0x46
 function closetogoalcheck( pathgoal )
@@ -1687,7 +1689,7 @@ function closetogoalcheck( pathgoal )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e2d
 // Size: 0x69
 function monitorowner()
@@ -1706,7 +1708,7 @@ function monitorowner()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3e9e
 // Size: 0x287
 function watchmodechange( msgname, msgstring )
@@ -1799,7 +1801,7 @@ function watchmodechange( msgname, msgstring )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x412d
 // Size: 0x1a
 function dropship_change_thrust_sfx()
@@ -1809,7 +1811,7 @@ function dropship_change_thrust_sfx()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x414f
 // Size: 0x27
 function getothermode( mode )
@@ -1827,7 +1829,7 @@ function getothermode( mode )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x417f
 // Size: 0x45
 function looptriggeredeffect( effect, missile )
@@ -1852,7 +1854,7 @@ function looptriggeredeffect( effect, missile )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41cc
 // Size: 0x347
 function attacklasedtarget( targpoint, lastmissile )
@@ -1954,7 +1956,8 @@ function attacklasedtarget( targpoint, lastmissile )
     
     if ( !var_2a224218e7468e4a )
     {
-        for (i = 0; i < 5; i++) {
+        for ( i = 0; i < 5 ; i++ )
+        {
             upquantity /= 2;
             upvector = ( 0, 0, upquantity );
             startpos = ownerorigin + upvector + forward * backdist * -1;
@@ -1972,7 +1975,8 @@ function attacklasedtarget( targpoint, lastmissile )
     
     if ( !var_2a224218e7468e4a )
     {
-        for (i = 0; i < 5; i++) {
+        for ( i = 0; i < 5 ; i++ )
+        {
             upquantity *= 2.5;
             upvector = ( 0, 0, upquantity );
             startpos = ownerorigin + upvector + forward * backdist * -1;
@@ -1990,7 +1994,7 @@ function attacklasedtarget( targpoint, lastmissile )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x451b
 // Size: 0x5f
 function playlocksound()
@@ -2008,7 +2012,7 @@ function playlocksound()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4582
 // Size: 0x56
 function playlockerrorsound()
@@ -2026,7 +2030,7 @@ function playlockerrorsound()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x45e0
 // Size: 0x53
 function beginevasivemaneuvers()
@@ -2044,7 +2048,7 @@ function beginevasivemaneuvers()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x463b
 // Size: 0xdc
 function watchguardevadedamage()
@@ -2077,7 +2081,7 @@ function watchguardevadedamage()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x471f
 // Size: 0x39
 function watchdropcratesearly( marker )
@@ -2089,7 +2093,7 @@ function watchdropcratesearly( marker )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4760
 // Size: 0x29
 function dropcrates( var_2e0d8ba0a46ce1b1, marker )
@@ -2099,7 +2103,7 @@ function dropcrates( var_2e0d8ba0a46ce1b1, marker )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4791
 // Size: 0x2e
 function watchforcapture( jackal, index )
@@ -2109,7 +2113,7 @@ function watchforcapture( jackal, index )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x47c7
 // Size: 0x58
 function watchjackalcratepickup()
@@ -2132,7 +2136,7 @@ function watchjackalcratepickup()
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4827
 // Size: 0xd1
 function beginjackalescort( lifeid, startpoint, pos, streakinfo, tacopslz, approachvector )
@@ -2155,7 +2159,7 @@ function beginjackalescort( lifeid, startpoint, pos, streakinfo, tacopslz, appro
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4901
 // Size: 0xb2
 function defendlocationescort( jackal, marker )
@@ -2174,7 +2178,7 @@ function defendlocationescort( jackal, marker )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x49bb
 // Size: 0x158
 function guardpositionescort( position, lookat, var_dc8bb6300463cf1e )
@@ -2223,7 +2227,7 @@ function guardpositionescort( position, lookat, var_dc8bb6300463cf1e )
 }
 
 // Namespace jackal / scripts\mp\killstreaks\jackal
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4b1b
 // Size: 0x64
 function getcorrectheightescort( x, y, rand, minheight )

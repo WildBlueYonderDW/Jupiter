@@ -15,7 +15,7 @@
 #namespace dronehive;
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38a
 // Size: 0x95
 function init()
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x427
 // Size: 0xd, Type: bool
 function weapongivendronehive( streakinfo )
@@ -39,9 +39,9 @@ function weapongivendronehive( streakinfo )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43d
-// Size: 0x4b, Type: bool
+// Size: 0x4b
 function tryusedronehive( streakinfo )
 {
     /#
@@ -55,7 +55,7 @@ function tryusedronehive( streakinfo )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x491
 // Size: 0x9b, Type: bool
 function usedronehive( player, lifeid, streakinfo )
@@ -81,7 +81,7 @@ function usedronehive( player, lifeid, streakinfo )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x535
 // Size: 0x48
 function watchhostmigrationstartedinit( player )
@@ -105,7 +105,7 @@ function watchhostmigrationstartedinit( player )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x585
 // Size: 0x64
 function watchhostmigrationfinishedinit( player )
@@ -130,7 +130,7 @@ function watchhostmigrationfinishedinit( player )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f1
 // Size: 0xc5
 function watchclosetogoal( player )
@@ -156,7 +156,7 @@ function watchclosetogoal( player )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6be
 // Size: 0x426
 function rundronehive( player, lifeid, streakname, streakinfo )
@@ -276,14 +276,15 @@ function rundronehive( player, lifeid, streakname, streakinfo )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xaec
 // Size: 0x68
 function firerapidmissiles( rocket, missilecount, streakinfo, childweapon )
 {
     startingside = missilecount;
     
-    for (i = 0; i < 2; i++) {
+    for ( i = 0; i < 2 ; i++ )
+    {
         level thread spawnswitchblade( rocket, startingside, streakinfo, childweapon );
         startingside++;
         
@@ -297,7 +298,7 @@ function firerapidmissiles( rocket, missilecount, streakinfo, childweapon )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb5c
 // Size: 0x3a
 function resetmissiles( rocket, reloadtime )
@@ -309,7 +310,7 @@ function resetmissiles( rocket, reloadtime )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb9e
 // Size: 0x121
 function monitorlockedtarget()
@@ -348,7 +349,7 @@ function monitorlockedtarget()
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xcc7
 // Size: 0x22b
 function spawnswitchblade( rocket, var_ccfd286d34b473a0, streakinfo, childweapon )
@@ -391,7 +392,7 @@ function spawnswitchblade( rocket, var_ccfd286d34b473a0, streakinfo, childweapon
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xefa
 // Size: 0x108
 function getclosesttargetinview( owner, targetlocation )
@@ -434,7 +435,7 @@ function getclosesttargetinview( owner, targetlocation )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x100b
 // Size: 0xa6
 function canseetarget( target )
@@ -443,7 +444,8 @@ function canseetarget( target )
     contentoverride = scripts\engine\trace::create_contents( 0, 1, 1, 1, 1, 1, 0 );
     tracepoints = [ target gettagorigin( "j_head" ), target gettagorigin( "j_mainroot" ), target gettagorigin( "tag_origin" ) ];
     
-    for (i = 0; i < tracepoints.size; i++) {
+    for ( i = 0; i < tracepoints.size ; i++ )
+    {
         if ( !scripts\engine\trace::ray_trace_passed( self.origin, tracepoints[ i ], self, contentoverride ) )
         {
             continue;
@@ -457,7 +459,7 @@ function canseetarget( target )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10ba
 // Size: 0x1b
 function watchtarget()
@@ -468,7 +470,7 @@ function watchtarget()
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10dd
 // Size: 0x38
 function looptriggeredeffect( effect, missile )
@@ -485,7 +487,7 @@ function looptriggeredeffect( effect, missile )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x111d
 // Size: 0x2e
 function getnextmissilespawnindex( oldindex )
@@ -501,7 +503,7 @@ function getnextmissilespawnindex( oldindex )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1154
 // Size: 0x34
 function monitorboost( rocket )
@@ -516,7 +518,7 @@ function monitorboost( rocket )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1190
 // Size: 0x209
 function getbestmissilespawnpoint( owner, remotemissilespawnpoints )
@@ -555,7 +557,8 @@ function getbestmissilespawnpoint( owner, remotemissilespawnpoints )
     {
         missilespawn.sightedenemies = 0;
         
-        for (i = 0; i < validenemies.size; i++) {
+        for ( i = 0; i < validenemies.size ; i++ )
+        {
             enemy = validenemies[ i ];
             
             if ( !isreallyalive( enemy ) )
@@ -591,7 +594,7 @@ function getbestmissilespawnpoint( owner, remotemissilespawnpoints )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13a2
 // Size: 0x7d
 function missileeyes( player, rocket )
@@ -607,7 +610,7 @@ function missileeyes( player, rocket )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1427
 // Size: 0x39
 function unfreezecontrols( player, delaytime, i )
@@ -618,7 +621,7 @@ function unfreezecontrols( player, delaytime, i )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1468
 // Size: 0x35
 function monitordisownkillstreaks( player )
@@ -630,7 +633,7 @@ function monitordisownkillstreaks( player )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14a5
 // Size: 0x19
 function monitorownerstatus( notifymsg )
@@ -640,7 +643,7 @@ function monitorownerstatus( notifymsg )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14c6
 // Size: 0x3b
 function monitorgameend( player )
@@ -653,7 +656,7 @@ function monitorgameend( player )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1509
 // Size: 0x2d
 function monitorobjectivecamera( player )
@@ -665,7 +668,7 @@ function monitorobjectivecamera( player )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x153e
 // Size: 0x74
 function monitordeath( killstreakent, mainmissile )
@@ -690,7 +693,7 @@ function monitordeath( killstreakent, mainmissile )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15ba
 // Size: 0x89
 function returnplayer( player, instant, gameended )
@@ -716,7 +719,7 @@ function returnplayer( player, instant, gameended )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x164b
 // Size: 0x90
 function watchgastrigger( missileowner, weaponname )
@@ -747,7 +750,7 @@ function watchgastrigger( missileowner, weaponname )
 }
 
 // Namespace dronehive / scripts\mp\killstreaks\dronehive
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x16e3
 // Size: 0x9a
 function applygasdamageovertime( missileowner, missileweapon, victim )

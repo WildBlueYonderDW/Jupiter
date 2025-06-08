@@ -1,7 +1,7 @@
 #namespace heads_iw9_enemy_aq_tier2_1;
 
 // Namespace heads_iw9_enemy_aq_tier2_1 / xmodelalias\heads_iw9_enemy_aq_tier2_1
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x128
 // Size: 0x34
 function main()

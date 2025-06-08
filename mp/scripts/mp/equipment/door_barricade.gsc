@@ -21,7 +21,7 @@
 #namespace door_barricade;
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c8
 // Size: 0x6f
 function function_bfeeefe1b4413ef0()
@@ -39,7 +39,7 @@ function function_bfeeefe1b4413ef0()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33f
 // Size: 0xb
 function function_23c3d8f2ae91b6c3()
@@ -48,7 +48,7 @@ function function_23c3d8f2ae91b6c3()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x353
 // Size: 0x183
 function function_f2f0951e4a6e218c()
@@ -68,7 +68,7 @@ function function_f2f0951e4a6e218c()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4de
 // Size: 0x2a
 function function_7b14c1e8b791b520()
@@ -86,7 +86,7 @@ function function_7b14c1e8b791b520()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x510
 // Size: 0x11a, Type: bool
 function function_2e07802ab9938047()
@@ -145,7 +145,7 @@ function function_2e07802ab9938047()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x633
 // Size: 0xe5, Type: bool
 function function_b0a452739651f90( door, var_cb5da767b979cc7d )
@@ -203,7 +203,7 @@ function function_b0a452739651f90( door, var_cb5da767b979cc7d )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x721
 // Size: 0x6d
 function function_e2fe2dcb469b8151( var_67c2ef0a05674606, var_a68916f113c5beda )
@@ -224,7 +224,7 @@ function function_e2fe2dcb469b8151( var_67c2ef0a05674606, var_a68916f113c5beda )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x796
 // Size: 0x22e
 function function_c104f29141976961( door, secondarydoor )
@@ -272,7 +272,7 @@ function function_c104f29141976961( door, secondarydoor )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9cd
 // Size: 0xa6
 function function_a6ad5685b28ec03a( var_6c2e7e8ffb9dc2b4, var_56bbde692db1e972 )
@@ -296,7 +296,7 @@ function function_a6ad5685b28ec03a( var_6c2e7e8ffb9dc2b4, var_56bbde692db1e972 )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa7b
 // Size: 0x1c
 function function_4c71e3b9e9268274( var_67c2ef0a05674606 )
@@ -306,7 +306,7 @@ function function_4c71e3b9e9268274( var_67c2ef0a05674606 )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa9f
 // Size: 0xb7
 function function_1591fdb99f47eb45( deletiondelay, var_56bbde692db1e972 )
@@ -338,7 +338,7 @@ function function_1591fdb99f47eb45( deletiondelay, var_56bbde692db1e972 )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb5e
 // Size: 0x48
 function function_47de387357a169a0()
@@ -354,7 +354,7 @@ function function_47de387357a169a0()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbae
 // Size: 0x1a
 function function_9d44d1095c5076fc()
@@ -365,7 +365,7 @@ function function_9d44d1095c5076fc()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbd0
 // Size: 0x2
 function function_49c6f1e402dea720()
@@ -374,7 +374,7 @@ function function_49c6f1e402dea720()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0xbda
 // Size: 0x133
 function function_fa856206e66d1aca( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -401,7 +401,7 @@ function function_fa856206e66d1aca( einflictor, eattacker, instance, idamage, id
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0xd15
 // Size: 0x1a7
 function function_5b121785e9363ea4( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -457,7 +457,7 @@ function function_5b121785e9363ea4( einflictor, eattacker, instance, idamage, id
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec5
 // Size: 0x52
 function function_7081462a3365812b( attacker )
@@ -472,7 +472,7 @@ function function_7081462a3365812b( attacker )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf1f
 // Size: 0x20
 function function_8d35d9ef24e364e3( lockdoor )
@@ -487,7 +487,7 @@ function function_8d35d9ef24e364e3( lockdoor )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf47
 // Size: 0x48, Type: bool
 function function_76345fed7f6c60cb()
@@ -508,7 +508,7 @@ function function_76345fed7f6c60cb()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf98
 // Size: 0x15
 function function_988c3e09726886fd()
@@ -517,7 +517,7 @@ function function_988c3e09726886fd()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb6
 // Size: 0x20
 function function_a348fed54b7ad2d1( barricade )
@@ -526,7 +526,7 @@ function function_a348fed54b7ad2d1( barricade )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfde
 // Size: 0x15
 function function_81f42d756861b14a()
@@ -535,7 +535,7 @@ function function_81f42d756861b14a()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xffb
 // Size: 0x8
 function function_839932ee77f36e1c()
@@ -544,7 +544,7 @@ function function_839932ee77f36e1c()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x100c
 // Size: 0x49
 function function_7e1a3b2e2d74be03( var_67c2ef0a05674606, player )
@@ -559,7 +559,7 @@ function function_7e1a3b2e2d74be03( var_67c2ef0a05674606, player )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x105d
 // Size: 0x4c
 function function_20c4d2ad6cf2bed3( var_67c2ef0a05674606, player, var_85e3240d30e184e7 )
@@ -574,7 +574,7 @@ function function_20c4d2ad6cf2bed3( var_67c2ef0a05674606, player, var_85e3240d30
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10b2
 // Size: 0x313
 function function_4413c6dd67af86bc()
@@ -659,7 +659,7 @@ function function_4413c6dd67af86bc()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13ce
 // Size: 0x41
 function function_d42196552ddc1a12( var_67c2ef0a05674606, player )
@@ -678,7 +678,7 @@ function function_d42196552ddc1a12( var_67c2ef0a05674606, player )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1417
 // Size: 0x6e
 function function_bbf23fbf1b086454( firstplayer, secondplayer )
@@ -702,7 +702,7 @@ function function_bbf23fbf1b086454( firstplayer, secondplayer )
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x148d
 // Size: 0x59, Type: bool
 function function_5d6c66032973087()
@@ -746,7 +746,7 @@ function function_5d6c66032973087()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14ef
 // Size: 0x1d
 function function_92093a4b887c3bdc()
@@ -755,7 +755,7 @@ function function_92093a4b887c3bdc()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1515
 // Size: 0x34
 function function_4903b126f5910cc7()
@@ -766,7 +766,7 @@ function function_4903b126f5910cc7()
 }
 
 // Namespace door_barricade / scripts\mp\equipment\door_barricade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1552
 // Size: 0x251
 function function_7f20536248ae1a5c()
@@ -807,7 +807,7 @@ function function_7f20536248ae1a5c()
 /#
 
     // Namespace door_barricade / scripts\mp\equipment\door_barricade
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x17ab
     // Size: 0x66, Type: dev
     function function_f01315df3715c3b1()

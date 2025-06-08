@@ -23,7 +23,7 @@
 #namespace namespace_80d9f81787d5f007;
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x500
 // Size: 0x14a
 function function_7d47bded29ed7882( timetoarrive, heliheight, waittime, minwaittime, var_1a7e969d835799f2, exitheight, var_abe738473a42706b, helihealth, var_1869ac124be0cc0b )
@@ -46,7 +46,7 @@ function function_7d47bded29ed7882( timetoarrive, heliheight, waittime, minwaitt
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x652
 // Size: 0x3f
 function function_3c673414d075ebfc( callbackkey, func )
@@ -61,7 +61,7 @@ function function_3c673414d075ebfc( callbackkey, func )
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x699
 // Size: 0x49a
 function function_ed11ae9fe1abdeb( ent, endpos )
@@ -137,7 +137,7 @@ function function_ed11ae9fe1abdeb( ent, endpos )
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb3c
 // Size: 0x261
 function function_1093b8f392744e3b( ent, endpos, var_dcea0339d68fe36a, angleoverride, overridestartangles )
@@ -179,7 +179,7 @@ function function_1093b8f392744e3b( ent, endpos, var_dcea0339d68fe36a, angleover
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xda6
 // Size: 0x180
 function function_8fb6efc069bf4ef8( startnode, heliheight, reverse, angleoverride )
@@ -244,7 +244,7 @@ function private function_38e2d21d6f6e393b( pos, prevstruct, triggername, speed,
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xfe5
 // Size: 0x2a6
 function function_d05f47d864f18196( owner, pos, angles, var_4fffc035c8679b98, var_7e6513b2ae0d5c1d, var_14cde247ac3313a4 )
@@ -337,7 +337,8 @@ function private function_264031b20e04a07c()
     pilot_num = 2;
     self.pilots = [];
     
-    for (i = 0; i < pilot_num; i++) {
+    for ( i = 0; i < pilot_num ; i++ )
+    {
         fake_guy = function_8c5dd82b28a2c584( i, drivertags[ i ], var_30f2bdd1710c71fb[ i ], drivermodels[ i ], undefined );
         self.pilots[ self.pilots.size ] = fake_guy;
     }
@@ -379,7 +380,7 @@ function private function_8c5dd82b28a2c584( posindex, tag, animname, model, head
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x147b
 // Size: 0x19
 function function_423f49e2512a5f53()
@@ -391,7 +392,7 @@ function function_423f49e2512a5f53()
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x149c
 // Size: 0x326
 function function_1e04f8a9053512a4( player )
@@ -470,7 +471,7 @@ function function_1e04f8a9053512a4( player )
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17ca
 // Size: 0x64
 function function_6519494290b58824( player )
@@ -486,7 +487,7 @@ function function_6519494290b58824( player )
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1836
 // Size: 0xfb
 function function_a5fc6e8f9df1ccea( heli, endpoint, ent )
@@ -533,7 +534,7 @@ function function_a5fc6e8f9df1ccea( heli, endpoint, ent )
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1939
 // Size: 0x5a
 function function_72d275d574bd23dd( heli, endpoint )
@@ -552,7 +553,7 @@ function function_72d275d574bd23dd( heli, endpoint )
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x199b
 // Size: 0x1e3
 function function_55d37b18154a058e( waittime )
@@ -606,7 +607,7 @@ function function_55d37b18154a058e( waittime )
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b86
 // Size: 0x6b
 function function_18d68b06fa34264b( heli )
@@ -624,7 +625,7 @@ function function_18d68b06fa34264b( heli )
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bf9
 // Size: 0x23
 function function_2b68fd672b6b021()
@@ -634,7 +635,7 @@ function function_2b68fd672b6b021()
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c24
 // Size: 0x20
 function function_c05648d95863318a()
@@ -647,7 +648,7 @@ function function_c05648d95863318a()
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c4c
 // Size: 0xbd
 function function_ed686fcbc5363b3()
@@ -669,7 +670,7 @@ function function_ed686fcbc5363b3()
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x1d11
 // Size: 0x834
 function function_d1478474b036b87f( ent, part, state, player, waittime, var_4fffc035c8679b98, finalexfil, var_14cde247ac3313a4 )
@@ -766,7 +767,8 @@ function function_d1478474b036b87f( ent, part, state, player, waittime, var_4fff
     
     ownerplayer = player;
     
-    for (i = 0; i < players.size && !isdefined( ownerplayer ); i++) {
+    for ( i = 0; i < players.size && !isdefined( ownerplayer ) ; i++ )
+    {
         ownerplayer = players[ i ];
     }
     
@@ -892,7 +894,7 @@ function function_d1478474b036b87f( ent, part, state, player, waittime, var_4fff
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x254d
 // Size: 0x7e
 function function_730c660d9fc6808e( players, finalexfil, hostageexfil, personalexfil, drivableexfil )
@@ -907,7 +909,7 @@ function function_730c660d9fc6808e( players, finalexfil, hostageexfil, personale
 }
 
 // Namespace namespace_80d9f81787d5f007 / namespace_e8fceb5cf6e8cdf8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25d4
 // Size: 0x33, Type: bool
 function entisalivevehicle()

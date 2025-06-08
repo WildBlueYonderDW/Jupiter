@@ -19,7 +19,7 @@
 #namespace br_champion_task;
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x431
 // Size: 0x18c
 function init()
@@ -45,7 +45,7 @@ function init()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c5
 // Size: 0x2c
 function inittasks()
@@ -59,7 +59,7 @@ function inittasks()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f9
 // Size: 0x51
 function onplayerfirstland( player )
@@ -71,7 +71,7 @@ function onplayerfirstland( player )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x652
 // Size: 0x2a, Type: bool
 function function_a978c2984ee71b09( left, right )
@@ -80,7 +80,7 @@ function function_a978c2984ee71b09( left, right )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x685
 // Size: 0xa5
 function function_5d533973550bc682()
@@ -96,7 +96,7 @@ function function_5d533973550bc682()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x732
 // Size: 0x95
 function registertaskid()
@@ -109,7 +109,7 @@ function registertaskid()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7cf
 // Size: 0x6e
 function function_6d00ae53ce465992()
@@ -120,7 +120,7 @@ function function_6d00ae53ce465992()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x845
 // Size: 0xd8
 function function_76e0d0742a7d2ebc()
@@ -141,7 +141,8 @@ function function_76e0d0742a7d2ebc()
         difficultyweight[ finishednum ] = [];
         curdifficulty = 0;
         
-        for (i = 1; i <= 5; i++) {
+        for ( i = 1; i <= 5 ; i++ )
+        {
             difficultyweight[ finishednum ][ curdifficulty ] = int( tablelookupbyrow( level.taskinfo.difficultytable, row, i ) );
             curdifficulty++;
         }
@@ -154,12 +155,13 @@ function function_76e0d0742a7d2ebc()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x925
 // Size: 0x3e3
 function loadtables()
 {
-    for (row = 0; true; row++) {
+    for ( row = 0; true ; row++ )
+    {
         taskref = tablelookupbyrow( level.taskinfo.tasktable, row, 1 );
         
         if ( !isdefined( taskref ) || taskref == "" )
@@ -202,7 +204,7 @@ function loadtables()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd10
 // Size: 0xa1
 function postprematch()
@@ -222,7 +224,7 @@ function postprematch()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdb9
 // Size: 0x55
 function function_ae0491bee1cd18b1( team )
@@ -244,7 +246,7 @@ function function_ae0491bee1cd18b1( team )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe16
 // Size: 0x1ab
 function function_8e45171e5c3a01be()
@@ -304,7 +306,7 @@ function function_8e45171e5c3a01be()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfc9
 // Size: 0x149
 function function_a6cd232d5ae39984( team )
@@ -329,7 +331,8 @@ function function_a6cd232d5ae39984( team )
     curvalue = 0;
     difficulty = 1;
     
-    for (i = 0; i < difficultyweight.size; i++) {
+    for ( i = 0; i < difficultyweight.size ; i++ )
+    {
         curvalue += difficultyweight[ i ];
         
         if ( curvalue >= rand )
@@ -343,7 +346,7 @@ function function_a6cd232d5ae39984( team )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x111b
 // Size: 0x12f
 function function_52c8c6ce1652ac8a( activetasklist )
@@ -377,7 +380,7 @@ function function_52c8c6ce1652ac8a( activetasklist )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1253
 // Size: 0x97, Type: bool
 function function_98e66ac4422e0a25( team, task, activecategories, currentdifficulty )
@@ -393,7 +396,7 @@ function function_98e66ac4422e0a25( team, task, activecategories, currentdifficu
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12f3
 // Size: 0x1da
 function getnexttask( team )
@@ -440,7 +443,8 @@ function getnexttask( team )
     curvalue = 0;
     selectedtask = undefined;
     
-    for (i = 0; i < filteredtasklist.size; i++) {
+    for ( i = 0; i < filteredtasklist.size ; i++ )
+    {
         curvalue += filteredtasklist[ i ].weight;
         
         if ( curvalue >= rand )
@@ -454,7 +458,7 @@ function getnexttask( team )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14d6
 // Size: 0x199
 function tryassigntask( selectedtask, team )
@@ -499,7 +503,7 @@ function tryassigntask( selectedtask, team )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1677
 // Size: 0x107
 function function_2a01f2053fbdc8e4( selectedtask, team )
@@ -510,7 +514,8 @@ function function_2a01f2053fbdc8e4( selectedtask, team )
     taskinstance.team = team;
     taskinstance.currentvalue = 0;
     
-    for (i = 0; i < level.taskinfo.maxnum; i++) {
+    for ( i = 0; i < level.taskinfo.maxnum ; i++ )
+    {
         if ( !isdefined( taskinfo.tasklist[ i ] ) )
         {
             taskinfo.tasklist[ i ] = taskinstance;
@@ -526,14 +531,15 @@ function function_2a01f2053fbdc8e4( selectedtask, team )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1787
 // Size: 0x83
 function function_32139ed00e90904a( taskinstance )
 {
     taskinfo = level.teamdata[ taskinstance.team ][ "taskInfo" ];
     
-    for (i = 0; i < level.taskinfo.maxnum; i++) {
+    for ( i = 0; i < level.taskinfo.maxnum ; i++ )
+    {
         if ( isdefined( taskinfo.tasklist[ i ] ) && taskinfo.tasklist[ i ] == taskinstance )
         {
             return i;
@@ -544,7 +550,7 @@ function function_32139ed00e90904a( taskinstance )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1813
 // Size: 0x7b
 function function_89b8bce3baa45edc( taskinstance, value )
@@ -562,7 +568,7 @@ function function_89b8bce3baa45edc( taskinstance, value )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1896
 // Size: 0xed
 function function_45ae11193c21e83a( taskinstance )
@@ -588,7 +594,7 @@ function function_45ae11193c21e83a( taskinstance )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x198b
 // Size: 0x2ad
 function ontaskend( taskinstance, result )
@@ -644,7 +650,7 @@ function ontaskend( taskinstance, result )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c40
 // Size: 0xb0
 function getscore( taskinstance )
@@ -659,7 +665,7 @@ function getscore( taskinstance )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cf8
 // Size: 0x48, Type: bool
 function function_7fd06dbd60481367( category, funclabel )
@@ -669,7 +675,7 @@ function function_7fd06dbd60481367( category, funclabel )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1d49
 // Size: 0x3e
 function function_ac97a4f2ab8c2d53( category, funclabel, func )
@@ -678,7 +684,7 @@ function function_ac97a4f2ab8c2d53( category, funclabel, func )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1d8f
 // Size: 0xbc
 function function_d306f944e9d41c98( category, funclabel, param1, param2 )
@@ -704,7 +710,7 @@ function function_d306f944e9d41c98( category, funclabel, param1, param2 )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e53
 // Size: 0xe6
 function function_4b70ee1a6ccda665( team )
@@ -739,7 +745,7 @@ function function_4b70ee1a6ccda665( team )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f42
 // Size: 0xb4
 function function_5ce6ab0b7da3e97d( team )
@@ -748,7 +754,8 @@ function function_5ce6ab0b7da3e97d( team )
     
     foreach ( player in level.teamdata[ team ][ "players" ] )
     {
-        for (i = 1; i <= 4; i++) {
+        for ( i = 1; i <= 4 ; i++ )
+        {
             if ( isdefined( var_e61e2fbf2fd48fc0[ i ] ) )
             {
                 name = "ui_champion_player" + i + "_currentTask";
@@ -759,7 +766,7 @@ function function_5ce6ab0b7da3e97d( team )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ffe
 // Size: 0xb1
 function function_a4762296e49d5615( taskinstance )
@@ -778,7 +785,7 @@ function function_a4762296e49d5615( taskinstance )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20b7
 // Size: 0xad
 function function_d0bdd994d7d8e9b9( taskinstance, taskid )
@@ -799,7 +806,7 @@ function function_d0bdd994d7d8e9b9( taskinstance, taskid )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x216c
 // Size: 0xad
 function function_e77af979434b2b4d( taskinstance, taskvalue )
@@ -820,7 +827,7 @@ function function_e77af979434b2b4d( taskinstance, taskvalue )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2221
 // Size: 0xdf
 function function_f1c522713f6662fe( taskinstance, status )
@@ -854,7 +861,7 @@ function function_f1c522713f6662fe( taskinstance, status )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2308
 // Size: 0xd6
 function function_419ef70cfcbfafe( taskinstance, category )
@@ -879,7 +886,7 @@ function function_419ef70cfcbfafe( taskinstance, category )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23e6
 // Size: 0xf3
 function function_faf2c6a1a5a7aa93( channel, value )
@@ -903,7 +910,7 @@ function function_faf2c6a1a5a7aa93( channel, value )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x24e1
 // Size: 0xe1
 function function_2e55101ffd0d483c( taskinstance, items, objectivecheckfunc, iconheight, var_70696e1b9f55cbf7 )
@@ -931,7 +938,7 @@ function function_2e55101ffd0d483c( taskinstance, items, objectivecheckfunc, ico
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x25ca
 // Size: 0x123
 function function_709285b860caff8d( target, taskinstance, iconheight, var_70696e1b9f55cbf7 )
@@ -973,7 +980,7 @@ function function_709285b860caff8d( target, taskinstance, iconheight, var_70696e
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26f5
 // Size: 0xc5
 function onpickupitemused( pickupent )
@@ -995,7 +1002,7 @@ function onpickupitemused( pickupent )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27c2
 // Size: 0xd1
 function removeobjectiveinfo()
@@ -1025,7 +1032,7 @@ function removeobjectiveinfo()
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x289b
 // Size: 0xa6
 function function_dc1ddf344f05f387( taskinstance )
@@ -1042,7 +1049,7 @@ function function_dc1ddf344f05f387( taskinstance )
 }
 
 // Namespace br_champion_task / scripts\mp\gametypes\br_champion_task
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2949
 // Size: 0x62
 function function_8fd21242a694aa72( taskinstance )

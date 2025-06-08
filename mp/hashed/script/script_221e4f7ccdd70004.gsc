@@ -4,7 +4,7 @@
 #namespace mp_jup_st_c_ob_vehicles_cs;
 
 // Namespace mp_jup_st_c_ob_vehicles_cs / namespace_1aa66c587558caa6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x641
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_c_ob_vehicles_cs / namespace_1aa66c587558caa6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6b6
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_c_ob_vehicles_cs / namespace_1aa66c587558caa6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x725
 // Size: 0x250c
 function createstructs( fe, us, cf )
@@ -526,7 +526,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_c_ob_vehicles_cs / namespace_1aa66c587558caa6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c39
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -535,7 +535,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_c_ob_vehicles_cs / namespace_1aa66c587558caa6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c43
 // Size: 0xe
 function cleanup()

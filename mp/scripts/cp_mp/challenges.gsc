@@ -18,8 +18,8 @@
 #namespace challenges;
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d18
+// Params 0
+// Checksum 0x0, Offset: 0x2d65
 // Size: 0xf9
 function init()
 {
@@ -67,8 +67,8 @@ function init()
 /#
 
     // Namespace challenges / scripts\cp_mp\challenges
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2e19
+    // Params 0
+    // Checksum 0x0, Offset: 0x2e66
     // Size: 0x4b, Type: dev
     function function_4f4a046a372e8158()
     {
@@ -90,8 +90,8 @@ function init()
 #/
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e6c
+// Params 0
+// Checksum 0x0, Offset: 0x2eb9
 // Size: 0x4b5
 function setupchallengelocales()
 {
@@ -223,8 +223,8 @@ function setupchallengelocales()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3329
+// Params 0
+// Checksum 0x0, Offset: 0x3376
 // Size: 0xb
 function challengesenabled()
 {
@@ -232,8 +232,8 @@ function challengesenabled()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x333d
+// Params 0
+// Checksum 0x0, Offset: 0x338a
 // Size: 0x71, Type: bool
 function challengesenabledforplayer()
 {
@@ -269,8 +269,8 @@ function challengesenabledforplayer()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33b7
+// Params 0
+// Checksum 0x0, Offset: 0x3404
 // Size: 0x30
 function function_5c7e8bcdc167fd84()
 {
@@ -283,8 +283,8 @@ function function_5c7e8bcdc167fd84()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33f0
+// Params 0
+// Checksum 0x0, Offset: 0x343d
 // Size: 0x1e, Type: bool
 function challengetimersenabledforplayer()
 {
@@ -302,8 +302,8 @@ function challengetimersenabledforplayer()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3417
+// Params 1
+// Checksum 0x0, Offset: 0x3464
 // Size: 0x2d, Type: bool
 function validchallengetimer( challengename )
 {
@@ -321,8 +321,8 @@ function validchallengetimer( challengename )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x344d
+// Params 1
+// Checksum 0x0, Offset: 0x349a
 // Size: 0x2d
 function resetchallengetimer( challengename )
 {
@@ -340,8 +340,8 @@ function resetchallengetimer( challengename )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3482
+// Params 1
+// Checksum 0x0, Offset: 0x34cf
 // Size: 0x59
 function startchallengetimer( challengename )
 {
@@ -364,8 +364,8 @@ function startchallengetimer( challengename )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34e3
+// Params 1
+// Checksum 0x0, Offset: 0x3530
 // Size: 0x69
 function stopchallengetimer( challengename )
 {
@@ -393,8 +393,8 @@ function stopchallengetimer( challengename )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3554
+// Params 2
+// Checksum 0x0, Offset: 0x35a1
 // Size: 0x75
 function checkandreportchallengetimer( challengename, elapsedtime )
 {
@@ -421,8 +421,8 @@ function checkandreportchallengetimer( challengename, elapsedtime )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35d1
+// Params 0
+// Checksum 0x0, Offset: 0x361e
 // Size: 0x7b
 function trackchallengetimers()
 {
@@ -434,7 +434,8 @@ function trackchallengetimers()
         {
             totalplayers = level.players.size;
             
-            for (i = 0; i < totalplayers; i++) {
+            for ( i = 0; i < totalplayers ; i++ )
+            {
                 if ( isalive( level.players[ i ] ) )
                 {
                     level.players[ i ] checkandreportchallengetimer( "driving", 60000 );
@@ -449,8 +450,8 @@ function trackchallengetimers()
 /#
 
     // Namespace challenges / scripts\cp_mp\challenges
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3654
+    // Params 0
+    // Checksum 0x0, Offset: 0x36a1
     // Size: 0x4c, Type: dev
     function function_11cf26edf87d512()
     {
@@ -473,8 +474,8 @@ function trackchallengetimers()
 #/
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x36a8
+// Params 2
+// Checksum 0x0, Offset: 0x36f5
 // Size: 0x6d8
 function function_7d97a2a745e514c4( event, params )
 {
@@ -581,7 +582,8 @@ function function_7d97a2a745e514c4( event, params )
                     {
                         bitarray = function_3005ef56488df9be( value );
                         
-                        for (n = 0; n < var_289dd4d247bd6d9d.size; n++) {
+                        for ( n = 0; n < var_289dd4d247bd6d9d.size ; n++ )
+                        {
                             if ( !isdefined( bitarray[ n ] ) || !bitarray[ n ] )
                             {
                                 continue;
@@ -635,8 +637,8 @@ function function_7d97a2a745e514c4( event, params )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d88
+// Params 8
+// Checksum 0x0, Offset: 0x3dd5
 // Size: 0x160
 function onplayerkilled( inflictor, attacker, damage, damageflags, meansofdeath, objweapon, hitloc, modifiers )
 {
@@ -695,8 +697,8 @@ function onplayerkilled( inflictor, attacker, damage, damageflags, meansofdeath,
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ef0
+// Params 10
+// Checksum 0x0, Offset: 0x3f3d
 // Size: 0x1a3
 function function_5a0ae8bc2b80c0c0( inflictor, attacker, damage, meansofdeath, objweapon, hitloc, modifiers, var_1d68c79557cc54ea, victim_team, var_bafbdb422ea9eaae )
 {
@@ -773,8 +775,8 @@ function function_5a0ae8bc2b80c0c0( inflictor, attacker, damage, meansofdeath, o
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x409b
+// Params 4
+// Checksum 0x0, Offset: 0x40e8
 // Size: 0x40c
 function vehiclekilled( vehicle, attacker, damage, objweapon )
 {
@@ -895,8 +897,8 @@ function vehiclekilled( vehicle, attacker, damage, objweapon )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x44af
+// Params 2
+// Checksum 0x0, Offset: 0x44fc
 // Size: 0x72
 function function_bd4827ad81a943a( vehicle, damagedata )
 {
@@ -909,8 +911,8 @@ function function_bd4827ad81a943a( vehicle, damagedata )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x4529
+// Params 8
+// Checksum 0x0, Offset: 0x4576
 // Size: 0x16e
 function equipmentdestroyed( inflictor, attacker, damage, damageflags, meansofdeath, objweapon, hitloc, modifiers )
 {
@@ -972,8 +974,8 @@ function equipmentdestroyed( inflictor, attacker, damage, damageflags, meansofde
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x469f
+// Params 8
+// Checksum 0x0, Offset: 0x46ec
 // Size: 0x1e7
 function killstreakkilled( killstreakname, owner, streakent, attacker, damage, damagetype, objweapon, scorepopupname )
 {
@@ -1036,8 +1038,8 @@ function killstreakkilled( killstreakname, owner, streakent, attacker, damage, d
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x488e
+// Params 1
+// Checksum 0x0, Offset: 0x48db
 // Size: 0x41
 function function_5b2c23ea4889f30b( invalue )
 {
@@ -1052,8 +1054,8 @@ function function_5b2c23ea4889f30b( invalue )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x48d8
+// Params 6
+// Checksum 0x0, Offset: 0x4925
 // Size: 0x255
 function function_8359cadd253f9604( player, type, quantity, var_afda85311c8ed272, lootid, var_f237807396377232 )
 {
@@ -1104,8 +1106,8 @@ function function_8359cadd253f9604( player, type, quantity, var_afda85311c8ed272
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b35
+// Params 2
+// Checksum 0x0, Offset: 0x4b82
 // Size: 0x219
 function function_5c3aa65db46763ff( vehicle, type )
 {
@@ -1146,8 +1148,8 @@ function function_5c3aa65db46763ff( vehicle, type )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d56
+// Params 4
+// Checksum 0x0, Offset: 0x4da3
 // Size: 0x1a9
 function function_70abd486ae26235( player, type, quantity, var_afda85311c8ed272 )
 {
@@ -1179,8 +1181,8 @@ function function_70abd486ae26235( player, type, quantity, var_afda85311c8ed272 
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f07
+// Params 5
+// Checksum 0x0, Offset: 0x4f54
 // Size: 0x24b
 function function_b0f754c8a379154e( equipment, player, dist, eventtypebit, value )
 {
@@ -1217,8 +1219,8 @@ function function_b0f754c8a379154e( equipment, player, dist, eventtypebit, value
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x515a
+// Params 1
+// Checksum 0x0, Offset: 0x51a7
 // Size: 0x16c
 function function_57f4ba1fd9ececba( player )
 {
@@ -1245,8 +1247,8 @@ function function_57f4ba1fd9ececba( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x52ce
+// Params 3
+// Checksum 0x0, Offset: 0x531b
 // Size: 0x754
 function function_b5929663421247fa( player, result, winner )
 {
@@ -1389,8 +1391,8 @@ function function_b5929663421247fa( player, result, winner )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a2a
+// Params 1
+// Checksum 0x0, Offset: 0x5a77
 // Size: 0xf
 function function_8df2c1c1377b79be( cashvalue )
 {
@@ -1398,8 +1400,8 @@ function function_8df2c1c1377b79be( cashvalue )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a42
+// Params 2
+// Checksum 0x0, Offset: 0x5a8f
 // Size: 0x99
 function function_dc52e14b64052dda( lootid, quantity )
 {
@@ -1425,8 +1427,8 @@ function function_dc52e14b64052dda( lootid, quantity )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ae4
+// Params 9
+// Checksum 0x0, Offset: 0x5b31
 // Size: 0x413
 function function_1ba256da09a9878a( player, lootid, lootref, loottype, quantity, cashvalue, var_e7d05247043893ad, var_f237807396377232, var_1e3b09444dc30b1b )
 {
@@ -1510,8 +1512,8 @@ function function_1ba256da09a9878a( player, lootid, lootref, loottype, quantity,
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5eff
+// Params 3
+// Checksum 0x0, Offset: 0x5f4c
 // Size: 0x164
 function function_affb3af6af110594( player, activitytype, poi )
 {
@@ -1538,8 +1540,8 @@ function function_affb3af6af110594( player, activitytype, poi )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x606b
+// Params 3
+// Checksum 0x0, Offset: 0x60b8
 // Size: 0x164
 function function_2635cdb5e985eaab( player, activitytype, poi )
 {
@@ -1566,8 +1568,8 @@ function function_2635cdb5e985eaab( player, activitytype, poi )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x61d7
+// Params 4
+// Checksum 0x0, Offset: 0x6224
 // Size: 0x152
 function function_f4d8c689aaf296e5( player, weapon, healthdamage, armordamage )
 {
@@ -1608,8 +1610,8 @@ function function_f4d8c689aaf296e5( player, weapon, healthdamage, armordamage )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6331
+// Params 3
+// Checksum 0x0, Offset: 0x637e
 // Size: 0x2e0
 function function_4ab6f9fba6bb9cc5( player, healthdamage, armordamage )
 {
@@ -1690,8 +1692,8 @@ function function_4ab6f9fba6bb9cc5( player, healthdamage, armordamage )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6619
+// Params 2
+// Checksum 0x0, Offset: 0x6666
 // Size: 0x334
 function function_b4b8d881af22f7bd( player, weapon )
 {
@@ -1784,8 +1786,8 @@ function function_b4b8d881af22f7bd( player, weapon )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6955
+// Params 1
+// Checksum 0x0, Offset: 0x69a2
 // Size: 0xfe
 function function_d312ec9b34f1dfa( player )
 {
@@ -1814,8 +1816,8 @@ function function_d312ec9b34f1dfa( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a5b
+// Params 1
+// Checksum 0x0, Offset: 0x6aa8
 // Size: 0xca
 function function_fb2db8647d693699( player )
 {
@@ -1838,8 +1840,8 @@ function function_fb2db8647d693699( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b2d
+// Params 2
+// Checksum 0x0, Offset: 0x6b7a
 // Size: 0xf2
 function function_b8e86c6dea0ac027( player, streak )
 {
@@ -1865,8 +1867,8 @@ function function_b8e86c6dea0ac027( player, streak )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c27
+// Params 8
+// Checksum 0x0, Offset: 0x6c74
 // Size: 0x162
 function ondeath( inflictor, attacker, damage, damageflags, meansofdeath, objweapon, hitloc, modifiers )
 {
@@ -1897,8 +1899,8 @@ function ondeath( inflictor, attacker, damage, damageflags, meansofdeath, objwea
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d91
+// Params 1
+// Checksum 0x0, Offset: 0x6dde
 // Size: 0xc8
 function function_868b6d4fbec3938c( player )
 {
@@ -1921,8 +1923,8 @@ function function_868b6d4fbec3938c( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e61
+// Params 0
+// Checksum 0x0, Offset: 0x6eae
 // Size: 0x10f
 function function_5d99311b5a7dffda()
 {
@@ -1967,8 +1969,8 @@ function function_5d99311b5a7dffda()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f79
+// Params 3
+// Checksum 0x0, Offset: 0x6fc6
 // Size: 0x3d3
 function function_247ba07507f78ac2( victim, attacker, var_2c151652ca2c1756 )
 {
@@ -2070,8 +2072,8 @@ function function_247ba07507f78ac2( victim, attacker, var_2c151652ca2c1756 )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7354
+// Params 3
+// Checksum 0x0, Offset: 0x73a1
 // Size: 0x1aa
 function function_817629c461ea3540( victim, var_815f9c7c319d9eac, attacker )
 {
@@ -2108,8 +2110,8 @@ function function_817629c461ea3540( victim, var_815f9c7c319d9eac, attacker )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7506
+// Params 2
+// Checksum 0x0, Offset: 0x7553
 // Size: 0x7d
 function function_d8f43796d36ed5bf( ref, source )
 {
@@ -2130,8 +2132,8 @@ function function_d8f43796d36ed5bf( ref, source )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x758b
+// Params 2
+// Checksum 0x0, Offset: 0x75d8
 // Size: 0x212
 function function_597bc208d923a465( ref, totalkills )
 {
@@ -2172,8 +2174,8 @@ function function_597bc208d923a465( ref, totalkills )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x77a5
+// Params 2
+// Checksum 0x0, Offset: 0x77f2
 // Size: 0x72
 function function_68ffb11dc4c6b979( value, aeeventname )
 {
@@ -2193,8 +2195,8 @@ function function_68ffb11dc4c6b979( value, aeeventname )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7820
+// Params 3
+// Checksum 0x0, Offset: 0x786d
 // Size: 0x23c
 function function_d997435895422ecc( ref, eventtypebit, value )
 {
@@ -2239,8 +2241,8 @@ function function_d997435895422ecc( ref, eventtypebit, value )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a64
+// Params 2
+// Checksum 0x0, Offset: 0x7ab1
 // Size: 0x9e
 function function_bd59aa7e8cece1ab( ref, value )
 {
@@ -2256,8 +2258,8 @@ function function_bd59aa7e8cece1ab( ref, value )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b0a
+// Params 1
+// Checksum 0x0, Offset: 0x7b57
 // Size: 0x1a9
 function oncapture( modifiers )
 {
@@ -2296,8 +2298,8 @@ function oncapture( modifiers )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cbb
+// Params 1
+// Checksum 0x0, Offset: 0x7d08
 // Size: 0xa2
 function function_c51330573171a1be( player )
 {
@@ -2313,8 +2315,8 @@ function function_c51330573171a1be( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d65
+// Params 0
+// Checksum 0x0, Offset: 0x7db2
 // Size: 0xc
 function onplant()
 {
@@ -2322,8 +2324,8 @@ function onplant()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d79
+// Params 0
+// Checksum 0x0, Offset: 0x7dc6
 // Size: 0xe6
 function function_f05d761dc1bfa1b5()
 {
@@ -2351,8 +2353,8 @@ function function_f05d761dc1bfa1b5()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e67
+// Params 2
+// Checksum 0x0, Offset: 0x7eb4
 // Size: 0x10d
 function function_79abd07d1b2903d7( challengetype, runtime )
 {
@@ -2381,8 +2383,38 @@ function function_79abd07d1b2903d7( challengetype, runtime )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f7c
+// Params 2
+// Checksum 0x0, Offset: 0x7fc9
+// Size: 0x10d
+function function_9dd45fb7c1b7de56( challengetype, var_2b5b01555f2ce481 )
+{
+    if ( !challengesenabledforplayer() )
+    {
+        return;
+    }
+    
+    aeeventname = #"hash_7cc30c44053e7cab";
+    aeeventid = ae_utility::function_6e2deb013c9ca85e( aeeventname );
+    var_947b262137165984 = 0;
+    value = 0;
+    
+    if ( isdefined( challengetype ) )
+    {
+        var_947b262137165984 = ae_utility::function_7042dad035dc176c( challengetype );
+    }
+    
+    if ( isdefined( var_2b5b01555f2ce481 ) )
+    {
+        value = var_2b5b01555f2ce481;
+    }
+    
+    params = [ ae_utility::function_d6f771aedba70ce7( aeeventname, #"version" ), 1, ae_utility::function_d6f771aedba70ce7( aeeventname, #"gamemode" ), getchallengegamemode(), ae_utility::function_d6f771aedba70ce7( aeeventname, #"gametype" ), function_17c5d7feb226e256(), ae_utility::function_d6f771aedba70ce7( aeeventname, #"string_ref" ), var_947b262137165984, ae_utility::function_d6f771aedba70ce7( aeeventname, #"value" ), value ];
+    reportchallengeuserserializedeventwrapper( aeeventid, params );
+}
+
+// Namespace challenges / scripts\cp_mp\challenges
+// Params 1
+// Checksum 0x0, Offset: 0x80de
 // Size: 0x82
 function onstun( equipment )
 {
@@ -2398,8 +2430,8 @@ function onstun( equipment )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8006
+// Params 1
+// Checksum 0x0, Offset: 0x8168
 // Size: 0x82
 function onstim( health_recovered )
 {
@@ -2415,8 +2447,8 @@ function onstim( health_recovered )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8090
+// Params 1
+// Checksum 0x0, Offset: 0x81f2
 // Size: 0x1af
 function onhack( equipment )
 {
@@ -2459,8 +2491,8 @@ function onhack( equipment )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8247
+// Params 2
+// Checksum 0x0, Offset: 0x83a9
 // Size: 0xd4
 function gettouchinglocaletriggers( attacker, victim )
 {
@@ -2494,8 +2526,8 @@ function gettouchinglocaletriggers( attacker, victim )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8324
+// Params 1
+// Checksum 0x0, Offset: 0x8486
 // Size: 0x126
 function gettouchingspraylocaletriggers( player )
 {
@@ -2528,8 +2560,8 @@ function gettouchingspraylocaletriggers( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8453
+// Params 2
+// Checksum 0x0, Offset: 0x85b5
 // Size: 0x1ae
 function oncontractstart( contractid, var_a705a5a5884ebf9c )
 {
@@ -2562,8 +2594,8 @@ function oncontractstart( contractid, var_a705a5a5884ebf9c )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x8609
+// Params 7
+// Checksum 0x0, Offset: 0x876b
 // Size: 0x419
 function oncontractend( contractid, completed, var_1229758a8a60ba86, startingpoi, contractname, var_caac1a3de59f50c0, islegendarycontract )
 {
@@ -2651,8 +2683,8 @@ function oncontractend( contractid, completed, var_1229758a8a60ba86, startingpoi
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x8a2a
-// Size: 0x566
+// Checksum 0x0, Offset: 0x8b8c
+// Size: 0x572
 function private function_417907aeeb08baac( instancetype )
 {
     switch ( instancetype )
@@ -2714,9 +2746,9 @@ function private function_417907aeeb08baac( instancetype )
         case #"hash_c82c626607f41c61":
             return function_6d40f12a09494350( 0, ae_utility::function_e2ff8f4b4e94f723( #"hash_1e306cba757eda6f", #"office_cabinet" ) );
         case #"hash_183cb58bad34bd86":
+        case #"hash_b1814c3921b5bcf2":
         case #"hash_33a1ab3969e0b64e":
         case #"hash_b5b4216883bf84b8":
-        case #"hash_b1814c3921b5bcf2":
             return function_6d40f12a09494350( 0, ae_utility::function_e2ff8f4b4e94f723( #"hash_1e306cba757eda6f", #"pack" ) );
         case #"hash_8944097b14faec32":
         case #"hash_4ca1dc2e1b0de0d3":
@@ -2726,6 +2758,7 @@ function private function_417907aeeb08baac( instancetype )
         case #"hash_a10a247457819cda":
             return function_6d40f12a09494350( 0, ae_utility::function_e2ff8f4b4e94f723( #"hash_1e306cba757eda6f", #"supply_box" ) );
         case #"hash_19ba8d41970911ad":
+        case #"hash_d1616a5975b7a941":
             return function_6d40f12a09494350( 0, ae_utility::function_e2ff8f4b4e94f723( #"hash_1e306cba757eda6f", #"hash_10bcbd45df39494e" ) );
         case #"hash_4c9cda73b7cb8b41":
             return function_6d40f12a09494350( 0, ae_utility::function_e2ff8f4b4e94f723( #"hash_1e306cba757eda6f", #"tool_box" ) );
@@ -2737,8 +2770,8 @@ function private function_417907aeeb08baac( instancetype )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f98
+// Params 1
+// Checksum 0x0, Offset: 0x9106
 // Size: 0x1e9
 function function_da9003df08944b01( instance )
 {
@@ -2772,8 +2805,8 @@ function function_da9003df08944b01( instance )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x9189
+// Params 6
+// Checksum 0x0, Offset: 0x92f7
 // Size: 0x6f
 function onkioskpurchaseitem( itemtyperef, itemref, lootid, quantity, cashvalue, var_827283fbf3803e56 )
 {
@@ -2782,8 +2815,8 @@ function onkioskpurchaseitem( itemtyperef, itemref, lootid, quantity, cashvalue,
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x9200
+// Params 6
+// Checksum 0x0, Offset: 0x936e
 // Size: 0x6e
 function function_ea50038423fc4cfc( itemtyperef, itemref, lootid, quantity, cashvalue, var_f237807396377232 )
 {
@@ -2792,8 +2825,8 @@ function function_ea50038423fc4cfc( itemtyperef, itemref, lootid, quantity, cash
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x9276
+// Params 5
+// Checksum 0x0, Offset: 0x93e4
 // Size: 0x9b
 function function_7ba17fb69c312e2c( itemtyperef, itemref, lootid, quantity, cashvalue )
 {
@@ -2804,8 +2837,8 @@ function function_7ba17fb69c312e2c( itemtyperef, itemref, lootid, quantity, cash
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x9319
+// Params 5
+// Checksum 0x0, Offset: 0x9487
 // Size: 0x64
 function function_c2c80007aff49924( itemtyperef, itemref, lootid, quantity, cashvalue )
 {
@@ -2814,8 +2847,8 @@ function function_c2c80007aff49924( itemtyperef, itemref, lootid, quantity, cash
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x9385
+// Params 5
+// Checksum 0x0, Offset: 0x94f3
 // Size: 0x64
 function function_3d8a8b0878f9f129( itemtyperef, itemref, lootid, quantity, cashvalue )
 {
@@ -2824,8 +2857,8 @@ function function_3d8a8b0878f9f129( itemtyperef, itemref, lootid, quantity, cash
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x93f1
+// Params 1
+// Checksum 0x0, Offset: 0x955f
 // Size: 0x4c
 function onpickupitem( itemtyperef )
 {
@@ -2850,8 +2883,8 @@ function onpickupitem( itemtyperef )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9445
+// Params 1
+// Checksum 0x0, Offset: 0x95b3
 // Size: 0x25e
 function onpickupweapon( objweapon )
 {
@@ -2878,8 +2911,8 @@ function onpickupweapon( objweapon )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x96ab
+// Params 1
+// Checksum 0x0, Offset: 0x9819
 // Size: 0x28
 function oncollectitem( itemtyperef )
 {
@@ -2892,8 +2925,8 @@ function oncollectitem( itemtyperef )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x96db
+// Params 1
+// Checksum 0x0, Offset: 0x9849
 // Size: 0x1f
 function onuseitem( type )
 {
@@ -2906,8 +2939,8 @@ function onuseitem( type )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9702
+// Params 1
+// Checksum 0x0, Offset: 0x9870
 // Size: 0x22
 function onunlockitem( itemunlockref )
 {
@@ -2920,8 +2953,8 @@ function onunlockitem( itemunlockref )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x972c
+// Params 1
+// Checksum 0x0, Offset: 0x989a
 // Size: 0x82
 function onloadout( loadouttype )
 {
@@ -2937,8 +2970,8 @@ function onloadout( loadouttype )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x97b6
+// Params 1
+// Checksum 0x0, Offset: 0x9924
 // Size: 0x132
 function onping( pingtype )
 {
@@ -2968,8 +3001,8 @@ function onping( pingtype )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x98f0
+// Params 1
+// Checksum 0x0, Offset: 0x9a5e
 // Size: 0xe9
 function function_fb73a02201f647ba( amount )
 {
@@ -2993,8 +3026,8 @@ function function_fb73a02201f647ba( amount )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x99e1
+// Params 1
+// Checksum 0x0, Offset: 0x9b4f
 // Size: 0x11f
 function function_9d15fd5e1f063810( amount )
 {
@@ -3020,8 +3053,8 @@ function function_9d15fd5e1f063810( amount )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b08
+// Params 0
+// Checksum 0x0, Offset: 0x9c76
 // Size: 0xb3
 function function_8c51020c52153152()
 {
@@ -3039,8 +3072,8 @@ function function_8c51020c52153152()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bc3
+// Params 2
+// Checksum 0x0, Offset: 0x9d31
 // Size: 0x22c
 function onlaststandrevive( reviver, revivee )
 {
@@ -3073,8 +3106,8 @@ function onlaststandrevive( reviver, revivee )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9df7
+// Params 1
+// Checksum 0x0, Offset: 0x9f65
 // Size: 0x19e
 function function_b2306d0693ba65c1( iswinner )
 {
@@ -3116,8 +3149,8 @@ function function_b2306d0693ba65c1( iswinner )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f9d
+// Params 0
+// Checksum 0x0, Offset: 0xa10b
 // Size: 0x91
 function onspray()
 {
@@ -3138,8 +3171,8 @@ function onspray()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa036
+// Params 1
+// Checksum 0x0, Offset: 0xa1a4
 // Size: 0xc8
 function function_f09e914e200d1a42( objweapon )
 {
@@ -3177,8 +3210,8 @@ function function_f09e914e200d1a42( objweapon )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa107
+// Params 1
+// Checksum 0x0, Offset: 0xa275
 // Size: 0x294
 function function_ce112254f7cba89e( objweapon )
 {
@@ -3270,8 +3303,8 @@ function function_ce112254f7cba89e( objweapon )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3a4
+// Params 2
+// Checksum 0x0, Offset: 0xa512
 // Size: 0x78
 function function_6d40f12a09494350( bitfield, bit )
 {
@@ -3299,8 +3332,8 @@ function function_6d40f12a09494350( bitfield, bit )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa424
+// Params 2
+// Checksum 0x0, Offset: 0xa592
 // Size: 0x79
 function function_b2e5ca0ecf2215ab( bitfield, bit )
 {
@@ -3328,8 +3361,8 @@ function function_b2e5ca0ecf2215ab( bitfield, bit )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4a5
+// Params 1
+// Checksum 0x0, Offset: 0xa613
 // Size: 0x136
 function function_3005ef56488df9be( bitfield )
 {
@@ -3337,7 +3370,8 @@ function function_3005ef56488df9be( bitfield )
     stringlength = var_cc819de748cb6689.size;
     characters = [];
     
-    for (k = 0; k < stringlength; k++) {
+    for ( k = 0; k < stringlength ; k++ )
+    {
         characters[ stringlength - k - 1 ] = int( var_cc819de748cb6689[ stringlength - k - 1 ] );
     }
     
@@ -3358,7 +3392,8 @@ function function_3005ef56488df9be( bitfield )
         
         allzero = 1;
         
-        for (k = 0; k < stringlength; k++) {
+        for ( k = 0; k < stringlength ; k++ )
+        {
             character = characters[ stringlength - k - 1 ];
             
             if ( character != 0 )
@@ -3382,8 +3417,8 @@ function function_3005ef56488df9be( bitfield )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5e3
+// Params 1
+// Checksum 0x0, Offset: 0xa751
 // Size: 0x199
 function getchallengegamemode( player )
 {
@@ -3459,8 +3494,8 @@ function getchallengegamemode( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa785
+// Params 1
+// Checksum 0x0, Offset: 0xa8f3
 // Size: 0x67
 function function_aff35122a61a900b( team )
 {
@@ -3482,7 +3517,7 @@ function function_aff35122a61a900b( team )
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa7f5
+// Checksum 0x0, Offset: 0xa963
 // Size: 0x89
 function private function_261cfb5c8119ea2b( gametypekey )
 {
@@ -3505,8 +3540,8 @@ function private function_261cfb5c8119ea2b( gametypekey )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa887
+// Params 0
+// Checksum 0x0, Offset: 0xa9f5
 // Size: 0x80
 function function_17c5d7feb226e256()
 {
@@ -3532,8 +3567,8 @@ function function_17c5d7feb226e256()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa910
+// Params 0
+// Checksum 0x0, Offset: 0xaa7e
 // Size: 0x45f
 function getweaponclassarray()
 {
@@ -3568,8 +3603,8 @@ function getweaponclassarray()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xad78
+// Params 0
+// Checksum 0x0, Offset: 0xaee6
 // Size: 0xbb2
 function function_d6973792fd45b035()
 {
@@ -3656,8 +3691,8 @@ function function_d6973792fd45b035()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb933
+// Params 0
+// Checksum 0x0, Offset: 0xbaa1
 // Size: 0x9a
 function function_343f3f4300421f65()
 {
@@ -3673,8 +3708,8 @@ function function_343f3f4300421f65()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb9d6
+// Params 2
+// Checksum 0x0, Offset: 0xbb44
 // Size: 0xd4a
 function getlocation( poi, sublocation )
 {
@@ -3925,8 +3960,8 @@ function getlocation( poi, sublocation )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc729
+// Params 2
+// Checksum 0x0, Offset: 0xc897
 // Size: 0xcc7
 function function_55be16fb0f5f4a19( poi, sublocation )
 {
@@ -4175,7 +4210,7 @@ function function_55be16fb0f5f4a19( poi, sublocation )
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xd3f9
+// Checksum 0x0, Offset: 0xd567
 // Size: 0x68
 function private function_d1f7d516770b2b32()
 {
@@ -4197,8 +4232,8 @@ function private function_d1f7d516770b2b32()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd46a
+// Params 2
+// Checksum 0x0, Offset: 0xd5d8
 // Size: 0xd5
 function function_3ea2b9fa713d6ed3( player, var_154881e25e509d00 )
 {
@@ -4234,8 +4269,8 @@ function function_3ea2b9fa713d6ed3( player, var_154881e25e509d00 )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd548
+// Params 4
+// Checksum 0x0, Offset: 0xd6b6
 // Size: 0x1d6
 function function_b050ed1983293d8( player, eventtypebit, perkref, value )
 {
@@ -4275,8 +4310,8 @@ function function_b050ed1983293d8( player, eventtypebit, perkref, value )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd726
+// Params 4
+// Checksum 0x0, Offset: 0xd894
 // Size: 0xb0
 function function_2aff99309a417c21( eventparamsstruct, aeeventname, aekeyname, value )
 {
@@ -4292,8 +4327,8 @@ function function_2aff99309a417c21( eventparamsstruct, aeeventname, aekeyname, v
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7de
+// Params 2
+// Checksum 0x0, Offset: 0xd94c
 // Size: 0x133
 function function_137b512700167b00( attacker, victim )
 {
@@ -4315,8 +4350,8 @@ function function_137b512700167b00( attacker, victim )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0xd91a
+// Params 11
+// Checksum 0x0, Offset: 0xda88
 // Size: 0x144e
 function reportkillchallengeevent( attacker, victimstruct, modifiers1, modifiers2, modifiers3, objweapon, damage, meansofdeath, attachmentflags, hitloc, var_1d68c79557cc54ea )
 {
@@ -4698,8 +4733,8 @@ function reportkillchallengeevent( attacker, victimstruct, modifiers1, modifiers
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xed70
+// Params 2
+// Checksum 0x0, Offset: 0xeede
 // Size: 0x1ae
 function function_e6ba0866eca5b87b( attacker, iskillstreak )
 {
@@ -4748,8 +4783,96 @@ function function_e6ba0866eca5b87b( attacker, iskillstreak )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xef26
+// Params 3
+// Checksum 0x0, Offset: 0xf094
+// Size: 0x285
+function function_aad625406f236f34( value, attacker, objweapon )
+{
+    if ( !attacker challengesenabledforplayer() )
+    {
+        return;
+    }
+    
+    if ( isagent( attacker ) || !isdefined( objweapon ) )
+    {
+        return;
+    }
+    
+    weaponlootid = weapon::function_89a83ae9a4c4142a( objweapon );
+    
+    if ( !isdefined( weaponlootid ) )
+    {
+        weaponlootid = 0;
+    }
+    
+    weaponclassarray = getweaponclassarray();
+    var_b28608820870666 = 0;
+    var_b28608820870666 = function_ce112254f7cba89e( objweapon );
+    iskillstreak = weapon::iskillstreakweapon( objweapon ) || istrue( attacker.isjuggernaut );
+    isequipment = 0;
+    
+    if ( weaponlootid == 0 )
+    {
+        equipmentweaponname = function_f09e914e200d1a42( objweapon );
+        equipmentstruct = level.equipment.table[ equipmentweaponname ];
+        
+        if ( isdefined( equipmentstruct ) )
+        {
+            weaponlootid = loot::getlootidfromref( equipmentstruct.ref );
+            isequipment = 1;
+        }
+    }
+    
+    if ( isequipment )
+    {
+        if ( !isdefined( var_b28608820870666 ) )
+        {
+            var_b28608820870666 = 0;
+        }
+        
+        if ( isdefined( attacker ) && isdefined( objweapon ) && isdefined( weaponclassarray[ weaponclass( objweapon ) ] ) )
+        {
+            var_b28608820870666 = function_6d40f12a09494350( var_b28608820870666, weaponclassarray[ weaponclass( objweapon ) ] );
+        }
+    }
+    
+    if ( iskillstreak )
+    {
+        if ( !isdefined( var_b28608820870666 ) )
+        {
+            var_b28608820870666 = 0;
+        }
+        
+        var_b28608820870666 = function_6d40f12a09494350( var_b28608820870666, weaponclassarray[ "killstreak" ] );
+        
+        if ( isdefined( level.killstreakweaponmap ) )
+        {
+            killstreakweaponname = level.killstreakweaponmap[ objweapon.basename ];
+            
+            if ( isdefined( killstreakweaponname ) )
+            {
+                weaponlootid = loot::getlootidfromref( killstreakweaponname );
+            }
+        }
+    }
+    
+    gamemode = getchallengegamemode( attacker );
+    gametype = function_17c5d7feb226e256();
+    aeeventname = #"hash_ac96abd2c9cfa32e";
+    aeeventid = ae_utility::function_6e2deb013c9ca85e( aeeventname );
+    attacker.var_ada2682fdf125e83 = undefined;
+    params = [ ae_utility::function_d6f771aedba70ce7( aeeventname, #"version" ), 1, ae_utility::function_d6f771aedba70ce7( aeeventname, #"gamemode" ), gamemode, ae_utility::function_d6f771aedba70ce7( aeeventname, #"hash_a0dd9c7405f2d85e" ), var_b28608820870666, ae_utility::function_d6f771aedba70ce7( aeeventname, #"weapon_loot_id" ), weaponlootid, ae_utility::function_d6f771aedba70ce7( aeeventname, #"value" ), value ];
+    
+    /#
+        function_7d97a2a745e514c4( aeeventid, params );
+    #/
+    
+    reportchallengeuserserializedeventwrapper( aeeventid, params );
+}
+
+// Namespace challenges / scripts\cp_mp\challenges
+// Params 1
+// Checksum 0x0, Offset: 0xf321
 // Size: 0x309
 function function_c43d8b7a5461cdce( lootid )
 {
@@ -4814,8 +4937,8 @@ function function_c43d8b7a5461cdce( lootid )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xf237
+// Params 6
+// Checksum 0x0, Offset: 0xf632
 // Size: 0x245
 function function_cfeb523fd3aa9ecf( player, lootid, type, method, quantity, var_f237807396377232 )
 {
@@ -4865,8 +4988,8 @@ function function_cfeb523fd3aa9ecf( player, lootid, type, method, quantity, var_
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xf484
+// Params 7
+// Checksum 0x0, Offset: 0xf87f
 // Size: 0x368
 function function_d24138b32084fc3e( player, lootid, type, method, quantity, source, poi )
 {
@@ -4954,7 +5077,7 @@ function function_d24138b32084fc3e( player, lootid, type, method, quantity, sour
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xf7f4
+// Checksum 0x0, Offset: 0xfbef
 // Size: 0x49e
 function private reportstat( statname, amount )
 {
@@ -5081,7 +5204,7 @@ function private reportstat( statname, amount )
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xfc9a
+// Checksum 0x0, Offset: 0x10095
 // Size: 0x73
 function private function_6b7aeb2012efc4af()
 {
@@ -5100,8 +5223,8 @@ function private function_6b7aeb2012efc4af()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd16
+// Params 1
+// Checksum 0x0, Offset: 0x10111
 // Size: 0x31
 function function_8a0395089290faf6( player )
 {
@@ -5109,8 +5232,8 @@ function function_8a0395089290faf6( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd4f
+// Params 2
+// Checksum 0x0, Offset: 0x1014a
 // Size: 0x64
 function function_563606223ef09517( player, amount )
 {
@@ -5119,8 +5242,8 @@ function function_563606223ef09517( player, amount )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfdbb
+// Params 1
+// Checksum 0x0, Offset: 0x101b6
 // Size: 0x13e
 function findgunsmithattachments( objweapon )
 {
@@ -5156,7 +5279,8 @@ function findgunsmithattachments( objweapon )
         }
     }
     
-    for (attachindex = var_349e390338192305.size; attachindex < 10; attachindex++) {
+    for ( attachindex = var_349e390338192305.size; attachindex < 10 ; attachindex++ )
+    {
         var_349e390338192305[ attachindex ] = 0;
     }
     
@@ -5164,8 +5288,8 @@ function findgunsmithattachments( objweapon )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xff02
+// Params 1
+// Checksum 0x0, Offset: 0x102fd
 // Size: 0x10f
 function findloadoutperks( attacker )
 {
@@ -5196,8 +5320,8 @@ function findloadoutperks( attacker )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1001a
+// Params 1
+// Checksum 0x0, Offset: 0x10415
 // Size: 0x1a7
 function function_9da07c7f4a49e349( victim )
 {
@@ -5264,8 +5388,8 @@ function function_9da07c7f4a49e349( victim )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x101ca
+// Params 1
+// Checksum 0x0, Offset: 0x105c5
 // Size: 0xa96
 function findenemytype( victim )
 {
@@ -5524,9 +5648,9 @@ function findenemytype( victim )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10c69
-// Size: 0x1cc
+// Params 1
+// Checksum 0x0, Offset: 0x11064
+// Size: 0x1f5
 function function_8435d79a41ea37b0( victim )
 {
     enemytype = 0;
@@ -5563,6 +5687,9 @@ function function_8435d79a41ea37b0( victim )
             case #"hash_da4cefbee9ff0d74":
                 vehicletype = ae_utility::function_e2ff8f4b4e94f723( #"hash_22d8c6e760626656", #"veh_jup_truck_tech_aa" );
                 break;
+            case #"hash_cb654f4f90755a46":
+                vehicletype = ae_utility::function_e2ff8f4b4e94f723( #"hash_22d8c6e760626656", #"veh_jup_space_shipment_transport" );
+                break;
         }
     }
     
@@ -5575,8 +5702,8 @@ function function_8435d79a41ea37b0( victim )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e3e
+// Params 2
+// Checksum 0x0, Offset: 0x11262
 // Size: 0x39, Type: bool
 function function_c7496288999ac847( agenttype, subcategory )
 {
@@ -5584,8 +5711,8 @@ function function_c7496288999ac847( agenttype, subcategory )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e80
+// Params 3
+// Checksum 0x0, Offset: 0x112a4
 // Size: 0x704
 function function_e9dc49603ac403d( enemytype, var_7b718ef6c64f049f, victim )
 {
@@ -5747,8 +5874,8 @@ function function_e9dc49603ac403d( enemytype, var_7b718ef6c64f049f, victim )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1158d
+// Params 2
+// Checksum 0x0, Offset: 0x119b1
 // Size: 0x128
 function return_enemy_type_mask( enemytype, victim )
 {
@@ -5781,7 +5908,7 @@ function return_enemy_type_mask( enemytype, victim )
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x116be
+// Checksum 0x0, Offset: 0x11ae2
 // Size: 0x199
 function private function_742decc7f891bb0e( bitfield1 )
 {
@@ -5814,8 +5941,8 @@ function private function_742decc7f891bb0e( bitfield1 )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1185f
+// Params 1
+// Checksum 0x0, Offset: 0x11c83
 // Size: 0x57
 function function_52035021c9edec95( var_b9c95d2f33c0d8b )
 {
@@ -5825,8 +5952,8 @@ function function_52035021c9edec95( var_b9c95d2f33c0d8b )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x118be
+// Params 0
+// Checksum 0x0, Offset: 0x11ce2
 // Size: 0x22
 function function_3d871e989c0bdb6d()
 {
@@ -5839,8 +5966,8 @@ function function_3d871e989c0bdb6d()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x118e9
+// Params 0
+// Checksum 0x0, Offset: 0x11d0d
 // Size: 0x64
 function function_ca0ab723ebcf6d79()
 {
@@ -5856,8 +5983,8 @@ function function_ca0ab723ebcf6d79()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11955
+// Params 0
+// Checksum 0x0, Offset: 0x11d79
 // Size: 0x72
 function function_8935e658d461fc50()
 {
@@ -5876,8 +6003,8 @@ function function_8935e658d461fc50()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x119cf
+// Params 0
+// Checksum 0x0, Offset: 0x11df3
 // Size: 0x64
 function function_711143d9696bcf8e()
 {
@@ -5894,7 +6021,7 @@ function function_711143d9696bcf8e()
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x11a3b
+// Checksum 0x0, Offset: 0x11e5f
 // Size: 0x1d8
 function private function_8feb2dc462cfc7f4()
 {
@@ -5921,8 +6048,8 @@ function private function_8feb2dc462cfc7f4()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c1b
+// Params 2
+// Checksum 0x0, Offset: 0x1203f
 // Size: 0x47
 function function_5f8b4216068156b5( userflags, var_4befd2eb647c235a )
 {
@@ -5932,8 +6059,8 @@ function function_5f8b4216068156b5( userflags, var_4befd2eb647c235a )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c6a
+// Params 0
+// Checksum 0x0, Offset: 0x1208e
 // Size: 0xc, Type: bool
 function function_fa23fe9cc3517344()
 {
@@ -5941,8 +6068,8 @@ function function_fa23fe9cc3517344()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c7f
+// Params 1
+// Checksum 0x0, Offset: 0x120a3
 // Size: 0x76
 function initgameflags( var_8ca33da989ab6666 )
 {
@@ -5953,8 +6080,8 @@ function initgameflags( var_8ca33da989ab6666 )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11cfd
+// Params 1
+// Checksum 0x0, Offset: 0x12121
 // Size: 0x40
 function function_3a54cb391f6b8cf8( var_8a6d55b19a5a2a1c )
 {
@@ -5971,7 +6098,7 @@ function function_3a54cb391f6b8cf8( var_8a6d55b19a5a2a1c )
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x11d45
+// Checksum 0x0, Offset: 0x12169
 // Size: 0x55
 function private function_5d39564f7e34587a( var_8a6d55b19a5a2a1c )
 {
@@ -6001,7 +6128,7 @@ function private function_5d39564f7e34587a( var_8a6d55b19a5a2a1c )
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x11da3
+// Checksum 0x0, Offset: 0x121c7
 // Size: 0x6a
 function private function_6b23401be7d04d06( var_8a6d55b19a5a2a1c, flagbits )
 {
@@ -6040,8 +6167,8 @@ function private function_6b23401be7d04d06( var_8a6d55b19a5a2a1c, flagbits )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e15
+// Params 2
+// Checksum 0x0, Offset: 0x12239
 // Size: 0x59
 function function_cfe6dcedf7278543( var_8a6d55b19a5a2a1c, gameflag )
 {
@@ -6065,7 +6192,7 @@ function function_cfe6dcedf7278543( var_8a6d55b19a5a2a1c, gameflag )
 
 // Namespace challenges / scripts\cp_mp\challenges
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x11e77
+// Checksum 0x0, Offset: 0x1229b
 // Size: 0x71
 function private function_6c6907d448b3ba6c( var_8a6d55b19a5a2a1c, gameflag, enabled )
 {
@@ -6096,8 +6223,8 @@ function private function_6c6907d448b3ba6c( var_8a6d55b19a5a2a1c, gameflag, enab
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ef0
+// Params 2
+// Checksum 0x0, Offset: 0x12314
 // Size: 0x1e
 function function_b7793133df5fb0df( var_8a6d55b19a5a2a1c, gameflag )
 {
@@ -6105,8 +6232,8 @@ function function_b7793133df5fb0df( var_8a6d55b19a5a2a1c, gameflag )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f16
+// Params 2
+// Checksum 0x0, Offset: 0x1233a
 // Size: 0x1d
 function function_5b58181f4c00ba56( var_8a6d55b19a5a2a1c, gameflag )
 {
@@ -6114,8 +6241,8 @@ function function_5b58181f4c00ba56( var_8a6d55b19a5a2a1c, gameflag )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f3b
+// Params 0
+// Checksum 0x0, Offset: 0x1235f
 // Size: 0x23
 function function_38e2bca264061aa0()
 {
@@ -6124,8 +6251,8 @@ function function_38e2bca264061aa0()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f66
+// Params 0
+// Checksum 0x0, Offset: 0x1238a
 // Size: 0x23
 function function_45ab928fbc73f76c()
 {
@@ -6134,8 +6261,8 @@ function function_45ab928fbc73f76c()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f91
+// Params 2
+// Checksum 0x0, Offset: 0x123b5
 // Size: 0x13
 function onplayerteamrevive( reviver, revivee )
 {
@@ -6143,8 +6270,8 @@ function onplayerteamrevive( reviver, revivee )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11fac
+// Params 0
+// Checksum 0x0, Offset: 0x123d0
 // Size: 0xa
 function onsuccessfulhit()
 {
@@ -6152,8 +6279,8 @@ function onsuccessfulhit()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11fbe
+// Params 0
+// Checksum 0x0, Offset: 0x123e2
 // Size: 0xa
 function onspawn()
 {
@@ -6161,8 +6288,8 @@ function onspawn()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11fd0
+// Params 0
+// Checksum 0x0, Offset: 0x123f4
 // Size: 0x4f
 function watchplayerunderwater()
 {
@@ -6184,8 +6311,8 @@ function watchplayerunderwater()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12027
+// Params 0
+// Checksum 0x0, Offset: 0x1244b
 // Size: 0x28
 function function_f71341a16372f41c()
 {
@@ -6196,8 +6323,8 @@ function function_f71341a16372f41c()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12057
+// Params 1
+// Checksum 0x0, Offset: 0x1247b
 // Size: 0xfc
 function function_565d6af7da923110( success )
 {
@@ -6221,8 +6348,8 @@ function function_565d6af7da923110( success )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1215b
+// Params 0
+// Checksum 0x0, Offset: 0x1257f
 // Size: 0xd8
 function function_7c5850e37b6857dc()
 {
@@ -6246,8 +6373,8 @@ function function_7c5850e37b6857dc()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1223b
+// Params 1
+// Checksum 0x0, Offset: 0x1265f
 // Size: 0xa9
 function function_4a14be27c7c571c4( var_5b3fe777f2d1c693 )
 {
@@ -6269,8 +6396,8 @@ function function_4a14be27c7c571c4( var_5b3fe777f2d1c693 )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x122ec
+// Params 2
+// Checksum 0x0, Offset: 0x12710
 // Size: 0x13
 function updatesuperweaponkills( objweapon, inflictor )
 {
@@ -6278,8 +6405,8 @@ function updatesuperweaponkills( objweapon, inflictor )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12307
+// Params 3
+// Checksum 0x0, Offset: 0x1272b
 // Size: 0x1b
 function updatesuperkills( superref, meansofdeath, var_b34cda8a56dd46c5 )
 {
@@ -6287,8 +6414,8 @@ function updatesuperkills( superref, meansofdeath, var_b34cda8a56dd46c5 )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1232a
+// Params 1
+// Checksum 0x0, Offset: 0x1274e
 // Size: 0xb
 function resistedstun( attacker )
 {
@@ -6296,8 +6423,8 @@ function resistedstun( attacker )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1233d
+// Params 0
+// Checksum 0x0, Offset: 0x12761
 // Size: 0x2
 function triggereddelayedexplosion()
 {
@@ -6305,8 +6432,8 @@ function triggereddelayedexplosion()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12347
+// Params 3
+// Checksum 0x0, Offset: 0x1276b
 // Size: 0x1b
 function minedestroyed( mine, attacker, type )
 {
@@ -6314,8 +6441,8 @@ function minedestroyed( mine, attacker, type )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1236a
+// Params 0
+// Checksum 0x0, Offset: 0x1278e
 // Size: 0x2
 function roundbegin()
 {
@@ -6323,8 +6450,8 @@ function roundbegin()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12374
+// Params 1
+// Checksum 0x0, Offset: 0x12798
 // Size: 0xb
 function roundend( winnerstring )
 {
@@ -6332,8 +6459,8 @@ function roundend( winnerstring )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x12387
+// Params 6
+// Checksum 0x0, Offset: 0x127ab
 // Size: 0x4d
 function playerdamaged( inflictor, attacker, damage, meansofdeath, objweapon, shitloc )
 {
@@ -6342,8 +6469,8 @@ function playerdamaged( inflictor, attacker, damage, meansofdeath, objweapon, sh
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x123dc
+// Params 2
+// Checksum 0x0, Offset: 0x12800
 // Size: 0x13
 function processuavassist( owner, uavtype )
 {
@@ -6351,8 +6478,8 @@ function processuavassist( owner, uavtype )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x123f7
+// Params 5
+// Checksum 0x0, Offset: 0x1281b
 // Size: 0x2b
 function killstreakdamaged( killstreakname, owner, attacker, weapon, damage )
 {
@@ -6360,8 +6487,8 @@ function killstreakdamaged( killstreakname, owner, attacker, weapon, damage )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1242a
+// Params 1
+// Checksum 0x0, Offset: 0x1284e
 // Size: 0x48, Type: bool
 function iskillstreakvehicle( killstreakname )
 {
@@ -6378,8 +6505,8 @@ function iskillstreakvehicle( killstreakname )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1247b
+// Params 2
+// Checksum 0x0, Offset: 0x1289f
 // Size: 0x13
 function processfinalkillchallenges( attacker, victim )
 {
@@ -6387,8 +6514,8 @@ function processfinalkillchallenges( attacker, victim )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12496
+// Params 2
+// Checksum 0x0, Offset: 0x128ba
 // Size: 0x109
 function usedkillstreak( streakname, eventtypebit )
 {
@@ -6412,8 +6539,8 @@ function usedkillstreak( streakname, eventtypebit )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x125a7
+// Params 0
+// Checksum 0x0, Offset: 0x129cb
 // Size: 0x90
 function getoperators()
 {
@@ -6441,8 +6568,8 @@ function getoperators()
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12640
+// Params 2
+// Checksum 0x0, Offset: 0x12a64
 // Size: 0x21
 function function_73317c391c8e6d10( player, amount )
 {
@@ -6450,8 +6577,8 @@ function function_73317c391c8e6d10( player, amount )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12669
+// Params 2
+// Checksum 0x0, Offset: 0x12a8d
 // Size: 0x21
 function function_cf995e658ab79867( player, points )
 {
@@ -6459,8 +6586,8 @@ function function_cf995e658ab79867( player, points )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12692
+// Params 2
+// Checksum 0x0, Offset: 0x12ab6
 // Size: 0xfd
 function function_4fb61d33f02e8203( player, increment )
 {
@@ -6484,8 +6611,8 @@ function function_4fb61d33f02e8203( player, increment )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12797
+// Params 1
+// Checksum 0x0, Offset: 0x12bbb
 // Size: 0xf5
 function function_90d26b6dc5331196( player )
 {
@@ -6509,8 +6636,8 @@ function function_90d26b6dc5331196( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12894
+// Params 1
+// Checksum 0x0, Offset: 0x12cb8
 // Size: 0xf5
 function function_183b2d4a1ccd46b3( player )
 {
@@ -6534,8 +6661,8 @@ function function_183b2d4a1ccd46b3( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12991
+// Params 2
+// Checksum 0x0, Offset: 0x12db5
 // Size: 0xfd
 function function_58e830149fcb9a1e( player, increment )
 {
@@ -6559,8 +6686,8 @@ function function_58e830149fcb9a1e( player, increment )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12a96
+// Params 2
+// Checksum 0x0, Offset: 0x12eba
 // Size: 0xfd
 function function_4cb78ed013587e76( player, increment )
 {
@@ -6584,8 +6711,8 @@ function function_4cb78ed013587e76( player, increment )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b9b
+// Params 4
+// Checksum 0x0, Offset: 0x12fbf
 // Size: 0x7c
 function function_8e81148472fb520a( eventplayer, aeeventname, params, var_afda85311c8ed272 )
 {
@@ -6608,8 +6735,8 @@ function function_8e81148472fb520a( eventplayer, aeeventname, params, var_afda85
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x12c1f
+// Params 4
+// Checksum 0x0, Offset: 0x13043
 // Size: 0x1f5
 function function_fee0bee456eac877( player, aeeventname, params, victimstruct )
 {
@@ -6677,8 +6804,8 @@ function function_fee0bee456eac877( player, aeeventname, params, victimstruct )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12e1c
+// Params 1
+// Checksum 0x0, Offset: 0x13240
 // Size: 0xa2
 function function_c1945f26d99b0ed9( player )
 {
@@ -6686,7 +6813,8 @@ function function_c1945f26d99b0ed9( player )
     
     if ( isagent( player ) || !istrue( level.onlinegame ) )
     {
-        for (index = 0; index < 5; index++) {
+        for ( index = 0; index < 5 ; index++ )
+        {
             var_a8af9a2935dd804f[ index ] = 0;
         }
         
@@ -6695,7 +6823,8 @@ function function_c1945f26d99b0ed9( player )
     
     squadmates = player getfireteammembers();
     
-    for (index = 0; index < 5; index++) {
+    for ( index = 0; index < 5 ; index++ )
+    {
         if ( isdefined( var_a8af9a2935dd804f ) && isdefined( squadmates[ index ] ) && squadmates[ index ] function_7a32b0201993d7f7() != "" )
         {
             var_a8af9a2935dd804f[ index ] = squadmates[ index ] function_7a32b0201993d7f7();
@@ -6709,8 +6838,8 @@ function function_c1945f26d99b0ed9( player )
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12ec7
+// Params 2
+// Checksum 0x0, Offset: 0x132eb
 // Size: 0x3c
 function reportchallengeuserserializedeventwrapper( eventid, params )
 {

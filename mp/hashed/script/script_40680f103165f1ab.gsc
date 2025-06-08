@@ -15,7 +15,7 @@
 #namespace ftue_mgl;
 
 // Namespace ftue_mgl / namespace_2197cf2bed0f792d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x173
 // Size: 0x6a
 function init()
@@ -103,7 +103,8 @@ function private function_81a6047c307f59f2()
         return undefined;
     }
     
-    for (i = 0; i < level.players.size; i++) {
+    for ( i = 0; i < level.players.size ; i++ )
+    {
         var_dd559c1ce15ae3d5 = level.players[ i ];
         
         if ( isdefined( var_dd559c1ce15ae3d5 ) && !isbot( var_dd559c1ce15ae3d5 ) )

@@ -9,7 +9,7 @@
 #namespace br_armor;
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d8
 // Size: 0x24
 function main()
@@ -22,7 +22,7 @@ function main()
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x204
 // Size: 0x3c
 function initarmor()
@@ -35,7 +35,7 @@ function initarmor()
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x248
 // Size: 0x17
 function function_f5fad893f2305590()
@@ -49,7 +49,7 @@ function function_f5fad893f2305590()
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x268
 // Size: 0x30
 function brdpadcallback( notification, slotindex )
@@ -61,7 +61,7 @@ function brdpadcallback( notification, slotindex )
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a0
 // Size: 0x9f
 function getoldarmorent( var_b66c691c7efb8a01 )
@@ -87,7 +87,7 @@ function getoldarmorent( var_b66c691c7efb8a01 )
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x348
 // Size: 0x4b
 function helmetitemtypeforlevel( helmetlevel )
@@ -106,7 +106,7 @@ function helmetitemtypeforlevel( helmetlevel )
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39c
 // Size: 0x69
 function givestartingarmor( var_25d647af59249079 )
@@ -120,7 +120,7 @@ function givestartingarmor( var_25d647af59249079 )
         var_9a5097fe8a19dcfd = 100;
     }
     
-    if ( getdvarint( @"hash_ad67cf67992fe5f2", 0 ) )
+    if ( getdvarint( @"scr_br_alt_mode_gg", 0 ) )
     {
         var_9a5097fe8a19dcfd = function_f5fad893f2305590();
     }
@@ -136,7 +136,7 @@ function givestartingarmor( var_25d647af59249079 )
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40d
 // Size: 0x6e
 function givearmorvalue( value )
@@ -154,7 +154,7 @@ function givearmorvalue( value )
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x483
 // Size: 0x63
 function takehelmet( helmetitem, helmetlevel )
@@ -169,7 +169,7 @@ function takehelmet( helmetitem, helmetlevel )
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ee
 // Size: 0x14
 function breakarmor()
@@ -178,7 +178,7 @@ function breakarmor()
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x50a
 // Size: 0x6f, Type: bool
 function isarmorbetterthanequipped( armorname )
@@ -210,7 +210,7 @@ function isarmorbetterthanequipped( armorname )
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x582
 // Size: 0x1fc
 function popoffhelmet( impactdir, playerangles, playerorigin )
@@ -236,7 +236,8 @@ function popoffhelmet( impactdir, playerangles, playerorigin )
     var_29511a1c049e1067 *= 1 / var_f246e6dc812fbcfe;
     previousorigin = helmet.origin;
     
-    for (i = 0; i < var_29511a1c049e1067; i++) {
+    for ( i = 0; i < var_29511a1c049e1067 ; i++ )
+    {
         wait var_f246e6dc812fbcfe;
         compareorigin = previousorigin - helmet.origin;
         
@@ -256,7 +257,7 @@ function popoffhelmet( impactdir, playerangles, playerorigin )
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x786
 // Size: 0x38
 function onhelmetsniped( victim, impactdir )
@@ -268,7 +269,7 @@ function onhelmetsniped( victim, impactdir )
 }
 
 // Namespace br_armor / scripts\mp\gametypes\br_armor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7c6
 // Size: 0x35
 function function_bcb1d5fb674fa3a0()

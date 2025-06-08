@@ -28,7 +28,7 @@
 #namespace namespace_b797504d70db7f41;
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f8
 // Size: 0x103
 function function_7aae8cb0d8b0ac6a( data )
@@ -47,7 +47,7 @@ function function_7aae8cb0d8b0ac6a( data )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x703
 // Size: 0x1e1
 function function_fefd14a6940e2b99( activity, owner )
@@ -88,7 +88,7 @@ function function_fefd14a6940e2b99( activity, owner )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ed
 // Size: 0x9a
 function function_b883ad642cd900d6()
@@ -102,7 +102,7 @@ function function_b883ad642cd900d6()
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x98f
 // Size: 0xfd
 function function_dd6410a59565d135( teamname, player )
@@ -137,7 +137,7 @@ function function_dd6410a59565d135( teamname, player )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa94
 // Size: 0x153
 function function_54fac7db1349c874( player )
@@ -179,13 +179,14 @@ function function_54fac7db1349c874( player )
         task.originalteam = player.team;
     }
     
-    for (i = 0; i < task.plantedbombs.size; i++) {
+    for ( i = 0; i < task.plantedbombs.size ; i++ )
+    {
         task.plantedbombs[ i ] enableplayeruse( player );
     }
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbef
 // Size: 0x99
 function function_1d932423d5491347( player )
@@ -201,13 +202,14 @@ function function_1d932423d5491347( player )
     
     player setclientomnvar( "ui_br_stronghold_mission", task.mission_fail );
     
-    for (i = 0; i < task.plantedbombs.size; i++) {
+    for ( i = 0; i < task.plantedbombs.size ; i++ )
+    {
         task.plantedbombs[ i ] disableplayeruse( player );
     }
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc90
 // Size: 0x1b
 function function_7fef8fe4178f164f( teamname )
@@ -216,7 +218,7 @@ function function_7fef8fe4178f164f( teamname )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcb3
 // Size: 0x1c5
 function function_19809ae1667b5c7a( teamname, var_b677bbe2241c4e3f, detonated )
@@ -260,7 +262,7 @@ function function_19809ae1667b5c7a( teamname, var_b677bbe2241c4e3f, detonated )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe80
 // Size: 0x76
 function function_6118e2119e160883( player )
@@ -283,7 +285,7 @@ function function_6118e2119e160883( player )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xefe
 // Size: 0x66
 function function_ee2041010cee0afc( player )
@@ -300,7 +302,7 @@ function function_ee2041010cee0afc( player )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf6c
 // Size: 0x52
 function function_e09f977d133bac40( player )
@@ -452,7 +454,7 @@ function private function_2a647bf074af9087( player, bombent )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1412
 // Size: 0x15a
 function function_e9abe9c2bf9878f0()
@@ -486,7 +488,7 @@ function function_e9abe9c2bf9878f0()
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1574
 // Size: 0x123
 function function_a77cbe5355057772( locations, var_e83038f37b2b5870, ignoreinuse )
@@ -526,7 +528,7 @@ function function_a77cbe5355057772( locations, var_e83038f37b2b5870, ignoreinuse
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16a0
 // Size: 0x55
 function function_35768a5b1ebba1a0()
@@ -538,7 +540,7 @@ function function_35768a5b1ebba1a0()
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16fd
 // Size: 0x11e
 function function_5cbd566bcb47d26e()
@@ -561,7 +563,8 @@ function function_5cbd566bcb47d26e()
     task thread function_c98c343e42951ea2( task.endtime, 3000 );
     wait waittime;
     
-    for (i = 0; i < task.plantedbombs.size; i++) {
+    for ( i = 0; i < task.plantedbombs.size ; i++ )
+    {
         task function_1991fd659fa220ba( task.plantedbombs[ i ] );
     }
     
@@ -569,7 +572,7 @@ function function_5cbd566bcb47d26e()
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1823
 // Size: 0x18d
 function function_c98c343e42951ea2( bombendtime, offset )
@@ -638,7 +641,7 @@ function function_c98c343e42951ea2( bombendtime, offset )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19b8
 // Size: 0xe9
 function function_682e6a05a3109ea1( bombent )
@@ -678,7 +681,7 @@ function function_682e6a05a3109ea1( bombent )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1aaa
 // Size: 0x1eb
 function function_1991fd659fa220ba( bombent )
@@ -730,7 +733,7 @@ function function_1991fd659fa220ba( bombent )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c9d
 // Size: 0x41
 function function_4f1a578f63d4ed56( dropstruct, player )
@@ -741,7 +744,7 @@ function function_4f1a578f63d4ed56( dropstruct, player )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ce6
 // Size: 0x1b8
 function function_36b22d1548152da8( skipspawn )
@@ -787,7 +790,7 @@ function function_36b22d1548152da8( skipspawn )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ea6
 // Size: 0xae, Type: bool
 function function_17608c84bbcddd1c( bombnum )
@@ -809,7 +812,7 @@ function function_17608c84bbcddd1c( bombnum )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f5d
 // Size: 0x85, Type: bool
 function function_7df1f88002cc047e( bombnum, radiusscalar )
@@ -817,7 +820,8 @@ function function_7df1f88002cc047e( bombnum, radiusscalar )
     task = self;
     safeorigin = undefined;
     
-    for (attempts = 0; attempts < 10; attempts++) {
+    for ( attempts = 0; attempts < 10 ; attempts++ )
+    {
         safeorigin = task.circlecenter + randomonunitsphere() * task.circleradius * radiusscalar;
         safeorigin = getclosestpointonnavmesh( safeorigin );
         
@@ -832,7 +836,7 @@ function function_7df1f88002cc047e( bombnum, radiusscalar )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1feb
 // Size: 0x1d, Type: bool
 function function_31ffdca84c5aa051( point )
@@ -849,7 +853,7 @@ function function_31ffdca84c5aa051( point )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2011
 // Size: 0x1c8
 function function_60f28d93d054020e( safeorigin, bombnum, originoverride, skipspawn )
@@ -967,7 +971,7 @@ function private function_e14909a9c0b08d64( player, bombent )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23f0
 // Size: 0xa0, Type: bool
 function function_ffde3ee5ae09d317( bombnum )
@@ -993,7 +997,7 @@ function function_ffde3ee5ae09d317( bombnum )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2499
 // Size: 0x52, Type: bool
 function function_1fb399bcaeb556a1( origin, skipspawn )
@@ -1017,7 +1021,7 @@ function function_1fb399bcaeb556a1( origin, skipspawn )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x24f4
 // Size: 0x1cd
 function function_84348b61e96b6c3c( dropstruct, player, crate )
@@ -1035,7 +1039,8 @@ function function_84348b61e96b6c3c( dropstruct, player, crate )
     
     if ( var_557e3ae920e08a75 >= 0 )
     {
-        for (i = 0; i < var_557e3ae920e08a75; i++) {
+        for ( i = 0; i < var_557e3ae920e08a75 ; i++ )
+        {
             randomindex = randomintrange( 0, 25 );
             lootdrops = getscriptcachecontents( "bomb_defuse_reward", randomindex );
             function_38bf039a4df5d1ac( dropstruct, player, crate, lootdrops );
@@ -1043,7 +1048,8 @@ function function_84348b61e96b6c3c( dropstruct, player, crate )
     }
     else if ( isdefined( teammatecount ) )
     {
-        for (i = 0; i < teammatecount; i++) {
+        for ( i = 0; i < teammatecount ; i++ )
+        {
             randomindex = randomintrange( 0, 25 );
             lootdrops = getscriptcachecontents( "bomb_defuse_reward", randomindex );
             lootdrops[ lootdrops.size ] = var_df2f68507645906f[ i % var_df2f68507645906f.size ];
@@ -1066,7 +1072,7 @@ function function_84348b61e96b6c3c( dropstruct, player, crate )
 }
 
 // Namespace namespace_b797504d70db7f41 / namespace_c96c5decac69fc6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x26c9
 // Size: 0x112
 function function_38bf039a4df5d1ac( dropstruct, player, crate, lootdrops )

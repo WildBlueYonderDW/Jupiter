@@ -9,7 +9,7 @@
 #namespace namespace_abf9477bf4a0e36e;
 
 // Namespace namespace_abf9477bf4a0e36e / namespace_6930997dcab65131
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b0
 // Size: 0x29
 function function_ef875512a592bbc1()
@@ -20,7 +20,7 @@ function function_ef875512a592bbc1()
 }
 
 // Namespace namespace_abf9477bf4a0e36e / namespace_6930997dcab65131
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e1
 // Size: 0xcf
 function function_17af5fcd80a95961( sparams )
@@ -45,7 +45,7 @@ function function_17af5fcd80a95961( sparams )
 }
 
 // Namespace namespace_abf9477bf4a0e36e / namespace_6930997dcab65131
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b8
 // Size: 0x88
 function function_e8b0e602ea21de7b()
@@ -63,7 +63,7 @@ function function_e8b0e602ea21de7b()
 }
 
 // Namespace namespace_abf9477bf4a0e36e / namespace_6930997dcab65131
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x348
 // Size: 0xcd
 function function_eb034db4994911d1( destination )
@@ -83,7 +83,7 @@ function function_eb034db4994911d1( destination )
 }
 
 // Namespace namespace_abf9477bf4a0e36e / namespace_6930997dcab65131
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41d
 // Size: 0x8c
 function function_4cdf5f740a62fd75( struct )
@@ -101,7 +101,7 @@ function function_4cdf5f740a62fd75( struct )
 }
 
 // Namespace namespace_abf9477bf4a0e36e / namespace_6930997dcab65131
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b1
 // Size: 0x4d
 function function_51b5ba468783ae71( structspawn )
@@ -111,7 +111,7 @@ function function_51b5ba468783ae71( structspawn )
 }
 
 // Namespace namespace_abf9477bf4a0e36e / namespace_6930997dcab65131
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x506
 // Size: 0xb
 function function_8d5e4f5d5d501bb6( player )

@@ -9,7 +9,7 @@
 #namespace vehicle_damage_mp;
 
 // Namespace vehicle_damage_mp / scripts\mp\vehicles\vehicle_damage_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x218
 // Size: 0x10a
 function vehicle_damage_mp_init()
@@ -29,7 +29,7 @@ function vehicle_damage_mp_init()
 }
 
 // Namespace vehicle_damage_mp / scripts\mp\vehicles\vehicle_damage_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x32a
 // Size: 0x34
 function vehicle_damage_givescore( ref, objweapon, var_fc10bb0a0aa2990 )
@@ -44,7 +44,7 @@ function vehicle_damage_givescore( ref, objweapon, var_fc10bb0a0aa2990 )
 }
 
 // Namespace vehicle_damage_mp / scripts\mp\vehicles\vehicle_damage_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x366
 // Size: 0x32
 function vehicle_damage_giveaward( ref, objweapon, var_fc10bb0a0aa2990 )
@@ -58,7 +58,7 @@ function vehicle_damage_giveaward( ref, objweapon, var_fc10bb0a0aa2990 )
 }
 
 // Namespace vehicle_damage_mp / scripts\mp\vehicles\vehicle_damage_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3a0
 // Size: 0x41
 function vehicle_setuphitdamageoverrideforweapon( weaponname, weaponhitsperattack, var_8b4500d6a881b7b2, vehiclename )

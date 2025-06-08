@@ -4,7 +4,7 @@
 #namespace namespace_e1447aac8628ea7d;
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bd
 // Size: 0x132
 function function_786c10d84c135d5c( noteworthy )
@@ -40,7 +40,7 @@ function function_786c10d84c135d5c( noteworthy )
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f8
 // Size: 0xbb
 function function_f3c3a2122b0fe598( noteworthy )
@@ -62,7 +62,7 @@ function function_f3c3a2122b0fe598( noteworthy )
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3bb
 // Size: 0x1b
 function function_95515c853e90472c( noteworthy, ai )
@@ -71,7 +71,7 @@ function function_95515c853e90472c( noteworthy, ai )
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3de
 // Size: 0xcd
 function function_9cb60ba3067949a3( volumetargetname )
@@ -84,7 +84,8 @@ function function_9cb60ba3067949a3( volumetargetname )
     {
         var_9452f76b176ae883 = function_31e1b184571df76e( volumeent );
         
-        for (i = 0; i < 8; i++) {
+        for ( i = 0; i < 8 ; i++ )
+        {
             stagestruct = function_a612e00addaa15c6( var_9452f76b176ae883, i );
             add_stage( volumeent, stagestruct );
         }
@@ -94,7 +95,7 @@ function function_9cb60ba3067949a3( volumetargetname )
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0x14
 function function_a7442d9986f00210( volumetargetname )
@@ -103,7 +104,7 @@ function function_a7442d9986f00210( volumetargetname )
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4cf
 // Size: 0x13
 function function_dfc307bd256d27d( volumetargetname )
@@ -112,7 +113,7 @@ function function_dfc307bd256d27d( volumetargetname )
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4ea
 // Size: 0x8c
 function function_34181ec2298dac40( var_1b1b54049e5e0079, volumeentity, volumetargetname, staticpriority )
@@ -125,7 +126,7 @@ function function_34181ec2298dac40( var_1b1b54049e5e0079, volumeentity, volumeta
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57e
 // Size: 0xdf
 function function_33a0071b309ada3a()
@@ -140,7 +141,7 @@ function function_33a0071b309ada3a()
     struct.var_8bd784bab1c5be5 = 0;
     struct.stealthgroup = undefined;
     struct.var_74d506aaf66c3d49 = 0;
-    struct.var_4325de95304a1d6b = 0;
+    struct.maxreinforcementcooldown = 0;
     struct.var_56e4a813e857bd7d = "none";
     struct.reinforcementlimit = 0;
     struct.var_bcda9a9f65039f12 = 0;
@@ -191,9 +192,9 @@ function private function_2a64555627bef58f( struct )
         struct.var_74d506aaf66c3d49 = 0;
     }
     
-    if ( !isdefined( struct.var_4325de95304a1d6b ) )
+    if ( !isdefined( struct.maxreinforcementcooldown ) )
     {
-        struct.var_4325de95304a1d6b = 0;
+        struct.maxreinforcementcooldown = 0;
     }
     
     if ( !isdefined( struct.var_56e4a813e857bd7d ) )
@@ -218,17 +219,17 @@ function private function_2a64555627bef58f( struct )
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7f3
 // Size: 0xbc
 function function_522de4e0b6e1fe88( volumetargetname, stagestruct )
 {
     function_2a64555627bef58f( stagestruct );
-    function_3766773616a64eac( volumetargetname, stagestruct.stagename, stagestruct.priority, stagestruct.var_d86443bb4dc09f55, stagestruct.maxai, stagestruct.priorityperplayer, stagestruct.var_b895bca3d7f637f8, stagestruct.var_8bd784bab1c5be5, stagestruct.stealthgroup, stagestruct.var_74d506aaf66c3d49, stagestruct.var_4325de95304a1d6b, stagestruct.var_56e4a813e857bd7d, stagestruct.reinforcementlimit, stagestruct.var_bcda9a9f65039f12, stagestruct.var_bcb7a49f64dd6d58 );
+    function_3766773616a64eac( volumetargetname, stagestruct.stagename, stagestruct.priority, stagestruct.var_d86443bb4dc09f55, stagestruct.maxai, stagestruct.priorityperplayer, stagestruct.var_b895bca3d7f637f8, stagestruct.var_8bd784bab1c5be5, stagestruct.stealthgroup, stagestruct.var_74d506aaf66c3d49, stagestruct.maxreinforcementcooldown, stagestruct.var_56e4a813e857bd7d, stagestruct.reinforcementlimit, stagestruct.var_bcda9a9f65039f12, stagestruct.var_bcb7a49f64dd6d58 );
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8b7
 // Size: 0x5e
 function function_e1a2c1380886b277( volume )
@@ -244,7 +245,7 @@ function function_e1a2c1380886b277( volume )
 /#
 
     // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x91d
     // Size: 0xa1, Type: dev
     function function_9da53e82db41950b( debuglevel, noteworthy, volumetargetname )
@@ -279,7 +280,7 @@ function function_e1a2c1380886b277( volume )
 #/
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9c6
 // Size: 0x7f
 function function_c627f4f5ad3d65c1( type, function )
@@ -314,7 +315,7 @@ function private function_31e1b184571df76e( volumeent )
     var_9452f76b176ae883.var_8bd784bab1c5be5 = [ volumeent.var_4d8a7a79fd5c80b, volumeent.var_433b47bbeb556c64, volumeent.var_cd4323a96263691d, volumeent.var_e5cd194b4f4152e6, volumeent.var_6b1658cb419d1567, volumeent.var_1c74d59e863383d0, volumeent.var_83ba703ce5c1ee09, volumeent.var_4a64ab742e5acca2 ];
     var_9452f76b176ae883.stealthgroups = [ volumeent.var_4cce8d25eed3e560, volumeent.var_3928040df31a9887, volumeent.var_5f1fd7a67e19c0e2, volumeent.var_fd179a2f9b6de709, volumeent.var_7f9f29924d542104, volumeent.var_2c16a193b89287bb, volumeent.var_48e44e35249b0406, volumeent.var_bd74219a4d1afbed ];
     var_9452f76b176ae883.var_74d506aaf66c3d49 = [ volumeent.var_f522d34eb4bab628, volumeent.var_22dfaf0454c6dcb3, volumeent.var_28556691e1e80bfa, volumeent.var_6fbb90445023ddad, volumeent.var_da635cc8b2d2ae04, volumeent.var_1967762236746a2f, volumeent.var_46d221bee15f1e46, volumeent.var_1c13f480789772e9 ];
-    var_9452f76b176ae883.var_4325de95304a1d6b = [ volumeent.var_e8218633cb8574ce, volumeent.var_f5ac32375c21160d, volumeent.var_d80aa4ebb3fcd6c, volumeent.var_dabc60631000b4b3, volumeent.var_53c45d6a31f99f62, volumeent.var_ea049bcf4bf1e791, volumeent.var_f43cddb88f56b600, volumeent.var_506b32ade56bf817 ];
+    var_9452f76b176ae883.maxreinforcementcooldown = [ volumeent.var_e8218633cb8574ce, volumeent.var_f5ac32375c21160d, volumeent.var_d80aa4ebb3fcd6c, volumeent.var_dabc60631000b4b3, volumeent.var_53c45d6a31f99f62, volumeent.var_ea049bcf4bf1e791, volumeent.var_f43cddb88f56b600, volumeent.var_506b32ade56bf817 ];
     var_9452f76b176ae883.var_56e4a813e857bd7d = [ volumeent.var_7f1848195465f938, volumeent.var_cb99f4f3f1f67c8f, volumeent.var_2040e22700f21b7e, volumeent.var_9fbf2e29cddea965, volumeent.var_71544301a22a64e4, volumeent.var_ef7d9137c8cbe0ab, volumeent.var_1865e30c655424a, volumeent.var_9f5e8ccf93498551 ];
     var_9452f76b176ae883.reinforcementlimit = [ volumeent.var_32444206aa4fb1cf, volumeent.var_30d64d91f9e79692, volumeent.var_11d3e6ed76430415, volumeent.var_3c3f9bdb16982200, volumeent.var_d419683921d11b7b, volumeent.var_56cb45e0b2146c3e, volumeent.var_e10054cf5cf1e6b1, volumeent.var_8572b18c80a37b9c ];
     var_9452f76b176ae883.var_36911c475270c536 = [ volumeent.var_9a3725bb74947538, volumeent.var_8cc4cf92c74942d7, volumeent.var_76fa16a61d02f142, volumeent.var_bda1fbc2c05ec889, volumeent.var_426860f30bd4a7f4, volumeent.var_84b1cabbc3941e03, volumeent.var_98e5519b52f2d94e, volumeent.var_f1e85711f0bb67d5 ];
@@ -339,7 +340,7 @@ function private function_a612e00addaa15c6( var_9452f76b176ae883, stageindex )
     stagestruct.var_8bd784bab1c5be5 = var_9452f76b176ae883.var_8bd784bab1c5be5[ stageindex ];
     stagestruct.stealthgroup = var_9452f76b176ae883.stealthgroups[ stageindex ];
     stagestruct.var_74d506aaf66c3d49 = var_9452f76b176ae883.var_74d506aaf66c3d49[ stageindex ];
-    stagestruct.var_4325de95304a1d6b = var_9452f76b176ae883.var_4325de95304a1d6b[ stageindex ];
+    stagestruct.maxreinforcementcooldown = var_9452f76b176ae883.maxreinforcementcooldown[ stageindex ];
     stagestruct.var_56e4a813e857bd7d = var_9452f76b176ae883.var_56e4a813e857bd7d[ stageindex ];
     stagestruct.reinforcementlimit = var_9452f76b176ae883.reinforcementlimit[ stageindex ];
     stagestruct.var_36911c475270c536 = var_9452f76b176ae883.var_36911c475270c536[ stageindex ];
@@ -366,7 +367,7 @@ function private function_a612e00addaa15c6( var_9452f76b176ae883, stageindex )
         stagestruct.var_36b40e475296ee24 = 0;
     }
     
-    stagestruct.var_582685fd005f7229 = isdefined( stagestruct.priority ) && isdefined( stagestruct.var_d86443bb4dc09f55 ) && isdefined( stagestruct.maxai ) && isdefined( stagestruct.priorityperplayer ) && isdefined( stagestruct.var_b895bca3d7f637f8 ) && isdefined( stagestruct.var_8bd784bab1c5be5 ) && isdefined( stagestruct.var_74d506aaf66c3d49 ) && isdefined( stagestruct.var_4325de95304a1d6b ) && isdefined( stagestruct.var_56e4a813e857bd7d ) && isdefined( stagestruct.reinforcementlimit );
+    stagestruct.var_582685fd005f7229 = isdefined( stagestruct.priority ) && isdefined( stagestruct.var_d86443bb4dc09f55 ) && isdefined( stagestruct.maxai ) && isdefined( stagestruct.priorityperplayer ) && isdefined( stagestruct.var_b895bca3d7f637f8 ) && isdefined( stagestruct.var_8bd784bab1c5be5 ) && isdefined( stagestruct.var_74d506aaf66c3d49 ) && isdefined( stagestruct.maxreinforcementcooldown ) && isdefined( stagestruct.var_56e4a813e857bd7d ) && isdefined( stagestruct.reinforcementlimit );
     stagestruct.var_9dc417101f3fb9f3 = stagestruct.var_d86443bb4dc09f55 > 0 || stagestruct.maxai > 0;
     stagestruct.isnamed = isdefined( stagestruct.name ) && stagestruct.name.size > 0;
     return stagestruct;
@@ -381,11 +382,11 @@ function private add_stage( volumeent, stagestruct )
     assertex( stagestruct.var_582685fd005f7229, "<dev string:x2c2>" + volumeent.targetname + "<dev string:x2dc>" + stagestruct.index + "<dev string:x30f>" );
     assertex( !( stagestruct.var_9dc417101f3fb9f3 && !stagestruct.isnamed ), "<dev string:x2c2>" + volumeent.targetname + "<dev string:x3a6>" + stagestruct.index + "<dev string:x3b9>" );
     assertex( stagestruct.var_d86443bb4dc09f55 <= stagestruct.maxai, "<dev string:x2c2>" + volumeent.targetname + "<dev string:x3a6>" + stagestruct.index + "<dev string:x44a>" );
-    assertex( stagestruct.var_74d506aaf66c3d49 <= stagestruct.var_4325de95304a1d6b, "<dev string:x2c2>" + volumeent.targetname + "<dev string:x3a6>" + stagestruct.index + "<dev string:x471>" );
+    assertex( stagestruct.var_74d506aaf66c3d49 <= stagestruct.maxreinforcementcooldown, "<dev string:x2c2>" + volumeent.targetname + "<dev string:x3a6>" + stagestruct.index + "<dev string:x471>" );
     
     if ( stagestruct.isnamed )
     {
-        function_3766773616a64eac( volumeent.targetname, stagestruct.name, stagestruct.priority, stagestruct.var_d86443bb4dc09f55, stagestruct.maxai, stagestruct.priorityperplayer, stagestruct.var_b895bca3d7f637f8, stagestruct.var_8bd784bab1c5be5, stagestruct.stealthgroup, stagestruct.var_74d506aaf66c3d49, stagestruct.var_4325de95304a1d6b, stagestruct.var_56e4a813e857bd7d, stagestruct.reinforcementlimit, stagestruct.var_36911c475270c536, stagestruct.var_36b40e475296ee24 );
+        function_3766773616a64eac( volumeent.targetname, stagestruct.name, stagestruct.priority, stagestruct.var_d86443bb4dc09f55, stagestruct.maxai, stagestruct.priorityperplayer, stagestruct.var_b895bca3d7f637f8, stagestruct.var_8bd784bab1c5be5, stagestruct.stealthgroup, stagestruct.var_74d506aaf66c3d49, stagestruct.maxreinforcementcooldown, stagestruct.var_56e4a813e857bd7d, stagestruct.reinforcementlimit, stagestruct.var_36911c475270c536, stagestruct.var_36b40e475296ee24 );
     }
 }
 
@@ -539,7 +540,7 @@ function private function_2125e0704a40354b( notifymessage )
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1a8d
 // Size: 0x60
 function function_dadf0846a19b2d4b( flagname, oneoff, mode, value )

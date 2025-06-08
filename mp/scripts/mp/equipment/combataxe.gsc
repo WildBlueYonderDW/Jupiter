@@ -8,7 +8,7 @@
 #namespace combataxe;
 
 // Namespace combataxe / scripts\mp\equipment\combataxe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c7
 // Size: 0x34
 function function_d80165ad0154bb7e()
@@ -18,7 +18,7 @@ function function_d80165ad0154bb7e()
 }
 
 // Namespace combataxe / scripts\mp\equipment\combataxe
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x203
 // Size: 0xd0
 function function_81863480a8885799( grenade )
@@ -39,7 +39,7 @@ function function_81863480a8885799( grenade )
 }
 
 // Namespace combataxe / scripts\mp\equipment\combataxe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2db
 // Size: 0x107
 function function_7ca5b6259bcf48d2()
@@ -78,7 +78,7 @@ function function_7ca5b6259bcf48d2()
 }
 
 // Namespace combataxe / scripts\mp\equipment\combataxe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ea
 // Size: 0x20
 function function_b0e8a6840abe65ac()
@@ -89,7 +89,7 @@ function function_b0e8a6840abe65ac()
 }
 
 // Namespace combataxe / scripts\mp\equipment\combataxe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x412
 // Size: 0x99
 function function_e7c69cc4e25fc10f()
@@ -129,7 +129,7 @@ function function_e7c69cc4e25fc10f()
 }
 
 // Namespace combataxe / scripts\mp\equipment\combataxe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0x1b
 function function_deaa9c45d71fdf62()
@@ -140,7 +140,7 @@ function function_deaa9c45d71fdf62()
 }
 
 // Namespace combataxe / scripts\mp\equipment\combataxe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d6
 // Size: 0x35
 function function_5514249d93b6d0b7()
@@ -155,7 +155,7 @@ function function_5514249d93b6d0b7()
 }
 
 // Namespace combataxe / scripts\mp\equipment\combataxe
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x513
 // Size: 0x3c, Type: bool
 function function_337769e008716a08( equipmentref )
@@ -171,7 +171,7 @@ function function_337769e008716a08( equipmentref )
 }
 
 // Namespace combataxe / scripts\mp\equipment\combataxe
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x558
 // Size: 0x27
 function function_b24a7386b5a50e07()

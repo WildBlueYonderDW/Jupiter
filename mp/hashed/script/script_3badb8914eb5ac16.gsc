@@ -31,7 +31,7 @@ function private autoexec main()
 }
 
 // Namespace zombie_init / namespace_cc1ead856ef7d1ee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x281
 // Size: 0x8a5
 function function_7415ae9399ba8e75( var_f76baeb1c3556fab )
@@ -234,7 +234,7 @@ function function_7415ae9399ba8e75( var_f76baeb1c3556fab )
 }
 
 // Namespace zombie_init / namespace_cc1ead856ef7d1ee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb2e
 // Size: 0xeb
 function function_a343ac31ca854535( var_76525769b6e49a6c )

@@ -27,7 +27,7 @@
 
 // Namespace lrad / scripts\killstreaks\lrad
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0xab4
+// Checksum 0x0, Offset: 0xab5
 // Size: 0x18
 function autoexec main()
 {
@@ -36,7 +36,7 @@ function autoexec main()
 
 // Namespace lrad / scripts\killstreaks\lrad
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xad4
+// Checksum 0x0, Offset: 0xad5
 // Size: 0xff
 function private init()
 {
@@ -66,8 +66,8 @@ function private init()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbdb
+// Params 0
+// Checksum 0x0, Offset: 0xbdc
 // Size: 0x173
 function function_1212a209876bcd8d()
 {
@@ -94,8 +94,8 @@ function function_1212a209876bcd8d()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd56
+// Params 0
+// Checksum 0x0, Offset: 0xd57
 // Size: 0x87
 function function_795e8013831a046a()
 {
@@ -109,9 +109,9 @@ function function_795e8013831a046a()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xde5
-// Size: 0x33d, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0xde6
+// Size: 0x33e, Type: bool
 function function_5dae574697e78d96( streakinfo )
 {
     if ( !isdefined( streakinfo ) )
@@ -165,7 +165,7 @@ function function_5dae574697e78d96( streakinfo )
     
     if ( issharedfuncdefined( "damage", "monitorDamage" ) )
     {
-        var_6bec98cb2dcc2450 thread [[ getsharedfunc( "damage", "monitorDamage" ) ]]( maxhealth, "hitequip", &function_66a7440055d386c3, &function_5733afc81f25372c, 0 );
+        var_6bec98cb2dcc2450 thread [[ getsharedfunc( "damage", "monitorDamage" ) ]]( maxhealth, "hitequip", &function_66a7440055d386c3, &function_5733afc81f25372c, 1 );
     }
     
     var_6bec98cb2dcc2450 function_e12969da21420075();
@@ -210,8 +210,8 @@ function function_5dae574697e78d96( streakinfo )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x112b
+// Params 0
+// Checksum 0x0, Offset: 0x112d
 // Size: 0x42
 function function_e27f64a56913c64b()
 {
@@ -224,8 +224,8 @@ function function_e27f64a56913c64b()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1175
+// Params 1
+// Checksum 0x0, Offset: 0x1177
 // Size: 0x76
 function function_f2b4b6d178b092d9( var_6bec98cb2dcc2450 )
 {
@@ -257,8 +257,8 @@ function function_f2b4b6d178b092d9( var_6bec98cb2dcc2450 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f3
+// Params 0
+// Checksum 0x0, Offset: 0x11f5
 // Size: 0x1a7, Type: bool
 function function_f3cfedd6f1bbfd6f()
 {
@@ -315,8 +315,8 @@ function function_f3cfedd6f1bbfd6f()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a3
+// Params 1
+// Checksum 0x0, Offset: 0x13a5
 // Size: 0x110
 function function_52132724b2c18dc4( streakinfo )
 {
@@ -356,8 +356,8 @@ function function_52132724b2c18dc4( streakinfo )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14bc
+// Params 1
+// Checksum 0x0, Offset: 0x14be
 // Size: 0x284
 function lrad_place( streakinfo )
 {
@@ -416,8 +416,8 @@ function lrad_place( streakinfo )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1749
+// Params 0
+// Checksum 0x0, Offset: 0x174b
 // Size: 0x2c
 function function_18633ad410bdfdfa()
 {
@@ -428,8 +428,8 @@ function function_18633ad410bdfdfa()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x177d
+// Params 0
+// Checksum 0x0, Offset: 0x177f
 // Size: 0x28
 function function_6402ac006cab5c40()
 {
@@ -439,8 +439,8 @@ function function_6402ac006cab5c40()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ad
+// Params 0
+// Checksum 0x0, Offset: 0x17af
 // Size: 0x48
 function function_481e1d72fdaac162()
 {
@@ -456,8 +456,8 @@ function function_481e1d72fdaac162()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17fd
+// Params 2
+// Checksum 0x0, Offset: 0x17ff
 // Size: 0x298
 function function_cce8da1f44d40890( marker, var_6bec98cb2dcc2450 )
 {
@@ -509,8 +509,8 @@ function function_cce8da1f44d40890( marker, var_6bec98cb2dcc2450 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a9e
+// Params 1
+// Checksum 0x0, Offset: 0x1aa0
 // Size: 0x151
 function function_f74b0080a679742b( var_6bec98cb2dcc2450 )
 {
@@ -547,8 +547,8 @@ function function_f74b0080a679742b( var_6bec98cb2dcc2450 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bf7
+// Params 3
+// Checksum 0x0, Offset: 0x1bf9
 // Size: 0x11a
 function function_3c44a60f10088e51( streakinfo, ignorecancel, delaytime )
 {
@@ -591,8 +591,8 @@ function function_3c44a60f10088e51( streakinfo, ignorecancel, delaytime )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d1a
+// Params 1
+// Checksum 0x0, Offset: 0x1d1c
 // Size: 0x64
 function function_73b3147446ea5f18( delaytime )
 {
@@ -608,8 +608,8 @@ function function_73b3147446ea5f18( delaytime )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d86
+// Params 1
+// Checksum 0x0, Offset: 0x1d88
 // Size: 0xd0
 function function_136ba4565fe17b8( callbackparams )
 {
@@ -637,8 +637,8 @@ function function_136ba4565fe17b8( callbackparams )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e5e
+// Params 1
+// Checksum 0x0, Offset: 0x1e60
 // Size: 0x12d
 function lrad_destroy( delaytime )
 {
@@ -688,8 +688,8 @@ function lrad_destroy( delaytime )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f93
+// Params 1
+// Checksum 0x0, Offset: 0x1f95
 // Size: 0x3e
 function function_405ae182beea4b1c( data )
 {
@@ -705,8 +705,8 @@ function function_405ae182beea4b1c( data )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fd9
+// Params 1
+// Checksum 0x0, Offset: 0x1fdb
 // Size: 0x7a
 function lrad_timeout( params )
 {
@@ -724,8 +724,8 @@ function lrad_timeout( params )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x205b
+// Params 4
+// Checksum 0x0, Offset: 0x205d
 // Size: 0xc2
 function function_9f6045ef775e961c( deployweapon, immediateswitch, optionaltimedelay, var_f1f211606ccd1b6e )
 {
@@ -759,8 +759,8 @@ function function_9f6045ef775e961c( deployweapon, immediateswitch, optionaltimed
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2125
+// Params 3
+// Checksum 0x0, Offset: 0x2127
 // Size: 0x28
 function function_5a68b8ee35170bf9( streakinfo, switchresult, weaponobj )
 {
@@ -771,8 +771,8 @@ function function_5a68b8ee35170bf9( streakinfo, switchresult, weaponobj )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2155
+// Params 1
+// Checksum 0x0, Offset: 0x2157
 // Size: 0xc9
 function function_8703bc55951530be( var_5c911c4e7ce59792 )
 {
@@ -797,8 +797,8 @@ function function_8703bc55951530be( var_5c911c4e7ce59792 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2226
+// Params 2
+// Checksum 0x0, Offset: 0x2228
 // Size: 0x5f
 function function_9235bfde9b04fc60( var_6bec98cb2dcc2450, useobj )
 {
@@ -820,8 +820,8 @@ function function_9235bfde9b04fc60( var_6bec98cb2dcc2450, useobj )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x228d
+// Params 2
+// Checksum 0x0, Offset: 0x228f
 // Size: 0xaa
 function function_5189f677d1332852( var_6bec98cb2dcc2450, streakinfo )
 {
@@ -848,8 +848,8 @@ function function_5189f677d1332852( var_6bec98cb2dcc2450, streakinfo )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x233f
+// Params 0
+// Checksum 0x0, Offset: 0x2341
 // Size: 0x77
 function function_883487704e982cda()
 {
@@ -870,8 +870,8 @@ function function_883487704e982cda()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23be
+// Params 1
+// Checksum 0x0, Offset: 0x23c0
 // Size: 0x63, Type: bool
 function function_21550b5260803f0b( player )
 {
@@ -899,9 +899,9 @@ function function_21550b5260803f0b( player )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x242a
-// Size: 0x163
+// Params 2
+// Checksum 0x0, Offset: 0x242c
+// Size: 0x1d2
 function function_43adb6908f665a51( var_6bec98cb2dcc2450, streakinfo )
 {
     self endon( "disconnect" );
@@ -925,6 +925,20 @@ function function_43adb6908f665a51( var_6bec98cb2dcc2450, streakinfo )
     
     if ( !istrue( switchsuccess ) )
     {
+        self notify( endonnotify );
+        _takeweapon( streakinfo.bundle.deployweapon );
+        level.var_2d9a7cb2b0831e1e--;
+        
+        if ( isdefined( self.owner ) && isdefined( level.var_23bb4defc5121d06[ self.owner ] ) )
+        {
+            level.var_23bb4defc5121d06[ self.owner ]--;
+        }
+        
+        if ( isdefined( var_6bec98cb2dcc2450 ) )
+        {
+            var_6bec98cb2dcc2450 lrad_destroy();
+        }
+        
         return 0;
     }
     
@@ -948,8 +962,8 @@ function function_43adb6908f665a51( var_6bec98cb2dcc2450, streakinfo )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2595
+// Params 1
+// Checksum 0x0, Offset: 0x2606
 // Size: 0x7c
 function function_484aa2a4c15a015c( var_6bec98cb2dcc2450 )
 {
@@ -965,8 +979,8 @@ function function_484aa2a4c15a015c( var_6bec98cb2dcc2450 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2619
+// Params 1
+// Checksum 0x0, Offset: 0x268a
 // Size: 0x64
 function function_fa22ff0405c3d06e( var_6bec98cb2dcc2450 )
 {
@@ -980,8 +994,8 @@ function function_fa22ff0405c3d06e( var_6bec98cb2dcc2450 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2685
+// Params 2
+// Checksum 0x0, Offset: 0x26f6
 // Size: 0xb9
 function function_75ba96a892796b34( marker, var_6bec98cb2dcc2450 )
 {
@@ -998,8 +1012,8 @@ function function_75ba96a892796b34( marker, var_6bec98cb2dcc2450 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2746
+// Params 1
+// Checksum 0x0, Offset: 0x27b7
 // Size: 0x47
 function function_c87fe068955bfe05( var_6bec98cb2dcc2450 )
 {
@@ -1017,8 +1031,8 @@ function function_c87fe068955bfe05( var_6bec98cb2dcc2450 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2795
+// Params 1
+// Checksum 0x0, Offset: 0x2806
 // Size: 0x4e, Type: bool
 function function_4444ec0cb29ca814( weaponref )
 {
@@ -1027,8 +1041,8 @@ function function_4444ec0cb29ca814( weaponref )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27ec
+// Params 1
+// Checksum 0x0, Offset: 0x285d
 // Size: 0x77
 function function_67a2561dc56ecc0b( data )
 {
@@ -1047,8 +1061,8 @@ function function_67a2561dc56ecc0b( data )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x286b
+// Params 1
+// Checksum 0x0, Offset: 0x28dc
 // Size: 0x76
 function function_a054c2c62f34ac14( data )
 {
@@ -1067,8 +1081,8 @@ function function_a054c2c62f34ac14( data )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28e9
+// Params 1
+// Checksum 0x0, Offset: 0x295a
 // Size: 0x27
 function function_5e06c811fe28148a( data )
 {
@@ -1077,8 +1091,8 @@ function function_5e06c811fe28148a( data )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2918
+// Params 1
+// Checksum 0x0, Offset: 0x2989
 // Size: 0x2e
 function function_43197d230c4d9635( data )
 {
@@ -1088,8 +1102,8 @@ function function_43197d230c4d9635( data )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x294e
+// Params 0
+// Checksum 0x0, Offset: 0x29bf
 // Size: 0x9b
 function function_355f8536758cc7c7()
 {
@@ -1123,8 +1137,8 @@ function function_355f8536758cc7c7()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29f1
+// Params 1
+// Checksum 0x0, Offset: 0x2a62
 // Size: 0x4e
 function function_d4468bb2335b0542( var_9f1f082eeef5d90b )
 {
@@ -1135,8 +1149,8 @@ function function_d4468bb2335b0542( var_9f1f082eeef5d90b )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a47
+// Params 0
+// Checksum 0x0, Offset: 0x2ab8
 // Size: 0xf3
 function function_e12969da21420075()
 {
@@ -1153,8 +1167,8 @@ function function_e12969da21420075()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b42
+// Params 0
+// Checksum 0x0, Offset: 0x2bb3
 // Size: 0x1f9
 function function_dd6257eba7b4a3b2()
 {
@@ -1183,7 +1197,8 @@ function function_dd6257eba7b4a3b2()
         currentorigin = self.origin + var_27f3a8e03d3dc5e7 / 2 * forward;
         lifetime = getdvarfloat( @"hash_98efcf229168a436" );
         
-        for (i = 0; i < var_fa2a279646b5006b; i++) {
+        for ( i = 0; i < var_fa2a279646b5006b ; i++ )
+        {
             self.dangerzones[ i ] = function_f3bb4f4911a1beb2( "spawn", "addSpawnDangerZone", currentorigin, bundle.dangerzoneradius, bundle.dangerzoneheight, self.ownerteam, lifetime, self.owner, 0, self, 1 );
             currentorigin += var_27f3a8e03d3dc5e7 * forward;
         }
@@ -1191,8 +1206,8 @@ function function_dd6257eba7b4a3b2()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d43
+// Params 0
+// Checksum 0x0, Offset: 0x2db4
 // Size: 0x6e
 function function_f4e488f7d8918d26()
 {
@@ -1208,9 +1223,9 @@ function function_f4e488f7d8918d26()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2db9
-// Size: 0x1f4
+// Params 0
+// Checksum 0x0, Offset: 0x2e2a
+// Size: 0x201
 function function_d2368d84391b6a68()
 {
     self endon( "death" );
@@ -1224,7 +1239,11 @@ function function_d2368d84391b6a68()
         entities_ai = getaiarray();
         allentities = array_combine_unique( entities_players, entities_ai );
         var_f4fc390187305987 = self.stuntrigger getistouchingentities( allentities );
-        self.owner.var_9717afbc6163113 = var_f4fc390187305987;
+        
+        if ( isdefined( self.owner ) )
+        {
+            self.owner.var_9717afbc6163113 = var_f4fc390187305987;
+        }
         
         foreach ( ent in var_f4fc390187305987 )
         {
@@ -1267,8 +1286,8 @@ function function_d2368d84391b6a68()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fb5
+// Params 0
+// Checksum 0x0, Offset: 0x3033
 // Size: 0xe5
 function function_9c3226ae596454e6()
 {
@@ -1305,9 +1324,9 @@ function function_9c3226ae596454e6()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30a2
-// Size: 0x86, Type: bool
+// Params 2
+// Checksum 0x0, Offset: 0x3120
+// Size: 0xa4, Type: bool
 function function_f636f503f2312823( ent, var_18d1eaac8a573748 )
 {
     playercheck = 0;
@@ -1317,12 +1336,12 @@ function function_f636f503f2312823( ent, var_18d1eaac8a573748 )
         playercheck = 1;
     }
     
-    return playercheck && isalive( ent ) && ( var_18d1eaac8a573748 || ent.team != self.owner.team ) && !istrue( self.iscarried ) && !istrue( self.issmoking );
+    return playercheck && isalive( ent ) && ( var_18d1eaac8a573748 || ent.team != self.owner.team || !istrue( level.teambased ) && ent != self.owner ) && !istrue( self.iscarried ) && !istrue( self.issmoking );
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3131
+// Params 1
+// Checksum 0x0, Offset: 0x31cd
 // Size: 0x151
 function function_5dcb36314d1abe55( target )
 {
@@ -1351,8 +1370,8 @@ function function_5dcb36314d1abe55( target )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x328b
+// Params 1
+// Checksum 0x0, Offset: 0x3327
 // Size: 0x84
 function function_7fbe85f0fd784b4c( var_97db5d48f2509e02 )
 {
@@ -1371,8 +1390,8 @@ function function_7fbe85f0fd784b4c( var_97db5d48f2509e02 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3318
+// Params 2
+// Checksum 0x0, Offset: 0x33b4
 // Size: 0x304
 function function_bb2a979de475a65( stuntime, var_ef9733a4a88c2f67 )
 {
@@ -1477,8 +1496,8 @@ function function_bb2a979de475a65( stuntime, var_ef9733a4a88c2f67 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3624
+// Params 0
+// Checksum 0x0, Offset: 0x36c0
 // Size: 0xcd
 function function_56da58bd9ea3d08d()
 {
@@ -1523,8 +1542,8 @@ function function_56da58bd9ea3d08d()
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x36f9
+// Params 1
+// Checksum 0x0, Offset: 0x3795
 // Size: 0x7c
 function function_c33bfcf6e1403531( var_ef9733a4a88c2f67 )
 {
@@ -1539,8 +1558,8 @@ function function_c33bfcf6e1403531( var_ef9733a4a88c2f67 )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x377d
+// Params 1
+// Checksum 0x0, Offset: 0x3819
 // Size: 0x12e
 function lrad_hack( newowner )
 {
@@ -1576,8 +1595,8 @@ function lrad_hack( newowner )
 }
 
 // Namespace lrad / scripts\killstreaks\lrad
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38b3
+// Params 1
+// Checksum 0x0, Offset: 0x394f
 // Size: 0x187
 function function_5733afc81f25372c( data )
 {
@@ -1618,8 +1637,8 @@ function function_5733afc81f25372c( data )
 /#
 
     // Namespace lrad / scripts\killstreaks\lrad
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3a43
+    // Params 1
+    // Checksum 0x0, Offset: 0x3adf
     // Size: 0x16e, Type: dev
     function function_1defeaf387d6e2a9( var_bb3f35f040f4f38b )
     {

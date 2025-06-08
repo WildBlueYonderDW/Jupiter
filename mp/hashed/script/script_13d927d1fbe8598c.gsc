@@ -6,7 +6,7 @@
 #namespace namespace_c456b188bf9f0dc4;
 
 // Namespace namespace_c456b188bf9f0dc4 / namespace_ea0f522eef874258
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112
 // Size: 0x13
 function function_1d4cf90e795ad643()

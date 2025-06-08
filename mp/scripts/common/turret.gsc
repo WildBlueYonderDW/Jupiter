@@ -4,7 +4,7 @@
 #namespace turret;
 
 // Namespace turret / scripts\common\turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb6
 // Size: 0xb0
 function turret_vm_playeranims_think()

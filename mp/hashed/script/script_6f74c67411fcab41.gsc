@@ -6,7 +6,7 @@
 #namespace namespace_de169b8ad93c38b5;
 
 // Namespace namespace_de169b8ad93c38b5 / namespace_281a923a21486535
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10c
 // Size: 0x4e
 function function_e1a78f7ca6c76a52()
@@ -22,7 +22,7 @@ function function_e1a78f7ca6c76a52()
 }
 
 // Namespace namespace_de169b8ad93c38b5 / namespace_281a923a21486535
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x162
 // Size: 0xab
 function use_killstreak( itembundle, item )
@@ -48,7 +48,7 @@ function use_killstreak( itembundle, item )
 }
 
 // Namespace namespace_de169b8ad93c38b5 / namespace_281a923a21486535
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x216
 // Size: 0xb4, Type: bool
 function can_use_killstreak( itembundle, item, autouse, allowswap )
@@ -78,7 +78,7 @@ function can_use_killstreak( itembundle, item, autouse, allowswap )
 }
 
 // Namespace namespace_de169b8ad93c38b5 / namespace_281a923a21486535
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x5b
 function function_a6c2c08d6694cda3( itembundle, item, autouse, allowswap )
@@ -97,7 +97,7 @@ function function_a6c2c08d6694cda3( itembundle, item, autouse, allowswap )
 }
 
 // Namespace namespace_de169b8ad93c38b5 / namespace_281a923a21486535
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x336
 // Size: 0xb6
 function function_d6029511a9d0984()
@@ -130,7 +130,7 @@ function function_d6029511a9d0984()
 }
 
 // Namespace namespace_de169b8ad93c38b5 / namespace_281a923a21486535
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f5
 // Size: 0x14
 function function_5ef81282e50397e()
@@ -140,7 +140,7 @@ function function_5ef81282e50397e()
 }
 
 // Namespace namespace_de169b8ad93c38b5 / namespace_281a923a21486535
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x411
 // Size: 0x53
 function iskillstreakavailable()
@@ -156,7 +156,7 @@ function iskillstreakavailable()
 }
 
 // Namespace namespace_de169b8ad93c38b5 / namespace_281a923a21486535
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46c
 // Size: 0x11
 function function_e1a7409f30e3c964()

@@ -15,7 +15,7 @@
 #namespace zombie_deathworm;
 
 // Namespace zombie_deathworm / namespace_f7625713f64f26e7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27b
 // Size: 0x14e
 function function_f93080dca9cb5ee1()
@@ -24,7 +24,8 @@ function function_f93080dca9cb5ee1()
     self.var_d921d7d91354061f = [];
     var_de7821bc51ab43a0 = [[ self.var_8f1d8328f7a9091b ]]();
     
-    for (ball_i = 0; ball_i < 6; ball_i++) {
+    for ( ball_i = 0; ball_i < 6 ; ball_i++ )
+    {
         self.var_d921d7d91354061f[ ball_i ] = spawn( "script_model", self.origin );
         self.var_d921d7d91354061f[ ball_i ] setmodel( self.zombieaisettings.var_e58a65b7a8f5973c.var_cbd70cd7d3efd854 );
         self.var_d921d7d91354061f[ ball_i ].var_52dcdba485e7ceeb = "tag_origin";
@@ -106,7 +107,8 @@ function private function_21ba3594ae34508e()
         var_d9164eae841531c8 = 0;
     }
     
-    for (ball_i = 0; ball_i < var_d9164eae841531c8; ball_i++) {
+    for ( ball_i = 0; ball_i < var_d9164eae841531c8 ; ball_i++ )
+    {
         current_velocity = function_a4438c777cf89315( shoot_fov, ball_i, var_d9164eae841531c8 );
         target = targets.size <= 0 ? undefined : targets[ ball_i % targets.size ];
         function_6d6444e1320ead48( self.var_d921d7d91354061f[ ball_i ], current_velocity, air_drag, head_pos, target );
@@ -299,13 +301,15 @@ function private function_54d084d40575a948()
     balls = self.var_d921d7d91354061f;
     self waittill( "death" );
     
-    for (ball_i = 0; ball_i < 6; ball_i++) {
+    for ( ball_i = 0; ball_i < 6 ; ball_i++ )
+    {
         balls[ ball_i ] function_e649134398caaa95();
     }
     
     wait 2;
     
-    for (ball_i = 0; ball_i < 6; ball_i++) {
+    for ( ball_i = 0; ball_i < 6 ; ball_i++ )
+    {
         balls[ ball_i ] delete();
     }
 }
@@ -320,7 +324,8 @@ function private function_ec0b124d362b4bc9()
     
     while ( true )
     {
-        for (ball_i = 0; ball_i < 6; ball_i++) {
+        for ( ball_i = 0; ball_i < 6 ; ball_i++ )
+        {
             ball = self.var_d921d7d91354061f[ ball_i ];
             
             if ( isdefined( ball.scripthealth ) && ball.scripthealth > 0 )
@@ -364,7 +369,7 @@ function private function_f3cc7c88e4a22d9c()
 /#
 
     // Namespace zombie_deathworm / namespace_f7625713f64f26e7
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xcd4
     // Size: 0x44, Type: dev
     function function_2ece3ee2d2c0e61e()

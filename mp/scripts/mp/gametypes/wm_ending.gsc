@@ -16,7 +16,7 @@
 #namespace wm_ending;
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51c
 // Size: 0xd
 function init()
@@ -25,7 +25,7 @@ function init()
 }
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x531
 // Size: 0x27
 function function_1c915051680a9364( func_attackers, func_defenders )
@@ -35,7 +35,7 @@ function function_1c915051680a9364( func_attackers, func_defenders )
 }
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x560
 // Size: 0xfa
 function function_cc892bd20a432474( winner )
@@ -68,7 +68,7 @@ function function_cc892bd20a432474( winner )
 }
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x662
 // Size: 0x26b
 function ending_viewing_players_setup( animstruct, var_4f8af551aae92267, var_174e703931ab1a87 )
@@ -137,7 +137,7 @@ function ending_viewing_players_setup( animstruct, var_4f8af551aae92267, var_174
 }
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d5
 // Size: 0x51
 function create_cam()
@@ -151,7 +151,7 @@ function create_cam()
 }
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x92f
 // Size: 0xa9
 function function_5989ba2dcd956dff()
@@ -168,7 +168,7 @@ function function_5989ba2dcd956dff()
 }
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9e1
 // Size: 0x175
 function function_28bb7459a1fec3ef()
@@ -202,7 +202,7 @@ function function_28bb7459a1fec3ef()
 }
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb5f
 // Size: 0x2e7
 function function_ac89b9c54d572b13()
@@ -249,7 +249,7 @@ function function_ac89b9c54d572b13()
 }
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe4f
 // Size: 0x10a
 function spawninfilvehicle( struct )
@@ -284,7 +284,7 @@ function spawninfilvehicle( struct )
 }
 
 // Namespace wm_ending / scripts\mp\gametypes\wm_ending
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf62
 // Size: 0x372
 function function_64dd96614abf2d2( animstruct )
@@ -294,7 +294,7 @@ function function_64dd96614abf2d2( animstruct )
     animstruct.cam.angles = animstruct.angles;
     ending_viewing_players_setup( animstruct );
     scripts\mp\ai_mp_controller::init();
-    setdvar( @"hash_365d77262b3a350e", 0 );
+    setdvar( @"scr_starsystem", 0 );
     
     foreach ( player in level.players )
     {

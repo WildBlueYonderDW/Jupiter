@@ -3,7 +3,7 @@
 #namespace unittest_call;
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25e
 // Size: 0xe
 function noargs()
@@ -12,7 +12,7 @@ function noargs()
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x274
 // Size: 0x25
 function onearg( a )
@@ -26,7 +26,7 @@ function onearg( a )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a1
 // Size: 0x39
 function multiarg( a, b, c )
@@ -35,7 +35,7 @@ function multiarg( a, b, c )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e2
 // Size: 0x2f
 function recurse_internal( n )
@@ -50,7 +50,7 @@ function recurse_internal( n )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x319
 // Size: 0x1f
 function recurse( n )
@@ -59,7 +59,7 @@ function recurse( n )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x340
 // Size: 0x4f
 function function_3ee3cd6fe2c81bd1( count )
@@ -78,7 +78,7 @@ function function_3ee3cd6fe2c81bd1( count )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x397
 // Size: 0x13
 function function_3ee3ca6fe2c81538( count )
@@ -87,7 +87,7 @@ function function_3ee3ca6fe2c81538( count )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b2
 // Size: 0x13
 function vm_execute_context( count )
@@ -96,7 +96,7 @@ function vm_execute_context( count )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3cd
 // Size: 0x48
 function function_d71cba50ce323656( count )
@@ -114,7 +114,7 @@ function function_d71cba50ce323656( count )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41d
 // Size: 0x13
 function function_d71cb950ce323423( count )
@@ -123,7 +123,7 @@ function function_d71cb950ce323423( count )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x438
 // Size: 0x13
 function vm_execute_stack( count )
@@ -132,7 +132,7 @@ function vm_execute_stack( count )
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x453
 // Size: 0x14
 function function_234f3c181e22628e()
@@ -142,7 +142,7 @@ function function_234f3c181e22628e()
 }
 
 // Namespace unittest_call / scripts\unittest\call
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46f
 // Size: 0x404
 function main()

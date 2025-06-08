@@ -22,7 +22,7 @@
 #namespace hover_jet;
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe7d
 // Size: 0xf3
 function init()
@@ -57,7 +57,7 @@ function init()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf78
 // Size: 0x6f
 function function_3775988f960ec3e6()
@@ -72,7 +72,7 @@ function function_3775988f960ec3e6()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfef
 // Size: 0x7e
 function init_hover_jet_anims()
@@ -84,7 +84,7 @@ function init_hover_jet_anims()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1075
 // Size: 0x7e
 function init_hover_jet_vo()
@@ -96,7 +96,7 @@ function init_hover_jet_vo()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10fb
 // Size: 0x39, Type: bool
 function weapongivenhoverjet( streakinfo )
@@ -110,9 +110,9 @@ function weapongivenhoverjet( streakinfo )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x113d
-// Size: 0x21, Type: bool
+// Size: 0x21
 function tryusehoverjet()
 {
     streakinfo = createstreakinfo( "hover_jet", self );
@@ -120,7 +120,7 @@ function tryusehoverjet()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1167
 // Size: 0x282, Type: bool
 function tryusehoverjetfromstruct( streakinfo )
@@ -217,7 +217,7 @@ function tryusehoverjetfromstruct( streakinfo )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13f2
 // Size: 0x1f1, Type: bool
 function _tryusehoverjetfromstructinternal( streakinfo )
@@ -296,7 +296,7 @@ function _tryusehoverjetfromstructinternal( streakinfo )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x15ec
 // Size: 0xb14
 function starthoverjetairstrikepass( owner, streakinfo, mappointinfo )
@@ -515,7 +515,7 @@ function starthoverjetairstrikepass( owner, streakinfo, mappointinfo )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2108
 // Size: 0x42
 function hoverjet_delaysetscriptable( delaytime, part, state )
@@ -528,7 +528,7 @@ function hoverjet_delaysetscriptable( delaytime, part, state )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2152
 // Size: 0x32
 function hoverjet_playflyfx()
@@ -539,7 +539,7 @@ function hoverjet_playflyfx()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x218c
 // Size: 0x2c
 function hoverjet_playapproachfx()
@@ -554,7 +554,7 @@ function hoverjet_playapproachfx()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21c0
 // Size: 0x3f
 function hoverjet_playflybyfx()
@@ -569,7 +569,7 @@ function hoverjet_playflybyfx()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2207
 // Size: 0x3f
 function hoverjet_playreturnfx()
@@ -584,7 +584,7 @@ function hoverjet_playreturnfx()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x224e
 // Size: 0x3b
 function function_fbda9177c810ff24( targetlocation )
@@ -595,7 +595,7 @@ function function_fbda9177c810ff24( targetlocation )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2291
 // Size: 0x466
 function function_41780f288d860974( targetlocation, var_caeb7635e74ead06 )
@@ -677,7 +677,7 @@ function function_41780f288d860974( targetlocation, var_caeb7635e74ead06 )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x26ff
 // Size: 0x179
 function function_f42c29a91cabc8c2( targetlocation, var_caeb7635e74ead06 )
@@ -721,7 +721,8 @@ function function_f42c29a91cabc8c2( targetlocation, var_caeb7635e74ead06 )
         bundle.maxbombs = 6;
     }
     
-    for (i = 0; i < bundle.maxbombs; i++) {
+    for ( i = 0; i < bundle.maxbombs ; i++ )
+    {
         function_2b7c965fb8b07829( var_d7c48eccae06e020, sideoffset );
         sideoffset *= -1;
         wait 0.095;
@@ -733,7 +734,7 @@ function function_f42c29a91cabc8c2( targetlocation, var_caeb7635e74ead06 )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2880
 // Size: 0x199
 function function_2b7c965fb8b07829( targetlocation, sideoffset )
@@ -772,7 +773,7 @@ function function_2b7c965fb8b07829( targetlocation, sideoffset )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a21
 // Size: 0x44
 function function_d6c447fe14ce9a65()
@@ -787,7 +788,7 @@ function function_d6c447fe14ce9a65()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a6d
 // Size: 0x4f
 function hoverjet_missilekillcammove( impactlocation, missileangles )
@@ -801,7 +802,7 @@ function hoverjet_missilekillcammove( impactlocation, missileangles )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ac4
 // Size: 0x4d
 function hoverjet_firemissilescriptable( missileindex )
@@ -814,7 +815,7 @@ function hoverjet_firemissilescriptable( missileindex )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b19
 // Size: 0xe1
 function hoverjet_findmissiletarget( targets, existingtargetarray )
@@ -854,7 +855,7 @@ function hoverjet_findmissiletarget( targets, existingtargetarray )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c03
 // Size: 0x4b
 function hoverjet_delaymissiletracking( missile, delaytime, missiletargetent )
@@ -870,7 +871,7 @@ function hoverjet_delaymissiletracking( missile, delaytime, missiletargetent )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c56
 // Size: 0x44
 function hoverjet_delayresetscriptable( explosionindex )
@@ -883,7 +884,7 @@ function hoverjet_delayresetscriptable( explosionindex )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ca2
 // Size: 0x30
 function starthoverjetdefend( streakinfo )
@@ -896,7 +897,7 @@ function starthoverjetdefend( streakinfo )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cda
 // Size: 0x6e
 function hoverjet_defendlocation( defloc )
@@ -920,7 +921,7 @@ function hoverjet_defendlocation( defloc )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2d50
 // Size: 0x130
 function hoverjet_handlemissiledetection( player, missileteam, missiletarget, fxtagoverride )
@@ -969,7 +970,7 @@ function hoverjet_handlemissiledetection( player, missileteam, missiletarget, fx
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e88
 // Size: 0x8c
 function hoverjet_watchlifetime( lifetime )
@@ -994,7 +995,7 @@ function hoverjet_watchlifetime( lifetime )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f1c
 // Size: 0x3d
 function hoverjet_watchgameend()
@@ -1007,7 +1008,7 @@ function hoverjet_watchgameend()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f61
 // Size: 0x38
 function hoverjet_watchowner()
@@ -1021,7 +1022,7 @@ function hoverjet_watchowner()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fa1
 // Size: 0x3b
 function hoverjet_leaveonownernotify( notifymsg )
@@ -1035,7 +1036,7 @@ function hoverjet_leaveonownernotify( notifymsg )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fe4
 // Size: 0x75
 function hoverjet_startcombatlogic()
@@ -1058,7 +1059,7 @@ function hoverjet_startcombatlogic()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3061
 // Size: 0x1ad
 function hoverjet_movetolocation( location )
@@ -1116,7 +1117,7 @@ function hoverjet_movetolocation( location )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3216
 // Size: 0x7c
 function hoverjet_getcorrectheight( x, y, rand )
@@ -1135,7 +1136,7 @@ function hoverjet_getcorrectheight( x, y, rand )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x329b
 // Size: 0xcc
 function hoverjet_tracegroundpoint( x, y )
@@ -1162,7 +1163,7 @@ function hoverjet_tracegroundpoint( x, y )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3370
 // Size: 0x181
 function hoverjet_engagegroundtargets()
@@ -1221,7 +1222,7 @@ function hoverjet_engagegroundtargets()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34f9
 // Size: 0x5e
 function function_7cad88468df8256e()
@@ -1238,7 +1239,7 @@ function function_7cad88468df8256e()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x355f
 // Size: 0x19f
 function hoverjet_fireongroundtarget( targetvehicle )
@@ -1301,7 +1302,7 @@ function hoverjet_fireongroundtarget( targetvehicle )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3706
 // Size: 0x81, Type: bool
 function hoverjet_turretlookingattarget()
@@ -1320,7 +1321,7 @@ function hoverjet_turretlookingattarget()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3790
 // Size: 0xc9
 function hoverjet_engageairtargets()
@@ -1354,7 +1355,7 @@ function hoverjet_engageairtargets()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3861
 // Size: 0x22e
 function hoverjet_fireonairtarget()
@@ -1431,7 +1432,7 @@ function hoverjet_fireonairtarget()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a97
 // Size: 0xd5
 function hoverjet_setmissileoffset( target )
@@ -1462,7 +1463,7 @@ function hoverjet_setmissileoffset( target )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b75
 // Size: 0x75
 function hoverjet_airtargetiswithinview( airtarget )
@@ -1475,7 +1476,7 @@ function hoverjet_airtargetiswithinview( airtarget )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3bf3
 // Size: 0x33
 function hoverjet_airtargetistooclose( airtarget )
@@ -1484,7 +1485,7 @@ function hoverjet_airtargetistooclose( airtarget )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c2f
 // Size: 0x183
 function hoverjet_moveawayfromtarget( airtarget )
@@ -1519,7 +1520,7 @@ function hoverjet_moveawayfromtarget( airtarget )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dba
 // Size: 0xc6
 function function_e05ade915e49f05f()
@@ -1537,7 +1538,7 @@ function function_e05ade915e49f05f()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e88
 // Size: 0x1e
 function function_b6018909193826e4()
@@ -1549,7 +1550,7 @@ function function_b6018909193826e4()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3eae
 // Size: 0x17e
 function hoverjet_watchforreposition()
@@ -1603,7 +1604,7 @@ function hoverjet_watchforreposition()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4034
 // Size: 0x2a
 function hoverjet_watchfornearmovementgoal()
@@ -1615,7 +1616,7 @@ function hoverjet_watchfornearmovementgoal()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4066
 // Size: 0x2d
 function hoverjet_randomizemovement()
@@ -1629,7 +1630,7 @@ function hoverjet_randomizemovement()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x409b
 // Size: 0x122
 function function_58258fda8ee98d76( streakname )
@@ -1651,7 +1652,7 @@ function function_58258fda8ee98d76( streakname )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41c5
 // Size: 0x34
 function function_a7c9961508e4b099( streakname )
@@ -1663,7 +1664,7 @@ function function_a7c9961508e4b099( streakname )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4201
 // Size: 0x109
 function function_8987ef697fe06da3( streakname )
@@ -1706,7 +1707,7 @@ function function_8987ef697fe06da3( streakname )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4312
 // Size: 0x39, Type: bool
 function function_3b2ccb79d72d0155( data )
@@ -1717,7 +1718,7 @@ function function_3b2ccb79d72d0155( data )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4354
 // Size: 0x9c, Type: bool
 function function_acd17bdc96a89f80( data )
@@ -1733,7 +1734,7 @@ function function_acd17bdc96a89f80( data )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43f9
 // Size: 0x13
 function function_be82a8c78a16752b()
@@ -1742,7 +1743,7 @@ function function_be82a8c78a16752b()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4414
 // Size: 0x13
 function function_239dc7891d929c9c()
@@ -1751,7 +1752,7 @@ function function_239dc7891d929c9c()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x442f
 // Size: 0x13
 function function_ba3a1232dbda15da()
@@ -1760,7 +1761,7 @@ function function_ba3a1232dbda15da()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x444a
 // Size: 0x3f, Type: bool
 function hoverjet_handledeathdamage( data )
@@ -1771,7 +1772,7 @@ function hoverjet_handledeathdamage( data )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4492
 // Size: 0xba
 function hoverjet_handledestroyed( attacker, killedbyweapon )
@@ -1803,7 +1804,7 @@ function hoverjet_handledestroyed( attacker, killedbyweapon )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4554
 // Size: 0x13c
 function hoverjet_crash( speed )
@@ -1844,7 +1845,7 @@ function hoverjet_crash( speed )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4698
 // Size: 0x7e
 function function_a12df0241d8eea2( var_6847739e80fb4e81 )
@@ -1868,7 +1869,7 @@ function function_a12df0241d8eea2( var_6847739e80fb4e81 )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x471e
 // Size: 0x4c
 function hoverjet_spinout( speed )
@@ -1884,7 +1885,7 @@ function hoverjet_spinout( speed )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4772
 // Size: 0x1a8
 function hoverjet_findcrashposition( crashdist )
@@ -1963,7 +1964,7 @@ function hoverjet_findcrashposition( crashdist )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4923
 // Size: 0x7b
 function hoverjet_explode()
@@ -1983,7 +1984,7 @@ function hoverjet_explode()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49a6
 // Size: 0x2e0
 function hoverjet_leave()
@@ -2082,7 +2083,7 @@ function hoverjet_leave()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c8e
 // Size: 0x139
 function hoverjet_cleanup( wasdestroyed )
@@ -2129,7 +2130,7 @@ function hoverjet_cleanup( wasdestroyed )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4dcf
 // Size: 0x95
 function hoverjet_watchtargetstatus( target )
@@ -2156,7 +2157,7 @@ function hoverjet_watchtargetstatus( target )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e6c
 // Size: 0x4d
 function hoverjet_watchgroundtargetdeathdisconnect( groundtarget )
@@ -2171,7 +2172,7 @@ function hoverjet_watchgroundtargetdeathdisconnect( groundtarget )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ec1
 // Size: 0x4d
 function hoverjet_watchairtargetdeath( airtarget )
@@ -2186,7 +2187,7 @@ function hoverjet_watchairtargetdeath( airtarget )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f16
 // Size: 0x4f
 function hoverjet_watchforbreakaction( target, action )
@@ -2201,7 +2202,7 @@ function hoverjet_watchforbreakaction( target, action )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4f6d
 // Size: 0x1a2
 function hoverjet_watchtargetlos( target, tolerance, vehicletarget )
@@ -2269,7 +2270,7 @@ function hoverjet_watchtargetlos( target, tolerance, vehicletarget )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5117
 // Size: 0x5b
 function hoverjet_watchtargettimeout( target )
@@ -2285,7 +2286,7 @@ function hoverjet_watchtargettimeout( target )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x517a
 // Size: 0x204
 function hoverjet_breakofftarget( targetentnum, breakoffalltargets )
@@ -2359,7 +2360,7 @@ function hoverjet_breakofftarget( targetentnum, breakoffalltargets )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5386
 // Size: 0x13a
 function hoverjet_getbestairtarget( targets )
@@ -2417,7 +2418,7 @@ function hoverjet_getbestairtarget( targets )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54c9
 // Size: 0x88
 function function_9f6c5e46080e47dc()
@@ -2446,7 +2447,7 @@ function function_9f6c5e46080e47dc()
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x555a
 // Size: 0x18
 function function_b5a9a3ea21b6ea62( data )
@@ -2458,7 +2459,7 @@ function function_b5a9a3ea21b6ea62( data )
 }
 
 // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x557a
 // Size: 0x24b
 function function_8b040f320bd1e206( data )
@@ -2537,7 +2538,7 @@ function function_8b040f320bd1e206( data )
 /#
 
     // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x57cd
     // Size: 0x3b, Type: dev
     function function_950a05f71804f5()
@@ -2552,7 +2553,7 @@ function function_8b040f320bd1e206( data )
     }
 
     // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5810
     // Size: 0x14e, Type: dev
     function function_9480f8b8d48d0f59( owner )
@@ -2595,7 +2596,7 @@ function function_8b040f320bd1e206( data )
     }
 
     // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x5966
     // Size: 0x119, Type: dev
     function function_380d84b0fdfca800( owner, jet )
@@ -2624,7 +2625,7 @@ function function_8b040f320bd1e206( data )
     }
 
     // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5a87
     // Size: 0x5f, Type: dev
     function function_d6e5bb5b2c900f89( time )
@@ -2643,7 +2644,7 @@ function function_8b040f320bd1e206( data )
     }
 
     // Namespace hover_jet / scripts\cp_mp\killstreaks\hover_jet
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5aee
     // Size: 0xf8, Type: dev
     function function_3f69aefa7b90fb4a()

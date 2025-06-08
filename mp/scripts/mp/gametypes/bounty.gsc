@@ -29,7 +29,7 @@
 #namespace bounty;
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x926
 // Size: 0x2b6
 function main()
@@ -114,7 +114,7 @@ function main()
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbe4
 // Size: 0xa7
 function initializematchrules()
@@ -134,7 +134,7 @@ function initializematchrules()
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc93
 // Size: 0x14a
 function onstartgametype()
@@ -227,7 +227,7 @@ function private function_c422d0209d63d82c()
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf1b
 // Size: 0x158
 function updategametypedvars()
@@ -245,7 +245,7 @@ function updategametypedvars()
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x107b
 // Size: 0x274
 function initspawns()
@@ -304,7 +304,7 @@ function initspawns()
 /#
 
     // Namespace bounty / scripts\mp\gametypes\bounty
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x12f7
     // Size: 0x63, Type: dev
     function reinitspawns()
@@ -320,7 +320,7 @@ function initspawns()
 #/
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1362
 // Size: 0x1a5
 function getspawnpoint()
@@ -374,7 +374,7 @@ function getspawnpoint()
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1510
 // Size: 0x44
 function onspawnplayer( revivespawn )
@@ -392,7 +392,7 @@ function onspawnplayer( revivespawn )
 /#
 
     // Namespace bounty / scripts\mp\gametypes\bounty
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x155c
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -431,7 +431,7 @@ function onspawnplayer( revivespawn )
 #/
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x16de
 // Size: 0x1ca
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -474,7 +474,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18b0
 // Size: 0x79
 function function_129e9903526b5cc4( player )
@@ -494,7 +494,7 @@ function function_129e9903526b5cc4( player )
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1931
 // Size: 0x53
 function ontimelimit()
@@ -516,7 +516,7 @@ function ontimelimit()
 /#
 
     // Namespace bounty / scripts\mp\gametypes\bounty
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x198c
     // Size: 0xe8, Type: dev
     function function_8469a5927d069db7()
@@ -531,7 +531,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x102>", points, 0 );
@@ -543,7 +543,7 @@ function ontimelimit()
                 
                 if ( points == -1 )
                 {
-                    points = getdvarint( @"hash_f20234a548c56c11" ) - 1;
+                    points = getdvarint( @"scr_war_scorelimit" ) - 1;
                 }
                 
                 scripts\mp\gamescore::giveteamscoreforobjective( "<dev string:x10c>", points, 0 );
@@ -559,7 +559,7 @@ function ontimelimit()
     }
 
     // Namespace bounty / scripts\mp\gametypes\bounty
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1a7c
     // Size: 0x1ee, Type: dev
     function function_bf2918399f1800b1()
@@ -597,7 +597,7 @@ function ontimelimit()
 #/
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c72
 // Size: 0x19a
 function tdmanywhere_debugshowlocs()
@@ -620,7 +620,7 @@ function tdmanywhere_debugshowlocs()
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e14
 // Size: 0x40f
 function monitorhotfoot()
@@ -735,7 +735,7 @@ function monitorhotfoot()
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x222b
 // Size: 0xc0
 function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -755,7 +755,7 @@ function onhotfootplayerkilled( einflictor, attacker, idamage, smeansofdeath, ob
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22f3
 // Size: 0x4d, Type: bool
 function shouldgamelobbyremainintact()
@@ -783,7 +783,8 @@ function private function_daa7ba85dff31c58()
         return;
     }
     
-    for (result = undefined; true; result = function_baf79a20f89626fc( level.bounty.hvtrefreshinterval )) {
+    for ( result = undefined; true ; result = function_baf79a20f89626fc( level.bounty.hvtrefreshinterval ) )
+    {
         teams = level.teamnamelist;
         
         if ( isdefined( result ) )
@@ -824,7 +825,7 @@ function private function_daa7ba85dff31c58()
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25ca
 // Size: 0x55
 function function_baf79a20f89626fc( time )
@@ -843,7 +844,7 @@ function function_baf79a20f89626fc( time )
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2628
 // Size: 0x1c
 function function_da75daeab167eef5( time )
@@ -854,7 +855,7 @@ function function_da75daeab167eef5( time )
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x264c
 // Size: 0x26
 function function_71e84653ff2e5194()
@@ -865,7 +866,7 @@ function function_71e84653ff2e5194()
 }
 
 // Namespace bounty / scripts\mp\gametypes\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x267a
 // Size: 0x26
 function function_11e8f1d468fb74c5()
@@ -1070,7 +1071,8 @@ function private function_7a2f8a385da422ff()
     {
         attachsize = self getattachsize();
         
-        for (i = 0; i < attachsize; i++) {
+        for ( i = 0; i < attachsize ; i++ )
+        {
             attached = self getattachmodelname( i );
             
             if ( attached == self.bountyobject )

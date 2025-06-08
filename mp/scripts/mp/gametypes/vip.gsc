@@ -34,7 +34,7 @@
 #namespace vip;
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb47
 // Size: 0x1bf
 function main()
@@ -85,7 +85,7 @@ function main()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd0e
 // Size: 0x37
 function initializematchrules()
@@ -97,7 +97,7 @@ function initializematchrules()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd4d
 // Size: 0x9
 function updategametypedvars()
@@ -106,7 +106,7 @@ function updategametypedvars()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd5e
 // Size: 0x12b
 function onstartgametype()
@@ -151,7 +151,7 @@ function onstartgametype()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe91
 // Size: 0x4b
 function waittoprocess()
@@ -167,7 +167,7 @@ function waittoprocess()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee4
 // Size: 0x79
 function initspawns()
@@ -181,7 +181,7 @@ function initspawns()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf65
 // Size: 0x62
 function getspawnpoint()
@@ -200,7 +200,7 @@ function getspawnpoint()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd0
 // Size: 0x80
 function seticonnames()
@@ -217,7 +217,7 @@ function seticonnames()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1058
 // Size: 0x72
 function onspawnplayer( revivespawn )
@@ -236,7 +236,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x10d2
 // Size: 0xaf
 function onnormaldeath( victim, attacker, lifeid, smeansofdeath, objweapon, iskillstreakweapon )
@@ -253,7 +253,7 @@ function onnormaldeath( victim, attacker, lifeid, smeansofdeath, objweapon, iski
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x1189
 // Size: 0x5b
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -262,7 +262,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11ec
 // Size: 0x93
 function ontimelimit()
@@ -288,7 +288,7 @@ function ontimelimit()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1287
 // Size: 0x89
 function checkallowspectating()
@@ -315,7 +315,7 @@ function checkallowspectating()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1318
 // Size: 0x7e
 function ondeadevent( team )
@@ -333,7 +333,7 @@ function ondeadevent( team )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x139e
 // Size: 0x1d
 function vip_endgame( winningteam, endreasontext )
@@ -342,7 +342,7 @@ function vip_endgame( winningteam, endreasontext )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13c3
 // Size: 0x53a
 function extractionzone()
@@ -456,7 +456,7 @@ function extractionzone()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1905
 // Size: 0xf9
 function extractzone_onusebegin( player )
@@ -489,7 +489,7 @@ function extractzone_onusebegin( player )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1a06
 // Size: 0xd7
 function extractzone_onuseend( team, player, success )
@@ -531,7 +531,7 @@ function extractzone_onuseend( team, player, success )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ae5
 // Size: 0x110
 function extractzone_onuse( credit_player )
@@ -564,7 +564,7 @@ function extractzone_onuse( credit_player )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bfd
 // Size: 0x23
 function extractzone_oncontested()
@@ -574,7 +574,7 @@ function extractzone_oncontested()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c28
 // Size: 0x7e
 function extractzone_onuncontested( lastclaimteam )
@@ -599,7 +599,7 @@ function extractzone_onuncontested( lastclaimteam )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cae
 // Size: 0x191
 function extractzone_setcaptured( team, credit_player )
@@ -642,7 +642,7 @@ function extractzone_setcaptured( team, credit_player )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e47
 // Size: 0x1d
 function extractzone_stompprogressreward( player )
@@ -651,7 +651,7 @@ function extractzone_stompprogressreward( player )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e6c
 // Size: 0x43
 function getcapturetype()
@@ -671,7 +671,7 @@ function getcapturetype()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1eb8
 // Size: 0x187
 function giveflagcapturexp( touchlist, credit_player )
@@ -698,7 +698,8 @@ function giveflagcapturexp( touchlist, credit_player )
     
     players_touching = getarraykeys( touchlist );
     
-    for (index = 0; index < players_touching.size; index++) {
+    for ( index = 0; index < players_touching.size ; index++ )
+    {
         player = touchlist[ players_touching[ index ] ].player;
         
         if ( isdefined( player.owner ) )
@@ -720,7 +721,7 @@ function giveflagcapturexp( touchlist, credit_player )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2047
 // Size: 0x116
 function vipextract( var_53472fd04ef31634 )
@@ -743,7 +744,7 @@ function vipextract( var_53472fd04ef31634 )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2165
 // Size: 0x13f
 function extracttriggerwatcher( heli )
@@ -785,7 +786,7 @@ function extracttriggerwatcher( heli )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22ac
 // Size: 0x6d
 function createthreatbiasgroups()
@@ -801,7 +802,7 @@ function createthreatbiasgroups()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2321
 // Size: 0x364
 function spawnvip()
@@ -872,7 +873,7 @@ function spawnvip()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x268d
 // Size: 0x50
 function hvtclearmove( spawnloc )
@@ -888,7 +889,7 @@ function hvtclearmove( spawnloc )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26e5
 // Size: 0x81
 function agent_onuse( player )
@@ -903,7 +904,7 @@ function agent_onuse( player )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x276e
 // Size: 0x210
 function followplayer( player )
@@ -962,7 +963,7 @@ function followplayer( player )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2986
 // Size: 0x6e
 function watchownerdeath( vip )
@@ -978,7 +979,7 @@ function watchownerdeath( vip )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29fc
 // Size: 0xae
 function hvtdeathwatcher()
@@ -993,7 +994,7 @@ function hvtdeathwatcher()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ab2
 // Size: 0x19a
 function updatematchstatushintonspawn()
@@ -1069,7 +1070,7 @@ function updatematchstatushintonspawn()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c54
 // Size: 0xc5
 function playannouncerbattlechatter( team, soundname, suffix )
@@ -1091,7 +1092,7 @@ function playannouncerbattlechatter( team, soundname, suffix )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d21
 // Size: 0x26
 function votimeendingsoon()
@@ -1102,7 +1103,7 @@ function votimeendingsoon()
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d4f
 // Size: 0x53b
 function spawnhostage( spawnpt, var_2883e54a0393d54d, showicon )
@@ -1208,7 +1209,7 @@ function spawnhostage( spawnpt, var_2883e54a0393d54d, showicon )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3293
 // Size: 0x553
 function drophostage( player, hostage, position, spawndrop, waittime )
@@ -1353,7 +1354,7 @@ function drophostage( player, hostage, position, spawndrop, waittime )
 }
 
 // Namespace vip / scripts\mp\gametypes\vip
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37ef
 // Size: 0x89
 function getphysicspointaboutnavmesh( pt )

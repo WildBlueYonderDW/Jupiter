@@ -14,7 +14,7 @@
 #namespace br_attraction_gulag;
 
 // Namespace br_attraction_gulag / scripts\mp\gametypes\br_attraction_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1da
 // Size: 0x39
 function init()
@@ -25,7 +25,7 @@ function init()
 }
 
 // Namespace br_attraction_gulag / scripts\mp\gametypes\br_attraction_gulag
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21b
 // Size: 0xb1
 function registerlocations()
@@ -47,7 +47,7 @@ function registerlocations()
 }
 
 // Namespace br_attraction_gulag / scripts\mp\gametypes\br_attraction_gulag
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d4
 // Size: 0x11a
 function registerlocation( origin, var_ccb00530d7a24ee3 )
@@ -65,7 +65,7 @@ function registerlocation( origin, var_ccb00530d7a24ee3 )
 }
 
 // Namespace br_attraction_gulag / scripts\mp\gametypes\br_attraction_gulag
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f6
 // Size: 0x4c
 function triggerpromptthink( location )

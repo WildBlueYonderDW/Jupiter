@@ -6,7 +6,7 @@
 #namespace mp_jup_terminal_alt_lighting;
 
 // Namespace mp_jup_terminal_alt_lighting / scripts\mp\maps\mp_jup_terminal_alt\mp_jup_terminal_alt_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x184
 // Size: 0x64
 function main()

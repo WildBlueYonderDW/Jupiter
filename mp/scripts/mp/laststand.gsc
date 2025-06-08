@@ -81,7 +81,7 @@
 #namespace laststand;
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x360c
 // Size: 0x229
 function init()
@@ -136,7 +136,7 @@ function init()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x383d
 // Size: 0x15c
 function laststandthink()
@@ -197,7 +197,7 @@ function laststandthink()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39a1
 // Size: 0x6b0
 function onenter()
@@ -246,7 +246,7 @@ function onenter()
             
             if ( !isdefined( healthvalue ) )
             {
-                healthvalue = getdvarint( @"hash_984461a4d8ff9473", 50 );
+                healthvalue = getdvarint( @"scr_player_laststandhealth", 50 );
             }
             
             if ( healthvalue > scripts\mp\tweakables::gettweakablevalue( "<dev string:x5e>", "<dev string:x68>" ) )
@@ -462,7 +462,7 @@ function onenter()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4059
 // Size: 0x5f
 function last_stand_sfx()
@@ -479,7 +479,7 @@ function last_stand_sfx()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40c0
 // Size: 0x19f
 function handlelaststandweapongivepipeline( laststandweapon )
@@ -544,7 +544,7 @@ function handlelaststandweapongivepipeline( laststandweapon )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4267
 // Size: 0x36
 function takelaststandtransitionweapon()
@@ -559,7 +559,7 @@ function takelaststandtransitionweapon()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x42a5
 // Size: 0x5f
 function handlelaststandweapongivedelay( laststandweapondelay, laststandweapon )
@@ -581,7 +581,7 @@ function handlelaststandweapongivedelay( laststandweapondelay, laststandweapon )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x430c
 // Size: 0x4b
 function givedefaultlaststandweapon()
@@ -600,7 +600,7 @@ function givedefaultlaststandweapon()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4360
 // Size: 0x58
 function givelaststandweapon( laststandweapon )
@@ -622,7 +622,7 @@ function givelaststandweapon( laststandweapon )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43c0
 // Size: 0x3d
 function disableweaponsovertime( t )
@@ -634,7 +634,7 @@ function disableweaponsovertime( t )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4405
 // Size: 0x2b
 function switchtofists( laststandweapon )
@@ -649,7 +649,7 @@ function switchtofists( laststandweapon )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4438
 // Size: 0x22e
 function dodamagewhiledown()
@@ -667,7 +667,7 @@ function dodamagewhiledown()
             
             if ( !isdefined( basehealth ) )
             {
-                basehealth = getdvarint( @"hash_984461a4d8ff9473", 50 );
+                basehealth = getdvarint( @"scr_player_laststandhealth", 50 );
             }
             
             if ( basehealth > scripts\mp\tweakables::gettweakablevalue( "<dev string:x5e>", "<dev string:x68>" ) )
@@ -744,7 +744,7 @@ function dodamagewhiledown()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x466e
 // Size: 0x13e
 function stucktime( var_276b87b88716c2a5 )
@@ -807,7 +807,7 @@ function stucktime( var_276b87b88716c2a5 )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47b4
 // Size: 0x5c
 function selfrevivebuttonpressed( downedplayer )
@@ -833,7 +833,7 @@ function selfrevivebuttonpressed( downedplayer )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4818
 // Size: 0x17c
 function selfrevivethink()
@@ -892,7 +892,7 @@ function selfrevivethink()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x499c
 // Size: 0x2a
 function function_8afb9538db673551()
@@ -905,7 +905,7 @@ function function_8afb9538db673551()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49ce
 // Size: 0x2a
 function function_a904cc021551fd6b()
@@ -918,7 +918,7 @@ function function_a904cc021551fd6b()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a00
 // Size: 0x2a
 function function_9e41f17f1bd6e77e()
@@ -931,7 +931,7 @@ function function_9e41f17f1bd6e77e()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a32
 // Size: 0xc, Type: bool
 function function_14430db14b833985()
@@ -940,7 +940,7 @@ function function_14430db14b833985()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a47
 // Size: 0x3eb
 function selfrevivemonitorrevivebuttonpressed()
@@ -1089,7 +1089,7 @@ function selfrevivemonitorrevivebuttonpressed()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e3a
 // Size: 0x3c, Type: bool
 function function_1ea4eadda4b22b24( duration )
@@ -1112,7 +1112,7 @@ function function_1ea4eadda4b22b24( duration )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e7f
 // Size: 0xc, Type: bool
 function function_77799f0211be1728()
@@ -1121,7 +1121,7 @@ function function_77799f0211be1728()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e94
 // Size: 0x18
 function function_51feaa413342a5a1()
@@ -1131,7 +1131,7 @@ function function_51feaa413342a5a1()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4eb4
 // Size: 0xb1
 function selfrevivebuttonpresscleanup()
@@ -1165,7 +1165,7 @@ function selfrevivebuttonpresscleanup()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4f6d
 // Size: 0x228
 function onexitcommon( revived )
@@ -1279,7 +1279,7 @@ function onexitcommon( revived )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x519d
 // Size: 0x80
 function cleaninterrogationonexit()
@@ -1301,7 +1301,7 @@ function cleaninterrogationonexit()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5225
 // Size: 0x3fd
 function onrevive( var_4920bf02df960be9, var_d07b7dcc79b24490 )
@@ -1357,7 +1357,7 @@ function onrevive( var_4920bf02df960be9, var_d07b7dcc79b24490 )
                 
                 if ( !isdefined( healthvalue ) )
                 {
-                    healthvalue = getdvarint( @"hash_984461a4d8ff9473", 50 );
+                    healthvalue = getdvarint( @"scr_player_laststandhealth", 50 );
                 }
                 
                 if ( healthvalue > scripts\mp\tweakables::gettweakablevalue( "<dev string:x5e>", "<dev string:x68>" ) )
@@ -1367,7 +1367,7 @@ function onrevive( var_4920bf02df960be9, var_d07b7dcc79b24490 )
             }
         #/
         
-        if ( !getdvarint( @"hash_bba79eeb1c990103" ) || self.health < level.laststandrevivehealth )
+        if ( !getdvarint( @"scr_player_laststandreviveretainhealth" ) || self.health < level.laststandrevivehealth )
         {
             self.health = level.laststandrevivehealth;
             self notify( "force_regeneration" );
@@ -1443,7 +1443,7 @@ function onrevive( var_4920bf02df960be9, var_d07b7dcc79b24490 )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x562a
 // Size: 0x15a
 function onbleedout()
@@ -1497,7 +1497,7 @@ function onbleedout()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x578c
 // Size: 0xcd
 function ondeath( deathdata )
@@ -1540,7 +1540,7 @@ function ondeath( deathdata )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5861
 // Size: 0x20
 function dropcarryobject()
@@ -1552,7 +1552,7 @@ function dropcarryobject()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5889
 // Size: 0x266
 function revivesetup( owner )
@@ -1611,7 +1611,7 @@ function revivesetup( owner )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5af7
 // Size: 0x156
 function function_6b9549a69dc6a346( reviveent )
@@ -1646,7 +1646,7 @@ function function_6b9549a69dc6a346( reviveent )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5c55
 // Size: 0x1ab
 function interrogationsetup( owner )
@@ -1679,7 +1679,7 @@ function interrogationsetup( owner )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e08
 // Size: 0xb1
 function function_2aa6e4d20914e40a( interrogationent )
@@ -1707,7 +1707,7 @@ function function_2aa6e4d20914e40a( interrogationent )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5ec1
 // Size: 0xee
 function function_d393166ea9eab059( deathdata )
@@ -1734,7 +1734,7 @@ function function_d393166ea9eab059( deathdata )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5fb7
 // Size: 0x23c
 function secondwindthink()
@@ -1790,7 +1790,7 @@ function secondwindthink()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x61fb
 // Size: 0xe1
 function onlaststandkillenemy( deathdata, laststandmeansofdeath, laststandweaponobj )
@@ -1813,7 +1813,7 @@ function onlaststandkillenemy( deathdata, laststandmeansofdeath, laststandweapon
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x62e4
 // Size: 0x34
 function endreviveonownerdeathordisconnect()
@@ -1824,7 +1824,7 @@ function endreviveonownerdeathordisconnect()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6320
 // Size: 0x2e
 function removereviveentfromlevelarrayondeath()
@@ -1836,9 +1836,9 @@ function removereviveentfromlevelarrayondeath()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6356
-// Size: 0x8c
+// Size: 0x97
 function updateusablebyteam( team )
 {
     self disableplayeruseforallplayers();
@@ -1846,7 +1846,7 @@ function updateusablebyteam( team )
     
     foreach ( player in level.players )
     {
-        if ( team == player.team && player != self.owner )
+        if ( team == player.team && player != self.owner && !player scripts\mp\gametypes\br_public::playeriszombie() )
         {
             self enableplayeruse( player );
         }
@@ -1854,8 +1854,8 @@ function updateusablebyteam( team )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63ea
+// Params 1
+// Checksum 0x0, Offset: 0x63f5
 // Size: 0x85
 function function_38f5ade989b3848f( team )
 {
@@ -1872,8 +1872,8 @@ function function_38f5ade989b3848f( team )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6477
+// Params 1
+// Checksum 0x0, Offset: 0x6482
 // Size: 0x5d
 function function_4a3b25b6b877fe73( team )
 {
@@ -1888,8 +1888,8 @@ function function_4a3b25b6b877fe73( team )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64dc
+// Params 1
+// Checksum 0x0, Offset: 0x64e7
 // Size: 0x53
 function function_dc8861a5e3b418d5( team )
 {
@@ -1904,8 +1904,8 @@ function function_dc8861a5e3b418d5( team )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6537
+// Params 0
+// Checksum 0x0, Offset: 0x6542
 // Size: 0x25, Type: bool
 function function_7627883ac8601401()
 {
@@ -1923,8 +1923,8 @@ function function_7627883ac8601401()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6565
+// Params 1
+// Checksum 0x0, Offset: 0x6570
 // Size: 0x38, Type: bool
 function function_f111048fabf84e37( revivee )
 {
@@ -1942,8 +1942,8 @@ function function_f111048fabf84e37( revivee )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x65a6
+// Params 1
+// Checksum 0x0, Offset: 0x65b1
 // Size: 0x44a
 function revivetriggerthink( team )
 {
@@ -2093,8 +2093,8 @@ function revivetriggerthink( team )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x69f8
+// Params 1
+// Checksum 0x0, Offset: 0x6a03
 // Size: 0x612
 function function_56e47961499ca06c( team )
 {
@@ -2306,8 +2306,8 @@ function function_56e47961499ca06c( team )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7012
+// Params 2
+// Checksum 0x0, Offset: 0x701d
 // Size: 0xa3
 function function_5f7d4c2c151b9d4b( interrogator, var_5bebd2013b0f01ec )
 {
@@ -2319,7 +2319,8 @@ function function_5f7d4c2c151b9d4b( interrogator, var_5bebd2013b0f01ec )
     var_5bebd2013b0f01ec endon( "check_for_plea" );
     var_5bebd2013b0f01ec endon( "disconnect" );
     
-    for (var_953b2f6a9e495d7f = 1; var_953b2f6a9e495d7f < 6; var_953b2f6a9e495d7f++) {
+    for ( var_953b2f6a9e495d7f = 1; var_953b2f6a9e495d7f < 6 ; var_953b2f6a9e495d7f++ )
+    {
         interrogator playsoundtoteam( "jup_br_interrogation_pda_ui_ally_0" + var_953b2f6a9e495d7f, interrogator.team, interrogator, interrogator );
         interrogator playsoundtoteam( "jup_br_interrogation_pda_ui_enemy_0" + var_953b2f6a9e495d7f, var_5bebd2013b0f01ec.team, interrogator, interrogator );
         wait 0.6;
@@ -2327,8 +2328,8 @@ function function_5f7d4c2c151b9d4b( interrogator, var_5bebd2013b0f01ec )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x70bd
+// Params 2
+// Checksum 0x0, Offset: 0x70c8
 // Size: 0x5a
 function function_bef121e9cc93f796( interrogator, var_5bebd2013b0f01ec )
 {
@@ -2340,8 +2341,8 @@ function function_bef121e9cc93f796( interrogator, var_5bebd2013b0f01ec )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x711f
+// Params 2
+// Checksum 0x0, Offset: 0x712a
 // Size: 0x45
 function function_6ffc1d64d4e5832d( interrogator, var_5bebd2013b0f01ec )
 {
@@ -2355,8 +2356,8 @@ function function_6ffc1d64d4e5832d( interrogator, var_5bebd2013b0f01ec )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x716c
+// Params 2
+// Checksum 0x0, Offset: 0x7177
 // Size: 0x10c
 function function_dab2d0f370a19a17( var_d33a0baa5624a4a, var_ca6fac37f3e2227d )
 {
@@ -2377,8 +2378,8 @@ function function_dab2d0f370a19a17( var_d33a0baa5624a4a, var_ca6fac37f3e2227d )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7280
+// Params 2
+// Checksum 0x0, Offset: 0x728b
 // Size: 0x10c
 function function_a73848ef9a4e7932( var_d33a0baa5624a4a, var_ca6fac37f3e2227d )
 {
@@ -2399,8 +2400,8 @@ function function_a73848ef9a4e7932( var_d33a0baa5624a4a, var_ca6fac37f3e2227d )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7394
+// Params 2
+// Checksum 0x0, Offset: 0x739f
 // Size: 0xf9
 function switchtoteammatereviveweapon( revivee, interrogation )
 {
@@ -2452,7 +2453,7 @@ function switchtoteammatereviveweapon( revivee, interrogation )
 
 // Namespace laststand / scripts\mp\laststand
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x7495
+// Checksum 0x0, Offset: 0x74a0
 // Size: 0x5c
 function private function_4a81a13950a6021d( weaponobj )
 {
@@ -2475,7 +2476,7 @@ function private function_4a81a13950a6021d( weaponobj )
 
 // Namespace laststand / scripts\mp\laststand
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x74f9
+// Checksum 0x0, Offset: 0x7504
 // Size: 0xb6
 function private function_1d21f6e823b18aa8( weaponobj, restorelastweapon )
 {
@@ -2507,8 +2508,8 @@ function private function_1d21f6e823b18aa8( weaponobj, restorelastweapon )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x75b7
+// Params 1
+// Checksum 0x0, Offset: 0x75c2
 // Size: 0x102
 function teammatereviveweaponwaitputaway( streakinfo )
 {
@@ -2548,8 +2549,8 @@ function teammatereviveweaponwaitputaway( streakinfo )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x76c1
+// Params 0
+// Checksum 0x0, Offset: 0x76cc
 // Size: 0x53
 function watchfordeathwhilereviving()
 {
@@ -2570,8 +2571,8 @@ function watchfordeathwhilereviving()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x771c
+// Params 1
+// Checksum 0x0, Offset: 0x7727
 // Size: 0x66
 function watchforteammatedeathwhilereviving( revivee )
 {
@@ -2592,8 +2593,8 @@ function watchforteammatedeathwhilereviving( revivee )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x778a
+// Params 1
+// Checksum 0x0, Offset: 0x7795
 // Size: 0x5c
 function watchforteammaterevivedwhilereviving( revivee )
 {
@@ -2614,8 +2615,8 @@ function watchforteammaterevivedwhilereviving( revivee )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x77ee
+// Params 0
+// Checksum 0x0, Offset: 0x77f9
 // Size: 0x153
 function function_788452276786dcc7()
 {
@@ -2671,8 +2672,8 @@ function function_788452276786dcc7()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7949
+// Params 1
+// Checksum 0x0, Offset: 0x7954
 // Size: 0x60
 function function_fc2445a76915f9e7( revivee )
 {
@@ -2683,8 +2684,8 @@ function function_fc2445a76915f9e7( revivee )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x79b1
+// Params 2
+// Checksum 0x0, Offset: 0x79bc
 // Size: 0x410
 function finishreviveplayer( notifymsg, reviver )
 {
@@ -2858,8 +2859,8 @@ function finishreviveplayer( notifymsg, reviver )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7dca
+// Params 0
+// Checksum 0x0, Offset: 0x7dd5
 // Size: 0x67
 function function_78d588e2e4cbda39()
 {
@@ -2883,8 +2884,8 @@ function function_78d588e2e4cbda39()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e39
+// Params 0
+// Checksum 0x0, Offset: 0x7e44
 // Size: 0xfd
 function function_a3a340a5d9222a17()
 {
@@ -2921,8 +2922,8 @@ function function_a3a340a5d9222a17()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f3e
+// Params 3
+// Checksum 0x0, Offset: 0x7f49
 // Size: 0x2a7
 function function_70f1dbc7125939b8( notifymsg, interrogator, team )
 {
@@ -2996,8 +2997,8 @@ function function_70f1dbc7125939b8( notifymsg, interrogator, team )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x81ee
+// Params 2
+// Checksum 0x0, Offset: 0x81f9
 // Size: 0x217
 function function_b37595afabefa038( interrogator, var_5bebd2013b0f01ec )
 {
@@ -3056,8 +3057,8 @@ function function_b37595afabefa038( interrogator, var_5bebd2013b0f01ec )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x840d
+// Params 1
+// Checksum 0x0, Offset: 0x8418
 // Size: 0x14d
 function decayreviveprogress( decayscale )
 {
@@ -3114,8 +3115,8 @@ function decayreviveprogress( decayscale )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8562
+// Params 0
+// Checksum 0x0, Offset: 0x856d
 // Size: 0x28
 function function_1f761672c3708743()
 {
@@ -3129,8 +3130,8 @@ function function_1f761672c3708743()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8592
+// Params 2
+// Checksum 0x0, Offset: 0x859d
 // Size: 0x52e
 function function_d04361def93fac3d( interrogator, victim )
 {
@@ -3299,8 +3300,8 @@ function function_d04361def93fac3d( interrogator, victim )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ac8
+// Params 2
+// Checksum 0x0, Offset: 0x8ad3
 // Size: 0xd0
 function function_38526ff55909d928( attacker, victim )
 {
@@ -3331,8 +3332,8 @@ function function_38526ff55909d928( attacker, victim )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ba0
+// Params 3
+// Checksum 0x0, Offset: 0x8bab
 // Size: 0x164
 function function_7fac7bee548fbdd8( var_d33a0baa5624a4a, victimteam, victimuid )
 {
@@ -3363,8 +3364,8 @@ function function_7fac7bee548fbdd8( var_d33a0baa5624a4a, victimteam, victimuid )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d0c
+// Params 3
+// Checksum 0x0, Offset: 0x8d17
 // Size: 0x1a6
 function function_8f5cf57cb69d0df5( var_d33a0baa5624a4a, victimteam, victimuid )
 {
@@ -3409,8 +3410,8 @@ function function_8f5cf57cb69d0df5( var_d33a0baa5624a4a, victimteam, victimuid )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8eba
+// Params 3
+// Checksum 0x0, Offset: 0x8ec5
 // Size: 0x5e
 function function_d5bce40589690efb( interrogator, victim, var_c3b838deb5a442d4 )
 {
@@ -3438,8 +3439,8 @@ function function_d5bce40589690efb( interrogator, victim, var_c3b838deb5a442d4 )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f21
+// Params 2
+// Checksum 0x0, Offset: 0x8f2c
 // Size: 0x49
 function function_8924785604554899( interrogator, victim )
 {
@@ -3462,8 +3463,8 @@ function function_8924785604554899( interrogator, victim )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f73
+// Params 2
+// Checksum 0x0, Offset: 0x8f7e
 // Size: 0xab
 function function_59db0668402ef9d0( interrogator, victim )
 {
@@ -3494,8 +3495,8 @@ function function_59db0668402ef9d0( interrogator, victim )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9027
+// Params 3
+// Checksum 0x0, Offset: 0x9032
 // Size: 0x97
 function function_b4c6cb65b8221e77( interrogator, victim, starttime )
 {
@@ -3521,8 +3522,8 @@ function function_b4c6cb65b8221e77( interrogator, victim, starttime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x90c7
+// Params 3
+// Checksum 0x0, Offset: 0x90d2
 // Size: 0x67
 function function_2916fc520c1ada8d( interrogator, victim, starttime )
 {
@@ -3542,8 +3543,8 @@ function function_2916fc520c1ada8d( interrogator, victim, starttime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9137
+// Params 2
+// Checksum 0x0, Offset: 0x9142
 // Size: 0x189
 function function_f671d7efef879a1( attacker, victim )
 {
@@ -3592,8 +3593,8 @@ function function_f671d7efef879a1( attacker, victim )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x92c9
+// Params 2
+// Checksum 0x0, Offset: 0x92d4
 // Size: 0x1b7
 function function_a5c6dc149afb51c9( interrogator, outlinetime )
 {
@@ -3659,8 +3660,8 @@ function function_a5c6dc149afb51c9( interrogator, outlinetime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9488
+// Params 2
+// Checksum 0x0, Offset: 0x9493
 // Size: 0x104
 function function_da121b53657256c7( interrogator, pingtime )
 {
@@ -3699,8 +3700,8 @@ function function_da121b53657256c7( interrogator, pingtime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9594
+// Params 2
+// Checksum 0x0, Offset: 0x959f
 // Size: 0x124
 function function_f8b195391ced24fc( interrogator, waittime )
 {
@@ -3751,8 +3752,8 @@ function function_f8b195391ced24fc( interrogator, waittime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x96c0
+// Params 2
+// Checksum 0x0, Offset: 0x96cb
 // Size: 0x40
 function function_80dc9867bc1b31f8( icon, waittime )
 {
@@ -3764,8 +3765,8 @@ function function_80dc9867bc1b31f8( icon, waittime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9708
+// Params 2
+// Checksum 0x0, Offset: 0x9713
 // Size: 0x189
 function function_980d4a9e760f8e0e( interrogator, outlinetime )
 {
@@ -3831,8 +3832,8 @@ function function_980d4a9e760f8e0e( interrogator, outlinetime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9899
+// Params 2
+// Checksum 0x0, Offset: 0x98a4
 // Size: 0x13b
 function function_8b6cb3c86797ead5( interrogator, outlinetime )
 {
@@ -3872,8 +3873,8 @@ function function_8b6cb3c86797ead5( interrogator, outlinetime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x99dc
+// Params 2
+// Checksum 0x0, Offset: 0x99e7
 // Size: 0x73
 function watchpainted( id, timeout )
 {
@@ -3897,8 +3898,8 @@ function watchpainted( id, timeout )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a57
+// Params 1
+// Checksum 0x0, Offset: 0x9a62
 // Size: 0x33
 function watchpaintedagain( id )
 {
@@ -3909,8 +3910,8 @@ function watchpaintedagain( id )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a92
+// Params 3
+// Checksum 0x0, Offset: 0x9a9d
 // Size: 0x2cc
 function useholdthink( reviver, usetime, interrogation )
 {
@@ -4014,8 +4015,8 @@ function useholdthink( reviver, usetime, interrogation )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d66
+// Params 2
+// Checksum 0x0, Offset: 0x9d71
 // Size: 0x4c
 function dragallyprototype( reviver, revivee )
 {
@@ -4027,8 +4028,8 @@ function dragallyprototype( reviver, revivee )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9dba
+// Params 2
+// Checksum 0x0, Offset: 0x9dc5
 // Size: 0x2c
 function cleanupdragallyprototype( reviver, revivee )
 {
@@ -4038,8 +4039,8 @@ function cleanupdragallyprototype( reviver, revivee )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9dee
+// Params 3
+// Checksum 0x0, Offset: 0x9df9
 // Size: 0x2db
 function useholdthinkcleanup( reviver, revivespot, interrogation )
 {
@@ -4191,8 +4192,8 @@ function useholdthinkcleanup( reviver, revivespot, interrogation )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0d1
+// Params 0
+// Checksum 0x0, Offset: 0xa0dc
 // Size: 0xa0
 function sfx_revive_lp()
 {
@@ -4218,8 +4219,8 @@ function sfx_revive_lp()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa179
+// Params 1
+// Checksum 0x0, Offset: 0xa184
 // Size: 0x22
 function function_27fe31dbce9658fc( soundorg )
 {
@@ -4232,8 +4233,8 @@ function function_27fe31dbce9658fc( soundorg )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa1a3
+// Params 1
+// Checksum 0x0, Offset: 0xa1ae
 // Size: 0x1ca
 function useholdthinkloop( reviver )
 {
@@ -4296,8 +4297,8 @@ function useholdthinkloop( reviver )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa376
+// Params 4
+// Checksum 0x0, Offset: 0xa381
 // Size: 0x107, Type: bool
 function useholdthinkisvalid( reviver, revivee, mintime, shouldstay )
 {
@@ -4350,8 +4351,8 @@ function useholdthinkisvalid( reviver, revivee, mintime, shouldstay )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa486
+// Params 0
+// Checksum 0x0, Offset: 0xa491
 // Size: 0x2bf
 function suicidesetup()
 {
@@ -4456,8 +4457,8 @@ function suicidesetup()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa74d
+// Params 1
+// Checksum 0x0, Offset: 0xa758
 // Size: 0x95
 function giveupprogressbar( var_4ce97d438a53f1d5 )
 {
@@ -4486,8 +4487,8 @@ function giveupprogressbar( var_4ce97d438a53f1d5 )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7ea
+// Params 0
+// Checksum 0x0, Offset: 0xa7f5
 // Size: 0x1cf
 function suicidemonitorcrouchbuttonpress()
 {
@@ -4561,8 +4562,8 @@ function suicidemonitorcrouchbuttonpress()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9c1
+// Params 0
+// Checksum 0x0, Offset: 0xa9cc
 // Size: 0x22
 function suicideonend()
 {
@@ -4576,8 +4577,8 @@ function suicideonend()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9eb
+// Params 0
+// Checksum 0x0, Offset: 0xa9f6
 // Size: 0x61
 function showsuicidehintstring()
 {
@@ -4602,8 +4603,8 @@ function showsuicidehintstring()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa54
+// Params 0
+// Checksum 0x0, Offset: 0xaa5f
 // Size: 0x2c2
 function handlerevivemessage()
 {
@@ -4696,8 +4697,8 @@ function handlerevivemessage()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xad1e
+// Params 0
+// Checksum 0x0, Offset: 0xad29
 // Size: 0x88
 function bleedoutthink()
 {
@@ -4735,8 +4736,8 @@ function bleedoutthink()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xadae
+// Params 0
+// Checksum 0x0, Offset: 0xadb9
 // Size: 0xb0
 function addoverheadicon()
 {
@@ -4756,8 +4757,8 @@ function addoverheadicon()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xae66
+// Params 1
+// Checksum 0x0, Offset: 0xae71
 // Size: 0x24
 function cleanupoverheadicon( image )
 {
@@ -4766,8 +4767,8 @@ function cleanupoverheadicon( image )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xae92
+// Params 0
+// Checksum 0x0, Offset: 0xae9d
 // Size: 0x18
 function function_626ae3038b3571()
 {
@@ -4776,8 +4777,8 @@ function function_626ae3038b3571()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaeb2
+// Params 0
+// Checksum 0x0, Offset: 0xaebd
 // Size: 0x1d
 function function_8eb986314a3a9850()
 {
@@ -4788,8 +4789,8 @@ function function_8eb986314a3a9850()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaed7
+// Params 0
+// Checksum 0x0, Offset: 0xaee2
 // Size: 0x1a
 function function_df99c11789b4ed31()
 {
@@ -4798,8 +4799,8 @@ function function_df99c11789b4ed31()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaef9
+// Params 0
+// Checksum 0x0, Offset: 0xaf04
 // Size: 0xbb
 function showwaverespawnmessage()
 {
@@ -4830,8 +4831,8 @@ function showwaverespawnmessage()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xafbc
+// Params 1
+// Checksum 0x0, Offset: 0xafc7
 // Size: 0x22
 function allowselfrevive( allow )
 {
@@ -4840,8 +4841,8 @@ function allowselfrevive( allow )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xafe6
+// Params 0
+// Checksum 0x0, Offset: 0xaff1
 // Size: 0x52
 function laststandmonitor()
 {
@@ -4867,8 +4868,8 @@ function laststandmonitor()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb040
+// Params 0
+// Checksum 0x0, Offset: 0xb04b
 // Size: 0x168
 function laststandkillteamifdown()
 {
@@ -4910,8 +4911,8 @@ function laststandkillteamifdown()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1b0
+// Params 0
+// Checksum 0x0, Offset: 0xb1bb
 // Size: 0x98
 function getclassiclaststandpistol()
 {
@@ -4932,8 +4933,8 @@ function getclassiclaststandpistol()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb251
+// Params 0
+// Checksum 0x0, Offset: 0xb25c
 // Size: 0x90
 function makelaststandinvuln()
 {
@@ -4961,8 +4962,8 @@ function makelaststandinvuln()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2e9
+// Params 0
+// Checksum 0x0, Offset: 0xb2f4
 // Size: 0x17
 function clearlaststandinvuln()
 {
@@ -4971,8 +4972,8 @@ function clearlaststandinvuln()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xb308
+// Params 7
+// Checksum 0x0, Offset: 0xb313
 // Size: 0x49, Type: bool
 function laststandinvulnignorefunc( inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc )
 {
@@ -4985,8 +4986,8 @@ function laststandinvulnignorefunc( inflictor, attacker, victim, damage, meansof
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb35a
+// Params 0
+// Checksum 0x0, Offset: 0xb365
 // Size: 0x4
 function getdefaultlaststandtimervalue()
 {
@@ -4994,8 +4995,8 @@ function getdefaultlaststandtimervalue()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb367
+// Params 0
+// Checksum 0x0, Offset: 0xb372
 // Size: 0x4
 function getdefaultlaststandrevivetimervalue()
 {
@@ -5003,8 +5004,8 @@ function getdefaultlaststandrevivetimervalue()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb374
+// Params 1
+// Checksum 0x0, Offset: 0xb37f
 // Size: 0x10
 function getshellshockinterruptdelayms( duration )
 {
@@ -5012,8 +5013,8 @@ function getshellshockinterruptdelayms( duration )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb38d
+// Params 2
+// Checksum 0x0, Offset: 0xb398
 // Size: 0x5a
 function function_643969f67556243f( player, reason )
 {
@@ -5024,8 +5025,8 @@ function function_643969f67556243f( player, reason )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3ef
+// Params 9
+// Checksum 0x0, Offset: 0xb3fa
 // Size: 0x531, Type: bool
 function function_27d0ea02ed3cc35f( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration )
 {
@@ -5206,8 +5207,8 @@ function function_27d0ea02ed3cc35f( einflictor, attacker, idamage, smeansofdeath
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb929
+// Params 0
+// Checksum 0x0, Offset: 0xb934
 // Size: 0x2d
 function function_5bfdc69fe21c4118()
 {
@@ -5221,8 +5222,8 @@ function function_5bfdc69fe21c4118()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb95e
+// Params 1
+// Checksum 0x0, Offset: 0xb969
 // Size: 0x100
 function survivorondeath( attacker )
 {
@@ -5262,8 +5263,8 @@ function survivorondeath( attacker )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xba66
+// Params 1
+// Checksum 0x0, Offset: 0xba71
 // Size: 0x6c
 function function_3b4a396318897a49( weapon )
 {
@@ -5295,8 +5296,8 @@ function function_3b4a396318897a49( weapon )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbadb
+// Params 0
+// Checksum 0x0, Offset: 0xbae6
 // Size: 0x26, Type: bool
 function function_2a3c9a91bf1d3911()
 {
@@ -5311,8 +5312,8 @@ function function_2a3c9a91bf1d3911()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb0a
+// Params 1
+// Checksum 0x0, Offset: 0xbb15
 // Size: 0x54, Type: bool
 function function_a2dd7d8143656503( player )
 {
@@ -5325,8 +5326,8 @@ function function_a2dd7d8143656503( player )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb67
+// Params 0
+// Checksum 0x0, Offset: 0xbb72
 // Size: 0x74
 function function_4c452a6c72371f17()
 {
@@ -5347,8 +5348,8 @@ function function_4c452a6c72371f17()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbe3
+// Params 1
+// Checksum 0x0, Offset: 0xbbee
 // Size: 0x1b7
 function function_42994e73b40cc1a4( player )
 {
@@ -5426,8 +5427,8 @@ function function_42994e73b40cc1a4( player )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbda2
+// Params 0
+// Checksum 0x0, Offset: 0xbdad
 // Size: 0x5fc
 function function_150b60d7cbd3ba2()
 {
@@ -5507,8 +5508,8 @@ function function_150b60d7cbd3ba2()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3a6
+// Params 3
+// Checksum 0x0, Offset: 0xc3b1
 // Size: 0x5c
 function function_1d6e0919bcc01c46( attacker, defender, playtime )
 {
@@ -5521,8 +5522,8 @@ function function_1d6e0919bcc01c46( attacker, defender, playtime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc40a
+// Params 4
+// Checksum 0x0, Offset: 0xc415
 // Size: 0x8e
 function function_7aa8b6e88b420bdb( dir, attacker, defender, playtime )
 {
@@ -5547,8 +5548,8 @@ function function_7aa8b6e88b420bdb( dir, attacker, defender, playtime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4a0
+// Params 4
+// Checksum 0x0, Offset: 0xc4ab
 // Size: 0x7e
 function function_a8d9949bcfbf31c6( dir, attacker, defender, totalplaytime )
 {
@@ -5564,8 +5565,8 @@ function function_a8d9949bcfbf31c6( dir, attacker, defender, totalplaytime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc527
+// Params 4
+// Checksum 0x0, Offset: 0xc532
 // Size: 0xae, Type: bool
 function function_25bb5b0a542a335c( dir, attacker, defender, playtime )
 {
@@ -5600,8 +5601,8 @@ function function_25bb5b0a542a335c( dir, attacker, defender, playtime )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5de
+// Params 3
+// Checksum 0x0, Offset: 0xc5e9
 // Size: 0x61
 function function_85b5f0cafa43fc83( dir, attacker, defender )
 {
@@ -5618,8 +5619,8 @@ function function_85b5f0cafa43fc83( dir, attacker, defender )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc647
+// Params 3
+// Checksum 0x0, Offset: 0xc652
 // Size: 0x24a
 function function_4aa5cc0d5aaf5e13( dir, attacker, defender )
 {
@@ -5661,8 +5662,8 @@ function function_4aa5cc0d5aaf5e13( dir, attacker, defender )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc899
+// Params 1
+// Checksum 0x0, Offset: 0xc8a4
 // Size: 0xce
 function function_eef4880f266f99e6( attacker )
 {
@@ -5689,8 +5690,8 @@ function function_eef4880f266f99e6( attacker )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc96f
+// Params 3
+// Checksum 0x0, Offset: 0xc97a
 // Size: 0x13d
 function function_8ae5403c4d1733d6( dir, attacker, defender )
 {
@@ -5743,8 +5744,8 @@ function function_8ae5403c4d1733d6( dir, attacker, defender )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcab4
+// Params 0
+// Checksum 0x0, Offset: 0xcabf
 // Size: 0x77
 function function_dbc6c6adf9cf2998()
 {
@@ -5762,8 +5763,8 @@ function function_dbc6c6adf9cf2998()
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb33
+// Params 3
+// Checksum 0x0, Offset: 0xcb3e
 // Size: 0xc5
 function function_b5963c08352be7e9( dir, attacker, defender )
 {
@@ -5799,8 +5800,8 @@ function function_b5963c08352be7e9( dir, attacker, defender )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc00
+// Params 1
+// Checksum 0x0, Offset: 0xcc0b
 // Size: 0x16f
 function function_d0010fdbcdaeaf0a( attacker )
 {
@@ -5828,8 +5829,8 @@ function function_d0010fdbcdaeaf0a( attacker )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd77
+// Params 1
+// Checksum 0x0, Offset: 0xcd82
 // Size: 0xc9
 function function_7005f2911baffe7f( attacker )
 {
@@ -5853,8 +5854,8 @@ function function_7005f2911baffe7f( attacker )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xce48
+// Params 6
+// Checksum 0x0, Offset: 0xce53
 // Size: 0x240
 function function_2bc915da80c90aa0( dir, attacker, defender, animtype, shouldblock, isfirstframe )
 {
@@ -5921,8 +5922,8 @@ function function_2bc915da80c90aa0( dir, attacker, defender, animtype, shouldblo
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd090
+// Params 4
+// Checksum 0x0, Offset: 0xd09b
 // Size: 0x48
 function function_27e4565cfcbf5e25( dir, animtype, subjectname, var_24b6f4bd2e81097d )
 {
@@ -5935,8 +5936,8 @@ function function_27e4565cfcbf5e25( dir, animtype, subjectname, var_24b6f4bd2e81
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd0e1
+// Params 2
+// Checksum 0x0, Offset: 0xd0ec
 // Size: 0x48
 function function_16f1ed28a559f91f( attacker, defender )
 {
@@ -5951,8 +5952,8 @@ function function_16f1ed28a559f91f( attacker, defender )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd131
+// Params 2
+// Checksum 0x0, Offset: 0xd13c
 // Size: 0x14a
 function function_a30d65a6f3331dc1( attacker, defender )
 {
@@ -6015,8 +6016,8 @@ function function_a30d65a6f3331dc1( attacker, defender )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd284
+// Params 2
+// Checksum 0x0, Offset: 0xd28f
 // Size: 0xab
 function function_bf625405d3e068af( attacker, defender )
 {
@@ -6047,8 +6048,8 @@ function function_bf625405d3e068af( attacker, defender )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xd338
+// Params 6
+// Checksum 0x0, Offset: 0xd343
 // Size: 0xd2
 function function_acc5ea9379317664( player, animmodel, animtag, isviewmodel, originoffset, anglesoffset )
 {
@@ -6091,8 +6092,8 @@ function function_acc5ea9379317664( player, animmodel, animtag, isviewmodel, ori
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd413
+// Params 3
+// Checksum 0x0, Offset: 0xd41e
 // Size: 0x60
 function function_64c48800869451a1( player, sceneorigin, sceneangles )
 {
@@ -6105,8 +6106,8 @@ function function_64c48800869451a1( player, sceneorigin, sceneangles )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd47c
+// Params 2
+// Checksum 0x0, Offset: 0xd487
 // Size: 0x51
 function function_e1841af234a09407( var_b1e6fbabce1a26ba, var_41503cd028efb569 )
 {
@@ -6121,8 +6122,8 @@ function function_e1841af234a09407( var_b1e6fbabce1a26ba, var_41503cd028efb569 )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd4d5
+// Params 2
+// Checksum 0x0, Offset: 0xd4e0
 // Size: 0x51
 function function_4a6b9ecae4b71ae5( var_b1e6fbabce1a26ba, var_41503cd028efb569 )
 {
@@ -6137,8 +6138,8 @@ function function_4a6b9ecae4b71ae5( var_b1e6fbabce1a26ba, var_41503cd028efb569 )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd52e
+// Params 2
+// Checksum 0x0, Offset: 0xd539
 // Size: 0x28c
 function function_52a9113423ff7ce1( spawnpos, spawnang )
 {
@@ -6213,8 +6214,8 @@ function function_52a9113423ff7ce1( spawnpos, spawnang )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7c2
+// Params 2
+// Checksum 0x0, Offset: 0xd7cd
 // Size: 0x98
 function function_fa005dea3b675dd4( dir, animtype )
 {
@@ -6243,8 +6244,8 @@ function function_fa005dea3b675dd4( dir, animtype )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd863
+// Params 3
+// Checksum 0x0, Offset: 0xd86e
 // Size: 0x353
 function function_341c7024a3e54638( dir, defender, attacker )
 {
@@ -6307,8 +6308,8 @@ function function_341c7024a3e54638( dir, defender, attacker )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdbbf
+// Params 1
+// Checksum 0x0, Offset: 0xdbca
 // Size: 0x27
 function function_a0b08dae03df9dae( animmodel )
 {
@@ -6324,8 +6325,8 @@ function function_a0b08dae03df9dae( animmodel )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdbee
+// Params 1
+// Checksum 0x0, Offset: 0xdbf9
 // Size: 0x14e
 function function_96f2172e98188560( target )
 {
@@ -6374,8 +6375,8 @@ function function_96f2172e98188560( target )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd44
+// Params 1
+// Checksum 0x0, Offset: 0xdd4f
 // Size: 0x14a
 function interrogation_onplayerdisconnect( player )
 {
@@ -6407,8 +6408,8 @@ function interrogation_onplayerdisconnect( player )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xde96
+// Params 2
+// Checksum 0x0, Offset: 0xdea1
 // Size: 0xce
 function function_5911caad56f963ea( team, changeval )
 {
@@ -6437,8 +6438,8 @@ function function_5911caad56f963ea( team, changeval )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf6c
+// Params 2
+// Checksum 0x0, Offset: 0xdf77
 // Size: 0xce
 function function_e6ccdf90ba898cdc( team, changeval )
 {
@@ -6469,8 +6470,8 @@ function function_e6ccdf90ba898cdc( team, changeval )
 /#
 
     // Namespace laststand / scripts\mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe042
+    // Params 0
+    // Checksum 0x0, Offset: 0xe04d
     // Size: 0xef, Type: dev
     function function_9168ee31efcf3393()
     {
@@ -6517,8 +6518,8 @@ function function_e6ccdf90ba898cdc( team, changeval )
     }
 
     // Namespace laststand / scripts\mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe139
+    // Params 0
+    // Checksum 0x0, Offset: 0xe144
     // Size: 0x42, Type: dev
     function forcelaststand()
     {
@@ -6531,8 +6532,8 @@ function function_e6ccdf90ba898cdc( team, changeval )
     }
 
     // Namespace laststand / scripts\mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe183
+    // Params 0
+    // Checksum 0x0, Offset: 0xe18e
     // Size: 0x433, Type: dev
     function function_e7884f1619dc53be()
     {
@@ -6651,8 +6652,8 @@ function function_e6ccdf90ba898cdc( team, changeval )
     }
 
     // Namespace laststand / scripts\mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe5be
+    // Params 0
+    // Checksum 0x0, Offset: 0xe5c9
     // Size: 0x5ce, Type: dev
     function function_cb1f25df9191cd3c()
     {
@@ -6819,8 +6820,8 @@ function function_e6ccdf90ba898cdc( team, changeval )
 #/
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb94
+// Params 2
+// Checksum 0x0, Offset: 0xeb9f
 // Size: 0x8d
 function function_b3f5eede669e7182( attacker, victim )
 {
@@ -6849,8 +6850,8 @@ function function_b3f5eede669e7182( attacker, victim )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xec29
+// Params 2
+// Checksum 0x0, Offset: 0xec34
 // Size: 0x63
 function function_4ba85e5091eee483( vo_string, debounce )
 {
@@ -6873,8 +6874,8 @@ function function_4ba85e5091eee483( vo_string, debounce )
 }
 
 // Namespace laststand / scripts\mp\laststand
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xec94
+// Params 1
+// Checksum 0x0, Offset: 0xec9f
 // Size: 0x25
 function function_6945da38c80ec9cf( debounce )
 {
@@ -6887,8 +6888,8 @@ function function_6945da38c80ec9cf( debounce )
 /#
 
     // Namespace laststand / scripts\mp\laststand
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xecc1
+    // Params 0
+    // Checksum 0x0, Offset: 0xeccc
     // Size: 0x2e2, Type: dev
     function function_d9b9b021d2e292a7()
     {
@@ -6967,8 +6968,8 @@ function function_6945da38c80ec9cf( debounce )
     }
 
     // Namespace laststand / scripts\mp\laststand
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0xefab
+    // Params 3
+    // Checksum 0x0, Offset: 0xefb6
     // Size: 0xaa, Type: dev
     function function_78e1a6bd9380a160( bot, downedplayer, directionvector )
     {

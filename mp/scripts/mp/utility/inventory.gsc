@@ -9,7 +9,7 @@
 #namespace inventory;
 
 // Namespace inventory / scripts\mp\utility\inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd4
 // Size: 0x1e
 function getlastweapon()
@@ -19,7 +19,7 @@ function getlastweapon()
 }
 
 // Namespace inventory / scripts\mp\utility\inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfb
 // Size: 0x5f
 function switchtolastweapon()
@@ -49,7 +49,7 @@ function switchtolastweapon()
 }
 
 // Namespace inventory / scripts\mp\utility\inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x162
 // Size: 0x62
 function getfirstprimaryweapon()
@@ -70,7 +70,7 @@ function getfirstprimaryweapon()
 }
 
 // Namespace inventory / scripts\mp\utility\inventory
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1cd
 // Size: 0x1ce
 function registerweaponchangecallback( callbackfunc, isoneshot, var_83d988341d1d6755 )
@@ -126,7 +126,7 @@ function registerweaponchangecallback( callbackfunc, isoneshot, var_83d988341d1d
 }
 
 // Namespace inventory / scripts\mp\utility\inventory
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a4
 // Size: 0x4e
 function unregisterweaponchangecallback( id )
@@ -144,7 +144,7 @@ function unregisterweaponchangecallback( id )
 }
 
 // Namespace inventory / scripts\mp\utility\inventory
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fa
 // Size: 0xe1
 function handleweaponchangecallbacksondeath()

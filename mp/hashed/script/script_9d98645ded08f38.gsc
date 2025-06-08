@@ -4,7 +4,7 @@
 #namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs;
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1aa
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x21f
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28e
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d6
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e0
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f6
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x368
 // Size: 0x9c
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -122,7 +122,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x40c
 // Size: 0x2c
 function function_586d0cd32d7da701( fe, us, cf )
@@ -131,7 +131,7 @@ function function_586d0cd32d7da701( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x440
 // Size: 0x2c
 function function_41209ca58bab1b6e( fe, us, cf )
@@ -140,7 +140,7 @@ function function_41209ca58bab1b6e( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x474
 // Size: 0x2c
 function function_88824945e92dd84d( fe, us, cf )
@@ -149,7 +149,7 @@ function function_88824945e92dd84d( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4a8
 // Size: 0x2c
 function function_6c074ffcf979041d( fe, us, cf )
@@ -158,7 +158,7 @@ function function_6c074ffcf979041d( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_activity_oldtown_harvesterorb_cs / namespace_1a9235f87b9d6ba4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4dc
 // Size: 0x360
 function function_6da2952367672ac0()

@@ -77,14 +77,15 @@ function private function_ebb83c1efeaae2c7( var_c02b1f6c1721c844 )
 }
 
 // Namespace zombie_abom_metabones / scripts\aitypes\zombie_abom\zombie_abom_metabones
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x394
 // Size: 0x5b
 function function_2789dbcb483fa601( entity )
 {
     heads_alive = [];
     
-    for (head_index = 0; head_index <= 2; head_index++) {
+    for ( head_index = 0; head_index <= 2 ; head_index++ )
+    {
         if ( function_b2fae60b8f9f98b2( entity, head_index ) )
         {
             metabone = level.var_28e4ea2998e3439b[ head_index ];
@@ -96,14 +97,15 @@ function function_2789dbcb483fa601( entity )
 }
 
 // Namespace zombie_abom_metabones / scripts\aitypes\zombie_abom\zombie_abom_metabones
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f8
 // Size: 0x46
 function function_68d5f1122bc3fa26( entity )
 {
     heads_alive = [];
     
-    for (head_index = 0; head_index <= 2; head_index++) {
+    for ( head_index = 0; head_index <= 2 ; head_index++ )
+    {
         if ( function_b2fae60b8f9f98b2( entity, head_index ) )
         {
             heads_alive = array_add( heads_alive, head_index );
@@ -114,7 +116,7 @@ function function_68d5f1122bc3fa26( entity )
 }
 
 // Namespace zombie_abom_metabones / scripts\aitypes\zombie_abom\zombie_abom_metabones
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x447
 // Size: 0x51, Type: bool
 function function_b2fae60b8f9f98b2( entity, head_index )
@@ -125,7 +127,7 @@ function function_b2fae60b8f9f98b2( entity, head_index )
 }
 
 // Namespace zombie_abom_metabones / scripts\aitypes\zombie_abom\zombie_abom_metabones
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4a1
 // Size: 0x78
 function function_da059a185d59d999( entity, head_index, is_open )
@@ -142,7 +144,7 @@ function function_da059a185d59d999( entity, head_index, is_open )
 }
 
 // Namespace zombie_abom_metabones / scripts\aitypes\zombie_abom\zombie_abom_metabones
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x521
 // Size: 0x22
 function function_e5db29e6fd6f6a88( var_c02b1f6c1721c844 )

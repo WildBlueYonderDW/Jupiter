@@ -26,8 +26,8 @@
 #namespace zombie_entity;
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f9
+// Params 1
+// Checksum 0x0, Offset: 0x8df
 // Size: 0x26
 function precache( params )
 {
@@ -37,7 +37,7 @@ function precache( params )
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x627
+// Checksum 0x0, Offset: 0x90d
 // Size: 0x4b
 function private function_1372e36a6ad0a766( params )
 {
@@ -46,8 +46,8 @@ function private function_1372e36a6ad0a766( params )
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x67a
+// Params 1
+// Checksum 0x0, Offset: 0x960
 // Size: 0x137
 function function_813f575ebec2810e( taskid )
 {
@@ -77,8 +77,8 @@ function function_813f575ebec2810e( taskid )
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x7ba
-// Size: 0x1e4
+// Checksum 0x0, Offset: 0xaa0
+// Size: 0x1ee
 function private function_a449d4ca4b975db5()
 {
     self.entitydata = spawnstruct();
@@ -100,6 +100,7 @@ function private function_a449d4ca4b975db5()
     self.allowstrafe = 0;
     self.var_e23d72f180832aa = 1;
     self.var_b9527ed408c69385 = 1;
+    self.allowpain = 0;
     self animmode( "nogravity" );
     ent_flag_init( "entity_activate" );
     ent_flag_init( "entity_spawnanim_finished" );
@@ -118,7 +119,7 @@ function private function_a449d4ca4b975db5()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9a6
+// Checksum 0x0, Offset: 0xc96
 // Size: 0x52
 function private function_ade203ffe7b42a00( params )
 {
@@ -132,7 +133,7 @@ function private function_ade203ffe7b42a00( params )
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa00
+// Checksum 0x0, Offset: 0xcf0
 // Size: 0x53
 function private function_92c6fa76cc65548f( params )
 {
@@ -153,7 +154,7 @@ function private function_92c6fa76cc65548f( params )
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa5b
+// Checksum 0x0, Offset: 0xd4b
 // Size: 0x2a7
 function private entity_ondamaged( params )
 {
@@ -231,7 +232,7 @@ function private entity_ondamaged( params )
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xd0a
+// Checksum 0x0, Offset: 0xffa
 // Size: 0x7a
 function private function_ea5fb4ade9e1f527( params )
 {
@@ -260,8 +261,8 @@ function private function_ea5fb4ade9e1f527( params )
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8d
+// Params 0
+// Checksum 0x0, Offset: 0x107d
 // Size: 0x3, Type: bool
 function function_a8c9248308033e4e()
 {
@@ -270,7 +271,7 @@ function function_a8c9248308033e4e()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xd99
+// Checksum 0x0, Offset: 0x1089
 // Size: 0x9f
 function private function_38215c6a48943458()
 {
@@ -294,7 +295,7 @@ function private function_38215c6a48943458()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xe40
+// Checksum 0x0, Offset: 0x1130
 // Size: 0x87
 function private function_80a73d10d94ce693()
 {
@@ -308,7 +309,7 @@ function private function_80a73d10d94ce693()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xecf
+// Checksum 0x0, Offset: 0x11bf
 // Size: 0x84
 function private function_4f3f24a1ec972b0e()
 {
@@ -322,8 +323,8 @@ function private function_4f3f24a1ec972b0e()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xf5b
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x124b
+// Size: 0x198
 function private function_ad2963f45580a1fe()
 {
     self endon( "death" );
@@ -334,6 +335,13 @@ function private function_ad2963f45580a1fe()
     utility::function_3ab9164ef76940fd( "palm", "off" );
     utility::function_3ab9164ef76940fd( "reactive_miscellaneous", "off" );
     utility::function_3677f2be30fdd581( "VFX_Ambient_Black_Body_Smoke", "on" );
+    level._effect[ "vfx_entity_weak_point" ] = loadfx( "vfx/jup/ob/gameplay/riftrun/s5_5/entity/vfx_entity_weak_point.vfx" );
+    level._effect[ "vfx_entity_weak_point_red" ] = loadfx( "vfx/jup/ob/gameplay/riftrun/s5_5/entity/vfx_entity_weak_point_red.vfx" );
+    level._effect[ "vfx_entity_weak_point_head" ] = loadfx( "vfx/jup/ob/gameplay/riftrun/s5_5/entity/vfx_entity_weak_point_head.vfx" );
+    level._effect[ "vfx_entity_weak_point_head_red" ] = loadfx( "vfx/jup/ob/gameplay/riftrun/s5_5/entity/vfx_entity_weak_point_head_red.vfx" );
+    level._effect[ "vfx_entity_weak_point_hands" ] = loadfx( "vfx/jup/ob/gameplay/riftrun/s5_5/entity/vfx_entity_weak_point_hands.vfx" );
+    level._effect[ "vfx_entity_weak_point_hands_red" ] = loadfx( "vfx/jup/ob/gameplay/riftrun/s5_5/entity/vfx_entity_weak_point_hands_red.vfx" );
+    level._effect[ "vfx_entity_weak_point_destroy" ] = loadfx( "vfx/jup/ob/gameplay/riftrun/s5_5/entity/vfx_entity_weak_point_destroy.vfx" );
     utility::function_3677f2be30fdd581( "heart_weakpoint", "off" );
     utility::function_3677f2be30fdd581( "l_hand_weakpoint", "off" );
     utility::function_3677f2be30fdd581( "r_hand_weakpoint", "off" );
@@ -345,7 +353,7 @@ function private function_ad2963f45580a1fe()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1045
+// Checksum 0x0, Offset: 0x13eb
 // Size: 0x4e
 function private function_a552623c4db2acd7()
 {
@@ -359,7 +367,7 @@ function private function_a552623c4db2acd7()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x109b
+// Checksum 0x0, Offset: 0x1441
 // Size: 0x6f
 function private function_424e5dab79ae37a6()
 {
@@ -386,7 +394,7 @@ function private function_424e5dab79ae37a6()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1112
+// Checksum 0x0, Offset: 0x14b8
 // Size: 0x83
 function private function_208cd900e7da1bff()
 {
@@ -408,7 +416,7 @@ function private function_208cd900e7da1bff()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x119d
+// Checksum 0x0, Offset: 0x1543
 // Size: 0xfd
 function private function_b6851d5768e9130c( index )
 {
@@ -444,7 +452,7 @@ function private function_b6851d5768e9130c( index )
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x12a2
+// Checksum 0x0, Offset: 0x1648
 // Size: 0x12e
 function private entity_sethealth()
 {
@@ -487,8 +495,8 @@ function private entity_sethealth()
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d8
+// Params 2
+// Checksum 0x0, Offset: 0x177e
 // Size: 0x8d
 function function_eee3707179af0e1e( taskid, params )
 {
@@ -507,8 +515,8 @@ function function_eee3707179af0e1e( taskid, params )
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x146d
+// Params 2
+// Checksum 0x0, Offset: 0x1813
 // Size: 0x7b
 function function_14b1a33f3c95f126( taskid, params )
 {
@@ -525,8 +533,8 @@ function function_14b1a33f3c95f126( taskid, params )
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14f0
+// Params 2
+// Checksum 0x0, Offset: 0x1896
 // Size: 0x23
 function function_c0ebac5114260600( taskid, params )
 {
@@ -535,8 +543,8 @@ function function_c0ebac5114260600( taskid, params )
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x151c
+// Params 0
+// Checksum 0x0, Offset: 0x18c2
 // Size: 0x177
 function function_6c621f76da4082c4()
 {
@@ -592,7 +600,7 @@ function function_6c621f76da4082c4()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x169b
+// Checksum 0x0, Offset: 0x1a41
 // Size: 0xc7, Type: bool
 function private function_4781e74511be107()
 {
@@ -628,7 +636,7 @@ function private function_4781e74511be107()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x176b
+// Checksum 0x0, Offset: 0x1b11
 // Size: 0x166, Type: bool
 function private function_9559ab46ef578e02()
 {
@@ -684,7 +692,7 @@ function private function_9559ab46ef578e02()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x18da
+// Checksum 0x0, Offset: 0x1c80
 // Size: 0x65, Type: bool
 function private function_f52965bd9b20483b()
 {
@@ -705,7 +713,7 @@ function private function_f52965bd9b20483b()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1948
+// Checksum 0x0, Offset: 0x1cee
 // Size: 0x8d
 function private function_43b5ce0cd4e8eec7()
 {
@@ -738,7 +746,7 @@ function private function_43b5ce0cd4e8eec7()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x19de
+// Checksum 0x0, Offset: 0x1d84
 // Size: 0x80, Type: bool
 function private function_c4fe9396d108f764()
 {
@@ -764,7 +772,7 @@ function private function_c4fe9396d108f764()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1a67
+// Checksum 0x0, Offset: 0x1e0d
 // Size: 0xdf
 function private function_f161073ebaf14fec()
 {
@@ -809,7 +817,7 @@ function private function_f161073ebaf14fec()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1b4f
+// Checksum 0x0, Offset: 0x1ef5
 // Size: 0x6a, Type: bool
 function private function_76bf4ecde7d398cf()
 {
@@ -825,8 +833,8 @@ function private function_76bf4ecde7d398cf()
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bc2
+// Params 2
+// Checksum 0x0, Offset: 0x1f68
 // Size: 0x6f
 function function_837df9b0b5a7b55c( taskid, params )
 {
@@ -845,7 +853,7 @@ function function_837df9b0b5a7b55c( taskid, params )
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1c3a
+// Checksum 0x0, Offset: 0x1fe0
 // Size: 0xd4, Type: bool
 function private function_c6e6b038af956555( damage )
 {
@@ -874,8 +882,8 @@ function private function_c6e6b038af956555( damage )
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d17
+// Params 0
+// Checksum 0x0, Offset: 0x20bd
 // Size: 0x20f
 function function_faea99d818a8153b()
 {
@@ -942,8 +950,8 @@ function function_faea99d818a8153b()
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f2e
+// Params 0
+// Checksum 0x0, Offset: 0x22d4
 // Size: 0x74
 function entity_vulnerability_flagwatcher()
 {
@@ -961,8 +969,8 @@ function entity_vulnerability_flagwatcher()
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1faa
+// Params 0
+// Checksum 0x0, Offset: 0x2350
 // Size: 0x63
 function function_d26fb1d7aab7d7d1()
 {
@@ -983,7 +991,7 @@ function function_d26fb1d7aab7d7d1()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2015
+// Checksum 0x0, Offset: 0x23bb
 // Size: 0x29
 function private function_c1ed91aedcab4bf5()
 {
@@ -992,7 +1000,7 @@ function private function_c1ed91aedcab4bf5()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2047
+// Checksum 0x0, Offset: 0x23ed
 // Size: 0x19
 function private entity_reset()
 {
@@ -1003,7 +1011,7 @@ function private entity_reset()
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2068
+// Checksum 0x0, Offset: 0x240e
 // Size: 0x22
 function private function_1eb52fc1d7ca226a( params, var_c738c3b00598761c )
 {
@@ -1013,7 +1021,7 @@ function private function_1eb52fc1d7ca226a( params, var_c738c3b00598761c )
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2092
+// Checksum 0x0, Offset: 0x2438
 // Size: 0x4e
 function private function_d8565ebf3d8932bc()
 {

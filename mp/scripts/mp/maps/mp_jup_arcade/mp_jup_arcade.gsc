@@ -10,7 +10,7 @@
 #namespace mp_jup_arcade;
 
 // Namespace mp_jup_arcade / scripts\mp\maps\mp_jup_arcade\mp_jup_arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ca
 // Size: 0xa7
 function main()
@@ -31,7 +31,7 @@ function main()
 }
 
 // Namespace mp_jup_arcade / scripts\mp\maps\mp_jup_arcade\mp_jup_arcade
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x279
 // Size: 0x95
 function gondola_spawn()
@@ -46,7 +46,7 @@ function gondola_spawn()
 }
 
 // Namespace mp_jup_arcade / scripts\mp\maps\mp_jup_arcade\mp_jup_arcade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x316
 // Size: 0xae
 function gondola_movement( var_46e9c3ad7bbcde82 )
@@ -66,7 +66,7 @@ function gondola_movement( var_46e9c3ad7bbcde82 )
 }
 
 // Namespace mp_jup_arcade / scripts\mp\maps\mp_jup_arcade\mp_jup_arcade
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3cc
 // Size: 0x39
 function function_9637cf9e39bf1ab7( var_46e9c3ad7bbcde82, targetorigin, targetangle, var_4187040fa98742ee )

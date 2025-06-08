@@ -5,7 +5,7 @@
 #namespace dialogue;
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0x216
 function say( alias, priority, timeout, overlap, delay, scope )
@@ -66,7 +66,7 @@ function say( alias, priority, timeout, overlap, delay, scope )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6cb
 // Size: 0x65
 function function_4495922f7faaffe7( radio_dist, alias )
@@ -88,7 +88,7 @@ function function_4495922f7faaffe7( radio_dist, alias )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x738
 // Size: 0x64
 function say_sequence( sequence, priority, timeout, overlap, delay, scope, endons )
@@ -98,7 +98,7 @@ function say_sequence( sequence, priority, timeout, overlap, delay, scope, endon
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x7a5
 // Size: 0x49
 function function_b0c2a659a5c2761f( endons, sequence, priority, timeout, overlap, delay, scope )
@@ -107,7 +107,7 @@ function function_b0c2a659a5c2761f( endons, sequence, priority, timeout, overlap
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x7f7
 // Size: 0x49
 function function_c9a09b3ba9c68f8d( delay, sequence, priority, timeout, overlap, scope, endons )
@@ -116,7 +116,7 @@ function function_c9a09b3ba9c68f8d( delay, sequence, priority, timeout, overlap,
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x849
 // Size: 0x44
 function function_72b26ba6d062726( sequence, priority, timeout, overlap, delay, endons )
@@ -125,7 +125,7 @@ function function_72b26ba6d062726( sequence, priority, timeout, overlap, delay, 
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x896
 // Size: 0xc8
 function stop_dialogue( cancel_queued_vo, cancel_delayed_vo )
@@ -161,7 +161,7 @@ function stop_dialogue( cancel_queued_vo, cancel_delayed_vo )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x966
 // Size: 0x52
 function function_bb9f95455e7b6dfe( include_chatter )
@@ -185,7 +185,7 @@ function function_bb9f95455e7b6dfe( include_chatter )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9c0
 // Size: 0x43
 function function_49ce27ac35596e2d( include_chatter )
@@ -206,7 +206,7 @@ function function_49ce27ac35596e2d( include_chatter )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa0b
 // Size: 0xbe
 function function_a583984eb78c6c32( include_chatter )
@@ -231,7 +231,7 @@ function function_a583984eb78c6c32( include_chatter )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad1
 // Size: 0x24
 function function_4adf4f4524e8c0fd( include_chatter )
@@ -245,7 +245,7 @@ function function_4adf4f4524e8c0fd( include_chatter )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xafd
 // Size: 0x3b
 function say_self( alias, priority, timeout, overlap, delay )
@@ -254,7 +254,7 @@ function say_self( alias, priority, timeout, overlap, delay )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb41
 // Size: 0x3b
 function say_team( alias, priority, timeout, overlap, delay )
@@ -263,7 +263,7 @@ function say_team( alias, priority, timeout, overlap, delay )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb85
 // Size: 0x3b
 function say_global( alias, priority, timeout, overlap, delay )
@@ -272,7 +272,7 @@ function say_global( alias, priority, timeout, overlap, delay )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xbc9
 // Size: 0x3f
 function say_delayed( delay, alias, priority, timeout, overlap, scope )
@@ -281,7 +281,7 @@ function say_delayed( delay, alias, priority, timeout, overlap, scope )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xc11
 // Size: 0x3b
 function function_8c1bbaeb5d3fe61a( delay, alias, priority, timeout, overlap )
@@ -290,7 +290,7 @@ function function_8c1bbaeb5d3fe61a( delay, alias, priority, timeout, overlap )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xc55
 // Size: 0x3b
 function function_fc0eb6b81c66c661( delay, alias, priority, timeout, overlap )
@@ -299,7 +299,7 @@ function function_fc0eb6b81c66c661( delay, alias, priority, timeout, overlap )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xc99
 // Size: 0x3b
 function function_8c12d3c7fd8bc4ff( delay, alias, priority, timeout, overlap )
@@ -308,7 +308,7 @@ function function_8c12d3c7fd8bc4ff( delay, alias, priority, timeout, overlap )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcdd
 // Size: 0xb6
 function function_cb329cf8896edeaa( team, cancel_queued_vo, cancel_delayed_vo )
@@ -327,7 +327,7 @@ function function_cb329cf8896edeaa( team, cancel_queued_vo, cancel_delayed_vo )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd9b
 // Size: 0x81
 function function_54d3bd59bff7e908( cancel_queued_vo, cancel_delayed_vo )
@@ -344,7 +344,7 @@ function function_54d3bd59bff7e908( cancel_queued_vo, cancel_delayed_vo )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe24
 // Size: 0xc4, Type: bool
 function is_speaking()
@@ -379,7 +379,7 @@ function is_speaking()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xef1
 // Size: 0x34, Type: bool
 function function_8951f1a8a6f683c9()
@@ -395,7 +395,7 @@ function function_8951f1a8a6f683c9()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf2e
 // Size: 0x34, Type: bool
 function function_754c9897f3b89964()
@@ -411,7 +411,7 @@ function function_754c9897f3b89964()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf6b
 // Size: 0x44, Type: bool
 function function_ed8a0ba27b9104c5()
@@ -427,7 +427,7 @@ function function_ed8a0ba27b9104c5()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfb8
 // Size: 0x65, Type: bool
 function function_d871f93553913276( team )
@@ -444,7 +444,7 @@ function function_d871f93553913276( team )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1026
 // Size: 0xb4, Type: bool
 function function_6c31b0b0edd184ed( speaker_array, cooldown )
@@ -472,7 +472,7 @@ function function_6c31b0b0edd184ed( speaker_array, cooldown )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10e3
 // Size: 0x1d, Type: bool
 function function_e9e38931019c791f()
@@ -486,7 +486,7 @@ function function_e9e38931019c791f()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1109
 // Size: 0x102, Type: bool
 function function_5731e26b3ff6304d( timeout )
@@ -537,7 +537,7 @@ function function_5731e26b3ff6304d( timeout )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1214
 // Size: 0x5e, Type: bool
 function wait_finish_speaking()
@@ -566,7 +566,7 @@ function wait_finish_speaking()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x127b
 // Size: 0x7c
 function function_bce20c074033e937()
@@ -594,7 +594,7 @@ function function_bce20c074033e937()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1300
 // Size: 0xdc
 function function_2e6c500b83dc82f5()
@@ -631,7 +631,7 @@ function function_2e6c500b83dc82f5()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13e5
 // Size: 0x54
 function function_53037a6cae32fb97( var, value )
@@ -646,7 +646,7 @@ function function_53037a6cae32fb97( var, value )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1441
 // Size: 0xef
 function function_c3a221031a1ff66c( priority, timeout, overlap, scope )
@@ -663,7 +663,7 @@ function function_c3a221031a1ff66c( priority, timeout, overlap, scope )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1538
 // Size: 0xe9
 function function_746d94ac5ed3ee5c()
@@ -681,7 +681,7 @@ function function_746d94ac5ed3ee5c()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1629
 // Size: 0xa5
 function nag_wait( flag_msg, nags, repeat_delay, initial_delay, loop_limit, invert_flag )
@@ -709,7 +709,7 @@ function nag_wait( flag_msg, nags, repeat_delay, initial_delay, loop_limit, inve
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x16d6
 // Size: 0x39
 function function_bace8af56ef0688b( flag_msg, nags, repeat_delay, initial_delay, loop_limit )
@@ -718,7 +718,7 @@ function function_bace8af56ef0688b( flag_msg, nags, repeat_delay, initial_delay,
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1717
 // Size: 0x139
 function function_91c23782840cf632( var_eb053d490b6594d2, nags, repeat_delay, initial_delay, loop_limit, invert_flag )
@@ -752,7 +752,7 @@ function function_91c23782840cf632( var_eb053d490b6594d2, nags, repeat_delay, in
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1858
 // Size: 0x156
 function function_91cb20828416e24b( var_eb053d490b6594d2, nags, repeat_delay, initial_delay, loop_limit, invert_flag )
@@ -792,7 +792,7 @@ function function_91cb20828416e24b( var_eb053d490b6594d2, nags, repeat_delay, in
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x19b6
 // Size: 0xb7
 function nagtill( endon_data, nags, repeat_delay, initial_delay, loop_limit )
@@ -814,7 +814,7 @@ function nagtill( endon_data, nags, repeat_delay, initial_delay, loop_limit )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1a75
 // Size: 0xbe
 function function_a60fea4f51763a4f( endon_data, nags, repeat_delay, initial_delay, loop_limit )
@@ -842,7 +842,7 @@ function function_a60fea4f51763a4f( endon_data, nags, repeat_delay, initial_dela
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b3b
 // Size: 0x58
 function growing_delay( start, end, count )
@@ -855,7 +855,7 @@ function growing_delay( start, end, count )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b9c
 // Size: 0x224
 function waitfor( delay, params )
@@ -933,7 +933,7 @@ function waitfor( delay, params )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1dc8
 // Size: 0xc1
 function waitfor_any( delays, params )
@@ -958,7 +958,7 @@ function waitfor_any( delays, params )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1e92
 // Size: 0x46
 function function_d74571b48c6d763b( delay, msg, notify_ent, params )
@@ -973,7 +973,7 @@ function function_d74571b48c6d763b( delay, msg, notify_ent, params )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1ee0
 // Size: 0x45
 function function_5cf2ff53d6a7c938( delays, msg, notify_ent, params )
@@ -988,7 +988,7 @@ function function_5cf2ff53d6a7c938( delays, msg, notify_ent, params )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f2d
 // Size: 0x44
 function waitfor_ent( delay, params, msg )
@@ -999,7 +999,7 @@ function waitfor_ent( delay, params, msg )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f7a
 // Size: 0x60
 function call_with_params( func, params )
@@ -1023,7 +1023,7 @@ function call_with_params( func, params )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fe2
 // Size: 0x1bc
 function call_with_params_script( func, params )
@@ -1069,7 +1069,7 @@ function call_with_params_script( func, params )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21a6
 // Size: 0x1c7
 function call_with_params_builtin( func, params )
@@ -1115,7 +1115,7 @@ function call_with_params_builtin( func, params )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2375
 // Size: 0x1bc
 function function_8093ac75aa6abb73( func, params )
@@ -1161,7 +1161,7 @@ function function_8093ac75aa6abb73( func, params )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2539
 // Size: 0x4e
 function function_ea6f404468959fd2( timeout, func, params )
@@ -1173,7 +1173,7 @@ function function_ea6f404468959fd2( timeout, func, params )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x2590
 // Size: 0x21f
 function create_vo_data( sequence, priority, timeout, overlap, delay, scope, endons )
@@ -1224,7 +1224,7 @@ function create_vo_data( sequence, priority, timeout, overlap, delay, scope, end
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27b8
 // Size: 0x3d
 function function_e80002fd834a68b3( vo_data )
@@ -1245,7 +1245,7 @@ function function_e80002fd834a68b3( vo_data )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x27fe
 // Size: 0x245
 function queue_say( speaker, alias, priority, timeout, overlap, delay )
@@ -1299,7 +1299,7 @@ function queue_say( speaker, alias, priority, timeout, overlap, delay )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a4b
 // Size: 0xfb
 function check_interrupt( overlap, scope_ent )
@@ -1327,7 +1327,7 @@ function check_interrupt( overlap, scope_ent )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b4e
 // Size: 0x195
 function queue_sequence()
@@ -1376,7 +1376,7 @@ function queue_sequence()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cec
 // Size: 0x1de
 function execute_sequence()
@@ -1430,7 +1430,7 @@ function execute_sequence()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ed2
 // Size: 0x3b0
 function function_2f5f29da6f0f73e6()
@@ -1541,7 +1541,8 @@ function function_2f5f29da6f0f73e6()
         self.index--;
         sequence = [];
         
-        for (i = 0; i < self.sequence.size; i++) {
+        for ( i = 0; i < self.sequence.size ; i++ )
+        {
             if ( i == self.index )
             {
                 foreach ( item in segment )
@@ -1563,7 +1564,7 @@ function function_2f5f29da6f0f73e6()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x328b
 // Size: 0x48
 function function_139ccec48e7e3539( reason )
@@ -1581,7 +1582,7 @@ function function_139ccec48e7e3539( reason )
 /#
 
     // Namespace dialogue / scripts\anim\dialogue
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x32db
     // Size: 0x2b1, Type: dev
     function function_ac754fead4684fbc()
@@ -1593,7 +1594,8 @@ function function_139ccec48e7e3539( reason )
             sequence = self.sequence;
             ln_height = 0;
             
-            for (i = 0; i < sequence.size; i++) {
+            for ( i = 0; i < sequence.size ; i++ )
+            {
                 display_ln = undefined;
                 segment = sequence[ i ];
                 
@@ -1652,7 +1654,7 @@ function function_139ccec48e7e3539( reason )
 #/
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3594
 // Size: 0x10b
 function switch_speaker( new_speaker )
@@ -1679,7 +1681,7 @@ function switch_speaker( new_speaker )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36a7
 // Size: 0x9b, Type: bool
 function function_19e262da812ccbef( delay, var_30356ee6394ecf19 )
@@ -1710,7 +1712,7 @@ function function_19e262da812ccbef( delay, var_30356ee6394ecf19 )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x374b
 // Size: 0x98
 function function_7b52f05da542c2ff( alias, overlap, scope_ent, receivers )
@@ -1745,7 +1747,7 @@ function function_7b52f05da542c2ff( alias, overlap, scope_ent, receivers )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x37ec
 // Size: 0x62
 function function_e7c1c9dee13137aa( alias, receivers )
@@ -1764,7 +1766,7 @@ function function_e7c1c9dee13137aa( alias, receivers )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3857
 // Size: 0xac, Type: bool
 function function_f2a79001721945a( vo_data, timeout, endons )
@@ -1806,7 +1808,7 @@ function private function_623d7aa584b346ac()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3976
 // Size: 0xc2
 function function_ab8711048f02259d( scope_ents )
@@ -1882,7 +1884,7 @@ function private function_ca829a8ed4c9efbe( scope_ent )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b35
 // Size: 0x1db
 function has_priority( var_372fac4e460e7107, allow_equal )
@@ -1947,7 +1949,8 @@ function private function_5ee32a2da994afab( struct )
     
     struct.speaker.var_3968de209a1c2b97++;
     
-    for (i = self.vo_queue.size; true; i--) {
+    for ( i = self.vo_queue.size; true ; i-- )
+    {
         if ( i == 0 || self.vo_queue[ i - 1 ].priority >= struct.priority )
         {
             self.vo_queue[ i ] = struct;
@@ -1966,7 +1969,8 @@ function private function_4866daf9001cdb5f( struct )
 {
     found = 0;
     
-    for (i = 0; i < self.vo_queue.size; i++) {
+    for ( i = 0; i < self.vo_queue.size ; i++ )
+    {
         if ( found )
         {
             self.vo_queue[ i - 1 ] = self.vo_queue[ i ];
@@ -1991,12 +1995,13 @@ function private function_4866daf9001cdb5f( struct )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3eb7
 // Size: 0xc0
 function function_797820cad48747ef( vo_data )
 {
-    for (i = self.vo_active.size; true; i--) {
+    for ( i = self.vo_active.size; true ; i-- )
+    {
         if ( i == 0 || isalive( self.vo_active[ i - 1 ].speaker ) && isdefined( self.vo_active[ i - 1 ].priority ) && self.vo_active[ i - 1 ].priority >= vo_data.priority )
         {
             self.vo_active[ i ] = vo_data;
@@ -2008,7 +2013,7 @@ function function_797820cad48747ef( vo_data )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f7f
 // Size: 0x9d
 function remove_vo_data( vo_data )
@@ -2020,7 +2025,8 @@ function remove_vo_data( vo_data )
     
     found = 0;
     
-    for (i = 0; i < self.vo_active.size; i++) {
+    for ( i = 0; i < self.vo_active.size ; i++ )
+    {
         if ( found )
         {
             self.vo_active[ i - 1 ] = self.vo_active[ i ];
@@ -2040,7 +2046,7 @@ function remove_vo_data( vo_data )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4024
 // Size: 0xb0
 function function_28e38eefd3cc4ab()
@@ -2087,7 +2093,7 @@ function private function_a940efae252424c5()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4117
 // Size: 0x17
 function function_4fba9e11ee207d7c( alias )
@@ -2096,7 +2102,7 @@ function function_4fba9e11ee207d7c( alias )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4137
 // Size: 0x73
 function function_6d4c7d2bd5969057( dialogue )
@@ -2115,7 +2121,7 @@ function function_6d4c7d2bd5969057( dialogue )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x41b2
 // Size: 0x94
 function function_5baebd9837531e1f( alias, receivers )
@@ -2139,7 +2145,7 @@ function function_5baebd9837531e1f( alias, receivers )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x424e
 // Size: 0x4c
 function function_f5eb5b4d0e6714aa( tag, originoffset, anglesoffset, istemp )
@@ -2153,7 +2159,7 @@ function function_f5eb5b4d0e6714aa( tag, originoffset, anglesoffset, istemp )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x42a3
 // Size: 0x17b
 function function_3a8815118a9b0d69( tag, originoffset, anglesoffset, istemp )
@@ -2204,7 +2210,7 @@ function function_3a8815118a9b0d69( tag, originoffset, anglesoffset, istemp )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4427
 // Size: 0x29
 function function_d45390dc3a16d16( parent )
@@ -2217,7 +2223,7 @@ function function_d45390dc3a16d16( parent )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4458
 // Size: 0x1a5
 function function_52846cd9b5efeafe( tag, originoffset, anglesoffset, istemp )
@@ -2264,7 +2270,7 @@ function function_52846cd9b5efeafe( tag, originoffset, anglesoffset, istemp )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4606
 // Size: 0xc
 function get_radio_alias( alias )
@@ -2273,7 +2279,7 @@ function get_radio_alias( alias )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x461b
 // Size: 0x34
 function function_3e5d12eb11d543a2( emitter )
@@ -2293,7 +2299,7 @@ function function_3e5d12eb11d543a2( emitter )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4657
 // Size: 0x55
 function function_690ccae4e694f51e( emitter )
@@ -2314,7 +2320,7 @@ function function_690ccae4e694f51e( emitter )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46b4
 // Size: 0x52, Type: bool
 function function_c0af485270de3fbf( text )
@@ -2324,7 +2330,7 @@ function function_c0af485270de3fbf( text )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4711
 // Size: 0xde
 function function_fb381a52cc8f3784( hide2d, hide3d )
@@ -2364,7 +2370,7 @@ function function_fb381a52cc8f3784( hide2d, hide3d )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x47f7
 // Size: 0xed
 function function_1b22b2d53ba5b092( text, duration )
@@ -2405,7 +2411,7 @@ function function_1b22b2d53ba5b092( text, duration )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x48ec
 // Size: 0x34
 function function_f9e725c7fd059300( text )
@@ -2415,7 +2421,7 @@ function function_f9e725c7fd059300( text )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4929
 // Size: 0x4cd
 function function_932c63c904570806( text )
@@ -2554,7 +2560,7 @@ function function_932c63c904570806( text )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4dff
 // Size: 0x8a
 function get_team_color( team )
@@ -2580,7 +2586,7 @@ function get_team_color( team )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e91
 // Size: 0xe6
 function get_name()
@@ -2623,7 +2629,7 @@ function get_name()
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4f7f
 // Size: 0xf3
 function function_866a3b95a50aa7c2( height, endy, lineheight, var_7794fdd4649e6d7f )
@@ -2653,7 +2659,7 @@ function function_866a3b95a50aa7c2( height, endy, lineheight, var_7794fdd4649e6d
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x507a
 // Size: 0x10b
 function function_f149afdd57e23278( hud_elems, holdtime )
@@ -2682,7 +2688,7 @@ function function_f149afdd57e23278( hud_elems, holdtime )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x518d
 // Size: 0x2b, Type: bool
 function function_c0f47bf696bd27ac( holdtime )
@@ -2693,7 +2699,7 @@ function function_c0f47bf696bd27ac( holdtime )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x51c1
 // Size: 0x132
 function nag_loop( nags, repeat_delay, initial_delay, loop_limit )
@@ -2719,7 +2725,8 @@ function nag_loop( nags, repeat_delay, initial_delay, loop_limit )
     
     do_nag( nags, initial_delay );
     
-    for (nag_count = 1; !isdefined( loop_limit ) || nag_count / nags.items.size < loop_limit; nag_count++) {
+    for ( nag_count = 1; !isdefined( loop_limit ) || nag_count / nags.items.size < loop_limit ; nag_count++ )
+    {
         do_nag( nags, repeat_delay );
         waitframe();
     }
@@ -2728,7 +2735,7 @@ function nag_loop( nags, repeat_delay, initial_delay, loop_limit )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x52fb
 // Size: 0x25d
 function do_nag( nags, delay )
@@ -2809,7 +2816,7 @@ function do_nag( nags, delay )
 }
 
 // Namespace dialogue / scripts\anim\dialogue
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5560
 // Size: 0x49
 function started_nag()

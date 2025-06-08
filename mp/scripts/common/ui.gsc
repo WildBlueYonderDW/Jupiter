@@ -3,7 +3,7 @@
 #namespace ui;
 
 // Namespace ui / scripts\common\ui
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa3
 // Size: 0x92
 function lui_registercallback( channel, callback )
@@ -22,7 +22,7 @@ function lui_registercallback( channel, callback )
 }
 
 // Namespace ui / scripts\common\ui
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13d
 // Size: 0xbf
 function lui_notify_callback( channel, value, value2 )

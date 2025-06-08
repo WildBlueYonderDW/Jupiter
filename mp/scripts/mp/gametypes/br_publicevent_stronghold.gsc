@@ -7,7 +7,7 @@
 
 // Namespace br_publicevent_stronghold / scripts\mp\gametypes\br_publicevent_stronghold
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x108
+// Checksum 0x0, Offset: 0x107
 // Size: 0x17
 function autoexec main()
 {
@@ -15,8 +15,8 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_stronghold / scripts\mp\gametypes\br_publicevent_stronghold
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x127
+// Params 1
+// Checksum 0x0, Offset: 0x126
 // Size: 0x4f
 function init( eventinfo )
 {
@@ -27,8 +27,8 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_stronghold / scripts\mp\gametypes\br_publicevent_stronghold
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e
+// Params 0
+// Checksum 0x0, Offset: 0x17d
 // Size: 0xb
 function postinitfunc()
 {
@@ -36,8 +36,8 @@ function postinitfunc()
 }
 
 // Namespace br_publicevent_stronghold / scripts\mp\gametypes\br_publicevent_stronghold
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x191
+// Params 0
+// Checksum 0x0, Offset: 0x190
 // Size: 0x2d
 function function_1386247d217a2b2e()
 {
@@ -48,8 +48,8 @@ function function_1386247d217a2b2e()
 }
 
 // Namespace br_publicevent_stronghold / scripts\mp\gametypes\br_publicevent_stronghold
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c6
+// Params 0
+// Checksum 0x0, Offset: 0x1c5
 // Size: 0x4, Type: bool
 function validatefunc()
 {
@@ -57,8 +57,8 @@ function validatefunc()
 }
 
 // Namespace br_publicevent_stronghold / scripts\mp\gametypes\br_publicevent_stronghold
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d3
+// Params 0
+// Checksum 0x0, Offset: 0x1d2
 // Size: 0x2d
 function waitfunc()
 {
@@ -69,8 +69,8 @@ function waitfunc()
 }
 
 // Namespace br_publicevent_stronghold / scripts\mp\gametypes\br_publicevent_stronghold
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x208
+// Params 0
+// Checksum 0x0, Offset: 0x207
 // Size: 0x11
 function activatefunc()
 {

@@ -4,7 +4,7 @@
 #namespace namespace_62dd9dc92ab04572;
 
 // Namespace namespace_62dd9dc92ab04572 / namespace_10ca308be68952f
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0xb0
 // Size: 0x279
 function createevent( lootradius, lootnum, boxradius, boxnum, contractradius, contractnum, var_936a53f85271d3f2, var_e690066f4b78c7a2 )
@@ -52,7 +52,7 @@ function createevent( lootradius, lootnum, boxradius, boxnum, contractradius, co
 }
 
 // Namespace namespace_62dd9dc92ab04572 / namespace_10ca308be68952f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x331
 // Size: 0x1b4
 function getevent()
@@ -83,7 +83,7 @@ function getevent()
 }
 
 // Namespace namespace_62dd9dc92ab04572 / namespace_10ca308be68952f
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x4ee
 // Size: 0x159
 function getloot( event, centre, radius, num, itemnames, checkfunc )
@@ -111,7 +111,7 @@ function getloot( event, centre, radius, num, itemnames, checkfunc )
 }
 
 // Namespace namespace_62dd9dc92ab04572 / namespace_10ca308be68952f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x64f
 // Size: 0x5e, Type: bool
 function function_dc0241948a20b580( loot )

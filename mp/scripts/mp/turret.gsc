@@ -7,7 +7,7 @@
 #namespace turret;
 
 // Namespace turret / scripts\mp\turret
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18c
 // Size: 0xb2
 function init()
@@ -31,7 +31,7 @@ function init()
 }
 
 // Namespace turret / scripts\mp\turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x246
 // Size: 0x259
 function add_turret( turret )
@@ -89,7 +89,7 @@ function add_turret( turret )
 }
 
 // Namespace turret / scripts\mp\turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a7
 // Size: 0xec
 function turretthink( turret )
@@ -124,7 +124,7 @@ function turretthink( turret )
 }
 
 // Namespace turret / scripts\mp\turret
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x59b
 // Size: 0x3d
 function endturretusewatch( player, turret )
@@ -147,7 +147,7 @@ function endturretusewatch( player, turret )
 }
 
 // Namespace turret / scripts\mp\turret
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e0
 // Size: 0x1b
 function endturretonplayer( player )

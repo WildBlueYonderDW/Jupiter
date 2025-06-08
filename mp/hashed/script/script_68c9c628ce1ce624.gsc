@@ -3,7 +3,7 @@
 #namespace namespace_8385be0808a3216c;
 
 // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe1
 // Size: 0x1e5
 function function_96f86549e383586( player, var_efa963805ba84047 )
@@ -22,7 +22,8 @@ function function_96f86549e383586( player, var_efa963805ba84047 )
         return;
     }
     
-    for (i = 0; i < var_efa963805ba84047.size; i++) {
+    for ( i = 0; i < var_efa963805ba84047.size ; i++ )
+    {
         vfx = var_efa963805ba84047[ i ];
         wait vfx.var_da3878c8f78d9c9c;
         
@@ -53,7 +54,7 @@ function function_96f86549e383586( player, var_efa963805ba84047 )
 }
 
 // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ce
 // Size: 0x169
 function function_5842ae542da36283( var_34ef5453effff2cf )
@@ -103,7 +104,7 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
 /#
 
     // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x4c7
     // Size: 0xad, Type: dev
     function function_75e0c9d28c4fa84b( player, var_c693843d9c5bf5b6 )
@@ -139,7 +140,7 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
     }
 
     // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x57c
     // Size: 0x5c, Type: dev
     function function_5e87edc0b6c7f8d9()
@@ -160,7 +161,7 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
     }
 
     // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5e0
     // Size: 0x10, Type: dev
     function function_33bec7768bb73450()
@@ -169,7 +170,7 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
     }
 
     // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5f8
     // Size: 0x20, Type: dev
     function function_420969790027e6f()
@@ -178,7 +179,7 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
     }
 
     // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x620
     // Size: 0x1b, Type: dev
     function function_4768d80bee0f64ae()
@@ -192,7 +193,7 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
     }
 
     // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x643
     // Size: 0xe8, Type: dev
     function function_e8683d8412fba24f( player, var_aa9604938f87117c )
@@ -240,7 +241,7 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
     }
 
     // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x733
     // Size: 0x10, Type: dev
     function function_a214d0f4e69fa9d7()
@@ -249,7 +250,7 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
     }
 
     // Namespace namespace_8385be0808a3216c / namespace_2a06ffe6a2b4132
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x74b
     // Size: 0x3b, Type: dev
     function function_135f9f255157ecd6( callback )
@@ -349,7 +350,8 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
         
         for ( ;; )
         {
-            for (i = 0; i < level.var_4775f352c850b592.size; i++) {
+            for ( i = 0; i < level.var_4775f352c850b592.size ; i++ )
+            {
                 if ( player buttonpressed( "<dev string:x410>" + scripts\engine\utility::string( i + 1 ) ) )
                 {
                     if ( !level.var_4775f352c850b592[ i ] )
@@ -451,7 +453,8 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
         var_88f100313f3b096d = "<dev string:x438>";
         var_2606386fb5273aea = 0;
         
-        for (i = 0; i < filecontent.size; i++) {
+        for ( i = 0; i < filecontent.size ; i++ )
+        {
             if ( filecontent[ i ] == "<dev string:xcd0>" )
             {
                 var_2606386fb5273aea = !var_2606386fb5273aea;
@@ -469,7 +472,8 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
         currentline = "<dev string:x438>";
         var_83dbc5b05ae7eaf9 = [];
         
-        for (i = 0; i < var_88f100313f3b096d.size; i++) {
+        for ( i = 0; i < var_88f100313f3b096d.size ; i++ )
+        {
             if ( ( var_88f100313f3b096d[ i ] == "<dev string:x6d0>" || i == var_88f100313f3b096d.size - 1 ) && currentline != "<dev string:x438>" && currentline != "<dev string:x6d0>" )
             {
                 var_83dbc5b05ae7eaf9[ var_83dbc5b05ae7eaf9.size ] = currentline;
@@ -490,8 +494,10 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
         tempstring = "<dev string:x438>";
         var_432a7c3e01871183 = 0;
         
-        for (i = 0; i < var_83dbc5b05ae7eaf9.size; i++) {
-            for (j = 0; j < var_83dbc5b05ae7eaf9[ i ].size; j++) {
+        for ( i = 0; i < var_83dbc5b05ae7eaf9.size ; i++ )
+        {
+            for ( j = 0; j < var_83dbc5b05ae7eaf9[ i ].size ; j++ )
+            {
                 if ( var_83dbc5b05ae7eaf9[ i ][ j ] == var_908fb7cd714520c9 && vfx_structs.size != 0 )
                 {
                     var_cf780a38f1ac0432[ var_cf780a38f1ac0432.size ] = arraycopy( vfx_structs );
@@ -594,7 +600,8 @@ function private function_8763c8d36e19655e( type, weaponname, startlocation, end
         iprintlnbold( "<dev string:xce4>" + "<dev string:x417>" + "<dev string:xcfd>" );
         level.var_4775f352c850b592 = [];
         
-        for (i = 0; i < var_cf780a38f1ac0432.size; i++) {
+        for ( i = 0; i < var_cf780a38f1ac0432.size ; i++ )
+        {
             level.var_4775f352c850b592[ level.var_4775f352c850b592.size ] = 0;
         }
         

@@ -3,7 +3,7 @@
 #namespace namespace_a9be6690006809fc;
 
 // Namespace namespace_a9be6690006809fc / namespace_500325c20d920621
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8f
 // Size: 0xff
 function function_c43f9411e4146fbd()

@@ -9,7 +9,7 @@
 #namespace bounty;
 
 // Namespace bounty / scripts\mp\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x148
 // Size: 0x4b
 function init()
@@ -26,7 +26,7 @@ function init()
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19b
 // Size: 0x26
 function onplayerconnect()
@@ -39,7 +39,7 @@ function onplayerconnect()
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c9
 // Size: 0x24
 function bountyinit()
@@ -53,7 +53,7 @@ function bountyinit()
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f5
 // Size: 0x2f
 function onplayerdisconnect( player )
@@ -65,7 +65,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22c
 // Size: 0x2f
 function onplayerjoinedspectators( player )
@@ -81,7 +81,7 @@ function onplayerjoinedspectators( player )
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x263
 // Size: 0x2f
 function onplayerjoinedteam( player )
@@ -97,12 +97,13 @@ function onplayerjoinedteam( player )
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29a
 // Size: 0x3b
 function playerregisterbountyindex()
 {
-    for (index = 0; isdefined( level.bounty_index[ index ] ); index++) {
+    for ( index = 0; isdefined( level.bounty_index[ index ] ) ; index++ )
+    {
     }
     
     level.bounty_index[ index ] = self;
@@ -110,7 +111,7 @@ function playerregisterbountyindex()
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dd
 // Size: 0x23
 function playergetbountypoints()
@@ -120,7 +121,7 @@ function playergetbountypoints()
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x309
 // Size: 0x4f
 function playersetbountypoints( bountypoints )
@@ -131,7 +132,7 @@ function playersetbountypoints( bountypoints )
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x360
 // Size: 0x24
 function playerresetbountypoints( wait_time )
@@ -153,7 +154,7 @@ function playerresetbountypoints( wait_time )
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38c
 // Size: 0x26
 function playerresetbountystreak( wait_time )
@@ -175,7 +176,7 @@ function playerresetbountystreak( wait_time )
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ba
 // Size: 0x34
 function bountyincreasestreak( amount )
@@ -195,7 +196,7 @@ function bountyincreasestreak( amount )
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f6
 // Size: 0x4f
 function bountyconvert()
@@ -215,7 +216,7 @@ function bountyconvert()
 }
 
 // Namespace bounty / scripts\mp\bounty
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x44d
 // Size: 0x8b
 function bountycollect( victim_bounty, victim_pos )
@@ -229,7 +230,8 @@ function bountycollect( victim_bounty, victim_pos )
     {
         if ( victim_bounty > 0 )
         {
-            for (i = 0; i < victim_bounty; i++) {
+            for ( i = 0; i < victim_bounty ; i++ )
+            {
                 thread doscoreevent( #"bounty" );
                 bountyincreasestreak();
                 playfx( getfx( "vfx_mo_money_cash_exp" ), victim_pos + ( 0, 0, 45 ) );

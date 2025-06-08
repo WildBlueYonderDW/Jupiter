@@ -4,7 +4,7 @@
 #namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs;
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4cb
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x540
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5af
 // Size: 0xd4
 function createstructs( fe, us, cf )
@@ -67,7 +67,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68b
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -76,7 +76,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x695
 // Size: 0xe
 function cleanup()
@@ -85,7 +85,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ab
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -100,7 +100,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x71d
 // Size: 0xe7
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -137,7 +137,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x80c
 // Size: 0x18b
 function function_56cc6c43683722de( fe, us, cf )
@@ -158,7 +158,7 @@ function function_56cc6c43683722de( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x99f
 // Size: 0x18b
 function function_f7bcb33553b96986( fe, us, cf )
@@ -179,7 +179,7 @@ function function_f7bcb33553b96986( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb32
 // Size: 0x18b
 function function_ec01d555e882e5ae( fe, us, cf )
@@ -200,7 +200,7 @@ function function_ec01d555e882e5ae( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcc5
 // Size: 0x18b
 function function_790e4b98abd7a14d( fe, us, cf )
@@ -221,7 +221,7 @@ function function_790e4b98abd7a14d( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe58
 // Size: 0x18b
 function function_4d6cbdc979e05636( fe, us, cf )
@@ -242,7 +242,7 @@ function function_4d6cbdc979e05636( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xfeb
 // Size: 0x18b
 function function_c962862d2e40e1ff( fe, us, cf )
@@ -263,7 +263,7 @@ function function_c962862d2e40e1ff( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x117e
 // Size: 0x18b
 function function_c92522ed8b6925f7( fe, us, cf )
@@ -284,7 +284,7 @@ function function_c92522ed8b6925f7( fe, us, cf )
 }
 
 // Namespace mp_jup_st_g_ob_activities_unstable_rift_obelisk_cs / namespace_c4351e63e5ee1a1b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1311
 // Size: 0x5d6
 function function_6da2952367672ac0()

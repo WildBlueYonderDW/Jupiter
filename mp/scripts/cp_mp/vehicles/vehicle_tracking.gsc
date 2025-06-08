@@ -4,7 +4,7 @@
 #namespace vehicle_tracking;
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a8
 // Size: 0x1bc
 function _spawnvehicle( spawndata, faildata )
@@ -68,7 +68,7 @@ function _spawnvehicle( spawndata, faildata )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x36d
 // Size: 0x11d
 function _spawnhelicopter( owner, origin, angles, type, modelname )
@@ -108,7 +108,7 @@ function _spawnhelicopter( owner, origin, angles, type, modelname )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x493
 // Size: 0xa2
 function _deletevehicle( vehicle )
@@ -132,7 +132,7 @@ function _deletevehicle( vehicle )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x53e
 // Size: 0x10e
 function function_d21abb198361e610( vehicle )
@@ -173,7 +173,7 @@ function function_d21abb198361e610( vehicle )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x654
 // Size: 0x15, Type: bool
 function canspawnvehicle()
@@ -182,7 +182,7 @@ function canspawnvehicle()
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x672
 // Size: 0xb
 function getvehiclecount()
@@ -191,7 +191,7 @@ function getvehiclecount()
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x686
 // Size: 0x63, Type: bool
 function reservevehicle( count )
@@ -217,7 +217,7 @@ function reservevehicle( count )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f2
 // Size: 0x62
 function clearvehiclereservation( count )
@@ -240,7 +240,7 @@ function clearvehiclereservation( count )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x75c
 // Size: 0x16
 function getvehiclespawndata( vehicle )
@@ -249,7 +249,7 @@ function getvehiclespawndata( vehicle )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x77b
 // Size: 0x16c
 function copyvehiclespawndata( from, to )
@@ -272,7 +272,7 @@ function copyvehiclespawndata( from, to )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x8ef
 // Size: 0xef
 function vehicle_tracking_registerinstance( vehicle, owner, team, var_699ac4a9c9e9f0ec )
@@ -293,7 +293,7 @@ function vehicle_tracking_registerinstance( vehicle, owner, team, var_699ac4a9c9
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9e6
 // Size: 0x114
 function vehicle_tracking_deregisterinstance( vehicle )
@@ -329,7 +329,7 @@ function vehicle_tracking_deregisterinstance( vehicle )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb02
 // Size: 0x83
 function vehicle_tracking_limitgameinstances( vehiclename, limit, message )
@@ -341,7 +341,7 @@ function vehicle_tracking_limitgameinstances( vehiclename, limit, message )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xb8d
 // Size: 0x9e
 function function_5c8408cb68649308( vehiclename, spawntype, limit )
@@ -358,7 +358,7 @@ function function_5c8408cb68649308( vehiclename, spawntype, limit )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc33
 // Size: 0x83
 function vehicle_tracking_limitownerinstances( vehiclename, limit, message )
@@ -370,7 +370,7 @@ function vehicle_tracking_limitownerinstances( vehiclename, limit, message )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcbe
 // Size: 0x83
 function vehicle_tracking_limitteaminstances( vehiclename, limit, message )
@@ -382,7 +382,7 @@ function vehicle_tracking_limitteaminstances( vehiclename, limit, message )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xd49
 // Size: 0x30d, Type: bool
 function vehicle_tracking_atinstancelimit( vehiclename, owner, team, spawntype, sendmessage )
@@ -474,7 +474,7 @@ function vehicle_tracking_atinstancelimit( vehiclename, owner, team, spawntype, 
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x105f
 // Size: 0x75
 function vehicle_tracking_getgameinstances( vehiclename )
@@ -491,7 +491,7 @@ function vehicle_tracking_getgameinstances( vehiclename )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10dd
 // Size: 0xf2
 function vehicle_tracking_getownerinstances( vehiclename, owner )
@@ -518,7 +518,7 @@ function vehicle_tracking_getownerinstances( vehiclename, owner )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11d8
 // Size: 0xf2
 function vehicle_tracking_getteaminstances( vehiclename, team )
@@ -545,7 +545,7 @@ function vehicle_tracking_getteaminstances( vehiclename, team )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12d3
 // Size: 0xdf
 function vehicle_tracking_getgameinstancesforall()
@@ -571,7 +571,7 @@ function vehicle_tracking_getgameinstancesforall()
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13bb
 // Size: 0xb6, Type: bool
 function vehicle_tracking_instancesarelimited( vehiclename )
@@ -603,7 +603,7 @@ function vehicle_tracking_instancesarelimited( vehiclename )
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x147a
 // Size: 0x4f
 function function_59e95ab1ae37120a()
@@ -614,7 +614,7 @@ function function_59e95ab1ae37120a()
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d2
 // Size: 0x142
 function vehicle_tracking_init()
@@ -639,7 +639,7 @@ function vehicle_tracking_init()
 /#
 
     // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x161c
     // Size: 0x61, Type: dev
     function validatespawndata( spawndata )
@@ -666,7 +666,7 @@ function vehicle_tracking_init()
     }
 
     // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1685
     // Size: 0x59, Type: dev
     function function_3a040ff591c32b5c( spawndata )
@@ -692,7 +692,7 @@ function vehicle_tracking_init()
     }
 
     // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x16e6
     // Size: 0x77, Type: dev
     function function_298430b99bada795( spawndata )

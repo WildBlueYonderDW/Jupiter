@@ -8,7 +8,7 @@
 #namespace utility;
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a8
 // Size: 0xe
 function function_1686ecaabfdc542d()
@@ -17,7 +17,7 @@ function function_1686ecaabfdc542d()
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1be
 // Size: 0x3e
 function function_4808177c29f56fb9()
@@ -34,7 +34,7 @@ function function_4808177c29f56fb9()
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x204
 // Size: 0x44, Type: bool
 function function_eee51130cc8dce38()
@@ -43,7 +43,7 @@ function function_eee51130cc8dce38()
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x251
 // Size: 0x227
 function function_8d531048cd1abb65( enemy_veh )
@@ -103,7 +103,7 @@ function function_8d531048cd1abb65( enemy_veh )
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x481
 // Size: 0xb3, Type: bool
 function function_baefd5546ede6550( idamage, smeansofdeath, sweapon, partname, damageloc )
@@ -128,7 +128,7 @@ function function_baefd5546ede6550( idamage, smeansofdeath, sweapon, partname, d
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x53d
 // Size: 0x12c
 function function_3a2f47ea8b6a51b3( point, num_positions, path_radius )
@@ -155,7 +155,7 @@ function function_3a2f47ea8b6a51b3( point, num_positions, path_radius )
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x672
 // Size: 0xde, Type: bool
 function function_5fa782ec5794da38( vehicle )
@@ -192,7 +192,7 @@ function function_5fa782ec5794da38( vehicle )
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x759
 // Size: 0x7d
 function function_c06bd2ea8930eebf( org, array )
@@ -213,7 +213,7 @@ function function_c06bd2ea8930eebf( org, array )
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7df
 // Size: 0x123
 function function_aa7f0c3def8f14db( maxdist_sq, var_908ececf1b52292e )
@@ -250,7 +250,7 @@ function function_aa7f0c3def8f14db( maxdist_sq, var_908ececf1b52292e )
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x90b
 // Size: 0x5c
 function function_cbc170d40c70cddf( startpos, endpos, speed, convert )
@@ -267,7 +267,7 @@ function function_cbc170d40c70cddf( startpos, endpos, speed, convert )
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x970
 // Size: 0x2b1
 function function_7d8f81a94dc08a15( var_de361e39117ae3d1, exittype )
@@ -338,7 +338,7 @@ function function_7d8f81a94dc08a15( var_de361e39117ae3d1, exittype )
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xc29
 // Size: 0xa1
 function function_a66d296b49cf74bf( vehicle, vehicleanim, vehicletag, vehiclelocation, vehicleangles, var_47b4bdc915cff70d )
@@ -352,7 +352,7 @@ function function_a66d296b49cf74bf( vehicle, vehicleanim, vehicletag, vehicleloc
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcd3
 // Size: 0x1a
 function function_c4d871ccf375fb3b()
@@ -366,7 +366,7 @@ function function_c4d871ccf375fb3b()
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf5
 // Size: 0x1c
 function function_f4a6f33eeca44e04()
@@ -391,7 +391,7 @@ function private function_8a5e6a7db939e7b3()
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd39
 // Size: 0x5c
 function unloadvehicle()
@@ -412,7 +412,7 @@ function unloadvehicle()
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd9d
 // Size: 0xfe
 function function_5d3dd28d4c5af8b2( riders )
@@ -448,7 +448,7 @@ function function_5d3dd28d4c5af8b2( riders )
 }
 
 // Namespace utility / namespace_cbe993018617a21d
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xea3
 // Size: 0xef
 function function_64d2d74ab85e00bb( riders )

@@ -4,7 +4,7 @@
 #namespace vehicle_anim;
 
 // Namespace vehicle_anim / scripts\cp_mp\vehicles\vehicle_anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112
 // Size: 0x24
 function init_vehicles()
@@ -14,7 +14,7 @@ function init_vehicles()
 }
 
 // Namespace vehicle_anim / scripts\cp_mp\vehicles\vehicle_anim
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13e
 // Size: 0x4d
 function fastrope_anim( model, animation, flag )
@@ -25,7 +25,7 @@ function fastrope_anim( model, animation, flag )
 }
 
 // Namespace vehicle_anim / scripts\cp_mp\vehicles\vehicle_anim
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x193
 // Size: 0xb2
 function vehicle_anim( vehicle, animation )
@@ -49,7 +49,7 @@ function vehicle_anim( vehicle, animation )
 }
 
 // Namespace vehicle_anim / scripts\cp_mp\vehicles\vehicle_anim
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x13
 function vehicleaniminit()
@@ -58,7 +58,7 @@ function vehicleaniminit()
 }
 
 // Namespace vehicle_anim / scripts\cp_mp\vehicles\vehicle_anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x268
 // Size: 0xc
 function set_vehicle_anims_mkilo23_ai_infil( positions )
@@ -67,7 +67,7 @@ function set_vehicle_anims_mkilo23_ai_infil( positions )
 }
 
 // Namespace vehicle_anim / scripts\cp_mp\vehicles\vehicle_anim
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27d
 // Size: 0xc
 function set_vehicle_anims_umike( positions )

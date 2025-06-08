@@ -6,7 +6,7 @@
 #namespace mp_jup_zooquarium_lighting;
 
 // Namespace mp_jup_zooquarium_lighting / scripts\mp\maps\mp_jup_zooquarium\mp_jup_zooquarium_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe7
 // Size: 0x1e
 function main()

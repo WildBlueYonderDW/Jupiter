@@ -6,12 +6,12 @@
 #namespace br_events;
 
 // Namespace br_events / scripts\mp\gametypes\br_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c
 // Size: 0x5e
 function breventsinit()
 {
-    br_events = getdvarint( @"hash_bd271a0988589e8d", 0 );
+    br_events = getdvarint( @"scr_br_events", 0 );
     
     if ( !br_events )
     {
@@ -40,7 +40,7 @@ function breventsinit()
 }
 
 // Namespace br_events / scripts\mp\gametypes\br_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d2
 // Size: 0x31
 function breventflagset( eventflag )
@@ -50,7 +50,7 @@ function breventflagset( eventflag )
 }
 
 // Namespace br_events / scripts\mp\gametypes\br_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20b
 // Size: 0x32
 function breventflagclear( eventflag )
@@ -60,7 +60,7 @@ function breventflagclear( eventflag )
 }
 
 // Namespace br_events / scripts\mp\gametypes\br_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x245
 // Size: 0x405
 function brevent1( videoname )
@@ -70,7 +70,7 @@ function brevent1( videoname )
         return;
     }
     
-    chance = getdvarfloat( @"hash_8c16995cc3015d14", 0.04 );
+    chance = getdvarfloat( @"scr_br_event1_chance", 0.04 );
     
     if ( chance <= randomfloat( 1 ) )
     {
@@ -139,7 +139,7 @@ function brevent1( videoname )
 }
 
 // Namespace br_events / scripts\mp\gametypes\br_events
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x652
 // Size: 0x3f, Type: bool
 function brevent1playervalid( player )
@@ -158,7 +158,7 @@ function brevent1playervalid( player )
 }
 
 // Namespace br_events / scripts\mp\gametypes\br_events
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x69a
 // Size: 0xa9
 function brevent1playerthink( waittime, eventtime, videoname )
@@ -189,7 +189,7 @@ function brevent1playerthink( waittime, eventtime, videoname )
 }
 
 // Namespace br_events / scripts\mp\gametypes\br_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x74b
 // Size: 0x2
 function brevent2()
@@ -198,7 +198,7 @@ function brevent2()
 }
 
 // Namespace br_events / scripts\mp\gametypes\br_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x755
 // Size: 0x2
 function brevent3()
@@ -207,7 +207,7 @@ function brevent3()
 }
 
 // Namespace br_events / scripts\mp\gametypes\br_events
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x75f
 // Size: 0x2
 function brevent4()

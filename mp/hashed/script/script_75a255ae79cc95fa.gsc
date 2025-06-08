@@ -9,7 +9,7 @@
 #namespace jup_capture_bot_mp_base;
 
 // Namespace jup_capture_bot_mp_base / namespace_19a443bf64856d84
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x154
 // Size: 0x145
 function main()
@@ -38,7 +38,7 @@ function main()
 }
 
 // Namespace jup_capture_bot_mp_base / namespace_19a443bf64856d84
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a1
 // Size: 0x57
 function setup_model()
@@ -55,7 +55,7 @@ function setup_model()
 }
 
 // Namespace jup_capture_bot_mp_base / namespace_19a443bf64856d84
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x300
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -64,7 +64,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_capture_bot_mp_base / namespace_19a443bf64856d84
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x311
 // Size: 0xc7
 function precache()

@@ -22,7 +22,7 @@
 #namespace damage;
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a7
 // Size: 0x25
 function init()
@@ -34,7 +34,7 @@ function init()
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d4
 // Size: 0xa6
 function init_damage_callback_data()
@@ -51,7 +51,7 @@ function init_damage_callback_data()
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x382
 // Size: 0x64
 function get_pre_mod_damage_callback( ref )
@@ -62,7 +62,7 @@ function get_pre_mod_damage_callback( ref )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ef
 // Size: 0x64
 function get_post_mod_damage_callback( ref )
@@ -73,7 +73,7 @@ function get_post_mod_damage_callback( ref )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45c
 // Size: 0x64
 function get_death_callback( ref )
@@ -95,7 +95,7 @@ function private function_5947a803f03ef1df( ref )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x536
 // Size: 0x6e
 function set_pre_mod_damage_callback( ref, func )
@@ -106,7 +106,7 @@ function set_pre_mod_damage_callback( ref, func )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ac
 // Size: 0x6e
 function set_post_mod_damage_callback( ref, func )
@@ -117,7 +117,7 @@ function set_post_mod_damage_callback( ref, func )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x622
 // Size: 0x6e
 function set_death_callback( ref, func )
@@ -128,7 +128,7 @@ function set_death_callback( ref, func )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x698
 // Size: 0xd7
 function function_21a469b6e2805cf1( ref, func )
@@ -145,7 +145,7 @@ function function_21a469b6e2805cf1( ref, func )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x777
 // Size: 0xc5
 function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, attachtagname, partname, eventid )
@@ -158,9 +158,9 @@ function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdea
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x844
-// Size: 0xe82
+// Size: 0xed4
 function callback_vehicledamage_internal( data )
 {
     if ( isdefined( data.attacker ) && isdefined( data.attacker.classname ) && data.attacker.classname == "worldspawn" )
@@ -361,6 +361,10 @@ function callback_vehicledamage_internal( data )
                 data.damage = 0;
             }
         }
+        else if ( isdefined( vehiclename ) && function_8dee2e8a9f97d5aa( data.objweapon ) )
+        {
+            data.damage = get_mod_damage( data.damage, self, data.objweapon, data.attacker );
+        }
         else
         {
             data.damage = 0;
@@ -446,9 +450,9 @@ function callback_vehicledamage_internal( data )
         }
     }
     
-    var_d6961ef4ab70843c = scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_shouldskipburndown( data );
+    shouldskipburndown = scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_shouldskipburndown( data );
     
-    if ( !var_d6961ef4ab70843c )
+    if ( !shouldskipburndown )
     {
         damagestate = scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_getstate();
         
@@ -459,7 +463,7 @@ function callback_vehicledamage_internal( data )
         }
     }
     
-    scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_updatestate( data, var_d6961ef4ab70843c, 1 );
+    scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_updatestate( data, shouldskipburndown, 1 );
     scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_updateomnvarsondamage( self, data );
     thread scripts\cp_mp\vehicles\vehicle_interact::function_68cdb3d30284be07();
     
@@ -563,8 +567,8 @@ function callback_vehicledamage_internal( data )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ce
+// Params 1
+// Checksum 0x0, Offset: 0x1720
 // Size: 0x1e8
 function callback_vehicledeath( data )
 {
@@ -625,8 +629,8 @@ function callback_vehicledeath( data )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x18be
+// Params 3
+// Checksum 0x0, Offset: 0x1910
 // Size: 0xc1
 function filter_out_friendly_damage( vehicle, attacker, team )
 {
@@ -676,8 +680,8 @@ function filter_out_friendly_damage( vehicle, attacker, team )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1987
+// Params 1
+// Checksum 0x0, Offset: 0x19d9
 // Size: 0x6f, Type: bool
 function should_filter_out_friendly_damage( data )
 {
@@ -704,8 +708,8 @@ function should_filter_out_friendly_damage( data )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19ff
+// Params 0
+// Checksum 0x0, Offset: 0x1a51
 // Size: 0x74
 function init_mod_damage_data()
 {
@@ -719,8 +723,8 @@ function init_mod_damage_data()
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a7b
+// Params 4
+// Checksum 0x0, Offset: 0x1acd
 // Size: 0x40
 function get_mod_damage( damage, vehicle, objweapon, attacker )
 {
@@ -729,8 +733,8 @@ function get_mod_damage( damage, vehicle, objweapon, attacker )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ac4
+// Params 3
+// Checksum 0x0, Offset: 0x1b16
 // Size: 0x2c9
 function get_mod_damage_modifier( vehicle, objweapon, attacker )
 {
@@ -832,8 +836,8 @@ function get_mod_damage_modifier( vehicle, objweapon, attacker )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d96
+// Params 2
+// Checksum 0x0, Offset: 0x1de8
 // Size: 0xbc
 function get_vehicle_mod_damage_data( ref, create )
 {
@@ -853,8 +857,8 @@ function get_vehicle_mod_damage_data( ref, create )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e5b
+// Params 2
+// Checksum 0x0, Offset: 0x1ead
 // Size: 0x96
 function get_weapon_class_mod_damage_data( ref, create )
 {
@@ -871,8 +875,8 @@ function get_weapon_class_mod_damage_data( ref, create )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1efa
+// Params 2
+// Checksum 0x0, Offset: 0x1f4c
 // Size: 0x96
 function get_perk_mod_damage_data( ref, create )
 {
@@ -889,8 +893,8 @@ function get_perk_mod_damage_data( ref, create )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f99
+// Params 2
+// Checksum 0x0, Offset: 0x1feb
 // Size: 0x96
 function get_attachment_mod_damage_data( ref, create )
 {
@@ -907,8 +911,8 @@ function get_attachment_mod_damage_data( ref, create )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2038
+// Params 3
+// Checksum 0x0, Offset: 0x208a
 // Size: 0x5f
 function set_weapon_class_mod_damage_data( ref, mod, var_21e99fcec7e19345 )
 {
@@ -923,8 +927,8 @@ function set_weapon_class_mod_damage_data( ref, mod, var_21e99fcec7e19345 )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x209f
+// Params 4
+// Checksum 0x0, Offset: 0x20f1
 // Size: 0xa4
 function set_weapon_class_mod_damage_data_for_vehicle( ref, mod, var_21e99fcec7e19345, vehicleref )
 {
@@ -948,8 +952,8 @@ function set_weapon_class_mod_damage_data_for_vehicle( ref, mod, var_21e99fcec7e
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x214b
+// Params 3
+// Checksum 0x0, Offset: 0x219d
 // Size: 0x5f
 function set_perk_mod_damage_data( ref, mod, var_21e99fcec7e19345 )
 {
@@ -964,8 +968,8 @@ function set_perk_mod_damage_data( ref, mod, var_21e99fcec7e19345 )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x21b2
+// Params 4
+// Checksum 0x0, Offset: 0x2204
 // Size: 0xa4
 function set_perk_mod_damage_data_for_vehicle( ref, mod, var_21e99fcec7e19345, vehicleref )
 {
@@ -989,8 +993,8 @@ function set_perk_mod_damage_data_for_vehicle( ref, mod, var_21e99fcec7e19345, v
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x225e
+// Params 3
+// Checksum 0x0, Offset: 0x22b0
 // Size: 0x5f
 function set_attachment_mod_damage_data( ref, mod, var_21e99fcec7e19345 )
 {
@@ -1005,8 +1009,8 @@ function set_attachment_mod_damage_data( ref, mod, var_21e99fcec7e19345 )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x22c5
+// Params 4
+// Checksum 0x0, Offset: 0x2317
 // Size: 0xa4
 function set_attachment_mod_damage_data_for_vehicle( ref, mod, var_21e99fcec7e19345, vehicleref )
 {
@@ -1030,8 +1034,8 @@ function set_attachment_mod_damage_data_for_vehicle( ref, mod, var_21e99fcec7e19
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2371
+// Params 0
+// Checksum 0x0, Offset: 0x23c3
 // Size: 0x2e
 function create_mod_damage_data_empty()
 {
@@ -1042,8 +1046,8 @@ function create_mod_damage_data_empty()
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23a8
+// Params 2
+// Checksum 0x0, Offset: 0x23fa
 // Size: 0x90, Type: bool
 function shouldcrossbowhitmarker( vehicle, data )
 {
@@ -1066,8 +1070,8 @@ function shouldcrossbowhitmarker( vehicle, data )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2441
+// Params 0
+// Checksum 0x0, Offset: 0x2493
 // Size: 0x5a
 function init_hit_damage_data()
 {
@@ -1079,8 +1083,8 @@ function init_hit_damage_data()
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x24a3
+// Params 3
+// Checksum 0x0, Offset: 0x24f5
 // Size: 0x11d
 function get_hit_damage( damage, vehicle, objweapon )
 {
@@ -1116,8 +1120,8 @@ function get_hit_damage( damage, vehicle, objweapon )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x25c9
+// Params 2
+// Checksum 0x0, Offset: 0x261b
 // Size: 0xbc
 function get_vehicle_hit_damage_data( ref, create )
 {
@@ -1137,8 +1141,8 @@ function get_vehicle_hit_damage_data( ref, create )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x268e
+// Params 2
+// Checksum 0x0, Offset: 0x26e0
 // Size: 0xbc
 function get_weapon_hit_damage_data( ref, create )
 {
@@ -1158,8 +1162,8 @@ function get_weapon_hit_damage_data( ref, create )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2753
+// Params 2
+// Checksum 0x0, Offset: 0x27a5
 // Size: 0x46
 function set_vehicle_hit_damage_data( ref, hitstokill )
 {
@@ -1169,8 +1173,8 @@ function set_vehicle_hit_damage_data( ref, hitstokill )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x27a1
+// Params 3
+// Checksum 0x0, Offset: 0x27f3
 // Size: 0x63
 function set_vehicle_hit_damage_data_for_weapon( ref, hitstokill, weaponref )
 {
@@ -1181,8 +1185,8 @@ function set_vehicle_hit_damage_data_for_weapon( ref, hitstokill, weaponref )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x280c
+// Params 2
+// Checksum 0x0, Offset: 0x285e
 // Size: 0x46
 function set_weapon_hit_damage_data( ref, hitsperattack )
 {
@@ -1192,8 +1196,8 @@ function set_weapon_hit_damage_data( ref, hitsperattack )
 }
 
 // Namespace damage / scripts\mp\vehicles\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x285a
+// Params 3
+// Checksum 0x0, Offset: 0x28ac
 // Size: 0x63
 function set_weapon_hit_damage_data_for_vehicle( ref, hitsperattack, vehicleref )
 {

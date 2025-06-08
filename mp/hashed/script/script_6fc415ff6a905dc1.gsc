@@ -21,7 +21,7 @@
 #namespace namespace_771165fe61010ab2;
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f4
 // Size: 0x283
 function function_f09e47b124561928()
@@ -70,7 +70,8 @@ function function_f09e47b124561928()
         level.var_eb4ad3d9b8c36077 = [];
         numrows = tablelookupgetnumrows( filename );
         
-        for (row = 0; row < numrows; row++) {
+        for ( row = 0; row < numrows ; row++ )
+        {
             level.var_eb4ad3d9b8c36077[ level.var_eb4ad3d9b8c36077.size ] = int( tablelookupbyrow( filename, row, 1 ) );
         }
     }
@@ -107,7 +108,7 @@ function function_f09e47b124561928()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x67f
 // Size: 0x430
 function function_5332e1c0f06b0245( var_3064fa24dbbd5bbf )
@@ -247,7 +248,7 @@ function private function_f95e462ad75806a2()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc55
 // Size: 0x1b
 function getweaponcooldown()
@@ -257,7 +258,7 @@ function getweaponcooldown()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc79
 // Size: 0x25f
 function function_e2f4f470c55123b8( overrideinventory, alreadyremoved )
@@ -335,7 +336,7 @@ function function_e2f4f470c55123b8( overrideinventory, alreadyremoved )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee1
 // Size: 0x30
 function function_b0d22762c7ee8fe4()
@@ -349,7 +350,7 @@ function function_b0d22762c7ee8fe4()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf1a
 // Size: 0xfa
 function function_e249cffd8b8f7a9( index, lootid, quantity, cooldown )
@@ -378,7 +379,7 @@ function function_e249cffd8b8f7a9( index, lootid, quantity, cooldown )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x101c
 // Size: 0x38
 function function_7f18210bf7cedd4b( index, lootedquantity )
@@ -392,7 +393,7 @@ function function_7f18210bf7cedd4b( index, lootedquantity )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x105c
 // Size: 0x17c
 function function_c324d060cde743e3( lootid, quantity )
@@ -408,7 +409,8 @@ function function_c324d060cde743e3( lootid, quantity )
         
         if ( isdefined( itemtype ) && itemtype == "weapon" )
         {
-            for (i = 0; i < quantity; i++) {
+            for ( i = 0; i < quantity ; i++ )
+            {
                 index = function_752a16f10a698186( lootid, &function_ae513b3a65d8bfbc );
                 
                 if ( isdefined( index ) && self getplayerdata( level.var_5d69837cf4db0407, "dmzInventory", index, "cooldownEndTime" ) > getsystemtime() )
@@ -451,7 +453,7 @@ function function_c324d060cde743e3( lootid, quantity )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e0
 // Size: 0x7d
 function function_4be4a391f94837bf( lootid )
@@ -461,7 +463,8 @@ function function_4be4a391f94837bf( lootid )
         return undefined;
     }
     
-    for (i = 0; i < 50; i++) {
+    for ( i = 0; i < 50 ; i++ )
+    {
         currentlootid = self getplayerdata( level.var_5d69837cf4db0407, "dmzInventory", i, "lootID" );
         
         if ( lootid == currentlootid )
@@ -477,7 +480,7 @@ function function_4be4a391f94837bf( lootid )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1266
 // Size: 0x32, Type: bool
 function function_25be694d7a22db61( itemindex )
@@ -491,7 +494,7 @@ function function_25be694d7a22db61( itemindex )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12a1
 // Size: 0x32, Type: bool
 function function_ae513b3a65d8bfbc( itemindex )
@@ -505,7 +508,7 @@ function function_ae513b3a65d8bfbc( itemindex )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12dc
 // Size: 0x71
 function function_752a16f10a698186( lootid, testvalid )
@@ -515,7 +518,8 @@ function function_752a16f10a698186( lootid, testvalid )
         return undefined;
     }
     
-    for (i = 0; i < 50; i++) {
+    for ( i = 0; i < 50 ; i++ )
+    {
         currentlootid = self getplayerdata( level.var_5d69837cf4db0407, "dmzInventory", i, "lootID" );
         
         if ( lootid == currentlootid )
@@ -531,12 +535,13 @@ function function_752a16f10a698186( lootid, testvalid )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1356
 // Size: 0x49
 function function_e89462f915a860fd()
 {
-    for (i = 0; i < 50; i++) {
+    for ( i = 0; i < 50 ; i++ )
+    {
         currentlootid = self getplayerdata( level.var_5d69837cf4db0407, "dmzInventory", i, "lootID" );
         
         if ( currentlootid == 0 )
@@ -549,23 +554,25 @@ function function_e89462f915a860fd()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13a8
 // Size: 0x41
 function function_7f04a682872040db( player )
 {
-    for (itemindex = 0; itemindex < 50; itemindex++) {
+    for ( itemindex = 0; itemindex < 50 ; itemindex++ )
+    {
         player setplayerdata( level.var_5d69837cf4db0407, "dmzInventory", itemindex, "lootedQuantity", 0 );
     }
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13f1
 // Size: 0x95
 function function_ee79f56d03f6a83d( player )
 {
-    for (itemindex = 0; itemindex < 50; itemindex++) {
+    for ( itemindex = 0; itemindex < 50 ; itemindex++ )
+    {
         player setplayerdata( level.var_5d69837cf4db0407, "dmzInventory", itemindex, "lootID", 0 );
         player setplayerdata( level.var_5d69837cf4db0407, "dmzInventory", itemindex, "quantity", 0 );
         player setplayerdata( level.var_5d69837cf4db0407, "dmzInventory", itemindex, "lootedQuantity", 0 );
@@ -574,7 +581,7 @@ function function_ee79f56d03f6a83d( player )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x148e
 // Size: 0x31
 function function_774fef5f034555ba()
@@ -588,7 +595,7 @@ function function_774fef5f034555ba()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14c8
 // Size: 0xa7
 function snapshotclipammo()
@@ -617,7 +624,7 @@ function snapshotclipammo()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1578
 // Size: 0x3e3
 function snapshotinventory()
@@ -765,7 +772,7 @@ function snapshotinventory()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1964
 // Size: 0x42
 function function_8c5b523b8e941dc2( classindex, weaponindex, ref )
@@ -774,7 +781,7 @@ function function_8c5b523b8e941dc2( classindex, weaponindex, ref )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19ae
 // Size: 0x42
 function function_e5a485a5370debc1( classindex, weaponindex, lootid )
@@ -783,7 +790,7 @@ function function_e5a485a5370debc1( classindex, weaponindex, lootid )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19f8
 // Size: 0x1ba
 function function_e2b623e5ad975ee( classindex, weaponindex )
@@ -796,18 +803,20 @@ function function_e2b623e5ad975ee( classindex, weaponindex )
     self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "variantID", 0 );
     self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "blueprintName", "" );
     
-    for (attachindex = 0; attachindex < 5; attachindex++) {
+    for ( attachindex = 0; attachindex < 5 ; attachindex++ )
+    {
         self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "attachmentSetup", attachindex, "attachment", "none" );
         self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "attachmentSetup", attachindex, "variantID", 0 );
     }
     
-    for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
+    for ( var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4 ; var_36d2abbdcbcb186c++ )
+    {
         self setplayerdata( level.loadoutdata, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "sticker", var_36d2abbdcbcb186c, "none" );
     }
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1bba
 // Size: 0x42
 function function_7734d7b754df1192( classindex, equipindex, ref )
@@ -816,7 +825,7 @@ function function_7734d7b754df1192( classindex, equipindex, ref )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c04
 // Size: 0x34
 function function_5f0596c296180f6c( index, ref )
@@ -825,7 +834,7 @@ function function_5f0596c296180f6c( index, ref )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c40
 // Size: 0x3c
 function function_e93ff591a55c2cd6( classindex, superindex, ref )
@@ -834,7 +843,7 @@ function function_e93ff591a55c2cd6( classindex, superindex, ref )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c85
 // Size: 0x4d
 function clearloadout()
@@ -848,7 +857,7 @@ function clearloadout()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cda
 // Size: 0x1a1
 function function_cfc379803b1dd46f()
@@ -917,7 +926,7 @@ function function_cfc379803b1dd46f()
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e83
 // Size: 0x136
 function function_bac731e0fdaa0ccb( lootid )
@@ -962,7 +971,7 @@ function function_bac731e0fdaa0ccb( lootid )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fc2
 // Size: 0x127
 function function_a82decee54864929( lootid )
@@ -1004,14 +1013,15 @@ function function_a82decee54864929( lootid )
 }
 
 // Namespace namespace_771165fe61010ab2 / namespace_512200f0f9e6ebc9
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20f2
 // Size: 0x270
 function function_2d55e66e05614871()
 {
     println( self.name + "<dev string:x13e>" );
     
-    for (i = 0; i < 11; i++) {
+    for ( i = 0; i < 11 ; i++ )
+    {
         lootid = self getplayerdata( level.var_5d69837cf4db0407, "dmzBackpackFE", i, "lootID" );
         quantity = self getplayerdata( level.var_5d69837cf4db0407, "dmzBackpackFE", i, "quantity" );
         ref = scripts\cp_mp\utility\loot::function_793e8a72cedb8ef3( lootid );
@@ -1030,7 +1040,8 @@ function function_2d55e66e05614871()
     
     println( self.name + "<dev string:x17e>" );
     
-    for (i = 0; i < 11; i++) {
+    for ( i = 0; i < 11 ; i++ )
+    {
         lootid = self getplayerdata( level.var_5d69837cf4db0407, "dmzBackpackFE", i, "lootID" );
         quantity = self getplayerdata( level.var_5d69837cf4db0407, "dmzBackpackFE", i, "quantity" );
         ref = scripts\cp_mp\utility\loot::function_793e8a72cedb8ef3( lootid );
@@ -1043,7 +1054,8 @@ function function_2d55e66e05614871()
     
     println( self.name + "<dev string:x192>" );
     
-    for (i = 0; i < 11; i++) {
+    for ( i = 0; i < 11 ; i++ )
+    {
         lootid = getlootidatbackpackindex( i );
         quantity = function_897b29adb37f06a7( i );
         ref = scripts\cp_mp\utility\loot::function_793e8a72cedb8ef3( lootid );

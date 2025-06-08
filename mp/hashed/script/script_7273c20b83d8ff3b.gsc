@@ -6,7 +6,7 @@
 #namespace namespace_90161fde3c96091c;
 
 // Namespace namespace_90161fde3c96091c / namespace_fd6c84ecada320b
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x166
 // Size: 0x2e
 function inittask()
@@ -16,7 +16,7 @@ function inittask()
 }
 
 // Namespace namespace_90161fde3c96091c / namespace_fd6c84ecada320b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19c
 // Size: 0x3c
 function function_36f7c6b5bf8ad6f4( taskinstance )
@@ -26,7 +26,7 @@ function function_36f7c6b5bf8ad6f4( taskinstance )
 }
 
 // Namespace namespace_90161fde3c96091c / namespace_fd6c84ecada320b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e0
 // Size: 0x58
 function function_87e60ed6830d13bc( subcategory )
@@ -45,7 +45,7 @@ function function_87e60ed6830d13bc( subcategory )
 }
 
 // Namespace namespace_90161fde3c96091c / namespace_fd6c84ecada320b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x240
 // Size: 0x92
 function function_cf75ac38fdbda3f6( taskinstance, flag )
@@ -65,7 +65,7 @@ function function_cf75ac38fdbda3f6( taskinstance, flag )
 }
 
 // Namespace namespace_90161fde3c96091c / namespace_fd6c84ecada320b
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2da
 // Size: 0x158
 function function_59c1dbdc2ad03ad6( taskinstance, loot )
@@ -116,7 +116,7 @@ function function_59c1dbdc2ad03ad6( taskinstance, loot )
 }
 
 // Namespace namespace_90161fde3c96091c / namespace_fd6c84ecada320b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43b
 // Size: 0x38
 function trybindobjective( taskinstance )

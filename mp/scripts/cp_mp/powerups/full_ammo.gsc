@@ -2,6 +2,8 @@
 #using scripts\common\devgui;
 #using scripts\common\powerups;
 #using scripts\cp_mp\powerups\powerups;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
 #using scripts\engine\utility;
 #using scripts\mp\utility\weapon;
 
@@ -9,7 +11,7 @@
 
 // Namespace full_ammo / scripts\cp_mp\powerups\full_ammo
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x143
+// Checksum 0x0, Offset: 0x153
 // Size: 0x1c
 function autoexec main()
 {
@@ -22,8 +24,8 @@ function autoexec main()
 }
 
 // Namespace full_ammo / scripts\cp_mp\powerups\full_ammo
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x167
+// Params 0
+// Checksum 0x0, Offset: 0x177
 // Size: 0x5f
 function function_ad0467999b7de308()
 {
@@ -38,8 +40,8 @@ function function_ad0467999b7de308()
 }
 
 // Namespace full_ammo / scripts\cp_mp\powerups\full_ammo
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ce
+// Params 2
+// Checksum 0x0, Offset: 0x1de
 // Size: 0x82
 function grab_full_ammo( str_powerup, ent_powerup )
 {
@@ -55,8 +57,8 @@ function grab_full_ammo( str_powerup, ent_powerup )
 }
 
 // Namespace full_ammo / scripts\cp_mp\powerups\full_ammo
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x258
+// Params 0
+// Checksum 0x0, Offset: 0x268
 // Size: 0x45
 function function_c826b28f14f58267()
 {
@@ -70,8 +72,8 @@ function function_c826b28f14f58267()
 }
 
 // Namespace full_ammo / scripts\cp_mp\powerups\full_ammo
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a6
+// Params 2
+// Checksum 0x0, Offset: 0x2b6
 // Size: 0x3a
 function modify_drop_chance( chance, context )
 {
@@ -84,9 +86,9 @@ function modify_drop_chance( chance, context )
 }
 
 // Namespace full_ammo / scripts\cp_mp\powerups\full_ammo
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e9
-// Size: 0x140
+// Params 0
+// Checksum 0x0, Offset: 0x2f9
+// Size: 0x14b
 function give_ammo()
 {
     if ( utility::issharedfuncdefined( "powerup_full_ammo", "give_ammo" ) )
@@ -116,7 +118,7 @@ function give_ammo()
             }
         }
         
-        if ( istrue( weapon.hasalternate ) )
+        if ( istrue( weapon.hasalternate ) && !isaxeweapon( weapon ) )
         {
             var_6890a4ce965bba99 = weapon getaltweapon();
             self givemaxammo( var_6890a4ce965bba99 );

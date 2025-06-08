@@ -11,7 +11,7 @@
 #namespace namespace_fd613a85da812eaa;
 
 // Namespace namespace_fd613a85da812eaa / namespace_ea79ad160580b4e7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e3
 // Size: 0x13
 function main()
@@ -83,7 +83,8 @@ function private set_attached_models()
     array[ "TAG_FastRope_RI" ].dropanim = script_model#iw9_ai_infil_blima_rope_r_drop;
     strings = getarraykeys( array );
     
-    for (i = 0; i < strings.size; i++) {
+    for ( i = 0; i < strings.size ; i++ )
+    {
         precachemodel( array[ strings[ i ] ].model );
     }
     

@@ -21,7 +21,7 @@
 #namespace infilexfil;
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x83a
 // Size: 0x268
 function infil_add( type, subtype, seat_count, required_seats, fill_order, spawn_func, get_length_func, player_func )
@@ -82,7 +82,7 @@ function infil_add( type, subtype, seat_count, required_seats, fill_order, spawn
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaaa
 // Size: 0x33
 function infil_is_interactive()
@@ -96,7 +96,7 @@ function infil_is_interactive()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xae6
 // Size: 0x6d6
 function infil_init()
@@ -118,7 +118,7 @@ function infil_init()
         return;
     }
     
-    if ( game[ "roundsPlayed" ] > 0 && !scripts\cp_mp\utility\game_utility::function_8b6131109e66d962() || getdvarint( @"hash_7194076ab4888f2b", 0 ) == 1 || scripts\cp_mp\utility\game_utility::isbrstylegametype() || getdvarint( @"hash_704afe6f6c582ee0" ) < 15 || getgametype() == "war" && scripts\cp_mp\utility\game_utility::isdonetskmap() )
+    if ( game[ "roundsPlayed" ] > 0 && !scripts\cp_mp\utility\game_utility::function_8b6131109e66d962() || getdvarint( @"scr_game_infilskip", 0 ) == 1 || scripts\cp_mp\utility\game_utility::isbrstylegametype() || getdvarint( @"scr_game_matchstarttime" ) < 15 || getgametype() == "war" && scripts\cp_mp\utility\game_utility::isdonetskmap() )
     {
         game[ "infil" ] = undefined;
         level.requiredplayercount[ "allies" ] = 0;
@@ -295,7 +295,7 @@ function infil_init()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11c4
 // Size: 0x2e
 function onplayerspawned()
@@ -310,7 +310,7 @@ function onplayerspawned()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11fa
 // Size: 0x1cd
 function waitforstreamsynccomplete()
@@ -368,7 +368,7 @@ function waitforstreamsynccomplete()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13cf
 // Size: 0x3d
 function onplayerdisconnect( player )
@@ -387,7 +387,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1414
 // Size: 0x3f
 function onplayerchangeteams()
@@ -400,7 +400,7 @@ function onplayerchangeteams()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x145b
 // Size: 0x31
 function get_all_infils( infil_type )
@@ -414,7 +414,7 @@ function get_all_infils( infil_type )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1494
 // Size: 0x16, Type: bool
 function infil_is_type( infil_type )
@@ -423,7 +423,7 @@ function infil_is_type( infil_type )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14b3
 // Size: 0x16, Type: bool
 function infil_is_subtype( infil_subtype )
@@ -432,7 +432,7 @@ function infil_is_subtype( infil_subtype )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d2
 // Size: 0x4da, Type: bool
 function infil_is_gamemode()
@@ -640,7 +640,7 @@ function infil_is_gamemode()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19b5
 // Size: 0x3, Type: bool
 function infil_has_map_config()
@@ -649,7 +649,7 @@ function infil_has_map_config()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19c1
 // Size: 0x2
 function infil_init_spawn_selection()
@@ -658,7 +658,7 @@ function infil_init_spawn_selection()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19cb
 // Size: 0x190
 function infil_player_allow( allow, bypass )
@@ -706,7 +706,7 @@ function infil_player_allow( allow, bypass )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1b63
 // Size: 0x20d
 function register_infil_spots( team, infil, amount, required, fillorder, think_func )
@@ -718,7 +718,8 @@ function register_infil_spots( team, infil, amount, required, fillorder, think_f
     
     startindex = game[ "infil" ][ team ][ 0 ].size;
     
-    for (i = 0; i < amount; i++) {
+    for ( i = 0; i < amount ; i++ )
+    {
         index = game[ "infil" ][ team ][ 0 ].size;
         
         if ( isdefined( fillorder ) )
@@ -767,7 +768,7 @@ function register_infil_spots( team, infil, amount, required, fillorder, think_f
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d78
 // Size: 0xc2
 function player_on_spot( player, spot_index )
@@ -792,7 +793,7 @@ function player_on_spot( player, spot_index )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e43
 // Size: 0xd9
 function player_free_spot( player, team )
@@ -823,7 +824,7 @@ function player_free_spot( player, team )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f24
 // Size: 0x23
 function get_player_at_spot( team, spot_index )
@@ -832,7 +833,7 @@ function get_player_at_spot( team, spot_index )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f50
 // Size: 0x99
 function get_spot_from_player( player, team )
@@ -859,7 +860,7 @@ function get_spot_from_player( player, team )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ff2
 // Size: 0x60, Type: bool
 function is_spot_taken( team, spot_index )
@@ -878,7 +879,7 @@ function is_spot_taken( team, spot_index )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x205b
 // Size: 0x90
 function get_spot_taken_count( team )
@@ -902,7 +903,7 @@ function get_spot_taken_count( team )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20f4
 // Size: 0x14e
 function get_spot_by_priority( team )
@@ -954,7 +955,7 @@ function get_spot_by_priority( team )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x224b
 // Size: 0x185
 function get_spot_in_lane( team )
@@ -1005,7 +1006,7 @@ function get_spot_in_lane( team )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23d9
 // Size: 0xe1
 function get_random_spot( team )
@@ -1055,7 +1056,7 @@ function get_random_spot( team )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24c3
 // Size: 0x84
 function get_taken_spot_count( team )
@@ -1079,7 +1080,7 @@ function get_taken_spot_count( team )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2550
 // Size: 0x94
 function get_taken_spot_percent( team )
@@ -1106,7 +1107,7 @@ function get_taken_spot_percent( team )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25ed
 // Size: 0x9f
 function get_random_spot_in_infil( team, infil )
@@ -1136,7 +1137,7 @@ function get_random_spot_in_infil( team, infil )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2695
 // Size: 0x4c
 function infil_player_array_handler( player )
@@ -1148,7 +1149,7 @@ function infil_player_array_handler( player )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26e9
 // Size: 0x139
 function player_join_infil()
@@ -1202,7 +1203,7 @@ function player_join_infil()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x282a
 // Size: 0x3f
 function clearinfilstateatinfilend()
@@ -1220,7 +1221,7 @@ function clearinfilstateatinfilend()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2871
 // Size: 0x26
 function blockswaploadouts()
@@ -1232,7 +1233,7 @@ function blockswaploadouts()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x289f
 // Size: 0xdd
 function player_ai_fill()
@@ -1263,7 +1264,7 @@ function player_ai_fill()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2984
 // Size: 0x1f5
 function infil_setup_ui()
@@ -1319,7 +1320,7 @@ function infil_setup_ui()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b81
 // Size: 0x3b
 function infil_show_countdown()
@@ -1331,7 +1332,7 @@ function infil_show_countdown()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bc4
 // Size: 0xe0
 function alwaysgamemodeclass()
@@ -1367,7 +1368,7 @@ function alwaysgamemodeclass()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cad
 // Size: 0x1ce
 function infil_player_rig( animname, rig_model, var_40a4287d8d2e7ef9 )
@@ -1413,7 +1414,7 @@ function infil_player_rig( animname, rig_model, var_40a4287d8d2e7ef9 )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2e83
 // Size: 0x70
 function infil_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -1425,7 +1426,7 @@ function infil_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2efb
 // Size: 0xd0
 function infil_wait_for_players()
@@ -1453,7 +1454,7 @@ function infil_wait_for_players()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2fd3
 // Size: 0x7e
 function heli_path( vehicle )
@@ -1482,7 +1483,7 @@ function heli_path( vehicle )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3059
 // Size: 0x30a
 function vehicle_paths_helicopter( node, var_269fb0ec10b51524, var_cfa3aafb71b08d36 )
@@ -1628,7 +1629,7 @@ function vehicle_paths_helicopter( node, var_269fb0ec10b51524, var_cfa3aafb71b08
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x336b
 // Size: 0x48f
 function heli_wait_node( nextpoint, lastpoint, var_cfa3aafb71b08d36 )
@@ -1778,7 +1779,7 @@ function heli_wait_node( nextpoint, lastpoint, var_cfa3aafb71b08d36 )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3802
 // Size: 0x64
 function get_path_getfunc( pathpoint )
@@ -1802,7 +1803,7 @@ function get_path_getfunc( pathpoint )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x386f
 // Size: 0x16
 function get_from_vehicle_node( target )
@@ -1811,7 +1812,7 @@ function get_from_vehicle_node( target )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x388e
 // Size: 0xac
 function get_from_spawnstruct( target )
@@ -1833,7 +1834,7 @@ function get_from_spawnstruct( target )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3942
 // Size: 0x3a
 function get_from_entity( target )
@@ -1849,7 +1850,7 @@ function get_from_entity( target )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3985
 // Size: 0x45
 function set_lookat_from_dest( dest )
@@ -1866,7 +1867,7 @@ function set_lookat_from_dest( dest )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39d2
 // Size: 0x13d
 function parsehelipathlength()
@@ -1921,7 +1922,7 @@ function parsehelipathlength()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b18
 // Size: 0xa6
 function readnodeevents( node )
@@ -1947,7 +1948,7 @@ function readnodeevents( node )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3bc6
 // Size: 0x193
 function processtimelineevent( event, delay )
@@ -1995,7 +1996,7 @@ function processtimelineevent( event, delay )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d61
 // Size: 0x54
 function manageinteractiveslowmo()
@@ -2012,7 +2013,7 @@ function manageinteractiveslowmo()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dbd
 // Size: 0x2e
 function waitandunloadinfils()
@@ -2029,7 +2030,7 @@ function waitandunloadinfils()
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3df3
 // Size: 0xa
 function function_3c075bf6eade7262()
@@ -2085,10 +2086,10 @@ function function_3c075bf6eade7262()
     // Size: 0x6c, Type: dev
     function private function_2445244fc2466b13( team )
     {
-        setdvar( @"hash_aea3ac32a07685ba", team );
-        setdvar( @"hash_7194076ab4888f2b", 0 );
+        setdvar( @"scr_force_team", team );
+        setdvar( @"scr_game_infilskip", 0 );
         setdvar( @"hash_c653d32c30815d2b", 15 );
-        setdvar( @"hash_704afe6f6c582ee0", 15 );
+        setdvar( @"scr_game_matchstarttime", 15 );
         setdvar( @"hash_9d06e62e59d8f04a", 1 );
         wait 1;
         map_restart( 1 );
@@ -2128,9 +2129,9 @@ function function_3c075bf6eade7262()
         iprintlnbold( "<dev string:x41a>" );
         level.var_e6fbdd8917189dfb = 0;
         level.var_114dd6baa6068929 = 0;
-        setdvar( @"hash_7194076ab4888f2b", 0 );
+        setdvar( @"scr_game_infilskip", 0 );
         setdvar( @"hash_c653d32c30815d2b", 15 );
-        setdvar( @"hash_704afe6f6c582ee0", 15 );
+        setdvar( @"scr_game_matchstarttime", 15 );
         hostplayer = scripts\mp\gamelogic::gethostplayer();
         
         if ( !isdefined( hostplayer ) )
@@ -2146,9 +2147,9 @@ function function_3c075bf6eade7262()
             }
             else if ( hostplayer buttonpressed( "<dev string:x434>" ) )
             {
-                setdvar( @"hash_7194076ab4888f2b", 0 );
+                setdvar( @"scr_game_infilskip", 0 );
                 setdvar( @"hash_c653d32c30815d2b", 15 );
-                setdvar( @"hash_704afe6f6c582ee0", 15 );
+                setdvar( @"scr_game_matchstarttime", 15 );
                 iprintlnbold( "<dev string:x441>" );
                 wait 1;
                 map_restart();
@@ -2204,7 +2205,7 @@ function function_3c075bf6eade7262()
 #/
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41d6
 // Size: 0x1b
 function function_d41cba513a03d958( waittime )
@@ -2215,7 +2216,7 @@ function function_d41cba513a03d958( waittime )
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x41f9
 // Size: 0xf4
 function function_4dca5340dfd36c76( scene_node, vehicle, waittime, animname, infil_type )
@@ -2250,7 +2251,7 @@ function function_4dca5340dfd36c76( scene_node, vehicle, waittime, animname, inf
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x42f5
 // Size: 0xc6
 function function_51293c8505f2ea4e( scene_node, vehicle_one, vehicle_two, waittime, animname, infil_type )

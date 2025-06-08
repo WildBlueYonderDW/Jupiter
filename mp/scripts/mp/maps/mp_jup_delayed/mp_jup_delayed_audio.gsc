@@ -1,7 +1,7 @@
 #namespace mp_jup_delayed_audio;
 
 // Namespace mp_jup_delayed_audio / scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x158
 // Size: 0x16
 function main()
@@ -10,7 +10,7 @@ function main()
 }
 
 // Namespace mp_jup_delayed_audio / scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_audio
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x176
 // Size: 0x8f
 function sfx_metal_det( var_eaad182af1b91884, alias, timer )
@@ -26,7 +26,7 @@ function sfx_metal_det( var_eaad182af1b91884, alias, timer )
 }
 
 // Namespace mp_jup_delayed_audio / scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_audio
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x20d
 // Size: 0xf5
 function function_a0912e6a103cc3a( trig, alias, timer )
@@ -54,7 +54,7 @@ function function_a0912e6a103cc3a( trig, alias, timer )
 }
 
 // Namespace mp_jup_delayed_audio / scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30a
 // Size: 0x65, Type: bool
 function function_77e25cc10461d531( trig )

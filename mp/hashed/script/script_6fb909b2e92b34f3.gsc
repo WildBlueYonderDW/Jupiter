@@ -15,7 +15,7 @@ function autoexec init()
 }
 
 // Namespace namespace_ab78858d3444062c / namespace_92961846a030bf17
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd6
 // Size: 0x36
 function main( params )

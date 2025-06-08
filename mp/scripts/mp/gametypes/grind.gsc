@@ -29,7 +29,7 @@
 #namespace grind;
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x988
 // Size: 0x216
 function main()
@@ -88,7 +88,7 @@ function main()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba6
 // Size: 0x144
 function initializematchrules()
@@ -109,7 +109,7 @@ function initializematchrules()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf2
 // Size: 0x113
 function onstartgametype()
@@ -153,7 +153,7 @@ function onstartgametype()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe0d
 // Size: 0x147
 function updategametypedvars()
@@ -183,7 +183,7 @@ function updategametypedvars()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf5c
 // Size: 0x39
 function onspawnplayer( revivespawn )
@@ -197,7 +197,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf9d
 // Size: 0x22
 function onsuicidedeath( victim )
@@ -207,14 +207,15 @@ function onsuicidedeath( victim )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfc7
 // Size: 0x219
 function createtags()
 {
     level.dogtags = [];
     
-    for (i = 0; i < 50; i++) {
+    for ( i = 0; i < 50 ; i++ )
+    {
         visuals[ 0 ] = spawn( "script_model", ( 0, 0, 0 ) );
         visuals[ 1 ] = spawn( "script_model", ( 0, 0, 0 ) );
         visuals[ 0 ] setmodel( scripts\mp\gametypes\obj_dogtag::function_c8a7bf223baf8a6c() );
@@ -261,7 +262,7 @@ function createtags()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11e8
 // Size: 0xf2
 function gettag()
@@ -301,7 +302,7 @@ function gettag()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12e3
 // Size: 0x219
 function spawntag( victim )
@@ -346,7 +347,7 @@ function spawntag( victim )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1505
 // Size: 0x144
 function tagmoveto( tagteam, movetostartpos, movetoendpos, time )
@@ -370,7 +371,7 @@ function tagmoveto( tagteam, movetostartpos, movetoendpos, time )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1651
 // Size: 0x46
 function showtoteam( gameobject, team )
@@ -388,7 +389,7 @@ function showtoteam( gameobject, team )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x169f
 // Size: 0x27a
 function monitortaguse( tag )
@@ -466,7 +467,7 @@ function monitortaguse( tag )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1921
 // Size: 0x21
 function onplayerconnect( player )
@@ -476,7 +477,7 @@ function onplayerconnect( player )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x194a
 // Size: 0x39
 function playersettagcount( tagcount )
@@ -493,7 +494,7 @@ function playersettagcount( tagcount )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x198b
 // Size: 0x2a
 function monitorjointeam()
@@ -508,7 +509,7 @@ function monitorjointeam()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19bd
 // Size: 0x25
 function hidehudelementongameend( hudelement )
@@ -522,7 +523,7 @@ function hidehudelementongameend( hudelement )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19ea
 // Size: 0x1e7
 function createzones()
@@ -568,7 +569,7 @@ function createzones()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1bd9
 // Size: 0x51, Type: bool
 function isinzone( player, zone )
@@ -582,7 +583,7 @@ function isinzone( player, zone )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c33
 // Size: 0x9e
 function runzonethink()
@@ -625,7 +626,7 @@ function runzonethink()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cd9
 // Size: 0x7d
 function removetagsongameended()
@@ -649,7 +650,7 @@ function removetagsongameended()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d5e
 // Size: 0x1d5
 function processscoring( player, zone )
@@ -683,7 +684,8 @@ function processscoring( player, zone )
             
             scoreamount( player, var_1b445873b17eaa71, zone );
             
-            for (i = 0; i < var_1b445873b17eaa71; i++) {
+            for ( i = 0; i < var_1b445873b17eaa71 ; i++ )
+            {
                 player thread doscoreevent( #"tag_score" );
             }
         }
@@ -701,7 +703,7 @@ function processscoring( player, zone )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f3b
 // Size: 0x1b3
 function scoreamount( player, numtags, zone )
@@ -743,7 +745,7 @@ function scoreamount( player, numtags, zone )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20f6
 // Size: 0x6c
 function waitthensetvisibleteam()
@@ -758,7 +760,7 @@ function waitthensetvisibleteam()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x216a
 // Size: 0xbe
 function waitthenenablezone()
@@ -780,7 +782,7 @@ function waitthenenablezone()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2230
 // Size: 0x1a2
 function initspawns()
@@ -817,7 +819,7 @@ function initspawns()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23da
 // Size: 0x81
 function getspawnpoint()
@@ -843,7 +845,7 @@ function getspawnpoint()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2464
 // Size: 0x4b
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -853,7 +855,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x24b7
 // Size: 0xfc
 function droptags( victim, attacker )
@@ -876,7 +878,8 @@ function droptags( victim, attacker )
         dropnumber = 0;
     }
     
-    for (counter = 0; counter < dropnumber; counter++) {
+    for ( counter = 0; counter < dropnumber ; counter++ )
+    {
         newtag = spawntag( victim );
         newtag.team = victim.team;
         newtag.victim = victim;
@@ -891,7 +894,7 @@ function droptags( victim, attacker )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25bb
 // Size: 0x2d
 function dogtagallyonusecb( player )
@@ -903,7 +906,7 @@ function dogtagallyonusecb( player )
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25f0
 // Size: 0x113
 function setupwaypointicons()
@@ -922,7 +925,7 @@ function setupwaypointicons()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x270b
 // Size: 0x1a3
 function removepoint()
@@ -968,7 +971,7 @@ function removepoint()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28b6
 // Size: 0x494
 function placepoint()
@@ -1056,7 +1059,7 @@ function placepoint()
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2d52
 // Size: 0xb3
 function function_6e31fb115404c96d( slabel, vorigin )
@@ -1076,7 +1079,7 @@ function function_6e31fb115404c96d( slabel, vorigin )
 /#
 
     // Namespace grind / scripts\mp\gametypes\grind
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2e0d
     // Size: 0x19e, Type: dev
     function function_cd969857178097d0()
@@ -1121,7 +1124,7 @@ function function_6e31fb115404c96d( slabel, vorigin )
     }
 
     // Namespace grind / scripts\mp\gametypes\grind
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2fb3
     // Size: 0xa4, Type: dev
     function function_d859ebf3629052fb()

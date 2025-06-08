@@ -12,7 +12,7 @@
 #namespace namespace_965527752cbd4cca;
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x565
 // Size: 0xe5
 function callbacksoldieragentdamaged( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -32,7 +32,7 @@ function callbacksoldieragentdamaged( einflictor, eattacker, idamage, idflags, s
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x652
 // Size: 0x65
 function function_34672e1ee2e90cf8( objweapon, idamage )
@@ -54,7 +54,7 @@ function function_34672e1ee2e90cf8( objweapon, idamage )
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x6c0
 // Size: 0xea6
 function function_dffac413ed66bcd0( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -311,7 +311,7 @@ function function_dffac413ed66bcd0( einflictor, eattacker, idamage, idflags, sme
         idflags |= 512;
     }
     
-    if ( getdvarint( @"hash_df80c6d770ba0231", 1 ) == 1 )
+    if ( getdvarint( @"scr_agent_hitmarkers", 1 ) == 1 )
     {
         var_1da1a66b5c6a06a7 = armordelta + helmetdelta;
         var_986b2e0350629522 = 0;
@@ -460,7 +460,7 @@ function function_dffac413ed66bcd0( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x156e
 // Size: 0x68
 function damage_isexplosive( smeansofdeath )
@@ -484,7 +484,7 @@ function damage_isexplosive( smeansofdeath )
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x15de
 // Size: 0x250
 function function_62213f6e7b9da1e7( agent, attacker, inflictor, meansofdeath )
@@ -544,7 +544,7 @@ function function_62213f6e7b9da1e7( agent, attacker, inflictor, meansofdeath )
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x1837
 // Size: 0x1cc, Type: bool
 function function_84a1aec445b03580( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )
@@ -570,7 +570,7 @@ function function_84a1aec445b03580( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a0c
 // Size: 0x1c
 function function_7d0d24665d72f13c( agent, attacker )
@@ -579,7 +579,7 @@ function function_7d0d24665d72f13c( agent, attacker )
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a30
 // Size: 0x144
 function function_59ea6b2f800cb082( agent, attacker )
@@ -624,7 +624,7 @@ function function_59ea6b2f800cb082( agent, attacker )
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b7c
 // Size: 0xb5
 function function_b8c245105cc37f9e( objweapon )
@@ -655,7 +655,7 @@ function function_b8c245105cc37f9e( objweapon )
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
-// Params 13, eflags: 0x0
+// Params 13
 // Checksum 0x0, Offset: 0x1c3a
 // Size: 0x4f2, Type: bool
 function handleriotshielddamage( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon )

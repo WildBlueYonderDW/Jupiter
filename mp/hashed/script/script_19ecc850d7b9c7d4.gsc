@@ -9,7 +9,7 @@
 #namespace jup_ob_rift_heart_healthbar;
 
 // Namespace jup_ob_rift_heart_healthbar / namespace_e03fcfb4372e4c96
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x158
 // Size: 0x145
 function main()
@@ -38,7 +38,7 @@ function main()
 }
 
 // Namespace jup_ob_rift_heart_healthbar / namespace_e03fcfb4372e4c96
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a5
 // Size: 0x57
 function setup_model()
@@ -55,7 +55,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_rift_heart_healthbar / namespace_e03fcfb4372e4c96
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x304
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -64,7 +64,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_rift_heart_healthbar / namespace_e03fcfb4372e4c96
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x315
 // Size: 0xc7
 function precache()

@@ -80,7 +80,8 @@ function private set_attached_models()
     array[ "TAG_FastRope_RI" ].dropanim = script_model#iw9_ai_infil_blima_rope_r_drop;
     strings = getarraykeys( array );
     
-    for (i = 0; i < strings.size; i++) {
+    for ( i = 0; i < strings.size ; i++ )
+    {
         precachemodel( array[ strings[ i ] ].model );
     }
     

@@ -4,7 +4,7 @@
 #namespace progress_tracker;
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x98
 // Size: 0x83
 function function_b58813f6489727f2( var_cc3e7fbaface5a17, var_b76b3aee05993635 )
@@ -27,7 +27,7 @@ function function_b58813f6489727f2( var_cc3e7fbaface5a17, var_b76b3aee05993635 )
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124
 // Size: 0x32
 function function_cfeb21bf93c30dae()
@@ -37,7 +37,7 @@ function function_cfeb21bf93c30dae()
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15f
 // Size: 0x15
 function function_5cd1865af5a5edcf( uniquename )
@@ -46,7 +46,7 @@ function function_5cd1865af5a5edcf( uniquename )
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17c
 // Size: 0x3d
 function function_4f3f1f9cedf2d883()
@@ -62,7 +62,7 @@ function function_4f3f1f9cedf2d883()
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c2
 // Size: 0xb
 function iscomplete()
@@ -71,7 +71,7 @@ function iscomplete()
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d6
 // Size: 0x54
 function addcallback( var_1fd2df2315da3137, callbackfunction )
@@ -83,7 +83,7 @@ function addcallback( var_1fd2df2315da3137, callbackfunction )
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x232
 // Size: 0x9b
 function function_e619a5f97879fa4a()
@@ -108,7 +108,7 @@ function function_e619a5f97879fa4a()
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d5
 // Size: 0x3d
 function function_a370b85e4225923c( incrementvalue )
@@ -128,7 +128,7 @@ function function_a370b85e4225923c( incrementvalue )
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31a
 // Size: 0x46
 function function_1e9e5153831d8c68( decrementvalue )
@@ -149,7 +149,7 @@ function function_1e9e5153831d8c68( decrementvalue )
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x368
 // Size: 0x40
 function function_7681e7890758b69b( progressvalue )
@@ -164,7 +164,7 @@ function function_7681e7890758b69b( progressvalue )
 }
 
 // Namespace progress_tracker / scripts\common\progress_tracker
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b0
 // Size: 0x3f
 function function_ea45d380408d2922( finalvalue )

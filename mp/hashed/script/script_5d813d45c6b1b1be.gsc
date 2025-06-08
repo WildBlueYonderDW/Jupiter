@@ -19,7 +19,7 @@
 #namespace namespace_8eedd8f6cf5d9f19;
 
 // Namespace namespace_8eedd8f6cf5d9f19 / namespace_d0c78bdaf71b04f6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27f
 // Size: 0x1d0
 function init()
@@ -97,7 +97,7 @@ function private function_d387ff09ed5d415( rewards, reward_struct )
 }
 
 // Namespace namespace_8eedd8f6cf5d9f19 / namespace_d0c78bdaf71b04f6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x518
 // Size: 0x9f
 function function_a4dfabe55dd4a652( players, reward_struct, rewards, var_ecfd7797227a5ade )
@@ -201,7 +201,7 @@ function private function_f168c1066111dc6b( str_targetname )
 }
 
 // Namespace namespace_8eedd8f6cf5d9f19 / namespace_d0c78bdaf71b04f6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7c3
 // Size: 0x4c
 function function_441cb85860275371( str_targetname )
@@ -214,7 +214,7 @@ function function_441cb85860275371( str_targetname )
 }
 
 // Namespace namespace_8eedd8f6cf5d9f19 / namespace_d0c78bdaf71b04f6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x818
 // Size: 0x111
 function function_698513ab21b7913d( trigger_struct )
@@ -268,7 +268,7 @@ function private function_ca53007eead9ab91( trigger_box, size )
 }
 
 // Namespace namespace_8eedd8f6cf5d9f19 / namespace_d0c78bdaf71b04f6
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9a5
 // Size: 0xac
 function function_efabc5ae0422de9e( var_5179c48492d1d2c2, use_model, var_cd091563de458dab, state, model_override )
@@ -298,7 +298,7 @@ function function_efabc5ae0422de9e( var_5179c48492d1d2c2, use_model, var_cd09156
 }
 
 // Namespace namespace_8eedd8f6cf5d9f19 / namespace_d0c78bdaf71b04f6
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa59
 // Size: 0x70
 function function_568b8a57e0fa955f( var_5179c48492d1d2c2, players, vanish_delay, var_ed61113e61cacb81 )
@@ -353,7 +353,7 @@ function private function_b45bf4286ea46388( var_5179c48492d1d2c2 )
 }
 
 // Namespace namespace_8eedd8f6cf5d9f19 / namespace_d0c78bdaf71b04f6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbfa
 // Size: 0x66
 function function_f1a89ba11a934119( string )

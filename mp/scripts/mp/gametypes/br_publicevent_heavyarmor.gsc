@@ -18,7 +18,7 @@
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x2d7
+// Checksum 0x0, Offset: 0x2d9
 // Size: 0x17
 function autoexec main()
 {
@@ -26,8 +26,8 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f6
+// Params 1
+// Checksum 0x0, Offset: 0x2f8
 // Size: 0x87
 function init( eventinfo )
 {
@@ -49,8 +49,8 @@ function init( eventinfo )
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x385
+// Params 0
+// Checksum 0x0, Offset: 0x387
 // Size: 0x28
 function initdialog()
 {
@@ -59,8 +59,8 @@ function initdialog()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b5
+// Params 0
+// Checksum 0x0, Offset: 0x3b7
 // Size: 0xc3
 function function_de40a46baab733f5()
 {
@@ -73,8 +73,8 @@ function function_de40a46baab733f5()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x480
+// Params 0
+// Checksum 0x0, Offset: 0x482
 // Size: 0x4, Type: bool
 function event_validate()
 {
@@ -82,8 +82,8 @@ function event_validate()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x48d
+// Params 0
+// Checksum 0x0, Offset: 0x48f
 // Size: 0x2
 function event_wait()
 {
@@ -91,8 +91,8 @@ function event_wait()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x497
+// Params 0
+// Checksum 0x0, Offset: 0x499
 // Size: 0x16b
 function event_activate()
 {
@@ -122,8 +122,8 @@ function event_activate()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x60a
+// Params 0
+// Checksum 0x0, Offset: 0x60c
 // Size: 0xb9
 function event_deactivate()
 {
@@ -141,8 +141,8 @@ function event_deactivate()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cb
+// Params 0
+// Checksum 0x0, Offset: 0x6cd
 // Size: 0x7d
 function function_2b35b40e77841755()
 {
@@ -169,8 +169,8 @@ function function_2b35b40e77841755()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x750
+// Params 0
+// Checksum 0x0, Offset: 0x752
 // Size: 0x4f
 function function_f82951e97a733217()
 {
@@ -178,7 +178,8 @@ function function_f82951e97a733217()
     self endon( "death_or_disconnect" );
     self endon( "heavy_armor_heard" );
     
-    for (var_785f0e8ea0884115 = scripts\cp_mp\armor::function_763f5fb36de6d3df(); var_785f0e8ea0884115 > 0; var_785f0e8ea0884115 = scripts\cp_mp\armor::function_763f5fb36de6d3df()) {
+    for ( var_785f0e8ea0884115 = scripts\cp_mp\armor::function_763f5fb36de6d3df(); var_785f0e8ea0884115 > 0 ; var_785f0e8ea0884115 = scripts\cp_mp\armor::function_763f5fb36de6d3df() )
+    {
         if ( scripts\cp_mp\armor::function_20b8437058079297() > 0 )
         {
             function_10b25ce2e593ce92();
@@ -189,8 +190,8 @@ function function_f82951e97a733217()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a7
+// Params 0
+// Checksum 0x0, Offset: 0x7a9
 // Size: 0x62
 function function_10b25ce2e593ce92()
 {
@@ -214,8 +215,8 @@ function function_10b25ce2e593ce92()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x811
+// Params 0
+// Checksum 0x0, Offset: 0x813
 // Size: 0x56
 function function_48ecb1d91abc38ee()
 {
@@ -224,8 +225,8 @@ function function_48ecb1d91abc38ee()
 }
 
 // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x86f
+// Params 1
+// Checksum 0x0, Offset: 0x871
 // Size: 0xc9
 function function_bdf4a6a9a60593ac( var_7f2f699c3670092b )
 {
@@ -238,8 +239,8 @@ function function_bdf4a6a9a60593ac( var_7f2f699c3670092b )
 /#
 
     // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x940
+    // Params 0
+    // Checksum 0x0, Offset: 0x942
     // Size: 0x2e, Type: dev
     function debug_init()
     {
@@ -249,8 +250,8 @@ function function_bdf4a6a9a60593ac( var_7f2f699c3670092b )
     }
 
     // Namespace br_publicevent_heavyarmor / scripts\mp\gametypes\br_publicevent_heavyarmor
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x976
+    // Params 0
+    // Checksum 0x0, Offset: 0x978
     // Size: 0x2b, Type: dev
     function function_db70bae7732f5204()
     {

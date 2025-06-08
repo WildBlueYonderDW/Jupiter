@@ -8,7 +8,7 @@
 #namespace namespace_21b0fdaf3b4a63b2;
 
 // Namespace namespace_21b0fdaf3b4a63b2 / namespace_ca8eb8c7f624c164
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfd
 // Size: 0x44
 function createaction( target )
@@ -17,7 +17,7 @@ function createaction( target )
 }
 
 // Namespace namespace_21b0fdaf3b4a63b2 / namespace_ca8eb8c7f624c164
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14a
 // Size: 0x1e4
 function actionprocess( bot )
@@ -72,7 +72,7 @@ function actionprocess( bot )
 }
 
 // Namespace namespace_21b0fdaf3b4a63b2 / namespace_ca8eb8c7f624c164
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x336
 // Size: 0x47
 function function_b454fb48a26aa2c7( buystation )
@@ -83,7 +83,7 @@ function function_b454fb48a26aa2c7( buystation )
 }
 
 // Namespace namespace_21b0fdaf3b4a63b2 / namespace_ca8eb8c7f624c164
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x386
 // Size: 0x4c
 function function_6789bd08cbabdb47( buystation, bot )
@@ -97,7 +97,7 @@ function function_6789bd08cbabdb47( buystation, bot )
 }
 
 // Namespace namespace_21b0fdaf3b4a63b2 / namespace_ca8eb8c7f624c164
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3da
 // Size: 0x1e
 function function_f4caae7e8af9d32c( action )

@@ -7,7 +7,7 @@
 #namespace online_event;
 
 // Namespace online_event / scripts\mp\online_event
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x140
 // Size: 0x20
 function init()
@@ -19,7 +19,7 @@ function init()
 }
 
 // Namespace online_event / scripts\mp\online_event
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x168
 // Size: 0xc, Type: bool
 function function_3392f98172a332d7()
@@ -28,7 +28,7 @@ function function_3392f98172a332d7()
 }
 
 // Namespace online_event / scripts\mp\online_event
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17d
 // Size: 0x53
 function function_abd8520a1b77ab7b( var_5ea5f0acd4fd6e5f )
@@ -50,7 +50,7 @@ function function_abd8520a1b77ab7b( var_5ea5f0acd4fd6e5f )
 }
 
 // Namespace online_event / scripts\mp\online_event
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d9
 // Size: 0x1f9
 function function_a23861c0f0635cf4( var_5ea5f0acd4fd6e5f )
@@ -90,14 +90,16 @@ function function_a23861c0f0635cf4( var_5ea5f0acd4fd6e5f )
     
     totalrate = 0;
     
-    for (index = 0; index < edgeitemlist.size; index++) {
+    for ( index = 0; index < edgeitemlist.size ; index++ )
+    {
         totalrate += edgeitemlist[ index ].weight;
     }
     
     randomrate = randomint( totalrate );
     edgeitem = 0;
     
-    for (index = 0; index < edgeitemlist.size; index++) {
+    for ( index = 0; index < edgeitemlist.size ; index++ )
+    {
         randomrate -= edgeitemlist[ index ].weight;
         
         if ( randomrate <= 0 )
@@ -133,7 +135,7 @@ function function_a23861c0f0635cf4( var_5ea5f0acd4fd6e5f )
 }
 
 // Namespace online_event / scripts\mp\online_event
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3da
 // Size: 0x99
 function function_9d27ef5aadbfaf3b( edgeitemlist )
@@ -141,7 +143,8 @@ function function_9d27ef5aadbfaf3b( edgeitemlist )
     ownedlist = self function_da5d6f8b4926cb90();
     var_6c2ac9eaf9d1b5d3 = [];
     
-    for (index = 0; index < edgeitemlist.size; index++) {
+    for ( index = 0; index < edgeitemlist.size ; index++ )
+    {
         if ( isdefined( ownedlist ) && array_contains( ownedlist, edgeitemlist[ index ].id ) )
         {
             continue;

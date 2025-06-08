@@ -9,7 +9,7 @@
 #namespace notetracks_mp;
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a9
 // Size: 0x21
 function registernotetracksifnot()
@@ -24,7 +24,7 @@ function registernotetracksifnot()
 }
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d2
 // Size: 0x8e
 function registernotetracks()
@@ -40,7 +40,7 @@ function registernotetracks()
 }
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x268
 // Size: 0xbf
 function handlenotetrack( note, flagname, customfunction, customparams )
@@ -86,7 +86,7 @@ function handlenotetrack( note, flagname, customfunction, customparams )
 }
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x330
 // Size: 0x155
 function function_6d9ff7d18e45dc9c( notetrack )
@@ -157,7 +157,7 @@ function function_6d9ff7d18e45dc9c( notetrack )
 }
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48e
 // Size: 0x3b
 function notetrackrocketlauncherammoattach()
@@ -181,7 +181,7 @@ function notetrackrocketlauncherammoattach()
 }
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4d1
 // Size: 0x5b
 function notetrackgundrop( note, flagname )
@@ -199,7 +199,7 @@ function notetrackgundrop( note, flagname )
 }
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x534
 // Size: 0x27
 function setpose( pose )
@@ -210,7 +210,7 @@ function setpose( pose )
 }
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x563
 // Size: 0x1f
 function notetrackposestand( note, flagname )
@@ -219,7 +219,7 @@ function notetrackposestand( note, flagname )
 }
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x58a
 // Size: 0x1f
 function notetrackposecrouch( note, flagname )
@@ -228,7 +228,7 @@ function notetrackposecrouch( note, flagname )
 }
 
 // Namespace notetracks_mp / scripts\anim\notetracks_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5b1
 // Size: 0x1f
 function notetrackposeprone( note, flagname )

@@ -15,7 +15,7 @@
 #namespace helper_drone_mp;
 
 // Namespace helper_drone_mp / scripts\mp\killstreaks\helper_drone_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x141
 // Size: 0x54
 function helper_drone_init()
@@ -29,7 +29,7 @@ function helper_drone_init()
 }
 
 // Namespace helper_drone_mp / scripts\mp\killstreaks\helper_drone_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19d
 // Size: 0xb
 function helperdrone_updateheadicononjointeam( player )
@@ -38,7 +38,7 @@ function helperdrone_updateheadicononjointeam( player )
 }
 
 // Namespace helper_drone_mp / scripts\mp\killstreaks\helper_drone_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b0
 // Size: 0x20
 function function_3e5187005523c45c( helperdrone )

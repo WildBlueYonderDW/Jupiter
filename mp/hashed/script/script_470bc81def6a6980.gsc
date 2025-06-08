@@ -4,7 +4,7 @@
 #namespace namespace_f2ee1738ba315249;
 
 // Namespace namespace_f2ee1738ba315249 / namespace_f2d76a94b27a2f46
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa6
 // Size: 0x13
 function main()

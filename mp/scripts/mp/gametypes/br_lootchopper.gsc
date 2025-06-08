@@ -32,7 +32,7 @@
 #namespace br_lootchopper;
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x739
 // Size: 0x1cf
 function init()
@@ -71,7 +71,7 @@ function init()
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x910
 // Size: 0x3a
 function registerleveldataforvehicle()
@@ -86,7 +86,7 @@ function registerleveldataforvehicle()
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x952
 // Size: 0x249
 function lootchopper_initspawninfo( circleinfo )
@@ -145,7 +145,7 @@ function lootchopper_initspawninfo( circleinfo )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xba3
 // Size: 0xd6
 function lootchopper_getspawnlocations( circleinfo )
@@ -171,7 +171,7 @@ function lootchopper_getspawnlocations( circleinfo )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc82
 // Size: 0x11b
 function lootchopper_initcircleinfo( circlecenter, circleradius )
@@ -196,7 +196,7 @@ function lootchopper_initcircleinfo( circlecenter, circleradius )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xda6
 // Size: 0x25b
 function lootchopper_managespawns()
@@ -260,7 +260,8 @@ function lootchopper_managespawns()
         {
             var_6eebc4632b89c8c8 = var_e1ce21e5b4d1163f - level.loot_choppers.size;
             
-            for (i = 0; i < var_6eebc4632b89c8c8; i++) {
+            for ( i = 0; i < var_6eebc4632b89c8c8 ; i++ )
+            {
                 quadid = i + 1;
                 
                 if ( quadid > 4 )
@@ -310,7 +311,7 @@ function lootchopper_managespawns()
 /#
 
     // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1009
     // Size: 0xe4, Type: dev
     function function_fb7c809b0f8f7639()
@@ -360,7 +361,7 @@ function lootchopper_managespawns()
 #/
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10f5
 // Size: 0xc2
 function lootchopper_findunoccupiedpatrolzone( availablespawns, var_6d423f3f70906691 )
@@ -401,7 +402,7 @@ function lootchopper_findunoccupiedpatrolzone( availablespawns, var_6d423f3f7090
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x11c0
 // Size: 0x10f
 function lootchopper_isnearbyoccupiedspawns( potentialspawn, var_6d423f3f70906691 )
@@ -437,7 +438,7 @@ function lootchopper_isnearbyoccupiedspawns( potentialspawn, var_6d423f3f7090669
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12d8
 // Size: 0x7d
 function lootchopper_getzonebyindex( index )
@@ -460,7 +461,7 @@ function lootchopper_getzonebyindex( index )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x135e
 // Size: 0x8a7
 function lootchopper_spawn( patrolzone, overridevehicletype, overridemodel, overrideweapon )
@@ -642,7 +643,7 @@ function lootchopper_spawn( patrolzone, overridevehicletype, overridemodel, over
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c0e
 // Size: 0x2f7
 function lootchopper_setupdamagefunctionality()
@@ -692,7 +693,7 @@ function lootchopper_setupdamagefunctionality()
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1f0d
 // Size: 0x3f
 function lootchopper_modifyweapondamage( weaponname, var_dc9cc1d7198502c2, var_e88cbe78a1e25e8a )
@@ -702,7 +703,7 @@ function lootchopper_modifyweapondamage( weaponname, var_dc9cc1d7198502c2, var_e
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f54
 // Size: 0x39, Type: bool
 function lootchopper_premodifydamage( data )
@@ -713,7 +714,7 @@ function lootchopper_premodifydamage( data )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f96
 // Size: 0x105, Type: bool
 function lootchopper_postmodifydamage( data )
@@ -746,7 +747,7 @@ function lootchopper_postmodifydamage( data )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20a4
 // Size: 0x131, Type: bool
 function lootchopper_handledeathdamage( data )
@@ -781,7 +782,7 @@ function lootchopper_handledeathdamage( data )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21de
 // Size: 0xf9
 function lootchopper_patrolzone( initialpatrol )
@@ -832,7 +833,7 @@ function lootchopper_patrolzone( initialpatrol )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22df
 // Size: 0x69
 function lootchopper_droploot()
@@ -848,7 +849,7 @@ function lootchopper_droploot()
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2350
 // Size: 0xa3
 function lootchopper_finddroplocation( starttrace )
@@ -874,7 +875,7 @@ function lootchopper_finddroplocation( starttrace )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23fc
 // Size: 0x160
 function lootchopper_oncrateuse( player )
@@ -915,7 +916,7 @@ function lootchopper_oncrateuse( player )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2564
 // Size: 0x7c
 function lootchopper_cleanup()
@@ -940,7 +941,7 @@ function lootchopper_cleanup()
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25e8
 // Size: 0x6b
 function lootchopper_createobjective()
@@ -960,7 +961,7 @@ function lootchopper_createobjective()
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x265b
 // Size: 0x90
 function lootchopper_getattackerdata( var_76b6b96d4589e81d )
@@ -985,7 +986,7 @@ function lootchopper_getattackerdata( var_76b6b96d4589e81d )
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26f4
 // Size: 0x13
 function function_c300bcca405c826d()
@@ -994,7 +995,7 @@ function function_c300bcca405c826d()
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x270f
 // Size: 0x13
 function function_f70041f0a83148ce()
@@ -1003,7 +1004,7 @@ function function_f70041f0a83148ce()
 }
 
 // Namespace br_lootchopper / scripts\mp\gametypes\br_lootchopper
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x272a
 // Size: 0x13
 function function_3cd972f38ff76d2c()

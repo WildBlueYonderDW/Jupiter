@@ -16,7 +16,7 @@
 #namespace namespace_35e55eb0037e4a11;
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ce
 // Size: 0x47
 function function_e09936350b8d90fe()
@@ -29,7 +29,7 @@ function function_e09936350b8d90fe()
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31e
 // Size: 0x89
 function function_c8189fd441946d86( guardvehicle )
@@ -71,7 +71,7 @@ function private function_b232793fe47c01b9()
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4e5
 // Size: 0x34
 function function_e1a0ba4bbcab4d69( heli )
@@ -114,7 +114,7 @@ function private function_7512e3d88c4083fa( heli, startingpos )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x684
 // Size: 0x113
 function function_282ffb050875ade6( vehicle )
@@ -165,7 +165,7 @@ function function_282ffb050875ade6( vehicle )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x79f
 // Size: 0x29f
 function function_692565a9023d24d7( vehicle, heli )
@@ -254,7 +254,7 @@ function function_692565a9023d24d7( vehicle, heli )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa46
 // Size: 0x14d
 function function_595d4ebd73e6b933()
@@ -302,7 +302,7 @@ function private function_88b12c91f836c975( heli, vehicle )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc7d
 // Size: 0xb0
 function function_61aa56cc8bf30b2f( origin, heli )
@@ -320,7 +320,7 @@ function function_61aa56cc8bf30b2f( origin, heli )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd35
 // Size: 0xff
 function function_8a112ffdc7706922( vehicle )
@@ -363,7 +363,7 @@ function function_8a112ffdc7706922( vehicle )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe3c
 // Size: 0x64
 function function_90ac39c3f9e0bc50( damage_data )
@@ -384,7 +384,7 @@ function function_90ac39c3f9e0bc50( damage_data )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xea9
 // Size: 0xf1
 function function_8fe1775245b13b6f( player, missileteam, missiletarget, fxtagoverride )
@@ -424,7 +424,7 @@ function function_8fe1775245b13b6f( player, missileteam, missiletarget, fxtagove
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfa2
 // Size: 0x49
 function function_c0afe8bb86f32d06( fxtagoverride )
@@ -441,7 +441,7 @@ function function_c0afe8bb86f32d06( fxtagoverride )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xff3
 // Size: 0xcd
 function function_5eb66c5c1382fed()
@@ -570,7 +570,8 @@ function private function_30401425c3d8874f( goal_pos, vehicle )
     {
         steps = dist / 250;
         
-        for (i = 1; i < steps; i++) {
+        for ( i = 1; i < steps ; i++ )
+        {
             if ( i > 5 )
             {
                 break;
@@ -619,7 +620,7 @@ function private function_30401425c3d8874f( goal_pos, vehicle )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15cd
 // Size: 0x97
 function function_521e6d5a9479e771( path )
@@ -645,7 +646,7 @@ function function_521e6d5a9479e771( path )
 }
 
 // Namespace namespace_35e55eb0037e4a11 / namespace_2b263a10299a0a3a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x166d
 // Size: 0x64
 function function_57dd2a79f8ad4fee( pos )

@@ -19,7 +19,7 @@
 #namespace mp_swap_meet;
 
 // Namespace mp_swap_meet / namespace_52cc23964e7edcd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21e
 // Size: 0xd6
 function main()
@@ -45,7 +45,7 @@ function main()
 }
 
 // Namespace mp_swap_meet / namespace_52cc23964e7edcd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fc
 // Size: 0x40
 function function_1682cf22619a5e55()
@@ -60,7 +60,7 @@ function function_1682cf22619a5e55()
 }
 
 // Namespace mp_swap_meet / namespace_52cc23964e7edcd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x344
 // Size: 0x40
 function function_3c37e8e4377aa2b3()
@@ -70,7 +70,7 @@ function function_3c37e8e4377aa2b3()
 }
 
 // Namespace mp_swap_meet / namespace_52cc23964e7edcd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38c
 // Size: 0x235
 function disabledoors()

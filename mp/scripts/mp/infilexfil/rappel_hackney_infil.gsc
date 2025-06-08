@@ -22,7 +22,7 @@
 #namespace rappel_hackney_infil;
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1335
 // Size: 0x71
 function rappel_hackney_init( subtype )
@@ -39,7 +39,7 @@ function rappel_hackney_init( subtype )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x13ae
 // Size: 0xb5
 function rappel_hackney_spawn( team, target, subtype, originalsubtype )
@@ -61,7 +61,7 @@ function rappel_hackney_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x146c
 // Size: 0x34
 function rappel_hackney_get_length( subtype )
@@ -71,7 +71,7 @@ function rappel_hackney_get_length( subtype )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14a9
 // Size: 0x2ac
 function player_rappel_hackney_infil_think( infil, spot_index )
@@ -158,7 +158,7 @@ function player_rappel_hackney_infil_think( infil, spot_index )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x175d
 // Size: 0xd8
 function player_normal_think( infil )
@@ -185,7 +185,7 @@ function player_normal_think( infil )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x183d
 // Size: 0x34
 function clear_infil_ambient_zone()
@@ -202,7 +202,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1879
 // Size: 0x64
 function heli_infil_radio_idle()
@@ -220,7 +220,7 @@ function heli_infil_radio_idle()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18e5
 // Size: 0x15a
 function player_interactive_think( infil )
@@ -256,7 +256,7 @@ function player_interactive_think( infil )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a47
 // Size: 0x4b
 function player_infil_end()
@@ -275,7 +275,7 @@ function player_infil_end()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a9a
 // Size: 0x6b
 function player_rappel_disconnect()
@@ -300,7 +300,7 @@ function player_rappel_disconnect()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b0d
 // Size: 0x178
 function spawnactors( team, scene_name, extra_crew )
@@ -325,7 +325,7 @@ function spawnactors( team, scene_name, extra_crew )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c8d
 // Size: 0x132
 function infilthink( team, scene_name )
@@ -354,7 +354,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1dc7
 // Size: 0xd3
 function helithink( team, scene_node, scene_name )
@@ -372,7 +372,7 @@ function helithink( team, scene_node, scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ea2
 // Size: 0x127
 function heli_interior_sfx( scene_name )
@@ -405,7 +405,7 @@ function heli_interior_sfx( scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1fd1
 // Size: 0x5f
 function heli_interactive_think( team, scene_node, scene_name )
@@ -418,7 +418,7 @@ function heli_interactive_think( team, scene_node, scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2038
 // Size: 0xad
 function heli_normal_think( team, scene_node, scene_name )
@@ -441,7 +441,7 @@ function heli_normal_think( team, scene_node, scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x20ed
 // Size: 0xbe
 function ropethink( scene_name )
@@ -454,7 +454,7 @@ function ropethink( scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21b3
 // Size: 0x17
 function sfx_infil_hackney_heli1_rope( guy )
@@ -463,7 +463,7 @@ function sfx_infil_hackney_heli1_rope( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21d2
 // Size: 0x17
 function sfx_infil_hackney_heli2_rope( guy )
@@ -472,7 +472,7 @@ function sfx_infil_hackney_heli2_rope( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x21f1
 // Size: 0x38
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -482,7 +482,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2231
 // Size: 0xd0
 function actor_interactive_think( team, scene_node, scene_name )
@@ -496,7 +496,7 @@ function actor_interactive_think( team, scene_node, scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2309
 // Size: 0xc2
 function actor_normal_think( team, scene_node, scene_name )
@@ -510,7 +510,7 @@ function actor_normal_think( team, scene_node, scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x23d3
 // Size: 0x245
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -608,7 +608,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2621
 // Size: 0x56c
 function initanims( subtype )
@@ -679,7 +679,7 @@ function initanims( subtype )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b95
 // Size: 0x516
 function script_model_alpha_anims( subtype )
@@ -742,7 +742,7 @@ function script_model_alpha_anims( subtype )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30b3
 // Size: 0x374
 function vehicles_alpha_anims( subtype )
@@ -817,7 +817,7 @@ function vehicles_alpha_anims( subtype )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x342f
 // Size: 0x110
 function spawnheli( scene_node, team, scene_name )
@@ -841,7 +841,7 @@ function spawnheli( scene_node, team, scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3548
 // Size: 0x115
 function helifollowpath( var_ba4c16ad30a65991 )
@@ -893,7 +893,7 @@ function helifollowpath( var_ba4c16ad30a65991 )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3665
 // Size: 0x9f
 function cleanup()
@@ -911,7 +911,7 @@ function cleanup()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x370c
 // Size: 0x9f
 function spawn_infil_axis_ai( lane, spawn_loc, spawn_ang, weapon_override )
@@ -933,7 +933,7 @@ function spawn_infil_axis_ai( lane, spawn_loc, spawn_ang, weapon_override )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37b4
 // Size: 0x14
 function spawninteractiveinfilai()
@@ -943,7 +943,7 @@ function spawninteractiveinfilai()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37d0
 // Size: 0x16c
 function alphaai()
@@ -998,7 +998,7 @@ function alphaai()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3944
 // Size: 0x85
 function alpha_ai_array_handler( agent, var_cb5616a26c79121f )
@@ -1011,7 +1011,7 @@ function alpha_ai_array_handler( agent, var_cb5616a26c79121f )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39d1
 // Size: 0x16c
 function bravoai()
@@ -1066,7 +1066,7 @@ function bravoai()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b45
 // Size: 0x85
 function bravo_ai_array_handler( agent, var_cb5616a26c79121f )
@@ -1079,7 +1079,7 @@ function bravo_ai_array_handler( agent, var_cb5616a26c79121f )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bd2
 // Size: 0xdf
 function cleanupinteractiveinfilai()
@@ -1106,7 +1106,7 @@ function cleanupinteractiveinfilai()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 12, eflags: 0x0
+// Params 12
 // Checksum 0x0, Offset: 0x3cb9
 // Size: 0xf5
 function agent_handledamagefeedback( einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname )
@@ -1135,7 +1135,7 @@ function agent_handledamagefeedback( einflictor, eattacker, idamage, idflags, sm
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3db6
 // Size: 0x9e
 function blima_door_slam( guy )
@@ -1148,7 +1148,7 @@ function blima_door_slam( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e5c
 // Size: 0x94
 function blima_cam_shake_low( guy )
@@ -1160,7 +1160,7 @@ function blima_cam_shake_low( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ef8
 // Size: 0x94
 function blima_cam_shake_bump( guy )
@@ -1172,7 +1172,7 @@ function blima_cam_shake_bump( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f94
 // Size: 0xfa
 function heli_door_open_sfx( guy )
@@ -1195,7 +1195,7 @@ function heli_door_open_sfx( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4096
 // Size: 0x55
 function heli_commander_sfx( guy )
@@ -1216,7 +1216,7 @@ function heli_commander_sfx( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40f3
 // Size: 0x24
 function scn_infil_hackney_heli_npc1( guy )
@@ -1228,7 +1228,7 @@ function scn_infil_hackney_heli_npc1( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x411f
 // Size: 0x24
 function scn_infil_hackney_heli_npc2( guy )
@@ -1240,7 +1240,7 @@ function scn_infil_hackney_heli_npc2( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x414b
 // Size: 0x24
 function scn_infil_hackney_heli_npc3( guy )
@@ -1252,7 +1252,7 @@ function scn_infil_hackney_heli_npc3( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4177
 // Size: 0x24
 function scn_infil_hackney_heli_npc4( guy )
@@ -1264,7 +1264,7 @@ function scn_infil_hackney_heli_npc4( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41a3
 // Size: 0x24
 function scn_infil_hackney_heli_npc5( guy )
@@ -1276,7 +1276,7 @@ function scn_infil_hackney_heli_npc5( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41cf
 // Size: 0x24
 function scn_infil_hackney_heli_npc6( guy )
@@ -1288,7 +1288,7 @@ function scn_infil_hackney_heli_npc6( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41fb
 // Size: 0x75
 function blima_rumble_rope( guy )
@@ -1308,7 +1308,7 @@ function blima_rumble_rope( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4278
 // Size: 0x44
 function blima_rumble_ground( guy )
@@ -1320,7 +1320,7 @@ function blima_rumble_ground( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42c4
 // Size: 0x6d
 function combat_start()
@@ -1340,7 +1340,7 @@ function combat_start()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4339
 // Size: 0x7f
 function combat_end()
@@ -1355,7 +1355,7 @@ function combat_end()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x43c0
 // Size: 0x7a
 function blima_commander_play_sound_func( alias, notification, var_9a0afe8ff3d2508f )
@@ -1367,7 +1367,7 @@ function blima_commander_play_sound_func( alias, notification, var_9a0afe8ff3d25
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4442
 // Size: 0xc2
 function vehiclethinkpath( team, scene_node, scene_name )
@@ -1384,7 +1384,7 @@ function vehiclethinkpath( team, scene_node, scene_name )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x450c
 // Size: 0x8d
 function giveinteractiveinfilweapon()
@@ -1410,7 +1410,7 @@ function giveinteractiveinfilweapon()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x45a2
 // Size: 0xb9
 function updatehighinfilscore( var_5936722eda95901a )
@@ -1428,7 +1428,7 @@ function updatehighinfilscore( var_5936722eda95901a )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4663
 // Size: 0x9e
 function announceinfilwinner()
@@ -1450,7 +1450,7 @@ function announceinfilwinner()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4709
 // Size: 0x225
 function dummychopper()
@@ -1484,7 +1484,7 @@ function dummychopper()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4936
 // Size: 0x3c
 function applymapvisionset()
@@ -1500,7 +1500,7 @@ function applymapvisionset()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x497a
 // Size: 0x20
 function removemapvisionset()
@@ -1511,7 +1511,7 @@ function removemapvisionset()
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x49a2
 // Size: 0x6e
 function getcommanderassets( team )
@@ -1533,7 +1533,7 @@ function getcommanderassets( team )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a19
 // Size: 0x4f
 function outsideheli( guy )
@@ -1557,7 +1557,7 @@ function outsideheli( guy )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a70
 // Size: 0xee
 function function_aa9c0268656debfc( subtype )
@@ -1588,7 +1588,7 @@ function function_aa9c0268656debfc( subtype )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b67
 // Size: 0xca
 function function_40ab1094757333e0( var_addd3217bc59a7b8 )
@@ -1613,7 +1613,7 @@ function function_40ab1094757333e0( var_addd3217bc59a7b8 )
 }
 
 // Namespace rappel_hackney_infil / scripts\mp\infilexfil\rappel_hackney_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c39
 // Size: 0x9a
 function function_89a2405953b84136( var_addd3217bc59a7b8, override_og )

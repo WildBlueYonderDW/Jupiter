@@ -3,7 +3,7 @@
 #namespace scriptable;
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa8
 // Size: 0x3b
 function scriptable_setinitcallback( initcallback )
@@ -17,7 +17,7 @@ function scriptable_setinitcallback( initcallback )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xeb
 // Size: 0x5f
 function scriptable_engineinitialize()
@@ -32,7 +32,7 @@ function scriptable_engineinitialize()
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x152
 // Size: 0x3b
 function scriptable_addpostinitcallback( callback )
@@ -46,7 +46,7 @@ function scriptable_addpostinitcallback( callback )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x195
 // Size: 0x5f
 function scriptable_enginepostinitialize()
@@ -61,7 +61,7 @@ function scriptable_enginepostinitialize()
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fc
 // Size: 0x3b
 function scriptable_addusedcallback( usedcallback )
@@ -75,7 +75,7 @@ function scriptable_addusedcallback( usedcallback )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x60
 function scriptable_addusedcallbackbypart( part, usedcallback )
@@ -94,7 +94,7 @@ function scriptable_addusedcallbackbypart( part, usedcallback )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2a7
 // Size: 0x3b
 function scriptable_addautousecallback( usecallback )
@@ -108,7 +108,7 @@ function scriptable_addautousecallback( usecallback )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2ea
 // Size: 0x179
 function scriptable_engineused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -144,7 +144,7 @@ function scriptable_engineused( instance, part, state, player, var_a5b2c541413aa
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x46b
 // Size: 0x101
 function function_2cdeacfad7141a8d( instance, part, state, player, useduration )
@@ -167,7 +167,7 @@ function function_2cdeacfad7141a8d( instance, part, state, player, useduration )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x574
 // Size: 0x64
 function function_9a0a13a69553c5a5( part, usedcallback )
@@ -186,7 +186,7 @@ function function_9a0a13a69553c5a5( part, usedcallback )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e0
 // Size: 0x3b
 function function_8daea885ec058271( callback )
@@ -200,7 +200,7 @@ function function_8daea885ec058271( callback )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x623
 // Size: 0x3d
 function function_43f2de646836802d( instance, player )
@@ -216,7 +216,7 @@ function function_43f2de646836802d( instance, player )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x669
 // Size: 0x3b
 function scriptable_addtouchedcallback( touchedcallback )
@@ -230,7 +230,7 @@ function scriptable_addtouchedcallback( touchedcallback )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6ac
 // Size: 0x85
 function scriptable_enginetouched( instance, part, state, player )
@@ -245,7 +245,7 @@ function scriptable_enginetouched( instance, part, state, player )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x739
 // Size: 0x3b
 function scriptable_adddamagedcallback( damagedcallback )
@@ -259,7 +259,7 @@ function scriptable_adddamagedcallback( damagedcallback )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x77c
 // Size: 0xcb
 function scriptable_enginedamaged( einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname )
@@ -274,7 +274,7 @@ function scriptable_enginedamaged( einflictor, eattacker, instance, idamage, idf
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x84f
 // Size: 0x60
 function scriptable_addnotifycallback( funckey, func )
@@ -293,7 +293,7 @@ function scriptable_addnotifycallback( funckey, func )
 }
 
 // Namespace scriptable / scripts\engine\scriptable
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x8b7
 // Size: 0xcf
 function scriptable_enginenotifycallback( instance, note, param, ent, var_535d9c3fdddab5a9 )

@@ -13,7 +13,7 @@
 #namespace nuke_mp;
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x281
 // Size: 0x111
 function init()
@@ -34,7 +34,7 @@ function init()
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39a
 // Size: 0x13
 function nuke_hostmigration_waitlongdurationwithpause( delay )
@@ -43,7 +43,7 @@ function nuke_hostmigration_waitlongdurationwithpause( delay )
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b5
 // Size: 0x8
 function nuke_hostmigration_waittillhostmigrationdone()
@@ -52,7 +52,7 @@ function nuke_hostmigration_waittillhostmigrationdone()
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3c6
 // Size: 0x6d
 function nuke_delayendgame( delaytime, winner )
@@ -69,7 +69,7 @@ function nuke_delayendgame( delaytime, winner )
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x43b
 // Size: 0x25
 function nuke_addteamrankxpmultiplier( multiplier, team, ref )
@@ -78,7 +78,7 @@ function nuke_addteamrankxpmultiplier( multiplier, team, ref )
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x468
 // Size: 0x11b, Type: bool
 function nuke_cankill( character, var_cfc1a4c269cffb70 )
@@ -120,7 +120,7 @@ function nuke_cankill( character, var_cfc1a4c269cffb70 )
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x58c
 // Size: 0x12c
 function nuke_destroyactiveobjects( team )
@@ -158,7 +158,7 @@ function nuke_destroyactiveobjects( team )
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6c0
 // Size: 0x51, Type: bool
 function nuke_isplayerinradzone( player, zoneorigin, zonesize )
@@ -173,7 +173,7 @@ function nuke_isplayerinradzone( player, zoneorigin, zonesize )
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71a
 // Size: 0xf1
 function nuke_killplayer( character )
@@ -188,7 +188,7 @@ function nuke_killplayer( character )
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x813
 // Size: 0xbe
 function nuke_killplayerwithattacker( character )
@@ -205,7 +205,7 @@ function nuke_killplayerwithattacker( character )
 }
 
 // Namespace nuke_mp / scripts\mp\killstreaks\nuke_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d9
 // Size: 0x5a
 function nuke_stoptheclock( gametype )

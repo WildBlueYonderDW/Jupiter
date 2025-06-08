@@ -10,7 +10,7 @@
 #namespace cryofreeze;
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cc
 // Size: 0x253
 function init_cryofreeze()
@@ -48,7 +48,7 @@ function init_cryofreeze()
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x427
 // Size: 0x21
 function function_b12cdbe2604ac3f0( func )
@@ -57,7 +57,7 @@ function function_b12cdbe2604ac3f0( func )
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x450
 // Size: 0x21
 function function_ea61cc8e8adff34e( func )
@@ -66,7 +66,7 @@ function function_ea61cc8e8adff34e( func )
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x479
 // Size: 0xbb
 function function_185301c612d60f6b( death, attacker, mod, sweapon, vpoint, shitloc, modelindex )
@@ -85,7 +85,7 @@ function function_185301c612d60f6b( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x53c
 // Size: 0x148
 function function_d4bd7d34fea892df( death, attacker, mod, sweapon, vpoint, shitloc, modelindex, overrideduration, var_11deb067b7e33bb5, var_4d0199c75efdcbfd )
@@ -124,7 +124,7 @@ function function_d4bd7d34fea892df( death, attacker, mod, sweapon, vpoint, shitl
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x68c
 // Size: 0xab, Type: bool
 function function_3713b5166b308321()
@@ -156,7 +156,7 @@ function function_3713b5166b308321()
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x740
 // Size: 0xd
 function function_2fb9b4401941c475()
@@ -165,7 +165,7 @@ function function_2fb9b4401941c475()
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x756
 // Size: 0x1f
 function function_e2d0deba65109366()
@@ -176,7 +176,7 @@ function function_e2d0deba65109366()
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x77d
 // Size: 0x4d
 function function_7c31b836cdb7c555()
@@ -196,7 +196,7 @@ function function_7c31b836cdb7c555()
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d2
 // Size: 0x43
 function function_3f6403d878857236()
@@ -214,7 +214,7 @@ function function_3f6403d878857236()
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x81d
 // Size: 0x53
 function function_b6c568cd7589eed8( str_label, str_tag )
@@ -237,7 +237,7 @@ function function_b6c568cd7589eed8( str_label, str_tag )
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x878
 // Size: 0x75
 function on_ai_damage( params )
@@ -252,7 +252,7 @@ function on_ai_damage( params )
 }
 
 // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x8f6
 // Size: 0x5b
 function function_136a046f13726c77( idamage, eattacker, smeansofdeath, shitloc, sweapon )
@@ -280,7 +280,7 @@ function private on_ai_killed( params )
 /#
 
     // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x9dd
     // Size: 0x7b, Type: dev
     function function_493389d543d8fb87()
@@ -294,7 +294,7 @@ function private on_ai_killed( params )
     }
 
     // Namespace cryofreeze / namespace_a7f426fbebc3a6f4
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa60
     // Size: 0x2f, Type: dev
     function function_750b525ce60bef6c()

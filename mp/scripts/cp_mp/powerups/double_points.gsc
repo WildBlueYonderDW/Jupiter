@@ -21,7 +21,7 @@ function autoexec main()
 }
 
 // Namespace double_points / scripts\cp_mp\powerups\double_points
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x177
 // Size: 0x5e
 function function_8680030b255bf011( var_40708f9ae5a8070e )
@@ -37,7 +37,7 @@ function function_8680030b255bf011( var_40708f9ae5a8070e )
 }
 
 // Namespace double_points / scripts\cp_mp\powerups\double_points
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1dd
 // Size: 0x79
 function grab_double_points( str_powerup, ent_powerup )
@@ -53,7 +53,7 @@ function grab_double_points( str_powerup, ent_powerup )
 }
 
 // Namespace double_points / scripts\cp_mp\powerups\double_points
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25e
 // Size: 0xcd
 function function_44e15a446f4d00a9()

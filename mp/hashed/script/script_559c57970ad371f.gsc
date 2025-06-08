@@ -29,7 +29,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xff
     // Size: 0x5b, Type: dev
     function function_23e1b955d1a7c9a1( text )
@@ -163,7 +163,8 @@
         
         if ( isarray( text ) )
         {
-            for (i = 0; i < text.size; i++) {
+            for ( i = 0; i < text.size ; i++ )
+            {
                 yy = y + 16 * scale * i;
                 text_line = text[ i ];
                 printtoscreen2d( x, yy, text_line, color, scale, 1 );
@@ -174,7 +175,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x4e9
     // Size: 0xcc, Type: dev
     function function_16b7675a3ef3d04f( origin, text, color, scale )
@@ -190,7 +191,8 @@
         
         if ( isarray( text ) )
         {
-            for (i = 0; i < text.size; i++) {
+            for ( i = 0; i < text.size ; i++ )
+            {
                 ii = text.size - 1 - i;
                 text_origin = origin + ( 0, 0, 14 * scale * ii );
                 text_line = text[ i ];
@@ -200,7 +202,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x5bd
     // Size: 0x91, Type: dev
     function function_d9799cc056122ed7( boss, name, state )
@@ -213,7 +215,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x656
     // Size: 0x80, Type: dev
     function function_17d9f3785bf1042( x, y, text, color, scale, index )
@@ -227,7 +229,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x6de
     // Size: 0x1f4, Type: dev
     function function_ebd5555b105d2c99( bossdetails, bossinstance, x, y, index )
@@ -272,7 +274,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x8da
     // Size: 0x73, Type: dev
     function function_d974aec0560c2d96( boss, name, state )
@@ -285,7 +287,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0x955
     // Size: 0xee, Type: dev
     function function_d75ea89dee2f86f4( origin, text, color, height, radius )
@@ -308,7 +310,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0xa4b
     // Size: 0xda, Type: dev
     function function_520b0777b699630b( origin, angles, text, color, radius, var_e9136a3ae00f9e47 )
@@ -329,7 +331,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0xb2d
     // Size: 0xe3, Type: dev
     function function_c9ef0d1abb4b9396( origin, angles, text, color, var_e9136a3ae00f9e47 )
@@ -350,7 +352,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 5, eflags: 0x0
+    // Params 5
     // Checksum 0x0, Offset: 0xc18
     // Size: 0xe3, Type: dev
     function function_6cec87bd99735fe5( origin, angles, text, color, var_e9136a3ae00f9e47 )
@@ -371,7 +373,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xd03
     // Size: 0x3aa, Type: dev
     function function_ebd16f5b10596ff0( bossdetails, bossinstance )
@@ -445,7 +447,7 @@
     }
 
     // Namespace namespace_aed319c762c2b87c / namespace_fbe0d13c598c2ab5
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x10b5
     // Size: 0x1de, Type: dev
     function function_b9d60dcb9d82b507()

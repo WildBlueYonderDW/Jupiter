@@ -12,21 +12,21 @@
 #namespace deathicons;
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x25c
+// Params 0
+// Checksum 0x0, Offset: 0x24b
 // Size: 0xa7
 function init()
 {
     level.deathicons = spawnstruct();
     level.deathicons.var_e973113c908f1b3e = getdvarint( @"hash_97e20befa2938a48", 10 );
     level.deathicons.var_3c1ea16fb886db94 = getdvarint( @"hash_f00ea016dc7b1272", 4000 );
-    level.deathicons.var_be5e71251b2fdb9d = getdvarfloat( @"hash_8bbf501270a5bcf2", 10 );
+    level.deathicons.var_be5e71251b2fdb9d = getdvarfloat( @"death_icon_teammate_duration", 10 );
     level.deathicons.var_ec15e7c2b73e1708 = getdvarfloat( @"hash_d4e44eecf9bc8099", 0 );
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x30b
+// Params 5
+// Checksum 0x0, Offset: 0x2fa
 // Size: 0x309
 function adddeathicon( attacker, entity, dyingplayer, team, timeout )
 {
@@ -152,26 +152,23 @@ function adddeathicon( attacker, entity, dyingplayer, team, timeout )
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61c
-// Size: 0x7f
+// Params 1
+// Checksum 0x0, Offset: 0x60b
+// Size: 0x9e
 function function_55bb1f7a41bf2fbd( var_d9622d6cf6275394 )
 {
     self endon( "removed_death_icon" );
     team = self.team;
     icon = self.lastdeathheadicon;
     deathiconlocation = self.origin;
+    jobs = [ &function_b3ff47edf02118d1 ];
     
     if ( !var_d9622d6cf6275394 )
     {
-        thread handlefriendlyvisibility( icon, team );
+        jobs[ jobs.size ] = &function_e9a6ee3cebf7919c;
     }
     
-    if ( isdefined( self ) )
-    {
-        function_b3ff47edf02118d1( deathiconlocation );
-    }
-    
+    function_1f9d89277519b570( jobs, [ icon, deathiconlocation, team ] );
     scripts\cp_mp\entityheadicons::setheadicon_deleteicon( icon );
     
     if ( isdefined( self ) )
@@ -181,10 +178,10 @@ function function_55bb1f7a41bf2fbd( var_d9622d6cf6275394 )
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a3
-// Size: 0x1b9
-function handlefriendlyvisibility( icon, team )
+// Params 3
+// Checksum 0x0, Offset: 0x6b1
+// Size: 0x1c1
+function function_e9a6ee3cebf7919c( icon, deathiconlocation, team )
 {
     wait level.deathicons.var_be5e71251b2fdb9d;
     teammates = getfriendlyplayers( team );
@@ -240,16 +237,14 @@ function handlefriendlyvisibility( icon, team )
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x864
-// Size: 0x1ca
-function function_b3ff47edf02118d1( deathiconlocation )
+// Params 3
+// Checksum 0x0, Offset: 0x87a
+// Size: 0x1de
+function function_b3ff47edf02118d1( icon, deathiconlocation, team )
 {
     player = self;
     player endon( "disconnect" );
     level endon( "game_ended" );
-    player notify( "death_icon_on" );
-    player endon( "death_icon_on" );
     var_fbf7a3d9a735ec16 = player br_public::isplayerinorgoingtogulag() || player br_public::function_8f0e6614368f64c2() || br_public::isrespawningfromtoken( player );
     var_c4e3fe6f0f6c591d = istrue( player.issolo ) && isdefined( player.respawndelay ) && player.respawndelay <= 0;
     
@@ -273,7 +268,8 @@ function function_b3ff47edf02118d1( deathiconlocation )
     
     scripts\cp_mp\entityheadicons::setheadicon_addclienttomask( player.lastdeathheadicon, player );
     
-    for (var_ed636cd9ad93833d = 0; !var_ed636cd9ad93833d; var_ed636cd9ad93833d = 1) {
+    for ( var_ed636cd9ad93833d = 0; !var_ed636cd9ad93833d ; var_ed636cd9ad93833d = 1 )
+    {
         wait 1;
         
         if ( isalive( player ) && ( player isonladder() || player ishanging() || player isonground() || player isswimming() || player isswimunderwater() ) )
@@ -288,11 +284,13 @@ function function_b3ff47edf02118d1( deathiconlocation )
             wait max( level.deathicons.var_e973113c908f1b3e, 0 );
         }
     }
+    
+    scripts\cp_mp\entityheadicons::setheadicon_removeclientfrommask( player.lastdeathheadicon, player );
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa36
+// Params 1
+// Checksum 0x0, Offset: 0xa60
 // Size: 0x4c
 function destroyslowly( timeout )
 {
@@ -309,8 +307,8 @@ function destroyslowly( timeout )
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8a
+// Params 1
+// Checksum 0x0, Offset: 0xab4
 // Size: 0x35
 function hidedeathicon( player )
 {
@@ -323,8 +321,8 @@ function hidedeathicon( player )
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac7
+// Params 1
+// Checksum 0x0, Offset: 0xaf1
 // Size: 0x47
 function removedeathicon( player )
 {
@@ -339,8 +337,8 @@ function removedeathicon( player )
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb16
+// Params 0
+// Checksum 0x0, Offset: 0xb40
 // Size: 0x56
 function removealldeathicons()
 {
@@ -351,8 +349,8 @@ function removealldeathicons()
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xb74
+// Params 6
+// Checksum 0x0, Offset: 0xb9e
 // Size: 0x288
 function addenemydeathicon( entity, dyingplayer, var_dd573edaa0c55862, var_5582b247a8570f9b, timeout, var_29693175f0940203 )
 {
@@ -447,8 +445,8 @@ function addenemydeathicon( entity, dyingplayer, var_dd573edaa0c55862, var_5582b
 }
 
 // Namespace deathicons / scripts\mp\deathicons
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe04
+// Params 1
+// Checksum 0x0, Offset: 0xe2e
 // Size: 0x8e
 function destroyenemyiconslowly( timeout )
 {

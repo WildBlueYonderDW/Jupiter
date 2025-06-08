@@ -16,7 +16,7 @@
 #namespace javelin;
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34e
 // Size: 0xa0
 function javelinusageloop()
@@ -46,7 +46,7 @@ function javelinusageloop()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3f6
 // Size: 0x1f
 function function_2f8e1a565d6bf787()
@@ -58,7 +58,7 @@ function function_2f8e1a565d6bf787()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x41d
 // Size: 0x2a8
 function javelin_init()
@@ -91,7 +91,7 @@ function javelin_init()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6cd
 // Size: 0x11a
 function javelin_reset()
@@ -121,7 +121,7 @@ function javelin_reset()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ef
 // Size: 0xbd
 function javelin_offstateenter( fromstate )
@@ -144,7 +144,7 @@ function javelin_offstateenter( fromstate )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b4
 // Size: 0x1d
 function javelin_offstateupdate()
@@ -156,7 +156,7 @@ function javelin_offstateupdate()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d9
 // Size: 0xb
 function javelin_offstateexit()
@@ -165,7 +165,7 @@ function javelin_offstateexit()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ec
 // Size: 0x2f
 function function_22c8f0d0e0492f51()
@@ -177,7 +177,7 @@ function function_22c8f0d0e0492f51()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x923
 // Size: 0xc7
 function function_f8db769be3a46d46()
@@ -204,7 +204,7 @@ function function_f8db769be3a46d46()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f2
 // Size: 0x30
 function javelin_scanningstateenter( fromstate )
@@ -214,7 +214,7 @@ function javelin_scanningstateenter( fromstate )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2a
 // Size: 0x51c
 function javelin_scanningstateupdate()
@@ -341,7 +341,7 @@ function javelin_scanningstateupdate()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf4e
 // Size: 0xc8
 function javelin_holdstateenter( fromstate )
@@ -368,7 +368,7 @@ function javelin_holdstateenter( fromstate )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x101e
 // Size: 0x228
 function javelin_holdstateupdate()
@@ -442,7 +442,7 @@ function javelin_holdstateupdate()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124e
 // Size: 0x16
 function javelin_holdstateexit()
@@ -452,7 +452,7 @@ function javelin_holdstateexit()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x126c
 // Size: 0x169
 function javelin_firestateenter( fromstate )
@@ -488,7 +488,7 @@ function javelin_firestateenter( fromstate )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13dd
 // Size: 0x10e
 function javelin_firestateupdate()
@@ -525,7 +525,7 @@ function javelin_firestateupdate()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14f3
 // Size: 0x92
 function javelin_firestateexit()
@@ -548,7 +548,7 @@ function javelin_firestateexit()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x158d
 // Size: 0x14
 function javelin_tooclosestateenter( fromstate )
@@ -557,7 +557,7 @@ function javelin_tooclosestateenter( fromstate )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15a9
 // Size: 0x75
 function javelin_tooclosestateupdate()
@@ -585,7 +585,7 @@ function javelin_tooclosestateupdate()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1626
 // Size: 0x51
 function javelin_preupdate()
@@ -600,7 +600,7 @@ function javelin_preupdate()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x167f
 // Size: 0xab, Type: bool
 function javelin_checktargetstillheld( targetent )
@@ -641,7 +641,7 @@ function javelin_checktargetstillheld( targetent )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1733
 // Size: 0x155
 function javelin_eyetraceforward()
@@ -682,7 +682,7 @@ function javelin_eyetraceforward()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1891
 // Size: 0x159
 function function_ceeb605cf6974148( firsthit, gunforward )
@@ -701,7 +701,8 @@ function function_ceeb605cf6974148( firsthit, gunforward )
     var_a09791f8b1dafd16 = scripts\engine\trace::ray_trace_get_all_results( testpoint + ( 0, 0, 100000 ), testpoint - ( 0, 0, var_94168349c721c815 ), undefined, undefined, 1 );
     var_c8bf52a3fd4aec68 = undefined;
     
-    for (i = 0; i < var_a09791f8b1dafd16.size - 1; i++) {
+    for ( i = 0; i < var_a09791f8b1dafd16.size - 1 ; i++ )
+    {
         hit = var_a09791f8b1dafd16[ i ];
         
         if ( hit[ "surfacetype" ] == "surftype_none" )
@@ -728,7 +729,7 @@ function function_ceeb605cf6974148( firsthit, gunforward )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19f2
 // Size: 0x83, Type: bool
 function pointinbounds( point )
@@ -750,7 +751,7 @@ function pointinbounds( point )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a7e
 // Size: 0x32, Type: bool
 function javelin_targetpointtooclose( targetpoint )
@@ -766,7 +767,7 @@ function javelin_targetpointtooclose( targetpoint )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ab9
 // Size: 0x2e
 function javelin_looplocalseeksound( alias, interval )
@@ -782,7 +783,7 @@ function javelin_looplocalseeksound( alias, interval )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1aef
 // Size: 0x20
 function javelin_queuestate( statename )
@@ -791,7 +792,7 @@ function javelin_queuestate( statename )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b17
 // Size: 0x15
 function javelin_getqueuedstate()
@@ -800,7 +801,7 @@ function javelin_getqueuedstate()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b35
 // Size: 0x118
 function javelin_enterstate( statename )
@@ -829,7 +830,7 @@ function javelin_enterstate( statename )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c55
 // Size: 0x9, Type: bool
 function javelin_shouldjavelinthink()
@@ -838,7 +839,7 @@ function javelin_shouldjavelinthink()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c67
 // Size: 0x123
 function javelin_think()
@@ -891,7 +892,7 @@ function javelin_think()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d92
 // Size: 0x148
 function javelin_scanforvehicletarget()
@@ -936,7 +937,7 @@ function javelin_scanforvehicletarget()
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1ee3
 // Size: 0x153, Type: bool
 function javelin_vehiclelocksighttest( target )
@@ -997,7 +998,7 @@ function javelin_vehiclelocksighttest( target )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x203f
 // Size: 0x13f
 function javelin_getvehicleoffset( vehicletarget )
@@ -1050,7 +1051,7 @@ function javelin_getvehicleoffset( vehicletarget )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2187
 // Size: 0x8f, Type: bool
 function javelin_softsighttest( targetent )
@@ -1077,7 +1078,7 @@ function javelin_softsighttest( targetent )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x221f
 // Size: 0x5a
 function javelin_hidenormalhud( enable )
@@ -1105,7 +1106,7 @@ function javelin_hidenormalhud( enable )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2281
 // Size: 0x97
 function javelin_setuistate( state )
@@ -1148,7 +1149,7 @@ function javelin_setuistate( state )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2320
 // Size: 0x73
 function marklocation( markpos )
@@ -1169,7 +1170,7 @@ function marklocation( markpos )
 }
 
 // Namespace javelin / scripts\mp\javelin
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x239b
 // Size: 0x71
 function watchtargetmarkerentstatus( var_d99ed5531d1fdc1f, targetmarkergroup, istag )
@@ -1192,7 +1193,7 @@ function watchtargetmarkerentstatus( var_d99ed5531d1fdc1f, targetmarkergroup, is
 /#
 
     // Namespace javelin / scripts\mp\javelin
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2414
     // Size: 0x2c, Type: dev
     function function_26c6f6de312b721f( text )
@@ -1204,7 +1205,7 @@ function watchtargetmarkerentstatus( var_d99ed5531d1fdc1f, targetmarkergroup, is
     }
 
     // Namespace javelin / scripts\mp\javelin
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x2448
     // Size: 0x85, Type: dev
     function function_2230e7ba8b6c416f( point, color )
@@ -1215,7 +1216,7 @@ function watchtargetmarkerentstatus( var_d99ed5531d1fdc1f, targetmarkergroup, is
     }
 
     // Namespace javelin / scripts\mp\javelin
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x24d5
     // Size: 0x87, Type: dev
     function function_9c1d49cefcf64a9b( start, end, passed )
@@ -1241,7 +1242,7 @@ function watchtargetmarkerentstatus( var_d99ed5531d1fdc1f, targetmarkergroup, is
 #/
 
 // Namespace javelin / scripts\mp\javelin
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2564
 // Size: 0xc9
 function javelin_forceclear()

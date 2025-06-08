@@ -4,7 +4,7 @@
 #namespace script;
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e
 // Size: 0xa1
 function waittillslowprocessallowed( allowloop )
@@ -43,7 +43,7 @@ function waittillslowprocessallowed( allowloop )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c7
 // Size: 0x45
 function queuecreate( queuename )
@@ -58,7 +58,7 @@ function queuecreate( queuename )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x214
 // Size: 0x42
 function queueadd( queuename, entity )
@@ -68,7 +68,7 @@ function queueadd( queuename, entity )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25e
 // Size: 0xab
 function queueremovefirst( queuename )
@@ -98,7 +98,7 @@ function queueremovefirst( queuename )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x312
 // Size: 0x18a
 function quicksort( array, compare_func )
@@ -145,7 +145,8 @@ function quicksort( array, compare_func )
         x = array[ h ];
         p = l - 1;
         
-        for (j = l; j <= h - 1; j++) {
+        for ( j = l; j <= h - 1 ; j++ )
+        {
             if ( [[ compare_func ]]( array[ j ], x ) )
             {
                 p++;
@@ -181,7 +182,7 @@ function quicksort( array, compare_func )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4a5
 // Size: 0x16, Type: bool
 function default_compare( left, right )
@@ -190,14 +191,15 @@ function default_compare( left, right )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4c4
 // Size: 0x59
 function limitdecimalplaces( value, places )
 {
     modifier = 1;
     
-    for (i = 0; i < places; i++) {
+    for ( i = 0; i < places ; i++ )
+    {
         modifier *= 10;
     }
     
@@ -208,7 +210,7 @@ function limitdecimalplaces( value, places )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x526
 // Size: 0xa9
 function rounddecimalplaces( value, places, style )
@@ -220,7 +222,8 @@ function rounddecimalplaces( value, places, style )
     
     modifier = 1;
     
-    for (i = 0; i < places; i++) {
+    for ( i = 0; i < places ; i++ )
+    {
         modifier *= 10;
     }
     
@@ -245,7 +248,7 @@ function rounddecimalplaces( value, places, style )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d8
 // Size: 0x7c
 function stringtofloat( stringval )
@@ -257,7 +260,8 @@ function stringtofloat( stringval )
     {
         modifier = 1;
         
-        for (i = 0; i < floatelements[ 1 ].size; i++) {
+        for ( i = 0; i < floatelements[ 1 ].size ; i++ )
+        {
             modifier *= 0.1;
         }
         
@@ -268,7 +272,7 @@ function stringtofloat( stringval )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x65d
 // Size: 0x6e
 function array_remove_keep_index( ents, remover )
@@ -287,7 +291,7 @@ function array_remove_keep_index( ents, remover )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d4
 // Size: 0x20
 function delayentdelete( time )
@@ -302,7 +306,7 @@ function delayentdelete( time )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fc
 // Size: 0x30
 function roundup( floatvalue )
@@ -316,7 +320,7 @@ function roundup( floatvalue )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x734
 // Size: 0x5f
 function bufferednotify( notification, param1, param2, param3, param4, param5, param6, param7, param8 )
@@ -325,7 +329,7 @@ function bufferednotify( notification, param1, param2, param3, param4, param5, p
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 9, eflags: 0x0
+// Params 9
 // Checksum 0x0, Offset: 0x79b
 // Size: 0x1ea
 function bufferednotify_internal( notification, param1, param2, param3, param4, param5, param6, param7, param8 )
@@ -368,7 +372,7 @@ function bufferednotify_internal( notification, param1, param2, param3, param4, 
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x98d
 // Size: 0x3c
 function notifyafterframeend( waittillmsg, var_7239f8830ef22b43 )
@@ -381,7 +385,7 @@ function notifyafterframeend( waittillmsg, var_7239f8830ef22b43 )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9d1
 // Size: 0x2d
 function delaysetclientomnvar( delaytime, omnvar, value )
@@ -392,7 +396,7 @@ function delaysetclientomnvar( delaytime, omnvar, value )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa06
 // Size: 0x3d
 function strip_suffix( lookupstring, stripstring )
@@ -411,7 +415,7 @@ function strip_suffix( lookupstring, stripstring )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa4c
 // Size: 0x42
 function vectortoanglessafe( forward, up )
@@ -423,7 +427,7 @@ function vectortoanglessafe( forward, up )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa97
 // Size: 0x90
 function heap( type )
@@ -446,7 +450,7 @@ function heap( type )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb30
 // Size: 0xb
 function heapsize()
@@ -455,7 +459,7 @@ function heapsize()
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb44
 // Size: 0xe
 function heappeek()
@@ -464,7 +468,7 @@ function heappeek()
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb5b
 // Size: 0xb8
 function heappop()
@@ -491,7 +495,7 @@ function heappop()
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc1b
 // Size: 0xc4
 function heapinsert( val )
@@ -521,7 +525,7 @@ function heapinsert( val )
 /#
 
     // Namespace script / scripts\mp\utility\script
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xce7
     // Size: 0x95, Type: dev
     function printheap()
@@ -530,15 +534,18 @@ function heapinsert( val )
         vals = [];
         size = self.nvals;
         
-        for (i = 0; i < size; i++) {
+        for ( i = 0; i < size ; i++ )
+        {
             vals[ i ] = heappop();
         }
         
-        for (i = 0; i < vals.size; i++) {
+        for ( i = 0; i < vals.size ; i++ )
+        {
             heapinsert( vals[ i ] );
         }
         
-        for (i = 0; i < vals.size; i++) {
+        for ( i = 0; i < vals.size ; i++ )
+        {
             print( vals[ i ] + "<dev string:xc8>" );
         }
         
@@ -548,7 +555,7 @@ function heapinsert( val )
 #/
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd84
 // Size: 0x2a, Type: bool
 function _heapgreaterthan( i, j )
@@ -557,7 +564,7 @@ function _heapgreaterthan( i, j )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdb7
 // Size: 0x2a, Type: bool
 function _heaplessthan( i, j )
@@ -566,7 +573,7 @@ function _heaplessthan( i, j )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdea
 // Size: 0x108
 function _heapify( i )
@@ -616,7 +623,7 @@ function _heapify( i )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xefa
 // Size: 0x23
 function _heapleftchild( i )
@@ -630,7 +637,7 @@ function _heapleftchild( i )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf26
 // Size: 0x29
 function _heaprightchild( i )
@@ -644,7 +651,7 @@ function _heaprightchild( i )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf58
 // Size: 0x22
 function _heapparent( i )
@@ -658,7 +665,7 @@ function _heapparent( i )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf83
 // Size: 0x1f, Type: bool
 function isnumbermultipleof( number, factor )
@@ -667,7 +674,7 @@ function isnumbermultipleof( number, factor )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfab
 // Size: 0x1a
 function demoforcesre( message )
@@ -676,7 +683,7 @@ function demoforcesre( message )
 }
 
 // Namespace script / scripts\mp\utility\script
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfcd
 // Size: 0x1c
 function function_7bd154ad046984e2( message )

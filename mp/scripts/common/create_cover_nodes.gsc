@@ -6,7 +6,7 @@
 #namespace create_cover_nodes;
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x614
 // Size: 0x191
 function create_cover_node_init()
@@ -59,7 +59,7 @@ function create_cover_node_init()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ad
 // Size: 0x5c
 function initialize_path_node_placement()
@@ -74,7 +74,7 @@ function initialize_path_node_placement()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x812
 // Size: 0x5f
 function reset_path_node_placement_for_radius()
@@ -89,7 +89,7 @@ function reset_path_node_placement_for_radius()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x87a
 // Size: 0x5f
 function reset_path_node_placement_for_lookat()
@@ -104,7 +104,7 @@ function reset_path_node_placement_for_lookat()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8e2
 // Size: 0xc9
 function reset_path_node_placement_for_box_creation()
@@ -127,7 +127,7 @@ function reset_path_node_placement_for_box_creation()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b4
 // Size: 0x528
 function reset_path_node_placement()
@@ -221,7 +221,7 @@ function reset_path_node_placement()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xee5
 // Size: 0xb
 function debugdata()
@@ -230,7 +230,7 @@ function debugdata()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xef9
 // Size: 0x97
 function run_single_grid_point_test( player )
@@ -255,7 +255,7 @@ function run_single_grid_point_test( player )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf98
 // Size: 0xa6
 function place_path_node_from_lookat( player )
@@ -282,7 +282,7 @@ function place_path_node_from_lookat( player )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1046
 // Size: 0x190
 function delay_node_creation_from_single_point()
@@ -316,7 +316,7 @@ function delay_node_creation_from_single_point()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11de
 // Size: 0x16c
 function delay_node_creation_from_look_at()
@@ -347,7 +347,7 @@ function delay_node_creation_from_look_at()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1352
 // Size: 0x22c
 function place_path_nodes_within_box( player )
@@ -393,7 +393,7 @@ function place_path_nodes_within_box( player )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1586
 // Size: 0x41a
 function create_and_update_box()
@@ -486,7 +486,7 @@ function create_and_update_box()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a8
 // Size: 0x63
 function show_running_tool_message()
@@ -509,7 +509,7 @@ function show_running_tool_message()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a13
 // Size: 0x2f9
 function create_box()
@@ -611,7 +611,7 @@ function create_box()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d14
 // Size: 0xac
 function place_path_nodes_within_radius( player )
@@ -637,7 +637,7 @@ function place_path_nodes_within_radius( player )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dc8
 // Size: 0x9c
 function place_path_nodes( player )
@@ -659,7 +659,7 @@ function place_path_nodes( player )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e6c
 // Size: 0x4c3
 function clean_up_nodes()
@@ -680,7 +680,8 @@ function clean_up_nodes()
     {
         table = level.path_node_table;
         
-        for (row = 0; true; row++) {
+        for ( row = 0; true ; row++ )
+        {
             classname = tablelookupbyrow( table, row, 0 );
             
             if ( classname == "" )
@@ -790,7 +791,7 @@ function clean_up_nodes()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2337
 // Size: 0xbf
 function translate_position_with_offset_data( var_a1306ee53c20150f, var_e3c2f7a7f3d4cce6 )
@@ -821,7 +822,7 @@ function translate_position_with_offset_data( var_a1306ee53c20150f, var_e3c2f7a7
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23fe
 // Size: 0x9c
 function node_passes_nav_and_geo_validation( var_1325c007eaac8163 )
@@ -858,7 +859,7 @@ function node_passes_nav_and_geo_validation( var_1325c007eaac8163 )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24a2
 // Size: 0x225
 function remove_similar_nodes( player )
@@ -884,14 +885,16 @@ function remove_similar_nodes( player )
     data.aa_status = "starting";
     var_73e40d6bbc1a5a97 = getallnodes();
     
-    for (i = 0; i < var_73e40d6bbc1a5a97.size; i++) {
+    for ( i = 0; i < var_73e40d6bbc1a5a97.size ; i++ )
+    {
         test_node = var_73e40d6bbc1a5a97[ i ];
         
         if ( isdefined( test_node ) )
         {
             remove = 0;
             
-            for (j = 0; j < var_73e40d6bbc1a5a97.size; j++) {
+            for ( j = 0; j < var_73e40d6bbc1a5a97.size ; j++ )
+            {
                 other_node = var_73e40d6bbc1a5a97[ j ];
                 
                 if ( !isdefined( other_node ) )
@@ -946,7 +949,7 @@ function remove_similar_nodes( player )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x26cf
 // Size: 0x163, Type: bool
 function similar_nodes_nearby()
@@ -959,7 +962,8 @@ function similar_nodes_nearby()
     {
         var_73e40d6bbc1a5a97 = getallnodes();
         
-        for (i = 0; i < var_73e40d6bbc1a5a97.size; i++) {
+        for ( i = 0; i < var_73e40d6bbc1a5a97.size ; i++ )
+        {
             test_node = var_73e40d6bbc1a5a97[ i ];
             
             if ( isdefined( test_node ) )
@@ -984,7 +988,8 @@ function similar_nodes_nearby()
     
     var_73e40d6bbc1a5a97 = level.path_node_debug_info.all_node_positions;
     
-    for (i = 0; i < var_73e40d6bbc1a5a97.size; i++) {
+    for ( i = 0; i < var_73e40d6bbc1a5a97.size ; i++ )
+    {
         test_node = var_73e40d6bbc1a5a97[ i ];
         
         if ( isdefined( test_node ) )
@@ -1010,7 +1015,7 @@ function similar_nodes_nearby()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x283b
 // Size: 0x79
 function get_node_type_from_type( node )
@@ -1033,7 +1038,7 @@ function get_node_type_from_type( node )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28bd
 // Size: 0x7
 function get_raw_or_devraw_subdir()
@@ -1042,7 +1047,7 @@ function get_raw_or_devraw_subdir()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28cd
 // Size: 0x7
 function get_gamemode_subdir()
@@ -1051,7 +1056,7 @@ function get_gamemode_subdir()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28dd
 // Size: 0xb7
 function close_map_write()
@@ -1077,7 +1082,7 @@ function close_map_write()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x299c
 // Size: 0x122
 function create_cover_nodes_within_volume()
@@ -1092,7 +1097,8 @@ function create_cover_nodes_within_volume()
     {
         data.num_fails = 0;
         
-        for (i = 0; i < data.origin_max_dirs; i++) {
+        for ( i = 0; i < data.origin_max_dirs ; i++ )
+        {
             data.origin_counter = i;
             get_next_volume_origin();
             
@@ -1113,7 +1119,7 @@ function create_cover_nodes_within_volume()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ac6
 // Size: 0x100
 function vol_create_cover_nodes_from_grid_point()
@@ -1121,7 +1127,8 @@ function vol_create_cover_nodes_from_grid_point()
     data = debugdata();
     data.should_create_exposed_node = 1;
     
-    for (i = 0; i <= data.node_creation_traces; i++) {
+    for ( i = 0; i <= data.node_creation_traces ; i++ )
+    {
         data.node_creation_trace_index = i;
         vol_create_and_validate_node();
     }
@@ -1147,7 +1154,7 @@ function vol_create_cover_nodes_from_grid_point()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bce
 // Size: 0x12f
 function create_cover_nodes_from_grid_points()
@@ -1164,10 +1171,12 @@ function create_cover_nodes_from_grid_points()
         data.num_fails = 0;
         create_grid_point();
         
-        for (i = 0; i < data.origin_max_dirs; i++) {
+        for ( i = 0; i < data.origin_max_dirs ; i++ )
+        {
             data.origin_counter = i;
             
-            for (z = 0; z < data.total_z_planes; z++) {
+            for ( z = 0; z < data.total_z_planes ; z++ )
+            {
                 data.z = z;
                 get_next_origin();
                 
@@ -1185,7 +1194,7 @@ function create_cover_nodes_from_grid_points()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d05
 // Size: 0xdd
 function create_grid_point_in_volume()
@@ -1219,7 +1228,7 @@ function create_grid_point_in_volume()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dea
 // Size: 0x64
 function create_grid_point()
@@ -1249,7 +1258,7 @@ function create_grid_point()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e56
 // Size: 0xfe
 function create_grid_point_new()
@@ -1300,7 +1309,7 @@ function create_grid_point_new()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f5c
 // Size: 0x63
 function increase_y_coordinate_new()
@@ -1327,7 +1336,7 @@ function increase_y_coordinate_new()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fc7
 // Size: 0x63
 function increase_x_coordinate_new()
@@ -1354,7 +1363,7 @@ function increase_x_coordinate_new()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3032
 // Size: 0x82
 function increase_x_coordinate()
@@ -1388,7 +1397,7 @@ function increase_x_coordinate()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30bc
 // Size: 0x7e
 function vol_increase_x_coordinate()
@@ -1417,7 +1426,7 @@ function vol_increase_x_coordinate()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3142
 // Size: 0x82
 function increase_y_coordinate()
@@ -1451,7 +1460,7 @@ function increase_y_coordinate()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x31cc
 // Size: 0x7e
 function vol_increase_y_coordinate()
@@ -1480,7 +1489,7 @@ function vol_increase_y_coordinate()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3252
 // Size: 0x71
 function vol_increase_z_coordinate()
@@ -1508,7 +1517,7 @@ function vol_increase_z_coordinate()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32cb
 // Size: 0x2e1
 function get_next_origin()
@@ -1552,7 +1561,7 @@ function get_next_origin()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35b4
 // Size: 0x24d
 function get_next_volume_origin()
@@ -1600,7 +1609,7 @@ function get_next_volume_origin()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3809
 // Size: 0xc1
 function vol_validate_grid_pos()
@@ -1621,7 +1630,7 @@ function vol_validate_grid_pos()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38d2
 // Size: 0x133
 function validate_grid_pos()
@@ -1656,7 +1665,7 @@ function validate_grid_pos()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a0d
 // Size: 0x57
 function create_cover_nodes_from_single_grid_point()
@@ -1664,14 +1673,15 @@ function create_cover_nodes_from_single_grid_point()
     data = debugdata();
     data.should_create_exposed_node = 1;
     
-    for (i = 0; i <= data.node_creation_traces; i++) {
+    for ( i = 0; i <= data.node_creation_traces ; i++ )
+    {
         data.node_creation_trace_index = i;
         create_and_validate_node_from_single_grid_point();
     }
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a6c
 // Size: 0x100
 function create_cover_nodes_from_grid_point()
@@ -1679,7 +1689,8 @@ function create_cover_nodes_from_grid_point()
     data = debugdata();
     data.should_create_exposed_node = 1;
     
-    for (i = 0; i <= data.node_creation_traces; i++) {
+    for ( i = 0; i <= data.node_creation_traces ; i++ )
+    {
         data.node_creation_trace_index = i;
         create_and_validate_node();
     }
@@ -1705,7 +1716,7 @@ function create_cover_nodes_from_grid_point()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b74
 // Size: 0x220
 function vol_create_and_validate_node()
@@ -1750,7 +1761,7 @@ function vol_create_and_validate_node()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d9c
 // Size: 0x21b
 function create_and_validate_node_from_single_grid_point()
@@ -1797,7 +1808,7 @@ function create_and_validate_node_from_single_grid_point()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fbf
 // Size: 0x1d5
 function create_and_validate_node()
@@ -1839,7 +1850,7 @@ function create_and_validate_node()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x419c
 // Size: 0x129
 function create_node_trace( start_pos, end_pos, debug_color )
@@ -1869,7 +1880,7 @@ function create_node_trace( start_pos, end_pos, debug_color )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42ce
 // Size: 0x111
 function debug_node_array( node_array )
@@ -1903,7 +1914,7 @@ function debug_node_array( node_array )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x43e7
 // Size: 0x70d
 function reposition_cover_node()
@@ -1944,13 +1955,15 @@ function reposition_cover_node()
     
     forward_trace = data.valid_forward_dist;
     
-    for (i = 0; i < 4; i++) {
+    for ( i = 0; i < 4 ; i++ )
+    {
         if ( dir_array.size < 1 )
         {
             break;
         }
         
-        for (z = 0; z < dir_array.size; z++) {
+        for ( z = 0; z < dir_array.size ; z++ )
+        {
             dir = dir_array[ z ];
             new_pos = starting_pos + dir * i * 32;
             
@@ -1966,7 +1979,8 @@ function reposition_cover_node()
             {
                 data.found_valid_node_pos = 0;
                 
-                for (j = 1; j < 32; j++) {
+                for ( j = 1; j < 32 ; j++ )
+                {
                     valid_pos = new_pos + -1 * dir * j;
                     
                     if ( !can_spawn_capsule_trace( valid_pos ) )
@@ -2103,7 +2117,7 @@ function reposition_cover_node()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4afc
 // Size: 0x69b
 function simple_reposition_node()
@@ -2145,13 +2159,15 @@ function simple_reposition_node()
     data.temp_trace_data_colors = [];
     forward_trace = data.valid_forward_dist;
     
-    for (i = 0; i < 4; i++) {
+    for ( i = 0; i < 4 ; i++ )
+    {
         if ( dir_array.size < 1 )
         {
             break;
         }
         
-        for (z = 0; z < dir_array.size; z++) {
+        for ( z = 0; z < dir_array.size ; z++ )
+        {
             dir = dir_array[ z ];
             new_pos = starting_pos + dir * i * 32;
             
@@ -2167,7 +2183,8 @@ function simple_reposition_node()
             {
                 data.found_valid_node_pos = 0;
                 
-                for (j = 1; j < 32; j++) {
+                for ( j = 1; j < 32 ; j++ )
+                {
                     valid_pos = new_pos + -1 * dir * j;
                     
                     if ( !can_spawn_capsule_trace( valid_pos ) )
@@ -2298,7 +2315,7 @@ function simple_reposition_node()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x519f
 // Size: 0xb
 function find_final_position( pos )
@@ -2307,7 +2324,7 @@ function find_final_position( pos )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x51b2
 // Size: 0x3, Type: bool
 function trace_for_stairs()
@@ -2316,14 +2333,15 @@ function trace_for_stairs()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x51be
 // Size: 0x120
 function edge_point_valid( starting_pos, dir, forward )
 {
     data = debugdata();
     
-    for (i = 32; i > 0; i--) {
+    for ( i = 32; i > 0 ; i-- )
+    {
         new_pos = starting_pos + -1 * dir * i;
         
         if ( !can_spawn_capsule_trace( new_pos ) )
@@ -2341,7 +2359,8 @@ function edge_point_valid( starting_pos, dir, forward )
     
     if ( data.wall_units >= data.wall_units_required )
     {
-        for (j = 32; j > 0; j--) {
+        for ( j = 32; j > 0 ; j-- )
+        {
             new_pos = starting_pos + dir * j;
             
             if ( !can_spawn_capsule_trace( new_pos ) )
@@ -2364,7 +2383,7 @@ function edge_point_valid( starting_pos, dir, forward )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x52e6
 // Size: 0x197
 function up_point_valid( starting_pos, dirs, forward, up )
@@ -2372,8 +2391,10 @@ function up_point_valid( starting_pos, dirs, forward, up )
     data = debugdata();
     directions = dirs;
     
-    for (i = 32; i > 0; i--) {
-        for (j = 0; j < directions.size; j++) {
+    for ( i = 32; i > 0 ; i-- )
+    {
+        for ( j = 0; j < directions.size ; j++ )
+        {
             dir = directions[ j ];
             new_pos = starting_pos + -1 * dir * i;
             result = create_node_trace( new_pos, new_pos + forward * 24, ( 0, 1, 0 ) );
@@ -2395,8 +2416,10 @@ function up_point_valid( starting_pos, dirs, forward, up )
     directions = dirs;
     data.wall_units = 0;
     
-    for (j = 32; j > 0; j--) {
-        for (i = 0; i < directions.size; i++) {
+    for ( j = 32; j > 0 ; j-- )
+    {
+        for ( i = 0; i < directions.size ; i++ )
+        {
             dir = directions[ i ];
             new_pos = starting_pos + dir * j + up * 28;
             result = create_node_trace( new_pos, new_pos + forward * data.valid_forward_dist, ( 0, 1, 0 ) );
@@ -2419,7 +2442,7 @@ function up_point_valid( starting_pos, dirs, forward, up )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5485
 // Size: 0x48
 function attempt_throttle()
@@ -2435,7 +2458,7 @@ function attempt_throttle()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x54d5
 // Size: 0x8c
 function trace_result_hits_surface( result, normal )
@@ -2474,7 +2497,7 @@ function trace_result_hits_surface( result, normal )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5569
 // Size: 0xa2
 function open_and_write_to_paths_map()
@@ -2497,7 +2520,7 @@ function open_and_write_to_paths_map()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5613
 // Size: 0xc0
 function draw_closest_wall_points( player, new_array )
@@ -2523,7 +2546,7 @@ function draw_closest_wall_points( player, new_array )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56db
 // Size: 0x24f
 function run_path_node_removal()
@@ -2589,7 +2612,7 @@ function run_path_node_removal()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5932
 // Size: 0x146, Type: bool
 function position_near_other_nodes( position )
@@ -2601,7 +2624,8 @@ function position_near_other_nodes( position )
     {
         all_nodes = getallnodes();
         
-        for (i = 0; i < all_nodes.size; i++) {
+        for ( i = 0; i < all_nodes.size ; i++ )
+        {
             other_node = all_nodes[ i ];
             
             if ( other_node.origin == position )
@@ -2620,7 +2644,8 @@ function position_near_other_nodes( position )
     
     temp_array = data.all_node_positions;
     
-    for (i = 0; i < temp_array.size; i++) {
+    for ( i = 0; i < temp_array.size ; i++ )
+    {
         other_struct = temp_array[ i ];
         
         if ( other_struct.origin == position )
@@ -2650,7 +2675,7 @@ function position_near_other_nodes( position )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a81
 // Size: 0x157
 function write_struct_to_map()
@@ -2684,7 +2709,7 @@ function write_struct_to_map()
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x5be0
 // Size: 0xc9
 function draw_line_until_endons( org1, r, g, b, var_618807e8cd83ef8 )
@@ -2717,7 +2742,7 @@ function draw_line_until_endons( org1, r, g, b, var_618807e8cd83ef8 )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cb1
 // Size: 0x15
 function addentrytodevgui( command )
@@ -2726,7 +2751,7 @@ function addentrytodevgui( command )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5cce
 // Size: 0x145
 function addentrytodevgui_internal( command )
@@ -2772,7 +2797,7 @@ function addentrytodevgui_internal( command )
 }
 
 // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5e1b
 // Size: 0x25
 function can_spawn_capsule_trace( pos )
@@ -2783,7 +2808,7 @@ function can_spawn_capsule_trace( pos )
 /#
 
     // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x5e49
     // Size: 0x6d, Type: dev
     function debug_activation( dvar, action_func )
@@ -2808,7 +2833,7 @@ function can_spawn_capsule_trace( pos )
     }
 
     // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5ebe
     // Size: 0x233, Type: dev
     function function_b42e2fefe22d9e82( itemref )
@@ -2881,7 +2906,7 @@ function can_spawn_capsule_trace( pos )
     }
 
     // Namespace create_cover_nodes / scripts\common\create_cover_nodes
-    // Params 7, eflags: 0x0
+    // Params 7
     // Checksum 0x0, Offset: 0x60f9
     // Size: 0x19d, Type: dev
     function draw_box( pos, color, angles, size, alpha, depthtest, endon_string )

@@ -5,7 +5,7 @@
 #namespace squadmanager;
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x113
 // Size: 0xfc
 function createsquad( squadname, var_5346a21915702367 )
@@ -36,7 +36,7 @@ function createsquad( squadname, var_5346a21915702367 )
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x218
 // Size: 0xf5
 function deletesquad( squadname )
@@ -57,7 +57,7 @@ function deletesquad( squadname )
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x315
 // Size: 0x3c
 function getsquadteam( var_5346a21915702367 )
@@ -75,7 +75,7 @@ function getsquadteam( var_5346a21915702367 )
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x35a
 // Size: 0x148
 function addtosquad( squadname )
@@ -127,7 +127,7 @@ function addtosquad( squadname )
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4aa
 // Size: 0xd2
 function removefromsquad( squad, squadid )
@@ -168,7 +168,7 @@ function removefromsquad( squad, squadid )
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x584
 // Size: 0x43
 function function_a5c82b8ba8a0c279( var_9cb951de1a571d32, true_value, false_value )
@@ -194,14 +194,15 @@ function function_a5c82b8ba8a0c279( var_9cb951de1a571d32, true_value, false_valu
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5cf
 // Size: 0xa1
 function function_1cb4f2ef6b07869c()
 {
     start_index = randomint( self.members.size );
     
-    for (i = 0; i < self.members.size; i++) {
+    for ( i = 0; i < self.members.size ; i++ )
+    {
         index = ( start_index + i ) % self.members.size;
         guy = self.members[ index ];
         
@@ -214,7 +215,7 @@ function function_1cb4f2ef6b07869c()
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x679
 // Size: 0x78
 function getenemyarray()
@@ -233,7 +234,7 @@ function getenemyarray()
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6fa
 // Size: 0x3c, Type: bool
 function function_48706811c593324b()
@@ -242,7 +243,7 @@ function function_48706811c593324b()
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73f
 // Size: 0x13
 function squadtracker()
@@ -251,7 +252,7 @@ function squadtracker()
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x75a
 // Size: 0x46
 function memberdeathwaiter( squad, squadid )
@@ -268,7 +269,7 @@ function memberdeathwaiter( squad, squadid )
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a8
 // Size: 0x20f
 function updateall()
@@ -344,7 +345,7 @@ function updateall()
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9bf
 // Size: 0x13
 function updatememberstates()
@@ -353,7 +354,7 @@ function updatememberstates()
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9da
 // Size: 0xf2
 function aiupdatecombat( timeslice )
@@ -393,7 +394,7 @@ function aiupdatecombat( timeslice )
 }
 
 // Namespace squadmanager / scripts\anim\squadmanager
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xad4
 // Size: 0xbf
 function aiupdatesuppressed( timeslice )
@@ -427,7 +428,7 @@ function aiupdatesuppressed( timeslice )
 /#
 
     // Namespace squadmanager / scripts\anim\squadmanager
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xb9b
     // Size: 0xd1, Type: dev
     function function_1e0a52e0fce5e432()
@@ -457,7 +458,7 @@ function aiupdatesuppressed( timeslice )
     }
 
     // Namespace squadmanager / scripts\anim\squadmanager
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xc74
     // Size: 0xaa, Type: dev
     function function_11287c170b69b7f2( pos, forward )
@@ -473,7 +474,7 @@ function aiupdatesuppressed( timeslice )
     }
 
     // Namespace squadmanager / scripts\anim\squadmanager
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0xd26
     // Size: 0x105, Type: dev
     function _draw_arrow( start, end, color )

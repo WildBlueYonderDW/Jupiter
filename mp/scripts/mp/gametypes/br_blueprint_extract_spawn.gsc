@@ -10,7 +10,7 @@
 #namespace br_blueprint_extract_spawn;
 
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x143
 // Size: 0x177
 function init()
@@ -22,15 +22,15 @@ function init()
     
     if ( brgametype == "plunder" || brgametype == "risk" )
     {
-        level.blueprint_maxpermatch = getdvarfloat( @"hash_d8044c322f6b5042", 4 );
-        level.blueprint_chancebase = getdvarfloat( @"hash_13b736c9ba95d40d", 0.02 );
-        level.blueprint_chancepercontract = getdvarfloat( @"hash_8a876e2c4b13f819", 0 );
+        level.blueprint_maxpermatch = getdvarfloat( @"scr_blueprint_plunder_maxpermatch", 4 );
+        level.blueprint_chancebase = getdvarfloat( @"scr_blueprint_plunder_chancebase", 0.02 );
+        level.blueprint_chancepercontract = getdvarfloat( @"scr_blueprint_plunder_chancepercontract", 0 );
     }
     else
     {
-        level.blueprint_maxpermatch = getdvarfloat( @"hash_412e34085bcd2b1a", 4 );
-        level.blueprint_chancebase = getdvarfloat( @"hash_aa3250e2ce395b55", 0.02 );
-        level.blueprint_chancepercontract = getdvarfloat( @"hash_9c3219408286e11", 0 );
+        level.blueprint_maxpermatch = getdvarfloat( @"scr_blueprint_br_maxpermatch", 4 );
+        level.blueprint_chancebase = getdvarfloat( @"scr_blueprint_br_chancebase", 0.02 );
+        level.blueprint_chancepercontract = getdvarfloat( @"scr_blueprint_br_chancepercontract", 0 );
     }
     
     level.blueprintextractspawns = 0;
@@ -44,7 +44,7 @@ function init()
 }
 
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2c2
 // Size: 0x8c
 function blueprintextract_trygetreward( rewardorigin )
@@ -72,7 +72,7 @@ function blueprintextract_trygetreward( rewardorigin )
 }
 
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x356
 // Size: 0xd4, Type: bool
 function blueprintextract_shouldgivereward( rewardorigin )
@@ -112,7 +112,7 @@ function blueprintextract_shouldgivereward( rewardorigin )
 }
 
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x433
 // Size: 0x15
 function blueprintextract_beforepickupspawned( team )
@@ -121,7 +121,7 @@ function blueprintextract_beforepickupspawned( team )
 }
 
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x450
 // Size: 0x2c
 function blueprintextract_onpickupcreated()
@@ -133,7 +133,7 @@ function blueprintextract_onpickupcreated()
 }
 
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x484
 // Size: 0x1e
 function blueprintextract_setunlockablelootid( unlockablelootid )
@@ -143,7 +143,7 @@ function blueprintextract_setunlockablelootid( unlockablelootid )
 }
 
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4aa
 // Size: 0x135
 function blueprintextract_createtempobjective()
@@ -187,7 +187,7 @@ function blueprintextract_createtempobjective()
 }
 
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e7
 // Size: 0x25
 function blueprintextract_cleanupwhennoavailablelocales()

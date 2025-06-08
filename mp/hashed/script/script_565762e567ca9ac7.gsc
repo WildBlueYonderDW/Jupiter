@@ -4,7 +4,7 @@
 #namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs;
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1eb
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x260
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2cf
 // Size: 0x40
 function createstructs( fe, us, cf )
@@ -61,7 +61,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x317
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -70,7 +70,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x321
 // Size: 0xe
 function cleanup()
@@ -79,7 +79,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x337
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -94,7 +94,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3a9
 // Size: 0x9c
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -122,7 +122,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x44d
 // Size: 0x10d
 function function_e86682672cba20e4( fe, us, cf )
@@ -138,7 +138,7 @@ function function_e86682672cba20e4( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x562
 // Size: 0x10d
 function function_8b05e6388fe5f9d7( fe, us, cf )
@@ -154,7 +154,7 @@ function function_8b05e6388fe5f9d7( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x677
 // Size: 0x10d
 function function_19032a2d3bba5d3f( fe, us, cf )
@@ -170,7 +170,7 @@ function function_19032a2d3bba5d3f( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x78c
 // Size: 0x10d
 function function_92a94a19ec24f73f( fe, us, cf )
@@ -186,7 +186,7 @@ function function_92a94a19ec24f73f( fe, us, cf )
 }
 
 // Namespace mp_jup_st_f_ob_contracts_pvpve_assassination_cs / namespace_640e7d8769ad71c7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8a1
 // Size: 0x278
 function function_6da2952367672ac0()

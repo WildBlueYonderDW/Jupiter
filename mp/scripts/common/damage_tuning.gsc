@@ -1,7 +1,7 @@
 #namespace damage_tuning;
 
 // Namespace damage_tuning / scripts\common\damage_tuning
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88
 // Size: 0x81
 function init()
@@ -27,7 +27,7 @@ function init()
 }
 
 // Namespace damage_tuning / scripts\common\damage_tuning
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x111
 // Size: 0x16a
 function function_4a2ecb33b6adeb85( damagedata, var_e913079a5ffda56d )
@@ -81,7 +81,7 @@ function function_4a2ecb33b6adeb85( damagedata, var_e913079a5ffda56d )
 }
 
 // Namespace damage_tuning / scripts\common\damage_tuning
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x283
 // Size: 0x2c2
 function getmodifieddamageusingdamagetuning( attacker, objweapon, mod, amount, maxhealth, damage_tuning )
@@ -170,7 +170,7 @@ function getmodifieddamageusingdamagetuning( attacker, objweapon, mod, amount, m
 }
 
 // Namespace damage_tuning / scripts\common\damage_tuning
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x54e
 // Size: 0x35
 function setupdamagetuning( var_e913079a5ffda56d, maxhealth )

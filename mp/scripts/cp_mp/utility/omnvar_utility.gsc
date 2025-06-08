@@ -1,7 +1,7 @@
 #namespace omnvar_utility;
 
 // Namespace omnvar_utility / scripts\cp_mp\utility\omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x88
 // Size: 0x7a
 function setcachedgameomnvar( omnvar, value )
@@ -26,7 +26,7 @@ function setcachedgameomnvar( omnvar, value )
 }
 
 // Namespace omnvar_utility / scripts\cp_mp\utility\omnvar_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x10a
 // Size: 0x81
 function setcachedclientomnvar( omnvar, value )
@@ -51,7 +51,7 @@ function setcachedclientomnvar( omnvar, value )
 }
 
 // Namespace omnvar_utility / scripts\cp_mp\utility\omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x193
 // Size: 0x7b
 function function_8b532402ee55336e( bitoffset, bitwidth, var_49f3b7a464f1d70d, newvalue )
@@ -65,7 +65,7 @@ function function_8b532402ee55336e( bitoffset, bitwidth, var_49f3b7a464f1d70d, n
 }
 
 // Namespace omnvar_utility / scripts\cp_mp\utility\omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x217
 // Size: 0x47
 function unpackvalue( bitoffset, bitwidth, packedvalue )
@@ -76,7 +76,7 @@ function unpackvalue( bitoffset, bitwidth, packedvalue )
 }
 
 // Namespace omnvar_utility / scripts\cp_mp\utility\omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x267
 // Size: 0x59
 function function_63437fca39c681dc( var_e9d476a3809cb3f1, bitoffset, bitwidth, value )
@@ -91,7 +91,7 @@ function function_63437fca39c681dc( var_e9d476a3809cb3f1, bitoffset, bitwidth, v
 }
 
 // Namespace omnvar_utility / scripts\cp_mp\utility\omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2c8
 // Size: 0x42
 function function_40f3e4aeda0e3f00( var_e9d476a3809cb3f1, bitoffset, bitwidth )
@@ -102,7 +102,7 @@ function function_40f3e4aeda0e3f00( var_e9d476a3809cb3f1, bitoffset, bitwidth )
 }
 
 // Namespace omnvar_utility / scripts\cp_mp\utility\omnvar_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x313
 // Size: 0x57
 function function_d3cf7ff1a257e2c3( var_e9d476a3809cb3f1, bitoffset, bitwidth, value )
@@ -117,7 +117,7 @@ function function_d3cf7ff1a257e2c3( var_e9d476a3809cb3f1, bitoffset, bitwidth, v
 }
 
 // Namespace omnvar_utility / scripts\cp_mp\utility\omnvar_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x372
 // Size: 0x41
 function function_610e0cca26bba2f( var_e9d476a3809cb3f1, bitoffset, bitwidth )

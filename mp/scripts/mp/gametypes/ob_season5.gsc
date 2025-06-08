@@ -14,7 +14,7 @@ function autoexec init()
 }
 
 // Namespace ob_season5 / scripts\mp\gametypes\ob_season5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xce
 // Size: 0x1d
 function main( params )

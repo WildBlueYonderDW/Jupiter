@@ -3,7 +3,7 @@
 #namespace namespace_22b8ba12655bf3f2;
 
 // Namespace namespace_22b8ba12655bf3f2 / namespace_16f8c7ac384283cd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd7
 // Size: 0x35
 function function_40eca5c2157229bc( var_641ab1823a1b7739 )
@@ -14,7 +14,7 @@ function function_40eca5c2157229bc( var_641ab1823a1b7739 )
 }
 
 // Namespace namespace_22b8ba12655bf3f2 / namespace_16f8c7ac384283cd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x114
 // Size: 0x251
 function get_starting_health( scriptbundle_name, current_round )
@@ -42,7 +42,8 @@ function get_starting_health( scriptbundle_name, current_round )
         
         if ( current_round > 1 && isdefined( var_fe0aad7efc61fcae ) )
         {
-            for (i = 0; i < var_fe0aad7efc61fcae.size; i++) {
+            for ( i = 0; i < var_fe0aad7efc61fcae.size ; i++ )
+            {
                 if ( current_round >= var_fe0aad7efc61fcae[ i ].startround )
                 {
                     var_817124607074ae8c = var_fe0aad7efc61fcae[ i ].var_d9a25092bed9b107;
@@ -90,7 +91,7 @@ function get_starting_health( scriptbundle_name, current_round )
 }
 
 // Namespace namespace_22b8ba12655bf3f2 / namespace_16f8c7ac384283cd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x36e
 // Size: 0x1bc
 function function_9102c548055a3813( scriptbundle_name, n_round )
@@ -148,7 +149,7 @@ function function_9102c548055a3813( scriptbundle_name, n_round )
 }
 
 // Namespace namespace_22b8ba12655bf3f2 / namespace_16f8c7ac384283cd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x533
 // Size: 0xc
 function function_b7b826409f989600()
@@ -157,7 +158,7 @@ function function_b7b826409f989600()
 }
 
 // Namespace namespace_22b8ba12655bf3f2 / namespace_16f8c7ac384283cd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x547
 // Size: 0x15
 function function_d589c49c4b9b50a0( func )

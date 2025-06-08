@@ -8,7 +8,7 @@
 #namespace callouts;
 
 // Namespace callouts / scripts\mp\callouts
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1df
 // Size: 0x2a4
 function init()
@@ -36,7 +36,8 @@ function init()
             {
                 level.calloutglobals.calloutlist = [];
                 
-                for (idx = 0; idx < mapinfo.calloutlist.size; idx++) {
+                for ( idx = 0; idx < mapinfo.calloutlist.size ; idx++ )
+                {
                     level.calloutglobals.calloutlist = array_add( level.calloutglobals.calloutlist, mapinfo.calloutlist[ idx ].variant_object );
                 }
             }
@@ -97,7 +98,8 @@ function private function_953aac55917212f6()
     {
         sitecount = function_c3d63e6778e39f83( 1 );
         
-        for (siteidx = 0; siteidx < sitecount; siteidx++) {
+        for ( siteidx = 0; siteidx < sitecount ; siteidx++ )
+        {
             site = function_d0ed84c86e823a7c( 1, siteidx );
             region = function_7fdd7f9d54666e5f( 1, site.region );
             ref = region.name + " site_" + siteidx;
@@ -111,7 +113,8 @@ function private function_953aac55917212f6()
     
     if ( isdefined( level.calloutglobals.calloutlist ) )
     {
-        for (idx = 0; idx < level.calloutglobals.calloutlist.size; idx++) {
+        for ( idx = 0; idx < level.calloutglobals.calloutlist.size ; idx++ )
+        {
             type = level.calloutglobals.calloutlist[ idx ].type;
             
             if ( type != "area" )
@@ -129,7 +132,8 @@ function private function_953aac55917212f6()
     
     if ( isdefined( level.calloutglobals.callouttable ) && tableexists( level.calloutglobals.callouttable ) )
     {
-        for (row = 0; true; row++) {
+        for ( row = 0; true ; row++ )
+        {
             id = tablelookupbyrow( level.calloutglobals.callouttable, row, 0 );
             
             if ( !isdefined( id ) || id == "" )
@@ -261,7 +265,7 @@ function private function_fe13722061e1576d()
 }
 
 // Namespace callouts / scripts\mp\callouts
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa8e
 // Size: 0x1c3
 function setplayercalloutarea( calloutref, trigger )
@@ -366,7 +370,7 @@ function private clearcalloutareaondeath()
 }
 
 // Namespace callouts / scripts\mp\callouts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcdc
 // Size: 0x5c
 function function_f9b1f6b7aa093270( params )
@@ -379,7 +383,7 @@ function function_f9b1f6b7aa093270( params )
 }
 
 // Namespace callouts / scripts\mp\callouts
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd40
 // Size: 0x118
 function function_45d5ee5f369ad604( object )

@@ -4,7 +4,7 @@
 #namespace namespace_3606b64785f08163;
 
 // Namespace namespace_3606b64785f08163 / namespace_1bebff3a2e9afaca
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xde
 // Size: 0xbd
 function createevent( radius )
@@ -23,7 +23,7 @@ function createevent( radius )
 }
 
 // Namespace namespace_3606b64785f08163 / namespace_1bebff3a2e9afaca
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a3
 // Size: 0x11e
 function getevent()
@@ -61,7 +61,7 @@ function getevent()
 }
 
 // Namespace namespace_3606b64785f08163 / namespace_1bebff3a2e9afaca
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ca
 // Size: 0x6e, Type: bool
 function function_5a45d11a570a19c5( campgroup )
@@ -84,7 +84,7 @@ function function_5a45d11a570a19c5( campgroup )
 }
 
 // Namespace namespace_3606b64785f08163 / namespace_1bebff3a2e9afaca
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x341
 // Size: 0xa0
 function function_7dbe596500a2e27c( campgroup )
@@ -98,7 +98,7 @@ function function_7dbe596500a2e27c( campgroup )
 }
 
 // Namespace namespace_3606b64785f08163 / namespace_1bebff3a2e9afaca
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3e9
 // Size: 0xa2
 function function_5f6e68b080316fcf( campgroup )

@@ -9,7 +9,7 @@
 #namespace utility;
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e9
 // Size: 0x42
 function dotraversal()
@@ -22,7 +22,7 @@ function dotraversal()
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x233
 // Size: 0x1c, Type: bool
 function chooseanimwithoverride( asmname, statename, params )
@@ -31,7 +31,7 @@ function chooseanimwithoverride( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x258
 // Size: 0x88
 function loopanimfortime( asmname, statename, params )
@@ -64,7 +64,7 @@ function loopanimfortime( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2e8
 // Size: 0x8f
 function waitforpathchange( asmname, statename )
@@ -78,7 +78,7 @@ function waitforpathchange( asmname, statename )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x37f
 // Size: 0x87
 function playmoveloop_mp( asmname, statename, params )
@@ -99,7 +99,7 @@ function playmoveloop_mp( asmname, statename, params )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40e
 // Size: 0x78, Type: bool
 function isfacingenemy( mindot )
@@ -122,7 +122,7 @@ function isfacingenemy( mindot )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48f
 // Size: 0xf, Type: bool
 function isweaponfacingenemy()
@@ -136,7 +136,7 @@ function isweaponfacingenemy()
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a7
 // Size: 0x15, Type: bool
 function wantstocrouch()
@@ -150,7 +150,7 @@ function wantstocrouch()
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c5
 // Size: 0xa5
 function function_71eefa1c0da64a21( shootfrompos )
@@ -176,7 +176,7 @@ function function_71eefa1c0da64a21( shootfrompos )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x573
 // Size: 0xed, Type: bool
 function isaimedataimtarget()
@@ -210,7 +210,7 @@ function isaimedataimtarget()
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x669
 // Size: 0x26
 function getaimpitchdifftolerance()
@@ -224,7 +224,7 @@ function getaimpitchdifftolerance()
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x697
 // Size: 0x23
 function delayslowmotion( delay, start, end, time )
@@ -233,7 +233,7 @@ function delayslowmotion( delay, start, end, time )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6c2
 // Size: 0x1b
 function delaymodifybasefov( delay, fov, time )
@@ -242,7 +242,7 @@ function delaymodifybasefov( delay, fov, time )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x6e5
 // Size: 0x79
 function animscriptmp( archetype, statename, aliasname, loop, playbackrate, customendon, scriptednode, tag )
@@ -262,7 +262,7 @@ function animscriptmp( archetype, statename, aliasname, loop, playbackrate, cust
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x766
 // Size: 0x1c
 function cancelanimscriptmp()
@@ -277,7 +277,7 @@ function cancelanimscriptmp()
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x78a
 // Size: 0x2b
 function animscriptmp_watchcancel( customendon )
@@ -290,7 +290,7 @@ function animscriptmp_watchcancel( customendon )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x7bd
 // Size: 0x98
 function animscriptmp_single_internal( archetype, statename, aliasname, playbackrate, scriptnode, tag )
@@ -308,7 +308,7 @@ function animscriptmp_single_internal( archetype, statename, aliasname, playback
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x85d
 // Size: 0x56
 function animscriptmp_loop_internal( archetype, statename, aliasname, playbackrate, scriptnode, tag )
@@ -347,7 +347,7 @@ function private function_7618d8f3ba2fbcea( xanim, scriptnode, tag, animindex )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x97a
 // Size: 0xec
 function animscriptmp_internal( archetype, statename, aliasname, playbackrate, scriptnode, tag )
@@ -383,7 +383,7 @@ function animscriptmp_internal( archetype, statename, aliasname, playbackrate, s
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa6e
 // Size: 0x32
 function cancelanimscriptmp_internal()
@@ -396,7 +396,7 @@ function cancelanimscriptmp_internal()
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xaa8
 // Size: 0x9e
 function animscripted_single( aliasname, var_1a11aea0c900b403, statename )
@@ -436,7 +436,7 @@ function animscripted_single( aliasname, var_1a11aea0c900b403, statename )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb4e
 // Size: 0x66
 function function_dd94e74da0ad6ead( aliasname, statename )
@@ -460,7 +460,7 @@ function function_dd94e74da0ad6ead( aliasname, statename )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xbbc
 // Size: 0x99
 function animscripted_single_earlyend( aliasname, time )
@@ -486,7 +486,7 @@ function animscripted_single_earlyend( aliasname, time )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc5d
 // Size: 0x96
 function animscripted_loop( aliasname )
@@ -516,7 +516,7 @@ function animscripted_loop( aliasname )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcfb
 // Size: 0xa9
 function animscripted_loop_earlyend( aliasname, time )
@@ -551,7 +551,7 @@ function animscripted_loop_earlyend( aliasname, time )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdac
 // Size: 0xbb
 function animscripted_loop_for_time( aliasname, time )
@@ -585,7 +585,7 @@ function animscripted_loop_for_time( aliasname, time )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe6f
 // Size: 0xac
 function animscripted_loop_n_times( aliasname, numloops )
@@ -617,7 +617,7 @@ function animscripted_loop_n_times( aliasname, numloops )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf23
 // Size: 0xca
 function animscripted_loop_relative( aliasname, ent, tag )
@@ -650,7 +650,7 @@ function animscripted_loop_relative( aliasname, ent, tag )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xff5
 // Size: 0xc2
 function animscripted_single_relative( aliasname, ent, tag, var_1a11aea0c900b403, statename )
@@ -687,7 +687,7 @@ function animscripted_single_relative( aliasname, ent, tag, var_1a11aea0c900b403
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x10bf
 // Size: 0x107
 function animscripted_single_arrive_at( aliasname, pos, angles, var_1a11aea0c900b403 )
@@ -723,7 +723,7 @@ function animscripted_single_arrive_at( aliasname, pos, angles, var_1a11aea0c900
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x11ce
 // Size: 0x10
 function animscripted_clear()
@@ -733,7 +733,7 @@ function animscripted_clear()
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e6
 // Size: 0x5d, Type: bool
 function function_8fa69650e33c84ef( anime )
@@ -747,7 +747,7 @@ function function_8fa69650e33c84ef( anime )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x124c
 // Size: 0xee
 function animscriptedagent( anime, anim_string, org, animangles, anim_flag )
@@ -785,7 +785,7 @@ function animscriptedagent( anime, anim_string, org, animangles, anim_flag )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1342
 // Size: 0x66
 function function_8efc1cbdaa97f95e( anime )
@@ -797,7 +797,7 @@ function function_8efc1cbdaa97f95e( anime )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13b1
 // Size: 0x66
 function function_5173aedda202662( anime )
@@ -809,7 +809,7 @@ function function_5173aedda202662( anime )
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1420
 // Size: 0x7d
 function ai_anim_first_frame( animation, animname )

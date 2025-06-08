@@ -526,7 +526,7 @@ function private vehicle_handleflarefire( player )
 }
 
 // Namespace namespace_bb407b77b0bcebee / namespace_99470030fe40a49
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x137a
 // Size: 0x1aa
 function function_8c08b5b97a81fb61( vehicle1, vehicle2, position, normal, normalspeed )

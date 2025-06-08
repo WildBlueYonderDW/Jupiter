@@ -7,7 +7,7 @@
 #namespace namespace_315cb3d67bf2880c;
 
 // Namespace namespace_315cb3d67bf2880c / namespace_3f0a193923e0f884
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf8
 // Size: 0x21
 function main()
@@ -25,7 +25,7 @@ function main()
 /#
 
     // Namespace namespace_315cb3d67bf2880c / namespace_3f0a193923e0f884
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x121
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -36,7 +36,7 @@ function main()
 #/
 
 // Namespace namespace_315cb3d67bf2880c / namespace_3f0a193923e0f884
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e
 // Size: 0x17
 function setup_callbacks()
@@ -45,7 +45,7 @@ function setup_callbacks()
 }
 
 // Namespace namespace_315cb3d67bf2880c / namespace_3f0a193923e0f884
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14d
 // Size: 0x2
 function setup_bot_war()
@@ -54,7 +54,7 @@ function setup_bot_war()
 }
 
 // Namespace namespace_315cb3d67bf2880c / namespace_3f0a193923e0f884
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x157
 // Size: 0x57
 function bot_war_think()

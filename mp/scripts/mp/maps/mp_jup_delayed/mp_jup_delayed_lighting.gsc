@@ -6,7 +6,7 @@
 #namespace mp_jup_delayed_lighting;
 
 // Namespace mp_jup_delayed_lighting / scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x169
 // Size: 0x56
 function main()

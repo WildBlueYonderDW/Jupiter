@@ -8,7 +8,7 @@
 #namespace lmg;
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x13b
 // Size: 0x6f
 function playcovercrouchlmg( asmname, statename, params )
@@ -21,7 +21,7 @@ function playcovercrouchlmg( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b2
 // Size: 0x124
 function coverturretterminate( asmname, statename, params )
@@ -46,7 +46,7 @@ function coverturretterminate( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2de
 // Size: 0x22
 function coverlmgterminate( asmname, statename, params )
@@ -55,7 +55,7 @@ function coverlmgterminate( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x308
 // Size: 0xb2
 function playanim_droplmg( asmname, statename, params )
@@ -79,7 +79,7 @@ function playanim_droplmg( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3c2
 // Size: 0x2a, Type: bool
 function turretrequested( asmname, statename, tostatename, params )
@@ -88,7 +88,7 @@ function turretrequested( asmname, statename, tostatename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3f5
 // Size: 0x71
 function chooseanim_deploylmg( asmname, statename, params )
@@ -103,7 +103,7 @@ function chooseanim_deploylmg( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x46f
 // Size: 0xf7
 function playanim_deployturret( asmname, statename, params )
@@ -121,7 +121,7 @@ function playanim_deployturret( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x56e
 // Size: 0xed
 function noanim_deployturret( asmname, statename, params )
@@ -138,7 +138,7 @@ function noanim_deployturret( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x663
 // Size: 0x3a
 function playanim_dismountturret( asmname, statename, params )
@@ -148,7 +148,7 @@ function playanim_dismountturret( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x6a5
 // Size: 0xb8
 function shoulddismountlmg( asmname, statename, tostatename, params )
@@ -168,7 +168,7 @@ function shoulddismountlmg( asmname, statename, tostatename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x765
 // Size: 0x1a5
 function playanim_deploylmg( asmname, statename, params )
@@ -211,7 +211,7 @@ function playanim_deploylmg( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x912
 // Size: 0x25
 function terminate_deploylmg( asmname, statename, params )
@@ -220,7 +220,7 @@ function terminate_deploylmg( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x93f
 // Size: 0x4c
 function playanim_dismountlmg( asmname, statename, params )
@@ -231,7 +231,7 @@ function playanim_dismountlmg( asmname, statename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x993
 // Size: 0xda
 function notehandler_deploylmg( note, flagname, customfunction, customparams )
@@ -252,7 +252,7 @@ function notehandler_deploylmg( note, flagname, customfunction, customparams )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa75
 // Size: 0x63, Type: bool
 function lowestcoverstanddeployposeis( asmname, statename, tostatename, params )
@@ -273,7 +273,7 @@ function lowestcoverstanddeployposeis( asmname, statename, tostatename, params )
 }
 
 // Namespace lmg / scripts\asm\soldier\lmg
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xae1
 // Size: 0x5c, Type: bool
 function desiredturretposeis( asmname, statename, tostatename, params )

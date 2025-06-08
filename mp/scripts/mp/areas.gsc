@@ -5,7 +5,7 @@
 #namespace areas;
 
 // Namespace areas / scripts\mp\areas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124
 // Size: 0x12b
 function init()
@@ -36,7 +36,7 @@ function init()
 }
 
 // Namespace areas / scripts\mp\areas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x257
 // Size: 0x37
 function onplayerconnect()
@@ -55,7 +55,7 @@ function onplayerconnect()
 }
 
 // Namespace areas / scripts\mp\areas
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x296
 // Size: 0x15
 function playerentersoftlanding( trigger )
@@ -64,7 +64,7 @@ function playerentersoftlanding( trigger )
 }
 
 // Namespace areas / scripts\mp\areas
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b3
 // Size: 0x15
 function playerleavesoftlanding( trigger )
@@ -73,7 +73,7 @@ function playerleavesoftlanding( trigger )
 }
 
 // Namespace areas / scripts\mp\areas
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d0
 // Size: 0x3c
 function softlandingwaiter()

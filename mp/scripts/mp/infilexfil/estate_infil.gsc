@@ -15,7 +15,7 @@
 #namespace estate_infil;
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c3
 // Size: 0x95
 function estate_init( subtype )
@@ -35,7 +35,7 @@ function estate_init( subtype )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x960
 // Size: 0xf0
 function estate_spawn( team, target, subtype, originalsubtype )
@@ -59,7 +59,7 @@ function estate_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa59
 // Size: 0x32
 function function_2e33cc2fe5c25c43( subtype )
@@ -69,7 +69,7 @@ function function_2e33cc2fe5c25c43( subtype )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa94
 // Size: 0x249
 function function_162bb826cd9f6807( infil, spot_index )
@@ -129,7 +129,7 @@ function function_162bb826cd9f6807( infil, spot_index )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce5
 // Size: 0x27
 function resetfov()
@@ -141,7 +141,7 @@ function resetfov()
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd14
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -159,7 +159,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd58
 // Size: 0x60
 function player_infil_end()
@@ -175,7 +175,7 @@ function player_infil_end()
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdc0
 // Size: 0xd2
 function infil_radio_idle( infil )
@@ -210,7 +210,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe9a
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -226,7 +226,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xed0
 // Size: 0x4c
 function player_disconnect()
@@ -245,7 +245,7 @@ function player_disconnect()
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf24
 // Size: 0xbe
 function spawnactors( team, scene_name, extra_crew )
@@ -264,7 +264,7 @@ function spawnactors( team, scene_name, extra_crew )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xfea
 // Size: 0x140
 function infilthink( team, scene_name )
@@ -296,7 +296,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1132
 // Size: 0x1d7
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -340,7 +340,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1311
 // Size: 0x150
 function spawninfilvehicle( scene_node, team, scene_name, animname )
@@ -380,7 +380,7 @@ function spawninfilvehicle( scene_node, team, scene_name, animname )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x146a
 // Size: 0xe3
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -402,7 +402,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1555
 // Size: 0x245
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -500,7 +500,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x17a3
 // Size: 0x1b9
 function initanims( subtype, team, originalsubtype )
@@ -528,7 +528,7 @@ function initanims( subtype, team, originalsubtype )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1964
 // Size: 0x23b
 function script_model_alpha_anims( subtype )
@@ -557,7 +557,7 @@ function script_model_alpha_anims( subtype )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1ba7
 // Size: 0x59
 function vehicles_anims( subtype, team, originalsubtype )
@@ -567,7 +567,7 @@ function vehicles_anims( subtype, team, originalsubtype )
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c08
 // Size: 0x19
 function function_99fbfc1d5ecbea75()
@@ -578,7 +578,7 @@ function function_99fbfc1d5ecbea75()
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c29
 // Size: 0xbd
 function function_e33b9b53992e051d()
@@ -601,7 +601,7 @@ function function_e33b9b53992e051d()
 }
 
 // Namespace estate_infil / scripts\mp\infilexfil\estate_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cee
 // Size: 0x13
 function function_6158ef142e9bd640()

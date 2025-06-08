@@ -4,7 +4,7 @@
 #namespace namespace_4c529715eb90d593;
 
 // Namespace namespace_4c529715eb90d593 / namespace_3b7139f4d3d9513f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x138
 // Size: 0x12
 function precache( params )

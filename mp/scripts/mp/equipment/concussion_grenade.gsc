@@ -22,7 +22,7 @@
 #namespace concussion_grenade;
 
 // Namespace concussion_grenade / scripts\mp\equipment\concussion_grenade
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x247
 // Size: 0x41
 function onfired( equipmentref, slot, objweapon )
@@ -31,7 +31,7 @@ function onfired( equipmentref, slot, objweapon )
 }
 
 // Namespace concussion_grenade / scripts\mp\equipment\concussion_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x290
 // Size: 0x21f
 function onexplode( owner, position )
@@ -94,7 +94,7 @@ function onexplode( owner, position )
 }
 
 // Namespace concussion_grenade / scripts\mp\equipment\concussion_grenade
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b7
 // Size: 0x104, Type: bool
 function onplayerdamaged( data )
@@ -131,7 +131,7 @@ function onplayerdamaged( data )
 }
 
 // Namespace concussion_grenade / scripts\mp\equipment\concussion_grenade
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5c4
 // Size: 0x2a0
 function applyconcussion( einflictor, eattacker )

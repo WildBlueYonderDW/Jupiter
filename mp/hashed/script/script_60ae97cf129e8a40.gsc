@@ -13,7 +13,7 @@
 #namespace namespace_79e590f683734378;
 
 // Namespace namespace_79e590f683734378 / namespace_33063826a342704e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13d
 // Size: 0xf1
 function function_733b23bb49feb5c3()
@@ -51,7 +51,7 @@ function function_733b23bb49feb5c3()
 }
 
 // Namespace namespace_79e590f683734378 / namespace_33063826a342704e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x236
 // Size: 0xfa1
 function function_a94c90dc6c858da4()
@@ -106,13 +106,13 @@ function function_a94c90dc6c858da4()
     level.br_level.br_mapcenter = ( ( minx + maxx ) / 2, ( miny + maxy ) / 2, 0 );
     level.br_level.br_mapsize = ( abs( maxx - minx ), abs( maxy - miny ), abs( level.br_level.c130_heightoverride - level.br_level.c130_sealeveloverride ) );
     
-    if ( getdvarint( @"hash_ffce528e382df177", 0 ) )
+    if ( getdvarint( @"scr_br_alt_mode_nonstop", 0 ) )
     {
         level.br_level.br_circleclosetimes = [ 360, 270, 225, 135, 90, 60, 45, 90 ];
         level.br_level.br_circledelaytimes = [ 60, 0, 0, 0, 0, 0, 0, 0 ];
         level.br_level.br_circleshowdelaydanger = [ 60, 0, 0, 0, 0, 0, 0, 0 ];
     }
-    else if ( getdvarint( @"hash_cf84a5d55b19b30e", 0 ) )
+    else if ( getdvarint( @"scr_br_alt_mode_rlh", 0 ) )
     {
         level.br_level.br_circleclosetimes = [ 270, 150, 120, 90, 60, 45, 45, 90 ];
         level.br_level.br_circledelaytimes = [ 60, 10, 10, 10, 10, 10, 10, 0 ];
@@ -185,6 +185,6 @@ function function_a94c90dc6c858da4()
     scripts\mp\gametypes\br_circle::applycirclesettings();
     level.br_prematchspawnlocations = [ scripts\mp\gametypes\br::createspawnlocation( ( -1261, -10218.5, 519.66 ), 0, 500 ), scripts\mp\gametypes\br::createspawnlocation( ( 301.573, -6134.04, 692.001 ), 0, 500 ), scripts\mp\gametypes\br::createspawnlocation( ( -3932.99, -2860.85, 622.534 ), 0, 500 ), scripts\mp\gametypes\br::createspawnlocation( ( 3565.82, -6494.82, 497.727 ), 0, 500 ), scripts\mp\gametypes\br::createspawnlocation( ( 2784.2, -1387.21, 839.998 ), 0, 500 ) ];
     level.br_badcircleareas = [ scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -18691, 12376, 200 ), 15000 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -19459, -12712, 200 ), 15000 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 19261, -12712, 200 ), 15000 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 18493, 12376, 200 ), 15000 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -707, 20888, 200 ), 8000 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -707, -22632, 200 ), 8000 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 5255, -15805, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 8323, -9836, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 8642, 3052, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 7015, 9413, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 4349, 13144, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -7087, 13998, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -8292, 8684, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -9920, 2816, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -8292, 8684, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -9088, -5312, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -7424, -12800, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -1600, -17344, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 9923, -2860, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -1859, 16600, 200 ), 4500 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 2388, -11256, 200 ), 2400 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -4140, -8184, 200 ), 2000 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -6085, 2857, 200 ), 1100 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -92, 12848, 200 ), 1100 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -4582, 10069, 200 ), 1100 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 4957, 4374, 200 ), 1100 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 4579, 6143, 200 ), 1100 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -6700, -824, 200 ), 1100 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( -3820, -9656, 200 ), 1100 ), scripts\mp\gametypes\br_circle::createinvalidcirclearea( ( 1556, -13880, 200 ), 1100 ) ];
-    setdvar( @"hash_4aea002979a25696", 10 );
+    setdvar( @"br_max_armory_kiosk", 10 );
 }
 

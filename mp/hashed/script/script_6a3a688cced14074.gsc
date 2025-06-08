@@ -8,8 +8,8 @@
 #namespace killstreak_uav;
 
 // Namespace killstreak_uav / namespace_c8150390fc0bf61e
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6
+// Params 0
+// Checksum 0x0, Offset: 0xe9
 // Size: 0x15
 function function_eda57308516bfc5f()
 {
@@ -17,8 +17,8 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace killstreak_uav / namespace_c8150390fc0bf61e
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x104
+// Params 1
+// Checksum 0x0, Offset: 0x107
 // Size: 0xef
 function evaluatescore( bot )
 {
@@ -43,8 +43,8 @@ function evaluatescore( bot )
 }
 
 // Namespace killstreak_uav / namespace_c8150390fc0bf61e
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc
+// Params 1
+// Checksum 0x0, Offset: 0x1ff
 // Size: 0x27
 function createaction( bot )
 {
@@ -52,8 +52,8 @@ function createaction( bot )
 }
 
 // Namespace killstreak_uav / namespace_c8150390fc0bf61e
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x22c
+// Params 1
+// Checksum 0x0, Offset: 0x22f
 // Size: 0x36
 function actionprocess( bot )
 {

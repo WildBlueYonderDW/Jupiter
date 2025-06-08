@@ -11,7 +11,7 @@
 #namespace countdown;
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40d
 // Size: 0xed
 function init()
@@ -31,7 +31,7 @@ function init()
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x502
 // Size: 0x72
 function SetDvars()
@@ -48,9 +48,9 @@ function SetDvars()
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x57c
-// Size: 0x741
+// Size: 0x751
 function function_7502f58e600e74a2( victim, attacker, victimnotification, meansofdeath )
 {
     var_2db3d5c614236fa9 = victim function_2db3d5c614236fa9( attacker );
@@ -89,7 +89,7 @@ function function_7502f58e600e74a2( victim, attacker, victimnotification, meanso
     reward = [[ level.var_78a0087bea386662.var_e807776b16dce7d4 ]]();
     rewardcount = [[ level.var_78a0087bea386662.var_d70ec56158c8530b ]]( reward );
     
-    if ( getgametype() == "koth_horde_haunting" && victim.type == "zombie" )
+    if ( getgametype() == "koth_horde_haunting" && isdefined( victim.type ) && victim.type == "zombie" )
     {
         victim.guid = victim getuniqueid();
     }
@@ -165,8 +165,8 @@ function function_7502f58e600e74a2( victim, attacker, victimnotification, meanso
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc5
+// Params 1
+// Checksum 0x0, Offset: 0xcd5
 // Size: 0xe4, Type: bool
 function function_2db3d5c614236fa9( attacker )
 {
@@ -209,8 +209,8 @@ function function_2db3d5c614236fa9( attacker )
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb2
+// Params 0
+// Checksum 0x0, Offset: 0xdc2
 // Size: 0xf
 function function_bc3c5e354753e249()
 {
@@ -218,8 +218,8 @@ function function_bc3c5e354753e249()
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdca
+// Params 0
+// Checksum 0x0, Offset: 0xdda
 // Size: 0xc9
 function function_22bd898a1e929cf2()
 {
@@ -238,8 +238,8 @@ function function_22bd898a1e929cf2()
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9b
+// Params 1
+// Checksum 0x0, Offset: 0xeab
 // Size: 0x30c
 function on_use( player )
 {
@@ -324,8 +324,8 @@ function on_use( player )
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11af
+// Params 1
+// Checksum 0x0, Offset: 0x11bf
 // Size: 0x4f
 function function_b08b83755bcac562( lootitem )
 {
@@ -341,8 +341,8 @@ function function_b08b83755bcac562( lootitem )
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1206
+// Params 3
+// Checksum 0x0, Offset: 0x1216
 // Size: 0x122
 function function_4ebd84f3e771db5( guid, notifyattacker, collector )
 {
@@ -360,7 +360,8 @@ function function_4ebd84f3e771db5( guid, notifyattacker, collector )
         
         level.lootitems[ guid ] notify( "death" );
         
-        for (i = 0; i < level.lootitems[ guid ].visuals.size; i++) {
+        for ( i = 0; i < level.lootitems[ guid ].visuals.size ; i++ )
+        {
             level.lootitems[ guid ].visuals[ i ] freescriptable();
         }
         
@@ -374,8 +375,8 @@ function function_4ebd84f3e771db5( guid, notifyattacker, collector )
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1330
+// Params 0
+// Checksum 0x0, Offset: 0x1340
 // Size: 0x7
 function function_d04b4a9729479cad()
 {
@@ -383,8 +384,8 @@ function function_d04b4a9729479cad()
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1340
+// Params 1
+// Checksum 0x0, Offset: 0x1350
 // Size: 0x85
 function function_c80fb54710c9e5aa( reward )
 {
@@ -415,8 +416,8 @@ function function_c80fb54710c9e5aa( reward )
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13cd
+// Params 0
+// Checksum 0x0, Offset: 0x13dd
 // Size: 0x8d
 function get_reward()
 {
@@ -427,22 +428,24 @@ function get_reward()
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1463
+// Params 2
+// Checksum 0x0, Offset: 0x1473
 // Size: 0x89
 function weighted_array_randomize( array, weights )
 {
     assert( array.size == weights.size );
     cumulative_weight = 0;
     
-    for (i = 0; i < weights.size; i++) {
+    for ( i = 0; i < weights.size ; i++ )
+    {
         cumulative_weight += weights[ i ];
     }
     
     random_weight = randomfloat( cumulative_weight );
     running_total = 0;
     
-    for (i = 0; i < array.size; i++) {
+    for ( i = 0; i < array.size ; i++ )
+    {
         running_total += weights[ i ];
         
         if ( running_total >= random_weight )
@@ -453,8 +456,8 @@ function weighted_array_randomize( array, weights )
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14f4
+// Params 1
+// Checksum 0x0, Offset: 0x1504
 // Size: 0x1c2
 function function_fba8eb934ad3b08b( reward )
 {
@@ -518,8 +521,8 @@ function function_fba8eb934ad3b08b( reward )
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16be
+// Params 2
+// Checksum 0x0, Offset: 0x16ce
 // Size: 0x274
 function function_77f5f08a39a2d9f8( reward, amount )
 {
@@ -570,8 +573,8 @@ function function_77f5f08a39a2d9f8( reward, amount )
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x193a
+// Params 0
+// Checksum 0x0, Offset: 0x194a
 // Size: 0x86
 function function_899920a5f5f76a4b()
 {
@@ -589,8 +592,8 @@ function function_899920a5f5f76a4b()
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c8
+// Params 0
+// Checksum 0x0, Offset: 0x19d8
 // Size: 0x11d
 function function_d6f787b4c0967913()
 {
@@ -629,8 +632,8 @@ function function_d6f787b4c0967913()
 }
 
 // Namespace countdown / scripts\mp\gametypes\countdown
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aed
+// Params 1
+// Checksum 0x0, Offset: 0x1afd
 // Size: 0x2b
 function onplayerdisconnect( params )
 {

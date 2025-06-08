@@ -10,7 +10,7 @@
 #namespace bots_gametype_ctf;
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x297
 // Size: 0x10
 function main()
@@ -22,7 +22,7 @@ function main()
 /#
 
     // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2af
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -33,7 +33,7 @@ function main()
 #/
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bc
 // Size: 0x41
 function setup_callbacks()
@@ -44,7 +44,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x305
 // Size: 0x1d1
 function setup_bot_ctf()
@@ -93,7 +93,7 @@ function setup_bot_ctf()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4de
 // Size: 0x40
 function crate_can_use( crate )
@@ -112,7 +112,7 @@ function crate_can_use( crate )
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x527
 // Size: 0x496
 function bot_ctf_think()
@@ -276,7 +276,7 @@ function bot_ctf_think()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9c5
 // Size: 0x2a8
 function bot_ctf_recover_flag()
@@ -379,7 +379,7 @@ function bot_ctf_recover_flag()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc75
 // Size: 0x12
 function clear_defend()
@@ -391,7 +391,7 @@ function clear_defend()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc8f
 // Size: 0x8
 function is_protecting_flag()
@@ -400,7 +400,7 @@ function is_protecting_flag()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xca0
 // Size: 0x72
 function get_flag_protect_radius()
@@ -421,7 +421,7 @@ function get_flag_protect_radius()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd1b
 // Size: 0xda
 function ctf_bot_attacker_limit_for_team( team )
@@ -464,7 +464,7 @@ function ctf_bot_attacker_limit_for_team( team )
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdfe
 // Size: 0x27
 function ctf_bot_defender_limit_for_team( team )
@@ -474,7 +474,7 @@ function ctf_bot_defender_limit_for_team( team )
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe2e
 // Size: 0x2d
 function get_allied_attackers_for_team( team )
@@ -483,7 +483,7 @@ function get_allied_attackers_for_team( team )
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe64
 // Size: 0x2d
 function get_allied_defenders_for_team( team )
@@ -492,7 +492,7 @@ function get_allied_defenders_for_team( team )
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe9a
 // Size: 0x20
 function bot_ctf_ai_director_update()
@@ -504,7 +504,7 @@ function bot_ctf_ai_director_update()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xec2
 // Size: 0x5a
 function bot_ctf_get_node_chance( node )
@@ -530,7 +530,7 @@ function bot_ctf_get_node_chance( node )
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf25
 // Size: 0x1c
 function bot_ctf_flag_is_home_of_team( team )
@@ -539,7 +539,7 @@ function bot_ctf_flag_is_home_of_team( team )
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf4a
 // Size: 0x21, Type: bool
 function bot_ctf_flag_picked_up_of_team( team )
@@ -548,7 +548,7 @@ function bot_ctf_flag_picked_up_of_team( team )
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf74
 // Size: 0x11, Type: bool
 function bot_ctf_my_team_flag_is_picked_up()
@@ -557,7 +557,7 @@ function bot_ctf_my_team_flag_is_picked_up()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf8e
 // Size: 0x26, Type: bool
 function bot_ctf_enemy_team_flag_is_picked_up()
@@ -567,7 +567,7 @@ function bot_ctf_enemy_team_flag_is_picked_up()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfbd
 // Size: 0xc, Type: bool
 function bot_ctf_player_has_flag()
@@ -576,7 +576,7 @@ function bot_ctf_player_has_flag()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfd2
 // Size: 0xf, Type: bool
 function bot_ctf_can_switch_to_defender()
@@ -590,7 +590,7 @@ function bot_ctf_can_switch_to_defender()
 }
 
 // Namespace bots_gametype_ctf / scripts\mp\bots\bots_gametype_ctf
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfea
 // Size: 0xf, Type: bool
 function bot_ctf_player_always_attacker()

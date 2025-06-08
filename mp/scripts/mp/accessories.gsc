@@ -11,7 +11,7 @@
 #namespace accessories;
 
 // Namespace accessories / scripts\mp\accessories
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34e
 // Size: 0x2
 function init()
@@ -20,7 +20,7 @@ function init()
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x358
 // Size: 0x10
 function getaccessoryweaponbyindex( index )
@@ -29,7 +29,7 @@ function getaccessoryweaponbyindex( index )
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x371
 // Size: 0x10
 function getaccessorydatabyindex( index )
@@ -38,7 +38,7 @@ function getaccessorydatabyindex( index )
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38a
 // Size: 0x10
 function getaccessorylogicbyindex( index )
@@ -47,7 +47,7 @@ function getaccessorylogicbyindex( index )
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3a3
 // Size: 0xcc
 function giveplayeraccessory( accessorydata, accessoryweapon, accessorylogic )
@@ -84,7 +84,7 @@ function giveplayeraccessory( accessorydata, accessoryweapon, accessorylogic )
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x477
 // Size: 0x2c
 function shouldoperatorhideaccessoryworldmodel()
@@ -95,7 +95,7 @@ function shouldoperatorhideaccessoryworldmodel()
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0xc
 function getoperatorspecificaccessoryweapon( accessoryweapon )
@@ -104,7 +104,7 @@ function getoperatorspecificaccessoryweapon( accessoryweapon )
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c1
 // Size: 0x9
 function testaccessoryvfx()
@@ -113,7 +113,7 @@ function testaccessoryvfx()
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d2
 // Size: 0x9
 function clearplayeraccessory()
@@ -122,7 +122,7 @@ function clearplayeraccessory()
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e3
 // Size: 0x39
 function initthermometerwatch()
@@ -136,7 +136,7 @@ function initthermometerwatch()
 }
 
 // Namespace accessories / scripts\mp\accessories
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x524
 // Size: 0x25c
 function getmapbaselinetempurature()

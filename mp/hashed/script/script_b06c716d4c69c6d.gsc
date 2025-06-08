@@ -4,7 +4,7 @@
 #namespace mp_jup_st_b_ob_exfil_industrial_cs;
 
 // Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4f1
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x566
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5d5
 // Size: 0xb79
 function createstructs( fe, us, cf )
@@ -194,7 +194,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1156
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -203,7 +203,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1160
 // Size: 0xe
 function cleanup()

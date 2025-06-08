@@ -8,7 +8,7 @@
 /#
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa8
     // Size: 0x148, Type: dev
     function debug_manager()
@@ -45,7 +45,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1f8
     // Size: 0x188, Type: dev
     function debug_player()
@@ -94,7 +94,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x388
     // Size: 0xa0, Type: dev
     function debug_friendly()
@@ -125,7 +125,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x430
     // Size: 0xb2, Type: dev
     function debug_enemy()
@@ -165,7 +165,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4ea
     // Size: 0x2b, Type: dev
     function debug_enabled()
@@ -175,7 +175,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x51d
     // Size: 0x14, Type: dev
     function function_f1c3d8f46961ed52()
@@ -184,7 +184,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x539
     // Size: 0x2b, Type: dev
     function function_c1b2391e0af178d()
@@ -194,7 +194,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x56c
     // Size: 0x2b, Type: dev
     function function_d9143f39f30fecf1()
@@ -204,7 +204,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x59f
     // Size: 0x2b, Type: dev
     function function_ca7435750eb63fe6()
@@ -214,7 +214,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5d2
     // Size: 0x2b, Type: dev
     function function_a8005409dfbcbb79()
@@ -224,7 +224,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x605
     // Size: 0x2b, Type: dev
     function function_68a6af3bcbe8d474()
@@ -234,7 +234,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x638
     // Size: 0x2b, Type: dev
     function function_4f071e84ae5ccf30()
@@ -244,7 +244,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x66b
     // Size: 0x2b, Type: dev
     function function_79c554909de26a4c()
@@ -254,7 +254,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x69e
     // Size: 0x2b, Type: dev
     function function_ff38e8c9a6564c50()
@@ -264,7 +264,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x6d1
     // Size: 0x19, Type: dev
     function function_6a4e0953fbd5e6bc()
@@ -273,14 +273,15 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x6f2
     // Size: 0x68, Type: dev
     function thick_line( start, end, color )
     {
         num = 3;
         
-        for (i = 0; i < num; i++) {
+        for ( i = 0; i < num ; i++ )
+        {
             start += ( 0, 0, num * 0.05 );
             end += ( 0, 0, num * 0.05 );
             line( start, end, color );
@@ -288,14 +289,15 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0x762
     // Size: 0x71, Type: dev
     function thick_cylinder( start, end, radius, color )
     {
         num = 3;
         
-        for (i = 0; i < num; i++) {
+        for ( i = 0; i < num ; i++ )
+        {
             start += ( 0, 0, num * 0.05 );
             end += ( 0, 0, num * 0.05 );
             cylinder( start, end, radius, color );
@@ -303,7 +305,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x7db
     // Size: 0x101, Type: dev
     function function_804ccafa69edd640( msg )
@@ -344,7 +346,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x8e4
     // Size: 0x109, Type: dev
     function function_dd7ad6e8da294b01( type, msg )
@@ -379,7 +381,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x9f5
     // Size: 0x2f, Type: dev
     function function_20367cc98c4d2265( type )
@@ -388,7 +390,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0xa2c
     // Size: 0xc2, Type: dev
     function debug_points( points, endonevent )
@@ -417,7 +419,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xaf6
     // Size: 0x123, Type: dev
     function debug_alert( type )
@@ -464,7 +466,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 4, eflags: 0x0
+    // Params 4
     // Checksum 0x0, Offset: 0xc21
     // Size: 0x47, Type: dev
     function function_48c141571ea55421( msg, offset, scale, color )
@@ -478,7 +480,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0xc70
     // Size: 0x3f9, Type: dev
     function function_55f9cd7d60a115bb( text, color, alpha, scale, offset, life )
@@ -563,7 +565,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x1071
     // Size: 0x166, Type: dev
     function draw_enemies( team, offset )
@@ -603,7 +605,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x11df
     // Size: 0xa4, Type: dev
     function function_159af129de631d3e( agent )
@@ -639,7 +641,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x128b
     // Size: 0x5cc, Type: dev
     function function_6ed101071f87cd39()
@@ -824,7 +826,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x185f
     // Size: 0x50a, Type: dev
     function function_499e30b2511f6c94()
@@ -954,7 +956,8 @@
         
         if ( !self [[ self.fnisinstealthcombat ]]() )
         {
-            for (iplayer = 0; iplayer < level.players.size; iplayer++) {
+            for ( iplayer = 0; iplayer < level.players.size ; iplayer++ )
+            {
                 ts = self getthreatsight( level.players[ iplayer ] );
                 
                 if ( ts > 0 )
@@ -987,7 +990,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x1d71
     // Size: 0x5c, Type: dev
     function function_886940100cc17179( baseangles, angle, angleidx )
@@ -1009,7 +1012,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 8, eflags: 0x0
+    // Params 8
     // Checksum 0x0, Offset: 0x1dd5
     // Size: 0xee, Type: dev
     function draw_arc( origin, startangle, endangle, baseangles, len, angleidx, numarcs, color )
@@ -1020,7 +1023,8 @@
         line( origin, prevpt, color );
         angledelta = ( endangle - startangle ) / numarcs;
         
-        for (i = 1; i < numarcs + 1; i++) {
+        for ( i = 1; i < numarcs + 1 ; i++ )
+        {
             angle = startangle + angledelta * i;
             nextpt = origin + len * function_886940100cc17179( baseangles, angle, angleidx );
             line( prevpt, nextpt, color );
@@ -1031,7 +1035,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1ecb
     // Size: 0x150, Type: dev
     function draw_fov()
@@ -1079,7 +1083,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2023
     // Size: 0x130, Type: dev
     function function_a02eac45a40e4217()
@@ -1121,7 +1125,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x215b
     // Size: 0x262, Type: dev
     function function_459a4d528437596()
@@ -1149,7 +1153,8 @@
                     cury = var_69e2cf7730e3e9d;
                     curline = levelstealth.var_78f9cb3724128a61;
                     
-                    for (iline = 0; iline < levelstealth.var_cfee0ec929c863b8; iline++) {
+                    for ( iline = 0; iline < levelstealth.var_cfee0ec929c863b8 ; iline++ )
+                    {
                         if ( levelstealth.chatbox[ curline ].time > var_3b40392d00a51017 )
                         {
                             text = "<dev string:x21>";
@@ -1186,7 +1191,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x23c5
     // Size: 0x1b1, Type: dev
     function function_ec780a18fdfb4982( speaker, line )
@@ -1227,7 +1232,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x257e
     // Size: 0x219, Type: dev
     function draw_corpses()
@@ -1297,7 +1302,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x279f
     // Size: 0x82, Type: dev
     function function_24051a9bda001947( message, duration )
@@ -1311,14 +1316,15 @@
             duration = 5;
         }
         
-        for (time = 0; time < duration * 20; time++) {
+        for ( time = 0; time < duration * 20 ; time++ )
+        {
             print3d( self.origin + ( 0, 0, 45 ), message, ( 0.48, 9.4, 0.76 ), 0.85 );
             waitframe();
         }
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x2829
     // Size: 0xc0, Type: dev
     function draw_axis( origin, angles, length )
@@ -1333,7 +1339,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x28f1
     // Size: 0x1f0, Type: dev
     function function_df6b11367f42a8e1()
@@ -1388,7 +1394,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2ae9
     // Size: 0x2b8, Type: dev
     function function_47439b5d33f2695a()
@@ -1416,7 +1422,8 @@
             
             foreach ( region in group_data.hunt_regions )
             {
-                for (i = 1; i < region.route_points.size; i++) {
+                for ( i = 1; i < region.route_points.size ; i++ )
+                {
                     p0 = region.route_points[ i - 1 ];
                     p1 = region.route_points[ i ];
                     line( p0.origin, p1.origin, ( 0, 0.7, 0 ), 1, 0, 1 );
@@ -1442,7 +1449,7 @@
     }
 
     // Namespace debug / scripts\stealth\debug
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2da9
     // Size: 0x39d, Type: dev
     function function_477aac1963f8269e()

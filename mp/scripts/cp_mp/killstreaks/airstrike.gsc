@@ -19,8 +19,8 @@
 #namespace airstrike;
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xefc
+// Params 0
+// Checksum 0x0, Offset: 0xf4e
 // Size: 0x1c1
 function init()
 {
@@ -46,7 +46,7 @@ function init()
     level.airstrikedangerradius = getdvarint( @"hash_39459995df574c02", 1000 );
     level.var_605eaac73a2853d3 = getdvarint( @"hash_77900c1535c539f5", 1 );
     level.var_480d0e884a4f8e2a = getdvarint( @"hash_20f5d09c276da17c", 0 );
-    level.var_b8200908fd2377d3 = getdvarint( @"hash_f6c1cac5da2b9dfb", 0 );
+    level.var_b8200908fd2377d3 = getdvarint( @"scr_airstrike_notify_time", 0 );
     
     /#
         setdevdvarifuninitialized( @"hash_7daed56d10a79690", 2 );
@@ -61,8 +61,8 @@ function init()
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10c5
+// Params 0
+// Checksum 0x0, Offset: 0x1117
 // Size: 0x95
 function init_airstrike_flyby_anims()
 {
@@ -75,8 +75,8 @@ function init_airstrike_flyby_anims()
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1162
+// Params 0
+// Checksum 0x0, Offset: 0x11b4
 // Size: 0x98
 function init_airstrike_vo()
 {
@@ -89,8 +89,8 @@ function init_airstrike_vo()
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1202
+// Params 0
+// Checksum 0x0, Offset: 0x1254
 // Size: 0x57
 function function_bf6596a9c196414c()
 {
@@ -99,8 +99,8 @@ function function_bf6596a9c196414c()
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1261
+// Params 2
+// Checksum 0x0, Offset: 0x12b3
 // Size: 0x193
 function gettimeremainingsec( useresult, strikelocation )
 {
@@ -145,8 +145,8 @@ function gettimeremainingsec( useresult, strikelocation )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13fc
+// Params 1
+// Checksum 0x0, Offset: 0x144e
 // Size: 0x15f, Type: bool
 function weapongivenairstrike( streakinfo )
 {
@@ -192,8 +192,8 @@ function weapongivenairstrike( streakinfo )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1564
+// Params 2
+// Checksum 0x0, Offset: 0x15b6
 // Size: 0x7e
 function weaponswitchendedairstrike( streakinfo, switchresult )
 {
@@ -218,8 +218,8 @@ function weaponswitchendedairstrike( streakinfo, switchresult )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ea
+// Params 3
+// Checksum 0x0, Offset: 0x163c
 // Size: 0x11e
 function weaponfiredairstrike( streakinfo, var_a9dd4e8c5e5c7178, firedprojectile )
 {
@@ -264,9 +264,9 @@ function weaponfiredairstrike( streakinfo, var_a9dd4e8c5e5c7178, firedprojectile
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1711
-// Size: 0x26, Type: bool
+// Params 1
+// Checksum 0x0, Offset: 0x1763
+// Size: 0x26
 function tryuseairstrike( streakname )
 {
     streakinfo = createstreakinfo( streakname, self );
@@ -274,8 +274,8 @@ function tryuseairstrike( streakname )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1740
+// Params 1
+// Checksum 0x0, Offset: 0x1792
 // Size: 0x350, Type: bool
 function tryuseairstrikefromstruct( streakinfo )
 {
@@ -383,8 +383,8 @@ function tryuseairstrikefromstruct( streakinfo )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a99
+// Params 1
+// Checksum 0x0, Offset: 0x1aeb
 // Size: 0x489, Type: bool
 function selectairstrikelocation( streakinfo )
 {
@@ -521,8 +521,8 @@ function selectairstrikelocation( streakinfo )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f2b
+// Params 2
+// Checksum 0x0, Offset: 0x1f7d
 // Size: 0x23, Type: bool
 function function_b340bcac3e4dda9b( strikenumber, mappointinfo )
 {
@@ -530,8 +530,8 @@ function function_b340bcac3e4dda9b( strikenumber, mappointinfo )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f57
+// Params 1
+// Checksum 0x0, Offset: 0x1fa9
 // Size: 0xa0
 function function_ca2efe3da5d8399d( mappointinfo )
 {
@@ -552,8 +552,8 @@ function function_ca2efe3da5d8399d( mappointinfo )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2000
+// Params 5
+// Checksum 0x0, Offset: 0x2052
 // Size: 0x213
 function finishmapselectairstrikeusage( mappointinfo, directionalselection, mappoint, targetmarker, streakinfo )
 {
@@ -600,8 +600,8 @@ function finishmapselectairstrikeusage( mappointinfo, directionalselection, mapp
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x221b
+// Params 3
+// Checksum 0x0, Offset: 0x226d
 // Size: 0x161
 function finishstandardairstrikeusage( location, targetmarker, streakinfo )
 {
@@ -636,8 +636,8 @@ function finishstandardairstrikeusage( location, targetmarker, streakinfo )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x2384
+// Params 6
+// Checksum 0x0, Offset: 0x23d6
 // Size: 0x60
 function finishairstrikeusage( location, directionyaw, targetmarker, streakinfo, animname, airstrikeid )
 {
@@ -647,8 +647,8 @@ function finishairstrikeusage( location, directionyaw, targetmarker, streakinfo,
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x23ec
+// Params 8
+// Checksum 0x0, Offset: 0x243e
 // Size: 0x61
 function doairstrike( origin, yaw, owner, team, targetmarker, streakinfo, animname, airstrikeid )
 {
@@ -657,8 +657,8 @@ function doairstrike( origin, yaw, owner, team, targetmarker, streakinfo, animna
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2455
+// Params 1
+// Checksum 0x0, Offset: 0x24a7
 // Size: 0x3b
 function watchairstrikeowner( airstrikeid )
 {
@@ -669,8 +669,8 @@ function watchairstrikeowner( airstrikeid )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x2498
+// Params 7
+// Checksum 0x0, Offset: 0x24ea
 // Size: 0x540
 function callstrike( owner, coord, yaw, targetmarker, streakinfo, animname, airstrikeid )
 {
@@ -790,7 +790,8 @@ function callstrike( owner, coord, yaw, targetmarker, streakinfo, animname, airs
                 thread [[ level.var_b67b5f9dfe488c2f ]]( streakinfo );
             }
             
-            for (i = 0; i < 2; i++) {
+            for ( i = 0; i < 2 ; i++ )
+            {
                 if ( !isdefined( streakinfo.planeflyheightoverride ) )
                 {
                     planeflyheight += randomintrange( 200, 300 );
@@ -831,8 +832,8 @@ function callstrike( owner, coord, yaw, targetmarker, streakinfo, animname, airs
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29e0
+// Params 1
+// Checksum 0x0, Offset: 0x2a32
 // Size: 0x29
 function function_8f8818bc20bd6ffa( streakinfo )
 {
@@ -845,8 +846,8 @@ function function_8f8818bc20bd6ffa( streakinfo )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a11
+// Params 5
+// Checksum 0x0, Offset: 0x2a63
 // Size: 0x49b
 function callstrike_findoptimaldirection( owner, coord, planeflyheight, planehalfdistance, loopcount )
 {
@@ -974,8 +975,8 @@ function callstrike_findoptimaldirection( owner, coord, planeflyheight, planehal
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eb5
+// Params 9
+// Checksum 0x0, Offset: 0x2f07
 // Size: 0x74f
 function doplanestrike( targetsite, var_6d29e82378e59e76, var_98255165b50d8173, planeflyheight, targetmarker, streakinfo, animname, owner, airstrikeid )
 {
@@ -1148,8 +1149,8 @@ function doplanestrike( targetsite, var_6d29e82378e59e76, var_98255165b50d8173, 
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x360c
+// Params 3
+// Checksum 0x0, Offset: 0x365e
 // Size: 0x88
 function airstrike_playplaneattackfx( plane, var_fafbda0eba9c0aab, streakinfo )
 {
@@ -1169,8 +1170,8 @@ function airstrike_playplaneattackfx( plane, var_fafbda0eba9c0aab, streakinfo )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x369c
+// Params 9
+// Checksum 0x0, Offset: 0x36ee
 // Size: 0xd8
 function airstrike_playflyfx( plane, var_e4d26f59db05025a, planestartpos, var_7789cda8c1e3128e, var_3a20f9101e50025f, var_3a020e101e2ddead, var_7c39d972e849c204, var_a9b4b258c1167b50, streakinfo )
 {
@@ -1196,8 +1197,8 @@ function airstrike_playflyfx( plane, var_e4d26f59db05025a, planestartpos, var_77
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x377d
+// Params 1
+// Checksum 0x0, Offset: 0x37cf
 // Size: 0x33
 function airstrike_playapproachfx( var_777fc9701bbd592b )
 {
@@ -1208,8 +1209,8 @@ function airstrike_playapproachfx( var_777fc9701bbd592b )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x37b8
+// Params 1
+// Checksum 0x0, Offset: 0x380a
 // Size: 0x33
 function airstrike_playflybyfx( var_3a020e101e2ddead )
 {
@@ -1220,8 +1221,8 @@ function airstrike_playflybyfx( var_3a020e101e2ddead )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x37f3
+// Params 1
+// Checksum 0x0, Offset: 0x3845
 // Size: 0x33
 function airstrike_playflyoutfx( var_7c39d972e849c204 )
 {
@@ -1232,8 +1233,8 @@ function airstrike_playflyoutfx( var_7c39d972e849c204 )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x382e
+// Params 1
+// Checksum 0x0, Offset: 0x3880
 // Size: 0x2b
 function airstrike_handleflyoutfxdeath( var_b5d8ace604fc4b78 )
 {
@@ -1244,8 +1245,8 @@ function airstrike_handleflyoutfxdeath( var_b5d8ace604fc4b78 )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3861
+// Params 1
+// Checksum 0x0, Offset: 0x38b3
 // Size: 0x3b
 function airstrike_movewithplane( plane )
 {
@@ -1260,8 +1261,8 @@ function airstrike_movewithplane( plane )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x38a4
+// Params 3
+// Checksum 0x0, Offset: 0x38f6
 // Size: 0x121
 function airstrike_watchkills( streakinfo, var_c12c14029cc05aca, airstrikeid )
 {
@@ -1290,8 +1291,8 @@ function airstrike_watchkills( streakinfo, var_c12c14029cc05aca, airstrikeid )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x39cd
+// Params 1
+// Checksum 0x0, Offset: 0x3a1f
 // Size: 0x59
 function airstrike_watchkillscount( endonnotify )
 {
@@ -1309,8 +1310,8 @@ function airstrike_watchkillscount( endonnotify )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a2e
+// Params 1
+// Checksum 0x0, Offset: 0x3a80
 // Size: 0x59
 function function_9fc9871a8c03a9de( endonnotify )
 {
@@ -1330,8 +1331,8 @@ function function_9fc9871a8c03a9de( endonnotify )
 /#
 
     // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3a8f
+    // Params 1
+    // Checksum 0x0, Offset: 0x3ae1
     // Size: 0x46, Type: dev
     function testsoundplacement( flyoutfx )
     {
@@ -1347,8 +1348,8 @@ function function_9fc9871a8c03a9de( endonnotify )
 #/
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3add
+// Params 6
+// Checksum 0x0, Offset: 0x3b2f
 // Size: 0x7dc
 function callstrike_precisionbulleteffect( plane, launchtime, strikelength, damagepos, owner, streakinfo )
 {
@@ -1413,7 +1414,8 @@ function callstrike_precisionbulleteffect( plane, launchtime, strikelength, dama
     
     traceheightoffset = damagepos[ 2 ] + plane.flightheight * 3;
     
-    for (i = 0; i < repeat; i++) {
+    for ( i = 0; i < repeat ; i++ )
+    {
         if ( !isdefined( owner ) )
         {
             break;
@@ -1447,7 +1449,7 @@ function callstrike_precisionbulleteffect( plane, launchtime, strikelength, dama
             var_6721411b32ec4a63 = vectorcross( var_88f727764adfe9a4, var_9b9958e5c64d5b3 );
             plane thread callstrike_playmultitracerfx( getfx( "airstrike_tracer" ), var_e734e756bb8f91c9, var_9b9958e5c64d5b3, var_6721411b32ec4a63 );
             
-            if ( getdvarint( @"hash_eb0811ead28c4f53", 0 ) )
+            if ( getdvarint( @"redeploy_ascenders_enabled", 0 ) )
             {
                 if ( isdefined( tracertrace[ "hittype" ] ) && tracertrace[ "hittype" ] == "hittype_world" && tracertrace[ "position" ][ 2 ] > 3000 )
                 {
@@ -1511,8 +1513,8 @@ function callstrike_precisionbulleteffect( plane, launchtime, strikelength, dama
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x42c1
+// Params 4
+// Checksum 0x0, Offset: 0x4313
 // Size: 0xa0
 function callstrike_getrandomshotoffset( minoffset, maxoffset, originalpos, var_6f680ee249f67b0d )
 {
@@ -1526,8 +1528,8 @@ function callstrike_getrandomshotoffset( minoffset, maxoffset, originalpos, var_
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x436a
+// Params 4
+// Checksum 0x0, Offset: 0x43bc
 // Size: 0x8c
 function callstrike_playmultitracerfx( tracerfx, tracehit, var_9b9958e5c64d5b3, var_6721411b32ec4a63 )
 {
@@ -1546,8 +1548,8 @@ function callstrike_playmultitracerfx( tracerfx, tracehit, var_9b9958e5c64d5b3, 
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x43fe
+// Params 2
+// Checksum 0x0, Offset: 0x4450
 // Size: 0x61
 function moveanddamagepoint( index, hitpos )
 {
@@ -1560,8 +1562,8 @@ function moveanddamagepoint( index, hitpos )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4467
+// Params 2
+// Checksum 0x0, Offset: 0x44b9
 // Size: 0x55
 function strafes( index, hitpos )
 {
@@ -1573,9 +1575,9 @@ function strafes( index, hitpos )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x44c4
-// Size: 0x5d3
+// Params 6
+// Checksum 0x0, Offset: 0x4516
+// Size: 0x5fb
 function function_c592aab59a13cf01( plane, launchtime, strikelength, damagepos, owner, streakinfo )
 {
     plane endon( "death" );
@@ -1650,7 +1652,7 @@ function function_c592aab59a13cf01( plane, launchtime, strikelength, damagepos, 
     var_f9f79f4923d00e6e setscriptablepartstate( "explode", "on", 0 );
     var_704a32ec251490fb = isdefined( bundle.var_4971349c14362ea4 ) ? bundle.var_4971349c14362ea4 : 750;
     var_b9d5783a4f34efbc = [ var_6033a7638fe1342f, var_f9f79f4923d00e6e ];
-    var_33f031d062a32623 = create_contents( 0, 1, 1, 1, 0, 1, 0, 1, 0 );
+    var_33f031d062a32623 = physics_createcontents( [ "physicscontents_itemclip", "physicscontents_glass", "physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_vehicle", "physicscontents_ainosight" ] );
     var_3bd841437dfaa8d7 = function_15d7e8b275b8b57b( bombhitpos, var_704a32ec251490fb, owner, var_c6188da3ad302049, var_b9d5783a4f34efbc, var_33f031d062a32623 );
     vehicleshit = function_2a75473ddd0fb33f( bombhitpos, var_704a32ec251490fb, owner, var_c6188da3ad302049, var_b9d5783a4f34efbc, var_33f031d062a32623 );
     bombweapon = makeweapon( "fuelstrike_proj_mp" );
@@ -1679,8 +1681,8 @@ function function_c592aab59a13cf01( plane, launchtime, strikelength, damagepos, 
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a9f
+// Params 2
+// Checksum 0x0, Offset: 0x4b19
 // Size: 0x81
 function delaydeletefxents( var_19e3c5251a5f46fa, var_837d24b1c8e8ef79 )
 {
@@ -1706,8 +1708,8 @@ function delaydeletefxents( var_19e3c5251a5f46fa, var_837d24b1c8e8ef79 )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b28
+// Params 9
+// Checksum 0x0, Offset: 0x4ba2
 // Size: 0x154
 function getflightpath( coord, direction, planehalfdistance, heightent, planeflyheight, planeflyspeed, var_361663d437db22f5, streakname, var_505331ad630bbc6b )
 {
@@ -1752,8 +1754,8 @@ function getflightpath( coord, direction, planehalfdistance, heightent, planefly
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c85
+// Params 1
+// Checksum 0x0, Offset: 0x4cff
 // Size: 0x42
 function getexplodedistance( height )
 {
@@ -1767,8 +1769,8 @@ function getexplodedistance( height )
 /#
 
     // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4cd0
+    // Params 2
+    // Checksum 0x0, Offset: 0x4d4a
     // Size: 0xf6, Type: dev
     function function_aca0ec4cab6e6319( planeflyheight, targetsite )
     {
@@ -1791,14 +1793,15 @@ function getexplodedistance( height )
     }
 
     // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-    // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4dce
+    // Params 4
+    // Checksum 0x0, Offset: 0x4e48
     // Size: 0x5c, Type: dev
     function function_fc41f67ef33c00b0( start, end, color, duration )
     {
         frames = duration * 20;
         
-        for (i = 0; i < frames; i++) {
+        for ( i = 0; i < frames ; i++ )
+        {
             line( start, end, color );
             wait 0.05;
         }
@@ -1807,8 +1810,8 @@ function getexplodedistance( height )
 #/
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e32
+// Params 2
+// Checksum 0x0, Offset: 0x4eac
 // Size: 0x11d
 function airstrike_getownerlookatpos( owner, finalselection )
 {
@@ -1841,8 +1844,8 @@ function airstrike_getownerlookatpos( owner, finalselection )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f58
+// Params 2
+// Checksum 0x0, Offset: 0x4fd2
 // Size: 0x34d
 function airstrike_watchforads( streakinfo, iconoverride )
 {
@@ -1940,8 +1943,8 @@ function airstrike_watchforads( streakinfo, iconoverride )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x52ad
+// Params 4
+// Checksum 0x0, Offset: 0x5327
 // Size: 0x98
 function airstrike_setmarkerobjective( objid, icon, owner, offset )
 {
@@ -1967,8 +1970,8 @@ function airstrike_setmarkerobjective( objid, icon, owner, offset )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x534d
+// Params 1
+// Checksum 0x0, Offset: 0x53c7
 // Size: 0x15f
 function airstrike_updatemarkerpos( owner )
 {
@@ -2018,8 +2021,8 @@ function airstrike_updatemarkerpos( owner )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54b4
+// Params 1
+// Checksum 0x0, Offset: 0x552e
 // Size: 0x28
 function airstrike_watchownerdisown( owner )
 {
@@ -2030,8 +2033,8 @@ function airstrike_watchownerdisown( owner )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54e4
+// Params 1
+// Checksum 0x0, Offset: 0x555e
 // Size: 0x170
 function airstrike_watchdeployended( owner )
 {
@@ -2069,8 +2072,8 @@ function airstrike_watchdeployended( owner )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x565c
+// Params 1
+// Checksum 0x0, Offset: 0x56d6
 // Size: 0x51
 function airstrike_watchdeployweaponchange( owner )
 {
@@ -2093,8 +2096,8 @@ function airstrike_watchdeployweaponchange( owner )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x56b5
+// Params 1
+// Checksum 0x0, Offset: 0x572f
 // Size: 0x69
 function airstrike_removemarker( delaytime )
 {
@@ -2117,8 +2120,8 @@ function airstrike_removemarker( delaytime )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5726
+// Params 1
+// Checksum 0x0, Offset: 0x57a0
 // Size: 0x2d
 function airstrike_delayplayscriptable( delaytime )
 {
@@ -2129,8 +2132,8 @@ function airstrike_delayplayscriptable( delaytime )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x575b
+// Params 3
+// Checksum 0x0, Offset: 0x57d5
 // Size: 0x4a
 function airstrike_killcammove( delaytime, killcamendpos, var_315162f2d4f72593 )
 {
@@ -2142,8 +2145,8 @@ function airstrike_killcammove( delaytime, killcamendpos, var_315162f2d4f72593 )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x57ad
+// Params 2
+// Checksum 0x0, Offset: 0x5827
 // Size: 0x39
 function airstrike_watchgameend( streakinfo, airstrikeid )
 {
@@ -2154,8 +2157,8 @@ function airstrike_watchgameend( streakinfo, airstrikeid )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x57ee
+// Params 3
+// Checksum 0x0, Offset: 0x5868
 // Size: 0xe1
 function airstrike_addactivestrike( origin, owner, timesec )
 {
@@ -2181,8 +2184,8 @@ function airstrike_addactivestrike( origin, owner, timesec )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x58d8
+// Params 2
+// Checksum 0x0, Offset: 0x5952
 // Size: 0x43
 function airstrike_removeactivestrike( owner, var_4d39391d6ef2bb65 )
 {
@@ -2195,8 +2198,8 @@ function airstrike_removeactivestrike( owner, var_4d39391d6ef2bb65 )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5923
+// Params 3
+// Checksum 0x0, Offset: 0x599d
 // Size: 0x2d
 function function_7893c28cfbf65865( owner, airstrikeid, delaytime )
 {
@@ -2206,8 +2209,8 @@ function function_7893c28cfbf65865( owner, airstrikeid, delaytime )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5958
+// Params 0
+// Checksum 0x0, Offset: 0x59d2
 // Size: 0x30
 function function_35c596ee06dc6da()
 {
@@ -2224,8 +2227,8 @@ function function_35c596ee06dc6da()
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5991
+// Params 1
+// Checksum 0x0, Offset: 0x5a0b
 // Size: 0x120
 function airstrike_canbeused( strikelocation )
 {
@@ -2282,8 +2285,8 @@ function airstrike_canbeused( strikelocation )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5aba
+// Params 1
+// Checksum 0x0, Offset: 0x5b34
 // Size: 0xcb
 function callprecisionairstrikeonlocation( location )
 {
@@ -2304,8 +2307,8 @@ function callprecisionairstrikeonlocation( location )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b8d
+// Params 6
+// Checksum 0x0, Offset: 0x5c07
 // Size: 0x1c5
 function function_15d7e8b275b8b57b( hitpos, hitradius, airstrikeowner, tracestart, var_b9d5783a4f34efbc, var_33f031d062a32623 )
 {
@@ -2376,8 +2379,8 @@ function function_15d7e8b275b8b57b( hitpos, hitradius, airstrikeowner, tracestar
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d5b
+// Params 6
+// Checksum 0x0, Offset: 0x5dd5
 // Size: 0x111
 function function_2a75473ddd0fb33f( hitpos, hitradius, airstrikeowner, tracestart, var_b9d5783a4f34efbc, var_33f031d062a32623 )
 {
@@ -2409,8 +2412,8 @@ function function_2a75473ddd0fb33f( hitpos, hitradius, airstrikeowner, tracestar
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e75
+// Params 3
+// Checksum 0x0, Offset: 0x5eef
 // Size: 0xc3
 function function_e5a6aaaa22532637( var_6033a7638fe1342f, var_f9f79f4923d00e6e, bombexplodedelay )
 {
@@ -2431,8 +2434,8 @@ function function_e5a6aaaa22532637( var_6033a7638fe1342f, var_f9f79f4923d00e6e, 
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f40
+// Params 5
+// Checksum 0x0, Offset: 0x5fba
 // Size: 0xf6
 function function_3c8dfe97ac9ad7c7( owner, bombexplodedelay, var_6033a7638fe1342f, var_f9f79f4923d00e6e, bombweapon )
 {
@@ -2462,7 +2465,7 @@ function function_3c8dfe97ac9ad7c7( owner, bombexplodedelay, var_6033a7638fe1342
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
 // Params 7, eflags: 0x4
-// Checksum 0x0, Offset: 0x603e
+// Checksum 0x0, Offset: 0x60b8
 // Size: 0x5e
 function private function_94e9b969d9359f43( damageamount, damageorigin, attacker, inflictor, meansofdeath, weapon, bombexplodedelay )
 {
@@ -2477,8 +2480,8 @@ function private function_94e9b969d9359f43( damageamount, damageorigin, attacker
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x60a4
+// Params 1
+// Checksum 0x0, Offset: 0x611e
 // Size: 0x2e
 function function_57107489d8ba1a87( partname )
 {
@@ -2488,8 +2491,8 @@ function function_57107489d8ba1a87( partname )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x60da
+// Params 4
+// Checksum 0x0, Offset: 0x6154
 // Size: 0xd2
 function function_40748f253c758d0c( var_40db97c5db5e1e3e, flightdir, isfriendly, sizemultiplier )
 {
@@ -2510,8 +2513,8 @@ function function_40748f253c758d0c( var_40db97c5db5e1e3e, flightdir, isfriendly,
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x61b5
+// Params 2
+// Checksum 0x0, Offset: 0x622f
 // Size: 0x141
 function function_ef2529f22838b027( damagepos, flightdir )
 {
@@ -2543,8 +2546,8 @@ function function_ef2529f22838b027( damagepos, flightdir )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x62ff
+// Params 5
+// Checksum 0x0, Offset: 0x6379
 // Size: 0x1a8
 function function_f1723305529704a5( owner, airstrikeid, var_d8695b9748c307be, flightdir, streakname )
 {
@@ -2587,8 +2590,8 @@ function function_f1723305529704a5( owner, airstrikeid, var_d8695b9748c307be, fl
 /#
 
     // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x64b0
+    // Params 2
+    // Checksum 0x0, Offset: 0x652a
     // Size: 0x10f, Type: dev
     function function_44f4ade288270b27( var_d8695b9748c307be, flightdir )
     {
@@ -2616,8 +2619,8 @@ function function_f1723305529704a5( owner, airstrikeid, var_d8695b9748c307be, fl
 #/
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x65c7
+// Params 3
+// Checksum 0x0, Offset: 0x6641
 // Size: 0x71
 function function_2de43934d42594e( damagepos, planedir, sizemultiplier )
 {
@@ -2632,8 +2635,8 @@ function function_2de43934d42594e( damagepos, planedir, sizemultiplier )
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6641
+// Params 0
+// Checksum 0x0, Offset: 0x66bb
 // Size: 0x282
 function function_9557f58b574e2c68()
 {
@@ -2704,8 +2707,8 @@ function function_9557f58b574e2c68()
 }
 
 // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x68cb
+// Params 0
+// Checksum 0x0, Offset: 0x6945
 // Size: 0x10a
 function function_a889314c31d34692()
 {
@@ -2732,7 +2735,8 @@ function function_a889314c31d34692()
         
         if ( isdefined( self.var_bd0aa6c111497ed3 ) )
         {
-            for (i = self.var_bd0aa6c111497ed3.size - 1; i >= 0; i--) {
+            for ( i = self.var_bd0aa6c111497ed3.size - 1; i >= 0 ; i-- )
+            {
                 self.var_bd0aa6c111497ed3[ i ] function_af5604ce591768e1();
                 self.var_bd0aa6c111497ed3[ i ] = undefined;
             }
@@ -2743,8 +2747,8 @@ function function_a889314c31d34692()
 /#
 
     // Namespace airstrike / scripts\cp_mp\killstreaks\airstrike
-    // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x69dd
+    // Params 2
+    // Checksum 0x0, Offset: 0x6a57
     // Size: 0xdd, Type: dev
     function function_9018ff93eb75a769( bombexplodedelay, var_f9f79f4923d00e6e )
     {

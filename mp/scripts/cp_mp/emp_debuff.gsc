@@ -10,7 +10,7 @@
 #namespace emp_debuff;
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x490
 // Size: 0x28
 function emp_debuff_init()
@@ -22,7 +22,7 @@ function emp_debuff_init()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4c0
 // Size: 0xe4
 function function_662905d3b9455612( data, time, var_d5c235d554645bbc )
@@ -73,7 +73,7 @@ function function_662905d3b9455612( data, time, var_d5c235d554645bbc )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ac
 // Size: 0x51
 function function_7d6c1037f26ddb70()
@@ -96,7 +96,7 @@ function function_7d6c1037f26ddb70()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x605
 // Size: 0xa2
 function function_9100acf46355b9c2( data )
@@ -120,7 +120,7 @@ function function_9100acf46355b9c2( data )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6af
 // Size: 0x2d
 function function_eb40c1291f724432( data )
@@ -130,7 +130,7 @@ function function_eb40c1291f724432( data )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e4
 // Size: 0xf2
 function function_84ff119fbcaf315( data )
@@ -161,7 +161,7 @@ function function_84ff119fbcaf315( data )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7de
 // Size: 0x36
 function function_9cdf5e46cecefb7f( data )
@@ -173,7 +173,7 @@ function function_9cdf5e46cecefb7f( data )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x81c
 // Size: 0x11d
 function function_70eaf1a1aca6a06c( notifylist )
@@ -237,7 +237,7 @@ function function_70eaf1a1aca6a06c( notifylist )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x941
 // Size: 0xb8
 function function_bcda60626641c653( driver, notifylist )
@@ -263,7 +263,7 @@ function function_bcda60626641c653( driver, notifylist )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa01
 // Size: 0x29
 function function_e86117e40bd6ee1f()
@@ -273,7 +273,7 @@ function function_e86117e40bd6ee1f()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa32
 // Size: 0x5b
 function function_28045a145366e0c5()
@@ -294,7 +294,7 @@ function function_28045a145366e0c5()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa95
 // Size: 0x3e
 function function_d5ea7c13a646e507()
@@ -309,7 +309,7 @@ function function_d5ea7c13a646e507()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xadb
 // Size: 0x40
 function function_3e29189f38a017d( vehicle, driver )
@@ -321,7 +321,7 @@ function function_3e29189f38a017d( vehicle, driver )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb23
 // Size: 0x52
 function function_1b1d64a1cc52aab5( data, time )
@@ -332,7 +332,7 @@ function function_1b1d64a1cc52aab5( data, time )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb7d
 // Size: 0x8d
 function function_f552430dc0f43d18( driver )
@@ -357,7 +357,7 @@ function function_f552430dc0f43d18( driver )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc12
 // Size: 0x381
 function apply_emp_struct( data, disablehud, var_88cc62362fd687a2 )
@@ -461,7 +461,7 @@ function apply_emp_struct( data, disablehud, var_88cc62362fd687a2 )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf9b
 // Size: 0x5b
 function remove_emp()
@@ -488,7 +488,7 @@ function remove_emp()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xffe
 // Size: 0x70
 function clear_emp( fromdeath )
@@ -512,7 +512,7 @@ function clear_emp( fromdeath )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1076
 // Size: 0x160
 function function_45aca51d5e102b8c()
@@ -573,7 +573,7 @@ function function_45aca51d5e102b8c()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11de
 // Size: 0x6a
 function allow_emp( status )
@@ -600,7 +600,7 @@ function allow_emp( status )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1250
 // Size: 0x25, Type: bool
 function function_5c534584bf65d24c()
@@ -618,9 +618,9 @@ function function_5c534584bf65d24c()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x127e
-// Size: 0x38, Type: bool
+// Size: 0x38
 function can_be_empd()
 {
     if ( isplayer( self ) )
@@ -629,18 +629,18 @@ function can_be_empd()
     }
     else if ( istrue( self.exploding ) )
     {
-        return false;
+        return 0;
     }
     else if ( istrue( self.empnotallowed ) )
     {
-        return false;
+        return 0;
     }
     
-    return true;
+    return 1;
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12bf
 // Size: 0x1b, Type: bool
 function is_empd()
@@ -649,7 +649,7 @@ function is_empd()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12e3
 // Size: 0x1e
 function emp_debuff_get_emp_count()
@@ -663,7 +663,7 @@ function emp_debuff_get_emp_count()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1309
 // Size: 0x15
 function set_apply_emp_callback( applycallback )
@@ -672,7 +672,7 @@ function set_apply_emp_callback( applycallback )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1326
 // Size: 0x15
 function set_start_emp_callback( startcallback )
@@ -681,7 +681,7 @@ function set_start_emp_callback( startcallback )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1343
 // Size: 0x15
 function set_clear_emp_callback( clearcallback )
@@ -690,7 +690,7 @@ function set_clear_emp_callback( clearcallback )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1360
 // Size: 0x3d
 function add_emp_ent( ent )
@@ -702,7 +702,7 @@ function add_emp_ent( ent )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13a6
 // Size: 0x2b
 function play_scramble( var_fa88f8af6b2f44d0, isjammer )
@@ -717,7 +717,7 @@ function play_scramble( var_fa88f8af6b2f44d0, isjammer )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13d9
 // Size: 0x2b
 function stop_scramble( var_fa88f8af6b2f44d0, isjammer )
@@ -732,7 +732,7 @@ function stop_scramble( var_fa88f8af6b2f44d0, isjammer )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x140c
 // Size: 0x51
 function function_396e8b70241f9f10( var_fa88f8af6b2f44d0, var_699323575339379a )
@@ -746,7 +746,7 @@ function function_396e8b70241f9f10( var_fa88f8af6b2f44d0, var_699323575339379a )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1465
 // Size: 0x5f
 function play_emp_scramble( var_fa88f8af6b2f44d0 )
@@ -773,12 +773,12 @@ function play_emp_scramble( var_fa88f8af6b2f44d0 )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14cc
-// Size: 0x80
+// Size: 0xaa
 function stop_emp_scramble( var_fa88f8af6b2f44d0 )
 {
-    if ( var_fa88f8af6b2f44d0 == 0 )
+    if ( !isdefined( self ) || !isdefined( var_fa88f8af6b2f44d0 ) || var_fa88f8af6b2f44d0 == 0 || !( isdefined( self.empscramblelevels ) && isdefined( self.empscramblelevels[ var_fa88f8af6b2f44d0 ] ) ) )
     {
         return;
     }
@@ -796,8 +796,8 @@ function stop_emp_scramble( var_fa88f8af6b2f44d0 )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1554
+// Params 0
+// Checksum 0x0, Offset: 0x157e
 // Size: 0x37
 function function_f7c6d776d032122f()
 {
@@ -814,7 +814,7 @@ function function_f7c6d776d032122f()
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1593
+// Checksum 0x0, Offset: 0x15bd
 // Size: 0x6f
 function private _update_emp_scramble()
 {
@@ -833,7 +833,7 @@ function private _update_emp_scramble()
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x160a
+// Checksum 0x0, Offset: 0x1634
 // Size: 0x6f
 function private function_9884b1bc85070e0e()
 {
@@ -851,8 +851,8 @@ function private function_9884b1bc85070e0e()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1681
+// Params 1
+// Checksum 0x0, Offset: 0x16ab
 // Size: 0x5f
 function function_1e2a945f433a4672( var_fa88f8af6b2f44d0 )
 {
@@ -878,8 +878,8 @@ function function_1e2a945f433a4672( var_fa88f8af6b2f44d0 )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16e8
+// Params 1
+// Checksum 0x0, Offset: 0x1712
 // Size: 0x80
 function function_f9646d0da61017ec( var_fa88f8af6b2f44d0 )
 {
@@ -901,8 +901,8 @@ function function_f9646d0da61017ec( var_fa88f8af6b2f44d0 )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1770
+// Params 2
+// Checksum 0x0, Offset: 0x179a
 // Size: 0x3b
 function play_scramble_for_player_until_cleared( player, var_fa88f8af6b2f44d0 )
 {
@@ -916,8 +916,8 @@ function play_scramble_for_player_until_cleared( player, var_fa88f8af6b2f44d0 )
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17b3
+// Params 2
+// Checksum 0x0, Offset: 0x17dd
 // Size: 0x3b
 function function_9d31a370d60f86da( player, var_fa88f8af6b2f44d0 )
 {
@@ -932,7 +932,7 @@ function function_9d31a370d60f86da( player, var_fa88f8af6b2f44d0 )
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x17f6
+// Checksum 0x0, Offset: 0x1820
 // Size: 0x33
 function private function_8ee0deb8fa69cbee( status )
 {
@@ -944,7 +944,7 @@ function private function_8ee0deb8fa69cbee( status )
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1831
+// Checksum 0x0, Offset: 0x185b
 // Size: 0x1e
 function private _get_emp_count()
 {
@@ -958,7 +958,7 @@ function private _get_emp_count()
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1857
+// Checksum 0x0, Offset: 0x1881
 // Size: 0x36, Type: bool
 function private function_28b3cf4c66aab86f()
 {
@@ -977,7 +977,7 @@ function private function_28b3cf4c66aab86f()
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x1896
+// Checksum 0x0, Offset: 0x18c0
 // Size: 0x82
 function private function_3839fb2d04a8d30e( data, disablehud, var_88cc62362fd687a2 )
 {
@@ -1002,7 +1002,7 @@ function private function_3839fb2d04a8d30e( data, disablehud, var_88cc62362fd687
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1920
+// Checksum 0x0, Offset: 0x194a
 // Size: 0x23
 function private function_a50bae7a5c1bb54e( fromdeath )
 {
@@ -1016,7 +1016,7 @@ function private function_a50bae7a5c1bb54e( fromdeath )
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x194b
+// Checksum 0x0, Offset: 0x1975
 // Size: 0x32
 function private function_bc44636b60d908b()
 {
@@ -1027,7 +1027,7 @@ function private function_bc44636b60d908b()
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1985
+// Checksum 0x0, Offset: 0x19af
 // Size: 0x1f
 function private function_879c1eec976b6d33()
 {
@@ -1041,7 +1041,7 @@ function private function_879c1eec976b6d33()
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x19ad
+// Checksum 0x0, Offset: 0x19d7
 // Size: 0x55
 function private watch_checkforlauncherweapons()
 {
@@ -1067,8 +1067,8 @@ function private watch_checkforlauncherweapons()
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a0a
+// Params 4
+// Checksum 0x0, Offset: 0x1a34
 // Size: 0x7b
 function function_ecb3af104f3ab0f4( entity, applycallback, startcallback, clearcallback )
 {
@@ -1099,8 +1099,8 @@ function function_ecb3af104f3ab0f4( entity, applycallback, startcallback, clearc
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a8d
+// Params 1
+// Checksum 0x0, Offset: 0x1ab7
 // Size: 0x4c
 function emp_debuff_deregister( entity )
 {
@@ -1126,7 +1126,7 @@ function emp_debuff_deregister( entity )
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x1ae1
+// Checksum 0x0, Offset: 0x1b0b
 // Size: 0x44, Type: bool
 function private function_c772d34f3b6b6273( ents, optionalorigin, var_5a946d15b7708ff0 )
 {
@@ -1147,8 +1147,8 @@ function private function_c772d34f3b6b6273( ents, optionalorigin, var_5a946d15b7
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b2e
+// Params 2
+// Checksum 0x0, Offset: 0x1b58
 // Size: 0xa9d
 function empdebuff_get_emp_ents( optionalorigin, optionalradius )
 {

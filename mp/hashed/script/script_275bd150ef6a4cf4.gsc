@@ -11,7 +11,7 @@
 #namespace jup_ob_warlord_all_for_one;
 
 // Namespace jup_ob_warlord_all_for_one / namespace_24ee24c6ec60bf84
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x281
 // Size: 0x1f9
 function main()
@@ -50,7 +50,7 @@ function main()
 }
 
 // Namespace jup_ob_warlord_all_for_one / namespace_24ee24c6ec60bf84
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x482
 // Size: 0x57
 function setup_model()
@@ -67,7 +67,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_warlord_all_for_one / namespace_24ee24c6ec60bf84
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e1
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -76,7 +76,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_warlord_all_for_one / namespace_24ee24c6ec60bf84
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4f2
 // Size: 0xcf
 function precache()
@@ -105,7 +105,7 @@ function precache()
 }
 
 // Namespace jup_ob_warlord_all_for_one / namespace_24ee24c6ec60bf84
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5c9
 // Size: 0x14c
 function setup_weapons()

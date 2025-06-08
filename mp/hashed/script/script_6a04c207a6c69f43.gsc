@@ -5,7 +5,7 @@
 /#
 
     // Namespace namespace_4ba6e399ec22a6d9 / namespace_c1a759e9577e490f
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x90
     // Size: 0x58, Type: dev
     function function_851b7e474a5af3e7()

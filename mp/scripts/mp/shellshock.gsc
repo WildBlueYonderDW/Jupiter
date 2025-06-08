@@ -11,7 +11,7 @@
 #namespace shellshock;
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fd
 // Size: 0xa8
 function init()
@@ -26,7 +26,7 @@ function init()
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ad
 // Size: 0xbe
 function shellshockondamage( cause, damage )
@@ -52,7 +52,7 @@ function shellshockondamage( cause, damage )
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x473
 // Size: 0x13
 function endondeath()
@@ -63,7 +63,7 @@ function endondeath()
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x48e
 // Size: 0x82
 function grenade_earthquake( scale, var_7bb0eac0599aa23d )
@@ -88,7 +88,7 @@ function grenade_earthquake( scale, var_7bb0eac0599aa23d )
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x518
 // Size: 0x1c
 function grenade_earthquakeatposition( position, scale )
@@ -97,7 +97,7 @@ function grenade_earthquakeatposition( position, scale )
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x53c
 // Size: 0x6c
 function grenade_earthquakeatposition_internal( position, scale )
@@ -116,7 +116,7 @@ function grenade_earthquakeatposition_internal( position, scale )
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0x13
 function bloodmeleeeffect( objweapon )
@@ -125,7 +125,7 @@ function bloodmeleeeffect( objweapon )
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5cb
 // Size: 0xb6
 function c4_earthquake()
@@ -149,7 +149,7 @@ function c4_earthquake()
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x689
 // Size: 0xf4
 function artillery_earthquake( position, duration, scalemax, scalemid, scalemin, radiusmax, radiusmid, radiusmin, ignoreclients, playrumble, var_a03583ed539bdb39 )
@@ -213,7 +213,7 @@ function artillery_earthquake( position, duration, scalemax, scalemid, scalemin,
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x785
 // Size: 0x9e
 function stealthairstrike_earthquake( position )
@@ -234,7 +234,7 @@ function stealthairstrike_earthquake( position )
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x82b
 // Size: 0x36
 function airstrike_earthquake( position )
@@ -245,7 +245,7 @@ function airstrike_earthquake( position )
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x869
 // Size: 0xea
 function pulsegrenade_earthquake( var_7bb0eac0599aa23d )
@@ -281,7 +281,7 @@ function pulsegrenade_earthquake( var_7bb0eac0599aa23d )
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x95b
 // Size: 0xea
 function engineerdrone_earthquake( var_7bb0eac0599aa23d )
@@ -317,7 +317,7 @@ function engineerdrone_earthquake( var_7bb0eac0599aa23d )
 }
 
 // Namespace shellshock / scripts\mp\shellshock
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa4d
 // Size: 0xb5
 function _screenshakeonposition( position, radius, ignoreclients )

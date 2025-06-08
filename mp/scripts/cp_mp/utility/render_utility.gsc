@@ -4,7 +4,7 @@
 #namespace render_utility;
 
 // Namespace render_utility / scripts\cp_mp\utility\render_utility
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x137
 // Size: 0x85
 function function_4f2c4138dacca16a( aberration, radius, strength, distortion )
@@ -34,7 +34,7 @@ function function_4f2c4138dacca16a( aberration, radius, strength, distortion )
 }
 
 // Namespace render_utility / scripts\cp_mp\utility\render_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c4
 // Size: 0x60
 function function_e2eae50826e12247()

@@ -30,7 +30,7 @@
 #namespace init;
 
 // Namespace init / scripts\cp_mp\killstreaks\init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x216
 // Size: 0x154
 function init()
@@ -87,7 +87,7 @@ function init()
 }
 
 // Namespace init / scripts\cp_mp\killstreaks\init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x372
 // Size: 0x43
 function function_dc7912ca19ed8fff()
@@ -98,7 +98,7 @@ function function_dc7912ca19ed8fff()
 }
 
 // Namespace init / scripts\cp_mp\killstreaks\init
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bd
 // Size: 0x57
 function function_12bbd0259ce8831f()

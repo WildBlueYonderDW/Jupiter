@@ -13,7 +13,7 @@
 #namespace motiondetectors;
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ae
 // Size: 0x18f
 function init()
@@ -55,7 +55,7 @@ function init()
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb45
 // Size: 0x103
 function script_model_anims()
@@ -72,7 +72,7 @@ function script_model_anims()
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc50
 // Size: 0x7d
 function motiondetectors()
@@ -88,7 +88,7 @@ function motiondetectors()
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xcd5
 // Size: 0xf1
 function lightonroutine( delaystart, nvglights )
@@ -127,7 +127,7 @@ function lightonroutine( delaystart, nvglights )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdce
 // Size: 0xc2
 function lightoffroutine( lights, nvglights )
@@ -150,7 +150,7 @@ function lightoffroutine( lights, nvglights )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe98
 // Size: 0x64c
 function motiondetectionproc( components )
@@ -302,7 +302,7 @@ function motiondetectionproc( components )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14ec
 // Size: 0x193
 function blindplayers( struct )
@@ -349,7 +349,7 @@ function blindplayers( struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1687
 // Size: 0x91
 function nameplatemanagement( struct )
@@ -374,7 +374,7 @@ function nameplatemanagement( struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1720
 // Size: 0x80
 function manageplayerindarkvolume( volume, struct )
@@ -400,7 +400,7 @@ function manageplayerindarkvolume( volume, struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x17a8
 // Size: 0xdc
 function motiondetectionstatus( struct )
@@ -433,7 +433,7 @@ function motiondetectionstatus( struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x188c
 // Size: 0x87
 function motiondetectioncooldown( struct )
@@ -455,7 +455,7 @@ function motiondetectioncooldown( struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x191b
 // Size: 0x3d
 function runlightswitch( volume, struct )
@@ -470,7 +470,7 @@ function runlightswitch( volume, struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1960
 // Size: 0x304
 function createlightswitchtrigger( volume, struct )
@@ -552,7 +552,7 @@ function createlightswitchtrigger( volume, struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c6d
 // Size: 0xd0
 function watchlightswitchuse( struct )
@@ -588,7 +588,7 @@ function watchlightswitchuse( struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d45
 // Size: 0x72
 function swapswitchstatus( waittime, struct )
@@ -607,7 +607,7 @@ function swapswitchstatus( waittime, struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1dbf
 // Size: 0xa4
 function manageswitchhintlight( struct )
@@ -632,7 +632,7 @@ function manageswitchhintlight( struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e6b
 // Size: 0x7e
 function getlightswitchstatus( switches )
@@ -649,7 +649,7 @@ function getlightswitchstatus( switches )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ef2
 // Size: 0xae
 function onoffmodelswap( models, state )
@@ -672,7 +672,7 @@ function onoffmodelswap( models, state )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1fa8
 // Size: 0xa6, Type: bool
 function lightswitchinteraction( player, struct )
@@ -689,7 +689,7 @@ function lightswitchinteraction( player, struct )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2057
 // Size: 0x44
 function watchplayerdeath( player )
@@ -710,7 +710,7 @@ function watchplayerdeath( player )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x20a3
 // Size: 0xe8
 function create_player_rig( player, animname, rig_model )
@@ -738,7 +738,7 @@ function create_player_rig( player, animname, rig_model )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2193
 // Size: 0x92
 function remove_player_rig( player )
@@ -765,7 +765,7 @@ function remove_player_rig( player )
 }
 
 // Namespace motiondetectors / scripts\mp\motiondetectors
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x222d
 // Size: 0x1c
 function watch_remove_rig( struct )

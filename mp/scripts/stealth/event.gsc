@@ -8,7 +8,7 @@
 #namespace event;
 
 // Namespace event / scripts\stealth\event
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d0
 // Size: 0x13
 function event_init_entity()
@@ -18,7 +18,7 @@ function event_init_entity()
 }
 
 // Namespace event / scripts\stealth\event
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1eb
 // Size: 0x93
 function event_init_level()
@@ -35,7 +35,7 @@ function event_init_level()
 }
 
 // Namespace event / scripts\stealth\event
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x286
 // Size: 0xb9
 function event_severity_compare( var_e1b6af8308ee295d, var_e1b6ac8308ee22c4 )
@@ -49,7 +49,7 @@ function event_severity_compare( var_e1b6af8308ee295d, var_e1b6ac8308ee22c4 )
 }
 
 // Namespace event / scripts\stealth\event
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x348
 // Size: 0xe2
 function event_severity_shift( severity, direction )
@@ -71,12 +71,12 @@ function event_severity_shift( severity, direction )
 }
 
 // Namespace event / scripts\stealth\event
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x433
 // Size: 0x179
-function event_severity_set( severity, eventname, escalation, var_6e7a5f49fca478a9, var_691d20c978d21cd1 )
+function event_severity_set( severity, eventname, escalation, escalation_scalar, escalation_to_combat )
 {
-    assert( !( severity == "<dev string:x1c>" && isdefined( var_691d20c978d21cd1 ) ) );
+    assert( !( severity == "<dev string:x1c>" && isdefined( escalation_to_combat ) ) );
     assert( !( severity == "<dev string:x2b>" && isdefined( escalation ) ) );
     
     if ( !isdefined( escalation ) )
@@ -84,9 +84,9 @@ function event_severity_set( severity, eventname, escalation, var_6e7a5f49fca478
         escalation = 0;
     }
     
-    if ( !isdefined( var_6e7a5f49fca478a9 ) )
+    if ( !isdefined( escalation_scalar ) )
     {
-        var_6e7a5f49fca478a9 = 0;
+        escalation_scalar = 0;
     }
     
     if ( !isdefined( level.stealth.event_severity ) )
@@ -111,12 +111,12 @@ function event_severity_set( severity, eventname, escalation, var_6e7a5f49fca478
     
     level.stealth.event_severity[ eventname ] = severity;
     level.stealth.event_escalation[ eventname ] = escalation;
-    level.stealth.event_escalation_scalars[ eventname ] = var_6e7a5f49fca478a9;
-    level.stealth.event_escalation_to_combat[ eventname ] = var_691d20c978d21cd1;
+    level.stealth.event_escalation_scalars[ eventname ] = escalation_scalar;
+    level.stealth.event_escalation_to_combat[ eventname ] = escalation_to_combat;
 }
 
 // Namespace event / scripts\stealth\event
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5b4
 // Size: 0x11
 function event_severity_get( eventname )
@@ -125,7 +125,7 @@ function event_severity_get( eventname )
 }
 
 // Namespace event / scripts\stealth\event
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5ce
 // Size: 0x1a
 function event_escalation_get( eventname, aient )
@@ -134,7 +134,7 @@ function event_escalation_get( eventname, aient )
 }
 
 // Namespace event / scripts\stealth\event
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5f1
 // Size: 0x1a
 function event_escalation_scalar_get( eventname, aient )
@@ -143,7 +143,7 @@ function event_escalation_scalar_get( eventname, aient )
 }
 
 // Namespace event / scripts\stealth\event
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x614
 // Size: 0x1a
 function event_escalation_to_combat_get( eventname, aient )
@@ -152,7 +152,7 @@ function event_escalation_to_combat_get( eventname, aient )
 }
 
 // Namespace event / scripts\stealth\event
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x637
 // Size: 0x1a
 function function_ce9fdd8d28d5d8dd( eventname, aient )
@@ -161,7 +161,7 @@ function function_ce9fdd8d28d5d8dd( eventname, aient )
 }
 
 // Namespace event / scripts\stealth\event
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x65a
 // Size: 0x23
 function event_escalation_clear()
@@ -171,7 +171,7 @@ function event_escalation_clear()
 }
 
 // Namespace event / scripts\stealth\event
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x685
 // Size: 0x102
 function function_1f4d13d0f711ba69( event, eventhandled )
@@ -206,7 +206,7 @@ function function_1f4d13d0f711ba69( event, eventhandled )
 }
 
 // Namespace event / scripts\stealth\event
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x78f
 // Size: 0x12f
 function event_listener_thread()
@@ -249,7 +249,7 @@ function event_listener_thread()
 }
 
 // Namespace event / scripts\stealth\event
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8c6
 // Size: 0x3b
 function entity_is_approved( entity )
@@ -264,7 +264,7 @@ function entity_is_approved( entity )
 }
 
 // Namespace event / scripts\stealth\event
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x909
 // Size: 0x1f2
 function event_broadcast_axis( eventtype, eventtypeperipheral, enemy, rangeauto, rangesight )
@@ -344,7 +344,7 @@ function event_broadcast_axis( eventtype, eventtypeperipheral, enemy, rangeauto,
 }
 
 // Namespace event / scripts\stealth\event
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xb03
 // Size: 0x102
 function event_broadcast_generic( eventtype, eventposition, eventradius, evententity, teamsoverride )
@@ -387,7 +387,7 @@ function event_broadcast_generic( eventtype, eventposition, eventradius, eventen
 }
 
 // Namespace event / scripts\stealth\event
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xc0d
 // Size: 0x155
 function event_broadcast_axis_by_tacsight( eventtype, enemy, eventposition, eventradius, var_be714c91530ba6ca, tacposition, var_81a2fb4f638bbce8 )
@@ -448,7 +448,7 @@ function event_broadcast_axis_by_tacsight( eventtype, enemy, eventposition, even
 }
 
 // Namespace event / scripts\stealth\event
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xd6a
 // Size: 0x4b
 function event_broadcast_axis_by_sight( eventtype, enemy, eventposition, eventradius, var_be714c91530ba6ca, tacposition, autorange )
@@ -457,7 +457,7 @@ function event_broadcast_axis_by_sight( eventtype, enemy, eventposition, eventra
 }
 
 // Namespace event / scripts\stealth\event
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xdbd
 // Size: 0x195
 function event_broadcast_axis_by_sight_thread( eventtype, enemy, eventposition, eventradius, var_be714c91530ba6ca, tacposition, autorange )
@@ -534,7 +534,7 @@ function event_broadcast_axis_by_sight_thread( eventtype, enemy, eventposition, 
 }
 
 // Namespace event / scripts\stealth\event
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf5a
 // Size: 0x10
 function function_1d0abf2c82b32237()

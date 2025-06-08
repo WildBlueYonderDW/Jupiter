@@ -4,7 +4,7 @@
 #namespace team_utility;
 
 // Namespace team_utility / scripts\cp_mp\utility\team_utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd8
 // Size: 0x28
 function function_a92ed2f4c44e5ffa()
@@ -16,7 +16,7 @@ function function_a92ed2f4c44e5ffa()
 }
 
 // Namespace team_utility / scripts\cp_mp\utility\team_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x108
 // Size: 0x3c
 function getfriendlyplayers( testteam, aliveonly )
@@ -30,7 +30,7 @@ function getfriendlyplayers( testteam, aliveonly )
 }
 
 // Namespace team_utility / scripts\cp_mp\utility\team_utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14d
 // Size: 0x3c
 function getenemyplayers( testteam, aliveonly )

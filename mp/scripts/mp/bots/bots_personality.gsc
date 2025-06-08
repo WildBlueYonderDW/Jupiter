@@ -9,7 +9,7 @@
 #namespace bots_personality;
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x408
 // Size: 0x1a3
 function setup_personalities()
@@ -41,7 +41,7 @@ function setup_personalities()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b3
 // Size: 0xb9
 function bot_assign_personality_functions()
@@ -65,7 +65,7 @@ function bot_assign_personality_functions()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x674
 // Size: 0x54d
 function bot_balance_personality()
@@ -133,11 +133,13 @@ function bot_balance_personality()
     
     type_needed = undefined;
     
-    for (i = 0; i < var_55d47d98f8988a2d.size && !isdefined( type_needed ); i++) {
+    for ( i = 0; i < var_55d47d98f8988a2d.size && !isdefined( type_needed ) ; i++ )
+    {
         var_d5e564acd20d2e2a = var_55d47d98f8988a2d[ i ];
         var_5ceedb6c6b6e3dd4 = 1;
         
-        for (j = 0; j < var_55d47d98f8988a2d.size; j++) {
+        for ( j = 0; j < var_55d47d98f8988a2d.size ; j++ )
+        {
             var_d5e563acd20d2bf7 = var_55d47d98f8988a2d[ j ];
             
             if ( var_d5e564acd20d2e2a != var_d5e563acd20d2bf7 )
@@ -225,7 +227,7 @@ function bot_balance_personality()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbc9
 // Size: 0x9
 function init_personality_camper()
@@ -234,7 +236,7 @@ function init_personality_camper()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbda
 // Size: 0x9
 function init_personality_default()
@@ -243,7 +245,7 @@ function init_personality_default()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbeb
 // Size: 0x29c
 function update_personality_camper()
@@ -333,7 +335,7 @@ function update_personality_camper()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe8f
 // Size: 0x2e1
 function update_personality_default()
@@ -441,7 +443,7 @@ function update_personality_default()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1178
 // Size: 0x13
 function bot_try_trap_follower( endevent, waitevent )
@@ -450,7 +452,7 @@ function bot_try_trap_follower( endevent, waitevent )
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1193
 // Size: 0x121
 function clear_script_goal_on( event1, event2, event3, event4, event5 )
@@ -496,7 +498,7 @@ function clear_script_goal_on( event1, event2, event3, event4, event5 )
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12bc
 // Size: 0x32
 function watch_out_of_ammo()
@@ -514,7 +516,7 @@ function watch_out_of_ammo()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12f6
 // Size: 0xb7
 function bot_add_ambush_time_delayed( endevent, waitfor )
@@ -547,7 +549,7 @@ function bot_add_ambush_time_delayed( endevent, waitfor )
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x13b5
 // Size: 0x7d
 function bot_watch_entrances_delayed( endevent, waitfor, entrances, yaw )
@@ -574,7 +576,7 @@ function bot_watch_entrances_delayed( endevent, waitfor, entrances, yaw )
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x143a
 // Size: 0xe7
 function bot_monitor_watch_entrances_camp()
@@ -604,7 +606,7 @@ function bot_monitor_watch_entrances_camp()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1529
 // Size: 0x175
 function bot_find_ambush_entrances( ambush_node, var_40516918c495cf09 )
@@ -649,7 +651,7 @@ function bot_find_ambush_entrances( ambush_node, var_40516918c495cf09 )
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16a7
 // Size: 0x8a
 function bot_filter_ambush_inuse( nodes )
@@ -659,7 +661,8 @@ function bot_filter_ambush_inuse( nodes )
     now = gettime();
     nodessize = nodes.size;
     
-    for (i = 0; i < nodessize; i++) {
+    for ( i = 0; i < nodessize ; i++ )
+    {
         node = nodes[ i ];
         
         if ( !isdefined( node.bot_ambush_end ) || now > node.bot_ambush_end )
@@ -672,7 +675,7 @@ function bot_filter_ambush_inuse( nodes )
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x173a
 // Size: 0x19d
 function bot_filter_ambush_vicinity( nodes, bot, radius )
@@ -705,11 +708,13 @@ function bot_filter_ambush_vicinity( nodes, bot, radius )
     var_d3d9f13530067129 = checkpoints.size;
     nodessize = nodes.size;
     
-    for (i = 0; i < nodessize; i++) {
+    for ( i = 0; i < nodessize ; i++ )
+    {
         tooclose = 0;
         node = nodes[ i ];
         
-        for (j = 0; !tooclose && j < var_d3d9f13530067129; j++) {
+        for ( j = 0; !tooclose && j < var_d3d9f13530067129 ; j++ )
+        {
             distsq = distancesquared( checkpoints[ j ], node.origin );
             tooclose = distsq < radiussq;
         }
@@ -724,7 +729,7 @@ function bot_filter_ambush_vicinity( nodes, bot, radius )
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18e0
 // Size: 0x89
 function clear_camper_data()
@@ -745,7 +750,7 @@ function clear_camper_data()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1971
 // Size: 0x2f, Type: bool
 function should_select_new_ambush_point()
@@ -769,7 +774,7 @@ function should_select_new_ambush_point()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a9
 // Size: 0x21
 function find_camp_node()
@@ -780,7 +785,7 @@ function find_camp_node()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19d3
 // Size: 0x571, Type: bool
 function find_camp_node_worker()
@@ -826,7 +831,8 @@ function find_camp_node_worker()
             furthestdist = -1;
             furthestzone = -1;
             
-            for (z = 0; z < level.zonecount; z++) {
+            for ( z = 0; z < level.zonecount ; z++ )
+            {
                 var_8125a9234b033718 = getzonenodeforindex( z );
                 linked_zones = getlinkednodes( var_8125a9234b033718 );
                 
@@ -888,7 +894,8 @@ function find_camp_node_worker()
             return false;
         }
         
-        for (index = 0; index <= int( zonepath.size / 2 ); index++) {
+        for ( index = 0; index <= int( zonepath.size / 2 ) ; index++ )
+        {
             targetzone = zonepath[ index ];
             nextzone = zonepath[ int( min( index + 1, zonepath.size - 1 ) ) ];
             
@@ -1010,7 +1017,7 @@ function find_camp_node_worker()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f4d
 // Size: 0x2d, Type: bool
 function function_e0e7cc995b2f4194()
@@ -1029,7 +1036,7 @@ function function_e0e7cc995b2f4194()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1f83
 // Size: 0x1e7, Type: bool
 function find_ambush_node( var_b8b7e211f170a50d, var_dfe45df4596af64d )
@@ -1100,7 +1107,7 @@ function find_ambush_node( var_b8b7e211f170a50d, var_dfe45df4596af64d )
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2173
 // Size: 0x19
 function bot_random_path()
@@ -1114,7 +1121,7 @@ function bot_random_path()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2195
 // Size: 0x72
 function bot_random_path_default()
@@ -1148,7 +1155,7 @@ function bot_random_path_default()
 }
 
 // Namespace bots_personality / scripts\mp\bots\bots_personality
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2210
 // Size: 0x1a
 function bot_setup_callback_class()

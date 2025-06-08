@@ -1,7 +1,7 @@
 #namespace mp_jup_tower_fx;
 
 // Namespace mp_jup_tower_fx / scripts\mp\maps\mp_jup_tower\mp_jup_tower_fx
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1948
 // Size: 0x4e2
 function main()

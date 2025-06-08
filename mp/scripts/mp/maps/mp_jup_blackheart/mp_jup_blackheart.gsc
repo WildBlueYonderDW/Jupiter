@@ -11,7 +11,7 @@
 #namespace mp_jup_blackheart;
 
 // Namespace mp_jup_blackheart / scripts\mp\maps\mp_jup_blackheart\mp_jup_blackheart
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25a
 // Size: 0xb6
 function main()
@@ -34,7 +34,7 @@ function main()
 }
 
 // Namespace mp_jup_blackheart / scripts\mp\maps\mp_jup_blackheart\mp_jup_blackheart
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x318
 // Size: 0x86
 function crusher()
@@ -60,7 +60,7 @@ function crusher()
 }
 
 // Namespace mp_jup_blackheart / scripts\mp\maps\mp_jup_blackheart\mp_jup_blackheart
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a6
 // Size: 0x86
 function shredder()
@@ -86,7 +86,7 @@ function shredder()
 }
 
 // Namespace mp_jup_blackheart / scripts\mp\maps\mp_jup_blackheart\mp_jup_blackheart
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x434
 // Size: 0x7c
 function show_label( trig, machine )
@@ -107,7 +107,7 @@ function show_label( trig, machine )
 }
 
 // Namespace mp_jup_blackheart / scripts\mp\maps\mp_jup_blackheart\mp_jup_blackheart
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b8
 // Size: 0x5f
 function crush( trig )
@@ -122,7 +122,7 @@ function crush( trig )
 }
 
 // Namespace mp_jup_blackheart / scripts\mp\maps\mp_jup_blackheart\mp_jup_blackheart
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51f
 // Size: 0xed
 function function_6e1c2cef124d8489( trig )
@@ -141,7 +141,7 @@ function function_6e1c2cef124d8489( trig )
 }
 
 // Namespace mp_jup_blackheart / scripts\mp\maps\mp_jup_blackheart\mp_jup_blackheart
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x614
 // Size: 0x25
 function function_8b45da99e2a6da1c( trig, time )

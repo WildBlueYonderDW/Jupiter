@@ -30,7 +30,7 @@
 #namespace br_publicevent_dataheist;
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaa4
 // Size: 0x2
 function __init()
@@ -48,7 +48,7 @@ function autoexec main()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xacd
 // Size: 0x6c
 function init( event_info )
@@ -62,7 +62,7 @@ function init( event_info )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb41
 // Size: 0xd1
 function function_de40a46baab733f5()
@@ -87,7 +87,7 @@ function function_de40a46baab733f5()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc1a
 // Size: 0x4db
 function init_dvars( event_data )
@@ -160,7 +160,7 @@ function init_dvars( event_data )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10fd
 // Size: 0xdb
 function function_c1150641505df131()
@@ -193,7 +193,7 @@ function function_c1150641505df131()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11e0
 // Size: 0x259
 function function_6e94141d9de9568d( event_data )
@@ -233,7 +233,7 @@ function function_6e94141d9de9568d( event_data )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1441
 // Size: 0xaf
 function function_c82760fff0dc45df( origin, angles, group, id )
@@ -261,7 +261,7 @@ function function_c82760fff0dc45df( origin, angles, group, id )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14f9
 // Size: 0x4e
 function init_ai( event_data )
@@ -279,7 +279,7 @@ function init_ai( event_data )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x154f
 // Size: 0x10c
 function init_dialog()
@@ -301,7 +301,7 @@ function init_dialog()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1663
 // Size: 0x2
 function __event()
@@ -310,7 +310,7 @@ function __event()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x166d
 // Size: 0x20, Type: bool
 function event_validate()
@@ -329,7 +329,7 @@ function event_validate()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1696
 // Size: 0x2
 function event_wait()
@@ -338,7 +338,7 @@ function event_wait()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16a0
 // Size: 0x54a
 function event_activate()
@@ -395,7 +395,8 @@ function event_activate()
         points[ 0 ] = random( var_ff9e6fbb61b45590 );
         nearby_points = array_randomize( points[ 0 ].valid_neighbors );
         
-        for (i = 0; i < self.var_c740830cdb73800e - 1; i++) {
+        for ( i = 0; i < self.var_c740830cdb73800e - 1 ; i++ )
+        {
             points[ i + 1 ] = nearby_points[ i ];
         }
     }
@@ -482,7 +483,7 @@ function event_activate()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bf2
 // Size: 0xcd
 function event_deactivate()
@@ -512,7 +513,7 @@ function event_deactivate()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cc7
 // Size: 0x42
 function function_2b9e294b137a88d1()
@@ -520,7 +521,8 @@ function function_2b9e294b137a88d1()
     level endon( "game_ended" );
     self endon( "event_deactivated" );
     
-    for (i = 0; i < self.uplinks.size; i++) {
+    for ( i = 0; i < self.uplinks.size ; i++ )
+    {
         self waittill( "uplink_complete" );
     }
     
@@ -528,7 +530,7 @@ function function_2b9e294b137a88d1()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d11
 // Size: 0x4c
 function function_518af9f5c4bcde52( time )
@@ -541,7 +543,7 @@ function function_518af9f5c4bcde52( time )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d65
 // Size: 0x138
 function function_54539d559adc405c()
@@ -551,7 +553,8 @@ function function_54539d559adc405c()
     
     while ( true )
     {
-        for (i = 0; i < self.uplinks.size; i++) {
+        for ( i = 0; i < self.uplinks.size ; i++ )
+        {
             uplink = self.uplinks[ i ];
             uplink.nearby_players = scripts\mp\utility\player::getplayersinradius( uplink.origin, self.var_f2f4664f784bb1b0 );
             
@@ -574,7 +577,7 @@ function function_54539d559adc405c()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ea5
 // Size: 0xe5
 function function_e6b8718faa7f2edf()
@@ -606,7 +609,7 @@ function function_e6b8718faa7f2edf()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f92
 // Size: 0xab
 function function_2f06f510aff6c900( team )
@@ -631,7 +634,7 @@ function function_2f06f510aff6c900( team )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2045
 // Size: 0x1f
 function function_cdb11d6d4ce247ea()
@@ -643,7 +646,7 @@ function function_cdb11d6d4ce247ea()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x206c
 // Size: 0x148
 function event_add_score( team )
@@ -692,7 +695,7 @@ function event_add_score( team )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21bc
 // Size: 0x2b
 function function_8d72849f49068945( team )
@@ -706,7 +709,7 @@ function function_8d72849f49068945( team )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x21ef
 // Size: 0xfc
 function function_60fdeceea0c7a20e( agent, attacker )
@@ -742,7 +745,7 @@ function function_60fdeceea0c7a20e( agent, attacker )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22f3
 // Size: 0x7c
 function function_e86f6c7b0f5447e2()
@@ -760,7 +763,7 @@ function function_e86f6c7b0f5447e2()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2377
 // Size: 0x2
 function __uplink()
@@ -769,7 +772,7 @@ function __uplink()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2381
 // Size: 0xb2d
 function uplink_start( uplink_point )
@@ -1010,7 +1013,7 @@ function uplink_start( uplink_point )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2eb6
 // Size: 0xd4
 function function_5e4d7ff52575526( increment )
@@ -1033,7 +1036,7 @@ function function_5e4d7ff52575526( increment )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f92
 // Size: 0xf0
 function function_f5b8c7d6bb6609c4()
@@ -1064,7 +1067,7 @@ function function_f5b8c7d6bb6609c4()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x308a
 // Size: 0x4e
 function function_88a9ce111608764a( data )
@@ -1078,7 +1081,7 @@ function function_88a9ce111608764a( data )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x30e0
 // Size: 0x20
 function function_635613a90782ee9b( from_death )
@@ -1087,7 +1090,7 @@ function function_635613a90782ee9b( from_death )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3108
 // Size: 0xbf
 function function_db1ce4cd12dd95d5()
@@ -1120,7 +1123,7 @@ function function_db1ce4cd12dd95d5()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x31cf
 // Size: 0x163
 function function_6314bc0655f4a7c9( var_aea828ab13b354b )
@@ -1153,7 +1156,7 @@ function function_6314bc0655f4a7c9( var_aea828ab13b354b )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x333a
 // Size: 0x162
 function function_6fc077e1f039cf7( team )
@@ -1193,7 +1196,7 @@ function function_6fc077e1f039cf7( team )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34a4
 // Size: 0x118
 function uplink_cleanup()
@@ -1232,7 +1235,7 @@ function uplink_cleanup()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35c4
 // Size: 0x14b
 function function_2bb37c482de07fd3()
@@ -1284,7 +1287,7 @@ function function_2bb37c482de07fd3()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3717
 // Size: 0xb0
 function function_191978f898963a8( uplink )
@@ -1324,7 +1327,7 @@ function function_191978f898963a8( uplink )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37cf
 // Size: 0xa5
 function function_190c4bfff3fdc6b8( player )
@@ -1346,7 +1349,7 @@ function function_190c4bfff3fdc6b8( player )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x387c
 // Size: 0x13
 function function_eb7d54264004374b( player )
@@ -1355,7 +1358,7 @@ function function_eb7d54264004374b( player )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3897
 // Size: 0x52
 function function_b2588b08ad6f485b( player )
@@ -1370,7 +1373,7 @@ function function_b2588b08ad6f485b( player )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38f1
 // Size: 0x35
 function function_e232769e6ea189ca( player )
@@ -1384,7 +1387,7 @@ function function_e232769e6ea189ca( player )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x392e
 // Size: 0x9f
 function function_533c18ee02139b7e( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -1407,7 +1410,7 @@ function function_533c18ee02139b7e( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39d5
 // Size: 0x7a
 function function_ae84023e1dbb45f3( team )
@@ -1425,7 +1428,7 @@ function function_ae84023e1dbb45f3( team )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a57
 // Size: 0x2
 function function_2b41b2856496cbb9()
@@ -1434,7 +1437,7 @@ function function_2b41b2856496cbb9()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a61
 // Size: 0xf6
 function function_358de5caa85aabf7()
@@ -1460,7 +1463,7 @@ function function_358de5caa85aabf7()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3b5f
 // Size: 0x21e
 function function_921cab584a3d07c0( event, score, team_size )
@@ -1501,7 +1504,8 @@ function function_921cab584a3d07c0( event, score, team_size )
             
             var_63de1dee54326fdd = scripts\mp\gametypes\br_plunder::getplundernamebyamount( event.var_80242dc777bb3f8 );
             
-            for (i = 0; i < team_size; i++) {
+            for ( i = 0; i < team_size ; i++ )
+            {
                 a_loot[ a_loot.size ] = [ var_63de1dee54326fdd, event.var_80242dc777bb3f8 ];
             }
             
@@ -1514,7 +1518,7 @@ function function_921cab584a3d07c0( event, score, team_size )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d86
 // Size: 0x144
 function function_7a3f6a13e7005ed()
@@ -1540,7 +1544,7 @@ function function_7a3f6a13e7005ed()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3ed2
 // Size: 0x1ff
 function function_a52def3d6b40207a( winners )
@@ -1572,7 +1576,7 @@ function function_a52def3d6b40207a( winners )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40d9
 // Size: 0xb4
 function function_606beeae377568ad()
@@ -1598,7 +1602,7 @@ function function_606beeae377568ad()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4195
 // Size: 0x2
 function function_62e43e141326b7c5()
@@ -1607,14 +1611,15 @@ function function_62e43e141326b7c5()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x419f
 // Size: 0x50
 function function_e27b61f74dfba712( var_1eaffe65673cf616 )
 {
     requests = [];
     
-    for (i = 0; i < var_1eaffe65673cf616; i++) {
+    for ( i = 0; i < var_1eaffe65673cf616 ; i++ )
+    {
         ai_type = scripts\mp\ai_mp_controller::function_ed108ff3eb578327( "guard" );
         requests[ i ] = scripts\mp\ai_mp_controller::function_de59d7cb310c1aff( ai_type );
     }
@@ -1623,7 +1628,7 @@ function function_e27b61f74dfba712( var_1eaffe65673cf616 )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x41f8
 // Size: 0x85
 function function_16460a9daba16a6( var_1eaffe65673cf616, var_9ff8d6ff64b1e412, rusher_tier )
@@ -1631,7 +1636,8 @@ function function_16460a9daba16a6( var_1eaffe65673cf616, var_9ff8d6ff64b1e412, r
     requests = [];
     tier = 1;
     
-    for (i = 0; i < var_1eaffe65673cf616; i++) {
+    for ( i = 0; i < var_1eaffe65673cf616 ; i++ )
+    {
         if ( i >= var_9ff8d6ff64b1e412 )
         {
             ai_type = scripts\mp\ai_mp_controller::function_ed108ff3eb578327( "guard" );
@@ -1650,7 +1656,7 @@ function function_16460a9daba16a6( var_1eaffe65673cf616, var_9ff8d6ff64b1e412, r
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4286
 // Size: 0x15f
 function function_3723563cad2eb687( requests, reinforcement_types, params )
@@ -1687,7 +1693,7 @@ function function_3723563cad2eb687( requests, reinforcement_types, params )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x43ed
 // Size: 0x81
 function function_27ba596aafa69f39( force_closest )
@@ -1703,7 +1709,7 @@ function function_27ba596aafa69f39( force_closest )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4477
 // Size: 0xca
 function function_74428d38b94d6664()
@@ -1730,7 +1736,7 @@ function function_74428d38b94d6664()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x454a
 // Size: 0x2
 function __dialog()
@@ -1739,7 +1745,7 @@ function __dialog()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4554
 // Size: 0x25
 function function_e8ce5f018d2b942c( dialog, delay )
@@ -1748,7 +1754,7 @@ function function_e8ce5f018d2b942c( dialog, delay )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4581
 // Size: 0x96
 function function_63bdbc18191be5f9( dialog, players, delay )
@@ -1763,7 +1769,7 @@ function function_63bdbc18191be5f9( dialog, players, delay )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x461f
 // Size: 0x2
 function __util()
@@ -1772,7 +1778,7 @@ function __util()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4629
 // Size: 0xae
 function function_2a43e356ecd267c7( team )
@@ -1793,7 +1799,7 @@ function function_2a43e356ecd267c7( team )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46e0
 // Size: 0x3d
 function function_f8cd8b690a39bec2( team )
@@ -1803,7 +1809,7 @@ function function_f8cd8b690a39bec2( team )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4726
 // Size: 0x1a
 function function_f3167a32a9d8b1e8()
@@ -1812,7 +1818,7 @@ function function_f3167a32a9d8b1e8()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4749
 // Size: 0x79
 function function_aeb8753295c3577( team )
@@ -1831,7 +1837,7 @@ function function_aeb8753295c3577( team )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47cb
 // Size: 0x33, Type: bool
 function function_63245662e2e8a786( point )
@@ -1840,7 +1846,7 @@ function function_63245662e2e8a786( point )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4807
 // Size: 0x6a
 function function_45a890c985d26276()
@@ -1859,7 +1865,7 @@ function function_45a890c985d26276()
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x487a
 // Size: 0x3e4
 function function_24afcbb2ea0ccb49( event_duration )
@@ -1902,7 +1908,8 @@ function function_24afcbb2ea0ccb49( event_duration )
         #/
     }
     
-    for (i = 0; i < self.uplink_points.size; i++) {
+    for ( i = 0; i < self.uplink_points.size ; i++ )
+    {
         point_i = self.uplink_points[ i ];
         
         if ( !point_i.is_valid )
@@ -1910,7 +1917,8 @@ function function_24afcbb2ea0ccb49( event_duration )
             continue;
         }
         
-        for (j = i + 1; j < self.uplink_points.size; j++) {
+        for ( j = i + 1; j < self.uplink_points.size ; j++ )
+        {
             point_j = self.uplink_points[ j ];
             
             if ( !point_j.is_valid )
@@ -1966,7 +1974,7 @@ function function_24afcbb2ea0ccb49( event_duration )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c66
 // Size: 0x5c
 function function_c034dc08d0d12cd8( state )
@@ -1985,7 +1993,7 @@ function function_c034dc08d0d12cd8( state )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4cca
 // Size: 0xd6
 function function_671cc803581d0e65( points_string )
@@ -2018,7 +2026,7 @@ function function_671cc803581d0e65( points_string )
 }
 
 // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4da9
 // Size: 0x11
 function function_ddfc2513ffdc4ddc()
@@ -2029,7 +2037,7 @@ function function_ddfc2513ffdc4ddc()
 /#
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4dc2
     // Size: 0x5, Type: dev
     function __debug()
@@ -2038,7 +2046,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4dcf
     // Size: 0x120, Type: dev
     function debug_init()
@@ -2060,7 +2068,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4ef7
     // Size: 0x32, Type: dev
     function function_c3d7b176abc6b629()
@@ -2076,7 +2084,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x4f31
     // Size: 0x57, Type: dev
     function function_fd6377203b2db297( params )
@@ -2097,7 +2105,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4f90
     // Size: 0x17, Type: dev
     function function_db70bae7732f5204()
@@ -2106,7 +2114,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4faf
     // Size: 0x17, Type: dev
     function function_79f09180ee96a5de()
@@ -2115,7 +2123,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x4fce
     // Size: 0x36, Type: dev
     function function_ca12a92628328432()
@@ -2124,7 +2132,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x500c
     // Size: 0x16, Type: dev
     function function_29327b1833cde79e()
@@ -2134,7 +2142,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x502a
     // Size: 0xd, Type: dev
     function function_1497224a9c74808b()
@@ -2143,7 +2151,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x503f
     // Size: 0x2b5, Type: dev
     function function_9c68002c913d40e5()
@@ -2206,7 +2214,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x52fc
     // Size: 0x1b4, Type: dev
     function function_7e5217f288b95f5e()
@@ -2231,7 +2239,8 @@ function function_ddfc2513ffdc4ddc()
         points[ 0 ] = random( var_ff9e6fbb61b45590 );
         nearby_points = array_randomize( points[ 0 ].valid_neighbors );
         
-        for (i = 0; i < event_data.var_c740830cdb73800e - 1; i++) {
+        for ( i = 0; i < event_data.var_c740830cdb73800e - 1 ; i++ )
+        {
             points[ i + 1 ] = nearby_points[ i ];
         }
         
@@ -2253,7 +2262,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x54b8
     // Size: 0x16, Type: dev
     function function_83873605c0cc0f3a()
@@ -2263,7 +2272,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x54d6
     // Size: 0xd, Type: dev
     function function_41d60ffda1134555()
@@ -2272,7 +2281,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x54eb
     // Size: 0x251, Type: dev
     function function_2634cd6355be1303()
@@ -2313,7 +2322,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5744
     // Size: 0x83, Type: dev
     function function_2a20415ca9baa8f9()
@@ -2332,7 +2341,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x57cf
     // Size: 0x9c, Type: dev
     function function_9f75279b43f251c6()
@@ -2353,7 +2362,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5873
     // Size: 0xc8, Type: dev
     function function_6eeb59951c1edac6()
@@ -2375,7 +2384,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5943
     // Size: 0x65, Type: dev
     function function_7b885b4b79b662b9()
@@ -2390,7 +2399,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x59b0
     // Size: 0x5, Type: dev
     function __dump()
@@ -2399,7 +2408,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x59bd
     // Size: 0x3f, Type: dev
     function dump_new( title )
@@ -2411,7 +2420,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5a04
     // Size: 0x3a, Type: dev
     function dump_print()
@@ -2422,7 +2431,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5a46
     // Size: 0x22, Type: dev
     function dump_add( text )
@@ -2431,7 +2440,7 @@ function function_ddfc2513ffdc4ddc()
     }
 
     // Namespace br_publicevent_dataheist / scripts\mp\gametypes\br_publicevent_dataheist
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x5a70
     // Size: 0x1c, Type: dev
     function function_d10a8a5bcebaedf2( text )

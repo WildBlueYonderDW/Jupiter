@@ -12,7 +12,7 @@
 #namespace jup_ob_enemy_specialist_heavytactician;
 
 // Namespace jup_ob_enemy_specialist_heavytactician / namespace_ec8034157a57f80a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e5
 // Size: 0x212
 function main()
@@ -59,7 +59,7 @@ function main()
 }
 
 // Namespace jup_ob_enemy_specialist_heavytactician / namespace_ec8034157a57f80a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4ff
 // Size: 0x57
 function setup_model()
@@ -76,7 +76,7 @@ function setup_model()
 }
 
 // Namespace jup_ob_enemy_specialist_heavytactician / namespace_ec8034157a57f80a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x55e
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -85,7 +85,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_ob_enemy_specialist_heavytactician / namespace_ec8034157a57f80a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x56f
 // Size: 0xcf
 function precache()
@@ -114,7 +114,7 @@ function precache()
 }
 
 // Namespace jup_ob_enemy_specialist_heavytactician / namespace_ec8034157a57f80a
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x646
 // Size: 0x104
 function setup_weapons()

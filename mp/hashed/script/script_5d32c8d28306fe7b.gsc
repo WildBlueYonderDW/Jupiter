@@ -13,7 +13,7 @@
 #namespace perk_phd_flopper;
 
 // Namespace perk_phd_flopper / namespace_146054d2393fb6ab
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31f
 // Size: 0x9d
 function function_ae33e22bc25c3920( str_currency, var_fe59c44529c721a0 )
@@ -27,7 +27,7 @@ function function_ae33e22bc25c3920( str_currency, var_fe59c44529c721a0 )
 }
 
 // Namespace perk_phd_flopper / namespace_146054d2393fb6ab
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c4
 // Size: 0x16
 function function_2d7074feba565a05()
@@ -37,7 +37,7 @@ function function_2d7074feba565a05()
 }
 
 // Namespace perk_phd_flopper / namespace_146054d2393fb6ab
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3e2
 // Size: 0x2a
 function function_9d625cc1b172d8a3( b_pause, str_perk, str_result, n_slot )
@@ -46,7 +46,7 @@ function function_9d625cc1b172d8a3( b_pause, str_perk, str_result, n_slot )
 }
 
 // Namespace perk_phd_flopper / namespace_146054d2393fb6ab
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x414
 // Size: 0x16
 function function_3320652f06c48dae()
@@ -56,7 +56,7 @@ function function_3320652f06c48dae()
 }
 
 // Namespace perk_phd_flopper / namespace_146054d2393fb6ab
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x432
 // Size: 0xa2
 function function_c575026994a655b1( einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime )
@@ -78,7 +78,7 @@ function function_c575026994a655b1( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace perk_phd_flopper / namespace_146054d2393fb6ab
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4dd
 // Size: 0x1f0
 function function_6928d17346bd05f1( attacker, n_height )
@@ -122,7 +122,7 @@ function function_6928d17346bd05f1( attacker, n_height )
 }
 
 // Namespace perk_phd_flopper / namespace_146054d2393fb6ab
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x6d5
 // Size: 0x34d
 function function_a111e72b1d2f5d8e( origin, radius, min_damage, damage_mod, n_boost, bundle )
@@ -144,7 +144,8 @@ function function_a111e72b1d2f5d8e( origin, radius, min_damage, damage_mod, n_bo
     var_5f6af5afd72c0ac2 = 0;
     radiusdamage( self.origin, radius, 1, 1, self, undefined, undefined, 1, 1 );
     
-    for (i = 0; i < a_enemies.size; i++) {
+    for ( i = 0; i < a_enemies.size ; i++ )
+    {
         e_enemy = a_enemies[ i ];
         
         if ( !isalive( e_enemy ) )
@@ -207,7 +208,7 @@ function function_a111e72b1d2f5d8e( origin, radius, min_damage, damage_mod, n_bo
 }
 
 // Namespace perk_phd_flopper / namespace_146054d2393fb6ab
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2a
 // Size: 0xde
 function dtp_fall_watcher()

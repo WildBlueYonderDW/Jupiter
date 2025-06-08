@@ -4,7 +4,7 @@
 #namespace namespace_fe2386b487039c1;
 
 // Namespace namespace_fe2386b487039c1 / namespace_f9ca911ed03102c9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe3
 // Size: 0xbf
 function function_51ea7d22d150c2b4( asmname, statename, params )
@@ -39,7 +39,7 @@ function function_51ea7d22d150c2b4( asmname, statename, params )
 }
 
 // Namespace namespace_fe2386b487039c1 / namespace_f9ca911ed03102c9
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1aa
 // Size: 0xa9
 function function_56a47f26f49fc5eb( asmname, statename, blendtime, params )
@@ -59,7 +59,7 @@ function function_56a47f26f49fc5eb( asmname, statename, blendtime, params )
 }
 
 // Namespace namespace_fe2386b487039c1 / namespace_f9ca911ed03102c9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25b
 // Size: 0x3d
 function function_bde90ceefebf39a9( asmname, statename, params )
@@ -69,7 +69,7 @@ function function_bde90ceefebf39a9( asmname, statename, params )
 }
 
 // Namespace namespace_fe2386b487039c1 / namespace_f9ca911ed03102c9
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2a0
 // Size: 0x43
 function function_7f50ea7f54ae3bd2( asmname, statename, params )

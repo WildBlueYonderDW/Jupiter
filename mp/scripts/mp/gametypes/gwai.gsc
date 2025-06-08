@@ -63,7 +63,7 @@
 #namespace gwai;
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1413
 // Size: 0x7e6
 function main()
@@ -97,8 +97,8 @@ function main()
     }
     
     setdvar( @"hash_405e7e20d91344cc", 0 );
-    setdvar( @"hash_42eece3f15e35b3d", 1 );
-    setdvar( @"hash_a22f98e2c5b506ce", 30 );
+    setdvar( @"scr_allow_technicals", 1 );
+    setdvar( @"scr_runlean_max_technicals", 30 );
     setdvar( @"hash_cbc195ec2129279", 0 );
     setomnvar( "ui_num_dom_flags", 1 );
     enablegroundwarspawnlogic( 400, 1200 );
@@ -193,7 +193,7 @@ function main()
     level.var_eaa760f325371803 = getdvarint( @"hash_1db3f1f01240e877", 0 ) == 1;
     level.var_7f5be0207e7457b1 = getdvarint( @"hash_27abaa55d7ec8eb9", 1 ) == 1;
     level.dropbrloot = getdvarint( @"hash_1d196605f8a290e3", 0 );
-    level.br_plunder_enabled = getdvarint( @"hash_a6a9b41b654afd1d", 0 );
+    level.br_plunder_enabled = getdvarint( @"scr_game_cash", 0 );
     level.noinventory = getdvarint( @"hash_19fae1aad58e8c50", 1 );
     
     if ( level.br_plunder_enabled )
@@ -221,7 +221,7 @@ function main()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c01
 // Size: 0xe8
 function initializematchrules()
@@ -238,7 +238,7 @@ function initializematchrules()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cf1
 // Size: 0x1a6
 function onstartgametype()
@@ -284,7 +284,7 @@ function onstartgametype()
     emergency_cleanupents();
     scripts\cp_mp\parachute::initparachutedvars();
     
-    if ( getdvarint( @"hash_880384e6dfe250ba", 0 ) == 1 )
+    if ( getdvarint( @"scr_br_armory_kiosk", 0 ) == 1 )
     {
         scripts\mp\gametypes\br_armory_kiosk::init();
         scripts\mp\gametypes\br_armory_kiosk::function_b38f5ffe645943c3( "personalOnly" );
@@ -295,7 +295,7 @@ function onstartgametype()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e9f
 // Size: 0x93
 function updategametypedvars()
@@ -310,7 +310,7 @@ function updategametypedvars()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f3a
 // Size: 0x72
 function seticonnames()
@@ -326,7 +326,7 @@ function seticonnames()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1fb4
 // Size: 0x316
 function emergency_cleanupents()
@@ -397,7 +397,7 @@ function emergency_cleanupents()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22d2
 // Size: 0x132
 function removepatchablecollision_delayed()
@@ -433,7 +433,7 @@ function removepatchablecollision_delayed()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x240c
 // Size: 0x13
 function onjoinedteam( player )
@@ -442,7 +442,7 @@ function onjoinedteam( player )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2427
 // Size: 0x169
 function setupwaypointicons()
@@ -467,7 +467,7 @@ function setupwaypointicons()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2598
 // Size: 0x2ac
 function setupobjectives()
@@ -543,7 +543,7 @@ function setupobjectives()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x284c
 // Size: 0x197
 function function_760badbc47a3e856( var_a682e84261a6b971, currentindex )
@@ -582,7 +582,7 @@ function function_760badbc47a3e856( var_a682e84261a6b971, currentindex )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29ec
 // Size: 0x3d1
 function runobjectives()
@@ -644,7 +644,7 @@ function runobjectives()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dc5
 // Size: 0xf1
 function function_f73cab6ec2fe1638()
@@ -669,7 +669,7 @@ function function_f73cab6ec2fe1638()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ebe
 // Size: 0x1d5
 function allowobjectiveuseaftermatchstart()
@@ -707,7 +707,7 @@ function allowobjectiveuseaftermatchstart()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x309b
 // Size: 0xf1
 function objective_manageobjectivesintrovisibility()
@@ -731,7 +731,7 @@ function objective_manageobjectivesintrovisibility()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3194
 // Size: 0x87
 function function_2d95972fced27791( objective, startingteam )
@@ -747,7 +747,7 @@ function function_2d95972fced27791( objective, startingteam )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3224
 // Size: 0x47
 function dropcrate( killstreakname, droplocation, team )
@@ -757,7 +757,7 @@ function dropcrate( killstreakname, droplocation, team )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3274
 // Size: 0x132
 function docratedropsmoke( crate, droplocation, duration )
@@ -785,7 +785,7 @@ function docratedropsmoke( crate, droplocation, duration )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33ae
 // Size: 0x165
 function registervaliddroplocations()
@@ -822,7 +822,7 @@ function registervaliddroplocations()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x351b
 // Size: 0x14
 function debug_testcratedroplocationpicker()
@@ -835,7 +835,7 @@ function debug_testcratedroplocationpicker()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3537
 // Size: 0x3f
 function checkkillstreakcratedrop( team )
@@ -848,7 +848,7 @@ function checkkillstreakcratedrop( team )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x357e
 // Size: 0xaa
 function dropkillstreakcrates( var_fd2fee325481dc7f )
@@ -864,7 +864,8 @@ function dropkillstreakcrates( var_fd2fee325481dc7f )
         }
     }
     
-    for (i = 0; i < var_fd2fee325481dc7f; i++) {
+    for ( i = 0; i < var_fd2fee325481dc7f ; i++ )
+    {
         location = choosecratelocation();
         thread runkillstreakreward( location, owningplayer, getkillstreak( 1 ) );
         wait 5;
@@ -872,7 +873,7 @@ function dropkillstreakcrates( var_fd2fee325481dc7f )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3630
 // Size: 0x173
 function choosecratelocation()
@@ -898,7 +899,7 @@ function choosecratelocation()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37ac
 // Size: 0x11e
 function findclosestdroplocation( origin )
@@ -930,7 +931,7 @@ function findclosestdroplocation( origin )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x38d3
 // Size: 0x243
 function runkillstreakreward( location, creditplayer, streakname )
@@ -974,7 +975,7 @@ function runkillstreakreward( location, creditplayer, streakname )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3b1e
 // Size: 0x49
 function getkillstreak( tier )
@@ -989,7 +990,7 @@ function getkillstreak( tier )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b70
 // Size: 0xa6
 function processkillstreaksintotiers()
@@ -1002,7 +1003,7 @@ function processkillstreaksintotiers()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3c1e
 // Size: 0x872
 function initspawns( var_4c3936c2c179fab3 )
@@ -1145,7 +1146,7 @@ function initspawns( var_4c3936c2c179fab3 )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4498
 // Size: 0x19f
 function getspawnpoint()
@@ -1204,7 +1205,7 @@ function getspawnpoint()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4640
 // Size: 0x53
 function onplayerconnect()
@@ -1224,7 +1225,7 @@ function onplayerconnect()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x469b
 // Size: 0xb
 function onplayerdisconnect( player )
@@ -1233,7 +1234,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x46ae
 // Size: 0xa1
 function modeonspawnplayer( revivespawn )
@@ -1251,7 +1252,7 @@ function modeonspawnplayer( revivespawn )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4757
 // Size: 0x21
 function onplayerspawned()
@@ -1265,7 +1266,7 @@ function onplayerspawned()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x4780
 // Size: 0x96
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1280,7 +1281,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x481e
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -1289,7 +1290,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4866
 // Size: 0x1d9
 function setdefaultclass()
@@ -1320,7 +1321,7 @@ function setdefaultclass()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4a47
 // Size: 0xe0
 function arm_initoutofbounds()
@@ -1347,7 +1348,7 @@ function arm_initoutofbounds()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4b2f
 // Size: 0x46, Type: bool
 function sortlocationsbydistance( location1, location2 )
@@ -1356,7 +1357,7 @@ function sortlocationsbydistance( location1, location2 )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4b7e
 // Size: 0x981
 function getmissedinfilcamerapositions( team )
@@ -1550,7 +1551,7 @@ function getmissedinfilcamerapositions( team )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5508
 // Size: 0x11
 function function_658c8f668d2cd83c()
@@ -1560,7 +1561,7 @@ function function_658c8f668d2cd83c()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5521
 // Size: 0x3f0
 function spawnai()
@@ -1593,7 +1594,8 @@ function spawnai()
         
         if ( numagents > 0 )
         {
-            for (i = 0; i < numagents; i++) {
+            for ( i = 0; i < numagents ; i++ )
+            {
                 aitype = function_d5bc07eabf352abb( undefined, undefined, groupname, undefined, 3 );
                 var_ef178bb38661ff1b = undefined;
                 
@@ -1642,7 +1644,8 @@ function spawnai()
         
         if ( var_40e875a042b82875 > 0 )
         {
-            for (i = 0; i < var_40e875a042b82875; i++) {
+            for ( i = 0; i < var_40e875a042b82875 ; i++ )
+            {
                 var_ef178bb38661ff1b = undefined;
                 
                 if ( cqbnodes.size > 0 )
@@ -1696,7 +1699,7 @@ function spawnai()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5919
 // Size: 0x1e3
 function function_d4ed75580b9194a4()
@@ -1711,8 +1714,10 @@ function function_d4ed75580b9194a4()
     gridright = anglestoright( gridyaw );
     spawnpoints = [];
     
-    for (x = 2; x < var_d3abc028986e8adc; x++) {
-        for (y = 2; y < var_d3abc128986e8d0f; y++) {
+    for ( x = 2; x < var_d3abc028986e8adc ; x++ )
+    {
+        for ( y = 2; y < var_d3abc128986e8d0f ; y++ )
+        {
             spawnpoints[ spawnpoints.size ] = gridmin + gridfwd * x * stepx + gridright * y * stepy;
         }
     }
@@ -1740,7 +1745,7 @@ function function_d4ed75580b9194a4()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x5b04
 // Size: 0x34d
 function function_a30a48f0c1a403ec( objectivekey, team, numagents, var_40e875a042b82875 )
@@ -1762,7 +1767,8 @@ function function_a30a48f0c1a403ec( objectivekey, team, numagents, var_40e875a04
     
     if ( numagents > 0 )
     {
-        for (i = 0; i < numagents; i++) {
+        for ( i = 0; i < numagents ; i++ )
+        {
             aitype = function_d5bc07eabf352abb();
             agent = ai_mp_requestspawnagent( aitype, obj.trigger.origin, ( 0, 0, 0 ), "medium", "everybody", "captureAgents", groupname, team, undefined, undefined, 1, 1 );
             
@@ -1804,7 +1810,8 @@ function function_a30a48f0c1a403ec( objectivekey, team, numagents, var_40e875a04
     
     if ( var_40e875a042b82875 > 0 )
     {
-        for (i = 0; i < var_40e875a042b82875; i++) {
+        for ( i = 0; i < var_40e875a042b82875 ; i++ )
+        {
             agent = ai_mp_requestspawnagent( "actor_enemy_mp_jugg_aq", obj.trigger.origin, ( 0, 0, 0 ), "absolute", "everybody", "jugg", groupname, undefined, undefined, undefined, 1, 1 );
             
             if ( isdefined( agent ) )
@@ -1839,7 +1846,7 @@ function function_a30a48f0c1a403ec( objectivekey, team, numagents, var_40e875a04
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5e59
 // Size: 0x78
 function function_3b97b97e14948c02( desired_origin, var_93390a6953905fef )
@@ -1858,7 +1865,7 @@ function function_3b97b97e14948c02( desired_origin, var_93390a6953905fef )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5eda
 // Size: 0x97
 function function_5cd456d9b2cdc538( agent, killer )
@@ -1872,7 +1879,7 @@ function function_5cd456d9b2cdc538( agent, killer )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f79
 // Size: 0x2d6
 function function_848d0782943b416d()
@@ -1938,7 +1945,7 @@ function function_848d0782943b416d()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6257
 // Size: 0x3ef
 function snapshotinventory()
@@ -2067,7 +2074,7 @@ function snapshotinventory()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x664f
 // Size: 0x3cb
 function function_a17ce79209ceccfc()
@@ -2089,7 +2096,8 @@ function function_a17ce79209ceccfc()
             {
                 player.pers[ "gamemodeLoadout" ][ "loadoutPrimary" ] = inventory[ "loadoutPrimary" ].ref;
                 
-                for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+                for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+                {
                     attachstring = scripts\mp\class::getattachmentloadoutstring( attachmentindex, #"primary" );
                     player.pers[ "gamemodeLoadout" ][ attachstring ] = inventory[ "loadoutPrimary" ].attachments[ attachmentindex ];
                 }
@@ -2103,7 +2111,8 @@ function function_a17ce79209ceccfc()
             {
                 player.pers[ "gamemodeLoadout" ][ "loadoutSecondary" ] = inventory[ "loadoutSecondary" ].ref;
                 
-                for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
+                for ( attachmentindex = 0; attachmentindex < 7 ; attachmentindex++ )
+                {
                     attachstring = scripts\mp\class::getattachmentloadoutstring( attachmentindex, #"secondary" );
                     player.pers[ "gamemodeLoadout" ][ attachstring ] = inventory[ "loadoutSecondary" ].attachments[ attachmentindex ];
                 }
@@ -2149,7 +2158,7 @@ function function_a17ce79209ceccfc()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a22
 // Size: 0xaa
 function ontimelimit()
@@ -2177,7 +2186,7 @@ function ontimelimit()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ad4
 // Size: 0x3c
 function onscorelimit( winner )
@@ -2196,7 +2205,7 @@ function onscorelimit( winner )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b18
 // Size: 0x35
 function function_947925f5fc6939a3()
@@ -2216,7 +2225,7 @@ function function_947925f5fc6939a3()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b56
 // Size: 0x63
 function function_354ebff91b3c29ca()
@@ -2230,7 +2239,7 @@ function function_354ebff91b3c29ca()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6bc1
 // Size: 0x5a
 function zone_onuse( credit_player )
@@ -2245,7 +2254,7 @@ function zone_onuse( credit_player )
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c23
 // Size: 0x181
 function function_3e175c0b6527751f()
@@ -2278,7 +2287,7 @@ function function_3e175c0b6527751f()
 }
 
 // Namespace gwai / scripts\mp\gametypes\gwai
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6dad
 // Size: 0xb
 function allowclasschoicefunc()

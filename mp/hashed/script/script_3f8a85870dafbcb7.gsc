@@ -12,8 +12,8 @@
 #namespace namespace_fdfa10f30c513cd7;
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x397
+// Params 0
+// Checksum 0x0, Offset: 0x398
 // Size: 0x94
 function init()
 {
@@ -32,8 +32,8 @@ function init()
 }
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x433
+// Params 1
+// Checksum 0x0, Offset: 0x434
 // Size: 0x21
 function on_armor_break( params )
 {
@@ -44,8 +44,8 @@ function on_armor_break( params )
 }
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x45c
+// Params 1
+// Checksum 0x0, Offset: 0x45d
 // Size: 0x24
 function function_c5444b570959132e( params )
 {
@@ -54,8 +54,8 @@ function function_c5444b570959132e( params )
 }
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x488
+// Params 1
+// Checksum 0x0, Offset: 0x489
 // Size: 0x6d
 function function_8cd3ce612122fbab( params )
 {
@@ -71,8 +71,8 @@ function function_8cd3ce612122fbab( params )
 }
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fd
+// Params 1
+// Checksum 0x0, Offset: 0x4fe
 // Size: 0x11f
 function on_item_pickup( params )
 {
@@ -120,8 +120,8 @@ function on_item_pickup( params )
 }
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x624
+// Params 1
+// Checksum 0x0, Offset: 0x625
 // Size: 0xef
 function function_94545a9bb0878e0e( params )
 {
@@ -154,8 +154,8 @@ function function_94545a9bb0878e0e( params )
 }
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x71b
+// Params 1
+// Checksum 0x0, Offset: 0x71c
 // Size: 0x36
 function on_ammo_pouch_drop( params )
 {
@@ -166,8 +166,8 @@ function on_ammo_pouch_drop( params )
 }
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x759
+// Params 1
+// Checksum 0x0, Offset: 0x75a
 // Size: 0x42
 function function_9e622ced1b338442( params )
 {
@@ -185,8 +185,8 @@ function function_9e622ced1b338442( params )
 }
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a3
+// Params 1
+// Checksum 0x0, Offset: 0x7a4
 // Size: 0x81
 function function_dc000c302e305ce0( str_conversation )
 {
@@ -209,8 +209,8 @@ function function_dc000c302e305ce0( str_conversation )
 }
 
 // Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x82c
+// Params 1
+// Checksum 0x0, Offset: 0x82d
 // Size: 0x61
 function function_74fec185b50d1b4a( str_conversation )
 {

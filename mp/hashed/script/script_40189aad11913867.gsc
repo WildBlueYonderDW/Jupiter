@@ -4,7 +4,7 @@
 #namespace mp_jup_st_b_ob_contracts_merc_defend_cs;
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdef
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xe64
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xed3
 // Size: 0x86a4
 function createstructs( fe, us, cf )
@@ -1571,7 +1571,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x957f
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -1580,7 +1580,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9589
 // Size: 0xe
 function cleanup()
@@ -1589,7 +1589,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x959f
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -1604,7 +1604,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9611
 // Size: 0x83
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -1629,7 +1629,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x969c
 // Size: 0x648
 function function_282d17da2080c44( fe, us, cf )
@@ -1689,7 +1689,7 @@ function function_282d17da2080c44( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9cec
 // Size: 0x647
 function function_631a99adde5aa3c6( fe, us, cf )
@@ -1749,7 +1749,7 @@ function function_631a99adde5aa3c6( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa33b
 // Size: 0x5c5
 function function_826f94174d724277( fe, us, cf )
@@ -1805,7 +1805,7 @@ function function_826f94174d724277( fe, us, cf )
 }
 
 // Namespace mp_jup_st_b_ob_contracts_merc_defend_cs / namespace_d2d690dfdb9d3a63
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa908
 // Size: 0x666
 function function_6da2952367672ac0()

@@ -11,7 +11,7 @@
 #namespace bots_gametype_infect;
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x206
 // Size: 0x10
 function main()
@@ -23,7 +23,7 @@ function main()
 /#
 
     // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x21e
     // Size: 0x5, Type: dev
     function function_e45e46b7c35deadb()
@@ -34,7 +34,7 @@ function main()
 #/
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22b
 // Size: 0x2c
 function setup_callbacks()
@@ -44,7 +44,7 @@ function setup_callbacks()
 }
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25f
 // Size: 0x2b
 function setup_bot_infect()
@@ -56,7 +56,7 @@ function setup_bot_infect()
 }
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x292
 // Size: 0x29
 function bot_should_pickup_weapons_infect()
@@ -70,7 +70,7 @@ function bot_should_pickup_weapons_infect()
 }
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c4
 // Size: 0xda
 function bot_infect_think()
@@ -112,7 +112,7 @@ function bot_infect_think()
 }
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a6
 // Size: 0x3b8
 function bot_infect_ai_director_update()
@@ -220,7 +220,7 @@ function bot_infect_ai_director_update()
 }
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x766
 // Size: 0x38
 function hunt_human( var_df757d4ca3bebed8 )
@@ -232,7 +232,7 @@ function hunt_human( var_df757d4ca3bebed8 )
 }
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a6
 // Size: 0x2e0
 function bot_infect_retrieve_knife()
@@ -327,7 +327,7 @@ function bot_infect_retrieve_knife()
 }
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa8e
 // Size: 0x3d, Type: bool
 function bot_infect_angle_too_steep_for_knife_throw( testorigin, testdest )
@@ -341,7 +341,7 @@ function bot_infect_angle_too_steep_for_knife_throw( testorigin, testdest )
 }
 
 // Namespace bots_gametype_infect / scripts\mp\bots\bots_gametype_infect
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xad4
 // Size: 0x19d
 function bot_infect_find_node_can_see_ent( targetent, startnode )

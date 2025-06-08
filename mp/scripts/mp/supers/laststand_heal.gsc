@@ -10,7 +10,7 @@
 #namespace laststand_heal;
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e3
 // Size: 0x141
 function laststandheal_onset()
@@ -51,7 +51,7 @@ function laststandheal_onset()
 }
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32c
 // Size: 0xa
 function laststandheal_unset()
@@ -60,7 +60,7 @@ function laststandheal_unset()
 }
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33e
 // Size: 0x2f
 function laststandheal_watchrespawn()
@@ -78,7 +78,7 @@ function laststandheal_watchrespawn()
 }
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x375
 // Size: 0x46
 function laststandheal_onrespawn()
@@ -95,7 +95,7 @@ function laststandheal_onrespawn()
 }
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c3
 // Size: 0x14, Type: bool
 function laststandheal_beginuse()
@@ -106,7 +106,7 @@ function laststandheal_beginuse()
 }
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e0
 // Size: 0xc8
 function laststandheal_think()
@@ -136,7 +136,7 @@ function laststandheal_think()
 }
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b0
 // Size: 0x4e
 function laststandheal_drainsupermeter()
@@ -158,7 +158,7 @@ function laststandheal_drainsupermeter()
 }
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x506
 // Size: 0x2b
 function laststandheal_setinactivewhendone()
@@ -170,7 +170,7 @@ function laststandheal_setinactivewhendone()
 }
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x539
 // Size: 0x4
 function laststandheal_gethealthperframe()

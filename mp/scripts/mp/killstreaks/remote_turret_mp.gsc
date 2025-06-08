@@ -28,7 +28,7 @@ function autoexec main()
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49a
 // Size: 0xd9
 function init()
@@ -46,7 +46,7 @@ function init()
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x57b
 // Size: 0x2f
 function sentryturret_gettargetmarker( streakinfo, ignorecancel )
@@ -56,7 +56,7 @@ function sentryturret_gettargetmarker( streakinfo, ignorecancel )
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 11, eflags: 0x0
+// Params 11
 // Checksum 0x0, Offset: 0x5b3
 // Size: 0x71
 function sentryturret_createhintobject( hintpos, hinttype, hinticon, hintstring, priority, duration, onobstruction, hintdist, hintfov, usedist, usefov )
@@ -65,7 +65,7 @@ function sentryturret_createhintobject( hintpos, hinttype, hinticon, hintstring,
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x62d
 // Size: 0x44
 function sentryturret_monitordamage( turret )
@@ -75,7 +75,7 @@ function sentryturret_monitordamage( turret )
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x679
 // Size: 0x145
 function sentryturret_handledeathdamage( data )
@@ -110,7 +110,7 @@ function sentryturret_handledeathdamage( data )
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7c6
 // Size: 0x1d6
 function sentryturret_modifydamage( data )
@@ -158,7 +158,7 @@ function sentryturret_modifydamage( data )
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a5
 // Size: 0x50f
 function sentryturret_initsentrysettings()
@@ -211,7 +211,7 @@ function sentryturret_initsentrysettings()
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xebc
 // Size: 0x52, Type: bool
 function sentryturret_canpickup()
@@ -242,7 +242,7 @@ function sentryturret_canpickup()
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf17
 // Size: 0x14
 function sentryturret_empstarted()
@@ -251,7 +251,7 @@ function sentryturret_empstarted()
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf33
 // Size: 0x14
 function sentryturret_empcleared()
@@ -260,7 +260,7 @@ function sentryturret_empcleared()
 }
 
 // Namespace remote_turret_mp / scripts\mp\killstreaks\remote_turret_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf4f
 // Size: 0x20
 function function_21ed6c77fb27d039( turret )

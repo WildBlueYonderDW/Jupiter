@@ -5,7 +5,7 @@
 #namespace objective_marker_bundle_helper;
 
 // Namespace objective_marker_bundle_helper / namespace_871f41e67db0bf7a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12e
 // Size: 0x2d
 function function_40062e64625f8b19( bundlename )
@@ -15,7 +15,7 @@ function function_40062e64625f8b19( bundlename )
 }
 
 // Namespace objective_marker_bundle_helper / namespace_871f41e67db0bf7a
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x164
 // Size: 0xb8
 function function_594acad17d5c9722( bundlexhash )

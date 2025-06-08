@@ -3,7 +3,7 @@
 #namespace mp_jup_vertigo_audio;
 
 // Namespace mp_jup_vertigo_audio / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a8
 // Size: 0x2
 function main()
@@ -12,7 +12,7 @@ function main()
 }
 
 // Namespace mp_jup_vertigo_audio / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b2
 // Size: 0x2b
 function function_c8f303cb5ce4d4f1( forward_mover )
@@ -23,7 +23,7 @@ function function_c8f303cb5ce4d4f1( forward_mover )
 }
 
 // Namespace mp_jup_vertigo_audio / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e5
 // Size: 0x2b
 function function_15f3cb16ea85459b( back_mover )
@@ -34,7 +34,7 @@ function function_15f3cb16ea85459b( back_mover )
 }
 
 // Namespace mp_jup_vertigo_audio / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x218
 // Size: 0x1f
 function function_a98ceea0b676d81a( forward_mover )
@@ -44,7 +44,7 @@ function function_a98ceea0b676d81a( forward_mover )
 }
 
 // Namespace mp_jup_vertigo_audio / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x18
 function function_f182f4bfb0416785( rotater )
@@ -53,7 +53,7 @@ function function_f182f4bfb0416785( rotater )
 }
 
 // Namespace mp_jup_vertigo_audio / scripts\mp\maps\mp_jup_vertigo\mp_jup_vertigo_audio
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x25f
 // Size: 0x17
 function rotatestopsound( rotater )

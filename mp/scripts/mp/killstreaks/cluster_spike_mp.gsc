@@ -20,7 +20,7 @@
 #namespace cluster_spike_mp;
 
 // Namespace cluster_spike_mp / scripts\mp\killstreaks\cluster_spike_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x138
 // Size: 0x29
 function init()
@@ -30,7 +30,7 @@ function init()
 }
 
 // Namespace cluster_spike_mp / scripts\mp\killstreaks\cluster_spike_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x169
 // Size: 0x20
 function function_d0f5e3c6e6080d5d( clusterspike )

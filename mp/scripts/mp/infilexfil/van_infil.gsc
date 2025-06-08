@@ -15,7 +15,7 @@
 #namespace van_infil;
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8db
 // Size: 0x9d
 function van_init( subtype )
@@ -35,7 +35,7 @@ function van_init( subtype )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x980
 // Size: 0x8a
 function van_spawn( team, target, subtype, originalsubtype )
@@ -49,7 +49,7 @@ function van_spawn( team, target, subtype, originalsubtype )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa13
 // Size: 0x32
 function function_91f416a3ece2ef9a( subtype )
@@ -59,7 +59,7 @@ function function_91f416a3ece2ef9a( subtype )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa4e
 // Size: 0x2bc
 function function_f67856e4fbb899a0( infil, spot_index )
@@ -135,7 +135,7 @@ function function_f67856e4fbb899a0( infil, spot_index )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd12
 // Size: 0x2d
 function resetfov()
@@ -153,7 +153,7 @@ function resetfov()
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd47
 // Size: 0x116
 function function_acb0a5ef09f5f702()
@@ -205,7 +205,7 @@ function function_acb0a5ef09f5f702()
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe65
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -223,7 +223,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea9
 // Size: 0x53
 function player_infil_end()
@@ -239,7 +239,7 @@ function player_infil_end()
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf04
 // Size: 0x4c
 function player_disconnect()
@@ -258,7 +258,7 @@ function player_disconnect()
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf58
 // Size: 0x18c
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -284,7 +284,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10ec
 // Size: 0x211
 function spawnactors( team, scene_name, extra_crew )
@@ -317,7 +317,7 @@ function spawnactors( team, scene_name, extra_crew )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1305
 // Size: 0x18f
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -361,7 +361,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x149d
 // Size: 0xed
 function infilthink( team, scene_name )
@@ -389,7 +389,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1592
 // Size: 0xd6
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -412,7 +412,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1670
 // Size: 0x19
 function function_e85c746a9eaa79f3()
@@ -423,7 +423,7 @@ function function_e85c746a9eaa79f3()
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1691
 // Size: 0xc4
 function function_e3e8566b27b746cb()
@@ -443,7 +443,7 @@ function function_e3e8566b27b746cb()
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x175d
 // Size: 0x378
 function initanims( subtype )
@@ -486,7 +486,7 @@ function initanims( subtype )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1add
 // Size: 0x2af
 function script_model_anims( subtype )
@@ -524,7 +524,7 @@ function script_model_anims( subtype )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d94
 // Size: 0x544
 function function_487431cf3b99e0b8( subtype )
@@ -589,7 +589,7 @@ function function_487431cf3b99e0b8( subtype )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22e0
 // Size: 0x17
 function van_chief_sfx( guy )
@@ -598,7 +598,7 @@ function van_chief_sfx( guy )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22ff
 // Size: 0x17
 function van_door_sfx( guy )
@@ -607,7 +607,7 @@ function van_door_sfx( guy )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x231e
 // Size: 0x17
 function van_close_sfx( guy )
@@ -616,7 +616,7 @@ function van_close_sfx( guy )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x233d
 // Size: 0x94
 function vehicles_anims( subtype )
@@ -635,7 +635,7 @@ function vehicles_anims( subtype )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23d9
 // Size: 0x82
 function function_7b7d0c2db72b128( subtype )
@@ -654,7 +654,7 @@ function function_7b7d0c2db72b128( subtype )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2463
 // Size: 0xd2
 function spawnvan( scene_node, team, scene_name )
@@ -678,7 +678,7 @@ function spawnvan( scene_node, team, scene_name )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x253e
 // Size: 0xee
 function function_bbfdaed21b5cddbb( subtype )
@@ -709,7 +709,7 @@ function function_bbfdaed21b5cddbb( subtype )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2635
 // Size: 0xca
 function function_ffa1124c73da1ab3( var_addd3217bc59a7b8 )
@@ -734,7 +734,7 @@ function function_ffa1124c73da1ab3( var_addd3217bc59a7b8 )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2707
 // Size: 0x9a
 function function_89a2405953b84136( var_addd3217bc59a7b8, override_og )
@@ -758,7 +758,7 @@ function function_89a2405953b84136( var_addd3217bc59a7b8, override_og )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27a9
 // Size: 0x34
 function scn_infil_van_npc1( guy )
@@ -772,7 +772,7 @@ function scn_infil_van_npc1( guy )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27e5
 // Size: 0x34
 function scn_infil_van_npc2( guy )
@@ -786,7 +786,7 @@ function scn_infil_van_npc2( guy )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2821
 // Size: 0x34
 function scn_infil_van_npc3( guy )
@@ -800,7 +800,7 @@ function scn_infil_van_npc3( guy )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x285d
 // Size: 0x34
 function scn_infil_van_npc4( guy )
@@ -814,7 +814,7 @@ function scn_infil_van_npc4( guy )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2899
 // Size: 0x34
 function scn_infil_van_npc5( guy )
@@ -828,7 +828,7 @@ function scn_infil_van_npc5( guy )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x28d5
 // Size: 0x34
 function scn_infil_van_npc6( guy )
@@ -842,7 +842,7 @@ function scn_infil_van_npc6( guy )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2911
 // Size: 0xd2
 function infil_radio_idle( infil )
@@ -877,7 +877,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29eb
 // Size: 0x21
 function function_6158ef142e9bd640()
@@ -889,7 +889,7 @@ function function_6158ef142e9bd640()
 }
 
 // Namespace van_infil / scripts\mp\infilexfil\van_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a14
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )

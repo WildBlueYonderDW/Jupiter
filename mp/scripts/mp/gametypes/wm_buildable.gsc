@@ -23,7 +23,7 @@
 #namespace wm_buildable;
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6b6
 // Size: 0x4f, Type: bool
 function function_e2344ec3f70a089c()
@@ -40,7 +40,7 @@ function function_e2344ec3f70a089c()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x70e
 // Size: 0xf
 function function_87c403778d48f1b0()
@@ -49,7 +49,7 @@ function function_87c403778d48f1b0()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x726
 // Size: 0x3d
 function function_96c8e55e70edd512( animname )
@@ -63,7 +63,7 @@ function function_96c8e55e70edd512( animname )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x76c
 // Size: 0x4e3
 function function_e20a97a059fba2ea( objname, triggerent, zonename, currentprogress, origin, angles )
@@ -100,7 +100,8 @@ function function_e20a97a059fba2ea( objname, triggerent, zonename, currentprogre
     
     if ( isdefined( buildinfo.models ) && buildinfo.models.size > 0 )
     {
-        for (i = 0; i < buildinfo.models.size; i++) {
+        for ( i = 0; i < buildinfo.models.size ; i++ )
+        {
             model = spawn( "script_model", origin );
             model setmodel( buildinfo.models[ i ] );
             model.angles = angles;
@@ -125,7 +126,8 @@ function function_e20a97a059fba2ea( objname, triggerent, zonename, currentprogre
         assert( var_5474cdc451625a5c.size == idleanimations.size, animname + "<dev string:xd9>" + "<dev string:xc2>" + var_5474cdc451625a5c.size + "<dev string:x12b>" + idleanimations.size );
         buildable.animname = animname;
         
-        for (i = 0; i < var_5474cdc451625a5c.size; i++) {
+        for ( i = 0; i < var_5474cdc451625a5c.size ; i++ )
+        {
             buildable.models[ i ].animname = animname;
             buildable.models[ i ] scripts\common\anim::setanimtree();
             buildable.var_5474cdc451625a5c[ i ] = var_5474cdc451625a5c[ i ];
@@ -138,7 +140,8 @@ function function_e20a97a059fba2ea( objname, triggerent, zonename, currentprogre
         {
             assertex( var_6c25aa98fdfa6d26.size == buildable.models.size, animname + "<dev string:x147>" + "<dev string:xc2>" + var_6c25aa98fdfa6d26.size + "<dev string:x68>" + buildable.models.size );
             
-            for (i = 0; i < var_6c25aa98fdfa6d26.size; i++) {
+            for ( i = 0; i < var_6c25aa98fdfa6d26.size ; i++ )
+            {
                 buildable.var_6c25aa98fdfa6d26[ i ] = var_6c25aa98fdfa6d26[ i ];
             }
         }
@@ -151,7 +154,7 @@ function function_e20a97a059fba2ea( objname, triggerent, zonename, currentprogre
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc58
 // Size: 0x223
 function function_4f45e256b6ed7a46()
@@ -211,7 +214,7 @@ function function_4f45e256b6ed7a46()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe83
 // Size: 0x15, Type: bool
 function function_9ab1fdb68e31a48d( player )
@@ -220,7 +223,7 @@ function function_9ab1fdb68e31a48d( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea1
 // Size: 0x29
 function function_7c1c6aa025f65e28()
@@ -232,7 +235,7 @@ function function_7c1c6aa025f65e28()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xed2
 // Size: 0x37
 function function_2e45cbf17c0a6f5( buildable )
@@ -243,7 +246,7 @@ function function_2e45cbf17c0a6f5( buildable )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xf11
 // Size: 0x8b
 function removebuildable( buildable )
@@ -258,12 +261,13 @@ function removebuildable( buildable )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xfa4
 // Size: 0x67
 function function_fec3326168e40898()
 {
-    for (i = 0; i < self.phases.size; i++) {
+    for ( i = 0; i < self.phases.size ; i++ )
+    {
         if ( self.phases[ i ] == self.buildphase )
         {
             return i;
@@ -275,7 +279,7 @@ function function_fec3326168e40898()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1014
 // Size: 0x6c
 function function_f07123bb7b8f859c( phasesinfo, currentprogress )
@@ -294,7 +298,7 @@ function function_f07123bb7b8f859c( phasesinfo, currentprogress )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1089
 // Size: 0x18a
 function updateprogress( player, progress, isinit )
@@ -378,7 +382,7 @@ function updateprogress( player, progress, isinit )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x121b
 // Size: 0x12
 function function_fad72d32ee97db4f()
@@ -387,7 +391,7 @@ function function_fad72d32ee97db4f()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1236
 // Size: 0x12
 function function_41164ff94605e5ff()
@@ -396,7 +400,7 @@ function function_41164ff94605e5ff()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1251
 // Size: 0x12
 function function_aa4e75eb0323bde0()
@@ -405,12 +409,13 @@ function function_aa4e75eb0323bde0()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x126c
 // Size: 0x63
 function function_8cb0764ec504b898()
 {
-    for (i = 0; i < self.idleanimations.size; i++) {
+    for ( i = 0; i < self.idleanimations.size ; i++ )
+    {
         idleanimname = self.idleanimations[ i ];
         model = self.models[ i ];
         
@@ -422,7 +427,7 @@ function function_8cb0764ec504b898()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x12d7
 // Size: 0x3a
 function function_cb796e5e54e477f6( model, animname )
@@ -432,7 +437,7 @@ function function_cb796e5e54e477f6( model, animname )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1319
 // Size: 0xe5
 function function_3b27c12823e5dc9()
@@ -443,7 +448,8 @@ function function_3b27c12823e5dc9()
         playsoundatpos( self.models[ 1 ].origin, "jup_launchfacility_buildable_wall_destroyed" );
     }
     
-    for (i = 0; i < self.idleanimations.size; i++) {
+    for ( i = 0; i < self.idleanimations.size ; i++ )
+    {
         idleanimname = self.idleanimations[ i ];
         model = self.models[ i ];
         
@@ -461,7 +467,7 @@ function function_3b27c12823e5dc9()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1406
 // Size: 0x75
 function function_a3395723ec35ab32()
@@ -482,7 +488,7 @@ function function_a3395723ec35ab32()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1483
 // Size: 0x59
 function function_730668fddabb6225()
@@ -502,7 +508,7 @@ function function_730668fddabb6225()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x14e4
 // Size: 0x8b
 function function_640f02a78c82e01e()
@@ -517,7 +523,8 @@ function function_640f02a78c82e01e()
         return;
     }
     
-    for (i = 0; i < self.var_6c25aa98fdfa6d26.size; i++) {
+    for ( i = 0; i < self.var_6c25aa98fdfa6d26.size ; i++ )
+    {
         var_6c25aa98fdfa6d26 = self.var_6c25aa98fdfa6d26[ i ];
         model = self.models[ i ];
         
@@ -529,7 +536,7 @@ function function_640f02a78c82e01e()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1577
 // Size: 0x1e8
 function function_ec8de485b310f295( triggerent, hintstring, buildusetime, buildteam, var_5d8933c950c9a154 )
@@ -574,7 +581,7 @@ function function_ec8de485b310f295( triggerent, hintstring, buildusetime, buildt
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1768
 // Size: 0x1f3
 function function_310f1a814bf9c37c( buildable, triggerent, hintstring, destroyusetime, destroyteam, var_5f7f91ab6d5c8af9 )
@@ -619,7 +626,7 @@ function function_310f1a814bf9c37c( buildable, triggerent, hintstring, destroyus
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1964
 // Size: 0x15, Type: bool
 function function_f6a64189578e480f( player )
@@ -628,7 +635,7 @@ function function_f6a64189578e480f( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1982
 // Size: 0x5c
 function function_f292eea00564d752( player )
@@ -649,7 +656,7 @@ function function_f292eea00564d752( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19e6
 // Size: 0x5e
 function function_5d8ecf5ea5db5efa( team, player, result )
@@ -673,7 +680,7 @@ function function_5d8ecf5ea5db5efa( team, player, result )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a4c
 // Size: 0xee
 function function_3164e1c4e7e2f49c( player )
@@ -719,7 +726,7 @@ function function_3164e1c4e7e2f49c( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b42
 // Size: 0x68
 function function_62602b0ea1741bd2( model, notifystring )
@@ -734,7 +741,7 @@ function function_62602b0ea1741bd2( model, notifystring )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bb2
 // Size: 0x138
 function function_df66656601b04226()
@@ -768,7 +775,7 @@ function function_df66656601b04226()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1cf2
 // Size: 0x50, Type: bool
 function function_75a70b148e9541b7( meansofdeath )
@@ -782,7 +789,7 @@ function function_75a70b148e9541b7( meansofdeath )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1d4b
 // Size: 0x61
 function function_a82088bc1fe748a9( player )
@@ -804,7 +811,7 @@ function function_a82088bc1fe748a9( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1db4
 // Size: 0xfd
 function function_578b25d258f0c8d9( attacker )
@@ -841,7 +848,7 @@ function function_578b25d258f0c8d9( attacker )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1eb9
 // Size: 0x3af
 function bombcountdown( player )
@@ -891,7 +898,7 @@ function bombcountdown( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2270
 // Size: 0x6e
 function function_1c548268f36ed307()
@@ -914,7 +921,7 @@ function function_1c548268f36ed307()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22e6
 // Size: 0xf3
 function function_5163851170a11648( player )
@@ -955,7 +962,7 @@ function function_5163851170a11648( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23e1
 // Size: 0xc2
 function function_52a5fcc80a1f8533( player )
@@ -973,7 +980,7 @@ function function_52a5fcc80a1f8533( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24ab
 // Size: 0x10f
 function function_5b1ba5a4f573aaa3( player )
@@ -1002,7 +1009,7 @@ function function_5b1ba5a4f573aaa3( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x25c2
 // Size: 0x18d
 function function_2d71060946497558( team, player, result )
@@ -1059,7 +1066,7 @@ function function_2d71060946497558( team, player, result )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2757
 // Size: 0x5f
 function restoreusetrigger()
@@ -1072,7 +1079,7 @@ function restoreusetrigger()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27be
 // Size: 0x20
 function function_309305a89c073495()
@@ -1083,7 +1090,7 @@ function function_309305a89c073495()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27e6
 // Size: 0x18b
 function function_79a41152cd2dc1f7( player )
@@ -1124,7 +1131,7 @@ function function_79a41152cd2dc1f7( player )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2979
 // Size: 0x7d
 function function_2591bed1172e3c08( isbuild )
@@ -1149,7 +1156,7 @@ function function_2591bed1172e3c08( isbuild )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x29fe
 // Size: 0xf8
 function function_70d8ab10eee1b4d5( isallowed, buildable )
@@ -1180,7 +1187,7 @@ function function_70d8ab10eee1b4d5( isallowed, buildable )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2afe
 // Size: 0x1f, Type: bool
 function function_7fdf326deb449f4e()
@@ -1189,7 +1196,7 @@ function function_7fdf326deb449f4e()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b26
 // Size: 0x9e
 function function_ca34b4eff8624dbb( player, eventname )
@@ -1198,7 +1205,7 @@ function function_ca34b4eff8624dbb( player, eventname )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bcc
 // Size: 0x41
 function function_91f9e0306d5d65a0( objname )
@@ -1214,7 +1221,7 @@ function function_91f9e0306d5d65a0( objname )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x2c16
 // Size: 0x1fd
 function function_e2f7c2b8cdaefdd7( triggerent, hintstring, destroyusetime, destroyteam, var_5f7f91ab6d5c8af9 )
@@ -1260,7 +1267,7 @@ function function_e2f7c2b8cdaefdd7( triggerent, hintstring, destroyusetime, dest
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e1c
 // Size: 0xe2
 function function_17763afd915cc73c()
@@ -1283,7 +1290,7 @@ function function_17763afd915cc73c()
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2f06
 // Size: 0x22e
 function function_a0f277273d13196a( zoneinfo )
@@ -1336,7 +1343,7 @@ function function_a0f277273d13196a( zoneinfo )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x313c
 // Size: 0x1ca
 function function_5907a34f5fb0bf04( zoneinfo )
@@ -1384,7 +1391,7 @@ function function_5907a34f5fb0bf04( zoneinfo )
 }
 
 // Namespace wm_buildable / scripts\mp\gametypes\wm_buildable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x330e
 // Size: 0x32, Type: bool
 function function_4671e4cafead83aa( var_56df20c41f5b3159, trapprogress, tankprogress )

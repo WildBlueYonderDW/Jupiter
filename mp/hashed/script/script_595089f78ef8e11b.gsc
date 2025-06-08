@@ -8,7 +8,7 @@
 #namespace zombie_vox;
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x138
 // Size: 0x10
 function function_afb445939fe4c1a4()
@@ -17,7 +17,7 @@ function function_afb445939fe4c1a4()
 }
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x150
 // Size: 0x211
 function play_vox( ai, var_c2aec59361d95878, alias, priority )
@@ -113,7 +113,7 @@ function play_vox( ai, var_c2aec59361d95878, alias, priority )
 }
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x369
 // Size: 0x45
 function function_fc041668d6654de8()
@@ -127,7 +127,7 @@ function function_fc041668d6654de8()
 }
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b7
 // Size: 0x3f
 function function_5420e83b135ec96f( time_ms, priority )
@@ -137,7 +137,7 @@ function function_5420e83b135ec96f( time_ms, priority )
 }
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3fe
 // Size: 0x26
 function function_4922184552eb149()
@@ -147,7 +147,7 @@ function function_4922184552eb149()
 }
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x42c
 // Size: 0x25
 function function_9c62fac1f9fdd26c()
@@ -157,7 +157,7 @@ function function_9c62fac1f9fdd26c()
 }
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x459
 // Size: 0xb9
 function function_f11270bb42f7f080( notify_string, var_c2aec59361d95878, alias, priority )
@@ -172,7 +172,7 @@ function function_f11270bb42f7f080( notify_string, var_c2aec59361d95878, alias, 
 }
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x51a
 // Size: 0xc3
 function function_ea9336bca9113548( var_a8a2867722a244ed, notify_string, var_c2aec59361d95878, alias, priority )
@@ -196,7 +196,7 @@ function private function_e423d82a410af5dc( state )
 }
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x600
 // Size: 0x105
 function function_f707c26d8f269f94( event )
@@ -237,7 +237,7 @@ function function_f707c26d8f269f94( event )
 }
 
 // Namespace zombie_vox / namespace_4962e6c1ee31d561
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x70d
 // Size: 0x15
 function function_3b76e1d247d2f5a( var_74e2482f0c021e12 )

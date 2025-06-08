@@ -5,7 +5,7 @@
 #namespace namespace_8c8677d2a078818d;
 
 // Namespace namespace_8c8677d2a078818d / namespace_f77f8b2f20f85e34
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe1
 // Size: 0x23
 function init()
@@ -19,7 +19,7 @@ function init()
 }
 
 // Namespace namespace_8c8677d2a078818d / namespace_f77f8b2f20f85e34
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10c
 // Size: 0xca
 function function_e8ab535c260b2949( winner, endreasontext, nukedetonated )
@@ -58,7 +58,7 @@ function function_e8ab535c260b2949( winner, endreasontext, nukedetonated )
 }
 
 // Namespace namespace_8c8677d2a078818d / namespace_f77f8b2f20f85e34
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1de
 // Size: 0xc7
 function function_9049bca68f1f0984( topplayers )

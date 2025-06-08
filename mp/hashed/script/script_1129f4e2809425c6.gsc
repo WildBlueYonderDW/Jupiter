@@ -13,7 +13,7 @@
 #namespace retreat;
 
 // Namespace retreat / namespace_2730bb41e47f262e
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x187
 // Size: 0x15
 function function_eda57308516bfc5f()
@@ -22,7 +22,7 @@ function function_eda57308516bfc5f()
 }
 
 // Namespace retreat / namespace_2730bb41e47f262e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a5
 // Size: 0x38a
 function evaluatescore( bot )
@@ -110,7 +110,7 @@ function evaluatescore( bot )
 }
 
 // Namespace retreat / namespace_2730bb41e47f262e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x538
 // Size: 0x57
 function createaction( target )
@@ -121,7 +121,7 @@ function createaction( target )
 }
 
 // Namespace retreat / namespace_2730bb41e47f262e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x598
 // Size: 0x10a
 function actionprocess( bot )
@@ -165,7 +165,7 @@ function actionprocess( bot )
 }
 
 // Namespace retreat / namespace_2730bb41e47f262e
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6aa
 // Size: 0x22a
 function function_6da2bc8030016571( bot, target )
@@ -221,7 +221,7 @@ function function_6da2bc8030016571( bot, target )
 }
 
 // Namespace retreat / namespace_2730bb41e47f262e
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8dd
 // Size: 0xba, Type: bool
 function function_a01120d129fa7b98( victimorigin, attackerorigin )
@@ -243,7 +243,7 @@ function function_a01120d129fa7b98( victimorigin, attackerorigin )
 }
 
 // Namespace retreat / namespace_2730bb41e47f262e
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9a0
 // Size: 0x94
 function function_27d1cc325885f9b9( victimorigin, attackerorigin )
@@ -266,7 +266,7 @@ function function_27d1cc325885f9b9( victimorigin, attackerorigin )
 }
 
 // Namespace retreat / namespace_2730bb41e47f262e
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa3c
 // Size: 0x1c
 function function_f4caae7e8af9d32c( action )

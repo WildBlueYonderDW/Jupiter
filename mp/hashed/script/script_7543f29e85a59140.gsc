@@ -14,7 +14,7 @@ function autoexec main()
 }
 
 // Namespace namespace_c423e7ace4707941 / namespace_85544694a2e84ce8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x165
 // Size: 0x63
 function perk_register( params )
@@ -33,7 +33,7 @@ function perk_register( params )
 }
 
 // Namespace namespace_c423e7ace4707941 / namespace_85544694a2e84ce8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d0
 // Size: 0x18
 function perk_set()
@@ -43,7 +43,7 @@ function perk_set()
 }
 
 // Namespace namespace_c423e7ace4707941 / namespace_85544694a2e84ce8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f0
 // Size: 0x1e
 function perk_unset()
@@ -54,7 +54,7 @@ function perk_unset()
 }
 
 // Namespace namespace_c423e7ace4707941 / namespace_85544694a2e84ce8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x216
 // Size: 0x3c
 function function_c6668bb917e966b2()
@@ -76,7 +76,7 @@ function function_c6668bb917e966b2()
 }
 
 // Namespace namespace_c423e7ace4707941 / namespace_85544694a2e84ce8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x25a
 // Size: 0x68
 function function_74ef4a883340b273()
@@ -92,7 +92,7 @@ function function_74ef4a883340b273()
 }
 
 // Namespace namespace_c423e7ace4707941 / namespace_85544694a2e84ce8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ca
 // Size: 0x30
 function function_b87b3a7ec17c52ba()

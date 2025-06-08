@@ -10,7 +10,7 @@
 #namespace vehicle_compass_mp;
 
 // Namespace vehicle_compass_mp / scripts\mp\vehicles\vehicle_compass_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x112
 // Size: 0x30
 function vehicle_compass_mp_init()
@@ -21,7 +21,7 @@ function vehicle_compass_mp_init()
 }
 
 // Namespace vehicle_compass_mp / scripts\mp\vehicles\vehicle_compass_mp
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14a
 // Size: 0x5b
 function vehicle_compass_mp_shouldbevisibletoplayer( vehicle, player )

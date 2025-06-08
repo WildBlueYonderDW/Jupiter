@@ -11,7 +11,7 @@
 #namespace jup_spawner_zombie_mangler_s3_rr;
 
 // Namespace jup_spawner_zombie_mangler_s3_rr / namespace_fdd29b87e3c76e88
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ae
 // Size: 0x173
 function main()
@@ -43,7 +43,7 @@ function main()
 }
 
 // Namespace jup_spawner_zombie_mangler_s3_rr / namespace_fdd29b87e3c76e88
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x329
 // Size: 0x57
 function setup_model()
@@ -60,7 +60,7 @@ function setup_model()
 }
 
 // Namespace jup_spawner_zombie_mangler_s3_rr / namespace_fdd29b87e3c76e88
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x388
 // Size: 0x8
 function function_9ac26a51c94ccf52()
@@ -69,7 +69,7 @@ function function_9ac26a51c94ccf52()
 }
 
 // Namespace jup_spawner_zombie_mangler_s3_rr / namespace_fdd29b87e3c76e88
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x399
 // Size: 0x100
 function precache()

@@ -1,7 +1,7 @@
 #namespace mp_jup_highrise_xmas_audio;
 
 // Namespace mp_jup_highrise_xmas_audio / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc7
 // Size: 0xa
 function main()
@@ -10,7 +10,7 @@ function main()
 }
 
 // Namespace mp_jup_highrise_xmas_audio / scripts\mp\maps\mp_jup_highrise_xmas\mp_jup_highrise_xmas_audio
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd9
 // Size: 0x4e
 function function_96aaa35375c864db()

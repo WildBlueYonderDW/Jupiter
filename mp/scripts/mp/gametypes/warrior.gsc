@@ -41,7 +41,7 @@
 #namespace warrior;
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x597
 // Size: 0x1d1
 function main()
@@ -97,7 +97,7 @@ function main()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x770
 // Size: 0x9
 function initializematchrules()
@@ -106,7 +106,7 @@ function initializematchrules()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x781
 // Size: 0xbe
 function onstartgametype()
@@ -145,7 +145,7 @@ function onstartgametype()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x847
 // Size: 0x19
 function updategametypedvars()
@@ -155,7 +155,7 @@ function updategametypedvars()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x868
 // Size: 0x1f7
 function initspawns()
@@ -206,7 +206,7 @@ function initspawns()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa67
 // Size: 0x2f6
 function getspawnpoint()
@@ -232,7 +232,8 @@ function getspawnpoint()
     
     var_cafc02fbf308d35b = level.teamnamelist;
     
-    for (i = 0; i < game[ "roundsPlayed" ]; i++) {
+    for ( i = 0; i < game[ "roundsPlayed" ] ; i++ )
+    {
         var_cafc02fbf308d35b = array_add( var_cafc02fbf308d35b, var_cafc02fbf308d35b[ 0 ] );
         var_cafc02fbf308d35b = array_slice( var_cafc02fbf308d35b, 1, level.teamnamelist.size + 1 );
     }
@@ -286,7 +287,7 @@ function getspawnpoint()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd66
 // Size: 0x283
 function function_4a4c1e886036be4e()
@@ -311,7 +312,7 @@ function function_4a4c1e886036be4e()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xff1
 // Size: 0xda
 function function_a747d75f79124d88( ref, weight, triggerfunc, var_c8bf09356ba2b89a, var_65429a5fb9ead47a, timelimit )
@@ -331,7 +332,7 @@ function function_a747d75f79124d88( ref, weight, triggerfunc, var_c8bf09356ba2b8
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10d3
 // Size: 0xed
 function function_93d4ef801ec5a9d3()
@@ -368,7 +369,7 @@ function function_93d4ef801ec5a9d3()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x11c8
 // Size: 0x69
 function function_7b7b385bbe43578b( minigame )
@@ -389,7 +390,7 @@ function function_7b7b385bbe43578b( minigame )
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1239
 // Size: 0x1d
 function function_3c83e1443071c31e()
@@ -398,7 +399,7 @@ function function_3c83e1443071c31e()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x125e
 // Size: 0x60, Type: bool
 function function_cfc9bf375c442d87()
@@ -415,7 +416,7 @@ function function_cfc9bf375c442d87()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12c7
 // Size: 0x73
 function function_c61f0b95beb2455f( ref )
@@ -435,7 +436,7 @@ function function_c61f0b95beb2455f( ref )
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1342
 // Size: 0x16
 function onscorelimit( winner )
@@ -444,7 +445,7 @@ function onscorelimit( winner )
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1360
 // Size: 0xd8
 function endgame( winner, endreasontext, nukedetonated )
@@ -482,7 +483,7 @@ function endgame( winner, endreasontext, nukedetonated )
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1440
 // Size: 0xbe
 function function_6368ff608fe6c16f( winner, endreasontext, nukedetonated )
@@ -512,7 +513,7 @@ function function_6368ff608fe6c16f( winner, endreasontext, nukedetonated )
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1507
 // Size: 0x69
 function function_492b4dec632917ec( splash )
@@ -526,7 +527,7 @@ function function_492b4dec632917ec( splash )
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1578
 // Size: 0x19
 function waittooverridegraceperiod()
@@ -536,7 +537,7 @@ function waittooverridegraceperiod()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x1599
 // Size: 0x62
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -546,7 +547,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1603
 // Size: 0x90
 function checkallowspectating()
@@ -570,7 +571,7 @@ function checkallowspectating()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x169b
 // Size: 0x8e
 function teamoutcomenotify( winner, isround, endreasontext, endreasontextloss, roundendextramessage )
@@ -587,7 +588,7 @@ function teamoutcomenotify( winner, isround, endreasontext, endreasontextloss, r
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1731
 // Size: 0x12
 function onplayerjointeam( player )
@@ -596,7 +597,7 @@ function onplayerjointeam( player )
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x174b
 // Size: 0xc3
 function onplayerdisconnect( player )
@@ -625,7 +626,7 @@ function onplayerdisconnect( player )
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1816
 // Size: 0xde
 function function_1bc5c8974d86a54()
@@ -653,7 +654,7 @@ function function_1bc5c8974d86a54()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x18fc
 // Size: 0xc6
 function function_f83dcbfcdb233c29()
@@ -681,7 +682,7 @@ function function_f83dcbfcdb233c29()
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19ca
 // Size: 0x13
 function onspawnplayer( revivespawn )
@@ -690,7 +691,7 @@ function onspawnplayer( revivespawn )
 }
 
 // Namespace warrior / scripts\mp\gametypes\warrior
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19e5
 // Size: 0x29
 function loadout_clearperks()

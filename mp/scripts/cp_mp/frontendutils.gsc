@@ -1,6 +1,6 @@
-#using script_62c9635e42f2735a;
 #using scripts\common\callbacks;
 #using scripts\common\utility;
+#using scripts\cp_mp\frontendfiringrange;
 #using scripts\cp_mp\frontendutils;
 #using scripts\engine\utility;
 #using scripts\mp\maps\mp_frontend_jup_01\mp_frontend_jup_01_lighting;
@@ -8,7 +8,7 @@
 #namespace frontendutils;
 
 // Namespace frontendutils / scripts\cp_mp\frontendutils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4604
 // Size: 0x10
 function init_frontend_utils()
@@ -18,7 +18,7 @@ function init_frontend_utils()
 }
 
 // Namespace frontendutils / scripts\cp_mp\frontendutils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x461c
 // Size: 0x61
 function function_186283adf8bff6d8()
@@ -78,7 +78,7 @@ function private on_camera_section_change( params )
 }
 
 // Namespace frontendutils / scripts\cp_mp\frontendutils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4780
 // Size: 0x23
 function function_c6044b8ca41f9f54()
@@ -88,7 +88,7 @@ function function_c6044b8ca41f9f54()
 }
 
 // Namespace frontendutils / scripts\cp_mp\frontendutils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x47ac
 // Size: 0x99
 function function_61bd6a757e62669d( gametype )
@@ -119,7 +119,8 @@ function private function_e45789a4e87d849e( world_event )
     var_f9f5d82c075a9337 = 0.05;
     total_attempts = var_1d4be4bd22a67641 / var_f9f5d82c075a9337;
     
-    for (attempt = 0; attempt < total_attempts; attempt++) {
+    for ( attempt = 0; attempt < total_attempts ; attempt++ )
+    {
         function_aa6da985e05e2780( world_event );
         wait var_f9f5d82c075a9337;
     }
@@ -181,7 +182,7 @@ function private function_93726c30d2b37614()
 }
 
 // Namespace frontendutils / scripts\cp_mp\frontendutils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x499d
 // Size: 0x6a
 function function_70a855dd0c75561c( entname )
@@ -199,7 +200,7 @@ function function_70a855dd0c75561c( entname )
 }
 
 // Namespace frontendutils / scripts\cp_mp\frontendutils
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a10
 // Size: 0x6a
 function function_abdba932e247d9c2( entname )
@@ -1223,7 +1224,8 @@ function private update_weapon_loc()
     {
         if ( isarray( level.active_scene_data.weapon_locs ) )
         {
-            for (locindex = 0; locindex <= 6; locindex++) {
+            for ( locindex = 0; locindex <= 6 ; locindex++ )
+            {
                 if ( locindex == 4 )
                 {
                     continue;
@@ -1251,7 +1253,8 @@ function private update_weapon_loc()
 // Size: 0x1ad
 function private update_arena_char_loc()
 {
-    for (charindex = 0; charindex < 8; charindex++) {
+    for ( charindex = 0; charindex < 8 ; charindex++ )
+    {
         if ( charindex < 4 )
         {
             charloc = function_70a855dd0c75561c( "tourroom_charslot_left_0" + charindex + 1 );
@@ -1276,7 +1279,8 @@ function private update_arena_char_loc()
         #/
     }
     
-    for (var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6; var_c433f957a34a5776++) {
+    for ( var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6 ; var_c433f957a34a5776++ )
+    {
         index = var_c433f957a34a5776 + 1;
         charindex = 8 + var_c433f957a34a5776;
         
@@ -1309,7 +1313,8 @@ function private function_e078e650b9311bae()
     level.characters[ 0 ].origin = charloc.origin;
     level.characters[ 0 ].angles = charloc.angles;
     
-    for (charindex = 1; charindex < 8; charindex++) {
+    for ( charindex = 1; charindex < 8 ; charindex++ )
+    {
         index = charindex + 1;
         
         if ( index < 10 )
@@ -1328,7 +1333,8 @@ function private function_e078e650b9311bae()
         }
     }
     
-    for (var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6; var_c433f957a34a5776++) {
+    for ( var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6 ; var_c433f957a34a5776++ )
+    {
         index = var_c433f957a34a5776 + 1;
         charindex = 8 + var_c433f957a34a5776;
         charloc = function_70a855dd0c75561c( "social_charslot_0" + index + "_dog" );
@@ -1362,7 +1368,8 @@ function private update_lobby_char_loc()
         }
     }
     
-    for (charindex = 1; charindex < 8; charindex++) {
+    for ( charindex = 1; charindex < 8 ; charindex++ )
+    {
         index = charindex + 1;
         
         if ( index < 10 )
@@ -1385,7 +1392,8 @@ function private update_lobby_char_loc()
         }
     }
     
-    for (var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6; var_c433f957a34a5776++) {
+    for ( var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6 ; var_c433f957a34a5776++ )
+    {
         index = var_c433f957a34a5776 + 1;
         charindex = 8 + var_c433f957a34a5776;
         charloc = function_70a855dd0c75561c( "lobby_charslot_0" + index + "_dog" );
@@ -1427,7 +1435,8 @@ function private function_b65a48a89b1a2cc0()
         }
     }
     
-    for (charindex = 1; charindex < 8; charindex++) {
+    for ( charindex = 1; charindex < 8 ; charindex++ )
+    {
         index = charindex + 1;
         
         if ( index < 10 )
@@ -1450,7 +1459,8 @@ function private function_b65a48a89b1a2cc0()
         }
     }
     
-    for (var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6; var_c433f957a34a5776++) {
+    for ( var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6 ; var_c433f957a34a5776++ )
+    {
         index = var_c433f957a34a5776 + 1;
         charindex = 8 + var_c433f957a34a5776;
         charloc = function_70a855dd0c75561c( "lobby_br_charslot_0" + index + "_dog" );
@@ -1481,7 +1491,8 @@ function private function_9c5a6e36e93eadd9()
         level function_ebc947f48c860093( 0, charloc, "<dev string:x221>" );
     #/
     
-    for (charindex = 1; charindex < 8; charindex++) {
+    for ( charindex = 1; charindex < 8 ; charindex++ )
+    {
         index = charindex + 1;
         
         if ( index < 10 )
@@ -1504,7 +1515,8 @@ function private function_9c5a6e36e93eadd9()
         }
     }
     
-    for (var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6; var_c433f957a34a5776++) {
+    for ( var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6 ; var_c433f957a34a5776++ )
+    {
         index = var_c433f957a34a5776 + 1;
         charindex = 8 + var_c433f957a34a5776;
         charloc = getent( "lobby_dmz_charslot_0" + index + "_dog", "targetname" );
@@ -1535,7 +1547,8 @@ function private function_18d1a39cc5732fb1()
         level function_ebc947f48c860093( 0, charloc, "<dev string:x221>" );
     #/
     
-    for (charindex = 1; charindex < 8; charindex++) {
+    for ( charindex = 1; charindex < 8 ; charindex++ )
+    {
         index = charindex + 1;
         
         if ( index < 10 )
@@ -1558,7 +1571,8 @@ function private function_18d1a39cc5732fb1()
         }
     }
     
-    for (var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6; var_c433f957a34a5776++) {
+    for ( var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6 ; var_c433f957a34a5776++ )
+    {
         index = var_c433f957a34a5776 + 1;
         charindex = 8 + var_c433f957a34a5776;
         charloc = function_70a855dd0c75561c( "crib_dmz_charslot_0" + index + "_dog" );
@@ -2136,7 +2150,8 @@ function private xcam_transition( scenename )
     
     level.xcam_anchor.intransition = 1;
     
-    for (i = 0; i < transitionsize; i++) {
+    for ( i = 0; i < transitionsize ; i++ )
+    {
         function_5aea88c7c01479db( level.var_d45fb3ee26047877[ scenename ][ "transitions" ][ i ], 0, blendtime, level.xcam_anchor );
         
         if ( i < transitionsize - 1 )
@@ -3117,7 +3132,8 @@ function private function_3c8d38b326a9c64f( tagarray )
     var_cf03c81cb9cfe7c[ 28 ] = 235;
     var_cf03c81cb9cfe7c[ 29 ] = 0;
     
-    for (i = 0; i < tagarray.size; i++) {
+    for ( i = 0; i < tagarray.size ; i++ )
+    {
         if ( i > 7 && i < 16 )
         {
             if ( tagarray[ i ] != "none" )
@@ -3296,7 +3312,7 @@ function private function_d5386639bf9fc14c( sectionfrom )
 }
 
 // Namespace frontendutils / scripts\cp_mp\frontendutils
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcfd7
 // Size: 0x40
 function function_b7807ab9efbe2177()
@@ -6083,7 +6099,8 @@ function private setup_initial_entities()
     ismgl = getdvarint( @"mgl", 0 ) > 0;
     level.characters = [];
     
-    for (charindex = 0; charindex < 8; charindex++) {
+    for ( charindex = 0; charindex < 8 ; charindex++ )
+    {
         charloc = undefined;
         index = charindex + 1;
         
@@ -6102,7 +6119,8 @@ function private setup_initial_entities()
     level.characters[ 16 ] = spawn( "script_character", level.characters[ 0 ].origin, 0, 0, 16, "MPClientCharacter" );
     level.characters[ 16 ].angles = ( 0, 270, 0 );
     
-    for (var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6; var_c433f957a34a5776++) {
+    for ( var_c433f957a34a5776 = 0; var_c433f957a34a5776 < 6 ; var_c433f957a34a5776++ )
+    {
         index = var_c433f957a34a5776 + 1;
         charindex = 8 + var_c433f957a34a5776;
         charloc = function_70a855dd0c75561c( "lobby_charslot_0" + index + "_dog" );

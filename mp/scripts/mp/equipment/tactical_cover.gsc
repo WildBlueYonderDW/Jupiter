@@ -38,7 +38,7 @@
 #namespace tactical_cover;
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x879
 // Size: 0x1bd
 function tac_cover_init()
@@ -90,7 +90,7 @@ function tac_cover_init()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa3e
 // Size: 0x3f
 function tac_cover_on_give( ref, slot, variantid )
@@ -106,7 +106,7 @@ function tac_cover_on_give( ref, slot, variantid )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa85
 // Size: 0x2d
 function tac_cover_on_take( ref, slot, issuper )
@@ -116,7 +116,7 @@ function tac_cover_on_take( ref, slot, issuper )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaba
 // Size: 0x24
 function tac_cover_used( grenade )
@@ -135,7 +135,7 @@ function tac_cover_used( grenade )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xae6
 // Size: 0xd18, Type: bool
 function tac_cover_on_fired( ref, slot, objweapon, issuper )
@@ -534,7 +534,7 @@ function tac_cover_on_fired( ref, slot, objweapon, issuper )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1807
 // Size: 0x1d
 function tac_cover_get_stuck_to_ent( hitent )
@@ -551,7 +551,7 @@ function tac_cover_get_stuck_to_ent( hitent )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x182d
 // Size: 0x78, Type: bool
 function is_train_ent( hitent )
@@ -571,7 +571,7 @@ function is_train_ent( hitent )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18ae
 // Size: 0x293
 function function_1d1bf10a8da86b91( spawnpos )
@@ -639,7 +639,7 @@ function function_1d1bf10a8da86b91( spawnpos )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1b4a
 // Size: 0x17d
 function tac_cover_adjust_for_player_space( spawnpos, spawnangles, contents, var_140b9fa52f1f56c )
@@ -694,7 +694,7 @@ function tac_cover_adjust_for_player_space( spawnpos, spawnangles, contents, var
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1cd0
 // Size: 0x257
 function tac_cover_get_free_space( isfrontcheck, spawnpos, spawnangles, contents, maxcheckdist )
@@ -750,7 +750,7 @@ function tac_cover_get_free_space( isfrontcheck, spawnpos, spawnangles, contents
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f30
 // Size: 0x93, Type: bool
 function tac_cover_blocked_by_turret( targetpos )
@@ -777,7 +777,7 @@ function tac_cover_blocked_by_turret( targetpos )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fcc
 // Size: 0x65
 function tac_cover_fire_failed( isdoorblocked )
@@ -794,7 +794,7 @@ function tac_cover_fire_failed( isdoorblocked )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2039
 // Size: 0x26
 function function_dba0e6107f51d41e()
@@ -807,7 +807,7 @@ function function_dba0e6107f51d41e()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2067
 // Size: 0x43
 function function_cd0c066b3516bcb0()
@@ -825,7 +825,7 @@ function function_cd0c066b3516bcb0()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20b2
 // Size: 0xb
 function tac_cover_entmanagerdelete()
@@ -834,7 +834,7 @@ function tac_cover_entmanagerdelete()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x20c5
 // Size: 0x17f
 function tac_cover_spawn_with_door( door, doubledoor, issuper, contents )
@@ -865,7 +865,7 @@ function tac_cover_spawn_with_door( door, doubledoor, issuper, contents )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x224c
 // Size: 0x15
 function function_49197cd063a740ea( callbackfunction )
@@ -874,7 +874,7 @@ function function_49197cd063a740ea( callbackfunction )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x2269
 // Size: 0x4e0
 function tac_cover_spawn( position, angles, stuckto, issuper, contents, door, doubledoor )
@@ -1023,7 +1023,7 @@ function tac_cover_spawn( position, angles, stuckto, issuper, contents, door, do
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2751
 // Size: 0xa2
 function tac_cover_spawn_internal( cover )
@@ -1061,7 +1061,7 @@ function tac_cover_spawn_internal( cover )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x27fb
 // Size: 0xf8
 function tac_cover_spawn_collision( cover )
@@ -1087,7 +1087,7 @@ function tac_cover_spawn_collision( cover )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x28fc
 // Size: 0x186
 function tac_cover_destroy( immediate, wasdestroyed, killedbyexplosive )
@@ -1139,7 +1139,7 @@ function tac_cover_destroy( immediate, wasdestroyed, killedbyexplosive )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2a8a
 // Size: 0x12c
 function tac_cover_destroy_internal( deletiondelay, killedbyexplosive )
@@ -1194,7 +1194,7 @@ function tac_cover_destroy_internal( deletiondelay, killedbyexplosive )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2bbe
 // Size: 0xa6
 function tac_cover_delete( deletiondelay )
@@ -1231,7 +1231,7 @@ function tac_cover_delete( deletiondelay )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c6c
 // Size: 0x1d
 function tac_cover_destroy_on_timeout()
@@ -1242,7 +1242,7 @@ function tac_cover_destroy_on_timeout()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c91
 // Size: 0x1b
 function tac_cover_destroy_on_game_end()
@@ -1253,7 +1253,7 @@ function tac_cover_destroy_on_game_end()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2cb4
 // Size: 0x21
 function tac_cover_destroy_on_unstuck()
@@ -1269,7 +1269,7 @@ function tac_cover_destroy_on_unstuck()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2cdd
 // Size: 0x7e
 function tac_cover_set_can_damage( bool )
@@ -1292,7 +1292,7 @@ function tac_cover_set_can_damage( bool )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d63
 // Size: 0x109
 function tac_cover_handle_damage( data )
@@ -1317,7 +1317,7 @@ function tac_cover_handle_damage( data )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e75
 // Size: 0x218
 function tac_cover_adjust_damage( data )
@@ -1397,7 +1397,7 @@ function tac_cover_adjust_damage( data )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3096
 // Size: 0x101
 function tac_cover_handle_fatal_damage( data )
@@ -1432,7 +1432,7 @@ function tac_cover_handle_fatal_damage( data )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x319f
 // Size: 0x85
 function tac_cover_deploy_freeze_controls()
@@ -1457,7 +1457,7 @@ function tac_cover_deploy_freeze_controls()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x322c
 // Size: 0x3a
 function tac_cover_deploy_unfreeze_controls()
@@ -1471,7 +1471,7 @@ function tac_cover_deploy_unfreeze_controls()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x326e
 // Size: 0x164
 function tac_cover_ignore_list( player )
@@ -1505,7 +1505,7 @@ function tac_cover_ignore_list( player )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33db
 // Size: 0xaa, Type: bool
 function tac_cover_can_place_on( ent )
@@ -1544,7 +1544,7 @@ function tac_cover_can_place_on( ent )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x348e
 // Size: 0x10
 function tac_cover_get_deploy_anim_dur()
@@ -1553,7 +1553,7 @@ function tac_cover_get_deploy_anim_dur()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34a7
 // Size: 0x3, Type: bool
 function tac_cover_get_destroy_anim_dur()
@@ -1562,7 +1562,7 @@ function tac_cover_get_destroy_anim_dur()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34b3
 // Size: 0xd, Type: bool
 function tac_cover_on_fired_super()
@@ -1571,7 +1571,7 @@ function tac_cover_on_fired_super()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x34c9
 // Size: 0xd
 function tac_cover_on_take_super()
@@ -1580,7 +1580,7 @@ function tac_cover_on_take_super()
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34de
 // Size: 0x36
 function tac_cover_destroy_on_disowned( owner )
@@ -1592,7 +1592,7 @@ function tac_cover_destroy_on_disowned( owner )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x351c
 // Size: 0x3a
 function function_f6464070871bdd33( owner )
@@ -1606,7 +1606,7 @@ function function_f6464070871bdd33( owner )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x355e
 // Size: 0x15
 function tac_cover_on_destroyed_by_mover( data )
@@ -1674,7 +1674,7 @@ function private function_b8ffeacf84a9d34e( var_5c4e2a948c4617a4 )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x378a
 // Size: 0x67
 function function_c5d3d6e10bd8c8ab( fixuporigin, var_cae297d0690cc359 )
@@ -1694,7 +1694,7 @@ function function_c5d3d6e10bd8c8ab( fixuporigin, var_cae297d0690cc359 )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x37f9
 // Size: 0x57
 function function_85555e609b23b2be( var_cae297d0690cc359 )
@@ -1717,7 +1717,7 @@ function function_85555e609b23b2be( var_cae297d0690cc359 )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x3859
 // Size: 0x69
 function function_f41f835b1ab9dbd8( blockerorigin, blockerrad, blockerheight, blockeroffset, var_36be730ee498727c )
@@ -1739,7 +1739,7 @@ function function_f41f835b1ab9dbd8( blockerorigin, blockerrad, blockerheight, bl
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x38ca
 // Size: 0x87, Type: bool
 function function_9461775d71e495cf( targetpos )
@@ -1761,7 +1761,7 @@ function function_9461775d71e495cf( targetpos )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x395a
 // Size: 0x87, Type: bool
 function function_ac29e794c919fe03( targetpos )
@@ -1783,7 +1783,7 @@ function function_ac29e794c919fe03( targetpos )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x39ea
 // Size: 0x11e, Type: bool
 function function_6cc8838979f47b9f( targetpos )
@@ -1816,7 +1816,7 @@ function function_6cc8838979f47b9f( targetpos )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3b11
 // Size: 0x98
 function function_d147e0986e29dd8d( org, rad, height )
@@ -1841,7 +1841,7 @@ function function_d147e0986e29dd8d( org, rad, height )
 }
 
 // Namespace tactical_cover / scripts\mp\equipment\tactical_cover
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3bb2
 // Size: 0xfd
 function function_9bd2d235e27d5068( bundle, blueprintindex )

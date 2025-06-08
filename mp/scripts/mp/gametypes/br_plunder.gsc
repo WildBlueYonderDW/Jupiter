@@ -53,7 +53,7 @@
 #namespace br_plunder;
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16c6
 // Size: 0x45f
 function init()
@@ -122,7 +122,7 @@ function init()
     initteamdatafields();
     inithelirepository();
     
-    if ( getdvarint( @"hash_91fbc1bbac0c27d7", 0 ) == 1 )
+    if ( getdvarint( @"scr_enableplunderpileoverrides", 0 ) == 1 )
     {
         processcashpilevalueoverrides();
     }
@@ -149,7 +149,7 @@ function init()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1b2d
 // Size: 0xb5
 function plunder_economy_shapshot_loop( duration, safecircleent, var_fb3b2613d6f0eb05 )
@@ -175,7 +175,7 @@ function plunder_economy_shapshot_loop( duration, safecircleent, var_fb3b2613d6f
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bea
 // Size: 0xa9
 function plunder_infils_ready()
@@ -197,7 +197,7 @@ function plunder_infils_ready()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c9b
 // Size: 0x4c
 function modify_plunder_itemsinworld( itemname, var_bc23ce7464aa4861 )
@@ -209,7 +209,7 @@ function modify_plunder_itemsinworld( itemname, var_bc23ce7464aa4861 )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1cef
 // Size: 0x288
 function setupquantities()
@@ -226,7 +226,8 @@ function setupquantities()
     level.br_plunder.names[ level.br_plunder.names.size ] = "brloot_plunder_cash_epic_2";
     level.br_plunder.names[ level.br_plunder.names.size ] = "brloot_plunder_cash_legendary_1";
     
-    for (i = 0; i < level.br_plunder.names.size; i++) {
+    for ( i = 0; i < level.br_plunder.names.size ; i++ )
+    {
         level.br_plunder.quantity[ i ] = level.br_pickups.counts[ level.br_plunder.names[ i ] ];
         
         if ( isdefined( level.br_plunder.quantity[ i - 1 ] ) )
@@ -237,7 +238,7 @@ function setupquantities()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f7f
 // Size: 0xdd
 function initvo()
@@ -262,7 +263,7 @@ function initvo()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2064
 // Size: 0x1a
 function initplunderpads()
@@ -271,7 +272,7 @@ function initplunderpads()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2086
 // Size: 0x4f
 function playerplaybankanim()
@@ -285,7 +286,7 @@ function playerplaybankanim()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20dd
 // Size: 0x6b
 function playerremoveplunderfrominventory()
@@ -301,14 +302,15 @@ function playerremoveplunderfrominventory()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2150
 // Size: 0x6d
 function disablealldepotsforplayer( player )
 {
     if ( isdefined( level.br_depots ) )
     {
-        for (i = 0; i < level.br_depots.size; i++) {
+        for ( i = 0; i < level.br_depots.size ; i++ )
+        {
             depot = level.br_depots[ i ];
             
             if ( isdefined( depot ) && !istrue( depot.disabled ) )
@@ -320,12 +322,13 @@ function disablealldepotsforplayer( player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21c5
 // Size: 0x60
 function enablealldepotsforplayer( player )
 {
-    for (i = 0; i < level.br_depots.size; i++) {
+    for ( i = 0; i < level.br_depots.size ; i++ )
+    {
         depot = level.br_depots[ i ];
         
         if ( isdefined( depot ) && !istrue( depot.disabled ) )
@@ -336,7 +339,7 @@ function enablealldepotsforplayer( player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x222d
 // Size: 0x31
 function depotmakeusabletoplayer( player )
@@ -350,7 +353,7 @@ function depotmakeusabletoplayer( player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2266
 // Size: 0x31
 function depotmakeunusabletoplayer( player )
@@ -364,7 +367,7 @@ function depotmakeunusabletoplayer( player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x229f
 // Size: 0x36
 function depotmakeunsabletoall()
@@ -379,7 +382,7 @@ function depotmakeunsabletoall()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x22dd
 // Size: 0xd8
 function initplayer( revivespawn )
@@ -429,7 +432,7 @@ function initplayer( revivespawn )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23bd
 // Size: 0x18
 function playerdropplunder()
@@ -443,7 +446,7 @@ function playerdropplunder()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23dd
 // Size: 0x89
 function bankplunderongameended()
@@ -460,7 +463,7 @@ function bankplunderongameended()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x246e
 // Size: 0xaf
 function playerdropplunderondeath( dropstruct, attacker, allowautopickup )
@@ -491,7 +494,7 @@ function playerdropplunderondeath( dropstruct, attacker, allowautopickup )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2525
 // Size: 0x242
 function function_79275e2fab13f54d()
@@ -558,7 +561,7 @@ function function_79275e2fab13f54d()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2770
 // Size: 0x226
 function takeplunderpickup( pickupent )
@@ -611,7 +614,7 @@ function takeplunderpickup( pickupent )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x299e
 // Size: 0x45
 function function_5efeff555d3c3ab4( itemname )
@@ -628,7 +631,7 @@ function function_5efeff555d3c3ab4( itemname )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29eb
 // Size: 0x7e
 function initplayerplunderevents()
@@ -648,7 +651,7 @@ function initplayerplunderevents()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x2a71
 // Size: 0x7a
 function playerplunderpickup( amount, data, wasscoreevent, var_cc1314400858994c )
@@ -663,7 +666,7 @@ function playerplunderpickup( amount, data, wasscoreevent, var_cc1314400858994c 
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2af3
 // Size: 0x2e
 function playerplunderdeposit( amount, entity, data )
@@ -673,7 +676,7 @@ function playerplunderdeposit( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b2a
 // Size: 0x26
 function playerplunderbank( amount, entity, data )
@@ -682,7 +685,7 @@ function playerplunderbank( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2b59
 // Size: 0x1e
 function playerplunderlose( amount, data )
@@ -691,7 +694,7 @@ function playerplunderlose( amount, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b80
 // Size: 0x26
 function playerplunderbankdeposit( amount, entity, data )
@@ -700,7 +703,7 @@ function playerplunderbankdeposit( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2baf
 // Size: 0x26
 function playerplunderlosedeposit( amount, entity, data )
@@ -709,7 +712,7 @@ function playerplunderlosedeposit( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2bde
 // Size: 0xba
 function playerplunderkioskpurchase( amount, data )
@@ -738,7 +741,7 @@ function playerplunderkioskpurchase( amount, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ca1
 // Size: 0x1e
 function playerplunderdrop( amount, data )
@@ -747,7 +750,7 @@ function playerplunderdrop( amount, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2cc8
 // Size: 0x1e
 function function_2334bcc55c8a6242( amount, data )
@@ -756,7 +759,7 @@ function function_2334bcc55c8a6242( amount, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x2cef
 // Size: 0x52a
 function playerplunderevent( amount, type, entity, data, wasscoreevent, var_b3a04f426ffebcbf )
@@ -924,7 +927,7 @@ function playerplunderevent( amount, type, entity, data, wasscoreevent, var_b3a0
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3222
 // Size: 0x98
 function function_5a2284274d70f7d( trackingtype, amount )
@@ -948,7 +951,7 @@ function function_5a2284274d70f7d( trackingtype, amount )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x32c2
 // Size: 0xfc
 function packextrascore0( data )
@@ -1001,7 +1004,7 @@ function packextrascore0( data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x33c6
 // Size: 0x74
 function validateplundereventtype( type )
@@ -1026,7 +1029,7 @@ function validateplundereventtype( type )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3442
 // Size: 0x50
 function playerplunderpickupcallback( amount, entity, data )
@@ -1046,7 +1049,7 @@ function playerplunderpickupcallback( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x349b
 // Size: 0x28e
 function playerplunderdepositcallback( amount, entity, data )
@@ -1126,7 +1129,7 @@ function playerplunderdepositcallback( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3732
 // Size: 0x22b
 function playerplunderbankcallback( amount, entity, data )
@@ -1192,7 +1195,7 @@ function playerplunderbankcallback( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3966
 // Size: 0x2a
 function playerplunderlosecallback( amount, entity, data )
@@ -1206,7 +1209,7 @@ function playerplunderlosecallback( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3999
 // Size: 0x28e
 function playerplunderbankdepositcallback( amount, entity, data )
@@ -1278,7 +1281,7 @@ function playerplunderbankdepositcallback( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3c30
 // Size: 0x16e
 function playerplunderlosedepositcallback( amount, entity, data )
@@ -1326,7 +1329,7 @@ function playerplunderlosedepositcallback( amount, entity, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3da7
 // Size: 0x3ef
 function entityplunderbankalldeposited( data )
@@ -1428,7 +1431,7 @@ function entityplunderbankalldeposited( data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x419f
 // Size: 0x2e0
 function entityplunderlosealldeposited( dropplunder, data )
@@ -1510,7 +1513,7 @@ function entityplunderlosealldeposited( dropplunder, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4488
 // Size: 0x8f
 function createplayerplundereventdata( player, team )
@@ -1534,7 +1537,7 @@ function createplayerplundereventdata( player, team )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4520
 // Size: 0x180
 function copyplayerplundereventdata( var_f58ee9ff02b66e9d, player, team )
@@ -1590,7 +1593,7 @@ function copyplayerplundereventdata( var_f58ee9ff02b66e9d, player, team )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x46a9
 // Size: 0x263
 function playersetplundercount( plundercount, data )
@@ -1675,7 +1678,7 @@ function playersetplundercount( plundercount, data )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4914
 // Size: 0x2d
 function playersetplunderomnvar( value )
@@ -1686,7 +1689,7 @@ function playersetplunderomnvar( value )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x4949
 // Size: 0x7b
 function getpackeddata( value, var_7009da06a8a620cb, bitoffset, bitwidth )
@@ -1700,7 +1703,7 @@ function getpackeddata( value, var_7009da06a8a620cb, bitoffset, bitwidth )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x49cd
 // Size: 0x17a
 function playergetplunderomnvarbitpackinginfo()
@@ -1732,7 +1735,7 @@ function playergetplunderomnvarbitpackinginfo()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4b50
 // Size: 0x112
 function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradius )
@@ -1745,7 +1748,8 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
     var_52d59c928eb97c81 = dangercircleradius + thresholdradius;
     var_d16b5e09ee5dde91 = var_52d59c928eb97c81 * var_52d59c928eb97c81;
     
-    for (i = 0; i < level.br_depots.size; i++) {
+    for ( i = 0; i < level.br_depots.size ; i++ )
+    {
         depot = level.br_depots[ i ];
         
         if ( isdefined( depot ) && !istrue( depot.disabled ) && distance2dsquared( dangercircleorigin, depot.origin ) > var_d16b5e09ee5dde91 )
@@ -1754,7 +1758,8 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
         }
     }
     
-    for (i = 0; i < level.br_plunder_sites.size; i++) {
+    for ( i = 0; i < level.br_plunder_sites.size ; i++ )
+    {
         site = level.br_plunder_sites[ i ];
         
         if ( isdefined( site ) && !istrue( site.disabled ) && distance2dsquared( dangercircleorigin, site.origin ) > var_d16b5e09ee5dde91 )
@@ -1765,7 +1770,7 @@ function dangercircletick( dangercircleorigin, dangercircleradius, thresholdradi
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4c6a
 // Size: 0xe7
 function function_1a1709943670772a()
@@ -1775,7 +1780,8 @@ function function_1a1709943670772a()
         return;
     }
     
-    for (i = 0; i < level.br_depots.size; i++) {
+    for ( i = 0; i < level.br_depots.size ; i++ )
+    {
         depot = level.br_depots[ i ];
         
         if ( isdefined( depot ) && !istrue( depot.disabled ) && !scripts\mp\gametypes\br_circle_util::ispointinmulticircledanger( depot.origin ) )
@@ -1784,7 +1790,8 @@ function function_1a1709943670772a()
         }
     }
     
-    for (i = 0; i < level.br_plunder_sites.size; i++) {
+    for ( i = 0; i < level.br_plunder_sites.size ; i++ )
+    {
         site = level.br_plunder_sites[ i ];
         
         if ( isdefined( site ) && !istrue( site.disabled ) && !scripts\mp\gametypes\br_circle_util::ispointinmulticircledanger( site.origin ) )
@@ -1795,7 +1802,7 @@ function function_1a1709943670772a()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d59
 // Size: 0x25
 function function_28f5f133ca1f9d8()
@@ -1806,7 +1813,7 @@ function function_28f5f133ca1f9d8()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4d86
 // Size: 0x3a
 function function_8682a8796fd4b35f()
@@ -1817,7 +1824,7 @@ function function_8682a8796fd4b35f()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4dc8
 // Size: 0x2f
 function playerplaydepositanim()
@@ -1833,7 +1840,7 @@ function playerplaydepositanim()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4dff
 // Size: 0x85
 function cratedropplunder()
@@ -1845,7 +1852,8 @@ function cratedropplunder()
     
     amount = 0;
     
-    for (i = 0; i < self.plunder.size; i++) {
+    for ( i = 0; i < self.plunder.size ; i++ )
+    {
         amount += self.plunder[ i ].plundercount;
     }
     
@@ -1855,7 +1863,7 @@ function cratedropplunder()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4e8c
 // Size: 0x109
 function dropplundersounds( droporigin, numdrops )
@@ -1899,7 +1907,7 @@ function dropplundersounds( droporigin, numdrops )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x4f9d
 // Size: 0x267
 function dropplunderbyrarity( amount, dropstruct, numitems )
@@ -1919,7 +1927,8 @@ function dropplunderbyrarity( amount, dropstruct, numitems )
         maxcount = numitems;
     }
     
-    for (i = level.br_plunder.quantity.size - 1; i >= 0; i--) {
+    for ( i = level.br_plunder.quantity.size - 1; i >= 0 ; i-- )
+    {
         numspawns[ i ] = int( amount / level.br_plunder.quantity[ i ] );
         numspawns[ i ] = int( clamp( numspawns[ i ], 0, maxcount - totalcount ) );
         totalcount += numspawns[ i ];
@@ -1932,13 +1941,15 @@ function dropplunderbyrarity( amount, dropstruct, numitems )
         amount -= numspawns[ i ] * level.br_plunder.quantity[ i ];
     }
     
-    for (var_f90d0e006a1f717b = level.br_plunder.quantity.size - 1; var_f90d0e006a1f717b >= 0; var_f90d0e006a1f717b--) {
+    for ( var_f90d0e006a1f717b = level.br_plunder.quantity.size - 1; var_f90d0e006a1f717b >= 0 ; var_f90d0e006a1f717b-- )
+    {
         if ( !isdefined( numspawns[ var_f90d0e006a1f717b ] ) )
         {
             continue;
         }
         
-        for (itemindex = 0; itemindex < numspawns[ var_f90d0e006a1f717b ]; itemindex++) {
+        for ( itemindex = 0; itemindex < numspawns[ var_f90d0e006a1f717b ] ; itemindex++ )
+        {
             dropinfo = scripts\mp\gametypes\br_pickups::getitemdroporiginandangles( dropstruct, self.origin, self.angles, self );
             pickupent = scripts\mp\gametypes\br_pickups::spawnpickup( level.br_plunder.names[ var_f90d0e006a1f717b ], dropinfo, level.br_plunder.quantity[ var_f90d0e006a1f717b ], 1 );
             scripts\mp\gametypes\br_plunder::modify_plunder_itemsinworld( level.br_plunder.names[ var_f90d0e006a1f717b ], 1 );
@@ -1962,7 +1973,7 @@ function dropplunderbyrarity( amount, dropstruct, numitems )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x520d
 // Size: 0x1db
 function dropcondensedplunder( amount, dropstruct, allowautopickup )
@@ -1981,7 +1992,8 @@ function dropcondensedplunder( amount, dropstruct, allowautopickup )
     numspawns = [];
     var_8e0b722357754d9e = 0;
     
-    for (i = level.br_plunder.names.size - 1; i >= 0; i--) {
+    for ( i = level.br_plunder.names.size - 1; i >= 0 ; i-- )
+    {
         if ( amount >= level.br_plunder.quantity[ i ] )
         {
             var_8e0b722357754d9e = i;
@@ -1990,7 +2002,7 @@ function dropcondensedplunder( amount, dropstruct, allowautopickup )
     }
     
     dropinfo = scripts\mp\gametypes\br_pickups::getitemdroporiginandangles( dropstruct, self.origin, self.angles, self );
-    autopickup = isalive( self ) || istrue( allowautopickup ) || getdvarint( @"hash_56a4511198080c62", 1 );
+    autopickup = isalive( self ) || istrue( allowautopickup ) || getdvarint( @"scr_br_allow_auto_pickup_dropped_plunder", 1 );
     pickupent = scripts\mp\gametypes\br_pickups::spawnpickup( level.br_plunder.names[ var_8e0b722357754d9e ], dropinfo, amount, 1, undefined, autopickup );
     scripts\mp\gametypes\br_plunder::modify_plunder_itemsinworld( level.br_plunder.names[ var_8e0b722357754d9e ], 1 );
     
@@ -2014,7 +2026,7 @@ function dropcondensedplunder( amount, dropstruct, allowautopickup )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x53f1
 // Size: 0x4c, Type: bool
 function isplunderextractionenabled()
@@ -2029,7 +2041,7 @@ function isplunderextractionenabled()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5446
 // Size: 0x5f
 function initheliextractanims()
@@ -2040,7 +2052,7 @@ function initheliextractanims()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x54ad
 // Size: 0xce
 function inithelipropanims()
@@ -2055,7 +2067,7 @@ function inithelipropanims()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5583
 // Size: 0x231
 function inithelirepository()
@@ -2102,7 +2114,7 @@ function inithelirepository()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x57bc
 // Size: 0x1ad
 function getplunderextractionsites()
@@ -2152,7 +2164,7 @@ function getplunderextractionsites()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5971
 // Size: 0x41
 function function_c383497e5f14e368( structname, sitestruct )
@@ -2167,7 +2179,7 @@ function function_c383497e5f14e368( structname, sitestruct )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x59bb
 // Size: 0x456
 function setupplunderextractionsites()
@@ -2185,7 +2197,7 @@ function setupplunderextractionsites()
     level.br_plunder_site_use_states[ level.br_plunder_site_use_states.size ] = "activecurrent";
     level.br_plunder_site_use_states[ level.br_plunder_site_use_states.size ] = "visiblecurrent";
     
-    if ( isplunderextractionenabled() && getdvarint( @"hash_28df7f89e6eab57c", 0 ) && getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( isplunderextractionenabled() && getdvarint( @"hash_28df7f89e6eab57c", 0 ) && getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         foreach ( site in level.br_plunder_sites )
         {
@@ -2242,7 +2254,7 @@ function setupplunderextractionsites()
     
     sites = level.br_plunder_sites;
     
-    if ( getdvarint( @"hash_28df7f89e6eab57c", 0 ) && getdvarint( @"hash_89be1a979c1ec008", 0 ) )
+    if ( getdvarint( @"hash_28df7f89e6eab57c", 0 ) && getdvarint( @"scr_ssc_enabled", 0 ) )
     {
         sites = level.var_88e8c04e60a1092c;
         level.var_88e8c04e60a1092c = undefined;
@@ -2258,7 +2270,7 @@ function setupplunderextractionsites()
 /#
 
     // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x5e19
     // Size: 0x13d, Type: dev
     function function_21d60852fb677f98()
@@ -2297,7 +2309,7 @@ function setupplunderextractionsites()
 #/
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f5e
 // Size: 0x11
 function function_ded34f2b3889fdab( structname )
@@ -2306,7 +2318,7 @@ function function_ded34f2b3889fdab( structname )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f78
 // Size: 0x1f
 function getallextractspawninstances()
@@ -2321,7 +2333,7 @@ function getallextractspawninstances()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5fa0
 // Size: 0x83
 function setextractspawninstances( instances )
@@ -2340,7 +2352,7 @@ function setextractspawninstances( instances )
 /#
 
     // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x602b
     // Size: 0x158, Type: dev
     function debugextractsite( site )
@@ -2375,7 +2387,7 @@ function setextractspawninstances( instances )
 #/
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x618b
 // Size: 0x141
 function plundersiteused( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -2430,7 +2442,7 @@ function plundersiteused( instance, part, state, player, var_a5b2c541413aa895, u
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x62d4
 // Size: 0x33f
 function plundersiteusedinternal( instance, part, state, player )
@@ -2502,7 +2514,7 @@ function plundersiteusedinternal( instance, part, state, player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x661b
 // Size: 0x75
 function _getsingleplunderextractlocations( var_532388c61e12b9df, maxlocations )
@@ -2518,7 +2530,8 @@ function _getsingleplunderextractlocations( var_532388c61e12b9df, maxlocations )
     {
         var_532388c61e12b9df = scripts\engine\utility::array_randomize( var_532388c61e12b9df );
         
-        for (i = 0; i < var_532388c61e12b9df.size; i++) {
+        for ( i = 0; i < var_532388c61e12b9df.size ; i++ )
+        {
             if ( !array_contains( level.br_plunder_sites, var_532388c61e12b9df[ i ] ) )
             {
                 site = var_532388c61e12b9df[ i ];
@@ -2531,7 +2544,7 @@ function _getsingleplunderextractlocations( var_532388c61e12b9df, maxlocations )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6699
 // Size: 0x157
 function findnewplunderextractsite( oldsite )
@@ -2556,7 +2569,7 @@ function findnewplunderextractsite( oldsite )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x67f8
 // Size: 0x1a
 function playerthrowsmokesignal()
@@ -2566,7 +2579,7 @@ function playerthrowsmokesignal()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x681a
 // Size: 0x4b
 function playerdenyextraction( weaponobject, localizedstring )
@@ -2582,7 +2595,7 @@ function playerdenyextraction( weaponobject, localizedstring )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x686d
 // Size: 0xb4
 function createsmokesignalfx( position )
@@ -2605,7 +2618,7 @@ function createsmokesignalfx( position )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x6929
 // Size: 0x1d7
 function playerspawnextractchopper( position, site )
@@ -2660,7 +2673,7 @@ function playerspawnextractchopper( position, site )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b09
 // Size: 0x87
 function getextractionpadent( extractpos )
@@ -2680,7 +2693,7 @@ function getextractionpadent( extractpos )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6b99
 // Size: 0x149
 function getclearpathflightyaw( site, var_e58119f7c6eb5b4d, var_d3970a3e6c77212e )
@@ -2733,7 +2746,7 @@ function getclearpathflightyaw( site, var_e58119f7c6eb5b4d, var_d3970a3e6c77212e
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ceb
 // Size: 0x15c
 function drophelicrate( heli )
@@ -2769,7 +2782,7 @@ function drophelicrate( heli )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6e4f
 // Size: 0x8e
 function calculatehelitimetoflysec( distinches, speedmph, accelmph )
@@ -2785,7 +2798,7 @@ function calculatehelitimetoflysec( distinches, speedmph, accelmph )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6ee6
 // Size: 0x4d
 function calculatehelitimetoarrive( var_625180ce8d2f8f77 )
@@ -2797,7 +2810,7 @@ function calculatehelitimetoarrive( var_625180ce8d2f8f77 )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6f3c
 // Size: 0xd1
 function heligotoplunderrepository( plunderrepository )
@@ -2828,7 +2841,7 @@ function heligotoplunderrepository( plunderrepository )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7015
 // Size: 0xf3
 function heliwaitatplunderrepository( plunderrepository )
@@ -2870,7 +2883,7 @@ function heliwaitatplunderrepository( plunderrepository )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7110
 // Size: 0xbc
 function helibankplunder( plunderrepository )
@@ -2890,7 +2903,7 @@ function helibankplunder( plunderrepository )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x71d4
 // Size: 0x199
 function spawnropeandbag( heli )
@@ -2925,7 +2938,7 @@ function spawnropeandbag( heli )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x7375
 // Size: 0x34c
 function spawnheli( owner, enterpos, descendpos, hoverpos, extractgroundpos )
@@ -2992,7 +3005,7 @@ function spawnheli( owner, enterpos, descendpos, hoverpos, extractgroundpos )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x76ca
 // Size: 0x32
 function helicratedelete( heli )
@@ -3010,7 +3023,7 @@ function helicratedelete( heli )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7704
 // Size: 0x13a
 function helidestroyed()
@@ -3048,7 +3061,7 @@ function helidestroyed()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7846
 // Size: 0x75
 function helicleanup()
@@ -3075,7 +3088,7 @@ function helicleanup()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x78c3
 // Size: 0xe8
 function heliexplode( attacker )
@@ -3094,7 +3107,7 @@ function heliexplode( attacker )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79b3
 // Size: 0x11
 function helidelete()
@@ -3104,7 +3117,7 @@ function helidelete()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x79cc
 // Size: 0x50
 function helicrash( speed )
@@ -3117,7 +3130,7 @@ function helicrash( speed )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0x7a24
 // Size: 0x1a6
 function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, attachtagname, partname, eventid )
@@ -3158,7 +3171,7 @@ function callback_vehicledamage( inflictor, attacker, damage, dflags, meansofdea
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7bd2
 // Size: 0x1e0
 function helileave( fromtimeout )
@@ -3212,7 +3225,7 @@ function helileave( fromtimeout )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7dba
 // Size: 0x7c
 function function_2bbe8af3e7fa2471( vehicle, sequence )
@@ -3232,7 +3245,7 @@ function function_2bbe8af3e7fa2471( vehicle, sequence )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7e3e
 // Size: 0x8b
 function heli_delayedpadstateupdate( type )
@@ -3249,7 +3262,7 @@ function heli_delayedpadstateupdate( type )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ed1
 // Size: 0xbc
 function helidescend()
@@ -3267,7 +3280,7 @@ function helidescend()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7f95
 // Size: 0x89
 function heliplayloopanim()
@@ -3290,7 +3303,7 @@ function heliplayloopanim()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8026
 // Size: 0x71
 function heliplayloopropeanim()
@@ -3311,7 +3324,7 @@ function heliplayloopropeanim()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x809f
 // Size: 0x71
 function heliplayloopbadanim()
@@ -3332,7 +3345,7 @@ function heliplayloopbadanim()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8118
 // Size: 0x33, Type: bool
 function entisalivevehicle()
@@ -3341,7 +3354,7 @@ function entisalivevehicle()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8154
 // Size: 0x5e
 function helidestroyvehiclestouchnotify()
@@ -3361,7 +3374,7 @@ function helidestroyvehiclestouchnotify()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x81ba
 // Size: 0x282
 function helidestroyvehiclestouchtrace()
@@ -3424,7 +3437,7 @@ function helidestroyvehiclestouchtrace()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8444
 // Size: 0x39
 function tracegroundheight( start )
@@ -3436,7 +3449,7 @@ function tracegroundheight( start )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8486
 // Size: 0x99
 function tracegroundpoint( start )
@@ -3453,7 +3466,7 @@ function tracegroundpoint( start )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8528
 // Size: 0x21
 function heliwatchgameendleave()
@@ -3465,7 +3478,7 @@ function heliwatchgameendleave()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8551
 // Size: 0x1b
 function helicountdownendcallback( entity, fromtimeout )
@@ -3474,7 +3487,7 @@ function helicountdownendcallback( entity, fromtimeout )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8574
 // Size: 0x2f
 function heliextractcallback( entity )
@@ -3486,7 +3499,7 @@ function heliextractcallback( entity )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x85ab
 // Size: 0xb
 function heliatcapacitycallback( entity )
@@ -3495,7 +3508,7 @@ function heliatcapacitycallback( entity )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x85be
 // Size: 0xa
 function plunderlivelobby()
@@ -3504,7 +3517,7 @@ function plunderlivelobby()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x85d0
 // Size: 0x29, Type: bool
 function inplunderlivelobby()
@@ -3513,7 +3526,7 @@ function inplunderlivelobby()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8602
 // Size: 0xff
 function autopickupplunder()
@@ -3524,7 +3537,8 @@ function autopickupplunder()
     
     while ( inplunderlivelobby() )
     {
-        for (i = 0; i < level.br_plunder_ents.size; i++) {
+        for ( i = 0; i < level.br_plunder_ents.size ; i++ )
+        {
             pickupent = level.br_plunder_ents[ i ];
             
             if ( !isdefined( pickupent ) )
@@ -3534,7 +3548,8 @@ function autopickupplunder()
             
             var_7ae23d8bd45fd01c = pickupent.origin;
             
-            for (j = 0; j < level.players.size; j++) {
+            for ( j = 0; j < level.players.size ; j++ )
+            {
                 player = level.players[ j ];
                 
                 if ( !isalive( player ) )
@@ -3557,7 +3572,7 @@ function autopickupplunder()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8709
 // Size: 0x39
 function playerdelayautobankplunder()
@@ -3572,7 +3587,7 @@ function playerdelayautobankplunder()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x874a
 // Size: 0xbd
 function playerplunderlivelobbydropondeath( smeansofdeath )
@@ -3611,7 +3626,7 @@ function playerplunderlivelobbydropondeath( smeansofdeath )
 /#
 
     // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x880f
     // Size: 0xb2, Type: dev
     function function_d998045c08ec165d()
@@ -3639,7 +3654,7 @@ function playerplunderlivelobbydropondeath( smeansofdeath )
 #/
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x88c9
 // Size: 0x111
 function initteamdatafields()
@@ -3663,7 +3678,7 @@ function initteamdatafields()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x89e2
 // Size: 0x64
 function getteamplunder( team )
@@ -3681,7 +3696,7 @@ function getteamplunder( team )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8a4f
 // Size: 0x1c
 function getteamcarriedplunder( team )
@@ -3690,7 +3705,7 @@ function getteamcarriedplunder( team )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8a74
 // Size: 0x1c
 function getbankedplunder( team )
@@ -3699,7 +3714,7 @@ function getbankedplunder( team )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8a99
 // Size: 0xd6
 function getplundernamebyamount( amount )
@@ -3707,7 +3722,8 @@ function getplundernamebyamount( amount )
     assertex( isdefined( level.br_plunder ) && isdefined( level.br_plunder.quantity ) && isdefined( level.br_plunder.names ), "<dev string:x394>" );
     var_3466c10973e9c476 = level.br_plunder.names[ 0 ];
     
-    for (i = level.br_plunder.quantity.size - 1; i > 0; i--) {
+    for ( i = level.br_plunder.quantity.size - 1; i > 0 ; i-- )
+    {
         if ( amount >= level.br_plunder.quantity[ i ] )
         {
             var_3466c10973e9c476 = level.br_plunder.names[ i ];
@@ -3719,7 +3735,7 @@ function getplundernamebyamount( amount )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8b78
 // Size: 0x48
 function playplundersoundbyamount( player, amount )
@@ -3735,7 +3751,7 @@ function playplundersoundbyamount( player, amount )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8bc8
 // Size: 0x1a5
 function processcashpilevalueoverrides()
@@ -3768,13 +3784,14 @@ function processcashpilevalueoverrides()
         }
     }
     
-    for (i = 0; i < level.br_plunder.names.size; i++) {
+    for ( i = 0; i < level.br_plunder.names.size ; i++ )
+    {
         level.br_plunder.quantity[ i ] = level.br_pickups.counts[ level.br_plunder.names[ i ] ];
     }
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8d75
 // Size: 0x13c
 function processcashpileovertimemultiplier( multiplier )
@@ -3795,7 +3812,7 @@ function processcashpileovertimemultiplier( multiplier )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8eb9
 // Size: 0xaf
 function debug_calculatecashonground()
@@ -3814,7 +3831,7 @@ function debug_calculatecashonground()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8f70
 // Size: 0x152
 function plunder_initrepositories()
@@ -3828,7 +3845,8 @@ function plunder_initrepositories()
     level.plunderrepositories.teamanchoredentomnvars = [];
     level.plunderrepositories.teamanchoredinfoomnvars = [];
     
-    for (i = 1; i <= 4; i++) {
+    for ( i = 1; i <= 4 ; i++ )
+    {
         level.plunderrepositories.teamanchoredentomnvars[ i ] = "ui_br_plunder_repo_ent_" + i;
         level.plunderrepositories.teamanchoredinfoomnvars[ i ] = "ui_br_plunder_repo_info_" + i;
     }
@@ -3844,7 +3862,7 @@ function plunder_initrepositories()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x90ca
 // Size: 0x1c1
 function plunder_getleveldataforrepository( ref, create, var_6ecb77fd1f27c667 )
@@ -3892,7 +3910,7 @@ function plunder_getleveldataforrepository( ref, create, var_6ecb77fd1f27c667 )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9294
 // Size: 0x139
 function plunder_registerrepositoryinstance( entity, ref )
@@ -3920,7 +3938,7 @@ function plunder_registerrepositoryinstance( entity, ref )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x93d5
 // Size: 0xce
 function plunder_deregisterrepositoryinstance( entity )
@@ -3948,7 +3966,7 @@ function plunder_deregisterrepositoryinstance( entity )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x94ab
 // Size: 0x63, Type: bool
 function plunder_repositoryinstanceisregistered( entity )
@@ -3971,7 +3989,7 @@ function plunder_repositoryinstanceisregistered( entity )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9517
 // Size: 0x1e6
 function plunder_allowrepositoryuse( entity, bool, var_6ecb77fd1f27c667 )
@@ -4034,7 +4052,7 @@ function plunder_allowrepositoryuse( entity, bool, var_6ecb77fd1f27c667 )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x9705
 // Size: 0x10e
 function plunder_allowrepositoryuseforplayer( entity, player, bool, var_6ecb77fd1f27c667 )
@@ -4079,7 +4097,7 @@ function plunder_allowrepositoryuseforplayer( entity, player, bool, var_6ecb77fd
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x981b
 // Size: 0x89
 function plunder_allowallrepositoryuseforplayer( player, bool, var_6ecb77fd1f27c667 )
@@ -4093,7 +4111,7 @@ function plunder_allowallrepositoryuseforplayer( player, bool, var_6ecb77fd1f27c
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x98ac
 // Size: 0x86, Type: bool
 function plunder_playercanuserepository( entity, player )
@@ -4119,7 +4137,7 @@ function plunder_playercanuserepository( entity, player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x993b
 // Size: 0x246
 function plunder_playerrepositoryuseshouldsucceed( entity, player, showerror )
@@ -4196,7 +4214,7 @@ function plunder_playerrepositoryuseshouldsucceed( entity, player, showerror )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x9b8a
 // Size: 0x134
 function plunder_repositoryusescriptablecallback( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -4247,7 +4265,7 @@ function plunder_repositoryusescriptablecallback( instance, part, state, player,
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9cc6
 // Size: 0x36
 function plunder_repositoryusecallback( entity, player )
@@ -4266,7 +4284,7 @@ function plunder_repositoryusecallback( entity, player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9d04
 // Size: 0x178
 function plunder_repositoryusecallbackinternal( entity, player )
@@ -4324,7 +4342,7 @@ function plunder_repositoryusecallbackinternal( entity, player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9e84
 // Size: 0x1fb
 function plunder_repositorywatchuse( entity, player )
@@ -4394,7 +4412,7 @@ function plunder_repositorywatchuse( entity, player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa087
 // Size: 0x9e
 function plunder_repositoryplayerplundereventcallback( entity, player, amount )
@@ -4415,7 +4433,7 @@ function plunder_repositoryplayerplundereventcallback( entity, player, amount )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa12d
 // Size: 0x127
 function plunder_repositoryenableuserestrictions( player, bool )
@@ -4451,7 +4469,7 @@ function plunder_repositoryenableuserestrictions( player, bool )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa25c
 // Size: 0x268
 function plunder_repositorywatchcountdown( entity, players )
@@ -4516,7 +4534,7 @@ function plunder_repositorywatchcountdown( entity, players )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa4cc
 // Size: 0x57
 function plunder_repositoryendcountdown( entity, fromtimeout )
@@ -4531,7 +4549,7 @@ function plunder_repositoryendcountdown( entity, fromtimeout )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa52b
 // Size: 0x34
 function plunder_repositoryclearcountdown( entity )
@@ -4543,7 +4561,7 @@ function plunder_repositoryclearcountdown( entity )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa567
 // Size: 0x19b
 function plunder_repositorysendcountdownmessage( player, entity, value )
@@ -4592,7 +4610,7 @@ function plunder_repositorysendcountdownmessage( player, entity, value )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa70a
 // Size: 0x6d
 function plunder_repositoryextract( entity )
@@ -4610,7 +4628,7 @@ function plunder_repositoryextract( entity )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa77f
 // Size: 0x5d
 function plunder_repositoryatcapacity( entity )
@@ -4626,7 +4644,7 @@ function plunder_repositoryatcapacity( entity )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa7e4
 // Size: 0xe
 function plunder_playerspawnedcallback()
@@ -4635,7 +4653,7 @@ function plunder_playerspawnedcallback()
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0xa7fa
 // Size: 0x30d
 function plunder_updaterepositorywidgetforplayer( player, plunderinstanceid, type, visible, endtime, plundertotal, plundereventamount )
@@ -4718,7 +4736,7 @@ function plunder_updaterepositorywidgetforplayer( player, plunderinstanceid, typ
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xab0f
 // Size: 0x47
 function plunder_clearrepositorywidgetforplayer( player, delay )
@@ -4736,7 +4754,7 @@ function plunder_clearrepositorywidgetforplayer( player, delay )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xab5e
 // Size: 0x171
 function plunder_sendrepositorywidgetomnvar( player )
@@ -4807,7 +4825,7 @@ function plunder_sendrepositorywidgetomnvar( player )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xacd7
 // Size: 0x26a
 function plunder_addanchoredwidgettorepositoryinstance( entity )
@@ -4829,7 +4847,8 @@ function plunder_addanchoredwidgettorepositoryinstance( entity )
     
     var_bd73cc979462cac0 = [];
     
-    for (i = 1; i <= 4; i++) {
+    for ( i = 1; i <= 4 ; i++ )
+    {
         var_bd73cc979462cac0[ i ] = i;
     }
     
@@ -4861,7 +4880,7 @@ function plunder_addanchoredwidgettorepositoryinstance( entity )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf49
 // Size: 0x144
 function plunder_removeanchoredwidgetfromrepositoryinstance( entity )
@@ -4893,7 +4912,7 @@ function plunder_removeanchoredwidgetfromrepositoryinstance( entity )
 }
 
 // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb095
 // Size: 0x191
 function plunder_updateanchoredwidgetforplayers( entity, players )
@@ -4959,7 +4978,7 @@ function plunder_updateanchoredwidgetforplayers( entity, players )
 /#
 
     // Namespace br_plunder / scripts\mp\gametypes\br_plunder
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xb22e
     // Size: 0xaa, Type: dev
     function function_697ba36fc0e3cde4()

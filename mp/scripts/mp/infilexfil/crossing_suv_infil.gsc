@@ -15,7 +15,7 @@
 #namespace crossing_suv_infil;
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x95c
 // Size: 0x9d
 function function_ff655c7837121a1f( subtype )
@@ -36,7 +36,7 @@ function function_ff655c7837121a1f( subtype )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xa01
 // Size: 0x8a
 function function_ddeb4e917bc30f7c( team, target, subtype, originalsubtype )
@@ -50,7 +50,7 @@ function function_ddeb4e917bc30f7c( team, target, subtype, originalsubtype )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa94
 // Size: 0x32
 function function_b9ca07c05877b268( subtype )
@@ -60,7 +60,7 @@ function function_b9ca07c05877b268( subtype )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xacf
 // Size: 0x265
 function function_4ff143ea37fffb46( infil, spot_index )
@@ -120,7 +120,7 @@ function function_4ff143ea37fffb46( infil, spot_index )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd3c
 // Size: 0x2c
 function resetfov()
@@ -136,7 +136,7 @@ function resetfov()
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd70
 // Size: 0x3c
 function clear_infil_ambient_zone()
@@ -154,7 +154,7 @@ function clear_infil_ambient_zone()
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xdb4
 // Size: 0x48
 function player_infil_end()
@@ -169,7 +169,7 @@ function player_infil_end()
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe04
 // Size: 0x4c
 function player_disconnect()
@@ -188,7 +188,7 @@ function player_disconnect()
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe58
 // Size: 0xed
 function infilthink( team, scene_name )
@@ -216,7 +216,7 @@ function infilthink( team, scene_name )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xf4d
 // Size: 0x106
 function vehiclethink( team, scene_node, scene_name, extra_crew )
@@ -238,7 +238,7 @@ function vehiclethink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x105b
 // Size: 0xd2
 function infil_radio_idle( infil )
@@ -273,7 +273,7 @@ function infil_radio_idle( infil )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1135
 // Size: 0x2e
 function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
@@ -289,7 +289,7 @@ function function_7330aa81e1f66e19( var_8068764aee94f2f4, playerstring )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x116b
 // Size: 0x12d
 function actorthink( team, scene_node, scene_name, extra_crew )
@@ -317,7 +317,7 @@ function actorthink( team, scene_node, scene_name, extra_crew )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12a0
 // Size: 0x141
 function initanims( subtype )
@@ -339,7 +339,7 @@ function initanims( subtype )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13e9
 // Size: 0x4b3
 function script_model_anims( subtype )
@@ -397,7 +397,7 @@ function script_model_anims( subtype )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18a4
 // Size: 0x91
 function vehicles_anims( subtype )
@@ -415,7 +415,7 @@ function vehicles_anims( subtype )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x193d
 // Size: 0xdf
 function function_ea3e584a9e826a0d( scene_node, team, scene_name, model, animname, vehicle )
@@ -440,7 +440,7 @@ function function_ea3e584a9e826a0d( scene_node, team, scene_name, model, animnam
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1a25
 // Size: 0x145
 function spawn_anim_model( animname, linkto_ent, body, head, weapon )
@@ -472,7 +472,7 @@ function spawn_anim_model( animname, linkto_ent, body, head, weapon )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1b73
 // Size: 0xa6
 function spawnactor( scene_node, model_body, model_head, animname )
@@ -491,7 +491,7 @@ function spawnactor( scene_node, model_body, model_head, animname )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1c21
 // Size: 0xd6
 function function_d7fef246b7636b4d( scene_node, model, animname, number )
@@ -516,7 +516,7 @@ function function_d7fef246b7636b4d( scene_node, model, animname, number )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x1cff
 // Size: 0x171
 function function_70a8a2aae30f4847( scene_node, vehicle, animname, infil_type, vehiclename, number )
@@ -536,7 +536,8 @@ function function_70a8a2aae30f4847( scene_node, vehicle, animname, infil_type, v
         return;
     }
     
-    for (i = 0; i < var_2280df582dd843c.size; i++) {
+    for ( i = 0; i < var_2280df582dd843c.size ; i++ )
+    {
         if ( isdefined( var_2280df582dd843c[ i ] ) )
         {
             if ( var_2280df582dd843c[ i ].script_noteworthy == vehiclename )
@@ -571,7 +572,7 @@ function function_70a8a2aae30f4847( scene_node, vehicle, animname, infil_type, v
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1e78
 // Size: 0xc5
 function function_9a4c5c52093e3d42( scene_node )
@@ -581,7 +582,8 @@ function function_9a4c5c52093e3d42( scene_node )
     temporigin = scene_node.origin;
     tempangle = scene_node.angles;
     
-    for (i = 0; i < var_2280df582dd843c.size; i++) {
+    for ( i = 0; i < var_2280df582dd843c.size ; i++ )
+    {
         if ( isdefined( var_2280df582dd843c[ i ] ) )
         {
             if ( var_2280df582dd843c[ i ].script_noteworthy == "veh9_civ_lnd_pickup_1990_middle" )
@@ -598,7 +600,7 @@ function function_9a4c5c52093e3d42( scene_node )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f45
 // Size: 0xb7
 function function_999ee46cd79d9633( scene_node )
@@ -609,7 +611,8 @@ function function_999ee46cd79d9633( scene_node )
     tempangle = scene_node.angles;
     level waittill( "prematch_over" );
     
-    for (i = 0; i < var_2280df582dd843c.size; i++) {
+    for ( i = 0; i < var_2280df582dd843c.size ; i++ )
+    {
         if ( isdefined( var_2280df582dd843c[ i ] ) )
         {
             if ( var_2280df582dd843c[ i ].script_noteworthy == "veh9_civ_lnd_pickup_1990_middle" )
@@ -624,7 +627,7 @@ function function_999ee46cd79d9633( scene_node )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2004
 // Size: 0x3b
 function function_a2938e8d1926687d( var_c3dbf88a21ae118b )
@@ -636,7 +639,7 @@ function function_a2938e8d1926687d( var_c3dbf88a21ae118b )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2047
 // Size: 0x19
 function function_b2a12312c1552d1d()
@@ -647,7 +650,7 @@ function function_b2a12312c1552d1d()
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2068
 // Size: 0x1d
 function function_f9f9146c527fbdd2( alias, delay )
@@ -657,7 +660,7 @@ function function_f9f9146c527fbdd2( alias, delay )
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x208e
 // Size: 0x13
 function function_6158ef142e9bd640()
@@ -667,7 +670,7 @@ function function_6158ef142e9bd640()
 }
 
 // Namespace crossing_suv_infil / scripts\mp\infilexfil\crossing_suv_infil
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x20a9
 // Size: 0xd8
 function function_796536b99a772738( car1, car2 )

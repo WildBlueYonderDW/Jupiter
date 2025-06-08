@@ -18,7 +18,7 @@
 #namespace br_jugg_common;
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38e
 // Size: 0x1d2
 function init()
@@ -35,7 +35,7 @@ function init()
     level.brjuggsettings = [];
     
     /#
-        setdevdvarifuninitialized( @"hash_8e428a709dd8f019", 3 );
+        setdevdvarifuninitialized( @"scr_br_jugg_num_drops", 3 );
         setdevdvarifuninitialized( @"hash_fca632f39743dfa8", 0 );
         setdevdvarifuninitialized( @"hash_7ed2e5c3764afc91", 20000 );
         setdevdvarifuninitialized( @"hash_4c96c13074cf77e5", 5 );
@@ -59,7 +59,7 @@ function init()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x568
 // Size: 0x14
 function initpostmain()
@@ -70,7 +70,7 @@ function initpostmain()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x584
 // Size: 0x116
 function setconfig()
@@ -98,7 +98,7 @@ function setconfig()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a2
 // Size: 0x3d
 function modifybrgasdamage( originaldamage )
@@ -109,7 +109,7 @@ function modifybrgasdamage( originaldamage )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x6e8
 // Size: 0xfd
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -136,7 +136,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7ed
 // Size: 0x59
 function addjuggfunctionality()
@@ -154,7 +154,7 @@ function addjuggfunctionality()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x84e
 // Size: 0x55
 function dropallunusableitems()
@@ -171,7 +171,7 @@ function dropallunusableitems()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8ab
 // Size: 0xf9
 function initdroplocations()
@@ -198,7 +198,7 @@ function initdroplocations()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ac
 // Size: 0x1a1
 function getdroplocationnearcurrentcircle( radiusbuffer )
@@ -270,7 +270,7 @@ function getdroplocationnearcurrentcircle( radiusbuffer )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb56
 // Size: 0x9f, Type: bool
 function ispointnearcurrentsafecircle( locinfo, radiusbuffer )
@@ -294,7 +294,7 @@ function ispointnearcurrentsafecircle( locinfo, radiusbuffer )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbfe
 // Size: 0xb3, Type: bool
 function isnearajuggdrop( droplocation )
@@ -322,7 +322,7 @@ function isnearajuggdrop( droplocation )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcba
 // Size: 0xaa, Type: bool
 function isnearactivejugg( droplocation )
@@ -343,7 +343,7 @@ function isnearactivejugg( droplocation )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd6d
 // Size: 0xcb
 function createjuggdroplocation( locationoverride )
@@ -389,7 +389,7 @@ function createjuggdroplocation( locationoverride )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe41
 // Size: 0xf9
 function showdroplocations( var_fdfc755d4aa965c6, initialdrop )
@@ -411,7 +411,8 @@ function showdroplocations( var_fdfc755d4aa965c6, initialdrop )
     
     droplocations = [];
     
-    for (i = 0; i < var_fdfc755d4aa965c6; i++) {
+    for ( i = 0; i < var_fdfc755d4aa965c6 ; i++ )
+    {
         dropcircle = scripts\mp\gametypes\br_jugg_common::getdroplocationnearcurrentcircle( radiusbuffer );
         dropcircle.beacon = spawn( "script_model", dropcircle.origin );
         dropcircle.beacon setmodel( "ks_airdrop_crate_br" );
@@ -425,7 +426,7 @@ function showdroplocations( var_fdfc755d4aa965c6, initialdrop )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xf43
 // Size: 0xab
 function startdeliveries( droplocations, source )
@@ -449,7 +450,7 @@ function startdeliveries( droplocations, source )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xff6
 // Size: 0xff
 function dropdeliveryatpos( dropcircle, source )
@@ -473,7 +474,7 @@ function dropdeliveryatpos( dropcircle, source )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x10fd
 // Size: 0x15f
 function dropfunc( var_5ee94ae126526f2f, var_958bbdfed6f2e9ef, var_fe41be11a71dc1b4, dropcircle )
@@ -501,7 +502,7 @@ function dropfunc( var_5ee94ae126526f2f, var_958bbdfed6f2e9ef, var_fe41be11a71dc
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1264
 // Size: 0xcc
 function watchoverheat( juggconfig )
@@ -531,7 +532,7 @@ function watchoverheat( juggconfig )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1338
 // Size: 0xcc
 function watchheatreduction( juggconfig )
@@ -562,7 +563,7 @@ function watchheatreduction( juggconfig )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x140c
 // Size: 0xc9
 function mangagedeathsdoor( juggconfig )
@@ -601,7 +602,7 @@ function mangagedeathsdoor( juggconfig )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x14dd
 // Size: 0x22
 function droponplayerdeath( dropstruct )
@@ -611,7 +612,7 @@ function droponplayerdeath( dropstruct )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1507
 // Size: 0x104
 function dropjuggbox()
@@ -635,7 +636,7 @@ function dropjuggbox()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1613
 // Size: 0x2d
 function oncrateactivate( var_d9bc1b05d016a86f )
@@ -650,7 +651,7 @@ function oncrateactivate( var_d9bc1b05d016a86f )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1648
 // Size: 0x2f
 function watchcratetimeout()
@@ -662,7 +663,7 @@ function watchcratetimeout()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x167f
 // Size: 0xad
 function watchcrategastimeout()
@@ -699,7 +700,7 @@ function watchcrategastimeout()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1734
 // Size: 0x3c
 function oncrateuse( player )
@@ -711,7 +712,7 @@ function oncrateuse( player )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1778
 // Size: 0xd2
 function notifycapturetoplayers( owner )
@@ -737,7 +738,7 @@ function notifycapturetoplayers( owner )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1852
 // Size: 0x29
 function oncratedestroy( immediate )
@@ -748,7 +749,7 @@ function oncratedestroy( immediate )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1883
 // Size: 0xad
 function cratecleanup()
@@ -772,7 +773,7 @@ function cratecleanup()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1938
 // Size: 0x6a
 function init_br_jugg_setting( name, value, source )
@@ -792,7 +793,7 @@ function init_br_jugg_setting( name, value, source )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x19aa
 // Size: 0x67
 function get_br_jugg_setting( name, source )
@@ -817,7 +818,7 @@ function get_br_jugg_setting( name, source )
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a1a
 // Size: 0x12
 function getcrateusetime()
@@ -826,16 +827,16 @@ function getcrateusetime()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a35
 // Size: 0x12
 function getnumdrops()
 {
-    return getdvarint( @"hash_8e428a709dd8f019", 3 );
+    return getdvarint( @"scr_br_jugg_num_drops", 3 );
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a50
 // Size: 0x15
 function getjuggdamagescale()
@@ -844,7 +845,7 @@ function getjuggdamagescale()
 }
 
 // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a6e
 // Size: 0x15
 function getminigundamagescale()
@@ -855,7 +856,7 @@ function getminigundamagescale()
 /#
 
     // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1a8c
     // Size: 0xe6, Type: dev
     function function_59ed9e94de8f9c42()
@@ -893,7 +894,7 @@ function getminigundamagescale()
     }
 
     // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1b7a
     // Size: 0x27c, Type: dev
     function function_fdcc5bb7ff13a7d1()
@@ -959,7 +960,7 @@ function getminigundamagescale()
     }
 
     // Namespace br_jugg_common / scripts\mp\gametypes\br_jugg_common
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1dfe
     // Size: 0x7a, Type: dev
     function function_3f3aa9ee24737fd3( player )

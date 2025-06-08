@@ -19,7 +19,7 @@ function autoexec main()
 }
 
 // Namespace armor_box_mp / scripts\mp\equipment\armor_box_mp
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x128
 // Size: 0x10
 function init()
@@ -28,7 +28,7 @@ function init()
 }
 
 // Namespace armor_box_mp / scripts\mp\equipment\armor_box_mp
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x140
 // Size: 0x90, Type: bool
 function onarmorboxusedbyplayer( player )

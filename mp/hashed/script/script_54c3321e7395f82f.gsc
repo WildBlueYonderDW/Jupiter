@@ -12,7 +12,7 @@
 #namespace namespace_57a329915670ffdc;
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e0
 // Size: 0x152
 function function_729f6e368df801f4()
@@ -36,7 +36,7 @@ function function_729f6e368df801f4()
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x63a
 // Size: 0x63
 function parseparams( var_28af8e747331e08d )
@@ -52,7 +52,7 @@ function parseparams( var_28af8e747331e08d )
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6a5
 // Size: 0x8
 function function_f59e21c58d674dc1()
@@ -61,7 +61,7 @@ function function_f59e21c58d674dc1()
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6b6
 // Size: 0x12
 function function_4c8727d4f35931a1( vehicleposition )
@@ -70,7 +70,7 @@ function function_4c8727d4f35931a1( vehicleposition )
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d1
 // Size: 0x6d
 function function_c45e80be17065ee9( vehicleposition )
@@ -90,7 +90,7 @@ function function_c45e80be17065ee9( vehicleposition )
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x747
 // Size: 0x168
 function function_7c279c038503812f( vehicle )
@@ -139,7 +139,7 @@ function function_7c279c038503812f( vehicle )
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8b7
 // Size: 0xa7
 function playapproachconvoyvo( activity_instance, player_list )
@@ -159,7 +159,7 @@ function playapproachconvoyvo( activity_instance, player_list )
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x966
 // Size: 0xd4
 function playengagevo( activity_instance, var_2a7b538f984af574 )
@@ -183,7 +183,7 @@ function playengagevo( activity_instance, var_2a7b538f984af574 )
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa42
 // Size: 0xd4
 function playvehdestroyedvo( activity_instance, var_7a4fd332f67e105e )
@@ -207,7 +207,7 @@ function playvehdestroyedvo( activity_instance, var_7a4fd332f67e105e )
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb1e
 // Size: 0x84
 function onplayerleftactivity( activity_instance, var_b381b0883bcd4847 )
@@ -222,7 +222,7 @@ function onplayerleftactivity( activity_instance, var_b381b0883bcd4847 )
 }
 
 // Namespace namespace_57a329915670ffdc / namespace_acf59d30b1f3eca5
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbaa
 // Size: 0x5a
 function function_4a508fcbbea05afd()

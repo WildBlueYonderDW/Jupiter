@@ -1,7 +1,7 @@
 #namespace namespace_36820a34c6c5dfcc;
 
 // Namespace namespace_36820a34c6c5dfcc / namespace_c31609f90efcf2ca
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x88
 // Size: 0x74
 function onplayerjoinsquad( player )
@@ -18,7 +18,7 @@ function onplayerjoinsquad( player )
 }
 
 // Namespace namespace_36820a34c6c5dfcc / namespace_c31609f90efcf2ca
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x104
 // Size: 0x38
 function registeronplayerjoinsquadcallback( callback )
@@ -32,7 +32,7 @@ function registeronplayerjoinsquadcallback( callback )
 }
 
 // Namespace namespace_36820a34c6c5dfcc / namespace_c31609f90efcf2ca
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x144
 // Size: 0x74
 function function_2a1e4811621fdcde( player )
@@ -49,7 +49,7 @@ function function_2a1e4811621fdcde( player )
 }
 
 // Namespace namespace_36820a34c6c5dfcc / namespace_c31609f90efcf2ca
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c0
 // Size: 0x38
 function function_a99987c7bf114da4( callback )

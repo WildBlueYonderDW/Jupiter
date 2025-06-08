@@ -4,7 +4,7 @@
 #namespace namespace_f0be73a95f76c7ed;
 
 // Namespace namespace_f0be73a95f76c7ed / namespace_9d48dceb90164d92
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe0
 // Size: 0x7d
 function createevent( radius )
@@ -18,7 +18,7 @@ function createevent( radius )
 }
 
 // Namespace namespace_f0be73a95f76c7ed / namespace_9d48dceb90164d92
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x165
 // Size: 0x1b4
 function getevent()

@@ -8,7 +8,7 @@
 #namespace interactable;
 
 // Namespace interactable / scripts\asm\soldier\interactable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10d
 // Size: 0x13
 function onlevelload()
@@ -17,7 +17,7 @@ function onlevelload()
 }
 
 // Namespace interactable / scripts\asm\soldier\interactable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x128
 // Size: 0x75
 function run_example_interactable( asmname, statename, animationdata )
@@ -31,7 +31,7 @@ function run_example_interactable( asmname, statename, animationdata )
 }
 
 // Namespace interactable / scripts\asm\soldier\interactable
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a5
 // Size: 0x37
 function registerinteractable( interactable, func )
@@ -45,7 +45,7 @@ function registerinteractable( interactable, func )
 }
 
 // Namespace interactable / scripts\asm\soldier\interactable
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e4
 // Size: 0x29
 function disableinteractable()
@@ -59,7 +59,7 @@ function disableinteractable()
 }
 
 // Namespace interactable / scripts\asm\soldier\interactable
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x215
 // Size: 0x5e, Type: bool
 function shouldplayinteractable( asmname, statename, tostatename, params )
@@ -75,7 +75,7 @@ function shouldplayinteractable( asmname, statename, tostatename, params )
 }
 
 // Namespace interactable / scripts\asm\soldier\interactable
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x27c
 // Size: 0x2f
 function interactablefinished( asmname, statename, tostatename, params )
@@ -84,7 +84,7 @@ function interactablefinished( asmname, statename, tostatename, params )
 }
 
 // Namespace interactable / scripts\asm\soldier\interactable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2b4
 // Size: 0x5f
 function chooseaniminteractable( asmname, statename, params )
@@ -96,7 +96,7 @@ function chooseaniminteractable( asmname, statename, params )
 }
 
 // Namespace interactable / scripts\asm\soldier\interactable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x31c
 // Size: 0xd4
 function playinteractable( asmname, statename, params )
@@ -113,7 +113,7 @@ function playinteractable( asmname, statename, params )
 }
 
 // Namespace interactable / scripts\asm\soldier\interactable
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3f8
 // Size: 0x1b
 function interactableterminate( asmname, statename, params )

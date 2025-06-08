@@ -6,7 +6,7 @@
 #namespace zombie_bite;
 
 // Namespace zombie_bite / namespace_dd3b3452f1580da6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x139
 // Size: 0x22
 function function_abeab68e34b24949()
@@ -15,7 +15,7 @@ function function_abeab68e34b24949()
 }
 
 // Namespace zombie_bite / namespace_dd3b3452f1580da6
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x163
 // Size: 0x18
 function function_36acc07bbc238f35()
@@ -25,7 +25,7 @@ function function_36acc07bbc238f35()
 }
 
 // Namespace zombie_bite / namespace_dd3b3452f1580da6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x183
 // Size: 0xa8
 function function_dca79eb8ca59cd89( damage_amount, range )
@@ -40,7 +40,7 @@ function function_dca79eb8ca59cd89( damage_amount, range )
 }
 
 // Namespace zombie_bite / namespace_dd3b3452f1580da6
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x233
 // Size: 0x39
 function function_e8d0e8d7ba0f392e( movetype, range_override )
@@ -50,7 +50,7 @@ function function_e8d0e8d7ba0f392e( movetype, range_override )
 }
 
 // Namespace zombie_bite / namespace_dd3b3452f1580da6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x274
 // Size: 0x83
 function function_96046c875df0d6a3( params )
@@ -62,7 +62,7 @@ function function_96046c875df0d6a3( params )
 }
 
 // Namespace zombie_bite / namespace_dd3b3452f1580da6
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ff
 // Size: 0x28
 function request_bite( target_ent )

@@ -7,7 +7,7 @@
 #namespace stats;
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x244
 // Size: 0x6d
 function initpersstat( dataname )
@@ -33,7 +33,7 @@ function initpersstat( dataname )
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2b9
 // Size: 0x5b
 function getpersstat( dataname )
@@ -55,7 +55,7 @@ function getpersstat( dataname )
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x31d
 // Size: 0x8b
 function incpersstat( dataname, increment )
@@ -86,7 +86,7 @@ function incpersstat( dataname, increment )
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3b0
 // Size: 0x68
 function initleaderboardstat( dataname, functionptr )
@@ -108,7 +108,7 @@ function initleaderboardstat( dataname, functionptr )
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x420
 // Size: 0x3d
 function setextrascore0( newvalue )
@@ -128,7 +128,7 @@ function setextrascore0( newvalue )
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x465
 // Size: 0x3b
 function setextrascore1( newvalue )
@@ -148,7 +148,7 @@ function setextrascore1( newvalue )
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4a8
 // Size: 0x3d
 function setextrascore2( newvalue )
@@ -168,7 +168,7 @@ function setextrascore2( newvalue )
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ed
 // Size: 0x3d
 function setextrascore3( newvalue )
@@ -188,7 +188,7 @@ function setextrascore3( newvalue )
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x532
 // Size: 0x3d
 function setextrascore4( newvalue )
@@ -208,7 +208,7 @@ function setextrascore4( newvalue )
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x577
 // Size: 0x2d, Type: bool
 function disablepersupdates()
@@ -232,7 +232,7 @@ function disablepersupdates()
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ad
 // Size: 0x3e
 function function_785a9aed533e514c()
@@ -242,7 +242,7 @@ function function_785a9aed533e514c()
         return "leagueplayprogression";
     }
     
-    if ( level.var_77907d733abe8b63 && getdvarint( @"hash_8b2e1bf19fa1c9d", 0 ) )
+    if ( level.var_77907d733abe8b63 && getdvarint( @"wz_leagueplay_progression_enabled", 0 ) )
     {
         return "leagueplayprogression";
     }
@@ -251,7 +251,7 @@ function function_785a9aed533e514c()
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f4
 // Size: 0x1db
 function getplayerdataloadoutgroup()
@@ -269,7 +269,7 @@ function getplayerdataloadoutgroup()
     }
     else if ( istrue( level.var_77907d733abe8b63 ) )
     {
-        if ( getdvarint( @"hash_1fbc8f2b34c06713", 0 ) )
+        if ( getdvarint( @"wz_leagueplay_loadouts_enabled", 0 ) )
         {
             return "wzleagueplayloadouts";
         }
@@ -328,7 +328,7 @@ function getplayerdataloadoutgroup()
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7d7
 // Size: 0x112
 function function_cd79d5c7c340b40e()
@@ -369,7 +369,7 @@ function function_cd79d5c7c340b40e()
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8f2
 // Size: 0x35, Type: bool
 function function_fbadc58163719d2b()
@@ -378,7 +378,7 @@ function function_fbadc58163719d2b()
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x930
 // Size: 0x2f
 function setplayerdatagroups()
@@ -389,7 +389,7 @@ function setplayerdatagroups()
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x967
 // Size: 0x3e, Type: bool
 function canrecordcombatrecordstats()
@@ -408,7 +408,7 @@ function canrecordcombatrecordstats()
 }
 
 // Namespace stats / scripts\mp\utility\stats
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9ae
 // Size: 0x46
 function getstreakrecordtype( streakname )

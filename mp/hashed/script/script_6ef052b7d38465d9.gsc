@@ -6,8 +6,8 @@
 #namespace namespace_5b79e0098b7edf4d;
 
 // Namespace namespace_5b79e0098b7edf4d / namespace_fffc43c197b763f7
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd
+// Params 0
+// Checksum 0x0, Offset: 0xbe
 // Size: 0x2a
 function init()
 {
@@ -17,7 +17,7 @@ function init()
 
 // Namespace namespace_5b79e0098b7edf4d / namespace_fffc43c197b763f7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xef
+// Checksum 0x0, Offset: 0xf0
 // Size: 0x37
 function private on_player_spawn( params )
 {

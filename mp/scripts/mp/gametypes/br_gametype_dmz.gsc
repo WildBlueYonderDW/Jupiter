@@ -101,8 +101,8 @@
 #namespace br_gametype_dmz;
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3445
+// Params 0
+// Checksum 0x0, Offset: 0x3444
 // Size: 0x17
 function main()
 {
@@ -111,8 +111,8 @@ function main()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3464
+// Params 0
+// Checksum 0x0, Offset: 0x3463
 // Size: 0x985
 function init()
 {
@@ -175,21 +175,21 @@ function init()
     
     level thread function_e1fa80f536692a32();
     setdvar( @"hash_da4f64f6eb4d97da", 3 );
-    setdvar( @"hash_f6f24e020168ade8", "nothing" );
+    setdvar( @"scr_br_loadout_option", "nothing" );
     setdvar( @"hash_a85ba82ffd9faefe", 0 );
     setdvar( @"hash_2c9195a6f431585d", 1 );
     setdvar( @"hash_58a078a367c02ab3", 1 );
     setdvar( @"hash_c5d765aefb9658bd", 2200 );
     setdvarifuninitialized( @"hash_a44cf32ff2620bc2", 9 );
-    setdvarifuninitialized( @"hash_8d9ad523f40be455", 10000 );
+    setdvarifuninitialized( @"scr_br_respawnmaxteammateoffset", 10000 );
     setomnvar( "ui_br_circle_state", 5 );
     setomnvar( "ui_gulag_state", 1 );
     setomnvar( "ui_hide_redeploy_timer", 1 );
-    oobtime = getdvarint( @"hash_b773758221a0c100", -1 );
+    oobtime = getdvarint( @"scr_outofboundstime", -1 );
     
     if ( oobtime == -1 )
     {
-        setdvar( @"hash_b773758221a0c100", 10 );
+        setdvar( @"scr_outofboundstime", 10 );
     }
     
     level.var_e4a482edc1542597 = getdvarint( @"hash_bb9178da63ce4b9", 1 ) == 1;
@@ -262,14 +262,14 @@ function init()
     level.var_1d814f83596d0a02 = getdvarint( @"hash_7a1da73fa673ed8", 1 );
     level.var_8dea6607b3189a60 = getdvarint( @"hash_32c09327627c883c", 1 );
     level.minplunderdropondeath = getdvarint( @"hash_e0a487b88d0e4410", 0 );
-    level.var_f478c1f94caa7e9 = getdvarint( @"hash_4f0a12b17756a2d0", 1 );
+    level.var_f478c1f94caa7e9 = getdvarint( @"scr_use_playerdata_weapon_slot", 1 );
     level.var_7d17e26667be2792 = getdvarint( @"hash_55d9444d8a3ce31a", 1 );
     guns = getdvar( @"hash_53bc1dfee47e5c6d", "brloot_weapon_ar_schotel_lege,brloot_weapon_ar_golf3_lege,brloot_weapon_br_msecho_lege,brloot_weapon_br_soscar14_lege,brloot_weapon_ar_mike4_lege,brloot_weapon_ar_mike16_lege,brloot_weapon_ar_akilo_lege" );
     level.var_808a69414f52f6bc = strtok( guns, "," );
     level.var_184726567a9f58d8 = getdvarfloat( @"hash_d2b4c84cdda73751", 0.02 );
     level.var_e5993849fc7d5987 = getdvarint( @"hash_beb500581164e4bc", 1 );
     level.var_38ae6e498db315ff = getdvarint( @"hash_fe9052d4aaa052e0", 1000 );
-    level.var_499b5e2905bfa698 = getdvarint( @"hash_19476575934ab4ce", 4 );
+    level.var_499b5e2905bfa698 = getdvarint( @"scr_dmz_maxteamsperpoi", 4 );
     level.var_3c8e175d92be01ea = &function_daf5cd1e02931ea7;
     level.disablewinonscore = getdvarint( @"hash_4a9c110cfc54a4c5", 0 );
     level.var_ef3e0eb58d1263c5 = getdvarint( @"hash_8985888259fde494", 30 );
@@ -319,7 +319,7 @@ function init()
             level thread function_3fd2d65f62ca31b0();
         }
         
-        setdvar( @"hash_f79cd84983250eda", 0 );
+        setdvar( @"live_lobby_max_time", 0 );
     #/
     
     if ( namespace_a38a2e1fe7519183::function_e0fc1230452cf4e7() )
@@ -333,8 +333,8 @@ function init()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3df1
+// Params 0
+// Checksum 0x0, Offset: 0x3df0
 // Size: 0xc3
 function function_b52f35a3ff450ecd()
 {
@@ -360,8 +360,8 @@ function function_b52f35a3ff450ecd()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ebc
+// Params 0
+// Checksum 0x0, Offset: 0x3ebb
 // Size: 0xc3
 function function_c2a1bc0c5a905217()
 {
@@ -376,8 +376,8 @@ function function_c2a1bc0c5a905217()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f87
+// Params 0
+// Checksum 0x0, Offset: 0x3f86
 // Size: 0x10
 function function_fba25ae643dd02e8()
 {
@@ -386,8 +386,8 @@ function function_fba25ae643dd02e8()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f9f
+// Params 0
+// Checksum 0x0, Offset: 0x3f9e
 // Size: 0xe6
 function function_a96666bc3e3d2cb0()
 {
@@ -424,8 +424,8 @@ function function_a96666bc3e3d2cb0()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x408d
+// Params 0
+// Checksum 0x0, Offset: 0x408c
 // Size: 0x95
 function function_81b59887710baf14()
 {
@@ -441,8 +441,8 @@ function function_81b59887710baf14()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x412a
+// Params 0
+// Checksum 0x0, Offset: 0x4129
 // Size: 0x92a
 function initdialog()
 {
@@ -574,8 +574,8 @@ function initdialog()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a5c
+// Params 0
+// Checksum 0x0, Offset: 0x4a5b
 // Size: 0x5c
 function initfx()
 {
@@ -591,8 +591,8 @@ function initfx()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ac0
+// Params 0
+// Checksum 0x0, Offset: 0x4abf
 // Size: 0x3c
 function function_4fb6f74e053a49d6()
 {
@@ -611,8 +611,8 @@ function function_4fb6f74e053a49d6()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b04
+// Params 0
+// Checksum 0x0, Offset: 0x4b03
 // Size: 0x9
 function initexternalfeatures()
 {
@@ -620,8 +620,8 @@ function initexternalfeatures()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b15
+// Params 0
+// Checksum 0x0, Offset: 0x4b14
 // Size: 0x282
 function initpostmain()
 {
@@ -702,8 +702,8 @@ function initpostmain()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d9f
+// Params 0
+// Checksum 0x0, Offset: 0x4d9e
 // Size: 0x40
 function function_ffc9bebe581e6fa()
 {
@@ -715,8 +715,8 @@ function function_ffc9bebe581e6fa()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4de7
+// Params 0
+// Checksum 0x0, Offset: 0x4de6
 // Size: 0x2
 function function_811855d1edeef614()
 {
@@ -724,8 +724,8 @@ function function_811855d1edeef614()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4df1
+// Params 0
+// Checksum 0x0, Offset: 0x4df0
 // Size: 0x15a
 function initai()
 {
@@ -786,8 +786,8 @@ function initai()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f53
+// Params 1
+// Checksum 0x0, Offset: 0x4f52
 // Size: 0x46
 function onplayerconnect( player )
 {
@@ -803,8 +803,8 @@ function onplayerconnect( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fa1
+// Params 0
+// Checksum 0x0, Offset: 0x4fa0
 // Size: 0x4d
 function function_26f93cc0ad9b7c39()
 {
@@ -826,8 +826,8 @@ function function_26f93cc0ad9b7c39()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ff6
+// Params 0
+// Checksum 0x0, Offset: 0x4ff5
 // Size: 0x177
 function function_2fe5ef40dc48daf0()
 {
@@ -864,8 +864,8 @@ function function_2fe5ef40dc48daf0()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5175
+// Params 1
+// Checksum 0x0, Offset: 0x5174
 // Size: 0x4f, Type: bool
 function brmayconsiderplayerdead( player )
 {
@@ -884,8 +884,8 @@ function brmayconsiderplayerdead( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x51cd
+// Params 1
+// Checksum 0x0, Offset: 0x51cc
 // Size: 0x19
 function function_3acbbd83af4bcd34( rewards )
 {
@@ -894,8 +894,8 @@ function function_3acbbd83af4bcd34( rewards )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x51ef
+// Params 1
+// Checksum 0x0, Offset: 0x51ee
 // Size: 0xe8
 function filtervehiclespawnstructs( vehiclespawnstructs )
 {
@@ -937,8 +937,8 @@ function filtervehiclespawnstructs( vehiclespawnstructs )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x52e0
+// Params 1
+// Checksum 0x0, Offset: 0x52df
 // Size: 0xb
 function brononeleftevent( team )
 {
@@ -946,8 +946,8 @@ function brononeleftevent( team )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x52f3
+// Params 1
+// Checksum 0x0, Offset: 0x52f2
 // Size: 0xed
 function onplayerdisconnect( player )
 {
@@ -986,8 +986,8 @@ function onplayerdisconnect( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x53e8
+// Params 1
+// Checksum 0x0, Offset: 0x53e7
 // Size: 0xbb
 function function_c227bd210d16e07c( player )
 {
@@ -1032,8 +1032,8 @@ function function_c227bd210d16e07c( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x54ab
+// Params 10
+// Checksum 0x0, Offset: 0x54aa
 // Size: 0x118
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
 {
@@ -1066,8 +1066,8 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x55cb
+// Params 1
+// Checksum 0x0, Offset: 0x55ca
 // Size: 0xa8
 function function_265afd733ff97699( deadplayer )
 {
@@ -1095,8 +1095,8 @@ function function_265afd733ff97699( deadplayer )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x567b
+// Params 1
+// Checksum 0x0, Offset: 0x567a
 // Size: 0x40, Type: bool
 function function_1714ffea633dcfed( team )
 {
@@ -1110,8 +1110,8 @@ function function_1714ffea633dcfed( team )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x56c4
+// Params 1
+// Checksum 0x0, Offset: 0x56c3
 // Size: 0xa6
 function function_ed7a5462253ebdef( team )
 {
@@ -1138,8 +1138,8 @@ function function_ed7a5462253ebdef( team )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5772
+// Params 1
+// Checksum 0x0, Offset: 0x5771
 // Size: 0x24e
 function function_74e0aae435a09a51( player )
 {
@@ -1200,8 +1200,8 @@ function function_74e0aae435a09a51( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x59c8
+// Params 0
+// Checksum 0x0, Offset: 0x59c7
 // Size: 0x8f
 function function_4253eec492c87aa()
 {
@@ -1232,8 +1232,8 @@ function function_4253eec492c87aa()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a5f
+// Params 1
+// Checksum 0x0, Offset: 0x5a5e
 // Size: 0x12f
 function function_5df318837f8d78a2( player )
 {
@@ -1266,8 +1266,8 @@ function function_5df318837f8d78a2( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b96
+// Params 1
+// Checksum 0x0, Offset: 0x5b95
 // Size: 0x27d
 function function_d056e6d06ba65ca8( player )
 {
@@ -1310,7 +1310,7 @@ function function_d056e6d06ba65ca8( player )
     {
         if ( function_f3bb4f4911a1beb2( "seasonalevents", "getFeaturedLootEventActive" ) )
         {
-            function_34708e1f426d9a19( player );
+            function_af5ab021b625cdf8( player );
         }
     }
     
@@ -1337,8 +1337,8 @@ function function_d056e6d06ba65ca8( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e1b
+// Params 1
+// Checksum 0x0, Offset: 0x5e1a
 // Size: 0x155
 function onteameliminated( team )
 {
@@ -1379,8 +1379,8 @@ function onteameliminated( team )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f78
+// Params 0
+// Checksum 0x0, Offset: 0x5f77
 // Size: 0x3e
 function function_f1ad30efc5733caf()
 {
@@ -1395,8 +1395,8 @@ function function_f1ad30efc5733caf()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fbe
+// Params 0
+// Checksum 0x0, Offset: 0x5fbd
 // Size: 0xd6b
 function function_707d956bdbd4b134()
 {
@@ -1746,8 +1746,8 @@ function function_707d956bdbd4b134()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d31
+// Params 1
+// Checksum 0x0, Offset: 0x6d30
 // Size: 0xbf
 function attachbag( bagmodel )
 {
@@ -1777,8 +1777,8 @@ function attachbag( bagmodel )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6df8
+// Params 0
+// Checksum 0x0, Offset: 0x6df7
 // Size: 0x58
 function detachbag()
 {
@@ -1794,8 +1794,8 @@ function detachbag()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e58
+// Params 0
+// Checksum 0x0, Offset: 0x6e57
 // Size: 0x2
 function onpostkillcamcallback()
 {
@@ -1803,8 +1803,8 @@ function onpostkillcamcallback()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e62
+// Params 0
+// Checksum 0x0, Offset: 0x6e61
 // Size: 0x3f
 function ontimelimit()
 {
@@ -1822,8 +1822,8 @@ function ontimelimit()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ea9
+// Params 0
+// Checksum 0x0, Offset: 0x6ea8
 // Size: 0x1a5
 function checkendgame()
 {
@@ -1864,8 +1864,8 @@ function checkendgame()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7056
+// Params 1
+// Checksum 0x0, Offset: 0x7055
 // Size: 0x7b
 function endmatchfade( fadedur )
 {
@@ -1882,8 +1882,8 @@ function endmatchfade( fadedur )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x70d9
+// Params 0
+// Checksum 0x0, Offset: 0x70d8
 // Size: 0x172
 function function_da0fa1afaa8835cf()
 {
@@ -1927,8 +1927,8 @@ function function_da0fa1afaa8835cf()
 /#
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7253
+    // Params 0
+    // Checksum 0x0, Offset: 0x7252
     // Size: 0x3c, Type: dev
     function testtimelimit()
     {
@@ -1947,8 +1947,8 @@ function function_da0fa1afaa8835cf()
 #/
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7297
+// Params 0
+// Checksum 0x0, Offset: 0x7296
 // Size: 0x15f
 function checktimelimitevents()
 {
@@ -1992,8 +1992,8 @@ function checktimelimitevents()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x73fe
+// Params 0
+// Checksum 0x0, Offset: 0x73fd
 // Size: 0xb
 function pickclassbr()
 {
@@ -2001,8 +2001,8 @@ function pickclassbr()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7412
+// Params 1
+// Checksum 0x0, Offset: 0x7411
 // Size: 0x1a, Type: bool
 function playershouldrespawn( data )
 {
@@ -2015,8 +2015,8 @@ function playershouldrespawn( data )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7435
+// Params 1
+// Checksum 0x0, Offset: 0x7434
 // Size: 0x26, Type: bool
 function spawnhandled( player )
 {
@@ -2024,8 +2024,8 @@ function spawnhandled( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7464
+// Params 1
+// Checksum 0x0, Offset: 0x7463
 // Size: 0xa8
 function playerwelcomesplashes( data )
 {
@@ -2055,8 +2055,8 @@ function playerwelcomesplashes( data )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7514
+// Params 0
+// Checksum 0x0, Offset: 0x7513
 // Size: 0x2b
 function function_e283c6996bfad7ae()
 {
@@ -2068,8 +2068,8 @@ function function_e283c6996bfad7ae()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7547
+// Params 1
+// Checksum 0x0, Offset: 0x7546
 // Size: 0x1af
 function function_73bdf8b18e29b13f( players )
 {
@@ -2121,8 +2121,8 @@ function function_73bdf8b18e29b13f( players )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x76fe
+// Params 1
+// Checksum 0x0, Offset: 0x76fd
 // Size: 0x48
 function function_daf5cd1e02931ea7( player )
 {
@@ -2132,8 +2132,8 @@ function function_daf5cd1e02931ea7( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x774f
+// Params 0
+// Checksum 0x0, Offset: 0x774e
 // Size: 0x26
 function function_8aa3182c50a3094()
 {
@@ -2142,8 +2142,8 @@ function function_8aa3182c50a3094()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x777d
+// Params 0
+// Checksum 0x0, Offset: 0x777c
 // Size: 0x84
 function function_927a1c74689ce55a()
 {
@@ -2160,8 +2160,8 @@ function function_927a1c74689ce55a()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7809
+// Params 0
+// Checksum 0x0, Offset: 0x7808
 // Size: 0xc6
 function function_f6843e3a71516b3e()
 {
@@ -2191,8 +2191,8 @@ function function_f6843e3a71516b3e()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x78d7
+// Params 0
+// Checksum 0x0, Offset: 0x78d6
 // Size: 0xa7
 function function_f38e7b13448998b4()
 {
@@ -2227,8 +2227,8 @@ function function_f38e7b13448998b4()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7986
+// Params 0
+// Checksum 0x0, Offset: 0x7985
 // Size: 0x184
 function function_cd59d6be22c74107()
 {
@@ -2279,8 +2279,8 @@ function function_cd59d6be22c74107()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b12
+// Params 0
+// Checksum 0x0, Offset: 0x7b11
 // Size: 0x3b
 function function_7460b890072bffbe()
 {
@@ -2293,8 +2293,8 @@ function function_7460b890072bffbe()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b55
+// Params 0
+// Checksum 0x0, Offset: 0x7b54
 // Size: 0x372
 function function_62b40b6a6c2cf37a()
 {
@@ -2319,8 +2319,8 @@ function function_62b40b6a6c2cf37a()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ecf
+// Params 0
+// Checksum 0x0, Offset: 0x7ece
 // Size: 0x27d
 function function_53109b63a7168074()
 {
@@ -2356,7 +2356,8 @@ function function_53109b63a7168074()
         var_e59eccd90c6407da = [];
         var_df9fb2cbd434f334 = undefined;
         
-        for (i = 0; i < 10; i++) {
+        for ( i = 0; i < 10 ; i++ )
+        {
             lootid = self getplayerdata( level.var_5d69837cf4db0407, "DMZExfilPerkStreak", i, "lootID" );
             
             if ( lootid != 0 )
@@ -2394,8 +2395,8 @@ function function_53109b63a7168074()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8154
+// Params 1
+// Checksum 0x0, Offset: 0x8153
 // Size: 0x10f
 function function_470b4aaafd986a0d( player )
 {
@@ -2429,14 +2430,15 @@ function function_470b4aaafd986a0d( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x826b
+// Params 0
+// Checksum 0x0, Offset: 0x826a
 // Size: 0xb6
 function function_f0e913c037010a9()
 {
     perklootids = [];
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         lootid = self getplayerdata( level.var_5d69837cf4db0407, "DMZExfilPerkStreak", i, "lootID" );
         
         if ( lootid != 0 )
@@ -2456,8 +2458,8 @@ function function_f0e913c037010a9()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8329
+// Params 0
+// Checksum 0x0, Offset: 0x8328
 // Size: 0x164
 function function_1ebd7d347b85cae3()
 {
@@ -2498,8 +2500,8 @@ function function_1ebd7d347b85cae3()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8495
+// Params 0
+// Checksum 0x0, Offset: 0x8494
 // Size: 0x30
 function function_12b9bc0f30aa8f5d()
 {
@@ -2512,8 +2514,8 @@ function function_12b9bc0f30aa8f5d()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84cd
+// Params 0
+// Checksum 0x0, Offset: 0x84cc
 // Size: 0x88
 function function_1a425272955d5f75()
 {
@@ -2526,14 +2528,15 @@ function function_1a425272955d5f75()
     self setplayerdata( level.var_5d69837cf4db0407, "currentStreakCount", 0 );
     self setplayerdata( level.var_5d69837cf4db0407, "bestStreakGainedProgress", 0 );
     
-    for (i = 0; i < 10; i++) {
+    for ( i = 0; i < 10 ; i++ )
+    {
         self setplayerdata( level.var_5d69837cf4db0407, "DMZExfilPerkStreak", i, "lootID", 0 );
     }
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x855d
+// Params 0
+// Checksum 0x0, Offset: 0x855c
 // Size: 0x34, Type: bool
 function function_61f9109d0eb76f19()
 {
@@ -2546,8 +2549,8 @@ function function_61f9109d0eb76f19()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x859a
+// Params 1
+// Checksum 0x0, Offset: 0x8599
 // Size: 0x4f
 function function_1be19e52e991d817( player )
 {
@@ -2562,8 +2565,8 @@ function function_1be19e52e991d817( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x85f1
+// Params 1
+// Checksum 0x0, Offset: 0x85f0
 // Size: 0xad
 function function_adf1fe22b2cd5bd2( player )
 {
@@ -2592,8 +2595,8 @@ function function_adf1fe22b2cd5bd2( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x86a6
+// Params 0
+// Checksum 0x0, Offset: 0x86a5
 // Size: 0x20e
 function function_b68a411adf965e7f()
 {
@@ -2680,8 +2683,8 @@ function function_b68a411adf965e7f()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x88bc
+// Params 2
+// Checksum 0x0, Offset: 0x88bb
 // Size: 0xe7
 function getdefaultweaponammo( weapon, maxammo )
 {
@@ -2706,8 +2709,8 @@ function getdefaultweaponammo( weapon, maxammo )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x89ac
+// Params 6
+// Checksum 0x0, Offset: 0x89ab
 // Size: 0xce
 function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforplayercard, var_42b1e877ab187c6 )
 {
@@ -2729,8 +2732,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
 /#
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8a82
+    // Params 0
+    // Checksum 0x0, Offset: 0x8a81
     // Size: 0x109, Type: dev
     function function_f7920586b5a59226()
     {
@@ -2777,8 +2780,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8b93
+    // Params 0
+    // Checksum 0x0, Offset: 0x8b92
     // Size: 0x1bf, Type: dev
     function function_2ff493cd8ff03634()
     {
@@ -2870,8 +2873,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8d5a
+    // Params 0
+    // Checksum 0x0, Offset: 0x8d59
     // Size: 0x1b6, Type: dev
     function function_f917fde1df9c5506()
     {
@@ -2927,8 +2930,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8f18
+    // Params 0
+    // Checksum 0x0, Offset: 0x8f17
     // Size: 0x1f5, Type: dev
     function function_459e2558e6d936ed()
     {
@@ -2967,8 +2970,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9115
+    // Params 0
+    // Checksum 0x0, Offset: 0x9114
     // Size: 0x1aa, Type: dev
     function function_dc98aeb4dd4b727a()
     {
@@ -2980,7 +2983,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
                 hostage = spawnscriptable( "<dev string:x36b>", level.players[ 0 ].origin, level.players[ 0 ].angles );
                 hostage setscriptablepartstate( "<dev string:x36b>", "<dev string:x37a>" );
                 
-                for (i = 0; i < 5; i++) {
+                for ( i = 0; i < 5 ; i++ )
+                {
                     plate = spawnscriptable( "<dev string:x384>", level.players[ 0 ].origin + 32 * function_6174330574a2a273(), level.players[ 0 ].angles );
                     plate setscriptablepartstate( "<dev string:x384>", "<dev string:x39a>" );
                 }
@@ -2991,7 +2995,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
                 setdvar( @"hash_db675935826560a", 0 );
                 spawnscriptable( "<dev string:x3a4>", level.players[ 0 ].origin, level.players[ 0 ].angles );
                 
-                for (i = 0; i < 5; i++) {
+                for ( i = 0; i < 5 ; i++ )
+                {
                     plate = spawnscriptable( "<dev string:x384>", level.players[ 0 ].origin + 32 * function_6174330574a2a273(), level.players[ 0 ].angles );
                     plate setscriptablepartstate( "<dev string:x384>", "<dev string:x39a>" );
                 }
@@ -3002,8 +3007,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x92c7
+    // Params 0
+    // Checksum 0x0, Offset: 0x92c6
     // Size: 0x3e1, Type: dev
     function function_37eaf2bc0bb3e28a()
     {
@@ -3120,8 +3125,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x96b0
+    // Params 0
+    // Checksum 0x0, Offset: 0x96af
     // Size: 0xa4, Type: dev
     function function_b0d036699b334631()
     {
@@ -3147,8 +3152,8 @@ function showdmzsplash( splash, playerlist, poiname, optionalnumber, playerforpl
 #/
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x975c
+// Params 0
+// Checksum 0x0, Offset: 0x975b
 // Size: 0x102
 function function_e1fa80f536692a32()
 {
@@ -3184,8 +3189,8 @@ function function_e1fa80f536692a32()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9866
+// Params 1
+// Checksum 0x0, Offset: 0x9865
 // Size: 0xb
 function function_b9abf4fc2d1f7fcd( revivespawn )
 {
@@ -3193,8 +3198,8 @@ function function_b9abf4fc2d1f7fcd( revivespawn )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9879
+// Params 0
+// Checksum 0x0, Offset: 0x9878
 // Size: 0x25, Type: bool
 function function_181a43d54c23236()
 {
@@ -3217,8 +3222,8 @@ function function_181a43d54c23236()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98a7
+// Params 0
+// Checksum 0x0, Offset: 0x98a6
 // Size: 0xd
 function function_dbe369af1abc2991()
 {
@@ -3226,8 +3231,8 @@ function function_dbe369af1abc2991()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98bc
+// Params 0
+// Checksum 0x0, Offset: 0x98bb
 // Size: 0xc, Type: bool
 function function_4e5ca94d32370a5a()
 {
@@ -3235,8 +3240,8 @@ function function_4e5ca94d32370a5a()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x98d1
+// Params 1
+// Checksum 0x0, Offset: 0x98d0
 // Size: 0x2af
 function function_63a938bfc7ba5c2b( nodes )
 {
@@ -3299,8 +3304,8 @@ function function_63a938bfc7ba5c2b( nodes )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b89
+// Params 0
+// Checksum 0x0, Offset: 0x9b88
 // Size: 0x34
 function function_7eb9b366e7ee262e()
 {
@@ -3323,8 +3328,8 @@ function function_7eb9b366e7ee262e()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bc6
+// Params 1
+// Checksum 0x0, Offset: 0x9bc5
 // Size: 0x516
 function function_effb4f29bf72a97b( targetnoteworthy )
 {
@@ -3350,7 +3355,8 @@ function function_effb4f29bf72a97b( targetnoteworthy )
     rownum = tablelookupgetnumrows( spawnpointcsv );
     spawnrow = 0;
     
-    for (rowindex = 0; rowindex < rownum; rowindex++) {
+    for ( rowindex = 0; rowindex < rownum ; rowindex++ )
+    {
         poi = tablelookupbyrow( spawnpointcsv, rowindex, 0 );
         
         if ( isdefined( level.var_ab20b3a256911579 ) && level.var_e5993849fc7d5987 == 0 && ( !isdefined( poi ) || array_contains( level.var_ab20b3a256911579, poi ) ) && scripts\mp\poi::function_7e9cbc0f32de6578() )
@@ -3414,7 +3420,8 @@ function function_effb4f29bf72a97b( targetnoteworthy )
     var_3bafc217f6706130 = function_47fd8fcdf90b0e() & 65535;
     previousval = var_3bafc217f6706130;
     
-    for (i = 0; i < startpoints.var_f700d2836aab75a4.size; i++) {
+    for ( i = 0; i < startpoints.var_f700d2836aab75a4.size ; i++ )
+    {
         previousval = ( previousval * 29 + 19 ) % 65535;
         randval = previousval % startpoints.var_f700d2836aab75a4.size;
         tmp = startpoints.var_f700d2836aab75a4[ i ];
@@ -3427,7 +3434,8 @@ function function_effb4f29bf72a97b( targetnoteworthy )
     
     foreach ( index, quad in startpoints.var_f700d2836aab75a4 )
     {
-        for (i = 0; i < quad.size; i++) {
+        for ( i = 0; i < quad.size ; i++ )
+        {
             previousval = ( previousval * 29 + 19 ) % 65535;
             randval = previousval % quad.size;
             tmp = quad[ i ];
@@ -3443,8 +3451,8 @@ function function_effb4f29bf72a97b( targetnoteworthy )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0e5
+// Params 0
+// Checksum 0x0, Offset: 0xa0e4
 // Size: 0x430
 function initstartpoints()
 {
@@ -3556,8 +3564,8 @@ function initstartpoints()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa51d
+// Params 0
+// Checksum 0x0, Offset: 0xa51c
 // Size: 0x909
 function getspawnpoint()
 {
@@ -3736,8 +3744,8 @@ function getspawnpoint()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xae2f
+// Params 2
+// Checksum 0x0, Offset: 0xae2e
 // Size: 0x58
 function function_9ec9c03926f7b11c( index, maxnum )
 {
@@ -3747,8 +3755,8 @@ function function_9ec9c03926f7b11c( index, maxnum )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xae90
+// Params 1
+// Checksum 0x0, Offset: 0xae8f
 // Size: 0x166
 function function_be92590a9b41dea8( givenid )
 {
@@ -3756,7 +3764,8 @@ function function_be92590a9b41dea8( givenid )
     rownum = tablelookupgetnumrows( spawnpointcsv );
     spawnrow = 0;
     
-    for (rowindex = 0; rowindex < rownum; rowindex++) {
+    for ( rowindex = 0; rowindex < rownum ; rowindex++ )
+    {
         id = tablelookupbyrow( spawnpointcsv, rowindex, 13 );
         
         if ( int( id ) == givenid )
@@ -3781,8 +3790,8 @@ function function_be92590a9b41dea8( givenid )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xafff
+// Params 1
+// Checksum 0x0, Offset: 0xaffe
 // Size: 0x56, Type: bool
 function isvalidspectatetarget( player )
 {
@@ -3795,8 +3804,8 @@ function isvalidspectatetarget( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb05e
+// Params 1
+// Checksum 0x0, Offset: 0xb05d
 // Size: 0x189
 function autoassignquest( player )
 {
@@ -3840,14 +3849,14 @@ function autoassignquest( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1ef
+// Params 0
+// Checksum 0x0, Offset: 0xb1ee
 // Size: 0x8d
 function function_11750957aa915a23()
 {
     level endon( "game_ended" );
     scripts\mp\flags::gameflagwait( "prematch_done" );
-    timer = getdvarint( @"hash_e022fd0199a95f84" );
+    timer = getdvarint( @"scr_br_timelimit" );
     level thread function_18f66bbf9aa3c9af( timer );
     
     /#
@@ -3855,7 +3864,7 @@ function function_11750957aa915a23()
         
         while ( timechanged == timer )
         {
-            timechanged = getdvarint( @"hash_e022fd0199a95f84" );
+            timechanged = getdvarint( @"scr_br_timelimit" );
             wait 1;
         }
         
@@ -3867,8 +3876,8 @@ function function_11750957aa915a23()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb284
+// Params 1
+// Checksum 0x0, Offset: 0xb283
 // Size: 0x4a
 function function_18f66bbf9aa3c9af( timer )
 {
@@ -3883,8 +3892,8 @@ function function_18f66bbf9aa3c9af( timer )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2d6
+// Params 0
+// Checksum 0x0, Offset: 0xb2d5
 // Size: 0xa
 function eomawardplayerxp()
 {
@@ -3892,8 +3901,8 @@ function eomawardplayerxp()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2e8
+// Params 2
+// Checksum 0x0, Offset: 0xb2e7
 // Size: 0x48
 function function_f1c3982d13453d32( streakitem, slotnumber )
 {
@@ -3909,8 +3918,8 @@ function function_f1c3982d13453d32( streakitem, slotnumber )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb339
+// Params 0
+// Checksum 0x0, Offset: 0xb338
 // Size: 0x13b
 function function_dd432354af4c9024()
 {
@@ -3947,8 +3956,8 @@ function function_dd432354af4c9024()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb47c
+// Params 0
+// Checksum 0x0, Offset: 0xb47b
 // Size: 0x2fb
 function function_d8431975bbec1179()
 {
@@ -3986,7 +3995,8 @@ function function_d8431975bbec1179()
     
     var_387e5f09ea0603e8 = getdvarint( @"hash_673ec70c6eff1e18", 2 );
     
-    for (i = 0; i < var_387e5f09ea0603e8; i++) {
+    for ( i = 0; i < var_387e5f09ea0603e8 ; i++ )
+    {
         spawndata = spawnstruct();
         
         if ( !isdefined( helilocs[ i ] ) )
@@ -4029,8 +4039,8 @@ function function_d8431975bbec1179()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb77f
+// Params 0
+// Checksum 0x0, Offset: 0xb77e
 // Size: 0x106
 function function_3403c13cec1cea46()
 {
@@ -4065,8 +4075,8 @@ function function_3403c13cec1cea46()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xb88d
+// Params 7
+// Checksum 0x0, Offset: 0xb88c
 // Size: 0x5d
 function createlootdropinfo( baseorigin, baseangles, ignoreent, var_8a600b6102da9f9b, var_f71d4f78d508da69, var_6fe2ff802d5192d4, var_3ace5ac9c7d6fa44 )
 {
@@ -4075,8 +4085,8 @@ function createlootdropinfo( baseorigin, baseangles, ignoreent, var_8a600b6102da
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8f3
+// Params 3
+// Checksum 0x0, Offset: 0xb8f2
 // Size: 0x46
 function function_9df0ee7fcb9589d4( player, slot, oldequipment )
 {
@@ -4090,8 +4100,8 @@ function function_9df0ee7fcb9589d4( player, slot, oldequipment )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb941
+// Params 0
+// Checksum 0x0, Offset: 0xb940
 // Size: 0x1f3
 function sorttripwires()
 {
@@ -4162,8 +4172,8 @@ function sorttripwires()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb3c
+// Params 0
+// Checksum 0x0, Offset: 0xbb3b
 // Size: 0x143
 function function_f3a2435f8e39438b()
 {
@@ -4198,8 +4208,8 @@ function function_f3a2435f8e39438b()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc87
+// Params 2
+// Checksum 0x0, Offset: 0xbc86
 // Size: 0xb9, Type: bool
 function playerskiplootpickup( instance, autouse )
 {
@@ -4226,8 +4236,8 @@ function playerskiplootpickup( instance, autouse )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd49
+// Params 1
+// Checksum 0x0, Offset: 0xbd48
 // Size: 0xa73
 function function_865b1a5a62c49d7( var_74753a0c1c255400 )
 {
@@ -4372,8 +4382,8 @@ function function_865b1a5a62c49d7( var_74753a0c1c255400 )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7c4
+// Params 0
+// Checksum 0x0, Offset: 0xc7c3
 // Size: 0x37
 function onstartgametype()
 {
@@ -4386,8 +4396,8 @@ function onstartgametype()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc803
+// Params 0
+// Checksum 0x0, Offset: 0xc802
 // Size: 0x24, Type: bool
 function function_a7f9424636f37fb1()
 {
@@ -4395,8 +4405,8 @@ function function_a7f9424636f37fb1()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc830
+// Params 1
+// Checksum 0x0, Offset: 0xc82f
 // Size: 0xca, Type: bool
 function function_bfd9f11e955ace89( player )
 {
@@ -4410,7 +4420,7 @@ function function_bfd9f11e955ace89( player )
         return false;
     }
     
-    dist = getdvarint( @"hash_57797986a6d60476", 4096 );
+    dist = getdvarint( @"scr_overlord_enemy_proximity_radius", 4096 );
     distsq = dist * dist;
     
     foreach ( exfil in level.var_fe2e551da0962c3c )
@@ -4425,8 +4435,8 @@ function function_bfd9f11e955ace89( player )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc903
+// Params 1
+// Checksum 0x0, Offset: 0xc902
 // Size: 0x249
 function function_b71560b07a8f979d( poiprefix )
 {
@@ -4496,8 +4506,8 @@ function function_b71560b07a8f979d( poiprefix )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb54
+// Params 1
+// Checksum 0x0, Offset: 0xcb53
 // Size: 0x2a
 function function_7a7aa3b5455f0412( poiname )
 {
@@ -4510,8 +4520,8 @@ function function_7a7aa3b5455f0412( poiname )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb87
+// Params 0
+// Checksum 0x0, Offset: 0xcb86
 // Size: 0x7c
 function function_a1e18f290954a5e9()
 {
@@ -4531,8 +4541,8 @@ function function_a1e18f290954a5e9()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc0b
+// Params 0
+// Checksum 0x0, Offset: 0xcc0a
 // Size: 0xc1
 function function_3e8d58a34eb71817()
 {
@@ -4550,8 +4560,8 @@ function function_3e8d58a34eb71817()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xccd4
+// Params 1
+// Checksum 0x0, Offset: 0xccd3
 // Size: 0x1a7
 function function_32eeb14c9c5932ab( poiname )
 {
@@ -4572,7 +4582,8 @@ function function_32eeb14c9c5932ab( poiname )
     
     firelocs = array_randomize( firelocs );
     
-    for (i = 0; i < level.var_d12e916057cf5f18; i++) {
+    for ( i = 0; i < level.var_d12e916057cf5f18 ; i++ )
+    {
         fireloc = firelocs[ i ];
         
         if ( !isdefined( fireloc ) )
@@ -4618,8 +4629,8 @@ function function_32eeb14c9c5932ab( poiname )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xce83
+// Params 2
+// Checksum 0x0, Offset: 0xce82
 // Size: 0x87
 function function_7d89b4a3c059dad5( object, radius )
 {
@@ -4634,8 +4645,8 @@ function function_7d89b4a3c059dad5( object, radius )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf12
+// Params 0
+// Checksum 0x0, Offset: 0xcf11
 // Size: 0x215
 function function_676d1e19647f363b()
 {
@@ -4679,8 +4690,8 @@ function function_676d1e19647f363b()
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd12f
+// Params 1
+// Checksum 0x0, Offset: 0xd12e
 // Size: 0x15a
 function function_75512afd0c09ad03( poiname )
 {
@@ -4719,8 +4730,8 @@ function function_75512afd0c09ad03( poiname )
 }
 
 // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd291
+// Params 2
+// Checksum 0x0, Offset: 0xd290
 // Size: 0x140
 function function_39aceb03c0aace46( player, meansofdeath )
 {
@@ -4757,8 +4768,8 @@ function function_39aceb03c0aace46( player, meansofdeath )
 /#
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd3d9
+    // Params 0
+    // Checksum 0x0, Offset: 0xd3d8
     // Size: 0xe5, Type: dev
     function function_83068181cca9a6ce()
     {
@@ -4783,8 +4794,8 @@ function function_39aceb03c0aace46( player, meansofdeath )
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd4c6
+    // Params 0
+    // Checksum 0x0, Offset: 0xd4c5
     // Size: 0x21a, Type: dev
     function function_6a65488b49f1f350()
     {
@@ -4841,8 +4852,8 @@ function function_39aceb03c0aace46( player, meansofdeath )
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd6e8
+    // Params 0
+    // Checksum 0x0, Offset: 0xd6e7
     // Size: 0x151, Type: dev
     function function_c574618f682ba25e()
     {
@@ -4872,8 +4883,8 @@ function function_39aceb03c0aace46( player, meansofdeath )
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd841
+    // Params 0
+    // Checksum 0x0, Offset: 0xd840
     // Size: 0x15a, Type: dev
     function function_53542cd8fe181d7()
     {
@@ -4908,8 +4919,8 @@ function function_39aceb03c0aace46( player, meansofdeath )
     }
 
     // Namespace br_gametype_dmz / scripts\mp\gametypes\br_gametype_dmz
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd9a3
+    // Params 0
+    // Checksum 0x0, Offset: 0xd9a2
     // Size: 0xbb, Type: dev
     function function_3fd2d65f62ca31b0()
     {

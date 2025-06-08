@@ -6,7 +6,7 @@
 #namespace shellshock_utility;
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0xcc
 // Size: 0x37
 function _shellshock( name, category, duration, animationresponse, interruptdelayms )
@@ -15,7 +15,7 @@ function _shellshock( name, category, duration, animationresponse, interruptdela
 }
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10b
 // Size: 0x12
 function _stopshellshock( fromdeath )
@@ -24,7 +24,7 @@ function _stopshellshock( fromdeath )
 }
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x125
 // Size: 0x6d
 function shellshock_artilleryearthquake( position, scale, duration, radius, ignoreclients )
@@ -51,7 +51,7 @@ function shellshock_artilleryearthquake( position, scale, duration, radius, igno
 }
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x19a
 // Size: 0xbd
 function shellshock_screenshakeonposition( position, radius, ignoreclients )

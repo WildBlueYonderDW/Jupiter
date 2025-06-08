@@ -19,7 +19,7 @@
 #namespace br_attraction_shootingrange;
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x66d
 // Size: 0xe9
 function init()
@@ -44,7 +44,7 @@ function init()
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x75e
 // Size: 0x66
 function init_structs()
@@ -65,7 +65,7 @@ function init_structs()
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7cc
 // Size: 0x134
 function init_structs_mp_br_mechanics()
@@ -83,7 +83,7 @@ function init_structs_mp_br_mechanics()
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x908
 // Size: 0x254
 function init_structs_mp_don3()
@@ -111,7 +111,7 @@ function init_structs_mp_don3()
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb64
 // Size: 0x68
 function init_ranges()
@@ -125,7 +125,7 @@ function init_ranges()
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbd4
 // Size: 0xbf
 function init_range( range )
@@ -150,7 +150,7 @@ function init_range( range )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc9b
 // Size: 0x80
 function init_standard_range( range, locindex )
@@ -162,7 +162,7 @@ function init_standard_range( range, locindex )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd23
 // Size: 0x62
 function playerattractiontriggerenter( player, trigger )
@@ -177,7 +177,7 @@ function playerattractiontriggerenter( player, trigger )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xd8d
 // Size: 0x13
 function playerattractiontriggerexit( player, trigger )
@@ -186,7 +186,7 @@ function playerattractiontriggerexit( player, trigger )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xda8
 // Size: 0x188
 function init_range_targets( range )
@@ -232,7 +232,7 @@ function init_range_targets( range )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf38
 // Size: 0x17b
 function init_range_target_show_damage( range, target, show_death )
@@ -280,7 +280,7 @@ function init_range_target_show_damage( range, target, show_death )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x10bb
 // Size: 0x3d2
 function target_show_damage_damage_watch( range, target, show_death )
@@ -413,7 +413,7 @@ function target_show_damage_damage_watch( range, target, show_death )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1495
 // Size: 0x2c6
 function target_show_damage( range, target, player, damage )
@@ -477,7 +477,7 @@ function target_show_damage( range, target, player, damage )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1763
 // Size: 0x1c4
 function target_show_dist( point, player )
@@ -528,7 +528,7 @@ function target_show_dist( point, player )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x192f
 // Size: 0x13
 function target_drop_loot( range, target )
@@ -537,7 +537,7 @@ function target_drop_loot( range, target )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x194a
 // Size: 0xa9
 function target_play_death_anim( range, target )
@@ -563,7 +563,7 @@ function target_play_death_anim( range, target )
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19fb
 // Size: 0x1c, Type: bool
 function useagents()
@@ -572,7 +572,7 @@ function useagents()
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1a20
 // Size: 0x133
 function createagenttargetloadout()
@@ -604,7 +604,7 @@ function createagenttargetloadout()
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b5c
 // Size: 0x1b
 function agentclasscallback()
@@ -613,7 +613,7 @@ function agentclasscallback()
 }
 
 // Namespace br_attraction_shootingrange / scripts\mp\gametypes\br_attraction_shootingrange
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b80
 // Size: 0x16
 function agentthink()

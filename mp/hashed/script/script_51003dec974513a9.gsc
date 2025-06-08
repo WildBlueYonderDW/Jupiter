@@ -1,6 +1,5 @@
 #using script_16ea1b94f0f381b3;
 #using script_193e3e231841082f;
-#using script_22f1701e151b9d12;
 #using script_6c63dbe7d4c85e19;
 #using script_7edf952f8921aa6b;
 #using scripts\common\ai;
@@ -8,13 +7,14 @@
 #using scripts\common\devgui;
 #using scripts\common\utility;
 #using scripts\common\values;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\engine\math;
 #using scripts\engine\utility;
 
 #namespace zombie_deathworm;
 
 // Namespace zombie_deathworm / namespace_6420be1866bdf4af
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x354
 // Size: 0x68
 function function_72d358d261f676a3( params )
@@ -30,14 +30,15 @@ function function_72d358d261f676a3( params )
 }
 
 // Namespace zombie_deathworm / namespace_6420be1866bdf4af
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c4
 // Size: 0xda
 function function_d5a08a1079b6f4dd()
 {
     self.var_e49062f063f27791 = [];
     
-    for (spawner_i = 0; spawner_i < 6; spawner_i++) {
+    for ( spawner_i = 0; spawner_i < 6 ; spawner_i++ )
+    {
         self.var_e49062f063f27791[ spawner_i ] = spawn( "script_model", self.origin );
         self.var_e49062f063f27791[ spawner_i ] setmodel( self.zombieaisettings.var_e58a65b7a8f5973c.var_e6140b1038dfc126 );
         thread utility::delete_on_death( self.var_e49062f063f27791[ spawner_i ] );
@@ -137,7 +138,8 @@ function private function_89c75ea3b9bff392()
     var_98462fcf733f80b5 = is_injured || var_de7821bc51ab43a0 >= 4 ? 6 : var_b23fe13906e7191b + 1;
     var_d95356124cc5cc35 = randomintrange( var_b23fe13906e7191b, var_98462fcf733f80b5 + 1 );
     
-    for (spawner_i = 0; spawner_i < var_d95356124cc5cc35; spawner_i++) {
+    for ( spawner_i = 0; spawner_i < var_d95356124cc5cc35 ; spawner_i++ )
+    {
         self.var_e49062f063f27791[ spawner_i ] dontinterpolate();
         self.var_e49062f063f27791[ spawner_i ].origin = head_pos;
         self.var_e49062f063f27791[ spawner_i ] utility::function_3ab9164ef76940fd( "mobile_spawner", "mobile_spawner_on" );
@@ -400,7 +402,7 @@ function private function_5d00deda54ae49e1()
 /#
 
     // Namespace zombie_deathworm / namespace_6420be1866bdf4af
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1127
     // Size: 0x44, Type: dev
     function function_1dc954d715878eee()

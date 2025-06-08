@@ -7,7 +7,7 @@
 #namespace mp_jup_estate_lighting;
 
 // Namespace mp_jup_estate_lighting / scripts\mp\maps\mp_jup_estate\mp_jup_estate_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12d
 // Size: 0xa
 function main()
@@ -16,7 +16,7 @@ function main()
 }
 
 // Namespace mp_jup_estate_lighting / scripts\mp\maps\mp_jup_estate\mp_jup_estate_lighting
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x13f
 // Size: 0x7e
 function function_15ac91b5e59a6c86()

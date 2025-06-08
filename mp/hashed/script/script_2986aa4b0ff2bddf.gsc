@@ -9,7 +9,7 @@
 #namespace namespace_503ce3a6b9903b4d;
 
 // Namespace namespace_503ce3a6b9903b4d / namespace_4dbcecb8aa6160e3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3df
 // Size: 0x125
 function init()
@@ -56,7 +56,7 @@ function private function_48439182721444a3()
 }
 
 // Namespace namespace_503ce3a6b9903b4d / namespace_4dbcecb8aa6160e3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f9
 // Size: 0xf9
 function function_3113f44ebafe71b1()
@@ -88,7 +88,7 @@ function function_3113f44ebafe71b1()
 }
 
 // Namespace namespace_503ce3a6b9903b4d / namespace_4dbcecb8aa6160e3
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fa
 // Size: 0x339
 function testprocess( var_a998844686a7ae57 )
@@ -172,7 +172,7 @@ function testprocess( var_a998844686a7ae57 )
 }
 
 // Namespace namespace_503ce3a6b9903b4d / namespace_4dbcecb8aa6160e3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa3b
 // Size: 0x65
 function endhandler()
@@ -417,7 +417,8 @@ function private function_e6c8677b0fb79d74( target )
     var_b0f645bd38d985cc = 64;
     var_6d82c1563a4ff586 = 5000;
     
-    for (lastpos = self.origin; true; lastpos = self.origin) {
+    for ( lastpos = self.origin; true ; lastpos = self.origin )
+    {
         wait var_45a16c7edeccb500;
         var_f122a392f555d0c8 = function_71b519a5e0525acc();
         
@@ -537,7 +538,8 @@ function private report( situation, bot, position, target, path, comment )
     
     if ( isdefined( path ) )
     {
-        for (i = 0; i < path.size; i++) {
+        for ( i = 0; i < path.size ; i++ )
+        {
             pathstr += path[ i ];
         }
     }
@@ -742,7 +744,8 @@ function private function_6a04d8387ace6ae8( position, path, thresholddist, var_4
     
     res = [];
     
-    for (i = 0; i < path.size - 1; i++) {
+    for ( i = 0; i < path.size - 1 ; i++ )
+    {
         p1 = path[ i ];
         p2 = path[ i + 1 ];
         
@@ -867,7 +870,7 @@ function private function_2cd5adf6cf3179e5()
 }
 
 // Namespace namespace_503ce3a6b9903b4d / namespace_4dbcecb8aa6160e3
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22da
 // Size: 0x22e
 function function_3ec57983d173d1e3()
@@ -1055,7 +1058,7 @@ function private function_57a85ec4923ff680( description, origin )
     }
 
     // Namespace namespace_503ce3a6b9903b4d / namespace_4dbcecb8aa6160e3
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x2991
     // Size: 0x3f, Type: dev
     function function_63bde891e2fb515c( stuckpos )

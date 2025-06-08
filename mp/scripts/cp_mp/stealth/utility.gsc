@@ -12,7 +12,7 @@
 /#
 
     // Namespace utility / scripts\cp_mp\stealth\utility
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x29c
     // Size: 0x1f, Type: dev
     function function_a464c293616a3a6( debug_string )
@@ -26,7 +26,7 @@
     }
 
     // Namespace utility / scripts\cp_mp\stealth\utility
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2c3
     // Size: 0x17, Type: dev
     function function_e39a555170607456()
@@ -37,7 +37,7 @@
 #/
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e2
 // Size: 0x29
 function setattackeraccuracy( val )
@@ -52,7 +52,7 @@ function setattackeraccuracy( val )
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x313
 // Size: 0x3c
 function function_50c9c1c52c852f54( val )
@@ -66,7 +66,7 @@ function function_50c9c1c52c852f54( val )
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x357
 // Size: 0x33, Type: bool
 function hassixthsense()
@@ -76,7 +76,7 @@ function hassixthsense()
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x393
 // Size: 0x33, Type: bool
 function function_7043a32c6ff5835a()
@@ -86,7 +86,7 @@ function function_7043a32c6ff5835a()
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cf
 // Size: 0x16
 function function_e33c1a98de731caf()
@@ -100,7 +100,7 @@ function function_e33c1a98de731caf()
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3ee
 // Size: 0x4f2
 function function_7f12653d04730492()
@@ -275,7 +275,7 @@ function function_7f12653d04730492()
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x8e8
 // Size: 0xeb
 function function_6186bf9e7a357a3e( dir, active, spotted, sightmask, spottedmask )
@@ -312,7 +312,7 @@ function function_6186bf9e7a357a3e( dir, active, spotted, sightmask, spottedmask
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x9db
 // Size: 0x10c, Type: bool
 function function_d075e24b4fdf7c87( dir, mask )
@@ -350,7 +350,7 @@ function function_d075e24b4fdf7c87( dir, mask )
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaf0
 // Size: 0x8e
 function _getweapongroup( weapon )
@@ -384,7 +384,7 @@ function _getweapongroup( weapon )
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb87
 // Size: 0xf9, Type: bool
 function function_830f660f7a75ee82( player )
@@ -425,7 +425,7 @@ function function_830f660f7a75ee82( player )
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc89
 // Size: 0x1c
 function function_a5ff5e1965faf40e()
@@ -440,7 +440,7 @@ function function_a5ff5e1965faf40e()
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcad
 // Size: 0x3d
 function function_378625a93d79fdc2()
@@ -453,7 +453,7 @@ function function_378625a93d79fdc2()
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xcf2
 // Size: 0x4d
 function function_1a4d7090fc81e97()
@@ -468,7 +468,7 @@ function function_1a4d7090fc81e97()
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd47
 // Size: 0x18
 function function_39af3dff662a71d0( sightmask )
@@ -477,7 +477,7 @@ function function_39af3dff662a71d0( sightmask )
 }
 
 // Namespace utility / scripts\cp_mp\stealth\utility
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd67
 // Size: 0x13a
 function function_9af348cfa1145f9c( enemy )

@@ -67,8 +67,8 @@
 #namespace events;
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d41
+// Params 0
+// Checksum 0x0, Offset: 0x2d70
 // Size: 0x5c8
 function events_init()
 {
@@ -191,8 +191,8 @@ function events_init()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3311
+// Params 0
+// Checksum 0x0, Offset: 0x3340
 // Size: 0x18d
 function function_15fd33eb83ce9723()
 {
@@ -270,8 +270,8 @@ function function_15fd33eb83ce9723()
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34a7
+// Params 1
+// Checksum 0x0, Offset: 0x34d6
 // Size: 0x7f
 function function_e1fb4dfa1db65ce2( entry )
 {
@@ -293,8 +293,8 @@ function function_e1fb4dfa1db65ce2( entry )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x352e
+// Params 1
+// Checksum 0x0, Offset: 0x355d
 // Size: 0x2b8
 function function_51e853369bc3f0bf( entry )
 {
@@ -378,8 +378,8 @@ function function_51e853369bc3f0bf( entry )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x37ee
+// Params 2
+// Checksum 0x0, Offset: 0x381d
 // Size: 0xd0
 function function_3931df10145eac22( ref, splashtablename )
 {
@@ -405,8 +405,8 @@ function function_3931df10145eac22( ref, splashtablename )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x38c6
+// Params 2
+// Checksum 0x0, Offset: 0x38f5
 // Size: 0xd2
 function function_cbf4b04a2e7f02ae( ref, var_5a45f9068b4f316 )
 {
@@ -445,8 +445,8 @@ function function_cbf4b04a2e7f02ae( ref, var_5a45f9068b4f316 )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39a0
+// Params 0
+// Checksum 0x0, Offset: 0x39cf
 // Size: 0x16
 function onplayerspawn()
 {
@@ -455,8 +455,8 @@ function onplayerspawn()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39be
+// Params 0
+// Checksum 0x0, Offset: 0x39ed
 // Size: 0x16b
 function onplayerconnect()
 {
@@ -509,8 +509,8 @@ function onplayerconnect()
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b31
+// Params 2
+// Checksum 0x0, Offset: 0x3b60
 // Size: 0x4f
 function damagedplayer( victim, damage )
 {
@@ -524,8 +524,8 @@ function damagedplayer( victim, damage )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b88
+// Params 2
+// Checksum 0x0, Offset: 0x3bb7
 // Size: 0x1c
 function playerworlddeath( attacker, meansofdeath )
 {
@@ -533,9 +533,9 @@ function playerworlddeath( attacker, meansofdeath )
 }
 
 // Namespace events / scripts\mp\events
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bac
-// Size: 0x14f
+// Params 4
+// Checksum 0x0, Offset: 0x3bdb
+// Size: 0x170
 function killedplayernotifysys( killid, victim, objweapon, meansofdeath )
 {
     self endon( "disconnect" );
@@ -585,14 +585,20 @@ function killedplayernotifysys( killid, victim, objweapon, meansofdeath )
     
     waittillframeend();
     thread notifykilledplayer( killid, victim, objweapon, meansofdeath, self.killsinaframecount );
+    
+    if ( self.killsinaframecount > 1 )
+    {
+        scripts\cp_mp\challenges::function_aad625406f236f34( self.killsinaframecount, self, objweapon );
+    }
+    
     self.killsinaframecount = 0;
     self.bulletkillsinaframecount = 0;
     self.shotgunkillsinaframecount = 0;
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d03
+// Params 5
+// Checksum 0x0, Offset: 0x3d53
 // Size: 0x82
 function notifykilledplayer( killid, victim, objweapon, meansofdeath, numkills )
 {
@@ -608,15 +614,16 @@ function notifykilledplayer( killid, victim, objweapon, meansofdeath, numkills )
         weaponname = objweapon;
     }
     
-    for (i = 0; i < numkills; i++) {
+    for ( i = 0; i < numkills ; i++ )
+    {
         self notify( "got_a_kill", victim, weaponname, meansofdeath );
         waitframe();
     }
 }
 
 // Namespace events / scripts\mp\events
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d8d
+// Params 4
+// Checksum 0x0, Offset: 0x3ddd
 // Size: 0x6c
 function attackerisinflictor( attacker, inflictor, objweapon, meansofdeath )
 {
@@ -641,8 +648,8 @@ function attackerisinflictor( attacker, inflictor, objweapon, meansofdeath )
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e02
+// Params 3
+// Checksum 0x0, Offset: 0x3e52
 // Size: 0x78
 function attackerisinflictorforradiusexplosiveweapon( objweapon, inflictor, meansofdeath )
 {
@@ -658,12 +665,12 @@ function attackerisinflictorforradiusexplosiveweapon( objweapon, inflictor, mean
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e83
-// Size: 0x348
+// Params 5
+// Checksum 0x0, Offset: 0x3ed3
+// Size: 0x359
 function function_e6f3a66a2cd9d802( victim, objweapon, meansofdeath, curtime, weapongroup )
 {
-    if ( weapongroup == "other" || weapongroup == "weapon_projectile" && meansofdeath != "MOD_RIFLE_BULLET" )
+    if ( weapongroup == "other" || weapongroup == "weapon_projectile" && weaponclass( objweapon ) != "sniper" && !scripts\mp\weapons::function_d24bf01d284ef941( objweapon ) )
     {
         return 0;
     }
@@ -742,9 +749,9 @@ function function_e6f3a66a2cd9d802( victim, objweapon, meansofdeath, curtime, we
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x41d3
-// Size: 0x4219
+// Params 5
+// Checksum 0x0, Offset: 0x4234
+// Size: 0x421c
 function function_b7f154368abbe463( victim, objweapon, meansofdeath, inflictor, deathdata )
 {
     self.modifiers = [];
@@ -771,7 +778,7 @@ function function_b7f154368abbe463( victim, objweapon, meansofdeath, inflictor, 
         
         var_fefdbb410f47898e = 0;
         
-        if ( getdvarint( @"hash_b7d30c36ac281531", 1 ) && inflictor.classname == "worldspawn" && var_a071c3820a3eec6d )
+        if ( getdvarint( @"hash_b7d30c36ac281531", 1 ) && isdefined( inflictor.classname ) && inflictor.classname == "worldspawn" && var_a071c3820a3eec6d )
         {
             attackerisinflictor = 1;
             var_fefdbb410f47898e = 1;
@@ -804,7 +811,7 @@ function function_b7f154368abbe463( victim, objweapon, meansofdeath, inflictor, 
             }
         }
         
-        isbulletdamage = isbulletdamage( meansofdeath );
+        isbulletdamage = isbulletdamage( meansofdeath ) || scripts\mp\weapons::function_d24bf01d284ef941( objweapon );
         ismeleedamage = ismeleedamage( meansofdeath );
         
         if ( ( isbulletdamage || ismeleedamage ) && isdefined( var_776dafcc4fadbc14 ) && isdefined( var_414d20858ffe7335 ) )
@@ -910,7 +917,7 @@ function function_b7f154368abbe463( victim, objweapon, meansofdeath, inflictor, 
             self.modifiers[ "mask" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "mask" ], function_e2ff8f4b4e94f723( #"hash_7f94e81c1787ff7a", #"comeback" ) );
         }
         
-        if ( meansofdeath != "MOD_GRENADE" && ( meansofdeath == "MOD_HEAD_SHOT" || function_632bdd4591097aef( deathdata.hitloc ) && meansofdeath != "MOD_MELEE" || isxmike109explosiveheadshot( objweapon, deathdata ) || function_d355d90bab289087( objweapon, deathdata ) ) )
+        if ( meansofdeath != "MOD_GRENADE" && ( meansofdeath == "MOD_HEAD_SHOT" || function_632bdd4591097aef( deathdata.hitloc ) && meansofdeath != "MOD_MELEE" || isxmike109explosiveheadshot( objweapon, deathdata ) || function_d355d90bab289087( objweapon, deathdata ) || function_75f9ec9388f318dc( objweapon, deathdata ) ) )
         {
             self.modifiers[ "headshot" ] = 1;
             self.modifiers[ "mask" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "mask" ], function_e2ff8f4b4e94f723( #"hash_7f94e81c1787ff7a", #"headshot" ) );
@@ -1529,7 +1536,8 @@ function function_b7f154368abbe463( victim, objweapon, meansofdeath, inflictor, 
             self.modifiers[ "mask2" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "mask2" ], function_e2ff8f4b4e94f723( #"hash_7f94e71c1787fdc7", #"hash_df17df92939ae42d" ) );
         }
         
-        for (moverparent = self; true; moverparent = newparent) {
+        for ( moverparent = self; true ; moverparent = newparent )
+        {
             if ( ( isplayer( moverparent ) || isactor( moverparent ) ) && !moverparent islinked() )
             {
                 newparent = moverparent getmovingplatformparent( 1 );
@@ -1679,13 +1687,6 @@ function function_b7f154368abbe463( victim, objweapon, meansofdeath, inflictor, 
                     }
                 }
             }
-        }
-        
-        usingsuppressor = objweapon issilenced();
-        
-        if ( istrue( usingsuppressor ) )
-        {
-            self.modifiers[ "attachment_flags" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "attachment_flags" ], function_e2ff8f4b4e94f723( #"hash_1ce058287dc8c73b", #"suppressor" ) );
         }
         
         if ( isdefined( objweapon.scope ) )
@@ -1939,16 +1940,19 @@ function function_b7f154368abbe463( victim, objweapon, meansofdeath, inflictor, 
         checklethalequipmentachievement( objweapon );
     }
     
-    if ( function_5b7e9a4c946f3a13( deathdata.meansofdeath, [ "MOD_EXPLOSIVE", "MOD_EXPLOSIVE_BULLET", "MOD_GRENADE", "MOD_GRENADE_SPLASH", "MOD_PROJECTILE", "MOD_PROJECTILE_SPLASH" ] ) )
+    if ( function_5b7e9a4c946f3a13( deathdata.meansofdeath, [ "MOD_EXPLOSIVE", "MOD_EXPLOSIVE_BULLET", "MOD_GRENADE", "MOD_GRENADE_SPLASH", "MOD_PROJECTILE", "MOD_PROJECTILE_SPLASH", "MOD_HEAD_SHOT" ] ) )
     {
-        self.modifiers[ "explosive_damage" ] = 1;
-        self.modifiers[ "mask3" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "mask3" ], function_e2ff8f4b4e94f723( #"hash_7f94e61c1787fc14", #"explosive_damage" ) );
+        if ( meansofdeath != "MOD_HEAD_SHOT" || meansofdeath == "MOD_HEAD_SHOT" && function_e287831520aa308b( objweapon, self ) )
+        {
+            self.modifiers[ "explosive_damage" ] = 1;
+            self.modifiers[ "mask3" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "mask3" ], function_e2ff8f4b4e94f723( #"hash_7f94e61c1787fc14", #"explosive_damage" ) );
+        }
     }
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x83f4
+// Params 3
+// Checksum 0x0, Offset: 0x8458
 // Size: 0x2c
 function function_245eb5b8f095001b( objweapon, meansofdeath, inflictor )
 {
@@ -1957,8 +1961,8 @@ function function_245eb5b8f095001b( objweapon, meansofdeath, inflictor )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8428
+// Params 2
+// Checksum 0x0, Offset: 0x848c
 // Size: 0x2a4
 function function_cfa5eaed45133b7( inflictor, objweapon )
 {
@@ -2014,9 +2018,9 @@ function function_cfa5eaed45133b7( inflictor, objweapon )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x86d4
-// Size: 0x502
+// Params 1
+// Checksum 0x0, Offset: 0x8738
+// Size: 0x56e
 function function_a7168c7ec3eb917a( objweapon )
 {
     if ( isdefined( objweapon.attachments ) )
@@ -2047,6 +2051,13 @@ function function_a7168c7ec3eb917a( objweapon )
                     self.modifiers[ "mask2" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "mask2" ], function_e2ff8f4b4e94f723( #"hash_7f94e71c1787fdc7", #"hash_efa8718cf03a1110" ) );
                 }
                 
+                usingsuppressor = issilencerattach( objweapon, attachment );
+                
+                if ( istrue( usingsuppressor ) )
+                {
+                    self.modifiers[ "attachment_flags" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "attachment_flags" ], function_e2ff8f4b4e94f723( #"hash_1ce058287dc8c73b", #"suppressor" ) );
+                }
+                
                 var_2a50ccbd8f4ebc5e = isdefined( objweapon.basename ) && isweapon( objweapon ) && objweapon.basename == "jup_amp_knifestab_mp";
                 
                 if ( isdefined( attachmentscriptbundle.baseref ) && ( issubstr( attachmentscriptbundle.baseref, "ub_gl" ) || issubstr( attachmentscriptbundle.baseref, "ub_sh" ) || issubstr( attachmentscriptbundle.baseref, "ub_flame" ) || issubstr( attachmentscriptbundle.baseref, "ub_saw" ) || var_2a50ccbd8f4ebc5e ) )
@@ -2058,7 +2069,7 @@ function function_a7168c7ec3eb917a( objweapon )
                     }
                 }
                 
-                if ( isdefined( attachmentscriptbundle.baseref ) && issubstr( attachmentscriptbundle.baseref, "akimbo" ) )
+                if ( isdefined( attachmentscriptbundle.baseref ) && ( issubstr( attachmentscriptbundle.baseref, "akimbo" ) || attachmentscriptbundle.baseref == "jup_cp19_dm_sbeta_bar_1887_amp" ) )
                 {
                     self.modifiers[ "weapon_has_akimbo" ] = 1;
                     self.modifiers[ "mask2" ] = scripts\cp_mp\challenges::function_6d40f12a09494350( self.modifiers[ "mask2" ], function_e2ff8f4b4e94f723( #"hash_7f94e71c1787fdc7", #"akimbo" ) );
@@ -2092,8 +2103,8 @@ function function_a7168c7ec3eb917a( objweapon )
 }
 
 // Namespace events / scripts\mp\events
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bde
+// Params 6
+// Checksum 0x0, Offset: 0x8cae
 // Size: 0x12ca
 function killedplayer( killid, victim, objweapon, meansofdeath, inflictor, deathdata )
 {
@@ -2605,7 +2616,8 @@ function killedplayer( killid, victim, objweapon, meansofdeath, inflictor, death
     
     if ( isdefined( victim.damagedplayers ) && victim.damagedplayers.size != 0 )
     {
-        for (i = 0; i < victim.damagedplayers.size; i++) {
+        for ( i = 0; i < victim.damagedplayers.size ; i++ )
+        {
             damagedplayer = getarraykey( victim.damagedplayers, i );
             
             if ( isdefined( inflictor ) && is_equal( damagedplayer, inflictor.guid ) )
@@ -2702,8 +2714,8 @@ function killedplayer( killid, victim, objweapon, meansofdeath, inflictor, death
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9eb0
+// Params 1
+// Checksum 0x0, Offset: 0x9f80
 // Size: 0xc5
 function function_594be452ab6dd2d4( event )
 {
@@ -2738,8 +2750,8 @@ function function_594be452ab6dd2d4( event )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f7d
+// Params 2
+// Checksum 0x0, Offset: 0xa04d
 // Size: 0x28, Type: bool
 function function_187f5e17657a02e2( event, calloutindex )
 {
@@ -2752,8 +2764,8 @@ function function_187f5e17657a02e2( event, calloutindex )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fae
+// Params 2
+// Checksum 0x0, Offset: 0xa07e
 // Size: 0x2e
 function function_a4b605be380cd2fb( event, calloutindex )
 {
@@ -2762,8 +2774,8 @@ function function_a4b605be380cd2fb( event, calloutindex )
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fe4
+// Params 3
+// Checksum 0x0, Offset: 0xa0b4
 // Size: 0x6e5
 function checkkillstreakkillevents( objweapon, meansofdeath, inflictor )
 {
@@ -2990,8 +3002,8 @@ function checkkillstreakkillevents( objweapon, meansofdeath, inflictor )
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6d1
+// Params 3
+// Checksum 0x0, Offset: 0xa7a1
 // Size: 0xa5
 function function_3e2ff5954aacaa33( objweapon, meansofdeath, inflictor )
 {
@@ -3002,8 +3014,8 @@ function function_3e2ff5954aacaa33( objweapon, meansofdeath, inflictor )
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xa77e
+// Params 5
+// Checksum 0x0, Offset: 0xa84e
 // Size: 0xf7
 function checksuperkillevents( victim, inflictor, objweapon, meansofdeath, var_366b0ecc2f28aead )
 {
@@ -3048,8 +3060,8 @@ function checksuperkillevents( victim, inflictor, objweapon, meansofdeath, var_3
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa87d
+// Params 3
+// Checksum 0x0, Offset: 0xa94d
 // Size: 0x66
 function checksupershutdownevents( victim, objweapon, meansofdeath )
 {
@@ -3069,8 +3081,8 @@ function checksupershutdownevents( victim, objweapon, meansofdeath )
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8eb
+// Params 5
+// Checksum 0x0, Offset: 0xa9bb
 // Size: 0xa3
 function killedplayerwithsuperweapon( victim, inflictor, objweapon, meansofdeath, var_366b0ecc2f28aead )
 {
@@ -3092,8 +3104,8 @@ function killedplayerwithsuperweapon( victim, inflictor, objweapon, meansofdeath
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa996
+// Params 2
+// Checksum 0x0, Offset: 0xaa66
 // Size: 0xd6
 function superkill( superref, meansofdeath )
 {
@@ -3118,8 +3130,8 @@ function superkill( superref, meansofdeath )
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa74
+// Params 3
+// Checksum 0x0, Offset: 0xab44
 // Size: 0xb8
 function killedkillstreak( killstreakname, killer, objweapon )
 {
@@ -3138,8 +3150,8 @@ function killedkillstreak( killstreakname, killer, objweapon )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xab34
+// Params 1
+// Checksum 0x0, Offset: 0xac04
 // Size: 0x7a
 function processscrapassist( killer )
 {
@@ -3157,8 +3169,8 @@ function processscrapassist( killer )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xabb6
+// Params 2
+// Checksum 0x0, Offset: 0xac86
 // Size: 0x86, Type: bool
 function is_enemy_highest_score( enemy, enemies )
 {
@@ -3179,8 +3191,8 @@ function is_enemy_highest_score( enemy, enemies )
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xac45
+// Params 5
+// Checksum 0x0, Offset: 0xad15
 // Size: 0x218
 function getshotdistancetype( attacker, objweapon, meansofdeath, attackerposition, var_4409ff2b093ccdde )
 {
@@ -3254,8 +3266,8 @@ function getshotdistancetype( attacker, objweapon, meansofdeath, attackerpositio
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xae66
+// Params 3
+// Checksum 0x0, Offset: 0xaf36
 // Size: 0x13e, Type: bool
 function islongshotspecial( attackerposition, var_4409ff2b093ccdde, objweapon )
 {
@@ -3300,8 +3312,8 @@ function islongshotspecial( attackerposition, var_4409ff2b093ccdde, objweapon )
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xafad
+// Params 5
+// Checksum 0x0, Offset: 0xb07d
 // Size: 0x78, Type: bool
 function isdeathfromabove( attacker, objweapon, meansofdeath, attackerposition, victim )
 {
@@ -3315,8 +3327,8 @@ function isdeathfromabove( attacker, objweapon, meansofdeath, attackerposition, 
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb02e
+// Params 3
+// Checksum 0x0, Offset: 0xb0fe
 // Size: 0x78, Type: bool
 function function_78dbf8d8bcbed882( attacker, objweapon, victim )
 {
@@ -3332,8 +3344,8 @@ function function_78dbf8d8bcbed882( attacker, objweapon, victim )
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xb0af
+// Params 5
+// Checksum 0x0, Offset: 0xb17f
 // Size: 0x46, Type: bool
 function isskeetshooter( attacker, objweapon, meansofdeath, attackerposition, victim )
 {
@@ -3341,9 +3353,9 @@ function isskeetshooter( attacker, objweapon, meansofdeath, attackerposition, vi
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb0fe
-// Size: 0xa8, Type: bool
+// Params 3
+// Checksum 0x0, Offset: 0xb1ce
+// Size: 0xc8, Type: bool
 function isbackkill( attacker, victim, meansofdeath )
 {
     if ( !isplayer( attacker ) || !isplayer( victim ) )
@@ -3351,7 +3363,7 @@ function isbackkill( attacker, victim, meansofdeath )
         return false;
     }
     
-    if ( meansofdeath != "MOD_RIFLE_BULLET" && meansofdeath != "MOD_PISTOL_BULLET" && meansofdeath != "MOD_MELEE" && meansofdeath != "MOD_HEAD_SHOT" )
+    if ( meansofdeath != "MOD_RIFLE_BULLET" && meansofdeath != "MOD_PISTOL_BULLET" && meansofdeath != "MOD_MELEE" && meansofdeath != "MOD_HEAD_SHOT" && meansofdeath != "MOD_IMPACT" && !scripts\mp\weapons::function_d24bf01d284ef941( attacker.currentweapon ) )
     {
         return false;
     }
@@ -3369,8 +3381,8 @@ function isbackkill( attacker, victim, meansofdeath )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1af
+// Params 1
+// Checksum 0x0, Offset: 0xb29f
 // Size: 0x39, Type: bool
 function issurvivorkill( player )
 {
@@ -3378,8 +3390,8 @@ function issurvivorkill( player )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1f1
+// Params 2
+// Checksum 0x0, Offset: 0xb2e1
 // Size: 0xa0, Type: bool
 function isdetected( attacker, victim )
 {
@@ -3390,8 +3402,8 @@ function isdetected( attacker, victim )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb29a
+// Params 1
+// Checksum 0x0, Offset: 0xb38a
 // Size: 0x2e
 function proximityassist( killid )
 {
@@ -3400,8 +3412,8 @@ function proximityassist( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2d0
+// Params 1
+// Checksum 0x0, Offset: 0xb3c0
 // Size: 0x2e
 function proximitykill( killid )
 {
@@ -3410,8 +3422,8 @@ function proximitykill( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb306
+// Params 1
+// Checksum 0x0, Offset: 0xb3f6
 // Size: 0x41
 function longshot( killid )
 {
@@ -3421,8 +3433,8 @@ function longshot( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb34f
+// Params 1
+// Checksum 0x0, Offset: 0xb43f
 // Size: 0x21
 function very_longshot( killid )
 {
@@ -3430,8 +3442,8 @@ function very_longshot( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb378
+// Params 1
+// Checksum 0x0, Offset: 0xb468
 // Size: 0x41
 function pointblank( killid )
 {
@@ -3441,8 +3453,8 @@ function pointblank( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3c1
+// Params 1
+// Checksum 0x0, Offset: 0xb4b1
 // Size: 0x45
 function headshot( killid )
 {
@@ -3452,8 +3464,8 @@ function headshot( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb40e
+// Params 2
+// Checksum 0x0, Offset: 0xb4fe
 // Size: 0x49
 function avengedplayer( killid, lastvictim )
 {
@@ -3463,8 +3475,8 @@ function avengedplayer( killid, lastvictim )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb45f
+// Params 2
+// Checksum 0x0, Offset: 0xb54f
 // Size: 0x3c
 function assistedsuicide( killid, objweapon )
 {
@@ -3473,8 +3485,8 @@ function assistedsuicide( killid, objweapon )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4a3
+// Params 2
+// Checksum 0x0, Offset: 0xb593
 // Size: 0x71
 function defendedplayer( killid, guid )
 {
@@ -3486,8 +3498,8 @@ function defendedplayer( killid, guid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb51c
+// Params 1
+// Checksum 0x0, Offset: 0xb60c
 // Size: 0x33
 function postdeathkill( killid )
 {
@@ -3496,8 +3508,8 @@ function postdeathkill( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb557
+// Params 2
+// Checksum 0x0, Offset: 0xb647
 // Size: 0x89
 function revenge( killid, victim )
 {
@@ -3509,8 +3521,8 @@ function revenge( killid, victim )
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5e8
+// Params 5
+// Checksum 0x0, Offset: 0xb6d8
 // Size: 0x2a3
 function multikill( killid, killcount, var_c95c893c15217527, var_5af31c1555eb14b1, iskillstreakweapon )
 {
@@ -3618,8 +3630,8 @@ function multikill( killid, killcount, var_c95c893c15217527, var_5af31c1555eb14b
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb893
+// Params 1
+// Checksum 0x0, Offset: 0xb983
 // Size: 0x62
 function firstblood( killid )
 {
@@ -3634,8 +3646,8 @@ function firstblood( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8fd
+// Params 1
+// Checksum 0x0, Offset: 0xb9ed
 // Size: 0x69
 function hvtkill( victim )
 {
@@ -3647,8 +3659,8 @@ function hvtkill( victim )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb96e
+// Params 2
+// Checksum 0x0, Offset: 0xba5e
 // Size: 0x69
 function buzzkill( killid, victim )
 {
@@ -3662,8 +3674,8 @@ function buzzkill( killid, victim )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb9df
+// Params 0
+// Checksum 0x0, Offset: 0xbacf
 // Size: 0x13
 function impairedkill()
 {
@@ -3671,8 +3683,8 @@ function impairedkill()
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb9fa
+// Params 1
+// Checksum 0x0, Offset: 0xbaea
 // Size: 0x41
 function comeback( killid )
 {
@@ -3682,8 +3694,8 @@ function comeback( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xba43
+// Params 1
+// Checksum 0x0, Offset: 0xbb33
 // Size: 0xba
 function supershutdown( victim )
 {
@@ -3705,8 +3717,8 @@ function supershutdown( victim )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb05
+// Params 1
+// Checksum 0x0, Offset: 0xbbf5
 // Size: 0x5e
 function collateral( numkills )
 {
@@ -3725,8 +3737,8 @@ function collateral( numkills )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb6b
+// Params 1
+// Checksum 0x0, Offset: 0xbc5b
 // Size: 0x15
 function shotguncollateral( numkills )
 {
@@ -3734,8 +3746,8 @@ function shotguncollateral( numkills )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb88
+// Params 0
+// Checksum 0x0, Offset: 0xbc78
 // Size: 0x13
 function mantlekill()
 {
@@ -3743,8 +3755,8 @@ function mantlekill()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbba3
+// Params 0
+// Checksum 0x0, Offset: 0xbc93
 // Size: 0x13
 function backfire()
 {
@@ -3752,8 +3764,8 @@ function backfire()
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbbe
+// Params 3
+// Checksum 0x0, Offset: 0xbcae
 // Size: 0xb5
 function quadfeed( killid, struct, iskillstreakweapon )
 {
@@ -3765,8 +3777,8 @@ function quadfeed( killid, struct, iskillstreakweapon )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc7b
+// Params 1
+// Checksum 0x0, Offset: 0xbd6b
 // Size: 0x68
 function killentireenemyteam( killid )
 {
@@ -3776,8 +3788,8 @@ function killentireenemyteam( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xbceb
+// Params 2
+// Checksum 0x0, Offset: 0xbddb
 // Size: 0x60
 function kingslayer( killid, victim )
 {
@@ -3791,8 +3803,8 @@ function kingslayer( killid, victim )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd53
+// Params 1
+// Checksum 0x0, Offset: 0xbe43
 // Size: 0x1c
 function directimpactkill( killid )
 {
@@ -3800,8 +3812,8 @@ function directimpactkill( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd77
+// Params 1
+// Checksum 0x0, Offset: 0xbe67
 // Size: 0x5a
 function tripledefenderkill( killid )
 {
@@ -3810,8 +3822,8 @@ function tripledefenderkill( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbdd9
+// Params 1
+// Checksum 0x0, Offset: 0xbec9
 // Size: 0x2a
 function execution( killid )
 {
@@ -3820,8 +3832,8 @@ function execution( killid )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe0b
+// Params 0
+// Checksum 0x0, Offset: 0xbefb
 // Size: 0x51
 function cleankill()
 {
@@ -3830,8 +3842,8 @@ function cleankill()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe64
+// Params 0
+// Checksum 0x0, Offset: 0xbf54
 // Size: 0xa4
 function disconnected()
 {
@@ -3839,7 +3851,8 @@ function disconnected()
     
     if ( !lpcfeaturegated() )
     {
-        for (entry = 0; entry < level.players.size; entry++) {
+        for ( entry = 0; entry < level.players.size ; entry++ )
+        {
             if ( isdefined( level.players[ entry ].killedplayers[ myguid ] ) )
             {
                 level.players[ entry ].killedplayers[ myguid ] = undefined;
@@ -3854,8 +3867,8 @@ function disconnected()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf10
+// Params 0
+// Checksum 0x0, Offset: 0xc000
 // Size: 0x43
 function monitorhealed()
 {
@@ -3874,8 +3887,8 @@ function monitorhealed()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf5b
+// Params 0
+// Checksum 0x0, Offset: 0xc04b
 // Size: 0xe1
 function function_6cdce3cb6d284ccc()
 {
@@ -3923,8 +3936,8 @@ function function_6cdce3cb6d284ccc()
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc044
+// Params 1
+// Checksum 0x0, Offset: 0xc134
 // Size: 0xb0
 function function_f4fa8b16599b57d7( var_c80580e9b1df3347 )
 {
@@ -3955,8 +3968,8 @@ function function_f4fa8b16599b57d7( var_c80580e9b1df3347 )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0fc
+// Params 0
+// Checksum 0x0, Offset: 0xc1ec
 // Size: 0x75
 function function_17427c943364b13f()
 {
@@ -3970,7 +3983,8 @@ function function_17427c943364b13f()
     
     startpos = self.origin;
     
-    for (lastpos = startpos; istrue( self.var_f838d1e2c565dfe1 ); lastpos = self.origin) {
+    for ( lastpos = startpos; istrue( self.var_f838d1e2c565dfe1 ) ; lastpos = self.origin )
+    {
         waitframe();
         
         if ( isdefined( self ) && isreallyalive( self ) )
@@ -3985,8 +3999,8 @@ function function_17427c943364b13f()
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc179
+// Params 2
+// Checksum 0x0, Offset: 0xc269
 // Size: 0x41
 function function_34d6519a0f923c94( startpos, lastpos )
 {
@@ -4001,8 +4015,8 @@ function function_34d6519a0f923c94( startpos, lastpos )
 }
 
 // Namespace events / scripts\mp\events
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1c2
+// Params 5
+// Checksum 0x0, Offset: 0xc2b2
 // Size: 0x281
 function updaterecentkills( killid, victim, objweapon, var_366b0ecc2f28aead, iskillstreakweapon )
 {
@@ -4094,8 +4108,8 @@ function updaterecentkills( killid, victim, objweapon, var_366b0ecc2f28aead, isk
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc44b
+// Params 2
+// Checksum 0x0, Offset: 0xc53b
 // Size: 0x4b
 function updatec4vehiclemultkill( meansofdeath, inflictor )
 {
@@ -4106,8 +4120,8 @@ function updatec4vehiclemultkill( meansofdeath, inflictor )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc49e
+// Params 0
+// Checksum 0x0, Offset: 0xc58e
 // Size: 0x2e
 function updateghostridekills()
 {
@@ -4117,8 +4131,8 @@ function updateghostridekills()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4d4
+// Params 0
+// Checksum 0x0, Offset: 0xc5c4
 // Size: 0x61
 function monitorcratejacking()
 {
@@ -4139,8 +4153,8 @@ function monitorcratejacking()
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc53d
+// Params 3
+// Checksum 0x0, Offset: 0xc62d
 // Size: 0x10b
 function updatequadfeedcounter( attacker, killid, iskillstreakweapon )
 {
@@ -4170,8 +4184,8 @@ function updatequadfeedcounter( attacker, killid, iskillstreakweapon )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc650
+// Params 0
+// Checksum 0x0, Offset: 0xc740
 // Size: 0x34
 function initslidemonitor()
 {
@@ -4182,8 +4196,8 @@ function initslidemonitor()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc68c
+// Params 0
+// Checksum 0x0, Offset: 0xc77c
 // Size: 0xb9
 function events_monitorslideupdate()
 {
@@ -4216,8 +4230,8 @@ function events_monitorslideupdate()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc74d
+// Params 0
+// Checksum 0x0, Offset: 0xc83d
 // Size: 0x3b, Type: bool
 function events_issliding()
 {
@@ -4240,8 +4254,8 @@ function events_issliding()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc791
+// Params 0
+// Checksum 0x0, Offset: 0xc881
 // Size: 0x1b
 function initmonitoradstime()
 {
@@ -4250,8 +4264,8 @@ function initmonitoradstime()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7b4
+// Params 0
+// Checksum 0x0, Offset: 0xc8a4
 // Size: 0x61
 function monitoradstime()
 {
@@ -4276,8 +4290,8 @@ function monitoradstime()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc81d
+// Params 0
+// Checksum 0x0, Offset: 0xc90d
 // Size: 0x9e
 function monitorreload()
 {
@@ -4303,8 +4317,8 @@ function monitorreload()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8c3
+// Params 0
+// Checksum 0x0, Offset: 0xc9b3
 // Size: 0x45
 function function_3403058663ef4843()
 {
@@ -4323,8 +4337,8 @@ function function_3403058663ef4843()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc910
+// Params 0
+// Checksum 0x0, Offset: 0xca00
 // Size: 0x27
 function monitorweaponpickup()
 {
@@ -4339,8 +4353,8 @@ function monitorweaponpickup()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc93f
+// Params 0
+// Checksum 0x0, Offset: 0xca2f
 // Size: 0x38
 function monitorweaponswitch()
 {
@@ -4356,8 +4370,8 @@ function monitorweaponswitch()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc97f
+// Params 0
+// Checksum 0x0, Offset: 0xca6f
 // Size: 0x10
 function updateweaponchangetime()
 {
@@ -4365,8 +4379,8 @@ function updateweaponchangetime()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc997
+// Params 0
+// Checksum 0x0, Offset: 0xca87
 // Size: 0x4e
 function initstancetracking()
 {
@@ -4378,8 +4392,8 @@ function initstancetracking()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9ed
+// Params 0
+// Checksum 0x0, Offset: 0xcadd
 // Size: 0x27d
 function updatestancetracking()
 {
@@ -4460,8 +4474,8 @@ function updatestancetracking()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc72
+// Params 0
+// Checksum 0x0, Offset: 0xcd62
 // Size: 0x131
 function supinecorkscrew()
 {
@@ -4511,8 +4525,8 @@ function supinecorkscrew()
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcdab
+// Params 1
+// Checksum 0x0, Offset: 0xce9b
 // Size: 0x13
 function predatormissileimpact( impactpos )
 {
@@ -4520,8 +4534,8 @@ function predatormissileimpact( impactpos )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcdc6
+// Params 1
+// Checksum 0x0, Offset: 0xceb6
 // Size: 0x13
 function largevehicleexplosion( explosionpos )
 {
@@ -4529,8 +4543,8 @@ function largevehicleexplosion( explosionpos )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcde1
+// Params 1
+// Checksum 0x0, Offset: 0xced1
 // Size: 0x13
 function vehiclekilled( damagedata )
 {
@@ -4538,8 +4552,8 @@ function vehiclekilled( damagedata )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcdfc
+// Params 1
+// Checksum 0x0, Offset: 0xceec
 // Size: 0x14
 function missilefired( missile )
 {
@@ -4547,8 +4561,8 @@ function missilefired( missile )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xce18
+// Params 1
+// Checksum 0x0, Offset: 0xcf08
 // Size: 0xe2
 function trackmissile( missile )
 {
@@ -4577,8 +4591,8 @@ function trackmissile( missile )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf02
+// Params 2
+// Checksum 0x0, Offset: 0xcff2
 // Size: 0x1b
 function missilewhizby( player, missile )
 {
@@ -4586,9 +4600,9 @@ function missilewhizby( player, missile )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf25
-// Size: 0x3ab
+// Params 2
+// Checksum 0x0, Offset: 0xd015
+// Size: 0x3e4
 function bombdefused( defuser, defusesite )
 {
     var_8f8dc78c3242728b = 0;
@@ -4647,6 +4661,12 @@ function bombdefused( defuser, defusesite )
     }
     
     defuser incpersstat( "defuses", 1 );
+    
+    if ( getgametype() == "defuse" || getgametype() == "hc_defuse" )
+    {
+        defuser setextrascore0( defuser.pers[ "defuses" ] );
+    }
+    
     defuser scripts\mp\persistence::statsetchild( "round", "defuses", defuser.pers[ "defuses" ] );
     defuser scripts\mp\codcasterclientmatchdata::function_48544e365f4f5648( 2, 1 );
     
@@ -4687,8 +4707,8 @@ function bombdefused( defuser, defusesite )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2d8
+// Params 2
+// Checksum 0x0, Offset: 0xd401
 // Size: 0x35
 function revivedplayer( reviver, revivee )
 {
@@ -4706,8 +4726,8 @@ function revivedplayer( reviver, revivee )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd315
+// Params 2
+// Checksum 0x0, Offset: 0xd43e
 // Size: 0x31
 function doorused( player, opening )
 {
@@ -4720,8 +4740,8 @@ function doorused( player, opening )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd34e
+// Params 0
+// Checksum 0x0, Offset: 0xd477
 // Size: 0x4b
 function shothit()
 {
@@ -4737,8 +4757,8 @@ function shothit()
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd3a1
+// Params 2
+// Checksum 0x0, Offset: 0xd4ca
 // Size: 0x1c
 function shotmissed( totalshots, hitshots )
 {
@@ -4746,8 +4766,8 @@ function shotmissed( totalshots, hitshots )
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd3c5
+// Params 3
+// Checksum 0x0, Offset: 0xd4ee
 // Size: 0x237
 function function_2fca19675eb69f1a( victim, shitloc, idamage )
 {
@@ -4794,8 +4814,8 @@ function function_2fca19675eb69f1a( victim, shitloc, idamage )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd604
+// Params 2
+// Checksum 0x0, Offset: 0xd72d
 // Size: 0x1ac
 function function_cf1cfbbec7d07d44( totalshots, missedshots )
 {
@@ -4830,8 +4850,8 @@ function function_cf1cfbbec7d07d44( totalshots, missedshots )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7b8
+// Params 2
+// Checksum 0x0, Offset: 0xd8e1
 // Size: 0x2f
 function function_f3096708aa63946f( a, b )
 {
@@ -4844,8 +4864,8 @@ function function_f3096708aa63946f( a, b )
 }
 
 // Namespace events / scripts\mp\events
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7ef
+// Params 3
+// Checksum 0x0, Offset: 0xd918
 // Size: 0x325
 function function_c5f7e38f739b35a1( victim, shitloc, idamage )
 {
@@ -4903,8 +4923,8 @@ function function_c5f7e38f739b35a1( victim, shitloc, idamage )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb1c
+// Params 2
+// Checksum 0x0, Offset: 0xdc45
 // Size: 0x95f
 function function_f0c7425bd5a7050( victim, meansofdeath )
 {
@@ -4962,8 +4982,8 @@ function function_f0c7425bd5a7050( victim, meansofdeath )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe483
+// Params 1
+// Checksum 0x0, Offset: 0xe5ac
 // Size: 0x2e, Type: bool
 function function_632bdd4591097aef( shitloc )
 {
@@ -4971,8 +4991,8 @@ function function_632bdd4591097aef( shitloc )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe4ba
+// Params 0
+// Checksum 0x0, Offset: 0xe5e3
 // Size: 0xc
 function function_7731a04537766917()
 {
@@ -4980,8 +5000,8 @@ function function_7731a04537766917()
 }
 
 // Namespace events / scripts\mp\events
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xe4ce
+// Params 4
+// Checksum 0x0, Offset: 0xe5f7
 // Size: 0x268
 function killeventtextpopup( scoreeventref, showassplash, dontshowscoreevent, extraparam )
 {
@@ -5058,8 +5078,8 @@ function killeventtextpopup( scoreeventref, showassplash, dontshowscoreevent, ex
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe73e
+// Params 0
+// Checksum 0x0, Offset: 0xe867
 // Size: 0x223
 function processsplashpriorityqueue()
 {
@@ -5116,8 +5136,8 @@ function processsplashpriorityqueue()
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe969
+// Params 1
+// Checksum 0x0, Offset: 0xea92
 // Size: 0x10d
 function insertbypriority( splashdata )
 {
@@ -5135,7 +5155,8 @@ function insertbypriority( splashdata )
         }
     }
     
-    for (i = 0; i < self.splashpriorityqueue.size; i++) {
+    for ( i = 0; i < self.splashpriorityqueue.size ; i++ )
+    {
         if ( splashdata.priority > self.splashpriorityqueue[ i ].priority )
         {
             self.splashpriorityqueue = array_insert( self.splashpriorityqueue, splashdata, i );
@@ -5147,8 +5168,8 @@ function insertbypriority( splashdata )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xea7e
+// Params 0
+// Checksum 0x0, Offset: 0xeba7
 // Size: 0x98
 function getnemesis()
 {
@@ -5177,8 +5198,8 @@ function getnemesis()
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb1f
+// Params 2
+// Checksum 0x0, Offset: 0xec48
 // Size: 0x75
 function isxmike109explosiveheadshot( objweapon, deathdata )
 {
@@ -5191,8 +5212,8 @@ function isxmike109explosiveheadshot( objweapon, deathdata )
 }
 
 // Namespace events / scripts\mp\events
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb9c
+// Params 2
+// Checksum 0x0, Offset: 0xecc5
 // Size: 0x37, Type: bool
 function function_d355d90bab289087( objweapon, deathdata )
 {
@@ -5205,8 +5226,22 @@ function function_d355d90bab289087( objweapon, deathdata )
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xebdc
+// Params 2
+// Checksum 0x0, Offset: 0xed05
+// Size: 0x37, Type: bool
+function function_75f9ec9388f318dc( objweapon, deathdata )
+{
+    if ( isthrowingknife( objweapon ) && isdefined( deathdata ) && istrue( deathdata.var_21d6bd6b0d89a70c ) )
+    {
+        return true;
+    }
+    
+    return false;
+}
+
+// Namespace events / scripts\mp\events
+// Params 1
+// Checksum 0x0, Offset: 0xed45
 // Size: 0x12e
 function checklethalequipmentachievement( objweapon )
 {
@@ -5251,8 +5286,8 @@ function checklethalequipmentachievement( objweapon )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xed12
+// Params 0
+// Checksum 0x0, Offset: 0xee7b
 // Size: 0xa0
 function incrementobjectiveachievementkill()
 {
@@ -5288,8 +5323,8 @@ function incrementobjectiveachievementkill()
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xedba
+// Params 1
+// Checksum 0x0, Offset: 0xef23
 // Size: 0x107
 function checkfinalkillachievements( victim )
 {
@@ -5343,8 +5378,8 @@ function checkfinalkillachievements( victim )
 }
 
 // Namespace events / scripts\mp\events
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xeec9
+// Params 6
+// Checksum 0x0, Offset: 0xf032
 // Size: 0x57e
 function function_2510f24c715782c3( killid, victim, objweapon, meansofdeath, inflictor, deathdata )
 {
@@ -5498,8 +5533,8 @@ function function_2510f24c715782c3( killid, victim, objweapon, meansofdeath, inf
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf44f
+// Params 0
+// Checksum 0x0, Offset: 0xf5b8
 // Size: 0x24, Type: bool
 function function_16aa7ce5efacbccb()
 {
@@ -5514,8 +5549,8 @@ function function_16aa7ce5efacbccb()
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf47c
+// Params 0
+// Checksum 0x0, Offset: 0xf5e5
 // Size: 0x14
 function function_4a4d0d400fd59760()
 {
@@ -5523,8 +5558,8 @@ function function_4a4d0d400fd59760()
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf498
+// Params 1
+// Checksum 0x0, Offset: 0xf601
 // Size: 0x1fe
 function on_ai_killed( sparams )
 {
@@ -5586,8 +5621,8 @@ function on_ai_killed( sparams )
 }
 
 // Namespace events / scripts\mp\events
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf69e
+// Params 0
+// Checksum 0x0, Offset: 0xf807
 // Size: 0x2a
 function watchformorebulletkillsinaframeae()
 {
@@ -5600,8 +5635,8 @@ function watchformorebulletkillsinaframeae()
 }
 
 // Namespace events / scripts\mp\events
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf6d0
+// Params 1
+// Checksum 0x0, Offset: 0xf839
 // Size: 0x4f
 function function_c5f08330d9923476( numkills )
 {

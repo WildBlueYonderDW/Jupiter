@@ -8,7 +8,7 @@
 #namespace namespace_453c1f3aa94ee884;
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48f
 // Size: 0x97
 function function_7a154baa848107ab()
@@ -19,7 +19,7 @@ function function_7a154baa848107ab()
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x52e
 // Size: 0x32f
 function playerzombiejump( powerstruct, powerref )
@@ -112,7 +112,7 @@ function playerzombiejump( powerstruct, powerref )
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x865
 // Size: 0x34c
 function function_a1b195bc24dae315( powerstruct, powerref )
@@ -200,7 +200,7 @@ function function_a1b195bc24dae315( powerstruct, powerref )
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xbb9
 // Size: 0x7c
 function function_108f1dde77a667ca( ent )
@@ -224,7 +224,7 @@ function function_108f1dde77a667ca( ent )
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xc3d
 // Size: 0x47
 function playerzombiejumpstop( powerstruct, powerref )
@@ -243,7 +243,7 @@ function playerzombiejumpstop( powerstruct, powerref )
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc8c
 // Size: 0x20b
 function function_cf242179be5fca8b( ent )
@@ -298,7 +298,7 @@ function function_cf242179be5fca8b( ent )
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe9f
 // Size: 0x14a
 function moveforward( ent, velocity )
@@ -345,7 +345,7 @@ function moveforward( ent, velocity )
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xff1
 // Size: 0x26e
 function function_78d3415066a09a6d( slidevelocity )
@@ -408,7 +408,7 @@ function function_78d3415066a09a6d( slidevelocity )
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1267
 // Size: 0x16
 function function_b554cef949602d76()
@@ -417,7 +417,7 @@ function function_b554cef949602d76()
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1286
 // Size: 0x9b
 function function_cdbd950d4125f7c2()
@@ -446,7 +446,7 @@ function function_cdbd950d4125f7c2()
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1329
 // Size: 0x37
 function function_cfb9ea9d9d3f7873()
@@ -457,7 +457,7 @@ function function_cfb9ea9d9d3f7873()
 }
 
 // Namespace namespace_453c1f3aa94ee884 / namespace_79b4f5063a88552f
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1369
 // Size: 0x4f
 function function_7633afe8652b68b7( powerstruct, powerref, docooldown )

@@ -5,7 +5,7 @@
 /#
 
     // Namespace debug / scripts\common\debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xaa
     // Size: 0x96, Type: dev
     function function_a2eaafb222316a2( ent )
@@ -32,7 +32,7 @@
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x148
     // Size: 0x9c, Type: dev
     function function_57f3a2089db4a571( corpse )
@@ -59,7 +59,7 @@
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1ec
     // Size: 0x2f, Type: dev
     function function_600b37e8cf3f2de9( ent )
@@ -78,7 +78,7 @@
 #/
 
 // Namespace debug / scripts\common\debug
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x223
 // Size: 0x2c
 function function_e8ee861a699bea81( variable, undefined_return )
@@ -97,7 +97,7 @@ function function_e8ee861a699bea81( variable, undefined_return )
 }
 
 // Namespace debug / scripts\common\debug
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x258
 // Size: 0x9f
 function function_f9304b74bdeafdb0( button, before_text, after_text )
@@ -146,7 +146,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
 /#
 
     // Namespace debug / scripts\common\debug
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x2ff
     // Size: 0x107, Type: dev
     function function_7320cd1e4f724899( text, color, duration, x, y, scale )
@@ -183,7 +183,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x40e
     // Size: 0x206, Type: dev
     function function_64f6fe11a0db2eef( x, y, scale )
@@ -248,7 +248,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x61c
     // Size: 0x45, Type: dev
     function debug_sphere( target, radius, color, seconds, level_endon, target_endon )
@@ -257,7 +257,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x669
     // Size: 0x10a, Type: dev
     function function_2061efdf2b62dcdc( target, radius, color, seconds, level_endon, target_endon )
@@ -320,7 +320,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 7, eflags: 0x0
+    // Params 7
     // Checksum 0x0, Offset: 0x77b
     // Size: 0x4f, Type: dev
     function debug_line( target, target2, color, seconds, level_endon, target_endon, target2_endon )
@@ -329,7 +329,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 7, eflags: 0x0
+    // Params 7
     // Checksum 0x0, Offset: 0x7d2
     // Size: 0x166, Type: dev
     function function_43a9c3a623a796bd( target, target2, color, seconds, level_endon, target_endon, target2_endon )
@@ -405,7 +405,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x940
     // Size: 0x45, Type: dev
     function draw_angles( target, angles, radius, seconds, level_endon, target_endon )
@@ -414,7 +414,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x98d
     // Size: 0x172, Type: dev
     function function_3a97db5a17888208( target, angles, radius, seconds, level_endon, target_endon )
@@ -473,7 +473,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 11, eflags: 0x0
+    // Params 11
     // Checksum 0x0, Offset: 0xb07
     // Size: 0x77, Type: dev
     function interact( target, text, on_use_func, var_38669543a34ecd14, end_on_use, level_endon, target_endon, color, z_offset, alpha, scale )
@@ -482,7 +482,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 11, eflags: 0x0
+    // Params 11
     // Checksum 0x0, Offset: 0xb86
     // Size: 0x233, Type: dev
     function interact_internal( target, text, on_use_func, var_38669543a34ecd14, end_on_use, level_endon, target_endon, color, z_offset, alpha, scale )
@@ -596,7 +596,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 9, eflags: 0x0
+    // Params 9
     // Checksum 0x0, Offset: 0xdc1
     // Size: 0x63, Type: dev
     function debug_print3d( target, text, color, seconds, level_endon, target_endon, alpha, scale, z_offset )
@@ -605,7 +605,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 9, eflags: 0x0
+    // Params 9
     // Checksum 0x0, Offset: 0xe2c
     // Size: 0x146, Type: dev
     function function_bbc7faeb2e19df2d( target, text, color, seconds, level_endon, target_endon, alpha, scale, z_offset )
@@ -678,7 +678,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0xf7a
     // Size: 0x2e7, Type: dev
     function get_color( color )
@@ -746,7 +746,7 @@ function function_f9304b74bdeafdb0( button, before_text, after_text )
     }
 
     // Namespace debug / scripts\common\debug
-    // Params 6, eflags: 0x0
+    // Params 6
     // Checksum 0x0, Offset: 0x1269
     // Size: 0x521, Type: dev
     function function_8245dce28f1f395c( dmg_data, original_damage, pre_final, display_time, display_scale, var_3b3652114fdefa9f )

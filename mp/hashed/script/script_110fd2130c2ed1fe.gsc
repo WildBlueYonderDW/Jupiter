@@ -24,7 +24,7 @@
 #namespace namespace_dad6d813fbbde071;
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x728
 // Size: 0x253
 function init()
@@ -65,7 +65,7 @@ function init()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x983
 // Size: 0x2d, Type: bool
 function filtercondition_hasbeentracked( player )
@@ -79,7 +79,7 @@ function filtercondition_hasbeentracked( player )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9b9
 // Size: 0x5a
 function aq_questthink_circleposition()
@@ -104,7 +104,7 @@ function aq_questthink_circleposition()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa1b
 // Size: 0x18
 function aq_questthink_objectivevisibility()
@@ -116,7 +116,7 @@ function aq_questthink_objectivevisibility()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa3b
 // Size: 0x35
 function aq_removequestinstance()
@@ -133,7 +133,7 @@ function aq_removequestinstance()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa78
 // Size: 0x23d
 function takequestitem( pickupent )
@@ -194,7 +194,7 @@ function takequestitem( pickupent )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xcbd
 // Size: 0x13f
 function givequestsplash( pickupplayer )
@@ -237,7 +237,7 @@ function givequestsplash( pickupplayer )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xe04
 // Size: 0x1f6
 function givequest( hunterteam, targetteam, id, player, modifier, rewardscriptable )
@@ -306,7 +306,7 @@ function givequest( hunterteam, targetteam, id, player, modifier, rewardscriptab
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1003
 // Size: 0x4f
 function cancelgivequest( instance )
@@ -324,7 +324,7 @@ function cancelgivequest( instance )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x105a
 // Size: 0x3cd
 function determinetargetteam( player )
@@ -446,7 +446,7 @@ function determinetargetteam( player )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1430
 // Size: 0x1c1
 function determinetargetplayer( targetteam, hunter )
@@ -513,7 +513,7 @@ function determinetargetplayer( targetteam, hunter )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x15f9
 // Size: 0x70
 function determinetrackingcircleposition( targetplayer )
@@ -533,7 +533,7 @@ function determinetrackingcircleposition( targetplayer )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1671
 // Size: 0x142
 function determinetrackingcirclesize()
@@ -589,7 +589,7 @@ function determinetrackingcirclesize()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17bb
 // Size: 0x15a
 function determineobjectivevisibility()
@@ -632,7 +632,7 @@ function determineobjectivevisibility()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x191d
 // Size: 0x7f
 function aq_ontimerupdate()
@@ -649,7 +649,7 @@ function aq_ontimerupdate()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x19a4
 // Size: 0x1ae
 function aq_ontimerexpired()
@@ -686,7 +686,7 @@ function aq_ontimerexpired()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1b5a
 // Size: 0x3d
 function aq_playerdied( attacker, victim )
@@ -704,7 +704,7 @@ function aq_playerdied( attacker, victim )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b9f
 // Size: 0x1e
 function aq_playerdisconnect( disconnectplayer )
@@ -717,7 +717,7 @@ function aq_playerdisconnect( disconnectplayer )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1bc5
 // Size: 0x4b4
 function aq_playerremoved( removeplayer, attacker )
@@ -846,7 +846,7 @@ function aq_playerremoved( removeplayer, attacker )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2081
 // Size: 0x44
 function getnewtargetplayer( hunter )
@@ -862,7 +862,7 @@ function getnewtargetplayer( hunter )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20cd
 // Size: 0xb6
 function removeallaqui()
@@ -885,7 +885,7 @@ function removeallaqui()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x218b
 // Size: 0x26
 function getplayerkills()
@@ -899,7 +899,7 @@ function getplayerkills()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x21b9
 // Size: 0x4e
 function getfilterformodifier( modifier )
@@ -915,7 +915,7 @@ function getfilterformodifier( modifier )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x220f
 // Size: 0x41
 function showassassinationhud( instance )
@@ -930,7 +930,7 @@ function showassassinationhud( instance )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2258
 // Size: 0x2f
 function hideassassinationhud( instance )
@@ -945,7 +945,7 @@ function hideassassinationhud( instance )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x228f
 // Size: 0x71
 function updateassassinationdataomnvar( targetplayer, threatlevel )
@@ -966,7 +966,7 @@ function updateassassinationdataomnvar( targetplayer, threatlevel )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2308
 // Size: 0x73
 function updateassassinationthreatlevel( targetteam )
@@ -978,7 +978,7 @@ function updateassassinationthreatlevel( targetteam )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2383
 // Size: 0x31
 function showassassinationtargethud( targetplayer, threatlevel )
@@ -992,7 +992,7 @@ function showassassinationtargethud( targetplayer, threatlevel )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23bc
 // Size: 0x23
 function hideassassinationtargethud()
@@ -1006,7 +1006,7 @@ function hideassassinationtargethud()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x23e7
 // Size: 0xcd
 function updateassassinationhud()
@@ -1024,7 +1024,7 @@ function updateassassinationhud()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x24bc
 // Size: 0x1b6
 function assassinationtimewarning()
@@ -1072,7 +1072,7 @@ function assassinationtimewarning()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x267a
 // Size: 0xb
 function allassassin_init()
@@ -1081,7 +1081,7 @@ function allassassin_init()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x268d
 // Size: 0x59
 function allassassin_givewait()
@@ -1101,7 +1101,7 @@ function allassassin_givewait()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26ee
 // Size: 0xda
 function allassassin_give( version )
@@ -1138,7 +1138,7 @@ function allassassin_give( version )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x27d0
 // Size: 0x1e9
 function allassassin_getsortedteams()
@@ -1201,7 +1201,7 @@ function allassassin_getsortedteams()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x29c2
 // Size: 0x1b5
 function allassassin_initteamlist()
@@ -1223,20 +1223,24 @@ function allassassin_initteamlist()
     extrateams = numteams % groupsize;
     groupsizes = [];
     
-    for (i = 0; i < numgroups; i++) {
+    for ( i = 0; i < numgroups ; i++ )
+    {
         groupsizes[ i ] = groupsize;
     }
     
-    for (i = 0; i < extrateams; i++) {
+    for ( i = 0; i < extrateams ; i++ )
+    {
         groupsizes[ i % numgroups ]++;
     }
     
     count = 0;
     
-    for (i = 0; i < groupsizes.size; i++) {
+    for ( i = 0; i < groupsizes.size ; i++ )
+    {
         groupsize = groupsizes[ i ];
         
-        for (j = 0; j < groupsize; j++) {
+        for ( j = 0; j < groupsize ; j++ )
+        {
             team = sortedteams[ count + j ].team;
             prev = wrapindex( j - 1, groupsize );
             next = wrapindex( j + 1, groupsize );
@@ -1253,7 +1257,7 @@ function allassassin_initteamlist()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2b7f
 // Size: 0x1bd
 function allassassin_initteamlist_timed()
@@ -1261,7 +1265,8 @@ function allassassin_initteamlist_timed()
     maxdist = getdvarfloat( @"hash_f4e01d5ab43ecd85", 10000 );
     sortedteams = allassassin_getsortedteams();
     
-    for (i = 0; i < sortedteams.size; i++) {
+    for ( i = 0; i < sortedteams.size ; i++ )
+    {
         hunterteam = sortedteams[ i ].team;
         
         if ( isdefined( self.teamlist[ hunterteam ] ) )
@@ -1269,7 +1274,8 @@ function allassassin_initteamlist_timed()
             continue;
         }
         
-        for (j = 0; j < sortedteams.size - 1; j++) {
+        for ( j = 0; j < sortedteams.size - 1 ; j++ )
+        {
             if ( j % 2 )
             {
                 offset = int( -0.5 * j - 0.5 );
@@ -1309,7 +1315,7 @@ function allassassin_initteamlist_timed()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d44
 // Size: 0xcb
 function allassassin_teams()
@@ -1343,7 +1349,7 @@ function allassassin_teams()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2e18
 // Size: 0x36
 function allassassin_oninstanceremoved( instance )
@@ -1354,7 +1360,7 @@ function allassassin_oninstanceremoved( instance )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e56
 // Size: 0x56
 function allassassin_updatewait()
@@ -1376,7 +1382,7 @@ function allassassin_updatewait()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2eb4
 // Size: 0xdb
 function allassassin_update_timed()
@@ -1401,7 +1407,7 @@ function allassassin_update_timed()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2f97
 // Size: 0x374
 function allassassin_update()
@@ -1459,7 +1465,8 @@ function allassassin_update()
     
     if ( var_d94fd49d5e466dae >= 2 )
     {
-        for (i = 0; i < var_d94fd49d5e466dae; i++) {
+        for ( i = 0; i < var_d94fd49d5e466dae ; i++ )
+        {
             team = var_f17a683b71e14ab7[ i ];
             prev = wrapindex( i - 1, var_d94fd49d5e466dae );
             next = wrapindex( i + 1, var_d94fd49d5e466dae );
@@ -1481,7 +1488,7 @@ function allassassin_update()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3313
 // Size: 0x103
 function allassassin_applyquest()
@@ -1513,7 +1520,7 @@ function allassassin_applyquest()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x341e
 // Size: 0x84
 function allassassin_updatecircle()
@@ -1533,7 +1540,7 @@ function allassassin_updatecircle()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x34aa
 // Size: 0x2a, Type: bool
 function allassassin_teamcompare( left, right )
@@ -1542,7 +1549,7 @@ function allassassin_teamcompare( left, right )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x34dd
 // Size: 0xa5
 function allassassin_timeout_end( team )
@@ -1562,7 +1569,7 @@ function allassassin_timeout_end( team )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x358a
 // Size: 0x1a
 function wrapindex( index, maxindex )
@@ -1571,7 +1578,7 @@ function wrapindex( index, maxindex )
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35ad
 // Size: 0x1a
 function disableteamkillrewards()
@@ -1580,7 +1587,7 @@ function disableteamkillrewards()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35cf
 // Size: 0x1a
 function disableplayerkillrewards()
@@ -1589,7 +1596,7 @@ function disableplayerkillrewards()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35f1
 // Size: 0x31, Type: bool
 function checkifteamrewardsareenabled()
@@ -1598,7 +1605,7 @@ function checkifteamrewardsareenabled()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x362b
 // Size: 0x31, Type: bool
 function checkifplayerrewardsareenabled()
@@ -1607,7 +1614,7 @@ function checkifplayerrewardsareenabled()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3665
 // Size: 0x67
 function getquesttimefrac()
@@ -1623,7 +1630,7 @@ function getquesttimefrac()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36d5
 // Size: 0x84
 function getcirclesize()
@@ -1645,7 +1652,7 @@ function getcirclesize()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3761
 // Size: 0x26
 function getcirclerangemin()
@@ -1663,7 +1670,7 @@ function getcirclerangemin()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x378f
 // Size: 0x3f
 function getcirclerangemax()
@@ -1682,7 +1689,7 @@ function getcirclerangemax()
 }
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x37d6
 // Size: 0x6c
 function gametypeoverrideassassinsearchparams()
@@ -1707,7 +1714,7 @@ function gametypeoverrideassassinsearchparams()
 /#
 
     // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x384b
     // Size: 0x21c, Type: dev
     function function_dd49e0165f8b8c5d()
@@ -1753,7 +1760,7 @@ function gametypeoverrideassassinsearchparams()
 #/
 
 // Namespace namespace_dad6d813fbbde071 / namespace_94f9b19ae91ab934
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a6f
 // Size: 0x88, Type: bool
 function function_5f352fb76c54705c()

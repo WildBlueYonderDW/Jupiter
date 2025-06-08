@@ -127,9 +127,9 @@
 #namespace damage;
 
 // Namespace damage / scripts\mp\damage
-// Params 16, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d4d
-// Size: 0x146f
+// Params 16
+// Checksum 0x0, Offset: 0x3e11
+// Size: 0x1535
 function callback_playerdamage_internal( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1 )
 {
     if ( isdefined( eattacker ) && isdefined( eattacker.classname ) && eattacker.classname == "worldspawn" )
@@ -153,6 +153,12 @@ function callback_playerdamage_internal( einflictor, eattacker, victim, idamage,
         {
             victim = eattacker;
         }
+    }
+    
+    if ( ( getgametype() == "defuse" || getgametype() == "hc_defuse" ) && smeansofdeath == "MOD_EXPLOSIVE" && objweapon.basename == "bomb_site_mp" )
+    {
+        smeansofdeath = "MOD_SUICIDE";
+        eattacker = self;
     }
     
     if ( istrue( victim.plotarmor ) )
@@ -224,7 +230,7 @@ function callback_playerdamage_internal( einflictor, eattacker, victim, idamage,
         }
     #/
     
-    if ( getdvarint( @"hash_b372945583547be6", 0 ) && isplayer( eattacker ) && isplayer( victim ) && eattacker != victim )
+    if ( getdvarint( @"scr_dmz_pve_enabled", 0 ) && isplayer( eattacker ) && isplayer( victim ) && eattacker != victim )
     {
         function_403e958ecd04f255( victim, "scr_dmz_pve_enabled 1" );
         return;
@@ -461,6 +467,14 @@ function callback_playerdamage_internal( einflictor, eattacker, victim, idamage,
         }
     }
     
+    if ( function_d75b73c443421047() )
+    {
+        if ( objweapon.basename == "jup_jp14_pi_rsierra12_mp" && objweapon hasattachment( "jup_ammo_127_db_arcade" ) )
+        {
+            idamage *= 1.6;
+        }
+    }
+    
     weaptype = weapon::getweapontype( weaponbasename );
     
     if ( isdefined( weaptype ) && weaptype == "killstreak" )
@@ -594,6 +608,11 @@ function callback_playerdamage_internal( einflictor, eattacker, victim, idamage,
             idamage = throwstar::function_db4bbcfe23f19148( einflictor, victim, idamage, partname );
         }
         
+        if ( einflictor.equipmentref == "equip_throwing_knife" )
+        {
+            scripts\mp\equipment\throwing_knife_mp::function_3ea0bf8465c74efc( victim, partname );
+        }
+        
         if ( einflictor.equipmentref == "equip_throwing_knife" || einflictor.equipmentref == "equip_shuriken" || einflictor.equipmentref == "equip_throwstar" )
         {
             if ( istrue( einflictor.bwasunderwater ) )
@@ -622,7 +641,7 @@ function callback_playerdamage_internal( einflictor, eattacker, victim, idamage,
     {
         if ( isdefined( eattacker ) && isplayer( eattacker ) )
         {
-            if ( eattacker function_f3bb4f4911a1beb2( "escort", "isDogZombie" ) && is_equal( eattacker, victim ) && smeansofdeath != "MOD_SUICIDE" )
+            if ( eattacker function_f3bb4f4911a1beb2( "escort", "isDogZombie" ) && is_equal( eattacker, victim ) && smeansofdeath != "MOD_SUICIDE" && ( !isdefined( objweapon.basename ) || objweapon.basename != "jackolantern" ) )
             {
                 idamage = 0;
             }
@@ -705,8 +724,8 @@ function callback_playerdamage_internal( einflictor, eattacker, victim, idamage,
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x51c5
+// Params 3
+// Checksum 0x0, Offset: 0x534f
 // Size: 0xeb
 function dragonsbreathhitloccollection( hitloc, eattacker, objweapon )
 {
@@ -749,8 +768,8 @@ function dragonsbreathhitloccollection( hitloc, eattacker, objweapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 14, eflags: 0x0
-// Checksum 0x0, Offset: 0x52b8
+// Params 14
+// Checksum 0x0, Offset: 0x5442
 // Size: 0x40c
 function preplayerdamaged( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_1da1a66b5c6a06a7 )
 {
@@ -852,8 +871,8 @@ function preplayerdamaged( einflictor, eattacker, victim, idamage, idflags, smea
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x56cc
+// Params 2
+// Checksum 0x0, Offset: 0x5856
 // Size: 0x57, Type: bool
 function function_2f5049bbe3c5e733( objweapon, meansofdeath )
 {
@@ -862,9 +881,9 @@ function function_2f5049bbe3c5e733( objweapon, meansofdeath )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 17, eflags: 0x0
-// Checksum 0x0, Offset: 0x572c
-// Size: 0xab8
+// Params 17
+// Checksum 0x0, Offset: 0x58b6
+// Size: 0xac2
 function postplayerdamaged( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_1da1a66b5c6a06a7, var_986b2e0350629522, var_fcdf19e3cdd29669, iskillstreakweapon )
 {
     originaldamage = idamage;
@@ -1075,7 +1094,7 @@ function postplayerdamaged( einflictor, eattacker, victim, idamage, idflags, sme
             case #"hash_c22b13f81bed11f0":
                 victim stats::incpersstat( "explosionsSurvived", 1 );
                 
-                if ( getdvarint( @"hash_cf6378092db0d69c", 0 ) == 1 )
+                if ( getdvarint( @"scr_live_ragdoll_on_explosives", 0 ) == 1 )
                 {
                     if ( isdefined( einflictor ) )
                     {
@@ -1136,7 +1155,7 @@ function postplayerdamaged( einflictor, eattacker, victim, idamage, idflags, sme
         victim thread scripts\mp\equipment\butterfly_mine::function_6fed985972fc7a38( einflictor, eattacker );
     }
     
-    if ( getdvarint( @"hash_4b664c074a868ac5", 0 ) && objweapon.basename == "jup_jp14_pi_rsierra12_mp" && objweapon hasattachment( "jup_ammo_127_db_arcade" ) )
+    if ( ( getdvarint( @"hash_4b664c074a868ac5", 0 ) || function_d75b73c443421047() ) && objweapon.basename == "jup_jp14_pi_rsierra12_mp" && objweapon hasattachment( "jup_ammo_127_db_arcade" ) )
     {
         eattacker namespace_dfe80adf32f5c14a::function_178a29a2b09ae82a( idamage, victim );
     }
@@ -1147,8 +1166,8 @@ function postplayerdamaged( einflictor, eattacker, victim, idamage, idflags, sme
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x61ec
+// Params 2
+// Checksum 0x0, Offset: 0x6380
 // Size: 0x35, Type: bool
 function function_1f2e4ff84140d164( objweapon, eattacker )
 {
@@ -1162,7 +1181,7 @@ function function_1f2e4ff84140d164( objweapon, eattacker )
 
 // Namespace damage / scripts\mp\damage
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x622a
+// Checksum 0x0, Offset: 0x63be
 // Size: 0xff
 function private function_347074f909e9dea5( einflictor, objweapon )
 {
@@ -1202,7 +1221,7 @@ function private function_347074f909e9dea5( einflictor, objweapon )
 
 // Namespace damage / scripts\mp\damage
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x6332
+// Checksum 0x0, Offset: 0x64c6
 // Size: 0x74
 function private function_bf56dbd2a1035901( knockdownintensity, isvehiclehit, velocity )
 {
@@ -1229,8 +1248,8 @@ function private function_bf56dbd2a1035901( knockdownintensity, isvehiclehit, ve
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x63ae
+// Params 2
+// Checksum 0x0, Offset: 0x6542
 // Size: 0x8f
 function meleestagger_anglesviewattack( victim, attacker )
 {
@@ -1240,8 +1259,8 @@ function meleestagger_anglesviewattack( victim, attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6446
+// Params 2
+// Checksum 0x0, Offset: 0x65da
 // Size: 0x7a, Type: bool
 function isshrapnelsource( objweapon, meansofdeath )
 {
@@ -1284,14 +1303,14 @@ function isshrapnelsource( objweapon, meansofdeath )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64c9
+// Params 1
+// Checksum 0x0, Offset: 0x665d
 // Size: 0x1fd
 function meleestagger( attacker )
 {
     self endon( "death_or_disconnect" );
-    var_989ea0994c0bafe0 = getdvarfloat( @"hash_5bf99b34984d4d30" );
-    var_c0d3d09fb36a355e = getdvarfloat( @"hash_6c326257f3d446e8" );
+    var_989ea0994c0bafe0 = getdvarfloat( @"melee_stagger_shock_duration" );
+    var_c0d3d09fb36a355e = getdvarfloat( @"melee_stagger_aftershock_duration" );
     var_e501fdb86740b153 = self getviewkickscale();
     
     if ( isdefined( level.gamemodeoverridemeleeviewkickscale ) )
@@ -1334,8 +1353,8 @@ function meleestagger( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x66ce
+// Params 1
+// Checksum 0x0, Offset: 0x6862
 // Size: 0xf7
 function meleedofroutine( attacker )
 {
@@ -1347,7 +1366,7 @@ function meleedofroutine( attacker )
     farstart = 350;
     farend = 1024;
     self setdepthoffield( nearstart, nearend, farstart, farend, 10, 9 );
-    var_989ea0994c0bafe0 = getdvarfloat( @"hash_5bf99b34984d4d30" );
+    var_989ea0994c0bafe0 = getdvarfloat( @"melee_stagger_shock_duration" );
     wait utility::ter_op( attacker perk::_hasperk( "specialty_hardmelee" ), var_989ea0994c0bafe0 * 3, var_989ea0994c0bafe0 );
     
     while ( farend > 350 )
@@ -1364,8 +1383,8 @@ function meleedofroutine( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x67cd
+// Params 1
+// Checksum 0x0, Offset: 0x6961
 // Size: 0x23
 function monitormeleeoverlay( overlay )
 {
@@ -1374,8 +1393,8 @@ function monitormeleeoverlay( overlay )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x67f8
+// Params 5
+// Checksum 0x0, Offset: 0x698c
 // Size: 0x5b, Type: bool
 function allowdamageflash( attacker, victim, objweapon, meansofdeath, damage )
 {
@@ -1403,8 +1422,8 @@ function allowdamageflash( attacker, victim, objweapon, meansofdeath, damage )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x685c
+// Params 5
+// Checksum 0x0, Offset: 0x69f0
 // Size: 0x31, Type: bool
 function suppressdamageflash( attacker, victim, objweapon, meansofdeath, damage )
 {
@@ -1416,8 +1435,8 @@ function suppressdamageflash( attacker, victim, objweapon, meansofdeath, damage 
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x6896
+// Params 7
+// Checksum 0x0, Offset: 0x6a2a
 // Size: 0x8d, Type: bool
 function weaponignoresbrarmor( attacker, victim, damage, objweapon, smeansofdeath, inflictor, shitloc )
 {
@@ -1447,8 +1466,8 @@ function weaponignoresbrarmor( attacker, victim, damage, objweapon, smeansofdeat
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x692c
+// Params 1
+// Checksum 0x0, Offset: 0x6ac0
 // Size: 0x18, Type: bool
 function function_7b2f2a8a9aa41d44( weaponbasename )
 {
@@ -1456,8 +1475,8 @@ function function_7b2f2a8a9aa41d44( weaponbasename )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x694d
+// Params 13
+// Checksum 0x0, Offset: 0x6ae1
 // Size: 0x853
 function cac_modified_damage( victim, attacker, damage, smeansofdeath, objweapon, impactpoint, impactdir, shitloc, inflictor, query, idflags, iskillstreakweapon, headshotmultiplier )
 {
@@ -1700,8 +1719,8 @@ function cac_modified_damage( victim, attacker, damage, smeansofdeath, objweapon
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x71a9
+// Params 4
+// Checksum 0x0, Offset: 0x733d
 // Size: 0xe1
 function modify_blast_shield_damage( damage, attacker, victim, var_463424d8c7b063d4 )
 {
@@ -1732,8 +1751,8 @@ function modify_blast_shield_damage( damage, attacker, victim, var_463424d8c7b06
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x7293
+// Params 12
+// Checksum 0x0, Offset: 0x7427
 // Size: 0x4ff
 function modify_juggernaut_damage( victim, attacker, damage, smeansofdeath, objweapon, impactpoint, impactdir, shitloc, inflictor, query, idflags, iskillstreakweapon )
 {
@@ -1888,8 +1907,8 @@ function modify_juggernaut_damage( victim, attacker, damage, smeansofdeath, objw
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x779b
+// Params 3
+// Checksum 0x0, Offset: 0x792f
 // Size: 0x19e
 function modifydestructibledamage( damage, inflictor, objweapon )
 {
@@ -1933,8 +1952,8 @@ function modifydestructibledamage( damage, inflictor, objweapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x7942
+// Params 6
+// Checksum 0x0, Offset: 0x7ad6
 // Size: 0x97, Type: bool
 function iskilltradedamage( eattacker, victim, idamage, smeansofdeath, objweapon, var_b0fc59ff15058522 )
 {
@@ -1961,8 +1980,8 @@ function iskilltradedamage( eattacker, victim, idamage, smeansofdeath, objweapon
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x79e2
+// Params 1
+// Checksum 0x0, Offset: 0x7b76
 // Size: 0x28, Type: bool
 function isspreadweapon( objweapon )
 {
@@ -1970,8 +1989,8 @@ function isspreadweapon( objweapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a13
+// Params 3
+// Checksum 0x0, Offset: 0x7ba7
 // Size: 0x5f, Type: bool
 function function_2be5b08ed39d6a54( eattacker, victim, objweapon )
 {
@@ -1984,8 +2003,8 @@ function function_2be5b08ed39d6a54( eattacker, victim, objweapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a7b
+// Params 1
+// Checksum 0x0, Offset: 0x7c0f
 // Size: 0x66
 function issmallsplashdamage( objweapon )
 {
@@ -1998,8 +2017,8 @@ function issmallsplashdamage( objweapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ae9
+// Params 5
+// Checksum 0x0, Offset: 0x7c7d
 // Size: 0x360
 function spreadshotdamagemod( victim, eattacker, objweapon, idamage, idflags )
 {
@@ -2069,8 +2088,8 @@ function spreadshotdamagemod( victim, eattacker, objweapon, idamage, idflags )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e52
+// Params 3
+// Checksum 0x0, Offset: 0x7fe6
 // Size: 0xbb
 function function_c415d83582aad1e4( eattacker, objweapon, time )
 {
@@ -2097,8 +2116,8 @@ function function_c415d83582aad1e4( eattacker, objweapon, time )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f16
+// Params 2
+// Checksum 0x0, Offset: 0x80aa
 // Size: 0x16, Type: bool
 function is_lower( a, b )
 {
@@ -2106,8 +2125,8 @@ function is_lower( a, b )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f35
+// Params 2
+// Checksum 0x0, Offset: 0x80c9
 // Size: 0x10c
 function getspreadpelletspershot( eattacker, objweapon )
 {
@@ -2164,8 +2183,8 @@ function getspreadpelletspershot( eattacker, objweapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8049
+// Params 1
+// Checksum 0x0, Offset: 0x81dd
 // Size: 0x2c, Type: bool
 function helmet_washit( attacker )
 {
@@ -2173,8 +2192,8 @@ function helmet_washit( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x807e
+// Params 1
+// Checksum 0x0, Offset: 0x8212
 // Size: 0x1c
 function helmet_sethit( attacker )
 {
@@ -2182,8 +2201,8 @@ function helmet_sethit( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x80a2
+// Params 1
+// Checksum 0x0, Offset: 0x8236
 // Size: 0x16
 function helmet_clearhit( attacker )
 {
@@ -2191,8 +2210,8 @@ function helmet_clearhit( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x80c0
+// Params 1
+// Checksum 0x0, Offset: 0x8254
 // Size: 0x2c, Type: bool
 function helmet_wasbroke( attacker )
 {
@@ -2200,8 +2219,8 @@ function helmet_wasbroke( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x80f5
+// Params 1
+// Checksum 0x0, Offset: 0x8289
 // Size: 0x1c
 function helmet_setbroke( attacker )
 {
@@ -2209,8 +2228,8 @@ function helmet_setbroke( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8119
+// Params 1
+// Checksum 0x0, Offset: 0x82ad
 // Size: 0x16
 function helmet_clearbroke( attacker )
 {
@@ -2218,8 +2237,8 @@ function helmet_clearbroke( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x8137
+// Params 6
+// Checksum 0x0, Offset: 0x82cb
 // Size: 0xaa
 function applystoppingpower( objweapon, shitloc, smeansofdeath, attacker, damage, maxhealth )
 {
@@ -2253,8 +2272,8 @@ function applystoppingpower( objweapon, shitloc, smeansofdeath, attacker, damage
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x81ea
+// Params 4
+// Checksum 0x0, Offset: 0x837e
 // Size: 0x1e5, Type: bool
 function stoppingpowercanonehitkill( objweapon, shitloc, smeansofdeath, attacker )
 {
@@ -2338,8 +2357,8 @@ function stoppingpowercanonehitkill( objweapon, shitloc, smeansofdeath, attacker
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x83d8
+// Params 3
+// Checksum 0x0, Offset: 0x856c
 // Size: 0x166
 function adjustbulletstokill( damage, maxhealth, delta )
 {
@@ -2393,8 +2412,8 @@ function adjustbulletstokill( damage, maxhealth, delta )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8547
+// Params 2
+// Checksum 0x0, Offset: 0x86db
 // Size: 0x20
 function getbulletstokill( maxhealth, damage )
 {
@@ -2402,8 +2421,8 @@ function getbulletstokill( maxhealth, damage )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8570
+// Params 2
+// Checksum 0x0, Offset: 0x8704
 // Size: 0x8c, Type: bool
 function isbehindmeleevictim( attacker, victim )
 {
@@ -2413,8 +2432,8 @@ function isbehindmeleevictim( attacker, victim )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x8605
+// Params 5
+// Checksum 0x0, Offset: 0x8799
 // Size: 0xc1
 function killstreakdamagefilter( eattacker, victim, idamage, objweapon, smeansofdeath )
 {
@@ -2439,8 +2458,8 @@ function killstreakdamagefilter( eattacker, victim, idamage, objweapon, smeansof
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x86cf
+// Params 13
+// Checksum 0x0, Offset: 0x8863
 // Size: 0xee
 function function_b1493282af6c1334( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname )
 {
@@ -2470,8 +2489,8 @@ function function_b1493282af6c1334( einflictor, eattacker, victim, idamage, idfl
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 15, eflags: 0x0
-// Checksum 0x0, Offset: 0x87c6
+// Params 15
+// Checksum 0x0, Offset: 0x895a
 // Size: 0x8c7
 function handlefriendlyfiredamage( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, iskillstreakweapon )
 {
@@ -2720,8 +2739,8 @@ function handlefriendlyfiredamage( einflictor, eattacker, victim, idamage, idfla
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9096
+// Params 1
+// Checksum 0x0, Offset: 0x922a
 // Size: 0xce, Type: bool
 function isfriendlyfireprotectedperiod( attacker )
 {
@@ -2749,8 +2768,8 @@ function isfriendlyfireprotectedperiod( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 14, eflags: 0x0
-// Checksum 0x0, Offset: 0x916d
+// Params 14
+// Checksum 0x0, Offset: 0x9301
 // Size: 0xb4
 function damageattacker( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname )
 {
@@ -2763,8 +2782,8 @@ function damageattacker( einflictor, eattacker, victim, idamage, idflags, smeans
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9229
+// Params 1
+// Checksum 0x0, Offset: 0x93bd
 // Size: 0x28, Type: bool
 function mlghitlocrequiresclamp( shitloc )
 {
@@ -2772,8 +2791,8 @@ function mlghitlocrequiresclamp( shitloc )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x925a
+// Params 6
+// Checksum 0x0, Offset: 0x93ee
 // Size: 0xf9
 function mlgmodifyheadshotdamage( eattacker, idamage, smeansofdeath, objweapon, shitloc, idflags )
 {
@@ -2803,8 +2822,8 @@ function mlgmodifyheadshotdamage( eattacker, idamage, smeansofdeath, objweapon, 
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x935c
+// Params 4
+// Checksum 0x0, Offset: 0x94f0
 // Size: 0x1ac
 function modifyfalldamage( victim, idamage, idflags, smeansofdeath )
 {
@@ -2868,8 +2887,8 @@ function modifyfalldamage( victim, idamage, idflags, smeansofdeath )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x9511
+// Params 5
+// Checksum 0x0, Offset: 0x96a5
 // Size: 0xb3
 function modifyvehicletoplayerdamage( einflictor, eattacker, victim, idamage, smeansofdeath )
 {
@@ -2898,8 +2917,8 @@ function modifyvehicletoplayerdamage( einflictor, eattacker, victim, idamage, sm
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x95cd
+// Params 7
+// Checksum 0x0, Offset: 0x9761
 // Size: 0x74
 function function_53b212d296370f7( victim, idamage, idflags, shitloc, smeansofdeath, eattacker, objweapon )
 {
@@ -2915,8 +2934,8 @@ function function_53b212d296370f7( victim, idamage, idflags, shitloc, smeansofde
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x964a
+// Params 5
+// Checksum 0x0, Offset: 0x97de
 // Size: 0x7b
 function modifycrushdamage( einflictor, eattacker, victim, idamage, smeansofdeath )
 {
@@ -2934,8 +2953,8 @@ function modifycrushdamage( einflictor, eattacker, victim, idamage, smeansofdeat
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x96ce
+// Params 6
+// Checksum 0x0, Offset: 0x9862
 // Size: 0x96
 function function_754e680a5b56b39e( eattacker, victim, objweapon, smeansofdeath, idamage, var_be4285b26ed99ab1 )
 {
@@ -2964,8 +2983,8 @@ function function_754e680a5b56b39e( eattacker, victim, objweapon, smeansofdeath,
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x976d
+// Params 7
+// Checksum 0x0, Offset: 0x9901
 // Size: 0x125
 function function_2aa2c49ee1702368( eattacker, victim, objweapon, smeansofdeath, idamage, var_be4285b26ed99ab1, einflictor )
 {
@@ -3017,7 +3036,7 @@ function function_2aa2c49ee1702368( eattacker, victim, objweapon, smeansofdeath,
 
 // Namespace damage / scripts\mp\damage
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x989b
+// Checksum 0x0, Offset: 0x9a2f
 // Size: 0x74
 function private function_88c7467b96144afd( objweapon, damage )
 {
@@ -3035,7 +3054,7 @@ function private function_88c7467b96144afd( objweapon, damage )
 
 // Namespace damage / scripts\mp\damage
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x9918
+// Checksum 0x0, Offset: 0x9aac
 // Size: 0xc5
 function private function_18b0510fbca05ff7( objweapon, damage )
 {
@@ -3059,8 +3078,8 @@ function private function_18b0510fbca05ff7( objweapon, damage )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x99e6
+// Params 8
+// Checksum 0x0, Offset: 0x9b7a
 // Size: 0x43a
 function function_49f3d4de0e352093( inflictor, attacker, victim, objweapon, smeansofdeath, idamage, var_be4285b26ed99ab1, shitloc )
 {
@@ -3162,8 +3181,8 @@ function function_49f3d4de0e352093( inflictor, attacker, victim, objweapon, smea
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e29
+// Params 8
+// Checksum 0x0, Offset: 0x9fbd
 // Size: 0xb4
 function function_112ee98a4faca19a( inflictor, attacker, victim, objweapon, smeansofdeath, idamage, var_be4285b26ed99ab1, shitloc )
 {
@@ -3183,8 +3202,8 @@ function function_112ee98a4faca19a( inflictor, attacker, victim, objweapon, smea
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ee6
+// Params 8
+// Checksum 0x0, Offset: 0xa07a
 // Size: 0x2f3
 function function_7e8906e2dab3d41e( inflictor, attacker, victim, objweapon, smeansofdeath, idamage, var_be4285b26ed99ab1, shitloc )
 {
@@ -3277,8 +3296,8 @@ function function_7e8906e2dab3d41e( inflictor, attacker, victim, objweapon, smea
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa1e2
+// Params 2
+// Checksum 0x0, Offset: 0xa376
 // Size: 0x93, Type: bool
 function function_2856696941de9271( objweapon, partname )
 {
@@ -3288,9 +3307,9 @@ function function_2856696941de9271( objweapon, partname )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0xa27e
-// Size: 0x64b
+// Params 13
+// Checksum 0x0, Offset: 0xa412
+// Size: 0x67e
 function modifydamagegeneral( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, var_be4285b26ed99ab1, partname )
 {
     unmodifieddamage = idamage;
@@ -3399,7 +3418,9 @@ function modifydamagegeneral( einflictor, eattacker, victim, idamage, idflags, s
         idamage = int( clamp( idamage, 0, var_67e9622d1fd32306 ) );
     }
     
-    if ( objweapon.basename == "throwingknife_mp" && isbrstylegametype() )
+    var_1686068dab6149a3 = objweapon.basename == "jup_jp23_me_spear_mp" && !eattacker isalternatemode( "jup_jp23_me_spear_mp", 0, 0 );
+    
+    if ( ( objweapon.basename == "throwingknife_mp" || var_1686068dab6149a3 ) && isbrstylegametype() )
     {
         [ idamage, var_1da1a66b5c6a06a7 ] = scripts\mp\equipment\throwing_knife_mp::function_4d6d6bc790611975( eattacker, einflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, unmodifieddamage, partname, var_1da1a66b5c6a06a7 );
     }
@@ -3434,8 +3455,8 @@ function modifydamagegeneral( einflictor, eattacker, victim, idamage, idflags, s
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8d2
+// Params 11
+// Checksum 0x0, Offset: 0xaa99
 // Size: 0x4ea
 function handleriotshieldhits( einflictor, victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, idflags, iskillstreakweapon )
 {
@@ -3587,9 +3608,9 @@ function handleriotshieldhits( einflictor, victim, eattacker, idamage, smeansofd
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0xadc5
-// Size: 0x54c
+// Params 8
+// Checksum 0x0, Offset: 0xaf8c
+// Size: 0x5c5
 function filterdamage( einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc, partname )
 {
     if ( !idamage )
@@ -3645,6 +3666,21 @@ function filterdamage( einflictor, eattacker, victim, idamage, smeansofdeath, ob
     if ( isdefined( level.brgametype ) && isdefined( level.brgametype.zombiesdamagezombies ) && !istrue( level.brgametype.zombiesdamagezombies ) && isdefined( eattacker ) && eattacker scripts\mp\gametypes\br_public::playeriszombie() && victim scripts\mp\gametypes\br_public::playeriszombie() )
     {
         return "zombieFriendlyFire";
+    }
+    
+    if ( function_d75b73c443421047() && ( isdefined( eattacker ) && istrue( eattacker.var_fa9f4c933e6df36d ) || isdefined( victim ) && istrue( victim.var_fa9f4c933e6df36d ) ) )
+    {
+        var_69f6b6b4f7e1e9cf = 1;
+        
+        if ( istrue( victim.inlaststand ) && is_equal( smeansofdeath, "MOD_TRIGGER_HURT" ) )
+        {
+            var_69f6b6b4f7e1e9cf = 0;
+        }
+        
+        if ( var_69f6b6b4f7e1e9cf )
+        {
+            return "safeZoneFriendlyFire";
+        }
     }
     
     if ( tweakables::gettweakablevalue( "game", "onlyheadshots" ) )
@@ -3712,8 +3748,8 @@ function filterdamage( einflictor, eattacker, victim, idamage, smeansofdeath, ob
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0xb319
+// Params 11
+// Checksum 0x0, Offset: 0xb559
 // Size: 0x29d
 function logattacker( victim, eattacker, einflictor, objweapon, idamage, vpoint, vdir, shitloc, psoffsettime, smeansofdeath, var_1da1a66b5c6a06a7 )
 {
@@ -3758,8 +3794,8 @@ function logattacker( victim, eattacker, einflictor, objweapon, idamage, vpoint,
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5be
+// Params 11
+// Checksum 0x0, Offset: 0xb7fe
 // Size: 0x1bc
 function logattackerkillstreak( victim, idamage, eattacker, vdir, vpoint, smeansofdeath, modelname, tagname, partname, idflags, sweapon )
 {
@@ -3789,8 +3825,8 @@ function logattackerkillstreak( victim, idamage, eattacker, vdir, vpoint, smeans
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xb782
+// Params 6
+// Checksum 0x0, Offset: 0xb9c2
 // Size: 0x352
 function loggrenadedata( einflictor, eattacker, victim, idamage, smeansofdeath, objweapon )
 {
@@ -3843,8 +3879,8 @@ function loggrenadedata( einflictor, eattacker, victim, idamage, smeansofdeath, 
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xbadc
+// Params 5
+// Checksum 0x0, Offset: 0xbd1c
 // Size: 0xc1
 function function_42baa3bb97d2d1d7( player, var_254ce4e343d1f7de, var_a3732517126407b2, idamage, vpoint )
 {
@@ -3860,9 +3896,9 @@ function function_42baa3bb97d2d1d7( player, var_254ce4e343d1f7de, var_a373251712
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xbba5
-// Size: 0x8b
+// Params 5
+// Checksum 0x0, Offset: 0xbde5
+// Size: 0x94
 function function_7a6bbb24289296e7( player, var_254ce4e343d1f7de, var_a3732517126407b2, idamage, vpoint )
 {
     level endon( "game_ended" );
@@ -3875,13 +3911,18 @@ function function_7a6bbb24289296e7( player, var_254ce4e343d1f7de, var_a373251712
     
     player.var_a0f98ffc22b158e3++;
     wait 0.05 * player.var_a0f98ffc22b158e3;
-    function_42baa3bb97d2d1d7( player, var_254ce4e343d1f7de, var_a3732517126407b2, idamage, vpoint );
+    
+    if ( isplayer( player ) )
+    {
+        function_42baa3bb97d2d1d7( player, var_254ce4e343d1f7de, var_a3732517126407b2, idamage, vpoint );
+    }
+    
     player.var_a0f98ffc22b158e3--;
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc38
+// Params 6
+// Checksum 0x0, Offset: 0xbe81
 // Size: 0xf7
 function function_c54b2cc2e762c201( eattacker, etargethit, idamage, vpoint, waskilled, var_4ec43f1177740f8d )
 {
@@ -3914,9 +3955,9 @@ function function_c54b2cc2e762c201( eattacker, etargethit, idamage, vpoint, wask
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd37
-// Size: 0xd12
+// Params 13
+// Checksum 0x0, Offset: 0xbf80
+// Size: 0xd3b
 function handledamagefeedback( einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc, idflags, var_1da1a66b5c6a06a7, var_986b2e0350629522, iskillstreakweapon, partname, vpoint )
 {
     if ( function_483cc81bff18273b( eattacker ) || function_483cc81bff18273b( victim ) )
@@ -4070,6 +4111,10 @@ function handledamagefeedback( einflictor, eattacker, victim, idamage, smeansofd
         else if ( istrue( victim.var_808d06ddfc93a4e4 ) )
         {
             typehit = "hitbattlerage";
+        }
+        else if ( istrue( victim.iszombie ) && istrue( victim.buffed ) )
+        {
+            typehit = "hitzombieshout";
         }
         else if ( function_bd90db337f1ae0d4( victim, damager ) )
         {
@@ -4327,8 +4372,8 @@ function handledamagefeedback( einflictor, eattacker, victim, idamage, smeansofd
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xca51
+// Params 6
+// Checksum 0x0, Offset: 0xccc3
 // Size: 0x40
 function handledamageeffects( idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c6a06a7, objweapon )
 {
@@ -4336,8 +4381,8 @@ function handledamageeffects( idamage, eattacker, smeansofdeath, vpoint, var_1da
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xca99
+// Params 7
+// Checksum 0x0, Offset: 0xcd0b
 // Size: 0x2a2
 function lethalequipmentdamagemod( einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon )
 {
@@ -4403,9 +4448,9 @@ function lethalequipmentdamagemod( einflictor, eattacker, victim, idamage, idfla
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd44
-// Size: 0x208
+// Params 12
+// Checksum 0x0, Offset: 0xcfb6
+// Size: 0x227
 function playerkilled_initdeathdata( inflictor, attacker, victim, damage, damageflags, meansofdeath, objweapon, direction_vec, hitloc, psoffsettime, deathanimduration, isfauxdeath )
 {
     deathdata = damage_utility::packdamagedata( attacker, victim, damage, objweapon, meansofdeath, inflictor, undefined, direction_vec, undefined, undefined, undefined, undefined, damageflags );
@@ -4439,12 +4484,13 @@ function playerkilled_initdeathdata( inflictor, attacker, victim, damage, damage
     deathdata.deathtime = gettime();
     deathdata.brvictiminlaststand = undefined;
     deathdata.var_f83c15acb64c91b7 = isdefined( victim ) && istrue( victim.var_f83c15acb64c91b7 );
+    deathdata.var_21d6bd6b0d89a70c = isdefined( victim ) && istrue( victim.var_21d6bd6b0d89a70c );
     return deathdata;
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf55
+// Params 1
+// Checksum 0x0, Offset: 0xd1e6
 // Size: 0x2ed
 function playerkilled_parameterfixup( deathdata )
 {
@@ -4503,8 +4549,8 @@ function playerkilled_parameterfixup( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd24a
+// Params 1
+// Checksum 0x0, Offset: 0xd4db
 // Size: 0xb7d
 function playerkilled_fixupattacker( deathdata )
 {
@@ -4611,7 +4657,8 @@ function playerkilled_fixupattacker( deathdata )
                     
                     if ( var_a676df5d3d80a259.size > 0 )
                     {
-                        for (i = var_a676df5d3d80a259.size - 1; i >= 0; i--) {
+                        for ( i = var_a676df5d3d80a259.size - 1; i >= 0 ; i-- )
+                        {
                             var_e0573162d646b530 = var_a676df5d3d80a259[ i ];
                             
                             if ( !isdefined( _validateattacker( var_e0573162d646b530 ) ) )
@@ -4738,9 +4785,9 @@ function playerkilled_fixupattacker( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xddcf
-// Size: 0x2a3
+// Params 1
+// Checksum 0x0, Offset: 0xe060
+// Size: 0x2a4
 function playerkilled_precalc( deathdata )
 {
     attacker = deathdata.attacker;
@@ -4792,7 +4839,7 @@ function playerkilled_precalc( deathdata )
         deathdata.attackerentnum = -1;
     }
     
-    deathdata.iskillstreakweapon = weapon::iskillstreakweapon( objweapon.basename );
+    deathdata.iskillstreakweapon = attacker weapon::iskillstreakweapon( objweapon.basename );
     deathdata.weaponfullstring = getcompleteweaponname( objweapon );
     deathdata.var_bfcdebee0e8a3189 = isdefined( objweapon ) && isdefined( objweapon.basename ) && objweapon.basename == "bomb_site_mp";
     deathdata.isfriendlyfire = isfriendlyfire( victim, attacker );
@@ -4809,9 +4856,9 @@ function playerkilled_precalc( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe07a
-// Size: 0xe0d
+// Params 1
+// Checksum 0x0, Offset: 0xe30c
+// Size: 0xec8
 function playerkilled_sharedlogic_early( deathdata )
 {
     attacker = deathdata.attacker;
@@ -5094,6 +5141,12 @@ function playerkilled_sharedlogic_early( deathdata )
             obitplayers = level.var_c5877dbe60fddbf6;
         }
         
+        if ( obitmeansofdeath == "MOD_TRIGGER_HURT" && isdefined( level.var_c8936f922b7d32a1 ) && level.var_c8936f922b7d32a1.size > 0 && isdefined( deathdata.inflictor ) && function_f3bb4f4911a1beb2( "limbo", "isDeathBall", deathdata.inflictor ) )
+        {
+            obitmeansofdeath = "MOD_EXPLOSIVE";
+            objweapon = makeweapon( "deathball_limbo" );
+        }
+        
         if ( isdefined( victim ) )
         {
             victimteam = teams::getfriendlyplayers( victim.team, 0 );
@@ -5130,6 +5183,17 @@ function playerkilled_sharedlogic_early( deathdata )
         }
         
         var_d7f5ef4a14230875 = utility::ter_op( vehicle::function_4687f4da72911323( deathdata ), "MOD_EXPLOSIVE", obitmeansofdeath );
+        
+        if ( var_d7f5ef4a14230875 == "MOD_EXPLOSIVE" && isdefined( attacker ) && attacker function_c14e8044664565ad( var_aae3f6afd894e63a ) )
+        {
+            parentweapon = attacker function_1e3102980c3a4cc1( var_aae3f6afd894e63a );
+            
+            if ( isdefined( parentweapon ) && parentweapon.basename == "jup_jp31_dm_compound_mp" )
+            {
+                var_aae3f6afd894e63a = parentweapon;
+            }
+        }
+        
         obituary( victim, attacker, var_aae3f6afd894e63a, var_d7f5ef4a14230875 );
     }
     
@@ -5193,8 +5257,8 @@ function playerkilled_sharedlogic_early( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xee8f
+// Params 1
+// Checksum 0x0, Offset: 0xf1dc
 // Size: 0x3dc
 function playerkilled_logkill( deathdata )
 {
@@ -5284,8 +5348,8 @@ function playerkilled_logkill( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf273
+// Params 1
+// Checksum 0x0, Offset: 0xf5c0
 // Size: 0x107
 function playerkilled_finddeathtype( deathdata )
 {
@@ -5323,8 +5387,8 @@ function playerkilled_finddeathtype( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf382
+// Params 1
+// Checksum 0x0, Offset: 0xf6cf
 // Size: 0x1e3
 function playerkilled_handledeathtype( deathdata )
 {
@@ -5374,8 +5438,8 @@ function playerkilled_handledeathtype( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf56d
+// Params 1
+// Checksum 0x0, Offset: 0xf8ba
 // Size: 0x344
 function playerkilled_sharedlogic_late( deathdata )
 {
@@ -5469,9 +5533,9 @@ function playerkilled_sharedlogic_late( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8b9
-// Size: 0x589
+// Params 1
+// Checksum 0x0, Offset: 0xfc06
+// Size: 0x5b2
 function playerkilled_handlecorpse( deathdata )
 {
     attacker = deathdata.attacker;
@@ -5482,6 +5546,14 @@ function playerkilled_handlecorpse( deathdata )
     isfauxdeath = deathdata.isfauxdeath;
     hitloc = deathdata.hitloc;
     var_f5b166094dc876c1 = 0;
+    
+    if ( isdefined( victim ) )
+    {
+        if ( function_f3bb4f4911a1beb2( "limbo", "isOnSpaceShipment", victim ) )
+        {
+            victim.nocorpse = 1;
+        }
+    }
     
     if ( isdefined( victim.carryobject ) && !isfauxdeath )
     {
@@ -5652,8 +5724,8 @@ function playerkilled_handlecorpse( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe4a
+// Params 3
+// Checksum 0x0, Offset: 0x101c0
 // Size: 0x30f
 function _startragdoll( corpse, meansofdeath, inflictor )
 {
@@ -5771,8 +5843,8 @@ function _startragdoll( corpse, meansofdeath, inflictor )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x10161
+// Params 4
+// Checksum 0x0, Offset: 0x104d7
 // Size: 0x85
 function _donewithcorpse( deletecorpse, deletecorpsedelayed, startdelay, animduration )
 {
@@ -5810,8 +5882,8 @@ function _donewithcorpse( deletecorpse, deletecorpsedelayed, startdelay, animdur
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x101ee
+// Params 2
+// Checksum 0x0, Offset: 0x10564
 // Size: 0x4f
 function function_c837dcc441a2d51b( var_b2afba0be4e4e55, var_cff2e3774745e3dd )
 {
@@ -5830,8 +5902,8 @@ function function_c837dcc441a2d51b( var_b2afba0be4e4e55, var_cff2e3774745e3dd )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10245
+// Params 0
+// Checksum 0x0, Offset: 0x105bb
 // Size: 0x96
 function function_cd0171313cca081()
 {
@@ -5859,8 +5931,8 @@ function function_cd0171313cca081()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x102e4
+// Params 6
+// Checksum 0x0, Offset: 0x1065a
 // Size: 0x186
 function _unlinkcorpsefromvehicle( vehicle, var_6126d8436c986baf, deletecorpse, deletecorpsedelayed, startdelay, animduration )
 {
@@ -5908,8 +5980,8 @@ function _unlinkcorpsefromvehicle( vehicle, var_6126d8436c986baf, deletecorpse, 
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x10472
+// Params 5
+// Checksum 0x0, Offset: 0x107e8
 // Size: 0x5e
 function playerkilled_deletecorpseoutofvehicle( corpse, vehicle, seatid, duration, deleteonseatenter )
 {
@@ -5925,8 +5997,8 @@ function playerkilled_deletecorpseoutofvehicle( corpse, vehicle, seatid, duratio
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x104d8
+// Params 2
+// Checksum 0x0, Offset: 0x1084e
 // Size: 0x34, Type: bool
 function playerkilled_washitbyvehicle( meansofdeath, inflictor )
 {
@@ -5949,8 +6021,8 @@ function playerkilled_washitbyvehicle( meansofdeath, inflictor )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10515
+// Params 1
+// Checksum 0x0, Offset: 0x1088b
 // Size: 0x3d8
 function playerkilled_killcamsetup( deathdata )
 {
@@ -6034,8 +6106,8 @@ function playerkilled_killcamsetup( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x108f5
+// Params 1
+// Checksum 0x0, Offset: 0x10c6b
 // Size: 0x11b
 function playerkilled_deathscene( deathdata )
 {
@@ -6083,8 +6155,8 @@ function playerkilled_deathscene( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10a18
+// Params 1
+// Checksum 0x0, Offset: 0x10d8e
 // Size: 0x414
 function playerkilled_killcam( var_7ce346cc7a54d100 )
 {
@@ -6183,8 +6255,8 @@ function playerkilled_killcam( var_7ce346cc7a54d100 )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e34
+// Params 1
+// Checksum 0x0, Offset: 0x111aa
 // Size: 0x126
 function playerkilled_spawn( deathdata )
 {
@@ -6245,8 +6317,8 @@ function playerkilled_spawn( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f62
+// Params 12
+// Checksum 0x0, Offset: 0x112d8
 // Size: 0xe3
 function playerkilled_internal( inflictor, attacker, victim, damage, damageflags, meansofdeath, objweapon, direction_vec, hitloc, psoffsettime, deathanimduration, isfauxdeath )
 {
@@ -6269,8 +6341,8 @@ function playerkilled_internal( inflictor, attacker, victim, damage, damageflags
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1104d
+// Params 0
+// Checksum 0x0, Offset: 0x113c3
 // Size: 0x13, Type: bool
 function isswitchingteams()
 {
@@ -6283,8 +6355,8 @@ function isswitchingteams()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11069
+// Params 0
+// Checksum 0x0, Offset: 0x113df
 // Size: 0x46, Type: bool
 function isteamswitchbalanced()
 {
@@ -6295,8 +6367,8 @@ function isteamswitchbalanced()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x110b8
+// Params 2
+// Checksum 0x0, Offset: 0x1142e
 // Size: 0x6a, Type: bool
 function isfriendlyfire( victim, attacker )
 {
@@ -6329,8 +6401,8 @@ function isfriendlyfire( victim, attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1112b
+// Params 1
+// Checksum 0x0, Offset: 0x114a1
 // Size: 0x20, Type: bool
 function killedself( attacker )
 {
@@ -6348,8 +6420,8 @@ function killedself( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11154
+// Params 0
+// Checksum 0x0, Offset: 0x114ca
 // Size: 0x82
 function handleteamchangedeath()
 {
@@ -6373,8 +6445,8 @@ function handleteamchangedeath()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x111de
+// Params 5
+// Checksum 0x0, Offset: 0x11554
 // Size: 0x1a2
 function handleworlddeath( deathdata, attacker, lifeid, smeansofdeath, shitloc )
 {
@@ -6415,8 +6487,8 @@ function handleworlddeath( deathdata, attacker, lifeid, smeansofdeath, shitloc )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11388
+// Params 2
+// Checksum 0x0, Offset: 0x116fe
 // Size: 0xfa
 function handlesuicidedeath( smeansofdeath, shitloc )
 {
@@ -6452,8 +6524,8 @@ function handlesuicidedeath( smeansofdeath, shitloc )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1148a
+// Params 1
+// Checksum 0x0, Offset: 0x11800
 // Size: 0x27b
 function handlefriendlyfiredeath( deathdata )
 {
@@ -6538,8 +6610,8 @@ function handlefriendlyfiredeath( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1170d
+// Params 1
+// Checksum 0x0, Offset: 0x11a83
 // Size: 0x394
 function handleinlaststanddeath( deathdata )
 {
@@ -6636,8 +6708,8 @@ function handleinlaststanddeath( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11aa9
+// Params 1
+// Checksum 0x0, Offset: 0x11e1f
 // Size: 0x3f
 function function_11ea8154fd8726c5( var_306f84215cfc4820 )
 {
@@ -6657,9 +6729,9 @@ function function_11ea8154fd8726c5( var_306f84215cfc4820 )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x11af1
-// Size: 0x3b2
+// Params 6
+// Checksum 0x0, Offset: 0x11e67
+// Size: 0x3c7
 function handlenormaldeath_sounds( attacker, victim, smeansofdeath, einflictor, var_10e1ef8c47f876d8, var_306f84215cfc4820 )
 {
     var_e08e0d086a79892b = 0;
@@ -6682,7 +6754,7 @@ function handlenormaldeath_sounds( attacker, victim, smeansofdeath, einflictor, 
     if ( function_80ade967129c9845() )
     {
     }
-    else if ( isagent( attacker ) )
+    else if ( isagent( attacker ) || teams::function_44a6f98cc3c0f5f4( attacker.team ) )
     {
         if ( !utility::isbulletdamage( smeansofdeath ) || isdefined( einflictor ) && attacker != einflictor )
         {
@@ -6780,8 +6852,8 @@ function handlenormaldeath_sounds( attacker, victim, smeansofdeath, einflictor, 
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11eab
+// Params 1
+// Checksum 0x0, Offset: 0x12236
 // Size: 0xa1
 function function_4e8bd2bd787c0dda( smeansofdeath )
 {
@@ -6804,8 +6876,8 @@ function function_4e8bd2bd787c0dda( smeansofdeath )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f54
+// Params 0
+// Checksum 0x0, Offset: 0x122df
 // Size: 0xc, Type: bool
 function function_80ade967129c9845()
 {
@@ -6813,9 +6885,9 @@ function function_80ade967129c9845()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f69
-// Size: 0x1976
+// Params 10
+// Checksum 0x0, Offset: 0x122f4
+// Size: 0x19bf
 function handlenormaldeath( lifeid, attacker, einflictor, objweapon, smeansofdeath, victim, iskillstreakweapon, deathdata, var_c7944407e05a6f77, var_b9c265f657115663 )
 {
     if ( smeansofdeath == "MOD_GRENADE" && einflictor == attacker )
@@ -7013,7 +7085,7 @@ function handlenormaldeath( lifeid, attacker, einflictor, objweapon, smeansofdea
             
             foreach ( weaponkey, data in var_d2db6cb7f6d5d36d.pers[ "killsPerWeapon" ] )
             {
-                if ( weaponkey == rootname )
+                if ( isdefined( rootname ) && weaponkey == rootname )
                 {
                     data.killcount++;
                     weaponfound = 1;
@@ -7021,7 +7093,7 @@ function handlenormaldeath( lifeid, attacker, einflictor, objweapon, smeansofdea
                 }
             }
             
-            if ( !weaponfound )
+            if ( isdefined( rootname ) && !weaponfound )
             {
                 data = spawnstruct();
                 data.killcount = 1;
@@ -7197,6 +7269,11 @@ function handlenormaldeath( lifeid, attacker, einflictor, objweapon, smeansofdea
                 continue;
             }
             
+            if ( !isdefined( player ) || !isdefined( player.guid ) )
+            {
+                continue;
+            }
+            
             if ( !isdefined( _validateattacker( player ) ) )
             {
                 continue;
@@ -7215,6 +7292,11 @@ function handlenormaldeath( lifeid, attacker, einflictor, objweapon, smeansofdea
             }
             
             if ( self == player )
+            {
+                continue;
+            }
+            
+            if ( istrue( level.var_c9c83bd1de3cbfa6 ) && isagent( player ) )
             {
                 continue;
             }
@@ -7404,7 +7486,7 @@ function handlenormaldeath( lifeid, attacker, einflictor, objweapon, smeansofdea
             {
                 if ( level.teambased && drone.team == attacker.team && drone.owner != attacker )
                 {
-                    if ( isdefined( drone.enemiesmarked ) && isdefined( drone.enemiesmarked[ self getentitynumber() ] ) )
+                    if ( isdefined( drone.enemiesmarked ) && isdefined( self ) && isdefined( drone.enemiesmarked[ self getentitynumber() ] ) )
                     {
                         drone.owner thread points::doscoreevent( hashcat( function_1823ff50bb28148d( drone.streakinfo.streakname ), "_assist" ) );
                     }
@@ -7493,7 +7575,7 @@ function handlenormaldeath( lifeid, attacker, einflictor, objweapon, smeansofdea
 
 // Namespace damage / scripts\mp\damage
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x138e7
+// Checksum 0x0, Offset: 0x13cbb
 // Size: 0xa5
 function private function_72a7592cd2fc0b9a( headsize )
 {
@@ -7509,8 +7591,8 @@ function private function_72a7592cd2fc0b9a( headsize )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13994
+// Params 1
+// Checksum 0x0, Offset: 0x13d68
 // Size: 0x195
 function adjustvoxelhead( var_a9351fa416d5d33f )
 {
@@ -7564,8 +7646,8 @@ function adjustvoxelhead( var_a9351fa416d5d33f )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13b31
+// Params 1
+// Checksum 0x0, Offset: 0x13f05
 // Size: 0x73
 function function_213650502f1ed86f( victim )
 {
@@ -7591,8 +7673,8 @@ function function_213650502f1ed86f( victim )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13bac
+// Params 0
+// Checksum 0x0, Offset: 0x13f80
 // Size: 0x8c
 function playerincrementscoreboardkills()
 {
@@ -7612,8 +7694,8 @@ function playerincrementscoreboardkills()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13c40
+// Params 1
+// Checksum 0x0, Offset: 0x14014
 // Size: 0x320
 function function_53931e410002911f( killweapon )
 {
@@ -7675,8 +7757,8 @@ function function_53931e410002911f( killweapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f68
+// Params 4
+// Checksum 0x0, Offset: 0x1433c
 // Size: 0x1c0
 function function_1306e8a08ab7bbab( victim, objweapon, einflictor, iskillstreakweapon )
 {
@@ -7721,8 +7803,8 @@ function function_1306e8a08ab7bbab( victim, objweapon, einflictor, iskillstreakw
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x14130
+// Params 10
+// Checksum 0x0, Offset: 0x14504
 // Size: 0x6a
 function callback_playerkilled( inflictor, attacker, damage, damageflags, meansofdeath, objweapon, direction_vec, hitloc, psoffsettime, deathanimduration )
 {
@@ -7730,8 +7812,8 @@ function callback_playerkilled( inflictor, attacker, damage, damageflags, meanso
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x141a2
+// Params 2
+// Checksum 0x0, Offset: 0x14576
 // Size: 0x47
 function launchshield( damage, meansofdeath )
 {
@@ -7750,8 +7832,8 @@ function launchshield( damage, meansofdeath )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x141f1
+// Params 0
+// Checksum 0x0, Offset: 0x145c5
 // Size: 0x5e
 function resetplayervariables()
 {
@@ -7767,8 +7849,8 @@ function resetplayervariables()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14257
+// Params 0
+// Checksum 0x0, Offset: 0x1462b
 // Size: 0x23
 function resetplayeromnvarsonspawn()
 {
@@ -7778,8 +7860,8 @@ function resetplayeromnvarsonspawn()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x14282
+// Params 5
+// Checksum 0x0, Offset: 0x14656
 // Size: 0x436
 function hitlocdebug( attacker, victim, damage, hitloc, dflags )
 {
@@ -7796,7 +7878,8 @@ function hitlocdebug( attacker, victim, damage, hitloc, dflags )
     
     if ( !isdefined( attacker.hitlocinited ) )
     {
-        for (i = 0; i < 6; i++) {
+        for ( i = 0; i < 6 ; i++ )
+        {
             attacker setclientdvar( hashcat( @"hash_3dd1dde9508849d5", utility::string( i ) ), "" );
         }
         
@@ -7814,7 +7897,8 @@ function hitlocdebug( attacker, victim, damage, hitloc, dflags )
     {
         attacker.damageinfo = [];
         
-        for (i = 0; i < elemcount; i++) {
+        for ( i = 0; i < elemcount ; i++ )
+        {
             attacker.damageinfo[ i ] = spawnstruct();
             attacker.damageinfo[ i ].damage = 0;
             attacker.damageinfo[ i ].hitloc = "";
@@ -7826,7 +7910,8 @@ function hitlocdebug( attacker, victim, damage, hitloc, dflags )
         attacker.damageinfovictim = undefined;
     }
     
-    for (i = elemcount - 1; i > 0; i--) {
+    for ( i = elemcount - 1; i > 0 ; i-- )
+    {
         attacker.damageinfo[ i ].damage = attacker.damageinfo[ i - 1 ].damage;
         attacker.damageinfo[ i ].hitloc = attacker.damageinfo[ i - 1 ].hitloc;
         attacker.damageinfo[ i ].bp = attacker.damageinfo[ i - 1 ].bp;
@@ -7850,7 +7935,8 @@ function hitlocdebug( attacker, victim, damage, hitloc, dflags )
     attacker.damageinfovictim = victim;
     attacker.damageinfo[ 0 ].colorindex = attacker.damageinfocolorindex;
     
-    for (i = 0; i < elemcount; i++) {
+    for ( i = 0; i < elemcount ; i++ )
+    {
         color = "^" + colors[ attacker.damageinfo[ i ].colorindex ];
         
         if ( attacker.damageinfo[ i ].hitloc != "" )
@@ -7870,8 +7956,8 @@ function hitlocdebug( attacker, victim, damage, hitloc, dflags )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x146c0
+// Params 0
+// Checksum 0x0, Offset: 0x14a94
 // Size: 0x32
 function giverecentshieldxp()
 {
@@ -7884,8 +7970,8 @@ function giverecentshieldxp()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x146fa
+// Params 4
+// Checksum 0x0, Offset: 0x14ace
 // Size: 0x70
 function updateinflictorstat( einflictor, eattacker, sweapon, otherent )
 {
@@ -7901,9 +7987,9 @@ function updateinflictorstat( einflictor, eattacker, sweapon, otherent )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x14772
-// Size: 0x623
+// Params 11
+// Checksum 0x0, Offset: 0x14b46
+// Size: 0x62c
 function addattacker( victim, eattacker, einflictor, objweapon, idamage, vpoint, vdir, shitloc, psoffsettime, smeansofdeath, var_1da1a66b5c6a06a7 )
 {
     if ( !isdefined( eattacker.guid ) && ( isagent( eattacker ) || isplayer( eattacker ) ) )
@@ -7968,14 +8054,15 @@ function addattacker( victim, eattacker, einflictor, objweapon, idamage, vpoint,
     
     idamage = default_to( idamage, 0 );
     var_1da1a66b5c6a06a7 = default_to( var_1da1a66b5c6a06a7, 0 );
+    armorhealth = default_to( victim.armorhealth, 0 );
     
     if ( isdefined( smeansofdeath ) && smeansofdeath == "MOD_SUICIDE" )
     {
-        totalhealth = victim.maxhealth + default_to( victim.armorhealth, 0 ) + var_1da1a66b5c6a06a7;
+        totalhealth = victim.maxhealth + max( 0, armorhealth ) + var_1da1a66b5c6a06a7;
     }
     else
     {
-        totalhealth = victim.health + default_to( victim.armorhealth, 0 ) + var_1da1a66b5c6a06a7;
+        totalhealth = victim.health + max( 0, armorhealth ) + var_1da1a66b5c6a06a7;
     }
     
     totaldamage = idamage + var_1da1a66b5c6a06a7;
@@ -8046,8 +8133,8 @@ function addattacker( victim, eattacker, einflictor, objweapon, idamage, vpoint,
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d9d
+// Params 11
+// Checksum 0x0, Offset: 0x1517a
 // Size: 0x2e9
 function addattackerkillstreak( victim, idamage, eattacker, vdir, vpoint, smeansofdeath, modelname, tagname, partname, idflags, sweapon )
 {
@@ -8078,8 +8165,8 @@ function addattackerkillstreak( victim, idamage, eattacker, vdir, vpoint, smeans
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1508e
+// Params 0
+// Checksum 0x0, Offset: 0x1546b
 // Size: 0x16
 function resetattackerlist()
 {
@@ -8088,8 +8175,8 @@ function resetattackerlist()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 15, eflags: 0x0
-// Checksum 0x0, Offset: 0x150ac
+// Params 15
+// Checksum 0x0, Offset: 0x15489
 // Size: 0xc2
 function callback_playerdamage( einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1 )
 {
@@ -8099,8 +8186,8 @@ function callback_playerdamage( einflictor, eattacker, idamage, idflags, smeanso
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x15176
+// Params 6
+// Checksum 0x0, Offset: 0x15553
 // Size: 0x1dc
 function function_f9237ec4a57b0ff9( eattacker, var_ba9dc00e6d5896dc, idamage, fdistance, objweapon, shitloc )
 {
@@ -8149,8 +8236,8 @@ function function_f9237ec4a57b0ff9( eattacker, var_ba9dc00e6d5896dc, idamage, fd
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 15, eflags: 0x0
-// Checksum 0x0, Offset: 0x1535a
+// Params 15
+// Checksum 0x0, Offset: 0x15737
 // Size: 0x76d
 function finishplayerdamagewrapper( einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, armorhit, flinch )
 {
@@ -8359,8 +8446,8 @@ function finishplayerdamagewrapper( einflictor, eattacker, idamage, idflags, sme
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15acf
+// Params 1
+// Checksum 0x0, Offset: 0x15eac
 // Size: 0x33, Type: bool
 function shoulduseexplosiveindicator( smeansofdeath )
 {
@@ -8368,8 +8455,8 @@ function shoulduseexplosiveindicator( smeansofdeath )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x15b0b
+// Params 11
+// Checksum 0x0, Offset: 0x15ee8
 // Size: 0x74
 function callback_playerimpaled( eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34, var_d3564b2364cb59e6, var_a4d8eb0a63f60f6b, isagent )
 {
@@ -8377,8 +8464,8 @@ function callback_playerimpaled( eattacker, objweapon, vpointclient, vpoint, vdi
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x15b87
+// Params 6
+// Checksum 0x0, Offset: 0x15f64
 // Size: 0x1b4
 function function_b6ceceee10bc38d8( eattacker, objweapon, vdir, magnitude, shitloc, isagent )
 {
@@ -8429,8 +8516,8 @@ function function_b6ceceee10bc38d8( eattacker, objweapon, vdir, magnitude, shitl
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d43
+// Params 0
+// Checksum 0x0, Offset: 0x16120
 // Size: 0x23
 function allowfauxdeath()
 {
@@ -8443,8 +8530,8 @@ function allowfauxdeath()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d6f
+// Params 9
+// Checksum 0x0, Offset: 0x1614c
 // Size: 0x807, Type: bool
 function callback_playerlaststand( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration )
 {
@@ -8696,8 +8783,8 @@ function callback_playerlaststand( einflictor, attacker, idamage, smeansofdeath,
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1657f
+// Params 1
+// Checksum 0x0, Offset: 0x1695c
 // Size: 0x10a
 function function_b908a35b0981168e( isdowned )
 {
@@ -8743,8 +8830,8 @@ function function_b908a35b0981168e( isdowned )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x16691
+// Params 8
+// Checksum 0x0, Offset: 0x16a6e
 // Size: 0x134
 function isforcedlaststand( victim, einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc )
 {
@@ -8799,8 +8886,8 @@ function isforcedlaststand( victim, einflictor, attacker, idamage, smeansofdeath
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x167ce
+// Params 1
+// Checksum 0x0, Offset: 0x16bab
 // Size: 0x100
 function gethitlocheight( shitloc )
 {
@@ -8836,8 +8923,8 @@ function gethitlocheight( shitloc )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x168d7
+// Params 6
+// Checksum 0x0, Offset: 0x16cb4
 // Size: 0xb1
 function damageshellshockandrumble( einflictor, objweapon, smeansofdeath, idamage, idflags, eattacker )
 {
@@ -8861,8 +8948,8 @@ function damageshellshockandrumble( einflictor, objweapon, smeansofdeath, idamag
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x16990
+// Params 10
+// Checksum 0x0, Offset: 0x16d6d
 // Size: 0x55, Type: bool
 function callback_killingblow( einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime )
 {
@@ -8870,8 +8957,8 @@ function callback_killingblow( einflictor, eattacker, idamage, idflags, smeansof
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x169ee
+// Params 3
+// Checksum 0x0, Offset: 0x16dcb
 // Size: 0xd9
 function function_49d8cc008e5f6722( eattacker, victim, idflags )
 {
@@ -8912,8 +8999,8 @@ function function_49d8cc008e5f6722( eattacker, victim, idflags )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16acf
+// Params 1
+// Checksum 0x0, Offset: 0x16eac
 // Size: 0x20
 function emitfalldamage( idamage )
 {
@@ -8921,8 +9008,8 @@ function emitfalldamage( idamage )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x16af7
+// Params 11
+// Checksum 0x0, Offset: 0x16ed4
 // Size: 0x253
 function gamemodemodifyplayerdamage( einflictor, victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, idflags, var_be4285b26ed99ab1 )
 {
@@ -8995,8 +9082,8 @@ function gamemodemodifyplayerdamage( einflictor, victim, eattacker, idamage, sme
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x16d53
+// Params 4
+// Checksum 0x0, Offset: 0x17130
 // Size: 0x7b
 function registerkill( objweapon, smeansofdeath, var_82a240a652326f8, iskillstreakweapon )
 {
@@ -9014,8 +9101,8 @@ function registerkill( objweapon, smeansofdeath, var_82a240a652326f8, iskillstre
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16dd6
+// Params 0
+// Checksum 0x0, Offset: 0x171b3
 // Size: 0xc, Type: bool
 function function_e42efe66fa95ca55()
 {
@@ -9023,8 +9110,8 @@ function function_e42efe66fa95ca55()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x16deb
+// Params 7
+// Checksum 0x0, Offset: 0x171c8
 // Size: 0x1c8
 function monitordamage( maxhealth, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak, rumble, resetdamagetaken )
 {
@@ -9051,7 +9138,8 @@ function monitordamage( maxhealth, damagefeedback, ondeathfunc, var_d7b645601854
         biskillstreak = 0;
     }
     
-    for (running = 1; running; running = monitordamageoneshot( damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, inflictor, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak )) {
+    for ( running = 1; running ; running = monitordamageoneshot( damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, inflictor, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak ) )
+    {
         self waittill( "damage", damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, origin, angles, normal, inflictor );
         objweapon = weapon::mapweapon( objweapon, inflictor );
         
@@ -9075,8 +9163,8 @@ function monitordamage( maxhealth, damagefeedback, ondeathfunc, var_d7b645601854
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16fbb
+// Params 0
+// Checksum 0x0, Offset: 0x17398
 // Size: 0x44
 function monitordamageend()
 {
@@ -9090,9 +9178,9 @@ function monitordamageend()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 15, eflags: 0x0
-// Checksum 0x0, Offset: 0x17007
-// Size: 0x27d, Type: bool
+// Params 15
+// Checksum 0x0, Offset: 0x173e4
+// Size: 0x282, Type: bool
 function monitordamageoneshot( damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, inflictor, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak )
 {
     if ( !isdefined( self ) )
@@ -9180,7 +9268,12 @@ function monitordamageoneshot( damage, attacker, direction_vec, point, meansofde
     if ( self.damagetaken >= self.maxhealth )
     {
         damagedata = damage_utility::packdamagedata( attacker, self, damage, objweapon, meansofdeath, inflictor, point, direction_vec, modelname, partname, tagname, idflags );
-        thread equipmentdestroyed( inflictor, attacker, damage, idflags, undefined, objweapon, undefined, attacker.modifiers );
+        
+        if ( !istrue( biskillstreak ) )
+        {
+            thread equipmentdestroyed( inflictor, attacker, damage, idflags, undefined, objweapon, undefined, attacker.modifiers );
+        }
+        
         self thread [[ ondeathfunc ]]( damagedata );
         return false;
     }
@@ -9189,8 +9282,8 @@ function monitordamageoneshot( damage, attacker, direction_vec, point, meansofde
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1728d
+// Params 1
+// Checksum 0x0, Offset: 0x1766f
 // Size: 0xcc
 function modifydamage( data )
 {
@@ -9217,8 +9310,8 @@ function modifydamage( data )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17362
+// Params 3
+// Checksum 0x0, Offset: 0x17744
 // Size: 0x107
 function handlemissiledamage( objweapon, meansofdeath, damage )
 {
@@ -9251,8 +9344,8 @@ function handlemissiledamage( objweapon, meansofdeath, damage )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17472
+// Params 3
+// Checksum 0x0, Offset: 0x17854
 // Size: 0xa5
 function handlegrenadedamage( objweapon, damagetype, modifieddamage )
 {
@@ -9284,8 +9377,8 @@ function handlegrenadedamage( objweapon, damagetype, modifieddamage )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17520
+// Params 3
+// Checksum 0x0, Offset: 0x17902
 // Size: 0x1c
 function handleempdamage( objweapon, meansofdeath, damage )
 {
@@ -9293,8 +9386,8 @@ function handleempdamage( objweapon, meansofdeath, damage )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x17545
+// Params 5
+// Checksum 0x0, Offset: 0x17927
 // Size: 0xad
 function handleapdamage( objweapon, meansofdeath, damage, attacker, victim )
 {
@@ -9321,8 +9414,8 @@ function handleapdamage( objweapon, meansofdeath, damage, attacker, victim )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x175fb
+// Params 4
+// Checksum 0x0, Offset: 0x179dd
 // Size: 0x50
 function handleapammodamage( objweapon, smeansofdeath, damage, var_be4285b26ed99ab1 )
 {
@@ -9342,8 +9435,8 @@ function handleapammodamage( objweapon, smeansofdeath, damage, var_be4285b26ed99
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x17654
+// Params 4
+// Checksum 0x0, Offset: 0x17a36
 // Size: 0x53
 function function_5e4aa8d548cc604e( damage, objweapon, attacker, meansofdeath )
 {
@@ -9358,8 +9451,8 @@ function function_5e4aa8d548cc604e( damage, objweapon, attacker, meansofdeath )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x176b0
+// Params 3
+// Checksum 0x0, Offset: 0x17a92
 // Size: 0x4a
 function function_10268164ab1bcc31( damage, objweapon, attacker )
 {
@@ -9374,8 +9467,8 @@ function function_10268164ab1bcc31( damage, objweapon, attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x17703
+// Params 5
+// Checksum 0x0, Offset: 0x17ae5
 // Size: 0x50
 function handleakimbodamage( objweapon, meansofdeath, damage, attacker, victim )
 {
@@ -9389,8 +9482,8 @@ function handleakimbodamage( objweapon, meansofdeath, damage, attacker, victim )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1775c
+// Params 3
+// Checksum 0x0, Offset: 0x17b3e
 // Size: 0x56
 function handleshotgundamage( objweapon, meansofdeath, damage )
 {
@@ -9413,8 +9506,8 @@ function handleshotgundamage( objweapon, meansofdeath, damage )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x177bb
+// Params 4
+// Checksum 0x0, Offset: 0x17b9d
 // Size: 0xad
 function onkillstreakdamaged( killstreakname, attacker, weapon, damage )
 {
@@ -9440,8 +9533,8 @@ function onkillstreakdamaged( killstreakname, attacker, weapon, damage )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x17870
+// Params 9
+// Checksum 0x0, Offset: 0x17c52
 // Size: 0x1a1
 function onkillstreakkilled( killstreakname, attacker, objweapon, damagetype, damage, scorepopupname, leaderdialog, cardsplash, skipdeathnotify )
 {
@@ -9502,8 +9595,8 @@ function onkillstreakkilled( killstreakname, attacker, objweapon, damagetype, da
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17a1a
+// Params 3
+// Checksum 0x0, Offset: 0x17dfc
 // Size: 0x185
 function updatedeathdetails( attackerlist, attackerdata, killer )
 {
@@ -9546,14 +9639,15 @@ function updatedeathdetails( attackerlist, attackerdata, killer )
         }
     }
     
-    for (clearindex = attackercount; clearindex < 4; clearindex++) {
+    for ( clearindex = attackercount; clearindex < 4 ; clearindex++ )
+    {
         self setclientomnvar( "ui_death_details_attacker_" + clearindex, -1 );
     }
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ba7
+// Params 1
+// Checksum 0x0, Offset: 0x17f89
 // Size: 0xa0
 function setdeathtimerlength( deathdata )
 {
@@ -9573,8 +9667,8 @@ function setdeathtimerlength( deathdata )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17c4f
+// Params 1
+// Checksum 0x0, Offset: 0x18031
 // Size: 0x131
 function getindexfromhitloc( shitloc )
 {
@@ -9624,8 +9718,8 @@ function getindexfromhitloc( shitloc )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17d89
+// Params 0
+// Checksum 0x0, Offset: 0x1816b
 // Size: 0x17
 function showuidamageflash()
 {
@@ -9633,8 +9727,8 @@ function showuidamageflash()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x17da8
+// Params 4
+// Checksum 0x0, Offset: 0x1818a
 // Size: 0x15b
 function updatecombatrecordkillstats( attacker, victim, meansofdeath, objweapon )
 {
@@ -9697,8 +9791,8 @@ function updatecombatrecordkillstats( attacker, victim, meansofdeath, objweapon 
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17f0b
+// Params 1
+// Checksum 0x0, Offset: 0x182ed
 // Size: 0x10f
 function combatrecordequipmentused( weapon )
 {
@@ -9736,8 +9830,8 @@ function combatrecordequipmentused( weapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18022
+// Params 1
+// Checksum 0x0, Offset: 0x18404
 // Size: 0x64
 function combatrecordlethalkill( weapon )
 {
@@ -9751,8 +9845,8 @@ function combatrecordlethalkill( weapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1808e
+// Params 2
+// Checksum 0x0, Offset: 0x18470
 // Size: 0x7f
 function combatrecordtacticalstat( weapon, incrementvalue )
 {
@@ -9771,8 +9865,8 @@ function combatrecordtacticalstat( weapon, incrementvalue )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18115
+// Params 1
+// Checksum 0x0, Offset: 0x184f7
 // Size: 0x73
 function combatrecordkillstreakstat( streakname )
 {
@@ -9793,8 +9887,8 @@ function combatrecordkillstreakstat( streakname )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18190
+// Params 2
+// Checksum 0x0, Offset: 0x18572
 // Size: 0x69
 function enqueuecorpsetablefunc( funcid, func )
 {
@@ -9814,8 +9908,8 @@ function enqueuecorpsetablefunc( funcid, func )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18201
+// Params 1
+// Checksum 0x0, Offset: 0x185e3
 // Size: 0x5b
 function dequeuecorpsetablefunc( funcid )
 {
@@ -9839,8 +9933,8 @@ function dequeuecorpsetablefunc( funcid )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18264
+// Params 0
+// Checksum 0x0, Offset: 0x18646
 // Size: 0x7e
 function callcorpsetablefuncs()
 {
@@ -9860,8 +9954,8 @@ function callcorpsetablefuncs()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x182ea
+// Params 0
+// Checksum 0x0, Offset: 0x186cc
 // Size: 0x1e
 function clearcorpsetablefuncs()
 {
@@ -9871,8 +9965,8 @@ function clearcorpsetablefuncs()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18310
+// Params 1
+// Checksum 0x0, Offset: 0x186f2
 // Size: 0x5d
 function startcopycatoption( attacker )
 {
@@ -9899,8 +9993,8 @@ function startcopycatoption( attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18375
+// Params 0
+// Checksum 0x0, Offset: 0x18757
 // Size: 0xa
 function stopcopycatoption()
 {
@@ -9908,8 +10002,8 @@ function stopcopycatoption()
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18387
+// Params 1
+// Checksum 0x0, Offset: 0x18769
 // Size: 0x69
 function isenvironmentalscriptableinflictor( einflictor )
 {
@@ -9929,8 +10023,8 @@ function isenvironmentalscriptableinflictor( einflictor )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x183f9
+// Params 1
+// Checksum 0x0, Offset: 0x187db
 // Size: 0x5a, Type: bool
 function shouldrecorddamagestats( player )
 {
@@ -9955,8 +10049,8 @@ function shouldrecorddamagestats( player )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1845c
+// Params 4
+// Checksum 0x0, Offset: 0x1883e
 // Size: 0x142
 function logfriendlyfire( player, attacker, damage, method )
 {
@@ -9978,8 +10072,8 @@ function logfriendlyfire( player, attacker, damage, method )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x185a6
+// Params 6
+// Checksum 0x0, Offset: 0x18988
 // Size: 0x203
 function function_694d74d8b5ac556f( eattacker, idamage, var_1da1a66b5c6a06a7, smeansofdeath, objweapon, victim )
 {
@@ -10062,8 +10156,8 @@ function function_694d74d8b5ac556f( eattacker, idamage, var_1da1a66b5c6a06a7, sm
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x187b2
+// Params 4
+// Checksum 0x0, Offset: 0x18b94
 // Size: 0x5e, Type: bool
 function issuicide( einflictor, attacker, smeansofdeath, objweapon )
 {
@@ -10086,8 +10180,8 @@ function issuicide( einflictor, attacker, smeansofdeath, objweapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18819
+// Params 2
+// Checksum 0x0, Offset: 0x18bfb
 // Size: 0x5a, Type: bool
 function isteamkill( einflictor, attacker )
 {
@@ -10115,8 +10209,8 @@ function isteamkill( einflictor, attacker )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1887c
+// Params 2
+// Checksum 0x0, Offset: 0x18c5e
 // Size: 0xb2
 function function_cd066c9463ad28c5( objweapon, smeansofdeath )
 {
@@ -10154,8 +10248,8 @@ function function_cd066c9463ad28c5( objweapon, smeansofdeath )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18937
+// Params 1
+// Checksum 0x0, Offset: 0x18d19
 // Size: 0x7f, Type: bool
 function function_a062727999a72d2f( weaponname )
 {
@@ -10173,8 +10267,8 @@ function function_a062727999a72d2f( weaponname )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x189bf
+// Params 2
+// Checksum 0x0, Offset: 0x18da1
 // Size: 0x55
 function function_403e958ecd04f255( victim, reason )
 {
@@ -10185,13 +10279,18 @@ function function_403e958ecd04f255( victim, reason )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18a1c
-// Size: 0x6c4
+// Params 2
+// Checksum 0x0, Offset: 0x18dfe
+// Size: 0x6d2
 function function_8be77b53bcbd6d2d( attacker, type )
 {
     if ( getdvarint( @"hash_8484954d9812dec1", 1 ) == 0 )
     {
+    }
+    
+    if ( istrue( level.var_9b9f1cd3c521e447 ) )
+    {
+        return;
     }
     
     if ( !isdefined( self.attackerdata ) )
@@ -10264,7 +10363,8 @@ function function_8be77b53bcbd6d2d( attacker, type )
     
     var_c41dadd6f0b10385 = 0;
     
-    for (index = 0; index < 6; index++) {
+    for ( index = 0; index < 6 ; index++ )
+    {
         if ( index < displaydata.size )
         {
             data = displaydata[ index ];
@@ -10372,8 +10472,8 @@ function function_8be77b53bcbd6d2d( attacker, type )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x190e8
+// Params 3
+// Checksum 0x0, Offset: 0x194d8
 // Size: 0x18a
 function function_84c8fc967497800( attacker, attackerdamage, attackerweapon )
 {
@@ -10428,8 +10528,8 @@ function function_84c8fc967497800( attacker, attackerdamage, attackerweapon )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1927a
+// Params 3
+// Checksum 0x0, Offset: 0x1966a
 // Size: 0x1ba
 function function_87dfbd72f4fdd76f( attacker, pingtime, marktype )
 {
@@ -10479,8 +10579,8 @@ function function_87dfbd72f4fdd76f( attacker, pingtime, marktype )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1943c
+// Params 3
+// Checksum 0x0, Offset: 0x1982c
 // Size: 0x75
 function function_c712df451114149d( attacker, icon, waittime )
 {
@@ -10495,8 +10595,8 @@ function function_c712df451114149d( attacker, icon, waittime )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x194b9
+// Params 2
+// Checksum 0x0, Offset: 0x198a9
 // Size: 0x6d
 function function_f7060d6be77fc6a2( attackerloc, victimloc )
 {
@@ -10523,8 +10623,8 @@ function function_f7060d6be77fc6a2( attackerloc, victimloc )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1952e
+// Params 1
+// Checksum 0x0, Offset: 0x1991e
 // Size: 0x76
 function function_b3e014b644ff0edb( time )
 {
@@ -10550,8 +10650,8 @@ function function_b3e014b644ff0edb( time )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x195ac
+// Params 1
+// Checksum 0x0, Offset: 0x1999c
 // Size: 0x9a
 function function_fbd5b90ec07c28c4( victim )
 {
@@ -10577,12 +10677,12 @@ function function_fbd5b90ec07c28c4( victim )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1964e
+// Params 2
+// Checksum 0x0, Offset: 0x19a3e
 // Size: 0x7c, Type: bool
 function shouldmeleeslow( vdir, victim )
 {
-    if ( getdvarint( @"hash_73b7043bcd71993a", 0 ) && weapon::ismeleeonly( victim.currentweapon ) )
+    if ( getdvarint( @"scr_bullet_damage_melee_slow", 0 ) && weapon::ismeleeonly( victim.currentweapon ) )
     {
         if ( vectordot( vdir, anglestoforward( victim.angles ) ) < 0 && distance2dsquared( self.origin, victim.origin ) < 562500 )
         {
@@ -10594,8 +10694,8 @@ function shouldmeleeslow( vdir, victim )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x196d3
+// Params 1
+// Checksum 0x0, Offset: 0x19ac3
 // Size: 0x4b
 function function_3e0f845008bbd48d( func_damage_override )
 {
@@ -10610,8 +10710,8 @@ function function_3e0f845008bbd48d( func_damage_override )
 }
 
 // Namespace damage / scripts\mp\damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19726
+// Params 1
+// Checksum 0x0, Offset: 0x19b16
 // Size: 0x36
 function function_ba85b91abfec02d8( func )
 {
@@ -10626,8 +10726,8 @@ function function_ba85b91abfec02d8( func )
 /#
 
     // Namespace damage / scripts\mp\damage
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19764
+    // Params 1
+    // Checksum 0x0, Offset: 0x19b54
     // Size: 0x177, Type: dev
     function function_18c42af5777dcd9f( deathdata )
     {
@@ -10647,8 +10747,8 @@ function function_ba85b91abfec02d8( func )
     }
 
     // Namespace damage / scripts\mp\damage
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x198e3
+    // Params 1
+    // Checksum 0x0, Offset: 0x19cd3
     // Size: 0x212, Type: dev
     function function_f9249bb06eb48092( deathdata )
     {
@@ -10667,8 +10767,8 @@ function function_ba85b91abfec02d8( func )
     }
 
     // Namespace damage / scripts\mp\damage
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19afd
+    // Params 1
+    // Checksum 0x0, Offset: 0x19eed
     // Size: 0x2d, Type: dev
     function function_af3ebb9d1ecd18e7( deathdata )
     {
@@ -10676,8 +10776,8 @@ function function_ba85b91abfec02d8( func )
     }
 
     // Namespace damage / scripts\mp\damage
-    // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19b32
+    // Params 4
+    // Checksum 0x0, Offset: 0x19f22
     // Size: 0xfd, Type: dev
     function function_1b7b7da2e72eeffe( attacker, recentdamage, smeansofdeath, objweapon )
     {

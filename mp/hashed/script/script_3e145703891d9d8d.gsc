@@ -10,8 +10,8 @@
 #namespace tracker_shared;
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b0
+// Params 1
+// Checksum 0x0, Offset: 0x5b8
 // Size: 0x7d, Type: bool
 function function_c1d424f2639c370e( startpos )
 {
@@ -22,8 +22,8 @@ function function_c1d424f2639c370e( startpos )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x636
+// Params 4
+// Checksum 0x0, Offset: 0x63e
 // Size: 0xa8
 function function_8613a680f1ec0b46( victim, attacker, bundle, startpos )
 {
@@ -32,7 +32,7 @@ function function_8613a680f1ec0b46( victim, attacker, bundle, startpos )
     thread function_2b342229b06a657e( victim, attacker, bundle, startpos );
     attacker thread function_ddaa4f3fe17cf7c1( victim );
     result = victim waittill_any_timeout_1( 0.25, "death_or_disconnect" );
-    hashit = result == "timeout" && !istrue( function_f3bb4f4911a1beb2( "player", "isInLastStand", self ) );
+    hashit = result == "timeout" && !istrue( function_f3bb4f4911a1beb2( "player", "isInLastStand", victim ) );
     
     if ( hashit )
     {
@@ -46,9 +46,9 @@ function function_8613a680f1ec0b46( victim, attacker, bundle, startpos )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e6
-// Size: 0xf1
+// Params 4
+// Checksum 0x0, Offset: 0x6ee
+// Size: 0x113
 function function_2b342229b06a657e( victim, attacker, bundle, startpos )
 {
     level endon( "game_ended" );
@@ -62,7 +62,15 @@ function function_2b342229b06a657e( victim, attacker, bundle, startpos )
         }
     #/
     
-    projectile = scripts\cp_mp\utility\weapon_utility::_magicbullet( makeweapon( bundle.trackerprojectile ), startpos, var_3179cff2e63d0629, attacker );
+    if ( isdefined( attacker ) )
+    {
+        projectile = scripts\cp_mp\utility\weapon_utility::_magicbullet( makeweapon( bundle.trackerprojectile ), startpos, var_3179cff2e63d0629, attacker );
+    }
+    else
+    {
+        projectile = scripts\cp_mp\utility\weapon_utility::_magicbullet( makeweapon( bundle.trackerprojectile ), startpos, var_3179cff2e63d0629 );
+    }
+    
     projectile missile_settargetent( victim, var_3179cff2e63d0629 - victim.origin );
     projectile function_482ef25230b69a53();
     reason = projectile waittill_any_timeout_no_endon_death_1( 2, "explode" );
@@ -74,8 +82,8 @@ function function_2b342229b06a657e( victim, attacker, bundle, startpos )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7df
+// Params 3
+// Checksum 0x0, Offset: 0x809
 // Size: 0x176
 function function_210d1e2e0a76f08( victim, attacker, bundle )
 {
@@ -125,8 +133,8 @@ function function_210d1e2e0a76f08( victim, attacker, bundle )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x95d
+// Params 1
+// Checksum 0x0, Offset: 0x987
 // Size: 0xec
 function function_628e71176fe11823( attacker )
 {
@@ -147,8 +155,8 @@ function function_628e71176fe11823( attacker )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa51
+// Params 2
+// Checksum 0x0, Offset: 0xa7b
 // Size: 0x4c
 function function_f6220a0018f6c8de( attacker, bundle )
 {
@@ -161,8 +169,8 @@ function function_f6220a0018f6c8de( attacker, bundle )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa5
+// Params 2
+// Checksum 0x0, Offset: 0xacf
 // Size: 0x36
 function function_7a7f279e668a106a( text, time )
 {
@@ -172,14 +180,15 @@ function function_7a7f279e668a106a( text, time )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xae3
+// Params 2
+// Checksum 0x0, Offset: 0xb0d
 // Size: 0x72
 function function_a86cffe7d22fd360( attacker, bundle )
 {
     activetime = getdvarint( @"hash_a3436ebaeb0a3cbd", bundle.trackerlifetime );
     
-    for (var_3d965ba84cdbd358 = 0; !var_3d965ba84cdbd358; var_3d965ba84cdbd358 = result == "timeout") {
+    for ( var_3d965ba84cdbd358 = 0; !var_3d965ba84cdbd358 ; var_3d965ba84cdbd358 = result == "timeout" )
+    {
         result = waittill_notify_or_timeout_return( "tracker_reset", activetime );
     }
     
@@ -187,8 +196,8 @@ function function_a86cffe7d22fd360( attacker, bundle )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5d
+// Params 2
+// Checksum 0x0, Offset: 0xb87
 // Size: 0x1a4
 function function_865eedb19037c3a7( attacker, bundle )
 {
@@ -239,8 +248,8 @@ function function_865eedb19037c3a7( attacker, bundle )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd09
+// Params 0
+// Checksum 0x0, Offset: 0xd33
 // Size: 0x1c
 function function_6ca4812fa32b9968()
 {
@@ -249,8 +258,8 @@ function function_6ca4812fa32b9968()
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2d
+// Params 2
+// Checksum 0x0, Offset: 0xd57
 // Size: 0x7a
 function function_bfc3ae90fa9569c9( attacker, bundle )
 {
@@ -265,8 +274,8 @@ function function_bfc3ae90fa9569c9( attacker, bundle )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdaf
+// Params 2
+// Checksum 0x0, Offset: 0xdd9
 // Size: 0x47
 function function_d9a426f85d07e227( attacker, bundle )
 {
@@ -275,8 +284,8 @@ function function_d9a426f85d07e227( attacker, bundle )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdfe
+// Params 1
+// Checksum 0x0, Offset: 0xe28
 // Size: 0x31
 function function_5fc7c9ae178ffefb( data )
 {
@@ -284,8 +293,8 @@ function function_5fc7c9ae178ffefb( data )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe37
+// Params 2
+// Checksum 0x0, Offset: 0xe61
 // Size: 0x34
 function function_d4a6bd543c710282( attacker, bundle )
 {
@@ -296,8 +305,8 @@ function function_d4a6bd543c710282( attacker, bundle )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe73
+// Params 3
+// Checksum 0x0, Offset: 0xe9d
 // Size: 0xe6
 function function_bf0dc21483385b04( attacker, bundle, var_15f3348c8454a245 )
 {
@@ -337,8 +346,8 @@ function function_bf0dc21483385b04( attacker, bundle, var_15f3348c8454a245 )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf61
+// Params 0
+// Checksum 0x0, Offset: 0xf8b
 // Size: 0x49
 function function_61e49f0e63f71c05()
 {
@@ -352,9 +361,9 @@ function function_61e49f0e63f71c05()
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb2
-// Size: 0xc2
+// Params 1
+// Checksum 0x0, Offset: 0xfdc
+// Size: 0x1a6
 function function_4121acb9b36b21fd( owner )
 {
     if ( function_21322da268e71c19() )
@@ -362,9 +371,29 @@ function function_4121acb9b36b21fd( owner )
         owner function_f3bb4f4911a1beb2( "player", "showMiniMap" );
     }
     
-    radartype = getdvarint( @"hash_b34047f59b5f5b03", -1 );
+    radartype = getdvarint( @"hash_b34047f59b5f5b03", 6 );
     radius = getdvarint( @"hash_3b3ac1542032df99", 25 );
     sweeptime = getdvarint( @"hash_ebef7f9725747c87", 50 );
+    
+    if ( radartype == getuavstrengthlevelshowenemydirectional() )
+    {
+        owner.radarstrength = getuavstrengthlevelshowenemydirectional();
+        owner.radarshowenemydirection = 1;
+        owner.var_7daf8331a040c860 = 1;
+    }
+    
+    if ( level.teambased )
+    {
+        foreach ( player in level.players )
+        {
+            if ( player.pers[ "team" ] == owner.team && radartype == getuavstrengthlevelshowenemydirectional() )
+            {
+                player.radarstrength = getuavstrengthlevelshowenemydirectional();
+                player.radarshowenemydirection = 1;
+                player.var_7daf8331a040c860 = 1;
+            }
+        }
+    }
     
     while ( true )
     {
@@ -374,17 +403,17 @@ function function_4121acb9b36b21fd( owner )
         }
         else
         {
-            triggerportableradarping( self.origin, owner, radius, sweeptime );
+            triggerportableradarping( self.origin, owner, radius, sweeptime, undefined, radartype );
         }
         
-        wait 0.25;
+        waitframe();
     }
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x107c
-// Size: 0x34
+// Params 1
+// Checksum 0x0, Offset: 0x118a
+// Size: 0x105
 function function_be2d7b4d68f1d36a( owner )
 {
     level endon( "game_ended" );
@@ -394,11 +423,30 @@ function function_be2d7b4d68f1d36a( owner )
     {
         owner function_f3bb4f4911a1beb2( "player", "hideMiniMap" );
     }
+    
+    if ( level.teambased )
+    {
+        foreach ( player in level.players )
+        {
+            if ( player.pers[ "team" ] == owner.team )
+            {
+                player.radarstrength = getuavstrengthlevelneutral();
+                player.radarshowenemydirection = 0;
+                player.var_7daf8331a040c860 = 0;
+            }
+        }
+        
+        return;
+    }
+    
+    owner.radarstrength = getuavstrengthlevelneutral();
+    owner.radarshowenemydirection = 0;
+    owner.var_7daf8331a040c860 = 0;
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b8
+// Params 0
+// Checksum 0x0, Offset: 0x1297
 // Size: 0x14
 function function_482ef25230b69a53()
 {
@@ -406,8 +454,8 @@ function function_482ef25230b69a53()
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d4
+// Params 0
+// Checksum 0x0, Offset: 0x12b3
 // Size: 0x14
 function function_542214792d17dce6()
 {
@@ -415,8 +463,8 @@ function function_542214792d17dce6()
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f0
+// Params 2
+// Checksum 0x0, Offset: 0x12cf
 // Size: 0xcb
 function function_8093c47120b6dec4( victim, attacker )
 {
@@ -447,8 +495,8 @@ function function_8093c47120b6dec4( victim, attacker )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c3
+// Params 1
+// Checksum 0x0, Offset: 0x13a2
 // Size: 0x4a
 function function_ddaa4f3fe17cf7c1( victim )
 {
@@ -465,8 +513,8 @@ function function_ddaa4f3fe17cf7c1( victim )
 }
 
 // Namespace tracker_shared / namespace_543b1c2637fa5867
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1215
+// Params 1
+// Checksum 0x0, Offset: 0x13f4
 // Size: 0x54
 function function_8f56afa7a5e897d0( victim )
 {

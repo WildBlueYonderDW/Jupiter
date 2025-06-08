@@ -20,8 +20,8 @@
 #namespace zombie_base;
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a0
+// Params 1
+// Checksum 0x0, Offset: 0x39f
 // Size: 0x13
 function precache( params )
 {
@@ -30,7 +30,7 @@ function precache( params )
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3bb
+// Checksum 0x0, Offset: 0x3ba
 // Size: 0x15f
 function private function_f49a30f92555b827( params )
 {
@@ -56,8 +56,8 @@ function private function_f49a30f92555b827( params )
 }
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x522
+// Params 1
+// Checksum 0x0, Offset: 0x521
 // Size: 0xd3
 function zombieinit( taskid )
 {
@@ -83,8 +83,8 @@ function zombieinit( taskid )
 }
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fe
+// Params 0
+// Checksum 0x0, Offset: 0x5fd
 // Size: 0x30
 function initscriptable()
 {
@@ -100,7 +100,7 @@ function initscriptable()
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x636
+// Checksum 0x0, Offset: 0x635
 // Size: 0x20d
 function private function_c8c10b313b3fcf09( params )
 {
@@ -165,7 +165,7 @@ function private function_c8c10b313b3fcf09( params )
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x84b
+// Checksum 0x0, Offset: 0x84a
 // Size: 0x7a
 function private function_d13d798c34386976()
 {
@@ -203,7 +203,7 @@ function private function_d13d798c34386976()
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x8cd
+// Checksum 0x0, Offset: 0x8cc
 // Size: 0x64
 function private function_c14610f0b3bdffe6()
 {
@@ -235,7 +235,7 @@ function private function_c14610f0b3bdffe6()
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x939
+// Checksum 0x0, Offset: 0x938
 // Size: 0x1e
 function private function_4aa6775b3d57186b()
 {
@@ -249,7 +249,7 @@ function private function_4aa6775b3d57186b()
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x95f
+// Checksum 0x0, Offset: 0x95e
 // Size: 0x1c
 function private function_c8bbb80c04cd9a37( var_a21093610d4de2ed )
 {
@@ -258,7 +258,7 @@ function private function_c8bbb80c04cd9a37( var_a21093610d4de2ed )
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x983
+// Checksum 0x0, Offset: 0x982
 // Size: 0x1c
 function private function_deadba29b36b687d( var_a21093610d4de2ed )
 {
@@ -267,7 +267,7 @@ function private function_deadba29b36b687d( var_a21093610d4de2ed )
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9a7
+// Checksum 0x0, Offset: 0x9a6
 // Size: 0x1c
 function private function_bf0fe7b30fa14180( var_12c084a213d7ad2 )
 {
@@ -276,7 +276,7 @@ function private function_bf0fe7b30fa14180( var_12c084a213d7ad2 )
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9cb
+// Checksum 0x0, Offset: 0x9ca
 // Size: 0x1c
 function private function_788a3fa28ef17f52( var_12c084a213d7ad2 )
 {
@@ -285,7 +285,7 @@ function private function_788a3fa28ef17f52( var_12c084a213d7ad2 )
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9ef
+// Checksum 0x0, Offset: 0x9ee
 // Size: 0x1c
 function private function_dbb5710ec418627e( var_12c084a213d7ad2 )
 {
@@ -294,7 +294,7 @@ function private function_dbb5710ec418627e( var_12c084a213d7ad2 )
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa13
+// Checksum 0x0, Offset: 0xa12
 // Size: 0x28
 function private function_afa5ec2deb3f62a0( var_12c084a213d7ad2 )
 {
@@ -304,7 +304,7 @@ function private function_afa5ec2deb3f62a0( var_12c084a213d7ad2 )
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa43
+// Checksum 0x0, Offset: 0xa42
 // Size: 0x56
 function private function_e809d2e0583ea302( var_8c62cb683d643eb7 )
 {
@@ -315,8 +315,8 @@ function private function_e809d2e0583ea302( var_8c62cb683d643eb7 )
 }
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa1
+// Params 0
+// Checksum 0x0, Offset: 0xaa0
 // Size: 0x29, Type: bool
 function function_a8c9248308033e4e()
 {
@@ -340,7 +340,7 @@ function function_a8c9248308033e4e()
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xad3
+// Checksum 0x0, Offset: 0xad2
 // Size: 0x22
 function private function_cf1ce6f676b10723()
 {
@@ -354,7 +354,7 @@ function private function_cf1ce6f676b10723()
 
 // Namespace zombie_base / scripts\aitypes\zombie_base\zombie_base
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xafd
+// Checksum 0x0, Offset: 0xafc
 // Size: 0x2b
 function private function_d9b1a731573b17c6( params )
 {

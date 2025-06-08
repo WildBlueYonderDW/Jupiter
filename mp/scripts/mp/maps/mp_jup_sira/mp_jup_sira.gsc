@@ -7,7 +7,7 @@
 #namespace mp_jup_sira;
 
 // Namespace mp_jup_sira / scripts\mp\maps\mp_jup_sira\mp_jup_sira
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12b
 // Size: 0x5b
 function main()

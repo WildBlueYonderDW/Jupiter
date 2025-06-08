@@ -24,7 +24,7 @@ function autoexec main()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x359
 // Size: 0x2
 function hb_sensor_init()
@@ -33,7 +33,7 @@ function hb_sensor_init()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x363
 // Size: 0x11d
 function hb_sensor_used( grenade )
@@ -77,7 +77,7 @@ function hb_sensor_used( grenade )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x488
 // Size: 0x30
 function hb_sensor_given( objweapon )
@@ -94,7 +94,7 @@ function hb_sensor_given( objweapon )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c0
 // Size: 0x12c
 function function_6e9e734982349368( objweapon )
@@ -145,7 +145,7 @@ function function_6e9e734982349368( objweapon )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5f4
 // Size: 0x57
 function function_7be962f484c73a3()
@@ -168,7 +168,7 @@ function function_7be962f484c73a3()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x653
 // Size: 0x13
 function function_6a05d3f5b90ab3b2( isjammed )
@@ -177,7 +177,7 @@ function function_6a05d3f5b90ab3b2( isjammed )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x66e
 // Size: 0x23
 function function_7f948b7f43448ea9( equipmentref, slot )
@@ -187,7 +187,7 @@ function function_7f948b7f43448ea9( equipmentref, slot )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x699
 // Size: 0x35
 function function_323286bf3aa11fbb()
@@ -201,7 +201,7 @@ function function_323286bf3aa11fbb()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6d6
 // Size: 0x38
 function function_3f703abc99c1bb80()
@@ -214,7 +214,7 @@ function function_3f703abc99c1bb80()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x716
 // Size: 0x20
 function function_1581e97f79a91d04()
@@ -225,7 +225,7 @@ function function_1581e97f79a91d04()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73e
 // Size: 0x5d
 function function_c34b7f440bc57526()
@@ -247,7 +247,7 @@ function function_c34b7f440bc57526()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a4
 // Size: 0x41
 function function_29dadceefda852ce()
@@ -264,7 +264,7 @@ function function_29dadceefda852ce()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ee
 // Size: 0x3d, Type: bool
 function function_cb98101eefdedaa( percentage )
@@ -276,7 +276,7 @@ function function_cb98101eefdedaa( percentage )
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x834
 // Size: 0x130
 function function_fc7e5d7d7f99703a()
@@ -331,7 +331,7 @@ function function_fc7e5d7d7f99703a()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x96c
 // Size: 0x4
 function function_e95421aa59998a04()
@@ -340,7 +340,7 @@ function function_e95421aa59998a04()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x979
 // Size: 0x7b
 function function_83ef0926b5392999()
@@ -367,7 +367,7 @@ function function_83ef0926b5392999()
 }
 
 // Namespace hb_sensor / scripts\cp_mp\supers\hb_sensor
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9fc
 // Size: 0x34
 function checkperk( perk )

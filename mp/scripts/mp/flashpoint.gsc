@@ -7,7 +7,7 @@
 #namespace flashpoint;
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36e
 // Size: 0x1b7
 function init()
@@ -16,8 +16,8 @@ function init()
     level._effect[ "flashpoint_pulse_friendly" ] = loadfx( "vfx/iw8_mp/flashpoint/vfx_fp_pulse_friendly.vfx" );
     level._effect[ "flashpoint_pulse_squad" ] = loadfx( "vfx/iw8_mp/flashpoint/vfx_fp_pulse_squad.vfx" );
     level._effect[ "flashpoint_pulse_enemy" ] = loadfx( "vfx/iw8_mp/flashpoint/vfx_fp_pulse_enemy.vfx" );
-    var_90d2fed9a87f1697 = getdvar( @"hash_67b0bcf9de3df0b0", 0 );
-    level.flashpoint_objectives = getdvar( @"hash_9f66fbd7bb66e22c", 0 ) == "1";
+    var_90d2fed9a87f1697 = getdvar( @"scr_flashpoint_toggle", 0 );
+    level.flashpoint_objectives = getdvar( @"scr_flashpoint_objectives", 0 ) == "1";
     level.iconflashpointfriendly = "icon_swords_friendly";
     level.iconflashpointenemy = "icon_swords_enemy";
     level.iconflashpointcontested = "icon_swords_contested";
@@ -41,13 +41,13 @@ function init()
         level.flashpointactive = 1;
         
         /#
-            setdevdvar( @"hash_67b0bcf9de3df0b0", 1 );
+            setdevdvar( @"scr_flashpoint_toggle", 1 );
         #/
     }
     else
     {
         /#
-            setdevdvar( @"hash_67b0bcf9de3df0b0", 0 );
+            setdevdvar( @"scr_flashpoint_toggle", 0 );
         #/
         
         level.flashpointactive = 0;
@@ -64,14 +64,14 @@ function init()
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x52d
 // Size: 0x124
 function flashpoint_systemtoggle()
 {
     while ( true )
     {
-        if ( getdvar( @"hash_67b0bcf9de3df0b0", 0 ) != "0" )
+        if ( getdvar( @"scr_flashpoint_toggle", 0 ) != "0" )
         {
             if ( level.flashpoint_objectives )
             {
@@ -107,7 +107,7 @@ function flashpoint_systemtoggle()
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x659
 // Size: 0x1c0
 function flashpoint_systemthink()
@@ -155,7 +155,7 @@ function flashpoint_systemthink()
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x821
 // Size: 0x22b
 function flashpoint_processnewevent( attacker, victim, time, eventtype )
@@ -228,7 +228,7 @@ function flashpoint_processnewevent( attacker, victim, time, eventtype )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xa54
 // Size: 0x8b
 function flashpoint_createnew( origin, time, eventtype )
@@ -242,7 +242,7 @@ function flashpoint_createnew( origin, time, eventtype )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xae7
 // Size: 0xcf
 function flashpoint_createmarker( flashpoint )
@@ -256,7 +256,7 @@ function flashpoint_createmarker( flashpoint )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xbbe
 // Size: 0xf8
 function flashpoint_updatepoint( flashpoint, var_6fc81b511db04699, time, eventtype )
@@ -287,7 +287,7 @@ function flashpoint_updatepoint( flashpoint, var_6fc81b511db04699, time, eventty
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xcbe
 // Size: 0xe6
 function flashpoint_addeventtoqueue( flashpoint, time, eventtype )
@@ -319,7 +319,7 @@ function flashpoint_addeventtoqueue( flashpoint, time, eventtype )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xdac
 // Size: 0xac
 function flashpoint_shutdown( flashpoint )
@@ -338,7 +338,7 @@ function flashpoint_shutdown( flashpoint )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xe60
 // Size: 0x43
 function flashpoint_endingsoon( flashpoint )
@@ -352,7 +352,7 @@ function flashpoint_endingsoon( flashpoint )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xeab
 // Size: 0x279
 function flashpoint_checkforownerupdate( flashpoint )
@@ -425,7 +425,7 @@ function flashpoint_checkforownerupdate( flashpoint )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x112c
 // Size: 0x46, Type: bool
 function sortlocationsbydistance( location1, location2 )
@@ -434,7 +434,7 @@ function sortlocationsbydistance( location1, location2 )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x117b
 // Size: 0xbb
 function flashpoint_clearoldestpoint()
@@ -470,7 +470,7 @@ function flashpoint_clearoldestpoint()
 /#
 
     // Namespace flashpoint / scripts\mp\flashpoint
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x123e
     // Size: 0x15b, Type: dev
     function function_34b4ca8a02efb2cc()
@@ -482,7 +482,8 @@ function flashpoint_clearoldestpoint()
                 origin = ( randomfloatrange( 0, 7000 ), randomfloatrange( 0, 7000 ), randomfloatrange( 100, 500 ) );
                 thread playvfx( origin, "<dev string:x115>" );
                 
-                for (i = 0; i < 10; i++) {
+                for ( i = 0; i < 10 ; i++ )
+                {
                     thread playvfx( ( 47318 + randomfloatrange( -1024, 1024 ), -10783 + randomfloatrange( -1024, 1024 ), 160 + randomfloatrange( -100, 100 ) ), "<dev string:x115>" );
                     wait randomfloatrange( 0.01, 0.05 );
                 }
@@ -505,7 +506,7 @@ function flashpoint_clearoldestpoint()
 #/
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x13a1
 // Size: 0x21
 function playvfx( origin, effect )
@@ -514,7 +515,7 @@ function playvfx( origin, effect )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13ca
 // Size: 0x56
 function flashpoint_trackplayerevents( player )
@@ -533,7 +534,7 @@ function flashpoint_trackplayerevents( player )
 }
 
 // Namespace flashpoint / scripts\mp\flashpoint
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1428
 // Size: 0x129
 function flashpoint_spawnselectionvfx()

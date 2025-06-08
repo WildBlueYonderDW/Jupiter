@@ -38,7 +38,7 @@ function private function_de6fbb5c61ddf941()
 }
 
 // Namespace namespace_fcdac53e90589a14 / namespace_d7f8af4d4a7ac24b
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x333
 // Size: 0x99
 function function_e33d81ae37e492cf( player )

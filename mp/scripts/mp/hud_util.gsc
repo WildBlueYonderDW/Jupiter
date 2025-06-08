@@ -9,7 +9,7 @@
 #namespace hud_util;
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2d8
 // Size: 0xa8
 function setparent( element )
@@ -37,7 +37,7 @@ function setparent( element )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x388
 // Size: 0xb
 function getparent()
@@ -46,7 +46,7 @@ function getparent()
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39c
 // Size: 0xae
 function removedestroyedchildren()
@@ -74,7 +74,7 @@ function removedestroyedchildren()
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x452
 // Size: 0x3e
 function addchild( element )
@@ -85,7 +85,7 @@ function addchild( element )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x498
 // Size: 0xac
 function removechild( element )
@@ -103,7 +103,7 @@ function removechild( element )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x54c
 // Size: 0x3fc
 function setpoint( point, relativepoint, xoffset, yoffset, movetime )
@@ -278,7 +278,7 @@ function setpoint( point, relativepoint, xoffset, yoffset, movetime )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x950
 // Size: 0x1c8
 function setpointbar( point, relativepoint, xoffset, yoffset )
@@ -315,7 +315,7 @@ function setpointbar( point, relativepoint, xoffset, yoffset )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb20
 // Size: 0x2e
 function updatebar( barfrac, rateofchange )
@@ -327,7 +327,7 @@ function updatebar( barfrac, rateofchange )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xb56
 // Size: 0x189
 function updatebarscale( barfrac, rateofchange )
@@ -362,7 +362,7 @@ function updatebarscale( barfrac, rateofchange )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0xce7
 // Size: 0x1a7
 function createhudelem( label, value, point, relativepoint, xoffset, yoffset, color, team, fontscale, player )
@@ -420,7 +420,7 @@ function createhudelem( label, value, point, relativepoint, xoffset, yoffset, co
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xe97
 // Size: 0xe6
 function createfontstring( font, fontscale )
@@ -443,7 +443,7 @@ function createfontstring( font, fontscale )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xf86
 // Size: 0xfd
 function createservertimer( font, fontscale, team )
@@ -474,7 +474,7 @@ function createservertimer( font, fontscale, team )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x108c
 // Size: 0xe6
 function createtimer( font, fontscale )
@@ -497,7 +497,7 @@ function createtimer( font, fontscale )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x117b
 // Size: 0x102
 function createicon( shader, width, height )
@@ -526,7 +526,7 @@ function createicon( shader, width, height )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1286
 // Size: 0x18f
 function createbar( color, width, height, flashfrac )
@@ -564,7 +564,7 @@ function createbar( color, width, height, flashfrac )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x141e
 // Size: 0x7e
 function getcurrentfraction()
@@ -590,7 +590,7 @@ function getcurrentfraction()
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14a5
 // Size: 0x94
 function createprimaryprogressbar( xoffset, yoffset )
@@ -621,7 +621,7 @@ function createprimaryprogressbar( xoffset, yoffset )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x1542
 // Size: 0x94
 function function_c6071a6e72a4f025( xoffset, yoffset, var_43e267f4c4a6df1, var_60eda195b9af04c0 )
@@ -652,7 +652,7 @@ function function_c6071a6e72a4f025( xoffset, yoffset, var_43e267f4c4a6df1, var_6
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x15df
 // Size: 0xc9
 function createprimaryprogressbartext( xoffset, yoffset, fontsize, usefont )
@@ -697,7 +697,7 @@ function createprimaryprogressbartext( xoffset, yoffset, fontsize, usefont )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16b1
 // Size: 0x20
 function setflashfrac( flashfrac )
@@ -706,7 +706,7 @@ function setflashfrac( flashfrac )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x16d9
 // Size: 0xbf
 function hideelem()
@@ -740,7 +740,7 @@ function hideelem()
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x17a0
 // Size: 0xcd
 function showelem()
@@ -776,7 +776,7 @@ function showelem()
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1875
 // Size: 0xb8
 function flashthread()
@@ -815,21 +815,23 @@ function flashthread()
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1935
 // Size: 0xa9
 function destroyelem()
 {
     tempchildren = [];
     
-    for (index = 0; index < self.children.size; index++) {
+    for ( index = 0; index < self.children.size ; index++ )
+    {
         if ( isdefined( self.children[ index ] ) )
         {
             tempchildren[ tempchildren.size ] = self.children[ index ];
         }
     }
     
-    for (index = 0; index < tempchildren.size; index++) {
+    for ( index = 0; index < tempchildren.size ; index++ )
+    {
         tempchildren[ index ] setparent( getparent() );
     }
     
@@ -842,7 +844,7 @@ function destroyelem()
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x19e6
 // Size: 0x2f
 function seticonshader( shader )
@@ -852,7 +854,7 @@ function seticonshader( shader )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a1d
 // Size: 0x14
 function geticonshader( shader )
@@ -861,7 +863,7 @@ function geticonshader( shader )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1a3a
 // Size: 0x38
 function seticonsize( width, height )
@@ -871,7 +873,7 @@ function seticonsize( width, height )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a7a
 // Size: 0x15
 function setwidth( width )
@@ -880,7 +882,7 @@ function setwidth( width )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a97
 // Size: 0x15
 function setheight( height )
@@ -889,7 +891,7 @@ function setheight( height )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1ab4
 // Size: 0x27
 function setsize( width, height )
@@ -899,19 +901,20 @@ function setsize( width, height )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ae3
 // Size: 0x6d
 function updatechildren()
 {
-    for (index = 0; index < self.children.size; index++) {
+    for ( index = 0; index < self.children.size ; index++ )
+    {
         child = self.children[ index ];
         child setpoint( child.point, child.relativepoint, child.xoffset, child.yoffset );
     }
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b58
 // Size: 0x99
 function transitionreset()
@@ -933,7 +936,7 @@ function transitionreset()
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1bf9
 // Size: 0xb0
 function transitionzoomin( duration )
@@ -954,7 +957,7 @@ function transitionzoomin( duration )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1cb1
 // Size: 0x8a
 function transitionpulsefxin( intime, duration )
@@ -974,7 +977,7 @@ function transitionpulsefxin( intime, duration )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1d43
 // Size: 0xe8
 function transitionslidein( duration, direction )
@@ -1006,7 +1009,7 @@ function transitionslidein( duration, direction )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1e33
 // Size: 0xcf
 function transitionslideout( duration, direction )
@@ -1042,7 +1045,7 @@ function transitionslideout( duration, direction )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f0a
 // Size: 0x79
 function transitionzoomout( duration )
@@ -1060,7 +1063,7 @@ function transitionzoomout( duration )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1f8b
 // Size: 0x40
 function transitionfadein( duration )
@@ -1077,7 +1080,7 @@ function transitionfadein( duration )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1fd3
 // Size: 0x21
 function transitionfadeout( duration )
@@ -1087,7 +1090,7 @@ function transitionfadeout( duration )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1ffc
 // Size: 0x1cc
 function teamplayercardsplash( splash, owner, team, optionalnumber, var_b7abc0284e13ca7a )
@@ -1158,7 +1161,7 @@ function teamplayercardsplash( splash, owner, team, optionalnumber, var_b7abc028
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 8, eflags: 0x0
+// Params 8
 // Checksum 0x0, Offset: 0x21d0
 // Size: 0x84
 function function_7b2653a588f28e29( owner, ownersplash, friendlysplash, enemysplash, var_b7abc0284e13ca7a, var_f5c11d099500e94e, var_6acc43fa4db03a7f, var_6ad135fa4db6448c )
@@ -1172,7 +1175,7 @@ function function_7b2653a588f28e29( owner, ownersplash, friendlysplash, enemyspl
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x225c
 // Size: 0xd1
 function iskillstreakcalloutsplash( splash )
@@ -1210,7 +1213,7 @@ function iskillstreakcalloutsplash( splash )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2336
 // Size: 0x16
 function iseventcalloutsplash( splash )
@@ -1219,7 +1222,7 @@ function iseventcalloutsplash( splash )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2355
 // Size: 0x93
 function getbaseeventcalloutsplash( splash )
@@ -1247,7 +1250,7 @@ function getbaseeventcalloutsplash( splash )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x23f1
 // Size: 0x1bb
 function canshowsplash( splash )
@@ -1325,7 +1328,7 @@ function canshowsplash( splash )
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x25b5
 // Size: 0x90
 function showsplashtoall( splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6 )
@@ -1337,7 +1340,7 @@ function showsplashtoall( splashname, optionalnumber, playerforplayercard, altdi
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x264d
 // Size: 0xa1
 function showsplashtoteam( team, splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6 )
@@ -1349,7 +1352,7 @@ function showsplashtoteam( team, splashname, optionalnumber, playerforplayercard
 }
 
 // Namespace hud_util / scripts\mp\hud_util
-// Params 7, eflags: 0x0
+// Params 7
 // Checksum 0x0, Offset: 0x26f6
 // Size: 0xaf
 function showsplashtoallexceptteam( team, splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6 )

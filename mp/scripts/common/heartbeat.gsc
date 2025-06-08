@@ -5,7 +5,7 @@
 #namespace heartbeat;
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x26d
 // Size: 0x2e
 function function_94461e6fd9196c6a( playsoundfunc )
@@ -15,7 +15,7 @@ function function_94461e6fd9196c6a( playsoundfunc )
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a3
 // Size: 0x2d
 function function_a9c6f7587066ce13()
@@ -26,7 +26,7 @@ function function_a9c6f7587066ce13()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d8
 // Size: 0x76
 function function_6c37d427b68ff9c7()
@@ -35,7 +35,7 @@ function function_6c37d427b68ff9c7()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x357
 // Size: 0x76
 function function_fa062c79f577073c()
@@ -44,7 +44,7 @@ function function_fa062c79f577073c()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d6
 // Size: 0xbf
 function heartbeattimer()
@@ -87,7 +87,7 @@ function heartbeattimer()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x49d
 // Size: 0x58
 function function_70dd1e8302bb7a82( time, pulsestarttime, pulsedurationms )
@@ -98,7 +98,7 @@ function function_70dd1e8302bb7a82( time, pulsestarttime, pulsedurationms )
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x4f
 function pulse_rumble( pulsedurationms )
@@ -114,7 +114,7 @@ function pulse_rumble( pulsedurationms )
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x554
 // Size: 0xd, Type: bool
 function function_afb9ed6354e03dfa()
@@ -123,7 +123,7 @@ function function_afb9ed6354e03dfa()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x56a
 // Size: 0x2f
 function function_b7c36a804415225b( heartbeat )
@@ -134,7 +134,7 @@ function function_b7c36a804415225b( heartbeat )
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5a1
 // Size: 0x25
 function function_8c8ff6fc7b5b3d67()
@@ -151,7 +151,7 @@ function function_8c8ff6fc7b5b3d67()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5ce
 // Size: 0xae
 function function_1078275b178db870()
@@ -182,7 +182,7 @@ function function_1078275b178db870()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x684
 // Size: 0x10d
 function function_14f4cbd1901f7812()
@@ -243,7 +243,7 @@ function function_14f4cbd1901f7812()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x79a
 // Size: 0x18
 function function_2fb10e0f50e2d6c1()
@@ -253,7 +253,7 @@ function function_2fb10e0f50e2d6c1()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7bb
 // Size: 0x19, Type: bool
 function function_7b09a3e02e70b0d2()
@@ -262,7 +262,7 @@ function function_7b09a3e02e70b0d2()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7dd
 // Size: 0x19, Type: bool
 function isfocus()
@@ -271,7 +271,7 @@ function isfocus()
 }
 
 // Namespace heartbeat / scripts\common\heartbeat
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7ff
 // Size: 0x2d
 function function_7c867ea17d64a37c( plrsfx )

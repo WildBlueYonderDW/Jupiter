@@ -22,7 +22,7 @@
 #namespace namespace_9f2415cf2465a66d;
 
 // Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x24e
 // Size: 0x76
 function function_80d68c9701e1aea5( data )
@@ -36,7 +36,7 @@ function function_80d68c9701e1aea5( data )
 /#
 
     // Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x2cc
     // Size: 0x16, Type: dev
     function function_a07f7c4c0c4ef8e3()
@@ -47,7 +47,7 @@ function function_80d68c9701e1aea5( data )
 #/
 
 // Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x2ea
 // Size: 0xb4
 function function_66ffddabd1acf94d( activity, fortress )
@@ -64,7 +64,7 @@ function function_66ffddabd1acf94d( activity, fortress )
 }
 
 // Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a7
 // Size: 0x16e
 function function_973ed02a7ff4858e()
@@ -95,7 +95,7 @@ function function_973ed02a7ff4858e()
 }
 
 // Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x51d
 // Size: 0x42
 function function_9b000e63c2c98e77( teamname )
@@ -111,7 +111,7 @@ function function_9b000e63c2c98e77( teamname )
 }
 
 // Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x567
 // Size: 0x69
 function function_8eaae8654221fdc5( teamname )
@@ -131,7 +131,7 @@ function function_8eaae8654221fdc5( teamname )
 }
 
 // Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5d8
 // Size: 0x6f
 function function_2134f4b01729bb9e( agent, killer )
@@ -150,7 +150,7 @@ function function_2134f4b01729bb9e( agent, killer )
 }
 
 // Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x64f
 // Size: 0x10f
 function function_9935990849fe88dd()
@@ -182,7 +182,7 @@ function function_9935990849fe88dd()
 }
 
 // Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x766
 // Size: 0x89
 function function_1432b702120e6711( teamname )

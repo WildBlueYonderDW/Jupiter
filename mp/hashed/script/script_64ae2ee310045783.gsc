@@ -4,7 +4,7 @@
 #namespace mp_jup_st_e_ob_seismic_refractor_cs;
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x25f
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x2d4
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x343
 // Size: 0x72
 function createstructs( fe, us, cf )
@@ -63,7 +63,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bd
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -72,7 +72,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c7
 // Size: 0x58
 function function_fd69cf02ba4d90a2()
@@ -86,7 +86,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x428
 // Size: 0x100
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -126,7 +126,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x530
 // Size: 0x81
 function function_b6a0fe0d9d944ab( fe, us, cf )
@@ -137,7 +137,7 @@ function function_b6a0fe0d9d944ab( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x5b9
 // Size: 0x92
 function function_7b49d85e4bda2c44( fe, us, cf )
@@ -149,7 +149,7 @@ function function_7b49d85e4bda2c44( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x653
 // Size: 0x92
 function function_829cec4eebeb6af9( fe, us, cf )
@@ -161,7 +161,7 @@ function function_829cec4eebeb6af9( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6ed
 // Size: 0x92
 function function_6b0f4f6f283926bd( fe, us, cf )
@@ -173,7 +173,7 @@ function function_6b0f4f6f283926bd( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x787
 // Size: 0x92
 function function_3975bffbed220912( fe, us, cf )
@@ -185,7 +185,7 @@ function function_3975bffbed220912( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x821
 // Size: 0x92
 function function_6412a9e5ecf5ba41( fe, us, cf )
@@ -197,7 +197,7 @@ function function_6412a9e5ecf5ba41( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8bb
 // Size: 0x92
 function function_a79653f329fcabdd( fe, us, cf )
@@ -209,7 +209,7 @@ function function_a79653f329fcabdd( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x955
 // Size: 0x92
 function function_cc05a92fc572b91( fe, us, cf )
@@ -221,7 +221,7 @@ function function_cc05a92fc572b91( fe, us, cf )
 }
 
 // Namespace mp_jup_st_e_ob_seismic_refractor_cs / namespace_d6faaebb6e35dfb7
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9ef
 // Size: 0xc18
 function function_6da2952367672ac0()

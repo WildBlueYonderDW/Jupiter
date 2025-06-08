@@ -13,6 +13,7 @@
 #using scripts\mp\damage;
 #using scripts\mp\killstreaks\killstreaks;
 #using scripts\mp\utility\debug;
+#using scripts\mp\utility\game;
 #using scripts\mp\utility\perk;
 #using scripts\mp\utility\player;
 #using scripts\mp\utility\points;
@@ -24,8 +25,8 @@
 #namespace decoy_grenade;
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x394
+// Params 0
+// Checksum 0x0, Offset: 0x39b
 // Size: 0x2
 function decoy_init()
 {
@@ -33,8 +34,8 @@ function decoy_init()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x39e
+// Params 1
+// Checksum 0x0, Offset: 0x3a5
 // Size: 0x2ce
 function decoy_used( grenade )
 {
@@ -123,8 +124,8 @@ function decoy_used( grenade )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x674
+// Params 0
+// Checksum 0x0, Offset: 0x67b
 // Size: 0x125
 function decoy_activated()
 {
@@ -166,8 +167,8 @@ function decoy_activated()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a1
+// Params 1
+// Checksum 0x0, Offset: 0x7a8
 // Size: 0x89
 function function_e089ba219ba4b6e9( firetype )
 {
@@ -190,8 +191,8 @@ function function_e089ba219ba4b6e9( firetype )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x832
+// Params 0
+// Checksum 0x0, Offset: 0x839
 // Size: 0x1a8
 function function_24f4b903cdc204c2()
 {
@@ -247,8 +248,8 @@ function function_24f4b903cdc204c2()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e2
+// Params 0
+// Checksum 0x0, Offset: 0x9e9
 // Size: 0x18
 function function_739ecbf206bb5077()
 {
@@ -257,8 +258,8 @@ function function_739ecbf206bb5077()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa02
+// Params 0
+// Checksum 0x0, Offset: 0xa09
 // Size: 0x33
 function decoy_destroy()
 {
@@ -268,8 +269,8 @@ function decoy_destroy()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3d
+// Params 1
+// Checksum 0x0, Offset: 0xa44
 // Size: 0x76
 function decoy_delete( delay )
 {
@@ -293,8 +294,8 @@ function decoy_delete( delay )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xabb
+// Params 1
+// Checksum 0x0, Offset: 0xac2
 // Size: 0x7b
 function function_f2f8c61e14fa90c5( params )
 {
@@ -313,8 +314,8 @@ function function_f2f8c61e14fa90c5( params )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3e
+// Params 1
+// Checksum 0x0, Offset: 0xb45
 // Size: 0x62
 function decoy_firesequence( firetype )
 {
@@ -335,8 +336,8 @@ function decoy_firesequence( firetype )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xba8
+// Params 0
+// Checksum 0x0, Offset: 0xbaf
 // Size: 0x9c
 function function_61daabf7ad718d7c()
 {
@@ -362,8 +363,8 @@ function function_61daabf7ad718d7c()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4c
+// Params 1
+// Checksum 0x0, Offset: 0xc53
 // Size: 0x10f
 function function_a7201449be7399ab( var_3c8b1cbfa325c448 )
 {
@@ -390,8 +391,8 @@ function function_a7201449be7399ab( var_3c8b1cbfa325c448 )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd63
+// Params 0
+// Checksum 0x0, Offset: 0xd6a
 // Size: 0x70
 function function_d08f9a08afaed2f5()
 {
@@ -408,8 +409,8 @@ function function_d08f9a08afaed2f5()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xddc
+// Params 1
+// Checksum 0x0, Offset: 0xde3
 // Size: 0x157
 function decoy_fireevent( firetype )
 {
@@ -438,8 +439,8 @@ function decoy_fireevent( firetype )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3b
+// Params 0
+// Checksum 0x0, Offset: 0xf42
 // Size: 0x31, Type: bool
 function function_87152dfc9a628684()
 {
@@ -452,8 +453,8 @@ function function_87152dfc9a628684()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf75
+// Params 1
+// Checksum 0x0, Offset: 0xf7c
 // Size: 0x1c1
 function decoy_debuffenemiesinrange( var_fce8828abf8327b )
 {
@@ -504,9 +505,9 @@ function decoy_debuffenemiesinrange( var_fce8828abf8327b )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x113e
-// Size: 0x179
+// Params 1
+// Checksum 0x0, Offset: 0x1145
+// Size: 0x1c8
 function decoy_debuffenemy( player )
 {
     player endon( "disconnect" );
@@ -522,7 +523,17 @@ function decoy_debuffenemy( player )
         
         if ( player != owner )
         {
-            namespace_a850435086c88de3::doonactionscoreevent( 0, "decoyDebuffed" );
+            if ( scripts\mp\utility\game::function_d75b73c443421047() )
+            {
+                if ( !istrue( player.var_fa9f4c933e6df36d ) && isdefined( self.owner ) && !istrue( self.owner.var_fa9f4c933e6df36d ) )
+                {
+                    namespace_a850435086c88de3::doonactionscoreevent( 0, "decoyDebuffed" );
+                }
+            }
+            else
+            {
+                namespace_a850435086c88de3::doonactionscoreevent( 0, "decoyDebuffed" );
+            }
         }
     }
     
@@ -543,8 +554,8 @@ function decoy_debuffenemy( player )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12bf
+// Params 0
+// Checksum 0x0, Offset: 0x1315
 // Size: 0x31
 function decoy_monitorposition()
 {
@@ -559,8 +570,8 @@ function decoy_monitorposition()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f8
+// Params 0
+// Checksum 0x0, Offset: 0x134e
 // Size: 0x44
 function decoy_monitorfuse()
 {
@@ -571,8 +582,8 @@ function decoy_monitorfuse()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1344
+// Params 1
+// Checksum 0x0, Offset: 0x139a
 // Size: 0x4e
 function decoy_empapplied( empstruct )
 {
@@ -582,8 +593,8 @@ function decoy_empapplied( empstruct )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x139a
+// Params 1
+// Checksum 0x0, Offset: 0x13f0
 // Size: 0x3b
 function function_9d529f508702dfe8( data )
 {
@@ -592,8 +603,8 @@ function function_9d529f508702dfe8( data )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13dd
+// Params 1
+// Checksum 0x0, Offset: 0x1433
 // Size: 0x47
 function decoy_handledamage( data )
 {
@@ -602,8 +613,8 @@ function decoy_handledamage( data )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x142d
+// Params 1
+// Checksum 0x0, Offset: 0x1483
 // Size: 0x43
 function decoy_handlefataldamage( data )
 {
@@ -613,8 +624,8 @@ function decoy_handlefataldamage( data )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1478
+// Params 0
+// Checksum 0x0, Offset: 0x14ce
 // Size: 0xa3
 function function_100765fe9abe8d6d()
 {
@@ -627,14 +638,16 @@ function function_100765fe9abe8d6d()
         return undefined;
     }
     
-    for (i = 0; i < var_4bb47473cc0e8dc1.size; i++) {
+    for ( i = 0; i < var_4bb47473cc0e8dc1.size ; i++ )
+    {
         totalweightvalue += var_4bb47473cc0e8dc1[ i ].var_90b63d94c68dade5;
         maxweightvalues[ i ] = totalweightvalue;
     }
     
     weightvalue = randomint( totalweightvalue );
     
-    for (i = 0; i < maxweightvalues.size; i++) {
+    for ( i = 0; i < maxweightvalues.size ; i++ )
+    {
         if ( weightvalue < maxweightvalues[ i ] )
         {
             return var_4bb47473cc0e8dc1[ i ];
@@ -645,8 +658,8 @@ function function_100765fe9abe8d6d()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1524
+// Params 0
+// Checksum 0x0, Offset: 0x157a
 // Size: 0xcf
 function decoy_getfiretype()
 {
@@ -668,14 +681,16 @@ function decoy_getfiretype()
         return undefined;
     }
     
-    for (i = 0; i < firetypes.size; i++) {
+    for ( i = 0; i < firetypes.size ; i++ )
+    {
         totalweightvalue += firetypes[ i ].var_f7dff98a85f6c2cc;
         maxweightvalues[ i ] = totalweightvalue;
     }
     
     weightvalue = randomint( totalweightvalue );
     
-    for (i = 0; i < maxweightvalues.size; i++) {
+    for ( i = 0; i < maxweightvalues.size ; i++ )
+    {
         if ( weightvalue < maxweightvalues[ i ] )
         {
             return firetypes[ i ];
@@ -686,8 +701,8 @@ function decoy_getfiretype()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15fc
+// Params 1
+// Checksum 0x0, Offset: 0x1652
 // Size: 0x2f
 function decoy_getvelocity( origin )
 {
@@ -700,8 +715,8 @@ function decoy_getvelocity( origin )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1634
+// Params 1
+// Checksum 0x0, Offset: 0x168a
 // Size: 0xc5
 function decoy_getfireeventangles( velocity )
 {
@@ -731,8 +746,8 @@ function decoy_getfireeventangles( velocity )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1702
+// Params 3
+// Checksum 0x0, Offset: 0x1758
 // Size: 0xbe
 function decoy_getfireeventimpulse( velocity, firetype, fireangles )
 {
@@ -747,8 +762,8 @@ function decoy_getfireeventimpulse( velocity, firetype, fireangles )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17c9
+// Params 3
+// Checksum 0x0, Offset: 0x181f
 // Size: 0xbe
 function function_3d4031d0ff8cdb6( velocity, var_3c8b1cbfa325c448, fireangles )
 {
@@ -763,8 +778,8 @@ function function_3d4031d0ff8cdb6( velocity, var_3c8b1cbfa325c448, fireangles )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1890
+// Params 0
+// Checksum 0x0, Offset: 0x18e6
 // Size: 0x40, Type: bool
 function decoy_isonground()
 {
@@ -782,8 +797,8 @@ function decoy_isonground()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d9
+// Params 0
+// Checksum 0x0, Offset: 0x192f
 // Size: 0x86, Type: bool
 function decoy_isongroundraycastonly()
 {
@@ -801,8 +816,8 @@ function decoy_isongroundraycastonly()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1968
+// Params 2
+// Checksum 0x0, Offset: 0x19be
 // Size: 0x39
 function decoy_givepointsfordestroy( attacker, objweapon )
 {
@@ -814,8 +829,8 @@ function decoy_givepointsfordestroy( attacker, objweapon )
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a9
+// Params 0
+// Checksum 0x0, Offset: 0x19ff
 // Size: 0x35, Type: bool
 function function_4ef2fc84cdc52176()
 {
@@ -828,8 +843,8 @@ function function_4ef2fc84cdc52176()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19e7
+// Params 0
+// Checksum 0x0, Offset: 0x1a3d
 // Size: 0x42
 function function_8100d200f92c6518()
 {
@@ -843,8 +858,8 @@ function function_8100d200f92c6518()
 }
 
 // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a32
+// Params 1
+// Checksum 0x0, Offset: 0x1a88
 // Size: 0x40
 function function_3217c8851124ab5f( stuckdata )
 {
@@ -862,8 +877,8 @@ function function_3217c8851124ab5f( stuckdata )
 /#
 
     // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a7a
+    // Params 1
+    // Checksum 0x0, Offset: 0x1ad0
     // Size: 0x44, Type: dev
     function function_3576a1db2837369e( color )
     {
@@ -877,8 +892,8 @@ function function_3217c8851124ab5f( stuckdata )
     }
 
     // Namespace decoy_grenade / scripts\mp\equipment\decoy_grenade
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1ac6
+    // Params 0
+    // Checksum 0x0, Offset: 0x1b1c
     // Size: 0xb3, Type: dev
     function function_2e44aa26dbb0cd3c()
     {

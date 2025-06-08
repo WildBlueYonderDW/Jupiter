@@ -5,7 +5,7 @@
 #namespace namespace_a5e891e44109f8db;
 
 // Namespace namespace_a5e891e44109f8db / namespace_e9b0ed286e0145cc
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x131
 // Size: 0x10e
 function init( var_5179c48492d1d2c2 )

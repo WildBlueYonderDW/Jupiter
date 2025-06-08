@@ -13,7 +13,7 @@
 #namespace namespace_b78d657d6d9b410d;
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c0
 // Size: 0x17
 function main()
@@ -23,7 +23,7 @@ function main()
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2df
 // Size: 0x1fc
 function function_66ed22dfc3b03993()
@@ -51,7 +51,7 @@ function function_66ed22dfc3b03993()
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4e3
 // Size: 0x87
 function function_8f5cde869b76b0e()
@@ -70,7 +70,7 @@ function function_8f5cde869b76b0e()
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x573
 // Size: 0x2a4
 function function_61eee992c191dbd0()
@@ -133,7 +133,7 @@ function function_61eee992c191dbd0()
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x81f
 // Size: 0x12c
 function function_382f6d5ccce841f0( pos )
@@ -177,7 +177,7 @@ function function_382f6d5ccce841f0( pos )
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x953
 // Size: 0x33
 function function_a4f67639da6c8a7d()
@@ -195,7 +195,7 @@ function function_a4f67639da6c8a7d()
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98e
 // Size: 0x88
 function chopper_explode()
@@ -221,7 +221,7 @@ function chopper_explode()
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa1e
 // Size: 0xc8
 function chopper_cleanup( wasdestroyed )
@@ -253,7 +253,7 @@ function chopper_cleanup( wasdestroyed )
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xaee
 // Size: 0x23
 function function_8c55246fcf664138( data, other )
@@ -262,7 +262,7 @@ function function_8c55246fcf664138( data, other )
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb19
 // Size: 0x79, Type: bool
 function chopper_handledeathdamage( data )
@@ -280,7 +280,7 @@ function chopper_handledeathdamage( data )
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xb9b
 // Size: 0x5a
 function function_aa4375c53e07b7ec( team )
@@ -291,7 +291,7 @@ function function_aa4375c53e07b7ec( team )
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbfd
 // Size: 0xa
 function chopper_ondeath()
@@ -300,7 +300,7 @@ function chopper_ondeath()
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xc0f
 // Size: 0x13d, Type: bool
 function chopper_postmodifydamage( data )
@@ -344,7 +344,7 @@ function chopper_postmodifydamage( data )
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd55
 // Size: 0xf2
 function function_5bb279a05d2a871c()
@@ -364,7 +364,8 @@ function function_5bb279a05d2a871c()
             self setscriptablepartstate( "speaker", "idle" );
         }
         
-        for (i = 0; i < 20; i++) {
+        for ( i = 0; i < 20 ; i++ )
+        {
             if ( self.health <= 0 )
             {
                 return;
@@ -395,7 +396,7 @@ function function_5bb279a05d2a871c()
 }
 
 // Namespace namespace_b78d657d6d9b410d / namespace_f1e5fec8f21ef752
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe4f
 // Size: 0x89
 function function_24fee42d71078694()

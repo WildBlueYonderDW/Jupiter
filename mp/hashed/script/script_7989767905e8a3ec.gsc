@@ -7,7 +7,7 @@
 /#
 
     // Namespace ob_splashes / namespace_ac5318af4e6838ee
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0xa0
     // Size: 0x18c, Type: dev
     function init()

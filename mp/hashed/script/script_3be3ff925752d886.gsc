@@ -4,7 +4,7 @@
 #namespace mp_jup_st_a_ob_activities_aethernest_cs;
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x35f
 // Size: 0x6d
 function main( unused, us )
@@ -30,7 +30,7 @@ function main( unused, us )
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x3d4
 // Size: 0x67
 function cs_return_and_wait_for_flag( us, s, cf )
@@ -50,7 +50,7 @@ function cs_return_and_wait_for_flag( us, s, cf )
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x443
 // Size: 0x6a9
 function createstructs( fe, us, cf )
@@ -150,7 +150,7 @@ function createstructs( fe, us, cf )
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xaf4
 // Size: 0x2
 function function_7af6d59eef91a7dd()
@@ -159,7 +159,7 @@ function function_7af6d59eef91a7dd()
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xafe
 // Size: 0xe
 function cleanup()
@@ -168,7 +168,7 @@ function cleanup()
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xb14
 // Size: 0x69
 function function_fd69cf02ba4d90a2()
@@ -183,7 +183,7 @@ function function_fd69cf02ba4d90a2()
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb86
 // Size: 0x9c
 function function_82613e20fba2deb9( instancename, fe, us, cf )
@@ -211,7 +211,7 @@ function function_82613e20fba2deb9( instancename, fe, us, cf )
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0xc2a
 // Size: 0x890
 function function_78f6cfea2e06390e( fe, us, cf )
@@ -295,7 +295,7 @@ function function_78f6cfea2e06390e( fe, us, cf )
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x14c2
 // Size: 0x791
 function function_1490a3595d24d927( fe, us, cf )
@@ -370,7 +370,7 @@ function function_1490a3595d24d927( fe, us, cf )
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1c5b
 // Size: 0x791
 function function_eb7efa80b3030cef( fe, us, cf )
@@ -445,7 +445,7 @@ function function_eb7efa80b3030cef( fe, us, cf )
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x23f4
 // Size: 0x87f
 function function_1856af1af68609da( fe, us, cf )
@@ -528,7 +528,7 @@ function function_1856af1af68609da( fe, us, cf )
 }
 
 // Namespace mp_jup_st_a_ob_activities_aethernest_cs / namespace_8325b03cc9fa0472
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2c7b
 // Size: 0x360
 function function_6da2952367672ac0()

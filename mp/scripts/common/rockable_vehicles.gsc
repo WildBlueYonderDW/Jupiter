@@ -4,7 +4,7 @@
 #namespace rockable_vehicles;
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e6
 // Size: 0x24
 function init()
@@ -14,7 +14,7 @@ function init()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x312
 // Size: 0x2e8
 function rockable_cars_init()
@@ -90,7 +90,7 @@ function rockable_cars_init()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x602
 // Size: 0x59
 function valid_rockable_vehicle()
@@ -109,7 +109,7 @@ function valid_rockable_vehicle()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x663
 // Size: 0x138
 function rockable_car_watch_damage()
@@ -131,7 +131,7 @@ function rockable_car_watch_damage()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a3
 // Size: 0x2a4
 function rockable_car_watch_death()
@@ -172,7 +172,7 @@ function rockable_car_watch_death()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa4f
 // Size: 0x160
 function rockable_car_watch_dead()
@@ -195,7 +195,7 @@ function rockable_car_watch_dead()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xbb7
 // Size: 0x58
 function rockable_car_debug()
@@ -214,7 +214,7 @@ function rockable_car_debug()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xc17
 // Size: 0x118
 function alarm_cars_init()
@@ -244,7 +244,7 @@ function alarm_cars_init()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd37
 // Size: 0x166
 function alarm_car_watch_damage()
@@ -274,7 +274,7 @@ function alarm_car_watch_damage()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xea5
 // Size: 0x62
 function alarm_car_debug()
@@ -293,7 +293,7 @@ function alarm_car_debug()
 }
 
 // Namespace rockable_vehicles / scripts\common\rockable_vehicles
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0xf0f
 // Size: 0x53
 function print3d_debug( origin, text, color, alpha, scale, duration )

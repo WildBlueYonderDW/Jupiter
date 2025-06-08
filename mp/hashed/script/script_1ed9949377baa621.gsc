@@ -1,5 +1,4 @@
 #using script_118c3165d7948d8b;
-#using script_22f1701e151b9d12;
 #using script_3a13b8032b62a5e6;
 #using script_3e34d236a84cfd96;
 #using script_42f1b4ddcbbf98b4;
@@ -7,6 +6,7 @@
 #using scripts\common\callbacks;
 #using scripts\common\system;
 #using scripts\common\utility;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\loot\common_inventory;
 #using scripts\cp_mp\loot\common_item;
 #using scripts\cp_mp\overlord;
@@ -27,7 +27,7 @@ function private autoexec __init__system__()
 }
 
 // Namespace namespace_c241d588869e3606 / namespace_362d01f5d79f9001
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8b4
 // Size: 0x140
 function __init__()
@@ -53,7 +53,7 @@ function __init__()
 }
 
 // Namespace namespace_c241d588869e3606 / namespace_362d01f5d79f9001
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9fc
 // Size: 0x28
 function function_e1312e922e4654b5( player )
@@ -67,7 +67,7 @@ function function_e1312e922e4654b5( player )
 }
 
 // Namespace namespace_c241d588869e3606 / namespace_362d01f5d79f9001
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa2d
 // Size: 0x3e, Type: bool
 function function_e3727c08fb1fccd3( player )
@@ -81,7 +81,7 @@ function function_e3727c08fb1fccd3( player )
 }
 
 // Namespace namespace_c241d588869e3606 / namespace_362d01f5d79f9001
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa74
 // Size: 0xcf
 function function_fde77e1c68b8218( params )
@@ -273,7 +273,7 @@ function private function_ba2121dc766a1ac3()
 }
 
 // Namespace namespace_c241d588869e3606 / namespace_362d01f5d79f9001
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10d9
 // Size: 0x66
 function function_5f3b67bb1be94acf( var_3fa0ceb5fb31d6b )
@@ -281,7 +281,8 @@ function function_5f3b67bb1be94acf( var_3fa0ceb5fb31d6b )
     var_f6898e71aa21712a = [];
     backpacksize = scripts\cp_mp\loot\common_inventory::function_1b35b10884bd8d67();
     
-    for (i = 0; i < backpacksize; i++) {
+    for ( i = 0; i < backpacksize ; i++ )
+    {
         currentlootid = scripts\cp_mp\loot\common_inventory::function_d870b2c45335bd88( i );
         
         if ( array_contains( var_3fa0ceb5fb31d6b, currentlootid ) )
@@ -405,7 +406,7 @@ function private function_d9ea41b8d6c2f159( v_portal, itembundlename )
 }
 
 // Namespace namespace_c241d588869e3606 / namespace_362d01f5d79f9001
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1538
 // Size: 0x4c
 function function_90a1c6f54083cb20( params )
@@ -530,7 +531,7 @@ function private gravity_launch( target_pos, time )
 }
 
 // Namespace namespace_c241d588869e3606 / namespace_362d01f5d79f9001
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1939
 // Size: 0x164
 function function_19e866494b6bb2d8( params )
@@ -557,14 +558,14 @@ function function_19e866494b6bb2d8( params )
     
     var_9e3cc96b3a2c2e2c = 350;
     s_encounter = "ai_encounter:enc_ob_rift_gate_bounty_adds_" + instance.ai_type;
-    encounterid = namespace_614554f86e52695c::spawn_request( s_encounter, instance.aispawnstruct.origin, var_9e3cc96b3a2c2e2c, 1, 1, 0 );
+    encounterid = scripts\cp_mp\agents\ai_spawn_director::spawn_request( s_encounter, instance.aispawnstruct.origin, var_9e3cc96b3a2c2e2c, 1, 1, 0 );
     
     if ( isdefined( instance.ai_zombie ) )
     {
         instance.ai_zombie waittill( "death" );
     }
     
-    namespace_614554f86e52695c::function_9950e6e485bf5261( encounterid );
+    scripts\cp_mp\agents\ai_spawn_director::function_9950e6e485bf5261( encounterid );
     
     if ( isarray( instance.var_6c29f2fdb0054bbe ) )
     {

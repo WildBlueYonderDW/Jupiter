@@ -1,6 +1,4 @@
-#using script_22f1701e151b9d12;
 #using script_24fbedba9a7a1ef4;
-#using script_2ad704f5066d8674;
 #using script_54f6d121e91434f8;
 #using scripts\anim\battlechatter;
 #using scripts\anim\battlechatter_ai;
@@ -9,17 +7,19 @@
 #using scripts\common\devgui;
 #using scripts\common\utility;
 #using scripts\cp_mp\agents\agent_utils;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\utility\player_utility;
 #using scripts\engine\utility;
 #using scripts\mp\damage;
 #using scripts\mp\equipment\disguise;
 #using scripts\mp\mp_agent_damage;
+#using scripts\mp\mp_dialogue;
 #using scripts\mp\weapons;
 
 #namespace ob_humans;
 
 // Namespace ob_humans / namespace_27209657e8dae5bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe5c
 // Size: 0x179
 function function_45657962a8ad47e()
@@ -57,7 +57,7 @@ function private function_a4b670d860d7cf61()
 {
     level.var_aa78677d2156e18 = &function_20f21f6a7707e19;
     scripts\anim\battlechatter::init_battlechatter();
-    namespace_e60d0883fe817ff2::main();
+    scripts\mp\mp_dialogue::main();
     registersharedfunc( "disguise", "disguiseNationalityOverride", &function_d76746a809428932 );
     registersharedfunc( "disguise", "disguiseOnUsed", &function_5555a1ab2616c388 );
     registersharedfunc( "disguise", "disguiseOff", &function_1aa05b7937a3b1a2 );
@@ -67,7 +67,7 @@ function private function_a4b670d860d7cf61()
 }
 
 // Namespace ob_humans / namespace_27209657e8dae5bb
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1074
 // Size: 0xeb4
 function function_20f21f6a7707e19()
@@ -450,7 +450,7 @@ function private function_431dee4c36d7e3ba( inflictor, objweapon, damage )
 }
 
 // Namespace ob_humans / namespace_27209657e8dae5bb
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x29da
 // Size: 0x184
 function function_cf5321434f9b38c1( idamage, smeansofdeath, objweapon )
@@ -659,7 +659,7 @@ function private function_235231abd6580e1e( fadeouttime, delaytime )
     }
 
     // Namespace ob_humans / namespace_27209657e8dae5bb
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3025
     // Size: 0x98, Type: dev
     function function_ef3da4a8b1880c27( spawntag )
@@ -667,13 +667,13 @@ function private function_235231abd6580e1e( fadeouttime, delaytime )
         firstplayer = level.players[ 0 ];
         playerforward = anglestoforward( firstplayer.angles );
         offsetposition = firstplayer.origin + playerforward * 100 + ( 0, 0, 10 );
-        encounterid = namespace_614554f86e52695c::spawn_request( "<dev string:x437>", offsetposition, 32, 0, 1, 0 );
+        encounterid = scripts\cp_mp\agents\ai_spawn_director::spawn_request( "<dev string:x437>", offsetposition, 32, 0, 1, 0 );
         function_d37068aac7785c04( encounterid, spawntag[ 0 ], 1 );
         function_fc38783a3da0bc71( encounterid, 1 );
     }
 
     // Namespace ob_humans / namespace_27209657e8dae5bb
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x30c5
     // Size: 0x102, Type: dev
     function function_bc8f27e3d1eef91e()
@@ -707,7 +707,7 @@ function private function_235231abd6580e1e( fadeouttime, delaytime )
     }
 
     // Namespace ob_humans / namespace_27209657e8dae5bb
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x31cf
     // Size: 0x1aa, Type: dev
     function function_d170903981c617de( player )
@@ -746,7 +746,7 @@ function private function_235231abd6580e1e( fadeouttime, delaytime )
     }
 
     // Namespace ob_humans / namespace_27209657e8dae5bb
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x3381
     // Size: 0x5f, Type: dev
     function function_629369a1a5cd2636( text )
@@ -766,7 +766,7 @@ function private function_235231abd6580e1e( fadeouttime, delaytime )
     }
 
     // Namespace ob_humans / namespace_27209657e8dae5bb
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x33e8
     // Size: 0x4b, Type: dev
     function function_f7e877aa7e97d952( activityinstance, text )
@@ -778,7 +778,7 @@ function private function_235231abd6580e1e( fadeouttime, delaytime )
     }
 
     // Namespace ob_humans / namespace_27209657e8dae5bb
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x343b
     // Size: 0x45, Type: dev
     function function_5c0adb7451b9af7a( player, text )
@@ -790,7 +790,7 @@ function private function_235231abd6580e1e( fadeouttime, delaytime )
     }
 
     // Namespace ob_humans / namespace_27209657e8dae5bb
-    // Params 3, eflags: 0x0
+    // Params 3
     // Checksum 0x0, Offset: 0x3488
     // Size: 0x75, Type: dev
     function function_dd0ceeddc603cb3e( player, activityinstance, text )

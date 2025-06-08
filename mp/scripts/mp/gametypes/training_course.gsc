@@ -31,7 +31,7 @@
 #namespace training_course;
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x853
 // Size: 0x1ee
 function main()
@@ -80,7 +80,7 @@ function main()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa49
 // Size: 0x152
 function initializematchrules()
@@ -91,11 +91,11 @@ function initializematchrules()
     setdynamicdvar( @"hash_bb6e8f8d9be104f4", 0 );
     level.gametype = "training_course";
     setdvar( @"hash_c11db9baa9e5bc9b", 1 );
-    setdvar( @"hash_c55dc89ef275cdaa", 1 );
+    setdvar( @"scr_skip_infils", 1 );
     setdvar( @"hash_c653d32c30815d2b", 15 );
-    setdvar( @"hash_704afe6f6c582ee0", 6 );
+    setdvar( @"scr_game_matchstarttime", 6 );
     setdvar( @"hash_94af58bec500b3b9", 1 );
-    setdvar( @"hash_b773758221a0c100", 5 );
+    setdvar( @"scr_outofboundstime", 5 );
     setdvar( @"hash_e4187d1543c7477e", 0 );
     setdvar( @"hash_a2e7d8fdf5d91dd9", 1 );
     setdvar( @"hash_e94e38873c94b670", 1 );
@@ -114,7 +114,7 @@ function initializematchrules()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xba3
 // Size: 0x139
 function init_outofbounds()
@@ -149,7 +149,7 @@ function init_outofbounds()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xce4
 // Size: 0x66
 function function_7c390d67d182a2b6()
@@ -164,7 +164,7 @@ function function_7c390d67d182a2b6()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd52
 // Size: 0x64
 function function_4f223e0dd031befb( index )
@@ -186,7 +186,7 @@ function function_4f223e0dd031befb( index )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xdbe
 // Size: 0x1a7
 function init_gameobjects( var_f50f3f9183c1ad36, objectsarray )
@@ -229,7 +229,7 @@ function init_gameobjects( var_f50f3f9183c1ad36, objectsarray )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xf6d
 // Size: 0x8e
 function init_spawnpoints()
@@ -237,7 +237,8 @@ function init_spawnpoints()
     level.currentspawnpointindex = 1;
     level.var_9317edc858b1ea66 = [];
     
-    for (i = 1; i <= 6; i++) {
+    for ( i = 1; i <= 6 ; i++ )
+    {
         spawnstruct = getstruct( "tut_spawn" + i, "targetname" );
         spawnstruct.index = i;
         level.var_9317edc858b1ea66[ i ] = spawnstruct;
@@ -248,7 +249,7 @@ function init_spawnpoints()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1003
 // Size: 0x89
 function init_weapon()
@@ -262,7 +263,7 @@ function init_weapon()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1094
 // Size: 0x59
 function init_crate( var_5372f0b80988f4e5 )
@@ -272,7 +273,7 @@ function init_crate( var_5372f0b80988f4e5 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x10f5
 // Size: 0x88
 function function_e2bf46c0f241711e()
@@ -289,7 +290,7 @@ function function_e2bf46c0f241711e()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1186
 // Size: 0xce
 function function_4dc27f9df0ba179f( origin )
@@ -310,7 +311,7 @@ function function_4dc27f9df0ba179f( origin )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x125c
 // Size: 0x41
 function function_d2da945656356633()
@@ -321,7 +322,7 @@ function function_d2da945656356633()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x12a5
 // Size: 0x65
 function function_b85b74a17beba1aa()
@@ -672,7 +673,7 @@ function private function_ea6a9ec867a82c1()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1ac9
 // Size: 0x12d
 function function_fb4b8c8dec4c8495()
@@ -682,7 +683,7 @@ function function_fb4b8c8dec4c8495()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1bfe
 // Size: 0x104
 function function_3e4edf7034db8b19()
@@ -708,7 +709,7 @@ function function_3e4edf7034db8b19()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1d0a
 // Size: 0xc5
 function function_1ee6762a88ec543c()
@@ -731,7 +732,7 @@ function function_1ee6762a88ec543c()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1dd7
 // Size: 0x41
 function function_92945bd32781da76( player, eventindex )
@@ -746,7 +747,7 @@ function function_92945bd32781da76( player, eventindex )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e20
 // Size: 0x51
 function function_e0f8d1d915cb681b()
@@ -772,7 +773,7 @@ function function_e0f8d1d915cb681b()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1e7a
 // Size: 0xfc
 function function_6cf90f12033c1f1d()
@@ -804,7 +805,7 @@ function function_6cf90f12033c1f1d()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1f7f
 // Size: 0xc1
 function function_e2bbf555c17be641()
@@ -833,7 +834,7 @@ function function_e2bbf555c17be641()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2049
 // Size: 0x65
 function function_2f2b7340eced2d89()
@@ -865,7 +866,7 @@ function function_2f2b7340eced2d89()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x20b7
 // Size: 0x71
 function function_359bd4b9eca48636()
@@ -899,7 +900,7 @@ function function_359bd4b9eca48636()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2131
 // Size: 0x7e
 function function_bac1fa083cbe583e()
@@ -934,7 +935,7 @@ function function_bac1fa083cbe583e()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x21b8
 // Size: 0xc7
 function function_3c1235da36973cb8()
@@ -964,7 +965,7 @@ function function_3c1235da36973cb8()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2288
 // Size: 0xe0
 function function_249c0b8a2dcb60cc()
@@ -983,7 +984,8 @@ function function_249c0b8a2dcb60cc()
         wait 0.15;
     }
     
-    for (targets = level.targets[ "Hipfire" ].size; targets > 0; targets--) {
+    for ( targets = level.targets[ "Hipfire" ].size; targets > 0 ; targets-- )
+    {
         level waittill( "target_death" );
     }
     
@@ -995,7 +997,7 @@ function function_249c0b8a2dcb60cc()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2371
 // Size: 0xf4
 function function_c546f0a53b1b9975()
@@ -1014,7 +1016,8 @@ function function_c546f0a53b1b9975()
         wait 0.15;
     }
     
-    for (targets = level.targets[ "ADS" ].size; targets > 0; targets--) {
+    for ( targets = level.targets[ "ADS" ].size; targets > 0 ; targets-- )
+    {
         level waittill( "target_death" );
     }
     
@@ -1028,7 +1031,7 @@ function function_c546f0a53b1b9975()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x246e
 // Size: 0xc7
 function function_2e308a2fe4c912e1()
@@ -1058,7 +1061,7 @@ function function_2e308a2fe4c912e1()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x253e
 // Size: 0x11d
 function function_284061e8190319c6()
@@ -1086,7 +1089,8 @@ function function_284061e8190319c6()
         wait 0.15;
     }
     
-    for (targets = level.targets[ "Tactical" ].size; targets > 0; targets--) {
+    for ( targets = level.targets[ "Tactical" ].size; targets > 0 ; targets-- )
+    {
         level waittill( "target_death" );
     }
     
@@ -1098,7 +1102,7 @@ function function_284061e8190319c6()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2664
 // Size: 0xc7
 function function_dc0f31a23dd05cb8()
@@ -1128,7 +1132,7 @@ function function_dc0f31a23dd05cb8()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2734
 // Size: 0xe0
 function function_1773e8decf0f2f6c()
@@ -1147,7 +1151,8 @@ function function_1773e8decf0f2f6c()
         wait 0.15;
     }
     
-    for (targets = level.targets[ "TacticalADS" ].size; targets > 0; targets--) {
+    for ( targets = level.targets[ "TacticalADS" ].size; targets > 0 ; targets-- )
+    {
         level waittill( "target_death" );
     }
     
@@ -1159,7 +1164,7 @@ function function_1773e8decf0f2f6c()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x281d
 // Size: 0xd0
 function function_8ce66a93e6be27b8()
@@ -1190,7 +1195,7 @@ function function_8ce66a93e6be27b8()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28f6
 // Size: 0x102
 function function_cd9e90285761f4fe()
@@ -1231,7 +1236,7 @@ function function_cd9e90285761f4fe()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2a01
 // Size: 0xdd
 function function_c6892ce5f3e88669()
@@ -1262,7 +1267,7 @@ function function_c6892ce5f3e88669()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ae7
 // Size: 0xcf
 function function_e4edec51c1e3239c()
@@ -1280,7 +1285,8 @@ function function_e4edec51c1e3239c()
         wait 0.15;
     }
     
-    for (targets = level.targets[ "Mount" ].size; targets > 0; targets--) {
+    for ( targets = level.targets[ "Mount" ].size; targets > 0 ; targets-- )
+    {
         level waittill( "target_death" );
     }
     
@@ -1292,7 +1298,7 @@ function function_e4edec51c1e3239c()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2bbf
 // Size: 0xe1
 function function_8a6c94d7fd48dc64()
@@ -1310,7 +1316,8 @@ function function_8a6c94d7fd48dc64()
         wait 0.15;
     }
     
-    for (targets = level.targets[ "Penetration" ].size; targets > 0; targets--) {
+    for ( targets = level.targets[ "Penetration" ].size; targets > 0 ; targets-- )
+    {
         level waittill( "target_death" );
     }
     
@@ -1325,7 +1332,7 @@ function function_8a6c94d7fd48dc64()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ca9
 // Size: 0xc7
 function function_45d68507c5ae7072()
@@ -1355,7 +1362,7 @@ function function_45d68507c5ae7072()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2d79
 // Size: 0x151
 function function_bf56d16e55747d09()
@@ -1403,7 +1410,7 @@ function function_bf56d16e55747d09()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ed3
 // Size: 0xd2
 function function_dc70aaa8d8f87297()
@@ -1434,7 +1441,7 @@ function function_dc70aaa8d8f87297()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2fae
 // Size: 0xe9
 function function_83a3fb61c8b255a1()
@@ -1453,7 +1460,8 @@ function function_83a3fb61c8b255a1()
         wait 0.15;
     }
     
-    for (targets = level.targets[ "Prone" ].size; targets > 0; targets--) {
+    for ( targets = level.targets[ "Prone" ].size; targets > 0 ; targets-- )
+    {
         level waittill( "target_death" );
     }
     
@@ -1467,7 +1475,7 @@ function function_83a3fb61c8b255a1()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30a0
 // Size: 0xc7
 function function_e41e02ec0865fb08()
@@ -1497,7 +1505,7 @@ function function_e41e02ec0865fb08()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3170
 // Size: 0x155
 function function_aa65e8881adabf98()
@@ -1540,7 +1548,7 @@ function function_aa65e8881adabf98()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x32ce
 // Size: 0xca
 function function_578c96daacc20f48()
@@ -1556,7 +1564,8 @@ function function_578c96daacc20f48()
         target childthread function_2e8e7982711d50f2();
     }
     
-    for (targets = level.targets[ "Field" ].size; targets > 0; targets--) {
+    for ( targets = level.targets[ "Field" ].size; targets > 0 ; targets-- )
+    {
         level waittill( "target_death" );
     }
     
@@ -1570,7 +1579,7 @@ function function_578c96daacc20f48()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33a1
 // Size: 0xd9
 function function_a1eb5feb655153e7()
@@ -1601,7 +1610,7 @@ function function_a1eb5feb655153e7()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3483
 // Size: 0xf6
 function function_2de15530c52467a8()
@@ -1642,7 +1651,7 @@ function function_2de15530c52467a8()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3582
 // Size: 0xc7
 function function_939598706be41c51()
@@ -1672,7 +1681,7 @@ function function_939598706be41c51()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3652
 // Size: 0x86
 function function_f4ec7a2a6a9ee2c0()
@@ -1708,7 +1717,7 @@ function function_f4ec7a2a6a9ee2c0()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x36e1
 // Size: 0x16d
 function function_4ce43f1cc5edb5cf()
@@ -1754,7 +1763,7 @@ function function_4ce43f1cc5edb5cf()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3857
 // Size: 0x42
 function function_8aa67e2c556382dc()
@@ -1776,7 +1785,7 @@ function function_8aa67e2c556382dc()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x38a2
 // Size: 0x111
 function function_7c2ee16bc35afc97()
@@ -1822,7 +1831,7 @@ function function_7c2ee16bc35afc97()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x39bb
 // Size: 0x3f
 function function_4c53424afe3c0b01()
@@ -1844,7 +1853,7 @@ function function_4c53424afe3c0b01()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a02
 // Size: 0x5d
 function function_7c82d04922ac1bba()
@@ -1855,7 +1864,7 @@ function function_7c82d04922ac1bba()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3a67
 // Size: 0x9
 function updategametypedvars()
@@ -1864,7 +1873,7 @@ function updategametypedvars()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3a78
 // Size: 0x47
 function onspawnplayer( revivespawn )
@@ -1885,7 +1894,7 @@ function onspawnplayer( revivespawn )
 /#
 
     // Namespace training_course / scripts\mp\gametypes\training_course
-    // Params 2, eflags: 0x0
+    // Params 2
     // Checksum 0x0, Offset: 0x3ac7
     // Size: 0x17a, Type: dev
     function spawncompare( spawnpoint, spawnteam )
@@ -1924,7 +1933,7 @@ function onspawnplayer( revivespawn )
 #/
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x3c49
 // Size: 0x40
 function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
@@ -1933,7 +1942,7 @@ function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskil
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0x3c91
 // Size: 0x23
 function dropweaponfordeath( attacker, smeansofdeath, weaponoverride, damage )
@@ -1942,7 +1951,7 @@ function dropweaponfordeath( attacker, smeansofdeath, weaponoverride, damage )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3cbd
 // Size: 0x59
 function ontimelimit()
@@ -1956,7 +1965,7 @@ function ontimelimit()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3d1e
 // Size: 0xad
 function function_7776a47aa86745dc()
@@ -1973,7 +1982,7 @@ function function_7776a47aa86745dc()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3dd3
 // Size: 0x1b5
 function function_2e8e7982711d50f2()
@@ -2012,7 +2021,7 @@ function function_2e8e7982711d50f2()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f90
 // Size: 0x142
 function function_396516aef4db32c0( var_caf1c9236bfa0831 )
@@ -2066,7 +2075,7 @@ function function_396516aef4db32c0( var_caf1c9236bfa0831 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40da
 // Size: 0xd, Type: bool
 function function_53580c5eeccb98ab()
@@ -2075,7 +2084,7 @@ function function_53580c5eeccb98ab()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x40f0
 // Size: 0x60
 function function_697e01c482ca4c72( nooutline )
@@ -2093,7 +2102,7 @@ function function_697e01c482ca4c72( nooutline )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4158
 // Size: 0x3f
 function function_985e1298e8b97a33()
@@ -2108,7 +2117,7 @@ function function_985e1298e8b97a33()
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x419f
 // Size: 0x22, Type: bool
 function function_94d7abe1e5cc3a94( var_caf1c9236bfa0831 )
@@ -2117,7 +2126,7 @@ function function_94d7abe1e5cc3a94( var_caf1c9236bfa0831 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41ca
 // Size: 0x1c
 function function_dd62dbdc963c6673( var_caf1c9236bfa0831 )
@@ -2126,7 +2135,7 @@ function function_dd62dbdc963c6673( var_caf1c9236bfa0831 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x41ef
 // Size: 0x28, Type: bool
 function function_fdb937421f2f2731( var_caf1c9236bfa0831 )
@@ -2135,7 +2144,7 @@ function function_fdb937421f2f2731( var_caf1c9236bfa0831 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4220
 // Size: 0x35, Type: bool
 function function_e537f5a00f54b91e( var_caf1c9236bfa0831 )
@@ -2145,7 +2154,7 @@ function function_e537f5a00f54b91e( var_caf1c9236bfa0831 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x425e
 // Size: 0x41, Type: bool
 function function_a3c9f518ed376a4a( var_caf1c9236bfa0831 )
@@ -2154,7 +2163,7 @@ function function_a3c9f518ed376a4a( var_caf1c9236bfa0831 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42a8
 // Size: 0x36, Type: bool
 function function_e7b413144d6cf1cd( var_caf1c9236bfa0831 )
@@ -2164,7 +2173,7 @@ function function_e7b413144d6cf1cd( var_caf1c9236bfa0831 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x42e7
 // Size: 0x41, Type: bool
 function function_448aa67e9fe96de6( var_caf1c9236bfa0831 )
@@ -2173,7 +2182,7 @@ function function_448aa67e9fe96de6( var_caf1c9236bfa0831 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4331
 // Size: 0x21, Type: bool
 function function_aea735653060f9b1( var_caf1c9236bfa0831 )
@@ -2182,7 +2191,7 @@ function function_aea735653060f9b1( var_caf1c9236bfa0831 )
 }
 
 // Namespace training_course / scripts\mp\gametypes\training_course
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x435b
 // Size: 0x36, Type: bool
 function function_22b1cabc5ee0e001( var_caf1c9236bfa0831 )
@@ -2193,7 +2202,7 @@ function function_22b1cabc5ee0e001( var_caf1c9236bfa0831 )
 /#
 
     // Namespace training_course / scripts\mp\gametypes\training_course
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x439a
     // Size: 0x11, Type: dev
     function function_c7926861b25a8d49()
@@ -2202,7 +2211,7 @@ function function_22b1cabc5ee0e001( var_caf1c9236bfa0831 )
     }
 
     // Namespace training_course / scripts\mp\gametypes\training_course
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x43b3
     // Size: 0x2e, Type: dev
     function function_13f93acfa5b5c378()

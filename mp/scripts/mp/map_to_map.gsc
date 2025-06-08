@@ -13,7 +13,7 @@
 #namespace map_to_map;
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30e
 // Size: 0x29a
 function function_b0daef016957df38()
@@ -72,7 +72,7 @@ function function_b0daef016957df38()
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0x11c
 function function_954713c561c4cc55()
@@ -96,7 +96,7 @@ function function_954713c561c4cc55()
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6d4
 // Size: 0x198
 function function_88ca4dca7931b39b( var_1e88d0b4c5322e0e )
@@ -135,7 +135,7 @@ function function_88ca4dca7931b39b( var_1e88d0b4c5322e0e )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x875
 // Size: 0x64
 function function_7e139d3ab9acb1a9( var_1e88d0b4c5322e0e )
@@ -152,7 +152,7 @@ function function_7e139d3ab9acb1a9( var_1e88d0b4c5322e0e )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 6, eflags: 0x0
+// Params 6
 // Checksum 0x0, Offset: 0x8e2
 // Size: 0x14a
 function function_7e2e0f563fa9008a( instance, part, state, player, var_a5b2c541413aa895, usestring )
@@ -185,7 +185,7 @@ function function_7e2e0f563fa9008a( instance, part, state, player, var_a5b2c5414
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa34
 // Size: 0x8c
 function function_db49fa5c1ee8814d( team )
@@ -202,7 +202,7 @@ function function_db49fa5c1ee8814d( team )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xac8
 // Size: 0x8c
 function function_c6b9237b5132ce26( team )
@@ -219,7 +219,7 @@ function function_c6b9237b5132ce26( team )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb5c
 // Size: 0x392
 function function_5b878641633e68b1( team, time, maptarget, spawnlocid )
@@ -316,7 +316,7 @@ function function_5b878641633e68b1( team, time, maptarget, spawnlocid )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xef6
 // Size: 0xd0
 function map2map_cancelwarp( team, useprompt )
@@ -339,7 +339,7 @@ function map2map_cancelwarp( team, useprompt )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xfce
 // Size: 0x1a
 function function_51aad52cc5171df3( var_f3b6838b04870fc4 )
@@ -351,7 +351,7 @@ function function_51aad52cc5171df3( var_f3b6838b04870fc4 )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xff0
 // Size: 0x484
 function function_c03a8f0cf1d4156f( team, useprompt )
@@ -480,7 +480,7 @@ function function_c03a8f0cf1d4156f( team, useprompt )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x147c
 // Size: 0x76
 function function_dce86bbe8b64b892( team, instance )
@@ -494,7 +494,7 @@ function function_dce86bbe8b64b892( team, instance )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x14fa
 // Size: 0x93
 function function_f7a553353c2c4f99( team, instance )
@@ -513,7 +513,7 @@ function function_f7a553353c2c4f99( team, instance )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x1595
 // Size: 0xa5
 function function_3209b7c7f08a12da( players, maptarget, spawnlocid )
@@ -531,7 +531,7 @@ function function_3209b7c7f08a12da( players, maptarget, spawnlocid )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1642
 // Size: 0xdf
 function function_e43e0f078b1006ce( trigger, spawnlocid )
@@ -563,7 +563,7 @@ function function_e43e0f078b1006ce( trigger, spawnlocid )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1729
 // Size: 0x83
 function function_8ad822e2a2cefa44( trigger, spawnlocid )
@@ -584,7 +584,7 @@ function function_8ad822e2a2cefa44( trigger, spawnlocid )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x17b4
 // Size: 0x91
 function function_f1097a7ba31434e4( team, trigger )
@@ -604,7 +604,7 @@ function function_f1097a7ba31434e4( team, trigger )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x184e
 // Size: 0x56
 function function_80e7f41f01ef7496( warpkey, playlistid )
@@ -618,7 +618,7 @@ function function_80e7f41f01ef7496( warpkey, playlistid )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x18ac
 // Size: 0x20
 function function_2364a3ae41c2ce7f( warpkey )
@@ -627,7 +627,7 @@ function function_2364a3ae41c2ce7f( warpkey )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x18d5
 // Size: 0x56
 function function_334a8a419bfc02c5( locstring, id )
@@ -641,7 +641,7 @@ function function_334a8a419bfc02c5( locstring, id )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1933
 // Size: 0x20
 function function_5ee910117a53f7e0( locstring )
@@ -650,7 +650,7 @@ function function_5ee910117a53f7e0( locstring )
 }
 
 // Namespace map_to_map / scripts\mp\map_to_map
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x195c
 // Size: 0x5c
 function function_e0947372b9a0f240( spawnlocid )

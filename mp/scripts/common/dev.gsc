@@ -3,7 +3,7 @@
 /#
 
     // Namespace dev / scripts\common\dev
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x87
     // Size: 0x13, Type: dev
     function init()

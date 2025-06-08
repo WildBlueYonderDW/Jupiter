@@ -13,7 +13,7 @@
 #namespace scripted_trophy;
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6cb
 // Size: 0x65
 function trophy_init()
@@ -27,7 +27,7 @@ function trophy_init()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x738
 // Size: 0x200
 function trophy_create( loc, candamage, ammocount, maxhealthoverride, teamoverride )
@@ -76,7 +76,7 @@ function trophy_create( loc, candamage, ammocount, maxhealthoverride, teamoverri
     trophy thread trophy_destroyongameend();
     trophy.explosion = trophy_createexplosion( trophy );
     
-    if ( getdvarint( @"hash_a0495fcfca0849aa", 0 ) != 0 )
+    if ( getdvarint( @"scr_trophy_use_entity_grid", 0 ) != 0 )
     {
         /#
             if ( getdvarint( @"hash_2fb6b2a16c2792d0", 0 ) != 0 )
@@ -93,7 +93,7 @@ function trophy_create( loc, candamage, ammocount, maxhealthoverride, teamoverri
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x940
 // Size: 0x32
 function trophy_destroyongameend()
@@ -105,7 +105,7 @@ function trophy_destroyongameend()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x97a
 // Size: 0x4b
 function trophy_destroyonemp()
@@ -118,7 +118,7 @@ function trophy_destroyonemp()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9cd
 // Size: 0x9
 function trophy_deployanimation()
@@ -127,7 +127,7 @@ function trophy_deployanimation()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9de
 // Size: 0x14
 function trophy_remote_destroy( player )
@@ -136,7 +136,7 @@ function trophy_remote_destroy( player )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9fa
 // Size: 0x1d
 function sweeptrophy()
@@ -146,7 +146,7 @@ function sweeptrophy()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa1f
 // Size: 0x2b
 function trophy_destroy( wasdestroyed )
@@ -156,7 +156,7 @@ function trophy_destroy( wasdestroyed )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa52
 // Size: 0x43
 function trophy_shutdownanddestroy( wasdestroyed )
@@ -168,7 +168,7 @@ function trophy_shutdownanddestroy( wasdestroyed )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0xa9d
 // Size: 0x6e
 function trophy_delete( deletiondelay, wasdestroyed )
@@ -190,7 +190,7 @@ function trophy_delete( deletiondelay, wasdestroyed )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 4, eflags: 0x0
+// Params 4
 // Checksum 0x0, Offset: 0xb13
 // Size: 0x25a
 function trophy_watchprotection( protectionoffset, protectiondistsqr, var_b701d494f3ae184f, var_d0b9c256ce9d59f4 )
@@ -285,7 +285,7 @@ function trophy_watchprotection( protectionoffset, protectiondistsqr, var_b701d4
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xd75
 // Size: 0xc, Type: bool
 function function_9f13cc66529c6e8f()
@@ -294,7 +294,7 @@ function function_9f13cc66529c6e8f()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd8a
 // Size: 0x14
 function function_509f8c901a3ae35( trophytarget )
@@ -351,7 +351,8 @@ function private function_df73a01c76de4b5c( trophytarget )
         logtrophysuccesful( trophytarget );
     }
     
-    for (i = 0; i < numshots; i++) {
+    for ( i = 0; i < numshots ; i++ )
+    {
         childthread function_363a32a7a77c9fe0( var_edad871174aa4c18, i );
         wait 0.2;
     }
@@ -433,7 +434,7 @@ function private function_b2e78337c5df1c34( var_5c1a8852fefebef5 )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x10f2
 // Size: 0x12f
 function function_477783276ea16601( trophytarget )
@@ -487,7 +488,7 @@ function function_477783276ea16601( trophytarget )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1229
 // Size: 0x19
 function trophy_watchgameended()
@@ -498,7 +499,7 @@ function trophy_watchgameended()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x124a
 // Size: 0x9
 function function_87f41f420ea77fa()
@@ -507,7 +508,7 @@ function function_87f41f420ea77fa()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x125b
 // Size: 0x6d
 function trophy_handledamage( data )
@@ -521,7 +522,7 @@ function trophy_handledamage( data )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x12d1
 // Size: 0x4a
 function trophy_handlefataldamage( data )
@@ -535,7 +536,7 @@ function trophy_handlefataldamage( data )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1323
 // Size: 0x25
 function trophy_givepointsfordeath( attacker )
@@ -545,7 +546,7 @@ function trophy_givepointsfordeath( attacker )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1350
 // Size: 0x1f
 function trophy_applyempcallback( data )
@@ -554,7 +555,7 @@ function trophy_applyempcallback( data )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1377
 // Size: 0x3d
 function function_fa497ea83e7adc8c( data )
@@ -564,7 +565,7 @@ function function_fa497ea83e7adc8c( data )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x13bc
 // Size: 0x51
 function trophy_disable( data )
@@ -578,7 +579,7 @@ function trophy_disable( data )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1415
 // Size: 0xe3
 function trophy_createexplosion( trophy )
@@ -598,7 +599,7 @@ function trophy_createexplosion( trophy )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1501
 // Size: 0x77
 function trophy_explode( position, angles )
@@ -619,7 +620,7 @@ function trophy_explode( position, angles )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1580
 // Size: 0x25
 function trophy_castorigin( protectionoffset )
@@ -628,7 +629,7 @@ function trophy_castorigin( protectionoffset )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x15ae
 // Size: 0x35
 function trophy_castcontents()
@@ -637,7 +638,7 @@ function trophy_castcontents()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x15ec
 // Size: 0xb9
 function trophy_modifiedprotectiondistsqr( trophytarget, protectiondistsqr )
@@ -678,7 +679,7 @@ function trophy_modifiedprotectiondistsqr( trophytarget, protectiondistsqr )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x16ae
 // Size: 0x20a, Type: bool
 function trophy_checkignorelist( trophytarget )
@@ -753,7 +754,7 @@ function trophy_checkignorelist( trophytarget )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x18c1
 // Size: 0xd5
 function trophy_notifytrophytargetowner( trophytarget, trophyweaponname, trophyowner )
@@ -779,7 +780,7 @@ function trophy_notifytrophytargetowner( trophytarget, trophyweaponname, trophyo
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x199e
 // Size: 0xe5
 function trophy_getbesttag( position )
@@ -806,7 +807,7 @@ function trophy_getbesttag( position )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1a8c
 // Size: 0x7e
 function trophy_getpartbytag( tag )
@@ -825,7 +826,7 @@ function trophy_getpartbytag( tag )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1b13
 // Size: 0x10
 function trophy_getdeployanimtime()
@@ -834,7 +835,7 @@ function trophy_getdeployanimtime()
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1b2c
 // Size: 0x42
 function trophy_givedamagefeedback( attacker )
@@ -853,7 +854,7 @@ function trophy_givedamagefeedback( attacker )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x1b76
 // Size: 0xe0
 function trophy_modifieddamage( attacker, victim, sweapon, damage, damageadd )
@@ -877,7 +878,7 @@ function trophy_modifieddamage( attacker, victim, sweapon, damage, damageadd )
             case #"hash_5e3fa526a48eaaa5":
             case #"hash_6f08e94ea93bfaf9":
             case #"hash_f085b57dce639767":
-                maxhealth = getdvarint( @"hash_b1d561f9a9241e09", 100 );
+                maxhealth = getdvarint( @"scr_player_maxhealth", 100 );
                 damageclamp = 0.66 * maxhealth;
                 break;
         }
@@ -895,7 +896,7 @@ function trophy_modifieddamage( attacker, victim, sweapon, damage, damageadd )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1c5f
 // Size: 0x2b
 function trophy_cleanuponparentdeath( parent, delay )
@@ -907,7 +908,7 @@ function trophy_cleanuponparentdeath( parent, delay )
 }
 
 // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x1c92
 // Size: 0xc1
 function logtrophysuccesful( trophytarget )
@@ -947,7 +948,7 @@ function logtrophysuccesful( trophytarget )
 /#
 
     // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d5b
     // Size: 0x15, Type: dev
     function function_b96541d92295c9ca()
@@ -957,7 +958,7 @@ function logtrophysuccesful( trophytarget )
     }
 
     // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d78
     // Size: 0xd, Type: dev
     function function_194a2d4a0c7509ea()
@@ -966,7 +967,7 @@ function logtrophysuccesful( trophytarget )
     }
 
     // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1d8d
     // Size: 0x106, Type: dev
     function function_d146ac9c9d0a4f24()
@@ -999,7 +1000,7 @@ function logtrophysuccesful( trophytarget )
     }
 
     // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-    // Params 0, eflags: 0x0
+    // Params 0
     // Checksum 0x0, Offset: 0x1e9b
     // Size: 0xac, Type: dev
     function function_a649727b9944afc2()
@@ -1023,7 +1024,7 @@ function logtrophysuccesful( trophytarget )
     }
 
     // Namespace scripted_trophy / scripts\cp_mp\equipment\scripted_trophy
-    // Params 1, eflags: 0x0
+    // Params 1
     // Checksum 0x0, Offset: 0x1f4f
     // Size: 0x68, Type: dev
     function function_1e892f6dd85d5b9c( inent )

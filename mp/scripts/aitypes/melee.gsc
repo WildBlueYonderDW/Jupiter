@@ -11,7 +11,7 @@
 #namespace melee;
 
 // Namespace melee / scripts\aitypes\melee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x176
 // Size: 0x60
 function initmeleefunctions( taskid )
@@ -26,7 +26,7 @@ function initmeleefunctions( taskid )
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x1df
 // Size: 0x1e
 function canmovefrompointtopoint( start, end )
@@ -35,7 +35,7 @@ function canmovefrompointtopoint( start, end )
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x206
 // Size: 0x21
 function meleedeathhandler( enemy )
@@ -46,7 +46,7 @@ function meleedeathhandler( enemy )
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x22f
 // Size: 0x12
 function melee_destroy()
@@ -56,7 +56,7 @@ function melee_destroy()
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x249
 // Size: 0x59
 function getmeleechargerange( target )
@@ -80,7 +80,7 @@ function getmeleechargerange( target )
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x2ab
 // Size: 0xcf
 function gettargetchargepos( target )
@@ -109,7 +109,7 @@ function gettargetchargepos( target )
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x383
 // Size: 0x67
 function canmeleeduringstealth()
@@ -126,7 +126,7 @@ function canmeleeduringstealth()
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3f3
 // Size: 0xb2, Type: bool
 function iseitherofusalreadyinmelee( var_e37bb2c17a470a0 )
@@ -167,7 +167,7 @@ function iseitherofusalreadyinmelee( var_e37bb2c17a470a0 )
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4ae
 // Size: 0x93, Type: bool
 function ismeleerangevalid( target )
@@ -186,7 +186,7 @@ function ismeleerangevalid( target )
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x54a
 // Size: 0x52, Type: bool
 function ismeleevalid_common( target, var_92493ae5a92d3699 )
@@ -220,7 +220,7 @@ function ismeleevalid_common( target, var_92493ae5a92d3699 )
 }
 
 // Namespace melee / scripts\aitypes\melee
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5a5
 // Size: 0x3c4, Type: bool
 function ismeleevalid( target, var_92493ae5a92d3699 )

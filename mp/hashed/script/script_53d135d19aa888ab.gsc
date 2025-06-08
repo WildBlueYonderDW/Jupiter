@@ -1,6 +1,5 @@
 #using script_2047cdbf5176ba0;
 #using script_208955cb4d2c8fb3;
-#using script_22f1701e151b9d12;
 #using script_2304453c69e996e2;
 #using script_24fbedba9a7a1ef4;
 #using script_42adcce5878f583;
@@ -12,6 +11,7 @@
 #using scripts\common\utility;
 #using scripts\common\values;
 #using scripts\cp_mp\agents\agent_utils;
+#using scripts\cp_mp\agents\ai_spawn_director;
 #using scripts\cp_mp\weapon;
 #using scripts\engine\trace;
 #using scripts\engine\utility;
@@ -46,7 +46,7 @@ function private function_a2a8b2608a9edf57()
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x3ae
 // Size: 0x347
 function oninitialization( agent, userdata )
@@ -122,7 +122,7 @@ function oninitialization( agent, userdata )
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6fd
 // Size: 0x184
 function grenadewatcher()
@@ -144,7 +144,8 @@ function grenadewatcher()
             players = function_2b2c04ddfc825d3( self.ob.warlorddata.grenade_spots );
             players = array_randomize( players );
             
-            for (i = 0; i < players.size; i++) {
+            for ( i = 0; i < players.size ; i++ )
+            {
                 var_106a5458182a46f7 = function_4d046f33253e46e0( players[ i ].origin, self.ob.warlorddata.grenade_spots, 262144 );
                 var_2936aa44ec8bed9 = function_4d046f33253e46e0( var_106a5458182a46f7.origin, self.ob.warlorddata.grenade_spawns, 262144 );
                 self.var_43ae9f4734246fb0 = 1;
@@ -167,7 +168,7 @@ function grenadewatcher()
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x889
 // Size: 0xb9
 function function_2b2c04ddfc825d3( points )
@@ -192,7 +193,7 @@ function function_2b2c04ddfc825d3( points )
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x94b
 // Size: 0xc4
 function function_325892ecd89575e1( agent, userdata )
@@ -217,7 +218,7 @@ function function_325892ecd89575e1( agent, userdata )
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa17
 // Size: 0x18
 function function_22bbd2d65e43a26b( agent )
@@ -226,7 +227,7 @@ function function_22bbd2d65e43a26b( agent )
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa37
 // Size: 0xad
 function function_77d09d16e6dea696( warlord )
@@ -251,7 +252,7 @@ function function_77d09d16e6dea696( warlord )
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xaec
 // Size: 0x6e
 function function_e7f383d618470607( triggervolume )
@@ -302,7 +303,7 @@ function private function_f6b236a9e4b842ea( traptrigger )
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 14, eflags: 0x0
+// Params 14
 // Checksum 0x0, Offset: 0xbb8
 // Size: 0xf2
 function warlord_damaged( inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, attachtagname, partname, eventid )
@@ -361,7 +362,7 @@ function private function_fb8ebd4c04df224e( warlord )
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xd7b
 // Size: 0x7d
 function function_19be9e67c6b8fcaf( var_1f55566be45b01f4 )
@@ -373,7 +374,7 @@ function function_19be9e67c6b8fcaf( var_1f55566be45b01f4 )
         return;
     }
     
-    encounterid = namespace_614554f86e52695c::spawn_request( "ai_encounter:enc_ob_activity_warlord_allforone_closet", warlord.origin, 1024, 1, 1, 0 );
+    encounterid = scripts\cp_mp\agents\ai_spawn_director::spawn_request( "ai_encounter:enc_ob_activity_warlord_allforone_closet", warlord.origin, 1024, 1, 1, 0 );
     
     if ( isdefined( encounterid ) )
     {
@@ -387,7 +388,7 @@ function function_19be9e67c6b8fcaf( var_1f55566be45b01f4 )
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe00
 // Size: 0x43
 function function_ae665ae169e5a53a()
@@ -401,7 +402,7 @@ function function_ae665ae169e5a53a()
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe4b
 // Size: 0x32
 function function_1f13aaf6c3fa00e3()
@@ -413,7 +414,7 @@ function function_1f13aaf6c3fa00e3()
 }
 
 // Namespace namespace_ab40422080f04421 / namespace_4d170f5e4f63c2bd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xe85
 // Size: 0xb8
 function function_a9f5229ecf5cca14()

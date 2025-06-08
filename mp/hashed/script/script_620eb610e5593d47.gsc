@@ -9,7 +9,7 @@
 #namespace namespace_de0969f065ce9e6c;
 
 // Namespace namespace_de0969f065ce9e6c / namespace_42cd599857fc6c45
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x143
 // Size: 0x76
 function function_304c63cbb536c526()
@@ -22,7 +22,7 @@ function function_304c63cbb536c526()
 }
 
 // Namespace namespace_de0969f065ce9e6c / namespace_42cd599857fc6c45
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x1c1
 // Size: 0x22
 function function_161807de85552fb()

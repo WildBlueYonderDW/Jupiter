@@ -41,7 +41,7 @@
 #namespace cmd;
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2164
 // Size: 0x767
 function main()
@@ -178,7 +178,7 @@ function main()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x28d3
 // Size: 0x1ca
 function initializematchrules()
@@ -203,7 +203,7 @@ function initializematchrules()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2aa5
 // Size: 0x313
 function updategametypedvars()
@@ -266,7 +266,7 @@ function updategametypedvars()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2dc0
 // Size: 0xa3
 function ontimelimit()
@@ -295,7 +295,7 @@ function ontimelimit()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2e6b
 // Size: 0x80
 function seticonnames()
@@ -312,7 +312,7 @@ function seticonnames()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2ef3
 // Size: 0x14d
 function onstartgametype()
@@ -366,7 +366,7 @@ function onstartgametype()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3048
 // Size: 0x19
 function init_mp_faridah()
@@ -377,7 +377,7 @@ function init_mp_faridah()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3069
 // Size: 0x72
 function initpropaganda()
@@ -391,7 +391,7 @@ function initpropaganda()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x30e3
 // Size: 0x176
 function initschoolmgturret()
@@ -416,7 +416,7 @@ function initschoolmgturret()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3261
 // Size: 0xe1
 function turretthink( turret )
@@ -451,7 +451,7 @@ function turretthink( turret )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x334a
 // Size: 0x44
 function endturretusewatch( player, turret )
@@ -476,7 +476,7 @@ function endturretusewatch( player, turret )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3396
 // Size: 0x1b
 function endturretonplayer( player )
@@ -486,7 +486,7 @@ function endturretonplayer( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x33b9
 // Size: 0x54
 function initksbonuscrates()
@@ -499,7 +499,7 @@ function initksbonuscrates()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3415
 // Size: 0x141
 function initspecatatorcameras()
@@ -529,7 +529,7 @@ function initspecatatorcameras()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x355e
 // Size: 0x46
 function setteammapposition( var_ca2c833762e5466c, team, posinfo )
@@ -543,7 +543,7 @@ function setteammapposition( var_ca2c833762e5466c, team, posinfo )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x35ac
 // Size: 0xd8
 function loopspectatorlocations()
@@ -589,7 +589,7 @@ function loopspectatorlocations()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x368c
 // Size: 0xad
 function setupdestructibledoors()
@@ -607,7 +607,7 @@ function setupdestructibledoors()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x3741
 // Size: 0xb9
 function getdoorowner( position )
@@ -635,7 +635,7 @@ function getdoorowner( position )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3803
 // Size: 0x347
 function initspawns()
@@ -696,7 +696,7 @@ function initspawns()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3b52
 // Size: 0x96
 function getspawnpoint()
@@ -723,7 +723,7 @@ function getspawnpoint()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3bf1
 // Size: 0x51
 function setupobjectives()
@@ -741,7 +741,7 @@ function setupobjectives()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3c4a
 // Size: 0x239
 function setupbombzones()
@@ -803,7 +803,7 @@ function setupbombzones()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x3e8b
 // Size: 0x263
 function setupflags()
@@ -818,7 +818,8 @@ function setupflags()
     
     triggers = [];
     
-    for (index = 0; index < primaryflags.size; index++) {
+    for ( index = 0; index < primaryflags.size ; index++ )
+    {
         triggers[ triggers.size ] = primaryflags[ index ];
     }
     
@@ -865,7 +866,7 @@ function setupflags()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x40f6
 // Size: 0x10
 function disabledomflagscriptable()
@@ -874,7 +875,7 @@ function disabledomflagscriptable()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x410e
 // Size: 0x5d5
 function setupareabrushes()
@@ -984,7 +985,7 @@ function setupareabrushes()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x46eb
 // Size: 0x1e5
 function setupteamoobtriggers()
@@ -1036,7 +1037,7 @@ function setupteamoobtriggers()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x48d8
 // Size: 0x2b4
 function validateobjectives()
@@ -1117,7 +1118,7 @@ function validateobjectives()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x4b94
 // Size: 0x68
 function startgame()
@@ -1138,7 +1139,7 @@ function startgame()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4c04
 // Size: 0x3a2
 function updatecurrentobjective( newindex )
@@ -1234,7 +1235,7 @@ function updatecurrentobjective( newindex )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x4fae
 // Size: 0x37
 function getfirsttimevoforobjective( team )
@@ -1244,7 +1245,7 @@ function getfirsttimevoforobjective( team )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x4fee
 // Size: 0x266
 function getvoforobjective( team, type )
@@ -1322,7 +1323,7 @@ function getvoforobjective( team, type )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 10, eflags: 0x0
+// Params 10
 // Checksum 0x0, Offset: 0x525d
 // Size: 0xeb
 function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid )
@@ -1349,7 +1350,7 @@ function onplayerkilled( einflictor, attacker, idamage, smeansofdeath, objweapon
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5350
 // Size: 0x78
 function onplayerconnect( player )
@@ -1366,7 +1367,7 @@ function onplayerconnect( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x53d0
 // Size: 0x69
 function decayholdtime( team )
@@ -1391,7 +1392,7 @@ function decayholdtime( team )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5441
 // Size: 0x511
 function dompoint_holdtimer( team, credit_player )
@@ -1582,7 +1583,7 @@ function dompoint_holdtimer( team, credit_player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x595a
 // Size: 0x59
 function dompoint_cancelholdtimer()
@@ -1603,7 +1604,7 @@ function dompoint_cancelholdtimer()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x59bb
 // Size: 0x1b
 function givekscratetoteam( team, pos, streakname )
@@ -1612,7 +1613,7 @@ function givekscratetoteam( team, pos, streakname )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x59de
 // Size: 0x1b
 function createkscrate( team, pos, streakname )
@@ -1621,7 +1622,7 @@ function createkscrate( team, pos, streakname )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5a01
 // Size: 0x300
 function cratethink( team, streakname )
@@ -1707,7 +1708,7 @@ function cratethink( team, streakname )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5d09
 // Size: 0xb0
 function gainedjuggupdater( team )
@@ -1734,7 +1735,7 @@ function gainedjuggupdater( team )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5dc1
 // Size: 0x46
 function removedjuggupdater( team )
@@ -1753,7 +1754,7 @@ function removedjuggupdater( team )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x5e0f
 // Size: 0x46
 function givekillstreak( streakname, useimmediate )
@@ -1769,7 +1770,7 @@ function givekillstreak( streakname, useimmediate )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x5e5d
 // Size: 0xa7
 function bombzone_warningklaxon()
@@ -1789,7 +1790,7 @@ function bombzone_warningklaxon()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x5f0c
 // Size: 0x1de
 function bombzone_holdtimer( endtime )
@@ -1858,7 +1859,7 @@ function bombzone_holdtimer( endtime )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x60f2
 // Size: 0x7f
 function bombhandler( player, desttype, playerteam )
@@ -1878,7 +1879,7 @@ function bombhandler( player, desttype, playerteam )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6179
 // Size: 0x49
 function resetbombzone()
@@ -1891,7 +1892,7 @@ function resetbombzone()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x61ca
 // Size: 0x1b6
 function cmd_endgame( winningteam, endreasontext )
@@ -1946,7 +1947,7 @@ function cmd_endgame( winningteam, endreasontext )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6388
 // Size: 0x17c
 function dompoint_onbeginuse( player )
@@ -1992,7 +1993,7 @@ function dompoint_onbeginuse( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x650c
 // Size: 0x282
 function dompoint_onuse( credit_player )
@@ -2074,7 +2075,7 @@ function dompoint_onuse( credit_player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6796
 // Size: 0x1c5
 function dompoint_onenduse( team, player, success )
@@ -2130,7 +2131,7 @@ function dompoint_onenduse( team, player, success )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6963
 // Size: 0x10a
 function dompoint_oncontested()
@@ -2173,7 +2174,7 @@ function dompoint_oncontested()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6a75
 // Size: 0x1d6
 function dompoint_onuncontested( lastclaimteam )
@@ -2229,7 +2230,7 @@ function dompoint_onuncontested( lastclaimteam )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6c53
 // Size: 0x97
 function dompoint_ondisableobjective()
@@ -2248,7 +2249,7 @@ function dompoint_ondisableobjective()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6cf2
 // Size: 0x1d3
 function dompoint_onenableobjective()
@@ -2304,7 +2305,7 @@ function dompoint_onenableobjective()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x6ecd
 // Size: 0xf1
 function dompoint_onactivateobjective()
@@ -2341,7 +2342,7 @@ function dompoint_onactivateobjective()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6fc6
 // Size: 0x13
 function bombzone_onbeginuse( player )
@@ -2350,7 +2351,7 @@ function bombzone_onbeginuse( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x6fe1
 // Size: 0x25
 function bombzone_onenduse( team, player, result )
@@ -2359,7 +2360,7 @@ function bombzone_onenduse( team, player, result )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x700e
 // Size: 0x20f
 function bombzone_onuseplantobject( credit_player )
@@ -2414,7 +2415,7 @@ function bombzone_onuseplantobject( credit_player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7225
 // Size: 0x183
 function bombzone_onusedefuseobject( player )
@@ -2467,7 +2468,7 @@ function bombzone_onusedefuseobject( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73b0
 // Size: 0x15
 function bombzone_ondisableobjective()
@@ -2477,7 +2478,7 @@ function bombzone_ondisableobjective()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x73cd
 // Size: 0x31
 function bombzone_onenableobjective()
@@ -2489,7 +2490,7 @@ function bombzone_onenableobjective()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7406
 // Size: 0x81
 function bombzone_onactivateobjective()
@@ -2505,7 +2506,7 @@ function bombzone_onactivateobjective()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x748f
 // Size: 0x38
 function ui_updatezonetimer( seconds )
@@ -2515,7 +2516,7 @@ function ui_updatezonetimer( seconds )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x74cf
 // Size: 0x32
 function ui_updatebombtimer()
@@ -2525,7 +2526,7 @@ function ui_updatebombtimer()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7509
 // Size: 0x17
 function ui_updatezonetimerpausedness( ispaused )
@@ -2534,7 +2535,7 @@ function ui_updatezonetimerpausedness( ispaused )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7528
 // Size: 0x75
 function getownerteamplayer( ownerteam )
@@ -2553,7 +2554,7 @@ function getownerteamplayer( ownerteam )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x75a6
 // Size: 0xc7
 function ui_updatecmdcapturestatus( status, contested )
@@ -2601,7 +2602,7 @@ function ui_updatecmdcapturestatus( status, contested )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7675
 // Size: 0x82
 function ui_updatecmdownerteam( ownerteam )
@@ -2628,7 +2629,7 @@ function ui_updatecmdownerteam( ownerteam )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x76ff
 // Size: 0x41
 function ui_updatecmdprogress()
@@ -2649,7 +2650,7 @@ function ui_updatecmdprogress()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7748
 // Size: 0x107
 function ui_updatecmdholdprogress()
@@ -2675,7 +2676,7 @@ function ui_updatecmdholdprogress()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7857
 // Size: 0x2ea
 function getcurrentvalue()
@@ -2771,7 +2772,7 @@ function getcurrentvalue()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x7b4a
 // Size: 0x94
 function getcenterfrac( index )
@@ -2801,7 +2802,7 @@ function getcenterfrac( index )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7be7
 // Size: 0x23
 function updateteamscores()
@@ -2814,7 +2815,7 @@ function updateteamscores()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7c12
 // Size: 0x1f4
 function spawnjuggcate( team, role )
@@ -2907,7 +2908,7 @@ function spawnjuggcate( team, role )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x7e0e
 // Size: 0x2f
 function removeondeath( team, role )
@@ -2918,7 +2919,7 @@ function removeondeath( team, role )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7e45
 // Size: 0x233, Type: bool
 function givejuggernaut()
@@ -2978,7 +2979,7 @@ function givejuggernaut()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8081
 // Size: 0x25
 function juggernautsounds()
@@ -2994,7 +2995,7 @@ function juggernautsounds()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x80ae
 // Size: 0xe2
 function juggremover()
@@ -3026,7 +3027,7 @@ function juggremover()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8198
 // Size: 0x20
 function removejuggongameended()
@@ -3038,7 +3039,7 @@ function removejuggongameended()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x81c0
 // Size: 0x3a
 function removejuggonteamchangeordeath()
@@ -3051,7 +3052,7 @@ function removejuggonteamchangeordeath()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x8202
 // Size: 0xfe
 function updatefloorbrush( player, disabled )
@@ -3110,7 +3111,7 @@ function updatefloorbrush( player, disabled )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8308
 // Size: 0xa8
 function updatecapturebrush( player )
@@ -3156,7 +3157,7 @@ function updatecapturebrush( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x83b8
 // Size: 0x145
 function showneutralbrush( player )
@@ -3183,7 +3184,7 @@ function showneutralbrush( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8505
 // Size: 0x145
 function showfriendlybrush( player )
@@ -3210,7 +3211,7 @@ function showfriendlybrush( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8652
 // Size: 0x145
 function showenemybrush( player )
@@ -3237,7 +3238,7 @@ function showenemybrush( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x879f
 // Size: 0x145
 function showcontestedbrush( player )
@@ -3264,7 +3265,7 @@ function showcontestedbrush( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x88ec
 // Size: 0x145
 function hidebrushes( player )
@@ -3291,7 +3292,7 @@ function hidebrushes( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8a39
 // Size: 0xa9
 function showfriendlycapturebrush( player )
@@ -3308,7 +3309,7 @@ function showfriendlycapturebrush( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8aea
 // Size: 0xa9
 function showenemycapturebrush( player )
@@ -3325,7 +3326,7 @@ function showenemycapturebrush( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8b9b
 // Size: 0xa9
 function hidecapturebrush( player )
@@ -3342,7 +3343,7 @@ function hidecapturebrush( player )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c4c
 // Size: 0x2
 function updatefloorbrushwaitforjoined()
@@ -3351,7 +3352,7 @@ function updatefloorbrushwaitforjoined()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c56
 // Size: 0x15
 function applythermal()
@@ -3361,7 +3362,7 @@ function applythermal()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c73
 // Size: 0x9
 function removethermal()
@@ -3370,7 +3371,7 @@ function removethermal()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8c84
 // Size: 0x111
 function startspectatorview()
@@ -3402,7 +3403,7 @@ function startspectatorview()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8d9d
 // Size: 0x17
 function dohalfwayflash()
@@ -3413,7 +3414,7 @@ function dohalfwayflash()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8dbc
 // Size: 0x1f
 function endspectatorview()
@@ -3428,7 +3429,7 @@ function endspectatorview()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x8de3
 // Size: 0x104
 function updatespectatorcamera( var_ca2c833762e5466c )
@@ -3454,7 +3455,7 @@ function updatespectatorcamera( var_ca2c833762e5466c )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x8eef
 // Size: 0x10b
 function movecameratomappos( player, var_9813182985677b23, finalangles )
@@ -3479,7 +3480,7 @@ function movecameratomappos( player, var_9813182985677b23, finalangles )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9002
 // Size: 0x162
 function runslamzoomonspawn()
@@ -3513,7 +3514,7 @@ function runslamzoomonspawn()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x916c
 // Size: 0xd8
 function playslamzoomflash()
@@ -3536,7 +3537,7 @@ function playslamzoomflash()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x924c
 // Size: 0x17
 function startoperatorsound()
@@ -3547,7 +3548,7 @@ function startoperatorsound()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x926b
 // Size: 0x63
 function ongameended()
@@ -3561,7 +3562,7 @@ function ongameended()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x92d6
 // Size: 0xe9
 function playendofmatchtransition( camerastruct )
@@ -3571,7 +3572,8 @@ function playendofmatchtransition( camerastruct )
     totalframes = 10;
     framesleft = totalframes;
     
-    for (framesleft = 1; framesleft <= totalframes; framesleft++) {
+    for ( framesleft = 1; framesleft <= totalframes ; framesleft++ )
+    {
         waitframe();
         self setclientomnvar( "ui_total_fade", framesleft / totalframes );
     }
@@ -3592,14 +3594,15 @@ function playendofmatchtransition( camerastruct )
     totalframes = 4;
     framesleft = totalframes;
     
-    for (framesleft = totalframes - 1; framesleft >= 0; framesleft--) {
+    for ( framesleft = totalframes - 1; framesleft >= 0 ; framesleft-- )
+    {
         waitframe();
         self setclientomnvar( "ui_total_fade", framesleft / totalframes );
     }
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x93c7
 // Size: 0x2e
 function getsitreplocname()
@@ -3609,7 +3612,7 @@ function getsitreplocname()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x93fe
 // Size: 0x3f
 function getcapturedialog( action )
@@ -3619,7 +3622,7 @@ function getcapturedialog( action )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9446
 // Size: 0x2c7
 function getselfobjcaptureddialog( action )
@@ -3743,7 +3746,7 @@ function getselfobjcaptureddialog( action )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 5, eflags: 0x0
+// Params 5
 // Checksum 0x0, Offset: 0x9716
 // Size: 0xec
 function playselfbattlechatter( player, soundname, dialog, waittime, hassuffix )
@@ -3784,7 +3787,7 @@ function playselfbattlechatter( player, soundname, dialog, waittime, hassuffix )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 2, eflags: 0x0
+// Params 2
 // Checksum 0x0, Offset: 0x980a
 // Size: 0xc1
 function getclosestplayeronteam( org, team )
@@ -3810,7 +3813,7 @@ function getclosestplayeronteam( org, team )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x98d4
 // Size: 0x4e
 function disableobjectiveongameended()
@@ -3824,7 +3827,7 @@ function disableobjectiveongameended()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x992a
 // Size: 0x53b
 function setupcaptureflares()
@@ -3882,7 +3885,7 @@ function setupcaptureflares()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x9e6d
 // Size: 0x9a
 function spawnflare( org, angles, drop )
@@ -3906,7 +3909,7 @@ function spawnflare( org, angles, drop )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x9f10
 // Size: 0x9a
 function updateflares( state )
@@ -3931,7 +3934,7 @@ function updateflares( state )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9fb2
 // Size: 0x14e
 function debugcaptureflares()
@@ -3983,7 +3986,7 @@ function debugcaptureflares()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa108
 // Size: 0x1b8
 function mapobjectiveicon( index )
@@ -4042,7 +4045,7 @@ function mapobjectiveicon( index )
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2c8
 // Size: 0xf4
 function updateoobtriggers()
@@ -4069,7 +4072,7 @@ function updateoobtriggers()
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0xa3c4
 // Size: 0x11e
 function updateoobvisuals( state )
@@ -4084,7 +4087,8 @@ function updateoobvisuals( state )
     
     foreach ( visual in self.visuals )
     {
-        for (i = 0; i < visual.drawcount; i++) {
+        for ( i = 0; i < visual.drawcount ; i++ )
+        {
             visual setscriptablepartstate( "chevron_" + i, state );
         }
     }
@@ -4093,14 +4097,15 @@ function updateoobvisuals( state )
     
     foreach ( visual in self.visuals )
     {
-        for (i = 0; i < visual.drawcount; i++) {
+        for ( i = 0; i < visual.drawcount ; i++ )
+        {
             visual setscriptablepartstate( "chevron_" + i, "off" );
         }
     }
 }
 
 // Namespace cmd / scripts\mp\gametypes\cmd
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa4ea
 // Size: 0x116
 function awardcapturepoints()
@@ -4113,7 +4118,8 @@ function awardcapturepoints()
     
     while ( !level.gameended )
     {
-        for (waittime = 0; waittime < seconds; waittime = 0) {
+        for ( waittime = 0; waittime < seconds ; waittime = 0 )
+        {
             waitframe();
             scripts\mp\hostmigration::waittillhostmigrationdone();
             waittime += level.framedurationseconds;

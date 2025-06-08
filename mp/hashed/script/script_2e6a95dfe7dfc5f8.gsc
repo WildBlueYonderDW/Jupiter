@@ -12,7 +12,7 @@
 #namespace dormant_bot;
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x2be
 // Size: 0x1b3
 function thinkthread()
@@ -107,7 +107,7 @@ function thinkthread()
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 3, eflags: 0x0
+// Params 3
 // Checksum 0x0, Offset: 0x479
 // Size: 0x21d, Type: bool
 function function_b2502f3345564abf( dist2dsq, height, inactiveduration )
@@ -192,7 +192,7 @@ function function_b2502f3345564abf( dist2dsq, height, inactiveduration )
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x69f
 // Size: 0x3a
 function function_89b861aa78808ed8()
@@ -202,7 +202,7 @@ function function_89b861aa78808ed8()
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 1, eflags: 0x0
+// Params 1
 // Checksum 0x0, Offset: 0x6e1
 // Size: 0x9f, Type: bool
 function recycle( reason )
@@ -231,7 +231,7 @@ function recycle( reason )
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x789
 // Size: 0x10
 function recyclethread()
@@ -241,7 +241,7 @@ function recyclethread()
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x7a1
 // Size: 0xa7
 function deactivate()
@@ -260,7 +260,7 @@ function deactivate()
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x850
 // Size: 0x86
 function activate()
@@ -279,7 +279,7 @@ function activate()
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x8de
 // Size: 0xbe
 function function_395064ce6c6b6619()
@@ -317,7 +317,7 @@ function function_395064ce6c6b6619()
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0x9a4
 // Size: 0x61, Type: bool
 function function_44db1017d85b121f()
@@ -343,7 +343,7 @@ function function_44db1017d85b121f()
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa0e
 // Size: 0x16, Type: bool
 function issuspended()
@@ -352,7 +352,7 @@ function issuspended()
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa2d
 // Size: 0x43
 function suspend()
@@ -367,7 +367,7 @@ function suspend()
 }
 
 // Namespace dormant_bot / namespace_c4ef709c036dc4a8
-// Params 0, eflags: 0x0
+// Params 0
 // Checksum 0x0, Offset: 0xa78
 // Size: 0x40
 function unsuspend()
